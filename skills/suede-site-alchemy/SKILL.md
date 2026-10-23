@@ -431,7 +431,7 @@ Ship gate: ship | ship-with-caveats | hold
 - Page needs fresh headlines, subheads, CTA labels, or copy variants → `suede-copy`.
 - Page converts and the release is ready to announce → `suede-launch-packaging`.
 - Suede projects: multiple independent lanes, a campaign deadline, or SEO plus implementation plus QA → `suede-agent-teams`.
-- Suede projects: work touches CTA plumbing, forms, auth, payments, analytics, API routes, deployment config, shared components, or claims that must match product behavior → `suede-code-review`.
+- Suede projects: work touches CTA plumbing, forms, auth, payments, analytics, API routes, deployment config, shared components, or claims that must match product behavior → `suede-code`.
 
 Skip the extra gates for pure copy or layout polish after live/source inspection and rendered QA.
 

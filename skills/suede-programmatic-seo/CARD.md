@@ -7,7 +7,7 @@ Release record for the `suede-programmatic-seo` skill, following the NVIDIA skil
 
 ## Description
 
-Suede-owned programmatic SEO discipline.
+Suede AI programmatic SEO for data-backed page systems at scale: location, persona, integration, comparison, template, glossary, and directory pages.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.2; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
@@ -23,9 +23,9 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when designing data-backed keyword, location, directory, integration, or comparison pages at scale, including templates, index-worthiness gates, internal links, and rollout checks.
+Use when planning, building, or rescuing many templated pages.
 
-Out of scope — auditing an existing site (use suede-seo-audit), planning editorial content (use suede-content-strategy), or publishing bulk pages without approval.
+Out of scope — auditing an existing site (use suede-seo-audit); AI answer-engine visibility and measurement (use suede-ai-seo); planning editorial content (use suede-content-strategy); publishing bulk pages without approval.
 
 ## Deployment Geography
 
@@ -44,9 +44,9 @@ Global. The skill is a prompt-and-script package that runs locally inside the in
 
 From "Boundaries":
 
-- Do not generate, publish, submit, or index a full page set before a bounded sample passes the quality checks in this skill. When the sample fails or was never run, report it in this format: name the blocking gate and the failing count, give 2-4 options (fix the template, narrow the page set, add data, publish the passing subset only), and recommend one. Proceeding past the gate is the user's call, per the gate policy above.
-- Do not invent source data, claim rankings or traffic, scrape restricted sources, or treat keyword volume as user value.
-- Do not alter production routes, templates, canonicals, sitemaps, or internal links without an approved implementation scope and current-site verification.
+- Do not generate, publish, submit, or index a full page set before a bounded sample passes. When the sample fails or was never run, name the blocking gate and failing count, give 2 to 4 options (fix the template, narrow the set, add data, publish the passing subset), and recommend one. Proceeding is the user's call.
+- Do not invent source data, claim rankings or traffic, scrape sources whose terms forbid it, or treat keyword volume as user value.
+- Do not alter production routes, templates, canonicals, sitemaps, or internal links without an approved scope and current-site verification.
 
 ## References
 

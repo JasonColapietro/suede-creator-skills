@@ -285,8 +285,9 @@ test("CI whitespace gate compares the event commit range", () => {
 });
 
 test("every catalog area is reachable through a shipped profile", async () => {
-  // Marketing and consumer skills existed in the catalog with no profile that
-  // could reach them, so 41 of 71 skills were dead weight behind the MCP.
+  // Marketing skills once existed in the catalog with no profile that could
+  // reach them, so 41 of 71 skills were dead weight behind the MCP. `consumer`
+  // is a legacy alias of `workflow` and must keep returning skills.
   const areas = new Set(CATALOG.skills.map((skill) => skill.area));
   const reached = new Set();
   for (const profile of ["workflow", "creator", "marketing", "consumer"]) {
@@ -362,7 +363,7 @@ const ROUTING_EVAL = [
   ["build an iOS app from my website", "site-to-ios-app"],
   ["find the rights gaps before I hand off a release", "suede-rights-passport"],
   ["design evals that catch model regressions", "suede-ai-eval"],
-  ["grow my instagram account", "suede-instagram-growth"]
+  ["grow my instagram account", "suede-social"]
 ];
 
 test("search routes real task phrasings to the owning skill", async () => {
@@ -493,12 +494,8 @@ test("catalog, resources, prompts, and profile filters match the live server", a
       name: "list_suede_skills",
       arguments: { area: "all" }
     });
-    // The workflow profile deliberately carries `consumer` too. Those two skills
-    // shipped in the catalog and on the site behind no registered server, so no
-    // MCP client could reach them; folding them in here beat running a fourth
-    // server for two skills.
     assert.ok(
-      response.result.structuredContent.skills.every((skill) => ["workflow", "consumer"].includes(skill.area))
+      response.result.structuredContent.skills.every((skill) => skill.area === "workflow")
     );
     assert.ok(response.result.structuredContent.skills.some((skill) => skill.name === "suede-graph-flo-xr"));
 

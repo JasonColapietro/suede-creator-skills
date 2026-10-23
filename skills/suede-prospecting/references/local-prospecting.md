@@ -2,7 +2,7 @@
 
 For when the user sells to local small businesses: shops, gyms, restaurants, salons, clinics, professional services, contractors, real estate, fitness studios, dental practices.
 
-Adapted from and generalized beyond the local-client-prospector pattern (browser-assisted discovery + website status classification + proximity scoring).
+The method has three parts: browser-assisted discovery, website status classification, and proximity scoring.
 
 ---
 

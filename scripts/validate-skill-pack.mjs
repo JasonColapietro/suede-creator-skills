@@ -892,7 +892,7 @@ for (const file of publicSkillFiles) {
     if (disclosed) return;
     for (const privateName of knownPrivateSkills) {
       if (new RegExp(`(?<![a-z0-9-])${privateName}(?![a-z0-9-])`).test(line)) {
-        fail.push(`${rel}:${index + 2} routes to private skill '${privateName}' without marking it unavailable — add "(private Suede Labs companion, not in this pack: ${privateName})"`);
+        fail.push(`${rel}:${index + 2} routes to private skill '${privateName}' without marking it unavailable — add "(private Suede AI companion, not in this pack: ${privateName})"`);
       }
     }
   });
@@ -1201,13 +1201,13 @@ countChecks.push(
   { file: "book/14-the-first-ninety-days.md", label: "anti-goal skill count", re: /Do not read all (\d+) skills/, expected: totalSkillCount },
   { file: "book/README.md", label: "skill index appendix count", re: /all (\d+) skills, grouped by/, expected: totalSkillCount },
   { file: "book/00-front-matter.md", label: "progressive-disclosure pack size", re: /grow to ([a-z]+(?:-[a-z]+)?) skills/, expected: totalSkillCount, wordNumber: true },
-  { file: "book/00-front-matter.md", label: "marketingskills attribution count", re: /([A-Z][a-z]+(?:-[a-z]+)?) of the marketing and growth skills are/, expected: bookFacts.marketingAdapted, wordNumber: true },
-  { file: "book/A1-skill-index.md", label: "marketingskills attribution count", re: /([A-Z][a-z]+(?:-[a-z]+)?) of these are adapted from/, expected: bookFacts.marketingAdapted, wordNumber: true },
+  { file: "book/00-front-matter.md", label: "marketingskills attribution count", re: /([A-Z][a-z]+(?:-[a-z]+)?) of the pack's skills, most of\s+them in marketing and growth, are adapted/, expected: bookFacts.marketingAdapted, wordNumber: true },
+  { file: "book/A1-skill-index.md", label: "marketingskills attribution count", re: /([A-Z][a-z]+(?:-[a-z]+)?) skills in the pack, most of them listed here, are adapted from/, expected: bookFacts.marketingAdapted, wordNumber: true },
   // STYLE.md is the brief the book is written against, so a stale fact there
   // seeds stale prose in the next chapter someone writes. It is excluded from
   // the loop above because it quotes counts as bare facts, not prose.
   { file: "book/STYLE.md", label: "skill folder count", re: /(\d+) public skill folders/, expected: totalSkillCount },
-  { file: "book/STYLE.md", label: "marketingskills attribution count", re: /(\d+) of the marketing skills are adapted/, expected: bookFacts.marketingAdapted },
+  { file: "book/STYLE.md", label: "marketingskills attribution count", re: /(\d+) of the pack's skills are adapted/, expected: bookFacts.marketingAdapted },
 );
 
 // Every specialty's number, on every surface that prints it. Built from the
@@ -1738,7 +1738,6 @@ function pageStyles(pagePath, text) {
   // archetype sheet would restyle them, so they keep their CSS inline.
   const BESPOKE = new Set([
     "docs/skills/index.html",
-    "docs/skills/suede-instagram-growth.html",
     "docs/blog/index.html",
   ]);
   const MAX_INLINE = 2000;

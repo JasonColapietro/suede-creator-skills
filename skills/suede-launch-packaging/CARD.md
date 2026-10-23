@@ -7,7 +7,7 @@ Release record for the `suede-launch-packaging` skill, following the NVIDIA skil
 
 ## Description
 
-Suede-owned launch packaging and install verification.
+Suede AI launch packaging and install verification: release notes, README and docs updates, install commands, proof links, release copy, and handoff notes for software, skill packs, and MCP servers.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.2; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
@@ -25,7 +25,7 @@ Target users: developers and creators running the skill inside a Claude Code or 
 
 Use when finished software work needs a clean public package (README, docs page, install command, release note, GitHub Pages update, skill-pack release, MCP server, or launch/social copy) or when a release needs handoff notes, an install fails, a public user cannot add a skill, a raw-vs-blob URL returns HTML, or `@personal` or a local plugin alias leaks into public docs. Verifies the live URL and runs the exact install command from a clean temporary directory before anything is called live.
 
-Out of scope — product, course, or artist campaign launches (use suede-campaign-in-a-box or suede-marketing-plan); writing announcement copy from scratch (use suede-copy); MCP tool-catalog QA (use suede-mcp-qa); landing-page conversion work (use suede-site-alchemy).
+Out of scope — product, course, or artist campaign launches (use suede-campaign-in-a-box or suede-marketing-plan); writing announcement copy from scratch (use suede-copy); reviewing the code being released (use suede-code); landing-page conversion work (use suede-site-alchemy).
 
 ## Deployment Geography
 

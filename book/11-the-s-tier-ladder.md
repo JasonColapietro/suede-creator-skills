@@ -139,10 +139,10 @@ Their transcripts show separation between building and checking. There is a
 point in the session where the tone changes and the builder starts trying to
 break their own work: running the error path, hitting the endpoint with a bad
 token, checking the mobile viewport, reading the migration for the rollback
-story. `suede-code-grader` encodes the standard they are holding themselves to,
-and its red flags read like a list of A-tier temptations resisted. "CI passed,
-round up." "The work was clearly hard." "It's just a refactor." "Happy path
-works, call it an A." Effort never moves a grade; evidence does.
+story. `suede-code` encodes the standard they are holding themselves to, and
+its red flags read like a list of A-tier temptations resisted. "CI is green, so
+it's fine." "The diff is small." "I wrote this, I know it works." "It was hard
+work, round up to B." Effort never moves a grade; evidence does.
 
 The specific failure that holds them at A: every unit of verified output still
 requires them to be in the loop for it. They have made themselves reliable and
@@ -191,11 +191,11 @@ dangerous.
 The heuristic that keeps it honest is frequency times consequence. If a task
 recurs often and being wrong about it is expensive, it deserves a system. If it
 recurs often and being wrong is cheap, it deserves a checklist. If it happened
-once, do it and move on. The instant-F list in `suede-code-grader` is a good
-example of the first category: hardcoded secrets and auth bypasses are both
-recurrent and catastrophic, so they get an unconditional mechanical rule that no
-other lane can override. UI spacing magic numbers appear in the same skill and
-are explicitly given no grade impact. Same author, same file, two different
+once, do it and move on. The instant-F list in `suede-code` is a good example
+of the first category: hardcoded secrets and auth bypasses are both recurrent
+and catastrophic, so they get an unconditional mechanical rule that no other
+lane can override. UI spacing magic numbers appear in the same skill and get a
+P3 note and nothing more. Same author, same file, two different
 judgments about what deserves machinery.
 
 The move at S is not "build more systems." It is to look at your last five
@@ -235,12 +235,12 @@ because the systematizing hour pays nothing today and might pay nothing ever.
 That is the honest cost. Every hour spent on the system is an hour of visible
 output not produced, and there is no guarantee of a return. A skill that nobody
 invokes is worse than nothing: it is maintenance debt with a helpful name. The
-`suede-recommend-next-action` scoring rubric names this directly, and it is
+Next move rubric in `suede-workflow-skills` names this directly, and it is
 worth borrowing outside the skill. Leverage scores two points only when the work
-"fits one focused session and prevents rework or creates a reusable result," and
-zero when it is "unscoped, multi-day, or low-payoff." Both halves matter.
-Reusable is not enough if it does not fit in a session, and bounded is not
-enough if nothing reuses it.
+fits "one focused session" and "prevents rework," and zero when it is
+"unscoped or low payoff." Both halves matter. Preventing rework is not enough
+if it does not fit in a session, and bounded is not enough if it prevents
+nothing.
 
 The failure mode at the top of this ladder is not laziness. It is a builder who
 has learned that systems are the answer and stops asking whether this particular

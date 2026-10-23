@@ -66,16 +66,16 @@ const FIXED_PAGES = [
 
 const FLAGSHIP_SKILLS = [
   "suede-workflow-skills",
-  "johnny-suede-write",
-  "johnny-suede-design",
+  "suede-seo-audit",
+  "suede-ai-seo",
+  "suede-copy",
+  "suede-design",
   "suede-visibility-grader",
   "suede-ai-eval",
   "suede-agent-teams",
-  "suede-code-grader",
   "suede-rights-passport",
   "suede-release-linter",
   "suede-code",
-  "suede-code-review",
   "suede-ci-gate",
 ];
 const FLAGSHIP_PRIORITY = "0.85";

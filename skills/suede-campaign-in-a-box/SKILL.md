@@ -149,5 +149,4 @@ the lane Output blocks, the build-next CTA, and any flagged rights/safety gaps.
   **suede-aso**.
 - Track pitched for film/TV/ads/games → **suede-sync-packaging**.
 - Release folder and metadata readiness → **suede-release-linter**.
-- Standalone conversion copy outside this campaign → **suede-copy** or
-  **johnny-suede-write**.
+- Standalone conversion copy outside this campaign → **suede-copy**.

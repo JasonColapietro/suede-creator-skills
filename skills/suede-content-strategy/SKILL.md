@@ -401,5 +401,5 @@ Emit the strategy in exactly this shape:
 - Need email or social production -> use `suede-emails` or `suede-social`.
 - Need the pipeline staffed as roles with contracts, a handoff record, and one distinct argument per distributed asset -> use `suede-newsroom`. A weekly founder interview or voice note that feeds separate founder and company account lanes uses that skill's founder-led mode.
 - Need the refresh, decay, or ranking-drop audit to run on a cadence -> use `suede-marketing-loops`.
-- Need the behavioral mechanism behind a title, hook, or CTA, stated as a testable hypothesis -> use `suede-marketing-psychology`.
+- Need the behavioral mechanism behind a title, hook, or CTA, stated as a testable hypothesis -> use `suede-offers` (Persuasion Mechanics).
 - From those skills, route portfolio priorities, pillars, clusters, and cadence back to `suede-content-strategy`.

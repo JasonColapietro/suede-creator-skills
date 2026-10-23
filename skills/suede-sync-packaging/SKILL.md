@@ -195,8 +195,7 @@ Next review step:
   **suede-rights-passport** (audit mode, then package).
 - This grows into a release campaign → **suede-campaign-in-a-box**.
 - Release folder or metadata gaps → **suede-release-linter**.
-- Standalone public copy beyond the one-sheet → **suede-copy** or
-  **johnny-suede-write**.
+- Standalone public copy beyond the one-sheet → **suede-copy**.
 
 Family order: suede-release-linter (files) → suede-rights-passport (audit, then
 package) → suede-sync-packaging (pitch); this skill is step 3.

@@ -5,15 +5,10 @@
 By Jason Colapietro, Suede AI
 
 Companion to [suede-creator-skills](https://github.com/JasonColapietro/suede-creator-skills),
-a 76-skill open-source pack for Claude Code and OpenAI Codex.
+a 63-skill open-source pack for Claude Code and OpenAI Codex.
 
-The `suede-graph-flo-xr` operation graph and thought-state model discussed in this book
-adapt Graph of Thoughts by ETH Zurich. Citation: Maciej Besta, Nils Blach, Ales
-Kubicek, Robert Gerstenberger, Lukas Gianinazzi, Joanna Gajda, Tomasz Lehmann,
-Michał Podstawski, Hubert Niewiadomski, Piotr Nyczyk, and Torsten Hoefler
-(2024), "Graph of Thoughts: Solving Elaborate Problems with Large Language
-Models," _Proceedings of the AAAI Conference on Artificial Intelligence_,
-38(16), 17682-17690, https://doi.org/10.1609/aaai.v38i16.29720.
+The `suede-graph-flo-xr` workflow discussed in this book adapts BSD-licensed
+code. Its copyright and license notice is in `NOTICE.md`.
 
 ---
 
@@ -27,7 +22,7 @@ writing the procedure down once, in a form an agent could run, and never
 re-explaining it.
 
 That is what a skill is. A folder, a markdown file, a procedure with a defined
-output. Seventy-six public skills, readable before you install them and editable
+output. Sixty-three public skills, readable before you install them and editable
 after.
 
 This book is the reasoning underneath. Half of it is how the machinery works:
@@ -68,7 +63,7 @@ the operating rules the book keeps returning to, collected in one page.
 
 **Progressive disclosure.** An agent reads every skill's description and almost
 none of their bodies. The description is the router. The body is the payload,
-loaded only on a match. This is why a pack can grow to seventy-six skills
+loaded only on a match. This is why a pack can grow to sixty-three skills
 without drowning the context window, and why a badly written description is a
 broken feature rather than a cosmetic one.
 
@@ -99,10 +94,8 @@ else, the file to check is
 
 ## License and credit
 
-Original work in the pack is MIT licensed. Adapted components retain their
-upstream notices beside the source. Forty of the marketing and growth skills are
-adapted from [marketingskills](https://github.com/coreyhaines31/marketingskills)
-by Corey Haines under the MIT License. That project is the origin of the material,
-and the credit belongs there. The adapted Graph of Thoughts workflow carries
-its upstream BSD terms at `skills/suede-graph-flo-xr/LICENSE.graph-of-thoughts-BSD.txt`.
-Full notice: `NOTICE.md`.
+Original work in the pack is MIT licensed. Thirty-eight of the pack's skills, most of
+them in marketing and growth, are adapted from MIT-licensed source material,
+and the `suede-graph-flo-xr` workflow adapts BSD-licensed code that ships with
+its license at `skills/suede-graph-flo-xr/LICENSE.graph-of-thoughts-BSD.txt`.
+The copyright and license notices are in `NOTICE.md`.

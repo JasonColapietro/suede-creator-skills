@@ -40,7 +40,7 @@ future is exciting.
 
 ## Facts you may use (verified in-repo)
 
-- 76 public skill folders, each a `skills/<name>/SKILL.md`. Original work is
+- 63 public skill folders, each a `skills/<name>/SKILL.md`. Original work is
   MIT licensed; adapted components retain their upstream notices.
 - Install: `/plugin marketplace add JasonColapietro/suede-creator-skills` then
   `/plugin install suede-skills@suede`. Also `install.sh`, `npx skills add`,
@@ -50,9 +50,9 @@ future is exciting.
   out of watching hired marketing firms skip fundamentals on his own products.
 - House line of `suede-full-send`: "Never end your allocation above zero." It is
   a dry joke about already-authorized compute, not a literal token counter.
-- 40 of the marketing skills are adapted from `marketingskills` by Corey Haines
-  under MIT. Credit belongs there. Say so if marketing skills come up.
-- `amazon-returns-recovery` separates read-only discovery, per-item approval, and refund verification. Public examples are synthetic.
+- 38 of the pack's skills are adapted from MIT-licensed source material. Point
+  to `NOTICE.md` for the copyright and license notice; do not name upstream
+  authors in book prose.
 - Design palette: background `#080808`, gold `#c8a96e`, risk red `#8b1a1a`.
 
 Anything else numeric, verify by reading the repo before you write it.

@@ -7,7 +7,7 @@
     "node": ">=22"
   },
   "scripts": {
-    "validate": "node scripts/validate-skill-pack.mjs --strict && node scripts/validate-trigger-routing.mjs && node scripts/build-book-site.mjs --check && node scripts/build-book.mjs --check && node scripts/build-skill-cards.mjs --check && node scripts/build-skills-sh-json.mjs --check && node scripts/build-directory.mjs --check && node scripts/build-awesome-directory.mjs --check && node scripts/build-related-skills.mjs --check && node scripts/build-listings.mjs --check",
+    "validate": "node scripts/validate-skill-pack.mjs --strict && node scripts/validate-trigger-routing.mjs && node scripts/build-book-site.mjs --check && node scripts/build-book.mjs --check && node scripts/build-skill-cards.mjs --check && node scripts/build-skills-sh-json.mjs --check && node scripts/build-directory.mjs --check && node scripts/build-awesome-directory.mjs --check && node scripts/build-related-skills.mjs --check && node scripts/build-retired-skill-pages.mjs --check && node scripts/build-listings.mjs --check",
     "build:cards": "node scripts/build-skill-cards.mjs",
     "build:book": "node scripts/build-book.mjs && node scripts/build-book-pdf.mjs && node scripts/build-book-site.mjs",
     "build:shiplog": "node scripts/build-shiplog.mjs",
@@ -37,7 +37,8 @@
     "build:awesome": "node scripts/build-awesome-directory.mjs",
     "test:awesome": "node --test tests/test_awesome_directory.mjs",
     "test:related": "node --test tests/test_related_skills.mjs",
-    "build:related": "node scripts/build-related-skills.mjs"
+    "build:related": "node scripts/build-related-skills.mjs",
+    "build:retired": "node scripts/build-retired-skill-pages.mjs"
   },
   "dependencies": {
     "js-yaml": "5.5.0"

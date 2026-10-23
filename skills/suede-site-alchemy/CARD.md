@@ -7,7 +7,7 @@ Release record for the `suede-site-alchemy` skill, following the NVIDIA skill-ca
 
 ## Description
 
-Suede-owned conversion-path discipline for pages.
+Suede AI conversion-rate optimization for landing, launch, campaign, and product pages.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.2; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
@@ -23,9 +23,9 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when a live or drafted page needs conversion-rate work on its structure and persuasion path.
+Use when a live or drafted page gets traffic but not enough sign-ups, demos, or sales.
 
-Out of scope — a scored SEO/AI-visibility audit (use suede-seo-audit); a fast launch-appeal grade (use suede-visibility-grader); writing the copy itself (use suede-copy).
+Out of scope — a scored SEO audit (use suede-seo-audit); getting cited by AI answer engines (use suede-ai-seo); a fast promotion-readiness grade (use suede-visibility-grader); writing the copy itself (use suede-copy).
 
 ## Deployment Geography
 

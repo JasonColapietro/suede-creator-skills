@@ -7,7 +7,7 @@ Release record for the `suede-agent-teams` skill, following the NVIDIA skill-car
 
 ## Description
 
-Suede Labs agent-team orchestrator: split complex work into coordinated lanes with explicit file ownership, WIP collision detection, quality gates, escalation thresholds, rollback plans, and handoffs that prove what shipped.
+Suede AI agent-team orchestrator, the method behind multi-agent automation: split complex work into coordinated lanes with explicit file ownership, WIP collision detection, quality gates, escalation thresholds, rollback plans, and handoffs that prove what shipped.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.2; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
@@ -25,7 +25,7 @@ Target users: developers and creators running the skill inside a Claude Code or 
 
 Use when one shared change needs safe parallel ownership across builders and reviewers, when a lane map must be resolved before anyone opens a file, or when running a repeatable public-repository contribution program with issue scoring, atomic task leases, isolated worktrees, and explicit publication authority.
 
-Out of scope — one repo change a bundled DAG can run end to end (use suede-graph-flo-xr); findings-only review of a diff (use suede-code-review) or an A-F ship grade (use suede-code-grader); CI, branch protection, or merge-gate wiring (use suede-ci-gate); branch and worktree setup on a stale mirror (a private Suede Labs companion, not in this pack).
+Out of scope — one repo change a bundled DAG can run end to end (use suede-graph-flo-xr); reviewing or grading a diff (use suede-code); CI, branch protection, or merge-gate wiring (use suede-ci-gate); picking which single skill fits a request (use suede-workflow-skills).
 
 ## Deployment Geography
 

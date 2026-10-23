@@ -119,17 +119,17 @@ cap.
 
 | Need | Skill |
 |---|---|
-| Plan, ideas, loops, multi-role critique, persuasion mechanics | `suede-marketing-plan`, `suede-marketing-ideas`, `suede-marketing-loops`, `suede-marketing-council`, `suede-marketing-psychology` |
+| Plan or tactic shortlist; loops; multi-role critique | `suede-marketing-plan`; `suede-marketing-loops`; `suede-marketing-council` |
 | Competitor comparison pages; one rival in depth | `suede-competitors`; `suede-competitor-profiling` |
 | Buyer research, positioning, product messaging | `suede-customer-research`, `suede-product-marketing` |
 | Paid strategy; the ad units themselves | `suede-ads`; `suede-ad-creative` |
-| Organic social; Instagram account audit; content pipeline; clip to guide | `suede-social`; `suede-instagram-growth`; `suede-newsroom`; `suede-clip-to-guide` |
+| Organic social, including Instagram account audits; content pipeline; clip to guide | `suede-social`; `suede-newsroom`; `suede-clip-to-guide` |
 | Outbound and pipeline | `suede-cold-email`, `suede-prospecting`, `suede-sales-enablement`, `suede-revops` |
 | PR, partners, community, referrals | `suede-public-relations`, `suede-co-marketing`, `suede-community-marketing`, `suede-referrals` |
 | Lifecycle email and SMS | `suede-emails`, `suede-sms` |
 | Lead magnets | `suede-lead-magnets` |
-| Offers, pricing, paywalls | `suede-offers`, `suede-pricing`, `suede-paywalls` |
-| Signup, onboarding, churn | `suede-signup`, `suede-onboarding`, `suede-churn-prevention` |
+| Offers and persuasion mechanics, pricing, paywalls | `suede-offers`, `suede-pricing`, `suede-paywalls` |
+| Signup and onboarding; churn | `suede-onboarding`; `suede-churn-prevention` |
 | Analytics, attribution, A/B tests | `suede-analytics`, `suede-attribution`, `suede-ab-testing` |
 
 **Creator and rights**
@@ -139,14 +139,7 @@ cap.
 | Full artist campaign | `suede-campaign-in-a-box` |
 | Sync review package (no promo CTA, placement, or clearance claims) | `suede-sync-packaging` |
 | Release folder audit: stems, artwork, lyrics, metadata | `suede-release-linter` |
-| Ownership, split, sample, and license gaps; then package the transfer | `suede-rights-audit`, then `suede-rights-passport` |
-
-**Consumer recovery**
-
-| Need | Skill |
-|---|---|
-| Amazon restocking fees, short refunds, Amazon-billed subscriptions (needs Claude in Chrome logged in) | `amazon-returns-recovery` |
-| Any other recurring subscription | `subscription-recovery` |
+| Ownership, split, sample, and license gaps, then the transfer package | `suede-rights-passport` (audit mode, then package) |
 
 ### Umbrella-only installs
 

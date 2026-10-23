@@ -5,15 +5,10 @@
 By Jason Colapietro, Suede AI
 
 Companion to [suede-creator-skills](https://github.com/JasonColapietro/suede-creator-skills),
-a 76-skill open-source pack for Claude Code and OpenAI Codex.
+a 63-skill open-source pack for Claude Code and OpenAI Codex.
 
-The `suede-graph-flo-xr` operation graph and thought-state model discussed in this book
-adapt Graph of Thoughts by ETH Zurich. Citation: Maciej Besta, Nils Blach, Ales
-Kubicek, Robert Gerstenberger, Lukas Gianinazzi, Joanna Gajda, Tomasz Lehmann,
-Michał Podstawski, Hubert Niewiadomski, Piotr Nyczyk, and Torsten Hoefler
-(2024), "Graph of Thoughts: Solving Elaborate Problems with Large Language
-Models," _Proceedings of the AAAI Conference on Artificial Intelligence_,
-38(16), 17682-17690, https://doi.org/10.1609/aaai.v38i16.29720.
+The `suede-graph-flo-xr` workflow discussed in this book adapts BSD-licensed
+code. Its copyright and license notice is in `NOTICE.md`.
 
 ---
 
@@ -27,7 +22,7 @@ writing the procedure down once, in a form an agent could run, and never
 re-explaining it.
 
 That is what a skill is. A folder, a markdown file, a procedure with a defined
-output. Seventy-six public skills, readable before you install them and editable
+output. Sixty-three public skills, readable before you install them and editable
 after.
 
 This book is the reasoning underneath. Half of it is how the machinery works:
@@ -68,7 +63,7 @@ the operating rules the book keeps returning to, collected in one page.
 
 **Progressive disclosure.** An agent reads every skill's description and almost
 none of their bodies. The description is the router. The body is the payload,
-loaded only on a match. This is why a pack can grow to seventy-six skills
+loaded only on a match. This is why a pack can grow to sixty-three skills
 without drowning the context window, and why a badly written description is a
 broken feature rather than a cosmetic one.
 
@@ -99,13 +94,11 @@ else, the file to check is
 
 ## License and credit
 
-Original work in the pack is MIT licensed. Adapted components retain their
-upstream notices beside the source. Forty of the marketing and growth skills are
-adapted from [marketingskills](https://github.com/coreyhaines31/marketingskills)
-by Corey Haines under the MIT License. That project is the origin of the material,
-and the credit belongs there. The adapted Graph of Thoughts workflow carries
-its upstream BSD terms at `skills/suede-graph-flo-xr/LICENSE.graph-of-thoughts-BSD.txt`.
-Full notice: `NOTICE.md`.
+Original work in the pack is MIT licensed. Thirty-eight of the pack's skills, most of
+them in marketing and growth, are adapted from MIT-licensed source material,
+and the `suede-graph-flo-xr` workflow adapts BSD-licensed code that ships with
+its license at `skills/suede-graph-flo-xr/LICENSE.graph-of-thoughts-BSD.txt`.
+The copyright and license notices are in `NOTICE.md`.
 
 ---
 
@@ -184,14 +177,14 @@ not reusable across a hundred tasks.
 Mechanically, a skill is boring, which is the best thing about it.
 
 It is a folder with a `SKILL.md` file inside. In this repo they live at
-`skills/<name>/SKILL.md`, 76 of them, under documented open-source licenses. The file opens with YAML
+`skills/<name>/SKILL.md`, 63 of them, under documented open-source licenses. The file opens with YAML
 frontmatter carrying a `name` and a `description`. Everything after the closing
 `---` is the body: the procedure the agent reads when the skill fires.
 
 ```yaml
 ---
 name: suede-deslop
-description: "Suede Labs context-aware anti-slop pass for finished prose: find or remove generic filler without flattening the author's voice. ..."
+description: "Suede Slop Stop: the Suede AI context-aware anti-slop pass for finished prose. Finds or removes generic filler ... without flattening the author's voice. ..."
 ---
 ```
 
@@ -199,32 +192,32 @@ That is the whole mechanism. No plugin API, no compilation step, no runtime. A
 skill is a document, and it works because the agent reading it is a competent
 reader who follows written instructions.
 
-The body is where the specialist lives. `skills/suede-code-grader/SKILL.md` is
-212 lines. It contains a list of instant-F triggers checked before any lane is
+The body is where the specialist lives. `skills/suede-code/SKILL.md` is
+428 lines. It contains a list of instant-F triggers checked before any lane is
 scored, seven grading lanes, grade caps that hold auth and payment changes at C
-without named bypass-path evidence, and a fixed output block ending in a ship
+without tested bypass and error paths, and a fixed output block ending in a ship
 gate. `skills/suede-deslop/SKILL.md` carries a 25-row kill list of filler
 phrases with replacements, ten formulaic structures with their fixes, and a
 50-point score with a threshold below which the text does not ship. None of that
 is clever. All of it is written down, which means it runs the same way on a
 Tuesday afternoon as it does at midnight.
 
-## Progressive disclosure, or why 76 skills fit
+## Progressive disclosure, or why 63 skills fit
 
-Here is the objection that arrives immediately. The 76 `SKILL.md` files in this
-repo total 1,103,931 bytes. Loading all of them into every conversation would
+Here is the objection that arrives immediately. The 63 `SKILL.md` files in this
+repo total 915,176 bytes. Loading all of them into every conversation would
 crowd out the thing you actually came to do.
 
 They are not all loaded. Only the frontmatter descriptions stay resident, and
-all 76 descriptions together come to 46,743 bytes. That is roughly a
-twenty-fourth of the corpus. The agent holds a catalog of what exists and reads
+all 63 descriptions together come to 49,381 bytes. That is roughly a
+nineteenth of the corpus. The agent holds a catalog of what exists and reads
 a body only when a description matches the task in front of it.
 
 This is progressive disclosure, and it changes what a description is for. The
 description is not marketing copy for the skill. It is the router. It carries
 the entire burden of deciding whether 400 lines of procedure load or stay on
 disk. Chapter 2 takes that apart in detail, including the `NOT FOR:` convention
-that 76 of the 76 descriptions in this repo use to push work toward a better
+that 63 of the 63 descriptions in this repo use to push work toward a better
 match.
 
 The consequence for you is direct: a skill you install and never trigger costs
@@ -314,8 +307,8 @@ for.
 
 # Chapter 2. Anatomy of a Skill
 
-Open `skills/suede-code-grader/SKILL.md` and read it top to bottom. It takes
-about six minutes. At the end of those six minutes you will know exactly what
+Open `skills/suede-code/SKILL.md` and read it top to bottom. It takes
+about ten minutes. At the end of those six minutes you will know exactly what
 the agent will do to your diff, which parts it will refuse to do, and what the
 output will look like before you run it once.
 
@@ -328,15 +321,14 @@ Every `SKILL.md` in this repo opens the same way:
 
 ```yaml
 ---
-name: suede-code-grader
-description: "Suede AI blunt A-F ship grade for a code change across correctness, security and permissions, data and state, domain truth, UX and release behavior, tests and verification, and deploy readiness, with Instant-F triggers and evidence-based grade caps on auth, payment, migration, and public-API surfaces. Use when asked to grade this, give it a letter, is this an A, how ready is this to ship, or should this merge — when the caller wants the verdict without a findings list. NOT FOR: findings, evidence, and fix briefs (use suede-code-review, or suede-code for findings plus grade); enforcing the verdict in CI (use suede-ci-gate); eval coverage for AI behavior (use suede-ai-eval)."
+name: suede-code
+description: "Suede AI code review and A-F ship grade for a diff, PR, branch, or commit range: findings ranked P0-P3 with file:line evidence and a fix path, an A-F grade across seven lanes with Instant-F security triggers and surface grade caps, OWASP 2025 checks, a deploy-safety gate, a commit-dirt scan, and fix briefs. Three modes: full review and grade in one pass (default), findings only with no grade, and grade only with no findings list. Use when asked to review this, grade this, find the bugs before merge, security-check this, is this safe to ship, give it a letter, or should this merge. Runs only when explicitly invoked; never auto-fires on a diff, save, or commit. NOT FOR: making CI enforce the verdict on every merge (use suede-ci-gate); LLM, RAG, or agent behavior coverage (use suede-ai-eval); searching competing plans and building a multi-file change (use suede-graph-flo-xr); fixes that need coordinated parallel lanes (use suede-agent-teams)."
 ---
 ```
 
-Across all 76 skills, the frontmatter carries `name` 76 times and `description`
-76 times. Forty-eight of them add a `metadata` block with a version string, a
-convention inherited from the marketing skills adapted from Corey Haines's
-`marketingskills` under MIT. Nothing else appears. The schema is small on
+Across all 63 skills, the frontmatter carries `name` 63 times and `description`
+63 times. Forty-three of them add a `metadata` block with a version string, a
+convention the marketing and growth skills brought with them. Nothing else appears. The schema is small on
 purpose, because everything the frontmatter does happens before the body is
 read.
 
@@ -349,52 +341,55 @@ you.
 ## The description carries the routing burden
 
 The description is the only part of a skill that stays in the agent's context
-when the skill is not running. In this repo the 76 files total 1,103,931 bytes;
-the 76 descriptions together are 46,743. The agent holds the small number and
+when the skill is not running. In this repo the 63 files total 915,176 bytes;
+the 63 descriptions together are 49,381. The agent holds the small number and
 reaches for the large one only when a description matches.
 
 That makes the description a router, not a summary. It has to answer two
 questions well enough that an agent mid-task can decide in one pass: what does
 this produce, and when should it fire.
 
-Look at what `suede-code-grader` does with 680 characters. "Suede AI blunt
-A-F ship grade for a code change" states the artifact. The lane list names the
-surfaces it covers. The trigger list catches the request in the words a caller
-actually types: "give it a letter", "is this an A", "should this merge". Then
-the last sentence does the real work: "NOT FOR: findings, evidence, and fix
-briefs (use suede-code-review, or suede-code for findings plus grade)." That
-sentence exists because `suede-code-review` lives next door and produces
-something different, and without it an agent would pick between them by coin
-flip.
+Look at what `suede-code` does with 953 characters. "Suede AI code review and
+A-F ship grade for a diff, PR, branch, or commit range" states the artifact. The
+next clauses name what comes back and the three modes, so a caller who only
+wants the letter knows it can ask for one. The trigger list catches the request
+in the words a caller actually types: "find the bugs before merge", "give it a
+letter", "should this merge". Then the last sentence does the real work: "NOT
+FOR: making CI enforce the verdict on every merge (use suede-ci-gate)." That
+clause exists because `suede-ci-gate` lives next door and produces something
+different, and without it an agent would pick between them by coin flip.
 
-`suede-deslop` does the same job in 555 characters:
+`suede-deslop` does the same job in 900 characters:
 
 ```text
-description: "Suede Labs context-aware anti-slop pass for finished prose: find
-or remove generic filler, manufactured emphasis, false agency, and formulaic
-structure without flattening the author's voice. Use before copy, a README, an
-email, a social post, or a doc ships; after a long assisted-writing session; or
-when the user asks for a findings-only slop audit. NOT FOR: writing new copy (use
-suede-copy); deciding whether a person or model wrote text; changing or
-certifying facts, which must be checked against primary evidence before
-publication."
+description: "Suede Slop Stop: the Suede AI context-aware anti-slop pass for
+finished prose. Finds or removes generic filler, manufactured emphasis, false
+agency, formulaic structure, chat and draft residue, formatting applied by rule,
+and the Suede AI house bans (em dashes, moreover, delve, game-changer, unlock,
+elevate, seamless, landscape, tapestry, rule-of-three rhythm) without flattening
+the author's voice. Returns cleaned prose with a 50-point score, or a
+findings-only audit that leaves the text untouched. Use before copy, a README,
+an email, a social post, or a doc ships; after a long AI-assisted writing
+session; or when asked to strip AI tells, deslop, or audit text for slop. NOT
+FOR: writing or restructuring copy (use suede-copy); one high-stakes public
+piece that needs research and fact review (use suede-ship-copy); deciding
+whether a person or model wrote text; changing or certifying facts."
 ```
 
 Three parts. What it does, the trigger conditions in the vocabulary a user
-actually types ("sounds fine but feels generated"), and then the boundary.
+actually types ("strip AI tells", "deslop"), and then the boundary.
 
 ## The `NOT FOR:` convention
 
-Seventy-six of the 76 descriptions in this repo end with a `NOT FOR:` clause,
-and it is the highest-leverage sentence in the file. The remaining two close the
-same way without the colon, which is drift rather than a second convention.
+Sixty-three of the 63 descriptions in this repo end with a `NOT FOR:` clause,
+and it is the highest-leverage sentence in the file. That count is measured,
+not asserted: the validator checks this sentence against the files on every run.
 
 A description that only says what a skill does will fire on adjacent work,
 because the agent has no signal that a better match exists. `NOT FOR:` supplies
 the signal, and it does so by naming the alternative rather than just declining.
-`suede-recommend-next-action` closes with "NOT FOR: executing the recommended
-action without the user's separate authorization, or coordinating a multi-lane
-build across specialists (use suede-agent-teams)." `suede-pricing` closes with
+`suede-workflow-skills` closes with "NOT FOR: a request that already names one
+lane (go straight to that specialist)." `suede-pricing` closes with
 "NOT FOR: in-product upgrade screens (use suede-paywalls), offer bonuses and
 guarantees (use suede-offers), or executing billing changes."
 
@@ -410,30 +405,24 @@ included.
 
 ## The advisory-gate policy
 
-Before any of `suede-code-grader`'s grading logic appears, the body opens with a
+Before any of `suede-code`'s grading logic appears, the body opens with a
 policy block. It is worth reading in full, because it is the most consequential
 design decision in the pack:
 
 ```text
-## Gate policy — advisory, not blocking
+## Gate policy: advisory, not blocking
 
-Every claim-verification step, check, quality gate, and ship verdict in this
-skill is a **recommendation to the user, not a control on the agent**. This
-policy governs every gate, check, verdict, and "do not ship / publish /
-proceed" line elsewhere in this skill:
+Every check, grade, and ship verdict here is a recommendation to the user, not
+a control on the agent.
 
-- Run every check and report the results honestly. Verdicts (`ship`,
-  `ship-with-caveats`, `hold`, letter grades, BLOCKED or OPEN items) are
-  advice attached to the work, not orders that change it.
-- Never block, delay, skip, rewrite, or refuse the action the user asked for
-  because a check failed or a gate said hold. Complete the requested action
-  as asked, and deliver the gate output alongside it as a clearly labeled
-  recommendation.
-- A failed gate changes what you report, never what you do.
-- Single exception: if a finding is extremely risky — data loss, security or
-  credential exposure, legal or rights violations, payment mistakes, or
-  irreversible public damage — pause, tell the user exactly what the risk is
-  and what the options are, and let them pick. Their choice is final.
+- Run every check and report results honestly. `ship`, `ship-with-caveats`,
+  `hold`, letter grades, and BLOCKED items are advice attached to the work.
+- Never block, delay, skip, or rewrite the action the user asked for because a
+  gate said hold. A failed gate changes what you report, never what you do.
+- Single exception: an extreme-risk finding (data loss, credential exposure,
+  legal or rights violation, payment mistake, irreversible public damage).
+  Pause, state the risk and the options, and let the user pick. Their choice
+  is final.
 ```
 
 Consider what happens without it. A skill full of gates and hold verdicts, read
@@ -456,13 +445,15 @@ question. A C in the UX lane does not.
 
 Everything after the policy is the procedure. The section order is doing work.
 
-**Source Truth** comes first, and it is four words of instruction followed by a
-list: "Read before grading. Do not grade from the PR description or commit
-message alone." Then the specific inspection list, including "build, test, lint,
-typecheck, browser, simulator, MCP, or live/API evidence that directly exercises
-the changed behavior." The section ends by handling the case where that evidence
-is unavailable: grade the source and mark those lanes unverified. The skill
-never leaves the agent to improvise a fallback.
+**Pre-flight** comes first, and it is one instruction followed by a list: "Name
+three things before analysis." Target, intent, risk lanes. The intent line
+carries its own search order for the spec (issue references, a path the caller
+passed, a matching file under `docs/` or `specs/`) and handles the case where
+none exists: write "no spec available" and judge intent from the PR description
+alone. "Never invent requirements." The skill never leaves the agent to
+improvise a fallback. Right after it, **Run the repo's own gates first** tells
+the agent to run the type check, lint, and tests the repo already ships before
+reading a line by hand, and to cite command and exit status for each.
 
 **Instant-F triggers** run before any lane is scored. Six categories, each with
 concrete patterns: a hardcoded secret in a committed file, SQL built by string
@@ -476,42 +467,40 @@ grader that scores seven lanes first will average a catastrophe into a C.
 letter means with a worked example attached. A is not "good." A is "all lanes
 pass, behavior is verified at runtime, no known follow-ups."
 
-**Grade caps by surface type** is where the skill stops being a rubric and
-becomes a specialist. Auth changes cannot receive an A without explicit test
-coverage for the bypass path, with named evidence such as "tested with expired
-token returns 401." If that is missing and the happy-path caveats are missing
-too, the instruction is unambiguous: "If neither condition is met: cap at C
-regardless of other lane performance." Data migrations with no rollback plan cap
-at D.
+**Grade caps by surface** is where the skill stops being a rubric and becomes a
+specialist. Auth changes cannot receive an A unless the bypass or escalation
+path is tested. Without that, and without the happy path plus named caveats that
+earn a B, the instruction is unambiguous: "otherwise cap at C." Data migrations
+with no rollback plan cap at D.
 
-**Technical debt indicators** carries a table that grades the same pattern
-differently by location, which is the kind of judgment most rubrics flatten:
+**Technical debt** carries a table that grades the same pattern differently by
+location, which is the kind of judgment most rubrics flatten:
 
-| Pattern | Location | Grade Impact |
+| Pattern | Location | Impact |
 |---|---|---|
-| God object (5+ unrelated concerns) | Payment module | D in Correctness |
-| God object | Utility helper | B in Correctness |
+| Function or class doing 5+ unrelated jobs | Payment module | D in Correctness |
+| Same | Utility helper | B in Correctness |
 
-The **Red Flags** section lists the rationalizations that inflate grades, in the
-agent's own voice: "CI passed, round up." "The work was clearly hard." "It's
-just a refactor."
+The **Red flags** section lists the rationalizations that inflate grades, in the
+agent's own voice: "CI is green, so it's fine." "The diff is small." "It was hard
+work, round up to B."
 
-**Output Format** fixes the artifact: a plain-language summary, the target, the
-seven lane grades, the overall, the cap applied, the evidence, three required
-upgrades, and a verification block split into Checked and Not checked. The last
-line resolves mechanically. A becomes `ship`, B becomes `ship-with-caveats`, C
-and below become `hold`.
+**Output** fixes the artifact: a plain-language explanation first, then, by
+mode, the findings, the seven lane grades with the cap applied, a deploy-safety
+block, a commit-dirt rating, open questions, and a verification block split into
+checked and not checked. The last line resolves mechanically. A becomes `ship`,
+B becomes `ship-with-caveats`, C and below become `hold`.
 
-**Boundaries** closes the loopholes, including one rule that prevents the most
-annoying possible failure: "Never report a C, D, or F without naming the
-required upgrade that would move the grade."
+One rule closes the most annoying possible failure: "Never report a C, D, or F
+without the upgrade that would move it."
 
-Then a worked example, which is unusual and worth copying. The skill grades a
-real file from its own repo, `mcp/suede-skills-mcp.mjs`, 715 lines, spawned as a
+Then two worked examples, which is unusual and worth copying. The grade-only one
+grades a real file from its own repo, `mcp/suede-skills-mcp.mjs`, spawned as a
 process and driven with real JSON-RPC requests over stdin. It lands on an
-overall A with a B in Suede truth over an unbounded string echo, and it closes
-by naming its own standard: every claim ties to a line number or a command
-actually run, "not an invented test result or a guessed line number."
+overall A, and it closes by naming its own standard: every claim ties to a line
+number or a command actually run, "not an invented test result or a guessed
+line number." The skill loads those examples only when calibrating, so they
+cost nothing on an ordinary run.
 
 ## What lives beside the SKILL.md
 
@@ -551,12 +540,12 @@ none of those mentions are grounded in anything.
 The dissection above never does that. Every section either names a specific
 pattern to look for, defines what evidence satisfies a claim, or fixes the shape
 of the output. Instant-F names the exact injection pattern. Grade caps name the
-exact sentence that lifts the cap. Output Format leaves no room to write a
+exact evidence that lifts the cap. Output leaves no room to write a
 paragraph of impressions instead of seven letters and a gate.
 
 A defined output artifact is the load-bearing part. Once the skill has to fill
-in `Checked:` and `Not checked:`, the agent cannot quietly skip a step, because
-the skipped step has to be written down in the second field.
+in checked and not checked, the agent cannot quietly skip a step, because the
+skipped step has to be written down in the second field.
 
 ## The standard
 
@@ -618,9 +607,9 @@ with sloppier prose but better word overlap takes the request.
 The pack enforces this mechanically. `tests/fixtures/trigger-routing.json`
 defines groups of competing skills, and each route carries `positive` signals,
 `negative` signals, and a `metadataMustContain` list that has to appear in the
-skill's actual description. For `suede-code-grader`, `metadataMustContain` is
-`["a f", "grade"]`. If someone rewrites that description into something more
-dignified and drops the literal "A-F," `node scripts/validate-trigger-routing.mjs`
+skill's actual description. For `suede-code`, `metadataMustContain` is
+`["review", "grade"]`. If someone rewrites that description into something more
+dignified and drops the literal "grade," `node scripts/validate-trigger-routing.mjs`
 fails. The vocabulary is a tested interface, not a style choice.
 
 There is also an ambiguous case in that fixture, and it is the honest one:
@@ -639,14 +628,14 @@ regrettable answer to an unclear question.
 
 ## NOT FOR is the other half of the contract
 
-Forty-eight of the 76 public skills carry a `NOT FOR:` clause in their
+Forty-eight of the 63 public skills carry a `NOT FOR:` clause in their
 description. It always has the same shape: the condition under which a sibling
 wins, then the sibling's exact name in parentheses.
 
-`suede-graph-flo-xr` refuses three specific neighbors: high-volume work that splits into
-independent worker tasks goes to `suede-codex-fleet`, findings-only review with
-no code change goes to `suede-code-review`, and CI and branch-protection wiring
-goes to `suede-ci-gate`. Read that as a routing table written from the point of
+`suede-graph-flo-xr` refuses three specific neighbors: bulk independent work goes
+to a separate private worker-fleet pass, reviewing or grading an existing diff
+goes to `suede-code`, and CI and branch-protection wiring goes to
+`suede-ci-gate`. Read that as a routing table written from the point of
 view of whichever skill is most likely to steal the request.
 
 The generic version is worthless. "NOT FOR: other tasks" tells the router
@@ -655,19 +644,18 @@ description in a coherent pack is relevant to something. The question is "is thi
 skill more relevant than that one," and only a named comparison answers it.
 
 Two rules make the clause work. Name the sibling, not the category: `use
-suede-code-review` routes, "use a review tool" does not. Name the condition, not
-the vibe: "findings-only review with no code change" is testable against a
+suede-code` routes, "use a review tool" does not. Name the condition, not
+the vibe: "reviewing or grading an existing diff" is testable against a
 request string, "smaller jobs" is not. And write it from the near-miss. Nobody
 confuses a shipping pipeline with a rights audit. The dangerous neighbor is
 always the one that does almost the same thing.
 
-The cleanest example in the repo is a mutual pair. `amazon-returns-recovery`
-declines bank chargebacks, marketplace seller claims, and subscriptions billed
-outside Amazon, and hands them to `subscription-recovery`. `subscription-recovery`
-declines Amazon returns, restocking fees, and Amazon-billed Prime Video Channels,
-Audible, and Kindle Unlimited, and hands them back. Two skills that would
-otherwise fight over every refund request instead partition the space by billing
-relationship. Neither description needs to be cleverer than the other, because
+The cleanest example in the repo is a mutual pair. `suede-pricing` declines
+in-product upgrade screens and hands them to `suede-paywalls`. `suede-paywalls`
+declines public pricing pages and tier architecture and hands them back. Two
+skills that would otherwise fight over every pricing request instead partition
+the space by surface: the plan and the public page on one side, the screen
+inside the product on the other. Neither description needs to be cleverer than the other, because
 the boundary is written down on both sides.
 
 ## What overlap actually costs you
@@ -719,7 +707,7 @@ personal `~/.claude/skills/` directory contains `suede-debug`, `suede-verify`,
 `suede-plan`, `suede-spec`, and about fifteen more that are not in the public
 repo. Their boundaries are real to me: `suede-debug` declines proving a finished
 feature works and sends it to `suede-verify`, and declines reviewing a diff for
-quality and sends it to `suede-code-review`. Two of those three exist for me. One
+quality and sends it to `suede-code`. Two of those three exist for me. One
 of them exists for you.
 
 So `scripts/validate-skill-pack.mjs` lints the estate. It parses every `NOT FOR`
@@ -751,7 +739,7 @@ demonstrates itself by finding a real bug in the pack's release gate.
 
 ## A pack is a namespace
 
-Ten skills have forty-five possible pairwise collisions. Seventy-six have more
+Ten skills have forty-five possible pairwise collisions. Sixty-three have more
 than two thousand six hundred. You cannot write your way out of that with better
 positive descriptions, because none of the descriptions are inaccurate. They are
 all true. Truth about what a skill does says nothing about whether it should
@@ -1163,10 +1151,9 @@ fleet and a very expensive way to generate material nobody will check.
 
 ## The stack, formally
 
-The six skills this chapter and the last keep circling — `suede-full-send`,
-`suede-graph-flo-xr`, `suede-agent-teams`, `suede-codex-fleet`, `suede-workflow-skills`,
-`suede-recommend-next-action` — ship as a named group: the Agentic Adderall
-Stack, sold with a straight face at `/cracked.html` on the docs site. The label
+Three of the skills this chapter and the last keep circling, `suede-graph-flo-xr`,
+`suede-agent-teams`, and `suede-workflow-skills`, ship as a named group: the
+Agentic Adderall Stack, sold with a straight face at `/cracked.html` on the docs site. The label
 is a joke. The contract underneath is not, and it is worth stating precisely
 because it demonstrates the pack's own discipline applied to itself.
 
@@ -1194,9 +1181,9 @@ competing plans, scores and prunes them, refutes and improves the survivors,
 aggregates compatible lanes, and lets only the selected plan mutate. The fleet
 skill exists precisely so well-specified volume can leave the Anthropic meter.
 Extended release is the other scheduling regime: between
-passes, `suede-recommend-next-action` scores candidate moves on goal fit,
-unblocking, evidence, urgency, and leverage, and emits the winner as a runnable
-prompt, so the idle state between runs is a queued next action instead of a
+passes, the Next move section of `suede-workflow-skills` scores candidate moves
+on goal fit, unblocking, evidence, urgency, and leverage, and emits the winner as
+a runnable prompt, so the idle state between runs is a queued next action instead of a
 blank prompt box.
 
 ### The move
@@ -1414,7 +1401,7 @@ back with fourteen items ranked P0 through P3, you read the P0, decide it is
 really more of a P2, and merge. Nothing in the output stopped you, because
 nothing in the output was a decision. It was a menu.
 
-A letter grade is harder to ignore. `suede-code-grader` ends with one character
+A letter grade is harder to ignore. `suede-code` ends with one character
 and a gate that follows it mechanically: A maps to `ship`, B maps to
 `ship-with-caveats`, and C, D, and F all map to `hold`. There is no arithmetic
 left to do at the end and no room to negotiate with yourself about severity.
@@ -1472,14 +1459,14 @@ an F.
 The rule attached to those triggers is the part builders resist: **no other lane
 can raise a locked F.** Not a beautiful migration plan, not full test coverage
 everywhere else, not the fact that the key is for a staging account. The
-instruction to the agent is explicit: stop, report the file and line, mark the
-grade F, and do not grade the remaining lanes. Scoring the rest would imply
-those scores could matter. They cannot.
+instruction to the agent is explicit: report the file and line, mark the grade
+F, and treat it as a P0 finding. "Other lanes cannot raise the grade." Whatever
+the rest score, they cannot matter.
 
-This list lives in two places, `suede-code` Step 1 and `suede-code-grader`, and
-both copies carry the same note: change both together. Duplicated rules drift.
-Saying so in the file is cheaper than discovering the drift during a review that
-mattered.
+This list used to live in two places, a review skill and a separate grader, and
+both copies carried the same note: change both together. Merging the two into
+`suede-code` deleted the second copy. Duplicated rules drift, and one source is
+cheaper than discovering the drift during a review that mattered.
 
 ## Caps, so a happy path cannot buy an A
 
@@ -1822,7 +1809,7 @@ Four things change in the artifact when you optimize for the second one.
 
 Claims carry sources. A page that says "faster than the alternatives" gives a
 model nothing to quote, because quoting it would be quoting an opinion with a
-confident font. A page that says "the pack ships 76 skill folders, MIT
+confident font. A page that says "the pack ships 63 skill folders, MIT
 licensed" and links the repo gives the model a fact with a provenance trail
 attached.
 
@@ -2138,45 +2125,37 @@ announcement, including a soft one.
 
 The sharpest example in the pack does not touch a repo at all.
 
-`amazon-returns-recovery` applies a contract-negotiation procedure to account
-reviews: gather refund evidence, confirm the requested action with the account
-owner, and report the support response without treating a promise as a posted
-refund. Its public reference uses synthetic scenarios. Personal transaction
-details and support transcripts stay in the account owner's private session.
+`suede-rights-passport` applies the review procedure to a creator's folder
+instead of a diff. In audit mode it reads what the creator supplied, marks each
+ownership, split, sample, and license fact as confirmed or unknown in an
+evidence table, and turns every open gap into a question for the creator. In
+package mode it hashes the assets, writes a normalized manifest, and runs a
+bundled validator over the result.
 
-Notice what carried over. Not domain knowledge about Amazon. The procedure
-knew nothing about restocking fees before it went looking. What carried over
-was the shape: read the evidence first, itemize before arguing, build the case
-from facts you can point at, ask for one specific outcome, confirm the result
-in writing. That is the same shape as a code review, a release gate, and an SEO
-audit. A procedure that works outside its home domain is evidence that the
-procedure, not the domain knowledge, was doing the work.
-
-`subscription-recovery` is the generalization, pointed at App Store, Google
-Play, PayPal, bank statements, and direct-bill services. It exists because
-somebody noticed the discipline had nothing to do with Amazon.
+Notice what carried over. Not domain knowledge about music rights. What carried
+over was the shape: read the evidence first, itemize before concluding, build
+the record from facts you can point at, ask for one specific missing document,
+and report what is still open. That is the same shape as a code review, a
+release gate, and an SEO audit. A procedure that works outside its home domain
+is evidence that the procedure, not the domain knowledge, was doing the work.
 
 ## Safety, stated plainly
 
-Both recovery skills draw the same line, and it is worth reading as written
-rather than paraphrased. Read-only discovery first. Report the findings as a
-plain list. Stop. Do not open the dispute chat yet. Confirmation before any
-cancellation or refund contact, one item at a time. The skill describes itself
-as a metal detector, not an autopilot.
+The skill draws its lines in writing, and they are worth reading as written
+rather than paraphrased. A status moves to confirmed only on evidence the user
+supplied. Every open gap ships as a question in `missing-info-report.md`, never
+as a guess. "Structural validity is not a rights clearance": a validator PASS
+means the package is well formed, not that anyone owns anything.
 
-Truthfulness is a hard constraint, not a preference. State only true facts:
-order number, item, price, fee amount. Do not invent a prior contact attempt or
-a return reason that did not happen, because the ask is reasonable on its own
-and does not need embellishment to land. Accept one polite counteroffer round
-at most, then report back rather than escalating with anything untrue. Some
-fees are legitimate, some subscriptions are still wanted, and the skill
-instructs you to say so when a finding looks earned rather than mistaken.
+Truthfulness is a hard constraint, not a preference. The skill may not say
+anyone owns, controls, or has cleared a work without explicit proof, and may not
+call the package a legal contract. Uncertainty gets the words `unknown`,
+`unconfirmed`, or `needs creator confirmation` instead of a confident sentence.
 
-Credentials are never handled. The stretch goal for automated statement parsing
-is explicitly deferred because no validated path exists that avoids touching
-credentials, which conflicts with the skill's own rules. A capability was left
-unbuilt rather than built unsafely, and that decision is written down in the
-skill where the next person will read it.
+Secrets are never requested. The skill does not ask for private keys, seed
+phrases, account secrets, or payment credentials, and it uploads nothing and
+calls no live service unless the user explicitly asks. The package is built on
+the creator's own machine and stays there until they decide otherwise.
 
 ## The reframe
 
@@ -2336,10 +2315,10 @@ Their transcripts show separation between building and checking. There is a
 point in the session where the tone changes and the builder starts trying to
 break their own work: running the error path, hitting the endpoint with a bad
 token, checking the mobile viewport, reading the migration for the rollback
-story. `suede-code-grader` encodes the standard they are holding themselves to,
-and its red flags read like a list of A-tier temptations resisted. "CI passed,
-round up." "The work was clearly hard." "It's just a refactor." "Happy path
-works, call it an A." Effort never moves a grade; evidence does.
+story. `suede-code` encodes the standard they are holding themselves to, and
+its red flags read like a list of A-tier temptations resisted. "CI is green, so
+it's fine." "The diff is small." "I wrote this, I know it works." "It was hard
+work, round up to B." Effort never moves a grade; evidence does.
 
 The specific failure that holds them at A: every unit of verified output still
 requires them to be in the loop for it. They have made themselves reliable and
@@ -2388,11 +2367,11 @@ dangerous.
 The heuristic that keeps it honest is frequency times consequence. If a task
 recurs often and being wrong about it is expensive, it deserves a system. If it
 recurs often and being wrong is cheap, it deserves a checklist. If it happened
-once, do it and move on. The instant-F list in `suede-code-grader` is a good
-example of the first category: hardcoded secrets and auth bypasses are both
-recurrent and catastrophic, so they get an unconditional mechanical rule that no
-other lane can override. UI spacing magic numbers appear in the same skill and
-are explicitly given no grade impact. Same author, same file, two different
+once, do it and move on. The instant-F list in `suede-code` is a good example
+of the first category: hardcoded secrets and auth bypasses are both recurrent
+and catastrophic, so they get an unconditional mechanical rule that no other
+lane can override. UI spacing magic numbers appear in the same skill and get a
+P3 note and nothing more. Same author, same file, two different
 judgments about what deserves machinery.
 
 The move at S is not "build more systems." It is to look at your last five
@@ -2432,12 +2411,12 @@ because the systematizing hour pays nothing today and might pay nothing ever.
 That is the honest cost. Every hour spent on the system is an hour of visible
 output not produced, and there is no guarantee of a return. A skill that nobody
 invokes is worse than nothing: it is maintenance debt with a helpful name. The
-`suede-recommend-next-action` scoring rubric names this directly, and it is
+Next move rubric in `suede-workflow-skills` names this directly, and it is
 worth borrowing outside the skill. Leverage scores two points only when the work
-"fits one focused session and prevents rework or creates a reusable result," and
-zero when it is "unscoped, multi-day, or low-payoff." Both halves matter.
-Reusable is not enough if it does not fit in a session, and bounded is not
-enough if nothing reuses it.
+fits "one focused session" and "prevents rework," and zero when it is
+"unscoped or low payoff." Both halves matter. Preventing rework is not enough
+if it does not fit in a session, and bounded is not enough if it prevents
+nothing.
 
 The failure mode at the top of this ladder is not laziness. It is a builder who
 has learned that systems are the answer and stops asking whether this particular
@@ -2796,13 +2775,13 @@ Then the body. Three things earn their place, and most bodies that fail are
 missing the third.
 
 **Source Truth.** What the agent must read before it does anything. Not
-"understand the context," a list. `suede-code-grader` opens with it: read the
-repo, branch, remote, dirty state, then the diff and changed files, then the
-imports, callers, schemas, configs, and tests that move with the change, then
-build and test evidence that exercises the changed behavior. And a blunt line
-above it: do not grade from the PR description or commit message alone. That
-line exists because an agent will absolutely grade from the commit message if
-you let it.
+"understand the context," a list. `suede-code` opens with it: name the target,
+the intent, and the risk lanes, pin the comparison point, then build a context
+graph of changed files, callers, schemas, config, and the tests that move with
+the change, then run the repo's own gates before reading a line by hand. And a
+blunt line in its red flags: "The PR description explains it." Review the diff,
+not the story about it. That line exists because an agent will absolutely grade
+from the commit message if you let it.
 
 **The procedure.** Numbered steps, thresholds, and commands. Narrative only
 where it changes a judgment call. The rule that keeps bodies honest: no naked
@@ -2936,8 +2915,8 @@ None of this required a vendor. `skills/<name>/SKILL.md` is a text file in your
 repo. It diffs, it reviews, it reverts, it merges, and when the tool that reads
 it changes its mind about something, you edit a file instead of filing a support
 request. The original skills in this pack are MIT licensed, and adapted
-components retain their upstream notices. Read the notice that travels with a
-skill before you fork the parts that fit your work and delete the parts that do
+components retain their upstream notices in `NOTICE.md`. Read it before you
+fork the parts that fit your work and delete the parts that do
 not. They are a starting shape, not a product surface. Your estate is yours.
 
 ### The move
@@ -3076,7 +3055,7 @@ before this is rehearsal with a friendly judge.
 Things not to do in ninety days, each of which will eat the whole quarter if you
 let it.
 
-1. **Do not read all 76 skills.** You will use eight. Find those eight by
+1. **Do not read all 63 skills.** You will use eight. Find those eight by
    working, not by studying the catalog.
 2. **Do not build a personal framework in month one.** You have not earned the
    opinions yet. Frameworks written before the practice encode your current
@@ -3176,14 +3155,13 @@ describing the work in the words its description was written to catch.
 |---|---|
 | `suede-graph-flo-xr` | A multi-file repo change needs competing plans searched, scored, pruned, refuted, improved, and aggregated before only one selected plan mutates; light/standard/deep stop at 55/110/200 calls and production stays read-only |
 | `suede-agent-teams` | Complex work needs coordinated lanes with file ownership, collision checks, rollback plans, and an evidence-backed handoff |
-| `suede-recommend-next-action` | You are stalled and want one scored recommendation with a runnable prompt, not a menu |
-| `suede-workflow-skills` | You want the umbrella that loads the pack |
+| `suede-workflow-skills` | You want the umbrella that loads the pack, or you are stalled and want one scored next move with a runnable prompt, not a menu |
 
-These four are also indexed together in the catalog as the Agentic Adderall
+These three are also indexed together in the catalog as the Agentic Adderall
 Stack (`stacks[0]`, key `adderall`) and sold at `/cracked.html`. The grouping is
 a cross-cutting overlay on the specialty partition, and the validator pins its
 membership: every member must be a real catalog skill, the claimed count must
-match, and the page must list exactly these four.
+match, and the page must list exactly these three.
 
 ## I want to decide what to build, before building it
 
@@ -3196,22 +3174,17 @@ match, and the page must list exactly these four.
 
 | Skill | Use it when |
 |---|---|
-| `suede-code` | You want findings and an A-F ship grade in one pass |
-| `suede-code-review` | You want the bugs, not a verdict: TypeScript, React, Next.js, OWASP, accessibility, SEO, database, deploy risk |
-| `suede-code-grader` | You want the blunt letter grade only, with instant-F triggers and auth and payment caps |
+| `suede-code` | You want findings and an A-F ship grade in one pass, or just one of them: findings-only for the bugs without a verdict, grade-only for the blunt letter with instant-F triggers and auth and payment caps |
 | `suede-ci-gate` | You want CI that actually holds the line: path-aware builds, one required check, branch protection, no deadlock |
 | `suede-parity-contract` | The same rule lives in two or more languages and the numbers are kept in step by hand |
 | `suede-ai-eval` | The surface is an LLM, RAG, classifier, or agent, and you need rubrics, failure modes, eval cases, and acceptance gates |
-| `suede-mcp-qa` | You ship an MCP server and want drift caught before release |
 
 ## I want it to look and read like someone made it
 
 | Skill | Use it when |
 |---|---|
-| `johnny-suede-design` | You want the full design lane across brand and product surfaces |
-| `suede-design` | You need tokens, color, type, hierarchy, motion, dark mode, or visual QA on shipped screens |
-| `johnny-suede-write` | You want the full writing lane: structure, persuasion, anti-slop gate, copy score |
-| `suede-copy` | You need conversion copy: sections, email, microcopy, buttons, headlines, variants |
+| `suede-design` | You want the full design lane across brand and product surfaces: tokens, color, type, hierarchy, motion, dark mode, redesigns, and visual QA on shipped screens |
+| `suede-copy` | You want the full writing lane: conversion and SEO copy, sections, email, microcopy, headlines, variants, persuasion, anti-slop gate, copy score |
 | `suede-ship-copy` | One high-stakes public surface has to be true, and you want research lenses, a claim audit, and a publish-readiness gate |
 | `suede-deslop` | Prose is finished and about to go public, and it still sounds generated |
 | `suede-image` | You need marketing images: generation prompts, hero and social graphics, mockups, export sizing |
@@ -3248,41 +3221,30 @@ match, and the page must list exactly these four.
 ## I want to grow it
 
 Acquisition and outbound: `suede-ads`, `suede-ad-creative`, `suede-cold-email`,
-`suede-prospecting`, `suede-social`, `suede-instagram-growth`, `suede-sms`,
+`suede-prospecting`, `suede-social` (Instagram included), `suede-sms`,
 `suede-co-marketing`, `suede-community-marketing`, `suede-lead-magnets`,
 `suede-referrals`.
 
-Monetization: `suede-pricing`, `suede-offers`, `suede-paywalls`, `suede-signup`,
-`suede-onboarding`, `suede-churn-prevention`, `suede-emails`.
+Monetization: `suede-pricing`, `suede-offers` (persuasion mechanics included),
+`suede-paywalls`, `suede-onboarding` (signup included), `suede-churn-prevention`,
+`suede-emails`.
 
 Measurement and operations: `suede-analytics`, `suede-attribution`,
 `suede-ab-testing`, `suede-revops`, `suede-sales-enablement`,
-`suede-marketing-plan`, `suede-marketing-loops`, `suede-marketing-ideas`,
-`suede-marketing-council`, `suede-marketing-psychology`,
-`suede-product-marketing`, `suede-customer-research`, `suede-competitor-profiling`.
+`suede-marketing-plan` (tactic shortlists included), `suede-marketing-loops`,
+`suede-marketing-council`, `suede-product-marketing`, `suede-customer-research`,
+`suede-competitor-profiling`.
 
-Forty of these are adapted from
-[marketingskills](https://github.com/coreyhaines31/marketingskills) by Corey
-Haines under the MIT License. See `NOTICE.md`.
+Thirty-eight skills in the pack, most of them listed here, are adapted from MIT-licensed
+source material. The copyright and license notice is in `NOTICE.md`.
 
 ## I want to protect what I made
 
 | Skill | Use it when |
 |---|---|
-| `suede-rights-audit` | You need the ownership, splits, samples, provenance, and licensing gaps found before packaging |
-| `suede-rights-passport` | You need an evidence-scoped rights handoff: works, recordings, releases, parties, identifiers, claims |
+| `suede-rights-passport` | You need the ownership, splits, samples, provenance, and licensing gaps found (audit mode), then an evidence-scoped rights handoff: works, recordings, releases, parties, identifiers, claims |
 | `suede-release-linter` | A creative release folder needs auditing before handoff |
 | `suede-sync-packaging` | Songs need sync-pitch prep: scene angles, one-sheets, clean and instrumental assets, mood tags |
-
-## I want my money back
-
-| Skill | Use it when |
-|---|---|
-| `amazon-returns-recovery` | Amazon returns, restocking fees, short or denied refunds, and forgotten Amazon-billed subscriptions need auditing and disputing |
-| `subscription-recovery` | Recurring charges outside Amazon need finding and auditing across App Store, Google Play, PayPal, and direct-bill services |
-
-Both report findings first and require your confirmation before any cancellation
-or refund contact. Neither handles credentials.
 
 ---
 

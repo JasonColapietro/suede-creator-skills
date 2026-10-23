@@ -7,7 +7,7 @@ Release record for the `suede-parity-contract` skill, following the NVIDIA skill
 
 ## Description
 
-Suede Labs cross-surface canon discipline: hold one canonical answer across every surface that states it (web, iOS, Android, docs, a second service) by generating a contract from the reference surface and making the others assert against it, so a divergence fails a test instead of reaching a user or an answer engine.
+Suede AI cross-surface canon discipline: hold one canonical answer across every surface that states it (web, iOS, Android, docs, a second service) by generating a contract from the reference surface and making the others assert against it, so a divergence fails a test instead of reaching a user or an answer engine.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.2; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
@@ -25,7 +25,7 @@ Target users: developers and creators running the skill inside a Claude Code or 
 
 Use when the same rule, threshold, ladder, or stated fact lives on two or more surfaces; when values are copied by hand out of a handoff; when two surfaces already disagree; or when auditing where they drifted.
 
-Out of scope — deciding which surface is correct (a product call this skill records rather than makes); reviewing a diff (use suede-code-review); wiring merge gates (use suede-ci-gate); a generative-search audit of a page (use suede-seo-audit).
+Out of scope — deciding which surface is correct (a product call this skill records rather than makes); reviewing a diff (use suede-code); wiring merge gates (use suede-ci-gate); a generative-search audit of a page (use suede-seo-audit).
 
 ## Deployment Geography
 

@@ -4,7 +4,7 @@
 
 Maintained by Jason Colapietro (Suede AI, https://suedeai.ai), one author. These are the same skill folders that run the estate day to day, published as they are: open the folder and read the file before you trust it. Repository: https://github.com/JasonColapietro/suede-creator-skills. License and attribution details: https://github.com/JasonColapietro/suede-creator-skills/blob/main/NOTICE.md. The GitHub Pages site is generated from the same repo, so the docs, the install commands, and the MCP source sit beside the skills they describe. October 2026: Suede AI is a member of Claude for Startups, Anthropic's startup program (https://claude.com/programs/startups).
 
-Install for Claude Code: `/plugin marketplace add JasonColapietro/suede-creator-skills` then `/plugin install suede-skills@suede`. Two commands, about thirty seconds. Focused subsets exist for narrower work, and they cost the same per skill because an unmatched skill never loads its body: `suede-marketing@suede` (43 skills for paid acquisition, outbound, pricing, offers, lifecycle, Instagram growth, AI search optimization, attribution, and analytics), `suede-agent-workflows@suede` (orchestration, workflows, evals), and `suede-code@suede` (review, grade, ship-gate).
+Install for Claude Code: `/plugin marketplace add JasonColapietro/suede-creator-skills` then `/plugin install suede-skills@suede`. Two commands, about thirty seconds. Focused subsets exist for narrower work, and they cost the same per skill because an unmatched skill never loads its body: `suede-marketing@suede` (39 skills for paid acquisition, outbound, pricing, offers, lifecycle, social growth, AI search optimization, attribution, and analytics), `suede-agent-workflows@suede` (orchestration, workflows, evals), and `suede-code@suede` (review, grade, ship-gate).
 
 Install the full pack for Codex: `codex plugin marketplace add JasonColapietro/suede-creator-skills --ref main` then `codex plugin add suede-skills@suede-codex`. The plugin registers 1 read-only MCP server with 9 tools. For one skill only, use the built-in skill installer with `--repo JasonColapietro/suede-creator-skills --path skills/<name>`.
 
@@ -45,40 +45,32 @@ Runner boundary for Suede Graph Flo XR: the bundled Suede Thought Graph workflow
 - [Installs and MCP](https://skills.suedeai.ai/plugins.html): Install commands for Claude Code and Codex, plus the optional Suede Skills MCP server.
 - [Listings](https://skills.suedeai.ai/listings.html): Every third-party directory, registry and curated list that carries the pack, including skills.sh, SkillsMP, the official MCP Registry, npm and MCP Market, with each link verified on the date shown.
 - [Copy bank](https://skills.suedeai.ai/copy.html): Public-safe explainer copy and reusable launch language.
-- [Cracked devs only](https://skills.suedeai.ai/cracked.html): The Agentic Adderall Stack, four skills for the runs that have to finish. Instant release is one continuous subagent-driven pass with adversarial review inside it. Extended release scores the next move and hands it back as a runnable prompt. The plan search caps at 55, 110, or 200 agent calls.
+- [Cracked devs only](https://skills.suedeai.ai/cracked.html): The Agentic Adderall Stack, three skills for the runs that have to finish. Instant release is one continuous subagent-driven pass with adversarial review inside it. Extended release scores the next move and hands it back as a runnable prompt. The plan search caps at 55, 110, or 200 agent calls.
 - [S-Tier, the book](https://skills.suedeai.ai/book/): A free book, roughly 29,900 words in 14 chapters, on how Agent Skills work and how a builder gets good with them. Every claim in it points at a file in this repo, so you can check it instead of believing it. Covers progressive disclosure and description routing, outcome-bound orchestration, agent lanes and worker fleets, verification discipline, code grading, design and copy as systems, distribution, shipping, a five-tier builder ladder, authoring your own skills, and a ninety-day practice plan. Source Markdown: https://github.com/JasonColapietro/suede-creator-skills/tree/main/book. Print edition (PDF): https://skills.suedeai.ai/book/s-tier.pdf
 
 ## Workflow skills: from planning a change to grading whether it ships
 
-- [Suede Workflow Skills](https://skills.suedeai.ai/skills/suede-workflow-skills.html): Umbrella skill that loads the full Suede workflow from one install path.
+- [Suede Workflow Skills](https://skills.suedeai.ai/skills/suede-workflow-skills.html): Umbrella router that loads the full Suede AI pack from one install path, picks the specialist for each request, and hands back one scored next move as a runnable prompt.
 - [Suede Agent Teams](https://skills.suedeai.ai/skills/suede-agent-teams.html): Coordinate complex changes and public-repository contribution programs with collision checks, atomic issue leases, review gates, authority boundaries, and a signed handoff.
 - [Suede Ops Architecture](https://skills.suedeai.ai/skills/suede-ops-architecture.html): Fix the shape of a system before anyone builds it: entity schema, one write path per entity, every unit of work routed to an automation, an agent, or a human, and each tool marked absorb, keep, or kill with a proof path.
 - [Suede Ops Assessment](https://skills.suedeai.ai/skills/suede-ops-assessment.html): Map how work actually happens before anyone designs a system: floor-level interviews with the people doing the work, an inventory of every silo, friction quantified in the operation's own numbers, and opportunities ranked by value against build complexity.
 - [Suede AI Eval](https://skills.suedeai.ai/skills/suede-ai-eval.html): Design AI evaluation strategy, failure-mode rubrics, test cases, and acceptance gates.
-- [Suede Recommend Next Action](https://skills.suedeai.ai/skills/suede-recommend-next-action.html): Scores candidate moves on goal fit, unblocking, evidence, urgency, and leverage, then hands back one recommendation as a short runnable prompt.
-- [Suede Code](https://skills.suedeai.ai/skills/suede-code.html): Review and grade code in one pass.
-- [Suede Code Review](https://skills.suedeai.ai/skills/suede-code-review.html): Deep diff review with TS/React/Next.js/Swift-iOS/OWASP/DB checklists, iOS traps, and native contract drift checks.
-- [Suede Code Grader](https://skills.suedeai.ai/skills/suede-code-grader.html): Blunt A-F ship verdict on any code change with evidence-backed lanes and instant-F triggers.
+- [Suede Code](https://skills.suedeai.ai/skills/suede-code.html): Review and grade code in one pass: P0-P3 findings with file:line evidence, an A-F ship grade across seven lanes with instant-F triggers, plus findings-only and grade-only modes.
 - [Suede Graph Flo XR](https://skills.suedeai.ai/skills/suede-graph-flo-xr.html): Claude Code/macOS Suede Thought Graph shipping search: generate competing plans, score and prune, refute and improve survivors, aggregate compatible lanes, then mutate only the selected plan. Light/standard/deep cap at 55/110/200 calls. Production reads only; never deploys. Other supported agents load the contract and route to direct implementation.
 - [Suede Ship Copy](https://skills.suedeai.ai/skills/suede-ship-copy.html): A separate copy-only DAG: blind research lenses, an audit of every agent-generated claim, one message per section, adversarial review, deslop pass, and a publish-readiness gate. Never audits what the requester supplied.
 - [Suede CI Gate](https://skills.suedeai.ai/skills/suede-ci-gate.html): Wire any repo so CI actually gates the merge.
 - [Suede Parity Contract](https://skills.suedeai.ai/skills/suede-parity-contract.html): One domain implemented on many surfaces, held together by a contract generated from the reference surface's live constants. Followers assert against it, existing divergences are pinned with reasons, and a new one fails a test instead of reaching a user.
 - [Suede Play Release](https://skills.suedeai.ai/skills/suede-play-release.html): Google Play delivery where every claim is a readback: credential preflight against the live API, AAB signature and versionCode verification, promote instead of re-upload, staged rollout, and a track read that shows whether the release landed staged or complete.
 - [Suede Clip to Guide](https://skills.suedeai.ai/skills/suede-clip-to-guide.html): Turn a clip or transcript into a clip-to-guide funnel package with rights routing.
-- [Johnny Suede Write](https://skills.suedeai.ai/skills/johnny-suede-write.html): One loadable writing mode for copy, brand voice, SEO/AEO/GEO/AI EO, CTAs, and anti-slop editing.
-- [Johnny Suede Design](https://skills.suedeai.ai/skills/johnny-suede-design.html): One loadable design mode for landing pages, brand pages, product UI, Suedify restyling, and visual QA.
-- [Suede Design](https://skills.suedeai.ai/skills/suede-design.html): Evolve any interface from generic to intentional with design laws and tokens.
-- [Suede Copy](https://skills.suedeai.ai/skills/suede-copy.html): Click-earning copy with headline formulas and persuasion frameworks.
+- [Suede Design](https://skills.suedeai.ai/skills/suede-design.html): Evolve any interface from generic to intentional with design laws and tokens, full redesigns, Suedify reference restyling, and visual QA.
+- [Suede Copy](https://skills.suedeai.ai/skills/suede-copy.html): Conversion and SEO copy in one writing lane: headline formulas, persuasion frameworks, brand voice, answer-first copy for AI search, and an anti-slop gate.
 - [Suede Slop Stop](https://skills.suedeai.ai/skills/suede-deslop.html): Context-aware anti-slop cleanup or findings-only audit that preserves facts, voice, house style, and intentional phrasing, invents nothing, and never claims to identify authorship.
 - [Suede SEO Audit](https://skills.suedeai.ai/skills/suede-seo-audit.html): SEO, AEO, GEO, AI EO, metadata, schema, link, and crawlability audit.
 - [Suede Visibility Grader](https://skills.suedeai.ai/skills/suede-visibility-grader.html): Grade any public page for findability, first-screen clarity, CTA pull, proof, and AI citation readiness.
 - [Suede Site Alchemy](https://skills.suedeai.ai/skills/suede-site-alchemy.html): Turn a page into a conversion engine with funnel and friction analysis.
 - [Suede Launch Packaging](https://skills.suedeai.ai/skills/suede-launch-packaging.html): Ship work as a launch people can actually install.
-- [Suede MCP QA](https://skills.suedeai.ai/skills/suede-mcp-qa.html): Catch a broken Suede Skills MCP before it ships.
 - [Site to iOS App](https://skills.suedeai.ai/skills/site-to-ios-app.html): Convert any website or web app into an App Store-ready iOS app plan or shell: URL audit, App Store 4.2 wrapper-risk gate, Capacitor or native-shell strategy, native value requirements, QA matrix, and an explicit release gate.
 - [Android App Factory](https://skills.suedeai.ai/skills/android-app-factory.html): Plan or build a native Android app end to end from a keyword: Kotlin + Jetpack Compose scaffolding, Play Billing, Play Store screenshots and ASO listing copy, Data Safety disclosure, signing, and Google Play Console release.
-- [Amazon Returns Recovery](https://skills.suedeai.ai/skills/amazon-returns-recovery.html): Scan Amazon order and return history for restocking fees and short refunds, then drive Amazon live chat to get the money waived and refunded (requires the Claude in Chrome extension).
-- [Subscription Recovery](https://skills.suedeai.ai/skills/subscription-recovery.html): Audit any recurring subscription (Netflix, Spotify, gyms, App Store, Google Play, PayPal) and cancel or negotiate a refund through that service's own support.
 
 ## Marketing and growth skills, run by the same agent that reviews the code
 
@@ -87,7 +79,7 @@ Runner boundary for Suede Graph Flo XR: the bundled Suede Thought Graph workflow
 - [Suede Ads](https://skills.suedeai.ai/skills/suede-ads.html): Run paid acquisition that pays back.
 - [Suede AI SEO](https://skills.suedeai.ai/skills/suede-ai-seo.html): Get cited in AI-generated answers on ChatGPT, Perplexity, Google AI Overviews, and Claude.
 - [Suede Analytics](https://skills.suedeai.ai/skills/suede-analytics.html): Know whether any of it worked.
-- [Suede ASO](https://skills.suedeai.ai/skills/suede-aso.html): Optimise an App Store or Play listing.
+- [Suede ASO](https://skills.suedeai.ai/skills/suede-aso.html): Optimize an App Store or Play listing.
 - [Suede Attribution](https://skills.suedeai.ai/skills/suede-attribution.html): Know which marketing actually drove revenue.
 - [Suede Churn Prevention](https://skills.suedeai.ai/skills/suede-churn-prevention.html): Keep subscribers who are leaving and recover the ones you lose to billing.
 - [Suede Co Marketing](https://skills.suedeai.ai/skills/suede-co-marketing.html): Find and run partner campaigns.
@@ -100,17 +92,14 @@ Runner boundary for Suede Graph Flo XR: the bundled Suede Thought Graph workflow
 - [Suede Directory Submissions](https://skills.suedeai.ai/skills/suede-directory-submissions.html): Work the directory layer deliberately.
 - [Suede Emails](https://skills.suedeai.ai/skills/suede-emails.html): Design lifecycle email that runs itself.
 - [Suede Free Tools](https://skills.suedeai.ai/skills/suede-free-tools.html): Engineering as marketing.
-- [Suede Image](https://skills.suedeai.ai/skills/suede-image.html): Create and optimise marketing imagery.
-- [Suede Instagram Growth](https://skills.suedeai.ai/skills/suede-instagram-growth.html): Audit an Instagram account from authorized evidence, map views to qualified actions, and create account-specific Reels, carousels, Stories, calendars, and daily approval-ready workflows.
+- [Suede Image](https://skills.suedeai.ai/skills/suede-image.html): Create and optimize marketing imagery.
 - [Suede Lead Magnets](https://skills.suedeai.ai/skills/suede-lead-magnets.html): Decide what to give away for an email.
-- [Suede Marketing Council](https://skills.suedeai.ai/skills/suede-marketing-council.html): Convene a panel of legendary marketers on one question, surface where they disagree, and synthesise a recommendation from the strongest arguments.
-- [Suede Marketing Ideas](https://skills.suedeai.ai/skills/suede-marketing-ideas.html): Get unstuck with a structured idea library rather than a blank page.
+- [Suede Marketing Council](https://skills.suedeai.ai/skills/suede-marketing-council.html): Put one marketing decision to a panel of role-based advisors, map where they disagree, and synthesize a recommendation.
 - [Suede Marketing Loops](https://skills.suedeai.ai/skills/suede-marketing-loops.html): Turn marketing into a recurring loop an agent runs on a cadence.
-- [Suede Marketing Plan](https://skills.suedeai.ai/skills/suede-marketing-plan.html): Produce a full marketing plan structured by acquisition, activation, retention, referral, and revenue, sized to the current budget, team, and stage.
-- [Suede Marketing Psychology](https://skills.suedeai.ai/skills/suede-marketing-psychology.html): Apply behavioural science honestly.
+- [Suede Marketing Plan](https://skills.suedeai.ai/skills/suede-marketing-plan.html): Produce a full marketing plan structured by acquisition, activation, retention, referral, and revenue, or a ranked shortlist of tactics when that is all you need.
 - [Suede Newsroom](https://skills.suedeai.ai/skills/suede-newsroom.html): Run one idea through a six-role content pipeline.
-- [Suede Offers](https://skills.suedeai.ai/skills/suede-offers.html): Construct the thing you actually sell.
-- [Suede Onboarding](https://skills.suedeai.ai/skills/suede-onboarding.html): Get a new user to first value fast.
+- [Suede Offers](https://skills.suedeai.ai/skills/suede-offers.html): Construct the thing you actually sell, then apply persuasion mechanics honestly as testable hypotheses.
+- [Suede Onboarding](https://skills.suedeai.ai/skills/suede-onboarding.html): Cut friction out of signup and get a new user to first value fast.
 - [Suede Paywalls](https://skills.suedeai.ai/skills/suede-paywalls.html): Design in-app upgrade moments that convert without resentment.
 - [Suede Pricing](https://skills.suedeai.ai/skills/suede-pricing.html): Decide what to charge and how to package it.
 - [Suede Product Marketing](https://skills.suedeai.ai/skills/suede-product-marketing.html): Establish the product context every other marketing lane reads from.
@@ -120,17 +109,15 @@ Runner boundary for Suede Graph Flo XR: the bundled Suede Thought Graph workflow
 - [Suede Referrals](https://skills.suedeai.ai/skills/suede-referrals.html): Turn customers into a channel.
 - [Suede RevOps](https://skills.suedeai.ai/skills/suede-revops.html): Wire marketing to revenue.
 - [Suede Sales Enablement](https://skills.suedeai.ai/skills/suede-sales-enablement.html): Arm the people doing the selling.
-- [Suede Signup](https://skills.suedeai.ai/skills/suede-signup.html): Cut friction out of registration.
 - [Suede SMS](https://skills.suedeai.ai/skills/suede-sms.html): Run SMS without getting blocked or resented.
-- [Suede Social](https://skills.suedeai.ai/skills/suede-social.html): Run social as a channel rather than a chore.
+- [Suede Social](https://skills.suedeai.ai/skills/suede-social.html): Run social as a channel rather than a chore, including Instagram account audits, Reels, carousels, and Stories.
 - [Suede Video](https://skills.suedeai.ai/skills/suede-video.html): Plan and produce marketing video.
 
 ## Creator skills: rights, release folders, and campaigns
 
-- [Suede Rights Passport](https://skills.suedeai.ai/skills/suede-rights-passport.html): Package creative folders into structured transfer material with provenance, credits, and splits.
+- [Suede Rights Passport](https://skills.suedeai.ai/skills/suede-rights-passport.html): Audit ownership, split, sample, and provenance gaps, then package creative folders into structured transfer material with credits and splits.
 - [Suede Release Linter](https://skills.suedeai.ai/skills/suede-release-linter.html): Audit release folders for missing metadata, artwork, masters, stems, credits, splits, and provenance gaps.
 - [Suede Campaign in a Box](https://skills.suedeai.ai/skills/suede-campaign-in-a-box.html): Turn a song, release, or era into a complete artist campaign.
-- [Suede Rights Audit](https://skills.suedeai.ai/skills/suede-rights-audit.html): Find ownership, split, sample, and provenance gaps before packaging.
 - [Suede Sync Packaging](https://skills.suedeai.ai/skills/suede-sync-packaging.html): Package songs for sync pitching with scene-fit angles and clean asset checklists.
 
 ## MCP server

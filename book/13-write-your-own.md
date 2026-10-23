@@ -58,13 +58,13 @@ Then the body. Three things earn their place, and most bodies that fail are
 missing the third.
 
 **Source Truth.** What the agent must read before it does anything. Not
-"understand the context," a list. `suede-code-grader` opens with it: read the
-repo, branch, remote, dirty state, then the diff and changed files, then the
-imports, callers, schemas, configs, and tests that move with the change, then
-build and test evidence that exercises the changed behavior. And a blunt line
-above it: do not grade from the PR description or commit message alone. That
-line exists because an agent will absolutely grade from the commit message if
-you let it.
+"understand the context," a list. `suede-code` opens with it: name the target,
+the intent, and the risk lanes, pin the comparison point, then build a context
+graph of changed files, callers, schemas, config, and the tests that move with
+the change, then run the repo's own gates before reading a line by hand. And a
+blunt line in its red flags: "The PR description explains it." Review the diff,
+not the story about it. That line exists because an agent will absolutely grade
+from the commit message if you let it.
 
 **The procedure.** Numbered steps, thresholds, and commands. Narrative only
 where it changes a judgment call. The rule that keeps bodies honest: no naked
@@ -198,8 +198,8 @@ None of this required a vendor. `skills/<name>/SKILL.md` is a text file in your
 repo. It diffs, it reviews, it reverts, it merges, and when the tool that reads
 it changes its mind about something, you edit a file instead of filing a support
 request. The original skills in this pack are MIT licensed, and adapted
-components retain their upstream notices. Read the notice that travels with a
-skill before you fork the parts that fit your work and delete the parts that do
+components retain their upstream notices in `NOTICE.md`. Read it before you
+fork the parts that fit your work and delete the parts that do
 not. They are a starting shape, not a product surface. Your estate is yours.
 
 ### The move

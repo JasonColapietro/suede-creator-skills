@@ -1,6 +1,6 @@
 ---
 name: android-app-factory
-description: "Suede AI Android app factory: plan, build, test, and prepare a production native Android app from product idea to a Play-ready signed bundle. Use for requests to create, ship, monetize, or modernize an Android app. Covers Kotlin and Jetpack Compose architecture, live target-API and Play policy checks, 16 KB page sizes, accessibility, privacy and Data Safety, Play Billing Library 8+, Play Integrity, account deletion, kids and Families rules, testing, performance, store assets, signing, and a release evidence gate. NOT FOR: uploading, promoting, or rolling out a build on Play (use suede-play-release); turning a website into an iOS app (use site-to-ios-app); a review-only pass on an existing app (use suede-code-review); Play listing, keyword, and screenshot strategy (use suede-aso)."
+description: "Suede AI Android app factory: plan, build, test, and prepare a production native Android app from product idea to a Play-ready signed bundle. Use for requests to create, ship, monetize, or modernize an Android app. Covers Kotlin and Jetpack Compose architecture, live target-API and Play policy checks, 16 KB page sizes, accessibility, privacy and Data Safety, Play Billing Library 8+, Play Integrity, account deletion, kids and Families rules, testing, performance, store assets, signing, and a release evidence gate. NOT FOR: uploading, promoting, or rolling out a build on Play (use suede-play-release); turning a website into an iOS app (use site-to-ios-app); a review-only pass on an existing app (use suede-code --findings-only); Play listing, keyword, and screenshot strategy (use suede-aso)."
 ---
 
 # Android App Factory
@@ -176,7 +176,7 @@ core-task blockers cannot be downgraded to cosmetic caveats.
 
 ## Routing
 
-- Existing-app findings-only review → `suede-code-review`.
+- Existing-app findings-only review → `suede-code --findings-only`.
 - CI implementation around the release evidence → `suede-ci-gate`.
 - Coordinated architecture, product, policy, store, and QA lanes →
   `suede-agent-teams` with exclusive file ownership and a serialized release

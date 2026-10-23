@@ -48,6 +48,13 @@ test("retired orchestration skills stay out of the routing contract and plugin s
     "johnny-suede-design",
     "suede-recommend-next-action",
     "suede-mcp-qa",
+    "suede-rights-audit",
+    "suede-instagram-growth",
+    "suede-marketing-psychology",
+    "suede-marketing-ideas",
+    "suede-signup",
+    "amazon-returns-recovery",
+    "subscription-recovery",
   ];
   const contract = loadContract();
   for (const group of contract.groups) {

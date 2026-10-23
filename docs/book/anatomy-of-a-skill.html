@@ -34,9 +34,9 @@
   "keywords": "SKILL.md anatomy, skill frontmatter, skill description field, S-Tier builder's book",
   "url": "https://skills.suedeai.ai/book/anatomy-of-a-skill.html",
   "position": 3,
-  "wordCount": 2278,
+  "wordCount": 2334,
   "datePublished": "2026-08-10",
-  "dateModified": "2026-10-16",
+  "dateModified": "2026-10-23",
   "inLanguage": "en",
   "isPartOf": {
     "@type": "Book",
@@ -91,73 +91,71 @@
       <p class="eyebrow">Part I &middot; Chapter 2</p>
       <h1>Anatomy of a Skill</h1>
       <p class="post-meta">A real SKILL.md taken apart: frontmatter, routing description, body, bundled references and scripts, and the advisory-gate policy that keeps a grader from blocking you.</p>
-      <div class="book-meta"><span>2,278 words</span><span>10 min read</span><span><a href="./">S-Tier: contents</a></span></div>
+      <div class="book-meta"><span>2,334 words</span><span>10 min read</span><span><a href="./">S-Tier: contents</a></span></div>
 
-      <p>Open <code>skills/suede-code-grader/SKILL.md</code> and read it top to bottom. It takes about six minutes. At the end of those six minutes you will know exactly what the agent will do to your diff, which parts it will refuse to do, and what the output will look like before you run it once.</p>
+      <p>Open <code>skills/suede-code/SKILL.md</code> and read it top to bottom. It takes about ten minutes. At the end of those six minutes you will know exactly what the agent will do to your diff, which parts it will refuse to do, and what the output will look like before you run it once.</p>
       <p>That property is the point of the format. A skill is a document you can audit before you trust it. This chapter takes one apart.</p>
       <h2 id="the-frontmatter-is-two-fields">The frontmatter is two fields</h2>
       <p>Every <code>SKILL.md</code> in this repo opens the same way:</p>
       <pre><code>---
-name: suede-code-grader
-description: "Suede AI blunt A-F ship grade for a code change across correctness, security and permissions, data and state, domain truth, UX and release behavior, tests and verification, and deploy readiness, with Instant-F triggers and evidence-based grade caps on auth, payment, migration, and public-API surfaces. Use when asked to grade this, give it a letter, is this an A, how ready is this to ship, or should this merge — when the caller wants the verdict without a findings list. NOT FOR: findings, evidence, and fix briefs (use suede-code-review, or suede-code for findings plus grade); enforcing the verdict in CI (use suede-ci-gate); eval coverage for AI behavior (use suede-ai-eval)."
+name: suede-code
+description: "Suede AI code review and A-F ship grade for a diff, PR, branch, or commit range: findings ranked P0-P3 with file:line evidence and a fix path, an A-F grade across seven lanes with Instant-F security triggers and surface grade caps, OWASP 2025 checks, a deploy-safety gate, a commit-dirt scan, and fix briefs. Three modes: full review and grade in one pass (default), findings only with no grade, and grade only with no findings list. Use when asked to review this, grade this, find the bugs before merge, security-check this, is this safe to ship, give it a letter, or should this merge. Runs only when explicitly invoked; never auto-fires on a diff, save, or commit. NOT FOR: making CI enforce the verdict on every merge (use suede-ci-gate); LLM, RAG, or agent behavior coverage (use suede-ai-eval); searching competing plans and building a multi-file change (use suede-graph-flo-xr); fixes that need coordinated parallel lanes (use suede-agent-teams)."
 ---</code></pre>
-      <p>Across all 76 skills, the frontmatter carries <code>name</code> 76 times and <code>description</code> 76 times. Forty-eight of them add a <code>metadata</code> block with a version string, a convention inherited from the marketing skills adapted from Corey Haines's <code>marketingskills</code> under MIT. Nothing else appears. The schema is small on purpose, because everything the frontmatter does happens before the body is read.</p>
+      <p>Across all 63 skills, the frontmatter carries <code>name</code> 63 times and <code>description</code> 63 times. Forty-three of them add a <code>metadata</code> block with a version string, a convention the marketing and growth skills brought with them. Nothing else appears. The schema is small on purpose, because everything the frontmatter does happens before the body is read.</p>
       <p><code>name</code> matches the folder and is the handle. It is what you type when you invoke the skill directly, and what other skills reference when they route work elsewhere. Keep it stable. A rename breaks every routing line in every other skill that points at it, and those lines are plain text, so nothing will tell you.</p>
       <h2 id="the-description-carries-the-routing-burden">The description carries the routing burden</h2>
-      <p>The description is the only part of a skill that stays in the agent's context when the skill is not running. In this repo the 76 files total 1,103,931 bytes; the 76 descriptions together are 46,743. The agent holds the small number and reaches for the large one only when a description matches.</p>
+      <p>The description is the only part of a skill that stays in the agent's context when the skill is not running. In this repo the 63 files total 915,176 bytes; the 63 descriptions together are 49,381. The agent holds the small number and reaches for the large one only when a description matches.</p>
       <p>That makes the description a router, not a summary. It has to answer two questions well enough that an agent mid-task can decide in one pass: what does this produce, and when should it fire.</p>
-      <p>Look at what <code>suede-code-grader</code> does with 680 characters. "Suede AI blunt A-F ship grade for a code change" states the artifact. The lane list names the surfaces it covers. The trigger list catches the request in the words a caller actually types: "give it a letter", "is this an A", "should this merge". Then the last sentence does the real work: "NOT FOR: findings, evidence, and fix briefs (use suede-code-review, or suede-code for findings plus grade)." That sentence exists because <code>suede-code-review</code> lives next door and produces something different, and without it an agent would pick between them by coin flip.</p>
-      <p><code>suede-deslop</code> does the same job in 555 characters:</p>
-      <pre><code>description: "Suede Labs context-aware anti-slop pass for finished prose: find
-or remove generic filler, manufactured emphasis, false agency, and formulaic
-structure without flattening the author's voice. Use before copy, a README, an
-email, a social post, or a doc ships; after a long assisted-writing session; or
-when the user asks for a findings-only slop audit. NOT FOR: writing new copy (use
-suede-copy); deciding whether a person or model wrote text; changing or
-certifying facts, which must be checked against primary evidence before
-publication."</code></pre>
-      <p>Three parts. What it does, the trigger conditions in the vocabulary a user actually types ("sounds fine but feels generated"), and then the boundary.</p>
+      <p>Look at what <code>suede-code</code> does with 953 characters. "Suede AI code review and A-F ship grade for a diff, PR, branch, or commit range" states the artifact. The next clauses name what comes back and the three modes, so a caller who only wants the letter knows it can ask for one. The trigger list catches the request in the words a caller actually types: "find the bugs before merge", "give it a letter", "should this merge". Then the last sentence does the real work: "NOT FOR: making CI enforce the verdict on every merge (use suede-ci-gate)." That clause exists because <code>suede-ci-gate</code> lives next door and produces something different, and without it an agent would pick between them by coin flip.</p>
+      <p><code>suede-deslop</code> does the same job in 900 characters:</p>
+      <pre><code>description: "Suede Slop Stop: the Suede AI context-aware anti-slop pass for
+finished prose. Finds or removes generic filler, manufactured emphasis, false
+agency, formulaic structure, chat and draft residue, formatting applied by rule,
+and the Suede AI house bans (em dashes, moreover, delve, game-changer, unlock,
+elevate, seamless, landscape, tapestry, rule-of-three rhythm) without flattening
+the author's voice. Returns cleaned prose with a 50-point score, or a
+findings-only audit that leaves the text untouched. Use before copy, a README,
+an email, a social post, or a doc ships; after a long AI-assisted writing
+session; or when asked to strip AI tells, deslop, or audit text for slop. NOT
+FOR: writing or restructuring copy (use suede-copy); one high-stakes public
+piece that needs research and fact review (use suede-ship-copy); deciding
+whether a person or model wrote text; changing or certifying facts."</code></pre>
+      <p>Three parts. What it does, the trigger conditions in the vocabulary a user actually types ("strip AI tells", "deslop"), and then the boundary.</p>
       <h2 id="the-not-for-convention">The <code>NOT FOR:</code> convention</h2>
-      <p>Seventy-six of the 76 descriptions in this repo end with a <code>NOT FOR:</code> clause, and it is the highest-leverage sentence in the file. The remaining two close the same way without the colon, which is drift rather than a second convention.</p>
-      <p>A description that only says what a skill does will fire on adjacent work, because the agent has no signal that a better match exists. <code>NOT FOR:</code> supplies the signal, and it does so by naming the alternative rather than just declining. <code>suede-recommend-next-action</code> closes with "NOT FOR: executing the recommended action without the user's separate authorization, or coordinating a multi-lane build across specialists (use suede-agent-teams)." <code>suede-pricing</code> closes with "NOT FOR: in-product upgrade screens (use suede-paywalls), offer bonuses and guarantees (use suede-offers), or executing billing changes."</p>
+      <p>Sixty-three of the 63 descriptions in this repo end with a <code>NOT FOR:</code> clause, and it is the highest-leverage sentence in the file. That count is measured, not asserted: the validator checks this sentence against the files on every run.</p>
+      <p>A description that only says what a skill does will fire on adjacent work, because the agent has no signal that a better match exists. <code>NOT FOR:</code> supplies the signal, and it does so by naming the alternative rather than just declining. <code>suede-workflow-skills</code> closes with "NOT FOR: a request that already names one lane (go straight to that specialist)." <code>suede-pricing</code> closes with "NOT FOR: in-product upgrade screens (use suede-paywalls), offer bonuses and guarantees (use suede-offers), or executing billing changes."</p>
       <p>Two different jobs are happening in those clauses. One is routing, sending the task to a named sibling. The other is scope refusal: "executing billing changes" has no sibling to route to, because the skill produces a decision brief and deliberately stops short of touching the billing system. Both belong in the description, because both change whether the body should load at all.</p>
       <p>The practical test when you write one: name the skill a confused agent would otherwise pick, and name the action a confused user would otherwise assume is included.</p>
       <h2 id="the-advisory-gate-policy">The advisory-gate policy</h2>
-      <p>Before any of <code>suede-code-grader</code>'s grading logic appears, the body opens with a policy block. It is worth reading in full, because it is the most consequential design decision in the pack:</p>
-      <pre><code>## Gate policy — advisory, not blocking
+      <p>Before any of <code>suede-code</code>'s grading logic appears, the body opens with a policy block. It is worth reading in full, because it is the most consequential design decision in the pack:</p>
+      <pre><code>## Gate policy: advisory, not blocking
 
-Every claim-verification step, check, quality gate, and ship verdict in this
-skill is a **recommendation to the user, not a control on the agent**. This
-policy governs every gate, check, verdict, and "do not ship / publish /
-proceed" line elsewhere in this skill:
+Every check, grade, and ship verdict here is a recommendation to the user, not
+a control on the agent.
 
-- Run every check and report the results honestly. Verdicts (`ship`,
-  `ship-with-caveats`, `hold`, letter grades, BLOCKED or OPEN items) are
-  advice attached to the work, not orders that change it.
-- Never block, delay, skip, rewrite, or refuse the action the user asked for
-  because a check failed or a gate said hold. Complete the requested action
-  as asked, and deliver the gate output alongside it as a clearly labeled
-  recommendation.
-- A failed gate changes what you report, never what you do.
-- Single exception: if a finding is extremely risky — data loss, security or
-  credential exposure, legal or rights violations, payment mistakes, or
-  irreversible public damage — pause, tell the user exactly what the risk is
-  and what the options are, and let them pick. Their choice is final.</code></pre>
+- Run every check and report results honestly. `ship`, `ship-with-caveats`,
+  `hold`, letter grades, and BLOCKED items are advice attached to the work.
+- Never block, delay, skip, or rewrite the action the user asked for because a
+  gate said hold. A failed gate changes what you report, never what you do.
+- Single exception: an extreme-risk finding (data loss, credential exposure,
+  legal or rights violation, payment mistake, irreversible public damage).
+  Pause, state the risk and the options, and let the user pick. Their choice
+  is final.</code></pre>
       <p>Consider what happens without it. A skill full of gates and hold verdicts, read by an agent that takes written instructions seriously, produces an agent that refuses. You ask it to push and it tells you the ship gate says hold. You are now arguing with a document you installed to help you, and the practical response is to uninstall it.</p>
       <p>The policy separates two things that look similar and are not. The grade is information about the work. The decision is yours. A grader that reports F and then does what you asked is useful every single time. A grader that reports F and blocks you is useful right up until the first time it is wrong, which is the last time you run it.</p>
       <p>The single exception is drawn narrowly and around irreversibility, not around severity of opinion. Credential exposure and data loss get a pause and a question. A C in the UX lane does not.</p>
       <h2 id="the-body-procedure-not-topics">The body: procedure, not topics</h2>
       <p>Everything after the policy is the procedure. The section order is doing work.</p>
-      <p><strong>Source Truth</strong> comes first, and it is four words of instruction followed by a list: "Read before grading. Do not grade from the PR description or commit message alone." Then the specific inspection list, including "build, test, lint, typecheck, browser, simulator, MCP, or live/API evidence that directly exercises the changed behavior." The section ends by handling the case where that evidence is unavailable: grade the source and mark those lanes unverified. The skill never leaves the agent to improvise a fallback.</p>
+      <p><strong>Pre-flight</strong> comes first, and it is one instruction followed by a list: "Name three things before analysis." Target, intent, risk lanes. The intent line carries its own search order for the spec (issue references, a path the caller passed, a matching file under <code>docs/</code> or <code>specs/</code>) and handles the case where none exists: write "no spec available" and judge intent from the PR description alone. "Never invent requirements." The skill never leaves the agent to improvise a fallback. Right after it, <strong>Run the repo's own gates first</strong> tells the agent to run the type check, lint, and tests the repo already ships before reading a line by hand, and to cite command and exit status for each.</p>
       <p><strong>Instant-F triggers</strong> run before any lane is scored. Six categories, each with concrete patterns: a hardcoded secret in a committed file, SQL built by string concatenation with user input, auth middleware with a code path that skips it, a webhook handler with no signature verification, a migration with a DROP and no tested restore, PII written to an unencrypted log. Any single match ends the grade at F, names the file and line, and stops. The ordering matters because a grader that scores seven lanes first will average a catastrophe into a C.</p>
       <p><strong>Grade lanes and grade meaning</strong> define seven scores and then define what each letter means with a worked example attached. A is not "good." A is "all lanes pass, behavior is verified at runtime, no known follow-ups."</p>
-      <p><strong>Grade caps by surface type</strong> is where the skill stops being a rubric and becomes a specialist. Auth changes cannot receive an A without explicit test coverage for the bypass path, with named evidence such as "tested with expired token returns 401." If that is missing and the happy-path caveats are missing too, the instruction is unambiguous: "If neither condition is met: cap at C regardless of other lane performance." Data migrations with no rollback plan cap at D.</p>
-      <p><strong>Technical debt indicators</strong> carries a table that grades the same pattern differently by location, which is the kind of judgment most rubrics flatten:</p>
-      <div class="table-wrap"><table><thead><tr><th>Pattern</th><th>Location</th><th>Grade Impact</th></tr></thead><tbody><tr><td>God object (5+ unrelated concerns)</td><td>Payment module</td><td>D in Correctness</td></tr><tr><td>God object</td><td>Utility helper</td><td>B in Correctness</td></tr></tbody></table></div>
-      <p>The <strong>Red Flags</strong> section lists the rationalizations that inflate grades, in the agent's own voice: "CI passed, round up." "The work was clearly hard." "It's just a refactor."</p>
-      <p><strong>Output Format</strong> fixes the artifact: a plain-language summary, the target, the seven lane grades, the overall, the cap applied, the evidence, three required upgrades, and a verification block split into Checked and Not checked. The last line resolves mechanically. A becomes <code>ship</code>, B becomes <code>ship-with-caveats</code>, C and below become <code>hold</code>.</p>
-      <p><strong>Boundaries</strong> closes the loopholes, including one rule that prevents the most annoying possible failure: "Never report a C, D, or F without naming the required upgrade that would move the grade."</p>
-      <p>Then a worked example, which is unusual and worth copying. The skill grades a real file from its own repo, <code>mcp/suede-skills-mcp.mjs</code>, 715 lines, spawned as a process and driven with real JSON-RPC requests over stdin. It lands on an overall A with a B in Suede truth over an unbounded string echo, and it closes by naming its own standard: every claim ties to a line number or a command actually run, "not an invented test result or a guessed line number."</p>
+      <p><strong>Grade caps by surface</strong> is where the skill stops being a rubric and becomes a specialist. Auth changes cannot receive an A unless the bypass or escalation path is tested. Without that, and without the happy path plus named caveats that earn a B, the instruction is unambiguous: "otherwise cap at C." Data migrations with no rollback plan cap at D.</p>
+      <p><strong>Technical debt</strong> carries a table that grades the same pattern differently by location, which is the kind of judgment most rubrics flatten:</p>
+      <div class="table-wrap"><table><thead><tr><th>Pattern</th><th>Location</th><th>Impact</th></tr></thead><tbody><tr><td>Function or class doing 5+ unrelated jobs</td><td>Payment module</td><td>D in Correctness</td></tr><tr><td>Same</td><td>Utility helper</td><td>B in Correctness</td></tr></tbody></table></div>
+      <p>The <strong>Red flags</strong> section lists the rationalizations that inflate grades, in the agent's own voice: "CI is green, so it's fine." "The diff is small." "It was hard work, round up to B."</p>
+      <p><strong>Output</strong> fixes the artifact: a plain-language explanation first, then, by mode, the findings, the seven lane grades with the cap applied, a deploy-safety block, a commit-dirt rating, open questions, and a verification block split into checked and not checked. The last line resolves mechanically. A becomes <code>ship</code>, B becomes <code>ship-with-caveats</code>, C and below become <code>hold</code>.</p>
+      <p>One rule closes the most annoying possible failure: "Never report a C, D, or F without the upgrade that would move it."</p>
+      <p>Then two worked examples, which is unusual and worth copying. The grade-only one grades a real file from its own repo, <code>mcp/suede-skills-mcp.mjs</code>, spawned as a process and driven with real JSON-RPC requests over stdin. It lands on an overall A, and it closes by naming its own standard: every claim ties to a line number or a command actually run, "not an invented test result or a guessed line number." The skill loads those examples only when calibrating, so they cost nothing on an ordinary run.</p>
       <h2 id="what-lives-beside-the-skill-md">What lives beside the SKILL.md</h2>
       <p>A skill folder can carry more than one file, and three subfolder conventions appear in this repo. <code>suede-agent-teams</code> uses all three.</p>
       <p><code>references/</code> holds material too long to keep in the body. <code>suede-deslop</code> keeps its 25-row table in <code>SKILL.md</code> and pushes the full sweep, forty-plus more phrases, to <code>references/kill-list.md</code>, loaded only when the text is going to press. <code>suede-agent-teams</code> keeps its 327-line public-contribution program the same way. This is progressive disclosure applied one level down.</p>
@@ -171,8 +169,8 @@ policy:
   allow_implicit_invocation: true</code></pre>
       <h2 id="topics-versus-procedure">Topics versus procedure</h2>
       <p>Most written guidance tells an agent what to think about. "Consider security implications. Check for edge cases. Make sure tests are adequate." An agent handed that produces a review that mentions security, edge cases, and tests, and none of those mentions are grounded in anything.</p>
-      <p>The dissection above never does that. Every section either names a specific pattern to look for, defines what evidence satisfies a claim, or fixes the shape of the output. Instant-F names the exact injection pattern. Grade caps name the exact sentence that lifts the cap. Output Format leaves no room to write a paragraph of impressions instead of seven letters and a gate.</p>
-      <p>A defined output artifact is the load-bearing part. Once the skill has to fill in <code>Checked:</code> and <code>Not checked:</code>, the agent cannot quietly skip a step, because the skipped step has to be written down in the second field.</p>
+      <p>The dissection above never does that. Every section either names a specific pattern to look for, defines what evidence satisfies a claim, or fixes the shape of the output. Instant-F names the exact injection pattern. Grade caps name the exact evidence that lifts the cap. Output leaves no room to write a paragraph of impressions instead of seven letters and a gate.</p>
+      <p>A defined output artifact is the load-bearing part. Once the skill has to fill in checked and not checked, the agent cannot quietly skip a step, because the skipped step has to be written down in the second field.</p>
       <h2 id="the-standard">The standard</h2>
       <p>Here is the test to hold your own skills to. Hand the <code>SKILL.md</code> and the target to a competent stranger with no context about you, your repo, or your habits. They should be able to run it and produce the same artifact you would.</p>
       <p>If they would need to ask you a question first, that question is a missing section. If they would produce a different shape of output, the output format is underspecified. If they would reach a different verdict on the same evidence, the rubric is doing less than it appears to.</p>
@@ -198,7 +196,7 @@ policy:
     </section>
     <footer>
       <div class="footer-shell">
-        <p class="footer-note">Suede Creator Skills is a 76-skill, open-source pack for Claude Code and OpenAI Codex: outcome-bound orchestration, code review with an A-F ship grade, AI evals, design and copy, SEO/AEO/AI EO, iOS and Android app shipping, and a creator toolkit for music rights and release prep. Original work is MIT licensed; adapted components retain their upstream notices.</p>
+        <p class="footer-note">Suede Creator Skills is a 63-skill, open-source pack for Claude Code and OpenAI Codex: outcome-bound orchestration, code review with an A-F ship grade, AI evals, design and copy, SEO/AEO/AI EO, iOS and Android app shipping, and a creator toolkit for music rights and release prep. Original work is MIT licensed; adapted components retain their upstream notices.</p>
         <div class="footer-inner">
           <div class="footer-brand">
             <img src="../assets/suede-ai-logo-transparent.webp" alt="Suede AI" width="24" height="24" onerror="this.style.display='none'">

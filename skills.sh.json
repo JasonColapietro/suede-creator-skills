@@ -10,7 +10,6 @@
         "suede-graph-flo-xr",
         "suede-ops-architecture",
         "suede-ops-assessment",
-        "suede-recommend-next-action",
         "suede-ship-copy",
         "suede-workflow-skills"
       ]
@@ -22,9 +21,6 @@
         "suede-ai-eval",
         "suede-ci-gate",
         "suede-code",
-        "suede-code-grader",
-        "suede-code-review",
-        "suede-mcp-qa",
         "suede-parity-contract"
       ]
     },
@@ -41,8 +37,6 @@
       "title": "Design & copy",
       "description": "Craft: Make the thing look and read like someone built it on purpose.",
       "skills": [
-        "johnny-suede-design",
-        "johnny-suede-write",
         "suede-copy",
         "suede-design",
         "suede-deslop"
@@ -77,7 +71,6 @@
         "suede-co-marketing",
         "suede-community-marketing",
         "suede-content-strategy",
-        "suede-instagram-growth",
         "suede-newsroom",
         "suede-public-relations",
         "suede-social"
@@ -119,7 +112,6 @@
         "suede-onboarding",
         "suede-paywalls",
         "suede-pricing",
-        "suede-signup",
         "suede-site-alchemy"
       ]
     },
@@ -135,14 +127,6 @@
       ]
     },
     {
-      "title": "Consumer recovery",
-      "description": "Revenue & retention: Convert the attention, then keep what it earned.",
-      "skills": [
-        "amazon-returns-recovery",
-        "subscription-recovery"
-      ]
-    },
-    {
       "title": "Strategy & research",
       "description": "Strategy & rights: Know the market you are in and own what you make.",
       "skills": [
@@ -150,10 +134,8 @@
         "suede-competitors",
         "suede-customer-research",
         "suede-marketing-council",
-        "suede-marketing-ideas",
         "suede-marketing-loops",
         "suede-marketing-plan",
-        "suede-marketing-psychology",
         "suede-product-marketing"
       ]
     },
@@ -163,7 +145,6 @@
       "skills": [
         "suede-campaign-in-a-box",
         "suede-release-linter",
-        "suede-rights-audit",
         "suede-rights-passport",
         "suede-sync-packaging"
       ]

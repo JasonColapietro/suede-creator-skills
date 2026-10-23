@@ -82,7 +82,7 @@ export function measureBookFacts({ skillsDir = path.join(repoRoot, "skills"), no
     else withoutNotFor.push(name);
   }
 
-  // The count NOTICE.md attributes to Corey Haines's marketingskills. Read from
+  // The count of skills NOTICE.md lists under marketingskills. Read from
   // the attribution list rather than its prose, so the two cannot disagree.
   let marketingAdapted = 0;
   if (fs.existsSync(noticeFile)) {

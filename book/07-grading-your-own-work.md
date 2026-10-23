@@ -5,7 +5,7 @@ back with fourteen items ranked P0 through P3, you read the P0, decide it is
 really more of a P2, and merge. Nothing in the output stopped you, because
 nothing in the output was a decision. It was a menu.
 
-A letter grade is harder to ignore. `suede-code-grader` ends with one character
+A letter grade is harder to ignore. `suede-code` ends with one character
 and a gate that follows it mechanically: A maps to `ship`, B maps to
 `ship-with-caveats`, and C, D, and F all map to `hold`. There is no arithmetic
 left to do at the end and no room to negotiate with yourself about severity.
@@ -63,14 +63,14 @@ an F.
 The rule attached to those triggers is the part builders resist: **no other lane
 can raise a locked F.** Not a beautiful migration plan, not full test coverage
 everywhere else, not the fact that the key is for a staging account. The
-instruction to the agent is explicit: stop, report the file and line, mark the
-grade F, and do not grade the remaining lanes. Scoring the rest would imply
-those scores could matter. They cannot.
+instruction to the agent is explicit: report the file and line, mark the grade
+F, and treat it as a P0 finding. "Other lanes cannot raise the grade." Whatever
+the rest score, they cannot matter.
 
-This list lives in two places, `suede-code` Step 1 and `suede-code-grader`, and
-both copies carry the same note: change both together. Duplicated rules drift.
-Saying so in the file is cheaper than discovering the drift during a review that
-mattered.
+This list used to live in two places, a review skill and a separate grader, and
+both copies carried the same note: change both together. Merging the two into
+`suede-code` deleted the second copy. Duplicated rules drift, and one source is
+cheaper than discovering the drift during a review that mattered.
 
 ## Caps, so a happy path cannot buy an A
 

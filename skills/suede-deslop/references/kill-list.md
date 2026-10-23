@@ -265,7 +265,7 @@ Fix: find the actor, put them at the front of the sentence.
 - Three-item lists: use two items or one, unless the count is really three.
 - Questions answered in the same breath: let the question breathe or cut it.
 - Every paragraph ending punchy: vary endings.
-- Em dashes: follow the supplied house style. Suede-owned public copy uses commas, parentheses, colons, or periods instead.
+- Em dashes: follow the supplied house style. Suede AI public copy uses commas, parentheses, colons, or periods instead.
 - Staccato fragments stacked for effect: merge them.
 - "Not always. Not perfectly.": hedging dressed as reassurance. Cut it.
 

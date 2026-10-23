@@ -422,5 +422,4 @@ Waiting for your choice.
 - Need plan structure or offer economics -> use `suede-pricing` or `suede-offers`.
 - Need paywall or trial-expiry UX -> use `suede-paywalls`.
 - Need churn events or a controlled retention test -> use `suede-analytics` or `suede-ab-testing`.
-- Acting as the subscriber to find, cancel, or dispute your own recurring charges -> use `subscription-recovery`. This skill is the merchant side only.
 - From those skills, route cancellation and payment-recovery strategy back to `suede-churn-prevention`.

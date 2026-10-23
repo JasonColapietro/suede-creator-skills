@@ -7,7 +7,7 @@ Release record for the `suede-ops-assessment` skill, following the NVIDIA skill-
 
 ## Description
 
-Suede-owned operations-assessment discipline that maps how work actually happens before anyone designs a system: floor-level interviews with the people who do the work, an inventory of every silo including spreadsheets and inboxes used as databases, friction quantified in the requester's own numbers, opportunities ranked by annual value against build complexity, and adoption watched for the thirty days after launch.
+Suede AI operations-assessment discipline that maps how work actually happens before anyone designs a system: floor-level interviews with the people who do the work, an inventory of every silo including spreadsheets and inboxes used as databases, friction quantified in the requester's own numbers, opportunities ranked by annual value against build complexity, and adoption watched for the thirty days after launch.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.2; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
