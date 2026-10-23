@@ -1,13 +1,13 @@
 ---
 name: suede-video
-description: "Suede-owned marketing video planning and production discipline. Use when choosing a format, scripting, storyboarding, generating, editing, reverse-engineering pacing, building a repeatable video pipeline, or repurposing one source into multiple cuts. NOT FOR: deciding the social calendar (use suede-social), paid ad concepts (use suede-ad-creative), image-only assets (use suede-image), or publishing unapproved media."
+description: "Suede AI marketing video production: format choice, scripts, storyboards, AI generation and avatar plans with consent and rights gates, programmatic rendering, edit decision lists, reverse-engineered pacing, platform export specs, and YouTube and video search optimization (titles, chapters, transcripts, VideoObject schema). Use when scripting, generating, editing, or packaging a marketing video, or building a repeatable video pipeline. NOT FOR: the social calendar or post strategy (use suede-social), bridging a clip to a long-form guide (use suede-clip-to-guide), paid ad concepts (use suede-ad-creative), still images (use suede-image), or publishing unapproved media."
 metadata:
-  version: 2.1.0
+  version: 2.2.0
 ---
 
-# Suede Video Production
+# Suede AI Video Production
 
-Suede Video turns an approved message and rights-cleared source material into
+This skill turns an approved message and rights-cleared source material into
 scripts, storyboards, generation plans, edit systems, and reusable production
 pipelines. It keeps likeness, licensing, brand assets, render cost, and
 publishing as explicit gates rather than assumptions.
@@ -331,6 +331,43 @@ handoff: it owns that row schema.
 
 ---
 
+## Export Specs and Video Search
+
+Verified platform facts (October 2026):
+
+| Destination | Fact | Source |
+|---|---|---|
+| YouTube Shorts | Up to 3 minutes for square or vertical uploads made on or after Oct 15, 2024. Over 1 minute with an active Content ID claim, the Short is blocked worldwide. | https://support.google.com/youtube/answer/15424877 |
+| Instagram Reels | Up to 3 minutes; profile grid previews crop to 3:4, so keep the subject inside a 3:4 safe area of the 9:16 frame | Instagram announcement, January 2025 |
+| Performance Max | Supply your own 16:9, 1:1, and 9:16 videos of 10 seconds or more, or Google may auto-generate one | https://support.google.com/google-ads/answer/17091269 |
+
+For other destinations, read the current upload spec and preview the
+authenticated composer before choosing ratio, resolution, or duration.
+
+**Make the video findable.** A video that answers a question people search can
+earn views for years on YouTube and in Google's video results. For any video
+meant to be found:
+
+1. **Title:** the search phrase and the promise, phrase first, under about 70
+   characters so it is not truncated in results.
+2. **Description:** the first two lines restate the answer in plain words; the
+   rest adds links and context.
+3. **Chapters:** timestamps starting at 0:00 with descriptive names, which
+   Google can show as key moments.
+4. **Captions and transcript:** upload accurate captions instead of relying on
+   auto-captions, and publish the transcript on the page that embeds the video.
+5. **Embed on an owned page** with `VideoObject` JSON-LD (name, description,
+   thumbnailUrl, uploadDate, duration, contentUrl or embedUrl) and the video
+   visible on load, so the page itself can rank and be cited in AI answers.
+6. **Thumbnail:** one readable idea at small size; real product UI, never a
+   fabricated one.
+
+When the video must lead viewers to a written guide, route to
+`suede-clip-to-guide`. For site-level video indexing and schema audits, route to
+`suede-seo-audit`.
+
+---
+
 ## Common Mistakes
 
 1. **Starting with tools, not strategy**: decide what video you need before picking tools
@@ -382,6 +419,8 @@ and do not imply the blocker was resolved or that a render occurred.
 ## Routing
 
 - Use `suede-social` to choose channel strategy, cadence, and distribution.
+- Use `suede-clip-to-guide` when a clip has to bridge to an article, newsletter,
+  or guide.
 - Use `suede-ad-creative` for paid video ad concepts and variants.
 - Use `suede-image` for still-image generation and editing.
 - Use `suede-copy` for source-verified script and messaging polish.

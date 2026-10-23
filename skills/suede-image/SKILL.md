@@ -1,13 +1,13 @@
 ---
 name: suede-image
-description: "Suede-owned marketing image production for generation prompts, hero and social graphics, product mockups, export sizing, compression, and preview assets. Use when the user needs a general-purpose marketing image or an image-production workflow. NOT FOR: paid-ad creative systems (use suede-ad-creative), video production (use suede-video), or app-store listing strategy (use suede-aso)."
+description: "Suede AI marketing image production: choosing generation, editing, templates, or real screenshots; prompts and layout specs; hero, social, banner, directory, and Open Graph images; product mockups from real UI; export sizing, compression, and image SEO (alt text, file names, dimensions, structured data). Use when the user needs a marketing image or an image-production workflow. NOT FOR: paid-ad creative systems (use suede-ad-creative), video (use suede-video), app-store screenshots and listing strategy (use suede-aso), or social post strategy (use suede-social)."
 metadata:
-  version: 2.0.1
+  version: 2.1.0
 ---
 
-# Suede Marketing Image Production
+# Suede AI Marketing Image Production
 
-Suede produces marketing imagery as a rights-aware, placement-specific system: choose the right production method, protect canonical brand assets, preserve real product truth, and verify the exported result. Use generation models and design tools to create efficient hero, social, mockup, banner, and preview workflows without fabricating interfaces or provenance.
+Produce marketing imagery as a rights-aware, placement-specific system: choose the right production method, protect canonical brand assets, preserve real product truth, and verify the exported result. Use generation models and design tools to create efficient hero, social, mockup, banner, and preview workflows without fabricating interfaces or provenance.
 
 ## Before Starting
 
@@ -200,9 +200,9 @@ file limits, and format rules.
 
 | Platform | Planning size | Aspect ratio | Notes |
 |----------|-------------|:---:|-------|
-| Twitter/X | 1200x675 | 16:9 | Large image card |
+| X | 1200x675 | 16:9 | Large image card |
 | LinkedIn | 1200x627 | 1.91:1 | Feed image |
-| Instagram Feed | 1080x1080 | 1:1 | Square; 1080x1350 (4:5) also strong |
+| Instagram Feed | 1080x1350 | 4:5 | Profile grid crops to 3:4 since January 2025; keep the subject centered |
 | Instagram Stories | 1080x1920 | 9:16 | Full screen vertical |
 | Facebook | 1200x630 | 1.91:1 | Link share image |
 
@@ -296,7 +296,19 @@ before attributing search or conversion results to image changes.
 - [ ] **Lazy load** below-the-fold images (`loading="lazy"`)
 - [ ] **Set explicit dimensions**: `width` and `height` attributes prevent layout shift (CLS)
 - [ ] **Use verified CDN optimization** when the current stack supports it
-- [ ] **Add alt text**: descriptive, keyword-relevant, not stuffed
+- [ ] **Add alt text**: describe what the image shows in plain words, using the
+  page's topic phrase only where it is the honest description
+- [ ] **Name files descriptively**: `pricing-calculator-dashboard.webp`, not
+  `IMG_2041.webp`
+- [ ] **Keep important images crawlable**: a real `<img>` with `src`, not a CSS
+  background, and not blocked in robots.txt
+- [ ] **Place the image near the text it illustrates** and give charts a
+  caption that states the finding, so search and AI answers can quote it
+
+The largest above-the-fold image is usually the Largest Contentful Paint
+element. Do not lazy-load it; give it `fetchpriority="high"` and explicit
+dimensions. Core Web Vitals and image-indexing audits route to
+`suede-seo-audit`.
 
 ### Quick Optimization Commands
 
