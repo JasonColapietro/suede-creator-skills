@@ -1,6 +1,6 @@
 ---
 name: suede-graph-flo-xr
-description: "Suede Thought Graph shipping search for a multi-file repo change. Use when competing implementation plans need one evidence-gated selection before any build. Halts on hazards, collisions, budget exhaustion, or no safe winner. Reads production; never deploys. NOT FOR: bulk independent work (use a separate private worker-fleet pass); findings-only diff review (use suede-code-review); CI or branch-protection wiring (use suede-ci-gate); copy-only shipping (use suede-ship-copy)."
+description: "Suede Thought Graph shipping search for a multi-file repo change. Use when competing implementation plans need one evidence-gated selection before any build. Halts on hazards, collisions, budget exhaustion, or no safe winner. Reads production; never deploys. NOT FOR: bulk independent work (use a separate private worker-fleet pass); reviewing or grading an existing diff (use suede-code); CI or branch-protection wiring (use suede-ci-gate); copy-only shipping (use suede-ship-copy)."
 ---
 
 # Suede Graph Flo XR
@@ -238,21 +238,19 @@ test -f ".suede-graph-flo-xr/${runKey}/handoff.md"
 Report that path, the selected plan if any, gate result, changed files, commands
 run, and explicit caveats. A completed local graph does not prove a deployment.
 
-## Third-party license
+## License file
 
-The operation graph and thought-state model in `workflows/suede-graph-flo-xr.js` adapt
-Graph of Thoughts by ETH Zurich. The complete upstream BSD notice, conditions,
-disclaimer, and requested citation travel with this skill at
-`LICENSE.graph-of-thoughts-BSD.txt`. Keep that file with every source or binary
-redistribution of the workflow.
+Part of `workflows/suede-graph-flo-xr.js` is distributed under BSD-3-Clause
+terms carried in `LICENSE.graph-of-thoughts-BSD.txt`. Keep that file with every
+source or binary redistribution of the workflow.
 
 ## Routing
 
 - High-volume, well-specified, independent worker tasks → a separate private
   worker-fleet pass.
-- Findings-only review of an existing diff → `suede-code-review`.
+- Review or grade an existing diff → `suede-code`.
 - CI, required checks, or branch-protection wiring → `suede-ci-gate`.
 - Copy-only search and publication readiness → `suede-ship-copy`.
-- From `suede-code-review`, `suede-ci-gate`, or `suede-ship-copy`: route a
+- From `suede-code`, `suede-ci-gate`, or `suede-ship-copy`: route a
   multi-file implementation-plan search with one
   selected mutating winner back to `suede-graph-flo-xr`.

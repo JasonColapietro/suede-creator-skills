@@ -1,6 +1,6 @@
 ---
 name: suede-ci-gate
-description: "Suede AI CI and branch-protection wiring for any repo and any stack: path-aware jobs, a single aggregator required check that cannot deadlock, lockfile hygiene, runtime pinning from the repo, and the exact branch-protection settings. Use when asked to set up CI, protect main, make CI block a bad merge, fix a required check that hangs pending forever, or repair duplicate or misfiring pipelines. Detects the repo's real apps, package managers, and runtime versions first; emits workflow files and settings, never pushes or flips protection itself. NOT FOR: reviewing or grading the change the gate is failing on (use suede-code); designing the AI eval cases to wire in (use suede-ai-eval); branch and worktree hygiene (a private Suede Labs companion, not in this pack)."
+description: "Suede AI CI and branch-protection wiring for any repo and any stack: path-aware jobs, a single aggregator required check that cannot deadlock, lockfile hygiene, runtime pinning from the repo, and the exact branch-protection settings. Use when asked to set up CI, protect main, make CI block a bad merge, fix a required check that hangs pending forever, or repair duplicate or misfiring pipelines. Detects the repo's real apps, package managers, and runtime versions first; emits workflow files and settings, never pushes or flips protection itself. NOT FOR: reviewing or grading the change the gate is failing on (use suede-code); designing the AI eval cases to wire in (use suede-ai-eval); post-merge release packaging (use suede-launch-packaging)."
 ---
 
 # Suede CI Gate
@@ -37,7 +37,7 @@ Run this in whatever folder you point it at. **Detect first, never assume.** Not
 From the repo root, inventory:
 
 - **Apps:** every top-level dir with a manifest: `package.json`, `requirements.txt` / `pyproject.toml`, `go.mod`, `Cargo.toml`, `Gemfile`. A repo may hold one app or many; build for what's actually there.
-- **Package manager per app:** which lockfile is present: `package-lock.json` (npm), `pnpm-lock.yaml` (pnpm), `yarn.lock` (yarn), `bun.lockb` (bun). Two lockfiles in one app is a bug to fix first (Lane 3).
+- **Package manager per app:** which lockfile is present: `package-lock.json` (npm), `pnpm-lock.yaml` (pnpm), `yarn.lock` (yarn), `bun.lock` or the older binary `bun.lockb` (bun). Two lockfiles in one app is a bug to fix first (Lane 3).
 - **Existing CI:** read `.github/workflows/*`. Do **not** duplicate a job that already exists: extend or reconcile it.
 - **Runtime versions:** `.nvmrc`, `package.json` `engines`, `.python-version`, `pytest.ini`/`pyproject`. Pin CI to these; never hardcode a guess.
 - **Deploy platform:** `vercel.json` / `.vercel`, `netlify.toml`, a `Dockerfile`. If the platform skips non-prod builds (e.g. Vercel `ignoreCommand` kills previews), CI is the *only* pre-merge build signal: so a build job is mandatory.
@@ -73,7 +73,7 @@ In branch protection, require **only `ci-success`**: never the individual jobs. 
 5. **Don't duplicate existing CI**: if a workflow already covers an app (e.g. a backend test workflow), extend it; never stack a second, weaker job on top.
 6. **Least privilege**: `permissions: contents: read` unless a job genuinely needs more.
 7. **Build is a gate when previews are off**: if the deploy platform skips non-prod builds, the CI build is your only pre-merge proof the app compiles. Keep it.
-8. **Branch protection**: output the exact settings: require `ci-success`, require branches up to date before merge, optional required PR review, block force-push and deletion, optionally include administrators.
+8. **Branch protection**: output the exact settings: require `ci-success`, require branches up to date before merge, optional required PR review, block force-push and deletion, optionally include administrators. GitHub offers two mechanisms: classic branch protection and repository rulesets (Settings → Rules → Rulesets), which can target many branches and stack. Match whichever the repo already uses; for a new setup on GitHub, prefer a ruleset with `ci-success` as the required status check.
 
 ## Instant-fail patterns (CI that looks green but isn't)
 
@@ -98,7 +98,7 @@ The excuses that precede a broken gate:
 1. The workflow file(s) under `.github/workflows/`.
 2. The exact branch-protection settings to apply (and the `gh api` calls, if asked).
 3. A short report: apps detected, package manager per app, what each job runs, what is required, and anything to fix first (dual lockfiles, duplicate workflows, runtime mismatches).
-4. **Readback, once the settings have been applied** (the user applies them, this skill does not): verify rather than assume. `gh api repos/:owner/:repo/branches/main/protection --jq '.required_status_checks.contexts'` must return exactly `["ci-success"]` (any path-filtered job in that list is the deadlock above), and `gh run list --branch <pr-branch>` must show `ci-success` actually ran, not skipped. If the settings are not applied yet or the token lacks admin scope, report the gate as **unverified**; never claim protection is live from the settings you emitted.
+4. **Readback, once the settings have been applied** (the user applies them, this skill does not): verify rather than assume. `gh api repos/:owner/:repo/branches/main/protection --jq '.required_status_checks.contexts'` must return exactly `["ci-success"]` (any path-filtered job in that list is the deadlock above); for a ruleset, `gh api repos/:owner/:repo/rules/branches/main` must show a `required_status_checks` rule naming only `ci-success`; and `gh run list --branch <pr-branch>` must show `ci-success` actually ran, not skipped. If the settings are not applied yet or the token lacks admin scope, report the gate as **unverified**; never claim protection is live from the settings you emitted.
 
 End with a **Simple explanation (plain, for a 10-year-old)**: one short paragraph, no jargon, saying what the gate now does and what it blocks: e.g. "Before anyone's changes join the main project, a robot builds and tests them. If the robot fails, the merge button locks."
 
@@ -118,9 +118,8 @@ Generate; don't enforce. This skill writes workflow files and tells you the prot
 
 ## Routing
 
-- The gate is failing on real defects → **suede-code** to review and grade the change, or **suede-code-review** when the caller wants findings without a letter grade
-- The repo ships an MCP server → **suede-mcp-qa** for the protocol suite, then wire it into the aggregator as a required job
+- The gate is failing on real defects → **suede-code** to review and grade the change (`--findings-only` when the caller wants no letter grade)
+- The repo ships an MCP server → add a job that runs a full stdio session (`initialize`, `notifications/initialized`, then list and call) and wire it into the aggregator
 - AI features need eval jobs in the pipeline → **suede-ai-eval** to design the cases, then wire them in here
 - Rollout needs flags, staged lanes, or a rollback tree → **suede-agent-teams**
-- Branch/worktree setup, stale local state, PR finish options, or cleanup discipline → **suede-git-hygiene** (private Suede Labs companion, not in this pack)
 - Gate holds and the release goes public → **suede-launch-packaging**

@@ -71,7 +71,7 @@ Use this lane to make Suede install instructions accurate, public, and easy to e
 | Install succeeds but the skill never triggers | Frontmatter `name` mismatch or vague description | Fix SKILL.md frontmatter, push, reinstall, restart |
 | Works locally, fails for a public user | Command references `@personal` or a local plugin alias | Replace with the public GitHub repo-and-path route |
 | New skill invisible after install (Codex) | Session has not reloaded skills | Restart Codex, then confirm the skill lists |
-| Catalog lists a skill the install cannot find | MCP catalog drifted from the repo | Route to suede-mcp-qa; fix catalog and docs together |
+| Catalog lists a skill the install cannot find | MCP catalog drifted from the repo | Diff the server's live `tools/list` against the catalog; fix catalog and docs together |
 
 ### Lane B output
 
