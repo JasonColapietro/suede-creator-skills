@@ -343,7 +343,7 @@ Loops are grouped by function. Naming follows the "The X loop" convention.
 - **Check cadence**: Weekly
 - **Acts when**: A signup/checkout step regresses vs. baseline.
 - **Purpose**: Keep the signup/checkout path converting as the site changes.
-- **Skills used**: `suede-signup`, `suede-site-alchemy`, `suede-analytics`, `suede-ab-testing`
+- **Skills used**: `suede-onboarding`, `suede-site-alchemy`, `suede-analytics`, `suede-ab-testing`
 - **Loop body**:
   1. Pull conversion by step across the signup/checkout flow.
   2. Compare to baseline; flag regressions (a deploy or copy change may have hurt it).

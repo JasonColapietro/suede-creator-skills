@@ -75,7 +75,7 @@ Route only after the candidate's evidence and authority gates pass.
 
 ### Suede routes to consider
 
-`suede-aso`, `suede-onboarding`, `suede-signup`, `suede-paywalls`,
+`suede-aso`, `suede-onboarding`, `suede-paywalls`,
 `suede-emails`, `suede-referrals`, `suede-pricing`, `suede-ad-creative`, and
 `suede-ads`.
 

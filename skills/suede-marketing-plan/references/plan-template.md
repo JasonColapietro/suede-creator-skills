@@ -203,7 +203,7 @@ Quarter-by-quarter outcome state (Q1 / Q2 / Q3 / Q4).
 - Paywall + pricing review (often Activation × Revenue)
 
 ### Skills + tools
-`suede-onboarding`, `suede-signup`, `suede-paywalls`, `suede-copy`, `suede-site-alchemy`, `suede-ab-testing`, etc.
+`suede-onboarding`, `suede-paywalls`, `suede-copy`, `suede-site-alchemy`, `suede-ab-testing`, etc.
 
 ---
 

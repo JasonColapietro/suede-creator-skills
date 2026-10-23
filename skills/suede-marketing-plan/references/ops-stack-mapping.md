@@ -42,7 +42,7 @@ The plan's Section 11 makes this thesis explicit by:
 | Skill | What it does | Primary use in Activation |
 |---|---|---|
 | `suede-onboarding` | Optimize user onboarding flows | Onboarding rebuild, activation rate tests |
-| `suede-signup` | Optimize signup/registration | Reduce friction at top of activation |
+| `suede-onboarding` (Signup lane) | Optimize signup/registration | Reduce friction at top of activation |
 | `suede-site-alchemy` | Optimize marketing pages, forms, popups, and landing pages | Conversion testing across activation surfaces |
 | `suede-paywalls` | Optimize paywalls and upgrade screens | Trial → paid conversion (also Revenue) |
 | `suede-copy` | Write, edit, and iterate marketing copy | Onboarding screens, paywall copy, CTAs, and voice review |
