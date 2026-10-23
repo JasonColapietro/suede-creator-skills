@@ -3,15 +3,15 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>web-artifacts-builder Agent Skill by anthropics</title>
+    <title>web-artifacts-builder Agent Skill by anthropics | Suede AI</title>
     <meta name="description" content="Builds elaborate multi-component claude.ai HTML artifacts with React, Tailwind CSS, and shadcn/ui, for complex artifacts… From anthropics/skills, Apache-2.0.">
     <meta name="keywords" content="web-artifacts-builder skill by anthropics, web-artifacts-builder skill, web-artifacts-builder agent skill, web-artifacts-builder claude skill, anthropics skills, frontend and design agent skills, SKILL.md">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
     <link rel="canonical" href="https://skills.suedeai.ai/directory/anthropics/skills/web-artifacts-builder/">
     <link rel="icon" href="../../../../assets/favicon-64.png" type="image/png">
     <meta property="og:type" content="article">
-    <meta property="og:site_name" content="Suede Skills Directory">
-    <meta property="og:title" content="web-artifacts-builder Agent Skill by anthropics">
+    <meta property="og:site_name" content="Suede AI Skills Directory">
+    <meta property="og:title" content="web-artifacts-builder Agent Skill by anthropics | Suede AI">
     <meta property="og:description" content="Builds elaborate multi-component claude.ai HTML artifacts with React, Tailwind CSS, and shadcn/ui, for complex artifacts… From anthropics/skills, Apache-2.0.">
     <meta property="og:url" content="https://skills.suedeai.ai/directory/anthropics/skills/web-artifacts-builder/">
     <meta property="og:image" content="https://skills.suedeai.ai/assets/social/directory-card.png">
@@ -19,7 +19,7 @@
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@AISUEDE">
-    <meta name="twitter:title" content="web-artifacts-builder Agent Skill by anthropics">
+    <meta name="twitter:title" content="web-artifacts-builder Agent Skill by anthropics | Suede AI">
     <meta name="twitter:description" content="Builds elaborate multi-component claude.ai HTML artifacts with React, Tailwind CSS, and shadcn/ui, for complex artifacts… From anthropics/skills, Apache-2.0.">
     <meta name="twitter:image" content="https://skills.suedeai.ai/assets/social/directory-card.png">
     <script type="application/ld+json">
@@ -27,14 +27,14 @@
         "@context": "https://schema.org",
         "@type": "WebPage",
         "@id": "https://skills.suedeai.ai/directory/anthropics/skills/web-artifacts-builder/#page",
-        "name": "web-artifacts-builder Agent Skill by anthropics",
+        "name": "web-artifacts-builder Agent Skill by anthropics | Suede AI",
         "description": "Builds elaborate multi-component claude.ai HTML artifacts with React, Tailwind CSS, and shadcn/ui, for complex artifacts… From anthropics/skills, Apache-2.0.",
         "url": "https://skills.suedeai.ai/directory/anthropics/skills/web-artifacts-builder/",
         "dateModified": "2026-10-23",
         "isPartOf": {
           "@type": "CollectionPage",
           "@id": "https://skills.suedeai.ai/directory/#directory",
-          "name": "Suede Skills Directory",
+          "name": "Suede AI Skills Directory",
           "url": "https://skills.suedeai.ai/directory/"
         },
         "publisher": {
@@ -125,7 +125,7 @@
           <a href="../../../../">Home</a>
           <a href="../../../">Directory</a>
           <a href="../../../methodology/">How listing works</a>
-          <a href="../../../../skills/">Suede skills</a>
+          <a href="../../../../skills/">Suede AI skills</a>
           <a href="../../../../blog/">Blog</a>
           <a href="../../../submit/" class="nav-cta">List your skill</a>
         </div>
@@ -181,11 +181,14 @@ cp -R &quot;$tmp/repo/&quot;skills/web-artifacts-builder .claude/skills/
 rm -rf &quot;$tmp&quot;</code></pre>
         </div>
         <div class="snippet">
-          <div class="snippet-head"><span>Codex installer</span><button type="button" class="snippet-copy" data-copy-target="install-codex">Copy</button></div>
-          <pre><code id="install-codex">python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
-    --repo anthropics/skills \
-    --path skills/web-artifacts-builder</code></pre>
+          <div class="snippet-head"><span>Codex, project-level copy</span><button type="button" class="snippet-copy" data-copy-target="install-codex">Copy</button></div>
+          <pre><code id="install-codex">tmp=&quot;$(mktemp -d)&quot;
+git clone --depth 1 https://github.com/anthropics/skills.git &quot;$tmp/repo&quot;
+mkdir -p .agents/skills
+cp -R &quot;$tmp/repo/&quot;skills/web-artifacts-builder .agents/skills/
+rm -rf &quot;$tmp&quot;</code></pre>
         </div>
+        <p class="muted">For a user-level install, copy the folder to <code>~/.claude/skills/</code> (Claude Code) or <code>~/.agents/skills/</code> (Codex). Inside Codex, <code>$skill-installer</code> can also fetch a skill from GitHub. New to skills? Read <a href="../../../guides/install-agent-skills/">How to install agent skills in Claude Code, Codex and Cursor</a>.</p>
         <p class="muted">anthropics/skills is third-party code. Read SKILL.md and any bundled scripts before you install it.</p>
       </section>
       <section class="panel" aria-labelledby="author-title">
@@ -264,24 +267,31 @@ rm -rf &quot;$tmp&quot;</code></pre>
       </section>
 <section class="panel badge-panel" id="badge" aria-labelledby="badge-title"><h2 id="badge-title">Two badges for web-artifacts-builder</h2>
         <div class="shield-pair"><a href="https://skills.suedeai.ai/directory/anthropics/skills/web-artifacts-builder/"><img src="/directory/anthropics/skills/web-artifacts-builder/score.svg" alt="Suede Skill Check: 87/100" width="160" height="175" loading="lazy"></a><a href="https://skills.suedeai.ai/directory/anthropics/skills/web-artifacts-builder/"><img src="/directory/anthropics/skills/web-artifacts-builder/badge.svg" alt="Suede Skill Check: Grade B" width="160" height="175" loading="lazy"></a></div>
-        <p>Choose the numeric badge, the letter badge, or both. Each links to this skill’s Suede listing; either valid linked badge can qualify for the feature offer.</p>
+        <p>Choose the numeric badge, the letter badge, or both. Each links to this skill’s Suede AI listing; either valid linked badge can qualify for the feature offer.</p>
         <div class="snippet"><div class="snippet-head"><span>Markdown</span><button type="button" class="snippet-copy" data-copy-target="badge-md">Copy both badges</button></div><pre><code id="badge-md">[![Suede Skill Check: 87/100](https://skills.suedeai.ai/directory/anthropics/skills/web-artifacts-builder/score.svg)](https://skills.suedeai.ai/directory/anthropics/skills/web-artifacts-builder/)
 [![Suede Skill Check: Grade B](https://skills.suedeai.ai/directory/anthropics/skills/web-artifacts-builder/badge.svg)](https://skills.suedeai.ai/directory/anthropics/skills/web-artifacts-builder/)</code></pre></div>
         <div class="snippet"><div class="snippet-head"><span>HTML</span><button type="button" class="snippet-copy" data-copy-target="badge-html">Copy both badges</button></div><pre><code id="badge-html">&lt;a href=&quot;https://skills.suedeai.ai/directory/anthropics/skills/web-artifacts-builder/&quot;&gt;&lt;img src=&quot;https://skills.suedeai.ai/directory/anthropics/skills/web-artifacts-builder/score.svg&quot; alt=&quot;Suede Skill Check: 87/100&quot; width=&quot;160&quot; height=&quot;175&quot;&gt;&lt;/a&gt;
 &lt;a href=&quot;https://skills.suedeai.ai/directory/anthropics/skills/web-artifacts-builder/&quot;&gt;&lt;img src=&quot;https://skills.suedeai.ai/directory/anthropics/skills/web-artifacts-builder/badge.svg&quot; alt=&quot;Suede Skill Check: Grade B&quot; width=&quot;160&quot; height=&quot;175&quot;&gt;&lt;/a&gt;</code></pre></div>
         <p class="muted">Suede Certified on the shield refers to this published structural quality check. Security scan: not scanned. Read the <a href="../../../methodology/">methodology</a>.</p>
-        <p class="badge-offer" data-promotion-end="">Limited-time feature offer: display either the numeric or letter badge in your repository or skill README (both also qualify), then <a href="../../../submit/">request badge verification</a>. Eligible skills scoring 80–99 can receive a featured placement after Suede verifies at least one valid badge linked to the skill’s listing. Suede has not announced an end date.</p></section>
+        <p class="badge-offer" data-promotion-end="">Limited-time feature offer: Display either quality badge in your repository or skill README, linked to your listing, then request verification. Suede AI checks the rendered README at a recorded commit. Eligible skills scoring 80–99 with a verified badge can receive a featured placement while the offer is open. <a href="../../../submit/">Request badge verification</a>.</p>
+        <p>Publishers: read <a href="../../../guides/skill-ai-visibility/">How to get your agent skill found in search and cited by AI assistants</a>.</p></section>
+      <aside class="panel cta-placement" aria-labelledby="cta-publisher-claim-b-feature" data-cta-placement="publisher-claim" data-cta-variant="b-feature">
+        <h2 id="cta-publisher-claim-b-feature">Publishers: get featured</h2>
+        <p>Skills scoring 80–99 can display a quality shield. While the feature offer is open, a verified badge can earn a featured placement.</p>
+        <p><a class="button" href="../../../submit/" data-cta="publisher-claim:b-feature">Request badge verification</a></p>
+      </aside>
       <section class="panel" aria-labelledby="cited-title">
         <h2 id="cited-title">Where this skill is cited</h2>
         <p>anthropics/skills appears in 7 curated lists: <a href="https://github.com/BehiSecc/awesome-claude-skills" target="_blank" rel="noopener">BehiSecc/awesome-claude-skills</a>, <a href="https://github.com/ComposioHQ/awesome-claude-skills" target="_blank" rel="noopener">ComposioHQ/awesome-claude-skills</a>, <a href="https://github.com/heilcheng/awesome-agent-skills" target="_blank" rel="noopener">heilcheng/awesome-agent-skills</a>, <a href="https://github.com/hesreallyhim/awesome-claude-code" target="_blank" rel="noopener">hesreallyhim/awesome-claude-code</a>, <a href="https://github.com/karanb192/awesome-claude-skills" target="_blank" rel="noopener">karanb192/awesome-claude-skills</a>, <a href="https://github.com/skillmatic-ai/awesome-agent-skills" target="_blank" rel="noopener">skillmatic-ai/awesome-agent-skills</a>, <a href="https://github.com/travisvn/awesome-claude-skills" target="_blank" rel="noopener">travisvn/awesome-claude-skills</a>.</p>
       </section>
+
       <aside class="panel svc-cta" aria-labelledby="svc-title" data-services-cta="skill">
         <h2 class="svc-kicker" id="svc-title">From Suede AI, the publisher of this directory</h2>
         <div class="svc-cards">
           <div class="svc-card svc-lead" data-offer="search">
-            <h3>Get your business cited in AI answers and ranked in Google</h3>
-            <p>Suede AI runs AEO, GEO and SEO programs for businesses: technical audits, structured data, entity work and content built to be quoted by ChatGPT, Claude, Perplexity and Google AI Overviews.</p>
-            <p><a class="button" href="https://suedeai.agency/?utm_source=skills.suedeai.ai&amp;utm_medium=directory&amp;utm_campaign=directory-services&amp;utm_content=skill-frontend-design" data-cta="search" target="_blank" rel="noopener">See AEO and SEO services</a></p>
+            <h3>Get cited in AI answers</h3>
+            <p>Suede AI helps companies get found in Google and named by ChatGPT, Perplexity and Claude.</p>
+            <p><a class="button" href="https://suedeai.agency/?utm_source=skills.suedeai.ai&amp;utm_medium=directory&amp;utm_campaign=skill-page-aside&amp;utm_content=agency-b" data-cta="skill-page-aside:agency-b" target="_blank" rel="noopener">See how</a></p>
           </div>
           <div class="svc-card" data-offer="agents">
             <h3>Put a team of agents on your recurring work</h3>
@@ -317,7 +327,7 @@ rm -rf &quot;$tmp&quot;</code></pre>
     </main>
     <footer>
       <div class="shell">
-        <p class="footer-note">web-artifacts-builder is published by anthropics in anthropics/skills and listed in the Suede Skills Directory, a curated index of public Agent Skills.</p>
+        <p class="footer-note">web-artifacts-builder is published by anthropics in anthropics/skills and listed in the Suede AI Skills Directory, a curated index of public Agent Skills.</p>
         <div class="footer-inner">
           <div class="footer-brand">
             <img src="../../../../assets/suede-ai-logo-transparent.webp" alt="Suede AI" width="24" height="24" onerror="this.style.display='none'">

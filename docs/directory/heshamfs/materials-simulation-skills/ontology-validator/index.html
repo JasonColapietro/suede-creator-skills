@@ -3,15 +3,15 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ontology-validator Agent Skill by HeshamFS | Suede Directory</title>
+    <title>ontology-validator Agent Skill by HeshamFS | Suede AI</title>
     <meta name="description" content="Validates material sample annotations against ontology constraints, checking that terms exist… From HeshamFS/materials-simulation-skills, Apache-2.0.">
     <meta name="keywords" content="ontology-validator skill by HeshamFS, ontology-validator skill, ontology-validator agent skill, ontology-validator claude skill, HeshamFS skills, science and research agent skills, SKILL.md">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
     <link rel="canonical" href="https://skills.suedeai.ai/directory/heshamfs/materials-simulation-skills/ontology-validator/">
     <link rel="icon" href="../../../../assets/favicon-64.png" type="image/png">
     <meta property="og:type" content="article">
-    <meta property="og:site_name" content="Suede Skills Directory">
-    <meta property="og:title" content="ontology-validator Agent Skill by HeshamFS | Suede Directory">
+    <meta property="og:site_name" content="Suede AI Skills Directory">
+    <meta property="og:title" content="ontology-validator Agent Skill by HeshamFS | Suede AI">
     <meta property="og:description" content="Validates material sample annotations against ontology constraints, checking that terms exist… From HeshamFS/materials-simulation-skills, Apache-2.0.">
     <meta property="og:url" content="https://skills.suedeai.ai/directory/heshamfs/materials-simulation-skills/ontology-validator/">
     <meta property="og:image" content="https://skills.suedeai.ai/assets/social/directory-card.png">
@@ -19,7 +19,7 @@
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@AISUEDE">
-    <meta name="twitter:title" content="ontology-validator Agent Skill by HeshamFS | Suede Directory">
+    <meta name="twitter:title" content="ontology-validator Agent Skill by HeshamFS | Suede AI">
     <meta name="twitter:description" content="Validates material sample annotations against ontology constraints, checking that terms exist… From HeshamFS/materials-simulation-skills, Apache-2.0.">
     <meta name="twitter:image" content="https://skills.suedeai.ai/assets/social/directory-card.png">
     <script type="application/ld+json">
@@ -27,14 +27,14 @@
         "@context": "https://schema.org",
         "@type": "WebPage",
         "@id": "https://skills.suedeai.ai/directory/heshamfs/materials-simulation-skills/ontology-validator/#page",
-        "name": "ontology-validator Agent Skill by HeshamFS | Suede Directory",
+        "name": "ontology-validator Agent Skill by HeshamFS | Suede AI",
         "description": "Validates material sample annotations against ontology constraints, checking that terms exist… From HeshamFS/materials-simulation-skills, Apache-2.0.",
         "url": "https://skills.suedeai.ai/directory/heshamfs/materials-simulation-skills/ontology-validator/",
         "dateModified": "2026-10-23",
         "isPartOf": {
           "@type": "CollectionPage",
           "@id": "https://skills.suedeai.ai/directory/#directory",
-          "name": "Suede Skills Directory",
+          "name": "Suede AI Skills Directory",
           "url": "https://skills.suedeai.ai/directory/"
         },
         "publisher": {
@@ -120,7 +120,7 @@
           <a href="../../../../">Home</a>
           <a href="../../../">Directory</a>
           <a href="../../../methodology/">How listing works</a>
-          <a href="../../../../skills/">Suede skills</a>
+          <a href="../../../../skills/">Suede AI skills</a>
           <a href="../../../../blog/">Blog</a>
           <a href="../../../submit/" class="nav-cta">List your skill</a>
         </div>
@@ -177,11 +177,14 @@ cp -R &quot;$tmp/repo/&quot;skills/ontology/ontology-validator .claude/skills/
 rm -rf &quot;$tmp&quot;</code></pre>
         </div>
         <div class="snippet">
-          <div class="snippet-head"><span>Codex installer</span><button type="button" class="snippet-copy" data-copy-target="install-codex">Copy</button></div>
-          <pre><code id="install-codex">python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
-    --repo HeshamFS/materials-simulation-skills \
-    --path skills/ontology/ontology-validator</code></pre>
+          <div class="snippet-head"><span>Codex, project-level copy</span><button type="button" class="snippet-copy" data-copy-target="install-codex">Copy</button></div>
+          <pre><code id="install-codex">tmp=&quot;$(mktemp -d)&quot;
+git clone --depth 1 https://github.com/HeshamFS/materials-simulation-skills.git &quot;$tmp/repo&quot;
+mkdir -p .agents/skills
+cp -R &quot;$tmp/repo/&quot;skills/ontology/ontology-validator .agents/skills/
+rm -rf &quot;$tmp&quot;</code></pre>
         </div>
+        <p class="muted">For a user-level install, copy the folder to <code>~/.claude/skills/</code> (Claude Code) or <code>~/.agents/skills/</code> (Codex). Inside Codex, <code>$skill-installer</code> can also fetch a skill from GitHub. New to skills? Read <a href="../../../guides/install-agent-skills/">How to install agent skills in Claude Code, Codex and Cursor</a>.</p>
         <p class="muted">HeshamFS/materials-simulation-skills is third-party code. Read SKILL.md and any bundled scripts before you install it.</p>
       </section>
       <section class="panel" aria-labelledby="author-title">
@@ -272,24 +275,31 @@ rm -rf &quot;$tmp&quot;</code></pre>
       </section>
 <section class="panel badge-panel" id="badge" aria-labelledby="badge-title"><h2 id="badge-title">Two badges for ontology-validator</h2>
         <div class="shield-pair"><a href="https://skills.suedeai.ai/directory/heshamfs/materials-simulation-skills/ontology-validator/"><img src="/directory/heshamfs/materials-simulation-skills/ontology-validator/score.svg" alt="Suede Skill Check: 82/100" width="160" height="175" loading="lazy"></a><a href="https://skills.suedeai.ai/directory/heshamfs/materials-simulation-skills/ontology-validator/"><img src="/directory/heshamfs/materials-simulation-skills/ontology-validator/badge.svg" alt="Suede Skill Check: Grade B" width="160" height="175" loading="lazy"></a></div>
-        <p>Choose the numeric badge, the letter badge, or both. Each links to this skill’s Suede listing; either valid linked badge can qualify for the feature offer.</p>
+        <p>Choose the numeric badge, the letter badge, or both. Each links to this skill’s Suede AI listing; either valid linked badge can qualify for the feature offer.</p>
         <div class="snippet"><div class="snippet-head"><span>Markdown</span><button type="button" class="snippet-copy" data-copy-target="badge-md">Copy both badges</button></div><pre><code id="badge-md">[![Suede Skill Check: 82/100](https://skills.suedeai.ai/directory/heshamfs/materials-simulation-skills/ontology-validator/score.svg)](https://skills.suedeai.ai/directory/heshamfs/materials-simulation-skills/ontology-validator/)
 [![Suede Skill Check: Grade B](https://skills.suedeai.ai/directory/heshamfs/materials-simulation-skills/ontology-validator/badge.svg)](https://skills.suedeai.ai/directory/heshamfs/materials-simulation-skills/ontology-validator/)</code></pre></div>
         <div class="snippet"><div class="snippet-head"><span>HTML</span><button type="button" class="snippet-copy" data-copy-target="badge-html">Copy both badges</button></div><pre><code id="badge-html">&lt;a href=&quot;https://skills.suedeai.ai/directory/heshamfs/materials-simulation-skills/ontology-validator/&quot;&gt;&lt;img src=&quot;https://skills.suedeai.ai/directory/heshamfs/materials-simulation-skills/ontology-validator/score.svg&quot; alt=&quot;Suede Skill Check: 82/100&quot; width=&quot;160&quot; height=&quot;175&quot;&gt;&lt;/a&gt;
 &lt;a href=&quot;https://skills.suedeai.ai/directory/heshamfs/materials-simulation-skills/ontology-validator/&quot;&gt;&lt;img src=&quot;https://skills.suedeai.ai/directory/heshamfs/materials-simulation-skills/ontology-validator/badge.svg&quot; alt=&quot;Suede Skill Check: Grade B&quot; width=&quot;160&quot; height=&quot;175&quot;&gt;&lt;/a&gt;</code></pre></div>
         <p class="muted">Suede Certified on the shield refers to this published structural quality check. Security scan: not scanned. Read the <a href="../../../methodology/">methodology</a>.</p>
-        <p class="badge-offer" data-promotion-end="">Limited-time feature offer: display either the numeric or letter badge in your repository or skill README (both also qualify), then <a href="../../../submit/">request badge verification</a>. Eligible skills scoring 80–99 can receive a featured placement after Suede verifies at least one valid badge linked to the skill’s listing. Suede has not announced an end date.</p></section>
+        <p class="badge-offer" data-promotion-end="">Limited-time feature offer: Display either quality badge in your repository or skill README, linked to your listing, then request verification. Suede AI checks the rendered README at a recorded commit. Eligible skills scoring 80–99 with a verified badge can receive a featured placement while the offer is open. <a href="../../../submit/">Request badge verification</a>.</p>
+        <p>Publishers: read <a href="../../../guides/skill-ai-visibility/">How to get your agent skill found in search and cited by AI assistants</a>.</p></section>
+      <aside class="panel cta-placement" aria-labelledby="cta-publisher-claim-a-claim" data-cta-placement="publisher-claim" data-cta-variant="a-claim">
+        <h2 id="cta-publisher-claim-a-claim">Is this your skill?</h2>
+        <p>Add the badge to your README so readers can see the listing, then run the free Skill AI-visibility check to find the points you are missing.</p>
+        <p><a class="button" href="../../../check/" data-cta="publisher-claim:a-claim">Run the free check</a></p>
+      </aside>
       <section class="panel" aria-labelledby="cited-title">
         <h2 id="cited-title">Where this skill is cited</h2>
         <p>HeshamFS/materials-simulation-skills appears in 2 curated lists: <a href="https://github.com/BehiSecc/awesome-claude-skills" target="_blank" rel="noopener">BehiSecc/awesome-claude-skills</a>, <a href="https://github.com/VoltAgent/awesome-agent-skills" target="_blank" rel="noopener">VoltAgent/awesome-agent-skills</a>.</p>
       </section>
+
       <aside class="panel svc-cta" aria-labelledby="svc-title" data-services-cta="skill">
         <h2 class="svc-kicker" id="svc-title">From Suede AI, the publisher of this directory</h2>
         <div class="svc-cards">
           <div class="svc-card svc-lead" data-offer="agents">
-            <h3>Put a team of agents on your recurring work</h3>
-            <p>Agent Studio from Suede AI builds multi-agent automation for businesses. Bring a workflow your team repeats every week and we design the agents that run it.</p>
-            <p><a class="button" href="https://suedeai.app/?utm_source=skills.suedeai.ai&amp;utm_medium=directory&amp;utm_campaign=directory-services&amp;utm_content=skill-science-research" data-cta="agents" target="_blank" rel="noopener">Explore Agent Studio</a></p>
+            <h3>Running this across a team?</h3>
+            <p>Suede AI Agent Studio builds multi-agent automation for businesses.</p>
+            <p><a class="button" href="https://suedeai.app/?utm_source=skills.suedeai.ai&amp;utm_medium=directory&amp;utm_campaign=skill-page-aside&amp;utm_content=studio-a" data-cta="skill-page-aside:studio-a" target="_blank" rel="noopener">Explore Agent Studio</a></p>
           </div>
           <div class="svc-card" data-offer="search">
             <h3>Get your business cited in AI answers and ranked in Google</h3>
@@ -321,7 +331,7 @@ rm -rf &quot;$tmp&quot;</code></pre>
     </main>
     <footer>
       <div class="shell">
-        <p class="footer-note">ontology-validator is published by HeshamFS in HeshamFS/materials-simulation-skills and listed in the Suede Skills Directory, a curated index of public Agent Skills.</p>
+        <p class="footer-note">ontology-validator is published by HeshamFS in HeshamFS/materials-simulation-skills and listed in the Suede AI Skills Directory, a curated index of public Agent Skills.</p>
         <div class="footer-inner">
           <div class="footer-brand">
             <img src="../../../../assets/suede-ai-logo-transparent.webp" alt="Suede AI" width="24" height="24" onerror="this.style.display='none'">

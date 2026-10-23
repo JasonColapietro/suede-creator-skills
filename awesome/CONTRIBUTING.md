@@ -16,7 +16,7 @@ Listing eligibility follows the existing structural, license, language, duplicat
 
 Once your skill is listed, add its badge to your README. Copy the snippet from your listing page so the badge links to your own listing; it tells readers where to find the independent score and install routes, and it keeps the description of your skill consistent across both pages. Skills scoring 80–99 can display a numeric or letter quality shield and then [request badge verification](https://skills.suedeai.ai/directory/submit/) for the feature offer.
 
-To raise a score, read the open points on your listing page and the [publisher guide to getting found in search and AI answers](../directory/editorial/skill-ai-visibility.md). The points most listed skills leave open are a description boundary ("NOT FOR" or "use … instead"), a quoted example request, and declared `allowed-tools` and `compatibility` fields.
+To raise a score, read the open points on your listing page and the [publisher guide to getting found in search and AI answers](https://skills.suedeai.ai/directory/guides/skill-ai-visibility/), then run the free [Skill AI-visibility check](https://skills.suedeai.ai/directory/check/). The points most listed skills leave open are a description boundary ("NOT FOR" or "use … instead"), a quoted example request, and declared `allowed-tools` and `compatibility` fields.
 
 ## Edit the source, then regenerate
 
@@ -29,7 +29,7 @@ The Markdown catalog reads the same accepted snapshot as the website. It does no
 | Category titles and introductions | [directory/categories.json](../directory/categories.json) |
 | Featured projects, reviews and setup | [directory/featured-projects.json](../directory/featured-projects.json) |
 | Guides listed in the index and category pages | [directory/editorial/pages.json](../directory/editorial/pages.json) and the Markdown files beside it |
-| Suede AI service links in the catalog | [directory/editorial/cta.json](../directory/editorial/cta.json), placement `awesome-readme` |
+| Suede AI service links in the catalog | [directory/services-cta.json](../directory/services-cta.json), campaign `awesome-readme` |
 | Catalog layout and excerpt formatting | [scripts/build-awesome-directory.mjs](../scripts/build-awesome-directory.mjs) |
 
 From the repository root with Node.js 22 or newer:

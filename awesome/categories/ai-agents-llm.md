@@ -12,7 +12,7 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 
 [Read the score and license key](../README.md#read-a-listing). Descriptions are saved summaries or excerpts; full details and setup are on each Suede AI listing.
 
-**Guide:** [Agent skills vs MCP servers vs plugins: which one do you need?](../../directory/editorial/skills-vs-mcp-servers.md)
+**Guide:** [Agent skills vs MCP servers vs plugins: which one do you need?](https://skills.suedeai.ai/directory/guides/skills-vs-mcp-servers/)
 
 <details>
 <summary>Browse publishers in this category</summary>

@@ -1,7 +1,7 @@
 {
   "updated": "2026-10-23",
   "page": {
-    "about": "Copy for /directory/featured/ and the awesome/featured.md view. The template currently hard-codes its intro; wire these fields to replace it. Project entries below are the publishers' own work: keep their names, repositories, setup facts and review links exactly as reviewed.",
+    "about": "Copy for /directory/featured/ and the awesome/featured.md view, rendered by scripts/build-directory.mjs and scripts/build-awesome-directory.mjs. Project entries below are the publishers’ own work: keep their names, repositories, setup facts and review links exactly as reviewed.",
     "title": "Featured Agent Skill Projects | Suede AI",
     "lede": "Good tools deserve a closer look.",
     "intro": "Each project here was submitted by its publisher, reviewed against a pinned commit and accepted with a defined scope. Pick one, read the reviewed source, and start with the setup it actually needs.",
@@ -18,11 +18,11 @@
       "url": "https://skills.suedeai.ai/directory/submit/?utm_source=skills.suedeai.ai&utm_medium=directory&utm_campaign=featured-nominate&utm_content=a"
     },
     "services_cta": "category-agent-studio",
-    "services_cta_note": "Render the cta.json placement named here after the project list, never inside a project card."
+    "services_cta_note": "Names a campaign in directory/services-cta.json, rendered after the project list, never inside a project card."
   },
   "featured_badge": {
-    "status": "proposed",
-    "about": "A README badge for featured publishers, so each feature earns a link back to its review. The SVG does not exist yet; the template owner generates it with the other badges, then the featured page and the awesome generator can print the snippet.",
+    "status": "live",
+    "about": "A README badge for featured publishers, so each feature earns a link back to its section. scripts/build-directory.mjs generates the SVG at the image URL while status is \"live\" and prints one snippet per project on the featured page.",
     "alt": "Featured in the Agent Skills Directory by Suede AI",
     "image": "https://skills.suedeai.ai/directory/badges/featured.svg",
     "href_pattern": "https://skills.suedeai.ai/directory/featured/#{id}",

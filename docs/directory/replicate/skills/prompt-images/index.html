@@ -3,15 +3,15 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>prompt-images Agent Skill by replicate | Suede Directory</title>
+    <title>prompt-images Agent Skill by replicate | Suede AI</title>
     <meta name="description" content="Teaches prompting techniques for AI image generation and editing models on Replicate, for writing prompts or building… From replicate/skills, Apache-2.0.">
     <meta name="keywords" content="prompt-images skill by replicate, prompt-images skill, prompt-images agent skill, prompt-images claude skill, replicate skills, video image and audio agent skills, SKILL.md">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
     <link rel="canonical" href="https://skills.suedeai.ai/directory/replicate/skills/prompt-images/">
     <link rel="icon" href="../../../../assets/favicon-64.png" type="image/png">
     <meta property="og:type" content="article">
-    <meta property="og:site_name" content="Suede Skills Directory">
-    <meta property="og:title" content="prompt-images Agent Skill by replicate | Suede Directory">
+    <meta property="og:site_name" content="Suede AI Skills Directory">
+    <meta property="og:title" content="prompt-images Agent Skill by replicate | Suede AI">
     <meta property="og:description" content="Teaches prompting techniques for AI image generation and editing models on Replicate, for writing prompts or building… From replicate/skills, Apache-2.0.">
     <meta property="og:url" content="https://skills.suedeai.ai/directory/replicate/skills/prompt-images/">
     <meta property="og:image" content="https://skills.suedeai.ai/assets/social/directory-card.png">
@@ -19,7 +19,7 @@
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@AISUEDE">
-    <meta name="twitter:title" content="prompt-images Agent Skill by replicate | Suede Directory">
+    <meta name="twitter:title" content="prompt-images Agent Skill by replicate | Suede AI">
     <meta name="twitter:description" content="Teaches prompting techniques for AI image generation and editing models on Replicate, for writing prompts or building… From replicate/skills, Apache-2.0.">
     <meta name="twitter:image" content="https://skills.suedeai.ai/assets/social/directory-card.png">
     <script type="application/ld+json">
@@ -27,14 +27,14 @@
         "@context": "https://schema.org",
         "@type": "WebPage",
         "@id": "https://skills.suedeai.ai/directory/replicate/skills/prompt-images/#page",
-        "name": "prompt-images Agent Skill by replicate | Suede Directory",
+        "name": "prompt-images Agent Skill by replicate | Suede AI",
         "description": "Teaches prompting techniques for AI image generation and editing models on Replicate, for writing prompts or building… From replicate/skills, Apache-2.0.",
         "url": "https://skills.suedeai.ai/directory/replicate/skills/prompt-images/",
         "dateModified": "2026-10-23",
         "isPartOf": {
           "@type": "CollectionPage",
           "@id": "https://skills.suedeai.ai/directory/#directory",
-          "name": "Suede Skills Directory",
+          "name": "Suede AI Skills Directory",
           "url": "https://skills.suedeai.ai/directory/"
         },
         "publisher": {
@@ -125,7 +125,7 @@
           <a href="../../../../">Home</a>
           <a href="../../../">Directory</a>
           <a href="../../../methodology/">How listing works</a>
-          <a href="../../../../skills/">Suede skills</a>
+          <a href="../../../../skills/">Suede AI skills</a>
           <a href="../../../../blog/">Blog</a>
           <a href="../../../submit/" class="nav-cta">List your skill</a>
         </div>
@@ -181,11 +181,14 @@ cp -R &quot;$tmp/repo/&quot;skills/prompt-images .claude/skills/
 rm -rf &quot;$tmp&quot;</code></pre>
         </div>
         <div class="snippet">
-          <div class="snippet-head"><span>Codex installer</span><button type="button" class="snippet-copy" data-copy-target="install-codex">Copy</button></div>
-          <pre><code id="install-codex">python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
-    --repo replicate/skills \
-    --path skills/prompt-images</code></pre>
+          <div class="snippet-head"><span>Codex, project-level copy</span><button type="button" class="snippet-copy" data-copy-target="install-codex">Copy</button></div>
+          <pre><code id="install-codex">tmp=&quot;$(mktemp -d)&quot;
+git clone --depth 1 https://github.com/replicate/skills.git &quot;$tmp/repo&quot;
+mkdir -p .agents/skills
+cp -R &quot;$tmp/repo/&quot;skills/prompt-images .agents/skills/
+rm -rf &quot;$tmp&quot;</code></pre>
         </div>
+        <p class="muted">For a user-level install, copy the folder to <code>~/.claude/skills/</code> (Claude Code) or <code>~/.agents/skills/</code> (Codex). Inside Codex, <code>$skill-installer</code> can also fetch a skill from GitHub. New to skills? Read <a href="../../../guides/install-agent-skills/">How to install agent skills in Claude Code, Codex and Cursor</a>.</p>
         <p class="muted">replicate/skills is third-party code. Read SKILL.md and any bundled scripts before you install it.</p>
       </section>
       <section class="panel" aria-labelledby="author-title">
@@ -224,7 +227,7 @@ rm -rf &quot;$tmp&quot;</code></pre>
 <div class="report-summary">
           <p class="report-kicker">Report snapshot · <time datetime="2026-10-19">October 19, 2026</time> · graded-v2</p>
           <p>The rubric totals 100 points; published scores are capped at 99. Security scan: not scanned.</p>
-          <p class="muted">Source revision: <a href="https://github.com/replicate/skills/blob/2f36e415965ae63baa1c9f6635888092bcd771d3/skills/prompt-images/SKILL.md" target="_blank" rel="noopener"><code>2f36e415965a</code></a>. Report version <code>998fcbfa0ba9</code>. Badge URLs follow the latest listing; save the report to keep this version.</p>
+          <p class="muted">Source revision: <a href="https://github.com/replicate/skills/blob/2f36e415965ae63baa1c9f6635888092bcd771d3/skills/prompt-images/SKILL.md" target="_blank" rel="noopener"><code>2f36e415965a</code></a>. Report version <code>aa52fb653d7b</code>. Badge URLs follow the latest listing; save the report to keep this version.</p>
           <p class="report-actions"><a href="report.json" download="prompt-images-suede-report-2026-10-19.json">Download report</a> · <a href="https://github.com/JasonColapietro/suede-creator-skills/issues/new?template=directory-listing.yml&amp;request=Recheck+my+updated+skill&amp;repository=https%3A%2F%2Fgithub.com%2Freplicate%2Fskills&amp;skill-scope=prompt-images&amp;details=Listing%3A+https%3A%2F%2Fskills.suedeai.ai%2Fdirectory%2Freplicate%2Fskills%2Fprompt-images%2F%0APrevious+report%3A+https%3A%2F%2Fskills.suedeai.ai%2Fdirectory%2Freplicate%2Fskills%2Fprompt-images%2Freport.json%0ASnapshot%3A+2026-10-19+%2828db610eddee4b46be337d7df976fe0f%29%3B+methodology%3A+graded-v2%0A%0AUpdated+source+commit+or+PR%3A%0AChanges+to+review%3A%0A" target="_blank" rel="noopener">Request a fresh review</a></p>
           <h3>What to review next</h3><ul><li><b>Recent maintenance</b>: 3 of 9 points. 9 for a repository commit within 30 days of the snapshot; 6 within 90; 3 within 180; 1 within 365.</li><li><b>Boundary clause</b>: 0 of 4 points. 4 when the description says when not to use the skill (“Not for …”, “Do not use …”, “Use … instead”).</li><li><b>Example request</b>: 0 of 3 points. 3 when the description quotes an example request (3–60 characters in quotation marks).</li></ul><p class="muted">Add declarations and bundled files when they describe the skill’s actual needs. Update the source, then request a fresh review with the changed commit or PR.</p>
         </div>
@@ -268,28 +271,34 @@ rm -rf &quot;$tmp&quot;</code></pre>
       </section>
       <section class="panel badge-panel" id="badge" aria-labelledby="badge-title">
         <h2 id="badge-title">Show the listing and raise the score</h2>
-        <p>prompt-images is listed with 72/100 · C. This badge links to its Suede listing. Skills scoring 80–99 add a numeric and a letter quality shield; the largest open points for prompt-images are recent maintenance (6), boundary clause (4) and example request (3). <a href="../../../submit/#improve">Send your repository and the points you want to raise</a>, then request a fresh review after updating the skill.</p>
-        <p class="badge-preview"><img src="../../../badge.svg" alt="Suede Skills Directory: listed" width="193" height="20"></p>
+        <p>prompt-images is listed with 72/100 · C. This badge links to its Suede AI listing. Skills scoring 80–99 add a numeric and a letter quality shield; the largest open points for prompt-images are recent maintenance (6), boundary clause (4) and example request (3). <a href="../../../submit/#improve">Send your repository and the points you want to raise</a>, then request a fresh review after updating the skill. Publishers: read <a href="../../../guides/skill-ai-visibility/">How to get your agent skill found in search and cited by AI assistants</a>.</p>
+        <p class="badge-preview"><img src="../../../badge.svg" alt="Suede AI Skills Directory: listed" width="215" height="20"></p>
         <div class="snippet">
           <div class="snippet-head"><span>Markdown</span><button type="button" class="snippet-copy" data-copy-target="badge-md">Copy</button></div>
-          <pre><code id="badge-md">[![Suede Skills Directory: listed](https://skills.suedeai.ai/directory/badge.svg)](https://skills.suedeai.ai/directory/replicate/skills/prompt-images/)</code></pre>
+          <pre><code id="badge-md">[![Suede AI Skills Directory: listed](https://skills.suedeai.ai/directory/badge.svg)](https://skills.suedeai.ai/directory/replicate/skills/prompt-images/)</code></pre>
         </div>
         <div class="snippet">
           <div class="snippet-head"><span>HTML</span><button type="button" class="snippet-copy" data-copy-target="badge-html">Copy</button></div>
-          <pre><code id="badge-html">&lt;a href=&quot;https://skills.suedeai.ai/directory/replicate/skills/prompt-images/&quot;&gt;&lt;img src=&quot;https://skills.suedeai.ai/directory/badge.svg&quot; alt=&quot;Suede Skills Directory: listed&quot; height=&quot;20&quot;&gt;&lt;/a&gt;</code></pre>
+          <pre><code id="badge-html">&lt;a href=&quot;https://skills.suedeai.ai/directory/replicate/skills/prompt-images/&quot;&gt;&lt;img src=&quot;https://skills.suedeai.ai/directory/badge.svg&quot; alt=&quot;Suede AI Skills Directory: listed&quot; height=&quot;20&quot;&gt;&lt;/a&gt;</code></pre>
         </div>
       </section>
+      <aside class="panel cta-placement" aria-labelledby="cta-publisher-claim-a-claim" data-cta-placement="publisher-claim" data-cta-variant="a-claim">
+        <h2 id="cta-publisher-claim-a-claim">Is this your skill?</h2>
+        <p>Add the badge to your README so readers can see the listing, then run the free Skill AI-visibility check to find the points you are missing.</p>
+        <p><a class="button" href="../../../check/" data-cta="publisher-claim:a-claim">Run the free check</a></p>
+      </aside>
       <section class="panel" aria-labelledby="cited-title">
         <h2 id="cited-title">Where this skill is cited</h2>
         <p>replicate/skills appears in 1 curated list: <a href="https://github.com/heilcheng/awesome-agent-skills" target="_blank" rel="noopener">heilcheng/awesome-agent-skills</a>.</p>
       </section>
+
       <aside class="panel svc-cta" aria-labelledby="svc-title" data-services-cta="skill">
         <h2 class="svc-kicker" id="svc-title">From Suede AI, the publisher of this directory</h2>
         <div class="svc-cards">
           <div class="svc-card svc-lead" data-offer="search">
-            <h3>Get your business cited in AI answers and ranked in Google</h3>
-            <p>Suede AI runs AEO, GEO and SEO programs for businesses: technical audits, structured data, entity work and content built to be quoted by ChatGPT, Claude, Perplexity and Google AI Overviews.</p>
-            <p><a class="button" href="https://suedeai.agency/?utm_source=skills.suedeai.ai&amp;utm_medium=directory&amp;utm_campaign=directory-services&amp;utm_content=skill-media-creative" data-cta="search" target="_blank" rel="noopener">See AEO and SEO services</a></p>
+            <h3>Want this work done for your site?</h3>
+            <p>Suede AI's AEO, GEO and SEO team runs this kind of work as a managed program.</p>
+            <p><a class="button" href="https://suedeai.agency/?utm_source=skills.suedeai.ai&amp;utm_medium=directory&amp;utm_campaign=skill-page-aside&amp;utm_content=agency-a" data-cta="skill-page-aside:agency-a" target="_blank" rel="noopener">Talk to Suede AI</a></p>
           </div>
           <div class="svc-card" data-offer="agents">
             <h3>Put a team of agents on your recurring work</h3>
@@ -322,7 +331,7 @@ rm -rf &quot;$tmp&quot;</code></pre>
     </main>
     <footer>
       <div class="shell">
-        <p class="footer-note">prompt-images is published by replicate in replicate/skills and listed in the Suede Skills Directory, a curated index of public Agent Skills.</p>
+        <p class="footer-note">prompt-images is published by replicate in replicate/skills and listed in the Suede AI Skills Directory, a curated index of public Agent Skills.</p>
         <div class="footer-inner">
           <div class="footer-brand">
             <img src="../../../../assets/suede-ai-logo-transparent.webp" alt="Suede AI" width="24" height="24" onerror="this.style.display='none'">

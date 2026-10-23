@@ -685,6 +685,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://skills.suedeai.ai/directory/check/</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://skills.suedeai.ai/directory/code-review-quality/</loc>
     <lastmod>2026-10-23</lastmod>
     <changefreq>weekly</changefreq>
@@ -722,6 +728,12 @@
   </url>
   <url>
     <loc>https://skills.suedeai.ai/directory/frontend-design/</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/guides/</loc>
     <lastmod>2026-10-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -1007,6 +1019,30 @@
     <lastmod>2026-10-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/guides/best-seo-skills/</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/guides/install-agent-skills/</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/guides/skill-ai-visibility/</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/guides/skills-vs-mcp-servers/</loc>
+    <lastmod>2026-10-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://skills.suedeai.ai/directory/hashicorp/agent-skills/</loc>

@@ -126,7 +126,7 @@ test('graded-v2 scores are 0–99 with letter grades, and every grade can be fil
 
 test('quality shields exist only for skills scoring 80–99; lower scores keep valid badge URLs with the listing badge', () => {
   const listingBadge = read('docs/directory/badge.svg');
-  assert.match(listingBadge, /Suede Skills Directory: listed/);
+  assert.match(listingBadge, /Suede AI Skills Directory: listed/);
   for (const skill of data.skills) {
     const dir = skillDir(skill);
     const badge = read(dir + 'badge.svg');

@@ -12,7 +12,7 @@ Skills for search, ads, launches and growth: SEO audits, keyword and content bri
 
 [Read the score and license key](../README.md#read-a-listing). Descriptions are saved summaries or excerpts; full details and setup are on each Suede AI listing.
 
-**Guide:** [Best SEO, AEO and GEO skills for Claude Code and Codex](../../directory/editorial/best-seo-skills.md)
+**Guide:** [Best SEO, AEO and GEO skills for Claude Code and Codex](https://skills.suedeai.ai/directory/guides/best-seo-skills/)
 
 <details>
 <summary>Browse publishers in this category</summary>

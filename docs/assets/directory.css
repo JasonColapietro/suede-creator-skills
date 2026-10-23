@@ -384,3 +384,23 @@
 .svc-card p:last-child { margin-top: auto; padding-top: 14px; }
 .directory .byline { margin: -8px 0 24px; }
 .directory .answer { margin: -8px 0 20px; font-size: 15px; color: var(--muted); }
+
+/* Placement calls to action (directory/services-cta.json campaigns). */
+.directory .cta-placement { border-color: rgba(200, 169, 110, 0.35); }
+.directory .cta-placement h2 { font-size: 22px; line-height: 1.3; }
+.directory .cta-placement .svc-kicker { font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin: 0 0 8px; }
+.directory .cta-quiet { background: transparent; }
+.directory .cta-quiet h2 { font-size: 18px; }
+
+/* Guides (directory/editorial/). */
+.directory .dateline { margin: -16px 0 24px; font-size: 14px; }
+.directory .guide-answer { font-size: 17px; line-height: 1.65; color: var(--cream); }
+.guide-table td, .guide-table th { vertical-align: top; }
+.guide-table .num { text-align: right; white-space: nowrap; }
+.directory .byline cite { font-style: italic; }
+
+/* Skill AI-visibility check. */
+.check-form label { display: block; margin-bottom: 8px; }
+.check-form .search-line button { white-space: nowrap; }
+.check-result .result-meta { color: var(--muted); font-size: 14px; }
+button.link-row.check-pick { width: 100%; text-align: left; font: inherit; color: inherit; cursor: pointer; background: transparent; }

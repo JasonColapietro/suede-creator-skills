@@ -304,6 +304,11 @@ function buildEntries() {
     walk(directoryAbs, 1);
     const tier = (rel, depth) => {
       if (rel === "directory/methodology" || rel === "directory/submit") return { priority: "0.5", changefreq: "monthly" };
+      // Editorial guides (directory/editorial/) answer the questions the
+      // directory ranks for, so they sit with the category hubs; the free
+      // check is the publisher entry point.
+      if (rel === "directory/guides" || rel.startsWith("directory/guides/")) return { priority: DIRECTORY_CATEGORY_PRIORITY, changefreq: rel === "directory/guides" ? "weekly" : "monthly" };
+      if (rel === "directory/check") return { priority: "0.7", changefreq: "monthly" };
       if (depth === 1) return { priority: DIRECTORY_CATEGORY_PRIORITY, changefreq: "weekly" };
       if (depth === 2) return { priority: DIRECTORY_REPO_PRIORITY, changefreq: "weekly" };
       return { priority: DIRECTORY_SKILL_PRIORITY, changefreq: "monthly" };

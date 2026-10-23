@@ -68,10 +68,10 @@ These 3 editorial selections have [reviewed scope and setup guidance](featured.m
 
 Practical guides by Jason Colapietro, built on the directory’s published data.
 
-- **[Best SEO, AEO and GEO skills for Claude Code and Codex](../directory/editorial/best-seo-skills.md)**: The highest-scoring SEO skills for Claude Code and Codex, by job: audits, schema, AI search (AEO and GEO), keywords, local and programmatic SEO.
-- **[How to install agent skills in Claude Code, Codex and Cursor](../directory/editorial/install-agent-skills.md)**: Where Claude Code and Codex load skills, how to install from GitHub with one command, how plugin marketplaces work, and what to check before you install.
-- **[Agent skills vs MCP servers vs plugins: which one do you need?](../directory/editorial/skills-vs-mcp-servers.md)**: A skill adds method, an MCP server adds access, a plugin packages both. When to use each, how they combine, and what each costs in context and risk.
-- **[How to get your agent skill found in search and cited by AI assistants](../directory/editorial/skill-ai-visibility.md)**: How skill publishers get picked by agents, found in search and cited by AI assistants: descriptions that trigger, READMEs that answer, listings and badges.
+- **[Best SEO, AEO and GEO skills for Claude Code and Codex](https://skills.suedeai.ai/directory/guides/best-seo-skills/)**: The highest-scoring SEO skills for Claude Code and Codex, by job: audits, schema, AI search (AEO and GEO), keywords, local and programmatic SEO.
+- **[How to install agent skills in Claude Code, Codex and Cursor](https://skills.suedeai.ai/directory/guides/install-agent-skills/)**: Where Claude Code and Codex load skills, how to install from GitHub with one command, how plugin marketplaces work, and what to check before you install.
+- **[Agent skills vs MCP servers vs plugins: which one do you need?](https://skills.suedeai.ai/directory/guides/skills-vs-mcp-servers/)**: A skill adds method, an MCP server adds access, a plugin packages both. When to use each, how they combine, and what each costs in context and risk.
+- **[How to get your agent skill found in search and cited by AI assistants](https://skills.suedeai.ai/directory/guides/skill-ai-visibility/)**: How skill publishers get picked by agents, found in search and cited by AI assistants: descriptions that trigger, READMEs that answer, listings and badges.
 
 ## Add your badge
 
@@ -81,7 +81,7 @@ Is your skill listed here? Show it. Every listed skill and repository has a badg
 [![Listed in the Agent Skills Directory by Suede AI](https://skills.suedeai.ai/directory/badge.svg)](https://skills.suedeai.ai/directory/)
 ```
 
-Then [request badge verification](https://skills.suedeai.ai/directory/submit/). While the feature offer is open, an eligible skill with a verified badge can earn a featured placement. For the full checklist, read [How to get your agent skill found in search and cited by AI assistants](../directory/editorial/skill-ai-visibility.md).
+Then [request badge verification](https://skills.suedeai.ai/directory/submit/). While the feature offer is open, an eligible skill with a verified badge can earn a featured placement. For the full checklist, read [How to get your agent skill found in search and cited by AI assistants](https://skills.suedeai.ai/directory/guides/skill-ai-visibility/).
 
 ## Read a listing
 

@@ -56,7 +56,8 @@ const kindOf = (p) => {
   const depth = p.rel.split("/").filter(Boolean).length;
   if (p.rel === "directory/") return "hub";
   if (categories.some((c) => p.rel === `directory/${c.slug}/`)) return "category";
-  if (["directory/methodology/", "directory/submit/", "directory/featured/"].includes(p.rel)) return p.rel.split("/")[1];
+  if (["directory/methodology/", "directory/submit/", "directory/featured/", "directory/check/", "directory/guides/"].includes(p.rel)) return p.rel.split("/")[1];
+  if (p.rel.startsWith("directory/guides/")) return "guide";
   return depth === 3 ? "repository" : "skill";
 };
 
@@ -201,9 +202,25 @@ test("the services module follows directory/services-cta.json on every placement
       continue;
     }
     assert.equal(modules, 1, `${p.rel}: expected one services module`);
+    const module = p.html.split(`data-services-cta="`)[1].split("</aside>")[0];
+    assert.equal((module.match(/class="svc-card[ "]/g) || []).length, Object.keys(cta.offers).length, `${p.rel}: one card per offer`);
     for (const o of Object.values(cta.offers)) {
-      assert.ok(p.html.includes(o.heading.replace(/&/g, "&amp;")), `${p.rel}: missing "${o.heading}"`);
-      assert.ok(p.html.includes(`href="${o.url}?utm_source=`), `${p.rel}: ${o.url} link lacks UTM tags`);
+      assert.ok(module.includes(`href="${o.url}?utm_source=`), `${p.rel}: ${o.url} link lacks UTM tags`);
+    }
+    // The second card is always the plain offer; the lead card may carry a
+    // routed campaign variant from the same file.
+    const cards = [...module.matchAll(/data-offer="([^"]+)">\s*<h3>([^<]*)<\/h3>/g)].map((m) => ({ id: m[1], heading: decode(m[2]) }));
+    assert.equal(cards[1].heading, cta.offers[cards[1].id].heading, `${p.rel}: second card is not the plain offer`);
+  }
+  // Every rendered CTA comes from services-cta.json, and none that awaits
+  // offer confirmation reaches the live build.
+  const known = new Set(cta.campaigns.flatMap((c) => c.variants.map((v) => `${c.id}:${v.id}`)));
+  const held = new Set(cta.campaigns.flatMap((c) => c.variants.filter((v) => v.confirm_offer).map((v) => `${c.id}:${v.id}`)));
+  for (const p of pages) {
+    for (const [, tag] of p.html.matchAll(/data-cta="([^"]+)"/g)) {
+      assert.ok(!held.has(tag), `${p.rel}: ${tag} waits for offer confirmation`);
+      if (tag.includes(":") && !/:(plain|listed-services)$/.test(tag)) assert.ok(known.has(tag), `${p.rel}: unknown CTA ${tag}`);
+      else if (!tag.includes(":")) assert.ok(cta.offers[tag], `${p.rel}: unknown offer ${tag}`);
     }
   }
   const seo = byRel.get("directory/marketing-seo/").html;
