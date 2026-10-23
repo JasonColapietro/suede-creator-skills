@@ -74,7 +74,7 @@ Platform-specific workflow recipes for HubSpot, Salesforce, scheduling tools, an
 5. Enroll contact in "Customer Onboarding" email sequence
 6. Send internal notification to CS manager
 7. Remove from all sales sequences
-**Outcome:** Seamless handoff from sales to customer success
+**Outcome:** Clean handoff from sales to customer success
 **Notes:** Include deal notes, contract value, and key stakeholders in CS notification
 
 ---

@@ -4,7 +4,7 @@
     {
       "id": 1,
       "prompt": "Help me optimize our onboarding flow. We have a project management tool and only 30% of trial users create their first project within the first week. We need to get them to value faster.",
-      "expected_output": "Should check for product-marketing.md first. Should start by defining the activation/aha moment — in this case, creating a first project. Should evaluate the current time-to-value and identify friction points. Should recommend an onboarding flow approach (product-first, guided setup, or value-first). Should apply the checklist pattern (3-7 items for onboarding completion). Should address empty states as opportunities to guide users. Should provide experiment ideas for testing improvements. Should include measurement metrics.",
+      "expected_output": "Should check for product-marketing.md first. Should start by defining the activation/aha moment: in this case, creating a first project. Should evaluate the current time-to-value and identify friction points. Should recommend an onboarding flow approach (product-first, guided setup, or value-first). Should apply the checklist pattern (3-7 items for onboarding completion). Should address empty states as opportunities to guide users. Should provide experiment ideas for testing improvements. Should include measurement metrics.",
       "assertions": [
         "Checks for product-marketing.md",
         "Defines the activation/aha moment",

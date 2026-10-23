@@ -4,7 +4,7 @@
     {
       "id": 1,
       "prompt": "Help me design a referral program for our SaaS product. We're a $49/month project management tool with about 1,000 customers. We want to encourage word-of-mouth growth.",
-      "expected_output": "Should check for product-marketing.md first. Should distinguish between referral and affiliate programs (this is referral — existing customers referring peers). Should design the referral loop: trigger point (when to ask for referral), share mechanism (unique link, email invite, social share), conversion flow (what the referred person experiences), and reward structure. Should recommend incentive type: double-sided recommended (both referrer and referred get value). Should suggest specific incentives appropriate for $49/month SaaS (e.g., free month for both). Should include the launch checklist. Should recommend tool integrations (Rewardful, Tolt, etc.).",
+      "expected_output": "Should check for product-marketing.md first. Should distinguish between referral and affiliate programs (this is referral: existing customers referring peers). Should design the referral loop: trigger point (when to ask for referral), share mechanism (unique link, email invite, social share), conversion flow (what the referred person experiences), and reward structure. Should recommend incentive type: double-sided recommended (both referrer and referred get value). Should suggest specific incentives appropriate for $49/month SaaS (e.g., free month for both). Should include the launch checklist. Should recommend tool integrations (Rewardful, Tolt, etc.).",
       "assertions": [
         "Checks for product-marketing.md",
         "Distinguishes referral from affiliate",
@@ -33,7 +33,7 @@
     {
       "id": 3,
       "prompt": "should we do referral or affiliate? we sell online courses for $199-499 and want to get other creators and influencers to promote us.",
-      "expected_output": "Should trigger on casual phrasing. Should apply the referral vs affiliate distinction clearly. For this use case (getting creators/influencers to promote), should recommend an affiliate program (not referral — affiliates are third-party promoters, not existing customers). Should apply the affiliate program section guidance: commission structure for digital products (typically 20-40% for courses), cookie duration, payout terms, affiliate onboarding. Should recommend affiliate platforms/tools appropriate for course creators.",
+      "expected_output": "Should trigger on casual phrasing. Should apply the referral vs affiliate distinction clearly. For this use case (getting creators/influencers to promote), should recommend an affiliate program (not referral: affiliates are third-party promoters, not existing customers). Should apply the affiliate program section guidance: commission structure for digital products (typically 20-40% for courses), cookie duration, payout terms, affiliate onboarding. Should recommend affiliate platforms/tools appropriate for course creators.",
       "assertions": [
         "Triggers on casual phrasing",
         "Clearly distinguishes referral from affiliate",
@@ -47,7 +47,7 @@
     {
       "id": 4,
       "prompt": "What incentive structure works best? We've been offering $10 off for referrers but it's not working. Our product is $29/month.",
-      "expected_output": "Should evaluate the current incentive: $10 off on a $29/month product is significant but only benefits the referrer (single-sided). Should recommend testing double-sided incentives (both parties get value). Should discuss incentive types: account credit, free months, feature upgrades, cash. Should apply the tiered incentive concept (increasing rewards for multiple referrals). Should provide specific alternative incentive structures to test. Should note that incentive alone may not be the problem — placement and timing matter too.",
+      "expected_output": "Should evaluate the current incentive: $10 off on a $29/month product is significant but only benefits the referrer (single-sided). Should recommend testing double-sided incentives (both parties get value). Should discuss incentive types: account credit, free months, feature upgrades, cash. Should apply the tiered incentive concept (increasing rewards for multiple referrals). Should provide specific alternative incentive structures to test. Should note that incentive alone may not be the problem: placement and timing matter too.",
       "assertions": [
         "Evaluates current incentive structure",
         "Identifies as single-sided and recommends double-sided",

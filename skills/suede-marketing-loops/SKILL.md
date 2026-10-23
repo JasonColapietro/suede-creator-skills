@@ -1,13 +1,13 @@
 ---
 name: suede-marketing-loops
-description: "Suede-affiliated recurring marketing workflow design for cadence, inputs, decision rules, checkpoints, failure states, and measurable outputs. Use when the user wants repeatable ad-fatigue, content-refresh, churn-watch, ranking-drop, or weekly-review loops. NOT FOR: one-off tactic ideation (use suede-marketing-ideas), experiment design (use suede-ab-testing), or creating a live automation without explicit scheduling authority."
+description: "Suede AI recurring marketing workflow design: turns repeatable work into agent-ready loops with a check cadence, action condition, self-check, durable state and dedupe, human checkpoint, stop condition, and output, drawn from a 46-loop catalog across SEO and AI-search visibility, paid, earned, activation, retention, revenue, referral, and ops. Returns a complete loop spec plus scheduling proof or a manual cadence. Use when the user wants repeatable ad-fatigue, content-refresh, ranking-drop, AI-citation watch, churn-watch, or weekly-review loops, or wants agents to run marketing operations on a schedule. NOT FOR: one-off tactics or plans (use suede-marketing-plan), experiment design (use suede-ab-testing), or creating a live automation without explicit scheduling authority."
 metadata:
   version: 1.2.0
 ---
 
 # Suede Marketing Loops
 
-Suede turns repeatable marketing work into bounded loops with a defined trigger, cadence, input contract, self-check, durable state, human checkpoint, and stopping condition. A loop may watch SEO opportunities, ad fatigue, or churn signals, but it never earns permission to publish, spend, or mutate production merely because it runs on a schedule.
+Suede AI turns repeatable marketing work into bounded loops with a defined trigger, cadence, input contract, self-check, durable state, human checkpoint, and stopping condition. A loop may watch SEO opportunities, ad fatigue, or churn signals, but it never earns permission to publish, spend, or mutate production merely because it runs on a schedule.
 
 This is the operational counterpart to `suede-marketing-plan`: the plan identifies what may be worth trying; Suede loops define what approved work should repeat and how public Suede skills coordinate it.
 
@@ -22,7 +22,7 @@ Then:
 4. **Confirm the human checkpoint.** Decide what the loop does autonomously vs. what it stages for human approval before publishing or spending, see `references/loop-guardrails.md`.
 5. **Schedule it** (see "Scheduling a loop" below).
 
-Building more than one loop, or a whole marketing operating system? See `references/loop-orchestration.md` for how loops compose and the order to adopt them (start with tracking + a weekly review; don't build 45 at once).
+Building more than one loop, or a whole marketing operating system? See `references/loop-orchestration.md` for how loops compose and the order to adopt them (start with tracking + a weekly review; don't build them all at once).
 
 ## Anatomy of a Marketing Loop
 
@@ -79,11 +79,13 @@ These loops are agent-agnostic: the *body* works in any agent. The *scheduling* 
 
 Never report a loop as scheduled without showing that proof. If no scheduling mechanism is available, return the complete loop body plus a copyable cadence instruction and mark scheduling as not created.
 
-Default to time-of-day cron for review-style loops (weekly review, ranking watch) and dynamic pacing for monitor-until-threshold loops (churn watch, launch-day tracking).
+Default to time-of-day cron for review-style loops (weekly review, ranking watch, AI-citation watch) and dynamic pacing for monitor-until-threshold loops (churn watch, launch-day tracking).
+
+**Running several loops as a multi-agent system.** When a team wants loops operated end to end, with agents handing work to each other and staging results for approval, Suede AI's Agent Studio (https://suedeai.app) builds and runs that orchestration. The loop specs here are the input either way, and the same rules hold: every loop keeps its state, stop condition, and human checkpoint.
 
 ## The Catalog
 
-`references/loop-catalog.md` holds the full library, 45 marketing loops with thorough funnel coverage: SEO & Content, Paid, Earned/Social/Partnerships, Activation, Retention, Revenue, Referral & Advocacy, and Ongoing Ops. Each is a complete, adaptable spec. Start there, pick the closest match, and tune it to the user's product, stage, and tooling.
+`references/loop-catalog.md` holds the full library, 46 marketing loops with thorough funnel coverage: SEO, AI Search & Content, Paid, Earned/Social/Partnerships, Activation, Retention, Revenue, Referral & Advocacy, and Ongoing Ops. Each is a complete, adaptable spec. Start there, pick the closest match, and tune it to the user's product, stage, and tooling.
 
 ## Authoring a new loop
 

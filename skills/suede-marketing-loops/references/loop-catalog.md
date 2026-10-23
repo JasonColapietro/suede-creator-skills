@@ -12,7 +12,7 @@ Loops are grouped by function. Naming follows the "The X loop" convention.
 
 ## Contents
 
-- **SEO & Content**: keyword-gap, ranking-drop watch, content-decay, internal-linking, programmatic-SEO quality, content-repurposing, content-calendar refill
+- **SEO, AI Search & Content**: keyword-gap, ranking-drop watch, AI-citation watch, content-decay, internal-linking, programmatic-SEO quality, content-repurposing, content-calendar refill
 - **Paid**: ad-fatigue, daily-creative-drop, monthly-creative-retro, paid-search query-mining, retargeting-hygiene, landing-page regression
 - **Earned, Social & Partnerships**, newsjacking, social-listening, community-engagement, competitor-watch, backlink-prospecting, directory-submission, partner-pipeline
 - **Activation**: onboarding drop-off, signup-funnel-leak, lead-capture-asset, feature-adoption
@@ -24,7 +24,7 @@ Loops are grouped by function. Naming follows the "The X loop" convention.
 
 ---
 
-## SEO & Content
+## SEO, AI Search & Content
 
 ### The keyword-gap loop
 - **Check cadence**: Weekly
@@ -54,6 +54,21 @@ Loops are grouped by function. Naming follows the "The X loop" convention.
 - **State / idempotency**: Remember which drops are already open as issues; update rather than re-file.
 - **Stop / bail-out**: No material drop → log "stable." Escalate suspected algo hits to a human rather than mass-editing.
 - **Output**: A regression report with a recommended fix.
+
+### The AI-citation watch loop
+- **Check cadence**: Biweekly (monthly for low-volume categories)
+- **Acts when**: For a fixed set of 20-50 buyer questions, the brand drops out of, or never enters, the answers or cited sources in Google AI Overviews and AI Mode, ChatGPT search, Perplexity, or Claude, while a competitor appears.
+- **Purpose**: Keep the brand cited where buyers ask AI assistants about the category.
+- **Skills used**: `suede-ai-seo`, `suede-seo-audit`, `suede-public-relations`, `suede-competitors`
+- **Loop body**:
+  1. Run the fixed question set on each assistant; record whether the brand is named, which URLs are cited, and which competitors appear.
+  2. Diff vs. last run: lost mentions, new competitor citations, changed source domains.
+  3. For each loss, classify the likely fix: on-page answer gap, entity inconsistency, missing third-party coverage, or stale facts.
+  4. Draft up to 3 fixes (page brief, schema or entity correction, PR angle) for review.
+- **Self-check**: AI answers vary run to run. Sample each question at least twice, and treat a change as real only when it persists across two consecutive runs.
+- **State / idempotency**: Store the question set, per-run answers with dates, and open fix tickets; do not re-file an open fix.
+- **Stop / bail-out**: No persistent change → log "stable." Pause if an assistant's interface or access changes break comparability, and reset the baseline.
+- **Output**: A dated citation-share table by assistant, plus up to 3 staged fixes.
 
 ### The content-decay loop
 - **Check cadence**: Monthly

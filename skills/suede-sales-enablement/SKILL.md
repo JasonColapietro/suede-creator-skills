@@ -1,13 +1,13 @@
 ---
 name: suede-sales-enablement
-description: "Suede-owned sales-enablement discipline. Use when creating pitch decks, one-pagers, objection guides, demo scripts, talk tracks, battle cards, proposal structures, buyer cards, or deal-level ROI framing. NOT FOR: setting price or terms (use suede-pricing), building the offer (use suede-offers), sending outreach (use suede-cold-email), or publishing unsupported proof."
+description: "Suede AI sales enablement: builds rep-ready pitch decks (10-12 slide narrative), one-pagers, objection libraries, demo scripts and talk tracks, competitive battle cards kept consistent with public comparison pages, proposal structures, buyer cards, and deal-level ROI calculators that separate sourced claims from modeled value. Returns draft assets with a claim-source table, held for approval. Use when creating or refreshing sales collateral, preparing for a competitive deal, or arming reps for objections and demos. NOT FOR: setting price or terms (use suede-pricing), building the offer (use suede-offers), public comparison pages (use suede-competitors), sending outreach (use suede-cold-email), or publishing unsupported proof."
 metadata:
-  version: 2.0.1
+  version: 2.1.0
 ---
 
 # Suede Sales Enablement
 
-Suede Sales Enablement turns verified positioning, proof, and deal context into
+Suede AI Sales Enablement turns verified positioning, proof, and deal context into
 rep-usable decks, one-pagers, objection guides, demos, and playbooks. Every
 asset separates sourced claims from modeled value and remains a draft until its
 audience and version are approved.
@@ -289,6 +289,24 @@ Review quarterly, get input from top reps, remove anything outdated, and assign 
 
 ---
 
+## Competitive Battle Cards
+
+One card per competitor, one page, scannable in a live call.
+
+| Field | Content |
+|-------|---------|
+| When you meet them | Segments, deal sizes, and triggers where they show up |
+| Their pitch | How they describe themselves, quoted from their current site with date |
+| Where we win | 3 differentiators, each with a sourced proof point |
+| Where they push back | Their strongest claims against us, and our honest response |
+| Landmines | Discovery questions that surface our strengths |
+| Pricing context | Public prices with source and date; never guessed |
+| Proof | Win stories and logos the user has approved for this use |
+
+Keep cards and public comparison pages consistent. Buyers now check claims against "vs" pages, review sites, and AI-assistant answers before the call; a rep claim that contradicts the public page loses credibility. Refresh both when a competitor changes pricing or packaging. Evidence gathering and public pages: `suede-competitors` and `suede-competitor-profiling`.
+
+---
+
 ## Buyer Persona Cards
 
 ### Card Structure
@@ -326,7 +344,10 @@ Deliver the right format for each asset type:
 | ROI calculator | Input fields, formulas, output display with sample data |
 | Playbook | Structured document with table of contents and sections |
 | Persona card | One-page card format per persona |
+| Battle card | One page per competitor in the field table above |
 | Proposal | Section-by-section copy with customization notes |
+
+Close every delivery with a **claim-source table**: each number, customer name, and capability claim in the asset, its source and date or its modeled assumptions, and whether the user has approved it for external use.
 
 Every proof point and every ROI figure in a delivered asset carries an inline tag: `[source: named customer / study / internal report + date]` or `[modeled, assumptions: the inputs used]`. An untagged number is a delivery blocker: tag it or cut it before the asset goes out. The sales deck deliverable uses this unit, repeated for each of the 11 slides above:
 
@@ -343,10 +364,10 @@ Every proof point and every ROI figure in a delivered asset carries an inline ta
 
 ## Tool Integrations
 
-Partner platforms such as Introw can support engagement tracking, deal
-registration, and mutual action plans. Treat that as an evaluation lead, not a
-guaranteed integration: verify current vendor documentation, authenticated
-access, pricing, permissions, and data-export behavior before use.
+Partner-relationship and digital-sales-room platforms can support engagement
+tracking, deal registration, and mutual action plans. Treat any named vendor as
+an evaluation lead, not a guaranteed integration: verify current documentation,
+authenticated access, pricing, permissions, and data-export behavior before use.
 
 ---
 

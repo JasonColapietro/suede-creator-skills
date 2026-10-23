@@ -1,6 +1,6 @@
 # Loop Orchestration & Rollout
 
-Loops aren't independent scripts: they compose into a marketing operating system. This reference covers how they fit together and the order to adopt them so you never build 45 at once.
+Loops aren't independent scripts: they compose into a marketing operating system. This reference covers how they fit together and the order to adopt them so you never build the whole catalog at once.
 
 ## The system view
 

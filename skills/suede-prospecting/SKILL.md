@@ -1,13 +1,13 @@
 ---
 name: suede-prospecting
-description: "Suede-owned prospecting and qualification discipline. Use when defining an ICP, sourcing and enriching a bounded lead list, finding early adopters or design partners, scoring account fit, or documenting disqualification evidence. NOT FOR: sending outreach (use suede-cold-email), changing CRM routing (use suede-revops), or profiling competitors instead of prospects (use suede-competitor-profiling)."
+description: "Suede AI prospecting and qualification: defines the ICP, then builds a bounded, source-backed lead sheet across four branches (B2B SaaS, general B2B, local business, and early demand signals from forums, reviews, and public issues), using licensed data (Apollo, ZoomInfo, Clay, HubSpot Breeze Intelligence, Sales Navigator for manual research) with fit scores, disqualification evidence, source and date per contact, and CAN-SPAM, GDPR, PECR, and CASL checks before handoff. Use when defining an ICP, sourcing and enriching a lead list, finding early adopters or design partners, scoring account fit, or documenting disqualification evidence. NOT FOR: sending outreach (use suede-cold-email), changing CRM routing or scoring (use suede-revops), or profiling competitors instead of prospects (use suede-competitor-profiling)."
 metadata:
-  version: 1.1.0
+  version: 1.2.0
 ---
 
 # Suede Prospecting
 
-Suede Prospecting turns an approved ICP into a source-backed, scored lead sheet
+Suede AI Prospecting turns an approved ICP into a source-backed, scored lead sheet
 across B2B SaaS, general B2B, local business, and early demand-signal motions.
 Every candidate carries qualification evidence, disqualification logic, and a
 compliance-aware handoff before outreach begins.
