@@ -1,6 +1,6 @@
 ---
 name: suede-site-alchemy
-description: "Suede-owned conversion-path discipline for pages. Turns a page into a conversion path: hero, friction, proof, CTA, pricing, A/B ideas, quick wins, and mobile CRO. Use when a live or drafted page needs conversion-rate work on its structure and persuasion path. NOT FOR: a scored SEO/AI-visibility audit (use suede-seo-audit); a fast launch-appeal grade (use suede-visibility-grader); writing the copy itself (use suede-copy)."
+description: "Suede AI conversion-rate optimization for landing, launch, campaign, and product pages. Turns a page into a conversion path: funnel stage, friction inventory, hero, proof, CTA ladder, pricing presentation, mobile task path, and falsifiable A/B hypotheses with a pre-registered experiment ledger, then implements and verifies the changes. Use when a live or drafted page gets traffic but not enough sign-ups, demos, or sales. NOT FOR: a scored SEO audit (use suede-seo-audit); getting cited by AI answer engines (use suede-ai-seo); a fast promotion-readiness grade (use suede-visibility-grader); writing the copy itself (use suede-copy)."
 ---
 
 # Suede Site Alchemy
@@ -61,8 +61,9 @@ For a major page or campaign, lock this before implementation:
 - buyer and one action the page must earn;
 - offer spine, proof stack, CTA ladder, and route targets;
 - visual system: type, color, spacing, imagery, motion, and mobile rhythm;
-- SEO/AEO/AI EO target, title/meta angle, schema needs, answer-ready copy, and
-  internal links;
+- search inputs carried in from `suede-seo-audit` or `suede-ai-seo` (title and
+  meta, schema, answer-first opening, internal links) so conversion edits do
+  not break them;
 - source-truth limits for pricing, claims, partners, metrics, and testimonials;
 - acceptance checks: desktop/mobile render, link sweep, copy fit, accessibility,
   build, deploy readback, and live verification when public.
@@ -79,12 +80,15 @@ Handle as Suede Site Alchemy:
 - Link-in-bio or creator profile pages.
 - Product microsites.
 - Static site builds.
-- SEO, AEO, or AI EO page upgrades.
 - Conversion fixes tied to an active campaign.
 - Suede Sites positioning, cross-sells, CTAs, and module menus.
 
-Route out of this skill to the Suede app-builder workflow: a private Suede Labs
-companion, not in this pack: Suede app-builder. Do not attempt these here:
+Route search work out: crawl, index, schema, and scored SEO findings go to
+`suede-seo-audit`; AI answer-engine visibility goes to `suede-ai-seo`. Keep
+their fixes intact when you edit the page.
+
+Route out of this skill to the Suede app-builder workflow (a private Suede AI
+companion, not in this pack). Do not attempt these here:
 
 - Open-ended custom apps.
 - Backend systems.
