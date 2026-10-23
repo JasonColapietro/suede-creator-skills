@@ -46,5 +46,9 @@
  "costory-io/costory-finops-mcp-skills/virtual-dimensions": {
   "text": "Connect the hosted Costory MCP at https://app-api.costory.io/mcp and complete browser OAuth with a Costory workspace with billing data connected. Installing the skill folder alone does not configure that connection. Follow the publisher's setup for your agent, then install the selected skill below.",
   "source": "https://docs.costory.io/features/mcp"
+ },
+ "cwong5/extra-caffeine-mcp/extra-caffeine-workflow": {
+  "text": "Requires macOS 14+ and the separately purchased Extra Caffeine 1.2+ app, open with AI assistants enabled by the user. This proprietary, all-rights-reserved listing links to the publisher’s terms and setup; it does not bundle the paid app or grant copying rights. Authorize the duration and display choice before starting or scheduling. Security status: not scanned; runtime-unverified.",
+  "source": "https://extracaffeine.chesterwong.com/agent-setup.md"
  }
 }

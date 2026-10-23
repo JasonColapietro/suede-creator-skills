@@ -61,8 +61,9 @@ Each skill appears in one category. A repository can contribute to several categ
 - **[Appie](featured.md#appie)** by [appierun](https://github.com/appierun). Bring Appie’s writing, chatbot and link tools into your agent workflow. Pick the skill for the job and follow its individual setup instructions.
 - **[CoalWash](featured.md#coalwash)** by [TheColliery](https://github.com/TheColliery). Measure memory and governance-file overhead, run maintenance, and inspect the changes. CoalWash pairs a structured-token guard with transaction snapshots and rollback tools.
 - **[Costory](featured.md#costory)** by [costory-io](https://github.com/costory-io). Investigate cost changes, explore BigQuery spend, and map shared costs to teams with an agent connected to Costory. Four workflows cover discovery, evidence, allocation and review.
+- **[Extra Caffeine](featured.md#extra-caffeine)** by [cwong5](https://github.com/cwong5). Give local AI and file-processing work time to finish. The Extra Caffeine workflow guides an agent through authorized awake sessions, state checks and requested one-time schedules while preserving existing sessions.
 
-These 3 editorial selections have [reviewed scope and setup guidance](featured.md). Editorial selection is separate from quality scores, security certification and README-badge verification. Featured plugins outside the scored skill snapshot are not included in the skill or repository counts above.
+These 4 editorial selections have [reviewed scope and setup guidance](featured.md). Editorial selection is separate from quality scores, security certification and README-badge verification. Featured plugins outside the scored skill snapshot are not included in the skill or repository counts above.
 
 ## Guides
 

@@ -123,6 +123,25 @@
         }
       ],
       "setup": "Requires a Costory workspace with billing data connected and its hosted MCP at https://app-api.costory.io/mcp, authenticated through browser OAuth. Queries use workspace cost data. Preview changes and confirm before publishing allocations, delivering reports or applying schema changes. Each linked skill page includes setup and source details."
+    },
+    {
+      "id": "extra-caffeine",
+      "name": "Extra Caffeine",
+      "repo": "cwong5/extra-caffeine-mcp",
+      "kind": "Local Mac MCP · One workflow skill",
+      "license": "Proprietary · All rights reserved",
+      "headline": "Keep your Mac awake while the work needs it.",
+      "summary": "Give local AI and file-processing work time to finish. The Extra Caffeine workflow guides an agent through authorized awake sessions, state checks and requested one-time schedules while preserving existing sessions.",
+      "review": "directory/reviews/2026-10-23-extra-caffeine.md",
+      "commit": "4e0ac32e685c5366ab487502173168470a42a178",
+      "setup": "Requires macOS 14+ and the separately purchased, paid Extra Caffeine 1.2+ app, kept open with AI assistants enabled by the user. Follow the publisher’s setup and license terms. The skill does not install the app or enable access. It prevents idle sleep, not closed-lid sleep, and does not wake a sleeping Mac. No security scan or runtime execution was performed: not scanned; runtime-unverified. Editorial feature only; scored catalog listing is pending the next directory refresh.",
+      "capabilities": [
+        {
+          "title": "One workflow: extra-caffeine-workflow",
+          "description": "Choose the duration and display behavior, verify awake state, and reconcile timeouts before retrying."
+        }
+      ],
+      "workflow_url": "https://github.com/cwong5/extra-caffeine-mcp/blob/4e0ac32e685c5366ab487502173168470a42a178/skills/extra-caffeine-workflow/SKILL.md"
     }
   ]
 }
