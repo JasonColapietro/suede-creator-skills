@@ -189,7 +189,7 @@ separately authorizes it.
 | Criterion | 2 | 1 | 0 |
 |---|---|---|---|
 | Goal alignment | Produces the done signal | Required prerequisite | Adjacent |
-| Unblocking | Unlocks a core path or 2+ steps | Unlocks one step | Unlocks nothing known |
+| Unblocking | Clears a core path or 2+ steps | Clears one step | Clears nothing known |
 | Evidence | Confirmed by current source | One read-only check away | Assumption |
 | Urgency | Active failure, deadline, security risk, release gate | Needed this milestone | No pressure |
 | Leverage | One focused session; prevents rework | Bounded, moderate payoff | Unscoped or low payoff |

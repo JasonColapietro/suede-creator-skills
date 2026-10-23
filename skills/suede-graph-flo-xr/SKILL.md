@@ -1,6 +1,6 @@
 ---
 name: suede-graph-flo-xr
-description: "Suede Thought Graph shipping search for a multi-file repo change. Use when competing implementation plans need one evidence-gated selection before any build. Halts on hazards, collisions, budget exhaustion, or no safe winner. Reads production; never deploys. NOT FOR: bulk independent work (use a separate private worker-fleet pass); reviewing or grading an existing diff (use suede-code); CI or branch-protection wiring (use suede-ci-gate); copy-only shipping (use suede-ship-copy)."
+description: "Suede AI multi-file shipping workflow (Suede Thought Graph shipping search) for one repo change: generates competing implementation plans, scores and prunes them, refutes the survivors, aggregates compatible lanes, selects one winner, then builds it in an isolated worktree behind a sandboxed gate and writes a handoff file. Use when competing implementation plans need one evidence-gated selection before any build. Halts on hazards, collisions, budget exhaustion, or no safe winner. Reads production; never deploys. NOT FOR: bulk independent work (use a separate private worker-fleet pass); reviewing or grading an existing diff (use suede-code); CI or branch-protection wiring (use suede-ci-gate); copy-only shipping (use suede-ship-copy)."
 ---
 
 # Suede Graph Flo XR
