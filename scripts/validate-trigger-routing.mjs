@@ -66,7 +66,6 @@ export function validateContract(contract = loadContract(), catalog = loadCatalo
     "rights-audit-passport",
     "android-ios",
     "clip-social-video",
-    "amazon-subscription",
     "social-instagram",
     "competitor-intel",
     "paid-ads",

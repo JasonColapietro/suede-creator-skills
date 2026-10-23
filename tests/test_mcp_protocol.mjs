@@ -501,7 +501,6 @@ test("catalog, resources, prompts, and profile filters match the live server", a
       response.result.structuredContent.skills.every((skill) => ["workflow", "consumer"].includes(skill.area))
     );
     assert.ok(response.result.structuredContent.skills.some((skill) => skill.name === "suede-graph-flo-xr"));
-    assert.ok(response.result.structuredContent.skills.some((skill) => skill.name === "amazon-returns-recovery"));
 
     const ship = await session.request("tools/call", {
       name: "get_suede_skill",

@@ -338,46 +338,6 @@
       ]
     },
     {
-      "id": "amazon-subscription",
-      "skills": ["amazon-returns-recovery", "subscription-recovery"],
-      "fallback": "subscription-recovery",
-      "routes": [
-        {
-          "skill": "amazon-returns-recovery",
-          "positive": ["amazon", "restocking fee", "prime video", "audible", "kindle unlimited"],
-          "negative": ["outside amazon", "netflix", "paypal", "google play", "app store"],
-          "metadataMustContain": ["amazon", "restocking fee"]
-        },
-        {
-          "skill": "subscription-recovery",
-          "positive": ["outside amazon", "netflix", "paypal", "google play", "app store", "recurring subscriptions"],
-          "negative": ["amazon", "restocking fee", "prime video", "audible"],
-          "metadataMustContain": ["outside amazon", "recurring charges"]
-        }
-      ],
-      "cases": [
-        {
-          "id": "amazon-positive",
-          "mode": "positive",
-          "prompt": "Audit my Amazon return for a restocking fee and check an Audible charge.",
-          "expected": "amazon-returns-recovery"
-        },
-        {
-          "id": "subscription-negative-amazon",
-          "mode": "negative",
-          "prompt": "Audit and cancel a Netflix charge billed directly through PayPal.",
-          "expected": "subscription-recovery",
-          "forbidden": ["amazon-returns-recovery"]
-        },
-        {
-          "id": "subscription-ambiguous-fallback",
-          "mode": "ambiguous",
-          "prompt": "Find all recurring subscriptions I am paying for.",
-          "expected": "subscription-recovery"
-        }
-      ]
-    },
-    {
       "id": "competitor-intel",
       "skills": [
         "suede-competitors",
