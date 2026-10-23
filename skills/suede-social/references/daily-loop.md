@@ -1,4 +1,4 @@
-# Instagram Daily Loop
+# Daily Content Loop
 
 The daily loop produces decisions and approval-ready assets. It does not imply
 automatic publishing or autonomous engagement.
@@ -11,7 +11,7 @@ automatic publishing or autonomous engagement.
 - active offer and conversion destination;
 - audience comments, questions, DMs, search terms, and support themes the user
   is authorized to access;
-- current official Instagram guidance and account status;
+- current official platform guidance and account status;
 - lawful trend sources and cleared media library.
 
 ## Run
@@ -25,7 +25,9 @@ automatic publishing or autonomous engagement.
    rights-unclear media, and posts whose context materially changed.
 4. **Select candidates.** Score ideas on audience recognition, payoff, evidence,
    voice fit, and business bridge. Select 1–3 candidates with different jobs.
-5. **Produce packages.** Use the Reel, carousel, Story, or static contract.
+5. **Produce packages.** Use the short-video, carousel, Story, text, or static
+   contract in [content-production.md](content-production.md) and
+   [post-templates.md](post-templates.md).
 6. **QA.** Verify exact claims, source rights, identity, accessibility, CTA,
    destination, disclosure, and brand voice.
 7. **Request exact approval.** Show the final copy, media list, visible identity,

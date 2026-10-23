@@ -1,6 +1,9 @@
-# Instagram Content Production
+# Asset Packages: Short Video, Carousel, Story
 
 Use these templates after the Account Evidence Pack and objective are known.
+They fit Instagram Reels, TikTok, YouTube Shorts, LinkedIn document posts, and
+Instagram or Facebook Stories. Check the platform limits in
+[platform-limits.md](platform-limits.md) before setting duration or slide count.
 
 ## Hook selection
 
@@ -15,7 +18,7 @@ Score every candidate 0–4 on each item:
 Reject a hook when any promised result lacks proof, the hook could apply to
 almost any niche, or it requires fake fear, outrage, or scarcity.
 
-## Reel package
+## Short-video package (Reels, TikTok, Shorts)
 
 ```text
 Objective:
@@ -37,7 +40,8 @@ Caption:
 First line:
 Body:
 CTA:
-Keyword and hashtag test:
+Search terms (caption first line, on-screen text, spoken in the first seconds):
+Hashtags (Instagram caps at 5; use 0 to 3 that name the topic):
 Alt text / caption accessibility:
 Music, voice, footage, and likeness rights:
 Claims requiring proof:
@@ -73,8 +77,8 @@ Slide 3: idea, step, or proof / visual
 ...
 Final slide: earned summary / one CTA
 
-Caption:
-Alt text:
+Caption (first line carries the search term):
+Alt text (describe the slide content, not "carousel image"):
 Source and claim notes:
 Experiment variable:
 Primary metric:

@@ -115,8 +115,15 @@ unavailable, rotate midday and evening windows
 - Ignoring Stories and Reels
 - Only promotional content
 
+**Verified platform facts (October 2026):** at most 5 hashtags per post or
+Reel; Reels up to 3 minutes; grid previews crop to 3:4; public posts from
+professional accounts can be indexed by Google. See
+[platform-limits.md](platform-limits.md).
+
 **Format tips:**
 - Compare Reels, static posts, and carousels at equal account conditions.
+- Put the search phrase in the first caption line and on-screen text; captions
+  now double as search snippets.
 - Test first-frame treatments against retention.
 - Set carousel length from the idea and slide-level completion, not a fixed
   count.

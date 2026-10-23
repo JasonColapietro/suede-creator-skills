@@ -1,4 +1,4 @@
-# Instagram Measurement and Experiments
+# Measurement and Experiments
 
 Measurement exists to decide what to repeat, change, or stop. Do not optimize a
 proxy that is disconnected from the account objective.
@@ -14,6 +14,7 @@ proxy that is disconnected from the account objective.
 | Conversation | qualified comments or DMs / reach | objection themes, response burden |
 | Leads | attributed leads / reach | profile actions, site taps, DM keyword starts |
 | Sales | attributed sales or revenue / reach | checkout starts, lead quality, offer and margin |
+| Search discovery | search-sourced views / total views | search terms in caption and on-screen text, profile visits from search |
 
 The table supplies candidates, not mandatory metrics. Use only measures the
 current account exposes and the user is authorized to access.

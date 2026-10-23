@@ -394,6 +394,6 @@ and do not imply an image was produced.
 
 - Use `suede-ad-creative` for paid-ad production and `suede-video` for motion.
 - Use `suede-social` for channel strategy and `suede-site-alchemy` for conversion placement.
-- Use `suede-instagram-growth` for Instagram format contracts (Reel covers, carousel slide counts, Story dimensions) before producing those assets here.
+- Use `suede-social` for platform format contracts (Reel covers, carousel slide counts, Story frames) before producing those assets here.
 - Use `suede-seo-audit` for image-search checks and `suede-aso` for app-store screenshots.
 - Use `suede-directory-submissions` for directory gallery planning.

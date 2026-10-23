@@ -1,6 +1,6 @@
 interface:
   display_name: "Suede Social"
-  short_description: "Suede organic social strategy, content, and listening"
-  default_prompt: "Use $suede-social on [target]. The user is planning social media strategy, content, or cadence for a brand or founder account. Work through platform strategy, content formats that travel, posting cadence, engagement, and listening, ground every recommendation in evidence the user can check, and return the decisions, the reasoning, and what to measure next."
+  short_description: "Organic social strategy, account audits, and content"
+  default_prompt: "Use $suede-social on [account or goal]. Build the Account Evidence Pack, audit the recent post cohort from authorized evidence when a handle or export is supplied, then produce the requested strategy, calendar, posts, Reels, carousels, or social search brief. Separate public metrics from owned analytics, map attention to follows, leads, and sales, treat cadence, timing, and hashtags as tests, and never publish or engage without exact-content approval."
 policy:
   allow_implicit_invocation: true
