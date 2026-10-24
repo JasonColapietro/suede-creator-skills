@@ -9,7 +9,7 @@ Release record for the `suede-workflow-skills` skill, following the NVIDIA skill
 
 Suede AI umbrella router for the full public skill pack: picks the right specialist for any request across search visibility (SEO, AEO, GEO), agent and operations automation, code review and CI, copy and design, launch and app shipping, growth marketing, and creator rights, hands it the request verbatim, and recommends one next move with a ready-to-run prompt when the user asks what to do next.
 
-Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.2; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
+Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.3; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
 ## Owner
 
@@ -61,7 +61,7 @@ Markdown analysis and recommendations returned in the agent's response. The skil
 
 ## Skill Version
 
-0.19.2 — the pack is single-versioned, so every skill releases together; see [VERSION](../../VERSION) and [CITATION.cff](../../CITATION.cff) for the release identifier this card describes.
+0.19.3 — the pack is single-versioned, so every skill releases together; see [VERSION](../../VERSION) and [CITATION.cff](../../CITATION.cff) for the release identifier this card describes.
 
 ## Ethical Considerations
 

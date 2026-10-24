@@ -9,7 +9,7 @@ Release record for the `suede-sales-enablement` skill, following the NVIDIA skil
 
 Suede AI sales enablement: builds rep-ready pitch decks (10-12 slide narrative), one-pagers, objection libraries, demo scripts and talk tracks, competitive battle cards kept consistent with public comparison pages, proposal structures, buyer cards, and deal-level ROI calculators that separate sourced claims from modeled value.
 
-Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.2; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
+Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.3; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
 ## Owner
 
@@ -60,7 +60,7 @@ Structured Markdown returned in the agent's response, shaped by the output contr
 
 ## Skill Version
 
-0.19.2 — the pack is single-versioned, so every skill releases together; see [VERSION](../../VERSION) and [CITATION.cff](../../CITATION.cff) for the release identifier this card describes.
+0.19.3 — the pack is single-versioned, so every skill releases together; see [VERSION](../../VERSION) and [CITATION.cff](../../CITATION.cff) for the release identifier this card describes.
 
 ## Ethical Considerations
 
