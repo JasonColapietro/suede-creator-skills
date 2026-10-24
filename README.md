@@ -41,7 +41,7 @@ Suede Creator Skills gives founders, marketers, and small teams reusable workflo
 - **Positioning and conversion:** define your audience and offer with `suede-product-marketing`, then write page copy with `suede-copy`.
 - **Business operations:** map bottlenecks with `suede-ops-assessment` and define the system with `suede-ops-architecture`.
 
-These are **public, broadly reusable, open-source skill folders**, installable from one path. Read each `skills/<name>/SKILL.md` before you install it. The pack also covers campaign planning, code review, app delivery, and creator-rights work. Original work is MIT licensed; adapted components keep their upstream licenses, listed in [NOTICE.md](NOTICE.md). No binaries, no telemetry, no accounts.
+These are **public, broadly reusable, open-source skill folders**, installable from one path. Read each `skills/<name>/SKILL.md` before you install it. The pack also covers campaign planning, code review, app delivery, and music release prep. Original work is MIT licensed; adapted components keep their upstream licenses, listed in [NOTICE.md](NOTICE.md). No binaries, no telemetry, no accounts.
 
 <img src="docs/assets/readme/pack-map.svg" alt="The pack at a glance: 38 marketing and growth skills, 7 design copy and SEO, 7 orchestration and workflows, 4 code quality and shipping, 4 creator rights and release, 3 mobile apps." width="100%">
 
@@ -309,7 +309,7 @@ python3 -m pip install PyYAML
 
 ### What is Suede Creator Skills?
 
-Suede Creator Skills is an open-source pack of agent skills for Claude Code and OpenAI Codex. Each skill is a folder with a `SKILL.md` that teaches the agent a repeatable workflow: SEO audits, AI search visibility, conversion copy, code review, ship gates, app delivery and creator-rights work.
+Suede Creator Skills is an open-source pack of agent skills for Claude Code and OpenAI Codex. Each skill is a folder with a `SKILL.md` that teaches the agent a repeatable workflow: SEO audits, AI search visibility, conversion copy, code review, ship gates and app delivery.
 
 ### Who created Suede Creator Skills?
 
