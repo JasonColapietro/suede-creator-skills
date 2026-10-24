@@ -189,3 +189,17 @@ test("unresolved and conflicting group variants remain unmeasured", () => {
   assert.ok(codes(mixed).includes('merchant-reference-unmeasured'));
   assert.ok(!codes(mixed).includes('merchant-group-id'));
 });
+
+test("malformed inline variants and known relationship gaps are not hidden by unknown references", () => {
+  for (const variant of [{}, { '@type': 'Product' }]) {
+    const row = merchant({ '@type': 'ProductGroup', name: 'Bowls', hasVariant: variant });
+    assert.ok(codes(row).includes('merchant-group-id'));
+    assert.ok(codes(row).includes('merchant-variant-id-missing'));
+    assert.ok(!codes(row).includes('merchant-reference-unmeasured'));
+  }
+  const mixed = merchant({ '@type': 'ProductGroup', name: 'Bowls', hasVariant: [
+    product({ sku: 'known' }), { '@id': `${origin}/unknown` },
+  ] });
+  assert.ok(codes(mixed).includes('merchant-reference-unmeasured'));
+  assert.ok(codes(mixed).includes('merchant-group-id'));
+});
