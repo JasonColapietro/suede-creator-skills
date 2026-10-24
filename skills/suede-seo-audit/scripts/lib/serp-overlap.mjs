@@ -1,6 +1,9 @@
 const normalizeKeyword = (value = "") => String(value).normalize("NFKC").trim().replace(/\s+/g, " ").toLowerCase();
 import { markdownText } from "./offline-reports.mjs";
 
+// Code-point order keeps greedy grouping independent of the machine locale.
+const compareText = (a, b) => a < b ? -1 : a > b ? 1 : 0;
+
 function resultUrl(value) {
   if (typeof value !== "string" || !value.trim()) throw new Error("Organic result requires a URL");
   if (value.length > 16384) throw new Error("Organic URL exceeds 16,384 characters; review the stored input");
@@ -42,8 +45,8 @@ export function clusterSerpOverlap(rows, { depth = 10, threshold = 0.3, context 
     if (sampleBytes > 5_000_000) throw new Error("Sample evidence budget exceeded; reduce keywords or top-K depth. No report was written.");
     samples.push(sample);
   }
-  samples.sort((a, b) => a.keyword.localeCompare(b.keyword));
-  excluded.sort((a, b) => a.keyword.localeCompare(b.keyword));
+  samples.sort((a, b) => compareText(a.keyword, b.keyword));
+  excluded.sort((a, b) => compareText(a.keyword, b.keyword));
   const pairs = []; const scores = new Map();
   let pairBytes = 0;
   const pairKey = (left, right) => JSON.stringify([left, right].sort());

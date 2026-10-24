@@ -74,3 +74,17 @@ test("overlap reports escape malicious keywords and describe review-only source 
   assert.match(md, /user-supplied|User-supplied/);
   assert.match(md, /No requests/);
 });
+
+test("group ordering is identical across collection-machine locales", async () => {
+  const { spawnSync } = await import("node:child_process");
+  const moduleUrl = new URL("../lib/serp-overlap.mjs", import.meta.url).href;
+  const input = ["zebra", "äpple", "apple"].map(keyword => ({ keyword, organic: [{ rank: 1, url: "https://example.test/shared" }] }));
+  const script = `import { clusterSerpOverlap } from ${JSON.stringify(moduleUrl)}; console.log(JSON.stringify(clusterSerpOverlap(${JSON.stringify(input)}, {depth:1,threshold:1,context:"Synthetic fixture only"}).clusters));`;
+  const outputs = ["en_US.UTF-8", "sv_SE.UTF-8"].map(locale => {
+    const result = spawnSync(process.execPath, ["--input-type=module", "-e", script], { encoding: "utf8", env: { ...process.env, LANG: locale, LC_ALL: locale } });
+    assert.equal(result.status, 0, result.stderr);
+    return result.stdout;
+  });
+  assert.equal(outputs[0], outputs[1]);
+  assert.deepEqual(JSON.parse(outputs[0])[0].keywords, ["apple", "zebra", "äpple"]);
+});
