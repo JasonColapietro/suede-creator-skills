@@ -35,11 +35,19 @@ test('npm and Python stages contain byte-identical offline runtime, references a
  const npm=process.platform==='win32'?'npm.cmd':'npm';
  const cache=fs.mkdtempSync(path.join(os.tmpdir(),'seo-npm-cache-'));
  let packed;
- try { packed=run(npm,['pack','--dry-run','--json','--ignore-scripts','--cache',cache],path.join(root,'dist-npm')); }
- finally { fs.rmSync(cache,{recursive:true,force:true}); }
- assert.equal(packed.status,0,packed.stderr);
- const listing=JSON.parse(packed.stdout)[0].files.map(f=>f.path);
- for(const file of files) assert.ok(listing.includes(`skills/${skill}/${file}`),`npm tarball missing ${file}`);
- assert.ok(listing.includes('NOTICE.md'));
- assert.ok(listing.some(p=>p.startsWith('licenses/')));
+ try {
+  packed=run(npm,['pack','--json','--ignore-scripts','--cache',cache,'--pack-destination',cache],path.join(root,'dist-npm'));
+  assert.equal(packed.status,0,packed.stderr);
+  const archive=JSON.parse(packed.stdout)[0];
+  const listing=archive.files.map(f=>f.path);
+  for(const file of files) assert.ok(listing.includes(`skills/${skill}/${file}`),`npm tarball missing ${file}`);
+  assert.ok(listing.includes('NOTICE.md'));
+  assert.ok(listing.some(p=>p.startsWith('licenses/')));
+  const unpack=run('tar',['-xzf',path.join(cache,archive.filename),'-C',cache]);
+  assert.equal(unpack.status,0,unpack.stderr);
+  const extracted=path.join(cache,'package','skills',skill);
+  for(const file of files) assert.deepEqual(fs.readFileSync(path.join(extracted,file)),fs.readFileSync(path.join(sourceRoot,skill,file)));
+  const cli=run(process.execPath,[path.join(extracted,'scripts/seo-review.mjs'),'audit','--input',path.join(extracted,'scripts/fixtures/pages.json'),'--out',path.join(cache,'archive-report')]);
+  assert.equal(cli.status,0,cli.stderr);
+ } finally { fs.rmSync(cache,{recursive:true,force:true}); }
 });
