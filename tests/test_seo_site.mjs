@@ -39,7 +39,9 @@ try {
    }
    const bounds=await section.boundingBox();
    assert.ok(bounds.x>=0 && bounds.x+bounds.width<=width+1,'artwork section escapes viewport');
-   await section.screenshot({path:path.join(output,`${name}-${width}.png`),style:'.nav, .skip-link, .back-top { visibility: hidden !important; }'});
+   await section.scrollIntoViewIfNeeded();
+   await page.waitForFunction(selector=>{ let el=document.querySelector(selector); while(el){if(Number(getComputedStyle(el).opacity)<0.99)return false;el=el.parentElement;}return true;},selector);
+   await section.screenshot({animations:'disabled',path:path.join(output,`${name}-${width}.png`),style:'.nav, .skip-link, .back-top { visibility: hidden !important; }'});
   }
  }
  await page.goto(`http://127.0.0.1:${server.address().port}/`);
