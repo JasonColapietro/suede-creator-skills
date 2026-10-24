@@ -1990,7 +1990,7 @@ ${guideLinksPanel(here, others, "More guides")}
     name: g.title,
     description: g.meta_description,
     url: url(here),
-    mainEntityOfPage: { "@type": "WebPage", "@id": url(here) },
+    mainEntityOfPage: { "@type": "WebPage", "@id": url(here), breadcrumb: { "@id": `${url(here)}#breadcrumb` } },
     datePublished: g.date_published,
     dateModified: g.date_modified,
     inLanguage: "en",
@@ -1999,7 +1999,6 @@ ${guideLinksPanel(here, others, "More guides")}
     author: PERSON,
     publisher: ORGANIZATION_PUBLISHER,
     isPartOf: DIRECTORY_REF,
-    breadcrumb: { "@id": `${url(here)}#breadcrumb` },
   };
   const jsonld = [article, bc.ld];
   if ((g.schema_types || []).includes("ItemList")) {
