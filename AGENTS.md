@@ -48,6 +48,18 @@ The above is about not asking permission. It is not license to skip proof.
   merge rewrites the SHA, so "unmerged commits" does not mean unmerged work.
 - If something couldn't be verified, say so plainly rather than implying it was.
 
+## Published public pages are indexable by default
+
+Keep published public pages indexable, self-canonical and in the sitemap.
+Review metadata, grades, feature eligibility and collection size must not
+silently add `noindex` or remove a published page from discovery. Keep those
+facts accurate on the page without turning them into indexing gates.
+
+Preserve intentional exclusions for private, authenticated, restricted or
+unpublished content, error pages and retired redirects. When changing public
+page eligibility, test the affected published pages directly rather than
+testing only the subset already marked indexable.
+
 ## Adding or removing a skill: run `npm run fix:counts`
 
 The book quotes measurements of the pack in prose — how many `SKILL.md` files

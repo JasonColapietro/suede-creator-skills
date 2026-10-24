@@ -1,4 +1,12 @@
 {
+ "directory/1nickpappas/move-code-quality-skill/index.html": [
+  "1NickPappas/move-code-quality-skill skills",
+  "move-code-quality-skill skills",
+  "1NickPappas agent skills",
+  "move-code-quality-skill claude skills",
+  "code review agent skills",
+  "agent skills directory"
+ ],
  "directory/activeloopai/hivemind/hivemind-goals/index.html": [
   "hivemind-goals skill by activeloopai",
   "hivemind-goals skill",
@@ -183,6 +191,14 @@
   "Alisa0808 skills",
   "video image and audio agent skills",
   "SKILL.md"
+ ],
+ "directory/alonw0/web-asset-generator/index.html": [
+  "alonw0/web-asset-generator skills",
+  "web-asset-generator skills",
+  "alonw0 agent skills",
+  "web-asset-generator claude skills",
+  "video image and audio agent skills",
+  "agent skills directory"
  ],
  "directory/angular/skills/angular-developer/index.html": [
   "angular-developer skill by angular",
@@ -1098,6 +1114,14 @@
   "business and finance agent skills",
   "agent skills directory"
  ],
+ "directory/composiohq/skills/index.html": [
+  "composiohq/skills skills",
+  "skills skills",
+  "composiohq agent skills",
+  "skills claude skills",
+  "AI agent agent skills",
+  "agent skills directory"
+ ],
  "directory/conorbronsdon/avoid-ai-writing/ai-writing-detector/index.html": [
   "ai-writing-detector skill by conorbronsdon",
   "ai-writing-detector skill",
@@ -1168,6 +1192,14 @@
   "conorbronsdon skills",
   "writing and editing agent skills",
   "SKILL.md"
+ ],
+ "directory/conorluddy/ios-simulator-skill/index.html": [
+  "conorluddy/ios-simulator-skill skills",
+  "ios-simulator-skill skills",
+  "conorluddy agent skills",
+  "ios-simulator-skill claude skills",
+  "testing and QA agent skills",
+  "agent skills directory"
  ],
  "directory/continuum-ai-corp/orcareplay/orca-replay/index.html": [
   "orca-replay skill by Continuum-AI-Corp",
@@ -1644,6 +1676,14 @@
   "best DevOps and cloud skills",
   "agent skills directory"
  ],
+ "directory/digidai/product-manager-skills/index.html": [
+  "Digidai/product-manager-skills skills",
+  "product-manager-skills skills",
+  "Digidai agent skills",
+  "product-manager-skills claude skills",
+  "product management agent skills",
+  "agent skills directory"
+ ],
  "directory/documents-office/index.html": [
   "document and office file agent skills",
   "document and office file claude skills",
@@ -1853,6 +1893,14 @@
   "Agent-skills skills",
   "EmblemCompany agent skills",
   "Agent-skills claude skills",
+  "business and finance agent skills",
+  "agent skills directory"
+ ],
+ "directory/ericyoung-183/alpha-insights/index.html": [
+  "Ericyoung-183/alpha-insights skills",
+  "alpha-insights skills",
+  "Ericyoung-183 agent skills",
+  "alpha-insights claude skills",
   "business and finance agent skills",
   "agent skills directory"
  ],
@@ -3268,6 +3316,22 @@
   "AI agent agent skills",
   "SKILL.md"
  ],
+ "directory/humanpen/humanpen-skill/index.html": [
+  "humanpen/humanpen-skill skills",
+  "humanpen-skill skills",
+  "humanpen agent skills",
+  "humanpen-skill claude skills",
+  "writing and editing agent skills",
+  "agent skills directory"
+ ],
+ "directory/ilyautov/humanizer-ru/index.html": [
+  "ilyautov/humanizer-ru skills",
+  "humanizer-ru skills",
+  "ilyautov agent skills",
+  "humanizer-ru claude skills",
+  "writing and editing agent skills",
+  "agent skills directory"
+ ],
  "directory/index.html": [
   "claude code skills directory",
   "agent skills directory",
@@ -3499,6 +3563,14 @@
   "inhouseseo skills",
   "marketing and SEO agent skills",
   "SKILL.md"
+ ],
+ "directory/jakedahn/pomodoro/index.html": [
+  "jakedahn/pomodoro skills",
+  "pomodoro skills",
+  "jakedahn agent skills",
+  "pomodoro claude skills",
+  "productivity agent skills",
+  "agent skills directory"
  ],
  "directory/jeffallan/claude-skills/chaos-engineer/index.html": [
   "chaos-engineer skill by jeffallan",
@@ -3880,6 +3952,14 @@
   "Leonxlnx agent skills",
   "taste-skill claude skills",
   "frontend and design agent skills",
+  "agent skills directory"
+ ],
+ "directory/lukstei/slop-grader/index.html": [
+  "lukstei/slop-grader skills",
+  "slop-grader skills",
+  "lukstei agent skills",
+  "slop-grader claude skills",
+  "writing and editing agent skills",
   "agent skills directory"
  ],
  "directory/luoyuctl/agenttrace/agenttrace-session-audit/index.html": [
@@ -5492,6 +5572,14 @@
   "AI agent agent skills",
   "SKILL.md"
  ],
+ "directory/octav-labs/octav-api-skill/index.html": [
+  "Octav-Labs/octav-api-skill skills",
+  "octav-api-skill skills",
+  "Octav-Labs agent skills",
+  "octav-api-skill claude skills",
+  "business and finance agent skills",
+  "agent skills directory"
+ ],
  "directory/ohad6k/emulo/design/index.html": [
   "design skill by ohad6k",
   "design skill",
@@ -5828,6 +5916,14 @@
   "phuryn skills",
   "product management agent skills",
   "SKILL.md"
+ ],
+ "directory/pleaseprompto/notebooklm-skill/index.html": [
+  "PleasePrompto/notebooklm-skill skills",
+  "notebooklm-skill skills",
+  "PleasePrompto agent skills",
+  "notebooklm-skill claude skills",
+  "productivity agent skills",
+  "agent skills directory"
  ],
  "directory/praneybehl/llm-wiki-plugin/llm-wiki/index.html": [
   "llm-wiki skill by praneybehl",
@@ -6822,6 +6918,22 @@
   "productivity agent skills",
   "SKILL.md"
  ],
+ "directory/takechanman1228/claude-ecom/index.html": [
+  "takechanman1228/claude-ecom skills",
+  "claude-ecom skills",
+  "takechanman1228 agent skills",
+  "claude-ecom claude skills",
+  "business and finance agent skills",
+  "agent skills directory"
+ ],
+ "directory/takechanman1228/claude-persona/index.html": [
+  "takechanman1228/claude-persona skills",
+  "claude-persona skills",
+  "takechanman1228 agent skills",
+  "claude-persona claude skills",
+  "product management agent skills",
+  "agent skills directory"
+ ],
  "directory/tencent/ai-infra-guard/aig-scanner/index.html": [
   "aig-scanner skill by Tencent",
   "aig-scanner skill",
@@ -7228,6 +7340,14 @@
   "AI agent agent skills",
   "SKILL.md"
  ],
+ "directory/vercel-labs/agent-browser/index.html": [
+  "vercel-labs/agent-browser skills",
+  "agent-browser skills",
+  "vercel-labs agent skills",
+  "agent-browser claude skills",
+  "productivity agent skills",
+  "agent skills directory"
+ ],
  "directory/vercel-labs/agent-skills/index.html": [
   "vercel-labs/agent-skills skills",
   "agent-skills skills",
@@ -7498,6 +7618,14 @@
   "yusufkaraaslan skills",
   "AI agent agent skills",
   "SKILL.md"
+ ],
+ "directory/yzfly/mind-cloning-engineering/index.html": [
+  "yzfly/Mind-Cloning-Engineering skills",
+  "Mind-Cloning-Engineering skills",
+  "yzfly agent skills",
+  "Mind-Cloning-Engineering claude skills",
+  "AI agent agent skills",
+  "agent skills directory"
  ],
  "directory/zarazhangrui/frontend-slides/frontend-slides/index.html": [
   "frontend-slides skill by zarazhangrui",

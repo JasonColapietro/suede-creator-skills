@@ -65,6 +65,25 @@ test("the directory has hundreds of indexable pages to check", () => {
   assert.ok(indexable.length > 500, `only ${indexable.length} indexable pages found`);
 });
 
+test("published repository pages stay indexable even with one listed skill", () => {
+  const data = JSON.parse(fs.readFileSync(path.join(repoRoot, "directory", "skills.json"), "utf8"));
+  const counts = new Map();
+  const slug = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "") || "skill";
+  for (const skill of data.skills) {
+    const rel = `directory/${skill.repo.split("/").map(slug).join("/")}/`;
+    counts.set(rel, (counts.get(rel) || 0) + 1);
+  }
+  const sitemap = new Set([...fs.readFileSync(path.join(docs, "sitemap.xml"), "utf8").matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]));
+  const published = [...counts].filter(([rel]) => byRel.has(rel));
+  assert.ok(published.some(([, count]) => count === 1), "exercise a published one-skill repository");
+  for (const [rel, count] of published) {
+    const page = byRel.get(rel);
+    assert.ok(page.indexable, `${rel}: a published repository with ${count} listed skill(s) must be indexable`);
+    assert.equal(page.canonical, page.url, `${rel}: published repository must be self-canonical`);
+    assert.ok(sitemap.has(page.url), `${rel}: published repository must appear in the sitemap`);
+  }
+});
+
 test("every indexable page has a unique title of at most 60 characters", () => {
   const seen = new Map();
   for (const p of indexable) {

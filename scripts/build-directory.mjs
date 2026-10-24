@@ -339,13 +339,13 @@ for (const r of repos.values()) {
   r.primary = r.categories[0];
   r.featuredCount = r.skills.filter((s) => s.featured).length;
   // A one-skill repository whose skill has a full page is listed through that
-  // page, so the two never restate each other. A one-skill repository without
-  // one still gets a page (and a badge to link to), kept out of the index
-  // because it would hold a single quoted row.
+  // page. A repository without a full skill page gets its own public page
+  // with repository facts, the skill summary and a badge to link to.
   // A repository page, once published, stays while the repository is listed,
-  // so a README badge that points at it keeps working.
+  // so a README badge that points at it keeps working. Every published page
+  // is indexable regardless of how many skills the repository lists.
   r.hasPage = r.skills.length >= 2 || !r.skills[0].featured || fs.existsSync(path.join(outRoot, ...r.slug.split("/"), "index.html"));
-  r.indexable = r.skills.length >= 2;
+  r.indexable = r.hasPage;
   r.target = r.hasPage ? `directory/${r.slug}/` : skillPath(r.skills[0]);
   r.publisher = publisherName(r.owner, r.official);
   r.hasRootSkill = r.skills.some((s) => s.dir === ".");
