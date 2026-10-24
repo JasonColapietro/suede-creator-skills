@@ -3,7 +3,7 @@
   "name": "io.github.JasonColapietro/suede-skills-mcp",
   "title": "Suede Skills MCP",
   "description": "Read-only access to the Suede skill pack: discovery, install options, SEO audits, A-F grading.",
-  "version": "0.19.2",
+  "version": "0.19.3",
   "websiteUrl": "https://skills.suedeai.ai/",
   "repository": {
     "url": "https://github.com/JasonColapietro/suede-creator-skills",
@@ -15,7 +15,7 @@
       "registryType": "npm",
       "registryBaseUrl": "https://registry.npmjs.org",
       "identifier": "suede-skills-mcp",
-      "version": "0.19.2",
+      "version": "0.19.3",
       "runtimeHint": "npx",
       "transport": {
         "type": "stdio"

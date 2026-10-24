@@ -9,7 +9,7 @@ Release record for the `suede-referrals` skill, following the NVIDIA skill-card 
 
 Suede AI referral and affiliate program design: refer a friend and ambassador mechanics, incentive sizing from LTV and margin, affiliate commission structures, payout logic, fraud controls, attribution, FTC endorsement disclosure and incentivized-review rules, and viral loop measurement (K-factor, cohort LTV of referred customers).
 
-Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.2; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
+Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.3; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
 ## Owner
 
@@ -60,7 +60,7 @@ Markdown analysis and recommendations returned in the agent's response. The skil
 
 ## Skill Version
 
-0.19.2 — the pack is single-versioned, so every skill releases together; see [VERSION](../../VERSION) and [CITATION.cff](../../CITATION.cff) for the release identifier this card describes.
+0.19.3 — the pack is single-versioned, so every skill releases together; see [VERSION](../../VERSION) and [CITATION.cff](../../CITATION.cff) for the release identifier this card describes.
 
 ## Ethical Considerations
 

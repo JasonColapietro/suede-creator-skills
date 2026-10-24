@@ -35,7 +35,7 @@ function buildPackageJson() {
     description:
       "Read-only MCP server for Suede skills — discovery, install options, SEO/AEO/AI EO copy audits, visibility and code grading, and QA checklists.",
     type: "module",
-    license: "MIT",
+    license: "MIT AND BSD-3-Clause",
     author: "Jason Colapietro",
     homepage: `${REPO}#readme`,
     repository: { type: "git", url: `git+${REPO}.git`, directory: "mcp" },
@@ -43,7 +43,7 @@ function buildPackageJson() {
     keywords: ["mcp", "modelcontextprotocol", "claude", "codex", "agent-skills", "suede"],
     engines: { node: ">=22" },
     bin: { [PKG_NAME]: "mcp/suede-skills-mcp.mjs" },
-    files: ["mcp/", "skills/", "README.md", "LICENSE"],
+    files: ["mcp/", "skills/", "README.md", "LICENSE", "NOTICE.md", "licenses/"],
   };
 }
 
@@ -57,13 +57,20 @@ function build() {
   copyFile(path.join(ROOT, "mcp", "README.md"), path.join(OUT, "README.md"));
   copyFile(path.join(ROOT, "LICENSE"), path.join(OUT, "LICENSE"));
 
+  copyFile(path.join(ROOT, "NOTICE.md"), path.join(OUT, "NOTICE.md"));
+  fs.cpSync(path.join(ROOT, "licenses"), path.join(OUT, "licenses"), { recursive: true });
+
   const skillsDir = path.join(ROOT, "skills");
   let skillCount = 0;
   for (const entry of fs.readdirSync(skillsDir, { withFileTypes: true }).sort((a, b) => a.name.localeCompare(b.name))) {
     if (!entry.isDirectory()) continue;
     const body = path.join(skillsDir, entry.name, "SKILL.md");
     if (!fs.existsSync(body)) continue;
-    copyFile(body, path.join(OUT, "skills", entry.name, "SKILL.md"));
+    // Runtime assets and references ship; generated release cards stay in the repository.
+    fs.cpSync(path.join(skillsDir, entry.name), path.join(OUT, "skills", entry.name), {
+      recursive: true,
+      filter: (source) => !["__pycache__", ".DS_Store", "CARD.md"].includes(path.basename(source)) && !source.endsWith(".pyc"),
+    });
     skillCount += 1;
   }
 

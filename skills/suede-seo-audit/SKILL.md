@@ -30,6 +30,41 @@ damage) pauses for the user's choice.
 Lane 6 applies the extractability standard that `suede-ai-seo` owns. Cite it;
 do not redefine it here.
 
+## Offline source tools (Node 22+)
+
+This folder includes a standalone CLI and self-contained modules. No install,
+API key, network request, Search Console connection, or provider call is needed.
+Run from this skill folder; output goes into a **new** directory:
+
+```bash
+node scripts/seo-review.mjs audit --input scripts/fixtures/pages.json --out reports/baseline
+node scripts/seo-review.mjs audit --input scripts/fixtures/pages.json --merchant --out reports/merchant
+node scripts/seo-review.mjs drift --before reports/baseline/metadata-snapshot.json --after reports/merchant/metadata-snapshot.json --out reports/drift
+node scripts/seo-review.mjs serp-clusters --input scripts/fixtures/serp.json --context "Synthetic fixture only" --depth 2 --threshold 0.5 --out reports/clusters
+node --test scripts/tests/*.test.mjs
+```
+
+- Lane 1: validate HTML hreflang codes, self annotations, duplicate/conflicting
+  destinations, inspected reciprocal links, canonical and HTML noindex conflicts.
+  Uncollected alternates stay **unmeasured**, never broken by assumption.
+- Lane 3: audit img source fallbacks, missing/empty alt, intrinsic dimensions,
+  width-based srcset/sizes, and lazy/high-priority conflicts. Empty alt needs human
+  decorative-purpose review; asset bytes, rendering and CWV remain unmeasured.
+- Lane 3: every audit saves a new metadata snapshot. Drift compares fields and
+  exact URL identities. Supplied inventories are partial: omitted URLs are
+  **not-observed**, never proof of deletion or a live 404.
+- Lane 5: `--merchant` explicitly enables a Product/Offer merchant profile,
+  including local graph references, active prices/currency, availability,
+  supplied identifiers and variant relationships. Never invent prices, ratings,
+  shipping or return policies. This is source review, not eligibility certification.
+- Lane 0/9: cluster supplied organic-result exports by same-depth document URL
+  overlap. Require collection context; deterministic complete-link grouping avoids
+  transitive chains. Demand and current rankings stay unknown.
+
+Read [offline input formats and limits](references/offline-tools.md) before
+supplying your own evidence. These tools add findings to the existing lanes;
+they do not replace live verification or change the audit's routing boundaries.
+
 ## Current rules
 
 Before applying any Google-specific rule, read

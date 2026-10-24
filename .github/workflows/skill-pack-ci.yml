@@ -108,6 +108,10 @@ jobs:
         run: npm run test:directory:browser
         env:
           DIRECTORY_SCREENSHOTS: ${{ runner.temp }}/directory-screenshots
+      - name: Verify SEO toolkit artwork on desktop and mobile
+        run: npm run test:seo:browser
+        env:
+          SEO_SCREENSHOTS: ${{ runner.temp }}/directory-screenshots/seo-toolkit
       - name: Save visual evidence
         if: always()
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2

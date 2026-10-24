@@ -9,7 +9,7 @@ Release record for the `suede-social` skill, following the NVIDIA skill-card tem
 
 Suede AI organic social system for founder and brand accounts: platform mix, cross-platform calendars, 30-post account audits that separate views from follows, leads, and sales, Instagram Reels, carousels, and Stories, LinkedIn and X posts and threads, short-video scripts, social search optimization, listening, and a daily approval-ready content loop.
 
-Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.2; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
+Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.3; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
 ## Owner
 
@@ -63,7 +63,7 @@ Markdown analysis and recommendations returned in the agent's response. The skil
 
 ## Skill Version
 
-0.19.2 — the pack is single-versioned, so every skill releases together; see [VERSION](../../VERSION) and [CITATION.cff](../../CITATION.cff) for the release identifier this card describes.
+0.19.3 — the pack is single-versioned, so every skill releases together; see [VERSION](../../VERSION) and [CITATION.cff](../../CITATION.cff) for the release identifier this card describes.
 
 ## Ethical Considerations
 
