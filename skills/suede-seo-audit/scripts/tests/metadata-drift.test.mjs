@@ -114,3 +114,15 @@ test("drift Markdown makes malicious metadata inert and retains both values", ()
   assert.ok(!md.includes("![x]("));
   assert.match(md, /HTML source/);
 });
+
+test("removing a canonical destination is drift rather than an invented self-canonical", () => {
+  const before = snapshot([page('/a', '<link rel="canonical" href="https://example.test/a">')]);
+  for (const annotation of ['<link rel="canonical">', '<link rel="canonical" href="">', '<link rel="canonical" href="   ">']) {
+    const after = snapshot([page('/a', annotation)]);
+    assert.equal(after.pages[0].metadata.canonical, null);
+    const change = api.compareMetadataSnapshots(before, after).changes.find(c => c.field === 'canonical');
+    assert.equal(change.before, 'https://example.test/a');
+    assert.equal(change.after, null);
+    assert.equal(change.severity, 'warn');
+  }
+});

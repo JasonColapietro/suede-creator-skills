@@ -150,10 +150,20 @@ export function checkMerchantSchema(pages, { asOf = new Date().toISOString().sli
       visitedGroups.add(identity);
       if (resolved.unmeasured) { unknown(group, "ProductGroup", resolved.conflict); continue; }
       const identifiers = new Map();
-      const variants = list(group.hasVariant).map((v) => resolve(v).node).filter(object);
+      const variantEvidence = list(group.hasVariant).map(resolve);
+      const variants = [];
+      let variantsUnmeasured = false;
+      for (const evidence of variantEvidence) {
+        const variant = evidence.node;
+        const stub = object(variant) && Object.keys(variant).every((k) => ["@type", "@id", "url"].includes(k));
+        if (evidence.unmeasured || stub) {
+          variantsUnmeasured = true;
+          unknown(group, "hasVariant", evidence.conflict);
+        } else if (object(variant)) variants.push(variant);
+      }
       if (!text(group.name)) add("error", "merchant-group-name", group, "name", "Inspected ProductGroup has no name.", "Supply the shared product-group name and retain more specific names on full variant entities.");
       const relatedIds = [...new Set(variants.map((v) => text(v.inProductGroupWithID)).filter(Boolean))];
-      if (!text(group.productGroupID) && (!variants.length || relatedIds.length !== 1 || variants.some((v) => !text(v.inProductGroupWithID)))) add("error", "merchant-group-id", group, "productGroupID", "No consistent group identifier is declared on the group or its inspected variants.", "Supply productGroupID or consistent inProductGroupWithID relationships using the actual group identifier.");
+      if (!text(group.productGroupID) && (relatedIds.length > 1 || (!variantsUnmeasured && (!variants.length || relatedIds.length !== 1 || variants.some((v) => !text(v.inProductGroupWithID)))))) add("error", "merchant-group-id", group, "productGroupID", "No consistent group identifier is declared on the group or its inspected variants.", "Supply productGroupID or consistent inProductGroupWithID relationships using the actual group identifier.");
       for (const variant of variants) {
         const stub = Object.keys(variant).every((k) => ["@type", "@id", "url"].includes(k));
         if (!stub && !["sku", "gtin", "gtin8", "gtin12", "gtin13", "gtin14"].some((key) => text(variant[key]))) add("error", "merchant-variant-id-missing", variant, "sku/gtin", "Full variant has no SKU or GTIN identifier.", "Supply the actual unique variant identifier; URL-only off-page stubs remain unmeasured.");

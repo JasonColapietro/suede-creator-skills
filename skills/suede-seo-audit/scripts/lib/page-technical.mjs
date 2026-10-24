@@ -127,7 +127,7 @@ export function extractTechnical(html, url) {
     description: head.find((e) => e.name === "meta" && (e.attrs.name ?? "").toLowerCase() === "description")?.attrs.content ?? "",
     h1: h1s[0] ?? "",
     jsonLd,
-    canonical: canonical ? httpUrl(canonical.attrs.href ?? "", baseUrl) : null,
+    canonical: canonical?.attrs.href?.trim() ? httpUrl(canonical.attrs.href.trim(), baseUrl) : null,
     robots,
     social: head.filter((e) => e.name === "meta" && /^(og:|twitter:)/i.test(e.attrs.property ?? e.attrs.name ?? ""))
       .map((e) => ({ name: (e.attrs.property ?? e.attrs.name).toLowerCase(), content: e.attrs.content ?? "" })),

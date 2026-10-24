@@ -169,3 +169,23 @@ test("merchant report includes actionable source findings and a clear profile sc
   assert.match(md, /eligibility.*unmeasured|unmeasured.*eligibility/i);
   assert.ok(result.merchant[0].issues.every((i) => i.remediation));
 });
+
+test("unresolved and conflicting group variants remain unmeasured", () => {
+  const group = { '@type': 'ProductGroup', name: 'Bowls', hasVariant: { '@id': `${origin}/red` } };
+  const unresolved = merchant(group);
+  assert.ok(codes(unresolved).includes('merchant-reference-unmeasured'));
+  assert.ok(!codes(unresolved).includes('merchant-group-id'));
+  assert.ok(!codes(unresolved).includes('merchant-variant-id-missing'));
+  const conflicting = merchant({ '@graph': [group,
+    { '@id': `${origin}/red`, '@type': 'Product', name: 'Red bowl', inProductGroupWithID: 'a' },
+    { '@id': `${origin}/red`, '@type': 'Product', name: 'Blue bowl', inProductGroupWithID: 'b' },
+  ] });
+  assert.ok(codes(conflicting).includes('merchant-reference-conflict'));
+  assert.ok(!codes(conflicting).includes('merchant-group-id'));
+  assert.ok(!codes(conflicting).includes('merchant-variant-id-missing'));
+  const mixed = merchant({ ...group, hasVariant: [
+    product({ sku: 'known', inProductGroupWithID: 'bowls' }), { '@id': `${origin}/unknown` },
+  ] });
+  assert.ok(codes(mixed).includes('merchant-reference-unmeasured'));
+  assert.ok(!codes(mixed).includes('merchant-group-id'));
+});
