@@ -79,6 +79,8 @@ test("every guide page has a unique title, a self canonical and Article JSON-LD 
     const blocks = jsonld(html);
     const article = blocks.find((b) => b["@type"] === "Article");
     assert.ok(article, `${g.id}: Article JSON-LD`);
+    assert.equal(Object.hasOwn(article, "breadcrumb"), false, `${g.id}: breadcrumb belongs to the WebPage`);
+    assert.equal(article.mainEntityOfPage.breadcrumb["@id"], `${BASE}/${g.path}#breadcrumb`);
     assert.equal(article.author["@type"], "Person");
     assert.equal(article.author.name, "Jason Colapietro");
     assert.equal(article.author["@id"], manifest.author["@id"]);
