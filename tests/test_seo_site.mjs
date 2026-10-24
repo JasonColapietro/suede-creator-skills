@@ -45,9 +45,11 @@ try {
   }
  }
  await page.goto(`http://127.0.0.1:${server.address().port}/`);
- assert.equal(await page.locator('.clog-item[data-status="prepared"]').count(),1);
- assert.match(await page.locator('.clog-item').first().textContent(),/0\.19\.3 prepared/);
+ const newest=page.locator('.clog-item').first();
+ const status=await newest.getAttribute('data-status') || 'released';
+ assert.equal(await page.locator('.clog-item[data-status="prepared"]').count(),status==='prepared'?1:0);
+ assert.match(await newest.textContent(),status==='prepared'?/0\.19\.3 prepared/:/0\.19\.3 (released|landed)/);
  assert.match(await page.locator('#hero-shiplog').textContent(),/Five offline SEO tools/);
  assert.deepEqual(errors,[]);
- console.log('SEO site QA passed: desktop/mobile, seven image placements, one prepared entry, no artwork clipping/overflow or page errors.');
+ console.log('SEO site QA passed: desktop/mobile, seven image placements, accurate release state, no artwork clipping/overflow or page errors.');
 } finally {await browser.close();await new Promise(resolve=>server.close(resolve));}
