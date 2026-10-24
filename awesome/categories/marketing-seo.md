@@ -6,7 +6,7 @@
 
 Skills for search, ads, launches and growth: SEO audits, keyword and content briefs, ad creative, social posts and conversion work. They turn a marketing request into a repeatable procedure your agent runs the same way every time.
 
-**306 accepted skills · 23 repositories.** Snapshot: **2026-10-19** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
+**310 accepted skills · 24 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
 **Compare on the 0–99 quality scale:** this category’s verified scores span **62–94 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede AI](https://skills.suedeai.ai/directory/?category=marketing-seo&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
 
@@ -32,6 +32,7 @@ Skills for search, ads, launches and growth: SEO audits, keyword and content bri
 - [inhouseseo/superseo-skills](#inhouseseo--superseo-skills)
 - [mailtrap/mailtrap-skills](#mailtrap--mailtrap-skills)
 - [mblode/agent-skills](#mblode--agent-skills)
+- [MelMayssonOwen/agent-skills](#melmayssonowen--agent-skills)
 - [nextlevelbuilder/ui-ux-pro-max-skill](#nextlevelbuilder--ui-ux-pro-max-skill)
 - [nowork-studio/NotFair](#nowork-studio--notfair)
 - [ohad6k/emulo](#ohad6k--emulo)
@@ -366,6 +367,17 @@ Skills for search, ads, launches and growth: SEO audits, keyword and content bri
 [Repository](https://github.com/mblode/agent-skills) · Publisher: [mblode](https://github.com/mblode) · [Suede AI listing](https://skills.suedeai.ai/directory/mblode/agent-skills/)
 
 - **87/100 · B** · [seo](https://github.com/mblode/agent-skills/blob/main/skills/seo/SKILL.md): Audits and fixes technical SEO, researches search demand, creates content briefs, and measures SEO, AEO and GEO performance. [Suede](https://skills.suedeai.ai/directory/mblode/agent-skills/#seo)
+
+<a id="melmayssonowen--agent-skills"></a>
+
+## MelMayssonOwen/agent-skills
+
+[Repository](https://github.com/MelMayssonOwen/agent-skills) · Publisher: [MelMayssonOwen](https://github.com/MelMayssonOwen) · [Suede AI listing](https://skills.suedeai.ai/directory/melmayssonowen/agent-skills/)
+
+- **79/100 · C** · [timetopost-social-scheduler](https://github.com/MelMayssonOwen/agent-skills/blob/main/skills/timetopost-social-scheduler/SKILL.md): Draft distinct social posts, review account timing, and approve the exact content and schedule before publication. [Suede](https://skills.suedeai.ai/directory/melmayssonowen/agent-skills/timetopost-social-scheduler/)
+- **77/100 · C** · [timetopost-autoseo-blog](https://github.com/MelMayssonOwen/agent-skills/blob/main/skills/timetopost-autoseo-blog/SKILL.md): Connect a publishing destination, explore article topics, and prepare blog drafts for human review. [Suede](https://skills.suedeai.ai/directory/melmayssonowen/agent-skills/timetopost-autoseo-blog/)
+- **74/100 · C** · [toolfound-launch-kit](https://github.com/MelMayssonOwen/agent-skills/blob/main/skills/toolfound-launch-kit/SKILL.md): Research a product category, prepare an approved Toolfound submission, and track owner verification and launch status. [Suede](https://skills.suedeai.ai/directory/melmayssonowen/agent-skills/toolfound-launch-kit/)
+- **73/100 · C** · [amazon-listing-checker](https://github.com/MelMayssonOwen/agent-skills/blob/main/skills/amazon-listing-checker/SKILL.md): Review pasted listing copy for length, repeated terms, risky wording, and keyword coverage using a local Python helper. [Suede](https://skills.suedeai.ai/directory/melmayssonowen/agent-skills/amazon-listing-checker/)
 
 <a id="nextlevelbuilder--ui-ux-pro-max-skill"></a>
 

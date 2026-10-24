@@ -1708,7 +1708,7 @@ ${EDITORIAL.projects.map((p) => codeBlock({ label: `${esc(p.name)}, Markdown`, k
     body: `${bc.html}
       <div class="featured-intro"><p class="lead">${esc(copy.lede || "Good tools deserve a closer look.")}</p>${copy.intro ? `<p>${esc(copy.intro)}</p>` : ""}</div>
       <nav class="featured-jump" aria-label="Featured project navigation"><a href="../">← Browse all skills</a>${EDITORIAL.projects.map((p) => `<a href="#${p.id}">${esc(p.name)} <span aria-hidden="true">↓</span></a>`).join("")}</nav>
-      ${featuredProjectsHtml(EDITORIAL.projects, { esc, rel, here })}
+      ${featuredProjectsHtml(EDITORIAL.projects, { esc, rel, here, slugify })}
 ${copy.services_cta ? campaignPanel(here, campaignVariant(copy.services_cta, here)) : ""}
 ${nominate}
 ${badgePanel}

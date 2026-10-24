@@ -12,6 +12,7 @@ Selections updated **2026-10-23**. [View on Suede AI](https://skills.suedeai.ai/
 - [CoalWash](#coalwash)
 - [Costory](#costory)
 - [Extra Caffeine](#extra-caffeine)
+- [Opsibyte](#opsibyte)
 
 <a id="appie"></a>
 
@@ -102,6 +103,31 @@ Give local AI and file-processing work time to finish. The Extra Caffeine workfl
 Requires macOS 14+ and the separately purchased, paid Extra Caffeine 1.2+ app, kept open with AI assistants enabled by the user. Follow the publisher’s setup and license terms. The skill does not install the app or enable access. It prevents idle sleep, not closed-lid sleep, and does not wake a sleeping Mac. No security scan or runtime execution was performed: not scanned; runtime-unverified. Editorial feature only; scored catalog listing is pending the next directory refresh.
 
 [Repository](https://github.com/cwong5/extra-caffeine-mcp) · [Intake review](../directory/reviews/2026-10-23-extra-caffeine.md) · [Reviewed source 4e0ac32](https://github.com/cwong5/extra-caffeine-mcp/tree/4e0ac32e685c5366ab487502173168470a42a178) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#extra-caffeine)
+
+---
+
+<a id="opsibyte"></a>
+
+## Opsibyte
+
+**Six skills · Publishing, budgets, listings, and music** · License: MIT · Publisher: [MelMayssonOwen](https://github.com/MelMayssonOwen)
+
+Six focused workflows combine human-reviewed publishing and launch preparation with local budget, listing-copy, and chord helpers. Each listing carries its own source-derived quality report and setup details.
+
+- **[Prepare a social schedule](https://skills.suedeai.ai/directory/melmayssonowen/agent-skills/timetopost-social-scheduler/)** (timetopost-social-scheduler). Draft distinct social posts, review account timing, and approve the exact content and schedule before publication.
+- **[Review blog drafts](https://skills.suedeai.ai/directory/melmayssonowen/agent-skills/timetopost-autoseo-blog/)** (timetopost-autoseo-blog). Connect a publishing destination, explore article topics, and prepare blog drafts for human review.
+- **[Prepare a product launch](https://skills.suedeai.ai/directory/melmayssonowen/agent-skills/toolfound-launch-kit/)** (toolfound-launch-kit). Research a product category, prepare an approved Toolfound submission, and track owner verification and launch status.
+- **[Create a budget workbook](https://skills.suedeai.ai/directory/melmayssonowen/agent-skills/sheetfolk-budget-builder/)** (sheetfolk-budget-builder). Create a local Excel budget workbook with household, sinking-fund, and side-hustle inputs.
+- **[Review listing copy](https://skills.suedeai.ai/directory/melmayssonowen/agent-skills/amazon-listing-checker/)** (amazon-listing-checker). Review pasted listing copy for length, repeated terms, risky wording, and keyword coverage using a local Python helper.
+- **[Practice and transpose chords](https://skills.suedeai.ai/directory/melmayssonowen/agent-skills/clef-music-tools/)** (clef-music-tools). Transpose chord symbols locally or use Clef MCP tools for piano chords, guitar-tab notes, and music practice.
+
+### Setup
+
+Install one selected skill. TimeToPost needs its hosted MCP and browser OAuth; Toolfound and Clef document public discovery endpoints. Hosted services were not exercised in this review. Python 3 runs the local helpers. At the reviewed revision, use a new budget filename and calculate net cash flow separately; preserve existing campaign attribution manually. Upstream PR #1 supplies the tested corrections. Each skill page links its exact setup and source.
+
+Accepted scope: **6 skills**. Follow each linked skill’s individual setup instructions.
+
+[Repository](https://github.com/MelMayssonOwen/agent-skills) · [Intake review](../directory/reviews/2026-10-22-opsibyte.md) · [Reviewed source aebddbe](https://github.com/MelMayssonOwen/agent-skills/tree/aebddbe40090c99fe0c5a1810536637186335502) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#opsibyte)
 
 ---
 

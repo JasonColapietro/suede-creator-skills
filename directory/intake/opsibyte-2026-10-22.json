@@ -1,0 +1,289 @@
+{
+  "reviewed_at": "2026-10-22",
+  "request": "https://github.com/JasonColapietro/suede-creator-skills/issues/250",
+  "repository": "MelMayssonOwen/agent-skills",
+  "revision": "aebddbe40090c99fe0c5a1810536637186335502",
+  "license": "MIT",
+  "method": "graded-v2",
+  "accepted_names": [
+    "timetopost-social-scheduler",
+    "timetopost-autoseo-blog",
+    "toolfound-launch-kit",
+    "sheetfolk-budget-builder",
+    "amazon-listing-checker",
+    "clef-music-tools"
+  ],
+  "source_sha256": {
+    "LICENSE": "897d574875e66f4b141bd7d3df507e702ad127395f1b19a83a67bbfb9b04464d",
+    "README.md": "7340f5a76af753c2eaa374747ecd78ea51d9602b8ff37295d7b7a68b9545e523",
+    ".gitignore": "e8388b573d828cc4b2ba266bdc24e4c13200d33c89ef5a2e67a134984743758e",
+    "scripts/check.py": "b309b311bf81e87cf9c6e2c6696b8466455ad4fa9fca21548e12e2d2b1bc1fdd",
+    "scripts/build-dist.py": "dc0f404d8efab3ccb9ad580e71356b96fedf3f89598b61dd0be6d7b27759557f",
+    ".claude-plugin/marketplace.json": "e77031cf8058b9b78dd84c4a89febc3c9e9c62f44a9c3f0173be18b7a35d2bc7",
+    "skills/clef-music-tools/SKILL.md": "0b8166ea0b199580d6d8ca10dc8c97364f3dbdf064a0b49c4049aef019ca1d92",
+    "skills/amazon-listing-checker/SKILL.md": "63b053b81b6bcd0c8ebb97d68cedca0354b3eef4dba85cf39d6b826c6e36d9cf",
+    "skills/toolfound-launch-kit/SKILL.md": "6d9906e3fc8d87b883d35ddbdc363040cff2ad8363c292ab70c94cbe97837136",
+    "skills/timetopost-autoseo-blog/SKILL.md": "05bda8365dafe10f2140be87e8341f79be8ffe0843f93db8bbbc0887e62ae78f",
+    "skills/sheetfolk-budget-builder/SKILL.md": "d973a533c263207e02a81cef18e443f6c6b2fd4aed5b9416c2649e502b7fe346",
+    "skills/timetopost-social-scheduler/SKILL.md": "f7f43c4063acb3bcf78219ba02f53a69e69bf17b1f268fd1e5a49b73fa21c2b3",
+    "skills/timetopost-social-scheduler/references/setup.md": "1dd386d3b22fed3d89503bd87f927cc6b85d902cbfd910889ec4e9e585d986a0",
+    "skills/timetopost-social-scheduler/references/voice-rules.md": "c653ef5000a9309f5bc759868318eb8507c799200f74af3de13179a6729ced24",
+    "skills/timetopost-social-scheduler/references/tool-cheatsheet.md": "d6658344af6c5c8ef18dcfc706500918dda888878e70b43eb4b4ac517f0e0294",
+    "skills/timetopost-social-scheduler/references/platform-limits.md": "cb7651145a8bf10868beff36c73aedbb94b60614efa0b7f2ca23af80a50941a5",
+    "skills/timetopost-social-scheduler/references/approval-workflow.md": "6bb0b51b8bb1ce7d6b17aef55a0846100cb7b78e80dbdd2a901b886e8a0e6879",
+    "skills/timetopost-social-scheduler/scripts/utm.py": "8dd4874a72a61540066bb6e7f0bbb3da6ba36e48333c58f18970b0cfb07e53cb",
+    "skills/sheetfolk-budget-builder/scripts/build_budget.py": "33cb8d2d3e8ec8f252eab4a086e67baf8bf24e1ce0c7b56b628156f1229654a2",
+    "skills/timetopost-autoseo-blog/references/setup.md": "f8708ab835a9b1a45922c3aa732fe1906bcd12449af213f096f6c5811caacff3",
+    "skills/toolfound-launch-kit/references/setup.md": "002f61948ac93e8e2b0517df281b81af9ec8549319225c9d1a676a91b595ad0c",
+    "skills/toolfound-launch-kit/references/pre-launch-checklist.md": "1ebeee21c31aa1a4ff43ebdea5de6f7acc2161fd33a3e2c77fe0e6948d37c5d6",
+    "skills/amazon-listing-checker/scripts/check_listing.py": "4818ebdf24f8c46d414d547aea1342c5b1ce53e89c52f470d2984a93a6d5c08a",
+    "skills/clef-music-tools/references/setup.md": "bf6008728aaaec8711285c79caf5887c21807de7fbdd47c233ffcaf3111b28cc",
+    "skills/clef-music-tools/scripts/transpose.py": "909bebe5c83bd2760574c7ce9278c71788286e361563daade0e9eff6112142b5"
+  },
+  "assessments": [
+    {
+      "name": "amazon-listing-checker",
+      "dir": "skills/amazon-listing-checker",
+      "checks": "11111111",
+      "score": 73,
+      "grade": "C",
+      "size": [
+        5,
+        113,
+        2
+      ],
+      "description": "Audit pasted Amazon listing text for length, structure, risky claims, repeated terms, and keyword coverage. Use when asked to review or improve a product title, bullets, description, or backend search terms.",
+      "compatibility": null
+    },
+    {
+      "name": "clef-music-tools",
+      "dir": "skills/clef-music-tools",
+      "checks": "11111111",
+      "score": 76,
+      "grade": "C",
+      "size": [
+        9,
+        129,
+        3
+      ],
+      "description": "Practice note reading and solve common chord or guitar-tab questions with Clef's public music MCP or an offline transposition helper. Use when asked to transpose chord symbols, spell piano chords, map ASCII guitar tab to piano notes, or run a short note-reading drill.",
+      "compatibility": null
+    },
+    {
+      "name": "sheetfolk-budget-builder",
+      "dir": "skills/sheetfolk-budget-builder",
+      "checks": "11111111",
+      "score": 73,
+      "grade": "C",
+      "size": [
+        7,
+        120,
+        2
+      ],
+      "description": "Create a local Excel workbook for a monthly budget, sinking funds, or side-hustle income and expenses. Use when asked to build a budget spreadsheet, plan recurring costs, track savings goals, or organize small business cash flow.",
+      "compatibility": null
+    },
+    {
+      "name": "timetopost-autoseo-blog",
+      "dir": "skills/timetopost-autoseo-blog",
+      "checks": "11111111",
+      "score": 77,
+      "grade": "C",
+      "size": [
+        17,
+        276,
+        2
+      ],
+      "description": "Connect a site and run a human-reviewed AutoSEO blog workflow with TimeToPost MCP. Use when asked to set up an SEO blog pipeline, research article topics, generate a blog draft, review an AutoSEO post, or assess SEO and AI visibility.",
+      "compatibility": null
+    },
+    {
+      "name": "timetopost-social-scheduler",
+      "dir": "skills/timetopost-social-scheduler",
+      "checks": "11111111",
+      "score": 79,
+      "grade": "C",
+      "size": [
+        21,
+        349,
+        7
+      ],
+      "description": "Draft, review, and schedule distinct social posts with the TimeToPost MCP. Use when asked to plan a social calendar, draft a post or thread, check approval drafts, choose a posting time, or schedule content.",
+      "compatibility": null
+    },
+    {
+      "name": "toolfound-launch-kit",
+      "dir": "skills/toolfound-launch-kit",
+      "checks": "11111111",
+      "score": 74,
+      "grade": "C",
+      "size": [
+        14,
+        224,
+        3
+      ],
+      "description": "Research, prepare, submit, and track a maker product launch through the Toolfound MCP. Use when asked to list a product, compare directory alternatives, choose a launch date, verify ownership, check launch status, or get a listing badge.",
+      "compatibility": null
+    }
+  ],
+  "proposed_fix": {
+    "pull_request": "https://github.com/MelMayssonOwen/agent-skills/pull/1",
+    "revision": "5dd1eadda5bc375ea39f4dea9b503809021cf6da",
+    "status": "pending_upstream_acceptance",
+    "assessments": [
+      {
+        "name": "amazon-listing-checker",
+        "dir": "skills/amazon-listing-checker",
+        "checks": "11111111",
+        "score": 82,
+        "grade": "B",
+        "size": [
+          7,
+          173,
+          2
+        ],
+        "description": "Audit pasted Amazon listing text for length, structure, risky claims, repeated terms, and keyword coverage. Use when asked to \"review my product title\", improve bullets, check a description, or review backend search terms. Not for live policy certification, account access, or scraping Amazon.",
+        "compatibility": "Requires Python 3; reads a JSON object from standard input and writes findings as JSON without network access."
+      },
+      {
+        "name": "clef-music-tools",
+        "dir": "skills/clef-music-tools",
+        "checks": "11111111",
+        "score": 85,
+        "grade": "B",
+        "size": [
+          11,
+          190,
+          3
+        ],
+        "description": "Practice note reading and solve common chord or guitar-tab questions with Clef's public music MCP or an offline transposition helper. Use when asked to \"transpose these chords\", spell piano chords, map ASCII guitar tab to piano notes, or run a note-reading drill. Not for audio transcription, generated notation, or Guitar Pro files.",
+        "compatibility": "Hosted tools require a remote HTTP MCP client and network access; offline chord transposition requires Python 3 without extra packages."
+      },
+      {
+        "name": "sheetfolk-budget-builder",
+        "dir": "skills/sheetfolk-budget-builder",
+        "checks": "11111111",
+        "score": 82,
+        "grade": "B",
+        "size": [
+          9,
+          174,
+          2
+        ],
+        "description": "Create a local Excel workbook for a monthly budget, sinking funds, or side-hustle income and expenses. Use when asked to \"build a budget spreadsheet\", plan recurring costs, track savings goals, or organize small business cash flow. Not for bank connections, tax preparation, or investment advice.",
+        "compatibility": "Requires Python 3 and local file access; no network connection or third-party Python packages are needed."
+      },
+      {
+        "name": "timetopost-autoseo-blog",
+        "dir": "skills/timetopost-autoseo-blog",
+        "checks": "11111111",
+        "score": 86,
+        "grade": "B",
+        "size": [
+          19,
+          304,
+          2
+        ],
+        "description": "Connect a site and run a human-reviewed AutoSEO blog workflow with TimeToPost MCP. Use when asked to \"set up an SEO blog pipeline\", research article topics, generate a blog draft, or review an AutoSEO post. Not for unattended publication or claims of measured rankings from estimated research.",
+        "compatibility": "Requires an MCP client, a TimeToPost account with hosted OAuth, and a supported publishing-site connection for site operations."
+      },
+      {
+        "name": "timetopost-social-scheduler",
+        "dir": "skills/timetopost-social-scheduler",
+        "checks": "11111111",
+        "score": 88,
+        "grade": "B",
+        "size": [
+          21,
+          362,
+          7
+        ],
+        "description": "Draft, review, and schedule distinct social posts with the TimeToPost MCP. Use when asked to \"plan a social calendar\", draft a post or thread, check approval drafts, choose a posting time, or schedule content. Not for unattended publishing or automated engagement.",
+        "compatibility": "Requires an MCP client, a TimeToPost account, and the hosted OAuth connection; the offline URL helper requires Python 3."
+      },
+      {
+        "name": "toolfound-launch-kit",
+        "dir": "skills/toolfound-launch-kit",
+        "checks": "11111111",
+        "score": 83,
+        "grade": "B",
+        "size": [
+          16,
+          247,
+          3
+        ],
+        "description": "Research, prepare, submit, and track a maker product launch through the Toolfound MCP. Use when asked to \"list a product\", compare directory alternatives, choose a launch date, verify ownership, check launch status, or get a listing badge. Not for submissions without approval or ownership-verification bypasses.",
+        "compatibility": "Requires a remote HTTP MCP client and network access to Toolfound; the product owner completes any ownership verification."
+      }
+    ]
+  },
+  "security_scan_status": "not_scanned",
+  "duplicates": [],
+  "snapshot_update": {
+    "prior_date": "2026-10-19",
+    "prior_snapshot": "28db610eddee4b46be337d7df976fe0f",
+    "retained_source_evidence": "Non-applicant source revisions, descriptions, scopes and editorial decisions retained; only age-derived check/score fields recomputed for the new assessment date. This is a scoped intake, not a full network refresh.",
+    "score_changes": [
+      {
+        "skill": "ZeroPointRepo/youtube-skills/captions",
+        "before": 90,
+        "after": 87
+      },
+      {
+        "skill": "ZeroPointRepo/youtube-skills/subtitles",
+        "before": 90,
+        "after": 87
+      },
+      {
+        "skill": "ZeroPointRepo/youtube-skills/transcript",
+        "before": 90,
+        "after": 87
+      },
+      {
+        "skill": "ZeroPointRepo/youtube-skills/transcriptapi",
+        "before": 93,
+        "after": 90
+      },
+      {
+        "skill": "ZeroPointRepo/youtube-skills/video-transcript",
+        "before": 90,
+        "after": 87
+      },
+      {
+        "skill": "ZeroPointRepo/youtube-skills/youtube-api",
+        "before": 93,
+        "after": 90
+      },
+      {
+        "skill": "ZeroPointRepo/youtube-skills/youtube-channels",
+        "before": 93,
+        "after": 90
+      },
+      {
+        "skill": "ZeroPointRepo/youtube-skills/youtube-data",
+        "before": 93,
+        "after": 90
+      },
+      {
+        "skill": "ZeroPointRepo/youtube-skills/youtube-full",
+        "before": 93,
+        "after": 90
+      },
+      {
+        "skill": "ZeroPointRepo/youtube-skills/youtube-playlist",
+        "before": 93,
+        "after": 90
+      },
+      {
+        "skill": "ZeroPointRepo/youtube-skills/youtube-search",
+        "before": 93,
+        "after": 90
+      },
+      {
+        "skill": "ZeroPointRepo/youtube-skills/yt",
+        "before": 90,
+        "after": 87
+      }
+    ]
+  }
+}
