@@ -50,5 +50,29 @@
  "cwong5/extra-caffeine-mcp/extra-caffeine-workflow": {
   "text": "Requires macOS 14+ and the separately purchased Extra Caffeine 1.2+ app, open with AI assistants enabled by the user. This proprietary, all-rights-reserved listing links to the publisher’s terms and setup; it does not bundle the paid app or grant copying rights. Authorize the duration and display choice before starting or scheduling. Security status: not scanned; runtime-unverified.",
   "source": "https://extracaffeine.chesterwong.com/agent-setup.md"
+ },
+ "melmayssonowen/agent-skills/timetopost-social-scheduler": {
+  "text": "Connect the hosted TimeToPost MCP at https://api.timetopost.co/mcp using an MCP client with remote HTTP support and browser OAuth for your TimeToPost account. Confirm workspace, available tools, and target accounts or publishing site before writes. Scheduling and publication require approval of the exact content and destination. Installing the skill folder alone does not configure the service. The reviewed offline URL helper replaces existing UTM attribution; preserve tagged campaign links manually until the correction in upstream PR #1 is accepted.",
+  "source": "https://github.com/MelMayssonOwen/agent-skills/blob/aebddbe40090c99fe0c5a1810536637186335502/skills/timetopost-social-scheduler/references/setup.md"
+ },
+ "melmayssonowen/agent-skills/timetopost-autoseo-blog": {
+  "text": "Connect the hosted TimeToPost MCP at https://api.timetopost.co/mcp using an MCP client with remote HTTP support and browser OAuth for your TimeToPost account. Confirm workspace, available tools, and target accounts or publishing site before writes. Scheduling and publication require approval of the exact content and destination. Installing the skill folder alone does not configure the service.",
+  "source": "https://github.com/MelMayssonOwen/agent-skills/blob/aebddbe40090c99fe0c5a1810536637186335502/skills/timetopost-autoseo-blog/references/setup.md"
+ },
+ "melmayssonowen/agent-skills/toolfound-launch-kit": {
+  "text": "Requires a remote HTTP MCP client connected to https://toolfound.com/api/mcp. The publisher documents discovery without authentication. Confirm current tool schemas and availability; approve exact listing fields before submission and let the product owner complete verification. Installing the skill folder alone does not configure the service.",
+  "source": "https://github.com/MelMayssonOwen/agent-skills/blob/aebddbe40090c99fe0c5a1810536637186335502/skills/toolfound-launch-kit/references/setup.md"
+ },
+ "melmayssonowen/agent-skills/sheetfolk-budget-builder": {
+  "text": "The local workbook helper requires Python 3 and no third-party packages. At the reviewed revision it overwrites an existing output path and the TOTAL row adds income to outflows. Use an unused output filename and calculate net cash flow separately until upstream PR #1 is accepted. The PR adds exclusive creation, net formulas, and regression tests.",
+  "source": "https://github.com/MelMayssonOwen/agent-skills/blob/aebddbe40090c99fe0c5a1810536637186335502/skills/sheetfolk-budget-builder/scripts/build_budget.py"
+ },
+ "melmayssonowen/agent-skills/amazon-listing-checker": {
+  "text": "Requires Python 3. The local helper reads a JSON object from standard input and emits JSON findings without scraping or network access. Provide title, bullets, description, backend_terms, and main_keyword. Its fixed thresholds and wording flags are review prompts; verify current marketplace and category rules separately.",
+  "source": "https://github.com/MelMayssonOwen/agent-skills/blob/aebddbe40090c99fe0c5a1810536637186335502/skills/amazon-listing-checker/scripts/check_listing.py"
+ },
+ "melmayssonowen/agent-skills/clef-music-tools": {
+  "text": "The publisher documents https://clefdrills.com/mcp as a public, no-auth hosted MCP. Use a remote HTTP MCP client and check available tool schemas. Offline chord transposition uses Python 3 without additional packages. This review did not connect to the hosted service.",
+  "source": "https://github.com/MelMayssonOwen/agent-skills/blob/aebddbe40090c99fe0c5a1810536637186335502/skills/clef-music-tools/references/setup.md"
  }
 }

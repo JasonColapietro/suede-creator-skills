@@ -11,7 +11,7 @@ const data = JSON.parse(read('directory/featured-projects.json'));
 const published = () => read('docs/directory/featured/index.html');
 
 test('editorial projects preserve accepted scopes and resolve their reviewed evidence', () => {
-  assert.deepEqual(data.projects.map((p) => p.repo), ['appierun/appie-mcp', 'TheColliery/CoalWash', 'costory-io/costory-finops-mcp-skills', 'cwong5/extra-caffeine-mcp']);
+  assert.deepEqual(data.projects.map((p) => p.repo), ['appierun/appie-mcp', 'TheColliery/CoalWash', 'costory-io/costory-finops-mcp-skills', 'cwong5/extra-caffeine-mcp', 'MelMayssonOwen/agent-skills']);
   const page = published();
   const appie = page.split('id="appie"')[1].split('</article>')[0];
   const links = [...appie.matchAll(/href="(\.\.\/appierun\/appie-mcp\/[^"/]+\/)"/g)].map((m) => m[1]);
@@ -47,11 +47,54 @@ test('featured page has a discoverable route, truthful structured data and selec
   assert.equal((page.match(/<h1[ >]/g) || []).length, 1);
   const blocks = [...page.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map((m) => JSON.parse(m[1]));
   const collection = blocks.find((x) => x['@type'] === 'CollectionPage');
-  assert.equal(collection.mainEntity.numberOfItems, 4);
-  assert.deepEqual(collection.mainEntity.itemListElement.map((p) => p.name), ['Appie', 'CoalWash', 'Costory', 'Extra Caffeine']);
+  assert.equal(collection.mainEntity.numberOfItems, 5);
+  assert.deepEqual(collection.mainEntity.itemListElement.map((p) => p.name), ['Appie', 'CoalWash', 'Costory', 'Extra Caffeine', 'Opsibyte']);
   assert.match(page, /README-badge verification is tracked separately/);
   assert.match(page, /href="\.\.\/submit\/"/);
   assert.match(page, /href="\.\.\/methodology\/"/);
+});
+
+test('Opsibyte publishes only six accepted upstream skills with current grades and disclosed fixes', () => {
+  const catalog = JSON.parse(read('directory/skills.json'));
+  const evidence = JSON.parse(read('directory/intake/opsibyte-2026-10-22.json'));
+  const inclusions = JSON.parse(read('directory/inclusions.json'));
+  const project = data.projects.find((p) => p.id === 'opsibyte');
+  const records = catalog.skills.filter((s) => s.repo === project.repo);
+  assert.deepEqual(records.map((s) => s.name).sort(), [...evidence.accepted_names].sort());
+  assert.deepEqual(inclusions.skills[project.repo], evidence.accepted_names);
+  assert.deepEqual(project.skills.map((s) => s.id), evidence.accepted_names);
+  assert.equal(catalog.repos[project.repo].commit_sha, evidence.revision);
+  assert.equal(project.commit, evidence.revision);
+  assert.equal(catalog.repos[project.repo].scoped_install, true);
+  const feature = published().split('id="opsibyte"')[1].split('</article>')[0];
+  assert.match(feature, /OAuth/);
+  assert.match(feature, /not exercised/);
+  assert.match(feature, /Upstream PR #1/);
+  for (const record of records) {
+    const assessed = evidence.assessments.find((s) => s.name === record.name);
+    assert.equal(record.checks, '11111111');
+    assert.equal(record.security_scan_status, 'not_scanned');
+    assert.equal(record.score, assessed.score);
+    assert.equal(record.score, qualityScore(record, catalog.repos[project.repo], catalog.generated));
+    assert.equal(record.grade, 'C');
+    assert.equal(record.license, 'MIT');
+    assert.ok(record.featured);
+    const folder = `docs/directory/melmayssonowen/agent-skills/${record.slug}/`;
+    const report = JSON.parse(read(folder + 'report.json'));
+    assert.equal(report.source.revision, evidence.revision);
+    assert.deepEqual(report.badges.map((b) => b.kind), ['listing']);
+    assert.ok(feature.includes(`href="../melmayssonowen/agent-skills/${record.slug}/"`));
+    assert.match(read(folder + 'index.html'), /Before you install/);
+  }
+  const budget = read('docs/directory/melmayssonowen/agent-skills/sheetfolk-budget-builder/index.html');
+  assert.match(budget, /overwrites an existing output path/);
+  assert.match(budget, /TOTAL row adds income/);
+  const social = read('docs/directory/melmayssonowen/agent-skills/timetopost-social-scheduler/index.html');
+  assert.match(social, /replaces existing UTM attribution/);
+  const repoPage = read('docs/directory/melmayssonowen/agent-skills/index.html');
+  assert.doesNotMatch(repoPage, /<code[^>]*>npx skills add MelMayssonOwen\/agent-skills<\/code>/);
+  const promotion = JSON.parse(read('directory/promotion.json'));
+  assert.ok(!Object.keys(promotion.verifications).some((id) => id.startsWith('melmayssonowen/agent-skills/')));
 });
 
 test('Costory features the four requested upstream skills with their source-derived ratings', () => {

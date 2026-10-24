@@ -6,7 +6,7 @@
 
 Skills for security review, vulnerability hunting, threat detection, authentication hardening and secure configuration. They give an agent a methodical checklist for the parts of a codebase or system where mistakes cost the most.
 
-**115 accepted skills · 22 repositories.** Snapshot: **2026-10-19** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
+**115 accepted skills · 22 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
 **Compare on the 0–99 quality scale:** this category’s verified scores span **54–93 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede AI](https://skills.suedeai.ai/directory/?category=security&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
 

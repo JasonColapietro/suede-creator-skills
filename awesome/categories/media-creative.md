@@ -6,7 +6,7 @@
 
 Skills for making and editing media: video production, image generation and editing, music, audio, diagrams and generative art. They pair an agent with the prompts, tools and file formats each medium needs.
 
-**230 accepted skills · 37 repositories.** Snapshot: **2026-10-19** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
+**231 accepted skills · 38 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
 **Compare on the 0–99 quality scale:** this category’s verified scores span **56–93 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede AI](https://skills.suedeai.ai/directory/?category=media-creative&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
 
@@ -36,6 +36,7 @@ Skills for making and editing media: video production, image generation and edit
 - [K-Dense-AI/claude-scientific-skills](#k-dense-ai--claude-scientific-skills)
 - [Leonxlnx/taste-skill](#leonxlnx--taste-skill)
 - [mcollina/skills](#mcollina--skills)
+- [MelMayssonOwen/agent-skills](#melmayssonowen--agent-skills)
 - [mhattingpete/claude-skills-marketplace](#mhattingpete--claude-skills-marketplace)
 - [MiniMax-AI/skills](#minimax-ai--skills)
 - [muthuishere/hand-drawn-diagrams](#muthuishere--hand-drawn-diagrams)
@@ -381,6 +382,14 @@ Skills for making and editing media: video production, image generation and edit
 [Repository](https://github.com/mcollina/skills) · Publisher: [mcollina](https://github.com/mcollina) · [Suede AI listing](https://skills.suedeai.ai/directory/mcollina/skills/)
 
 - **77/100 · C** · [snipgrapher](https://github.com/mcollina/skills/blob/main/skills/snipgrapher/SKILL.md): Configures snipgrapher to generate syntax-highlighted code snippet images as PNG, SVG, or WebP, with custom themes, reusable profiles, and batch jobs. [Suede](https://skills.suedeai.ai/directory/mcollina/skills/snipgrapher/)
+
+<a id="melmayssonowen--agent-skills"></a>
+
+## MelMayssonOwen/agent-skills
+
+[Repository](https://github.com/MelMayssonOwen/agent-skills) · Publisher: [MelMayssonOwen](https://github.com/MelMayssonOwen) · [Suede AI listing](https://skills.suedeai.ai/directory/melmayssonowen/agent-skills/)
+
+- **76/100 · C** · [clef-music-tools](https://github.com/MelMayssonOwen/agent-skills/blob/main/skills/clef-music-tools/SKILL.md): Transpose chord symbols locally or use Clef MCP tools for piano chords, guitar-tab notes, and music practice. [Suede](https://skills.suedeai.ai/directory/melmayssonowen/agent-skills/clef-music-tools/)
 
 <a id="mhattingpete--claude-skills-marketplace"></a>
 
