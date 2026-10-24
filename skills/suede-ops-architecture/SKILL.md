@@ -1,6 +1,6 @@
 ---
 name: suede-ops-architecture
-description: "Suede-owned operations-architecture discipline that fixes the shape of a system before anyone builds it: entity schema first, exactly one write path per entity, every unit of work routed to a deterministic automation, an AI agent, or a human decision, every existing tool marked absorb, keep, or kill, and the build sequenced into phases whose completion is proved by a command. Use when scoping an automation or agent build, deciding whether a workflow needs a model at all, consolidating a sprawling tool stack, designing the data model under a workflow, choosing a migration path off an old system, or ordering a build so nothing lands on a moving foundation. NOT FOR: executing a planned multi-file repo change (use suede-graph-flo-xr); coordinating parallel builders with file ownership (use suede-agent-teams); lead lifecycle, scoring, and CRM routing rules (use suede-revops); proving agent output quality against an eval set (use suede-ai-eval); reviewing the finished diff (use suede-code-review)."
+description: "Suede AI operations-architecture discipline that fixes the shape of a system before anyone builds it: entity schema first, exactly one write path per entity, every unit of work routed to a deterministic automation, an AI agent, or a human decision, every existing tool marked absorb, keep, or kill, and the build sequenced into phases whose completion is proved by a command. Use when scoping an automation or agent build, deciding whether a workflow needs a model at all, consolidating a sprawling tool stack, designing the data model under a workflow, choosing a migration path off an old system, or ordering a build so nothing lands on a moving foundation. NOT FOR: executing a planned multi-file repo change (use suede-graph-flo-xr); coordinating parallel builders with file ownership (use suede-agent-teams); lead lifecycle, scoring, and CRM routing rules (use suede-revops); proving agent output quality against an eval set (use suede-ai-eval); reviewing the finished diff (use suede-code)."
 metadata:
   version: 1.0.0
 ---
@@ -223,7 +223,7 @@ OPEN
   `suede-revops`.
 - Need an eval set proving the agent tier of Step 6 -> use `suede-ai-eval`.
 - Need the measurement layer for the shipped system -> use `suede-analytics`.
-- Need findings-only review of the built diff -> use `suede-code-review`.
+- Need findings-only review of the built diff -> use `suede-code --findings-only`.
 - Need CI, required checks, or merge gates around the build -> use
   `suede-ci-gate`.
 - From `suede-agent-teams`: route schema, write-path, and work-triage decisions

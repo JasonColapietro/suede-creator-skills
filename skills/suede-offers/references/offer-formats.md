@@ -103,7 +103,7 @@ You sell access to your expertise applied to their specific situation.
 ### What to watch
 
 - **Identity is the offer**: group coaching is often more about being in the room with peers than about the coach's instruction. Name the room, not the coach.
-- **Onboarding is part of the offer**: a sloppy intake destroys perceived likelihood
+- **Onboarding is part of the offer**: a sloppy intake destroys confidence
 - **Renewal is the real conversion event**: design for the 6-month decision, not the first-month decision
 
 ---

@@ -7,7 +7,7 @@ Release record for the `suede-copy` skill, following the NVIDIA skill-card templ
 
 ## Description
 
-Suede Labs conversion-copy writer: landing sections, email, microcopy, buttons, headlines, CTAs, variants, and anti-slop edits.
+Suede AI writing skill for every copy surface: conversion copy for landing sections, heroes, headlines, CTAs, and microcopy; email and social posts; product listings, README and docs pages; public explainers; brand-voice retunes; and agent-facing docs such as SKILL.md, CLAUDE.md, and AGENTS.md.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.2; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
@@ -23,9 +23,9 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when asked to write or rewrite conversion copy for one surface in one pass (a hero, a button set, an email subject, a README section, a product blurb) or when copy on a single surface needs sharpening before it ships.
+Use when asked to write, rewrite, sharpen, or retune copy on one surface or several, explain a product publicly, or tighten a doc an agent reads.
 
-Out of scope — the full writing stack with SEO and AI Engine Optimization (use johnny-suede-write); stripping AI patterns from text this skill did not write (use suede-deslop); a researched, multi-phase piece for a high-stakes public surface (use suede-ship-copy).
+Out of scope — stripping AI patterns from text you are not otherwise rewriting (use suede-deslop); one high-stakes public piece that needs research and an adversarial fact audit before publishing (use suede-ship-copy); layout, tokens, or visual design (use suede-design); a scored standalone SEO audit (use suede-seo-audit).
 
 ## Deployment Geography
 
@@ -42,11 +42,11 @@ Global. The skill is a prompt-and-script package that runs locally inside the in
 - Risk: an agent treats a quality gate as autonomous authority. Mitigation: every gate in the pack is advisory — it changes what is reported, never what the user decided; only extreme-risk findings (data loss, credential exposure, legal/rights violations, payment mistakes, irreversible public damage) pause for the user's explicit choice.
 - Risk: a skill instruction is used to act outside its mandate. Mitigation: the hard limits in the skill body's "Boundaries" section, quoted below.
 
-From "Boundaries" — This skill writes copy and hands it back. It must not:
+From "Boundaries":
 
-- Publish, post, send, commit, or overwrite the file, page, repo, or message it writes for. Return the copy in the response; the human decides where it lands.
-- Clear rights, confirm ownership, approve payouts, write to a registry, or guarantee outcomes.
-- Ship competitor product names in delivered copy. The competitor-swap test in the Ship Gate is a diagnostic you run on the draft, never a line you hand over.
+- Return copy in the response. Never publish, post, send, commit, or overwrite the destination file, page, or message.
+- Never clear rights, confirm ownership, approve payouts, or guarantee outcomes.
+- The competitor-swap test is a diagnostic; competitor names never appear in delivered copy.
 
 ## References
 
@@ -56,7 +56,7 @@ From "Boundaries" — This skill writes copy and hands it back. It must not:
 
 ## Skill Output
 
-Structured Markdown returned in the agent's response, shaped by the output contract defined in the skill body: "Output Shapes". The skill publishes, posts, and sends nothing without the user's explicit authorization; delivery decisions stay with the user.
+Structured Markdown returned in the agent's response, shaped by the output contract defined in the skill body: "Output". The skill publishes, posts, and sends nothing without the user's explicit authorization; delivery decisions stay with the user.
 
 ## Skill Version
 

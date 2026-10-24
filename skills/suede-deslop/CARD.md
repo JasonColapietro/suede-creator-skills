@@ -7,7 +7,7 @@ Release record for the `suede-deslop` skill, following the NVIDIA skill-card tem
 
 ## Description
 
-Suede Slop Stop: Suede Labs context-aware anti-slop pass for finished prose.
+Suede Slop Stop: the Suede AI context-aware anti-slop pass for finished prose.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.2; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
@@ -23,7 +23,7 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Out of scope — writing new copy (use suede-copy); deciding whether a person or model wrote text; changing or certifying facts, which require primary evidence.
+Out of scope — writing or restructuring copy (use suede-copy); one high-stakes public piece that needs research and fact review (use suede-ship-copy); deciding whether a person or model wrote text; changing or certifying facts.
 
 ## Deployment Geography
 

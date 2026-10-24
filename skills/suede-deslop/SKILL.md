@@ -1,12 +1,12 @@
 ---
 name: suede-deslop
-description: "Suede Slop Stop: Suede Labs context-aware anti-slop pass for finished prose. Find or remove generic filler, manufactured emphasis, false agency, formulaic structure, chat and draft residue, and formatting applied by rule, without flattening the author's voice. Use before copy, a README, an email, a social post, or a doc ships; after a long assisted-writing session; or for a findings-only slop audit. NOT FOR: writing new copy (use suede-copy); deciding whether a person or model wrote text; changing or certifying facts, which require primary evidence."
+description: "Suede Slop Stop: the Suede AI context-aware anti-slop pass for finished prose. Finds or removes generic filler, manufactured emphasis, false agency, formulaic structure, chat and draft residue, formatting applied by rule, and the Suede AI house bans (em dashes, moreover, delve, game-changer, unlock, elevate, seamless, landscape, tapestry, rule-of-three rhythm) without flattening the author's voice. Returns cleaned prose with a 50-point score, or a findings-only audit that leaves the text untouched. Use before copy, a README, an email, a social post, or a doc ships; after a long AI-assisted writing session; or when asked to strip AI tells, deslop, or audit text for slop. NOT FOR: writing or restructuring copy (use suede-copy); one high-stakes public piece that needs research and fact review (use suede-ship-copy); deciding whether a person or model wrote text; changing or certifying facts."
 ---
 
 # Suede Slop Stop
 
-The canonical anti-slop method for the writing stack. The existing `suede-deslop`
-command and folder remain stable for compatibility; there is no second method.
+The one anti-slop method for the Suede AI writing stack. suede-copy and
+suede-ship-copy both call it; neither keeps a second recipe.
 
 ## Gate policy: advisory, not blocking
 
@@ -34,17 +34,12 @@ inanimate things doing human work, binary contrasts that announce the insight
 instead of delivering it, and rhythm that never varies. These are writing-quality
 signals, not evidence of who or what wrote the text.
 
-## When to use
+## Scope
 
-- Before copy, a README, an email, a social post, or a doc ships
-- After a long AI-assisted writing session
-- When the text sounds fine but feels generated
-- Before anything goes to press, investors, or customers
-- When the user wants issues identified without a rewrite
-
-Do NOT run on fiction, conversational replies, or internal notes where loose voice is intentional.
-When the user asks for findings only, report the issues and leave the supplied
-text unchanged.
+Run it on prose headed for readers: copy, READMEs, docs, email, social posts,
+press and investor material. Leave fiction, chat replies, and internal notes
+with deliberate loose voice as they are. When the user asks for findings only,
+report the issues and leave the supplied text unchanged.
 
 ---
 
@@ -68,6 +63,16 @@ Make the minimum effective edit. Never add anecdotes, customers, metrics,
 quotes, first-person experience, or specificity that the source did not supply.
 
 ---
+
+## Suede AI house bans
+
+On Suede AI public copy, a short list is banned outright rather than weighed
+in context: em dashes in new prose, "moreover", delve, game-changer, unlock,
+elevate, seamless, landscape (abstract), tapestry, "it's important to note",
+rule-of-three rhythm by default, heavy parallel structure, and promotional
+exclamation points. The replacements are in the first table of
+[references/kill-list.md](references/kill-list.md). A supplied company or
+author brief replaces this list for that company's copy.
 
 ## Signal strength
 
@@ -96,7 +101,7 @@ evidence about who wrote it.
 
 No throat-clearing before the point. No emphasis crutches that add weight without meaning. No adverbs doing work a specific fact should do.
 
-The kill list, 25 highest-frequency offenders:
+The kill list, 27 highest-frequency offenders:
 
 | Category | Kill | Fix |
 |----------|------|-----|
@@ -119,6 +124,8 @@ The kill list, 25 highest-frequency offenders:
 | Jargon | landscape / ecosystem (abstract) | market, field, or the named thing |
 | Jargon | journey (not travel) | process, or name the steps |
 | Jargon | unlock / unleash | say what was blocked |
+| Jargon | game-changer / tapestry | name the change, or the parts |
+| Joiner | moreover / furthermore | cut, or "also" |
 | Jargon | robust / seamless / powerful | name the capability or prove it |
 | Jargon | elevate / empower / transform | say what changes, before and after |
 | Adverb | incredibly / remarkably / surprisingly | cut, or give the number that surprises |
@@ -204,10 +211,10 @@ Good: "You didn't sit down and decide to build this. It accumulated."
 ### 6. Vary rhythm
 
 Mix sentence lengths. Two items often beat three. End paragraphs differently.
-Follow the supplied house style for em dashes. For Suede-owned public copy,
+Follow the supplied house style for em dashes. For Suede AI public copy,
 replace them with commas, parentheses, colons, or periods. Do not treat
 punctuation as evidence of authorship.
-Suede-owned public copy also avoids promotional exclamation points; preserve
+Suede AI public copy also avoids promotional exclamation points; preserve
 them in protected source spans or when the supplied house style calls for them.
 
 Three consecutive sentences at the same length: break one. Every paragraph ending with a punchy one-liner: vary it. Staccato fragments stacked for effect: merge them. A question answered in the same breath: let it breathe or cut it. Hedging dressed as reassurance ("Not always. Not perfectly."): cut it.
@@ -334,7 +341,7 @@ Rate 1–10 on each dimension after the pass:
 
 ## Examples
 
-Before: "Here's the thing — the migration wasn't just a technical challenge. It was a fundamental shift in how the team operates. No more silos. No more handoffs. No more waiting."
+Before: "Here's the thing: the migration wasn't just a technical challenge. It was a fundamental shift in how the team operates. No more silos. No more handoffs. No more waiting."
 After: "The migration changed how the team operates: engineers now deploy their own services instead of filing tickets and waiting two days."
 
 Before: "The implications are truly significant. This decision was reached after careful consideration, and it will ultimately transform the developer experience."
@@ -422,21 +429,11 @@ Verdict: [CLEAN / REVISE]
 
 If total is below 35, name what is still generating the score and why it could not be resolved without more author context.
 
-## Sources
-
-Rules 1 through 8 and the kill list come from the Suede writing stack and its
-predecessor `stop-slop` by Hardik Pandya (<https://hvpandya.com>, MIT). Rules 9
-and 10, the signal-strength tiers, and the "When not to act" calibration are
-adapted from [Humanizer](https://github.com/blader/humanizer) by blader (MIT),
-which draws its pattern set from Wikipedia's
-["Signs of AI writing"](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing),
-maintained by WikiProject AI Cleanup.
-
 ## Routing
 
-- The text needs writing, not cleaning → /suede-copy (one surface) or /johnny-suede-write (full stack)
+- The text needs writing or restructuring, not cleaning → suede-copy
+- One high-stakes public piece that also needs research and a fact audit → suede-ship-copy
 - The cleaned text makes claims a public audience will read → route factual
   verification to primary evidence such as the current product, live URL,
   recorded metric, or named source; report unsupported claims separately without
   changing their wording
-- The text is a campaign artifact → campaign strategy gate (private Suede Labs companion, not in this pack: suede-growth)

@@ -34,9 +34,9 @@
   "keywords": "app store release, release evidence gates, S-Tier builder's book",
   "url": "https://skills.suedeai.ai/book/shipping-into-the-real-world.html",
   "position": 11,
-  "wordCount": 1759,
+  "wordCount": 1696,
   "datePublished": "2026-08-10",
-  "dateModified": "2026-10-16",
+  "dateModified": "2026-10-23",
   "inLanguage": "en",
   "isPartOf": {
     "@type": "Book",
@@ -91,7 +91,7 @@
       <p class="eyebrow">Part III &middot; Chapter 10</p>
       <h1>Shipping Into the Real World</h1>
       <p class="post-meta">The last mile: App Store and Play Store gauntlets, release evidence gates, and an account-review procedure that runs outside a repo.</p>
-      <div class="book-meta"><span>1,759 words</span><span>8 min read</span><span><a href="./">S-Tier: contents</a></span></div>
+      <div class="book-meta"><span>1,696 words</span><span>7 min read</span><span><a href="./">S-Tier: contents</a></span></div>
 
       <p>The last mile is where builders stall, and it is almost never for lack of skill. It stalls because the last mile is the first place your assumptions meet an institution that does not care about them. A compiler tells you immediately. App Review tells you in four days. Google Play tells you after the staged rollout has already reached 5% of users. The feedback loop stretches from seconds to days, and every unverified assumption you carried through the build gets billed at the new exchange rate.</p>
       <p>You can feel this the first time you wrap a website in a shell and submit it. The build works. The app runs. Rejection arrives citing guideline 4.2, minimum functionality, and now you are two weeks out from a launch date because the thing you shipped was a bookmark with an icon.</p>
@@ -113,13 +113,12 @@
       <p>The skill starts with an inventory, because one launch is usually several surfaces. A skill launch is a repo plus a README plus an install command plus social copy, and each row needs its own proof artifact: repo URL and commit hash, live URL and screenshot, install command transcript, MCP <code>tools/list</code> output, live route readback, link sweep results. Its hard gates are ordering rules. No launch copy until the live surface is verified. No install doc until the command ran from a clean temp dir after pushing. Ship gate set before any announcement, including a soft one.</p>
       <h2 id="the-lane-that-proves-the-point">The lane that proves the point</h2>
       <p>The sharpest example in the pack does not touch a repo at all.</p>
-      <p><code>amazon-returns-recovery</code> applies a contract-negotiation procedure to account reviews: gather refund evidence, confirm the requested action with the account owner, and report the support response without treating a promise as a posted refund. Its public reference uses synthetic scenarios. Personal transaction details and support transcripts stay in the account owner's private session.</p>
-      <p>Notice what carried over. Not domain knowledge about Amazon. The procedure knew nothing about restocking fees before it went looking. What carried over was the shape: read the evidence first, itemize before arguing, build the case from facts you can point at, ask for one specific outcome, confirm the result in writing. That is the same shape as a code review, a release gate, and an SEO audit. A procedure that works outside its home domain is evidence that the procedure, not the domain knowledge, was doing the work.</p>
-      <p><code>subscription-recovery</code> is the generalization, pointed at App Store, Google Play, PayPal, bank statements, and direct-bill services. It exists because somebody noticed the discipline had nothing to do with Amazon.</p>
+      <p><code>suede-rights-passport</code> applies the review procedure to a creator's folder instead of a diff. In audit mode it reads what the creator supplied, marks each ownership, split, sample, and license fact as confirmed or unknown in an evidence table, and turns every open gap into a question for the creator. In package mode it hashes the assets, writes a normalized manifest, and runs a bundled validator over the result.</p>
+      <p>Notice what carried over. Not domain knowledge about music rights. What carried over was the shape: read the evidence first, itemize before concluding, build the record from facts you can point at, ask for one specific missing document, and report what is still open. That is the same shape as a code review, a release gate, and an SEO audit. A procedure that works outside its home domain is evidence that the procedure, not the domain knowledge, was doing the work.</p>
       <h2 id="safety-stated-plainly">Safety, stated plainly</h2>
-      <p>Both recovery skills draw the same line, and it is worth reading as written rather than paraphrased. Read-only discovery first. Report the findings as a plain list. Stop. Do not open the dispute chat yet. Confirmation before any cancellation or refund contact, one item at a time. The skill describes itself as a metal detector, not an autopilot.</p>
-      <p>Truthfulness is a hard constraint, not a preference. State only true facts: order number, item, price, fee amount. Do not invent a prior contact attempt or a return reason that did not happen, because the ask is reasonable on its own and does not need embellishment to land. Accept one polite counteroffer round at most, then report back rather than escalating with anything untrue. Some fees are legitimate, some subscriptions are still wanted, and the skill instructs you to say so when a finding looks earned rather than mistaken.</p>
-      <p>Credentials are never handled. The stretch goal for automated statement parsing is explicitly deferred because no validated path exists that avoids touching credentials, which conflicts with the skill's own rules. A capability was left unbuilt rather than built unsafely, and that decision is written down in the skill where the next person will read it.</p>
+      <p>The skill draws its lines in writing, and they are worth reading as written rather than paraphrased. A status moves to confirmed only on evidence the user supplied. Every open gap ships as a question in <code>missing-info-report.md</code>, never as a guess. "Structural validity is not a rights clearance": a validator PASS means the package is well formed, not that anyone owns anything.</p>
+      <p>Truthfulness is a hard constraint, not a preference. The skill may not say anyone owns, controls, or has cleared a work without explicit proof, and may not call the package a legal contract. Uncertainty gets the words <code>unknown</code>, <code>unconfirmed</code>, or <code>needs creator confirmation</code> instead of a confident sentence.</p>
+      <p>Secrets are never requested. The skill does not ask for private keys, seed phrases, account secrets, or payment credentials, and it uploads nothing and calls no live service unless the user explicitly asks. The package is built on the creator's own machine and stays there until they decide otherwise.</p>
       <h2 id="the-reframe">The reframe</h2>
       <p>Shipping is not the phase after building. It is a separate skill with its own gates, its own evidence requirements, and its own failure modes, and you get better at it the same way you got better at everything else: by doing it enough times that the checklist stops surprising you. The builders who stall at the last mile are not worse engineers. They have just practiced the first mile a thousand times and the last mile twice.</p>
       <div class="panel move"><p class="move-label">The move</p>
@@ -143,7 +142,7 @@
     </section>
     <footer>
       <div class="footer-shell">
-        <p class="footer-note">Suede Creator Skills is a 76-skill, open-source pack for Claude Code and OpenAI Codex: outcome-bound orchestration, code review with an A-F ship grade, AI evals, design and copy, SEO/AEO/AI EO, iOS and Android app shipping, and a creator toolkit for music rights and release prep. Original work is MIT licensed; adapted components retain their upstream notices.</p>
+        <p class="footer-note">Suede Creator Skills is a 63-skill, open-source pack for Claude Code and OpenAI Codex: outcome-bound orchestration, code review with an A-F ship grade, AI evals, design and copy, SEO/AEO/AI EO, iOS and Android app shipping, and a creator toolkit for music rights and release prep. Original work is MIT licensed; adapted components retain their upstream notices.</p>
         <div class="footer-inner">
           <div class="footer-brand">
             <img src="../assets/suede-ai-logo-transparent.webp" alt="Suede AI" width="24" height="24" onerror="this.style.display='none'">
@@ -162,7 +161,8 @@
           </div>
         </div>
       </div>
-    </footer>
+    <div class="trendshift-recognition" style="width:250px;max-width:100%;margin:24px auto;text-align:center"><p style="margin:0 0 8px;font-size:13px">Suede Creator Skills on Trendshift</p><a href="https://trendshift.io/repositories/82031?utm_source=trendshift-badge&amp;utm_medium=badge&amp;utm_campaign=badge-trendshift-82031" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/82031/daily?language=Python" alt="JasonColapietro%2Fsuede-creator-skills | Trendshift" width="250" height="55" loading="lazy" style="display:block;max-width:100%;height:auto"/></a></div>
+</footer>
     <script>
       // Mobile nav disclosure. The markup ships <details open> so a no-JS
       // visit still reaches every link; this collapses it at mobile widths

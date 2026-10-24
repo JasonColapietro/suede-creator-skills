@@ -1,13 +1,13 @@
 ---
 name: suede-pricing
-description: "Suede-owned pricing and packaging discipline. Use when deciding what to charge, structuring tiers, choosing a value metric, comparing free trials with freemium, researching willingness to pay, planning a price increase, or tearing down a pricing page for clarity and AI-readability. NOT FOR: in-product upgrade screens (use suede-paywalls), offer bonuses and guarantees (use suede-offers), or executing billing changes."
+description: "Suede AI pricing and packaging: chooses the value metric (seats, usage, credits, outcomes), structures tiers, compares free trial, freemium, and reverse trial, plans willingness to pay research and price increases with grandfathering, and tears down a pricing page for buyer clarity and for search and AI-assistant readability (text prices, matching schema, quotable FAQ). Returns a Pricing Decision Brief or a scored teardown. Use when deciding what to charge, restructuring tiers, pricing AI features with variable compute cost, raising prices, or fixing a pricing page that buyers or AI answers misread. NOT FOR: in-product upgrade screens (use suede-paywalls), offer bonuses and guarantees (use suede-offers), or executing billing changes."
 metadata:
   version: 2.1.0
 ---
 
 # Suede Pricing & Packaging
 
-Suede Pricing turns verified product economics, buyer evidence, and commercial
+Suede AI Pricing turns verified product economics, buyer evidence, and commercial
 constraints into testable prices, value metrics, tiers, and migration plans.
 It produces a decision brief and measurement plan while keeping billing changes
 behind explicit approval.
@@ -80,6 +80,15 @@ Ask: "As a customer uses more of [metric], do they get more value?"
 - If yes → good value metric
 - If no → price doesn't align with value
 
+### Pricing AI features
+
+When a feature's cost to serve scales with model usage, flat per-seat pricing can turn heavy users unprofitable. Common structures:
+- **Hybrid:** a seat or platform fee with included usage, plus credits or overage beyond it.
+- **Credits:** one currency across AI actions, priced so the most expensive action still clears margin. Publish what a credit buys in plain words.
+- **Outcome-based:** charge per resolved ticket, qualified lead, or completed task, when the outcome is countable and attributable.
+
+For each, model margin at the 90th-percentile user, state included limits on the pricing page, and give buyers a usage view before the bill surprises them.
+
 ### Defaults to Beat
 
 These are the answers a model reaches for unprompted. Each is allowed, but only
@@ -145,9 +154,9 @@ Identifies which features customers value most:
 - "It's so cheap!" feedback
 
 **Business signals:**
-- Very high conversion rates (>40%)
-- Very low churn (<3% monthly)
-- Strong unit economics
+- Conversion well above your own trailing baseline with no price objections in sales notes
+- Churn low and stable, with price rarely named as a cancel reason
+- Strong unit economics (payback and gross margin, from your own data)
 
 **Product signals:**
 - Significant value added since last pricing
@@ -160,6 +169,8 @@ Identifies which features customers value most:
 3. **Tied to value**: Raise price but add features
 4. **Plan restructure**: Change plans entirely
 
+**Legal notice floor for existing subscribers:** an increase on an auto-renewing plan needs clear advance notice with cancellation instructions. California's amended Automatic Renewal Law (in force July 1, 2025) requires that notice 7 to 30 days before the new price applies; contracts and other jurisdictions may require more. Current rules live in `suede-paywalls`.
+
 ---
 
 ## Pricing Page Best Practices
@@ -171,15 +182,21 @@ Identifies which features customers value most:
 - Primary CTA for each tier
 
 ### Common Elements
-- FAQ section
-- Annual discount callout (17-20%)
-- Money-back guarantee
+- An on-page FAQ that answers cost, limits, trials, and cancellation in plain text (buyers and AI assistants both read it)
+- The annual saving stated in dollars and percent, whatever discount you chose
+- A guarantee or trial terms near the CTA
+- Renewal terms beside any auto-renewing plan: price, billing interval, and how to cancel
+
+### Price transparency rules
+- Show the total mandatory price. In the UK, the DMCC Act has banned drip pricing of mandatory fees since April 6, 2025 ([CMA207 guidance](https://www.gov.uk/government/publications/unfair-commercial-practices-cma207)).
+- Auto-renewing plans need clear disclosure and consent before billing under US ROSCA and state auto-renewal laws; `suede-paywalls` holds the current US, UK, and EU subscription rules.
 
 ### Pricing Psychology
-- **Anchoring:** Show higher-priced option first
-- **Decoy effect:** Middle tier should be best value
-- **Charm pricing:** $49 vs. $50 (for value-focused)
-- **Round pricing:** $50 vs. $49 (for premium)
+Treat each as a test, using the evidence tiers in the `suede-offers` behavioral-models catalog:
+- **Anchoring (Robust):** show the higher-priced option or the cost of the alternative first, honestly.
+- **Good-better-best relativity (Context-dependent):** design the middle tier as the target and check real tier-selection data.
+- **Decoy tier (Contested):** a third tier can clarify the comparison; do not count on it to move choice.
+- **Charm vs. round endings (Context-dependent):** weak for B2B subscriptions; test rather than assume.
 
 ---
 
@@ -192,9 +209,9 @@ When someone wants to audit an existing pricing *page* for **clarity, transparen
 
 **Fast check, the "paste test":** give the pricing URL to a browsing-capable AI (Perplexity, ChatGPT with search, Claude with web), or paste the rendered page text, and ask "what are the plans and prices?" A clean miss means agents fetching your page will struggle too (a heuristic, not proof every agent fails).
 
-The AI-readiness fixes are usually high-impact, low-effort (put prices in text, add `Offer` schema). Hand implementation to **suede-seo-audit** (Product/Offer JSON-LD and supported-schema checks) and **suede-ai-seo** (extractability, AI-bot access, `llms.txt`).
+The AI-readiness fixes are usually high-impact, low-effort (put prices in text, add JSON-LD that matches them). Hand implementation to **suede-seo-audit** (structured data and supported-schema checks), **suede-ai-seo** (extractability and AI-bot access), and **suede-competitors** for "vs" and alternatives pages that cite the same prices.
 
-**For the full 10-dimension rubric, scoring, and report template:** See [references/pricing-page-teardown.md](references/pricing-page-teardown.md). *(AI-agent-readiness lens adapted from Kyle Poyar / Growth Unhinged.)*
+**For the full 10-dimension rubric, scoring, structured-data facts, and report template:** See [references/pricing-page-teardown.md](references/pricing-page-teardown.md).
 
 ---
 

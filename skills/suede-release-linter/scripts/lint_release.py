@@ -614,6 +614,27 @@ def lint(metadata: dict[str, Any], assets: list[dict[str, Any]], source: Path) -
     if unknown_status(release_history):
         add(findings, "warning", "rights", "release-history-unknown", "Prior release, registration, minting, or licensing history is unknown.", "Confirm whether the work has already been distributed, registered, minted, licensed, or sold.")
 
+    # Distributors and DSPs now ask for AI involvement at delivery, and purely
+    # AI-generated material is not copyrightable in the US, so an unstated or
+    # undocumented AI role is a licensing question, not a cosmetic gap.
+    ai_involvement = rights_value(
+        metadata,
+        ["ai_involvement", "ai_disclosure", "ai_generated", "ai_use"],
+        project_value(metadata, ["ai_involvement", "ai_disclosure"], "unknown"),
+    )
+    if isinstance(ai_involvement, (list, tuple)):
+        ai_involvement = ", ".join(str(item) for item in ai_involvement) or "unknown"
+    if unknown_status(ai_involvement):
+        add(findings, "info", "rights", "ai-involvement-unstated", "AI involvement is not stated.", "State whether generative AI was used for vocals, instrumentation, composition, lyrics, artwork, or post-production (use \"none\" if not); distributors increasingly require this at delivery.")
+    elif not negative_status(ai_involvement):
+        human_authorship = rights_value(
+            metadata,
+            ["human_authorship", "human_authorship_notes", "human_contribution"],
+            "",
+        )
+        if not human_authorship:
+            add(findings, "warning", "rights", "ai-human-authorship-undocumented", "AI involvement is declared but human authorship is not documented.", "Record which elements a person wrote, performed, or arranged, with evidence such as session files or lyric drafts, before registration or licensing.")
+
     wallet = suede_value(
         metadata,
         ["wallet_address", "wallet", "payment_destination", "payment_address", "royalty_destination"],

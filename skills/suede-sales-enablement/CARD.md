@@ -7,7 +7,7 @@ Release record for the `suede-sales-enablement` skill, following the NVIDIA skil
 
 ## Description
 
-Suede-owned sales-enablement discipline.
+Suede AI sales enablement: builds rep-ready pitch decks (10-12 slide narrative), one-pagers, objection libraries, demo scripts and talk tracks, competitive battle cards kept consistent with public comparison pages, proposal structures, buyer cards, and deal-level ROI calculators that separate sourced claims from modeled value.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.2; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
@@ -23,9 +23,9 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when creating pitch decks, one-pagers, objection guides, demo scripts, talk tracks, battle cards, proposal structures, buyer cards, or deal-level ROI framing.
+Use when creating or refreshing sales collateral, preparing for a competitive deal, or arming reps for objections and demos.
 
-Out of scope — setting price or terms (use suede-pricing), building the offer (use suede-offers), sending outreach (use suede-cold-email), or publishing unsupported proof.
+Out of scope — setting price or terms (use suede-pricing), building the offer (use suede-offers), public comparison pages (use suede-competitors), sending outreach (use suede-cold-email), or publishing unsupported proof.
 
 ## Deployment Geography
 

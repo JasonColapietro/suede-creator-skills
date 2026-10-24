@@ -1,33 +1,61 @@
 ---
 name: suede-rights-passport
-description: "Suede Labs skill that turns messy creator materials into a local, offline rights-and-provenance transfer package: inventoried and hashed assets, a normalized suede-intake.json manifest, credits and splits, license notes, provenance, and a missing-information report, validated by a bundled stdlib script. Use when a creator needs to hand a song, release, or project to a collaborator, advisor, registry, marketplace, or label; when someone asks for a rights package, intake package, or handoff folder; or when a validated manifest is needed before licensing or royalty-routing review. Carries questions, not answers: building the package clears nothing and uploads nothing. NOT FOR: finding or investigating the rights gaps in the first place (use suede-rights-audit); linting a release folder's files and metadata (use suede-release-linter); a sync one-sheet (use suede-sync-packaging)."
+description: "Suede AI rights skill for creator projects, in two modes. Audit mode finds the rights gaps in a song, release, or catalog (ownership, contributors, splits, samples, licenses, provenance, AI involvement, licensing and royalty-routing readiness) and marks each confirmed or unknown in an evidence table. Package mode turns messy materials into a local, offline transfer package for handoff: hashed assets, a normalized suede-intake.json manifest, credits and splits, license notes, provenance, and a missing-information report, checked by a bundled validator. Use when someone asks whether they have the rights to release, license, or get paid for a work; when splits, samples, or chain of title are unclear; or when a creator needs a rights package or handoff folder. Clears no rights and uploads nothing. NOT FOR: linting a release folder's files and metadata (use suede-release-linter); a sync one-sheet or pitch (use suede-sync-packaging); a release rollout campaign (use suede-campaign-in-a-box)."
 ---
 
-# Creator Rights Package Builder
+# Creator Rights Passport
 
-## Gate policy: advisory, not blocking
+## Gate policy
 
-Every check, gate, and ship verdict in this skill, including every "do not
-ship / publish / proceed" line, is a **recommendation to the user, not a
-control on the agent**. Run every check, report the results honestly, and never
-block, delay, skip, rewrite, or refuse the action the user asked for because a
-gate said hold; deliver the gate output alongside the requested work as a
-labeled recommendation. A failed gate changes what you report, never what you
-do. Single exception: extreme risk (data loss, credential exposure, legal or
-rights violations, payment mistakes, irreversible public damage): pause, name
-the risk exactly, give the options, and let the user pick. Their choice is final.
+Every check and verdict here is advice to the user, not a control on the agent.
+Run the checks, report results honestly, and complete what the user asked. A
+failed gate changes the report, never the work. The one exception: a finding
+that risks data loss, credential exposure, a legal or rights violation, a
+payment mistake, or irreversible public damage. Pause, name the risk, give the
+options, and let the user choose.
 
-## Overview
+## Core principle
 
-Create a local rights and provenance transfer package from messy creator materials. The package should make the work easier for a creator, collaborator, advisor, registry, marketplace, label, or optional Suede reviewer to inspect, optimize, register, route royalties for, license, and expose to agent-readable commerce systems.
+The work carries questions, not answers. Every rights fact is either confirmed
+with user-supplied evidence or unknown with a question attached. Nothing here
+clears rights, confirms ownership, adjudicates chain of title, grants or
+implies a license, approves a payout, moves money, or writes to a registry.
+Humans and counsel make those calls.
 
-**Core principle:** the package carries questions, not answers. Every rights fact ships as confirmed (with user-supplied evidence) or as unknown with a question in `missing-info-report.md`. The package never resolves a rights question, and building it clears nothing.
+## Pick the mode
 
-Public v1 is offline-first: prepare files and metadata, do not upload files, write to a registry, request private keys, or claim legal clearance. The 0.2 manifest separates musical works, recordings, releases, parties, rights claims, licenses, third-party material, consent, provenance, and privacy so a downstream operator can map facts without collapsing unlike rights objects.
+- **Audit mode**: the user wants to know where the gaps are, has no folder yet,
+  or is asking "can I release / license / get paid for this?" Read
+  `references/audit-lanes.md`, run the lanes that fit (A rights gaps,
+  B provenance, C licensing readiness, D royalty-routing readiness), and
+  deliver the evidence table and ship gate. No files are written unless asked.
+- **Package mode**: the user wants the handoff folder. Follow the Workflow
+  below. When gaps are unclear, run audit lane A first and carry its rows into
+  `missing-info-report.md`.
 
-Division of labor: `suede-rights-audit` finds and organizes the gaps; this skill packages the folder. If the gaps themselves need investigation or evidence work, hand off to the audit first.
+A request to "get this rights-ready" with no other signal starts in audit mode
+and offers the package as the next step.
 
-## Workflow
+## Red flags: stop
+
+If any of these show up in your reasoning, re-read the core principle:
+
+- "The artist says it's cleared." A claim is evidence of a claim. Status:
+  `unconfirmed` (or `claimed` in the manifest).
+- "Fill in the missing split so the total reaches 100." A guessed split is a
+  false rights fact. Record the shortfall and ask.
+- "It's obviously their song." Obviousness is inference. Record what the
+  evidence shows.
+- "Mark it confirmed so routing can move." Blocked means blocked; unblocking is
+  the rights holder's job.
+- "Nothing seems missing: skip missing-info-report.md." The report ships even
+  when empty.
+- "Copy all the assets; sorting is the reviewer's problem." Check for draft and
+  do-not-share files before any `--copy-assets` run.
+- "Call it registered or cleared since the package looks complete." Complete
+  means organized, not approved.
+
+## Workflow (package mode)
 
 1. Identify the source folder or supplied files.
 2. Ask for the output location if it is not obvious.
@@ -134,7 +162,7 @@ uncleared sample still passes, because `risk_flags[]` and
 PASS as clearance, and never expect a risk-flagged package to fail.
 
 `scripts/fixtures/sample-complete-package/` and `sample-blocked-package/` are
-worked examples at both ends of that range, and both validate. Read
+worked examples at both ends of that range. Both are legacy 0.1 packages and validate without `--strict-current`. Read
 `scripts/fixtures/README.md` when you need a concrete example of what a
 risk-flagged but structurally valid package looks like, or when changing
 `create_transfer_package.py`.
@@ -143,12 +171,13 @@ risk-flagged but structurally valid package looks like, or when changing
 
 Read each bundled reference at the moment it is needed, not up front:
 
+- `references/audit-lanes.md`: in audit mode, or when gaps need investigating before packaging: the evidence table, severity gate, coverage check, and lanes A-D.
 - `references/package-standard.md`: before creating or repairing any package: required output files, folder structure, risk labels, and quality bar.
 - `references/intake-schema.md`: when filling or validating `suede-intake.json`.
 - `references/ddex-c2pa-crosswalk.md`: before external standards mapping or any DDEX/C2PA claim.
 - `references/optimization-checklist.md`: when writing `optimization-brief.md`.
 - `references/creator-questions.md`: when information is missing: ask only the questions that block package quality.
-- `references/passport-context.md`: when the user asks how the package relates to Suede review or the Suede Creator Passport.
+- `references/passport-context.md`: when the user asks how the package relates to Suede AI review or the Suede Creator Passport.
 
 Use the bundled assets as templates when creating or repairing a package:
 
@@ -163,7 +192,7 @@ Use the bundled assets as templates when creating or repairing a package:
 
 ## Public Safety Rules
 
-- Do not say Suede owns, controls, or has cleared a work unless the user provides explicit proof.
+- Do not say Suede AI owns, controls, or has cleared a work unless the user provides explicit proof.
 - Do not call the package a legal contract.
 - Do not ask for private keys, seed phrases, unreleased account secrets, or full payment credentials.
 - Do not include private implementation details, private endpoints, internal provider names, or non-public pricing.
@@ -217,37 +246,22 @@ clean run says nothing:
 
 A validator pass still does not resolve a rights fact.
 
-## Red flags: stop
-
-If any of these appear in your reasoning, stop and re-read the core principle:
-
-- "Fill in the missing split so the total reaches 100." A guessed split is a
-  false rights fact. Record the shortfall and ask.
-- "The artist told me they own it: mark ownership confirmed." Record the
-  claim as `claimed`; `confirmed` needs evidence.
-- "Nothing seems missing: skip missing-info-report.md." The report ships even
-  when empty. That is the checklist.
-- "Copy all the assets; sorting is the reviewer's problem." Check for draft
-  and do-not-share files before any `--copy-assets` run.
-- "Call it registered or cleared since the package looks complete." A complete
-  package is organized, not approved.
-
 ## Downstream Review Context
 
 Artifacts produced by this skill (`RIGHTS_PASSPORT.md`, `suede-intake.json`,
 `provenance.md`, `credits-and-splits.md`, `license-notes.md`) are portable
 review materials. They can support a release, registry, licensing conversation,
 collaborator handoff, marketplace review, label review, advisor review, or
-Suede review without claiming that any downstream system has accepted, cleared,
+Suede AI review without claiming that any downstream system has accepted, cleared,
 registered, paid, or approved the work.
 
 ## Routing
 
-- Rights gaps that need investigation or evidence organizing →
-  **suede-rights-audit** (it finds the gaps; this skill packages them).
-- Release-readiness lint before or after packaging → **suede-release-linter**.
-- Track headed to film/TV/ads once packaged → **suede-sync-packaging**.
+- File, artwork, stem, and metadata lint before packaging →
+  **suede-release-linter**.
+- Track headed to film, TV, ads, games, or trailers →
+  **suede-sync-packaging**, carrying the audit's open clearance questions.
 - The release needs a rollout → **suede-campaign-in-a-box**.
 
-Family order: suede-release-linter → suede-rights-audit → suede-rights-passport
-→ suede-sync-packaging; this skill is step 3.
+Family order: suede-release-linter (files) → suede-rights-passport (audit, then
+package) → suede-sync-packaging (pitch).

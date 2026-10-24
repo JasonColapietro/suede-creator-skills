@@ -10,7 +10,7 @@
     <link rel="canonical" href="https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/analytical-method-validation/">
     <link rel="icon" href="../../../../assets/favicon-64.png" type="image/png">
     <meta property="og:type" content="article">
-    <meta property="og:site_name" content="Suede Skills Directory">
+    <meta property="og:site_name" content="Suede AI Skills Directory">
     <meta property="og:title" content="analytical-method-validation Agent Skill by K-Dense-AI">
     <meta property="og:description" content="Plans, executes, and documents validation, verification, and transfer of analytical procedures under… From K-Dense-AI/claude-scientific-skills, MIT.">
     <meta property="og:url" content="https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/analytical-method-validation/">
@@ -18,6 +18,7 @@
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@AISUEDE">
     <meta name="twitter:title" content="analytical-method-validation Agent Skill by K-Dense-AI">
     <meta name="twitter:description" content="Plans, executes, and documents validation, verification, and transfer of analytical procedures under… From K-Dense-AI/claude-scientific-skills, MIT.">
     <meta name="twitter:image" content="https://skills.suedeai.ai/assets/social/directory-card.png">
@@ -29,9 +30,18 @@
         "name": "analytical-method-validation Agent Skill by K-Dense-AI",
         "description": "Plans, executes, and documents validation, verification, and transfer of analytical procedures under… From K-Dense-AI/claude-scientific-skills, MIT.",
         "url": "https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/analytical-method-validation/",
-        "dateModified": "2026-10-22",
+        "dateModified": "2026-10-24",
         "isPartOf": {
-          "@id": "https://skills.suedeai.ai/directory/#directory"
+          "@type": "CollectionPage",
+          "@id": "https://skills.suedeai.ai/directory/#directory",
+          "name": "Suede AI Skills Directory",
+          "url": "https://skills.suedeai.ai/directory/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "@id": "https://suedeai.ai/#organization",
+          "name": "Suede AI",
+          "url": "https://suedeai.ai"
         },
         "breadcrumb": {
           "@id": "https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/analytical-method-validation/#breadcrumb"
@@ -110,7 +120,7 @@
           <a href="../../../../">Home</a>
           <a href="../../../">Directory</a>
           <a href="../../../methodology/">How listing works</a>
-          <a href="../../../../skills/">Suede skills</a>
+          <a href="../../../../skills/">Suede AI skills</a>
           <a href="../../../../blog/">Blog</a>
           <a href="../../../submit/" class="nav-cta">List your skill</a>
         </div>
@@ -167,11 +177,14 @@ cp -R &quot;$tmp/repo/&quot;skills/analytical-method-validation .claude/skills/
 rm -rf &quot;$tmp&quot;</code></pre>
         </div>
         <div class="snippet">
-          <div class="snippet-head"><span>Codex installer</span><button type="button" class="snippet-copy" data-copy-target="install-codex">Copy</button></div>
-          <pre><code id="install-codex">python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
-    --repo K-Dense-AI/claude-scientific-skills \
-    --path skills/analytical-method-validation</code></pre>
+          <div class="snippet-head"><span>Codex, project-level copy</span><button type="button" class="snippet-copy" data-copy-target="install-codex">Copy</button></div>
+          <pre><code id="install-codex">tmp=&quot;$(mktemp -d)&quot;
+git clone --depth 1 https://github.com/K-Dense-AI/claude-scientific-skills.git &quot;$tmp/repo&quot;
+mkdir -p .agents/skills
+cp -R &quot;$tmp/repo/&quot;skills/analytical-method-validation .agents/skills/
+rm -rf &quot;$tmp&quot;</code></pre>
         </div>
+        <p class="muted">For a user-level install, copy the folder to <code>~/.claude/skills/</code> (Claude Code) or <code>~/.agents/skills/</code> (Codex). Inside Codex, <code>$skill-installer</code> can also fetch a skill from GitHub. New to skills? Read <a href="../../../guides/install-agent-skills/">How to install agent skills in Claude Code, Codex and Cursor</a>.</p>
         <p class="muted">K-Dense-AI/claude-scientific-skills is third-party code. Read SKILL.md and any bundled scripts before you install it.</p>
       </section>
       <section class="panel" aria-labelledby="author-title">
@@ -277,17 +290,39 @@ rm -rf &quot;$tmp&quot;</code></pre>
       </section>
 <section class="panel badge-panel" id="badge" aria-labelledby="badge-title"><h2 id="badge-title">Two badges for analytical-method-validation</h2>
         <div class="shield-pair"><a href="https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/analytical-method-validation/"><img src="/directory/k-dense-ai/claude-scientific-skills/analytical-method-validation/score.svg" alt="Suede Skill Check: 88/100" width="160" height="175" loading="lazy"></a><a href="https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/analytical-method-validation/"><img src="/directory/k-dense-ai/claude-scientific-skills/analytical-method-validation/badge.svg" alt="Suede Skill Check: Grade B" width="160" height="175" loading="lazy"></a></div>
-        <p>Choose the numeric badge, the letter badge, or both. Each links to this skill’s Suede listing; either valid linked badge can qualify for the feature offer.</p>
+        <p>Choose the numeric badge, the letter badge, or both. Each links to this skill’s Suede AI listing; either valid linked badge can qualify for the feature offer.</p>
         <div class="snippet"><div class="snippet-head"><span>Markdown</span><button type="button" class="snippet-copy" data-copy-target="badge-md">Copy both badges</button></div><pre><code id="badge-md">[![Suede Skill Check: 88/100](https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/analytical-method-validation/score.svg)](https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/analytical-method-validation/)
 [![Suede Skill Check: Grade B](https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/analytical-method-validation/badge.svg)](https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/analytical-method-validation/)</code></pre></div>
         <div class="snippet"><div class="snippet-head"><span>HTML</span><button type="button" class="snippet-copy" data-copy-target="badge-html">Copy both badges</button></div><pre><code id="badge-html">&lt;a href=&quot;https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/analytical-method-validation/&quot;&gt;&lt;img src=&quot;https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/analytical-method-validation/score.svg&quot; alt=&quot;Suede Skill Check: 88/100&quot; width=&quot;160&quot; height=&quot;175&quot;&gt;&lt;/a&gt;
 &lt;a href=&quot;https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/analytical-method-validation/&quot;&gt;&lt;img src=&quot;https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/analytical-method-validation/badge.svg&quot; alt=&quot;Suede Skill Check: Grade B&quot; width=&quot;160&quot; height=&quot;175&quot;&gt;&lt;/a&gt;</code></pre></div>
         <p class="muted">Suede Certified on the shield refers to this published structural quality check. Security scan: not scanned. Read the <a href="../../../methodology/">methodology</a>.</p>
-        <p class="badge-offer" data-promotion-end="">Limited-time feature offer: display either the numeric or letter badge in your repository or skill README (both also qualify), then <a href="../../../submit/">request badge verification</a>. Eligible skills scoring 80–99 can receive a featured placement after Suede verifies at least one valid badge linked to the skill’s listing. Suede has not announced an end date.</p></section>
+        <p class="badge-offer" data-promotion-end="">Limited-time feature offer: Display either quality badge in your repository or skill README, linked to your listing, then request verification. Suede AI checks the rendered README at a recorded commit. Eligible skills scoring 80–99 with a verified badge can receive a featured placement while the offer is open. <a href="../../../submit/">Request badge verification</a>.</p>
+        <p>Publishers: read <a href="../../../guides/skill-ai-visibility/">How to get your agent skill found in search and cited by AI assistants</a>.</p></section>
+      <aside class="panel cta-placement" aria-labelledby="cta-publisher-claim-b-feature" data-cta-placement="publisher-claim" data-cta-variant="b-feature">
+        <h2 id="cta-publisher-claim-b-feature">Publishers: get featured</h2>
+        <p>Skills scoring 80–99 can display a quality shield. While the feature offer is open, a verified badge can earn a featured placement.</p>
+        <p><a class="button" href="../../../submit/" data-cta="publisher-claim:b-feature">Request badge verification</a></p>
+      </aside>
       <section class="panel" aria-labelledby="cited-title">
         <h2 id="cited-title">Where this skill is cited</h2>
         <p>K-Dense-AI/claude-scientific-skills appears in 2 curated lists: <a href="https://github.com/BehiSecc/awesome-claude-skills" target="_blank" rel="noopener">BehiSecc/awesome-claude-skills</a>, <a href="https://github.com/travisvn/awesome-claude-skills" target="_blank" rel="noopener">travisvn/awesome-claude-skills</a>.</p>
       </section>
+
+      <aside class="panel svc-cta" aria-labelledby="svc-title" data-services-cta="skill">
+        <h2 class="svc-kicker" id="svc-title">From Suede AI, the publisher of this directory</h2>
+        <div class="svc-cards">
+          <div class="svc-card svc-lead" data-offer="agents">
+            <h3>One agent is a start</h3>
+            <p>Agent Studio from Suede AI coordinates several agents across your business systems.</p>
+            <p><a class="button" href="https://suedeai.app/?utm_source=skills.suedeai.ai&amp;utm_medium=directory&amp;utm_campaign=skill-page-aside&amp;utm_content=studio-b" data-cta="skill-page-aside:studio-b" target="_blank" rel="noopener">See Agent Studio</a></p>
+          </div>
+          <div class="svc-card" data-offer="search">
+            <h3>Get your business cited in AI answers and ranked in Google</h3>
+            <p>Suede AI runs AEO, GEO and SEO programs for businesses: technical audits, structured data, entity work and content built to be quoted by ChatGPT, Claude, Perplexity and Google AI Overviews.</p>
+            <p><a class="button secondary" href="https://suedeai.agency/?utm_source=skills.suedeai.ai&amp;utm_medium=directory&amp;utm_campaign=directory-services&amp;utm_content=skill-science-research" data-cta="search" target="_blank" rel="noopener">See AEO and SEO services</a></p>
+          </div>
+        </div>
+      </aside>
       <section class="panel" aria-labelledby="related-title">
         <h2 id="related-title">More science and research skills</h2>
         <div class="links">
@@ -315,7 +350,7 @@ rm -rf &quot;$tmp&quot;</code></pre>
     </main>
     <footer>
       <div class="shell">
-        <p class="footer-note">analytical-method-validation is published by K-Dense-AI in K-Dense-AI/claude-scientific-skills and listed in the Suede Skills Directory, a curated index of public Agent Skills.</p>
+        <p class="footer-note">analytical-method-validation is published by K-Dense-AI in K-Dense-AI/claude-scientific-skills and listed in the Suede AI Skills Directory, a curated index of public Agent Skills.</p>
         <div class="footer-inner">
           <div class="footer-brand">
             <img src="../../../../assets/suede-ai-logo-transparent.webp" alt="Suede AI" width="24" height="24" onerror="this.style.display='none'">
@@ -336,7 +371,8 @@ rm -rf &quot;$tmp&quot;</code></pre>
           </div>
         </div>
       </div>
-    </footer>
+    <div class="trendshift-recognition" style="width:250px;max-width:100%;margin:24px auto;text-align:center"><p style="margin:0 0 8px;font-size:13px">Suede Creator Skills on Trendshift</p><a href="https://trendshift.io/repositories/82031?utm_source=trendshift-badge&amp;utm_medium=badge&amp;utm_campaign=badge-trendshift-82031" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/82031/daily?language=Python" alt="JasonColapietro%2Fsuede-creator-skills | Trendshift" width="250" height="55" loading="lazy" style="display:block;max-width:100%;height:auto"/></a></div>
+</footer>
   <script>
   // Mobile nav disclosure. The markup ships <details open> so a no-JS visit
   // still reaches every link; this collapses it at mobile widths only and

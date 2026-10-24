@@ -12,5 +12,5 @@
       "reason": "Public provider coauthor attribution in contribution-ledger tests."
     }
   ],
-  "recovery_surface_path_pattern": "COPY\\.md|README\\.md|book/.*|docs/.*|https://skills\\.suedeai\\.ai/.*|(?:dist-npm/)?mcp/catalog\\.json|skills/(?:amazon-returns-recovery|subscription-recovery)/.*"
+  "recovery_surface_path_pattern": "COPY\\.md|README\\.md|book/.*|docs/.*|https://skills\\.suedeai\\.ai/.*|(?:dist-npm/)?mcp/catalog\\.json"
 }

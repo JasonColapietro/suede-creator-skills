@@ -46,6 +46,13 @@ You have three credible options:
 - Include a privacy notice / opt-out in the first outreach
 - Don't store personal data longer than necessary for the legitimate interest
 
+### Email and phone rules sit on top of GDPR
+
+GDPR covers the data; the right to send the message comes from electronic-marketing law, and that varies:
+
+- **UK (PECR):** cold marketing email to corporate addresses is allowed with identification and an opt-out; sole traders and some partnerships count as individuals and generally need consent. The Data (Use and Access) Act 2025 raises PECR maximum fines to UK GDPR levels as its provisions commence. Source: [ICO guide to PECR](https://ico.org.uk/for-organisations/direct-marketing-and-privacy-and-electronic-communications/guide-to-pecr/).
+- **EU (ePrivacy rules as implemented by each member state):** several countries, including Germany, require prior consent even for B2B marketing email. Check the recipient's country before sending.
+
 ### What disqualifies a list
 
 - Bulk-scraped LinkedIn data: explicit ToS violation + GDPR risk
@@ -59,7 +66,7 @@ You have three credible options:
 Stricter than CAN-SPAM. Cold B2B outreach requires:
 
 - **Express consent** (explicit opt-in): typically not present for cold prospecting
-- **OR implied consent**: existing business relationship within 24 months, OR business address publicly published on the company's own site for the purpose of receiving such communications
+- **OR implied consent**: an existing business relationship (generally a purchase within 24 months or an inquiry within 6 months), OR an address conspicuously published by the person with no statement refusing unsolicited messages, where the message is relevant to their business role
 
 **Practical implication for Canadian prospects**: relying on the publicly-published-address exception is the most defensible cold prospecting basis in Canada. You must include sender identification, mailing address, and an unsubscribe mechanism in every message.
 
@@ -81,7 +88,7 @@ Stricter than CAN-SPAM. Cold B2B outreach requires:
 - Storing Place IDs or large structured Maps data in your CRM: explicit ToS prohibition
 - Use Maps to **find** local businesses, then cross-source from the business's own site for the data you retain
 
-### Apollo / ZoomInfo / Clearbit
+### Apollo / ZoomInfo / HubSpot Breeze Intelligence
 
 - All have their own ToS limiting reselling, downstream sharing, and use cases
 - Read your contract: typically you can use the data for your own outreach but not productize it

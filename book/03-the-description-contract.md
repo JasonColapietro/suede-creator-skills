@@ -36,9 +36,9 @@ with sloppier prose but better word overlap takes the request.
 The pack enforces this mechanically. `tests/fixtures/trigger-routing.json`
 defines groups of competing skills, and each route carries `positive` signals,
 `negative` signals, and a `metadataMustContain` list that has to appear in the
-skill's actual description. For `suede-code-grader`, `metadataMustContain` is
-`["a f", "grade"]`. If someone rewrites that description into something more
-dignified and drops the literal "A-F," `node scripts/validate-trigger-routing.mjs`
+skill's actual description. For `suede-code`, `metadataMustContain` is
+`["review", "grade"]`. If someone rewrites that description into something more
+dignified and drops the literal "grade," `node scripts/validate-trigger-routing.mjs`
 fails. The vocabulary is a tested interface, not a style choice.
 
 There is also an ambiguous case in that fixture, and it is the honest one:
@@ -57,14 +57,14 @@ regrettable answer to an unclear question.
 
 ## NOT FOR is the other half of the contract
 
-Forty-eight of the 76 public skills carry a `NOT FOR:` clause in their
+Forty-eight of the 63 public skills carry a `NOT FOR:` clause in their
 description. It always has the same shape: the condition under which a sibling
 wins, then the sibling's exact name in parentheses.
 
-`suede-graph-flo-xr` refuses three specific neighbors: high-volume work that splits into
-independent worker tasks goes to `suede-codex-fleet`, findings-only review with
-no code change goes to `suede-code-review`, and CI and branch-protection wiring
-goes to `suede-ci-gate`. Read that as a routing table written from the point of
+`suede-graph-flo-xr` refuses three specific neighbors: bulk independent work goes
+to a separate private worker-fleet pass, reviewing or grading an existing diff
+goes to `suede-code`, and CI and branch-protection wiring goes to
+`suede-ci-gate`. Read that as a routing table written from the point of
 view of whichever skill is most likely to steal the request.
 
 The generic version is worthless. "NOT FOR: other tasks" tells the router
@@ -73,19 +73,18 @@ description in a coherent pack is relevant to something. The question is "is thi
 skill more relevant than that one," and only a named comparison answers it.
 
 Two rules make the clause work. Name the sibling, not the category: `use
-suede-code-review` routes, "use a review tool" does not. Name the condition, not
-the vibe: "findings-only review with no code change" is testable against a
+suede-code` routes, "use a review tool" does not. Name the condition, not
+the vibe: "reviewing or grading an existing diff" is testable against a
 request string, "smaller jobs" is not. And write it from the near-miss. Nobody
 confuses a shipping pipeline with a rights audit. The dangerous neighbor is
 always the one that does almost the same thing.
 
-The cleanest example in the repo is a mutual pair. `amazon-returns-recovery`
-declines bank chargebacks, marketplace seller claims, and subscriptions billed
-outside Amazon, and hands them to `subscription-recovery`. `subscription-recovery`
-declines Amazon returns, restocking fees, and Amazon-billed Prime Video Channels,
-Audible, and Kindle Unlimited, and hands them back. Two skills that would
-otherwise fight over every refund request instead partition the space by billing
-relationship. Neither description needs to be cleverer than the other, because
+The cleanest example in the repo is a mutual pair. `suede-pricing` declines
+in-product upgrade screens and hands them to `suede-paywalls`. `suede-paywalls`
+declines public pricing pages and tier architecture and hands them back. Two
+skills that would otherwise fight over every pricing request instead partition
+the space by surface: the plan and the public page on one side, the screen
+inside the product on the other. Neither description needs to be cleverer than the other, because
 the boundary is written down on both sides.
 
 ## What overlap actually costs you
@@ -137,7 +136,7 @@ personal `~/.claude/skills/` directory contains `suede-debug`, `suede-verify`,
 `suede-plan`, `suede-spec`, and about fifteen more that are not in the public
 repo. Their boundaries are real to me: `suede-debug` declines proving a finished
 feature works and sends it to `suede-verify`, and declines reviewing a diff for
-quality and sends it to `suede-code-review`. Two of those three exist for me. One
+quality and sends it to `suede-code`. Two of those three exist for me. One
 of them exists for you.
 
 So `scripts/validate-skill-pack.mjs` lints the estate. It parses every `NOT FOR`
@@ -169,7 +168,7 @@ demonstrates itself by finding a real bug in the pack's release gate.
 
 ## A pack is a namespace
 
-Ten skills have forty-five possible pairwise collisions. Seventy-six have more
+Ten skills have forty-five possible pairwise collisions. Sixty-three have more
 than two thousand six hundred. You cannot write your way out of that with better
 positive descriptions, because none of the descriptions are inaccurate. They are
 all true. Truth about what a skill does says nothing about whether it should

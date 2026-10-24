@@ -78,7 +78,7 @@ Highest-impact changes that take under 1 hour:
 - {issue 1}
 - {issue 2}
 
-**Keyword density (Google Play only):** {X}% (target: 2-3%)
+**Core terms in description (Google Play only):** {terms found and where; stuffing: yes/no}
 **Top keywords found:** {keyword1} (Xn), {keyword2} (Xn), ...
 **Missing high-value keywords:** {keyword1}, {keyword2}, ...
 

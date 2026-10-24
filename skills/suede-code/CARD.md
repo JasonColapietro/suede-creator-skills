@@ -7,7 +7,7 @@ Release record for the `suede-code` skill, following the NVIDIA skill-card templ
 
 ## Description
 
-Suede AI combined code review and ship grade in one pass: findings with file:line evidence plus an A-F lane grade, Instant-F security triggers, OWASP checks, a deploy-safety gate, and fix briefs.
+Suede AI code review and A-F ship grade for a diff, PR, branch, or commit range: findings ranked P0-P3 with file:line evidence and a fix path, an A-F grade across seven lanes with Instant-F security triggers and surface grade caps, OWASP 2025 checks, a deploy-safety gate, a commit-dirt scan, and fix briefs.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.2; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
@@ -23,9 +23,9 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when asked to review this, grade this, security-check this, is this safe to ship, or check this PR before merge: whenever the caller wants both what is wrong and whether it ships. Runs only when explicitly invoked; never auto-fires on a diff, save, or commit.
+Use when asked to review this, grade this, find the bugs before merge, security-check this, is this safe to ship, give it a letter, or should this merge. Runs only when explicitly invoked; never auto-fires on a diff, save, or commit.
 
-Out of scope — findings only with accessibility and SEO lanes (use suede-code-review); the letter grade alone (use suede-code-grader); making CI enforce the verdict on merge (use suede-ci-gate); LLM, RAG, or agent behavior coverage (use suede-ai-eval).
+Out of scope — making CI enforce the verdict on every merge (use suede-ci-gate); LLM, RAG, or agent behavior coverage (use suede-ai-eval); searching competing plans and building a multi-file change (use suede-graph-flo-xr); fixes that need coordinated parallel lanes (use suede-agent-teams).
 
 ## Deployment Geography
 
@@ -34,7 +34,7 @@ Global. The skill is a prompt-and-script package that runs locally inside the in
 ## Requirements / Dependencies
 
 - A Claude Code or Codex CLI session with the `suede-skills` plugin installed (install options: <https://skills.suedeai.ai/>).
-- Bundled files loaded relative to this directory: `agents/` (1 file), `references/` (2 files).
+- Bundled files loaded relative to this directory: `agents/` (1 file), `scripts/` (1 file), `references/` (7 files).
 - Credentials: none are bundled or required by the skill files. Any tool or API credentials come from the host session; never paste credentials into skill files, prompts, or outputs.
 
 ## Known Risks and Mitigations
@@ -44,10 +44,10 @@ Global. The skill is a prompt-and-script package that runs locally inside the in
 
 From "Boundaries":
 
-- Preserve user and other-agent WIP. Do not stage, revert, or rewrite unrelated files.
-- Do not invent tests, screenshots, live checks, deploy status, or gate results you did not run.
-- Never auto-apply a fix to auth, payment, or data-migration code without explicit user confirmation; P0/P1 fixes are presented as briefs first.
-- Do not block on style preferences that a formatter, the type checker, or a documented project rule already governs, and do not raise a grade for effort or for CI that never exercised the changed behavior.
+- Preserve user and other-agent WIP. Never stage, revert, or rewrite unrelated files. Apply fixes only under Fix Mode.
+- Never invent tests, screenshots, live checks, deploy status, or gate results.
+- Never auto-apply fixes to auth, payment, or migration code without confirmation.
+- A style choice no rule, formatter, or real cost governs is not a finding.
 
 ## References
 
@@ -57,7 +57,7 @@ From "Boundaries":
 
 ## Skill Output
 
-Structured Markdown returned in the agent's response, shaped by the output contract defined in the skill body: "Output Shape". The skill publishes, posts, and sends nothing without the user's explicit authorization; delivery decisions stay with the user.
+Structured Markdown returned in the agent's response, shaped by the output contract defined in the skill body: "Output". The skill publishes, posts, and sends nothing without the user's explicit authorization; delivery decisions stay with the user.
 
 ## Skill Version
 

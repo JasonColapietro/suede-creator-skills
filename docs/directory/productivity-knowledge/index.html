@@ -10,7 +10,7 @@
     <link rel="canonical" href="https://skills.suedeai.ai/directory/productivity-knowledge/">
     <link rel="icon" href="../../assets/favicon-64.png" type="image/png">
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Suede Skills Directory">
+    <meta property="og:site_name" content="Suede AI Skills Directory">
     <meta property="og:title" content="Productivity and Knowledge Work Skills for Claude and Codex">
     <meta property="og:description" content="Productivity skills for Claude Code and Codex: email, calendars, notes, workspace apps, project tracking, decision frameworks and research help.">
     <meta property="og:url" content="https://skills.suedeai.ai/directory/productivity-knowledge/">
@@ -18,6 +18,7 @@
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@AISUEDE">
     <meta name="twitter:title" content="Productivity and Knowledge Work Skills for Claude and Codex">
     <meta name="twitter:description" content="Productivity skills for Claude Code and Codex: email, calendars, notes, workspace apps, project tracking, decision frameworks and research help.">
     <meta name="twitter:image" content="https://skills.suedeai.ai/assets/social/directory-card.png">
@@ -29,9 +30,18 @@
         "name": "Productivity and Knowledge Work Skills for Claude and Codex",
         "description": "Productivity skills for Claude Code and Codex: email, calendars, notes, workspace apps, project tracking, decision frameworks and research help.",
         "url": "https://skills.suedeai.ai/directory/productivity-knowledge/",
-        "dateModified": "2026-10-22",
+        "dateModified": "2026-10-24",
         "isPartOf": {
-          "@id": "https://skills.suedeai.ai/directory/#directory"
+          "@type": "CollectionPage",
+          "@id": "https://skills.suedeai.ai/directory/#directory",
+          "name": "Suede AI Skills Directory",
+          "url": "https://skills.suedeai.ai/directory/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "@id": "https://suedeai.ai/#organization",
+          "name": "Suede AI",
+          "url": "https://suedeai.ai"
         },
         "breadcrumb": {
           "@id": "https://skills.suedeai.ai/directory/productivity-knowledge/#breadcrumb"
@@ -270,7 +280,7 @@
           <a href="../../">Home</a>
           <a href="../">Directory</a>
           <a href="../methodology/">How listing works</a>
-          <a href="../../skills/">Suede skills</a>
+          <a href="../../skills/">Suede AI skills</a>
           <a href="../../blog/">Blog</a>
           <a href="../submit/" class="nav-cta">List your skill</a>
         </div>
@@ -282,6 +292,7 @@
       <h1>Productivity and Knowledge Work <span class="h1-sub">agent skills</span></h1>
       <nav class="crumbs" aria-label="Breadcrumb"><a href="../">Directory</a> <span class="crumb-sep" aria-hidden="true">/</span> <span aria-current="page">Productivity and Knowledge Work</span></nav>
       <p class="lead">Skills for everyday knowledge work: email, calendars, notes, workspace apps, project tracking, planning and research assistance. They connect an agent to the tools a team already uses and give it a consistent way to work inside them.</p>
+      <p class="answer"><b>Highest-scoring productivity skills</b> in the October 22, 2026 snapshot: <a href="../zeropointrepo/youtube-skills/transcriptapi/">transcriptapi</a> from ZeroPointRepo/youtube-skills (90/100), <a href="../tronghieu/agent-skills/critical-thinking/">critical-thinking</a> from tronghieu/agent-skills (90/100) and <a href="../activeloopai/hivemind/hivemind-goals/">hivemind-goals</a> from activeloopai/hivemind (85/100). Scores come from the <a href="../methodology/">Suede Skill Check</a>.</p>
       <ul class="stat-row" aria-label="Category size">
         <li><b>213</b> listed skills</li>
         <li><b>35</b> repositories</li>
@@ -529,6 +540,7 @@
         <p>Thinking and planning skills are plain Markdown with no scripts, so they are the quickest to try and the easiest to adapt to your own process.</p>
         <p>Some skills work through an MCP server. When SKILL.md mentions one, the Before you install panel says so; read SKILL.md for the server to set up and authorize.</p>
       </section>
+
       <section class="panel" aria-labelledby="picks-title">
         <h2 id="picks-title">Where to start</h2>
         <div class="links">
@@ -539,6 +551,21 @@
           <a class="link-row" href="../zeropointrepo/youtube-skills/captions/"><b>captions</b><span>Fetches timestamped caption data from any YouTube video, for reading, quoting, translating, accessibility, content… From ZeroPointRepo/youtube-skills, cited by 4 curated lists.</span></a>
         </div>
       </section>
+      <aside class="panel svc-cta" aria-labelledby="svc-title" data-services-cta="category">
+        <h2 class="svc-kicker" id="svc-title">From Suede AI, the publisher of this directory</h2>
+        <div class="svc-cards">
+          <div class="svc-card svc-lead" data-offer="agents">
+            <h3>Turn these skills into a running workflow</h3>
+            <p>Agent Studio from Suede AI connects agents across your business systems so work moves from intake to delivery.</p>
+            <p><a class="button" href="https://suedeai.app/?utm_source=skills.suedeai.ai&amp;utm_medium=directory&amp;utm_campaign=category-agent-studio&amp;utm_content=b-from-skills-to-workflows" data-cta="category-agent-studio:b-from-skills-to-workflows" target="_blank" rel="noopener">See Agent Studio</a></p>
+          </div>
+          <div class="svc-card" data-offer="search">
+            <h3>Get your business cited in AI answers and ranked in Google</h3>
+            <p>Suede AI runs AEO, GEO and SEO programs for businesses: technical audits, structured data, entity work and content built to be quoted by ChatGPT, Claude, Perplexity and Google AI Overviews.</p>
+            <p><a class="button secondary" href="https://suedeai.agency/?utm_source=skills.suedeai.ai&amp;utm_medium=directory&amp;utm_campaign=directory-services&amp;utm_content=category-productivity-knowledge" data-cta="search" target="_blank" rel="noopener">See AEO and SEO services</a></p>
+          </div>
+        </div>
+      </aside>
       <section aria-labelledby="featured-title">
         <h2 id="featured-title">Featured productivity skills</h2>
         <div class="dir-cards">
@@ -709,7 +736,8 @@
           </div>
         </div>
       </div>
-    </footer>
+    <div class="trendshift-recognition" style="width:250px;max-width:100%;margin:24px auto;text-align:center"><p style="margin:0 0 8px;font-size:13px">Suede Creator Skills on Trendshift</p><a href="https://trendshift.io/repositories/82031?utm_source=trendshift-badge&amp;utm_medium=badge&amp;utm_campaign=badge-trendshift-82031" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/82031/daily?language=Python" alt="JasonColapietro%2Fsuede-creator-skills | Trendshift" width="250" height="55" loading="lazy" style="display:block;max-width:100%;height:auto"/></a></div>
+</footer>
   <script>
   // Mobile nav disclosure. The markup ships <details open> so a no-JS visit
   // still reaches every link; this collapses it at mobile widths only and

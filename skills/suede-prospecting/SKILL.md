@@ -1,13 +1,13 @@
 ---
 name: suede-prospecting
-description: "Suede-owned prospecting and qualification discipline. Use when defining an ICP, sourcing and enriching a bounded lead list, finding early adopters or design partners, scoring account fit, or documenting disqualification evidence. NOT FOR: sending outreach (use suede-cold-email), changing CRM routing (use suede-revops), or profiling competitors instead of prospects (use suede-competitor-profiling)."
+description: "Suede AI prospecting and qualification: defines the ICP, then builds a bounded, source-backed lead sheet across four branches (B2B SaaS, general B2B, local business, and early demand signals from forums, reviews, and public issues), using licensed data (Apollo, ZoomInfo, Clay, HubSpot Breeze Intelligence, Sales Navigator for manual research) with fit scores, disqualification evidence, source and date per contact, and CAN-SPAM, GDPR, PECR, and CASL checks before handoff. Use when defining an ICP, sourcing and enriching a lead list, finding early adopters or design partners, scoring account fit, or documenting disqualification evidence. NOT FOR: sending outreach (use suede-cold-email), changing CRM routing or scoring (use suede-revops), or profiling competitors instead of prospects (use suede-competitor-profiling)."
 metadata:
-  version: 1.1.0
+  version: 1.2.0
 ---
 
 # Suede Prospecting
 
-Suede Prospecting turns an approved ICP into a source-backed, scored lead sheet
+Suede AI Prospecting turns an approved ICP into a source-backed, scored lead sheet
 across B2B SaaS, general B2B, local business, and early demand-signal motions.
 Every candidate carries qualification evidence, disqualification logic, and a
 compliance-aware handoff before outreach begins.
@@ -144,7 +144,7 @@ These apply to every branch. **Read first, every engagement.**
 4. **GDPR / CAN-SPAM / CASL aware.** Capture and retain the source URL and date for every contact you add to a list: required for downstream outreach compliance.
 5. **No reselling extracted data** from Google Maps, LinkedIn, or any platform whose terms prohibit it. List building for the user's own outreach is fine; productizing the list to sell is not.
 6. **Rate limit yourself.** Even on public sources, space requests. Don't fingerprint as a bot.
-7. **No breached, leaked, or unprovenanced data.** Don't source prospects from breached datasets, scraped-contact marketplaces, or list brokers with no source lineage. Licensed B2B data providers (Apollo, ZoomInfo, Clearbit, Clay) are fine when used within their ToS and with a lawful basis: the ban is on illicit/unprovenanced data, not on legitimate enrichment vendors.
+7. **No breached, leaked, or unprovenanced data.** Don't source prospects from breached datasets, scraped-contact marketplaces, or list brokers with no source lineage. Licensed B2B data providers (Apollo, ZoomInfo, Clay, HubSpot Breeze Intelligence) are fine when used within their ToS and with a lawful basis: the ban is on illicit/unprovenanced data, not on legitimate enrichment vendors.
 8. **Never target or infer sensitive traits.** Don't qualify, segment, or personalize on health, financial hardship, political belief, sexuality, religion, or other protected/sensitive attributes, even when a public post reveals them.
 
 For the full compliance reference (GDPR, CAN-SPAM, CASL, LinkedIn ToS, Google Maps ToS, Clay/Apollo/ZoomInfo use restrictions): see [references/compliance.md](references/compliance.md).
@@ -179,7 +179,7 @@ freshness, export rights, and cost before using one. Full breakdown in
 |------------------------------|------------|-------------------|
 | **Apollo** | B2B / SaaS firmographic + contact discovery | Freshness, export terms, email validation |
 | **Clay** | Multi-source enrichment, waterfall lookups, custom scoring | Credit cost, providers, field provenance |
-| **Clearbit** | Email-to-company and company enrichment | Current product access and coverage |
+| **HubSpot Breeze Intelligence** (formerly Clearbit) | Company enrichment inside HubSpot | HubSpot tier, credits, coverage |
 | **ZoomInfo** | Enterprise B2B contact + intent data | License, export rights, signal freshness |
 | **Hunter or Snov** | Email pattern discovery and verification | Verification status and lawful basis |
 | **Truelist** | Email deliverability validation before outreach | Result meanings and current API limits |

@@ -136,45 +136,37 @@ announcement, including a soft one.
 
 The sharpest example in the pack does not touch a repo at all.
 
-`amazon-returns-recovery` applies a contract-negotiation procedure to account
-reviews: gather refund evidence, confirm the requested action with the account
-owner, and report the support response without treating a promise as a posted
-refund. Its public reference uses synthetic scenarios. Personal transaction
-details and support transcripts stay in the account owner's private session.
+`suede-rights-passport` applies the review procedure to a creator's folder
+instead of a diff. In audit mode it reads what the creator supplied, marks each
+ownership, split, sample, and license fact as confirmed or unknown in an
+evidence table, and turns every open gap into a question for the creator. In
+package mode it hashes the assets, writes a normalized manifest, and runs a
+bundled validator over the result.
 
-Notice what carried over. Not domain knowledge about Amazon. The procedure
-knew nothing about restocking fees before it went looking. What carried over
-was the shape: read the evidence first, itemize before arguing, build the case
-from facts you can point at, ask for one specific outcome, confirm the result
-in writing. That is the same shape as a code review, a release gate, and an SEO
-audit. A procedure that works outside its home domain is evidence that the
-procedure, not the domain knowledge, was doing the work.
-
-`subscription-recovery` is the generalization, pointed at App Store, Google
-Play, PayPal, bank statements, and direct-bill services. It exists because
-somebody noticed the discipline had nothing to do with Amazon.
+Notice what carried over. Not domain knowledge about music rights. What carried
+over was the shape: read the evidence first, itemize before concluding, build
+the record from facts you can point at, ask for one specific missing document,
+and report what is still open. That is the same shape as a code review, a
+release gate, and an SEO audit. A procedure that works outside its home domain
+is evidence that the procedure, not the domain knowledge, was doing the work.
 
 ## Safety, stated plainly
 
-Both recovery skills draw the same line, and it is worth reading as written
-rather than paraphrased. Read-only discovery first. Report the findings as a
-plain list. Stop. Do not open the dispute chat yet. Confirmation before any
-cancellation or refund contact, one item at a time. The skill describes itself
-as a metal detector, not an autopilot.
+The skill draws its lines in writing, and they are worth reading as written
+rather than paraphrased. A status moves to confirmed only on evidence the user
+supplied. Every open gap ships as a question in `missing-info-report.md`, never
+as a guess. "Structural validity is not a rights clearance": a validator PASS
+means the package is well formed, not that anyone owns anything.
 
-Truthfulness is a hard constraint, not a preference. State only true facts:
-order number, item, price, fee amount. Do not invent a prior contact attempt or
-a return reason that did not happen, because the ask is reasonable on its own
-and does not need embellishment to land. Accept one polite counteroffer round
-at most, then report back rather than escalating with anything untrue. Some
-fees are legitimate, some subscriptions are still wanted, and the skill
-instructs you to say so when a finding looks earned rather than mistaken.
+Truthfulness is a hard constraint, not a preference. The skill may not say
+anyone owns, controls, or has cleared a work without explicit proof, and may not
+call the package a legal contract. Uncertainty gets the words `unknown`,
+`unconfirmed`, or `needs creator confirmation` instead of a confident sentence.
 
-Credentials are never handled. The stretch goal for automated statement parsing
-is explicitly deferred because no validated path exists that avoids touching
-credentials, which conflicts with the skill's own rules. A capability was left
-unbuilt rather than built unsafely, and that decision is written down in the
-skill where the next person will read it.
+Secrets are never requested. The skill does not ask for private keys, seed
+phrases, account secrets, or payment credentials, and it uploads nothing and
+calls no live service unless the user explicitly asks. The package is built on
+the creator's own machine and stays there until they decide otherwise.
 
 ## The reframe
 

@@ -102,6 +102,71 @@
         "Does not invent stats or pad the tactic count"
       ],
       "files": []
+    },
+    {
+      "id": 8,
+      "prompt": "Analyze the last 30 posts on our Instagram account and tell me what converts versus what only gets views.",
+      "expected_output": "Should verify the visible handle and authorized evidence source, collect up to 30 recent posts, separate public metrics from owned Insights and attributed business data, compare within like formats, and classify posts as converts, assists, attention-only, or unknown with post IDs. Must not infer saves, shares, retention, leads, or sales from public view counts, and should name the evidence needed to resolve unknowns.",
+      "assertions": [
+        "Verifies identity and evidence access before analysis",
+        "Uses a bounded recent cohort of up to 30 posts",
+        "Separates observed-public, observed-owned, computed, inferred, and unknown evidence",
+        "Classifies converts, assists, attention-only, and unknown",
+        "Does not invent private metrics",
+        "Cites post IDs for each recommendation"
+      ],
+      "files": []
+    },
+    {
+      "id": 9,
+      "prompt": "Give me the 15 best hashtags and the exact best time to post on Instagram every day.",
+      "expected_output": "Should state that Instagram now caps posts and Reels at 5 hashtags, decline to invent a universal best time, read the account's own follower-active windows, propose 0 to 3 topic hashtags plus a search phrase for the first caption line and on-screen text, and design a comparable timing test with a decision metric.",
+      "assertions": [
+        "Notes the 5-hashtag cap",
+        "Rejects universal posting-time claims",
+        "Uses account Insights or asks for them",
+        "Moves discovery effort to search phrases in caption and on-screen text",
+        "Designs a timing test with a decision metric"
+      ],
+      "files": []
+    },
+    {
+      "id": 10,
+      "prompt": "Run the daily content workflow for our account and post whatever will go viral.",
+      "expected_output": "Should refresh the Account Evidence Pack, queue, and prior-post readback; score and produce 1 to 3 approval-ready candidates with distinct audience jobs; reject the guaranteed-viral framing; and stop before publishing until exact media, copy, CTA, timing, identity, and tags are approved. Publishing, if approved, needs a live permalink readback.",
+      "assertions": [
+        "Refreshes evidence before creating content",
+        "Produces 1 to 3 scored candidates",
+        "Does not promise virality",
+        "Keeps publishing behind exact approval",
+        "Requires live readback after any publish"
+      ],
+      "files": []
+    },
+    {
+      "id": 11,
+      "prompt": "Schedule this approved Reel, then auto-like and comment on 100 niche posts to boost it.",
+      "expected_output": "Should separate the potentially authorized scheduling step from engagement automation, verify exact content and visible identity before scheduling through an approved surface, refuse auto-liking and mass commenting, and require live permalink readback before calling the Reel published.",
+      "assertions": [
+        "Separates publishing from engagement automation",
+        "Refuses auto-liking and mass commenting",
+        "Verifies exact content and identity",
+        "Requires live readback"
+      ],
+      "files": []
+    },
+    {
+      "id": 12,
+      "prompt": "How do I get our TikToks and Reels to show up when people search for 'how to fix a leaky faucet'?",
+      "expected_output": "Should produce a social search brief: record platform autocomplete suggestions with a date, check what currently ranks and its gap, place the phrase in spoken audio in the first seconds, on-screen text, and the first caption line, add alt text where supported, note that public Instagram professional-account posts can appear in Google, keep hashtags to a few exact labels, and measure search-sourced views where the platform reports traffic source.",
+      "assertions": [
+        "Produces a social search brief",
+        "Places the phrase in spoken, on-screen, and caption-first-line positions",
+        "Notes Instagram Google indexing for professional accounts",
+        "Treats hashtags as labels, not reach",
+        "Measures search-sourced views"
+      ],
+      "files": []
     }
   ]
 }

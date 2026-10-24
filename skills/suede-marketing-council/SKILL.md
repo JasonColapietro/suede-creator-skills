@@ -1,159 +1,148 @@
 ---
 name: suede-marketing-council
-description: "Suede-affiliated marketing deliberation that applies documented public frameworks through clearly labeled simulated advisors, surfaces disagreements, and synthesizes a decision. Use when the user wants multiple expert lenses on one bounded marketing question. NOT FOR: factual claims about a living person's private views, primary research (use suede-customer-research), or executing the selected tactic (route to the relevant public Suede skill)."
+description: "Suede AI marketing council: twelve role-based simulated advisors (Positioning Strategist, Offer Strategist, Search Visibility Strategist, Brand Reach Scientist, and others) apply named Suede frameworks to one bounded marketing decision, map the disagreements and the evidence that would settle each, and return a chair's synthesis with next steps and skill handoffs. Use when the user wants expert lenses, a simulated advisory board, a pressure test of a contested or irreversible bet, or a skeptic's read before committing. NOT FOR: impersonating or quoting real people, primary research (use suede-customer-research), writing the plan itself (use suede-marketing-plan), or executing the chosen tactic (route to the relevant Suede skill)."
 metadata:
-  version: 1.0.0
+  version: 2.0.0
 ---
 
 # Suede Marketing Council
 
-Suede convenes a **clearly labeled simulated council** that applies documented public frameworks to one bounded marketing question. Its value is disciplined disagreement: conflicting lenses expose the trade-offs, evidence gaps, and tests the user should consider before choosing a direction.
+The council is a bench of role-based advisors, each built around a distinct marketing lens and a set of Suede-named frameworks. Its value is disciplined disagreement: conflicting lenses expose the trade-offs, evidence gaps, and tests to run before choosing a direction.
 
-**This is persona simulation, not the real people.** Every take must be grounded in what the advisor actually wrote or said (see Grounding Rules). Label the output as simulation.
+Advisors are roles, not people. Never present a take as the view of a real marketer, author, or executive.
 
 ## Before Starting
 
 Read `.agents/product-marketing.md` first if it exists and ask only for what it does not cover; see `suede-product-marketing` for path fallbacks.
 
-Then clarify (ask only for what's missing):
-1. **The question**: What decision or work product is the council reviewing? (a strategy, a landing page, a pricing change, a launch plan, a rebrand, an ad account)
-2. **The stakes**: What happens if this goes well or badly? What's already been tried?
-3. **Session mode**: quick take, council session, or full council (see below). Default: council session.
+Then confirm, asking only for what is missing:
+1. **The question.** What decision or work product is under review (strategy, landing page, pricing change, launch, rebrand, channel bet)?
+2. **The stakes.** What happens if it goes well or badly, and what has already been tried?
+3. **Mode.** Quick take, council session, or full council. Default: council session.
+
+If the user names a real marketer ("what would [person] say?"), do not impersonate them. Seat the role whose lens is closest to what they are after, say so in one line, and continue.
 
 ## Session Modes
 
 | Mode | Seats | When |
 |------|-------|------|
-| **Quick take** | 1 advisor | "What would Ogilvy say about this headline?": a single named advisor |
-| **Council session** (default) | 3–5 advisors | A real decision that benefits from conflicting lenses |
-| **Full council** | All 12 | Expect a long output. Offer this only when the decision is irreversible, commits spend or headcount the user has named as material, or the user says they cannot revisit it for at least a quarter |
+| **Quick take** | 1 advisor | A narrow review: one headline, one offer, one channel choice |
+| **Council session** (default) | 3-5 advisors | A real decision that benefits from conflicting lenses |
+| **Full council** | All 12 | Only when the decision is irreversible, commits spend or headcount the user calls material, or cannot be revisited for a quarter |
 
 ## The Bench
 
-Twelve advisors, chosen so their lenses collide. Full dossiers live in `references/advisors/`: load only the seated advisors' files.
+Load only the seated advisors' files from `references/advisors/`.
 
 | Advisor | Lens | File |
 |---------|------|------|
-| **Seth Godin** | Remarkability, permission, smallest viable audience | [seth-godin.md](references/advisors/seth-godin.md) |
-| **David Ogilvy** | Research-driven brand advertising with direct-response discipline | [david-ogilvy.md](references/advisors/david-ogilvy.md) |
-| **Eugene Schwartz** | Channel existing mass desire; awareness & sophistication stages | [eugene-schwartz.md](references/advisors/eugene-schwartz.md) |
-| **Claude Hopkins** | Scientific advertising: test everything, reason-why copy | [claude-hopkins.md](references/advisors/claude-hopkins.md) |
-| **Gary Halbert** | The starving crowd: market and list before product and copy | [gary-halbert.md](references/advisors/gary-halbert.md) |
-| **Russell Brunson** | Funnels, value ladders, hook-story-offer | [russell-brunson.md](references/advisors/russell-brunson.md) |
-| **Alex Hormozi** | Offer construction and the value equation; volume and leverage | [alex-hormozi.md](references/advisors/alex-hormozi.md) |
-| **April Dunford** | Positioning against real competitive alternatives | [april-dunford.md](references/advisors/april-dunford.md) |
-| **Rory Sutherland** | Behavioral science and psycho-logic; the opposite of a good idea can also be a good idea | [rory-sutherland.md](references/advisors/rory-sutherland.md) |
-| **Byron Sharp** | Evidence-based brand science: mental & physical availability, reach over loyalty | [byron-sharp.md](references/advisors/byron-sharp.md) |
-| **Ann Handley** | Content and writing craft; slower, braver marketing | [ann-handley.md](references/advisors/ann-handley.md) |
-| **Gary Vaynerchuk** | Attention arbitrage: be native to underpriced channels at volume | [gary-vaynerchuk.md](references/advisors/gary-vaynerchuk.md) |
+| **Positioning Strategist** | Frame the product against the buyer's real alternatives | [positioning-strategist.md](references/advisors/positioning-strategist.md) |
+| **Offer Strategist** | Value levers, complete offers, acquisition volume | [offer-strategist.md](references/advisors/offer-strategist.md) |
+| **Demand Mapper** | Awareness ladder and claim fatigue; channel existing desire | [demand-mapper.md](references/advisors/demand-mapper.md) |
+| **Response Scientist** | Test before spend; specific, provable claims | [response-scientist.md](references/advisors/response-scientist.md) |
+| **Market Hunter** | Proven buyer hunger and list quality before copy | [market-hunter.md](references/advisors/market-hunter.md) |
+| **Funnel Architect** | Ascension paths, stop-believe-buy, watering holes | [funnel-architect.md](references/advisors/funnel-architect.md) |
+| **Brand Reach Scientist** | Memory reach and buying reach; penetration over loyalty | [brand-reach-scientist.md](references/advisors/brand-reach-scientist.md) |
+| **Behavioral Contrarian** | Change perception before reality; test the opposite | [behavioral-contrarian.md](references/advisors/behavioral-contrarian.md) |
+| **Audience Builder** | Core circle, permission, talk-worthy product | [audience-builder.md](references/advisors/audience-builder.md) |
+| **Editorial Director** | Writing craft, one reader, quality that compounds | [editorial-director.md](references/advisors/editorial-director.md) |
+| **Attention Trader** | Underpriced attention, native volume | [attention-trader.md](references/advisors/attention-trader.md) |
+| **Search Visibility Strategist** | Be the cited answer in search and AI assistants | [search-visibility-strategist.md](references/advisors/search-visibility-strategist.md) |
 
 ## Seating the Council
 
-For a council session, seat 3–5 advisors:
-
-1. **2–3 whose lens directly fits the question type** (table below).
-2. **Always seat at least one designated dissenter**: an advisor whose documented position conflicts with where the question is leaning. A council that agrees is a mirror, not a board.
-3. Honor explicit requests ("I want Hormozi and Godin on this").
+1. Seat 2-3 advisors whose lens fits the question type (table below).
+2. Seat at least one dissenter whose default position conflicts with where the question leans. A council that agrees is a mirror.
+3. Honor explicit seat requests.
+4. When buyers research before they buy (most B2B, SaaS, services, considered consumer purchases), consider the Search Visibility Strategist even if the question does not mention search.
 
 | Question type | Strong fits | Natural dissenters |
 |---------------|-------------|-------------------|
-| Positioning / messaging | Dunford, Godin, Schwartz | Sharp (differentiation skeptic) |
-| Offer / pricing | Hormozi, Halbert, Brunson | Sutherland (price ≠ value logic), Godin (race-to-the-bottom warning) |
-| Brand building / awareness | Sharp, Ogilvy, Sutherland | Hopkins, Halbert (show me the sales) |
-| Copy / creative review | Ogilvy, Schwartz, Halbert, Handley | Sutherland (test the illogical) |
-| Funnels / conversion path | Brunson, Hormozi, Hopkins | Godin (permission over pressure), Handley (you're churning trust) |
-| Content strategy | Handley, Godin, Vaynerchuk | Sharp (reach beats depth), Hopkins (where's the response?) |
-| Paid ads / media | Hopkins, Sharp, Vaynerchuk | Godin (interruption is a tax) |
-| Growth / scaling | Hormozi, Vaynerchuk, Sharp | Handley (quality erosion), Dunford (scaling a fuzzy position) |
-| Audience / channel choice | Vaynerchuk, Sharp, Halbert | Godin (smallest viable audience vs. mass reach) |
-| Launch strategy | Brunson, Godin, Halbert | Sharp (launches fade; availability compounds) |
+| Positioning / messaging | Positioning Strategist, Demand Mapper, Audience Builder | Brand Reach Scientist |
+| Offer / pricing | Offer Strategist, Market Hunter, Funnel Architect | Behavioral Contrarian, Audience Builder |
+| Brand / awareness | Brand Reach Scientist, Behavioral Contrarian, Editorial Director | Response Scientist, Market Hunter |
+| Copy / creative review | Demand Mapper, Response Scientist, Editorial Director | Behavioral Contrarian |
+| Funnel / conversion path | Funnel Architect, Offer Strategist, Response Scientist | Audience Builder, Editorial Director |
+| Content strategy | Editorial Director, Search Visibility Strategist, Attention Trader | Brand Reach Scientist, Response Scientist |
+| SEO / AI visibility | Search Visibility Strategist, Demand Mapper, Positioning Strategist | Attention Trader |
+| Paid media | Response Scientist, Brand Reach Scientist, Attention Trader | Audience Builder |
+| Growth / scaling | Offer Strategist, Attention Trader, Brand Reach Scientist | Editorial Director, Positioning Strategist |
+| Channel choice | Attention Trader, Search Visibility Strategist, Market Hunter | Audience Builder |
+| Launch | Funnel Architect, Audience Builder, Search Visibility Strategist | Brand Reach Scientist |
 
 ## Session Protocol
 
-1. **Load the seated advisors' dossiers** from `references/advisors/`.
-2. **Optional live research pass**: see below. Offer it when the question is specific enough that documented positions may not cover it, or the user wants citations.
-3. **Each advisor's take**: 2–4 paragraphs per advisor:
-   - Open with the advisor applying their *signature questions* to the user's case
-   - Apply their frameworks to the specifics (their dossier lists them): not generic advice with a name attached
-   - State their recommendation with the conviction they'd actually have
-   - Written in their voice per the dossier's voice notes, without fabricated quotes
-4. **The disagreement map**: the most valuable section. Identify 2-4 genuine conflicts between the takes, name the underlying trade-off each conflict represents (e.g., "Sharp vs. Godin here is really reach vs. resonance, which constraint binds *this* business?"), and say what evidence would settle each.
-5. **Synthesis**: a chair's summary: the recommendation that best fits *this* user's stage, category, and constraints; which advisor's warning to keep as a tripwire; and concrete next steps with skill handoffs (see Related Skills).
+1. **Load the seated dossiers.**
+2. **Evidence pass (optional, offered when the question is specific).** Gather facts the takes can stand on: the user's own metrics, competitor pages and prices, current search results and AI-assistant answers for the category's key questions, reviews and community threads. Cite each source with a link and date. Never invent data to fill a gap; mark it unknown.
+3. **Each advisor's take, 2-4 paragraphs.** Open with the advisor's signature questions applied to this case. Apply their named frameworks to the specifics; a take that would survive with the role name swapped is not a take. State the recommendation with conviction. Write in the dossier's voice.
+4. **Disagreement map.** The most valuable section. Name 2-4 genuine conflicts, the trade-off underneath each (for example, "reach vs. resonance: which constraint binds this business?"), and the evidence or test that would settle it.
+5. **Chair's synthesis.** The recommendation that fits this user's stage, category, and constraints; which advisor's warning to keep as a tripwire and the signal to watch; concrete next steps with skill handoffs.
 
-## Live Research Pass
+## Grounding Rules
 
-When the topic is specific (a niche, a channel shift, a current platform change) or the user wants sources, go beyond the dossiers: research what each seated advisor has actually said or written about this topic class, using whatever research surface is callable: an installed research or video-analysis skill, otherwise built-in web search for `[advisor name] + [topic]`. Prefer primary sources (their own books, blogs, newsletters, talks) over roundup articles.
-
-Fold findings into the takes with citations ("In a 2023 interview on X, Dunford argued…"). If research contradicts a dossier, trust the research and note the correction.
-
-## Grounding Rules (non-negotiable)
-
-- **Label the session as simulation** once, at the top: a line like *"Simulated council, each take is built from the advisor's published frameworks and positions, not their actual review."*
-- **No fabricated quotes.** Direct quotation only for lines verifiable in the dossier or research pass, with the source named. Otherwise paraphrase: "Hopkins's position in *Scientific Advertising* is…"
-- **No invented endorsements or condemnations.** An advisor can be simulated *applying their framework* to the user's product; never state or imply the real person has an opinion about the user's specific company.
-- **Living advisors get extra care.** Godin, Brunson, Hormozi, Dunford, Sutherland, Sharp, Handley, and Vaynerchuk are alive and active: their positions evolve; prefer the research pass for anything time-sensitive, and never simulate them commenting on named competitors or controversies.
-- **Disagree in substance, not caricature.** Each advisor's take must be the strongest version of their view applied to this case: no strawmen for the synthesis to knock down.
-- **If the dossier and the user's question don't overlap** (e.g., asking Hopkins about TikTok), say so in the take and reason by explicit analogy: "Hopkins never saw social feeds, but his sampling principle maps like this…" That path is for a channel or era gap where the underlying mechanism still transfers.
-- **"Outside my documented record on this" is a first-class verdict.** When the dossier holds no documented position on the *mechanism* at issue (not merely an unfamiliar channel or era) the take says exactly that as its Bottom line rather than extrapolating. The chair then either runs the Live Research Pass for that advisor or re-seats the chair (the same re-seat move as the agreeing-council anti-pattern). Never fill the gap by inference and never let a re-seat go unmentioned in the "Seated" line.
+- Label the output once, at the top: role-based simulated council, lenses not people.
+- No real-person attribution. Do not name, quote, or paraphrase real marketers as authorities, and do not imply any real person reviewed the user's work.
+- No fabricated evidence. Numbers, customer facts, and market claims come from the user, the evidence pass with sources, or are marked as assumptions.
+- Disagree in substance. Each take is the strongest version of its lens applied to this case; no strawmen for the chair to knock down.
+- When a lens has no position on the mechanism at issue, the take says "outside this lens" as its bottom line. The chair then re-seats or runs the evidence pass, and says so in the Seated line.
+- When a lens reaches across an era or channel gap (a direct-response lens on short video), reason by explicit analogy and say so.
 
 ## Output Format
 
 ```
-> Simulated council: each take is built from the advisor's published
-> frameworks and positions, not their actual review.
+> Role-based simulated council: each take applies one advisor role's
+> frameworks to your case. Lenses, not people.
 
 ## The question before the council
 [1-2 sentence restatement + what's at stake]
 
-## Seated: [Advisor A], [Advisor B], [Advisor C] ([mode])
-[One line on why this bench, including who was seated as the dissenter]
+## Seated: [Role A], [Role B], [Role C] ([mode])
+[One line on why this bench, naming the dissenter]
 
 ---
 
-### [Advisor A]: [their lens, 3-5 words]
+### [Role A]: [lens in 3-5 words]
 [2-4 paragraph take]
 **Bottom line:** [one sentence]
 
-### [Advisor B]: …
-…
+### [Role B]: ...
 
 ---
 
 ## Where the council disagrees
 1. **[Conflict]**: [A] says X because [framework]; [B] says Y because
-   [framework]. The real trade-off: [underlying tension]. What would
-   settle it: [evidence/test].
-2. …
+   [framework]. Underlying trade-off: [tension]. What would settle it:
+   [evidence or test].
 
 ## Chair's synthesis
 [Recommendation fitted to this user's stage and constraints]
 - **Do:** [2-4 concrete next steps]
-- **Tripwire:** [which advisor's warning to monitor, and the signal]
+- **Tripwire:** [which warning to monitor, and the signal]
 - **Execute with:** [skill handoffs]
 ```
 
 ## Adding a Custom Advisor
 
-Users can extend the bench ("add my own advisor"). Create a dossier following the structure in [references/advisor-template.md](references/advisor-template.md): the same fields as the built-in advisors (lens, frameworks, documented positions with sources, signature questions, best-for/blind spots, voice notes, key works). For non-famous advisors (the user's old boss, an internal exec), have the user supply the positions; do not invent them. Save to `.agents/advisors/<name>.md` in the user's project so it persists and never collides with repo updates.
+Users can add their own seat ("add my CFO", "add our best customer"). Follow [references/advisor-template.md](references/advisor-template.md). The user supplies the positions; never invent views for a real person. Save to `.agents/advisors/<name>.md` in the user's project so it survives skill updates.
 
 ## Anti-Patterns
 
-- **The agreeing council**: five takes that all bless the user's existing plan. Re-seat with a real dissenter.
-- **Name-flavored generic advice**: a take that would survive with the name swapped isn't a take; anchor each one in that advisor's specific frameworks and documented positions.
-- **Quote soup**: stitching famous one-liners together instead of applying the method behind them.
-- **Council for execution work**: the council decides direction; it doesn't write the landing page. Hand off to the execution skill once direction is set.
-- **Twelve advisors on a headline**: match the bench size to the stakes.
+- **The agreeing council.** Five takes that bless the existing plan. Re-seat with a real dissenter.
+- **Role-flavored generic advice.** Anchor each take in that role's frameworks.
+- **Council for execution work.** The council sets direction; execution skills build the asset.
+- **Twelve seats on a headline.** Match bench size to stakes.
 
 ## Boundaries
 
-- Do not present a simulation as the real person's statement, endorsement, advice, or current opinion.
-- Do not fabricate quotes, sources, consensus, credentials, or live research.
+- Do not present a simulated take as any real person's statement, endorsement, or opinion.
+- Do not fabricate quotes, sources, data, consensus, or research.
 - Do not publish, contact anyone, spend money, or execute a recommendation without explicit authorization.
-- Do not let the simulated council decide legal, ethical, financial, or brand-risk acceptance for the user.
+- Do not let the council decide legal, ethical, financial, or brand-risk acceptance for the user.
 
 ## Routing
 
-- Use `suede-product-marketing` for positioning and `suede-offers` or `suede-pricing` for the commercial package.
-- Use `suede-copy`, `suede-ads`, or `suede-ad-creative` to execute an approved direction.
-- Use `suede-content-strategy`, `suede-social`, or `suede-marketing-psychology` for channel and behavior work.
-- Use `suede-ab-testing` when disagreement should become a measurable experiment.
+- `suede-marketing-plan` turns the chosen direction into a sequenced plan or a scored tactic shortlist.
+- `suede-product-marketing` for positioning documents; `suede-offers` or `suede-pricing` for the commercial package.
+- `suede-copy`, `suede-ads`, or `suede-ad-creative` to execute approved creative direction.
+- `suede-ai-seo`, `suede-seo-audit`, or `suede-competitors` when the synthesis lands on search and AI visibility.
+- `suede-ab-testing` when a disagreement should become a measured experiment.

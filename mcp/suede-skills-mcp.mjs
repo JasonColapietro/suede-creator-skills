@@ -7,7 +7,8 @@ const PROTOCOL_VERSION = "2025-06-18";
 const SUPPORTED_PROTOCOL_VERSIONS = new Set([PROTOCOL_VERSION, "2025-03-26", "2024-11-05"]);
 const SPECIALTY_KEYS = ["ship", "craft", "found", "demand", "revenue", "position"];
 // Profiles come in two flavours now. The area profiles (workflow/creator/
-// marketing/consumer) mirror the plugin bundles; .mcp.json registers a single
+// marketing) mirror the plugin bundles; `consumer` stays accepted as a legacy
+// alias of `workflow` after the consumer-recovery skills left the pack; .mcp.json registers a single
 // server on the default `all` profile, and these stay available to anyone
 // passing --profile by hand. The specialty profiles mirror how the pack is browsed, so a client
 // that wants only the revenue surface can register one server against it
@@ -15,11 +16,11 @@ const SPECIALTY_KEYS = ["ship", "craft", "found", "demand", "revenue", "position
 const VALID_PROFILES = new Set(["all", "workflow", "artist", "creator", "marketing", "consumer", ...SPECIALTY_KEYS]);
 const PROFILE_SPECIALTIES = Object.fromEntries(SPECIALTY_KEYS.map((key) => [key, [key]]));
 const PROFILE_AREAS = {
-  workflow: ["workflow", "consumer"],
+  workflow: ["workflow"],
   artist: ["artist", "creator"],
   creator: ["artist", "creator"],
   marketing: ["marketing"],
-  consumer: ["consumer"]
+  consumer: ["workflow"]
 };
 // Which plugin bundle installs a profile's skills. Kept explicit rather than
 // inferred from plugin.skills: several bundles list the same skill, and a
@@ -1079,7 +1080,7 @@ function getPrompt(name, args = {}) {
     };
   }
   if (name === "suede-code-grade") {
-    const graderRef = isSkillAvailable("suede-code-grader") ? "$suede-code-grader" : "the Suede code grade MCP template";
+    const graderRef = isSkillAvailable("suede-code") ? "$suede-code --grade-only" : "the Suede code grade MCP template";
     return {
       description: "Grade Suede code readiness, ship risk, verification gaps, and required upgrades.",
       messages: [
@@ -1092,14 +1093,13 @@ function getPrompt(name, args = {}) {
   }
   if (name === "suede-full-qa") {
     const teamRef = isSkillAvailable("suede-agent-teams") ? "$suede-agent-teams" : "the Suede QA checklist MCP template";
-    const gradeRef = isSkillAvailable("suede-code-grader") ? ", $suede-code-grader" : "";
-    const reviewRef = isSkillAvailable("suede-code-review") ? " and $suede-code-review" : "";
+    const codeRef = isSkillAvailable("suede-code") ? " and $suede-code" : "";
     return {
       description: "Run multi-lane Suede QA with no-missed quality gates.",
       messages: [
         {
           role: "user",
-          content: text(`Use ${teamRef}${gradeRef}${reviewRef} to QA ${boundedString(args.target, "this Suede change")} at ${boundedString(args.scope, "full")} depth. Cover no-missed quality gates, MCP validation, public skill validation, local plugin notes, SEO/AEO/AI EO docs, public site links, rendered visual QA, browser QA, A-F code grade, code/security, recovery controls, and live verification where applicable.`)
+          content: text(`Use ${teamRef}${codeRef} to QA ${boundedString(args.target, "this Suede change")} at ${boundedString(args.scope, "full")} depth. Cover no-missed quality gates, MCP validation, public skill validation, local plugin notes, SEO/AEO/AI EO docs, public site links, rendered visual QA, browser QA, A-F code grade, code/security, recovery controls, and live verification where applicable.`)
         }
       ]
     };

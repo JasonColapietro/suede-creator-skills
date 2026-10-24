@@ -147,3 +147,30 @@ test('external descriptions are plain text and concise, and every publisher rece
     assert.ok(index.includes(`https://github.com/${repo.split('/')[0]})`), repo);
   }
 });
+
+test('guides link drafts to their source and published pages to the site; service links stay outside listings', () => {
+  const index = pages.get('README.md');
+  assert.ok(inputs.guides.pages.length > 0);
+  for (const g of inputs.guides.pages) {
+    const href = g.status === 'published' ? `https://skills.suedeai.ai/${g.path}` : `../${g.source}`;
+    assert.ok(index.includes(`](${href})`), g.id);
+  }
+  const published = structuredClone(inputs);
+  published.guides.pages[0].status = 'published';
+  assert.ok(generateCatalog(published).get('README.md').includes(`](https://skills.suedeai.ai/${published.guides.pages[0].path})`));
+  for (const g of inputs.guides.pages.filter((x) => x.category)) {
+    assert.ok(pages.get(`categories/${g.category}.md`).includes('**Guide:**'), g.id);
+  }
+  assert.match(index, /## Add your badge[\s\S]*skills\.suedeai\.ai\/directory\/badge\.svg/);
+  for (const [name, body] of pages) {
+    for (const line of body.split('\n')) {
+      // Publisher descriptions are quoted as written; only the catalog's own prose is checked for em dashes.
+      if (line.includes('[Suede](')) {
+        assert.doesNotMatch(line, /suedeai\.(agency|app)/, `${name}: service link inside a listing`);
+        assert.match(line, /^- \*\*\d+\/100 · [ABCD]\*\* · \[[^\]]+\]\(\S+\): /, `${name}: listing separator`);
+      } else assert.doesNotMatch(line, /—/, `${name}: em dash in catalog prose`);
+    }
+  }
+  const plain = generateCatalog({ ...structuredClone(inputs), guides: { pages: [] }, ctas: { campaigns: [], lead_by_category: {} } }).get('README.md');
+  assert.doesNotMatch(plain, /## Guides|## Work with Suede AI|suedeai\.agency/);
+});

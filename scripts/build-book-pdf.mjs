@@ -271,14 +271,13 @@ const printHtml = `<!doctype html>
       <div class="colophon-row"><b>Author</b><span>Jason Colapietro, founder of Suede AI</span></div>
       <div class="colophon-row"><b>Edition</b><span>First, ${editionDate}</span></div>
       <div class="colophon-row"><b>Length</b><span>${totalWords.toLocaleString()} words across ${chapters.length} chapters, front matter, and ${appendices.length} appendices</span></div>
-      <div class="colophon-row"><b>Licence</b><span>Book prose is MIT. The adapted Graph of Thoughts workflow carries its upstream BSD terms.</span></div>
+      <div class="colophon-row"><b>License</b><span>Book prose is MIT. Adapted third-party material keeps its upstream license; see NOTICE.md.</span></div>
       <div class="colophon-row"><b>Read online</b><span>skills.suedeai.ai/book/</span></div>
       <div class="colophon-row"><b>Source</b><span>github.com/JasonColapietro/suede-creator-skills &rarr; book/</span></div>
       <br>
       <p>Every claim in this book points at a file in a public repository. Checking claims is most of what the book argues for, so the citations are paths rather than footnotes: open the repo and read the skill.</p>
       <p>The prose was written against the same anti-slop rules the pack enforces, which is why it contains no em dashes. Quoted repo material keeps its own punctuation.</p>
-      <p>Thirty-eight of the marketing and growth skills referenced here are adapted from <b>marketingskills</b> by Corey Haines under the MIT Licence. That project is the origin of the material and the credit belongs there.</p>
-      <p>The <b>suede-graph-flo-xr</b> operation graph and thought-state model adapt Graph of Thoughts by ETH Zurich: Maciej Besta et al. (2024), <i>Graph of Thoughts: Solving Elaborate Problems with Large Language Models</i>, AAAI 38(16), 17682-17690, doi:10.1609/aaai.v38i16.29720.</p>
+      <p>Some skills referenced here adapt MIT-licensed and BSD-licensed source material. The copyright and license notices ship in NOTICE.md at the root of the repository.</p>
     </section>
 
     <section class="contents">

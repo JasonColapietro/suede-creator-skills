@@ -9,7 +9,7 @@ suede-seo-audit Lane 5. Grade-drop rules and scoring live in SKILL.md.
 - [Retrievability lens](#retrievability-lens): which fields a model can quote,
   and whether the prose carries the structure the schema declares
 - [Minimum templates](#minimum-templates): Organization, SoftwareApplication,
-  FAQPage, Article
+  BreadcrumbList, FAQPage, Article
 
 ## Checklist
 
@@ -21,8 +21,10 @@ suede-seo-audit Lane 5. Grade-drop rules and scoring live in SKILL.md.
       meets that feature's current required properties
 - [ ] Schema type matches the page purpose:
   - Visible site-authored FAQ → `FAQPage` is valid schema.org vocabulary, but
-    Google generally shows FAQ rich results only for authoritative government
-    and health sites. Do not promise visibility.
+    Google ended FAQ rich results for all sites on May 7, 2026. Use it only to
+    mirror visible Q&A; never promise a search appearance.
+  - Step-by-step instructions → `HowTo` is valid vocabulary with no Google
+    rich result since 2023. Optional, never a fix for a ranking problem.
   - One user-submitted question with user-submitted answers → `QAPage`
   - Blog post or article → `Article` or `BlogPosting`
   - Product or app page → `SoftwareApplication` or `Product`
@@ -164,13 +166,33 @@ Structure claim: [@type] declares [N] [questions/steps/items] | visible headings
 {
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": "[Canonical organization URL]#organization",
   "name": "[Verified organization name]",
   "url": "[Canonical organization URL]"
 }
 ```
 
 Add `logo` and `sameAs` only when each URL is verified, public, and identifies
-the same organization. They are not filler fields.
+the same organization. They are not filler fields. Reuse the same `@id` on
+every page (as `publisher`, `worksFor`, `brand`) instead of redeclaring the
+organization with different values. Full Organization and Person templates and
+the off-site consistency sweep live in `suede-ai-seo`'s entity-graph
+reference.
+
+### BreadcrumbList
+
+Only when a visible breadcrumb trail exists on the page.
+
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "[Visible label]", "item": "[URL]" },
+    { "@type": "ListItem", "position": 2, "name": "[Visible label]", "item": "[URL]" }
+  ]
+}
+```
 
 ### SoftwareApplication
 
@@ -190,8 +212,8 @@ that an app is free because no public price was found.
 ### FAQPage
 
 Every `name` and `text` value must match the visible FAQ. This template
-expresses schema.org vocabulary; it does not imply Google FAQ rich-result
-eligibility for an ordinary commercial site.
+expresses schema.org vocabulary only; Google no longer shows FAQ rich results
+for any site.
 
 ```json
 {
@@ -217,7 +239,7 @@ eligibility for an ordinary commercial site.
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "[Visible headline]",
-  "author": { "@type": "Person", "name": "[Author name]" },
+  "author": { "@type": "Person", "@id": "[Author page URL]#person", "name": "[Author name]", "url": "[Author page URL]" },
   "datePublished": "[YYYY-MM-DD]",
   "dateModified": "[YYYY-MM-DD]"
 }

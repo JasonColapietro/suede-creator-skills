@@ -4,7 +4,7 @@
     {
       "id": 1,
       "prompt": "Help me set up our lead lifecycle stages. We're a B2B SaaS company selling to mid-market. We use HubSpot as our CRM and have marketing and sales teams that aren't aligned on lead definitions.",
-      "expected_output": "Should check for product-marketing.md first. Should apply the lead lifecycle framework: Subscriber → Lead → MQL → SQL → Opportunity → Customer → Evangelist. Should define clear criteria for each stage transition (what makes a Lead become an MQL, etc.). Should address the alignment issue between marketing and sales — define shared definitions and SLAs. Should recommend CRM implementation steps for HubSpot. Should include lead scoring setup. Should provide a handoff process between marketing and sales.",
+      "expected_output": "Should check for product-marketing.md first. Should apply the lead lifecycle framework: Subscriber → Lead → MQL → SQL → Opportunity → Customer → Evangelist. Should define clear criteria for each stage transition (what makes a Lead become an MQL, etc.). Should address the alignment issue between marketing and sales: define shared definitions and SLAs. Should recommend CRM implementation steps for HubSpot. Should include lead scoring setup. Should provide a handoff process between marketing and sales.",
       "assertions": [
         "Checks for product-marketing.md",
         "Applies lead lifecycle framework with all stages",
@@ -19,7 +19,7 @@
     {
       "id": 2,
       "prompt": "Set up lead scoring for us. We want to prioritize which leads sales should call first. We sell enterprise software ($50k+ ACV).",
-      "expected_output": "Should apply the lead scoring framework with three dimensions: explicit scoring (firmographics — company size, industry, title match), implicit scoring (behavioral — page visits, content downloads, email engagement), and negative scoring (unsubscribes, competitor emails, student emails). Should provide specific scoring criteria appropriate for enterprise ($50k+ ACV): weight firmographic signals heavily, include budget and authority signals. Should define score thresholds for MQL and SQL. Should recommend lead routing based on scores.",
+      "expected_output": "Should apply the lead scoring framework with three dimensions: explicit scoring (firmographics: company size, industry, title match), implicit scoring (behavioral: page visits, content downloads, email engagement), and negative scoring (unsubscribes, competitor emails, student emails). Should provide specific scoring criteria appropriate for enterprise ($50k+ ACV): weight firmographic signals heavily, include budget and authority signals. Should define score thresholds for MQL and SQL. Should recommend lead routing based on scores.",
       "assertions": [
         "Applies lead scoring with explicit, implicit, and negative dimensions",
         "Provides specific scoring criteria for enterprise",

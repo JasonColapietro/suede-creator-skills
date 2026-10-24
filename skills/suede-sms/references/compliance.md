@@ -29,6 +29,12 @@ The opt-in flow must capture all of:
 3. The disclosure showed frequency expectation, message and data rate notice, STOP/HELP instructions, terms link
 4. The agreement was electronically recorded with timestamp
 
+The FCC's 2023 "one-to-one" consent rule, which would have required consent
+to name a single seller, never took effect: the Eleventh Circuit vacated it on
+January 24, 2025 (Insurance Marketing Coalition v. FCC). Consent captured on a
+lead-generation or comparison site still has to be clear and specific to the
+seller texting, so name the brand in the disclosure.
+
 ### Opt-in disclosure template (compliant)
 
 ```
@@ -44,15 +50,35 @@ Place this **directly adjacent** to the phone number field and submit button. Do
 ### Quiet hours
 
 - **Federal**: 8am–9pm in the recipient's local time zone
-- **Stricter states**: Florida (8am–8pm), Oklahoma (8am–8pm), Washington (8am–8pm)
+- **Stricter states**: Florida (8am–8pm), Oklahoma (8am–8pm), Washington (8am–8pm); Texas brought marketing texts under its telephone solicitation law effective September 1, 2025 (SB 140). Verify every state in scope before launch.
 - **Carrier-recommended**: 9am–8pm recipient-local
 - **Practical default**: 9am–8pm recipient-local for safety
 
 Time zone is determined by area code, but area codes lie (people move). Major platforms (Klaviyo, Postscript, Attentive) handle this automatically; verify yours does.
 
+### Revocation of consent (FCC rule, effective April 11, 2025)
+
+- Consumers may revoke consent by **any reasonable means**. A reply of stop,
+  quit, end, revoke, opt out, cancel, or unsubscribe is a valid revocation as a
+  matter of law, and so is a clear free-text request.
+- Honor the revocation as soon as practical and **no later than 10 business
+  days** after receipt.
+- One confirmation text is allowed, sent within 5 minutes, with no marketing
+  content. If the person had consented to several message types, it may ask
+  which ones to stop; no reply means stop all.
+- If the texting system cannot accept replies, every message must say so and
+  give another way to opt out.
+- The "revoke-all" provision (an opt-out applies to all unrelated robocalls and
+  robotexts from that sender) is delayed to **January 31, 2027**.
+
+Sources: FCC Report and Order FCC 24-24 (Revocation of Consent), effective
+April 11, 2025, summarized by the National Law Review, "FCC's New Consent
+Revocation Rule Set to Take Effect April 2025"; CompliancePoint, "FCC Delays
+Revoke-All Again".
+
 ### STOP/HELP handling
 
-**STOP variants you must honor**: STOP, END, CANCEL, UNSUBSCRIBE, QUIT, STOPALL, OPTOUT
+**STOP variants you must honor**: STOP, QUIT, END, REVOKE, OPT OUT, CANCEL, UNSUBSCRIBE, plus common variants such as STOPALL and OPTOUT, and any clear free-text request
 
 **STOP response** (after STOP received):
 ```
@@ -67,7 +93,7 @@ You're unsubscribed from [Brand] alerts. No more messages will be sent. Reply HE
 ```
 
 **Critical rules**:
-- Honor STOP **within seconds**, every time, every keyword variant
+- Process keyword opt-outs instantly in the platform; the legal outer limit is 10 business days
 - Do not require the recipient to log in or visit a website to opt out
 - One STOP confirmation is allowed; do not send additional messages after
 - HELP responses do not count as marketing messages and are not subject to quiet hours
@@ -84,7 +110,7 @@ You're unsubscribed from [Brand] alerts. No more messages will be sent. Reply HE
 
 ### What it is
 
-Application-to-Person 10-Digit Long Code registration, run by The Campaign Registry (TCR). Required for businesses sending SMS through 10DLC numbers (regular long codes) since 2022. Carriers (T-Mobile, AT&T, Verizon) enforce this; unregistered traffic gets throttled or blocked.
+Application-to-Person 10-Digit Long Code registration, run by The Campaign Registry (TCR). Required for businesses sending SMS through 10DLC numbers (regular long codes). Since February 1, 2025, US carriers block unregistered 10DLC traffic entirely (Twilio error 30034, https://www.twilio.com/docs/api/errors/30034).
 
 ### Registration components
 
@@ -109,7 +135,7 @@ Application-to-Person 10-Digit Long Code registration, run by The Campaign Regis
 |------------------------|-----------|
 | Verified brand, marketing | 75–100+ msg/sec |
 | Standard brand, marketing | 4–10 msg/sec |
-| Unregistered | 0.1 msg/sec or blocked |
+| Unregistered | Blocked |
 
 ### Common rejections
 

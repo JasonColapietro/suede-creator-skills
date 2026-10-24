@@ -60,11 +60,12 @@ or live workflow card.
 
 ## Growth Engine
 
-`/aeo-shine`
-: Check title and snippet inputs, eligible structured data, heading clarity,
-plain-language answers, internal links, and crawler-friendly page structure.
-Treat `llms.txt` as an optional consumer-specific artifact; Google Search says
-it does not use the file.
+`/search-guard`
+: Before shipping conversion edits, confirm they kept the title, meta
+description, H1, answer-first opening, schema, and internal links that
+`suede-seo-audit` or `suede-ai-seo` set. Conversion copy that buries the direct
+answer or drops a question heading costs search visibility; route any new
+search work to those skills.
 
 `/visitor-intent`
 : Surface what the buyer is doing next: grade the site, post a campaign, build

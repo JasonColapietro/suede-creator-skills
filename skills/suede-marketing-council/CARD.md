@@ -7,7 +7,7 @@ Release record for the `suede-marketing-council` skill, following the NVIDIA ski
 
 ## Description
 
-Suede-affiliated marketing deliberation that applies documented public frameworks through clearly labeled simulated advisors, surfaces disagreements, and synthesizes a decision.
+Suede AI marketing council: twelve role-based simulated advisors (Positioning Strategist, Offer Strategist, Search Visibility Strategist, Brand Reach Scientist, and others) apply named Suede frameworks to one bounded marketing decision, map the disagreements and the evidence that would settle each, and return a chair's synthesis with next steps and skill handoffs.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.2; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
@@ -23,9 +23,9 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when the user wants multiple expert lenses on one bounded marketing question.
+Use when the user wants expert lenses, a simulated advisory board, a pressure test of a contested or irreversible bet, or a skeptic's read before committing.
 
-Out of scope — factual claims about a living person's private views, primary research (use suede-customer-research), or executing the selected tactic (route to the relevant public Suede skill).
+Out of scope — impersonating or quoting real people, primary research (use suede-customer-research), writing the plan itself (use suede-marketing-plan), or executing the chosen tactic (route to the relevant Suede skill).
 
 ## Deployment Geography
 
@@ -44,10 +44,10 @@ Global. The skill is a prompt-and-script package that runs locally inside the in
 
 From "Boundaries":
 
-- Do not present a simulation as the real person's statement, endorsement, advice, or current opinion.
-- Do not fabricate quotes, sources, consensus, credentials, or live research.
+- Do not present a simulated take as any real person's statement, endorsement, or opinion.
+- Do not fabricate quotes, sources, data, consensus, or research.
 - Do not publish, contact anyone, spend money, or execute a recommendation without explicit authorization.
-- Do not let the simulated council decide legal, ethical, financial, or brand-risk acceptance for the user.
+- Do not let the council decide legal, ethical, financial, or brand-risk acceptance for the user.
 
 ## References
 

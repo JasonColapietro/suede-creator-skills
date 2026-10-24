@@ -1,6 +1,8 @@
 # Lead Magnet Benchmarks
 
-Reference data for planning and evaluating lead magnet performance.
+Directional planning ranges compiled from published industry reports. They are
+not measured results for any account and should never be presented as a
+forecast. Replace them with the user's own numbers as soon as they exist.
 
 ---
 

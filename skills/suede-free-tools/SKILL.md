@@ -1,6 +1,6 @@
 ---
 name: suede-free-tools
-description: "Suede-affiliated engineering-as-marketing strategy for selecting, scoring, and scoping calculators, graders, generators, and other free interactive tools. Use when the user wants a lead, link, education, or product-adoption asset with a measurable path to the paid product. NOT FOR: downloadable lead assets (use suede-lead-magnets), implementation of a full website (use suede-site-alchemy), or search diagnostics (use suede-seo-audit)."
+description: "Suede AI engineering-as-marketing strategy for selecting, scoring, and scoping calculators, graders, generators, and other free interactive tools. Includes a search- and AI-answer-ready tool page (crawlable method, worked example, schema) and KPIs. Use when the user wants a lead, link, education, or product-adoption asset with a measurable path to the paid product. NOT FOR: downloadable lead assets (use suede-lead-magnets), implementation of a full website (use suede-site-alchemy), or search diagnostics (use suede-seo-audit)."
 metadata:
   version: 2.0.0
 ---
@@ -123,11 +123,35 @@ what to ask for; the table above only covers where the gate sits in a tool.
 
 **Supporting content**: "How to [use case]", "What is [concept]"
 
+### Make the tool page indexable and quotable
+A tool that is all JavaScript inputs gives search engines and answer engines
+nothing to read. Around the widget, ship crawlable HTML text:
+- A direct answer to the query the tool serves in the opening 40 to 80 words
+  ("A [thing] calculator estimates [output] from [inputs]").
+- How it works: the formula, data source, and last-updated date, so the output
+  can be cited and checked.
+- A worked example with real numbers the user can reproduce.
+- Question headings for the follow-ups people ask next.
+- `WebApplication` or `SoftwareApplication` JSON-LD with the visible name,
+  category, and price (`0` only when the tool is actually free).
+
+Answer engines cite methodology and worked examples far more readily than
+they can run your widget. If the tool produces original benchmarks from
+aggregate usage (with consent), publish them as a dated data page: that is
+the most linkable and citable asset a tool can generate.
+
 ### Link Building
 Free tools attract links because:
 - Genuinely useful (people reference them)
 - Unique (can't link to just any page)
 - Shareable (social amplification)
+
+### KPIs
+Tool page impressions and clicks for the target query (Search Console),
+referring domains earned (Search Console Links or a backlink tool, dated),
+completions per visit, capture rate at the gate, qualified leads and pipeline
+from tool users (analytics and CRM), and citations of the tool or its data in
+AI answers (`suede-ai-seo` prompt panel).
 
 ---
 
@@ -204,7 +228,9 @@ deferred). No item appears in both.
 Which option from Gating Options, and the trade-off accepted in one line.
 
 ### 5. SEO Target
-The single target query for the tool page, plus the supporting-content query.
+The single target query for the tool page, the supporting-content query, the
+literal opening answer, and the methodology note that makes the output
+citable. Name the KPI the page should move.
 
 ### 6. Instrumentation Handoff
 The two or three usage events the tool must emit (use, complete, capture) so

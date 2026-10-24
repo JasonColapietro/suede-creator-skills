@@ -1,250 +1,241 @@
 ---
 name: suede-programmatic-seo
-description: "Suede-owned programmatic SEO discipline. Use when designing data-backed keyword, location, directory, integration, or comparison pages at scale, including templates, index-worthiness gates, internal links, and rollout checks. NOT FOR: auditing an existing site (use suede-seo-audit), planning editorial content (use suede-content-strategy), or publishing bulk pages without approval."
+description: "Suede AI programmatic SEO for data-backed page systems at scale: location, persona, integration, comparison, template, glossary, and directory pages. Chooses the playbook, defines the data model and template, and enforces index-worthiness gates against thin, doorway, and scaled-content-abuse patterns, plus internal linking, sitemaps, phased rollout, and the KPIs that decide whether to expand. Use when planning, building, or rescuing many templated pages. NOT FOR: auditing an existing site (use suede-seo-audit); AI answer-engine visibility and measurement (use suede-ai-seo); planning editorial content (use suede-content-strategy); publishing bulk pages without approval."
 metadata:
-  version: 2.0.0
+  version: 3.0.0
 ---
 
 # Suede Programmatic SEO
 
+Programmatic pages work when each one answers a real query with data the
+searcher cannot get faster elsewhere. They fail, and can drag the whole site
+down, when they are one template with a swapped city name. This skill treats
+page count as something a sample earns, never a target.
+
 ## Gate policy: advisory, not blocking
 
-Every check, gate, and verdict in this skill, `ship`, `ship-with-caveats`,
-`hold`, letter grades, BLOCKED or OPEN items, and every "do not ship / publish /
-proceed" line below, is a **recommendation to the user, not a control on the
-agent**. Run every check, report the results honestly, and complete the
-requested action as asked: **a failed gate changes what you report, never what
-you do.** Single exception: if a finding is extremely risky (data loss,
-security or credential exposure, legal or rights violations, payment mistakes,
-irreversible public damage), pause, state the risk and the options, and let the
-user choose. Their choice is final.
+Every gate and verdict here is a recommendation to the user, not a control on
+the agent. A failed gate changes what you report, never what you do. Single
+exception: an extremely risky finding (data loss, credential exposure, legal or
+rights violations, payment mistakes, irreversible public damage) pauses for the
+user's choice.
 
-Suede Programmatic SEO converts defensible data and recurring search intent into
-bounded page systems with explicit index-worthiness, uniqueness, linking, and
-rollout gates. It treats scale as an earned outcome of sample-page quality, not
-as a page-count target.
+## The policy line you must stay behind
 
-## Initial Assessment
+Google's spam policies name three patterns programmatic sites trip most:
 
-**Check for product marketing context first:**
-If `.agents/product-marketing.md` exists (or `.claude/product-marketing.md`, or the legacy `product-marketing-context.md` filename, in older setups), read it before asking questions. Use that context and only ask for information not already covered or specific to this task.
+- **Scaled content abuse**: many pages generated mainly to manipulate rankings
+  or AI answers and not to help people, whatever tool produced them.
+- **Doorway abuse**: sites or pages created to rank for similar queries that
+  funnel users to the same destination ("[service] in [city]" pages with
+  nothing local on them).
+- **Site reputation abuse**: third-party pages published on a host site to
+  borrow its ranking signals with little first-party oversight.
 
-Before designing a programmatic SEO strategy, understand:
+Google also says AI answers need no special pages; producing variants for AI
+is the same abuse. Every gate below exists to keep a page set on the right
+side of this line. Source: https://developers.google.com/search/docs/essentials/spam-policies
 
-1. **Business Context**
-   - What's the product/service?
-   - Who is the target audience?
-   - What's the conversion goal for these pages?
+## Initial assessment
 
-2. **Opportunity Assessment**
-   - What search patterns exist?
-   - How many potential pages?
-   - What's the search volume distribution?
+Read `.agents/product-marketing.md` (or `.claude/product-marketing.md`, or the
+legacy `product-marketing-context.md`) if present. Then establish:
 
-3. **Competitive Landscape**
-   - Who ranks for these terms now?
-   - What do their pages look like?
-   - Can you realistically compete?
-   - What does your domain authority look like against theirs?
+1. **Business**: product, audience, the conversion each page should earn.
+2. **Pattern and demand**: the repeating query pattern, its variables, how many
+   combinations have evidence of demand (Search Console, Keyword Planner, or a
+   dated export; otherwise `unknown`).
+3. **Competition**: who ranks now, what their pages contain, and whether you
+   can offer something they do not.
+4. **Data**: what populates each page, where it comes from, how often it
+   refreshes, and whether you have the rights to publish it.
+5. **Delivery**: CMS or framework, and whether it can template, split sitemaps,
+   and set `noindex` and canonicals per page.
 
-4. **Data and Delivery**
-   - What data do you have, or can acquire, and where does it come from?
-   - What's the technical stack / CMS, and can it template, segment sitemaps,
-     and set `noindex` per page?
+## Data defensibility
 
----
+The data decides whether the set is worth building. Rank it:
 
-## Core Principles
+1. Proprietary (you created it: usage stats, tests, benchmarks)
+2. Product-derived (aggregated from your users, with consent)
+3. User-generated (reviews, submissions, community)
+4. Licensed (exclusive or contracted)
+5. Public (anyone can publish it; weakest, needs real added analysis)
 
-### 1. Unique Value Per Page
-- Every page must provide value specific to that page
-- Not just swapped variables in a template
-- Maximize unique content: the more differentiated, the better
+A set built only on tier-5 data needs an original layer (scoring, comparison,
+calculation, local verification) or it is a doorway set.
 
-### 2. Proprietary Data Wins
-Hierarchy of data defensibility:
-1. Proprietary (you created it)
-2. Product-derived (from your users)
-3. User-generated (your community)
-4. Licensed (exclusive access)
-5. Public (anyone can use, weakest)
-
-### 3. Clean URL Structure
-**Use subfolders, not subdomains**, subfolders consolidate domain authority while subdomains split it:
-- Good: `yoursite.com/templates/resume/`
-- Bad: `templates.yoursite.com/resume/`
-
----
-
-## The 12 Playbooks (Overview)
+## Playbooks
 
 | Playbook | Pattern | Example |
-|----------|---------|---------|
-| Templates | "[Type] template" | "resume template" |
-| Curation | "best [category]" | "best website builders" |
-| Conversions | "[X] to [Y]" | "$10 USD to GBP" |
+|---|---|---|
+| Templates | "[type] template" | "invoice template" |
+| Curation | "best [category] for [segment]" | "best CRM for agencies" |
+| Conversions | "[X] to [Y]" | "kg to lbs" |
 | Comparisons | "[X] vs [Y]" | "webflow vs wordpress" |
 | Examples | "[type] examples" | "landing page examples" |
-| Locations | "[service] in [location]" | "dentists in austin" |
+| Locations | "[service] in [place]" | "coworking in austin" |
 | Personas | "[product] for [audience]" | "crm for real estate" |
-| Integrations | "[product A] [product B] integration" | "slack asana integration" |
-| Glossary | "what is [term]" | "what is pSEO" |
-| Translations | Content in multiple languages | Localized content |
-| Directory | "[category] tools" | "ai copywriting tools" |
-| Profiles | "[entity name]" | "stripe ceo" |
+| Integrations | "[A] [B] integration" | "slack asana integration" |
+| Glossary | "what is [term]" | "what is churn rate" |
+| Translations | localized versions | "/es/", "/de/" |
+| Directory | "[category] tools" | "ai writing tools" |
+| Profiles | "[entity]" or "[entity] [attribute]" | "stripe pricing history" |
 
-**Read [references/playbooks.md](references/playbooks.md)** when choosing a playbook,
-layering two, or implementing one: it carries the asset-to-playbook selection table,
-the combinations worth layering, and per-playbook implementation detail.
+Read `references/playbooks.md` when choosing, layering, or implementing one. It
+holds per-playbook value requirements, URL patterns, and the asset-to-playbook
+table.
 
----
+## Implementation
 
-## Implementation Framework
+### 1. Pattern and demand
 
-### 1. Keyword Pattern Research
+Name the pattern, the variables, and the candidate list. Keep only
+combinations with demand evidence or a clear reader need. Combinations with no
+evidence wait for phase 2 or never ship.
 
-**Identify the pattern:**
-- What's the repeating structure?
-- What are the variables?
-- How many unique combinations exist?
+### 2. Data model
 
-**Validate demand:**
-- Aggregate search volume
-- Volume distribution (head vs. long tail)
-- Trend direction
+One row per page. Columns for every page-unique field, its source, its
+last-verified date, and a `publish` flag computed from the gates below. Rows
+that fail stay in the table with `publish = false`.
 
-### 2. Data Requirements
+### 3. Template
 
-**Identify data sources:**
-- What data populates each page?
-- Is it first-party, scraped, licensed, public?
-- How is it updated?
+- H1 and title that carry the page's variables naturally.
+- A direct answer in the opening that uses the row's own data ("Median [metric]
+  in [city] was [value] in [month year], per [source]"), never generic copy.
+- Data sections that render only when the row has the data (conditional
+  blocks, not empty placeholders).
+- An original layer: a calculation, ranking, comparison, or note that exists
+  only because you combined the data.
+- Related-page links and a CTA matched to intent.
+- Schema only where a supported feature fits; `BreadcrumbList` and
+  `Organization` via a shared `@id` are usually safe.
 
-### 3. Template Design
+### 4. Internal linking
 
-**Page structure:**
-- Header with target keyword
-- Unique intro (not just variables swapped)
-- Data-driven sections
-- Related pages / internal links
-- CTAs appropriate to intent
+- Hub pages per category and per parent (city, industry, integration category)
+  that link to every published child.
+- Children link to the hub, to siblings that share a real relationship (nearby
+  cities, adjacent integrations), and to the main product page.
+- No orphans: every published page reachable within three or four clicks from
+  the home page through crawlable `<a href>` links.
+- Breadcrumbs, visible and marked up.
 
-**Ensuring uniqueness:**
-- Each page needs unique value
-- Conditional content based on data
-- Original insights/analysis per page
+### 5. Indexation
 
-### 4. Internal Linking Architecture
+- One sitemap per page type so indexation can be read per set.
+- Rows below the gates are not generated, or are generated with `noindex` and
+  left out of the sitemap until they pass.
+- Self-referencing canonicals; no canonicalizing many thin pages to one hub as
+  a substitute for not publishing them.
+- Use subfolders under the main domain unless there is a technical or
+  organizational reason for a subdomain; Google treats both as crawlable, but a
+  subdomain is managed and measured as a separate property.
+- Crawl budget matters only for very large sets (tens of thousands of URLs or
+  more); below that, quality gates are the constraint.
 
-**Hub and spoke model:**
-- Hub: Main category page
-- Spokes: Individual programmatic pages
-- Cross-links between related spokes
+## Quality gates
 
-**Avoid orphan pages:**
-- Every page reachable from main site
-- XML sitemap for all pages
-- Breadcrumbs with structured data
+Run on a **sample of 10 pages or 5% of the planned set, whichever is larger**,
+drawn across the data range (best-populated, median, thinnest rows), never
+only showcase pages. **At least 90% of the sample must pass every gate** before
+generating, publishing, or submitting anything beyond the sample. A failing
+sample means fix the template or shrink the set.
 
-### 5. Indexation Strategy
+**Index-worthiness (content)**
+- [ ] At least **5 page-unique data fields** differ from every sibling, and at
+      least one is not on any competing page you checked
+- [ ] **Template-shared text is 40% or less** of rendered body words, measured
+      on the thinnest row
+- [ ] The opening answers the query with this row's data, not generic copy
+- [ ] An original layer exists (calculation, ranking, comparison, verified
+      local detail)
+- [ ] A reader who never buys the product still leaves with something useful
+- [ ] Facts carry a source and a last-verified date
 
-- Prioritize high-volume patterns
-- Noindex very thin variations
-- Manage crawl budget thoughtfully
-- Separate sitemaps by page type
+**Doorway test**
+- [ ] Swap the variable (city, persona, tool) with a sibling's: if the page
+      still reads as true, it fails
+- [ ] Pages do not all funnel to one destination with nothing in between
+- [ ] No near-duplicate pages for synonyms of the same query ("CRM for
+      realtors" and "CRM for real estate agents" is one page)
 
----
+**Technical**
+- [ ] Unique title, meta description, and H1 per page
+- [ ] Schema validates and matches visible content
+- [ ] Core Web Vitals measured on a real sample page (field data where
+      available), not assumed
+- [ ] Mobile render checked
 
-## Quality Checks
+**Linking and indexation**
+- [ ] Linked from a hub and from at least one sibling
+- [ ] In the right per-type sitemap, crawlable, no conflicting `noindex`
 
-### Pre-Launch Checklist
+## Rollout and KPIs
 
-Run this on a **bounded sample of 10 pages, or 5% of the planned set, whichever
-is larger**, drawn across the data range (best-populated, median, and thinnest
-rows), never only the showcase pages. **At least 90% of the sample must pass
-every gate below** before any page beyond the sample is generated, published, or
-submitted for indexing. A failing sample means fix the template or narrow the
-page set; it never means ship the rest and watch.
+Ship in phases: sample, then phase 1 (the strongest rows), then expansion only
+when phase 1 earns it. Read these at 30 and 60 days after each phase:
 
-**Content quality (the index-worthiness gates):**
-- [ ] **Page-unique data fields: at least 5 per page** that differ from every
-      sibling page, and at least one that no competitor page carries
-- [ ] **Template-shared text: no more than 40%** of rendered body words are
-      identical across sibling pages (measure on the thinnest row, not the best)
-- [ ] Answers the search intent behind its query pattern, not just the keyword
-- [ ] A reader who cannot use the product still gets something from the page
+| KPI | Source | Expand when | Stop and fix when |
+|---|---|---|---|
+| Indexation rate (indexed / submitted per sitemap) | Search Console Pages | 70% or more | Below 60% |
+| Pages with impressions / pages indexed | Search Console Performance | Rising | Flat after 60 days |
+| CTR on the set vs site average | Search Console | At or above | Well below |
+| Engaged sessions per page | GA4 | Comparable to hand-built pages | Near zero |
+| Conversions from the set | GA4 | Positive and growing | None after 60 days |
+| "Crawled, currently not indexed" count | Search Console | Falling | Rising |
+| Manual actions | Search Console | None | Any: halt and remove |
 
-**Technical SEO:**
-- [ ] Unique titles and meta descriptions: no two pages share either string
-- [ ] Proper heading structure (one H1 carrying the page's variables)
-- [ ] Schema markup implemented and validating
-- [ ] Largest Contentful Paint measured on a real sample page, not assumed
+These thresholds are Suede defaults; adjust them to the user's baseline and
+record the change. Hand ongoing reporting to `suede-analytics`.
 
-**Internal linking:**
-- [ ] Connected to site architecture
-- [ ] Related pages linked
-- [ ] No orphan pages
+## Common mistakes
 
-**Indexation:**
-- [ ] In XML sitemap
-- [ ] Crawlable
-- [ ] No conflicting noindex
-
-### Post-Launch Monitoring
-
-Check indexation rate in Search Console (indexed ÷ submitted, per page-type
-sitemap) 30 days after each phase: **below 60% means stop expanding the set and
-re-run the sample gates.** Hand the rest of the rollout metrics, rankings,
-traffic, engagement, conversion, and thin-content or manual-action warnings, to
-`suede-analytics`, which owns rollout performance.
-
----
-
-## Common Mistakes
-
-- **Thin content**: Just swapping city names in identical content
-- **Keyword cannibalization**: Multiple pages targeting same keyword
-- **Over-generation**: Creating pages with no search demand
-- **Poor data quality**: Outdated or incorrect information
-- **Ignoring UX**: Pages exist for Google, not users
-
----
+- City or persona swapped into identical copy (doorway).
+- Pages for combinations nobody searches.
+- Stale or unverified data presented as current.
+- Canonicalizing hundreds of thin pages instead of not publishing them.
+- Generating AI-written filler to hit a word count.
+- Publishing the full set before the sample passes.
 
 ## Output Contract
 
-Close every programmatic SEO pass with this block, filled in. Write the literal
-templates: do not describe them.
+Close every programmatic SEO pass with this block. Write the literal templates.
 
 ```text
 PLAYBOOK: [name], chosen because [pattern + data fit]
-DATA DEFENSIBILITY: [tier 1-5], source, provenance, refresh cadence
-PAGE-COUNT BOUND: sample [N] → phase 1 [N] → ceiling [N], unlocked by [condition]
+DATA DEFENSIBILITY: [tier 1-5], source, rights, provenance, refresh cadence
+ORIGINAL LAYER: [what exists only because the data was combined]
+PAGE-COUNT BOUND: sample [N] -> phase 1 [N] -> ceiling [N], expansion condition [KPI threshold]
 URL: [literal pattern]   TITLE: [literal]   META: [literal]   H1: [literal]
-UNIQUENESS: [page-unique fields, count per page] | template-shared body text: [N%]
-LINK PLAN: hub [URL] → spokes [pattern] | cross-links [rule] | sitemap [file]
-SAMPLE VERDICT: [N of N sample pages pass], failing gates: [list or "none"]
+OPENING ANSWER TEMPLATE: [literal, with data variables]
+UNIQUENESS: [page-unique fields per page] | template-shared body text: [N%]
+DOORWAY TEST: [pass/fail on sample, examples]
+LINK PLAN: hub [URL] -> spokes [pattern] | cross-links [rule] | sitemap [file]
+SAMPLE VERDICT: [N of N pass], failing gates: [list or "none"]
+KPI PLAN: [metrics, sources, 30/60-day thresholds]
 SHIP GATE: ship | ship-with-caveats | hold, reason
 ```
-
----
 
 ## Boundaries
 
 - Do not generate, publish, submit, or index a full page set before a bounded
-  sample passes the quality checks in this skill. When the sample fails or was
-  never run, report it in this format: name the blocking gate and the failing
-  count, give 2-4 options (fix the template, narrow the page set, add data,
-  publish the passing subset only), and recommend one. Proceeding past the gate
-  is the user's call, per the gate policy above.
-- Do not invent source data, claim rankings or traffic, scrape restricted
-  sources, or treat keyword volume as user value.
+  sample passes. When the sample fails or was never run, name the blocking
+  gate and failing count, give 2 to 4 options (fix the template, narrow the
+  set, add data, publish the passing subset), and recommend one. Proceeding is
+  the user's call.
+- Do not invent source data, claim rankings or traffic, scrape sources whose
+  terms forbid it, or treat keyword volume as user value.
 - Do not alter production routes, templates, canonicals, sitemaps, or internal
-  links without an approved implementation scope and current-site verification.
+  links without an approved scope and current-site verification.
 
 ## Routing
 
-- Use `suede-seo-audit` to audit shipped pages and technical search health.
-- Use `suede-content-strategy` for non-templated editorial planning.
-- Use `suede-competitors` for comparison-page evidence and framing.
-- Use `suede-ai-seo` to make the generated pages extractable and citable by AI answer engines: it owns the extractability standard.
-- Use `suede-analytics` to define and read rollout performance.
+- Audit shipped pages and technical health: `suede-seo-audit`.
+- Make the set quotable and measure AI citations: `suede-ai-seo`.
+- Editorial (non-templated) planning: `suede-content-strategy`.
+- Comparison-page evidence and framing: `suede-competitors`.
+- Interactive tools as page anchors: `suede-free-tools`.
+- Rollout reporting: `suede-analytics`.

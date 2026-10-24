@@ -38,7 +38,24 @@ test("every routed skill remains installed and publicly cataloged", () => {
 });
 
 test("retired orchestration skills stay out of the routing contract and plugin subsets", () => {
-  const retired = ["suede-full-send", "suede-codex-fleet"];
+  const retired = [
+    "suede-full-send",
+    "suede-codex-fleet",
+    // Merged into survivors in the October 2026 pack audit.
+    "suede-code-review",
+    "suede-code-grader",
+    "johnny-suede-write",
+    "johnny-suede-design",
+    "suede-recommend-next-action",
+    "suede-mcp-qa",
+    "suede-rights-audit",
+    "suede-instagram-growth",
+    "suede-marketing-psychology",
+    "suede-marketing-ideas",
+    "suede-signup",
+    "amazon-returns-recovery",
+    "subscription-recovery",
+  ];
   const contract = loadContract();
   for (const group of contract.groups) {
     for (const name of retired) {

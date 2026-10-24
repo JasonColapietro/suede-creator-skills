@@ -7,7 +7,7 @@ Release record for the `suede-workflow-skills` skill, following the NVIDIA skill
 
 ## Description
 
-Suede AI umbrella router for the public Suede pack: selects the right specialist across copy, design, code review and grading, SEO and visibility, launch packaging, MCP QA, iOS and Android shipping, growth, and creator rights work.
+Suede AI umbrella router for the full public skill pack: picks the right specialist for any request across search visibility (SEO, AEO, GEO), agent and operations automation, code review and CI, copy and design, launch and app shipping, growth marketing, and creator rights, hands it the request verbatim, and recommends one next move with a ready-to-run prompt when the user asks what to do next.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.2; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
@@ -23,9 +23,9 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when a request crosses two or more Suede lanes, when the user wants the full public skill pack loaded from one installable path, when they ask which Suede skill fits a task, or when only this umbrella skill is installed.
+Use when a request crosses two or more lanes, when the user wants the full public skill pack loaded from one install path, when they ask which Suede skill fits, what's next, recommend the next move, give me the prompt, expand prompt, or make it granular, or when only this umbrella is installed.
 
-Out of scope — a request that names one lane and can go straight to its specialist; a multi-file repo change that should be built and reviewed as one DAG (use suede-graph-flo-xr).
+Out of scope — a request that already names one lane (go straight to that specialist); a multi-file repo change that should be searched, built, and gated as one graph (use suede-graph-flo-xr); coordinating parallel lanes with file ownership and rollback (use suede-agent-teams).
 
 ## Deployment Geography
 
@@ -34,7 +34,7 @@ Global. The skill is a prompt-and-script package that runs locally inside the in
 ## Requirements / Dependencies
 
 - A Claude Code or Codex CLI session with the `suede-skills` plugin installed (install options: <https://skills.suedeai.ai/>).
-- Bundled files loaded relative to this directory: `agents/` (1 file), `references/` (3 files).
+- Bundled files loaded relative to this directory: `agents/` (1 file), `references/` (4 files).
 - Credentials: none are bundled or required by the skill files. Any tool or API credentials come from the host session; never paste credentials into skill files, prompts, or outputs.
 
 ## Known Risks and Mitigations
@@ -44,10 +44,10 @@ Global. The skill is a prompt-and-script package that runs locally inside the in
 
 From "Boundaries":
 
-- Do not expose private paths, credentials, secrets, tokens, unreleased assets, private repos, or private Suede service details.
-- Do not copy protected site assets, exact UI copy, proprietary source code, or trademarked identity when using Suedify.
-- Do not invent metrics, pricing, partner claims, testimonials, legal clearance, payout claims, registry writes, or release/distribution outcomes.
-- Do not mark work done until the stated done signal has been checked or the remaining caveat is explicitly named.
+- Never expose private paths, credentials, secrets, unreleased assets, or private service details.
+- Never copy protected site assets, exact copy, proprietary code, or trademarked identity during a restyle.
+- Never mark work done until the done signal has been checked or the remaining caveat is named.
+- Never mutate files, repos, deployments, accounts, or messages while recommending a next move.
 
 ## References
 

@@ -40,25 +40,20 @@ number of `skills/<name>` paths after `--path`:
 ```bash
 python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
   --repo JasonColapietro/suede-creator-skills \
-  --path skills/johnny-suede-write \
-  skills/johnny-suede-design \
-  skills/suede-code \
-  skills/suede-code-review \
-  skills/suede-code-grader \
-  skills/suede-copy \
+  --path skills/suede-copy \
   skills/suede-deslop \
+  skills/suede-ship-copy \
   skills/suede-design \
+  skills/suede-code \
+  skills/suede-ci-gate \
   skills/suede-agent-teams \
   skills/suede-graph-flo-xr \
-  skills/suede-ship-copy \
   skills/suede-ai-eval \
-  skills/suede-recommend-next-action \
-  skills/suede-ci-gate \
+  skills/suede-parity-contract \
   skills/suede-seo-audit \
   skills/suede-visibility-grader \
   skills/suede-site-alchemy \
   skills/suede-launch-packaging \
-  skills/suede-mcp-qa \
   skills/site-to-ios-app \
   skills/android-app-factory
 ```

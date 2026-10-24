@@ -1,6 +1,6 @@
 ---
 name: suede-ship-copy
-description: "Suede Labs copy-only orchestration DAG. Use for one high-stakes piece strangers will read that has to be true: a landing page, launch post, blog post, email, X thread, docs page, README, ad, or store listing, researched, fact-audited, adversarially reviewed, and gated for publish readiness in one pass. The audit targets what the agents invent, never what the requester supplied: their own statements are given, and no phase may verify, hedge, or gate on them. Reads the live surface; never publishes. NOT FOR: multi-surface campaign writing (use johnny-suede-write); changing code (use suede-graph-flo-xr); one surface in one pass with no research (use suede-copy); stripping AI patterns from existing text (use suede-deslop); bulk generation of many independent pieces (private Suede Labs companion, not in this pack: suede-codex-fleet)."
+description: "Suede AI copy-only orchestration DAG for one high-stakes piece strangers will read that has to be true: a landing page, launch post, blog post, email, X thread, docs page, README, ad, or store listing. About thirty agents run research lenses, a claim audit, blind angles, parallel section writers, adversarial refutation, and a publish readiness gate, and return a draft file plus an evidence record. The audit targets what the agents invent, never what the requester supplied: their own statements are given, and no phase may verify, hedge, or gate on them. Reads the live surface; never publishes. NOT FOR: everyday or multi-surface copy written in one pass (use suede-copy); changing code (use suede-graph-flo-xr); stripping AI patterns from existing text (use suede-deslop); bulk generation of many independent pieces from one spec."
 ---
 
 # Suede Ship Copy
@@ -400,18 +400,13 @@ re-run.
 - One surface, one pass, facts already established -> use `suede-copy`.
 - Text already written that needs cleanup or a findings-only audit -> use `suede-deslop` (Suede Slop Stop).
 - The house voice needs defining rather than extracting from shipped copy ->
-  use the Brand-Voice Alignment lane in `johnny-suede-write`. Without it, put a
+  use the Brand-Voice Retune job in `suede-copy`. Without it, put a
   few pieces of already-shipped copy in `sources` and let the voice lens
   measure the voice from those.
 - The graphic spec needs executing -> use `suede-image`.
 - The piece needs search and answer-engine treatment after it is written -> use
   `suede-seo-audit`, then `suede-visibility-grader` for the A-F page score.
-- Many independent pieces from one spec ->
-  private Suede Labs companion, not in this pack: suede-codex-fleet.
-- Writing a completion or done-state claim about this run ->
-  private Suede Labs companion, not in this pack: suede-verification-law. The rule
-  it enforces is stated inline above: this workflow writes a draft and reads the
-  live surface, so `published`, `posted`, `sent`, `live`, and `shipped` are not
-  states it can claim.
-- From `johnny-suede-write`: route a single high-stakes piece that must survive a
-  fact audit here; keep multi-surface campaign writing there.
+- Many independent pieces from one spec -> run suede-copy per piece; this
+  workflow is sized for one piece.
+- From `suede-copy`: route a single high-stakes piece that must survive a fact
+  audit here; keep everyday and multi-surface writing there.

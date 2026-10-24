@@ -7,7 +7,7 @@ Release record for the `android-app-factory` skill, following the NVIDIA skill-c
 
 ## Description
 
-Suede Labs Android app factory: plan, build, test, and release a production-grade native Android app from a product idea through Google Play.
+Suede AI Android app factory: plan, build, test, and prepare a production native Android app from product idea to a Play-ready signed bundle.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.2; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
@@ -23,9 +23,9 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use for requests to create, ship, submit, monetize, or modernize an Android app. Covers Kotlin and Jetpack Compose architecture, API-level policy verification, accessibility, privacy and Data Safety, Play Billing, Play Integrity, account deletion, testing, performance, store assets, signing, staged rollout, and a release evidence gate.
+Use for requests to create, ship, monetize, or modernize an Android app. Covers Kotlin and Jetpack Compose architecture, live target-API and Play policy checks, 16 KB page sizes, accessibility, privacy and Data Safety, Play Billing Library 8+, Play Integrity, account deletion, kids and Families rules, testing, performance, store assets, signing, and a release evidence gate.
 
-Out of scope — iOS work (private Suede Labs companion, not in this pack: ios-app-factory), a review-only pass on an existing app (use suede-code-review), or live Play listing and keyword audits on a shipped app (use suede-aso).
+Out of scope — uploading, promoting, or rolling out a build on Play (use suede-play-release); turning a website into an iOS app (use site-to-ios-app); a review-only pass on an existing app (use suede-code --findings-only); Play listing, keyword, and screenshot strategy (use suede-aso).
 
 ## Deployment Geography
 
@@ -34,7 +34,7 @@ Global. The skill is a prompt-and-script package that runs locally inside the in
 ## Requirements / Dependencies
 
 - A Claude Code or Codex CLI session with the `suede-skills` plugin installed (install options: <https://skills.suedeai.ai/>).
-- Bundled files loaded relative to this directory: `agents/` (1 file), `references/` (4 files), `assets/` (1 file).
+- Bundled files loaded relative to this directory: `agents/` (1 file), `references/` (5 files), `assets/` (1 file).
 - Credentials: none are bundled or required by the skill files. Any tool or API credentials come from the host session; never paste credentials into skill files, prompts, or outputs.
 
 ## Known Risks and Mitigations

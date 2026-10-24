@@ -7,7 +7,7 @@ Release record for the `suede-visibility-grader` skill, following the NVIDIA ski
 
 ## Description
 
-Suede-owned launch-appeal grader for public pages.
+Suede AI promotion-readiness grader for one public page.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.2; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
@@ -23,9 +23,7 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when a public page needs a fast A-F visibility grade before or after launch.
-
-Out of scope — the deep nine-lane SEO audit with rewrite fixes (use suede-seo-audit); implementing conversion changes (use suede-site-alchemy); getting cited by AI answer engines (use suede-ai-seo).
+Out of scope — the deep nine-lane SEO audit with JSON-LD and rewrite fixes (use suede-seo-audit); AI crawler policy, entity consistency, and prompt-panel measurement (use suede-ai-seo); implementing conversion changes or experiments (use suede-site-alchemy).
 
 ## Deployment Geography
 

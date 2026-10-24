@@ -7,7 +7,7 @@ Release record for the `suede-offers` skill, following the NVIDIA skill-card tem
 
 ## Description
 
-Suede-affiliated offer design for value framing, bonuses, guarantees, risk reversal, honest scarcity, naming, and payment structure.
+Suede AI offer design and persuasion mechanics: scores the offer on the Suede Value Levers (outcome, confidence, wait, effort), then builds bonuses that each remove an objection, guarantees and risk reversal matched to the buyer's real risk, honest scarcity and deadlines that meet FTC, UK, and EU consumer rules, naming, and payment structure, plus evidence-tiered behavioral models (anchoring, framing, social proof, loss aversion, defaults) stated as testable hypotheses.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.2; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
@@ -23,9 +23,9 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when the user is building or diagnosing a service, course, coaching, information-product, agency, or high-ticket B2B offer.
+Use when building or diagnosing a service, course, coaching, info-product, agency, or high ticket B2B offer, or when the user asks which psychological lever applies and how to test it.
 
-Out of scope — SaaS tier and value-metric architecture (use suede-pricing), sales-page copy (use suede-copy), or in-product upgrade prompts (use suede-paywalls).
+Out of scope — SaaS tier and value-metric architecture (use suede-pricing), sales-page copy (use suede-copy), in-product upgrade prompts (use suede-paywalls), or clinical and mental-health advice.
 
 ## Deployment Geography
 
@@ -34,7 +34,7 @@ Global. The skill is a prompt-and-script package that runs locally inside the in
 ## Requirements / Dependencies
 
 - A Claude Code or Codex CLI session with the `suede-skills` plugin installed (install options: <https://skills.suedeai.ai/>).
-- Bundled files loaded relative to this directory: `agents/` (1 file), `references/` (7 files).
+- Bundled files loaded relative to this directory: `agents/` (1 file), `references/` (8 files).
 - Credentials: none are bundled or required by the skill files. Any tool or API credentials come from the host session; never paste credentials into skill files, prompts, or outputs.
 
 ## Known Risks and Mitigations
@@ -44,9 +44,10 @@ Global. The skill is a prompt-and-script package that runs locally inside the in
 
 From "Boundaries":
 
-- Do not invent outcome evidence, comparable value, scarcity, deadlines, testimonials, guarantee economics, or refund terms.
+- Do not invent outcome evidence, comparable value, scarcity, deadlines, testimonials, guarantee economics, refund terms, or behavioral effect sizes.
 - Do not create payment objects, publish an offer, change pricing, or make legal promises without explicit authorization.
-- Do not recommend coercive urgency, inaccessible cancellation, or conditions hidden from the buyer.
+- Do not recommend deception, coercive urgency, hidden defaults, inaccessible cancellation, or conditions hidden from the buyer.
+- Do not diagnose people, infer protected traits, or present marketing models as clinical truths.
 - Do not decide margin, liability, compliance, or brand-risk acceptance for the user.
 
 ## References

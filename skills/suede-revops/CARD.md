@@ -7,7 +7,7 @@ Release record for the `suede-revops` skill, following the NVIDIA skill-card tem
 
 ## Description
 
-Suede-owned revenue-operations discipline.
+Suede AI revenue operations: lifecycle stage definitions, fit and engagement lead scoring, MQL and SQL criteria, routing rules and speed-to-lead SLAs, pipeline stages and hygiene, CRM automation build lists for HubSpot, Salesforce, and Zapier, deal-desk approval tiers, enrichment and dedup, and a metrics dashboard spec, including where AI agents can safely run enrichment, routing, and follow-up steps.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.2; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
@@ -25,7 +25,7 @@ Target users: developers and creators running the skill inside a Claude Code or 
 
 Use when defining lead scoring and routing, MQL or SQL criteria, pipeline stages, CRM hygiene, automation, deal-desk rules, or marketing-to-sales handoffs.
 
-Out of scope — writing outreach (use suede-cold-email), lifecycle campaigns (use suede-emails), pricing strategy (use suede-pricing), or mutating production CRM records without approval.
+Out of scope — writing outreach (use suede-cold-email), building prospect lists (use suede-prospecting), lifecycle campaigns (use suede-emails), pricing strategy (use suede-pricing), or mutating production CRM records without approval.
 
 ## Deployment Geography
 

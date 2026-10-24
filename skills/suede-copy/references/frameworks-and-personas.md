@@ -10,7 +10,7 @@ Match framework to surface and reader temperature:
 - Reader has a named pain and is actively searching: **PAS** (Problem → Agitate → Solution). Name the problem, surface the cost of inaction, position the product as the specific relief.
 - Hero section, social post, launch email: **Before-After-Bridge**. Describe life before the product, paint life after, bridge with the product as the mechanism.
 - Product page, onboarding, in-app copy: **JTBD**. Write around what the reader is trying to accomplish: the job they hired the product to do, not around features.
-- Homepage, About, long-form brand page: **StoryBrand 7-Part**. Character (customer) → Problem → Guide (your brand) → Plan → CTA → Avoid failure → Achieve success.
+- Homepage, About, long-form brand page: **Customer-as-Hero Arc**. The customer has a goal → a specific problem blocks it → your brand shows up as the guide with proof → a short plan → one CTA → what failure costs → what success looks like.
 
 State the chosen framework and reader temperature before drafting. If multiple frameworks could apply, pick one and note why.
 
@@ -41,3 +41,5 @@ State the persona before writing. If multiple personas share a page, write the h
 - Proof: before/after in human terms ("Your release looks like this. After Suede, it looks like this.")
 - CTA: lowest-friction path ("Try it with one release folder")
 - Skip: technical vocabulary, command syntax, implementation framing
+
+Default persona when none is named: practitioner for GitHub and docs copy, decision-maker for sales and landing pages, skeptic for comparison copy.

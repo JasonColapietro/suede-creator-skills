@@ -6,13 +6,15 @@
 
 **AI agent skills, scored 0–99.**
 
-Compare agent skills with **0–99 quality scores**, verified against [Suede’s published rubric](https://skills.suedeai.ai/directory/methodology/). Find the workflow for your task, compare the evidence behind its score, then inspect the source before you install.
+Compare agent skills with **0–99 quality scores**, verified against [Suede AI’s published rubric](https://skills.suedeai.ai/directory/methodology/). Find the workflow for your task, compare the evidence behind its score, then inspect the source before you install.
 
 Browse **3,804 scored skills from 160 repositories** across **16 categories**, with publisher credits and direct source links.
 
 The GitHub companion to the [Agent Skills Directory](https://skills.suedeai.ai/directory/), maintained by [Jason Colapietro / Suede AI](https://suedeai.ai/founder). Coverage follows the directory’s accepted snapshot and editorial rules. The [Suede Creator Skills pack](../README.md) has its own installation guide.
 
-**[Compare scores](#compare-099-quality-scores)** · **[Browse categories](#contents)** · **[Highest scores on Suede](https://skills.suedeai.ai/directory/?sort=score)** · **[Publishers](publishers.md)** · **[Featured projects](featured.md)** · **[Contribute](CONTRIBUTING.md)**
+<a href="https://trendshift.io/repositories/82031?utm_source=trendshift-badge&amp;utm_medium=badge&amp;utm_campaign=badge-trendshift-82031" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/82031/daily?language=Python" alt="JasonColapietro%2Fsuede-creator-skills | Trendshift" width="250" height="55"/></a>
+
+**[Compare scores](#compare-099-quality-scores)** · **[Browse categories](#contents)** · **[Highest scores on Suede AI](https://skills.suedeai.ai/directory/?sort=score)** · **[Publishers](publishers.md)** · **[Featured projects](featured.md)** · **[Guides](#guides)** · **[Add your badge](#add-your-badge)** · **[Contribute](CONTRIBUTING.md)**
 
 Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
@@ -24,10 +26,10 @@ The published quality scale is **0–99**. The rubric totals **100 points**; pub
 
 | Quality score / 100 | Accepted skills | Browse |
 | --- | ---: | --- |
-| **90–99 · A** | 120 | [View scored skills on Suede](https://skills.suedeai.ai/directory/?sort=score&grade=A) |
-| **80–89 · B** | 1,581 | [View scored skills on Suede](https://skills.suedeai.ai/directory/?sort=score&grade=B) |
-| **70–79 · C** | 1,379 | [View scored skills on Suede](https://skills.suedeai.ai/directory/?sort=score&grade=C) |
-| **0–69 · D** | 724 | [View scored skills on Suede](https://skills.suedeai.ai/directory/?sort=score&grade=D) |
+| **90–99 · A** | 120 | [View scored skills on Suede AI](https://skills.suedeai.ai/directory/?sort=score&grade=A) |
+| **80–89 · B** | 1,581 | [View scored skills on Suede AI](https://skills.suedeai.ai/directory/?sort=score&grade=B) |
+| **70–79 · C** | 1,379 | [View scored skills on Suede AI](https://skills.suedeai.ai/directory/?sort=score&grade=C) |
+| **0–69 · D** | 724 | [View scored skills on Suede AI](https://skills.suedeai.ai/directory/?sort=score&grade=D) |
 
 For GitHub browsing, choose a category below. Numeric scores lead every listing, with higher-scoring skills first within each publisher. The category ranges describe individual skill scores, not a repository grade.
 
@@ -59,9 +61,29 @@ Each skill appears in one category. A repository can contribute to several categ
 - **[Appie](featured.md#appie)** by [appierun](https://github.com/appierun). Bring Appie’s writing, chatbot and link tools into your agent workflow. Pick the skill for the job and follow its individual setup instructions.
 - **[CoalWash](featured.md#coalwash)** by [TheColliery](https://github.com/TheColliery). Measure memory and governance-file overhead, run maintenance, and inspect the changes. CoalWash pairs a structured-token guard with transaction snapshots and rollback tools.
 - **[Costory](featured.md#costory)** by [costory-io](https://github.com/costory-io). Investigate cost changes, explore BigQuery spend, and map shared costs to teams with an agent connected to Costory. Four workflows cover discovery, evidence, allocation and review.
+- **[Extra Caffeine](featured.md#extra-caffeine)** by [cwong5](https://github.com/cwong5). Give local AI and file-processing work time to finish. The Extra Caffeine workflow guides an agent through authorized awake sessions, state checks and requested one-time schedules while preserving existing sessions.
 - **[Opsibyte](featured.md#opsibyte)** by [MelMayssonOwen](https://github.com/MelMayssonOwen). Six focused workflows combine human-reviewed publishing and launch preparation with local budget, listing-copy, and chord helpers. Each listing carries its own source-derived quality report and setup details.
 
-These 4 editorial selections have [reviewed scope and setup guidance](featured.md). Editorial selection is separate from quality scores, security certification and README-badge verification. Featured plugins outside the scored skill snapshot are not included in the skill or repository counts above.
+These 5 editorial selections have [reviewed scope and setup guidance](featured.md). Editorial selection is separate from quality scores, security certification and README-badge verification. Featured plugins outside the scored skill snapshot are not included in the skill or repository counts above.
+
+## Guides
+
+Practical guides by Jason Colapietro, built on the directory’s published data.
+
+- **[Best SEO, AEO and GEO skills for Claude Code and Codex](https://skills.suedeai.ai/directory/guides/best-seo-skills/)**: The highest-scoring SEO skills for Claude Code and Codex, by job: audits, schema, AI search (AEO and GEO), keywords, local and programmatic SEO.
+- **[How to install agent skills in Claude Code, Codex and Cursor](https://skills.suedeai.ai/directory/guides/install-agent-skills/)**: Where Claude Code and Codex load skills, how to install from GitHub with one command, how plugin marketplaces work, and what to check before you install.
+- **[Agent skills vs MCP servers vs plugins: which one do you need?](https://skills.suedeai.ai/directory/guides/skills-vs-mcp-servers/)**: A skill adds method, an MCP server adds access, a plugin packages both. When to use each, how they combine, and what each costs in context and risk.
+- **[How to get your agent skill found in search and cited by AI assistants](https://skills.suedeai.ai/directory/guides/skill-ai-visibility/)**: How skill publishers get picked by agents, found in search and cited by AI assistants: descriptions that trigger, READMEs that answer, listings and badges.
+
+## Add your badge
+
+Is your skill listed here? Show it. Every listed skill and repository has a badge that links readers to its Suede AI listing, and skills scoring 80–99 also get numeric and letter quality shields. Copy the snippet from your own listing page so the badge points at your listing; the general version is:
+
+```md
+[![Listed in the Agent Skills Directory by Suede AI](https://skills.suedeai.ai/directory/badge.svg)](https://skills.suedeai.ai/directory/)
+```
+
+Then [request badge verification](https://skills.suedeai.ai/directory/submit/). While the feature offer is open, an eligible skill with a verified badge can earn a featured placement. For the full checklist, read [How to get your agent skill found in search and cited by AI assistants](https://skills.suedeai.ai/directory/guides/skill-ai-visibility/).
 
 ## Read a listing
 
@@ -70,7 +92,14 @@ These 4 editorial selections have [reviewed scope and setup guidance](featured.m
 - **Score / 100 · grade** is recomputed from the saved evidence using the existing [Suede Skill Check](https://skills.suedeai.ai/directory/methodology/). Published scores range from 0 to 99; 100 is reserved. A = 90–99, B = 80–89, C = 70–79, D = 0–69. Listing eligibility and quality-badge eligibility remain separate.
 - **License: … (review terms)** identifies entries whose recorded license is not an open license. Check the source license and publisher’s supported install route before copying.
 
-Scores measure structural evidence, not runtime performance. External listings have security status `not_scanned`; Suede’s own CI scan supplies no security result for them. Read the source, permissions and prerequisites before enabling a skill. Use the project-specific route for plugins that require hooks or an engine; [CoalWash’s complete plugin setup](featured.md#coalwash) preserves those components.
+Scores measure structural evidence, not runtime performance. External listings have security status `not_scanned`; Suede AI’s own CI scan supplies no security result for them. Read the source, permissions and prerequisites before enabling a skill. Use the project-specific route for plugins that require hooks or an engine; [CoalWash’s complete plugin setup](featured.md#coalwash) preserves those components.
+
+## Work with Suede AI
+
+Scores and listings never depend on any business relationship with Suede AI. If you want help beyond the catalog:
+
+- **Get your product cited in AI answers.** Suede AI's AEO, GEO and SEO team helps companies get found in Google and named by ChatGPT, Perplexity and Claude. [suedeai.agency](https://suedeai.agency/?utm_source=skills.suedeai.ai&utm_medium=github&utm_campaign=awesome-readme&utm_content=agency)
+- **Run a team of agents.** Suede AI Agent Studio builds multi-agent automation for businesses. [suedeai.app](https://suedeai.app/?utm_source=skills.suedeai.ai&utm_medium=github&utm_campaign=awesome-readme&utm_content=agent-studio)
 
 ## Credits and provenance
 

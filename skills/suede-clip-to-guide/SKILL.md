@@ -1,11 +1,11 @@
 ---
 name: suede-clip-to-guide
-description: "Suede-owned short-to-long content funnel blueprint. Use when turning a video, clip, interview moment, talk excerpt, screen recording, or transcript into a repeatable package that bridges attention to an X Article, LinkedIn article, newsletter, blog guide, or playbook, or when third-party footage needs a rights route before reuse. NOT FOR: full video editing or production (use suede-video), general social calendars or listening (use suede-social), creating the long-form asset from scratch (use suede-copy and suede-content-strategy), paid ads (use suede-ad-creative), or publishing or reposting without exact-content and visible-identity approval."
+description: "Suede AI short-to-long content funnel: turns a video, clip, interview moment, talk excerpt, screen recording, or transcript into a scored, rights-checked package that bridges attention to an owned guide, X Article, LinkedIn article, newsletter, or playbook, and makes that guide the page search engines and AI answers find. Use when a clip must lead somewhere deeper, when third-party footage needs a rights route before reuse, or when an X post must pair native video with an owned Article card. NOT FOR: video editing or rendering (use suede-video), social calendars, account audits, or listening (use suede-social), writing the long-form guide from scratch (use suede-copy), paid ads (use suede-ad-creative), or publishing without exact-content and visible-identity approval."
 metadata:
-  version: 1.0.0
+  version: 1.1.0
 ---
 
-# Suede Clip to Guide
+# Suede AI Clip to Guide
 
 Build one evidence-backed path from a video moment to a deeper written asset.
 Treat the clip as the attention layer and the guide as the authority layer. Do
@@ -163,6 +163,25 @@ The long-form asset must have:
 - sources for material factual claims;
 - one next action that matches the campaign goal.
 
+**Make the guide findable, not only clickable.** Platform-hosted articles (X
+Articles, LinkedIn articles) borrow the platform's audience; an owned guide on
+the brand's domain is the asset that ranks and gets cited in AI answers after
+the post stops circulating. When the guide is owned, check that it:
+
+- opens with a two- or three-sentence direct answer to the question the clip
+  raises, under a heading phrased as that question;
+- embeds the clip (or the original source, when reuse is native-only) with a
+  text transcript or a timestamped summary on the page;
+- carries `Article` JSON-LD, plus `VideoObject` with name, description,
+  thumbnailUrl, uploadDate, and duration when the video is hosted or embedded
+  on the page, validated before publish;
+- has a named author with a short bio, and links each factual claim to its
+  primary source.
+
+When the guide lives only on a platform, say so in the decision snapshot and
+recommend an owned canonical copy. Route schema and indexing checks to
+`suede-seo-audit` and AI answer visibility to `suede-ai-seo`.
+
 If the guide does not exist, return a brief and route the full draft to
 `suede-copy` and the portfolio decision to `suede-content-strategy`. Resume this
 skill after the guide has a reviewable draft. Do not fabricate a live URL.
@@ -220,6 +239,16 @@ Use one:
   verified companion location, such as a first reply or supported link field.
 - **Native-repost**: quote or repost the third-party source with original
   analysis and a guide bridge; do not re-upload the source media.
+- **X native video plus owned Article card**: when the account owns an X
+  Article and has a lawful basis to use the video as native media, publish a
+  fresh post from the approved account with the exact approved copy, attach
+  the video, and put the owned Article's status URL at the end so X renders the
+  Article as the quoted card. Do not quote, repost, or inherit the third
+  party's post, caption, replies, or engagement context; preserve source credit
+  on the video. If the Quote composer accepts the video but leaves publishing
+  disabled, use this fresh-post construction or report the blocker. Never
+  substitute a quote of the third party's post. After publishing, confirm the
+  live post shows both the native video and the Article card.
 
 Do not assume a quote-post can also carry new media. Verify the current composer
 and choose the smallest sequence that preserves the clip, guide, and source
@@ -353,13 +382,13 @@ Do not report causal lift from an unpaired or tiny sample.
 
 - Need full video editing, generation, captions, color, or exports -> use
   `suede-video`, then return here for the funnel package.
-- Need a general platform plan, calendar, listening, or engagement program ->
-  use `suede-social`.
+- Need a general platform plan, calendar, account audit, listening, or
+  engagement program -> use `suede-social`.
 - Need the long-form guide written -> use `suede-copy`; use
   `suede-content-strategy` for pillars and portfolio priority.
 - Need paid variants -> use `suede-ad-creative`.
-- Need maximum-effort orchestration or a high-volume worker-fleet batch ->
-  private Suede Labs companions, not in this pack: suede-full-send and
-  suede-codex-fleet. In either mode, return here for the dual certainty record.
+- Running many packages through parallel agents (for example an Agent Studio
+  fleet) -> record `execution_mode: worker-fleet` and keep the controller's
+  independent Check 2 here; the certainty record stays in this skill.
 - From those skills, route a video-to-long-form bridge, moment score, rights
   route, exact approval bundle, and readback back to `suede-clip-to-guide`.

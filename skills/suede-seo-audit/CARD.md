@@ -7,7 +7,7 @@ Release record for the `suede-seo-audit` skill, following the NVIDIA skill-card 
 
 ## Description
 
-Suede-owned SEO and generative-search audit discipline.
+Suede AI technical and on-page SEO audit with a generative search lane.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.2; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
@@ -23,9 +23,9 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when a page or site needs a deep standalone SEO/AI-visibility audit with scored lanes.
+Use when the audit itself is the deliverable: traffic drops, pre-launch SEO checks, indexation problems, schema errors, Core Web Vitals risk, or a scored SEO report.
 
-Out of scope — a fast A-F launch-appeal grade (use suede-visibility-grader); conversion-path rework after the audit (use suede-site-alchemy); getting cited by ChatGPT/Perplexity/AI Overviews (use suede-ai-seo).
+Out of scope — a fast A-F promotion-readiness grade (use suede-visibility-grader); AI crawler policy, entity consistency, and prompt-panel measurement for ChatGPT, Perplexity or AI Overviews (use suede-ai-seo); conversion-path rework (use suede-site-alchemy).
 
 ## Deployment Geography
 
@@ -40,16 +40,14 @@ Global. The skill is a prompt-and-script package that runs locally inside the in
 ## Known Risks and Mitigations
 
 - Risk: an agent treats a quality gate as autonomous authority. Mitigation: every gate in the pack is advisory — it changes what is reported, never what the user decided; only extreme-risk findings (data loss, credential exposure, legal/rights violations, payment mistakes, irreversible public damage) pause for the user's explicit choice.
-- Risk: a skill instruction is used to act outside its mandate. Mitigation: the hard limits in the skill body's "Red flags" section, quoted below.
+- Risk: a skill instruction is used to act outside its mandate. Mitigation: the hard limits in the skill body's "Boundaries" section, quoted below.
 
-From "Red flags" — If you catch yourself thinking any of these, stop and run the check for real:
+From "Boundaries":
 
-- "I know this page; I can grade it from memory.": Fetch it. Source Truth first.
-- "curl was fast, that covers Core Web Vitals.": curl is a server-response proxy; CWV scores come only from PageSpeed Insights or Lighthouse, or they are "not measurable" with a reason.
-- "I'll describe the schema fix; they can write the JSON.": Write the literal JSON-LD block.
-- "The title or description crossed a magic character limit.": Count it for preview diagnostics, then judge accuracy and likely truncation in context. Google publishes no fixed character limit.
-- "A traffic estimate will make this finding land harder.": Never invent traffic, rankings, or ROI.
-- "The lane mostly passes; I'll skip the rest of the checklist.": Every item gets pass, fail, or N/A.
+- Do not invent traffic estimates, ranking positions, citation frequency, or ROI.
+- Do not present `llms.txt`, content chunking, keyword density, word count, or unsupported schema as Google ranking requirements.
+- Do not edit production pages, robots.txt, or schema without explicit approval; the audit is read-only unless the user asks for fixes applied.
+- Name what was checked, which primary guidance was used, what was skipped, and what needs more tooling (Search Console, Bing Webmaster Tools, CrUX, log files).
 
 ## References
 
@@ -59,7 +57,7 @@ From "Red flags" — If you catch yourself thinking any of these, stop and run t
 
 ## Skill Output
 
-Structured Markdown returned in the agent's response, shaped by the output contract defined in the skill body: "5. Output Template". The skill publishes, posts, and sends nothing without the user's explicit authorization; delivery decisions stay with the user.
+Structured Markdown returned in the agent's response, shaped by the output contract defined in the skill body: "5. Output template". The skill publishes, posts, and sends nothing without the user's explicit authorization; delivery decisions stay with the user.
 
 ## Skill Version
 

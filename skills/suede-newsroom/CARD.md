@@ -7,7 +7,7 @@ Release record for the `suede-newsroom` skill, following the NVIDIA skill-card t
 
 ## Description
 
-Suede-owned editorial pipeline for agent-run content: six roles with written contracts, one inspectable record that travels between them, and a distribution stage that gives every asset its own argument instead of a shorter draft.
+Suede AI editorial pipeline for agent-run content: six roles with written contracts, one inspectable campaign record, and a distribution stage that gives every asset its own argument instead of a shorter draft.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.2; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
@@ -23,9 +23,9 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when content agents return generic, duplicated, or unsourced work, when one flagship piece has to carry a week of distribution, when someone asks to build an AI content team or one-person media company, or when a founder wants a weekly interview-led content system across personal and company accounts.
+Use when content agents return generic, duplicated, or unsourced work, when one flagship piece has to carry a week of distribution and become the page search engines and AI answers cite, when someone asks to build an AI content team or one-person media company, or when a founder wants a weekly interview-led content system across personal and company accounts.
 
-Out of scope — choosing which topics, pillars, or clusters to cover (use suede-content-strategy); platform mix, cadence, calendars, or listening (use suede-social); an Instagram-specific program (use suede-instagram-growth); running a stage on a schedule with state and stop conditions (use suede-marketing-loops); lane ownership for agents changing code (use suede-agent-teams); writing the flagship piece itself (use suede-ship-copy).
+Out of scope — choosing topics, pillars, or clusters (use suede-content-strategy); platform mix, cadence, calendars, listening, or Instagram programs (use suede-social); running a stage on a schedule with state and stop conditions (use suede-marketing-loops); lane ownership for agents changing code (use suede-agent-teams); writing the flagship piece itself (use suede-ship-copy).
 
 ## Deployment Geography
 

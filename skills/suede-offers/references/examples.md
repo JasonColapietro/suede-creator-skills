@@ -1,6 +1,6 @@
 # Worked Examples: Before/After Offers
 
-Anonymized examples drawn from real engagements. Each shows the weak version, the diagnostic, and the strong version.
+Illustrative composites that show the weak version, the diagnostic, and the strong version. They are teaching examples, not client results: no conversion figures are claimed. When you rebuild a real offer, measure the change against its own baseline.
 
 ---
 
@@ -12,13 +12,13 @@ Anonymized examples drawn from real engagements. Each shows the weak version, th
 > Fractional CMO services. $15K/month. We'll help you grow.
 
 **Diagnostic:**
-- Dream outcome: 4 (vague: "grow")
-- Perceived likelihood: 3 (no methodology, no case studies)
-- Time delay: 4 (no timeline, indefinite engagement)
-- Effort & sacrifice: 5 (unclear what the buyer has to do)
+- Outcome: 4 (vague: "grow")
+- Confidence: 3 (no methodology, no case studies)
+- Wait: 4 (no timeline, indefinite engagement)
+- Effort: 5 (unclear what the buyer has to do)
 - Anatomy: only the core is present. No bonuses, no guarantee, no scarcity, no name.
 
-**Lowest binding constraint:** perceived likelihood. Buyers don't believe an unnamed service will deliver.
+**Lowest binding constraint:** confidence. Buyers don't believe an unnamed service will deliver.
 
 ### After
 
@@ -31,7 +31,7 @@ Anonymized examples drawn from real engagements. Each shows the weak version, th
 | **Name** | "The 90-Day Marketing Reset" |
 | **Price** | $15K → $5K start, $5K week 8, $5K week 16 |
 
-Same delivery, same person, ~3x close rate, longer engagements (because the buyer is clearer about scope).
+What to measure: close rate on proposals and average engagement length, against the prior quarter.
 
 **Lesson:** the price didn't move. The structure did.
 
@@ -45,12 +45,12 @@ Same delivery, same person, ~3x close rate, longer engagements (because the buye
 > Learn copywriting. $1,997. Includes 6 modules and Slack access.
 
 **Diagnostic:**
-- Dream outcome: 5 ("learn copywriting", surface ask, not dream outcome)
-- Perceived likelihood: 3 (no case studies, no named methodology)
-- Time delay: 4 (6-month course, no first-win)
-- Effort & sacrifice: 4 (lots of homework, weekly calls, big commitment)
+- Outcome: 5 ("learn copywriting", surface ask, not outcome)
+- Confidence: 3 (no case studies, no named methodology)
+- Wait: 4 (6-month course, no first-win)
+- Effort: 4 (lots of homework, weekly calls, big commitment)
 
-**Lowest binding constraint:** perceived likelihood. Buyers don't believe THEY can do it.
+**Lowest binding constraint:** confidence. Buyers don't believe THEY can do it.
 
 ### After
 
@@ -63,7 +63,7 @@ Same delivery, same person, ~3x close rate, longer engagements (because the buye
 | **Name** | "The $5K Sales Page Bootcamp" |
 | **Price** | $1,997 pay-in-full OR $797 × 3 |
 
-Same modules. Same instructor. ~4x conversion. Lower refund rate (conditional guarantee qualifies).
+What to measure: sales-page conversion and refund rate, against the prior cohort.
 
 **Lesson:** rename the outcome, add proof, install a real scarcity mechanic.
 
@@ -77,27 +77,27 @@ Same modules. Same instructor. ~4x conversion. Lower refund rate (conditional gu
 > Notion templates for marketers. $97. 20 templates included.
 
 **Diagnostic:**
-- Dream outcome: 6 (clear what you get, less clear what you achieve with it)
-- Perceived likelihood: 6 (templates work for some, less for others: no proof)
-- Time delay: 8 (instant access)
-- Effort & sacrifice: 5 (setup work to customize each template)
+- Outcome: 6 (clear what you get, less clear what you achieve with it)
+- Confidence: 6 (templates work for some, less for others: no proof)
+- Wait: 8 (instant access)
+- Effort: 5 (setup work to customize each template)
 
-**Lowest binding constraint:** perceived likelihood + dream outcome. "Will these actually save me time, for *my* setup?"
+**Lowest binding constraint:** confidence + outcome. "Will these actually save me time, for *my* setup?"
 
 ### After
 
 | Component | What changed |
 |-----------|--------------|
 | **Core** | "The Marketing Ops Stack, 20 Notion templates that turn your scattered docs into a working marketing OS in one Saturday", outcome-framed |
-| **Bonuses** | (1) 10-minute "do this first" Loom, speed bonus; (2) "Stack the templates" flowchart (visual setup map); (3) Lifetime updates as templates are added |
+| **Bonuses** | (1) 10-minute "do this first" video, speed bonus; (2) "Stack the templates" flowchart (visual setup map); (3) Lifetime updates as templates are added |
 | **Guarantee** | "30-day no-questions money-back": unconditional, fits the price point |
 | **Scarcity** | Founding-buyer pricing: $97 for the first 200 buyers, then $147 |
 | **Name** | "The Marketing Ops Stack" |
 | **Price** | $97 pay-in-full |
 
-Same templates. ~2x close rate from the same traffic. The differentiator was the "in one Saturday" outcome anchor and the Loom that proves the speed claim.
+What to measure: conversion from the same traffic source. The changes under test are the "in one Saturday" outcome anchor and the short video that proves the speed claim.
 
-**Lesson:** for low-priced info products, the dream outcome and a fast first-win are the levers. Don't over-engineer the guarantee.
+**Lesson:** for low-priced info products, the outcome and a fast first-win are the levers. Don't over-engineer the guarantee.
 
 ---
 
@@ -109,12 +109,12 @@ Same templates. ~2x close rate from the same traffic. The differentiator was the
 > Enterprise plan: $50K/year. Includes unlimited users, all features, dedicated support.
 
 **Diagnostic:**
-- Dream outcome: 5 (features-listed, not outcome-framed)
-- Perceived likelihood: 5 (no roll-out plan, no time-to-value)
-- Time delay: 3 (unclear when value starts; sales says "implementation varies")
-- Effort & sacrifice: 4 (procurement + security review + IT integration + change management)
+- Outcome: 5 (features-listed, not outcome-framed)
+- Confidence: 5 (no roll-out plan, no time-to-value)
+- Wait: 3 (unclear when value starts; sales says "implementation varies")
+- Effort: 4 (procurement + security review + IT integration + change management)
 
-**Lowest binding constraint:** time delay. Enterprise buyers can't tolerate "implementation varies."
+**Lowest binding constraint:** wait. Enterprise buyers can't tolerate "implementation varies."
 
 ### After
 
@@ -127,7 +127,7 @@ Same templates. ~2x close rate from the same traffic. The differentiator was the
 | **Name** | Tier name stayed "Enterprise" but added the engagement name "Strategic Onboarding" |
 | **Price** | $50K annual → $50K annual with quarterly billing + paid 30-day pilot |
 
-Same product. ~30% higher close rate, 50% shorter sales cycle. The pilot + SLA combination removed the procurement objection.
+What to measure: win rate and sales-cycle length. The pilot plus SLA is aimed at the procurement objection.
 
 **Lesson:** for enterprise B2B, time-to-value IS the offer. Solve it explicitly.
 
@@ -141,12 +141,12 @@ Same product. ~30% higher close rate, 50% shorter sales cycle. The pilot + SLA c
 > Group coaching for founders. $4K/quarter. Includes 12 calls and Slack.
 
 **Diagnostic:**
-- Dream outcome: 5 (vague: "be a better founder")
-- Perceived likelihood: 4 (one alumni testimonial, no methodology)
-- Time delay: 6 (quarterly cadence reasonable)
-- Effort & sacrifice: 7 (12 calls is real time)
+- Outcome: 5 (vague: "be a better founder")
+- Confidence: 4 (one alumni testimonial, no methodology)
+- Wait: 6 (quarterly cadence reasonable)
+- Effort: 7 (12 calls is real time)
 
-**Lowest binding constraint:** dream outcome + perceived likelihood.
+**Lowest binding constraint:** outcome + confidence.
 
 ### After
 
@@ -159,7 +159,7 @@ Same product. ~30% higher close rate, 50% shorter sales cycle. The pilot + SLA c
 | **Name** | "The Founders' Quarter" |
 | **Price** | $4K/quarter pay-in-full OR $1,500 × 3 |
 
-Same coach, same cadence. Higher close rate. Notably: members renew at ~70% (was ~35% before) because the "alumni access for 1 year" bonus changed the buying decision frame from "quarter" to "year."
+What to measure: close rate and renewal rate. The "alumni access for 1 year" bonus is meant to move the buying frame from "quarter" to "year."
 
 **Lesson:** for coaching, the room IS the offer. Position the room, not the curriculum. Renewal-friendly bonuses lock in long-term LTV.
 
@@ -173,12 +173,12 @@ Same coach, same cadence. Higher close rate. Notably: members renew at ~70% (was
 > Content marketing retainer. $8K/month. 4 articles per month + SEO strategy.
 
 **Diagnostic:**
-- Dream outcome: 4 (output-described, not outcome-framed)
-- Perceived likelihood: 5 (no case studies linking content to revenue)
-- Time delay: 3 (SEO is slow; client expectations misaligned)
-- Effort & sacrifice: 6 (interviews, reviews, approvals all on client side)
+- Outcome: 4 (output-described, not outcome-framed)
+- Confidence: 5 (no case studies linking content to revenue)
+- Wait: 3 (SEO is slow; client expectations misaligned)
+- Effort: 6 (interviews, reviews, approvals all on client side)
 
-**Lowest binding constraint:** dream outcome (vague) and time delay (misaligned expectations).
+**Lowest binding constraint:** outcome (vague) and wait (misaligned expectations).
 
 ### After
 
@@ -191,7 +191,7 @@ Same coach, same cadence. Higher close rate. Notably: members renew at ~70% (was
 | **Name** | Tier name: "Growth Retainer"; engagement name: "The 90-Day Content Reset → 9-Month Growth Engine" |
 | **Price** | $8K/month, 6-month minimum, OR $7K/month for 12-month commit |
 
-Same writers. Same SEO methodology. ~2x close rate. 60% of pilots convert to 12-month commits.
+What to measure: proposal close rate and pilot-to-annual conversion.
 
 **Lesson:** for slow-cycle services (SEO, brand, content), the offer has to address the timeline explicitly. "Trust us, results in 6 months" doesn't sell; "paid pilot → milestone at day 30 → ramp" does.
 
@@ -205,7 +205,7 @@ Look at the changes side-by-side:
 |---------|-------------|----------------------------|
 | Fractional CMO | Named it, added scope | First-milestone guarantee |
 | Copywriting course | Outcome-framed, added proof | Case studies bonus |
-| Notion templates | "in one Saturday" anchor | First-step Loom bonus |
+| Notion templates | "in one Saturday" anchor | First-step video bonus |
 | B2B SaaS | Time-to-value commitment | SLA-based guarantee + pilot |
 | Coaching mastermind | Positioned the room, not the coach | 1-year alumni access bonus |
 | Agency retainer | Outcome + timeline framing | Paid pilot guarantee |

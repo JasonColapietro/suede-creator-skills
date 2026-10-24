@@ -18,7 +18,7 @@ export function featuredProjectsHtml(projects, { esc, rel, here, slugify }) {
     return `<article class="featured-project" id="${project.id}" aria-labelledby="${project.id}-title">
       <header class="featured-project-heading"><p class="featured-number" aria-hidden="true">${String(index + 1).padStart(2, "0")}</p><div><p class="featured-kind">${esc(project.kind)}</p><h2 id="${project.id}-title">${esc(project.name)}</h2></div><span class="featured-license">${esc(project.license)}</span></header>
       <div class="featured-project-body"><div><h3 class="featured-headline">${esc(project.headline)}</h3><p class="featured-summary">${esc(project.summary)}</p><ul class="featured-work">${work}</ul></div>${install}</div>
-      <footer class="featured-project-footer"><a href="${source}">Explore ${esc(project.name)} on GitHub ↗</a><a href="${review}">Read the intake review ↗</a><a href="${source}/tree/${project.commit}">Reviewed source <code>${project.commit.slice(0, 7)}</code> ↗</a></footer>
+      <footer class="featured-project-footer">${project.workflow_url ? `<a href="${esc(project.workflow_url)}">Read the workflow source ↗</a>` : ""}<a href="${source}">Explore ${esc(project.name)} on GitHub ↗</a><a href="${review}">Read the intake review ↗</a><a href="${source}/tree/${project.commit}">Reviewed source <code>${project.commit.slice(0, 7)}</code> ↗</a></footer>
     </article>`;
   }).join("\n");
 }

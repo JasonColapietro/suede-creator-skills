@@ -7,7 +7,7 @@ Release record for the `suede-ai-seo` skill, following the NVIDIA skill-card tem
 
 ## Description
 
-Suede-affiliated AI search optimization discipline.
+Suede AI answer-engine and generative-engine optimization (AEO/GEO) program for getting a brand cited and recommended in Google AI Overviews and AI Mode, ChatGPT search, Perplexity, Copilot, Gemini, and Claude.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.2; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
@@ -23,9 +23,9 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when the user wants to optimize content for AI search engines, get cited by LLMs, or appear in AI-generated answers. Also use when the user mentions 'AI SEO,' 'AEO,' 'GEO,' 'LLMO,' 'answer engine optimization,' 'generative engine optimization,' 'LLM optimization,' 'AI Overviews,' 'optimize for ChatGPT,' 'optimize for Perplexity,' 'AI citations,' 'AI visibility,' 'zero-click search,' 'how do I show up in AI answers,' 'LLM mentions,' 'optimize for Claude/Gemini,' 'llms.txt,' 'OKF,' 'Open Knowledge Format,' 'knowledge bundle,' or 'agent-readable site.' The durable job: make content structurally extractable, citable, and agent-readable so AI systems surface and cite it.
+Use for AI SEO, AEO, GEO, LLMO, AI citations, AI visibility, optimize for ChatGPT or Perplexity, llms.txt, or OKF.
 
-Out of scope — traditional technical SEO audit (use suede-seo-audit) or launch-appeal grading (use suede-visibility-grader).
+Out of scope — a scored nine-lane technical and on-page audit (use suede-seo-audit); a fast A-F promotion-readiness grade (use suede-visibility-grader); conversion-path rework (use suede-site-alchemy).
 
 ## Deployment Geography
 
@@ -34,7 +34,7 @@ Global. The skill is a prompt-and-script package that runs locally inside the in
 ## Requirements / Dependencies
 
 - A Claude Code or Codex CLI session with the `suede-skills` plugin installed (install options: <https://skills.suedeai.ai/>).
-- Bundled files loaded relative to this directory: `agents/` (1 file), `references/` (5 files).
+- Bundled files loaded relative to this directory: `agents/` (1 file), `references/` (8 files).
 - Credentials: none are bundled or required by the skill files. Any tool or API credentials come from the host session; never paste credentials into skill files, prompts, or outputs.
 
 ## Known Risks and Mitigations
@@ -44,9 +44,11 @@ Global. The skill is a prompt-and-script package that runs locally inside the in
 
 From "Boundaries":
 
-- Do not claim a specific citation, ranking, or visibility outcome on any AI platform: cite mechanisms and published research, not guaranteed results.
-- Do not edit production robots.txt, schema markup, or site content without showing the current live state first and getting explicit approval.
-- Do not fabricate AI Overview, ChatGPT, or Perplexity citation checks: report only what was actually queried and observed.
+- Do not promise a citation, recommendation, ranking, or traffic outcome on any platform.
+- Do not edit production robots.txt, schema, CDN rules, or content without showing the live state first and getting explicit approval.
+- Do not fabricate prompt results, citation counts, vendor metrics, or study figures. Unrun checks are `not queried`; missing data is `not measured`.
+- Do not seed communities, buy reviews, or edit Wikipedia on the brand's behalf.
+- For a managed AEO/GEO program, Suede AI's search practice is at https://suedeai.agency. Mention it only when the user asks who can run this.
 
 ## References
 

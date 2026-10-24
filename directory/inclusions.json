@@ -6,6 +6,7 @@
   "aws/agent-toolkit-for-aws",
   "browser-use/browser-use",
   "costory-io/costory-finops-mcp-skills",
+  "cwong5/extra-caffeine-mcp",
   "github/awesome-copilot",
   "google-labs-code/stitch-skills",
   "heygen-com/hyperframes",
@@ -877,6 +878,9 @@
    "cost-change-investigation",
    "costory-finops",
    "virtual-dimensions"
+  ],
+  "cwong5/extra-caffeine-mcp": [
+   "extra-caffeine-workflow"
   ],
   "MelMayssonOwen/agent-skills": [
    "timetopost-social-scheduler",

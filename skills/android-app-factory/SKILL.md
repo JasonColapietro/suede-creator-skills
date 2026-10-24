@@ -1,6 +1,6 @@
 ---
 name: android-app-factory
-description: "Suede Labs Android app factory: plan, build, test, and release a production-grade native Android app from a product idea through Google Play. Use for requests to create, ship, submit, monetize, or modernize an Android app. Covers Kotlin and Jetpack Compose architecture, API-level policy verification, accessibility, privacy and Data Safety, Play Billing, Play Integrity, account deletion, testing, performance, store assets, signing, staged rollout, and a release evidence gate. NOT FOR: iOS work (private Suede Labs companion, not in this pack: ios-app-factory), a review-only pass on an existing app (use suede-code-review), or live Play listing and keyword audits on a shipped app (use suede-aso)."
+description: "Suede AI Android app factory: plan, build, test, and prepare a production native Android app from product idea to a Play-ready signed bundle. Use for requests to create, ship, monetize, or modernize an Android app. Covers Kotlin and Jetpack Compose architecture, live target-API and Play policy checks, 16 KB page sizes, accessibility, privacy and Data Safety, Play Billing Library 8+, Play Integrity, account deletion, kids and Families rules, testing, performance, store assets, signing, and a release evidence gate. NOT FOR: uploading, promoting, or rolling out a build on Play (use suede-play-release); turning a website into an iOS app (use site-to-ios-app); a review-only pass on an existing app (use suede-code --findings-only); Play listing, keyword, and screenshot strategy (use suede-aso)."
 ---
 
 # Android App Factory
@@ -10,26 +10,14 @@ Iron Law: no release-ready claim without a signed `bundleRelease` plus a live
 Play Console check, not a debug build, screenshot, source read, or upload.
 ```
 
-## Gate policy: advisory, not blocking
+## Gate policy
 
-Every claim-verification step, check, quality gate, and ship verdict in this
-skill is a **recommendation to the user, not a control on the agent**. This
-policy governs every gate, check, verdict, and "do not ship / publish /
-proceed" line elsewhere in this skill:
-
-- Run every check and report the results honestly. Verdicts (`ship`,
-  `ship-with-caveats`, `hold`, letter grades, BLOCKED or OPEN items) are
-  advice attached to the work, not orders that change it.
-- Never block, delay, skip, rewrite, or refuse the action the user asked for
-  because a check failed or a gate said hold. Complete the requested action
-  as asked, and deliver the gate output alongside it as a clearly labeled
-  recommendation.
-- A failed gate changes what you report, never what you do.
-- Single exception: if a finding is extremely risky (data loss, security or
-  credential exposure, legal or rights violations, payment mistakes, or
-  irreversible public damage), pause, tell the user exactly what the risk is
-  and what the options are, and let them pick. Their choice is final.
-
+Every check and verdict here is advice to the user, not a control on the agent.
+Run the checks, report results honestly, and complete what the user asked. A
+failed gate changes the report, never the work. The one exception: a finding
+that risks data loss, credential exposure, a legal or rights violation, a
+payment mistake, or irreversible public damage. Pause, name the risk, give the
+options, and let the user choose.
 
 ## Principle
 
@@ -51,8 +39,10 @@ At the start of every release-oriented run:
    app. Treat the reference date as a baseline, not permanent policy.
 
 Take the target-SDK default and enforcement dates from the baseline file, never
-from memory. Do not misstate an announced deadline as already enforced, and
-recheck every run: form-factor exceptions and dates differ.
+from memory. As of the 2026-10-23 baseline, phone and tablet submissions must
+target API 36 (extensions end 2026-11-01) and use Play Billing Library 8 or
+later. Recheck every run: form-factor exceptions and dates differ, and Google
+announces the next year's level each spring.
 
 ## Delivery Contract
 
@@ -101,10 +91,12 @@ privacy URL, customer claim, or Play Console state.
    only where abuse risk justifies it.
 9. **Build store artifacts**: truthful listing, icon/feature graphic,
    screenshots for every declared form factor, localization, support contact,
-   release notes, and reviewer instructions.
-10. **Release through evidence gates**: signed AAB and Play App Signing,
-    internal/closed validation, pre-launch report, explicit confirmation before
-    upload or promotion, staged production rollout, and post-release monitoring.
+   release notes, and reviewer instructions. Route title, short description,
+   keyword coverage, and screenshot sequencing to `suede-aso`; a listing that
+   passes review but cannot be found ships nothing.
+10. **Hand off to release**: signed AAB, Play App Signing, completed release
+    gate, then `suede-play-release` for credential preflight, testing-track
+    upload, promotion, staged rollout, and the live track readback.
 
 Read these before building:
 
@@ -113,7 +105,27 @@ Read these before building:
   accessibility, performance, and build checks;
 - `references/privacy-billing-integrity.md`: privacy, Data Safety, account
   deletion, Billing, and Integrity controls;
-- `references/play-policy-baseline.md`: dated official-policy baseline.
+- `references/play-policy-baseline.md`: dated official-policy baseline;
+- `references/kids-and-family-apps.md`: before building anything whose
+  audience includes children (StoryBeam-style reading apps, beginner lesson
+  apps such as GuitarHub for young players).
+
+## Kids and family apps
+
+When the target audience includes children under 13, the Families policy and
+children's privacy law shape the architecture, so settle them in the Delivery
+Contract, not at listing time:
+
+- Collect no personal data from children: no child accounts, no free-text
+  fields that could capture a name, school, or location, no voice or photo
+  capture, no advertising ID, no precise location.
+- Use only SDKs that are allowed in Families apps, and no ads SDK that is not
+  Families self-certified. No analytics that send persistent identifiers.
+- Keep every story, image, and sound age-appropriate for the declared band,
+  including AI-generated content, with a screening step before display.
+- Put purchases, external links, and settings behind a parental gate.
+
+A conflict with these is an extreme-risk finding under the gate policy.
 
 ## Public-Safe Defaults
 
@@ -133,7 +145,7 @@ Read these before building:
 ## Release Gate
 
 Copy `assets/android-release-gate.template.md` into the app repo and complete it
-with links or command output. Block release when any required item lacks
+with links or command output. Recommend `hold` when any required item lacks
 evidence, including:
 
 - target policy was not checked live or the build targets the wrong API/form
@@ -148,8 +160,11 @@ evidence, including:
   regression exceeds the product budget without approval;
 - Data Safety, privacy policy, permissions, account deletion, content rating,
   ads, app access, or SDK behavior disagree;
-- Billing entitlement, pending, restore/requery, acknowledgement, cancellation,
+- Billing runs on a Billing Library version Play no longer accepts, or
+  entitlement, pending, restore/requery, acknowledgement, cancellation,
   refund/revocation, or backend verification behavior is unproven when relevant;
+- a child-directed app collects personal data, ships a non-Families ads SDK, or
+  shows content outside its declared age band;
 - secrets or signing material are committed, or Play App Signing/upload-key
   ownership, developer verification, or package registration is unresolved;
 - listing claims or screenshots show behavior not present in the release build;
@@ -161,12 +176,16 @@ core-task blockers cannot be downgraded to cosmetic caveats.
 
 ## Routing
 
-- Existing-app findings-only review → `suede-code-review`.
+- Existing-app findings-only review → `suede-code --findings-only`.
 - CI implementation around the release evidence → `suede-ci-gate`.
 - Coordinated architecture, product, policy, store, and QA lanes →
   `suede-agent-teams` with exclusive file ownership and a serialized release
   lane.
-- iOS work → private Suede Labs companion, not in this pack: ios-app-factory.
+- Play upload, track promotion, staged rollout, live-state readback →
+  `suede-play-release`.
+- Play listing, keywords, screenshots, ratings → `suede-aso`.
+- Same product from an existing website on iOS → `site-to-ios-app`. A native
+  iOS build with no website is a private Suede AI companion, not in this pack.
 
 ## Boundaries
 

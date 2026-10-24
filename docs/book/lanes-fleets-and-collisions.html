@@ -34,9 +34,9 @@
   "keywords": "git worktree isolation, agent file ownership, parallel agents, S-Tier builder's book",
   "url": "https://skills.suedeai.ai/book/lanes-fleets-and-collisions.html",
   "position": 6,
-  "wordCount": 2226,
+  "wordCount": 2228,
   "datePublished": "2026-08-10",
-  "dateModified": "2026-10-16",
+  "dateModified": "2026-10-23",
   "inLanguage": "en",
   "isPartOf": {
     "@type": "Book",
@@ -91,7 +91,7 @@
       <p class="eyebrow">Part II &middot; Chapter 5</p>
       <h1>Lanes, Fleets, and Collisions</h1>
       <p class="post-meta">Multi-agent work that is not theater: disjoint file ownership, isolated worktrees, atomic leases, and the measured cost of a fan-out that should have been one agent.</p>
-      <div class="book-meta"><span>2,226 words</span><span>10 min read</span><span><a href="./">S-Tier: contents</a></span></div>
+      <div class="book-meta"><span>2,228 words</span><span>10 min read</span><span><a href="./">S-Tier: contents</a></span></div>
 
       <p>Three agents, one repo, one afternoon. Agent A refactors the auth middleware. Agent B is told to "clean up the route handlers," which happens to include the file A is holding. Agent C runs a formatter across the tree. You come back to a branch that compiles, passes nothing, and contains two half-applied versions of the same idea. Nobody lied to you. Every agent did the work it was given.</p>
       <p>That is the failure mode of parallel agent work, and it is not exotic. It is the default outcome when the only coordination mechanism is that the tasks sounded different when you wrote them.</p>
@@ -132,9 +132,9 @@
       <p>If no, if you cannot say what "good" looks like before the output arrives, you have not decomposed a job. You have distributed a vague feeling to twelve processes and committed yourself to reading whatever comes back. The volume will be impressive. The reviewer will be you, at midnight, deciding whether things look about right.</p>
       <p>Acceptance criteria are not paperwork. They are the only thing standing between a fleet and a very expensive way to generate material nobody will check.</p>
       <h2 id="the-stack-formally">The stack, formally</h2>
-      <p>The six skills this chapter and the last keep circling — <code>suede-full-send</code>, <code>suede-graph-flo-xr</code>, <code>suede-agent-teams</code>, <code>suede-codex-fleet</code>, <code>suede-workflow-skills</code>, <code>suede-recommend-next-action</code> — ship as a named group: the Agentic Adderall Stack, sold with a straight face at <code>/cracked.html</code> on the docs site. The label is a joke. The contract underneath is not, and it is worth stating precisely because it demonstrates the pack's own discipline applied to itself.</p>
+      <p>Three of the skills this chapter and the last keep circling, <code>suede-graph-flo-xr</code>, <code>suede-agent-teams</code>, and <code>suede-workflow-skills</code>, ship as a named group: the Agentic Adderall Stack, sold with a straight face at <code>/cracked.html</code> on the docs site. The label is a joke. The contract underneath is not, and it is worth stating precisely because it demonstrates the pack's own discipline applied to itself.</p>
       <p>In the catalog, a stack is a cross-cutting overlay, not a seventh specialty. The six specialties remain a strict partition — every skill carries exactly one, and the validator fails the build if the per-specialty counts stop summing to the pack size. A <code>stacks</code> entry references members by name across that partition, and it is held to the same drift rules as every count surface: each member must resolve to a real catalog skill, the claimed count must equal the membership, and the page selling the stack must list exactly its members, row for row, or CI goes red. The MCP server scopes the stack per profile, so a narrowed profile only advertises the members it can actually serve. Nothing about the branding is load-bearing; everything about the membership is checked.</p>
-      <p>The two "formulations" are execution modes with different scheduling semantics. Instant release is one continuous pass: a single controller decomposes the outcome, fans every disjoint lane out at once, and the run has no intervals because nothing ever waits on a timer — work is event-driven off lane completion, adversarial refutation runs inside the pass rather than as a follow-up session, and the close is an evidence gate, not a summary. Its cost model is the one this chapter already priced: subagents inherit the session model unless told otherwise, and <code>suede-graph-flo-xr</code> states its exact light, standard, and deep ceilings of 55, 110, and 200 total calls before launch. It generates competing plans, scores and prunes them, refutes and improves the survivors, aggregates compatible lanes, and lets only the selected plan mutate. The fleet skill exists precisely so well-specified volume can leave the Anthropic meter. Extended release is the other scheduling regime: between passes, <code>suede-recommend-next-action</code> scores candidate moves on goal fit, unblocking, evidence, urgency, and leverage, and emits the winner as a runnable prompt, so the idle state between runs is a queued next action instead of a blank prompt box.</p>
+      <p>The two "formulations" are execution modes with different scheduling semantics. Instant release is one continuous pass: a single controller decomposes the outcome, fans every disjoint lane out at once, and the run has no intervals because nothing ever waits on a timer — work is event-driven off lane completion, adversarial refutation runs inside the pass rather than as a follow-up session, and the close is an evidence gate, not a summary. Its cost model is the one this chapter already priced: subagents inherit the session model unless told otherwise, and <code>suede-graph-flo-xr</code> states its exact light, standard, and deep ceilings of 55, 110, and 200 total calls before launch. It generates competing plans, scores and prunes them, refutes and improves the survivors, aggregates compatible lanes, and lets only the selected plan mutate. The fleet skill exists precisely so well-specified volume can leave the Anthropic meter. Extended release is the other scheduling regime: between passes, the Next move section of <code>suede-workflow-skills</code> scores candidate moves on goal fit, unblocking, evidence, urgency, and leverage, and emits the winner as a runnable prompt, so the idle state between runs is a queued next action instead of a blank prompt box.</p>
       <div class="panel move"><p class="move-label">The move</p>
       <p>Before spawning any parallel work, write the lane map and the per-lane acceptance criterion first, and if you cannot write the criterion for a lane, do that lane yourself instead of dispatching it.</p>
       </div>
@@ -156,7 +156,7 @@
     </section>
     <footer>
       <div class="footer-shell">
-        <p class="footer-note">Suede Creator Skills is a 76-skill, open-source pack for Claude Code and OpenAI Codex: outcome-bound orchestration, code review with an A-F ship grade, AI evals, design and copy, SEO/AEO/AI EO, iOS and Android app shipping, and a creator toolkit for music rights and release prep. Original work is MIT licensed; adapted components retain their upstream notices.</p>
+        <p class="footer-note">Suede Creator Skills is a 63-skill, open-source pack for Claude Code and OpenAI Codex: outcome-bound orchestration, code review with an A-F ship grade, AI evals, design and copy, SEO/AEO/AI EO, iOS and Android app shipping, and a creator toolkit for music rights and release prep. Original work is MIT licensed; adapted components retain their upstream notices.</p>
         <div class="footer-inner">
           <div class="footer-brand">
             <img src="../assets/suede-ai-logo-transparent.webp" alt="Suede AI" width="24" height="24" onerror="this.style.display='none'">
@@ -175,7 +175,8 @@
           </div>
         </div>
       </div>
-    </footer>
+    <div class="trendshift-recognition" style="width:250px;max-width:100%;margin:24px auto;text-align:center"><p style="margin:0 0 8px;font-size:13px">Suede Creator Skills on Trendshift</p><a href="https://trendshift.io/repositories/82031?utm_source=trendshift-badge&amp;utm_medium=badge&amp;utm_campaign=badge-trendshift-82031" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/82031/daily?language=Python" alt="JasonColapietro%2Fsuede-creator-skills | Trendshift" width="250" height="55" loading="lazy" style="display:block;max-width:100%;height:auto"/></a></div>
+</footer>
     <script>
       // Mobile nav disclosure. The markup ships <details open> so a no-JS
       // visit still reaches every link; this collapses it at mobile widths

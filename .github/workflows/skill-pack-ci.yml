@@ -39,7 +39,7 @@ jobs:
           persist-credentials: false
 
       - name: Set up Node.js
-        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version: "22"
           cache: npm
@@ -88,7 +88,7 @@ jobs:
           fi
 
   directory-browser:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04  # playwright install --with-deps does not support the Ubuntu 26 image yet
     timeout-minutes: 10
     steps:
       - name: Check out repository
@@ -96,7 +96,7 @@ jobs:
         with:
           persist-credentials: false
       - name: Set up Node.js
-        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version: "22"
           package-manager-cache: false
@@ -110,7 +110,7 @@ jobs:
           DIRECTORY_SCREENSHOTS: ${{ runner.temp }}/directory-screenshots
       - name: Save visual evidence
         if: always()
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: directory-browser-screenshots
           path: ${{ runner.temp }}/directory-screenshots

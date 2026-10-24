@@ -66,16 +66,16 @@ const FIXED_PAGES = [
 
 const FLAGSHIP_SKILLS = [
   "suede-workflow-skills",
-  "johnny-suede-write",
-  "johnny-suede-design",
+  "suede-seo-audit",
+  "suede-ai-seo",
+  "suede-copy",
+  "suede-design",
   "suede-visibility-grader",
   "suede-ai-eval",
   "suede-agent-teams",
-  "suede-code-grader",
   "suede-rights-passport",
   "suede-release-linter",
   "suede-code",
-  "suede-code-review",
   "suede-ci-gate",
 ];
 const FLAGSHIP_PRIORITY = "0.85";
@@ -137,7 +137,20 @@ function declaredDate(relPath) {
   return m ? m[1] : null;
 }
 
+// A shallow clone answers `git log -1 -- <file>` with the graft commit for
+// every file, so its dates would stamp every unchanged page with the clone's
+// newest commit. There, a clean file keeps the lastmod already committed in
+// the sitemap; only a file with uncommitted changes moves to today.
+const committedLastmod = new Map(
+  [...parseSitemapEntries(fs.existsSync(sitemapPath) ? readText(sitemapPath) : "")].map(([loc, e]) => [loc, e.lastmod])
+);
+
+// docs/<p>/index.html is served at /<p>/; any other docs file at its own path.
+const locFor = (relPath) =>
+  `${BASE_URL}/${relPath.split(path.sep).join("/").replace(/^docs\//, "").replace(/(^|\/)index\.html$/, "$1")}`;
+
 function lastCommitDate(relPath) {
+  const loc = locFor(relPath);
   const declared = declaredDate(relPath);
   if (declared) return declared;
   if (!hasOwnGitHistory) {
@@ -150,6 +163,9 @@ function lastCommitDate(relPath) {
   );
   if (status.status === 0 && status.stdout.trim()) {
     return localToday();
+  }
+  if (!canVerifyGitDates && committedLastmod.has(loc)) {
+    return committedLastmod.get(loc);
   }
   const result = spawnSync(
     "git",
@@ -288,6 +304,11 @@ function buildEntries() {
     walk(directoryAbs, 1);
     const tier = (rel, depth) => {
       if (rel === "directory/methodology" || rel === "directory/submit") return { priority: "0.5", changefreq: "monthly" };
+      // Editorial guides (directory/editorial/) answer the questions the
+      // directory ranks for, so they sit with the category hubs; the free
+      // check is the publisher entry point.
+      if (rel === "directory/guides" || rel.startsWith("directory/guides/")) return { priority: DIRECTORY_CATEGORY_PRIORITY, changefreq: rel === "directory/guides" ? "weekly" : "monthly" };
+      if (rel === "directory/check") return { priority: "0.7", changefreq: "monthly" };
       if (depth === 1) return { priority: DIRECTORY_CATEGORY_PRIORITY, changefreq: "weekly" };
       if (depth === 2) return { priority: DIRECTORY_REPO_PRIORITY, changefreq: "weekly" };
       return { priority: DIRECTORY_SKILL_PRIORITY, changefreq: "monthly" };

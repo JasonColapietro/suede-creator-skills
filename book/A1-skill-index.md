@@ -13,14 +13,13 @@ describing the work in the words its description was written to catch.
 |---|---|
 | `suede-graph-flo-xr` | A multi-file repo change needs competing plans searched, scored, pruned, refuted, improved, and aggregated before only one selected plan mutates; light/standard/deep stop at 55/110/200 calls and production stays read-only |
 | `suede-agent-teams` | Complex work needs coordinated lanes with file ownership, collision checks, rollback plans, and an evidence-backed handoff |
-| `suede-recommend-next-action` | You are stalled and want one scored recommendation with a runnable prompt, not a menu |
-| `suede-workflow-skills` | You want the umbrella that loads the pack |
+| `suede-workflow-skills` | You want the umbrella that loads the pack, or you are stalled and want one scored next move with a runnable prompt, not a menu |
 
-These four are also indexed together in the catalog as the Agentic Adderall
+These three are also indexed together in the catalog as the Agentic Adderall
 Stack (`stacks[0]`, key `adderall`) and sold at `/cracked.html`. The grouping is
 a cross-cutting overlay on the specialty partition, and the validator pins its
 membership: every member must be a real catalog skill, the claimed count must
-match, and the page must list exactly these four.
+match, and the page must list exactly these three.
 
 ## I want to decide what to build, before building it
 
@@ -33,22 +32,17 @@ match, and the page must list exactly these four.
 
 | Skill | Use it when |
 |---|---|
-| `suede-code` | You want findings and an A-F ship grade in one pass |
-| `suede-code-review` | You want the bugs, not a verdict: TypeScript, React, Next.js, OWASP, accessibility, SEO, database, deploy risk |
-| `suede-code-grader` | You want the blunt letter grade only, with instant-F triggers and auth and payment caps |
+| `suede-code` | You want findings and an A-F ship grade in one pass, or just one of them: findings-only for the bugs without a verdict, grade-only for the blunt letter with instant-F triggers and auth and payment caps |
 | `suede-ci-gate` | You want CI that actually holds the line: path-aware builds, one required check, branch protection, no deadlock |
 | `suede-parity-contract` | The same rule lives in two or more languages and the numbers are kept in step by hand |
 | `suede-ai-eval` | The surface is an LLM, RAG, classifier, or agent, and you need rubrics, failure modes, eval cases, and acceptance gates |
-| `suede-mcp-qa` | You ship an MCP server and want drift caught before release |
 
 ## I want it to look and read like someone made it
 
 | Skill | Use it when |
 |---|---|
-| `johnny-suede-design` | You want the full design lane across brand and product surfaces |
-| `suede-design` | You need tokens, color, type, hierarchy, motion, dark mode, or visual QA on shipped screens |
-| `johnny-suede-write` | You want the full writing lane: structure, persuasion, anti-slop gate, copy score |
-| `suede-copy` | You need conversion copy: sections, email, microcopy, buttons, headlines, variants |
+| `suede-design` | You want the full design lane across brand and product surfaces: tokens, color, type, hierarchy, motion, dark mode, redesigns, and visual QA on shipped screens |
+| `suede-copy` | You want the full writing lane: conversion and SEO copy, sections, email, microcopy, headlines, variants, persuasion, anti-slop gate, copy score |
 | `suede-ship-copy` | One high-stakes public surface has to be true, and you want research lenses, a claim audit, and a publish-readiness gate |
 | `suede-deslop` | Prose is finished and about to go public, and it still sounds generated |
 | `suede-image` | You need marketing images: generation prompts, hero and social graphics, mockups, export sizing |
@@ -85,38 +79,27 @@ match, and the page must list exactly these four.
 ## I want to grow it
 
 Acquisition and outbound: `suede-ads`, `suede-ad-creative`, `suede-cold-email`,
-`suede-prospecting`, `suede-social`, `suede-instagram-growth`, `suede-sms`,
+`suede-prospecting`, `suede-social` (Instagram included), `suede-sms`,
 `suede-co-marketing`, `suede-community-marketing`, `suede-lead-magnets`,
 `suede-referrals`.
 
-Monetization: `suede-pricing`, `suede-offers`, `suede-paywalls`, `suede-signup`,
-`suede-onboarding`, `suede-churn-prevention`, `suede-emails`.
+Monetization: `suede-pricing`, `suede-offers` (persuasion mechanics included),
+`suede-paywalls`, `suede-onboarding` (signup included), `suede-churn-prevention`,
+`suede-emails`.
 
 Measurement and operations: `suede-analytics`, `suede-attribution`,
 `suede-ab-testing`, `suede-revops`, `suede-sales-enablement`,
-`suede-marketing-plan`, `suede-marketing-loops`, `suede-marketing-ideas`,
-`suede-marketing-council`, `suede-marketing-psychology`,
-`suede-product-marketing`, `suede-customer-research`, `suede-competitor-profiling`.
+`suede-marketing-plan` (tactic shortlists included), `suede-marketing-loops`,
+`suede-marketing-council`, `suede-product-marketing`, `suede-customer-research`,
+`suede-competitor-profiling`.
 
-Forty of these are adapted from
-[marketingskills](https://github.com/coreyhaines31/marketingskills) by Corey
-Haines under the MIT License. See `NOTICE.md`.
+Thirty-eight skills in the pack, most of them listed here, are adapted from MIT-licensed
+source material. The copyright and license notice is in `NOTICE.md`.
 
 ## I want to protect what I made
 
 | Skill | Use it when |
 |---|---|
-| `suede-rights-audit` | You need the ownership, splits, samples, provenance, and licensing gaps found before packaging |
-| `suede-rights-passport` | You need an evidence-scoped rights handoff: works, recordings, releases, parties, identifiers, claims |
+| `suede-rights-passport` | You need the ownership, splits, samples, provenance, and licensing gaps found (audit mode), then an evidence-scoped rights handoff: works, recordings, releases, parties, identifiers, claims |
 | `suede-release-linter` | A creative release folder needs auditing before handoff |
 | `suede-sync-packaging` | Songs need sync-pitch prep: scene angles, one-sheets, clean and instrumental assets, mood tags |
-
-## I want my money back
-
-| Skill | Use it when |
-|---|---|
-| `amazon-returns-recovery` | Amazon returns, restocking fees, short or denied refunds, and forgotten Amazon-billed subscriptions need auditing and disputing |
-| `subscription-recovery` | Recurring charges outside Amazon need finding and auditing across App Store, Google Play, PayPal, and direct-bill services |
-
-Both report findings first and require your confirmation before any cancellation
-or refund contact. Neither handles credentials.

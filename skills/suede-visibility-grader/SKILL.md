@@ -1,6 +1,6 @@
 ---
 name: suede-visibility-grader
-description: "Suede-owned launch-appeal grader for public pages. Grades findability, first-screen clarity, CTA pull, proof quality, design signal, and AI citation readiness. Use when a public page needs a fast A-F visibility grade before or after launch. NOT FOR: the deep nine-lane SEO audit with rewrite fixes (use suede-seo-audit); implementing conversion changes (use suede-site-alchemy); getting cited by AI answer engines (use suede-ai-seo)."
+description: "Suede AI promotion-readiness grader for one public page. Gives a fast, evidence-based A-F grade on six lanes, findability, first-screen clarity, CTA pull, proof and trust, AI citation readiness, and design signal, plus up to five ranked fixes and a ship gate. Use before paid or public promotion of a landing page, launch page, README, docs page, or campaign page, or for a gut check on whether a page earns attention. NOT FOR: the deep nine-lane SEO audit with JSON-LD and rewrite fixes (use suede-seo-audit); AI crawler policy, entity consistency, and prompt-panel measurement (use suede-ai-seo); implementing conversion changes or experiments (use suede-site-alchemy)."
 ---
 
 # Suede Visibility Grader
@@ -32,11 +32,17 @@ never from impression, memory, or generosity.
 
 ## Routing
 
-Send to `suede-seo-audit` for: Core Web Vitals, crawl errors, structured data validation, keyword gap analysis, backlink profile, redirect chains, or page speed.
+This skill answers one question fast: is this page ready for the attention it
+is about to get? It reads the page; it does not audit the site.
 
-Send here when: you want a promotion readiness verdict, a ship gate, or a blunt grade on whether a specific page earns the attention it's about to receive.
-
-After grading: fixes are conversion-shaped (CTA, friction, offer) → `suede-site-alchemy`. AI readability grades C or below, or the goal is being cited by ChatGPT, Perplexity, or AI Overviews → `suede-ai-seo`. Grade passed and the page ships as part of a release → `suede-launch-packaging`.
+- Core Web Vitals, crawl errors, schema validation, keyword gaps, redirect
+  chains, internal link graph, or a scored lane-by-lane SEO report →
+  `suede-seo-audit`.
+- AI readability at C or below, or the goal is being cited by ChatGPT,
+  Perplexity, Claude, Copilot, or AI Overviews → `suede-ai-seo`.
+- Fixes are conversion-shaped (CTA, friction, offer, pricing) →
+  `suede-site-alchemy`.
+- Grade passed and the page ships in a release → `suede-launch-packaging`.
 
 ## Source Truth
 
@@ -55,7 +61,7 @@ files and mark live checks as unverified.
 
 Score each lane A-F, then give one overall grade:
 
-- **Findability:** status, canonical, robots, sitemap, title, description,
+- **Findability:** status, canonical, robots (including `noindex` and snippet directives), sitemap, title, description,
   durable keywords, and duplicate URL risk.
 - **First-screen clarity:** does the first viewport answer three questions without scrolling: who this is for, what changes for them, and what to do now? Grade on the rendered first viewport, not the document structure.
 - **CTA pull:** primary action, secondary proof action, button text, link
@@ -69,12 +75,12 @@ Score each lane A-F, then give one overall grade:
   owns the extractability standard these items encode; when an item is ambiguous
   or the threshold needs to change, resolve it there, not here.
 
-  - Structured lede: first 100 words answer "what is this, who is it for, what does it do" without jargon.
-  - Citation-ready headings: headings read as answer fragments an LLM would quote directly. "Getting started" = F. "How to install X in 3 commands" = A.
-  - Sourceable claims: every quantitative or comparative claim links to a source or shows primary evidence.
-  - Entity schema: JSON-LD or OpenGraph declares entity type, author/organization, and published date.
-  - Internal link density: at least one link to a more-detailed resource per major section.
-  - AI test: if an LLM were asked "what is [product/page topic]?" right now, would this page produce a correct, non-hallucinated answer? If no, cap AI readability at C.
+  - Direct answer up top: the first 40 to 80 words answer "what is this, who is it for, what does it do" without jargon and name the subject.
+  - Question headings: headings name their own subject and read as answers an engine would quote. "Getting started" fails. "How to install X in 3 commands" passes.
+  - Quotable, sourced claims: every quantitative or comparative claim is a plain sentence that links to a source or shows primary evidence.
+  - Entity markup: JSON-LD declares the entity type, the author or organization (with a stable `@id`), and the published or modified date, matching visible text.
+  - Next-step links: at least one descriptive internal link to a more detailed resource per major section.
+  - AI test: if an assistant were asked "what is [product/page topic]?" using only this page, would it produce a correct, attributable answer? If no, cap AI readability at C.
 - **Design signal:** seven pass/fail axes. The grade is the pass count: 7 → `A`,
   6 → `B`, 5 → `C`, 4 → `D`, 3 or fewer → `F`. A cap below overrides the count.
   1. Hierarchy: H1 > H2 > body weight is visually obvious at a glance.
@@ -163,9 +169,9 @@ Design signal: A-F
 Overall: A-F
 
 Top fixes (max 5, ranked by impact on ship gate):
-1. [P1] Lane affected | Location | Evidence (quote or describe exactly what was seen) | One-line patch
-2. [P2] Lane affected | Location | Evidence | One-line patch
-3. [P3] Lane affected | Location | Evidence | One-line patch
+1. [P1] Lane affected | Location | Evidence (quote or describe exactly what was seen) | One-line patch | KPI it should move
+2. [P2] Lane affected | Location | Evidence | One-line patch | KPI
+3. [P3] Lane affected | Location | Evidence | One-line patch | KPI
 
 Verification:
 What was checked:

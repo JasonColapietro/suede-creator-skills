@@ -10,7 +10,7 @@
     <link rel="canonical" href="https://skills.suedeai.ai/directory/code-review-quality/">
     <link rel="icon" href="../../assets/favicon-64.png" type="image/png">
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Suede Skills Directory">
+    <meta property="og:site_name" content="Suede AI Skills Directory">
     <meta property="og:title" content="Code Review and Code Quality Skills for Claude and Codex">
     <meta property="og:description" content="Code review and code quality skills for Claude Code and Codex: pull request review, refactoring, linting and code standards with named checks.">
     <meta property="og:url" content="https://skills.suedeai.ai/directory/code-review-quality/">
@@ -18,6 +18,7 @@
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@AISUEDE">
     <meta name="twitter:title" content="Code Review and Code Quality Skills for Claude and Codex">
     <meta name="twitter:description" content="Code review and code quality skills for Claude Code and Codex: pull request review, refactoring, linting and code standards with named checks.">
     <meta name="twitter:image" content="https://skills.suedeai.ai/assets/social/directory-card.png">
@@ -29,9 +30,18 @@
         "name": "Code Review and Code Quality Skills for Claude and Codex",
         "description": "Code review and code quality skills for Claude Code and Codex: pull request review, refactoring, linting and code standards with named checks.",
         "url": "https://skills.suedeai.ai/directory/code-review-quality/",
-        "dateModified": "2026-10-19",
+        "dateModified": "2026-10-24",
         "isPartOf": {
-          "@id": "https://skills.suedeai.ai/directory/#directory"
+          "@type": "CollectionPage",
+          "@id": "https://skills.suedeai.ai/directory/#directory",
+          "name": "Suede AI Skills Directory",
+          "url": "https://skills.suedeai.ai/directory/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "@id": "https://suedeai.ai/#organization",
+          "name": "Suede AI",
+          "url": "https://suedeai.ai"
         },
         "breadcrumb": {
           "@id": "https://skills.suedeai.ai/directory/code-review-quality/#breadcrumb"
@@ -252,7 +262,7 @@
           <a href="../../">Home</a>
           <a href="../">Directory</a>
           <a href="../methodology/">How listing works</a>
-          <a href="../../skills/">Suede skills</a>
+          <a href="../../skills/">Suede AI skills</a>
           <a href="../../blog/">Blog</a>
           <a href="../submit/" class="nav-cta">List your skill</a>
         </div>
@@ -264,6 +274,7 @@
       <h1>Code Review and Code Quality <span class="h1-sub">agent skills</span></h1>
       <nav class="crumbs" aria-label="Breadcrumb"><a href="../">Directory</a> <span class="crumb-sep" aria-hidden="true">/</span> <span aria-current="page">Code Review and Code Quality</span></nav>
       <p class="lead">Skills for reviewing pull requests, refactoring, linting and enforcing code standards. They turn review into a repeatable pass with named checks, so findings are consistent across every change.</p>
+      <p class="answer"><b>Highest-scoring code review skills</b> in the October 22, 2026 snapshot: <a href="../eduardo-sl/go-agent-skills/go-coding-standards/">go-coding-standards</a> from eduardo-sl/go-agent-skills (95/100), <a href="../mblode/agent-skills/pr-babysitter/">pr-babysitter</a> from mblode/agent-skills (91/100) and <a href="../trailofbits/skills/dimensional-analysis/">dimensional-analysis</a> from trailofbits/skills (89/100). Scores come from the <a href="../methodology/">Suede Skill Check</a>.</p>
       <ul class="stat-row" aria-label="Category size">
         <li><b>93</b> listed skills</li>
         <li><b>28</b> repositories</li>
@@ -381,6 +392,7 @@
         <p>Language-specific review skills catch idioms a general reviewer misses; pair one with a general review skill rather than replacing it.</p>
         <p>Refactoring skills change many files. Run them on a branch with tests, and ask for the change in small, reviewable steps.</p>
       </section>
+
       <section class="panel" aria-labelledby="picks-title">
         <h2 id="picks-title">Where to start</h2>
         <div class="links">
@@ -391,6 +403,21 @@
           <a class="link-row" href="../obra/superpowers/receiving-code-review/"><b>receiving-code-review</b><span>Guides handling code review feedback with technical rigor and verification, rather than performative agreement or… From obra/superpowers, cited by 6 curated lists.</span></a>
         </div>
       </section>
+      <aside class="panel svc-cta" aria-labelledby="svc-title" data-services-cta="category">
+        <h2 class="svc-kicker" id="svc-title">From Suede AI, the publisher of this directory</h2>
+        <div class="svc-cards">
+          <div class="svc-card svc-lead" data-offer="agents">
+            <h3>Ready for a team of agents, not one?</h3>
+            <p>Suede AI Agent Studio builds multi-agent automation for businesses, with handoffs between agents and approvals where your team wants them.</p>
+            <p><a class="button" href="https://suedeai.app/?utm_source=skills.suedeai.ai&amp;utm_medium=directory&amp;utm_campaign=category-agent-studio&amp;utm_content=a-team-of-agents" data-cta="category-agent-studio:a-team-of-agents" target="_blank" rel="noopener">Explore Agent Studio</a></p>
+          </div>
+          <div class="svc-card" data-offer="search">
+            <h3>Get your business cited in AI answers and ranked in Google</h3>
+            <p>Suede AI runs AEO, GEO and SEO programs for businesses: technical audits, structured data, entity work and content built to be quoted by ChatGPT, Claude, Perplexity and Google AI Overviews.</p>
+            <p><a class="button secondary" href="https://suedeai.agency/?utm_source=skills.suedeai.ai&amp;utm_medium=directory&amp;utm_campaign=directory-services&amp;utm_content=category-code-review-quality" data-cta="search" target="_blank" rel="noopener">See AEO and SEO services</a></p>
+          </div>
+        </div>
+      </aside>
       <section aria-labelledby="featured-title">
         <h2 id="featured-title">Featured code review skills</h2>
         <div class="dir-cards">
@@ -561,7 +588,8 @@
           </div>
         </div>
       </div>
-    </footer>
+    <div class="trendshift-recognition" style="width:250px;max-width:100%;margin:24px auto;text-align:center"><p style="margin:0 0 8px;font-size:13px">Suede Creator Skills on Trendshift</p><a href="https://trendshift.io/repositories/82031?utm_source=trendshift-badge&amp;utm_medium=badge&amp;utm_campaign=badge-trendshift-82031" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/82031/daily?language=Python" alt="JasonColapietro%2Fsuede-creator-skills | Trendshift" width="250" height="55" loading="lazy" style="display:block;max-width:100%;height:auto"/></a></div>
+</footer>
   <script>
   // Mobile nav disclosure. The markup ships <details open> so a no-JS visit
   // still reaches every link; this collapses it at mobile widths only and

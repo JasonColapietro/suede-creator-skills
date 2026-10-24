@@ -7,7 +7,7 @@ Release record for the `suede-pricing` skill, following the NVIDIA skill-card te
 
 ## Description
 
-Suede-owned pricing and packaging discipline.
+Suede AI pricing and packaging: chooses the value metric (seats, usage, credits, outcomes), structures tiers, compares free trial, freemium, and reverse trial, plans willingness to pay research and price increases with grandfathering, and tears down a pricing page for buyer clarity and for search and AI-assistant readability (text prices, matching schema, quotable FAQ).
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.2; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
@@ -23,7 +23,7 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when deciding what to charge, structuring tiers, choosing a value metric, comparing free trials with freemium, researching willingness to pay, planning a price increase, or tearing down a pricing page for clarity and AI-readability.
+Use when deciding what to charge, restructuring tiers, pricing AI features with variable compute cost, raising prices, or fixing a pricing page that buyers or AI answers misread.
 
 Out of scope — in-product upgrade screens (use suede-paywalls), offer bonuses and guarantees (use suede-offers), or executing billing changes.
 

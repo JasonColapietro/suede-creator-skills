@@ -4,7 +4,7 @@
     {
       "id": 1,
       "prompt": "We want to build a free tool to drive leads for our SEO software. We're thinking about an SEO audit tool or a keyword research tool. Which would be better and how should we approach it?",
-      "expected_output": "Should check for product-marketing.md first. Should apply the evaluation scorecard to compare both tool ideas across dimensions (audience alignment, lead quality, build effort, SEO value, maintenance burden, competitive differentiation). Should reference the tool types from the skill (analyzers, testers). Should recommend the stronger option with rationale. Should discuss lead capture gating strategy (what's free vs what requires email). Should address MVP scope — what's the minimum valuable version. Should provide implementation recommendations.",
+      "expected_output": "Should check for product-marketing.md first. Should apply the evaluation scorecard to compare both tool ideas across dimensions (audience alignment, lead quality, build effort, SEO value, maintenance burden, competitive differentiation). Should reference the tool types from the skill (analyzers, testers). Should recommend the stronger option with rationale. Should discuss lead capture gating strategy (what's free vs what requires email). Should address MVP scope: what's the minimum valuable version. Should provide implementation recommendations.",
       "assertions": [
         "Checks for product-marketing.md",
         "Applies evaluation scorecard to compare options",
@@ -49,21 +49,22 @@
     {
       "id": 4,
       "prompt": "We built a free website speed test tool 6 months ago but it's barely getting any traffic. What went wrong and how do we fix it?",
-      "expected_output": "Should diagnose why the tool isn't getting traffic. Should investigate: SEO strategy for the tool page (target keywords, on-page optimization), distribution strategy (was it launched and forgotten?), competitive landscape (are there dominant free tools already?), tool quality and UX (does it provide unique value?). Should apply the engineering as marketing principles. Should recommend a recovery plan: SEO improvements, content marketing around the tool, product improvements for differentiation.",
+      "expected_output": "Should diagnose why the tool isn't getting traffic. Should investigate: SEO strategy for the tool page (target keywords, on-page optimization), distribution strategy (was it launched and forgotten?), competing tools (are there dominant free tools already?), tool quality and UX (does it provide unique value?). Should apply the engineering as marketing principles. Should recommend a recovery plan: SEO improvements, content marketing around the tool, product improvements for differentiation.",
       "assertions": [
         "Diagnoses potential traffic issues",
         "Investigates SEO strategy for the tool",
-        "Assesses competitive landscape",
+        "Assesses competing free tools",
         "Questions unique value proposition",
         "Applies engineering as marketing principles",
-        "Recommends recovery plan with specific actions"
+        "Recommends recovery plan with specific actions",
+        "Checks that the tool page has crawlable method text and an opening answer, not only the widget"
       ],
       "files": []
     },
     {
       "id": 5,
       "prompt": "Should we gate our free tool behind an email capture or make it completely free? We want leads but don't want to kill usage.",
-      "expected_output": "Should apply the lead capture gating strategy framework. Should present the spectrum: fully ungated → partial gating (basic results free, detailed report gated) → fully gated. Should recommend partial gating as the typical best approach — give enough value to demonstrate the tool's worth, gate the detailed/actionable output. Should discuss tradeoffs: ungated = more SEO value and usage, gated = more leads but fewer users. Should provide specific gating recommendations based on tool type.",
+      "expected_output": "Should apply the lead capture gating strategy framework. Should present the spectrum: fully ungated → partial gating (basic results free, detailed report gated) → fully gated. Should recommend partial gating as the typical best approach: give enough value to demonstrate the tool's worth, gate the detailed/actionable output. Should discuss tradeoffs: ungated = more SEO value and usage, gated = more leads but fewer users. Should provide specific gating recommendations based on tool type.",
       "assertions": [
         "Applies lead capture gating strategy",
         "Presents gating spectrum (ungated to fully gated)",

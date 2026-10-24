@@ -203,7 +203,7 @@ Quarter-by-quarter outcome state (Q1 / Q2 / Q3 / Q4).
 - Paywall + pricing review (often Activation × Revenue)
 
 ### Skills + tools
-`suede-onboarding`, `suede-signup`, `suede-paywalls`, `suede-copy`, `suede-site-alchemy`, `suede-ab-testing`, etc.
+`suede-onboarding`, `suede-paywalls`, `suede-copy`, `suede-site-alchemy`, `suede-ab-testing`, etc.
 
 ---
 
@@ -414,7 +414,7 @@ the interim safe state. Pull conditions from
 
 ## Section 12: Tactical idea bank
 
-**Purpose:** Cross-reference all 139 ideas from the `suede-marketing-ideas` skill against AARRR stages, with client-specific status.
+**Purpose:** Cross-reference all 142 ideas from `references/tactic-library.md` against AARRR stages, with client-specific status.
 
 **Length:** Long: tables can easily total 150+ rows.
 
@@ -434,7 +434,7 @@ Explain the cross-reference: Sections 4–8 prescribe what's *being done*. This 
 ### 12.1 Acquisition ideas
 
 By status (Current / Approved test / Conditional / Deferred / Skip), tables of
-relevant `suede-marketing-ideas` entries by number.
+relevant tactic-library entries by number.
 
 | # | Idea | Client note |
 |---|---|---|

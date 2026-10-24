@@ -29,6 +29,11 @@ rights confirmation are two independent checks, and `risk_flags[]` and
 supposed to live.
 
 ```bash
-python3 ../validate_transfer_package.py --strict-current ./sample-complete-package
-python3 ../validate_transfer_package.py --strict-current ./sample-blocked-package
+python3 ../validate_transfer_package.py ./sample-complete-package
+python3 ../validate_transfer_package.py ./sample-blocked-package
 ```
+
+Both fixtures use the legacy 0.1 manifest, so they pass without
+`--strict-current` and fail with it by design (`tests/test_rights_passport_schema.py`
+asserts exactly that). New packages from `create_transfer_package.py` are 0.2.0
+and pass `--strict-current`.

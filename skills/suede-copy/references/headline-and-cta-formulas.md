@@ -8,11 +8,11 @@ Generate 3 headline candidates minimum for any hero or email subject. Pick the f
 
 | # | Formula | Structure | Example |
 |---|---------|-----------|---------|
-| 1 | Curiosity gap | [Intriguing partial claim] | "Most release folders fail the first licensing check. Here's why." |
+| 1 | Curiosity gap | [Intriguing partial claim] | "Most release folders fail the first licensing check, usually on the same field." |
 | 2 | Number-led specificity | [#] [specific thing] [timeframe/condition] | "12 rights fields missing from your release. Suede finds them in 60 seconds." |
 | 3 | How-to outcome | How to [achieve outcome] [without/with condition] | "How to package a release folder that licensing teams can actually use" |
 | 4 | Because | [Result] because [mechanism] | "Agents can read your music rights because Suede structures the provenance first." |
-| 5 | Specificity anchor | [Exact number or name] + [claim] | "47 fields. One linter. No guessing." |
+| 5 | Specificity anchor | [Exact number or name] + [claim] | "One linter checks all 47 release fields before you pitch." |
 | 6 | Before-After | [Before state] → [After state] | "Scattered files and a split sheet in a Google Doc → a machine-readable rights package" |
 | 7 | Question (real, not rhetorical) | [Question reader actually asks] | "What does a licensing team check before they sign?" |
 | 8 | Objection flip | [Common objection] + [reframe] | "Rights metadata sounds like legal work. It's a 10-minute audit." |
@@ -34,7 +34,7 @@ CTAs fail when they describe the button, not the outcome. Every CTA answers: "Wh
 - "Paste your folder path. See your rights gaps."
 
 **Formula B: Verb + object + benefit**
-[Verb] + [specific object] + [value unlocked]
+[Verb] + [specific object] + [value gained]
 - "Register a release. Make it readable to licensing agents."
 - "Install the skill. Audit any repo from your terminal."
 - "Download the schema. Stop building it by hand."

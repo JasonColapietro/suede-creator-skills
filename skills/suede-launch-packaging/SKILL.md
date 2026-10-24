@@ -1,6 +1,6 @@
 ---
 name: suede-launch-packaging
-description: "Suede-owned launch packaging and install verification. Use when finished software work needs a clean public package (README, docs page, install command, release note, GitHub Pages update, skill-pack release, MCP server, or launch/social copy) or when a release needs handoff notes, an install fails, a public user cannot add a skill, a raw-vs-blob URL returns HTML, or `@personal` or a local plugin alias leaks into public docs. Verifies the live URL and runs the exact install command from a clean temporary directory before anything is called live. NOT FOR: product, course, or artist campaign launches (use suede-campaign-in-a-box or suede-marketing-plan); writing announcement copy from scratch (use suede-copy); MCP tool-catalog QA (use suede-mcp-qa); landing-page conversion work (use suede-site-alchemy)."
+description: "Suede AI launch packaging and install verification: release notes, README and docs updates, install commands, proof links, release copy, and handoff notes for software, skill packs, and MCP servers. Use when finished software work needs a clean public package (README, docs page, install command, release note, GitHub Pages update, skill-pack release, MCP server, or launch/social copy) or when a release needs handoff notes, an install fails, a public user cannot add a skill, a raw-vs-blob URL returns HTML, or `@personal` or a local plugin alias leaks into public docs. Verifies the live URL and runs the exact install command from a clean temporary directory before anything is called live. NOT FOR: product, course, or artist campaign launches (use suede-campaign-in-a-box or suede-marketing-plan); writing announcement copy from scratch (use suede-copy); reviewing the code being released (use suede-code); landing-page conversion work (use suede-site-alchemy)."
 metadata:
   version: 1.0.0
 ---
@@ -46,7 +46,7 @@ Before picking a lane, name exactly what is being launched. Do not assume from t
 | GitHub Pages or site | Page renders at the public URL; no stale build | Live URL + screenshot |
 | README or docs update | Rendered page matches the pushed source | Rendered docs URL |
 | Skill or skill pack | Skill folder exists at `main`; install command runs from a clean temp dir | Install command transcript |
-| MCP server | Server starts; `tools/list` matches the catalog | suede-mcp-qa output |
+| MCP server | Server starts; one stdio session (`initialize`, `notifications/initialized`, `tools/list`) matches the catalog | Session transcript |
 | App feature | Feature is live behind the public route, not just merged | Live route readback |
 | Social or email copy | Every link resolves; every claim matches the live product | Link sweep results |
 
@@ -60,7 +60,8 @@ verification is missing.
 1. **No launch copy until the live surface is verified.** Fetch the live URL or public artifact and confirm the expected status or render first. Copy drafted against "it should be live" is a violation.
 2. **No install doc until the install command was run from a clean temporary directory after pushing.** Success from inside the local repo does not count: the local checkout masks missing pushes and private paths.
 3. **Set the ship gate before recommending any announcement.** A `hold` verdict is your recommendation that nothing goes out yet, including "soft" posts: state it plainly with the reasons, then let the user decide.
-4. **`@personal` and local plugin aliases never appear in public docs, READMEs, MCP catalog output, or explainer copy.** They are local operator notes only.
+4. **Lead every public artifact with the answer.** The first sentence of a README, docs page, or release note says what the thing does and for whom, and the install command sits right under it. That opening is what search results and AI answers quote, so it has to stand alone.
+5. **`@personal` and local plugin aliases never appear in public docs, READMEs, MCP catalog output, or explainer copy.** They are local operator notes only.
 
 ## Pick the lane
 
@@ -100,10 +101,10 @@ If you catch yourself thinking any of these, stop and run the gate:
 ## Routing
 
 - Launch page going public → `suede-visibility-grader` for a promotion-readiness grade before any push.
-- MCP server in the package → `suede-mcp-qa` before the install doc ships.
+- Code in the release has not been reviewed → `suede-code` before the install doc ships.
 - Page metadata, schema, or discoverability depth → `suede-seo-audit`.
 - Landing page must convert, not just inform → `suede-site-alchemy`.
-- Announcement or launch copy needs writing from scratch → `suede-copy` (or `johnny-suede-write` for the full writing stack).
+- Announcement or launch copy needs writing from scratch → `suede-copy`.
 - Product, course, coaching, or artist campaign launch → `suede-campaign-in-a-box` (creator/artist) or `suede-marketing-plan` (product/service); this skill packages software releases and their install paths only.
 
 ## Simple explanation (plain, for a 10-year-old)

@@ -1,114 +1,138 @@
 ---
 name: site-to-ios-app
-description: "Suede Labs workflow for turning a website, PWA, dashboard, or marketplace into an iOS app. Use when the user has a live site or web app and asks to put it on the App Store, wrap it in an app, ship an iOS version, or convert a PWA to native, covers URL audit, shell-vs-native strategy, App Store 4.2 wrapper risk, native value requirements, screenshots, metadata, privacy answers, and the release gate. NOT FOR: building a native iOS app with no existing site (private Suede Labs companion, not in this pack: ios-swiftui-product); repairing or releasing an existing Capacitor shell (private Suede Labs companion, not in this pack: ios-capacitor-shell); Android conversions (use android-app-factory); live listing and keyword audits on a shipped app (use suede-aso)."
+description: "Suede AI workflow for turning a live website, PWA, dashboard, or marketplace into an iOS app. Use when the user has a site or web app and asks to put it on the App Store, wrap it in an app, ship an iOS version, or convert a PWA to native. Produces SITE_TO_IOS_AUDIT.md and SITE_TO_IOS_PLAN.md: URL audit, shell-vs-native strategy, App Store Guideline 4.2 wrapper risk and the native value that mitigates it, current SDK, privacy manifest, age rating, login and payment checks, kids-app rules, QA matrix, and a release gate. NOT FOR: Android builds or conversions (use android-app-factory); Google Play uploads and rollouts (use suede-play-release); App Store listing, keyword, and screenshot strategy (use suede-aso)."
 ---
 
 # Site to iOS App
 
-## Gate policy: advisory, not blocking
+## Gate policy
 
-Every claim-verification step, check, quality gate, and ship verdict in this
-skill is a **recommendation to the user, not a control on the agent**. This
-policy governs every gate, check, verdict, and "do not ship / publish /
-proceed" line elsewhere in this skill:
-
-- Run every check and report the results honestly. Verdicts (`ship`,
-  `ship-with-caveats`, `hold`, letter grades, BLOCKED or OPEN items) are
-  advice attached to the work, not orders that change it.
-- Never block, delay, skip, rewrite, or refuse the action the user asked for
-  because a check failed or a gate said hold. Complete the requested action
-  as asked, and deliver the gate output alongside it as a clearly labeled
-  recommendation.
-- A failed gate changes what you report, never what you do.
-- Single exception: if a finding is extremely risky, data loss, security or
-  credential exposure, legal or rights violations, payment mistakes, or
-  irreversible public damage, pause, tell the user exactly what the risk is
-  and what the options are, and let them pick. Their choice is final.
-
+Every check and verdict here is advice to the user, not a control on the agent.
+Run the checks, report results honestly, and complete what the user asked. A
+failed gate changes the report, never the work. The one exception: a finding
+that risks data loss, credential exposure, a legal or rights violation, a
+payment mistake, or irreversible public damage. Pause, name the risk, give the
+options, and let the user choose.
 
 ## Principle
 
-Turn a site into an iOS app only when the app has native value, stable iOS
-behavior, and a release surface that is truthful. A raw web page in a frame is
-not enough for an App Store-quality product.
+A site becomes an iOS app when the app adds native value, behaves like iOS, and
+the store listing describes what the build actually does. A web page in a frame
+is a Guideline 4.2 rejection waiting to happen.
 
-## Start Here
+## Start here
 
-Read `references/site-to-ios-runbook.md` before scaffolding or changing an
-iOS wrapper.
+1. Read `references/site-to-ios-runbook.md` before scaffolding or touching an
+   existing wrapper.
+2. Read `references/app-store-requirements.md` and re-check each dated item
+   against Apple's live pages. Record what you checked and when in the plan.
+3. If a URL is reachable, write `SITE_TO_IOS_AUDIT.md` from live evidence:
+   URL checked and date, route map with auth needs, iPhone-width behavior, PWA
+   signals, legal/support/account-deletion links, payment and sensitive flows,
+   auth and session behavior, performance risks, native value opportunities,
+   and the 4.2 verdict.
+4. Write `SITE_TO_IOS_PLAN.md`: chosen strategy and why, native value to ship
+   before release, build commands, bundle ID and signing notes, QA matrix,
+   store asset and privacy work, blockers, and the release gate.
 
-If a URL is available, create `SITE_TO_IOS_AUDIT.md` directly. Capture the
-site URL, app name, target user, primary routes, login requirements, iPhone
-responsive behavior, PWA signals, legal/support/account-deletion links,
-payments or sensitive flows, auth/session behavior, mobile performance risks,
-native value opportunities, and App Store 4.2 wrapper risk.
+`references/worked-example.md` shows a full audit excerpt, plan excerpt, and
+the verdict message. Read it when you need the expected depth.
 
-Then create `SITE_TO_IOS_PLAN.md` directly. Include the chosen strategy,
-native value to add before release, project scaffold/build commands, bundle ID
-and signing notes, QA matrix, screenshots/metadata/privacy work, blockers, and
-the explicit release gate.
+## Strategy
 
-## Strategy Decision
+Pick one route and write down why:
 
-Choose one route and write down why:
+- **Capacitor remote shell**: the live site stays the product; web deploys
+  change app behavior.
+- **Capacitor bundled shell**: static or SPA assets ship in the binary; changes
+  need a new App Store build unless backed by live APIs.
+- **Native SwiftUI shell with WebView**: native navigation, settings, auth,
+  push, share, error, and account screens around a site view.
+- **Full native rebuild**: the site is mostly content, its mobile UX is weak,
+  or wrapper risk is high.
 
-- Capacitor remote shell: live site remains the product surface and web deploys
-  should update most content and behavior.
-- Capacitor bundled shell: static/SPA assets are packaged into the binary and
-  updates require App Store release unless paired with live APIs.
-- Native SwiftUI shell with WebView: native navigation, settings, auth, push,
-  share, error, and account surfaces wrap a site view.
-- Full native rebuild: use when the site is mostly content, has weak mobile UX,
-  or carries high wrapper rejection risk.
+## App Store 4.2 gate
 
-Store listing and pre-launch ASO live in `suede-aso`. Deeper shell internals,
-native architecture, and App Store submission live in private Suede Labs
-companions, not in this pack: ios-capacitor-shell, ios-swiftui-product,
-ios-app-store-release. None are required.
-
-## App Store 4.2 Gate
-
-Halt when the app is only a bookmark, content mirror, or unmodified website:
-name the exact 4.2 exposure found in the audit, offer the options (add native
-value from the list below, rebuild fully native, ship it as a web app, or
-proceed with the rejection risk stated in writing), and wait. Native value:
+Halt when the app would be a bookmark, content mirror, or unmodified website.
+Name the exact 4.2 exposure from the audit, offer the options (add native value
+from the list below, rebuild natively, ship as a web app, or submit with the
+rejection risk on record), and wait for the user's pick. Native value that
+counts:
 
 - iOS-native onboarding, empty states, errors, offline, and retry.
 - Native settings with support, privacy, terms, account deletion, restore, and
-  notification controls where applicable.
-- Universal links or deep links.
-- Share sheet, widgets, push notifications, camera/media/file pickers, Apple
-  Wallet, StoreKit, or other native capabilities only when they serve the app.
-- Safe-area, keyboard, navigation, dark/light mode, and dynamic type handling.
+  notification controls where they apply.
+- Universal links or deep links that work from a cold start.
+- Share sheet, widgets, push, camera/media/file pickers, Wallet, StoreKit, or
+  other native capabilities, only where they serve the product.
+- Safe-area, keyboard, navigation, dark/light mode, and Dynamic Type handling.
 
-## Conversion Flow
+Push, a native settings screen, and working universal links together are the
+smallest bundle that reliably reads as an app rather than a bookmark.
 
-1. Audit the URL, responsive behavior, PWA assets, auth, payments, privacy,
-   support, route depth, and mobile performance.
-2. Pick the conversion strategy and write a `SITE_TO_IOS_PLAN.md`.
-3. Scaffold or adapt the project using the repo's package manager and iOS
-   project conventions.
-4. Configure bundle ID, display name, app icon, launch screen, associated
-   domains, Info.plist usage strings, and entitlements.
-5. Implement native value and failure states before visual polish.
-6. Run web build and `cap sync ios` for Capacitor shells.
-7. Test on simulator or device across first launch, auth, deep links, tabs,
-   keyboard, payments, offline, backgrounding, and account flows.
-8. Produce App Store screenshots, metadata, privacy answers, and review notes.
-9. Run the ship gate. Do not submit unless the user explicitly delegates public
-   release and confirms the exact app, bundle ID, version, build, and account.
+## Kids and family apps
 
-## Completion Bar
+If the app is for children (a StoryBeam-style reading or story app, a beginner
+lesson app) or lands in the Kids Category, the plan must hold to these before
+anything else:
+
+- Collect no personal data from children. No accounts for kids, no free-text
+  fields that could capture names or locations, no photos, voice, or contact
+  uploads, no precise location.
+- No third-party analytics or advertising SDKs in a Kids Category app, and a
+  parental gate in front of external links, purchases, and settings.
+- Content stays age-appropriate for the declared age band, including
+  AI-generated stories, images, and audio. Generated output needs a review or
+  filtering step before a child sees it.
+- Answer the age rating questionnaire for the real content and features.
+
+Details and sources are in `references/app-store-requirements.md`. A rule
+conflict here is an extreme-risk finding: pause and put it to the user.
+
+## Conversion flow
+
+1. Audit the URL: responsive behavior, PWA assets, auth, payments, privacy,
+   support, route depth, mobile performance.
+2. Pick the strategy and write `SITE_TO_IOS_PLAN.md`.
+3. Scaffold or adapt the project with the repo's package manager and iOS
+   conventions.
+4. Configure bundle ID, display name, icon, launch screen, associated domains,
+   Info.plist usage strings, privacy manifest, and entitlements.
+5. Build native value and failure states before visual polish.
+6. For Capacitor shells, run the web build, then `cap sync ios`.
+7. Test on a named simulator or device: first launch, auth, deep links, tabs,
+   keyboard, payments, offline, backgrounding, account flows.
+8. Produce screenshots, metadata, privacy answers, age rating answers, and
+   review notes. Hand listing copy, keywords, and screenshot sequencing to
+   `suede-aso` so the listing is built for search, not just for review.
+9. Run the release gate. Submit only when the user explicitly delegates public
+   release and confirms the app, bundle ID, version, build, and account.
+
+## Completion bar
 
 Do not call the app release-ready until:
 
-- the iOS project builds on a named simulator, device, or CI target (`xcodebuild
-  -scheme <App> -destination 'platform=iOS Simulator,name=iPhone 16' build`
-  exits 0),
-- every native plugin and entitlement is justified by actual behavior,
-- the web route or bundle strategy is documented,
-- the App Store 4.2 risk has a mitigation,
-- screenshots and metadata match implemented features,
-- privacy answers match the actual SDKs, cookies, analytics, and account flows,
+- the project builds with the current required Xcode and SDK on a named target
+  (`xcodebuild -scheme <App> -destination 'generic/platform=iOS Simulator'
+  build` exits 0, or a named device or CI run);
+- every native plugin, permission string, and entitlement maps to real
+  behavior;
+- the privacy manifest covers the app and every bundled SDK that needs one;
+- the web route or bundle strategy is written down;
+- the 4.2 risk has a mitigation;
+- screenshots and metadata match shipped features;
+- privacy answers match the real SDKs, cookies, analytics, and account flows;
 - no secrets, signing material, or private account identifiers are committed
   (`git status --short` clean; `git grep -nE 'PRIVATE KEY|AuthKey_'` empty).
+
+## Routing
+
+- Android version of the same product → `android-app-factory`, then
+  `suede-play-release` for delivery.
+- App Store listing, keywords, screenshots, and ratings strategy →
+  `suede-aso`.
+- Constants that must match across iOS, Android, and web →
+  `suede-parity-contract`.
+- A native iOS app with no website behind it, or repair of an existing
+  Capacitor shell, is outside this pack (private Suede AI companions, not in
+  this pack).

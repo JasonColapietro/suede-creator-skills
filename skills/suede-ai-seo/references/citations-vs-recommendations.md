@@ -1,85 +1,74 @@
-# Citations vs. Recommendations: The AI Visibility Ladder
+# Citations vs. Recommendations: The Suede Citation Ladder
 
-Being cited by an AI engine and being recommended by it are **two different outcomes governed by two different systems**. A citation means your page was useful enough to pull information from. A recommendation means the model put your brand on the buyer's shortlist. Optimizing for the first does not automatically earn the second, and for smaller brands, conflating them leads to content strategies that can actively help competitors.
+Being cited and being recommended are different outcomes with different
+causes. A citation means a page was useful to consult. A recommendation means
+the engine put the brand on the buyer's shortlist. Conflating them leads
+smaller brands into content plans that mostly help competitors.
 
-Source note: the analysis and data in this reference draw on Lily Ray's (Amsive) 2026 study of B2B "best [category] software" queries, behavioral studies by Scrunch and SimilarWeb, and commentary by John-Henry Scherck (Growth Plays).
-
----
-
-## The Visibility Ladder
-
-AI visibility is a ladder, not a binary. Each rung has different selection criteria and different measurement:
+## The ladder
 
 | Rung | What it means | What governs it | How to see it |
 |---|---|---|---|
-| **1. Retrieved** | The model read your content while building its answer, without citing it | Crawlability, parseable structure, query relevance | Mostly invisible; bot logs hint at it |
-| **2. Cited** | Your page appears as a source in the answer | Content usefulness: structure, statistics, clarity, freshness | Prompt-tracking tools, AI Overview source lists |
-| **3. Mentioned** | Your brand is named in the answer text | Entity recognition + how the web talks about you | Prompt-tracking tools |
-| **4. Recommended** | Your product is on the shortlist the buyer actually considers | **Aggregate web consensus** (reviews, forums, analysts, press, video) largely independent of your own content | Prompt tracking + the framing around the mention |
+| 1. Retrieved | The engine read your page while answering | Crawl access, indexation, query relevance | Bot hits in server logs |
+| 2. Cited | Your URL appears as a source | Usefulness of the passage: direct answer, specific facts, clear structure, freshness | Prompt panel, Bing AI Performance, GSC |
+| 3. Mentioned | Your brand is named in the answer | Entity clarity and how often the web associates you with the topic | Prompt panel |
+| 4. Recommended | You are on the shortlist the buyer acts on | Consensus across sites you do not own: reviews, communities, analysts, press, video | Prompt panel framing |
 
-Rungs 1–3 are legitimate signals your content is working, and most prompt-tracking tools report them. But rung 4 is where buying behavior changes, and it's earned differently: **citation is about whether your content is useful to consult; recommendation is mostly a reflection of what the broader web says about you**, whether you published a guide on the topic or not.
+There is a shadow rung: **recommended against**. On requirement-heavy prompts,
+engines name products to avoid and cite why. Track the framing around every
+mention (recommended, neutral, hedged, against), not just the count.
 
-There is also a shadow rung: **recommended against**. On detailed, requirements-heavy prompts, models increasingly name products a buyer should *avoid* for their use case, with sources. The downside of weak third-party consensus is no longer just absence from the shortlist: it can be an explicit rule-out. This makes monitoring the *framing* around your mentions (favorable / neutral / hedged / negative), not just counting them, part of the job.
+## The self-ranked listicle problem
 
----
+The common play: publish "best [category] tools", rank yourself first, expect
+AI answers to repeat the ranking. Practitioner studies of AI Overview
+citations in 2026 observed that self-promotional listicles often earned the
+citation while the answer recommended other brands. The mechanism is
+straightforward: the engine treats the guide as a source about the category,
+extracts the competitor names and criteria you compiled, then recommends from
+broader consensus, where established players dominate.
 
-## The Self-Promotional Listicle Risk
+Run this as a hypothesis on your own prompt panel before investing at scale:
+for the prompts where your guide is cited, is your brand recommended?
 
-The common tactic (publish a "best [category] software" guide, rank yourself #1, and let it shape both organic search and AI answers) now has a stage-dependent payoff.
+By stage:
 
-**The data:** Lily Ray (Amsive) analyzed 100 B2B "best [category] software" queries across three dates in spring 2026. Across the dataset, self-promotional listicles earned 323 citations in AI Overviews, and in 224 of them (**69% of the citations**), the answer left the publishing brand out of the recommendations, pointing buyers to competitors instead.
+- **Category leaders** usually get both outcomes, because third-party sources
+  already corroborate them. A definitive buyer's guide shapes how the whole
+  category is described.
+- **Emerging brands** may win the citation and influence the category's
+  evaluation criteria, which is real positioning work, but should not expect the
+  shortlist from it. Weight effort toward the off-site signals below.
 
-**The mechanism:** the model treats your guide as a source about the *category*. It happily extracts the competitor names, comparisons, and evaluation criteria you compiled, then makes its recommendation from web-wide consensus, where the established players dominate. For an emerging brand, a self-promotional buyer's guide can function as **a vote for your competitors**: you did the research that helps the model describe them.
+Useful buyer's guides still belong in the plan at every stage. What changes is
+the expectation and the budget split.
 
-**The split by stage:**
-
-- **Established category leaders** get both outcomes. Their guides earn citations *and* their brands get recommended, because analysts, review sites, and forum discussions already validate them. For leaders, a definitive buyer's guide is highly advantageous: it shapes how the whole category (competitors included) gets described.
-- **Emerging brands** may win the citation and even shape the category's framing, but miss the recommendation. That's not a wasted outcome (influencing how an LLM defines the category and its evaluation criteria is real positioning work), but it is not the shortlist placement the tactic promises.
-
-**What this changes (and doesn't):** genuinely useful buyer's guides still belong in a B2B content strategy at any stage. What changes is the expectation and the investment split. If you're not yet the consensus pick, weight effort toward the offsite signals that actually govern recommendations (below) rather than publishing a plethora of self-ranked listicles.
-
----
-
-## What Earns Recommendations
-
-Recommendation is a consensus signal. The inputs the models weigh live mostly off your site:
+## What earns recommendations
 
 | Channel | Why it moves recommendations | Related skill |
 |---|---|---|
-| **Review platforms** (G2, Capterra, TrustRadius, app stores) | Third-party validation models treat as evidence of legitimacy | customer-research (review generation loops) |
-| **Analyst coverage** (Gartner, Forrester, industry reports) | High-authority category framing; models echo analyst shortlists | public-relations |
-| **Communities and forums** (Reddit, HN, Slack/Discord, niche forums) | Unprompted practitioner discussion is heavily retrieved and hard to fake | community-marketing |
-| **Earned media and PR** | Independent sources repeating your positioning beyond your own site | public-relations |
-| **Video and podcasts** | Increasingly retrieved; transcripts carry brand + category associations | video, social |
+| Review platforms and app stores | Independent validation engines treat as evidence | `suede-customer-research`, `suede-aso` |
+| Analyst and industry reports | High-authority category framing that answers echo | `suede-public-relations` |
+| Communities and forums | Unprompted practitioner discussion, widely retrieved and hard to fake | `suede-community-marketing` |
+| Earned media | Independent restatement of your positioning | `suede-public-relations` |
+| Directories and marketplaces | Category placement with consistent entity facts | `suede-directory-submissions` |
+| Video and podcasts | Transcripts tie the brand to the category | `suede-social` |
 
-The test to apply before investing in another self-ranked guide: *if a model ignored everything on our domain, would the rest of the web still put us on the shortlist?* If not, that gap is the priority. AEO discourse often stops at "are we in the answer?" The better question is "are we credible enough to be recommended?"
+The test: if an engine ignored everything on your domain, would the rest of
+the web still put you on the shortlist? If not, that gap is the priority.
 
-The encouraging flip side: earning an AI recommendation is harder to game than a top search ranking ever was. The durable strategy is the same at every stage: be the best fit for a clear set of buyers, and give those buyers reasons to talk about you in public, where the models can retrieve it.
+## What a recommendation is worth, and why attribution undercounts it
 
----
+Behavioral studies published in 2026 found that an assistant recommendation is
+followed by more branded searches and site visits than a passing mention, and
+that most of that follow-on traffic arrives as branded search or direct rather
+than as an assistant referral. Do not quote their percentages; measure your own
+with the four-source method in `measurement.md`.
 
-## What a Recommendation Is Worth
+## Applying this
 
-Two behavioral studies quantified the gap between rungs:
-
-- **Scrunch** (opt-in panel linking AI conversations to subsequent web behavior, compared against each user's own baseline; observational, not a controlled experiment): a genuine recommendation ("a great option is X") was associated with people searching for, visiting, and evaluating a brand **about twice as often** as a passing mention. For users with no recent observed engagement with the brand, a recommendation was followed within a week by **+182% branded searches, +117% site visits, and +185% product views**.
-- **SimilarWeb** (thousands of real user journeys, seven days post-answer): when ChatGPT recommended a brand, it received **roughly 2.5× more new visitors** the following week than the competitors left off the list.
-
-**The attribution blind spot:** in the SimilarWeb data, only about **9%** of those post-recommendation visits arrived as visible AI referral traffic; the largest share arrived via branded search, with direct and other channels making up the rest, indistinguishable from ordinary organic visitors. AI recommendations are already sending real, engaged buyers, but standard attribution underreports the AI touch.
-
-**Measurement triad** (no single signal is complete; together they give a reliable read):
-
-1. **AI prompt tracking**: whether and how you're mentioned/recommended in LLM answers, even when no click ever lands (tools in SKILL.md's Monitoring section). Track the framing around mentions (recommended, neutral, hedged, or recommended-against), not just the count.
-2. **Self-reported attribution**: a "how did you hear about us?" field catches buyers whose journey started in an AI chat but arrived via branded search or direct.
-3. **Sales call recordings**: buyers' own language often reveals an AI conversation shaped the shortlist long before any form fill.
-
-Also watch **branded search volume** as a proxy: sustained lifts without a matching campaign are increasingly AI-influence showing up under another name.
-
----
-
-## Applying This
-
-- **Auditing an established brand:** buyer's guides and comparison content are high-leverage: publish the definitive version and shape the category's evaluation criteria.
-- **Auditing an emerging brand:** publish the genuinely useful guides your ICP needs, but set expectations (citation and framing, not near-term recommendation) and rebalance investment toward reviews, communities, analysts, and earned media.
-- **Reporting:** report the ladder, not a single "AI visibility" number: retrieved/cited/mentioned/recommended plus mention framing. A rising citation count with a flat recommendation rate is a specific, diagnosable gap: the web doesn't yet corroborate your content.
-- **Risk check:** for requirements-heavy queries in your category, check whether models recommend *against* you, and trace the sources they cite when they do.
+- Report the ladder, not one "AI visibility" number.
+- A rising citation share with a flat recommendation share is a specific gap:
+  the web does not yet corroborate your content.
+- For requirement-heavy prompts, check whether engines recommend against you,
+  and trace the sources they cite when they do.

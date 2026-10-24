@@ -80,12 +80,16 @@ unused characters represent waste or intentional simplicity.
 
 | Score | Criteria                                                                                                                                     |
 | ----- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| 9-10  | Keywords in first 3 sentences, 2-3% natural density throughout, HTML formatting used, structured sections, strong CTA, keywords feel natural |
-| 7-8   | Good keyword presence, some structure, density slightly off (1-2% or 3-4%)                                                                   |
-| 5-6   | Keywords present but sparse (<1%) or stuffed (>5%), weak structure                                                                           |
-| 3-4   | No keyword strategy visible, poor formatting, wall of text                                                                                   |
-| 1-2   | Minimal description, no keywords, no structure                                                                                               |
-| 0     | Cannot assess                                                                                                                                |
+| 9-10  | Core use-case terms appear naturally in the first 3 sentences and in feature sections, scannable structure, specific benefits, strong CTA, no term lists |
+| 7-8   | Core terms present and natural, some structure, one or two important use cases unnamed                                                                   |
+| 5-6   | Core terms sparse, or repeated until the copy reads unnaturally, weak structure                                                                          |
+| 3-4   | No discernible terms a searcher would use, poor formatting, wall of text                                                                                |
+| 1-2   | Minimal description, or keyword lists that breach Play metadata policy                                                                                   |
+| 0     | Cannot assess                                                                                                                                            |
+
+Google Play's policy asks for everyday language and prohibits keyword lists.
+Density percentages are folklore; judge whether a searcher's words appear where
+a reader would expect them.
 
 **Check for:**
 
@@ -93,7 +97,7 @@ unused characters represent waste or intentional simplicity.
 - Feature-benefit framing (not just feature lists)
 - Social proof (downloads, awards, press mentions)
 - Call to action
-- Keyword density (Google Play only - count target keywords / total words)
+- Natural use of the core use-case terms (Google Play), with no keyword lists
 - HTML formatting usage (Google Play)
 - Promotional text presence and quality (Apple)
 

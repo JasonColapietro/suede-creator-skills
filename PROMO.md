@@ -80,7 +80,7 @@ skill discovery, install guidance, SEO/AEO/AI EO copy audits, or QA checklists.
 - Wire CI that gates the merge: one required check, branch protection, no deadlocks.
 - Score your brand at the schema, answer-engine, trust, and visibility layers.
 - Invoke `suede-workflow-skills` when you want the whole workflow routed from
-  one umbrella. Use Johnny Suede Write, Design/Create, or Suede Code for one
+  one umbrella. Use Suede Copy, Suede Design, or Suede Code for one
   exact lane.
 
 ## The Main Story
@@ -120,16 +120,15 @@ Use this for product and website work:
 - Suede Graph Flo XR: run a nontrivial repo change through the canonical DAG —
   research, red-teamed lane plan, disjoint build lanes, adversarial review,
   and a release verifier with an evidence handoff.
-- Johnny Suede Write: one loadable writing mode for copy, brand voice, Suede SEO, SEO/AEO/GEO/AI EO, product and mobile copy, CTAs, and anti-slop editing.
-- Johnny Suede Design: one loadable design mode for Suedify, UI polish, mobile and product surfaces, product screenshots, GitHub Pages polish, design-system QA, visual QA, visibility grading, and the writing stack.
-- Suede Code: unified code review and A-F grading for correctness, security, deploy readiness, and ship risk. Prompted only, never auto-fires.
+- Suede Copy: one loadable writing mode for conversion copy, brand voice, SEO/AEO/GEO copy, product and mobile copy, CTAs, and anti-slop editing.
+- Suede Design: one loadable design mode for Suedify, UI polish, mobile and product surfaces, product screenshots, GitHub Pages polish, design-system QA, visual QA, visibility grading, and the writing stack.
+- Suede Code: unified code review and A-F grading for correctness, security, deploy readiness, and ship risk, with findings-only and grade-only modes. Prompted only, never auto-fires.
 - Project grading: final pass discipline for design, copy, SEO/AEO/GEO/AI EO, code, launch readiness, proof, and unresolved gates.
 - Suede Ship Gate: any-repo CI gate that blocks a merge when required checks fail. Prompted only.
 - Suede SEO Audit: check search intent, answer intent, GEO/AI answer readability, metadata, schema, links, and trust.
 - Suede Visibility Grader: grade a website or docs page for findability, CTA pull, proof, AI readability, trust, and design signal.
 - Suede Site Alchemy: site positioning, page structure, CTA routing, and visual polish.
 - Suede Launch Packaging: prepare public releases with proof, links, QA, and handoff.
-- Suede MCP QA: validate Suede MCP tools, prompts, resources, and catalog output.
 
 ### Suede Creator Skills
 
@@ -138,8 +137,7 @@ Use this for artist campaigns and creator rights work:
 - Suede Campaign in a Box: package a full artist campaign across rollout phases, copy, content calendar, fan actions, page sections, and next moves.
 - Suede Sync Packaging: prepare clean review notes for film, TV, ads, games, trailers, or brands without placement promises, clearance claims, outreach claims, or a Suede promo CTA.
 - Suede Release Linter: audit release folders for missing metadata, artwork, masters, lyrics, stems, credits, splits, samples, provenance, and Suede-readiness gaps.
-- Suede Rights Passport: package creator folders into structured transfer material with provenance, credits, splits, license notes, intake JSON, and missing-info reports.
-- Suede Rights Audit: identify ownership, contributor, split, sample, license, and intake gaps.
+- Suede Rights Passport: identify ownership, contributor, split, sample, license, and intake gaps, then package creator folders into structured transfer material with provenance, credits, splits, license notes, intake JSON, and missing-info reports.
 
 Use this when the work is bigger than a page:
 
@@ -290,7 +288,7 @@ Suede Creator Skills: public Codex and Claude Code skills plus MCP tools for Sue
 ## GitHub README Intro
 
 ```text
-Suede Creator Skills is a public agent workflow pack for builders, designers, agencies, creators, and operators. It includes Johnny Suede Write, Johnny Suede Design, mobile and product surface support, Suedify reference-site restyling, design direction, copywriting, supplied-company voice support, SEO/AEO/AI EO audits, Instagram growth, AI eval design, a scored next-action recommender, visibility and CTA grading, A-F code grading, agent teams, iOS and Android app shipping, launch packaging, MCP QA, artist campaign tools, and creator utilities.
+Suede Creator Skills is a public agent workflow pack for builders, designers, agencies, creators, and operators. It includes SEO/AEO/GEO audits, AI search visibility, visibility and CTA grading, conversion copywriting, supplied-company voice support, Suedify reference-site restyling, design direction, mobile and product surface support, social and Instagram growth, AI eval design, A-F code grading, agent teams, iOS and Android app shipping, launch packaging, artist campaign tools, and creator utilities.
 
 Use the skills directly for normal work. Use MCP only when the task benefits from structured lookup, audit scaffolding, install guidance, grading scaffolds, or repeatable QA.
 ```
@@ -433,18 +431,16 @@ Install workflow skills when direct triggering matters:
 ```bash
 python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
   --repo JasonColapietro/suede-creator-skills \
-  --path skills/johnny-suede-write \
-  skills/johnny-suede-design \
+  --path skills/suede-copy \
+  skills/suede-design \
   skills/suede-graph-flo-xr \
   skills/suede-code \
   skills/suede-ci-gate \
   skills/suede-seo-audit \
   skills/suede-visibility-grader \
-  skills/suede-recommend-next-action \
   skills/suede-deslop \
   skills/suede-site-alchemy \
   skills/suede-launch-packaging \
-  skills/suede-mcp-qa \
   skills/android-app-factory
 ```
 
@@ -456,8 +452,7 @@ python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-githu
   --path skills/suede-campaign-in-a-box \
   skills/suede-sync-packaging \
   skills/suede-release-linter \
-  skills/suede-rights-passport \
-  skills/suede-rights-audit
+  skills/suede-rights-passport
 ```
 
 Restart Codex after installing new skills.
@@ -484,9 +479,9 @@ node mcp/suede-skills-mcp.mjs --profile all
 ### Short Launch Post
 
 ```text
-I packaged the Suede agent workflow into 70 installable public skills.
+I packaged the Suede AI agent workflow into 63 installable public skills.
 
-Johnny Suede Write, Johnny Suede Design, Suedify, design, copywriting, Suede SEO discoverability, SEO/AEO/AI EO audits, code review, CI gating, agent teams, visibility grading, a scored next-action recommender, iOS and Android app shipping, launch packaging, campaign in a box, creator rights tools, and optional MCP support.
+SEO/AEO/GEO audits, AI search visibility, copywriting, Suedify, design, code review, CI gating, agent teams, visibility grading, a scored next-move recommender, iOS and Android app shipping, launch packaging, campaign in a box, creator rights tools, and optional MCP support.
 
 Stop rebuilding the same prompt stack every time.
 ```

@@ -1,6 +1,10 @@
 # Platform Specs Reference
 
-Complete character limits, format requirements, and best practices for each ad platform.
+Character limits, format requirements, and practices for each ad platform.
+Google Ads and Performance Max values were checked against Google Ads Help in
+October 2026. Meta, LinkedIn, TikTok, and X values are the platforms' long-stable
+published limits; confirm them in the ad preview before launch, because
+recommended lengths and placements change more often than hard limits.
 
 ---
 
@@ -41,14 +45,22 @@ Complete character limits, format requirements, and best practices for each ad p
 - 1 social proof + CTA
 - 1 urgency/offer + CTA (if applicable)
 
-### Performance Max
+### Performance Max (Google Ads Help, answer 17091269, checked October 2026)
 
-| Element | Character Limit | Notes |
-|---------|----------------|-------|
-| Headline | 30 chars (5 required) | Short headlines for various placements |
-| Long headline | 90 chars (5 required) | Used in display, video, discover |
-| Description | 90 chars (1 required, 5 max) | Accompany various ad formats |
-| Business name | 25 chars | Required |
+| Element | Limit | Count | Notes |
+|---------|-------|-------|-------|
+| Headline | 30 chars | 3 to 15 (11+ recommended) | Include at least one of 15 chars or fewer |
+| Long headline | 90 chars | 1 to 5 (2+ recommended) | Aim for 30+ chars |
+| Description | 90 chars | 2 to 5 (4+ recommended) | |
+| Business name | 25 chars | 1 | Must match the domain or the verified legal business name |
+| Display path | 15 chars each | up to 2 | |
+| Horizontal image 1.91:1 | 1200x628 recommended, 600x314 min | up to 20 | Required |
+| Square image 1:1 | 1200x1200 recommended, 300x300 min | up to 20 | Required |
+| Vertical image 4:5 | 960x1200 recommended | up to 20 | Optional |
+| Square logo 1:1 | 1200x1200 recommended, 128x128 min | up to 5 | Required |
+| Video | 10 seconds or longer | up to 15 per orientation | Without your own 16:9, 1:1, and 9:16 videos, Google may auto-generate one |
+
+Image files: JPG or PNG, 5 MB max.
 
 ### Display Ads
 
@@ -156,11 +168,12 @@ Complete character limits, format requirements, and best practices for each ad p
 | Display name | Original creator's handle |
 
 **TikTok-specific guidelines:**
-- Native content outperforms polished ads
-- First 2 seconds determine if they watch
-- Use trending sounds and formats
-- Text overlay is essential (most watch with sound off)
-- Vertical video only (9:16)
+- Native-looking content usually beats polished ads; test both
+- The opening seconds decide the watch
+- Use trending sounds only with commercial-use rights (the Commercial Music
+  Library for business accounts)
+- Text overlay inside safe zones; keep it short
+- Vertical 9:16 is the default canvas
 
 ---
 

@@ -1,6 +1,6 @@
 # The 12 Programmatic SEO Playbooks
 
-Beyond mixing and matching data point permutations, these are the proven playbooks for programmatic SEO.
+The Suede programmatic playbooks. Each one names the value a page must carry to clear the index-worthiness gates in SKILL.md; a playbook without that value is a doorway set.
 
 ## Contents
 - 1. Templates
@@ -297,7 +297,7 @@ Beyond mixing and matching data point permutations, these are the proven playboo
 | Tool or utility product | Conversions |
 | Content/expertise | Glossary, Curation |
 | International potential | Translations |
-| Competitor landscape | Comparisons |
+| Named competitors with verifiable differences | Comparisons |
 
 ### Combine Playbooks
 

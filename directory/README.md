@@ -1,5 +1,7 @@
 # Agent Skills Directory data
 
+<a href="https://trendshift.io/repositories/82031?utm_source=trendshift-badge&amp;utm_medium=badge&amp;utm_campaign=badge-trendshift-82031" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/82031/daily?language=Python" alt="JasonColapietro%2Fsuede-creator-skills | Trendshift" width="250" height="55"/></a>
+
 Source data for [skills.suedeai.ai/directory/](https://skills.suedeai.ai/directory/), a curated index of other people's open-source Agent Skills. Every page under `docs/directory/` is generated from the files here by `scripts/build-directory.mjs`; never edit that HTML by hand.
 
 The [Suede Awesome Everything catalog](../awesome/README.md) is the GitHub Markdown view of the same accepted snapshot, with AI agent skills scored on the 0–99 quality scale. `scripts/build-awesome-directory.mjs` generates its category pages, publisher credits and featured-project guidance. See [its contribution guide](../awesome/CONTRIBUTING.md) for regeneration and freshness checks.

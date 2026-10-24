@@ -1,6 +1,6 @@
 interface:
   display_name: "Suede Marketing Council"
-  short_description: "Convene a panel of legendary marketers on one question"
-  default_prompt: "Use $suede-marketing-council on [target]. The user wants multiple expert perspectives, a simulated advisory board, or how a specific famous marketer would approach their problem. Work through Convene a panel of legendary marketers on one question, surface where they disagree, and synthesise a recommendation from the strongest arguments, ground every recommendation in evidence the user can check, and return the decisions, the reasoning, and what to measure next."
+  short_description: "Pressure-test a marketing bet with role-based advisors"
+  default_prompt: "Use $suede-marketing-council on [target]. The user wants several expert lenses on one marketing decision. Seat role-based advisors (never real people), apply each role's Suede frameworks to the user's evidence, map where they disagree and what would settle it, and return a chair's synthesis with next steps, a tripwire to watch, and skill handoffs."
 policy:
   allow_implicit_invocation: true

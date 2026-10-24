@@ -39,11 +39,9 @@
       "strict": false,
       "skills": [
         "./suede-code",
-        "./suede-code-review",
-        "./suede-code-grader",
         "./suede-ci-gate"
       ],
-      "description": "Code quality subset: one-pass review plus an A-F ship verdict (suede-code), deep findings with TypeScript, React, Next.js, OWASP, and database checklists (suede-code-review), a grade-only verdict with instant-F triggers and grade caps (suede-code-grader), and CI branch protection that gates the merge (suede-ci-gate)."
+      "description": "Code quality subset: one-pass review and A-F ship verdict with TypeScript, React, Next.js, OWASP, and database checklists, plus findings-only and grade-only modes (suede-code), and CI branch protection that gates the merge (suede-ci-gate)."
     },
     {
       "name": "suede-marketing",
@@ -70,13 +68,10 @@
         "./suede-emails",
         "./suede-free-tools",
         "./suede-image",
-        "./suede-instagram-growth",
         "./suede-lead-magnets",
         "./suede-marketing-council",
-        "./suede-marketing-ideas",
         "./suede-marketing-loops",
         "./suede-marketing-plan",
-        "./suede-marketing-psychology",
         "./suede-newsroom",
         "./suede-offers",
         "./suede-onboarding",
@@ -89,12 +84,11 @@
         "./suede-referrals",
         "./suede-revops",
         "./suede-sales-enablement",
-        "./suede-signup",
         "./suede-sms",
         "./suede-social",
         "./suede-video"
       ],
-      "description": "Suede marketing and growth subset: paid acquisition and outbound, monetisation (pricing, offers, paywalls), lifecycle and retention, and the measurement and operations layer. Licensed source acknowledgements remain at repository level."
+      "description": "Suede AI marketing and growth subset: SEO and AI search, paid acquisition and outbound, monetization (pricing, offers, paywalls), lifecycle and retention, and the measurement and operations layer. License notices for adapted material are in NOTICE.md."
     }
   ]
 }

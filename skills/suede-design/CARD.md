@@ -7,7 +7,7 @@ Release record for the `suede-design` skill, following the NVIDIA skill-card tem
 
 ## Description
 
-Suede AI design skill for making an interface feel intentional instead of templated: design tokens, color strategy, OKLCH ramps, type scale, fluid type, visual hierarchy, dark mode, spacing, component laws, motion, and source-to-implementation visual QA.
+Suede AI design skill for interfaces that feel intentional instead of templated: design tokens, color strategy, OKLCH ramps, type scale, fluid type, visual hierarchy, dark mode, spacing, component laws, motion, full surface builds that ship layout and words together, reference-to-target restyles (Suedify), and source-to-implementation visual QA.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.2; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
@@ -23,9 +23,9 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when asked to design, restyle, polish, or audit a screen; pick colors or fonts; define, fix, or document design tokens; build or repair a dark mode; review a component or a whole design system; or compare a mock, Figma frame, or reference screenshot against a rendered implementation.
+Use when asked to design, restyle, polish, or audit a screen, landing page, dashboard, or component; pick colors or fonts; define or fix design tokens; build or repair a dark mode; review a design system; make this site look like that one; or compare a mock, Figma frame, or screenshot against the rendered build.
 
-Out of scope — a full design-plus-copy build, launch surface, or reference-to-target restyle (use johnny-suede-design); conversion and funnel architecture (use suede-site-alchemy); writing the words themselves (use suede-copy).
+Out of scope — writing copy with no layout work (use suede-copy); conversion and funnel architecture (use suede-site-alchemy); an A-F findability and first-screen grade of a public page (use suede-visibility-grader); multi-lane builds with file ownership and rollback plans (use suede-agent-teams).
 
 ## Deployment Geography
 
@@ -34,22 +34,20 @@ Global. The skill is a prompt-and-script package that runs locally inside the in
 ## Requirements / Dependencies
 
 - A Claude Code or Codex CLI session with the `suede-skills` plugin installed (install options: <https://skills.suedeai.ai/>).
-- Bundled files loaded relative to this directory: `agents/` (1 file), `references/` (3 files).
+- Bundled files loaded relative to this directory: `agents/` (1 file), `references/` (5 files).
 - Credentials: none are bundled or required by the skill files. Any tool or API credentials come from the host session; never paste credentials into skill files, prompts, or outputs.
 
 ## Known Risks and Mitigations
 
 - Risk: an agent treats a quality gate as autonomous authority. Mitigation: every gate in the pack is advisory — it changes what is reported, never what the user decided; only extreme-risk findings (data loss, credential exposure, legal/rights violations, payment mistakes, irreversible public damage) pause for the user's explicit choice.
-- Risk: a skill instruction is used to act outside its mandate. Mitigation: the hard limits in the skill body's "Red flags" section, quoted below.
+- Risk: a skill instruction is used to act outside its mandate. Mitigation: the hard limits in the skill body's "Boundaries" section, quoted below.
 
-From "Red flags" — If any of these thoughts appear, stop and run the check you were about to skip:
+From "Boundaries":
 
-- "The code reads right, so it will render right." Render it. Screenshots beat code inspection.
-- "This change is too small for visual QA." One-line CSS changes break mobile nav. Check desktop and mobile.
-- "Music tool, so dark purple." That is a first-order category reflex. Scoped Bans And Exceptions is where it is ruled out.
-- "A placeholder metric is fine for now." Fake numbers ship. Scoped Bans And Exceptions carries the three allowed replacements and no exception path.
-- "I remember what the reference looks like." Compare source and implementation in the same pass, never from memory.
-- "I'll write the tokens down later." Unlogged tokens are how drift starts. Note the gap now.
+- Preserve WIP. Never edit unrelated files.
+- Never copy protected site assets, exact copy, proprietary code, or trademarked identity during a restyle.
+- Never invent metrics, pricing, partners, testimonials, legal clearance, or release outcomes.
+- Never call work done until the done signal has been checked or the remaining gap is named.
 
 ## References
 
@@ -59,7 +57,7 @@ From "Red flags" — If any of these thoughts appear, stop and run the check you
 
 ## Skill Output
 
-Structured Markdown returned in the agent's response, shaped by the output contract defined in the skill body: "Output Style". The skill publishes, posts, and sends nothing without the user's explicit authorization; delivery decisions stay with the user.
+Structured Markdown returned in the agent's response, shaped by the output contract defined in the skill body: "Output". The skill publishes, posts, and sends nothing without the user's explicit authorization; delivery decisions stay with the user.
 
 ## Skill Version
 

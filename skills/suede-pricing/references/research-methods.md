@@ -48,7 +48,7 @@ Point of Marginal Expensiveness: $79/mo
 
 Recommended range: $49-59/mo
 Current price: $39/mo (below optimal)
-Opportunity: 25-50% price increase without significant demand impact
+Hypothesis to test: a move toward the $49-59 range; validate with a live price test before committing
 ```
 
 ---

@@ -118,7 +118,7 @@ cp /tmp/suede-creator-skills/skills/suede-graph-flo-xr/agents/suede-graph-flo-xr
   --repo JasonColapietro/suede-creator-skills \
   --path skills/suede-graph-flo-xr</code></pre>
         <p>Codex can follow the orchestration contract, but it does not execute the bundled Claude Workflow runner or register its Claude agent profiles.</p>
-        <p><strong>License and attribution:</strong> the operation graph and thought-state model adapt Graph of Thoughts by ETH Zurich. See Maciej Besta et al., <a href="https://doi.org/10.1609/aaai.v38i16.29720" target="_blank" rel="noopener"><em>Graph of Thoughts: Solving Elaborate Problems with Large Language Models</em></a>, AAAI 38(16), 17682-17690, and keep the bundled <a href="https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-graph-flo-xr/LICENSE.graph-of-thoughts-BSD.txt" target="_blank" rel="noopener">BSD license</a> with redistributed workflow source.</p>
+        <p><strong>License:</strong> the workflow source adapts BSD-licensed code. Keep the bundled <a href="https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-graph-flo-xr/LICENSE.graph-of-thoughts-BSD.txt" target="_blank" rel="noopener">BSD license</a> with any redistributed copy of the workflow; the full notice is in <a href="https://github.com/JasonColapietro/suede-creator-skills/blob/main/NOTICE.md" target="_blank" rel="noopener">NOTICE.md</a>.</p>
       </section>
 
       <section class="grid">
@@ -142,7 +142,7 @@ cp /tmp/suede-creator-skills/skills/suede-graph-flo-xr/agents/suede-graph-flo-xr
             <li>Changes where you want the findings refuted before you read them, not after you ship them.</li>
             <li>Choose the budget before launch: light permits 55, standard 110, and deep 200 total agent calls.</li>
             <li>Not for: high-volume, well-specified work that splits into independent worker-sized tasks (run those as a separate private worker-fleet pass).</li>
-            <li>Not for: findings-only review with no code change (use suede-code-review).</li>
+            <li>Not for: reviewing or grading an existing diff (use suede-code).</li>
             <li>Not for: wiring CI and branch protection (use suede-ci-gate).</li>
           </ul>
         </article>
@@ -161,7 +161,7 @@ cp /tmp/suede-creator-skills/skills/suede-graph-flo-xr/agents/suede-graph-flo-xr
 
       <section class="panel">
         <h2>Related skills</h2>
-        <p>Related skills from this docs set: <a href="suede-agent-teams.html">Suede Agent Teams</a>, <a href="suede-code-review.html">Suede Code Review</a>.</p>
+        <p>Related skills from this docs set: <a href="suede-agent-teams.html">Suede Agent Teams</a>, <a href="suede-code.html">Suede Code</a>.</p>
       </section>
       <section class="install-block" aria-labelledby="install-block-title">
         <h2 id="install-block-title">Install this skill</h2>
@@ -222,7 +222,8 @@ cp /tmp/suede-creator-skills/skills/suede-graph-flo-xr/agents/suede-graph-flo-xr
           </div>
         </div>
       </div>
-    </footer>
+    <div class="trendshift-recognition" style="width:250px;max-width:100%;margin:24px auto;text-align:center"><p style="margin:0 0 8px;font-size:13px">Suede Creator Skills on Trendshift</p><a href="https://trendshift.io/repositories/82031?utm_source=trendshift-badge&amp;utm_medium=badge&amp;utm_campaign=badge-trendshift-82031" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/82031/daily?language=Python" alt="JasonColapietro%2Fsuede-creator-skills | Trendshift" width="250" height="55" loading="lazy" style="display:block;max-width:100%;height:auto"/></a></div>
+</footer>
   <script>
   // Mobile nav disclosure. The markup ships <details open> so a no-JS visit
   // still reaches every link; this collapses it at mobile widths only and

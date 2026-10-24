@@ -7,7 +7,7 @@ Release record for the `suede-competitors` skill, following the NVIDIA skill-car
 
 ## Description
 
-Suede-owned comparison-page discipline for accurate, evidence-backed alternative, versus, and competitor-comparison content that wins evaluators and search intent.
+Suede AI comparison-page discipline for accurate, evidence-backed alternative, versus, and competitor-comparison content that wins evaluators and search intent.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.2; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 

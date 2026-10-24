@@ -19,7 +19,7 @@ Intent-first operating rules for Google Ads: where to spend first, how to struct
 
 ## The intent ladder
 
-Spend opens rung by rung: each tier unlocks only after the one below proves it converts to *pipeline*:
+Spend opens rung by rung: each tier opens only after the one below proves it converts to *pipeline*:
 
 1. **Brand**: "they want you" (brand name, brand + pricing/login). Cheapest clicks, highest conversion. Always on.
 2. **High-intent non-brand**: ready to buy ("cold email software," "best CRM for agencies"). The profit center; most budget lives here.
@@ -107,7 +107,11 @@ QS (1–10, per keyword) = expected CTR + ad relevance + landing page experience
 
 Value ranking: **brand Search > high-intent non-brand Search > remarketing > PMax > broad demand-gen.** PMax earns budget only after the cheaper, clearer wins are maxed. Never run it as the first campaign, on weak tracking, or on tiny budgets.
 
-Guardrails when you do run it: account-level **brand exclusions** (or it cannibalizes brand Search and claims the credit); audience signals from first-party data; negative keywords from day one; offline conversions imported *before* scaling it; check the CRM quality of PMax leads by campaign, if they convert to pipeline at half the rate of Search leads, PMax is cheap-looking and expensive-in-reality. Google auto-generates a bad video if you don't supply one.
+Guardrails when you do run it: **brand exclusions** (or it cannibalizes brand Search and claims the credit); audience signals from first-party data; campaign-level negative keywords from day one; offline conversions imported *before* scaling it; check the CRM quality of PMax leads by campaign, if they convert to pipeline at half the rate of Search leads, PMax is cheap-looking and expensive-in-reality. Google auto-generates a weak video if you don't supply one.
+
+Controls Google added during 2025 that remove most of PMax's old blind spots: campaign-level negative keyword lists (the limit rose to 10,000 negatives in March 2025), channel-level performance reporting and fuller search-terms visibility (announced April 30, 2025), demographic exclusions and device targeting, and 50 search themes per asset group. Use them: an account running PMax without reading channel and search-term reports is optimizing blind. Source: PPC Land, "Google wraps up Performance Max feature rollouts in 2025", and Google Ads Help for current limits.
+
+**AI Max for Search** (rolled out from May 2025) layers broad-style query matching, text customization, and final URL expansion onto Search campaigns. Treat it like Broad match: turn it on only for a campaign that already clears the conversion volume, negative list, and offline-conversion gates above, add brand and URL exclusions, and read its search-terms segment weekly.
 
 ## Benchmarks and the weekly scorecard
 
@@ -117,4 +121,4 @@ Weekly scorecard, exactly eight numbers: spend · leads · CPL · lead→SQL rat
 
 ---
 
-*Framework lineage: adapted (re-expressed and restructured) from practitioner playbooks, notably Ivan Falco's ads-skills. Benchmarks are practitioner-reported starting points: recalibrate against your own account.*
+*Thresholds and benchmarks in this file are starting points from practitioner operating data, not platform guarantees. Recalibrate against the account's own first 30 days.*
