@@ -26,8 +26,12 @@ point at the new host, links back to the Suede Creator Skills pack stay on
 skills.suedeai.ai, and `docs/assets/` ships alongside. It also writes the site's
 own robots.txt, sitemap.xml, llms.txt and 404 page. Nothing under `docs/` changes.
 
-Vercel builds it on every push to main (`vercel.json`), and `/directory/...`
-on the new host 301s to the same path without the prefix.
+Both sites deploy from this repo on Vercel, one project each, through
+`scripts/build-vercel.mjs` (`vercel.json`). Each project sets `SUEDE_SITE`:
+`directory` builds suedeai.directory; `skills` builds skills.suedeai.ai from
+`docs/` without `docs/directory/`, with links into the directory pointed at the
+new host. On either host, `/directory/...` 301s to the same path on
+suedeai.directory, so old listing links and README badges keep working.
 
 ```
 npm run build:directory-site
