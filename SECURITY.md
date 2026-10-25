@@ -41,6 +41,8 @@ The [October 25 first-party triage](security/reviews/2026-10-25-first-party.md) 
 
 The runtime uses the built-in strict policy, CEL shadow mode (no CEL suppression), static, bytecode, shell-pipeline, correlation and behavioral analyzers. Behavioral alignment verification is explicitly disabled. It runs as an unprivileged user in a read-only, resource-limited container with no network, no credentials and a read-only source mount. No submitted skill, script, hook, installer or repository policy executes. Source is downloaded from GitHub at an exact commit, checked against the pinned Git tree and blob hashes, and copied as regular non-executable files. Symlinks, submodules, path escapes, missing files and oversized source fail acquisition.
 
+The host records the invocation's container ID and removes only that container in a bounded cleanup step, including when the Docker client times out. Completed records remain retained after interruption; missing results and unverified cleanup remain errors.
+
 Scanner coverage is limited: source patterns and Python/Bash dataflow do not prove a skill benign. Python parse failures, opaque files/archives, analysis warnings, analyzer failures and coverage-limit findings prevent a clean pass. Dependency API deprecation warnings are retained separately as maintenance diagnostics; they do not suppress findings or indicate missing target analysis. Hosted LLM, AI Defense, OSV and VirusTotal routes are unused; those upstream opt-in routes can send data if enabled elsewhere.
 
 ## Dependency updates

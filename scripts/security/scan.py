@@ -29,6 +29,20 @@ def run(args, **kwargs):
     return subprocess.run(args, check=True, capture_output=True, timeout=kwargs.pop('timeout', 120), **kwargs)
 
 
+def cleanup_container(cid_file):
+    """Remove only the container created for this invocation, including on CLI timeout."""
+    try:
+        if cid_file.is_symlink() or not cid_file.is_file():
+            return 'container_id_not_recorded'
+        identifier = cid_file.read_text().strip()
+        if not re.fullmatch('[a-f0-9]{64}', identifier):
+            return 'invalid_container_id'
+        run(['docker', 'rm', '--force', identifier], timeout=30)
+        return None
+    except (OSError, subprocess.SubprocessError):
+        return 'container_cleanup_failed'
+
+
 def safe_path(value):
     return isinstance(value, str) and bool(value) and not value.startswith('/') and '\\' not in value and all(p not in ('', '.', '..') for p in value.split('/'))
 
@@ -198,10 +212,13 @@ def main():
         (source_root / 'manifest.json').write_text(json.dumps(manifest))
         if positions:
             image = 'suede-source-scanner:' + PROFILE['lock_sha256'][:12]
+            cid_file = work / 'container.cid'
+            run_attempted, cleanup_error, image_id = False, None, None
             try:
                 run(['docker', 'build', '--platform', 'linux/amd64', '--tag', image, str(ROOT / 'scripts/security')], timeout=600)
                 image_id = run(['docker', 'image', 'inspect', '--format', '{{.Id}}', image], text=True).stdout.strip()
-                run(['docker', 'run', '--rm', '--platform', 'linux/amd64', '--network=none', '--read-only', '--cap-drop=ALL',
+                run_attempted = True
+                run(['docker', 'run', '--cidfile', str(cid_file), '--platform', 'linux/amd64', '--network=none', '--read-only', '--cap-drop=ALL',
                      '--security-opt=no-new-privileges', '--pids-limit=128', '--memory=2g', '--cpus=2', '--user=65534:65534',
                      '--tmpfs=/tmp:rw,noexec,nosuid,size=256m', '--env=HOME=/tmp',
                      '--mount', f'type=bind,source={source_root},target=/source,readonly',
@@ -211,6 +228,17 @@ def main():
                 if isinstance(detail, bytes):
                     detail = detail.decode(errors='replace')
                 (args.output / 'runtime-error.json').write_text(json.dumps({'reason': 'isolated_runtime_failed', 'error_type': type(error).__name__, 'detail': detail[-4000:]}) + '\n')
+            finally:
+                # subprocess timeout kills the Docker client, not necessarily its container.
+                if run_attempted:
+                    cleanup_error = cleanup_container(cid_file)
+                    if cleanup_error:
+                        problem = {'reason': cleanup_error}
+                        if cid_file.is_file() and not cid_file.is_symlink():
+                            identifier = cid_file.read_text().strip()
+                            if re.fullmatch('[a-f0-9]{64}', identifier):
+                                problem['container_id'] = identifier
+                        (args.output / 'container-cleanup-error.json').write_text(json.dumps(problem) + '\n')
             # Keep completed records even if a later target crashes or the container times out.
             for number, position in enumerate(positions):
                 identifier, fallback = records[position]
@@ -221,9 +249,13 @@ def main():
                         if record.get('source') != fallback['source']:
                             raise ValueError('result_source_mismatch')
                         record['runtime_image'] = image_id
+                        if cleanup_error:
+                            record.update(state='error', reason=cleanup_error)
                         records[position] = identifier, record
                 except (OSError, ValueError):
                     fallback['reason'] = 'invalid_runtime_result'
+                if cleanup_error:
+                    records[position][1].update(state='error', reason=cleanup_error)
     summary, blocked = [], False
     ledger_path = ROOT / 'directory/security-scans.json'
     ledger = json.loads(ledger_path.read_text()) if args.record else {}

@@ -96,16 +96,20 @@ class PinnedSourceTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp); (root / 'scripts/security').mkdir(parents=True)
             (root / 'scripts/security/requirements.txt').write_bytes((ROOT / 'scripts/security/requirements.txt').read_bytes())
+            commands = []
             def runtime(args, **kwargs):
+                commands.append((args, kwargs))
                 if args[:3] == ['docker', 'image', 'inspect']:
                     return scan.subprocess.CompletedProcess(args, 0, stdout='sha256:' + 'b' * 64)
                 if args[:2] == ['docker', 'run']:
+                    if '--cidfile' in args:
+                        Path(args[args.index('--cidfile') + 1]).write_text('c' * 64)
                     mounts = [args[index + 1] for index, value in enumerate(args) if value == '--mount']
                     source = Path(next(value.split('source=')[1].split(',')[0] for value in mounts if 'target=/source' in value))
                     output = Path(next(value.split('source=')[1].split(',')[0] for value in mounts if 'target=/output' in value))
                     manifest = json.loads((source / 'manifest.json').read_text())
                     (output / '0.json').write_text(json.dumps({'source': manifest['targets'][0]['source'], 'state': 'completed', 'analysis': {'findings': [{'severity': 'HIGH'}]}}))
-                    raise scan.subprocess.CalledProcessError(137, args, stderr=b'synthetic OOM')
+                    raise scan.subprocess.TimeoutExpired(args, 900, stderr=b'synthetic timeout')
                 return scan.subprocess.CompletedProcess(args, 0)
             with patch.object(scan, 'ROOT', root), patch.object(scan, 'run', side_effect=runtime), \
                  patch.object(scan, 'evaluate', side_effect=lambda record: {'status': record['state'], 'reason': 'test'}), \
@@ -114,6 +118,9 @@ class PinnedSourceTests(unittest.TestCase):
             retained = [json.loads(file.read_text()) for file in (root / 'out').glob('*.json') if re_hash(file.stem)]
             complete = next(record for record in retained if record['state'] == 'completed')
             self.assertEqual(complete['analysis']['findings'], [{'severity': 'HIGH'}])
+            cleanup = [call for call in commands if call[0][:2] == ['docker', 'rm']]
+            self.assertEqual([call[0] for call in cleanup], [['docker', 'rm', '--force', 'c' * 64]])
+            self.assertEqual(cleanup[0][1]['timeout'], 30)
 
     def test_deprecations_are_retained_while_analysis_warnings_block(self):
         import warnings
@@ -133,6 +140,18 @@ class PinnedSourceTests(unittest.TestCase):
                 self.assertEqual(record['coverage']['complete'], complete)
                 self.assertEqual(record['diagnostics'][0]['category'], category.__name__)
                 self.assertEqual(record['diagnostics'][0]['blocking'], not complete)
+
+    def test_cleanup_rejects_untrusted_ids_and_reports_failed_removal(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            cid = Path(tmp) / 'container.cid'
+            with patch.object(scan, 'run') as command:
+                self.assertEqual(scan.cleanup_container(cid), 'container_id_not_recorded')
+                cid.write_text('--all')
+                self.assertEqual(scan.cleanup_container(cid), 'invalid_container_id')
+                command.assert_not_called()
+            cid.write_text('d' * 64)
+            with patch.object(scan, 'run', side_effect=scan.subprocess.TimeoutExpired('docker rm', 30)):
+                self.assertEqual(scan.cleanup_container(cid), 'container_cleanup_failed')
 
 
 def re_hash(value):
