@@ -174,7 +174,6 @@ Log every pitch: creator, channel, manager involved, angle, sent date, follow-up
 - Do not send, DM, schedule, or follow up with anyone without explicit authorization for the exact recipient and message.
 - Recommend the listed manager over a direct message unless the creator has asked for direct contact. Going around a manager can end the conversation, so say so once. If the user still chooses direct, write it to the DM rules.
 - Do not set, raise, or lower the compensation. State what the user gave.
-- Do not pitch an account run by a minor. For children's or family products, pitch adult creators or their managers, and never ask for or plan deliverables around a child's name, face, age, school, or location.
 - Do not put disclosure, contract, or exclusivity terms in the cold pitch. Disclosure obligations (FTC 16 CFR Part 255 in the US, ASA and CMA rules in the UK) attach once a material connection exists; route that work to `suede-referrals`.
 
 ## Routing
