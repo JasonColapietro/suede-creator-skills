@@ -1681,7 +1681,7 @@ function renderFeaturedProjects() {
   const copy = EDITORIAL.page || {};
   const bc = crumbs(here, [["directory/", "Directory"], [null, "Featured projects"]]);
   const title = copy.title || "Featured Agent Skill Projects | Suede AI";
-  const description = "Explore reviewed agent tools, skills and plugins, with pinned source, setup guidance and data-use notes from the Suede AI Skills Directory.";
+  const description = `Meet ${listPhrase(EDITORIAL.projects.map((p) => p.name))}: reviewed source, setup and data-use notes.`;
   const keywords = setKeywords(here, ["featured agent projects", ...EDITORIAL.projects.map((p) => `${p.name} agent workflows`), "Suede AI Skills Directory"]);
   const badge = FEATURED_BADGE;
   const nominate = copy.nominate
