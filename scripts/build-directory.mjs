@@ -19,6 +19,7 @@ import { fileURLToPath } from "node:url";
 import { SCORE_METHOD, qualityScore, scorePoints, letterGrade, listed, qualifies, badgePair, badgeMarkdown, badgeHtml, shieldSvg, listingTarget, promotionActive } from "./directory/badges.mjs";
 import { featuredProjectsHtml } from "./directory/featured.mjs";
 import { parseGuide, renderGuideBody } from "./directory/editorial.mjs";
+import { readSecurityEvidence, securityLabel } from "./security/evidence.mjs";
 
 const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const docsRoot = path.join(repoRoot, "docs");
@@ -53,6 +54,8 @@ for (const k of ["offer_long", "partners_intro", "button"]) if (typeof PROMOTION
 if (PROMOTION.ends_at !== null && (!/^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\dZ$/.test(PROMOTION.ends_at) || !Number.isFinite(Date.parse(PROMOTION.ends_at)))) throw new Error("promotion.json: ends_at must be null or a UTC timestamp");
 if (SCORE_METHOD !== "graded-v2" || data.score_method !== SCORE_METHOD || CHECKS.map((c) => c.id).join() !== "frontmatter,name_format,name_matches_folder,description_length,description_trigger,concise_body,license,maintained") throw new Error("Unsupported directory score method");
 const NOTES = JSON.parse(fs.readFileSync(path.join(repoRoot, "directory", "notes.json"), "utf8"));
+const securityLedgerPath = path.join(repoRoot, "directory", "security-scans.json");
+const securityLedger = fs.existsSync(securityLedgerPath) ? JSON.parse(fs.readFileSync(securityLedgerPath, "utf8")) : {};
 const EDITORIAL = JSON.parse(fs.readFileSync(path.join(repoRoot, "directory", "featured-projects.json"), "utf8"));
 // The README badge for featured publishers, rendered with the other badges
 // once featured-projects.json marks it live.
@@ -187,7 +190,7 @@ data.skills = data.skills.map((c) => {
   const meta = data.repos[c.repo];
   if (!meta) throw new Error(`skills.json: no repos entry for ${c.repo}`);
   if (!listed(c) || c.score !== qualityScore(c, meta, data.generated) || letterGrade(c.score) !== c.grade) throw new Error(`skills.json: inconsistent score or eligibility for ${c.repo}/${c.slug}`);
-  if (c.security_scan_status !== "not_scanned") throw new Error("Per-skill security results require a separate reviewed evidence pipeline");
+  if (c.security_scan_status !== "not_scanned") throw new Error("skills.json cannot assert security approval; results are derived from security-scans.json evidence");
   const parts = scoreParts(c, meta, data.generated);
   if (Math.min(SCORE_CAP, parts.reduce((n, p) => n + p.points, 0)) !== c.score) throw new Error(`skills.json: score breakdown disagrees with the published score for ${c.repo}/${c.slug}`);
   const [owner, name] = c.repo.split("/");
@@ -196,6 +199,7 @@ data.skills = data.skills.map((c) => {
   const blob = (p) => `https://github.com/${c.repo}/blob/${meta.branch}/${p}`;
   return {
     ...c,
+    security: readSecurityEvidence(repoRoot, c, meta.commit_sha, securityLedger),
     id: `${repoSlug}/${c.slug}`,
     owner,
     repo_name: name,
@@ -661,7 +665,7 @@ function qualityBadgeBlock(here, s) {
   if (!s.shielded) return improveBlock(here, s);
   return `<section class="panel badge-panel" id="badge" aria-labelledby="badge-title"><h2 id="badge-title">Two badges for ${esc(s.name)}</h2>
         ${qualityBadgeContent(s)}
-        <p class="muted">Suede Certified on the shield refers to this published structural quality check. Security scan: not scanned. Read the <a href="${rel(here, "directory/methodology/")}">methodology</a>.</p>
+        <p class="muted">Suede Certified on the shield refers to this published structural quality check. Security scan: ${esc(securityLabel(s.security.status))}. Read the <a href="${rel(here, "directory/methodology/")}">methodology</a>.</p>
         ${promotionOffer(here)}${publisherGuideLine(here) ? `\n        <p>${publisherGuideLine(here).trim()}</p>` : ""}</section>`;
 }
 // The "claim your listing" panel beside the badge on skill and repository pages.
@@ -861,7 +865,8 @@ function skillReport(s) {
     methodology: { version: SCORE_METHOD, url: `${DIR_URL}methodology/#score`, rubric_total: RUBRIC_MAX, published_cap: SCORE_CAP },
     quality: { score: s.score, grade: s.grade, components: s.score_parts, checks: s.checks },
     ...(data.repos[s.repo].supplementary_citations ? { supplementary_citations: data.repos[s.repo].supplementary_citations } : {}),
-    security_scan_status: "not_scanned",
+    security_scan_status: s.security.status,
+    security: s.security,
     badges: s.shielded ? badgePair(s) : [{ kind: "listing", src: `${BASE}/${skillPath(s)}badge.svg`, alt: `${BADGE_LABEL}: listed` }],
   };
   return { ...report, report_version: createHash("sha256").update(JSON.stringify(report)).digest("hex") };
@@ -882,7 +887,7 @@ function reportPanel(here, s) {
   const open = s.score_parts.filter((p) => p.points < p.max && p.id !== "adoption").sort((a, b) => (b.max - b.points) - (a.max - a.points)).slice(0, 3);
   return `<div class="report-summary">
           <p class="report-kicker">Report snapshot · <time datetime="${snapshot.date}">${longDate(snapshot.date)}</time> · ${SCORE_METHOD}</p>
-          <p>The rubric totals 100 points; published scores are capped at 99. Security scan: not scanned.</p>
+          <p>The rubric totals 100 points; published scores are capped at 99. Security scan: ${esc(securityLabel(s.security.status))}.</p>${s.security.evidence_url ? `\n          <p class="muted"><a href="${esc(s.security.evidence_url)}" target="_blank" rel="noopener">Retained scan evidence and findings</a>. ${s.security.files_scanned || 0} files inventoried; coverage ${s.security.coverage_complete ? "complete for this profile" : "incomplete"}. Assessed ${esc(s.security.evaluated_on || "at build")}${s.security.valid_until ? `; evidence expires ${esc(s.security.valid_until.slice(0, 10))}` : ""}. ${esc(s.security.reason)}.</p>` : ""}
           <p class="muted">Source revision: ${report.source.revision ? `<a href="${esc(report.source.skill_md_url)}" target="_blank" rel="noopener"><code>${report.source.revision.slice(0, 12)}</code></a>` : "not recorded in this snapshot"}. Report version <code>${report.report_version.slice(0, 12)}</code>. Badge URLs follow the latest listing; save the report to keep this version.</p>
           <p class="report-actions">${reportLinks(here, s)}</p>
           ${open.length ? `<h3>What to review next</h3><ul>${open.map((p) => `<li><b>${esc(p.label)}</b>: ${p.points} of ${p.max} points. ${esc(RUBRIC.find((r) => r.id === p.id).rule)}.</li>`).join("")}</ul><p class="muted">Add declarations and bundled files when they describe the skill’s actual needs. Update the source, then request a fresh review with the changed commit or PR.</p>` : ""}
@@ -910,7 +915,7 @@ function skillRow(here, s, { showRepo, showLicense = false }) {
       : s.featured
         ? `<p><a href="${rel(here, skillPath(s))}#badge">Get badges</a></p>`
         : `<details class="row-badges"><summary>Get badges</summary>${qualityBadgeContent(s, `-${s.slug}`)}</details>`;
-  const report = showRepo ? "" : `<p class="row-report">${reportLinks(here, s)}</p>`;
+  const report = `<p class="row-report">Security scan: ${esc(securityLabel(s.security.status))}. ${reportLinks(here, s)}</p>`;
   return `            <tr${id}><td class="name">${nameCell} ${gradeChip(s)}</td><td class="meta">${second}</td><td class="desc">${esc(desc)}${badges}${report}</td></tr>`;
 }
 
@@ -1121,7 +1126,7 @@ function renderSkill(s) {
     ["SKILL.md", `${plural(s.body_lines, "line")}, ${plural(s.body_words, "word")}`],
     ["Bundled files", `${plural(s.file_count, "file")}${kinds.length ? `, including ${kinds.join(", ")}` : ""}`],
     ["Quality score", `${gradeChip(s)} <a href="#check">${checkSummary(s)}</a>`],
-    ["Security scan", "Not scanned"],
+    ["Security scan", esc(securityLabel(s.security.status).replace(/^./, c => c.toUpperCase()))],
     ["README badge", s.shielded ? `<a href="#badge">Get the badges for this listing</a>` : `<a href="#badge">Get the listing badge and raise the score</a>`],
   ]);
   const authorFacts = factsTable([
@@ -1226,7 +1231,7 @@ ${relatedRows(here, siblings)}
   const code = {
     "@type": "SoftwareSourceCode",
     name: s.name,
-    description: `${ensureSentence(s.summary)} Suede Skill Check: ${s.score}/100, grade ${s.grade}. Security scan: not scanned.`,
+    description: `${ensureSentence(s.summary)} Suede Skill Check: ${s.score}/100, grade ${s.grade}. Security scan: ${securityLabel(s.security.status)}.`,
     codeRepository: s.folder_url,
     programmingLanguage: "Markdown",
     license: s.license_url,
@@ -1279,7 +1284,7 @@ function renderRepo(r) {
     ["Publisher", `<a href="https://github.com/${esc(r.owner)}" target="_blank" rel="noopener">${esc(r.publisher)}</a>${officialTag(r.official)}`],
     ["Repository", `<a href="https://github.com/${esc(r.repo)}" target="_blank" rel="noopener">github.com/${esc(r.repo)}</a>`],
     ["Listed skills", fmt(r.skills.length)],
-    ["Security scan", "Not scanned"],
+    ["Security scan", new Set(r.skills.map(s => s.security.status)).size === 1 ? esc(securityLabel(r.skills[0].security.status).replace(/^./, c => c.toUpperCase())) : "Mixed; see individual skill reports"],
     ["Categories", catLinks.join(", ")],
     ["License", esc(licenseText)],
     ["Last commit", longDate(r.commit)],
@@ -1775,7 +1780,7 @@ ${gradeRows}
         <p>Across ${fmt(total)} listed skills, the highest score is ${dist.max} and the median is ${dist.median}. ${dist.top ? `${plural(dist.top, "listed skill")} ${dist.top === 1 ? "scores" : "score"} 96–${SCORE_CAP}` : `No listed skill scores 96–${SCORE_CAP}`}, and ${fmt(dist.shielded)} score 80–${SCORE_CAP} and carry the quality shields. Failed required frontmatter receives grade F and is not listed.</p>
         <p>The score measures the recorded SKILL.md structure and description, instruction depth, bundled files, license declaration, maintenance and citation evidence. It does not measure runtime performance. Frontmatter is a separate required gate; a declared license and all listing-policy rules still apply.</p>
         <h3>Security scan status is separate</h3>
-        <p>External directory skills are marked <b>not scanned</b>. The HOL/Cisco CI scanners run on Suede AI’s own repository; their results do not certify the external repositories listed here. The shields’ “Suede Certified” label refers to the published structural quality check. A security result needs its own per-skill scan evidence.</p>
+        <p>Security status is separate from structural quality. Each downloadable report derives it from retained evidence for the exact repository revision and skill folder. Missing evidence means <b>not scanned</b>; incomplete, failed, skipped and stale scans stay visible. A completed scan records its scanner version, time, file coverage and findings. HIGH or CRITICAL findings fail the scan; other findings require review. Evidence expires after 30 days or a source revision change. Local static and behavioral source analysis has limited coverage and does not certify a skill. The HOL repository check covers Suede AI’s own repository.</p>
       </section>
       <section class="panel" aria-labelledby="authors-title">
         <h2 id="authors-title">Two README badges and a limited-time feature offer</h2>
@@ -1890,7 +1895,7 @@ function renderSubmit() {
         <p>The <a href="${rel(here, "directory/methodology/")}#score">scoring rubric</a> lists every component and its points.</p>
         <h3>Updated your skill?</h3>
         <p>Choose <b>Request a fresh review</b> on the skill’s report or repository listing. The form carries the exact skill name and previous snapshot. Add the changed commit or pull request and the points you improved. Suede AI reviews requests by hand and rechecks accepted changes at a directory refresh.</p>
-        <p>Each listing offers a downloadable JSON report with its snapshot date, report version, score breakdown and methodology. Source commit IDs appear when recorded by the refresh; older snapshots say when the revision was not recorded. External skills remain marked <b>not scanned</b>.</p>
+        <p>Each listing offers a downloadable JSON report with its snapshot date, report version, score breakdown, methodology and separate security status. Source commit IDs appear when recorded by the refresh; older snapshots say when the revision was not recorded. Skills without retained scan evidence are marked <b>not scanned</b>.</p>
       </section>
 ${badgeBlock(here, {
   badgePath: "directory/badge.svg",
@@ -2243,7 +2248,7 @@ verifyInternalLinks();
 
 // llms.txt carries one line about the directory, with live counts.
 const llmsPath = path.join(docsRoot, "llms.txt");
-const llmsLine = `- [Agent Skills Directory](${DIR_URL}): A curated index of ${fmt(data.skills.length)} public Agent Skills (${openPct}% under an open-source or open-content license) from ${repos.size} other GitHub repositories, in ${categories.length} category directories. Every listing links to the author's repository, passes the Suede Skill Check's structural listing gate, shows a 0–99 quality score and letter grade, and states its license; the ${fmt(dist.shielded)} skills scoring 80–99 offer numeric and letter README badges (either valid linked badge can qualify for verified promotion); security scan status is separately marked not scanned; full skill pages summarize the scripts, credentials and network calls found in the skill's files; [how skills are listed](${DIR_URL}methodology/). Edited by Jason Colapietro, Suede AI. Category directories:`;
+const llmsLine = `- [Agent Skills Directory](${DIR_URL}): A curated index of ${fmt(data.skills.length)} public Agent Skills (${openPct}% under an open-source or open-content license) from ${repos.size} other GitHub repositories, in ${categories.length} category directories. Every listing links to the author's repository, passes the Suede Skill Check's structural listing gate, shows a 0–99 quality score and letter grade, and states its license; the ${fmt(dist.shielded)} skills scoring 80–99 offer numeric and letter README badges (either valid linked badge can qualify for verified promotion); security status is derived separately from retained per-skill evidence; full skill pages summarize the scripts, credentials and network calls found in the skill's files; [how skills are listed](${DIR_URL}methodology/). Edited by Jason Colapietro, Suede AI. Category directories:`;
 // Under it, one indented line per category hub, so an answer engine can cite
 // the page that matches a query ("SEO skills for Claude") instead of the hub.
 const llmsCategoryLines = categories.map((c) => `  - [${c.seo_title}](${url(catPath(c.slug))}): ${fmt(skillsByCat.get(c.slug).length)} listed ${c.short} skills.`);

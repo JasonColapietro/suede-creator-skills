@@ -147,7 +147,7 @@ if (browser) {
     shortlist.querySelector('#shortlist-markdown').textContent = [
       '# ' + markdown(task.value.trim() || 'My skill shortlist'), '',
       ...picks.map((skill) => '- [' + markdown(skill.name) + '](' + new URL(skill.href, location.href).href + ') — ' + skill.score + '/100 · ' + skill.grade + ' · ' + markdown(skill.license) + '\n  ' + markdown(skill.repo) + ' · [Report](' + new URL(skill.report, location.href).href + ') · Snapshot ' + skill.snapshot + ' · ' + skill.method),
-      '', '100-point rubric; published scores capped at 99. Security scan: not scanned.',
+      '', '100-point rubric; published scores capped at 99. Security status is separate; see each report and its expiry.',
       'Report and badge links follow the latest listing. Download a report to preserve its version.',
     ].join('\n');
   }

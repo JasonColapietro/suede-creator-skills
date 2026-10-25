@@ -135,10 +135,22 @@ npm run build:directory
 `score_method`, and rotates `snapshot_id`, so badge verification recorded
 against the earlier bytes must be re-run.
 
-`security_scan_status: "not_scanned"` is separate from quality. HOL/Cisco CI
-scans Suede's repository only; it supplies no security result for external
-listings. Introducing per-skill security results requires a reviewed evidence
-pipeline. The builder rejects unsupported security status claims.
+`security_scan_status: "not_scanned"` remains the intake default and is separate
+from quality. The builder derives the published status from reviewed,
+hash-verified `directory/security-scans.json` pointers, never an intake claim.
+The explicit Cisco source-scan workflow covers all first-party skill packages
+and a bounded representative external batch at exact commits. It retains JSON
+findings and errors; it does not scan or approve the whole catalog. See
+`SECURITY.md` for coverage, dependency pins, isolation and status requirements.
+
+To scan one to four accepted snapshot entries, use
+`python3 scripts/security/scan.py --external owner/repo/skill-slug --record`,
+then rebuild and review the evidence diff in a PR. The command records failures
+too, replacing old pass pointers. Missing evidence means `not_scanned`;
+`passed` requires complete current-profile evidence with zero findings.
+`findings`, `failed`, `error`, `skipped` and `stale` remain distinct. Source
+changes or evidence older than 30 days invalidate passes. Quality grades and
+badge promotion remain independent of these scan outcomes.
 
 Every listed skill scoring 80–99 offers two linked quality shields: numeric and
 letter grade. Both links point to its full skill page, or its repository-page

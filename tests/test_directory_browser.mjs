@@ -45,7 +45,7 @@ try {
   assert.equal(await page.locator('[data-shortlist-items] li').count(), 5);
   const markdown = await page.locator('#shortlist-markdown').textContent();
   assert.ok(markdown.includes('Review React checkout \\<script\\>'));
-  assert.ok(markdown.includes('Security scan: not scanned'));
+  assert.ok(markdown.includes('Security status is separate; see each report and its expiry.'));
   assert.ok(markdown.includes('/report.json)'));
   await page.goto(saved);
   await waitSearch();
@@ -85,7 +85,8 @@ try {
   const [download] = await Promise.all([page.waitForEvent('download'), page.getByRole('link', { name: 'Download report', exact: true }).click()]);
   const exported = JSON.parse(fs.readFileSync(await download.path(), 'utf8'));
   assert.equal(exported.quality.score, sample.score);
-  assert.equal(exported.security_scan_status, 'not_scanned');
+  const publishedReport = JSON.parse(fs.readFileSync(path.join(root, '.' + sample.report), 'utf8'));
+  assert.deepEqual(exported, publishedReport, 'download preserves the published security state and exact evidence');
   await page.screenshot({ path: path.join(output, '01-report-desktop.png') });
 
   for (const width of [1440, 390]) {

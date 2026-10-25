@@ -1,0 +1,260 @@
+{
+  "schema_version": 1,
+  "source": {
+    "repository": "JasonColapietro/suede-creator-skills",
+    "path": "skills/suede-marketing-plan",
+    "revision": "fe5dc1757cd6c8ff63aee853564249c00151778d"
+  },
+  "scanner": {
+    "name": "cisco-ai-skill-scanner",
+    "version": "2.3.1",
+    "adapter_version": 2,
+    "analyzers": [
+      "static_analyzer",
+      "bytecode",
+      "pipeline",
+      "correlation",
+      "behavioral_analyzer"
+    ],
+    "policy": "strict",
+    "cel_mode": "shadow",
+    "network": "disabled",
+    "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+  },
+  "started_at": "2026-10-25T20:56:09.185661+00:00",
+  "state": "completed",
+  "analysis": {
+    "skill_name": "suede-marketing-plan",
+    "skill_path": "/source/target-036",
+    "is_safe": true,
+    "max_severity": "LOW",
+    "findings_count": 2,
+    "findings": [
+      {
+        "id": "MANIFEST_DESCRIPTION_TOO_LONG_d5d955b297",
+        "rule_id": "MANIFEST_DESCRIPTION_TOO_LONG",
+        "category": "policy_violation",
+        "severity": "LOW",
+        "title": "Skill description exceeds agent skills length limit",
+        "description": "Skill description is 967 characters; Agent skills limit the `description` field to 512 characters.",
+        "file_path": "SKILL.md",
+        "line_number": null,
+        "snippet": null,
+        "remediation": "Shorten the description to 512 characters or fewer while keeping it specific",
+        "analyzer": "static",
+        "metadata": {
+          "same_path_other_rule_ids": [
+            "MANIFEST_MISSING_LICENSE"
+          ],
+          "same_path_unique_rule_count": 2,
+          "same_path_findings_count": 2,
+          "aitech": null,
+          "aitech_name": null,
+          "aisubtech": null,
+          "aisubtech_name": null,
+          "aitech_mappings": [],
+          "aisubtech_mappings": [],
+          "framework_mappings": [],
+          "taxonomy_status": "not_applicable",
+          "taxonomy_source": "rule",
+          "scan_policy_name": "strict",
+          "scan_policy_version": "1.0",
+          "scan_policy_preset_base": "strict",
+          "scan_policy_fingerprint_sha256": "7f4560dea6f3f1c11067735bab3759c4daedfcd6d67f46b4e40899507a2c2ea9"
+        }
+      },
+      {
+        "id": "MANIFEST_MISSING_LICENSE_c5ae9be793",
+        "rule_id": "MANIFEST_MISSING_LICENSE",
+        "category": "policy_violation",
+        "severity": "INFO",
+        "title": "Skill does not specify a license",
+        "description": "Skill manifest does not include a 'license' field. Specifying a license helps users understand usage terms.",
+        "file_path": "SKILL.md",
+        "line_number": null,
+        "snippet": null,
+        "remediation": "Add 'license' field to SKILL.md frontmatter (e.g., MIT, Apache-2.0)",
+        "analyzer": "static",
+        "metadata": {
+          "same_path_other_rule_ids": [
+            "MANIFEST_DESCRIPTION_TOO_LONG"
+          ],
+          "same_path_unique_rule_count": 2,
+          "same_path_findings_count": 2,
+          "aitech": null,
+          "aitech_name": null,
+          "aisubtech": null,
+          "aisubtech_name": null,
+          "aitech_mappings": [],
+          "aisubtech_mappings": [],
+          "framework_mappings": [],
+          "taxonomy_status": "not_applicable",
+          "taxonomy_source": "rule",
+          "scan_policy_name": "strict",
+          "scan_policy_version": "1.0",
+          "scan_policy_preset_base": "strict",
+          "scan_policy_fingerprint_sha256": "7f4560dea6f3f1c11067735bab3759c4daedfcd6d67f46b4e40899507a2c2ea9"
+        }
+      }
+    ],
+    "scan_duration_seconds": 0.5131785869598389,
+    "duration_ms": 513,
+    "analyzers_used": [
+      "static_analyzer",
+      "bytecode",
+      "pipeline",
+      "correlation",
+      "behavioral_analyzer"
+    ],
+    "timestamp": "2026-10-25T20:56:09.708649+00:00",
+    "scan_metadata": {
+      "policy_name": "strict",
+      "policy_version": "1.0",
+      "policy_preset_base": "strict",
+      "policy_fingerprint_sha256": "7f4560dea6f3f1c11067735bab3759c4daedfcd6d67f46b4e40899507a2c2ea9",
+      "cel": {
+        "mode": "shadow",
+        "runtime": "cel-go",
+        "runtime_version": "v0.32.0;helper=2.3.1",
+        "fact_schema": "v1",
+        "expression_set_hash": "f26459b8f4a46a974d7ab0aaae34127b5b6a40d693e266e12fca03a69a6d26aa",
+        "evaluated": 0,
+        "retained": 2,
+        "would_suppress": 0,
+        "suppressed": 0,
+        "fallbacks": 0,
+        "projection_incomplete": 0,
+        "elapsed_ms": 0.0,
+        "projection_ms": 0.0,
+        "evaluation_ms": 0.0,
+        "errors": [],
+        "per_rule": {},
+        "suppressed_candidates": []
+      },
+      "rule_contract": {
+        "status": "passed",
+        "schema_version": 2,
+        "checked": 2,
+        "invalid_findings": 0,
+        "errors": []
+      },
+      "taxonomy": {
+        "source": "builtin",
+        "version": "2.0.0",
+        "name": "Cisco AI Security and Safety Taxonomy",
+        "revision": "655a343ac943a51b6f61f86e47156e7752c15dc6",
+        "snapshot_sha256": "413e8ce9081e6d91b78aaa0d0b1c06cdc15d0406ad319e23e9f9f4f80735c441",
+        "findings": {
+          "mapped": 0,
+          "not_applicable": 2,
+          "unmapped": 0
+        }
+      }
+    },
+    "analyzers_failed": []
+  },
+  "diagnostics": [],
+  "coverage": {
+    "complete": true,
+    "files": [
+      {
+        "path": "CARD.md",
+        "size": 4525,
+        "sha256": "89e785c1ab58d292587c01c606e2dc60266268c711b2c9c81fc62c9baa96b1ce"
+      },
+      {
+        "path": "SKILL.md",
+        "size": 13445,
+        "sha256": "179b5ea04c0cae16e3ce860d1fa5150842662259104163e0a49d368e54fc0579"
+      },
+      {
+        "path": "agents/openai.yaml",
+        "size": 658,
+        "sha256": "855321cfba2ee4207efab6c4cf8bdd0df88451919bc375e3486d59108e3f8a70"
+      },
+      {
+        "path": "evals/evals.json",
+        "size": 11839,
+        "sha256": "f667a43578a08d0ba2496e931ffd8561a829c22645f4b84d135b67c314ee977f"
+      },
+      {
+        "path": "references/aarrr-framework.md",
+        "size": 11112,
+        "sha256": "f9ba3d1c32ee76af3b14c9e74a44397d8f59ac043d8db07161d36ce8cae6d476"
+      },
+      {
+        "path": "references/budget-planning.md",
+        "size": 4517,
+        "sha256": "b54ae40c43bdc88b018435831a5f6eceeae31a66ca1b2457d21e48b87feed8d9"
+      },
+      {
+        "path": "references/client-types.md",
+        "size": 11341,
+        "sha256": "21bf36f8d65824b1e77b85eb31c32b02418d0ba0609b89707017cd021189fa7f"
+      },
+      {
+        "path": "references/current-state-rubric.md",
+        "size": 14058,
+        "sha256": "e23cbd3c0f214b2a9fce769a88719f4a0a97d5e761d37beda0f512cc844bc07f"
+      },
+      {
+        "path": "references/example-quietude.md",
+        "size": 67007,
+        "sha256": "a0daf524a1a74031c78ce50c195db9f3fb620751ee6ad427bb8fd5391eeedf2d"
+      },
+      {
+        "path": "references/funding-stage-unlocks.md",
+        "size": 3650,
+        "sha256": "0fd8bd771b39c500a4e3b6ca1d7468c05f3e341419f26067dff9a578d943eb21"
+      },
+      {
+        "path": "references/growth-patterns.md",
+        "size": 3047,
+        "sha256": "5ca990d885603563d6415aa8648fd5c94304c5752abcf87a48c7d2eadf4b7f19"
+      },
+      {
+        "path": "references/idea-cross-reference.md",
+        "size": 25317,
+        "sha256": "373acf584e2ac4158cd3d12b3b9f89d9a0da3e71a5f87cca3640e12adeff556e"
+      },
+      {
+        "path": "references/measurement-framework.md",
+        "size": 10596,
+        "sha256": "1eaf708b3cb778bc8657b1d3bfee8821cfc55dbe651a35a7818090092a6cb65f"
+      },
+      {
+        "path": "references/methodology.md",
+        "size": 30084,
+        "sha256": "8b342d48f60a5f1612e882f51d7227a2b4e1b36f4e5c5b2173c150a119951429"
+      },
+      {
+        "path": "references/ops-stack-mapping.md",
+        "size": 11917,
+        "sha256": "4d90641c173a6c7b1f0fc79eb1de77dfaaad19a63a7e44d0e8c8a65accf318cd"
+      },
+      {
+        "path": "references/plan-template.md",
+        "size": 20209,
+        "sha256": "c1fd21ed0137885f969447b00e0cb82ba51bd3152476bf4ff3ff3fb23b537a98"
+      },
+      {
+        "path": "references/tactic-library.md",
+        "size": 17396,
+        "sha256": "050bdad17739d60adb801eaee2335a7d2fa4b83b20ab87cbd32d853f15f38ef7"
+      },
+      {
+        "path": "references/tactic-scoring.md",
+        "size": 3621,
+        "sha256": "713163a7b34d007bb7db97125d0d36a56a6bd8a1d8a9bcd03cc0e2d92033e046"
+      },
+      {
+        "path": "references/team-and-agency-model.md",
+        "size": 3716,
+        "sha256": "db522e81cad1e628efbe67e6079fddb1630712f45293a8e8017f24cc35a1929c"
+      }
+    ],
+    "skipped": []
+  },
+  "completed_at": "2026-10-25T20:56:09.710974+00:00",
+  "runtime_image": "sha256:e922b2c027837474fb8d1eb875fd7ecf8d1cbc826ea2fff453e97a2160b7917e"
+}

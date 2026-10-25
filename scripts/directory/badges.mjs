@@ -75,6 +75,8 @@ export function shieldSvg(score, kind) {
   const label = kind === 'score' ? `Suede Skill Check: ${score}/100; structural quality` : `Suede Skill Check: Grade ${grade}; structural quality`;
   svg = svg.replace(/aria-label="[^"]*"/, `aria-label="${label}"`).replace(/<title>.*?<\/title>/, `<title>${label}</title>`);
   if (kind === 'score') svg = svg.replace(/<!-- Replace SCORE[\s\S]*?-->/, '').replace('SCORE / 100', `${score} / 100`);
+  // Standalone embeds must carry visible scope, including when the link is never opened.
+  svg = svg.replace('</svg>', '<rect x="32" y="635" width="576" height="62" rx="10" fill="#131219"/><text x="320" y="659" text-anchor="middle" font-family="sans-serif" font-size="27" fill="#f2f0e8">STRUCTURAL QUALITY ONLY</text><text x="320" y="687" text-anchor="middle" font-family="sans-serif" font-size="25" fill="#f2f0e8">NO SECURITY CERTIFICATION</text></svg>');
   return svg;
 }
 export function promotionActive(s, record, config, snapshot, now = new Date()) {
