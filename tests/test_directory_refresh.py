@@ -188,7 +188,7 @@ elif not any(a.endswith("curate.py") for a in args):
         self.commit("dual license")
         self.git("-C", str(self.upstream), "push", "-q", str(self.remotes / "fixture/skills"), "main")
         parsed = self.refresh()["fixture__skills"]["parsed"][0]
-        self.assertEqual((parsed["repo_license"], parsed["license_file"]), ("Apache-2.0 OR MIT", "LICENSE-APACHE"))
+        self.assertEqual((parsed["repo_license"], parsed["license_file"]), ("Multiple license files; review terms", "."))
 
     def test_cited_repository_github_reports_missing_is_skipped(self):
         # GitHub answers a missing public repository with "Repository not found";
