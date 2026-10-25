@@ -96,6 +96,7 @@ else, the file to check is
 
 Original work in the pack is MIT licensed. Thirty-eight of the pack's skills, most of
 them in marketing and growth, are adapted from MIT-licensed source material,
+`suede-influencer-outreach` adapts an MIT-licensed skill from partnerships-skills,
 and the `suede-graph-flo-xr` workflow adapts BSD-licensed code that ships with
 its license at `skills/suede-graph-flo-xr/LICENSE.graph-of-thoughts-BSD.txt`.
 The copyright and license notices are in `NOTICE.md`.

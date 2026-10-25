@@ -81,7 +81,7 @@ match, and the page must list exactly these three.
 Acquisition and outbound: `suede-ads`, `suede-ad-creative`, `suede-cold-email`,
 `suede-prospecting`, `suede-social` (Instagram included), `suede-sms`,
 `suede-co-marketing`, `suede-community-marketing`, `suede-lead-magnets`,
-`suede-referrals`.
+`suede-referrals`, `suede-influencer-outreach`.
 
 Monetization: `suede-pricing`, `suede-offers` (persuasion mechanics included),
 `suede-paywalls`, `suede-onboarding` (signup included), `suede-churn-prevention`,
@@ -94,7 +94,8 @@ Measurement and operations: `suede-analytics`, `suede-attribution`,
 `suede-competitor-profiling`.
 
 Thirty-eight skills in the pack, most of them listed here, are adapted from MIT-licensed
-source material. The copyright and license notice is in `NOTICE.md`.
+source material, and `suede-influencer-outreach` adapts an MIT-licensed skill from
+partnerships-skills. The copyright and license notices are in `NOTICE.md`.
 
 ## I want to protect what I made
 
