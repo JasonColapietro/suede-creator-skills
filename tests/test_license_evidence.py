@@ -62,7 +62,8 @@ class LicenseEvidenceTests(unittest.TestCase):
         self.assertEqual(skill['license_evidence'], evidence)
         with tempfile.TemporaryDirectory() as tmp:
             work = Path(tmp)
-            for name in ('scripts/build-directory.mjs', 'directory/featured-projects.json',
+            for name in ('scripts/build-directory.mjs', 'scripts/security/evidence.mjs',
+                         'scripts/security/profile.json', 'directory/featured-projects.json',
                          'directory/categories.json', 'directory/notes.json',
                          'directory/promotion.json', 'directory/services-cta.json', 'docs/llms.txt'):
                 target = work / name
