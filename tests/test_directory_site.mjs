@@ -4,6 +4,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 import { build, rewriteUrl, rewriteText, OLD, NEW } from "../scripts/build-directory-site.mjs";
 
 const page = `${OLD}/directory/obra/superpowers/index.html`;
@@ -70,4 +71,51 @@ test("the built site has no old directory URLs and no broken internal links", ()
   } finally {
     fs.rmSync(out, { recursive: true, force: true });
   }
+});
+
+test("standalone reports verify independently and match their displayed versions", async () => {
+  const { createHash } = await import("node:crypto");
+  const out = fs.mkdtempSync(path.join(os.tmpdir(), "suedeai-reports-"));
+  const source = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../docs/directory");
+  const originals = new Map();
+  const remember = (dir) => {
+    for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
+      const p = path.join(dir, e.name);
+      if (e.isDirectory()) remember(p);
+      else if (e.name === "report.json") originals.set(path.relative(source, p), fs.readFileSync(p, "utf8"));
+    }
+  };
+  remember(source);
+  try {
+    build(out);
+    const index = JSON.parse(fs.readFileSync(path.join(out, "search-index.json"), "utf8"));
+    assert.ok(index.length > 0);
+    assert.equal(index.length, originals.size);
+    assert.deepEqual(new Set(index.map(e => e.report.slice(1))), new Set(originals.keys()));
+    const htmlByPath = new Map();
+    for (const entry of index) {
+      const rel = entry.report.replace(/^\//, "");
+      const sourceFile = path.join(source, rel);
+      const before = originals.get(rel);
+      const original = JSON.parse(before);
+      const report = JSON.parse(fs.readFileSync(path.join(out, rel), "utf8"));
+      const { report_version, ...evidence } = report;
+      const expected = createHash("sha256").update(JSON.stringify(evidence)).digest("hex");
+      assert.equal(report_version, expected, rel);
+      assert.notEqual(report_version, original.report_version, rel);
+      assert.equal(report.listing_url, NEW + entry.href);
+      assert.ok(report.methodology.url.startsWith(NEW + "/"));
+      for (const badge of report.badges) assert.ok(badge.src.startsWith(NEW + "/"));
+      assert.deepEqual(report.snapshot, original.snapshot);
+      assert.deepEqual(report.source, original.source);
+      assert.deepEqual(report.quality, original.quality);
+      assert.equal(report.security_scan_status, original.security_scan_status);
+      const htmlPath = path.join(out, new URL(report.listing_url).pathname, "index.html");
+      if (!htmlByPath.has(htmlPath)) htmlByPath.set(htmlPath, fs.readFileSync(htmlPath, "utf8"));
+      const html = htmlByPath.get(htmlPath);
+      if (entry.full) assert.ok(html.includes(`Report version <code>${expected.slice(0, 12)}</code>`), rel);
+      assert.ok(!html.includes(`Report version <code>${original.report_version.slice(0, 12)}</code>`), rel);
+      assert.equal(fs.readFileSync(sourceFile, "utf8"), before);
+    }
+  } finally { fs.rmSync(out, { recursive: true, force: true }); }
 });

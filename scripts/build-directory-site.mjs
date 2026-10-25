@@ -17,6 +17,7 @@
 // It also writes robots.txt, sitemap.xml, llms.txt and 404.html for the new host.
 // Nothing under docs/ is modified. vercel.json runs this as the build command.
 import fs from "node:fs";
+import { createHash } from "node:crypto";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -78,10 +79,27 @@ export function build(out) {
   fs.rmSync(out, { recursive: true, force: true });
   fs.mkdirSync(out, { recursive: true });
 
+  const reports = [];
   copyTree(dirSrc, out, (text, ext, file) => {
     const rel = path.relative(dirSrc, file).split(path.sep).join("/");
-    return rewriteText(text, ext, `${OLD}/directory/${rel}`);
+    const rewritten = rewriteText(text, ext, `${OLD}/directory/${rel}`);
+    if (path.basename(file) !== "report.json") return rewritten;
+    const { report_version: previousVersion, ...evidence } = JSON.parse(rewritten);
+    // Match the original directory report verifier: hash compact evidence in
+    // its existing property order, excluding the report identity itself.
+    const report_version = createHash("sha256").update(JSON.stringify(evidence)).digest("hex");
+    reports.push({ rel, previousVersion, report_version });
+    return JSON.stringify({ ...evidence, report_version }, null, 2) + "\n";
   });
+  for (const { rel, previousVersion, report_version } of reports) {
+    const listing = path.join(out, path.dirname(rel), "index.html");
+    // Compact repository rows link reports without displaying a version.
+    if (!fs.existsSync(listing)) continue;
+    const html = fs.readFileSync(listing, "utf8");
+    const previous = `Report version <code>${previousVersion.slice(0, 12)}</code>`;
+    if (!html.includes(previous)) throw new Error(`Missing report version in ${listing}`);
+    fs.writeFileSync(listing, html.replaceAll(previous, `Report version <code>${report_version.slice(0, 12)}</code>`));
+  }
   fs.mkdirSync(path.join(out, "assets"), { recursive: true });
   copyTree(path.join(docs, "assets"), path.join(out, "assets"), null);
 
