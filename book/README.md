@@ -3,7 +3,7 @@
 <a href="https://trendshift.io/repositories/82031?utm_source=trendshift-badge&amp;utm_medium=badge&amp;utm_campaign=badge-trendshift-82031" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/82031/daily?language=Python" alt="JasonColapietro%2Fsuede-creator-skills | Trendshift" width="250" height="55"/></a>
 
 A book about how agent skills actually work and how a person becomes an
-exceptional builder using them. Companion to the 63-skill
+exceptional builder using them. Companion to the 64-skill
 [suede-creator-skills](https://github.com/JasonColapietro/suede-creator-skills)
 pack, and readable without installing it.
 
@@ -61,7 +61,7 @@ four ideas it repeats.
 
 ### Appendices
 
-- [A. The Skill Index, by Intent](A1-skill-index.md) — all 63 skills, grouped by
+- [A. The Skill Index, by Intent](A1-skill-index.md) — all 64 skills, grouped by
   what you are trying to do.
 - [B. The Rules, on One Page](A2-the-rules.md) — 29 rules, compressed.
 

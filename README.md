@@ -4,7 +4,7 @@
 
 <br><br>
 
-[![Skills: 63](https://img.shields.io/badge/skills-63-c8a96e?labelColor=080808)](#the-skills)
+[![Skills: 64](https://img.shields.io/badge/skills-64-c8a96e?labelColor=080808)](#the-skills)
 [![Licenses: MIT + BSD](https://img.shields.io/badge/licenses-MIT_%2B_BSD-c8a96e?labelColor=080808)](NOTICE.md)
 [![Claude Code](https://img.shields.io/badge/Claude_Code-plugin-c8a96e?labelColor=080808)](#install-in-30-seconds)
 [![Codex](https://img.shields.io/badge/Codex-plugin-c8a96e?labelColor=080808)](#install-in-30-seconds)
@@ -54,7 +54,7 @@ These are **public, broadly reusable, open-source skill folders**, installable f
 /plugin install suede-skills@suede
 ```
 
-`suede-skills` installs every skill. Want less? Three focused subsets: `/plugin install suede-marketing@suede` (39 marketing and growth skills), `/plugin install suede-agent-workflows@suede` (Suede Thought Graph shipping, orchestration, workflows, evals), and `/plugin install suede-code@suede` (review, grade, ship-gate).
+`suede-skills` installs every skill. Want less? Three focused subsets: `/plugin install suede-marketing@suede` (40 marketing and growth skills), `/plugin install suede-agent-workflows@suede` (Suede Thought Graph shipping, orchestration, workflows, evals), and `/plugin install suede-code@suede` (review, grade, ship-gate).
 
 **Codex** — add the Codex-native marketplace, install the complete plugin:
 
@@ -230,9 +230,9 @@ Rights and release-prep tooling for working musicians and creators — see the [
 
 ### Marketing & growth
 
-Thirty-seven skills covering paid acquisition and outbound, monetization, lifecycle and
+Thirty-eight skills covering paid acquisition and outbound, monetization, lifecycle and
 retention, and the measurement and operations layer — `suede-ads`, `suede-ad-creative`,
-`suede-cold-email`, `suede-prospecting`, `suede-public-relations`, `suede-directory-submissions`,
+`suede-cold-email`, `suede-influencer-outreach`, `suede-prospecting`, `suede-public-relations`, `suede-directory-submissions`,
 `suede-pricing`, `suede-offers`, `suede-paywalls`, `suede-onboarding`,
 `suede-churn-prevention`, `suede-emails`, `suede-referrals`, `suede-co-marketing`,
 `suede-community-marketing`, `suede-lead-magnets`, `suede-free-tools`, `suede-sms`,

@@ -103,6 +103,7 @@
         "suede-emails",
         "suede-free-tools",
         "suede-image",
+        "suede-influencer-outreach",
         "suede-lead-magnets",
         "suede-marketing-council",
         "suede-marketing-loops",
@@ -184,11 +185,11 @@
       "key": "demand",
       "label": "Demand channels",
       "summary": "Reach people who have not heard of you yet.",
-      "count": 8,
+      "count": 9,
       "lanes": [
         {
           "label": "Paid & outbound",
-          "count": 3
+          "count": 4
         },
         {
           "label": "Lifecycle messaging",
@@ -507,6 +508,14 @@
       "lane": "Creative assets",
       "description": "Suede AI marketing image production: choosing generation, editing, templates, or real screenshots; prompts and layout specs; hero, social, banner, directory, and Open Graph images; product mockups from real UI; export sizing, compression, and image SEO (alt text, file names, dimensions, structured data). Use when the user needs a marketing image or an image-production workflow. NOT FOR: paid-ad creative systems (use suede-ad-creative), video (use suede-video), app-store screenshots and listing strategy (use suede-aso), or social post strategy (use suede-social).",
       "useWhen": "The user needs marketing images, graphics, mockups, or help getting better output from an image model."
+    },
+    {
+      "name": "suede-influencer-outreach",
+      "area": "marketing",
+      "specialty": "demand",
+      "lane": "Paid & outbound",
+      "description": "Suede AI influencer outreach discipline: a personalized first-touch pitch to one vetted creator, newsletter writer, or podcaster, grounded in a named post or audience fact, with the real compensation stated by model (flat fee, commission mechanics, or gifted), one low-friction ask, a message fitted to the contact the creator publishes (business email, DM, or manager), and a bounded two-follow-up plan that stops at the first positive reply. Covers B2C brand collabs and B2B creator programs. Use when pitching a creator, DMing an influencer, writing a collab proposal, or repairing creator outreach that gets no replies. NOT FOR: recruiting affiliates across a list or designing commission structures (use suede-referrals), partnering with another brand (use suede-co-marketing), cold email to business prospects (use suede-cold-email), or pitching journalists and booking podcast guest spots (use suede-public-relations).",
+      "useWhen": "The user is pitching an influencer, creator, newsletter writer, or podcaster for a sponsorship or collab, or their creator outreach gets no replies."
     },
     {
       "name": "suede-launch-packaging",

@@ -19,8 +19,8 @@ description: "Suede AI code review and A-F ship grade for a diff, PR, branch, or
 ---
 ```
 
-Across all 63 skills, the frontmatter carries `name` 63 times and `description`
-63 times. Forty-three of them add a `metadata` block with a version string, a
+Across all 64 skills, the frontmatter carries `name` 64 times and `description`
+64 times. Forty-four of them add a `metadata` block with a version string, a
 convention the marketing and growth skills brought with them. Nothing else appears. The schema is small on
 purpose, because everything the frontmatter does happens before the body is
 read.
@@ -34,8 +34,8 @@ you.
 ## The description carries the routing burden
 
 The description is the only part of a skill that stays in the agent's context
-when the skill is not running. In this repo the 63 files total 917,463 bytes;
-the 63 descriptions together are 49,381. The agent holds the small number and
+when the skill is not running. In this repo the 64 files total 928,739 bytes;
+the 64 descriptions together are 50,322. The agent holds the small number and
 reaches for the large one only when a description matches.
 
 That makes the description a router, not a summary. It has to answer two
@@ -74,7 +74,7 @@ actually types ("strip AI tells", "deslop"), and then the boundary.
 
 ## The `NOT FOR:` convention
 
-Sixty-three of the 63 descriptions in this repo end with a `NOT FOR:` clause,
+Sixty-four of the 64 descriptions in this repo end with a `NOT FOR:` clause,
 and it is the highest-leverage sentence in the file. That count is measured,
 not asserted: the validator checks this sentence against the files on every run.
 

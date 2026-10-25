@@ -31,6 +31,16 @@ Adapted material: `skills/suede-code/references/maintainability-baseline.md`,
 the Pre-flight section of `skills/suede-code/SKILL.md`, and
 `skills/suede-copy/references/writing-for-agents.md`.
 
+## partnerships-skills
+
+Copyright (c) 2026 Nativa Labs (skills authored by Maya-Beth Finotti). MIT
+License. Full text:
+[`licenses/partnerships-skills-MIT.txt`](licenses/partnerships-skills-MIT.txt)
+
+Adapted material: `skills/suede-influencer-outreach/`, from the
+`influencer-outreach` skill in
+[mbfinotti/partnerships-skills](https://github.com/mbfinotti/partnerships-skills).
+
 ## Graph of Thoughts
 
 Copyright (c) 2023 ETH Zurich. BSD license. Full text:
