@@ -10,8 +10,7 @@ abstract: >-
   visibility and CTA grading, A-F code grading, agent QA, launch packaging,
   Instagram growth, artist-campaign tools, and creator rights utilities.
 type: software
-version: 0.19.3
-date-released: 2026-10-24
+version: 0.19.4
 authors:
   - family-names: Colapietro
     given-names: Jason

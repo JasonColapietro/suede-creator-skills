@@ -9,7 +9,7 @@ Release record for the `suede-prospecting` skill, following the NVIDIA skill-car
 
 Suede AI prospecting and qualification: defines the ICP, then builds a bounded, source-backed lead sheet across four branches (B2B SaaS, general B2B, local business, and early demand signals from forums, reviews, and public issues), using licensed data (Apollo, ZoomInfo, Clay, HubSpot Breeze Intelligence, Sales Navigator for manual research) with fit scores, disqualification evidence, source and date per contact, and CAN-SPAM, GDPR, PECR, and CASL checks before handoff.
 
-Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.3; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
+Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.4; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
 ## Owner
 
@@ -60,7 +60,7 @@ Structured Markdown returned in the agent's response, shaped by the output contr
 
 ## Skill Version
 
-0.19.3 — the pack is single-versioned, so every skill releases together; see [VERSION](../../VERSION) and [CITATION.cff](../../CITATION.cff) for the release identifier this card describes.
+0.19.4 — the pack is single-versioned, so every skill releases together; see [VERSION](../../VERSION) and [CITATION.cff](../../CITATION.cff) for the release identifier this card describes.
 
 ## Ethical Considerations
 

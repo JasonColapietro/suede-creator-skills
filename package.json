@@ -1,6 +1,6 @@
 {
   "name": "suede-creator-skills",
-  "version": "0.19.3",
+  "version": "0.19.4",
   "private": true,
   "type": "module",
   "engines": {
@@ -27,7 +27,7 @@
     "test:directory": "node --test tests/test_directory_badges.mjs tests/test_directory_discovery.mjs tests/test_featured_projects.mjs tests/test_directory_reports.mjs tests/test_directory_h1.mjs tests/test_directory_seo.mjs tests/test_directory_guides.mjs tests/test_sitemap_shallow.mjs tests/test_extra_caffeine_feature.mjs tests/test_directory_site.mjs",
     "test:directory:browser": "node tests/test_directory_browser.mjs",
     "test:python": "python3 -m unittest discover -s tests -p 'test_*.py' -v",
-    "test": "npm run validate && npm run test:number-words && npm run test:meta-keywords && npm run test:validator-runtime && npm run test:mcp && npm run test:triggers && npm run test:hermes-tap && npm run test:listings && npm run test:ship-cost && npm run test:contributions && npm run test:directory && npm run test:related && npm run test:awesome && npm run test:python && npm run test:seo-offline",
+    "test": "npm run validate && npm run test:number-words && npm run test:meta-keywords && npm run test:validator-runtime && npm run test:mcp && npm run test:triggers && npm run test:hermes-tap && npm run test:listings && npm run test:ship-cost && npm run test:contributions && npm run test:directory && npm run test:related && npm run test:awesome && npm run test:python && npm run test:seo-offline && npm run test:packages",
     "audit:dependencies": "npm audit --package-lock-only --omit=dev --audit-level=high",
     "ci": "node --check mcp/suede-skills-mcp.mjs && node --check scripts/validate-skill-pack.mjs && npm run test && npm run test:indexnow && node scripts/build-mcp-package.mjs --check && node scripts/build-pypi-package.mjs --check",
     "build:pdf": "node scripts/build-book-pdf.mjs",
@@ -41,7 +41,8 @@
     "build:related": "node scripts/build-related-skills.mjs",
     "build:retired": "node scripts/build-retired-skill-pages.mjs",
     "test:seo-offline": "node --test skills/suede-seo-audit/scripts/tests/*.test.mjs tests/test_seo_packages.mjs",
-    "test:seo:browser": "node tests/test_seo_site.mjs"
+    "test:seo:browser": "node tests/test_seo_site.mjs",
+    "test:packages": "node --test tests/test_influencer_outreach.mjs tests/test_package_completeness.mjs"
   },
   "dependencies": {
     "js-yaml": "5.5.0"

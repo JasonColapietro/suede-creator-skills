@@ -9,7 +9,7 @@ Release record for the `suede-analytics` skill, following the NVIDIA skill-card 
 
 Suede AI measurement discipline: tracking plans, event and key-event instrumentation in GA4 and GTM, consent mode v2, UTM hygiene, AI assistant and organic search channel grouping, and readback proof of what actually fires.
 
-Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.3; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
+Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.4; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
 ## Owner
 
@@ -61,7 +61,7 @@ Structured Markdown returned in the agent's response, shaped by the output contr
 
 ## Skill Version
 
-0.19.3 — the pack is single-versioned, so every skill releases together; see [VERSION](../../VERSION) and [CITATION.cff](../../CITATION.cff) for the release identifier this card describes.
+0.19.4 — the pack is single-versioned, so every skill releases together; see [VERSION](../../VERSION) and [CITATION.cff](../../CITATION.cff) for the release identifier this card describes.
 
 ## Ethical Considerations
 

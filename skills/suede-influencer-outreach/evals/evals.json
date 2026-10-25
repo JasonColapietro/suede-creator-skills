@@ -4,12 +4,12 @@
     {
       "id": 1,
       "prompt": "Pitch @plantsbypriya for our ceramic planter launch. She's vetted, 48k on Instagram, lists a business email in her bio. Offer is a free planter plus 15% commission, 30-day attribution, paid monthly.",
-      "expected_output": "Should check for product-marketing.md first. Should ask for the missing inputs one at a time (fit evidence or a specific post, brand voice, signer, which CTA the brand can honor) rather than drafting immediately. Should propose two or three angles with a recommendation and wait for a pick. The eventual email should open on a verifiable creator-specific fact framed as audience fit, state 15%, 30 days, monthly payout, and a rough per-sale figure, carry exactly one low-friction ask, and include a Personalization source line. Should not include contract, exclusivity, or disclosure terms.",
+      "expected_output": "Should check for product-marketing.md first. Should ask for the missing inputs one at a time (fit evidence or a specific post, brand voice, signer, which CTA the brand can honor) rather than drafting immediately. Should compare supported angles, choose the strongest supported angle, and draft without requiring an approval turn once the missing inputs are supplied. The eventual email should open on a verifiable creator-specific fact framed as audience fit, state 15%, 30 days, monthly payout, and a rough per-sale figure, carry exactly one low-friction ask, and include a Personalization source line. Should not include contract, exclusivity, or disclosure terms.",
       "assertions": [
         "Checks for product-marketing.md",
         "Asks for fit evidence instead of inventing a post",
         "Asks one question per message",
-        "Proposes 2-3 angles with a recommendation before drafting",
+        "Chooses the strongest supported angle without a mandatory approval turn",
         "Routes to the listed business email, not a DM",
         "States commission rate, attribution window, and payout schedule",
         "Exactly one CTA",
@@ -45,6 +45,19 @@
         "States plainly the offer is gifted product, with no payment implied",
         "Does not invent a post or fit evidence",
         "Exactly one CTA"
+      ],
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "Complete brief: write a formal first-touch email with no contractions to Lina at her listed business email. Our product helps small DevOps teams reduce alert fatigue; her October 20 alert-fatigue issue is the fit evidence I am providing. Offer $2,000 for one sponsored newsletter issue next month. Use one reply-for-details ask, which we can honor this week. Sign as Sam, Head of Partnerships. Choose the best angle and finish the package.",
+      "expected_output": "Accepts the supplied issue and audience fit as given without independent confirmation. Selects the strongest supported angle and drafts without angle approval. Uses formal wording without contractions as requested, reports that checklist preference as advisory, and delivers the complete pitch and follow-up plan. Keeps the stated economics and named signer unchanged; does not send anything.",
+      "assertions": [
+        "Does not re-verify requester-supplied fit evidence",
+        "Chooses and explains the angle without an approval turn",
+        "Preserves formal wording without contractions",
+        "Reports unresolved style checks as advisory and delivers the draft",
+        "Does not send or schedule outreach"
       ],
       "files": []
     }
