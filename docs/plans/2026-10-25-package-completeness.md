@@ -90,3 +90,38 @@ historical changelog artwork. Screenshots are under
 Independent follow-up review passed with no remaining findings. Full npm test
 still has the previously confirmed stale PDF input-digest blocker; this test
 repair does not change book inputs or retry the denied renderer.
+
+## Reconciliation and smallest remaining unblock
+
+Merged current main `6c4ae0a51b940ce5113871f408b84fa544b8c000` into
+`fix/package-completeness` using an ordinary merge, preserving the now-landed
+license evidence and standalone report repairs. Refreshed only the prepared
+ship-log base/activity in the three existing public summaries; no skill, book
+or PDF content changed during reconciliation.
+
+The canonical `bookPdfInputDigest` explicitly hashes every `skills/*/SKILL.md`
+file's path, byte length and contents. A local proof copied its complete inputs,
+reproduced the current digest, then changed only the influencer SKILL.md back
+to pre-repair content: the digest changed. Reverting generated book copies alone
+cannot remove the required workflow edits from this hash contract. Stored PDF
+input digest is `c894383d2a15ba8f5ee9712fdc6443e7920a51b33bc266c029b0230a5218d644`;
+current input digest remains
+`bff888cc4905938ae2311859a59fbedf81316d64f92b38c7b1abf2a29fa608b8`.
+The PDF itself is unchanged and still matches its recorded SHA-256
+`566b0e48a01375d040cb48e989a029e2348130e1206b0ad0dd9edc1e8f4e2919`.
+
+Smallest unblock: in a policy-permitted environment, check out the latest
+`fix/package-completeness`, run `node scripts/build-book-pdf.mjs` (or
+`npm run build:book`), and commit the real `docs/book/s-tier.pdf` and
+`docs/book/s-tier.pdf.provenance.json` artifacts. Then rerun `npm test`, required
+current-head CI and review before merging the draft PR. Do not fabricate
+provenance or bypass the denied browser navigation. Package publication remains
+a separate held step even after source merge.
+
+Reconciliation verification: focused workflow/package/standalone-builder tests
+passed 11/11; desktop/mobile SEO browser QA passed with all seven image
+placements intact. Independent review confirmed that the main repairs are
+preserved unchanged and that all three summaries agree on base `6c4ae0a`,
+498 commits and activity bars. PDF input/output digest evidence was independently
+confirmed. Required npm validation remains subject to the documented unchanged
+PDF blocker; no new rendering was attempted.
