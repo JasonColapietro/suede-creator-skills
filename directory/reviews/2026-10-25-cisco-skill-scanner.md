@@ -20,4 +20,4 @@ The historic API-server advisory affecting releases through 1.0.1 was fixed in 1
 
 ## Placement
 
-The verified live canonical page on October 25 is `https://skills.suedeai.ai/directory/featured/`; planned anchor: `#cisco-skill-scanner`. The separate hosting PR #277 is unmerged and is not evidence that `suedeai.directory` is live. This change preserves the other editorial selections and links Cisco's official repository.
+The verified live canonical page on October 25 is `https://skills.suedeai.ai/directory/featured/`; planned anchor: `#cisco-skill-scanner`. Hosting PR #277 merged to main during this review. Hosting configuration alone is not evidence that `suedeai.directory` is live; verify live routing separately before publication. This change preserves the other editorial selections and links Cisco's official repository.
