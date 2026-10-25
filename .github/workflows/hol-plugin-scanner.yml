@@ -24,23 +24,31 @@ jobs:
 
       - name: HOL Plugin Scanner
         uses: hashgraph-online/ai-plugin-scanner-action@7711de3234c244b562519720ef749f4b432b69be # v1.2.795
-        # This bundle pins plugin-scanner 3.0.30 by version and SHA256, but the
-        # wheel leaves cisco-ai-skill-scanner as an open ~=2.0.12 range, so the
-        # deep skill scan silently tracked PyPI. PIP_CONSTRAINT pins it to the
-        # release this tree was reviewed against; see the constraints file and
-        # SECURITY.md. When bumping the action, re-run the scan locally first:
-        # newer bundles install the Cisco scanner only with install_cisco: true,
-        # carry their own hash lock, and ignore the repository's
-        # .plugin-scanner.toml exceptions unless trust_repository_policy: true.
-        env:
-          PIP_CONSTRAINT: ${{ github.workspace }}/.github/hol-scanner-constraints.txt
+        # This action pins plugin-scanner 3.51.0 and its runtime by hash.
+        # Cisco runs explicitly in skill-source-security.yml with a separate
+        # reviewed lock and offline container; no auto-detection is evidence.
         with:
           plugin_dir: "."
           mode: scan
           min_score: 80
           fail_on_severity: high
           format: sarif
+          output: ai-plugin-scanner.sarif
           upload_sarif: true
+          install_cisco: false
+          cisco_skill_scan: off
+          online: false
+          trust_repository_policy: false
+          pr_comment: off
+
+      - name: Retain HOL machine-readable findings
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: hol-security-${{ github.event.pull_request.head.sha || github.sha }}
+          path: ai-plugin-scanner.sarif
+          if-no-files-found: error
+          retention-days: 30
 
       - name: Show scanner finding locations after failure
         if: failure()

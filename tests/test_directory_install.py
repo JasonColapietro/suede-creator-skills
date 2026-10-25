@@ -49,7 +49,7 @@ class DirectoryInstallTests(unittest.TestCase):
         cls.tmp = tempfile.TemporaryDirectory(prefix="directory-install-")
         cls.addClassCleanup(cls.tmp.cleanup)
         cls.root = Path(cls.tmp.name)
-        for name in ("scripts/build-directory.mjs", "directory/categories.json",
+        for name in ("scripts/build-directory.mjs", "scripts/security/evidence.mjs", "scripts/security/profile.json", "directory/categories.json",
                      "directory/notes.json", "directory/promotion.json", "directory/featured-projects.json", "directory/services-cta.json",
                      "scripts/directory/featured.mjs", "scripts/directory/badges.mjs", "scripts/directory/editorial.mjs",
                      "scripts/directory/check-client.js", "docs/llms.txt"):
@@ -148,6 +148,42 @@ class DirectoryInstallTests(unittest.TestCase):
                 self.assertNotEqual(result.returncode, 0)
         finally:
             path.write_text(original)
+
+    def test_retained_findings_and_broken_evidence_render_without_changing_quality(self):
+        from datetime import datetime, timedelta, timezone
+        data = json.loads((self.root / 'directory/skills.json').read_text())
+        skill = data['skills'][0]
+        profile = json.loads((ROOT / 'scripts/security/profile.json').read_text())
+        timestamp = (datetime.now(timezone.utc) - timedelta(minutes=1)).isoformat()
+        record = {'schema_version': 1, 'state': 'completed',
+                  'source': {'repository': skill['repo'], 'path': skill['dir'], 'revision': data['repos'][skill['repo']]['commit_sha']},
+                  'scanner': profile, 'started_at': timestamp, 'completed_at': timestamp,
+                  'coverage': {'complete': True, 'files': [{'path': 'SKILL.md', 'size': 12, 'sha256': 'a' * 64}], 'skipped': []},
+                  'analysis': {'findings': [{'severity': 'HIGH'}], 'findings_count': 1,
+                               'analyzers_used': profile['analyzers'], 'analyzers_failed': []}}
+        raw = (json.dumps(record) + '\n').encode(); digest = hashlib.sha256(raw).hexdigest()
+        evidence = self.root / f'directory/security/{digest}.json'
+        evidence.parent.mkdir(exist_ok=True); evidence.write_bytes(raw)
+        ledger = self.root / 'directory/security-scans.json'
+        ledger.write_text(json.dumps({'fixture/skills/skill-0': {'file': f'security/{digest}.json', 'sha256': digest}}))
+        try:
+            for status in ['failed', 'error']:
+                if status == 'error':
+                    evidence.write_bytes(raw + b' ')
+                subprocess.run(['node', str(self.root / 'scripts/build-directory.mjs')], check=True, capture_output=True)
+                report = json.loads((self.root / 'docs/directory/fixture/skills/skill-0/report.json').read_text())
+                self.assertEqual(report['security_scan_status'], status)
+                self.assertEqual(report['quality']['score'], self.score)
+                self.assertEqual(report['quality']['grade'], 'A')
+                page = (self.root / 'docs/directory/fixture/skills/skill-0/index.html').read_text()
+                self.assertNotIn('Security scan: not scanned.', page)
+                self.assertNotIn('<td>Not scanned</td>', page)
+            badge = (self.root / 'docs/directory/fixture/skills/skill-0/badge.svg').read_text()
+            self.assertIn('STRUCTURAL QUALITY ONLY', badge)
+            self.assertIn('NO SECURITY CERTIFICATION', badge)
+        finally:
+            ledger.unlink(); evidence.unlink()
+            subprocess.run(['node', str(self.root / 'scripts/build-directory.mjs')], check=True, capture_output=True)
 
     def test_verified_promotion_links_to_listing_and_preserves_editorial_page(self):
         path = self.root / 'directory/promotion.json'

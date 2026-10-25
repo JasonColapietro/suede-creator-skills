@@ -1,0 +1,40 @@
+name: Skill source security
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  cisco-source:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: "22"
+          package-manager-cache: false
+      - name: Prove the local analyzer detects a synthetic attack
+        run: python3 scripts/security/scan.py --self-test --output audits/security-self-test
+      - name: Scan every first-party skill at the checked out commit
+        if: ${{ !cancelled() }}
+        run: python3 scripts/security/scan.py --output audits/security-first-party
+      - name: Scan a bounded representative external batch at snapshot revisions
+        if: ${{ !cancelled() }}
+        run: python3 scripts/security/scan.py --external anthropics/skills/brand-guidelines anthropics/skills/algorithmic-art --output audits/security-external
+      - name: Retain findings, errors, exact sources and scanner coverage
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: source-security-${{ github.event.pull_request.head.sha || github.sha }}
+          path: audits/security-*
+          if-no-files-found: error
+          retention-days: 30

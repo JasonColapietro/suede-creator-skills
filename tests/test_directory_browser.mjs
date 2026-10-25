@@ -45,7 +45,7 @@ try {
   assert.equal(await page.locator('[data-shortlist-items] li').count(), 5);
   const markdown = await page.locator('#shortlist-markdown').textContent();
   assert.ok(markdown.includes('Review React checkout \\<script\\>'));
-  assert.ok(markdown.includes('Security scan: not scanned'));
+  assert.ok(markdown.includes('Security status is separate; see each report and its expiry.'));
   assert.ok(markdown.includes('/report.json)'));
   await page.goto(saved);
   await waitSearch();
