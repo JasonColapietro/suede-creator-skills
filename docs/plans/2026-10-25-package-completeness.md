@@ -69,3 +69,24 @@ licenses; add no generated attribution footer.
   No alternate route was used after the explicit browser-policy denial.
   Package changes must remain unmerged until authorized PDF regeneration and
   required current-head CI pass.
+
+## Follow-up: browser coverage for prepared releases
+
+Draft PR271's directory-browser job (121094854764) failed because the SEO
+artwork check assumes the SEO release is the first changelog item. The new
+prepared item correctly precedes the historical release. The same test pins
+0.19.3 and the old hero title. Repair the test to locate the historical SEO
+entry by its artwork, preserve all seven desktop/mobile image checks, and
+validate the newest entry against current VERSION and its prepared/released
+state. Verify the hero title and state match that newest entry, without
+hardcoding the current title. Run the real HTTP browser check and independent
+review. This follow-up does not attempt PDF rendering or change its blocker.
+
+Follow-up verification: the original browser check reproduced the CI failure
+at test_seo_site.mjs:31 (`0 !== 1`). After the repair, the real local HTTP
+Chromium check passed at 1440px and 390px, covering the six gallery images and
+historical changelog artwork. Screenshots are under
+`/tmp/package-seo-browser-final`. Focused workflow/package tests passed 5/5.
+Independent follow-up review passed with no remaining findings. Full npm test
+still has the previously confirmed stale PDF input-digest blocker; this test
+repair does not change book inputs or retry the denied renderer.
