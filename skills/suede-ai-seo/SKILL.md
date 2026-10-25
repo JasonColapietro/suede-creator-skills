@@ -1,8 +1,8 @@
 ---
 name: suede-ai-seo
-description: "Suede AI answer-engine and generative-engine optimization (AEO/GEO) program for getting a brand cited and recommended in Google AI Overviews and AI Mode, ChatGPT search, Perplexity, Copilot, Gemini, and Claude. Sets AI crawler policy (GPTBot, OAI-SearchBot, ClaudeBot, Claude-SearchBot, PerplexityBot, Google-Extended), entity and knowledge-graph consistency (Organization and Person schema, sameAs), citation-worthy page patterns, off-site consensus, llms.txt and agent-readable files, and AI visibility measurement: prompt panels, share of citations, AI-assistant referrals in GA4, and the Search Console and Bing AI performance reports. Use for AI SEO, AEO, GEO, LLMO, AI citations, AI visibility, optimize for ChatGPT or Perplexity, llms.txt, or OKF. NOT FOR: a scored nine-lane technical and on-page audit (use suede-seo-audit); a fast A-F promotion-readiness grade (use suede-visibility-grader); conversion-path rework (use suede-site-alchemy)."
+description: "Suede AI answer-engine and generative-engine optimization (AEO/GEO) program for getting a brand cited and recommended in Google AI Overviews and AI Mode, ChatGPT search, Perplexity, Copilot, Gemini, and Claude. Sets AI crawler policy (GPTBot, OAI-SearchBot, ClaudeBot, Claude-SearchBot, PerplexityBot, Google-Extended), entity and knowledge-graph consistency (Organization and Person schema, sameAs), citation-worthy page patterns, off-site consensus, llms.txt and agent-readable files, and AI visibility measurement: prompt panels, share of citations, AI-assistant referrals in GA4, the Search Console and Bing AI performance reports, and agent readiness (WebMCP, ChatGPT and Google agentic checkout feeds). Use for AI SEO, AEO, GEO, LLMO, AI citations, AI visibility, optimize for ChatGPT or Perplexity, llms.txt, or OKF. NOT FOR: a scored nine-lane technical and on-page audit (use suede-seo-audit); a fast A-F promotion-readiness grade (use suede-visibility-grader); conversion-path rework (use suede-site-alchemy)."
 metadata:
-  version: 3.0.0
+  version: 3.1.0
 ---
 
 # Suede AI SEO
@@ -49,7 +49,7 @@ missing:
 4. Access to Search Console, Bing Webmaster Tools, and GA4 (or exports). Absent
    access means those KPIs are reported `not measured`, never estimated.
 
-## What the platforms actually say (verified 2026-10-23)
+## What the platforms actually say (verified 2026-10-25)
 
 Read `references/platform-notes.md` before making any platform-specific claim.
 The load-bearing facts:
@@ -60,9 +60,11 @@ The load-bearing facts:
   or Markdown versions are needed, there is no need to chunk content for AI,
   and mass-producing pages to sway AI answers violates its scaled content abuse
   policy. Traffic counts in the Search Console Performance report under the
-  Web search type; a Search Generative AI performance report (impressions by
-  page, country, device, date; no clicks or queries) began rolling out in June
-  2026 and appears only above an impressions threshold.
+  Web search type; the Generative AI performance report (impressions by page,
+  country, device, date; no clicks or queries) reached all sites on
+  2026-08-31. Since the same date, Settings > Search generative AI in Search
+  Console can exclude a site from AI Overviews and AI Mode without touching
+  classic results.
 - **Snippet controls** (`nosnippet`, `data-nosnippet`, `max-snippet`,
   `noindex`) govern what Google AI features can show. `Google-Extended` governs
   Gemini training and grounding in Gemini Apps and Vertex AI; Google states it
@@ -76,9 +78,13 @@ The load-bearing facts:
 - **Perplexity**: `PerplexityBot` surfaces and links sites and is not used for
   foundation-model training. `Perplexity-User` is user-initiated and generally
   ignores robots.txt.
-- **Copilot** grounds on the Bing index. Bing Webmaster Tools has an AI
-  Performance report (public preview since February 2026) with citations,
-  cited pages, and grounding queries. IndexNow speeds Bing discovery.
+- **Copilot** grounds on the Bing index. Bing Webmaster Tools AI Performance
+  (public preview since February 2026) reports citations, cited pages,
+  grounding queries, and, since June 2026, Citation Share per grounding query.
+  IndexNow speeds Bing discovery.
+- **Apple, Meta, Amazon** each split search, user-fetch, and training agents
+  (`Applebot` / `Applebot-Extended`, `Meta-WebIndexer` / `Meta-ExternalAgent`,
+  `Amzn-SearchBot` / `Amazonbot`). See `references/ai-crawlers.md`.
 
 Treat anything not in that file as unverified, and re-check before a ship
 decision: these surfaces change monthly.
@@ -96,9 +102,11 @@ Work bottom-up. A higher layer cannot compensate for a broken lower one.
   and a named group replaces `*` for that bot. Report each bot in
   `references/ai-crawlers.md` as allowed, blocked, or unverified. A non-200,
   off-host redirect, or failed fetch is **unverified**, never open.
-- Check the layers robots.txt does not cover: CDN or WAF bot rules, snippet
-  directives, `noindex`, login walls, and primary content that only appears
-  after JavaScript runs.
+- Check the layers robots.txt does not cover: the Search Console Search
+  generative AI setting, CDN or WAF bot rules (Cloudflare managed robots.txt
+  can prepend AI disallows the origin file lacks), snippet directives,
+  `noindex`, login walls, and primary content that only appears after
+  JavaScript runs.
 - Training and retrieval are separate decisions. The default Suede
   recommendation for a brand that wants citations: allow the search and
   user-fetch agents, and decide training agents (`GPTBot`, `ClaudeBot`,
@@ -181,6 +189,11 @@ Recommend them only as low-cost extras after layers 1 to 5:
 
 Never grade the presence of these files as a ranking or citation signal.
 
+For brands where agents completing tasks matters (ecommerce, booking), read
+`references/agent-readiness.md`: user-triggered agent access, web.dev
+operability guidance, the WebMCP origin trial, and ChatGPT (ACP) and Google
+(UCP) checkout programs, all early-stage and opt-in.
+
 ### 7. Measure: is visibility moving?
 
 Read `references/measurement.md`. Minimum program:
@@ -194,7 +207,8 @@ Read `references/measurement.md`. Minimum program:
 - **AI-assistant referrals** in GA4 via a custom channel group (regex in the
   reference), plus landing pages and conversions from that channel.
 - **Search Console** Web performance and, where shown, the Search Generative AI
-  report; **Bing Webmaster Tools** AI Performance for Copilot citations.
+  report; **Bing Webmaster Tools** AI Performance for Copilot citations and
+  Citation Share (kept separate from panel share).
 - **Branded search and self-reported attribution** to catch AI influence that
   arrives as direct or branded traffic.
 
@@ -226,6 +240,9 @@ Each prioritized fix names the KPI it should move and the date to re-measure.
   in May 2026 and needs no special markup for AI features. Schema helps
   entity clarity; it is not an AI Overviews switch.
 - "llms.txt will boost rankings." Not for Google. Unconfirmed elsewhere.
+- "We use Google-Extended, so we're out of AI Overviews." Wrong control. That
+  is the Search Console Search generative AI setting; Google-Extended covers
+  Gemini training and grounding.
 - "Spin up a page per prompt." That is scaled content abuse. Cover the topic
   well on pages people need.
 - "A vendor dashboard says share of voice is 34%." Name the vendor, prompt set,
@@ -237,15 +254,18 @@ Each prioritized fix names the KPI it should move and the date to re-measure.
 === AI SEARCH VISIBILITY REPORT ===   Site:            Date:
 ACCESS: robots.txt fetch [200 | code | failed: reason]
   OAI-SearchBot | GPTBot | ChatGPT-User | Claude-SearchBot | Claude-User | ClaudeBot |
-  PerplexityBot | Perplexity-User | Google-Extended | Googlebot | Bingbot: allowed | blocked | unverified
-  Other blockers: [CDN/WAF, nosnippet, noindex, JS-only content, login walls | none found]
+  PerplexityBot | Perplexity-User | Google-Extended | Googlebot | Bingbot | Meta-WebIndexer |
+  Amzn-SearchBot | Applebot: allowed | blocked | unverified
+  GSC Search generative AI setting: [include | exclude | inherit | no access]
+  Other blockers: [CDN/WAF or managed robots.txt, nosnippet, noindex, JS-only content, login walls | none found]
 ENTITY: entity home [URL] | Organization @id [value] | sameAs verified [N of N]
   Mismatches: [source: field: found vs canonical | none]
 ANSWER: [page]: [N of 9] extractability checks pass | failing: [names]
 PROOF: original data assets [list | none] | unsourced claims [quoted | none]
 PRESENCE: corroborating sources found [type: URL] | gaps [type]
 PROMPT PANEL: [N prompts x engines, run dates] | citation share [range] | recommendation share [range] | not queried: [engines]
-MEASUREMENT: GA4 AI channel [live | missing] | GSC gen AI report [shown | below threshold | no access] | Bing AI Performance [verified | no access]
+MEASUREMENT: GA4 AI channel [live | missing] | GSC gen AI report [data | empty | excluded | no access] | Bing AI Performance [verified | no access] | Bing Citation Share [range | not shown]
+AGENT READINESS (if run): see references/agent-readiness.md output line
 PRIORITIZED FIXES: 1. [P1] Layer | Page or source | What is wrong | Exact change | KPI it moves | Re-measure date
 SHIP GATE: ship | ship-with-caveats | hold: reason
 ```

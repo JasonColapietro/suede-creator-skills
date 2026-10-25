@@ -34,15 +34,15 @@ you.
 ## The description carries the routing burden
 
 The description is the only part of a skill that stays in the agent's context
-when the skill is not running. In this repo the 64 files total 928,739 bytes;
-the 64 descriptions together are 50,322. The agent holds the small number and
+when the skill is not running. In this repo the 64 files total 937,389 bytes;
+the 64 descriptions together are 50,424. The agent holds the small number and
 reaches for the large one only when a description matches.
 
 That makes the description a router, not a summary. It has to answer two
 questions well enough that an agent mid-task can decide in one pass: what does
 this produce, and when should it fire.
 
-Look at what `suede-code` does with 953 characters. "Suede AI code review and
+Look at what `suede-code` does with 986 characters. "Suede AI code review and
 A-F ship grade for a diff, PR, branch, or commit range" states the artifact. The
 next clauses name what comes back and the three modes, so a caller who only
 wants the letter knows it can ask for one. The trigger list catches the request

@@ -99,6 +99,63 @@
         "Mentions the attribution blind spot and at least two of: prompt panel, self-reported attribution, sales-call notes, branded search"
       ],
       "files": []
+    },
+    {
+      "id": 8,
+      "prompt": "We still rank on page one for our main terms but we never show up in AI Overviews or AI Mode anymore. Our dev says we already block Google-Extended, is that the problem?",
+      "expected_output": "Should explain that Google-Extended controls Gemini training and grounding in Gemini Apps and Vertex AI and does not affect Google Search or AI Overviews. Should point to the Search Console Settings > Search generative AI control (include, exclude, inherit; all sites since 2026-08-31) as the switch that removes a site from AI Overviews, AI Mode, and Discover generative features, including a child property inheriting exclude from a domain property. Should also check snippet directives, indexation, and crawl access, and suggest the Generative AI performance report (impressions only, no clicks or queries) to confirm, noting excluded properties show no data.",
+      "assertions": [
+        "States Google-Extended does not affect AI Overviews or Search inclusion",
+        "Names the Search Console Search generative AI include/exclude setting",
+        "Mentions inheritance from a parent or domain property",
+        "Checks nosnippet or max-snippet and indexation",
+        "Recommends the Generative AI performance report and says it has impressions but no clicks or queries",
+        "Does not invent a ranking factor to explain the drop"
+      ],
+      "files": []
+    },
+    {
+      "id": 9,
+      "prompt": "Our robots.txt in the repo allows everything, but a client's audit tool says GPTBot, ClaudeBot and Google-Extended are disallowed on our live site. We're on Cloudflare. What's going on and does it hurt AI search visibility?",
+      "expected_output": "Should recognize Cloudflare managed robots.txt (Bot Preference Sync) can prepend a block that disallows Amazonbot, Applebot-Extended, Bytespider, CCBot, ClaudeBot, Google-Extended, GPTBot, and meta-externalagent, and may add Content Signals such as search=yes, ai-train=no. Should say to fetch the live robots.txt from the edge. Should explain those are training agents, so retrieval agents (OAI-SearchBot, Claude-SearchBot, PerplexityBot, Bingbot) are unaffected by that block, but AI Crawl Control block actions or WAF rules could still stop retrieval agents and must be checked separately. Should state that no answer engine documents reading Content Signals and present training opt-out as the owner's licensing call.",
+      "assertions": [
+        "Identifies Cloudflare managed robots.txt as the likely source",
+        "Says to fetch the live edge robots.txt rather than the repo copy",
+        "Classifies GPTBot, ClaudeBot, and Google-Extended as training controls that do not remove ChatGPT, Claude, or Google search visibility",
+        "Says to check AI Crawl Control or WAF actions for retrieval agents",
+        "Does not claim engines honor Content Signals",
+        "Leaves training opt-out as the owner's decision"
+      ],
+      "files": []
+    },
+    {
+      "id": 10,
+      "prompt": "We sell outdoor gear online. How do we get our products bought directly inside ChatGPT and Google AI Mode, and should we add WebMCP and llms.txt while we're at it?",
+      "expected_output": "Should read agent-readiness guidance and describe only documented programs: OpenAI Agentic Commerce Protocol product feeds (CSV or JSON, daily file plus API updates) with feed onboarding and Instant Checkout limited to approved partners applying at chatgpt.com/merchants, merchant keeps checkout and payment, OpenAI not merchant of record; Google UCP checkout as U.S. early access via Merchant Center with the native_commerce checkout_eligibility attribute. Should check that user-triggered agents such as Google-Agent and ChatGPT-User are not challenged by the CDN on product and checkout pages, and that feed data matches live pages. Should frame WebMCP as a Chrome 149 origin trial, optional, and llms.txt as unused by Google Search. Should not promise placement or quote ranking factors beyond OpenAI's single statement about optional attributes.",
+      "assertions": [
+        "Describes ChatGPT product feeds and that Instant Checkout is limited to approved partners",
+        "Describes Google UCP as early access in the United States",
+        "Checks CDN access for user-triggered agents on product and checkout pages",
+        "Requires feed price and availability to match the live product page",
+        "Frames WebMCP as an experimental origin trial, not a requirement",
+        "States Google Search does not use llms.txt",
+        "Does not promise placement or invent ranking factors"
+      ],
+      "files": []
+    },
+    {
+      "id": 11,
+      "prompt": "Bing Webmaster Tools shows us a 12% citation share now. Can I put that in the board deck as our AI share of voice?",
+      "expected_output": "Should explain Bing Citation Share is the site's percentage of all citations shown for the same grounding queries across Copilot, Bing AI summaries, and select partners, is observational, sampled, and directional per Microsoft, and names no competitors. Should say it covers Microsoft surfaces only, not ChatGPT, Perplexity, Google, or Claude, so it can be reported labeled as Bing Citation Share with date range but not as overall AI share of voice. Should recommend pairing it with a prompt panel for cross-engine share of citations and recommendations, and Topics Portfolio opportunity queries as prompt-panel seeds.",
+      "assertions": [
+        "Defines Bing Citation Share per grounding query",
+        "Says it covers Microsoft surfaces only",
+        "Refuses to relabel it as total AI share of voice",
+        "Recommends labeling with source and date range",
+        "Recommends a cross-engine prompt panel for competitive share",
+        "Does not invent benchmark numbers"
+      ],
+      "files": []
     }
   ]
 }

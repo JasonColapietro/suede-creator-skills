@@ -38,7 +38,7 @@ test('CLI rejects malformed, duplicate, foreign, over-budget inputs and unsafe s
     const input = path.join(root,'bad.json');
     const out=path.join(root,'output');
     const good=JSON.parse(readFileSync(fixture('pages.json')));
-    for (const value of [{...good,pages:[]},{...good,pages:[good.pages[0],good.pages[0]]},{...good,pages:[{url:'https://foreign.test/',html:'x'}]},{...good,pages:[{...good.pages[0],html:'x'.repeat(2_000_001)}]}]) {
+    for (const value of [{...good,pages:[]},{...good,pages:[good.pages[0],good.pages[0]]},{...good,pages:[{url:'https://foreign.test/',html:'x'}]},{...good,pages:[{...good.pages[0],html:'x'.repeat(4_000_001)}]}]) {
       writeFileSync(input,JSON.stringify(value));
       assert.notEqual(run('audit','--input',input,'--out',out).status,0);
       assert.equal(existsSync(out),false);

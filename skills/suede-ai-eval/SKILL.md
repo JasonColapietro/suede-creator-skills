@@ -60,7 +60,9 @@ When the surface is already live, sample real behavior with safe inputs and reco
 4. **Write eval cases.** Produce concrete pass/fail cases with inputs, setup data, expected output traits, forbidden output traits, and the reason the case exists.
 5. **Set acceptance gates.** Decide what blocks ship, what allows ship-with-caveats, and what can become follow-up work.
 6. **Audit coverage.** Compare existing tests, logs, metrics, and manual checks against the failure-mode map. Score coverage and infrastructure using the method under Tooling and Infrastructure below. Name every uncovered high-risk behavior regardless of the numeric score.
-7. **Return the artifact.** Give the AI-SPEC, rubric, eval table, coverage gaps, required tests, and next implementation step. Name the exact command that runs the cases and its expected exit status (the repo's own eval script if one exists, otherwise the tool's invocation, e.g. `npx promptfoo eval -c <config>`) and record the run's pass/fail counts under "Commands or evidence checked". An eval plan with no runnable command is a document, not coverage, and suede-ci-gate cannot wire it into CI without that string.
+7. **Return the artifact.** Give the AI-SPEC, rubric, eval table, coverage gaps, required tests, and next implementation step. Name the exact command that runs the cases and its expected exit status (the repo's own eval script if one exists, otherwise the tool's invocation, e.g. `npx promptfoo eval -c <config>`) and record the run's pass/fail counts under "Commands or evidence checked". An eval plan with no runnable command is a document, not coverage, and suede-ci-gate cannot wire it into CI without that string. For a Claude Code skill or plugin, the command is `claude plugin eval . --json results.json --threshold <t>` with pinned `--model` and `--judge-model`; see `references/skill-and-plugin-evals.md`.
+
+For agentic and tool-using surfaces, also state per gate how many trials each case runs and whether it is scored as pass@k (any trial passes) or pass^k (every trial passes). Customer-facing severity 4-5 rows use pass^k. Details, outcome-vs-path grading, and judge calibration steps are in `references/agent-trajectory-evals.md`.
 
 ## Eval Dimensions By System Type
 
@@ -87,19 +89,25 @@ For each dimension, assign a measurement approach before writing the eval case:
 Detect existing eval/tracing tooling before recommending anything new:
 
 ```bash
-grep -rl "langfuse\|langsmith\|arize\|phoenix\|braintrust\|promptfoo\|ragas" \
-  --include="*.py" --include="*.ts" --include="*.toml" --include="*.json" . \
+grep -rl "langfuse\|langsmith\|arize\|phoenix\|braintrust\|promptfoo\|ragas\|evals\.create\|score_model\|string_check" \
+  --include="*.py" --include="*.ts" --include="*.toml" --include="*.json" --include="*.yaml" . \
   2>/dev/null | grep -v node_modules | head -10
+find . -path ./node_modules -prune -o \( -name evals.json -o -name prompt.md -path "*evals/*" \) -print 2>/dev/null | head -10
 ```
 
-If nothing is detected, these are the default starting points, not a mandate to install all four:
+The `find` line catches existing skill-creator (`evals/evals.json`) and `claude plugin eval` (`evals/<case>/prompt.md`) suites.
+
+**OpenAI Evals shutdown:** OpenAI's deprecations page lists the Evals platform as read-only from October 31, 2026 and the dashboard and API as scheduled to shut down November 30, 2026, with Promptfoo named as the migration path. A suite that depends on it scores `partial` on tooling and CI/CD and goes in Coverage gaps. See `references/agent-trajectory-evals.md`.
+
+If nothing is detected, these are the default starting points, not a mandate to install all of them:
 
 | Concern | Default | Why |
 |---|---|---|
 | Tracing / observability | Arize Phoenix | Open-source, self-hostable, framework-agnostic via OpenTelemetry |
 | RAG eval metrics | RAGAS | Faithfulness, answer relevance, context precision/recall out of the box |
-| Prompt regression in CI | Promptfoo | CLI-first, no platform account required |
+| Prompt regression and agent trajectory checks in CI | Promptfoo | CLI-first, no platform account required; has `trajectory:*` and `trace-*` assertions |
 | LangChain/LangGraph pipelines | LangSmith | Overrides Phoenix when the project is already in that ecosystem |
+| Claude Code skill or plugin | `claude plugin eval` | Built in; runs with and without the plugin, JSON result, CI exit codes |
 
 **Reference dataset spec:** minimum 10 examples to start, 20+ before treating coverage as production-grade. Composition: critical paths, edge cases, known failure modes, and adversarial inputs, not just happy-path samples. Labeling: domain expert where stakes are high, LLM judge with calibration otherwise. Start building the dataset during implementation, not after the feature ships.
 
@@ -113,6 +121,22 @@ How to build the case set (golden cases, adversarial cases, failure-mode coverag
 and what makes a case gradeable) is in `references/eval-case-design.md`. Read it
 before writing cases. Skip it when you are only reviewing an existing suite or
 sizing infrastructure.
+
+Two more references load only when they apply:
+
+- `references/skill-and-plugin-evals.md`: the surface is a Claude Code skill or
+  plugin. Covers `claude plugin eval` (case layout, grader types, no-plugin
+  baseline and `Δ`, CI flags, exit codes, JSON fields), the skill-creator
+  `evals/evals.json` loop, and `/skill-doctor` as a usage signal.
+- `references/agent-trajectory-evals.md`: the surface calls tools or hands off
+  between agents, or the plan uses an LLM judge. Covers outcome vs path grading,
+  trials with pass@k and pass^k, capability vs regression suites, judge
+  calibration steps, Promptfoo trajectory assertions, and the OpenAI Evals
+  shutdown.
+
+A case that scores the same with and without the skill, plugin, or prompt change
+measures the base model, not the change. When a baseline arm exists, report
+those cases separately in the coverage audit.
 
 ## Rubric
 
@@ -170,8 +194,9 @@ Next implementation step:
 - "We'll eval after launch": after launch, the eval set is your users.
 - "The model seems smart": vibes are not a rubric row; write the failure mode down and score it.
 - "We tested the prompt by hand": prompt review and happy-path poking are not eval coverage.
-- "It passed once": a pass with no fixture or scripted check protects nothing on the next model or prompt change.
+- "It passed once": a pass with no fixture or scripted check protects nothing on the next model or prompt change, and for an agent one trial is a sample of one. State trials and pass@k or pass^k.
 - "The judge model approved it": self-judgment without human-agreement spot checks is not evidence.
+- "The skill scored 1.0": check the without-skill score. If it is also 1.0, the skill did nothing measurable.
 
 ## Output
 

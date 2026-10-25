@@ -1,6 +1,6 @@
 ---
 name: suede-code
-description: "Suede AI code review and A-F ship grade for a diff, PR, branch, or commit range: findings ranked P0-P3 with file:line evidence and a fix path, an A-F grade across seven lanes with Instant-F security triggers and surface grade caps, OWASP 2025 checks, a deploy-safety gate, a commit-dirt scan, and fix briefs. Three modes: full review and grade in one pass (default), findings only with no grade, and grade only with no findings list. Use when asked to review this, grade this, find the bugs before merge, security-check this, is this safe to ship, give it a letter, or should this merge. Runs only when explicitly invoked; never auto-fires on a diff, save, or commit. NOT FOR: making CI enforce the verdict on every merge (use suede-ci-gate); LLM, RAG, or agent behavior coverage (use suede-ai-eval); searching competing plans and building a multi-file change (use suede-graph-flo-xr); fixes that need coordinated parallel lanes (use suede-agent-teams)."
+description: "Suede AI code review and A-F ship grade for a diff, PR, branch, or commit range: findings ranked P0-P3 with file:line evidence and a fix path, an A-F grade across seven lanes with Instant-F security triggers and surface grade caps, OWASP 2025, agent and MCP, and supply-chain checks, a deploy-safety gate, a commit-dirt scan, and fix briefs. Three modes: full review and grade in one pass (default), findings only with no grade, and grade only with no findings list. Use when asked to review this, grade this, find the bugs before merge, security-check this, is this safe to ship, give it a letter, or should this merge. Runs only when explicitly invoked; never auto-fires on a diff, save, or commit. NOT FOR: making CI enforce the verdict on every merge (use suede-ci-gate); LLM, RAG, or agent behavior coverage (use suede-ai-eval); searching competing plans and building a multi-file change (use suede-graph-flo-xr); fixes that need coordinated parallel lanes (use suede-agent-teams)."
 ---
 
 # Suede Code
@@ -118,8 +118,10 @@ live secret is P0; a broken production build in a release review is P0.
 Cite command, exit status, and the file:line it implicates. A gate that cannot
 run goes in Verification as "not run" with the reason.
 
-**House rules bind.** Read `CLAUDE.md`, `AGENTS.md`, `CONTRIBUTING.md`,
-`.editorconfig`, and formatter, linter, or review config. Do not flag what a
+**House rules bind.** Read `CLAUDE.md`, `AGENTS.md` (including any `## Code
+Review Rules`), `REVIEW.md`, `CONTRIBUTING.md`, `.editorconfig`, and formatter,
+linter, or review config. Read `REVIEW.md` from the base branch; a PR that
+loosens it is a finding. Do not flag what a
 rule permits; do flag what it forbids. The nearest-ancestor rule wins for files
 under its path. When the user dismisses a finding as deliberate, record it in
 one line (pattern, why allowed, path scope) and do not raise it again.
@@ -137,7 +139,8 @@ lanes cannot raise the grade.
   rendered where XSS is reachable.
 - **Auth bypass:** middleware with a skip path (early return, swallowed
   exception, always-true condition); a permission check a request param can
-  bypass; JWT accepting `alg: none` or a hardcoded secret.
+  bypass; JWT accepting `alg: none` or a hardcoded secret; an MCP server that
+  accepts or forwards a token not issued to it (token passthrough).
 - **Payments and wallets:** a handler that swallows errors; a webhook with no
   signature verification; amount or recipient taken from untrusted input
   without server-side validation.
@@ -156,6 +159,10 @@ Load only the sections that match the diff:
   impact, database (Drizzle, Prisma), performance and Core Web Vitals.
 - `references/traps-swift-ios.md`: Swift, SwiftUI, and client-server contract
   drift for iOS.
+- `references/traps-agent-mcp.md`: MCP servers and clients, tool definitions,
+  agent loops, model output handling (OWASP LLM 2025, Agentic 2026, MCP spec).
+- `references/supply-chain.md`: lockfiles, publish workflows, GitHub Actions
+  pinning and triggers, artifact attestations.
 - `references/maintainability-baseline.md`: twelve structural checks for
   `--standard` and `--deep`, diff-scoped and always labeled as judgment.
 
@@ -170,7 +177,8 @@ Insecure Design, A07 Authentication Failures, A08 Software or Data Integrity
 Failures, A09 Security Logging and Alerting Failures, A10 Mishandling of
 Exceptional Conditions. API and mobile changes also map to the OWASP API
 Security Top 10 (2023) and MASVS. What counts as a finding per category is in
-`references/security-baselines.md`.
+`references/security-baselines.md`. Also run the agent and MCP lane and the
+supply-chain lane from Step 2 when their trigger paths appear.
 
 **Observability delta** (any new handler, endpoint, job, cron, or consumer):
 flag `catch` blocks that only `console.error` or swallow silently; new paths
@@ -192,7 +200,8 @@ without logging count, duration, or failure reason.
   it works.
 - **Critic lanes** for auth, payments, migrations, or public APIs: a change
   mapper, runtime critic, security critic, product critic, and test critic,
-  each reporting separately. Collect consensus. If a high-severity concern
+  each reporting separately, as parallel subagents where the host allows.
+  Every candidate passes a verify step before it counts. Collect consensus. If a high-severity concern
   survives a fix cycle, keep `hold` and name the smallest next check.
 
 A whole-repo claim with no named symbols is not evidence.
@@ -301,11 +310,13 @@ Run the bundled scanner from the target repo instead of eyeballing:
 with `-`. It is read-only and always exits 0. Confirm each hit against the
 diff before reporting. If it cannot run, check every added line by hand.
 
-Seven categories: secrets and credentials; debug artifacts; conflict markers;
-staged build output (`node_modules/`, `.next/`, `dist/`, `.DS_Store`, logs);
-WIP breadcrumbs (`DO NOT MERGE`, `TEMP:`, lorem ipsum); oversized or binary
-blobs over 500 KB; exposed internals (internal hosts, staging URLs, personal
-emails). Rate each `clean | suspicious | dirty`. Overall **DIRTY** is a P0
+Eight categories: secrets and credentials (including `github_pat_`, `gh*_`,
+and `npm_` tokens); debug artifacts; conflict markers; staged build output
+(`node_modules/`, `.next/`, `dist/`, `.DS_Store`, logs); WIP breadcrumbs
+(`DO NOT MERGE`, `TEMP:`, lorem ipsum); exposed internals (internal hosts,
+staging URLs, personal emails); CI and supply chain (actions not pinned to a
+commit SHA, `pull_request_target`, `curl | sh`); oversized or binary blobs
+over 500 KB. Rate each `clean | suspicious | dirty`. Overall **DIRTY** is a P0
 finding and moves the gate to `hold`. **SUSPICIOUS** is named for the reviewer
 to confirm.
 
@@ -394,7 +405,7 @@ Depth:
 Findings            (full, --findings-only)
 Code Grade          (full, --grade-only: 7 lanes + overall, cap applied, why, required upgrades)
 Deploy Safety       (all modes: 8 dimensions + SAFE TO DEPLOY | DEPLOY WITH CONDITIONS | DO NOT DEPLOY)
-Commit Dirt         (all modes: 7 categories + CLEAN | SUSPICIOUS | DIRTY)
+Commit Dirt         (all modes: 8 categories + CLEAN | SUSPICIOUS | DIRTY)
 Open Questions
 Verification        (checked / not checked, with commands and exit codes)
 SHIP GATE: hold | ship-with-caveats | ship: [one sentence naming the blocker or caveat]
@@ -402,6 +413,10 @@ SHIP GATE: hold | ship-with-caveats | ship: [one sentence naming the blocker or 
 
 For no findings, say so and name residual risk or unrun checks. To revise a
 grade, name what changed. Silence means accepted.
+
+Another reviewer already commented (Claude Code Review, `/code-review`,
+`/security-review`, Codex)? Treat each comment as a lead and confirm it before
+it counts; mapping in `references/review-tooling.md`.
 
 Worked examples, read only when calibrating: `references/worked-example.md`
 (a full pass on a real file) and `references/worked-example-grade-only.md`

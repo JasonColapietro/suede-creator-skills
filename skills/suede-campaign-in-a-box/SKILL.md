@@ -2,7 +2,7 @@
 name: suede-campaign-in-a-box
 description: "Suede AI artist campaign rollout for a song, release, era, show, or catalog moment. Use when an artist needs a complete campaign across surfaces (identity, era world, hooks, release stunts, fan rituals, visualizers, merch, setlists, catalog revival, collaborator outreach) or the full announce, tease, release-week, and post-drop package with calendar, email, site copy, search-ready release page, and fan actions. Picks one of twelve lanes or stitches them together, and flags rights gaps instead of resolving them. NOT FOR: single-surface conversion copy (use suede-copy); sync licensing packaging (use suede-sync-packaging); rights gaps or a rights package (use suede-rights-passport); software, repo, or skill-pack releases (use suede-launch-packaging)."
 metadata:
-  version: 1.0.0
+  version: 1.1.0
 ---
 
 # Suede Campaign In A Box
@@ -69,6 +69,25 @@ every lane dispatch (do not let it default). Cap concurrent lane agents at
 fewer, or ask first. Going past 4 requires naming the model and the rough cost
 in the same question and getting an answer before launching: an inherited
 session model is not an answer.
+
+Wave order, the shared campaign spine, lane briefs, and Claude Code and Codex
+subagent setup are in `references/agent-execution.md`.
+
+## Tools, check-ins, and the campaign board
+
+Read only when the user wants work to land in their tools or keep running:
+
+- `references/connectors.md`: official MCP servers (Buffer, Klaviyo,
+  Mailchimp, HubSpot, Meta Ads, Google Ads, Canva, Figma, Notion, Google
+  Drive), which lane uses each, and the Gmail, Yahoo, and Outlook bulk-sender
+  preflight to run before any fan email goes to a list.
+- `references/agent-execution.md` sections 2 and 3: recurring campaign
+  check-ins on a schedule, and publishing the Lane 0 package as a shareable
+  campaign board.
+
+Connectors write drafts only. Sending, publishing, scheduling, launching or
+editing ads, changing budgets, and deleting anything wait for the user to
+approve that exact action. A scheduled run never counts as approval.
 
 ---
 

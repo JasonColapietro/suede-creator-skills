@@ -1,0 +1,13 @@
+{
+  "origin": "https://example.test",
+  "pages": [
+    {
+      "url": "https://example.test/care",
+      "html": "<html><head><title>Bowl care guide</title><script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"https://schema.org/FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"Can the bowl go in a dishwasher?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Yes, on the top rack.\"}}]},{\"@type\":\"WebSite\",\"url\":\"https://example.test/\",\"potentialAction\":{\"@type\":\"SearchAction\",\"target\":\"https://example.test/search?q={q}\",\"query-input\":\"required name=q\"}}]}</script><script src=\"https://ads.example.test/tag.js\"></script></head><body><h1>Bowl care guide</h1><h2>Can the bowl go in a dishwasher?</h2><p>Yes, on the top rack.</p><script>history.pushState(null, \"\", location.href); window.addEventListener(\"popstate\", function () { location.href = \"https://example.test/offer\"; });</script></body></html>"
+    },
+    {
+      "url": "https://example.test/old-offer",
+      "html": "<html><head><title>Old offer</title></head><body><meta name=\"robots\" content=\"noindex, nosnippet\"><h1>Old offer</h1><p data-nosnippet>Members only.</p></body></html>"
+    }
+  ]
+}

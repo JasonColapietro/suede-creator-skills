@@ -34,7 +34,7 @@ Global. The skill is a prompt-and-script package that runs locally inside the in
 ## Requirements / Dependencies
 
 - A Claude Code or Codex CLI session with the `suede-skills` plugin installed (install options: <https://skills.suedeai.ai/>).
-- Bundled files loaded relative to this directory: `agents/` (1 file), `references/` (13 files).
+- Bundled files loaded relative to this directory: `agents/` (1 file), `references/` (15 files).
 - Credentials: none are bundled or required by the skill files. Any tool or API credentials come from the host session; never paste credentials into skill files, prompts, or outputs.
 
 ## Known Risks and Mitigations
@@ -47,7 +47,7 @@ From "Boundaries":
 - Do not publish, schedule, reply, follow, like, repost, message, or edit an account without approval of the exact content and the visible identity.
 - Do not scrape, bypass access controls, evade rate limits, or put a consumer password into an automation.
 - Do not invent private insights, trends, quotes, sentiment, competitor conversion, testimonials, or results. Public competitor data cannot show saves, shares, retention, or sales.
-- Do not run engagement pods, buy followers, auto-like or mass-comment, or post undisclosed synthetic endorsements.
+- Do not run engagement pods, buy followers, auto-like or mass-comment, or post undisclosed synthetic endorsements. Never strip C2PA metadata or skip a required AI label to avoid one.
 - Do not use music, footage, likenesses, logos, or reposted creator content without a verified lawful basis and any required credit.
 - A draft, scheduled item, or composer preview is not a published post. Require a live permalink readback.
 

@@ -202,13 +202,22 @@ Assign the least capable model that can still do the role correctly. Cost and la
 
 When a lane's task complexity is ambiguous, default up a tier rather than down; a cheap model returning `NEEDS_CONTEXT` or a wrong answer costs more in re-dispatch than starting at the right tier.
 
+Make the tier stick in configuration: a Claude Code agent definition sets `model` and `effort` in frontmatter, and a Codex agent TOML sets `model` and `model_reasoning_effort`. A model named on the spawn call outranks the definition, so check the resolved model against the Fable cap.
+
+## Runtime Mapping
+
+When lanes run as real agents, read [`references/runtime-mapping.md`](references/runtime-mapping.md) before spawning. It covers which primitive fits each lane (subagent, worktree-isolated subagent, or experimental agent team teammate), role definition templates for `.claude/agents/` and `.codex/agents/`, and the worktree, hook, and team limits that change the lane plan. Two rules apply even without it:
+
+- Parallel builders run in separate worktrees (`isolation: worktree`), and those branch from the default branch unless settings set `worktree.baseRef` to `"head"`. Agent team teammates share one checkout, so never give two teammates overlapping files.
+- Reviewer and grader definitions deny `Edit` and `Write` through `disallowedTools`, which makes builder and reviewer separation structural on Claude Code. Codex agent files cannot narrow the parent sandbox, so that separation stays an instruction there.
+
 ## Builder Dispatch Protocol
 
 A dispatched builder reports one of four states before its output reaches review. Handle each before the lane proceeds to the next roster stage:
 
 - **Done**: proceed to the next stage in the roster.
 - **Done with concerns**: the builder finished but flagged a doubt. Read the concern. If it touches correctness or scope, resolve it before review; if it is a pure observation, note it in the handoff and proceed.
-- **Needs context**: the builder is missing information the lane map should have supplied. Provide it and re-dispatch the same builder; do not silently guess on its behalf.
+- **Needs context**: the builder is missing information the lane map should have supplied. Provide it to the same builder (on Claude Code, `SendMessage` to the agent's name or ID resumes it with its history intact); do not silently guess on its behalf.
 - **Blocked**: the builder cannot proceed. Diagnose why before re-dispatching: a context gap gets more context, a reasoning gap gets a more capable model, an oversized task gets split into smaller lanes, and a wrong plan escalates to the human (see Escalation Protocol). Never re-dispatch the same builder unchanged and hope for a different result.
 
 A builder that asks a clarifying question mid-task gets an answer before it continues; do not let it guess past an open question to hit a deadline.

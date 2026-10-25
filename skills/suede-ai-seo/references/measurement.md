@@ -18,8 +18,10 @@ clusters:
 | Problem | "How do I [job the product does]?" |
 | Brand facts | "Who founded [brand]?", "How much does [brand] cost?" |
 
-Source prompts from sales calls, support tickets, Search Console queries, and
-community threads, not from the model's imagination. Freeze the set for a
+Source prompts from sales calls, support tickets, Search Console queries,
+community threads, and Bing's grounding queries and Topics Portfolio
+opportunity queries (the only engine-published prompt data), not from the
+model's imagination. Freeze the set for a
 quarter so trends mean something; add new prompts as a separate cluster.
 
 **Run protocol.** For each prompt and engine, log: date, engine and mode
@@ -68,8 +70,8 @@ Referral. Condition: session source matches regex:
 ^(chatgpt\.com|chat\.openai\.com|perplexity\.ai|www\.perplexity\.ai|copilot\.microsoft\.com|gemini\.google\.com|claude\.ai|chat\.mistral\.ai|meta\.ai|you\.com)$
 ```
 
-Also include `utm_source` values the assistants append (ChatGPT commonly uses
-`chatgpt.com`). Verify the list against your own Traffic acquisition report
+Also include `utm_source` values the assistants append (OpenAI's publisher FAQ
+says ChatGPT search referrals carry `utm_source=chatgpt.com`). Verify the list against your own Traffic acquisition report
 first: add domains you see, remove ones you never do.
 
 Report: sessions, engaged sessions, key events, conversion rate, and top landing
@@ -83,13 +85,28 @@ land in Direct. Treat this channel as a floor.
 ## 3. First-party engine reports
 
 - **Google Search Console**: Performance, search type Web, includes AI Overview
-  and AI Mode clicks and impressions. The Search Generative AI performance
-  report (June 2026 onward) adds generative impressions by page, country,
-  device, and date where the property clears Google's threshold. No clicks or
-  queries there.
-- **Bing Webmaster Tools AI Performance**: citations, cited pages, and grounding
-  queries for Copilot. Export monthly; grounding queries are the closest thing
-  to a published prompt list from any engine.
+  and AI Mode clicks and impressions mixed with classic results. The
+  Generative AI performance report (Search), available to all sites since
+  2026-08-31, isolates impressions in AI Overviews and AI Mode by page,
+  country, device, and date, filterable by "Web: text-based" or "Web:
+  multimodal". No clicks or queries. The chart counts one impression per
+  property per feature while page rows count per page, so do not add page rows
+  and expect the chart total. Excluded properties and very low-impression
+  sites see no data. A Discover version reports generative AI impressions in
+  Discover.
+- **Search Console setting check**: before reading a flat or empty report,
+  confirm Settings > Search generative AI is set to include (or inherits
+  include). Exclude removes the site from AI Overviews and AI Mode inputs.
+- **Bing Webmaster Tools AI Performance** (Copilot, Bing AI summaries, select
+  partners): Total Citations, Average Cited Pages, sampled grounding queries,
+  and page-level citations. Since June 2026 the preview adds Intents, Topics,
+  Citation Share, and Compare; since October 2026 Topics Portfolio (beta)
+  adds Top Opportunity Queries.
+- **Bing Citation Share** is the first engine-reported share metric: the
+  site's percentage of all citations shown for a grounding query. Report it
+  next to the prompt panel's share of citations for Copilot, labeled by
+  source, and do not merge the two. It names no competitors, so the panel is
+  still how you get competitive share.
 - **Server logs**: hits from `OAI-SearchBot`, `Claude-SearchBot`,
   `PerplexityBot`, `Bingbot`, and user-fetch agents on priority pages show
   retrieval even when no click follows.
@@ -111,8 +128,8 @@ days later.
 | Share of recommendations | Monthly | | | |
 | Brand fact error rate | Monthly | | | |
 | AI-assistant sessions and key events | Monthly | | | |
-| Copilot citations (Bing) | Monthly | | | |
-| Generative AI impressions (GSC) | Monthly | | | |
+| Copilot citations and Citation Share (Bing) | Monthly | | | |
+| Generative AI impressions (GSC, Search and Discover) | Monthly | | | |
 | Branded search impressions | Monthly | | | |
 | Self-reported AI attribution share | Quarterly | | | |
 

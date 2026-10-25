@@ -15,6 +15,9 @@ for keeps earning views after the feed moves on.
 - **Short video in search results.** Google shows short-form video from YouTube,
   TikTok, and Instagram in web results. YouTube Shorts up to three minutes
   count as Shorts when square or vertical.
+- **Threads text attachments stay out of Google.** The 10,000-character
+  attachment is not indexed or federated (TechCrunch, Sept 4, 2025). Put the
+  searchable claim in the 500-character post or on the site.
 - **AI answers draw on public posts.** Answer engines quote public threads,
   video transcripts, and long posts when they are specific and attributable.
   A post with a clear claim, a named source, and the brand's consistent name is

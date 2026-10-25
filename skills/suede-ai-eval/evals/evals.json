@@ -1,0 +1,74 @@
+{
+  "skill_name": "suede-ai-eval",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "We're adding an AI answer box to our help center. It retrieves from our docs and answers customer questions. Can you write the evals for it before we ship next week?",
+      "expected_output": "Should write a one-paragraph AI-SPEC before any cases, start the failure-mode map from the RAG dimensions (faithfulness, hallucination, answer relevance, retrieval precision, citation) plus safety, score each failure mode on severity, likelihood, and detectability with an owner and gate, and write concrete pass/fail cases covering happy path, ambiguous input, forbidden claim, stale or conflicting docs, privacy, and cost. It should assign each dimension a code-based, LLM-judge, or human measurement approach, name a runnable command with expected exit status, mark the output source-only if no live surface was sampled, and end with a mechanical ship gate.",
+      "assertions": [
+        "Writes an AI-SPEC before the eval cases",
+        "Uses the RAG canonical dimensions in the failure-mode map",
+        "Scores failure modes with severity, likelihood, detectability, owner, and gate",
+        "Includes a stale or conflicting source-data case",
+        "Assigns a measurement approach to each dimension",
+        "Names a runnable eval command and its expected exit status",
+        "Returns a ship gate of ship, ship-with-caveats, or hold using the mechanical rule"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "how do i test my claude code skill properly? it's in a plugin and i want CI to fail if it gets worse",
+      "expected_output": "Should route to claude plugin eval and load the skill-and-plugin reference. It should explain cases as evals/<case>/prompt.md plus graders, recommend one result grader and one step grader per case (for example llm or regex plus tool_used on Skill), include should-not-trigger cases with arm: both, explain the with-plugin and without-plugin scores and delta, and give a CI command with --trust-plugin, --json, --threshold, pinned --model and --judge-model, --no-publish, and --max-cost-usd, with the documented exit codes. It should not claim evals/evals.json cases run under claude plugin eval.",
+      "assertions": [
+        "Recommends claude plugin eval for a skill shipped in a plugin",
+        "Describes the prompt.md and graders/ case layout",
+        "Includes at least one should-not-trigger case",
+        "Explains the no-plugin baseline and delta",
+        "CI command pins both the agent model and the judge model",
+        "States exit code 1 for below-threshold and 2 for partial runs",
+        "Does not claim the skill-creator evals.json format runs under claude plugin eval"
+      ],
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Our support agent can look up orders and issue refunds through tools. It passed our eval run yesterday with a 90% score. Is it good to ship?",
+      "expected_output": "Should ask or check how many trials each case ran and whether the score is pass@k or pass^k, recommend pass^k with several trials for customer-facing refund behavior, grade the outcome (refund state) before the tool path, keep path checks for real constraints such as identity verification before a refund call and a never-refund-unverified rule, and ask whether anyone read transcripts. It should treat a judge score as evidence only after human agreement on a sample, and return a ship gate with the reasoning rather than a yes based on the 90% figure alone.",
+      "assertions": [
+        "Asks how many trials ran per case",
+        "Distinguishes pass@k from pass^k and picks pass^k for the refund path",
+        "Grades the refund outcome, not only the tool sequence",
+        "Keeps an ordering or forbidden-call check for identity verification before refunds",
+        "Requires transcript review before trusting the score",
+        "Does not recommend ship on the aggregate score alone"
+      ],
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "Audit our eval setup. We use the OpenAI Evals API with score_model graders, about 40 cases, and run it manually before releases.",
+      "expected_output": "Should run the coverage audit with COVERED, PARTIAL, MISSING per dimension and the infrastructure items, score coverage, infra, and overall with the documented formula, mark CI/CD missing because runs are manual, and flag the OpenAI Evals platform timeline from OpenAI's deprecations page (read-only October 31, 2026; shutdown scheduled November 30, 2026) as a coverage gap with migration as a required next step. It should note that score_model judge thresholds need recalibration against a human-labeled sample after migration.",
+      "assertions": [
+        "Scores each dimension COVERED, PARTIAL, or MISSING",
+        "Computes coverage, infra, and overall scores with the documented weights",
+        "Marks CI/CD missing or partial because the suite runs manually",
+        "Flags the OpenAI Evals read-only and shutdown dates",
+        "Lists migration as a required next step",
+        "Requires judge recalibration after migration"
+      ],
+      "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "Can you review the code in our summarizer service and tell me if the implementation is any good?",
+      "expected_output": "Should recognize this is a code-quality review of the implementation, not eval design, and route to suede-code. It may offer to build an eval plan for the summarizer's behavior afterward, but should not produce a code review itself.",
+      "assertions": [
+        "Routes to suede-code for implementation review",
+        "Does not produce a line-by-line code review",
+        "Offers eval design as a separate follow-up"
+      ],
+      "files": []
+    }
+  ]
+}

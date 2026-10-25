@@ -7,7 +7,7 @@ Release record for the `suede-code` skill, following the NVIDIA skill-card templ
 
 ## Description
 
-Suede AI code review and A-F ship grade for a diff, PR, branch, or commit range: findings ranked P0-P3 with file:line evidence and a fix path, an A-F grade across seven lanes with Instant-F security triggers and surface grade caps, OWASP 2025 checks, a deploy-safety gate, a commit-dirt scan, and fix briefs.
+Suede AI code review and A-F ship grade for a diff, PR, branch, or commit range: findings ranked P0-P3 with file:line evidence and a fix path, an A-F grade across seven lanes with Instant-F security triggers and surface grade caps, OWASP 2025, agent and MCP, and supply-chain checks, a deploy-safety gate, a commit-dirt scan, and fix briefs.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.3; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
@@ -34,7 +34,7 @@ Global. The skill is a prompt-and-script package that runs locally inside the in
 ## Requirements / Dependencies
 
 - A Claude Code or Codex CLI session with the `suede-skills` plugin installed (install options: <https://skills.suedeai.ai/>).
-- Bundled files loaded relative to this directory: `agents/` (1 file), `scripts/` (1 file), `references/` (7 files).
+- Bundled files loaded relative to this directory: `agents/` (1 file), `scripts/` (1 file), `references/` (10 files).
 - Credentials: none are bundled or required by the skill files. Any tool or API credentials come from the host session; never paste credentials into skill files, prompts, or outputs.
 
 ## Known Risks and Mitigations

@@ -1,6 +1,6 @@
 # Web Stack Traps
 
-Per-stack failure catalogs for TypeScript, React, accessibility, Next.js, SEO, database layers, and performance. Load the sections that match the stack in the diff.
+Per-stack failure catalogs for TypeScript, React, accessibility, Next.js, React Server Components security, SEO, database layers, and performance. Load the sections that match the stack in the diff.
 
 ## TypeScript Traps
 
@@ -47,6 +47,56 @@ Check these on every Next.js file in the diff:
 - **Server-only secrets in client bundle:** `process.env.SECRET_KEY` in a `'use client'` file or in a prop passed from server to client component is exposed in the browser bundle. Only `NEXT_PUBLIC_*` vars are safe client-side. Flag any non-`NEXT_PUBLIC_` env var referenced in client code.
 - **Unguarded `generateMetadata` / `getServerSideProps` fetches:** These run on every request. An uncached external fetch here is a latency and cost bomb. Flag missing `{ next: { revalidate: N } }`, a `'use cache'` directive (Next.js 16 Cache Components), or `unstable_cache` wrapping on older versions.
 - **`useRouter` from `next/router` in App Router:** App Router uses `next/navigation`. Importing from `next/router` in an App Router project silently fails or returns stale data. Flag the wrong import.
+
+## React Server Components and Next.js Security
+
+Check on any diff that touches `'use server'` files, `middleware.ts` or
+`proxy.ts`, `route.ts`, or bumps `next`, `react`, or `react-server-dom-*`.
+Last checked October 2026; run `npm audit` for advisories newer than these.
+
+- **Version floors (A03).** Flag a lockfile that resolves below these.
+  - CVE-2025-55182 / CVE-2025-66478 ("React2Shell", critical RCE in the RSC
+    protocol): fixed in React 19.0.1, 19.1.2, 19.2.1 and Next.js 15.0.5,
+    15.1.9, 15.2.6, 15.3.6, 15.4.8, 15.5.7, 16.0.7.
+  - CVE-2025-55184 and CVE-2025-67779 (DoS) and CVE-2025-55183 (Server
+    Function source exposure): Next.js 14.2.35, 15.0.7, 15.1.11, 15.2.8,
+    15.3.8, 15.4.10, 15.5.9, 16.0.10. React 19.0.3, 19.1.4, and 19.2.3 were
+    incomplete fixes; the React floor is 19.0.4, 19.1.5, 19.2.4, which also
+    covers CVE-2026-23864 (DoS, January 2026).
+  - CVE-2025-29927 (middleware bypass via the `x-middleware-subrequest`
+    header): fixed in 12.3.5, 13.5.9, 14.2.25, 15.2.3. Self-hosted `next start`
+    and `output: 'standalone'` were affected.
+  A vulnerable version on a deployed App Router app is P0. Next.js vendors its
+  own RSC runtime, so check the `next` version, not only `react`.
+- **Hardcoded secrets in Server Functions.** CVE-2025-55183 could return a
+  Server Function's compiled source, including literals the bundler inlined.
+  A secret literal in a `'use server'` file is already Instant-F; this is why.
+  `process.env` reads at runtime were not exposed.
+- **Middleware or proxy as the only auth (A01).** Vercel's postmortem says not
+  to rely on Middleware as the sole method of protecting routes. A route,
+  page, or action whose only auth check lives in `middleware.ts` / `proxy.ts`
+  is P1; P0 on admin or payment paths.
+- **Server Actions are public POST endpoints (A01).** Next.js documents that an
+  exported Server Action is reachable by direct POST and that a page-level
+  auth check does not cover actions defined in it. Each action must check
+  authentication and ownership of the resource it touches. Missing check: P0
+  when it writes or deletes, P1 when it reads private data.
+- **Action return values (A01, API3).** Returning a raw ORM record from an
+  action serializes every column to the client. Return only what the UI needs.
+- **Closure capture.** Values closed over by an inline action are encrypted
+  and round-tripped through the client. Next.js advises not relying on that
+  encryption alone for sensitive values. Flag a secret or another user's data
+  captured in an inline action.
+- **`serverActions.allowedOrigins`** widened to `*` or a broad wildcard
+  removes the Origin/Host CSRF check. P1.
+- **Data Access Layer drift.** If the repo has a `server-only` data layer, flag
+  new `process.env` or DB client imports outside it.
+
+Sources: https://react.dev/blog/2025/12/11/denial-of-service-and-source-code-exposure-in-react-server-components,
+https://vercel.com/changelog/cve-2025-55182,
+https://nextjs.org/blog/security-update-2025-12-11,
+https://vercel.com/blog/postmortem-on-next-js-middleware-bypass,
+https://nextjs.org/docs/app/guides/data-security
 
 ## SEO Impact
 
