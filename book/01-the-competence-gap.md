@@ -89,7 +89,7 @@ skill is a document, and it works because the agent reading it is a competent
 reader who follows written instructions.
 
 The body is where the specialist lives. `skills/suede-code/SKILL.md` is
-428 lines. It contains a list of instant-F triggers checked before any lane is
+443 lines. It contains a list of instant-F triggers checked before any lane is
 scored, seven grading lanes, grade caps that hold auth and payment changes at C
 without tested bypass and error paths, and a fixed output block ending in a ship
 gate. `skills/suede-deslop/SKILL.md` carries a 25-row kill list of filler
@@ -101,12 +101,12 @@ Tuesday afternoon as it does at midnight.
 ## Progressive disclosure, or why 64 skills fit
 
 Here is the objection that arrives immediately. The 64 `SKILL.md` files in this
-repo total 928,739 bytes. Loading all of them into every conversation would
+repo total 937,389 bytes. Loading all of them into every conversation would
 crowd out the thing you actually came to do.
 
 They are not all loaded. Only the frontmatter descriptions stay resident, and
-all 64 descriptions together come to 50,322 bytes. That is roughly a
-eighteenth of the corpus. The agent holds a catalog of what exists and reads
+all 64 descriptions together come to 50,424 bytes. That is roughly a
+nineteenth of the corpus. The agent holds a catalog of what exists and reads
 a body only when a description matches the task in front of it.
 
 This is progressive disclosure, and it changes what a description is for. The

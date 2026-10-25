@@ -25,13 +25,36 @@ or fragments, and literal HTML for each page. No files, URLs, redirects, headers
 images, linked documents or schema IDs are fetched. URL spelling, slash and
 query are identity. The non-rendering tokenizer skips comments, inert templates
 and raw-text decoys; it is not a full HTML conformance validator or rendered DOM.
-Limits: 25 MB input file, 1–1,000 pages, 2 MB HTML per page. Duplicate or foreign
+Limits: 25 MB input file, 1–1,000 pages, 4 MB HTML per page (above Googlebot's
+2MB fetch limit, so oversize pages can be measured). Duplicate or foreign
 page URLs fail. An empty inventory fails to prevent accidental empty baselines.
 
 Outputs: `seo-audit.json`, escaped `seo-audit.md`, `metadata-snapshot.json`.
 Merchant output exists only with `--merchant`; choose it for actual purchasable
 products, not editorial reviews. Check visible content, active purchase state
 and current Google documentation separately before claiming eligibility.
+
+## Search eligibility signals (section 11)
+
+Every audit adds `eligibility` rows. Codes:
+
+- `fetch-limit-exceeded` (error): HTML over 2,000,000 bytes. The page is
+  re-parsed from the first 2,000,000 bytes and the finding names the fields
+  that differ (title, h1, canonical, robots meta, JSON-LD, hreflang,
+  headings). `fetch-limit-review` (warn) starts at 75% of the limit, a Suede
+  heuristic, not a Google number. HTTP headers are not counted.
+- `robots-outside-head` (info): robots meta in the body. These now count
+  toward `noindex` everywhere, including hreflang targets and snapshots, so a
+  snapshot taken before this change may show a robots or noindex drift.
+- `snippet-restricted` (info): `nosnippet` or `max-snippet:0` in a robots,
+  googlebot, googlebot-news or bingbot meta tag. `data-nosnippet-review`
+  counts elements with that attribute.
+- `retired-rich-result` (info): JSON-LD types whose Google rich result ended,
+  once per feature per page.
+- `back-button-review` (warn): one inline JavaScript block both listens for
+  `popstate` and calls `history.pushState`/`replaceState`. Single-page apps do
+  this legitimately; the finding asks for a browser test, not a spam verdict.
+  External scripts are counted but never read.
 
 ## Immutable snapshots and drift
 

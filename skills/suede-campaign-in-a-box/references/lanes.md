@@ -30,6 +30,11 @@ execute.
    `suede-seo-audit` and `suede-ai-seo`.
 6. Keep claims grounded. Do not invent streams, press, cosigns, placements, or
    legal clearance.
+7. Before any fan email goes to a list, fill the send preflight in
+   `references/connectors.md` (SPF, DKIM, DMARC, one-click unsubscribe,
+   expected release-day volume). Unconfirmed lines stay UNKNOWN.
+8. When connectors are attached, load the calendar and emails as drafts only
+   and list each draft's location so the user can review and send it.
 
 Pull other lanes in as needed: identity (Lane 1) and era (Lane 2) feed the
 campaign thesis; hooks (Lane 4) feed the content calendar and teasers; stunts
@@ -49,6 +54,9 @@ Asset request (what you need from the artist/team, and by when):
 Success metric / KPI to watch:
 Fan actions:
 Email or DM copy:
+Email send preflight (from references/connectors.md):
+Drafts created (tool, location, awaiting approval):
+Check-in cadence (if scheduled):
 Site sections:
 Release page (title, answer-first summary, credits, schema, sameAs links):
 Press angle:

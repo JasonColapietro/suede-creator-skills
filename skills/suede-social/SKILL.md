@@ -2,7 +2,7 @@
 name: suede-social
 description: "Suede AI organic social system for founder and brand accounts: platform mix, cross-platform calendars, 30-post account audits that separate views from follows, leads, and sales, Instagram Reels, carousels, and Stories, LinkedIn and X posts and threads, short-video scripts, social search optimization, listening, and a daily approval-ready content loop. Use when planning, auditing, or producing organic social on any platform, including Instagram-specific growth work. NOT FOR: paid social ads (use suede-ads or suede-ad-creative), an agent-run editorial pipeline with role contracts (use suede-newsroom), a clip that must bridge to a long-form guide (use suede-clip-to-guide), editing or rendering video (use suede-video), or the broader editorial portfolio (use suede-content-strategy)."
 metadata:
-  version: 3.0.0
+  version: 3.1.0
 ---
 
 # Suede AI Organic Social
@@ -68,6 +68,7 @@ Label every fact in the output by evidence class:
 | "what's working for others" | Lawful comparable-account pattern study | [reverse-engineering.md](references/reverse-engineering.md) |
 | "find posts to reply to" | Ranked engagement drafts | [listening.md](references/listening.md) |
 | "run the daily workflow" | Evidence refresh and approval packet | [daily-loop.md](references/daily-loop.md) |
+| "schedule this in Buffer", "use the API" | Publishing path, tool limits, API cost | [publishing-access.md](references/publishing-access.md) |
 
 Several modes in one request run in dependency order: audit or context refresh,
 strategy, asset creation, QA, approval packet.
@@ -105,10 +106,13 @@ the account's own conversion data set the number.
 
 ## Platform quick reference
 
-Format fit is a hypothesis per account. Facts verified October 2026 are in
-[platform-limits.md](references/platform-limits.md), including the Instagram
-5-hashtag cap, 3-minute Reels and Shorts, the 3:4 Instagram grid crop, and
-Google indexing of public Instagram professional accounts.
+Format fit is a hypothesis per account. Limits checked 2026-10-25, each with
+its source, are in [platform-limits.md](references/platform-limits.md),
+including 20-item Instagram and Threads carousels, the Instagram 5-hashtag cap,
+35-photo TikTok posts, 300-page LinkedIn documents, and 3-minute Shorts and
+Bluesky video. Quote no limit that file marks unverified. Scheduler and API
+limits and X's per-call API pricing are in
+[publishing-access.md](references/publishing-access.md).
 
 | Platform | Common fit | Formats to test |
 |---|---|---|
@@ -117,7 +121,8 @@ Google indexing of public Instagram professional accounts.
 | Instagram | Visual brands, creators, commerce | Reels, carousels, Stories |
 | TikTok | Short-form discovery and search | Vertical video, series, comment replies |
 | YouTube Shorts | Search-led how-to and demos | Square or vertical video up to 3 minutes |
-| Facebook | Local audiences, groups | Group posts, native video |
+| Facebook | Local audiences, groups | Group posts, Reels (all video) |
+| Threads, Bluesky | Text-first conversation | Short posts, replies, Threads text attachments |
 
 ## Hooks
 
@@ -160,6 +165,10 @@ One CTA. Use the skeletons in [post-templates.md](references/post-templates.md).
 **Story sequence.** Use Stories for a job (research, proof, objection handling,
 launch, reply, conversion), never a daily quota. Frame table in
 [content-production.md](references/content-production.md).
+
+**AI label.** Any asset with realistic AI-generated or altered media, or a
+cloned voice other than the speaker's own, gets the platform's label set before
+approval. Rules differ by platform: [ai-disclosure.md](references/ai-disclosure.md).
 
 Write captions and voiceover from the account's real voice samples: sentence
 length, vocabulary, humor, punctuation, taboo list. Run final copy through
@@ -261,7 +270,8 @@ the blocker is resolved.
   conversion, testimonials, or results. Public competitor data cannot show
   saves, shares, retention, or sales.
 - Do not run engagement pods, buy followers, auto-like or mass-comment, or post
-  undisclosed synthetic endorsements.
+  undisclosed synthetic endorsements. Never strip C2PA metadata or skip a
+  required AI label to avoid one.
 - Do not use music, footage, likenesses, logos, or reposted creator content
   without a verified lawful basis and any required credit.
 - A draft, scheduled item, or composer preview is not a published post. Require

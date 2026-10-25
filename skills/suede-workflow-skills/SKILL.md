@@ -155,6 +155,12 @@ Install commands for Claude Code and Codex, including subsets, are in
 update, or subset the pack. The Suede MCP's `suede_install_options` tool
 answers the same question live when it is connected.
 
+To make a gate run automatically in Claude Code, read
+`references/hook-gates.md` (opt-in Stop and SubagentStop hook recipes). To
+run a check or next-move digest on a schedule, read
+`references/recurring-workflows.md` (`/loop` and `/schedule`). Load either
+only when the user asks.
+
 Use the Suede MCP only when it adds structure: listing skills, explaining
 install options, scaffolding an SEO and AEO copy audit, or generating a QA
 checklist. Skip it for small edits.

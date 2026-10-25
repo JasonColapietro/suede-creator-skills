@@ -25,6 +25,13 @@ suede-seo-audit Lane 5. Grade-drop rules and scoring live in SKILL.md.
     mirror visible Q&A; never promise a search appearance.
   - Step-by-step instructions → `HowTo` is valid vocabulary with no Google
     rich result since 2023. Optional, never a fix for a ranking problem.
+  - Other markup with no Google rich result: `ClaimReview`,
+    `SpecialAnnouncement`, `Occupation` with `estimatedSalary` (June 2025),
+    `Quiz` practice problems (January 2026), and `WebSite` + `SearchAction`
+    for the sitelinks search box (November 21, 2024). Report as info, not a
+    defect; never promise a search appearance from them.
+  - New schema.org vocabulary (30.0, 30.1) earns nothing in Google until the
+    search gallery lists a feature for it.
   - One user-submitted question with user-submitted answers → `QAPage`
   - Blog post or article → `Article` or `BlogPosting`
   - Product or app page → `SoftwareApplication` or `Product`
@@ -40,6 +47,14 @@ suede-seo-audit Lane 5. Grade-drop rules and scoring live in SKILL.md.
       are verified and the targeted Google feature calls for them
 - [ ] `Article` schema includes: `headline`, `author`, `datePublished`,
       `dateModified`
+- [ ] Review and rating markup: no fake or undisclosed incentivized reviews on
+      the page or in markup (review snippet guideline, July 2026), and no
+      self-serving `LocalBusiness`/`Organization` stars
+- [ ] Sale prices in merchant markup state the window with `validFrom` and
+      `validThrough` or `priceValidUntil`, matching the visible sale dates
+- [ ] When the preview image matters, the preferred image is declared once and
+      consistently: `primaryImageOfPage`, an image on the main entity, or
+      `og:image` (Google Images doc, March 2026)
 
 When warranted schema is missing or existing markup is broken, provide the
 exact corrected JSON-LD block inline in the findings. Do not describe it only

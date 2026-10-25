@@ -29,7 +29,15 @@ references/schema-templates.md. Grade-drop rules and scoring live in SKILL.md.
 - [ ] `robots.txt` permits the intended Google crawler. Record `*` and
       `Googlebot` rules separately. Check other named crawlers only when the
       audit asks for them; one crawler's rule does not represent another's.
-- [ ] `<meta name="robots">` is absent or set to `index, follow`
+- [ ] `<meta name="robots">` is absent or set to `index, follow`. Search the
+      whole document, body included: Google Search respects robots meta tags
+      outside `<head>` (robots meta doc, March 2026)
+- [ ] HTML document is well under Googlebot's 2MB fetch limit, and canonical,
+      robots, hreflang, JSON-LD and primary content sit early in the source.
+      Bytes past 2MB are not indexed. The offline audit measures this.
+- [ ] Ask the owner whether the Search Console Search generative AI control
+      excludes the property (cannot be checked from outside). Record the
+      answer; the policy decision belongs to `suede-ai-seo`.
 - [ ] If the site publishes a sitemap, the canonical URL is represented where
       appropriate; `<lastmod>` is present only when it accurately reflects a
       significant page update. A sitemap is a discovery aid, not a guarantee.
@@ -128,6 +136,9 @@ A-F grade.
 - [ ] twitter:image: set and accessible without authentication
 
 **Other**
+- [ ] Preferred preview image declared consistently (`og:image`,
+      `primaryImageOfPage`, or an image on the main entity) when the preview
+      matters
 - [ ] Informative images have contextual alt text; decorative images use empty
       alt text or equivalent semantics instead of redundant descriptions
 - [ ] Author or publisher entity name appears in metadata or schema (not just
@@ -226,6 +237,11 @@ Unmarked table: [rows] rows x [columns] columns of <[tag] class="[class]"> | tab
 Page uses <table> anywhere: [yes/no]
 ```
 
+**Deep-link readiness ("Read more" links)**
+- [ ] Key sections are visible on load, not only inside tabs or expanders
+- [ ] No script forces scroll position on load or strips the URL hash
+      fragment with history API calls
+
 **Section coverage and order**
 - [ ] Opening: what the page is and who it serves
 - [ ] Evidence appears near the claims it supports
@@ -285,7 +301,10 @@ pixels). The items below are the audit-specific evidence for those checks.
 
 **Snippet and access controls**
 - [ ] No `nosnippet`, `max-snippet:0`, or `data-nosnippet` on the primary
-      answer unless the owner intends to keep it out of AI features
+      answer unless the owner intends to keep it out of AI features.
+      `nosnippet` also blocks use as a direct input for AI Overviews and AI
+      Mode. The offline audit flags these in source; `X-Robots-Tag` headers
+      need a live check.
 - [ ] Primary answer is in server-rendered HTML text, not only an image,
       canvas, PDF, or client-side widget
 
@@ -441,6 +460,9 @@ Checklist:
 - [ ] Author name and credentials visible when relevant (A: Authoritativeness)
 - [ ] Privacy policy, contact page, and HTTPS present (T: Trustworthiness)
 - [ ] No misleading UI patterns or dark patterns (T: Trustworthiness)
+- [ ] Back returns to the previous page. Back button hijacking is a Google spam
+      policy since April 2026; test in a browser, including pages with ad or
+      third-party scripts (T: Trustworthiness)
 - [ ] Claims are verifiable and sourced (T: Trustworthiness)
 
 ---

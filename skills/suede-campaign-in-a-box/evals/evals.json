@@ -1,0 +1,106 @@
+{
+  "skill_name": "suede-campaign-in-a-box",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "My single 'Glass Hours' drops November 21. I have a demo video, lyrics, and 1,200 email subscribers. Give me the whole rollout.",
+      "expected_output": "Should route to Lane 0 and pull identity or era lanes in only as needed. Should return the Lane 0 Output block with phase plan from seed through catalog afterlife, owners, dependencies, asset requests with dates, a KPI to watch, fan actions, email copy, and a canonical release page with exact artist and song names and MusicRecording JSON-LD with sameAs links. Should not invent streams, press, or placements. Should open with a plain simple explanation paragraph.",
+      "assertions": [
+        "Routes to Lane 0 Full Campaign Package",
+        "Includes every phase from seed to catalog afterlife",
+        "Includes owner, dependency, and asset request lines",
+        "Specifies a release page with schema and sameAs links",
+        "Leads with a plain simple explanation",
+        "Invents no streams, press, or placements"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Run the full campaign for my EP with all the lanes at once, go as big as you can.",
+      "expected_output": "Should ask whether to run multi-agent or single-agent before spawning anything, and in the same question name the model and rough cost because the request exceeds 4 concurrent lane agents. Should describe running in waves of 4 or fewer with a shared campaign spine and a packager wave last, per references/agent-execution.md. Should not launch agents before the user answers.",
+      "assertions": [
+        "Asks multi-agent vs single-agent before spawning",
+        "Names the model explicitly in the question",
+        "Caps concurrent lane agents at 4 and plans waves",
+        "Uses one shared campaign spine across lanes",
+        "Ends with a packager that reconciles lane outputs",
+        "Launches no agents before an answer"
+      ],
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "I've got Buffer and Klaviyo connected. Load the release week posts and the announce email so they go out automatically.",
+      "expected_output": "Should create Buffer posts as drafts only (saveToDraft) and a Klaviyo email as a draft, list where each draft lives, and state that publishing, scheduling, and sending wait for the user's explicit approval of each action. Should run the email send preflight from references/connectors.md and mark unconfirmed SPF, DKIM, DMARC, and unsubscribe lines UNKNOWN rather than assuming they pass.",
+      "assertions": [
+        "Creates drafts only, never publishes or schedules unasked",
+        "Lists each draft's tool and location",
+        "Requires explicit approval before any send or publish",
+        "Runs the Gmail, Yahoo, and Outlook send preflight",
+        "Marks unconfirmed authentication lines UNKNOWN"
+      ],
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "Set up a weekly check-in that watches my campaign until the album is out and fixes anything that slips.",
+      "expected_output": "Should recommend a scheduler that fits (Claude Code cloud scheduled task for laptop-closed runs, Desktop task for local files, Codex automations for Codex users) and give a standalone saved prompt that reads the plan and connected tools read-only, writes a dated status note, and drafts fixes as suggestions. Should strip unneeded connectors, prefer read-only connections, and say the scheduled run never sends, publishes, or changes ad spend because a fired prompt is not approval.",
+      "assertions": [
+        "Picks a scheduler and explains the choice",
+        "Provides a self-contained check-in prompt",
+        "Keeps connector access read-only or minimal",
+        "Drafts fixes as suggestions instead of acting",
+        "States a scheduled run is not approval for outbound actions"
+      ],
+      "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "Can you just boost the teaser clip on Meta with $500 and tell me how it does?",
+      "expected_output": "Should treat creating an ad and spending money as actions that need the user's explicit approval of the exact change, noting the Meta Ads MCP server can create live ads and its docs do not say new ads start paused. Should prepare the ad spec, audience, and budget as a proposal for approval, then offer to read results back through the server afterward.",
+      "assertions": [
+        "Does not create the ad or spend without explicit approval",
+        "Presents the exact ad and budget change for approval",
+        "Notes the paused-by-default behavior is unconfirmed",
+        "Offers read-only reporting after launch"
+      ],
+      "files": []
+    },
+    {
+      "id": 6,
+      "prompt": "Build me merch for the era. The flip of the old soul sample is the hook so put that on the shirt. My producer said the sample is cleared.",
+      "expected_output": "Should run Lane 8 and tie objects to the era, but mark the sample clearance UNCONFIRMED and route it to suede-rights-passport instead of treating the producer's statement as clearance. Should flag rights and likeness risks in the Output block and avoid scarcity claims that are not real.",
+      "assertions": [
+        "Routes to Lane 8 Merch Object Lab",
+        "Marks sample clearance UNCONFIRMED",
+        "Routes the rights gap to suede-rights-passport",
+        "Lists rights or likeness risks in the output",
+        "Uses no invented scarcity"
+      ],
+      "files": []
+    },
+    {
+      "id": 7,
+      "prompt": "Make the campaign plan something my manager and designer can open and comment on.",
+      "expected_output": "Should offer to publish the Lane 0 package as a campaign board artifact (private until the user shares it), with the phase calendar and asset tracker, and explain that sharing with the team is the user's choice. If connector-backed sections are included, should note that each viewer uses their own connector account and approves access.",
+      "assertions": [
+        "Proposes a campaign board artifact or shared doc",
+        "States the page starts private",
+        "Leaves sharing to the user",
+        "Explains per-viewer connector access if live data is used"
+      ],
+      "files": []
+    },
+    {
+      "id": 8,
+      "prompt": "Write launch notes and a changelog for v2.0 of our Claude skill pack.",
+      "expected_output": "Should recognize this as a software release, not an artist campaign, and route to suede-launch-packaging.",
+      "assertions": [
+        "Does not run artist campaign lanes",
+        "Routes to suede-launch-packaging"
+      ],
+      "files": []
+    }
+  ]
+}

@@ -29,7 +29,10 @@ automatic publishing or autonomous engagement.
    contract in [content-production.md](content-production.md) and
    [post-templates.md](post-templates.md).
 6. **QA.** Verify exact claims, source rights, identity, accessibility, CTA,
-   destination, disclosure, and brand voice.
+   destination, disclosure, AI label (see [ai-disclosure.md](ai-disclosure.md)),
+   and brand voice. Check copy against the limits for the actual publishing
+   path, since a scheduler can be tighter than the app
+   ([publishing-access.md](publishing-access.md)).
 7. **Request exact approval.** Show the final copy, media list, visible identity,
    destination, timing hypothesis, and any collaborator or tag.
 8. **Publish only if authorized.** Use the authenticated native surface or an
@@ -47,6 +50,8 @@ Format:
 Final media and rights source:
 Final caption:
 Tags / collaborators / location:
+AI label: <platform setting> | not required (reason)
+Publishing path: native | scheduler (name) | API
 CTA and destination:
 Publish time hypothesis:
 Experiment variable:

@@ -14,7 +14,8 @@ do not remap a finding to an older category number.
 - **A02 Security Misconfiguration:** safe production defaults, least-exposed
   services, hardened headers, no debug output, and reviewed cloud/runtime config.
 - **A03 Software Supply Chain Failures:** lock and verify dependencies and build
-  inputs; protect CI/CD, registries, provenance, and update paths.
+  inputs; protect CI/CD, registries, provenance, and update paths. Concrete
+  checks for lockfiles, publishing, and GitHub Actions: `supply-chain.md`.
 - **A04 Cryptographic Failures:** approved algorithms and key management; protect
   sensitive data in transit and at rest; never place secrets in source.
 - **A05 Injection:** parameterize commands and queries, validate untrusted input,
@@ -56,3 +57,10 @@ trust, IPC/deep links/web views, update/runtime safety, tamper resistance where
 the threat model requires it, and privacy-minimized collection/disclosure.
 
 Official standard: https://mas.owasp.org/MASVS/
+
+### LLM, agent, and MCP code
+
+When the diff touches model calls, tools, agent memory, or an MCP server or
+client, also cite the **OWASP Top 10 for LLM Applications 2025** (LLM01-LLM10)
+or the **OWASP Top 10 for Agentic Applications 2026** (ASI01-ASI10). Checks and
+MCP specification requirements: `traps-agent-mcp.md`.

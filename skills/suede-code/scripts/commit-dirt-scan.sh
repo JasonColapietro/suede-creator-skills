@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
-# commit-dirt-scan.sh — Commit Dirt Score, executed instead of eyeballed.
+# commit-dirt-scan.sh: Commit Dirt Score, executed instead of eyeballed.
 #
 # Scans the added (`+`) lines of a diff for content that should never reach git
 # history and prints one verdict line per category, then an overall rating.
+#
+# Eight categories: secrets, debug artifacts, conflict markers, staged build
+# output, WIP breadcrumbs, exposed internals, CI / supply chain, oversized blobs.
 #
 # Usage:
 #   scripts/commit-dirt-scan.sh                 # scans `git diff HEAD`
@@ -10,7 +13,7 @@
 #   git diff main...HEAD | scripts/commit-dirt-scan.sh -
 #
 # Read-only and advisory: it never stages, reverts, writes, or fails the caller's
-# command. It always exits 0 — the verdict is reported, never enforced.
+# command. It always exits 0; the verdict is reported, never enforced.
 
 set -uo pipefail
 
@@ -37,20 +40,41 @@ check() {
   local label="$1" pattern="$2" corpus="$3" sev="$4" hit
   hit=$(printf '%s\n' "$corpus" | grep -Ein "$pattern" | head -3)
   if [ -n "$hit" ]; then
-    printf '%-26s %s — %s\n' "$label" "$sev" "$(printf '%s' "$hit" | tr '\n' ';' | cut -c1-160)"
+    printf '%-26s %s - %s\n' "$label" "$sev" "$(printf '%s' "$hit" | tr '\n' ';' | cut -c1-160)"
     [ "$sev" = "dirty" ] && DIRTY=1 || SUSPECT=1
   else
-    printf '%-26s clean — none\n' "$label"
+    printf '%-26s clean - none\n' "$label"
   fi
 }
 
 echo "COMMIT DIRT SCORE"
-check "Secrets / credentials:" '(sk_[a-z0-9]|pk_live|ghp_|gho_|xox[baprs]-|AKIA[0-9A-Z]{16}|-----BEGIN [A-Z ]*PRIVATE KEY|(password|passwd|secret|api_?key|token)[[:space:]]*[:=][[:space:]]*["'"'"'][^"'"'"']{8,})' "$ADDED" suspicious
+check "Secrets / credentials:" '(sk_[a-z0-9]|pk_live|gh[pousr]_[A-Za-z0-9_]{20,}|github_pat_[A-Za-z0-9_]{20,}|npm_[A-Za-z0-9]{30,}|xox[baprs]-|AKIA[0-9A-Z]{16}|-----BEGIN [A-Z ]*PRIVATE KEY|(password|passwd|secret|api_?key|token)[[:space:]]*[:=][[:space:]]*["'"'"'][^"'"'"']{8,})' "$ADDED" suspicious
 check "Debug artifacts:" '(console\.(log|debug)|[^a-z]debugger[^a-z]|binding\.pry|byebug|var_dump\(|pprint\(|TODO: ?remove|FIXME: ?before merge|HACK:)' "$ADDED" suspicious
 check "Conflict markers:" '^\+(<{7}|={7}|>{7}|\|{7})' "$(printf '%s\n' "$DIFF" | grep -E '^\+')" dirty
 check "Accidentally staged:" '(^|/)(node_modules|\.next|dist|build|__pycache__)/|\.(pyc|DS_Store|log|sqlite|db)$' "$PATHS" dirty
 check "WIP breadcrumbs:" '(\[WIP\]|DO NOT MERGE|TEMP:|SKIP CI|lorem ipsum|[^a-z]asdf[^a-z])' "$ADDED" suspicious
 check "Exposed internals:" '(https?://(localhost|127\.0\.0\.1|10\.[0-9]+\.|192\.168\.)|https?://[a-z0-9.-]*(staging|internal)[a-z0-9.-]*/|[a-z0-9._%+-]+@(gmail|yahoo|hotmail|outlook)\.com)' "$ADDED" suspicious
+
+# CI and supply chain: added lines in .github/workflows/*.yml that use a
+# third-party action not pinned to a full commit SHA, or the pull_request_target
+# trigger; plus `curl | sh` style installs anywhere in the diff.
+WF_ADDED=$(printf '%s\n' "$DIFF" | awk '
+  /^\+\+\+ / { f = $2; sub(/^b\//, "", f); next }
+  /^\+/ && f ~ /^\.github\/workflows\/[^\/]+\.ya?ml$/ { print f ": " substr($0, 2) }')
+CI_HIT=$(
+  {
+    printf '%s\n' "$WF_ADDED" | grep -E 'pull_request_target'
+    printf '%s\n' "$ADDED" | grep -Ei '(curl|wget)[^|]*\|[[:space:]]*(sudo[[:space:]]+)?(ba|z)?sh([[:space:]]|$)'
+    printf '%s\n' "$WF_ADDED" | grep -E 'uses:[[:space:]]*["'"'"']?[A-Za-z0-9_.-]+/[^@[:space:]]+@' \
+      | grep -Ev '@[0-9a-f]{40}([^0-9a-f]|$)' | sed 's/$/ (not SHA-pinned)/'
+  } | grep -v '^$' | tr -s ' ' | head -3
+)
+if [ -n "$CI_HIT" ]; then
+  printf '%-26s suspicious - %s\n' "CI / supply chain:" "$(printf '%s' "$CI_HIT" | tr '\n' ';' | cut -c1-160)"
+  SUSPECT=1
+else
+  printf '%-26s clean - none\n' "CI / supply chain:"
+fi
 
 # Oversized or binary blobs: binary markers in the diff, plus changed files >500 KB.
 BIG=$(printf '%s\n' "$DIFF" | grep -E '^(Binary files|GIT binary patch)' | head -2)
@@ -60,10 +84,10 @@ while IFS= read -r p; do
   [ -n "$sz" ] && [ "$sz" -gt 512000 ] && BIG="$BIG${BIG:+; }$p (${sz}B)"
 done <<< "$PATHS"
 if [ -n "$BIG" ]; then
-  printf '%-26s dirty — %s\n' "Oversized / binary:" "$(printf '%s' "$BIG" | tr '\n' ';' | cut -c1-160)"
+  printf '%-26s dirty - %s\n' "Oversized / binary:" "$(printf '%s' "$BIG" | tr '\n' ';' | cut -c1-160)"
   DIRTY=1
 else
-  printf '%-26s clean — none\n' "Oversized / binary:"
+  printf '%-26s clean - none\n' "Oversized / binary:"
 fi
 
 if [ "$DIRTY" = 1 ]; then

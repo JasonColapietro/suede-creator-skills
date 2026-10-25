@@ -52,7 +52,7 @@ async function main() {
       const url = new URL(p.url);
       if (url.origin !== origin.origin || url.href !== p.url || url.hash || url.username || url.password || seen.has(url.href)) throw new Error('Invalid, duplicate or foreign page URL');
       seen.add(url.href);
-      if (typeof p.html !== 'string' || Buffer.byteLength(p.html) > 2_000_000) throw new Error('Each page requires HTML of at most 2 MB');
+      if (typeof p.html !== 'string' || Buffer.byteLength(p.html) > 4_000_000) throw new Error('Each page requires HTML of at most 4 MB');
       return parsePage(p.html, url.href);
     });
     const snapshot = createMetadataSnapshot(pages, { origin: origin.origin, sourceKind: 'supplied', complete: false });

@@ -194,3 +194,10 @@ Use the smallest useful loop, but make quality measurable:
    same root cause repeats and hand the call to the user.
 7. End with evidence: changed files, commands, screenshots or URLs, caveats,
    status, and exact next action.
+
+## Automating a Gate
+
+In Claude Code, any gate above can run on every stop as a user-installed
+hook. Recipes, report vs. enforce modes, and the loop guard are in
+`references/hook-gates.md`. Offer them only when the user asks; the gates
+stay advisory unless the user installs a blocking hook themselves.

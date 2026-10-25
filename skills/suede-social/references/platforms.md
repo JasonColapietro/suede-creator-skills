@@ -12,6 +12,7 @@ account evidence is unavailable.
 - Instagram
 - TikTok
 - Facebook
+- Threads and Bluesky
 
 ## LinkedIn
 
@@ -51,6 +52,17 @@ activity; if unavailable, rotate morning, midday, and evening slots
 - Test text, document, link, and poll formats against the account baseline.
 - Do not infer authority or algorithm preference from one high-reach post.
 
+**Documented ranking change (March 2026):** LinkedIn's engineering blog
+described a feed rebuilt on one LLM-based retrieval model and a transformer
+ranker that reads a member's history of likes, comments, and dwell time.
+LinkedIn also said it acts against comment-automation tools, browser
+extensions, and engagement pods, and shows less engagement bait and recycled
+thought leadership. Planning effect: write for topical relevance to a clear
+professional audience, never ask for "Yes" comments, and never use pods.
+Sources: https://www.linkedin.com/blog/engineering/feed/engineering-the-next-generation-of-linkedins-feed ;
+https://searchengineland.com/linkedin-updates-feed-algorithm-llm-ranking-retrieval-471708
+(checked 2026-10-25).
+
 ---
 
 ## Twitter/X
@@ -89,6 +101,17 @@ three audience-local windows across comparable posts
 - Test response timing rather than assuming a first-30-minute advantage.
 - Do not infer paid-account distribution benefits without a controlled
   account-level comparison and current platform documentation.
+
+**Published ranking code (January 20, 2026):** X open-sourced its Grok-based
+For You ranker at https://github.com/xai-org/x-algorithm (checked 2026-10-25).
+The README scores each post as a weighted sum of predicted actions. Positive
+ones include like, reply, repost, quote, share, profile and link clicks, dwell,
+and follow. Negative ones are not interested, mute, block, report, and not
+dwelled. Later posts from the same author decay, out-of-network posts take a
+discount, and small authors get a boost toward a target position. Weights in
+the repo may differ from production. Planning effect: bait that draws mutes or
+"not interested" taps costs reach, and posting in bursts competes with itself.
+Treat these as hypotheses to compare, not tuning knobs.
 
 ---
 
@@ -194,3 +217,26 @@ unavailable, rotate midday and early-evening slots
 - Pure promotional content
 - Ignoring comments
 - Cross-posting from other platforms without adaptation
+
+**Verified change:** since June 2025 every Facebook video posts as a Reel, with
+no length or format restriction, and Feed posts and Reels share one default
+audience. Meta said recommendations did not change. Source:
+https://about.fb.com/news/2025/06/making-it-easier-create-videos-facebook/
+
+---
+
+## Threads and Bluesky
+
+**Fit hypothesis:** text-first conversation; Threads for audiences already on
+Instagram, Bluesky for tech, media, and research communities.
+**Starting cadence hypothesis:** 3 to 5 posts per week plus replies, for a
+four-week test.
+
+**Format notes (limits in [platform-limits.md](platform-limits.md)):**
+- Threads: 500-character posts, one topic tag, and an optional 10,000-character
+  text attachment. The attachment is not indexed by Google, so a searchable
+  claim belongs in the post itself or on the site.
+- Bluesky: 300-grapheme posts, up to 4 images, video up to 3 minutes. Custom
+  feeds and topic search are both worth comparing for reach.
+- Neither platform's ranking has a public weighting document that this skill
+  verified. Test against the account's own baseline.

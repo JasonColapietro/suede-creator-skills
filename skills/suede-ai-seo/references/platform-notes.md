@@ -1,6 +1,6 @@
 # Platform Notes: How Each Answer Engine Finds Sources
 
-Verified against primary documentation on 2026-10-23 unless marked otherwise.
+Verified against primary documentation on 2026-10-25 unless marked otherwise.
 Answer engines change retrieval, crawlers, and reporting often. Re-check the
 linked source before a client deliverable states any of this as current.
 
@@ -33,18 +33,34 @@ them as facts.
   appears. `Google-Extended` controls Gemini training and grounding in Gemini
   Apps and Vertex AI; Google says it does not affect Search inclusion or
   ranking and is not a Search ranking signal.
-- Reporting: AI feature traffic is counted in the Performance report under
-  search type Web. Google introduced a Search Generative AI performance report
-  in June 2026: impressions by page, country, device (Search only), and date;
-  no click or query data; hidden for sites below an unpublished impressions
-  threshold. Rollout status should be checked in the property itself.
+- Search Console control (all sites since 2026-08-31): Settings > Search
+  generative AI lets a property include (default), exclude, or inherit.
+  Exclude removes the site's links and content as inputs to AI Overviews,
+  AI Mode, and generative AI features in Discover within one to two days.
+  Google says it is not a ranking or inclusion signal for the rest of Search
+  and does not touch training (`Google-Extended` does). The optimization guide
+  now lists being included in this setting as an eligibility condition.
+- Reporting: AI feature traffic is still counted in the Performance report
+  under search type Web. The Generative AI performance report (Search),
+  announced 2026-06-03 and rolled out to all sites worldwide as of
+  2026-08-31, shows impressions only (links to the site shown in AI Overviews
+  or AI Mode), with Pages, Countries, Devices, and Dates tabs and a search-type
+  filter for "Web: text-based" and "Web: multimodal" (Lens, Circle to Search).
+  No clicks or queries. Search Labs experiments are excluded. The chart counts
+  one impression per property per feature; page rows count per page, so totals
+  differ. Low-impression sites can see an empty report, and excluded sites get
+  none. A matching Discover report shows generative AI impressions in Discover.
 - Agentic experiences: Google names the Universal Commerce Protocol (UCP) as
-  emerging, not a current requirement.
+  emerging, not a current requirement. See `agent-readiness.md` for UCP
+  checkout status, the `Google-Agent` fetcher, and WebMCP.
 
 Sources:
-- https://developers.google.com/search/docs/appearance/ai-features
-- https://developers.google.com/search/docs/fundamentals/ai-optimization-guide
+- https://developers.google.com/search/docs/appearance/ai-features (page updated 2025-12-10)
+- https://developers.google.com/search/docs/fundamentals/ai-optimization-guide (updated 2026-07-10)
 - https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports
+- Generative AI performance report (Search): https://support.google.com/webmasters/answer/16984139
+- Generative AI performance report (Discover): https://support.google.com/webmasters/answer/16983858
+- Include or exclude from Search generative AI features: https://support.google.com/webmasters/answer/16908024
 - https://developers.google.com/crawling/docs/crawlers-fetchers/google-common-crawlers
 
 ## ChatGPT search (OpenAI)
@@ -58,10 +74,20 @@ Sources:
   does not decide search inclusion.
 - `OAI-AdsBot` validates pages submitted as ChatGPT ads only.
 - robots.txt changes take about 24 hours to apply.
-- ChatGPT links commonly carry `utm_source=chatgpt.com`; confirm in your own
-  GA4 data rather than assuming every click is tagged.
+- OpenAI's publisher FAQ says ChatGPT adds `utm_source=chatgpt.com` to
+  referral URLs from search results. Confirm in your own GA4 data; clicks from
+  other ChatGPT surfaces or apps may arrive untagged.
+- Shopping: merchants send product feeds (CSV or JSON, daily snapshot plus API
+  updates) under the Agentic Commerce Protocol. Feed onboarding and Instant
+  Checkout are limited to approved partners who apply at chatgpt.com/merchants.
+  OpenAI says optional attributes such as rich media and reviews can improve
+  ranking and relevance; it publishes no other ranking guidance. Details in
+  `agent-readiness.md`.
 
-Source: https://developers.openai.com/api/docs/bots
+Sources:
+- https://developers.openai.com/api/docs/bots
+- https://help.openai.com/en/articles/12627856
+- https://developers.openai.com/commerce/guides/key-concepts
 
 ## Claude (Anthropic)
 
@@ -92,29 +118,62 @@ Source: https://docs.perplexity.ai/docs/resources/perplexity-crawlers
 - Copilot grounds answers on the Bing index; a page Bing has not indexed cannot
   be cited there. Verify the site in Bing Webmaster Tools, submit sitemaps, and
   allow `Bingbot`.
-- Bing Webmaster Tools AI Performance report (public preview, February 2026):
-  total citations, unique cited pages, page-level citation counts, and the
-  grounding queries that triggered citations, exportable as CSV; no API at
-  preview.
+- Bing Webmaster Tools AI Performance (public preview since 2026-02-10)
+  covers Microsoft Copilot, AI-generated summaries in Bing, and select partner
+  integrations. Metrics: Total Citations, Average Cited Pages (daily unique
+  pages cited), a sample of grounding queries, page-level citation counts, and
+  trends. Microsoft states these do not indicate ranking or page importance.
+- June 16, 2026 preview additions: Intents (grounding queries grouped as
+  Informational, Commercial, Navigational, Learn and Solve, Research,
+  Creation, Local), Topics, Citation Share (the site's percentage of all
+  citations shown for the same grounding query; competitor domains are not
+  exposed), and Compare (overlay a prior period).
+- October 13, 2026: Topics Portfolio (beta) clusters grounding queries and
+  lists Top Opportunity Queries where other sites are cited and yours is not.
+  Shown only with sufficient data; Microsoft calls the numbers directional.
+- Microsoft's posts do not mention export or an API. Check the interface.
 - IndexNow notifies participating engines (including Bing) of changed URLs.
   Google does not participate.
 
 Sources:
+- https://blogs.bing.com/webmaster/2026/2/Introducing-AI-Performance-in-Bing-Webmaster-Tools-Public-Preview/
+- https://blogs.bing.com/search/June-2026/New-AI-Visibility-Insights-in-Bing-Webmaster-Tools-Intents-Topics-Citation-Share-Compare
+- https://blogs.bing.com/webmaster/2026/10/introducing-topics-portfolio-beta-in-ai-performance/
 - https://www.bing.com/webmasters
 - https://www.indexnow.org/
-- Secondary report of the AI Performance preview:
-  https://www.searchinfluence.com/blog/bing-ai-performance-report-copilot-citations/
+
+## Apple, Meta, and Amazon assistants
+
+None of these publish a citation or reporting program for site owners. What
+is documented is crawler control (see `ai-crawlers.md`):
+
+- Apple: `Applebot` powers Spotlight, Siri, and Safari search;
+  `Applebot-Extended` is a non-crawling token for opting out of generative
+  model training without leaving search.
+- Meta: `Meta-WebIndexer` lets Meta AI cite and link; `Meta-ExternalAgent` is
+  the training and product-indexing crawler; `Meta-ExternalFetcher` handles
+  user-requested fetches.
+- Amazon: `Amzn-SearchBot` for search experiences (not training), `Amzn-User`
+  for live Alexa-style user requests, `Amazonbot` for product improvement that
+  may include training.
+
+Sources: https://support.apple.com/en-us/119829,
+https://developers.facebook.com/docs/sharing/webmasters/web-crawlers/,
+https://developer.amazon.com/amazonbot (all checked 2026-10-25)
 
 ## Gemini app
 
 - Grounds on Google Search. `Google-Extended` opts content out of Gemini
   training and Gemini Apps grounding without touching Search.
+- Pages users add to Gemini notebooks are fetched by `Google-GeminiNotebook`
+  (formerly `Google-NotebookLM`), which generally ignores robots.txt.
 
 ## What this means for prioritization
 
 1. Google: classic SEO plus original, people-first content. No AI-only tactics.
 2. ChatGPT: allow `OAI-SearchBot`; earn corroboration on sites ChatGPT cites.
-3. Copilot: Bing indexation and IndexNow; read the AI Performance report.
+3. Copilot: Bing indexation and IndexNow; read AI Performance, Citation Share,
+   and Topics Portfolio opportunity queries.
 4. Perplexity and Claude: allow their search and user agents; publish quotable,
    sourced passages.
 5. Everywhere: one consistent entity and third-party consensus.

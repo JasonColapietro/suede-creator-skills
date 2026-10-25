@@ -77,7 +77,13 @@ function alternateUrl(value) {
   return url && !new URL(url).hash ? url : null;
 }
 
-export function extractTechnical(html, url) {
+// Googlebot for Google Search fetches the first 2MB of an HTML or other
+// supported text file and indexes only what it downloaded (Googlebot doc,
+// updated 2026-02-03). The decimal reading is the conservative cutoff.
+export const GOOGLEBOT_FETCH_LIMIT = 2_000_000;
+const JS_TYPES = new Set(["", "module", "text/javascript", "application/javascript", "application/ecmascript", "text/ecmascript"]);
+
+export function extractTechnical(html, url, { budget = true } = {}) {
   const elements = [...tags(html)];
   const head = [];
   // HTML permits omitted head start/end tags. Stop the implicit head at the
@@ -94,8 +100,12 @@ export function extractTechnical(html, url) {
   const links = head.filter((e) => e.name === "link");
   const hasRel = (e, rel) => (e.attrs.rel ?? "").toLowerCase().split(/\s+/).includes(rel);
   const canonical = links.find((e) => hasRel(e, "canonical"));
-  const robots = head.filter((e) => e.name === "meta" && ["robots", "googlebot", "googlebot-news", "bingbot"].includes((e.attrs.name ?? "").toLowerCase()))
+  // Google Search respects robots meta tags in the body as well as the head
+  // (robots meta tag doc, updated 2026-03-24), so collect them everywhere.
+  const isRobots = (e) => e.name === "meta" && !e.closing && ["robots", "googlebot", "googlebot-news", "bingbot"].includes((e.attrs.name ?? "").toLowerCase());
+  const robots = elements.filter(isRobots)
     .map((e) => ({ agent: e.attrs.name.toLowerCase(), content: e.attrs.content ?? "" }));
+  const robotsOutsideHead = robots.length - head.filter(isRobots).length;
   const cleanText = (value) => decode(value).replace(/\s+/g, " ").trim();
   const h1s = [];
   let heading = null;
@@ -121,8 +131,34 @@ export function extractTechnical(html, url) {
     try { return { valid: true, value: JSON.parse(e.rawText) }; }
     catch (error) { return { valid: false, error: error.message }; }
   });
+  const scripts = elements.filter((e) => e.name === "script" && !e.closing && JS_TYPES.has((e.attrs.type ?? "").trim().toLowerCase().split(";")[0]))
+    .map((e) => {
+      const src = (e.attrs.src ?? "").trim();
+      const code = src ? "" : e.rawText ?? "";
+      return { external: Boolean(src), src,
+        popstate: /popstate\b/i.test(code),
+        historyWrite: /\bhistory\s*\.\s*(?:pushState|replaceState)\s*\(/.test(code) };
+    });
+  const htmlBytes = Buffer.byteLength(String(html));
+  let fetchBudget = null;
+  if (budget) {
+    fetchBudget = { bytes: htmlBytes, limit: GOOGLEBOT_FETCH_LIMIT, beyondLimit: [] };
+    if (htmlBytes > GOOGLEBOT_FETCH_LIMIT) {
+      const kept = extractTechnical(Buffer.from(String(html)).subarray(0, GOOGLEBOT_FETCH_LIMIT).toString("utf8"), url, { budget: false });
+      const full = { title: cleanText(head.find((e) => e.name === "title")?.rawText ?? ""), h1: h1s[0] ?? "",
+        canonical: canonical?.attrs.href?.trim() ? httpUrl(canonical.attrs.href.trim(), baseUrl) : null };
+      if (kept.title !== full.title) fetchBudget.beyondLimit.push("title");
+      if (kept.h1 !== full.h1) fetchBudget.beyondLimit.push("h1");
+      if (kept.canonical !== full.canonical) fetchBudget.beyondLimit.push("canonical");
+      if (kept.robots.length !== robots.length) fetchBudget.beyondLimit.push("robots meta");
+      if (kept.jsonLd.filter((j) => j.valid).length !== jsonLd.filter((j) => j.valid).length) fetchBudget.beyondLimit.push("JSON-LD");
+      if (kept.hreflang.length !== links.filter((e) => hasRel(e, "alternate") && "hreflang" in e.attrs).length) fetchBudget.beyondLimit.push("hreflang");
+      if (kept.headings.length !== headings.length) fetchBudget.beyondLimit.push("headings");
+    }
+  }
   return {
-    baseUrl, headings,
+    baseUrl, headings, robotsOutsideHead, scripts, fetchBudget,
+    dataNosnippet: elements.filter((e) => !e.closing && e.name !== "#text" && e.attrs && "data-nosnippet" in e.attrs).length,
     title: cleanText(head.find((e) => e.name === "title")?.rawText ?? ""),
     description: head.find((e) => e.name === "meta" && (e.attrs.name ?? "").toLowerCase() === "description")?.attrs.content ?? "",
     h1: h1s[0] ?? "",

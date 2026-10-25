@@ -57,6 +57,10 @@ node --test scripts/tests/*.test.mjs
   including local graph references, active prices/currency, availability,
   supplied identifiers and variant relationships. Never invent prices, ratings,
   shipping or return policies. This is source review, not eligibility certification.
+- Lanes 1, 5, 6, 8: every audit adds search eligibility signals: HTML past
+  Googlebot's 2MB fetch limit (and which tags fall past it), robots meta in
+  the body, `nosnippet`/`max-snippet:0`, markup for retired rich results, and
+  the inline back-button-trap pattern for browser review.
 - Lane 0/9: cluster supplied organic-result exports by same-depth document URL
   overlap. Require collection context; deterministic complete-link grouping avoids
   transitive chains. Demand and current rankings stay unknown.
@@ -68,11 +72,12 @@ they do not replace live verification or change the audit's routing boundaries.
 ## Current rules
 
 Before applying any Google-specific rule, read
-`references/google-search-guidance.md` (verified 2026-10-23). It records what
+`references/google-search-guidance.md` (verified 2026-10-25). It records what
 changed recently and must be re-checked before a ship decision: FAQ rich
-results ended in May 2026, several structured data features were retired in
-2025, AI Overviews and AI Mode have no extra technical requirements, and
-Search Console now has a Search Generative AI performance report.
+results ended in May 2026, back button hijacking became a spam policy in April
+2026, Googlebot indexes only the first 2MB of HTML, owners can exclude a site
+from AI features with a Search Console control, and Search Console added
+Search Generative AI and multimodal reporting.
 
 ## 1. Source truth
 
@@ -356,6 +361,8 @@ ship | ship-with-caveats | hold        Reason:
 - "I'll describe the schema fix." Write the JSON-LD.
 - "Add FAQPage so it gets rich results." Google ended FAQ rich results in May
   2026. Recommend FAQ markup only to mirror visible Q&A for entity clarity.
+- "No AI Overview impressions, so the content is the problem." Ask whether
+  the Search generative AI control excludes the site first.
 - "The title crossed 60 characters." Google publishes no fixed limit; judge
   truncation in context.
 - "A traffic estimate will make this land harder." Never invent traffic,
