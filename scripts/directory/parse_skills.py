@@ -49,39 +49,48 @@ LICENSE_PATTERNS = [
 
 
 def detect_license_text(text):
+    declarations = re.findall(r"(?im)^[ \t]*SPDX-License-Identifier:[ \t]*([^\n]*)", text)
+    if declarations:
+        unique = list(dict.fromkeys(d.strip() for d in declarations))
+        if len(unique) != 1 or not unique[0]:
+            return "Other"
+        return unique[0]
     for spdx, pat in LICENSE_PATTERNS:
         if pat.search(text[:20000]):
             return spdx
     return None
 
 
-def find_license(start: Path, repo_root: Path):
-    """Nearest LICENSE file walking up from the skill dir to the repo root."""
+def license_evidence(start: Path, repo_root: Path):
+    """All evidence at the nearest licensing scope, without inferring a choice."""
     cur = start
     while True:
-        for name in ("LICENSE", "LICENSE.md", "LICENSE.txt", "LICENSE.TXT", "LICENCE", "LICENSE.MD", "license", "License.txt", "COPYING"):
-            p = cur / name
-            if p.is_file():
+        files = sorted(p for p in cur.iterdir() if p.is_file() and
+                       (re.fullmatch(r"licen[cs]e(?:\.(?:md|txt)|-.*)?", p.name, re.I)
+                        or p.name == "COPYING"))
+        if files:
+            evidence = []
+            for p in files:
                 try:
-                    lic = detect_license_text(p.read_text(errors="ignore"))
+                    label = detect_license_text(p.read_text(errors="ignore"))
                 except OSError:
-                    lic = None
-                return lic or "Other", str(p.relative_to(repo_root))
-        # Dual-licensed projects (common in Rust) ship LICENSE-MIT and
-        # LICENSE-APACHE side by side instead of a single LICENSE file.
-        variants = sorted(p for p in cur.glob("LICEN[CS]E-*") if p.is_file())
-        if variants:
-            found = []
-            for p in variants:
-                try:
-                    lic = detect_license_text(p.read_text(errors="ignore"))
-                except OSError:
-                    lic = None
-                if lic and lic not in found:
-                    found.append(lic)
-            if found:
-                return " OR ".join(sorted(found)), str(variants[0].relative_to(repo_root))
-            return "Other", str(variants[0].relative_to(repo_root))
+                    label = None
+                evidence.append({"label": label or "Other", "file": str(p.relative_to(repo_root))})
+            return evidence
+        if cur == repo_root:
+            return []
+        cur = cur.parent
+
+
+def find_license(start: Path, repo_root: Path):
+    """Nearest license evidence; multiple files require review of all terms."""
+    evidence = license_evidence(start, repo_root)
+    if len(evidence) == 1:
+        return evidence[0]["label"], evidence[0]["file"]
+    if evidence:
+        return "Multiple license files; review terms", str(Path(evidence[0]["file"]).parent)
+    cur = repo_root
+    while True:
         if cur == repo_root:
             readme = cur / "README.md"
             if readme.is_file():
@@ -319,6 +328,7 @@ def parse_skill(path: Path, repo_root: Path):
     lic, lic_file = find_license(skill_dir, repo_root)
     rec["repo_license"] = lic
     rec["license_file"] = lic_file
+    rec["license_evidence"] = license_evidence(skill_dir, repo_root)
     return rec
 
 
