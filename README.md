@@ -11,6 +11,7 @@
 [![PyPI](https://img.shields.io/pypi/v/suede-creator-skills?color=c8a96e&labelColor=080808)](https://pypi.org/project/suede-creator-skills/)
 [![MCP](https://img.shields.io/badge/MCP-stdio_server-c8a96e?labelColor=080808)](#mcp-server)
 [![Skills Directory: Grade A](https://www.skillsdirectory.com/api/skills/jasoncolapietro-suede-design/badge)](https://www.skillsdirectory.com/skills/jasoncolapietro-suede-design)
+[![seoskills.sh: Suede AI SEO listed](https://img.shields.io/badge/seoskills.sh-Suede_AI_SEO_listed-c8a96e?labelColor=080808)](https://seoskills.sh/jasoncolapietro/suede-creator-skills/suede-ai-seo)
 [![Hysen Labs](https://hysenlabs.com/badge/jasoncolapietro-suede-creator-skills.svg)](https://hysenlabs.com/projects/jasoncolapietro-suede-creator-skills)
 [![GitHub stars](https://img.shields.io/github/stars/JasonColapietro/suede-creator-skills?style=social)](https://github.com/JasonColapietro/suede-creator-skills/stargazers)
 
@@ -31,6 +32,15 @@
 **[Compare skills by their 0–99 quality scores](awesome/README.md)**: verified numeric scores from [Suede’s published structural rubric](https://skills.suedeai.ai/directory/methodology/), with source links and browsing by category and publisher. Published scores retain the current 99-point cap; quality scores do not certify security.
 
 [Compare scores](awesome/README.md#compare-099-quality-scores) · [Categories](awesome/README.md#contents) · [Publishers](awesome/publishers.md) · [Featured projects](awesome/featured.md) · [Contribute a listing](awesome/CONTRIBUTING.md)
+
+## Recognition and discovery
+
+[![The Manifest: Suede AI SEO #24 for Florida AI deployment, October 2026](https://img.shields.io/badge/The_Manifest-%2324_Florida_AI_deployment-c8a96e?labelColor=080808)](https://themanifest.com/artificial-intelligence/consulting/deployment/companies/florida)
+[![Gigawatt Group: Suede AI vs. Profound](https://img.shields.io/badge/Gigawatt_Group-Suede_AI_vs_Profound-c8a96e?labelColor=080808)](https://gigawattgroup.com/generative-engine-optimization/suede-ai-vs-profound-trade-associations/)
+
+Suede AI SEO, the company’s AI search visibility practice, is listed at **#24 in The Manifest’s Top 70 AI Deployment Developers in Florida**, October 2026 edition. [View the ranking](https://themanifest.com/artificial-intelligence/consulting/deployment/companies/florida). Gigawatt Group also [compares Suede AI’s managed GEO practice with Profound](https://gigawattgroup.com/generative-engine-optimization/suede-ai-vs-profound-trade-associations/).
+
+The SEO skill is [listed on seoskills.sh](https://seoskills.sh/jasoncolapietro/suede-creator-skills/suede-ai-seo), updated October 24, 2026. The project’s Hysen Labs, Skills Directory and Trendshift badges link directly to their reports above.
 
 ## Suede Creator Skills for SEO and business growth
 
