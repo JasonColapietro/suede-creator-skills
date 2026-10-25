@@ -11,6 +11,7 @@
 [![PyPI](https://img.shields.io/pypi/v/suede-creator-skills?color=c8a96e&labelColor=080808)](https://pypi.org/project/suede-creator-skills/)
 [![MCP](https://img.shields.io/badge/MCP-stdio_server-c8a96e?labelColor=080808)](#mcp-server)
 [![Skills Directory: Grade A](https://www.skillsdirectory.com/api/skills/jasoncolapietro-suede-design/badge)](https://www.skillsdirectory.com/skills/jasoncolapietro-suede-design)
+[![Hysen Labs](https://hysenlabs.com/badge/jasoncolapietro-suede-creator-skills.svg)](https://hysenlabs.com/projects/jasoncolapietro-suede-creator-skills)
 [![GitHub stars](https://img.shields.io/github/stars/JasonColapietro/suede-creator-skills?style=social)](https://github.com/JasonColapietro/suede-creator-skills/stargazers)
 
 <a href="https://trendshift.io/repositories/82031?utm_source=trendshift-badge&amp;utm_medium=badge&amp;utm_campaign=badge-trendshift-82031" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/82031/daily?language=Python" alt="JasonColapietro%2Fsuede-creator-skills | Trendshift" width="250" height="55"/></a>
