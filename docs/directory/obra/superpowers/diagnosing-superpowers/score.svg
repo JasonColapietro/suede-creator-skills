@@ -27,4 +27,4 @@
 
 <text id="score-value" x="320" y="539" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="24" font-weight="700" letter-spacing="2" fill="#ebc96d">90 / 100</text>
 <path d="M310 574l10-10 10 10-10 10z" fill="#ebc96d"/>
-</svg>
+<rect x="32" y="635" width="576" height="62" rx="10" fill="#131219"/><text x="320" y="659" text-anchor="middle" font-family="sans-serif" font-size="27" fill="#f2f0e8">STRUCTURAL QUALITY ONLY</text><text x="320" y="687" text-anchor="middle" font-family="sans-serif" font-size="25" fill="#f2f0e8">NO SECURITY CERTIFICATION</text></svg>
