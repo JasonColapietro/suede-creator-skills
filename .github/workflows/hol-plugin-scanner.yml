@@ -48,7 +48,7 @@ jobs:
           name: hol-security-${{ github.event.pull_request.head.sha || github.sha }}
           path: ai-plugin-scanner.sarif
           if-no-files-found: error
-          retention-days: 30
+          retention-days: 14
 
       - name: Show scanner finding locations after failure
         if: failure()

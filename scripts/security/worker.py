@@ -67,7 +67,10 @@ def scan_target(target, profile, scanner, logs, source_base=Path('/source')):
         # Cisco omits this field on successful scans; only this trusted SDK adapter normalizes it.
         result.setdefault('analyzers_failed', [])
         for warning in caught:
-            logs.events.append({'logger': 'python', 'level': 'WARNING', 'message': str(warning.message)[:2000]})
+            # Dependency API deprecations are retained as maintenance diagnostics.
+            # They do not indicate skipped target analysis; all other warnings block.
+            logs.events.append({'logger': 'python', 'level': 'WARNING', 'category': warning.category.__name__,
+                                'blocking': not issubclass(warning.category, DeprecationWarning), 'message': str(warning.message)[:2000]})
         for finding in result.get('findings', []):
             rule = finding.get('rule_id', '')
             if any(token in rule for token in ('INCOMPLETE', 'LIMIT', 'LOAD_FAILED', 'LOAD_REJECTED', 'UNANALYZABLE')):
@@ -75,7 +78,7 @@ def scan_target(target, profile, scanner, logs, source_base=Path('/source')):
         after, _ = inventory(root)
         if files != after:
             raise ValueError('source_changed_during_scan')
-        if logs.events:
+        if any(event.get('blocking', True) for event in logs.events):
             skipped.append({'reason': 'scanner_warnings_or_errors'})
         record.update(state='completed', analysis=result, diagnostics=logs.events,
                       coverage={'complete': not skipped, 'files': files, 'skipped': skipped})

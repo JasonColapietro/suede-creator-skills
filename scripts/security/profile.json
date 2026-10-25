@@ -1,6 +1,7 @@
 {
   "name": "cisco-ai-skill-scanner",
   "version": "2.3.1",
+  "adapter_version": 2,
   "analyzers": ["static_analyzer", "bytecode", "pipeline", "correlation", "behavioral_analyzer"],
   "policy": "strict",
   "cel_mode": "shadow",

@@ -115,6 +115,25 @@ class PinnedSourceTests(unittest.TestCase):
             complete = next(record for record in retained if record['state'] == 'completed')
             self.assertEqual(complete['analysis']['findings'], [{'severity': 'HIGH'}])
 
+    def test_deprecations_are_retained_while_analysis_warnings_block(self):
+        import warnings
+        class Result:
+            def to_dict(self):
+                return {'findings': [], 'findings_count': 0, 'analyzers_used': scan.PROFILE['analyzers']}
+        class Scanner:
+            def __init__(self, category): self.category = category
+            def scan_skill(self, root):
+                warnings.warn('fixture diagnostic', self.category)
+                return Result()
+        with tempfile.TemporaryDirectory() as tmp:
+            base = Path(tmp); target = base / 'target-000'; target.mkdir()
+            (target / 'SKILL.md').write_text('Source data')
+            for category, complete in [(DeprecationWarning, True), (RuntimeWarning, False)]:
+                record = worker.scan_target({'directory': target.name, 'source': {}}, scan.PROFILE, Scanner(category), worker.ScanLogs(), base)
+                self.assertEqual(record['coverage']['complete'], complete)
+                self.assertEqual(record['diagnostics'][0]['category'], category.__name__)
+                self.assertEqual(record['diagnostics'][0]['blocking'], not complete)
+
 
 def re_hash(value):
     return len(value) == 64 and all(c in '0123456789abcdef' for c in value)

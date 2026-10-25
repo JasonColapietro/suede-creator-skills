@@ -37,4 +37,4 @@ jobs:
           name: source-security-${{ github.event.pull_request.head.sha || github.sha }}
           path: audits/security-*
           if-no-files-found: error
-          retention-days: 30
+          retention-days: 14
