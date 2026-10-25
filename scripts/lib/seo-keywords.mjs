@@ -477,6 +477,14 @@ export const SEO_KEYWORDS = {
     "image compression",
     "Suede Creator Skills",
   ],
+  "skills/suede-influencer-outreach.html": [
+    "influencer outreach",
+    "creator outreach",
+    "influencer pitch",
+    "creator partnerships",
+    "collab proposal",
+    "Suede Creator Skills",
+  ],
   "skills/suede-launch-packaging.html": [
     "launch packaging",
     "install verification",
