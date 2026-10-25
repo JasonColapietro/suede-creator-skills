@@ -181,6 +181,32 @@ elif not any(a.endswith("curate.py") for a in args):
             self.assertEqual(readme.read_text(), "No repositories selected.\n")
         self.assertTrue((self.work / "src/fixture__skills/.git").is_dir())
 
+    def test_dual_license_files_are_detected(self):
+        (self.upstream / "LICENSE").unlink()
+        (self.upstream / "LICENSE-MIT").write_text("MIT License\n")
+        (self.upstream / "LICENSE-APACHE").write_text("Apache License Version 2.0\n")
+        self.commit("dual license")
+        self.git("-C", str(self.upstream), "push", "-q", str(self.remotes / "fixture/skills"), "main")
+        parsed = self.refresh()["fixture__skills"]["parsed"][0]
+        self.assertEqual((parsed["repo_license"], parsed["license_file"]), ("Apache-2.0 OR MIT", "LICENSE-APACHE"))
+
+    def test_cited_repository_github_reports_missing_is_skipped(self):
+        # GitHub answers a missing public repository with "Repository not found";
+        # local file remotes cannot, so a git shim stands in for that one URL.
+        real_git = shutil.which("git", path=os.environ["PATH"])
+        shim = self.root / "bin/git"
+        shim.write_text("#!/bin/sh\n"
+                        'case "$*" in *ls-remote*fixture/gone*) echo "remote: Repository not found." >&2; exit 128;; esac\n'
+                        f'exec "{real_git}" "$@"\n')
+        shim.chmod(0o755)
+        (self.upstream / "README.md").write_text("https://github.com/fixture/skills\nhttps://github.com/fixture/gone\n")
+        self.commit("cite a repository that no longer exists")
+        for repo in self.lists:
+            self.git("-C", str(self.upstream), "push", "-q", str(self.remotes / repo), "main")
+        snapshot = self.refresh()
+        self.assertIn("fixture__skills", snapshot)
+        self.assertNotIn("fixture__gone", snapshot)
+
     def test_failed_source_fetch_stops_before_parsing(self):
         self.refresh()
         (self.remotes / "fixture/skills").rename(self.remotes / "fixture/unavailable")

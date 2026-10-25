@@ -128,6 +128,14 @@ class DirectoryInclusionTests(unittest.TestCase):
         self.assertEqual(data["repos"]["revision-publisher/skills"]["commit_sha"], "a" * 40)
         self.assertNotIn("commit_sha", data["repos"]["publisher/skills"])
 
+    def test_dual_license_choice_is_an_open_license(self):
+        dual = {**record("dual-publisher/skills", "dual-skill"),
+                "fm_license": None, "repo_license": "Apache-2.0 OR MIT", "license_file": "LICENSE-APACHE"}
+        data = self.curate({}, extra_records=(dual,))
+        skill = next(s for s in data["skills"] if s["repo"] == "dual-publisher/skills")
+        self.assertEqual(skill["license"], "Apache-2.0 OR MIT")
+        self.assertTrue(skill["open_license"])
+
     def test_apache_space_version_label_keeps_its_open_license_and_source_revision(self):
         revised = {**record("license-publisher/skills", "reviewed-skill"),
                    "fm_license": "Apache 2.0", "repo_license": "Apache-2.0",

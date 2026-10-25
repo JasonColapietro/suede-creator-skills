@@ -89,6 +89,33 @@ done
 python3 -I "$TOOLS/extract_links.py" "$WORK/lists" "$WORK/candidates.json" > /dev/null
 python3 -I "$TOOLS/select_repos.py" "$WORK/candidates.json" "$WORK/lists/VoltAgent_awesome-agent-skills/README.md" "$REPO_ROOT/directory/inclusions.json" > "$WORK/repos.txt"
 
+# A selected repository with no cached checkout is probed before cloning. When
+# GitHub says it does not exist (a deleted repository, or an officialskills.sh
+# publisher whose guessed github.com/<owner>/skills was never created), it is
+# dropped, so one dead link cannot abort the refresh. Any other probe failure
+# (network, rate limit) still stops the run before anything is published.
+probe_one() {
+  local r="$1" err
+  [ -d "$2/src/${r/\//__}/.git" ] && { echo "keep $r"; return 0; }
+  if err="$(timeout 60 git ls-remote --exit-code "https://github.com/$r" HEAD 2>&1 >/dev/null)"; then
+    echo "keep $r"
+  elif printf '%s' "$err" | grep -qiE 'not found|could not read Username|does not exist'; then
+    echo "missing $r"
+  else
+    echo "error $r $err"
+  fi
+}
+export -f probe_one
+xargs -r -P 8 -I{} bash -c 'probe_one "$@"' _ {} "$WORK" < "$WORK/repos.txt" > "$WORK/probe.txt"
+if grep -q '^error ' "$WORK/probe.txt"; then
+  grep '^error ' "$WORK/probe.txt" >&2
+  echo "cannot confirm selected repositories; refresh aborted" >&2
+  exit 1
+fi
+sed -n 's/^missing /skipping missing repository: /p' "$WORK/probe.txt" >&2
+grep -vixFf <(sed -n 's/^missing //p' "$WORK/probe.txt") "$WORK/repos.txt" > "$WORK/repos.kept" || true
+mv "$WORK/repos.kept" "$WORK/repos.txt"
+
 clone_one() {
   local r="$1" d="$2/src/${1/\//__}"
   sync_checkout "$r" "$d" 150 --filter=blob:limit=400k || {

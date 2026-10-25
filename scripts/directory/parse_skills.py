@@ -67,6 +67,21 @@ def find_license(start: Path, repo_root: Path):
                 except OSError:
                     lic = None
                 return lic or "Other", str(p.relative_to(repo_root))
+        # Dual-licensed projects (common in Rust) ship LICENSE-MIT and
+        # LICENSE-APACHE side by side instead of a single LICENSE file.
+        variants = sorted(p for p in cur.glob("LICEN[CS]E-*") if p.is_file())
+        if variants:
+            found = []
+            for p in variants:
+                try:
+                    lic = detect_license_text(p.read_text(errors="ignore"))
+                except OSError:
+                    lic = None
+                if lic and lic not in found:
+                    found.append(lic)
+            if found:
+                return " OR ".join(sorted(found)), str(variants[0].relative_to(repo_root))
+            return "Other", str(variants[0].relative_to(repo_root))
         if cur == repo_root:
             readme = cur / "README.md"
             if readme.is_file():
