@@ -190,6 +190,8 @@ OPEN_LICENSE = re.compile(r"^" + _OPEN_ID + r"(( AND (MIT|Apache-2\.0|CC-BY-4\.0
 
 def normalize_license(raw, repo_license, license_file):
     """A short, consistent license label for display; free text becomes a pointer to the file."""
+    if license_file and repo_license:
+        return "See LICENSE file" if repo_license == "Other" else repo_license
     t = re.sub(r"\s+", " ", (raw or "").strip())
     low = t.lower()
     table = [
@@ -210,9 +212,6 @@ def normalize_license(raw, repo_license, license_file):
         if re.match(pat, low):
             t = label
             break
-    m = re.match(r"^(CC-BY(-SA|-NC|-NC-SA)?-4\.0|MIT|Apache-2\.0)\b", t)
-    if m and len(t) > 40:
-        t = m.group(1)
     if re.search(r"https?://|license\.txt|complete terms|see license", low) and not re.match(r"^CC-BY", t):
         t = ""
     if len(t) > 40 or low in ("unknown", "none", "n/a", "na", "tbd", "todo", "unlicensed"):
@@ -518,6 +517,7 @@ def main():
                 "license": license_label,
                 "open_license": bool(OPEN_LICENSE.match(license_label)),
                 "license_file": r["license_file"],
+                "license_evidence": r.get("license_evidence", []),
                 "size": [r["body_lines"], r["body_words"], r["file_count"]],
                 "kinds": ("r" if r["has_references"] else "") + ("s" if r["has_scripts"] else "") + ("a" if r["has_assets"] else ""),
             }
