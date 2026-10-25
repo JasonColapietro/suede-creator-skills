@@ -359,3 +359,6 @@ Follow: [X / @johnnysuede](https://x.com/johnnysuede) · [suedeai.ai](https://su
 The original work is released under the [MIT License](LICENSE). Adapted components retain their upstream licenses, listed in [NOTICE.md](NOTICE.md).
 
 Contributions are welcome for docs fixes, install-path corrections, lint rules, template improvements, and public-safe workflow improvements. Do not submit private catalogs, unreleased media, credentials, seed phrases, private Suede API details, payment secrets, or third-party copyrighted files.
+
+- [DoomPay](https://github.com/doomsday-network/doom-pay) - Non-custodial 3-line Web3 checkout widget, REST API, and remote MCP payment receipt verifier (`wDOOM` on Base Mainnet & `DOOM` Layer-1).
+- [BountyGuard](https://github.com/doomsday-network/bounty-guard) - Zero-dependency MCP security server & CLI auditor that verifies on-chain bounty escrow before AI agents start work.
