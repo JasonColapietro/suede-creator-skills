@@ -1,10 +1,10 @@
 {
-  "updated": "2026-10-23",
+  "updated": "2026-10-25",
   "page": {
     "about": "Copy for /directory/featured/ and the awesome/featured.md view, rendered by scripts/build-directory.mjs and scripts/build-awesome-directory.mjs. Project entries below are the publishers’ own work: keep their names, repositories, setup facts and review links exactly as reviewed.",
     "title": "Featured Agent Skill Projects | Suede AI",
     "lede": "Good tools deserve a closer look.",
-    "intro": "Each project here was submitted by its publisher, reviewed against a pinned commit and accepted with a defined scope. Pick one, read the reviewed source, and start with the setup it actually needs.",
+    "intro": "Each project here is reviewed against a pinned commit and accepted with a defined scope. Pick one, read the reviewed source, and start with the setup it actually needs.",
     "selection": "Editorial features are chosen by the Suede AI team for useful workflows and clear setup. Quality scores on skill pages come from the published rubric and are never changed by a feature, a badge or any business relationship.",
     "nominate": {
       "headline": "Get your project featured",
@@ -186,6 +186,32 @@
         }
       ],
       "setup": "Install one selected skill. TimeToPost needs its hosted MCP and browser OAuth; Toolfound and Clef document public discovery endpoints. Hosted services were not exercised in this review. Python 3 runs the local helpers. At the reviewed revision, use a new budget filename and calculate net cash flow separately; preserve existing campaign attribution manually. Upstream PR #1 supplies the tested corrections. Each skill page links its exact setup and source."
+    },
+    {
+      "id": "cisco-skill-scanner",
+      "name": "Cisco AI Defense Skill Scanner",
+      "repo": "cisco-ai-defense/skill-scanner",
+      "kind": "Security tooling · Local source review",
+      "license": "Apache-2.0",
+      "headline": "Review a skill’s source before you install it.",
+      "summary": "Inspect skill instructions and bundled code for known prompt-injection, exfiltration and command-execution patterns. The reviewed 2.3.1 release supports local static and behavioral analysis, with machine-readable findings to guide review.",
+      "review": "directory/reviews/2026-10-25-cisco-skill-scanner.md",
+      "commit": "c615acb70994cdf3f4ba54d955fef2e92ac84437",
+      "capabilities": [
+        {
+          "title": "Inspect source without running the skill",
+          "description": "Combine pattern detection with Python and Bash dataflow analysis. Review the source as data before installing its scripts or hooks."
+        },
+        {
+          "title": "Keep evidence with the findings",
+          "description": "Export JSON or SARIF, retain the exact source revision and scanner version, and inspect errors and coverage gaps alongside findings."
+        },
+        {
+          "title": "Choose what leaves the machine",
+          "description": "Local analysis can run in an isolated environment with network access disabled. Optional hosted LLM, AI Defense, OSV and VirusTotal routes can send data when enabled."
+        }
+      ],
+      "setup": "Use the reviewed 2.3.1 release with verified dependency pins. Exclude the hijacked litellm 1.107.0 release and correct the certifi version in Cisco’s attached release lock. For local source review, disable hosted analyzers and behavioral alignment verification, use a network-disabled container, and retain every finding and error. Automated detection is best effort and does not certify a skill. This is an independent editorial selection, not a Cisco partnership."
     }
   ]
 }

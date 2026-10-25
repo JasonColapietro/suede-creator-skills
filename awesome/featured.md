@@ -6,13 +6,14 @@
 
 Editorial selection highlights a project’s workflow and accepted scope. It is separate from structural quality grades, security certification and README-badge verification. A plugin feature does not add its contents to the scored skill catalog.
 
-Selections updated **2026-10-23**. [View on Suede AI](https://skills.suedeai.ai/directory/featured/).
+Selections updated **2026-10-25**. [View on Suede AI](https://skills.suedeai.ai/directory/featured/).
 
 - [Appie](#appie)
 - [CoalWash](#coalwash)
 - [Costory](#costory)
 - [Extra Caffeine](#extra-caffeine)
 - [Opsibyte](#opsibyte)
+- [Cisco AI Defense Skill Scanner](#cisco-skill-scanner)
 
 <a id="appie"></a>
 
@@ -128,6 +129,26 @@ Install one selected skill. TimeToPost needs its hosted MCP and browser OAuth; T
 Accepted scope: **6 skills**. Follow each linked skill’s individual setup instructions.
 
 [Repository](https://github.com/MelMayssonOwen/agent-skills) · [Intake review](../directory/reviews/2026-10-22-opsibyte.md) · [Reviewed source aebddbe](https://github.com/MelMayssonOwen/agent-skills/tree/aebddbe40090c99fe0c5a1810536637186335502) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#opsibyte)
+
+---
+
+<a id="cisco-skill-scanner"></a>
+
+## Cisco AI Defense Skill Scanner
+
+**Security tooling · Local source review** · License: Apache-2.0 · Publisher: [cisco-ai-defense](https://github.com/cisco-ai-defense)
+
+Inspect skill instructions and bundled code for known prompt-injection, exfiltration and command-execution patterns. The reviewed 2.3.1 release supports local static and behavioral analysis, with machine-readable findings to guide review.
+
+- **Inspect source without running the skill.** Combine pattern detection with Python and Bash dataflow analysis. Review the source as data before installing its scripts or hooks.
+- **Keep evidence with the findings.** Export JSON or SARIF, retain the exact source revision and scanner version, and inspect errors and coverage gaps alongside findings.
+- **Choose what leaves the machine.** Local analysis can run in an isolated environment with network access disabled. Optional hosted LLM, AI Defense, OSV and VirusTotal routes can send data when enabled.
+
+### Setup
+
+Use the reviewed 2.3.1 release with verified dependency pins. Exclude the hijacked litellm 1.107.0 release and correct the certifi version in Cisco’s attached release lock. For local source review, disable hosted analyzers and behavioral alignment verification, use a network-disabled container, and retain every finding and error. Automated detection is best effort and does not certify a skill. This is an independent editorial selection, not a Cisco partnership.
+
+[Repository](https://github.com/cisco-ai-defense/skill-scanner) · [Intake review](../directory/reviews/2026-10-25-cisco-skill-scanner.md) · [Reviewed source c615acb](https://github.com/cisco-ai-defense/skill-scanner/tree/c615acb70994cdf3f4ba54d955fef2e92ac84437) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#cisco-skill-scanner)
 
 ---
 

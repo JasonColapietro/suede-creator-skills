@@ -63,8 +63,9 @@ Each skill appears in one category. A repository can contribute to several categ
 - **[Costory](featured.md#costory)** by [costory-io](https://github.com/costory-io). Investigate cost changes, explore BigQuery spend, and map shared costs to teams with an agent connected to Costory. Four workflows cover discovery, evidence, allocation and review.
 - **[Extra Caffeine](featured.md#extra-caffeine)** by [cwong5](https://github.com/cwong5). Give local AI and file-processing work time to finish. The Extra Caffeine workflow guides an agent through authorized awake sessions, state checks and requested one-time schedules while preserving existing sessions.
 - **[Opsibyte](featured.md#opsibyte)** by [MelMayssonOwen](https://github.com/MelMayssonOwen). Six focused workflows combine human-reviewed publishing and launch preparation with local budget, listing-copy, and chord helpers. Each listing carries its own source-derived quality report and setup details.
+- **[Cisco AI Defense Skill Scanner](featured.md#cisco-skill-scanner)** by [cisco-ai-defense](https://github.com/cisco-ai-defense). Inspect skill instructions and bundled code for known prompt-injection, exfiltration and command-execution patterns. The reviewed 2.3.1 release supports local static and behavioral analysis, with machine-readable findings to guide review.
 
-These 5 editorial selections have [reviewed scope and setup guidance](featured.md). Editorial selection is separate from quality scores, security certification and README-badge verification. Featured plugins outside the scored skill snapshot are not included in the skill or repository counts above.
+These 6 editorial selections have [reviewed scope and setup guidance](featured.md). Editorial selection is separate from quality scores, security certification and README-badge verification. Featured plugins outside the scored skill snapshot are not included in the skill or repository counts above.
 
 ## Guides
 

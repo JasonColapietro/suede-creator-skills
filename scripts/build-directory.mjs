@@ -1564,7 +1564,7 @@ function renderHub() {
         <div><p class="lead">Find the right skill for your next task.</p><p>Search ${fmt(data.skills.length)} agent skills for Claude Code, Codex and Cursor. Inspect the source. Choose what to install.</p><p class="directory-snapshot">${fmt(repos.size)} repositories <span aria-hidden="true"> / </span> ${categories.length} categories <span aria-hidden="true"> / </span> ${openPct}% openly licensed</p></div>
         <aside class="grade-guide" aria-label="Suede AI quality grades"><div class="grade-guide-shields"><img src="badges/grade-a.svg" alt="Suede grade A: 90–99" width="96" height="105"><img src="badges/grade-b.svg" alt="Suede grade B: 80–89" width="96" height="105"></div><p><b>Structure. Description. Depth. Maintenance.</b><br>Scored 0–99. <a href="methodology/">What the scores measure →</a></p></aside>
       </div>
-      <a class="featured-callout" href="featured/"><span><span class="featured-kind">The editorial selection</span><strong>Featured projects</strong><span>${listPhrase(EDITORIAL.projects.map((p) => esc(p.name)))}: meet the latest directory applicants.</span></span><span aria-hidden="true">↗</span></a>
+      <a class="featured-callout" href="featured/"><span><span class="featured-kind">The editorial selection</span><strong>Featured projects</strong><span>${listPhrase(EDITORIAL.projects.map((p) => esc(p.name)))}: explore the reviewed projects.</span></span><span aria-hidden="true">↗</span></a>
       <section class="directory-browser" id="browse" aria-labelledby="browse-title" data-directory-browser>
         <div class="browse-heading"><h2 id="browse-title">Explore the directory</h2><span class="muted">Public source. Clear license.</span></div>
         <form class="discovery-controls" role="search" hidden>
@@ -1681,7 +1681,7 @@ function renderFeaturedProjects() {
   const copy = EDITORIAL.page || {};
   const bc = crumbs(here, [["directory/", "Directory"], [null, "Featured projects"]]);
   const title = copy.title || "Featured Agent Skill Projects | Suede AI";
-  const description = `Meet ${listPhrase(EDITORIAL.projects.map((p) => p.name))}: selected agent workflows with reviewed source and setup, in the Suede AI Skills Directory.`;
+  const description = `Meet ${listPhrase(EDITORIAL.projects.map((p) => p.name))}: reviewed source, setup and data-use notes.`;
   const keywords = setKeywords(here, ["featured agent projects", ...EDITORIAL.projects.map((p) => `${p.name} agent workflows`), "Suede AI Skills Directory"]);
   const badge = FEATURED_BADGE;
   const nominate = copy.nominate
