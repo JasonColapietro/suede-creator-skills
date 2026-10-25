@@ -183,7 +183,9 @@ POLICY_VENDOR_REPOS = {
 }
 
 
-OPEN_LICENSE = re.compile(r"^(MIT(-0)?|Apache-2\.0|BSD(-[23]-Clause)?|0BSD|(A|L)?GPL-[23]\.0(-or-later|-only)?|MPL-2\.0|ISC|Unlicense|CC0-1\.0|CC-BY(-SA)?-4\.0)( AND (MIT|Apache-2\.0|CC-BY-4\.0|CC-BY-SA-4\.0))*$")
+_OPEN_ID = r"(MIT(-0)?|Apache-2\.0|BSD(-[23]-Clause)?|0BSD|(A|L)?GPL-[23]\.0(-or-later|-only)?|MPL-2\.0|ISC|Unlicense|CC0-1\.0|CC-BY(-SA)?-4\.0)"
+# "MIT OR Apache-2.0" (a dual-licensed choice) is open when every option is.
+OPEN_LICENSE = re.compile(r"^" + _OPEN_ID + r"(( AND (MIT|Apache-2\.0|CC-BY-4\.0|CC-BY-SA-4\.0))*|( OR " + _OPEN_ID + r")+)$")
 
 
 def normalize_license(raw, repo_license, license_file):
