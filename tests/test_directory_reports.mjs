@@ -9,6 +9,7 @@ const data = JSON.parse(bytes);
 const index = JSON.parse(read('docs/directory/search-index.json'));
 const digest = (text) => createHash('sha256').update(text).digest('hex');
 const datasetDigest = digest(bytes);
+const securityLedger = JSON.parse(read('directory/security-scans.json'));
 
 test('every listed skill exports a verifiable report tied to the saved evidence and existing badges', () => {
   for (const entry of index) {
@@ -29,7 +30,20 @@ test('every listed skill exports a verifiable report tied to the saved evidence 
     assert.equal(report.quality.grade, entry.grade);
     assert.equal(Math.min(99, report.quality.components.reduce((n, c) => n + c.points, 0)), entry.score);
     assert.equal(report.listing_url, 'https://skills.suedeai.ai' + entry.href);
-    assert.equal(report.security_scan_status, 'not_scanned');
+    const target = new URL(report.listing_url);
+    const slug = target.hash ? target.hash.slice(1) : target.pathname.split('/').filter(Boolean).at(-1);
+    const pointer = securityLedger[entry.repo.toLowerCase() + '/' + slug];
+    if (!pointer) assert.equal(report.security_scan_status, 'not_scanned');
+    else {
+      const raw = read('directory/' + pointer.file);
+      const scan = JSON.parse(raw);
+      assert.equal(digest(raw), pointer.sha256);
+      assert.equal(report.security.evidence_sha256, pointer.sha256);
+      assert.equal(scan.source.revision, report.source.revision);
+      assert.equal(scan.analysis.findings.length, 0, 'these two retained representative records have zero findings');
+      assert.equal(report.security_scan_status, Date.now() - Date.parse(scan.completed_at) > 30 * 864e5 ? 'stale' : 'passed');
+      assert.ok(report.security.valid_until);
+    }
     const repo = data.repos[entry.repo];
     assert.equal(report.source.revision, repo.commit_sha || null);
     assert.equal(report.source.revision_status, repo.commit_sha ? 'recorded' : 'not_recorded_in_snapshot');

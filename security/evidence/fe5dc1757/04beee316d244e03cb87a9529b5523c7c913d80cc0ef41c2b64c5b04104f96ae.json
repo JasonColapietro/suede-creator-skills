@@ -1,0 +1,1074 @@
+{
+  "schema_version": 1,
+  "source": {
+    "repository": "JasonColapietro/suede-creator-skills",
+    "path": "skills/suede-graph-flo-xr",
+    "revision": "fe5dc1757cd6c8ff63aee853564249c00151778d"
+  },
+  "scanner": {
+    "name": "cisco-ai-skill-scanner",
+    "version": "2.3.1",
+    "adapter_version": 2,
+    "analyzers": [
+      "static_analyzer",
+      "bytecode",
+      "pipeline",
+      "correlation",
+      "behavioral_analyzer"
+    ],
+    "policy": "strict",
+    "cel_mode": "shadow",
+    "network": "disabled",
+    "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+  },
+  "started_at": "2026-10-25T20:56:07.261441+00:00",
+  "state": "completed",
+  "analysis": {
+    "skill_name": "suede-graph-flo-xr",
+    "skill_path": "/source/target-029",
+    "is_safe": false,
+    "max_severity": "CRITICAL",
+    "findings_count": 11,
+    "findings": [
+      {
+        "id": "MANIFEST_DESCRIPTION_TOO_LONG_d5d955b297",
+        "rule_id": "MANIFEST_DESCRIPTION_TOO_LONG",
+        "category": "policy_violation",
+        "severity": "LOW",
+        "title": "Skill description exceeds agent skills length limit",
+        "description": "Skill description is 742 characters; Agent skills limit the `description` field to 512 characters.",
+        "file_path": "SKILL.md",
+        "line_number": null,
+        "snippet": null,
+        "remediation": "Shorten the description to 512 characters or fewer while keeping it specific",
+        "analyzer": "static",
+        "metadata": {
+          "same_path_other_rule_ids": [
+            "MANIFEST_MISSING_LICENSE"
+          ],
+          "same_path_unique_rule_count": 2,
+          "same_path_findings_count": 2,
+          "aitech": null,
+          "aitech_name": null,
+          "aisubtech": null,
+          "aisubtech_name": null,
+          "aitech_mappings": [],
+          "aisubtech_mappings": [],
+          "framework_mappings": [],
+          "taxonomy_status": "not_applicable",
+          "taxonomy_source": "rule",
+          "scan_policy_name": "strict",
+          "scan_policy_version": "1.0",
+          "scan_policy_preset_base": "strict",
+          "scan_policy_fingerprint_sha256": "7f4560dea6f3f1c11067735bab3759c4daedfcd6d67f46b4e40899507a2c2ea9"
+        }
+      },
+      {
+        "id": "MANIFEST_MISSING_LICENSE_c5ae9be793",
+        "rule_id": "MANIFEST_MISSING_LICENSE",
+        "category": "policy_violation",
+        "severity": "INFO",
+        "title": "Skill does not specify a license",
+        "description": "Skill manifest does not include a 'license' field. Specifying a license helps users understand usage terms.",
+        "file_path": "SKILL.md",
+        "line_number": null,
+        "snippet": null,
+        "remediation": "Add 'license' field to SKILL.md frontmatter (e.g., MIT, Apache-2.0)",
+        "analyzer": "static",
+        "metadata": {
+          "same_path_other_rule_ids": [
+            "MANIFEST_DESCRIPTION_TOO_LONG"
+          ],
+          "same_path_unique_rule_count": 2,
+          "same_path_findings_count": 2,
+          "aitech": null,
+          "aitech_name": null,
+          "aisubtech": null,
+          "aisubtech_name": null,
+          "aitech_mappings": [],
+          "aisubtech_mappings": [],
+          "framework_mappings": [],
+          "taxonomy_status": "not_applicable",
+          "taxonomy_source": "rule",
+          "scan_policy_name": "strict",
+          "scan_policy_version": "1.0",
+          "scan_policy_preset_base": "strict",
+          "scan_policy_fingerprint_sha256": "7f4560dea6f3f1c11067735bab3759c4daedfcd6d67f46b4e40899507a2c2ea9"
+        }
+      },
+      {
+        "id": "COMMAND_INJECTION_JS_CHILD_PROCESS_eeea1c8518",
+        "rule_id": "COMMAND_INJECTION_JS_CHILD_PROCESS",
+        "category": "command_injection",
+        "severity": "CRITICAL",
+        "title": "Node.js child_process module usage for shell command execution",
+        "description": "Pattern detected: require(\"node:child_process\")",
+        "file_path": "workflows/helpers/apply-patch.cjs",
+        "line_number": 10,
+        "snippet": "const {execFileSync}=require(\"node:child_process\");",
+        "remediation": "Avoid child_process. If required, use execFile with explicit arguments instead of exec with shell strings",
+        "analyzer": "static",
+        "metadata": {
+          "matched_pattern": "require\\s*\\(\\s*['\"](?:node:)?child_process['\"]\\s*\\)",
+          "matched_text": "require(\"node:child_process\")",
+          "signature_pattern_index": 0,
+          "signature_match_start": 21,
+          "signature_match_end": 50,
+          "signature_pattern_sha256": "6401d9a234bfb92b5f0fa9b72e09b156efef674c865778f3234bdb424e32344b",
+          "scanner_category": "INJECTION ATTACK",
+          "signature_context": "package",
+          "signature_polarity": "active",
+          "source_category": "command_injection",
+          "category_normalization": "native",
+          "semantic_facts": {
+            "evidence_kind": "signature_pattern",
+            "context_kind": "package",
+            "signals": [
+              {
+                "rule_id": "COMMAND_INJECTION_JS_CHILD_PROCESS",
+                "kind": "signature_polarity",
+                "file_path": "workflows/helpers/apply-patch.cjs",
+                "value_class": "active"
+              },
+              {
+                "rule_id": "COMMAND_INJECTION_JS_CHILD_PROCESS",
+                "kind": "unreferenced_executable",
+                "file_path": "workflows/helpers/apply-patch.cjs",
+                "value_class": "other"
+              }
+            ]
+          },
+          "same_path_other_rule_ids": [
+            "DATA_EXFIL_JS_FS_ACCESS"
+          ],
+          "same_path_unique_rule_count": 2,
+          "same_path_findings_count": 3,
+          "aitech": "AITech-9.1",
+          "aitech_name": "Model or Agentic System Manipulation",
+          "aisubtech": "AISubtech-9.1.4",
+          "aisubtech_name": "Injection Attacks (e.g., SQL, Command Execution, XSS)",
+          "aitech_mappings": [
+            "OWASP: LLM04:2026: Supply Chain",
+            "OWASP: ASI04: Agentic Supply Chain Vulnerabilities",
+            "OWASP: ASI05: Unexpected Code Execution (RCE)",
+            "MITRE ATLAS: AML.T0050: Command and Scripting Interpreter",
+            "NIST AML: NISTAML.023: Backdoor Poisoning",
+            "Cisco AI MDL Code: MDL-006",
+            "Cisco AI MDL Code: MDL-007",
+            "Cisco AI MDL Code: MDL-005",
+            "Cisco AI MDL Code: MDL-010",
+            "Cisco AI MDL Code: MDL-012",
+            "Cisco AI MDL Code: MDL-014",
+            "Cisco AI MDL Code: MDL-015",
+            "Cisco AI MDL Code: MDL-019"
+          ],
+          "aisubtech_mappings": [
+            "OWASP: LLM01:2026: Prompt Injection",
+            "OWASP: LLM10:2026: Improper Output Handling",
+            "OWASP: LLM03:2026: Excessive Agency",
+            "OWASP: ASI04: Agentic Supply Chain Vulnerabilities",
+            "OWASP: ASI05: Unexpected Code Execution (RCE)",
+            "MITRE ATLAS: AML.T0051: LLM Prompt Injection",
+            "MITRE ATLAS: AML.T0050: Command and Scripting Interpreter",
+            "MITRE ATLAS: AML.T0067: LLM Trusted Output Component Manipulation",
+            "MITRE ATT&CK: T1588.007: Obtain AI Capabilities",
+            "NIST AML: NISTAML.024: Targeted Poisoning"
+          ],
+          "framework_mappings": [
+            "OWASP: LLM01:2026: Prompt Injection",
+            "OWASP: LLM10:2026: Improper Output Handling",
+            "OWASP: LLM03:2026: Excessive Agency",
+            "OWASP: ASI04: Agentic Supply Chain Vulnerabilities",
+            "OWASP: ASI05: Unexpected Code Execution (RCE)",
+            "MITRE ATLAS: AML.T0051: LLM Prompt Injection",
+            "MITRE ATLAS: AML.T0050: Command and Scripting Interpreter",
+            "MITRE ATLAS: AML.T0067: LLM Trusted Output Component Manipulation",
+            "MITRE ATT&CK: T1588.007: Obtain AI Capabilities",
+            "NIST AML: NISTAML.024: Targeted Poisoning"
+          ],
+          "taxonomy_status": "mapped",
+          "taxonomy_source": "rule",
+          "scan_policy_name": "strict",
+          "scan_policy_version": "1.0",
+          "scan_policy_preset_base": "strict",
+          "scan_policy_fingerprint_sha256": "7f4560dea6f3f1c11067735bab3759c4daedfcd6d67f46b4e40899507a2c2ea9"
+        }
+      },
+      {
+        "id": "DATA_EXFIL_JS_FS_ACCESS_8d36be7f4d",
+        "rule_id": "DATA_EXFIL_JS_FS_ACCESS",
+        "category": "data_exfiltration",
+        "severity": "LOW",
+        "title": "Node.js filesystem access candidate for sensitive-flow correlation",
+        "description": "Pattern detected: fs.writeFileSync(",
+        "file_path": "workflows/helpers/apply-patch.cjs",
+        "line_number": 29,
+        "snippet": "if(mode===\"--start\"){fs.writeFileSync(staging,\"\");process.stdout.write(\"staging reset\\n\");process.exit(0)}",
+        "remediation": "Review filesystem operations and correlate sensitive sources with outbound sinks",
+        "analyzer": "static",
+        "metadata": {
+          "matched_pattern": "fs\\.(?:writeFile|writeFileSync|createWriteStream|appendFile|appendFileSync)\\s*\\(",
+          "matched_text": "fs.writeFileSync(",
+          "signature_pattern_index": 1,
+          "signature_match_start": 21,
+          "signature_match_end": 38,
+          "signature_pattern_sha256": "1c34e30145949b4bc46f0c41b5880cbd446655f506f3f944b24730bbc67adbec",
+          "scanner_category": "SECURITY VIOLATION",
+          "signature_context": "package",
+          "signature_polarity": "active",
+          "source_category": "data_exfiltration",
+          "category_normalization": "native",
+          "semantic_facts": {
+            "evidence_kind": "signature_pattern",
+            "context_kind": "package",
+            "signals": [
+              {
+                "rule_id": "DATA_EXFIL_JS_FS_ACCESS",
+                "kind": "signature_polarity",
+                "file_path": "workflows/helpers/apply-patch.cjs",
+                "value_class": "active"
+              },
+              {
+                "rule_id": "DATA_EXFIL_JS_FS_ACCESS",
+                "kind": "unreferenced_executable",
+                "file_path": "workflows/helpers/apply-patch.cjs",
+                "value_class": "other"
+              }
+            ]
+          },
+          "same_path_other_rule_ids": [
+            "COMMAND_INJECTION_JS_CHILD_PROCESS"
+          ],
+          "same_path_unique_rule_count": 2,
+          "same_path_findings_count": 3,
+          "aitech": "AITech-8.2",
+          "aitech_name": "Data Exfiltration / Exposure",
+          "aisubtech": "AISubtech-8.2.3",
+          "aisubtech_name": "Data Exfiltration via Agent Tooling",
+          "aitech_mappings": [
+            "OWASP: LLM02:2026: Sensitive Information Disclosure",
+            "OWASP: ASI09: Human-Agent Trust Exploitation",
+            "MITRE ATLAS: AML.T0024.000: Exfiltration via AI Inference API: Infer Training Data Membership",
+            "MITRE ATLAS: AML.T0035: AI Artifact Collection",
+            "MITRE ATLAS: AML.T0037: Data From Local System",
+            "MITRE ATLAS: AML.T0057: LLM Data Leakage",
+            "NIST AML: NISTAML.037: Training Data Attacks"
+          ],
+          "aisubtech_mappings": [
+            "OWASP: LLM02:2026: Sensitive Information Disclosure",
+            "OWASP: ASI02: Tool Misuse & Exploitation",
+            "OWASP: ASI09: Human-Agent Trust Exploitation",
+            "MITRE ATLAS: AML.T0086: Exfiltration via AI Agent Tool Invocation",
+            "NIST AML: N/A"
+          ],
+          "framework_mappings": [
+            "OWASP: LLM02:2026: Sensitive Information Disclosure",
+            "OWASP: ASI02: Tool Misuse & Exploitation",
+            "OWASP: ASI09: Human-Agent Trust Exploitation",
+            "MITRE ATLAS: AML.T0086: Exfiltration via AI Agent Tool Invocation",
+            "NIST AML: N/A"
+          ],
+          "taxonomy_status": "mapped",
+          "taxonomy_source": "rule",
+          "scan_policy_name": "strict",
+          "scan_policy_version": "1.0",
+          "scan_policy_preset_base": "strict",
+          "scan_policy_fingerprint_sha256": "7f4560dea6f3f1c11067735bab3759c4daedfcd6d67f46b4e40899507a2c2ea9"
+        }
+      },
+      {
+        "id": "DATA_EXFIL_JS_FS_ACCESS_f7c813e2f2",
+        "rule_id": "DATA_EXFIL_JS_FS_ACCESS",
+        "category": "data_exfiltration",
+        "severity": "LOW",
+        "title": "Node.js filesystem access candidate for sensitive-flow correlation",
+        "description": "Pattern detected: fs.readFileSync(",
+        "file_path": "workflows/helpers/apply-patch.cjs",
+        "line_number": 33,
+        "snippet": "const payload=fs.readFileSync(staging,\"utf8\");",
+        "remediation": "Review filesystem operations and correlate sensitive sources with outbound sinks",
+        "analyzer": "static",
+        "metadata": {
+          "matched_pattern": "fs\\.(?:readFile|readFileSync|createReadStream)\\s*\\(",
+          "matched_text": "fs.readFileSync(",
+          "signature_pattern_index": 0,
+          "signature_match_start": 14,
+          "signature_match_end": 30,
+          "signature_pattern_sha256": "63e5503f1d25cece59cb25665bea6890bc89867830f245f24fce5c40b2000fa7",
+          "scanner_category": "SECURITY VIOLATION",
+          "signature_context": "package",
+          "signature_polarity": "active",
+          "source_category": "data_exfiltration",
+          "category_normalization": "native",
+          "semantic_facts": {
+            "evidence_kind": "signature_pattern",
+            "context_kind": "package",
+            "signals": [
+              {
+                "rule_id": "DATA_EXFIL_JS_FS_ACCESS",
+                "kind": "signature_polarity",
+                "file_path": "workflows/helpers/apply-patch.cjs",
+                "value_class": "active"
+              },
+              {
+                "rule_id": "DATA_EXFIL_JS_FS_ACCESS",
+                "kind": "unreferenced_executable",
+                "file_path": "workflows/helpers/apply-patch.cjs",
+                "value_class": "other"
+              }
+            ]
+          },
+          "same_path_other_rule_ids": [
+            "COMMAND_INJECTION_JS_CHILD_PROCESS"
+          ],
+          "same_path_unique_rule_count": 2,
+          "same_path_findings_count": 3,
+          "aitech": "AITech-8.2",
+          "aitech_name": "Data Exfiltration / Exposure",
+          "aisubtech": "AISubtech-8.2.3",
+          "aisubtech_name": "Data Exfiltration via Agent Tooling",
+          "aitech_mappings": [
+            "OWASP: LLM02:2026: Sensitive Information Disclosure",
+            "OWASP: ASI09: Human-Agent Trust Exploitation",
+            "MITRE ATLAS: AML.T0024.000: Exfiltration via AI Inference API: Infer Training Data Membership",
+            "MITRE ATLAS: AML.T0035: AI Artifact Collection",
+            "MITRE ATLAS: AML.T0037: Data From Local System",
+            "MITRE ATLAS: AML.T0057: LLM Data Leakage",
+            "NIST AML: NISTAML.037: Training Data Attacks"
+          ],
+          "aisubtech_mappings": [
+            "OWASP: LLM02:2026: Sensitive Information Disclosure",
+            "OWASP: ASI02: Tool Misuse & Exploitation",
+            "OWASP: ASI09: Human-Agent Trust Exploitation",
+            "MITRE ATLAS: AML.T0086: Exfiltration via AI Agent Tool Invocation",
+            "NIST AML: N/A"
+          ],
+          "framework_mappings": [
+            "OWASP: LLM02:2026: Sensitive Information Disclosure",
+            "OWASP: ASI02: Tool Misuse & Exploitation",
+            "OWASP: ASI09: Human-Agent Trust Exploitation",
+            "MITRE ATLAS: AML.T0086: Exfiltration via AI Agent Tool Invocation",
+            "NIST AML: N/A"
+          ],
+          "taxonomy_status": "mapped",
+          "taxonomy_source": "rule",
+          "scan_policy_name": "strict",
+          "scan_policy_version": "1.0",
+          "scan_policy_preset_base": "strict",
+          "scan_policy_fingerprint_sha256": "7f4560dea6f3f1c11067735bab3759c4daedfcd6d67f46b4e40899507a2c2ea9"
+        }
+      },
+      {
+        "id": "COMMAND_INJECTION_JS_CHILD_PROCESS_37c868ef6b",
+        "rule_id": "COMMAND_INJECTION_JS_CHILD_PROCESS",
+        "category": "command_injection",
+        "severity": "CRITICAL",
+        "title": "Node.js child_process module usage for shell command execution",
+        "description": "Pattern detected: require(\"node:child_process\")",
+        "file_path": "workflows/helpers/candidate-audit.cjs",
+        "line_number": 9,
+        "snippet": "const {execFileSync}=require(\"node:child_process\");",
+        "remediation": "Avoid child_process. If required, use execFile with explicit arguments instead of exec with shell strings",
+        "analyzer": "static",
+        "metadata": {
+          "matched_pattern": "require\\s*\\(\\s*['\"](?:node:)?child_process['\"]\\s*\\)",
+          "matched_text": "require(\"node:child_process\")",
+          "signature_pattern_index": 0,
+          "signature_match_start": 21,
+          "signature_match_end": 50,
+          "signature_pattern_sha256": "6401d9a234bfb92b5f0fa9b72e09b156efef674c865778f3234bdb424e32344b",
+          "scanner_category": "INJECTION ATTACK",
+          "signature_context": "package",
+          "signature_polarity": "active",
+          "source_category": "command_injection",
+          "category_normalization": "native",
+          "semantic_facts": {
+            "evidence_kind": "signature_pattern",
+            "context_kind": "package",
+            "signals": [
+              {
+                "rule_id": "COMMAND_INJECTION_JS_CHILD_PROCESS",
+                "kind": "signature_polarity",
+                "file_path": "workflows/helpers/candidate-audit.cjs",
+                "value_class": "active"
+              },
+              {
+                "rule_id": "COMMAND_INJECTION_JS_CHILD_PROCESS",
+                "kind": "unreferenced_executable",
+                "file_path": "workflows/helpers/candidate-audit.cjs",
+                "value_class": "other"
+              }
+            ]
+          },
+          "aitech": "AITech-9.1",
+          "aitech_name": "Model or Agentic System Manipulation",
+          "aisubtech": "AISubtech-9.1.4",
+          "aisubtech_name": "Injection Attacks (e.g., SQL, Command Execution, XSS)",
+          "aitech_mappings": [
+            "OWASP: LLM04:2026: Supply Chain",
+            "OWASP: ASI04: Agentic Supply Chain Vulnerabilities",
+            "OWASP: ASI05: Unexpected Code Execution (RCE)",
+            "MITRE ATLAS: AML.T0050: Command and Scripting Interpreter",
+            "NIST AML: NISTAML.023: Backdoor Poisoning",
+            "Cisco AI MDL Code: MDL-006",
+            "Cisco AI MDL Code: MDL-007",
+            "Cisco AI MDL Code: MDL-005",
+            "Cisco AI MDL Code: MDL-010",
+            "Cisco AI MDL Code: MDL-012",
+            "Cisco AI MDL Code: MDL-014",
+            "Cisco AI MDL Code: MDL-015",
+            "Cisco AI MDL Code: MDL-019"
+          ],
+          "aisubtech_mappings": [
+            "OWASP: LLM01:2026: Prompt Injection",
+            "OWASP: LLM10:2026: Improper Output Handling",
+            "OWASP: LLM03:2026: Excessive Agency",
+            "OWASP: ASI04: Agentic Supply Chain Vulnerabilities",
+            "OWASP: ASI05: Unexpected Code Execution (RCE)",
+            "MITRE ATLAS: AML.T0051: LLM Prompt Injection",
+            "MITRE ATLAS: AML.T0050: Command and Scripting Interpreter",
+            "MITRE ATLAS: AML.T0067: LLM Trusted Output Component Manipulation",
+            "MITRE ATT&CK: T1588.007: Obtain AI Capabilities",
+            "NIST AML: NISTAML.024: Targeted Poisoning"
+          ],
+          "framework_mappings": [
+            "OWASP: LLM01:2026: Prompt Injection",
+            "OWASP: LLM10:2026: Improper Output Handling",
+            "OWASP: LLM03:2026: Excessive Agency",
+            "OWASP: ASI04: Agentic Supply Chain Vulnerabilities",
+            "OWASP: ASI05: Unexpected Code Execution (RCE)",
+            "MITRE ATLAS: AML.T0051: LLM Prompt Injection",
+            "MITRE ATLAS: AML.T0050: Command and Scripting Interpreter",
+            "MITRE ATLAS: AML.T0067: LLM Trusted Output Component Manipulation",
+            "MITRE ATT&CK: T1588.007: Obtain AI Capabilities",
+            "NIST AML: NISTAML.024: Targeted Poisoning"
+          ],
+          "taxonomy_status": "mapped",
+          "taxonomy_source": "rule",
+          "scan_policy_name": "strict",
+          "scan_policy_version": "1.0",
+          "scan_policy_preset_base": "strict",
+          "scan_policy_fingerprint_sha256": "7f4560dea6f3f1c11067735bab3759c4daedfcd6d67f46b4e40899507a2c2ea9"
+        }
+      },
+      {
+        "id": "COMMAND_INJECTION_JS_CHILD_PROCESS_3c5ee4f741",
+        "rule_id": "COMMAND_INJECTION_JS_CHILD_PROCESS",
+        "category": "command_injection",
+        "severity": "CRITICAL",
+        "title": "Node.js child_process module usage for shell command execution",
+        "description": "Pattern detected: require(\"node:child_process\")",
+        "file_path": "workflows/helpers/diff-digest.cjs",
+        "line_number": 4,
+        "snippet": "const {execFileSync}=require(\"node:child_process\");const {createHash}=require(\"node:crypto\");const fs=require(\"node:fs\"),path=require(\"node:path\"),root=fs.realpathSync(path.resolve(process.argv[1])),inside=value=>value===root||value.startsWith(root+path.sep),base=process.argv[2],files=JSON.parse(Buffer.from(process.argv[3],\"base64\").toString(\"utf8\"));if(!Array.isArray(files)){process.stderr.write(\"reported files must be an array\");process.exit(1)}let diff;try{diff=execFileSync(\"git\",[\"-C\",root,\"diff\",\"--binary\",base],{encoding:null,maxBuffer:16*1024*1024})}catch(error){process.stderr.write(error.stderr||String(error||\"git diff failed\"));process.exit(Number.isInteger(error.status)?error.status:1)}const hash=createHash(\"sha256\").update(\"git-diff\\0\").update(diff);for(const file of [...new Set(files)].sort()){const full=path.resolve(root,file);if(!inside(full)){process.stderr.write(\"reported file escapes worktree\");process.exit(1)}hash.update(\"\\0file\\0\"+file+\"\\0\");let stat;try{stat=fs.lstatSync(full)}catch(error){if(error&&error.code===\"ENOENT\"){hash.update(\"missing\");continue}throw error}if(stat.isSymbolicLink()||!stat.isFile()){process.stderr.write(\"reported file is not a regular file: \"+file);process.exit(1)}const canonical=fs.realpathSync(full);if(!inside(canonical)){process.stderr.write(\"reported file resolves outside worktree: \"+file);process.exit(1)}hash.update(\"regular\\0\"+String(stat.mode&0o777)+\"\\0\"+String(stat.size)+\"\\0\").update(fs.readFileSync(canonical))}process.stdout.write(hash.digest(\"hex\")+\"\\n\")",
+        "remediation": "Avoid child_process. If required, use execFile with explicit arguments instead of exec with shell strings",
+        "analyzer": "static",
+        "metadata": {
+          "matched_pattern": "require\\s*\\(\\s*['\"](?:node:)?child_process['\"]\\s*\\)",
+          "matched_text": "require(\"node:child_process\")",
+          "signature_pattern_index": 0,
+          "signature_match_start": 21,
+          "signature_match_end": 50,
+          "signature_pattern_sha256": "6401d9a234bfb92b5f0fa9b72e09b156efef674c865778f3234bdb424e32344b",
+          "scanner_category": "INJECTION ATTACK",
+          "signature_context": "package",
+          "signature_polarity": "active",
+          "source_category": "command_injection",
+          "category_normalization": "native",
+          "semantic_facts": {
+            "evidence_kind": "signature_pattern",
+            "context_kind": "package",
+            "signals": [
+              {
+                "rule_id": "COMMAND_INJECTION_JS_CHILD_PROCESS",
+                "kind": "signature_polarity",
+                "file_path": "workflows/helpers/diff-digest.cjs",
+                "value_class": "active"
+              },
+              {
+                "rule_id": "COMMAND_INJECTION_JS_CHILD_PROCESS",
+                "kind": "unreferenced_executable",
+                "file_path": "workflows/helpers/diff-digest.cjs",
+                "value_class": "other"
+              }
+            ]
+          },
+          "same_path_other_rule_ids": [
+            "DATA_EXFIL_JS_FS_ACCESS"
+          ],
+          "same_path_unique_rule_count": 2,
+          "same_path_findings_count": 2,
+          "aitech": "AITech-9.1",
+          "aitech_name": "Model or Agentic System Manipulation",
+          "aisubtech": "AISubtech-9.1.4",
+          "aisubtech_name": "Injection Attacks (e.g., SQL, Command Execution, XSS)",
+          "aitech_mappings": [
+            "OWASP: LLM04:2026: Supply Chain",
+            "OWASP: ASI04: Agentic Supply Chain Vulnerabilities",
+            "OWASP: ASI05: Unexpected Code Execution (RCE)",
+            "MITRE ATLAS: AML.T0050: Command and Scripting Interpreter",
+            "NIST AML: NISTAML.023: Backdoor Poisoning",
+            "Cisco AI MDL Code: MDL-006",
+            "Cisco AI MDL Code: MDL-007",
+            "Cisco AI MDL Code: MDL-005",
+            "Cisco AI MDL Code: MDL-010",
+            "Cisco AI MDL Code: MDL-012",
+            "Cisco AI MDL Code: MDL-014",
+            "Cisco AI MDL Code: MDL-015",
+            "Cisco AI MDL Code: MDL-019"
+          ],
+          "aisubtech_mappings": [
+            "OWASP: LLM01:2026: Prompt Injection",
+            "OWASP: LLM10:2026: Improper Output Handling",
+            "OWASP: LLM03:2026: Excessive Agency",
+            "OWASP: ASI04: Agentic Supply Chain Vulnerabilities",
+            "OWASP: ASI05: Unexpected Code Execution (RCE)",
+            "MITRE ATLAS: AML.T0051: LLM Prompt Injection",
+            "MITRE ATLAS: AML.T0050: Command and Scripting Interpreter",
+            "MITRE ATLAS: AML.T0067: LLM Trusted Output Component Manipulation",
+            "MITRE ATT&CK: T1588.007: Obtain AI Capabilities",
+            "NIST AML: NISTAML.024: Targeted Poisoning"
+          ],
+          "framework_mappings": [
+            "OWASP: LLM01:2026: Prompt Injection",
+            "OWASP: LLM10:2026: Improper Output Handling",
+            "OWASP: LLM03:2026: Excessive Agency",
+            "OWASP: ASI04: Agentic Supply Chain Vulnerabilities",
+            "OWASP: ASI05: Unexpected Code Execution (RCE)",
+            "MITRE ATLAS: AML.T0051: LLM Prompt Injection",
+            "MITRE ATLAS: AML.T0050: Command and Scripting Interpreter",
+            "MITRE ATLAS: AML.T0067: LLM Trusted Output Component Manipulation",
+            "MITRE ATT&CK: T1588.007: Obtain AI Capabilities",
+            "NIST AML: NISTAML.024: Targeted Poisoning"
+          ],
+          "taxonomy_status": "mapped",
+          "taxonomy_source": "rule",
+          "scan_policy_name": "strict",
+          "scan_policy_version": "1.0",
+          "scan_policy_preset_base": "strict",
+          "scan_policy_fingerprint_sha256": "7f4560dea6f3f1c11067735bab3759c4daedfcd6d67f46b4e40899507a2c2ea9"
+        }
+      },
+      {
+        "id": "DATA_EXFIL_JS_FS_ACCESS_815d171027",
+        "rule_id": "DATA_EXFIL_JS_FS_ACCESS",
+        "category": "data_exfiltration",
+        "severity": "LOW",
+        "title": "Node.js filesystem access candidate for sensitive-flow correlation",
+        "description": "Pattern detected: fs.readFileSync(",
+        "file_path": "workflows/helpers/diff-digest.cjs",
+        "line_number": 4,
+        "snippet": "const {execFileSync}=require(\"node:child_process\");const {createHash}=require(\"node:crypto\");const fs=require(\"node:fs\"),path=require(\"node:path\"),root=fs.realpathSync(path.resolve(process.argv[1])),inside=value=>value===root||value.startsWith(root+path.sep),base=process.argv[2],files=JSON.parse(Buffer.from(process.argv[3],\"base64\").toString(\"utf8\"));if(!Array.isArray(files)){process.stderr.write(\"reported files must be an array\");process.exit(1)}let diff;try{diff=execFileSync(\"git\",[\"-C\",root,\"diff\",\"--binary\",base],{encoding:null,maxBuffer:16*1024*1024})}catch(error){process.stderr.write(error.stderr||String(error||\"git diff failed\"));process.exit(Number.isInteger(error.status)?error.status:1)}const hash=createHash(\"sha256\").update(\"git-diff\\0\").update(diff);for(const file of [...new Set(files)].sort()){const full=path.resolve(root,file);if(!inside(full)){process.stderr.write(\"reported file escapes worktree\");process.exit(1)}hash.update(\"\\0file\\0\"+file+\"\\0\");let stat;try{stat=fs.lstatSync(full)}catch(error){if(error&&error.code===\"ENOENT\"){hash.update(\"missing\");continue}throw error}if(stat.isSymbolicLink()||!stat.isFile()){process.stderr.write(\"reported file is not a regular file: \"+file);process.exit(1)}const canonical=fs.realpathSync(full);if(!inside(canonical)){process.stderr.write(\"reported file resolves outside worktree: \"+file);process.exit(1)}hash.update(\"regular\\0\"+String(stat.mode&0o777)+\"\\0\"+String(stat.size)+\"\\0\").update(fs.readFileSync(canonical))}process.stdout.write(hash.digest(\"hex\")+\"\\n\")",
+        "remediation": "Review filesystem operations and correlate sensitive sources with outbound sinks",
+        "analyzer": "static",
+        "metadata": {
+          "matched_pattern": "fs\\.(?:readFile|readFileSync|createReadStream)\\s*\\(",
+          "matched_text": "fs.readFileSync(",
+          "signature_pattern_index": 0,
+          "signature_match_start": 1459,
+          "signature_match_end": 1475,
+          "signature_pattern_sha256": "63e5503f1d25cece59cb25665bea6890bc89867830f245f24fce5c40b2000fa7",
+          "scanner_category": "SECURITY VIOLATION",
+          "signature_context": "package",
+          "signature_polarity": "active",
+          "source_category": "data_exfiltration",
+          "category_normalization": "native",
+          "semantic_facts": {
+            "evidence_kind": "signature_pattern",
+            "context_kind": "package",
+            "signals": [
+              {
+                "rule_id": "DATA_EXFIL_JS_FS_ACCESS",
+                "kind": "signature_polarity",
+                "file_path": "workflows/helpers/diff-digest.cjs",
+                "value_class": "active"
+              },
+              {
+                "rule_id": "DATA_EXFIL_JS_FS_ACCESS",
+                "kind": "unreferenced_executable",
+                "file_path": "workflows/helpers/diff-digest.cjs",
+                "value_class": "other"
+              }
+            ]
+          },
+          "same_path_other_rule_ids": [
+            "COMMAND_INJECTION_JS_CHILD_PROCESS"
+          ],
+          "same_path_unique_rule_count": 2,
+          "same_path_findings_count": 2,
+          "aitech": "AITech-8.2",
+          "aitech_name": "Data Exfiltration / Exposure",
+          "aisubtech": "AISubtech-8.2.3",
+          "aisubtech_name": "Data Exfiltration via Agent Tooling",
+          "aitech_mappings": [
+            "OWASP: LLM02:2026: Sensitive Information Disclosure",
+            "OWASP: ASI09: Human-Agent Trust Exploitation",
+            "MITRE ATLAS: AML.T0024.000: Exfiltration via AI Inference API: Infer Training Data Membership",
+            "MITRE ATLAS: AML.T0035: AI Artifact Collection",
+            "MITRE ATLAS: AML.T0037: Data From Local System",
+            "MITRE ATLAS: AML.T0057: LLM Data Leakage",
+            "NIST AML: NISTAML.037: Training Data Attacks"
+          ],
+          "aisubtech_mappings": [
+            "OWASP: LLM02:2026: Sensitive Information Disclosure",
+            "OWASP: ASI02: Tool Misuse & Exploitation",
+            "OWASP: ASI09: Human-Agent Trust Exploitation",
+            "MITRE ATLAS: AML.T0086: Exfiltration via AI Agent Tool Invocation",
+            "NIST AML: N/A"
+          ],
+          "framework_mappings": [
+            "OWASP: LLM02:2026: Sensitive Information Disclosure",
+            "OWASP: ASI02: Tool Misuse & Exploitation",
+            "OWASP: ASI09: Human-Agent Trust Exploitation",
+            "MITRE ATLAS: AML.T0086: Exfiltration via AI Agent Tool Invocation",
+            "NIST AML: N/A"
+          ],
+          "taxonomy_status": "mapped",
+          "taxonomy_source": "rule",
+          "scan_policy_name": "strict",
+          "scan_policy_version": "1.0",
+          "scan_policy_preset_base": "strict",
+          "scan_policy_fingerprint_sha256": "7f4560dea6f3f1c11067735bab3759c4daedfcd6d67f46b4e40899507a2c2ea9"
+        }
+      },
+      {
+        "id": "COMMAND_INJECTION_JS_CHILD_PROCESS_c74aa7eb60",
+        "rule_id": "COMMAND_INJECTION_JS_CHILD_PROCESS",
+        "category": "command_injection",
+        "severity": "CRITICAL",
+        "title": "Node.js child_process module usage for shell command execution",
+        "description": "Pattern detected: require(\"node:child_process\")",
+        "file_path": "workflows/helpers/gate-sandbox.cjs",
+        "line_number": 5,
+        "snippet": "const {execFileSync}=require(\"node:child_process\");const fs=require(\"node:fs\"),path=require(\"node:path\"),inputRoot=process.argv[1],inputTemp=process.argv[2],payload=process.argv[3],encodedExtraWrites=process.argv[4],fail=message=>{process.stderr.write(String(message)+\"\\n\");process.exit(1)},root=fs.realpathSync(inputRoot),tempRoot=fs.realpathSync(inputTemp),insideRoot=value=>value===root||value.startsWith(root+path.sep);if(root!==path.resolve(inputRoot)||tempRoot!==path.resolve(inputTemp)||!fs.statSync(root).isDirectory()||!fs.statSync(tempRoot).isDirectory())fail(\"Gate roots failed realpath validation\");let extraWrites;try{extraWrites=JSON.parse(Buffer.from(encodedExtraWrites,\"base64\").toString(\"utf8\"))}catch{fail(\"Gate extra-write manifest is invalid\")};const safeExtraWrite=value=>{if(typeof value!==\"string\"||path.resolve(value)!==value||!value.startsWith(root+path.sep)||path.basename(value)!==\"build\")return false;let parent;try{parent=fs.realpathSync(path.dirname(value))}catch{return false}if(!insideRoot(parent))return false;if(!fs.existsSync(value))return true;const stat=fs.lstatSync(value);return !stat.isSymbolicLink()&&stat.isDirectory()&&insideRoot(fs.realpathSync(value))};if(!Array.isArray(extraWrites)||extraWrites.some(value=>!safeExtraWrite(value)))fail(\"Gate extra-write roots failed validation\");const git=args=>{try{return execFileSync(\"git\",[\"-C\",root,...args],{encoding:\"utf8\",maxBuffer:8*1024*1024}).trim()}catch(error){fail(error.stderr||error||\"git metadata lookup failed\")}},top=fs.realpathSync(git([\"rev-parse\",\"--show-toplevel\"])),commonDir=fs.realpathSync(git([\"rev-parse\",\"--path-format=absolute\",\"--git-common-dir\"]));if(top!==root||path.basename(commonDir)!==\".git\"||!fs.statSync(commonDir).isDirectory())fail(\"Gate Git roots failed validation\");const getconf=name=>{try{return execFileSync(\"/usr/bin/getconf\",[name],{encoding:\"utf8\"}).trim()}catch{return null}};const darwinDirs=[\"DARWIN_USER_CACHE_DIR\",\"DARWIN_USER_TEMP_DIR\"].map(getconf).filter(Boolean).map(value=>{try{return fs.realpathSync(value)}catch{return null}}).filter(Boolean);const psShimLines=[\"#!/usr/bin/env python3\",\"# suid /bin/ps cannot exec under sandbox-exec; AMFI kills relocated copies too.\",\"# so this shim serves the one invocation shape the pack uses (ps -p PID -o lstart=)\",\"# with real kernel process start times via sysctl. Anything else fails loudly.\",\"import ctypes, struct, sys, time\",\"a = sys.argv[1:]\",\"if len(a) != 4 or a[0] != \\\"-p\\\" or a[2] != \\\"-o\\\" or a[3] != \\\"lstart=\\\":\",\"    sys.exit(1)\",\"try:\",\"    pid = int(a[1])\",\"except ValueError:\",\"    sys.exit(1)\",\"libc = ctypes.CDLL(None, use_errno=True)\",\"mib = (ctypes.c_int * 4)(1, 14, 1, pid)\",\"size = ctypes.c_size_t(0)\",\"if libc.sysctl(mib, 4, None, ctypes.byref(size), None, 0) != 0 or size.value == 0:\",\"    sys.exit(1)\",\"buf = ctypes.create_string_buffer(size.value)\",\"if libc.sysctl(mib, 4, buf, ctypes.byref(size), None, 0) != 0 or size.value == 0:\",\"    sys.exit(1)\",\"tv_sec = struct.unpack_from(\\\"<q\\\", buf.raw, 0)[0]\",\"if tv_sec <= 0:\",\"    sys.exit(1)\",\"print(time.strftime(\\\"%a %b %e %H:%M:%S %Y\\\", time.localtime(tv_sec)))\"];const shimDir=path.join(tempRoot,\"bin\");fs.mkdirSync(shimDir,{recursive:true});fs.writeFileSync(path.join(shimDir,\"ps\"),psShimLines.join(\"\\n\")+\"\\n\",{mode:0o755});const reads=[root,commonDir,\"/System\",\"/usr\",\"/usr/local\",\"/bin\",\"/sbin\",\"/Library\",\"/opt/homebrew\",\"/var/select\",\"/private/var/select\",\"/etc\",\"/private/etc\",\"/Applications/Xcode.app\",tempRoot].concat(darwinDirs),writes=[\"node_modules\",\".next\",\"dist\",\"build\",\".build\",\"coverage\",\".cache\",\".gradle\",\".swiftpm\",\".turbo\",\"target\",\".pytest_cache\",\".mypy_cache\",\".ruff_cache\",\"tmp\",\".tmp\",\"tests/fixtures\"].map(name=>path.join(root,name)).concat(extraWrites,[tempRoot],darwinDirs),subpaths=values=>values.map(value=>\"  (subpath \"+JSON.stringify(value)+\")\").join(\"\\n\"),profile=\"(version 1)\\n(deny default)\\n(import \\\"system.sb\\\")\\n(allow process*)\\n(allow file-read-metadata)\\n(allow sysctl-read)\\n(allow file-read*\\n\"+subpaths(reads)+\"\\n  (literal \\\"/dev/null\\\")\\n  (literal \\\"/dev/urandom\\\"))\\n(allow file-write*\\n\"+subpaths(writes)+\"\\n)\\n(deny network*)\";try{execFileSync(\"/usr/bin/sandbox-exec\",[\"-p\",profile,\"/bin/sh\",\"-c\",payload],{stdio:\"inherit\",env:{...process.env,TMPDIR:tempRoot,TMP:tempRoot,TEMP:tempRoot,HOME:tempRoot,npm_config_cache:tempRoot+\"/npm-cache\",PATH:shimDir+\":\"+(process.env.PATH||\"/usr/bin:/bin:/usr/sbin:/sbin\")}});process.exit(0)}catch(error){if(Number.isInteger(error.status))process.exit(error.status||1);fail(error)}",
+        "remediation": "Avoid child_process. If required, use execFile with explicit arguments instead of exec with shell strings",
+        "analyzer": "static",
+        "metadata": {
+          "matched_pattern": "require\\s*\\(\\s*['\"](?:node:)?child_process['\"]\\s*\\)",
+          "matched_text": "require(\"node:child_process\")",
+          "signature_pattern_index": 0,
+          "signature_match_start": 21,
+          "signature_match_end": 50,
+          "signature_pattern_sha256": "6401d9a234bfb92b5f0fa9b72e09b156efef674c865778f3234bdb424e32344b",
+          "scanner_category": "INJECTION ATTACK",
+          "signature_context": "package",
+          "signature_polarity": "active",
+          "source_category": "command_injection",
+          "category_normalization": "native",
+          "semantic_facts": {
+            "evidence_kind": "signature_pattern",
+            "context_kind": "package",
+            "signals": [
+              {
+                "rule_id": "COMMAND_INJECTION_JS_CHILD_PROCESS",
+                "kind": "signature_polarity",
+                "file_path": "workflows/helpers/gate-sandbox.cjs",
+                "value_class": "active"
+              },
+              {
+                "rule_id": "COMMAND_INJECTION_JS_CHILD_PROCESS",
+                "kind": "unreferenced_executable",
+                "file_path": "workflows/helpers/gate-sandbox.cjs",
+                "value_class": "other"
+              }
+            ]
+          },
+          "aitech": "AITech-9.1",
+          "aitech_name": "Model or Agentic System Manipulation",
+          "aisubtech": "AISubtech-9.1.4",
+          "aisubtech_name": "Injection Attacks (e.g., SQL, Command Execution, XSS)",
+          "aitech_mappings": [
+            "OWASP: LLM04:2026: Supply Chain",
+            "OWASP: ASI04: Agentic Supply Chain Vulnerabilities",
+            "OWASP: ASI05: Unexpected Code Execution (RCE)",
+            "MITRE ATLAS: AML.T0050: Command and Scripting Interpreter",
+            "NIST AML: NISTAML.023: Backdoor Poisoning",
+            "Cisco AI MDL Code: MDL-006",
+            "Cisco AI MDL Code: MDL-007",
+            "Cisco AI MDL Code: MDL-005",
+            "Cisco AI MDL Code: MDL-010",
+            "Cisco AI MDL Code: MDL-012",
+            "Cisco AI MDL Code: MDL-014",
+            "Cisco AI MDL Code: MDL-015",
+            "Cisco AI MDL Code: MDL-019"
+          ],
+          "aisubtech_mappings": [
+            "OWASP: LLM01:2026: Prompt Injection",
+            "OWASP: LLM10:2026: Improper Output Handling",
+            "OWASP: LLM03:2026: Excessive Agency",
+            "OWASP: ASI04: Agentic Supply Chain Vulnerabilities",
+            "OWASP: ASI05: Unexpected Code Execution (RCE)",
+            "MITRE ATLAS: AML.T0051: LLM Prompt Injection",
+            "MITRE ATLAS: AML.T0050: Command and Scripting Interpreter",
+            "MITRE ATLAS: AML.T0067: LLM Trusted Output Component Manipulation",
+            "MITRE ATT&CK: T1588.007: Obtain AI Capabilities",
+            "NIST AML: NISTAML.024: Targeted Poisoning"
+          ],
+          "framework_mappings": [
+            "OWASP: LLM01:2026: Prompt Injection",
+            "OWASP: LLM10:2026: Improper Output Handling",
+            "OWASP: LLM03:2026: Excessive Agency",
+            "OWASP: ASI04: Agentic Supply Chain Vulnerabilities",
+            "OWASP: ASI05: Unexpected Code Execution (RCE)",
+            "MITRE ATLAS: AML.T0051: LLM Prompt Injection",
+            "MITRE ATLAS: AML.T0050: Command and Scripting Interpreter",
+            "MITRE ATLAS: AML.T0067: LLM Trusted Output Component Manipulation",
+            "MITRE ATT&CK: T1588.007: Obtain AI Capabilities",
+            "NIST AML: NISTAML.024: Targeted Poisoning"
+          ],
+          "taxonomy_status": "mapped",
+          "taxonomy_source": "rule",
+          "scan_policy_name": "strict",
+          "scan_policy_version": "1.0",
+          "scan_policy_preset_base": "strict",
+          "scan_policy_fingerprint_sha256": "7f4560dea6f3f1c11067735bab3759c4daedfcd6d67f46b4e40899507a2c2ea9"
+        }
+      },
+      {
+        "id": "COMMAND_INJECTION_JS_CHILD_PROCESS_147d6f6b79",
+        "rule_id": "COMMAND_INJECTION_JS_CHILD_PROCESS",
+        "category": "command_injection",
+        "severity": "CRITICAL",
+        "title": "Node.js child_process module usage for shell command execution",
+        "description": "Pattern detected: require(\"node:child_process\")",
+        "file_path": "workflows/helpers/scout-setup.cjs",
+        "line_number": 4,
+        "snippet": "const {execFileSync}=require(\"node:child_process\");const {randomUUID}=require(\"node:crypto\");const {mkdirSync,realpathSync}=require(\"node:fs\");const {dirname,basename}=require(\"node:path\"),parseStatus=value => {",
+        "remediation": "Avoid child_process. If required, use execFile with explicit arguments instead of exec with shell strings",
+        "analyzer": "static",
+        "metadata": {
+          "matched_pattern": "require\\s*\\(\\s*['\"](?:node:)?child_process['\"]\\s*\\)",
+          "matched_text": "require(\"node:child_process\")",
+          "signature_pattern_index": 0,
+          "signature_match_start": 21,
+          "signature_match_end": 50,
+          "signature_pattern_sha256": "6401d9a234bfb92b5f0fa9b72e09b156efef674c865778f3234bdb424e32344b",
+          "scanner_category": "INJECTION ATTACK",
+          "signature_context": "package",
+          "signature_polarity": "active",
+          "source_category": "command_injection",
+          "category_normalization": "native",
+          "semantic_facts": {
+            "evidence_kind": "signature_pattern",
+            "context_kind": "package",
+            "signals": [
+              {
+                "rule_id": "COMMAND_INJECTION_JS_CHILD_PROCESS",
+                "kind": "signature_polarity",
+                "file_path": "workflows/helpers/scout-setup.cjs",
+                "value_class": "active"
+              },
+              {
+                "rule_id": "COMMAND_INJECTION_JS_CHILD_PROCESS",
+                "kind": "unreferenced_executable",
+                "file_path": "workflows/helpers/scout-setup.cjs",
+                "value_class": "other"
+              }
+            ]
+          },
+          "aitech": "AITech-9.1",
+          "aitech_name": "Model or Agentic System Manipulation",
+          "aisubtech": "AISubtech-9.1.4",
+          "aisubtech_name": "Injection Attacks (e.g., SQL, Command Execution, XSS)",
+          "aitech_mappings": [
+            "OWASP: LLM04:2026: Supply Chain",
+            "OWASP: ASI04: Agentic Supply Chain Vulnerabilities",
+            "OWASP: ASI05: Unexpected Code Execution (RCE)",
+            "MITRE ATLAS: AML.T0050: Command and Scripting Interpreter",
+            "NIST AML: NISTAML.023: Backdoor Poisoning",
+            "Cisco AI MDL Code: MDL-006",
+            "Cisco AI MDL Code: MDL-007",
+            "Cisco AI MDL Code: MDL-005",
+            "Cisco AI MDL Code: MDL-010",
+            "Cisco AI MDL Code: MDL-012",
+            "Cisco AI MDL Code: MDL-014",
+            "Cisco AI MDL Code: MDL-015",
+            "Cisco AI MDL Code: MDL-019"
+          ],
+          "aisubtech_mappings": [
+            "OWASP: LLM01:2026: Prompt Injection",
+            "OWASP: LLM10:2026: Improper Output Handling",
+            "OWASP: LLM03:2026: Excessive Agency",
+            "OWASP: ASI04: Agentic Supply Chain Vulnerabilities",
+            "OWASP: ASI05: Unexpected Code Execution (RCE)",
+            "MITRE ATLAS: AML.T0051: LLM Prompt Injection",
+            "MITRE ATLAS: AML.T0050: Command and Scripting Interpreter",
+            "MITRE ATLAS: AML.T0067: LLM Trusted Output Component Manipulation",
+            "MITRE ATT&CK: T1588.007: Obtain AI Capabilities",
+            "NIST AML: NISTAML.024: Targeted Poisoning"
+          ],
+          "framework_mappings": [
+            "OWASP: LLM01:2026: Prompt Injection",
+            "OWASP: LLM10:2026: Improper Output Handling",
+            "OWASP: LLM03:2026: Excessive Agency",
+            "OWASP: ASI04: Agentic Supply Chain Vulnerabilities",
+            "OWASP: ASI05: Unexpected Code Execution (RCE)",
+            "MITRE ATLAS: AML.T0051: LLM Prompt Injection",
+            "MITRE ATLAS: AML.T0050: Command and Scripting Interpreter",
+            "MITRE ATLAS: AML.T0067: LLM Trusted Output Component Manipulation",
+            "MITRE ATT&CK: T1588.007: Obtain AI Capabilities",
+            "NIST AML: NISTAML.024: Targeted Poisoning"
+          ],
+          "taxonomy_status": "mapped",
+          "taxonomy_source": "rule",
+          "scan_policy_name": "strict",
+          "scan_policy_version": "1.0",
+          "scan_policy_preset_base": "strict",
+          "scan_policy_fingerprint_sha256": "7f4560dea6f3f1c11067735bab3759c4daedfcd6d67f46b4e40899507a2c2ea9"
+        }
+      },
+      {
+        "id": "COMMAND_INJECTION_JS_CHILD_PROCESS_bc9350aa16",
+        "rule_id": "COMMAND_INJECTION_JS_CHILD_PROCESS",
+        "category": "command_injection",
+        "severity": "CRITICAL",
+        "title": "Node.js child_process module usage for shell command execution",
+        "description": "Pattern detected: from 'node:child_process'",
+        "file_path": "workflows/tests/test_plan_path_safety.mjs",
+        "line_number": 16,
+        "snippet": "import { execFileSync } from 'node:child_process'",
+        "remediation": "Avoid child_process. If required, use execFile with explicit arguments instead of exec with shell strings",
+        "analyzer": "static",
+        "metadata": {
+          "matched_pattern": "from\\s+['\"](?:node:)?child_process['\"]",
+          "matched_text": "from 'node:child_process'",
+          "signature_pattern_index": 1,
+          "signature_match_start": 24,
+          "signature_match_end": 49,
+          "signature_pattern_sha256": "9376960e72aac8f6d944cee70e70b31657c1f32ad94358351255626f957be3d1",
+          "scanner_category": "INJECTION ATTACK",
+          "signature_context": "example",
+          "signature_polarity": "illustrative",
+          "source_category": "command_injection",
+          "category_normalization": "native",
+          "semantic_facts": {
+            "evidence_kind": "signature_pattern",
+            "context_kind": "example",
+            "signals": [
+              {
+                "rule_id": "COMMAND_INJECTION_JS_CHILD_PROCESS",
+                "kind": "signature_polarity",
+                "file_path": "workflows/tests/test_plan_path_safety.mjs",
+                "value_class": "illustrative"
+              },
+              {
+                "rule_id": "COMMAND_INJECTION_JS_CHILD_PROCESS",
+                "kind": "unreferenced_executable",
+                "file_path": "workflows/tests/test_plan_path_safety.mjs",
+                "value_class": "javascript"
+              }
+            ]
+          },
+          "aitech": "AITech-9.1",
+          "aitech_name": "Model or Agentic System Manipulation",
+          "aisubtech": "AISubtech-9.1.4",
+          "aisubtech_name": "Injection Attacks (e.g., SQL, Command Execution, XSS)",
+          "aitech_mappings": [
+            "OWASP: LLM04:2026: Supply Chain",
+            "OWASP: ASI04: Agentic Supply Chain Vulnerabilities",
+            "OWASP: ASI05: Unexpected Code Execution (RCE)",
+            "MITRE ATLAS: AML.T0050: Command and Scripting Interpreter",
+            "NIST AML: NISTAML.023: Backdoor Poisoning",
+            "Cisco AI MDL Code: MDL-006",
+            "Cisco AI MDL Code: MDL-007",
+            "Cisco AI MDL Code: MDL-005",
+            "Cisco AI MDL Code: MDL-010",
+            "Cisco AI MDL Code: MDL-012",
+            "Cisco AI MDL Code: MDL-014",
+            "Cisco AI MDL Code: MDL-015",
+            "Cisco AI MDL Code: MDL-019"
+          ],
+          "aisubtech_mappings": [
+            "OWASP: LLM01:2026: Prompt Injection",
+            "OWASP: LLM10:2026: Improper Output Handling",
+            "OWASP: LLM03:2026: Excessive Agency",
+            "OWASP: ASI04: Agentic Supply Chain Vulnerabilities",
+            "OWASP: ASI05: Unexpected Code Execution (RCE)",
+            "MITRE ATLAS: AML.T0051: LLM Prompt Injection",
+            "MITRE ATLAS: AML.T0050: Command and Scripting Interpreter",
+            "MITRE ATLAS: AML.T0067: LLM Trusted Output Component Manipulation",
+            "MITRE ATT&CK: T1588.007: Obtain AI Capabilities",
+            "NIST AML: NISTAML.024: Targeted Poisoning"
+          ],
+          "framework_mappings": [
+            "OWASP: LLM01:2026: Prompt Injection",
+            "OWASP: LLM10:2026: Improper Output Handling",
+            "OWASP: LLM03:2026: Excessive Agency",
+            "OWASP: ASI04: Agentic Supply Chain Vulnerabilities",
+            "OWASP: ASI05: Unexpected Code Execution (RCE)",
+            "MITRE ATLAS: AML.T0051: LLM Prompt Injection",
+            "MITRE ATLAS: AML.T0050: Command and Scripting Interpreter",
+            "MITRE ATLAS: AML.T0067: LLM Trusted Output Component Manipulation",
+            "MITRE ATT&CK: T1588.007: Obtain AI Capabilities",
+            "NIST AML: NISTAML.024: Targeted Poisoning"
+          ],
+          "taxonomy_status": "mapped",
+          "taxonomy_source": "rule",
+          "scan_policy_name": "strict",
+          "scan_policy_version": "1.0",
+          "scan_policy_preset_base": "strict",
+          "scan_policy_fingerprint_sha256": "7f4560dea6f3f1c11067735bab3759c4daedfcd6d67f46b4e40899507a2c2ea9"
+        }
+      }
+    ],
+    "scan_duration_seconds": 0.9319067001342773,
+    "duration_ms": 931,
+    "analyzers_used": [
+      "static_analyzer",
+      "bytecode",
+      "pipeline",
+      "correlation",
+      "behavioral_analyzer"
+    ],
+    "timestamp": "2026-10-25T20:56:08.205031+00:00",
+    "scan_metadata": {
+      "policy_name": "strict",
+      "policy_version": "1.0",
+      "policy_preset_base": "strict",
+      "policy_fingerprint_sha256": "7f4560dea6f3f1c11067735bab3759c4daedfcd6d67f46b4e40899507a2c2ea9",
+      "cel": {
+        "mode": "shadow",
+        "runtime": "cel-go",
+        "runtime_version": "v0.32.0;helper=2.3.1",
+        "fact_schema": "v1",
+        "expression_set_hash": "f26459b8f4a46a974d7ab0aaae34127b5b6a40d693e266e12fca03a69a6d26aa",
+        "evaluated": 0,
+        "retained": 11,
+        "would_suppress": 0,
+        "suppressed": 0,
+        "fallbacks": 0,
+        "projection_incomplete": 0,
+        "elapsed_ms": 0.0,
+        "projection_ms": 0.0,
+        "evaluation_ms": 0.0,
+        "errors": [],
+        "per_rule": {},
+        "suppressed_candidates": []
+      },
+      "rule_contract": {
+        "status": "passed",
+        "schema_version": 2,
+        "checked": 2,
+        "invalid_findings": 0,
+        "errors": []
+      },
+      "taxonomy": {
+        "source": "builtin",
+        "version": "2.0.0",
+        "name": "Cisco AI Security and Safety Taxonomy",
+        "revision": "655a343ac943a51b6f61f86e47156e7752c15dc6",
+        "snapshot_sha256": "413e8ce9081e6d91b78aaa0d0b1c06cdc15d0406ad319e23e9f9f4f80735c441",
+        "findings": {
+          "mapped": 9,
+          "not_applicable": 2,
+          "unmapped": 0
+        }
+      }
+    },
+    "analyzers_failed": []
+  },
+  "diagnostics": [],
+  "coverage": {
+    "complete": true,
+    "files": [
+      {
+        "path": "CARD.md",
+        "size": 5891,
+        "sha256": "52adf272b8f7e563d5909a11f2d1a0d30b0f7fa01b285540eb570fd50a437013"
+      },
+      {
+        "path": "LICENSE.graph-of-thoughts-BSD.txt",
+        "size": 2532,
+        "sha256": "5080658c0064dfbfee3e2baab373b39975b2741f4e06a23717895e6ac0dc2da4"
+      },
+      {
+        "path": "SKILL.md",
+        "size": 15165,
+        "sha256": "f2b86a2129955c64759f2c877d46b096da21a305f1e2d43f632d2020225e5367"
+      },
+      {
+        "path": "agents/openai.yaml",
+        "size": 451,
+        "sha256": "ba6fac23455891cff4345228555dbc0d9f2624d7c92a8c3f04fa27683b367ef6"
+      },
+      {
+        "path": "agents/suede-graph-flo-xr-applier.md",
+        "size": 544,
+        "sha256": "114d6f6f173e771a57774a66d93eda2ea33bf79e67731d014c5f93af13750154"
+      },
+      {
+        "path": "agents/suede-graph-flo-xr-code-reader.md",
+        "size": 650,
+        "sha256": "d156ab6d555d522a92373c620cdf444802501f0db6387f06fa4796aab2619d89"
+      },
+      {
+        "path": "agents/suede-graph-flo-xr-patch-author.md",
+        "size": 676,
+        "sha256": "bcd1f9226f78243524e5d0fcaf2e91b3dc8dc1c3b6521f5979972dd711b241fb"
+      },
+      {
+        "path": "agents/suede-graph-flo-xr-scout.md",
+        "size": 682,
+        "sha256": "3a203b569f5a444899d58ceec2754d36386372a4079791e3fe558ed29370ee4d"
+      },
+      {
+        "path": "agents/suede-graph-flo-xr-verifier.md",
+        "size": 575,
+        "sha256": "1020b28cdb5d0f17efc964a036bbb1c9e5a41f71c5702010c7169207f58172ac"
+      },
+      {
+        "path": "agents/suede-graph-flo-xr-web-reader.md",
+        "size": 654,
+        "sha256": "96dc7f639166c816976a9bd38f0c93f395aebdeb11281f4e06043078a3bf56ae"
+      },
+      {
+        "path": "workflows/helpers/apply-patch.cjs",
+        "size": 4513,
+        "sha256": "44cbd66003b79facb6c2f28856dddb8257d106f943a6686bd9ffeab14ec497ea"
+      },
+      {
+        "path": "workflows/helpers/candidate-audit.cjs",
+        "size": 2317,
+        "sha256": "522f9057a59b0aa4df37875472b26f00935c90d7340fab770c4e2595962b5761"
+      },
+      {
+        "path": "workflows/helpers/diff-digest.cjs",
+        "size": 1725,
+        "sha256": "dcdc9971f19116c2fe6abe8cd90892a9651bb88d1c2177cd7ae4145a6cdd4fff"
+      },
+      {
+        "path": "workflows/helpers/gate-environment.cjs",
+        "size": 1995,
+        "sha256": "d48306b65375e6c20202ba77d61db670536bfa93c77370bb4875e0f7cbde55ab"
+      },
+      {
+        "path": "workflows/helpers/gate-sandbox.cjs",
+        "size": 4955,
+        "sha256": "70bd6f4c6efee27fbe56110827b5bed74a86e2b7fad8e07f200da233e1d2dba0"
+      },
+      {
+        "path": "workflows/helpers/scout-setup.cjs",
+        "size": 4758,
+        "sha256": "b5837eb777d07f8639c9f9090890e31fe36d4e64a20053fdeb9f131ee075191e"
+      },
+      {
+        "path": "workflows/suede-graph-flo-xr.js",
+        "size": 174421,
+        "sha256": "0e6486ee2c94f92897740cacd124977541b0653c2bbdc05b2def2e6b537cd472"
+      },
+      {
+        "path": "workflows/tests/test_plan_path_safety.mjs",
+        "size": 17846,
+        "sha256": "867319abbcb526fdd18326f39de1021b578407e27f8838cb2f9bc2c8c8d6caaf"
+      },
+      {
+        "path": "workflows/tests/test_score_resilience.mjs",
+        "size": 14372,
+        "sha256": "274c630e5c97b16a7b25d92350f2a009733b909114ba5f7698dfe9de70569b2f"
+      }
+    ],
+    "skipped": []
+  },
+  "completed_at": "2026-10-25T20:56:08.207529+00:00",
+  "runtime_image": "sha256:e922b2c027837474fb8d1eb875fd7ecf8d1cbc826ea2fff453e97a2160b7917e"
+}

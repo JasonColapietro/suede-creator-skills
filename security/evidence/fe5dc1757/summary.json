@@ -1,0 +1,2656 @@
+[
+  {
+    "id": "jasoncolapietro/suede-creator-skills/android-app-factory",
+    "status": "findings",
+    "reason": "review_retained_findings",
+    "source": {
+      "repository": "JasonColapietro/suede-creator-skills",
+      "path": "skills/android-app-factory",
+      "revision": "fe5dc1757cd6c8ff63aee853564249c00151778d"
+    },
+    "scanner": {
+      "name": "cisco-ai-skill-scanner",
+      "version": "2.3.1",
+      "adapter_version": 2,
+      "analyzers": [
+        "static_analyzer",
+        "bytecode",
+        "pipeline",
+        "correlation",
+        "behavioral_analyzer"
+      ],
+      "policy": "strict",
+      "cel_mode": "shadow",
+      "network": "disabled",
+      "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+    },
+    "started_at": "2026-10-25T20:56:01.716949+00:00",
+    "completed_at": "2026-10-25T20:56:02.254501+00:00",
+    "evaluated_on": "2026-10-25",
+    "valid_until": "2026-11-24T20:56:02.254Z",
+    "files_scanned": 9,
+    "coverage_complete": true,
+    "skipped": [],
+    "findings": {
+      "CRITICAL": 0,
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 1,
+      "INFO": 1
+    },
+    "evidence_sha256": "11fe9ecd13215bd9092ea6100f2219eb87387a9d00a5acb5e0865ad61aceaaca"
+  },
+  {
+    "id": "jasoncolapietro/suede-creator-skills/site-to-ios-app",
+    "status": "findings",
+    "reason": "review_retained_findings",
+    "source": {
+      "repository": "JasonColapietro/suede-creator-skills",
+      "path": "skills/site-to-ios-app",
+      "revision": "fe5dc1757cd6c8ff63aee853564249c00151778d"
+    },
+    "scanner": {
+      "name": "cisco-ai-skill-scanner",
+      "version": "2.3.1",
+      "adapter_version": 2,
+      "analyzers": [
+        "static_analyzer",
+        "bytecode",
+        "pipeline",
+        "correlation",
+        "behavioral_analyzer"
+      ],
+      "policy": "strict",
+      "cel_mode": "shadow",
+      "network": "disabled",
+      "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+    },
+    "started_at": "2026-10-25T20:56:02.254942+00:00",
+    "completed_at": "2026-10-25T20:56:02.368929+00:00",
+    "evaluated_on": "2026-10-25",
+    "valid_until": "2026-11-24T20:56:02.368Z",
+    "files_scanned": 6,
+    "coverage_complete": true,
+    "skipped": [],
+    "findings": {
+      "CRITICAL": 0,
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 1,
+      "INFO": 1
+    },
+    "evidence_sha256": "15ff56af218c161dcfeeebbef83ccac85479c286c8fe1b62b906b4bf6aece005"
+  },
+  {
+    "id": "jasoncolapietro/suede-creator-skills/suede-ab-testing",
+    "status": "findings",
+    "reason": "review_retained_findings",
+    "source": {
+      "repository": "JasonColapietro/suede-creator-skills",
+      "path": "skills/suede-ab-testing",
+      "revision": "fe5dc1757cd6c8ff63aee853564249c00151778d"
+    },
+    "scanner": {
+      "name": "cisco-ai-skill-scanner",
+      "version": "2.3.1",
+      "adapter_version": 2,
+      "analyzers": [
+        "static_analyzer",
+        "bytecode",
+        "pipeline",
+        "correlation",
+        "behavioral_analyzer"
+      ],
+      "policy": "strict",
+      "cel_mode": "shadow",
+      "network": "disabled",
+      "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+    },
+    "started_at": "2026-10-25T20:56:02.369263+00:00",
+    "completed_at": "2026-10-25T20:56:02.509098+00:00",
+    "evaluated_on": "2026-10-25",
+    "valid_until": "2026-11-24T20:56:02.509Z",
+    "files_scanned": 6,
+    "coverage_complete": true,
+    "skipped": [],
+    "findings": {
+      "CRITICAL": 0,
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 1,
+      "INFO": 1
+    },
+    "evidence_sha256": "4ea590492cb493019a4db8221a608d3ba38f6c9ae63a3dccb507e1fe312e8cf1"
+  },
+  {
+    "id": "jasoncolapietro/suede-creator-skills/suede-ad-creative",
+    "status": "findings",
+    "reason": "review_retained_findings",
+    "source": {
+      "repository": "JasonColapietro/suede-creator-skills",
+      "path": "skills/suede-ad-creative",
+      "revision": "fe5dc1757cd6c8ff63aee853564249c00151778d"
+    },
+    "scanner": {
+      "name": "cisco-ai-skill-scanner",
+      "version": "2.3.1",
+      "adapter_version": 2,
+      "analyzers": [
+        "static_analyzer",
+        "bytecode",
+        "pipeline",
+        "correlation",
+        "behavioral_analyzer"
+      ],
+      "policy": "strict",
+      "cel_mode": "shadow",
+      "network": "disabled",
+      "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+    },
+    "started_at": "2026-10-25T20:56:02.509453+00:00",
+    "completed_at": "2026-10-25T20:56:02.887156+00:00",
+    "evaluated_on": "2026-10-25",
+    "valid_until": "2026-11-24T20:56:02.887Z",
+    "files_scanned": 13,
+    "coverage_complete": true,
+    "skipped": [],
+    "findings": {
+      "CRITICAL": 0,
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 1,
+      "INFO": 1
+    },
+    "evidence_sha256": "5613364323c71bd8fef11c0442d432315473ed25c7757fd3240ff9b6aac3006b"
+  },
+  {
+    "id": "jasoncolapietro/suede-creator-skills/suede-ads",
+    "status": "findings",
+    "reason": "review_retained_findings",
+    "source": {
+      "repository": "JasonColapietro/suede-creator-skills",
+      "path": "skills/suede-ads",
+      "revision": "fe5dc1757cd6c8ff63aee853564249c00151778d"
+    },
+    "scanner": {
+      "name": "cisco-ai-skill-scanner",
+      "version": "2.3.1",
+      "adapter_version": 2,
+      "analyzers": [
+        "static_analyzer",
+        "bytecode",
+        "pipeline",
+        "correlation",
+        "behavioral_analyzer"
+      ],
+      "policy": "strict",
+      "cel_mode": "shadow",
+      "network": "disabled",
+      "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+    },
+    "started_at": "2026-10-25T20:56:02.887566+00:00",
+    "completed_at": "2026-10-25T20:56:03.263364+00:00",
+    "evaluated_on": "2026-10-25",
+    "valid_until": "2026-11-24T20:56:03.263Z",
+    "files_scanned": 14,
+    "coverage_complete": true,
+    "skipped": [],
+    "findings": {
+      "CRITICAL": 0,
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 1,
+      "INFO": 1
+    },
+    "evidence_sha256": "99dd2bc31eb43dd1bda3ac23a6d3b3ce593f93adcd07364eaa3875238dc541e4"
+  },
+  {
+    "id": "jasoncolapietro/suede-creator-skills/suede-agent-teams",
+    "status": "failed",
+    "reason": "review_retained_findings",
+    "source": {
+      "repository": "JasonColapietro/suede-creator-skills",
+      "path": "skills/suede-agent-teams",
+      "revision": "fe5dc1757cd6c8ff63aee853564249c00151778d"
+    },
+    "scanner": {
+      "name": "cisco-ai-skill-scanner",
+      "version": "2.3.1",
+      "adapter_version": 2,
+      "analyzers": [
+        "static_analyzer",
+        "bytecode",
+        "pipeline",
+        "correlation",
+        "behavioral_analyzer"
+      ],
+      "policy": "strict",
+      "cel_mode": "shadow",
+      "network": "disabled",
+      "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+    },
+    "started_at": "2026-10-25T20:56:03.263797+00:00",
+    "completed_at": "2026-10-25T20:56:03.610338+00:00",
+    "evaluated_on": "2026-10-25",
+    "valid_until": "2026-11-24T20:56:03.610Z",
+    "files_scanned": 7,
+    "coverage_complete": true,
+    "skipped": [],
+    "findings": {
+      "CRITICAL": 1,
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 9,
+      "INFO": 1
+    },
+    "evidence_sha256": "46d29981a4346b7a7cb2e534eca543b6774fed1f85fde52c38e96cdd50fc24f7"
+  },
+  {
+    "id": "jasoncolapietro/suede-creator-skills/suede-ai-eval",
+    "status": "findings",
+    "reason": "review_retained_findings",
+    "source": {
+      "repository": "JasonColapietro/suede-creator-skills",
+      "path": "skills/suede-ai-eval",
+      "revision": "fe5dc1757cd6c8ff63aee853564249c00151778d"
+    },
+    "scanner": {
+      "name": "cisco-ai-skill-scanner",
+      "version": "2.3.1",
+      "adapter_version": 2,
+      "analyzers": [
+        "static_analyzer",
+        "bytecode",
+        "pipeline",
+        "correlation",
+        "behavioral_analyzer"
+      ],
+      "policy": "strict",
+      "cel_mode": "shadow",
+      "network": "disabled",
+      "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+    },
+    "started_at": "2026-10-25T20:56:03.611323+00:00",
+    "completed_at": "2026-10-25T20:56:03.711454+00:00",
+    "evaluated_on": "2026-10-25",
+    "valid_until": "2026-11-24T20:56:03.711Z",
+    "files_scanned": 4,
+    "coverage_complete": true,
+    "skipped": [],
+    "findings": {
+      "CRITICAL": 0,
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 1,
+      "INFO": 1
+    },
+    "evidence_sha256": "c7a1cbde3a7ac7d65182a267b711d4ea662d54a67704e6b6882871ebed6a76f8"
+  },
+  {
+    "id": "jasoncolapietro/suede-creator-skills/suede-ai-seo",
+    "status": "findings",
+    "reason": "review_retained_findings",
+    "source": {
+      "repository": "JasonColapietro/suede-creator-skills",
+      "path": "skills/suede-ai-seo",
+      "revision": "fe5dc1757cd6c8ff63aee853564249c00151778d"
+    },
+    "scanner": {
+      "name": "cisco-ai-skill-scanner",
+      "version": "2.3.1",
+      "adapter_version": 2,
+      "analyzers": [
+        "static_analyzer",
+        "bytecode",
+        "pipeline",
+        "correlation",
+        "behavioral_analyzer"
+      ],
+      "policy": "strict",
+      "cel_mode": "shadow",
+      "network": "disabled",
+      "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+    },
+    "started_at": "2026-10-25T20:56:03.711816+00:00",
+    "completed_at": "2026-10-25T20:56:03.940119+00:00",
+    "evaluated_on": "2026-10-25",
+    "valid_until": "2026-11-24T20:56:03.940Z",
+    "files_scanned": 12,
+    "coverage_complete": true,
+    "skipped": [],
+    "findings": {
+      "CRITICAL": 0,
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 1,
+      "INFO": 1
+    },
+    "evidence_sha256": "04c6c0b3c59bae7a23a6c029715c19b0c363c668179b650b7429d228dc564f34"
+  },
+  {
+    "id": "jasoncolapietro/suede-creator-skills/suede-analytics",
+    "status": "findings",
+    "reason": "review_retained_findings",
+    "source": {
+      "repository": "JasonColapietro/suede-creator-skills",
+      "path": "skills/suede-analytics",
+      "revision": "fe5dc1757cd6c8ff63aee853564249c00151778d"
+    },
+    "scanner": {
+      "name": "cisco-ai-skill-scanner",
+      "version": "2.3.1",
+      "adapter_version": 2,
+      "analyzers": [
+        "static_analyzer",
+        "bytecode",
+        "pipeline",
+        "correlation",
+        "behavioral_analyzer"
+      ],
+      "policy": "strict",
+      "cel_mode": "shadow",
+      "network": "disabled",
+      "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+    },
+    "started_at": "2026-10-25T20:56:03.940511+00:00",
+    "completed_at": "2026-10-25T20:56:04.098740+00:00",
+    "evaluated_on": "2026-10-25",
+    "valid_until": "2026-11-24T20:56:04.098Z",
+    "files_scanned": 7,
+    "coverage_complete": true,
+    "skipped": [],
+    "findings": {
+      "CRITICAL": 0,
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 1,
+      "INFO": 1
+    },
+    "evidence_sha256": "3fcaecb88579208fb969f2311d6170d999d221aa721b64c9459e17d0828633af"
+  },
+  {
+    "id": "jasoncolapietro/suede-creator-skills/suede-aso",
+    "status": "findings",
+    "reason": "review_retained_findings",
+    "source": {
+      "repository": "JasonColapietro/suede-creator-skills",
+      "path": "skills/suede-aso",
+      "revision": "fe5dc1757cd6c8ff63aee853564249c00151778d"
+    },
+    "scanner": {
+      "name": "cisco-ai-skill-scanner",
+      "version": "2.3.1",
+      "adapter_version": 2,
+      "analyzers": [
+        "static_analyzer",
+        "bytecode",
+        "pipeline",
+        "correlation",
+        "behavioral_analyzer"
+      ],
+      "policy": "strict",
+      "cel_mode": "shadow",
+      "network": "disabled",
+      "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+    },
+    "started_at": "2026-10-25T20:56:04.099081+00:00",
+    "completed_at": "2026-10-25T20:56:04.299621+00:00",
+    "evaluated_on": "2026-10-25",
+    "valid_until": "2026-11-24T20:56:04.299Z",
+    "files_scanned": 9,
+    "coverage_complete": true,
+    "skipped": [],
+    "findings": {
+      "CRITICAL": 0,
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 1,
+      "INFO": 1
+    },
+    "evidence_sha256": "2cf5ada9251a62b7239008b663aaaab2184643e78407da51ecc9fdc764a583d2"
+  },
+  {
+    "id": "jasoncolapietro/suede-creator-skills/suede-attribution",
+    "status": "findings",
+    "reason": "review_retained_findings",
+    "source": {
+      "repository": "JasonColapietro/suede-creator-skills",
+      "path": "skills/suede-attribution",
+      "revision": "fe5dc1757cd6c8ff63aee853564249c00151778d"
+    },
+    "scanner": {
+      "name": "cisco-ai-skill-scanner",
+      "version": "2.3.1",
+      "adapter_version": 2,
+      "analyzers": [
+        "static_analyzer",
+        "bytecode",
+        "pipeline",
+        "correlation",
+        "behavioral_analyzer"
+      ],
+      "policy": "strict",
+      "cel_mode": "shadow",
+      "network": "disabled",
+      "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+    },
+    "started_at": "2026-10-25T20:56:04.299987+00:00",
+    "completed_at": "2026-10-25T20:56:04.501117+00:00",
+    "evaluated_on": "2026-10-25",
+    "valid_until": "2026-11-24T20:56:04.501Z",
+    "files_scanned": 8,
+    "coverage_complete": true,
+    "skipped": [],
+    "findings": {
+      "CRITICAL": 0,
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 1,
+      "INFO": 1
+    },
+    "evidence_sha256": "4198382ca1359dffe3329cccc208dd68bd328a8bb417d922a0eb11018ca1760c"
+  },
+  {
+    "id": "jasoncolapietro/suede-creator-skills/suede-campaign-in-a-box",
+    "status": "findings",
+    "reason": "review_retained_findings",
+    "source": {
+      "repository": "JasonColapietro/suede-creator-skills",
+      "path": "skills/suede-campaign-in-a-box",
+      "revision": "fe5dc1757cd6c8ff63aee853564249c00151778d"
+    },
+    "scanner": {
+      "name": "cisco-ai-skill-scanner",
+      "version": "2.3.1",
+      "adapter_version": 2,
+      "analyzers": [
+        "static_analyzer",
+        "bytecode",
+        "pipeline",
+        "correlation",
+        "behavioral_analyzer"
+      ],
+      "policy": "strict",
+      "cel_mode": "shadow",
+      "network": "disabled",
+      "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+    },
+    "started_at": "2026-10-25T20:56:04.501486+00:00",
+    "completed_at": "2026-10-25T20:56:04.595991+00:00",
+    "evaluated_on": "2026-10-25",
+    "valid_until": "2026-11-24T20:56:04.595Z",
+    "files_scanned": 4,
+    "coverage_complete": true,
+    "skipped": [],
+    "findings": {
+      "CRITICAL": 0,
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 1,
+      "INFO": 1
+    },
+    "evidence_sha256": "f32e9bf7dd3bed5fa574ca782199fa125ccea685196a6d330bd3eb51ee87d21b"
+  },
+  {
+    "id": "jasoncolapietro/suede-creator-skills/suede-churn-prevention",
+    "status": "findings",
+    "reason": "review_retained_findings",
+    "source": {
+      "repository": "JasonColapietro/suede-creator-skills",
+      "path": "skills/suede-churn-prevention",
+      "revision": "fe5dc1757cd6c8ff63aee853564249c00151778d"
+    },
+    "scanner": {
+      "name": "cisco-ai-skill-scanner",
+      "version": "2.3.1",
+      "adapter_version": 2,
+      "analyzers": [
+        "static_analyzer",
+        "bytecode",
+        "pipeline",
+        "correlation",
+        "behavioral_analyzer"
+      ],
+      "policy": "strict",
+      "cel_mode": "shadow",
+      "network": "disabled",
+      "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+    },
+    "started_at": "2026-10-25T20:56:04.596359+00:00",
+    "completed_at": "2026-10-25T20:56:04.759588+00:00",
+    "evaluated_on": "2026-10-25",
+    "valid_until": "2026-11-24T20:56:04.759Z",
+    "files_scanned": 6,
+    "coverage_complete": true,
+    "skipped": [],
+    "findings": {
+      "CRITICAL": 0,
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 1,
+      "INFO": 1
+    },
+    "evidence_sha256": "c0c8d2776ee7286fff38c270f91ddd7c6d7689cd834fdd6c937390343c909371"
+  },
+  {
+    "id": "jasoncolapietro/suede-creator-skills/suede-ci-gate",
+    "status": "findings",
+    "reason": "review_retained_findings",
+    "source": {
+      "repository": "JasonColapietro/suede-creator-skills",
+      "path": "skills/suede-ci-gate",
+      "revision": "fe5dc1757cd6c8ff63aee853564249c00151778d"
+    },
+    "scanner": {
+      "name": "cisco-ai-skill-scanner",
+      "version": "2.3.1",
+      "adapter_version": 2,
+      "analyzers": [
+        "static_analyzer",
+        "bytecode",
+        "pipeline",
+        "correlation",
+        "behavioral_analyzer"
+      ],
+      "policy": "strict",
+      "cel_mode": "shadow",
+      "network": "disabled",
+      "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+    },
+    "started_at": "2026-10-25T20:56:04.759924+00:00",
+    "completed_at": "2026-10-25T20:56:04.857312+00:00",
+    "evaluated_on": "2026-10-25",
+    "valid_until": "2026-11-24T20:56:04.857Z",
+    "files_scanned": 5,
+    "coverage_complete": true,
+    "skipped": [],
+    "findings": {
+      "CRITICAL": 0,
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 1,
+      "INFO": 1
+    },
+    "evidence_sha256": "0872b2884164f123942fc15104b1d4390011e7ca95f727d1b967b16c3a058a03"
+  },
+  {
+    "id": "jasoncolapietro/suede-creator-skills/suede-clip-to-guide",
+    "status": "findings",
+    "reason": "review_retained_findings",
+    "source": {
+      "repository": "JasonColapietro/suede-creator-skills",
+      "path": "skills/suede-clip-to-guide",
+      "revision": "fe5dc1757cd6c8ff63aee853564249c00151778d"
+    },
+    "scanner": {
+      "name": "cisco-ai-skill-scanner",
+      "version": "2.3.1",
+      "adapter_version": 2,
+      "analyzers": [
+        "static_analyzer",
+        "bytecode",
+        "pipeline",
+        "correlation",
+        "behavioral_analyzer"
+      ],
+      "policy": "strict",
+      "cel_mode": "shadow",
+      "network": "disabled",
+      "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+    },
+    "started_at": "2026-10-25T20:56:04.857665+00:00",
+    "completed_at": "2026-10-25T20:56:05.130778+00:00",
+    "evaluated_on": "2026-10-25",
+    "valid_until": "2026-11-24T20:56:05.130Z",
+    "files_scanned": 8,
+    "coverage_complete": true,
+    "skipped": [],
+    "findings": {
+      "CRITICAL": 0,
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 1,
+      "INFO": 1
+    },
+    "evidence_sha256": "64cca0b6ccca835002147b6292338731937528fc43c2856142cb5abc86468a3c"
+  },
+  {
+    "id": "jasoncolapietro/suede-creator-skills/suede-co-marketing",
+    "status": "findings",
+    "reason": "review_retained_findings",
+    "source": {
+      "repository": "JasonColapietro/suede-creator-skills",
+      "path": "skills/suede-co-marketing",
+      "revision": "fe5dc1757cd6c8ff63aee853564249c00151778d"
+    },
+    "scanner": {
+      "name": "cisco-ai-skill-scanner",
+      "version": "2.3.1",
+      "adapter_version": 2,
+      "analyzers": [
+        "static_analyzer",
+        "bytecode",
+        "pipeline",
+        "correlation",
+        "behavioral_analyzer"
+      ],
+      "policy": "strict",
+      "cel_mode": "shadow",
+      "network": "disabled",
+      "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+    },
+    "started_at": "2026-10-25T20:56:05.131161+00:00",
+    "completed_at": "2026-10-25T20:56:05.252578+00:00",
+    "evaluated_on": "2026-10-25",
+    "valid_until": "2026-11-24T20:56:05.252Z",
+    "files_scanned": 6,
+    "coverage_complete": true,
+    "skipped": [],
+    "findings": {
+      "CRITICAL": 0,
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 1,
+      "INFO": 1
+    },
+    "evidence_sha256": "9e593ef8fa1ffb474827b31e9c8552431b7c1eb4306246249663cc05594c22b1"
+  },
+  {
+    "id": "jasoncolapietro/suede-creator-skills/suede-code",
+    "status": "findings",
+    "reason": "review_retained_findings",
+    "source": {
+      "repository": "JasonColapietro/suede-creator-skills",
+      "path": "skills/suede-code",
+      "revision": "fe5dc1757cd6c8ff63aee853564249c00151778d"
+    },
+    "scanner": {
+      "name": "cisco-ai-skill-scanner",
+      "version": "2.3.1",
+      "adapter_version": 2,
+      "analyzers": [
+        "static_analyzer",
+        "bytecode",
+        "pipeline",
+        "correlation",
+        "behavioral_analyzer"
+      ],
+      "policy": "strict",
+      "cel_mode": "shadow",
+      "network": "disabled",
+      "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+    },
+    "started_at": "2026-10-25T20:56:05.252919+00:00",
+    "completed_at": "2026-10-25T20:56:05.505719+00:00",
+    "evaluated_on": "2026-10-25",
+    "valid_until": "2026-11-24T20:56:05.505Z",
+    "files_scanned": 11,
+    "coverage_complete": true,
+    "skipped": [],
+    "findings": {
+      "CRITICAL": 0,
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 1,
+      "INFO": 1
+    },
+    "evidence_sha256": "a5626c22a2da129fb1bd5e970df5956a2eed5cc5b94c6232cd599a25dde95238"
+  },
+  {
+    "id": "jasoncolapietro/suede-creator-skills/suede-cold-email",
+    "status": "findings",
+    "reason": "review_retained_findings",
+    "source": {
+      "repository": "JasonColapietro/suede-creator-skills",
+      "path": "skills/suede-cold-email",
+      "revision": "fe5dc1757cd6c8ff63aee853564249c00151778d"
+    },
+    "scanner": {
+      "name": "cisco-ai-skill-scanner",
+      "version": "2.3.1",
+      "adapter_version": 2,
+      "analyzers": [
+        "static_analyzer",
+        "bytecode",
+        "pipeline",
+        "correlation",
+        "behavioral_analyzer"
+      ],
+      "policy": "strict",
+      "cel_mode": "shadow",
+      "network": "disabled",
+      "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+    },
+    "started_at": "2026-10-25T20:56:05.506083+00:00",
+    "completed_at": "2026-10-25T20:56:05.669318+00:00",
+    "evaluated_on": "2026-10-25",
+    "valid_until": "2026-11-24T20:56:05.669Z",
+    "files_scanned": 9,
+    "coverage_complete": true,
+    "skipped": [],
+    "findings": {
+      "CRITICAL": 0,
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 1,
+      "INFO": 1
+    },
+    "evidence_sha256": "80fe6f2da875558e37f4d5017e6569fb0b679606b9b1b074bca2bd353d7376cc"
+  },
+  {
+    "id": "jasoncolapietro/suede-creator-skills/suede-community-marketing",
+    "status": "findings",
+    "reason": "review_retained_findings",
+    "source": {
+      "repository": "JasonColapietro/suede-creator-skills",
+      "path": "skills/suede-community-marketing",
+      "revision": "fe5dc1757cd6c8ff63aee853564249c00151778d"
+    },
+    "scanner": {
+      "name": "cisco-ai-skill-scanner",
+      "version": "2.3.1",
+      "adapter_version": 2,
+      "analyzers": [
+        "static_analyzer",
+        "bytecode",
+        "pipeline",
+        "correlation",
+        "behavioral_analyzer"
+      ],
+      "policy": "strict",
+      "cel_mode": "shadow",
+      "network": "disabled",
+      "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+    },
+    "started_at": "2026-10-25T20:56:05.669708+00:00",
+    "completed_at": "2026-10-25T20:56:05.759516+00:00",
+    "evaluated_on": "2026-10-25",
+    "valid_until": "2026-11-24T20:56:05.759Z",
+    "files_scanned": 4,
+    "coverage_complete": true,
+    "skipped": [],
+    "findings": {
+      "CRITICAL": 0,
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 1,
+      "INFO": 1
+    },
+    "evidence_sha256": "1a6b16a2426c793a5388f3eb9a76060ec9bcde16a44bf1923262a935395cf2a1"
+  },
+  {
+    "id": "jasoncolapietro/suede-creator-skills/suede-competitor-profiling",
+    "status": "findings",
+    "reason": "review_retained_findings",
+    "source": {
+      "repository": "JasonColapietro/suede-creator-skills",
+      "path": "skills/suede-competitor-profiling",
+      "revision": "fe5dc1757cd6c8ff63aee853564249c00151778d"
+    },
+    "scanner": {
+      "name": "cisco-ai-skill-scanner",
+      "version": "2.3.1",
+      "adapter_version": 2,
+      "analyzers": [
+        "static_analyzer",
+        "bytecode",
+        "pipeline",
+        "correlation",
+        "behavioral_analyzer"
+      ],
+      "policy": "strict",
+      "cel_mode": "shadow",
+      "network": "disabled",
+      "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+    },
+    "started_at": "2026-10-25T20:56:05.759857+00:00",
+    "completed_at": "2026-10-25T20:56:05.908260+00:00",
+    "evaluated_on": "2026-10-25",
+    "valid_until": "2026-11-24T20:56:05.908Z",
+    "files_scanned": 6,
+    "coverage_complete": true,
+    "skipped": [],
+    "findings": {
+      "CRITICAL": 0,
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 1,
+      "INFO": 1
+    },
+    "evidence_sha256": "84412755ec82def70b30f7b8eeaed0bcc8be52d5ee48f77de2d4e85933023123"
+  },
+  {
+    "id": "jasoncolapietro/suede-creator-skills/suede-competitors",
+    "status": "findings",
+    "reason": "review_retained_findings",
+    "source": {
+      "repository": "JasonColapietro/suede-creator-skills",
+      "path": "skills/suede-competitors",
+      "revision": "fe5dc1757cd6c8ff63aee853564249c00151778d"
+    },
+    "scanner": {
+      "name": "cisco-ai-skill-scanner",
+      "version": "2.3.1",
+      "adapter_version": 2,
+      "analyzers": [
+        "static_analyzer",
+        "bytecode",
+        "pipeline",
+        "correlation",
+        "behavioral_analyzer"
+      ],
+      "policy": "strict",
+      "cel_mode": "shadow",
+      "network": "disabled",
+      "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+    },
+    "started_at": "2026-10-25T20:56:05.908617+00:00",
+    "completed_at": "2026-10-25T20:56:06.041828+00:00",
+    "evaluated_on": "2026-10-25",
+    "valid_until": "2026-11-24T20:56:06.041Z",
+    "files_scanned": 6,
+    "coverage_complete": true,
+    "skipped": [],
+    "findings": {
+      "CRITICAL": 0,
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 0,
+      "INFO": 1
+    },
+    "evidence_sha256": "4bef5502ca6ca3d7418ff1ef651bbcf5482ef99a36c78a2741bfdec27e888944"
+  },
+  {
+    "id": "jasoncolapietro/suede-creator-skills/suede-content-strategy",
+    "status": "findings",
+    "reason": "review_retained_findings",
+    "source": {
+      "repository": "JasonColapietro/suede-creator-skills",
+      "path": "skills/suede-content-strategy",
+      "revision": "fe5dc1757cd6c8ff63aee853564249c00151778d"
+    },
+    "scanner": {
+      "name": "cisco-ai-skill-scanner",
+      "version": "2.3.1",
+      "adapter_version": 2,
+      "analyzers": [
+        "static_analyzer",
+        "bytecode",
+        "pipeline",
+        "correlation",
+        "behavioral_analyzer"
+      ],
+      "policy": "strict",
+      "cel_mode": "shadow",
+      "network": "disabled",
+      "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+    },
+    "started_at": "2026-10-25T20:56:06.042151+00:00",
+    "completed_at": "2026-10-25T20:56:06.173649+00:00",
+    "evaluated_on": "2026-10-25",
+    "valid_until": "2026-11-24T20:56:06.173Z",
+    "files_scanned": 5,
+    "coverage_complete": true,
+    "skipped": [],
+    "findings": {
+      "CRITICAL": 0,
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 1,
+      "INFO": 1
+    },
+    "evidence_sha256": "19574c023a05484ee496366b4e6f4208cfc32dd663447c757ac3722b7e7b7342"
+  },
+  {
+    "id": "jasoncolapietro/suede-creator-skills/suede-copy",
+    "status": "findings",
+    "reason": "review_retained_findings",
+    "source": {
+      "repository": "JasonColapietro/suede-creator-skills",
+      "path": "skills/suede-copy",
+      "revision": "fe5dc1757cd6c8ff63aee853564249c00151778d"
+    },
+    "scanner": {
+      "name": "cisco-ai-skill-scanner",
+      "version": "2.3.1",
+      "adapter_version": 2,
+      "analyzers": [
+        "static_analyzer",
+        "bytecode",
+        "pipeline",
+        "correlation",
+        "behavioral_analyzer"
+      ],
+      "policy": "strict",
+      "cel_mode": "shadow",
+      "network": "disabled",
+      "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+    },
+    "started_at": "2026-10-25T20:56:06.173988+00:00",
+    "completed_at": "2026-10-25T20:56:06.353420+00:00",
+    "evaluated_on": "2026-10-25",
+    "valid_until": "2026-11-24T20:56:06.353Z",
+    "files_scanned": 8,
+    "coverage_complete": true,
+    "skipped": [],
+    "findings": {
+      "CRITICAL": 0,
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 1,
+      "INFO": 1
+    },
+    "evidence_sha256": "10fb5925e2417c7dac88953345dc890f98ec2ac3289c1d259380173aeee176bc"
+  },
+  {
+    "id": "jasoncolapietro/suede-creator-skills/suede-customer-research",
+    "status": "findings",
+    "reason": "review_retained_findings",
+    "source": {
+      "repository": "JasonColapietro/suede-creator-skills",
+      "path": "skills/suede-customer-research",
+      "revision": "fe5dc1757cd6c8ff63aee853564249c00151778d"
+    },
+    "scanner": {
+      "name": "cisco-ai-skill-scanner",
+      "version": "2.3.1",
+      "adapter_version": 2,
+      "analyzers": [
+        "static_analyzer",
+        "bytecode",
+        "pipeline",
+        "correlation",
+        "behavioral_analyzer"
+      ],
+      "policy": "strict",
+      "cel_mode": "shadow",
+      "network": "disabled",
+      "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+    },
+    "started_at": "2026-10-25T20:56:06.353779+00:00",
+    "completed_at": "2026-10-25T20:56:06.496493+00:00",
+    "evaluated_on": "2026-10-25",
+    "valid_until": "2026-11-24T20:56:06.496Z",
+    "files_scanned": 6,
+    "coverage_complete": true,
+    "skipped": [],
+    "findings": {
+      "CRITICAL": 0,
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 1,
+      "INFO": 1
+    },
+    "evidence_sha256": "211ac4f1bcee652aa58e3a00ce5367ae4cb0074cb4e27624f1edbeaff47f86d9"
+  },
+  {
+    "id": "jasoncolapietro/suede-creator-skills/suede-design",
+    "status": "findings",
+    "reason": "review_retained_findings",
+    "source": {
+      "repository": "JasonColapietro/suede-creator-skills",
+      "path": "skills/suede-design",
+      "revision": "fe5dc1757cd6c8ff63aee853564249c00151778d"
+    },
+    "scanner": {
+      "name": "cisco-ai-skill-scanner",
+      "version": "2.3.1",
+      "adapter_version": 2,
+      "analyzers": [
+        "static_analyzer",
+        "bytecode",
+        "pipeline",
+        "correlation",
+        "behavioral_analyzer"
+      ],
+      "policy": "strict",
+      "cel_mode": "shadow",
+      "network": "disabled",
+      "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+    },
+    "started_at": "2026-10-25T20:56:06.496837+00:00",
+    "completed_at": "2026-10-25T20:56:06.697659+00:00",
+    "evaluated_on": "2026-10-25",
+    "valid_until": "2026-11-24T20:56:06.697Z",
+    "files_scanned": 8,
+    "coverage_complete": true,
+    "skipped": [],
+    "findings": {
+      "CRITICAL": 0,
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 1,
+      "INFO": 1
+    },
+    "evidence_sha256": "cce1939a36ecb8982e5380486f2ff8c65f85bcdf86f9878558a7a5e0a92808b9"
+  },
+  {
+    "id": "jasoncolapietro/suede-creator-skills/suede-deslop",
+    "status": "findings",
+    "reason": "review_retained_findings",
+    "source": {
+      "repository": "JasonColapietro/suede-creator-skills",
+      "path": "skills/suede-deslop",
+      "revision": "fe5dc1757cd6c8ff63aee853564249c00151778d"
+    },
+    "scanner": {
+      "name": "cisco-ai-skill-scanner",
+      "version": "2.3.1",
+      "adapter_version": 2,
+      "analyzers": [
+        "static_analyzer",
+        "bytecode",
+        "pipeline",
+        "correlation",
+        "behavioral_analyzer"
+      ],
+      "policy": "strict",
+      "cel_mode": "shadow",
+      "network": "disabled",
+      "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+    },
+    "started_at": "2026-10-25T20:56:06.698017+00:00",
+    "completed_at": "2026-10-25T20:56:06.831770+00:00",
+    "evaluated_on": "2026-10-25",
+    "valid_until": "2026-11-24T20:56:06.831Z",
+    "files_scanned": 4,
+    "coverage_complete": true,
+    "skipped": [],
+    "findings": {
+      "CRITICAL": 0,
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 1,
+      "INFO": 1
+    },
+    "evidence_sha256": "206a9299117147e3fd47a724bcdc8b4ae294ff16c4a5e5a84bcbbabfe2dbaaad"
+  },
+  {
+    "id": "jasoncolapietro/suede-creator-skills/suede-directory-submissions",
+    "status": "findings",
+    "reason": "review_retained_findings",
+    "source": {
+      "repository": "JasonColapietro/suede-creator-skills",
+      "path": "skills/suede-directory-submissions",
+      "revision": "fe5dc1757cd6c8ff63aee853564249c00151778d"
+    },
+    "scanner": {
+      "name": "cisco-ai-skill-scanner",
+      "version": "2.3.1",
+      "adapter_version": 2,
+      "analyzers": [
+        "static_analyzer",
+        "bytecode",
+        "pipeline",
+        "correlation",
+        "behavioral_analyzer"
+      ],
+      "policy": "strict",
+      "cel_mode": "shadow",
+      "network": "disabled",
+      "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+    },
+    "started_at": "2026-10-25T20:56:06.832108+00:00",
+    "completed_at": "2026-10-25T20:56:06.992342+00:00",
+    "evaluated_on": "2026-10-25",
+    "valid_until": "2026-11-24T20:56:06.992Z",
+    "files_scanned": 7,
+    "coverage_complete": true,
+    "skipped": [],
+    "findings": {
+      "CRITICAL": 0,
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 1,
+      "INFO": 1
+    },
+    "evidence_sha256": "e6dd5efd69aa32b759750e6617a43deb1b85d2ea6aa29314007c71b02907ad6b"
+  },
+  {
+    "id": "jasoncolapietro/suede-creator-skills/suede-emails",
+    "status": "findings",
+    "reason": "review_retained_findings",
+    "source": {
+      "repository": "JasonColapietro/suede-creator-skills",
+      "path": "skills/suede-emails",
+      "revision": "fe5dc1757cd6c8ff63aee853564249c00151778d"
+    },
+    "scanner": {
+      "name": "cisco-ai-skill-scanner",
+      "version": "2.3.1",
+      "adapter_version": 2,
+      "analyzers": [
+        "static_analyzer",
+        "bytecode",
+        "pipeline",
+        "correlation",
+        "behavioral_analyzer"
+      ],
+      "policy": "strict",
+      "cel_mode": "shadow",
+      "network": "disabled",
+      "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+    },
+    "started_at": "2026-10-25T20:56:06.992715+00:00",
+    "completed_at": "2026-10-25T20:56:07.157457+00:00",
+    "evaluated_on": "2026-10-25",
+    "valid_until": "2026-11-24T20:56:07.157Z",
+    "files_scanned": 8,
+    "coverage_complete": true,
+    "skipped": [],
+    "findings": {
+      "CRITICAL": 0,
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 1,
+      "INFO": 1
+    },
+    "evidence_sha256": "48cabbfbc49205bef97db6983c39fe9a9d33815dca347438ece494213e7399cd"
+  },
+  {
+    "id": "jasoncolapietro/suede-creator-skills/suede-free-tools",
+    "status": "findings",
+    "reason": "review_retained_findings",
+    "source": {
+      "repository": "JasonColapietro/suede-creator-skills",
+      "path": "skills/suede-free-tools",
+      "revision": "fe5dc1757cd6c8ff63aee853564249c00151778d"
+    },
+    "scanner": {
+      "name": "cisco-ai-skill-scanner",
+      "version": "2.3.1",
+      "adapter_version": 2,
+      "analyzers": [
+        "static_analyzer",
+        "bytecode",
+        "pipeline",
+        "correlation",
+        "behavioral_analyzer"
+      ],
+      "policy": "strict",
+      "cel_mode": "shadow",
+      "network": "disabled",
+      "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+    },
+    "started_at": "2026-10-25T20:56:07.157835+00:00",
+    "completed_at": "2026-10-25T20:56:07.261085+00:00",
+    "evaluated_on": "2026-10-25",
+    "valid_until": "2026-11-24T20:56:07.261Z",
+    "files_scanned": 5,
+    "coverage_complete": true,
+    "skipped": [],
+    "findings": {
+      "CRITICAL": 0,
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 1,
+      "INFO": 1
+    },
+    "evidence_sha256": "3ab858ce976746aabb994917fb9029386191b05c33a560abaa578caa61e78296"
+  },
+  {
+    "id": "jasoncolapietro/suede-creator-skills/suede-graph-flo-xr",
+    "status": "failed",
+    "reason": "review_retained_findings",
+    "source": {
+      "repository": "JasonColapietro/suede-creator-skills",
+      "path": "skills/suede-graph-flo-xr",
+      "revision": "fe5dc1757cd6c8ff63aee853564249c00151778d"
+    },
+    "scanner": {
+      "name": "cisco-ai-skill-scanner",
+      "version": "2.3.1",
+      "adapter_version": 2,
+      "analyzers": [
+        "static_analyzer",
+        "bytecode",
+        "pipeline",
+        "correlation",
+        "behavioral_analyzer"
+      ],
+      "policy": "strict",
+      "cel_mode": "shadow",
+      "network": "disabled",
+      "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+    },
+    "started_at": "2026-10-25T20:56:07.261441+00:00",
+    "completed_at": "2026-10-25T20:56:08.207529+00:00",
+    "evaluated_on": "2026-10-25",
+    "valid_until": "2026-11-24T20:56:08.207Z",
+    "files_scanned": 19,
+    "coverage_complete": true,
+    "skipped": [],
+    "findings": {
+      "CRITICAL": 6,
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 4,
+      "INFO": 1
+    },
+    "evidence_sha256": "04beee316d244e03cb87a9529b5523c7c913d80cc0ef41c2b64c5b04104f96ae"
+  },
+  {
+    "id": "jasoncolapietro/suede-creator-skills/suede-image",
+    "status": "findings",
+    "reason": "review_retained_findings",
+    "source": {
+      "repository": "JasonColapietro/suede-creator-skills",
+      "path": "skills/suede-image",
+      "revision": "fe5dc1757cd6c8ff63aee853564249c00151778d"
+    },
+    "scanner": {
+      "name": "cisco-ai-skill-scanner",
+      "version": "2.3.1",
+      "adapter_version": 2,
+      "analyzers": [
+        "static_analyzer",
+        "bytecode",
+        "pipeline",
+        "correlation",
+        "behavioral_analyzer"
+      ],
+      "policy": "strict",
+      "cel_mode": "shadow",
+      "network": "disabled",
+      "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+    },
+    "started_at": "2026-10-25T20:56:08.208606+00:00",
+    "completed_at": "2026-10-25T20:56:08.347611+00:00",
+    "evaluated_on": "2026-10-25",
+    "valid_until": "2026-11-24T20:56:08.347Z",
+    "files_scanned": 5,
+    "coverage_complete": true,
+    "skipped": [],
+    "findings": {
+      "CRITICAL": 0,
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 1,
+      "INFO": 1
+    },
+    "evidence_sha256": "326a1fc47f84ead92ee96f569dd7f33955425e232fe04f86c95e6d54b02fbe4c"
+  },
+  {
+    "id": "jasoncolapietro/suede-creator-skills/suede-influencer-outreach",
+    "status": "findings",
+    "reason": "review_retained_findings",
+    "source": {
+      "repository": "JasonColapietro/suede-creator-skills",
+      "path": "skills/suede-influencer-outreach",
+      "revision": "fe5dc1757cd6c8ff63aee853564249c00151778d"
+    },
+    "scanner": {
+      "name": "cisco-ai-skill-scanner",
+      "version": "2.3.1",
+      "adapter_version": 2,
+      "analyzers": [
+        "static_analyzer",
+        "bytecode",
+        "pipeline",
+        "correlation",
+        "behavioral_analyzer"
+      ],
+      "policy": "strict",
+      "cel_mode": "shadow",
+      "network": "disabled",
+      "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+    },
+    "started_at": "2026-10-25T20:56:08.347973+00:00",
+    "completed_at": "2026-10-25T20:56:08.493850+00:00",
+    "evaluated_on": "2026-10-25",
+    "valid_until": "2026-11-24T20:56:08.493Z",
+    "files_scanned": 8,
+    "coverage_complete": true,
+    "skipped": [],
+    "findings": {
+      "CRITICAL": 0,
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 1,
+      "INFO": 1
+    },
+    "evidence_sha256": "d483e571ed1248679bdfee8bd0d9db73aeded09cd03b4a7071d6ba1a173dfe4c"
+  },
+  {
+    "id": "jasoncolapietro/suede-creator-skills/suede-launch-packaging",
+    "status": "findings",
+    "reason": "review_retained_findings",
+    "source": {
+      "repository": "JasonColapietro/suede-creator-skills",
+      "path": "skills/suede-launch-packaging",
+      "revision": "fe5dc1757cd6c8ff63aee853564249c00151778d"
+    },
+    "scanner": {
+      "name": "cisco-ai-skill-scanner",
+      "version": "2.3.1",
+      "adapter_version": 2,
+      "analyzers": [
+        "static_analyzer",
+        "bytecode",
+        "pipeline",
+        "correlation",
+        "behavioral_analyzer"
+      ],
+      "policy": "strict",
+      "cel_mode": "shadow",
+      "network": "disabled",
+      "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+    },
+    "started_at": "2026-10-25T20:56:08.494210+00:00",
+    "completed_at": "2026-10-25T20:56:08.580898+00:00",
+    "evaluated_on": "2026-10-25",
+    "valid_until": "2026-11-24T20:56:08.580Z",
+    "files_scanned": 4,
+    "coverage_complete": true,
+    "skipped": [],
+    "findings": {
+      "CRITICAL": 0,
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 1,
+      "INFO": 1
+    },
+    "evidence_sha256": "4729161430f062b9f3b706c71fa54d9baf356798a1ea27038c92d7f980081ea0"
+  },
+  {
+    "id": "jasoncolapietro/suede-creator-skills/suede-lead-magnets",
+    "status": "findings",
+    "reason": "review_retained_findings",
+    "source": {
+      "repository": "JasonColapietro/suede-creator-skills",
+      "path": "skills/suede-lead-magnets",
+      "revision": "fe5dc1757cd6c8ff63aee853564249c00151778d"
+    },
+    "scanner": {
+      "name": "cisco-ai-skill-scanner",
+      "version": "2.3.1",
+      "adapter_version": 2,
+      "analyzers": [
+        "static_analyzer",
+        "bytecode",
+        "pipeline",
+        "correlation",
+        "behavioral_analyzer"
+      ],
+      "policy": "strict",
+      "cel_mode": "shadow",
+      "network": "disabled",
+      "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+    },
+    "started_at": "2026-10-25T20:56:08.581246+00:00",
+    "completed_at": "2026-10-25T20:56:08.710726+00:00",
+    "evaluated_on": "2026-10-25",
+    "valid_until": "2026-11-24T20:56:08.710Z",
+    "files_scanned": 6,
+    "coverage_complete": true,
+    "skipped": [],
+    "findings": {
+      "CRITICAL": 0,
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 1,
+      "INFO": 1
+    },
+    "evidence_sha256": "0309b1b1b7de3685137e63525ad8b555f48ca0d1fe9f7a5b418efa494a173ac0"
+  },
+  {
+    "id": "jasoncolapietro/suede-creator-skills/suede-marketing-council",
+    "status": "findings",
+    "reason": "review_retained_findings",
+    "source": {
+      "repository": "JasonColapietro/suede-creator-skills",
+      "path": "skills/suede-marketing-council",
+      "revision": "fe5dc1757cd6c8ff63aee853564249c00151778d"
+    },
+    "scanner": {
+      "name": "cisco-ai-skill-scanner",
+      "version": "2.3.1",
+      "adapter_version": 2,
+      "analyzers": [
+        "static_analyzer",
+        "bytecode",
+        "pipeline",
+        "correlation",
+        "behavioral_analyzer"
+      ],
+      "policy": "strict",
+      "cel_mode": "shadow",
+      "network": "disabled",
+      "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+    },
+    "started_at": "2026-10-25T20:56:08.711067+00:00",
+    "completed_at": "2026-10-25T20:56:08.972378+00:00",
+    "evaluated_on": "2026-10-25",
+    "valid_until": "2026-11-24T20:56:08.972Z",
+    "files_scanned": 17,
+    "coverage_complete": true,
+    "skipped": [],
+    "findings": {
+      "CRITICAL": 0,
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 1,
+      "INFO": 1
+    },
+    "evidence_sha256": "13fdabf72a2ae25f07b64a9cd25cd194bdfc88d5e05a160011f64facc24be868"
+  },
+  {
+    "id": "jasoncolapietro/suede-creator-skills/suede-marketing-loops",
+    "status": "findings",
+    "reason": "review_retained_findings",
+    "source": {
+      "repository": "JasonColapietro/suede-creator-skills",
+      "path": "skills/suede-marketing-loops",
+      "revision": "fe5dc1757cd6c8ff63aee853564249c00151778d"
+    },
+    "scanner": {
+      "name": "cisco-ai-skill-scanner",
+      "version": "2.3.1",
+      "adapter_version": 2,
+      "analyzers": [
+        "static_analyzer",
+        "bytecode",
+        "pipeline",
+        "correlation",
+        "behavioral_analyzer"
+      ],
+      "policy": "strict",
+      "cel_mode": "shadow",
+      "network": "disabled",
+      "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+    },
+    "started_at": "2026-10-25T20:56:08.972779+00:00",
+    "completed_at": "2026-10-25T20:56:09.185272+00:00",
+    "evaluated_on": "2026-10-25",
+    "valid_until": "2026-11-24T20:56:09.185Z",
+    "files_scanned": 9,
+    "coverage_complete": true,
+    "skipped": [],
+    "findings": {
+      "CRITICAL": 0,
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 1,
+      "INFO": 1
+    },
+    "evidence_sha256": "271c1cba9067e848ed75f80c2cd86fa0d2191ec9dc4545a9dd02b39a5baf66dd"
+  },
+  {
+    "id": "jasoncolapietro/suede-creator-skills/suede-marketing-plan",
+    "status": "findings",
+    "reason": "review_retained_findings",
+    "source": {
+      "repository": "JasonColapietro/suede-creator-skills",
+      "path": "skills/suede-marketing-plan",
+      "revision": "fe5dc1757cd6c8ff63aee853564249c00151778d"
+    },
+    "scanner": {
+      "name": "cisco-ai-skill-scanner",
+      "version": "2.3.1",
+      "adapter_version": 2,
+      "analyzers": [
+        "static_analyzer",
+        "bytecode",
+        "pipeline",
+        "correlation",
+        "behavioral_analyzer"
+      ],
+      "policy": "strict",
+      "cel_mode": "shadow",
+      "network": "disabled",
+      "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+    },
+    "started_at": "2026-10-25T20:56:09.185661+00:00",
+    "completed_at": "2026-10-25T20:56:09.710974+00:00",
+    "evaluated_on": "2026-10-25",
+    "valid_until": "2026-11-24T20:56:09.710Z",
+    "files_scanned": 19,
+    "coverage_complete": true,
+    "skipped": [],
+    "findings": {
+      "CRITICAL": 0,
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 1,
+      "INFO": 1
+    },
+    "evidence_sha256": "df862e7bb0d6cf81f596383227c758b89c63c826b4f5e76a6e689314b6c2bcdc"
+  },
+  {
+    "id": "jasoncolapietro/suede-creator-skills/suede-newsroom",
+    "status": "findings",
+    "reason": "review_retained_findings",
+    "source": {
+      "repository": "JasonColapietro/suede-creator-skills",
+      "path": "skills/suede-newsroom",
+      "revision": "fe5dc1757cd6c8ff63aee853564249c00151778d"
+    },
+    "scanner": {
+      "name": "cisco-ai-skill-scanner",
+      "version": "2.3.1",
+      "adapter_version": 2,
+      "analyzers": [
+        "static_analyzer",
+        "bytecode",
+        "pipeline",
+        "correlation",
+        "behavioral_analyzer"
+      ],
+      "policy": "strict",
+      "cel_mode": "shadow",
+      "network": "disabled",
+      "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+    },
+    "started_at": "2026-10-25T20:56:09.711371+00:00",
+    "completed_at": "2026-10-25T20:56:09.906639+00:00",
+    "evaluated_on": "2026-10-25",
+    "valid_until": "2026-11-24T20:56:09.906Z",
+    "files_scanned": 8,
+    "coverage_complete": true,
+    "skipped": [],
+    "findings": {
+      "CRITICAL": 0,
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 1,
+      "INFO": 1
+    },
+    "evidence_sha256": "779ba07a799557a874104300f20ef5ba3dc61113a203bf90bfd73f3a803fe2be"
+  },
+  {
+    "id": "jasoncolapietro/suede-creator-skills/suede-offers",
+    "status": "findings",
+    "reason": "review_retained_findings",
+    "source": {
+      "repository": "JasonColapietro/suede-creator-skills",
+      "path": "skills/suede-offers",
+      "revision": "fe5dc1757cd6c8ff63aee853564249c00151778d"
+    },
+    "scanner": {
+      "name": "cisco-ai-skill-scanner",
+      "version": "2.3.1",
+      "adapter_version": 2,
+      "analyzers": [
+        "static_analyzer",
+        "bytecode",
+        "pipeline",
+        "correlation",
+        "behavioral_analyzer"
+      ],
+      "policy": "strict",
+      "cel_mode": "shadow",
+      "network": "disabled",
+      "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+    },
+    "started_at": "2026-10-25T20:56:09.906997+00:00",
+    "completed_at": "2026-10-25T20:56:10.208788+00:00",
+    "evaluated_on": "2026-10-25",
+    "valid_until": "2026-11-24T20:56:10.208Z",
+    "files_scanned": 12,
+    "coverage_complete": true,
+    "skipped": [],
+    "findings": {
+      "CRITICAL": 0,
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 1,
+      "INFO": 1
+    },
+    "evidence_sha256": "076748976f942f91082b349866d9ded8e31e0d92d8cb0f57b7cf92c536e0b400"
+  },
+  {
+    "id": "jasoncolapietro/suede-creator-skills/suede-onboarding",
+    "status": "findings",
+    "reason": "review_retained_findings",
+    "source": {
+      "repository": "JasonColapietro/suede-creator-skills",
+      "path": "skills/suede-onboarding",
+      "revision": "fe5dc1757cd6c8ff63aee853564249c00151778d"
+    },
+    "scanner": {
+      "name": "cisco-ai-skill-scanner",
+      "version": "2.3.1",
+      "adapter_version": 2,
+      "analyzers": [
+        "static_analyzer",
+        "bytecode",
+        "pipeline",
+        "correlation",
+        "behavioral_analyzer"
+      ],
+      "policy": "strict",
+      "cel_mode": "shadow",
+      "network": "disabled",
+      "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+    },
+    "started_at": "2026-10-25T20:56:10.209162+00:00",
+    "completed_at": "2026-10-25T20:56:10.326875+00:00",
+    "evaluated_on": "2026-10-25",
+    "valid_until": "2026-11-24T20:56:10.326Z",
+    "files_scanned": 6,
+    "coverage_complete": true,
+    "skipped": [],
+    "findings": {
+      "CRITICAL": 0,
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 1,
+      "INFO": 1
+    },
+    "evidence_sha256": "6d201bb28751dbbb11bc44f338987497f07f1391eaaf067bb30739dd29aae2c7"
+  },
+  {
+    "id": "jasoncolapietro/suede-creator-skills/suede-ops-architecture",
+    "status": "findings",
+    "reason": "review_retained_findings",
+    "source": {
+      "repository": "JasonColapietro/suede-creator-skills",
+      "path": "skills/suede-ops-architecture",
+      "revision": "fe5dc1757cd6c8ff63aee853564249c00151778d"
+    },
+    "scanner": {
+      "name": "cisco-ai-skill-scanner",
+      "version": "2.3.1",
+      "adapter_version": 2,
+      "analyzers": [
+        "static_analyzer",
+        "bytecode",
+        "pipeline",
+        "correlation",
+        "behavioral_analyzer"
+      ],
+      "policy": "strict",
+      "cel_mode": "shadow",
+      "network": "disabled",
+      "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+    },
+    "started_at": "2026-10-25T20:56:10.327224+00:00",
+    "completed_at": "2026-10-25T20:56:10.438371+00:00",
+    "evaluated_on": "2026-10-25",
+    "valid_until": "2026-11-24T20:56:10.438Z",
+    "files_scanned": 5,
+    "coverage_complete": true,
+    "skipped": [],
+    "findings": {
+      "CRITICAL": 0,
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 1,
+      "INFO": 1
+    },
+    "evidence_sha256": "d29c2ffda4ee5081a547997604ae374b1f63c6362595d181146853fea8af9ec6"
+  },
+  {
+    "id": "jasoncolapietro/suede-creator-skills/suede-ops-assessment",
+    "status": "findings",
+    "reason": "review_retained_findings",
+    "source": {
+      "repository": "JasonColapietro/suede-creator-skills",
+      "path": "skills/suede-ops-assessment",
+      "revision": "fe5dc1757cd6c8ff63aee853564249c00151778d"
+    },
+    "scanner": {
+      "name": "cisco-ai-skill-scanner",
+      "version": "2.3.1",
+      "adapter_version": 2,
+      "analyzers": [
+        "static_analyzer",
+        "bytecode",
+        "pipeline",
+        "correlation",
+        "behavioral_analyzer"
+      ],
+      "policy": "strict",
+      "cel_mode": "shadow",
+      "network": "disabled",
+      "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+    },
+    "started_at": "2026-10-25T20:56:10.438734+00:00",
+    "completed_at": "2026-10-25T20:56:10.549514+00:00",
+    "evaluated_on": "2026-10-25",
+    "valid_until": "2026-11-24T20:56:10.549Z",
+    "files_scanned": 5,
+    "coverage_complete": true,
+    "skipped": [],
+    "findings": {
+      "CRITICAL": 0,
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 1,
+      "INFO": 1
+    },
+    "evidence_sha256": "071dfbf6cba687cb367150fb6082fa84161a89138ef629878864f407956b2f20"
+  },
+  {
+    "id": "jasoncolapietro/suede-creator-skills/suede-parity-contract",
+    "status": "findings",
+    "reason": "review_retained_findings",
+    "source": {
+      "repository": "JasonColapietro/suede-creator-skills",
+      "path": "skills/suede-parity-contract",
+      "revision": "fe5dc1757cd6c8ff63aee853564249c00151778d"
+    },
+    "scanner": {
+      "name": "cisco-ai-skill-scanner",
+      "version": "2.3.1",
+      "adapter_version": 2,
+      "analyzers": [
+        "static_analyzer",
+        "bytecode",
+        "pipeline",
+        "correlation",
+        "behavioral_analyzer"
+      ],
+      "policy": "strict",
+      "cel_mode": "shadow",
+      "network": "disabled",
+      "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+    },
+    "started_at": "2026-10-25T20:56:10.549851+00:00",
+    "completed_at": "2026-10-25T20:56:10.612740+00:00",
+    "evaluated_on": "2026-10-25",
+    "valid_until": "2026-11-24T20:56:10.612Z",
+    "files_scanned": 3,
+    "coverage_complete": true,
+    "skipped": [],
+    "findings": {
+      "CRITICAL": 0,
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 1,
+      "INFO": 1
+    },
+    "evidence_sha256": "529d2c8aee35d4d48f24c070549a4e9b1fde7b322433c73c5d2d4e3feaabf834"
+  },
+  {
+    "id": "jasoncolapietro/suede-creator-skills/suede-paywalls",
+    "status": "findings",
+    "reason": "review_retained_findings",
+    "source": {
+      "repository": "JasonColapietro/suede-creator-skills",
+      "path": "skills/suede-paywalls",
+      "revision": "fe5dc1757cd6c8ff63aee853564249c00151778d"
+    },
+    "scanner": {
+      "name": "cisco-ai-skill-scanner",
+      "version": "2.3.1",
+      "adapter_version": 2,
+      "analyzers": [
+        "static_analyzer",
+        "bytecode",
+        "pipeline",
+        "correlation",
+        "behavioral_analyzer"
+      ],
+      "policy": "strict",
+      "cel_mode": "shadow",
+      "network": "disabled",
+      "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+    },
+    "started_at": "2026-10-25T20:56:10.613065+00:00",
+    "completed_at": "2026-10-25T20:56:10.725763+00:00",
+    "evaluated_on": "2026-10-25",
+    "valid_until": "2026-11-24T20:56:10.725Z",
+    "files_scanned": 6,
+    "coverage_complete": true,
+    "skipped": [],
+    "findings": {
+      "CRITICAL": 0,
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 1,
+      "INFO": 1
+    },
+    "evidence_sha256": "5494f4d90adbb83dd2a1e9a671b8d4200a1f2aee6f0954bc9ad1b9db95067ab3"
+  },
+  {
+    "id": "jasoncolapietro/suede-creator-skills/suede-play-release",
+    "status": "findings",
+    "reason": "review_retained_findings",
+    "source": {
+      "repository": "JasonColapietro/suede-creator-skills",
+      "path": "skills/suede-play-release",
+      "revision": "fe5dc1757cd6c8ff63aee853564249c00151778d"
+    },
+    "scanner": {
+      "name": "cisco-ai-skill-scanner",
+      "version": "2.3.1",
+      "adapter_version": 2,
+      "analyzers": [
+        "static_analyzer",
+        "bytecode",
+        "pipeline",
+        "correlation",
+        "behavioral_analyzer"
+      ],
+      "policy": "strict",
+      "cel_mode": "shadow",
+      "network": "disabled",
+      "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+    },
+    "started_at": "2026-10-25T20:56:10.726109+00:00",
+    "completed_at": "2026-10-25T20:56:10.855958+00:00",
+    "evaluated_on": "2026-10-25",
+    "valid_until": "2026-11-24T20:56:10.855Z",
+    "files_scanned": 4,
+    "coverage_complete": true,
+    "skipped": [],
+    "findings": {
+      "CRITICAL": 0,
+      "HIGH": 0,
+      "MEDIUM": 5,
+      "LOW": 3,
+      "INFO": 1
+    },
+    "evidence_sha256": "91cd19fedb0228c23527ed7610570702e51d53b1f6228091a7ecd011fc9e0f29"
+  },
+  {
+    "id": "jasoncolapietro/suede-creator-skills/suede-pricing",
+    "status": "findings",
+    "reason": "review_retained_findings",
+    "source": {
+      "repository": "JasonColapietro/suede-creator-skills",
+      "path": "skills/suede-pricing",
+      "revision": "fe5dc1757cd6c8ff63aee853564249c00151778d"
+    },
+    "scanner": {
+      "name": "cisco-ai-skill-scanner",
+      "version": "2.3.1",
+      "adapter_version": 2,
+      "analyzers": [
+        "static_analyzer",
+        "bytecode",
+        "pipeline",
+        "correlation",
+        "behavioral_analyzer"
+      ],
+      "policy": "strict",
+      "cel_mode": "shadow",
+      "network": "disabled",
+      "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+    },
+    "started_at": "2026-10-25T20:56:10.856756+00:00",
+    "completed_at": "2026-10-25T20:56:11.006721+00:00",
+    "evaluated_on": "2026-10-25",
+    "valid_until": "2026-11-24T20:56:11.006Z",
+    "files_scanned": 7,
+    "coverage_complete": true,
+    "skipped": [],
+    "findings": {
+      "CRITICAL": 0,
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 1,
+      "INFO": 1
+    },
+    "evidence_sha256": "5d2dcea7fc21f47069d658c3cfcb93c4ff96764f885ad96a947b64e8a7fffce7"
+  },
+  {
+    "id": "jasoncolapietro/suede-creator-skills/suede-product-marketing",
+    "status": "findings",
+    "reason": "review_retained_findings",
+    "source": {
+      "repository": "JasonColapietro/suede-creator-skills",
+      "path": "skills/suede-product-marketing",
+      "revision": "fe5dc1757cd6c8ff63aee853564249c00151778d"
+    },
+    "scanner": {
+      "name": "cisco-ai-skill-scanner",
+      "version": "2.3.1",
+      "adapter_version": 2,
+      "analyzers": [
+        "static_analyzer",
+        "bytecode",
+        "pipeline",
+        "correlation",
+        "behavioral_analyzer"
+      ],
+      "policy": "strict",
+      "cel_mode": "shadow",
+      "network": "disabled",
+      "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+    },
+    "started_at": "2026-10-25T20:56:11.007089+00:00",
+    "completed_at": "2026-10-25T20:56:11.099464+00:00",
+    "evaluated_on": "2026-10-25",
+    "valid_until": "2026-11-24T20:56:11.099Z",
+    "files_scanned": 4,
+    "coverage_complete": true,
+    "skipped": [],
+    "findings": {
+      "CRITICAL": 0,
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 1,
+      "INFO": 1
+    },
+    "evidence_sha256": "7d742c010cf011ed391102e4d32d7aef265bde5d25f9b3305f52d1785e13b2f9"
+  },
+  {
+    "id": "jasoncolapietro/suede-creator-skills/suede-programmatic-seo",
+    "status": "findings",
+    "reason": "review_retained_findings",
+    "source": {
+      "repository": "JasonColapietro/suede-creator-skills",
+      "path": "skills/suede-programmatic-seo",
+      "revision": "fe5dc1757cd6c8ff63aee853564249c00151778d"
+    },
+    "scanner": {
+      "name": "cisco-ai-skill-scanner",
+      "version": "2.3.1",
+      "adapter_version": 2,
+      "analyzers": [
+        "static_analyzer",
+        "bytecode",
+        "pipeline",
+        "correlation",
+        "behavioral_analyzer"
+      ],
+      "policy": "strict",
+      "cel_mode": "shadow",
+      "network": "disabled",
+      "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+    },
+    "started_at": "2026-10-25T20:56:11.099800+00:00",
+    "completed_at": "2026-10-25T20:56:11.207867+00:00",
+    "evaluated_on": "2026-10-25",
+    "valid_until": "2026-11-24T20:56:11.207Z",
+    "files_scanned": 5,
+    "coverage_complete": true,
+    "skipped": [],
+    "findings": {
+      "CRITICAL": 0,
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 1,
+      "INFO": 1
+    },
+    "evidence_sha256": "fd199bb506e2dbe8c57e14caa437917e32351c4ea5f7f1be9354dc3110417506"
+  },
+  {
+    "id": "jasoncolapietro/suede-creator-skills/suede-prospecting",
+    "status": "findings",
+    "reason": "review_retained_findings",
+    "source": {
+      "repository": "JasonColapietro/suede-creator-skills",
+      "path": "skills/suede-prospecting",
+      "revision": "fe5dc1757cd6c8ff63aee853564249c00151778d"
+    },
+    "scanner": {
+      "name": "cisco-ai-skill-scanner",
+      "version": "2.3.1",
+      "adapter_version": 2,
+      "analyzers": [
+        "static_analyzer",
+        "bytecode",
+        "pipeline",
+        "correlation",
+        "behavioral_analyzer"
+      ],
+      "policy": "strict",
+      "cel_mode": "shadow",
+      "network": "disabled",
+      "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+    },
+    "started_at": "2026-10-25T20:56:11.208218+00:00",
+    "completed_at": "2026-10-25T20:56:11.445649+00:00",
+    "evaluated_on": "2026-10-25",
+    "valid_until": "2026-11-24T20:56:11.445Z",
+    "files_scanned": 10,
+    "coverage_complete": true,
+    "skipped": [],
+    "findings": {
+      "CRITICAL": 0,
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 1,
+      "INFO": 1
+    },
+    "evidence_sha256": "31b2d254ffbad53aea379debb55e7f23e9fbb9e1f44b9c1771075e59eebfd191"
+  },
+  {
+    "id": "jasoncolapietro/suede-creator-skills/suede-public-relations",
+    "status": "findings",
+    "reason": "review_retained_findings",
+    "source": {
+      "repository": "JasonColapietro/suede-creator-skills",
+      "path": "skills/suede-public-relations",
+      "revision": "fe5dc1757cd6c8ff63aee853564249c00151778d"
+    },
+    "scanner": {
+      "name": "cisco-ai-skill-scanner",
+      "version": "2.3.1",
+      "adapter_version": 2,
+      "analyzers": [
+        "static_analyzer",
+        "bytecode",
+        "pipeline",
+        "correlation",
+        "behavioral_analyzer"
+      ],
+      "policy": "strict",
+      "cel_mode": "shadow",
+      "network": "disabled",
+      "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+    },
+    "started_at": "2026-10-25T20:56:11.446012+00:00",
+    "completed_at": "2026-10-25T20:56:11.633815+00:00",
+    "evaluated_on": "2026-10-25",
+    "valid_until": "2026-11-24T20:56:11.633Z",
+    "files_scanned": 8,
+    "coverage_complete": true,
+    "skipped": [],
+    "findings": {
+      "CRITICAL": 0,
+      "HIGH": 0,
+      "MEDIUM": 1,
+      "LOW": 1,
+      "INFO": 1
+    },
+    "evidence_sha256": "1bf63bff9da75abafbe30c6ef2f6ba2b34ac0a56d853c35279f0692835371207"
+  },
+  {
+    "id": "jasoncolapietro/suede-creator-skills/suede-referrals",
+    "status": "findings",
+    "reason": "review_retained_findings",
+    "source": {
+      "repository": "JasonColapietro/suede-creator-skills",
+      "path": "skills/suede-referrals",
+      "revision": "fe5dc1757cd6c8ff63aee853564249c00151778d"
+    },
+    "scanner": {
+      "name": "cisco-ai-skill-scanner",
+      "version": "2.3.1",
+      "adapter_version": 2,
+      "analyzers": [
+        "static_analyzer",
+        "bytecode",
+        "pipeline",
+        "correlation",
+        "behavioral_analyzer"
+      ],
+      "policy": "strict",
+      "cel_mode": "shadow",
+      "network": "disabled",
+      "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+    },
+    "started_at": "2026-10-25T20:56:11.634231+00:00",
+    "completed_at": "2026-10-25T20:56:11.752885+00:00",
+    "evaluated_on": "2026-10-25",
+    "valid_until": "2026-11-24T20:56:11.752Z",
+    "files_scanned": 6,
+    "coverage_complete": true,
+    "skipped": [],
+    "findings": {
+      "CRITICAL": 0,
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 1,
+      "INFO": 1
+    },
+    "evidence_sha256": "5010709aca094222ea80403678aa7c5163d31a4fe583c04341b057b636cab198"
+  },
+  {
+    "id": "jasoncolapietro/suede-creator-skills/suede-release-linter",
+    "status": "error",
+    "reason": "incomplete_file_coverage",
+    "source": {
+      "repository": "JasonColapietro/suede-creator-skills",
+      "path": "skills/suede-release-linter",
+      "revision": "fe5dc1757cd6c8ff63aee853564249c00151778d"
+    },
+    "scanner": {
+      "name": "cisco-ai-skill-scanner",
+      "version": "2.3.1",
+      "adapter_version": 2,
+      "analyzers": [
+        "static_analyzer",
+        "bytecode",
+        "pipeline",
+        "correlation",
+        "behavioral_analyzer"
+      ],
+      "policy": "strict",
+      "cel_mode": "shadow",
+      "network": "disabled",
+      "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+    },
+    "started_at": "2026-10-25T20:56:11.753239+00:00",
+    "completed_at": "2026-10-25T20:56:12.460910+00:00",
+    "evaluated_on": "2026-10-25",
+    "valid_until": "2026-11-24T20:56:12.460Z",
+    "files_scanned": 25,
+    "coverage_complete": false,
+    "skipped": [
+      {
+        "path": "scripts/fixtures/sample-clean-project/artwork/cover-art.jpg",
+        "reason": "unparsed_source"
+      },
+      {
+        "path": "scripts/fixtures/sample-clean-project/audio/paper-moons-master.wav",
+        "reason": "unparsed_source"
+      },
+      {
+        "path": "scripts/fixtures/sample-clean-project/stems/bass-stem.wav",
+        "reason": "unparsed_source"
+      },
+      {
+        "path": "scripts/fixtures/sample-clean-project/stems/drums-stem.wav",
+        "reason": "unparsed_source"
+      },
+      {
+        "path": "scripts/fixtures/sample-clean-project/stems/vocals-stem.wav",
+        "reason": "unparsed_source"
+      },
+      {
+        "reason": "scanner_coverage_finding",
+        "rule": "UNANALYZABLE_BINARY"
+      },
+      {
+        "reason": "scanner_coverage_finding",
+        "rule": "UNANALYZABLE_BINARY"
+      },
+      {
+        "reason": "scanner_coverage_finding",
+        "rule": "UNANALYZABLE_BINARY"
+      },
+      {
+        "reason": "scanner_coverage_finding",
+        "rule": "UNANALYZABLE_BINARY"
+      }
+    ],
+    "evidence_sha256": "ef4352fe9881af99ddd6155533d595ebc41d2edbe748ffb072e31ceb041596a3"
+  },
+  {
+    "id": "jasoncolapietro/suede-creator-skills/suede-revops",
+    "status": "findings",
+    "reason": "review_retained_findings",
+    "source": {
+      "repository": "JasonColapietro/suede-creator-skills",
+      "path": "skills/suede-revops",
+      "revision": "fe5dc1757cd6c8ff63aee853564249c00151778d"
+    },
+    "scanner": {
+      "name": "cisco-ai-skill-scanner",
+      "version": "2.3.1",
+      "adapter_version": 2,
+      "analyzers": [
+        "static_analyzer",
+        "bytecode",
+        "pipeline",
+        "correlation",
+        "behavioral_analyzer"
+      ],
+      "policy": "strict",
+      "cel_mode": "shadow",
+      "network": "disabled",
+      "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+    },
+    "started_at": "2026-10-25T20:56:12.461981+00:00",
+    "completed_at": "2026-10-25T20:56:12.653462+00:00",
+    "evaluated_on": "2026-10-25",
+    "valid_until": "2026-11-24T20:56:12.653Z",
+    "files_scanned": 8,
+    "coverage_complete": true,
+    "skipped": [],
+    "findings": {
+      "CRITICAL": 0,
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 1,
+      "INFO": 1
+    },
+    "evidence_sha256": "863fa6e2d83ed57f2de88b46f3351ad3a53a3575b1d9ae110dcc2149a85f12c4"
+  },
+  {
+    "id": "jasoncolapietro/suede-creator-skills/suede-rights-passport",
+    "status": "findings",
+    "reason": "review_retained_findings",
+    "source": {
+      "repository": "JasonColapietro/suede-creator-skills",
+      "path": "skills/suede-rights-passport",
+      "revision": "fe5dc1757cd6c8ff63aee853564249c00151778d"
+    },
+    "scanner": {
+      "name": "cisco-ai-skill-scanner",
+      "version": "2.3.1",
+      "adapter_version": 2,
+      "analyzers": [
+        "static_analyzer",
+        "bytecode",
+        "pipeline",
+        "correlation",
+        "behavioral_analyzer"
+      ],
+      "policy": "strict",
+      "cel_mode": "shadow",
+      "network": "disabled",
+      "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+    },
+    "started_at": "2026-10-25T20:56:12.653844+00:00",
+    "completed_at": "2026-10-25T20:56:14.523623+00:00",
+    "evaluated_on": "2026-10-25",
+    "valid_until": "2026-11-24T20:56:14.523Z",
+    "files_scanned": 48,
+    "coverage_complete": true,
+    "skipped": [],
+    "findings": {
+      "CRITICAL": 0,
+      "HIGH": 0,
+      "MEDIUM": 1,
+      "LOW": 1,
+      "INFO": 1
+    },
+    "evidence_sha256": "d93195d53be646c62912853bba07533a4fb000775b2ef0eca2bea5d0622ac75d"
+  },
+  {
+    "id": "jasoncolapietro/suede-creator-skills/suede-sales-enablement",
+    "status": "findings",
+    "reason": "review_retained_findings",
+    "source": {
+      "repository": "JasonColapietro/suede-creator-skills",
+      "path": "skills/suede-sales-enablement",
+      "revision": "fe5dc1757cd6c8ff63aee853564249c00151778d"
+    },
+    "scanner": {
+      "name": "cisco-ai-skill-scanner",
+      "version": "2.3.1",
+      "adapter_version": 2,
+      "analyzers": [
+        "static_analyzer",
+        "bytecode",
+        "pipeline",
+        "correlation",
+        "behavioral_analyzer"
+      ],
+      "policy": "strict",
+      "cel_mode": "shadow",
+      "network": "disabled",
+      "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+    },
+    "started_at": "2026-10-25T20:56:14.524246+00:00",
+    "completed_at": "2026-10-25T20:56:14.715681+00:00",
+    "evaluated_on": "2026-10-25",
+    "valid_until": "2026-11-24T20:56:14.715Z",
+    "files_scanned": 8,
+    "coverage_complete": true,
+    "skipped": [],
+    "findings": {
+      "CRITICAL": 0,
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 1,
+      "INFO": 1
+    },
+    "evidence_sha256": "fdf57c58d37f96805dc6b7bce100cc083cb72ee47aa01da9751356adb3d82927"
+  },
+  {
+    "id": "jasoncolapietro/suede-creator-skills/suede-seo-audit",
+    "status": "failed",
+    "reason": "review_retained_findings",
+    "source": {
+      "repository": "JasonColapietro/suede-creator-skills",
+      "path": "skills/suede-seo-audit",
+      "revision": "fe5dc1757cd6c8ff63aee853564249c00151778d"
+    },
+    "scanner": {
+      "name": "cisco-ai-skill-scanner",
+      "version": "2.3.1",
+      "adapter_version": 2,
+      "analyzers": [
+        "static_analyzer",
+        "bytecode",
+        "pipeline",
+        "correlation",
+        "behavioral_analyzer"
+      ],
+      "policy": "strict",
+      "cel_mode": "shadow",
+      "network": "disabled",
+      "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+    },
+    "started_at": "2026-10-25T20:56:14.716060+00:00",
+    "completed_at": "2026-10-25T20:56:15.275651+00:00",
+    "evaluated_on": "2026-10-25",
+    "valid_until": "2026-11-24T20:56:15.275Z",
+    "files_scanned": 23,
+    "coverage_complete": true,
+    "skipped": [],
+    "findings": {
+      "CRITICAL": 3,
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 1,
+      "INFO": 1
+    },
+    "evidence_sha256": "0d98cee3e2e4fd8c88a43cdc849944599ceb6625b07dba111ede42b2ffb9985e"
+  },
+  {
+    "id": "jasoncolapietro/suede-creator-skills/suede-ship-copy",
+    "status": "findings",
+    "reason": "review_retained_findings",
+    "source": {
+      "repository": "JasonColapietro/suede-creator-skills",
+      "path": "skills/suede-ship-copy",
+      "revision": "fe5dc1757cd6c8ff63aee853564249c00151778d"
+    },
+    "scanner": {
+      "name": "cisco-ai-skill-scanner",
+      "version": "2.3.1",
+      "adapter_version": 2,
+      "analyzers": [
+        "static_analyzer",
+        "bytecode",
+        "pipeline",
+        "correlation",
+        "behavioral_analyzer"
+      ],
+      "policy": "strict",
+      "cel_mode": "shadow",
+      "network": "disabled",
+      "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+    },
+    "started_at": "2026-10-25T20:56:15.276303+00:00",
+    "completed_at": "2026-10-25T20:56:15.714434+00:00",
+    "evaluated_on": "2026-10-25",
+    "valid_until": "2026-11-24T20:56:15.714Z",
+    "files_scanned": 4,
+    "coverage_complete": true,
+    "skipped": [],
+    "findings": {
+      "CRITICAL": 0,
+      "HIGH": 0,
+      "MEDIUM": 1,
+      "LOW": 1,
+      "INFO": 1
+    },
+    "evidence_sha256": "ce2de8e31441a4d1da371b63181370b32b6d4e51a0735392cf12fe8404243b06"
+  },
+  {
+    "id": "jasoncolapietro/suede-creator-skills/suede-site-alchemy",
+    "status": "findings",
+    "reason": "review_retained_findings",
+    "source": {
+      "repository": "JasonColapietro/suede-creator-skills",
+      "path": "skills/suede-site-alchemy",
+      "revision": "fe5dc1757cd6c8ff63aee853564249c00151778d"
+    },
+    "scanner": {
+      "name": "cisco-ai-skill-scanner",
+      "version": "2.3.1",
+      "adapter_version": 2,
+      "analyzers": [
+        "static_analyzer",
+        "bytecode",
+        "pipeline",
+        "correlation",
+        "behavioral_analyzer"
+      ],
+      "policy": "strict",
+      "cel_mode": "shadow",
+      "network": "disabled",
+      "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+    },
+    "started_at": "2026-10-25T20:56:15.714872+00:00",
+    "completed_at": "2026-10-25T20:56:15.901112+00:00",
+    "evaluated_on": "2026-10-25",
+    "valid_until": "2026-11-24T20:56:15.901Z",
+    "files_scanned": 8,
+    "coverage_complete": true,
+    "skipped": [],
+    "findings": {
+      "CRITICAL": 0,
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 1,
+      "INFO": 1
+    },
+    "evidence_sha256": "712fdd8e5c3ae08ee39c76524d627c52e912f4b32fd5db54bb0350ec382f8d0e"
+  },
+  {
+    "id": "jasoncolapietro/suede-creator-skills/suede-sms",
+    "status": "findings",
+    "reason": "review_retained_findings",
+    "source": {
+      "repository": "JasonColapietro/suede-creator-skills",
+      "path": "skills/suede-sms",
+      "revision": "fe5dc1757cd6c8ff63aee853564249c00151778d"
+    },
+    "scanner": {
+      "name": "cisco-ai-skill-scanner",
+      "version": "2.3.1",
+      "adapter_version": 2,
+      "analyzers": [
+        "static_analyzer",
+        "bytecode",
+        "pipeline",
+        "correlation",
+        "behavioral_analyzer"
+      ],
+      "policy": "strict",
+      "cel_mode": "shadow",
+      "network": "disabled",
+      "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+    },
+    "started_at": "2026-10-25T20:56:15.901500+00:00",
+    "completed_at": "2026-10-25T20:56:16.078860+00:00",
+    "evaluated_on": "2026-10-25",
+    "valid_until": "2026-11-24T20:56:16.078Z",
+    "files_scanned": 7,
+    "coverage_complete": true,
+    "skipped": [],
+    "findings": {
+      "CRITICAL": 0,
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 1,
+      "INFO": 1
+    },
+    "evidence_sha256": "3cd5677fbb62299cb270eca87b86077cd76bd8a6fe3595c73b74ed73053bb8d7"
+  },
+  {
+    "id": "jasoncolapietro/suede-creator-skills/suede-social",
+    "status": "findings",
+    "reason": "review_retained_findings",
+    "source": {
+      "repository": "JasonColapietro/suede-creator-skills",
+      "path": "skills/suede-social",
+      "revision": "fe5dc1757cd6c8ff63aee853564249c00151778d"
+    },
+    "scanner": {
+      "name": "cisco-ai-skill-scanner",
+      "version": "2.3.1",
+      "adapter_version": 2,
+      "analyzers": [
+        "static_analyzer",
+        "bytecode",
+        "pipeline",
+        "correlation",
+        "behavioral_analyzer"
+      ],
+      "policy": "strict",
+      "cel_mode": "shadow",
+      "network": "disabled",
+      "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+    },
+    "started_at": "2026-10-25T20:56:16.079208+00:00",
+    "completed_at": "2026-10-25T20:56:16.467437+00:00",
+    "evaluated_on": "2026-10-25",
+    "valid_until": "2026-11-24T20:56:16.467Z",
+    "files_scanned": 17,
+    "coverage_complete": true,
+    "skipped": [],
+    "findings": {
+      "CRITICAL": 0,
+      "HIGH": 0,
+      "MEDIUM": 1,
+      "LOW": 1,
+      "INFO": 1
+    },
+    "evidence_sha256": "b9b25d890dff47a8a0e7d61711a05130d223aa5ee98304359dd9b95af653edc9"
+  },
+  {
+    "id": "jasoncolapietro/suede-creator-skills/suede-sync-packaging",
+    "status": "findings",
+    "reason": "review_retained_findings",
+    "source": {
+      "repository": "JasonColapietro/suede-creator-skills",
+      "path": "skills/suede-sync-packaging",
+      "revision": "fe5dc1757cd6c8ff63aee853564249c00151778d"
+    },
+    "scanner": {
+      "name": "cisco-ai-skill-scanner",
+      "version": "2.3.1",
+      "adapter_version": 2,
+      "analyzers": [
+        "static_analyzer",
+        "bytecode",
+        "pipeline",
+        "correlation",
+        "behavioral_analyzer"
+      ],
+      "policy": "strict",
+      "cel_mode": "shadow",
+      "network": "disabled",
+      "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+    },
+    "started_at": "2026-10-25T20:56:16.467892+00:00",
+    "completed_at": "2026-10-25T20:56:16.557771+00:00",
+    "evaluated_on": "2026-10-25",
+    "valid_until": "2026-11-24T20:56:16.557Z",
+    "files_scanned": 4,
+    "coverage_complete": true,
+    "skipped": [],
+    "findings": {
+      "CRITICAL": 0,
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 1,
+      "INFO": 1
+    },
+    "evidence_sha256": "b122d0ea7e4a6f5121f41da2dc74c2387206d0135e6292a00a04e5a3512b00cf"
+  },
+  {
+    "id": "jasoncolapietro/suede-creator-skills/suede-video",
+    "status": "findings",
+    "reason": "review_retained_findings",
+    "source": {
+      "repository": "JasonColapietro/suede-creator-skills",
+      "path": "skills/suede-video",
+      "revision": "fe5dc1757cd6c8ff63aee853564249c00151778d"
+    },
+    "scanner": {
+      "name": "cisco-ai-skill-scanner",
+      "version": "2.3.1",
+      "adapter_version": 2,
+      "analyzers": [
+        "static_analyzer",
+        "bytecode",
+        "pipeline",
+        "correlation",
+        "behavioral_analyzer"
+      ],
+      "policy": "strict",
+      "cel_mode": "shadow",
+      "network": "disabled",
+      "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+    },
+    "started_at": "2026-10-25T20:56:16.558117+00:00",
+    "completed_at": "2026-10-25T20:56:16.728421+00:00",
+    "evaluated_on": "2026-10-25",
+    "valid_until": "2026-11-24T20:56:16.728Z",
+    "files_scanned": 7,
+    "coverage_complete": true,
+    "skipped": [],
+    "findings": {
+      "CRITICAL": 0,
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 1,
+      "INFO": 1
+    },
+    "evidence_sha256": "095f8ec2ce86e72b2b4950ca68ca95a6fcd260a4d6313fa7f2f913c77e02472e"
+  },
+  {
+    "id": "jasoncolapietro/suede-creator-skills/suede-visibility-grader",
+    "status": "findings",
+    "reason": "review_retained_findings",
+    "source": {
+      "repository": "JasonColapietro/suede-creator-skills",
+      "path": "skills/suede-visibility-grader",
+      "revision": "fe5dc1757cd6c8ff63aee853564249c00151778d"
+    },
+    "scanner": {
+      "name": "cisco-ai-skill-scanner",
+      "version": "2.3.1",
+      "adapter_version": 2,
+      "analyzers": [
+        "static_analyzer",
+        "bytecode",
+        "pipeline",
+        "correlation",
+        "behavioral_analyzer"
+      ],
+      "policy": "strict",
+      "cel_mode": "shadow",
+      "network": "disabled",
+      "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+    },
+    "started_at": "2026-10-25T20:56:16.728774+00:00",
+    "completed_at": "2026-10-25T20:56:16.830054+00:00",
+    "evaluated_on": "2026-10-25",
+    "valid_until": "2026-11-24T20:56:16.830Z",
+    "files_scanned": 5,
+    "coverage_complete": true,
+    "skipped": [],
+    "findings": {
+      "CRITICAL": 0,
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 1,
+      "INFO": 1
+    },
+    "evidence_sha256": "b761db6b6fde64a10b1b657d09fbdea35871d218440ba2a0585d06e390b8514b"
+  },
+  {
+    "id": "jasoncolapietro/suede-creator-skills/suede-workflow-skills",
+    "status": "findings",
+    "reason": "review_retained_findings",
+    "source": {
+      "repository": "JasonColapietro/suede-creator-skills",
+      "path": "skills/suede-workflow-skills",
+      "revision": "fe5dc1757cd6c8ff63aee853564249c00151778d"
+    },
+    "scanner": {
+      "name": "cisco-ai-skill-scanner",
+      "version": "2.3.1",
+      "adapter_version": 2,
+      "analyzers": [
+        "static_analyzer",
+        "bytecode",
+        "pipeline",
+        "correlation",
+        "behavioral_analyzer"
+      ],
+      "policy": "strict",
+      "cel_mode": "shadow",
+      "network": "disabled",
+      "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+    },
+    "started_at": "2026-10-25T20:56:16.830412+00:00",
+    "completed_at": "2026-10-25T20:56:16.978733+00:00",
+    "evaluated_on": "2026-10-25",
+    "valid_until": "2026-11-24T20:56:16.978Z",
+    "files_scanned": 7,
+    "coverage_complete": true,
+    "skipped": [],
+    "findings": {
+      "CRITICAL": 0,
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 1,
+      "INFO": 1
+    },
+    "evidence_sha256": "27a55033e6053761c2c8372b303fed8e233482001f82d746bf5b48dd9daa1ede"
+  }
+]

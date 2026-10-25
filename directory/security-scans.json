@@ -1,1 +1,10 @@
-{}
+{
+  "anthropics/skills/algorithmic-art": {
+    "file": "security/9f5e0271d1ff662b87fef284231498987a88937de9a9bb90100b1d031076f166.json",
+    "sha256": "9f5e0271d1ff662b87fef284231498987a88937de9a9bb90100b1d031076f166"
+  },
+  "anthropics/skills/brand-guidelines": {
+    "file": "security/34e8cdf30e3c62c82c403fa7f1ede2299b3e900191bd4adb7fdb31c39a5fb64f.json",
+    "sha256": "34e8cdf30e3c62c82c403fa7f1ede2299b3e900191bd4adb7fdb31c39a5fb64f"
+  }
+}

@@ -1,0 +1,559 @@
+{
+  "schema_version": 1,
+  "source": {
+    "repository": "JasonColapietro/suede-creator-skills",
+    "path": "skills/suede-seo-audit",
+    "revision": "fe5dc1757cd6c8ff63aee853564249c00151778d"
+  },
+  "scanner": {
+    "name": "cisco-ai-skill-scanner",
+    "version": "2.3.1",
+    "adapter_version": 2,
+    "analyzers": [
+      "static_analyzer",
+      "bytecode",
+      "pipeline",
+      "correlation",
+      "behavioral_analyzer"
+    ],
+    "policy": "strict",
+    "cel_mode": "shadow",
+    "network": "disabled",
+    "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+  },
+  "started_at": "2026-10-25T20:56:14.716060+00:00",
+  "state": "completed",
+  "analysis": {
+    "skill_name": "suede-seo-audit",
+    "skill_path": "/source/target-055",
+    "is_safe": false,
+    "max_severity": "CRITICAL",
+    "findings_count": 5,
+    "findings": [
+      {
+        "id": "MANIFEST_DESCRIPTION_TOO_LONG_d5d955b297",
+        "rule_id": "MANIFEST_DESCRIPTION_TOO_LONG",
+        "category": "policy_violation",
+        "severity": "LOW",
+        "title": "Skill description exceeds agent skills length limit",
+        "description": "Skill description is 782 characters; Agent skills limit the `description` field to 512 characters.",
+        "file_path": "SKILL.md",
+        "line_number": null,
+        "snippet": null,
+        "remediation": "Shorten the description to 512 characters or fewer while keeping it specific",
+        "analyzer": "static",
+        "metadata": {
+          "same_path_other_rule_ids": [
+            "MANIFEST_MISSING_LICENSE"
+          ],
+          "same_path_unique_rule_count": 2,
+          "same_path_findings_count": 2,
+          "aitech": null,
+          "aitech_name": null,
+          "aisubtech": null,
+          "aisubtech_name": null,
+          "aitech_mappings": [],
+          "aisubtech_mappings": [],
+          "framework_mappings": [],
+          "taxonomy_status": "not_applicable",
+          "taxonomy_source": "rule",
+          "scan_policy_name": "strict",
+          "scan_policy_version": "1.0",
+          "scan_policy_preset_base": "strict",
+          "scan_policy_fingerprint_sha256": "7f4560dea6f3f1c11067735bab3759c4daedfcd6d67f46b4e40899507a2c2ea9"
+        }
+      },
+      {
+        "id": "MANIFEST_MISSING_LICENSE_c5ae9be793",
+        "rule_id": "MANIFEST_MISSING_LICENSE",
+        "category": "policy_violation",
+        "severity": "INFO",
+        "title": "Skill does not specify a license",
+        "description": "Skill manifest does not include a 'license' field. Specifying a license helps users understand usage terms.",
+        "file_path": "SKILL.md",
+        "line_number": null,
+        "snippet": null,
+        "remediation": "Add 'license' field to SKILL.md frontmatter (e.g., MIT, Apache-2.0)",
+        "analyzer": "static",
+        "metadata": {
+          "same_path_other_rule_ids": [
+            "MANIFEST_DESCRIPTION_TOO_LONG"
+          ],
+          "same_path_unique_rule_count": 2,
+          "same_path_findings_count": 2,
+          "aitech": null,
+          "aitech_name": null,
+          "aisubtech": null,
+          "aisubtech_name": null,
+          "aitech_mappings": [],
+          "aisubtech_mappings": [],
+          "framework_mappings": [],
+          "taxonomy_status": "not_applicable",
+          "taxonomy_source": "rule",
+          "scan_policy_name": "strict",
+          "scan_policy_version": "1.0",
+          "scan_policy_preset_base": "strict",
+          "scan_policy_fingerprint_sha256": "7f4560dea6f3f1c11067735bab3759c4daedfcd6d67f46b4e40899507a2c2ea9"
+        }
+      },
+      {
+        "id": "COMMAND_INJECTION_JS_CHILD_PROCESS_c454e2de40",
+        "rule_id": "COMMAND_INJECTION_JS_CHILD_PROCESS",
+        "category": "command_injection",
+        "severity": "CRITICAL",
+        "title": "Node.js child_process module usage for shell command execution",
+        "description": "Pattern detected: from 'node:child_process'",
+        "file_path": "scripts/tests/cli.test.mjs",
+        "line_number": 7,
+        "snippet": "import { spawnSync } from 'node:child_process';",
+        "remediation": "Avoid child_process. If required, use execFile with explicit arguments instead of exec with shell strings",
+        "analyzer": "static",
+        "metadata": {
+          "matched_pattern": "from\\s+['\"](?:node:)?child_process['\"]",
+          "matched_text": "from 'node:child_process'",
+          "signature_pattern_index": 1,
+          "signature_match_start": 21,
+          "signature_match_end": 46,
+          "signature_pattern_sha256": "9376960e72aac8f6d944cee70e70b31657c1f32ad94358351255626f957be3d1",
+          "scanner_category": "INJECTION ATTACK",
+          "signature_context": "example",
+          "signature_polarity": "illustrative",
+          "source_category": "command_injection",
+          "category_normalization": "native",
+          "semantic_facts": {
+            "evidence_kind": "signature_pattern",
+            "context_kind": "example",
+            "signals": [
+              {
+                "rule_id": "COMMAND_INJECTION_JS_CHILD_PROCESS",
+                "kind": "signature_polarity",
+                "file_path": "scripts/tests/cli.test.mjs",
+                "value_class": "illustrative"
+              },
+              {
+                "rule_id": "COMMAND_INJECTION_JS_CHILD_PROCESS",
+                "kind": "unreferenced_executable",
+                "file_path": "scripts/tests/cli.test.mjs",
+                "value_class": "javascript"
+              }
+            ]
+          },
+          "aitech": "AITech-9.1",
+          "aitech_name": "Model or Agentic System Manipulation",
+          "aisubtech": "AISubtech-9.1.4",
+          "aisubtech_name": "Injection Attacks (e.g., SQL, Command Execution, XSS)",
+          "aitech_mappings": [
+            "OWASP: LLM04:2026: Supply Chain",
+            "OWASP: ASI04: Agentic Supply Chain Vulnerabilities",
+            "OWASP: ASI05: Unexpected Code Execution (RCE)",
+            "MITRE ATLAS: AML.T0050: Command and Scripting Interpreter",
+            "NIST AML: NISTAML.023: Backdoor Poisoning",
+            "Cisco AI MDL Code: MDL-006",
+            "Cisco AI MDL Code: MDL-007",
+            "Cisco AI MDL Code: MDL-005",
+            "Cisco AI MDL Code: MDL-010",
+            "Cisco AI MDL Code: MDL-012",
+            "Cisco AI MDL Code: MDL-014",
+            "Cisco AI MDL Code: MDL-015",
+            "Cisco AI MDL Code: MDL-019"
+          ],
+          "aisubtech_mappings": [
+            "OWASP: LLM01:2026: Prompt Injection",
+            "OWASP: LLM10:2026: Improper Output Handling",
+            "OWASP: LLM03:2026: Excessive Agency",
+            "OWASP: ASI04: Agentic Supply Chain Vulnerabilities",
+            "OWASP: ASI05: Unexpected Code Execution (RCE)",
+            "MITRE ATLAS: AML.T0051: LLM Prompt Injection",
+            "MITRE ATLAS: AML.T0050: Command and Scripting Interpreter",
+            "MITRE ATLAS: AML.T0067: LLM Trusted Output Component Manipulation",
+            "MITRE ATT&CK: T1588.007: Obtain AI Capabilities",
+            "NIST AML: NISTAML.024: Targeted Poisoning"
+          ],
+          "framework_mappings": [
+            "OWASP: LLM01:2026: Prompt Injection",
+            "OWASP: LLM10:2026: Improper Output Handling",
+            "OWASP: LLM03:2026: Excessive Agency",
+            "OWASP: ASI04: Agentic Supply Chain Vulnerabilities",
+            "OWASP: ASI05: Unexpected Code Execution (RCE)",
+            "MITRE ATLAS: AML.T0051: LLM Prompt Injection",
+            "MITRE ATLAS: AML.T0050: Command and Scripting Interpreter",
+            "MITRE ATLAS: AML.T0067: LLM Trusted Output Component Manipulation",
+            "MITRE ATT&CK: T1588.007: Obtain AI Capabilities",
+            "NIST AML: NISTAML.024: Targeted Poisoning"
+          ],
+          "taxonomy_status": "mapped",
+          "taxonomy_source": "rule",
+          "scan_policy_name": "strict",
+          "scan_policy_version": "1.0",
+          "scan_policy_preset_base": "strict",
+          "scan_policy_fingerprint_sha256": "7f4560dea6f3f1c11067735bab3759c4daedfcd6d67f46b4e40899507a2c2ea9"
+        }
+      },
+      {
+        "id": "COMMAND_INJECTION_JS_CHILD_PROCESS_1e3b645d05",
+        "rule_id": "COMMAND_INJECTION_JS_CHILD_PROCESS",
+        "category": "command_injection",
+        "severity": "CRITICAL",
+        "title": "Node.js child_process module usage for shell command execution",
+        "description": "Pattern detected: spawnSync(",
+        "file_path": "scripts/tests/cli.test.mjs",
+        "line_number": 12,
+        "snippet": "const run = (...args) => spawnSync(process.execPath, [cli,...args], { encoding: 'utf8', cwd: scripts });",
+        "remediation": "Avoid child_process. If required, use execFile with explicit arguments instead of exec with shell strings",
+        "analyzer": "static",
+        "metadata": {
+          "matched_pattern": "\\bspawnSync\\s*\\(",
+          "matched_text": "spawnSync(",
+          "signature_pattern_index": 4,
+          "signature_match_start": 25,
+          "signature_match_end": 35,
+          "signature_pattern_sha256": "3c92a0ce248fd615ee0beac96446f213058d9a10f94a9a5d0965ee01598793c9",
+          "scanner_category": "INJECTION ATTACK",
+          "signature_context": "example",
+          "signature_polarity": "illustrative",
+          "source_category": "command_injection",
+          "category_normalization": "native",
+          "semantic_facts": {
+            "evidence_kind": "signature_pattern",
+            "context_kind": "example",
+            "signals": [
+              {
+                "rule_id": "COMMAND_INJECTION_JS_CHILD_PROCESS",
+                "kind": "signature_polarity",
+                "file_path": "scripts/tests/cli.test.mjs",
+                "value_class": "illustrative"
+              },
+              {
+                "rule_id": "COMMAND_INJECTION_JS_CHILD_PROCESS",
+                "kind": "unreferenced_executable",
+                "file_path": "scripts/tests/cli.test.mjs",
+                "value_class": "javascript"
+              }
+            ]
+          },
+          "aitech": "AITech-9.1",
+          "aitech_name": "Model or Agentic System Manipulation",
+          "aisubtech": "AISubtech-9.1.4",
+          "aisubtech_name": "Injection Attacks (e.g., SQL, Command Execution, XSS)",
+          "aitech_mappings": [
+            "OWASP: LLM04:2026: Supply Chain",
+            "OWASP: ASI04: Agentic Supply Chain Vulnerabilities",
+            "OWASP: ASI05: Unexpected Code Execution (RCE)",
+            "MITRE ATLAS: AML.T0050: Command and Scripting Interpreter",
+            "NIST AML: NISTAML.023: Backdoor Poisoning",
+            "Cisco AI MDL Code: MDL-006",
+            "Cisco AI MDL Code: MDL-007",
+            "Cisco AI MDL Code: MDL-005",
+            "Cisco AI MDL Code: MDL-010",
+            "Cisco AI MDL Code: MDL-012",
+            "Cisco AI MDL Code: MDL-014",
+            "Cisco AI MDL Code: MDL-015",
+            "Cisco AI MDL Code: MDL-019"
+          ],
+          "aisubtech_mappings": [
+            "OWASP: LLM01:2026: Prompt Injection",
+            "OWASP: LLM10:2026: Improper Output Handling",
+            "OWASP: LLM03:2026: Excessive Agency",
+            "OWASP: ASI04: Agentic Supply Chain Vulnerabilities",
+            "OWASP: ASI05: Unexpected Code Execution (RCE)",
+            "MITRE ATLAS: AML.T0051: LLM Prompt Injection",
+            "MITRE ATLAS: AML.T0050: Command and Scripting Interpreter",
+            "MITRE ATLAS: AML.T0067: LLM Trusted Output Component Manipulation",
+            "MITRE ATT&CK: T1588.007: Obtain AI Capabilities",
+            "NIST AML: NISTAML.024: Targeted Poisoning"
+          ],
+          "framework_mappings": [
+            "OWASP: LLM01:2026: Prompt Injection",
+            "OWASP: LLM10:2026: Improper Output Handling",
+            "OWASP: LLM03:2026: Excessive Agency",
+            "OWASP: ASI04: Agentic Supply Chain Vulnerabilities",
+            "OWASP: ASI05: Unexpected Code Execution (RCE)",
+            "MITRE ATLAS: AML.T0051: LLM Prompt Injection",
+            "MITRE ATLAS: AML.T0050: Command and Scripting Interpreter",
+            "MITRE ATLAS: AML.T0067: LLM Trusted Output Component Manipulation",
+            "MITRE ATT&CK: T1588.007: Obtain AI Capabilities",
+            "NIST AML: NISTAML.024: Targeted Poisoning"
+          ],
+          "taxonomy_status": "mapped",
+          "taxonomy_source": "rule",
+          "scan_policy_name": "strict",
+          "scan_policy_version": "1.0",
+          "scan_policy_preset_base": "strict",
+          "scan_policy_fingerprint_sha256": "7f4560dea6f3f1c11067735bab3759c4daedfcd6d67f46b4e40899507a2c2ea9"
+        }
+      },
+      {
+        "id": "COMMAND_INJECTION_JS_CHILD_PROCESS_bbc4fa6957",
+        "rule_id": "COMMAND_INJECTION_JS_CHILD_PROCESS",
+        "category": "command_injection",
+        "severity": "CRITICAL",
+        "title": "Node.js child_process module usage for shell command execution",
+        "description": "Pattern detected: spawnSync(",
+        "file_path": "scripts/tests/serp-overlap.test.mjs",
+        "line_number": 84,
+        "snippet": "const result = spawnSync(process.execPath, [\"--input-type=module\", \"-e\", script], { encoding: \"utf8\", env: { ...process.env, LANG: locale, LC_ALL: locale } });",
+        "remediation": "Avoid child_process. If required, use execFile with explicit arguments instead of exec with shell strings",
+        "analyzer": "static",
+        "metadata": {
+          "matched_pattern": "\\bspawnSync\\s*\\(",
+          "matched_text": "spawnSync(",
+          "signature_pattern_index": 4,
+          "signature_match_start": 15,
+          "signature_match_end": 25,
+          "signature_pattern_sha256": "3c92a0ce248fd615ee0beac96446f213058d9a10f94a9a5d0965ee01598793c9",
+          "scanner_category": "INJECTION ATTACK",
+          "signature_context": "example",
+          "signature_polarity": "illustrative",
+          "source_category": "command_injection",
+          "category_normalization": "native",
+          "semantic_facts": {
+            "evidence_kind": "signature_pattern",
+            "context_kind": "example",
+            "signals": [
+              {
+                "rule_id": "COMMAND_INJECTION_JS_CHILD_PROCESS",
+                "kind": "signature_polarity",
+                "file_path": "scripts/tests/serp-overlap.test.mjs",
+                "value_class": "illustrative"
+              },
+              {
+                "rule_id": "COMMAND_INJECTION_JS_CHILD_PROCESS",
+                "kind": "unreferenced_executable",
+                "file_path": "scripts/tests/serp-overlap.test.mjs",
+                "value_class": "javascript"
+              }
+            ]
+          },
+          "aitech": "AITech-9.1",
+          "aitech_name": "Model or Agentic System Manipulation",
+          "aisubtech": "AISubtech-9.1.4",
+          "aisubtech_name": "Injection Attacks (e.g., SQL, Command Execution, XSS)",
+          "aitech_mappings": [
+            "OWASP: LLM04:2026: Supply Chain",
+            "OWASP: ASI04: Agentic Supply Chain Vulnerabilities",
+            "OWASP: ASI05: Unexpected Code Execution (RCE)",
+            "MITRE ATLAS: AML.T0050: Command and Scripting Interpreter",
+            "NIST AML: NISTAML.023: Backdoor Poisoning",
+            "Cisco AI MDL Code: MDL-006",
+            "Cisco AI MDL Code: MDL-007",
+            "Cisco AI MDL Code: MDL-005",
+            "Cisco AI MDL Code: MDL-010",
+            "Cisco AI MDL Code: MDL-012",
+            "Cisco AI MDL Code: MDL-014",
+            "Cisco AI MDL Code: MDL-015",
+            "Cisco AI MDL Code: MDL-019"
+          ],
+          "aisubtech_mappings": [
+            "OWASP: LLM01:2026: Prompt Injection",
+            "OWASP: LLM10:2026: Improper Output Handling",
+            "OWASP: LLM03:2026: Excessive Agency",
+            "OWASP: ASI04: Agentic Supply Chain Vulnerabilities",
+            "OWASP: ASI05: Unexpected Code Execution (RCE)",
+            "MITRE ATLAS: AML.T0051: LLM Prompt Injection",
+            "MITRE ATLAS: AML.T0050: Command and Scripting Interpreter",
+            "MITRE ATLAS: AML.T0067: LLM Trusted Output Component Manipulation",
+            "MITRE ATT&CK: T1588.007: Obtain AI Capabilities",
+            "NIST AML: NISTAML.024: Targeted Poisoning"
+          ],
+          "framework_mappings": [
+            "OWASP: LLM01:2026: Prompt Injection",
+            "OWASP: LLM10:2026: Improper Output Handling",
+            "OWASP: LLM03:2026: Excessive Agency",
+            "OWASP: ASI04: Agentic Supply Chain Vulnerabilities",
+            "OWASP: ASI05: Unexpected Code Execution (RCE)",
+            "MITRE ATLAS: AML.T0051: LLM Prompt Injection",
+            "MITRE ATLAS: AML.T0050: Command and Scripting Interpreter",
+            "MITRE ATLAS: AML.T0067: LLM Trusted Output Component Manipulation",
+            "MITRE ATT&CK: T1588.007: Obtain AI Capabilities",
+            "NIST AML: NISTAML.024: Targeted Poisoning"
+          ],
+          "taxonomy_status": "mapped",
+          "taxonomy_source": "rule",
+          "scan_policy_name": "strict",
+          "scan_policy_version": "1.0",
+          "scan_policy_preset_base": "strict",
+          "scan_policy_fingerprint_sha256": "7f4560dea6f3f1c11067735bab3759c4daedfcd6d67f46b4e40899507a2c2ea9"
+        }
+      }
+    ],
+    "scan_duration_seconds": 0.544670820236206,
+    "duration_ms": 544,
+    "analyzers_used": [
+      "static_analyzer",
+      "bytecode",
+      "pipeline",
+      "correlation",
+      "behavioral_analyzer"
+    ],
+    "timestamp": "2026-10-25T20:56:15.272876+00:00",
+    "scan_metadata": {
+      "policy_name": "strict",
+      "policy_version": "1.0",
+      "policy_preset_base": "strict",
+      "policy_fingerprint_sha256": "7f4560dea6f3f1c11067735bab3759c4daedfcd6d67f46b4e40899507a2c2ea9",
+      "cel": {
+        "mode": "shadow",
+        "runtime": "cel-go",
+        "runtime_version": "v0.32.0;helper=2.3.1",
+        "fact_schema": "v1",
+        "expression_set_hash": "f26459b8f4a46a974d7ab0aaae34127b5b6a40d693e266e12fca03a69a6d26aa",
+        "evaluated": 0,
+        "retained": 5,
+        "would_suppress": 0,
+        "suppressed": 0,
+        "fallbacks": 0,
+        "projection_incomplete": 0,
+        "elapsed_ms": 0.0,
+        "projection_ms": 0.0,
+        "evaluation_ms": 0.0,
+        "errors": [],
+        "per_rule": {},
+        "suppressed_candidates": []
+      },
+      "rule_contract": {
+        "status": "passed",
+        "schema_version": 2,
+        "checked": 2,
+        "invalid_findings": 0,
+        "errors": []
+      },
+      "taxonomy": {
+        "source": "builtin",
+        "version": "2.0.0",
+        "name": "Cisco AI Security and Safety Taxonomy",
+        "revision": "655a343ac943a51b6f61f86e47156e7752c15dc6",
+        "snapshot_sha256": "413e8ce9081e6d91b78aaa0d0b1c06cdc15d0406ad319e23e9f9f4f80735c441",
+        "findings": {
+          "mapped": 3,
+          "not_applicable": 2,
+          "unmapped": 0
+        }
+      }
+    },
+    "analyzers_failed": []
+  },
+  "diagnostics": [],
+  "coverage": {
+    "complete": true,
+    "files": [
+      {
+        "path": "CARD.md",
+        "size": 4565,
+        "sha256": "1ed0961bd8e0b22805e705a60241139b04a74434e692aefc57bdc73ed887abbd"
+      },
+      {
+        "path": "SKILL.md",
+        "size": 17995,
+        "sha256": "ab6be63fc8961be9e2fef93052f32a5f2b41ef83354abb85c2360aed5b425c2d"
+      },
+      {
+        "path": "agents/openai.yaml",
+        "size": 716,
+        "sha256": "4d1f10d343bf73ffb0e9cbd9417d4b112a36d61089b8324ace072bed96c4a7e6"
+      },
+      {
+        "path": "references/google-search-guidance.md",
+        "size": 6569,
+        "sha256": "47ef53ff74ca69d4d02e4a8fae2f9f19518dac48975d12605260b47f56a25474"
+      },
+      {
+        "path": "references/keyword-research.md",
+        "size": 4772,
+        "sha256": "9b541140ae41f8d1b687957112294bac676c291e27b2e6c1569480213f207190"
+      },
+      {
+        "path": "references/lane-checklists.md",
+        "size": 24589,
+        "sha256": "c82d310fabccc369dca3e7d5b522b1ab2ac0d5bc99fcb072dc0489752b605bed"
+      },
+      {
+        "path": "references/offline-tools.md",
+        "size": 4732,
+        "sha256": "fcf01687b4fe39ad0f010920c3746c16d4082dad3c53ec7b1f187a3404519f10"
+      },
+      {
+        "path": "references/schema-templates.md",
+        "size": 10779,
+        "sha256": "392edc86aaf4c41a19fc5ba5fe610351d7817e5d540103607a9f70becf14448f"
+      },
+      {
+        "path": "scripts/fixtures/pages.json",
+        "size": 1003,
+        "sha256": "e7f79378d857c5b4f8041335bc8e50a60d7adaf810e5084f129f260bd97eb10a"
+      },
+      {
+        "path": "scripts/fixtures/serp.json",
+        "size": 828,
+        "sha256": "213805c7ba57b0f22ee94eba847797f715aea66edc2ab56a6ced18b506ad2f25"
+      },
+      {
+        "path": "scripts/lib/audit.mjs",
+        "size": 963,
+        "sha256": "195240125002d0a154110ad7380969f342a351355648254544128850f6ad28cf"
+      },
+      {
+        "path": "scripts/lib/merchant-schema.mjs",
+        "size": 15419,
+        "sha256": "929a604b84e630d16002b9b1e55228e30582297545324d1744f92801cf2181e1"
+      },
+      {
+        "path": "scripts/lib/metadata-drift.mjs",
+        "size": 9991,
+        "sha256": "ec8b19bdbe17d667f58cd21fc31f90659d06d1ef09932dae41de9ff812db410e"
+      },
+      {
+        "path": "scripts/lib/offline-reports.mjs",
+        "size": 2596,
+        "sha256": "81369de3d93ca1ec59c713a129c6632cab034b7659016412acb23f4bfed19e79"
+      },
+      {
+        "path": "scripts/lib/page-technical.mjs",
+        "size": 16446,
+        "sha256": "eb05f0dddb7a278b2c61deac2a6b64f291f04360565b0689bcef1d7308e4cfa1"
+      },
+      {
+        "path": "scripts/lib/serp-overlap.mjs",
+        "size": 7047,
+        "sha256": "8011afa455dd369208cfd20db85e0aa74d5ad764d6d147a8d942b4db28c3313b"
+      },
+      {
+        "path": "scripts/seo-review.mjs",
+        "size": 4602,
+        "sha256": "fae3b5d2dd959ad6e403444296f531b1cad17f349082142d211bae2fc27b40b9"
+      },
+      {
+        "path": "scripts/tests/cli.test.mjs",
+        "size": 3478,
+        "sha256": "11ca36ccaf5e96a99f82d1229201e40c8120dc3dbd60f8a42f9dde73ff0862a0"
+      },
+      {
+        "path": "scripts/tests/merchant-schema.test.mjs",
+        "size": 12813,
+        "sha256": "cab9f1f73ac932180e822fa69d5119640ce294b36d1c2e084188b9445eda7713"
+      },
+      {
+        "path": "scripts/tests/metadata-drift.test.mjs",
+        "size": 8054,
+        "sha256": "7a418879f9e743d9ea0475289ade66e7cb88edaa0b46062fe9df774a35eaf768"
+      },
+      {
+        "path": "scripts/tests/offline-reports.test.mjs",
+        "size": 2619,
+        "sha256": "b7a2516efe98b629567163c837d2d10bcc28c5e3b8685c9f7f4aaf865b83a365"
+      },
+      {
+        "path": "scripts/tests/page-technical.test.mjs",
+        "size": 9253,
+        "sha256": "2bdbf99de37f90d8c3a325514eef9252a55c5cdb23ceb3b8e0cd89914ee4e2a4"
+      },
+      {
+        "path": "scripts/tests/serp-overlap.test.mjs",
+        "size": 5515,
+        "sha256": "3d83e76c401d0db97a26f79f3dfaf234122ed9cf694dc05cb0336e23862483ab"
+      }
+    ],
+    "skipped": []
+  },
+  "completed_at": "2026-10-25T20:56:15.275651+00:00",
+  "runtime_image": "sha256:e922b2c027837474fb8d1eb875fd7ecf8d1cbc826ea2fff453e97a2160b7917e"
+}

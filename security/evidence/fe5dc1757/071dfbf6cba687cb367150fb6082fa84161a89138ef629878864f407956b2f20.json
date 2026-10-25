@@ -1,0 +1,190 @@
+{
+  "schema_version": 1,
+  "source": {
+    "repository": "JasonColapietro/suede-creator-skills",
+    "path": "skills/suede-ops-assessment",
+    "revision": "fe5dc1757cd6c8ff63aee853564249c00151778d"
+  },
+  "scanner": {
+    "name": "cisco-ai-skill-scanner",
+    "version": "2.3.1",
+    "adapter_version": 2,
+    "analyzers": [
+      "static_analyzer",
+      "bytecode",
+      "pipeline",
+      "correlation",
+      "behavioral_analyzer"
+    ],
+    "policy": "strict",
+    "cel_mode": "shadow",
+    "network": "disabled",
+    "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+  },
+  "started_at": "2026-10-25T20:56:10.438734+00:00",
+  "state": "completed",
+  "analysis": {
+    "skill_name": "suede-ops-assessment",
+    "skill_path": "/source/target-041",
+    "is_safe": true,
+    "max_severity": "LOW",
+    "findings_count": 2,
+    "findings": [
+      {
+        "id": "MANIFEST_DESCRIPTION_TOO_LONG_d5d955b297",
+        "rule_id": "MANIFEST_DESCRIPTION_TOO_LONG",
+        "category": "policy_violation",
+        "severity": "LOW",
+        "title": "Skill description exceeds agent skills length limit",
+        "description": "Skill description is 1005 characters; Agent skills limit the `description` field to 512 characters.",
+        "file_path": "SKILL.md",
+        "line_number": null,
+        "snippet": null,
+        "remediation": "Shorten the description to 512 characters or fewer while keeping it specific",
+        "analyzer": "static",
+        "metadata": {
+          "same_path_other_rule_ids": [
+            "MANIFEST_MISSING_LICENSE"
+          ],
+          "same_path_unique_rule_count": 2,
+          "same_path_findings_count": 2,
+          "aitech": null,
+          "aitech_name": null,
+          "aisubtech": null,
+          "aisubtech_name": null,
+          "aitech_mappings": [],
+          "aisubtech_mappings": [],
+          "framework_mappings": [],
+          "taxonomy_status": "not_applicable",
+          "taxonomy_source": "rule",
+          "scan_policy_name": "strict",
+          "scan_policy_version": "1.0",
+          "scan_policy_preset_base": "strict",
+          "scan_policy_fingerprint_sha256": "7f4560dea6f3f1c11067735bab3759c4daedfcd6d67f46b4e40899507a2c2ea9"
+        }
+      },
+      {
+        "id": "MANIFEST_MISSING_LICENSE_c5ae9be793",
+        "rule_id": "MANIFEST_MISSING_LICENSE",
+        "category": "policy_violation",
+        "severity": "INFO",
+        "title": "Skill does not specify a license",
+        "description": "Skill manifest does not include a 'license' field. Specifying a license helps users understand usage terms.",
+        "file_path": "SKILL.md",
+        "line_number": null,
+        "snippet": null,
+        "remediation": "Add 'license' field to SKILL.md frontmatter (e.g., MIT, Apache-2.0)",
+        "analyzer": "static",
+        "metadata": {
+          "same_path_other_rule_ids": [
+            "MANIFEST_DESCRIPTION_TOO_LONG"
+          ],
+          "same_path_unique_rule_count": 2,
+          "same_path_findings_count": 2,
+          "aitech": null,
+          "aitech_name": null,
+          "aisubtech": null,
+          "aisubtech_name": null,
+          "aitech_mappings": [],
+          "aisubtech_mappings": [],
+          "framework_mappings": [],
+          "taxonomy_status": "not_applicable",
+          "taxonomy_source": "rule",
+          "scan_policy_name": "strict",
+          "scan_policy_version": "1.0",
+          "scan_policy_preset_base": "strict",
+          "scan_policy_fingerprint_sha256": "7f4560dea6f3f1c11067735bab3759c4daedfcd6d67f46b4e40899507a2c2ea9"
+        }
+      }
+    ],
+    "scan_duration_seconds": 0.10512804985046387,
+    "duration_ms": 105,
+    "analyzers_used": [
+      "static_analyzer",
+      "bytecode",
+      "pipeline",
+      "correlation",
+      "behavioral_analyzer"
+    ],
+    "timestamp": "2026-10-25T20:56:10.548593+00:00",
+    "scan_metadata": {
+      "policy_name": "strict",
+      "policy_version": "1.0",
+      "policy_preset_base": "strict",
+      "policy_fingerprint_sha256": "7f4560dea6f3f1c11067735bab3759c4daedfcd6d67f46b4e40899507a2c2ea9",
+      "cel": {
+        "mode": "shadow",
+        "runtime": "cel-go",
+        "runtime_version": "v0.32.0;helper=2.3.1",
+        "fact_schema": "v1",
+        "expression_set_hash": "f26459b8f4a46a974d7ab0aaae34127b5b6a40d693e266e12fca03a69a6d26aa",
+        "evaluated": 0,
+        "retained": 2,
+        "would_suppress": 0,
+        "suppressed": 0,
+        "fallbacks": 0,
+        "projection_incomplete": 0,
+        "elapsed_ms": 0.0,
+        "projection_ms": 0.0,
+        "evaluation_ms": 0.0,
+        "errors": [],
+        "per_rule": {},
+        "suppressed_candidates": []
+      },
+      "rule_contract": {
+        "status": "passed",
+        "schema_version": 2,
+        "checked": 2,
+        "invalid_findings": 0,
+        "errors": []
+      },
+      "taxonomy": {
+        "source": "builtin",
+        "version": "2.0.0",
+        "name": "Cisco AI Security and Safety Taxonomy",
+        "revision": "655a343ac943a51b6f61f86e47156e7752c15dc6",
+        "snapshot_sha256": "413e8ce9081e6d91b78aaa0d0b1c06cdc15d0406ad319e23e9f9f4f80735c441",
+        "findings": {
+          "mapped": 0,
+          "not_applicable": 2,
+          "unmapped": 0
+        }
+      }
+    },
+    "analyzers_failed": []
+  },
+  "diagnostics": [],
+  "coverage": {
+    "complete": true,
+    "files": [
+      {
+        "path": "CARD.md",
+        "size": 5313,
+        "sha256": "f5f4ad6ac1ccfd5d266a4383104054b5479c6dc4fd5c9ce7dd7447838d47cef5"
+      },
+      {
+        "path": "SKILL.md",
+        "size": 12672,
+        "sha256": "55fba06df327a181b4548b4ab5c4838d480f3185df442ac1a63fcb93b9b8efb5"
+      },
+      {
+        "path": "agents/openai.yaml",
+        "size": 705,
+        "sha256": "608f2a2d6cf489149509f9e974f1f2aabb22f052d2dc763773f5307052693436"
+      },
+      {
+        "path": "evals/evals.json",
+        "size": 4358,
+        "sha256": "03ec42f33438ba2eca258b0ea52f18ef69737ecc55b6b6e472d6e01394808026"
+      },
+      {
+        "path": "references/interview-guide.md",
+        "size": 4729,
+        "sha256": "a2f50ab39f955886b822d8aaa8bb3072eb0394747649ba46170357e1601a82e1"
+      }
+    ],
+    "skipped": []
+  },
+  "completed_at": "2026-10-25T20:56:10.549514+00:00",
+  "runtime_image": "sha256:e922b2c027837474fb8d1eb875fd7ecf8d1cbc826ea2fff453e97a2160b7917e"
+}
