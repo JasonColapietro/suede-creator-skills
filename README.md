@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="docs/assets/readme/hero.svg" alt="Suede Creator Skills — the ship discipline your agent is missing. Open-source skills for Claude Code and Codex." width="100%">
+<img src="docs/assets/readme/hero.svg" alt="Suede AI Skills — the ship discipline your agent is missing. Open-source skills for Claude Code and Codex." width="100%">
 
 <br><br>
 
@@ -31,9 +31,9 @@
 
 [Compare scores](awesome/README.md#compare-099-quality-scores) · [Categories](awesome/README.md#contents) · [Publishers](awesome/publishers.md) · [Featured projects](awesome/featured.md) · [Contribute a listing](awesome/CONTRIBUTING.md)
 
-## Suede Creator Skills for SEO and business growth
+## Suede AI Skills for SEO and business growth
 
-Suede Creator Skills gives founders, marketers, and small teams reusable workflows for SEO audits, AI search visibility, conversion copy, and business operations. Run them in Claude Code or OpenAI Codex, with instructions you can inspect and adapt to your business.
+Suede AI Skills gives founders, marketers, and small teams reusable workflows for SEO audits, AI search visibility, conversion copy, and business operations. Run them in Claude Code or OpenAI Codex, with instructions you can inspect and adapt to your business.
 
 **Start with the business task:**
 
@@ -307,27 +307,27 @@ python3 -m pip install PyYAML
 
 ## Frequently asked questions
 
-### What is Suede Creator Skills?
+### What is Suede AI Skills?
 
-Suede Creator Skills is an open-source pack of agent skills for Claude Code and OpenAI Codex. Each skill is a folder with a `SKILL.md` that teaches the agent a repeatable workflow: SEO audits, AI search visibility, conversion copy, code review, ship gates and app delivery.
+Suede AI Skills is an open-source pack of agent skills for Claude Code and OpenAI Codex. Each skill is a folder with a `SKILL.md` that teaches the agent a repeatable workflow: SEO audits, AI search visibility, conversion copy, code review, ship gates and app delivery.
 
-### Who created Suede Creator Skills?
+### Who created Suede AI Skills?
 
-Jason Colapietro, founder and CEO of Suede AI, created Suede Creator Skills and maintains it at [github.com/JasonColapietro/suede-creator-skills](https://github.com/JasonColapietro/suede-creator-skills).
+Jason Colapietro, founder and CEO of Suede AI, created Suede AI Skills and maintains it at [github.com/JasonColapietro/suede-creator-skills](https://github.com/JasonColapietro/suede-creator-skills).
 
-### How do I install Suede Creator Skills in Claude Code?
+### How do I install Suede AI Skills in Claude Code?
 
 Run `/plugin marketplace add JasonColapietro/suede-creator-skills`, then `/plugin install suede-skills@suede`. See [Install in 30 seconds](#install-in-30-seconds) for the focused subsets.
 
-### How do I install Suede Creator Skills in Codex?
+### How do I install Suede AI Skills in Codex?
 
 Run `codex plugin marketplace add JasonColapietro/suede-creator-skills --ref main`, then `codex plugin add suede-skills@suede-codex`, and restart Codex.
 
-### Is Suede Creator Skills free?
+### Is Suede AI Skills free?
 
 Yes. Original work is MIT licensed, and adapted components keep their upstream licenses, listed in [NOTICE.md](NOTICE.md). The pack has no binaries, no telemetry and no accounts.
 
-### Does Suede Creator Skills include an MCP server?
+### Does Suede AI Skills include an MCP server?
 
 Yes. A dependency-free stdio MCP server ships in [`mcp/`](mcp/) and is published to npm as [`suede-skills-mcp`](https://www.npmjs.com/package/suede-skills-mcp) and listed in the [Official MCP Registry](https://registry.modelcontextprotocol.io/v0.1/servers/io.github.JasonColapietro%2Fsuede-skills-mcp/versions/latest).
 
@@ -337,7 +337,7 @@ Start with `suede-seo-audit` to audit a page for search visibility, and `suede-a
 
 ## About the creator
 
-**Jason Colapietro** created and maintains Suede Creator Skills. He is an engineer, author, and the founder and CEO of [Suede AI](https://suedeai.ai), an agentic platform company in West Palm Beach, Florida, and wrote The Claude Code Bible and Codex in Production, operator's guides to the two coding agents this pack runs in. He spent years watching hired marketing firms skip the fundamentals on his own products; this pack turns those misses into reusable, inspectable agent workflows instead of one-off fixes. Suede AI is a member of [Claude for Startups](https://claude.com/programs/startups), Anthropic's startup program.
+**Jason Colapietro** created and maintains Suede AI Skills. He is an engineer, author, and the founder and CEO of [Suede AI](https://suedeai.ai), an agentic platform company in West Palm Beach, Florida, and wrote The Claude Code Bible and Codex in Production, operator's guides to the two coding agents this pack runs in. He spent years watching hired marketing firms skip the fundamentals on his own products; this pack turns those misses into reusable, inspectable agent workflows instead of one-off fixes. Suede AI is a member of [Claude for Startups](https://claude.com/programs/startups), Anthropic's startup program.
 
 Jason Colapietro’s training includes Claude Academy / Anthropic badges in the Claude API, Claude Code, Model Context Protocol (MCP), Claude with Amazon Bedrock and Claude on Google Cloud. His search training includes HubSpot Academy’s AEO Fundamentals and Semrush Academy certificates in AI search, keyword research, on-page SEO, local SEO and digital PR. IBM SkillsBuild covers prompt engineering; Google Skills and Databricks Academy cover generative AI. Seven Microsoft Learn module achievements cover Azure AI Agents, Foundry IQ, Visual Studio Code, Microsoft 365, workflows and Microsoft Agent Framework. [View the individual credentials and training-module records](https://seo.suedeai.ai/evidence#training-credentials).
 
