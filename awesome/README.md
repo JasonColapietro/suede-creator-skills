@@ -92,7 +92,7 @@ Then [request badge verification](https://skills.suedeai.ai/directory/submit/). 
 - **Score / 100 · grade** is recomputed from the saved evidence using the existing [Suede Skill Check](https://skills.suedeai.ai/directory/methodology/). Published scores range from 0 to 99; 100 is reserved. A = 90–99, B = 80–89, C = 70–79, D = 0–69. Listing eligibility and quality-badge eligibility remain separate.
 - **License: … (review terms)** identifies entries whose recorded license is not an open license. Check the source license and publisher’s supported install route before copying.
 
-Scores measure structural evidence, not runtime performance. External listings have security status `not_scanned`; Suede AI’s own CI scan supplies no security result for them. Read the source, permissions and prerequisites before enabling a skill. Use the project-specific route for plugins that require hooks or an engine; [CoalWash’s complete plugin setup](featured.md#coalwash) preserves those components.
+Scores measure structural evidence, not runtime performance. Security status is separate: each website report derives it from retained per-skill evidence; listings without that evidence are not scanned. Suede AI’s own repository scan supplies no security result for external listings. Read the source, permissions and prerequisites before enabling a skill. Use the project-specific route for plugins that require hooks or an engine; [CoalWash’s complete plugin setup](featured.md#coalwash) preserves those components.
 
 ## Work with Suede AI
 
