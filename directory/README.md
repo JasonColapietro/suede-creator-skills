@@ -16,6 +16,23 @@ The [Suede Awesome Everything catalog](../awesome/README.md) is the GitHub Markd
 | `notes.json` | Publisher install routes for restricted-license skills, and required service setup for other skills, shown in the installation section with a link to the source | Hand-written |
 | `exclusions.json` | Repositories (`owner/repo`) and skills (`owner/repo/skill-name`) kept out of the directory, each with a recorded reason: author removal requests, and skills whose text trips the pack's public-source guards (`npm run validate` names the file) | Hand-written |
 
+## Standalone site: suedeai.directory
+
+`scripts/build-directory-site.mjs` turns the pages in `docs/directory/` into a
+standalone site for https://suedeai.directory at `dist/suedeai-directory/`
+(gitignored). Pages move from `skills.suedeai.ai/directory/<path>` to
+`suedeai.directory/<path>`: canonical tags, JSON-LD, badges and the search index
+point at the new host, links back to the Suede Creator Skills pack stay on
+skills.suedeai.ai, and `docs/assets/` ships alongside. It also writes the site's
+own robots.txt, sitemap.xml, llms.txt and 404 page. Nothing under `docs/` changes.
+
+Vercel builds it on every push to main (`vercel.json`), and `/directory/...`
+on the new host 301s to the same path without the prefix.
+
+```
+npm run build:directory-site
+```
+
 ## Commands
 
 ```

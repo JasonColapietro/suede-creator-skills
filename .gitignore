@@ -28,3 +28,6 @@ pypi/licenses/
 pypi/dist/
 pypi/build/
 *.egg-info/
+
+# Standalone directory site for suedeai.directory (built on deploy)
+dist/
