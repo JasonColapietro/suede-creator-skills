@@ -62,6 +62,7 @@ jobs:
           python -m pip install --disable-pip-version-check "build==1.6.1" "twine==7.0.0"
           python -m build pypi/
           python -m twine check --strict pypi/dist/*
+          python tests/check_package_archives.py pypi/dist
 
       - name: Install the wheel and run the CLI
         run: |

@@ -2,7 +2,7 @@
 name: suede-influencer-outreach
 description: "Suede AI influencer outreach discipline: a personalized first-touch pitch to one vetted creator, newsletter writer, or podcaster, grounded in a named post or audience fact, with the real compensation stated by model (flat fee, commission mechanics, or gifted), one low-friction ask, a message fitted to the contact the creator publishes (business email, DM, or manager), and a bounded two-follow-up plan that stops at the first positive reply. Covers B2C brand collabs and B2B creator programs. Use when pitching a creator, DMing an influencer, writing a collab proposal, or repairing creator outreach that gets no replies. NOT FOR: recruiting affiliates across a list or designing commission structures (use suede-referrals), partnering with another brand (use suede-co-marketing), cold email to business prospects (use suede-cold-email), or pitching journalists and booking podcast guest spots (use suede-public-relations)."
 metadata:
-  version: 1.0.0
+  version: 1.0.1
 ---
 
 # Suede AI Influencer Outreach
@@ -32,13 +32,13 @@ After the answers, say which answer moved which default below. An existing relat
 
 ## Workflow
 
-1. **Ground the fit.** If you can browse, read the creator's two or three most recent posts and confirm the fit evidence yourself. Otherwise ask for the specific post or audience trait the pitch will cite.
+1. **Ground the fit.** Accept requester-supplied fit evidence as given and cite it in the package without independently re-verifying it. Research only missing evidence or facts you introduce; if browsing is unavailable, ask for the specific post or audience trait the pitch will cite. Never invent a source.
 2. **Confirm the recipient.** The contact the creator publishes decides it. See [channel-and-manager.md](references/channel-and-manager.md).
-3. **Propose two or three angles** with trade-offs and a recommendation, drawn from the ranked menu in [pitch-anatomy.md](references/pitch-anatomy.md). Wait for the user to pick one.
+3. **Choose the angle.** Compare two or three supported angles from the ranked menu in [pitch-anatomy.md](references/pitch-anatomy.md). Select the strongest supported angle and draft, explaining the choice in the package. Ask only if a genuinely unresolved fork would materially change the result and the brief gives no basis to choose.
 4. **Draft the first touch** per [pitch-anatomy.md](references/pitch-anatomy.md), fitted to the confirmed channel.
 5. **Draft the follow-up plan** per [follow-up-cadence.md](references/follow-up-cadence.md).
 6. **Edit pass.** Run `suede-deslop` over the pitch and every follow-up. A pitch that reads like a mail merge gets deleted on sight.
-7. **Quality check** (below). Redraft until every item passes.
+7. **Quality check** (below). Edit agent-introduced issues, then deliver the requested package with any unresolved recommendations.
 8. **Present** angle, first touch, follow-up plan, and stop rule, then hand over the package in the Output Format.
 
 See [examples.md](references/examples.md) before writing copy.
@@ -97,7 +97,7 @@ Every item resolves to something you can see in the text.
 - [ ] Low pressure: no guilt, no invented deadline
 - [ ] Same single ask or an easier one
 
-Any failed item means rewrite before presenting. Do not hand over a draft with a caveat attached.
+Report unresolved checks as recommendations alongside the requested draft. Preserve explicit requester choices, including formal wording without contractions; do not withhold delivery or silently rewrite those choices to pass the checklist. Never invent evidence, change compensation, or send outreach without authorization.
 
 ---
 
