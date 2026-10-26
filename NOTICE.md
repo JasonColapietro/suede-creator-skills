@@ -17,8 +17,7 @@ Copyright (c) 2025 Corey Haines. MIT License. Full text:
 `suede-competitors`, `suede-content-strategy`, `suede-copy`, `suede-customer-research`,
 `suede-directory-submissions`, `suede-emails`, `suede-free-tools`, `suede-image`,
 `suede-lead-magnets`, `suede-marketing-council`, `suede-marketing-loops`,
-`suede-marketing-plan`, `suede-offers`, `suede-onboarding`, `suede-paywalls`,
-`suede-pricing`, `suede-product-marketing`, `suede-programmatic-seo`, `suede-prospecting`,
+`suede-marketing-plan`, `suede-offers`, `suede-onboarding`, `suede-pricing`, `suede-product-marketing`, `suede-programmatic-seo`, `suede-prospecting`,
 `suede-public-relations`, `suede-referrals`, `suede-revops`, `suede-sales-enablement`,
 `suede-sms`, `suede-social`, `suede-video`
 

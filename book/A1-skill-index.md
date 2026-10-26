@@ -82,8 +82,8 @@ Acquisition and outbound: `suede-ads`, `suede-ad-creative`, `suede-cold-email`,
 `suede-co-marketing`, `suede-community-marketing`, `suede-lead-magnets`,
 `suede-referrals`, `suede-influencer-outreach`.
 
-Monetization: `suede-pricing`, `suede-offers` (persuasion mechanics included),
-`suede-paywalls`, `suede-onboarding` (signup included), `suede-churn-prevention`,
+Monetization: `suede-pricing` (paywalls included), `suede-offers` (persuasion
+mechanics included), `suede-onboarding` (signup included), `suede-churn-prevention`,
 `suede-emails`.
 
 Measurement and operations: `suede-analytics`, `suede-attribution`,

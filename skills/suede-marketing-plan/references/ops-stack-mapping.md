@@ -44,7 +44,7 @@ The plan's Section 11 makes this thesis explicit by:
 | `suede-onboarding` | Optimize user onboarding flows | Onboarding rebuild, activation rate tests |
 | `suede-onboarding` (Signup lane) | Optimize signup/registration | Reduce friction at top of activation |
 | `suede-site-alchemy` | Optimize marketing pages, forms, popups, and landing pages | Conversion testing across activation surfaces |
-| `suede-paywalls` | Optimize paywalls and upgrade screens | Trial → paid conversion (also Revenue) |
+| `suede-pricing` (Paywall mode) | Optimize paywalls and upgrade screens | Trial → paid conversion (also Revenue) |
 | `suede-copy` | Write, edit, and iterate marketing copy | Onboarding screens, paywall copy, CTAs, and voice review |
 | `suede-ab-testing` | Plan A/B tests | Structure for onboarding variant tests |
 | `suede-offers` | Offer design plus evidence-tiered behavioral models | Persuasion principles in activation moments |
@@ -56,7 +56,7 @@ The plan's Section 11 makes this thesis explicit by:
 | `suede-emails` | Design email sequences | Customer.io / Mailchimp / Resend flow building |
 | `suede-churn-prevention` | Build cancellation flows, save offers, win-back | Reduce churn, recover failed payments |
 | `suede-copy` | Email copy production | Lifecycle email content |
-| `suede-paywalls` | (cross-cuts): upgrade prompts in retention emails | Upsell within lifecycle |
+| `suede-pricing` (Paywall mode) | (cross-cuts): upgrade prompts in retention emails | Upsell within lifecycle |
 | `suede-ab-testing` | Test email variants | Subject line, CTA, timing tests |
 
 ### Referral skills
@@ -74,7 +74,7 @@ The plan's Section 11 makes this thesis explicit by:
 | Skill | What it does | Primary use in Revenue |
 |---|---|---|
 | `suede-pricing` | Audit and optimize pricing | Plan tier structure, annual defaults, value metrics |
-| `suede-paywalls` | Paywall optimization | Trial → paid, free → paid conversion |
+| `suede-pricing` (Paywall mode) | Paywall optimization | Trial → paid, free → paid conversion |
 | `suede-sales-enablement` | Build sales decks, one-pagers, demos | B2B sales support material |
 | `suede-revops` | Revenue operations, lead lifecycle | Marketing → sales handoff |
 | `suede-ab-testing` | Pricing experiments | Test annual default, intro pricing, tier consolidation |

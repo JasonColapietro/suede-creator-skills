@@ -583,14 +583,6 @@ export const SEO_KEYWORDS = {
     "generated contract",
     "Suede AI Skills",
   ],
-  "skills/suede-paywalls.html": [
-    "paywall",
-    "paywall design",
-    "upgrade prompts",
-    "feature gates",
-    "trial expiry",
-    "Suede AI Skills",
-  ],
   "skills/suede-play-release.html": [
     "google play release",
     "google play publishing api",
@@ -599,6 +591,7 @@ export const SEO_KEYWORDS = {
     "Suede AI Skills",
   ],
   "skills/suede-pricing.html": [
+    "paywall design",
     "pricing",
     "saas pricing",
     "pricing strategy",

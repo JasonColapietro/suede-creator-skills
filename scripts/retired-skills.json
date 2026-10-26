@@ -17,6 +17,7 @@
     "johnny-suede-design": { "target": "suede-design", "reason": "was merged into" },
     "suede-recommend-next-action": { "target": "suede-workflow-skills", "reason": "now lives in the Next move section of" },
     "suede-mcp-qa": { "target": null, "reason": "became an internal maintainer guide and left the public pack" },
-    "suede-clip-to-guide": { "target": "suede-social", "reason": "now runs as the Clip-to-Guide mode of" }
+    "suede-clip-to-guide": { "target": "suede-social", "reason": "now runs as the Clip-to-Guide mode of" },
+    "suede-paywalls": { "target": "suede-pricing", "reason": "now runs as the Paywall mode of" }
   }
 }

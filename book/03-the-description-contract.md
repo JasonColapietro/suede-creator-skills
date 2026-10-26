@@ -79,12 +79,12 @@ request string, "smaller jobs" is not. And write it from the near-miss. Nobody
 confuses a shipping pipeline with a rights audit. The dangerous neighbor is
 always the one that does almost the same thing.
 
-The cleanest example in the repo is a mutual pair. `suede-pricing` declines
-in-product upgrade screens and hands them to `suede-paywalls`. `suede-paywalls`
-declines public pricing pages and tier architecture and hands them back. Two
-skills that would otherwise fight over every pricing request instead partition
-the space by surface: the plan and the public page on one side, the screen
-inside the product on the other. Neither description needs to be cleverer than the other, because
+The cleanest example in the repo is a mutual pair. `suede-social` declines
+video rendering and hands it to `suede-video`. `suede-video` declines social
+calendars and clip-to-guide bridges and hands them back. Two skills that would
+otherwise fight over every "make a video for social" request instead partition
+the space by job: what to post and when on one side, how the footage gets made
+on the other. Neither description needs to be cleverer than the other, because
 the boundary is written down on both sides.
 
 ## What overlap actually costs you

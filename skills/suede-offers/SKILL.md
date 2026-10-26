@@ -1,6 +1,6 @@
 ---
 name: suede-offers
-description: "Suede AI Offer Design Skills: risk reversal, value levers, scope, proof, bonuses, guarantees, deadlines, and testable persuasion hypotheses. Use when asked \"improve this service offer\" or to diagnose a course, agency, coaching, or B2B offer. NOT FOR: SaaS tier architecture (suede-pricing), sales-page copy (suede-copy), upgrade screens (suede-paywalls), or clinical advice."
+description: "Suede AI Offer Design Skills: risk reversal, value levers, scope, proof, bonuses, guarantees, deadlines, and testable persuasion hypotheses. Use when asked \"improve this service offer\" or to diagnose a course, agency, coaching, or B2B offer. NOT FOR: SaaS tier architecture (suede-pricing), sales-page copy (suede-copy), upgrade screens (suede-pricing Paywall mode), or clinical advice."
 metadata:
   display-name: "Suede AI Offer Design Skills"
   version: 2.0.0
@@ -26,7 +26,7 @@ Read `.agents/product-marketing.md` first if it exists (or `.claude/product-mark
 
 **Strong fit:** services and productized services, agencies and retainers, courses and cohorts, coaching and masterminds, info products and communities, high-ticket B2B with a sales conversation, direct-response promotions.
 
-**Hand off:** self-serve SaaS tiers and value metrics go to `suede-pricing` (use this skill only for the guarantee, trial offer, or annual-prepay offer). Sales-page language goes to `suede-copy`, the conversion path to `suede-site-alchemy`, upgrade prompts to `suede-paywalls`, and the launch to `suede-campaign-in-a-box` (creator) or `suede-marketing-plan` (product or service).
+**Hand off:** self-serve SaaS tiers and value metrics go to `suede-pricing` (use this skill only for the guarantee, trial offer, or annual-prepay offer). Sales-page language goes to `suede-copy`, the conversion path to `suede-site-alchemy`, upgrade prompts to `suede-pricing` (Paywall mode), and the launch to `suede-campaign-in-a-box` (creator) or `suede-marketing-plan` (product or service).
 
 ---
 
@@ -179,6 +179,6 @@ Contested and Folklore entries are experiments to run, never reasons a change wi
 - `suede-pricing` for tiers, packaging, and value metrics.
 - `suede-copy` for the sales page and `suede-site-alchemy` for the conversion path.
 - `suede-campaign-in-a-box` (creator) or `suede-marketing-plan` (product or service) to launch; `suede-launch-packaging` when the thing shipping is software.
-- `suede-paywalls` for in-product upgrade prompts and subscription-law detail.
+- `suede-pricing` (Paywall mode) for in-product upgrade prompts; its `references/subscription-rules.md` holds the subscription-law detail.
 - `suede-ab-testing` to size and read out any offer or behavioral test.
 - `suede-sales-enablement` or `suede-emails` for approved execution.

@@ -1,8 +1,7 @@
 # Paywall Mode: In-Product Upgrade Screens
 
 Read this whole file before drafting any paywall, feature gate, usage-limit
-prompt, trial-expiry screen, or time-based upgrade nudge. It replaces the
-standalone `suede-paywalls` skill.
+prompt, trial-expiry screen, or time-based upgrade nudge.
 
 ## Contents
 - Entitlement boundary

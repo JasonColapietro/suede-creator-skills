@@ -1,6 +1,6 @@
 ---
 name: suede-onboarding
-description: "Suede AI Onboarding Skills: time to value, ranked friction audits, first-value flows, empty states, checklists, and measurement. Use when asked \"users sign up but never activate\" or to improve registration and first-run setup. NOT FOR: non-account forms (suede-site-alchemy), lifecycle email copy (suede-emails), paywalls (suede-paywalls), cancellation (suede-churn-prevention), or unreviewed auth deployment."
+description: "Suede AI Onboarding Skills: time to value, ranked friction audits, first-value flows, empty states, checklists, and measurement. Use when asked \"users sign up but never activate\" or to improve registration and first-run setup. NOT FOR: non-account forms (suede-site-alchemy), lifecycle email copy (suede-emails), paywalls (suede-pricing Paywall mode), cancellation (suede-churn-prevention), or unreviewed auth deployment."
 metadata:
   display-name: "Suede AI Onboarding Skills"
   version: 3.0.0
@@ -41,7 +41,7 @@ Core rules:
 - Every required field must earn its place before first use; defer the rest to progressive profiling.
 - Offer the identity options your audience already uses (passkeys, Google, Apple, Microsoft, GitHub, SSO for IT buyers) next to email.
 - Follow current NIST password guidance: length over composition rules, breached-password screening, paste allowed, no forced rotation.
-- Disclose card requirements and renewal terms at the button when a trial auto-converts; legal detail lives in `suede-paywalls`.
+- Disclose card requirements and renewal terms at the button when a trial auto-converts; legal detail lives in `suede-pricing` (Paywall mode), `references/subscription-rules.md`.
 - Let users into the product before verification when security allows.
 
 Signup audit output: top 8 findings ranked by effect on completion (Issue, Impact with funnel step, Fix, Priority), then quick wins, high-impact changes, and at most 3 test hypotheses. Do not open with what the flow does well.
@@ -146,6 +146,6 @@ Track drop-off at every step from landing to retention and fix the largest loss 
 
 - `suede-site-alchemy` for landing pages, lead-capture, and non-account forms.
 - `suede-emails` for onboarding sequences; `suede-sms` for text-message opt-in.
-- `suede-paywalls` for upgrade moments and trial-expiry screens; `suede-pricing` for trial vs. freemium strategy.
+- `suede-pricing`: Paywall mode for upgrade moments and trial-expiry screens, and its Decision Brief for trial vs. freemium strategy.
 - `suede-churn-prevention` for cancel flows and win-back.
 - `suede-ab-testing` to size and read out tests; `suede-analytics` to instrument the funnel.

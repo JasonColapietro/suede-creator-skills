@@ -349,8 +349,8 @@ those tables disagree, the tables win.
 The FTC's 2024 click-to-cancel rule was vacated by the Eighth Circuit on
 July 8, 2025, so do not cite it as binding. State laws (for example
 California's automatic renewal law), the EU online withdrawal function, and the
-UK subscription regime still apply. Check the current rules in the
-subscription-rules reference that ships with the monetization skills before
+UK subscription regime still apply. Check the current rules in
+`suede-pricing` (Paywall mode), `references/subscription-rules.md`, before
 designing a flow, and date the check. Design floor regardless of jurisdiction:
 cancellation completes online in the same session it started, every save screen
 shows a visible continue-to-cancel control, and at most one save offer appears.

@@ -335,7 +335,7 @@ What's the current trial structure? Length, paywall trigger, intro pricing? When
 
 ### Skills + tools
 
-- **Skills:** `suede-onboarding`, `suede-paywalls`, `suede-site-alchemy`, `suede-copy`, `suede-ab-testing`, `suede-offers`
+- **Skills:** `suede-onboarding`, `suede-pricing` (Paywall mode), `suede-site-alchemy`, `suede-copy`, `suede-ab-testing`, `suede-offers`
 - **Optional capabilities to verify:** App Store readback, exact app-repo scope,
   approved design surface, lifecycle read access, and activation analytics. Do
   not assume any browser, design, connector, or mutation capability.
@@ -399,7 +399,7 @@ the quarter does not supply readiness.
 
 ### Skills + tools
 
-- **Skills:** `suede-emails`, `suede-churn-prevention`, `suede-copy`, `suede-paywalls`, `suede-ab-testing`
+- **Skills:** `suede-emails`, `suede-churn-prevention`, `suede-copy`, `suede-pricing` (Paywall mode), `suede-ab-testing`
 - **MCPs / APIs:** **Customer.io MCP** (validated on kickoff: non-technical team can ship flows), Shopify (eye mask buyers as event source), Stripe MCP (subscription state, churn cohort pulls), GA4 MCP (session events, retention curves)
 
 ---
@@ -512,7 +512,7 @@ Per seed deck Y10–15 value pool: $100–160M/yr. Not immediate revenue. Belong
 
 ### Skills + tools
 
-- **Skills:** `suede-pricing`, `suede-paywalls`, `suede-sales-enablement`, `suede-revops`, `suede-ab-testing`, `suede-copy`
+- **Skills:** `suede-pricing` (including Paywall mode), `suede-sales-enablement`, `suede-revops`, `suede-ab-testing`, `suede-copy`
 - **MCPs / APIs:** Stripe MCP (pricing tests, subscription analytics, churn cohort, blended CAC math), Customer.io MCP (paywall-related lifecycle), Shopify (eye mask transactions), GA4 MCP (revenue events), Notion (commercial knowledge directory)
 
 ---
@@ -679,10 +679,10 @@ The fCMO's job is to:
 | Stage | Primary skills | Supporting skills |
 |---|---|---|
 | **Acquisition** | `suede-seo-audit`, `suede-programmatic-seo`, `suede-content-strategy`, `suede-competitors`, `suede-ads`, `suede-ad-creative`, `suede-social` | `suede-launch-packaging`, `suede-free-tools`, `suede-analytics`, `suede-cold-email`, `suede-copy`, `suede-site-alchemy` |
-| **Activation** | `suede-onboarding`, `suede-paywalls`, `suede-site-alchemy`, `suede-copy` | `suede-ab-testing`, `suede-offers` |
-| **Retention** | `suede-emails`, `suede-churn-prevention` | `suede-copy`, `suede-ab-testing`, `suede-paywalls` |
+| **Activation** | `suede-onboarding`, `suede-pricing` (Paywall mode), `suede-site-alchemy`, `suede-copy` | `suede-ab-testing`, `suede-offers` |
+| **Retention** | `suede-emails`, `suede-churn-prevention` | `suede-copy`, `suede-ab-testing`, `suede-pricing` (Paywall mode) |
 | **Referral** | `suede-referrals`, `suede-social` | `suede-copy`, `suede-site-alchemy`, `suede-emails` |
-| **Revenue** | `suede-pricing`, `suede-paywalls`, `suede-sales-enablement`, `suede-revops` | `suede-ab-testing`, `suede-copy` |
+| **Revenue** | `suede-pricing` (including Paywall mode), `suede-sales-enablement`, `suede-revops` | `suede-ab-testing`, `suede-copy` |
 | **Cross-cutting** (brand, intelligence) | `suede-product-marketing`, `suede-customer-research`, `suede-offers` | the tactic library; optional tools only after availability and authority checks |
 
 ### MCPs / APIs mapped to stages

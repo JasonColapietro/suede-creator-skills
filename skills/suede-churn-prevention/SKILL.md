@@ -1,6 +1,6 @@
 ---
 name: suede-churn-prevention
-description: "Suede AI Churn Prevention Skills. Use when asked to \"reduce subscription churn\" or design cancel flows, reason-matched save offers, failed-payment recovery and win-back measurement. NOT FOR: lifecycle email copy (suede-emails), pricing architecture (suede-pricing), paywalls (suede-paywalls), or tracking implementation (suede-analytics)."
+description: "Suede AI Churn Prevention Skills. Use when asked to \"reduce subscription churn\" or design cancel flows, reason-matched save offers, failed-payment recovery and win-back measurement. NOT FOR: lifecycle email copy (suede-emails), pricing architecture (suede-pricing), paywalls (suede-pricing Paywall mode), or tracking implementation (suede-analytics)."
 metadata:
   display-name: "Suede AI Churn Prevention Skills"
   version: 2.1.0
@@ -428,6 +428,6 @@ Waiting for your choice.
 
 - Need retention, dunning, or win-back messages -> use `suede-emails`.
 - Need plan structure or offer economics -> use `suede-pricing` or `suede-offers`.
-- Need paywall or trial-expiry UX -> use `suede-paywalls`.
+- Need paywall or trial-expiry UX -> use `suede-pricing` (Paywall mode).
 - Need churn events or a controlled retention test -> use `suede-analytics` or `suede-ab-testing`.
 - From those skills, route cancellation and payment-recovery strategy back to `suede-churn-prevention`.

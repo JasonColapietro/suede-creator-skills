@@ -26,7 +26,7 @@
 ## Best for / blind spots
 
 **Best for:** Conversion paths, launch sequences, webinar and email flows, info products, creator businesses, upsell and continuity design.
-**Blind spots:** Copying winning funnels breeds sameness, and pressure-heavy funnels churn trust. Weak on enterprise buying committees and brand memory. Continuity offers must meet auto-renewal and cancellation law; route to `suede-paywalls` and `suede-offers`.
+**Blind spots:** Copying winning funnels breeds sameness, and pressure-heavy funnels churn trust. Weak on enterprise buying committees and brand memory. Continuity offers must meet auto-renewal and cancellation law; route to `suede-pricing` (Paywall mode, `references/subscription-rules.md`) and `suede-offers`.
 
 ## Voice notes
 

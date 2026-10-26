@@ -243,7 +243,7 @@ Rights and release-prep tooling for working musicians and creators — see the [
 Thirty-eight skills covering paid acquisition and outbound, monetization, lifecycle and
 retention, and the measurement and operations layer — `suede-ads`, `suede-ad-creative`,
 `suede-cold-email`, `suede-influencer-outreach`, `suede-prospecting`, `suede-public-relations`, `suede-directory-submissions`,
-`suede-pricing`, `suede-offers`, `suede-paywalls`, `suede-onboarding`,
+`suede-pricing` (with Paywall mode), `suede-offers`, `suede-onboarding`,
 `suede-churn-prevention`, `suede-emails`, `suede-referrals`, `suede-co-marketing`,
 `suede-community-marketing`, `suede-lead-magnets`, `suede-free-tools`, `suede-sms`,
 `suede-marketing-loops`, `suede-analytics`, `suede-ab-testing`, `suede-revops`,

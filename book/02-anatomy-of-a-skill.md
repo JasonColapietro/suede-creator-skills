@@ -83,8 +83,8 @@ because the agent has no signal that a better match exists. `NOT FOR:` supplies
 the signal, and it does so by naming the alternative rather than just declining.
 `suede-workflow-skills` closes with "NOT FOR: a request that already names one
 lane (go straight to that specialist)." `suede-pricing` closes with
-"NOT FOR: in-product upgrade screens (use suede-paywalls), offer bonuses and
-guarantees (use suede-offers), or executing billing changes."
+"NOT FOR: offer bonuses and guarantees (suede-offers), cancel and save flows
+(suede-churn-prevention), or executing billing changes."
 
 Two different jobs are happening in those clauses. One is routing, sending the
 task to a named sibling. The other is scope refusal: "executing billing changes"

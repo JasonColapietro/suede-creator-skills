@@ -203,7 +203,7 @@ Quarter-by-quarter outcome state (Q1 / Q2 / Q3 / Q4).
 - Paywall + pricing review (often Activation × Revenue)
 
 ### Skills + tools
-`suede-onboarding`, `suede-paywalls`, `suede-copy`, `suede-site-alchemy`, `suede-ab-testing`, etc.
+`suede-onboarding`, `suede-pricing` (Paywall mode), `suede-copy`, `suede-site-alchemy`, `suede-ab-testing`, etc.
 
 ---
 
@@ -223,7 +223,7 @@ Quarter-by-quarter outcome state (Q1 / Q2 / Q3 / Q4).
 - Annual plan default tests (cross-references to Revenue)
 
 ### Skills + tools
-`suede-emails`, `suede-churn-prevention`, `suede-copy`, `suede-paywalls`, etc.
+`suede-emails`, `suede-churn-prevention`, `suede-copy`, `suede-pricing` (Paywall mode), etc.
 
 ---
 
@@ -282,7 +282,7 @@ missing decision in Section 13. Do not use a reciprocal-churn shortcut when
 cohort retention, gross margin, or a finance-approved LTV definition is absent.
 
 ### Skills + tools
-`suede-pricing`, `suede-paywalls`, `suede-sales-enablement`, `suede-revops`, `suede-ab-testing`, etc.
+`suede-pricing` (including Paywall mode), `suede-sales-enablement`, `suede-revops`, `suede-ab-testing`, etc.
 
 ---
 

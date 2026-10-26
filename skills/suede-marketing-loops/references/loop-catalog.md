@@ -478,7 +478,7 @@ Loops are grouped by function. Naming follows the "The X loop" convention.
 - **Check cadence**: Daily
 - **Acts when**: A trial user reaches a conversion-relevant moment (mid-trial, near-expiry, activated-but-not-paid).
 - **Purpose**: Move more trials to paid with well-timed nudges.
-- **Skills used**: `suede-emails`, `suede-paywalls`, `suede-analytics`, `suede-offers`
+- **Skills used**: `suede-emails`, `suede-pricing` (Paywall mode), `suede-analytics`, `suede-offers`
 - **Loop body**:
   1. Segment active trials by stage and activation level.
   2. Match each to the right nudge (value recap, use-case tip, near-expiry push, offer).
@@ -520,7 +520,7 @@ Loops are grouped by function. Naming follows the "The X loop" convention.
 - **Check cadence**: Monthly
 - **Acts when**: No paywall test is running and there's a hypothesis, or one has concluded.
 - **Purpose**: Improve in-app upgrade conversion without degrading revenue quality.
-- **Skills used**: `suede-paywalls`, `suede-ab-testing`, `suede-analytics`
+- **Skills used**: `suede-pricing` (Paywall mode), `suede-ab-testing`, `suede-analytics`
 - **Loop body**:
   1. Pull paywall view → upgrade conversion and bounce points.
   2. Form one hypothesis (trigger timing, framing, plan anchor), or read a concluded test.

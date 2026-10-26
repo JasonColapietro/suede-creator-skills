@@ -75,9 +75,8 @@ Route only after the candidate's evidence and authority gates pass.
 
 ### Suede AI routes to consider
 
-`suede-aso`, `suede-onboarding`, `suede-paywalls`,
-`suede-emails`, `suede-referrals`, `suede-pricing`, `suede-ad-creative`, and
-`suede-ads`.
+`suede-aso`, `suede-onboarding`, `suede-pricing` (including Paywall mode),
+`suede-emails`, `suede-referrals`, `suede-ad-creative`, and `suede-ads`.
 
 ## Archetype 3: Hybrid Hardware and Software
 

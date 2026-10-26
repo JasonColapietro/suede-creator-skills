@@ -594,8 +594,7 @@
       "id": "pricing-offers",
       "skills": [
         "suede-pricing",
-        "suede-offers",
-        "suede-paywalls"
+        "suede-offers"
       ],
       "fallback": "clarify",
       "routes": [
@@ -606,17 +605,20 @@
             "price increase",
             "willingness to pay",
             "freemium",
-            "tiers"
+            "tiers",
+            "paywall",
+            "feature gate",
+            "trial expiry",
+            "usage limit",
+            "upgrade moments"
           ],
           "negative": [
             "risk reversal",
-            "guarantees",
-            "paywall",
-            "feature gate",
-            "trial expiry"
+            "guarantees"
           ],
           "metadataMustContain": [
-            "value metric"
+            "value metric",
+            "paywall"
           ]
         },
         {
@@ -636,25 +638,6 @@
           "metadataMustContain": [
             "risk reversal"
           ]
-        },
-        {
-          "skill": "suede-paywalls",
-          "positive": [
-            "paywall",
-            "feature gate",
-            "trial expiry",
-            "usage limit",
-            "upgrade moments"
-          ],
-          "negative": [
-            "value metric",
-            "willingness to pay",
-            "risk reversal",
-            "guarantees"
-          ],
-          "metadataMustContain": [
-            "paywall"
-          ]
         }
       ],
       "cases": [
@@ -668,9 +651,9 @@
           "id": "paywalls-negative",
           "mode": "negative",
           "prompt": "Design the paywall screen, feature gate, and trial expiry upgrade moments.",
-          "expected": "suede-paywalls",
+          "expected": "suede-pricing",
           "forbidden": [
-            "suede-pricing"
+            "suede-offers"
           ]
         },
         {
@@ -679,8 +662,7 @@
           "prompt": "Build the guarantees, bonuses, and risk reversal for a high ticket offer.",
           "expected": "suede-offers",
           "forbidden": [
-            "suede-pricing",
-            "suede-paywalls"
+            "suede-pricing"
           ]
         },
         {

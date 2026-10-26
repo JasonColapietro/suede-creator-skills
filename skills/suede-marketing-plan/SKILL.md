@@ -169,6 +169,6 @@ Schema for `progress.md` and the resume decision tree: `references/methodology.m
 - `suede-marketing-council` when a strategic bet is contested, irreversible, or cannot be revisited for months.
 - `suede-marketing-loops` for approved recurring operations.
 - `suede-offers` for offer design and for the behavioral mechanism behind an Activation or Revenue move.
-- `suede-onboarding`, `suede-emails`, `suede-referrals`, `suede-paywalls`, or `suede-pricing` for lifecycle and revenue execution.
+- `suede-onboarding`, `suede-emails`, `suede-referrals`, or `suede-pricing` (including Paywall mode) for lifecycle and revenue execution.
 - `suede-ai-seo`, `suede-seo-audit`, `suede-programmatic-seo`, `suede-competitors`, `suede-ads`, or `suede-ad-creative` for acquisition execution.
 - `suede-launch-packaging` for the launch moment.

@@ -60,7 +60,7 @@ Progressive pattern: (1) email or identity provider, (2) password or passkey plu
 
 ## Trust and friction
 
-- "No credit card required" only when true. If a card is required, say when the first charge happens and how to cancel, next to the button. Auto-renewing trials carry disclosure and consent rules; see `suede-paywalls` for the current US, UK, and EU requirements.
+- "No credit card required" only when true. If a card is required, say when the first charge happens and how to cancel, next to the button. Auto-renewing trials carry disclosure and consent rules; see `suede-pricing` (Paywall mode), `references/subscription-rules.md`, for the current US, UK, and EU requirements.
 - A privacy line and a link to the policy near the submit button.
 - Inline validation, specific errors with a recovery path ("Email already registered: sign in or reset password"), never clear the form on error, move focus to the problem field.
 - Visible labels; placeholders are examples, not labels.

@@ -137,7 +137,7 @@ cap.
 | PR, partners, community, referrals | `suede-public-relations`, `suede-co-marketing`, `suede-community-marketing`, `suede-referrals` |
 | Lifecycle email and SMS | `suede-emails`, `suede-sms` |
 | Lead magnets | `suede-lead-magnets` |
-| Offers and persuasion mechanics, pricing, paywalls | `suede-offers`, `suede-pricing`, `suede-paywalls` |
+| Offers and persuasion mechanics, pricing, paywalls | `suede-offers`, `suede-pricing` (including Paywall mode) |
 | Signup and onboarding; churn | `suede-onboarding`; `suede-churn-prevention` |
 | Analytics, attribution, A/B tests | `suede-analytics`, `suede-attribution`, `suede-ab-testing` |
 

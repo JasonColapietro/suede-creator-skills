@@ -110,7 +110,6 @@
         "suede-newsroom",
         "suede-offers",
         "suede-onboarding",
-        "suede-paywalls",
         "suede-pricing",
         "suede-product-marketing",
         "suede-programmatic-seo",
@@ -374,7 +373,7 @@
       "area": "marketing",
       "specialty": "revenue",
       "lane": "Money & funnel",
-      "description": "Suede AI Churn Prevention Skills. Use when asked to \"reduce subscription churn\" or design cancel flows, reason-matched save offers, failed-payment recovery and win-back measurement. NOT FOR: lifecycle email copy (suede-emails), pricing architecture (suede-pricing), paywalls (suede-paywalls), or tracking implementation (suede-analytics).",
+      "description": "Suede AI Churn Prevention Skills. Use when asked to \"reduce subscription churn\" or design cancel flows, reason-matched save offers, failed-payment recovery and win-back measurement. NOT FOR: lifecycle email copy (suede-emails), pricing architecture (suede-pricing), paywalls (suede-pricing Paywall mode), or tracking implementation (suede-analytics).",
       "useWhen": "The user is losing subscribers, designing a cancellation flow, or recovering revenue lost to failed payments.",
       "displayName": "Suede AI Churn Prevention Skills"
     },
@@ -599,7 +598,7 @@
       "area": "marketing",
       "specialty": "revenue",
       "lane": "Money & funnel",
-      "description": "Suede AI Offer Design Skills: risk reversal, value levers, scope, proof, bonuses, guarantees, deadlines, and testable persuasion hypotheses. Use when asked \"improve this service offer\" or to diagnose a course, agency, coaching, or B2B offer. NOT FOR: SaaS tier architecture (suede-pricing), sales-page copy (suede-copy), upgrade screens (suede-paywalls), or clinical advice.",
+      "description": "Suede AI Offer Design Skills: risk reversal, value levers, scope, proof, bonuses, guarantees, deadlines, and testable persuasion hypotheses. Use when asked \"improve this service offer\" or to diagnose a course, agency, coaching, or B2B offer. NOT FOR: SaaS tier architecture (suede-pricing), sales-page copy (suede-copy), upgrade screens (suede-pricing Paywall mode), or clinical advice.",
       "useWhen": "The user is building or fixing an offer for a service, agency, course, coaching, info product, or high-ticket B2B sale.",
       "displayName": "Suede AI Offer Design Skills"
     },
@@ -608,7 +607,7 @@
       "area": "marketing",
       "specialty": "revenue",
       "lane": "Money & funnel",
-      "description": "Suede AI Onboarding Skills: time to value, ranked friction audits, first-value flows, empty states, checklists, and measurement. Use when asked \"users sign up but never activate\" or to improve registration and first-run setup. NOT FOR: non-account forms (suede-site-alchemy), lifecycle email copy (suede-emails), paywalls (suede-paywalls), cancellation (suede-churn-prevention), or unreviewed auth deployment.",
+      "description": "Suede AI Onboarding Skills: time to value, ranked friction audits, first-value flows, empty states, checklists, and measurement. Use when asked \"users sign up but never activate\" or to improve registration and first-run setup. NOT FOR: non-account forms (suede-site-alchemy), lifecycle email copy (suede-emails), paywalls (suede-pricing Paywall mode), cancellation (suede-churn-prevention), or unreviewed auth deployment.",
       "useWhen": "The user has people signing up but not activating, or wants to design the first session in a product.",
       "displayName": "Suede AI Onboarding Skills"
     },
@@ -640,15 +639,6 @@
       "displayName": "Suede AI Parity Contract Skills"
     },
     {
-      "name": "suede-paywalls",
-      "area": "marketing",
-      "specialty": "revenue",
-      "lane": "Money & funnel",
-      "description": "Suede AI Paywall Skills: paywalls, entitlement gates, usage limits, trial expiry, screen copy, trigger rules, and experiment plans. Use when asked \"improve this upgrade prompt\" after users experience value. NOT FOR: public pricing-page or tier architecture (suede-pricing), cancellation and save flows (suede-churn-prevention), or unapproved billing changes.",
-      "useWhen": "The user wants to build or improve an in-product upgrade screen, feature gate, or trial-expiration prompt.",
-      "displayName": "Suede AI Paywall Skills"
-    },
-    {
       "name": "suede-play-release",
       "area": "workflow",
       "lane": "Apps: iOS & Android",
@@ -662,8 +652,8 @@
       "area": "marketing",
       "specialty": "revenue",
       "lane": "Money & funnel",
-      "description": "Suede AI Pricing Skills: value metric selection, tiers, willingness-to-pay research, AI unit economics, migration, and pricing-page clarity. Use when asked \"restructure our pricing tiers\" or to decide prices, raise them, or diagnose buyer confusion. NOT FOR: in-product prompts (suede-paywalls), offer bonuses and guarantees (suede-offers), or executing billing changes.",
-      "useWhen": "The user is deciding what to charge, restructuring plans, weighing a free tier or trial, or raising prices.",
+      "description": "Suede AI Pricing Skills: value metric selection, tiers, willingness-to-pay research, AI unit economics, migration, pricing-page clarity, and a Paywall mode for in-product upgrade screens, feature gates, usage limits, and trial-expiry prompts with frequency caps and subscription-law checks. Use when asked \"restructure our pricing tiers\" or \"design the upgrade paywall for our trial\", or to decide prices, raise them, or diagnose buyer confusion. NOT FOR: offer bonuses and guarantees (suede-offers), cancel and save flows (suede-churn-prevention), or executing billing changes.",
+      "useWhen": "The user is deciding what to charge, restructuring plans, weighing a free tier or trial, raising prices, or designing an in-product paywall, feature gate, or trial-expiry upgrade moment.",
       "displayName": "Suede AI Pricing Skills"
     },
     {
