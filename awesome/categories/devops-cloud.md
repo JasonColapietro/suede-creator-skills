@@ -6,7 +6,7 @@
 
 Skills for deploying, operating and observing software: cloud platforms, infrastructure as code, CI/CD, monitoring and incident response. Many come from the platform vendors themselves, so the agent works from the provider's own guidance.
 
-**359 accepted skills · 37 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
+**360 accepted skills · 38 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
 **Compare on the 0–99 quality scale:** this category’s verified scores span **53–95 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede AI](https://skills.suedeai.ai/directory/?category=devops-cloud&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
 
@@ -31,6 +31,7 @@ Skills for deploying, operating and observing software: cloud platforms, infrast
 - [gooseworks-ai/goose-skills](#gooseworks-ai--goose-skills)
 - [hashicorp/agent-skills](#hashicorp--agent-skills)
 - [huggingface/skills](#huggingface--skills)
+- [JasonColapietro/suede-creator-skills](#jasoncolapietro--suede-creator-skills)
 - [jeffallan/claude-skills](#jeffallan--claude-skills)
 - [K-Dense-AI/claude-scientific-skills](#k-dense-ai--claude-scientific-skills)
 - [LambdaTest/agent-skills](#lambdatest--agent-skills)
@@ -399,6 +400,14 @@ Skills for deploying, operating and observing software: cloud platforms, infrast
 - **83/100 · B** · [huggingface-spaces](https://github.com/huggingface/skills/blob/main/skills/huggingface-spaces/SKILL.md): Builds, deploys, and maintains applications on Hugging Face Spaces, including Gradio, Docker, and Static SDKs, ZeroGPU, debugging build failures, and inference providers. [Suede](https://skills.suedeai.ai/directory/huggingface/skills/huggingface-spaces/)
 - **80/100 · B** · [hf-cloud-sagemaker-production-defaults](https://github.com/huggingface/skills/blob/main/skills/hf-cloud-sagemaker-production-defaults/SKILL.md): Creates SageMaker endpoints (real-time, scale-to-zero, or async) with autoscaling, CloudWatch alarms, and tagging enabled by default, using provided deploy scripts. [Suede](https://skills.suedeai.ai/directory/huggingface/skills/hf-cloud-sagemaker-production-defaults/)
 - **79/100 · C** · [hf-cloud-sagemaker-deployment-planner](https://github.com/huggingface/skills/blob/main/skills/hf-cloud-sagemaker-deployment-planner/SKILL.md): Plan and coordinate the deployment of a model to Amazon SageMaker AI. [Suede](https://skills.suedeai.ai/directory/huggingface/skills/#hf-cloud-sagemaker-deployment-planner)
+
+<a id="jasoncolapietro--suede-creator-skills"></a>
+
+## JasonColapietro/suede-creator-skills
+
+[Repository](https://github.com/JasonColapietro/suede-creator-skills) · Publisher: [JasonColapietro](https://github.com/JasonColapietro) · [Suede AI listing](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/)
+
+- **91/100 · A** · [Suede AI CI Gate Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/improve/first-party-quality/skills/suede-ci-gate/SKILL.md): Suede AI CI Gate Skills. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-ci-gate)
 
 <a id="jeffallan--claude-skills"></a>
 

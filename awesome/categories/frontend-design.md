@@ -6,9 +6,9 @@
 
 Skills for interface design and frontend engineering: UI systems, CSS, components, motion and accessibility. They help an agent produce interfaces with deliberate visual decisions instead of default templates.
 
-**198 accepted skills · 32 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
+**199 accepted skills · 33 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
-**Compare on the 0–99 quality scale:** this category’s verified scores span **56–89 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede AI](https://skills.suedeai.ai/directory/?category=frontend-design&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
+**Compare on the 0–99 quality scale:** this category’s verified scores span **56–91 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede AI](https://skills.suedeai.ai/directory/?category=frontend-design&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
 
 [Read the score and license key](../README.md#read-a-listing). Descriptions are saved summaries or excerpts; full details and setup are on each Suede AI listing.
 
@@ -32,6 +32,7 @@ Skills for interface design and frontend engineering: UI systems, CSS, component
 - [gooseworks-ai/goose-skills](#gooseworks-ai--goose-skills)
 - [heygen-com/hyperframes](#heygen-com--hyperframes)
 - [infrasity-labs/dev-gtm-claude-skills](#infrasity-labs--dev-gtm-claude-skills)
+- [JasonColapietro/suede-creator-skills](#jasoncolapietro--suede-creator-skills)
 - [jeffallan/claude-skills](#jeffallan--claude-skills)
 - [Leonxlnx/taste-skill](#leonxlnx--taste-skill)
 - [mattpocock/skills](#mattpocock--skills)
@@ -311,6 +312,14 @@ Skills for interface design and frontend engineering: UI systems, CSS, component
 - **56/100 · D** · [typography-scale](https://github.com/infrasity-labs/dev-gtm-claude-skills/blob/main/product-designers/typography-scale/SKILL.md): Create a modular typography scale with size, weight, and line-height relationships. [Suede](https://skills.suedeai.ai/directory/infrasity-labs/dev-gtm-claude-skills/#typography-scale)
 - **56/100 · D** · [version-control-strategy](https://github.com/infrasity-labs/dev-gtm-claude-skills/blob/main/product-designers/version-control-strategy/SKILL.md): Define version control strategies for design files, components, and libraries. [Suede](https://skills.suedeai.ai/directory/infrasity-labs/dev-gtm-claude-skills/#version-control-strategy)
 - **56/100 · D** · [wireframe-spec](https://github.com/infrasity-labs/dev-gtm-claude-skills/blob/main/product-designers/wireframe-spec/SKILL.md): Specify wireframe layouts with content priority, component placement, and annotation. [Suede](https://skills.suedeai.ai/directory/infrasity-labs/dev-gtm-claude-skills/#wireframe-spec)
+
+<a id="jasoncolapietro--suede-creator-skills"></a>
+
+## JasonColapietro/suede-creator-skills
+
+[Repository](https://github.com/JasonColapietro/suede-creator-skills) · Publisher: [JasonColapietro](https://github.com/JasonColapietro) · [Suede AI listing](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/)
+
+- **91/100 · A** · [Suede AI Design Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/improve/first-party-quality/skills/suede-design/SKILL.md): Use when asked "restyle this dashboard" or to design, polish or audit an interface hierarchy, tokens, color, type, dark mode or a design system. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-design)
 
 <a id="jeffallan--claude-skills"></a>
 

@@ -6,7 +6,7 @@
 
 Skills for SQL, databases, vector stores, analytics and data pipelines. Several are published by the database vendors, so the agent queries, migrates and tunes with the vendor's own conventions.
 
-**178 accepted skills · 28 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
+**180 accepted skills · 29 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
 **Compare on the 0–99 quality scale:** this category’s verified scores span **66–95 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede AI](https://skills.suedeai.ai/directory/?category=data-databases&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
 
@@ -27,6 +27,7 @@ Skills for SQL, databases, vector stores, analytics and data pipelines. Several 
 - [gooseworks-ai/goose-skills](#gooseworks-ai--goose-skills)
 - [honeydew-ai/honeydew-ai-coding-agents-plugins](#honeydew-ai--honeydew-ai-coding-agents-plugins)
 - [huggingface/skills](#huggingface--skills)
+- [JasonColapietro/suede-creator-skills](#jasoncolapietro--suede-creator-skills)
 - [jeffallan/claude-skills](#jeffallan--claude-skills)
 - [K-Dense-AI/claude-scientific-skills](#k-dense-ai--claude-scientific-skills)
 - [mhattingpete/claude-skills-marketplace](#mhattingpete--claude-skills-marketplace)
@@ -223,6 +224,15 @@ Skills for SQL, databases, vector stores, analytics and data pipelines. Several 
 [Repository](https://github.com/huggingface/skills) · Publisher: [huggingface](https://github.com/huggingface) · [Suede AI listing](https://skills.suedeai.ai/directory/huggingface/skills/)
 
 - **77/100 · C** · [huggingface-datasets](https://github.com/huggingface/skills/blob/main/skills/huggingface-datasets/SKILL.md): Use this skill for Hugging Face Dataset Viewer API workflows that fetch subset/split metadata, paginate rows, search text, apply filters, download parquet URLs, and read size or statistics. [Suede](https://skills.suedeai.ai/directory/huggingface/skills/#huggingface-datasets)
+
+<a id="jasoncolapietro--suede-creator-skills"></a>
+
+## JasonColapietro/suede-creator-skills
+
+[Repository](https://github.com/JasonColapietro/suede-creator-skills) · Publisher: [JasonColapietro](https://github.com/JasonColapietro) · [Suede AI listing](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/)
+
+- **91/100 · A** · [Suede AI Analytics Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/improve/first-party-quality/skills/suede-analytics/SKILL.md): Suede AI Analytics Skills. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-analytics)
+- **91/100 · A** · [Suede AI Revenue Operations Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/improve/first-party-quality/skills/suede-revops/SKILL.md): Define lifecycle stages, fit and engagement scores, MQL/SQL handoffs, routing SLAs, pipeline hygiene, CRM automation, deal-desk tiers, and dashboard metrics. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-revops)
 
 <a id="jeffallan--claude-skills"></a>
 

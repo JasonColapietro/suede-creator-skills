@@ -6,7 +6,7 @@
 
 Skills that help an agent build, steer and evaluate other AI systems: prompt and context engineering, MCP servers, evals, subagent workflows, and model training and inference. Each one ships as a SKILL.md folder your agent loads only when the task calls for it.
 
-**599 accepted skills · 68 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
+**604 accepted skills · 69 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
 **Compare on the 0–99 quality scale:** this category’s verified scores span **56–94 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede AI](https://skills.suedeai.ai/directory/?category=ai-agents-llm&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
 
@@ -42,6 +42,7 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 - [hqhq1025/skill-optimizer](#hqhq1025--skill-optimizer)
 - [huggingface/skills](#huggingface--skills)
 - [infrasity-labs/dev-gtm-claude-skills](#infrasity-labs--dev-gtm-claude-skills)
+- [JasonColapietro/suede-creator-skills](#jasoncolapietro--suede-creator-skills)
 - [jeffallan/claude-skills](#jeffallan--claude-skills)
 - [K-Dense-AI/claude-scientific-skills](#k-dense-ai--claude-scientific-skills)
 - [k-kolomeitsev/data-structure-protocol](#k-kolomeitsev--data-structure-protocol)
@@ -446,6 +447,18 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 - **79/100 · C** · [workflow-builder](https://github.com/infrasity-labs/dev-gtm-claude-skills/blob/main/notion-skills/workflow-builder/SKILL.md): Design and write deterministic multi-agent workflow scripts (.js files in .claude/workflows/) for Claude Code's Workflow tool. [Suede](https://skills.suedeai.ai/directory/infrasity-labs/dev-gtm-claude-skills/#workflow-builder)
 - **70/100 · C** · [md-starter](https://github.com/infrasity-labs/dev-gtm-claude-skills/blob/main/notion-skills/claude-md-starter/SKILL.md): Generates a fully structured, project-specific CLAUDE.md by scanning the repo for signal files (package.json, Makefile, .github/workflows/, .env.example, etc.), inferring stack, commands, architecture, and conventions, then asking at… [Suede](https://skills.suedeai.ai/directory/infrasity-labs/dev-gtm-claude-skills/#md-starter)
 - **68/100 · D** · [brainstorming](https://github.com/infrasity-labs/dev-gtm-claude-skills/blob/main/coding-skills/brainstorming/SKILL.md): You MUST use this before any creative work - creating features, building components, adding functionality, or modifying behavior. [Suede](https://skills.suedeai.ai/directory/infrasity-labs/dev-gtm-claude-skills/#brainstorming)
+
+<a id="jasoncolapietro--suede-creator-skills"></a>
+
+## JasonColapietro/suede-creator-skills
+
+[Repository](https://github.com/JasonColapietro/suede-creator-skills) · Publisher: [JasonColapietro](https://github.com/JasonColapietro) · [Suede AI listing](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/)
+
+- **93/100 · A** · [Suede AI Agent Teams Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/improve/first-party-quality/skills/suede-agent-teams/SKILL.md): Suede AI Agent Teams Skills. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-agent-teams)
+- **91/100 · A** · [Suede AI Answer Engine Optimization Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/improve/first-party-quality/skills/suede-ai-seo/SKILL.md): Suede AI Answer Engine Optimization Skills. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-ai-seo)
+- **91/100 · A** · [Suede AI Graph Flo XR Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/improve/first-party-quality/skills/suede-graph-flo-xr/SKILL.md): Use when asked "compare implementation plans before building" for one multi-file repository change. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-graph-flo-xr)
+- **91/100 · A** · [Suede AI Operations Architecture Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/improve/first-party-quality/skills/suede-ops-architecture/SKILL.md): Suede AI Operations Architecture Skills: simplify workflows, choose bounded automation, define ownership, rollout, and verification. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-ops-architecture)
+- **91/100 · A** · [Suede AI Workflow Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/improve/first-party-quality/skills/suede-workflow-skills/SKILL.md): Route requests across the full public Suede AI pack to the narrowest specialist and preserve the request verbatim. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-workflow-skills)
 
 <a id="jeffallan--claude-skills"></a>
 

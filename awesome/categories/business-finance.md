@@ -6,9 +6,9 @@
 
 Skills for sales outreach, finance, legal review, e-commerce, payments and careers. They give an agent the playbooks and checklists that business work depends on, so drafts arrive structured and reviewable.
 
-**163 accepted skills · 27 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
+**169 accepted skills · 28 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
-**Compare on the 0–99 quality scale:** this category’s verified scores span **53–91 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede AI](https://skills.suedeai.ai/directory/?category=business-finance&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
+**Compare on the 0–99 quality scale:** this category’s verified scores span **53–93 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede AI](https://skills.suedeai.ai/directory/?category=business-finance&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
 
 [Read the score and license key](../README.md#read-a-listing). Descriptions are saved summaries or excerpts; full details and setup are on each Suede AI listing.
 
@@ -29,6 +29,7 @@ Skills for sales outreach, finance, legal review, e-commerce, payments and caree
 - [googleworkspace/cli](#googleworkspace--cli)
 - [gooseworks-ai/goose-skills](#gooseworks-ai--goose-skills)
 - [infrasity-labs/dev-gtm-claude-skills](#infrasity-labs--dev-gtm-claude-skills)
+- [JasonColapietro/suede-creator-skills](#jasoncolapietro--suede-creator-skills)
 - [K-Dense-AI/claude-scientific-skills](#k-dense-ai--claude-scientific-skills)
 - [MelMayssonOwen/agent-skills](#melmayssonowen--agent-skills)
 - [nowork-studio/NotFair](#nowork-studio--notfair)
@@ -277,6 +278,19 @@ Skills for sales outreach, finance, legal review, e-commerce, payments and caree
 - **62/100 · D** · [resume-version-manager](https://github.com/infrasity-labs/dev-gtm-claude-skills/blob/main/job-search/resume-version-manager/SKILL.md): Track different resume versions, maintain master resume, manage tailored versions [Suede](https://skills.suedeai.ai/directory/infrasity-labs/dev-gtm-claude-skills/#resume-version-manager)
 - **62/100 · D** · [salary-negotiation-prep](https://github.com/infrasity-labs/dev-gtm-claude-skills/blob/main/job-search/salary-negotiation-prep/SKILL.md): Research market rates, build negotiation strategy, and create counter-offer scripts [Suede](https://skills.suedeai.ai/directory/infrasity-labs/dev-gtm-claude-skills/#salary-negotiation-prep)
 - **62/100 · D** · [tech-resume-optimizer](https://github.com/infrasity-labs/dev-gtm-claude-skills/blob/main/job-search/tech-resume-optimizer/SKILL.md): Optimize resumes for software engineering, PM, and technical roles [Suede](https://skills.suedeai.ai/directory/infrasity-labs/dev-gtm-claude-skills/#tech-resume-optimizer)
+
+<a id="jasoncolapietro--suede-creator-skills"></a>
+
+## JasonColapietro/suede-creator-skills
+
+[Repository](https://github.com/JasonColapietro/suede-creator-skills) · Publisher: [JasonColapietro](https://github.com/JasonColapietro) · [Suede AI listing](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/)
+
+- **93/100 · A** · [Suede AI Rights Passport Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/improve/first-party-quality/skills/suede-rights-passport/SKILL.md): Audit rights gaps in ownership, contributors, splits, samples, licenses, provenance, and AI involvement, or assemble a hashed offline handoff package with a validated manifest. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-rights-passport)
+- **91/100 · A** · [Suede AI Offer Design Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/improve/first-party-quality/skills/suede-offers/SKILL.md): Suede AI Offer Design Skills: risk reversal, value levers, scope, proof, bonuses, guarantees, deadlines, and testable persuasion hypotheses. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-offers)
+- **91/100 · A** · [Suede AI Operations Assessment Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/improve/first-party-quality/skills/suede-ops-assessment/SKILL.md): Suede AI Operations Assessment Skills: map real work, silos, friction, ownership, costs, and adoption signals from operator evidence. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-ops-assessment)
+- **91/100 · A** · [Suede AI Pricing Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/improve/first-party-quality/skills/suede-pricing/SKILL.md): Suede AI Pricing Skills: value metric selection, tiers, willingness-to-pay research, AI unit economics, migration, and pricing-page clarity. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-pricing)
+- **91/100 · A** · [Suede AI Prospecting Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/improve/first-party-quality/skills/suede-prospecting/SKILL.md): Build a source-backed, scored prospect list across SaaS, B2B, local business, or early demand signals. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-prospecting)
+- **91/100 · A** · [Suede AI Sales Enablement Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/improve/first-party-quality/skills/suede-sales-enablement/SKILL.md): Create rep-ready pitch decks, one-pagers, objection libraries, demo scripts, battle cards, proposals, buyer cards, and ROI models with a claim-source table. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-sales-enablement)
 
 <a id="k-dense-ai--claude-scientific-skills"></a>
 
