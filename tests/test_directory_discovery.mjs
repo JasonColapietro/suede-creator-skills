@@ -14,8 +14,9 @@ test('search covers every eligible skill exactly once with unchanged score, cate
   assert.equal(index.length, data.skills.length);
   assert.equal(new Set(index.map((skill) => skill.href)).size, data.skills.length);
   for (const skill of data.skills) {
-    const found = index.find((entry) => entry.repo === skill.repo && entry.name === skill.name && entry.href.endsWith(skill.featured ? '/' + skill.slug + '/' : '#' + skill.slug));
+    const found = index.find((entry) => entry.repo === skill.repo && (entry.slug || entry.name) === skill.name && entry.href.endsWith(skill.featured ? '/' + skill.slug + '/' : '#' + skill.slug));
     assert.ok(found, `missing ${skill.repo}/${skill.slug}`);
+    assert.equal(found.name, skill.display_name || skill.name);
     for (const field of ['grade', 'score', 'category', 'license']) assert.equal(found[field], skill[field]);
     assert.equal(found.full, Boolean(skill.featured));
   }
@@ -82,6 +83,16 @@ function directoryWithPendingIndex(fetch = () => new Promise(() => {})) {
   });
   return { controls, location, results: children['[data-search-results]'] };
 }
+
+test('directory search still finds stable machine slugs after public names change', async () => {
+  const item = { name: 'Suede AI Paid Ads Skills', slug: 'suede-ads', repo: 'JasonColapietro/suede-creator-skills',
+    description: 'Plan paid media campaigns', category: 'marketing-seo', label: 'Marketing',
+    grade: 'A', score: 91, license: 'MIT', href: '/directory/jasoncolapietro/suede-creator-skills/#suede-ads' };
+  const { controls, results } = directoryWithPendingIndex(async () => ({ ok: true, json: async () => [item] }));
+  controls.q.value = 'suede-ads';
+  await new Promise(resolve => setTimeout(resolve, 10));
+  assert.equal(results.children.length, 1);
+});
 
 test('filters changed while the search index loads persist in the URL', (t) => {
   t.mock.timers.enable({ apis: ['setTimeout'] });
