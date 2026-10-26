@@ -32,10 +32,12 @@ PATHS=$(printf '%s\n' "$DIFF" | grep -E '^\+\+\+ b/' | sed 's|^+++ b/||')
 DIRTY=0
 SUSPECT=0
 
-# $1 = label, $2 = pattern, $3 = corpus, $4 = severity when hit (dirty|suspicious)
+# $1 = label, $2 = pattern, $3 = corpus, $4 = severity when hit (dirty|suspicious),
+# $5 = optional "case" to match case-sensitively (default is case-insensitive)
 check() {
-  local label="$1" pattern="$2" corpus="$3" sev="$4" hit
-  hit=$(printf '%s\n' "$corpus" | grep -Ein "$pattern" | head -3)
+  local label="$1" pattern="$2" corpus="$3" sev="$4" flags="-Ein" hit
+  [ "${5:-}" = "case" ] && flags="-En"
+  hit=$(printf '%s\n' "$corpus" | grep "$flags" "$pattern" | head -3)
   if [ -n "$hit" ]; then
     printf '%-26s %s — %s\n' "$label" "$sev" "$(printf '%s' "$hit" | tr '\n' ';' | cut -c1-160)"
     [ "$sev" = "dirty" ] && DIRTY=1 || SUSPECT=1
@@ -45,7 +47,9 @@ check() {
 }
 
 echo "COMMIT DIRT SCORE"
-check "Secrets / credentials:" '(sk_[a-z0-9]|pk_live|ghp_|gho_|xox[baprs]-|AKIA[0-9A-Z]{16}|-----BEGIN [A-Z ]*PRIVATE KEY|(password|passwd|secret|api_?key|token)[[:space:]]*[:=][[:space:]]*["'"'"'][^"'"'"']{8,})' "$ADDED" suspicious
+# A committed key is an Instant-F (SKILL.md Step 1), so known key shapes grade dirty.
+check "Secrets (high-confidence):" '(AKIA[0-9A-Z]{16}|-----BEGIN [A-Z ]*PRIVATE KEY|gh[pousr]_[A-Za-z0-9]{36}|xox[baprs]-[A-Za-z0-9-]{10,}|sk_live_[A-Za-z0-9]{16,}|sk-(ant|proj)-[A-Za-z0-9_-]{20,})' "$ADDED" dirty case
+check "Secrets (assignment):" '(pk_live|(password|passwd|secret|api_?key|token)[[:space:]]*[:=][[:space:]]*["'"'"'][^"'"'"']{8,})' "$ADDED" suspicious
 check "Debug artifacts:" '(console\.(log|debug)|[^a-z]debugger[^a-z]|binding\.pry|byebug|var_dump\(|pprint\(|TODO: ?remove|FIXME: ?before merge|HACK:)' "$ADDED" suspicious
 check "Conflict markers:" '^\+(<{7}|={7}|>{7}|\|{7})' "$(printf '%s\n' "$DIFF" | grep -E '^\+')" dirty
 check "Accidentally staged:" '(^|/)(node_modules|\.next|dist|build|__pycache__)/|\.(pyc|DS_Store|log|sqlite|db)$' "$PATHS" dirty
