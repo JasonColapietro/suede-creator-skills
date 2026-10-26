@@ -1,9 +1,9 @@
 ---
 name: suede-pricing
-description: "Suede AI Pricing Skills: value metric selection, tiers, willingness-to-pay research, AI unit economics, migration, and pricing-page clarity. Use when asked \"restructure our pricing tiers\" or to decide prices, raise them, or diagnose buyer confusion. NOT FOR: in-product prompts (suede-paywalls), offer bonuses and guarantees (suede-offers), or executing billing changes."
+description: "Suede AI Pricing Skills: value metric selection, tiers, willingness-to-pay research, AI unit economics, migration, pricing-page clarity, and a Paywall mode for in-product upgrade screens, feature gates, usage limits, and trial-expiry prompts with frequency caps and subscription-law checks. Use when asked \"restructure our pricing tiers\" or \"design the upgrade paywall for our trial\", or to decide prices, raise them, or diagnose buyer confusion. NOT FOR: offer bonuses and guarantees (suede-offers), cancel and save flows (suede-churn-prevention), or executing billing changes."
 metadata:
   display-name: "Suede AI Pricing Skills"
-  version: 2.1.0
+  version: 2.2.0
 ---
 
 # Suede AI Pricing Skills
@@ -21,12 +21,38 @@ constraints into testable prices, value metrics, tiers, and migration plans.
 It produces a decision brief and measurement plan while keeping billing changes
 behind explicit approval.
 
+## Modes
+
+| Mode | Use when | Output |
+|------|----------|--------|
+| Decision Brief (default) | Choosing what to charge, value metric, tiers, trials vs. freemium, price increases, migration | Pricing Decision Brief |
+| Teardown | Auditing an existing pricing page for buyer clarity and AI-readability | Scored teardown (see Pricing Page Teardown) |
+| Paywall | Designing or fixing an in-product upgrade screen, feature gate, usage-limit prompt, or trial-expiry screen | Paywall Package |
+
+### Paywall mode
+
+Read [references/paywalls.md](references/paywalls.md) in full before drafting.
+It holds the paywall intake (use it instead of Before Starting below), trigger
+types, timing rules, screen anatomy and templates, the entitlement boundary
+(every gate must match a tier-map row), anti-patterns, and the Paywall Package
+output. Non-negotiables, even on a quick answer:
+
+- Frequency defaults: max 1 impression per session, >= 7-day cooldown after a
+  dismiss and >= 14 days after a second, suppress a gate after 3 lifetime
+  dismissals.
+- Run the 6-question Self-Critique Gate; a hit on close control, false urgency,
+  free path, or subscription disclosure is a blocker, not a caveat.
+- Any screen that starts, converts, or renews a subscription gets the
+  subscription law check against [references/subscription-rules.md](references/subscription-rules.md),
+  the pack's single source for current US, UK, EU, and app-store rules.
+
 ## Before Starting
 
 **Check for product marketing context first:**
 If `.agents/product-marketing.md` exists (or `.claude/product-marketing.md`, or the legacy `product-marketing-context.md` filename, in older setups), read it before asking questions. Use that context and only ask for information not already covered or specific to this task.
 
-Gather this context (ask if not provided):
+Gather this context (ask if not provided). In Paywall mode, use the paywall
+intake in [references/paywalls.md](references/paywalls.md) instead:
 
 ### 1. Business Context
 - What type of product? (SaaS, marketplace, e-commerce, service)
@@ -178,7 +204,7 @@ Identifies which features customers value most:
 3. **Tied to value**: Raise price but add features
 4. **Plan restructure**: Change plans entirely
 
-**Legal notice floor for existing subscribers:** an increase on an auto-renewing plan needs clear advance notice with cancellation instructions. California's amended Automatic Renewal Law (in force July 1, 2025) requires that notice 7 to 30 days before the new price applies; contracts and other jurisdictions may require more. Current rules live in `suede-paywalls`.
+**Legal notice floor for existing subscribers:** an increase on an auto-renewing plan needs clear advance notice with cancellation instructions. California's amended Automatic Renewal Law (in force July 1, 2025) requires that notice 7 to 30 days before the new price applies; contracts and other jurisdictions may require more. Current rules live in [references/subscription-rules.md](references/subscription-rules.md).
 
 ---
 
@@ -198,7 +224,7 @@ Identifies which features customers value most:
 
 ### Price transparency rules
 - Show the total mandatory price. In the UK, the DMCC Act has banned drip pricing of mandatory fees since April 6, 2025 ([CMA207 guidance](https://www.gov.uk/government/publications/unfair-commercial-practices-cma207)).
-- Auto-renewing plans need clear disclosure and consent before billing under US ROSCA and state auto-renewal laws; `suede-paywalls` holds the current US, UK, and EU subscription rules.
+- Auto-renewing plans need clear disclosure and consent before billing under US ROSCA and state auto-renewal laws; [references/subscription-rules.md](references/subscription-rules.md) holds the current US, UK, and EU subscription rules.
 
 ### Pricing Psychology
 Treat each as a test, using the evidence tiers in the `suede-offers` behavioral-models catalog:
@@ -226,9 +252,9 @@ The AI-readiness fixes are usually high-impact, low-effort (put prices in text, 
 
 ## Output: Pricing Decision Brief
 
-Every pricing or packaging engagement that is not a teardown returns this exact
-structure. Use these headings verbatim; leave a heading in with "not decided,
-[what's missing]" rather than dropping it.
+Every pricing or packaging engagement that is not a teardown or a Paywall-mode
+job returns this exact structure. Use these headings verbatim; leave a heading
+in with "not decided, [what's missing]" rather than dropping it.
 
 ```markdown
 # Pricing Decision Brief: [product]
@@ -268,10 +294,16 @@ structure. Use these headings verbatim; leave a heading in with "not decided,
 - Do not publish pricing copy, choose grandfathering policy, or commit the
   business to a price; return a recommendation, assumptions, and validation
   plan for the user to decide.
+- In Paywall mode, do not change entitlements, app configuration, experiments,
+  or live paywalls without explicit authorization, and never recommend hidden
+  close controls, confusing consent, forced continuity, obstructive
+  cancellation, or false urgency. The full list is in
+  [references/paywalls.md](references/paywalls.md).
 
 ## Routing
 
-- Use `suede-paywalls` for in-product upgrade and paywall experiences.
+- Use `suede-churn-prevention` for cancel flows, save offers, and win-back.
+- Use `suede-onboarding` to get users to first value before any paywall appears.
 - Use `suede-offers` for bonuses, guarantees, and offer framing.
 - Use `suede-ab-testing` to validate pricing-page or packaging hypotheses.
 - Use `suede-revops` for approved deal-desk and pipeline implementation.

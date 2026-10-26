@@ -1,4 +1,6 @@
-# Subscription and Auto-Renewal Rules for Paywalls
+# Subscription and Auto-Renewal Rules
+
+This is the single subscription-law reference for the Suede AI pack. Pricing, Paywall mode, offers, onboarding, and churn-prevention work all point here.
 
 Status checked October 23, 2026. This is a design checklist for the user's counsel, not legal advice. Rules change; re-check the sources before shipping a paywall that starts or renews a subscription.
 

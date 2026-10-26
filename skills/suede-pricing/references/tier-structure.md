@@ -172,7 +172,7 @@ Different customers have different:
 
 **Credit card upfront:**
 - Usually higher trial-to-paid conversion and lower trial volume; measure both on your own funnel before choosing
-- Requires clear renewal disclosure and consent at signup (see `suede-paywalls` for current US, UK, and EU rules)
+- Requires clear renewal disclosure and consent at signup (see [subscription-rules.md](subscription-rules.md) for current US, UK, and EU rules)
 - Better qualified leads
 
 ### Hybrid Approaches
