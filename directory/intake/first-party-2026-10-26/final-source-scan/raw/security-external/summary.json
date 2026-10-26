@@ -1,0 +1,84 @@
+[
+  {
+    "id": "anthropics/skills/brand-guidelines",
+    "status": "passed",
+    "reason": "no_findings_in_recorded_coverage",
+    "source": {
+      "repository": "anthropics/skills",
+      "path": "skills/brand-guidelines",
+      "revision": "dbd4588f9e1033efb41dad4bef2f7947c8993d44"
+    },
+    "scanner": {
+      "name": "cisco-ai-skill-scanner",
+      "version": "2.3.1",
+      "adapter_version": 2,
+      "analyzers": [
+        "static_analyzer",
+        "bytecode",
+        "pipeline",
+        "correlation",
+        "behavioral_analyzer"
+      ],
+      "policy": "strict",
+      "cel_mode": "shadow",
+      "network": "disabled",
+      "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+    },
+    "started_at": "2026-10-26T02:26:52.899919+00:00",
+    "completed_at": "2026-10-26T02:26:53.271728+00:00",
+    "evaluated_on": "2026-10-26",
+    "valid_until": "2026-11-25T02:26:53.271Z",
+    "files_scanned": 2,
+    "coverage_complete": true,
+    "skipped": [],
+    "findings": {
+      "CRITICAL": 0,
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 0,
+      "INFO": 0
+    },
+    "evidence_sha256": "b3277835308b6df6466090598d88bf335efdc1fb5a623fa2dcc64df784ddefef"
+  },
+  {
+    "id": "anthropics/skills/algorithmic-art",
+    "status": "passed",
+    "reason": "no_findings_in_recorded_coverage",
+    "source": {
+      "repository": "anthropics/skills",
+      "path": "skills/algorithmic-art",
+      "revision": "dbd4588f9e1033efb41dad4bef2f7947c8993d44"
+    },
+    "scanner": {
+      "name": "cisco-ai-skill-scanner",
+      "version": "2.3.1",
+      "adapter_version": 2,
+      "analyzers": [
+        "static_analyzer",
+        "bytecode",
+        "pipeline",
+        "correlation",
+        "behavioral_analyzer"
+      ],
+      "policy": "strict",
+      "cel_mode": "shadow",
+      "network": "disabled",
+      "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+    },
+    "started_at": "2026-10-26T02:26:53.272240+00:00",
+    "completed_at": "2026-10-26T02:26:53.380347+00:00",
+    "evaluated_on": "2026-10-26",
+    "valid_until": "2026-11-25T02:26:53.380Z",
+    "files_scanned": 4,
+    "coverage_complete": true,
+    "skipped": [],
+    "findings": {
+      "CRITICAL": 0,
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 0,
+      "INFO": 0
+    },
+    "evidence_sha256": "f54adfe93feac7e6afb402ba37bde3b67839bd72ec2d6707a35fb82b28f83d05"
+  }
+]

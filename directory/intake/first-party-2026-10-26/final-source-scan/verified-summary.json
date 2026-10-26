@@ -1,0 +1,191 @@
+{
+  "target_revision": "1c039ab9ed51bc67bcbdb1d2ed690a5151ab6abf",
+  "pipeline_revision": "31ce0572eb01d812d392caae0de262791cbcc86a",
+  "run_id": 40259009885,
+  "artifact_id": 12624310539,
+  "artifact_sha256": "8c840996d26eb7fcf886b7f6cd520a5b689a0e8cd2de21dff386ab102a3e5e2d",
+  "packages": 64,
+  "package_files_hash_matched": 634,
+  "mismatches": 0,
+  "security_status": {
+    "findings": 60,
+    "failed": 3,
+    "error": 1
+  },
+  "findings_by_rule": {
+    "MANIFEST_MISSING_LICENSE": 64,
+    "COMMAND_INJECTION_JS_CHILD_PROCESS": 16,
+    "DATA_EXFIL_JS_FS_ACCESS": 18,
+    "LOW_ANALYZABILITY": 1,
+    "BINARY_FILE_DETECTED": 4,
+    "UNANALYZABLE_BINARY": 4,
+    "FILE_MAGIC_MISMATCH": 3,
+    "BEHAVIOR_BASH_TAINT_FLOW": 2,
+    "TOOL_ABUSE_UNDECLARED_NETWORK": 1,
+    "UNDECLARED_NETWORK_DESTINATION": 2,
+    "DATA_EXFIL_NETWORK_REQUESTS": 4
+  },
+  "findings_by_severity": {
+    "INFO": 64,
+    "CRITICAL": 16,
+    "LOW": 20,
+    "MEDIUM": 19
+  },
+  "critical_findings": [
+    {
+      "skill": "skills/suede-seo-audit",
+      "path": "scripts/tests/cli.test.mjs",
+      "line": 7,
+      "rule": "COMMAND_INJECTION_JS_CHILD_PROCESS",
+      "snippet": "import { spawnSync } from 'node:child_process';"
+    },
+    {
+      "skill": "skills/suede-seo-audit",
+      "path": "scripts/tests/cli.test.mjs",
+      "line": 12,
+      "rule": "COMMAND_INJECTION_JS_CHILD_PROCESS",
+      "snippet": "const run = (...args) => spawnSync(process.execPath, [cli,...args], { encoding: 'utf8', cwd: scripts });"
+    },
+    {
+      "skill": "skills/suede-seo-audit",
+      "path": "scripts/tests/serp-overlap.test.mjs",
+      "line": 84,
+      "rule": "COMMAND_INJECTION_JS_CHILD_PROCESS",
+      "snippet": "const result = spawnSync(process.execPath, [\"--input-type=module\", \"-e\", script], { encoding: \"utf8\", env: { ...process.env, LANG: locale, LC_ALL: locale } });"
+    },
+    {
+      "skill": "skills/suede-graph-flo-xr",
+      "path": "workflows/helpers/apply-patch.cjs",
+      "line": 10,
+      "rule": "COMMAND_INJECTION_JS_CHILD_PROCESS",
+      "snippet": "const {execFileSync}=require(\"node:child_process\");"
+    },
+    {
+      "skill": "skills/suede-graph-flo-xr",
+      "path": "workflows/helpers/candidate-audit.cjs",
+      "line": 9,
+      "rule": "COMMAND_INJECTION_JS_CHILD_PROCESS",
+      "snippet": "const {execFileSync}=require(\"node:child_process\");"
+    },
+    {
+      "skill": "skills/suede-graph-flo-xr",
+      "path": "workflows/helpers/diff-digest.cjs",
+      "line": 4,
+      "rule": "COMMAND_INJECTION_JS_CHILD_PROCESS",
+      "snippet": "const {execFileSync}=require(\"node:child_process\");const {createHash}=require(\"node:crypto\");const fs=require(\"node:fs\"),path=require(\"node:path\"),root=fs.realpathSync(path.resolve(process.argv[1])),inside=value=>value===root||value.startsWith(root+path.sep),base=process.argv[2],files=JSON.parse(Buffer.from(process.argv[3],\"base64\").toString(\"utf8\"));if(!Array.isArray(files)){process.stderr.write(\"reported files must be an array\");process.exit(1)}let diff;try{diff=execFileSync(\"git\",[\"-C\",root,\"diff\",\"--binary\",base],{encoding:null,maxBuffer:16*1024*1024})}catch(error){process.stderr.write(error.stderr||String(error||\"git diff failed\"));process.exit(Number.isInteger(error.status)?error.status:1)}const hash=createHash(\"sha256\").update(\"git-diff\\0\").update(diff);for(const file of [...new Set(files)].sort()){const full=path.resolve(root,file);if(!inside(full)){process.stderr.write(\"reported file escapes worktree\");process.exit(1)}hash.update(\"\\0file\\0\"+file+\"\\0\");let stat;try{stat=fs.lstatSync(full)}catch(error){if(error&&error.code===\"ENOENT\"){hash.update(\"missing\");continue}throw error}if(stat.isSymbolicLink()||!stat.isFile()){process.stderr.write(\"reported file is not a regular file: \"+file);process.exit(1)}const canonical=fs.realpathSync(full);if(!inside(canonical)){process.stderr.write(\"reported file resolves outside worktree: \"+file);process.exit(1)}hash.update(\"regular\\0\"+String(stat.mode&0o777)+\"\\0\"+String(stat.size)+\"\\0\").update(fs.readFileSync(canonical))}process.stdout.write(hash.digest(\"hex\")+\"\\n\")"
+    },
+    {
+      "skill": "skills/suede-graph-flo-xr",
+      "path": "workflows/helpers/gate-sandbox.cjs",
+      "line": 5,
+      "rule": "COMMAND_INJECTION_JS_CHILD_PROCESS",
+      "snippet": "const {execFileSync}=require(\"node:child_process\");const fs=require(\"node:fs\"),path=require(\"node:path\"),inputRoot=process.argv[1],inputTemp=process.argv[2],payload=process.argv[3],encodedExtraWrites=process.argv[4],fail=message=>{process.stderr.write(String(message)+\"\\n\");process.exit(1)},root=fs.realpathSync(inputRoot),tempRoot=fs.realpathSync(inputTemp),insideRoot=value=>value===root||value.startsWith(root+path.sep);if(root!==path.resolve(inputRoot)||tempRoot!==path.resolve(inputTemp)||!fs.statSync(root).isDirectory()||!fs.statSync(tempRoot).isDirectory())fail(\"Gate roots failed realpath validation\");let extraWrites;try{extraWrites=JSON.parse(Buffer.from(encodedExtraWrites,\"base64\").toString(\"utf8\"))}catch{fail(\"Gate extra-write manifest is invalid\")};const safeExtraWrite=value=>{if(typeof value!==\"string\"||path.resolve(value)!==value||!value.startsWith(root+path.sep)||path.basename(value)!==\"build\")return false;let parent;try{parent=fs.realpathSync(path.dirname(value))}catch{return false}if(!insideRoot(parent))return false;if(!fs.existsSync(value))return true;const stat=fs.lstatSync(value);return !stat.isSymbolicLink()&&stat.isDirectory()&&insideRoot(fs.realpathSync(value))};if(!Array.isArray(extraWrites)||extraWrites.some(value=>!safeExtraWrite(value)))fail(\"Gate extra-write roots failed validation\");const git=args=>{try{return execFileSync(\"git\",[\"-C\",root,...args],{encoding:\"utf8\",maxBuffer:8*1024*1024}).trim()}catch(error){fail(error.stderr||error||\"git metadata lookup failed\")}},top=fs.realpathSync(git([\"rev-parse\",\"--show-toplevel\"])),commonDir=fs.realpathSync(git([\"rev-parse\",\"--path-format=absolute\",\"--git-common-dir\"]));if(top!==root||path.basename(commonDir)!==\".git\"||!fs.statSync(commonDir).isDirectory())fail(\"Gate Git roots failed validation\");const getconf=name=>{try{return execFileSync(\"/usr/bin/getconf\",[name],{encoding:\"utf8\"}).trim()}catch{return null}};const darwinDirs=[\"DARWIN_USER_CACHE_DIR\",\"DARWIN_USER_TEMP_DIR\"].map(getconf).filter(Boolean).map(value=>{try{return fs.realpathSync(value)}catch{return null}}).filter(Boolean);const psShimLines=[\"#!/usr/bin/env python3\",\"# suid /bin/ps cannot exec under sandbox-exec; AMFI kills relocated copies too.\",\"# so this shim serves the one invocation shape the pack uses (ps -p PID -o lstart=)\",\"# with real kernel process start times via sysctl. Anything else fails loudly.\",\"import ctypes, struct, sys, time\",\"a = sys.argv[1:]\",\"if len(a) != 4 or a[0] != \\\"-p\\\" or a[2] != \\\"-o\\\" or a[3] != \\\"lstart=\\\":\",\"    sys.exit(1)\",\"try:\",\"    pid = int(a[1])\",\"except ValueError:\",\"    sys.exit(1)\",\"libc = ctypes.CDLL(None, use_errno=True)\",\"mib = (ctypes.c_int * 4)(1, 14, 1, pid)\",\"size = ctypes.c_size_t(0)\",\"if libc.sysctl(mib, 4, None, ctypes.byref(size), None, 0) != 0 or size.value == 0:\",\"    sys.exit(1)\",\"buf = ctypes.create_string_buffer(size.value)\",\"if libc.sysctl(mib, 4, buf, ctypes.byref(size), None, 0) != 0 or size.value == 0:\",\"    sys.exit(1)\",\"tv_sec = struct.unpack_from(\\\"<q\\\", buf.raw, 0)[0]\",\"if tv_sec <= 0:\",\"    sys.exit(1)\",\"print(time.strftime(\\\"%a %b %e %H:%M:%S %Y\\\", time.localtime(tv_sec)))\"];const shimDir=fs.mkdtempSync(path.join(tempRoot,\"gate-bin-\"));fs.writeFileSync(path.join(shimDir,\"ps\"),psShimLines.join(\"\\n\")+\"\\n\",{mode:0o755,flag:\"wx\"});const reads=[root,commonDir,\"/System\",\"/usr\",\"/usr/local\",\"/bin\",\"/sbin\",\"/Library\",\"/opt/homebrew\",\"/var/select\",\"/private/var/select\",\"/etc\",\"/private/etc\",\"/Applications/Xcode.app\",tempRoot].concat(darwinDirs),writes=[\"node_modules\",\".next\",\"dist\",\"build\",\".build\",\"coverage\",\".cache\",\".gradle\",\".swiftpm\",\".turbo\",\"target\",\".pytest_cache\",\".mypy_cache\",\".ruff_cache\",\"tmp\",\".tmp\",\"tests/fixtures\"].map(name=>path.join(root,name)).concat(extraWrites,[tempRoot],darwinDirs),subpaths=values=>values.map(value=>\"  (subpath \"+JSON.stringify(value)+\")\").join(\"\\n\"),profile=\"(version 1)\\n(deny default)\\n(import \\\"system.sb\\\")\\n(allow process*)\\n(allow file-read-metadata)\\n(allow sysctl-read)\\n(allow file-read*\\n\"+subpaths(reads)+\"\\n  (literal \\\"/dev/null\\\")\\n  (literal \\\"/dev/urandom\\\"))\\n(allow file-write*\\n\"+subpaths(writes)+\"\\n)\\n(deny network*)\";try{execFileSync(\"/usr/bin/sandbox-exec\",[\"-p\",profile,\"/bin/sh\",\"-c\",payload],{stdio:\"inherit\",env:{...process.env,TMPDIR:tempRoot,TMP:tempRoot,TEMP:tempRoot,HOME:tempRoot,npm_config_cache:tempRoot+\"/npm-cache\",PATH:shimDir+\":\"+(process.env.PATH||\"/usr/bin:/bin:/usr/sbin:/sbin\")}});process.exit(0)}catch(error){if(Number.isInteger(error.status))process.exit(error.status||1);fail(error)}"
+    },
+    {
+      "skill": "skills/suede-graph-flo-xr",
+      "path": "workflows/helpers/scout-setup.cjs",
+      "line": 4,
+      "rule": "COMMAND_INJECTION_JS_CHILD_PROCESS",
+      "snippet": "const {execFileSync}=require(\"node:child_process\");const {randomUUID}=require(\"node:crypto\");const {mkdirSync,realpathSync}=require(\"node:fs\");const {dirname,basename}=require(\"node:path\"),parseStatus=value => {"
+    },
+    {
+      "skill": "skills/suede-graph-flo-xr",
+      "path": "workflows/tests/test_apply_patch_staging_safety.mjs",
+      "line": 6,
+      "rule": "COMMAND_INJECTION_JS_CHILD_PROCESS",
+      "snippet": "import { spawnSync } from 'node:child_process';"
+    },
+    {
+      "skill": "skills/suede-graph-flo-xr",
+      "path": "workflows/tests/test_apply_patch_staging_safety.mjs",
+      "line": 19,
+      "rule": "COMMAND_INJECTION_JS_CHILD_PROCESS",
+      "snippet": "const git = spawnSync('git', ['init', '-q', root], { encoding: 'utf8' });"
+    },
+    {
+      "skill": "skills/suede-graph-flo-xr",
+      "path": "workflows/tests/test_apply_patch_staging_safety.mjs",
+      "line": 24,
+      "rule": "COMMAND_INJECTION_JS_CHILD_PROCESS",
+      "snippet": "const run = (...args) => spawnSync(process.execPath, [helper, root, ...args], { encoding: 'utf8' });"
+    },
+    {
+      "skill": "skills/suede-graph-flo-xr",
+      "path": "workflows/tests/test_gate_sandbox_staging_safety.mjs",
+      "line": 6,
+      "rule": "COMMAND_INJECTION_JS_CHILD_PROCESS",
+      "snippet": "import { spawnSync } from 'node:child_process';"
+    },
+    {
+      "skill": "skills/suede-graph-flo-xr",
+      "path": "workflows/tests/test_gate_sandbox_staging_safety.mjs",
+      "line": 14,
+      "rule": "COMMAND_INJECTION_JS_CHILD_PROCESS",
+      "snippet": "const git = spawnSync('git', ['init', '-q', repo], { encoding: 'utf8' });"
+    },
+    {
+      "skill": "skills/suede-graph-flo-xr",
+      "path": "workflows/tests/test_gate_sandbox_staging_safety.mjs",
+      "line": 29,
+      "rule": "COMMAND_INJECTION_JS_CHILD_PROCESS",
+      "snippet": "const result = spawnSync(process.execPath, [helper, repo, temp, 'true', 'W10='], { encoding: 'utf8' });"
+    },
+    {
+      "skill": "skills/suede-graph-flo-xr",
+      "path": "workflows/tests/test_plan_path_safety.mjs",
+      "line": 16,
+      "rule": "COMMAND_INJECTION_JS_CHILD_PROCESS",
+      "snippet": "import { execFileSync } from 'node:child_process'"
+    },
+    {
+      "skill": "skills/suede-agent-teams",
+      "path": "scripts/contribution-ledger.mjs",
+      "line": 8,
+      "rule": "COMMAND_INJECTION_JS_CHILD_PROCESS",
+      "snippet": "import { execFileSync } from \"node:child_process\";"
+    }
+  ],
+  "incomplete": [
+    {
+      "skill": "skills/suede-release-linter",
+      "skipped": [
+        {
+          "path": "scripts/fixtures/sample-clean-project/artwork/cover-art.jpg",
+          "reason": "unparsed_source"
+        },
+        {
+          "path": "scripts/fixtures/sample-clean-project/audio/paper-moons-master.wav",
+          "reason": "unparsed_source"
+        },
+        {
+          "path": "scripts/fixtures/sample-clean-project/stems/bass-stem.wav",
+          "reason": "unparsed_source"
+        },
+        {
+          "path": "scripts/fixtures/sample-clean-project/stems/drums-stem.wav",
+          "reason": "unparsed_source"
+        },
+        {
+          "path": "scripts/fixtures/sample-clean-project/stems/vocals-stem.wav",
+          "reason": "unparsed_source"
+        },
+        {
+          "reason": "scanner_coverage_finding",
+          "rule": "UNANALYZABLE_BINARY"
+        },
+        {
+          "reason": "scanner_coverage_finding",
+          "rule": "UNANALYZABLE_BINARY"
+        },
+        {
+          "reason": "scanner_coverage_finding",
+          "rule": "UNANALYZABLE_BINARY"
+        },
+        {
+          "reason": "scanner_coverage_finding",
+          "rule": "UNANALYZABLE_BINARY"
+        }
+      ]
+    }
+  ]
+}

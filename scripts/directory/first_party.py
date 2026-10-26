@@ -52,7 +52,7 @@ def checked_source(source, revision, inclusions):
     if git(source, "rev-parse", "HEAD") != revision:
         raise ValueError("source revision does not match checkout HEAD")
     origin = git(source, "remote", "get-url", "origin")
-    if origin.rstrip("/") not in (f"https://github.com/{REPO}", f"https://github.com/{REPO}.git", f"git@github.com:{REPO}.git"):
+    if origin.rstrip("/") not in (f"https://github.com/{REPO}", f"https://github.com/{REPO}.git"):
         raise ValueError("source origin is not the canonical Suede repository")
     if git(source, "status", "--porcelain", "--untracked-files=all"):
         raise ValueError("source checkout must be clean, including untracked files")
@@ -187,6 +187,7 @@ def run(args):
                             and jaccard(grams, shingles(existing["description"])) >= 0.6)):
                     raise ValueError(f"source is a copy of an existing external listing: {candidate['name']}")
         output["repos"] = {**untouched["repos"], **scoped_data["repos"]}
+        output["repos"][REPO]["assessment_date"] = assessment
         output["skills"] = untouched["skills"] + scoped_data["skills"]
         output["snapshot_id"] = uuid.uuid4().hex
         if external(output) != untouched:

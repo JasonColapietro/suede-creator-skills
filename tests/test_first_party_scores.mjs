@@ -36,6 +36,7 @@ test('first-party reports and retained source inventories describe the exact rev
     assert.equal(report.skill.name, skill.name);
     assert.equal(report.skill.display_name, skill.display_name);
     assert.equal(report.source.revision, receipt.source_revision);
+    assert.equal(report.source.assessment_date, receipt.assessment_date);
     assert.equal(report.quality.score, skill.score);
     assert.ok(report.source.skill_md_url.includes(`/blob/${receipt.source_revision}/skills/${skill.name}/SKILL.md`));
   }

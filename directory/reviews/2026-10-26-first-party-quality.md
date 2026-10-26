@@ -1,10 +1,10 @@
 # Suede AI Skills: first-party quality and source review
 
-Reviewed source: `c91ba9c2dcbed9e54ae49626e368a6d66b071e09`. Assessment: October 26, 2026. This draft does not merge or deploy the changes.
+Reviewed source: `1c039ab9ed51bc67bcbdb1d2ed690a5151ab6abf`. Assessment: October 26, 2026. This draft does not merge or deploy the changes.
 
 The accepted October 22 catalog had 3,804 imported skills across 160 repositories and zero first-party listings: its selector deliberately skipped the canonical repository. All 64 maintained canonical packages were absent. Their unchanged-rubric source measurements were 72–88; these were provisional measurements, not published catalog grades. The stale 21-skill Suede-AI fork is a duplicate distribution with pull-only connector access, not a second set of maintained packages. The separate unlisted ios-app-dev-skills repository is outside this canonical package scope.
 
-The reviewed sources now produce 64 accepted first-party listings: **57 score 91 and seven score 93**, all eight checks pass. The original 3,804 external records and 160 repository metadata records remain identical. Public titles use Suede AI Skills or Suede AI [product/category] Skills; machine identities and install paths remain stable.
+The reviewed sources now produce 64 accepted first-party listings: **57 score 91 and seven score 93**, all eight checks pass. The original 3,804 external records and 160 repository metadata records remain identical. Public titles and all 64 installed UI labels use Suede AI Skills or Suede AI [product/category] Skills; machine identities and install paths remain stable.
 
 The rubric, cutoffs, exclusions and score implementations are unchanged. Improvements include actual invocation/routing descriptions, accurate runtime compatibility in body prose, concrete worked input/output/recovery/validation examples, preserved detailed guidance in required references, and corrected unsupported SMS benchmark claims. No optional ClaimCheck or source-upload analyzer was enabled.
 
@@ -18,7 +18,7 @@ The [intake receipt](../intake/2026-10-26-first-party.json) retains source and t
 
 All 558 original scan inventory hashes match baseline main. The retained original scan records report ten CRITICAL process-execution signatures across three packages and incomplete binary coverage in release-linter. Capability signatures alone did not prove shell injection. Bounded review did reproduce two separate outside-file overwrites: linked patch staging and predictable Gate shim creation. Descriptor/no-follow checks and private exclusive shim creation fix those defects; 11 new regressions and 31 workflow tests pass. Independent special-file probes also reject FIFOs and directories.
 
-Original severities and failed/error states remain intact in [raw original records](../intake/first-party-2026-10-26/original-scan-records.json). Fresh exact-source Linux scanning is running in a separate verification draft using PR278’s reviewed, pinned pipeline. This quality change does not merge PR278 or PR281, and directory security fields remain not_scanned while the separate evidence pipeline is unmerged. Final source-scan results will be retained here after execution.
+Original severities and failed/error states remain intact in [raw original records](../intake/first-party-2026-10-26/original-scan-records.json). Fresh exact-source Linux scanning completed in [verification run 40259009885](https://github.com/JasonColapietro/suede-creator-skills/actions/runs/40259009885) using PR278’s reviewed, pinned pipeline: all 634 package-file hashes match source `1c039ab9`; 60 packages retain nonblocking findings, three fail and one retains incomplete binary coverage. Synthetic clean/attack checks, exact-source acquisition, two external samples and artifact retention passed. The scanner reports 16 CRITICAL process-capability signatures: the original ten plus six in the new regression-test files. All 63 overlong-description findings are eliminated. No severity, gate or exclusion was lowered. This quality change does not merge PR278 or PR281, and directory security fields remain not_scanned while the separate evidence pipeline is unmerged. The [raw final records and provenance](../intake/first-party-2026-10-26/final-source-scan/manifest.json) are retained, including artifact SHA256 `8c840996d26eb7fcf886b7f6cd520a5b689a0e8cd2de21dff386ab102a3e5e2d`.
 
 ## Baseline to final
 
@@ -91,4 +91,4 @@ Original severities and failed/error states remain intact in [raw original recor
 
 ## Validation
 
-Strict source validation passes for all 64 packages. Focused source, branding, real browser-client lookup, immutable-source ingestion, source-to-report and security regressions pass. Full local and exact-head CI results are pending and will be recorded before completion.
+Strict source validation passes for all 64 packages. Focused source, branding, real browser-client lookup, immutable-source ingestion, source-to-report and security regressions pass. Exact-head full CI results are recorded in [draft PR283](https://github.com/JasonColapietro/suede-creator-skills/pull/283). Initial CI exposed branding/SEO integration regressions; installed labels and keyword metadata are corrected, and all 14 focused source/report/branding/SEO checks pass. Local baseline npm test was stopped after its native validator-runtime process ran for more than 20 minutes; its partial log is not claimed as a pass.

@@ -1,0 +1,312 @@
+﻿2026-10-26T02:25:24.6657581Z Current runner version: '2.338.0'
+2026-10-26T02:25:24.6683731Z ##[group]Runner Image Provisioner
+2026-10-26T02:25:24.6685008Z Hosted Compute Agent
+2026-10-26T02:25:24.6685609Z Version: 20261021.618
+2026-10-26T02:25:24.6686222Z Commit: 21505ad2541d5be6135ed84fc33697146cf75b8e
+2026-10-26T02:25:24.6687032Z Build Date: 2026-10-21T00:45:21Z
+2026-10-26T02:25:24.6687708Z Worker ID: {7ba16224-2bb9-4797-a7fe-503c6ddb4d1e}
+2026-10-26T02:25:24.6688477Z Region: westus2
+2026-10-26T02:25:24.6689046Z Cloud: Azure
+2026-10-26T02:25:24.6689587Z ##[endgroup]
+2026-10-26T02:25:24.6691141Z ##[group]Operating System
+2026-10-26T02:25:24.6691808Z Ubuntu
+2026-10-26T02:25:24.6692427Z 26.04.1
+2026-10-26T02:25:24.6692956Z LTS
+2026-10-26T02:25:24.6693466Z ##[endgroup]
+2026-10-26T02:25:24.6694346Z ##[group]Runner Image
+2026-10-26T02:25:24.6694983Z Image: ubuntu-26.04
+2026-10-26T02:25:24.6695574Z Version: 20261012.163.1
+2026-10-26T02:25:24.6696933Z Included Software: https://github.com/actions/runner-images/blob/ubuntu26/20261012.163/images/ubuntu/Ubuntu2604-Readme.md
+2026-10-26T02:25:24.6698572Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu26%2F20261012.163
+2026-10-26T02:25:24.6699547Z ##[endgroup]
+2026-10-26T02:25:24.6700740Z ##[group]GITHUB_TOKEN Permissions
+2026-10-26T02:25:24.6703048Z Contents: read
+2026-10-26T02:25:24.6703680Z Metadata: read
+2026-10-26T02:25:24.6704626Z ##[endgroup]
+2026-10-26T02:25:24.6706900Z Secret source: Actions
+2026-10-26T02:25:24.6707960Z Cache mode: write
+2026-10-26T02:25:24.6709054Z Prepare workflow directory
+2026-10-26T02:25:24.7063548Z Prepare all required actions
+2026-10-26T02:25:24.7114354Z Getting action download info
+2026-10-26T02:25:25.0227358Z Download action repository 'actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+2026-10-26T02:25:25.1189208Z Download action repository 'actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1' (SHA:949feb2413d6458794dcd2491c4babbbce0c15c1)
+2026-10-26T02:25:25.3877677Z Download action repository 'actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97' (SHA:5fda3b95a4ea91299a34e894583c3862153e4b97)
+2026-10-26T02:25:25.5494169Z Complete job name: validate
+2026-10-26T02:25:25.6485597Z ##[group]Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+2026-10-26T02:25:25.6487162Z with:
+2026-10-26T02:25:25.6487905Z   fetch-depth: 0
+2026-10-26T02:25:25.6488569Z   persist-credentials: false
+2026-10-26T02:25:25.6489347Z   repository: JasonColapietro/suede-creator-skills
+2026-10-26T02:25:25.6493331Z   token: ***
+2026-10-26T02:25:25.6494194Z   ssh-strict: true
+2026-10-26T02:25:25.6494917Z   ssh-user: git
+2026-10-26T02:25:25.6495563Z   clean: true
+2026-10-26T02:25:25.6496199Z   sparse-checkout-cone-mode: true
+2026-10-26T02:25:25.6496878Z   fetch-tags: false
+2026-10-26T02:25:25.6497450Z   show-progress: true
+2026-10-26T02:25:25.6498099Z   lfs: false
+2026-10-26T02:25:25.6498698Z   submodules: false
+2026-10-26T02:25:25.6499327Z   set-safe-directory: true
+2026-10-26T02:25:25.6499992Z   allow-unsafe-pr-checkout: false
+2026-10-26T02:25:25.6501048Z ##[endgroup]
+2026-10-26T02:25:25.7568409Z Syncing repository: JasonColapietro/suede-creator-skills
+2026-10-26T02:25:25.7570932Z ##[group]Getting Git version info
+2026-10-26T02:25:25.7571927Z Working directory is '/home/runner/work/suede-creator-skills/suede-creator-skills'
+2026-10-26T02:25:25.7597452Z [command]/usr/bin/git version
+2026-10-26T02:25:25.7645355Z git version 2.55.0
+2026-10-26T02:25:25.7670227Z ##[endgroup]
+2026-10-26T02:25:25.7691560Z Temporarily overriding HOME='/home/runner/work/_temp/f03e11fc-a7f9-4efb-96a5-e3100f9333e8' before making global git config changes
+2026-10-26T02:25:25.7693298Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-26T02:25:25.7695632Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/suede-creator-skills/suede-creator-skills
+2026-10-26T02:25:25.7782450Z Deleting the contents of '/home/runner/work/suede-creator-skills/suede-creator-skills'
+2026-10-26T02:25:25.7789633Z ##[group]Determining repository object format
+2026-10-26T02:25:25.7792018Z ##[endgroup]
+2026-10-26T02:25:25.7794816Z ##[group]Initializing the repository
+2026-10-26T02:25:25.7809355Z [command]/usr/bin/git init /home/runner/work/suede-creator-skills/suede-creator-skills
+2026-10-26T02:25:25.7956434Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-26T02:25:25.7960191Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-26T02:25:25.7962446Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-26T02:25:25.7975943Z hint: call:
+2026-10-26T02:25:25.7976998Z hint:
+2026-10-26T02:25:25.7978502Z hint: 	git config --global init.defaultBranch <name>
+2026-10-26T02:25:25.7979731Z hint:
+2026-10-26T02:25:25.7981242Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-26T02:25:25.7982908Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-26T02:25:25.7984505Z hint:
+2026-10-26T02:25:25.7985791Z hint: 	git branch -m <name>
+2026-10-26T02:25:25.7986960Z hint:
+2026-10-26T02:25:25.7988566Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-26T02:25:25.7990556Z Initialized empty Git repository in /home/runner/work/suede-creator-skills/suede-creator-skills/.git/
+2026-10-26T02:25:25.7994534Z [command]/usr/bin/git remote add origin https://github.com/JasonColapietro/suede-creator-skills
+2026-10-26T02:25:25.8116953Z ##[endgroup]
+2026-10-26T02:25:25.8119126Z ##[group]Disabling automatic garbage collection
+2026-10-26T02:25:25.8121099Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-26T02:25:25.8127627Z ##[endgroup]
+2026-10-26T02:25:25.8129868Z ##[group]Setting up auth
+2026-10-26T02:25:25.8132022Z Removing SSH command configuration
+2026-10-26T02:25:25.8138398Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-26T02:25:25.8187751Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-26T02:25:25.8658321Z Removing HTTP extra header
+2026-10-26T02:25:25.8663488Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-26T02:25:25.8698187Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-26T02:25:25.9014808Z Removing includeIf entries pointing to credentials config files
+2026-10-26T02:25:25.9088859Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-26T02:25:25.9092162Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-26T02:25:25.9353457Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-229e8892-5c52-42cf-9faa-c390bac89041.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-26T02:25:25.9397394Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/suede-creator-skills/suede-creator-skills/.git.path /home/runner/work/_temp/git-credentials-229e8892-5c52-42cf-9faa-c390bac89041.config
+2026-10-26T02:25:25.9430990Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/suede-creator-skills/suede-creator-skills/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-229e8892-5c52-42cf-9faa-c390bac89041.config
+2026-10-26T02:25:25.9466768Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-229e8892-5c52-42cf-9faa-c390bac89041.config
+2026-10-26T02:25:25.9500100Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-229e8892-5c52-42cf-9faa-c390bac89041.config
+2026-10-26T02:25:25.9532994Z ##[endgroup]
+2026-10-26T02:25:25.9533767Z ##[group]Fetching the repository
+2026-10-26T02:25:25.9540847Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules origin +refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/* +895b4a9a7918436b9a0fc41152a717d360be6c29:refs/remotes/pull/282/merge
+2026-10-26T02:25:35.5997560Z From https://github.com/JasonColapietro/suede-creator-skills
+2026-10-26T02:25:35.5999397Z  * [new branch]          brand/suede-ai-skills-readme-20261025    -> origin/brand/suede-ai-skills-readme-20261025
+2026-10-26T02:25:35.6000943Z  * [new branch]          claude/sharp-edison-vzoyws               -> origin/claude/sharp-edison-vzoyws
+2026-10-26T02:25:35.6002815Z  * [new branch]          codex/awesome-production-verification-20261019 -> origin/codex/awesome-production-verification-20261019
+2026-10-26T02:25:35.6005187Z  * [new branch]          codex/directory-coverage                 -> origin/codex/directory-coverage
+2026-10-26T02:25:35.6007744Z  * [new branch]          codex/directory-production-verification-20261019 -> origin/codex/directory-production-verification-20261019
+2026-10-26T02:25:35.6010757Z  * [new branch]          estate-standards-20260815                -> origin/estate-standards-20260815
+2026-10-26T02:25:35.6013143Z  * [new branch]          feat/mcp-registry-publish                -> origin/feat/mcp-registry-publish
+2026-10-26T02:25:35.6015943Z  * [new branch]          fix/extra-caffeine-ingestion             -> origin/fix/extra-caffeine-ingestion
+2026-10-26T02:25:35.6018120Z  * [new branch]          fix/graph-flo-xr-source-membership-normalization -> origin/fix/graph-flo-xr-source-membership-normalization
+2026-10-26T02:25:35.6019731Z  * [new branch]          fix/license-evidence                     -> origin/fix/license-evidence
+2026-10-26T02:25:35.6021048Z  * [new branch]          fix/package-completeness                 -> origin/fix/package-completeness
+2026-10-26T02:25:35.6022444Z  * [new branch]          fix/security-scan-evidence               -> origin/fix/security-scan-evidence
+2026-10-26T02:25:35.6024592Z  * [new branch]          fix/standalone-report-hashes             -> origin/fix/standalone-report-hashes
+2026-10-26T02:25:35.6026198Z  * [new branch]          improve/first-party-quality              -> origin/improve/first-party-quality
+2026-10-26T02:25:35.6027384Z  * [new branch]          main                                     -> origin/main
+2026-10-26T02:25:35.6028521Z  * [new branch]          opsibyte-intake-rebuild                  -> origin/opsibyte-intake-rebuild
+2026-10-26T02:25:35.6029787Z  * [new branch]          positioning-cleanup                      -> origin/positioning-cleanup
+2026-10-26T02:25:35.6031177Z  * [new branch]          refresh/agent-skills-directory-2026-10-16 -> origin/refresh/agent-skills-directory-2026-10-16
+2026-10-26T02:25:35.6032899Z  * [new branch]          skills/capability-refresh-2026-10        -> origin/skills/capability-refresh-2026-10
+2026-10-26T02:25:35.6034681Z  * [new branch]          suede-thought-graph-rename               -> origin/suede-thought-graph-rename
+2026-10-26T02:25:35.6036141Z  * [new branch]          sync/20261007-creator-copy-bank-guard    -> origin/sync/20261007-creator-copy-bank-guard
+2026-10-26T02:25:35.6037553Z  * [new branch]          sync/20261007-creator-mcp-version        -> origin/sync/20261007-creator-mcp-version
+2026-10-26T02:25:35.6039095Z  * [new branch]          verify/first-party-quality-c91ba9c2      -> origin/verify/first-party-quality-c91ba9c2
+2026-10-26T02:25:35.6041036Z  * [new tag]             pypi-v0.19.3                             -> pypi-v0.19.3
+2026-10-26T02:25:35.6042019Z  * [new tag]             v0.10.0                                  -> v0.10.0
+2026-10-26T02:25:35.6042969Z  * [new tag]             v0.19.3                                  -> v0.19.3
+2026-10-26T02:25:35.6044215Z  * [new tag]             v0.9.2                                   -> v0.9.2
+2026-10-26T02:25:35.6045322Z  * [new ref]             895b4a9a7918436b9a0fc41152a717d360be6c29 -> pull/282/merge
+2026-10-26T02:25:35.6047807Z ##[endgroup]
+2026-10-26T02:25:35.6048667Z ##[group]Determining the checkout info
+2026-10-26T02:25:35.6049554Z ##[endgroup]
+2026-10-26T02:25:35.6050153Z [command]/usr/bin/git sparse-checkout disable
+2026-10-26T02:25:35.6084310Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-26T02:25:35.6120454Z ##[group]Checking out the ref
+2026-10-26T02:25:35.6124198Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/282/merge
+2026-10-26T02:25:36.4986629Z Note: switching to 'refs/remotes/pull/282/merge'.
+2026-10-26T02:25:36.4988202Z 
+2026-10-26T02:25:36.4989232Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-10-26T02:25:36.4991563Z changes and commit them, and you can discard any commits you make in this
+2026-10-26T02:25:36.4994063Z state without impacting any branches by switching back to a branch.
+2026-10-26T02:25:36.4995404Z 
+2026-10-26T02:25:36.4996329Z If you want to create a new branch to retain commits you create, you may
+2026-10-26T02:25:36.4998561Z do so (now or later) by using -c with the switch command. Example:
+2026-10-26T02:25:36.4999790Z 
+2026-10-26T02:25:36.5000418Z   git switch -c <new-branch-name>
+2026-10-26T02:25:36.5001331Z 
+2026-10-26T02:25:36.5001935Z Or undo this operation with:
+2026-10-26T02:25:36.5002772Z 
+2026-10-26T02:25:36.5003302Z   git switch -
+2026-10-26T02:25:36.5004190Z 
+2026-10-26T02:25:36.5005365Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-10-26T02:25:36.5006984Z 
+2026-10-26T02:25:36.5008942Z HEAD is now at 895b4a9a7 Merge 31ce0572eb01d812d392caae0de262791cbcc86a into e937518a31c6a49488f72e47bb9895ce3349db39
+2026-10-26T02:25:36.5037907Z ##[endgroup]
+2026-10-26T02:25:36.5094427Z [command]/usr/bin/git log -1 --format=%H
+2026-10-26T02:25:36.5123452Z 895b4a9a7918436b9a0fc41152a717d360be6c29
+2026-10-26T02:25:36.5134532Z ##[group]Removing auth
+2026-10-26T02:25:36.5135653Z Removing SSH command configuration
+2026-10-26T02:25:36.5138635Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-26T02:25:36.5174298Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-26T02:25:36.5492517Z Removing HTTP extra header
+2026-10-26T02:25:36.5496484Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-26T02:25:36.5535600Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-26T02:25:36.5840776Z Removing includeIf entries pointing to credentials config files
+2026-10-26T02:25:36.5844550Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-26T02:25:36.5871681Z includeif.gitdir:/home/runner/work/suede-creator-skills/suede-creator-skills/.git.path
+2026-10-26T02:25:36.5877253Z includeif.gitdir:/home/runner/work/suede-creator-skills/suede-creator-skills/.git/worktrees/*.path
+2026-10-26T02:25:36.5881521Z includeif.gitdir:/github/workspace/.git.path
+2026-10-26T02:25:36.5884692Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-10-26T02:25:36.5891916Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/suede-creator-skills/suede-creator-skills/.git.path
+2026-10-26T02:25:36.5909067Z /home/runner/work/_temp/git-credentials-229e8892-5c52-42cf-9faa-c390bac89041.config
+2026-10-26T02:25:36.5928553Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/suede-creator-skills/suede-creator-skills/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-229e8892\-5c52\-42cf\-9faa\-c390bac89041\.config
+2026-10-26T02:25:36.5963239Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/suede-creator-skills/suede-creator-skills/.git/worktrees/*.path
+2026-10-26T02:25:36.6015420Z /home/runner/work/_temp/git-credentials-229e8892-5c52-42cf-9faa-c390bac89041.config
+2026-10-26T02:25:36.6025368Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/suede-creator-skills/suede-creator-skills/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-229e8892\-5c52\-42cf\-9faa\-c390bac89041\.config
+2026-10-26T02:25:36.6060972Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+2026-10-26T02:25:36.6085852Z /github/runner_temp/git-credentials-229e8892-5c52-42cf-9faa-c390bac89041.config
+2026-10-26T02:25:36.6095520Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-229e8892\-5c52\-42cf\-9faa\-c390bac89041\.config
+2026-10-26T02:25:36.6131865Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-10-26T02:25:36.6157560Z /github/runner_temp/git-credentials-229e8892-5c52-42cf-9faa-c390bac89041.config
+2026-10-26T02:25:36.6170135Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-229e8892\-5c52\-42cf\-9faa\-c390bac89041\.config
+2026-10-26T02:25:36.6207263Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-26T02:25:36.6519095Z Removing credentials config '/home/runner/work/_temp/git-credentials-229e8892-5c52-42cf-9faa-c390bac89041.config'
+2026-10-26T02:25:36.6526069Z ##[endgroup]
+2026-10-26T02:25:36.6937759Z ##[group]Run actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1
+2026-10-26T02:25:36.6939881Z with:
+2026-10-26T02:25:36.6940912Z   node-version: 22
+2026-10-26T02:25:36.6942033Z   cache: npm
+2026-10-26T02:25:36.6943160Z   package-manager-cache: false
+2026-10-26T02:25:36.6944712Z   check-latest: false
+2026-10-26T02:25:36.6957912Z   token: ***
+2026-10-26T02:25:36.6959010Z ##[endgroup]
+2026-10-26T02:25:36.8295394Z Found in cache @ /opt/hostedtoolcache/node/22.23.3/x64
+2026-10-26T02:25:36.9202021Z ##[group]Environment details
+2026-10-26T02:25:37.2684528Z node: v22.23.3
+2026-10-26T02:25:37.2684968Z npm: 10.9.9
+2026-10-26T02:25:37.2685327Z yarn: 1.22.22
+2026-10-26T02:25:37.2686599Z ##[endgroup]
+2026-10-26T02:25:37.2708524Z [command]/opt/hostedtoolcache/node/22.23.3/x64/bin/npm config get cache
+2026-10-26T02:25:37.3889314Z /home/runner/.npm
+2026-10-26T02:25:37.6409466Z Cache hit for: node-cache-Linux-x64-npm-8f7d4111cc6fa14908f5b0075fe961f4d0bfb71b6e4d97e0e0c9d998fd3177a5
+2026-10-26T02:25:38.5844840Z Received 431517 of 431517 (100.0%), 0.7 MBs/sec
+2026-10-26T02:25:38.5846235Z Cache Size: ~0 MB (431517 B)
+2026-10-26T02:25:38.5875466Z [command]/usr/bin/tar -xf /home/runner/work/_temp/4a668053-733f-48ec-9010-de11ff0caea6/cache.tzst -P -C /home/runner/work/suede-creator-skills/suede-creator-skills --use-compress-program unzstd
+2026-10-26T02:25:38.5965182Z Cache restored successfully
+2026-10-26T02:25:38.5971029Z Cache restored from key: node-cache-Linux-x64-npm-8f7d4111cc6fa14908f5b0075fe961f4d0bfb71b6e4d97e0e0c9d998fd3177a5
+2026-10-26T02:25:38.6163333Z ##[group]Run actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+2026-10-26T02:25:38.6163753Z with:
+2026-10-26T02:25:38.6164288Z   python-version: 3.12
+2026-10-26T02:25:38.6164534Z   check-latest: false
+2026-10-26T02:25:38.6166931Z   token: ***
+2026-10-26T02:25:38.6167158Z   update-environment: true
+2026-10-26T02:25:38.6167426Z   allow-prereleases: false
+2026-10-26T02:25:38.6167670Z   freethreaded: false
+2026-10-26T02:25:38.6167897Z ##[endgroup]
+2026-10-26T02:25:38.7390657Z ##[group]Installed versions
+2026-10-26T02:25:38.7487471Z Successfully set up CPython (3.12.15)
+2026-10-26T02:25:38.7488154Z ##[endgroup]
+2026-10-26T02:25:38.7663591Z ##[group]Run python3 -m unittest discover -s tests -p 'test_public_copy.py' -v
+2026-10-26T02:25:38.7664883Z [36;1mpython3 -m unittest discover -s tests -p 'test_public_copy.py' -v[0m
+2026-10-26T02:25:38.7897402Z shell: /usr/bin/bash -e {0}
+2026-10-26T02:25:38.7897717Z env:
+2026-10-26T02:25:38.7898029Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-26T02:25:38.7898498Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-26T02:25:38.7898952Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-26T02:25:38.7899348Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-26T02:25:38.7899743Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-26T02:25:38.7900140Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-26T02:25:38.7900496Z ##[endgroup]
+2026-10-26T02:25:38.9528637Z test_copy_buttons_match_visible_posts (test_public_copy.PublicCopyTests.test_copy_buttons_match_visible_posts) ... ok
+2026-10-26T02:25:38.9597990Z test_evidence_boundaries_remain_visible (test_public_copy.PublicCopyTests.test_evidence_boundaries_remain_visible) ... ok
+2026-10-26T02:25:38.9676892Z test_known_self_undermining_copy_stays_out_of_copy_bank (test_public_copy.PublicCopyTests.test_known_self_undermining_copy_stays_out_of_copy_bank) ... ok
+2026-10-26T02:25:38.9716361Z test_revised_ctas_stay_aligned_with_canonical_copy (test_public_copy.PublicCopyTests.test_revised_ctas_stay_aligned_with_canonical_copy) ... ok
+2026-10-26T02:25:38.9768745Z test_shared_blocks_match_canonical_copy (test_public_copy.PublicCopyTests.test_shared_blocks_match_canonical_copy) ... ok
+2026-10-26T02:25:38.9769575Z 
+2026-10-26T02:25:38.9769955Z ----------------------------------------------------------------------
+2026-10-26T02:25:38.9770490Z Ran 5 tests in 0.028s
+2026-10-26T02:25:38.9770689Z 
+2026-10-26T02:25:38.9770818Z OK
+2026-10-26T02:25:38.9907535Z ##[group]Run npm ci --ignore-scripts
+2026-10-26T02:25:38.9907921Z [36;1mnpm ci --ignore-scripts[0m
+2026-10-26T02:25:38.9970584Z shell: /usr/bin/bash -e {0}
+2026-10-26T02:25:38.9970855Z env:
+2026-10-26T02:25:38.9971153Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-26T02:25:38.9971627Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-26T02:25:38.9972071Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-26T02:25:38.9972464Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-26T02:25:38.9972892Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-26T02:25:38.9973304Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-26T02:25:38.9973645Z ##[endgroup]
+2026-10-26T02:25:39.7278461Z 
+2026-10-26T02:25:39.7279276Z added 2 packages, and audited 3 packages in 662ms
+2026-10-26T02:25:39.7279618Z 
+2026-10-26T02:25:39.7279845Z 2 packages are looking for funding
+2026-10-26T02:25:39.7280265Z   run `npm fund` for details
+2026-10-26T02:25:39.7287017Z 
+2026-10-26T02:25:39.7287310Z found 0 vulnerabilities
+2026-10-26T02:25:39.7483087Z ##[group]Run npm run ci
+2026-10-26T02:25:39.7483368Z [36;1mnpm run ci[0m
+2026-10-26T02:25:39.7548247Z shell: /usr/bin/bash -e {0}
+2026-10-26T02:25:39.7548514Z env:
+2026-10-26T02:25:39.7548823Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-26T02:25:39.7549293Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-26T02:25:39.7549748Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-26T02:25:39.7550162Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-26T02:25:39.7550560Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-26T02:25:39.7550974Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-26T02:25:39.7551313Z ##[endgroup]
+2026-10-26T02:25:39.8581663Z 
+2026-10-26T02:25:39.8582521Z > suede-creator-skills@0.19.3 ci
+2026-10-26T02:25:39.8584689Z > node --check mcp/suede-skills-mcp.mjs && node --check scripts/validate-skill-pack.mjs && npm run test && npm run test:indexnow && node scripts/build-mcp-package.mjs --check && node scripts/build-pypi-package.mjs --check
+2026-10-26T02:25:39.8585974Z 
+2026-10-26T02:25:40.0133073Z 
+2026-10-26T02:25:40.0134187Z > suede-creator-skills@0.19.3 test
+2026-10-26T02:25:40.0138234Z > npm run validate && npm run test:number-words && npm run test:meta-keywords && npm run test:validator-runtime && npm run test:mcp && npm run test:triggers && npm run test:hermes-tap && npm run test:listings && npm run test:ship-cost && npm run test:contributions && npm run test:directory && npm run test:related && npm run test:awesome && npm run test:python && npm run test:seo-offline
+2026-10-26T02:25:40.0140690Z 
+2026-10-26T02:25:40.1108581Z 
+2026-10-26T02:25:40.1109442Z > suede-creator-skills@0.19.3 validate
+2026-10-26T02:25:40.1114652Z > node scripts/validate-skill-pack.mjs --strict && node scripts/validate-trigger-routing.mjs && node scripts/build-book-site.mjs --check && node scripts/build-book.mjs --check && node scripts/build-skill-cards.mjs --check && node scripts/build-skills-sh-json.mjs --check && node scripts/build-directory.mjs --check && node scripts/build-awesome-directory.mjs --check && node scripts/build-related-skills.mjs --check && node scripts/build-retired-skill-pages.mjs --check && node scripts/build-listings.mjs --check
+2026-10-26T02:25:40.1118147Z 
+2026-10-26T02:25:58.9764246Z Validated 64 skills against 64 catalog entries.
+2026-10-26T02:25:59.0647373Z Trigger routing contract OK: 17 groups, 76 cases
+2026-10-26T02:25:59.1331037Z docs/book is current — 18 pages, 29,817 words.
+2026-10-26T02:25:59.1863854Z book/BOOK.md is current — 17 files, 29,833 words
+2026-10-26T02:25:59.2471149Z skill cards current — 64 cards + index
+2026-10-26T02:25:59.2793632Z skills.sh.json is current — 14 groupings covering 64 skills.
+2026-10-26T02:26:01.4185737Z docs/directory is out of date (4 files). Run: node scripts/build-directory.mjs
+2026-10-26T02:26:01.4187332Z   stale docs/directory/anthropics/skills/algorithmic-art/index.html
+2026-10-26T02:26:01.4188718Z   stale docs/directory/anthropics/skills/brand-guidelines/index.html
+2026-10-26T02:26:01.4189919Z   stale docs/directory/anthropics/skills/algorithmic-art/report.json
+2026-10-26T02:26:01.4190995Z   stale docs/directory/anthropics/skills/brand-guidelines/report.json
+2026-10-26T02:26:01.4830104Z ##[error]Process completed with exit code 1.
+2026-10-26T02:26:01.4983355Z Post job cleanup.
+2026-10-26T02:26:01.5885630Z [command]/usr/bin/git version
+2026-10-26T02:26:01.5938749Z git version 2.55.0
+2026-10-26T02:26:01.5982388Z Temporarily overriding HOME='/home/runner/work/_temp/1120945b-a816-4bf4-89e2-4cd7b2442dbf' before making global git config changes
+2026-10-26T02:26:01.5984359Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-26T02:26:01.5991885Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/suede-creator-skills/suede-creator-skills
+2026-10-26T02:26:01.6037487Z Removing SSH command configuration
+2026-10-26T02:26:01.6045038Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-26T02:26:01.6090914Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-26T02:26:01.6467913Z Removing HTTP extra header
+2026-10-26T02:26:01.6475514Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-26T02:26:01.6526463Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-26T02:26:01.6883429Z Removing includeIf entries pointing to credentials config files
+2026-10-26T02:26:01.6895230Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-26T02:26:01.6941304Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-26T02:26:01.7460850Z Cleaning up orphan processes
+

@@ -1,0 +1,229 @@
+{
+  "schema_version": 1,
+  "source": {
+    "repository": "JasonColapietro/suede-creator-skills",
+    "path": "skills/suede-public-relations",
+    "revision": "1c039ab9ed51bc67bcbdb1d2ed690a5151ab6abf"
+  },
+  "scanner": {
+    "name": "cisco-ai-skill-scanner",
+    "version": "2.3.1",
+    "adapter_version": 2,
+    "analyzers": [
+      "static_analyzer",
+      "bytecode",
+      "pipeline",
+      "correlation",
+      "behavioral_analyzer"
+    ],
+    "policy": "strict",
+    "cel_mode": "shadow",
+    "network": "disabled",
+    "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+  },
+  "started_at": "2026-10-26T02:26:37.580271+00:00",
+  "state": "completed",
+  "analysis": {
+    "skill_name": "suede-public-relations",
+    "skill_path": "/source/target-049",
+    "is_safe": true,
+    "max_severity": "MEDIUM",
+    "findings_count": 2,
+    "findings": [
+      {
+        "id": "MANIFEST_MISSING_LICENSE_c5ae9be793",
+        "rule_id": "MANIFEST_MISSING_LICENSE",
+        "category": "policy_violation",
+        "severity": "INFO",
+        "title": "Skill does not specify a license",
+        "description": "Skill manifest does not include a 'license' field. Specifying a license helps users understand usage terms.",
+        "file_path": "SKILL.md",
+        "line_number": null,
+        "snippet": null,
+        "remediation": "Add 'license' field to SKILL.md frontmatter (e.g., MIT, Apache-2.0)",
+        "analyzer": "static",
+        "metadata": {
+          "aitech": null,
+          "aitech_name": null,
+          "aisubtech": null,
+          "aisubtech_name": null,
+          "aitech_mappings": [],
+          "aisubtech_mappings": [],
+          "framework_mappings": [],
+          "taxonomy_status": "not_applicable",
+          "taxonomy_source": "rule",
+          "scan_policy_name": "strict",
+          "scan_policy_version": "1.0",
+          "scan_policy_preset_base": "strict",
+          "scan_policy_fingerprint_sha256": "7f4560dea6f3f1c11067735bab3759c4daedfcd6d67f46b4e40899507a2c2ea9"
+        }
+      },
+      {
+        "id": "BASH_TAINT_951598c802",
+        "rule_id": "BEHAVIOR_BASH_TAINT_FLOW",
+        "category": "data_exfiltration",
+        "severity": "MEDIUM",
+        "title": "Bash: tainted data flows to dangerous sink",
+        "description": "Variable $SINCE (line 1) flows to `curl` at line 2.",
+        "file_path": "references/newsjacking.md",
+        "line_number": 173,
+        "snippet": "curl -s \"https://hn.algolia.com/api/v1/search_by_date?query=QUERY&tags=story&numericFilters=created_at_i>${SINCE}\" \\",
+        "remediation": "Review the data flow from source to sink. Avoid sending sensitive or untrusted data to network or execution commands.",
+        "analyzer": "behavioral",
+        "metadata": {
+          "source_var": "SINCE",
+          "source_line": 1,
+          "sink_command": "curl",
+          "taints": [
+            "COMMAND_OUTPUT"
+          ],
+          "behavior_category": "command_injection",
+          "from_code_block": true,
+          "block_language": "bash",
+          "aitech": "AITech-8.2",
+          "aitech_name": "Data Exfiltration / Exposure",
+          "aisubtech": "AISubtech-8.2.3",
+          "aisubtech_name": "Data Exfiltration via Agent Tooling",
+          "aitech_mappings": [
+            "OWASP: LLM02:2026: Sensitive Information Disclosure",
+            "OWASP: ASI09: Human-Agent Trust Exploitation",
+            "MITRE ATLAS: AML.T0024.000: Exfiltration via AI Inference API: Infer Training Data Membership",
+            "MITRE ATLAS: AML.T0035: AI Artifact Collection",
+            "MITRE ATLAS: AML.T0037: Data From Local System",
+            "MITRE ATLAS: AML.T0057: LLM Data Leakage",
+            "NIST AML: NISTAML.037: Training Data Attacks"
+          ],
+          "aisubtech_mappings": [
+            "OWASP: LLM02:2026: Sensitive Information Disclosure",
+            "OWASP: ASI02: Tool Misuse & Exploitation",
+            "OWASP: ASI09: Human-Agent Trust Exploitation",
+            "MITRE ATLAS: AML.T0086: Exfiltration via AI Agent Tool Invocation",
+            "NIST AML: N/A"
+          ],
+          "framework_mappings": [
+            "OWASP: LLM02:2026: Sensitive Information Disclosure",
+            "OWASP: ASI02: Tool Misuse & Exploitation",
+            "OWASP: ASI09: Human-Agent Trust Exploitation",
+            "MITRE ATLAS: AML.T0086: Exfiltration via AI Agent Tool Invocation",
+            "NIST AML: N/A"
+          ],
+          "taxonomy_status": "mapped",
+          "taxonomy_source": "rule",
+          "scan_policy_name": "strict",
+          "scan_policy_version": "1.0",
+          "scan_policy_preset_base": "strict",
+          "scan_policy_fingerprint_sha256": "7f4560dea6f3f1c11067735bab3759c4daedfcd6d67f46b4e40899507a2c2ea9"
+        }
+      }
+    ],
+    "scan_duration_seconds": 0.1434183120727539,
+    "duration_ms": 143,
+    "analyzers_used": [
+      "static_analyzer",
+      "bytecode",
+      "pipeline",
+      "correlation",
+      "behavioral_analyzer"
+    ],
+    "timestamp": "2026-10-26T02:26:37.728862+00:00",
+    "scan_metadata": {
+      "policy_name": "strict",
+      "policy_version": "1.0",
+      "policy_preset_base": "strict",
+      "policy_fingerprint_sha256": "7f4560dea6f3f1c11067735bab3759c4daedfcd6d67f46b4e40899507a2c2ea9",
+      "cel": {
+        "mode": "shadow",
+        "runtime": "cel-go",
+        "runtime_version": "v0.32.0;helper=2.3.1",
+        "fact_schema": "v1",
+        "expression_set_hash": "f26459b8f4a46a974d7ab0aaae34127b5b6a40d693e266e12fca03a69a6d26aa",
+        "evaluated": 0,
+        "retained": 2,
+        "would_suppress": 0,
+        "suppressed": 0,
+        "fallbacks": 0,
+        "projection_incomplete": 0,
+        "elapsed_ms": 0.0,
+        "projection_ms": 0.0,
+        "evaluation_ms": 0.0,
+        "errors": [],
+        "per_rule": {},
+        "suppressed_candidates": []
+      },
+      "rule_contract": {
+        "status": "passed",
+        "schema_version": 2,
+        "checked": 2,
+        "invalid_findings": 0,
+        "errors": []
+      },
+      "taxonomy": {
+        "source": "builtin",
+        "version": "2.0.0",
+        "name": "Cisco AI Security and Safety Taxonomy",
+        "revision": "655a343ac943a51b6f61f86e47156e7752c15dc6",
+        "snapshot_sha256": "413e8ce9081e6d91b78aaa0d0b1c06cdc15d0406ad319e23e9f9f4f80735c441",
+        "findings": {
+          "mapped": 1,
+          "not_applicable": 1,
+          "unmapped": 0
+        }
+      }
+    },
+    "analyzers_failed": []
+  },
+  "diagnostics": [],
+  "coverage": {
+    "complete": true,
+    "files": [
+      {
+        "path": "CARD.md",
+        "size": 4432,
+        "sha256": "604159c27955bf717c11e2668e1e7c64771aa23049d22ffc33a2873560719183"
+      },
+      {
+        "path": "SKILL.md",
+        "size": 12090,
+        "sha256": "2bc5759d85ffb24e80626ff311efe57a004c83d866b94a85c9ed3851d82405cc"
+      },
+      {
+        "path": "agents/openai.yaml",
+        "size": 593,
+        "sha256": "269db914ace0c9ee04896f3ab668d405ebd9aa721ea12406a99f3f45affffc5c"
+      },
+      {
+        "path": "evals/evals.json",
+        "size": 2864,
+        "sha256": "de668488709c6de8b6c19e5344f21a69ccb8fdbaf08ee5ae044b8c83a2881119"
+      },
+      {
+        "path": "references/journalist-pitching.md",
+        "size": 12863,
+        "sha256": "9ce6e2860c4d13610d9263603a11c5808daa5fdf99144ff00b0405ff74bd76e5"
+      },
+      {
+        "path": "references/media-outlets.md",
+        "size": 6499,
+        "sha256": "6eb8235ab8d585fe3850d3a7b03e329671597f67ca0202e064b46f1554f9837f"
+      },
+      {
+        "path": "references/newsjacking.md",
+        "size": 9547,
+        "sha256": "bb0f885460721272cce2560cecef33e2c9e38ef3165013e6c9629e3bb8aca64f"
+      },
+      {
+        "path": "references/press-platforms.md",
+        "size": 7495,
+        "sha256": "8a8da7b6a3e922ca9ecb7ab675235d17df9858b677a4cb717b8beeaeceeaa94c"
+      },
+      {
+        "path": "references/worked-handoff.md",
+        "size": 1624,
+        "sha256": "8d6b32eb8826e5e74070b9f01372af242027ba68be945946cac65de78578258e"
+      }
+    ],
+    "skipped": []
+  },
+  "completed_at": "2026-10-26T02:26:37.729783+00:00",
+  "runtime_image": "sha256:8693e353f34549ea0552fc5638e8c46303a8e349bbae7616312ef40a669d8aea"
+}

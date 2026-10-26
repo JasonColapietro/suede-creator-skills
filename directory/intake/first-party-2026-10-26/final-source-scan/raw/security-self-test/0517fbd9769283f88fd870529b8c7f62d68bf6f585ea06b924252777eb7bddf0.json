@@ -1,0 +1,237 @@
+{
+  "schema_version": 1,
+  "source": {
+    "repository": "suede/self-test",
+    "path": "clean",
+    "revision": "0000000000000000000000000000000000000000"
+  },
+  "scanner": {
+    "name": "cisco-ai-skill-scanner",
+    "version": "2.3.1",
+    "adapter_version": 2,
+    "analyzers": [
+      "static_analyzer",
+      "bytecode",
+      "pipeline",
+      "correlation",
+      "behavioral_analyzer"
+    ],
+    "policy": "strict",
+    "cel_mode": "shadow",
+    "network": "disabled",
+    "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+  },
+  "started_at": "2026-10-26T02:26:19.413036+00:00",
+  "state": "completed",
+  "analysis": {
+    "skill_name": "clean-example",
+    "skill_path": "/source/target-000",
+    "is_safe": true,
+    "max_severity": "SAFE",
+    "findings_count": 0,
+    "findings": [],
+    "scan_duration_seconds": 0.3187129497528076,
+    "duration_ms": 318,
+    "analyzers_used": [
+      "static_analyzer",
+      "bytecode",
+      "pipeline",
+      "correlation",
+      "behavioral_analyzer"
+    ],
+    "timestamp": "2026-10-26T02:26:19.734286+00:00",
+    "scan_metadata": {
+      "policy_name": "strict",
+      "policy_version": "1.0",
+      "policy_preset_base": "strict",
+      "policy_fingerprint_sha256": "7f4560dea6f3f1c11067735bab3759c4daedfcd6d67f46b4e40899507a2c2ea9",
+      "cel": {
+        "mode": "shadow",
+        "runtime": "cel-go",
+        "runtime_version": "v0.32.0;helper=2.3.1",
+        "fact_schema": "v1",
+        "expression_set_hash": "f26459b8f4a46a974d7ab0aaae34127b5b6a40d693e266e12fca03a69a6d26aa",
+        "evaluated": 0,
+        "retained": 0,
+        "would_suppress": 0,
+        "suppressed": 0,
+        "fallbacks": 0,
+        "projection_incomplete": 0,
+        "elapsed_ms": 0.0,
+        "projection_ms": 0.0,
+        "evaluation_ms": 0.0,
+        "errors": [],
+        "per_rule": {},
+        "suppressed_candidates": []
+      },
+      "rule_contract": {
+        "status": "passed",
+        "schema_version": 2,
+        "checked": 0,
+        "invalid_findings": 0,
+        "errors": []
+      },
+      "taxonomy": {
+        "source": "builtin",
+        "version": "2.0.0",
+        "name": "Cisco AI Security and Safety Taxonomy",
+        "revision": "655a343ac943a51b6f61f86e47156e7752c15dc6",
+        "snapshot_sha256": "413e8ce9081e6d91b78aaa0d0b1c06cdc15d0406ad319e23e9f9f4f80735c441",
+        "findings": {
+          "mapped": 0,
+          "not_applicable": 0,
+          "unmapped": 0
+        }
+      }
+    },
+    "analyzers_failed": []
+  },
+  "diagnostics": [
+    {
+      "logger": "python",
+      "level": "WARNING",
+      "category": "PyparsingDeprecationWarning",
+      "blocking": false,
+      "message": "'enablePackrat' deprecated - use 'enable_packrat'"
+    },
+    {
+      "logger": "python",
+      "level": "WARNING",
+      "category": "PyparsingDeprecationWarning",
+      "blocking": false,
+      "message": "'setParseAction' deprecated - use 'set_parse_action'"
+    },
+    {
+      "logger": "python",
+      "level": "WARNING",
+      "category": "PyparsingDeprecationWarning",
+      "blocking": false,
+      "message": "'setParseAction' deprecated - use 'set_parse_action'"
+    },
+    {
+      "logger": "python",
+      "level": "WARNING",
+      "category": "PyparsingDeprecationWarning",
+      "blocking": false,
+      "message": "'setParseAction' deprecated - use 'set_parse_action'"
+    },
+    {
+      "logger": "python",
+      "level": "WARNING",
+      "category": "PyparsingDeprecationWarning",
+      "blocking": false,
+      "message": "'escQuote' argument is deprecated, use 'esc_quote'"
+    },
+    {
+      "logger": "python",
+      "level": "WARNING",
+      "category": "PyparsingDeprecationWarning",
+      "blocking": false,
+      "message": "'setParseAction' deprecated - use 'set_parse_action'"
+    },
+    {
+      "logger": "python",
+      "level": "WARNING",
+      "category": "PyparsingDeprecationWarning",
+      "blocking": false,
+      "message": "'setParseAction' deprecated - use 'set_parse_action'"
+    },
+    {
+      "logger": "python",
+      "level": "WARNING",
+      "category": "PyparsingDeprecationWarning",
+      "blocking": false,
+      "message": "'setParseAction' deprecated - use 'set_parse_action'"
+    },
+    {
+      "logger": "python",
+      "level": "WARNING",
+      "category": "PyparsingDeprecationWarning",
+      "blocking": false,
+      "message": "'setParseAction' deprecated - use 'set_parse_action'"
+    },
+    {
+      "logger": "python",
+      "level": "WARNING",
+      "category": "PyparsingDeprecationWarning",
+      "blocking": false,
+      "message": "'setParseAction' deprecated - use 'set_parse_action'"
+    },
+    {
+      "logger": "python",
+      "level": "WARNING",
+      "category": "PyparsingDeprecationWarning",
+      "blocking": false,
+      "message": "'setParseAction' deprecated - use 'set_parse_action'"
+    },
+    {
+      "logger": "python",
+      "level": "WARNING",
+      "category": "PyparsingDeprecationWarning",
+      "blocking": false,
+      "message": "'initChars' argument is deprecated, use 'init_chars'"
+    },
+    {
+      "logger": "python",
+      "level": "WARNING",
+      "category": "PyparsingDeprecationWarning",
+      "blocking": false,
+      "message": "'bodyChars' argument is deprecated, use 'body_chars'"
+    },
+    {
+      "logger": "python",
+      "level": "WARNING",
+      "category": "PyparsingDeprecationWarning",
+      "blocking": false,
+      "message": "'setParseAction' deprecated - use 'set_parse_action'"
+    },
+    {
+      "logger": "python",
+      "level": "WARNING",
+      "category": "PyparsingDeprecationWarning",
+      "blocking": false,
+      "message": "'setParseAction' deprecated - use 'set_parse_action'"
+    },
+    {
+      "logger": "python",
+      "level": "WARNING",
+      "category": "PyparsingDeprecationWarning",
+      "blocking": false,
+      "message": "'setParseAction' deprecated - use 'set_parse_action'"
+    },
+    {
+      "logger": "python",
+      "level": "WARNING",
+      "category": "PyparsingDeprecationWarning",
+      "blocking": false,
+      "message": "'setParseAction' deprecated - use 'set_parse_action'"
+    },
+    {
+      "logger": "python",
+      "level": "WARNING",
+      "category": "PyparsingDeprecationWarning",
+      "blocking": false,
+      "message": "'infixNotation' deprecated - use 'infix_notation'"
+    },
+    {
+      "logger": "python",
+      "level": "WARNING",
+      "category": "PyparsingDeprecationWarning",
+      "blocking": false,
+      "message": "'infixNotation' deprecated - use 'infix_notation'"
+    }
+  ],
+  "coverage": {
+    "complete": true,
+    "files": [
+      {
+        "path": "SKILL.md",
+        "size": 183,
+        "sha256": "d34845d1613fcc87f08dc9b0c68c65a57b3aad4993fcbf30a0fcbdfbd5e3426c"
+      }
+    ],
+    "skipped": []
+  },
+  "completed_at": "2026-10-26T02:26:19.734548+00:00",
+  "runtime_image": "sha256:8693e353f34549ea0552fc5638e8c46303a8e349bbae7616312ef40a669d8aea"
+}
