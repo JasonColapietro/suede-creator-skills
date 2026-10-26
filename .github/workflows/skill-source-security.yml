@@ -27,7 +27,7 @@ jobs:
       - name: Acquire the immutable first-party source revision
         if: ${{ !cancelled() }}
         env:
-          SOURCE_REVISION: c91ba9c2dcbed9e54ae49626e368a6d66b071e09
+          SOURCE_REVISION: 1c039ab9ed51bc67bcbdb1d2ed690a5151ab6abf
         run: |
           git fetch --no-tags --depth=1 origin "$SOURCE_REVISION"
           test "$(git rev-parse FETCH_HEAD)" = "$SOURCE_REVISION"
@@ -35,7 +35,7 @@ jobs:
       - name: Scan every first-party skill at the immutable source revision
         if: ${{ !cancelled() }}
         env:
-          SOURCE_REVISION: c91ba9c2dcbed9e54ae49626e368a6d66b071e09
+          SOURCE_REVISION: 1c039ab9ed51bc67bcbdb1d2ed690a5151ab6abf
         run: python3 scripts/security/scan.py --revision "$SOURCE_REVISION" --output audits/security-first-party
       - name: Scan a bounded representative external batch at snapshot revisions
         if: ${{ !cancelled() }}
