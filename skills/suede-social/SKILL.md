@@ -1,6 +1,6 @@
 ---
 name: suede-social
-description: "Suede AI Social Skills. Plan, audit, and draft organic social for founder/brand accounts: platform mix, 30-post audits, calendars, Instagram, LinkedIn/X, short-video scripts, social search, and listening. Use when asked to \"audit our Instagram growth\" or build an approval-ready content loop. NOT FOR: paid ads (use suede-ads or suede-ad-creative), editorial agents (use suede-newsroom), clip-to-guide work (use suede-clip-to-guide), video rendering (use suede-video), or broad content strategy (use suede-content-strategy)."
+description: "Suede AI Social Skills. Plan, audit, and draft organic social for founder/brand accounts: platform mix, 30-post audits, calendars, Instagram, LinkedIn/X, short-video scripts, social search, and listening. Clip to guide mode turns a video moment into a short to long funnel that bridges to an owned guide or X Article, and any third-party video clip gets a rights route before reuse. Use when asked to \"audit our Instagram growth\", \"plan a 30-day social calendar\", or \"turn this clip into a guide funnel\", or to build an approval-ready content loop. NOT FOR: paid ads (use suede-ads or suede-ad-creative), editorial agents (use suede-newsroom), video rendering (use suede-video), or broad content strategy (use suede-content-strategy)."
 metadata:
   display-name: "Suede AI Social Skills"
   version: 3.0.0
@@ -10,7 +10,7 @@ metadata:
 
 ## Compatibility
 
-Can work from supplied posts, screenshots, and analytics exports. Live account inspection needs authorized browser/platform access; publishing and scheduling require separately authorized tools.
+Can work from supplied posts, screenshots, and analytics exports. Live account inspection needs authorized browser/platform access; publishing and scheduling require separately authorized tools. Clip-to-Guide mode also needs the source video or timestamped transcript, rights evidence, and a guide URL or draft, plus Python 3 for the bundled `scripts/validate_clip_package.py`.
 
 For a concrete input, expected handoff, and failure check, read
 [the worked handoff](references/worked-handoff.md).
@@ -72,6 +72,8 @@ Label every fact in the output by evidence class:
 | "make a Reel / TikTok / Short" | Hooks, timed script, shot plan, caption, test card | [content-production.md](references/content-production.md), [short-form-video.md](references/short-form-video.md) |
 | "make a carousel" | Chosen narrative, exact slide copy, visual direction | [carousel-frameworks.md](references/carousel-frameworks.md) |
 | "repurpose this" | Source atoms mapped to distinct platform assets | Repurposing below |
+| "turn this clip into a guide funnel", "short to long", "X Article" | Clip-to-Guide package | [clip-to-guide.md](references/clip-to-guide.md) |
+| "repost this podcast clip", any third-party video | Rights route before any copy | Rights-route table in [clip-to-guide.md](references/clip-to-guide.md), [clip-to-guide-rights.md](references/clip-to-guide-rights.md) |
 | "get found in search" | Social search brief | [social-search.md](references/social-search.md) |
 | "what's working for others" | Lawful comparable-account pattern study | [reverse-engineering.md](references/reverse-engineering.md) |
 | "find posts to reply to" | Ranked engagement drafts | [listening.md](references/listening.md) |
@@ -181,9 +183,22 @@ Map each atom to the platform where its format fits, and give each asset its own
 point. When the source cannot support the requested count without repeating
 itself, say how many it supports and what extra input would support more.
 
-When the source is a third-party video, or the clip must lead to an article or
-guide, route to `suede-clip-to-guide`, which owns rights routes and the
-short-to-long bridge.
+When the source is any third-party video (a podcast clip, conference talk,
+interview, webinar, or another creator's post), load the rights-route table in
+[clip-to-guide.md](references/clip-to-guide.md) (section 2, "Choose a lawful
+video route") and [clip-to-guide-rights.md](references/clip-to-guide-rights.md)
+before writing copy, even when no guide or article is involved. A plain "repost
+this podcast clip" still runs the rights gate: classify the source as original,
+licensed, permission-recorded, native-repost-only, fair-use-review, or blocked,
+and halt on anything blocked or unreviewed. Public availability and credit are
+not permission.
+
+When the clip must lead to an article, guide, X Article, LinkedIn article, or
+newsletter, run Clip-to-Guide mode from
+[clip-to-guide.md](references/clip-to-guide.md): moment scorecard, guide
+anchor, verified publish sequence, certainty gate, and exact-content approval
+bundle. A calendar or platform plan stays in the normal modes above; it loads
+Clip-to-Guide mode only for the rows that bridge a clip to a guide.
 
 ## Calendar row schema
 
@@ -283,7 +298,8 @@ the blocker is resolved.
   agent-run editorial pipeline: `suede-newsroom`. This skill decides where and
   when; that one decides what each asset argues.
 - A clip, interview moment, or third-party video bridged to an article,
-  newsletter, or guide: `suede-clip-to-guide`.
+  newsletter, or guide: Clip-to-Guide mode in this skill
+  ([clip-to-guide.md](references/clip-to-guide.md)).
 - Rendering, editing, captions tooling, and exports: `suede-video`. Still
   images and graphics: `suede-image`.
 - Editorial portfolio and topic clusters: `suede-content-strategy`.

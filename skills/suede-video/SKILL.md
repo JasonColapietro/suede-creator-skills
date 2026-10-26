@@ -1,6 +1,6 @@
 ---
 name: suede-video
-description: "Suede AI Video Skills. Plan or produce marketing video with scripts, storyboards, shot and asset lists, consent-aware AI or avatar choices, programmatic rendering, edit decisions, pacing, export specs, and video-search metadata. Use when asked to \"turn this demo into a short video\" or build a repeatable production pipeline. NOT FOR: social calendars (use suede-social), clip-to-guide bridges (use suede-clip-to-guide), paid ad concepts (use suede-ad-creative), still images (use suede-image), or unapproved publishing."
+description: "Suede AI Video Skills. Plan or produce marketing video with scripts, storyboards, shot and asset lists, consent-aware AI or avatar choices, programmatic rendering, edit decisions, pacing, export specs, and video-search metadata. Use when asked to \"turn this demo into a short video\" or build a repeatable production pipeline. NOT FOR: social calendars or clip-to-guide bridges (use suede-social), paid ad concepts (use suede-ad-creative), still images (use suede-image), or unapproved publishing."
 metadata:
   display-name: "Suede AI Video Skills"
   version: 2.2.0
@@ -360,7 +360,7 @@ meant to be found:
    fabricated one.
 
 When the video must lead viewers to a written guide, route to
-`suede-clip-to-guide`. For site-level video indexing and schema audits, route to
+`suede-social` (Clip-to-Guide mode). For site-level video indexing and schema audits, route to
 `suede-seo-audit`.
 
 ---
@@ -416,8 +416,8 @@ and do not imply the blocker was resolved or that a render occurred.
 ## Routing
 
 - Use `suede-social` to choose channel strategy, cadence, and distribution.
-- Use `suede-clip-to-guide` when a clip has to bridge to an article, newsletter,
-  or guide.
+- Use `suede-social` (Clip-to-Guide mode) when a clip has to bridge to an
+  article, newsletter, or guide.
 - Use `suede-ad-creative` for paid video ad concepts and variants.
 - Use `suede-image` for still-image generation and editing.
 - Use `suede-copy` for source-verified script and messaging polish.

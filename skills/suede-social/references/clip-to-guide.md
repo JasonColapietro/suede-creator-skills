@@ -1,14 +1,10 @@
----
-name: suede-clip-to-guide
-description: "Suede AI Clip to Guide Skills. Use when creating short-to-long content and asked to \"turn this clip into a guide funnel\": select a rights-supported moment, score fit, draft the bridge, approval bundle and measurement plan. NOT FOR: rendering (suede-video), social calendars (suede-social), full guide writing (suede-copy), paid ads (suede-ad-creative), or publication without exact-content and identity approval."
-metadata:
-  display-name: "Suede AI Clip to Guide Skills"
-  version: 1.1.0
----
+# Clip-to-Guide mode
 
-# Suede AI Clip to Guide Skills
+This is the Clip-to-Guide mode of `suede-social`. Load it when a video moment
+must bridge to a guide, X Article, LinkedIn article, newsletter, or playbook,
+and load its rights-route table for any third-party video source.
 
-Read [the worked delivery contract](references/worked-contract.md) for a concrete
+Read [the worked delivery contract](clip-to-guide-worked-contract.md) for a concrete
 input, expected artifact, failure response and validation example.
 
 ## Compatibility
@@ -97,12 +93,13 @@ writing copy; resolve platform, certainty, and approval before a live action:
 When a blocking gate fails, stop the affected action and return:
 
 ```text
-HALT, <one-line blocker>
-Options:
+HALT: <one-line blocker>
+Why it blocks: <specific missing authority or evidence>
+Resolve with:
 1. <bounded resolution>
 2. <bounded resolution>
 3. <bounded resolution, if useful>
-Waiting on: <specific evidence or approval>
+Waiting for: <specific evidence or approval>
 ```
 
 Continue only on independent draft work that does not bypass the blocker.
@@ -154,7 +151,7 @@ before asking for information already covered there.
 | `blocked` | Do not use the footage. Offer an original commentary clip, a permission request, or a source link instead. |
 
 For any source that is not original, licensed, or permission-recorded, read
-[references/third-party-video-rights.md](references/third-party-video-rights.md).
+[clip-to-guide-rights.md](clip-to-guide-rights.md).
 Do not infer fair use, ownership, or permission. Shortness, credit, a public
 source, or added commentary alone does not settle fair use. Do not remove
 watermarks, attribution, or provenance. Prefer a native repost with added
@@ -192,7 +189,7 @@ recommend an owned canonical copy. Route schema and indexing checks to
 
 If the guide does not exist, return a brief and route the full draft to
 `suede-copy` and the portfolio decision to `suede-content-strategy`. Resume this
-skill after the guide has a reviewable draft. Do not fabricate a live URL.
+mode after the guide has a reviewable draft. Do not fabricate a live URL.
 
 ### 4. Score candidate moments
 
@@ -212,7 +209,7 @@ and request a better source instead of forcing a clip.
 
 ### 5. Build the package
 
-Read [references/package-template.md](references/package-template.md) and
+Read [clip-to-guide-package-template.md](clip-to-guide-package-template.md) and
 produce:
 
 1. **Decision snapshot**: goal, audience, platform, identity, and chosen
@@ -332,7 +329,7 @@ an account mismatch, login challenge, or ambiguous composer.
 For a saved package, run:
 
 ```bash
-python3 /path/to/suede-clip-to-guide/scripts/validate_package.py path/to/clip-to-guide-package.md
+python3 /path/to/suede-social/scripts/validate_clip_package.py path/to/clip-to-guide-package.md
 ```
 
 For a live run, also read back:
@@ -391,12 +388,14 @@ Do not report causal lift from an unpaired or tiny sample.
 - Need full video editing, generation, captions, color, or exports -> use
   `suede-video`, then return here for the funnel package.
 - Need a general platform plan, calendar, account audit, listening, or
-  engagement program -> use `suede-social`.
+  engagement program -> leave this mode and run the matching `suede-social`
+  mode from SKILL.md Step 2.
 - Need the long-form guide written -> use `suede-copy`; use
   `suede-content-strategy` for pillars and portfolio priority.
 - Need paid variants -> use `suede-ad-creative`.
 - Running many packages through parallel agents (for example an Agent Studio
   fleet) -> record `execution_mode: worker-fleet` and keep the controller's
-  independent Check 2 here; the certainty record stays in this skill.
+  independent Check 2 here; the certainty record stays in this mode.
 - From those skills, route a video-to-long-form bridge, moment score, rights
-  route, exact approval bundle, and readback back to `suede-clip-to-guide`.
+  route, exact approval bundle, and readback back to `suede-social`
+  (Clip-to-Guide mode).

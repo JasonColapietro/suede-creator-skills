@@ -140,5 +140,5 @@ For chat-only delivery, mirror these headings and state that no saved package
 was validated. For a saved package, validate with:
 
 ```bash
-python3 scripts/validate_package.py path/to/package.md
+python3 scripts/validate_clip_package.py path/to/package.md
 ```

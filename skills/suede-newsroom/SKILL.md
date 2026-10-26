@@ -309,7 +309,8 @@ naming the work that way produces the work. Say which argument each asset makes.
   `suede-marketing-loops`.
 - Writing the flagship for a high-stakes public surface -> use `suede-ship-copy`.
   A single shorter surface -> use `suede-copy`.
-- A video moment bridged to one long-form guide -> use `suede-clip-to-guide`.
+- A video moment bridged to one long-form guide -> use `suede-social`
+  (Clip-to-Guide mode).
 - Stripping AI writing patterns from the drafted assets -> use `suede-deslop`.
 - Measurement plumbing behind the performance log -> use `suede-analytics`.
 - Paid variants of these angles -> use `suede-ad-creative`.

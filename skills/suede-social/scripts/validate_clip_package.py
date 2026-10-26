@@ -236,7 +236,7 @@ def validate(path: Path) -> list[str]:
 
 def main(argv: list[str]) -> int:
     if len(argv) != 2:
-        print("Usage: validate_package.py path/to/clip-to-guide-package.md", file=sys.stderr)
+        print("Usage: validate_clip_package.py path/to/clip-to-guide-package.md", file=sys.stderr)
         return 2
 
     path = Path(argv[1]).expanduser()

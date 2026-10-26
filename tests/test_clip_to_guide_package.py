@@ -9,10 +9,14 @@ sys.dont_write_bytecode = True
 
 ROOT = Path(__file__).resolve().parents[1]
 VALIDATOR_PATH = (
-    ROOT / "skills" / "suede-clip-to-guide" / "scripts" / "validate_package.py"
+    ROOT / "skills" / "suede-social" / "scripts" / "validate_clip_package.py"
 )
 EXAMPLE_PATH = (
-    ROOT / "skills" / "suede-clip-to-guide" / "references" / "example-package.md"
+    ROOT
+    / "skills"
+    / "suede-social"
+    / "references"
+    / "clip-to-guide-example-package.md"
 )
 
 SPEC = importlib.util.spec_from_file_location("clip_to_guide_validator", VALIDATOR_PATH)
