@@ -152,7 +152,7 @@
       "key": "craft",
       "label": "Craft",
       "summary": "Make the thing look and read like someone built it on purpose.",
-      "count": 7,
+      "count": 6,
       "lanes": [
         {
           "label": "Design & copy",
@@ -160,7 +160,7 @@
         },
         {
           "label": "Creative assets",
-          "count": 4
+          "count": 3
         }
       ]
     },
@@ -204,11 +204,11 @@
       "key": "revenue",
       "label": "Revenue & retention",
       "summary": "Convert the attention, then keep what it earned.",
-      "count": 12,
+      "count": 11,
       "lanes": [
         {
           "label": "Money & funnel",
-          "count": 7
+          "count": 6
         },
         {
           "label": "Measure & operate",
