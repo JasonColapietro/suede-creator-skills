@@ -7,6 +7,7 @@ import argparse
 import hashlib
 import json
 import mimetypes
+import os
 import shutil
 from collections import Counter
 from datetime import datetime, timezone
@@ -741,6 +742,52 @@ def display_source_root(source: Path, include_absolute: bool) -> str:
     return str(source) if include_absolute else source.name
 
 
+def refuse_symlink(path: Path, source: Path) -> None:
+    raise SystemExit(
+        f"Refusing symlink inside source tree: {path.relative_to(source)}. "
+        "Replace it with an explicit in-tree file before packaging."
+    )
+
+
+def walk_source_files(source: Path, output: Path, include_hidden: bool) -> list[Path]:
+    """Return in-scope candidate files under source, sorted like sorted(rglob).
+
+    Denied and (unless include_hidden) dot-directories are pruned before the
+    walk descends into them, and the skip/deny/hidden filters run before the
+    symlink refusal, so only a symlink that would otherwise be packaged aborts.
+    """
+    candidates: list[Path] = []
+    for root, dirnames, filenames in os.walk(source, followlinks=False):
+        root_path = Path(root)
+        kept_dirs = []
+        for name in sorted(dirnames):
+            path = root_path / name
+            if name.lower() in DENY_DIR_NAMES:
+                continue
+            if not include_hidden and name.startswith("."):
+                continue
+            if is_under(path.parent, output) or (not path.is_symlink() and is_under(path, output)):
+                continue
+            if path.is_symlink():
+                refuse_symlink(path, source)
+            kept_dirs.append(name)
+        dirnames[:] = kept_dirs
+        for name in sorted(filenames):
+            path = root_path / name
+            if name.lower() in SKIP_NAMES:
+                continue
+            if is_under(path.parent, output) or (not path.is_symlink() and is_under(path, output)):
+                continue
+            if is_denied_path(path, source):
+                continue
+            if not include_hidden and is_hidden_path(path, source):
+                continue
+            if path.is_symlink():
+                refuse_symlink(path, source)
+            candidates.append(path)
+    return sorted(candidates)
+
+
 def discover_assets(
     source: Path,
     output: Path,
@@ -749,12 +796,7 @@ def discover_assets(
     include_other: bool,
 ) -> list[dict]:
     assets = []
-    for path in sorted(source.rglob("*")):
-        if path.is_symlink():
-            raise SystemExit(
-                f"Refusing symlink inside source tree: {path.relative_to(source)}. "
-                "Replace it with an explicit in-tree file before packaging."
-            )
+    for path in walk_source_files(source, output, include_hidden):
         if not path.is_file():
             continue
         try:
@@ -763,14 +805,6 @@ def discover_assets(
             raise SystemExit(f"Could not resolve source file safely: {path}: {exc}") from exc
         if not is_under(resolved_path, source):
             raise SystemExit(f"Refusing source file that resolves outside the source tree: {path}")
-        if path.name.lower() in SKIP_NAMES:
-            continue
-        if is_under(path, output):
-            continue
-        if is_denied_path(path, source):
-            continue
-        if not include_hidden and is_hidden_path(path, source):
-            continue
 
         category, role = classify_file(path, source)
         if category == "other" and not include_other:

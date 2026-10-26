@@ -1,10 +1,10 @@
 {
   "schema_version": "0.1.0",
   "package_type": "music-release-lint-report",
-  "generated_at": "2026-07-03T03:18:09.588075+00:00",
+  "generated_at": "2026-10-26T19:42:41.076133+00:00",
   "source_root": "sample-clean-project",
   "metadata_source": "metadata.json",
-  "score": 99,
+  "score": 100,
   "status": "strong",
   "severity_counts": {
     "error": 0,

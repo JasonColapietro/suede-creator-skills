@@ -12,7 +12,7 @@ Start at 100.
 
 - Each `error` subtracts 15 points.
 - Each `warning` subtracts 5 points.
-- Each `info` subtracts 1 point.
+- `info` findings do not change the score.
 - Minimum score is 0.
 
 Score bands:
@@ -85,7 +85,9 @@ licensing.
 
 Error when ownership, contributors, splits, or sample status blocks registry/licensing/royalty routing.
 
-Warning when provenance notes, file hashes, wallet/payment destinations, or intended services are missing.
+Warning when provenance notes, file hashes, or intended services are missing.
+
+Info when no payment-routing destination is noted (only needed for direct royalty routing).
 
 Info when the project is a good candidate for `suede-rights-passport`.
 

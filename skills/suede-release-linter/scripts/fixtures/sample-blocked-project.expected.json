@@ -1,15 +1,15 @@
 {
   "schema_version": "0.1.0",
   "package_type": "music-release-lint-report",
-  "generated_at": "2026-07-03T03:18:09.751608+00:00",
+  "generated_at": "2026-10-26T19:42:41.150911+00:00",
   "source_root": "sample-blocked-project",
   "metadata_source": "metadata.json",
   "score": 0,
   "status": "blocked",
   "severity_counts": {
     "error": 7,
-    "warning": 11,
-    "info": 3
+    "warning": 10,
+    "info": 4
   },
   "summary": {
     "title": "unknown",
@@ -170,11 +170,11 @@
       "fix": "State whether generative AI was used for vocals, instrumentation, composition, lyrics, artwork, or post-production (use \"none\" if not); distributors increasingly require this at delivery."
     },
     {
-      "severity": "warning",
+      "severity": "info",
       "category": "suede",
       "code": "missing-wallet-or-payment-destination",
-      "message": "No creator wallet or payment destination was provided.",
-      "fix": "Add a public wallet or payment-routing note if Suede royalty routing or agent commerce is intended."
+      "message": "No payment-routing destination noted (only needed for direct royalty routing).",
+      "fix": "Add a payment-routing note only if direct royalty routing is intended."
     },
     {
       "severity": "warning",

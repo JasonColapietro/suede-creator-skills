@@ -17,8 +17,8 @@ outside the intended Suede intake workflow.
 | Severity | Count |
 | --- | ---: |
 | Error | 7 |
-| Warning | 11 |
-| Info | 3 |
+| Warning | 10 |
+| Info | 4 |
 
 ## Findings
 
@@ -42,7 +42,7 @@ outside the intended Suede intake workflow.
 | error | rights | `sample-clearance-missing` | Samples, covers, interpolations, or third-party material are indicated but clearance is not confirmed. | Provide clearance details or remove uncleared material before licensing. |
 | warning | rights | `release-history-unknown` | Prior release, registration, minting, or licensing history is unknown. | Confirm whether the work has already been distributed, registered, minted, licensed, or sold. |
 | info | rights | `ai-involvement-unstated` | AI involvement is not stated. | State whether generative AI was used for vocals, instrumentation, composition, lyrics, artwork, or post-production (use "none" if not); distributors increasingly require this at delivery. |
-| warning | suede | `missing-wallet-or-payment-destination` | No creator wallet or payment destination was provided. | Add a public wallet or payment-routing note if Suede royalty routing or agent commerce is intended. |
+| info | suede | `missing-wallet-or-payment-destination` | No payment-routing destination noted (only needed for direct royalty routing). | Add a payment-routing note only if direct royalty routing is intended. |
 | warning | suede | `missing-provenance-notes` | No provenance or creation-history notes were provided. | Add creation history, source notes, or chain-of-custody details. |
 | info | suede | `rights-passport-candidate` | Project can be prepared with a Suede Rights Passport after blockers are resolved. | Use suede-rights-passport once error findings are fixed or clearly documented. |
 

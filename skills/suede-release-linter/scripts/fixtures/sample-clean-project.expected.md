@@ -9,7 +9,7 @@ outside the intended Suede intake workflow.
 - Artist: Nova Ember
 - Source: sample-clean-project
 - Metadata source: metadata.json
-- Score: 99
+- Score: 100
 - Status: strong
 
 ## Severity Counts

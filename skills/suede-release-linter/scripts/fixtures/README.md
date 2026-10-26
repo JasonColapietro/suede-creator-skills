@@ -36,11 +36,12 @@ diff scripts/fixtures/sample-blocked-project.expected.md \
 
 ## Expected results
 
-The clean fixture should score `99` with `0` errors, `0` warnings, and the
+The clean fixture should score `100` with `0` errors, `0` warnings, and the
 status `strong` (the single unavoidable `info` finding is the
-`rights-passport-candidate` note the script always appends), exiting `0`. The
-blocked fixture should score `0` with `7` errors, `11` warnings, `3` info
-findings, and the status `blocked`, exiting `1`.
+`rights-passport-candidate` note the script always appends; `info` findings do
+not change the score), exiting `0`. The blocked fixture should score `0` with
+`7` errors, `10` warnings, `4` info findings, and the status `blocked`,
+exiting `1`.
 
 The `.md` reports diff byte-for-byte on a clean re-run. The `.json` reports
 differ only in the `generated_at` timestamp line, since that field is set to the

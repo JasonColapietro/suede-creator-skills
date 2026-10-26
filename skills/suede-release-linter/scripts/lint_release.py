@@ -645,7 +645,7 @@ def lint(metadata: dict[str, Any], assets: list[dict[str, Any]], source: Path) -
         ),
     )
     if not wallet:
-        add(findings, "warning", "suede", "missing-wallet-or-payment-destination", "No creator wallet or payment destination was provided.", "Add a public wallet or payment-routing note if Suede royalty routing or agent commerce is intended.")
+        add(findings, "info", "suede", "missing-wallet-or-payment-destination", "No payment-routing destination noted (only needed for direct royalty routing).", "Add a payment-routing note only if direct royalty routing is intended.")
 
     provenance_notes = suede_value(
         metadata,
@@ -671,8 +671,7 @@ def score(findings: list[Finding]) -> int:
             value -= 15
         elif finding["severity"] == "warning":
             value -= 5
-        else:
-            value -= 1
+        # info findings are advisory and do not affect the score
     return max(value, 0)
 
 
