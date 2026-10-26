@@ -43,6 +43,9 @@ test("the built site has no old directory URLs and no broken internal links", ()
       assert.ok(fs.existsSync(path.join(out, f)), `missing ${f}`);
     }
     assert.match(fs.readFileSync(path.join(out, "robots.txt"), "utf8"), /^Sitemap: https:\/\/suedeai\.directory\/sitemap\.xml$/m);
+    const keys = fs.readdirSync(out).filter((f) => /^[A-Za-z0-9-]{8,128}\.txt$/.test(f) && f !== "llms.txt" && f !== "robots.txt");
+    assert.equal(keys.length, 1, `expected one IndexNow key file at the site root, found ${keys.join(", ") || "none"}`);
+    assert.equal(fs.readFileSync(path.join(out, keys[0]), "utf8").trim(), keys[0].slice(0, -4));
     const sitemap = fs.readFileSync(path.join(out, "sitemap.xml"), "utf8");
     assert.ok(sitemap.includes(`<loc>${NEW}/</loc>`));
     assert.ok(!sitemap.includes(OLD));
