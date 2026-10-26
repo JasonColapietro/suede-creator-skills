@@ -40,4 +40,3 @@ But first-touch alone can't run the multi-touch models from §2. **Store the ful
 The pattern is tool-agnostic: identify + merge exists in PostHog, Segment, Amplitude, and via user-id in GA4; the third-party stitch works with any tool that has a metadata passthrough + webhook. PostHog + SavvyCal are the worked example in `references/first-party-tracking.md`.
 
 ---
-

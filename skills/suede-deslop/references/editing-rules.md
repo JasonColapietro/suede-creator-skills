@@ -179,4 +179,3 @@ Bad: "- **Security:** Security has been strengthened with end-to-end encryption.
 Good: "The update adds end-to-end encryption."
 
 ---
-

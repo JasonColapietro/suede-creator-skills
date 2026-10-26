@@ -88,4 +88,3 @@ returned nothing also forces `hold`.
 The preceding rows describe claim scope, review, and planning constraints.
 The Slop Stop score alone only moves the verdict to `ship-with-caveats`, never to
 `hold`. Do not report a 22/50 score as a hold.
-

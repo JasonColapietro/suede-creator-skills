@@ -63,4 +63,3 @@ risk lives:
 
 Debt alone never blocks a ship unless it hides a P0 or P1. Name it in Required
 Upgrades. Never report a C, D, or F without the upgrade that would move it.
-

@@ -88,4 +88,3 @@ Build out your retargeting layer with these 4 ad types running simultaneously:
 Run the four together against the audience that did not convert, and judge the layer on blended CPA, not each ad alone.
 
 ---
-

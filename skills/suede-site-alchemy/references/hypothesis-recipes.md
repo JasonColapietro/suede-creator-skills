@@ -34,4 +34,3 @@ quality of the underlying evidence, size of the affected population, decision
 value, effort, and risk. Do not rank by invented projected lift. A directional
 result is inconclusive until assignment, exposure, SRM, metric health,
 uncertainty, and guardrails have been checked.
-

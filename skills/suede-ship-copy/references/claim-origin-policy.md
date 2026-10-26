@@ -55,4 +55,3 @@ script downgrades it to advisory and logs the overreach.
 
 Invoke the workflow bundled at `skills/suede-ship-copy/workflows/suede-ship-copy.js`.
 If you keep a personal copy, `~/.claude/workflows/suede-ship-copy.js` works the same way.
-

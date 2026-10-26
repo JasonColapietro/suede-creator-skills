@@ -39,4 +39,3 @@ Urgency works when it is true. It backfires when the visitor realizes it's manuf
 **Test:** Before adding urgency to a page, answer: "If a visitor waited 30 days and came back, would this urgency claim still be accurate?" If no: it's a dark pattern. Cut it or make the deadline real.
 
 When genuine urgency exists, make the mechanism explicit. "This cohort closes July 1 because we cap at 20 students for live Q&A" is more persuasive than "Offer ends July 1": it explains why the scarcity is real.
-

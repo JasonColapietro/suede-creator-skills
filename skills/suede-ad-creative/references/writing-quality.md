@@ -33,4 +33,3 @@ Descriptions should complement headlines, not repeat them. Use descriptions to:
 - Add urgency when genuine ("Limited to first 500 signups")
 
 ---
-

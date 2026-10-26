@@ -69,4 +69,3 @@ Wrap the roster with these gates:
     verification, caveats, blockers, status, and next action.
 
 Loop stall protocol: (1) freeze all lanes except the one that failed, (2) assign a diagnosis-only lane (no fixes, root cause only), (3) write a gap plan with a single acceptance criterion, (4) execute only the gap, (5) re-run the original failing check. Do not widen until that check passes.
-
