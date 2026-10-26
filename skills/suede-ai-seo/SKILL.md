@@ -1,6 +1,6 @@
 ---
 name: suede-ai-seo
-description: "Suede AI Answer Engine Optimization Skills. AEO and GEO program for getting a brand cited and recommended in Google AI Overviews and AI Mode, ChatGPT search, Perplexity, Copilot, Gemini, and Claude: AI crawler policy (GPTBot, OAI-SearchBot, ClaudeBot, PerplexityBot, Google-Extended), entity consistency with Organization and Person schema and sameAs, citation-ready pages, off-site evidence, llms.txt, and prompt-panel measurement. Use when asked to \"improve our AI citations\", optimize for ChatGPT or Perplexity, or for AI SEO, AEO, GEO, LLMO, AI visibility, or llms.txt work. NOT FOR: nine-lane technical SEO audits (suede-seo-audit), quick promotion grades (suede-visibility-grader), or funnel implementation (suede-site-alchemy)."
+description: "Suede AI Answer Engine Optimization Skills. AEO and GEO program for getting cited in Google AI Overviews, ChatGPT search, Perplexity, Copilot, Gemini, and Claude: AI crawler policy, entity consistency with Organization schema and sameAs, citation-ready pages, llms.txt, and prompt-panel measurement. Use when asked to \"improve our AI citations\" or for AI SEO, LLMO, or AI visibility work. NOT FOR: nine-lane technical SEO audits (suede-seo-audit), quick promotion grades (suede-visibility-grader), or funnel implementation (suede-site-alchemy)."
 metadata:
   display-name: "Suede AI Answer Engine Optimization Skills"
   version: 3.0.0

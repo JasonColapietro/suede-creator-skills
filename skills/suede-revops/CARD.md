@@ -23,9 +23,9 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when asked to "fix our lead routing" or specify revenue operations. Returns implementation-ready rules with owners and measurement.
+Use when asked to "fix our lead routing" or specify revenue operations with owners and measurement.
 
-Out of scope — prospect lists (use suede-prospecting), outbound copy (use suede-cold-email), lifecycle campaigns (use suede-emails), pricing strategy (use suede-pricing), attribution (use suede-attribution), automation or agent build architecture (use suede-ops-architecture), or unapproved production CRM changes.
+Out of scope — prospect lists (suede-prospecting), outbound copy (suede-cold-email), lifecycle campaigns (suede-emails), pricing (suede-pricing), attribution (suede-attribution), agent build architecture (suede-ops-architecture), or unapproved CRM changes.
 
 ## Deployment Geography
 

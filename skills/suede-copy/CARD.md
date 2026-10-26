@@ -23,9 +23,9 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when asked "rewrite this landing page" or to write, sharpen or retune conversion copy: headlines, CTAs, microcopy, product listings, READMEs, public explainers, one-off emails and posts, and agent docs (SKILL.md, CLAUDE.md, AGENTS.md). Applies voice, frameworks, labeled variants, answer-first SEO/AEO, evidence boundaries and a 70-point ship score.
+Use when asked "rewrite this landing page" or to write, sharpen or retune conversion copy: headlines, CTAs, microcopy, listings, READMEs, explainers, and agent docs. Applies voice, frameworks, labeled variants, answer-first SEO/AEO, evidence boundaries and a 70-point ship score.
 
-Out of scope — a standalone anti-slop pass (use suede-deslop), high-stakes research orchestration (use suede-ship-copy), visual design (use suede-design), scored SEO audits (use suede-seo-audit), social programs and calendars (use suede-social), lifecycle email sequences (use suede-emails), or cold outbound (use suede-cold-email).
+Out of scope — standalone anti-slop passes (suede-deslop), high-stakes research drafts (suede-ship-copy), visual design (suede-design), scored SEO audits (suede-seo-audit), social programs (suede-social), email sequences (suede-emails), or cold outbound (suede-cold-email).
 
 ## Deployment Geography
 

@@ -1,6 +1,6 @@
 ---
 name: suede-copy
-description: "Suede AI Copy Skills. Use when asked \"rewrite this landing page\" or to write, sharpen or retune conversion copy: headlines, CTAs, microcopy, product listings, READMEs, public explainers, one-off emails and posts, and agent docs (SKILL.md, CLAUDE.md, AGENTS.md). Applies voice, frameworks, labeled variants, answer-first SEO/AEO, evidence boundaries and a 70-point ship score. NOT FOR: a standalone anti-slop pass (use suede-deslop), high-stakes research orchestration (use suede-ship-copy), visual design (use suede-design), scored SEO audits (use suede-seo-audit), social programs and calendars (use suede-social), lifecycle email sequences (use suede-emails), or cold outbound (use suede-cold-email)."
+description: "Suede AI Copy Skills. Use when asked \"rewrite this landing page\" or to write, sharpen or retune conversion copy: headlines, CTAs, microcopy, listings, READMEs, explainers, and agent docs. Applies voice, frameworks, labeled variants, answer-first SEO/AEO, evidence boundaries and a 70-point ship score. NOT FOR: standalone anti-slop passes (suede-deslop), high-stakes research drafts (suede-ship-copy), visual design (suede-design), scored SEO audits (suede-seo-audit), social programs (suede-social), email sequences (suede-emails), or cold outbound (suede-cold-email)."
 metadata:
   display-name: "Suede AI Copy Skills"
 ---

@@ -7,7 +7,7 @@ Release record for the `suede-ops-assessment` skill, following the NVIDIA skill-
 
 ## Description
 
-Suede AI Operations Assessment Skills: map real work, silos (including spreadsheets and inboxes used as databases), friction, ownership, costs, and adoption signals from operator evidence.
+Suede AI Operations Assessment Skills: map real work, silos (including spreadsheets and inboxes used as databases), friction, ownership, costs, tribal knowledge, and adoption from operator evidence.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.3; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
@@ -23,9 +23,9 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when asked "where is our team losing time", what to automate first, where tribal knowledge and key-person risk sit, or to rank operational and AI agent opportunities before designing automation, or when a shipped system is being routed around.
+Use when asked "where is our team losing time", what to automate first, or to rank AI agent opportunities before designing automation.
 
-Out of scope — choosing the target architecture (use suede-ops-architecture); building it (use suede-graph-flo-xr or suede-agent-teams); lead lifecycle and CRM routing (use suede-revops); external customer research (use suede-customer-research); auditing requester-supplied figures, or unapproved system access.
+Out of scope — target architecture (suede-ops-architecture), building it (suede-graph-flo-xr or suede-agent-teams), CRM routing (suede-revops), external customer research (suede-customer-research), or unapproved system access.
 
 ## Deployment Geography
 

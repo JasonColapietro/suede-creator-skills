@@ -206,11 +206,11 @@ Tuesday afternoon as it does at midnight.
 ## Progressive disclosure, or why 62 skills fit
 
 Here is the objection that arrives immediately. The 62 `SKILL.md` files in this
-repo total 815,608 bytes. Loading all of them into every conversation would
+repo total 814,674 bytes. Loading all of them into every conversation would
 crowd out the thing you actually came to do.
 
 They are not all loaded. Only the frontmatter descriptions stay resident, and
-all 62 descriptions together come to 30,679 bytes. That is roughly a
+all 62 descriptions together come to 29,745 bytes. That is roughly a
 twenty-seventh of the corpus. The agent holds a catalog of what exists and reads
 a body only when a description matches the task in front of it.
 
@@ -342,8 +342,8 @@ you.
 ## The description carries the routing burden
 
 The description is the only part of a skill that stays in the agent's context
-when the skill is not running. In this repo the 62 files total 815,608 bytes;
-the 62 descriptions together are 30,679. The agent holds the small number and
+when the skill is not running. In this repo the 62 files total 814,674 bytes;
+the 62 descriptions together are 29,745. The agent holds the small number and
 reaches for the large one only when a description matches.
 
 That makes the description a router, not a summary. It has to answer two

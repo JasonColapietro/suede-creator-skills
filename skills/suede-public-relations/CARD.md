@@ -23,7 +23,7 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when asked to "draft a journalist pitch", assess newsjacking, or prepare third-party coverage for search and AI citations. Returns review-ready drafts and measurement steps.
+Use when asked to "draft a journalist pitch", assess newsjacking, or earn coverage that search and AI answers cite.
 
 Out of scope — directory submissions (use suede-directory-submissions), creator or influencer pitches (use suede-influencer-outreach), software release packaging (use suede-launch-packaging), social posts (use suede-social), or sending without approval.
 

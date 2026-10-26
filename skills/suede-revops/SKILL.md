@@ -1,6 +1,6 @@
 ---
 name: suede-revops
-description: "Suede AI Revenue Operations Skills. Define lifecycle stages, fit and engagement scores, MQL/SQL handoffs, routing SLAs, pipeline hygiene, CRM automation, deal-desk tiers, and dashboard metrics, plus where AI agents fit in the revenue process. Use when asked to \"fix our lead routing\" or specify revenue operations. Returns implementation-ready rules with owners and measurement. NOT FOR: prospect lists (use suede-prospecting), outbound copy (use suede-cold-email), lifecycle campaigns (use suede-emails), pricing strategy (use suede-pricing), attribution (use suede-attribution), automation or agent build architecture (use suede-ops-architecture), or unapproved production CRM changes."
+description: "Suede AI Revenue Operations Skills. Define lifecycle stages, fit and engagement scores, MQL/SQL handoffs, routing SLAs, pipeline hygiene, CRM automation, deal-desk tiers, and where AI agents fit. Use when asked to \"fix our lead routing\" or specify revenue operations with owners and measurement. NOT FOR: prospect lists (suede-prospecting), outbound copy (suede-cold-email), lifecycle campaigns (suede-emails), pricing (suede-pricing), attribution (suede-attribution), agent build architecture (suede-ops-architecture), or unapproved CRM changes."
 metadata:
   display-name: "Suede AI Revenue Operations Skills"
   version: 2.0.0

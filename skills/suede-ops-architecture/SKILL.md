@@ -1,6 +1,6 @@
 ---
 name: suede-ops-architecture
-description: "Suede AI Operations Architecture Skills: fix the shape of an automation or AI agent build before code. Entity schema first, one write path per entity, each unit of work routed to deterministic automation, an AI agent, or a human decision, every tool marked absorb, keep, or kill, and a phased rollout with proof per phase. Use when asked \"turn this ops assessment into a plan\", to scope an automation or agent build, decide whether a workflow needs a model, or consolidate a tool stack. NOT FOR: discovering and quantifying current operations (use suede-ops-assessment); code implementation (use suede-graph-flo-xr or suede-agent-teams); lead lifecycle and CRM routing rules (use suede-revops); agent eval sets (use suede-ai-eval); or production changes without authority."
+description: "Suede AI Operations Architecture Skills: shape an automation or AI agent build before code. Entity schema first, one write path per entity, each unit of work routed to automation, an AI agent, or a human, every tool marked absorb, keep, or kill, and phased proof. Use when asked \"turn this ops assessment into a plan\" or to scope an agent build or tool stack. NOT FOR: mapping current operations (suede-ops-assessment), code implementation (suede-graph-flo-xr or suede-agent-teams), CRM routing rules (suede-revops), or agent eval sets (suede-ai-eval)."
 metadata:
   display-name: "Suede AI Operations Architecture Skills"
   version: 1.0.0

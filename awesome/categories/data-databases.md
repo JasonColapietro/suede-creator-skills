@@ -231,8 +231,8 @@ Skills for SQL, databases, vector stores, analytics and data pipelines. Several 
 
 [Repository](https://github.com/JasonColapietro/suede-creator-skills) · Publisher: [JasonColapietro](https://github.com/JasonColapietro) · [Suede AI listing](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/)
 
-- **91/100 · A** · [Suede AI Analytics Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/verify/first-party-source-whitespace/skills/suede-analytics/SKILL.md): Suede AI Analytics Skills. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-analytics)
-- **91/100 · A** · [Suede AI Revenue Operations Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/verify/first-party-source-whitespace/skills/suede-revops/SKILL.md): Define lifecycle stages, fit and engagement scores, MQL/SQL handoffs, routing SLAs, pipeline hygiene, CRM automation, deal-desk tiers, and dashboard metrics. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-revops)
+- **91/100 · A** · [Suede AI Analytics Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/suede-ai-skill-consolidation/skills/suede-analytics/SKILL.md): Suede AI Analytics Skills. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-analytics)
+- **89/100 · B** · [Suede AI Revenue Operations Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/suede-ai-skill-consolidation/skills/suede-revops/SKILL.md): Suede AI Revenue Operations Skills. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-revops)
 
 <a id="jeffallan--claude-skills"></a>
 

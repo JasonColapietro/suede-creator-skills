@@ -34,8 +34,8 @@ you.
 ## The description carries the routing burden
 
 The description is the only part of a skill that stays in the agent's context
-when the skill is not running. In this repo the 62 files total 815,608 bytes;
-the 62 descriptions together are 30,679. The agent holds the small number and
+when the skill is not running. In this repo the 62 files total 814,674 bytes;
+the 62 descriptions together are 29,745. The agent holds the small number and
 reaches for the large one only when a description matches.
 
 That makes the description a router, not a summary. It has to answer two

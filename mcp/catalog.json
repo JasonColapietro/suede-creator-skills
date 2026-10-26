@@ -328,7 +328,7 @@
       "area": "marketing",
       "specialty": "found",
       "lane": "Search & AI visibility",
-      "description": "Suede AI Answer Engine Optimization Skills. AEO and GEO program for getting a brand cited and recommended in Google AI Overviews and AI Mode, ChatGPT search, Perplexity, Copilot, Gemini, and Claude: AI crawler policy (GPTBot, OAI-SearchBot, ClaudeBot, PerplexityBot, Google-Extended), entity consistency with Organization and Person schema and sameAs, citation-ready pages, off-site evidence, llms.txt, and prompt-panel measurement. Use when asked to \"improve our AI citations\", optimize for ChatGPT or Perplexity, or for AI SEO, AEO, GEO, LLMO, AI visibility, or llms.txt work. NOT FOR: nine-lane technical SEO audits (suede-seo-audit), quick promotion grades (suede-visibility-grader), or funnel implementation (suede-site-alchemy).",
+      "description": "Suede AI Answer Engine Optimization Skills. AEO and GEO program for getting cited in Google AI Overviews, ChatGPT search, Perplexity, Copilot, Gemini, and Claude: AI crawler policy, entity consistency with Organization schema and sameAs, citation-ready pages, llms.txt, and prompt-panel measurement. Use when asked to \"improve our AI citations\" or for AI SEO, LLMO, or AI visibility work. NOT FOR: nine-lane technical SEO audits (suede-seo-audit), quick promotion grades (suede-visibility-grader), or funnel implementation (suede-site-alchemy).",
       "useWhen": "The user wants to get content cited by LLMs, appear in AI-generated answers, or make a site agent-readable.",
       "displayName": "Suede AI Answer Engine Optimization Skills"
     },
@@ -454,7 +454,7 @@
       "area": "workflow",
       "specialty": "craft",
       "lane": "Design & copy",
-      "description": "Suede AI Copy Skills. Use when asked \"rewrite this landing page\" or to write, sharpen or retune conversion copy: headlines, CTAs, microcopy, product listings, READMEs, public explainers, one-off emails and posts, and agent docs (SKILL.md, CLAUDE.md, AGENTS.md). Applies voice, frameworks, labeled variants, answer-first SEO/AEO, evidence boundaries and a 70-point ship score. NOT FOR: a standalone anti-slop pass (use suede-deslop), high-stakes research orchestration (use suede-ship-copy), visual design (use suede-design), scored SEO audits (use suede-seo-audit), social programs and calendars (use suede-social), lifecycle email sequences (use suede-emails), or cold outbound (use suede-cold-email).",
+      "description": "Suede AI Copy Skills. Use when asked \"rewrite this landing page\" or to write, sharpen or retune conversion copy: headlines, CTAs, microcopy, listings, READMEs, explainers, and agent docs. Applies voice, frameworks, labeled variants, answer-first SEO/AEO, evidence boundaries and a 70-point ship score. NOT FOR: standalone anti-slop passes (suede-deslop), high-stakes research drafts (suede-ship-copy), visual design (suede-design), scored SEO audits (suede-seo-audit), social programs (suede-social), email sequences (suede-emails), or cold outbound (suede-cold-email).",
       "useWhen": "Write or rewrite headlines, CTAs, landing copy, email, social, and microcopy with conversion and anti-slop checks.",
       "displayName": "Suede AI Copy Skills"
     },
@@ -616,7 +616,7 @@
       "area": "workflow",
       "specialty": "ship",
       "lane": "Orchestration & routing",
-      "description": "Suede AI Operations Architecture Skills: fix the shape of an automation or AI agent build before code. Entity schema first, one write path per entity, each unit of work routed to deterministic automation, an AI agent, or a human decision, every tool marked absorb, keep, or kill, and a phased rollout with proof per phase. Use when asked \"turn this ops assessment into a plan\", to scope an automation or agent build, decide whether a workflow needs a model, or consolidate a tool stack. NOT FOR: discovering and quantifying current operations (use suede-ops-assessment); code implementation (use suede-graph-flo-xr or suede-agent-teams); lead lifecycle and CRM routing rules (use suede-revops); agent eval sets (use suede-ai-eval); or production changes without authority.",
+      "description": "Suede AI Operations Architecture Skills: shape an automation or AI agent build before code. Entity schema first, one write path per entity, each unit of work routed to automation, an AI agent, or a human, every tool marked absorb, keep, or kill, and phased proof. Use when asked \"turn this ops assessment into a plan\" or to scope an agent build or tool stack. NOT FOR: mapping current operations (suede-ops-assessment), code implementation (suede-graph-flo-xr or suede-agent-teams), CRM routing rules (suede-revops), or agent eval sets (suede-ai-eval).",
       "useWhen": "The user is scoping an automation or agent build and needs the schema, write paths, work triage, tool verdicts, migration path, and gated phase order decided before anyone writes code.",
       "displayName": "Suede AI Operations Architecture Skills"
     },
@@ -625,7 +625,7 @@
       "area": "workflow",
       "specialty": "ship",
       "lane": "Orchestration & routing",
-      "description": "Suede AI Operations Assessment Skills: map real work, silos (including spreadsheets and inboxes used as databases), friction, ownership, costs, and adoption signals from operator evidence. Use when asked \"where is our team losing time\", what to automate first, where tribal knowledge and key-person risk sit, or to rank operational and AI agent opportunities before designing automation, or when a shipped system is being routed around. NOT FOR: choosing the target architecture (use suede-ops-architecture); building it (use suede-graph-flo-xr or suede-agent-teams); lead lifecycle and CRM routing (use suede-revops); external customer research (use suede-customer-research); auditing requester-supplied figures, or unapproved system access.",
+      "description": "Suede AI Operations Assessment Skills: map real work, silos (including spreadsheets and inboxes used as databases), friction, ownership, costs, tribal knowledge, and adoption from operator evidence. Use when asked \"where is our team losing time\", what to automate first, or to rank AI agent opportunities before designing automation. NOT FOR: target architecture (suede-ops-architecture), building it (suede-graph-flo-xr or suede-agent-teams), CRM routing (suede-revops), external customer research (suede-customer-research), or unapproved system access.",
       "useWhen": "The user cannot say what to automate, wants their operation mapped and costed before a build, needs tribal-knowledge and key-person risk surfaced, or has a shipped system the team is quietly routing around.",
       "displayName": "Suede AI Operations Assessment Skills"
     },
@@ -688,7 +688,7 @@
       "area": "marketing",
       "specialty": "found",
       "lane": "Content & audience",
-      "description": "Suede AI Public Relations Skills. Build earned-media angles, sourced media lists, journalist and podcast pitches, reporter replies, and press kits with consistent entity facts. Use when asked to \"draft a journalist pitch\", assess newsjacking, or prepare third-party coverage for search and AI citations. Returns review-ready drafts and measurement steps. NOT FOR: directory submissions (use suede-directory-submissions), creator or influencer pitches (use suede-influencer-outreach), software release packaging (use suede-launch-packaging), social posts (use suede-social), or sending without approval.",
+      "description": "Suede AI Public Relations Skills. Build earned-media angles, sourced media lists, journalist and podcast pitches, reporter replies, and press kits with consistent entity facts. Use when asked to \"draft a journalist pitch\", assess newsjacking, or earn coverage that search and AI answers cite. NOT FOR: directory submissions (use suede-directory-submissions), creator or influencer pitches (use suede-influencer-outreach), software release packaging (use suede-launch-packaging), social posts (use suede-social), or sending without approval.",
       "useWhen": "The user wants press coverage, is pitching journalists, or is deciding how to announce something publicly.",
       "displayName": "Suede AI Public Relations Skills"
     },
@@ -715,7 +715,7 @@
       "area": "marketing",
       "specialty": "revenue",
       "lane": "Measure & operate",
-      "description": "Suede AI Revenue Operations Skills. Define lifecycle stages, fit and engagement scores, MQL/SQL handoffs, routing SLAs, pipeline hygiene, CRM automation, deal-desk tiers, and dashboard metrics, plus where AI agents fit in the revenue process. Use when asked to \"fix our lead routing\" or specify revenue operations. Returns implementation-ready rules with owners and measurement. NOT FOR: prospect lists (use suede-prospecting), outbound copy (use suede-cold-email), lifecycle campaigns (use suede-emails), pricing strategy (use suede-pricing), attribution (use suede-attribution), automation or agent build architecture (use suede-ops-architecture), or unapproved production CRM changes.",
+      "description": "Suede AI Revenue Operations Skills. Define lifecycle stages, fit and engagement scores, MQL/SQL handoffs, routing SLAs, pipeline hygiene, CRM automation, deal-desk tiers, and where AI agents fit. Use when asked to \"fix our lead routing\" or specify revenue operations with owners and measurement. NOT FOR: prospect lists (suede-prospecting), outbound copy (suede-cold-email), lifecycle campaigns (suede-emails), pricing (suede-pricing), attribution (suede-attribution), agent build architecture (suede-ops-architecture), or unapproved CRM changes.",
       "useWhen": "The user is defining lead qualification, routing leads to sales, or fixing the handoff between marketing and revenue.",
       "displayName": "Suede AI Revenue Operations Skills"
     },
