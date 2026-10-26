@@ -4,7 +4,7 @@
 
 # Publishers and repositories
 
-**160 repositories · 3,804 accepted skills.** Credits use the repository’s GitHub owner or team. Counts cover accepted entries in this snapshot; scoped listings can include only part of a repository.
+**161 repositories · 3,805 accepted skills.** Credits use the repository’s GitHub owner or team. Counts cover accepted entries in this snapshot; scoped listings can include only part of a repository.
 
 Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
@@ -45,6 +45,7 @@ Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://s
 | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) | [coreyhaines31](https://github.com/coreyhaines31) | 49 | [Marketing](categories/marketing-seo.md#coreyhaines31--marketingskills) · [Product](categories/product-management.md#coreyhaines31--marketingskills) · [Media](categories/media-creative.md#coreyhaines31--marketingskills) · [Business](categories/business-finance.md#coreyhaines31--marketingskills) | [Listing](https://skills.suedeai.ai/directory/coreyhaines31/marketingskills/) |
 | [costory-io/costory-finops-mcp-skills](https://github.com/costory-io/costory-finops-mcp-skills) | [costory-io](https://github.com/costory-io) | 4 | [Business](categories/business-finance.md#costory-io--costory-finops-mcp-skills) · [Data](categories/data-databases.md#costory-io--costory-finops-mcp-skills) | [Listing](https://skills.suedeai.ai/directory/costory-io/costory-finops-mcp-skills/) |
 | [csthink/dashmotion](https://github.com/csthink/dashmotion) | [csthink](https://github.com/csthink) | 1 | [Media](categories/media-creative.md#csthink--dashmotion) | [Listing](https://skills.suedeai.ai/directory/csthink/dashmotion/dashmotion/) |
+| [cwong5/extra-caffeine-mcp](https://github.com/cwong5/extra-caffeine-mcp) | [cwong5](https://github.com/cwong5) | 1 | [Productivity](categories/productivity-knowledge.md#cwong5--extra-caffeine-mcp) | [Listing](https://skills.suedeai.ai/directory/cwong5/extra-caffeine-mcp/) |
 | [cypress-io/ai-toolkit](https://github.com/cypress-io/ai-toolkit) | [cypress-io](https://github.com/cypress-io) | 5 | [Testing](categories/testing-qa.md#cypress-io--ai-toolkit) | [Listing](https://skills.suedeai.ai/directory/cypress-io/ai-toolkit/) |
 | [danjdewhurst/story-skills](https://github.com/danjdewhurst/story-skills) | [danjdewhurst](https://github.com/danjdewhurst) | 24 | [Writing](categories/writing-content.md#danjdewhurst--story-skills) | [Listing](https://skills.suedeai.ai/directory/danjdewhurst/story-skills/) |
 | [deanpeters/Product-Manager-Skills](https://github.com/deanpeters/Product-Manager-Skills) | [deanpeters](https://github.com/deanpeters) | 77 | [AI agents](categories/ai-agents-llm.md#deanpeters--product-manager-skills) · [Product](categories/product-management.md#deanpeters--product-manager-skills) · [Business](categories/business-finance.md#deanpeters--product-manager-skills) | [Listing](https://skills.suedeai.ai/directory/deanpeters/product-manager-skills/) |
@@ -171,7 +172,7 @@ Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://s
 | [ZeroPointRepo/youtube-skills](https://github.com/ZeroPointRepo/youtube-skills) | [ZeroPointRepo](https://github.com/ZeroPointRepo) | 12 | [Productivity](categories/productivity-knowledge.md#zeropointrepo--youtube-skills) | [Listing](https://skills.suedeai.ai/directory/zeropointrepo/youtube-skills/) |
 | [zxkane/aws-skills](https://github.com/zxkane/aws-skills) | [zxkane](https://github.com/zxkane) | 6 | [AI agents](categories/ai-agents-llm.md#zxkane--aws-skills) · [DevOps](categories/devops-cloud.md#zxkane--aws-skills) | [Listing](https://skills.suedeai.ai/directory/zxkane/aws-skills/) |
 
-Editorial plugin features outside this scored snapshot appear on the [featured projects page](featured.md).
+Featured plugins outside this scored snapshot appear on the [featured projects page](featured.md).
 
 ## Publish one of these repositories?
 

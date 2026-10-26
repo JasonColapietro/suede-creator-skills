@@ -1,0 +1,77 @@
+{
+  "reviewed_at": "2026-10-26",
+  "request": "https://github.com/JasonColapietro/suede-creator-skills/issues/259",
+  "repository": "cwong5/extra-caffeine-mcp",
+  "revision": "4e0ac32e685c5366ab487502173168470a42a178",
+  "base_snapshot_date": "2026-10-22",
+  "scope": "Scoped addition using the standard parser and curator; other catalog records and the full-refresh date are preserved. Review date is separate from the base snapshot date.",
+  "method": "graded-v2",
+  "accepted_names": [
+    "extra-caffeine-workflow"
+  ],
+  "license": "All rights reserved",
+  "source_sha256": {
+    "LICENSE": "0986ae759e2152840c4d562d74b37062fe1099c579b097669d1ca87b1b601385",
+    "README.md": "8d3ca0578e87db512f5414764702e5e0a5fc461d628564b0fa5c2c5b7d25f0a3",
+    "skills/extra-caffeine-workflow/SKILL.md": "df76e3ecb67c0d009e6f831b88e7ec7d11f430f989ada1155d1aa09d16df2bcb",
+    "skills/extra-caffeine-workflow/agents/openai.yaml": "7d0a8b136ffe41a5c90c734b8a970d2a97158218b29eb855b9a2ef19b07d63c0"
+  },
+  "unchanged_catalog_sha256": "691b45aa417518872638aa1e0387b29d361048023fac85a4826e82cd53c33bec",
+  "assessments": [
+    {
+      "name": "extra-caffeine-workflow",
+      "checks": "11110111",
+      "score": 69,
+      "grade": "D",
+      "size": [
+        31,
+        590,
+        2
+      ],
+      "score_at_review_date": 69
+    }
+  ],
+  "security_scan_status": "not_scanned",
+  "runtime_status": "not_exercised",
+  "proposed_fix": {
+    "status": "draft_pr_open_awaiting_upstream_acceptance",
+    "base_revision": "4e0ac32e685c5366ab487502173168470a42a178",
+    "local_revision": "1a1300e5254bd803782782aba75da6b3ccdfa8e3",
+    "patch_sha256": "e1f62e8dfeb520fb74be9332dce8b6db24d5dff89c366441f0b2c326df44ebdd",
+    "checks": "11111111",
+    "score": 86,
+    "grade": "B",
+    "score_delta": 17,
+    "quality_shield_dependency": "Upstream draft PR #1 must be accepted; re-fetch and review the resulting cwong5/extra-caffeine-mcp default-branch commit before updating this catalog. Neither the local proposal nor the unmerged draft head is an accepted catalog source.",
+    "remaining_quality_points": {
+      "references": 3,
+      "scripts": 2,
+      "adoption": 7,
+      "allowed_tools": 2
+    },
+    "runtime_status": "not_exercised",
+    "security_scan_status": "not_scanned",
+    "upstream_pr": {
+      "url": "https://github.com/cwong5/extra-caffeine-mcp/pull/1",
+      "number": 1,
+      "author": "JasonColapietro",
+      "head_revision": "f0c4d847f5a4184777269b80d047eefcd78547f4",
+      "base_revision": "4e0ac32e685c5366ab487502173168470a42a178",
+      "state": "open",
+      "draft": true,
+      "merged": false,
+      "ci_checks": "none"
+    },
+    "reported_validation": {
+      "source": "https://github.com/cwong5/extra-caffeine-mcp/pull/1",
+      "agent_skills_preflight": "valid",
+      "route_resource_lint": "OK",
+      "scoring_policy_tests_passed": 34,
+      "inclusion_tests_passed": 16,
+      "total_tests_passed": 50,
+      "score": 86,
+      "grade": "B",
+      "checks": "11111111"
+    }
+  }
+}

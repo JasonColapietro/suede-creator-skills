@@ -6,7 +6,7 @@
 
 Skills for everyday knowledge work: email, calendars, notes, workspace apps, project tracking, planning and research assistance. They connect an agent to the tools a team already uses and give it a consistent way to work inside them.
 
-**213 accepted skills · 35 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
+**214 accepted skills · 36 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
 **Compare on the 0–99 quality scale:** this category’s verified scores span **53–90 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede AI](https://skills.suedeai.ai/directory/?category=productivity-knowledge&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
 
@@ -20,6 +20,7 @@ Skills for everyday knowledge work: email, calendars, notes, workspace apps, pro
 - [aws/agent-toolkit-for-aws](#aws--agent-toolkit-for-aws)
 - [bitwize-music-studio/claude-ai-music-skills](#bitwize-music-studio--claude-ai-music-skills)
 - [browserbase/skills](#browserbase--skills)
+- [cwong5/extra-caffeine-mcp](#cwong5--extra-caffeine-mcp)
 - [firecrawl/skills](#firecrawl--skills)
 - [garrytan/gstack](#garrytan--gstack)
 - [github/awesome-copilot](#github--awesome-copilot)
@@ -104,6 +105,14 @@ Skills for everyday knowledge work: email, calendars, notes, workspace apps, pro
 [Repository](https://github.com/browserbase/skills) · Publisher: [browserbase](https://github.com/browserbase) · [Suede AI listing](https://skills.suedeai.ai/directory/browserbase/skills/)
 
 - **78/100 · C** · [search](https://github.com/browserbase/skills/blob/main/skills/search/SKILL.md): Use this skill when the user wants to search the web without a full browser session: find URLs, titles, and metadata for a query. [Suede](https://skills.suedeai.ai/directory/browserbase/skills/#search)
+
+<a id="cwong5--extra-caffeine-mcp"></a>
+
+## cwong5/extra-caffeine-mcp
+
+[Repository](https://github.com/cwong5/extra-caffeine-mcp) · Publisher: [cwong5](https://github.com/cwong5) · [Suede AI listing](https://skills.suedeai.ai/directory/cwong5/extra-caffeine-mcp/)
+
+- **69/100 · D** · [extra-caffeine-workflow](https://github.com/cwong5/extra-caffeine-mcp/blob/main/skills/extra-caffeine-workflow/SKILL.md): Use Extra Caffeine to keep a local Mac awake for long AI or file-processing work, check awake state, or manage requested one-time schedules. [Suede](https://skills.suedeai.ai/directory/cwong5/extra-caffeine-mcp/#extra-caffeine-workflow) · License: All rights reserved (review terms)
 
 <a id="firecrawl--skills"></a>
 
