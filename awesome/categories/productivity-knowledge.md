@@ -6,7 +6,7 @@
 
 Skills for everyday knowledge work: email, calendars, notes, workspace apps, project tracking, planning and research assistance. They connect an agent to the tools a team already uses and give it a consistent way to work inside them.
 
-**216 accepted skills · 36 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
+**217 accepted skills · 37 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
 **Compare on the 0–99 quality scale:** this category’s verified scores span **53–91 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede AI](https://skills.suedeai.ai/directory/?category=productivity-knowledge&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
 
@@ -47,6 +47,7 @@ Skills for everyday knowledge work: email, calendars, notes, workspace apps, pro
 - [tjboudreaux/cc-thinking-skills](#tjboudreaux--cc-thinking-skills)
 - [tronghieu/agent-skills](#tronghieu--agent-skills)
 - [tubeagentkit/youtube-transcript-skills](#tubeagentkit--youtube-transcript-skills)
+- [umutyesildal/berlin-job-search](#umutyesildal--berlin-job-search)
 - [vercel-labs/agent-browser](#vercel-labs--agent-browser)
 - [wondelai/skills](#wondelai--skills)
 - [ykdojo/claude-code-tips](#ykdojo--claude-code-tips)
@@ -477,6 +478,14 @@ Skills for everyday knowledge work: email, calendars, notes, workspace apps, pro
 [Repository](https://github.com/tubeagentkit/youtube-transcript-skills) · Publisher: [tubeagentkit](https://github.com/tubeagentkit) · [Suede AI listing](https://skills.suedeai.ai/directory/tubeagentkit/youtube-transcript-skills/youtube-transcript/)
 
 - **80/100 · B** · [youtube-transcript](https://github.com/tubeagentkit/youtube-transcript-skills/blob/main/skills/youtube-transcript/SKILL.md): Fetches YouTube video transcripts through the metered getyoutubetranscript.com API, and also searches YouTube, resolves channel handles, lists playlist videos, and checks credit balance. [Suede](https://skills.suedeai.ai/directory/tubeagentkit/youtube-transcript-skills/youtube-transcript/)
+
+<a id="umutyesildal--berlin-job-search"></a>
+
+## umutyesildal/berlin-job-search
+
+[Repository](https://github.com/umutyesildal/berlin-job-search) · Publisher: [umutyesildal](https://github.com/umutyesildal) · [Suede AI listing](https://skills.suedeai.ai/directory/umutyesildal/berlin-job-search/berlin-job-search/)
+
+- **84/100 · B** · [berlin-job-search](https://github.com/umutyesildal/berlin-job-search/blob/main/skills/berlin-job-search/SKILL.md): Search public job sources for Berlin and Germany, prepare German CVs and interviews, and track applications locally. [Suede](https://skills.suedeai.ai/directory/umutyesildal/berlin-job-search/berlin-job-search/)
 
 <a id="vercel-labs--agent-browser"></a>
 

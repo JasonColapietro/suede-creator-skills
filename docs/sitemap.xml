@@ -614,7 +614,7 @@
   </url>
   <url>
     <loc>https://skills.suedeai.ai/directory/check/</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-10-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -680,7 +680,7 @@
   </url>
   <url>
     <loc>https://skills.suedeai.ai/directory/methodology/</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-10-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -5642,6 +5642,12 @@
   </url>
   <url>
     <loc>https://skills.suedeai.ai/directory/tubeagentkit/youtube-transcript-skills/youtube-transcript/</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/umutyesildal/berlin-job-search/berlin-job-search/</loc>
     <lastmod>2026-10-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>

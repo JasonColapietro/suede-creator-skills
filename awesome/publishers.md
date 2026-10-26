@@ -4,7 +4,7 @@
 
 # Publishers and repositories
 
-**161 repositories · 3,868 accepted skills.** Credits use the repository’s GitHub owner or team. Counts cover accepted entries in this snapshot; scoped listings can include only part of a repository.
+**162 repositories · 3,869 accepted skills.** Credits use the repository’s GitHub owner or team. Counts cover accepted entries in this snapshot; scoped listings can include only part of a repository.
 
 Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
@@ -153,6 +153,7 @@ Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://s
 | [trycourier/courier-skills](https://github.com/trycourier/courier-skills) | [trycourier](https://github.com/trycourier) | 1 | [Dev tools](categories/developer-tools.md#trycourier--courier-skills) | [Listing](https://skills.suedeai.ai/directory/trycourier/courier-skills/courier/) |
 | [tt-a1i/archify](https://github.com/tt-a1i/archify) | [tt-a1i](https://github.com/tt-a1i) | 1 | [Media](categories/media-creative.md#tt-a1i--archify) | [Listing](https://skills.suedeai.ai/directory/tt-a1i/archify/archify/) |
 | [tubeagentkit/youtube-transcript-skills](https://github.com/tubeagentkit/youtube-transcript-skills) | [tubeagentkit](https://github.com/tubeagentkit) | 1 | [Productivity](categories/productivity-knowledge.md#tubeagentkit--youtube-transcript-skills) | [Listing](https://skills.suedeai.ai/directory/tubeagentkit/youtube-transcript-skills/youtube-transcript/) |
+| [umutyesildal/berlin-job-search](https://github.com/umutyesildal/berlin-job-search) | [umutyesildal](https://github.com/umutyesildal) | 1 | [Productivity](categories/productivity-knowledge.md#umutyesildal--berlin-job-search) | [Listing](https://skills.suedeai.ai/directory/umutyesildal/berlin-job-search/berlin-job-search/) |
 | [unbrowse-ai/unbrowse](https://github.com/unbrowse-ai/unbrowse) | [unbrowse-ai](https://github.com/unbrowse-ai) | 1 | [AI agents](categories/ai-agents-llm.md#unbrowse-ai--unbrowse) | [Listing](https://skills.suedeai.ai/directory/unbrowse-ai/unbrowse/unbrowse/) |
 | [veniceai/skills](https://github.com/veniceai/skills) | [veniceai](https://github.com/veniceai) | 22 | [AI agents](categories/ai-agents-llm.md#veniceai--skills) · [Dev tools](categories/developer-tools.md#veniceai--skills) · [Media](categories/media-creative.md#veniceai--skills) · [Business](categories/business-finance.md#veniceai--skills) | [Listing](https://skills.suedeai.ai/directory/veniceai/skills/) |
 | [vercel-labs/agent-browser](https://github.com/vercel-labs/agent-browser) | [vercel-labs](https://github.com/vercel-labs) | 1 | [Productivity](categories/productivity-knowledge.md#vercel-labs--agent-browser) | [Listing](https://skills.suedeai.ai/directory/vercel-labs/agent-browser/) |

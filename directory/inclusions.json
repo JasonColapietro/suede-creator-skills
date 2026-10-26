@@ -22,6 +22,7 @@
   "pbakaus/impeccable",
   "sanity-io/agent-toolkit",
   "stripe/ai",
+  "umutyesildal/berlin-job-search",
   "vercel-labs/agent-browser",
   "vercel-labs/agent-skills",
   "vercel/ai"
@@ -956,6 +957,9 @@
    "suede-video",
    "suede-visibility-grader",
    "suede-workflow-skills"
+  ],
+  "umutyesildal/berlin-job-search": [
+   "berlin-job-search"
   ]
  },
  "skill_roots": {
@@ -1067,6 +1071,9 @@
   ],
   "JasonColapietro/suede-creator-skills": [
    "skills"
+  ],
+  "umutyesildal/berlin-job-search": [
+   "skills/berlin-job-search"
   ]
  },
  "citations": {

@@ -9904,5 +9904,9 @@
  "zxkane/aws-skills/aws-sst-development": {
   "category": "devops-cloud",
   "summary": "Guides managing AWS resources as code with SST v4 and Pulumi, including sst.config.ts, infra modules, resource links, IAM scoping, and sst deploy workflows."
+ },
+ "umutyesildal/berlin-job-search/berlin-job-search": {
+  "category": "productivity-knowledge",
+  "summary": "Search public job sources for Berlin and Germany, prepare German CVs and interviews, and track applications locally."
  }
 }
