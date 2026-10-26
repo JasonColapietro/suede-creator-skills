@@ -1,6 +1,6 @@
 # The 12 Programmatic SEO Playbooks
 
-The Suede programmatic playbooks. Each one names the value a page must carry to clear the index-worthiness gates in SKILL.md; a playbook without that value is a doorway set.
+The Suede AI programmatic playbooks. Each one names the value a page must carry to clear the index-worthiness gates in SKILL.md; a playbook without that value is a doorway set.
 
 ## Contents
 - 1. Templates

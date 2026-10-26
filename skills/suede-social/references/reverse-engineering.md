@@ -1,4 +1,4 @@
-# Suede Content Pattern Analysis
+# Suede AI Content Pattern Analysis
 
 Instead of guessing, analyze a lawful, recent sample of comparable content and
 extract hypotheses to test on the user's account. A pattern in another account

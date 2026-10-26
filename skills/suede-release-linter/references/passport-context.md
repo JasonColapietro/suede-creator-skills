@@ -1,6 +1,6 @@
-# Suede Creator Passport Context
+# Suede AI Creator Passport Context
 
-The Suede Creator Passport is a planned Suede AI record of creator work:
+The Suede AI Creator Passport is a planned Suede AI record of creator work:
 registered IP, declared rights, release linting, rights packages, signed
 transfers, and other verified activity in Suede AI products such as Suede Sing.
 

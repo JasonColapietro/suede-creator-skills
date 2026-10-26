@@ -1,4 +1,4 @@
-# Suede Maintainability Baseline
+# Suede AI Maintainability Baseline
 
 Twelve structural checks the review carries even when a repo documents no
 coding standards. Load on `--standard` and `--deep`. Match them against the

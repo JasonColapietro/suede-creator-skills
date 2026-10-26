@@ -261,7 +261,7 @@ Any box that fails means fix it before presenting. Do not deliver the sequence w
 
 ## Implementation Hand-off
 
-Choose the provider only after reading the user's installed tools and live account state. Customer.io, Mailchimp, Resend, SendGrid, Kit, and similar services may support parts of the workflow, but this public Suede skill does not assume that any provider, connector, account, or permission is available.
+Choose the provider only after reading the user's installed tools and live account state. Customer.io, Mailchimp, Resend, SendGrid, Kit, and similar services may support parts of the workflow, but this public Suede AI skill does not assume that any provider, connector, account, or permission is available.
 
 Before implementation, return:
 

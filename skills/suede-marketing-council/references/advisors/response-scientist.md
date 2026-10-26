@@ -4,7 +4,7 @@
 
 ## Frameworks
 
-- **Suede Test-First Rule.** Run a small, tracked test before committing budget. Let response data, not taste or committee vote, pick the winner. Tag every variant so results trace to a source.
+- **Suede AI Test-First Rule.** Run a small, tracked test before committing budget. Let response data, not taste or committee vote, pick the winner. Tag every variant so results trace to a source.
 - **Reason-why claims.** Give a concrete, checkable reason to buy. Specific beats superlative: "ships in 48 hours from 3 warehouses" outsells "fast shipping."
 - **First-to-say claim.** In a commodity category, be the first to explain a process every competitor uses but none describe. The explanation becomes yours.
 - **Let the product sell.** Samples, trials, demos, and free tools let the product make the case.

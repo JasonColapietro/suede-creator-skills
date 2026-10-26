@@ -96,7 +96,7 @@ decision task with evidence and authority, not as an assumed unlock.
 ### Section 11: Operations Stack
 
 For each workflow, show accountable owner, reviewer, tool access, and fallback.
-A public Suede skill can structure work; it does not replace accountable
+A public Suede AI skill can structure work; it does not replace accountable
 ownership or prove staffing capacity.
 
 ### Section 13: Open Decisions

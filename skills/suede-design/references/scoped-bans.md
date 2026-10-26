@@ -70,7 +70,7 @@ AFTER: A metric placed inside a real workflow context. E.g., the royalty total s
 BEFORE: Every "view details" → opens modal
 AFTER: Inline expansion, side panel, or dedicated route; modal reserved for destructive confirmation or focused isolated actions
 
-**Centered hero copy over a stock-feeling gradient with no real Suede artifact.**
+**Centered hero copy over a stock-feeling gradient with no real Suede AI artifact.**
 BEFORE: "Own Your Music" centered on dark purple, no visual content below
 AFTER: A hero that contains a real product artifact (a partial rights registry UI, an animated waveform ledger, a claim receipt) with copy anchored to it.
 

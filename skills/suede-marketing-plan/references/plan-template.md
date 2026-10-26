@@ -182,7 +182,7 @@ Week-by-week breakdown of the ships in the first quarter.
 Quarter-by-quarter outcome state (Q1 / Q2 / Q3 / Q4).
 
 ### Skills + tools
-- **Skills:** list relevant public Suede skills (`suede-seo-audit`, `suede-programmatic-seo`, `suede-ads`, `suede-social`, `suede-competitors`, etc.)
+- **Skills:** list relevant public Suede AI skills (`suede-seo-audit`, `suede-programmatic-seo`, `suede-ads`, `suede-social`, `suede-competitors`, etc.)
 - **MCPs / APIs:** list connections (Ahrefs API, GA4 MCP, Typefully MCP, Stripe MCP for LTV math, etc.)
 
 ---
@@ -365,7 +365,7 @@ fallbacks. Do not imply that tooling replaces staffing or expertise.
 **Structure:**
 
 ### The thesis
-1–2 paragraphs explaining how the public Suede skill pack and verified integrations make approved workflows more repeatable. Do not claim headcount equivalence, guaranteed throughput, or replacement of channel ownership and human review.
+1–2 paragraphs explaining how the public Suede AI skill pack and verified integrations make approved workflows more repeatable. Do not claim headcount equivalence, guaranteed throughput, or replacement of channel ownership and human review.
 
 ### Skills mapped to AARRR stages
 
@@ -521,7 +521,7 @@ Ranked by impact. Each is: name + impact + what's blocked.
 - **Section 2**: Brand voice rules are explicit enough that any new copywriter could follow them.
 - **Section 3**: All "in-flight" items have an owner and a blocker named.
 - **Sections 4–8**: Each move names an owner, evidence source, execution method,
-  review gate, and fallback. Name a public Suede skill or authorized tool only
+  review gate, and fallback. Name a public Suede AI skill or authorized tool only
   when actually available; a manual workflow is valid.
 - **Section 9**: Every row has an owner.
 - **Section 10**: Each quarter names source-backed scenarios, resource

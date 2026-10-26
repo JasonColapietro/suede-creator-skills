@@ -4,7 +4,7 @@
 
 ## Frameworks
 
-- **Suede Availability Pair.** Brands grow by being easy to recall in buying situations (memory reach) and easy to buy when the need arises (buying reach: distribution, presence, prominence, in search and AI answers as well as shelves). These two outweigh most other levers.
+- **Suede AI Availability Pair.** Brands grow by being easy to recall in buying situations (memory reach) and easy to buy when the need arises (buying reach: distribution, presence, prominence, in search and AI answers as well as shelves). These two outweigh most other levers.
 - **Buying Moments map.** List the situations in which the category need shows up (the trigger, the place, the time, the problem) and link the brand to as many as possible.
 - **Recognizable over different.** Build consistent, unique identifiers (color, character, sound, phrase, shape) so the brand is instantly recognized. Claimed differentiation that buyers never notice does less work.
 - **Penetration over loyalty.** Growth comes mostly from more buyers, especially light and non-buyers. A recurring empirical pattern: smaller brands have fewer buyers and those buyers are slightly less loyal, so loyalty mostly follows share.

@@ -385,7 +385,7 @@ For a performance-led batch:
 
 - Do not invent product capabilities, testimonials, performance numbers, urgency, or platform-native proof.
 - Do not upload, publish, activate, or spend against creative without explicit authorization and a final rendered review.
-- Do not generate a replacement Suede S; use only the approved canonical mark when a Suede brand mark is required.
+- Do not generate a replacement Suede S; use only the approved canonical mark when a Suede AI brand mark is required.
 - Do not decide a creative winner from taste alone; use the declared metric, audience, spend, and test window.
 
 ## Routing

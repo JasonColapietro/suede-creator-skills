@@ -3,7 +3,8 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { createRequire } from "node:module";
-import { createHash } from "node:crypto";
+import crypto, { createHash } from "node:crypto";
+import os from "node:os";
 import { spawnSync } from "node:child_process";
 import { measureBookFacts, measureSkillFile } from "./lib/book-facts.mjs";
 import { PDF_PROVENANCE_RELATIVE, bookPdfDigest, bookPdfInputDigest } from "./lib/book-pdf-provenance.mjs";
@@ -181,9 +182,12 @@ function normalizedTokens(value) {
   return normalized ? normalized.split(/\s+/) : [];
 }
 
-function digestText(value) {
-  return createHash("sha256").update(value).digest("hex");
-}
+// The preflight hashes every 2- to 6-token window in the pack (about eleven
+// million digests), so the one-shot crypto.hash matters: it skips the Hash
+// object allocation and runs the scan in roughly half the time.
+const digestText = typeof crypto.hash === "function"
+  ? (value) => crypto.hash("sha256", value)
+  : (value) => createHash("sha256").update(value).digest("hex");
 
 function containsReservedSequence(value) {
   const tokens = normalizedTokens(value);
@@ -221,8 +225,50 @@ function containsReservedBodySignature(value) {
 // their paths are still checked.
 const GENERATED_FROM_SCANNED_SOURCES = /^docs\/directory\//;
 
+// A file's verdict depends only on its bytes and the reserved policy, so local
+// runs remember which content digests already scanned clean and skip them. The
+// key covers every digest set, the window sizes and the scan code itself, so
+// any policy or algorithm change starts a fresh cache. CI always scans in full.
+const PREFLIGHT_CACHE_LIMIT = 20000;
+
+function preflightCachePath() {
+  if (process.env.CI === "true" || process.env.SUEDE_VALIDATOR_CACHE === "0") return null;
+  const policy = digestText(JSON.stringify({
+    sequences: [...RESERVED_SEQUENCE_DIGESTS].map(([length, digests]) => [length, [...digests].sort()]),
+    signatures: reservedSignatures,
+    scan: [normalizedTokens, containsReservedSequence, containsReservedBodySignature].map(String),
+  }));
+  return path.join(os.tmpdir(), "suede-validator-cache", `preflight-${policy.slice(0, 32)}.json`);
+}
+
+function loadPreflightCache(cachePath) {
+  if (!cachePath) return new Set();
+  try {
+    const entries = JSON.parse(fs.readFileSync(cachePath, "utf8"));
+    return new Set(Array.isArray(entries) ? entries.filter((entry) => /^[0-9a-f]{64}$/.test(entry)) : []);
+  } catch {
+    return new Set();
+  }
+}
+
+function savePreflightCache(cachePath, clean) {
+  if (!cachePath) return;
+  try {
+    fs.mkdirSync(path.dirname(cachePath), { recursive: true });
+    const entries = [...clean].slice(-PREFLIGHT_CACHE_LIMIT);
+    const staging = `${cachePath}.${process.pid}.tmp`;
+    fs.writeFileSync(staging, JSON.stringify(entries));
+    fs.renameSync(staging, cachePath);
+  } catch {
+    // The cache only saves time; a read-only or full tmpdir must not fail validation.
+  }
+}
+
 function runReservedSequencePreflight(files) {
   const findings = [];
+  const cachePath = preflightCachePath();
+  const clean = loadPreflightCache(cachePath);
+  const cleanBefore = clean.size;
   for (const file of files) {
     const relative = path.relative(repoRoot, file);
     if (containsReservedSequence(relative)) {
@@ -238,10 +284,15 @@ function runReservedSequencePreflight(files) {
       if (error?.code === "ENOENT") continue;
       throw error;
     }
+    const contentDigest = digestText(text);
+    if (clean.has(contentDigest)) continue;
     if (containsReservedSequence(text) || containsReservedBodySignature(text)) {
       findings.push(digestText(relative).slice(0, 12));
+    } else {
+      clean.add(contentDigest);
     }
   }
+  if (clean.size !== cleanBefore) savePreflightCache(cachePath, clean);
   if (findings.length === 0) return;
 
   console.error("Reserved semantic sequence detected:");

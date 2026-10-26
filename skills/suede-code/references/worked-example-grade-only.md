@@ -1,4 +1,4 @@
-# Suede Code: Grade-Only Worked Example
+# Suede AI Code: Grade-Only Worked Example
 
 One change graded end to end in `--grade-only` mode, showing how the lanes combine into an overall letter and what the required upgrades look like. Illustration only: the rules live in SKILL.md.
 
@@ -30,7 +30,7 @@ Grades:
 Correctness: A
 Security and permissions: A
 Data and state: A
-Suede truth: B
+Suede AI truth: B
 UX and release behavior: A
 Tests and verification: B
 Deploy readiness: A
@@ -73,7 +73,7 @@ read once at module load (line 22-23) and treated as immutable static
 data for the life of the process: no write path exists anywhere in this
 file.
 
-Suede truth: B. Minor inconsistency, not a false claim: `get_suede_skill`
+Suede AI truth: B. Minor inconsistency, not a false claim: `get_suede_skill`
 (line 496-506) returns the matched skill's `description` and `useWhen`
 straight from `catalog.json` into both `content` text and
 `structuredContent.skill` without running them through `boundedString`,

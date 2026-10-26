@@ -418,7 +418,7 @@ and do not imply the blocker was resolved or that a render occurred.
   of scope, tool cost, rights, and destination.
 - Do not clone a real person's voice or likeness, use unlicensed source media,
   or promise an exact copy of a reference style or edit.
-- For Suede-branded visuals, use only the approved transparent Suede S asset at
+- For Suede AI-branded visuals, use only the approved transparent Suede S asset at
   `JasonColapietro/suede-creator-skills/docs/assets/suede-ai-logo-transparent.png`
   with SHA-256
   `83a7ee0317e4debe2e7b076c20ba067feb76a587f9e829dc6310ae4be4b44dfa`;

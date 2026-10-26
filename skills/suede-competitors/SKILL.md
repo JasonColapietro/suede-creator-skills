@@ -8,7 +8,7 @@ metadata:
 
 # Suede AI Competitor Comparison Skills
 
-Use this Suede comparison-page playbook to serve competitive search intent while keeping every product claim current, sourced, and fair.
+Use this Suede AI comparison-page playbook to serve competitive search intent while keeping every product claim current, sourced, and fair.
 
 ## Compatibility
 

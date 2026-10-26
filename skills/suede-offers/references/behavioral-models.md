@@ -1,4 +1,4 @@
-# Suede Behavioral Model Catalog
+# Suede AI Behavioral Model Catalog
 
 The evidence-tiered library behind the Persuasion Mechanics section of `suede-offers`. Pull only the two or three entries the Quick Reference narrows to, not the whole file. Every entry is a hypothesis to test in the user's context, never a guarantee.
 
@@ -318,7 +318,7 @@ These models help you design effective marketing systems.
 
 **Marketing application**: Prefer structural nudges (defaults, ordering, friction removal) over persuasive ones, and measure each.
 
-### Motivation-Ability-Prompt (Suede Action Check)
+### Motivation-Ability-Prompt (Suede AI Action Check)
 **Evidence: Framework.** Behavior = Motivation × Ability × Prompt. A design heuristic for diagnosing which factor is missing.
 
 **Marketing application**: High motivation but hard to do = won't happen. Easy to do but no prompt = won't happen. Design for all three.

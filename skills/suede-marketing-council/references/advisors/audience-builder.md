@@ -4,7 +4,7 @@
 
 ## Frameworks
 
-- **Suede Core Circle.** The smallest group that, if delighted, sustains the business and tells others. Serve them so specifically that outsiders can tell who it is for.
+- **Suede AI Core Circle.** The smallest group that, if delighted, sustains the business and tells others. Serve them so specifically that outsiders can tell who it is for.
 - **Permission asset.** People who asked to hear from you, receiving messages that are expected, personal, and relevant. It compounds; interruption rents attention and has to be paid for again.
 - **Talk-worthy test.** Would anyone mention this unprompted? If not, the product or experience needs the change, not the ad.
 - **Shared identity.** People act on "people like us do things like this." Lead the group's change; do not broadcast at it.

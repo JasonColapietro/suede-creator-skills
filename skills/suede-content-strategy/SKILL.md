@@ -8,7 +8,7 @@ metadata:
 
 # Suede AI Content Strategy Skills
 
-Use this Suede content-strategy playbook to plan evidence-backed content that earns search, sharing, trust, or qualified demand.
+Use this Suede AI content-strategy playbook to plan evidence-backed content that earns search, sharing, trust, or qualified demand.
 
 ## Compatibility
 

@@ -8,7 +8,7 @@ metadata:
 
 # Suede AI Free Tools Skills
 
-Suede uses engineering as marketing when a genuinely useful tool can create qualified discovery and a natural bridge to the paid product. Select, score, and scope the smallest maintainable calculator, grader, generator, or utility whose output earns attention rather than merely capturing it.
+Suede AI uses engineering as marketing when a genuinely useful tool can create qualified discovery and a natural bridge to the paid product. Select, score, and scope the smallest maintainable calculator, grader, generator, or utility whose output earns attention rather than merely capturing it.
 
 ## Compatibility
 

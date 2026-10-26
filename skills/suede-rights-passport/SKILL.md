@@ -186,7 +186,7 @@ Read each bundled reference at the moment it is needed, not up front:
 - `references/ddex-c2pa-crosswalk.md`: before external standards mapping or any DDEX/C2PA claim.
 - `references/optimization-checklist.md`: when writing `optimization-brief.md`.
 - `references/creator-questions.md`: when information is missing: ask only the questions that block package quality.
-- `references/passport-context.md`: when the user asks how the package relates to Suede AI review or the Suede Creator Passport.
+- `references/passport-context.md`: when the user asks how the package relates to Suede AI review or the Suede AI Creator Passport.
 
 Use the bundled assets as templates when creating or repairing a package:
 

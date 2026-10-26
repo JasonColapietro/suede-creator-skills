@@ -123,7 +123,7 @@ The after-deploy checks (live URL, critical-path smoke test, regression sweep, r
 
 ## Boundaries
 
-Generate; don't enforce. This skill writes workflow files and tells you the protection settings: it does **not** push, flip branch protection, or change repo access on its own. Verify the detected stack before applying. Works in any repo: it detects rather than assumes Suede or any specific project.
+Generate; don't enforce. This skill writes workflow files and tells you the protection settings: it does **not** push, flip branch protection, or change repo access on its own. Verify the detected stack before applying. Works in any repo: it detects rather than assumes Suede AI or any specific project.
 
 ## Routing
 

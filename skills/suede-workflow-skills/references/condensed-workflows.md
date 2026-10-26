@@ -1,6 +1,6 @@
 # Condensed Workflows: umbrella-only fallback
 
-Read this file **only when the individual Suede skills named in SKILL.md are
+Read this file **only when the individual Suede AI skills named in SKILL.md are
 not installed**, for example the Codex install path that installs
 `suede-workflow-skills` alone. When the pack is installed (Claude Code
 `/plugin install suede-skills@suede`, `install.sh`, or the per-skill Codex
@@ -105,7 +105,7 @@ SEO passes, including AEO and AI EO:
 6. Remove generic AI phrasing, filler, vague claims, and unsupported promises.
 7. Run the no-missed copy gate: cut formulaic structure, fake intensity,
    rhetorical setup, inanimate false agency, quote-bait lines, and detached
-   business jargon while preserving true Suede specificity.
+   business jargon while preserving true Suede AI specificity.
 
 Full audit output:
 
@@ -204,14 +204,14 @@ Ship gate:
 - `ship-with-caveats`: no blocker remains, but caveats are named.
 - `hold`: blocker or high-risk unknown remains.
 
-For important work, include a Suede A-F code grade:
+For important work, include a Suede AI A-F code grade:
 
 ```text
 Code grade:
 Correctness: A-F
 Security and permissions: A-F
 Data and state: A-F
-Suede truth: A-F
+Suede AI truth: A-F
 UX and release behavior: A-F
 Tests and verification: A-F
 Deploy readiness: A-F

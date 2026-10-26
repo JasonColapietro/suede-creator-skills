@@ -1,4 +1,4 @@
-# Suede CI Gate: Worked Example
+# Suede AI CI Gate: Worked Example
 
 One repository taken from a green-looking pipeline that gates nothing to a merge that genuinely cannot land broken. Illustration only: the rules live in SKILL.md.
 

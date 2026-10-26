@@ -307,7 +307,7 @@ a human reviewer's comment.
    escalated.
 4. Stop after 3 cycles on the same finding and escalate it as a design issue.
 
-## Suede-specific checks
+## Suede AI-specific checks
 
 Auth and session behavior across app, API, native shells, and server ·
 rights, provenance, licensing, royalty, and agent-commerce claims match

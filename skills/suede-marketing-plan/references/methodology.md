@@ -455,7 +455,7 @@ mismatched artifact.
 
 Before printing:
 
-- **Cross-reference check**: every tactic-library number (e.g., "idea #17") matches the actual idea in `references/idea-cross-reference.md`. Every related-skill mention either exists in the public Suede skill pack or is documented as an external dependency (see the scope note in `ops-stack-mapping.md`).
+- **Cross-reference check**: every tactic-library number (e.g., "idea #17") matches the actual idea in `references/idea-cross-reference.md`. Every related-skill mention either exists in the public Suede AI skill pack or is documented as an external dependency (see the scope note in `ops-stack-mapping.md`).
 - **MCP/API check**: every tool mentioned in Section 11 actually exists in the user's stack (per research.md intake) OR is flagged as "future / not yet wired."
 - **Path check**: no machine-specific paths in the output. Prove it by running `grep -nE '/Users/|/home/|/private/tmp' final_plan.md` and requiring zero matches; replace any hit with a descriptive reference.
 - **Voice check**: final read against brand voice rules. Flag and fix violations.

@@ -399,7 +399,7 @@ and do not imply an image was produced.
 
 ## Boundaries
 
-- For Suede visuals, use only `docs/assets/suede-ai-logo-transparent.png` with SHA-256 `83a7ee0317e4debe2e7b076c20ba067feb76a587f9e829dc6310ae4be4b44dfa`.
+- For Suede AI visuals, use only `docs/assets/suede-ai-logo-transparent.png` with SHA-256 `83a7ee0317e4debe2e7b076c20ba067feb76a587f9e829dc6310ae4be4b44dfa`.
 - Do not redraw, trace, approximate, recolor, distort, typeset, or generate a replacement for the approved Suede S mark. If the canonical file is missing or its checksum differs, omit the mark, name the blocker, and request the approved file.
 - Do not claim an image is licensed, rights-cleared, authentic, accessible, optimized, or platform-compliant without verifying the relevant source or output.
 - Do not use a paid provider, upload protected material, or cross an approved

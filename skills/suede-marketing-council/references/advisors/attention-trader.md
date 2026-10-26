@@ -4,7 +4,7 @@
 
 ## Frameworks
 
-- **Suede Attention Arbitrage.** Treat channels like a market. Keep moving effort toward places where attention is cheap relative to its value, and leave when the crowd arrives and costs rise.
+- **Suede AI Attention Arbitrage.** Treat channels like a market. Keep moving effort toward places where attention is cheap relative to its value, and leave when the crowd arrives and costs rise.
 - **Give, give, ask.** Deliver useful or entertaining native content repeatedly before asking for anything. Every piece is made for its platform, not cross-posted.
 - **Topic-graph distribution.** Feeds now distribute by interest, not follower count. A small account can win reach on one relevant post, so per-post relevance beats audience size.
 - **Document over manufacture.** Recording real work beats agonizing over polished content. It removes the perfectionism bottleneck and builds credibility.

@@ -128,7 +128,7 @@ Apps exceeding these thresholds get **reduced visibility** in search and recomme
 ## Search Ranking Inputs
 
 Google documents relevance, quality, and engagement as inputs; the list below
-is the working Suede model, not an official ranked list:
+is the working Suede AI model, not an official ranked list:
 
 1. **Metadata relevance**: Title carries most weight. NLP scans title + short desc + full desc.
 2. **App quality**: Android Vitals (crash/ANR rates)

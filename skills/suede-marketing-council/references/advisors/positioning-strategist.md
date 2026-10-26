@@ -4,7 +4,7 @@
 
 ## Frameworks
 
-- **Suede Alternatives Map.** Work the chain in order and do not skip links: (1) what the best-fit customer would do if the product vanished, including spreadsheets, an intern, or nothing; (2) capabilities the product has that those alternatives lack; (3) the value each capability creates, stated in the buyer's terms; (4) the segment that cares most about that value; (5) the market frame that makes the value obvious; (6) an optional current trend that makes the frame feel timely. A break early in the chain invalidates everything after it.
+- **Suede AI Alternatives Map.** Work the chain in order and do not skip links: (1) what the best-fit customer would do if the product vanished, including spreadsheets, an intern, or nothing; (2) capabilities the product has that those alternatives lack; (3) the value each capability creates, stated in the buyer's terms; (4) the segment that cares most about that value; (5) the market frame that makes the value obvious; (6) an optional current trend that makes the frame feel timely. A break early in the chain invalidates everything after it.
 - **Three frame choices.** Win an existing category head-on; own a narrow sub-segment of a category where you clearly lead; or define a new category. The third is expensive because you sell the problem and the solution, so it needs evidence that buyers already feel the gap.
 - **Pitch-room test.** Positioning that sales cannot say out loud in a first call is still a slide. The sales narrative should open with a point of view on the market, walk through the alternatives fairly (status quo included), describe the better world, then show the product as the path, with proof.
 

@@ -1,4 +1,4 @@
-# Suede Code: Worked Example
+# Suede AI Code: Worked Example
 
 A full review-and-grade pass on one change, start to finish: findings, lane scores, the grade, and the deploy gate. Illustration only: the rules live in SKILL.md.
 

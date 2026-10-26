@@ -153,7 +153,7 @@ Exact permission models vary by platform. Sanity uses role-based access. Content
 
 ---
 
-## Integration with Suede Skills
+## Integration with Suede AI Skills
 
 ### Programmatic SEO
 

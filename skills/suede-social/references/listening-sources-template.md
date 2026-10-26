@@ -1,7 +1,7 @@
 # Listening Sources: Template
 
 Copy this file to `.agents/listening-sources.md` in your project (or
-`.claude/listening-sources.md`) and fill in the brackets. Suede reads it when
+`.claude/listening-sources.md`) and fill in the brackets. Suede AI reads it when
 running the [listening workflow](listening.md).
 
 Delete sections you don't use. Keep this short and current: stale sources are worse than no sources.
@@ -120,7 +120,7 @@ Save yourself the regret.
 
 ---
 
-## Notes for the Suede agent
+## Notes for the Suede AI agent
 
 - When asked for a ranked set, bound the output to current source volume and
   review capacity using the format in

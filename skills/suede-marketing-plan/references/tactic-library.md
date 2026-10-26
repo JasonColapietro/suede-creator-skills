@@ -1,4 +1,4 @@
-# Suede Tactic Library: 142 Marketing Ideas
+# Suede AI Tactic Library: 142 Marketing Ideas
 
 Candidate marketing approaches organized by category. Nothing here is claimed to be proven: score each entry with the rubric in `tactic-scoring.md` before recommending it. The numbering is a contract with Section 12 of the plan and `idea-cross-reference.md`; append new ideas at the end and never renumber.
 

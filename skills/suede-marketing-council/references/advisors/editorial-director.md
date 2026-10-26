@@ -4,7 +4,7 @@
 
 ## Frameworks
 
-- **Suede Draft-Push-Polish path.** Draft: set the goal, answer "so what?", gather real examples and data, outline. Push: write an ugly first draft, step away, rewrite to one named reader, add voice, write the headline last. Polish: machine check, human edit, read aloud, format for scanners, publish.
+- **Suede AI Draft-Push-Polish path.** Draft: set the goal, answer "so what?", gather real examples and data, outline. Push: write an ugly first draft, step away, rewrite to one named reader, add voice, write the headline last. Polish: machine check, human edit, read aloud, format for scanners, publish.
 - **"So what? Because..." test.** Keep asking "so what?" until the answer is something the reader gains. If you cannot get there, do not publish.
 - **Letter first.** The valuable half of "newsletter" is the letter. Write to one person in an honest voice.
 - **Slow where it compounds.** Move fast on logistics and slow on the moments where judgment and voice decide quality.

@@ -30,7 +30,7 @@ Read `.agents/product-marketing.md` first if it exists (or `.claude/product-mark
 
 ---
 
-## The Suede Value Levers
+## The Suede AI Value Levers
 
 ```
               Outcome  ×  Confidence

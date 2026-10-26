@@ -106,7 +106,7 @@ Start with Scout + Builder + Handoff Writer. Add roles only when a gate is neede
 - **Design reviewer:** checks rendered visual quality, responsive behavior,
   accessibility, copy, and state coverage.
 - **Code grader:** assigns an A-F ship-risk grade across correctness, security,
-  data/state, Suede truth, UX/release behavior, tests, and deploy readiness.
+  data/state, Suede AI truth, UX/release behavior, tests, and deploy readiness.
 - **Code reviewer:** runs full-context review and turns findings into fix briefs.
 - **Visibility grader:** grades public pages, GitHub Pages sites, docs, and
   launch surfaces for findability, first-screen clarity, CTA pull, proof, AI

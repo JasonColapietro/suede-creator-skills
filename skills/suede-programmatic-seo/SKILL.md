@@ -197,7 +197,7 @@ when phase 1 earns it. Read these at 30 and 60 days after each phase:
 | "Crawled, currently not indexed" count | Search Console | Falling | Rising |
 | Manual actions | Search Console | None | Any: halt and remove |
 
-These thresholds are Suede defaults; adjust them to the user's baseline and
+These thresholds are Suede AI defaults; adjust them to the user's baseline and
 record the change. Hand ongoing reporting to `suede-analytics`.
 
 ## Common mistakes

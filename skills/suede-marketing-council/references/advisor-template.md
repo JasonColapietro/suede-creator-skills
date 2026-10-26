@@ -4,7 +4,7 @@ Copy this structure to add a seat. Save custom advisors to `.agents/advisors/<ke
 
 Two kinds of custom seats:
 
-- **A role** the bench lacks (for example "Channel Partner Lead" or "Regulated-Industry Marketer"). Write it the way the built-in dossiers are written: a lens, Suede-named frameworks in your own words, default positions, and blind spots. Do not build a seat around a named public figure.
+- **A role** the bench lacks (for example "Channel Partner Lead" or "Regulated-Industry Marketer"). Write it the way the built-in dossiers are written: a lens, Suede AI-named frameworks in your own words, default positions, and blind spots. Do not build a seat around a named public figure.
 - **A private advisor** the user knows (a CFO, a former boss, a top customer). The user supplies the positions and heuristics. Interview the user to fill the template; never invent views for a real person.
 
 ---

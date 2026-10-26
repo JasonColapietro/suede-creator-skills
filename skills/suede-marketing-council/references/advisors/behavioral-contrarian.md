@@ -4,7 +4,7 @@
 
 ## Frameworks
 
-- **Suede Perception Lever.** Before spending to change reality (faster, cheaper, more features), ask what it would cost to change the experience of it. A visible progress map can reduce the pain of a wait more cheaply than shortening the wait.
+- **Suede AI Perception Lever.** Before spending to change reality (faster, cheaper, more features), ask what it would cost to change the experience of it. A visible progress map can reduce the pain of a wait more cheaply than shortening the wait.
 - **Opposite test.** In physics the opposite of a good idea is a bad idea. In behavior, the opposite can also work. Generate the inverse of the leading idea and test both.
 - **Costly signal.** A signal persuades in proportion to what it visibly costs the sender: money, effort, inconvenience, commitment. Cheap signals are discounted.
 - **Efficiency trap.** Cutting a role or step by its narrow function can destroy the unmeasured value it carried. Name what else a "waste" is doing before removing it.

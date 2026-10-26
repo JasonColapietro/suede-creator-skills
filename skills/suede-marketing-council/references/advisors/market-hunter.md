@@ -4,7 +4,7 @@
 
 ## Frameworks
 
-- **Suede Proven Hunger Test.** Before building or writing, prove demand from behavior: what these people already bought, how recently, how often, how much. A list of past buyers beats a list of names. Search demand and paid-competitor density are modern hunger signals.
+- **Suede AI Proven Hunger Test.** Before building or writing, prove demand from behavior: what these people already bought, how recently, how often, how much. A list of past buyers beats a list of names. Search demand and paid-competitor density are modern hunger signals.
 - **Personal-Pile Test.** Inboxes, feeds, and mailboxes get sorted into "from a person" and "from a company." The first job of any outreach is to land in the personal pile. Format, sender, and subject decide this before the copy is read.
 - **Money-Activity Rule.** The owner's scarce hours go to the activity that most directly brings in revenue. Everything else is delegated, automated, or dropped.
 - **Learn by copying winners.** Rewrite proven promotions by hand until the rhythm is internal. Then write your own.

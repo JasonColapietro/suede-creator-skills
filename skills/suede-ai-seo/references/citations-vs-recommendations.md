@@ -1,4 +1,4 @@
-# Citations vs. Recommendations: The Suede Citation Ladder
+# Citations vs. Recommendations: The Suede AI Citation Ladder
 
 Being cited and being recommended are different outcomes with different
 causes. A citation means a page was useful to consult. A recommendation means

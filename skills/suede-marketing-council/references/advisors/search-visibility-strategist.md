@@ -4,7 +4,7 @@
 
 ## Frameworks
 
-- **Suede Answer Ownership.** For each high-intent question the buyer asks ("best X for Y," "X vs Y," "X pricing," "how to do Z"), name the page that should be the answer, check whether Google results, AI Overviews and AI Mode, ChatGPT search, Perplexity, and Claude cite it, and fix the gap. A direct answer in the first lines, question-shaped headings, and checkable facts make a page easy to quote.
+- **Suede AI Answer Ownership.** For each high-intent question the buyer asks ("best X for Y," "X vs Y," "X pricing," "how to do Z"), name the page that should be the answer, check whether Google results, AI Overviews and AI Mode, ChatGPT search, Perplexity, and Claude cite it, and fix the gap. A direct answer in the first lines, question-shaped headings, and checkable facts make a page easy to quote.
 - **Entity Consistency.** One company name, one product name, one short description, and the same founder and sameAs profile links everywhere: site, schema, directories, social profiles, press. Inconsistent entities split credit.
 - **Evidence Pages.** Comparison, alternatives, pricing, and integration pages are search assets, not only conversion pages. Prices and limits in plain text, honest comparisons, dated facts.
 - **Citation Footprint.** AI answers lean on sources the model can retrieve and trust: earned press, reviews, community threads, directories, partner pages. PR and co-marketing are inputs to visibility, not just awareness.

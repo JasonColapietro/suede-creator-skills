@@ -17,7 +17,7 @@ For a concrete input, expected output, recovery path, and validation check, read
 before treating the task as complete.
 
 Suede AI Product Marketing maintains the shared evidence layer for audience,
-positioning, objections, customer language, and proof. The Suede growth suite
+positioning, objections, customer language, and proof. The Suede AI growth suite
 reads this context so each downstream skill starts from the same verified
 product story.
 
@@ -283,7 +283,7 @@ the document look finished.*
   - Use today's date in ISO form (YYYY-MM-DD) for the entry and `Last updated`.
   - **Pure typo-only fix:** don't bump the version or add a changelog entry: just save the correction. Every other change bumps the version and gets an entry. When the change is a real repositioning, say so plainly, downstream skills will now generate against the new context.
 - Save to `.agents/product-marketing.md`
-- Tell them: "The Suede growth suite will now use this context automatically.
+- Tell them: "The Suede AI growth suite will now use this context automatically.
   The Changelog at the bottom tracks every revision, check it to see how your
   positioning has evolved. Run `/suede-product-marketing` anytime to update it."
 

@@ -4,7 +4,7 @@ This is an illustrative application, not a claim of measured customer results.
 
 ## Input
 
-Edit this sentence in Suede house style: "It is worth noting that the dashboard seamlessly transforms your workflow." The product brief only confirms an invoice-status view. Findings-only mode is not requested.
+Edit this sentence in Suede AI house style: "It is worth noting that the dashboard seamlessly transforms your workflow." The product brief only confirms an invoice-status view. Findings-only mode is not requested.
 
 ## Expected output
 

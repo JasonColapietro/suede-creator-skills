@@ -32,7 +32,7 @@ Injecting your POV into a story that's already trending. Done well: free distrib
 
 ## The Loop
 
-A repeatable draft-and-review workflow Suede can run on demand.
+A repeatable draft-and-review workflow Suede AI can run on demand.
 
 1. **Detect**: surface trending stories in your category (see [Sources & Tooling](#sources--tooling))
 2. **Score**: apply the [newsworthiness rubric](#newsworthiness-scoring-rubric); drop anything below threshold
@@ -48,7 +48,7 @@ Sending or publishing anything produced here runs the send-approval handover in
 SKILL.md ("Quick Reference: Pitch Quality Bar"), which is the canonical
 statement of this gate.
 
-Output format Suede should produce:
+Output format Suede AI should produce:
 
 ```
 NEWSJACK CANDIDATE: 2026-06-10

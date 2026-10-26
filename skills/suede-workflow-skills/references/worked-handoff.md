@@ -2,7 +2,7 @@
 
 ## Inputs
 
-Request: “Which Suede skill should I use to improve this landing page's search
+Request: “Which Suede AI skill should I use to improve this landing page's search
 traffic and signup path?” Supply the current page/repository and desired done
 signal if available. Synthetic case: a technical audit exists, conversion
 evidence is missing, and the user is asking for routing rather than authorizing

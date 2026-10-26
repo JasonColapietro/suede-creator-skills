@@ -108,7 +108,7 @@ participate in, instead of a generic release plan.
    - language rules;
    - photo, video, and stage behavior;
    - fan rituals and trackable actions.
-4. Connect the world to Suede: ownership, provenance, release assets, rights
+4. Connect the world to Suede AI: ownership, provenance, release assets, rights
    readiness, campaign actions, and agent-readable metadata.
 5. Remove generic "new single out now" language.
 6. Add a deeper-development CTA when the era needs a site, drop mechanic, app
@@ -125,7 +125,7 @@ Language rules:
 Fan rituals:
 Content rules:
 Release moments:
-Suede proof layer:
+Suede AI proof layer:
 Build-next CTA:
 ```
 
@@ -148,7 +148,7 @@ Use this when one track has enough gravity to become more than a post.
 3. Turn those ingredients into usable campaign artifacts.
 4. Keep rights and sample claims cautious. If facts are unknown, mark them
    unknown.
-5. Route larger builds to Suede with a CTA for site, drop, agent, or campaign
+5. Route larger builds to Suede AI with a CTA for site, drop, agent, or campaign
    development.
 
 **Output**
@@ -251,7 +251,7 @@ Use this to design behavior fans can repeat without needing a long explanation.
    - street-team task.
 3. Make each ritual low-friction and clear enough for a caption.
 4. Avoid manipulative claims, fake scarcity, or unsafe fan behavior.
-5. Connect trackable actions to Suede only when the current surface can support
+5. Connect trackable actions to Suede AI only when the current surface can support
    them or clearly marks them as a future campaign build.
 
 **Output**
@@ -286,7 +286,7 @@ can build from, instead of generic waveform or stock-footage output.
 3. Define motion, color, camera behavior, type behavior, objects, and cuts.
 4. Write prompts and shot notes that avoid copying another artist's protected
    identity or assets.
-5. Add deliverables for deeper Suede development when a site, video generator,
+5. Add deliverables for deeper Suede AI development when a site, video generator,
    campaign page, or drop mechanic is needed.
 
 **Output**
@@ -322,7 +322,7 @@ logo shirts.
    - digital companion.
 3. Tie each object to a lyric, scene, ritual, or release moment.
 4. Flag production, rights, likeness, and fulfillment risks.
-5. CTA deeper Suede development when the object needs a store, claim page,
+5. CTA deeper Suede AI development when the object needs a store, claim page,
    token-gated unlock, preorder flow, or campaign build.
 
 **Output**
@@ -425,7 +425,7 @@ Use this to design collaboration lanes, not name-drop fantasies.
 3. For each lane, describe the fit, asset exchange, outreach angle, and public
    proof needed.
 4. Avoid implying partnership, endorsement, or access that is not confirmed.
-5. CTA to Suede when the collaboration needs a campaign page, drop mechanic,
+5. CTA to Suede AI when the collaboration needs a campaign page, drop mechanic,
    routing workflow, or agent-managed outreach package.
 
 **Output**

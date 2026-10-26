@@ -80,7 +80,7 @@ A-F grade.
 - [ ] Name the primary query theme (what someone types or asks to land here)
 - [ ] Write a standalone definition from the opening section: "[Entity] is
       [what it does] for [who] by [how]." If the page cannot support one,
-      report the ambiguity and reader impact. This is a Suede clarity
+      report the ambiguity and reader impact. This is a Suede AI clarity
       diagnostic, not a Google ranking requirement.
 - [ ] Name one action the page should earn (install, sign up, read docs, fork
       repo, contact)
@@ -152,7 +152,7 @@ A-F grade.
 
 Google states its Search AI features need no chunking. This check comes from
 Google Cloud's Vertex AI Search, a separate product whose largest configurable
-chunk is 500 tokens; Suede uses it as a proxy for how retrieval systems in
+chunk is 500 tokens; Suede AI uses it as a proxy for how retrieval systems in
 general split pages. Report it as a heuristic, never as Google Search behavior.
 
 - [ ] Flag heading sections over ~375 words (about 500 tokens). Measure the

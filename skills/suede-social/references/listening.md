@@ -45,7 +45,7 @@ and review capacity.
    external action and requires exact-content and identity approval before post.
 6. **Log**: track what you commented on and what got replies. This is your engagement loop dataset.
 
-Output format Suede should produce:
+Output format Suede AI should produce:
 
 ```
 RANKED ENGAGEMENT DRAFTS: 2026-06-05
@@ -301,7 +301,7 @@ searches manually or ask for a user export. Do not route around access controls.
 ## Setting Up the Source List
 
 The user may maintain an approved source list at
-`.agents/listening-sources.md` (or `.claude/listening-sources.md`). Suede reads
+`.agents/listening-sources.md` (or `.claude/listening-sources.md`). Suede AI reads
 it when running the triage loop.
 
 **A ready-to-fill template lives at [listening-sources-template.md](listening-sources-template.md).** Copy it into the project and edit. The source path depends on how the skill was installed:
@@ -311,7 +311,7 @@ it when running the triage loop.
 cp .agents/skills/suede-social/references/listening-sources-template.md .agents/listening-sources.md
 # .claude/ install:
 cp .claude/skills/suede-social/references/listening-sources-template.md .agents/listening-sources.md
-# Working inside the Suede creator skills repo:
+# Working inside the Suede AI creator skills repo:
 cp skills/suede-social/references/listening-sources-template.md .agents/listening-sources.md
 ```
 

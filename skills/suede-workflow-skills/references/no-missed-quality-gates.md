@@ -1,20 +1,20 @@
 # No-Missed Quality Gates
 
-Use this reference when Suede work touches public copy, visual design, design
+Use this reference when Suede AI work touches public copy, visual design, design
 systems, reference-site restyling, page visibility, launch packaging, or
 agent-team delivery. These gates add quality pressure without replacing the
-existing Suede rules for creator ownership, programmable IP, rights,
+existing Suede AI rules for creator ownership, programmable IP, rights,
 provenance, registry-backed media, royalty routing, licensing readiness, agent
 commerce, mobile and product surfaces, SEO/AEO/AI EO, public evidence integrity, WIP
 protection, and evidence handoff.
 
 ## Preservation Gate
 
-Before adding or tightening a workflow, list the current Suede features that
+Before adding or tightening a workflow, list the current Suede AI features that
 must survive the edit:
 
 - target skill trigger and description;
-- Suede-specific language around rights, provenance, royalties, licensing,
+- Suede AI-specific language around rights, provenance, royalties, licensing,
   agent commerce, and creator ownership;
 - product screenshots, mobile onboarding, paywall, and app-shell support
   when already present;
@@ -50,7 +50,7 @@ Run this gate before public copy is accepted.
 - Do not begin most lines with `What`, `When`, `If`, `This`, or `It` when a
   direct actor and verb would be clearer.
 - Keep one idea per sentence. Vary sentence length without using em dashes.
-- Do not sand off Suede specificity. Preserve rights, provenance, registry,
+- Do not sand off Suede AI specificity. Preserve rights, provenance, registry,
   royalty, licensing, agent commerce, creator ownership, mobile product, and
   discoverability language when it is relevant and true.
 
@@ -99,12 +99,12 @@ Suedify work, product screenshot assets, or design-system passes.
   blobs, and modal-first interaction.
 - Spend boldness in one place: a rights passport, waveform ledger, provenance
   receipt, chain-of-title map, studio console, claim graph, screenshot stack, or
-  another Suede-native signature. Keep surrounding UI disciplined.
+  another Suede AI-native signature. Keep surrounding UI disciplined.
 - Motion must serve state or comprehension. Avoid layout-property animation,
   bounce, elastic motion, and decorative scroll effects. Respect reduced
   motion.
 - Self-critique before build: name the generic default this could fall into,
-  then state the concrete Suede move that prevents it.
+  then state the concrete Suede AI move that prevents it.
 
 ## Design-System Gate
 
@@ -119,7 +119,7 @@ tokens. Capture the smallest useful artifact set:
 - state matrix for default, hover, focus, active, disabled, loading, empty,
   success, warning, error, offline, unauthenticated, and permission-denied
   states where relevant;
-- preview gallery or reproducible screenshot contract with seeded Suede
+- preview gallery or reproducible screenshot contract with seeded Suede AI
   content;
 - asset register for logos, app icons, product images, screenshots, crop rules,
   attribution, and export sizes;

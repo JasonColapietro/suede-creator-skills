@@ -1,7 +1,7 @@
 # Public Install Guidance
 
 Read this file only when the user asks how to install, update, or subset the
-Suede pack. It changes nothing about how work is routed or executed.
+Suede AI pack. It changes nothing about how work is routed or executed.
 
 ## Claude Code
 

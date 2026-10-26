@@ -1,4 +1,4 @@
-# Suede Agent-Doc Method
+# Suede AI Agent-Doc Method
 
 Read this when the document's reader is a model: a `SKILL.md`, a `CLAUDE.md`,
 an `AGENTS.md`, or a reference file a skill points to. Human copy competes for
@@ -56,7 +56,7 @@ The branching test decides the shelf: keep in the file what every path needs;
 move out what only some paths use. Keep a concept's definition, rules, and
 exceptions under one heading so reading one part brings the rest.
 
-Suede thresholds: reference over about 100 lines moves to `references/` with a
+Suede AI thresholds: reference over about 100 lines moves to `references/` with a
 contents list; under about 50 stays inline; in between, stay inline unless it
 pushes `SKILL.md` past 500 lines. A document can be too long even when every
 line is live. The fix is moving reference down a shelf, not trimming words.

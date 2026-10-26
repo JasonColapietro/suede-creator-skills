@@ -94,7 +94,7 @@ forecast.
 
 ### Section 11: Operations Stack
 
-Map approved tools and public Suede skills to accountable owners. A tool route
+Map approved tools and public Suede AI skills to accountable owners. A tool route
 does not prove capacity or replace headcount.
 
 ## Category Adjustments

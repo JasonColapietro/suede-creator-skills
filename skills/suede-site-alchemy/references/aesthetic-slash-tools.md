@@ -1,6 +1,6 @@
 # Aesthetic Slash Tools
 
-These are named design moves for Suede Site Alchemy. They are not shell
+These are named design moves for Suede AI Site Alchemy. They are not shell
 commands. Use them to structure notes, edits, or a short critique.
 
 ## Core Read
@@ -54,7 +54,7 @@ decision sections so the page does not feel like a wall of cards.
 clear argument. Do not fabricate proof.
 
 `/console-moment`
-: For Suede technical/product surfaces, add one inspectable product-style
+: For Suede AI technical/product surfaces, add one inspectable product-style
 moment: terminal, status rail, audit result, campaign ledger, asset passport,
 or live workflow card.
 

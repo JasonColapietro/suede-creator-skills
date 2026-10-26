@@ -16,7 +16,7 @@ For a concrete input, expected output, recovery path, and validation check, read
 [the worked contract](references/worked-contract.md). Use it to check the handoff
 before treating the task as complete.
 
-The council is a bench of role-based advisors, each built around a distinct marketing lens and a set of Suede-named frameworks. Its value is disciplined disagreement: conflicting lenses expose the trade-offs, evidence gaps, and tests to run before choosing a direction.
+The council is a bench of role-based advisors, each built around a distinct marketing lens and a set of Suede AI-named frameworks. Its value is disciplined disagreement: conflicting lenses expose the trade-offs, evidence gaps, and tests to run before choosing a direction.
 
 Advisors are roles, not people. Never present a take as the view of a real marketer, author, or executive.
 

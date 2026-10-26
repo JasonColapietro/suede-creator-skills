@@ -49,7 +49,7 @@ called "Claim audit" in `/workflows`.
     real cost in a short piece.
 11. **Polish**: one reviser for confirmed blockers (prose has no file-level
     disjointness, so parallel editors of one string produce a conflict with no
-    merge tool), then Suede Slop Stop scored out of 50, then the graphic spec and
+    merge tool), then Suede AI Slop Stop scored out of 50, then the graphic spec and
     the channel package in parallel.
 12. **Gate and handoff**: deterministic checks (open placeholders, missing
     protected strings, house-style dash violations, word count, fields over limit) run in the script

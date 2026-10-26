@@ -14,7 +14,7 @@ Requires a workflow host supporting Workflow, phase, subagents, and local draft 
 For a concrete input, expected handoff, and failure check, read
 [the worked handoff](references/worked-handoff.md).
 
-The copy side of the canonical Suede DAG. One brief in, one publishable draft out,
+The copy side of the canonical Suede AI DAG. One brief in, one publishable draft out,
 with about thirty agents in between arranged as a graph rather than a chain.
 
 `suede-graph-flo-xr` decomposes work by **file ownership**: two lanes may never write the
@@ -115,7 +115,7 @@ The argument is free-form. Extract:
   trademark forms, price strings, disclaimer sentences.
 - **wordBudget**: total words. Optional; the surface law supplies limits per field.
 - **houseStyle**: optional `{ guidance, emDashes }`. `guidance` is the supplied
-  author/company voice brief; `emDashes` is `allow` or `avoid` (Suede default).
+  author/company voice brief; `emDashes` is `allow` or `avoid` (Suede AI default).
   Translate an explicit punctuation preference into this field so prompts and
   deterministic checks agree. Protected source spans remain byte-exact either way.
 - **agentBudget**: `light`, `standard`, or `deep`. Required, and you must ask the
@@ -171,7 +171,7 @@ author placeholders, and report the returned verdict without claiming publicatio
 
 ## Shared cleanup method
 
-The slop review uses Suede Slop Stop (use suede-deslop) in findings-only mode;
+The slop review uses Suede AI Slop Stop (use suede-deslop) in findings-only mode;
 the final cleanup uses the same canonical skill and full kill list in edit mode.
 Make the minimum effective edit, preserve factual wording and exact source spans,
 and keep deliberate voice and the supplied house style. The workflow's `deslop`
@@ -282,7 +282,7 @@ re-run.
 - The change is code rather than copy -> use `suede-graph-flo-xr`, which searches
   competing implementation plans and mutates only the selected winner.
 - One surface, one pass, facts already established -> use `suede-copy`.
-- Text already written that needs cleanup or a findings-only audit -> use `suede-deslop` (Suede Slop Stop).
+- Text already written that needs cleanup or a findings-only audit -> use `suede-deslop` (Suede AI Slop Stop).
 - The house voice needs defining rather than extracting from shipped copy ->
   use the Brand-Voice Retune job in `suede-copy`. Without it, put a
   few pieces of already-shipped copy in `sources` and let the voice lens

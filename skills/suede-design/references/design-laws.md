@@ -1,12 +1,12 @@
 # Design Laws
 
-The numeric rules a Suede interface has to satisfy: spacing, type scale, color, contrast, density, motion, and state. Every law here is a threshold, not a preference.
+The numeric rules a Suede AI interface has to satisfy: spacing, type scale, color, contrast, density, motion, and state. Every law here is a threshold, not a preference.
 
 ## Design Laws
 
 ### Subject First
 
-Strip the logo from any Suede surface. If the remaining visual could belong to a generic SaaS, a crypto exchange, or a music streaming app, the design has failed. Suede surfaces should feel like purpose-built studio infrastructure: precise, traceable, and operator-grade. Every surface should answer: "What does a creator do here, specifically?"
+Strip the logo from any Suede AI surface. If the remaining visual could belong to a generic SaaS, a crypto exchange, or a music streaming app, the design has failed. Suede AI surfaces should feel like purpose-built studio infrastructure: precise, traceable, and operator-grade. Every surface should answer: "What does a creator do here, specifically?"
 
 ### One Memorable Move
 
@@ -151,7 +151,7 @@ Primary navigation shows the user's current location at all times with a visible
   surface needs a visual asset. Do not replace visible brand assets, product
   imagery, or nonstandard icons with CSS shapes, emoji, placeholder divs, or
   improvised inline drawings.
-- Use approved Suede logo files from the current project, public repo assets,
+- Use approved Suede AI logo files from the current project, public repo assets,
   or an operator-provided brand folder. Do not reference private local asset
   paths in public docs, screenshots, or generated output.
 - For 3D work, use Three.js and verify the canvas is nonblank, framed,

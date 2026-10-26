@@ -3,7 +3,7 @@
 Third-party ASO benchmarks (category conversion rates, rating lift, video lift,
 screenshot scroll rates) come from vendor panels with different markets,
 traffic sources, and definitions. They shift every year and rarely publish
-methodology. Suede rules:
+methodology. Suede AI rules:
 
 1. **Never score a listing against a vendor benchmark.** Scores come from the
    rubric in `scoring-criteria.md` and the listing evidence.

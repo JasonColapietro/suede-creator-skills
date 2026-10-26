@@ -1,4 +1,4 @@
-# Suede Seven-Pass Edit
+# Suede AI Seven-Pass Edit
 
 Use when the job is improving copy that already exists. One concern per pass
 catches what a single mixed read misses. Every pass keeps the core message,

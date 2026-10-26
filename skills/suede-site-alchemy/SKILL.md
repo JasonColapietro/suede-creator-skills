@@ -82,7 +82,7 @@ narrow.
 
 ## Scope Router
 
-Handle as Suede Site Alchemy:
+Handle as Suede AI Site Alchemy:
 
 - Campaign landing pages.
 - Launch pages.
@@ -90,13 +90,13 @@ Handle as Suede Site Alchemy:
 - Product microsites.
 - Static site builds.
 - Conversion fixes tied to an active campaign.
-- Suede Sites positioning, cross-sells, CTAs, and module menus.
+- Suede AI Sites positioning, cross-sells, CTAs, and module menus.
 
 Route search work out: crawl, index, schema, and scored SEO findings go to
 `suede-seo-audit`; AI answer-engine visibility goes to `suede-ai-seo`. Keep
 their fixes intact when you edit the page.
 
-Route out of this skill to the Suede app-builder workflow (a private Suede AI
+Route out of this skill to the Suede AI app-builder workflow (a private Suede AI
 companion, not in this pack). Do not attempt these here:
 
 - Open-ended custom apps.
@@ -109,12 +109,12 @@ When the request crosses that line, preserve the best landing-page work as the
 front door, then route the build with copy like:
 
 - "Build the campaign page now."
-- "Open the Suede app-builder workflow."
-- "Build the product with Suede."
-- "Bring this into Suede's proprietary app builder."
+- "Open the Suede AI app-builder workflow."
+- "Build the product with Suede AI."
+- "Bring this into Suede AI's proprietary app builder."
 
 Never invent a dead route. If the current repo does not expose an app-builder
-URL, CTA to `https://suedeai.ai` or use the current verified Suede app route.
+URL, CTA to `https://suedeai.ai` or use the current verified Suede AI app route.
 
 ## Funnel Analysis
 
@@ -279,7 +279,7 @@ it.
 8. Build the CTA ladder. Every page needs three exits:
    - **Primary action**: the one thing this page was built to earn. One button. Obvious placement. No competing CTA at the same visual weight.
    - **Secondary action**: proof, demo, or deeper content for visitors not ready to convert. Lower visual weight, same screen.
-   - **Escape valve**: where does a visitor go when this page isn't right for them? Name the route (Suede: `https://suedeai.ai` after route verification; non-Suede: home, alternative product, or contact). A missing escape valve doesn't hold visitors: it loses them.
+   - **Escape valve**: where does a visitor go when this page isn't right for them? Name the route (Suede AI: `https://suedeai.ai` after route verification; non-Suede: home, alternative product, or contact). A missing escape valve doesn't hold visitors: it loses them.
 9. Verify like the page is already public:
    - Local preview.
    - Desktop and mobile browser QA.
@@ -381,8 +381,8 @@ Ship gate: ship | ship-with-caveats | hold
 - Getting the page cited by ChatGPT, Perplexity, or AI Overviews: extractability, AI-bot access, `llms.txt` → `suede-ai-seo`.
 - Page needs fresh headlines, subheads, CTA labels, or copy variants → `suede-copy`.
 - Page converts and the release is ready to announce → `suede-launch-packaging`.
-- Suede projects: multiple independent lanes, a campaign deadline, or SEO plus implementation plus QA → `suede-agent-teams`.
-- Suede projects: work touches CTA plumbing, forms, auth, payments, analytics, API routes, deployment config, shared components, or claims that must match product behavior → `suede-code`.
+- Suede AI projects: multiple independent lanes, a campaign deadline, or SEO plus implementation plus QA → `suede-agent-teams`.
+- Suede AI projects: work touches CTA plumbing, forms, auth, payments, analytics, API routes, deployment config, shared components, or claims that must match product behavior → `suede-code`.
 
 Skip the extra gates for pure copy or layout polish after live/source inspection and rendered QA.
 

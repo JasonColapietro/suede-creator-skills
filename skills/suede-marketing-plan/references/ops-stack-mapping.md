@@ -2,13 +2,13 @@
 
 This doc maps every marketing-skill and every relevant MCP/API integration to the AARRR stage(s) it primarily serves. It's the source for Section 11 of every plan.
 
-> **Note on scope.** Skills below live in the public Suede skill pack. External
+> **Note on scope.** Skills below live in the public Suede AI skill pack. External
 > tools are optional. Discover current callable, authorized capabilities first;
 > otherwise use a manual workflow and record the limitation in Section 13.
 
 ## The thesis
 
-The public Suede skill pack and verified integrations can make approved workflows more repeatable for a small team. They do not replace channel ownership, human review, or missing expertise, and they do not imply a headcount-equivalence or guaranteed output.
+The public Suede AI skill pack and verified integrations can make approved workflows more repeatable for a small team. They do not replace channel ownership, human review, or missing expertise, and they do not imply a headcount-equivalence or guaranteed output.
 
 The plan's Section 11 makes this thesis explicit by:
 1. Mapping skills to stages so the founder sees which skills execute which work
@@ -192,7 +192,7 @@ If the client has no verified example yet, frame it as the *first test*, "Here i
 
 For clients without callable authorized connections, frame Section 11
 differently:
-- List the manual workflows and public Suede skills that apply now.
+- List the manual workflows and public Suede AI skills that apply now.
 - Name the specific evidence or efficiency question an optional connection
   could address, plus owner, data boundary, cost, fallback, and review.
 - Keep setup or installation as an unapproved option until the user explicitly

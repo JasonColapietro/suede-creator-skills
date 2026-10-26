@@ -18,7 +18,7 @@ before treating the task as complete.
 
 Suede AI turns repeatable marketing work into bounded loops with a defined trigger, cadence, input contract, self-check, durable state, human checkpoint, and stopping condition. A loop may watch SEO opportunities, ad fatigue, or churn signals, but it never earns permission to publish, spend, or mutate production merely because it runs on a schedule.
 
-This is the operational counterpart to `suede-marketing-plan`: the plan identifies what may be worth trying; Suede loops define what approved work should repeat and how public Suede skills coordinate it.
+This is the operational counterpart to `suede-marketing-plan`: the plan identifies what may be worth trying; Suede AI loops define what approved work should repeat and how public Suede AI skills coordinate it.
 
 ## How to Use This Skill
 

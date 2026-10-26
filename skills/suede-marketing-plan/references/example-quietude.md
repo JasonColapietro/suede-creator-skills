@@ -47,7 +47,7 @@ stop conditions must all be verified.
 
 1. **Fix the leak before pouring water in.** The Day 1 → Day 35 funnel shape (1.34% → 5.46%) tells us the product converts given time and contact. What it's missing is a working first-session moment (the headphone gate is killing conversion) and a lifecycle layer to deliver the contact. These two pieces: onboarding rebuild and Customer.io flows shipped, are the unlock for everything else.
 2. **Compound the moats Quietude already has.** Peer-reviewed clinical study, longevity-influencer PR, 15K live event participants, Alex's founder voice: these are link generators, content pillars, and credibility anchors that most wellness brands would kill for. They're under-leveraged. SEO, content, and App Store optimization translate them into search and discovery surface area.
-3. **Build the founder-and-fCMO operating system that gives a 4-person team repeatable execution.** The public Suede skill pack coordinates verified workflows across Customer.io, Shopify, App Store, Stripe, and GitHub when those integrations are available, while named human owners retain approval for publishing, spend, and production changes.
+3. **Build the founder-and-fCMO operating system that gives a 4-person team repeatable execution.** The public Suede AI skill pack coordinates verified workflows across Customer.io, Shopify, App Store, Stripe, and GitHub when those integrations are available, while named human owners retain approval for publishing, spend, and production changes.
 
 **What twelve months looks like, plausibly:**
 
@@ -661,15 +661,15 @@ or financing-readiness threshold applies.
 
 ## 11. Marketing operations stack
 
-This stack makes the plan executable at Quietude's team size. The public Suede skill pack supplies repeatable operating methods, while connected MCPs and APIs are used only when discovered, authorized, and verified in the current environment.
+This stack makes the plan executable at Quietude's team size. The public Suede AI skill pack supplies repeatable operating methods, while connected MCPs and APIs are used only when discovered, authorized, and verified in the current environment.
 
 ### The thesis
 
-Every move in the AARRR breakdown above maps to one or more public Suede skills and, where available, named MCP/API integrations with explicit owners and approval points.
+Every move in the AARRR breakdown above maps to one or more public Suede AI skills and, where available, named MCP/API integrations with explicit owners and approval points.
 
 The fCMO's job is to:
 1. Define the strategy and sequencing (this doc)
-2. Route each approved move through the right public Suede skill and current context
+2. Route each approved move through the right public Suede AI skill and current context
 3. Maintain the shared context (`quietude-context`) and tooling so Alex + Sam + future hires can plug in
 4. Assign work from evidence about duration, capacity, access, risk, review,
    total cost, and fallback; tooling never substitutes for accountable ownership
@@ -700,7 +700,7 @@ The fCMO's job is to:
 
 Per kickoff record: *"A non-technical founder drafted an abandoned-cart flow through the available Customer.io connector and reviewed it before activation."*
 
-This recorded event shows that the workflow was drafted with the available connector and a human review gate; it is not evidence of a performance outcome or headcount replacement. The same Suede lifecycle method can be considered for lapsed-user re-engagement, subscription-center work, win-back, eye-mask gifting, and ambassador lifecycle when each integration and permission is verified. The fCMO's role is sequencing, approval, and brand-voice QA.
+This recorded event shows that the workflow was drafted with the available connector and a human review gate; it is not evidence of a performance outcome or headcount replacement. The same Suede AI lifecycle method can be considered for lapsed-user re-engagement, subscription-center work, win-back, eye-mask gifting, and ambassador lifecycle when each integration and permission is verified. The fCMO's role is sequencing, approval, and brand-voice QA.
 
 ### Capability unlocks by verified resource state
 
@@ -712,7 +712,7 @@ This recorded event shows that the workflow was drafted with the available conne
 | Analytics | | | | | |
 | Community / PR | | | | | |
 
-The public Suede skill pack makes approved workflows repeatable across stages. Capacity still depends on data quality, available integrations, human review, and named owners; adding a channel is not a claim that headcount becomes unnecessary.
+The public Suede AI skill pack makes approved workflows repeatable across stages. Capacity still depends on data quality, available integrations, human review, and named owners; adding a channel is not a claim that headcount becomes unnecessary.
 
 ---
 

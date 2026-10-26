@@ -3,7 +3,7 @@
 Answer engines attribute facts to entities: an organization, a person, a
 product. When the name, founder, URL, or description differs from one source
 to the next, engines hedge, merge you with someone else, or leave you out. This
-reference is the Suede procedure for making one entity unambiguous everywhere.
+reference is the Suede AI procedure for making one entity unambiguous everywhere.
 
 ## 1. Pick the canonical facts
 

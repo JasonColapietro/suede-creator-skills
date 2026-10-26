@@ -15,7 +15,7 @@ input, expected artifact, failure response and validation example.
 
 Works with live listing URLs or a prelaunch feature brief; web access for current official store field rules, console exports for performance evidence. Store write access is unnecessary for an audit or metadata draft.
 
-Analyze App Store and Google Play listings with the Suede ASO scoring system. Fetch
+Analyze App Store and Google Play listings with the Suede AI ASO scoring system. Fetch
 live listing data, score metadata, visuals, and ratings, then produce a
 prioritized action plan.
 

@@ -39,7 +39,7 @@ If these inputs are missing, keep the candidate `Conditional` or `Deferred`.
 - **Revenue:** Do expansion, seats, usage, packaging, or service changes fit
   current willingness-to-pay, margin, retention, and delivery evidence?
 
-### Suede routes to consider
+### Suede AI routes to consider
 
 `suede-customer-research`, `suede-product-marketing`,
 `suede-sales-enablement`, `suede-cold-email`, `suede-content-strategy`,
@@ -73,7 +73,7 @@ Route only after the candidate's evidence and authority gates pass.
 - **Revenue:** Does cohort evidence support testing term length, tiers,
   packaging, or an upsell without assuming an annual-plan default?
 
-### Suede routes to consider
+### Suede AI routes to consider
 
 `suede-aso`, `suede-onboarding`, `suede-paywalls`,
 `suede-emails`, `suede-referrals`, `suede-pricing`, `suede-ad-creative`, and
@@ -105,7 +105,7 @@ Route only after the candidate's evidence and authority gates pass.
 - **Revenue:** Does sourced margin and retention evidence support a bundle,
   accessory, service, or subscription test?
 
-### Suede routes to consider
+### Suede AI routes to consider
 
 `suede-customer-research`, `suede-onboarding`, `suede-emails`,
 `suede-referrals`, `suede-pricing`, `suede-seo-audit`, `suede-ads`, and
@@ -136,7 +136,7 @@ Route only after the candidate's evidence and authority gates pass.
 - **Revenue:** Do take-rate, fee, subscription, lead, or premium-service
   hypotheses fit current margin, elasticity, and liquidity evidence?
 
-### Suede routes to consider
+### Suede AI routes to consider
 
 `suede-customer-research`, `suede-cold-email`, `suede-programmatic-seo`,
 `suede-onboarding`, `suede-emails`, `suede-referrals`, and `suede-pricing`.
@@ -168,7 +168,7 @@ Route only after the candidate's evidence and authority gates pass.
 - **Revenue:** Do usage, team, enterprise, support, or service hypotheses fit
   current willingness-to-pay, delivery, security, and procurement evidence?
 
-### Suede routes to consider
+### Suede AI routes to consider
 
 `suede-customer-research`, `suede-product-marketing`,
 `suede-content-strategy`, `suede-programmatic-seo`,
@@ -201,7 +201,7 @@ Route only after the candidate's evidence and authority gates pass.
 - **Revenue:** Do pilot expansion, institutional terms, services, support, or
   certification hypotheses fit procurement, margin, and delivery evidence?
 
-### Suede routes to consider
+### Suede AI routes to consider
 
 `suede-customer-research`, `suede-product-marketing`,
 `suede-sales-enablement`, `suede-public-relations`, `suede-cold-email`,
@@ -233,7 +233,7 @@ Route only after the candidate's evidence and authority gates pass.
 - **Revenue:** Do bundles, upsells, pricing, or subscription candidates fit
   current margin, return, repeat, inventory, and fulfillment evidence?
 
-### Suede routes to consider
+### Suede AI routes to consider
 
 `suede-customer-research`, `suede-emails`, `suede-sms`, `suede-referrals`,
 `suede-pricing`, `suede-seo-audit`, `suede-ad-creative`, and `suede-ads`.

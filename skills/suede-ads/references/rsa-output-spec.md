@@ -6,7 +6,7 @@ When the user requests Google Ads RSAs (Responsive Search Ads), output MUST comp
 
 Per-field **character** limits are owned by `suede-ad-creative`, use the numbers it states,
 so the two skills cannot drift. This spec adds the stricter **quantity** mandate on top:
-Google permits "up to" 15 headlines and 4 descriptions; a Suede RSA ships all of them.
+Google permits "up to" 15 headlines and 4 descriptions; a Suede AI RSA ships all of them.
 
 - **Headlines:** exactly **15** per RSA, each within the headline character limit `suede-ad-creative` states (count characters, including spaces). Render as `1. ... (NN chars)` so the reader can verify.
 - **Descriptions:** exactly **4** per RSA, each within the stated description character limit.

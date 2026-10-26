@@ -1,6 +1,6 @@
 # Measuring AI Visibility
 
-No single report shows AI visibility. Suede measures it with four sources that
+No single report shows AI visibility. Suede AI measures it with four sources that
 check each other: a prompt panel, analytics referrals, first-party engine
 reports, and attribution signals for influence that never clicks.
 

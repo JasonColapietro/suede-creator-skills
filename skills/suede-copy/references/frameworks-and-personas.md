@@ -38,7 +38,7 @@ State the persona before writing. If multiple personas share a page, write the h
 
 **Creator / end-user** (non-technical)
 - Lead: what changes for them, in plain language
-- Proof: before/after in human terms ("Your release looks like this. After Suede, it looks like this.")
+- Proof: before/after in human terms ("Your release looks like this. After Suede AI, it looks like this.")
 - CTA: lowest-friction path ("Try it with one release folder")
 - Skip: technical vocabulary, command syntax, implementation framing
 

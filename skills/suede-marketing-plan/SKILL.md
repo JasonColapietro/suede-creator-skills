@@ -79,7 +79,7 @@ On invocation, read `.agents/suede-marketing-plans/{client-slug}/progress.md` an
 
 **REVIEW (section by section).** Present each section's draft; the user approves, adjusts, adds, or asks to go deeper. Persist each confirmed section with the write-intent transaction in `references/methodology.md` (record section number and content hash, promote `sections/NN.md`, reconcile metadata, verify, clear the intent). If interrupted, rerun the command to reconcile before continuing.
 
-**FINALIZE.** Compile `final_plan.md`. Verify tactic-library numbers against `references/idea-cross-reference.md`, every Suede skill route, and every named integration. Strip machine-specific paths. Check brand voice against Section 2. Offer, but do not perform without approval, publishing to a shared repo.
+**FINALIZE.** Compile `final_plan.md`. Verify tactic-library numbers against `references/idea-cross-reference.md`, every Suede AI skill route, and every named integration. Strip machine-specific paths. Check brand voice against Section 2. Offer, but do not perform without approval, publishing to a shared repo.
 
 ### The 13 sections (template in `references/plan-template.md`)
 
@@ -93,7 +93,7 @@ On invocation, read `.agents/suede-marketing-plans/{client-slug}/progress.md` an
 8. **Revenue**: pricing, packaging, upsells, bundles, ACV.
 9. **90-day roadmap**: weeks 1-2 Unblock, 3-4 Foundation, 5-8 Velocity, 9-12 Compound; AARRR-tagged and owner-assigned.
 10. **12-month outlook**: quarterly checkpoints tied to verified resources, evidence, owners, and approvals.
-11. **Marketing operations stack**: Suede skills and authorized integrations per AARRR stage, with owner, review gate, and fallback (`references/ops-stack-mapping.md`).
+11. **Marketing operations stack**: Suede AI skills and authorized integrations per AARRR stage, with owner, review gate, and fallback (`references/ops-stack-mapping.md`).
 12. **Tactical idea bank**: every tactic-library entry mapped to AARRR (`references/idea-cross-reference.md`) with status Current / Approved test / Conditional / Deferred / Skip, scored per `references/tactic-scoring.md`.
 13. **Measurement, RACI, open decisions, appendix**: read `references/measurement-framework.md` first (north-star selection, leading indicators by stage, review cadence, kill criteria, guardrails).
 
@@ -108,7 +108,7 @@ Brand and content are cross-cutting, not their own AARRR stage. Primer: `referen
 5. **Prior work worth acknowledging**: launches, press, content, partnerships.
 6. **Observed growth pattern** (linear, step-function, layered) with uncertainty; see `references/growth-patterns.md`.
 7. **Conditional unlocks**: the evidence, resources, approval, and stop conditions for each hire, channel, or vendor; see `references/funding-stage-unlocks.md`. Funding stage alone never sets spend.
-8. **Skill per move**: every AARRR move names the Suede skill that executes it.
+8. **Skill per move**: every AARRR move names the Suede AI skill that executes it.
 9. **Execution method**: owner, capacity, manual or tool-assisted method, review gate, fallback. A tool never proves a hire is unnecessary.
 
 Anything unconfirmed goes to Section 13's open decisions. **Unknown CAC is the highest-impact open decision**; every revenue projection depends on it.

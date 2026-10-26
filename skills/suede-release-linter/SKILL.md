@@ -87,7 +87,7 @@ Read each bundled reference at the moment it is needed, not up front:
 - `references/lint-rules.md`: before classifying findings, or when hand-linting without the script: categories, severity levels, score, and status bands.
 - `references/metadata-fields.md`: when metadata is missing, malformed, or being authored: recommended fields, accepted aliases, and confirmation values.
 - `references/fix-guidance.md`: when turning findings into next actions or a fix plan.
-- `references/passport-context.md`: when the user asks how the lint report relates to Suede AI review or the Suede Creator Passport.
+- `references/passport-context.md`: when the user asks how the lint report relates to Suede AI review or the Suede AI Creator Passport.
 
 The script writes:
 

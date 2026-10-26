@@ -4,9 +4,9 @@
 
 ## Frameworks
 
-- **Suede Ascension Path.** Offers ordered by value and price: free first step, low-cost entry, core offer, premium or continuity. Each step exists to make the next one natural. The front end can break even; margin lives later in the path.
+- **Suede AI Ascension Path.** Offers ordered by value and price: free first step, low-cost entry, core offer, premium or continuity. Each step exists to make the next one natural. The front end can break even; margin lives later in the path.
 - **Stop-Believe-Buy check.** Every ad, page, and email has three parts: the stop (what earns attention), the belief (the story that lets the buyer reach the conclusion themselves), and the buy (the offer). When something underperforms, one of the three is broken; find which before rewriting all three.
-- **Suede Watering Holes list.** List the places your buyers already gather: newsletters, podcasts, communities, creators, search queries, marketplaces. Earn your way in with value or buy your way in with ads. Traffic is never free.
+- **Suede AI Watering Holes list.** List the places your buyers already gather: newsletters, podcasts, communities, creators, search queries, marketplaces. Earn your way in with value or buy your way in with ads. Traffic is never free.
 - **Realization story.** Tell the moment you discovered the insight so the buyer discovers it too, instead of arguing them into it. Break the three false beliefs that block a sale: about the method, about themselves, about outside constraints.
 
 ## Default positions this seat argues

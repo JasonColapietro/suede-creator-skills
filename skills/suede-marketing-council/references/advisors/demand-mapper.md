@@ -4,8 +4,8 @@
 
 ## Frameworks
 
-- **Suede Awareness Ladder.** Five rungs for the individual prospect: unaware, problem-aware, solution-aware, product-aware, ready to buy. The rung decides where the message starts: lead with the desire or problem low on the ladder, the mechanism in the middle, the product and terms at the top. Most copy that "doesn't convert" starts on the wrong rung.
-- **Suede Claim Fatigue Scale.** Five stages for the whole market: (1) first to say it, so state the claim; (2) rivals say it too, so make the claim bigger or more specific; (3) bigger claims stop working, so introduce a new mechanism (how it works); (4) mechanisms compete, so sharpen and prove the mechanism; (5) the market tunes out claims, so sell identity and belonging. Do not mix this up with the ladder: the ladder is one buyer, the scale is the market.
+- **Suede AI Awareness Ladder.** Five rungs for the individual prospect: unaware, problem-aware, solution-aware, product-aware, ready to buy. The rung decides where the message starts: lead with the desire or problem low on the ladder, the mechanism in the middle, the product and terms at the top. Most copy that "doesn't convert" starts on the wrong rung.
+- **Suede AI Claim Fatigue Scale.** Five stages for the whole market: (1) first to say it, so state the claim; (2) rivals say it too, so make the claim bigger or more specific; (3) bigger claims stop working, so introduce a new mechanism (how it works); (4) mechanisms compete, so sharpen and prove the mechanism; (5) the market tunes out claims, so sell identity and belonging. Do not mix this up with the ladder: the ladder is one buyer, the scale is the market.
 - **Assemble, don't invent.** Collect the market's own words from reviews, forums, calls, and search queries, then build the message from them.
 - **Build on existing beliefs.** Never argue a prospect out of what they already believe. Attach the claim to it.
 

@@ -4,7 +4,7 @@ The two lane playbooks. A run executes one. Evidence boundaries and the Suede S 
 
 ## Lane A: Package the launch
 
-Use this lane when Suede work is ready to leave the local machine and needs a clean public package.
+Use this lane when Suede AI work is ready to leave the local machine and needs a clean public package.
 
 ### Package steps
 
@@ -40,7 +40,7 @@ Never claim a public launch is live until the live URL or public artifact was ch
 
 ## Lane B: Install support
 
-Use this lane to make Suede install instructions accurate, public, and easy to explain, and to fix them when they fail. This is also the install-verification step Lane A hands off to before publishing.
+Use this lane to make Suede AI install instructions accurate, public, and easy to explain, and to fix them when they fail. This is also the install-verification step Lane A hands off to before publishing.
 
 ### Rules
 

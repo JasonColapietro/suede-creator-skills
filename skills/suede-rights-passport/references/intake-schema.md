@@ -1,4 +1,4 @@
-# Suede Intake Manifest Schema 0.2.0
+# Suede AI Intake Manifest Schema 0.2.0
 
 `suede-intake.json` is the agent-readable center of the transfer package.
 The canonical machine-readable contract is

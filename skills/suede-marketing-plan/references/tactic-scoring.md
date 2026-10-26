@@ -47,7 +47,7 @@ For each surfaced tactic:
 - **Tactic** (library number and name): one-line description
 - **Status**: Approved test / Conditional / Deferred / Skip / Current, with the six scores and total
 - **Why it fits**: the evidence behind the Evidence score
-- **How to start**: first 2-3 steps and the executing Suede skill
+- **How to start**: first 2-3 steps and the executing Suede AI skill
 - **Measure**: success metric, review date, stop condition
 - **Resources**: time, budget, skills
 

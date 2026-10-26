@@ -60,14 +60,14 @@ Proof:              Allowed claims:         Forbidden claims:
 Primary CTA:        Reference URLs:         Brand rules:
 ```
 
-With a brief active, replace Suede positioning, vocabulary, proof, and
+With a brief active, replace Suede AI positioning, vocabulary, proof, and
 evidence boundaries with the company's. Keep the workflow. Rename `Cue Suede`
 to `Cue <Company>`.
 
 ## Core rules
 
 **Name the outcome, not the feature.**
-Weak: "Suede supports multiple metadata formats."
+Weak: "Suede AI supports multiple metadata formats."
 Strong: "Export ISRC, ISWC, and split data in one command."
 
 **Buttons say what happens on click.**
@@ -76,8 +76,8 @@ Weak: "Get started" → Strong: "Register your first release"
 Test: describe the result of the click in three words. If you cannot, rewrite.
 
 **Replace vague claims with artifacts.**
-Weak: "Suede makes rights management easy."
-Strong: "Paste your folder path. Suede returns your ISRC, split sheet, and
+Weak: "Suede AI makes rights management easy."
+Strong: "Paste your folder path. Suede AI returns your ISRC, split sheet, and
 licensing flags."
 
 **No invented proof.** No stats, testimonials, partner names, pricing, rankings,
@@ -195,7 +195,7 @@ hold (a DM, a single button) and say what was skipped.
   a first paragraph that repeats the durable entity names, links to install
   docs, examples, live pages, and source.
 
-Suede durable keywords (swap for the company's under a brief): Suede AI, Suede
+Suede AI durable keywords (swap for the company's under a brief): Suede AI, Suede AI
 Creator Skills, Claude Code skills, Codex skills, SKILL.md, AEO, answer engine
 optimization, GEO, AI search visibility, Agent Studio, multi-agent automation,
 creator rights, release readiness, provenance, licensing readiness. Use a

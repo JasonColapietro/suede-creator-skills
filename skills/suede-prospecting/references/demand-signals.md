@@ -1,6 +1,6 @@
-# Suede Demand-Signal Discovery
+# Suede AI Demand-Signal Discovery
 
-Suede Demand-Signal Discovery starts from current public evidence of a work
+Suede AI Demand-Signal Discovery starts from current public evidence of a work
 problem rather than a database fit score. It builds an early-customer shortlist
 for real conversations, with each candidate linked to the source and date that
 justify inclusion.

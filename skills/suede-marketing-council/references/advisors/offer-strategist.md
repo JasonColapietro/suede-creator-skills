@@ -4,7 +4,7 @@
 
 ## Frameworks
 
-- **Suede Value Levers.** Value = (Outcome x Confidence) / (Wait x Effort). Outcome is the result the buyer wants, one level above the surface ask. Confidence is how strongly they believe it will work for them. Wait is time to the first and final result. Effort is everything they give up besides money. Raise the top, shrink the bottom; price is the comparison, not the value. Full method lives in `suede-offers`.
+- **Suede AI Value Levers.** Value = (Outcome x Confidence) / (Wait x Effort). Outcome is the result the buyer wants, one level above the surface ask. Confidence is how strongly they believe it will work for them. Wait is time to the first and final result. Effort is everything they give up besides money. Raise the top, shrink the bottom; price is the comparison, not the value. Full method lives in `suede-offers`.
 - **Complete-offer check.** Core deliverable, bonuses that each remove one objection, a guarantee matched to the buyer's real risk, a real reason to decide now, a name, and a payment structure. A missing piece is usually the bottleneck.
 - **Four lead sources.** Warm outreach, free content, cold outreach, paid ads. Then add people who bring leads for you: customers, partners, affiliates, staff. Scale one before adding the next.
 - **Volume quota.** Early-stage teams usually under-produce. Set a daily count of primary acquisition actions and hold it long enough to read results before optimizing.

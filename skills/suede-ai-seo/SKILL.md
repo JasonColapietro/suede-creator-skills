@@ -91,7 +91,7 @@ The load-bearing facts:
 Treat anything not in that file as unverified, and re-check before a ship
 decision: these surfaces change monthly.
 
-## The Suede AEO stack
+## The Suede AI AEO stack
 
 Work bottom-up. A higher layer cannot compensate for a broken lower one.
 
@@ -107,7 +107,7 @@ Work bottom-up. A higher layer cannot compensate for a broken lower one.
 - Check the layers robots.txt does not cover: CDN or WAF bot rules, snippet
   directives, `noindex`, login walls, and primary content that only appears
   after JavaScript runs.
-- Training and retrieval are separate decisions. The default Suede
+- Training and retrieval are separate decisions. The default Suede AI
   recommendation for a brand that wants citations: allow the search and
   user-fetch agents, and decide training agents (`GPTBot`, `ClaudeBot`,
   `Google-Extended`, `CCBot`) on licensing grounds. Present it as the user's
@@ -145,7 +145,7 @@ Apply the extractability standard to priority pages. Templates are in
 | Text, not pixels | Key facts in HTML text, not only images, PDFs, or JS widgets |
 
 Google states that no format is required and that content should be written
-for people. These checks are the Suede standard because they make a page
+for people. These checks are the Suede AI standard because they make a page
 easier for any engine and any reader to quote correctly. Never sell them as a
 Google ranking requirement.
 

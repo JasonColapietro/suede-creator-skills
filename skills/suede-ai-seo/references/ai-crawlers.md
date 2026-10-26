@@ -23,7 +23,7 @@ Checked against each operator's documentation on 2026-10-23. Sources are in
 `anthropic-ai` appears in older guides. Anthropic's current article names only
 the three Claude agents above; an extra group for it is harmless but optional.
 
-## Default Suede configuration for a brand that wants citations
+## Default Suede AI configuration for a brand that wants citations
 
 Allow retrieval, decide training separately. Present the training lines as
 the user's licensing decision, not a recommendation either way.
