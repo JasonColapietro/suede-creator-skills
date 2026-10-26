@@ -4,9 +4,9 @@
 
 # Featured projects
 
-Editorial selection highlights a project’s workflow and accepted scope. It is separate from structural quality grades, security certification and README-badge verification. A plugin feature does not add its contents to the scored skill catalog.
+Featured placement highlights a project’s workflow and accepted scope. It is separate from structural quality grades, security certification and README-badge verification. A plugin feature does not add its contents to the scored skill catalog.
 
-Selections updated **2026-10-25**. [View on Suede AI](https://skills.suedeai.ai/directory/featured/).
+Selections updated **2026-10-26**. [View on Suede AI](https://skills.suedeai.ai/directory/featured/).
 
 - [Appie](#appie)
 - [CoalWash](#coalwash)
@@ -97,13 +97,15 @@ Accepted scope: **4 skills**. Follow each linked skill’s individual setup inst
 
 Give local AI and file-processing work time to finish. The Extra Caffeine workflow guides an agent through authorized awake sessions, state checks and requested one-time schedules while preserving existing sessions.
 
-- **One workflow: extra-caffeine-workflow.** Choose the duration and display behavior, verify awake state, and reconcile timeouts before retrying.
+- **[Keep a local Mac awake](https://skills.suedeai.ai/directory/cwong5/extra-caffeine-mcp/#extra-caffeine-workflow)** (extra-caffeine-workflow). Choose the duration and display behavior, verify awake state, and reconcile timeouts before retrying.
 
 ### Setup
 
-Requires macOS 14+ and the separately purchased, paid Extra Caffeine 1.2+ app, kept open with AI assistants enabled by the user. Follow the publisher’s setup and license terms. The skill does not install the app or enable access. It prevents idle sleep, not closed-lid sleep, and does not wake a sleeping Mac. No security scan or runtime execution was performed: not scanned; runtime-unverified. Editorial feature only; scored catalog listing is pending the next directory refresh.
+Requires macOS 14+ and the separately purchased, paid Extra Caffeine 1.2+ app, kept open with AI assistants enabled by the user. Follow the publisher’s setup and license terms. Authorize the duration and display choice before starting or scheduling. It prevents idle sleep; keep the laptop lid open. Read the scored listing and pinned review for source and setup details.
 
-[Repository](https://github.com/cwong5/extra-caffeine-mcp) · [Intake review](../directory/reviews/2026-10-23-extra-caffeine.md) · [Reviewed source 4e0ac32](https://github.com/cwong5/extra-caffeine-mcp/tree/4e0ac32e685c5366ab487502173168470a42a178) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#extra-caffeine)
+Accepted scope: **1 skills**. Follow each linked skill’s individual setup instructions.
+
+[Repository](https://github.com/cwong5/extra-caffeine-mcp) · [Intake review](../directory/reviews/2026-10-26-extra-caffeine.md) · [Reviewed source 4e0ac32](https://github.com/cwong5/extra-caffeine-mcp/tree/4e0ac32e685c5366ab487502173168470a42a178) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#extra-caffeine)
 
 ---
 

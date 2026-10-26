@@ -161,7 +161,7 @@ Each skill appears in one category. A repository can contribute to several categ
 
 ${editorial.projects.map((p) => `- **${link(p.name, `featured.md#${p.id}`)}** by ${link(p.repo.split('/')[0], github(p.repo.split('/')[0]))}. ${md(p.summary)}`).join('\n')}
 
-These ${editorial.projects.length} editorial selections have [reviewed scope and setup guidance](featured.md). Editorial selection is separate from quality scores, security certification and README-badge verification. Featured plugins outside the scored skill snapshot are not included in the skill or repository counts above.
+These ${editorial.projects.length} featured projects have [reviewed scope and setup guidance](featured.md). Featured placement is separate from quality scores, security certification and README-badge verification. Featured plugins outside the scored skill snapshot are not included in the skill or repository counts above.
 ${guides.length ? `
 ## Guides
 
@@ -277,7 +277,7 @@ ${repos.map((repo) => {
   return `| ${link(repo, github(repo))} | ${link(owner, github(owner))} | ${skills.length} | ${links} | ${link('Listing', repoTargets.get(repo))} |`;
 }).join('\n')}
 
-Editorial plugin features outside this scored snapshot appear on the [featured projects page](featured.md).
+Featured plugins outside this scored snapshot appear on the [featured projects page](featured.md).
 
 ## Publish one of these repositories?
 
@@ -289,7 +289,7 @@ ${nav()}
 
 # Featured projects
 
-Editorial selection highlights a project’s workflow and accepted scope. It is separate from structural quality grades, security certification and README-badge verification. A plugin feature does not add its contents to the scored skill catalog.
+Featured placement highlights a project’s workflow and accepted scope. It is separate from structural quality grades, security certification and README-badge verification. A plugin feature does not add its contents to the scored skill catalog.
 
 Selections updated **${editorial.updated}**. [View on Suede AI](${SITE}featured/).
 

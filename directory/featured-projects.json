@@ -1,11 +1,11 @@
 {
-  "updated": "2026-10-25",
+  "updated": "2026-10-26",
   "page": {
     "about": "Copy for /directory/featured/ and the awesome/featured.md view, rendered by scripts/build-directory.mjs and scripts/build-awesome-directory.mjs. Project entries below are the publishers’ own work: keep their names, repositories, setup facts and review links exactly as reviewed.",
     "title": "Featured Agent Skill Projects | Suede AI",
     "lede": "Good tools deserve a closer look.",
     "intro": "Each project here is reviewed against a pinned commit and accepted with a defined scope. Pick one, read the reviewed source, and start with the setup it actually needs.",
-    "selection": "Editorial features are chosen by the Suede AI team for useful workflows and clear setup. Quality scores on skill pages come from the published rubric and are never changed by a feature, a badge or any business relationship.",
+    "selection": "Featured projects are chosen by the Suede AI team for useful workflows and clear setup. Quality scores on skill pages come from the published rubric and are never changed by a feature, a badge or any business relationship.",
     "nominate": {
       "headline": "Get your project featured",
       "body": "Submit your repository and the exact skills or plugin in scope. Every accepted listing gets a README badge that links to it. Projects selected for a feature also get an intake review pinned to a commit and their own section on this page.",
@@ -132,16 +132,17 @@
       "license": "Proprietary · All rights reserved",
       "headline": "Keep your Mac awake while the work needs it.",
       "summary": "Give local AI and file-processing work time to finish. The Extra Caffeine workflow guides an agent through authorized awake sessions, state checks and requested one-time schedules while preserving existing sessions.",
-      "review": "directory/reviews/2026-10-23-extra-caffeine.md",
+      "review": "directory/reviews/2026-10-26-extra-caffeine.md",
       "commit": "4e0ac32e685c5366ab487502173168470a42a178",
-      "setup": "Requires macOS 14+ and the separately purchased, paid Extra Caffeine 1.2+ app, kept open with AI assistants enabled by the user. Follow the publisher’s setup and license terms. The skill does not install the app or enable access. It prevents idle sleep, not closed-lid sleep, and does not wake a sleeping Mac. No security scan or runtime execution was performed: not scanned; runtime-unverified. Editorial feature only; scored catalog listing is pending the next directory refresh.",
-      "capabilities": [
+      "setup": "Requires macOS 14+ and the separately purchased, paid Extra Caffeine 1.2+ app, kept open with AI assistants enabled by the user. Follow the publisher’s setup and license terms. Authorize the duration and display choice before starting or scheduling. It prevents idle sleep; keep the laptop lid open. Read the scored listing and pinned review for source and setup details.",
+      "workflow_url": "https://github.com/cwong5/extra-caffeine-mcp/blob/4e0ac32e685c5366ab487502173168470a42a178/skills/extra-caffeine-workflow/SKILL.md",
+      "skills": [
         {
-          "title": "One workflow: extra-caffeine-workflow",
+          "id": "extra-caffeine-workflow",
+          "title": "Keep a local Mac awake",
           "description": "Choose the duration and display behavior, verify awake state, and reconcile timeouts before retrying."
         }
-      ],
-      "workflow_url": "https://github.com/cwong5/extra-caffeine-mcp/blob/4e0ac32e685c5366ab487502173168470a42a178/skills/extra-caffeine-workflow/SKILL.md"
+      ]
     },
     {
       "id": "opsibyte",
