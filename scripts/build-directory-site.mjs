@@ -116,6 +116,14 @@ export function build(out) {
     .replace(/^Sitemap: .*$/m, `Sitemap: ${NEW}/sitemap.xml`);
   fs.writeFileSync(path.join(out, "robots.txt"), robots);
 
+  // The IndexNow key file skills.suedeai.ai publishes at the root of docs/.
+  // Serving it on this host too lets the estate sweep in suede-seo submit
+  // suedeai.directory, which had no key of its own.
+  for (const name of fs.readdirSync(docs)) {
+    const key = name.match(/^([A-Za-z0-9-]{8,128})\.txt$/)?.[1];
+    if (key && fs.readFileSync(path.join(docs, name), "utf8").trim() === key) fs.copyFileSync(path.join(docs, name), path.join(out, name));
+  }
+
   const llmsLines = fs.readFileSync(path.join(docs, "llms.txt"), "utf8").split("\n").filter((l) => l.includes(`${OLD}/directory`));
   fs.writeFileSync(path.join(out, "llms.txt"), [
     "# Suede AI Skills Directory",
