@@ -24,10 +24,10 @@
       "network": "disabled",
       "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
     },
-    "started_at": "2026-10-26T02:26:19.413036+00:00",
-    "completed_at": "2026-10-26T02:26:19.734548+00:00",
+    "started_at": "2026-10-26T03:47:19.091739+00:00",
+    "completed_at": "2026-10-26T03:47:19.394076+00:00",
     "evaluated_on": "2026-10-26",
-    "valid_until": "2026-11-25T02:26:19.734Z",
+    "valid_until": "2026-11-25T03:47:19.394Z",
     "files_scanned": 1,
     "coverage_complete": true,
     "skipped": [],
@@ -38,7 +38,7 @@
       "LOW": 0,
       "INFO": 0
     },
-    "evidence_sha256": "0517fbd9769283f88fd870529b8c7f62d68bf6f585ea06b924252777eb7bddf0"
+    "evidence_sha256": "3d7813f6dd90368291f5773f1ae91fbced8e127ced522b365c8c40d76a017150"
   },
   {
     "id": "self-test/exfil",
@@ -65,10 +65,10 @@
       "network": "disabled",
       "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
     },
-    "started_at": "2026-10-26T02:26:19.734860+00:00",
-    "completed_at": "2026-10-26T02:26:19.768106+00:00",
+    "started_at": "2026-10-26T03:47:19.394335+00:00",
+    "completed_at": "2026-10-26T03:47:19.421584+00:00",
     "evaluated_on": "2026-10-26",
-    "valid_until": "2026-11-25T02:26:19.768Z",
+    "valid_until": "2026-11-25T03:47:19.421Z",
     "files_scanned": 2,
     "coverage_complete": true,
     "skipped": [],
@@ -79,6 +79,6 @@
       "LOW": 0,
       "INFO": 1
     },
-    "evidence_sha256": "46f0d4ed207340518d60d522c4625553a90e9574474d48f9ec7a67ae12e23113"
+    "evidence_sha256": "fc2ae316eff580090dfae9624854394f232b0cf35d9cdc6ebd185378c92bbe04"
   }
 ]

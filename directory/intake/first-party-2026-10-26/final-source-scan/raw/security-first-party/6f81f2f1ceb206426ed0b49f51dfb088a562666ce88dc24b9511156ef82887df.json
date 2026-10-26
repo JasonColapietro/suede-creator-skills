@@ -1,0 +1,162 @@
+{
+  "schema_version": 1,
+  "source": {
+    "repository": "JasonColapietro/suede-creator-skills",
+    "path": "skills/suede-paywalls",
+    "revision": "016c0afd1f98cb3f6caa91419bdb569fdee38777"
+  },
+  "scanner": {
+    "name": "cisco-ai-skill-scanner",
+    "version": "2.3.1",
+    "adapter_version": 2,
+    "analyzers": [
+      "static_analyzer",
+      "bytecode",
+      "pipeline",
+      "correlation",
+      "behavioral_analyzer"
+    ],
+    "policy": "strict",
+    "cel_mode": "shadow",
+    "network": "disabled",
+    "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+  },
+  "started_at": "2026-10-26T03:47:34.054637+00:00",
+  "state": "completed",
+  "analysis": {
+    "skill_name": "suede-paywalls",
+    "skill_path": "/source/target-043",
+    "is_safe": true,
+    "max_severity": "INFO",
+    "findings_count": 1,
+    "findings": [
+      {
+        "id": "MANIFEST_MISSING_LICENSE_c5ae9be793",
+        "rule_id": "MANIFEST_MISSING_LICENSE",
+        "category": "policy_violation",
+        "severity": "INFO",
+        "title": "Skill does not specify a license",
+        "description": "Skill manifest does not include a 'license' field. Specifying a license helps users understand usage terms.",
+        "file_path": "SKILL.md",
+        "line_number": null,
+        "snippet": null,
+        "remediation": "Add 'license' field to SKILL.md frontmatter (e.g., MIT, Apache-2.0)",
+        "analyzer": "static",
+        "metadata": {
+          "aitech": null,
+          "aitech_name": null,
+          "aisubtech": null,
+          "aisubtech_name": null,
+          "aitech_mappings": [],
+          "aisubtech_mappings": [],
+          "framework_mappings": [],
+          "taxonomy_status": "not_applicable",
+          "taxonomy_source": "rule",
+          "scan_policy_name": "strict",
+          "scan_policy_version": "1.0",
+          "scan_policy_preset_base": "strict",
+          "scan_policy_fingerprint_sha256": "7f4560dea6f3f1c11067735bab3759c4daedfcd6d67f46b4e40899507a2c2ea9"
+        }
+      }
+    ],
+    "scan_duration_seconds": 0.07243514060974121,
+    "duration_ms": 72,
+    "analyzers_used": [
+      "static_analyzer",
+      "bytecode",
+      "pipeline",
+      "correlation",
+      "behavioral_analyzer"
+    ],
+    "timestamp": "2026-10-26T03:47:34.130381+00:00",
+    "scan_metadata": {
+      "policy_name": "strict",
+      "policy_version": "1.0",
+      "policy_preset_base": "strict",
+      "policy_fingerprint_sha256": "7f4560dea6f3f1c11067735bab3759c4daedfcd6d67f46b4e40899507a2c2ea9",
+      "cel": {
+        "mode": "shadow",
+        "runtime": "cel-go",
+        "runtime_version": "v0.32.0;helper=2.3.1",
+        "fact_schema": "v1",
+        "expression_set_hash": "f26459b8f4a46a974d7ab0aaae34127b5b6a40d693e266e12fca03a69a6d26aa",
+        "evaluated": 0,
+        "retained": 1,
+        "would_suppress": 0,
+        "suppressed": 0,
+        "fallbacks": 0,
+        "projection_incomplete": 0,
+        "elapsed_ms": 0.0,
+        "projection_ms": 0.0,
+        "evaluation_ms": 0.0,
+        "errors": [],
+        "per_rule": {},
+        "suppressed_candidates": []
+      },
+      "rule_contract": {
+        "status": "passed",
+        "schema_version": 2,
+        "checked": 1,
+        "invalid_findings": 0,
+        "errors": []
+      },
+      "taxonomy": {
+        "source": "builtin",
+        "version": "2.0.0",
+        "name": "Cisco AI Security and Safety Taxonomy",
+        "revision": "655a343ac943a51b6f61f86e47156e7752c15dc6",
+        "snapshot_sha256": "413e8ce9081e6d91b78aaa0d0b1c06cdc15d0406ad319e23e9f9f4f80735c441",
+        "findings": {
+          "mapped": 0,
+          "not_applicable": 1,
+          "unmapped": 0
+        }
+      }
+    },
+    "analyzers_failed": []
+  },
+  "diagnostics": [],
+  "coverage": {
+    "complete": true,
+    "files": [
+      {
+        "path": "CARD.md",
+        "size": 4271,
+        "sha256": "24988266b84d81e1735d711b2ac26197a05bd2add4c929d1f3b78199bb6e835c"
+      },
+      {
+        "path": "SKILL.md",
+        "size": 7934,
+        "sha256": "7e716ec2ffd9f5c08cdba7dd717a3d8f9d574044e8def3660ce4fc996b877be5"
+      },
+      {
+        "path": "agents/openai.yaml",
+        "size": 594,
+        "sha256": "93c30a90a731cdb45eb8785abbae94c82b701896188b40deacaeaf63bef51676"
+      },
+      {
+        "path": "evals/evals.json",
+        "size": 7657,
+        "sha256": "ad69b77445d62c8fef66ed1201c388f327aba614bf0ade726010c825ea0d6732"
+      },
+      {
+        "path": "references/experiments.md",
+        "size": 5419,
+        "sha256": "5a5760e23c4809ddbc123905e0073ebca2653e7edad29482db810b825d62bd19"
+      },
+      {
+        "path": "references/subscription-rules.md",
+        "size": 5365,
+        "sha256": "18570e25beea2b95a2dcbb418d545b78f0b95c3a36a6c41e42d8c816ec302717"
+      },
+      {
+        "path": "references/worked-contract.md",
+        "size": 2296,
+        "sha256": "c8d201f92d348d080614fcb4d67cdff4de396b891319a9606be4f337a86ecd3d"
+      }
+    ],
+    "skipped": []
+  },
+  "completed_at": "2026-10-26T03:47:34.131015+00:00",
+  "runtime_image": "sha256:66fdeec856547f8a07037d8d8608a883b503e9146a33e4322bff408566d42506"
+}
