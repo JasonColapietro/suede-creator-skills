@@ -1645,7 +1645,13 @@ ${FAQ.map(([q, a]) => `        <h3>${esc(q)}</h3>\n        <p>${esc(a)}${q === "
     description,
     keywords,
     h1Html: `      <div class="eyebrow">Suede AI Skills Directory</div>
-      <h1>Claude Code Skills Directory <span class="h1-sub">Agent skills for Claude, Codex and Cursor, graded</span></h1>`,
+      <h1>Claude Code Skills Directory <span class="h1-sub">Agent skills for Claude, Codex and Cursor, graded</span></h1>
+      <a class="florida-recognition" href="https://themanifest.com/artificial-intelligence/consulting/deployment/companies/florida">
+        <strong>TOP 24 IN FLORIDA</strong>
+        <span class="florida-category">AI deployment developers</span>
+        <span class="florida-detail">Suede AI SEO · Ranked #24 · October 2026</span>
+        <span class="florida-source">View ranking <span aria-hidden="true">↗</span></span>
+      </a>`,
     body,
     jsonld: [
       {
