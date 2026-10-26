@@ -132,7 +132,7 @@ cap.
 | Competitor comparison pages; one rival in depth | `suede-competitors`; `suede-competitor-profiling` |
 | Buyer research, positioning, product messaging | `suede-customer-research`, `suede-product-marketing` |
 | Paid strategy; the ad units themselves | `suede-ads`; `suede-ad-creative` |
-| Organic social, including Instagram account audits; content pipeline; clip to guide | `suede-social`; `suede-newsroom`; `suede-clip-to-guide` |
+| Organic social, including Instagram account audits and clip-to-guide funnels; content pipeline | `suede-social`; `suede-newsroom` |
 | Outbound and pipeline | `suede-cold-email`, `suede-prospecting`, `suede-sales-enablement`, `suede-revops` |
 | PR, partners, community, referrals | `suede-public-relations`, `suede-co-marketing`, `suede-community-marketing`, `suede-referrals` |
 | Lifecycle email and SMS | `suede-emails`, `suede-sms` |

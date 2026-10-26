@@ -96,7 +96,6 @@
         "suede-community-marketing",
         "suede-competitor-profiling",
         "suede-competitors",
-        "suede-clip-to-guide",
         "suede-content-strategy",
         "suede-customer-research",
         "suede-directory-submissions",
@@ -389,15 +388,6 @@
       "displayName": "Suede AI CI Gate Skills"
     },
     {
-      "name": "suede-clip-to-guide",
-      "area": "workflow",
-      "specialty": "craft",
-      "lane": "Creative assets",
-      "description": "Suede AI Clip to Guide Skills. Use when creating short-to-long content and asked to \"turn this clip into a guide funnel\": select a rights-supported moment, score fit, draft the bridge, approval bundle and measurement plan. NOT FOR: rendering (suede-video), social calendars (suede-social), full guide writing (suede-copy), paid ads (suede-ad-creative), or publication without exact-content and identity approval.",
-      "useWhen": "Turn a video clip, interview moment, talk excerpt, or transcript into a funnel package with rights routing, post copy, and an evidence gate.",
-      "displayName": "Suede AI Clip to Guide Skills"
-    },
-    {
       "name": "suede-co-marketing",
       "area": "marketing",
       "specialty": "found",
@@ -627,7 +617,7 @@
       "area": "workflow",
       "specialty": "ship",
       "lane": "Orchestration & routing",
-      "description": "Suede AI Operations Architecture Skills: simplify workflows, choose bounded automation, define ownership, rollout, and verification. Use when asked \"turn this ops assessment into a plan\" or to design a practical operating system. NOT FOR: discovering and quantifying current operations (suede-ops-assessment), code implementation, or production changes without authority.",
+      "description": "Suede AI Operations Architecture Skills: fix the shape of an automation or AI agent build before code. Entity schema first, one write path per entity, each unit of work routed to deterministic automation, an AI agent, or a human decision, every tool marked absorb, keep, or kill, and a phased rollout with proof per phase. Use when asked \"turn this ops assessment into a plan\", to scope an automation or agent build, decide whether a workflow needs a model, or consolidate a tool stack. NOT FOR: discovering and quantifying current operations (suede-ops-assessment), code implementation, or production changes without authority.",
       "useWhen": "The user is scoping an automation or agent build and needs the schema, write paths, work triage, tool verdicts, migration path, and gated phase order decided before anyone writes code.",
       "displayName": "Suede AI Operations Architecture Skills"
     },
@@ -636,7 +626,7 @@
       "area": "workflow",
       "specialty": "ship",
       "lane": "Orchestration & routing",
-      "description": "Suede AI Operations Assessment Skills: map real work, silos, friction, ownership, costs, and adoption signals from operator evidence. Use when asked \"where is our team losing time\" or to rank operational opportunities before designing automation. NOT FOR: choosing and building the target architecture (suede-ops-architecture), auditing requester-supplied figures, or unapproved system access.",
+      "description": "Suede AI Operations Assessment Skills: map real work, silos (including spreadsheets and inboxes used as databases), friction, ownership, costs, and adoption signals from operator evidence. Use when asked \"where is our team losing time\", what to automate first, or to rank operational and AI agent opportunities before designing automation, or when a shipped system is being routed around. NOT FOR: choosing and building the target architecture (suede-ops-architecture), auditing requester-supplied figures, or unapproved system access.",
       "useWhen": "The user cannot say what to automate, wants their operation mapped and costed before a build, needs tribal-knowledge and key-person risk surfaced, or has a shipped system the team is quietly routing around.",
       "displayName": "Suede AI Operations Assessment Skills"
     },
@@ -798,8 +788,8 @@
       "area": "marketing",
       "specialty": "found",
       "lane": "Content & audience",
-      "description": "Suede AI Social Skills. Plan, audit, and draft organic social for founder/brand accounts: platform mix, 30-post audits, calendars, Instagram, LinkedIn/X, short-video scripts, social search, and listening. Use when asked to \"audit our Instagram growth\" or build an approval-ready content loop. NOT FOR: paid ads (use suede-ads or suede-ad-creative), editorial agents (use suede-newsroom), clip-to-guide work (use suede-clip-to-guide), video rendering (use suede-video), or broad content strategy (use suede-content-strategy).",
-      "useWhen": "The user is planning social media strategy, content, or cadence for a brand or founder account.",
+      "description": "Suede AI Social Skills. Plan, audit, and draft organic social for founder/brand accounts: platform mix, 30-post audits, calendars, Instagram, LinkedIn/X, short-video scripts, social search, and listening. Clip to guide mode turns a video moment into a short to long funnel that bridges to an owned guide or X Article, and any third-party video clip gets a rights route before reuse. Use when asked to \"audit our Instagram growth\", \"plan a 30-day social calendar\", or \"turn this clip into a guide funnel\", or to build an approval-ready content loop. NOT FOR: paid ads (use suede-ads or suede-ad-creative), editorial agents (use suede-newsroom), video rendering (use suede-video), or broad content strategy (use suede-content-strategy).",
+      "useWhen": "The user is planning social media strategy, content, or cadence for a brand or founder account, or turning a video clip into a short to long guide funnel with a rights route.",
       "displayName": "Suede AI Social Skills"
     },
     {
@@ -816,7 +806,7 @@
       "area": "marketing",
       "specialty": "craft",
       "lane": "Creative assets",
-      "description": "Suede AI Video Skills. Plan or produce marketing video with scripts, storyboards, shot and asset lists, consent-aware AI or avatar choices, programmatic rendering, edit decisions, pacing, export specs, and video-search metadata. Use when asked to \"turn this demo into a short video\" or build a repeatable production pipeline. NOT FOR: social calendars (use suede-social), clip-to-guide bridges (use suede-clip-to-guide), paid ad concepts (use suede-ad-creative), still images (use suede-image), or unapproved publishing.",
+      "description": "Suede AI Video Skills. Plan or produce marketing video with scripts, storyboards, shot and asset lists, consent-aware AI or avatar choices, programmatic rendering, edit decisions, pacing, export specs, and video-search metadata. Use when asked to \"turn this demo into a short video\" or build a repeatable production pipeline. NOT FOR: social calendars or clip-to-guide bridges (use suede-social), paid ad concepts (use suede-ad-creative), still images (use suede-image), or unapproved publishing.",
       "useWhen": "The user is planning, scripting, or repurposing video content for marketing or social.",
       "displayName": "Suede AI Video Skills"
     },

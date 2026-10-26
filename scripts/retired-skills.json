@@ -16,6 +16,7 @@
     "johnny-suede-write": { "target": "suede-copy", "reason": "was merged into" },
     "johnny-suede-design": { "target": "suede-design", "reason": "was merged into" },
     "suede-recommend-next-action": { "target": "suede-workflow-skills", "reason": "now lives in the Next move section of" },
-    "suede-mcp-qa": { "target": null, "reason": "became an internal maintainer guide and left the public pack" }
+    "suede-mcp-qa": { "target": null, "reason": "became an internal maintainer guide and left the public pack" },
+    "suede-clip-to-guide": { "target": "suede-social", "reason": "now runs as the Clip-to-Guide mode of" }
   }
 }

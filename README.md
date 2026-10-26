@@ -213,7 +213,6 @@ Every link below goes to the skill's folder in this repo; the [skill catalog](ht
 | [`suede-code`](skills/suede-code) | Review + A–F grade in one pass, 7 lanes, instant-F triggers; findings-only and grade-only modes |
 | [`suede-ci-gate`](skills/suede-ci-gate) | Write CI that gates the merge — stack/lockfile detection, one required check, branch protection |
 | [`suede-parity-contract`](skills/suede-parity-contract) | Hold one domain consistent across web, iOS, Android, and docs with a contract generated from the reference surface |
-| [`suede-clip-to-guide`](skills/suede-clip-to-guide) | Turn a clip, talk moment, or transcript into a clip-to-guide funnel package with rights routing and an evidence gate |
 
 ### Design, copy & SEO
 

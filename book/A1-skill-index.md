@@ -62,7 +62,6 @@ match, and the page must list exactly these three.
 | `suede-competitors` | You are writing honest alternative, versus, and comparison pages for evaluators |
 | `suede-directory-submissions` | You are selecting listings, sequencing submissions, and verifying backlinks |
 | `suede-free-tools` | You want engineering-as-marketing: calculators, graders, generators, scored and scoped |
-| `suede-clip-to-guide` | A clip, talk moment, or transcript should become a funnel package with rights routing |
 
 ## I want to launch it
 

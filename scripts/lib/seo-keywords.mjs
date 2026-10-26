@@ -348,12 +348,6 @@ export const SEO_KEYWORDS = {
     "path-filtered ci",
     "Suede AI Skills",
   ],
-  "skills/suede-clip-to-guide.html": [
-    "clip to guide",
-    "video clip content",
-    "fair use guidance",
-    "Suede AI Skills",
-  ],
   "skills/suede-co-marketing.html": [
     "co-marketing",
     "partner marketing",
@@ -719,6 +713,7 @@ export const SEO_KEYWORDS = {
   ],
   "skills/suede-social.html": [
     "social",
+    "clip to guide",
     "social media strategy",
     "instagram growth",
     "instagram audit",
