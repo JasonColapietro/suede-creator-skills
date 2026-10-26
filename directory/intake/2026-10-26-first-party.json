@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "repository": "JasonColapietro/suede-creator-skills",
-  "source_revision": "2213aeec2c59bce1de1dc3f6423bc8e4d82eaea0",
+  "source_revision": "5372903e95333b4659aa980d388217bb6c283774",
   "source_branch": "suede-ai-skill-consolidation",
   "source_status": "proposed_draft_revision",
   "assessment_date": "2026-10-26",
@@ -87,7 +87,7 @@
     "PHOTO_SOURCES.md": "8308744626a3f68ce2aa48ef0b467f1945911702c81c6142098b817461886501",
     "PRODUCT.md": "3d4ecd8453466642410b543d6ef6ead4616435b9bcaa5e8a1283e9cda63f3111",
     "PROMO.md": "8afde44a484e41d6a065dd476fb0428e9c990ec6f7542860848bbfda36d63ffd",
-    "README.md": "2346315fdb542dc30e7628bab441558f67c047425515b237dc34c2843742dad7",
+    "README.md": "48d0e982706032d8ad75ace0665e2cc856a1e88d2d67c6de08ce65d4bdac74f2",
     "SECURITY.md": "5404f465d5342d9f8aeccd4502fc7acee2379c314dea1d135f7340dc30faa2a3",
     "SKILL-CARDS.md": "5e3fa525105310761eacc54304cf58a01c578682da206e7838b3c9691665f72a",
     "VERSION": "6f15c2bfbd4fb58b7b84f0a8f8036f4d6f3112cd3f0cb759dffe86cdd696b650",
@@ -789,6 +789,6 @@
   "external_before_sha256": "5def384a11bad9f50f95ad0a3ed00515edd204ac9ac8532bf6d6a195ab7a1a37",
   "external_after_sha256": "5def384a11bad9f50f95ad0a3ed00515edd204ac9ac8532bf6d6a195ab7a1a37",
   "security_scan_status": "not_scanned",
-  "dataset_before_sha256": "442ad56be5df9eafaba0a0ee577c0eedd99dc630866ffd52400fa4fe6f19c9be",
-  "dataset_after_sha256": "97e09a4a65382a078d21367078206bd8a33ba169afde64e85fed19147ab6f9d4"
+  "dataset_before_sha256": "97e09a4a65382a078d21367078206bd8a33ba169afde64e85fed19147ab6f9d4",
+  "dataset_after_sha256": "4138b0a77ef593ec6f1b6c67a38cf225a25cfb3b57b4ab04fd01052461d55cc0"
 }
