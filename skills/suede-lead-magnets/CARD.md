@@ -23,7 +23,7 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when asked \"design a lead magnet\" or to choose formats, gating, an indexable companion page, and a measurement plan.
+Use when asked "design a lead magnet" or to choose formats, gating, an indexable companion page, and a measurement plan.
 
 Out of scope — interactive tools (suede-free-tools), nurture flows (suede-emails), or production copy (suede-copy).
 

@@ -7,7 +7,7 @@ Release record for the `suede-revops` skill, following the NVIDIA skill-card tem
 
 ## Description
 
-Define lifecycle stages, fit and engagement scores, MQL/SQL handoffs, routing SLAs, pipeline hygiene, CRM automation, deal-desk tiers, and dashboard metrics.
+Suede AI Revenue Operations Skills.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.3; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
@@ -23,9 +23,9 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when asked to \"fix our lead routing\" or specify revenue operations. Returns implementation-ready rules with owners and measurement.
+Use when asked to "fix our lead routing" or specify revenue operations. Returns implementation-ready rules with owners and measurement.
 
-Out of scope — prospect lists (use suede-prospecting), outbound copy (use suede-cold-email), lifecycle campaigns (use suede-emails), pricing strategy (use suede-pricing), or unapproved production CRM changes.
+Out of scope — prospect lists (use suede-prospecting), outbound copy (use suede-cold-email), lifecycle campaigns (use suede-emails), pricing strategy (use suede-pricing), attribution (use suede-attribution), automation or agent build architecture (use suede-ops-architecture), or unapproved production CRM changes.
 
 ## Deployment Geography
 
@@ -34,7 +34,7 @@ Global. The skill is a prompt-and-script package that runs locally inside the in
 ## Requirements / Dependencies
 
 - A Claude Code or Codex CLI session with the `suede-skills` plugin installed (install options: <https://skills.suedeai.ai/>).
-- Bundled files loaded relative to this directory: `agents/` (1 file), `references/` (5 files).
+- Bundled files loaded relative to this directory: `agents/` (1 file), `references/` (6 files).
 - Credentials: none are bundled or required by the skill files. Any tool or API credentials come from the host session; never paste credentials into skill files, prompts, or outputs.
 
 ## Known Risks and Mitigations

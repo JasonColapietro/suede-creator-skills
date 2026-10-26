@@ -7,7 +7,7 @@ Release record for the `suede-deslop` skill, following the NVIDIA skill-card tem
 
 ## Description
 
-Use when asked \"deslop this draft\" or to audit finished prose before shipping.
+Suede AI Slop Stop.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.3; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
@@ -23,7 +23,7 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when asked \"deslop this draft\" or to audit finished prose before shipping. Suede AI Slop Stop Skills removes filler, false agency, formulaic rhythm, chat residue and misplaced formatting while preserving voice and protected facts. Returns edited prose and a 50-point score, or findings only.
+Use when asked to "deslop this draft", strip AI tells, or run an anti-slop audit on finished prose before shipping: removes filler, false agency, formulaic rhythm, chat residue, misplaced formatting, em dashes and Suede AI house-banned words while preserving voice and protected facts. Returns edited prose and a 50-point score, or findings only.
 
 Out of scope — rewriting the argument (use suede-copy), research orchestration (use suede-ship-copy), authorship detection, or certifying facts.
 

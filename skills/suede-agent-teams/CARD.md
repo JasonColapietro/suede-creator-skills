@@ -23,7 +23,7 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when asked to \"split this work across agents\" or run coordinated shared changes in lanes with exclusive file ownership, collision checks, worktrees, rollback plans and evidence handoffs; also supports bounded contribution programs.
+Use when asked to "split this work across agents" or run coordinated shared changes in lanes with exclusive file ownership, collision checks, worktrees, rollback plans and evidence handoffs; also supports bounded contribution programs.
 
 Out of scope — one bundled code DAG (suede-graph-flo-xr), diff review (suede-code), CI wiring (suede-ci-gate), or choosing one skill (suede-workflow-skills).
 
@@ -48,7 +48,7 @@ From "Red flags":
 - "The approach is obvious, skip the RFC": if it has been discussed twice without resolution, it is not obvious.
 - "Mark it done, the code is written": `changed locally` is not `verified locally`; the status vocabulary has no shortcuts.
 - "Leave that caveat out so the handoff looks clean": a handoff missing a field is status `held`, not done.
-- "One more fix cycle will crack it": past 3 cycles on the same failing check, stop and run the loop stall protocol.
+- "One more fix cycle will crack it": past 3 cycles on the same failing check, stop and run the loop stall protocol (references/execution-loop.md).
 - "The builder can review its own lane": for high-risk work, builder and reviewer stay separate.
 
 ## References

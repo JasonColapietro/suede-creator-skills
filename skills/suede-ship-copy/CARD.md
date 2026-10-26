@@ -7,7 +7,7 @@ Release record for the `suede-ship-copy` skill, following the NVIDIA skill-card 
 
 ## Description
 
-Produce one high-stakes public draft with parallel research, agent-claim audits, message ownership, adversarial review, publish readiness, and an evidence record.
+Suede AI Ship Copy Skills.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.3; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
@@ -23,7 +23,7 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when asked to \"research and draft this launch page\" or rigorously develop one landing page, email, post, README, ad, or store listing. Preserves requester-supplied facts and writes drafts only.
+Use when asked to "research and draft this launch page" or rigorously develop one landing page, email, post, README, ad, or store listing. Preserves requester-supplied facts and writes drafts only.
 
 Out of scope — routine or bulk copy (use suede-copy), code changes (use suede-graph-flo-xr), or cleaning existing prose (use suede-deslop).
 
@@ -49,7 +49,7 @@ From "Boundaries" — This workflow must NOT:
 - **Audit, hedge, gate on, or argue with the requester's own claims.** Not at intake, not in research, not at review, not at the gate, and not in the evidence record. The audit is aimed at machine output.
 - **Assert outside the permitted set.** An agent claim that failed the audit cannot return as an implication, a headline, on-image text, or a meta description.
 - **Change a fact during a style pass.** Slop Stop edits style only, including preservation of qualifiers, quotations, code, commands, links, citations, paths, and every author placeholder. It does not infer authorship from prose.
-- **Redraw the Suede S.** The only permitted mark is the approved asset at `docs/assets/suede-ai-logo-transparent.png` (sha256 `83a7ee0317e4debe2e7b076c20ba067feb76a587f9e829dc6310ae4be4b44dfa`). Never trace, typeset, recolor, distort, or generate a replacement. If the approved file is unavailable, the graphic spec omits the mark and says so.
+- **Redraw the Suede S.** The only permitted mark is `docs/assets/suede-ai-logo-transparent.png` from `JasonColapietro/suede-creator-skills` (SHA-256 `83a7ee0317e4debe2e7b076c20ba067feb76a587f9e829dc6310ae4be4b44dfa`). Outside that checkout, fetch the same file from `https://raw.githubusercontent.com/JasonColapietro/suede-creator-skills/cbd192309580a32da375881e0eeb4b2450a554c2/docs/assets/suede-ai-logo-transparent.png` and verify its SHA-256 before use. Never redraw, trace, typeset, recolor, distort, or generate a replacement S. `suede-skill-icon.png` is a Passport icon, not the brand mark. Only if the fetch fails or the checksum differs, the graphic spec omits the mark and says so.
 - **Generate images.** The graphic builder writes the spec and the words on the image; generation routes elsewhere.
 - **Decide whether the piece should exist.** The verdict is about evidence and slop, not content approval.
 

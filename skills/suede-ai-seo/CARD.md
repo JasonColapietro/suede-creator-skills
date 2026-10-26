@@ -23,7 +23,7 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when asked to \"improve our AI citations\" or optimize for ChatGPT/Perplexity: crawler policy, entity consistency, citation-ready pages, off-site evidence and prompt-panel measurement.
+Use when asked to "improve our AI citations", optimize for ChatGPT or Perplexity, or for AI SEO, AEO, GEO, LLMO, AI visibility, or llms.txt work.
 
 Out of scope — nine-lane technical SEO audits (suede-seo-audit), quick promotion grades (suede-visibility-grader), or funnel implementation (suede-site-alchemy).
 

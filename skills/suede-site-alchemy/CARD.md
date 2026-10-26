@@ -7,7 +7,7 @@ Release record for the `suede-site-alchemy` skill, following the NVIDIA skill-ca
 
 ## Description
 
-Turn landing, launch, campaign, and product pages into measured conversion paths: funnel stage, friction, hero, proof, CTAs, pricing, mobile QA, and pre-registered experiments.
+Suede AI Site Alchemy Skills.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.3; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
@@ -23,7 +23,7 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when asked to \"fix this page that gets no signups\" or improve demos and sales from existing traffic. Implements and verifies changes within scope.
+Use when asked to "fix this page that gets no signups" or improve demos and sales from existing traffic. Implements and verifies changes within scope.
 
 Out of scope — SEO scores (use suede-seo-audit), AI citations (use suede-ai-seo), promotion grades (use suede-visibility-grader), or copy alone (use suede-copy).
 

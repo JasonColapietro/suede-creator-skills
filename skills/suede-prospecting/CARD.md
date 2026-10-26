@@ -7,7 +7,7 @@ Release record for the `suede-prospecting` skill, following the NVIDIA skill-car
 
 ## Description
 
-Build a source-backed, scored prospect list across SaaS, B2B, local business, or early demand signals.
+Suede AI Prospecting Skills.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.3; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
@@ -23,7 +23,7 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when asked to \"find our first design partners\", define an ICP, enrich leads, or document disqualification evidence. Includes source dates, confidence, licensed-data checks, and a qualification handoff.
+Use when asked to "find our first design partners", define an ICP, enrich leads, or document disqualification evidence. Includes source dates, confidence, licensed-data checks, and a qualification handoff.
 
 Out of scope — sending outreach (use suede-cold-email), CRM routing (use suede-revops), or competitor profiles (use suede-competitor-profiling).
 

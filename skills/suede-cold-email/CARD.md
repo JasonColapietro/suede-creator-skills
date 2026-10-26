@@ -7,7 +7,7 @@ Release record for the `suede-cold-email` skill, following the NVIDIA skill-card
 
 ## Description
 
-Use when asked \"write a cold email\" or to repair B2B outbound to qualified prospects.
+Use when asked "write a cold email" or to repair B2B outbound to qualified prospects.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.3; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
@@ -23,9 +23,9 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when asked \"write a cold email\" or to repair B2B outbound to qualified prospects. Suede AI produces sourced personalization, short subjects, bodies under 75 words, one ask and bounded follow-ups, with current sender-rule checks.
+Use when asked "write a cold email" or to repair B2B outbound to qualified prospects. Suede AI produces sourced personalization, short subjects, bodies under 75 words, one ask and bounded follow-ups, with current sender-rule checks.
 
-Out of scope — prospect qualification (use suede-prospecting), opted-in lifecycle email (use suede-emails), or broader sales collateral (use suede-sales-enablement).
+Out of scope — prospect qualification (use suede-prospecting), opted-in lifecycle email (use suede-emails), broader sales collateral (use suede-sales-enablement), or creator or influencer pitches (use suede-influencer-outreach).
 
 ## Deployment Geography
 

@@ -23,9 +23,9 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when asked to \"reduce subscription churn\" or design cancel flows, reason-matched save offers, failed-payment recovery and win-back measurement.
+Use when asked to "reduce subscription churn" or design cancel flows, reason-matched save offers, failed-payment recovery and win-back measurement.
 
-Out of scope — lifecycle email copy (suede-emails), pricing architecture (suede-pricing), paywalls (suede-paywalls), or tracking implementation (suede-analytics).
+Out of scope — lifecycle email copy (suede-emails), pricing architecture (suede-pricing), paywalls (suede-pricing Paywall mode), or tracking implementation (suede-analytics).
 
 ## Deployment Geography
 
@@ -34,7 +34,7 @@ Global. The skill is a prompt-and-script package that runs locally inside the in
 ## Requirements / Dependencies
 
 - A Claude Code or Codex CLI session with the `suede-skills` plugin installed (install options: <https://skills.suedeai.ai/>).
-- Bundled files loaded relative to this directory: `agents/` (1 file), `references/` (3 files).
+- Bundled files loaded relative to this directory: `agents/` (1 file), `references/` (4 files).
 - Credentials: none are bundled or required by the skill files. Any tool or API credentials come from the host session; never paste credentials into skill files, prompts, or outputs.
 
 ## Known Risks and Mitigations

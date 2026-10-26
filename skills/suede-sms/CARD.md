@@ -7,7 +7,7 @@ Release record for the `suede-sms` skill, following the NVIDIA skill-card templa
 
 ## Description
 
-Design consent-aware SMS/MMS programs: channel fit, welcome, cart recovery, post-purchase and win-back flows, exact copy, segment counts, cadence, quiet hours, platform selection, and measurement.
+Suede AI SMS Skills.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.3; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
@@ -23,7 +23,7 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when asked to \"draft our SMS welcome flow\" or audit a text program. Checks current consent, opt-out, and registration requirements.
+Use when asked to "draft our SMS welcome flow" or audit a text program. Checks current consent, opt-out, and registration requirements.
 
 Out of scope — email (use suede-emails), capture UX (use suede-site-alchemy), legal certification, or sending, scheduling, importing, or registering anything.
 

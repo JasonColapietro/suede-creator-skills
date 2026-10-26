@@ -7,7 +7,7 @@ Release record for the `suede-visibility-grader` skill, following the NVIDIA ski
 
 ## Description
 
-Grade one public page A-F across findability, first-screen clarity, CTA pull, proof and trust, AI citation readiness, and design signal, with up to five ranked fixes.
+Suede AI Visibility Grader Skills.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.3; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
@@ -23,7 +23,7 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when asked to \"grade this page before promotion\" or give a quick readiness check of a landing page, README, docs, or campaign.
+Use when asked to "grade this page before promotion" or give a quick readiness check of a landing page, README, docs, or campaign.
 
 Out of scope — deep SEO and schema audits (use suede-seo-audit), AI crawler/citation measurement (use suede-ai-seo), or implementing conversion changes (use suede-site-alchemy).
 

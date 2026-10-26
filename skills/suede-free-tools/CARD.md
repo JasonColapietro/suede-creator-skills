@@ -7,7 +7,7 @@ Release record for the `suede-free-tools` skill, following the NVIDIA skill-card
 
 ## Description
 
-Use when asked \"scope a free calculator\" or to choose a lead, link, education or adoption tool tied to a paid product.
+Use when asked "scope a free calculator" or to choose a lead, link, education or adoption tool tied to a paid product.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.3; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
@@ -23,7 +23,7 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when asked \"scope a free calculator\" or to choose a lead, link, education or adoption tool tied to a paid product. Suede AI scores calculators, graders and generators, scopes an MVP and defines an indexable tool page, worked example, schema and KPIs.
+Use when asked "scope a free calculator" or to choose a lead, link, education or adoption tool tied to a paid product. Suede AI scores calculators, graders and generators, scopes an MVP and defines an indexable tool page, worked example, schema and KPIs.
 
 Out of scope — downloads (use suede-lead-magnets), full-site implementation (use suede-site-alchemy), or search diagnostics (use suede-seo-audit).
 

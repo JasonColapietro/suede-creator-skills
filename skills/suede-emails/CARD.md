@@ -7,7 +7,7 @@ Release record for the `suede-emails` skill, following the NVIDIA skill-card tem
 
 ## Description
 
-Use when asked \"build a welcome email sequence\" or to design nurture, onboarding, win-back, post-purchase or trigger-based lifecycle email flows.
+Use when asked "build a welcome email sequence" or to design nurture, onboarding, win-back, post-purchase or trigger-based lifecycle email flows.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.3; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
@@ -23,7 +23,7 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when asked \"build a welcome email sequence\" or to design nurture, onboarding, win-back, post-purchase or trigger-based lifecycle email flows. Suede AI returns entry and exit criteria, timing, exact copy, sender-rule checks and a measurement plan.
+Use when asked "build a welcome email sequence" or to design nurture, onboarding, win-back, post-purchase or trigger-based lifecycle email flows. Suede AI returns entry and exit criteria, timing, exact copy, sender-rule checks and a measurement plan.
 
 Out of scope — cold outbound (use suede-cold-email), SMS (use suede-sms), in-product onboarding (use suede-onboarding), or broader lifecycle operations (use suede-revops).
 

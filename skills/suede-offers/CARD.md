@@ -23,9 +23,9 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when asked \"improve this service offer\" or to diagnose a course, agency, coaching, or B2B offer.
+Use when asked "improve this service offer" or to diagnose a course, agency, coaching, or B2B offer.
 
-Out of scope — SaaS tier architecture (suede-pricing), sales-page copy (suede-copy), upgrade screens (suede-paywalls), or clinical advice.
+Out of scope — SaaS tier architecture (suede-pricing), sales-page copy (suede-copy), upgrade screens (suede-pricing Paywall mode), or clinical advice.
 
 ## Deployment Geography
 

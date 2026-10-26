@@ -7,7 +7,7 @@ Release record for the `suede-social` skill, following the NVIDIA skill-card tem
 
 ## Description
 
-Plan, audit, and draft organic social for founder/brand accounts: platform mix, 30-post audits, calendars, Instagram, LinkedIn/X, short-video scripts, social search, and listening.
+Suede AI Social Skills.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.3; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
@@ -23,9 +23,9 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when asked to \"audit our Instagram growth\" or build an approval-ready content loop.
+Use when asked to "audit our Instagram growth", "plan a 30-day social calendar", or "turn this clip into a guide funnel", or to build an approval-ready content loop.
 
-Out of scope — paid ads (use suede-ads or suede-ad-creative), editorial agents (use suede-newsroom), clip-to-guide work (use suede-clip-to-guide), video rendering (use suede-video), or broad content strategy (use suede-content-strategy).
+Out of scope — paid ads (use suede-ads or suede-ad-creative), editorial agents (use suede-newsroom), video rendering (use suede-video), or broad content strategy (use suede-content-strategy).
 
 ## Deployment Geography
 
@@ -34,7 +34,7 @@ Global. The skill is a prompt-and-script package that runs locally inside the in
 ## Requirements / Dependencies
 
 - A Claude Code or Codex CLI session with the `suede-skills` plugin installed (install options: <https://skills.suedeai.ai/>).
-- Bundled files loaded relative to this directory: `agents/` (1 file), `references/` (14 files).
+- Bundled files loaded relative to this directory: `agents/` (1 file), `scripts/` (1 file), `references/` (19 files).
 - Credentials: none are bundled or required by the skill files. Any tool or API credentials come from the host session; never paste credentials into skill files, prompts, or outputs.
 
 ## Known Risks and Mitigations

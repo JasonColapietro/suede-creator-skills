@@ -23,7 +23,7 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when asked to \"build an Android app\" or modernize a Kotlin/Compose product: architecture, policy, privacy, billing, tests and a Play-ready release evidence package.
+Use when asked to "build an Android app" or modernize a Kotlin/Compose product: architecture, policy, privacy, billing, tests and a Play-ready release evidence package.
 
 Out of scope — Play uploads or rollout (suede-play-release), website-to-iOS conversion (site-to-ios-app), review-only work (suede-code), or store listing strategy (suede-aso).
 

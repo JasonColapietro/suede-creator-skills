@@ -57,7 +57,7 @@ regrettable answer to an unclear question.
 
 ## NOT FOR is the other half of the contract
 
-Forty-eight of the 64 public skills carry a `NOT FOR:` clause in their
+Forty-eight of the 62 public skills carry a `NOT FOR:` clause in their
 description. It always has the same shape: the condition under which a sibling
 wins, then the sibling's exact name in parentheses.
 
@@ -168,7 +168,7 @@ demonstrates itself by finding a real bug in the pack's release gate.
 
 ## A pack is a namespace
 
-Ten skills have forty-five possible pairwise collisions. Sixty-four have more
+Ten skills have forty-five possible pairwise collisions. Sixty-two have more
 than two thousand six hundred. You cannot write your way out of that with better
 positive descriptions, because none of the descriptions are inaccurate. They are
 all true. Truth about what a skill does says nothing about whether it should

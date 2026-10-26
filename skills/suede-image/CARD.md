@@ -7,7 +7,7 @@ Release record for the `suede-image` skill, following the NVIDIA skill-card temp
 
 ## Description
 
-Use when asked \"create an Open Graph image\" or to produce marketing heroes, banners, social graphics, mockups or image workflows.
+Use when asked "create an Open Graph image" or to produce marketing heroes, banners, social graphics, mockups or image workflows.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.3; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
@@ -23,7 +23,7 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when asked \"create an Open Graph image\" or to produce marketing heroes, banners, social graphics, mockups or image workflows. Suede AI chooses generation, editing, templates or real screenshots, then specifies layout, rights, export sizes, compression and image SEO.
+Use when asked "create an Open Graph image" or to produce marketing heroes, banners, social graphics, mockups or image workflows. Suede AI chooses generation, editing, templates or real screenshots, then specifies layout, rights, export sizes, compression and image SEO.
 
 Out of scope — paid-ad systems (use suede-ad-creative), video (use suede-video), app-store assets (use suede-aso), or social strategy (use suede-social).
 
@@ -34,7 +34,7 @@ Global. The skill is a prompt-and-script package that runs locally inside the in
 ## Requirements / Dependencies
 
 - A Claude Code or Codex CLI session with the `suede-skills` plugin installed (install options: <https://skills.suedeai.ai/>).
-- Bundled files loaded relative to this directory: `agents/` (1 file), `references/` (2 files).
+- Bundled files loaded relative to this directory: `agents/` (1 file), `references/` (4 files).
 - Credentials: none are bundled or required by the skill files. Any tool or API credentials come from the host session; never paste credentials into skill files, prompts, or outputs.
 
 ## Known Risks and Mitigations
@@ -44,8 +44,7 @@ Global. The skill is a prompt-and-script package that runs locally inside the in
 
 From "Boundaries":
 
-- For Suede visuals, use only `docs/assets/suede-ai-logo-transparent.png` with SHA-256 `83a7ee0317e4debe2e7b076c20ba067feb76a587f9e829dc6310ae4be4b44dfa`.
-- Do not redraw, trace, approximate, recolor, distort, typeset, or generate a replacement for the approved Suede S mark. If the canonical file is missing or its checksum differs, omit the mark, name the blocker, and request the approved file.
+- Brand mark: for Suede AI visuals, use only `docs/assets/suede-ai-logo-transparent.png` from `JasonColapietro/suede-creator-skills` (SHA-256 `83a7ee0317e4debe2e7b076c20ba067feb76a587f9e829dc6310ae4be4b44dfa`). Outside that checkout, fetch the same file from `https://raw.githubusercontent.com/JasonColapietro/suede-creator-skills/cbd192309580a32da375881e0eeb4b2450a554c2/docs/assets/suede-ai-logo-transparent.png` and verify its SHA-256 before use. Never redraw, trace, typeset, recolor, distort, or generate a replacement S. `suede-skill-icon.png` is a Passport icon, not the brand mark. Omit the mark and halt for the approved file only if the fetch fails or the checksum differs.
 - Do not claim an image is licensed, rights-cleared, authentic, accessible, optimized, or platform-compliant without verifying the relevant source or output.
 - Do not use a paid provider, upload protected material, or cross an approved account or data boundary without explicit authority and a verified maximum cost.
 - Do not publish, overwrite source assets, or replace real product screenshots without explicit authorization.

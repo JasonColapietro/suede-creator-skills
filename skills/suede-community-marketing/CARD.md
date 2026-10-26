@@ -7,7 +7,7 @@ Release record for the `suede-community-marketing` skill, following the NVIDIA s
 
 ## Description
 
-Use when asked \"plan our community launch\" or to audit or drive product community growth.
+Suede AI Community Marketing Skills.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.3; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
@@ -23,7 +23,7 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when asked \"plan our community launch\" or to audit or drive product community growth. Suede AI returns member identity, platform choice, a seeding plan, rituals, moderation paths, ambassador design and health metrics with denominators.
+Use when asked "plan our community launch" or to audit or drive product community growth. Returns member identity, platform choice, a seeding plan, rituals, moderation paths, ambassador design and health metrics with denominators.
 
 Out of scope — public social content (use suede-social), referral payouts (use suede-referrals), or customer interviews (use suede-customer-research).
 

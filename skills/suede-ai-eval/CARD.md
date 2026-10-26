@@ -23,7 +23,7 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when asked to \"write evals for this AI feature\" or assess LLM, RAG, agent, classifier or generated-media behavior: AI-SPEC, failure rubric, executable cases, coverage and acceptance evidence.
+Use when asked to "write evals for this AI feature" or assess LLM, RAG, agent, classifier or generated-media behavior: AI-SPEC, failure rubric, executable cases, coverage and acceptance evidence.
 
 Out of scope — implementation review (suede-code), wiring existing evals into CI (suede-ci-gate), or coordinating builder lanes (suede-agent-teams).
 

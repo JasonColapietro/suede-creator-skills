@@ -7,7 +7,7 @@ Release record for the `suede-video` skill, following the NVIDIA skill-card temp
 
 ## Description
 
-Plan or produce marketing video with scripts, storyboards, shot and asset lists, consent-aware AI or avatar choices, programmatic rendering, edit decisions, pacing, export specs, and video-search metadata.
+Suede AI Video Skills.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.3; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
@@ -23,9 +23,9 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when asked to \"turn this demo into a short video\" or build a repeatable production pipeline.
+Use when asked to "turn this demo into a short video" or build a repeatable production pipeline.
 
-Out of scope — social calendars (use suede-social), clip-to-guide bridges (use suede-clip-to-guide), paid ad concepts (use suede-ad-creative), still images (use suede-image), or unapproved publishing.
+Out of scope — social calendars or clip-to-guide bridges (use suede-social), paid ad concepts (use suede-ad-creative), still images (use suede-image), or unapproved publishing.
 
 ## Deployment Geography
 
@@ -34,7 +34,7 @@ Global. The skill is a prompt-and-script package that runs locally inside the in
 ## Requirements / Dependencies
 
 - A Claude Code or Codex CLI session with the `suede-skills` plugin installed (install options: <https://skills.suedeai.ai/>).
-- Bundled files loaded relative to this directory: `agents/` (1 file), `references/` (4 files).
+- Bundled files loaded relative to this directory: `agents/` (1 file), `references/` (6 files).
 - Credentials: none are bundled or required by the skill files. Any tool or API credentials come from the host session; never paste credentials into skill files, prompts, or outputs.
 
 ## Known Risks and Mitigations
@@ -46,7 +46,7 @@ From "Boundaries":
 
 - Do not generate, render, purchase, upload, or publish media without approval of scope, tool cost, rights, and destination.
 - Do not clone a real person's voice or likeness, use unlicensed source media, or promise an exact copy of a reference style or edit.
-- For Suede-branded visuals, use only the approved transparent Suede S asset at `JasonColapietro/suede-creator-skills/docs/assets/suede-ai-logo-transparent.png` with SHA-256 `83a7ee0317e4debe2e7b076c20ba067feb76a587f9e829dc6310ae4be4b44dfa`; if it is missing or changed, omit the mark and halt for the approved file.
+- Brand mark: for Suede AI-branded visuals, use only `docs/assets/suede-ai-logo-transparent.png` from `JasonColapietro/suede-creator-skills` (SHA-256 `83a7ee0317e4debe2e7b076c20ba067feb76a587f9e829dc6310ae4be4b44dfa`). Outside that checkout, fetch the same file from `https://raw.githubusercontent.com/JasonColapietro/suede-creator-skills/cbd192309580a32da375881e0eeb4b2450a554c2/docs/assets/suede-ai-logo-transparent.png` and verify its SHA-256 before use. Never redraw, trace, typeset, recolor, distort, or generate a replacement S. `suede-skill-icon.png` is a Passport icon, not the brand mark. Omit the mark and halt for the approved file only if the fetch fails or the checksum differs.
 
 ## References
 

@@ -7,7 +7,7 @@ Release record for the `suede-content-strategy` skill, following the NVIDIA skil
 
 ## Description
 
-Use when asked \"plan our content strategy\" or to decide what to publish, refresh or stop.
+Suede AI content strategy: decide what to publish, refresh or stop.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.3; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
@@ -23,7 +23,7 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when asked \"plan our content strategy\" or to decide what to publish, refresh or stop. Suede AI maps audience questions, pillars, topic clusters, AI answer gaps and original-data assets to priorities, cadence, distribution and KPIs.
+Use when asked "plan our content strategy" or "find keywords and topics for our blog". Maps audience questions, keyword and topic discovery, pillars, topic clusters, AI answer gaps and original-data assets to priorities, cadence, distribution and KPIs.
 
 Out of scope — drafting an asset (use suede-copy), SEO audits (use suede-seo-audit), AI visibility measurement (use suede-ai-seo), or social production (use suede-social).
 
@@ -34,7 +34,7 @@ Global. The skill is a prompt-and-script package that runs locally inside the in
 ## Requirements / Dependencies
 
 - A Claude Code or Codex CLI session with the `suede-skills` plugin installed (install options: <https://skills.suedeai.ai/>).
-- Bundled files loaded relative to this directory: `agents/` (1 file), `references/` (2 files).
+- Bundled files loaded relative to this directory: `agents/` (1 file), `references/` (5 files).
 - Credentials: none are bundled or required by the skill files. Any tool or API credentials come from the host session; never paste credentials into skill files, prompts, or outputs.
 
 ## Known Risks and Mitigations

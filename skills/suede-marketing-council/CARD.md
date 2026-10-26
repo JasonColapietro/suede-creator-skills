@@ -23,7 +23,7 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when asked \"pressure-test this channel bet\" or for expert lenses, a skeptical read, or a chair synthesis with disagreements and evidence tests.
+Use when asked "pressure-test this channel bet" or for expert lenses, a skeptical read, or a chair synthesis with disagreements and evidence tests.
 
 Out of scope — impersonating people, primary research (suede-customer-research), writing a full plan (suede-marketing-plan), or channel execution.
 

@@ -7,7 +7,7 @@ Release record for the `suede-graph-flo-xr` skill, following the NVIDIA skill-ca
 
 ## Description
 
-Use when asked \"compare implementation plans before building\" for one multi-file repository change.
+Suede AI Thought Graph shipping search for one multi-file repository change.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.3; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
@@ -23,9 +23,9 @@ Pack license: MIT ([LICENSE](../../LICENSE)). This skill additionally bundles th
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when asked \"compare implementation plans before building\" for one multi-file repository change. Suede AI runs Suede Thought Graph shipping search: it searches, scores, prunes and refutes plans, selects one winner, then builds in an isolated worktree with a sandboxed gate and handoff. Halts on hazards, collisions or exhausted budget.
+Use when asked "compare implementation plans before building". It searches, scores, prunes and refutes plans, selects one winner, then builds in an isolated worktree with a sandboxed gate and handoff, halting on hazards, collisions or an exhausted budget. Runs on Claude Code for macOS; on other hosts it is a contract only.
 
-Out of scope — bulk worker tasks, existing-diff review (use suede-code), CI wiring (use suede-ci-gate), or copy-only work (use suede-ship-copy).
+Out of scope — bulk, cross-repo, or non-macOS builder lanes (use suede-agent-teams), existing-diff review (use suede-code), CI wiring (use suede-ci-gate), or copy-only work (use suede-ship-copy).
 
 ## Deployment Geography
 
@@ -34,7 +34,7 @@ Global. The skill is a prompt-and-script package that runs locally inside the in
 ## Requirements / Dependencies
 
 - A Claude Code or Codex CLI session with the `suede-skills` plugin installed (install options: <https://skills.suedeai.ai/>).
-- Bundled files loaded relative to this directory: `agents/` (7 files), `references/` (1 file), `workflows/` (11 files).
+- Bundled files loaded relative to this directory: `agents/` (7 files), `references/` (2 files), `workflows/` (11 files).
 - Credentials: none are bundled or required by the skill files. Any tool or API credentials come from the host session; never paste credentials into skill files, prompts, or outputs.
 
 ## Known Risks and Mitigations
@@ -44,7 +44,10 @@ Global. The skill is a prompt-and-script package that runs locally inside the in
 
 From "Boundaries":
 
-- The workflow halts before the next agent call or entire mutating batch when its budget is exhausted; it does not undo mutations that completed earlier. It halts before any mutation unless an independent read-only verifier confirms a clean, registered origin/main worktree at one direct `${REPO}.worktrees/ship-*` child with the same Git common directory and non-symlink candidate files whose realpaths remain inside it. Case-folded or Unicode-normalized path aliases fail closed before graph search. It also halts for a tracked secret, a live target worktree, a protected-WIP collision, a duplicate file owner, an overflowed safety manifest, or no selectable plan. Scout parses NUL-delimited Git porcelain so both sides of renames remain protected, parses `lsof -Fn` CWD fields with path-component boundaries, and never discards fresh dirty or live claims merely because committed history was cherry-landed. A selected Build or Fix result that is blocked, missing context, fails, or reports no changed path also halts before the next verification stage; a result that is done with stated concerns proceeds, and its concerns travel into the review stage and the handoff. Patch authors receive the whole scope checklist as contract context, so a name another lane pins is imported, not guessed. On a halt, name the blocker in one line and offer 2–4 applicable resolutions (for example: narrow scope, exempt protected WIP, resolve the collision, choose a higher budget, or provide missing context), and wait. Do not relaunch or mutate while halted.
+- The workflow halts before the next agent call or entire mutating batch when its budget is exhausted; it does not undo mutations that completed earlier. It halts before any mutation unless an independent read-only verifier confirms a clean, registered worktree of the origin default branch (origin/HEAD, else origin/main) at one direct `${REPO}.worktrees/ship-*` child with the same Git common directory and non-symlink candidate files whose realpaths remain inside it. Case-folded or Unicode-normalized path aliases fail closed before graph search. It also halts for a tracked secret, a live target worktree, a protected-WIP collision, a duplicate file owner, an overflowed safety manifest, or no selectable plan. Scout parses NUL-delimited Git porcelain so both sides of renames remain protected, parses `lsof -Fn` CWD fields with path-component boundaries, and never discards fresh dirty or live claims merely because committed history was cherry-landed. A selected Build or Fix result that is blocked, missing context, fails, or reports no changed path also halts before the next verification stage; a result that is done with stated concerns proceeds, and its concerns travel into the review stage and the handoff. Patch authors receive the whole scope checklist as contract context, so a name another lane pins is imported, not guessed. On a halt, name the blocker in one line and offer 2 to 4 applicable resolutions (for example: narrow scope, exempt protected WIP, resolve the collision, choose a higher budget, or provide missing context), and wait. Do not relaunch or mutate while halted.
+- Gate removes credential-like and interpreter-injection environment variables, then redirects home, temporary, and cache paths before an acceptance command starts. If a check depends on removed credentials, report it as unverified; never rerun it outside the sandbox merely to obtain a pass. Gate sets `CI=1` so test runners skip watch mode, and kills a command that runs past 15 minutes (exit 124, reported as a hold). Never retry a sandbox rejection or timeout outside the sandbox to turn the hold into a pass.
+- On a halt, read `references/runtime-and-trust-boundary.md` for the halt-reason table and score-retry budget; for a security-sensitive handoff, quote its trust-boundary section. In short: Gate results stay `hold` with `gateVerified:false` because Workflow returns no execution receipt, clamps and `allowed*` fields are audit metadata rather than filesystem permissions, and the result is never host-certified.
+- Production inspection is read-only. This skill never deploys, publishes, releases, pushes, merges, changes credentials, deletes or reverts protected work, or claims live verification. It does not choose the user's budget or decide that missing scope can be skipped. Its ship verdict is evidence for the user, not authority to perform an external action.
 
 ## References
 

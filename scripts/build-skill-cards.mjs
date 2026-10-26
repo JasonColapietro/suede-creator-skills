@@ -16,6 +16,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { load as loadYaml } from "js-yaml";
 
 const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const skillsDir = path.join(repoRoot, "skills");
@@ -54,9 +55,10 @@ function countFiles(dir) {
 function parseFrontmatter(markdown) {
   const match = markdown.match(/^---\n([\s\S]*?)\n---(?:\n|$)/);
   if (!match) return null;
-  const description = match[1].match(/^description:\s*(?:"([\s\S]*?)"|(.*(?:\n(?!\w+:)[ \t]+.*)*))\s*$/m);
-  if (!description) return null;
-  return (description[1] ?? description[2]).replace(/\s+/g, " ").trim();
+  // Parse the YAML so escaped quotes in descriptions render as quotes, not \".
+  const description = loadYaml(match[1])?.description;
+  if (typeof description !== "string") return null;
+  return description.replace(/\s+/g, " ").trim();
 }
 
 // Extract the first risk section present: its lead-in prose (which carries the

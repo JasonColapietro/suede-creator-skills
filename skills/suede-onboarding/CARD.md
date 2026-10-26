@@ -23,9 +23,9 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when asked \"users sign up but never activate\" or to improve registration and first-run setup.
+Use when asked "users sign up but never activate" or to improve registration and first-run setup.
 
-Out of scope — non-account forms (suede-site-alchemy), lifecycle email copy (suede-emails), paywalls (suede-paywalls), cancellation (suede-churn-prevention), or unreviewed auth deployment.
+Out of scope — non-account forms (suede-site-alchemy), lifecycle email copy (suede-emails), paywalls (suede-pricing Paywall mode), cancellation (suede-churn-prevention), or unreviewed auth deployment.
 
 ## Deployment Geography
 

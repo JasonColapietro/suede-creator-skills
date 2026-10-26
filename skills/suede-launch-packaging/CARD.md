@@ -23,9 +23,9 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when asked \"fix this install command\" or to prepare README, release notes, docs, proof links, and handoff copy for software, skills, or MCP servers.
+Use when asked "fix this install command" or to prepare README, release notes, docs, proof links, and handoff copy for software, skills, or MCP servers.
 
-Out of scope — campaign strategy (suede-marketing-plan), new copy (suede-copy), code review (suede-code), or conversion design (suede-site-alchemy).
+Out of scope — product or service campaign strategy (suede-marketing-plan), artist campaigns (suede-campaign-in-a-box), new copy (suede-copy), code review (suede-code), or conversion design (suede-site-alchemy).
 
 ## Deployment Geography
 

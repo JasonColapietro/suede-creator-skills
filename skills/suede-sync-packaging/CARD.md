@@ -7,7 +7,7 @@ Release record for the `suede-sync-packaging` skill, following the NVIDIA skill-
 
 ## Description
 
-Prepare a song for sync review: scene fit, supervisor one-sheet, asset checklist, lyric flags, mood tags, AI disclosure, and open clearance questions.
+Suede AI Sync Packaging Skills.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.3; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
@@ -23,7 +23,7 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when asked to \"make a sync one-sheet\" or package a track for film, TV, ads, games, trailers, or creator campaigns. Drafts pitch materials without clearance, placement, or sending claims.
+Use when asked to "make a sync one-sheet" or package a track for film, TV, ads, games, trailers, or creator campaigns. Drafts pitch materials without clearance, placement, or sending claims.
 
 Out of scope — rights investigations or transfer packages (use suede-rights-passport), folder linting (use suede-release-linter), or rollouts (use suede-campaign-in-a-box).
 

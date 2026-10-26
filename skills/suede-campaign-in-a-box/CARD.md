@@ -23,7 +23,7 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when asked to \"plan a release campaign\" for a song, era, show or catalog: select a lane and build announce, tease, launch and follow-up assets with rights gaps and fan actions.
+Use when asked to "plan a release campaign" for a song, era, show or catalog: select a lane and build announce, tease, launch and follow-up assets with rights gaps and fan actions.
 
 Out of scope — isolated copy (suede-copy), sync packages (suede-sync-packaging), rights resolution (suede-rights-passport), or software releases (suede-launch-packaging).
 

@@ -7,7 +7,7 @@ Release record for the `suede-directory-submissions` skill, following the NVIDIA
 
 ## Description
 
-Use when asked \"plan our directory submissions\" or to select and sequence startup, SaaS, AI, MCP, marketplace or review listings.
+Suede AI Directory Submissions Skills.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.3; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
@@ -23,9 +23,9 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when asked \"plan our directory submissions\" or to select and sequence startup, SaaS, AI, MCP, marketplace or review listings. Suede AI adapts truthful positioning, maintains entity consistency and tracks submission evidence and verified backlinks.
+Use when asked "plan our directory submissions" or to select and sequence startup, SaaS, AI, MCP, marketplace or review listings. Adapts truthful positioning, maintains entity consistency and tracks submission evidence and verified backlinks.
 
-Out of scope — release packaging (use suede-launch-packaging), scaled destination pages (use suede-programmatic-seo), or AI visibility audits (use suede-ai-seo).
+Out of scope — software or skill-pack release packaging (use suede-launch-packaging), scaled destination pages (use suede-programmatic-seo), or AI visibility audits (use suede-ai-seo).
 
 ## Deployment Geography
 
@@ -34,7 +34,7 @@ Global. The skill is a prompt-and-script package that runs locally inside the in
 ## Requirements / Dependencies
 
 - A Claude Code or Codex CLI session with the `suede-skills` plugin installed (install options: <https://skills.suedeai.ai/>).
-- Bundled files loaded relative to this directory: `agents/` (1 file), `references/` (4 files).
+- Bundled files loaded relative to this directory: `agents/` (1 file), `references/` (5 files).
 - Credentials: none are bundled or required by the skill files. Any tool or API credentials come from the host session; never paste credentials into skill files, prompts, or outputs.
 
 ## Known Risks and Mitigations

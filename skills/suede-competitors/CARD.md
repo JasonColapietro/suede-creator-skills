@@ -7,7 +7,7 @@ Release record for the `suede-competitors` skill, following the NVIDIA skill-car
 
 ## Description
 
-Use when asked \"write a comparison page\" or to plan an alternative or versus page from verified competitor evidence.
+Use when asked "write a comparison page" or to plan an alternative or versus page from verified competitor evidence.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.3; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
@@ -23,7 +23,7 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when asked \"write a comparison page\" or to plan an alternative or versus page from verified competitor evidence. Suede AI returns evaluator-focused copy, fair comparisons, pricing context, migration guidance and search-ready structure.
+Use when asked "write a comparison page" or to plan an alternative or versus page from verified competitor evidence. Suede AI returns evaluator-focused copy, fair comparisons, pricing context, migration guidance and search-ready structure.
 
 Out of scope — gathering competitor evidence (use suede-competitor-profiling), internal battle cards (use suede-sales-enablement), or scaled page systems (use suede-programmatic-seo).
 

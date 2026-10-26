@@ -23,7 +23,7 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when asked to \"explain why dashboards disagree\", compare revenue models, design incrementality reads, or join first-party browsing to hosted bookings/checkouts.
+Use when asked to "explain why dashboards disagree" or "which channel drove revenue": multi-touch attribution model comparison, MMM (marketing mix modeling) and incrementality or geo-holdout reads, self-reported "how did you hear about us" attribution, and joining first-party browsing to hosted bookings/checkouts.
 
 Out of scope — GA4/GTM event plans and UTMs (suede-analytics), ad campaign decisions (suede-ads), or CRM pipeline operations (suede-revops).
 

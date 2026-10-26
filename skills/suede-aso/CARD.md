@@ -7,7 +7,7 @@ Release record for the `suede-aso` skill, following the NVIDIA skill-card templa
 
 ## Description
 
-Suede AI App Store Optimization Skills.
+Suede AI App Store Optimization (ASO) Skills for Apple App Store and Google Play.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.3; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
@@ -23,7 +23,7 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when asked to \"improve our App Store listing\" or prepare prelaunch keyword, title, subtitle, description and screenshot fields from app and console evidence.
+Use when asked to "improve our App Store or Google Play listing", "optimize our Play Store listing", or "do ASO for our app", or to prepare prelaunch keyword, title, subtitle, short description, description and screenshot fields from app and console evidence.
 
 Out of scope — app builds (android-app-factory or site-to-ios-app), release rollout (suede-play-release), paid assets (suede-ad-creative), or install instrumentation (suede-analytics).
 

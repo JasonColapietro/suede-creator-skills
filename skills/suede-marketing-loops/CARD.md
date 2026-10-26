@@ -23,7 +23,7 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when asked \"create a weekly ranking watch\" or to turn repeatable marketing work into a complete loop spec.
+Use when asked "create a weekly ranking watch" or to turn repeatable marketing work into a complete loop spec.
 
 Out of scope — one-off plans (suede-marketing-plan), experiments (suede-ab-testing), or scheduling without authority.
 

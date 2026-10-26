@@ -23,7 +23,7 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when asked \"what should we try next\" or for a marketing plan grounded in budget, capacity, and evidence.
+Use when asked "what should we try next" or for a marketing plan grounded in budget, capacity, and evidence.
 
 Out of scope — channel execution, contested bets (suede-marketing-council), recurring loops (suede-marketing-loops), or positioning alone (suede-product-marketing).
 

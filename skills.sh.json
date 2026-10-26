@@ -47,7 +47,6 @@
       "description": "Craft: Make the thing look and read like someone built it on purpose.",
       "skills": [
         "suede-ad-creative",
-        "suede-clip-to-guide",
         "suede-image",
         "suede-video"
       ]
@@ -111,7 +110,6 @@
         "suede-launch-packaging",
         "suede-offers",
         "suede-onboarding",
-        "suede-paywalls",
         "suede-pricing",
         "suede-site-alchemy"
       ]

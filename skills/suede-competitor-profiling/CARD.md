@@ -7,7 +7,7 @@ Release record for the `suede-competitor-profiling` skill, following the NVIDIA 
 
 ## Description
 
-Use when asked \"research these competitors\" or to refresh named competitor profiles.
+Use when asked "research these competitors" or to refresh named competitor profiles.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.3; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
@@ -23,7 +23,7 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when asked \"research these competitors\" or to refresh named competitor profiles. Suede AI competitive intelligence captures current public evidence for positioning, pricing, product, reviews, search and AI visibility, separating facts, inferences and unknowns.
+Use when asked "research these competitors" or to refresh named competitor profiles. Suede AI competitive intelligence captures current public evidence for positioning, pricing, product, reviews, search and AI visibility, separating facts, inferences and unknowns.
 
 Out of scope — publishing comparison pages (use suede-competitors), sales battle cards (use suede-sales-enablement), or pricing decisions (use suede-pricing).
 

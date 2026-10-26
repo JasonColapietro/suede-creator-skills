@@ -40,7 +40,7 @@ future is exciting.
 
 ## Facts you may use (verified in-repo)
 
-- 64 public skill folders, each a `skills/<name>/SKILL.md`. Original work is
+- 62 public skill folders, each a `skills/<name>/SKILL.md`. Original work is
   MIT licensed; adapted components retain their upstream notices.
 - Install: `/plugin marketplace add JasonColapietro/suede-creator-skills` then
   `/plugin install suede-skills@suede`. Also `install.sh`, `npx skills add`,
@@ -50,7 +50,7 @@ future is exciting.
   out of watching hired marketing firms skip fundamentals on his own products.
 - House line of `suede-full-send`: "Never end your allocation above zero." It is
   a dry joke about already-authorized compute, not a literal token counter.
-- 38 of the pack's skills are adapted from MIT-licensed source material. Point
+- 37 of the pack's skills are adapted from MIT-licensed source material. Point
   to `NOTICE.md` for the copyright and license notice; do not name upstream
   authors in book prose.
 - Design palette: background `#080808`, gold `#c8a96e`, risk red `#8b1a1a`.

@@ -5,7 +5,7 @@
 By Jason Colapietro, Suede AI
 
 Companion to [suede-creator-skills](https://github.com/JasonColapietro/suede-creator-skills),
-a 64-skill open-source pack for Claude Code and OpenAI Codex.
+a 62-skill open-source pack for Claude Code and OpenAI Codex.
 
 The `suede-graph-flo-xr` workflow discussed in this book adapts BSD-licensed
 code. Its copyright and license notice is in `NOTICE.md`.
@@ -22,7 +22,7 @@ writing the procedure down once, in a form an agent could run, and never
 re-explaining it.
 
 That is what a skill is. A folder, a markdown file, a procedure with a defined
-output. Sixty-four public skills, readable before you install them and editable
+output. Sixty-two public skills, readable before you install them and editable
 after.
 
 This book is the reasoning underneath. Half of it is how the machinery works:
@@ -63,7 +63,7 @@ the operating rules the book keeps returning to, collected in one page.
 
 **Progressive disclosure.** An agent reads every skill's description and almost
 none of their bodies. The description is the router. The body is the payload,
-loaded only on a match. This is why a pack can grow to sixty-four skills
+loaded only on a match. This is why a pack can grow to sixty-two skills
 without drowning the context window, and why a badly written description is a
 broken feature rather than a cosmetic one.
 
@@ -94,7 +94,7 @@ else, the file to check is
 
 ## License and credit
 
-Original work in the pack is MIT licensed. Thirty-eight of the pack's skills, most of
+Original work in the pack is MIT licensed. Thirty-seven of the pack's skills, most of
 them in marketing and growth, are adapted from MIT-licensed source material,
 `suede-influencer-outreach` adapts an MIT-licensed skill from partnerships-skills,
 and the `suede-graph-flo-xr` workflow adapts BSD-licensed code that ships with

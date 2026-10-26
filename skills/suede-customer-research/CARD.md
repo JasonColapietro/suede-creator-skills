@@ -7,7 +7,7 @@ Release record for the `suede-customer-research` skill, following the NVIDIA ski
 
 ## Description
 
-Use when asked \"synthesize these interviews\" or to discover what a defined customer segment says, needs and resists.
+Use when asked "synthesize these interviews" or to discover what a defined customer segment says, needs and resists.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.3; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
@@ -23,7 +23,7 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when asked \"synthesize these interviews\" or to discover what a defined customer segment says, needs and resists. Suede AI analyzes transcripts, surveys, tickets, reviews and forums into traceable VOC quotes, jobs to be done, personas and buyer questions.
+Use when asked "synthesize these interviews" or to discover what a defined customer segment says, needs and resists. Suede AI analyzes transcripts, surveys, tickets, reviews and forums into traceable VOC quotes, jobs to be done, personas and buyer questions.
 
 Out of scope — competitor-only profiling (use suede-competitor-profiling), final copy (use suede-copy), or unsupported product prioritization (use suede-product-marketing).
 

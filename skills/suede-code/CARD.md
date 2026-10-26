@@ -7,7 +7,7 @@ Release record for the `suede-code` skill, following the NVIDIA skill-card templ
 
 ## Description
 
-Use when explicitly asked \"review this PR\" or to grade a diff, branch, or commit range.
+Suede AI Code Skills: code review and ship grading on request.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.3; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
@@ -23,7 +23,7 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when explicitly asked \"review this PR\" or to grade a diff, branch, or commit range. Suede AI returns evidence-backed P0-P3 findings, fix paths and an A-F ship grade; supports findings-only, grade-only and fix modes, seven review lanes, security checks, deploy safety and commit dirt.
+Use when explicitly asked "review this PR" or to grade a diff, branch, or commit range. Returns evidence-backed P0-P3 findings, fix paths and an A-F ship grade; supports findings-only, grade-only and fix modes, seven review lanes, security checks, deploy safety and commit dirt.
 
 Out of scope — automatic CI enforcement (use suede-ci-gate), agent evaluations (use suede-ai-eval), implementation-plan search (use suede-graph-flo-xr), or parallel fix coordination (use suede-agent-teams).
 
@@ -34,7 +34,7 @@ Global. The skill is a prompt-and-script package that runs locally inside the in
 ## Requirements / Dependencies
 
 - A Claude Code or Codex CLI session with the `suede-skills` plugin installed (install options: <https://skills.suedeai.ai/>).
-- Bundled files loaded relative to this directory: `agents/` (1 file), `scripts/` (1 file), `references/` (9 files).
+- Bundled files loaded relative to this directory: `agents/` (1 file), `scripts/` (1 file), `references/` (12 files).
 - Credentials: none are bundled or required by the skill files. Any tool or API credentials come from the host session; never paste credentials into skill files, prompts, or outputs.
 
 ## Known Risks and Mitigations

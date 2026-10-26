@@ -23,7 +23,7 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when planning paid acquisition and asked to \"audit our paid campaigns\" or choose channels, structure campaigns, set budget pacing, retargeting and kill-or-scale rules from verified unit economics and performance.
+Use when planning paid acquisition and asked to "audit our paid campaigns" or choose channels, structure campaigns, set budget pacing, retargeting and kill-or-scale rules from verified unit economics and performance.
 
 Out of scope — ad asset production (suede-ad-creative), tracking implementation (suede-analytics), attribution reconciliation (suede-attribution), or landing-page work (suede-site-alchemy).
 
@@ -34,7 +34,7 @@ Global. The skill is a prompt-and-script package that runs locally inside the in
 ## Requirements / Dependencies
 
 - A Claude Code or Codex CLI session with the `suede-skills` plugin installed (install options: <https://skills.suedeai.ai/>).
-- Bundled files loaded relative to this directory: `agents/` (1 file), `references/` (12 files).
+- Bundled files loaded relative to this directory: `agents/` (1 file), `references/` (9 files).
 - Credentials: none are bundled or required by the skill files. Any tool or API credentials come from the host session; never paste credentials into skill files, prompts, or outputs.
 
 ## Known Risks and Mitigations
@@ -57,7 +57,7 @@ From "Boundaries":
 
 ## Skill Output
 
-Structured Markdown returned in the agent's response, shaped by the output contract defined in the skill body: "Google RSA Output Spec (mandatory when generating RSAs)". The skill publishes, posts, and sends nothing without the user's explicit authorization; delivery decisions stay with the user.
+Markdown analysis and recommendations returned in the agent's response. The skill publishes, posts, and sends nothing without the user's explicit authorization; delivery decisions stay with the user.
 
 ## Skill Version
 

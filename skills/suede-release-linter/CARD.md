@@ -7,7 +7,7 @@ Release record for the `suede-release-linter` skill, following the NVIDIA skill-
 
 ## Description
 
-Find missing files, malformed metadata, artwork and stem issues, split gaps, AI involvement, and delivery blockers in local music or media release folders.
+Suede AI Release Linter Skills.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.3; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
@@ -23,7 +23,7 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when asked to \"check this release folder\" or explain a delivery rejection. Writes scored Markdown and JSON reports; unknown facts remain unknown.
+Use when asked to "check this release folder" or explain a delivery rejection. Writes scored Markdown and JSON reports; unknown facts remain unknown.
 
 Out of scope — resolving rights or building a transfer package (use suede-rights-passport), sync one-sheets (use suede-sync-packaging), or rollout campaigns (use suede-campaign-in-a-box).
 

@@ -7,7 +7,7 @@ Release record for the `suede-design` skill, following the NVIDIA skill-card tem
 
 ## Description
 
-Use when asked \"restyle this dashboard\" or to design, polish or audit an interface hierarchy, tokens, color, type, dark mode or a design system.
+Use when asked "restyle this dashboard" or to design, polish or audit an interface hierarchy, tokens, color, type, dark mode or a design system.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.3; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
@@ -23,7 +23,7 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when asked \"restyle this dashboard\" or to design, polish or audit an interface hierarchy, tokens, color, type, dark mode or a design system. Suede AI delivers layout and words together, reference-to-target restyles and rendered visual QA.
+Use when asked "restyle this dashboard" or to design, polish or audit an interface hierarchy, tokens, color, type, dark mode or a design system. Suede AI delivers layout and words together, reference-to-target restyles and rendered visual QA.
 
 Out of scope — copy without layout (use suede-copy), funnel architecture (use suede-site-alchemy), promotion grades (use suede-visibility-grader), or parallel build coordination (use suede-agent-teams).
 
@@ -34,7 +34,7 @@ Global. The skill is a prompt-and-script package that runs locally inside the in
 ## Requirements / Dependencies
 
 - A Claude Code or Codex CLI session with the `suede-skills` plugin installed (install options: <https://skills.suedeai.ai/>).
-- Bundled files loaded relative to this directory: `agents/` (1 file), `references/` (6 files).
+- Bundled files loaded relative to this directory: `agents/` (1 file), `references/` (7 files).
 - Credentials: none are bundled or required by the skill files. Any tool or API credentials come from the host session; never paste credentials into skill files, prompts, or outputs.
 
 ## Known Risks and Mitigations
@@ -45,7 +45,7 @@ Global. The skill is a prompt-and-script package that runs locally inside the in
 From "Boundaries":
 
 - Preserve WIP. Never edit unrelated files.
-- Never copy protected site assets, exact copy, proprietary code, or trademarked identity during a restyle.
+- Never copy protected site assets, exact copy, proprietary code, or trademarked identity during a restyle, and never carry over the reference's proof, pricing, guarantees, or metrics.
 - Never invent metrics, pricing, partners, testimonials, legal clearance, or release outcomes.
 - Never call work done until the done signal has been checked or the remaining gap is named.
 

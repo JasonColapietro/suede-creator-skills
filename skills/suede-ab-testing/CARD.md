@@ -23,7 +23,7 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when asked to \"design an A/B test\", compare variants, assess reliability, or build an experiment backlog: hypothesis, power, duration, guardrails and a predeclared decision rule.
+Use when asked to "design an A/B test", compare variants, assess reliability, or build an experiment backlog: hypothesis, power, duration, guardrails and a predeclared decision rule.
 
 Out of scope — instrumentation (suede-analytics), funnel diagnosis (suede-site-alchemy), variant copy (suede-copy), or channel incrementality (suede-attribution).
 
@@ -34,7 +34,7 @@ Global. The skill is a prompt-and-script package that runs locally inside the in
 ## Requirements / Dependencies
 
 - A Claude Code or Codex CLI session with the `suede-skills` plugin installed (install options: <https://skills.suedeai.ai/>).
-- Bundled files loaded relative to this directory: `agents/` (1 file), `references/` (3 files).
+- Bundled files loaded relative to this directory: `agents/` (1 file), `references/` (4 files).
 - Credentials: none are bundled or required by the skill files. Any tool or API credentials come from the host session; never paste credentials into skill files, prompts, or outputs.
 
 ## Known Risks and Mitigations

@@ -7,7 +7,7 @@ Release record for the `suede-public-relations` skill, following the NVIDIA skil
 
 ## Description
 
-Build earned-media angles, sourced media lists, journalist and podcast pitches, reporter replies, and press kits with consistent entity facts.
+Suede AI Public Relations Skills.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.3; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
@@ -23,9 +23,9 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when asked to \"draft a journalist pitch\", assess newsjacking, or prepare third-party coverage for search and AI citations. Returns review-ready drafts and measurement steps.
+Use when asked to "draft a journalist pitch", assess newsjacking, or prepare third-party coverage for search and AI citations. Returns review-ready drafts and measurement steps.
 
-Out of scope — directory submissions (use suede-directory-submissions), release packaging (use suede-launch-packaging), social posts (use suede-social), or sending without approval.
+Out of scope — directory submissions (use suede-directory-submissions), creator or influencer pitches (use suede-influencer-outreach), software release packaging (use suede-launch-packaging), social posts (use suede-social), or sending without approval.
 
 ## Deployment Geography
 

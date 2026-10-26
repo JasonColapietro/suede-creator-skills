@@ -23,7 +23,7 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when asked to \"write Google ad variants\" or iterate hooks, headlines, RSA/PMax assets, static or motion concepts from product and performance evidence. Returns grounded variants and a limit-checked review package.
+Use when asked to "write Google ad variants" or iterate hooks, headlines, RSA/PMax assets, static or motion concepts from product and performance evidence. Returns grounded variants and a limit-checked review package.
 
 Out of scope — budgets/targeting (suede-ads), experiment design (suede-ab-testing), organic posts (suede-social), general imagery (suede-image), or landing copy (suede-copy).
 
@@ -34,7 +34,7 @@ Global. The skill is a prompt-and-script package that runs locally inside the in
 ## Requirements / Dependencies
 
 - A Claude Code or Codex CLI session with the `suede-skills` plugin installed (install options: <https://skills.suedeai.ai/>).
-- Bundled files loaded relative to this directory: `agents/` (1 file), `references/` (10 files), `assets/` (1 file).
+- Bundled files loaded relative to this directory: `agents/` (1 file), `references/` (14 files), `assets/` (1 file).
 - Credentials: none are bundled or required by the skill files. Any tool or API credentials come from the host session; never paste credentials into skill files, prompts, or outputs.
 
 ## Known Risks and Mitigations
@@ -46,7 +46,7 @@ From "Boundaries":
 
 - Do not invent product capabilities, testimonials, performance numbers, urgency, or platform-native proof.
 - Do not upload, publish, activate, or spend against creative without explicit authorization and a final rendered review.
-- Do not generate a replacement Suede S; use only the approved canonical mark when a Suede brand mark is required.
+- Do not generate a replacement Suede S; use only the approved canonical mark when a Suede AI brand mark is required.
 - Do not decide a creative winner from taste alone; use the declared metric, audience, spend, and test window.
 
 ## References
@@ -57,7 +57,7 @@ From "Boundaries":
 
 ## Skill Output
 
-Structured Markdown returned in the agent's response, shaped by the output contracts defined in the skill body: "Output Formats", "Standard Output", "Bulk CSV Output", "Static Batch Output (Mode 3)". The skill publishes, posts, and sends nothing without the user's explicit authorization; delivery decisions stay with the user.
+Structured Markdown returned in the agent's response, shaped by the output contract defined in the skill body: "Output Formats". The skill publishes, posts, and sends nothing without the user's explicit authorization; delivery decisions stay with the user.
 
 ## Skill Version
 

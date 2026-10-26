@@ -23,7 +23,7 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when asked to \"find co-marketing partners\" or plan a joint campaign: evidence-backed fit, reciprocal value, format, roles, consent, shared KPIs and content.
+Use when asked to "find co-marketing partners" or plan a joint campaign: evidence-backed fit, reciprocal value, format, roles, consent, shared KPIs and content.
 
 Out of scope — affiliate/referral programs (suede-referrals), software release packaging (suede-launch-packaging), or partner-facing sales collateral (suede-sales-enablement).
 

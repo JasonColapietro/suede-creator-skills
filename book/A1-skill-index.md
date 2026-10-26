@@ -92,7 +92,7 @@ Measurement and operations: `suede-analytics`, `suede-attribution`,
 `suede-marketing-council`, `suede-product-marketing`, `suede-customer-research`,
 `suede-competitor-profiling`.
 
-Thirty-eight skills in the pack, most of them listed here, are adapted from MIT-licensed
+Thirty-seven skills in the pack, most of them listed here, are adapted from MIT-licensed
 source material, and `suede-influencer-outreach` adapts an MIT-licensed skill from
 partnerships-skills. The copyright and license notices are in `NOTICE.md`.
 

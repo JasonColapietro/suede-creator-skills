@@ -23,7 +23,7 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when asked \"these app and web thresholds disagree\" or when rules are copied across web, mobile, docs, or services.
+Use when asked "these app and web thresholds disagree" or when rules are copied across web, mobile, docs, or services.
 
 Out of scope — choosing the correct shipped value, diff review (suede-code), merge-gate setup (suede-ci-gate), or search audits (suede-seo-audit).
 

@@ -7,7 +7,7 @@ Release record for the `suede-copy` skill, following the NVIDIA skill-card templ
 
 ## Description
 
-Use when asked \"rewrite this landing page\" or to write, sharpen or retune conversion copy, public explainers and agent-facing docs across surfaces.
+Suede AI Copy Skills.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.3; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
@@ -23,9 +23,9 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when asked \"rewrite this landing page\" or to write, sharpen or retune conversion copy, public explainers and agent-facing docs across surfaces. Suede AI applies voice, frameworks, labeled variants, answer-first SEO/AEO, evidence boundaries and a 70-point ship score.
+Use when asked "rewrite this landing page" or to write, sharpen or retune conversion copy: headlines, CTAs, microcopy, product listings, READMEs, public explainers, one-off emails and posts, and agent docs (SKILL.md, CLAUDE.md, AGENTS.md). Applies voice, frameworks, labeled variants, answer-first SEO/AEO, evidence boundaries and a 70-point ship score.
 
-Out of scope — a standalone anti-slop pass (use suede-deslop), high-stakes research orchestration (use suede-ship-copy), visual design (use suede-design), or scored SEO audits (use suede-seo-audit).
+Out of scope — a standalone anti-slop pass (use suede-deslop), high-stakes research orchestration (use suede-ship-copy), visual design (use suede-design), scored SEO audits (use suede-seo-audit), social programs and calendars (use suede-social), lifecycle email sequences (use suede-emails), or cold outbound (use suede-cold-email).
 
 ## Deployment Geography
 

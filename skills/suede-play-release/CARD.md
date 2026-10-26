@@ -23,7 +23,7 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when asked \"promote this Android build\" or to diagnose Play publishing access and prove the served release.
+Use when asked "promote this Android build" or to diagnose Play publishing access and prove the served release.
 
 Out of scope — app building or policy review (android-app-factory), listing assets (suede-aso), or CI gates (suede-ci-gate).
 

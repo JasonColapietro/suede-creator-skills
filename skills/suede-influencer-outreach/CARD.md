@@ -7,7 +7,7 @@ Release record for the `suede-influencer-outreach` skill, following the NVIDIA s
 
 ## Description
 
-Use when asked \"pitch this creator\" or to repair an influencer or B2B creator-program first touch.
+Suede AI Influencer Outreach Skills.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.3; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
@@ -23,7 +23,7 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when asked \"pitch this creator\" or to repair an influencer or B2B creator-program first touch. Suede AI grounds one message in a named audience fact, states real compensation and one ask, fits the published contact route and stops the two-follow-up plan at a positive reply.
+Use when asked "pitch this creator" or to repair an influencer or B2B creator-program first touch. Grounds one message in a named audience fact, states real compensation and one ask, fits the published contact route and stops the two-follow-up plan at a positive reply.
 
 Out of scope — affiliate mechanics (use suede-referrals), brand partnerships (use suede-co-marketing), cold B2B email (use suede-cold-email), or journalist pitches (use suede-public-relations).
 

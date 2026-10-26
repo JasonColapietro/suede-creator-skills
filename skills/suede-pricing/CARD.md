@@ -7,7 +7,7 @@ Release record for the `suede-pricing` skill, following the NVIDIA skill-card te
 
 ## Description
 
-Suede AI Pricing Skills: value metric selection, tiers, willingness-to-pay research, AI unit economics, migration, and pricing-page clarity.
+Suede AI Pricing Skills: value metric selection, tiers, willingness-to-pay research, AI unit economics, migration, pricing-page clarity, and a Paywall mode for in-product upgrade screens, feature gates, usage limits, and trial-expiry prompts with frequency caps and subscription-law checks.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.3; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
@@ -23,9 +23,9 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when asked \"restructure our pricing tiers\" or to decide prices, raise them, or diagnose buyer confusion.
+Use when asked "restructure our pricing tiers" or "design the upgrade paywall for our trial", or to decide prices, raise them, or diagnose buyer confusion.
 
-Out of scope — in-product prompts (suede-paywalls), offer bonuses and guarantees (suede-offers), or executing billing changes.
+Out of scope — offer bonuses and guarantees (suede-offers), cancel and save flows (suede-churn-prevention), or executing billing changes.
 
 ## Deployment Geography
 
@@ -34,7 +34,7 @@ Global. The skill is a prompt-and-script package that runs locally inside the in
 ## Requirements / Dependencies
 
 - A Claude Code or Codex CLI session with the `suede-skills` plugin installed (install options: <https://skills.suedeai.ai/>).
-- Bundled files loaded relative to this directory: `agents/` (1 file), `references/` (4 files).
+- Bundled files loaded relative to this directory: `agents/` (1 file), `references/` (7 files).
 - Credentials: none are bundled or required by the skill files. Any tool or API credentials come from the host session; never paste credentials into skill files, prompts, or outputs.
 
 ## Known Risks and Mitigations
@@ -47,6 +47,7 @@ From "Boundaries":
 - Do not create or change billing products, prices, subscriptions, or customer migrations without verified live state, a maximum-cost check, and explicit approval.
 - Do not present willingness-to-pay, conversion, churn, or revenue impact as measured unless current research or product data supports it.
 - Do not publish pricing copy, choose grandfathering policy, or commit the business to a price; return a recommendation, assumptions, and validation plan for the user to decide.
+- In Paywall mode, do not change entitlements, app configuration, experiments, or live paywalls without explicit authorization, and never recommend hidden close controls, confusing consent, forced continuity, obstructive cancellation, or false urgency. The full list is in [references/paywalls.md](references/paywalls.md).
 
 ## References
 

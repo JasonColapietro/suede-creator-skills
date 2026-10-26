@@ -23,7 +23,7 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when asked to \"fix a required check stuck pending\" or set up branch protection and path-aware CI, runtime/lockfile pinning and one aggregator gate from the real repository. Returns workflows and settings.
+Use when asked to "fix a required check stuck pending" or set up branch protection and path-aware CI, runtime/lockfile pinning and one aggregator gate from the real repository. Returns workflows and settings.
 
 Out of scope — reviewing implementation (suede-code), designing AI evals (suede-ai-eval), or release packaging (suede-launch-packaging).
 
@@ -44,7 +44,7 @@ Global. The skill is a prompt-and-script package that runs locally inside the in
 
 From "Boundaries":
 
-- Generate; don't enforce. This skill writes workflow files and tells you the protection settings: it does **not** push, flip branch protection, or change repo access on its own. Verify the detected stack before applying. Works in any repo: it detects rather than assumes Suede or any specific project.
+- Generate; don't enforce. This skill writes workflow files and tells you the protection settings: it does **not** push, flip branch protection, or change repo access on its own. Verify the detected stack before applying. Works in any repo: it detects rather than assumes Suede AI or any specific project.
 
 ## References
 

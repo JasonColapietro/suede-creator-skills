@@ -23,6 +23,7 @@ const htmlOnly = process.argv.includes("--html-only");
 const outPdf = path.join(repoRoot, "docs", "book", "s-tier.pdf");
 
 const CHROME_CANDIDATES = [
+  ...(process.env.CHROME_PATH ? [process.env.CHROME_PATH] : []),
   "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
   "/Applications/Chromium.app/Contents/MacOS/Chromium",
   "/Applications/Microsoft Edge.app/Contents/MacOS/Microsoft Edge",

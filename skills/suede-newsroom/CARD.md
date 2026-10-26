@@ -23,7 +23,7 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when asked \"build an AI content team\" or to repair duplicated, generic, or unsourced agent content.
+Use when asked "build an AI content team" or to repair duplicated, generic, or unsourced agent content.
 
 Out of scope — topics (suede-content-strategy), channel calendars (suede-social), scheduling (suede-marketing-loops), code lanes (suede-agent-teams), or flagship writing (suede-ship-copy).
 

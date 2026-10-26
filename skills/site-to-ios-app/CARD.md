@@ -23,7 +23,7 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when asked to \"turn this site into an iOS app\" or convert a PWA: inspect the URL, choose shell or native strategy, then deliver an audit, build plan and release evidence.
+Use when asked to "turn this site into an iOS app" or convert a PWA: inspect the URL, choose shell or native strategy, then deliver an audit, build plan and release evidence.
 
 Out of scope — Android builds (android-app-factory), Play rollout (suede-play-release), store listing strategy (suede-aso), or a native iOS app with no website.
 

@@ -7,7 +7,7 @@ Release record for the `suede-ops-architecture` skill, following the NVIDIA skil
 
 ## Description
 
-Suede AI Operations Architecture Skills: simplify workflows, choose bounded automation, define ownership, rollout, and verification.
+Suede AI Operations Architecture Skills: fix the shape of an automation or AI agent build before code.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.3; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
@@ -23,9 +23,9 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when asked \"turn this ops assessment into a plan\" or to design a practical operating system.
+Use when asked "turn this ops assessment into a plan", to scope an automation or agent build, decide whether a workflow needs a model, or consolidate a tool stack.
 
-Out of scope — discovering and quantifying current operations (suede-ops-assessment), code implementation, or production changes without authority.
+Out of scope — discovering and quantifying current operations (use suede-ops-assessment); code implementation (use suede-graph-flo-xr or suede-agent-teams); lead lifecycle and CRM routing rules (use suede-revops); agent eval sets (use suede-ai-eval); or production changes without authority.
 
 ## Deployment Geography
 
