@@ -72,7 +72,8 @@ test('rejects an identity mismatch before writing any catalog or page', t => {
 test('all active first-party sources, catalog entries, and public titles share their declared brand', () => {
   const catalog = JSON.parse(read(path.join(ROOT, 'mcp/catalog.json')));
   assert.equal(catalog.name, 'Suede AI Skills');
-  assert.equal(catalog.skills.length, 64);
+  const liveSkills = fs.readdirSync(path.join(ROOT, 'skills')).filter(name => fs.existsSync(path.join(ROOT, 'skills', name, 'SKILL.md')));
+  assert.equal(catalog.skills.length, liveSkills.length);
   for (const skill of catalog.skills) {
     const source = read(path.join(ROOT, 'skills', skill.name, 'SKILL.md'));
     const fm = load(source.match(/^---\n([\s\S]*?)\n---/)[1]);

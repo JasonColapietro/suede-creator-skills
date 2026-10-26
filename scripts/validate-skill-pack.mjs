@@ -1562,7 +1562,7 @@ for (const check of countChecks) {
     const overallRow = [...detailBlock.matchAll(/<tr>(.*?)<\/tr>/gs)]
       .map((m) => [...m[1].matchAll(/<t[dh][^>]*>(.*?)<\/t[dh]>/gs)].map((c) => c[1].replace(/<[^>]+>/g, "").trim()))
       .find((cells) => cells.length === 4 && cells[0] === "Overall");
-    // Current strip copy: "Self-graded on the Suede ship-gate rubric: Suede
+    // Current strip copy: "Self-graded on the Suede AI ship-gate rubric: Suede AI
     // takes <N of M categories> outright, and loses Overall to Superpowers,
     // <their grade> to <our grade>." Every number in it is a published
     // assertion about named third-party packs, so all four are re-derived
@@ -1570,7 +1570,7 @@ for (const check of countChecks) {
     // grades. The self-graded basis and the Overall loss must stay in the
     // strip itself — that is the only benchmark copy above the fold.
     const claim = docsRootText.match(
-      /Self-graded on the Suede ship-gate rubric: Suede takes <span class="bench-highlight">(\d+) of (\d+) categories<\/span> outright, and loses Overall to <a href="#scorecard">Superpowers, (\S+) to (\S+)<\/a>/
+      /Self-graded on the Suede AI ship-gate rubric: Suede AI takes <span class="bench-highlight">(\d+) of (\d+) categories<\/span> outright, and loses Overall to <a href="#scorecard">Superpowers, (\S+) to (\S+)<\/a>/
     );
     if (!claim) {
       fail.push("docs/index.html hero benchmark claim not found or reworded — it must be re-derived from the scorecard table and must keep the self-graded disclosure");

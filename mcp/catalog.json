@@ -24,12 +24,12 @@
     {
       "label": "Public installs and MCP",
       "url": "https://skills.suedeai.ai/plugins.html",
-      "description": "Public GitHub skill install commands and Suede Skills MCP guidance."
+      "description": "Public GitHub skill install commands and Suede AI Skills MCP guidance."
     },
     {
-      "label": "Develop with Suede",
+      "label": "Develop with Suede AI",
       "url": "https://suedeai.ai",
-      "description": "CTA for people who want Suede to turn a site, campaign, app surface, or design system into a more polished public workflow."
+      "description": "CTA for people who want Suede AI to turn a site, campaign, app surface, or design system into a more polished public workflow."
     }
   ],
   "plugins": [
@@ -237,7 +237,7 @@
     {
       "key": "adderall",
       "label": "The Agentic Adderall Stack",
-      "summary": "Cracked devs only: three Suede AI skills for supercharging an agent: Suede Thought Graph shipping search, agent-team orchestration, and the umbrella router with its next-move loop.",
+      "summary": "Cracked devs only: three Suede AI skills for supercharging an agent: Suede AI Thought Graph shipping search, agent-team orchestration, and the umbrella router with its next-move loop.",
       "page": "https://skills.suedeai.ai/cracked.html",
       "formulations": [
         {
@@ -518,7 +518,7 @@
       "specialty": "ship",
       "lane": "Orchestration & routing",
       "description": "Suede AI Thought Graph shipping search for one multi-file repository change. Use when asked \"compare implementation plans before building\". It searches, scores, prunes and refutes plans, selects one winner, then builds in an isolated worktree with a sandboxed gate and handoff, halting on hazards, collisions or an exhausted budget. Runs on Claude Code for macOS; on other hosts it is a contract only. NOT FOR: bulk, cross-repo, or non-macOS builder lanes (use suede-agent-teams), existing-diff review (use suede-code), CI wiring (use suede-ci-gate), or copy-only work (use suede-ship-copy).",
-      "useWhen": "Use the evidence-gated orchestration contract for a multi-file repo change; run the Suede Thought Graph workflow only in its supported Claude Code/macOS environment.",
+      "useWhen": "Use the evidence-gated orchestration contract for a multi-file repo change; run the Suede AI Thought Graph workflow only in its supported Claude Code/macOS environment.",
       "displayName": "Suede AI Graph Flo XR Skills"
     },
     {
@@ -815,7 +815,7 @@
       "specialty": "ship",
       "lane": "Orchestration & routing",
       "description": "Route requests across the full public Suede AI pack to the narrowest specialist and preserve the request verbatim. Use when asked \"which Suede AI skill should I use?\", when work crosses lanes, or when only the umbrella is installed. For next-action help: what’s next, recommend the next move, give me the prompt, expand prompt, or make it granular. NOT FOR: one clear lane (use its specialist), one multi-file implementation graph (use suede-graph-flo-xr), or parallel file ownership (use suede-agent-teams).",
-      "useWhen": "Load the full public Suede workflow pack from one GitHub skill path with the quality gates intact.",
+      "useWhen": "Load the full public Suede AI workflow pack from one GitHub skill path with the quality gates intact.",
       "displayName": "Suede AI Workflow Skills"
     }
   ],

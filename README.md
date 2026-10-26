@@ -25,11 +25,11 @@
 
 ---
 
-## Suede Awesome Everything
+## Suede AI Awesome Everything
 
 **AI agent skills, scored 0–99.**
 
-**[Compare skills by their 0–99 quality scores](awesome/README.md)**: verified numeric scores from [Suede’s published structural rubric](https://skills.suedeai.ai/directory/methodology/), with source links and browsing by category and publisher. Published scores retain the current 99-point cap; quality scores do not certify security.
+**[Compare skills by their 0–99 quality scores](awesome/README.md)**: verified numeric scores from [Suede AI’s published structural rubric](https://skills.suedeai.ai/directory/methodology/), with source links and browsing by category and publisher. Published scores retain the current 99-point cap; quality scores do not certify security.
 
 [Compare scores](awesome/README.md#compare-099-quality-scores) · [Categories](awesome/README.md#contents) · [Publishers](awesome/publishers.md) · [Featured projects](awesome/featured.md) · [Contribute a listing](awesome/CONTRIBUTING.md)
 
@@ -65,7 +65,7 @@ These are **public, broadly reusable, open-source skill folders**, installable f
 /plugin install suede-skills@suede
 ```
 
-`suede-skills` installs every skill. Want less? Three focused subsets: `/plugin install suede-marketing@suede` (40 marketing and growth skills), `/plugin install suede-agent-workflows@suede` (Suede Thought Graph shipping, orchestration, workflows, evals), and `/plugin install suede-code@suede` (review, grade, ship-gate).
+`suede-skills` installs every skill. Want less? Three focused subsets: `/plugin install suede-marketing@suede` (38 marketing and growth skills), `/plugin install suede-agent-workflows@suede` (Suede AI Thought Graph shipping, orchestration, workflows, evals), and `/plugin install suede-code@suede` (review, grade, ship-gate).
 
 **Codex** — add the Codex-native marketplace, install the complete plugin:
 
@@ -84,7 +84,7 @@ hermes skills search seo
 hermes skills install JasonColapietro/suede-creator-skills/skills/suede-seo-audit
 ```
 
-Hermes installs the whole skill folder — `references/`, `agents/`, `evals/` — into `~/.hermes/skills/`, security-scans it first, and shows it as `/suede-seo-audit` in chat. It carries the skills only: the MCP discovery server and the bundled Suede Thought Graph workflow are Claude Code and Codex surfaces.
+Hermes installs the whole skill folder — `references/`, `agents/`, `evals/` — into `~/.hermes/skills/`, security-scans it first, and shows it as `/suede-seo-audit` in chat. It carries the skills only: the MCP discovery server and the bundled Suede AI Thought Graph workflow are Claude Code and Codex surfaces.
 
 **Any agent** (Cursor, Copilot, Windsurf, Claude Code, Codex) via the [skills CLI](https://github.com/vercel-labs/skills):
 
@@ -169,7 +169,7 @@ Use suede-seo-audit to audit this page for search visibility and return prioriti
 For a nontrivial multi-file change, run the ship DAG:
 
 ```text
-Use suede-graph-flo-xr to take this change through the canonical Suede DAG: research it, build it in disjoint lanes, refute the review findings, and hand back evidence.
+Use suede-graph-flo-xr to take this change through the canonical Suede AI DAG: research it, build it in disjoint lanes, refute the review findings, and hand back evidence.
 ```
 
 If the pack saves you an hour, [star the repo](https://github.com/JasonColapietro/suede-creator-skills/stargazers) — stars are how other builders find it.
@@ -178,7 +178,7 @@ If the pack saves you an hour, [star the repo](https://github.com/JasonColapietr
 
 Tell your agent "max effort, spare no compute, fix everything" and most of the time you get enthusiasm, not engineering. The orchestration lane turns that intent into structure:
 
-- [`suede-graph-flo-xr`](skills/suede-graph-flo-xr) runs a Suede Thought Graph shipping search on a repo: generate competing plans, score and prune them, adversarially refute and improve survivors, aggregate compatible lanes, then build, review, and gate only the selected plan. Light/standard/deep are capped at 55/110/200 calls. Production reads only; it never deploys.
+- [`suede-graph-flo-xr`](skills/suede-graph-flo-xr) runs a Suede AI Thought Graph shipping search on a repo: generate competing plans, score and prune them, adversarially refute and improve survivors, aggregate compatible lanes, then build, review, and gate only the selected plan. Light/standard/deep are capped at 55/110/200 calls. Production reads only; it never deploys.
 - [`suede-agent-teams`](skills/suede-agent-teams) wires complex changes into coordinated agent lanes with WIP collision detection, RFC mode, feature-flag strategy, rollback trees, and a handoff checklist that won't close without evidence. Its public-contribution mode adds scored issue queues, atomic leases, isolated worktrees, and authority-gated contribution packets.
 - [`suede-ship-copy`](skills/suede-ship-copy) is a separate copy-only orchestration DAG for one high-stakes piece of writing: five blind research lenses, a claim audit that closes the set of assertable facts, disjoint section writers, adversarial refutation, a deslop pass, and a publish-readiness gate.
 
@@ -199,7 +199,7 @@ Every link below goes to the skill's folder in this repo; the [skill catalog](ht
 | Skill | What it does |
 |---|---|
 | [`suede-agent-teams`](skills/suede-agent-teams) | Coordinate agent lanes and public contribution programs with collision checks, atomic issue leases, review gates, and a signed handoff |
-| [`suede-graph-flo-xr`](skills/suede-graph-flo-xr) | Suede Thought Graph repo shipping: search competing plans, score and prune, refute and improve, aggregate compatible lanes, then mutate only the selected plan; 55/110/200-call caps; production reads only, never deploys |
+| [`suede-graph-flo-xr`](skills/suede-graph-flo-xr) | Suede AI Thought Graph repo shipping: search competing plans, score and prune, refute and improve, aggregate compatible lanes, then mutate only the selected plan; 55/110/200-call caps; production reads only, never deploys |
 | [`suede-ship-copy`](skills/suede-ship-copy) | Copy-only orchestration DAG for one high-stakes piece: blind research, claim audit, section writers, refutation, publish gate |
 | [`suede-ai-eval`](skills/suede-ai-eval) | AI-SPEC artifacts, failure-mode rubrics, eval cases, and acceptance gates for LLM, RAG, classifier, and agent surfaces |
 | [`suede-workflow-skills`](skills/suede-workflow-skills) | Umbrella router that loads the full pack, picks the specialist, and hands back one scored next move as a runnable prompt |
@@ -264,7 +264,7 @@ The content-production lane adds one more workflow:
 Essays on why the pack is built the way it is:
 
 - [**Two skills, and the bugs that wrote them**](https://skills.suedeai.ai/blog/two-skills-and-the-bugs-that-wrote-them.html) — Google Play publishing from the terminal, and a parity contract that keeps four surfaces of one product honest
-- [**71 skills installed. Your agent reads almost none of them.**](https://skills.suedeai.ai/blog/progressive-disclosure-ship-dag-and-mcp.html) — progressive disclosure, Suede Thought Graph shipping search, and the MCP layer
+- [**71 skills installed. Your agent reads almost none of them.**](https://skills.suedeai.ai/blog/progressive-disclosure-ship-dag-and-mcp.html) — progressive disclosure, Suede AI Thought Graph shipping search, and the MCP layer
 - [**Why breadth is free now, and what that changes**](https://skills.suedeai.ai/blog/why-breadth-is-free.html) — the economics of broad skill packs
 - [**NOT FOR: the two words that make a big skill pack work**](https://skills.suedeai.ai/blog/not-for-the-line-that-makes-a-pack-work.html) — how skills route without colliding
 - [**Your memory file is a tax you pay on every prompt**](https://skills.suedeai.ai/blog/memory-belongs-in-skills.html) — why memory belongs in skills
@@ -357,4 +357,4 @@ Follow: [X / @johnnysuede](https://x.com/johnnysuede) · [suedeai.ai](https://su
 
 The original work is released under the [MIT License](LICENSE). Adapted components retain their upstream licenses, listed in [NOTICE.md](NOTICE.md).
 
-Contributions are welcome for docs fixes, install-path corrections, lint rules, template improvements, and public-safe workflow improvements. Do not submit private catalogs, unreleased media, credentials, seed phrases, private Suede API details, payment secrets, or third-party copyrighted files.
+Contributions are welcome for docs fixes, install-path corrections, lint rules, template improvements, and public-safe workflow improvements. Do not submit private catalogs, unreleased media, credentials, seed phrases, private Suede AI API details, payment secrets, or third-party copyrighted files.

@@ -31,7 +31,7 @@
         "./suede-graph-flo-xr/agents/suede-graph-flo-xr-applier.md",
         "./suede-graph-flo-xr/agents/suede-graph-flo-xr-verifier.md"
       ],
-      "description": "Suede AI multi-agent orchestration subset: search competing plans and ship one selected repo change through the Suede Thought Graph DAG (suede-graph-flo-xr), coordinate build lanes with quality gates and a signed handoff (suede-agent-teams), route cross-surface work end to end (suede-workflow-skills), and turn AI features into eval specs and acceptance gates (suede-ai-eval)."
+      "description": "Suede AI multi-agent orchestration subset: search competing plans and ship one selected repo change through the Suede AI Thought Graph DAG (suede-graph-flo-xr), coordinate build lanes with quality gates and a signed handoff (suede-agent-teams), route cross-surface work end to end (suede-workflow-skills), and turn AI features into eval specs and acceptance gates (suede-ai-eval)."
     },
     {
       "name": "suede-code",

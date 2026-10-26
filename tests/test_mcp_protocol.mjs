@@ -506,7 +506,7 @@ test("catalog, resources, prompts, and profile filters match the live server", a
     assert.equal(ship.result.structuredContent.found, true);
     assert.match(
       ship.result.structuredContent.skill.useWhen,
-      /evidence-gated orchestration contract.*Suede Thought Graph workflow/
+      /evidence-gated orchestration contract.*Suede AI Thought Graph workflow/
     );
   }, "workflow");
 });
