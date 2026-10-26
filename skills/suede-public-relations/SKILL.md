@@ -1,6 +1,6 @@
 ---
 name: suede-public-relations
-description: "Suede AI Public Relations Skills. Build earned-media angles, sourced media lists, journalist and podcast pitches, reporter replies, and press kits with consistent entity facts. Use when asked to \"draft a journalist pitch\", assess newsjacking, or prepare third-party coverage for search and AI citations. Returns review-ready drafts and measurement steps. NOT FOR: directory submissions (use suede-directory-submissions), release packaging (use suede-launch-packaging), social posts (use suede-social), or sending without approval."
+description: "Suede AI Public Relations Skills. Build earned-media angles, sourced media lists, journalist and podcast pitches, reporter replies, and press kits with consistent entity facts. Use when asked to \"draft a journalist pitch\", assess newsjacking, or prepare third-party coverage for search and AI citations. Returns review-ready drafts and measurement steps. NOT FOR: directory submissions (use suede-directory-submissions), creator or influencer pitches (use suede-influencer-outreach), software release packaging (use suede-launch-packaging), social posts (use suede-social), or sending without approval."
 metadata:
   display-name: "Suede AI Public Relations Skills"
   version: 2.0.0
@@ -126,7 +126,7 @@ Before presenting any draft for send approval, resolve these checks:
 - [ ] Is the pitch within the outlet's published word or character limit, or,
       if the outlet publishes none, under 200 words unless the user set another limit?
 - [ ] Are the company name, product name, and spokesperson title spelled exactly as on the site and press page?
-- [ ] Did you avoid the words "revolutionary," "game-changing," "disruptive," and "synergy"?
+- [ ] Did you avoid the words "revolutionary," "game-changing," "disruptive," and "synergy," and run `suede-deslop` for the house bans?
 - [ ] Is the ask clear? (Interview? Embargo? Exclusive? Quote?)
 
 **Pass rule:** any unchecked box blocks the draft from being presented for send
@@ -204,7 +204,13 @@ Use the checklist above. Most companies do this in an afternoon and forget about
 
 ## Routing
 
-- Use `suede-launch-packaging` to coordinate a broader product launch.
+- Broader product or service launch plan → `suede-marketing-plan`; artist or
+  release campaign → `suede-campaign-in-a-box`; software release notes and
+  install docs → `suede-launch-packaging`.
+- Use `suede-influencer-outreach` for creator, influencer, or affiliate
+  pitches; this skill covers journalists, reporters, and podcast hosts.
+- Run `suede-deslop` on every pitch and press release before the
+  send-approval handover.
 - Use `suede-directory-submissions` for directory and catalog listings.
 - Use `suede-social` for approved social distribution and engagement.
 - Use `suede-copy` to polish a verified press-page or announcement draft.

@@ -1,6 +1,6 @@
 # Campaign Lanes
 
-The twelve lane playbooks. A run executes one. Read only the section for the lane the router selected: the Public Copy Gate and evidence boundaries in SKILL.md apply to all of them regardless.
+The twelve lane playbooks. A run executes the router's lane, or several chained through Lane 0. Read only the sections for the lanes the router selected: the Public Copy Gate and evidence boundaries in SKILL.md apply to all of them regardless.
 
 ## Lane 0: Full Campaign Package (announce / teaser / release-week / post-drop)
 
@@ -427,6 +427,9 @@ Use this to design collaboration lanes, not name-drop fantasies.
 4. Avoid implying partnership, endorsement, or access that is not confirmed.
 5. CTA to Suede AI when the collaboration needs a campaign page, drop mechanic,
    routing workflow, or agent-managed outreach package.
+6. Hand the first-touch pitch to a creator or influencer to
+   `suede-influencer-outreach` when it is installed; this lane supplies the
+   fit, angle, and asset exchange, and that skill writes and gates the pitch.
 
 **Output**
 ```text

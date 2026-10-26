@@ -22,21 +22,13 @@ same file. This decomposes by **message ownership**: two sections may never make
 the same point, and no section may assert a fact an agent invented. Same graph,
 different collision rule.
 
-## Model selection: Fable capped at 4 without asking
+## Model selection
 
-Subagents inherit the session model unless the spawning call names one. Nothing in
-this skill picks a model, so every agent it fans out lands on whatever the session
-happens to be set to. That is how a run sized against one allocation gets billed to
-another without anyone choosing it.
-
-**Up to 4 concurrent Fable subagents are allowed without an explicit Fable
-instruction. Beyond that, Fable must be specified**: every range this skill offers
-(30 at the narrowest) is far beyond 4, so its fan-out never runs on Fable unless the
-user named Fable for this run. An inherited session model is not a
-specification: "the session was already on it" is not the user asking. Absent an
-explicit Fable instruction, do one of two things before launching: name a different
-model on the agent calls, or state plainly that the run will bill to the Fable
-allocation and get an answer. Silence is not consent to spend it.
+Name the model on every agent call; never let fan-out inherit the session model
+silently. On a Fable session, at most 4 concurrent Fable subagents run without an
+explicit Fable instruction, and every range below is far beyond 4: name a
+different model on the agent calls, or say the run will bill to the Fable
+allocation and get an answer first.
 
 ## Whose claims get audited
 
@@ -111,17 +103,18 @@ The argument is free-form. Extract:
   author/company voice brief; `emDashes` is `allow` or `avoid` (Suede AI default).
   Translate an explicit punctuation preference into this field so prompts and
   deterministic checks agree. Protected source spans remain byte-exact either way.
-- **agentBudget**: `light`, `standard`, or `deep`. Required, and you must ask the
-  user rather than pick it (see below). Omitting it defaults to `standard`.
+- **agentBudget**: `light`, `standard`, or `deep`. Omitting it defaults to
+  `standard` (see below).
 
 If **piece** or **surface** is missing, ask. Do not invent a brief for something
 a public audience will read.
 
-## Ask for the agent budget before launching
+## Agent budget
 
-This is Claude-model fan-out against the user's limit, so the size of the run is
-the user's call, not yours. **Ask which of these three ranges they want and wait
-for an answer before the `Workflow` call.** Do not pick one for them.
+Default to `standard` and state the size in the launch line. Use the range the
+requester names when they name one. Ask only when the requester has not named a
+budget and the run would exceed the 4-agent Fable cap on a Fable session (see
+Model selection).
 
 | Range | Total agents | What it buys |
 |---|---|---|
@@ -252,11 +245,16 @@ This workflow must NOT:
 - **Change a fact during a style pass.** Slop Stop edits style only, including
   preservation of qualifiers, quotations, code, commands, links, citations, paths,
   and every author placeholder. It does not infer authorship from prose.
-- **Redraw the Suede S.** The only permitted mark is the approved asset at
-  `docs/assets/suede-ai-logo-transparent.png` (sha256
-  `83a7ee0317e4debe2e7b076c20ba067feb76a587f9e829dc6310ae4be4b44dfa`). Never
-  trace, typeset, recolor, distort, or generate a replacement. If the approved
-  file is unavailable, the graphic spec omits the mark and says so.
+- **Redraw the Suede S.** The only permitted mark is
+  `docs/assets/suede-ai-logo-transparent.png` from
+  `JasonColapietro/suede-creator-skills` (SHA-256
+  `83a7ee0317e4debe2e7b076c20ba067feb76a587f9e829dc6310ae4be4b44dfa`). Outside that checkout,
+  fetch the same file from
+  `https://raw.githubusercontent.com/JasonColapietro/suede-creator-skills/cbd192309580a32da375881e0eeb4b2450a554c2/docs/assets/suede-ai-logo-transparent.png`
+  and verify its SHA-256 before use. Never redraw, trace, typeset, recolor,
+  distort, or generate a replacement S. `suede-skill-icon.png` is a Passport
+  icon, not the brand mark. Only if the fetch fails or the checksum differs,
+  the graphic spec omits the mark and says so.
 - **Generate images.** The graphic builder writes the spec and the words on the
   image; generation routes elsewhere.
 - **Decide whether the piece should exist.** The verdict is about evidence and

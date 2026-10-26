@@ -1,6 +1,6 @@
 ---
 name: suede-copy
-description: "Use when asked \"rewrite this landing page\" or to write, sharpen or retune conversion copy, public explainers and agent-facing docs across surfaces. Suede AI applies voice, frameworks, labeled variants, answer-first SEO/AEO, evidence boundaries and a 70-point ship score. NOT FOR: a standalone anti-slop pass (use suede-deslop), high-stakes research orchestration (use suede-ship-copy), visual design (use suede-design), or scored SEO audits (use suede-seo-audit)."
+description: "Suede AI Copy Skills. Use when asked \"rewrite this landing page\" or to write, sharpen or retune conversion copy: headlines, CTAs, microcopy, product listings, READMEs, public explainers, one-off emails and posts, and agent docs (SKILL.md, CLAUDE.md, AGENTS.md). Applies voice, frameworks, labeled variants, answer-first SEO/AEO, evidence boundaries and a 70-point ship score. NOT FOR: a standalone anti-slop pass (use suede-deslop), high-stakes research orchestration (use suede-ship-copy), visual design (use suede-design), scored SEO audits (use suede-seo-audit), social programs and calendars (use suede-social), lifecycle email sequences (use suede-emails), or cold outbound (use suede-cold-email)."
 metadata:
   display-name: "Suede AI Copy Skills"
 ---
@@ -112,16 +112,17 @@ State the mode, persona, and framework in the output header.
   every run. Write the trigger line before the body. End every step on a
   checkable test. Cut sentences the model already obeys. Full method in
   `references/writing-for-agents.md`. Target 60/70.
-- **Social** (LinkedIn, X, Instagram, launch post): open with the most specific
-  claim, never the setup. Deliver the main post, a short version, the CTA, and
-  three hook variants.
+- **Social:** account-based posts, threads, carousels and scripts go to
+  suede-social, which owns current platform limits and templates.
 - **Email and DM:** write the subject last. Open with the reader's problem, not
   the sender's news. One ask, one CTA. Deliver three subject variants, preview
   text, body, CTA, and an optional P.S.
 
-Platform structures, length limits, and email compliance:
-`references/email-and-social-formats.md`. Read it before drafting any email,
-DM, or social post.
+One-off email or post copy stays here; sequences, programs and pitches go to
+the sibling skill named in Routing.
+
+Subject formulas, preview text, body structure, and email compliance:
+`references/email-formats.md`. Read it before drafting any email or DM.
 
 ## Persona and framework
 
@@ -366,7 +367,14 @@ Never wait on that answer to finish.
 - Scored SEO, AEO, or GEO audit, schema, or ranking plan → suede-seo-audit; A-F
   page grade before launch → suede-visibility-grader
 - Words are done but the page still does not convert → suede-site-alchemy
-- Approved copy needs packaging for release → suede-launch-packaging
+- Approved copy needs packaging for a software release → suede-launch-packaging
+- Account program, content calendar, or multi-post plan → suede-social
+- Opted-in lifecycle sequences (welcome, nurture, win-back) → suede-emails
+- Cold B2B outbound → suede-cold-email
+- Creator or influencer pitch → suede-influencer-outreach
+- Paid ad variants (RSA, Meta, LinkedIn, TikTok) → suede-ad-creative
+- Journalist or podcast pitch, press release → suede-public-relations
+- Comparison or alternative page → suede-competitors
 
 ## Worked contract
 

@@ -73,7 +73,7 @@ Label every fact in the output by evidence class:
 | "make a carousel" | Chosen narrative, exact slide copy, visual direction | [carousel-frameworks.md](references/carousel-frameworks.md) |
 | "repurpose this" | Source atoms mapped to distinct platform assets | Repurposing below |
 | "turn this clip into a guide funnel", "short to long", "X Article" | Clip-to-Guide package | [clip-to-guide.md](references/clip-to-guide.md) |
-| "repost this podcast clip", any third-party video | Rights route before any copy | Rights-route table in [clip-to-guide.md](references/clip-to-guide.md), [clip-to-guide-rights.md](references/clip-to-guide-rights.md) |
+| "repost this podcast clip", any third-party video | Rights route before any copy | [clip-to-guide-rights.md](references/clip-to-guide-rights.md) only |
 | "get found in search" | Social search brief | [social-search.md](references/social-search.md) |
 | "what's working for others" | Lawful comparable-account pattern study | [reverse-engineering.md](references/reverse-engineering.md) |
 | "find posts to reply to" | Ranked engagement drafts | [listening.md](references/listening.md) |
@@ -184,10 +184,10 @@ point. When the source cannot support the requested count without repeating
 itself, say how many it supports and what extra input would support more.
 
 When the source is any third-party video (a podcast clip, conference talk,
-interview, webinar, or another creator's post), load the rights-route table in
-[clip-to-guide.md](references/clip-to-guide.md) (section 2, "Choose a lawful
-video route") and [clip-to-guide-rights.md](references/clip-to-guide-rights.md)
-before writing copy, even when no guide or article is involved. A plain "repost
+interview, webinar, or another creator's post), load
+[clip-to-guide-rights.md](references/clip-to-guide-rights.md), which opens with
+the rights-route table, before writing copy. Do not load clip-to-guide.md for a
+plain repost; it is for guide or article bridges only. A plain "repost
 this podcast clip" still runs the rights gate: classify the source as original,
 licensed, permission-recorded, native-repost-only, fair-use-review, or blocked,
 and halt on anything blocked or unreviewed. Public availability and credit are
@@ -251,10 +251,15 @@ When the account belongs to Suede AI, Jason Colapietro, or a Suede AI product:
   and casual creator content only.
 - Never claim rankings, AI citations, revenue, or client results the account
   cannot show.
-- Use only `docs/assets/suede-ai-logo-transparent.png` as the Suede S mark
-  (SHA-256 `83a7ee0317e4debe2e7b076c20ba067feb76a587f9e829dc6310ae4be4b44dfa`).
-  Never redraw, recolor, or regenerate it. If the file is missing or the
-  checksum differs, omit the mark and halt.
+- Brand mark: use only `docs/assets/suede-ai-logo-transparent.png` from
+  `JasonColapietro/suede-creator-skills` as the Suede S mark (SHA-256
+  `83a7ee0317e4debe2e7b076c20ba067feb76a587f9e829dc6310ae4be4b44dfa`). Outside that checkout,
+  fetch the same file from
+  `https://raw.githubusercontent.com/JasonColapietro/suede-creator-skills/cbd192309580a32da375881e0eeb4b2450a554c2/docs/assets/suede-ai-logo-transparent.png`
+  and verify its SHA-256 before use. Never redraw, trace, typeset, recolor,
+  distort, or generate a replacement S. `suede-skill-icon.png` is a Passport
+  icon, not the brand mark. Omit the mark and halt only if the fetch fails or
+  the checksum differs.
 
 ## Halt contract
 

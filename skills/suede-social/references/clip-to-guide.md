@@ -2,7 +2,8 @@
 
 This is the Clip-to-Guide mode of `suede-social`. Load it when a video moment
 must bridge to a guide, X Article, LinkedIn article, newsletter, or playbook,
-and load its rights-route table for any third-party video source.
+and load [clip-to-guide-rights.md](clip-to-guide-rights.md) for any
+third-party video source.
 
 Read [the worked delivery contract](clip-to-guide-worked-contract.md) for a concrete
 input, expected artifact, failure response and validation example.
@@ -141,22 +142,10 @@ before asking for information already covered there.
 
 ### 2. Choose a lawful video route
 
-| Rights status | Allowed route |
-|---|---|
-| `original` | Cut and publish within the user's approved scope. |
-| `licensed` | Follow the license terms and record the evidence. |
-| `permission-recorded` | Follow the exact approved platforms, duration, credit, and edit scope. |
-| `native-repost-only` | Use the platform's native quote, repost, stitch, duet, embed, or link path. Do not download and re-upload. Treat this as an operational sharing route, not legal clearance. |
-| `fair-use-review` | Prepare a four-factor review for commentary, criticism, news reporting, teaching, scholarship, or research. Do not label the use fair or publish until the accountable owner records the decision. |
-| `blocked` | Do not use the footage. Offer an original commentary clip, a permission request, or a source link instead. |
-
-For any source that is not original, licensed, or permission-recorded, read
-[clip-to-guide-rights.md](clip-to-guide-rights.md).
-Do not infer fair use, ownership, or permission. Shortness, credit, a public
-source, or added commentary alone does not settle fair use. Do not remove
-watermarks, attribution, or provenance. Prefer a native repost with added
-analysis or create an original camera or screen-recorded response that
-summarizes the idea without copying the footage.
+Classify the source with the route table at the top of
+[clip-to-guide-rights.md](clip-to-guide-rights.md), and follow that file's
+review sequence for any source that is not original, licensed, or
+permission-recorded.
 
 ### 3. Establish the guide anchor
 

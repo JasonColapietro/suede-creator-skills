@@ -1,6 +1,47 @@
 # Suedify Restyle Playbook
 
-The move-by-move detail for suede-design's Restyle mode (reference URL to target URL). Inputs, workflow order, fidelity rules, and the ship gate live in SKILL.md; the moves, capture procedure, and DESIGN.md template live here.
+The procedure and move-by-move detail for suede-design's Restyle mode (reference URL to target URL). The ship gate and restyle boundaries live in SKILL.md; the inputs, defaults, seven-step workflow, what may and must not be copied, the moves, the capture procedure, and the DESIGN.md template live here.
+
+## Inputs and defaults
+
+The target inherits the reference's design logic, rhythm, hierarchy, and
+interaction feel while staying its own brand.
+
+**Inputs:** `reference_url` and `target_url` (ask if either is missing); the
+target repo when edits are expected (without one, produce
+`suedify-implementation-plan.md` instead); optional depth and fidelity
+(inspired-by, close-visual-match, aggressive-restyle). Defaults: homepage, hero,
+and primary CTA section at close-visual-match. Once inputs are known, run to
+completion without further questions.
+
+## Workflow
+
+1. **Verify the target.** Confirm the exact repo; never edit from a multi-repo
+   root. Check git status, remote, and recent log. Preserve WIP.
+2. **Capture the reference** at desktop, tablet, and mobile, with the full
+   capture list in Reference Capture Detail below. Save the analysis as `DESIGN.md` in the
+   target repo root.
+3. **Capture the target** at matching widths and states. Note what content,
+   assets, routes, and claims must stay.
+4. **Map reference to target-safe equivalents** and run the Token Distiller to
+   a full `:root {}` block.
+5. **Implement** inside the target's framework and tokens. Update tokens before
+   one-off component styling.
+6. **Render and compare** side by side at matching widths, with focused crops
+   of hero, nav, cards, forms, and CTAs. At most 3 compare-and-patch rounds;
+   then list remaining mismatches and offer options.
+7. **Verify** lint, typecheck, test, build, and `git diff --check`, and the
+   live route before claiming a public restyle.
+
+**May match:** layout proportions, type scale and rhythm, color role structure,
+section pacing, navigation density, interaction feel, image crop strategy,
+mobile composition. **Must not copy:** logos or trademarked marks, exact
+marketing copy, proprietary source, private media, the reference's proof,
+pricing, guarantees, or metrics. For an exact clone request, deliver a close,
+target-branded interpretation and say why.
+
+Never leave a token field empty in `DESIGN.md`; record `UNKNOWN` with the
+reason.
 
 ## Restyle Moves
 

@@ -60,23 +60,20 @@ is one song) → hooks/stunts/rituals/visuals/merch/live as needed → Lane 0 to
 package. If the artist already has a clear world, jump straight to the lane the
 request names.
 
-## Multi-agent vs single-agent (ask up front)
+## Multi-agent vs single-agent
 
-This skill can run as a coordinated multi-agent team: one agent per lane, plus
-a packager that reconciles them into one campaign. Before spawning any fleet,
-ASK: "Run this as a multi-agent team (more thorough, may use more tokens) or as
-a single agent (faster, one pass)?" Never silently spawn a fleet. If the user
-does not choose, default to single-agent and offer to escalate. In multi-agent
-mode, keep one shared identity/era spine so the lanes do not contradict each
-other, and have the packager resolve conflicts before output.
+Default to single-agent and start the work; do not stop to ask. When three or
+more lanes are in play, you may run them in waves of at most 4 named-model lane
+agents plus a packager, and say in one line at the end that a multi-agent pass
+is available. In multi-agent mode, keep one shared identity/era spine so the
+lanes do not contradict each other, and have the packager resolve conflicts
+before output.
 
-**Model and cap, state both on the same ask.** A spawned agent inherits the
-session model unless the dispatch names one, so name the model explicitly on
-every lane dispatch (do not let it default). Cap concurrent lane agents at
-**4**. Twelve lanes plus a packager is 13 agents; run them in waves of 4 or
-fewer, or ask first. Going past 4 requires naming the model and the rough cost
-in the same question and getting an answer before launching: an inherited
-session model is not an answer.
+**Model and cap.** A spawned agent inherits the session model unless the
+dispatch names one, so name the model explicitly on every lane dispatch. Cap
+concurrent lane agents at **4**. Spawning more than 4 concurrent agents still
+needs the user's go-ahead, with the model and rough cost named in the same
+question: an inherited session model is not an answer.
 
 ---
 
@@ -113,10 +110,16 @@ These lanes organize and prepare campaign material. They do NOT:
   names.
 
 Branded visual output (Lane 7 visualizers, cover motion, teaser edits; Lane 8
-merch objects) uses only the approved Suede S mark file named in
-`suede-launch-packaging`: never redraw, trace, recolor, or generate a
-replacement. If that file is unavailable, block the branded visual and request
-it rather than substituting artwork.
+merch objects) that carries the Suede AI mark uses only
+`docs/assets/suede-ai-logo-transparent.png` from
+`JasonColapietro/suede-creator-skills` (SHA-256
+`83a7ee0317e4debe2e7b076c20ba067feb76a587f9e829dc6310ae4be4b44dfa`). Outside that checkout,
+fetch the same file from
+`https://raw.githubusercontent.com/JasonColapietro/suede-creator-skills/cbd192309580a32da375881e0eeb4b2450a554c2/docs/assets/suede-ai-logo-transparent.png`
+and verify its SHA-256 before use. Never redraw, trace, typeset, recolor,
+distort, or generate a replacement S. If the fetch fails or the checksum
+differs, block the branded visual and request the approved file rather than
+substituting artwork.
 
 Never resolve a rights question in-lane. When any lane touches ownership,
 samples, contributors, splits, likeness, or clearance, mark the item UNKNOWN or
@@ -158,3 +161,5 @@ the lane Output blocks, the build-next CTA, and any flagged rights/safety gaps.
 - Track pitched for film/TV/ads/games → **suede-sync-packaging**.
 - Release folder and metadata readiness → **suede-release-linter**.
 - Standalone conversion copy outside this campaign → **suede-copy**.
+- First-touch pitch to a creator or influencer from Lane 11 →
+  **suede-influencer-outreach**.

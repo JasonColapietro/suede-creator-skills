@@ -321,9 +321,9 @@
     {
       "id": 23,
       "prompt": "Repost this clip from a popular marketing podcast on our Instagram and LinkedIn. No article, just the clip with a caption.",
-      "expected_output": "Should treat this as third-party video repurposing even though no guide exists, load the rights-route table from references/clip-to-guide.md or references/clip-to-guide-rights.md, and classify the source as original, licensed, permission-recorded, native-repost-only, fair-use-review, or blocked before writing copy. Without recorded permission or a license it should not download or re-upload the clip, should use the halt format, and should offer a native repost or share with added analysis, a permission request, or an original response clip. It must not skip the rights gate because no guide bridge is involved.",
+      "expected_output": "Should treat this as third-party video repurposing even though no guide exists, load the rights-route table from references/clip-to-guide-rights.md (not the full references/clip-to-guide.md), and classify the source as original, licensed, permission-recorded, native-repost-only, fair-use-review, or blocked before writing copy. Without recorded permission or a license it should not download or re-upload the clip, should use the halt format, and should offer a native repost or share with added analysis, a permission request, or an original response clip. It must not skip the rights gate because no guide bridge is involved.",
       "assertions": [
-        "Loads the clip-to-guide rights-route table without a guide in the request",
+        "Loads the rights-route table in references/clip-to-guide-rights.md without a guide in the request",
         "Classifies the source before writing copy",
         "Does not treat public availability or credit as permission",
         "Does not download or re-upload third-party footage without a recorded basis",

@@ -38,10 +38,11 @@ Gather this context (ask if not provided):
 - Do you need generated footage? (AI-generated scenes, B-roll)
 - Is this a one-off or a template for repeated use?
 
-### 3. Technical Context
-- What's your tech stack? (Node.js, Python, etc.)
-- Do you have API keys for any video tools?
-- Budget constraints? (Some tools charge per minute of video)
+### 3. Tool and Budget Context
+- Which video, renderer, generator, avatar, or editor tools are currently
+  callable and authorized? Discover them; do not ask the user to list keys.
+- What is the approved maximum cost and data-handling boundary?
+- Do not ask the user to paste API keys or secrets into the conversation.
 
 ---
 
@@ -114,22 +115,11 @@ renderer selection table.
 
 Generate original footage from text or image prompts. Use for B-roll, hero visuals, and scenes you can't practically film.
 
-### Model comparison
-
-Discover currently callable and authorized models before recommending one. Read
-current official documentation and run a bounded test on the actual account.
-Compare:
-
-| Criterion | Evidence to capture |
-|-----------|---------------------|
-| Output fit | Resolution, duration, audio, motion, and consistency from current docs plus a test clip |
-| Control | Reference-image, camera, edit, seed, and storyboard controls actually exposed |
-| Operations | Queue time, failure rate, export path, and repeatability |
-| Rights | Input rights, output rights, model restrictions, consent, and provenance |
-| Economics | Current plan, per-generation cost, failed-generation treatment, and budget cap |
-
-If no model is callable and authorized, return a shot list, prompt set,
-reference-frame brief, and manual vendor-evaluation checklist.
+Discover currently callable and authorized models before recommending one; the
+comparison criteria and the generation-vs-stock tests are in
+[references/tool-evaluation.md](references/tool-evaluation.md). If no model is
+callable and authorized, return a shot list, prompt set, reference-frame brief,
+and manual vendor-evaluation checklist.
 
 ### Prompting for Video Models
 
@@ -150,126 +140,18 @@ cinematic color grading, 4K
 
 **For detailed prompting guides**: See [references/ai-video-prompting.md](references/ai-video-prompting.md)
 
-### AI Generation vs. Stock Evaluation
-
-| Use Case | Generation evidence to test | Stock/original evidence to test |
-|----------|-----------------------------|---------------------------------|
-| Specific scene | Prompt control, continuity, review burden | Search coverage, license, edit fit |
-| Style continuity | Cross-clip consistency in a bounded test | Match quality across licensed clips |
-| Real location | Factual accuracy and disclosure risk | Provenance and location release |
-| Product/brand | UI and mark fidelity; avoid fabricated product claims | Approved real captures or assets |
-| B-roll | Queue time, failure rate, cost | Search and licensing time |
-
 ---
 
-## AI Avatars
+## Avatars, Editing Tools, and Production Workflows
 
-Create talking-head videos without filming. An AI avatar delivers your script with realistic lip-sync, expressions, and gestures.
-
-### Avatar tool evaluation
-
-HeyGen is one possible avatar platform, not a guaranteed or preferred
-integration. Before naming it or another vendor, verify current official
-documentation, authenticated access, callable API or connector availability,
-plan limits, price, output rights, body-motion and script-ingestion controls,
-localization and export requirements, and the consent requirements for every
-voice or likeness involved.
-
-If no avatar tool is currently callable and authorized, provide a manual
-vendor-neutral workflow: approved script, consent record, user-operated upload,
-export checklist, and a real-camera or voiceover fallback.
-
-**Possible fit to test:** product explainers, feature announcements,
-multilingual versions, and approved personalized outreach.
-
-### Avatar vs. Other-Approach Test
-
-| Scenario | Avatar evidence to verify | Alternative to compare |
-|----------|---------------------------|------------------------|
-| Recurring content | Consent, repeatability, audience response | Recorded presenter or voiceover |
-| Multilingual versions | Translation, pronunciation, disclosure | Human localization |
-| Personalized outreach | Consent, claim review, cost, reply quality | Approved text or recorded template |
-| Founder message | Trust and disclosure response | Direct recording |
-| Product UI walkthrough | Presenter value around real captures | Screen recording |
-| Creative/artistic video | Control, originality, rights | Original footage or generated scenes |
-
----
-
-## Editing & Repurposing Tools
-
-Turn existing content into multiple video formats.
-
-Treat the named products as candidates. Discover what is currently installed or
-callable, verify the user's account and rights, then map the workflow to the
-available tool. If none is available, return an edit decision list, clip
-timestamps, captions, and export settings for manual execution.
-
-| Candidate capability | What to verify | Candidate fit |
-|----------------------|----------------|---------------|
-| Transcript editor | Speaker accuracy, cut control, export, privacy | Interviews, podcasts, webinars |
-| Clip assistant | Selection controls, provenance, false-positive rate | Long-form to short-form review |
-| Timeline editor | Caption, effect, audio-rights, and export controls | Platform-specific finishing |
-| Accessibility assistant | Caption accuracy, eye-contact disclosure, dubbing consent | Approved talking-head content |
-
-### Repurposing Workflow
-
-```
-Long-form content (podcast, webinar, demo)
-    ↓
-Transcript edit: Clean up, remove filler, polish
-    ↓
-Clip review: Propose moments with source timestamps
-    ↓
-Timeline edit: Add reviewed captions, effects, and platform styling
-    ↓
-Distribute: TikTok, Reels, Shorts, LinkedIn
-```
-
-### Reverse-Engineer a Viral Edit
-
-To study the style of a reference edit, first discover whether an authorized
-media-inspection, browser, or local-file viewer is currently callable. If one is
-available, inspect the actual frames and timing. Otherwise ask the user to
-attach the media, screenshots, or a timecoded export and provide a manual
-frame-sampling checklist. Then extract a reusable beat sheet plus the 3–5
-signature moves. Review it before execution in any currently available editor.
-Copy the editing grammar, never the reference's footage, script, voice, or
-music. Full method: [references/edit-anatomy.md](references/edit-anatomy.md).
-
----
-
-## Video Production Workflows
-
-### Product Demo Video
-
-1. **Script** the key features and value props (use suede-copy skill)
-2. **Screen record** the product flow
-3. **Programmatic overlay**: use an available authorized renderer for titles,
-   callouts, and transitions, or provide manual editor instructions
-4. **AI B-roll**: only with a discovered authorized generator and verified
-   rights; otherwise use licensed stock or original footage
-5. **Voiceover**: record yourself or use AI avatar for narration
-6. **Export** at platform-appropriate specs
-
-### Explainer Video
-
-1. **Script** the problem → solution → CTA arc
-2. **Choose presenter**: an approved avatar workflow when available, or
-   recorded voiceover plus visuals
-3. **Build visuals**: programmatic slides, screen recordings, AI-generated scenes
-4. **Add captions** as an accessibility default and verify their accuracy
-5. **Export** only after checking current destination requirements and previewing
-   the authenticated composer; do not assume a universal orientation
-
-### Batch Social Clips
-
-1. **Create master template** in an available authorized renderer or a manual
-   editor project
-2. **Feed data**: product features, testimonials, stats
-3. **Render batch**: one template, many variations
-4. **Add platform-specific captions** with an available editor
-5. **Return approved export candidates** to `suede-social` for channel strategy;
-   scheduling remains a separate explicit action
+Read [references/tool-evaluation.md](references/tool-evaluation.md) once an
+approach is chosen and before naming or recommending any vendor: it holds the
+model comparison criteria, the generation-vs-stock tests, avatar evaluation and
+consent tests, the editing and repurposing tool checks, the repurposing
+workflow, and the reverse-engineer-a-viral-edit method (full method in
+[references/edit-anatomy.md](references/edit-anatomy.md)). Read
+[references/production-workflows.md](references/production-workflows.md) for
+the step lists for a product demo, an explainer, or batch social clips.
 
 ---
 
@@ -407,11 +289,16 @@ and do not imply the blocker was resolved or that a render occurred.
   of scope, tool cost, rights, and destination.
 - Do not clone a real person's voice or likeness, use unlicensed source media,
   or promise an exact copy of a reference style or edit.
-- For Suede AI-branded visuals, use only the approved transparent Suede S asset at
-  `JasonColapietro/suede-creator-skills/docs/assets/suede-ai-logo-transparent.png`
-  with SHA-256
-  `83a7ee0317e4debe2e7b076c20ba067feb76a587f9e829dc6310ae4be4b44dfa`;
-  if it is missing or changed, omit the mark and halt for the approved file.
+- Brand mark: for Suede AI-branded visuals, use only
+  `docs/assets/suede-ai-logo-transparent.png` from
+  `JasonColapietro/suede-creator-skills` (SHA-256
+  `83a7ee0317e4debe2e7b076c20ba067feb76a587f9e829dc6310ae4be4b44dfa`). Outside that checkout,
+  fetch the same file from
+  `https://raw.githubusercontent.com/JasonColapietro/suede-creator-skills/cbd192309580a32da375881e0eeb4b2450a554c2/docs/assets/suede-ai-logo-transparent.png`
+  and verify its SHA-256 before use. Never redraw, trace, typeset, recolor,
+  distort, or generate a replacement S. `suede-skill-icon.png` is a Passport
+  icon, not the brand mark. Omit the mark and halt for the approved file only
+  if the fetch fails or the checksum differs.
 
 ## Routing
 

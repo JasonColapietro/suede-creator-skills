@@ -1,6 +1,6 @@
 ---
 name: suede-deslop
-description: "Use when asked \"deslop this draft\" or to audit finished prose before shipping. Suede AI Slop Stop Skills removes filler, false agency, formulaic rhythm, chat residue and misplaced formatting while preserving voice and protected facts. Returns edited prose and a 50-point score, or findings only. NOT FOR: rewriting the argument (use suede-copy), research orchestration (use suede-ship-copy), authorship detection, or certifying facts."
+description: "Suede AI Slop Stop. Use when asked to \"deslop this draft\", strip AI tells, or run an anti-slop audit on finished prose before shipping: removes filler, false agency, formulaic rhythm, chat residue, misplaced formatting, em dashes and Suede AI house-banned words while preserving voice and protected facts. Returns edited prose and a 50-point score, or findings only. NOT FOR: rewriting the argument (use suede-copy), research orchestration (use suede-ship-copy), authorship detection, or certifying facts."
 metadata:
   display-name: "Suede AI Slop Stop Skills"
 ---

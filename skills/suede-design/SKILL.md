@@ -33,10 +33,11 @@ For Suede AI surfaces, use only `docs/assets/suede-ai-logo-transparent.png`
 from `JasonColapietro/suede-creator-skills` (SHA-256
 `83a7ee0317e4debe2e7b076c20ba067feb76a587f9e829dc6310ae4be4b44dfa`). Outside
 that checkout, fetch the same file from
-`https://raw.githubusercontent.com/JasonColapietro/suede-creator-skills/cbd192309580a32da375881e0eeb4b2450a554c2/docs/assets/suede-ai-logo-transparent.png`.
-Never redraw, trace, typeset, recolor, distort, or generate a replacement S.
-`suede-skill-icon.png` is a Passport icon, not the brand mark. If the file is
-missing or its checksum differs, omit the mark and say so. Use brand colors
+`https://raw.githubusercontent.com/JasonColapietro/suede-creator-skills/cbd192309580a32da375881e0eeb4b2450a554c2/docs/assets/suede-ai-logo-transparent.png`
+and verify its SHA-256 before use. Never redraw, trace, typeset, recolor,
+distort, or generate a replacement S. `suede-skill-icon.png` is a Passport
+icon, not the brand mark. Omit the mark and say so only if the fetch fails or
+the checksum differs. Use brand colors
 exactly as the brand system defines them; never invent new ones.
 
 ## Pick the mode
@@ -46,9 +47,9 @@ exactly as the brand system defines them; never invent new ones.
 | A clear, small visual fix | **Fix:** inspect, make the narrow edit, render, report. |
 | New surface or ambiguous redesign | **Design:** gather context, propose 2 or 3 directions with tradeoffs, recommend one, get a yes before building. |
 | Large redesign or launch surface with words | **Surface build:** delivery contract first, then layout and words together, then QA. |
-| Tokens, components, or a whole system | **System:** scan CSS, tokens, components, spacing, breakpoints, and repeated patterns before proposing changes. Score with the system audit. |
+| Tokens, components, or a whole system | **System:** scan CSS, tokens, components, spacing, breakpoints, and repeated patterns before proposing changes. Deliverables and the /100 scorecard: [references/system-audit.md](references/system-audit.md). |
 | Mock, Figma frame, or screenshot vs. the build | **Visual QA:** compare both in one pass, save `visual-qa-report.md`. |
-| "Make this site look like that one" | **Restyle (Suedify):** reference URL to target URL. |
+| "Make this site look like that one" | **Restyle (Suedify):** needs `reference_url` and `target_url` (ask if either is missing) and the target repo when edits are expected. Read [references/restyle-playbook.md](references/restyle-playbook.md) for defaults, the seven steps, May match / Must not copy, the twelve moves, and the `DESIGN.md` template. |
 
 Name the active mode in the working update. Do not run every mode by default.
 
@@ -211,75 +212,12 @@ copy score. Run it in the same pass when a build needs new copy.
 
 ## System audit
 
-For a reusable app shell, launch system, or component family, produce at the
-smallest useful fidelity: a token map (color roles, type scale, spacing, radii,
-shadows, motion, z-layers, semantic states) in `DESIGN.md` or
-`design-tokens.json`; a state matrix (default, hover, focus, active, disabled,
-loading, empty, success, warning, error, permission-denied); an interface
-vocabulary; a screenshot contract with seeded demo data; an accessibility pass
-(contrast, focus order, touch targets, keyboard paths, reduced motion); and
-migration notes.
-
-Raise a system issue when a token, component, spacing pattern, or state repeats
-three or more times or controls a high-visibility surface. Name the drift cause:
-token missing, token ignored, component gap, content pressure, platform
-convention, or legacy debt.
-
-```text
-Color consistency: /10      Typography hierarchy: /10
-Spacing rhythm: /10         Component consistency: /10
-Responsive behavior: /10    Dark/light behavior: /10
-Motion restraint: /10       Accessibility: /10
-Information density: /10    Polish: /10
-Total: /100
-```
-
-Below 70: fix the two lowest dimensions before styling new features there. Any
-dimension at 4 or lower is a P1 finding.
-
-## Restyle mode (Suedify)
-
-The target inherits the reference's design logic, rhythm, hierarchy, and
-interaction feel while staying its own brand. Read
-`references/restyle-playbook.md` when this mode is active: it holds the twelve
-moves (Style Fingerprint, Token Distiller, Hero Lift, Section Rhythm, Voice
-Fingerprint, Copy Reframe, Asset Swap, Motion Match, Responsive Fit, Proof
-Stack, Screenshot Diff, Ship Polish), the capture procedure, and the
-`DESIGN.md` template.
-
-**Inputs:** `reference_url` and `target_url` (ask if either is missing); the
-target repo when edits are expected (without one, produce
-`suedify-implementation-plan.md` instead); optional depth and fidelity
-(inspired-by, close-visual-match, aggressive-restyle). Defaults: homepage, hero,
-and primary CTA section at close-visual-match. Once inputs are known, run to
-completion without further questions.
-
-1. **Verify the target.** Confirm the exact repo; never edit from a multi-repo
-   root. Check git status, remote, and recent log. Preserve WIP.
-2. **Capture the reference** at desktop, tablet, and mobile, with the full
-   capture list from the playbook. Save the analysis as `DESIGN.md` in the
-   target repo root.
-3. **Capture the target** at matching widths and states. Note what content,
-   assets, routes, and claims must stay.
-4. **Map reference to target-safe equivalents** and run the Token Distiller to
-   a full `:root {}` block.
-5. **Implement** inside the target's framework and tokens. Update tokens before
-   one-off component styling.
-6. **Render and compare** side by side at matching widths, with focused crops
-   of hero, nav, cards, forms, and CTAs. At most 3 compare-and-patch rounds;
-   then list remaining mismatches and offer options.
-7. **Verify** lint, typecheck, test, build, and `git diff --check`, and the
-   live route before claiming a public restyle.
-
-**May match:** layout proportions, type scale and rhythm, color role structure,
-section pacing, navigation density, interaction feel, image crop strategy,
-mobile composition. **Must not copy:** logos or trademarked marks, exact
-marketing copy, proprietary source, private media, the reference's proof,
-pricing, guarantees, or metrics. For an exact clone request, deliver a close,
-target-branded interpretation and say why.
-
-Never leave a token field empty in `DESIGN.md`; record `UNKNOWN` with the
-reason.
+For a reusable app shell, launch system, or component family, read
+[references/system-audit.md](references/system-audit.md): it holds the
+deliverables (token map, state matrix, vocabulary, screenshot contract,
+accessibility pass, migration notes), the drift-cause list, and the /100
+scorecard. Below 70: fix the two lowest dimensions before styling new features
+there. Any dimension at 4 or lower is a P1 finding.
 
 ## Implementation workflow
 
@@ -376,7 +314,8 @@ Status: ship | ship-with-caveats | hold
 
 - Preserve WIP. Never edit unrelated files.
 - Never copy protected site assets, exact copy, proprietary code, or
-  trademarked identity during a restyle.
+  trademarked identity during a restyle, and never carry over the reference's
+  proof, pricing, guarantees, or metrics.
 - Never invent metrics, pricing, partners, testimonials, legal clearance, or
   release outcomes.
 - Never call work done until the done signal has been checked or the remaining
@@ -393,7 +332,8 @@ Status: ship | ship-with-caveats | hold
   analytics → suede-code before the ship gate
 - Copy, layout, assets, and QA must run as coordinated parallel lanes →
   suede-agent-teams
-- The finished surface is ready to publish → suede-launch-packaging
+- The finished surface ships with a software, skill-pack, or MCP release that
+  needs install docs and release notes → suede-launch-packaging
 
 ## Worked contract
 

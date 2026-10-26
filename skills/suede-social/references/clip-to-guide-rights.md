@@ -1,8 +1,29 @@
 # Third-Party Video Rights Review
 
-Read this reference whenever the video is not demonstrably original, licensed,
-or permission-recorded. This is a risk-recording workflow, not legal advice or
-legal clearance.
+Read this reference before writing copy for any third-party video (a podcast
+clip, conference talk, interview, webinar, or another creator's post), with or
+without a guide. The route table below classifies every source; the review
+sequence after it applies whenever the video is not demonstrably original,
+licensed, or permission-recorded. This is a risk-recording workflow, not legal
+advice or legal clearance.
+
+## Choose a lawful video route
+
+| Rights status | Allowed route |
+|---|---|
+| `original` | Cut and publish within the user's approved scope. |
+| `licensed` | Follow the license terms and record the evidence. |
+| `permission-recorded` | Follow the exact approved platforms, duration, credit, and edit scope. |
+| `native-repost-only` | Use the platform's native quote, repost, stitch, duet, embed, or link path. Do not download and re-upload. Treat this as an operational sharing route, not legal clearance. |
+| `fair-use-review` | Prepare a four-factor review for commentary, criticism, news reporting, teaching, scholarship, or research. Do not label the use fair or publish until the accountable owner records the decision. |
+| `blocked` | Do not use the footage. Offer an original commentary clip, a permission request, or a source link instead. |
+
+Do not infer fair use, ownership, or permission. Shortness, credit, a public
+source, or added commentary alone does not settle fair use. Do not remove
+watermarks, attribution, or provenance. Prefer a native repost with added
+analysis or create an original camera or screen-recorded response that
+summarizes the idea without copying the footage. Halt on `blocked` or an
+unreviewed `fair-use-review` source using the halt format in SKILL.md.
 
 ## Current primary sources
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate a durable Suede clip-to-guide Markdown package."""
+"""Validate a durable Suede AI clip-to-guide Markdown package."""
 
 from __future__ import annotations
 

@@ -118,7 +118,7 @@ and holder | attribution or expiry | file path or "to source"
 
 ## Export Checklist
 Destination | dimensions | format | quality target | file-size budget | alt text
-Then apply the Optimization Checklist in "Image Optimization" before delivery.
+Then apply the Optimization Checklist in references/image-optimization.md before delivery.
 
 ## Not Done
 No image was generated. What would unblock production: <tool, authority, asset>
@@ -146,32 +146,13 @@ For detailed prompting guides per model, see [references/ai-image-prompting.md](
 
 ## Design Tools
 
-For templated, brand-consistent work where AI generation is overkill or too unpredictable.
+- **Canva:** a candidate for template-driven social graphics and banners once
+  the connected account, export rights, and callable integration are verified.
+- **Figma:** a candidate when an authorized design file exists; verify whether
+  the integration can read, edit, export, or only inspect.
 
-### Canva
-
-Can be a candidate for template-driven social graphics, presentations, email
-headers, and banners. Verify the connected account, current features, export
-rights, plan limits, API availability, and callable integration before routing
-work to it. Keep a human review gate for brand output.
-
-### Figma
-
-Can be a candidate when an authorized design file or component system exists.
-Verify current account access and whether the available integration can read,
-edit, export, or only inspect. Do not claim write access or create files merely
-because a connector exists.
-
-### When to Use Design Tools vs. AI Generation
-
-| Scenario | Design Tool | AI Generation |
-|----------|:-:|:-:|
-| Exact brand guidelines must be followed | Yes | Maybe (with strong ref images) |
-| Need many size variants of one design | Yes, if current resize/export capability is verified | Usually no |
-| Unique hero image for a blog post | No | Yes |
-| Recurring social media template | Yes | No |
-| Product mockup with real UI | No (use screenshots) | No (hallucinated UI) |
-| Abstract/creative visual | No | Yes |
+The full notes and the design-tool vs. AI-generation table are in
+[references/platform-image-specs.md](references/platform-image-specs.md).
 
 ---
 
@@ -195,27 +176,13 @@ bright natural lighting, shallow depth of field,
 professional blog header aesthetic, [verified width]x[verified height]
 ```
 
-### Social Media Graphics
+### Social Graphics, Banners, and Brand Assets
 
-Platform-specific images for organic posts.
-
-The values below are planning defaults, not current platform guarantees. Check the
-platform's official specification on the work date and use its current safe zones,
-file limits, and format rules.
-
-| Platform | Planning size | Aspect ratio | Notes |
-|----------|-------------|:---:|-------|
-| X | 1200x675 | 16:9 | Large image card |
-| LinkedIn | 1200x627 | 1.91:1 | Feed image |
-| Instagram Feed | 1080x1350 | 4:5 | Profile grid crops to 3:4 since January 2025; keep the subject centered |
-| Instagram Stories | 1080x1920 | 9:16 | Full screen vertical |
-| Facebook | 1200x630 | 1.91:1 | Link share image |
-
-**Workflow:**
-1. Create the hero concept at highest resolution needed
-2. Use a verified resize/export feature or manual crop for platform variants
-3. Add text overlays deterministically when accurate text is required
-4. Export at platform-specific dimensions
+Read [references/platform-image-specs.md](references/platform-image-specs.md)
+before sizing or exporting any social graphic, profile or listing banner, or
+brand asset: it carries the planning-size tables, safe-zone notes, workflows,
+and the brand-asset method table. Verify every size against the platform's
+current official spec on the work date.
 
 ### Product Mockups & Screenshots
 
@@ -231,110 +198,18 @@ Possible capture surfaces include browser tooling or an installed OS capture
 utility. Discover what is currently callable, confirm authorization for the live
 surface, and omit tools that are not available.
 
-### Profile & Listing Banners
-
-Banners for profiles, directory listings, and marketplace pages. Often the first visual impression.
-
-These are planning references and can drift. Verify current official dimensions,
-cropping behavior, safe zones, file limits, and format rules before production.
-
-| Platform | Planning size | Notes |
-|----------|------|-------|
-| LinkedIn personal cover | 1584x396 | 4:1, safe zone center |
-| LinkedIn company cover | 1128x191 | 5.9:1; LinkedIn recommends up to 4200x700 |
-| Twitter/X header | 1500x500 | 3:1, partially obscured by avatar |
-| Product Hunt gallery | 1270x760 | 5:3, up to 6 images |
-| G2 profile | 1280x720 | 16:9, product screenshots preferred |
-| GitHub social preview | 1280x640 | 2:1, shows in link cards |
-| App Store screenshots | Varies by device | See suede-aso skill for full specs |
-| Google Play feature graphic | 1024x500 | ~2:1, required for store listing |
-
-**Best practices:**
-- **Keep text minimal**: banners are seen at small sizes on mobile
-- **Center critical content**: edges get cropped differently per device
-- **Show the product truthfully**: use real UI screenshots when the listing is
-  meant to demonstrate the interface
-- **Match your brand**: use consistent colors, fonts, logo placement
-- **Update deliberately**: refresh when the product, campaign, or positioning changes
-
-**Workflow:**
-1. Pick the platform(s) and note exact dimensions
-2. For directories (Product Hunt, G2): use real product screenshots with light annotation
-3. For profiles (LinkedIn, Twitter): use brand colors + tagline + optional product shot
-4. Produce with a verified callable template workflow; add text deterministically
-5. Test at actual display size: zoom out to check readability
-
-### Brand Assets
-
-Logos, icons, and illustrations. AI generation has limits here.
-
-| Asset | AI Generation | Design Tool | Notes |
-|-------|:-:|:-:|-------|
-| Logo | Poor: inconsistent, not vector | Yes | Always design or commission logos |
-| App icon | Concept exploration only | Yes | Refine manually and verify store rules |
-| Illustrations | Good for style exploration | Depends | AI for concepts, finalize in design tool |
-| Favicons | No | Yes | Derive from logo |
-| Social icons | No | Yes | Use platform-provided assets |
-
 ---
 
 ## Image Optimization
 
-Image bytes and dimensions can affect page performance. Measure the actual page
-before attributing search or conversion results to image changes.
-
-### Format Guide
-
-| Format | Best For | Compression |
-|--------|----------|-------------|
-| **WebP** | Photos and graphics when target browsers support it | Lossy + lossless |
-| **AVIF** | High-compression delivery when target browsers support it | Lossy + lossless |
-| **JPEG** | Broad photo compatibility | Lossy |
-| **PNG** | Transparency and lossless screenshots | Lossless |
-| **SVG** | Trusted vector logos, icons, and illustrations | Vector |
-
-### Optimization Checklist
-
-- [ ] **Use a supported delivery format** and fallback strategy for the target browser matrix
-- [ ] **Resize to display size**: don't serve 4000px images in 800px containers
-- [ ] **Compress**: choose quality from visual review and the page's measured byte budget
-- [ ] **Lazy load** below-the-fold images (`loading="lazy"`)
-- [ ] **Set explicit dimensions**: `width` and `height` attributes prevent layout shift (CLS)
-- [ ] **Use verified CDN optimization** when the current stack supports it
-- [ ] **Add alt text**: describe what the image shows in plain words, using the
-  page's topic phrase only where it is the honest description
-- [ ] **Name files descriptively**: `pricing-calculator-dashboard.webp`, not
-  `IMG_2041.webp`
-- [ ] **Keep important images crawlable**: a real `<img>` with `src`, not a CSS
-  background, and not blocked in robots.txt
-- [ ] **Place the image near the text it illustrates** and give charts a
-  caption that states the finding, so search and AI answers can quote it
+Read [references/image-optimization.md](references/image-optimization.md)
+before exporting any web asset: it holds the format guide, the optimization
+checklist, local conversion commands, and the safe page-inspection rule.
 
 The largest above-the-fold image is usually the Largest Contentful Paint
 element. Do not lazy-load it; give it `fetchpriority="high"` and explicit
 dimensions. Core Web Vitals and image-indexing audits route to
 `suede-seo-audit`.
-
-### Quick Optimization Commands
-
-```bash
-# Run only after confirming the named local utility is installed.
-# Convert to WebP (using cwebp)
-cwebp -q 80 input.png -o output.webp
-
-# Batch convert with ImageMagick
-mogrify -format webp -quality 80 *.png
-
-# Optimize JPEG (using jpegoptim)
-jpegoptim --max=80 --strip-all *.jpg
-```
-
-To inspect image references on a page, use the host's approved read-only HTTP
-or browser tool against a verified public HTTPS URL. Refuse loopback,
-link-local, or private-network destinations; do not attach ambient cookies or
-authentication headers; and do not send local files, credentials, or workspace
-content. Inspect the returned HTML for image `src` values and report a failed or
-unsafe fetch as unverified.
 
 ---
 
@@ -357,15 +232,9 @@ The values below are a starting template, not proof of platform compliance.
 
 ### Dynamic OG Images
 
-Generate OG images programmatically for dynamic pages only after verifying the
-project's current framework, installed packages, and supported runtime:
-
-- An installed framework-native image route
-- A local HTML/SVG-to-image renderer
-- An authorized media service with verified template and export capabilities
-
-For repeated page types, a deterministic template can reduce manual work. Measure
-preview correctness and production time; do not promise a search outcome.
+For dynamic pages, see the template options in
+[references/image-optimization.md](references/image-optimization.md); verify the
+framework, installed packages, and runtime first.
 
 ---
 
@@ -399,8 +268,15 @@ and do not imply an image was produced.
 
 ## Boundaries
 
-- For Suede AI visuals, use only `docs/assets/suede-ai-logo-transparent.png` with SHA-256 `83a7ee0317e4debe2e7b076c20ba067feb76a587f9e829dc6310ae4be4b44dfa`.
-- Do not redraw, trace, approximate, recolor, distort, typeset, or generate a replacement for the approved Suede S mark. If the canonical file is missing or its checksum differs, omit the mark, name the blocker, and request the approved file.
+- Brand mark: for Suede AI visuals, use only `docs/assets/suede-ai-logo-transparent.png`
+  from `JasonColapietro/suede-creator-skills` (SHA-256
+  `83a7ee0317e4debe2e7b076c20ba067feb76a587f9e829dc6310ae4be4b44dfa`). Outside that checkout,
+  fetch the same file from
+  `https://raw.githubusercontent.com/JasonColapietro/suede-creator-skills/cbd192309580a32da375881e0eeb4b2450a554c2/docs/assets/suede-ai-logo-transparent.png`
+  and verify its SHA-256 before use. Never redraw, trace, typeset, recolor,
+  distort, or generate a replacement S. `suede-skill-icon.png` is a Passport
+  icon, not the brand mark. Omit the mark and halt for the approved file only
+  if the fetch fails or the checksum differs.
 - Do not claim an image is licensed, rights-cleared, authentic, accessible, optimized, or platform-compliant without verifying the relevant source or output.
 - Do not use a paid provider, upload protected material, or cross an approved
   account or data boundary without explicit authority and a verified maximum cost.
