@@ -1,8 +1,8 @@
 # Lead Magnet Benchmarks
 
-Directional planning ranges compiled from published industry reports. They are
-not measured results for any account and should never be presented as a
-forecast. Replace them with the user's own numbers as soon as they exist.
+Unsourced directional ranges: never quote them as fact. No report or date
+stands behind these numbers. They are not measured results for any account and
+should never be presented as a forecast. Replace them with the user's own numbers as soon as they exist.
 
 ---
 
@@ -48,15 +48,15 @@ forecast. Replace them with the user's own numbers as soon as they exist.
 ## Lead Quality Indicators
 
 ### Signals of High-Quality Leads
-- Open first 3 emails at 40%+ rate
 - Click through to content or product pages
+- Reply to a nurture email
 - Return to site within 30 days
 - Match ICP demographics (role, company size, industry)
 - Progress to trial, demo, or purchase within 90 days
 
 ### Signals of Low-Quality Leads
 - Unsubscribe within first 3 emails
-- Never open beyond delivery email
+- Never click beyond the delivery email (opens are inflated by Apple Mail Privacy Protection; do not use them as a quality signal)
 - Use disposable email addresses
 - Don't match target customer profile
 - Downloaded for the content, no product interest

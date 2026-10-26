@@ -6,7 +6,7 @@ Status checked October 23, 2026. This is a design checklist for the user's couns
 
 ## United States
 
-**FTC click-to-cancel rule: not in force.** The FTC's amended Negative Option Rule (October 2024) was vacated in full by the Eighth Circuit in July 2025 on procedural grounds. The FTC formally conformed the rule to that decision in February 2026, then published an advance notice of proposed rulemaking on March 13, 2026 (docket FTC-2026-0265, comments closed April 13, 2026). As of October 2026 no proposed or final rule has followed. Sources: [FTC Negative Option Rule page](https://www.ftc.gov/legal-library/browse/rules/negative-option-rule), [Federal Register ANPRM](https://www.federalregister.gov/documents/2026/03/13/2026-04952/rule-concerning-the-use-of-prenotification-negative-option-plans).
+**FTC click-to-cancel rule: not in force.** The FTC's amended Negative Option Rule (October 2024) was vacated in full by the Eighth Circuit on July 8, 2025, on procedural grounds, before its compliance date. The FTC formally conformed the rule to that decision in February 2026, then published an advance notice of proposed rulemaking on March 13, 2026 (docket FTC-2026-0265, comments closed April 13, 2026). As of October 2026 no proposed or final rule has followed. Sources: [FTC Negative Option Rule page](https://www.ftc.gov/legal-library/browse/rules/negative-option-rule), [Federal Register ANPRM](https://www.federalregister.gov/documents/2026/03/13/2026-04952/rule-concerning-the-use-of-prenotification-negative-option-plans).
 
 **What still applies federally:**
 - **ROSCA** (Restore Online Shoppers' Confidence Act, 15 U.S.C. 8401-8405): before collecting billing information, clearly disclose all material terms; get express informed consent before charging; provide a simple mechanism to stop recurring charges.
@@ -16,10 +16,12 @@ Status checked October 23, 2026. This is a design checklist for the user's couns
 - Express affirmative consent to the auto-renewal itself, with the charge amount and frequency disclosed before billing details are confirmed; keep consent records for 3 years or 1 year after the contract ends, whichever is longer.
 - Free-to-paid trial conversions are covered.
 - If sign-up was online, cancellation must be available online through a "click to cancel" link or button.
-- Save offers during online cancellation are allowed only while the click-to-cancel option stays prominently and continuously displayed next to them.
+- Save offers during online cancellation are allowed only while the click-to-cancel option stays prominently and continuously displayed next to them. The customer must be told they can still cancel and must be able to do so without engaging with the offer.
 - Price increases need clear notice 7 to 30 days before they apply, with cancellation instructions.
 - An annual reminder stating the product, charge amount and frequency, and how to cancel.
-Source summary: [Kilpatrick Townsend on AB 2863](https://ktslaw.com/en/insights/alert/2024/10/california-latest-automatic-renewal-law-amendments-take-effect-in-july-2025); statute: Cal. Bus. & Prof. Code §17600 et seq.
+
+Other states' laws differ; treat the strictest one in the markets you sell into as the floor.
+Source summary: [Kilpatrick Townsend on AB 2863](https://ktslaw.com/en/insights/alert/2024/10/california-latest-automatic-renewal-law-amendments-take-effect-in-july-2025); statute: Cal. Bus. & Prof. Code §17600 et seq. Further reading on the vacatur and California: Mayer Brown, "Click-to-Cancelled: Eighth Circuit Vacates FTC's Revised Negative Option Rule" (July 18, 2025); Lowenstein Sandler, "FTC Click-to-Cancel Rule on Hold, but California's Automatic Renewal Law Remains Intact" (July 16, 2025).
 
 ## United Kingdom
 

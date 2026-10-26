@@ -114,7 +114,7 @@ A comprehensive guide to lifecycle and campaign emails. Use this as an audit che
 
 **Copy approach**:
 - Acknowledge their growth (positive framing)
-- Show what next tier unlocks
+- Show what the next tier adds
 - Quantify value vs. cost
 - Easy upgrade path
 

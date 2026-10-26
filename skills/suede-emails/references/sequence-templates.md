@@ -115,9 +115,9 @@ Detailed templates for common email sequences.
 - Quick CTA
 
 **Email 3: Incentive (Day 5-7 after)**
-- Subject: We miss you: here's something special
+- Subject: [Offer] on [the plan or product they used], through [date]
 - Offer if appropriate
-- Limited time
+- A real end date, stated plainly
 - Clear CTA
 
 **Email 4: Last Chance (Day 10-14 after)**

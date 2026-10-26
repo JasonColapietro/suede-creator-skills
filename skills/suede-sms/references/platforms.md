@@ -6,6 +6,44 @@ Deep-dive on the major SMS marketing platforms: features, pricing, A2P 10DLC sup
 
 ---
 
+## Phone Number Types (US)
+
+| Type | Throughput | Cost | Use Case | Trust |
+|------|-----------|------|----------|-------|
+| **Short code (5-6 digit)** | 100+ msg/sec | $500–$1,000/mo + setup | High-volume marketing | Highest (carrier-vetted) |
+| **Toll-free (1-8XX)** | ~3 msg/sec | $10–$30/mo | Mid-volume, B2C support | Medium-high (carrier-verified) |
+| **10DLC (regular long code)** | 1–250 msg/sec | $2–$10/mo | SMB, conversational, transactional | Medium (requires A2P 10DLC reg) |
+
+**Rule of thumb**: list <10K = 10DLC. List 10K–100K = toll-free. List 100K+ = short code.
+
+---
+
+## Platform Selection
+
+Evaluation examples, not guaranteed integrations: this pack ships no SMS connectors. Before recommending one, verify vendor
+documentation, authenticated access, per-message cost, carrier support, consent storage, quiet hours, STOP/HELP behavior, and send limits.
+
+| Platform | Best For | Cost Tier | Verify Before Use |
+|----------|----------|-----------|-------------------|
+| **Klaviyo SMS** | DTC ecom already on Klaviyo email | $$ | Store integration, consent, attribution |
+| **Postscript** | DTC Shopify ecom, deep integration | $$ | Store integration, consent, attribution |
+| **Attentive** | Mid-market+ ecom, full-service | $$$ | Store integration, consent, attribution |
+| **Twilio / Plivo** | Custom builds, transactional, devs | $ (raw API) | Number registration, throughput, callbacks |
+| **Brevo SMS** | EU-focused, email + SMS combo | $ | Regional coverage, orchestration, suppression |
+| **SimpleTexting** | SMB, simple needs, ease of use | $ | Regional coverage, consent record |
+| **Customer.io** | Behavior-based automation + SMS | $$ | Regional coverage, orchestration, suppression |
+| **AudienceTap** | Specialized DTC capture | $ | Capture method, consent record, carrier coverage |
+
+**Quick picks**:
+- Already on Klaviyo for email + DTC/ecom → **Klaviyo SMS** (no second platform to learn)
+- Shopify ecom, want deeper SMS-specific features → **Postscript**
+- Building custom SMS into a product → **Twilio**
+- B2B SaaS doing transactional/auth → **Twilio** or **Customer.io**
+
+Per-platform deep dives follow below.
+
+---
+
 ## Klaviyo SMS
 
 **Best for**: DTC ecom brands already using Klaviyo for email.

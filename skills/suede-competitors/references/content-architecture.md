@@ -1,116 +1,78 @@
 # Content Architecture for Competitor Pages
 
-How to structure and maintain competitor data for scalable comparison pages.
+How comparison pages draw on competitor profiles, and how to structure a page set.
 
 ## Contents
-- Centralized Competitor Data
-- Competitor Data Template
+- Evidence Source: the Competitor Profile
+- Page Section to Profile Field Map
+- Page-Only Fields
 - Your Product Data
 - Page Generation
 - Index Page Structure (alternatives index, vs comparisons index, index page best practices)
 - Footer Navigation
 
-## Centralized Competitor Data
+## Evidence Source: the Competitor Profile
 
-Create a single source of truth for each competitor:
+Do not keep a second per-competitor data file. The single source of truth for
+each competitor is the profile `suede-competitor-profiling` writes:
 
 ```
-competitor_data/
-├── notion.md
-├── airtable.md
-├── monday.md
-└── ...
+competitor-profiles/
+├── <slug>.md                 # the profile: every field carries an evidence marker
+├── _summary.md               # cross-competitor comparison table
+└── raw/<slug>/<YYYY-MM-DD>/  # dated scrapes, reviews, and SEO pulls
 ```
+
+Every competitor claim on a page traces to a profile field marked
+`[fact: url, date]` and to its capture under `raw/`. Fields marked
+`[inference]`, `[unknown]`, or `not collected` cannot appear on the page as
+fact: cut them or mark them unverified in the page copy.
 
 ---
 
-## Competitor Data Template
+## Page Section to Profile Field Map
 
-Per competitor, document:
+| Page section | Profile section and fields |
+|--------------|----------------------------|
+| TL;DR and positioning summary | Positioning & Messaging: primary value proposition, positioning angle |
+| Feature comparison and table rows | Product & Features: core capabilities, notable differentiators, integrations |
+| Pricing comparison and total-cost example | Pricing: tier table, billing, free trial, notable pricing quirks |
+| "Why people look for alternatives" and common complaints | Customers & Social Proof: review ratings; review complaint themes from `raw/<slug>/<date>/reviews/` (route deeper review mining to `suede-customer-research`) |
+| Strengths and limitations paragraphs | Strengths & Weaknesses (only items marked `[fact: url, date]` or inferences tied to a cited capture) |
+| Who each product is best for | Competitive Implications, plus the page-only fields below |
+| "Last checked" date | Raw Data Sources: the capture dates behind the claims shown |
+
+---
+
+## Page-Only Fields
+
+A few fields a comparison page needs are not part of the profile. Record them in
+a `## Comparison Page Notes` section at the end of the same profile file (above
+any Change Log), each with a source and date, so there is still one record per
+competitor:
 
 ```yaml
-name: Notion
-website: notion.so
-tagline: "The all-in-one workspace"
-founded: 2016
-headquarters: San Francisco
-
-# Positioning
-primary_use_case: "docs + light databases"
-target_audience: "teams wanting flexible workspace"
-market_position: "premium, feature-rich"
-
-# Pricing
-pricing_model: per-seat
-free_tier: true
-free_tier_limits: "limited blocks, 1 user"
-starter_price: $8/user/month
-business_price: $15/user/month
-enterprise: custom
-
-# Features (rate 1-5 or describe)
-features:
-  documents: 5
-  databases: 4
-  project_management: 3
-  collaboration: 4
-  integrations: 3
-  mobile_app: 3
-  offline_mode: 2
-  api: 4
-
-# Strengths (accurate and sourced)
-strengths:
-  - Extremely flexible and customizable
-  - Beautiful, modern interface
-  - Strong template ecosystem
-  - Active community
-
-# Weaknesses (specific and sourced)
-weaknesses:
-  - Can be slow with large databases
-  - Learning curve for advanced features
-  - Limited automations compared to dedicated tools
-  - Offline mode is limited
-
-# Best for
-best_for:
-  - Teams wanting all-in-one workspace
-  - Content-heavy workflows
-  - Documentation-first teams
-  - Startups and small teams
-
-# Not ideal for
-not_ideal_for:
-  - Complex project management needs
-  - Large databases (1000s of rows)
-  - Teams needing robust offline
-  - Enterprise with strict compliance
-
-# Common complaints (from reviews)
-common_complaints:
-  - "Gets slow with lots of content"
-  - "Hard to find things as workspace grows"
-  - "Mobile app is clunky"
-
-# Migration notes
+best_for:            # who the competitor genuinely serves well [fact or inference, with source]
+  - [reader and job]
+not_ideal_for:       # specific, sourced limitations a buyer would hit
+  - [limitation] [fact: url, date]
 migration_from:
-  difficulty: medium
-  data_export: "Markdown, CSV, HTML"
-  what_transfers: "Pages, databases"
-  what_doesnt: "Automations, integrations setup"
-  time_estimate: "1-3 days for small team"
+  difficulty: [low / medium / high, with the reason]
+  data_export: [formats] [fact: docs url, date]
+  what_transfers: [list]
+  what_doesnt: [list]
+  time_estimate: [from your migration data or support team, or "unknown"]
 ```
 
 ---
 
 ## Your Product Data
 
-Same structure for yourself, built around what you can prove:
+Same evidence discipline for yourself, built around what you can prove:
 
 ```yaml
 name: [Your Product]
-# ... same fields
+# positioning, pricing, features: the same sections as a competitor profile, with sources
 
 strengths:
   - [Your real strengths]
@@ -134,15 +96,15 @@ material_facts:
 
 ## Page Generation
 
-Each page pulls from centralized data:
+Each page pulls from the competitor profiles plus your product data:
 
-- **[Competitor] Alternative page**: Pulls competitor data + your data
-- **[Competitor] Alternatives page**: Pulls competitor data + your data + other alternatives
-- **You vs [Competitor] page**: Pulls your data + competitor data
-- **[A] vs [B] page**: Pulls both competitor data + your data
+- **[Competitor] Alternative page**: Pulls the competitor profile + your data
+- **[Competitor] Alternatives page**: Pulls each alternative's profile + your data
+- **You vs [Competitor] page**: Pulls your data + the competitor profile
+- **[A] vs [B] page**: Pulls both competitor profiles + your data
 
 **Benefits**:
-- Update competitor pricing once, updates everywhere
+- Refresh a competitor profile once, and every page that cites it updates
 - Add new feature comparison once, appears on all pages
 - Consistent accuracy across pages
 - Easier to maintain at scale

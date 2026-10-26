@@ -17,7 +17,7 @@ Any agent with product and audience evidence. Strategy needs no runtime or paid 
 ## Initial Assessment
 
 **Check for product marketing context first:**
-If `.agents/product-marketing.md` exists (or `.claude/product-marketing.md`, or the legacy `product-marketing-context.md` filename, in older setups), read it before asking questions. Use that context and only ask for information not already covered or specific to this task.
+If `.agents/product-marketing.md` exists (or `.claude/product-marketing.md`, or the legacy `product-marketing-context.md` filename, in older setups), read it before asking questions. Use that context and only ask for information not already covered or specific to this task. If its Status line says `partial`, ask for the listed missing sections before using them and never infer them; treat `[unverified]` fields as absent.
 
 Before designing a tool strategy, understand:
 
@@ -49,16 +49,27 @@ Before designing a tool strategy, understand:
 - Immediate value
 
 ### 4. Worth the Investment
-- Lead value × expected leads > build cost + maintenance
+- Goal value > build cost + maintenance
 
-Populate all four terms before calling the go/no-go, and show the arithmetic:
-- **Lead value** = customer LTV × close rate for this lead source, from the intake numbers.
-- **Expected leads** = monthly search volume for the SEO target keyword × a stated visit-to-use rate × a stated use-to-capture rate.
+Pick the goal value by the gating choice (see Gating Options below), populate
+every term before calling the go/no-go, and show the arithmetic:
+- **Gated tools (leads):** goal value = lead value × expected leads, where
+  **lead value** = customer LTV × close rate for this lead source, from the
+  intake numbers, and **expected leads** = monthly search volume for the SEO
+  target keyword × a stated visit-to-use rate × a stated use-to-capture rate.
+- **Ungated SEO and link tools:** goal value = referring domains earned × the
+  stated value per link, plus target-query clicks × the stated value per click.
+  Mark the lead term N/A; never score an ungated tool on leads.
+- **Adoption tools:** goal value = activations × the stated value per
+  activation.
 - **Build cost** = the MVP scope below, in engineer-days.
-- **Maintenance** = engineer-days per quarter to keep data, dependencies, and the hosting current.
+- **Maintenance** = engineer-days per quarter to keep data, dependencies, and
+  the hosting current.
 
-State every rate you assumed and where it came from. If a term cannot be sourced,
-say which one and mark the go/no-go unresolved rather than filling it in.
+A tool with more than one goal sums only the terms that apply to its gating
+choice. State every rate and per-unit value you assumed and where it came from.
+If a term cannot be sourced, say which one and mark the go/no-go unresolved
+rather than filling it in.
 
 ---
 
@@ -230,7 +241,8 @@ Two explicit lists: **In** (what v1 does) and **Out** (what is deliberately
 deferred). No item appears in both.
 
 ### 4. Gating Decision
-Which option from Gating Options, and the trade-off accepted in one line.
+Which option from Gating Options, the trade-off accepted in one line, and the
+Worth the Investment arithmetic for that gating choice (lead term N/A when ungated).
 
 ### 5. SEO Target
 The single target query for the tool page, the supporting-content query, the

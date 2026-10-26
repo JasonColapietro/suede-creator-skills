@@ -16,7 +16,7 @@ An agent with web access and local file writing for raw captures and profiles. O
 
 ## Initial Assessment
 
-Check for `.agents/product-marketing.md` (or `.claude/product-marketing.md`, or the legacy `product-marketing-context.md`) and read it if present: your own positioning and ICP decide which competitors are actually comparable and which dimensions are worth profiling, and they are usually already written down there.
+Check for `.agents/product-marketing.md` (or `.claude/product-marketing.md`, or the legacy `product-marketing-context.md`) and read it if present: your own positioning and ICP decide which competitors are actually comparable and which dimensions are worth profiling, and they are usually already written down there. If its Status line says `partial`, ask for the listed missing sections before using them and never infer them; treat `[unverified]` fields as absent.
 
 Then work the intake list under Task-Specific Questions below. If the user gave URLs and the context file covers the rest, proceed without asking.
 

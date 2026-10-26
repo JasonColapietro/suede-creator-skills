@@ -20,7 +20,7 @@ Suede AI separates the offer underneath the page from the copy that presents it.
 
 ## Before Starting
 
-Read `.agents/product-marketing.md` first if it exists (or `.claude/product-marketing.md`, or the legacy `product-marketing-context.md`) and ask only for what it does not cover.
+Read `.agents/product-marketing.md` first if it exists (or `.claude/product-marketing.md`, or the legacy `product-marketing-context.md`) and ask only for what it does not cover. If its Status line says `partial`, ask for the listed missing sections before using them and never infer them; treat `[unverified]` fields as absent.
 
 ## Where this skill fits
 

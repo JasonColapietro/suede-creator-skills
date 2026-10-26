@@ -2,6 +2,33 @@
 
 Scene-by-scene templates for different call types, with timing, talk tracks, and interaction guidance.
 
+## Overview: Demo Scripts & Talk Tracks
+
+### Script Structure
+
+1. **Opening** (2 min): Context setting, agenda, confirm goals for the call
+2. **Discovery recap** (3 min): Summarize what you learned, confirm priorities
+3. **Solution walkthrough** (15-20 min): 3-4 key workflows mapped to their pain
+4. **Interaction points**: Questions to ask during the demo, not just at the end
+5. **Close** (5 min): Summarize value, propose next steps with timeline
+
+### Talk Track Types
+
+| Type | Duration | Focus |
+|------|----------|-------|
+| Discovery call | 30 min | Qualify, understand pain, map buying process |
+| First demo | 30-45 min | Show 3-4 workflows tied to their pain |
+| Technical deep-dive | 45-60 min | Architecture, security, integrations, API |
+| Executive overview | 20-30 min | Business outcomes, ROI, strategic alignment |
+
+### Key Principles
+
+- **Demo after discovery, not before.** If you don't know their pain, you're guessing which features matter.
+- **Customize to their use case.** Use their terminology, their data (if possible), their workflow.
+- **Leave time for questions.** A demo where the prospect doesn't talk is a demo that doesn't close.
+
+---
+
 ## Discovery Call Script
 
 **Duration:** 30 minutes

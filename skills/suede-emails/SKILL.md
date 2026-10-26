@@ -17,7 +17,7 @@ Any agent with product, consent and lifecycle context. Current deliverability ch
 ## Initial Assessment
 
 **Check for product marketing context first:**
-If `.agents/product-marketing.md` exists (or `.claude/product-marketing.md`, or the legacy `product-marketing-context.md` filename, in older setups), read it before asking questions. Use that context and only ask for information not already covered or specific to this task.
+If `.agents/product-marketing.md` exists (or `.claude/product-marketing.md`, or the legacy `product-marketing-context.md` filename, in older setups), read it before asking questions. Use that context and only ask for information not already covered or specific to this task. If its Status line says `partial`, ask for the listed missing sections before using them and never infer them; treat `[unverified]` fields as absent.
 
 Before creating a sequence, understand:
 
@@ -233,7 +233,7 @@ Segment/Conditions: [If applicable]
 
 ### Metrics Plan
 ```
-Per email: open rate, click rate, unsubscribe rate
+Per email: click rate, unsubscribe rate (opens are inflated by Apple Mail Privacy Protection; report them only as a deliverability signal)
 Per sequence: completion rate, primary-conversion rate, revenue or signups attributed
 Baseline: [the user's current numbers for this audience, or "none supplied"]
 Review point: [when to read results and what number would trigger a rewrite]

@@ -31,7 +31,7 @@ without it is not a low-confidence lead: it is not a lead.
 ## Before Starting
 
 **Check for product marketing context first:**
-If `.agents/product-marketing.md` exists (or `.claude/product-marketing.md`, or the legacy `product-marketing-context.md` filename, in older setups), read it before asking questions. Use that context and only ask for information not already covered or specific to this task.
+If `.agents/product-marketing.md` exists (or `.claude/product-marketing.md`, or the legacy `product-marketing-context.md` filename, in older setups), read it before asking questions. Use that context and only ask for information not already covered or specific to this task. If its Status line says `partial`, ask for the listed missing sections before using them and never infer them; treat `[unverified]` fields as absent.
 
 ## Pick the Branch
 
@@ -177,28 +177,10 @@ If missing, ask once, then infer reasonable defaults and continue:
 
 ## Tool Selection
 
-Treat every named product below as a candidate, not an available capability. These
-are selection examples, not guaranteed integrations: discover what is currently
-callable and verify the user's authenticated access, license, source terms, data
-freshness, export rights, and cost before using one. Full breakdown in
-[references/data-sources.md](references/data-sources.md).
-
-| If the user has access to... | Use it for | Verify Before Use |
-|------------------------------|------------|-------------------|
-| **Apollo** | B2B / SaaS firmographic + contact discovery | Freshness, export terms, email validation |
-| **Clay** | Multi-source enrichment, waterfall lookups, custom scoring | Credit cost, providers, field provenance |
-| **HubSpot Breeze Intelligence** (formerly Clearbit) | Company enrichment inside HubSpot | HubSpot tier, credits, coverage |
-| **ZoomInfo** | Enterprise B2B contact + intent data | License, export rights, signal freshness |
-| **Hunter or Snov** | Email pattern discovery and verification | Verification status and lawful basis |
-| **Truelist** | Email deliverability validation before outreach | Result meanings and current API limits |
-| **LinkedIn Sales Navigator** | Decision-maker mapping (manual, no scraping) | Platform terms; no bulk extraction |
-| **BuiltWith / Wappalyzer** | Tech stack qualification (SaaS branch) | Detection accuracy and staleness |
-| **Crunchbase** | Funding signals (SaaS branch) | Record recency and license tier |
-| **GitHub** | Stargazers / forks, public developer-intent signals | API terms, rate limits, company mapping |
-| **Google Maps + browser** | Local SMB discovery | Terms; assisted review only, no bulk extract |
-| **Outreach** | Sales engagement after approval | Sequence permissions and suppression rules |
-| **RB2B** | Visitor identification | Privacy basis and company-vs-person grain |
-| **Firecrawl / Browserbase** | Single prospect websites: never platforms | Target terms, scope, and session access |
+Every named vendor is a candidate, not an available capability, until you have
+verified the user's authenticated access, license, source terms, data freshness,
+export rights, and cost. Read [references/data-sources.md](references/data-sources.md)
+for the per-tool table with what to verify before using each one.
 
 **If the user has no enrichment or browser tools**: provide exact public-source
 queries and a qualification worksheet, then work from URLs, exports, or

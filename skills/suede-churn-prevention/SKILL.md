@@ -20,7 +20,7 @@ Use this retention playbook to reduce voluntary and involuntary churn through tr
 ## Before Starting
 
 **Check for product marketing context first:**
-If `.agents/product-marketing.md` exists (or `.claude/product-marketing.md`, or the legacy `product-marketing-context.md` filename, in older setups), read it before asking questions. Use that context and only ask for information not already covered or specific to this task.
+If `.agents/product-marketing.md` exists (or `.claude/product-marketing.md`, or the legacy `product-marketing-context.md` filename, in older setups), read it before asking questions. Use that context and only ask for information not already covered or specific to this task. If its Status line says `partial`, ask for the listed missing sections before using them and never infer them; treat `[unverified]` fields as absent.
 
 Gather this context (ask if not provided):
 
@@ -45,7 +45,8 @@ Gather this context (ask if not provided):
 ### 4. Constraints
 - B2B or B2C? (Affects flow design)
 - Which states and countries are customers in? (California and other automatic
-  renewal laws require online cancellation; see Cancellation law below)
+  renewal laws require online cancellation; see Cancellation law below and
+  `suede-pricing` references/subscription-rules.md)
 - Brand tone for offboarding? (Empathetic, direct, playful)
 
 ---
@@ -135,14 +136,14 @@ The key insight: **match the offer to the reason.** A discount won't save someon
 ### Save Offer Types
 
 **Discount**
-- 20-30% off for 2-3 months is the sweet spot
+- 20-30% off for 2-3 months is a common starting point (commonly reported, unsourced; test it in this account)
 - Avoid 50%+ discounts (trains customers to cancel for deals)
 - Time-limit the offer ("This offer expires when you leave this page")
 - Show the dollar amount saved, not just the percentage
 
 **Pause subscription**
 - 1-3 month pause maximum (longer pauses rarely reactivate)
-- 60-80% of pausers eventually return to active
+- Many pausers return to active (commonly reported as 60-80%, unsourced; measure your own reactivation rate)
 - Auto-reactivation with advance notice email
 - Keep their data and settings intact
 
@@ -162,28 +163,22 @@ The key insight: **match the offer to the reason.** A discount won't save someon
 - Route to customer success for a call
 - Personal email from founder for smaller companies
 
-### Cancellation law (checked October 2026)
+### Cancellation law
 
-- **Federal:** the FTC's 2024 "click-to-cancel" amendments to the Negative
-  Option Rule were vacated by the Eighth Circuit on July 8, 2025, before their
-  compliance date. The Restore Online Shoppers' Confidence Act (ROSCA) still
-  requires simple cancellation for online negative-option offers, and the FTC
-  keeps enforcing it.
-- **California:** the amended Automatic Renewal Law (AB 2863), effective
-  July 1, 2025, requires online cancellation through a prominent direct link or
-  button for subscriptions sold online, and a save offer may appear only if the
-  customer is told they can still cancel and can do so without engaging with it.
-- **Other states** have their own automatic renewal laws. Treat the strictest
-  one in your market as the floor.
+Design rule: one save offer, a visible "continue to cancel" control on every
+screen, and a cancellation that completes online in the same session. Legal
+review decides edge cases, not this skill.
 
-Design rule that satisfies all of the above: one save offer, a visible
-"continue to cancel" control on every screen, and a cancellation that completes
-online in the same session. Legal review decides edge cases, not this skill.
+- **Federal (US):** the FTC's 2024 click-to-cancel rule was vacated in July 2025
+  and is not in force; the FTC published an advance notice of proposed
+  rulemaking on March 13, 2026 (FTC-2026-0265) with no proposed rule since.
+  ROSCA still requires a simple way to stop recurring charges.
+- **California:** the Automatic Renewal Law (AB 2863, July 1, 2025) requires
+  online cancellation for online sign-ups, with any save offer shown beside a
+  continuously visible cancel option.
 
-Sources: Mayer Brown, "Click-to-Cancelled: Eighth Circuit Vacates FTC's
-Revised Negative Option Rule" (July 18, 2025); Lowenstein Sandler, "FTC
-Click-to-Cancel Rule on Hold, but California's Automatic Renewal Law Remains
-Intact" (July 16, 2025).
+Current US, UK, EU, and app-store subscription law, with sources: read
+`suede-pricing` `references/subscription-rules.md` (the pack's single source) and date the check before designing a flow.
 
 ### Cancel Flow UI Patterns
 
@@ -203,62 +198,15 @@ mockups of the survey and offer steps.
 
 ## Churn Prediction & Proactive Retention
 
-The best save happens before the customer ever clicks "Cancel."
-
-### Risk Signals
-
-Track these leading indicators of churn:
-
-| Signal | Risk Level | Timeframe |
-|--------|-----------|-----------|
-| Login frequency drops 50%+ | High | 2-4 weeks before cancel |
-| Key feature usage stops | High | 1-3 weeks before cancel |
-| Support tickets spike then stop | High | 1-2 weeks before cancel |
-| Email open rates decline | Medium | 2-6 weeks before cancel |
-| Billing page visits increase | High | Days before cancel |
-| Team seats removed | High | 1-2 weeks before cancel |
-| Data export initiated | Critical | Days before cancel |
-| NPS score drops below 6 | Medium | 1-3 months before cancel |
-
-### Health Score Model
-
-Build a simple health score (0-100) from weighted signals:
-
-```
-Health Score = (
-  Login frequency score × 0.30 +
-  Feature usage score   × 0.25 +
-  Support sentiment     × 0.15 +
-  Billing health        × 0.15 +
-  Engagement score      × 0.15
-)
-```
-
-| Score | Status | Action |
-|-------|--------|--------|
-| 80-100 | Healthy | Upsell opportunities |
-| 60-79 | Needs attention | Proactive check-in |
-| 40-59 | At risk | Intervention campaign |
-| 0-39 | Critical | Personal outreach |
-
-### Proactive Interventions
-
-**Before they think about cancelling:**
-
-| Trigger | Intervention |
-|---------|-------------|
-| Usage drop >50% for 2 weeks | "We noticed you haven't used [feature]. Need help?" email |
-| Approaching plan limit | Upgrade nudge (not a wall, paywalls handles this) |
-| No login for 14 days | Re-engagement email with recent product updates |
-| NPS detractor (0-6) | Personal follow-up within 24 hours |
-| Support ticket unresolved >48h | Escalation + proactive status update |
-| Annual renewal in 30 days | Value recap email + renewal confirmation |
+The best save happens before the customer ever clicks "Cancel." Read
+[references/health-and-tests.md](references/health-and-tests.md) when building
+risk signals, a health score, or proactive interventions.
 
 ---
 
 ## Involuntary Churn: Payment Recovery
 
-Failed payments cause 30-50% of all churn but are the most recoverable.
+Failed payments are often a large share of churn (commonly reported as 30-50%, unsourced; measure your own split) and are the most recoverable.
 
 ### The Dunning Stack
 
@@ -270,7 +218,7 @@ Pre-dunning → Smart retry → Dunning emails → Grace period → Hard cancel
 
 - **Card expiry alerts**: Email 30, 15, and 7 days before card expires
 - **Backup payment method**: Prompt for a second payment method at signup
-- **Card updater services**: Visa/Mastercard auto-update programs (reduces hard declines 30-50%)
+- **Card updater services**: Visa/Mastercard auto-update programs (commonly reported to cut hard declines, unsourced; confirm with your provider)
 - **Pre-billing notification**: Email 3-5 days before charge for annual plans
 
 ### Smart Retry Logic
@@ -311,7 +259,8 @@ Email Sequence: read it before writing or configuring the sequence.
 | Overall payment recovery | <30% | 40-50% | 60%+ |
 | Pre-dunning prevention | None | 10-15% | 20-30% |
 
-These bands are industry ranges for calibrating a recommendation. Never assert
+These bands are commonly reported, unsourced ranges for calibrating a
+recommendation. Never assert
 them as this product's result.
 
 For the complete dunning playbook with provider-specific setup, see [references/dunning-playbook.md](references/dunning-playbook.md).
@@ -322,7 +271,7 @@ For the complete dunning playbook with provider-specific setup, see [references/
 
 ### Key Churn Metrics
 
-| Metric | Formula | Target |
+| Metric | Formula | Illustrative range (replace with your trailing baseline) |
 |--------|---------|--------|
 | Monthly churn rate | Churned customers / Start-of-month customers | <5% B2C, <2% B2B |
 | Revenue churn (net) | (Lost MRR - Expansion MRR) / Start MRR | Negative (net expansion) |
@@ -343,27 +292,15 @@ Segment churn by:
 
 ### Cancel Flow A/B Tests
 
-Test one variable at a time:
-
-| Test | Hypothesis | Metric |
-|------|-----------|--------|
-| Discount % (20% vs 30%) | Higher discount saves more | Save rate, LTV impact |
-| Pause duration (1 vs 3 months) | Longer pause increases return rate | Reactivation rate |
-| Survey placement (before vs after offer) | Survey-first personalizes offers | Save rate |
-| Offer presentation (modal vs full page) | Full page gets more attention | Save rate |
-| Copy tone (empathetic vs direct) | Empathetic reduces friction | Save rate |
-
-**How to run cancel flow experiments:** Route the hypothesis, sample, duration,
-and stopping rule to `suede-ab-testing`. Use an authorized experimentation
-system that can assign users consistently and read each funnel step (survey →
-offer → accept/decline → confirm). Verify the system's current official
-implementation guidance, assignment behavior, and event readback before launch.
+Test one variable at a time. The test table and experiment routing live in
+[references/health-and-tests.md](references/health-and-tests.md); read it before
+proposing a cancel-flow experiment.
 
 ---
 
 ## Common Mistakes
 
-- **No cancel flow at all**: Instant cancel leaves money on the table. Even a simple survey + one offer saves 10-15%
+- **No cancel flow at all**: Instant cancel leaves money on the table. Even a simple survey + one offer gives you a save rate to measure and improve
 - **Not tracking save offer LTV**: A "saved" customer who churns 30 days later wasn't really saved
 - **No post-cancel path**: Make reactivation easy and trigger win-back emails, because some churned users will want to come back
 

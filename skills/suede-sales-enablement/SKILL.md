@@ -23,7 +23,7 @@ audience and version are approved.
 ## Before Starting
 
 **Check for product marketing context first:**
-If `.agents/product-marketing.md` exists (or `.claude/product-marketing.md`, or the legacy `product-marketing-context.md` filename, in older setups), read it before asking questions. Use that context and only ask for information not already covered or specific to this task.
+If `.agents/product-marketing.md` exists (or `.claude/product-marketing.md`, or the legacy `product-marketing-context.md` filename, in older setups), read it before asking questions. Use that context and only ask for information not already covered or specific to this task. If its Status line says `partial`, ask for the listed missing sections before using them and never infer them; treat `[unverified]` fields as absent.
 
 Gather this context (ask if not provided):
 
@@ -61,100 +61,32 @@ Tailor to persona, deal stage, and use case. A deck for a CTO should look differ
 Reps need information in 3 seconds, not 30. Use bold headers, short bullets, and visual hierarchy. If a rep can't find the answer mid-call, the doc has failed.
 
 ### Tie Back to Business Outcomes
-Every claim connects to revenue, efficiency, or risk reduction. Features mean nothing without the "so what." Replace "AI-powered analytics" with "cut reporting time by 80%."
+Every claim connects to revenue, efficiency, or risk reduction. Features mean nothing without the "so what." Replace "AI-powered analytics" with "cut reporting time by [sourced figure]."
 
 ---
 
 ## Sales Deck / Pitch Deck
 
-### 10-12 Slide Framework
-
-1. **Current World Problem**: The pain your buyer lives with today
-2. **Cost of the Problem**: What inaction costs (time, money, risk)
-3. **The Shift Happening**: Market or technology change creating urgency
-4. **Your Approach**: How you solve it differently
-5. **Product Walkthrough**: 3-4 key workflows, not a feature tour
-6. **Proof Points**: Metrics, logos, analyst recognition
-7. **Case Study**: One customer story told well
-8. **Implementation / Timeline**: How they get from here to live
-9. **ROI / Value**: Expected return and payback period
-10. **Pricing Overview**: Transparent, tiered if applicable
-11. **Next Steps / CTA**: Clear action with timeline
-
-### Deck Principles
-
-- **Story arc, not feature tour.** Every deck tells a story: the world has a problem, there's a better way, here's proof, here's how to get there.
-- **One idea per slide.** If you need two points, use two slides.
-- **Design for presenting, not reading.** Slides support the conversation: they don't replace it. Minimal text, strong visuals.
-
-### Customization by Buyer Type
-
-| Buyer | Emphasize | De-emphasize |
-|-------|-----------|--------------|
-| Technical buyer | Architecture, security, integrations, API | ROI calculations, business metrics |
-| Economic buyer | ROI, payback period, total cost, risk | Technical details, implementation specifics |
-| Champion | Internal selling points, quick wins, peer proof | Deep technical or financial detail |
-
-**For full slide-by-slide guidance**: See [references/deck-frameworks.md](references/deck-frameworks.md)
+Read [references/deck-frameworks.md](references/deck-frameworks.md) before
+building a deck: it holds the 10-12 slide framework, deck principles,
+customization by buyer type, and slide-by-slide guidance.
 
 ---
 
 ## One-Pagers / Leave-Behinds
 
-### When to Use
-
-- **Post-meeting recap**: Reinforce what you discussed, keep momentum
-- **Champion internal selling**: Arm your champion to sell for you
-- **Trade show handout**: Quick intro that drives follow-up
-
-### Structure
-
-1. **Problem statement**: The pain in one sentence
-2. **Your solution**: What you do and how
-3. **3 differentiators**: Why you vs. alternatives
-4. **Proof point**: One strong metric or customer quote
-5. **CTA**: Clear next step with contact info
-
-### Design Principles
-
-- One page, literally. Front only, or front and back maximum.
-- Scannable in 30 seconds. Bold headers, short bullets, whitespace.
-- Include your logo, website, and a specific contact (not info@).
-- Match your brand but keep it clean: this is a sales tool, not a brand piece.
-
-**For templates by use case**: See [references/one-pager-templates.md](references/one-pager-templates.md)
+Read [references/one-pager-templates.md](references/one-pager-templates.md) for
+when to use a one-pager, the five-part structure, design principles, and
+templates by use case.
 
 ---
 
 ## Objection Handling Docs
 
-### Objection Categories
-
-| Category | Examples |
-|----------|----------|
-| Price | "Too expensive," "No budget this quarter," "Competitor is cheaper" |
-| Timing | "Not the right time," "Maybe next quarter," "Too busy to implement" |
-| Competition | "We already use X," "What makes you different?" |
-| Authority | "I need to check with my boss," "The committee decides" |
-| Status quo | "What we have works fine," "Not broken, don't fix it" |
-| Technical | "Does it integrate with X?," "Security concerns," "Can it scale?" |
-
-### Response Framework
-
-For each objection, document:
-
-1. **Objection statement**: Exactly how reps hear it
-2. **Why they say it**: The real concern behind the words
-3. **Response approach**: How to acknowledge and redirect
-4. **Proof point**: Specific evidence that addresses the concern
-5. **Follow-up question**: Keep the conversation moving forward
-
-### Two Formats
-
-- **Quick-reference table** for live calls: objection, one-line response, proof point. Fits on one screen.
-- **Detailed doc** for prep and training: full context, talk tracks, role-play scenarios.
-
-**For the full objection library**: See [references/objection-library.md](references/objection-library.md)
+Read [references/objection-library.md](references/objection-library.md) for
+objection categories, the five-part response framework, the quick-reference and
+detailed formats, and the full library. Every proof point in a response still
+needs a row in the claim-source table.
 
 ---
 
@@ -197,30 +129,9 @@ change their own inputs; build a **web tool** only when deal volume justifies it
 
 ## Demo Scripts & Talk Tracks
 
-### Script Structure
-
-1. **Opening** (2 min): Context setting, agenda, confirm goals for the call
-2. **Discovery recap** (3 min): Summarize what you learned, confirm priorities
-3. **Solution walkthrough** (15-20 min): 3-4 key workflows mapped to their pain
-4. **Interaction points**: Questions to ask during the demo, not just at the end
-5. **Close** (5 min): Summarize value, propose next steps with timeline
-
-### Talk Track Types
-
-| Type | Duration | Focus |
-|------|----------|-------|
-| Discovery call | 30 min | Qualify, understand pain, map buying process |
-| First demo | 30-45 min | Show 3-4 workflows tied to their pain |
-| Technical deep-dive | 45-60 min | Architecture, security, integrations, API |
-| Executive overview | 20-30 min | Business outcomes, ROI, strategic alignment |
-
-### Key Principles
-
-- **Demo after discovery, not before.** If you don't know their pain, you're guessing which features matter.
-- **Customize to their use case.** Use their terminology, their data (if possible), their workflow.
-- **Leave time for questions.** A demo where the prospect doesn't talk is a demo that doesn't close.
-
-**For full script templates**: See [references/demo-scripts.md](references/demo-scripts.md)
+Read [references/demo-scripts.md](references/demo-scripts.md) for the script
+structure, talk track types and lengths, key principles (demo after discovery),
+and scene-by-scene templates.
 
 ---
 
@@ -250,26 +161,9 @@ Organize case studies so reps can find the right one instantly:
 
 ## Proposal Templates
 
-### Structure
-
-1. **Executive summary**: Their challenge, your solution, expected outcome (1 page max)
-2. **Proposed solution**: What you'll deliver, mapped to their requirements
-3. **Implementation plan**: Timeline, milestones, responsibilities
-4. **Investment**: Pricing, payment terms, what's included
-5. **Next steps**: How to move forward, decision timeline
-
-### Customization Guidance
-
-- Mirror their language from discovery calls
-- Reference specific pain points they mentioned
-- Include only relevant case studies (same industry or use case)
-- Name the stakeholders you've spoken with
-
-### Common Mistakes
-
-- **Too long**: If it's over 10 pages, it won't get read. Aim for 5-7.
-- **Too generic**: Templated proposals signal low effort. Customize the exec summary at minimum.
-- **Burying the price**: Don't make them hunt for it. Be transparent and confident.
+Read [references/proposal-templates.md](references/proposal-templates.md) for
+the five-part structure, customization guidance, and common mistakes before
+drafting a proposal.
 
 ---
 
@@ -357,7 +251,7 @@ Deliver the right format for each asset type:
 
 Close every delivery with a **claim-source table**: each number, customer name, and capability claim in the asset, its source and date or its modeled assumptions, and whether the user has approved it for external use.
 
-Every proof point and every ROI figure in a delivered asset carries an inline tag: `[source: named customer / study / internal report + date]` or `[modeled, assumptions: the inputs used]`. An untagged number is a delivery blocker: tag it or cut it before the asset goes out. The sales deck deliverable uses this unit, repeated for each of the 11 slides above:
+Every proof point and every ROI figure in a delivered asset carries an inline tag: `[source: named customer / study / internal report + date]` or `[modeled, assumptions: the inputs used]`. An untagged number is a delivery blocker: tag it or cut it before the asset goes out. The sales deck deliverable uses this unit, repeated for each of the 11 slides in the framework in [references/deck-frameworks.md](references/deck-frameworks.md):
 
 ```markdown
 ### Slide N: [slide name]

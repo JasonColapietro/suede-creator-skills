@@ -106,8 +106,8 @@
 - Document learnings
 
 ### Metrics to Track
-- Open rate (benchmark: 20-40%)
-- Click rate (benchmark: 2-5%)
-- Unsubscribe rate (keep under 0.5%)
+- Open rate (deliverability signal only: Apple Mail Privacy Protection inflates opens, so never judge copy on it)
+- Click rate (compare against this list's own dated baseline)
+- Unsubscribe rate (watch the trend against this list's baseline)
 - Conversion rate (specific to sequence goal)
 - Revenue per email (if applicable)

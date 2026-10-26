@@ -21,7 +21,7 @@ Design lead magnets as useful, rights-clear assets with an honest value exchange
 ## Before Planning
 
 **Check for product marketing context first:**
-If `.agents/product-marketing.md` exists (or `.claude/product-marketing.md`, or the legacy `product-marketing-context.md` filename, in older setups), read it before asking questions. Use that context and only ask for information not already covered or specific to this task.
+If `.agents/product-marketing.md` exists (or `.claude/product-marketing.md`, or the legacy `product-marketing-context.md` filename, in older setups), read it before asking questions. Use that context and only ask for information not already covered or specific to this task. If its Status line says `partial`, ask for the listed missing sections before using them and never infer them; treat `[unverified]` fields as absent.
 
 Gather this context (ask if not provided):
 
@@ -156,7 +156,7 @@ Goal: Help implement. Remove friction to purchase.
 - **Email + company/role**: better lead qualification, more friction
 - **Multi-field**: only for high-value offers (webinars, demos)
 
-Rule of thumb: Ask for the minimum needed. Every extra field reduces conversion by 5-10%.
+Rule of thumb: ask for the minimum needed. Each extra field adds friction; measure its effect on this form rather than assuming a fixed cost per field.
 
 ### How to Frame the Exchange
 
@@ -238,7 +238,7 @@ Don't waste the thank you page. After they've converted:
 ### Blog CTAs & Content Upgrades
 
 - Create post-specific content upgrades (bonus checklist for a how-to post)
-- Content upgrades convert 2-5x better than generic sidebar CTAs
+- Content upgrades often outperform generic sidebar CTAs (inferred, unsourced; test it in this account)
 
 ### Exit-Intent & Popups
 
@@ -268,15 +268,15 @@ Don't waste the thank you page. After they've converted:
 
 ### Key Metrics
 
-| Metric | What It Tells You | Benchmark |
+| Metric | What It Tells You | Illustrative range (replace with your baseline) |
 |--------|-------------------|-----------|
 | **Landing page conversion rate** | Offer attractiveness | 20-40% (warm traffic), 5-15% (cold) |
 | **Cost per lead** | Acquisition efficiency | Varies by channel and industry |
 | **Lead-to-customer rate** | Lead quality | 1-5% (B2B), varies widely |
-| **Email engagement** | Content relevance | 30-50% open, 2-5% click |
+| **Email engagement** | Content relevance | Click rate, reply rate, and trial or demo progression against your own baseline; opens are inflated by Apple Mail Privacy Protection, so do not use them |
 | **Time to conversion** | Nurture effectiveness | Track by lead magnet source |
 
-Benchmarks are industry ranges for calibration only: never assert them as this asset's expected or achieved result.
+These ranges are unsourced and directional, for calibration only: never assert them as this asset's expected or achieved result.
 
 **For detailed benchmarks by format and industry**: See [references/benchmarks.md](references/benchmarks.md)
 

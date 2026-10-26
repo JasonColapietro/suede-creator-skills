@@ -2,6 +2,31 @@
 
 Templates for different one-pager use cases, with layout guidance and copy prompts.
 
+## Overview: One-Pagers / Leave-Behinds
+
+### When to Use
+
+- **Post-meeting recap**: Reinforce what you discussed, keep momentum
+- **Champion internal selling**: Arm your champion to sell for you
+- **Trade show handout**: Quick intro that drives follow-up
+
+### Structure
+
+1. **Problem statement**: The pain in one sentence
+2. **Your solution**: What you do and how
+3. **3 differentiators**: Why you vs. alternatives
+4. **Proof point**: One strong metric or customer quote
+5. **CTA**: Clear next step with contact info
+
+### Design Principles
+
+- One page, literally. Front only, or front and back maximum.
+- Scannable in 30 seconds. Bold headers, short bullets, whitespace.
+- Include your logo, website, and a specific contact (not info@).
+- Match your brand but keep it clean: this is a sales tool, not a brand piece.
+
+---
+
 ## Product Overview One-Pager
 
 The default one-pager. Introduces your product to someone who knows nothing about you.

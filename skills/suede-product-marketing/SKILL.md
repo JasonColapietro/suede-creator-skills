@@ -1,6 +1,6 @@
 ---
 name: suede-product-marketing
-description: "Suede AI Product Marketing Skills: versioned audience, ICP, positioning, alternatives, objections, verbatim customer language, proof, goals, and entity facts. Use when asked \"create our product marketing context\" or to update .agents/product-marketing.md from supplied records or a codebase. NOT FOR: campaign writing (suede-campaign-in-a-box), new interviews (suede-customer-research), contested positioning (suede-marketing-council), or publishing claims."
+description: "Suede AI Product Marketing Skills: versioned audience, ICP, positioning, alternatives, objections, verbatim customer language, proof, goals, and entity facts. Use when asked \"create our product marketing context\" or to update .agents/product-marketing.md from supplied records or a codebase. NOT FOR: campaign plans (suede-marketing-plan; artist releases: suede-campaign-in-a-box), new interviews (suede-customer-research), contested positioning (suede-marketing-council), or publishing claims."
 metadata:
   display-name: "Suede AI Product Marketing Skills"
   version: 2.2.0
@@ -151,120 +151,14 @@ The canonical facts search engines and AI assistants should repeat about the com
 
 ## Step 3: Create the Document
 
-After gathering information, create `.agents/product-marketing.md` with this structure:
+After gathering information, create `.agents/product-marketing.md`.
 
-```markdown
-# Product Marketing Context
-
-**Document version:** v1
-**Last updated:** [date]
-**Status:** complete | partial: missing: [required sections still empty]
-
-*Every field ends with its source: `[src: README.md]`, `[src: interview
-2026-05-04]`, `[src: user]`, or the marker `[unverified]` if nothing on record
-supports it. An unsourced field is empty by definition; do not fill it to make
-the document look finished.*
-
-## Product Overview
-**One-liner:**
-**What it does:**
-**Product category:**
-**Product type:**
-**Business model:**
-
-## Target Audience
-**Target companies:**
-**Decision-makers:**
-**Primary use case:**
-**Jobs to be done:**
--
-**Use cases:**
--
-
-## Personas
-| Persona | Cares about | Challenge | Value we promise |
-|---------|-------------|-----------|------------------|
-| | | | |
-
-## Problems & Pain Points
-**Core problem:**
-**Why alternatives fall short:**
--
-**What it costs them:**
-**Emotional tension:**
-
-## Competitive Landscape
-**Direct:** [Competitor]: falls short because...
-**Secondary:** [Approach]: falls short because...
-**Indirect:** [Alternative]: falls short because...
-
-## Differentiation
-**Key differentiators:**
--
-**How we do it differently:**
-**Why that's better:**
-**Why customers choose us:**
-
-## Objections
-| Objection | Response |
-|-----------|----------|
-| | |
-
-**Anti-persona:**
-
-## Switching Dynamics
-**Push:**
-**Pull:**
-**Habit:**
-**Anxiety:**
-
-## Customer Language
-**How they describe the problem:**
-- "[verbatim]"
-**How they describe us:**
-- "[verbatim]"
-**Words to use:**
-**Words to avoid:**
-**Glossary:**
-| Term | Meaning |
-|------|---------|
-| | |
-
-## Brand Voice
-**Tone:**
-**Style:**
-**Personality:**
-
-## Proof Points
-**Metrics:**
-**Customers:**
-**Testimonials:** *(verbatim only: a quote with no attributable source is `[unverified]`, never paraphrased into existence)*
-> "[quote]": [who] [src: where this quote was published or collected]
-**Value themes:**
-| Theme | Proof |
-|-------|-------|
-| | |
-
-## Goals
-**Business goal:**
-**Conversion action:**
-**Current metrics:**
-
-## Entity and Search Facts
-**Official names:**
-**One-sentence description:**
-**Spokesperson / byline:**
-**sameAs profiles:**
--
-**Buyer questions (search and AI assistants):**
-| Question | Page that answers it |
-|----------|---------------------|
-| | |
-
-## Changelog
-*Newest first. One line per revision: what changed and why.*
-- v1 ([date]): Initial context.
-```
+Read [references/context-template.md](references/context-template.md) and copy
+its markdown structure exactly: the version, status, and source-marker header,
+one section per item in Sections to Capture, and the Changelog. Do not invent a
+different shape; downstream skills parse these headings. The six-section v1
+floor (Product Overview, Target Audience, Problems & Pain Points,
+Differentiation, Customer Language, Goals) is checked in Step 4.
 
 ---
 
@@ -307,4 +201,4 @@ the document look finished.*
 - Use `suede-customer-research` to gather new customer evidence.
 - Use `suede-competitor-profiling` for evidence on named competitors.
 - Use `suede-marketing-plan` to turn approved context into a channel plan.
-- Use `suede-campaign-in-a-box` to package an approved campaign.
+- Use `suede-marketing-plan` to plan a product or service campaign from approved context; use `suede-campaign-in-a-box` only for an artist release or catalog campaign.

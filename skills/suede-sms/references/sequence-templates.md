@@ -6,6 +6,57 @@ Full copy templates with character counts, timing, and segmentation logic for ev
 
 ---
 
+## Flow overview (send timing at a glance)
+
+### Welcome / Opt-In Confirmation (immediate)
+
+The confirmation text must name the program, state message frequency, and
+carry "Msg & data rates may apply" plus HELP and STOP instructions.
+
+Send 1: Confirmation + reward (immediate)
+> From Acme: Thanks for joining! Here's 10% off: ACME10. Use at checkout: acme.co/sale. Reply STOP to opt out.
+
+Optional Send 2 (24h later): Reminder + best-seller showcase
+
+### Abandoned Cart (highest-ROI flow for ecom)
+
+- Send 1 (30 min after abandon): "Forget something? Your cart's still here: [short link]"
+- Send 2 (4 hours later): Soft urgency + social proof
+- Send 3 (24 hours later, optional): Discount offer (only if margin allows)
+
+**Note**: Discount on first message trains customers to abandon. Reserve discount for Send 2 or 3.
+
+### Browse Abandonment
+
+- Send 1 (1 hour after browse): Product + "Thinking it over?" + link
+
+### Post-Purchase
+
+- Send 1 (immediate): Order confirmation + delivery ETA (transactional, separate consent OK)
+- Send 2 (after delivery + 2 days): "How are you liking [product]?" + review prompt + cross-sell
+
+### Win-Back (lapsed)
+
+- Send 1 (60–90 days after last purchase): name the last product or category they bought + curated picks
+- Send 2 (14 days later): Discount offer
+- Send 3 (final, 14 days later): Opt-out warning + final offer with its end date
+
+### Promotional / Campaign Sends
+
+- Flash sales, drops, launches, BFCM
+- 1–2 sends max per campaign
+- Stack against email send schedule to avoid same-day double-tap
+
+### Transactional (separate compliance bucket)
+
+- Order updates, shipping, delivery, auth codes, account alerts
+- Generally OK without separate marketing consent if directly related to a transaction the user initiated
+- Still subject to A2P 10DLC registration in US
+
+The full copy templates for each flow follow below.
+
+---
+
 ## Welcome / Opt-In Confirmation
 
 ### Send 1: Immediate (after opt-in)
@@ -26,9 +77,9 @@ From [Brand]: Don't forget your code WELCOME10, expires in 48hrs. Top picks: [sh
 ### Send 3: 7 days later (optional, conditional on no purchase)
 
 ```
-From [Brand]: Last chance for 10% off with WELCOME10. Expires tonight at midnight: [short.link]
+From [Brand]: Your 10% code WELCOME10 expires tonight at midnight: [short.link]
 ```
-~107 chars / 1 segment.
+~82 chars / 1 segment.
 
 ---
 
@@ -121,9 +172,9 @@ From [Brand]: Goes great with your [product]: [related-item]. 10% off bundle: [s
 ### Send 1: 60-90 days after last purchase
 
 ```
-From [Brand]: [FirstName], we miss you! Picks we think you'll love: [short.link]
+From [Brand]: [FirstName], new picks to go with your [last product or category]: [short.link]
 ```
-~84 chars / 1 segment.
+~96 chars / 1 segment.
 
 ### Send 2: 14 days later (if no purchase)
 
@@ -135,9 +186,9 @@ From [Brand]: Come back for 15% off your next order: COMEBACK15. Expires in 7 da
 ### Send 3: 14 days after Send 2 (final, if no purchase)
 
 ```
-From [Brand]: Last chance, 20% off ends tonight: COMEBACK20. We'll stop texting if you'd rather: reply STOP. [short.link]
+From [Brand]: 20% off with COMEBACK20 ends tonight at midnight. We'll stop texting if you'd rather: reply STOP. [short.link]
 ```
-~130 chars / 1 segment.
+~127 chars / 1 segment.
 
 **Notes**:
 - After Send 3 with no engagement, suppress for 90 days minimum.
@@ -171,9 +222,9 @@ From [Brand]: Black Friday is LIVE, up to 50% off sitewide. Shop now: [short.lin
 
 Send 2: Day of (or evening, expiration push):
 ```
-From [Brand]: Last 6 hours of BFCM savings. Don't miss out: [short.link]
+From [Brand]: BFCM prices end at midnight, 6 hours from now: [short.link]
 ```
-~73 chars / 1 segment.
+~76 chars / 1 segment.
 
 ---
 
@@ -218,9 +269,9 @@ For SMS subscribers who haven't engaged with any send in 60+ days.
 ### Send 1: Soft reactivation
 
 ```
-From [Brand]: We've missed you, [FirstName]! Here's what's new: [short.link]
+From [Brand]: [FirstName], here's what's new since your last order: [short.link]
 ```
-~80 chars / 1 segment.
+~83 chars / 1 segment.
 
 ### Send 2: Confirm interest (if no engagement)
 

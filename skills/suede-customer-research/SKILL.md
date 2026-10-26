@@ -16,7 +16,7 @@ An agent able to read supplied research files and save evidence captures. New pu
 
 ## Before Starting
 
-Check for `.agents/product-marketing.md` (or `.claude/product-marketing.md`, or the legacy `product-marketing-context.md`) and read it if present: the ICP, segment definitions, and what research already exists decide where to look and what counts as a representative sample. Ask only what it does not already answer.
+Check for `.agents/product-marketing.md` (or `.claude/product-marketing.md`, or the legacy `product-marketing-context.md`) and read it if present: the ICP, segment definitions, and what research already exists decide where to look and what counts as a representative sample. Ask only what it does not already answer. If its Status line says `partial`, ask for the listed missing sections before using them and never infer them; treat `[unverified]` fields as absent.
 
 ---
 

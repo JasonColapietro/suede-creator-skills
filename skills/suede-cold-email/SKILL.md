@@ -1,6 +1,6 @@
 ---
 name: suede-cold-email
-description: "Use when asked \"write a cold email\" or to repair B2B outbound to qualified prospects. Suede AI produces sourced personalization, short subjects, bodies under 75 words, one ask and bounded follow-ups, with current sender-rule checks. NOT FOR: prospect qualification (use suede-prospecting), opted-in lifecycle email (use suede-emails), or broader sales collateral (use suede-sales-enablement)."
+description: "Use when asked \"write a cold email\" or to repair B2B outbound to qualified prospects. Suede AI produces sourced personalization, short subjects, bodies under 75 words, one ask and bounded follow-ups, with current sender-rule checks. NOT FOR: prospect qualification (use suede-prospecting), opted-in lifecycle email (use suede-emails), broader sales collateral (use suede-sales-enablement), or creator or influencer pitches (use suede-influencer-outreach)."
 metadata:
   display-name: "Suede AI Cold Email Skills"
   version: 2.1.0
@@ -17,7 +17,7 @@ Any agent that can read the prospect evidence and product brief; current sender-
 ## Before Writing
 
 **Check for product marketing context first:**
-If `.agents/product-marketing.md` exists (or `.claude/product-marketing.md`, or the legacy `product-marketing-context.md` filename, in older setups), read it before asking questions. Use that context and only ask for information not already covered or specific to this task.
+If `.agents/product-marketing.md` exists (or `.claude/product-marketing.md`, or the legacy `product-marketing-context.md` filename, in older setups), read it before asking questions. Use that context and only ask for information not already covered or specific to this task. If its Status line says `partial`, ask for the listed missing sections before using them and never infer them; treat `[unverified]` fields as absent.
 
 Understand the situation (ask if not provided):
 
@@ -214,6 +214,7 @@ Use them to inform the writing, not as a checklist to satisfy.
 
 - Need a qualified prospect list -> use `suede-prospecting`.
 - Need lifecycle or nurture email -> use `suede-emails`.
+- Need a first-touch pitch to a creator, influencer, or affiliate candidate -> use `suede-influencer-outreach`.
 - Need positioning context or collateral -> use `suede-product-marketing` or `suede-sales-enablement`.
 - Need CRM stages, lead routing, or suppression operations -> use `suede-revops`.
 - Before anything goes to a real recipient -> use `suede-deslop`.

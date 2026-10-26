@@ -26,6 +26,25 @@ manual, source-linked research worksheet or a user-supplied export.
 | **Trigger event monitoring** | Google Alerts, Feedly, LinkedIn Sales Nav alerts | Free options are sufficient for most |
 | **Local business discovery** | Google Maps (manual), Yelp, Facebook Pages | Browser-assisted, not bulk-extracted |
 
+## Tool selection by access (moved from SKILL.md)
+
+| If the user has access to... | Use it for | Verify Before Use |
+|------------------------------|------------|-------------------|
+| **Apollo** | B2B / SaaS firmographic + contact discovery | Freshness, export terms, email validation |
+| **Clay** | Multi-source enrichment, waterfall lookups, custom scoring | Credit cost, providers, field provenance |
+| **HubSpot Breeze Intelligence** (formerly Clearbit) | Company enrichment inside HubSpot | HubSpot tier, credits, coverage |
+| **ZoomInfo** | Enterprise B2B contact + intent data | License, export rights, signal freshness |
+| **Hunter or Snov** | Email pattern discovery and verification | Verification status and lawful basis |
+| **Truelist** | Email deliverability validation before outreach | Result meanings and current API limits |
+| **LinkedIn Sales Navigator** | Decision-maker mapping (manual, no scraping) | Platform terms; no bulk extraction |
+| **BuiltWith / Wappalyzer** | Tech stack qualification (SaaS branch) | Detection accuracy and staleness |
+| **Crunchbase** | Funding signals (SaaS branch) | Record recency and license tier |
+| **GitHub** | Stargazers / forks, public developer-intent signals | API terms, rate limits, company mapping |
+| **Google Maps + browser** | Local SMB discovery | Terms; assisted review only, no bulk extract |
+| **Outreach** | Sales engagement after approval | Sequence permissions and suppression rules |
+| **RB2B** | Visitor identification | Privacy basis and company-vs-person grain |
+| **Firecrawl / Browserbase** | Single prospect websites: never platforms | Target terms, scope, and session access |
+
 ---
 
 ## Apollo

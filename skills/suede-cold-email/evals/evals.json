@@ -21,10 +21,10 @@
     {
       "id": 2,
       "prompt": "Help me write a cold email to CTOs at enterprise companies. I sell cybersecurity training. My current email has a 2% open rate and 0% reply rate.",
-      "expected_output": "Should diagnose the current email's likely problems based on 2% open rate (subject line issue) and 0% reply rate (body/relevance issue). Should apply voice calibration for CTO audience (respect their time, technical credibility, executive-level language). Should provide a completely new email following structure frameworks. Subject line should be 2-4 words, look internal. Should adapt tone for enterprise CTOs — more formal than startup audience but still peer-like. Should provide the email plus analysis of why each element works.",
+      "expected_output": "Should diagnose the current email's likely problems: treat the 2% open rate as a deliverability or tracking signal (opens are distorted by Apple Mail Privacy Protection and are not proof of subject-line performance) and the 0% reply rate as a body/relevance issue. Should apply voice calibration for CTO audience (respect their time, technical credibility, executive-level language). Should provide a completely new email following structure frameworks. Subject line should be 2-4 words, look internal. Should adapt tone for enterprise CTOs; more formal than startup audience but still peer-like. Should provide the email plus analysis of why each element works.",
       "assertions": [
         "Diagnoses problems from the performance data",
-        "Identifies subject line as likely open rate issue",
+        "Treats the 2% open rate as a deliverability or tracking signal, not subject-line proof",
         "Applies voice calibration for CTO audience",
         "Subject line is short, lowercase, internal-looking",
         "Adapts tone for enterprise audience",
@@ -36,7 +36,7 @@
     {
       "id": 3,
       "prompt": "write me a follow-up sequence. prospect didn't reply to my first email about our HR software. how many should I send and how far apart?",
-      "expected_output": "Should trigger on casual phrasing. Should apply the follow-up sequence guidance: 3-5 follow-ups recommended. Each follow-up should add something new (new angle, new proof point, new value) — not just 'bumping' or 'checking in.' Should provide timing recommendations between emails. Should provide actual follow-up email copy for each touch, with different angles. Should include a breakup email at the end. Should note that each follow-up should be shorter than the previous.",
+      "expected_output": "Should trigger on casual phrasing. Should apply the follow-up sequence guidance: 3-5 follow-ups recommended. Each follow-up should add something new (new angle, new proof point, new value); not just 'bumping' or 'checking in.' Should provide timing recommendations between emails. Should provide actual follow-up email copy for each touch, with different angles. Should include a breakup email at the end. Should note that each follow-up should be shorter than the previous.",
       "assertions": [
         "Triggers on casual phrasing",
         "Recommends 3-5 follow-up emails",

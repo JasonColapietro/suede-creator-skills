@@ -2,6 +2,38 @@
 
 Detailed slide-by-slide guidance for building sales decks that tell a story and close deals.
 
+## Overview: Sales Deck / Pitch Deck
+
+### 10-12 Slide Framework
+
+1. **Current World Problem**: The pain your buyer lives with today
+2. **Cost of the Problem**: What inaction costs (time, money, risk)
+3. **The Shift Happening**: Market or technology change creating urgency
+4. **Your Approach**: How you solve it differently
+5. **Product Walkthrough**: 3-4 key workflows, not a feature tour
+6. **Proof Points**: Metrics, logos, analyst recognition
+7. **Case Study**: One customer story told well
+8. **Implementation / Timeline**: How they get from here to live
+9. **ROI / Value**: Expected return and payback period
+10. **Pricing Overview**: Transparent, tiered if applicable
+11. **Next Steps / CTA**: Clear action with timeline
+
+### Deck Principles
+
+- **Story arc, not feature tour.** Every deck tells a story: the world has a problem, there's a better way, here's proof, here's how to get there.
+- **One idea per slide.** If you need two points, use two slides.
+- **Design for presenting, not reading.** Slides support the conversation: they don't replace it. Minimal text, strong visuals.
+
+### Customization by Buyer Type
+
+| Buyer | Emphasize | De-emphasize |
+|-------|-----------|--------------|
+| Technical buyer | Architecture, security, integrations, API | ROI calculations, business metrics |
+| Economic buyer | ROI, payback period, total cost, risk | Technical details, implementation specifics |
+| Champion | Internal selling points, quick wins, peer proof | Deep technical or financial detail |
+
+---
+
 ## The Storytelling Arc
 
 Every great deck follows a narrative structure: **Situation → Complication → Resolution.**

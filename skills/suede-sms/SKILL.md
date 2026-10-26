@@ -23,7 +23,7 @@ claiming legal certification or sending messages.
 ## Before Starting
 
 **Check for product marketing context first:**
-If `.agents/product-marketing.md` exists (or `.claude/product-marketing.md`, or the legacy `product-marketing-context.md` filename, in older setups), read it before asking questions. Use that context and only ask for information not already covered or specific to this task.
+If `.agents/product-marketing.md` exists (or `.claude/product-marketing.md`, or the legacy `product-marketing-context.md` filename, in older setups), read it before asking questions. Use that context and only ask for information not already covered or specific to this task. If its Status line says `partial`, ask for the listed missing sections before using them and never infer them; treat `[unverified]` fields as absent.
 
 Gather this context (ask if not provided):
 
@@ -89,32 +89,23 @@ Application-to-Person 10-digit long codes must be registered through The Campaig
 
 **Registration covers**: brand identity verification, campaign use case (marketing, account notification, OTP, etc.), sample messages, opt-in mechanism, opt-out language. Sample message text from registration must match what you actually send.
 
-### EU/UK: GDPR-derived consent
+### EU/UK and Canada
 
-- Explicit opt-in required (no pre-checked boxes)
-- Right to withdraw consent must be as easy as giving it
-- Data subject access requests apply to SMS records
-- ePrivacy Directive layered on top of GDPR
-
-### Canada: CASL
-
-- Express consent + sender identification + unsubscribe in every message
-- Implied consent allowed for existing business relationships within 24 months
-- Penalties up to CAD $10M per violation
+- **EU/UK (GDPR + ePrivacy):** explicit opt-in with no pre-checked boxes, and withdrawal as easy as consent.
+- **Canada (CASL):** express consent, sender identification, and an unsubscribe in every message.
 
 **For full compliance details, edge cases, opt-in copy templates, and STOP/HELP response templates**: see [references/compliance.md](references/compliance.md).
 
 ---
 
-## Phone Number Types (US)
+## Phone Number Types and Platform Selection
 
-| Type | Throughput | Cost | Use Case | Trust |
-|------|-----------|------|----------|-------|
-| **Short code (5-6 digit)** | 100+ msg/sec | $500–$1,000/mo + setup | High-volume marketing | Highest (carrier-vetted) |
-| **Toll-free (1-8XX)** | ~3 msg/sec | $10–$30/mo | Mid-volume, B2C support | Medium-high (carrier-verified) |
-| **10DLC (regular long code)** | 1–250 msg/sec | $2–$10/mo | SMB, conversational, transactional | Medium (requires A2P 10DLC reg) |
-
-**Rule of thumb**: list <10K = 10DLC. List 10K–100K = toll-free. List 100K+ = short code.
+Short code, toll-free, and 10DLC throughput, cost, and list-size rules of thumb,
+plus the platform comparison table and quick picks, live in
+[references/platforms.md](references/platforms.md). Read it before recommending
+a number type or platform. This pack ships no SMS connectors: verify vendor
+documentation, authenticated access, per-message cost, carrier support, consent
+storage, quiet hours, STOP/HELP behavior, and send limits before naming one.
 
 ---
 
@@ -124,7 +115,7 @@ Application-to-Person 10-digit long codes must be registered through The Campaig
 SMS isn't free. At $0.0075–$0.04 per send + carrier fees, a 100K send costs $750–$4,000. This forces relevance: you can't "blast." Segment hard.
 
 ### 2. Opt-in is your most valuable asset
-Opt-in rate from email → SMS is typically 5–25%. A high-quality SMS list of 10K beats a low-quality list of 100K. Optimize opt-in quality, not volume.
+Measure email-to-SMS opt-in rate from your own capture data. A high-quality SMS list of 10K beats a low-quality list of 100K. Optimize opt-in quality, not volume.
 
 ### 3. Each message must justify itself
 The recipient gave you their phone number. Every send should pass: "would I be glad I got this text?" If no, don't send.
@@ -142,52 +133,16 @@ Short links are mandatory (`klvy.co`, `txt.attn.tv`, branded short domain). Trac
 
 ## SMS Sequence Types
 
-### Welcome / Opt-In Confirmation (immediate)
+Flows, in the usual build order: welcome / opt-in confirmation, abandoned cart,
+browse abandonment, post-purchase, win-back, promotional sends, and
+transactional (a separate compliance bucket that still needs A2P 10DLC
+registration in the US). Two rules hold everywhere: the opt-in confirmation
+names the program, frequency, "Msg & data rates may apply," HELP and STOP; and
+no discount goes on the first cart-recovery message.
 
-The confirmation text must name the program, state message frequency, and
-carry "Msg & data rates may apply" plus HELP and STOP instructions.
-
-Send 1: Confirmation + reward (immediate)
-> From Acme: Thanks for joining! Here's 10% off: ACME10. Use at checkout: acme.co/sale. Reply STOP to opt out.
-
-Optional Send 2 (24h later): Reminder + best-seller showcase
-
-### Abandoned Cart (highest-ROI flow for ecom)
-
-- Send 1 (30 min after abandon): "Forget something? Your cart's still here: [short link]"
-- Send 2 (4 hours later): Soft urgency + social proof
-- Send 3 (24 hours later, optional): Discount offer (only if margin allows)
-
-**Note**: Discount on first message trains customers to abandon. Reserve discount for Send 2 or 3.
-
-### Browse Abandonment
-
-- Send 1 (1 hour after browse): Product + "Thinking it over?" + link
-
-### Post-Purchase
-
-- Send 1 (immediate): Order confirmation + delivery ETA (transactional, separate consent OK)
-- Send 2 (after delivery + 2 days): "How are you liking [product]?" + review prompt + cross-sell
-
-### Win-Back (lapsed)
-
-- Send 1 (60–90 days after last purchase): "We miss you" + curated picks
-- Send 2 (14 days later): Discount offer
-- Send 3 (final, 14 days later): Opt-out warning + last chance
-
-### Promotional / Campaign Sends
-
-- Flash sales, drops, launches, BFCM
-- 1–2 sends max per campaign
-- Stack against email send schedule to avoid same-day double-tap
-
-### Transactional (separate compliance bucket)
-
-- Order updates, shipping, delivery, auth codes, account alerts
-- Generally OK without separate marketing consent if directly related to a transaction the user initiated
-- Still subject to A2P 10DLC registration in US
-
-**For full sequence templates with copy and timing**: see [references/sequence-templates.md](references/sequence-templates.md).
+Read [references/sequence-templates.md](references/sequence-templates.md) for
+per-flow send timing, copy templates with character counts, and segmentation
+rules before drafting any sequence.
 
 ---
 
@@ -229,32 +184,6 @@ Optional Send 2 (24h later): Reminder + best-seller showcase
 
 ---
 
-## Platform Selection
-
-Evaluation examples, not guaranteed integrations: this pack ships no SMS connectors. Before recommending one, verify vendor
-documentation, authenticated access, per-message cost, carrier support, consent storage, quiet hours, STOP/HELP behavior, and send limits.
-
-| Platform | Best For | Cost Tier | Verify Before Use |
-|----------|----------|-----------|-------------------|
-| **Klaviyo SMS** | DTC ecom already on Klaviyo email | $$ | Store integration, consent, attribution |
-| **Postscript** | DTC Shopify ecom, deep integration | $$ | Store integration, consent, attribution |
-| **Attentive** | Mid-market+ ecom, full-service | $$$ | Store integration, consent, attribution |
-| **Twilio / Plivo** | Custom builds, transactional, devs | $ (raw API) | Number registration, throughput, callbacks |
-| **Brevo SMS** | EU-focused, email + SMS combo | $ | Regional coverage, orchestration, suppression |
-| **SimpleTexting** | SMB, simple needs, ease of use | $ | Regional coverage, consent record |
-| **Customer.io** | Behavior-based automation + SMS | $$ | Regional coverage, orchestration, suppression |
-| **AudienceTap** | Specialized DTC capture | $ | Capture method, consent record, carrier coverage |
-
-**Quick picks**:
-- Already on Klaviyo for email + DTC/ecom → **Klaviyo SMS** (no second platform to learn)
-- Shopify ecom, want deeper SMS-specific features → **Postscript**
-- Building custom SMS into a product → **Twilio**
-- B2B SaaS doing transactional/auth → **Twilio** or **Customer.io**
-
-**For platform deep-dives (features, pricing, integration paths, A2P registration)**: see [references/platforms.md](references/platforms.md).
-
----
-
 ## Measurement
 
 ### Key Metrics
@@ -286,7 +215,7 @@ establishes a healthy program or expected result.
 - Copy length (short SMS vs MMS with image)
 - Discount amount and trigger (immediate vs delayed)
 - Personalization tokens (with first name vs without)
-- CTA copy ("Shop now" vs "See it" vs "Last chance")
+- CTA copy ("Shop now" vs "See it" vs a specific end date)
 
 ---
 
@@ -309,7 +238,7 @@ Compliance footer: [STOP language present / not required here, and why]
 ```
 
 4. **Platform recommendation**: Based on stack, list size, and complexity.
-5. **Measurement plan**: KPIs, benchmarks, A/B test queue.
+5. **Measurement plan**: KPIs with the user's dated baseline (or "no baseline supplied"), review thresholds, A/B test queue.
 6. **Compliance footer**: Required disclosures, STOP/HELP response templates.
 
 Keep recommendations specific. Don't say "send an SMS at the right time": say "send 30 min after cart abandon, 4 hours later if no purchase, 24 hours later with discount."

@@ -2,6 +2,36 @@
 
 Common B2B SaaS objections with response frameworks. Organized by category for quick reference.
 
+## Overview: Objection Handling Docs
+
+### Objection Categories
+
+| Category | Examples |
+|----------|----------|
+| Price | "Too expensive," "No budget this quarter," "Competitor is cheaper" |
+| Timing | "Not the right time," "Maybe next quarter," "Too busy to implement" |
+| Competition | "We already use X," "What makes you different?" |
+| Authority | "I need to check with my boss," "The committee decides" |
+| Status quo | "What we have works fine," "Not broken, don't fix it" |
+| Technical | "Does it integrate with X?," "Security concerns," "Can it scale?" |
+
+### Response Framework
+
+For each objection, document:
+
+1. **Objection statement**: Exactly how reps hear it
+2. **Why they say it**: The real concern behind the words
+3. **Response approach**: How to acknowledge and redirect
+4. **Proof point**: Specific evidence that addresses the concern
+5. **Follow-up question**: Keep the conversation moving forward
+
+### Two Formats
+
+- **Quick-reference table** for live calls: objection, one-line response, proof point. Fits on one screen.
+- **Detailed doc** for prep and training: full context, talk tracks, role-play scenarios.
+
+---
+
 ## Quick-Reference Table
 
 For live calls. Find the objection, scan the response, reference the proof.

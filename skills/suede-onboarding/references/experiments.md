@@ -199,7 +199,7 @@ Candidate tests from signup through first value. Design, sizing, and stopping ru
 
 | Test | Hypothesis |
 |------|------------|
-| Subject lines | Open rate optimization |
+| Subject lines | Clicks and activation, not opens (Apple Mail Privacy Protection inflates opens) |
 | Personalization depth | Name vs. behavior-based |
 | CTA prominence | Single clear action |
 | Social proof inclusion | Testimonials in email |

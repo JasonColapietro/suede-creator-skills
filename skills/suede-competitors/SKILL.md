@@ -16,7 +16,7 @@ Any text-capable agent with current competitor evidence and product context. Ver
 
 ## Initial Assessment
 
-Check for `.agents/product-marketing.md` (or `.claude/product-marketing.md`, or the legacy `product-marketing-context.md`) and read it if present: your value proposition, ICP, pricing model, differentiators, and proof decide which comparisons you can win on the evidence, and they are usually already written down there.
+Check for `.agents/product-marketing.md` (or `.claude/product-marketing.md`, or the legacy `product-marketing-context.md`) and read it if present: your value proposition, ICP, pricing model, differentiators, and proof decide which comparisons you can win on the evidence, and they are usually already written down there. If its Status line says `partial`, ask for the listed missing sections before using them and never infer them; treat `[unverified]` fields as absent.
 
 Then work the intake list under Task-Specific Questions below; ask only what the context file did not already answer. Current competitor evidence, pricing, features, ratings, comes from `suede-competitor-profiling`, not from memory.
 
@@ -147,39 +147,20 @@ Cover what transfers, what needs reconfiguration, support offered, and quotes fr
 
 ---
 
-## Content Architecture
+## Evidence Input
 
-### Centralized Competitor Data
-Create a single source of truth for each competitor with:
-- Positioning and target audience
-- Pricing (all tiers)
-- Feature ratings
-- Strengths and weaknesses
-- Best for / not ideal for
-- Common complaints (from reviews)
-- Migration notes
+Evidence: run `suede-competitor-profiling` first. Its
+`competitor-profiles/<slug>.md` is the centralized data file for each
+competitor, and its `competitor-profiles/raw/<slug>/<YYYY-MM-DD>/` captures are
+the source URLs and dates the hand-over check below requires. If no profile
+exists or it is older than a quarter, run that skill (a quick scan is enough for
+one page) before drafting. Do not research competitors from memory inside this
+skill.
 
-**For data structure and examples**: See [references/content-architecture.md](references/content-architecture.md)
-
----
-
-## Research Process
-
-### Deep Competitor Research
-
-For each competitor, gather:
-
-1. **Product research**: Sign up, use it, document features/UX/limitations
-2. **Pricing research**: Current pricing, what's included, hidden costs
-3. **Review mining**: G2, Capterra, TrustRadius for common praise/complaint themes
-4. **Customer feedback**: Talk to customers who switched (both directions)
-5. **Content research**: Their positioning, their comparison pages, their changelog
-
-### Ongoing Updates
-
-- **Quarterly**: Verify pricing, check for major feature changes
-- **When notified**: Customer mentions competitor change
-- **Annually**: Full refresh of all competitor data
+Read [references/content-architecture.md](references/content-architecture.md)
+for the map from page sections to profile fields, the few page-only fields
+(best for, not ideal for, migration notes) and where to record them, and the
+index and footer structure for a page set.
 
 ---
 
@@ -253,7 +234,7 @@ drafting:
 Three deliverables, all with their schemas in the references: do not invent a
 shape for them:
 
-- **Competitor data file**: the centralized per-competitor record; structure in [references/content-architecture.md](references/content-architecture.md).
+- **Evidence map**: for each page, the `competitor-profiles/<slug>.md` fields and raw capture dates behind every competitor claim, plus any page-only fields; mapping in [references/content-architecture.md](references/content-architecture.md).
 - **Page content**: URL, meta tags, full copy by section, tables, CTAs; section templates in [references/templates.md](references/templates.md).
 - **Page set plan**: which pages to create, in priority order by search volume and evidence readiness.
 
