@@ -157,6 +157,17 @@
 .directory :is(button, input, select, summary):focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
 .directory :is(h2, h3, section, tr[id]) { scroll-margin-top: 96px; }
 .directory .eyebrow { color: var(--gold); }
+.directory a.florida-recognition {
+  display: grid; gap: 4px; width: fit-content; max-width: 100%; margin: 24px 0;
+  padding: 14px 18px; border: 1px solid var(--gold); border-radius: 4px;
+  background: var(--surface); color: var(--cream); text-decoration: none;
+}
+.directory .florida-recognition strong { color: var(--gold); font: 700 clamp(1.125rem, 1rem + .4vw, 1.375rem)/1.25 var(--mono); }
+.directory .florida-category { font-size: 16px; font-weight: 600; line-height: 1.4; }
+.directory .florida-detail { color: var(--cream); font-size: 14px; line-height: 1.5; }
+.directory .florida-source { color: var(--gold); font-size: 14px; line-height: 1.5; text-decoration: underline; text-underline-offset: 3px; }
+.directory .florida-recognition:hover .florida-source { text-decoration-thickness: 2px; }
+.directory .florida-recognition:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
 .directory p { max-width: 72ch; }
 .directory .panel { background: transparent; padding: 28px 0; border: 0; border-top: 1px solid var(--border); border-radius: 0; }
 .directory .panel > h2 { margin-top: 0; }
