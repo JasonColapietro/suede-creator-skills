@@ -155,6 +155,8 @@ December 2, 2024). Since January 12, 2026 the Ads Insights API no longer returns
 7-day view and 28-day view attribution windows. Before any Meta strategy call,
 load the strategy layer at the top of [meta-decision-system.md](references/meta-decision-system.md).
 
+---
+
 ## Campaign Optimization
 
 Read [optimization and retargeting](references/optimization-and-retargeting.md) before proposing budget, bid, audience or retargeting changes. It contains the existing metric, bid progression and funnel-window rules.
