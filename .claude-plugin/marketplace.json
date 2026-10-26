@@ -1,6 +1,6 @@
 {
   "name": "suede",
-  "description": "Open-source AI skills for SEO, marketing, and business operations in Claude Code and Codex.",
+  "description": "Suede AI open-source skills for SEO, marketing, and business operations in Claude Code and Codex.",
   "owner": {
     "name": "Jason Colapietro",
     "url": "https://github.com/JasonColapietro"
@@ -10,7 +10,7 @@
       "name": "suede-skills",
       "source": "./",
       "strict": true,
-      "description": "Open-source AI skills for SEO, marketing, and business operations in Claude Code and Codex. Installs the complete pack, including code review, app delivery, and creator workflows."
+      "description": "Suede AI open-source skills for SEO, marketing, and business operations in Claude Code and Codex. Installs the complete pack, including code review, app delivery, and creator workflows."
     },
     {
       "name": "suede-agent-workflows",
@@ -31,7 +31,7 @@
         "./suede-graph-flo-xr/agents/suede-graph-flo-xr-applier.md",
         "./suede-graph-flo-xr/agents/suede-graph-flo-xr-verifier.md"
       ],
-      "description": "Multi-agent orchestration subset: search competing plans and ship one selected repo change through the Suede Thought Graph DAG (suede-graph-flo-xr), coordinate build lanes with quality gates and a signed handoff (suede-agent-teams), route cross-surface work end to end (suede-workflow-skills), and turn AI features into eval specs and acceptance gates (suede-ai-eval)."
+      "description": "Suede AI multi-agent orchestration subset: search competing plans and ship one selected repo change through the Suede Thought Graph DAG (suede-graph-flo-xr), coordinate build lanes with quality gates and a signed handoff (suede-agent-teams), route cross-surface work end to end (suede-workflow-skills), and turn AI features into eval specs and acceptance gates (suede-ai-eval)."
     },
     {
       "name": "suede-code",
@@ -41,7 +41,7 @@
         "./suede-code",
         "./suede-ci-gate"
       ],
-      "description": "Code quality subset: one-pass review and A-F ship verdict with TypeScript, React, Next.js, OWASP, and database checklists, plus findings-only and grade-only modes (suede-code), and CI branch protection that gates the merge (suede-ci-gate)."
+      "description": "Suede AI code quality subset: one-pass review and A-F ship verdict with TypeScript, React, Next.js, OWASP, and database checklists, plus findings-only and grade-only modes (suede-code), and CI branch protection that gates the merge (suede-ci-gate)."
     },
     {
       "name": "suede-marketing",

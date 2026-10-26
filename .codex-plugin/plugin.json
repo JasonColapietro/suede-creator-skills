@@ -1,7 +1,7 @@
 {
   "name": "suede-skills",
   "version": "0.19.3",
-  "description": "Open-source AI skills for SEO, marketing, and business operations in Claude Code and Codex. Includes code review, app delivery, creator tools, and reusable workflows.",
+  "description": "Suede AI open-source skills for SEO, marketing, and business operations in Claude Code and Codex. Includes code review, app delivery, creator tools, and reusable workflows.",
   "author": {
     "name": "Jason Colapietro",
     "url": "https://github.com/JasonColapietro"
