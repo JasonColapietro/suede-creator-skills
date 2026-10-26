@@ -29,10 +29,12 @@ The maintainer confirmed the existing Featured website badge in
 [#259](https://github.com/JasonColapietro/suede-creator-skills/issues/259#issuecomment-6404412343).
 That website placement is not entered as rendered-README verification.
 
-## Prepared source fix and exact remaining dependency
+## Submitted source fix and exact remaining dependency
 
-The upstream patch is prepared locally at commit
-`1a1300e5254bd803782782aba75da6b3ccdfa8e3`, based on the published revision above.
+The upstream patch is submitted as [draft PR #1](https://github.com/cwong5/extra-caffeine-mcp/pull/1)
+by `JasonColapietro`, with head `f0c4d847f5a4184777269b80d047eefcd78547f4`
+and base `4e0ac32e685c5366ab487502173168470a42a178`. It matches the tested local
+proposal at `1a1300e5254bd803782782aba75da6b3ccdfa8e3`. The PR is open and unmerged.
 It clarifies the use-when trigger, supplies a quoted request example and explicit
 cloud-only/sleeping-Mac boundary, declares the existing macOS 14+/paid Extra
 Caffeine 1.2+/trusted local MCP prerequisites, and calls the connection an MCP
@@ -47,12 +49,12 @@ signals account for the remaining 14 raw rubric points and are not defects to
 pad. This result qualifies for the existing quality-shield rule once the fixed
 source is accepted and reviewed upstream.
 
-Creating the intended `JasonColapietro/extra-caffeine-mcp` fork using
-`POST /repos/cwong5/extra-caffeine-mcp/forks` returned **Forbidden**. The fork
-action was denied, and no alternate route was attempted. Consequently there is
-no upstream draft PR or upstream CI run for this local commit. Portable patch
-and Git-bundle artifacts accompany the handoff; their patch hash is in the
-intake receipt.
+Upstream submission is complete. The upstream PR records a valid Agent Skills
+preflight, successful route/resource
+lint, 34 scoring/policy tests and 16 inclusion tests passing (50 total), and the
+unchanged-rubric 86/B result. No upstream CI checks ran. The original portable
+patch hash remains in the intake receipt for provenance; it is not the hash of
+the browser-created commit. The remaining dependency is upstream acceptance.
 
 **Dependency:** upstream must accept the source fix. Then fetch the actual
 default-branch commit (which may differ after a squash), re-run the unchanged
@@ -61,7 +63,8 @@ repository provenance, update this review/receipt and Featured source pin, rotat
 the snapshot identifier, and rebuild the directory, sitemap and Awesome catalog.
 At the verified 86/B result, the standard builders produce the full skill page,
 numeric and grade shields, and qualifying report automatically. Do not substitute
-the local proposal's commit or score into the published-source catalog.
+the local proposal's commit, unmerged PR head or score into the published-source
+catalog.
 
 An isolated local preview of the proposed source exposed a directory renderer
 defect: restricted-license setup notes without command arrays crashed the full
@@ -89,4 +92,4 @@ unverified. Independent source review confirmed the score arithmetic and scope.
 Directory regressions cover the missing-record failure, exact accepted source,
 report, fallback badges, working Featured link, restricted license, no generic
 install command and preservation of all other catalog records. Final test and
-CI results are recorded in the draft PR.
+CI results are recorded in [directory draft PR #281](https://github.com/JasonColapietro/suede-creator-skills/pull/281).

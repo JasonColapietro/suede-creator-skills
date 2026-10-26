@@ -34,7 +34,7 @@
   "security_scan_status": "not_scanned",
   "runtime_status": "not_exercised",
   "proposed_fix": {
-    "status": "local_only_not_accepted_upstream",
+    "status": "draft_pr_open_awaiting_upstream_acceptance",
     "base_revision": "4e0ac32e685c5366ab487502173168470a42a178",
     "local_revision": "1a1300e5254bd803782782aba75da6b3ccdfa8e3",
     "patch_sha256": "e1f62e8dfeb520fb74be9332dce8b6db24d5dff89c366441f0b2c326df44ebdd",
@@ -42,14 +42,7 @@
     "score": 86,
     "grade": "B",
     "score_delta": 17,
-    "quality_shield_dependency": "Upstream must accept the workflow fix; re-fetch and review the resulting cwong5/extra-caffeine-mcp default-branch commit before updating this catalog. The local commit is not a published source revision.",
-    "fork_attempt": {
-      "action": "POST /repos/cwong5/extra-caffeine-mcp/forks",
-      "intended_fork": "JasonColapietro/extra-caffeine-mcp",
-      "result": "Forbidden",
-      "status": "denied",
-      "retried": false
-    },
+    "quality_shield_dependency": "Upstream draft PR #1 must be accepted; re-fetch and review the resulting cwong5/extra-caffeine-mcp default-branch commit before updating this catalog. Neither the local proposal nor the unmerged draft head is an accepted catalog source.",
     "remaining_quality_points": {
       "references": 3,
       "scripts": 2,
@@ -57,6 +50,28 @@
       "allowed_tools": 2
     },
     "runtime_status": "not_exercised",
-    "security_scan_status": "not_scanned"
+    "security_scan_status": "not_scanned",
+    "upstream_pr": {
+      "url": "https://github.com/cwong5/extra-caffeine-mcp/pull/1",
+      "number": 1,
+      "author": "JasonColapietro",
+      "head_revision": "f0c4d847f5a4184777269b80d047eefcd78547f4",
+      "base_revision": "4e0ac32e685c5366ab487502173168470a42a178",
+      "state": "open",
+      "draft": true,
+      "merged": false,
+      "ci_checks": "none"
+    },
+    "reported_validation": {
+      "source": "https://github.com/cwong5/extra-caffeine-mcp/pull/1",
+      "agent_skills_preflight": "valid",
+      "route_resource_lint": "OK",
+      "scoring_policy_tests_passed": 34,
+      "inclusion_tests_passed": 16,
+      "total_tests_passed": 50,
+      "score": 86,
+      "grade": "B",
+      "checks": "11111111"
+    }
   }
 }
