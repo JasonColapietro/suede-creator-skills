@@ -59,7 +59,7 @@ Churn has two types requiring different strategies:
 | **Voluntary** | Customer chooses to cancel | Cancel flows, save offers, exit surveys |
 | **Involuntary** | Payment fails | Dunning emails, smart retries, card updaters |
 
-Voluntary churn is typically 50-70% of total churn. Involuntary churn is 30-50% but is often easier to fix.
+Measure the voluntary and involuntary split from the account's own billing data before choosing a mode; involuntary churn is often the faster fix because payment recovery needs no change in customer intent.
 
 This skill supports three modes:
 

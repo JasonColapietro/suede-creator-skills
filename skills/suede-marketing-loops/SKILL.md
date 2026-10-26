@@ -1,6 +1,6 @@
 ---
 name: suede-marketing-loops
-description: "Suede AI Marketing Loop Skills. recurring marketing workflow design with cadence, action conditions, durable state, dedupe, checkpoints, and stop rules. Use when asked \"create a weekly ranking watch\" or to turn repeatable marketing work into a complete loop spec. NOT FOR: one-off plans (suede-marketing-plan), experiments (suede-ab-testing), or scheduling without authority."
+description: "Suede AI Marketing Loop Skills. Recurring marketing workflow design with cadence, action conditions, durable state, dedupe, checkpoints, and stop rules. Use when asked \"create a weekly ranking watch\" or to turn repeatable marketing work into a complete loop spec. NOT FOR: one-off plans (suede-marketing-plan), experiments (suede-ab-testing), or scheduling without authority."
 metadata:
   display-name: "Suede AI Marketing Loop Skills"
   version: 1.2.0

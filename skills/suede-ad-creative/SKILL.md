@@ -286,7 +286,7 @@ Organize by angle, with character counts:
    -> "Reports in 5 Min, Not 5 Hrs" (27)
 
 ### Descriptions (90 char max)
-1. "Marketing teams save 10+ hours/week with automated reporting. Start free." (73)
+1. "Marketing teams save [verified hours]/week with automated reporting. Start free." (bracketed values come from inputs or reviews)
 2. "Connect your data sources once. Get automated reports forever. No code required." (80)
 ```
 
@@ -296,7 +296,7 @@ When generating at scale (10+ variations), offer CSV format for direct upload:
 
 ```csv
 headline_1,headline_2,headline_3,description_1,description_2,platform
-"Stop Manual Reporting","Automate in 5 Minutes","Join 10K+ Teams","Save 10+ hrs/week on reports. Start free.","Connect data sources once. Reports forever.","google_ads"
+"Stop Manual Reporting","Automate in 5 Minutes","Join [verified count] Teams","Save [verified hrs]/week on reports. Start free.","Connect data sources once. Reports forever.","google_ads"
 ```
 
 ### Static Batch Output (Mode 3)
@@ -345,7 +345,7 @@ Every mode clears this gate before anything is handed over. It is not mode-speci
 - [ ] At least 2-3 CTA headlines are present in every RSA
 - [ ] No two variants share an angle; near-duplicates are removed
 - [ ] Every Mode 3 concept cites its grounding source (which review, winning ad, or comment)
-- [ ] No string from the Never-ship list above appears in any variant
+- [ ] No string from the Never-ship list in references/writing-quality.md appears in any variant (load it before drafting)
 - [ ] Nothing plausibly violates platform policy for the target placement
 
 Any failure means fix it before delivering. Do not ship a batch with the failure noted as a caveat.

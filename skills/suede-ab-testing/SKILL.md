@@ -199,7 +199,8 @@ Looking at results before reaching sample size and stopping early leads to false
 
 ### Statistical Significance
 - 95% confidence = p-value < 0.05
-- Means <5% chance result is random
+- p < 0.05 means a difference this large would appear under 5% of the time if
+  the variants were truly equal; it is not the probability the result is chance
 - Not a guarantee: just a threshold
 
 ### Analysis Checklist
@@ -217,7 +218,7 @@ Looking at results before reaching sample size and stopping early leads to false
 |--------|------------|
 | Significant winner | Implement variant |
 | Significant loser | Keep control, learn why |
-| No significant difference | Need more traffic or bolder test |
+| No significant difference | Inconclusive: report it as a result and keep control; retest only with a bolder change or a larger predeclared sample |
 | Mixed signals | Dig deeper, maybe segment |
 
 ---

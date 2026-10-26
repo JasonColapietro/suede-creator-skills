@@ -564,7 +564,7 @@
       "area": "marketing",
       "specialty": "demand",
       "lane": "Acquisition assets",
-      "description": "Suede AI Lead Magnet Skills. lead-magnet strategy for useful downloads, gated resources, delivery, and qualified capture. Use when asked \"design a lead magnet\" or to choose formats, gating, an indexable companion page, and a measurement plan. NOT FOR: interactive tools (suede-free-tools), nurture flows (suede-emails), or production copy (suede-copy).",
+      "description": "Suede AI Lead Magnet Skills. Lead-magnet strategy for useful downloads, gated resources, delivery, and qualified capture. Use when asked \"design a lead magnet\" or to choose formats, gating, an indexable companion page, and a measurement plan. NOT FOR: interactive tools (suede-free-tools), nurture flows (suede-emails), or production copy (suede-copy).",
       "useWhen": "The user is planning gated content, a content upgrade, a template, or any downloadable in exchange for contact details.",
       "displayName": "Suede AI Lead Magnet Skills"
     },
@@ -582,7 +582,7 @@
       "area": "marketing",
       "specialty": "position",
       "lane": "Strategy & research",
-      "description": "Suede AI Marketing Loop Skills. recurring marketing workflow design with cadence, action conditions, durable state, dedupe, checkpoints, and stop rules. Use when asked \"create a weekly ranking watch\" or to turn repeatable marketing work into a complete loop spec. NOT FOR: one-off plans (suede-marketing-plan), experiments (suede-ab-testing), or scheduling without authority.",
+      "description": "Suede AI Marketing Loop Skills. Recurring marketing workflow design with cadence, action conditions, durable state, dedupe, checkpoints, and stop rules. Use when asked \"create a weekly ranking watch\" or to turn repeatable marketing work into a complete loop spec. NOT FOR: one-off plans (suede-marketing-plan), experiments (suede-ab-testing), or scheduling without authority.",
       "useWhen": "The user wants a repeatable, self-running marketing workflow rather than a one-off task.",
       "displayName": "Suede AI Marketing Loop Skills"
     },
@@ -600,7 +600,7 @@
       "area": "marketing",
       "specialty": "found",
       "lane": "Content & audience",
-      "description": "Suede AI Newsroom Skills. editorial pipeline with six role contracts, an inspectable campaign record, distinct distribution arguments, and performance feedback. Use when asked \"build an AI content team\" or to repair duplicated, generic, or unsourced agent content. NOT FOR: topics (suede-content-strategy), channel calendars (suede-social), scheduling (suede-marketing-loops), code lanes (suede-agent-teams), or flagship writing (suede-ship-copy).",
+      "description": "Suede AI Newsroom Skills. Editorial pipeline with six role contracts, an inspectable campaign record, distinct distribution arguments, and performance feedback. Use when asked \"build an AI content team\" or to repair duplicated, generic, or unsourced agent content. NOT FOR: topics (suede-content-strategy), channel calendars (suede-social), scheduling (suede-marketing-loops), code lanes (suede-agent-teams), or flagship writing (suede-ship-copy).",
       "useWhen": "The user wants an AI content team, an editorial pipeline, or a one-person media company, or their content agents return generic, duplicated, or unsourced work, or one idea has to fill several surfaces without every asset arguing the same thing.",
       "displayName": "Suede AI Newsroom Skills"
     },
@@ -645,7 +645,7 @@
       "area": "workflow",
       "lane": "Code review & CI",
       "specialty": "ship",
-      "description": "Suede AI Parity Contract Skills. cross-surface parity contracts generated from live reference constants and asserted through follower behavior. Use when asked \"these app and web thresholds disagree\" or when rules are copied across web, mobile, docs, or services. NOT FOR: choosing the correct shipped value, diff review (suede-code), merge-gate setup (suede-ci-gate), or search audits (suede-seo-audit).",
+      "description": "Suede AI Parity Contract Skills. Cross-surface parity contracts generated from live reference constants and asserted through follower behavior. Use when asked \"these app and web thresholds disagree\" or when rules are copied across web, mobile, docs, or services. NOT FOR: choosing the correct shipped value, diff review (suede-code), merge-gate setup (suede-ci-gate), or search audits (suede-seo-audit).",
       "useWhen": "Hold one canonical answer across web, iOS, Android and docs so nothing contradicts itself, and pin the divergences you already have.",
       "displayName": "Suede AI Parity Contract Skills"
     },

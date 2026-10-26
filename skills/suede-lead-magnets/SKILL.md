@@ -1,6 +1,6 @@
 ---
 name: suede-lead-magnets
-description: "Suede AI Lead Magnet Skills. lead-magnet strategy for useful downloads, gated resources, delivery, and qualified capture. Use when asked \"design a lead magnet\" or to choose formats, gating, an indexable companion page, and a measurement plan. NOT FOR: interactive tools (suede-free-tools), nurture flows (suede-emails), or production copy (suede-copy)."
+description: "Suede AI Lead Magnet Skills. Lead-magnet strategy for useful downloads, gated resources, delivery, and qualified capture. Use when asked \"design a lead magnet\" or to choose formats, gating, an indexable companion page, and a measurement plan. NOT FOR: interactive tools (suede-free-tools), nurture flows (suede-emails), or production copy (suede-copy)."
 metadata:
   display-name: "Suede AI Lead Magnet Skills"
   version: 2.1.0

@@ -21,15 +21,15 @@ Google permits "up to" 15 headlines and 4 descriptions; a Suede AI RSA ships all
 2. **Negative keyword list**, labeled `Negative keywords:`: minimum **8** entries, group-level vs campaign-level called out.
 3. **Sitelinks** (≥ 4), **Callouts** (≥ 4 ≤25 chars), **Structured snippets** if relevant.
 
-## Medical / CFM compliance (when product context indicates pt-BR medical practice)
+## Regulated verticals
 
-If `.agents/product-marketing.md` indicates a Brazilian medical practice (CFM-regulated), the following terms are **forbidden** in headlines, descriptions, sitelinks, and callouts:
-
-- Superlatives: `#1`, `melhor`, `o melhor`, `melhor do brasil`, `top`, `referência`
-- Outcome promises: `garantido`, `garantia`, `cura`, `cura definitiva`, `100%`, `resultado garantido`, `livre da dor`
-- Comparative claims vs other doctors/clinics
-
-Use neutral framing: `atendimento`, `consulta`, `avaliação`, `segunda opinião`, `agende sua consulta`, `tire suas dúvidas`. Geo modifier (`Porto Alegre`, `POA`, `Zona Sul POA`) required where the prompt specifies a region.
+When `.agents/product-marketing.md` names a regulated vertical (medical, legal,
+financial, alcohol, and similar), load its compliance list of banned claims,
+required disclaimers, and required geo modifiers, and enforce it in headlines,
+descriptions, sitelinks, and callouts. Never hardcode one client's list into
+another account's ads. With no list supplied, avoid superlatives, outcome
+guarantees, and comparative claims, and flag that the vertical's rules are
+unverified.
 
 ## Output ORDER (mandatory: emit in this order to avoid truncation)
 
@@ -87,6 +87,6 @@ Before sending the output, run this checklist mentally:
 - [ ] Every headline is ≤30 chars; every description is ≤90 chars. Character counts printed.
 - [ ] Negative keyword list labeled and ≥8 entries.
 - [ ] Ad group structure labeled.
-- [ ] If medical (CFM): no forbidden superlative/outcome words; geo modifier present where required; language is pt-BR.
+- [ ] If the vertical is regulated: the supplied compliance list is enforced, required geo modifiers and disclaimers are present, and the language matches the market.
 
 If any check fails, rewrite before responding. Do not ship partial RSAs.

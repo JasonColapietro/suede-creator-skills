@@ -1,6 +1,6 @@
 ---
 name: suede-newsroom
-description: "Suede AI Newsroom Skills. editorial pipeline with six role contracts, an inspectable campaign record, distinct distribution arguments, and performance feedback. Use when asked \"build an AI content team\" or to repair duplicated, generic, or unsourced agent content. NOT FOR: topics (suede-content-strategy), channel calendars (suede-social), scheduling (suede-marketing-loops), code lanes (suede-agent-teams), or flagship writing (suede-ship-copy)."
+description: "Suede AI Newsroom Skills. Editorial pipeline with six role contracts, an inspectable campaign record, distinct distribution arguments, and performance feedback. Use when asked \"build an AI content team\" or to repair duplicated, generic, or unsourced agent content. NOT FOR: topics (suede-content-strategy), channel calendars (suede-social), scheduling (suede-marketing-loops), code lanes (suede-agent-teams), or flagship writing (suede-ship-copy)."
 metadata:
   display-name: "Suede AI Newsroom Skills"
   version: 1.2.0

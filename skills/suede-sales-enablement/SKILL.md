@@ -392,6 +392,7 @@ authenticated access, pricing, permissions, and data-export behavior before use.
 ## Routing
 
 - Use `suede-product-marketing` for approved positioning and proof context.
-- Use `suede-competitors` for comparison and battle-card evidence.
+- Use `suede-competitor-profiling` for battle-card evidence and `suede-competitors`
+  to keep cards consistent with public comparison pages.
 - Use `suede-pricing` for pricing and packaging decisions.
 - Use `suede-revops` for pipeline stages, routing, and deal-desk operations.

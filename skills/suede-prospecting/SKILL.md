@@ -217,7 +217,7 @@ For SaaS / B2B (≤25 rows):
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 ```
 
-For Local SMB (≤15 rows): port from the local-prospector reference:
+For Local SMB (≤15 rows): port from [references/local-prospecting.md](references/local-prospecting.md):
 
 ```
 | Score | Business | Category | Area | Website status | Website/Social | Phone | Why it's a prospect | Confidence |
