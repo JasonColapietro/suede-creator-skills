@@ -1035,7 +1035,7 @@ function installSection(here, s) {
     const note = NOTES[s.id];
     const route = note
       ? `        <p>${esc(note.text)}</p>
-${codeBlock({ label: "Claude Code", key: "install-publisher" }, note.commands.join("\n"))}
+${note.commands?.length ? codeBlock({ label: "Claude Code", key: "install-publisher" }, note.commands.join("\n")) : ""}
         <p class="muted">Source: <a href="${esc(note.source)}" target="_blank" rel="noopener">${esc(who)}'s documentation</a>.</p>`
       : `        <p>The directory shows no install commands for it. Read the <a href="${esc(s.license_url)}" target="_blank" rel="noopener">license terms</a> before you use the skill.</p>`;
     return `      <section class="panel" aria-labelledby="install-title">

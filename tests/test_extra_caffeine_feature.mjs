@@ -3,6 +3,10 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { createHash } from 'node:crypto';
 import { qualityScore } from '../scripts/directory/badges.mjs';
+import { execFileSync, spawnSync } from 'node:child_process';
+import os from 'node:os';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 const read = (p) => fs.readFileSync(new URL(`../${p}`, import.meta.url), 'utf8');
 const repo = 'cwong5/extra-caffeine-mcp';
 const id = 'extra-caffeine-workflow';
@@ -58,4 +62,27 @@ test('Extra Caffeine publishes the accepted source with its computed report and 
   assert.doesNotMatch(feature, /npx skills add|git clone|cp -R|security certified|score\.svg/);
   assert.ok(page.includes('https://skills.suedeai.ai/directory/featured/#extra-caffeine'));
   assert.ok(page.includes('https://skills.suedeai.ai/directory/badges/featured.svg'));
+});
+
+test('restricted full pages accept publisher setup links without install commands', (t) => {
+  const root = fileURLToPath(new URL('../', import.meta.url));
+  const temp = fs.mkdtempSync(path.join(os.tmpdir(), 'extra-caffeine-setup-'));
+  t.after(() => fs.rmSync(temp, { recursive: true, force: true }));
+  const fixture = path.join(temp, 'checkout');
+  execFileSync('git', ['clone', '--quiet', '--local', '--no-hardlinks', root, fixture]);
+  // Use the working builder so the test verifies an uncommitted fix too.
+  fs.copyFileSync(path.join(root, 'scripts/build-directory.mjs'), path.join(fixture, 'scripts/build-directory.mjs'));
+  fs.symlinkSync(path.join(root, 'node_modules'), path.join(fixture, 'node_modules'), 'dir');
+  const notesPath = path.join(fixture, 'directory/notes.json');
+  const notes = JSON.parse(fs.readFileSync(notesPath, 'utf8'));
+  // A real, already-qualified restricted page exercises the same route that
+  // Extra Caffeine will need after upstream accepts its metadata fix.
+  delete notes['anthropics/skills/docx'].commands;
+  fs.writeFileSync(notesPath, JSON.stringify(notes));
+  const build = spawnSync(process.execPath, [path.join(fixture, 'scripts/build-directory.mjs')], { cwd: fixture, encoding: 'utf8' });
+  assert.equal(build.status, 0, build.stderr);
+  const page = fs.readFileSync(path.join(fixture, 'docs/directory/anthropics/skills/docx/index.html'), 'utf8');
+  const setup = page.split('id="install-title"')[1].split('</section>')[0];
+  assert.ok(setup.includes(notes['anthropics/skills/docx'].source));
+  assert.doesNotMatch(setup, /id="install-publisher"|npx skills add|git clone/);
 });

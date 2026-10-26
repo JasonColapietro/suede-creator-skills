@@ -63,6 +63,15 @@ At the verified 86/B result, the standard builders produce the full skill page,
 numeric and grade shields, and qualifying report automatically. Do not substitute
 the local proposal's commit or score into the published-source catalog.
 
+An isolated local preview of the proposed source exposed a directory renderer
+defect: restricted-license setup notes without command arrays crashed the full
+page builder. This draft fixes that route to render the publisher's setup link
+without inventing install commands. Its regression fails with the original
+builder and passes with the fix. With that repair, the local proposal generates
+the full page, 86/B report and both quality shields, and 23 report/badge/site
+tests pass. This preview remains local and uses an explicitly unaccepted source;
+none of its qualifying artifacts replace the baseline catalog in this draft.
+
 ## Setup and verification scope
 
 Requires macOS 14+ and separately purchased Extra Caffeine 1.2+, open with AI
