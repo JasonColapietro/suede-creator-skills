@@ -1,9 +1,18 @@
 ---
 name: suede-play-release
-description: "Suede AI Google Play delivery skill: ship an Android release from the agent interface and prove what is live. Preflight the publishing credential with a real Play API call, upload an AAB to a testing track, promote that exact versionCode, stage or complete a rollout, write per-locale release notes, and read back versionCode, status, and userFraction from the Play Developer API. One step stays a Play Console action the user takes: the first release-access grant for the service account. Use when uploading or promoting an Android build, wiring a Play service account and fastlane supply lanes, fixing per-versionCode changelogs, raising or halting a staged rollout, or answering what production is really serving. NOT FOR: planning, building, or policy-checking the app (use android-app-factory); Play listing, keyword, and screenshot work (use suede-aso); CI required checks (use suede-ci-gate)."
+description: "Suede AI Google Play Release Skills. Google Play release delivery with AAB preflight, test-track upload, exact versionCode promotion, staged rollout, locale notes, and API readback. Use when asked \"promote this Android build\" or to diagnose Play publishing access and prove the served release. NOT FOR: app building or policy review (android-app-factory), listing assets (suede-aso), or CI gates (suede-ci-gate)."
+metadata:
+  display-name: "Suede AI Google Play Release Skills"
 ---
 
-# Suede Play Release
+# Suede AI Google Play Release Skills
+
+## Compatibility
+
+Requires Android release artifacts and authorized Google Play publishing access. Bundled preflight uses Python with pyjwt/cryptography and macOS Keychain; delivery examples use fastlane supply. Linux CI uses its secret store.
+
+Use [the worked contract](references/worked-contract.md) for a staged rollout
+example, access-failure recovery, and API readback validation.
 
 ```text
 Iron Law: the Play API decides what shipped, not a green fastlane summary.

@@ -1,11 +1,12 @@
 ---
 name: suede-directory-submissions
-description: "Suede AI directory distribution for selecting listings, sequencing submissions, tailoring positioning, keeping entity facts consistent, and verifying backlinks. Use when a product needs startup, SaaS, AI, MCP, marketplace, or review-directory submissions with a measurable tracker, or when directory and review-site presence should feed AI answer-engine recommendations. NOT FOR: broader launch orchestration (use suede-launch-packaging); scalable destination-page production (use suede-programmatic-seo); AI visibility measurement and on-page citation work (use suede-ai-seo)."
+description: "Use when asked \"plan our directory submissions\" or to select and sequence startup, SaaS, AI, MCP, marketplace or review listings. Suede AI adapts truthful positioning, maintains entity consistency and tracks submission evidence and verified backlinks. NOT FOR: release packaging (use suede-launch-packaging), scaled destination pages (use suede-programmatic-seo), or AI visibility audits (use suede-ai-seo)."
 metadata:
+  display-name: "Suede AI Directory Submissions Skills"
   version: 2.0.0
 ---
 
-# Suede Directory Distribution
+# Suede AI Directory Submissions Skills
 
 Suede treats directory distribution as a verifiable discovery layer, not a submission-count contest. Build the user's backlink and buyer-discovery foundation by selecting the right directories, sequencing them around real launch moments, adapting truthful positioning, and checking that each listing and backlink actually landed.
 
@@ -17,6 +18,10 @@ happens without explicit approval for that exact destination, copy, assets,
 timing, and maximum cost. Approval for research or for another destination
 never transfers. Any delta is re-approved before it ships.
 ```
+
+## Compatibility
+
+An agent with web access for directory research and a local tracker. Each actual submission needs separately authorized destination access; a plan requires no new account or paid placement.
 
 ## Before Starting
 
@@ -356,3 +361,7 @@ Keep the plan actionable. Every item should be something the user can do today.
 - Use `suede-free-tools` for interactive destination assets, and `suede-community-marketing`, `suede-social`, or `suede-content-strategy` for community and social distribution.
 - Use `suede-public-relations` when a flagship launch also warrants earned media.
 - From those skills, route directory selection, listing positioning, and backlink verification back to `suede-directory-submissions`.
+
+## Worked contract
+
+[Worked contract](references/usage-contract.md) gives a bounded input, expected output and failure check for this workflow.

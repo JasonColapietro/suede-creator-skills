@@ -1,11 +1,19 @@
 ---
 name: suede-clip-to-guide
-description: "Suede AI short-to-long content funnel: turns a video, clip, interview moment, talk excerpt, screen recording, or transcript into a scored, rights-checked package that bridges attention to an owned guide, X Article, LinkedIn article, newsletter, or playbook, and makes that guide the page search engines and AI answers find. Use when a clip must lead somewhere deeper, when third-party footage needs a rights route before reuse, or when an X post must pair native video with an owned Article card. NOT FOR: video editing or rendering (use suede-video), social calendars, account audits, or listening (use suede-social), writing the long-form guide from scratch (use suede-copy), paid ads (use suede-ad-creative), or publishing without exact-content and visible-identity approval."
+description: "Suede AI Clip to Guide Skills. Use when creating short-to-long content and asked to \"turn this clip into a guide funnel\": select a rights-supported moment, score fit, draft the bridge, approval bundle and measurement plan. NOT FOR: rendering (suede-video), social calendars (suede-social), full guide writing (suede-copy), paid ads (suede-ad-creative), or publication without exact-content and identity approval."
 metadata:
+  display-name: "Suede AI Clip to Guide Skills"
   version: 1.1.0
 ---
 
-# Suede AI Clip to Guide
+# Suede AI Clip to Guide Skills
+
+Read [the worked delivery contract](references/worked-contract.md) for a concrete
+input, expected artifact, failure response and validation example.
+
+## Compatibility
+
+Requires source video or timestamped transcript, rights evidence and guide URL/draft; Python 3 for the bundled package validator. Browser/account access is needed only for authorized platform verification or publication.
 
 Build one evidence-backed path from a video moment to a deeper written asset.
 Treat the clip as the attention layer and the guide as the authority layer. Do

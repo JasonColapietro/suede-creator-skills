@@ -1,5 +1,5 @@
 {
-  "$comment": "Single source for every third-party page that lists Suede Creator Skills or its MCP server. scripts/build-listings.mjs renders docs/listings.html, the README block and the homepage strip from this file, and --check (run by npm run validate) fails when any of them drift. Add a URL only after loading it and seeing the entry. Mark sameAs:true only for a page identifying this exact software pack; author profiles, individual skills, MCP components and multi-project collections remain editorial links.",
+  "$comment": "Single source for every third-party page that lists Suede AI Skills or its MCP server. scripts/build-listings.mjs renders docs/listings.html, the README block and the homepage strip from this file, and --check (run by npm run validate) fails when any of them drift. Add a URL only after loading it and seeing the entry. Mark sameAs:true only for a page identifying this exact software pack; author profiles, individual skills, MCP components and multi-project collections remain editorial links.",
   "verified": "2026-10-08",
   "updated": "2026-10-22",
   "groups": [
@@ -32,7 +32,7 @@
     {
       "id": "mcp",
       "title": "MCP server and package registries",
-      "intro": "Where the Suede Skills MCP server is published and indexed.",
+      "intro": "Where the Suede AI Skills MCP server is published and indexed.",
       "items": [
         { "name": "Official MCP Registry", "url": "https://registry.modelcontextprotocol.io/v0.1/servers/io.github.JasonColapietro%2Fsuede-skills-mcp/versions/latest", "note": "io.github.JasonColapietro/suede-skills-mcp", "featured": true },
         { "name": "npm", "url": "https://www.npmjs.com/package/suede-skills-mcp", "note": "suede-skills-mcp package", "featured": true },

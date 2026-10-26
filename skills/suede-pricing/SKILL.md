@@ -1,11 +1,20 @@
 ---
 name: suede-pricing
-description: "Suede AI pricing and packaging: chooses the value metric (seats, usage, credits, outcomes), structures tiers, compares free trial, freemium, and reverse trial, plans willingness to pay research and price increases with grandfathering, and tears down a pricing page for buyer clarity and for search and AI-assistant readability (text prices, matching schema, quotable FAQ). Returns a Pricing Decision Brief or a scored teardown. Use when deciding what to charge, restructuring tiers, pricing AI features with variable compute cost, raising prices, or fixing a pricing page that buyers or AI answers misread. NOT FOR: in-product upgrade screens (use suede-paywalls), offer bonuses and guarantees (use suede-offers), or executing billing changes."
+description: "Suede AI Pricing Skills: value metric selection, tiers, willingness-to-pay research, AI unit economics, migration, and pricing-page clarity. Use when asked \"restructure our pricing tiers\" or to decide prices, raise them, or diagnose buyer confusion. NOT FOR: in-product prompts (suede-paywalls), offer bonuses and guarantees (suede-offers), or executing billing changes."
 metadata:
+  display-name: "Suede AI Pricing Skills"
   version: 2.1.0
 ---
 
-# Suede Pricing & Packaging
+# Suede AI Pricing Skills
+
+## Compatibility
+
+Works with supplied product economics, customer evidence, and current pricing. Competitor and regulatory facts require current sources. Produces a decision brief or teardown; billing writes require separate authorization.
+
+For a concrete input, expected output, recovery path, and validation check, read
+[the worked contract](references/worked-contract.md). Use it to check the handoff
+before treating the task as complete.
 
 Suede AI Pricing turns verified product economics, buyer evidence, and commercial
 constraints into testable prices, value metrics, tiers, and migration plans.

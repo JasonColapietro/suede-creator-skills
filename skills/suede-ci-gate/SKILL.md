@@ -1,9 +1,18 @@
 ---
 name: suede-ci-gate
-description: "Suede AI CI and branch-protection wiring for any repo and any stack: path-aware jobs, a single aggregator required check that cannot deadlock, lockfile hygiene, runtime pinning from the repo, and the exact branch-protection settings. Use when asked to set up CI, protect main, make CI block a bad merge, fix a required check that hangs pending forever, or repair duplicate or misfiring pipelines. Detects the repo's real apps, package managers, and runtime versions first; emits workflow files and settings, never pushes or flips protection itself. NOT FOR: reviewing or grading the change the gate is failing on (use suede-code); designing the AI eval cases to wire in (use suede-ai-eval); post-merge release packaging (use suede-launch-packaging)."
+description: "Suede AI CI Gate Skills. Use when asked to \"fix a required check stuck pending\" or set up branch protection and path-aware CI, runtime/lockfile pinning and one aggregator gate from the real repository. Returns workflows and settings. NOT FOR: reviewing implementation (suede-code), designing AI evals (suede-ai-eval), or release packaging (suede-launch-packaging)."
+metadata:
+  display-name: "Suede AI CI Gate Skills"
 ---
 
-# Suede CI Gate
+# Suede AI CI Gate Skills
+
+Read [the worked delivery contract](references/worked-contract.md) for a concrete
+input, expected artifact, failure response and validation example.
+
+## Compatibility
+
+Requires repository source and workflow access; Git and the project own runtimes for local checks. GitHub Actions/branch-protection read access supports verification; changing protection needs explicit authority.
 
 ## Gate policy: advisory, not blocking
 

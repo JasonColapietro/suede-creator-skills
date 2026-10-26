@@ -1,9 +1,18 @@
 ---
 name: suede-ai-eval
-description: "Suede AI eval design and coverage audit: AI-SPEC, failure-mode rubric with severity scoring, concrete pass/fail eval cases, coverage and infrastructure scores, and mechanical acceptance gates. Use when a change ships LLM, RAG, agent, classifier, prompt, or generated-media behavior, or when asked to write evals for an AI feature, design test cases for a model surface, audit existing eval coverage, or judge whether AI behavior is safe to ship. No AI-SPEC means no eval plan, and no eval plan holds the recommended ship verdict. NOT FOR: reviewing or grading the implementation code behind the AI surface (use suede-code); wiring a passing suite into CI as a required check (use suede-ci-gate); coordinating the eval work as one lane of a larger build (use suede-agent-teams)."
+description: "Suede AI Eval Skills. Use when asked to \"write evals for this AI feature\" or assess LLM, RAG, agent, classifier or generated-media behavior: AI-SPEC, failure rubric, executable cases, coverage and acceptance evidence. NOT FOR: implementation review (suede-code), wiring existing evals into CI (suede-ci-gate), or coordinating builder lanes (suede-agent-teams)."
+metadata:
+  display-name: "Suede AI Eval Skills"
 ---
 
-# Suede AI Eval
+# Suede AI Eval Skills
+
+Read [the worked delivery contract](references/worked-contract.md) for a concrete
+input, expected artifact, failure response and validation example.
+
+## Compatibility
+
+Requires the AI surface contract or source and test data; a project runtime/eval runner for execution. Model/API access is needed only for actual model runs, with existing authorization and cost scope.
 
 ## Gate policy: advisory, not blocking
 

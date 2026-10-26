@@ -1,9 +1,18 @@
 ---
 name: suede-ship-copy
-description: "Suede AI copy-only orchestration DAG for one high-stakes piece strangers will read that has to be true: a landing page, launch post, blog post, email, X thread, docs page, README, ad, or store listing. About thirty agents run research lenses, a claim audit, blind angles, parallel section writers, adversarial refutation, and a publish readiness gate, and return a draft file plus an evidence record. The audit targets what the agents invent, never what the requester supplied: their own statements are given, and no phase may verify, hedge, or gate on them. Reads the live surface; never publishes. NOT FOR: everyday or multi-surface copy written in one pass (use suede-copy); changing code (use suede-graph-flo-xr); stripping AI patterns from existing text (use suede-deslop); bulk generation of many independent pieces from one spec."
+description: "Produce one high-stakes public draft with parallel research, agent-claim audits, message ownership, adversarial review, publish readiness, and an evidence record. Use when asked to \"research and draft this launch page\" or rigorously develop one landing page, email, post, README, ad, or store listing. Preserves requester-supplied facts and writes drafts only. NOT FOR: routine or bulk copy (use suede-copy), code changes (use suede-graph-flo-xr), or cleaning existing prose (use suede-deslop)."
+metadata:
+  display-name: "Suede AI Ship Copy Skills"
 ---
 
-# Suede Ship Copy
+# Suede AI Ship Copy Skills
+
+## Compatibility
+
+Requires a workflow host supporting Workflow, phase, subagents, and local draft files; web access supplies live research. A plain chat host must report unavailable orchestration instead of claiming a completed run.
+
+For a concrete input, expected handoff, and failure check, read
+[the worked handoff](references/worked-handoff.md).
 
 The copy side of the canonical Suede DAG. One brief in, one publishable draft out,
 with about thirty agents in between arranged as a graph rather than a chain.
@@ -31,59 +40,15 @@ allocation and get an answer. Silence is not consent to spend it.
 
 ## Whose claims get audited
 
-**The audit exists to catch agents inventing things. It never runs on the
-requester.**
+Before intake or any research, review, or gate phase, read
+[the complete claim-origin policy](references/claim-origin-policy.md).
+It is required for every run: preserve requester givens, audit agent-generated
+claims, keep protected strings byte-exact, and retain discarded findings in the
+evidence record. The reference preserves the full filtering, proportional-match,
+and output-path rules; follow them before launching the bundled workflow.
 
-A research lens that reports "cold start drops to 40ms" is a machine asserting a
-number, and it gets opened against its source. The requester saying the same
-thing in the brief is the person who owns the product telling you a fact about
-it. Those are not the same input and this workflow never treats them as the same
-input.
-
-Anything the requester supplies (the brief, the `given` list, `mustSay` strings)
-enters the permitted claim set marked `origin: "user"` and is **exempt at every
-stage**:
-
-- Intake transcribes it. It does not verify, source, soften, or flag it.
-- The audit never sees it. A research fact that merely restates a given is
-  removed before the audit rather than checked: the given itself already carries
-  that content into the permitted set, so nothing is lost. The run log and the
-  evidence record both say "removed", not "passed through".
-- **Protected strings are not claims.** A `mustSay` product name or legal line is
-  a string to preserve byte-exact, not an assertion to exempt from review. Letting
-  a product name count as a given would exempt half the draft from review, so the
-  exemption corpus excludes them.
-- Research lenses are told it is established and are forbidden from returning a
-  constraint that contradicts it.
-- Writers assert it plainly. No "reportedly", no "according to", no hedge.
-- A review finding aimed at one is **discarded by a pure function** before a
-  verifier is spent on it, so a persuasive lens cannot argue its way back in.
-  It runs a second time after refutation, so a verifier that sustained one anyway
-  still cannot hand it to the reviser.
-- The match is **proportional**, not a character floor: the shorter of the given
-  and the quoted text must be contained in the longer *and* be at least 60% of it,
-  with a 6-character minimum. A lens quoting most of a given is out of scope; a
-  lens quoting two words that happen to appear inside one is not. That matters in
-  both directions: a flat floor would let a compound sentence (something you said
-  **and** something an agent invented) launder the invented half behind the true
-  half.
-- The refute prompt says out-of-scope **at every severity**, not only for blockers.
-- The publish-readiness gate skips it: no spot-check, no drift verdict, no risk
-  entry, and no escalation when a live page disagrees. A stale page losing to the
-  requester is the correct outcome, not a finding.
-- The evidence record lists it as given, with no "unverified" label.
-
-The exemption errs toward dropping. A legitimate finding lost because it brushed
-a given is a cost worth paying; a given rewritten by the reviser because a filter
-was too clever is the thing this workflow promises cannot happen.
-
-The only hazard that can stop this run is an output path pointing at published
-copy, which is a fact about a file path rather than a judgement about anything
-the requester said. If an intake agent tries to mark anything else blocking, the
-script downgrades it to advisory and logs the overreach.
-
-Invoke the workflow bundled at `skills/suede-ship-copy/workflows/suede-ship-copy.js`.
-If you keep a personal copy, `~/.claude/workflows/suede-ship-copy.js` works the same way.
+Invoke `skills/suede-ship-copy/workflows/suede-ship-copy.js` through the host's
+`Workflow` API as shown below.
 
 ## Gate policy: advisory, not blocking
 
@@ -196,94 +161,13 @@ Workflow({
 Pass `args` as a real object. If the harness stringifies it the script recovers,
 but an object is correct.
 
-## The graph
+## The graph and thresholds
 
-Twelve phases, parallel wherever the edges are not real. This is the logical DAG;
-the script's twelve `phase()` labels fold **Claim audit** into `Gaps` and **Collision
-check** into `Outline`, and split **Review and refute** and **Gate and handoff** into
-two each. When narrating live progress use the script's labels: there is no phase
-called "Claim audit" in `/workflows`.
-
-1. **Intake**: sources, the requester's own statements transcribed into the
-   permitted set untouched, the currently published text captured verbatim, voice
-   references drawn from shipped copy, protected strings, the surface's hard
-   limits, hazards. Manifest only.
-2. **Research**: five blind lenses: product truth, audience, market, voice,
-   surface law. Each searches a different way because one angle never finds
-   everything. Every fact carries a `file:line`, URL, sha, or timestamp.
-3. **Gaps**: a completeness critic names what went unread, then one bounded fill
-   round (first 2 gaps; the rest ride to the handoff as unread).
-4. **Claim audit**: the load-bearing skeptic, pointed only at agent output. Every
-   agent-generated fact is opened against its source and returns `holds`,
-   `overstated`, `unsourceable`, or `stale`. Dropped claims leave the set;
-   overstated ones are narrowed to what the source supports. The requester's
-   givens are not in this list and a verdict returned against one is discarded
-   unread. **Nothing downstream may assert a claim outside the permitted set:
-   surviving agent claims plus every given.**
-5. **Angles**: three postures generated blind to each other: problem-first,
-   outcome-first, wedge. Each declares whether a competitor could publish its
-   headline verbatim, which is a failing grade rather than a formatting field.
-6. **Outline**: the planner judges the three angles, grafts the best of the
-   runners-up, and writes a section map: one message per section, citations drawn
-   only from the surviving claims, an observable acceptance question per section.
-   High effort by design. Then a red team. One revision round follows **only** if the
-   red team returned a fatal objection or two serious ones; otherwise the map stands
-   and the objections ride to the handoff. Do not narrate a revision that did not run.
-7. **Collision check**: a pure function, no agent. Duplicate message ownership,
-   a citation outside the claim set, a protected string assigned zero or twice, or
-   budgets over the ceiling all halt the run.
-8. **Draft**: one writer per section, in parallel. Each sees its neighbours' jobs
-   so transitions are possible, and never their text. A fact outside its citation
-   list becomes `[AUTHOR: supply X]`, never an invention.
-9. **Assemble**: a barrier. Transitions written, repetition cut, one voice,
-   budget enforced, placeholders and protected strings preserved byte-exact.
-10. **Review and refute**: four lenses on the whole piece (cold read, assertion
-    audit, conversion, slop). Findings aimed at a given are dropped by a pure
-    function first, then two independent verifiers take each surviving blocker or
-    major, refute by default. **Both must fail to refute** for a finding to
-    survive; unanimity, not majority, because rewriting a line that was fine has a
-    real cost in a short piece.
-11. **Polish**: one reviser for confirmed blockers (prose has no file-level
-    disjointness, so parallel editors of one string produce a conflict with no
-    merge tool), then Suede Slop Stop scored out of 50, then the graphic spec and
-    the channel package in parallel.
-12. **Gate and handoff**: deterministic checks (open placeholders, missing
-    protected strings, house-style dash violations, word count, fields over limit) run in the script
-    where no agent can argue with them, then a read-only publish-readiness verifier
-    for drift, truth at the source, rights, and reversibility. Drift and truth-at-the-source
-    are scoped to agent-generated claims; the rights check is scoped to third-party material,
-    so a customer result you supplied cannot come back as a permissions risk wearing a
-    rights label. Then the evidence record.
-
-## Thresholds
-
-Every gate in this workflow resolves to a number or a command:
-
-| Check | Threshold |
-|---|---|
-| Requester's own claims audited | Never. 0 reach the audit. They reach the refute and gate prompts only as named out-of-scope context, never as a target |
-| Claim may be asserted | Present in the permitted set (surviving agent claims + every given). Anything else is `[AUTHOR: supply X]` |
-| Finding survives review | 2 of 2 verifiers fail to refute it |
-| Findings refuted per run | First 4 blockers/majors; the remainder are logged, never silently dropped |
-| Gap fills | First 2; the rest are reported as unread |
-| Sections | 3-5 preferred, 7 ceiling |
-| Slop Stop score | 35/50 or the piece is `REVISE`; advisory score only |
-| Channel field | `chars <= limit` per field, counted and reported individually |
-| Word count | `<= wordBudget × 1.1` when a budget was supplied; unenforced when it was not |
-| Em-dash violations | 0 in newly written prose when `houseStyle.emDashes` is `avoid`; permitted when `allow`. Protected strings and givens are exempt |
-| Open placeholders | 0, or Status is "ready for author", never "reviewed" |
-| Placeholders vanished since draft | 0. A placeholder the assembler or deslop pass resolved away is a fabrication |
-| Stalled sections | 0. A writer returning `blocked`, `needs-context`, or nothing leaves a hole in the piece |
-
-The six rows from Channel field through Stalled sections are **hard gates**:
-any one fails and `hardMechanical` forces `copyVerdict: hold`.
-Two more hard gates have no row because they are
-liveness rather than quality: a channel-package agent or a deslop agent that
-returned nothing also forces `hold`.
-
-The preceding rows describe claim scope, review, and planning constraints.
-The Slop Stop score alone only moves the verdict to `ship-with-caveats`, never to
-`hold`. Do not report a 22/50 score as a hold.
+Before the `Workflow` call, read
+[the phase and threshold reference](references/phase-and-threshold-reference.md).
+It preserves all twelve phases and mechanical gate thresholds. Use the actual
+script labels for progress, retain unread work and discarded findings, preserve
+author placeholders, and report the returned verdict without claiming publication.
 
 ## Shared cleanup method
 

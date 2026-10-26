@@ -1,11 +1,20 @@
 ---
 name: suede-marketing-council
-description: "Suede AI marketing council: twelve role-based simulated advisors (Positioning Strategist, Offer Strategist, Search Visibility Strategist, Brand Reach Scientist, and others) apply named Suede frameworks to one bounded marketing decision, map the disagreements and the evidence that would settle each, and return a chair's synthesis with next steps and skill handoffs. Use when the user wants expert lenses, a simulated advisory board, a pressure test of a contested or irreversible bet, or a skeptic's read before committing. NOT FOR: impersonating or quoting real people, primary research (use suede-customer-research), writing the plan itself (use suede-marketing-plan), or executing the chosen tactic (route to the relevant Suede skill)."
+description: "Suede AI Marketing Council Skills: simulated advisors pressure-test one contested marketing decision. Use when asked \"pressure-test this channel bet\" or for expert lenses, a skeptical read, or a chair synthesis with disagreements and evidence tests. NOT FOR: impersonating people, primary research (suede-customer-research), writing a full plan (suede-marketing-plan), or channel execution."
 metadata:
+  display-name: "Suede AI Marketing Council Skills"
   version: 2.0.0
 ---
 
-# Suede Marketing Council
+# Suede AI Marketing Council Skills
+
+## Compatibility
+
+Runs in one session using role passes; subagents are optional when the host supports them. Requires a bounded decision and supplied business context. Current market assertions need browsable sources.
+
+For a concrete input, expected output, recovery path, and validation check, read
+[the worked contract](references/worked-contract.md). Use it to check the handoff
+before treating the task as complete.
 
 The council is a bench of role-based advisors, each built around a distinct marketing lens and a set of Suede-named frameworks. Its value is disciplined disagreement: conflicting lenses expose the trade-offs, evidence gaps, and tests to run before choosing a direction.
 

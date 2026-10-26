@@ -1,11 +1,19 @@
 ---
 name: suede-campaign-in-a-box
-description: "Suede AI artist campaign rollout for a song, release, era, show, or catalog moment. Use when an artist needs a complete campaign across surfaces (identity, era world, hooks, release stunts, fan rituals, visualizers, merch, setlists, catalog revival, collaborator outreach) or the full announce, tease, release-week, and post-drop package with calendar, email, site copy, search-ready release page, and fan actions. Picks one of twelve lanes or stitches them together, and flags rights gaps instead of resolving them. NOT FOR: single-surface conversion copy (use suede-copy); sync licensing packaging (use suede-sync-packaging); rights gaps or a rights package (use suede-rights-passport); software, repo, or skill-pack releases (use suede-launch-packaging)."
+description: "Suede AI Campaign in a Box Skills. Use when asked to \"plan a release campaign\" for a song, era, show or catalog: select a lane and build announce, tease, launch and follow-up assets with rights gaps and fan actions. NOT FOR: isolated copy (suede-copy), sync packages (suede-sync-packaging), rights resolution (suede-rights-passport), or software releases (suede-launch-packaging)."
 metadata:
+  display-name: "Suede AI Campaign in a Box Skills"
   version: 1.0.0
 ---
 
-# Suede Campaign In A Box
+# Suede AI Campaign in a Box Skills
+
+Read [the worked delivery contract](references/worked-contract.md) for a concrete
+input, expected artifact, failure response and validation example.
+
+## Compatibility
+
+Works from artist/release context, rights records and available media; file tools for packages and calendar drafts. Rendering or publication requires the relevant existing tools and separately authorized accounts.
 
 ## Gate policy
 

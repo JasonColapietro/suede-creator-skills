@@ -1,11 +1,19 @@
 ---
 name: suede-public-relations
-description: "Suede AI earned media, built for both journalists and AI search: validates story angles, builds a sourced media list, drafts journalist and podcast pitches under 200 words, answers source requests (HARO, Qwoted, Featured), scores newsjacking, and sets up a press page with consistent entity facts and Organization schema so coverage becomes citations in Google AI Overviews, ChatGPT, Claude, and Perplexity. Returns pitch drafts, a scored media list, or a press-kit checklist, all held for send approval. Use when building a media list, drafting a pitch, preparing a press kit, evaluating newsjacking, answering a reporter request, or growing third-party mentions for AI visibility. NOT FOR: directory submissions (use suede-directory-submissions), launch packaging (use suede-launch-packaging), social publishing (use suede-social), on-site AI SEO fixes (use suede-ai-seo), or contacting anyone without approval."
+description: "Build earned-media angles, sourced media lists, journalist and podcast pitches, reporter replies, and press kits with consistent entity facts. Use when asked to \"draft a journalist pitch\", assess newsjacking, or prepare third-party coverage for search and AI citations. Returns review-ready drafts and measurement steps. NOT FOR: directory submissions (use suede-directory-submissions), release packaging (use suede-launch-packaging), social posts (use suede-social), or sending without approval."
 metadata:
+  display-name: "Suede AI Public Relations Skills"
   version: 2.0.0
 ---
 
-# Suede Public Relations & Earned Media
+# Suede AI Public Relations Skills
+
+## Compatibility
+
+Drafts from supplied evidence; live journalist, outlet, request, and policy checks need web access. Email and media-database integrations are optional and separately authorized.
+
+For a concrete input, expected handoff, and failure check, read
+[the worked handoff](references/worked-handoff.md).
 
 Suede AI Public Relations turns verified milestones, evidence, and timely angles
 into respectful earned-media briefs for journalists, podcasts, and newsletters.

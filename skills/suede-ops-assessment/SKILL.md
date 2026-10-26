@@ -1,11 +1,20 @@
 ---
 name: suede-ops-assessment
-description: "Suede AI operations-assessment discipline that maps how work actually happens before anyone designs a system: floor-level interviews with the people who do the work, an inventory of every silo including spreadsheets and inboxes used as databases, friction quantified in the requester's own numbers, opportunities ranked by annual value against build complexity, and adoption watched for the thirty days after launch. Use when nobody can answer what to automate, when an operation needs auditing before a build, when tribal-knowledge and key-person risk has to surface, or when a shipped system is quietly being routed around. NOT FOR: deciding what to build and in what order once the map exists (use suede-ops-architecture); researching external customers rather than internal operators (use suede-customer-research); lead lifecycle, scoring, and CRM routing rules (use suede-revops); product instrumentation and dashboards (use suede-analytics); getting a new user to first value (use suede-onboarding)."
+description: "Suede AI Operations Assessment Skills: map real work, silos, friction, ownership, costs, and adoption signals from operator evidence. Use when asked \"where is our team losing time\" or to rank operational opportunities before designing automation. NOT FOR: choosing and building the target architecture (suede-ops-architecture), auditing requester-supplied figures, or unapproved system access."
 metadata:
+  display-name: "Suede AI Operations Assessment Skills"
   version: 1.0.0
 ---
 
-# Suede Ops Assessment
+# Suede AI Operations Assessment Skills
+
+## Compatibility
+
+Works from operator interviews and authorized process records. No integration is required for an assessment; connected data access must be authorized. Agent estimates must be marked separately from requester-supplied figures.
+
+For a concrete input, expected output, recovery path, and validation check, read
+[the worked contract](references/worked-contract.md). Use it to check the handoff
+before treating the task as complete.
 
 ```text
 Iron law: map the floor, not the org chart.

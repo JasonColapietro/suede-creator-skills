@@ -78,6 +78,8 @@ class DirectoryInstallTests(unittest.TestCase):
         for i, directory in enumerate(cls.paths + ["."]):
             entry = copy.deepcopy(template)
             entry.update(repo="fixture/skills", dir=directory, name=f"skill-{i}", slug=f"skill-{i}")
+            if i == 0:
+                entry["display_name"] = "Suede AI Example Skills"
             data["skills"].append(entry)
         for name, featured in (("low-page", True), ("low-row", False)):
             entry = copy.deepcopy(low)
@@ -96,7 +98,7 @@ class DirectoryInstallTests(unittest.TestCase):
     def test_quality_badges_security_and_schema_render_together(self):
         page = (self.root / 'docs/directory/fixture/skills/skill-0/index.html').read_text()
         self.assertIn(f'{self.score}/100 · A', page)
-        self.assertIn('Two badges for skill-0', page)
+        self.assertIn('Two badges for Suede AI Example Skills', page)
         self.assertIn('Security scan: not scanned.', page)
         self.assertIn('Not scanned', page)
         # The feature offer renders its copy from directory/promotion.json.
@@ -198,6 +200,18 @@ class DirectoryInstallTests(unittest.TestCase):
         match = re.search(rf'<code id="install-{route}">([\s\S]*?)</code>', page)
         self.assertIsNotNone(match)
         return html.unescape(match[1])
+
+    def test_display_name_is_public_while_machine_identity_and_install_stay_stable(self):
+        page = (self.root / "docs/directory/fixture/skills/skill-0/index.html").read_text()
+        self.assertRegex(page, r"<h1>Suede AI Example Skills\b")
+        report = json.loads((self.root / "docs/directory/fixture/skills/skill-0/report.json").read_text())
+        self.assertEqual(report["skill"]["name"], "skill-0")
+        self.assertEqual(report["skill"]["display_name"], "Suede AI Example Skills")
+        search = json.loads((self.root / "docs/directory/search-index.json").read_text())
+        entry = next(s for s in search if s.get("slug") == "skill-0")
+        self.assertEqual(entry["name"], "Suede AI Example Skills")
+        self.assertIn("/skill-0/", entry["report"])
+        self.assertIn("skills/plain", self.snippet(0, "cli"))
 
     def test_claude_and_codex_copy_paths_are_literal_shell_words(self):
         # Codex reads repository skills from .agents/skills (OpenAI Codex docs).

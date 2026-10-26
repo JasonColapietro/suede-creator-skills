@@ -1,9 +1,19 @@
 ---
 name: suede-parity-contract
-description: "Suede AI cross-surface canon discipline: hold one canonical answer across every surface that states it (web, iOS, Android, docs, a second service) by generating a contract from the reference surface and making the others assert against it, so a divergence fails a test instead of reaching a user or an answer engine. Consistent canon is what makes a product citable: generative search quotes sources that do not contradict themselves, and a number that differs between your site and your app is a contradiction a model can see. Use when the same rule, threshold, ladder, or stated fact lives on two or more surfaces; when values are copied by hand out of a handoff; when two surfaces already disagree; or when auditing where they drifted. NOT FOR: deciding which surface is correct (a product call this skill records rather than makes); reviewing a diff (use suede-code); wiring merge gates (use suede-ci-gate); a generative-search audit of a page (use suede-seo-audit)."
+description: "Suede AI Parity Contract Skills. cross-surface parity contracts generated from live reference constants and asserted through follower behavior. Use when asked \"these app and web thresholds disagree\" or when rules are copied across web, mobile, docs, or services. NOT FOR: choosing the correct shipped value, diff review (suede-code), merge-gate setup (suede-ci-gate), or search audits (suede-seo-audit)."
+metadata:
+  display-name: "Suede AI Parity Contract Skills"
 ---
 
-# Suede Parity Contract
+# Suede AI Parity Contract Skills
+
+## Compatibility
+
+Requires source access to one reference and each follower plus their build/test runtimes. Contract generation must import live constants; cross-repository updates require write authority to each repository.
+
+For a concrete input, expected output, recovery path, and validation check, read
+[the worked contract](references/worked-contract.md). Use it to check the handoff
+before treating the task as complete.
 
 ```text
 Iron Law: generate the contract from the reference surface's live constants.

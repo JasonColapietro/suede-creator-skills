@@ -1,11 +1,19 @@
 ---
 name: suede-sms
-description: "Suede AI SMS and MMS marketing discipline: whether SMS fits, consent-aware flows (welcome, cart recovery, post-purchase, win-back), exact message copy with segment counts, cadence and quiet hours, number types and platforms, and measurement, checked against current TCPA opt-out rules and A2P 10DLC registration. Use when evaluating SMS as a channel, designing or auditing a text message program, or drafting texts. NOT FOR: email campaigns (use suede-emails), phone-number capture UX (use suede-site-alchemy), or legal certification of a program, which needs counsel; this skill never sends, schedules, imports, or registers anything."
+description: "Design consent-aware SMS/MMS programs: channel fit, welcome, cart recovery, post-purchase and win-back flows, exact copy, segment counts, cadence, quiet hours, platform selection, and measurement. Use when asked to \"draft our SMS welcome flow\" or audit a text program. Checks current consent, opt-out, and registration requirements. NOT FOR: email (use suede-emails), capture UX (use suede-site-alchemy), legal certification, or sending, scheduling, importing, or registering anything."
 metadata:
+  display-name: "Suede AI SMS Skills"
   version: 1.1.0
 ---
 
-# Suede AI SMS Programs
+# Suede AI SMS Skills
+
+## Compatibility
+
+Works from supplied consent, registration, audience, and performance evidence; current legal and carrier checks need web access. No SMS connector or sending account is bundled.
+
+For a concrete input, expected handoff, and failure check, read
+[the worked handoff](references/worked-handoff.md).
 
 Design consent-aware message programs for commerce, mobile, and SaaS
 use cases where immediacy can earn its interruption cost. It combines sequence
@@ -215,7 +223,7 @@ Optional Send 2 (24h later): Reminder + best-seller showcase
 
 ### Personalization
 
-- First name token if available (boosts CTR ~20%)
+- First name token only when accurate and appropriate; test its effect on the actual audience
 - Recent product/category browse-based
 - Location-based offers (where applicable)
 
@@ -251,21 +259,26 @@ documentation, authenticated access, per-message cost, carrier support, consent 
 
 ### Key Metrics
 
-| Metric | What it tells you | Healthy range (ecom DTC) |
-|--------|-------------------|--------------------------|
-| **Opt-in rate** | Top of funnel health | 5–25% of email subscribers |
-| **CTR** | Message relevance | 8–15% (vs ~3% email) |
-| **Conversion rate (per send)** | Revenue impact | 1–5% per promotional send |
-| **Revenue per send (RPS)** | Channel economics | $0.20–$2.00 |
-| **Opt-out rate per send** | Audience fatigue | <2% per send, <0.5% for promotional |
-| **Cost per send** | Channel cost discipline | $0.0075–$0.04 |
-| **List growth rate** | Audience momentum | 5–15%/month early, 1–3% steady-state |
+| Metric | Definition | Evidence needed for a decision |
+|--------|------------|--------------------------------|
+| Opt-in rate | New valid consents / eligible capture impressions | Capture source, period, jurisdiction, and deduplicated denominator |
+| CTR | Unique attributed clicks / delivered messages | Link tracking, delivery and click definitions, bot filtering |
+| Conversion rate | Attributed conversions / delivered messages | Attribution window, event definition, comparison cohort |
+| Revenue per send | Attributed revenue / sent messages | Refund handling, attribution window, gross versus net basis |
+| Opt-out rate | Valid opt-outs / delivered messages | Flow, send frequency, audience, and recipient-local timing |
+| Cost per send | Total messaging cost / sent messages | Provider, carrier, country, message segments, and billed fees |
+| List growth | New consents minus opt-outs and invalid records | Opening population, period, and consent evidence |
+
+Set review thresholds from the user's dated baseline, unit economics, consent
+requirements, and acceptable harm. Use an external benchmark only with its
+source, date, comparable audience, and metric definition; no fixed range here
+establishes a healthy program or expected result.
 
 ### What to track in analytics
 
 - UTM tag every link: `utm_source=sms&utm_medium=sms&utm_campaign=[campaign-name]`
 - Conversion attribution: SMS-driven sessions, last-click revenue, assisted conversions
-- LTV impact: SMS subscribers vs email-only subscribers (typically 1.5–3× LTV for SMS opt-ins)
+- LTV comparison: define cohorts, acquisition mix, observation window, margin, and censoring. A subscriber comparison is descriptive; it does not establish incremental SMS impact.
 
 ### What to A/B test
 

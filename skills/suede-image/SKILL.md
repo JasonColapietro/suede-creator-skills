@@ -1,13 +1,18 @@
 ---
 name: suede-image
-description: "Suede AI marketing image production: choosing generation, editing, templates, or real screenshots; prompts and layout specs; hero, social, banner, directory, and Open Graph images; product mockups from real UI; export sizing, compression, and image SEO (alt text, file names, dimensions, structured data). Use when the user needs a marketing image or an image-production workflow. NOT FOR: paid-ad creative systems (use suede-ad-creative), video (use suede-video), app-store screenshots and listing strategy (use suede-aso), or social post strategy (use suede-social)."
+description: "Use when asked \"create an Open Graph image\" or to produce marketing heroes, banners, social graphics, mockups or image workflows. Suede AI chooses generation, editing, templates or real screenshots, then specifies layout, rights, export sizes, compression and image SEO. NOT FOR: paid-ad systems (use suede-ad-creative), video (use suede-video), app-store assets (use suede-aso), or social strategy (use suede-social)."
 metadata:
+  display-name: "Suede AI Image Skills"
   version: 2.1.0
 ---
 
-# Suede AI Marketing Image Production
+# Suede AI Image Skills
 
 Produce marketing imagery as a rights-aware, placement-specific system: choose the right production method, protect canonical brand assets, preserve real product truth, and verify the exported result. Use generation models and design tools to create efficient hero, social, mockup, banner, and preview workflows without fabricating interfaces or provenance.
+
+## Compatibility
+
+An agent with visual inspection and access to supplied brand assets. Image production requires an available generation or editing tool; local export commands require their named utilities. Prompt-only delivery remains available when production tools are absent.
 
 ## Before Starting
 
@@ -409,3 +414,7 @@ and do not imply an image was produced.
 - Use `suede-social` for platform format contracts (Reel covers, carousel slide counts, Story frames) before producing those assets here.
 - Use `suede-seo-audit` for image-search checks and `suede-aso` for app-store screenshots.
 - Use `suede-directory-submissions` for directory gallery planning.
+
+## Worked contract
+
+[Worked contract](references/usage-contract.md) gives a bounded input, expected output and failure check for this workflow.

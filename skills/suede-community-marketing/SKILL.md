@@ -1,13 +1,18 @@
 ---
 name: suede-community-marketing
-description: "Suede AI community-growth discipline: member identity and purpose, platform choice (Discord, Slack, Circle, Reddit, Discourse, Facebook Groups), founding-member seeding, rituals and core loop, moderation and enforcement paths, health metrics with denominators, ambassador programs, and public community content that search engines and AI answers surface. Use when starting, auditing, or growing a product or brand community. NOT FOR: public social-channel content (use suede-social), referral-program mechanics and payouts (use suede-referrals), or customer-interview research (use suede-customer-research)."
+description: "Use when asked \"plan our community launch\" or to audit or drive product community growth. Suede AI returns member identity, platform choice, a seeding plan, rituals, moderation paths, ambassador design and health metrics with denominators. NOT FOR: public social content (use suede-social), referral payouts (use suede-referrals), or customer interviews (use suede-customer-research)."
 metadata:
+  display-name: "Suede AI Community Marketing Skills"
   version: 2.1.0
 ---
 
-# Suede AI Community Marketing
+# Suede AI Community Marketing Skills
 
 Use this community-growth playbook to create genuine member value and measurable business outcomes without manufacturing engagement.
+
+## Compatibility
+
+Any text-capable agent with the product brief and available community evidence. Public research needs web access; drafting needs no community-platform account or posting permissions.
 
 ## Before You Start
 
@@ -248,3 +253,7 @@ and do not imply the blocker was resolved.
 - Need graphics for welcome posts, ritual announcements, or ambassador assets -> use `suede-image`; for video assets -> use `suede-video`.
 - Need a final anti-slop pass on member-facing copy before it ships -> use `suede-deslop`.
 - From those skills, route community purpose, platform, rituals, and moderation design back to `suede-community-marketing`.
+
+## Worked contract
+
+[Worked contract](references/usage-contract.md) gives a bounded input, expected output and failure check for this workflow.

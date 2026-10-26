@@ -1,11 +1,19 @@
 ---
 name: suede-co-marketing
-description: "Suede AI co-marketing discipline: partner fit scored on audience overlap and reciprocity, joint offers and campaign formats (content, webinars, integrations, community), operating roles, lead-sharing and consent terms, shared measurement, and joint content built to earn links and AI citations for both brands. Use when identifying potential partners or planning a specific joint campaign or cross-promotion. NOT FOR: affiliate or customer-referral programs (use suede-referrals), product-launch orchestration (use suede-launch-packaging), or partner-facing sales collateral (use suede-sales-enablement)."
+description: "Suede AI Co-Marketing Skills. Use when asked to \"find co-marketing partners\" or plan a joint campaign: evidence-backed fit, reciprocal value, format, roles, consent, shared KPIs and content. NOT FOR: affiliate/referral programs (suede-referrals), software release packaging (suede-launch-packaging), or partner-facing sales collateral (suede-sales-enablement)."
 metadata:
+  display-name: "Suede AI Co-Marketing Skills"
   version: 2.1.0
 ---
 
-# Suede AI Co-Marketing
+# Suede AI Co-Marketing Skills
+
+Read [the worked delivery contract](references/worked-contract.md) for a concrete
+input, expected artifact, failure response and validation example.
+
+## Compatibility
+
+Works from product context and partner evidence; web research or supplied sources for scoring and file tools for campaign plans. Outreach, lead sharing and publication need separate existing authority.
 
 Use this co-marketing playbook to identify credible partners and design measurable joint campaigns with explicit roles and value exchange.
 

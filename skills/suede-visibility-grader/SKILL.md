@@ -1,9 +1,18 @@
 ---
 name: suede-visibility-grader
-description: "Suede AI promotion-readiness grader for one public page. Gives a fast, evidence-based A-F grade on six lanes, findability, first-screen clarity, CTA pull, proof and trust, AI citation readiness, and design signal, plus up to five ranked fixes and a ship gate. Use before paid or public promotion of a landing page, launch page, README, docs page, or campaign page, or for a gut check on whether a page earns attention. NOT FOR: the deep nine-lane SEO audit with JSON-LD and rewrite fixes (use suede-seo-audit); AI crawler policy, entity consistency, and prompt-panel measurement (use suede-ai-seo); implementing conversion changes or experiments (use suede-site-alchemy)."
+description: "Grade one public page A-F across findability, first-screen clarity, CTA pull, proof and trust, AI citation readiness, and design signal, with up to five ranked fixes. Use when asked to \"grade this page before promotion\" or give a quick readiness check of a landing page, README, docs, or campaign. NOT FOR: deep SEO and schema audits (use suede-seo-audit), AI crawler/citation measurement (use suede-ai-seo), or implementing conversion changes (use suede-site-alchemy)."
+metadata:
+  display-name: "Suede AI Visibility Grader Skills"
 ---
 
-# Suede Visibility Grader
+# Suede AI Visibility Grader Skills
+
+## Compatibility
+
+Read-only grading uses web and rendered desktop/mobile inspection when available. Source-only grading is supported with the documented grade caps and explicit unverified live checks.
+
+For a concrete input, expected handoff, and failure check, read
+[the worked handoff](references/worked-handoff.md).
 
 ## Gate policy: advisory, not blocking
 

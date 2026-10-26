@@ -1,11 +1,19 @@
 ---
 name: suede-prospecting
-description: "Suede AI prospecting and qualification: defines the ICP, then builds a bounded, source-backed lead sheet across four branches (B2B SaaS, general B2B, local business, and early demand signals from forums, reviews, and public issues), using licensed data (Apollo, ZoomInfo, Clay, HubSpot Breeze Intelligence, Sales Navigator for manual research) with fit scores, disqualification evidence, source and date per contact, and CAN-SPAM, GDPR, PECR, and CASL checks before handoff. Use when defining an ICP, sourcing and enriching a lead list, finding early adopters or design partners, scoring account fit, or documenting disqualification evidence. NOT FOR: sending outreach (use suede-cold-email), changing CRM routing or scoring (use suede-revops), or profiling competitors instead of prospects (use suede-competitor-profiling)."
+description: "Build a source-backed, scored prospect list across SaaS, B2B, local business, or early demand signals. Use when asked to \"find our first design partners\", define an ICP, enrich leads, or document disqualification evidence. Includes source dates, confidence, licensed-data checks, and a qualification handoff. NOT FOR: sending outreach (use suede-cold-email), CRM routing (use suede-revops), or competitor profiles (use suede-competitor-profiling)."
 metadata:
+  display-name: "Suede AI Prospecting Skills"
   version: 1.2.0
 ---
 
-# Suede Prospecting
+# Suede AI Prospecting Skills
+
+## Compatibility
+
+Works from supplied URLs, exports, or source text; live sourcing needs an authorized browser or research connector. No enrichment service is bundled.
+
+For a concrete input, expected handoff, and failure check, read
+[the worked handoff](references/worked-handoff.md).
 
 Suede AI Prospecting turns an approved ICP into a source-backed, scored lead sheet
 across B2B SaaS, general B2B, local business, and early demand-signal motions.

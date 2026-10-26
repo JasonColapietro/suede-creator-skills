@@ -1,9 +1,18 @@
 ---
 name: suede-sync-packaging
-description: "Suede AI skill that prepares a song for sync pitching: scene and emotional angles, a supervisor-facing one-sheet, an exists/missing/unknown asset checklist covering master, instrumental, clean, and stems, screened lyric flags, mood tags, AI-involvement disclosure, and the open clearance questions kept in their own labeled pile. Use when a track is headed for film, TV, ads, games, trailers, or creator campaigns; when a music supervisor, sync agent, or brand asks what a song is and whether it can be used; or when someone asks for a one-sheet, pitch email, or sync package for a release. Prepares review-ready materials only: never claims clearance, promises placement, or sends outreach. NOT FOR: investigating the rights gaps behind an open clearance question or building the rights transfer package (use suede-rights-passport); linting the release folder itself (use suede-release-linter); a full rollout campaign (use suede-campaign-in-a-box)."
+description: "Prepare a song for sync review: scene fit, supervisor one-sheet, asset checklist, lyric flags, mood tags, AI disclosure, and open clearance questions. Use when asked to \"make a sync one-sheet\" or package a track for film, TV, ads, games, trailers, or creator campaigns. Drafts pitch materials without clearance, placement, or sending claims. NOT FOR: rights investigations or transfer packages (use suede-rights-passport), folder linting (use suede-release-linter), or rollouts (use suede-campaign-in-a-box)."
+metadata:
+  display-name: "Suede AI Sync Packaging Skills"
 ---
 
-# Suede Sync Package
+# Suede AI Sync Packaging Skills
+
+## Compatibility
+
+Uses supplied track facts, lyrics, rights evidence, and a confirmed master path. Media inspection needs an available local viewer or supplied timecodes; no distributor or outreach integration is required.
+
+For a concrete input, expected handoff, and failure check, read
+[the worked handoff](references/worked-handoff.md).
 
 ## Gate policy
 

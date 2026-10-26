@@ -1,0 +1,2841 @@
+{
+  "notice": "UNLISTED provisional measurement of canonical skills/ only using unchanged graded-v2 parser/curator. Not published catalog grades. Current 3-list citation evidence is retained; snapshot date is 2026-10-26. Security not assessed by this scoring exercise.",
+  "source_revision": "5f2778980c8ffeec7a0d1c40e2ea63109f313351",
+  "generated": "2026-10-26",
+  "repos": {
+    "JasonColapietro/suede-creator-skills": {
+      "withheld": 0,
+      "branch": "main",
+      "commit_date": "2026-10-25",
+      "commit_sha": "5f2778980c8ffeec7a0d1c40e2ea63109f313351",
+      "lists": [
+        "BehiSecc/awesome-claude-skills",
+        "VoltAgent/awesome-agent-skills",
+        "karanb192/awesome-claude-skills"
+      ],
+      "official": false
+    }
+  },
+  "rows": [
+    {
+      "repo": "JasonColapietro/suede-creator-skills",
+      "slug": "android-app-factory",
+      "name": "android-app-factory",
+      "description": "Suede AI Android app factory: plan, build, test, and prepare a production native Android app from product idea to a Play-ready signed bundle. Use for requests to create, ship, monetize, or modernize an Android app. Covers Kotlin and Jetpack Compose architecture, live target-API and Play policy checks, 16 KB page sizes, accessibility, privacy and Data Safety, Play Billing Library 8+, Play Integrity, account deletion, kids and Families rules, testing, performance, store assets, signing, and a release evidence gate. NOT FOR: uploading, promoting, or rolling out a build on Play (use suede-play-release); turning a website into an iOS app (use site-to-ios-app); a review-only pass on an existing app (use suede-code --findings-only); Play listing, keyword, and screenshot strategy (use suede-aso).",
+      "category": "developer-tools",
+      "grade": "B",
+      "score": 86,
+      "security_scan_status": "not_scanned",
+      "checks": "11111111",
+      "dir": "skills/android-app-factory",
+      "license": "MIT",
+      "open_license": true,
+      "license_file": "LICENSE",
+      "license_evidence": [
+        {
+          "label": "MIT",
+          "file": "LICENSE"
+        }
+      ],
+      "size": [
+        200,
+        1488,
+        9
+      ],
+      "kinds": "ra",
+      "provisional": true,
+      "published": false,
+      "source_revision": "5f2778980c8ffeec7a0d1c40e2ea63109f313351",
+      "components": {
+        "structure": 56,
+        "description_length": 3,
+        "boundary": 4,
+        "example": 0,
+        "depth": 7,
+        "references": 3,
+        "scripts": 0,
+        "recency": 9,
+        "adoption": 4,
+        "allowed_tools": 0,
+        "compatibility": 0
+      },
+      "checks_failed": []
+    },
+    {
+      "repo": "JasonColapietro/suede-creator-skills",
+      "slug": "site-to-ios-app",
+      "name": "site-to-ios-app",
+      "description": "Suede AI workflow for turning a live website, PWA, dashboard, or marketplace into an iOS app. Use when the user has a site or web app and asks to put it on the App Store, wrap it in an app, ship an iOS version, or convert a PWA to native. Produces SITE_TO_IOS_AUDIT.md and SITE_TO_IOS_PLAN.md: URL audit, shell-vs-native strategy, App Store Guideline 4.2 wrapper risk and the native value that mitigates it, current SDK, privacy manifest, age rating, login and payment checks, kids-app rules, QA matrix, and a release gate. NOT FOR: Android builds or conversions (use android-app-factory); Google Play uploads and rollouts (use suede-play-release); App Store listing, keyword, and screenshot strategy (use suede-aso).",
+      "category": "developer-tools",
+      "grade": "B",
+      "score": 86,
+      "security_scan_status": "not_scanned",
+      "checks": "11111111",
+      "dir": "skills/site-to-ios-app",
+      "license": "MIT",
+      "open_license": true,
+      "license_file": "LICENSE",
+      "license_evidence": [
+        {
+          "label": "MIT",
+          "file": "LICENSE"
+        }
+      ],
+      "size": [
+        133,
+        985,
+        6
+      ],
+      "kinds": "r",
+      "provisional": true,
+      "published": false,
+      "source_revision": "5f2778980c8ffeec7a0d1c40e2ea63109f313351",
+      "components": {
+        "structure": 56,
+        "description_length": 3,
+        "boundary": 4,
+        "example": 0,
+        "depth": 7,
+        "references": 3,
+        "scripts": 0,
+        "recency": 9,
+        "adoption": 4,
+        "allowed_tools": 0,
+        "compatibility": 0
+      },
+      "checks_failed": []
+    },
+    {
+      "repo": "JasonColapietro/suede-creator-skills",
+      "slug": "suede-ab-testing",
+      "name": "suede-ab-testing",
+      "description": "Suede AI experimentation discipline: hypotheses, sample size and power, test duration, guardrail metrics, significance and readouts, sequential designs, and an ICE-ranked experiment backlog with a reusable playbook. Use when comparing variants, deciding whether a result is reliable, or building an experiment program and cadence. NOT FOR: analytics instrumentation (use suede-analytics), post-click conversion diagnosis (use suede-site-alchemy), writing the variant copy (use suede-copy), or channel-level incrementality and geo holdouts (use suede-attribution).",
+      "category": "testing-qa",
+      "grade": "B",
+      "score": 88,
+      "security_scan_status": "not_scanned",
+      "checks": "11111111",
+      "dir": "skills/suede-ab-testing",
+      "license": "MIT",
+      "open_license": true,
+      "license_file": "LICENSE",
+      "license_evidence": [
+        {
+          "label": "MIT",
+          "file": "LICENSE"
+        }
+      ],
+      "size": [
+        353,
+        2129,
+        6
+      ],
+      "kinds": "r",
+      "provisional": true,
+      "published": false,
+      "source_revision": "5f2778980c8ffeec7a0d1c40e2ea63109f313351",
+      "components": {
+        "structure": 56,
+        "description_length": 5,
+        "boundary": 4,
+        "example": 0,
+        "depth": 7,
+        "references": 3,
+        "scripts": 0,
+        "recency": 9,
+        "adoption": 4,
+        "allowed_tools": 0,
+        "compatibility": 0
+      },
+      "checks_failed": []
+    },
+    {
+      "repo": "JasonColapietro/suede-creator-skills",
+      "slug": "suede-ad-creative",
+      "name": "suede-ad-creative",
+      "description": "Suede AI paid-media creative system: angles, hooks, headlines, primary text, RSA and Performance Max assets, static and motion concepts, iOS-native reveal videos, grounded batch production, client review pages, and iteration from performance data, all checked against platform character limits. Use when producing or iterating ad creative for Google, Meta, LinkedIn, TikTok, or X from real product, review, and performance inputs. NOT FOR: campaign budgets, bidding, or targeting (use suede-ads), statistical test design (use suede-ab-testing), organic social posts (use suede-social), general marketing images such as OG or hero graphics (use suede-image), or landing-page copy (use suede-copy).",
+      "category": "marketing-seo",
+      "grade": "B",
+      "score": 86,
+      "security_scan_status": "not_scanned",
+      "checks": "11111111",
+      "dir": "skills/suede-ad-creative",
+      "license": "MIT",
+      "open_license": true,
+      "license_file": "LICENSE",
+      "license_evidence": [
+        {
+          "label": "MIT",
+          "file": "LICENSE"
+        }
+      ],
+      "size": [
+        415,
+        2957,
+        13
+      ],
+      "kinds": "ra",
+      "provisional": true,
+      "published": false,
+      "source_revision": "5f2778980c8ffeec7a0d1c40e2ea63109f313351",
+      "components": {
+        "structure": 56,
+        "description_length": 3,
+        "boundary": 4,
+        "example": 0,
+        "depth": 7,
+        "references": 3,
+        "scripts": 0,
+        "recency": 9,
+        "adoption": 4,
+        "allowed_tools": 0,
+        "compatibility": 0
+      },
+      "checks_failed": []
+    },
+    {
+      "repo": "JasonColapietro/suede-creator-skills",
+      "slug": "suede-ads",
+      "name": "suede-ads",
+      "description": "Suede AI paid-acquisition operating system for channel choice, campaign structure, audiences, bidding, budget pacing, negative keywords, retargeting, B2B and ABM playbooks, and kill-or-scale decisions, with platform facts checked in October 2026 (Meta Andromeda and attribution windows, Performance Max controls). Use when planning, auditing, or optimizing paid campaigns on Google, Meta, LinkedIn, X, TikTok, or comparable platforms. NOT FOR: producing ad copy or creative variants (use suede-ad-creative), implementing tracking (use suede-analytics), attribution models or reconciliation (use suede-attribution), or the landing page (use suede-site-alchemy).",
+      "category": "marketing-seo",
+      "grade": "B",
+      "score": 83,
+      "security_scan_status": "not_scanned",
+      "checks": "11111111",
+      "dir": "skills/suede-ads",
+      "license": "MIT",
+      "open_license": true,
+      "license_file": "LICENSE",
+      "license_evidence": [
+        {
+          "label": "MIT",
+          "file": "LICENSE"
+        }
+      ],
+      "size": [
+        447,
+        3437,
+        14
+      ],
+      "kinds": "r",
+      "provisional": true,
+      "published": false,
+      "source_revision": "5f2778980c8ffeec7a0d1c40e2ea63109f313351",
+      "components": {
+        "structure": 56,
+        "description_length": 3,
+        "boundary": 4,
+        "example": 0,
+        "depth": 4,
+        "references": 3,
+        "scripts": 0,
+        "recency": 9,
+        "adoption": 4,
+        "allowed_tools": 0,
+        "compatibility": 0
+      },
+      "checks_failed": []
+    },
+    {
+      "repo": "JasonColapietro/suede-creator-skills",
+      "slug": "suede-agent-teams",
+      "name": "suede-agent-teams",
+      "description": "Suede AI agent-team orchestrator, the method behind multi-agent automation: split complex work into coordinated lanes with explicit file ownership, WIP collision detection, quality gates, escalation thresholds, rollback plans, and handoffs that prove what shipped. Use when one shared change needs safe parallel ownership across builders and reviewers, when a lane map must be resolved before anyone opens a file, or when running a repeatable public-repository contribution program with issue scoring, atomic task leases, isolated worktrees, and explicit publication authority. NOT FOR: one repo change a bundled DAG can run end to end (use suede-graph-flo-xr); reviewing or grading a diff (use suede-code); CI, branch protection, or merge-gate wiring (use suede-ci-gate); picking which single skill fits a request (use suede-workflow-skills).",
+      "category": "ai-agents-llm",
+      "grade": "B",
+      "score": 85,
+      "security_scan_status": "not_scanned",
+      "checks": "11111111",
+      "dir": "skills/suede-agent-teams",
+      "license": "MIT",
+      "open_license": true,
+      "license_file": "LICENSE",
+      "license_evidence": [
+        {
+          "label": "MIT",
+          "file": "LICENSE"
+        }
+      ],
+      "size": [
+        420,
+        3398,
+        7
+      ],
+      "kinds": "rs",
+      "provisional": true,
+      "published": false,
+      "source_revision": "5f2778980c8ffeec7a0d1c40e2ea63109f313351",
+      "components": {
+        "structure": 56,
+        "description_length": 3,
+        "boundary": 4,
+        "example": 0,
+        "depth": 4,
+        "references": 3,
+        "scripts": 2,
+        "recency": 9,
+        "adoption": 4,
+        "allowed_tools": 0,
+        "compatibility": 0
+      },
+      "checks_failed": []
+    },
+    {
+      "repo": "JasonColapietro/suede-creator-skills",
+      "slug": "suede-ai-eval",
+      "name": "suede-ai-eval",
+      "description": "Suede AI eval design and coverage audit: AI-SPEC, failure-mode rubric with severity scoring, concrete pass/fail eval cases, coverage and infrastructure scores, and mechanical acceptance gates. Use when a change ships LLM, RAG, agent, classifier, prompt, or generated-media behavior, or when asked to write evals for an AI feature, design test cases for a model surface, audit existing eval coverage, or judge whether AI behavior is safe to ship. No AI-SPEC means no eval plan, and no eval plan holds the recommended ship verdict. NOT FOR: reviewing or grading the implementation code behind the AI surface (use suede-code); wiring a passing suite into CI as a required check (use suede-ci-gate); coordinating the eval work as one lane of a larger build (use suede-agent-teams).",
+      "category": "ai-agents-llm",
+      "grade": "B",
+      "score": 86,
+      "security_scan_status": "not_scanned",
+      "checks": "11111111",
+      "dir": "skills/suede-ai-eval",
+      "license": "MIT",
+      "open_license": true,
+      "license_file": "LICENSE",
+      "license_evidence": [
+        {
+          "label": "MIT",
+          "file": "LICENSE"
+        }
+      ],
+      "size": [
+        201,
+        1833,
+        4
+      ],
+      "kinds": "r",
+      "provisional": true,
+      "published": false,
+      "source_revision": "5f2778980c8ffeec7a0d1c40e2ea63109f313351",
+      "components": {
+        "structure": 56,
+        "description_length": 3,
+        "boundary": 4,
+        "example": 0,
+        "depth": 7,
+        "references": 3,
+        "scripts": 0,
+        "recency": 9,
+        "adoption": 4,
+        "allowed_tools": 0,
+        "compatibility": 0
+      },
+      "checks_failed": []
+    },
+    {
+      "repo": "JasonColapietro/suede-creator-skills",
+      "slug": "suede-ai-seo",
+      "name": "suede-ai-seo",
+      "description": "Suede AI answer-engine and generative-engine optimization (AEO/GEO) program for getting a brand cited and recommended in Google AI Overviews and AI Mode, ChatGPT search, Perplexity, Copilot, Gemini, and Claude. Sets AI crawler policy (GPTBot, OAI-SearchBot, ClaudeBot, Claude-SearchBot, PerplexityBot, Google-Extended), entity and knowledge-graph consistency (Organization and Person schema, sameAs), citation-worthy page patterns, off-site consensus, llms.txt and agent-readable files, and AI visibility measurement: prompt panels, share of citations, AI-assistant referrals in GA4, and the Search Console and Bing AI performance reports. Use for AI SEO, AEO, GEO, LLMO, AI citations, AI visibility, optimize for ChatGPT or Perplexity, llms.txt, or OKF. NOT FOR: a scored nine-lane technical and on-page audit (use suede-seo-audit); a fast A-F promotion-readiness grade (use suede-visibility-grader); conversion-path rework (use suede-site-alchemy).",
+      "category": "ai-agents-llm",
+      "grade": "B",
+      "score": 84,
+      "security_scan_status": "not_scanned",
+      "checks": "11111111",
+      "dir": "skills/suede-ai-seo",
+      "license": "MIT",
+      "open_license": true,
+      "license_file": "LICENSE",
+      "license_evidence": [
+        {
+          "label": "MIT",
+          "file": "LICENSE"
+        }
+      ],
+      "size": [
+        266,
+        2221,
+        12
+      ],
+      "kinds": "r",
+      "provisional": true,
+      "published": false,
+      "source_revision": "5f2778980c8ffeec7a0d1c40e2ea63109f313351",
+      "components": {
+        "structure": 56,
+        "description_length": 1,
+        "boundary": 4,
+        "example": 0,
+        "depth": 7,
+        "references": 3,
+        "scripts": 0,
+        "recency": 9,
+        "adoption": 4,
+        "allowed_tools": 0,
+        "compatibility": 0
+      },
+      "checks_failed": []
+    },
+    {
+      "repo": "JasonColapietro/suede-creator-skills",
+      "slug": "suede-analytics",
+      "name": "suede-analytics",
+      "description": "Suede AI measurement discipline: tracking plans, event and key-event instrumentation in GA4 and GTM, consent mode v2, UTM hygiene, AI assistant and organic search channel grouping, and readback proof of what actually fires. Use when setting up, auditing, or repairing analytics across web, product, paid, and lifecycle surfaces. NOT FOR: experiment design or significance (use suede-ab-testing), campaign optimization (use suede-ads), attribution models, model comparison, or cross-tool reconciliation (use suede-attribution), or revenue-process architecture (use suede-revops).",
+      "category": "data-databases",
+      "grade": "B",
+      "score": 88,
+      "security_scan_status": "not_scanned",
+      "checks": "11111111",
+      "dir": "skills/suede-analytics",
+      "license": "MIT",
+      "open_license": true,
+      "license_file": "LICENSE",
+      "license_evidence": [
+        {
+          "label": "MIT",
+          "file": "LICENSE"
+        }
+      ],
+      "size": [
+        343,
+        1683,
+        7
+      ],
+      "kinds": "r",
+      "provisional": true,
+      "published": false,
+      "source_revision": "5f2778980c8ffeec7a0d1c40e2ea63109f313351",
+      "components": {
+        "structure": 56,
+        "description_length": 5,
+        "boundary": 4,
+        "example": 0,
+        "depth": 7,
+        "references": 3,
+        "scripts": 0,
+        "recency": 9,
+        "adoption": 4,
+        "allowed_tools": 0,
+        "compatibility": 0
+      },
+      "checks_failed": []
+    },
+    {
+      "repo": "JasonColapietro/suede-creator-skills",
+      "slug": "suede-aso",
+      "name": "suede-aso",
+      "description": "Suede AI app-store optimization for keyword fields, titles, subtitles, descriptions, screenshots, ratings context, and competitor listing audits. Use when improving App Store or Google Play visibility or listing conversion from a live app URL and current console evidence, or when authoring keyword, name, subtitle, and promo fields for an app that has not shipped yet. NOT FOR: building or releasing the app (use android-app-factory or site-to-ios-app; native iOS builds are a private Suede AI companion, not in this pack: ios-app-factory), creating paid ad assets (use suede-ad-creative), or install-event instrumentation (use suede-analytics).",
+      "category": "marketing-seo",
+      "grade": "B",
+      "score": 86,
+      "security_scan_status": "not_scanned",
+      "checks": "11111111",
+      "dir": "skills/suede-aso",
+      "license": "MIT",
+      "open_license": true,
+      "license_file": "LICENSE",
+      "license_evidence": [
+        {
+          "label": "MIT",
+          "file": "LICENSE"
+        }
+      ],
+      "size": [
+        348,
+        2487,
+        9
+      ],
+      "kinds": "r",
+      "provisional": true,
+      "published": false,
+      "source_revision": "5f2778980c8ffeec7a0d1c40e2ea63109f313351",
+      "components": {
+        "structure": 56,
+        "description_length": 3,
+        "boundary": 4,
+        "example": 0,
+        "depth": 7,
+        "references": 3,
+        "scripts": 0,
+        "recency": 9,
+        "adoption": 4,
+        "allowed_tools": 0,
+        "compatibility": 0
+      },
+      "checks_failed": []
+    },
+    {
+      "repo": "JasonColapietro/suede-creator-skills",
+      "slug": "suede-attribution",
+      "name": "suede-attribution",
+      "description": "Suede AI marketing attribution: which channels actually drive conversions and revenue, how to choose and read attribution models, reconcile conflicting numbers across ad platforms, GA4, and the CRM, design incrementality, MMM, and geo-holdout reads, add self-reported attribution for dark social and AI answers, and instrument first-party attribution yourself (closing the identify gap, stitching bookings or checkouts on third-party domains to their source). Use when someone asks which channel drives revenue, what their real CAC is, why dashboards disagree, or how to track a conversion they do not host. NOT FOR: event tracking plans, GA4 or GTM setup, and UTM hygiene (use suede-analytics), ad-platform pixels and campaign decisions (use suede-ads), or pipeline-stage and CRM revenue operations (use suede-revops).",
+      "category": "marketing-seo",
+      "grade": "B",
+      "score": 83,
+      "security_scan_status": "not_scanned",
+      "checks": "11111111",
+      "dir": "skills/suede-attribution",
+      "license": "MIT",
+      "open_license": true,
+      "license_file": "LICENSE",
+      "license_evidence": [
+        {
+          "label": "MIT",
+          "file": "LICENSE"
+        }
+      ],
+      "size": [
+        221,
+        3015,
+        8
+      ],
+      "kinds": "r",
+      "provisional": true,
+      "published": false,
+      "source_revision": "5f2778980c8ffeec7a0d1c40e2ea63109f313351",
+      "components": {
+        "structure": 56,
+        "description_length": 3,
+        "boundary": 4,
+        "example": 0,
+        "depth": 4,
+        "references": 3,
+        "scripts": 0,
+        "recency": 9,
+        "adoption": 4,
+        "allowed_tools": 0,
+        "compatibility": 0
+      },
+      "checks_failed": []
+    },
+    {
+      "repo": "JasonColapietro/suede-creator-skills",
+      "slug": "suede-campaign-in-a-box",
+      "name": "suede-campaign-in-a-box",
+      "description": "Suede AI artist campaign rollout for a song, release, era, show, or catalog moment. Use when an artist needs a complete campaign across surfaces (identity, era world, hooks, release stunts, fan rituals, visualizers, merch, setlists, catalog revival, collaborator outreach) or the full announce, tease, release-week, and post-drop package with calendar, email, site copy, search-ready release page, and fan actions. Picks one of twelve lanes or stitches them together, and flags rights gaps instead of resolving them. NOT FOR: single-surface conversion copy (use suede-copy); sync licensing packaging (use suede-sync-packaging); rights gaps or a rights package (use suede-rights-passport); software, repo, or skill-pack releases (use suede-launch-packaging).",
+      "category": "marketing-seo",
+      "grade": "B",
+      "score": 86,
+      "security_scan_status": "not_scanned",
+      "checks": "11111111",
+      "dir": "skills/suede-campaign-in-a-box",
+      "license": "MIT",
+      "open_license": true,
+      "license_file": "LICENSE",
+      "license_evidence": [
+        {
+          "label": "MIT",
+          "file": "LICENSE"
+        }
+      ],
+      "size": [
+        145,
+        1309,
+        4
+      ],
+      "kinds": "r",
+      "provisional": true,
+      "published": false,
+      "source_revision": "5f2778980c8ffeec7a0d1c40e2ea63109f313351",
+      "components": {
+        "structure": 56,
+        "description_length": 3,
+        "boundary": 4,
+        "example": 0,
+        "depth": 7,
+        "references": 3,
+        "scripts": 0,
+        "recency": 9,
+        "adoption": 4,
+        "allowed_tools": 0,
+        "compatibility": 0
+      },
+      "checks_failed": []
+    },
+    {
+      "repo": "JasonColapietro/suede-creator-skills",
+      "slug": "suede-churn-prevention",
+      "name": "suede-churn-prevention",
+      "description": "Suede AI retention discipline for voluntary and involuntary churn: transparent cancel flows that meet current cancellation law, pause and downgrade paths, reason-matched save offers, failed payment recovery with smart retries and dunning, health scores and proactive signals, and win-back design. Use when diagnosing subscriber loss or designing a bounded retention intervention. NOT FOR: writing the lifecycle emails themselves (use suede-emails), pricing architecture (use suede-pricing), paywall design (use suede-paywalls), or event instrumentation (use suede-analytics).",
+      "category": "frontend-design",
+      "grade": "B",
+      "score": 88,
+      "security_scan_status": "not_scanned",
+      "checks": "11111111",
+      "dir": "skills/suede-churn-prevention",
+      "license": "MIT",
+      "open_license": true,
+      "license_file": "LICENSE",
+      "license_evidence": [
+        {
+          "label": "MIT",
+          "file": "LICENSE"
+        }
+      ],
+      "size": [
+        418,
+        2653,
+        6
+      ],
+      "kinds": "r",
+      "provisional": true,
+      "published": false,
+      "source_revision": "5f2778980c8ffeec7a0d1c40e2ea63109f313351",
+      "components": {
+        "structure": 56,
+        "description_length": 5,
+        "boundary": 4,
+        "example": 0,
+        "depth": 7,
+        "references": 3,
+        "scripts": 0,
+        "recency": 9,
+        "adoption": 4,
+        "allowed_tools": 0,
+        "compatibility": 0
+      },
+      "checks_failed": []
+    },
+    {
+      "repo": "JasonColapietro/suede-creator-skills",
+      "slug": "suede-ci-gate",
+      "name": "suede-ci-gate",
+      "description": "Suede AI CI and branch-protection wiring for any repo and any stack: path-aware jobs, a single aggregator required check that cannot deadlock, lockfile hygiene, runtime pinning from the repo, and the exact branch-protection settings. Use when asked to set up CI, protect main, make CI block a bad merge, fix a required check that hangs pending forever, or repair duplicate or misfiring pipelines. Detects the repo's real apps, package managers, and runtime versions first; emits workflow files and settings, never pushes or flips protection itself. NOT FOR: reviewing or grading the change the gate is failing on (use suede-code); designing the AI eval cases to wire in (use suede-ai-eval); post-merge release packaging (use suede-launch-packaging).",
+      "category": "ai-agents-llm",
+      "grade": "B",
+      "score": 86,
+      "security_scan_status": "not_scanned",
+      "checks": "11111111",
+      "dir": "skills/suede-ci-gate",
+      "license": "MIT",
+      "open_license": true,
+      "license_file": "LICENSE",
+      "license_evidence": [
+        {
+          "label": "MIT",
+          "file": "LICENSE"
+        }
+      ],
+      "size": [
+        120,
+        1431,
+        5
+      ],
+      "kinds": "r",
+      "provisional": true,
+      "published": false,
+      "source_revision": "5f2778980c8ffeec7a0d1c40e2ea63109f313351",
+      "components": {
+        "structure": 56,
+        "description_length": 3,
+        "boundary": 4,
+        "example": 0,
+        "depth": 7,
+        "references": 3,
+        "scripts": 0,
+        "recency": 9,
+        "adoption": 4,
+        "allowed_tools": 0,
+        "compatibility": 0
+      },
+      "checks_failed": []
+    },
+    {
+      "repo": "JasonColapietro/suede-creator-skills",
+      "slug": "suede-clip-to-guide",
+      "name": "suede-clip-to-guide",
+      "description": "Suede AI short-to-long content funnel: turns a video, clip, interview moment, talk excerpt, screen recording, or transcript into a scored, rights-checked package that bridges attention to an owned guide, X Article, LinkedIn article, newsletter, or playbook, and makes that guide the page search engines and AI answers find. Use when a clip must lead somewhere deeper, when third-party footage needs a rights route before reuse, or when an X post must pair native video with an owned Article card. NOT FOR: video editing or rendering (use suede-video), social calendars, account audits, or listening (use suede-social), writing the long-form guide from scratch (use suede-copy), paid ads (use suede-ad-creative), or publishing without exact-content and visible-identity approval.",
+      "category": "media-creative",
+      "grade": "B",
+      "score": 88,
+      "security_scan_status": "not_scanned",
+      "checks": "11111111",
+      "dir": "skills/suede-clip-to-guide",
+      "license": "MIT",
+      "open_license": true,
+      "license_file": "LICENSE",
+      "license_evidence": [
+        {
+          "label": "MIT",
+          "file": "LICENSE"
+        }
+      ],
+      "size": [
+        387,
+        2699,
+        8
+      ],
+      "kinds": "rs",
+      "provisional": true,
+      "published": false,
+      "source_revision": "5f2778980c8ffeec7a0d1c40e2ea63109f313351",
+      "components": {
+        "structure": 56,
+        "description_length": 3,
+        "boundary": 4,
+        "example": 0,
+        "depth": 7,
+        "references": 3,
+        "scripts": 2,
+        "recency": 9,
+        "adoption": 4,
+        "allowed_tools": 0,
+        "compatibility": 0
+      },
+      "checks_failed": []
+    },
+    {
+      "repo": "JasonColapietro/suede-creator-skills",
+      "slug": "suede-co-marketing",
+      "name": "suede-co-marketing",
+      "description": "Suede AI co-marketing discipline: partner fit scored on audience overlap and reciprocity, joint offers and campaign formats (content, webinars, integrations, community), operating roles, lead-sharing and consent terms, shared measurement, and joint content built to earn links and AI citations for both brands. Use when identifying potential partners or planning a specific joint campaign or cross-promotion. NOT FOR: affiliate or customer-referral programs (use suede-referrals), product-launch orchestration (use suede-launch-packaging), or partner-facing sales collateral (use suede-sales-enablement).",
+      "category": "marketing-seo",
+      "grade": "B",
+      "score": 86,
+      "security_scan_status": "not_scanned",
+      "checks": "11111111",
+      "dir": "skills/suede-co-marketing",
+      "license": "MIT",
+      "open_license": true,
+      "license_file": "LICENSE",
+      "license_evidence": [
+        {
+          "label": "MIT",
+          "file": "LICENSE"
+        }
+      ],
+      "size": [
+        309,
+        1846,
+        6
+      ],
+      "kinds": "r",
+      "provisional": true,
+      "published": false,
+      "source_revision": "5f2778980c8ffeec7a0d1c40e2ea63109f313351",
+      "components": {
+        "structure": 56,
+        "description_length": 3,
+        "boundary": 4,
+        "example": 0,
+        "depth": 7,
+        "references": 3,
+        "scripts": 0,
+        "recency": 9,
+        "adoption": 4,
+        "allowed_tools": 0,
+        "compatibility": 0
+      },
+      "checks_failed": []
+    },
+    {
+      "repo": "JasonColapietro/suede-creator-skills",
+      "slug": "suede-code",
+      "name": "suede-code",
+      "description": "Suede AI code review and A-F ship grade for a diff, PR, branch, or commit range: findings ranked P0-P3 with file:line evidence and a fix path, an A-F grade across seven lanes with Instant-F security triggers and surface grade caps, OWASP 2025 checks, a deploy-safety gate, a commit-dirt scan, and fix briefs. Three modes: full review and grade in one pass (default), findings only with no grade, and grade only with no findings list. Use when asked to review this, grade this, find the bugs before merge, security-check this, is this safe to ship, give it a letter, or should this merge. Runs only when explicitly invoked; never auto-fires on a diff, save, or commit. NOT FOR: making CI enforce the verdict on every merge (use suede-ci-gate); LLM, RAG, or agent behavior coverage (use suede-ai-eval); searching competing plans and building a multi-file change (use suede-graph-flo-xr); fixes that need coordinated parallel lanes (use suede-agent-teams).",
+      "category": "ai-agents-llm",
+      "grade": "B",
+      "score": 83,
+      "security_scan_status": "not_scanned",
+      "checks": "11111111",
+      "dir": "skills/suede-code",
+      "license": "MIT",
+      "open_license": true,
+      "license_file": "LICENSE",
+      "license_evidence": [
+        {
+          "label": "MIT",
+          "file": "LICENSE"
+        }
+      ],
+      "size": [
+        423,
+        3259,
+        11
+      ],
+      "kinds": "rs",
+      "provisional": true,
+      "published": false,
+      "source_revision": "5f2778980c8ffeec7a0d1c40e2ea63109f313351",
+      "components": {
+        "structure": 56,
+        "description_length": 1,
+        "boundary": 4,
+        "example": 0,
+        "depth": 4,
+        "references": 3,
+        "scripts": 2,
+        "recency": 9,
+        "adoption": 4,
+        "allowed_tools": 0,
+        "compatibility": 0
+      },
+      "checks_failed": []
+    },
+    {
+      "repo": "JasonColapietro/suede-creator-skills",
+      "slug": "suede-cold-email",
+      "name": "suede-cold-email",
+      "description": "Suede AI B2B cold-email discipline: evidence-based personalization with a named source for every opening line, 2-to-4-word subject lines, bodies under 75 words, one low-friction ask, bounded 3-to-5-touch follow-up sequences, and a deliverability gate built on current Gmail, Yahoo, Microsoft, and CAN-SPAM rules. Use when writing or repairing outbound email to qualified prospects. NOT FOR: building or qualifying the prospect list (use suede-prospecting), lifecycle or nurture email to opted-in contacts (use suede-emails), or broader sales collateral (use suede-sales-enablement).",
+      "category": "productivity-knowledge",
+      "grade": "B",
+      "score": 88,
+      "security_scan_status": "not_scanned",
+      "checks": "11111111",
+      "dir": "skills/suede-cold-email",
+      "license": "MIT",
+      "open_license": true,
+      "license_file": "LICENSE",
+      "license_evidence": [
+        {
+          "label": "MIT",
+          "file": "LICENSE"
+        }
+      ],
+      "size": [
+        208,
+        1435,
+        9
+      ],
+      "kinds": "r",
+      "provisional": true,
+      "published": false,
+      "source_revision": "5f2778980c8ffeec7a0d1c40e2ea63109f313351",
+      "components": {
+        "structure": 56,
+        "description_length": 5,
+        "boundary": 4,
+        "example": 0,
+        "depth": 7,
+        "references": 3,
+        "scripts": 0,
+        "recency": 9,
+        "adoption": 4,
+        "allowed_tools": 0,
+        "compatibility": 0
+      },
+      "checks_failed": []
+    },
+    {
+      "repo": "JasonColapietro/suede-creator-skills",
+      "slug": "suede-community-marketing",
+      "name": "suede-community-marketing",
+      "description": "Suede AI community-growth discipline: member identity and purpose, platform choice (Discord, Slack, Circle, Reddit, Discourse, Facebook Groups), founding-member seeding, rituals and core loop, moderation and enforcement paths, health metrics with denominators, ambassador programs, and public community content that search engines and AI answers surface. Use when starting, auditing, or growing a product or brand community. NOT FOR: public social-channel content (use suede-social), referral-program mechanics and payouts (use suede-referrals), or customer-interview research (use suede-customer-research).",
+      "category": "marketing-seo",
+      "grade": "B",
+      "score": 83,
+      "security_scan_status": "not_scanned",
+      "checks": "11111111",
+      "dir": "skills/suede-community-marketing",
+      "license": "MIT",
+      "open_license": true,
+      "license_file": "LICENSE",
+      "license_evidence": [
+        {
+          "label": "MIT",
+          "file": "LICENSE"
+        }
+      ],
+      "size": [
+        243,
+        1812,
+        4
+      ],
+      "kinds": "",
+      "provisional": true,
+      "published": false,
+      "source_revision": "5f2778980c8ffeec7a0d1c40e2ea63109f313351",
+      "components": {
+        "structure": 56,
+        "description_length": 3,
+        "boundary": 4,
+        "example": 0,
+        "depth": 7,
+        "references": 0,
+        "scripts": 0,
+        "recency": 9,
+        "adoption": 4,
+        "allowed_tools": 0,
+        "compatibility": 0
+      },
+      "checks_failed": []
+    },
+    {
+      "repo": "JasonColapietro/suede-creator-skills",
+      "slug": "suede-competitor-profiling",
+      "name": "suede-competitor-profiling",
+      "description": "Suede AI competitive-intelligence discipline: evidence-backed profiles of positioning, pricing, messaging, product, proof, reviews, organic search footprint, and AI answer visibility, built from current public URLs with raw captures saved and fact, inference, and unknowns kept separate. Use when researching named competitors or refreshing a structured view of the competitor set. NOT FOR: publishing comparison or alternative pages (use suede-competitors), internal sales battle cards (use suede-sales-enablement), or deciding pricing changes (use suede-pricing).",
+      "category": "business-finance",
+      "grade": "B",
+      "score": 88,
+      "security_scan_status": "not_scanned",
+      "checks": "11111111",
+      "dir": "skills/suede-competitor-profiling",
+      "license": "MIT",
+      "open_license": true,
+      "license_file": "LICENSE",
+      "license_evidence": [
+        {
+          "label": "MIT",
+          "file": "LICENSE"
+        }
+      ],
+      "size": [
+        337,
+        2082,
+        6
+      ],
+      "kinds": "r",
+      "provisional": true,
+      "published": false,
+      "source_revision": "5f2778980c8ffeec7a0d1c40e2ea63109f313351",
+      "components": {
+        "structure": 56,
+        "description_length": 5,
+        "boundary": 4,
+        "example": 0,
+        "depth": 7,
+        "references": 3,
+        "scripts": 0,
+        "recency": 9,
+        "adoption": 4,
+        "allowed_tools": 0,
+        "compatibility": 0
+      },
+      "checks_failed": []
+    },
+    {
+      "repo": "JasonColapietro/suede-creator-skills",
+      "slug": "suede-competitors",
+      "name": "suede-competitors",
+      "description": "Suede AI comparison-page discipline for accurate, evidence-backed alternative, versus, and competitor-comparison content that wins evaluators and search intent. Use when planning or writing a public page that positions products against named alternatives from verified evidence. NOT FOR: gathering the underlying competitor evidence (use suede-competitor-profiling), internal battle cards (use suede-sales-enablement), or scaled page generation (use suede-programmatic-seo).",
+      "category": "marketing-seo",
+      "grade": "B",
+      "score": 88,
+      "security_scan_status": "not_scanned",
+      "checks": "11111111",
+      "dir": "skills/suede-competitors",
+      "license": "MIT",
+      "open_license": true,
+      "license_file": "LICENSE",
+      "license_evidence": [
+        {
+          "label": "MIT",
+          "file": "LICENSE"
+        }
+      ],
+      "size": [
+        274,
+        1661,
+        6
+      ],
+      "kinds": "r",
+      "provisional": true,
+      "published": false,
+      "source_revision": "5f2778980c8ffeec7a0d1c40e2ea63109f313351",
+      "components": {
+        "structure": 56,
+        "description_length": 5,
+        "boundary": 4,
+        "example": 0,
+        "depth": 7,
+        "references": 3,
+        "scripts": 0,
+        "recency": 9,
+        "adoption": 4,
+        "allowed_tools": 0,
+        "compatibility": 0
+      },
+      "checks_failed": []
+    },
+    {
+      "repo": "JasonColapietro/suede-creator-skills",
+      "slug": "suede-content-strategy",
+      "name": "suede-content-strategy",
+      "description": "Suede AI content strategy for audience questions, content pillars, topic clusters, AI answer gaps, original-data assets, editorial priorities, cadence, distribution, refreshes, and stop-doing decisions, each tied to a KPI. Use when deciding what to publish, why it deserves resources, and how the portfolio compounds in search and AI answers. NOT FOR: writing an individual asset (use suede-copy); technical or on-page SEO audits (use suede-seo-audit); AI visibility measurement and crawler policy (use suede-ai-seo); social-channel production (use suede-social).",
+      "category": "marketing-seo",
+      "grade": "B",
+      "score": 88,
+      "security_scan_status": "not_scanned",
+      "checks": "11111111",
+      "dir": "skills/suede-content-strategy",
+      "license": "MIT",
+      "open_license": true,
+      "license_file": "LICENSE",
+      "license_evidence": [
+        {
+          "label": "MIT",
+          "file": "LICENSE"
+        }
+      ],
+      "size": [
+        398,
+        2693,
+        5
+      ],
+      "kinds": "r",
+      "provisional": true,
+      "published": false,
+      "source_revision": "5f2778980c8ffeec7a0d1c40e2ea63109f313351",
+      "components": {
+        "structure": 56,
+        "description_length": 5,
+        "boundary": 4,
+        "example": 0,
+        "depth": 7,
+        "references": 3,
+        "scripts": 0,
+        "recency": 9,
+        "adoption": 4,
+        "allowed_tools": 0,
+        "compatibility": 0
+      },
+      "checks_failed": []
+    },
+    {
+      "repo": "JasonColapietro/suede-creator-skills",
+      "slug": "suede-copy",
+      "name": "suede-copy",
+      "description": "Suede AI writing skill for every copy surface: conversion copy for landing sections, heroes, headlines, CTAs, and microcopy; email and social posts; product listings, README and docs pages; public explainers; brand-voice retunes; and agent-facing docs such as SKILL.md, CLAUDE.md, and AGENTS.md. Includes an answer-first SEO and AEO pass (direct answer up top, question headings, quotable facts, FAQ, metadata), persona and framework selection, labeled variants, evidence boundaries, and a 70-point ship score. Use when asked to write, rewrite, sharpen, or retune copy on one surface or several, explain a product publicly, or tighten a doc an agent reads. NOT FOR: stripping AI patterns from text you are not otherwise rewriting (use suede-deslop); one high-stakes public piece that needs research and an adversarial fact audit before publishing (use suede-ship-copy); layout, tokens, or visual design (use suede-design); a scored standalone SEO audit (use suede-seo-audit).",
+      "category": "marketing-seo",
+      "grade": "B",
+      "score": 84,
+      "security_scan_status": "not_scanned",
+      "checks": "11111111",
+      "dir": "skills/suede-copy",
+      "license": "MIT",
+      "open_license": true,
+      "license_file": "LICENSE",
+      "license_evidence": [
+        {
+          "label": "MIT",
+          "file": "LICENSE"
+        }
+      ],
+      "size": [
+        358,
+        2443,
+        8
+      ],
+      "kinds": "r",
+      "provisional": true,
+      "published": false,
+      "source_revision": "5f2778980c8ffeec7a0d1c40e2ea63109f313351",
+      "components": {
+        "structure": 56,
+        "description_length": 1,
+        "boundary": 4,
+        "example": 0,
+        "depth": 7,
+        "references": 3,
+        "scripts": 0,
+        "recency": 9,
+        "adoption": 4,
+        "allowed_tools": 0,
+        "compatibility": 0
+      },
+      "checks_failed": []
+    },
+    {
+      "repo": "JasonColapietro/suede-creator-skills",
+      "slug": "suede-customer-research",
+      "name": "suede-customer-research",
+      "description": "Suede AI customer-research discipline: interview design, transcript, ticket, survey, and NPS synthesis, review and forum mining with saved captures, VOC quote banks, jobs to be done, evidence-backed personas, and the exact questions buyers type into search and AI assistants. Use when discovering or synthesizing what a defined customer segment actually says, does, needs, and resists. NOT FOR: competitor-only profiling (use suede-competitor-profiling), writing final marketing copy (use suede-copy), or deciding product priorities without product evidence (use suede-product-marketing).",
+      "category": "marketing-seo",
+      "grade": "B",
+      "score": 88,
+      "security_scan_status": "not_scanned",
+      "checks": "11111111",
+      "dir": "skills/suede-customer-research",
+      "license": "MIT",
+      "open_license": true,
+      "license_file": "LICENSE",
+      "license_evidence": [
+        {
+          "label": "MIT",
+          "file": "LICENSE"
+        }
+      ],
+      "size": [
+        258,
+        1970,
+        6
+      ],
+      "kinds": "r",
+      "provisional": true,
+      "published": false,
+      "source_revision": "5f2778980c8ffeec7a0d1c40e2ea63109f313351",
+      "components": {
+        "structure": 56,
+        "description_length": 5,
+        "boundary": 4,
+        "example": 0,
+        "depth": 7,
+        "references": 3,
+        "scripts": 0,
+        "recency": 9,
+        "adoption": 4,
+        "allowed_tools": 0,
+        "compatibility": 0
+      },
+      "checks_failed": []
+    },
+    {
+      "repo": "JasonColapietro/suede-creator-skills",
+      "slug": "suede-design",
+      "name": "suede-design",
+      "description": "Suede AI design skill for interfaces that feel intentional instead of templated: design tokens, color strategy, OKLCH ramps, type scale, fluid type, visual hierarchy, dark mode, spacing, component laws, motion, full surface builds that ship layout and words together, reference-to-target restyles (Suedify), and source-to-implementation visual QA. Use when asked to design, restyle, polish, or audit a screen, landing page, dashboard, or component; pick colors or fonts; define or fix design tokens; build or repair a dark mode; review a design system; make this site look like that one; or compare a mock, Figma frame, or screenshot against the rendered build. NOT FOR: writing copy with no layout work (use suede-copy); conversion and funnel architecture (use suede-site-alchemy); an A-F findability and first-screen grade of a public page (use suede-visibility-grader); multi-lane builds with file ownership and rollback plans (use suede-agent-teams).",
+      "category": "frontend-design",
+      "grade": "B",
+      "score": 84,
+      "security_scan_status": "not_scanned",
+      "checks": "11111111",
+      "dir": "skills/suede-design",
+      "license": "MIT",
+      "open_license": true,
+      "license_file": "LICENSE",
+      "license_evidence": [
+        {
+          "label": "MIT",
+          "file": "LICENSE"
+        }
+      ],
+      "size": [
+        385,
+        2690,
+        8
+      ],
+      "kinds": "r",
+      "provisional": true,
+      "published": false,
+      "source_revision": "5f2778980c8ffeec7a0d1c40e2ea63109f313351",
+      "components": {
+        "structure": 56,
+        "description_length": 1,
+        "boundary": 4,
+        "example": 0,
+        "depth": 7,
+        "references": 3,
+        "scripts": 0,
+        "recency": 9,
+        "adoption": 4,
+        "allowed_tools": 0,
+        "compatibility": 0
+      },
+      "checks_failed": []
+    },
+    {
+      "repo": "JasonColapietro/suede-creator-skills",
+      "slug": "suede-deslop",
+      "name": "suede-deslop",
+      "description": "Suede Slop Stop: the Suede AI context-aware anti-slop pass for finished prose. Finds or removes generic filler, manufactured emphasis, false agency, formulaic structure, chat and draft residue, formatting applied by rule, and the Suede AI house bans (em dashes, moreover, delve, game-changer, unlock, elevate, seamless, landscape, tapestry, rule-of-three rhythm) without flattening the author's voice. Returns cleaned prose with a 50-point score, or a findings-only audit that leaves the text untouched. Use before copy, a README, an email, a social post, or a doc ships; after a long AI-assisted writing session; or when asked to strip AI tells, deslop, or audit text for slop. NOT FOR: writing or restructuring copy (use suede-copy); one high-stakes public piece that needs research and fact review (use suede-ship-copy); deciding whether a person or model wrote text; changing or certifying facts.",
+      "category": "writing-content",
+      "grade": "B",
+      "score": 83,
+      "security_scan_status": "not_scanned",
+      "checks": "11111111",
+      "dir": "skills/suede-deslop",
+      "license": "MIT",
+      "open_license": true,
+      "license_file": "LICENSE",
+      "license_evidence": [
+        {
+          "label": "MIT",
+          "file": "LICENSE"
+        }
+      ],
+      "size": [
+        434,
+        3631,
+        4
+      ],
+      "kinds": "r",
+      "provisional": true,
+      "published": false,
+      "source_revision": "5f2778980c8ffeec7a0d1c40e2ea63109f313351",
+      "components": {
+        "structure": 56,
+        "description_length": 3,
+        "boundary": 4,
+        "example": 0,
+        "depth": 4,
+        "references": 3,
+        "scripts": 0,
+        "recency": 9,
+        "adoption": 4,
+        "allowed_tools": 0,
+        "compatibility": 0
+      },
+      "checks_failed": []
+    },
+    {
+      "repo": "JasonColapietro/suede-creator-skills",
+      "slug": "suede-directory-submissions",
+      "name": "suede-directory-submissions",
+      "description": "Suede AI directory distribution for selecting listings, sequencing submissions, tailoring positioning, keeping entity facts consistent, and verifying backlinks. Use when a product needs startup, SaaS, AI, MCP, marketplace, or review-directory submissions with a measurable tracker, or when directory and review-site presence should feed AI answer-engine recommendations. NOT FOR: broader launch orchestration (use suede-launch-packaging); scalable destination-page production (use suede-programmatic-seo); AI visibility measurement and on-page citation work (use suede-ai-seo).",
+      "category": "marketing-seo",
+      "grade": "B",
+      "score": 88,
+      "security_scan_status": "not_scanned",
+      "checks": "11111111",
+      "dir": "skills/suede-directory-submissions",
+      "license": "MIT",
+      "open_license": true,
+      "license_file": "LICENSE",
+      "license_evidence": [
+        {
+          "label": "MIT",
+          "file": "LICENSE"
+        }
+      ],
+      "size": [
+        351,
+        2631,
+        7
+      ],
+      "kinds": "r",
+      "provisional": true,
+      "published": false,
+      "source_revision": "5f2778980c8ffeec7a0d1c40e2ea63109f313351",
+      "components": {
+        "structure": 56,
+        "description_length": 5,
+        "boundary": 4,
+        "example": 0,
+        "depth": 7,
+        "references": 3,
+        "scripts": 0,
+        "recency": 9,
+        "adoption": 4,
+        "allowed_tools": 0,
+        "compatibility": 0
+      },
+      "checks_failed": []
+    },
+    {
+      "repo": "JasonColapietro/suede-creator-skills",
+      "slug": "suede-emails",
+      "name": "suede-emails",
+      "description": "Suede AI lifecycle email design for welcome, onboarding, nurture, re-engagement, post-purchase, and trigger-based sequences, with entry criteria, cadence, message roles, exact copy, deliverability checks against current Gmail, Yahoo, and Microsoft sender rules, and a measurement plan. Use when the user needs a multi-email flow: drip campaigns, welcome series, win-back flows, or trigger-based automations. NOT FOR: cold prospecting (use suede-cold-email), SMS in the same lifecycle program (use suede-sms), in-product activation flows (use suede-onboarding), or lifecycle-stage operations beyond email (use suede-revops).",
+      "category": "productivity-knowledge",
+      "grade": "B",
+      "score": 86,
+      "security_scan_status": "not_scanned",
+      "checks": "11111111",
+      "dir": "skills/suede-emails",
+      "license": "MIT",
+      "open_license": true,
+      "license_file": "LICENSE",
+      "license_evidence": [
+        {
+          "label": "MIT",
+          "file": "LICENSE"
+        }
+      ],
+      "size": [
+        284,
+        1561,
+        8
+      ],
+      "kinds": "r",
+      "provisional": true,
+      "published": false,
+      "source_revision": "5f2778980c8ffeec7a0d1c40e2ea63109f313351",
+      "components": {
+        "structure": 56,
+        "description_length": 3,
+        "boundary": 4,
+        "example": 0,
+        "depth": 7,
+        "references": 3,
+        "scripts": 0,
+        "recency": 9,
+        "adoption": 4,
+        "allowed_tools": 0,
+        "compatibility": 0
+      },
+      "checks_failed": []
+    },
+    {
+      "repo": "JasonColapietro/suede-creator-skills",
+      "slug": "suede-free-tools",
+      "name": "suede-free-tools",
+      "description": "Suede AI engineering-as-marketing strategy for selecting, scoring, and scoping calculators, graders, generators, and other free interactive tools. Includes a search- and AI-answer-ready tool page (crawlable method, worked example, schema) and KPIs. Use when the user wants a lead, link, education, or product-adoption asset with a measurable path to the paid product. NOT FOR: downloadable lead assets (use suede-lead-magnets), implementation of a full website (use suede-site-alchemy), or search diagnostics (use suede-seo-audit).",
+      "category": "marketing-seo",
+      "grade": "B",
+      "score": 88,
+      "security_scan_status": "not_scanned",
+      "checks": "11111111",
+      "dir": "skills/suede-free-tools",
+      "license": "MIT",
+      "open_license": true,
+      "license_file": "LICENSE",
+      "license_evidence": [
+        {
+          "label": "MIT",
+          "file": "LICENSE"
+        }
+      ],
+      "size": [
+        249,
+        1548,
+        5
+      ],
+      "kinds": "r",
+      "provisional": true,
+      "published": false,
+      "source_revision": "5f2778980c8ffeec7a0d1c40e2ea63109f313351",
+      "components": {
+        "structure": 56,
+        "description_length": 5,
+        "boundary": 4,
+        "example": 0,
+        "depth": 7,
+        "references": 3,
+        "scripts": 0,
+        "recency": 9,
+        "adoption": 4,
+        "allowed_tools": 0,
+        "compatibility": 0
+      },
+      "checks_failed": []
+    },
+    {
+      "repo": "JasonColapietro/suede-creator-skills",
+      "slug": "suede-graph-flo-xr",
+      "name": "suede-graph-flo-xr",
+      "description": "Suede AI multi-file shipping workflow (Suede Thought Graph shipping search) for one repo change: generates competing implementation plans, scores and prunes them, refutes the survivors, aggregates compatible lanes, selects one winner, then builds it in an isolated worktree behind a sandboxed gate and writes a handoff file. Use when competing implementation plans need one evidence-gated selection before any build. Halts on hazards, collisions, budget exhaustion, or no safe winner. Reads production; never deploys. NOT FOR: bulk independent work (use a separate private worker-fleet pass); reviewing or grading an existing diff (use suede-code); CI or branch-protection wiring (use suede-ci-gate); copy-only shipping (use suede-ship-copy).",
+      "category": "devops-cloud",
+      "grade": "B",
+      "score": 83,
+      "security_scan_status": "not_scanned",
+      "checks": "11111111",
+      "dir": "skills/suede-graph-flo-xr",
+      "license": "MIT",
+      "open_license": true,
+      "license_file": "LICENSE",
+      "license_evidence": [
+        {
+          "label": "MIT",
+          "file": "LICENSE"
+        }
+      ],
+      "size": [
+        251,
+        2114,
+        19
+      ],
+      "kinds": "",
+      "provisional": true,
+      "published": false,
+      "source_revision": "5f2778980c8ffeec7a0d1c40e2ea63109f313351",
+      "components": {
+        "structure": 56,
+        "description_length": 3,
+        "boundary": 4,
+        "example": 0,
+        "depth": 7,
+        "references": 0,
+        "scripts": 0,
+        "recency": 9,
+        "adoption": 4,
+        "allowed_tools": 0,
+        "compatibility": 0
+      },
+      "checks_failed": []
+    },
+    {
+      "repo": "JasonColapietro/suede-creator-skills",
+      "slug": "suede-image",
+      "name": "suede-image",
+      "description": "Suede AI marketing image production: choosing generation, editing, templates, or real screenshots; prompts and layout specs; hero, social, banner, directory, and Open Graph images; product mockups from real UI; export sizing, compression, and image SEO (alt text, file names, dimensions, structured data). Use when the user needs a marketing image or an image-production workflow. NOT FOR: paid-ad creative systems (use suede-ad-creative), video (use suede-video), app-store screenshots and listing strategy (use suede-aso), or social post strategy (use suede-social).",
+      "category": "media-creative",
+      "grade": "B",
+      "score": 88,
+      "security_scan_status": "not_scanned",
+      "checks": "11111111",
+      "dir": "skills/suede-image",
+      "license": "MIT",
+      "open_license": true,
+      "license_file": "LICENSE",
+      "license_evidence": [
+        {
+          "label": "MIT",
+          "file": "LICENSE"
+        }
+      ],
+      "size": [
+        404,
+        2728,
+        5
+      ],
+      "kinds": "r",
+      "provisional": true,
+      "published": false,
+      "source_revision": "5f2778980c8ffeec7a0d1c40e2ea63109f313351",
+      "components": {
+        "structure": 56,
+        "description_length": 5,
+        "boundary": 4,
+        "example": 0,
+        "depth": 7,
+        "references": 3,
+        "scripts": 0,
+        "recency": 9,
+        "adoption": 4,
+        "allowed_tools": 0,
+        "compatibility": 0
+      },
+      "checks_failed": []
+    },
+    {
+      "repo": "JasonColapietro/suede-creator-skills",
+      "slug": "suede-influencer-outreach",
+      "name": "suede-influencer-outreach",
+      "description": "Suede AI influencer outreach discipline: a personalized first-touch pitch to one vetted creator, newsletter writer, or podcaster, grounded in a named post or audience fact, with the real compensation stated by model (flat fee, commission mechanics, or gifted), one low-friction ask, a message fitted to the contact the creator publishes (business email, DM, or manager), and a bounded two-follow-up plan that stops at the first positive reply. Covers B2C brand collabs and B2B creator programs. Use when pitching a creator, DMing an influencer, writing a collab proposal, or repairing creator outreach that gets no replies. NOT FOR: recruiting affiliates across a list or designing commission structures (use suede-referrals), partnering with another brand (use suede-co-marketing), cold email to business prospects (use suede-cold-email), or pitching journalists and booking podcast guest spots (use suede-public-relations).",
+      "category": "productivity-knowledge",
+      "grade": "B",
+      "score": 84,
+      "security_scan_status": "not_scanned",
+      "checks": "11111111",
+      "dir": "skills/suede-influencer-outreach",
+      "license": "MIT",
+      "open_license": true,
+      "license_file": "LICENSE",
+      "license_evidence": [
+        {
+          "label": "MIT",
+          "file": "LICENSE"
+        }
+      ],
+      "size": [
+        184,
+        1624,
+        8
+      ],
+      "kinds": "r",
+      "provisional": true,
+      "published": false,
+      "source_revision": "5f2778980c8ffeec7a0d1c40e2ea63109f313351",
+      "components": {
+        "structure": 56,
+        "description_length": 1,
+        "boundary": 4,
+        "example": 0,
+        "depth": 7,
+        "references": 3,
+        "scripts": 0,
+        "recency": 9,
+        "adoption": 4,
+        "allowed_tools": 0,
+        "compatibility": 0
+      },
+      "checks_failed": []
+    },
+    {
+      "repo": "JasonColapietro/suede-creator-skills",
+      "slug": "suede-launch-packaging",
+      "name": "suede-launch-packaging",
+      "description": "Suede AI launch packaging and install verification: release notes, README and docs updates, install commands, proof links, release copy, and handoff notes for software, skill packs, and MCP servers. Use when finished software work needs a clean public package (README, docs page, install command, release note, GitHub Pages update, skill-pack release, MCP server, or launch/social copy) or when a release needs handoff notes, an install fails, a public user cannot add a skill, a raw-vs-blob URL returns HTML, or `@personal` or a local plugin alias leaks into public docs. Verifies the live URL and runs the exact install command from a clean temporary directory before anything is called live. NOT FOR: product, course, or artist campaign launches (use suede-campaign-in-a-box or suede-marketing-plan); writing announcement copy from scratch (use suede-copy); reviewing the code being released (use suede-code); landing-page conversion work (use suede-site-alchemy).",
+      "category": "marketing-seo",
+      "grade": "B",
+      "score": 84,
+      "security_scan_status": "not_scanned",
+      "checks": "11111111",
+      "dir": "skills/suede-launch-packaging",
+      "license": "MIT",
+      "open_license": true,
+      "license_file": "LICENSE",
+      "license_evidence": [
+        {
+          "label": "MIT",
+          "file": "LICENSE"
+        }
+      ],
+      "size": [
+        107,
+        1451,
+        4
+      ],
+      "kinds": "r",
+      "provisional": true,
+      "published": false,
+      "source_revision": "5f2778980c8ffeec7a0d1c40e2ea63109f313351",
+      "components": {
+        "structure": 56,
+        "description_length": 1,
+        "boundary": 4,
+        "example": 0,
+        "depth": 7,
+        "references": 3,
+        "scripts": 0,
+        "recency": 9,
+        "adoption": 4,
+        "allowed_tools": 0,
+        "compatibility": 0
+      },
+      "checks_failed": []
+    },
+    {
+      "repo": "JasonColapietro/suede-creator-skills",
+      "slug": "suede-lead-magnets",
+      "name": "suede-lead-magnets",
+      "description": "Suede AI lead-magnet strategy: choosing a format (checklist, template, swipe file, guide, quiz, mini-course, original data), setting useful depth, deciding what to gate and what to publish as an indexable page that earns links and AI citations, landing page and delivery, and measuring qualified capture. Use when the user needs a downloadable or gated resource exchanged for contact details, or wants a lead magnet that also ranks. NOT FOR: interactive calculators, graders, or generators (use suede-free-tools), lifecycle sequences after capture (use suede-emails), or production copy (use suede-copy).",
+      "category": "productivity-knowledge",
+      "grade": "B",
+      "score": 86,
+      "security_scan_status": "not_scanned",
+      "checks": "11111111",
+      "dir": "skills/suede-lead-magnets",
+      "license": "MIT",
+      "open_license": true,
+      "license_file": "LICENSE",
+      "license_evidence": [
+        {
+          "label": "MIT",
+          "file": "LICENSE"
+        }
+      ],
+      "size": [
+        334,
+        1994,
+        6
+      ],
+      "kinds": "r",
+      "provisional": true,
+      "published": false,
+      "source_revision": "5f2778980c8ffeec7a0d1c40e2ea63109f313351",
+      "components": {
+        "structure": 56,
+        "description_length": 3,
+        "boundary": 4,
+        "example": 0,
+        "depth": 7,
+        "references": 3,
+        "scripts": 0,
+        "recency": 9,
+        "adoption": 4,
+        "allowed_tools": 0,
+        "compatibility": 0
+      },
+      "checks_failed": []
+    },
+    {
+      "repo": "JasonColapietro/suede-creator-skills",
+      "slug": "suede-marketing-council",
+      "name": "suede-marketing-council",
+      "description": "Suede AI marketing council: twelve role-based simulated advisors (Positioning Strategist, Offer Strategist, Search Visibility Strategist, Brand Reach Scientist, and others) apply named Suede frameworks to one bounded marketing decision, map the disagreements and the evidence that would settle each, and return a chair's synthesis with next steps and skill handoffs. Use when the user wants expert lenses, a simulated advisory board, a pressure test of a contested or irreversible bet, or a skeptic's read before committing. NOT FOR: impersonating or quoting real people, primary research (use suede-customer-research), writing the plan itself (use suede-marketing-plan), or executing the chosen tactic (route to the relevant Suede skill).",
+      "category": "marketing-seo",
+      "grade": "B",
+      "score": 86,
+      "security_scan_status": "not_scanned",
+      "checks": "11111111",
+      "dir": "skills/suede-marketing-council",
+      "license": "MIT",
+      "open_license": true,
+      "license_file": "LICENSE",
+      "license_evidence": [
+        {
+          "label": "MIT",
+          "file": "LICENSE"
+        }
+      ],
+      "size": [
+        141,
+        1386,
+        17
+      ],
+      "kinds": "r",
+      "provisional": true,
+      "published": false,
+      "source_revision": "5f2778980c8ffeec7a0d1c40e2ea63109f313351",
+      "components": {
+        "structure": 56,
+        "description_length": 3,
+        "boundary": 4,
+        "example": 0,
+        "depth": 7,
+        "references": 3,
+        "scripts": 0,
+        "recency": 9,
+        "adoption": 4,
+        "allowed_tools": 0,
+        "compatibility": 0
+      },
+      "checks_failed": []
+    },
+    {
+      "repo": "JasonColapietro/suede-creator-skills",
+      "slug": "suede-marketing-loops",
+      "name": "suede-marketing-loops",
+      "description": "Suede AI recurring marketing workflow design: turns repeatable work into agent-ready loops with a check cadence, action condition, self-check, durable state and dedupe, human checkpoint, stop condition, and output, drawn from a 46-loop catalog across SEO and AI-search visibility, paid, earned, activation, retention, revenue, referral, and ops. Returns a complete loop spec plus scheduling proof or a manual cadence. Use when the user wants repeatable ad-fatigue, content-refresh, ranking-drop, AI-citation watch, churn-watch, or weekly-review loops, or wants agents to run marketing operations on a schedule. NOT FOR: one-off tactics or plans (use suede-marketing-plan), experiment design (use suede-ab-testing), or creating a live automation without explicit scheduling authority.",
+      "category": "marketing-seo",
+      "grade": "B",
+      "score": 86,
+      "security_scan_status": "not_scanned",
+      "checks": "11111111",
+      "dir": "skills/suede-marketing-loops",
+      "license": "MIT",
+      "open_license": true,
+      "license_file": "LICENSE",
+      "license_evidence": [
+        {
+          "label": "MIT",
+          "file": "LICENSE"
+        }
+      ],
+      "size": [
+        113,
+        1589,
+        9
+      ],
+      "kinds": "r",
+      "provisional": true,
+      "published": false,
+      "source_revision": "5f2778980c8ffeec7a0d1c40e2ea63109f313351",
+      "components": {
+        "structure": 56,
+        "description_length": 3,
+        "boundary": 4,
+        "example": 0,
+        "depth": 7,
+        "references": 3,
+        "scripts": 0,
+        "recency": 9,
+        "adoption": 4,
+        "allowed_tools": 0,
+        "compatibility": 0
+      },
+      "checks_failed": []
+    },
+    {
+      "repo": "JasonColapietro/suede-creator-skills",
+      "slug": "suede-marketing-plan",
+      "name": "suede-marketing-plan",
+      "description": "Suede AI marketing planning in two modes. Shortlist mode scores up to 8 tactics from a 142-idea tactic library (including AI answer visibility, entity consistency, and comparison and pricing pages as search assets) on audience, stage, evidence, capacity, cost, and risk, and returns at most 5 with test, metric, review date, and stop condition. Full plan mode writes a 13-section AARRR operating plan (acquisition, activation, retention, referral, revenue) with a 90 day plan, 12 month roadmap, ops stack, idea bank, and measurement, sized to the client's real budget, team, and evidence. Use when the user is stuck and wants a shortlist of growth tactics, or needs a growth plan, go to market document, or roadmap. NOT FOR: isolated channel execution (use the relevant Suede skill), contested strategic bets that need debate (use suede-marketing-council), recurring workflows (use suede-marketing-loops), or positioning discovery alone (use suede-product-marketing).",
+      "category": "marketing-seo",
+      "grade": "B",
+      "score": 84,
+      "security_scan_status": "not_scanned",
+      "checks": "11111111",
+      "dir": "skills/suede-marketing-plan",
+      "license": "MIT",
+      "open_license": true,
+      "license_file": "LICENSE",
+      "license_evidence": [
+        {
+          "label": "MIT",
+          "file": "LICENSE"
+        }
+      ],
+      "size": [
+        158,
+        1676,
+        19
+      ],
+      "kinds": "r",
+      "provisional": true,
+      "published": false,
+      "source_revision": "5f2778980c8ffeec7a0d1c40e2ea63109f313351",
+      "components": {
+        "structure": 56,
+        "description_length": 1,
+        "boundary": 4,
+        "example": 0,
+        "depth": 7,
+        "references": 3,
+        "scripts": 0,
+        "recency": 9,
+        "adoption": 4,
+        "allowed_tools": 0,
+        "compatibility": 0
+      },
+      "checks_failed": []
+    },
+    {
+      "repo": "JasonColapietro/suede-creator-skills",
+      "slug": "suede-newsroom",
+      "name": "suede-newsroom",
+      "description": "Suede AI editorial pipeline for agent-run content: six roles with written contracts, one inspectable campaign record, and a distribution stage that gives every asset its own argument instead of a shorter draft. Use when content agents return generic, duplicated, or unsourced work, when one flagship piece has to carry a week of distribution and become the page search engines and AI answers cite, when someone asks to build an AI content team or one-person media company, or when a founder wants a weekly interview-led content system across personal and company accounts. NOT FOR: choosing topics, pillars, or clusters (use suede-content-strategy); platform mix, cadence, calendars, listening, or Instagram programs (use suede-social); running a stage on a schedule with state and stop conditions (use suede-marketing-loops); lane ownership for agents changing code (use suede-agent-teams); writing the flagship piece itself (use suede-ship-copy).",
+      "category": "ai-agents-llm",
+      "grade": "B",
+      "score": 84,
+      "security_scan_status": "not_scanned",
+      "checks": "11111111",
+      "dir": "skills/suede-newsroom",
+      "license": "MIT",
+      "open_license": true,
+      "license_file": "LICENSE",
+      "license_evidence": [
+        {
+          "label": "MIT",
+          "file": "LICENSE"
+        }
+      ],
+      "size": [
+        303,
+        2539,
+        8
+      ],
+      "kinds": "r",
+      "provisional": true,
+      "published": false,
+      "source_revision": "5f2778980c8ffeec7a0d1c40e2ea63109f313351",
+      "components": {
+        "structure": 56,
+        "description_length": 1,
+        "boundary": 4,
+        "example": 0,
+        "depth": 7,
+        "references": 3,
+        "scripts": 0,
+        "recency": 9,
+        "adoption": 4,
+        "allowed_tools": 0,
+        "compatibility": 0
+      },
+      "checks_failed": []
+    },
+    {
+      "repo": "JasonColapietro/suede-creator-skills",
+      "slug": "suede-offers",
+      "name": "suede-offers",
+      "description": "Suede AI offer design and persuasion mechanics: scores the offer on the Suede Value Levers (outcome, confidence, wait, effort), then builds bonuses that each remove an objection, guarantees and risk reversal matched to the buyer's real risk, honest scarcity and deadlines that meet FTC, UK, and EU consumer rules, naming, and payment structure, plus evidence-tiered behavioral models (anchoring, framing, social proof, loss aversion, defaults) stated as testable hypotheses. Returns an Offer Brief. Use when building or diagnosing a service, course, coaching, info-product, agency, or high ticket B2B offer, or when the user asks which psychological lever applies and how to test it. NOT FOR: SaaS tier and value-metric architecture (use suede-pricing), sales-page copy (use suede-copy), in-product upgrade prompts (use suede-paywalls), or clinical and mental-health advice.",
+      "category": "business-finance",
+      "grade": "B",
+      "score": 86,
+      "security_scan_status": "not_scanned",
+      "checks": "11111111",
+      "dir": "skills/suede-offers",
+      "license": "MIT",
+      "open_license": true,
+      "license_file": "LICENSE",
+      "license_evidence": [
+        {
+          "label": "MIT",
+          "file": "LICENSE"
+        }
+      ],
+      "size": [
+        168,
+        1363,
+        12
+      ],
+      "kinds": "r",
+      "provisional": true,
+      "published": false,
+      "source_revision": "5f2778980c8ffeec7a0d1c40e2ea63109f313351",
+      "components": {
+        "structure": 56,
+        "description_length": 3,
+        "boundary": 4,
+        "example": 0,
+        "depth": 7,
+        "references": 3,
+        "scripts": 0,
+        "recency": 9,
+        "adoption": 4,
+        "allowed_tools": 0,
+        "compatibility": 0
+      },
+      "checks_failed": []
+    },
+    {
+      "repo": "JasonColapietro/suede-creator-skills",
+      "slug": "suede-onboarding",
+      "name": "suede-onboarding",
+      "description": "Suede AI activation path from signup conversion to first value: audits account creation, registration, and trial start (field friction, progressive profiling, passkeys and social sign-in, NIST-aligned password rules, verification, mobile), then designs first-run sequencing, empty states, setup checklists, activation milestones, time to value, and retention-linked measurement. Returns a ranked signup audit or an onboarding flow spec with metrics and up to 3 test hypotheses. Use when visitors start but don't finish signup, or users sign up but never reach first value. NOT FOR: lead-capture and non-account forms (use suede-site-alchemy), lifecycle email sequences (use suede-emails), upgrade prompts and paywalls (use suede-paywalls), cancel flows (use suede-churn-prevention), or deploying auth changes without review.",
+      "category": "productivity-knowledge",
+      "grade": "B",
+      "score": 86,
+      "security_scan_status": "not_scanned",
+      "checks": "11111111",
+      "dir": "skills/suede-onboarding",
+      "license": "MIT",
+      "open_license": true,
+      "license_file": "LICENSE",
+      "license_evidence": [
+        {
+          "label": "MIT",
+          "file": "LICENSE"
+        }
+      ],
+      "size": [
+        135,
+        1108,
+        6
+      ],
+      "kinds": "r",
+      "provisional": true,
+      "published": false,
+      "source_revision": "5f2778980c8ffeec7a0d1c40e2ea63109f313351",
+      "components": {
+        "structure": 56,
+        "description_length": 3,
+        "boundary": 4,
+        "example": 0,
+        "depth": 7,
+        "references": 3,
+        "scripts": 0,
+        "recency": 9,
+        "adoption": 4,
+        "allowed_tools": 0,
+        "compatibility": 0
+      },
+      "checks_failed": []
+    },
+    {
+      "repo": "JasonColapietro/suede-creator-skills",
+      "slug": "suede-ops-architecture",
+      "name": "suede-ops-architecture",
+      "description": "Suede AI operations-architecture discipline that fixes the shape of a system before anyone builds it: entity schema first, exactly one write path per entity, every unit of work routed to a deterministic automation, an AI agent, or a human decision, every existing tool marked absorb, keep, or kill, and the build sequenced into phases whose completion is proved by a command. Use when scoping an automation or agent build, deciding whether a workflow needs a model at all, consolidating a sprawling tool stack, designing the data model under a workflow, choosing a migration path off an old system, or ordering a build so nothing lands on a moving foundation. NOT FOR: executing a planned multi-file repo change (use suede-graph-flo-xr); coordinating parallel builders with file ownership (use suede-agent-teams); lead lifecycle, scoring, and CRM routing rules (use suede-revops); proving agent output quality against an eval set (use suede-ai-eval); reviewing the finished diff (use suede-code).",
+      "category": "ai-agents-llm",
+      "grade": "B",
+      "score": 84,
+      "security_scan_status": "not_scanned",
+      "checks": "11111111",
+      "dir": "skills/suede-ops-architecture",
+      "license": "MIT",
+      "open_license": true,
+      "license_file": "LICENSE",
+      "license_evidence": [
+        {
+          "label": "MIT",
+          "file": "LICENSE"
+        }
+      ],
+      "size": [
+        223,
+        1898,
+        5
+      ],
+      "kinds": "r",
+      "provisional": true,
+      "published": false,
+      "source_revision": "5f2778980c8ffeec7a0d1c40e2ea63109f313351",
+      "components": {
+        "structure": 56,
+        "description_length": 1,
+        "boundary": 4,
+        "example": 0,
+        "depth": 7,
+        "references": 3,
+        "scripts": 0,
+        "recency": 9,
+        "adoption": 4,
+        "allowed_tools": 0,
+        "compatibility": 0
+      },
+      "checks_failed": []
+    },
+    {
+      "repo": "JasonColapietro/suede-creator-skills",
+      "slug": "suede-ops-assessment",
+      "name": "suede-ops-assessment",
+      "description": "Suede AI operations-assessment discipline that maps how work actually happens before anyone designs a system: floor-level interviews with the people who do the work, an inventory of every silo including spreadsheets and inboxes used as databases, friction quantified in the requester's own numbers, opportunities ranked by annual value against build complexity, and adoption watched for the thirty days after launch. Use when nobody can answer what to automate, when an operation needs auditing before a build, when tribal-knowledge and key-person risk has to surface, or when a shipped system is quietly being routed around. NOT FOR: deciding what to build and in what order once the map exists (use suede-ops-architecture); researching external customers rather than internal operators (use suede-customer-research); lead lifecycle, scoring, and CRM routing rules (use suede-revops); product instrumentation and dashboards (use suede-analytics); getting a new user to first value (use suede-onboarding).",
+      "category": "data-databases",
+      "grade": "B",
+      "score": 84,
+      "security_scan_status": "not_scanned",
+      "checks": "11111111",
+      "dir": "skills/suede-ops-assessment",
+      "license": "MIT",
+      "open_license": true,
+      "license_file": "LICENSE",
+      "license_evidence": [
+        {
+          "label": "MIT",
+          "file": "LICENSE"
+        }
+      ],
+      "size": [
+        256,
+        1930,
+        5
+      ],
+      "kinds": "r",
+      "provisional": true,
+      "published": false,
+      "source_revision": "5f2778980c8ffeec7a0d1c40e2ea63109f313351",
+      "components": {
+        "structure": 56,
+        "description_length": 1,
+        "boundary": 4,
+        "example": 0,
+        "depth": 7,
+        "references": 3,
+        "scripts": 0,
+        "recency": 9,
+        "adoption": 4,
+        "allowed_tools": 0,
+        "compatibility": 0
+      },
+      "checks_failed": []
+    },
+    {
+      "repo": "JasonColapietro/suede-creator-skills",
+      "slug": "suede-parity-contract",
+      "name": "suede-parity-contract",
+      "description": "Suede AI cross-surface canon discipline: hold one canonical answer across every surface that states it (web, iOS, Android, docs, a second service) by generating a contract from the reference surface and making the others assert against it, so a divergence fails a test instead of reaching a user or an answer engine. Consistent canon is what makes a product citable: generative search quotes sources that do not contradict themselves, and a number that differs between your site and your app is a contradiction a model can see. Use when the same rule, threshold, ladder, or stated fact lives on two or more surfaces; when values are copied by hand out of a handoff; when two surfaces already disagree; or when auditing where they drifted. NOT FOR: deciding which surface is correct (a product call this skill records rather than makes); reviewing a diff (use suede-code); wiring merge gates (use suede-ci-gate); a generative-search audit of a page (use suede-seo-audit).",
+      "category": "business-finance",
+      "grade": "B",
+      "score": 81,
+      "security_scan_status": "not_scanned",
+      "checks": "11111111",
+      "dir": "skills/suede-parity-contract",
+      "license": "MIT",
+      "open_license": true,
+      "license_file": "LICENSE",
+      "license_evidence": [
+        {
+          "label": "MIT",
+          "file": "LICENSE"
+        }
+      ],
+      "size": [
+        170,
+        1160,
+        3
+      ],
+      "kinds": "",
+      "provisional": true,
+      "published": false,
+      "source_revision": "5f2778980c8ffeec7a0d1c40e2ea63109f313351",
+      "components": {
+        "structure": 56,
+        "description_length": 1,
+        "boundary": 4,
+        "example": 0,
+        "depth": 7,
+        "references": 0,
+        "scripts": 0,
+        "recency": 9,
+        "adoption": 4,
+        "allowed_tools": 0,
+        "compatibility": 0
+      },
+      "checks_failed": []
+    },
+    {
+      "repo": "JasonColapietro/suede-creator-skills",
+      "slug": "suede-paywalls",
+      "name": "suede-paywalls",
+      "description": "Suede AI in-product monetization: paywall screens, feature gates, trial-expiry states, usage-limit prompts, and free-to-paid upgrade moments, with trigger timing, frequency caps, screen copy, plan presentation, a dark-pattern self-check, and subscription-law checks current to October 2026 (ROSCA and state auto-renewal laws after the vacated FTC click-to-cancel rule, California's click-to-cancel and renewal notices, UK DMCC subscription rules, the EU withdrawal button, App Store and Google Play disclosure). Returns screen drafts, trigger rules, and an experiment plan. Use when users have experienced value and the next step is an upgrade prompt or paywall. NOT FOR: public pricing pages (use suede-pricing for the teardown or suede-site-alchemy for conversion), tier architecture (use suede-pricing), or cancellation and save flows (use suede-churn-prevention).",
+      "category": "ai-agents-llm",
+      "grade": "B",
+      "score": 86,
+      "security_scan_status": "not_scanned",
+      "checks": "11111111",
+      "dir": "skills/suede-paywalls",
+      "license": "MIT",
+      "open_license": true,
+      "license_file": "LICENSE",
+      "license_evidence": [
+        {
+          "label": "MIT",
+          "file": "LICENSE"
+        }
+      ],
+      "size": [
+        207,
+        1063,
+        6
+      ],
+      "kinds": "r",
+      "provisional": true,
+      "published": false,
+      "source_revision": "5f2778980c8ffeec7a0d1c40e2ea63109f313351",
+      "components": {
+        "structure": 56,
+        "description_length": 3,
+        "boundary": 4,
+        "example": 0,
+        "depth": 7,
+        "references": 3,
+        "scripts": 0,
+        "recency": 9,
+        "adoption": 4,
+        "allowed_tools": 0,
+        "compatibility": 0
+      },
+      "checks_failed": []
+    },
+    {
+      "repo": "JasonColapietro/suede-creator-skills",
+      "slug": "suede-play-release",
+      "name": "suede-play-release",
+      "description": "Suede AI Google Play delivery skill: ship an Android release from the agent interface and prove what is live. Preflight the publishing credential with a real Play API call, upload an AAB to a testing track, promote that exact versionCode, stage or complete a rollout, write per-locale release notes, and read back versionCode, status, and userFraction from the Play Developer API. One step stays a Play Console action the user takes: the first release-access grant for the service account. Use when uploading or promoting an Android build, wiring a Play service account and fastlane supply lanes, fixing per-versionCode changelogs, raising or halting a staged rollout, or answering what production is really serving. NOT FOR: planning, building, or policy-checking the app (use android-app-factory); Play listing, keyword, and screenshot work (use suede-aso); CI required checks (use suede-ci-gate).",
+      "category": "developer-tools",
+      "grade": "B",
+      "score": 85,
+      "security_scan_status": "not_scanned",
+      "checks": "11111111",
+      "dir": "skills/suede-play-release",
+      "license": "MIT",
+      "open_license": true,
+      "license_file": "LICENSE",
+      "license_evidence": [
+        {
+          "label": "MIT",
+          "file": "LICENSE"
+        }
+      ],
+      "size": [
+        222,
+        1342,
+        4
+      ],
+      "kinds": "s",
+      "provisional": true,
+      "published": false,
+      "source_revision": "5f2778980c8ffeec7a0d1c40e2ea63109f313351",
+      "components": {
+        "structure": 56,
+        "description_length": 3,
+        "boundary": 4,
+        "example": 0,
+        "depth": 7,
+        "references": 0,
+        "scripts": 2,
+        "recency": 9,
+        "adoption": 4,
+        "allowed_tools": 0,
+        "compatibility": 0
+      },
+      "checks_failed": []
+    },
+    {
+      "repo": "JasonColapietro/suede-creator-skills",
+      "slug": "suede-pricing",
+      "name": "suede-pricing",
+      "description": "Suede AI pricing and packaging: chooses the value metric (seats, usage, credits, outcomes), structures tiers, compares free trial, freemium, and reverse trial, plans willingness to pay research and price increases with grandfathering, and tears down a pricing page for buyer clarity and for search and AI-assistant readability (text prices, matching schema, quotable FAQ). Returns a Pricing Decision Brief or a scored teardown. Use when deciding what to charge, restructuring tiers, pricing AI features with variable compute cost, raising prices, or fixing a pricing page that buyers or AI answers misread. NOT FOR: in-product upgrade screens (use suede-paywalls), offer bonuses and guarantees (use suede-offers), or executing billing changes.",
+      "category": "developer-tools",
+      "grade": "B",
+      "score": 86,
+      "security_scan_status": "not_scanned",
+      "checks": "11111111",
+      "dir": "skills/suede-pricing",
+      "license": "MIT",
+      "open_license": true,
+      "license_file": "LICENSE",
+      "license_evidence": [
+        {
+          "label": "MIT",
+          "file": "LICENSE"
+        }
+      ],
+      "size": [
+        261,
+        1646,
+        7
+      ],
+      "kinds": "r",
+      "provisional": true,
+      "published": false,
+      "source_revision": "5f2778980c8ffeec7a0d1c40e2ea63109f313351",
+      "components": {
+        "structure": 56,
+        "description_length": 3,
+        "boundary": 4,
+        "example": 0,
+        "depth": 7,
+        "references": 3,
+        "scripts": 0,
+        "recency": 9,
+        "adoption": 4,
+        "allowed_tools": 0,
+        "compatibility": 0
+      },
+      "checks_failed": []
+    },
+    {
+      "repo": "JasonColapietro/suede-creator-skills",
+      "slug": "suede-product-marketing",
+      "name": "suede-product-marketing",
+      "description": "Suede AI product-marketing context: drafts and versions the shared .agents/product-marketing.md record of product, audience, ICP, personas, positioning against real alternatives, objections, switching forces, verbatim customer language, sourced proof, goals, and canonical entity facts (official names, one-line description, sameAs profiles, the buyer questions search engines and AI assistants should answer). Every other Suede marketing skill reads it first. Use when a project needs that shared record created, auto-drafted from a codebase, or updated. NOT FOR: writing a campaign (use suede-campaign-in-a-box), conducting new customer interviews (use suede-customer-research), debating a contested positioning bet (use suede-marketing-council), or publishing brand claims.",
+      "category": "marketing-seo",
+      "grade": "B",
+      "score": 83,
+      "security_scan_status": "not_scanned",
+      "checks": "11111111",
+      "dir": "skills/suede-product-marketing",
+      "license": "MIT",
+      "open_license": true,
+      "license_file": "LICENSE",
+      "license_evidence": [
+        {
+          "label": "MIT",
+          "file": "LICENSE"
+        }
+      ],
+      "size": [
+        294,
+        1869,
+        4
+      ],
+      "kinds": "",
+      "provisional": true,
+      "published": false,
+      "source_revision": "5f2778980c8ffeec7a0d1c40e2ea63109f313351",
+      "components": {
+        "structure": 56,
+        "description_length": 3,
+        "boundary": 4,
+        "example": 0,
+        "depth": 7,
+        "references": 0,
+        "scripts": 0,
+        "recency": 9,
+        "adoption": 4,
+        "allowed_tools": 0,
+        "compatibility": 0
+      },
+      "checks_failed": []
+    },
+    {
+      "repo": "JasonColapietro/suede-creator-skills",
+      "slug": "suede-programmatic-seo",
+      "name": "suede-programmatic-seo",
+      "description": "Suede AI programmatic SEO for data-backed page systems at scale: location, persona, integration, comparison, template, glossary, and directory pages. Chooses the playbook, defines the data model and template, and enforces index-worthiness gates against thin, doorway, and scaled-content-abuse patterns, plus internal linking, sitemaps, phased rollout, and the KPIs that decide whether to expand. Use when planning, building, or rescuing many templated pages. NOT FOR: auditing an existing site (use suede-seo-audit); AI answer-engine visibility and measurement (use suede-ai-seo); planning editorial content (use suede-content-strategy); publishing bulk pages without approval.",
+      "category": "marketing-seo",
+      "grade": "B",
+      "score": 86,
+      "security_scan_status": "not_scanned",
+      "checks": "11111111",
+      "dir": "skills/suede-programmatic-seo",
+      "license": "MIT",
+      "open_license": true,
+      "license_file": "LICENSE",
+      "license_evidence": [
+        {
+          "label": "MIT",
+          "file": "LICENSE"
+        }
+      ],
+      "size": [
+        234,
+        1753,
+        5
+      ],
+      "kinds": "r",
+      "provisional": true,
+      "published": false,
+      "source_revision": "5f2778980c8ffeec7a0d1c40e2ea63109f313351",
+      "components": {
+        "structure": 56,
+        "description_length": 3,
+        "boundary": 4,
+        "example": 0,
+        "depth": 7,
+        "references": 3,
+        "scripts": 0,
+        "recency": 9,
+        "adoption": 4,
+        "allowed_tools": 0,
+        "compatibility": 0
+      },
+      "checks_failed": []
+    },
+    {
+      "repo": "JasonColapietro/suede-creator-skills",
+      "slug": "suede-prospecting",
+      "name": "suede-prospecting",
+      "description": "Suede AI prospecting and qualification: defines the ICP, then builds a bounded, source-backed lead sheet across four branches (B2B SaaS, general B2B, local business, and early demand signals from forums, reviews, and public issues), using licensed data (Apollo, ZoomInfo, Clay, HubSpot Breeze Intelligence, Sales Navigator for manual research) with fit scores, disqualification evidence, source and date per contact, and CAN-SPAM, GDPR, PECR, and CASL checks before handoff. Use when defining an ICP, sourcing and enriching a lead list, finding early adopters or design partners, scoring account fit, or documenting disqualification evidence. NOT FOR: sending outreach (use suede-cold-email), changing CRM routing or scoring (use suede-revops), or profiling competitors instead of prospects (use suede-competitor-profiling).",
+      "category": "frontend-design",
+      "grade": "B",
+      "score": 86,
+      "security_scan_status": "not_scanned",
+      "checks": "11111111",
+      "dir": "skills/suede-prospecting",
+      "license": "MIT",
+      "open_license": true,
+      "license_file": "LICENSE",
+      "license_evidence": [
+        {
+          "label": "MIT",
+          "file": "LICENSE"
+        }
+      ],
+      "size": [
+        278,
+        2341,
+        10
+      ],
+      "kinds": "r",
+      "provisional": true,
+      "published": false,
+      "source_revision": "5f2778980c8ffeec7a0d1c40e2ea63109f313351",
+      "components": {
+        "structure": 56,
+        "description_length": 3,
+        "boundary": 4,
+        "example": 0,
+        "depth": 7,
+        "references": 3,
+        "scripts": 0,
+        "recency": 9,
+        "adoption": 4,
+        "allowed_tools": 0,
+        "compatibility": 0
+      },
+      "checks_failed": []
+    },
+    {
+      "repo": "JasonColapietro/suede-creator-skills",
+      "slug": "suede-public-relations",
+      "name": "suede-public-relations",
+      "description": "Suede AI earned media, built for both journalists and AI search: validates story angles, builds a sourced media list, drafts journalist and podcast pitches under 200 words, answers source requests (HARO, Qwoted, Featured), scores newsjacking, and sets up a press page with consistent entity facts and Organization schema so coverage becomes citations in Google AI Overviews, ChatGPT, Claude, and Perplexity. Returns pitch drafts, a scored media list, or a press-kit checklist, all held for send approval. Use when building a media list, drafting a pitch, preparing a press kit, evaluating newsjacking, answering a reporter request, or growing third-party mentions for AI visibility. NOT FOR: directory submissions (use suede-directory-submissions), launch packaging (use suede-launch-packaging), social publishing (use suede-social), on-site AI SEO fixes (use suede-ai-seo), or contacting anyone without approval.",
+      "category": "marketing-seo",
+      "grade": "B",
+      "score": 84,
+      "security_scan_status": "not_scanned",
+      "checks": "11111111",
+      "dir": "skills/suede-public-relations",
+      "license": "MIT",
+      "open_license": true,
+      "license_file": "LICENSE",
+      "license_evidence": [
+        {
+          "label": "MIT",
+          "file": "LICENSE"
+        }
+      ],
+      "size": [
+        196,
+        1690,
+        8
+      ],
+      "kinds": "r",
+      "provisional": true,
+      "published": false,
+      "source_revision": "5f2778980c8ffeec7a0d1c40e2ea63109f313351",
+      "components": {
+        "structure": 56,
+        "description_length": 1,
+        "boundary": 4,
+        "example": 0,
+        "depth": 7,
+        "references": 3,
+        "scripts": 0,
+        "recency": 9,
+        "adoption": 4,
+        "allowed_tools": 0,
+        "compatibility": 0
+      },
+      "checks_failed": []
+    },
+    {
+      "repo": "JasonColapietro/suede-creator-skills",
+      "slug": "suede-referrals",
+      "name": "suede-referrals",
+      "description": "Suede AI referral and affiliate program design: refer a friend and ambassador mechanics, incentive sizing from LTV and margin, affiliate commission structures, payout logic, fraud controls, attribution, FTC endorsement disclosure and incentivized-review rules, and viral loop measurement (K-factor, cohort LTV of referred customers). Returns a program spec with economics, rules, tooling options, and a launch checklist. Use when designing refer-a-friend mechanics, ambassador or partner incentives, affiliate programs, payout logic, or viral-loop measurement. NOT FOR: executing payouts or changing billing, co-marketing with a partner brand (use suede-co-marketing), launch-wide packaging (use suede-launch-packaging), lifecycle messaging (use suede-emails), or reporting unverified referral lift.",
+      "category": "frontend-design",
+      "grade": "B",
+      "score": 86,
+      "security_scan_status": "not_scanned",
+      "checks": "11111111",
+      "dir": "skills/suede-referrals",
+      "license": "MIT",
+      "open_license": true,
+      "license_file": "LICENSE",
+      "license_evidence": [
+        {
+          "label": "MIT",
+          "file": "LICENSE"
+        }
+      ],
+      "size": [
+        263,
+        1270,
+        6
+      ],
+      "kinds": "r",
+      "provisional": true,
+      "published": false,
+      "source_revision": "5f2778980c8ffeec7a0d1c40e2ea63109f313351",
+      "components": {
+        "structure": 56,
+        "description_length": 3,
+        "boundary": 4,
+        "example": 0,
+        "depth": 7,
+        "references": 3,
+        "scripts": 0,
+        "recency": 9,
+        "adoption": 4,
+        "allowed_tools": 0,
+        "compatibility": 0
+      },
+      "checks_failed": []
+    },
+    {
+      "repo": "JasonColapietro/suede-creator-skills",
+      "slug": "suede-release-linter",
+      "name": "suede-release-linter",
+      "description": "Suede AI skill that lints a local music or media release folder and scores it for release readiness: missing files, weak or malformed metadata, artwork and stem problems, split gaps, sample and rights blockers, unstated AI involvement, and platform-delivery issues, produced by a bundled offline script as a scored markdown and JSON report. Use when a creator has one or more release folders of tracks, artwork, and stems and wants to know what is missing before distributing, delivering, or handing it off; when metadata quality or a delivery rejection is the question; or when a release-readiness score is asked for. Reports what is present, missing, or unknown; never upgrades unknown to confirmed and never means legal clearance. NOT FOR: investigating the rights gaps the report surfaces or building the transfer package (use suede-rights-passport); a sync one-sheet (use suede-sync-packaging); a release rollout campaign (use suede-campaign-in-a-box).",
+      "category": "code-review-quality",
+      "grade": "B",
+      "score": 86,
+      "security_scan_status": "not_scanned",
+      "checks": "11111111",
+      "dir": "skills/suede-release-linter",
+      "license": "MIT",
+      "open_license": true,
+      "license_file": "LICENSE",
+      "license_evidence": [
+        {
+          "label": "MIT",
+          "file": "LICENSE"
+        }
+      ],
+      "size": [
+        151,
+        1136,
+        25
+      ],
+      "kinds": "rsa",
+      "provisional": true,
+      "published": false,
+      "source_revision": "5f2778980c8ffeec7a0d1c40e2ea63109f313351",
+      "components": {
+        "structure": 56,
+        "description_length": 1,
+        "boundary": 4,
+        "example": 0,
+        "depth": 7,
+        "references": 3,
+        "scripts": 2,
+        "recency": 9,
+        "adoption": 4,
+        "allowed_tools": 0,
+        "compatibility": 0
+      },
+      "checks_failed": []
+    },
+    {
+      "repo": "JasonColapietro/suede-creator-skills",
+      "slug": "suede-revops",
+      "name": "suede-revops",
+      "description": "Suede AI revenue operations: lifecycle stage definitions, fit and engagement lead scoring, MQL and SQL criteria, routing rules and speed-to-lead SLAs, pipeline stages and hygiene, CRM automation build lists for HubSpot, Salesforce, and Zapier, deal-desk approval tiers, enrichment and dedup, and a metrics dashboard spec, including where AI agents can safely run enrichment, routing, and follow-up steps. Returns implementation-ready documents the user can build from. Use when defining lead scoring and routing, MQL or SQL criteria, pipeline stages, CRM hygiene, automation, deal-desk rules, or marketing-to-sales handoffs. NOT FOR: writing outreach (use suede-cold-email), building prospect lists (use suede-prospecting), lifecycle campaigns (use suede-emails), pricing strategy (use suede-pricing), or mutating production CRM records without approval.",
+      "category": "data-databases",
+      "grade": "B",
+      "score": 86,
+      "security_scan_status": "not_scanned",
+      "checks": "11111111",
+      "dir": "skills/suede-revops",
+      "license": "MIT",
+      "open_license": true,
+      "license_file": "LICENSE",
+      "license_evidence": [
+        {
+          "label": "MIT",
+          "file": "LICENSE"
+        }
+      ],
+      "size": [
+        349,
+        2371,
+        8
+      ],
+      "kinds": "r",
+      "provisional": true,
+      "published": false,
+      "source_revision": "5f2778980c8ffeec7a0d1c40e2ea63109f313351",
+      "components": {
+        "structure": 56,
+        "description_length": 3,
+        "boundary": 4,
+        "example": 0,
+        "depth": 7,
+        "references": 3,
+        "scripts": 0,
+        "recency": 9,
+        "adoption": 4,
+        "allowed_tools": 0,
+        "compatibility": 0
+      },
+      "checks_failed": []
+    },
+    {
+      "repo": "JasonColapietro/suede-creator-skills",
+      "slug": "suede-rights-passport",
+      "name": "suede-rights-passport",
+      "description": "Suede AI rights skill for creator projects, in two modes. Audit mode finds the rights gaps in a song, release, or catalog (ownership, contributors, splits, samples, licenses, provenance, AI involvement, licensing and royalty-routing readiness) and marks each confirmed or unknown in an evidence table. Package mode turns messy materials into a local, offline transfer package for handoff: hashed assets, a normalized suede-intake.json manifest, credits and splits, license notes, provenance, and a missing-information report, checked by a bundled validator. Use when someone asks whether they have the rights to release, license, or get paid for a work; when splits, samples, or chain of title are unclear; or when a creator needs a rights package or handoff folder. Clears no rights and uploads nothing. NOT FOR: linting a release folder's files and metadata (use suede-release-linter); a sync one-sheet or pitch (use suede-sync-packaging); a release rollout campaign (use suede-campaign-in-a-box).",
+      "category": "code-review-quality",
+      "grade": "B",
+      "score": 86,
+      "security_scan_status": "not_scanned",
+      "checks": "11111111",
+      "dir": "skills/suede-rights-passport",
+      "license": "MIT",
+      "open_license": true,
+      "license_file": "LICENSE",
+      "license_evidence": [
+        {
+          "label": "MIT",
+          "file": "LICENSE"
+        }
+      ],
+      "size": [
+        262,
+        1876,
+        48
+      ],
+      "kinds": "rsa",
+      "provisional": true,
+      "published": false,
+      "source_revision": "5f2778980c8ffeec7a0d1c40e2ea63109f313351",
+      "components": {
+        "structure": 56,
+        "description_length": 1,
+        "boundary": 4,
+        "example": 0,
+        "depth": 7,
+        "references": 3,
+        "scripts": 2,
+        "recency": 9,
+        "adoption": 4,
+        "allowed_tools": 0,
+        "compatibility": 0
+      },
+      "checks_failed": []
+    },
+    {
+      "repo": "JasonColapietro/suede-creator-skills",
+      "slug": "suede-sales-enablement",
+      "name": "suede-sales-enablement",
+      "description": "Suede AI sales enablement: builds rep-ready pitch decks (10-12 slide narrative), one-pagers, objection libraries, demo scripts and talk tracks, competitive battle cards kept consistent with public comparison pages, proposal structures, buyer cards, and deal-level ROI calculators that separate sourced claims from modeled value. Returns draft assets with a claim-source table, held for approval. Use when creating or refreshing sales collateral, preparing for a competitive deal, or arming reps for objections and demos. NOT FOR: setting price or terms (use suede-pricing), building the offer (use suede-offers), public comparison pages (use suede-competitors), sending outreach (use suede-cold-email), or publishing unsupported proof.",
+      "category": "business-finance",
+      "grade": "B",
+      "score": 86,
+      "security_scan_status": "not_scanned",
+      "checks": "11111111",
+      "dir": "skills/suede-sales-enablement",
+      "license": "MIT",
+      "open_license": true,
+      "license_file": "LICENSE",
+      "license_evidence": [
+        {
+          "label": "MIT",
+          "file": "LICENSE"
+        }
+      ],
+      "size": [
+        382,
+        2427,
+        8
+      ],
+      "kinds": "r",
+      "provisional": true,
+      "published": false,
+      "source_revision": "5f2778980c8ffeec7a0d1c40e2ea63109f313351",
+      "components": {
+        "structure": 56,
+        "description_length": 3,
+        "boundary": 4,
+        "example": 0,
+        "depth": 7,
+        "references": 3,
+        "scripts": 0,
+        "recency": 9,
+        "adoption": 4,
+        "allowed_tools": 0,
+        "compatibility": 0
+      },
+      "checks_failed": []
+    },
+    {
+      "repo": "JasonColapietro/suede-creator-skills",
+      "slug": "suede-seo-audit",
+      "name": "suede-seo-audit",
+      "description": "Suede AI technical and on-page SEO audit with a generative search lane. Runs nine evidence-based lanes on a live page or site: crawl and index access, search intent, metadata, structure and internal links, supported schema, answer extractability, copy, E-E-A-T, and topic clusters, then grades each A-F and writes exact rewrite fixes, JSON-LD, and KPIs to watch. Use when the audit itself is the deliverable: traffic drops, pre-launch SEO checks, indexation problems, schema errors, Core Web Vitals risk, or a scored SEO report. NOT FOR: a fast A-F promotion-readiness grade (use suede-visibility-grader); AI crawler policy, entity consistency, and prompt-panel measurement for ChatGPT, Perplexity or AI Overviews (use suede-ai-seo); conversion-path rework (use suede-site-alchemy).",
+      "category": "marketing-seo",
+      "grade": "B",
+      "score": 88,
+      "security_scan_status": "not_scanned",
+      "checks": "11111111",
+      "dir": "skills/suede-seo-audit",
+      "license": "MIT",
+      "open_license": true,
+      "license_file": "LICENSE",
+      "license_evidence": [
+        {
+          "label": "MIT",
+          "file": "LICENSE"
+        }
+      ],
+      "size": [
+        380,
+        2625,
+        23
+      ],
+      "kinds": "rs",
+      "provisional": true,
+      "published": false,
+      "source_revision": "5f2778980c8ffeec7a0d1c40e2ea63109f313351",
+      "components": {
+        "structure": 56,
+        "description_length": 3,
+        "boundary": 4,
+        "example": 0,
+        "depth": 7,
+        "references": 3,
+        "scripts": 2,
+        "recency": 9,
+        "adoption": 4,
+        "allowed_tools": 0,
+        "compatibility": 0
+      },
+      "checks_failed": []
+    },
+    {
+      "repo": "JasonColapietro/suede-creator-skills",
+      "slug": "suede-ship-copy",
+      "name": "suede-ship-copy",
+      "description": "Suede AI copy-only orchestration DAG for one high-stakes piece strangers will read that has to be true: a landing page, launch post, blog post, email, X thread, docs page, README, ad, or store listing. About thirty agents run research lenses, a claim audit, blind angles, parallel section writers, adversarial refutation, and a publish readiness gate, and return a draft file plus an evidence record. The audit targets what the agents invent, never what the requester supplied: their own statements are given, and no phase may verify, hedge, or gate on them. Reads the live surface; never publishes. NOT FOR: everyday or multi-surface copy written in one pass (use suede-copy); changing code (use suede-graph-flo-xr); stripping AI patterns from existing text (use suede-deslop); bulk generation of many independent pieces from one spec.",
+      "category": "ai-agents-llm",
+      "grade": "C",
+      "score": 72,
+      "security_scan_status": "not_scanned",
+      "checks": "11110111",
+      "dir": "skills/suede-ship-copy",
+      "license": "MIT",
+      "open_license": true,
+      "license_file": "LICENSE",
+      "license_evidence": [
+        {
+          "label": "MIT",
+          "file": "LICENSE"
+        }
+      ],
+      "size": [
+        407,
+        3774,
+        4
+      ],
+      "kinds": "",
+      "provisional": true,
+      "published": false,
+      "source_revision": "5f2778980c8ffeec7a0d1c40e2ea63109f313351",
+      "components": {
+        "structure": 48,
+        "description_length": 3,
+        "boundary": 4,
+        "example": 0,
+        "depth": 4,
+        "references": 0,
+        "scripts": 0,
+        "recency": 9,
+        "adoption": 4,
+        "allowed_tools": 0,
+        "compatibility": 0
+      },
+      "checks_failed": [
+        "description_trigger"
+      ]
+    },
+    {
+      "repo": "JasonColapietro/suede-creator-skills",
+      "slug": "suede-site-alchemy",
+      "name": "suede-site-alchemy",
+      "description": "Suede AI conversion-rate optimization for landing, launch, campaign, and product pages. Turns a page into a conversion path: funnel stage, friction inventory, hero, proof, CTA ladder, pricing presentation, mobile task path, and falsifiable A/B hypotheses with a pre-registered experiment ledger, then implements and verifies the changes. Use when a live or drafted page gets traffic but not enough sign-ups, demos, or sales. NOT FOR: a scored SEO audit (use suede-seo-audit); getting cited by AI answer engines (use suede-ai-seo); a fast promotion-readiness grade (use suede-visibility-grader); writing the copy itself (use suede-copy).",
+      "category": "marketing-seo",
+      "grade": "B",
+      "score": 83,
+      "security_scan_status": "not_scanned",
+      "checks": "11111111",
+      "dir": "skills/suede-site-alchemy",
+      "license": "MIT",
+      "open_license": true,
+      "license_file": "LICENSE",
+      "license_evidence": [
+        {
+          "label": "MIT",
+          "file": "LICENSE"
+        }
+      ],
+      "size": [
+        441,
+        3448,
+        8
+      ],
+      "kinds": "ra",
+      "provisional": true,
+      "published": false,
+      "source_revision": "5f2778980c8ffeec7a0d1c40e2ea63109f313351",
+      "components": {
+        "structure": 56,
+        "description_length": 3,
+        "boundary": 4,
+        "example": 0,
+        "depth": 4,
+        "references": 3,
+        "scripts": 0,
+        "recency": 9,
+        "adoption": 4,
+        "allowed_tools": 0,
+        "compatibility": 0
+      },
+      "checks_failed": []
+    },
+    {
+      "repo": "JasonColapietro/suede-creator-skills",
+      "slug": "suede-sms",
+      "name": "suede-sms",
+      "description": "Suede AI SMS and MMS marketing discipline: whether SMS fits, consent-aware flows (welcome, cart recovery, post-purchase, win-back), exact message copy with segment counts, cadence and quiet hours, number types and platforms, and measurement, checked against current TCPA opt-out rules and A2P 10DLC registration. Use when evaluating SMS as a channel, designing or auditing a text message program, or drafting texts. NOT FOR: email campaigns (use suede-emails), phone-number capture UX (use suede-site-alchemy), or legal certification of a program, which needs counsel; this skill never sends, schedules, imports, or registers anything.",
+      "category": "frontend-design",
+      "grade": "B",
+      "score": 86,
+      "security_scan_status": "not_scanned",
+      "checks": "11111111",
+      "dir": "skills/suede-sms",
+      "license": "MIT",
+      "open_license": true,
+      "license_file": "LICENSE",
+      "license_evidence": [
+        {
+          "label": "MIT",
+          "file": "LICENSE"
+        }
+      ],
+      "size": [
+        339,
+        2700,
+        7
+      ],
+      "kinds": "r",
+      "provisional": true,
+      "published": false,
+      "source_revision": "5f2778980c8ffeec7a0d1c40e2ea63109f313351",
+      "components": {
+        "structure": 56,
+        "description_length": 3,
+        "boundary": 4,
+        "example": 0,
+        "depth": 7,
+        "references": 3,
+        "scripts": 0,
+        "recency": 9,
+        "adoption": 4,
+        "allowed_tools": 0,
+        "compatibility": 0
+      },
+      "checks_failed": []
+    },
+    {
+      "repo": "JasonColapietro/suede-creator-skills",
+      "slug": "suede-social",
+      "name": "suede-social",
+      "description": "Suede AI organic social system for founder and brand accounts: platform mix, cross-platform calendars, 30-post account audits that separate views from follows, leads, and sales, Instagram Reels, carousels, and Stories, LinkedIn and X posts and threads, short-video scripts, social search optimization, listening, and a daily approval-ready content loop. Use when planning, auditing, or producing organic social on any platform, including Instagram-specific growth work. NOT FOR: paid social ads (use suede-ads or suede-ad-creative), an agent-run editorial pipeline with role contracts (use suede-newsroom), a clip that must bridge to a long-form guide (use suede-clip-to-guide), editing or rendering video (use suede-video), or the broader editorial portfolio (use suede-content-strategy).",
+      "category": "marketing-seo",
+      "grade": "B",
+      "score": 86,
+      "security_scan_status": "not_scanned",
+      "checks": "11111111",
+      "dir": "skills/suede-social",
+      "license": "MIT",
+      "open_license": true,
+      "license_file": "LICENSE",
+      "license_evidence": [
+        {
+          "label": "MIT",
+          "file": "LICENSE"
+        }
+      ],
+      "size": [
+        277,
+        1958,
+        17
+      ],
+      "kinds": "r",
+      "provisional": true,
+      "published": false,
+      "source_revision": "5f2778980c8ffeec7a0d1c40e2ea63109f313351",
+      "components": {
+        "structure": 56,
+        "description_length": 3,
+        "boundary": 4,
+        "example": 0,
+        "depth": 7,
+        "references": 3,
+        "scripts": 0,
+        "recency": 9,
+        "adoption": 4,
+        "allowed_tools": 0,
+        "compatibility": 0
+      },
+      "checks_failed": []
+    },
+    {
+      "repo": "JasonColapietro/suede-creator-skills",
+      "slug": "suede-sync-packaging",
+      "name": "suede-sync-packaging",
+      "description": "Suede AI skill that prepares a song for sync pitching: scene and emotional angles, a supervisor-facing one-sheet, an exists/missing/unknown asset checklist covering master, instrumental, clean, and stems, screened lyric flags, mood tags, AI-involvement disclosure, and the open clearance questions kept in their own labeled pile. Use when a track is headed for film, TV, ads, games, trailers, or creator campaigns; when a music supervisor, sync agent, or brand asks what a song is and whether it can be used; or when someone asks for a one-sheet, pitch email, or sync package for a release. Prepares review-ready materials only: never claims clearance, promises placement, or sends outreach. NOT FOR: investigating the rights gaps behind an open clearance question or building the rights transfer package (use suede-rights-passport); linting the release folder itself (use suede-release-linter); a full rollout campaign (use suede-campaign-in-a-box).",
+      "category": "marketing-seo",
+      "grade": "B",
+      "score": 84,
+      "security_scan_status": "not_scanned",
+      "checks": "11111111",
+      "dir": "skills/suede-sync-packaging",
+      "license": "MIT",
+      "open_license": true,
+      "license_file": "LICENSE",
+      "license_evidence": [
+        {
+          "label": "MIT",
+          "file": "LICENSE"
+        }
+      ],
+      "size": [
+        196,
+        1451,
+        4
+      ],
+      "kinds": "r",
+      "provisional": true,
+      "published": false,
+      "source_revision": "5f2778980c8ffeec7a0d1c40e2ea63109f313351",
+      "components": {
+        "structure": 56,
+        "description_length": 1,
+        "boundary": 4,
+        "example": 0,
+        "depth": 7,
+        "references": 3,
+        "scripts": 0,
+        "recency": 9,
+        "adoption": 4,
+        "allowed_tools": 0,
+        "compatibility": 0
+      },
+      "checks_failed": []
+    },
+    {
+      "repo": "JasonColapietro/suede-creator-skills",
+      "slug": "suede-video",
+      "name": "suede-video",
+      "description": "Suede AI marketing video production: format choice, scripts, storyboards, AI generation and avatar plans with consent and rights gates, programmatic rendering, edit decision lists, reverse-engineered pacing, platform export specs, and YouTube and video search optimization (titles, chapters, transcripts, VideoObject schema). Use when scripting, generating, editing, or packaging a marketing video, or building a repeatable video pipeline. NOT FOR: the social calendar or post strategy (use suede-social), bridging a clip to a long-form guide (use suede-clip-to-guide), paid ad concepts (use suede-ad-creative), still images (use suede-image), or publishing unapproved media.",
+      "category": "media-creative",
+      "grade": "B",
+      "score": 86,
+      "security_scan_status": "not_scanned",
+      "checks": "11111111",
+      "dir": "skills/suede-video",
+      "license": "MIT",
+      "open_license": true,
+      "license_file": "LICENSE",
+      "license_evidence": [
+        {
+          "label": "MIT",
+          "file": "LICENSE"
+        }
+      ],
+      "size": [
+        419,
+        2567,
+        7
+      ],
+      "kinds": "r",
+      "provisional": true,
+      "published": false,
+      "source_revision": "5f2778980c8ffeec7a0d1c40e2ea63109f313351",
+      "components": {
+        "structure": 56,
+        "description_length": 3,
+        "boundary": 4,
+        "example": 0,
+        "depth": 7,
+        "references": 3,
+        "scripts": 0,
+        "recency": 9,
+        "adoption": 4,
+        "allowed_tools": 0,
+        "compatibility": 0
+      },
+      "checks_failed": []
+    },
+    {
+      "repo": "JasonColapietro/suede-creator-skills",
+      "slug": "suede-visibility-grader",
+      "name": "suede-visibility-grader",
+      "description": "Suede AI promotion-readiness grader for one public page. Gives a fast, evidence-based A-F grade on six lanes, findability, first-screen clarity, CTA pull, proof and trust, AI citation readiness, and design signal, plus up to five ranked fixes and a ship gate. Use before paid or public promotion of a landing page, launch page, README, docs page, or campaign page, or for a gut check on whether a page earns attention. NOT FOR: the deep nine-lane SEO audit with JSON-LD and rewrite fixes (use suede-seo-audit); AI crawler policy, entity consistency, and prompt-panel measurement (use suede-ai-seo); implementing conversion changes or experiments (use suede-site-alchemy).",
+      "category": "marketing-seo",
+      "grade": "C",
+      "score": 78,
+      "security_scan_status": "not_scanned",
+      "checks": "11110111",
+      "dir": "skills/suede-visibility-grader",
+      "license": "MIT",
+      "open_license": true,
+      "license_file": "LICENSE",
+      "license_evidence": [
+        {
+          "label": "MIT",
+          "file": "LICENSE"
+        }
+      ],
+      "size": [
+        192,
+        1692,
+        5
+      ],
+      "kinds": "r",
+      "provisional": true,
+      "published": false,
+      "source_revision": "5f2778980c8ffeec7a0d1c40e2ea63109f313351",
+      "components": {
+        "structure": 48,
+        "description_length": 3,
+        "boundary": 4,
+        "example": 0,
+        "depth": 7,
+        "references": 3,
+        "scripts": 0,
+        "recency": 9,
+        "adoption": 4,
+        "allowed_tools": 0,
+        "compatibility": 0
+      },
+      "checks_failed": [
+        "description_trigger"
+      ]
+    },
+    {
+      "repo": "JasonColapietro/suede-creator-skills",
+      "slug": "suede-workflow-skills",
+      "name": "suede-workflow-skills",
+      "description": "Suede AI umbrella router for the full public skill pack: picks the right specialist for any request across search visibility (SEO, AEO, GEO), agent and operations automation, code review and CI, copy and design, launch and app shipping, growth marketing, and creator rights, hands it the request verbatim, and recommends one next move with a ready-to-run prompt when the user asks what to do next. Use when a request crosses two or more lanes, when the user wants the full public skill pack loaded from one install path, when they ask which Suede skill fits, what's next, recommend the next move, give me the prompt, expand prompt, or make it granular, or when only this umbrella is installed. NOT FOR: a request that already names one lane (go straight to that specialist); a multi-file repo change that should be searched, built, and gated as one graph (use suede-graph-flo-xr); coordinating parallel lanes with file ownership and rollback (use suede-agent-teams).",
+      "category": "ai-agents-llm",
+      "grade": "B",
+      "score": 84,
+      "security_scan_status": "not_scanned",
+      "checks": "11111111",
+      "dir": "skills/suede-workflow-skills",
+      "license": "MIT",
+      "open_license": true,
+      "license_file": "LICENSE",
+      "license_evidence": [
+        {
+          "label": "MIT",
+          "file": "LICENSE"
+        }
+      ],
+      "size": [
+        240,
+        1739,
+        7
+      ],
+      "kinds": "r",
+      "provisional": true,
+      "published": false,
+      "source_revision": "5f2778980c8ffeec7a0d1c40e2ea63109f313351",
+      "components": {
+        "structure": 56,
+        "description_length": 1,
+        "boundary": 4,
+        "example": 0,
+        "depth": 7,
+        "references": 3,
+        "scripts": 0,
+        "recency": 9,
+        "adoption": 4,
+        "allowed_tools": 0,
+        "compatibility": 0
+      },
+      "checks_failed": []
+    }
+  ]
+}

@@ -1,11 +1,19 @@
 ---
 name: suede-ai-seo
-description: "Suede AI answer-engine and generative-engine optimization (AEO/GEO) program for getting a brand cited and recommended in Google AI Overviews and AI Mode, ChatGPT search, Perplexity, Copilot, Gemini, and Claude. Sets AI crawler policy (GPTBot, OAI-SearchBot, ClaudeBot, Claude-SearchBot, PerplexityBot, Google-Extended), entity and knowledge-graph consistency (Organization and Person schema, sameAs), citation-worthy page patterns, off-site consensus, llms.txt and agent-readable files, and AI visibility measurement: prompt panels, share of citations, AI-assistant referrals in GA4, and the Search Console and Bing AI performance reports. Use for AI SEO, AEO, GEO, LLMO, AI citations, AI visibility, optimize for ChatGPT or Perplexity, llms.txt, or OKF. NOT FOR: a scored nine-lane technical and on-page audit (use suede-seo-audit); a fast A-F promotion-readiness grade (use suede-visibility-grader); conversion-path rework (use suede-site-alchemy)."
+description: "Suede AI Answer Engine Optimization Skills. Use when asked to \"improve our AI citations\" or optimize for ChatGPT/Perplexity: crawler policy, entity consistency, citation-ready pages, off-site evidence and prompt-panel measurement. NOT FOR: nine-lane technical SEO audits (suede-seo-audit), quick promotion grades (suede-visibility-grader), or funnel implementation (suede-site-alchemy)."
 metadata:
+  display-name: "Suede AI Answer Engine Optimization Skills"
   version: 3.0.0
 ---
 
-# Suede AI SEO
+# Suede AI Answer Engine Optimization Skills
+
+Read [the worked delivery contract](references/worked-contract.md) for a concrete
+input, expected artifact, failure response and validation example.
+
+## Compatibility
+
+Requires public page/source evidence and web access for current official crawler documentation; prompt panels or analytics exports for measured visibility. No paid monitoring integration is required.
 
 The job: make a brand easy for answer engines to retrieve, attribute, and
 recommend, then prove it with measurement. Google's AI features run on core

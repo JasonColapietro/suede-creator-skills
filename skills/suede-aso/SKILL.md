@@ -1,11 +1,19 @@
 ---
 name: suede-aso
-description: "Suede AI app-store optimization for keyword fields, titles, subtitles, descriptions, screenshots, ratings context, and competitor listing audits. Use when improving App Store or Google Play visibility or listing conversion from a live app URL and current console evidence, or when authoring keyword, name, subtitle, and promo fields for an app that has not shipped yet. NOT FOR: building or releasing the app (use android-app-factory or site-to-ios-app; native iOS builds are a private Suede AI companion, not in this pack: ios-app-factory), creating paid ad assets (use suede-ad-creative), or install-event instrumentation (use suede-analytics)."
+description: "Suede AI App Store Optimization Skills. Use when asked to \"improve our App Store listing\" or prepare prelaunch keyword, title, subtitle, description and screenshot fields from app and console evidence. NOT FOR: app builds (android-app-factory or site-to-ios-app), release rollout (suede-play-release), paid assets (suede-ad-creative), or install instrumentation (suede-analytics)."
 metadata:
+  display-name: "Suede AI App Store Optimization Skills"
   version: 2.0.0
 ---
 
-# Suede ASO Audit
+# Suede AI App Store Optimization Skills
+
+Read [the worked delivery contract](references/worked-contract.md) for a concrete
+input, expected artifact, failure response and validation example.
+
+## Compatibility
+
+Works with live listing URLs or a prelaunch feature brief; web access for current official store field rules, console exports for performance evidence. Store write access is unnecessary for an audit or metadata draft.
 
 Analyze App Store and Google Play listings with the Suede ASO scoring system. Fetch
 live listing data, score metadata, visuals, and ratings, then produce a

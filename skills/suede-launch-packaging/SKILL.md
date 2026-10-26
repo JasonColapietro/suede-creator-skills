@@ -1,11 +1,20 @@
 ---
 name: suede-launch-packaging
-description: "Suede AI launch packaging and install verification: release notes, README and docs updates, install commands, proof links, release copy, and handoff notes for software, skill packs, and MCP servers. Use when finished software work needs a clean public package (README, docs page, install command, release note, GitHub Pages update, skill-pack release, MCP server, or launch/social copy) or when a release needs handoff notes, an install fails, a public user cannot add a skill, a raw-vs-blob URL returns HTML, or `@personal` or a local plugin alias leaks into public docs. Verifies the live URL and runs the exact install command from a clean temporary directory before anything is called live. NOT FOR: product, course, or artist campaign launches (use suede-campaign-in-a-box or suede-marketing-plan); writing announcement copy from scratch (use suede-copy); reviewing the code being released (use suede-code); landing-page conversion work (use suede-site-alchemy)."
+description: "Suede AI Launch Packaging Skills: software release packaging, handoff notes, and clean-install verification. Use when asked \"fix this install command\" or to prepare README, release notes, docs, proof links, and handoff copy for software, skills, or MCP servers. NOT FOR: campaign strategy (suede-marketing-plan), new copy (suede-copy), code review (suede-code), or conversion design (suede-site-alchemy)."
 metadata:
+  display-name: "Suede AI Launch Packaging Skills"
   version: 1.0.0
 ---
 
-# Suede Launch Packaging
+# Suede AI Launch Packaging Skills
+
+## Compatibility
+
+Requires a host that can read release files, fetch public URLs, and run the documented installer in a clean temporary directory. Registry publishing and deployment require their own authorized access.
+
+For a concrete input, expected output, recovery path, and validation check, read
+[the worked contract](references/worked-contract.md). Use it to check the handoff
+before treating the task as complete.
 
 ## Gate policy: advisory, not blocking
 

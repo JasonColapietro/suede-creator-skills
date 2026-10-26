@@ -251,7 +251,7 @@ const printHtml = `<!doctype html>
   <body>
     <section class="cover">
       <div>
-        <p class="cover-mark">Suede Creator Skills &middot; ${SKILL_COUNT} open-source agent skills</p>
+        <p class="cover-mark">Suede AI Skills &middot; ${SKILL_COUNT} open-source agent skills</p>
       </div>
       <div>
         <p class="cover-title">S-Tier</p>

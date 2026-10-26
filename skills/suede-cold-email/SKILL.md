@@ -1,13 +1,18 @@
 ---
 name: suede-cold-email
-description: "Suede AI B2B cold-email discipline: evidence-based personalization with a named source for every opening line, 2-to-4-word subject lines, bodies under 75 words, one low-friction ask, bounded 3-to-5-touch follow-up sequences, and a deliverability gate built on current Gmail, Yahoo, Microsoft, and CAN-SPAM rules. Use when writing or repairing outbound email to qualified prospects. NOT FOR: building or qualifying the prospect list (use suede-prospecting), lifecycle or nurture email to opted-in contacts (use suede-emails), or broader sales collateral (use suede-sales-enablement)."
+description: "Use when asked \"write a cold email\" or to repair B2B outbound to qualified prospects. Suede AI produces sourced personalization, short subjects, bodies under 75 words, one ask and bounded follow-ups, with current sender-rule checks. NOT FOR: prospect qualification (use suede-prospecting), opted-in lifecycle email (use suede-emails), or broader sales collateral (use suede-sales-enablement)."
 metadata:
+  display-name: "Suede AI Cold Email Skills"
   version: 2.1.0
 ---
 
-# Suede AI Cold Email Writing
+# Suede AI Cold Email Skills
 
 Use this cold-email playbook to write concise, evidence-grounded outreach that sounds human and respects the recipient.
+
+## Compatibility
+
+Any agent that can read the prospect evidence and product brief; current sender-policy checks need web access. Drafting needs no email account or sending integration.
 
 ## Before Writing
 
@@ -213,3 +218,7 @@ Use them to inform the writing, not as a checklist to satisfy.
 - Need CRM stages, lead routing, or suppression operations -> use `suede-revops`.
 - Before anything goes to a real recipient -> use `suede-deslop`.
 - From those skills, route cold outbound message and follow-up writing back to `suede-cold-email`.
+
+## Worked contract
+
+[Worked contract](references/usage-contract.md) gives a bounded input, expected output and failure check for this workflow.

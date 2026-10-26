@@ -1,13 +1,18 @@
 ---
 name: suede-competitors
-description: "Suede AI comparison-page discipline for accurate, evidence-backed alternative, versus, and competitor-comparison content that wins evaluators and search intent. Use when planning or writing a public page that positions products against named alternatives from verified evidence. NOT FOR: gathering the underlying competitor evidence (use suede-competitor-profiling), internal battle cards (use suede-sales-enablement), or scaled page generation (use suede-programmatic-seo)."
+description: "Use when asked \"write a comparison page\" or to plan an alternative or versus page from verified competitor evidence. Suede AI returns evaluator-focused copy, fair comparisons, pricing context, migration guidance and search-ready structure. NOT FOR: gathering competitor evidence (use suede-competitor-profiling), internal battle cards (use suede-sales-enablement), or scaled page systems (use suede-programmatic-seo)."
 metadata:
+  display-name: "Suede AI Competitor Comparison Skills"
   version: 2.0.1
 ---
 
-# Suede Competitor and Alternative Pages
+# Suede AI Competitor Comparison Skills
 
 Use this Suede comparison-page playbook to serve competitive search intent while keeping every product claim current, sourced, and fair.
+
+## Compatibility
+
+Any text-capable agent with current competitor evidence and product context. Verifying changing price or feature claims needs web access; drafting requires no CMS integration.
 
 ## Initial Assessment
 
@@ -279,3 +284,7 @@ shape for them:
 - Need to know whether answer engines cite or recommend the page -> use `suede-ai-seo`.
 - Need internal battle cards -> use `suede-sales-enablement`.
 - From those skills, route evidence-backed public alternative and versus-page composition back to `suede-competitors`.
+
+## Worked contract
+
+[Worked contract](references/usage-contract.md) gives a bounded input, expected output and failure check for this workflow.

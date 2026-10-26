@@ -1,11 +1,20 @@
 ---
 name: suede-lead-magnets
-description: "Suede AI lead-magnet strategy: choosing a format (checklist, template, swipe file, guide, quiz, mini-course, original data), setting useful depth, deciding what to gate and what to publish as an indexable page that earns links and AI citations, landing page and delivery, and measuring qualified capture. Use when the user needs a downloadable or gated resource exchanged for contact details, or wants a lead magnet that also ranks. NOT FOR: interactive calculators, graders, or generators (use suede-free-tools), lifecycle sequences after capture (use suede-emails), or production copy (use suede-copy)."
+description: "Suede AI Lead Magnet Skills. lead-magnet strategy for useful downloads, gated resources, delivery, and qualified capture. Use when asked \"design a lead magnet\" or to choose formats, gating, an indexable companion page, and a measurement plan. NOT FOR: interactive tools (suede-free-tools), nurture flows (suede-emails), or production copy (suede-copy)."
 metadata:
+  display-name: "Suede AI Lead Magnet Skills"
   version: 2.1.0
 ---
 
-# Suede AI Lead-Magnet Systems
+# Suede AI Lead Magnet Skills
+
+## Compatibility
+
+Works with supplied product context and audience evidence. File access is useful for existing assets; live research requires browsing. Email delivery and form deployment are separate authorized actions.
+
+For a concrete input, expected output, recovery path, and validation check, read
+[the worked contract](references/worked-contract.md). Use it to check the handoff
+before treating the task as complete.
 
 Design lead magnets as useful, rights-clear assets with an honest value exchange and a measurable path to product value. Choose the format, depth, gating, delivery, and follow-up based on audience need and qualification, not on maximizing raw email capture.
 

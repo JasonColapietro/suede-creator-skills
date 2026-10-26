@@ -289,6 +289,7 @@ def parse_skill(path: Path, repo_root: Path):
         at = ", ".join(str(x) for x in at)
     rec["allowed_tools"] = s(at)
     meta = fm.get("metadata") if isinstance(fm.get("metadata"), dict) else {}
+    rec["display_name"] = s(meta.get("display-name"))
     rec["fm_version"] = s(meta.get("version") or fm.get("version"))
     rec["fm_author"] = s(meta.get("author") or fm.get("author"))
     lines = body.splitlines()

@@ -1,9 +1,18 @@
 ---
 name: suede-site-alchemy
-description: "Suede AI conversion-rate optimization for landing, launch, campaign, and product pages. Turns a page into a conversion path: funnel stage, friction inventory, hero, proof, CTA ladder, pricing presentation, mobile task path, and falsifiable A/B hypotheses with a pre-registered experiment ledger, then implements and verifies the changes. Use when a live or drafted page gets traffic but not enough sign-ups, demos, or sales. NOT FOR: a scored SEO audit (use suede-seo-audit); getting cited by AI answer engines (use suede-ai-seo); a fast promotion-readiness grade (use suede-visibility-grader); writing the copy itself (use suede-copy)."
+description: "Turn landing, launch, campaign, and product pages into measured conversion paths: funnel stage, friction, hero, proof, CTAs, pricing, mobile QA, and pre-registered experiments. Use when asked to \"fix this page that gets no signups\" or improve demos and sales from existing traffic. Implements and verifies changes within scope. NOT FOR: SEO scores (use suede-seo-audit), AI citations (use suede-ai-seo), promotion grades (use suede-visibility-grader), or copy alone (use suede-copy)."
+metadata:
+  display-name: "Suede AI Site Alchemy Skills"
 ---
 
-# Suede Site Alchemy
+# Suede AI Site Alchemy Skills
+
+## Compatibility
+
+Implementation needs access to the page source and a rendered browser preview; analytics exports or authorized analytics access support measurement. Without these, return an evidence-limited plan.
+
+For a concrete input, expected handoff, and failure check, read
+[the worked handoff](references/worked-handoff.md).
 
 ## Gate policy: advisory, not blocking
 
@@ -296,40 +305,13 @@ it.
 Read `references/evidence-boundary-worked-example.md` for a compact before/after pass.
 Its "after" block is a set of hypotheses and proof slots, not publishable copy.
 
-## A/B Test Hypothesis Generator
+## A/B test hypotheses
 
-For any CTA, headline, or section that needs improvement, generate a testable
-hypothesis before rewriting. Read `references/experiment-design.md` and copy a
-row into `assets/cro-hypothesis-ledger.csv` before launch.
-
-Format:
-```
-For [eligible population], if we change [specific element] from [control] to
-[treatment], we hypothesize [primary metric] will change because [mechanism].
-Randomization unit: [visitor, account, session, or other justified unit].
-Guardrails: [harm metrics]. Data quality: [SRM, exposure, event health].
-MDE: [smallest business-useful effect, not expected uplift].
-Decision rule: [pre-registered rule using estimate, uncertainty, guardrails,
-and operational constraints].
-```
-
-Examples:
-
-```
-For eligible new visitors, if we change the hero CTA from "Learn more" to the
-verified action-and-outcome label, we hypothesize qualified CTA starts will
-change because the treatment reduces ambiguity.
-Randomization unit: visitor ID. Guardrails: completion rate, error rate, and
-support contacts. Data quality: allocation, SRM, exposure, and event parity.
-MDE/sample/duration: calculate from the observed baseline, business threshold,
-alpha, power, traffic, and the chosen analysis plan before launch.
-```
-
-After the Friction Audit, generate at most three hypotheses. Rank them by the
-quality of the underlying evidence, size of the affected population, decision
-value, effort, and risk. Do not rank by invented projected lift. A directional
-result is inconclusive until assignment, exposure, SRM, metric health,
-uncertainty, and guardrails have been checked.
+Before writing or ranking test hypotheses, read
+[the hypothesis format and worked recipe](references/hypothesis-recipes.md)
+and `references/experiment-design.md`. Create the pre-registration ledger before
+launch. Keep at most three hypotheses, ranked by evidence, population, decision
+value, effort, and risk; never rank by invented lift.
 
 ## Social Proof Framework
 
@@ -352,45 +334,14 @@ usability evidence or a pre-registered experiment when the decision matters.
 
 **Proof check**: every proof claim must be verifiable. Remove or rewrite vague claims like "used by thousands" without a number, "industry-leading" without a comparison, or "fast" without a metric.
 
-## Pricing Psychology
+## Pricing and urgency
 
-For pages with pricing, optimize comprehension and informed choice before
-persuasion. Verify currency, billing interval, taxes/fees, renewal, usage limits,
-cancellation, refund terms, eligibility, and feature truth.
-
-- **Order and emphasis**: anchoring can affect judgments, but it does not prove
-  a particular plan order will improve qualified conversion or retention. Test
-  order with revenue quality and cancellation/refund guardrails.
-- **Plan architecture**: do not add a decoy or manufacture an "obvious" tier.
-  Each plan must serve a real segment and remain understandable on its own.
-- **Guarantee framing**: display only an approved guarantee and its material
-  terms. Test placement; do not imply it is universally superior.
-- **Gain/loss framing**: treat framing as a hypothesis. Never manufacture loss,
-  scarcity, or a deadline, and monitor trust and post-purchase outcomes.
-- **Trial/freemium**: choose from activation path, marginal cost, abuse risk,
-  support load, retention evidence, and billing constraints. Measure downstream
-  activation and retention, not signup rate alone.
-
-## Scarcity and Urgency Framework
-
-Urgency works when it is true. It backfires when the visitor realizes it's manufactured: trust recovers slowly.
-
-**Ethical urgency (use):**
-- Real deadlines: event date, price increase date, enrollment close date. State the date explicitly: "Price increases July 1" not "Offer ends soon."
-- Real inventory: "4 spots remaining in the June cohort" when the cohort has a verified seat cap.
-- Real time-sensitivity: early-access pricing that provably expires, seasonal promotions tied to actual calendar events.
-- Behavioral triggers: "You've been looking at this for a while: here's the case study that usually answers the last question."
-
-**Dark patterns (never use):**
-- Countdown timers that reset on page refresh.
-- "Only 3 left in stock" for digital products.
-- "Offer expires tonight" when the offer is permanent.
-- Implied scarcity with no mechanism: "limited slots" without a seat cap.
-- Urgency language in automated email sequences with no actual deadline.
-
-**Test:** Before adding urgency to a page, answer: "If a visitor waited 30 days and came back, would this urgency claim still be accurate?" If no: it's a dark pattern. Cut it or make the deadline real.
-
-When genuine urgency exists, make the mechanism explicit. "This cohort closes July 1 because we cap at 20 students for live Q&A" is more persuasive than "Offer ends July 1": it explains why the scarcity is real.
+Before changing pricing presentation, guarantees, deadlines, or scarcity, read
+[the pricing and urgency framework](references/pricing-and-urgency.md).
+Verify material terms and the actual capacity or deadline mechanism. Treat
+presentation choices as hypotheses, keep trust and post-purchase guardrails,
+and never manufacture scarcity or reset a timer. The full framework and examples
+remain in the reference.
 
 ## Red Flags: Stop
 

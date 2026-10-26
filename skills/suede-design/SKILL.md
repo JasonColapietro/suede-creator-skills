@@ -1,9 +1,11 @@
 ---
 name: suede-design
-description: "Suede AI design skill for interfaces that feel intentional instead of templated: design tokens, color strategy, OKLCH ramps, type scale, fluid type, visual hierarchy, dark mode, spacing, component laws, motion, full surface builds that ship layout and words together, reference-to-target restyles (Suedify), and source-to-implementation visual QA. Use when asked to design, restyle, polish, or audit a screen, landing page, dashboard, or component; pick colors or fonts; define or fix design tokens; build or repair a dark mode; review a design system; make this site look like that one; or compare a mock, Figma frame, or screenshot against the rendered build. NOT FOR: writing copy with no layout work (use suede-copy); conversion and funnel architecture (use suede-site-alchemy); an A-F findability and first-screen grade of a public page (use suede-visibility-grader); multi-lane builds with file ownership and rollback plans (use suede-agent-teams)."
+description: "Use when asked \"restyle this dashboard\" or to design, polish or audit an interface hierarchy, tokens, color, type, dark mode or a design system. Suede AI delivers layout and words together, reference-to-target restyles and rendered visual QA. NOT FOR: copy without layout (use suede-copy), funnel architecture (use suede-site-alchemy), promotion grades (use suede-visibility-grader), or parallel build coordination (use suede-agent-teams)."
+metadata:
+  display-name: "Suede AI Design Skills"
 ---
 
-# Suede Design
+# Suede AI Design Skills
 
 Make interfaces feel intentional, legible, and specific to the product they
 serve. Covers product UI, brand and launch surfaces, dashboards, component
@@ -11,6 +13,10 @@ systems, responsive polish, restyles, and visual QA.
 
 **Core principle:** strip the logo and the surface must still be recognizably
 this product. Render the result before claiming it works.
+
+## Compatibility
+
+An agent with access to the target UI or source and visual inspection. Implementation needs project file access and its existing build runtime; screenshot comparison needs a browser or supplied renders.
 
 ## Gate policy: advisory, not blocking
 
@@ -388,3 +394,7 @@ Status: ship | ship-with-caveats | hold
 - Copy, layout, assets, and QA must run as coordinated parallel lanes →
   suede-agent-teams
 - The finished surface is ready to publish → suede-launch-packaging
+
+## Worked contract
+
+[Worked contract](references/usage-contract.md) gives a bounded input, expected output and failure check for this workflow.

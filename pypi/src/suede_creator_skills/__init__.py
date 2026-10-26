@@ -1,4 +1,4 @@
-"""Suede Creator Skills: open-source agent skills for Claude Code, Codex, and any skills-compatible agent.
+"""Suede AI Skills: open-source agent skills for Claude Code, Codex, and any skills-compatible agent.
 
 The skill folders ship inside this package as data. The ``suede-skills`` command
 lists them, prints any one of them, and copies them into an agent's skills

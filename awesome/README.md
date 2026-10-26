@@ -10,7 +10,7 @@ Compare agent skills with **0–99 quality scores**, verified against [Suede AI�
 
 Browse **3,804 scored skills from 160 repositories** across **16 categories**, with publisher credits and direct source links.
 
-The GitHub companion to the [Agent Skills Directory](https://skills.suedeai.ai/directory/), maintained by [Jason Colapietro / Suede AI](https://suedeai.ai/founder). Coverage follows the directory’s accepted snapshot and editorial rules. The [Suede Creator Skills pack](../README.md) has its own installation guide.
+The GitHub companion to the [Agent Skills Directory](https://skills.suedeai.ai/directory/), maintained by [Jason Colapietro / Suede AI](https://suedeai.ai/founder). Coverage follows the directory’s accepted snapshot and editorial rules. The [Suede AI Skills pack](../README.md) has its own installation guide.
 
 <a href="https://trendshift.io/repositories/82031?utm_source=trendshift-badge&amp;utm_medium=badge&amp;utm_campaign=badge-trendshift-82031" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/82031/daily?language=Python" alt="JasonColapietro%2Fsuede-creator-skills | Trendshift" width="250" height="55"/></a>
 

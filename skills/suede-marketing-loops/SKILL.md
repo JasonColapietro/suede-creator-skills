@@ -1,11 +1,20 @@
 ---
 name: suede-marketing-loops
-description: "Suede AI recurring marketing workflow design: turns repeatable work into agent-ready loops with a check cadence, action condition, self-check, durable state and dedupe, human checkpoint, stop condition, and output, drawn from a 46-loop catalog across SEO and AI-search visibility, paid, earned, activation, retention, revenue, referral, and ops. Returns a complete loop spec plus scheduling proof or a manual cadence. Use when the user wants repeatable ad-fatigue, content-refresh, ranking-drop, AI-citation watch, churn-watch, or weekly-review loops, or wants agents to run marketing operations on a schedule. NOT FOR: one-off tactics or plans (use suede-marketing-plan), experiment design (use suede-ab-testing), or creating a live automation without explicit scheduling authority."
+description: "Suede AI Marketing Loop Skills. recurring marketing workflow design with cadence, action conditions, durable state, dedupe, checkpoints, and stop rules. Use when asked \"create a weekly ranking watch\" or to turn repeatable marketing work into a complete loop spec. NOT FOR: one-off plans (suede-marketing-plan), experiments (suede-ab-testing), or scheduling without authority."
 metadata:
+  display-name: "Suede AI Marketing Loop Skills"
   version: 1.2.0
 ---
 
-# Suede Marketing Loops
+# Suede AI Marketing Loop Skills
+
+## Compatibility
+
+Loop specifications work in any text-capable agent. Live scheduling requires an available scheduler and explicit scheduling authority; otherwise return a manual cadence. Data connectors must already be authorized.
+
+For a concrete input, expected output, recovery path, and validation check, read
+[the worked contract](references/worked-contract.md). Use it to check the handoff
+before treating the task as complete.
 
 Suede AI turns repeatable marketing work into bounded loops with a defined trigger, cadence, input contract, self-check, durable state, human checkpoint, and stopping condition. A loop may watch SEO opportunities, ad fatigue, or churn signals, but it never earns permission to publish, spend, or mutate production merely because it runs on a schedule.
 

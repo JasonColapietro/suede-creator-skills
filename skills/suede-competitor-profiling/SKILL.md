@@ -1,13 +1,18 @@
 ---
 name: suede-competitor-profiling
-description: "Suede AI competitive-intelligence discipline: evidence-backed profiles of positioning, pricing, messaging, product, proof, reviews, organic search footprint, and AI answer visibility, built from current public URLs with raw captures saved and fact, inference, and unknowns kept separate. Use when researching named competitors or refreshing a structured view of the competitor set. NOT FOR: publishing comparison or alternative pages (use suede-competitors), internal sales battle cards (use suede-sales-enablement), or deciding pricing changes (use suede-pricing)."
+description: "Use when asked \"research these competitors\" or to refresh named competitor profiles. Suede AI competitive intelligence captures current public evidence for positioning, pricing, product, reviews, search and AI visibility, separating facts, inferences and unknowns. NOT FOR: publishing comparison pages (use suede-competitors), sales battle cards (use suede-sales-enablement), or pricing decisions (use suede-pricing)."
 metadata:
+  display-name: "Suede AI Competitor Profiling Skills"
   version: 2.1.0
 ---
 
-# Suede AI Competitor Profiling
+# Suede AI Competitor Profiling Skills
 
 Use this competitive-intelligence playbook to turn current public evidence into structured profiles with fact, inference, and unknowns kept separate.
+
+## Compatibility
+
+An agent with web access and local file writing for raw captures and profiles. Optional SEO providers are used only when already available; their absence leaves those measurements unknown.
 
 ## Initial Assessment
 
@@ -342,3 +347,7 @@ Only ask if not answered by context or input:
 - Need review and forum synthesis -> use `suede-customer-research`.
 - Need pricing, ad, or content implications -> use `suede-pricing`, `suede-ads`, or `suede-content-strategy`.
 - From those skills, route current-source competitor research back to `suede-competitor-profiling`.
+
+## Worked contract
+
+[Worked contract](references/usage-contract.md) gives a bounded input, expected output and failure check for this workflow.

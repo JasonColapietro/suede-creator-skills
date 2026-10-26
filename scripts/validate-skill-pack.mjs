@@ -595,8 +595,8 @@ if (!codexMarketplaceJson) {
   if (codexMarketplaceJson.name !== "suede-codex") {
     fail.push('Codex marketplace name must be "suede-codex"');
   }
-  if (codexMarketplaceJson.interface?.displayName !== "Suede Creator Skills") {
-    fail.push('Codex marketplace interface.displayName must be "Suede Creator Skills"');
+  if (codexMarketplaceJson.interface?.displayName !== "Suede AI Skills") {
+    fail.push('Codex marketplace interface.displayName must be "Suede AI Skills"');
   }
   if (
     !Array.isArray(codexMarketplaceJson.plugins) ||
@@ -1069,7 +1069,7 @@ const countChecks = [
 // stay byte-identical to each other, which is how the two social copies drifted
 // from the <title> before.
 // Stored HTML-escaped, exactly as the three tags carry it.
-const HOMEPAGE_TITLE = "Claude Code Skills &amp; Codex Skills: Suede Creator Skills";
+const HOMEPAGE_TITLE = "Claude Code Skills &amp; Codex Skills: Suede AI Skills";
 const homepageTitlePath = path.join(repoRoot, "docs", "index.html");
 if (!fs.existsSync(homepageTitlePath)) {
   fail.push("docs/index.html is missing — the homepage title guard cannot run");

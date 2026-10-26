@@ -1,9 +1,18 @@
 ---
 name: site-to-ios-app
-description: "Suede AI workflow for turning a live website, PWA, dashboard, or marketplace into an iOS app. Use when the user has a site or web app and asks to put it on the App Store, wrap it in an app, ship an iOS version, or convert a PWA to native. Produces SITE_TO_IOS_AUDIT.md and SITE_TO_IOS_PLAN.md: URL audit, shell-vs-native strategy, App Store Guideline 4.2 wrapper risk and the native value that mitigates it, current SDK, privacy manifest, age rating, login and payment checks, kids-app rules, QA matrix, and a release gate. NOT FOR: Android builds or conversions (use android-app-factory); Google Play uploads and rollouts (use suede-play-release); App Store listing, keyword, and screenshot strategy (use suede-aso)."
+description: "Suede AI Site to iOS App Skills. Use when asked to \"turn this site into an iOS app\" or convert a PWA: inspect the URL, choose shell or native strategy, then deliver an audit, build plan and release evidence. NOT FOR: Android builds (android-app-factory), Play rollout (suede-play-release), store listing strategy (suede-aso), or a native iOS app with no website."
+metadata:
+  display-name: "Suede AI Site to iOS App Skills"
 ---
 
-# Site to iOS App
+# Suede AI Site to iOS App Skills
+
+Read [the worked delivery contract](references/worked-contract.md) for a concrete
+input, expected artifact, failure response and validation example.
+
+## Compatibility
+
+Agent with web/browser and repo access; macOS with the required Xcode/SDK and project toolchain for iOS builds; signing/account access only for separately authorized release actions.
 
 ## Gate policy
 

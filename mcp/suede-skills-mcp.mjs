@@ -1062,7 +1062,7 @@ function getPrompt(name, args = {}) {
       messages: [
         {
           role: "user",
-          content: text(`Use the Suede Skills MCP to explain ${boundedString(args.surface, "all")} install options. Lead with the public Codex skill install, include local plugin install only as an operator note, include MCP server availability, and explain when to use each bundled skill.`)
+          content: text(`Use the Suede AI Skills MCP to explain ${boundedString(args.surface, "all")} install options. Lead with the public Codex skill install, include local plugin install only as an operator note, include MCP server availability, and explain when to use each bundled skill.`)
         }
       ]
     };
@@ -1150,7 +1150,7 @@ function initialize(params) {
       resources: { subscribe: false, listChanged: false },
       prompts: { listChanged: false }
     },
-    serverInfo: { name: "suede-skills-mcp", title: "Suede Skills MCP", version: catalog.version },
+    serverInfo: { name: "suede-skills-mcp", title: "Suede AI Skills MCP", version: catalog.version },
     instructions: "Use this read-only MCP when Suede skill discovery, install guidance, visibility grading, code grading, SEO/AEO/AI EO copy audits, or QA checklists will materially help the task."
   };
 }
