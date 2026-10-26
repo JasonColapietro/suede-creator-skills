@@ -6,7 +6,7 @@
 
 Skills for drafting and editing prose: fiction, line editing, technical documentation and removing machine-sounding patterns. They give an agent a defined editorial standard to write to and check against.
 
-**112 accepted skills · 39 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
+**116 accepted skills · 40 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
 **Compare on the 0–99 quality scale:** this category’s verified scores span **59–95 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede AI](https://skills.suedeai.ai/directory/?category=writing-content&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
 
@@ -34,6 +34,7 @@ Skills for drafting and editing prose: fiction, line editing, technical document
 - [ilyautov/humanizer-ru](#ilyautov--humanizer-ru)
 - [infrasity-labs/dev-gtm-claude-skills](#infrasity-labs--dev-gtm-claude-skills)
 - [inhouseseo/superseo-skills](#inhouseseo--superseo-skills)
+- [JasonColapietro/suede-creator-skills](#jasoncolapietro--suede-creator-skills)
 - [jeffallan/claude-skills](#jeffallan--claude-skills)
 - [K-Dense-AI/claude-scientific-skills](#k-dense-ai--claude-scientific-skills)
 - [LambdaTest/agent-skills](#lambdatest--agent-skills)
@@ -267,6 +268,17 @@ Skills for drafting and editing prose: fiction, line editing, technical document
 [Repository](https://github.com/inhouseseo/superseo-skills) · Publisher: [inhouseseo](https://github.com/inhouseseo) · [Suede AI listing](https://skills.suedeai.ai/directory/inhouseseo/superseo-skills/)
 
 - **81/100 · B** · [expert-interview](https://github.com/inhouseseo/superseo-skills/blob/main/skills/expert-interview/SKILL.md): Extracts first-party expertise from a subject-matter expert before writing, producing a knowledge document of contrarian takes, specific examples, and surprising outcomes. [Suede](https://skills.suedeai.ai/directory/inhouseseo/superseo-skills/expert-interview/)
+
+<a id="jasoncolapietro--suede-creator-skills"></a>
+
+## JasonColapietro/suede-creator-skills
+
+[Repository](https://github.com/JasonColapietro/suede-creator-skills) · Publisher: [JasonColapietro](https://github.com/JasonColapietro) · [Suede AI listing](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/)
+
+- **91/100 · A** · [Suede AI Copy Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/verify/first-party-source-whitespace/skills/suede-copy/SKILL.md): Use when asked "rewrite this landing page" or to write, sharpen or retune conversion copy, public explainers and agent-facing docs across surfaces. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-copy)
+- **91/100 · A** · [Suede AI Slop Stop Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/verify/first-party-source-whitespace/skills/suede-deslop/SKILL.md): Use when asked "deslop this draft" or to audit finished prose before shipping. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-deslop)
+- **91/100 · A** · [Suede AI Newsroom Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/verify/first-party-source-whitespace/skills/suede-newsroom/SKILL.md): Suede AI Newsroom Skills. editorial pipeline with six role contracts, an inspectable campaign record, distinct distribution arguments, and performance feedback. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-newsroom)
+- **91/100 · A** · [Suede AI Ship Copy Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/verify/first-party-source-whitespace/skills/suede-ship-copy/SKILL.md): Produce one high-stakes public draft with parallel research, agent-claim audits, message ownership, adversarial review, publish readiness, and an evidence record. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-ship-copy)
 
 <a id="jeffallan--claude-skills"></a>
 

@@ -6,9 +6,9 @@
 
 Skills for everyday knowledge work: email, calendars, notes, workspace apps, project tracking, planning and research assistance. They connect an agent to the tools a team already uses and give it a consistent way to work inside them.
 
-**213 accepted skills · 35 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
+**216 accepted skills · 36 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
-**Compare on the 0–99 quality scale:** this category’s verified scores span **53–90 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede AI](https://skills.suedeai.ai/directory/?category=productivity-knowledge&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
+**Compare on the 0–99 quality scale:** this category’s verified scores span **53–91 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede AI](https://skills.suedeai.ai/directory/?category=productivity-knowledge&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
 
 [Read the score and license key](../README.md#read-a-listing). Descriptions are saved summaries or excerpts; full details and setup are on each Suede AI listing.
 
@@ -27,6 +27,7 @@ Skills for everyday knowledge work: email, calendars, notes, workspace apps, pro
 - [gooseworks-ai/goose-skills](#gooseworks-ai--goose-skills)
 - [infrasity-labs/dev-gtm-claude-skills](#infrasity-labs--dev-gtm-claude-skills)
 - [jakedahn/pomodoro](#jakedahn--pomodoro)
+- [JasonColapietro/suede-creator-skills](#jasoncolapietro--suede-creator-skills)
 - [jeffallan/claude-skills](#jeffallan--claude-skills)
 - [K-Dense-AI/claude-scientific-skills](#k-dense-ai--claude-scientific-skills)
 - [makenotion/notion-cookbook](#makenotion--notion-cookbook)
@@ -245,6 +246,16 @@ Skills for everyday knowledge work: email, calendars, notes, workspace apps, pro
 [Repository](https://github.com/jakedahn/pomodoro) · Publisher: [jakedahn](https://github.com/jakedahn) · [Suede AI listing](https://skills.suedeai.ai/directory/jakedahn/pomodoro/)
 
 - **66/100 · D** · [pomodoro](https://github.com/jakedahn/pomodoro/blob/main/src/SKILL.md): Simple Pomodoro timer for focused work sessions with session tracking and productivity analytics. [Suede](https://skills.suedeai.ai/directory/jakedahn/pomodoro/#pomodoro)
+
+<a id="jasoncolapietro--suede-creator-skills"></a>
+
+## JasonColapietro/suede-creator-skills
+
+[Repository](https://github.com/JasonColapietro/suede-creator-skills) · Publisher: [JasonColapietro](https://github.com/JasonColapietro) · [Suede AI listing](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/)
+
+- **91/100 · A** · [Suede AI Cold Email Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/verify/first-party-source-whitespace/skills/suede-cold-email/SKILL.md): Use when asked "write a cold email" or to repair B2B outbound to qualified prospects. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-cold-email)
+- **91/100 · A** · [Suede AI Lifecycle Email Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/verify/first-party-source-whitespace/skills/suede-emails/SKILL.md): Use when asked "build a welcome email sequence" or to design nurture, onboarding, win-back, post-purchase or trigger-based lifecycle email flows. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-emails)
+- **91/100 · A** · [Suede AI Influencer Outreach Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/verify/first-party-source-whitespace/skills/suede-influencer-outreach/SKILL.md): Use when asked "pitch this creator" or to repair an influencer or B2B creator-program first touch. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-influencer-outreach)
 
 <a id="jeffallan--claude-skills"></a>
 

@@ -1,0 +1,1156 @@
+{
+  "schema_version": 1,
+  "source": {
+    "repository": "JasonColapietro/suede-creator-skills",
+    "path": "skills/suede-release-linter",
+    "revision": "1c039ab9ed51bc67bcbdb1d2ed690a5151ab6abf"
+  },
+  "scanner": {
+    "name": "cisco-ai-skill-scanner",
+    "version": "2.3.1",
+    "adapter_version": 2,
+    "analyzers": [
+      "static_analyzer",
+      "bytecode",
+      "pipeline",
+      "correlation",
+      "behavioral_analyzer"
+    ],
+    "policy": "strict",
+    "cel_mode": "shadow",
+    "network": "disabled",
+    "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+  },
+  "started_at": "2026-10-26T02:26:37.826768+00:00",
+  "state": "completed",
+  "analysis": {
+    "skill_name": "suede-release-linter",
+    "skill_path": "/source/target-051",
+    "is_safe": true,
+    "max_severity": "MEDIUM",
+    "findings_count": 11,
+    "findings": [
+      {
+        "id": "LOW_ANALYZABILITY_MODERATE",
+        "rule_id": "LOW_ANALYZABILITY",
+        "category": "policy_violation",
+        "severity": "MEDIUM",
+        "title": "Moderate analyzability score",
+        "description": "Only 81% of skill content could be analyzed. 4 of 26 files are opaque to the scanner. Some content could not be verified as safe.",
+        "file_path": null,
+        "line_number": null,
+        "snippet": null,
+        "remediation": "Review opaque files and replace with inspectable formats where possible.",
+        "analyzer": "analyzability",
+        "metadata": {
+          "score": 81.0,
+          "unanalyzable_files": 4,
+          "total_files": 26,
+          "risk_level": "MEDIUM",
+          "aitech": "AITech-9.2",
+          "aitech_name": "Detection Evasion",
+          "aisubtech": "AISubtech-9.2.1",
+          "aisubtech_name": "Obfuscation Vulnerabilities",
+          "aitech_mappings": [
+            "OWASP: LLM09:2026: Vector and Embedding Weaknesses",
+            "OWASP: ASI04: Agentic Supply Chain Vulnerabilities",
+            "MITRE ATLAS: AML.T0074: Masquerading",
+            "MITRE ATLAS: AML.T0068: LLM Prompt Obfuscation",
+            "MITRE ATLAS: AML.T0107: Exploitation for Defense Evasion",
+            "NIST AML: N/A",
+            "Cisco AI MDL Code: MDL-001",
+            "Cisco AI MDL Code: MDL-003",
+            "Cisco AI MDL Code: MDL-009",
+            "Cisco AI MDL Code: MDL-011",
+            "Cisco AI MDL Code: MDL-016",
+            "Cisco AI MDL Code: MDL-017",
+            "Cisco AI MDL Code: MDL-019"
+          ],
+          "aisubtech_mappings": [
+            "OWASP: LLM09:2026: Vector and Embedding Weaknesses",
+            "OWASP: ASI04: Agentic Supply Chain Vulnerabilities",
+            "MITRE ATLAS: AML.T0074: Masquerading",
+            "MITRE ATLAS: AML.T0068: LLM Prompt Obfuscation",
+            "NIST AML: N/A",
+            "Cisco AI MDL Code: MDL-001",
+            "Cisco AI MDL Code: MDL-003",
+            "Cisco AI MDL Code: MDL-009",
+            "Cisco AI MDL Code: MDL-011",
+            "Cisco AI MDL Code: MDL-016",
+            "Cisco AI MDL Code: MDL-017",
+            "Cisco AI MDL Code: MDL-019"
+          ],
+          "framework_mappings": [
+            "OWASP: LLM09:2026: Vector and Embedding Weaknesses",
+            "OWASP: ASI04: Agentic Supply Chain Vulnerabilities",
+            "MITRE ATLAS: AML.T0074: Masquerading",
+            "MITRE ATLAS: AML.T0068: LLM Prompt Obfuscation",
+            "NIST AML: N/A",
+            "Cisco AI MDL Code: MDL-001",
+            "Cisco AI MDL Code: MDL-003",
+            "Cisco AI MDL Code: MDL-009",
+            "Cisco AI MDL Code: MDL-011",
+            "Cisco AI MDL Code: MDL-016",
+            "Cisco AI MDL Code: MDL-017",
+            "Cisco AI MDL Code: MDL-019"
+          ],
+          "taxonomy_status": "mapped",
+          "taxonomy_source": "rule",
+          "scan_policy_name": "strict",
+          "scan_policy_version": "1.0",
+          "scan_policy_preset_base": "strict",
+          "scan_policy_fingerprint_sha256": "7f4560dea6f3f1c11067735bab3759c4daedfcd6d67f46b4e40899507a2c2ea9"
+        }
+      },
+      {
+        "id": "MANIFEST_MISSING_LICENSE_c5ae9be793",
+        "rule_id": "MANIFEST_MISSING_LICENSE",
+        "category": "policy_violation",
+        "severity": "INFO",
+        "title": "Skill does not specify a license",
+        "description": "Skill manifest does not include a 'license' field. Specifying a license helps users understand usage terms.",
+        "file_path": "SKILL.md",
+        "line_number": null,
+        "snippet": null,
+        "remediation": "Add 'license' field to SKILL.md frontmatter (e.g., MIT, Apache-2.0)",
+        "analyzer": "static",
+        "metadata": {
+          "aitech": null,
+          "aitech_name": null,
+          "aisubtech": null,
+          "aisubtech_name": null,
+          "aitech_mappings": [],
+          "aisubtech_mappings": [],
+          "framework_mappings": [],
+          "taxonomy_status": "not_applicable",
+          "taxonomy_source": "rule",
+          "scan_policy_name": "strict",
+          "scan_policy_version": "1.0",
+          "scan_policy_preset_base": "strict",
+          "scan_policy_fingerprint_sha256": "7f4560dea6f3f1c11067735bab3759c4daedfcd6d67f46b4e40899507a2c2ea9"
+        }
+      },
+      {
+        "id": "BINARY_FILE_DETECTED_4feb57671a",
+        "rule_id": "BINARY_FILE_DETECTED",
+        "category": "policy_violation",
+        "severity": "MEDIUM",
+        "title": "Binary file detected in skill package",
+        "description": "Binary file found: scripts/fixtures/sample-clean-project/audio/paper-moons-master.wav. Binary files cannot be inspected by static analysis. Consider using Python or Bash scripts for transparency.",
+        "file_path": "scripts/fixtures/sample-clean-project/audio/paper-moons-master.wav",
+        "line_number": null,
+        "snippet": null,
+        "remediation": "Review binary file necessity. Replace with auditable scripts if possible.",
+        "analyzer": "static",
+        "metadata": {
+          "semantic_facts": {
+            "evidence_kind": "file_inventory",
+            "context_kind": "binary",
+            "signals": [
+              {
+                "rule_id": "BINARY_FILE_DETECTED",
+                "kind": "unanalyzable_binary",
+                "file_path": "scripts/fixtures/sample-clean-project/audio/paper-moons-master.wav",
+                "value_class": "binary"
+              }
+            ]
+          },
+          "same_path_other_rule_ids": [
+            "UNANALYZABLE_BINARY"
+          ],
+          "same_path_unique_rule_count": 2,
+          "same_path_findings_count": 2,
+          "aitech": "AITech-9.2",
+          "aitech_name": "Detection Evasion",
+          "aisubtech": "AISubtech-9.2.1",
+          "aisubtech_name": "Obfuscation Vulnerabilities",
+          "aitech_mappings": [
+            "OWASP: LLM09:2026: Vector and Embedding Weaknesses",
+            "OWASP: ASI04: Agentic Supply Chain Vulnerabilities",
+            "MITRE ATLAS: AML.T0074: Masquerading",
+            "MITRE ATLAS: AML.T0068: LLM Prompt Obfuscation",
+            "MITRE ATLAS: AML.T0107: Exploitation for Defense Evasion",
+            "NIST AML: N/A",
+            "Cisco AI MDL Code: MDL-001",
+            "Cisco AI MDL Code: MDL-003",
+            "Cisco AI MDL Code: MDL-009",
+            "Cisco AI MDL Code: MDL-011",
+            "Cisco AI MDL Code: MDL-016",
+            "Cisco AI MDL Code: MDL-017",
+            "Cisco AI MDL Code: MDL-019"
+          ],
+          "aisubtech_mappings": [
+            "OWASP: LLM09:2026: Vector and Embedding Weaknesses",
+            "OWASP: ASI04: Agentic Supply Chain Vulnerabilities",
+            "MITRE ATLAS: AML.T0074: Masquerading",
+            "MITRE ATLAS: AML.T0068: LLM Prompt Obfuscation",
+            "NIST AML: N/A",
+            "Cisco AI MDL Code: MDL-001",
+            "Cisco AI MDL Code: MDL-003",
+            "Cisco AI MDL Code: MDL-009",
+            "Cisco AI MDL Code: MDL-011",
+            "Cisco AI MDL Code: MDL-016",
+            "Cisco AI MDL Code: MDL-017",
+            "Cisco AI MDL Code: MDL-019"
+          ],
+          "framework_mappings": [
+            "OWASP: LLM09:2026: Vector and Embedding Weaknesses",
+            "OWASP: ASI04: Agentic Supply Chain Vulnerabilities",
+            "MITRE ATLAS: AML.T0074: Masquerading",
+            "MITRE ATLAS: AML.T0068: LLM Prompt Obfuscation",
+            "NIST AML: N/A",
+            "Cisco AI MDL Code: MDL-001",
+            "Cisco AI MDL Code: MDL-003",
+            "Cisco AI MDL Code: MDL-009",
+            "Cisco AI MDL Code: MDL-011",
+            "Cisco AI MDL Code: MDL-016",
+            "Cisco AI MDL Code: MDL-017",
+            "Cisco AI MDL Code: MDL-019"
+          ],
+          "taxonomy_status": "mapped",
+          "taxonomy_source": "rule",
+          "scan_policy_name": "strict",
+          "scan_policy_version": "1.0",
+          "scan_policy_preset_base": "strict",
+          "scan_policy_fingerprint_sha256": "7f4560dea6f3f1c11067735bab3759c4daedfcd6d67f46b4e40899507a2c2ea9"
+        }
+      },
+      {
+        "id": "UNANALYZABLE_BINARY_scripts/fixtures/sample-clean-project/audio/paper-moons-master.wav",
+        "rule_id": "UNANALYZABLE_BINARY",
+        "category": "policy_violation",
+        "severity": "MEDIUM",
+        "title": "Unanalyzable binary file",
+        "description": "Binary file 'scripts/fixtures/sample-clean-project/audio/paper-moons-master.wav' cannot be inspected by the scanner. Reason: Binary file (.wav) - cannot inspect content. Binary files resist static analysis and may contain hidden functionality.",
+        "file_path": "scripts/fixtures/sample-clean-project/audio/paper-moons-master.wav",
+        "line_number": null,
+        "snippet": null,
+        "remediation": "Replace binary files with source code, or submit the binary to VirusTotal for independent verification (--use-virustotal).",
+        "analyzer": "analyzability",
+        "metadata": {
+          "skip_reason": "Binary file (.wav) - cannot inspect content",
+          "weight": 13.96974625081451,
+          "semantic_facts": {
+            "evidence_kind": "file_analyzability",
+            "evidence_value_class": "opaque_binary",
+            "context_kind": "binary",
+            "signal_kind": "unanalyzable_binary"
+          },
+          "cel": {
+            "decision": "would_suppress",
+            "reason": "shadow_or_rule_rollout",
+            "fact_schema": "v1",
+            "expression_hash": "5a9db9ca3422a0d8437343780ce9aaabdc4dca71aa98bcf63a85b681ef985ce2",
+            "pack": "core",
+            "rollout": "shadow"
+          },
+          "same_path_other_rule_ids": [
+            "BINARY_FILE_DETECTED"
+          ],
+          "same_path_unique_rule_count": 2,
+          "same_path_findings_count": 2,
+          "aitech": "AITech-9.2",
+          "aitech_name": "Detection Evasion",
+          "aisubtech": "AISubtech-9.2.1",
+          "aisubtech_name": "Obfuscation Vulnerabilities",
+          "aitech_mappings": [
+            "OWASP: LLM09:2026: Vector and Embedding Weaknesses",
+            "OWASP: ASI04: Agentic Supply Chain Vulnerabilities",
+            "MITRE ATLAS: AML.T0074: Masquerading",
+            "MITRE ATLAS: AML.T0068: LLM Prompt Obfuscation",
+            "MITRE ATLAS: AML.T0107: Exploitation for Defense Evasion",
+            "NIST AML: N/A",
+            "Cisco AI MDL Code: MDL-001",
+            "Cisco AI MDL Code: MDL-003",
+            "Cisco AI MDL Code: MDL-009",
+            "Cisco AI MDL Code: MDL-011",
+            "Cisco AI MDL Code: MDL-016",
+            "Cisco AI MDL Code: MDL-017",
+            "Cisco AI MDL Code: MDL-019"
+          ],
+          "aisubtech_mappings": [
+            "OWASP: LLM09:2026: Vector and Embedding Weaknesses",
+            "OWASP: ASI04: Agentic Supply Chain Vulnerabilities",
+            "MITRE ATLAS: AML.T0074: Masquerading",
+            "MITRE ATLAS: AML.T0068: LLM Prompt Obfuscation",
+            "NIST AML: N/A",
+            "Cisco AI MDL Code: MDL-001",
+            "Cisco AI MDL Code: MDL-003",
+            "Cisco AI MDL Code: MDL-009",
+            "Cisco AI MDL Code: MDL-011",
+            "Cisco AI MDL Code: MDL-016",
+            "Cisco AI MDL Code: MDL-017",
+            "Cisco AI MDL Code: MDL-019"
+          ],
+          "framework_mappings": [
+            "OWASP: LLM09:2026: Vector and Embedding Weaknesses",
+            "OWASP: ASI04: Agentic Supply Chain Vulnerabilities",
+            "MITRE ATLAS: AML.T0074: Masquerading",
+            "MITRE ATLAS: AML.T0068: LLM Prompt Obfuscation",
+            "NIST AML: N/A",
+            "Cisco AI MDL Code: MDL-001",
+            "Cisco AI MDL Code: MDL-003",
+            "Cisco AI MDL Code: MDL-009",
+            "Cisco AI MDL Code: MDL-011",
+            "Cisco AI MDL Code: MDL-016",
+            "Cisco AI MDL Code: MDL-017",
+            "Cisco AI MDL Code: MDL-019"
+          ],
+          "taxonomy_status": "mapped",
+          "taxonomy_source": "rule",
+          "scan_policy_name": "strict",
+          "scan_policy_version": "1.0",
+          "scan_policy_preset_base": "strict",
+          "scan_policy_fingerprint_sha256": "7f4560dea6f3f1c11067735bab3759c4daedfcd6d67f46b4e40899507a2c2ea9"
+        }
+      },
+      {
+        "id": "FILE_MAGIC_MISMATCH_a25e9dfd00",
+        "rule_id": "FILE_MAGIC_MISMATCH",
+        "category": "obfuscation",
+        "severity": "MEDIUM",
+        "title": "File extension does not match actual content type",
+        "description": "File 'paper-moons-lyrics.txt' extension (.txt) suggests one format but Magika detected a different text format: INI configuration file (ini). This may indicate content obfuscation or a misnamed file.",
+        "file_path": "scripts/fixtures/sample-clean-project/lyrics/paper-moons-lyrics.txt",
+        "line_number": null,
+        "snippet": null,
+        "remediation": "Rename the file to match its actual content type, or remove it if it appears malicious.",
+        "analyzer": "static",
+        "metadata": {
+          "actual_type": "text/ini",
+          "actual_family": "text",
+          "claimed_extension": ".txt",
+          "confidence_score": 0.7381280660629272,
+          "semantic_facts": {
+            "evidence_kind": "file_magic",
+            "context_kind": "binary",
+            "signals": [
+              {
+                "rule_id": "FILE_MAGIC_MISMATCH",
+                "kind": "file_magic_mismatch",
+                "file_path": "scripts/fixtures/sample-clean-project/lyrics/paper-moons-lyrics.txt",
+                "value_class": "binary"
+              }
+            ]
+          },
+          "aitech": "AITech-9.2",
+          "aitech_name": "Detection Evasion",
+          "aisubtech": "AISubtech-9.2.1",
+          "aisubtech_name": "Obfuscation Vulnerabilities",
+          "aitech_mappings": [
+            "OWASP: LLM09:2026: Vector and Embedding Weaknesses",
+            "OWASP: ASI04: Agentic Supply Chain Vulnerabilities",
+            "MITRE ATLAS: AML.T0074: Masquerading",
+            "MITRE ATLAS: AML.T0068: LLM Prompt Obfuscation",
+            "MITRE ATLAS: AML.T0107: Exploitation for Defense Evasion",
+            "NIST AML: N/A",
+            "Cisco AI MDL Code: MDL-001",
+            "Cisco AI MDL Code: MDL-003",
+            "Cisco AI MDL Code: MDL-009",
+            "Cisco AI MDL Code: MDL-011",
+            "Cisco AI MDL Code: MDL-016",
+            "Cisco AI MDL Code: MDL-017",
+            "Cisco AI MDL Code: MDL-019"
+          ],
+          "aisubtech_mappings": [
+            "OWASP: LLM09:2026: Vector and Embedding Weaknesses",
+            "OWASP: ASI04: Agentic Supply Chain Vulnerabilities",
+            "MITRE ATLAS: AML.T0074: Masquerading",
+            "MITRE ATLAS: AML.T0068: LLM Prompt Obfuscation",
+            "NIST AML: N/A",
+            "Cisco AI MDL Code: MDL-001",
+            "Cisco AI MDL Code: MDL-003",
+            "Cisco AI MDL Code: MDL-009",
+            "Cisco AI MDL Code: MDL-011",
+            "Cisco AI MDL Code: MDL-016",
+            "Cisco AI MDL Code: MDL-017",
+            "Cisco AI MDL Code: MDL-019"
+          ],
+          "framework_mappings": [
+            "OWASP: LLM09:2026: Vector and Embedding Weaknesses",
+            "OWASP: ASI04: Agentic Supply Chain Vulnerabilities",
+            "MITRE ATLAS: AML.T0074: Masquerading",
+            "MITRE ATLAS: AML.T0068: LLM Prompt Obfuscation",
+            "NIST AML: N/A",
+            "Cisco AI MDL Code: MDL-001",
+            "Cisco AI MDL Code: MDL-003",
+            "Cisco AI MDL Code: MDL-009",
+            "Cisco AI MDL Code: MDL-011",
+            "Cisco AI MDL Code: MDL-016",
+            "Cisco AI MDL Code: MDL-017",
+            "Cisco AI MDL Code: MDL-019"
+          ],
+          "taxonomy_status": "mapped",
+          "taxonomy_source": "rule",
+          "scan_policy_name": "strict",
+          "scan_policy_version": "1.0",
+          "scan_policy_preset_base": "strict",
+          "scan_policy_fingerprint_sha256": "7f4560dea6f3f1c11067735bab3759c4daedfcd6d67f46b4e40899507a2c2ea9"
+        }
+      },
+      {
+        "id": "BINARY_FILE_DETECTED_e7b95748e7",
+        "rule_id": "BINARY_FILE_DETECTED",
+        "category": "policy_violation",
+        "severity": "MEDIUM",
+        "title": "Binary file detected in skill package",
+        "description": "Binary file found: scripts/fixtures/sample-clean-project/stems/bass-stem.wav. Binary files cannot be inspected by static analysis. Consider using Python or Bash scripts for transparency.",
+        "file_path": "scripts/fixtures/sample-clean-project/stems/bass-stem.wav",
+        "line_number": null,
+        "snippet": null,
+        "remediation": "Review binary file necessity. Replace with auditable scripts if possible.",
+        "analyzer": "static",
+        "metadata": {
+          "semantic_facts": {
+            "evidence_kind": "file_inventory",
+            "context_kind": "binary",
+            "signals": [
+              {
+                "rule_id": "BINARY_FILE_DETECTED",
+                "kind": "unanalyzable_binary",
+                "file_path": "scripts/fixtures/sample-clean-project/stems/bass-stem.wav",
+                "value_class": "binary"
+              }
+            ]
+          },
+          "same_path_other_rule_ids": [
+            "UNANALYZABLE_BINARY"
+          ],
+          "same_path_unique_rule_count": 2,
+          "same_path_findings_count": 2,
+          "aitech": "AITech-9.2",
+          "aitech_name": "Detection Evasion",
+          "aisubtech": "AISubtech-9.2.1",
+          "aisubtech_name": "Obfuscation Vulnerabilities",
+          "aitech_mappings": [
+            "OWASP: LLM09:2026: Vector and Embedding Weaknesses",
+            "OWASP: ASI04: Agentic Supply Chain Vulnerabilities",
+            "MITRE ATLAS: AML.T0074: Masquerading",
+            "MITRE ATLAS: AML.T0068: LLM Prompt Obfuscation",
+            "MITRE ATLAS: AML.T0107: Exploitation for Defense Evasion",
+            "NIST AML: N/A",
+            "Cisco AI MDL Code: MDL-001",
+            "Cisco AI MDL Code: MDL-003",
+            "Cisco AI MDL Code: MDL-009",
+            "Cisco AI MDL Code: MDL-011",
+            "Cisco AI MDL Code: MDL-016",
+            "Cisco AI MDL Code: MDL-017",
+            "Cisco AI MDL Code: MDL-019"
+          ],
+          "aisubtech_mappings": [
+            "OWASP: LLM09:2026: Vector and Embedding Weaknesses",
+            "OWASP: ASI04: Agentic Supply Chain Vulnerabilities",
+            "MITRE ATLAS: AML.T0074: Masquerading",
+            "MITRE ATLAS: AML.T0068: LLM Prompt Obfuscation",
+            "NIST AML: N/A",
+            "Cisco AI MDL Code: MDL-001",
+            "Cisco AI MDL Code: MDL-003",
+            "Cisco AI MDL Code: MDL-009",
+            "Cisco AI MDL Code: MDL-011",
+            "Cisco AI MDL Code: MDL-016",
+            "Cisco AI MDL Code: MDL-017",
+            "Cisco AI MDL Code: MDL-019"
+          ],
+          "framework_mappings": [
+            "OWASP: LLM09:2026: Vector and Embedding Weaknesses",
+            "OWASP: ASI04: Agentic Supply Chain Vulnerabilities",
+            "MITRE ATLAS: AML.T0074: Masquerading",
+            "MITRE ATLAS: AML.T0068: LLM Prompt Obfuscation",
+            "NIST AML: N/A",
+            "Cisco AI MDL Code: MDL-001",
+            "Cisco AI MDL Code: MDL-003",
+            "Cisco AI MDL Code: MDL-009",
+            "Cisco AI MDL Code: MDL-011",
+            "Cisco AI MDL Code: MDL-016",
+            "Cisco AI MDL Code: MDL-017",
+            "Cisco AI MDL Code: MDL-019"
+          ],
+          "taxonomy_status": "mapped",
+          "taxonomy_source": "rule",
+          "scan_policy_name": "strict",
+          "scan_policy_version": "1.0",
+          "scan_policy_preset_base": "strict",
+          "scan_policy_fingerprint_sha256": "7f4560dea6f3f1c11067735bab3759c4daedfcd6d67f46b4e40899507a2c2ea9"
+        }
+      },
+      {
+        "id": "UNANALYZABLE_BINARY_scripts/fixtures/sample-clean-project/stems/bass-stem.wav",
+        "rule_id": "UNANALYZABLE_BINARY",
+        "category": "policy_violation",
+        "severity": "MEDIUM",
+        "title": "Unanalyzable binary file",
+        "description": "Binary file 'scripts/fixtures/sample-clean-project/stems/bass-stem.wav' cannot be inspected by the scanner. Reason: Binary file (.wav) - cannot inspect content. Binary files resist static analysis and may contain hidden functionality.",
+        "file_path": "scripts/fixtures/sample-clean-project/stems/bass-stem.wav",
+        "line_number": null,
+        "snippet": null,
+        "remediation": "Replace binary files with source code, or submit the binary to VirusTotal for independent verification (--use-virustotal).",
+        "analyzer": "analyzability",
+        "metadata": {
+          "skip_reason": "Binary file (.wav) - cannot inspect content",
+          "weight": 13.96974625081451,
+          "semantic_facts": {
+            "evidence_kind": "file_analyzability",
+            "evidence_value_class": "opaque_binary",
+            "context_kind": "binary",
+            "signal_kind": "unanalyzable_binary"
+          },
+          "cel": {
+            "decision": "would_suppress",
+            "reason": "shadow_or_rule_rollout",
+            "fact_schema": "v1",
+            "expression_hash": "5a9db9ca3422a0d8437343780ce9aaabdc4dca71aa98bcf63a85b681ef985ce2",
+            "pack": "core",
+            "rollout": "shadow"
+          },
+          "same_path_other_rule_ids": [
+            "BINARY_FILE_DETECTED"
+          ],
+          "same_path_unique_rule_count": 2,
+          "same_path_findings_count": 2,
+          "aitech": "AITech-9.2",
+          "aitech_name": "Detection Evasion",
+          "aisubtech": "AISubtech-9.2.1",
+          "aisubtech_name": "Obfuscation Vulnerabilities",
+          "aitech_mappings": [
+            "OWASP: LLM09:2026: Vector and Embedding Weaknesses",
+            "OWASP: ASI04: Agentic Supply Chain Vulnerabilities",
+            "MITRE ATLAS: AML.T0074: Masquerading",
+            "MITRE ATLAS: AML.T0068: LLM Prompt Obfuscation",
+            "MITRE ATLAS: AML.T0107: Exploitation for Defense Evasion",
+            "NIST AML: N/A",
+            "Cisco AI MDL Code: MDL-001",
+            "Cisco AI MDL Code: MDL-003",
+            "Cisco AI MDL Code: MDL-009",
+            "Cisco AI MDL Code: MDL-011",
+            "Cisco AI MDL Code: MDL-016",
+            "Cisco AI MDL Code: MDL-017",
+            "Cisco AI MDL Code: MDL-019"
+          ],
+          "aisubtech_mappings": [
+            "OWASP: LLM09:2026: Vector and Embedding Weaknesses",
+            "OWASP: ASI04: Agentic Supply Chain Vulnerabilities",
+            "MITRE ATLAS: AML.T0074: Masquerading",
+            "MITRE ATLAS: AML.T0068: LLM Prompt Obfuscation",
+            "NIST AML: N/A",
+            "Cisco AI MDL Code: MDL-001",
+            "Cisco AI MDL Code: MDL-003",
+            "Cisco AI MDL Code: MDL-009",
+            "Cisco AI MDL Code: MDL-011",
+            "Cisco AI MDL Code: MDL-016",
+            "Cisco AI MDL Code: MDL-017",
+            "Cisco AI MDL Code: MDL-019"
+          ],
+          "framework_mappings": [
+            "OWASP: LLM09:2026: Vector and Embedding Weaknesses",
+            "OWASP: ASI04: Agentic Supply Chain Vulnerabilities",
+            "MITRE ATLAS: AML.T0074: Masquerading",
+            "MITRE ATLAS: AML.T0068: LLM Prompt Obfuscation",
+            "NIST AML: N/A",
+            "Cisco AI MDL Code: MDL-001",
+            "Cisco AI MDL Code: MDL-003",
+            "Cisco AI MDL Code: MDL-009",
+            "Cisco AI MDL Code: MDL-011",
+            "Cisco AI MDL Code: MDL-016",
+            "Cisco AI MDL Code: MDL-017",
+            "Cisco AI MDL Code: MDL-019"
+          ],
+          "taxonomy_status": "mapped",
+          "taxonomy_source": "rule",
+          "scan_policy_name": "strict",
+          "scan_policy_version": "1.0",
+          "scan_policy_preset_base": "strict",
+          "scan_policy_fingerprint_sha256": "7f4560dea6f3f1c11067735bab3759c4daedfcd6d67f46b4e40899507a2c2ea9"
+        }
+      },
+      {
+        "id": "BINARY_FILE_DETECTED_e998c211e2",
+        "rule_id": "BINARY_FILE_DETECTED",
+        "category": "policy_violation",
+        "severity": "MEDIUM",
+        "title": "Binary file detected in skill package",
+        "description": "Binary file found: scripts/fixtures/sample-clean-project/stems/drums-stem.wav. Binary files cannot be inspected by static analysis. Consider using Python or Bash scripts for transparency.",
+        "file_path": "scripts/fixtures/sample-clean-project/stems/drums-stem.wav",
+        "line_number": null,
+        "snippet": null,
+        "remediation": "Review binary file necessity. Replace with auditable scripts if possible.",
+        "analyzer": "static",
+        "metadata": {
+          "semantic_facts": {
+            "evidence_kind": "file_inventory",
+            "context_kind": "binary",
+            "signals": [
+              {
+                "rule_id": "BINARY_FILE_DETECTED",
+                "kind": "unanalyzable_binary",
+                "file_path": "scripts/fixtures/sample-clean-project/stems/drums-stem.wav",
+                "value_class": "binary"
+              }
+            ]
+          },
+          "same_path_other_rule_ids": [
+            "UNANALYZABLE_BINARY"
+          ],
+          "same_path_unique_rule_count": 2,
+          "same_path_findings_count": 2,
+          "aitech": "AITech-9.2",
+          "aitech_name": "Detection Evasion",
+          "aisubtech": "AISubtech-9.2.1",
+          "aisubtech_name": "Obfuscation Vulnerabilities",
+          "aitech_mappings": [
+            "OWASP: LLM09:2026: Vector and Embedding Weaknesses",
+            "OWASP: ASI04: Agentic Supply Chain Vulnerabilities",
+            "MITRE ATLAS: AML.T0074: Masquerading",
+            "MITRE ATLAS: AML.T0068: LLM Prompt Obfuscation",
+            "MITRE ATLAS: AML.T0107: Exploitation for Defense Evasion",
+            "NIST AML: N/A",
+            "Cisco AI MDL Code: MDL-001",
+            "Cisco AI MDL Code: MDL-003",
+            "Cisco AI MDL Code: MDL-009",
+            "Cisco AI MDL Code: MDL-011",
+            "Cisco AI MDL Code: MDL-016",
+            "Cisco AI MDL Code: MDL-017",
+            "Cisco AI MDL Code: MDL-019"
+          ],
+          "aisubtech_mappings": [
+            "OWASP: LLM09:2026: Vector and Embedding Weaknesses",
+            "OWASP: ASI04: Agentic Supply Chain Vulnerabilities",
+            "MITRE ATLAS: AML.T0074: Masquerading",
+            "MITRE ATLAS: AML.T0068: LLM Prompt Obfuscation",
+            "NIST AML: N/A",
+            "Cisco AI MDL Code: MDL-001",
+            "Cisco AI MDL Code: MDL-003",
+            "Cisco AI MDL Code: MDL-009",
+            "Cisco AI MDL Code: MDL-011",
+            "Cisco AI MDL Code: MDL-016",
+            "Cisco AI MDL Code: MDL-017",
+            "Cisco AI MDL Code: MDL-019"
+          ],
+          "framework_mappings": [
+            "OWASP: LLM09:2026: Vector and Embedding Weaknesses",
+            "OWASP: ASI04: Agentic Supply Chain Vulnerabilities",
+            "MITRE ATLAS: AML.T0074: Masquerading",
+            "MITRE ATLAS: AML.T0068: LLM Prompt Obfuscation",
+            "NIST AML: N/A",
+            "Cisco AI MDL Code: MDL-001",
+            "Cisco AI MDL Code: MDL-003",
+            "Cisco AI MDL Code: MDL-009",
+            "Cisco AI MDL Code: MDL-011",
+            "Cisco AI MDL Code: MDL-016",
+            "Cisco AI MDL Code: MDL-017",
+            "Cisco AI MDL Code: MDL-019"
+          ],
+          "taxonomy_status": "mapped",
+          "taxonomy_source": "rule",
+          "scan_policy_name": "strict",
+          "scan_policy_version": "1.0",
+          "scan_policy_preset_base": "strict",
+          "scan_policy_fingerprint_sha256": "7f4560dea6f3f1c11067735bab3759c4daedfcd6d67f46b4e40899507a2c2ea9"
+        }
+      },
+      {
+        "id": "UNANALYZABLE_BINARY_scripts/fixtures/sample-clean-project/stems/drums-stem.wav",
+        "rule_id": "UNANALYZABLE_BINARY",
+        "category": "policy_violation",
+        "severity": "MEDIUM",
+        "title": "Unanalyzable binary file",
+        "description": "Binary file 'scripts/fixtures/sample-clean-project/stems/drums-stem.wav' cannot be inspected by the scanner. Reason: Binary file (.wav) - cannot inspect content. Binary files resist static analysis and may contain hidden functionality.",
+        "file_path": "scripts/fixtures/sample-clean-project/stems/drums-stem.wav",
+        "line_number": null,
+        "snippet": null,
+        "remediation": "Replace binary files with source code, or submit the binary to VirusTotal for independent verification (--use-virustotal).",
+        "analyzer": "analyzability",
+        "metadata": {
+          "skip_reason": "Binary file (.wav) - cannot inspect content",
+          "weight": 13.96974625081451,
+          "semantic_facts": {
+            "evidence_kind": "file_analyzability",
+            "evidence_value_class": "opaque_binary",
+            "context_kind": "binary",
+            "signal_kind": "unanalyzable_binary"
+          },
+          "cel": {
+            "decision": "would_suppress",
+            "reason": "shadow_or_rule_rollout",
+            "fact_schema": "v1",
+            "expression_hash": "5a9db9ca3422a0d8437343780ce9aaabdc4dca71aa98bcf63a85b681ef985ce2",
+            "pack": "core",
+            "rollout": "shadow"
+          },
+          "same_path_other_rule_ids": [
+            "BINARY_FILE_DETECTED"
+          ],
+          "same_path_unique_rule_count": 2,
+          "same_path_findings_count": 2,
+          "aitech": "AITech-9.2",
+          "aitech_name": "Detection Evasion",
+          "aisubtech": "AISubtech-9.2.1",
+          "aisubtech_name": "Obfuscation Vulnerabilities",
+          "aitech_mappings": [
+            "OWASP: LLM09:2026: Vector and Embedding Weaknesses",
+            "OWASP: ASI04: Agentic Supply Chain Vulnerabilities",
+            "MITRE ATLAS: AML.T0074: Masquerading",
+            "MITRE ATLAS: AML.T0068: LLM Prompt Obfuscation",
+            "MITRE ATLAS: AML.T0107: Exploitation for Defense Evasion",
+            "NIST AML: N/A",
+            "Cisco AI MDL Code: MDL-001",
+            "Cisco AI MDL Code: MDL-003",
+            "Cisco AI MDL Code: MDL-009",
+            "Cisco AI MDL Code: MDL-011",
+            "Cisco AI MDL Code: MDL-016",
+            "Cisco AI MDL Code: MDL-017",
+            "Cisco AI MDL Code: MDL-019"
+          ],
+          "aisubtech_mappings": [
+            "OWASP: LLM09:2026: Vector and Embedding Weaknesses",
+            "OWASP: ASI04: Agentic Supply Chain Vulnerabilities",
+            "MITRE ATLAS: AML.T0074: Masquerading",
+            "MITRE ATLAS: AML.T0068: LLM Prompt Obfuscation",
+            "NIST AML: N/A",
+            "Cisco AI MDL Code: MDL-001",
+            "Cisco AI MDL Code: MDL-003",
+            "Cisco AI MDL Code: MDL-009",
+            "Cisco AI MDL Code: MDL-011",
+            "Cisco AI MDL Code: MDL-016",
+            "Cisco AI MDL Code: MDL-017",
+            "Cisco AI MDL Code: MDL-019"
+          ],
+          "framework_mappings": [
+            "OWASP: LLM09:2026: Vector and Embedding Weaknesses",
+            "OWASP: ASI04: Agentic Supply Chain Vulnerabilities",
+            "MITRE ATLAS: AML.T0074: Masquerading",
+            "MITRE ATLAS: AML.T0068: LLM Prompt Obfuscation",
+            "NIST AML: N/A",
+            "Cisco AI MDL Code: MDL-001",
+            "Cisco AI MDL Code: MDL-003",
+            "Cisco AI MDL Code: MDL-009",
+            "Cisco AI MDL Code: MDL-011",
+            "Cisco AI MDL Code: MDL-016",
+            "Cisco AI MDL Code: MDL-017",
+            "Cisco AI MDL Code: MDL-019"
+          ],
+          "taxonomy_status": "mapped",
+          "taxonomy_source": "rule",
+          "scan_policy_name": "strict",
+          "scan_policy_version": "1.0",
+          "scan_policy_preset_base": "strict",
+          "scan_policy_fingerprint_sha256": "7f4560dea6f3f1c11067735bab3759c4daedfcd6d67f46b4e40899507a2c2ea9"
+        }
+      },
+      {
+        "id": "BINARY_FILE_DETECTED_d34d48bf86",
+        "rule_id": "BINARY_FILE_DETECTED",
+        "category": "policy_violation",
+        "severity": "MEDIUM",
+        "title": "Binary file detected in skill package",
+        "description": "Binary file found: scripts/fixtures/sample-clean-project/stems/vocals-stem.wav. Binary files cannot be inspected by static analysis. Consider using Python or Bash scripts for transparency.",
+        "file_path": "scripts/fixtures/sample-clean-project/stems/vocals-stem.wav",
+        "line_number": null,
+        "snippet": null,
+        "remediation": "Review binary file necessity. Replace with auditable scripts if possible.",
+        "analyzer": "static",
+        "metadata": {
+          "semantic_facts": {
+            "evidence_kind": "file_inventory",
+            "context_kind": "binary",
+            "signals": [
+              {
+                "rule_id": "BINARY_FILE_DETECTED",
+                "kind": "unanalyzable_binary",
+                "file_path": "scripts/fixtures/sample-clean-project/stems/vocals-stem.wav",
+                "value_class": "binary"
+              }
+            ]
+          },
+          "same_path_other_rule_ids": [
+            "UNANALYZABLE_BINARY"
+          ],
+          "same_path_unique_rule_count": 2,
+          "same_path_findings_count": 2,
+          "aitech": "AITech-9.2",
+          "aitech_name": "Detection Evasion",
+          "aisubtech": "AISubtech-9.2.1",
+          "aisubtech_name": "Obfuscation Vulnerabilities",
+          "aitech_mappings": [
+            "OWASP: LLM09:2026: Vector and Embedding Weaknesses",
+            "OWASP: ASI04: Agentic Supply Chain Vulnerabilities",
+            "MITRE ATLAS: AML.T0074: Masquerading",
+            "MITRE ATLAS: AML.T0068: LLM Prompt Obfuscation",
+            "MITRE ATLAS: AML.T0107: Exploitation for Defense Evasion",
+            "NIST AML: N/A",
+            "Cisco AI MDL Code: MDL-001",
+            "Cisco AI MDL Code: MDL-003",
+            "Cisco AI MDL Code: MDL-009",
+            "Cisco AI MDL Code: MDL-011",
+            "Cisco AI MDL Code: MDL-016",
+            "Cisco AI MDL Code: MDL-017",
+            "Cisco AI MDL Code: MDL-019"
+          ],
+          "aisubtech_mappings": [
+            "OWASP: LLM09:2026: Vector and Embedding Weaknesses",
+            "OWASP: ASI04: Agentic Supply Chain Vulnerabilities",
+            "MITRE ATLAS: AML.T0074: Masquerading",
+            "MITRE ATLAS: AML.T0068: LLM Prompt Obfuscation",
+            "NIST AML: N/A",
+            "Cisco AI MDL Code: MDL-001",
+            "Cisco AI MDL Code: MDL-003",
+            "Cisco AI MDL Code: MDL-009",
+            "Cisco AI MDL Code: MDL-011",
+            "Cisco AI MDL Code: MDL-016",
+            "Cisco AI MDL Code: MDL-017",
+            "Cisco AI MDL Code: MDL-019"
+          ],
+          "framework_mappings": [
+            "OWASP: LLM09:2026: Vector and Embedding Weaknesses",
+            "OWASP: ASI04: Agentic Supply Chain Vulnerabilities",
+            "MITRE ATLAS: AML.T0074: Masquerading",
+            "MITRE ATLAS: AML.T0068: LLM Prompt Obfuscation",
+            "NIST AML: N/A",
+            "Cisco AI MDL Code: MDL-001",
+            "Cisco AI MDL Code: MDL-003",
+            "Cisco AI MDL Code: MDL-009",
+            "Cisco AI MDL Code: MDL-011",
+            "Cisco AI MDL Code: MDL-016",
+            "Cisco AI MDL Code: MDL-017",
+            "Cisco AI MDL Code: MDL-019"
+          ],
+          "taxonomy_status": "mapped",
+          "taxonomy_source": "rule",
+          "scan_policy_name": "strict",
+          "scan_policy_version": "1.0",
+          "scan_policy_preset_base": "strict",
+          "scan_policy_fingerprint_sha256": "7f4560dea6f3f1c11067735bab3759c4daedfcd6d67f46b4e40899507a2c2ea9"
+        }
+      },
+      {
+        "id": "UNANALYZABLE_BINARY_scripts/fixtures/sample-clean-project/stems/vocals-stem.wav",
+        "rule_id": "UNANALYZABLE_BINARY",
+        "category": "policy_violation",
+        "severity": "MEDIUM",
+        "title": "Unanalyzable binary file",
+        "description": "Binary file 'scripts/fixtures/sample-clean-project/stems/vocals-stem.wav' cannot be inspected by the scanner. Reason: Binary file (.wav) - cannot inspect content. Binary files resist static analysis and may contain hidden functionality.",
+        "file_path": "scripts/fixtures/sample-clean-project/stems/vocals-stem.wav",
+        "line_number": null,
+        "snippet": null,
+        "remediation": "Replace binary files with source code, or submit the binary to VirusTotal for independent verification (--use-virustotal).",
+        "analyzer": "analyzability",
+        "metadata": {
+          "skip_reason": "Binary file (.wav) - cannot inspect content",
+          "weight": 13.96974625081451,
+          "semantic_facts": {
+            "evidence_kind": "file_analyzability",
+            "evidence_value_class": "opaque_binary",
+            "context_kind": "binary",
+            "signal_kind": "unanalyzable_binary"
+          },
+          "cel": {
+            "decision": "would_suppress",
+            "reason": "shadow_or_rule_rollout",
+            "fact_schema": "v1",
+            "expression_hash": "5a9db9ca3422a0d8437343780ce9aaabdc4dca71aa98bcf63a85b681ef985ce2",
+            "pack": "core",
+            "rollout": "shadow"
+          },
+          "same_path_other_rule_ids": [
+            "BINARY_FILE_DETECTED"
+          ],
+          "same_path_unique_rule_count": 2,
+          "same_path_findings_count": 2,
+          "aitech": "AITech-9.2",
+          "aitech_name": "Detection Evasion",
+          "aisubtech": "AISubtech-9.2.1",
+          "aisubtech_name": "Obfuscation Vulnerabilities",
+          "aitech_mappings": [
+            "OWASP: LLM09:2026: Vector and Embedding Weaknesses",
+            "OWASP: ASI04: Agentic Supply Chain Vulnerabilities",
+            "MITRE ATLAS: AML.T0074: Masquerading",
+            "MITRE ATLAS: AML.T0068: LLM Prompt Obfuscation",
+            "MITRE ATLAS: AML.T0107: Exploitation for Defense Evasion",
+            "NIST AML: N/A",
+            "Cisco AI MDL Code: MDL-001",
+            "Cisco AI MDL Code: MDL-003",
+            "Cisco AI MDL Code: MDL-009",
+            "Cisco AI MDL Code: MDL-011",
+            "Cisco AI MDL Code: MDL-016",
+            "Cisco AI MDL Code: MDL-017",
+            "Cisco AI MDL Code: MDL-019"
+          ],
+          "aisubtech_mappings": [
+            "OWASP: LLM09:2026: Vector and Embedding Weaknesses",
+            "OWASP: ASI04: Agentic Supply Chain Vulnerabilities",
+            "MITRE ATLAS: AML.T0074: Masquerading",
+            "MITRE ATLAS: AML.T0068: LLM Prompt Obfuscation",
+            "NIST AML: N/A",
+            "Cisco AI MDL Code: MDL-001",
+            "Cisco AI MDL Code: MDL-003",
+            "Cisco AI MDL Code: MDL-009",
+            "Cisco AI MDL Code: MDL-011",
+            "Cisco AI MDL Code: MDL-016",
+            "Cisco AI MDL Code: MDL-017",
+            "Cisco AI MDL Code: MDL-019"
+          ],
+          "framework_mappings": [
+            "OWASP: LLM09:2026: Vector and Embedding Weaknesses",
+            "OWASP: ASI04: Agentic Supply Chain Vulnerabilities",
+            "MITRE ATLAS: AML.T0074: Masquerading",
+            "MITRE ATLAS: AML.T0068: LLM Prompt Obfuscation",
+            "NIST AML: N/A",
+            "Cisco AI MDL Code: MDL-001",
+            "Cisco AI MDL Code: MDL-003",
+            "Cisco AI MDL Code: MDL-009",
+            "Cisco AI MDL Code: MDL-011",
+            "Cisco AI MDL Code: MDL-016",
+            "Cisco AI MDL Code: MDL-017",
+            "Cisco AI MDL Code: MDL-019"
+          ],
+          "taxonomy_status": "mapped",
+          "taxonomy_source": "rule",
+          "scan_policy_name": "strict",
+          "scan_policy_version": "1.0",
+          "scan_policy_preset_base": "strict",
+          "scan_policy_fingerprint_sha256": "7f4560dea6f3f1c11067735bab3759c4daedfcd6d67f46b4e40899507a2c2ea9"
+        }
+      }
+    ],
+    "scan_duration_seconds": 0.5286612510681152,
+    "duration_ms": 528,
+    "analyzers_used": [
+      "static_analyzer",
+      "bytecode",
+      "pipeline",
+      "correlation",
+      "behavioral_analyzer"
+    ],
+    "timestamp": "2026-10-26T02:26:38.371846+00:00",
+    "scan_metadata": {
+      "policy_name": "strict",
+      "policy_version": "1.0",
+      "policy_preset_base": "strict",
+      "policy_fingerprint_sha256": "7f4560dea6f3f1c11067735bab3759c4daedfcd6d67f46b4e40899507a2c2ea9",
+      "cel": {
+        "mode": "shadow",
+        "runtime": "cel-go",
+        "runtime_version": "v0.32.0;helper=2.3.1",
+        "fact_schema": "v1",
+        "expression_set_hash": "f26459b8f4a46a974d7ab0aaae34127b5b6a40d693e266e12fca03a69a6d26aa",
+        "evaluated": 4,
+        "retained": 11,
+        "would_suppress": 4,
+        "suppressed": 0,
+        "fallbacks": 0,
+        "projection_incomplete": 0,
+        "elapsed_ms": 3.19,
+        "projection_ms": 1.854,
+        "evaluation_ms": 1.061,
+        "errors": [],
+        "per_rule": {
+          "UNANALYZABLE_BINARY": {
+            "keep": 0,
+            "would_suppress": 4,
+            "fallback": 0,
+            "suppressed": 0,
+            "expression_hash": "5a9db9ca3422a0d8437343780ce9aaabdc4dca71aa98bcf63a85b681ef985ce2",
+            "pack": "core",
+            "rollout": "shadow"
+          }
+        },
+        "suppressed_candidates": []
+      },
+      "rule_contract": {
+        "status": "passed",
+        "schema_version": 2,
+        "checked": 11,
+        "invalid_findings": 0,
+        "errors": []
+      },
+      "taxonomy": {
+        "source": "builtin",
+        "version": "2.0.0",
+        "name": "Cisco AI Security and Safety Taxonomy",
+        "revision": "655a343ac943a51b6f61f86e47156e7752c15dc6",
+        "snapshot_sha256": "413e8ce9081e6d91b78aaa0d0b1c06cdc15d0406ad319e23e9f9f4f80735c441",
+        "findings": {
+          "mapped": 10,
+          "not_applicable": 1,
+          "unmapped": 0
+        }
+      }
+    },
+    "analyzers_failed": []
+  },
+  "diagnostics": [],
+  "coverage": {
+    "complete": false,
+    "files": [
+      {
+        "path": "CARD.md",
+        "size": 4773,
+        "sha256": "d47bb0fa31dfe67455470e7d657313966c52ac13ef050102069bdfdf54a52ccf"
+      },
+      {
+        "path": "SKILL.md",
+        "size": 9054,
+        "sha256": "d6bc279cda15bfb8cd29ed759443dcaabe86429eb86da4ea38e353dbe06eb87c"
+      },
+      {
+        "path": "agents/openai.yaml",
+        "size": 363,
+        "sha256": "6016a2f584304f5b54b24fcaf514023f9cd1ac0b70fc2fac9ecb7988d48c5b22"
+      },
+      {
+        "path": "assets/metadata.example.json",
+        "size": 906,
+        "sha256": "f0cc2901753de2383bd9ebcc70a816571397518b8e1cf9cce68602a200182802"
+      },
+      {
+        "path": "assets/release-lint-report.template.json",
+        "size": 431,
+        "sha256": "f10f37792ed5e896d3f24b147eb95858bfaf8b3040456c351b7c05a478cd9ee3"
+      },
+      {
+        "path": "assets/release-lint-report.template.md",
+        "size": 874,
+        "sha256": "c5a7dfca93bf70ebfd885374470de46819ec9daba8ef0e9c0f00086a7c8de3ce"
+      },
+      {
+        "path": "references/fix-guidance.md",
+        "size": 1633,
+        "sha256": "9eaf19fb42bbdcd8079e2d0399e3ba1b05a6f5c9dc58bf85fd1fad5780c8e086"
+      },
+      {
+        "path": "references/lint-rules.md",
+        "size": 3380,
+        "sha256": "ace39cee7eb69239ab744fa41eba06532fe52ced2615726bf229dfc254302315"
+      },
+      {
+        "path": "references/metadata-fields.md",
+        "size": 2114,
+        "sha256": "7d5cef05819f77901625d05ca4bf7d0282cf1af8c4194787117ff4fe06251d7d"
+      },
+      {
+        "path": "references/passport-context.md",
+        "size": 765,
+        "sha256": "b256c789e666373854c100cc569774f8af984d6ee67d76d86de65c743086ce11"
+      },
+      {
+        "path": "references/worked-handoff.md",
+        "size": 1673,
+        "sha256": "7fbe9c662c9c919958e70822b9362272e8864b6e8dbbeaea062a57d92044f561"
+      },
+      {
+        "path": "scripts/fixtures/README.md",
+        "size": 2190,
+        "sha256": "8f8758ed1e054ba7feb3bceab9d0e31153bad13b0a866742fcc5d02aa6da412d"
+      },
+      {
+        "path": "scripts/fixtures/sample-blocked-project/metadata.json",
+        "size": 839,
+        "sha256": "89902e4358a28934a48c6b065346152ce11d86262fab8c23c41a4ef611f44628"
+      },
+      {
+        "path": "scripts/fixtures/sample-blocked-project/notes/project-notes.txt",
+        "size": 223,
+        "sha256": "553a9f2583a16c4d51e0b943f6f383d1c722c7c76f48c32b55050e629ea33be4"
+      },
+      {
+        "path": "scripts/fixtures/sample-blocked-project.expected.json",
+        "size": 6262,
+        "sha256": "48c2fe9f4f2b540fd837d5526b69132feea6626b98bfc605e486f209fab59445"
+      },
+      {
+        "path": "scripts/fixtures/sample-blocked-project.expected.md",
+        "size": 4017,
+        "sha256": "c6f1cf577e2cef872b37f6243c48ff3bfdab28dea3ac48df01a195670dfc9ba4"
+      },
+      {
+        "path": "scripts/fixtures/sample-clean-project/artwork/cover-art.jpg",
+        "size": 40628,
+        "sha256": "cf4255d03f8ff60e7e408b1cffe529175fa84134af425ec7edf559cb7af7ba80"
+      },
+      {
+        "path": "scripts/fixtures/sample-clean-project/audio/paper-moons-master.wav",
+        "size": 16044,
+        "sha256": "56d4af65701c26df20bd4021eda95b6e830348ce3a746086079fe89285548dc9"
+      },
+      {
+        "path": "scripts/fixtures/sample-clean-project/lyrics/paper-moons-lyrics.txt",
+        "size": 186,
+        "sha256": "6911ee806e2b6ec6841658caaea006cad859706ef4c776fb252d4cd77988a106"
+      },
+      {
+        "path": "scripts/fixtures/sample-clean-project/metadata.json",
+        "size": 1280,
+        "sha256": "1df6342c89b537d4b40c4825c62d030467b45a04971c2cec2bfa523cce924b72"
+      },
+      {
+        "path": "scripts/fixtures/sample-clean-project/stems/bass-stem.wav",
+        "size": 16044,
+        "sha256": "56d4af65701c26df20bd4021eda95b6e830348ce3a746086079fe89285548dc9"
+      },
+      {
+        "path": "scripts/fixtures/sample-clean-project/stems/drums-stem.wav",
+        "size": 16044,
+        "sha256": "56d4af65701c26df20bd4021eda95b6e830348ce3a746086079fe89285548dc9"
+      },
+      {
+        "path": "scripts/fixtures/sample-clean-project/stems/vocals-stem.wav",
+        "size": 16044,
+        "sha256": "56d4af65701c26df20bd4021eda95b6e830348ce3a746086079fe89285548dc9"
+      },
+      {
+        "path": "scripts/fixtures/sample-clean-project.expected.json",
+        "size": 2370,
+        "sha256": "1b81a513396dafbee44170a78d2f3eeeffef93c414fe3afbb65d3d0d74a22216"
+      },
+      {
+        "path": "scripts/fixtures/sample-clean-project.expected.md",
+        "size": 1013,
+        "sha256": "a5edfd2eaa5a8f6504f2cc6b58e35b581780116036e99fa46c18f1fae7e2c8db"
+      },
+      {
+        "path": "scripts/lint_release.py",
+        "size": 31555,
+        "sha256": "50f8ee4cff0c22ca06cb5af68c090212ee4128c4930fc056fcbc71c9ad985b03"
+      }
+    ],
+    "skipped": [
+      {
+        "path": "scripts/fixtures/sample-clean-project/artwork/cover-art.jpg",
+        "reason": "unparsed_source"
+      },
+      {
+        "path": "scripts/fixtures/sample-clean-project/audio/paper-moons-master.wav",
+        "reason": "unparsed_source"
+      },
+      {
+        "path": "scripts/fixtures/sample-clean-project/stems/bass-stem.wav",
+        "reason": "unparsed_source"
+      },
+      {
+        "path": "scripts/fixtures/sample-clean-project/stems/drums-stem.wav",
+        "reason": "unparsed_source"
+      },
+      {
+        "path": "scripts/fixtures/sample-clean-project/stems/vocals-stem.wav",
+        "reason": "unparsed_source"
+      },
+      {
+        "reason": "scanner_coverage_finding",
+        "rule": "UNANALYZABLE_BINARY"
+      },
+      {
+        "reason": "scanner_coverage_finding",
+        "rule": "UNANALYZABLE_BINARY"
+      },
+      {
+        "reason": "scanner_coverage_finding",
+        "rule": "UNANALYZABLE_BINARY"
+      },
+      {
+        "reason": "scanner_coverage_finding",
+        "rule": "UNANALYZABLE_BINARY"
+      }
+    ]
+  },
+  "completed_at": "2026-10-26T02:26:38.380816+00:00",
+  "runtime_image": "sha256:8693e353f34549ea0552fc5638e8c46303a8e349bbae7616312ef40a669d8aea"
+}

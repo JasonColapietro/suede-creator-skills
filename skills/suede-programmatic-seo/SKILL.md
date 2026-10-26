@@ -1,11 +1,20 @@
 ---
 name: suede-programmatic-seo
-description: "Suede AI programmatic SEO for data-backed page systems at scale: location, persona, integration, comparison, template, glossary, and directory pages. Chooses the playbook, defines the data model and template, and enforces index-worthiness gates against thin, doorway, and scaled-content-abuse patterns, plus internal linking, sitemaps, phased rollout, and the KPIs that decide whether to expand. Use when planning, building, or rescuing many templated pages. NOT FOR: auditing an existing site (use suede-seo-audit); AI answer-engine visibility and measurement (use suede-ai-seo); planning editorial content (use suede-content-strategy); publishing bulk pages without approval."
+description: "Suede AI Programmatic SEO Skills: playbook, source model, templates, unique value, internal links, sitemaps, phased rollout, and KPIs. Use when asked \"build location pages at scale\" or to rescue thin templated pages. NOT FOR: site audits (suede-seo-audit), AI-answer measurement (suede-ai-seo), editorial planning (suede-content-strategy), or bulk publishing without approval."
 metadata:
+  display-name: "Suede AI Programmatic SEO Skills"
   version: 3.0.0
 ---
 
-# Suede Programmatic SEO
+# Suede AI Programmatic SEO Skills
+
+## Compatibility
+
+Requires a source dataset with reuse rights, query-pattern evidence, and page/template access. Current search policies require browsing. Local planning/building needs no new integration; publication requires authority.
+
+For a concrete input, expected output, recovery path, and validation check, read
+[the worked contract](references/worked-contract.md). Use it to check the handoff
+before treating the task as complete.
 
 Programmatic pages work when each one answers a real query with data the
 searcher cannot get faster elsewhere. They fail, and can drag the whole site

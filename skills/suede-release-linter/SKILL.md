@@ -1,9 +1,18 @@
 ---
 name: suede-release-linter
-description: "Suede AI skill that lints a local music or media release folder and scores it for release readiness: missing files, weak or malformed metadata, artwork and stem problems, split gaps, sample and rights blockers, unstated AI involvement, and platform-delivery issues, produced by a bundled offline script as a scored markdown and JSON report. Use when a creator has one or more release folders of tracks, artwork, and stems and wants to know what is missing before distributing, delivering, or handing it off; when metadata quality or a delivery rejection is the question; or when a release-readiness score is asked for. Reports what is present, missing, or unknown; never upgrades unknown to confirmed and never means legal clearance. NOT FOR: investigating the rights gaps the report surfaces or building the transfer package (use suede-rights-passport); a sync one-sheet (use suede-sync-packaging); a release rollout campaign (use suede-campaign-in-a-box)."
+description: "Find missing files, malformed metadata, artwork and stem issues, split gaps, AI involvement, and delivery blockers in local music or media release folders. Use when asked to \"check this release folder\" or explain a delivery rejection. Writes scored Markdown and JSON reports; unknown facts remain unknown. NOT FOR: resolving rights or building a transfer package (use suede-rights-passport), sync one-sheets (use suede-sync-packaging), or rollout campaigns (use suede-campaign-in-a-box)."
+metadata:
+  display-name: "Suede AI Release Linter Skills"
 ---
 
-# Release Metadata Linter
+# Suede AI Release Linter Skills
+
+## Compatibility
+
+Bundled offline linter needs Python 3 and local file access; YAML metadata additionally needs PyYAML. Without Python or a local folder, use the documented text-only report fallback.
+
+For a concrete input, expected handoff, and failure check, read
+[the worked handoff](references/worked-handoff.md).
 
 ## Gate policy
 

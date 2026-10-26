@@ -1,11 +1,19 @@
 ---
 name: suede-referrals
-description: "Suede AI referral and affiliate program design: refer a friend and ambassador mechanics, incentive sizing from LTV and margin, affiliate commission structures, payout logic, fraud controls, attribution, FTC endorsement disclosure and incentivized-review rules, and viral loop measurement (K-factor, cohort LTV of referred customers). Returns a program spec with economics, rules, tooling options, and a launch checklist. Use when designing refer-a-friend mechanics, ambassador or partner incentives, affiliate programs, payout logic, or viral-loop measurement. NOT FOR: executing payouts or changing billing, co-marketing with a partner brand (use suede-co-marketing), launch-wide packaging (use suede-launch-packaging), lifecycle messaging (use suede-emails), or reporting unverified referral lift."
+description: "Design a referral and affiliate program with incentives, commission and payout rules, fraud controls, disclosure, attribution, and cohort measurement. Use when asked to \"design our referral program\" or repair customer, ambassador, or partner incentives. Returns a program spec, economics, tooling options, and launch checklist. NOT FOR: payouts or billing changes, brand partnerships (use suede-co-marketing), launch packaging (use suede-launch-packaging), or lifecycle messages (use suede-emails)."
 metadata:
+  display-name: "Suede AI Referral Skills"
   version: 2.1.0
 ---
 
-# Suede Referral & Affiliate Programs
+# Suede AI Referral Skills
+
+## Compatibility
+
+Uses supplied margin, LTV, and cohort data; current platform and disclosure checks need web access. Program design does not require a live payout or affiliate integration.
+
+For a concrete input, expected handoff, and failure check, read
+[the worked handoff](references/worked-handoff.md).
 
 Suede AI Referrals designs measurable customer, affiliate, and partner loops from
 incentive economics through attribution and fraud controls. It separates

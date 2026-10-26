@@ -2,7 +2,7 @@
 
 <a href="https://trendshift.io/repositories/82031?utm_source=trendshift-badge&amp;utm_medium=badge&amp;utm_campaign=badge-trendshift-82031" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/82031/daily?language=Python" alt="JasonColapietro%2Fsuede-creator-skills | Trendshift" width="250" height="55"/></a>
 
-Source data for [skills.suedeai.ai/directory/](https://skills.suedeai.ai/directory/), a curated index of other people's open-source Agent Skills. Every page under `docs/directory/` is generated from the files here by `scripts/build-directory.mjs`; never edit that HTML by hand.
+Source data for [skills.suedeai.ai/directory/](https://skills.suedeai.ai/directory/), a curated index of published Agent Skills from independent publishers and the accepted Suede AI Skills distribution. Every page under `docs/directory/` is generated from the files here by `scripts/build-directory.mjs`; never edit that HTML by hand.
 
 The [Suede Awesome Everything catalog](../awesome/README.md) is the GitHub Markdown view of the same accepted snapshot, with AI agent skills scored on the 0–99 quality scale. `scripts/build-awesome-directory.mjs` generates its category pages, publisher credits and featured-project guidance. See [its contribution guide](../awesome/CONTRIBUTING.md) for regeneration and freshness checks.
 
@@ -201,3 +201,67 @@ publishing. Never hand-mark an unverified publisher as verified.
 
 Authors below 80 are invited to request help through the listing form, improve
 the failed checks, and request another review.
+
+## Scoped Suede AI Skills source intake
+
+The accepted first-party distribution is
+`JasonColapietro/suede-creator-skills`, rooted at `skills/` with an explicit
+64-name allowlist in `inclusions.json`. Retired pages, vendorable examples,
+internal material and private repositories are outside that scope. The
+Suede-AI fork is an older mirror; canonical source revisions come from the
+JasonColapietro repository. Third-party adaptations keep their existing
+copyright and license attribution in `NOTICE.md` and their traveling licenses.
+
+For a source-improvement draft, use a separate **clean committed checkout** of
+the proposed source revision. The command below reads source files without
+executing them and invokes the existing parser, curator and graded-v2 rubric.
+Parsing uses an archive of the committed tree; ignored local references,
+scripts or assets cannot affect scores or installation facts.
+Replace the revision and branch with the actual reviewed draft commit/ref:
+
+```sh
+python3 -I scripts/directory/first_party.py \
+  --source /tmp/suede-reviewed-source \
+  --revision FULL_COMMITTED_SOURCE_SHA \
+  --source-branch improve/first-party-quality \
+  --citations /tmp/suede-review/citation-readmes.json \
+  --assessment-date YYYY-MM-DD \
+  --receipt directory/intake/first-party-review.json
+npm run build:directory
+```
+
+Citation input is a JSON array covering each indexed curated list once. Each
+entry contains `repo`, the pinned `commit`, `path: "README.md"`, its Git `blob`
+SHA and fetched UTF-8 `content`. Fetch those documents independently at the
+pinned commits before intake; the script makes no network calls. It verifies
+Git blob integrity and runs the normal link extractor on those documents.
+Local blob validation does not prove upstream commit membership or perform a
+new upstream fetch: receipts label these as caller-supplied pinned documents.
+Retain the independent fetch provenance alongside the review.
+Only actual indexed-list citations earn adoption points. Full third-party
+README copies remain local intake inputs; the public receipt retains revisions,
+document hashes and target links rather than copying their text.
+
+A scoped review preserves the global external snapshot date and every external
+skill record and repository metadata value. Its dated receipt identifies the
+new first-party assessment, exact proposed source revision, complete tracked
+skill-file and root-file inventory hashes, parser/curator/rubric hashes, citation evidence,
+and matching before/after external-data digests. Source branch refs may change;
+the recorded source SHA binds the draft review. The receipt explicitly marks
+the revision as proposed, not deployed or merged. A new dataset snapshot ID
+invalidates earlier badge-promotion verifications as usual.
+
+The script rejects unavailable, dirty or mismatched source checkouts, an
+unexpected origin, missing allowlist members, source symlinks, malformed
+citation evidence and source changes during intake. Existing policy, license,
+privacy and score checks still apply. Intake stops if an accepted package is
+rejected; fix its source or report the rejection rather than changing scores,
+exclusions or the rubric. Security status remains `not_scanned`: scoped quality
+intake supplies no security-pass claim. Retain separate security evidence bound
+to its own exact source revision.
+
+Run the local intake regressions with:
+
+```sh
+python3 -m unittest discover -s tests -p test_first_party_directory.py -v
+```

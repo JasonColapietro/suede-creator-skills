@@ -1,11 +1,20 @@
 ---
 name: suede-product-marketing
-description: "Suede AI product-marketing context: drafts and versions the shared .agents/product-marketing.md record of product, audience, ICP, personas, positioning against real alternatives, objections, switching forces, verbatim customer language, sourced proof, goals, and canonical entity facts (official names, one-line description, sameAs profiles, the buyer questions search engines and AI assistants should answer). Every other Suede marketing skill reads it first. Use when a project needs that shared record created, auto-drafted from a codebase, or updated. NOT FOR: writing a campaign (use suede-campaign-in-a-box), conducting new customer interviews (use suede-customer-research), debating a contested positioning bet (use suede-marketing-council), or publishing brand claims."
+description: "Suede AI Product Marketing Skills: versioned audience, ICP, positioning, alternatives, objections, verbatim customer language, proof, goals, and entity facts. Use when asked \"create our product marketing context\" or to update .agents/product-marketing.md from supplied records or a codebase. NOT FOR: campaign writing (suede-campaign-in-a-box), new interviews (suede-customer-research), contested positioning (suede-marketing-council), or publishing claims."
 metadata:
+  display-name: "Suede AI Product Marketing Skills"
   version: 2.2.0
 ---
 
-# Suede Product Marketing Context
+# Suede AI Product Marketing Skills
+
+## Compatibility
+
+Requires read access to supplied product materials; persistent context needs file write access. Works without a connected marketing stack. New research or publishing requires its own authorized sources/tools.
+
+For a concrete input, expected output, recovery path, and validation check, read
+[the worked contract](references/worked-contract.md). Use it to check the handoff
+before treating the task as complete.
 
 Suede AI Product Marketing maintains the shared evidence layer for audience,
 positioning, objections, customer language, and proof. The Suede growth suite

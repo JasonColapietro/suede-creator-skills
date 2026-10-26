@@ -1,13 +1,19 @@
 ---
 name: suede-copy
-description: "Suede AI writing skill for every copy surface: conversion copy for landing sections, heroes, headlines, CTAs, and microcopy; email and social posts; product listings, README and docs pages; public explainers; brand-voice retunes; and agent-facing docs such as SKILL.md, CLAUDE.md, and AGENTS.md. Includes an answer-first SEO and AEO pass (direct answer up top, question headings, quotable facts, FAQ, metadata), persona and framework selection, labeled variants, evidence boundaries, and a 70-point ship score. Use when asked to write, rewrite, sharpen, or retune copy on one surface or several, explain a product publicly, or tighten a doc an agent reads. NOT FOR: stripping AI patterns from text you are not otherwise rewriting (use suede-deslop); one high-stakes public piece that needs research and an adversarial fact audit before publishing (use suede-ship-copy); layout, tokens, or visual design (use suede-design); a scored standalone SEO audit (use suede-seo-audit)."
+description: "Use when asked \"rewrite this landing page\" or to write, sharpen or retune conversion copy, public explainers and agent-facing docs across surfaces. Suede AI applies voice, frameworks, labeled variants, answer-first SEO/AEO, evidence boundaries and a 70-point ship score. NOT FOR: a standalone anti-slop pass (use suede-deslop), high-stakes research orchestration (use suede-ship-copy), visual design (use suede-design), or scored SEO audits (use suede-seo-audit)."
+metadata:
+  display-name: "Suede AI Copy Skills"
 ---
 
-# Suede Copy
+# Suede AI Copy Skills
 
 Write copy that earns its place with concrete nouns, outcomes a buyer can see,
 real proof, and one primary action. Default voice is Suede AI. A supplied
 company brief overrides every default here.
+
+## Compatibility
+
+Any text-capable agent with the source copy and brief. Local document edits need file access; current external claims need research access. Publishing is a separate authorized action.
 
 ## Gate policy: advisory, not blocking
 
@@ -361,3 +367,7 @@ Never wait on that answer to finish.
   page grade before launch → suede-visibility-grader
 - Words are done but the page still does not convert → suede-site-alchemy
 - Approved copy needs packaging for release → suede-launch-packaging
+
+## Worked contract
+
+[Worked contract](references/usage-contract.md) gives a bounded input, expected output and failure check for this workflow.

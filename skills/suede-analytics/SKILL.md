@@ -1,11 +1,19 @@
 ---
 name: suede-analytics
-description: "Suede AI measurement discipline: tracking plans, event and key-event instrumentation in GA4 and GTM, consent mode v2, UTM hygiene, AI assistant and organic search channel grouping, and readback proof of what actually fires. Use when setting up, auditing, or repairing analytics across web, product, paid, and lifecycle surfaces. NOT FOR: experiment design or significance (use suede-ab-testing), campaign optimization (use suede-ads), attribution models, model comparison, or cross-tool reconciliation (use suede-attribution), or revenue-process architecture (use suede-revops)."
+description: "Suede AI Analytics Skills. Use when asked to \"fix our analytics events\" or set up GA4/GTM, key events, consent, UTMs and search/AI channels with readback proof. NOT FOR: experiment decisions (suede-ab-testing), campaign optimization (suede-ads), attribution reconciliation (suede-attribution), or revenue operations (suede-revops)."
 metadata:
+  display-name: "Suede AI Analytics Skills"
   version: 2.1.0
 ---
 
-# Suede AI Analytics Tracking
+# Suede AI Analytics Skills
+
+Read [the worked delivery contract](references/worked-contract.md) for a concrete
+input, expected artifact, failure response and validation example.
+
+## Compatibility
+
+Works with event schemas, source and exports; browser/debugger and existing authorized analytics access for live firing proof. Configuration changes follow the production-change boundary in this skill.
 
 Use this measurement playbook to build tracking that supports auditable marketing and product decisions.
 

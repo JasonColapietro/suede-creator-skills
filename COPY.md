@@ -1,4 +1,4 @@
-# Suede Creator Skills Copy Bank
+# Suede AI Skills Copy Bank
 
 Paste any block here into a post or a README and it will hold. Every claim
 points at something you can open on main: a skill folder, or the commit that
@@ -32,7 +32,7 @@ Open-source AI skills for SEO, marketing, and business operations in Claude Code
 
 ### Short description
 
-Suede Creator Skills gives founders, marketers, and small teams reusable workflows for SEO audits, AI search visibility, conversion copy, and business operations. Run them in Claude Code or OpenAI Codex, with instructions you can inspect and adapt to your business.
+Suede AI Skills gives founders, marketers, and small teams reusable workflows for SEO audits, AI search visibility, conversion copy, and business operations. Run them in Claude Code or OpenAI Codex, with instructions you can inspect and adapt to your business.
 
 ### Component stack copy
 
@@ -57,13 +57,13 @@ dependency-free MCP server. One pack, readable before you run it.
 
 ### Full description
 
-Suede Creator Skills gives founders, marketers, and small teams reusable workflows for SEO audits, AI search visibility, conversion copy, and business operations. Run them in Claude Code or OpenAI Codex, with instructions you can inspect and adapt to your business. Start with a page or business brief to get prioritized audit findings, positioning and campaign plans, or a map of operational bottlenecks. The pack also includes code review, app delivery, and creator-rights tools. Original work is MIT licensed; adapted components retain their upstream notices.
+Suede AI Skills gives founders, marketers, and small teams reusable workflows for SEO audits, AI search visibility, conversion copy, and business operations. Run them in Claude Code or OpenAI Codex, with instructions you can inspect and adapt to your business. Start with a page or business brief to get prioritized audit findings, positioning and campaign plans, or a map of operational bottlenecks. The pack also includes code review, app delivery, and creator-rights tools. Original work is MIT licensed; adapted components retain their upstream notices.
 
 ## GitHub Pages Copy
 
 ### Page title
 
-Claude Code Skills & Codex Skills: Suede Creator Skills
+Claude Code Skills & Codex Skills: Suede AI Skills
 
 ### Meta description
 
@@ -71,11 +71,11 @@ Install 76 free open-source Claude Code and Codex skills for SEO, AI search visi
 
 ### Hero
 
-Suede Creator Skills for SEO and business growth.
+Suede AI Skills for SEO and business growth.
 
 ### Subhead
 
-Suede Creator Skills gives founders, marketers, and small teams reusable workflows for SEO audits, AI search visibility, conversion copy, and business operations. Run them in Claude Code or OpenAI Codex, with instructions you can inspect and adapt to your business.
+Suede AI Skills gives founders, marketers, and small teams reusable workflows for SEO audits, AI search visibility, conversion copy, and business operations. Run them in Claude Code or OpenAI Codex, with instructions you can inspect and adapt to your business.
 
 ### Hero proof line
 
@@ -137,7 +137,7 @@ pack can grow without costing more context on every turn.
 
 ### Best overall explanation
 
-Suede Creator Skills is the folder of skills that runs Suede AI, published for you to inspect and adapt. The range is the point: the same pack grades a staged diff A-F across seven
+Suede AI Skills is the folder of skills that runs Suede AI, published for you to inspect and adapt. The range is the point: the same pack grades a staged diff A-F across seven
 lanes and audits a page for search and AI-answer visibility with the fixes ranked by impact. It is free under MIT for the original
 work, with no binaries and no telemetry.
 
@@ -172,7 +172,7 @@ findings and fix-brief workflow.
 
 Jason hired and fired six marketing firms over Suede's life. Not one registered
 Suede's property in Google Search Console, and he did not even know the tool
-existed until he got close enough to the work to see what had been skipped. Suede Creator Skills turns that operating experience into reusable methods for search visibility and business operations. The skills now run 30+ live sites and 8 iOS apps from one terminal with zero employees.
+existed until he got close enough to the work to see what had been skipped. Suede AI Skills turns that operating experience into reusable methods for search visibility and business operations. The skills now run 30+ live sites and 8 iOS apps from one terminal with zero employees.
 
 Suede's founder is
 [Jason Colapietro](https://suedeai.ai/founder), a published author building programmable IP and creator ownership infrastructure.
@@ -303,9 +303,9 @@ CTA: Install for Claude Code
 
 ## FAQ Copy
 
-### What are Suede Creator Skills?
+### What are Suede AI Skills?
 
-Suede Creator Skills are public `SKILL.md` folders for Claude Code and Codex.
+Suede AI Skills are public `SKILL.md` folders for Claude Code and Codex.
 They are the same files that run Suede AI, published for you to inspect and adapt, so an agent works
 from a written method instead of a blank prompt. Every description carries a NOT
 FOR line naming the sibling skill that should win instead.
@@ -360,7 +360,7 @@ stays in a separate private worker-fleet pass.
 
 ### Short post
 
-Suede Creator Skills: open-source agent skills for Claude Code and Codex. One of
+Suede AI Skills: open-source agent skills for Claude Code and Codex. One of
 them grades a staged diff A-F across seven lanes, and the weakest lane caps the
 grade. One author, and every skill folder gets edited when the practice changes.
 
@@ -368,7 +368,7 @@ Docs: https://skills.suedeai.ai/skills/
 
 ### Builder post
 
-I published Suede Creator Skills, the public `SKILL.md` pack for Codex and
+I published Suede AI Skills, the public `SKILL.md` pack for Codex and
 Claude Code. It is the same folder that runs Suede AI, published for you to inspect and adapt.
 
 One skill grades a staged diff A-F across seven lanes, and a hardcoded secret
@@ -388,7 +388,7 @@ worked or missed.
 
 Coordinate complex changes with a DAG of planning, review, and delivery steps.
 
-New in Suede Creator Skills: the Agentic Adderall Stack, the pack's four
+New in Suede AI Skills: the Agentic Adderall Stack, the pack's four
 orchestration skills (ship, agent-teams, workflow-skills,
 recommend-next-action) indexed as a validator-pinned `stacks` entry in the
 catalog. One controller, disjoint lanes, adversarial refute inside the pass, an

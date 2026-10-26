@@ -521,6 +521,8 @@ def main():
                 "size": [r["body_lines"], r["body_words"], r["file_count"]],
                 "kinds": ("r" if r["has_references"] else "") + ("s" if r["has_scripts"] else "") + ("a" if r["has_assets"] else ""),
             }
+            if r.get("display_name") and repo.lower() == "jasoncolapietro/suede-creator-skills":
+                rec["display_name"] = r["display_name"]
             if r["allowed_tools"]:
                 rec["allowed_tools"] = r["allowed_tools"]
             if r["compatibility"]:

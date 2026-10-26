@@ -6,7 +6,7 @@
 
 Skills for PRDs, discovery, roadmaps, OKRs, user research and prioritization. Product managers use them to get structured drafts and reviews from an agent that already knows the framework, the template and the questions to ask.
 
-**237 accepted skills · 16 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
+**239 accepted skills · 17 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
 **Compare on the 0–99 quality scale:** this category’s verified scores span **56–92 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede AI](https://skills.suedeai.ai/directory/?category=product-management&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
 
@@ -24,6 +24,7 @@ Skills for PRDs, discovery, roadmaps, OKRs, user research and prioritization. Pr
 - [github/awesome-copilot](#github--awesome-copilot)
 - [gooseworks-ai/goose-skills](#gooseworks-ai--goose-skills)
 - [infrasity-labs/dev-gtm-claude-skills](#infrasity-labs--dev-gtm-claude-skills)
+- [JasonColapietro/suede-creator-skills](#jasoncolapietro--suede-creator-skills)
 - [jeffallan/claude-skills](#jeffallan--claude-skills)
 - [michalparkola/tapestry-skills-for-claude-code](#michalparkola--tapestry-skills-for-claude-code)
 - [phuryn/pm-skills](#phuryn--pm-skills)
@@ -212,6 +213,15 @@ Skills for PRDs, discovery, roadmaps, OKRs, user research and prioritization. Pr
 - **58/100 · D** · [stakeholder-alignment](https://github.com/infrasity-labs/dev-gtm-claude-skills/blob/main/product-designers/stakeholder-alignment/SKILL.md): Create stakeholder alignment artifacts including responsibility matrices, decision frameworks, and communication plans. [Suede](https://skills.suedeai.ai/directory/infrasity-labs/dev-gtm-claude-skills/#stakeholder-alignment)
 - **56/100 · D** · [click-test-plan](https://github.com/infrasity-labs/dev-gtm-claude-skills/blob/main/product-designers/click-test-plan/SKILL.md): Design click/first-click tests to evaluate navigation and information findability. [Suede](https://skills.suedeai.ai/directory/infrasity-labs/dev-gtm-claude-skills/#click-test-plan)
 - **56/100 · D** · [metrics-definition](https://github.com/infrasity-labs/dev-gtm-claude-skills/blob/main/product-designers/metrics-definition/SKILL.md): Define UX metrics and KPIs that connect design decisions to measurable business and user outcomes. [Suede](https://skills.suedeai.ai/directory/infrasity-labs/dev-gtm-claude-skills/#metrics-definition)
+
+<a id="jasoncolapietro--suede-creator-skills"></a>
+
+## JasonColapietro/suede-creator-skills
+
+[Repository](https://github.com/JasonColapietro/suede-creator-skills) · Publisher: [JasonColapietro](https://github.com/JasonColapietro) · [Suede AI listing](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/)
+
+- **91/100 · A** · [Suede AI Customer Research Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/verify/first-party-source-whitespace/skills/suede-customer-research/SKILL.md): Use when asked "synthesize these interviews" or to discover what a defined customer segment says, needs and resists. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-customer-research)
+- **91/100 · A** · [Suede AI Onboarding Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/verify/first-party-source-whitespace/skills/suede-onboarding/SKILL.md): Suede AI Onboarding Skills: time to value, ranked friction audits, first-value flows, empty states, checklists, and measurement. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-onboarding)
 
 <a id="jeffallan--claude-skills"></a>
 

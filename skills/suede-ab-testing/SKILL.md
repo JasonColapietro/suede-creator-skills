@@ -1,11 +1,19 @@
 ---
 name: suede-ab-testing
-description: "Suede AI experimentation discipline: hypotheses, sample size and power, test duration, guardrail metrics, significance and readouts, sequential designs, and an ICE-ranked experiment backlog with a reusable playbook. Use when comparing variants, deciding whether a result is reliable, or building an experiment program and cadence. NOT FOR: analytics instrumentation (use suede-analytics), post-click conversion diagnosis (use suede-site-alchemy), writing the variant copy (use suede-copy), or channel-level incrementality and geo holdouts (use suede-attribution)."
+description: "Suede AI A/B Testing Skills. Use when asked to \"design an A/B test\", compare variants, assess reliability, or build an experiment backlog: hypothesis, power, duration, guardrails and a predeclared decision rule. NOT FOR: instrumentation (suede-analytics), funnel diagnosis (suede-site-alchemy), variant copy (suede-copy), or channel incrementality (suede-attribution)."
 metadata:
+  display-name: "Suede AI A/B Testing Skills"
   version: 2.1.0
 ---
 
-# Suede AI A/B Test Setup
+# Suede AI A/B Testing Skills
+
+Read [the worked delivery contract](references/worked-contract.md) for a concrete
+input, expected artifact, failure response and validation example.
+
+## Compatibility
+
+Works from supplied experiment data and product context; file access for saved plans and a calculator/code runtime for power or statistical calculations. Analytics access is optional when exports are provided.
 
 Use this experimentation playbook to design tests that produce statistically valid, actionable results.
 

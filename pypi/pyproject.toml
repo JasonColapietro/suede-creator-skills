@@ -1,4 +1,4 @@
-# PyPI distribution of Suede Creator Skills.
+# PyPI distribution of Suede AI Skills.
 #
 # The skill folders, catalog, VERSION and license files are staged into this
 # directory from the repository root by `node scripts/build-pypi-package.mjs`

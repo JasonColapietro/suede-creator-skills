@@ -1,7 +1,7 @@
 # Suede Public Explainer Pack
 
 Use this file when builders, creators, or operators need to
-explain Suede Creator Skills and the Suede workflow in public. It is written
+explain Suede AI Skills and the Suede workflow in public. It is written
 for sharing, posting, documenting, onboarding, and answering questions with
 clear, search-friendly, specific language and careful evidence boundaries.
 
@@ -51,7 +51,7 @@ The big components deserve the spotlight:
 
 ## Short Explanation
 
-Suede Creator Skills and Suede Workflow Skills turn an AI agent into a reusable
+Suede AI Skills and Suede AI Workflow Skills turn an AI agent into a reusable
 product, design, copywriting, SEO/AEO/GEO/AI EO, Suedify, GitHub Pages, QA,
 install, launch, visibility-grading, code-review, agent-team, AI-eval,
 music/IP, and creator-workflow assistant.
@@ -112,11 +112,11 @@ that need to build, package, explain, audit, and ship.
 
 ## What Is Included
 
-### Suede Workflow Skills
+### Suede AI Workflow Skills
 
 Use this for product and website work:
 
-- Suede Workflow Skills: the umbrella skill that carries the whole stack from agent to agent, computer to computer, and harness to harness.
+- Suede AI Workflow Skills: the umbrella skill that carries the whole stack from agent to agent, computer to computer, and harness to harness.
 - Suede Graph Flo XR: run a nontrivial repo change through the canonical DAG —
   research, red-teamed lane plan, disjoint build lanes, adversarial review,
   and a release verifier with an evidence handoff.
@@ -130,7 +130,7 @@ Use this for product and website work:
 - Suede Site Alchemy: site positioning, page structure, CTA routing, and visual polish.
 - Suede Launch Packaging: prepare public releases with proof, links, QA, and handoff.
 
-### Suede Creator Skills
+### Suede AI Skills
 
 Use this for artist campaigns and creator rights work:
 
@@ -145,7 +145,7 @@ Use this when the work is bigger than a page:
 - GitHub Pages polish: turn docs into a public product page with install CTAs, schema, sitemap, copy bank, OG assets, skill pages, and mobile QA.
 - Music/IP suite: campaign systems, release linting, rights passports, metadata checks, sync packaging, provenance, credits, split notes, and intake reports.
 
-### Suede Skills MCP
+### Suede AI Skills MCP
 
 Use MCP only when it creates value:
 
@@ -229,7 +229,7 @@ context helps.
 ## Homepage Hero Copy
 
 ```text
-Suede Creator Skills
+Suede AI Skills
 
 Give your agent a product team in one install.
 
@@ -261,19 +261,19 @@ Rewrite the page
 
 ## Plugin Listing Copy
 
-### Suede Workflow Skills
+### Suede AI Workflow Skills
 
 ```text
-Product, design, anti-slop copywriting, SEO/AEO/AI EO, visual QA, visibility grading, A-F code grading, QA, launch packaging, install support, public explainer support, and Suedify site-restyling workflows for Codex. Use Suede Workflow Skills when an agent needs to adapt a reference site's design grammar, improve a page, ship public docs, review code, run design QA, audit SEO/AEO/AI EO, grade CTA clarity, or coordinate multiple review lanes.
+Product, design, anti-slop copywriting, SEO/AEO/AI EO, visual QA, visibility grading, A-F code grading, QA, launch packaging, install support, public explainer support, and Suedify site-restyling workflows for Codex. Use Suede AI Workflow Skills when an agent needs to adapt a reference site's design grammar, improve a page, ship public docs, review code, run design QA, audit SEO/AEO/AI EO, grade CTA clarity, or coordinate multiple review lanes.
 ```
 
-### Suede Creator Skills
+### Suede AI Skills
 
 ```text
 Artist campaign and creator utility skills for music and media workflows. Build eras, song worlds, hooks, stunts, fan rituals, visualizers, merch objects, setlist arcs, catalog revivals, collab angles, campaign boxes, public-copy gates, evidence tables, and optional local creator reports.
 ```
 
-### Suede Skills MCP
+### Suede AI Skills MCP
 
 ```text
 Optional MCP tools for structured Suede skill discovery, install guidance, SEO/AEO/AI EO copy audit scaffolds, and QA checklists. Use MCP when structure helps. Skip it when a direct skill prompt is enough.
@@ -282,13 +282,13 @@ Optional MCP tools for structured Suede skill discovery, install guidance, SEO/A
 ## GitHub Repo Description
 
 ```text
-Suede Creator Skills: public Codex and Claude Code skills plus MCP tools for Suedify, design, copywriting, SEO/AEO/AI EO audits, visibility grading, A-F code grading, agent QA, artist campaigns, and creator utilities.
+Suede AI Skills: public Codex and Claude Code skills plus MCP tools for Suedify, design, copywriting, SEO/AEO/AI EO audits, visibility grading, A-F code grading, agent QA, artist campaigns, and creator utilities.
 ```
 
 ## GitHub README Intro
 
 ```text
-Suede Creator Skills is a public agent workflow pack for builders, designers, agencies, creators, and operators. It includes SEO/AEO/GEO audits, AI search visibility, visibility and CTA grading, conversion copywriting, supplied-company voice support, Suedify reference-site restyling, design direction, mobile and product surface support, social and Instagram growth, AI eval design, A-F code grading, agent teams, iOS and Android app shipping, launch packaging, artist campaign tools, and creator utilities.
+Suede AI Skills is a public agent workflow pack for builders, designers, agencies, creators, and operators. It includes SEO/AEO/GEO audits, AI search visibility, visibility and CTA grading, conversion copywriting, supplied-company voice support, Suedify reference-site restyling, design direction, mobile and product surface support, social and Instagram growth, AI eval design, A-F code grading, agent teams, iOS and Android app shipping, launch packaging, artist campaign tools, and creator utilities.
 
 Use the skills directly for normal work. Use MCP only when the task benefits from structured lookup, audit scaffolding, install guidance, grading scaffolds, or repeatable QA.
 ```
@@ -587,7 +587,7 @@ The Suede pack is a public skill workflow for agents. It includes portable conte
 ### Creator DM
 
 ```text
-Suede Creator Skills help turn a song, site, drop, or artist idea into something sharper: a visual world, campaign copy, hook map, landing-page copy, SEO/AEO/AI EO pass, fan prompt, visualizer direction, and optional local utility reports.
+Suede AI Skills help turn a song, site, drop, or artist idea into something sharper: a visual world, campaign copy, hook map, landing-page copy, SEO/AEO/AI EO pass, fan prompt, visualizer direction, and optional local utility reports.
 
 The point is not paperwork. The point is giving the agent a creative workflow it can keep improving as you react to the output.
 ```
@@ -695,7 +695,7 @@ cited without inventing facts.
 ### Homepage Title
 
 ```text
-Suede Creator Skills | Design, Copy, SEO, Suedify
+Suede AI Skills | Design, Copy, SEO, Suedify
 ```
 
 ### Homepage Meta Description
@@ -713,13 +713,13 @@ Suede Public Explainer | Design, Copy, SEO, QA, MCP
 ### Explainer Page Meta Description
 
 ```text
-Explain Suede Creator Skills with public-safe copy for skills, MCP, Suedify, design, copywriting, SEO/AEO/AI EO audits, visibility grading, A-F code grading, agent QA, and artist campaign tools.
+Explain Suede AI Skills with public-safe copy for skills, MCP, Suedify, design, copywriting, SEO/AEO/AI EO audits, visibility grading, A-F code grading, agent QA, and artist campaign tools.
 ```
 
 ### Durable Keywords
 
-- Suede Creator Skills
-- Suede Workflow Skills
+- Suede AI Skills
+- Suede AI Workflow Skills
 - Suedify
 - Suede Copy
 - copywriting
@@ -729,7 +729,7 @@ Explain Suede Creator Skills with public-safe copy for skills, MCP, Suedify, des
 - website visibility grader
 - CTA grader
 - Suede Design
-- Suede Skills MCP
+- Suede AI Skills MCP
 - Codex skills
 - Codex skills
 - Claude Code skills

@@ -36,7 +36,7 @@
   "position": 3,
   "wordCount": 2334,
   "datePublished": "2026-08-10",
-  "dateModified": "2026-10-24",
+  "dateModified": "2026-10-25",
   "inLanguage": "en",
   "isPartOf": {
     "@type": "Book",
@@ -63,7 +63,7 @@
 
     <header class="nav">
       <nav class="nav-inner" aria-label="Main navigation">
-        <a href="../" class="nav-logo" aria-label="Suede Creator Skills home">
+        <a href="../" class="nav-logo" aria-label="Suede AI Skills home">
           <img src="../assets/suede-ai-logo-transparent.webp" alt="Suede AI" width="28" height="28" onerror="this.style.display='none'">
           <span class="nav-logo-wordmark">Suede <span>Creator Skills</span></span>
         </a>
@@ -101,13 +101,13 @@
 name: suede-code
 description: "Suede AI code review and A-F ship grade for a diff, PR, branch, or commit range: findings ranked P0-P3 with file:line evidence and a fix path, an A-F grade across seven lanes with Instant-F security triggers and surface grade caps, OWASP 2025 checks, a deploy-safety gate, a commit-dirt scan, and fix briefs. Three modes: full review and grade in one pass (default), findings only with no grade, and grade only with no findings list. Use when asked to review this, grade this, find the bugs before merge, security-check this, is this safe to ship, give it a letter, or should this merge. Runs only when explicitly invoked; never auto-fires on a diff, save, or commit. NOT FOR: making CI enforce the verdict on every merge (use suede-ci-gate); LLM, RAG, or agent behavior coverage (use suede-ai-eval); searching competing plans and building a multi-file change (use suede-graph-flo-xr); fixes that need coordinated parallel lanes (use suede-agent-teams)."
 ---</code></pre>
-      <p>Across all 64 skills, the frontmatter carries <code>name</code> 64 times and <code>description</code> 64 times. Forty-four of them add a <code>metadata</code> block with a version string, a convention the marketing and growth skills brought with them. Nothing else appears. The schema is small on purpose, because everything the frontmatter does happens before the body is read.</p>
+      <p>Across all 64 skills, the frontmatter carries <code>name</code> 64 times and <code>description</code> 64 times. Sixty-four of them add a <code>metadata</code> block with a version string, a convention the marketing and growth skills brought with them. Nothing else appears. The schema is small on purpose, because everything the frontmatter does happens before the body is read.</p>
       <p><code>name</code> matches the folder and is the handle. It is what you type when you invoke the skill directly, and what other skills reference when they route work elsewhere. Keep it stable. A rename breaks every routing line in every other skill that points at it, and those lines are plain text, so nothing will tell you.</p>
       <h2 id="the-description-carries-the-routing-burden">The description carries the routing burden</h2>
-      <p>The description is the only part of a skill that stays in the agent's context when the skill is not running. In this repo the 64 files total 928,739 bytes; the 64 descriptions together are 50,322. The agent holds the small number and reaches for the large one only when a description matches.</p>
+      <p>The description is the only part of a skill that stays in the agent's context when the skill is not running. In this repo the 64 files total 895,276 bytes; the 64 descriptions together are 28,107. The agent holds the small number and reaches for the large one only when a description matches.</p>
       <p>That makes the description a router, not a summary. It has to answer two questions well enough that an agent mid-task can decide in one pass: what does this produce, and when should it fire.</p>
-      <p>Look at what <code>suede-code</code> does with 953 characters. "Suede AI code review and A-F ship grade for a diff, PR, branch, or commit range" states the artifact. The next clauses name what comes back and the three modes, so a caller who only wants the letter knows it can ask for one. The trigger list catches the request in the words a caller actually types: "find the bugs before merge", "give it a letter", "should this merge". Then the last sentence does the real work: "NOT FOR: making CI enforce the verdict on every merge (use suede-ci-gate)." That clause exists because <code>suede-ci-gate</code> lives next door and produces something different, and without it an agent would pick between them by coin flip.</p>
-      <p><code>suede-deslop</code> does the same job in 900 characters:</p>
+      <p>Look at what <code>suede-code</code> does with 490 characters. "Suede AI code review and A-F ship grade for a diff, PR, branch, or commit range" states the artifact. The next clauses name what comes back and the three modes, so a caller who only wants the letter knows it can ask for one. The trigger list catches the request in the words a caller actually types: "find the bugs before merge", "give it a letter", "should this merge". Then the last sentence does the real work: "NOT FOR: making CI enforce the verdict on every merge (use suede-ci-gate)." That clause exists because <code>suede-ci-gate</code> lives next door and produces something different, and without it an agent would pick between them by coin flip.</p>
+      <p><code>suede-deslop</code> does the same job in 436 characters:</p>
       <pre><code>description: "Suede Slop Stop: the Suede AI context-aware anti-slop pass for
 finished prose. Finds or removes generic filler, manufactured emphasis, false
 agency, formulaic structure, chat and draft residue, formatting applied by rule,
@@ -196,7 +196,7 @@ policy:
     </section>
     <footer>
       <div class="footer-shell">
-        <p class="footer-note">Suede Creator Skills is a 64-skill, open-source pack for Claude Code and OpenAI Codex: outcome-bound orchestration, code review with an A-F ship grade, AI evals, design and copy, SEO/AEO/AI EO, iOS and Android app shipping, and a creator toolkit for music rights and release prep. Original work is MIT licensed; adapted components retain their upstream notices.</p>
+        <p class="footer-note">Suede AI Skills is a 64-skill, open-source pack for Claude Code and OpenAI Codex: outcome-bound orchestration, code review with an A-F ship grade, AI evals, design and copy, SEO/AEO/AI EO, iOS and Android app shipping, and a creator toolkit for music rights and release prep. Original work is MIT licensed; adapted components retain their upstream notices.</p>
         <div class="footer-inner">
           <div class="footer-brand">
             <img src="../assets/suede-ai-logo-transparent.webp" alt="Suede AI" width="24" height="24" onerror="this.style.display='none'">
@@ -215,7 +215,7 @@ policy:
           </div>
         </div>
       </div>
-    <div class="trendshift-recognition" style="width:250px;max-width:100%;margin:24px auto;text-align:center"><p style="margin:0 0 8px;font-size:13px">Suede Creator Skills on Trendshift</p><a href="https://trendshift.io/repositories/82031?utm_source=trendshift-badge&amp;utm_medium=badge&amp;utm_campaign=badge-trendshift-82031" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/82031/daily?language=Python" alt="JasonColapietro%2Fsuede-creator-skills | Trendshift" width="250" height="55" loading="lazy" style="display:block;max-width:100%;height:auto"/></a></div>
+    <div class="trendshift-recognition" style="width:250px;max-width:100%;margin:24px auto;text-align:center"><p style="margin:0 0 8px;font-size:13px">Suede AI Skills on Trendshift</p><a href="https://trendshift.io/repositories/82031?utm_source=trendshift-badge&amp;utm_medium=badge&amp;utm_campaign=badge-trendshift-82031" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/82031/daily?language=Python" alt="JasonColapietro%2Fsuede-creator-skills | Trendshift" width="250" height="55" loading="lazy" style="display:block;max-width:100%;height:auto"/></a></div>
 </footer>
     <script>
       // Mobile nav disclosure. The markup ships <details open> so a no-JS

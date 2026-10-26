@@ -1,11 +1,20 @@
 ---
 name: suede-offers
-description: "Suede AI offer design and persuasion mechanics: scores the offer on the Suede Value Levers (outcome, confidence, wait, effort), then builds bonuses that each remove an objection, guarantees and risk reversal matched to the buyer's real risk, honest scarcity and deadlines that meet FTC, UK, and EU consumer rules, naming, and payment structure, plus evidence-tiered behavioral models (anchoring, framing, social proof, loss aversion, defaults) stated as testable hypotheses. Returns an Offer Brief. Use when building or diagnosing a service, course, coaching, info-product, agency, or high ticket B2B offer, or when the user asks which psychological lever applies and how to test it. NOT FOR: SaaS tier and value-metric architecture (use suede-pricing), sales-page copy (use suede-copy), in-product upgrade prompts (use suede-paywalls), or clinical and mental-health advice."
+description: "Suede AI Offer Design Skills: risk reversal, value levers, scope, proof, bonuses, guarantees, deadlines, and testable persuasion hypotheses. Use when asked \"improve this service offer\" or to diagnose a course, agency, coaching, or B2B offer. NOT FOR: SaaS tier architecture (suede-pricing), sales-page copy (suede-copy), upgrade screens (suede-paywalls), or clinical advice."
 metadata:
+  display-name: "Suede AI Offer Design Skills"
   version: 2.0.0
 ---
 
-# Suede Offer Architecture
+# Suede AI Offer Design Skills
+
+## Compatibility
+
+Can work from supplied offer, buyer, economics, and proof records. Current legal or market claims require browsing; payment changes and publishing require separate authority.
+
+For a concrete input, expected output, recovery path, and validation check, read
+[the worked contract](references/worked-contract.md). Use it to check the handoff
+before treating the task as complete.
 
 Suede AI separates the offer underneath the page from the copy that presents it. Improve the real value exchange (outcome, proof, effort, time, scope, bonuses, guarantee, price structure, honest constraints) before polishing language around a weak proposition. Behavioral levers come last, as tested hypotheses, never as tricks.
 

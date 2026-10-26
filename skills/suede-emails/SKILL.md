@@ -1,13 +1,18 @@
 ---
 name: suede-emails
-description: "Suede AI lifecycle email design for welcome, onboarding, nurture, re-engagement, post-purchase, and trigger-based sequences, with entry criteria, cadence, message roles, exact copy, deliverability checks against current Gmail, Yahoo, and Microsoft sender rules, and a measurement plan. Use when the user needs a multi-email flow: drip campaigns, welcome series, win-back flows, or trigger-based automations. NOT FOR: cold prospecting (use suede-cold-email), SMS in the same lifecycle program (use suede-sms), in-product activation flows (use suede-onboarding), or lifecycle-stage operations beyond email (use suede-revops)."
+description: "Use when asked \"build a welcome email sequence\" or to design nurture, onboarding, win-back, post-purchase or trigger-based lifecycle email flows. Suede AI returns entry and exit criteria, timing, exact copy, sender-rule checks and a measurement plan. NOT FOR: cold outbound (use suede-cold-email), SMS (use suede-sms), in-product onboarding (use suede-onboarding), or broader lifecycle operations (use suede-revops)."
 metadata:
+  display-name: "Suede AI Lifecycle Email Skills"
   version: 2.1.0
 ---
 
-# Suede AI Lifecycle Email Systems
+# Suede AI Lifecycle Email Skills
 
 Design lifecycle email as a consent-aware system of triggers, message roles, pacing, and measurable next actions. Create sequences that move a known audience toward value without inventing intent, exhausting the list, or confusing lifecycle messaging with cold outreach.
+
+## Compatibility
+
+Any agent with product, consent and lifecycle context. Current deliverability checks need web access; producing a handoff does not require an email-service integration.
 
 ## Initial Assessment
 
@@ -289,3 +294,7 @@ Before implementation, return:
 - Use `suede-sms` when the same lifecycle program should also reach people by text: SMS layers on top of email, it does not replace it.
 - Use `suede-deslop` before any email in the sequence goes to a real recipient.
 - From those skills, route lifecycle sequence design, cadence, and message roles back to `suede-emails`.
+
+## Worked contract
+
+[Worked contract](references/usage-contract.md) gives a bounded input, expected output and failure check for this workflow.

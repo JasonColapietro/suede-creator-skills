@@ -264,7 +264,7 @@ def build_parser(version: str) -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         prog="suede-skills",
         description=(
-            "Install Suede Creator Skills into Claude Code, Codex, or any skills-compatible agent: "
+            "Install Suede AI Skills into Claude Code, Codex, or any skills-compatible agent: "
             "SEO audits, AI search visibility, conversion copy, code review, and business-operations workflows."
         ),
         epilog="Docs: https://skills.suedeai.ai/plugins.html",

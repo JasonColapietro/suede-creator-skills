@@ -129,7 +129,7 @@ Compare agent skills with **0–99 quality scores**, verified against [Suede AI�
 
 Browse **${number(data.skills.length)} scored skills from ${repos.length} repositories** across **${categories.length} categories**, with publisher credits and direct source links.
 
-The GitHub companion to the [Agent Skills Directory](${SITE}), maintained by [Jason Colapietro / Suede AI](https://suedeai.ai/founder). Coverage follows the directory’s accepted snapshot and editorial rules. The [Suede Creator Skills pack](../README.md) has its own installation guide.
+The GitHub companion to the [Agent Skills Directory](${SITE}), maintained by [Jason Colapietro / Suede AI](https://suedeai.ai/founder). Coverage follows the directory’s accepted snapshot and editorial rules. The [Suede AI Skills pack](../README.md) has its own installation guide.
 
 <a href="https://trendshift.io/repositories/82031?utm_source=trendshift-badge&amp;utm_medium=badge&amp;utm_campaign=badge-trendshift-82031" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/82031/daily?language=Python" alt="JasonColapietro%2Fsuede-creator-skills | Trendshift" width="250" height="55"/></a>
 
@@ -226,7 +226,7 @@ These commands read local data only. CI rejects missing, stale or orphaned gener
       const entries = skills.filter((s) => s.repo === repo).sort((a, b) => b.score - a.score || alphabetical(a.name, b.name)).map((s) => {
         const source = `${github(repo)}/blob/${encodedPath(meta.branch)}/${s.dir === '.' ? '' : `${encodedPath(s.dir)}/`}SKILL.md`;
         const license = s.open_license ? '' : ` · License: ${md(s.license)} (review terms)`;
-        return `- **${s.score}/100 · ${s.grade}** · ${link(s.name, source)}: ${excerpt(s.summary || s.description)} [Suede](${listingTarget(s)})${license}`;
+        return `- **${s.score}/100 · ${s.grade}** · ${link(s.display_name || s.name, source)}: ${excerpt(s.summary || s.description)} [Suede](${listingTarget(s)})${license}`;
       }).join('\n');
       return `<a id="${repoAnchor(repo)}"></a>\n\n## ${md(repo)}\n\n${link('Repository', github(repo))} · Publisher: ${link(owner, github(owner))} · ${link('Suede AI listing', repoTargets.get(repo))}\n\n${entries}`;
     }).join('\n\n');

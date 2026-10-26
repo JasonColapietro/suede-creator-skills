@@ -7,6 +7,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
+import vm from "node:vm";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -214,4 +215,58 @@ test("the directory brand is Suede AI", () => {
     assert.doesNotMatch(html, /Suede Skills Directory|Suede Directory\b|Suede Labs/, rel);
   }
   assert.match(fs.readFileSync(path.join(docs, "directory/badge.svg"), "utf8"), /Suede AI Skills Directory: listed/);
+});
+
+
+// Run the unmodified browser client through its public URL-query entry point.
+// A second skill from the same repository detects an accidental chooser fallback.
+async function runSkillCheck(query) {
+  class Element {
+    constructor() { this.children = []; this.hidden = false; this.textContent = ""; }
+    setAttribute() {}
+    appendChild(child) { this.children.push(child); }
+  }
+  const status = new Element(), results = new Element(), input = { value: "" };
+  const form = new Element();
+  form.querySelector = () => input;
+  form.getAttribute = () => "../";
+  form.addEventListener = () => {};
+  const nodes = new Map([
+    ['[data-skill-check]', form], ['[data-check-status]', status],
+    ['[data-check-results]', results], ['[data-check-cta="listed"]', new Element()],
+    ['[data-check-cta="missing"]', new Element()],
+  ]);
+  const first = { name: "Suede AI Ads Skills", slug: "suede-ads", repo: "JasonColapietro/suede-creator-skills", report: "/directory/suede-ads/report.json", href: "/directory/suede-ads/", label: "Marketing", license: "MIT" };
+  const legacy = { name: "external-skill", repo: "publisher/skills", report: "/directory/external/report.json", href: "/directory/external/", label: "Writing", license: "MIT" };
+  const requested = [];
+  const context = {
+    document: { querySelector: (selector) => nodes.get(selector),
+      getElementById: () => ({ textContent: "{}" }), createElement: () => new Element(),
+      createTextNode: (text) => ({ textContent: text }) },
+    window: { location: { search: "?q=" + encodeURIComponent(query) } },
+    URLSearchParams, URL,
+    fetch: async (url) => {
+      requested.push(url);
+      return { ok: true, json: async () => url.endsWith("search-index.json")
+        ? [first, { ...first, name: "Suede AI Analytics Skills", slug: "suede-analytics", report: "/directory/suede-analytics/report.json" }, legacy]
+        : { quality: { score: 91, grade: "A", components: [] }, snapshot: { date: "2026-10-26" }, methodology: { version: "graded-v2" } } };
+    },
+  };
+  vm.runInNewContext(read("scripts/directory/check-client.js"), context);
+  for (let tick = 0; tick < 10; tick++) await new Promise(setImmediate);
+  return { requested, status: status.textContent };
+}
+
+test("skill check resolves a public display name, stable slug and exact GitHub skill URL", async () => {
+  for (const query of ["suede-ads", "Suede AI Ads Skills", "https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-ads"]) {
+    const output = await runSkillCheck(query);
+    assert.deepEqual(output.requested, ["../search-index.json", "../suede-ads/report.json"], query);
+    assert.equal(output.status, "Suede AI Ads Skills scores 91/100.", query);
+  }
+});
+
+test("skill check preserves external skill identity without a display slug", async () => {
+  const output = await runSkillCheck("external-skill");
+  assert.deepEqual(output.requested, ["../search-index.json", "../external/report.json"]);
+  assert.equal(output.status, "external-skill scores 91/100.");
 });

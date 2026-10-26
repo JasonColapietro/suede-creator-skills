@@ -1,9 +1,18 @@
 ---
 name: suede-rights-passport
-description: "Suede AI rights skill for creator projects, in two modes. Audit mode finds the rights gaps in a song, release, or catalog (ownership, contributors, splits, samples, licenses, provenance, AI involvement, licensing and royalty-routing readiness) and marks each confirmed or unknown in an evidence table. Package mode turns messy materials into a local, offline transfer package for handoff: hashed assets, a normalized suede-intake.json manifest, credits and splits, license notes, provenance, and a missing-information report, checked by a bundled validator. Use when someone asks whether they have the rights to release, license, or get paid for a work; when splits, samples, or chain of title are unclear; or when a creator needs a rights package or handoff folder. Clears no rights and uploads nothing. NOT FOR: linting a release folder's files and metadata (use suede-release-linter); a sync one-sheet or pitch (use suede-sync-packaging); a release rollout campaign (use suede-campaign-in-a-box)."
+description: "Audit rights gaps in ownership, contributors, splits, samples, licenses, provenance, and AI involvement, or assemble a hashed offline handoff package with a validated manifest. Use when asked to \"prepare a rights handoff\" or assess release, licensing, or royalty-routing evidence. Keeps confirmed facts separate from open questions; grants no clearance. NOT FOR: release file linting (use suede-release-linter), sync pitching (use suede-sync-packaging), or rollout campaigns (use suede-campaign-in-a-box)."
+metadata:
+  display-name: "Suede AI Rights Passport Skills"
 ---
 
-# Creator Rights Passport
+# Suede AI Rights Passport Skills
+
+## Compatibility
+
+Audit mode can use supplied text. Offline package creation and validation need Python 3 and local files; YAML metadata needs PyYAML. No registry, wallet, or upload integration is required.
+
+For a concrete input, expected handoff, and failure check, read
+[the worked handoff](references/worked-handoff.md).
 
 ## Gate policy
 

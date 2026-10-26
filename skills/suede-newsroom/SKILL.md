@@ -1,11 +1,20 @@
 ---
 name: suede-newsroom
-description: "Suede AI editorial pipeline for agent-run content: six roles with written contracts, one inspectable campaign record, and a distribution stage that gives every asset its own argument instead of a shorter draft. Use when content agents return generic, duplicated, or unsourced work, when one flagship piece has to carry a week of distribution and become the page search engines and AI answers cite, when someone asks to build an AI content team or one-person media company, or when a founder wants a weekly interview-led content system across personal and company accounts. NOT FOR: choosing topics, pillars, or clusters (use suede-content-strategy); platform mix, cadence, calendars, listening, or Instagram programs (use suede-social); running a stage on a schedule with state and stop conditions (use suede-marketing-loops); lane ownership for agents changing code (use suede-agent-teams); writing the flagship piece itself (use suede-ship-copy)."
+description: "Suede AI Newsroom Skills. editorial pipeline with six role contracts, an inspectable campaign record, distinct distribution arguments, and performance feedback. Use when asked \"build an AI content team\" or to repair duplicated, generic, or unsourced agent content. NOT FOR: topics (suede-content-strategy), channel calendars (suede-social), scheduling (suede-marketing-loops), code lanes (suede-agent-teams), or flagship writing (suede-ship-copy)."
 metadata:
+  display-name: "Suede AI Newsroom Skills"
   version: 1.2.0
 ---
 
-# Suede Newsroom
+# Suede AI Newsroom Skills
+
+## Compatibility
+
+Requires persistent files for campaign state; roles can run sequentially in one session or through optional subagents. Research requires source access. Publishing and scheduling remain separate authorized operations.
+
+For a concrete input, expected output, recovery path, and validation check, read
+[the worked contract](references/worked-contract.md). Use it to check the handoff
+before treating the task as complete.
 
 Six chatbots pointed at the same brand are not a content team. A newsroom is the
 loop that connects them, and every arrow in it is a handoff with a contract:

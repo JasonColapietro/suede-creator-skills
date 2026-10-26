@@ -1,11 +1,19 @@
 ---
 name: suede-revops
-description: "Suede AI revenue operations: lifecycle stage definitions, fit and engagement lead scoring, MQL and SQL criteria, routing rules and speed-to-lead SLAs, pipeline stages and hygiene, CRM automation build lists for HubSpot, Salesforce, and Zapier, deal-desk approval tiers, enrichment and dedup, and a metrics dashboard spec, including where AI agents can safely run enrichment, routing, and follow-up steps. Returns implementation-ready documents the user can build from. Use when defining lead scoring and routing, MQL or SQL criteria, pipeline stages, CRM hygiene, automation, deal-desk rules, or marketing-to-sales handoffs. NOT FOR: writing outreach (use suede-cold-email), building prospect lists (use suede-prospecting), lifecycle campaigns (use suede-emails), pricing strategy (use suede-pricing), or mutating production CRM records without approval."
+description: "Define lifecycle stages, fit and engagement scores, MQL/SQL handoffs, routing SLAs, pipeline hygiene, CRM automation, deal-desk tiers, and dashboard metrics. Use when asked to \"fix our lead routing\" or specify revenue operations. Returns implementation-ready rules with owners and measurement. NOT FOR: prospect lists (use suede-prospecting), outbound copy (use suede-cold-email), lifecycle campaigns (use suede-emails), pricing strategy (use suede-pricing), or unapproved production CRM changes."
 metadata:
+  display-name: "Suede AI Revenue Operations Skills"
   version: 2.0.0
 ---
 
-# Suede Revenue Operations
+# Suede AI Revenue Operations Skills
+
+## Compatibility
+
+Works from supplied CRM schemas, exports, and process evidence. Live CRM inspection needs authorized access; implementation documents do not require HubSpot, Salesforce, or Zapier connectors.
+
+For a concrete input, expected handoff, and failure check, read
+[the worked handoff](references/worked-handoff.md).
 
 Suede AI RevOps maps the lifecycle rules, data contracts, scoring, routing, and
 handoffs that connect acquisition, sales, and customer success. It produces

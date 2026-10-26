@@ -15,7 +15,7 @@ import sys
 candidates = json.load(open(sys.argv[1]))
 voltagent = open(sys.argv[2], encoding="utf-8", errors="ignore").read()
 
-SKIP = {"user-attachments/assets", "jasoncolapietro/suede-creator-skills"}
+SKIP = {"user-attachments/assets"}
 accepted = {repo.strip().lower() for repo in json.load(open(sys.argv[3])).get("repositories", [])} if len(sys.argv) > 3 else set()
 
 

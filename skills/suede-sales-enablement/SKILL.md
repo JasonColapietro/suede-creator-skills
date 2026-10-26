@@ -1,11 +1,19 @@
 ---
 name: suede-sales-enablement
-description: "Suede AI sales enablement: builds rep-ready pitch decks (10-12 slide narrative), one-pagers, objection libraries, demo scripts and talk tracks, competitive battle cards kept consistent with public comparison pages, proposal structures, buyer cards, and deal-level ROI calculators that separate sourced claims from modeled value. Returns draft assets with a claim-source table, held for approval. Use when creating or refreshing sales collateral, preparing for a competitive deal, or arming reps for objections and demos. NOT FOR: setting price or terms (use suede-pricing), building the offer (use suede-offers), public comparison pages (use suede-competitors), sending outreach (use suede-cold-email), or publishing unsupported proof."
+description: "Create rep-ready pitch decks, one-pagers, objection libraries, demo scripts, battle cards, proposals, buyer cards, and ROI models with a claim-source table. Use when asked to \"build a competitive battle card\" or refresh sales collateral. Distinguishes sourced proof from modeled value. NOT FOR: pricing strategy (use suede-pricing), offer design (use suede-offers), public comparison pages (use suede-competitors), outreach (use suede-cold-email), or unsupported proof."
 metadata:
+  display-name: "Suede AI Sales Enablement Skills"
   version: 2.1.0
 ---
 
-# Suede Sales Enablement
+# Suede AI Sales Enablement Skills
+
+## Compatibility
+
+Drafts work from supplied product, customer, and deal evidence. Live competitor checks need web access; native slide creation or CRM delivery needs separately available authorized tools.
+
+For a concrete input, expected handoff, and failure check, read
+[the worked handoff](references/worked-handoff.md).
 
 Suede AI Sales Enablement turns verified positioning, proof, and deal context into
 rep-usable decks, one-pagers, objection guides, demos, and playbooks. Every

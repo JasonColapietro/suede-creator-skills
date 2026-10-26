@@ -6,7 +6,7 @@
 
 Skills for writing and running tests, browser automation, visual regression and systematic debugging. They help an agent prove a change works before anyone merges it.
 
-**190 accepted skills · 34 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
+**192 accepted skills · 35 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
 **Compare on the 0–99 quality scale:** this category’s verified scores span **56–95 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede AI](https://skills.suedeai.ai/directory/?category=testing-qa&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
 
@@ -31,6 +31,7 @@ Skills for writing and running tests, browser automation, visual regression and 
 - [gooseworks-ai/goose-skills](#gooseworks-ai--goose-skills)
 - [hashicorp/agent-skills](#hashicorp--agent-skills)
 - [infrasity-labs/dev-gtm-claude-skills](#infrasity-labs--dev-gtm-claude-skills)
+- [JasonColapietro/suede-creator-skills](#jasoncolapietro--suede-creator-skills)
 - [jeffallan/claude-skills](#jeffallan--claude-skills)
 - [lackeyjb/playwright-skill](#lackeyjb--playwright-skill)
 - [LambdaTest/agent-skills](#lambdatest--agent-skills)
@@ -243,6 +244,15 @@ Skills for writing and running tests, browser automation, visual regression and 
 [Repository](https://github.com/infrasity-labs/dev-gtm-claude-skills) · Publisher: [infrasity-labs](https://github.com/infrasity-labs) · [Suede AI listing](https://skills.suedeai.ai/directory/infrasity-labs/dev-gtm-claude-skills/)
 
 - **56/100 · D** · [accessibility-test-plan](https://github.com/infrasity-labs/dev-gtm-claude-skills/blob/main/product-designers/accessibility-test-plan/SKILL.md): Create accessibility testing plans covering assistive technologies and WCAG criteria. [Suede](https://skills.suedeai.ai/directory/infrasity-labs/dev-gtm-claude-skills/#accessibility-test-plan)
+
+<a id="jasoncolapietro--suede-creator-skills"></a>
+
+## JasonColapietro/suede-creator-skills
+
+[Repository](https://github.com/JasonColapietro/suede-creator-skills) · Publisher: [JasonColapietro](https://github.com/JasonColapietro) · [Suede AI listing](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/)
+
+- **91/100 · A** · [Suede AI A/B Testing Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/verify/first-party-source-whitespace/skills/suede-ab-testing/SKILL.md): Suede AI A/B Testing Skills. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-ab-testing)
+- **91/100 · A** · [Suede AI Eval Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/verify/first-party-source-whitespace/skills/suede-ai-eval/SKILL.md): Suede AI Eval Skills. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-ai-eval)
 
 <a id="jeffallan--claude-skills"></a>
 

@@ -1,4 +1,4 @@
-# Suede Creator Skills Design System
+# Suede AI Skills Design System
 
 ## Register And Scene
 

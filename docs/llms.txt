@@ -1,6 +1,6 @@
-# Suede Creator Skills
+# Suede AI Skills
 
-> Suede Creator Skills gives founders, marketers, and small teams reusable workflows for SEO audits, AI search visibility, conversion copy, and business operations. Run them in Claude Code or OpenAI Codex, with instructions you can inspect and adapt to your business. Start with a page or business brief to get prioritized audit findings, positioning and campaign plans, or a map of operational bottlenecks. The pack also includes code review, app delivery, and creator-rights tools. Original work is MIT licensed; adapted components retain their upstream notices. Every skill is a plain Markdown SKILL.md folder. Read the skill-specific inputs, outputs, and scope before running it.
+> Suede AI Skills gives founders, marketers, and small teams reusable workflows for SEO audits, AI search visibility, conversion copy, and business operations. Run them in Claude Code or OpenAI Codex, with instructions you can inspect and adapt to your business. Start with a page or business brief to get prioritized audit findings, positioning and campaign plans, or a map of operational bottlenecks. The pack also includes code review, app delivery, and creator-rights tools. Original work is MIT licensed; adapted components retain their upstream notices. Every skill is a plain Markdown SKILL.md folder. Read the skill-specific inputs, outputs, and scope before running it.
 
 Maintained by Jason Colapietro (Suede AI, https://suedeai.ai), one author. These are the same skill folders that run the estate day to day, published as they are: open the folder and read the file before you trust it. Repository: https://github.com/JasonColapietro/suede-creator-skills. License and attribution details: https://github.com/JasonColapietro/suede-creator-skills/blob/main/NOTICE.md. The GitHub Pages site is generated from the same repo, so the docs, the install commands, and the MCP source sit beside the skills they describe. October 2026: Suede AI is a member of Claude for Startups, Anthropic's startup program (https://claude.com/programs/startups).
 
@@ -19,22 +19,22 @@ Runner boundary for Suede Graph Flo XR: the bundled Suede Thought Graph workflow
 - [Overview](https://skills.suedeai.ai/): The landing page. Two commands to install, the whole catalog, the FAQ, and the proof links behind each claim.
 - [Full guide](https://skills.suedeai.ai/guide.html): The chain end to end. Plan the change, build it in lanes, grade the diff A to F where the weakest lane caps the grade, strip the slop out of the copy, then ship. Also covers the MCP server, install paths, and the FAQ; the complete list is on the skill index above.
 - [Skill index](https://skills.suedeai.ai/skills/): Browse every skill.
-- [Agent Skills Directory](https://skills.suedeai.ai/directory/): A curated index of 3,804 public Agent Skills (97% under an open-source or open-content license) from 160 other GitHub repositories, in 16 category directories. Every listing links to the author's repository, passes the Suede Skill Check's structural listing gate, shows a 0–99 quality score and letter grade, and states its license; the 1,701 skills scoring 80–99 offer numeric and letter README badges (either valid linked badge can qualify for verified promotion); security scan status is separately marked not scanned; full skill pages summarize the scripts, credentials and network calls found in the skill's files; [how skills are listed](https://skills.suedeai.ai/directory/methodology/). Edited by Jason Colapietro, Suede AI. Category directories:
-  - [AI Agent and LLM Engineering Skills for Claude and Codex](https://skills.suedeai.ai/directory/ai-agents-llm/): 599 listed AI agent skills.
-  - [Developer Tool and Framework Skills for Claude and Codex](https://skills.suedeai.ai/directory/developer-tools/): 541 listed developer tools skills.
-  - [Marketing and SEO Skills for Claude Code and Codex](https://skills.suedeai.ai/directory/marketing-seo/): 310 listed marketing and SEO skills.
-  - [Product Management Skills for Claude Code and Codex](https://skills.suedeai.ai/directory/product-management/): 237 listed product management skills.
+- [Agent Skills Directory](https://skills.suedeai.ai/directory/): A curated index of 3,868 public Agent Skills (97% under an open-source or open-content license) from 161 other GitHub repositories, in 16 category directories. Every listing links to the author's repository, passes the Suede Skill Check's structural listing gate, shows a 0–99 quality score and letter grade, and states its license; the 1,765 skills scoring 80–99 offer numeric and letter README badges (either valid linked badge can qualify for verified promotion); security scan status is separately marked not scanned; full skill pages summarize the scripts, credentials and network calls found in the skill's files; [how skills are listed](https://skills.suedeai.ai/directory/methodology/). Edited by Jason Colapietro, Suede AI. Category directories:
+  - [AI Agent and LLM Engineering Skills for Claude and Codex](https://skills.suedeai.ai/directory/ai-agents-llm/): 604 listed AI agent skills.
+  - [Developer Tool and Framework Skills for Claude and Codex](https://skills.suedeai.ai/directory/developer-tools/): 545 listed developer tools skills.
+  - [Marketing and SEO Skills for Claude Code and Codex](https://skills.suedeai.ai/directory/marketing-seo/): 339 listed marketing and SEO skills.
+  - [Product Management Skills for Claude Code and Codex](https://skills.suedeai.ai/directory/product-management/): 239 listed product management skills.
   - [Science and Research Skills for Claude Code and Codex](https://skills.suedeai.ai/directory/science-research/): 210 listed science and research skills.
-  - [DevOps and Cloud Skills for Claude Code and Codex](https://skills.suedeai.ai/directory/devops-cloud/): 359 listed DevOps and cloud skills.
-  - [Video, Image and Audio Skills for Claude Code and Codex](https://skills.suedeai.ai/directory/media-creative/): 231 listed video, image and audio skills.
-  - [Productivity and Knowledge Work Skills for Claude and Codex](https://skills.suedeai.ai/directory/productivity-knowledge/): 213 listed productivity skills.
-  - [Business, Sales and Finance Skills for Claude and Codex](https://skills.suedeai.ai/directory/business-finance/): 163 listed business and finance skills.
-  - [Testing and QA Skills for Claude Code and Codex](https://skills.suedeai.ai/directory/testing-qa/): 190 listed testing and QA skills.
-  - [Data, Analytics and Database Skills for Claude and Codex](https://skills.suedeai.ai/directory/data-databases/): 178 listed data and database skills.
+  - [DevOps and Cloud Skills for Claude Code and Codex](https://skills.suedeai.ai/directory/devops-cloud/): 360 listed DevOps and cloud skills.
+  - [Video, Image and Audio Skills for Claude Code and Codex](https://skills.suedeai.ai/directory/media-creative/): 235 listed video, image and audio skills.
+  - [Productivity and Knowledge Work Skills for Claude and Codex](https://skills.suedeai.ai/directory/productivity-knowledge/): 216 listed productivity skills.
+  - [Business, Sales and Finance Skills for Claude and Codex](https://skills.suedeai.ai/directory/business-finance/): 169 listed business and finance skills.
+  - [Testing and QA Skills for Claude Code and Codex](https://skills.suedeai.ai/directory/testing-qa/): 192 listed testing and QA skills.
+  - [Data, Analytics and Database Skills for Claude and Codex](https://skills.suedeai.ai/directory/data-databases/): 180 listed data and database skills.
   - [Security Skills for Claude Code and Codex](https://skills.suedeai.ai/directory/security/): 115 listed security skills.
-  - [Frontend and Design Skills for Claude Code and Codex](https://skills.suedeai.ai/directory/frontend-design/): 198 listed frontend and design skills.
-  - [Writing and Editing Skills for Claude Code and Codex](https://skills.suedeai.ai/directory/writing-content/): 112 listed writing and editing skills.
-  - [Code Review and Code Quality Skills for Claude and Codex](https://skills.suedeai.ai/directory/code-review-quality/): 93 listed code review skills.
+  - [Frontend and Design Skills for Claude Code and Codex](https://skills.suedeai.ai/directory/frontend-design/): 199 listed frontend and design skills.
+  - [Writing and Editing Skills for Claude Code and Codex](https://skills.suedeai.ai/directory/writing-content/): 116 listed writing and editing skills.
+  - [Code Review and Code Quality Skills for Claude and Codex](https://skills.suedeai.ai/directory/code-review-quality/): 94 listed code review skills.
   - [Document and Office File Skills for Claude Code and Codex](https://skills.suedeai.ai/directory/documents-office/): 55 listed document and office file skills.
 - [Agent skills guides](https://skills.suedeai.ai/directory/guides/): Guides by Jason Colapietro, Suede AI, built on the directory's published data:
   - [Best SEO, AEO and GEO skills for Claude Code and Codex](https://skills.suedeai.ai/directory/guides/best-seo-skills/): The highest-scoring SEO skills for Claude Code and Codex, by job: audits, schema, AI search (AEO and GEO), keywords, local and programmatic SEO.
@@ -42,7 +42,7 @@ Runner boundary for Suede Graph Flo XR: the bundled Suede Thought Graph workflow
   - [Agent skills vs MCP servers vs plugins: which one do you need?](https://skills.suedeai.ai/directory/guides/skills-vs-mcp-servers/): A skill adds method, an MCP server adds access, a plugin packages both. When to use each, how they combine, and what each costs in context and risk.
   - [How to get your agent skill found in search and cited by AI assistants](https://skills.suedeai.ai/directory/guides/skill-ai-visibility/): How skill publishers get picked by agents, found in search and cited by AI assistants: descriptions that trigger, READMEs that answer, listings and badges.
 - [Skill AI-visibility check](https://skills.suedeai.ai/directory/check/): A free, in-browser check for skill publishers that shows a listed skill's 0–99 score by component and its largest open points. It sends nothing to Suede AI.
-- [Installs and MCP](https://skills.suedeai.ai/plugins.html): Install commands for Claude Code and Codex, plus the optional Suede Skills MCP server.
+- [Installs and MCP](https://skills.suedeai.ai/plugins.html): Install commands for Claude Code and Codex, plus the optional Suede AI Skills MCP server.
 - [Listings](https://skills.suedeai.ai/listings.html): Every third-party directory, registry and curated list that carries the pack, including skills.sh, SkillsMP, the official MCP Registry, npm and MCP Market, with each link verified on the date shown.
 - [Copy bank](https://skills.suedeai.ai/copy.html): Public-safe explainer copy and reusable launch language.
 - [Cracked devs only](https://skills.suedeai.ai/cracked.html): The Agentic Adderall Stack, three skills for the runs that have to finish. Instant release is one continuous subagent-driven pass with adversarial review inside it. Extended release scores the next move and hands it back as a runnable prompt. The plan search caps at 55, 110, or 200 agent calls.
@@ -50,7 +50,7 @@ Runner boundary for Suede Graph Flo XR: the bundled Suede Thought Graph workflow
 
 ## Workflow skills: from planning a change to grading whether it ships
 
-- [Suede Workflow Skills](https://skills.suedeai.ai/skills/suede-workflow-skills.html): Umbrella router that loads the full Suede AI pack from one install path, picks the specialist for each request, and hands back one scored next move as a runnable prompt.
+- [Suede AI Workflow Skills](https://skills.suedeai.ai/skills/suede-workflow-skills.html): Umbrella router that loads the full Suede AI pack from one install path, picks the specialist for each request, and hands back one scored next move as a runnable prompt.
 - [Suede Agent Teams](https://skills.suedeai.ai/skills/suede-agent-teams.html): Coordinate complex changes and public-repository contribution programs with collision checks, atomic issue leases, review gates, authority boundaries, and a signed handoff.
 - [Suede Ops Architecture](https://skills.suedeai.ai/skills/suede-ops-architecture.html): Fix the shape of a system before anyone builds it: entity schema, one write path per entity, every unit of work routed to an automation, an agent, or a human, and each tool marked absorb, keep, or kill with a proof path.
 - [Suede Ops Assessment](https://skills.suedeai.ai/skills/suede-ops-assessment.html): Map how work actually happens before anyone designs a system: floor-level interviews with the people doing the work, an inventory of every silo, friction quantified in the operation's own numbers, and opportunities ranked by value against build complexity.
@@ -123,7 +123,7 @@ Runner boundary for Suede Graph Flo XR: the bundled Suede Thought Graph workflow
 
 ## MCP server
 
-- Suede Skills MCP: Optional Model Context Protocol server for structured skill discovery, install guidance, SEO/AEO/GEO/AI EO audit scaffolds, and QA checklists. 9 tools, 7 resources, 5 prompts, dependency-free stdio. Source: https://github.com/JasonColapietro/suede-creator-skills/blob/main/mcp/suede-skills-mcp.mjs
+- Suede AI Skills MCP: Optional Model Context Protocol server for structured skill discovery, install guidance, SEO/AEO/GEO/AI EO audit scaffolds, and QA checklists. 9 tools, 7 resources, 5 prompts, dependency-free stdio. Source: https://github.com/JasonColapietro/suede-creator-skills/blob/main/mcp/suede-skills-mcp.mjs
 
 ## Evidence boundary
 

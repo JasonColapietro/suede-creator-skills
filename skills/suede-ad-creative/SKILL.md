@@ -1,11 +1,19 @@
 ---
 name: suede-ad-creative
-description: "Suede AI paid-media creative system: angles, hooks, headlines, primary text, RSA and Performance Max assets, static and motion concepts, iOS-native reveal videos, grounded batch production, client review pages, and iteration from performance data, all checked against platform character limits. Use when producing or iterating ad creative for Google, Meta, LinkedIn, TikTok, or X from real product, review, and performance inputs. NOT FOR: campaign budgets, bidding, or targeting (use suede-ads), statistical test design (use suede-ab-testing), organic social posts (use suede-social), general marketing images such as OG or hero graphics (use suede-image), or landing-page copy (use suede-copy)."
+description: "Suede AI Ad Creative Skills. Use when asked to \"write Google ad variants\" or iterate hooks, headlines, RSA/PMax assets, static or motion concepts from product and performance evidence. Returns grounded variants and a limit-checked review package. NOT FOR: budgets/targeting (suede-ads), experiment design (suede-ab-testing), organic posts (suede-social), general imagery (suede-image), or landing copy (suede-copy)."
 metadata:
+  display-name: "Suede AI Ad Creative Skills"
   version: 2.9.0
 ---
 
-# Suede AI Ad Creative
+# Suede AI Ad Creative Skills
+
+Read [the worked delivery contract](references/worked-contract.md) for a concrete
+input, expected artifact, failure response and validation example.
+
+## Compatibility
+
+Works from supplied product/review/performance inputs; file access for creative packages and current platform documentation or preview for validation. Image/video generation needs an available approved production tool.
 
 Use this performance-creative system to generate testable headlines, descriptions, primary text, and visual concepts, then iterate from real performance data.
 
@@ -260,39 +268,7 @@ Track what was learned and what's being tested:
 
 ## Writing Quality Standards
 
-### Headlines That Click
-
-**Strong headlines:**
-- Specific ("Cut reporting time 75%") over vague ("Save time")
-- Benefits ("Ship code faster") over features ("CI/CD pipeline")
-- Active voice ("Automate your reports") over passive ("Reports are automated")
-- Include numbers when they are measured and sourced ("3x faster", "in 5 minutes")
-
-**Avoid:**
-- Jargon the audience won't recognize
-- Claims without specificity ("Best," "Leading," "Top")
-- All caps or excessive punctuation
-- Clickbait that the landing page can't deliver on
-
-**Never ship these strings.** They are the ad-copy defaults a model produces unprompted, and each is generic across every product in every category: the definition of a wasted slot. The fix is always the same: substitute the specific number, the specific verb, or the specific customer sentence from the grounding inputs. If a headline would be true of a competitor's product too, it is one of these in disguise.
-
-- "Unlock your potential" / "Unlock the power of..." / "Unleash..." / "Revolutionize your..." / "Transform the way you [work/build/sell]"
-- "Say goodbye to [problem]" / "Tired of [problem]?"
-- "Level up your [thing]" / "Take your [thing] to the next level"
-- "game-changer" / "revolutionary" / "cutting-edge" / "seamless" / "effortlessly"
-- "in just minutes" / "in seconds" (unless it is a measured, true number)
-- "The future of [category] is here" / "Join the thousands who..." (without the real count)
-- "Learn more about our solution" / "Discover how we can help"
-
-### Descriptions That Convert
-
-Descriptions should complement headlines, not repeat them. Use descriptions to:
-- Add proof points (numbers, testimonials, awards)
-- Handle objections ("No credit card required," "Free forever for small teams")
-- Reinforce CTAs ("Start your free trial today")
-- Add urgency when genuine ("Limited to first 500 signups")
-
----
+Read [the writing quality standards](references/writing-quality.md) before drafting. They specify source-backed headlines, banned generic strings, complementary descriptions and truthful urgency.
 
 ## Output Formats
 

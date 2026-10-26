@@ -194,7 +194,7 @@ skill is a document, and it works because the agent reading it is a competent
 reader who follows written instructions.
 
 The body is where the specialist lives. `skills/suede-code/SKILL.md` is
-428 lines. It contains a list of instant-F triggers checked before any lane is
+378 lines. It contains a list of instant-F triggers checked before any lane is
 scored, seven grading lanes, grade caps that hold auth and payment changes at C
 without tested bypass and error paths, and a fixed output block ending in a ship
 gate. `skills/suede-deslop/SKILL.md` carries a 25-row kill list of filler
@@ -206,12 +206,12 @@ Tuesday afternoon as it does at midnight.
 ## Progressive disclosure, or why 64 skills fit
 
 Here is the objection that arrives immediately. The 64 `SKILL.md` files in this
-repo total 928,739 bytes. Loading all of them into every conversation would
+repo total 895,276 bytes. Loading all of them into every conversation would
 crowd out the thing you actually came to do.
 
 They are not all loaded. Only the frontmatter descriptions stay resident, and
-all 64 descriptions together come to 50,322 bytes. That is roughly a
-eighteenth of the corpus. The agent holds a catalog of what exists and reads
+all 64 descriptions together come to 28,107 bytes. That is roughly a
+thirty-second of the corpus. The agent holds a catalog of what exists and reads
 a body only when a description matches the task in front of it.
 
 This is progressive disclosure, and it changes what a description is for. The
@@ -328,7 +328,7 @@ description: "Suede AI code review and A-F ship grade for a diff, PR, branch, or
 ```
 
 Across all 64 skills, the frontmatter carries `name` 64 times and `description`
-64 times. Forty-four of them add a `metadata` block with a version string, a
+64 times. Sixty-four of them add a `metadata` block with a version string, a
 convention the marketing and growth skills brought with them. Nothing else appears. The schema is small on
 purpose, because everything the frontmatter does happens before the body is
 read.
@@ -342,15 +342,15 @@ you.
 ## The description carries the routing burden
 
 The description is the only part of a skill that stays in the agent's context
-when the skill is not running. In this repo the 64 files total 928,739 bytes;
-the 64 descriptions together are 50,322. The agent holds the small number and
+when the skill is not running. In this repo the 64 files total 895,276 bytes;
+the 64 descriptions together are 28,107. The agent holds the small number and
 reaches for the large one only when a description matches.
 
 That makes the description a router, not a summary. It has to answer two
 questions well enough that an agent mid-task can decide in one pass: what does
 this produce, and when should it fire.
 
-Look at what `suede-code` does with 953 characters. "Suede AI code review and
+Look at what `suede-code` does with 490 characters. "Suede AI code review and
 A-F ship grade for a diff, PR, branch, or commit range" states the artifact. The
 next clauses name what comes back and the three modes, so a caller who only
 wants the letter knows it can ask for one. The trigger list catches the request
@@ -360,7 +360,7 @@ FOR: making CI enforce the verdict on every merge (use suede-ci-gate)." That
 clause exists because `suede-ci-gate` lives next door and produces something
 different, and without it an agent would pick between them by coin flip.
 
-`suede-deslop` does the same job in 900 characters:
+`suede-deslop` does the same job in 436 characters:
 
 ```text
 description: "Suede Slop Stop: the Suede AI context-aware anti-slop pass for

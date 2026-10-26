@@ -6,7 +6,7 @@
 
 Framework, language, SDK and CLI skills that teach an agent the conventions of a specific stack, from Flutter, Angular and Expo to GraphQL, Go and mobile builds. Install the ones that match your codebase and the agent follows that stack's rules without a long prompt.
 
-**541 accepted skills · 63 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
+**545 accepted skills · 64 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
 **Compare on the 0–99 quality scale:** this category’s verified scores span **54–95 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede AI](https://skills.suedeai.ai/directory/?category=developer-tools&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
 
@@ -46,6 +46,7 @@ Framework, language, SDK and CLI skills that teach an agent the conventions of a
 - [heygen-com/hyperframes](#heygen-com--hyperframes)
 - [huggingface/skills](#huggingface--skills)
 - [infrasity-labs/dev-gtm-claude-skills](#infrasity-labs--dev-gtm-claude-skills)
+- [JasonColapietro/suede-creator-skills](#jasoncolapietro--suede-creator-skills)
 - [jeffallan/claude-skills](#jeffallan--claude-skills)
 - [K-Dense-AI/claude-scientific-skills](#k-dense-ai--claude-scientific-skills)
 - [LambdaTest/agent-skills](#lambdatest--agent-skills)
@@ -555,6 +556,17 @@ Framework, language, SDK and CLI skills that teach an agent the conventions of a
 
 - **82/100 · B** · [senior-architect](https://github.com/infrasity-labs/dev-gtm-claude-skills/blob/main/coding-skills/senior-architect/SKILL.md): This skill should be used when the user asks to "design system architecture", "evaluate microservices vs monolith", "create architecture diagrams", "analyze dependencies", "choose a database", "plan for scalability", "make technical… [Suede](https://skills.suedeai.ai/directory/infrasity-labs/dev-gtm-claude-skills/#senior-architect)
 - **71/100 · C** · [karpathy-guidelines](https://github.com/infrasity-labs/dev-gtm-claude-skills/blob/main/coding-skills/karpathy-guidelines/SKILL.md): Behavioral guidelines to reduce common LLM coding mistakes. [Suede](https://skills.suedeai.ai/directory/infrasity-labs/dev-gtm-claude-skills/#karpathy-guidelines)
+
+<a id="jasoncolapietro--suede-creator-skills"></a>
+
+## JasonColapietro/suede-creator-skills
+
+[Repository](https://github.com/JasonColapietro/suede-creator-skills) · Publisher: [JasonColapietro](https://github.com/JasonColapietro) · [Suede AI listing](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/)
+
+- **93/100 · A** · [Suede AI Google Play Release Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/verify/first-party-source-whitespace/skills/suede-play-release/SKILL.md): Suede AI Google Play Release Skills. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-play-release)
+- **91/100 · A** · [Suede AI Android App Factory Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/verify/first-party-source-whitespace/skills/android-app-factory/SKILL.md): Suede AI Android App Factory Skills. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#android-app-factory)
+- **91/100 · A** · [Suede AI Site to iOS App Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/verify/first-party-source-whitespace/skills/site-to-ios-app/SKILL.md): Suede AI Site to iOS App Skills. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#site-to-ios-app)
+- **91/100 · A** · [Suede AI Parity Contract Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/verify/first-party-source-whitespace/skills/suede-parity-contract/SKILL.md): Suede AI Parity Contract Skills. cross-surface parity contracts generated from live reference constants and asserted through follower behavior. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-parity-contract)
 
 <a id="jeffallan--claude-skills"></a>
 

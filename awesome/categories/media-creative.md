@@ -6,7 +6,7 @@
 
 Skills for making and editing media: video production, image generation and editing, music, audio, diagrams and generative art. They pair an agent with the prompts, tools and file formats each medium needs.
 
-**231 accepted skills · 38 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
+**235 accepted skills · 39 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
 **Compare on the 0–99 quality scale:** this category’s verified scores span **56–93 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede AI](https://skills.suedeai.ai/directory/?category=media-creative&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
 
@@ -33,6 +33,7 @@ Skills for making and editing media: video production, image generation and edit
 - [heygen-com/hyperframes](#heygen-com--hyperframes)
 - [HUANGCHIHHUNGLeo/claude-real-video](#huangchihhungleo--claude-real-video)
 - [infrasity-labs/dev-gtm-claude-skills](#infrasity-labs--dev-gtm-claude-skills)
+- [JasonColapietro/suede-creator-skills](#jasoncolapietro--suede-creator-skills)
 - [K-Dense-AI/claude-scientific-skills](#k-dense-ai--claude-scientific-skills)
 - [Leonxlnx/taste-skill](#leonxlnx--taste-skill)
 - [mcollina/skills](#mcollina--skills)
@@ -356,6 +357,17 @@ Skills for making and editing media: video production, image generation and edit
 - **80/100 · B** · [blog-image](https://github.com/infrasity-labs/dev-gtm-claude-skills/blob/main/writing-skills/blog-image/SKILL.md): Generates and edits blog images such as hero images, inline illustrations, social preview cards, and OG images using Gemini through MCP with structured prompts. [Suede](https://skills.suedeai.ai/directory/infrasity-labs/dev-gtm-claude-skills/blog-image/)
 - **75/100 · C** · [blog-chart](https://github.com/infrasity-labs/dev-gtm-claude-skills/blob/main/writing-skills/blog-chart/SKILL.md): Generate dark-mode-compatible inline SVG data visualization charts for blog posts. [Suede](https://skills.suedeai.ai/directory/infrasity-labs/dev-gtm-claude-skills/#blog-chart)
 - **56/100 · D** · [illustration-style](https://github.com/infrasity-labs/dev-gtm-claude-skills/blob/main/product-designers/illustration-style/SKILL.md): Define an illustration style guide with visual language, color usage, and application rules. [Suede](https://skills.suedeai.ai/directory/infrasity-labs/dev-gtm-claude-skills/#illustration-style)
+
+<a id="jasoncolapietro--suede-creator-skills"></a>
+
+## JasonColapietro/suede-creator-skills
+
+[Repository](https://github.com/JasonColapietro/suede-creator-skills) · Publisher: [JasonColapietro](https://github.com/JasonColapietro) · [Suede AI listing](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/)
+
+- **93/100 · A** · [Suede AI Clip to Guide Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/verify/first-party-source-whitespace/skills/suede-clip-to-guide/SKILL.md): Suede AI Clip to Guide Skills. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-clip-to-guide)
+- **93/100 · A** · [Suede AI Release Linter Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/verify/first-party-source-whitespace/skills/suede-release-linter/SKILL.md): Find missing files, malformed metadata, artwork and stem issues, split gaps, AI involvement, and delivery blockers in local music or media release folders. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-release-linter)
+- **91/100 · A** · [Suede AI Image Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/verify/first-party-source-whitespace/skills/suede-image/SKILL.md): Use when asked "create an Open Graph image" or to produce marketing heroes, banners, social graphics, mockups or image workflows. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-image)
+- **91/100 · A** · [Suede AI Video Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/verify/first-party-source-whitespace/skills/suede-video/SKILL.md): Plan or produce marketing video with scripts, storyboards, shot and asset lists, consent-aware AI or avatar choices, programmatic rendering, edit decisions, pacing, export specs, and video-search metadata. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-video)
 
 <a id="k-dense-ai--claude-scientific-skills"></a>
 

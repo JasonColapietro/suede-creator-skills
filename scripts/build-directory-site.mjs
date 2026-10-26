@@ -9,7 +9,7 @@
 // output, copies docs/assets/ beside it, and rewrites URLs:
 //   - https://skills.suedeai.ai/directory/... becomes https://suedeai.directory/...
 //   - root-absolute /directory/... becomes /...
-//   - relative links that leave the directory (to the Suede Creator Skills pack,
+//   - relative links that leave the directory (to the Suede AI Skills pack,
 //     its blog or its home page) become absolute https://skills.suedeai.ai/... links,
 //     except /assets/..., which ships with this site
 //   - relative links that stay inside the directory are left alone: every page
@@ -124,7 +124,7 @@ export function build(out) {
     "",
     ...llmsLines.map((l) => l.replace(OLD_DIR_RE, NEW)),
     "",
-    `Suede AI's own skill pack, Suede Creator Skills: ${OLD}/`,
+    `Suede AI's own skill pack, Suede AI Skills: ${OLD}/`,
     "",
   ].join("\n"));
   return { urls: urls.length, llms: llmsLines.length };

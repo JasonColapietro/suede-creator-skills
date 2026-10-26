@@ -1,11 +1,20 @@
 ---
 name: suede-paywalls
-description: "Suede AI in-product monetization: paywall screens, feature gates, trial-expiry states, usage-limit prompts, and free-to-paid upgrade moments, with trigger timing, frequency caps, screen copy, plan presentation, a dark-pattern self-check, and subscription-law checks current to October 2026 (ROSCA and state auto-renewal laws after the vacated FTC click-to-cancel rule, California's click-to-cancel and renewal notices, UK DMCC subscription rules, the EU withdrawal button, App Store and Google Play disclosure). Returns screen drafts, trigger rules, and an experiment plan. Use when users have experienced value and the next step is an upgrade prompt or paywall. NOT FOR: public pricing pages (use suede-pricing for the teardown or suede-site-alchemy for conversion), tier architecture (use suede-pricing), or cancellation and save flows (use suede-churn-prevention)."
+description: "Suede AI Paywall Skills: paywalls, entitlement gates, usage limits, trial expiry, screen copy, trigger rules, and experiment plans. Use when asked \"improve this upgrade prompt\" after users experience value. NOT FOR: public pricing-page or tier architecture (suede-pricing), cancellation and save flows (suede-churn-prevention), or unapproved billing changes."
 metadata:
+  display-name: "Suede AI Paywall Skills"
   version: 2.0.0
 ---
 
-# Suede Paywalls and Upgrade Moments
+# Suede AI Paywall Skills
+
+## Compatibility
+
+Requires the entitlement model, upgrade surface, and product context. Current subscription rules require browsing for the applicable jurisdiction/platform. Produces design drafts; billing and deployment are separate actions.
+
+For a concrete input, expected output, recovery path, and validation check, read
+[the worked contract](references/worked-contract.md). Use it to check the handoff
+before treating the task as complete.
 
 Suede AI designs in-product monetization around a truthful entitlement boundary and a value-aware moment, not interruption volume. Define when the user has enough context to evaluate an upgrade, what the paid change actually unlocks, and how to test the prompt without obscuring price, consent, or exit.
 

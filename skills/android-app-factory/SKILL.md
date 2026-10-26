@@ -1,9 +1,18 @@
 ---
 name: android-app-factory
-description: "Suede AI Android app factory: plan, build, test, and prepare a production native Android app from product idea to a Play-ready signed bundle. Use for requests to create, ship, monetize, or modernize an Android app. Covers Kotlin and Jetpack Compose architecture, live target-API and Play policy checks, 16 KB page sizes, accessibility, privacy and Data Safety, Play Billing Library 8+, Play Integrity, account deletion, kids and Families rules, testing, performance, store assets, signing, and a release evidence gate. NOT FOR: uploading, promoting, or rolling out a build on Play (use suede-play-release); turning a website into an iOS app (use site-to-ios-app); a review-only pass on an existing app (use suede-code --findings-only); Play listing, keyword, and screenshot strategy (use suede-aso)."
+description: "Suede AI Android App Factory Skills. Use when asked to \"build an Android app\" or modernize a Kotlin/Compose product: architecture, policy, privacy, billing, tests and a Play-ready release evidence package. NOT FOR: Play uploads or rollout (suede-play-release), website-to-iOS conversion (site-to-ios-app), review-only work (suede-code), or store listing strategy (suede-aso)."
+metadata:
+  display-name: "Suede AI Android App Factory Skills"
 ---
 
-# Android App Factory
+# Suede AI Android App Factory Skills
+
+Read [the worked delivery contract](references/worked-contract.md) for a concrete
+input, expected artifact, failure response and validation example.
+
+## Compatibility
+
+Agent with repo read/write and shell access; Android SDK/JDK and project Gradle toolchain for builds, emulator/device for runtime proof, web access for current official Play policy.
 
 ```
 Iron Law: no release-ready claim without a signed `bundleRelease` plus a live

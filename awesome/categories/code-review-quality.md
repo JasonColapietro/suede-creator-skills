@@ -6,7 +6,7 @@
 
 Skills for reviewing pull requests, refactoring, linting and enforcing code standards. They turn review into a repeatable pass with named checks, so findings are consistent across every change.
 
-**93 accepted skills · 28 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
+**94 accepted skills · 29 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
 **Compare on the 0–99 quality scale:** this category’s verified scores span **58–95 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede AI](https://skills.suedeai.ai/directory/?category=code-review-quality&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
 
@@ -27,6 +27,7 @@ Skills for reviewing pull requests, refactoring, linting and enforcing code stan
 - [github/awesome-copilot](#github--awesome-copilot)
 - [hashicorp/agent-skills](#hashicorp--agent-skills)
 - [infrasity-labs/dev-gtm-claude-skills](#infrasity-labs--dev-gtm-claude-skills)
+- [JasonColapietro/suede-creator-skills](#jasoncolapietro--suede-creator-skills)
 - [jeffallan/claude-skills](#jeffallan--claude-skills)
 - [mattpocock/skills](#mattpocock--skills)
 - [mblode/agent-skills](#mblode--agent-skills)
@@ -175,6 +176,14 @@ Skills for reviewing pull requests, refactoring, linting and enforcing code stan
 
 - **76/100 · C** · [code-reviewer](https://github.com/infrasity-labs/dev-gtm-claude-skills/blob/main/coding-skills/code-reviewer/SKILL.md): Code review automation for TypeScript, JavaScript, Python, Go, Swift, Kotlin, C#, .NET, Java, C, C++, Rust, Ruby, PHP, and Dart/Flutter. [Suede](https://skills.suedeai.ai/directory/infrasity-labs/dev-gtm-claude-skills/#code-reviewer)
 - **72/100 · C** · [pr-review-expert](https://github.com/infrasity-labs/dev-gtm-claude-skills/blob/main/coding-skills/pr-review-expert/SKILL.md): Use when the user asks to review pull requests, analyze code changes, check for security issues in PRs, or assess code quality of diffs. [Suede](https://skills.suedeai.ai/directory/infrasity-labs/dev-gtm-claude-skills/#pr-review-expert)
+
+<a id="jasoncolapietro--suede-creator-skills"></a>
+
+## JasonColapietro/suede-creator-skills
+
+[Repository](https://github.com/JasonColapietro/suede-creator-skills) · Publisher: [JasonColapietro](https://github.com/JasonColapietro) · [Suede AI listing](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/)
+
+- **93/100 · A** · [Suede AI Code Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/verify/first-party-source-whitespace/skills/suede-code/SKILL.md): Use when explicitly asked "review this PR" or to grade a diff, branch, or commit range. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-code)
 
 <a id="jeffallan--claude-skills"></a>
 

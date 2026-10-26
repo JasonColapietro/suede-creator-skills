@@ -1,9 +1,18 @@
 ---
 name: suede-seo-audit
-description: "Suede AI technical and on-page SEO audit with a generative search lane. Runs nine evidence-based lanes on a live page or site: crawl and index access, search intent, metadata, structure and internal links, supported schema, answer extractability, copy, E-E-A-T, and topic clusters, then grades each A-F and writes exact rewrite fixes, JSON-LD, and KPIs to watch. Use when the audit itself is the deliverable: traffic drops, pre-launch SEO checks, indexation problems, schema errors, Core Web Vitals risk, or a scored SEO report. NOT FOR: a fast A-F promotion-readiness grade (use suede-visibility-grader); AI crawler policy, entity consistency, and prompt-panel measurement for ChatGPT, Perplexity or AI Overviews (use suede-ai-seo); conversion-path rework (use suede-site-alchemy)."
+description: "Audit technical access, intent, metadata, links, schema, generative search, copy, E-E-A-T, and topic architecture with A-F lanes and exact fixes. Use when asked to \"audit this site for SEO\", investigate traffic or indexation problems, or produce a scored report. Includes offline source-review tools. NOT FOR: a quick promotion grade (use suede-visibility-grader), AI crawler and citation measurement (use suede-ai-seo), or conversion-path changes (use suede-site-alchemy)."
+metadata:
+  display-name: "Suede AI SEO Audit Skills"
 ---
 
-# Suede SEO Audit
+# Suede AI SEO Audit Skills
+
+## Compatibility
+
+Live audits need web/browser access; supplied-source audits remain available offline. Bundled dependency-free source-review CLI requires Node.js 22 or later.
+
+For a concrete input, expected handoff, and failure check, read
+[the worked handoff](references/worked-handoff.md).
 
 A deep, scored audit of how search engines and answer engines reach,
 understand, and present a page. Every finding cites what was fetched, every

@@ -1,11 +1,19 @@
 ---
 name: suede-video
-description: "Suede AI marketing video production: format choice, scripts, storyboards, AI generation and avatar plans with consent and rights gates, programmatic rendering, edit decision lists, reverse-engineered pacing, platform export specs, and YouTube and video search optimization (titles, chapters, transcripts, VideoObject schema). Use when scripting, generating, editing, or packaging a marketing video, or building a repeatable video pipeline. NOT FOR: the social calendar or post strategy (use suede-social), bridging a clip to a long-form guide (use suede-clip-to-guide), paid ad concepts (use suede-ad-creative), still images (use suede-image), or publishing unapproved media."
+description: "Plan or produce marketing video with scripts, storyboards, shot and asset lists, consent-aware AI or avatar choices, programmatic rendering, edit decisions, pacing, export specs, and video-search metadata. Use when asked to \"turn this demo into a short video\" or build a repeatable production pipeline. NOT FOR: social calendars (use suede-social), clip-to-guide bridges (use suede-clip-to-guide), paid ad concepts (use suede-ad-creative), still images (use suede-image), or unapproved publishing."
 metadata:
+  display-name: "Suede AI Video Skills"
   version: 2.2.0
 ---
 
-# Suede AI Video Production
+# Suede AI Video Skills
+
+## Compatibility
+
+Planning works from supplied media and product evidence. Rendering, generation, avatars, and frame inspection depend on discovered authorized tools; otherwise return the documented manual editor handoff.
+
+For a concrete input, expected handoff, and failure check, read
+[the worked handoff](references/worked-handoff.md).
 
 This skill turns an approved message and rights-cleared source material into
 scripts, storyboards, generation plans, edit systems, and reusable production

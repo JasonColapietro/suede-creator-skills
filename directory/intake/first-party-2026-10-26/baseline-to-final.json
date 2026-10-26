@@ -1,0 +1,1312 @@
+{
+  "schema_version": 1,
+  "source_revision": "1c039ab9ed51bc67bcbdb1d2ed690a5151ab6abf",
+  "baseline_published_first_party_listings": 0,
+  "final_listings": 64,
+  "score_method": "graded-v2",
+  "assessment_date": "2026-10-26",
+  "external_snapshot_date": "2026-10-22",
+  "rows": [
+    {
+      "name": "android-app-factory",
+      "display_name": "Suede AI Android App Factory Skills",
+      "baseline_score": 86,
+      "baseline_category": "developer-tools",
+      "final_score": 91,
+      "final_category": "developer-tools",
+      "checks": "11111111",
+      "historical_scan_status": "findings",
+      "historical_scan_severities": {
+        "LOW": 1,
+        "INFO": 1
+      },
+      "historical_scan_revision": "fe5dc1757cd6c8ff63aee853564249c00151778d",
+      "final_source_scan_status": "findings",
+      "final_source_scan_severities": {
+        "INFO": 1
+      },
+      "final_source_scan_evidence_sha256": "4a32f41d9bad8e74dee03afac4eb20fd0aac418ae3b0a0f79aef63fbb716d687"
+    },
+    {
+      "name": "site-to-ios-app",
+      "display_name": "Suede AI Site to iOS App Skills",
+      "baseline_score": 86,
+      "baseline_category": "developer-tools",
+      "final_score": 91,
+      "final_category": "developer-tools",
+      "checks": "11111111",
+      "historical_scan_status": "findings",
+      "historical_scan_severities": {
+        "LOW": 1,
+        "INFO": 1
+      },
+      "historical_scan_revision": "fe5dc1757cd6c8ff63aee853564249c00151778d",
+      "final_source_scan_status": "findings",
+      "final_source_scan_severities": {
+        "INFO": 1
+      },
+      "final_source_scan_evidence_sha256": "e01bdb5ff797f4637f8164c2ff25683ecb4b93547aad34003a2a03eb6235232d"
+    },
+    {
+      "name": "suede-ab-testing",
+      "display_name": "Suede AI A/B Testing Skills",
+      "baseline_score": 88,
+      "baseline_category": "testing-qa",
+      "final_score": 91,
+      "final_category": "testing-qa",
+      "checks": "11111111",
+      "historical_scan_status": "findings",
+      "historical_scan_severities": {
+        "LOW": 1,
+        "INFO": 1
+      },
+      "historical_scan_revision": "fe5dc1757cd6c8ff63aee853564249c00151778d",
+      "final_source_scan_status": "findings",
+      "final_source_scan_severities": {
+        "INFO": 1
+      },
+      "final_source_scan_evidence_sha256": "41713c8907d83f5105447550a879558731ab19dd834d46baf33266614d9d0c3c"
+    },
+    {
+      "name": "suede-ad-creative",
+      "display_name": "Suede AI Ad Creative Skills",
+      "baseline_score": 86,
+      "baseline_category": "marketing-seo",
+      "final_score": 91,
+      "final_category": "marketing-seo",
+      "checks": "11111111",
+      "historical_scan_status": "findings",
+      "historical_scan_severities": {
+        "LOW": 1,
+        "INFO": 1
+      },
+      "historical_scan_revision": "fe5dc1757cd6c8ff63aee853564249c00151778d",
+      "final_source_scan_status": "findings",
+      "final_source_scan_severities": {
+        "INFO": 1
+      },
+      "final_source_scan_evidence_sha256": "1b2af518dd33440b4bd1e668a08fa1322b147845199c5711819882f25126829f"
+    },
+    {
+      "name": "suede-ads",
+      "display_name": "Suede AI Ads Skills",
+      "baseline_score": 83,
+      "baseline_category": "marketing-seo",
+      "final_score": 91,
+      "final_category": "marketing-seo",
+      "checks": "11111111",
+      "historical_scan_status": "findings",
+      "historical_scan_severities": {
+        "LOW": 1,
+        "INFO": 1
+      },
+      "historical_scan_revision": "fe5dc1757cd6c8ff63aee853564249c00151778d",
+      "final_source_scan_status": "findings",
+      "final_source_scan_severities": {
+        "INFO": 1
+      },
+      "final_source_scan_evidence_sha256": "50f63155eb018fe28e2db2997cbc92682594caae868f64b55163b9f7f9f3471e"
+    },
+    {
+      "name": "suede-agent-teams",
+      "display_name": "Suede AI Agent Teams Skills",
+      "baseline_score": 85,
+      "baseline_category": "ai-agents-llm",
+      "final_score": 93,
+      "final_category": "ai-agents-llm",
+      "checks": "11111111",
+      "historical_scan_status": "failed",
+      "historical_scan_severities": {
+        "LOW": 9,
+        "INFO": 1,
+        "CRITICAL": 1
+      },
+      "historical_scan_revision": "fe5dc1757cd6c8ff63aee853564249c00151778d",
+      "final_source_scan_status": "failed",
+      "final_source_scan_severities": {
+        "INFO": 1,
+        "CRITICAL": 1,
+        "LOW": 8
+      },
+      "final_source_scan_evidence_sha256": "d10b31b7621be65dc7b1de86e05efd298d4d74de75fe3efabd6d3dd88f7b8e8c"
+    },
+    {
+      "name": "suede-ai-eval",
+      "display_name": "Suede AI Eval Skills",
+      "baseline_score": 86,
+      "baseline_category": "ai-agents-llm",
+      "final_score": 91,
+      "final_category": "testing-qa",
+      "checks": "11111111",
+      "historical_scan_status": "findings",
+      "historical_scan_severities": {
+        "LOW": 1,
+        "INFO": 1
+      },
+      "historical_scan_revision": "fe5dc1757cd6c8ff63aee853564249c00151778d",
+      "final_source_scan_status": "findings",
+      "final_source_scan_severities": {
+        "INFO": 1
+      },
+      "final_source_scan_evidence_sha256": "fa04275c63eebc006d3a701c0a56bf15dd7c22d0096d6ec823e9a88b1508bae5"
+    },
+    {
+      "name": "suede-ai-seo",
+      "display_name": "Suede AI Answer Engine Optimization Skills",
+      "baseline_score": 84,
+      "baseline_category": "ai-agents-llm",
+      "final_score": 91,
+      "final_category": "ai-agents-llm",
+      "checks": "11111111",
+      "historical_scan_status": "findings",
+      "historical_scan_severities": {
+        "LOW": 1,
+        "INFO": 1
+      },
+      "historical_scan_revision": "fe5dc1757cd6c8ff63aee853564249c00151778d",
+      "final_source_scan_status": "findings",
+      "final_source_scan_severities": {
+        "INFO": 1
+      },
+      "final_source_scan_evidence_sha256": "e4f469981fb6e14b49f18f061008c0513919805a8b8abee130a761c3eae6d5c4"
+    },
+    {
+      "name": "suede-analytics",
+      "display_name": "Suede AI Analytics Skills",
+      "baseline_score": 88,
+      "baseline_category": "data-databases",
+      "final_score": 91,
+      "final_category": "data-databases",
+      "checks": "11111111",
+      "historical_scan_status": "findings",
+      "historical_scan_severities": {
+        "LOW": 1,
+        "INFO": 1
+      },
+      "historical_scan_revision": "fe5dc1757cd6c8ff63aee853564249c00151778d",
+      "final_source_scan_status": "findings",
+      "final_source_scan_severities": {
+        "INFO": 1
+      },
+      "final_source_scan_evidence_sha256": "51fa4fcedd97cc5ac83336cfeb61420c63ca5422dbd8ec792e642d34341b20aa"
+    },
+    {
+      "name": "suede-aso",
+      "display_name": "Suede AI App Store Optimization Skills",
+      "baseline_score": 86,
+      "baseline_category": "marketing-seo",
+      "final_score": 91,
+      "final_category": "marketing-seo",
+      "checks": "11111111",
+      "historical_scan_status": "findings",
+      "historical_scan_severities": {
+        "LOW": 1,
+        "INFO": 1
+      },
+      "historical_scan_revision": "fe5dc1757cd6c8ff63aee853564249c00151778d",
+      "final_source_scan_status": "findings",
+      "final_source_scan_severities": {
+        "INFO": 1
+      },
+      "final_source_scan_evidence_sha256": "320e6b835beae9c429f7a0c4644de20fdca5d31631e4702006201fad89584924"
+    },
+    {
+      "name": "suede-attribution",
+      "display_name": "Suede AI Attribution Skills",
+      "baseline_score": 83,
+      "baseline_category": "marketing-seo",
+      "final_score": 91,
+      "final_category": "marketing-seo",
+      "checks": "11111111",
+      "historical_scan_status": "findings",
+      "historical_scan_severities": {
+        "LOW": 1,
+        "INFO": 1
+      },
+      "historical_scan_revision": "fe5dc1757cd6c8ff63aee853564249c00151778d",
+      "final_source_scan_status": "findings",
+      "final_source_scan_severities": {
+        "INFO": 1
+      },
+      "final_source_scan_evidence_sha256": "2943d7638e55ab6531b1f50a3e3cb9d327b7c9dddbd993726722f43a2ba78415"
+    },
+    {
+      "name": "suede-campaign-in-a-box",
+      "display_name": "Suede AI Campaign in a Box Skills",
+      "baseline_score": 86,
+      "baseline_category": "marketing-seo",
+      "final_score": 91,
+      "final_category": "marketing-seo",
+      "checks": "11111111",
+      "historical_scan_status": "findings",
+      "historical_scan_severities": {
+        "LOW": 1,
+        "INFO": 1
+      },
+      "historical_scan_revision": "fe5dc1757cd6c8ff63aee853564249c00151778d",
+      "final_source_scan_status": "findings",
+      "final_source_scan_severities": {
+        "INFO": 1
+      },
+      "final_source_scan_evidence_sha256": "4d9e7a9bb7aa2567fc93060526abd909bc23759ac2b934cfd9264aa8c1ff709a"
+    },
+    {
+      "name": "suede-churn-prevention",
+      "display_name": "Suede AI Churn Prevention Skills",
+      "baseline_score": 88,
+      "baseline_category": "frontend-design",
+      "final_score": 91,
+      "final_category": "marketing-seo",
+      "checks": "11111111",
+      "historical_scan_status": "findings",
+      "historical_scan_severities": {
+        "LOW": 1,
+        "INFO": 1
+      },
+      "historical_scan_revision": "fe5dc1757cd6c8ff63aee853564249c00151778d",
+      "final_source_scan_status": "findings",
+      "final_source_scan_severities": {
+        "INFO": 1
+      },
+      "final_source_scan_evidence_sha256": "d480a9a64a14172e8d55551d76e0898afd957d9abba6949205f6afce9f30e046"
+    },
+    {
+      "name": "suede-ci-gate",
+      "display_name": "Suede AI CI Gate Skills",
+      "baseline_score": 86,
+      "baseline_category": "ai-agents-llm",
+      "final_score": 91,
+      "final_category": "devops-cloud",
+      "checks": "11111111",
+      "historical_scan_status": "findings",
+      "historical_scan_severities": {
+        "LOW": 1,
+        "INFO": 1
+      },
+      "historical_scan_revision": "fe5dc1757cd6c8ff63aee853564249c00151778d",
+      "final_source_scan_status": "findings",
+      "final_source_scan_severities": {
+        "INFO": 1
+      },
+      "final_source_scan_evidence_sha256": "2f59af130b0e743bcfc6cd3cc0260837bb4504a4e0f8014945e8f1c1deb9a664"
+    },
+    {
+      "name": "suede-clip-to-guide",
+      "display_name": "Suede AI Clip to Guide Skills",
+      "baseline_score": 88,
+      "baseline_category": "media-creative",
+      "final_score": 93,
+      "final_category": "media-creative",
+      "checks": "11111111",
+      "historical_scan_status": "findings",
+      "historical_scan_severities": {
+        "LOW": 1,
+        "INFO": 1
+      },
+      "historical_scan_revision": "fe5dc1757cd6c8ff63aee853564249c00151778d",
+      "final_source_scan_status": "findings",
+      "final_source_scan_severities": {
+        "INFO": 1
+      },
+      "final_source_scan_evidence_sha256": "4fdfe490e6e163ded84cacdc0c9f07086d6893b196c700695967b430ed92402a"
+    },
+    {
+      "name": "suede-co-marketing",
+      "display_name": "Suede AI Co-Marketing Skills",
+      "baseline_score": 86,
+      "baseline_category": "marketing-seo",
+      "final_score": 91,
+      "final_category": "marketing-seo",
+      "checks": "11111111",
+      "historical_scan_status": "findings",
+      "historical_scan_severities": {
+        "LOW": 1,
+        "INFO": 1
+      },
+      "historical_scan_revision": "fe5dc1757cd6c8ff63aee853564249c00151778d",
+      "final_source_scan_status": "findings",
+      "final_source_scan_severities": {
+        "INFO": 1
+      },
+      "final_source_scan_evidence_sha256": "981e8db6130ef86b94b9af3566c13336ff0f13bcec78962d6eca281dc612570c"
+    },
+    {
+      "name": "suede-code",
+      "display_name": "Suede AI Code Skills",
+      "baseline_score": 83,
+      "baseline_category": "ai-agents-llm",
+      "final_score": 93,
+      "final_category": "code-review-quality",
+      "checks": "11111111",
+      "historical_scan_status": "findings",
+      "historical_scan_severities": {
+        "LOW": 1,
+        "INFO": 1
+      },
+      "historical_scan_revision": "fe5dc1757cd6c8ff63aee853564249c00151778d",
+      "final_source_scan_status": "findings",
+      "final_source_scan_severities": {
+        "INFO": 1
+      },
+      "final_source_scan_evidence_sha256": "003689ee3706f7dd12cb2b4171968b96afe032e93870af15c14b9b460a4c313c"
+    },
+    {
+      "name": "suede-cold-email",
+      "display_name": "Suede AI Cold Email Skills",
+      "baseline_score": 88,
+      "baseline_category": "productivity-knowledge",
+      "final_score": 91,
+      "final_category": "productivity-knowledge",
+      "checks": "11111111",
+      "historical_scan_status": "findings",
+      "historical_scan_severities": {
+        "LOW": 1,
+        "INFO": 1
+      },
+      "historical_scan_revision": "fe5dc1757cd6c8ff63aee853564249c00151778d",
+      "final_source_scan_status": "findings",
+      "final_source_scan_severities": {
+        "INFO": 1
+      },
+      "final_source_scan_evidence_sha256": "dc7539b38223381de67131a6f97b53eac7aba4d979f6495d02aed1acb68e05ae"
+    },
+    {
+      "name": "suede-community-marketing",
+      "display_name": "Suede AI Community Marketing Skills",
+      "baseline_score": 83,
+      "baseline_category": "marketing-seo",
+      "final_score": 91,
+      "final_category": "marketing-seo",
+      "checks": "11111111",
+      "historical_scan_status": "findings",
+      "historical_scan_severities": {
+        "LOW": 1,
+        "INFO": 1
+      },
+      "historical_scan_revision": "fe5dc1757cd6c8ff63aee853564249c00151778d",
+      "final_source_scan_status": "findings",
+      "final_source_scan_severities": {
+        "INFO": 1
+      },
+      "final_source_scan_evidence_sha256": "79a396a13f37ce25016f07087c7f0ed81782c1ad0fb41bf950ba1402cb1ece1e"
+    },
+    {
+      "name": "suede-competitor-profiling",
+      "display_name": "Suede AI Competitor Profiling Skills",
+      "baseline_score": 88,
+      "baseline_category": "business-finance",
+      "final_score": 91,
+      "final_category": "marketing-seo",
+      "checks": "11111111",
+      "historical_scan_status": "findings",
+      "historical_scan_severities": {
+        "LOW": 1,
+        "INFO": 1
+      },
+      "historical_scan_revision": "fe5dc1757cd6c8ff63aee853564249c00151778d",
+      "final_source_scan_status": "findings",
+      "final_source_scan_severities": {
+        "INFO": 1
+      },
+      "final_source_scan_evidence_sha256": "d173311b4d29a5db304ed12aef57e00fd5102682c573636ffc9a47ca15a04a78"
+    },
+    {
+      "name": "suede-competitors",
+      "display_name": "Suede AI Competitor Comparison Skills",
+      "baseline_score": 88,
+      "baseline_category": "marketing-seo",
+      "final_score": 91,
+      "final_category": "marketing-seo",
+      "checks": "11111111",
+      "historical_scan_status": "findings",
+      "historical_scan_severities": {
+        "INFO": 1
+      },
+      "historical_scan_revision": "fe5dc1757cd6c8ff63aee853564249c00151778d",
+      "final_source_scan_status": "findings",
+      "final_source_scan_severities": {
+        "INFO": 1
+      },
+      "final_source_scan_evidence_sha256": "4c1448ebc85d4ff963c40f1016f460a6bef17fc6afdbc41f64e13aae7a1bcf22"
+    },
+    {
+      "name": "suede-content-strategy",
+      "display_name": "Suede AI Content Strategy Skills",
+      "baseline_score": 88,
+      "baseline_category": "marketing-seo",
+      "final_score": 91,
+      "final_category": "marketing-seo",
+      "checks": "11111111",
+      "historical_scan_status": "findings",
+      "historical_scan_severities": {
+        "LOW": 1,
+        "INFO": 1
+      },
+      "historical_scan_revision": "fe5dc1757cd6c8ff63aee853564249c00151778d",
+      "final_source_scan_status": "findings",
+      "final_source_scan_severities": {
+        "INFO": 1
+      },
+      "final_source_scan_evidence_sha256": "b70420492e05fadae8b44c3903f12bf9eba5acc43e6a9ac0d01de49c636f6ba0"
+    },
+    {
+      "name": "suede-copy",
+      "display_name": "Suede AI Copy Skills",
+      "baseline_score": 84,
+      "baseline_category": "marketing-seo",
+      "final_score": 91,
+      "final_category": "writing-content",
+      "checks": "11111111",
+      "historical_scan_status": "findings",
+      "historical_scan_severities": {
+        "LOW": 1,
+        "INFO": 1
+      },
+      "historical_scan_revision": "fe5dc1757cd6c8ff63aee853564249c00151778d",
+      "final_source_scan_status": "findings",
+      "final_source_scan_severities": {
+        "INFO": 1
+      },
+      "final_source_scan_evidence_sha256": "58eba0068c38cc8fc09eb1bc384b8529d1212a0d4bfac9eeff7ece617052ed4c"
+    },
+    {
+      "name": "suede-customer-research",
+      "display_name": "Suede AI Customer Research Skills",
+      "baseline_score": 88,
+      "baseline_category": "marketing-seo",
+      "final_score": 91,
+      "final_category": "product-management",
+      "checks": "11111111",
+      "historical_scan_status": "findings",
+      "historical_scan_severities": {
+        "LOW": 1,
+        "INFO": 1
+      },
+      "historical_scan_revision": "fe5dc1757cd6c8ff63aee853564249c00151778d",
+      "final_source_scan_status": "findings",
+      "final_source_scan_severities": {
+        "INFO": 1
+      },
+      "final_source_scan_evidence_sha256": "85ca08c8a0f78f77e0bfa1efb04dfd8ed1368437c0c9b9740054686b92fe98d1"
+    },
+    {
+      "name": "suede-design",
+      "display_name": "Suede AI Design Skills",
+      "baseline_score": 84,
+      "baseline_category": "frontend-design",
+      "final_score": 91,
+      "final_category": "frontend-design",
+      "checks": "11111111",
+      "historical_scan_status": "findings",
+      "historical_scan_severities": {
+        "LOW": 1,
+        "INFO": 1
+      },
+      "historical_scan_revision": "fe5dc1757cd6c8ff63aee853564249c00151778d",
+      "final_source_scan_status": "findings",
+      "final_source_scan_severities": {
+        "INFO": 1
+      },
+      "final_source_scan_evidence_sha256": "90e41fe53bdf98f1fda60f088ce56a8ab84b50226bdf1223d69a2b3b26b99faa"
+    },
+    {
+      "name": "suede-deslop",
+      "display_name": "Suede AI Slop Stop Skills",
+      "baseline_score": 83,
+      "baseline_category": "writing-content",
+      "final_score": 91,
+      "final_category": "writing-content",
+      "checks": "11111111",
+      "historical_scan_status": "findings",
+      "historical_scan_severities": {
+        "LOW": 1,
+        "INFO": 1
+      },
+      "historical_scan_revision": "fe5dc1757cd6c8ff63aee853564249c00151778d",
+      "final_source_scan_status": "findings",
+      "final_source_scan_severities": {
+        "INFO": 1
+      },
+      "final_source_scan_evidence_sha256": "c1ca23ce69507942bccd4d10bd925871797737c128a28cc01bb9f25f9bac102b"
+    },
+    {
+      "name": "suede-directory-submissions",
+      "display_name": "Suede AI Directory Submissions Skills",
+      "baseline_score": 88,
+      "baseline_category": "marketing-seo",
+      "final_score": 91,
+      "final_category": "marketing-seo",
+      "checks": "11111111",
+      "historical_scan_status": "findings",
+      "historical_scan_severities": {
+        "LOW": 1,
+        "INFO": 1
+      },
+      "historical_scan_revision": "fe5dc1757cd6c8ff63aee853564249c00151778d",
+      "final_source_scan_status": "findings",
+      "final_source_scan_severities": {
+        "INFO": 1
+      },
+      "final_source_scan_evidence_sha256": "6caf4e26fc684c31acf4248eaef6cd3494a679e1fa94c2789dc1918acfc50086"
+    },
+    {
+      "name": "suede-emails",
+      "display_name": "Suede AI Lifecycle Email Skills",
+      "baseline_score": 86,
+      "baseline_category": "productivity-knowledge",
+      "final_score": 91,
+      "final_category": "productivity-knowledge",
+      "checks": "11111111",
+      "historical_scan_status": "findings",
+      "historical_scan_severities": {
+        "LOW": 1,
+        "INFO": 1
+      },
+      "historical_scan_revision": "fe5dc1757cd6c8ff63aee853564249c00151778d",
+      "final_source_scan_status": "findings",
+      "final_source_scan_severities": {
+        "INFO": 1
+      },
+      "final_source_scan_evidence_sha256": "876d6995ab44a7e476f57de1e067d7e7c79c6d2a6fe217886f4309488a3064b8"
+    },
+    {
+      "name": "suede-free-tools",
+      "display_name": "Suede AI Free Tools Skills",
+      "baseline_score": 88,
+      "baseline_category": "marketing-seo",
+      "final_score": 91,
+      "final_category": "marketing-seo",
+      "checks": "11111111",
+      "historical_scan_status": "findings",
+      "historical_scan_severities": {
+        "LOW": 1,
+        "INFO": 1
+      },
+      "historical_scan_revision": "fe5dc1757cd6c8ff63aee853564249c00151778d",
+      "final_source_scan_status": "findings",
+      "final_source_scan_severities": {
+        "INFO": 1
+      },
+      "final_source_scan_evidence_sha256": "14805ae28786e0ad1a27cf097893ae1337a2b8f4ae692a3207ed665e4b507ab7"
+    },
+    {
+      "name": "suede-graph-flo-xr",
+      "display_name": "Suede AI Graph Flo XR Skills",
+      "baseline_score": 83,
+      "baseline_category": "devops-cloud",
+      "final_score": 91,
+      "final_category": "ai-agents-llm",
+      "checks": "11111111",
+      "historical_scan_status": "failed",
+      "historical_scan_severities": {
+        "LOW": 4,
+        "INFO": 1,
+        "CRITICAL": 6
+      },
+      "historical_scan_revision": "fe5dc1757cd6c8ff63aee853564249c00151778d",
+      "final_source_scan_status": "failed",
+      "final_source_scan_severities": {
+        "INFO": 1,
+        "CRITICAL": 12,
+        "LOW": 10
+      },
+      "final_source_scan_evidence_sha256": "6c26f95e7a67f2f1306cf989cfe40de8fef7a5232d8c4be5847afe363400a66a"
+    },
+    {
+      "name": "suede-image",
+      "display_name": "Suede AI Image Skills",
+      "baseline_score": 88,
+      "baseline_category": "media-creative",
+      "final_score": 91,
+      "final_category": "media-creative",
+      "checks": "11111111",
+      "historical_scan_status": "findings",
+      "historical_scan_severities": {
+        "LOW": 1,
+        "INFO": 1
+      },
+      "historical_scan_revision": "fe5dc1757cd6c8ff63aee853564249c00151778d",
+      "final_source_scan_status": "findings",
+      "final_source_scan_severities": {
+        "INFO": 1
+      },
+      "final_source_scan_evidence_sha256": "7f819b77f306809d2bd9ade44e4b8aba58951f03c133ab74e3c513b317496118"
+    },
+    {
+      "name": "suede-influencer-outreach",
+      "display_name": "Suede AI Influencer Outreach Skills",
+      "baseline_score": 84,
+      "baseline_category": "productivity-knowledge",
+      "final_score": 91,
+      "final_category": "productivity-knowledge",
+      "checks": "11111111",
+      "historical_scan_status": "findings",
+      "historical_scan_severities": {
+        "LOW": 1,
+        "INFO": 1
+      },
+      "historical_scan_revision": "fe5dc1757cd6c8ff63aee853564249c00151778d",
+      "final_source_scan_status": "findings",
+      "final_source_scan_severities": {
+        "INFO": 1
+      },
+      "final_source_scan_evidence_sha256": "5038272a61ef365df573ad464dd7671fa9c8ad8773d6eb7e2bc80cbdc971bb08"
+    },
+    {
+      "name": "suede-launch-packaging",
+      "display_name": "Suede AI Launch Packaging Skills",
+      "baseline_score": 84,
+      "baseline_category": "marketing-seo",
+      "final_score": 91,
+      "final_category": "marketing-seo",
+      "checks": "11111111",
+      "historical_scan_status": "findings",
+      "historical_scan_severities": {
+        "LOW": 1,
+        "INFO": 1
+      },
+      "historical_scan_revision": "fe5dc1757cd6c8ff63aee853564249c00151778d",
+      "final_source_scan_status": "findings",
+      "final_source_scan_severities": {
+        "INFO": 1
+      },
+      "final_source_scan_evidence_sha256": "70900bc689353e47fc69e0961e3a7db51c40bcc452ccb054b9b202e3dd1eeb14"
+    },
+    {
+      "name": "suede-lead-magnets",
+      "display_name": "Suede AI Lead Magnet Skills",
+      "baseline_score": 86,
+      "baseline_category": "productivity-knowledge",
+      "final_score": 91,
+      "final_category": "marketing-seo",
+      "checks": "11111111",
+      "historical_scan_status": "findings",
+      "historical_scan_severities": {
+        "LOW": 1,
+        "INFO": 1
+      },
+      "historical_scan_revision": "fe5dc1757cd6c8ff63aee853564249c00151778d",
+      "final_source_scan_status": "findings",
+      "final_source_scan_severities": {
+        "INFO": 1
+      },
+      "final_source_scan_evidence_sha256": "70b5d6c88819fb0c393fe8d4c9eeb37ee67fb6ffdc3c3f4204784e6921d0d04f"
+    },
+    {
+      "name": "suede-marketing-council",
+      "display_name": "Suede AI Marketing Council Skills",
+      "baseline_score": 86,
+      "baseline_category": "marketing-seo",
+      "final_score": 91,
+      "final_category": "marketing-seo",
+      "checks": "11111111",
+      "historical_scan_status": "findings",
+      "historical_scan_severities": {
+        "LOW": 1,
+        "INFO": 1
+      },
+      "historical_scan_revision": "fe5dc1757cd6c8ff63aee853564249c00151778d",
+      "final_source_scan_status": "findings",
+      "final_source_scan_severities": {
+        "INFO": 1
+      },
+      "final_source_scan_evidence_sha256": "8690f7dd4fc8340d5c19622134971505da29211cc501f54ab853ea809a0c172c"
+    },
+    {
+      "name": "suede-marketing-loops",
+      "display_name": "Suede AI Marketing Loop Skills",
+      "baseline_score": 86,
+      "baseline_category": "marketing-seo",
+      "final_score": 91,
+      "final_category": "marketing-seo",
+      "checks": "11111111",
+      "historical_scan_status": "findings",
+      "historical_scan_severities": {
+        "LOW": 1,
+        "INFO": 1
+      },
+      "historical_scan_revision": "fe5dc1757cd6c8ff63aee853564249c00151778d",
+      "final_source_scan_status": "findings",
+      "final_source_scan_severities": {
+        "INFO": 1
+      },
+      "final_source_scan_evidence_sha256": "60b245cc3e3104e9568af9b06fcfdd1478d439856fdf21f3a659cca39849fa45"
+    },
+    {
+      "name": "suede-marketing-plan",
+      "display_name": "Suede AI Marketing Planning Skills",
+      "baseline_score": 84,
+      "baseline_category": "marketing-seo",
+      "final_score": 91,
+      "final_category": "marketing-seo",
+      "checks": "11111111",
+      "historical_scan_status": "findings",
+      "historical_scan_severities": {
+        "LOW": 1,
+        "INFO": 1
+      },
+      "historical_scan_revision": "fe5dc1757cd6c8ff63aee853564249c00151778d",
+      "final_source_scan_status": "findings",
+      "final_source_scan_severities": {
+        "INFO": 1
+      },
+      "final_source_scan_evidence_sha256": "2f2fcf1bfd455d4911c8c4c1e1ace12688f71e64b9de0730406bf25a46ffb5be"
+    },
+    {
+      "name": "suede-newsroom",
+      "display_name": "Suede AI Newsroom Skills",
+      "baseline_score": 84,
+      "baseline_category": "ai-agents-llm",
+      "final_score": 91,
+      "final_category": "writing-content",
+      "checks": "11111111",
+      "historical_scan_status": "findings",
+      "historical_scan_severities": {
+        "LOW": 1,
+        "INFO": 1
+      },
+      "historical_scan_revision": "fe5dc1757cd6c8ff63aee853564249c00151778d",
+      "final_source_scan_status": "findings",
+      "final_source_scan_severities": {
+        "INFO": 1
+      },
+      "final_source_scan_evidence_sha256": "a929928c1fc9cdae2d12bad2abd510917f49bc6a5ff20ccf51a340e583a0ccef"
+    },
+    {
+      "name": "suede-offers",
+      "display_name": "Suede AI Offer Design Skills",
+      "baseline_score": 86,
+      "baseline_category": "business-finance",
+      "final_score": 91,
+      "final_category": "business-finance",
+      "checks": "11111111",
+      "historical_scan_status": "findings",
+      "historical_scan_severities": {
+        "LOW": 1,
+        "INFO": 1
+      },
+      "historical_scan_revision": "fe5dc1757cd6c8ff63aee853564249c00151778d",
+      "final_source_scan_status": "findings",
+      "final_source_scan_severities": {
+        "INFO": 1
+      },
+      "final_source_scan_evidence_sha256": "0020bef6b861d72e68bfe639e235c40ca5b72bcdc16d74df05c67c01fd4862dd"
+    },
+    {
+      "name": "suede-onboarding",
+      "display_name": "Suede AI Onboarding Skills",
+      "baseline_score": 86,
+      "baseline_category": "productivity-knowledge",
+      "final_score": 91,
+      "final_category": "product-management",
+      "checks": "11111111",
+      "historical_scan_status": "findings",
+      "historical_scan_severities": {
+        "LOW": 1,
+        "INFO": 1
+      },
+      "historical_scan_revision": "fe5dc1757cd6c8ff63aee853564249c00151778d",
+      "final_source_scan_status": "findings",
+      "final_source_scan_severities": {
+        "INFO": 1
+      },
+      "final_source_scan_evidence_sha256": "90c57dedac117d03454d76844c48384aff6ec5e1e3be3ba7ecb97a9e838e6fc4"
+    },
+    {
+      "name": "suede-ops-architecture",
+      "display_name": "Suede AI Operations Architecture Skills",
+      "baseline_score": 84,
+      "baseline_category": "ai-agents-llm",
+      "final_score": 91,
+      "final_category": "ai-agents-llm",
+      "checks": "11111111",
+      "historical_scan_status": "findings",
+      "historical_scan_severities": {
+        "LOW": 1,
+        "INFO": 1
+      },
+      "historical_scan_revision": "fe5dc1757cd6c8ff63aee853564249c00151778d",
+      "final_source_scan_status": "findings",
+      "final_source_scan_severities": {
+        "INFO": 1
+      },
+      "final_source_scan_evidence_sha256": "d774399bf3c23a8666e1e11e5e3a00e25c681686063a12b2f7b7ecd3d731d644"
+    },
+    {
+      "name": "suede-ops-assessment",
+      "display_name": "Suede AI Operations Assessment Skills",
+      "baseline_score": 84,
+      "baseline_category": "data-databases",
+      "final_score": 91,
+      "final_category": "business-finance",
+      "checks": "11111111",
+      "historical_scan_status": "findings",
+      "historical_scan_severities": {
+        "LOW": 1,
+        "INFO": 1
+      },
+      "historical_scan_revision": "fe5dc1757cd6c8ff63aee853564249c00151778d",
+      "final_source_scan_status": "findings",
+      "final_source_scan_severities": {
+        "INFO": 1
+      },
+      "final_source_scan_evidence_sha256": "cc3ac282da6e66e0a39c248458cd573ee8a2b1299b913f656e177af53dd4eb30"
+    },
+    {
+      "name": "suede-parity-contract",
+      "display_name": "Suede AI Parity Contract Skills",
+      "baseline_score": 81,
+      "baseline_category": "business-finance",
+      "final_score": 91,
+      "final_category": "developer-tools",
+      "checks": "11111111",
+      "historical_scan_status": "findings",
+      "historical_scan_severities": {
+        "LOW": 1,
+        "INFO": 1
+      },
+      "historical_scan_revision": "fe5dc1757cd6c8ff63aee853564249c00151778d",
+      "final_source_scan_status": "findings",
+      "final_source_scan_severities": {
+        "INFO": 1
+      },
+      "final_source_scan_evidence_sha256": "88e7b0a210ca833359903dc925e62a1b44742ced5c937429bdb032db492dca1e"
+    },
+    {
+      "name": "suede-paywalls",
+      "display_name": "Suede AI Paywall Skills",
+      "baseline_score": 86,
+      "baseline_category": "ai-agents-llm",
+      "final_score": 91,
+      "final_category": "marketing-seo",
+      "checks": "11111111",
+      "historical_scan_status": "findings",
+      "historical_scan_severities": {
+        "LOW": 1,
+        "INFO": 1
+      },
+      "historical_scan_revision": "fe5dc1757cd6c8ff63aee853564249c00151778d",
+      "final_source_scan_status": "findings",
+      "final_source_scan_severities": {
+        "INFO": 1
+      },
+      "final_source_scan_evidence_sha256": "c04aef5e84167932ae2272e06a935e3b06dd364962d7433fd58b1b00695b3cc3"
+    },
+    {
+      "name": "suede-play-release",
+      "display_name": "Suede AI Google Play Release Skills",
+      "baseline_score": 85,
+      "baseline_category": "developer-tools",
+      "final_score": 93,
+      "final_category": "developer-tools",
+      "checks": "11111111",
+      "historical_scan_status": "findings",
+      "historical_scan_severities": {
+        "MEDIUM": 5,
+        "LOW": 3,
+        "INFO": 1
+      },
+      "historical_scan_revision": "fe5dc1757cd6c8ff63aee853564249c00151778d",
+      "final_source_scan_status": "findings",
+      "final_source_scan_severities": {
+        "MEDIUM": 5,
+        "INFO": 1,
+        "LOW": 2
+      },
+      "final_source_scan_evidence_sha256": "871c930bae96e12a3035ed475cd4722329ceab5e105b85779545319a9ee238af"
+    },
+    {
+      "name": "suede-pricing",
+      "display_name": "Suede AI Pricing Skills",
+      "baseline_score": 86,
+      "baseline_category": "developer-tools",
+      "final_score": 91,
+      "final_category": "business-finance",
+      "checks": "11111111",
+      "historical_scan_status": "findings",
+      "historical_scan_severities": {
+        "LOW": 1,
+        "INFO": 1
+      },
+      "historical_scan_revision": "fe5dc1757cd6c8ff63aee853564249c00151778d",
+      "final_source_scan_status": "findings",
+      "final_source_scan_severities": {
+        "INFO": 1
+      },
+      "final_source_scan_evidence_sha256": "f03faaf309b682c571e3f18abfa032a2f53358165ce3cba8c65979285003ecc6"
+    },
+    {
+      "name": "suede-product-marketing",
+      "display_name": "Suede AI Product Marketing Skills",
+      "baseline_score": 83,
+      "baseline_category": "marketing-seo",
+      "final_score": 91,
+      "final_category": "marketing-seo",
+      "checks": "11111111",
+      "historical_scan_status": "findings",
+      "historical_scan_severities": {
+        "LOW": 1,
+        "INFO": 1
+      },
+      "historical_scan_revision": "fe5dc1757cd6c8ff63aee853564249c00151778d",
+      "final_source_scan_status": "findings",
+      "final_source_scan_severities": {
+        "INFO": 1
+      },
+      "final_source_scan_evidence_sha256": "6b58c54df02ec662d75cafb2f399dbc83b16c52be9cf3a372f157ff9d24613e2"
+    },
+    {
+      "name": "suede-programmatic-seo",
+      "display_name": "Suede AI Programmatic SEO Skills",
+      "baseline_score": 86,
+      "baseline_category": "marketing-seo",
+      "final_score": 91,
+      "final_category": "marketing-seo",
+      "checks": "11111111",
+      "historical_scan_status": "findings",
+      "historical_scan_severities": {
+        "LOW": 1,
+        "INFO": 1
+      },
+      "historical_scan_revision": "fe5dc1757cd6c8ff63aee853564249c00151778d",
+      "final_source_scan_status": "findings",
+      "final_source_scan_severities": {
+        "INFO": 1
+      },
+      "final_source_scan_evidence_sha256": "020fdd6043750835632358e7361d505026d51eea5ab45206c4865aa9b80dbf93"
+    },
+    {
+      "name": "suede-prospecting",
+      "display_name": "Suede AI Prospecting Skills",
+      "baseline_score": 86,
+      "baseline_category": "frontend-design",
+      "final_score": 91,
+      "final_category": "business-finance",
+      "checks": "11111111",
+      "historical_scan_status": "findings",
+      "historical_scan_severities": {
+        "LOW": 1,
+        "INFO": 1
+      },
+      "historical_scan_revision": "fe5dc1757cd6c8ff63aee853564249c00151778d",
+      "final_source_scan_status": "findings",
+      "final_source_scan_severities": {
+        "INFO": 1
+      },
+      "final_source_scan_evidence_sha256": "177df99173ec9efcd12cbbfa1021b55731b7f0c3f618182bfefec83d06155bcf"
+    },
+    {
+      "name": "suede-public-relations",
+      "display_name": "Suede AI Public Relations Skills",
+      "baseline_score": 84,
+      "baseline_category": "marketing-seo",
+      "final_score": 91,
+      "final_category": "marketing-seo",
+      "checks": "11111111",
+      "historical_scan_status": "findings",
+      "historical_scan_severities": {
+        "LOW": 1,
+        "INFO": 1,
+        "MEDIUM": 1
+      },
+      "historical_scan_revision": "fe5dc1757cd6c8ff63aee853564249c00151778d",
+      "final_source_scan_status": "findings",
+      "final_source_scan_severities": {
+        "INFO": 1,
+        "MEDIUM": 1
+      },
+      "final_source_scan_evidence_sha256": "90a7624d5dbb5afc88beb66e413fcaf683fa42ad530ed0dfd0d43ae8205fa67c"
+    },
+    {
+      "name": "suede-referrals",
+      "display_name": "Suede AI Referral Skills",
+      "baseline_score": 86,
+      "baseline_category": "frontend-design",
+      "final_score": 91,
+      "final_category": "marketing-seo",
+      "checks": "11111111",
+      "historical_scan_status": "findings",
+      "historical_scan_severities": {
+        "LOW": 1,
+        "INFO": 1
+      },
+      "historical_scan_revision": "fe5dc1757cd6c8ff63aee853564249c00151778d",
+      "final_source_scan_status": "findings",
+      "final_source_scan_severities": {
+        "INFO": 1
+      },
+      "final_source_scan_evidence_sha256": "8ea70bcaad170770870fa5d3ae5cd38d652979f9fa1123e928f9c34b47ea5123"
+    },
+    {
+      "name": "suede-release-linter",
+      "display_name": "Suede AI Release Linter Skills",
+      "baseline_score": 86,
+      "baseline_category": "code-review-quality",
+      "final_score": 93,
+      "final_category": "media-creative",
+      "checks": "11111111",
+      "historical_scan_status": "error",
+      "historical_scan_severities": {
+        "MEDIUM": 10,
+        "LOW": 1,
+        "INFO": 1
+      },
+      "historical_scan_revision": "fe5dc1757cd6c8ff63aee853564249c00151778d",
+      "final_source_scan_status": "error",
+      "final_source_scan_severities": {
+        "MEDIUM": 10,
+        "INFO": 1
+      },
+      "final_source_scan_evidence_sha256": "502e0497f004863c2ed4e16a38d5a1f26a7f412223fe1c2815e9b5cecfb4ef08"
+    },
+    {
+      "name": "suede-revops",
+      "display_name": "Suede AI Revenue Operations Skills",
+      "baseline_score": 86,
+      "baseline_category": "data-databases",
+      "final_score": 91,
+      "final_category": "data-databases",
+      "checks": "11111111",
+      "historical_scan_status": "findings",
+      "historical_scan_severities": {
+        "LOW": 1,
+        "INFO": 1
+      },
+      "historical_scan_revision": "fe5dc1757cd6c8ff63aee853564249c00151778d",
+      "final_source_scan_status": "findings",
+      "final_source_scan_severities": {
+        "INFO": 1
+      },
+      "final_source_scan_evidence_sha256": "1b86dd9f4cb22084090ef0a9cd5585b7fd22c1df34396247b6c026e363fde7ef"
+    },
+    {
+      "name": "suede-rights-passport",
+      "display_name": "Suede AI Rights Passport Skills",
+      "baseline_score": 86,
+      "baseline_category": "code-review-quality",
+      "final_score": 93,
+      "final_category": "business-finance",
+      "checks": "11111111",
+      "historical_scan_status": "findings",
+      "historical_scan_severities": {
+        "LOW": 1,
+        "INFO": 1,
+        "MEDIUM": 1
+      },
+      "historical_scan_revision": "fe5dc1757cd6c8ff63aee853564249c00151778d",
+      "final_source_scan_status": "findings",
+      "final_source_scan_severities": {
+        "INFO": 1,
+        "MEDIUM": 1
+      },
+      "final_source_scan_evidence_sha256": "323db833b212826e7997393f3140ab766166038ab61dc1e4e47b87835548f1e2"
+    },
+    {
+      "name": "suede-sales-enablement",
+      "display_name": "Suede AI Sales Enablement Skills",
+      "baseline_score": 86,
+      "baseline_category": "business-finance",
+      "final_score": 91,
+      "final_category": "business-finance",
+      "checks": "11111111",
+      "historical_scan_status": "findings",
+      "historical_scan_severities": {
+        "LOW": 1,
+        "INFO": 1
+      },
+      "historical_scan_revision": "fe5dc1757cd6c8ff63aee853564249c00151778d",
+      "final_source_scan_status": "findings",
+      "final_source_scan_severities": {
+        "INFO": 1
+      },
+      "final_source_scan_evidence_sha256": "9e9a855736be02b477e2386acdc906c0762652ae9ec09171b39c4f8b9c6fe479"
+    },
+    {
+      "name": "suede-seo-audit",
+      "display_name": "Suede AI SEO Audit Skills",
+      "baseline_score": 88,
+      "baseline_category": "marketing-seo",
+      "final_score": 93,
+      "final_category": "marketing-seo",
+      "checks": "11111111",
+      "historical_scan_status": "failed",
+      "historical_scan_severities": {
+        "LOW": 1,
+        "INFO": 1,
+        "CRITICAL": 3
+      },
+      "historical_scan_revision": "fe5dc1757cd6c8ff63aee853564249c00151778d",
+      "final_source_scan_status": "failed",
+      "final_source_scan_severities": {
+        "INFO": 1,
+        "CRITICAL": 3
+      },
+      "final_source_scan_evidence_sha256": "d0ae64c96c1664def571d79272f35c8d79141651a1dba2349bf05f21453fa4cc"
+    },
+    {
+      "name": "suede-ship-copy",
+      "display_name": "Suede AI Ship Copy Skills",
+      "baseline_score": 72,
+      "baseline_category": "ai-agents-llm",
+      "final_score": 91,
+      "final_category": "writing-content",
+      "checks": "11111111",
+      "historical_scan_status": "findings",
+      "historical_scan_severities": {
+        "LOW": 1,
+        "INFO": 1,
+        "MEDIUM": 1
+      },
+      "historical_scan_revision": "fe5dc1757cd6c8ff63aee853564249c00151778d",
+      "final_source_scan_status": "findings",
+      "final_source_scan_severities": {
+        "INFO": 1,
+        "MEDIUM": 1
+      },
+      "final_source_scan_evidence_sha256": "ebdaefdad27e84c924fd6c4533367fd1f380730ceaa1c276a5052a7390d3c3f2"
+    },
+    {
+      "name": "suede-site-alchemy",
+      "display_name": "Suede AI Site Alchemy Skills",
+      "baseline_score": 83,
+      "baseline_category": "marketing-seo",
+      "final_score": 91,
+      "final_category": "marketing-seo",
+      "checks": "11111111",
+      "historical_scan_status": "findings",
+      "historical_scan_severities": {
+        "LOW": 1,
+        "INFO": 1
+      },
+      "historical_scan_revision": "fe5dc1757cd6c8ff63aee853564249c00151778d",
+      "final_source_scan_status": "findings",
+      "final_source_scan_severities": {
+        "INFO": 1
+      },
+      "final_source_scan_evidence_sha256": "26c60c7ba3ffc74407f4883dc9c062ef6545da89feb0d629f84846ff0b2da752"
+    },
+    {
+      "name": "suede-sms",
+      "display_name": "Suede AI SMS Skills",
+      "baseline_score": 86,
+      "baseline_category": "frontend-design",
+      "final_score": 91,
+      "final_category": "marketing-seo",
+      "checks": "11111111",
+      "historical_scan_status": "findings",
+      "historical_scan_severities": {
+        "LOW": 1,
+        "INFO": 1
+      },
+      "historical_scan_revision": "fe5dc1757cd6c8ff63aee853564249c00151778d",
+      "final_source_scan_status": "findings",
+      "final_source_scan_severities": {
+        "INFO": 1
+      },
+      "final_source_scan_evidence_sha256": "aa51cd647323c5954990f270a6b3cf32d779acbe8941f4c294df029e8266d0e1"
+    },
+    {
+      "name": "suede-social",
+      "display_name": "Suede AI Social Skills",
+      "baseline_score": 86,
+      "baseline_category": "marketing-seo",
+      "final_score": 91,
+      "final_category": "marketing-seo",
+      "checks": "11111111",
+      "historical_scan_status": "findings",
+      "historical_scan_severities": {
+        "LOW": 1,
+        "INFO": 1,
+        "MEDIUM": 1
+      },
+      "historical_scan_revision": "fe5dc1757cd6c8ff63aee853564249c00151778d",
+      "final_source_scan_status": "findings",
+      "final_source_scan_severities": {
+        "INFO": 1,
+        "MEDIUM": 1
+      },
+      "final_source_scan_evidence_sha256": "a9a376157e642469ef7b2d664ee4abb9cf7f1c7b5469ae7271ce8804458049d9"
+    },
+    {
+      "name": "suede-sync-packaging",
+      "display_name": "Suede AI Sync Packaging Skills",
+      "baseline_score": 84,
+      "baseline_category": "marketing-seo",
+      "final_score": 91,
+      "final_category": "marketing-seo",
+      "checks": "11111111",
+      "historical_scan_status": "findings",
+      "historical_scan_severities": {
+        "LOW": 1,
+        "INFO": 1
+      },
+      "historical_scan_revision": "fe5dc1757cd6c8ff63aee853564249c00151778d",
+      "final_source_scan_status": "findings",
+      "final_source_scan_severities": {
+        "INFO": 1
+      },
+      "final_source_scan_evidence_sha256": "02ef03b3460b71cc6bd1b28ba294817c075be89fbccc51ce46f0b1c75e8f9b5c"
+    },
+    {
+      "name": "suede-video",
+      "display_name": "Suede AI Video Skills",
+      "baseline_score": 86,
+      "baseline_category": "media-creative",
+      "final_score": 91,
+      "final_category": "media-creative",
+      "checks": "11111111",
+      "historical_scan_status": "findings",
+      "historical_scan_severities": {
+        "LOW": 1,
+        "INFO": 1
+      },
+      "historical_scan_revision": "fe5dc1757cd6c8ff63aee853564249c00151778d",
+      "final_source_scan_status": "findings",
+      "final_source_scan_severities": {
+        "INFO": 1
+      },
+      "final_source_scan_evidence_sha256": "4f98e00975cc325dcfb016dc4cf6d6cc6216438492299ab18029a3f33a5659ec"
+    },
+    {
+      "name": "suede-visibility-grader",
+      "display_name": "Suede AI Visibility Grader Skills",
+      "baseline_score": 78,
+      "baseline_category": "marketing-seo",
+      "final_score": 91,
+      "final_category": "marketing-seo",
+      "checks": "11111111",
+      "historical_scan_status": "findings",
+      "historical_scan_severities": {
+        "LOW": 1,
+        "INFO": 1
+      },
+      "historical_scan_revision": "fe5dc1757cd6c8ff63aee853564249c00151778d",
+      "final_source_scan_status": "findings",
+      "final_source_scan_severities": {
+        "INFO": 1
+      },
+      "final_source_scan_evidence_sha256": "04ea7d9132cb60f3a11949a8375f18c9b22749dfb381229291251d4237167f2b"
+    },
+    {
+      "name": "suede-workflow-skills",
+      "display_name": "Suede AI Workflow Skills",
+      "baseline_score": 84,
+      "baseline_category": "ai-agents-llm",
+      "final_score": 91,
+      "final_category": "ai-agents-llm",
+      "checks": "11111111",
+      "historical_scan_status": "findings",
+      "historical_scan_severities": {
+        "LOW": 1,
+        "INFO": 1
+      },
+      "historical_scan_revision": "fe5dc1757cd6c8ff63aee853564249c00151778d",
+      "final_source_scan_status": "findings",
+      "final_source_scan_severities": {
+        "INFO": 1
+      },
+      "final_source_scan_evidence_sha256": "297b95baa2a0244809451e4b0facd94e48a86feb5883bda07f47ef139900042f"
+    }
+  ],
+  "security_run": "https://github.com/JasonColapietro/suede-creator-skills/actions/runs/40259009885"
+}

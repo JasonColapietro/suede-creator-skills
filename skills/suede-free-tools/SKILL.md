@@ -1,13 +1,18 @@
 ---
 name: suede-free-tools
-description: "Suede AI engineering-as-marketing strategy for selecting, scoring, and scoping calculators, graders, generators, and other free interactive tools. Includes a search- and AI-answer-ready tool page (crawlable method, worked example, schema) and KPIs. Use when the user wants a lead, link, education, or product-adoption asset with a measurable path to the paid product. NOT FOR: downloadable lead assets (use suede-lead-magnets), implementation of a full website (use suede-site-alchemy), or search diagnostics (use suede-seo-audit)."
+description: "Use when asked \"scope a free calculator\" or to choose a lead, link, education or adoption tool tied to a paid product. Suede AI scores calculators, graders and generators, scopes an MVP and defines an indexable tool page, worked example, schema and KPIs. NOT FOR: downloads (use suede-lead-magnets), full-site implementation (use suede-site-alchemy), or search diagnostics (use suede-seo-audit)."
 metadata:
+  display-name: "Suede AI Free Tools Skills"
   version: 2.0.0
 ---
 
-# Suede Free-Tool Growth Strategy
+# Suede AI Free Tools Skills
 
 Suede uses engineering as marketing when a genuinely useful tool can create qualified discovery and a natural bridge to the paid product. Select, score, and scope the smallest maintainable calculator, grader, generator, or utility whose output earns attention rather than merely capturing it.
+
+## Compatibility
+
+Any agent with product and audience evidence. Strategy needs no runtime or paid tooling; implementation feasibility should be checked against the target project before recommending a build.
 
 ## Initial Assessment
 
@@ -254,3 +259,7 @@ plan itself.
 - Use `suede-content-strategy` for the supporting content around the tool page.
 - Use `suede-ads` and `suede-social` for tool distribution and launch promotion.
 - Use `suede-ab-testing` to design and evaluate tests on the tool page or its gate.
+
+## Worked contract
+
+[Worked contract](references/usage-contract.md) gives a bounded input, expected output and failure check for this workflow.

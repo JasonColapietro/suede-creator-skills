@@ -1,9 +1,11 @@
 ---
 name: suede-code
-description: "Suede AI code review and A-F ship grade for a diff, PR, branch, or commit range: findings ranked P0-P3 with file:line evidence and a fix path, an A-F grade across seven lanes with Instant-F security triggers and surface grade caps, OWASP 2025 checks, a deploy-safety gate, a commit-dirt scan, and fix briefs. Three modes: full review and grade in one pass (default), findings only with no grade, and grade only with no findings list. Use when asked to review this, grade this, find the bugs before merge, security-check this, is this safe to ship, give it a letter, or should this merge. Runs only when explicitly invoked; never auto-fires on a diff, save, or commit. NOT FOR: making CI enforce the verdict on every merge (use suede-ci-gate); LLM, RAG, or agent behavior coverage (use suede-ai-eval); searching competing plans and building a multi-file change (use suede-graph-flo-xr); fixes that need coordinated parallel lanes (use suede-agent-teams)."
+description: "Use when explicitly asked \"review this PR\" or to grade a diff, branch, or commit range. Suede AI returns evidence-backed P0-P3 findings, fix paths and an A-F ship grade; supports findings-only, grade-only and fix modes, seven review lanes, security checks, deploy safety and commit dirt. NOT FOR: automatic CI enforcement (use suede-ci-gate), agent evaluations (use suede-ai-eval), implementation-plan search (use suede-graph-flo-xr), or parallel fix coordination (use suede-agent-teams)."
+metadata:
+  display-name: "Suede AI Code Skills"
 ---
 
-# Suede Code
+# Suede AI Code Skills
 
 One skill for judging code: what is wrong, and whether it ships. Every finding
 has a file, evidence, and a fix path. Every grade has the evidence that earned
@@ -11,6 +13,10 @@ it. No finding without evidence; no volume without signal.
 
 **Runs only when asked.** Never fire this as a side effect of a diff, a save,
 or a commit.
+
+## Compatibility
+
+An agent with repository read access and Git; Bash is needed for local tests and the bundled commit-dirt scan. Fix mode additionally needs authorized file edits. Review can proceed with explicitly unverified runtime checks when execution is unavailable.
 
 ## Gate policy: advisory, not blocking
 
@@ -211,67 +217,7 @@ A whole-repo claim with no named symbols is not evidence.
 
 ## Step 6: Grade (full and `--grade-only`)
 
-Score each lane A-F, then one overall. For non-Suede work, read "domain truth"
-as whatever invariants the product publishes.
-
-- **Correctness:** behavior, edge cases, error paths, async, routing, data
-  flow, regression risk.
-- **Security and permissions:** auth, secrets, payment, injection, SSRF,
-  permission, data exposure fail closed.
-- **Data and state:** schemas, migrations, caches, jobs, queues, webhooks,
-  retries, idempotency.
-- **Domain truth:** public copy, rights, provenance, licensing, product claims
-  match the implementation.
-- **UX and release behavior:** loading, empty, error, success, mobile, route
-  states hold together.
-- **Tests and verification:** changed behavior has meaningful tests, builds,
-  screenshots, simulator runs, or live readbacks.
-- **Deploy readiness:** env vars, flags, migrations, rollback notes, docs, and
-  release order are clear.
-
-**What each letter means.** **A:** all lanes pass, runtime-verified, no
-follow-ups. **B:** no blockers; named, bounded follow-ups. **C:** a real defect
-or unverified risk that could reach production; recommend hold. **D:** a
-serious defect likely to cause data loss, auth bypass, broken payments, or a
-visible production failure; recommend against shipping and put the choice to
-the user. **F:** core behavior broken, an Instant-F hit, or no evidence on a
-critical surface.
-
-**Gate follows the grade:** A → `ship`; B → `ship-with-caveats`; C, D, F →
-`hold`. A Deploy Safety block or a DIRTY commit rating also moves the gate to
-`hold`.
-
-**Grade caps by surface** (state them when they apply):
-
-- **Auth** (login, session, token, middleware, roles): A needs the bypass or
-  escalation path tested; B needs happy path plus named caveats; otherwise
-  cap at C.
-- **Payments and wallets:** A needs failed charge, decline, and replay tested,
-  server-side amount and recipient validation, and no silent swallowing; B
-  needs happy path plus documented error-path risk; otherwise cap at C.
-- **Data migrations:** A needs a documented rollback and a restore tested on
-  production-like data (or a justified waiver); B needs a rollback plan; no
-  plan caps at D.
-- **Public API changes:** A needs verified backward compatibility or a
-  versioned migration path; a breaking change with no path caps at C.
-
-**Technical debt** weighs by location. The same pattern costs more where the
-risk lives:
-
-| Pattern | Location | Impact |
-|---|---|---|
-| Function or class doing 5+ unrelated jobs | Payment module | D in Correctness |
-| Same | Utility helper | B in Correctness |
-| Same 20-line block in 3+ places | Auth flow | C in Security |
-| Same | UI component | B in Correctness |
-| Reaching across 3+ abstraction layers | Data migration | C in Data and state |
-| Hidden module-level state | API handler | C in Correctness |
-| Unnamed magic number | Payment amount | C in Correctness |
-| Unnamed magic number | UI spacing | P3 only |
-| Dead code | Anywhere | Flag only, unless it shadows live code |
-
-Debt alone never blocks a ship unless it hides a P0 or P1. Name it in Required
-Upgrades. Never report a C, D, or F without the upgrade that would move it.
+For full and grade-only modes, read [the complete grading contract](references/grading-contract.md) before assigning a grade. It defines all seven lanes, letter meanings, gate mapping, surface caps and debt weighting. An Instant-F or deploy-safety result still applies in every mode; never assign a letter from impression.
 
 ## Step 7: Deploy safety (every mode, every run)
 
@@ -426,3 +372,7 @@ Worked examples, read only when calibrating: `references/worked-example.md`
 - Fixes span several coordinated lanes → **suede-agent-teams**
 - The same value is stated on two surfaces that can drift →
   **suede-parity-contract**
+
+## Worked contract
+
+[Worked contract](references/usage-contract.md) gives a bounded input, expected output and failure check for this workflow.

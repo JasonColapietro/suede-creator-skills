@@ -48,12 +48,14 @@
   function find(data, q) {
     var want = parse(q);
     var exact = data.filter(function (s) {
-      return (!want.repo || s.repo.toLowerCase() === want.repo) && (!want.name || s.name.toLowerCase() === want.name);
+      return (!want.repo || s.repo.toLowerCase() === want.repo) && (!want.name || s.name.toLowerCase() === want.name || (s.slug && s.slug.toLowerCase() === want.name));
     });
     if (exact.length) return exact;
     // A folder name that differs from the skill's name: offer the repository's skills.
     if (want.repo) return data.filter(function (s) { return s.repo.toLowerCase() === want.repo; });
-    return data.filter(function (s) { return s.name.toLowerCase().indexOf(want.name) !== -1; }).slice(0, 20);
+    return data.filter(function (s) {
+      return s.name.toLowerCase().indexOf(want.name) !== -1 || (s.slug && s.slug.toLowerCase().indexOf(want.name) !== -1);
+    }).slice(0, 20);
   }
 
   function reset() {

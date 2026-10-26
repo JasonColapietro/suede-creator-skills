@@ -50,6 +50,10 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install hash-pinned directory parser test dependency
+        run: >-
+          python3 -m pip install --require-hashes --only-binary=:all: -r .github/test-requirements.txt
+
       - name: Guard copy-bank wording and clipboard parity
         run: python3 -m unittest discover -s tests -p 'test_public_copy.py' -v
 

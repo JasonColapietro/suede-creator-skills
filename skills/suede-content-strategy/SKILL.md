@@ -1,13 +1,18 @@
 ---
 name: suede-content-strategy
-description: "Suede AI content strategy for audience questions, content pillars, topic clusters, AI answer gaps, original-data assets, editorial priorities, cadence, distribution, refreshes, and stop-doing decisions, each tied to a KPI. Use when deciding what to publish, why it deserves resources, and how the portfolio compounds in search and AI answers. NOT FOR: writing an individual asset (use suede-copy); technical or on-page SEO audits (use suede-seo-audit); AI visibility measurement and crawler policy (use suede-ai-seo); social-channel production (use suede-social)."
+description: "Use when asked \"plan our content strategy\" or to decide what to publish, refresh or stop. Suede AI maps audience questions, pillars, topic clusters, AI answer gaps and original-data assets to priorities, cadence, distribution and KPIs. NOT FOR: drafting an asset (use suede-copy), SEO audits (use suede-seo-audit), AI visibility measurement (use suede-ai-seo), or social production (use suede-social)."
 metadata:
+  display-name: "Suede AI Content Strategy Skills"
   version: 2.0.0
 ---
 
-# Suede Content Strategy
+# Suede AI Content Strategy Skills
 
 Use this Suede content-strategy playbook to plan evidence-backed content that earns search, sharing, trust, or qualified demand.
+
+## Compatibility
+
+Any agent with the product brief and audience evidence. Current search or competitor research needs web access; optional analytics and SEO exports can be supplied as files.
 
 ## Before Planning
 
@@ -403,3 +408,7 @@ Emit the strategy in exactly this shape:
 - Need the refresh, decay, or ranking-drop audit to run on a cadence -> use `suede-marketing-loops`.
 - Need the behavioral mechanism behind a title, hook, or CTA, stated as a testable hypothesis -> use `suede-offers` (Persuasion Mechanics).
 - From those skills, route portfolio priorities, pillars, clusters, and cadence back to `suede-content-strategy`.
+
+## Worked contract
+
+[Worked contract](references/usage-contract.md) gives a bounded input, expected output and failure check for this workflow.

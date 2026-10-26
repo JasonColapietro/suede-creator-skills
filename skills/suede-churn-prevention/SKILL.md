@@ -1,11 +1,19 @@
 ---
 name: suede-churn-prevention
-description: "Suede AI retention discipline for voluntary and involuntary churn: transparent cancel flows that meet current cancellation law, pause and downgrade paths, reason-matched save offers, failed payment recovery with smart retries and dunning, health scores and proactive signals, and win-back design. Use when diagnosing subscriber loss or designing a bounded retention intervention. NOT FOR: writing the lifecycle emails themselves (use suede-emails), pricing architecture (use suede-pricing), paywall design (use suede-paywalls), or event instrumentation (use suede-analytics)."
+description: "Suede AI Churn Prevention Skills. Use when asked to \"reduce subscription churn\" or design cancel flows, reason-matched save offers, failed-payment recovery and win-back measurement. NOT FOR: lifecycle email copy (suede-emails), pricing architecture (suede-pricing), paywalls (suede-paywalls), or tracking implementation (suede-analytics)."
 metadata:
+  display-name: "Suede AI Churn Prevention Skills"
   version: 2.1.0
 ---
 
-# Suede AI Churn Prevention
+# Suede AI Churn Prevention Skills
+
+Read [the worked delivery contract](references/worked-contract.md) for a concrete
+input, expected artifact, failure response and validation example.
+
+## Compatibility
+
+Works from subscription cohorts, cancel reasons and payment-status exports; current official policy/legal sources for applicable cancellation requirements. Live billing mutations require existing authorized access.
 
 Use this retention playbook to reduce voluntary and involuntary churn through transparent cancel flows, bounded save offers, proactive signals, and payment recovery.
 

@@ -1,13 +1,18 @@
 ---
 name: suede-influencer-outreach
-description: "Suede AI influencer outreach discipline: a personalized first-touch pitch to one vetted creator, newsletter writer, or podcaster, grounded in a named post or audience fact, with the real compensation stated by model (flat fee, commission mechanics, or gifted), one low-friction ask, a message fitted to the contact the creator publishes (business email, DM, or manager), and a bounded two-follow-up plan that stops at the first positive reply. Covers B2C brand collabs and B2B creator programs. Use when pitching a creator, DMing an influencer, writing a collab proposal, or repairing creator outreach that gets no replies. NOT FOR: recruiting affiliates across a list or designing commission structures (use suede-referrals), partnering with another brand (use suede-co-marketing), cold email to business prospects (use suede-cold-email), or pitching journalists and booking podcast guest spots (use suede-public-relations)."
+description: "Use when asked \"pitch this creator\" or to repair an influencer or B2B creator-program first touch. Suede AI grounds one message in a named audience fact, states real compensation and one ask, fits the published contact route and stops the two-follow-up plan at a positive reply. NOT FOR: affiliate mechanics (use suede-referrals), brand partnerships (use suede-co-marketing), cold B2B email (use suede-cold-email), or journalist pitches (use suede-public-relations)."
 metadata:
+  display-name: "Suede AI Influencer Outreach Skills"
   version: 1.0.0
 ---
 
-# Suede AI Influencer Outreach
+# Suede AI Influencer Outreach Skills
 
 Write the first message a creator actually answers. One vetted creator, one pitch, a short follow-up plan, and a clean handoff the moment they say yes.
+
+## Compatibility
+
+Any agent with a vetted creator, cited audience evidence and approved compensation details. Current contact-route checks need web access; drafts need no sending or social integration.
 
 ## Before Writing
 
@@ -189,3 +194,7 @@ Log every pitch: creator, channel, manager involved, angle, sent date, follow-up
 ## Attribution
 
 Adapted from the `influencer-outreach` skill in [mbfinotti/partnerships-skills](https://github.com/mbfinotti/partnerships-skills) by Maya-Beth Finotti, MIT licensed. See `NOTICE.md` at the repo root.
+
+## Worked contract
+
+[Worked contract](references/usage-contract.md) gives a bounded input, expected output and failure check for this workflow.

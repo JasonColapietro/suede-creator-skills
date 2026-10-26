@@ -1,11 +1,20 @@
 ---
 name: suede-onboarding
-description: "Suede AI activation path from signup conversion to first value: audits account creation, registration, and trial start (field friction, progressive profiling, passkeys and social sign-in, NIST-aligned password rules, verification, mobile), then designs first-run sequencing, empty states, setup checklists, activation milestones, time to value, and retention-linked measurement. Returns a ranked signup audit or an onboarding flow spec with metrics and up to 3 test hypotheses. Use when visitors start but don't finish signup, or users sign up but never reach first value. NOT FOR: lead-capture and non-account forms (use suede-site-alchemy), lifecycle email sequences (use suede-emails), upgrade prompts and paywalls (use suede-paywalls), cancel flows (use suede-churn-prevention), or deploying auth changes without review."
+description: "Suede AI Onboarding Skills: time to value, ranked friction audits, first-value flows, empty states, checklists, and measurement. Use when asked \"users sign up but never activate\" or to improve registration and first-run setup. NOT FOR: non-account forms (suede-site-alchemy), lifecycle email copy (suede-emails), paywalls (suede-paywalls), cancellation (suede-churn-prevention), or unreviewed auth deployment."
 metadata:
+  display-name: "Suede AI Onboarding Skills"
   version: 3.0.0
 ---
 
-# Suede Activation: Signup to First Value
+# Suede AI Onboarding Skills
+
+## Compatibility
+
+Requires supplied funnel evidence or read access to the signup/onboarding surface. Browser inspection helps audit real behavior. Design output needs no production write access; auth changes require owner review.
+
+For a concrete input, expected output, recovery path, and validation check, read
+[the worked contract](references/worked-contract.md). Use it to check the handoff
+before treating the task as complete.
 
 Suede AI treats signup and onboarding as one path: the visitor who wants the product, the account that gets created, and the first moment the product proves itself. Remove friction at the registration boundary, define activation from retention evidence, sequence the first session, and instrument every step before claiming an "aha moment."
 

@@ -1,13 +1,18 @@
 ---
 name: suede-customer-research
-description: "Suede AI customer-research discipline: interview design, transcript, ticket, survey, and NPS synthesis, review and forum mining with saved captures, VOC quote banks, jobs to be done, evidence-backed personas, and the exact questions buyers type into search and AI assistants. Use when discovering or synthesizing what a defined customer segment actually says, does, needs, and resists. NOT FOR: competitor-only profiling (use suede-competitor-profiling), writing final marketing copy (use suede-copy), or deciding product priorities without product evidence (use suede-product-marketing)."
+description: "Use when asked \"synthesize these interviews\" or to discover what a defined customer segment says, needs and resists. Suede AI analyzes transcripts, surveys, tickets, reviews and forums into traceable VOC quotes, jobs to be done, personas and buyer questions. NOT FOR: competitor-only profiling (use suede-competitor-profiling), final copy (use suede-copy), or unsupported product prioritization (use suede-product-marketing)."
 metadata:
+  display-name: "Suede AI Customer Research Skills"
   version: 2.1.0
 ---
 
-# Suede AI Customer Research
+# Suede AI Customer Research Skills
 
 Use this customer-research playbook to ground positioning, product, and copy in traceable customer evidence rather than assumption.
+
+## Compatibility
+
+An agent able to read supplied research files and save evidence captures. New public-source research needs web access; existing-asset synthesis requires no paid research tool.
 
 ## Before Starting
 
@@ -263,3 +268,7 @@ Don't ask all four at once: lead with #1 and #2, then follow up as needed.
 - Need ICP or positioning synthesis -> use `suede-product-marketing`.
 - Need churn, outbound, paid, or content application -> use `suede-churn-prevention`, `suede-cold-email`, `suede-ads`, or `suede-content-strategy`.
 - From those skills, route interview design, review mining, and evidence synthesis back to `suede-customer-research`.
+
+## Worked contract
+
+[Worked contract](references/usage-contract.md) gives a bounded input, expected output and failure check for this workflow.

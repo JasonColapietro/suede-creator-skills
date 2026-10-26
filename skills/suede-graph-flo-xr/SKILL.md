@@ -1,13 +1,19 @@
 ---
 name: suede-graph-flo-xr
-description: "Suede AI multi-file shipping workflow (Suede Thought Graph shipping search) for one repo change: generates competing implementation plans, scores and prunes them, refutes the survivors, aggregates compatible lanes, selects one winner, then builds it in an isolated worktree behind a sandboxed gate and writes a handoff file. Use when competing implementation plans need one evidence-gated selection before any build. Halts on hazards, collisions, budget exhaustion, or no safe winner. Reads production; never deploys. NOT FOR: bulk independent work (use a separate private worker-fleet pass); reviewing or grading an existing diff (use suede-code); CI or branch-protection wiring (use suede-ci-gate); copy-only shipping (use suede-ship-copy)."
+description: "Use when asked \"compare implementation plans before building\" for one multi-file repository change. Suede AI runs Suede Thought Graph shipping search: it searches, scores, prunes and refutes plans, selects one winner, then builds in an isolated worktree with a sandboxed gate and handoff. Halts on hazards, collisions or exhausted budget. NOT FOR: bulk worker tasks, existing-diff review (use suede-code), CI wiring (use suede-ci-gate), or copy-only work (use suede-ship-copy)."
+metadata:
+  display-name: "Suede AI Graph Flo XR Skills"
 ---
 
-# Suede Graph Flo XR
+# Suede AI Graph Flo XR Skills
 
 Use the bundled `workflows/suede-graph-flo-xr.js` workflow to search competing plans for
 one multi-file repository change. It makes an evidence-backed selection before
 any implementation lane mutates the worktree.
+
+## Compatibility
+
+Bundled execution requires Claude Code Workflow on macOS, sandbox-exec, Node.js, Git and the six registered agent profiles. Other hosts can read the orchestration contract but must use direct implementation rather than claim Workflow execution.
 
 ## Intake and budget gate
 
@@ -254,3 +260,7 @@ source or binary redistribution of the workflow.
 - From `suede-code`, `suede-ci-gate`, or `suede-ship-copy`: route a
   multi-file implementation-plan search with one
   selected mutating winner back to `suede-graph-flo-xr`.
+
+## Worked contract
+
+[Worked contract](references/usage-contract.md) gives a bounded input, expected output and failure check for this workflow.

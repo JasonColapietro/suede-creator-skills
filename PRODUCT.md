@@ -1,8 +1,8 @@
-# Suede Creator Skills
+# Suede AI Skills
 
 ## Product
 
-Suede Creator Skills gives founders, marketers, and small teams reusable workflows for SEO audits, AI search visibility, conversion copy, and business operations. Run them in Claude Code or OpenAI Codex, with instructions you can inspect and adapt to your business. The pack also includes code review and app delivery workflows.
+Suede AI Skills gives founders, marketers, and small teams reusable workflows for SEO audits, AI search visibility, conversion copy, and business operations. Run them in Claude Code or OpenAI Codex, with instructions you can inspect and adapt to your business. The pack also includes code review and app delivery workflows.
 
 ## Founder
 

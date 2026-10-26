@@ -1,11 +1,20 @@
 ---
 name: suede-marketing-plan
-description: "Suede AI marketing planning in two modes. Shortlist mode scores up to 8 tactics from a 142-idea tactic library (including AI answer visibility, entity consistency, and comparison and pricing pages as search assets) on audience, stage, evidence, capacity, cost, and risk, and returns at most 5 with test, metric, review date, and stop condition. Full plan mode writes a 13-section AARRR operating plan (acquisition, activation, retention, referral, revenue) with a 90 day plan, 12 month roadmap, ops stack, idea bank, and measurement, sized to the client's real budget, team, and evidence. Use when the user is stuck and wants a shortlist of growth tactics, or needs a growth plan, go to market document, or roadmap. NOT FOR: isolated channel execution (use the relevant Suede skill), contested strategic bets that need debate (use suede-marketing-council), recurring workflows (use suede-marketing-loops), or positioning discovery alone (use suede-product-marketing)."
+description: "Suede AI Marketing Planning Skills: a scored tactic shortlist or a full AARRR operating plan with a 90-day plan, 12-month roadmap, and measurement. Use when asked \"what should we try next\" or for a marketing plan grounded in budget, capacity, and evidence. NOT FOR: channel execution, contested bets (suede-marketing-council), recurring loops (suede-marketing-loops), or positioning alone (suede-product-marketing)."
 metadata:
+  display-name: "Suede AI Marketing Planning Skills"
   version: 3.0.0
 ---
 
-# Suede Marketing Plan
+# Suede AI Marketing Planning Skills
+
+## Compatibility
+
+Requires product/audience context plus budget and team constraints. Can draft from supplied evidence without connected accounts; live channel and competitor facts require browsing or authorized data access.
+
+For a concrete input, expected output, recovery path, and validation check, read
+[the worked contract](references/worked-contract.md). Use it to check the handoff
+before treating the task as complete.
 
 Suede AI turns verified client facts (budget, team, stage, evidence, constraints) into either a scored tactic shortlist or a full marketing operating plan across Acquisition, Activation, Retention, Referral, and Revenue. Both modes share one tactic library, one scoring rubric, and one status vocabulary, so a shortlist drops straight into a plan later.
 

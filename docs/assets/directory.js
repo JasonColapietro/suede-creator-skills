@@ -218,7 +218,7 @@ if (browser) {
       if (!response.ok) throw new Error('Search unavailable');
       const data = await response.json();
       if (!Array.isArray(data) || !data.length) throw new Error('Invalid search index');
-      skills = data.map((skill) => ({ ...skill, search: [skill.name, skill.repo, skill.description, skill.label].join(' ').toLowerCase() }));
+      skills = data.map((skill) => ({ ...skill, search: [skill.name, skill.slug, skill.repo, skill.description, skill.label].join(' ').toLowerCase() }));
       render(false);
     } catch {
       error.hidden = false; results.hidden = false;

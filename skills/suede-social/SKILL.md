@@ -1,11 +1,19 @@
 ---
 name: suede-social
-description: "Suede AI organic social system for founder and brand accounts: platform mix, cross-platform calendars, 30-post account audits that separate views from follows, leads, and sales, Instagram Reels, carousels, and Stories, LinkedIn and X posts and threads, short-video scripts, social search optimization, listening, and a daily approval-ready content loop. Use when planning, auditing, or producing organic social on any platform, including Instagram-specific growth work. NOT FOR: paid social ads (use suede-ads or suede-ad-creative), an agent-run editorial pipeline with role contracts (use suede-newsroom), a clip that must bridge to a long-form guide (use suede-clip-to-guide), editing or rendering video (use suede-video), or the broader editorial portfolio (use suede-content-strategy)."
+description: "Plan, audit, and draft organic social for founder/brand accounts: platform mix, 30-post audits, calendars, Instagram, LinkedIn/X, short-video scripts, social search, and listening. Use when asked to \"audit our Instagram growth\" or build an approval-ready content loop. NOT FOR: paid ads (use suede-ads or suede-ad-creative), editorial agents (use suede-newsroom), clip-to-guide work (use suede-clip-to-guide), video rendering (use suede-video), or broad content strategy (use suede-content-strategy)."
 metadata:
+  display-name: "Suede AI Social Skills"
   version: 3.0.0
 ---
 
-# Suede AI Organic Social
+# Suede AI Social Skills
+
+## Compatibility
+
+Can work from supplied posts, screenshots, and analytics exports. Live account inspection needs authorized browser/platform access; publishing and scheduling require separately authorized tools.
+
+For a concrete input, expected handoff, and failure check, read
+[the worked handoff](references/worked-handoff.md).
 
 Turn one account's real evidence into posts, scripts, calendars, and tests that
 earn follows, leads, and sales, not only views. Every recommendation resolves

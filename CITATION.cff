@@ -1,6 +1,6 @@
 cff-version: 1.2.0
-message: "If you use Suede Creator Skills, please cite it as below."
-title: "Suede Creator Skills"
+message: "If you use Suede AI Skills, please cite it as below."
+title: "Suede AI Skills"
 abstract: >-
   A public, open-source pack of installable Agent Skills for Claude Code and
   OpenAI Codex, plus an optional Model Context Protocol (MCP) server. Original

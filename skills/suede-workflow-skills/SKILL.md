@@ -1,9 +1,18 @@
 ---
 name: suede-workflow-skills
-description: "Suede AI umbrella router for the full public skill pack: picks the right specialist for any request across search visibility (SEO, AEO, GEO), agent and operations automation, code review and CI, copy and design, launch and app shipping, growth marketing, and creator rights, hands it the request verbatim, and recommends one next move with a ready-to-run prompt when the user asks what to do next. Use when a request crosses two or more lanes, when the user wants the full public skill pack loaded from one install path, when they ask which Suede skill fits, what's next, recommend the next move, give me the prompt, expand prompt, or make it granular, or when only this umbrella is installed. NOT FOR: a request that already names one lane (go straight to that specialist); a multi-file repo change that should be searched, built, and gated as one graph (use suede-graph-flo-xr); coordinating parallel lanes with file ownership and rollback (use suede-agent-teams)."
+description: "Route requests across the full public Suede AI pack to the narrowest specialist and preserve the request verbatim. Use when asked \"which Suede skill should I use?\", when work crosses lanes, or when only the umbrella is installed. For next-action help: what’s next, recommend the next move, give me the prompt, expand prompt, or make it granular. NOT FOR: one clear lane (use its specialist), one multi-file implementation graph (use suede-graph-flo-xr), or parallel file ownership (use suede-agent-teams)."
+metadata:
+  display-name: "Suede AI Workflow Skills"
 ---
 
-# Suede Workflow Skills
+# Suede AI Workflow Skills
+
+## Compatibility
+
+Requires a host that can read installed skill files; umbrella-only installs use bundled condensed workflows. Subagent dispatch, live inspection, and the optional Suede MCP depend on currently available authorized tools.
+
+For a concrete input, expected handoff, and failure check, read
+[the worked handoff](references/worked-handoff.md).
 
 The entry point to the Suede AI skill pack. Two jobs:
 
