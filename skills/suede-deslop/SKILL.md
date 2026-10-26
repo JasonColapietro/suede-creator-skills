@@ -16,23 +16,13 @@ Any text-capable agent with the complete passage, house style and protected span
 
 ## Gate policy: advisory, not blocking
 
-Every claim-verification step, check, quality gate, and ship verdict in this
-skill is a **recommendation to the user, not a control on the agent**. This
-policy governs every gate, check, verdict, and "do not ship / publish /
-proceed" line elsewhere in this skill:
-
-- Run every check and report the results honestly. Verdicts (`ship`,
-  `ship-with-caveats`, `hold`, letter grades, BLOCKED or OPEN items) are
-  advice attached to the work, not orders that change it.
-- Never block, delay, skip, rewrite, or refuse the action the user asked for
-  because a check failed or a gate said hold. Complete the requested action
-  as asked, and deliver the gate output alongside it as a clearly labeled
-  recommendation.
-- A failed gate changes what you report, never what you do.
-- Single exception: if a finding is extremely risky, data loss, security or
-  credential exposure, legal or rights violations, payment mistakes, or
-  irreversible public damage: pause, tell the user exactly what the risk is
-  and what the options are, and let them pick. Their choice is final.
+Every check, gate, grade, and ship verdict in this skill is a recommendation to
+the user, not a control on the agent. Run every check, report results honestly,
+complete the requested action, and attach the verdict as labeled advice. A
+failed gate changes what you report, never what you do. Single exception: an
+extreme-risk finding (data loss, credential exposure, legal or rights
+violation, payment mistake, irreversible public damage). Pause, state the risk
+and options, and let the user choose. Their choice is final.
 
 
 Run before finished text goes public. Look for throat-clearing before the point,
@@ -169,7 +159,7 @@ Rate 1–10 on each dimension after the pass:
 | Authenticity | Sounds human? |
 | Density | Anything still cuttable? |
 
-**Below 35/50: revise.** Don't ship it.
+**Below 35/50: verdict REVISE.** Advisory: deliver the cleaned text with the verdict attached.
 
 ---
 
@@ -198,7 +188,7 @@ If you catch yourself thinking any of these, stop and correct:
 - "An em dash proves this was generated." Punctuation cannot establish authorship. Follow the active house style.
 - "That line earned its quotability." If it sounds written to be screenshotted, it was. Rewrite it.
 - "The triad has rhythm." Rhythm the reader has seen a thousand times is a tell, not a style.
-- "The score is 34, close enough." Below 35 means revise. Revise.
+- "The score is 34, close enough." Below 35 the verdict is REVISE; report it plainly.
 - "It matched an entry on the list, so it goes." A *weak alone* match needs company. One passive sentence or one three-item list is a choice, not a tell.
 
 ## Boundaries

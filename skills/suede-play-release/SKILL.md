@@ -9,7 +9,7 @@ metadata:
 
 ## Compatibility
 
-Requires Android release artifacts and authorized Google Play publishing access. Bundled preflight uses Python with pyjwt/cryptography and macOS Keychain; delivery examples use fastlane supply. Linux CI uses its secret store.
+Requires Android release artifacts and authorized Google Play publishing access. Bundled preflight uses Python with pyjwt/cryptography and reads the macOS Keychain or, on Linux CI, an environment variable (`--from-env`); delivery examples use fastlane supply.
 
 Use [the worked contract](references/worked-contract.md) for a staged rollout
 example, access-failure recovery, and API readback validation.
@@ -30,12 +30,15 @@ the user pick.
 ## Step 0: Preflight the credential before anything else
 
 Never assume publishing works. Prove it with a real API call that changes
-nothing: open an edit and delete it. The script reads the key from the macOS
-login Keychain and needs `pyjwt` and `cryptography`; on Linux CI, load the same
-base64 JSON from the CI secret store and run the equivalent token exchange.
+nothing: open an edit and delete it. The script needs `pyjwt` and
+`cryptography`. On macOS it reads the key from the login Keychain; on Linux CI,
+expose the CI secret as `GOOGLE_PLAY_SERVICE_ACCOUNT_JSON` (used automatically
+when set) or name another variable with `--from-env`. Env values may be base64
+or raw JSON, and the script never prints them.
 
 ```bash
 python3 scripts/play-preflight.py <package.name> [--service NAME] [--account NAME]
+python3 scripts/play-preflight.py <package.name> --from-env VAR   # Linux CI
 ```
 
 Three outcomes, three different actions:
