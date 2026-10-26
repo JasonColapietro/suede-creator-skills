@@ -12,7 +12,7 @@ Use this structure for all ASO audit reports.
 **URL:** {listing URL}
 **Audit date:** {date}
 **Brand tier:** {Dominant / Established / Challenger}: {one-line justification}
-**Overall Score:** {score}/100 (Grade: {A/B/C/D/F})
+**Overall Score:** {score}/100 (Grade: {A/B/C/D/F}) across {n} assessed dimensions carrying {w}% of the weight; partial scores and no grade when over 25% is unassessed
 ```
 
 ---

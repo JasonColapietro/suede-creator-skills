@@ -62,7 +62,7 @@ jobs:
 
   ci-success:
     if: always()
-    needs: [app]
+    needs: [changes, app]
     runs-on: ubuntu-latest
     steps:
       - name: Gate on all jobs

@@ -201,17 +201,25 @@ a reader would expect them.
 
 ## Calculating Final Score
 
-```
-Final Score = (Title * 0.20) + (Description * 0.15) + (Visuals * 0.25)
-            + (Ratings * 0.20) + (Metadata * 0.10) + (Conversion * 0.10)
-
-Scale to 100: Final Score * 10
-```
-
-**Example:** Title: 7, Description: 6, Visuals: 8, Ratings: 9, Metadata: 5, Conversion: 7
+Weights: Title 0.20, Description 0.15, Visuals 0.25, Ratings 0.20,
+Metadata 0.10, Conversion 0.10. Leave any dimension you could not assess out of
+both sums, so missing evidence never counts as a zero.
 
 ```
-(7 * 0.20) + (6 * 0.15) + (8 * 0.25) + (9 * 0.20) + (5 * 0.10) + (7 * 0.10)
-= 1.4 + 0.9 + 2.0 + 1.8 + 0.5 + 0.7
-= 7.3 → 73/100 → Grade: B
+Final Score = sum(score_i * weight_i over assessed dimensions)
+            / sum(weight_i over assessed dimensions) * 10
 ```
+
+If the unassessed weight is over 25%, report the partial dimension scores and
+no overall grade.
+
+**Example:** Title 7, Description 6, Ratings 9, Metadata 5, Conversion 7;
+Visuals unassessed (screenshots not supplied, 25% of weight).
+
+```
+(7*0.20 + 6*0.15 + 9*0.20 + 5*0.10 + 7*0.10) / 0.75 * 10
+= 5.3 / 0.75 * 10
+= 70.7 → 71/100 across 5 dimensions carrying 75% of the weight → Grade: B
+```
+
+With all six assessed (Visuals 8), the same inputs give 7.3 → 73/100 → B.

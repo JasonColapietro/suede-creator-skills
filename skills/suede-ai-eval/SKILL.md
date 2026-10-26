@@ -96,9 +96,14 @@ For each dimension, assign a measurement approach before writing the eval case:
 Detect existing eval/tracing tooling before recommending anything new:
 
 ```bash
-grep -rl "langfuse\|langsmith\|arize\|phoenix\|braintrust\|promptfoo\|ragas" \
-  --include="*.py" --include="*.ts" --include="*.toml" --include="*.json" . \
-  2>/dev/null | grep -v node_modules | head -10
+P='langfuse|langsmith|arize|phoenix|braintrust|promptfoo|ragas|deepeval|inspect_ai'
+if command -v rg >/dev/null; then
+  rg -l -i "$P" -g '*.{py,ts,js,mjs,toml,json,yaml,yml}' -g '!node_modules' . | head -20
+else
+  grep -rliE "$P" --exclude-dir=node_modules --exclude-dir=.git --include='*.py' \
+    --include='*.ts' --include='*.js' --include='*.toml' --include='*.json' \
+    --include='*.yaml' --include='*.yml' . 2>/dev/null | head -20
+fi
 ```
 
 If nothing is detected, these are the default starting points, not a mandate to install all four:

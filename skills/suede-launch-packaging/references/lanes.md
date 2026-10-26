@@ -44,16 +44,20 @@ Use this lane to make Suede AI install instructions accurate, public, and easy t
 
 ### Rules
 
-- Lead with public GitHub skill installs.
+- Lead with the routes the README lists first: the Claude Code plugin marketplace
+  (`/plugin marketplace add owner/repo`, then `/plugin install <plugin>@<marketplace>`),
+  `npx skills add owner/repo`, and the Codex plugin marketplace (`--ref main`).
+  Then cover Codex GitHub skill installs, folder copies into `~/.claude/skills/`,
+  and MCP servers.
 - Treat `@personal` as a local operator note only: keep it out of public docs, READMEs, MCP catalog output, and public explainer copy.
 - Explain that GitHub skill installs need a repo and path because one repo can contain many skills.
 - Test installer commands from a temporary destination after pushing.
 - For multiple paths, use one `--path` flag followed by all skill paths.
-- Restart Codex after installing new skills.
+- Restart Codex, or run `/reload-plugins` in Claude Code, after installing new skills.
 
 ### Workflow
 
-1. Identify the target installer: Codex GitHub skill installer, Claude skill folder copy, local plugin alias, or MCP server.
+1. Identify the target installer: Claude Code plugin marketplace, `npx skills`, Codex plugin marketplace, Codex GitHub skill installer, Claude skill folder copy, local plugin alias, or MCP server.
 2. Check whether the target skill folder exists publicly at `main`.
 3. Run the exact install command from a temporary directory.
 4. Diagnose failures with the table below. Name the failure cause exactly: "it didn't work" is not a diagnosis.

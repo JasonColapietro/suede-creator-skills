@@ -61,7 +61,7 @@ Path-filtered jobs **skip** when their paths aren't touched. A skipped job that 
 ```yaml
   ci-success:
     if: always()
-    needs: [<every app job>]
+    needs: [changes, <every app job>]
     runs-on: ubuntu-latest
     steps:
       - name: Gate on all jobs
@@ -70,6 +70,8 @@ Path-filtered jobs **skip** when their paths aren't touched. A skipped job that 
             [ "$r" = "success" ] || [ "$r" = "skipped" ] || { echo "blocked by: $r"; exit 1; }
           done
 ```
+
+List every job in `needs`, including the `changes` detector: a failed detector skips its dependents, and the loop counts `skipped` as a pass.
 
 In branch protection, require **only `ci-success`**: never the individual jobs. This is the single thing that makes "protect main" work with change-based CI.
 
@@ -91,6 +93,7 @@ In branch protection, require **only `ci-success`**: never the individual jobs. 
 - A second job duplicating an existing workflow → wasted minutes and conflicting signal.
 - Hardcoded `node-version` / `python-version` that doesn't match the app → green in CI, broken in prod.
 - A job whose `paths:` never match → always skipped → a "green" check that tested nothing.
+- An aggregator whose `needs` omits the `changes` job → the detector fails, every app job is skipped, and `ci-success` goes green.
 
 ## Red flags: stop
 

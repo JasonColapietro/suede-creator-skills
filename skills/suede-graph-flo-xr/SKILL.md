@@ -254,8 +254,10 @@ source or binary redistribution of the workflow.
 
 ## Routing
 
-- High-volume, well-specified, independent worker tasks → a separate private
-  worker-fleet pass.
+- Bulk independent tasks, cross-repo or ongoing orchestration, or any host
+  without macOS `sandbox-exec` → `suede-agent-teams`.
+- The change ships LLM or agent behavior → `suede-ai-eval` for the acceptance
+  cases.
 - Review or grade an existing diff → `suede-code`.
 - CI, required checks, or branch-protection wiring → `suede-ci-gate`.
 - Copy-only search and publication readiness → `suede-ship-copy`.

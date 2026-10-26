@@ -1,6 +1,6 @@
 ---
 name: suede-ops-architecture
-description: "Suede AI Operations Architecture Skills: simplify workflows, choose bounded automation, define ownership, rollout, and verification. Use when asked \"turn this ops assessment into a plan\" or to design a practical operating system. NOT FOR: discovering and quantifying current operations (suede-ops-assessment), code implementation, or production changes without authority."
+description: "Suede AI Operations Architecture Skills: fix the shape of an automation or AI agent build before code. Entity schema first, one write path per entity, each unit of work routed to deterministic automation, an AI agent, or a human decision, every tool marked absorb, keep, or kill, and a phased rollout with proof per phase. Use when asked \"turn this ops assessment into a plan\", to scope an automation or agent build, decide whether a workflow needs a model, or consolidate a tool stack. NOT FOR: discovering and quantifying current operations (suede-ops-assessment), code implementation, or production changes without authority."
 metadata:
   display-name: "Suede AI Operations Architecture Skills"
   version: 1.0.0
@@ -33,7 +33,8 @@ when it fails.
 ## Before Starting
 
 Collect these. Work with what exists and name what is missing in the Output
-Contract rather than blocking on it.
+Contract rather than blocking on it. When a `suede-ops-assessment` output
+exists, start from it instead of re-interviewing.
 
 1. **Entities**: the nouns the operation runs on (client, project, order, job,
    track, release, patient).
@@ -221,9 +222,8 @@ OPEN
 ## Routing
 
 - Need the current operation mapped and its friction costed before architecture
-  -> gather the Before Starting inputs directly. `suede-customer-research` carries
-  the interview and synthesis method, but its subject is an external customer
-  segment, so borrow the technique and not its personas or jobs framing.
+  -> use `suede-ops-assessment`; its floor map, silo inventory, tribal-knowledge
+  list, and ranked opportunities feed the Before Starting inputs.
 - Need to build the change across many files under one evidence-gated plan -> use
   `suede-graph-flo-xr`.
 - Need parallel builders with explicit file ownership and rollback -> use

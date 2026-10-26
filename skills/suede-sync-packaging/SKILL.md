@@ -92,7 +92,8 @@ Do not rationalize past these:
 4. Screen lyrics and write the lyric flags (hard gate 5).
 5. Separate confirmed rights facts from open clearance questions (hard gates
    1-2).
-6. Write the one-sheet and pitch email only if gates 3-4 pass.
+6. Write the one-sheet and pitch email once gate 3 passes and gate 4 is cleared
+   or the user chose to proceed with the OPEN flag.
 7. Second pass: re-read the draft against the one-sheet contract, field by
    field, before it ships. Confirm every field is present; confirm the
    rights-status line contains only facts the user supplied; confirm every OPEN
@@ -131,8 +132,9 @@ questions. Never compress "unknown" into silence.
 - **Missing master or instrumental**: flag in the asset checklist as a blocker.
   Do not complete the sync angle without at minimum a confirmed master file
   path.
-- **Unresolved sample**: sample status is "OPEN, do not pitch until cleared."
-  No pitch copy (hard gate 4).
+- **Unresolved sample**: mark sample status "OPEN: recommend not pitching
+  until cleared" and put it to the user (hard gate 4). If they proceed, the OPEN
+  flag stays verbatim in the one-sheet and pitch email.
 - **Unknown splits or ownership**: flag in clearance questions. The package can
   be built but must carry the caveat: "Rights holder confirmation required
   before placement."
