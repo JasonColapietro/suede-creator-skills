@@ -1708,10 +1708,10 @@ ${EDITORIAL.projects.map((p) => codeBlock({ label: `${esc(p.name)}, Markdown`, k
     body: `${bc.html}
       <div class="featured-intro"><p class="lead">${esc(copy.lede || "Good tools deserve a closer look.")}</p>${copy.intro ? `<p>${esc(copy.intro)}</p>` : ""}</div>
       <nav class="featured-jump" aria-label="Featured project navigation"><a href="../">← Browse all skills</a>${EDITORIAL.projects.map((p) => `<a href="#${p.id}">${esc(p.name)} <span aria-hidden="true">↓</span></a>`).join("")}</nav>
-      ${featuredProjectsHtml(EDITORIAL.projects, { esc, rel, here, listingPath: (repo, id) => {
-        const skill = data.skills.find((s) => s.repo === repo && s.slug === id);
-        if (!skill) throw new Error(`Featured skill outside accepted scope: ${repo}/${id}`);
-        return listingTarget(skill).replace(`${BASE}/`, "");
+      ${featuredProjectsHtml(EDITORIAL.projects, { esc, rel, here, listingHref: (project, item) => {
+        const skill = data.skills.find((s) => s.repo === project.repo && s.slug === item.id);
+        return skill ? rel(here, listingTarget(skill).replace(`${BASE}/`, ""))
+          : `https://github.com/${project.repo}/tree/${project.commit}`;
       } })}
 ${copy.services_cta ? campaignPanel(here, campaignVariant(copy.services_cta, here)) : ""}
 ${nominate}

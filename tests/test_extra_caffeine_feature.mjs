@@ -72,6 +72,7 @@ test('restricted full pages accept publisher setup links without install command
   execFileSync('git', ['clone', '--quiet', '--local', '--no-hardlinks', root, fixture]);
   // Use the working builder so the test verifies an uncommitted fix too.
   fs.copyFileSync(path.join(root, 'scripts/build-directory.mjs'), path.join(fixture, 'scripts/build-directory.mjs'));
+  fs.copyFileSync(path.join(root, 'scripts/directory/featured.mjs'), path.join(fixture, 'scripts/directory/featured.mjs'));
   fs.symlinkSync(path.join(root, 'node_modules'), path.join(fixture, 'node_modules'), 'dir');
   const notesPath = path.join(fixture, 'directory/notes.json');
   const notes = JSON.parse(fs.readFileSync(notesPath, 'utf8'));
