@@ -6,7 +6,7 @@
 - Artist / creator: unknown
 - Work type: unknown
 - Release status: unknown
-- Package status: draft for Suede intake
+- Package status: draft for Suede AI intake
 
 ## Intake Readiness
 
@@ -37,6 +37,6 @@
 | Documents | 0 | unknown |
 | Other | 0 | unknown |
 
-## Suede Next Step
+## Suede AI Next Step
 
-Needs creator confirmation before Suede optimization.
+Needs creator confirmation before Suede AI optimization.

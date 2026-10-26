@@ -1,6 +1,6 @@
 ---
 name: suede-referrals
-description: "Suede AI Referral Skills. Design a referral and affiliate program with incentives, commission and payout rules, fraud controls, disclosure, attribution, and cohort measurement. Use when asked to \"design our referral program\" or repair customer, ambassador, or partner incentives. Returns a program spec, economics, tooling options, and launch checklist. NOT FOR: payouts or billing changes, brand partnerships (use suede-co-marketing), launch packaging (use suede-launch-packaging), or lifecycle messages (use suede-emails)."
+description: "Suede AI Referral Skills. Design a referral and affiliate program with incentives, commission and payout rules, fraud controls, disclosure, attribution, and cohort measurement. Use when asked to \"design our referral program\" or repair customer, ambassador, or partner incentives. Returns a program spec, economics, tooling options, and launch checklist. NOT FOR: payouts or billing changes, brand partnerships (use suede-co-marketing), creator first-touch pitches (use suede-influencer-outreach), or lifecycle messages (use suede-emails)."
 metadata:
   display-name: "Suede AI Referral Skills"
   version: 2.1.0
@@ -271,7 +271,8 @@ controls, tax support, and data-export terms before recommending a platform.
 
 ## Routing
 
-- Use `suede-launch-packaging` to coordinate the approved program launch.
+- Use `suede-marketing-plan` to sequence the approved program launch, and `suede-emails` or `suede-social` for the announcement. Only a launch that ships software, a skill pack, or an MCP server goes to `suede-launch-packaging`; an artist or release launch goes to `suede-campaign-in-a-box`.
+- Use `suede-influencer-outreach` for the first-touch pitch to a creator or affiliate candidate.
 - Use `suede-emails` for referral invitation and nurture sequences.
 - Use `suede-offers` (behavioral-models catalog) to frame incentive tests as evidence-tiered hypotheses.
 - Use `suede-ab-testing` to design and evaluate the incentive, messaging, and placement tests above.

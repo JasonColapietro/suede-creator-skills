@@ -179,7 +179,8 @@ Every line proven by a command in this run:
   no letter grade).
 - Two surfaces behave differently even though the constants match -> the bug
   is in behavior, not canon; debug the follower's code path directly.
-- Need to plan a multi-file rollout across surfaces -> use `suede-graph-flo-xr`,
-  then return here for the contract itself.
+- Rollout spans two or more repositories -> use `suede-agent-teams` (one lane per
+  surface); a single-repo multi-file change -> use `suede-graph-flo-xr`; then
+  return here for the contract itself.
 - From `suede-code`: route "these two surfaces hold the same constant twice"
   findings back to `suede-parity-contract`.

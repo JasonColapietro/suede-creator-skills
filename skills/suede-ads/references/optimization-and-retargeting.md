@@ -88,3 +88,44 @@ Build out your retargeting layer with these 4 ad types running simultaneously:
 Run the four together against the audience that did not convert, and judge the layer on blended CPA, not each ad alone.
 
 ---
+
+## Landing Page Alignment (the headline-mirror trick)
+
+The ad platform tests headlines against far more people than ever reach the landing page, so it resolves a winning headline much faster than on-page testing does. Use it that way:
+
+1. Run **20-40 different headlines** as ad variations
+2. Pick the winner by CTR **and** downstream conversion, not CTR alone
+3. **Mirror the winning headline verbatim** in the landing page H1, sub-headline, and lead-in copy
+4. Measure the landing-page conversion rate before and after with `suede-ab-testing`; message match usually helps, but the size of the lift is the account's to prove
+
+Keep at least 3 split tests running somewhere in the funnel (creative, page, offer, or post-conversion flow) at any given time.
+
+Post-click page work itself belongs to `suede-site-alchemy`.
+
+---
+
+## Scaling discipline (net cash > ROAS percentage)
+
+The most common scaling failure: a business at a 40 ROAS spending $5k/month, refusing to scale because "if I spend more, my ROAS will drop." This is the wrong frame.
+
+**Net cash flow > ROAS percentage at the business level:**
+- ROAS dropping from 10 → 5 sounds bad
+- But if spend goes from $10k → $100k, you net dramatically more total profit
+- The number to optimize is **blended ROAS at the business level**, not per-ad-set ROAS
+- Even better: optimize **net free cash flow**, not ROAS at all
+
+**Find your break-even ROAS:**
+1. Calculate the absolute maximum you can pay to acquire a customer and still be profitable (factoring LTV)
+2. That's your break-even ROAS / CPA ceiling
+3. **Scale until you approach that ceiling**, not until your ad-account ROAS drops below an arbitrary preference
+
+**The monthly owner review:**
+- Block about 3 hours a month for the budget owner to read the raw numbers
+  directly, not a summary from the analyst or media buyer
+- First-hand familiarity with the data is what makes fast scale decisions safe
+
+**Outbound-call your leads who didn't convert:**
+- Every lead that downloaded a lead magnet or hit your funnel but didn't buy gets a call
+- Ask why they didn't book, what was confusing, what the actual blocker was
+- These verbatim answers become objection-handling ads (see "The four-ad retargeting layer" above)
+- Massive insight-to-creative loop that most advertisers skip

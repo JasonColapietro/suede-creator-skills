@@ -2,6 +2,20 @@
 
 Six standard models, one journey scored six ways, and data-driven attribution explained without the black box. Use this when the user wants to understand *why* two models disagree, or needs to pick one defensibly.
 
+## The models at a glance
+
+The six standard models, plus data-driven, and when each one lies:
+
+| Model | Credit rule | Best for | How it lies |
+|---|---|---|---|
+| **First-touch** | 100% to the first known touch | Top-of-funnel / demand-gen valuation; short cycles | Ignores everything that closed the deal; over-credits awareness channels |
+| **Last-touch** | 100% to the last touch before conversion | Direct-response, quick e-comm | Over-credits bottom-funnel + branded search/direct; ignores what created demand |
+| **Last non-direct** | 100% to last touch, skipping "direct" | A cheap fix for direct pollution | Still single-touch; just moves the blind spot |
+| **Linear** | Equal credit to every touch | Long, multi-touch journeys where every step matters | Treats a throwaway visit like a demo; flatters high-frequency channels |
+| **Time-decay** | More credit to touches nearer conversion | Longer cycles where recency matters | Under-credits the top of funnel; still an assumption, not a measurement |
+| **Position-based (U-shaped)** | 40% first, 40% last, 20% middle | B2B with clear "created" + "closed" moments | The 40/40/20 split is arbitrary; middle touches get shortchanged |
+| **Data-driven (algorithmic/Shapley)** | Credit from modeled marginal contribution | High-volume accounts with enough conversions | A black box; needs volume; can't see offline/dark touches it was never fed |
+
 ## The worked journey
 
 A single B2B buyer's path to a $12,000 annual deal, five touches over 38 days:

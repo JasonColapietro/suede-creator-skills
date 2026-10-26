@@ -47,10 +47,9 @@ At the start of every release-oriented run:
 4. Treat current repo code and the live Play Console as source truth for the
    app. Treat the reference date as a baseline, not permanent policy.
 
-Take the target-SDK default and enforcement dates from the baseline file, never
-from memory. As of the 2026-10-23 baseline, phone and tablet submissions must
-target API 36 (extensions end 2026-11-01) and use Play Billing Library 8 or
-later. Recheck every run: form-factor exceptions and dates differ, and Google
+Take the target-API level, Billing Library minimum and any extension window
+from `references/play-policy-baseline.md`, never from this file or memory.
+Recheck every run: form-factor exceptions and dates differ, and Google
 announces the next year's level each spring.
 
 ## Delivery Contract
@@ -107,17 +106,19 @@ privacy URL, customer claim, or Play Console state.
     gate, then `suede-play-release` for credential preflight, testing-track
     upload, promotion, staged rollout, and the live track readback.
 
-Read these before building:
+Read each reference at the phase that needs it, not all up front:
 
-- `references/android-factory-pipeline.md`: phase artifacts and release flow;
-- `references/architecture-and-quality.md`: architecture, tests,
-  accessibility, performance, and build checks;
-- `references/privacy-billing-integrity.md`: privacy, Data Safety, account
-  deletion, Billing, and Integrity controls;
-- `references/play-policy-baseline.md`: dated official-policy baseline;
-- `references/kids-and-family-apps.md`: before building anything whose
-  audience includes children (StoryBeam-style reading apps, beginner lesson
-  apps such as GuitarHub for young players).
+- Phase 1: `references/android-factory-pipeline.md` (phase artifacts and
+  release flow).
+- Phase 2: `references/play-policy-baseline.md` (dated official-policy
+  baseline). A policy-only question needs only this file.
+- Phases 3 to 6: `references/architecture-and-quality.md` (architecture, tests,
+  accessibility, performance, and build checks).
+- Phases 7 and 8: `references/privacy-billing-integrity.md` (privacy, Data
+  Safety, account deletion, Billing, and Integrity controls).
+- Only when the audience includes children under 13:
+  `references/kids-and-family-apps.md` (StoryBeam-style reading apps, beginner
+  lesson apps such as GuitarHub for young players).
 
 ## Kids and family apps
 

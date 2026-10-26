@@ -1,7 +1,7 @@
 # Release Lint Report
 
 Private draft: review and redact before publishing, committing, or sharing
-outside the intended Suede intake workflow.
+outside the intended Suede AI intake workflow.
 
 ## Summary
 
@@ -34,7 +34,7 @@ outside the intended Suede intake workflow.
 | error | media | `missing-primary-media` | No primary audio or video file was found. | Add or identify the final master or primary media file. |
 | warning | artwork | `missing-artwork` | No artwork image was found. | Add release artwork before public distribution or catalog publication. |
 | info | lyrics | `missing-lyrics` | No lyric or timed-text file was found. | Add lyrics or timed lyrics if the release uses vocals. |
-| warning | stems | `missing-stems` | No stems were found. | Add stems or plan stem separation for remix, sync, licensing, or Suede optimization. |
+| warning | stems | `missing-stems` | No stems were found. | Add stems or plan stem separation for remix, sync, licensing, or Suede AI optimization. |
 | error | splits | `invalid-master-split-total` | Master splits add to 80, not 100. | Correct master split percentages. |
 | error | splits | `invalid-publishing-split-total` | Publishing splits add to 110, not 100. | Correct publishing split percentages. |
 | warning | credits | `contributors-unconfirmed` | One or more contributors lack confirmation. | Collect contributor confirmations before royalty routing or licensing. |
@@ -44,7 +44,7 @@ outside the intended Suede intake workflow.
 | info | rights | `ai-involvement-unstated` | AI involvement is not stated. | State whether generative AI was used for vocals, instrumentation, composition, lyrics, artwork, or post-production (use "none" if not); distributors increasingly require this at delivery. |
 | info | suede | `missing-wallet-or-payment-destination` | No payment-routing destination noted (only needed for direct royalty routing). | Add a payment-routing note only if direct royalty routing is intended. |
 | warning | suede | `missing-provenance-notes` | No provenance or creation-history notes were provided. | Add creation history, source notes, or chain-of-custody details. |
-| info | suede | `rights-passport-candidate` | Project can be prepared with a Suede Rights Passport after blockers are resolved. | Use suede-rights-passport once error findings are fixed or clearly documented. |
+| info | suede | `rights-passport-candidate` | Project can be prepared with a Suede AI Rights Passport after blockers are resolved. | Use suede-rights-passport once error findings are fixed or clearly documented. |
 
 ## Asset Inventory
 
@@ -58,10 +58,10 @@ outside the intended Suede intake workflow.
 | document | 2 |
 | other | 0 |
 
-## Suede Readiness
+## Suede AI Readiness
 
 Blocked until error findings are resolved.
 
 ## Recommended Next Action
 
-Fix error findings before preparing a Suede Rights Passport, registering rights, licensing, or routing royalties.
+Fix error findings before preparing a Suede AI Rights Passport, registering rights, licensing, or routing royalties.

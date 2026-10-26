@@ -3,6 +3,7 @@
 Detailed targeting strategies for each major ad platform.
 
 ## Contents
+- Where to apply audience knowledge, platform by platform
 - Google Ads Audiences (Search Campaign Targeting, Display/YouTube Targeting)
 - Meta Audiences (Core Audiences, Custom Audiences, Lookalike Audiences)
 - LinkedIn Audiences (Job-Based Targeting, Company-Based Targeting, High-Performing Combinations)
@@ -10,6 +11,22 @@ Detailed targeting strategies for each major ad platform.
 - TikTok Audiences
 - Audience Size Guidelines
 - Exclusion Strategy
+
+## Where to apply audience knowledge, platform by platform
+
+Audience knowledge goes into creative first and targeting filters second; how far the ratio tips varies by platform.
+
+
+| Platform | Audience knowledge → creative | Audience knowledge → targeting filters | Notes |
+|----------|------------------------------|-------------------------------------|-------|
+| **Meta** | **80%+** | 20% | Broad audiences plus distinct creative usually beat interest stacking. See the strategy layer in [meta-decision-system.md](meta-decision-system.md). |
+| **Google Search** | 40% | **60%** | Keywords are still the dominant signal: match-types, search-intent layering, and negative keywords still drive performance. Creative (RSA headlines) matters but is downstream of the keyword. |
+| **Google Performance Max / Demand Gen** | **70%** | 30% | Audience signals are advisory, not deterministic. Creative + product feed quality dominate. |
+| **LinkedIn** | 40% | **60%** | Job-title / company / industry filters still produce real precision because LinkedIn's identity data is high-quality. Creative makes the click; firmographics make the *right person* see it. |
+| **TikTok** | **70%** | 30% | Algorithm is closer to Meta's model: broad targeting + native-feeling creative wins. Some audience interests help but creative dominates. |
+| **Twitter/X** | 50% | 50% | Interest + follower targeting still meaningful, but creative differentiation is high-leverage given lower competition. |
+
+These ratios are directional, not precise. Test in your actual account.
 
 ## Google Ads Audiences
 

@@ -113,7 +113,7 @@ Track / artist / featuring:
 Length / tempo / key (if known):
 Genre and mood tags:
 Sounds like: (era and energy references; never copy a protected identity)
-Scene fits: (top 3, one line each)
+Scene fits: (up to 3 real fits, one line each; fewer is fine)
 Lyric themes:
 Lyric flags:
 Versions available: (master / instrumental / clean / stems)
@@ -196,7 +196,7 @@ Confirmed rights facts:
 AI involvement:
 Clearance questions:
 One-sheet: (per the one-sheet contract above)
-Pitch email: (only if hard gates 3-4 pass)
+Pitch email: (after the gate 3 checklist; carries every OPEN flag from gates 3-4)
 Next review step:
 ```
 

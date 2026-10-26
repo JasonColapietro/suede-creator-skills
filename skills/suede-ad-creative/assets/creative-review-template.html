@@ -3,7 +3,9 @@
   Creative Review Page: a shareable ad-creative approval artifact.
 
   HOW TO USE (agents): replace the JSON inside <script id="review-data"> below
-  with the real project. Everything else renders from it. The file is
+  with the real project. The shipped data is a fictional placeholder brand
+  ("Example Co") with [[grounding: ...]] tokens; none of it may reach a client
+  page. Everything else renders from it. The file is
   self-contained: no build, no network, no dependencies. Open it in a browser,
   host it on any static host (Vercel/Netlify/GitHub Pages), or hand off the
   single .html file.
@@ -148,64 +150,63 @@
 <script type="application/json" id="review-data">
 {
   "project": {
-    "brand": "Truvani",
-    "agency": "Light Labs",
-    "date": "2026-07-12",
-    "note": "Whitelisted paid-social concepts for review"
+    "brand": "Example Co",
+    "agency": "Example Studio",
+    "date": "2026-01-01",
+    "note": "PLACEHOLDER DATA: replace every value with this client's real inputs before delivery"
   },
   "platforms": ["instagram", "facebook"],
   "concepts": [
     {
-      "name": "Heavy-Metal Proof",
-      "tagline": "Lifestyle hero, then the lab results",
+      "name": "Proof-Led",
+      "tagline": "Product hero, then the verified result",
       "handles": [
-        { "name": "truvani", "partner": "Paid partnership with lightlabs", "initials": "TV" },
-        { "name": "Light Labs", "partner": "Paid partnership with truvani", "initials": "LL" }
+        { "name": "exampleco", "partner": "Paid partnership with examplestudio", "initials": "EC" },
+        { "name": "Example Studio", "partner": "Paid partnership with exampleco", "initials": "ES" }
       ],
       "frames": [
-        { "label": "Hook", "prompt": "Product bag hero on soft pink, gold-lace overlay", "headline": "Finally, a plant-based protein that's third-party tested for heavy metals.", "headlineTheme": "dark" },
-        { "label": "The problem", "prompt": "Editorial card: 'Plants absorb more than nutrients' + Pb/As/Cd chips" },
-        { "label": "Enter Light Labs", "prompt": "Clean card: 'So we sent it to Light Labs' + independent-lab note" },
-        { "label": "The results", "prompt": "Results table: Arsenic / Cadmium / Lead, all within limits, green check" },
-        { "label": "For context", "prompt": "'Less arsenic than your breakfast' comparison bar" },
-        { "label": "The ask", "prompt": "Product you can finally trust (CTA frame)", "headline": "Protein you can finally trust." }
+        { "label": "Hook", "prompt": "Product hero shot from the client's own photography", "headline": "[[grounding: hook line built from a verified product claim]]", "headlineTheme": "dark" },
+        { "label": "The problem", "prompt": "Editorial card naming the customer problem in the customer's words" },
+        { "label": "The mechanism", "prompt": "Clean card: how the product addresses the problem" },
+        { "label": "The results", "prompt": "Results card: [[grounding: name the exact real source, e.g. test report, review set, dataset, with date]]" },
+        { "label": "The ask", "prompt": "Offer and CTA frame", "headline": "[[grounding: CTA line tied to the client's real offer]]" }
       ],
       "headlines": [
-        "Finally, a plant-based protein that's third-party tested for heavy metals.",
-        "We tested our protein for heavy metals. Here's what an independent lab found.",
-        "Most protein powders are never tested for heavy metals. Ours is."
+        "[[grounding: headline variant 1 from a verified claim]]",
+        "[[grounding: headline variant 2 from a verified claim]]",
+        "[[grounding: headline variant 3 from a verified claim]]"
       ],
-      "primaryText": "We tested our Plant-Based Protein for the heavy metals that hide in “clean” powders: lead, arsenic and cadmium. Here's exactly what an independent lab measured.",
-      "destination": { "url": "shop.truvani.com", "cta": "Shop now", "offer": "72% OFF Protein Starter Kit" },
+      "primaryText": "[[grounding: primary text built only from the client's supplied claims, reviews, or results]]",
+      "destination": { "url": "example.com", "cta": "Shop now", "offer": "[[grounding: the client's current offer, exactly as approved]]" },
       "rollout": {
         "title": "How the whitelist runs",
         "steps": [
-          "Truvani reviews and approves the creative. Light Labs builds it.",
-          "Truvani sends a Meta partnership request granting Light Labs access to this ad only.",
-          "Light Labs launches it under the co-branded handle.",
-          "We report performance back, framed as a free, mutually beneficial first test."
+          "Example Co reviews and approves the creative. Example Studio builds it.",
+          "Example Co sends a platform partnership request granting Example Studio access to this ad only.",
+          "Example Studio launches it under the co-branded handle.",
+          "We report performance back on the agreed schedule."
         ]
       },
-      "grounding": "Results are Truvani's actual Light Labs panel (Vanilla, tested Nov 13, 2025). Imagery is Truvani's own product & lifestyle photography."
+      "grounding": "[[grounding: name the exact real source for every result shown, with test or publication date, and say whose imagery is used]]"
     },
     {
-      "name": "Cleaner Than Rice",
-      "tagline": "Leads with the brown-rice comparison",
+      "name": "Comparison-Led",
+      "tagline": "Leads with a category comparison, no competitor named",
       "frames": [
-        { "label": "Hook", "prompt": "Split visual: brown rice vs protein scoop", "headline": "Your “clean” brown rice protein? Test it.", "headlineTheme": "dark" },
-        { "label": "The claim", "prompt": "Stat card comparing arsenic levels" },
-        { "label": "The proof", "prompt": "Light Labs results table" },
+        { "label": "Hook", "prompt": "Split visual: category default vs the product", "headline": "[[grounding: comparison hook from a verified figure]]", "headlineTheme": "dark" },
+        { "label": "The claim", "prompt": "Stat card with the verified comparison figure" },
+        { "label": "The proof", "prompt": "Source card citing the real report or dataset" },
         { "label": "The context", "prompt": "What the numbers mean, plainly" },
-        { "label": "The ask", "prompt": "Starter-kit offer frame", "headline": "Trust the label. Then trust the test." }
+        { "label": "The ask", "prompt": "Offer frame", "headline": "[[grounding: CTA line tied to the client's real offer]]" }
       ],
       "headlines": [
-        "Your “clean” brown rice protein? Test it.",
-        "Brown rice protein is often the worst offender for arsenic. We checked ours.",
-        "“Plant-based” doesn't mean “clean.” We have the lab panel to prove ours is."
+        "[[grounding: comparison headline variant 1]]",
+        "[[grounding: comparison headline variant 2]]",
+        "[[grounding: comparison headline variant 3]]"
       ],
-      "primaryText": "Brown-rice protein is one of the most common sources of dietary arsenic. So we sent ours to an independent lab. Here's the panel.",
-      "destination": { "url": "shop.truvani.com", "cta": "Shop now", "offer": "72% OFF Protein Starter Kit" },
-      "grounding": "Comparison figures are from Truvani's Light Labs panel and published dietary-arsenic ranges. No competitor is named."
+      "primaryText": "[[grounding: primary text that cites the comparison source by name]]",
+      "destination": { "url": "example.com", "cta": "Shop now", "offer": "[[grounding: the client's current offer, exactly as approved]]" },
+      "grounding": "[[grounding: name the exact real source for each comparison figure; say which values are illustrative, if any]]"
     }
   ]
 }

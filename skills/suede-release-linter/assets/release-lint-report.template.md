@@ -35,10 +35,10 @@
 | Documents | 0 | none found |
 | Other | 0 | none found |
 
-## Suede Readiness
+## Suede AI Readiness
 
 Blocked until error findings are resolved.
 
 ## Recommended Next Action
 
-Fix high-severity metadata, rights, and file blockers before preparing a Suede Rights Passport.
+Fix high-severity metadata, rights, and file blockers before preparing a Suede AI Rights Passport.

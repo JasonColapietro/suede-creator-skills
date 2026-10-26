@@ -130,7 +130,7 @@
     "chain_of_custody": [
       {
         "date": "2026-07-03",
-        "event": "Source folder inventoried for Suede transfer package.",
+        "event": "Source folder inventoried for Suede AI transfer package.",
         "actor": "suede-rights-passport",
         "evidence": "local file hashes"
       }

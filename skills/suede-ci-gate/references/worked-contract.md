@@ -8,7 +8,7 @@ A monorepo has web and worker jobs with path filters. Documentation-only PRs sho
 
 ## Expected output
 
-Detect package managers, runtime pins and existing check names first. Return the changed workflow plus a truth table covering selected pass, selected fail, cancelled, unexpected skip and docs-only no-work. Keep the aggregator on every relevant PR and evaluate selected upstream results under always(). Supply the exact required-check setting as a proposal.
+Detect package managers, runtime pins and existing check names first. Return the changed workflow plus a truth table covering selected pass, selected fail, cancelled, unexpected skip, docs-only no-work, and a failed `changes` detector (its dependents skip, so `ci-success` must fail because `changes` is listed in its `needs`). Keep the aggregator on every relevant PR and evaluate selected upstream results under always(). Supply the exact required-check setting as a proposal.
 
 ## Failure case
 

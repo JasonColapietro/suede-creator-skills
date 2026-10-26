@@ -100,10 +100,8 @@ Complete setup checklists for major ad platforms.
 
 ### Domain & Aggregated Events
 
-- [ ] Domain verified in Business Manager
-- [ ] Aggregated Event Measurement configured
-- [ ] Top 8 events prioritized in order of importance
-- [ ] Web events prioritized for iOS 14+ tracking
+- [ ] Domain verified in Business Manager (recommended, no longer required)
+- [ ] Optimization events show recent pixel and CAPI activity in Events Manager (Meta runs Aggregated Event Measurement on its side since 2023; there is no 8-event ranking step to configure. Checked 2026-10; setup lives in `suede-analytics`)
 
 ### Audience Setup
 

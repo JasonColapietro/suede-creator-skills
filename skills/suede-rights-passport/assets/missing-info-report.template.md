@@ -2,7 +2,7 @@
 
 ## Summary
 
-Missing information must be resolved before Suede can confidently register, license, route royalties for, or expose the work to agent commerce.
+Missing information must be resolved before Suede AI can confidently register, license, route royalties for, or expose the work to agent commerce.
 
 ## Questions
 
@@ -16,4 +16,4 @@ Missing information must be resolved before Suede can confidently register, lice
 
 ## Status
 
-Not ready for final Suede intake until high-severity questions are answered.
+Not ready for final Suede AI intake until high-severity questions are answered.

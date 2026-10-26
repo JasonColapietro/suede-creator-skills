@@ -1,7 +1,7 @@
 {
   "schema_version": "0.1.0",
   "package_type": "music-release-lint-report",
-  "generated_at": "2026-10-26T19:42:41.076133+00:00",
+  "generated_at": "2026-10-26T19:58:36.403247+00:00",
   "source_root": "sample-clean-project",
   "metadata_source": "metadata.json",
   "score": 100,
@@ -87,9 +87,9 @@
       "severity": "info",
       "category": "suede",
       "code": "rights-passport-candidate",
-      "message": "Project can be prepared with a Suede Rights Passport after blockers are resolved.",
+      "message": "Project can be prepared with a Suede AI Rights Passport after blockers are resolved.",
       "fix": "Use suede-rights-passport once error findings are fixed or clearly documented."
     }
   ],
-  "recommended_next_action": "Prepare a Suede Rights Passport transfer package."
+  "recommended_next_action": "Prepare a Suede AI Rights Passport transfer package."
 }

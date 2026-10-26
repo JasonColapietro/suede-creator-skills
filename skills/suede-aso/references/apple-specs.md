@@ -4,6 +4,29 @@ Compiled from developer.apple.com in March 2026 and re-checked against current
 secondary coverage on 2026-10-23 (Apple pages could not be fetched directly in
 that check). Confirm any limit in App Store Connect before shipping metadata.
 
+## Fields to extract
+
+When auditing a live App Store listing, extract every field below. Limits and
+indexing are in the Character Limits table that follows.
+
+- App name (title)
+- Subtitle
+- Description (long; matters for conversion)
+- Promotional text (updatable without a new release)
+- Category (primary + secondary)
+- Screenshots (count, order, caption text)
+- Preview video (presence, duration)
+- Rating (average + count)
+- Recent reviews (visible ones)
+- Price / in-app purchases
+- Developer name
+- Last updated date
+- Version history notes
+- Age rating
+- Size
+- Languages / localizations listed
+- In-app events (if any visible)
+
 ## Character Limits
 
 | Field                   | Limit            | Indexed for Search?      | Notes                                                    |

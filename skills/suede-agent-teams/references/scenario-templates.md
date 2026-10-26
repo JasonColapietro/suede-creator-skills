@@ -112,8 +112,13 @@ Done signal: primary path verified restored in production; for P0/P1, a complete
 
 ## Feature Flag Strategy
 
-The trigger list, when to flag, stays in SKILL.md. This is the mechanics once a
-lane is flagged.
+Read from SKILL.md when deciding whether to flag a lane and once a lane is flagged.
+
+**When to flag:**
+- New user-facing features in production traffic paths
+- Changes to auth, payment, or data migration paths
+- Any change that cannot be instantly rolled back by revert (e.g., a schema migration)
+- A/B tests
 
 **Flag lifecycle:**
 1. **Introduce**: create the flag, default off in production. Ship the code behind the flag.

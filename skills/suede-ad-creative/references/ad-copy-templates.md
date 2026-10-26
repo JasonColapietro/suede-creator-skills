@@ -1,6 +1,6 @@
-# Ad Copy Templates Reference
+# Ad Copy Templates and Creative Basics
 
-Detailed formulas and templates for writing high-converting ad copy.
+Formulas and templates for ad copy, plus image and video creative basics for paid social. Every bracketed value comes from the client's inputs (reviews, results, offers); the examples show structure only, never numbers to reuse. Character limits live in SKILL.md "Platform Specs" and [platform-specs.md](platform-specs.md), not here.
 
 ## Contents
 - Primary Text Formulas (Problem-Agitate-Solve, Before-After-Bridge, Social Proof Lead, Feature-Benefit Bridge, Direct Response)
@@ -8,6 +8,7 @@ Detailed formulas and templates for writing high-converting ad copy.
 - CTA Variations (Soft CTAs, Hard CTAs, Urgency CTAs, Action-Oriented CTAs)
 - Platform-Specific Copy Guidelines (Google Search Ads, Meta Ads, LinkedIn Ads)
 - Copy Testing Priority
+- Creative Best Practices (Image Ads, Video Ads Structure, Creative Testing Hierarchy)
 
 ## Primary Text Formulas
 
@@ -52,7 +53,7 @@ Detailed formulas and templates for writing high-converting ad copy.
 ```
 
 **Example:**
-> "We cut our reporting time by 75%." (Sarah K., Marketing Director)
+> "[verbatim customer quote from inputs/reviews]" ([name and role, with permission])
 > [Product] automates the reports you hate building.
 > See how it works →
 
@@ -82,9 +83,9 @@ Detailed formulas and templates for writing high-converting ad copy.
 ```
 
 **Example:**
-> Cut your reporting time by 80%
-> Join 5,000+ marketing teams already using [Product]
-> Start free → First month 50% off
+> [Verified outcome from inputs, e.g. cut reporting time by [verified %]]
+> Join [verified count] teams already using [Product]
+> Start free → [current approved offer]
 
 ---
 
@@ -95,9 +96,9 @@ Detailed formulas and templates for writing high-converting ad copy.
 | Formula | Example |
 |---------|---------|
 | [Keyword] + [Benefit] | "Project Management That Teams Actually Use" |
-| [Action] + [Outcome] | "Automate Reports \| Save 10 Hours Weekly" |
+| [Action] + [Outcome] | "Automate Reports \| Save [verified hrs] Weekly" |
 | [Question] | "Tired of Manual Data Entry?" |
-| [Number] + [Benefit] | "500+ Teams Trust [Product] for [Outcome]" |
+| [Number] + [Benefit] | "[verified count] Teams Trust [Product] for [Outcome]" |
 | [Keyword] + [Differentiator] | "CRM Built for Small Teams" |
 | [Price/Offer] + [Keyword] | "Free Project Management \| No Credit Card" |
 
@@ -105,7 +106,7 @@ Detailed formulas and templates for writing high-converting ad copy.
 
 | Type | Example |
 |------|---------|
-| Outcome hook | "How we 3x'd our conversion rate" |
+| Outcome hook | "How we [verified result] our conversion rate" |
 | Curiosity hook | "The reporting hack no one talks about" |
 | Contrarian hook | "Why we stopped using [common tool]" |
 | Specificity hook | "The exact template we use for..." |
@@ -145,7 +146,7 @@ Best for: Bottom of funnel, warm audiences, clear offers
 
 Best for: Limited-time offers, scarcity situations
 
-- Limited Time: 30% Off
+- Limited Time: [real discount] Off
 - Offer Ends [Date]
 - Only X Spots Left
 - Last Chance
@@ -181,7 +182,7 @@ Best for: Active voice, clear next step
 - Front-load the hook (first line matters most)
 - Emojis can work but test
 - Questions perform well
-- Keep image text under 20%
+- Keep image text light (Meta retired the 20% rule in 2020, but text-heavy images can still deliver worse)
 
 ### LinkedIn Ads
 
@@ -205,3 +206,37 @@ When testing ad copy, focus on these elements in order of impact:
 5. **Supporting proof points**
 
 Test one element at a time for clean data.
+
+---
+
+## Creative Best Practices
+
+### Image Ads
+- Clear product screenshots showing UI
+- Before/after comparisons
+- Stats and numbers as focal point
+- Human faces (real, not stock)
+- Short, legible text overlay. Meta retired its 20% text rule in 2020, but
+  text-heavy images can still deliver worse; test a lighter version
+
+### Video Ads Structure (15-30 sec)
+1. Hook (0-3 sec): Pattern interrupt, question, or bold statement
+2. Problem (3-8 sec): Relatable pain point
+3. Solution (8-20 sec): Show product/benefit
+4. CTA (20-30 sec): Clear next step
+
+**Production tips:**
+- Captions by default: much feed video plays muted, and captions help
+  comprehension either way
+- Vertical for Stories/Reels, square for feed
+- Native feel outperforms polished
+- First 3 seconds determine if they watch
+
+### Creative Testing Hierarchy
+1. Concept/angle (biggest impact)
+2. Hook/headline
+3. Visual style
+4. Body copy
+5. CTA
+
+The testing hierarchy above and the Copy Testing Priority list agree: concept and angle first, then hook and headline. For hook mechanics and funnel diagnosis, use [hook-system.md](hook-system.md).

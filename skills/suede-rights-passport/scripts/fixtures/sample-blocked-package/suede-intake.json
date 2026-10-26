@@ -97,7 +97,7 @@
     "chain_of_custody": [
       {
         "date": "2026-07-03",
-        "event": "Source folder inventoried for Suede transfer package.",
+        "event": "Source folder inventoried for Suede AI transfer package.",
         "actor": "suede-rights-passport",
         "evidence": "local file hashes"
       }
@@ -212,7 +212,7 @@
       "label": "stems-not-found",
       "severity": "medium",
       "detail": "No stems were detected.",
-      "recommended_action": "Ask whether stems exist or use Suede stem preparation during optimization."
+      "recommended_action": "Ask whether stems exist or use Suede AI stem preparation during optimization."
     }
   ]
 }

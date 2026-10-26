@@ -1,11 +1,38 @@
-# RFC and Post-Mortem Templates
+# RFC, Rollback, and Post-Mortem Templates
 
-The stationery for the two documents this skill occasionally asks a lane to write.
-The rules that decide *whether* to write one (the RFC-required list, the
-`accepted`-before-any-builder gate, the P0-P3 severity definitions, and the
-required/optional/skip rule for post-mortems) stay in the `suede-agent-teams`
-SKILL.md next to their triggers. Read this file when you are about to author one of
-the two documents, and fill every section.
+The stationery for the documents this skill occasionally asks a lane to write, plus
+the rollback decision tree and post-mortem rules. The RFC-required list and the
+`accepted`-before-any-builder gate stay in the `suede-agent-teams` SKILL.md next to
+their triggers. Read this file when a deploy goes wrong or you are about to author
+an RFC or post-mortem, and fill every section.
+
+## Rollback Decision Tree
+
+When something goes wrong after a deploy, the team needs a pre-agreed decision framework to avoid paralysis.
+
+```
+Is there active data loss or corruption? → ROLLBACK IMMEDIATELY. Don't investigate first.
+Is there a security exposure (PII, auth bypass, payment data)? → ROLLBACK IMMEDIATELY. Notify security.
+Is a primary user path broken (login, checkout, core workflow)? → ROLLBACK unless fix is <15 minutes away.
+Is performance degraded but functional? → Hold and investigate. Set a 30-minute timer.
+Is it a cosmetic issue? → Hot-fix forward. No rollback.
+```
+
+After rollback:
+1. Write an immediate summary: what rolled back, what was affected, who was notified.
+2. Leave rollback notes in the PR and open a follow-up issue.
+3. Run a lightweight post-mortem (see the template below) before re-shipping.
+
+## When to write a post-mortem
+
+For any production incident, failed release, or significant rollback, run a post-mortem. Keep it blameless: focus on systems, not individuals.
+
+Severity: P0 (total outage) / P1 (primary path broken) / P2 (degraded) / P3 (cosmetic).
+
+Post-mortems are required for P0 and P1 incidents. Optional but encouraged for P2. Skip for P3.
+When one is required, write it from the post-mortem template below
+and fill every section: timeline, impact, root cause, contributing factors, what went
+well, and action items with owners and due dates.
 
 ## RFC template
 

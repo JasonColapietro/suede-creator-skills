@@ -57,7 +57,7 @@ When the surface is already live, sample real behavior with safe inputs and reco
 2. **Map the failure modes.** List the ways the AI can harm the user, product truth, rights/provenance, security, privacy, brand trust, cost, or workflow completion.
 3. **Build the rubric.** Score each failure mode with severity, likelihood, detectability, owner, gate, and required evidence.
 4. **Write eval cases.** Produce concrete pass/fail cases with inputs, setup data, expected output traits, forbidden output traits, and the reason the case exists.
-5. **Set acceptance gates.** Decide what blocks ship, what allows ship-with-caveats, and what can become follow-up work.
+5. **Set acceptance gates.** Decide what recommends hold, what allows ship-with-caveats, and what can become follow-up work.
 6. **Audit coverage.** Compare existing tests, logs, metrics, and manual checks against the failure-mode map. Score coverage and infrastructure using the method under Tooling and Infrastructure below. Name every uncovered high-risk behavior regardless of the numeric score.
 7. **Return the artifact.** Give the AI-SPEC, rubric, eval table, coverage gaps, required tests, and next implementation step. Name the exact command that runs the cases and its expected exit status (the repo's own eval script if one exists, otherwise the tool's invocation, e.g. `npx promptfoo eval -c <config>`) and record the run's pass/fail counts under "Commands or evidence checked". An eval plan with no runnable command is a document, not coverage, and suede-ci-gate cannot wire it into CI without that string.
 
@@ -124,7 +124,7 @@ Use this table shape:
 
 | Failure mode | Severity | Likelihood | Detectability | Evidence now | Ship gate | Required fix |
 |---|---:|---:|---:|---|---|---|
-| Hallucinates a rights claim | 5 | 3 | 2 | none | block | add refusal eval + source citation check |
+| Hallucinates a rights claim | 5 | 3 | 2 | none | hold | add refusal eval + source citation check |
 
 Scoring:
 
@@ -136,8 +136,8 @@ Scoring:
 
 Gate defaults:
 
-- Any uncovered severity 5 behavior blocks release.
-- Severity 4 requires an eval case, fallback behavior, and named owner before release.
+- Any uncovered severity 5 behavior sets the recommended gate to hold.
+- Severity 4 needs an eval case, fallback behavior, and named owner before the recommended gate moves past hold.
 - Regressions from real observed failures require a fixture or scripted check.
 - Product copy cannot claim eval coverage that does not exist.
 

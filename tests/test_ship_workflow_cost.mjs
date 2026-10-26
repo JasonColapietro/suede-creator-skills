@@ -1879,6 +1879,8 @@ test('release verification receives read-only authority and never a deployment a
   assert.match(gateCall.bashCommandClamp[0], /^Bash\(\/usr\/bin\/env TMPDIR='\/private\/tmp\/ship-test'/)
   assert.match(helperSource('gate-sandbox.cjs'), /execFileSync\("\/usr\/bin\/sandbox-exec",\["-p",profile/)
   assert.match(helperSource('gate-sandbox.cjs'), /deny network\*/)
+  assert.match(helperSource('gate-sandbox.cjs'), /timeout:GATE_TIMEOUT_MS,killSignal:"SIGKILL",env:\{\.\.\.process\.env,CI:"1"/)
+  assert.match(helperSource('gate-sandbox.cjs'), /ETIMEDOUT.*process\.exit\(124\)/)
   assert.match(gateCall.bashCommandClamp[0], /\/tmp\/repo\.worktrees\/ship-test/)
   assert.doesNotMatch(gateCall.bashCommandClamp[0], /\/tmp\/repo\/\.git/)
   assert.match(helperSource('gate-sandbox.cjs'), /--path-format=absolute.*--git-common-dir/)

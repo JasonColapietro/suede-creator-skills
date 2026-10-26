@@ -1,6 +1,6 @@
 # Google Search Playbook (B2B)
 
-Intent-first operating rules for Google Ads: where to spend first, how to structure the account, when to loosen match types, and how to keep smart bidding pointed at revenue instead of junk form-fills. For RSA generation mechanics, see [rsa-output-spec.md](rsa-output-spec.md).
+Intent-first operating rules for Google Ads: where to spend first, how to structure the account, when to loosen match types, and how to keep smart bidding pointed at revenue instead of junk form-fills. For RSA generation (the 15-headline output spec, sidecars, and self-check), route to `suede-ad-creative`, which owns `references/rsa-output-spec.md`.
 
 ## Contents
 

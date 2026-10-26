@@ -1,7 +1,7 @@
 # Release Lint Report
 
 Private draft: review and redact before publishing, committing, or sharing
-outside the intended Suede intake workflow.
+outside the intended Suede AI intake workflow.
 
 ## Summary
 
@@ -24,7 +24,7 @@ outside the intended Suede intake workflow.
 
 | Severity | Category | Code | Message | Fix |
 | --- | --- | --- | --- | --- |
-| info | suede | `rights-passport-candidate` | Project can be prepared with a Suede Rights Passport after blockers are resolved. | Use suede-rights-passport once error findings are fixed or clearly documented. |
+| info | suede | `rights-passport-candidate` | Project can be prepared with a Suede AI Rights Passport after blockers are resolved. | Use suede-rights-passport once error findings are fixed or clearly documented. |
 
 ## Asset Inventory
 
@@ -38,10 +38,10 @@ outside the intended Suede intake workflow.
 | document | 1 |
 | other | 0 |
 
-## Suede Readiness
+## Suede AI Readiness
 
-Strong candidate for Suede Rights Passport preparation.
+Strong candidate for Suede AI Rights Passport preparation.
 
 ## Recommended Next Action
 
-Prepare a Suede Rights Passport transfer package.
+Prepare a Suede AI Rights Passport transfer package.

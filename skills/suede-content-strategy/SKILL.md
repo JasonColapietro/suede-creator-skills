@@ -1,6 +1,6 @@
 ---
 name: suede-content-strategy
-description: "Use when asked \"plan our content strategy\" or to decide what to publish, refresh or stop. Suede AI maps audience questions, pillars, topic clusters, AI answer gaps and original-data assets to priorities, cadence, distribution and KPIs. NOT FOR: drafting an asset (use suede-copy), SEO audits (use suede-seo-audit), AI visibility measurement (use suede-ai-seo), or social production (use suede-social)."
+description: "Suede AI content strategy: decide what to publish, refresh or stop. Use when asked \"plan our content strategy\" or \"find keywords and topics for our blog\". Maps audience questions, keyword and topic discovery, pillars, topic clusters, AI answer gaps and original-data assets to priorities, cadence, distribution and KPIs. NOT FOR: drafting an asset (use suede-copy), SEO audits (use suede-seo-audit), AI visibility measurement (use suede-ai-seo), or social production (use suede-social)."
 metadata:
   display-name: "Suede AI Content Strategy Skills"
   version: 2.0.0
@@ -75,47 +75,11 @@ Every piece of content must be searchable, shareable, or both. Searchable is the
 
 ## Content Types
 
-### Searchable Content Types
-
-**Use-Case Content**
-Formula: [persona] + [use-case]. Targets long-tail keywords.
-- "Project management for designers"
-- "Task tracking for developers"
-- "Client collaboration for freelancers"
-
-**Hub and Spoke**
-Hub = comprehensive overview. Spokes = related subtopics. Create the hub first, then build spokes, and interlink them. See "Content Pillars and Topic Clusters" below for the structure and the URL guidance.
-
-**Template Libraries**
-High-intent keywords + product adoption.
-- Target searches like "marketing plan template"
-- Provide immediate standalone value
-- Show how product enhances the template
-
-### Shareable Content Types
-
-**Thought Leadership**
-- Articulate concepts everyone feels but hasn't named
-- Challenge conventional wisdom with evidence
-- Share vulnerable, honest experiences
-
-**Data-Driven Content**
-- Product data analysis (anonymized insights)
-- Public data analysis (uncover patterns)
-- Original research (run experiments, share results). Original data is the asset answer engines and journalists most need to cite, so give each finding a stable URL, method, sample, and date.
-
-**Expert Roundups**
-A selected set of relevant, verified experts answering one specific question.
-Distribution depends on contributor permission and actual promotion.
-
-**Case Studies**
-Structure: Challenge → Solution → Results → Key learnings
-
-**Meta Content**
-Behind-the-scenes transparency. "How We Got Our First $5k MRR," "Why We Chose Debt Over VC."
-
-For programmatic content at scale, route the data and template system to
-`suede-programmatic-seo`.
+The catalog of searchable types (use-case, hub and spoke, template libraries)
+and shareable types (thought leadership, data-driven, expert roundups, case
+studies, meta content) is in `references/content-types.md`. Read it when
+choosing the **Type** for each priority topic. For programmatic content at
+scale, route the data and template system to `suede-programmatic-seo`.
 
 ---
 
@@ -155,6 +119,11 @@ Map topics to the buyer's journey using the modifier set for each stage:
 
 Worked example, Consideration stage for a project-management tool: "Best Project Management Tools for Remote Teams," "Asana vs Trello vs Monday," "Basecamp Alternatives." Apply the same pattern per stage using the user's own category nouns, never these ones.
 
+For keyword or topic discovery, including discovery that `suede-seo-audit`
+routes here, read `references/keyword-research.md`: evidence rules for demand
+(`volume: unknown` without a dated source), the query-theme protocol,
+competitor content gaps, and the content brief.
+
 ---
 
 ## Content Ideation Sources
@@ -172,79 +141,14 @@ exports, transcripts, and known first-party evidence. Otherwise return a compact
 manual-research list with exact queries and fields to capture. Label hypotheses
 and unverified competitor observations; never imply that a search was run.
 
-### 1. Keyword Data
+Then work the ideation sources the user has supplied or that are callable:
+keyword exports, call transcripts, survey responses, forum research, competitor
+content, and sales and support input. What to extract from each, and the
+output shape, is in `references/ideation-sources.md`.
 
-If user provides keyword exports (Ahrefs, SEMrush, GSC), analyze for:
-- Topic clusters (group related keywords)
-- Buyer stage (awareness/consideration/decision/implementation)
-- Search intent (informational, commercial, transactional)
-- Quick wins (low competition + decent volume + high relevance)
-- Content gaps (keywords competitors rank for that you don't)
+---
 
-Output as prioritized table:
-| Keyword | Volume | Difficulty | Buyer Stage | Content Type | Priority |
-
-### 2. Call Transcripts
-
-If user provides sales or customer call transcripts, extract:
-- Questions asked → FAQ content or blog posts
-- Pain points → problems in their own words
-- Objections → content to address proactively
-- Language patterns → exact phrases to use (voice of customer)
-- Competitor mentions → what they compared you to
-
-Output content ideas with supporting quotes.
-
-### 3. Survey Responses
-
-If user provides survey data, mine for:
-- Open-ended responses (topics and language)
-- Common themes, with sample count and observed proportion recorded
-- Resource requests (what they wish existed)
-- Content preferences (formats they want)
-
-### 4. Forum Research
-
-If an authorized browser or search surface is currently callable, use it to find
-recent first-party community evidence. Otherwise ask for relevant URLs or provide
-the queries below for manual collection.
-
-**Reddit:** `site:reddit.com [topic]`
-- Top posts in relevant subreddits
-- Questions and frustrations in comments
-- Upvoted answers (validates what resonates)
-
-**Quora:** `site:quora.com [topic]`
-- Most-followed questions
-- Highly upvoted answers
-
-**Other:** Indie Hackers, Hacker News, Product Hunt, industry Slack/Discord
-
-For each item, capture the source URL, publication date, retrieval date, community
-context, and a short evidence excerpt. Distinguish engagement signals from proof
-of customer demand.
-
-### 5. Competitor Analysis
-
-Use a currently callable, authorized browser/search surface or user-supplied
-competitor URLs. If neither is available, produce a manual research checklist and
-do not invent page inventories, rankings, engagement, or gaps.
-
-**Find their content:** `site:competitor.com/blog`
-
-**Analyze:**
-- Observable posts and dated engagement signals
-- Topics covered repeatedly
-- Gaps they haven't covered
-- Case studies (customer problems, use cases, results)
-- Content structure (pillars, categories, formats)
-
-**Identify hypotheses to validate:**
-- Topics you can cover better
-- Angles they're missing
-- Outdated content to improve on, based on a visible date or stale claim
-
-### 6. AI Answer Gaps
+## AI Answer Gaps
 
 If `suede-ai-seo` has run a prompt panel, its results are a ranked topic list:
 prompts where competitors are cited and you are not, prompts where the answer
@@ -253,15 +157,6 @@ becomes a topic (answer the question better on a page you own) or an off-site
 task (earn a mention on the source engines already cite). Bing Webmaster
 Tools grounding queries and Search Console queries with impressions but low
 clicks serve the same purpose.
-
-### 7. Sales and Support Input
-
-Extract from customer-facing teams:
-- Common objections
-- Repeated questions
-- Support ticket patterns
-- Success stories
-- Feature requests and underlying problems
 
 ---
 
@@ -388,6 +283,9 @@ Emit the strategy in exactly this shape:
 ## References
 
 - **[Headless CMS Guide](references/headless-cms.md)**: CMS selection, content modeling for marketing, editorial workflows, platform comparison (Sanity, Contentful, Strapi)
+- **[Keyword Research](references/keyword-research.md)**: evidence-based keyword and topic discovery, competitor content gaps, and the content brief
+- **[Content Types](references/content-types.md)**: searchable and shareable content type catalog
+- **[Ideation Sources](references/ideation-sources.md)**: what to extract from keyword data, transcripts, surveys, forums, competitors, and sales and support
 
 ---
 

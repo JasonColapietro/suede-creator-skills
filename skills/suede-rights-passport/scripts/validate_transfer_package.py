@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate the structure of a Suede rights transfer package.
+"""Validate the structure of a Suede AI rights transfer package.
 
 Checks that a package folder produced by create_transfer_package.py (or
 hand-assembled to the same standard) is structurally complete:
@@ -135,7 +135,7 @@ class ValidationError(Exception):
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description=(
-            "Validate that a Suede rights transfer package folder is "
+            "Validate that a Suede AI rights transfer package folder is "
             "structurally complete: all 7 required report files are present, "
             "suede-intake.json is valid JSON matching the documented schema, "
             "and every asset entry has a sha256 hash. This does not evaluate "

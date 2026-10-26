@@ -1,6 +1,6 @@
 ---
 name: suede-influencer-outreach
-description: "Use when asked \"pitch this creator\" or to repair an influencer or B2B creator-program first touch. Suede AI grounds one message in a named audience fact, states real compensation and one ask, fits the published contact route and stops the two-follow-up plan at a positive reply. NOT FOR: affiliate mechanics (use suede-referrals), brand partnerships (use suede-co-marketing), cold B2B email (use suede-cold-email), or journalist pitches (use suede-public-relations)."
+description: "Suede AI Influencer Outreach Skills. Use when asked \"pitch this creator\" or to repair an influencer or B2B creator-program first touch. Grounds one message in a named audience fact, states real compensation and one ask, fits the published contact route and stops the two-follow-up plan at a positive reply. NOT FOR: affiliate mechanics (use suede-referrals), brand partnerships (use suede-co-marketing), cold B2B email (use suede-cold-email), or journalist pitches (use suede-public-relations)."
 metadata:
   display-name: "Suede AI Influencer Outreach Skills"
   version: 1.0.0

@@ -1,7 +1,7 @@
 {
   "schema_version": "0.1.0",
   "package_type": "music-release-lint-report",
-  "generated_at": "2026-10-26T19:42:41.150911+00:00",
+  "generated_at": "2026-10-26T19:58:36.467245+00:00",
   "source_root": "sample-blocked-project",
   "metadata_source": "metadata.json",
   "score": 0,
@@ -118,7 +118,7 @@
       "category": "stems",
       "code": "missing-stems",
       "message": "No stems were found.",
-      "fix": "Add stems or plan stem separation for remix, sync, licensing, or Suede optimization."
+      "fix": "Add stems or plan stem separation for remix, sync, licensing, or Suede AI optimization."
     },
     {
       "severity": "error",
@@ -187,9 +187,9 @@
       "severity": "info",
       "category": "suede",
       "code": "rights-passport-candidate",
-      "message": "Project can be prepared with a Suede Rights Passport after blockers are resolved.",
+      "message": "Project can be prepared with a Suede AI Rights Passport after blockers are resolved.",
       "fix": "Use suede-rights-passport once error findings are fixed or clearly documented."
     }
   ],
-  "recommended_next_action": "Fix error findings before preparing a Suede Rights Passport, registering rights, licensing, or routing royalties."
+  "recommended_next_action": "Fix error findings before preparing a Suede AI Rights Passport, registering rights, licensing, or routing royalties."
 }

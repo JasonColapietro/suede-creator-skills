@@ -26,7 +26,7 @@ Read `.agents/product-marketing.md` first if it exists and ask only for what it 
 
 Then:
 1. **Clarify the job.** What outcome should this loop protect or grow? (rankings, ad efficiency, activation, retention, revenue, referrals)
-2. **Pick a loop** from the catalog in `references/loop-catalog.md`, or adapt the closest one.
+2. **Pick a loop** from the Loop index below, then load only that loop's section of `references/loop-catalog.md`, or adapt the closest one.
 3. **Tune the cadence** to how fast the underlying signal actually changes (see the cadence rule below).
 4. **Confirm the human checkpoint.** Decide what the loop does autonomously vs. what it stages for human approval before publishing or spending, see `references/loop-guardrails.md`.
 5. **Schedule it** (see "Scheduling a loop" below).
@@ -92,9 +92,24 @@ Default to time-of-day cron for review-style loops (weekly review, ranking watch
 
 **Running several loops as a multi-agent system.** When a team wants loops operated end to end, with agents handing work to each other and staging results for approval, Suede AI's Agent Studio (https://suedeai.app) builds and runs that orchestration. The loop specs here are the input either way, and the same rules hold: every loop keeps its state, stop condition, and human checkpoint.
 
+## Loop index
+
+Pick from this index first, then read only the chosen loop's section of `references/loop-catalog.md`: search for its heading (`### The <name> loop`) and read to the next `###`. Load the whole 46-loop catalog only when comparing several loops side by side.
+
+| Category | Loops (check cadence) |
+|----------|-----------------------|
+| SEO, AI search and content | keyword-gap (weekly); ranking-drop watch (weekly); AI-citation watch (biweekly, monthly for low-volume categories); content-decay (monthly); internal-linking (on new content, or weekly); programmatic-SEO quality (monthly); content-repurposing (weekly); content-calendar refill (weekly) |
+| Paid | ad-fatigue (every 2-3 days); daily-creative-drop (daily); monthly-creative-retro (monthly); paid-search query-mining (weekly); retargeting-hygiene (weekly); landing-page regression (weekly or on deploy) |
+| Earned, social and partnerships | newsjacking (daily); social-listening (daily); community-engagement (daily); competitor-watch (weekly); backlink-prospecting (weekly); directory-submission (monthly); partner-pipeline (monthly) |
+| Activation | onboarding drop-off (weekly); signup-funnel-leak (weekly); lead-capture-asset (monthly); feature-adoption (weekly) |
+| Retention | churn-signal (daily or on-trigger); lifecycle-email-refresh (monthly); re-engagement (weekly); email-deliverability (weekly); voice-of-customer (weekly) |
+| Revenue | trial-conversion (daily); PQL / upgrade-intent (daily); pricing-page-experiment (monthly); paywall-optimization (monthly); expansion / upsell (weekly); failed-payment / dunning (daily) |
+| Referral and advocacy | referral-nudge (weekly); review-and-UGC-harvest (weekly); review-site-management (weekly); case-study-sourcing (monthly) |
+| Ongoing ops | weekly-marketing-review (weekly); experiment-backlog (weekly); analytics-anomaly (daily); brand-mention / reputation (daily); tracking-QA (weekly and on deploy); campaign-postmortem (on campaign end) |
+
 ## The Catalog
 
-`references/loop-catalog.md` holds the full library, 46 marketing loops with thorough funnel coverage: SEO, AI Search & Content, Paid, Earned/Social/Partnerships, Activation, Retention, Revenue, Referral & Advocacy, and Ongoing Ops. Each is a complete, adaptable spec. Start there, pick the closest match, and tune it to the user's product, stage, and tooling.
+`references/loop-catalog.md` holds the full library, 46 marketing loops with thorough funnel coverage: SEO, AI Search & Content, Paid, Earned/Social/Partnerships, Activation, Retention, Revenue, Referral & Advocacy, and Ongoing Ops. Each is a complete, adaptable spec. Choose from the Loop index above, read that one section, and tune it to the user's product, stage, and tooling.
 
 ## Authoring a new loop
 

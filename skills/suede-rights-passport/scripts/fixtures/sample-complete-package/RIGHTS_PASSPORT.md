@@ -2,7 +2,7 @@
 # Rights Passport
 
 Private draft: review and redact before publishing, committing, or sharing
-outside the intended Suede intake workflow.
+outside the intended Suede AI intake workflow.
 
 ## Work Summary
 
@@ -10,7 +10,7 @@ outside the intended Suede intake workflow.
 - Artist / creator: Ari Fontaine
 - Work type: song
 - Release status: unreleased
-- Package status: draft for Suede intake
+- Package status: draft for Suede AI intake
 
 ## Intake Readiness
 
@@ -54,6 +54,6 @@ outside the intended Suede intake workflow.
 | asset-006 | stem | stem | `assets/stems/Golden Hour Reprise - Instrumental Stem.wav` | `0a7505b8256ff3613f2c4baf35cd0e4153f4bbead269af01bbd6ab7e2264c94c` |
 | asset-007 | stem | stem | `assets/stems/Golden Hour Reprise - Vocals Stem.wav` | `b6eb13e6377dedc642b6ec3ce256a4b06387a19f7750a4b267861f960e930280` |
 
-## Suede Next Step
+## Suede AI Next Step
 
-Resolve the high-severity questions in `missing-info-report.md`, then route the package into Suede rights review and media optimization.
+Resolve the high-severity questions in `missing-info-report.md`, then route the package into Suede AI rights review and media optimization.

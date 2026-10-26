@@ -1,9 +1,10 @@
 # Meta Decision System (B2B)
 
-A quantified kill/keep/scale engine for Meta ads. Every threshold derives from one anchor number, so decisions become arithmetic instead of vibes. Pairs with the strategy-level Meta playbook in SKILL.md (creative-as-targeting, creative volume): this file is the *operating* layer.
+A quantified kill/keep/scale engine for Meta ads. Every threshold derives from one anchor number, so decisions become arithmetic instead of vibes. The strategy layer (creative-as-targeting, creative volume) opens this file; everything after it is the *operating* layer.
 
 ## Contents
 
+- Strategy layer: Meta in the Andromeda era
 - TCPL: the anchor variable
 - The ad-count ceiling
 - Two-campaign structure (Scaling / Testing)
@@ -18,6 +19,49 @@ A quantified kill/keep/scale engine for Meta ads. Every threshold derives from o
 - Lead forms and social amnesia
 - Advantage+ transition
 - Benchmarks and seasonality
+
+## Strategy layer: Meta in the Andromeda era
+
+**What is verified.** Andromeda is Meta's ad retrieval system. Meta Engineering
+described it on December 2, 2024: for each impression it narrows tens of
+millions of eligible ads to a few thousand candidates before the ranking models
+and the auction run. Meta's advertiser guidance in December 2025 called
+creative diversification a foundational practice: vary format, message, and
+persona instead of iterating on one concept. Everything else below is operating
+practice to test, not platform fact.
+
+**Operating practice that follows:**
+
+- **Creative does most of the targeting.** Start broad (country plus customer
+  exclusions) and let distinct creative find distinct buyers. Test it: duplicate
+  a winning interest-stacked ad set, remove the interests, run both for 7 days
+  on equal budget, and compare CPA on the optimization event.
+- **Distinct concepts beat near-duplicates.** Ten color swaps of one ad teach
+  the system one thing. Ten different angles, formats, and personas teach it ten.
+  Track concept count, not ad count.
+- **Make statics part of the mix.** Statics are cheap and fast, so they make
+  concept volume affordable. Test them against video on cost per qualified
+  result; do not assume either format wins.
+- **Identity-keyword variants.** Duplicate a winner and insert the buyer's
+  identity into the headline or first line ("leads per week" becomes "dental
+  leads per week", "law firm leads per week"). The word works on the reader and
+  gives the system a clearer signal. Use only identities the offer truly serves.
+- **AI-assisted segment rewrites.** Give a model the winning ad and ask it to
+  rewrite for one named segment while keeping voice, structure, and claims
+  identical. Review every variant for invented claims, then route the batch
+  through `suede-ad-creative` for the pre-delivery self-check.
+- **Rescue test for unspent variants.** Budget optimization often gives most
+  variants little or no spend. Move the few you have strong evidence for into a
+  separate ad set and give them a fair read before discarding them.
+- **Look native.** Study what performs organically in the niche on Instagram,
+  TikTok, and YouTube and match that look. A proven organic post run as a
+  partnership or boosted ad is often the cheapest test available.
+- **Attribution windows changed.** Since January 12, 2026 the Ads Insights API
+  no longer returns 7-day view and 28-day view windows. Available windows are
+  1-day click, 7-day click, 28-day click, 1-day engaged-view, and 1-day view.
+  Update dashboards and any report that compared view-through windows.
+
+The full kill, graduate, and scale rules follow below.
 
 ## TCPL: the anchor variable
 

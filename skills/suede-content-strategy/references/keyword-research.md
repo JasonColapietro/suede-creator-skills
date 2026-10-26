@@ -1,6 +1,7 @@
-# Lane 0: Evidence-Based Keyword Research
+# Evidence-Based Keyword Research
 
-Read this file only when keyword discovery is requested. Lane 0 produces a
+Read this file when keyword or topic discovery is requested, including
+discovery that `suede-seo-audit` routes here. It produces a keyword and content
 brief, not a grade.
 
 **Goal:** identify a defensible query theme and content gaps without inventing
@@ -70,8 +71,8 @@ search demand, ranking difficulty, or traffic potential.
 
 ## Content brief
 
-Generate this only when Lane 0 is active and a page is being built or
-substantially revised.
+Generate this only when keyword discovery is active and a page is being built
+or substantially revised.
 
 | Field | Guidance |
 |---|---|

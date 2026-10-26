@@ -17,7 +17,3 @@ One candidate has audience fit 5 but reciprocity 2. Report scored-and-dropped wi
 ## Validation
 
 Check the two 4+ thresholds before pursuing a candidate, cap the shortlist at five, and verify each commitment has an owner. Distinguish agreed promotion from a proposed pitch and use compatible denominators for shared results.
-
-## Coverage and routing
-
-Suede AI co-marketing discipline: partner fit scored on audience overlap and reciprocity, joint offers and campaign formats (content, webinars, integrations, community), operating roles, lead-sharing and consent terms, shared measurement, and joint content built to earn links and AI citations for both brands. Use when identifying potential partners or planning a specific joint campaign or cross-promotion. NOT FOR: affiliate or customer-referral programs (use suede-referrals), product-launch orchestration (use suede-launch-packaging), or partner-facing sales collateral (use suede-sales-enablement).

@@ -35,7 +35,7 @@ The plan's Section 11 makes this thesis explicit by:
 | `suede-analytics` | Set up tracking, GA4, conversion events | Funnel instrumentation |
 | `suede-free-tools` | Plan engineering-as-marketing free tools | Build tools that generate links + leads |
 | `suede-site-alchemy` | Design marketing sites with intention | Pillar/landing page design |
-| `suede-launch-packaging` | Plan and execute launches (Product Hunt, GA, feature launches) | GTM moments: strategy + tactical execution |
+| `suede-launch-packaging` | Package software, skill-pack, and MCP releases: release notes, README and docs, install commands verified from a clean directory | Software release moments only; product launch sequencing stays in the plan's 90-day roadmap, artist launches go to `suede-campaign-in-a-box` |
 
 ### Activation skills
 

@@ -223,3 +223,46 @@ Visuals unassessed (screenshots not supplied, 25% of weight).
 ```
 
 With all six assessed (Visuals 8), the same inputs give 7.3 → 73/100 → B.
+
+---
+
+## Flag checklist
+
+Flag these if found. Items marked _(tier-dependent)_ should be evaluated against
+the app's brand maturity tier: they may be deliberate choices for Dominant apps.
+
+Every flag carries an **author action**, so the reader knows what to do with it:
+
+| Action | Meaning |
+|---|---|
+| **Blocks the listing** | Risks rejection, removal, or ranking suppression. Fix before the next submission. |
+| **Required** | Costs measurable installs or conversion. Fix in the next release cycle. |
+| **Optional** | Upside, not a defect. Ship if capacity allows. |
+
+**Always flag (all tiers):**
+
+- [ ] Rating below 4.0: **required**
+- [ ] Last update > 3 months ago: **required**
+- [ ] Google Play description never names the core use-case terms in natural language, or stuffs them as keyword lists: **required**
+- [ ] Google Play missing feature graphic: **blocks the listing** (no featured placement without it)
+- [ ] Apple keyword field likely has repeated words (inferred from title+subtitle): **required**
+- [ ] Category mismatch (app would face less competition in a different category): **required**
+- [ ] Fewer than 5 screenshots: **required**
+
+**Flag for Challenger/Established only** _(not mistakes for Dominant apps):_
+
+- [ ] Title wastes characters on brand name only (no keywords): **required** _(Dominant: brand IS the keyword)_
+- [ ] Subtitle/short description duplicates title keywords: **required**
+- [ ] Description first 3 lines are generic: **required** _(Dominant: may be brand-voice choice)_
+- [ ] No preview video: **optional** _(Dominant: may be rational if product is hard to demo)_
+- [ ] Screenshots are just UI dumps with no messaging/captions: **required** _(Dominant: lifestyle/brand shots may convert better)_
+- [ ] Only 1-2 localizations: **optional** _(score relative to actual market, not absolute count)_
+- [ ] No in-app events or promotional content: **optional** _(Dominant utility apps may not need discovery help)_
+
+**Flag for all tiers but note context:**
+
+- [ ] No developer responses to negative reviews: **required** _(note volume: responding at 10M+ reviews is a different challenge than at 1K)_
+- [ ] Generic "What's New" text: **optional** _(Apple 2.3.12 makes it **blocks the listing** when the release carries significant changes)_
+
+Prohibited title metadata (emojis, ALL CAPS, "best"/"#1"/"free", CTAs on Google
+Play) is always **blocks the listing**: see `references/google-play-specs.md`.

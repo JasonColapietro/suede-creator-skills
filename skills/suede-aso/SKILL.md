@@ -1,6 +1,6 @@
 ---
 name: suede-aso
-description: "Suede AI App Store Optimization Skills. Use when asked to \"improve our App Store listing\" or prepare prelaunch keyword, title, subtitle, description and screenshot fields from app and console evidence. NOT FOR: app builds (android-app-factory or site-to-ios-app), release rollout (suede-play-release), paid assets (suede-ad-creative), or install instrumentation (suede-analytics)."
+description: "Suede AI App Store Optimization (ASO) Skills for Apple App Store and Google Play. Use when asked to \"improve our App Store or Google Play listing\", \"optimize our Play Store listing\", or \"do ASO for our app\", or to prepare prelaunch keyword, title, subtitle, short description, description and screenshot fields from app and console evidence. NOT FOR: app builds (android-app-factory or site-to-ios-app), release rollout (suede-play-release), paid assets (suede-ad-creative), or install instrumentation (suede-analytics)."
 metadata:
   display-name: "Suede AI App Store Optimization Skills"
   version: 2.0.0
@@ -40,45 +40,9 @@ If the user gives an app name instead of a URL, search the web for:
 
 Use WebFetch to retrieve the listing page. Extract every available field:
 
-**Apple App Store fields:**
-
-- App name (title): 30 char limit
-- Subtitle: 30 char limit
-- Description (long): not indexed for search, but matters for conversion
-- Promotional text: 170 chars, updatable without new release
-- Category (primary + secondary)
-- Screenshots (count, order, caption text)
-- Preview video (presence, duration)
-- Rating (average + count)
-- Recent reviews (visible ones)
-- Price / in-app purchases
-- Developer name
-- Last updated date
-- Version history notes
-- Age rating
-- Size
-- Languages / localizations listed
-- In-app events (if any visible)
-
-**Google Play fields:**
-
-- App name (title): 30 char limit
-- Short description: 80 char limit
-- Full description: 4,000 char limit, IS indexed for search
-- Category + tags
-- Feature graphic (presence)
-- Screenshots (count, order)
-- Preview video (presence)
-- Rating (average + count)
-- Recent reviews (visible ones)
-- Price / in-app purchases
-- Developer name
-- Last updated date
-- What's new text
-- Downloads range
-- Content rating
-- Data safety section
-- Languages listed
+The field list for each store is under "Fields to extract" at the top of
+`references/apple-specs.md` and `references/google-play-specs.md`. Read the one
+for the store being audited before fetching.
 
 If WebFetch returns incomplete data (stores render client-side), note gaps and
 work with what's available. Ask the user to paste missing fields if critical.
@@ -268,10 +232,17 @@ in screenshots, the description body, and promo text.
    plausibly search it, competitors exist but are not all dominant incumbents,
    recent apps show the niche is alive, the app satisfies the searcher's job
    directly, and the term is not a competitor trademark.
-2. Write name, subtitle, and keyword field inside the hard App Store limits
-   below. Do not repeat a word across the three fields, use no spaces after
-   commas in the keyword field, keep one of singular or plural, and front-load
-   the highest-value terms.
+2. Write the text fields for each store the app ships to. Take every character
+   limit from the dated spec file for that store, never from memory.
+   - **Apple App Store** (`references/apple-specs.md`): app name, subtitle,
+     keyword field, and promotional text. Do not repeat a word across name,
+     subtitle, and keyword field, use no spaces after commas in the keyword
+     field, keep one of singular or plural, and front-load the highest-value
+     terms.
+   - **Google Play** (`references/google-play-specs.md`): title (30), short
+     description (80), and full description (4,000). Play has no keyword
+     field, and the full description is indexed, so use the core terms in
+     natural sentences and never as keyword lists.
 3. Plan screenshots outcome first: screenshot 1 sells the result, screenshot 2
    sells the differentiator, captions use the searcher's words.
 4. Run every claim through a feature-truth check. Never advertise a feature the
@@ -279,70 +250,33 @@ in screenshots, the description body, and promo text.
 5. Set a 2 to 4 week measurement plan for rankings, impressions, product page
    conversion, and promo text or caption rotation.
 
-Hard limits (confirm against the dated Apple reference file before shipping):
-app name 30 characters, subtitle 30, keyword field 100 (comma-separated),
-promotional text 170.
-
 Output artifacts:
 
 - `aso/keywords.md` and `aso/aso-doc.md`
-- `fastlane/metadata/<locale>/name.txt`, `subtitle.txt`, `keywords.txt`,
-  `description.txt`, and `promotional_text.txt`
-- a screenshot title plan and the ordered screenshot asset list
+- Apple: `fastlane/metadata/<locale>/name.txt`, `subtitle.txt`,
+  `keywords.txt`, `description.txt`, and `promotional_text.txt`
+- Google Play: `fastlane/metadata/android/<locale>/title.txt`,
+  `short_description.txt`, and `full_description.txt`
+- a screenshot title plan and the ordered screenshot asset list, per store
+
+Play listing files ship through `suede-play-release`'s listing lane, separately
+from the build upload (its Boundary 4).
 
 ---
 
 ## Common Issues Checklist
 
-Flag these if found. Items marked _(tier-dependent)_ should be evaluated against
-the app's brand maturity tier: they may be deliberate choices for Dominant apps.
-
-Every flag carries an **author action**, so the reader knows what to do with it:
-
-| Action | Meaning |
-|---|---|
-| **Blocks the listing** | Risks rejection, removal, or ranking suppression. Fix before the next submission. |
-| **Required** | Costs measurable installs or conversion. Fix in the next release cycle. |
-| **Optional** | Upside, not a defect. Ship if capacity allows. |
-
-**Always flag (all tiers):**
-
-- [ ] Rating below 4.0: **required**
-- [ ] Last update > 3 months ago: **required**
-- [ ] Google Play description never names the core use-case terms in natural language, or stuffs them as keyword lists: **required**
-- [ ] Google Play missing feature graphic: **blocks the listing** (no featured placement without it)
-- [ ] Apple keyword field likely has repeated words (inferred from title+subtitle): **required**
-- [ ] Category mismatch (app would face less competition in a different category): **required**
-- [ ] Fewer than 5 screenshots: **required**
-
-**Flag for Challenger/Established only** _(not mistakes for Dominant apps):_
-
-- [ ] Title wastes characters on brand name only (no keywords): **required** _(Dominant: brand IS the keyword)_
-- [ ] Subtitle/short description duplicates title keywords: **required**
-- [ ] Description first 3 lines are generic: **required** _(Dominant: may be brand-voice choice)_
-- [ ] No preview video: **optional** _(Dominant: may be rational if product is hard to demo)_
-- [ ] Screenshots are just UI dumps with no messaging/captions: **required** _(Dominant: lifestyle/brand shots may convert better)_
-- [ ] Only 1-2 localizations: **optional** _(score relative to actual market, not absolute count)_
-- [ ] No in-app events or promotional content: **optional** _(Dominant utility apps may not need discovery help)_
-
-**Flag for all tiers but note context:**
-
-- [ ] No developer responses to negative reviews: **required** _(note volume: responding at 10M+ reviews is a different challenge than at 1K)_
-- [ ] Generic "What's New" text: **optional** _(Apple 2.3.12 makes it **blocks the listing** when the release carries significant changes)_
-
-Prohibited title metadata (emojis, ALL CAPS, "best"/"#1"/"free", CTAs on Google
-Play) is always **blocks the listing**: see `references/google-play-specs.md`.
+The tiered flag checklist, with an author action on every flag (blocks the
+listing, required, optional), is under "Flag checklist" in
+`references/scoring-criteria.md`. Read it while writing Detailed findings.
 
 ---
 
 ## Task-Specific Questions
 
-1. What is the App Store or Google Play URL?
-2. Is this your app or a competitor's?
-3. What category does the app compete in?
-4. Do you have competitor URLs to compare against?
-5. Are you focused on search visibility, conversion rate, or both?
-6. Do you have access to App Store Connect or Google Play Console data?
+Ask only for what you cannot fetch: the listing URL if none was given, and
+console exports if conversion is in scope. Infer store, category, and
+competitors from the listing.
 
 ---
 
@@ -359,5 +293,5 @@ Play) is always **blocks the listing**: see `references/google-play-specs.md`.
 - Need install attribution or in-app events -> use `suede-analytics`.
 - Need customer language for listing copy -> use `suede-customer-research`.
 - Need an iOS or Android product build -> use `site-to-ios-app` or `android-app-factory`; native iOS from scratch is a private Suede AI companion, not in this pack: ios-app-factory.
-- Need App Store metadata authored for an app that has not shipped yet -> stay in `suede-aso` and run Pre-Launch Metadata Mode.
+- Need App Store or Google Play metadata authored for an app that has not shipped yet -> stay in `suede-aso` and run Pre-Launch Metadata Mode.
 - From those skills, route listing audits, metadata strategy, and screenshot sequencing back to `suede-aso`.

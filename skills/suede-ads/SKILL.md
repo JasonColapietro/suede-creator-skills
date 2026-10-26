@@ -61,8 +61,9 @@ This skill's depth lives in references: load by intent. For **any operational de
 | LinkedIn operations: bidding, audience sizing, scaling, benchmarks, TLAs, formats | [linkedin-b2b-playbook.md](references/linkedin-b2b-playbook.md) | Bidding progression, penetration scaling, sizing rules, funnel benchmarks, document/conversation ads, audit shortlist |
 | Google Search: what to spend on first, structure, match types, negatives, PMax | [google-search-playbook.md](references/google-search-playbook.md) | Intent ladder, account structure, match-type gates, negatives, bidding by volume, offline conversions, PMax guardrails |
 | Named-account targeting, pipeline acceleration, cross-channel retargeting | [abm-playbook.md](references/abm-playbook.md) | LinkedIn/Meta ABM, list mechanics, acceleration campaigns, UTM cross-channel remarketing, ABM measurement |
-| Generating Google RSAs | [rsa-output-spec.md](references/rsa-output-spec.md) | Mandatory output spec: limits, sidecars, template, self-check |
-| Audience setup, tracking setup, launch checklists, copy formulas | [audience-targeting.md](references/audience-targeting.md) · [conversion-tracking.md](references/conversion-tracking.md) · [platform-setup-checklists.md](references/platform-setup-checklists.md) · [ad-copy-templates.md](references/ad-copy-templates.md) | Existing foundations |
+| Generating Google RSAs | Route to `suede-ad-creative` | It owns the RSA output spec (limits, sidecars, template, self-check) |
+| Audience setup, per-platform creative-vs-targeting split, launch checklists | [audience-targeting.md](references/audience-targeting.md) · [platform-setup-checklists.md](references/platform-setup-checklists.md) | Existing foundations |
+| Pixels, CAPI, server-side conversion events | Route to `suede-analytics` | It owns ad-platform conversion setup and firing proof |
 
 ---
 
@@ -119,10 +120,9 @@ LI_LeadGen_CMOs-SaaS_Whitepaper_[MMMYY]
 
 ## Ad Copy
 
-Copy formulas, angle libraries, and character limits belong to
-`suede-ad-creative`. This skill decides which campaign, audience, and offer the
-copy serves. Quick structures for a brief live in
-[references/ad-copy-templates.md](references/ad-copy-templates.md).
+Copy formulas, angle libraries, creative best practices, and character limits
+belong to `suede-ad-creative`. This skill decides which campaign, audience, and
+offer the copy serves; route creative production there.
 
 ---
 
@@ -134,25 +134,14 @@ What has changed is **where you apply that knowledge.** As ad-platform algorithm
 
 The discipline now: **audience knowledge → creative first, targeting filters second.** How much that ratio tips toward "creative" varies meaningfully by platform.
 
-### Platform-by-platform: where to apply audience knowledge
-
-| Platform | Audience knowledge → creative | Audience knowledge → targeting filters | Notes |
-|----------|------------------------------|-------------------------------------|-------|
-| **Meta** | **80%+** | 20% | Broad audiences plus distinct creative usually beat interest stacking. See "Meta in the Andromeda era" below. |
-| **Google Search** | 40% | **60%** | Keywords are still the dominant signal: match-types, search-intent layering, and negative keywords still drive performance. Creative (RSA headlines) matters but is downstream of the keyword. |
-| **Google Performance Max / Demand Gen** | **70%** | 30% | Audience signals are advisory, not deterministic. Creative + product feed quality dominate. |
-| **LinkedIn** | 40% | **60%** | Job-title / company / industry filters still produce real precision because LinkedIn's identity data is high-quality. Creative makes the click; firmographics make the *right person* see it. |
-| **TikTok** | **70%** | 30% | Algorithm is closer to Meta's model: broad targeting + native-feeling creative wins. Some audience interests help but creative dominates. |
-| **Twitter/X** | 50% | 50% | Interest + follower targeting still meaningful, but creative differentiation is high-leverage given lower competition. |
-
-These ratios are directional, not precise. Test in your actual account.
+The per-platform split (how much audience knowledge goes into creative versus targeting filters on Meta, Google Search, PMax, LinkedIn, TikTok and X) lives in [references/audience-targeting.md](references/audience-targeting.md). Load it before recommending a targeting setup.
 
 For how each identifier becomes a headline, hook, or angle, use `suede-ad-creative`: it owns the angle-to-copy mapping.
 
 ### Key Concepts (still apply)
 
 - **Lookalikes**: Base on best customers (by LTV), not all customers. Still high-value across platforms.
-- **Retargeting**: Segment by funnel stage (visitors vs. cart abandoners). See "Retarget with a different offer" and "The four-ad retargeting layer" below.
+- **Retargeting**: Segment by funnel stage (visitors vs. cart abandoners). See "Retarget with a different offer" and "The four-ad retargeting layer" in [references/optimization-and-retargeting.md](references/optimization-and-retargeting.md).
 - **Exclusions**: Exclude existing customers and recent converters: showing ads to people who already bought wastes spend.
 
 **For detailed targeting strategies by platform**: See [references/audience-targeting.md](references/audience-targeting.md)
@@ -161,95 +150,19 @@ For how each identifier becomes a headline, hook, or angle, use `suede-ad-creati
 
 ## Meta in the Andromeda era
 
-**What is verified.** Andromeda is Meta's ad retrieval system. Meta Engineering
-described it on December 2, 2024: for each impression it narrows tens of
-millions of eligible ads to a few thousand candidates before the ranking models
-and the auction run. Meta's advertiser guidance in December 2025 called
-creative diversification a foundational practice: vary format, message, and
-persona instead of iterating on one concept. Everything else below is operating
-practice to test, not platform fact.
-
-**Operating practice that follows:**
-
-- **Creative does most of the targeting.** Start broad (country plus customer
-  exclusions) and let distinct creative find distinct buyers. Test it: duplicate
-  a winning interest-stacked ad set, remove the interests, run both for 7 days
-  on equal budget, and compare CPA on the optimization event.
-- **Distinct concepts beat near-duplicates.** Ten color swaps of one ad teach
-  the system one thing. Ten different angles, formats, and personas teach it ten.
-  Track concept count, not ad count.
-- **Make statics part of the mix.** Statics are cheap and fast, so they make
-  concept volume affordable. Test them against video on cost per qualified
-  result; do not assume either format wins.
-- **Identity-keyword variants.** Duplicate a winner and insert the buyer's
-  identity into the headline or first line ("leads per week" becomes "dental
-  leads per week", "law firm leads per week"). The word works on the reader and
-  gives the system a clearer signal. Use only identities the offer truly serves.
-- **AI-assisted segment rewrites.** Give a model the winning ad and ask it to
-  rewrite for one named segment while keeping voice, structure, and claims
-  identical. Review every variant for invented claims, then route the batch
-  through `suede-ad-creative` for the pre-delivery self-check.
-- **Rescue test for unspent variants.** Budget optimization often gives most
-  variants little or no spend. Move the few you have strong evidence for into a
-  separate ad set and give them a fair read before discarding them.
-- **Look native.** Study what performs organically in the niche on Instagram,
-  TikTok, and YouTube and match that look. A proven organic post run as a
-  partnership or boosted ad is often the cheapest test available.
-- **Attribution windows changed.** Since January 12, 2026 the Ads Insights API
-  no longer returns 7-day view and 28-day view windows. Available windows are
-  1-day click, 7-day click, 28-day click, 1-day engaged-view, and 1-day view.
-  Update dashboards and any report that compared view-through windows.
-
-The full kill, graduate, and scale rules live in
-[meta-decision-system.md](references/meta-decision-system.md).
-
-## Creative Best Practices
-
-### Image Ads
-- Clear product screenshots showing UI
-- Before/after comparisons
-- Stats and numbers as focal point
-- Human faces (real, not stock)
-- Short, legible text overlay. Meta retired its 20% text rule in 2020, but
-  text-heavy images can still deliver worse; test a lighter version
-
-### Video Ads Structure (15-30 sec)
-1. Hook (0-3 sec): Pattern interrupt, question, or bold statement
-2. Problem (3-8 sec): Relatable pain point
-3. Solution (8-20 sec): Show product/benefit
-4. CTA (20-30 sec): Clear next step
-
-**Production tips:**
-- Captions by default: much feed video plays muted, and captions help
-  comprehension either way
-- Vertical for Stories/Reels, square for feed
-- Native feel outperforms polished
-- First 3 seconds determine if they watch
-
-### Creative Testing Hierarchy
-1. Concept/angle (biggest impact)
-2. Hook/headline
-3. Visual style
-4. Body copy
-5. CTA
-
----
+**Verified facts.** Andromeda is Meta's ad retrieval system (Meta Engineering,
+December 2, 2024). Since January 12, 2026 the Ads Insights API no longer returns
+7-day view and 28-day view attribution windows. Before any Meta strategy call,
+load the strategy layer at the top of [meta-decision-system.md](references/meta-decision-system.md).
 
 ## Campaign Optimization
 
 Read [optimization and retargeting](references/optimization-and-retargeting.md) before proposing budget, bid, audience or retargeting changes. It contains the existing metric, bid progression and funnel-window rules.
 
-## Landing Page Alignment (the headline-mirror trick)
+## Landing Page Alignment
 
-The ad platform tests headlines against far more people than ever reach the landing page, so it resolves a winning headline much faster than on-page testing does. Use it that way:
-
-1. Run **20-40 different headlines** as ad variations
-2. Pick the winner by CTR **and** downstream conversion, not CTR alone
-3. **Mirror the winning headline verbatim** in the landing page H1, sub-headline, and lead-in copy
-4. Measure the landing-page conversion rate before and after with `suede-ab-testing`; message match usually helps, but the size of the lift is the account's to prove
-
-Keep at least 3 split tests running somewhere in the funnel (creative, page, offer, or post-conversion flow) at any given time.
-
+Headline-mirror testing (run ad headlines, mirror the winner in the page H1) lives in
+[optimization-and-retargeting.md](references/optimization-and-retargeting.md).
 Post-click page work itself belongs to `suede-site-alchemy`.
 
 ---
@@ -272,31 +185,11 @@ Post-click page work itself belongs to `suede-site-alchemy`.
 - Judge on blended CAC and pipeline, not platform CPA alone; route model and
   reconciliation work to `suede-attribution`
 
-### Scaling discipline (net cash > ROAS percentage)
+### Scaling discipline
 
-The most common scaling failure: a business at a 40 ROAS spending $5k/month, refusing to scale because "if I spend more, my ROAS will drop." This is the wrong frame.
-
-**Net cash flow > ROAS percentage at the business level:**
-- ROAS dropping from 10 → 5 sounds bad
-- But if spend goes from $10k → $100k, you net dramatically more total profit
-- The number to optimize is **blended ROAS at the business level**, not per-ad-set ROAS
-- Even better: optimize **net free cash flow**, not ROAS at all
-
-**Find your break-even ROAS:**
-1. Calculate the absolute maximum you can pay to acquire a customer and still be profitable (factoring LTV)
-2. That's your break-even ROAS / CPA ceiling
-3. **Scale until you approach that ceiling**, not until your ad-account ROAS drops below an arbitrary preference
-
-**The monthly owner review:**
-- Block about 3 hours a month for the budget owner to read the raw numbers
-  directly, not a summary from the analyst or media buyer
-- First-hand familiarity with the data is what makes fast scale decisions safe
-
-**Outbound-call your leads who didn't convert:**
-- Every lead that downloaded a lead magnet or hit your funnel but didn't buy gets a call
-- Ask why they didn't book, what was confusing, what the actual blocker was
-- These verbatim answers become objection-handling ads (see Retargeting section)
-- Massive insight-to-creative loop that most advertisers skip
+Before arguing that ROAS will drop with more spend, read "Scaling discipline" in
+[optimization-and-retargeting.md](references/optimization-and-retargeting.md):
+optimize blended net cash against the break-even CPA ceiling, not per-ad-set ROAS.
 
 ---
 
@@ -306,7 +199,7 @@ Before launching campaigns, ensure proper tracking and account setup.
 
 **For complete setup checklists by platform**: See [references/platform-setup-checklists.md](references/platform-setup-checklists.md)
 
-**For conversion pixel installation and event setup**: See [references/conversion-tracking.md](references/conversion-tracking.md)
+**For conversion pixel, CAPI, and server-side event setup**: route to `suede-analytics` (its ad-platform conversions reference).
 
 ### Universal Pre-Launch Checklist
 
@@ -320,12 +213,6 @@ Each box names the artifact that proves it. A box is checked when the artifact e
 - [ ] Targeting matches intended audience: the saved audience definition, read back
 
 Any unchecked box means do not recommend launch. Name the box and what is missing.
-
----
-
-## Google RSA Output Spec (mandatory when generating RSAs)
-
-When the user requests Google Ads RSAs, load [references/rsa-output-spec.md](references/rsa-output-spec.md) and follow it exactly: hard character limits, required sidecar artifacts (ad groups, negatives, sitelinks, callouts), output order, template shape, regulated-vertical compliance, and the pre-send self-check. Do not output any RSA that violates it.
 
 ---
 
@@ -351,9 +238,8 @@ official documentation and the selected account before any mutation.
 | Professional-network ads | Reach role or account segments | Targeting availability, minimum audience, lead form and CRM mapping |
 | Short-video ads | Visual discovery and creator-style demand | Placement specs, audio rights, age and regional policy |
 
-For the measurement contract, use
-[references/conversion-tracking.md](references/conversion-tracking.md) and
-route implementation and firing checks to `suede-analytics`.
+For the measurement contract, pixel and CAPI setup, and firing checks, route
+to `suede-analytics`.
 
 ---
 
@@ -368,8 +254,8 @@ route implementation and firing checks to `suede-analytics`.
 
 ## Routing
 
-- Need ad copy or visual variants -> use `suede-ad-creative`.
-- Need conversion tracking implementation -> use `suede-analytics`; attribution
+- Need ad copy, visual variants, or Google RSAs -> use `suede-ad-creative` (it owns the RSA output spec).
+- Need conversion tracking, pixels, or CAPI implementation -> use `suede-analytics`; attribution
   models and cross-platform reconciliation -> use `suede-attribution`.
 - Need post-click conversion work -> use `suede-site-alchemy`.
 - Need CRM handoff or offline conversion design -> use `suede-revops`.

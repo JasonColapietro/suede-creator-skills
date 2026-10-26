@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "urn:suede:rights-passport:suede-intake:0.2.0",
-  "title": "Suede Rights Passport Intake Manifest",
-  "description": "Structural schema for a Suede rights package. Validation is not rights clearance, registration, DDEX conformance, or C2PA verification.",
+  "title": "Suede AI Rights Passport Intake Manifest",
+  "description": "Structural schema for a Suede AI rights package. Validation is not rights clearance, registration, DDEX conformance, or C2PA verification.",
   "type": "object",
   "additionalProperties": false,
   "required": [

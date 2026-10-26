@@ -7,6 +7,25 @@ and skill-text tools; they do not execute this CLI. Copy or install the full
 skill folder to run it. npm and Python distributions bundle the same supporting
 files; Python users still need Node to execute the SEO CLI.
 
+## Tool behavior by audit lane
+
+- Lane 1: validate HTML hreflang codes, self annotations, duplicate/conflicting
+  destinations, inspected reciprocal links, canonical and HTML noindex conflicts.
+  Uncollected alternates stay **unmeasured**, never broken by assumption.
+- Lane 3: audit img source fallbacks, missing/empty alt, intrinsic dimensions,
+  width-based srcset/sizes, and lazy/high-priority conflicts. Empty alt needs human
+  decorative-purpose review; asset bytes, rendering and CWV remain unmeasured.
+- Lane 3: every audit saves a new metadata snapshot. Drift compares fields and
+  exact URL identities. Supplied inventories are partial: omitted URLs are
+  **not-observed**, never proof of deletion or a live 404.
+- Lane 5: `--merchant` explicitly enables a Product/Offer merchant profile,
+  including local graph references, active prices/currency, availability,
+  supplied identifiers and variant relationships. Never invent prices, ratings,
+  shipping or return policies. This is source review, not eligibility certification.
+- Lane 9 (and keyword clustering for `suede-content-strategy`): cluster supplied organic-result exports by same-depth document URL
+  overlap. Require collection context; deterministic complete-link grouping avoids
+  transitive chains. Demand and current rankings stay unknown.
+
 ## Supplied HTML inventory
 
 `audit --input pages.json --out reports/NEW_NAME [--merchant]` takes JSON:

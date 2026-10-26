@@ -1,6 +1,6 @@
 ---
 name: suede-code
-description: "Use when explicitly asked \"review this PR\" or to grade a diff, branch, or commit range. Suede AI returns evidence-backed P0-P3 findings, fix paths and an A-F ship grade; supports findings-only, grade-only and fix modes, seven review lanes, security checks, deploy safety and commit dirt. NOT FOR: automatic CI enforcement (use suede-ci-gate), agent evaluations (use suede-ai-eval), implementation-plan search (use suede-graph-flo-xr), or parallel fix coordination (use suede-agent-teams)."
+description: "Suede AI Code Skills: code review and ship grading on request. Use when explicitly asked \"review this PR\" or to grade a diff, branch, or commit range. Returns evidence-backed P0-P3 findings, fix paths and an A-F ship grade; supports findings-only, grade-only and fix modes, seven review lanes, security checks, deploy safety and commit dirt. NOT FOR: automatic CI enforcement (use suede-ci-gate), agent evaluations (use suede-ai-eval), implementation-plan search (use suede-graph-flo-xr), or parallel fix coordination (use suede-agent-teams)."
 metadata:
   display-name: "Suede AI Code Skills"
 ---
@@ -51,7 +51,7 @@ Other modes that combine with any of the above:
   each original finding is gone.
 - **Release review:** add build, secrets, env, public copy, screenshots,
   metadata, and live or API readback.
-- **`--fix`:** apply fixes (see Fix Mode).
+- **`--fix`:** apply fixes (see Fix mode and `references/fix-mode.md`).
 - **`--threat-verify`:** confirm declared threat-model mitigations exist.
   Procedure in `references/threat-verify.md`; read it only in this mode.
 
@@ -109,12 +109,8 @@ Do not hand-review what a tool already decides. Detect what the repo ships
 (`package.json` scripts, config files, lockfiles) and run only that. Never add
 a tool the repo does not use. Never report a result you did not run.
 
-| Stack | Type check | Lint | Test | Other |
-|---|---|---|---|---|
-| Web / Node | `npx tsc --noEmit` | `npm run lint` (changed files) | `npm test` | `npm audit` when deps changed |
-| MCP server (Node) | `node --check <server>.mjs` | configured linter | repo MCP tests | One stdio session: `initialize`, `notifications/initialized`, then list/call/read/get |
-| iOS / Swift | the build is the check | SwiftLint if configured | XCTest target | `xcodebuild -scheme X -destination 'platform=iOS Simulator,name=<device>' build` |
-| API / backend | compile step if any | configured linter | contract or schema tests | OpenAPI validation against the live route |
+The per-stack command table (Web/Node, MCP server, iOS/Swift, API/backend) is in
+`references/repo-gates.md`; read it once you know the repo's stack.
 
 Severity mapping: a type error on a changed line is P2 (P1 on a critical
 path); a failing test on changed behavior is P1; a test that silently stopped
@@ -187,21 +183,8 @@ without logging count, duration, or failure reason.
 
 ## Step 4: Deep pass (`--deep` only)
 
-- **Reverse dependencies:** find every caller of a changed function, type,
-  route, or constant across the repo. Name the call sites you checked.
-- **Shared assumptions:** for a changed schema, env var, default, or
-  invariant, find other places that assume the old value.
-- **History:** `git log -L` or `git blame` the touched lines. A change that
-  reintroduces a previously fixed shape is a regression; cite the prior commit.
-- **Sibling pattern:** compare to the nearest analog (other handlers, other
-  migrations). A lone handler skipping the shared auth wrapper is P1 even if
-  it works.
-- **Critic lanes** for auth, payments, migrations, or public APIs: a change
-  mapper, runtime critic, security critic, product critic, and test critic,
-  each reporting separately. Collect consensus. If a high-severity concern
-  survives a fix cycle, keep `hold` and name the smallest next check.
-
-A whole-repo claim with no named symbols is not evidence.
+Read `references/deep-pass.md` only for `--deep`: reverse dependencies,
+shared assumptions, history, sibling pattern, and critic lanes.
 
 ## Step 5: Intent and scope
 
@@ -249,8 +232,8 @@ diff before reporting. If it cannot run, check every added line by hand.
 
 Seven categories: secrets and credentials; debug artifacts; conflict markers;
 staged build output (`node_modules/`, `.next/`, `dist/`, `.DS_Store`, logs);
-WIP breadcrumbs (`DO NOT MERGE`, `TEMP:`, lorem ipsum); oversized or binary
-blobs over 500 KB; exposed internals (internal hosts, staging URLs, personal
+WIP breadcrumbs (`DO NOT MERGE`, `TEMP:`, lorem ipsum); blobs over 500 KB
+(dirty) or smaller binaries (suspicious); exposed internals (internal hosts, staging URLs, personal
 emails). Rate each `clean | suspicious | dirty`. Overall **DIRTY** is a P0
 finding and moves the gate to `hold`. **SUSPICIOUS** is named for the reviewer
 to confirm.
@@ -297,15 +280,8 @@ a human reviewer's comment.
 
 ## Fix mode (`--fix` or an explicit request)
 
-1. Auto-apply local P2 and P3 fixes (single file, no contract change), one
-   commit per finding ID.
-2. Present P0 and P1 as fix briefs first: failing behavior and evidence, files
-   to open, expected change, acceptance criteria, verification command, WIP to
-   preserve. Never auto-apply to auth, payment, or migration code without
-   explicit confirmation.
-3. Re-run the relevant mode on changed files and mark each finding resolved or
-   escalated.
-4. Stop after 3 cycles on the same finding and escalate it as a design issue.
+Read `references/fix-mode.md` only for `--fix`. P0 and P1 go out as fix briefs
+first; auth, payment, and migration fixes wait for explicit confirmation.
 
 ## Suede AI-specific checks
 

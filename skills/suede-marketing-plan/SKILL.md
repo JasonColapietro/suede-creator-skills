@@ -171,4 +171,4 @@ Schema for `progress.md` and the resume decision tree: `references/methodology.m
 - `suede-offers` for offer design and for the behavioral mechanism behind an Activation or Revenue move.
 - `suede-onboarding`, `suede-emails`, `suede-referrals`, or `suede-pricing` (including Paywall mode) for lifecycle and revenue execution.
 - `suede-ai-seo`, `suede-seo-audit`, `suede-programmatic-seo`, `suede-competitors`, `suede-ads`, or `suede-ad-creative` for acquisition execution.
-- `suede-launch-packaging` for the launch moment.
+- `suede-launch-packaging` only when the launch ships software, a skill pack, or an MCP server (release notes, install path). Product or service launch moments stay in this plan (Section 9, the 90-day roadmap); artist or release launches go to `suede-campaign-in-a-box`.

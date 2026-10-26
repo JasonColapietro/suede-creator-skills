@@ -4,6 +4,29 @@ Character limits and metadata policy re-checked on 2026-10-23 against Google's
 "Best practice for your store listing" page; asset specs compiled in March 2026.
 Confirm slot counts and dimensions in Play Console before producing assets.
 
+## Fields to extract
+
+When auditing a live Google Play listing, extract every field below. Limits and
+indexing are in the Character Limits table that follows.
+
+- App name (title)
+- Short description
+- Full description
+- Category + tags
+- Feature graphic (presence)
+- Screenshots (count, order)
+- Preview video (presence)
+- Rating (average + count)
+- Recent reviews (visible ones)
+- Price / in-app purchases
+- Developer name
+- Last updated date
+- What's new text
+- Downloads range
+- Content rating
+- Data safety section
+- Languages listed
+
 ## Character Limits
 
 | Field             | Limit       | Indexed?               | Notes                                 |

@@ -19,7 +19,7 @@ Synthetic test fixture created for validate_transfer_package.py testing. Track i
 
 | Date | Event | Actor | Evidence |
 | --- | --- | --- | --- |
-| 2026-07-03 | Source folder inventoried for Suede transfer package. | suede-rights-passport | local file hashes |
+| 2026-07-03 | Source folder inventoried for Suede AI transfer package. | suede-rights-passport | local file hashes |
 
 ## File Hashes
 
@@ -33,5 +33,5 @@ Synthetic test fixture created for validate_transfer_package.py testing. Track i
 ## Registry Notes
 
 - Registry status: ready-for-review
-- Asset hash selected for registry: needs Suede review
+- Asset hash selected for registry: needs Suede AI review
 - Notes: do not treat hash inventory as legal rights clearance.

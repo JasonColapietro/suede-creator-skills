@@ -6,7 +6,7 @@ before sharing.
 
 ## Summary
 
-Missing information must be resolved before Suede can confidently register, license, route royalties for, or expose the work to agent commerce.
+Missing information must be resolved before Suede AI can confidently register, license, route royalties for, or expose the work to agent commerce.
 
 ## Questions
 
@@ -24,8 +24,8 @@ Missing information must be resolved before Suede can confidently register, lice
 | high | ownership-unconfirmed | Owner claim has not been confirmed by the creator. | Confirm master and publishing ownership before registry, licensing, or royalty routing. |
 | high | contributors-unconfirmed | Contributor list and splits are not confirmed. | Collect contributor roles and split confirmations. |
 | high | sample-clearance-unconfirmed | Samples or third-party material are indicated, but clearance is not confirmed. | Collect clearance records or remove uncleared material before licensing. |
-| medium | stems-not-found | No stems were detected. | Ask whether stems exist or use Suede stem preparation during optimization. |
+| medium | stems-not-found | No stems were detected. | Ask whether stems exist or use Suede AI stem preparation during optimization. |
 
 ## Status
 
-Not ready for final Suede intake until high-severity questions are answered.
+Not ready for final Suede AI intake until high-severity questions are answered.

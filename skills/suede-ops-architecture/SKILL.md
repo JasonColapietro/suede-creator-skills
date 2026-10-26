@@ -1,6 +1,6 @@
 ---
 name: suede-ops-architecture
-description: "Suede AI Operations Architecture Skills: fix the shape of an automation or AI agent build before code. Entity schema first, one write path per entity, each unit of work routed to deterministic automation, an AI agent, or a human decision, every tool marked absorb, keep, or kill, and a phased rollout with proof per phase. Use when asked \"turn this ops assessment into a plan\", to scope an automation or agent build, decide whether a workflow needs a model, or consolidate a tool stack. NOT FOR: discovering and quantifying current operations (suede-ops-assessment), code implementation, or production changes without authority."
+description: "Suede AI Operations Architecture Skills: fix the shape of an automation or AI agent build before code. Entity schema first, one write path per entity, each unit of work routed to deterministic automation, an AI agent, or a human decision, every tool marked absorb, keep, or kill, and a phased rollout with proof per phase. Use when asked \"turn this ops assessment into a plan\", to scope an automation or agent build, decide whether a workflow needs a model, or consolidate a tool stack. NOT FOR: discovering and quantifying current operations (use suede-ops-assessment); code implementation (use suede-graph-flo-xr or suede-agent-teams); lead lifecycle and CRM routing rules (use suede-revops); agent eval sets (use suede-ai-eval); or production changes without authority."
 metadata:
   display-name: "Suede AI Operations Architecture Skills"
   version: 1.0.0
@@ -34,7 +34,8 @@ when it fails.
 
 Collect these. Work with what exists and name what is missing in the Output
 Contract rather than blocking on it. When a `suede-ops-assessment` output
-exists, start from it instead of re-interviewing.
+exists, start from it instead of re-interviewing, and treat its `[assumed]`
+lines as assumptions to confirm, not inputs.
 
 1. **Entities**: the nouns the operation runs on (client, project, order, job,
    track, release, patient).

@@ -1,6 +1,6 @@
 ---
 name: suede-directory-submissions
-description: "Use when asked \"plan our directory submissions\" or to select and sequence startup, SaaS, AI, MCP, marketplace or review listings. Suede AI adapts truthful positioning, maintains entity consistency and tracks submission evidence and verified backlinks. NOT FOR: release packaging (use suede-launch-packaging), scaled destination pages (use suede-programmatic-seo), or AI visibility audits (use suede-ai-seo)."
+description: "Suede AI Directory Submissions Skills. Use when asked \"plan our directory submissions\" or to select and sequence startup, SaaS, AI, MCP, marketplace or review listings. Adapts truthful positioning, maintains entity consistency and tracks submission evidence and verified backlinks. NOT FOR: software or skill-pack release packaging (use suede-launch-packaging), scaled destination pages (use suede-programmatic-seo), or AI visibility audits (use suede-ai-seo)."
 metadata:
   display-name: "Suede AI Directory Submissions Skills"
   version: 2.0.0
@@ -165,80 +165,9 @@ with a check date. Anything else is reported as **submitted, unverified**.
 
 ---
 
-## Flagship Launch Listing
+## Flagship Launch, Reviews, and Destination Pages
 
-For any time-sensitive launch surface, research the platform before building the
-plan. Use its current official help, submission form, and community rules; record
-the URLs and check date. Do not present remembered algorithm behavior, ideal
-launch times, asset dimensions, hunter effects, or engagement thresholds as facts.
-
-### Preparation milestones
-
-- Confirm eligibility, account standing, moderation rules, scheduling options,
-  required assets, and prohibited promotion.
-- Draft truthful positioning, an approved maker story, real product visuals, and
-  a working destination CTA in the exact current form limits.
-- Preview the listing and test the product, signup, analytics, and support path.
-- Build a communication plan from channels the user owns or is authorized to use.
-- Assign a responder for genuine questions and feedback.
-
-### Launch and follow-through
-
-- Publish only after the user authorizes the listing, timing, and public copy.
-- Follow current solicitation and outreach policies. Do not manipulate voting,
-  fabricate engagement, or message people without a legitimate relationship and
-  authorization.
-- Respond helpfully, log referrals and qualified outcomes, and capture lessons.
-- Share a recap only where current community rules permit it.
-
----
-
-## Reviews Playbook
-
-Review directories can help buyers evaluate products, but eligibility, incentive,
-moderation, badge, report, and paid-plan rules change. Before recommending a
-campaign:
-
-1. Read the current official review and incentive policy for the chosen platform.
-2. Record the source URL, check date, eligibility rules, deadlines, and maximum
-   verified cost.
-3. Identify real users with firsthand product experience; never manufacture,
-   gate, pre-score, or script reviews.
-4. Get explicit authorization for the recipient list, wording, channel, cadence,
-   and any incentive before outreach.
-5. Track requests, completed reviews, moderation status, referral outcomes, and
-   complaints. Set targets from the actual eligible pool and user goals.
-
-Do not claim a badge threshold, report cutoff, ownership relationship, incentive
-permission, plan price, or expected response rate unless it was verified from a
-current authoritative source. A small customer base is a planning constraint, not
-automatic proof that a listing is worthless.
-
----
-
-## Destination Pages Strategy (What the Backlinks Point At)
-
-Match each listing to the most useful truthful page available. A homepage can be
-appropriate when it satisfies the audience and promise; a specialized page may be
-better when evidence supports it.
-
-| Page type | Build it when |
-|---|---|
-| Alternatives page (`/alternatives/[competitor]`) | Current customer or search evidence shows comparison intent |
-| Use-case / ICP page (`/for/[audience]`, `/use-cases/[use-case]`) | Demand and product evidence justify a dedicated page |
-| Template or asset gallery (`/templates/[slug]`) | Templates carry standalone value and activation is measurable |
-| Self-authored category roundup | The team can research the category and disclose its methodology |
-| Integration page | The integration is live and the page explains setup, capabilities, and limits |
-
-On any comparison or roundup page: verify material competitor claims, state
-clearly when each option fits, date the comparison, and correct it when the facts
-change. Set output volume from quality capacity and measured demand, not a
-borrowed traffic or revenue story, and do not promise ranking or AI citation.
-
-Page production at scale belongs to `suede-programmatic-seo`; comparison-page
-strategy belongs to `suede-competitors`.
-
----
+Before a flagship launch listing (Product Hunt or similar), a review push, or choosing what each backlink points at, load [references/launch-reviews-destinations.md](references/launch-reviews-destinations.md). It holds the preparation milestones, launch-day follow-through, the reviews playbook, and the destination pages strategy.
 
 ## Directories as AEO/GEO inputs
 
@@ -311,7 +240,7 @@ capacity, and launch objective. Do not use generic day-based forecasts.
 3. **Don't treat directories as your entire GTM.** Compare them with content, community, reviews, partnerships, and other measured channels.
 4. **Don't churn listings without evidence.** Set a review cadence from product
    changes, platform notices, and observed listing issues.
-5. **Don't over-index on launch-day spike.** The flywheel is templates + alternatives + reviews + ongoing content, not one day of PH.
+5. **Don't over-index on launch-day spike.** One day of Product Hunt traffic is not the program; the durable value comes from listings kept current and verified over time.
 
 ---
 
@@ -319,13 +248,13 @@ capacity, and launch objective. Do not use generic day-based forecasts.
 
 1. **What are you launching?** (Category changes tier mix. AI vs traditional SaaS vs no-code vs dev tool.)
 2. **When is launch day?** (Work backward from verified platform requirements.)
-3. **Do you have destination pages built?** (Alternatives, use cases, templates: if not, build first.)
+3. **Which existing page best fulfills each listing's promise?** Build a specialized page only when evidence supports it (Rule 2).
 4. **Which flagship surface is being considered, and what do its current rules require?**
 5. **How many eligible users could receive a policy-compliant review request?**
 6. **Do you have a live tested MCP or agent capability?** (If yes, verify compatible registries.)
 7. **Existing integrations?** (If yes, verify each owner's marketplace eligibility.)
 8. **Which owned audiences can be contacted, and has the user authorized outreach?**
-9. **Current DR and referring domain count?** (Baseline for measuring the compounding effect.)
+9. **Current referring domains from Search Console Links or Bing Webmaster Tools, dated?** (The baseline for measuring the compounding effect; do not use a proprietary authority score.)
 
 ---
 
@@ -356,7 +285,7 @@ Keep the plan actionable. Every item should be something the user can do today.
 
 ## Routing
 
-- Use `suede-launch-packaging` for the broader launch sequence.
+- Launch ships software, a skill pack, or an MCP server -> use `suede-launch-packaging`; product or service launch sequencing -> use `suede-marketing-plan`; artist or release launch -> use `suede-campaign-in-a-box`.
 - Use `suede-programmatic-seo` for destination pages, `suede-seo-audit` for technical checks on those pages, and `suede-ai-seo` for entity facts, the prompt-panel source gap list, and AI citation measurement.
 - Use `suede-competitors` for comparison-page strategy and `suede-content-strategy` for editorial support.
 - Use `suede-free-tools` for interactive destination assets, and `suede-community-marketing`, `suede-social`, or `suede-content-strategy` for community and social distribution.

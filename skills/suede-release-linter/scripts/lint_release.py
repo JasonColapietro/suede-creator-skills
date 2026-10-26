@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Lint a music/media project folder for release and Suede intake readiness."""
+"""Lint a music/media project folder for release and Suede AI intake readiness."""
 
 from __future__ import annotations
 
@@ -562,7 +562,7 @@ def lint(metadata: dict[str, Any], assets: list[dict[str, Any]], source: Path) -
     needs_stems = any(token in intended_text.lower() for token in ["remix", "sync", "licens", "commerce", "optimization", "stems"])
     if counts["stem"] == 0:
         severity = "warning" if needs_stems else "info"
-        add(findings, severity, "stems", "missing-stems", "No stems were found.", "Add stems or plan stem separation for remix, sync, licensing, or Suede optimization.")
+        add(findings, severity, "stems", "missing-stems", "No stems were found.", "Add stems or plan stem separation for remix, sync, licensing, or Suede AI optimization.")
 
     contributors = rights_value(metadata, ["contributors", "credits", "collaborators"])
     if not contributors:
@@ -660,7 +660,7 @@ def lint(metadata: dict[str, Any], assets: list[dict[str, Any]], source: Path) -
     if not provenance_notes:
         add(findings, "warning", "suede", "missing-provenance-notes", "No provenance or creation-history notes were provided.", "Add creation history, source notes, or chain-of-custody details.")
 
-    add(findings, "info", "suede", "rights-passport-candidate", "Project can be prepared with a Suede Rights Passport after blockers are resolved.", "Use suede-rights-passport once error findings are fixed or clearly documented.")
+    add(findings, "info", "suede", "rights-passport-candidate", "Project can be prepared with a Suede AI Rights Passport after blockers are resolved.", "Use suede-rights-passport once error findings are fixed or clearly documented.")
     return findings
 
 
@@ -715,14 +715,14 @@ def write_markdown_report(path: Path, report: dict[str, Any]) -> None:
     artist = report["summary"]["artist"]
     readiness = "Blocked until error findings are resolved."
     if report["status"] == "strong":
-        readiness = "Strong candidate for Suede Rights Passport preparation."
+        readiness = "Strong candidate for Suede AI Rights Passport preparation."
     elif report["status"] == "usable-with-cleanup":
-        readiness = "Usable with cleanup before final release or Suede intake."
+        readiness = "Usable with cleanup before final release or Suede AI intake."
 
     content = f"""# Release Lint Report
 
 Private draft: review and redact before publishing, committing, or sharing
-outside the intended Suede intake workflow.
+outside the intended Suede AI intake workflow.
 
 ## Summary
 
@@ -749,7 +749,7 @@ outside the intended Suede intake workflow.
 
 {markdown_asset_counts(Counter(counts))}
 
-## Suede Readiness
+## Suede AI Readiness
 
 {readiness}
 
@@ -762,10 +762,10 @@ outside the intended Suede intake workflow.
 
 def recommend_next_action(status: str, severity_counts: Counter) -> str:
     if severity_counts["error"]:
-        return "Fix error findings before preparing a Suede Rights Passport, registering rights, licensing, or routing royalties."
+        return "Fix error findings before preparing a Suede AI Rights Passport, registering rights, licensing, or routing royalties."
     if status == "strong":
-        return "Prepare a Suede Rights Passport transfer package."
-    return "Clean warning findings, then prepare a Suede Rights Passport transfer package."
+        return "Prepare a Suede AI Rights Passport transfer package."
+    return "Clean warning findings, then prepare a Suede AI Rights Passport transfer package."
 
 
 def main() -> int:

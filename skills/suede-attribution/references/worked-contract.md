@@ -17,7 +17,3 @@ A hosted-booking URL exposes an already identified email as the visitor ID. Do n
 ## Validation
 
 Check identity, currency and windows before comparing totals. For stitching, test anonymous-to-known join, a duplicate webhook, an identified visitor and a missing metadata field; no path may silently merge unrelated people.
-
-## Coverage and routing
-
-Suede AI marketing attribution: which channels actually drive conversions and revenue, how to choose and read attribution models, reconcile conflicting numbers across ad platforms, GA4, and the CRM, design incrementality, MMM, and geo-holdout reads, add self-reported attribution for dark social and AI answers, and instrument first-party attribution yourself (closing the identify gap, stitching bookings or checkouts on third-party domains to their source). Use when someone asks which channel drives revenue, what their real CAC is, why dashboards disagree, or how to track a conversion they do not host. NOT FOR: event tracking plans, GA4 or GTM setup, and UTM hygiene (use suede-analytics), ad-platform pixels and campaign decisions (use suede-ads), or pipeline-stage and CRM revenue operations (use suede-revops).

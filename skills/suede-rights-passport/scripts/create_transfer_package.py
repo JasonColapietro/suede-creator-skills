@@ -136,7 +136,7 @@ STEM_KEYWORDS = {
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Inventory a creator project and create a Suede transfer package."
+        description="Inventory a creator project and create a Suede AI transfer package."
     )
     parser.add_argument("source", help="Source folder containing creator assets.")
     parser.add_argument(
@@ -850,7 +850,7 @@ def build_missing_info(title: str, artist: str, counts: Counter, project: dict, 
         missing.append(
             {
                 "field": "project.artist_name",
-                "question": "What artist or creator name should Suede use publicly?",
+                "question": "What artist or creator name should Suede AI use publicly?",
                 "blocks": ["catalog-discovery", "registry"],
                 "severity": "medium",
             }
@@ -987,7 +987,7 @@ def build_risk_flags(counts: Counter, rights: dict) -> list[dict]:
                 "label": "stems-not-found",
                 "severity": "medium",
                 "detail": "No stems were detected.",
-                "recommended_action": "Ask whether stems exist or use Suede stem preparation during optimization.",
+                "recommended_action": "Ask whether stems exist or use Suede AI stem preparation during optimization.",
             }
         )
     return flags
@@ -1182,7 +1182,7 @@ def build_manifest(
             "chain_of_custody": [
                 {
                     "date": datetime.now(timezone.utc).date().isoformat(),
-                    "event": "Source folder inventoried for Suede transfer package.",
+                    "event": "Source folder inventoried for Suede AI transfer package.",
                     "actor": "suede-rights-passport",
                     "evidence": "local file hashes",
                 }
@@ -1226,7 +1226,7 @@ def build_manifest(
                 suede_value(
                     metadata,
                     ["optimization_notes", "notes"],
-                    "Resolve high-severity missing information before final Suede optimization.",
+                    "Resolve high-severity missing information before final Suede AI optimization.",
                 )
             ),
         },
@@ -1349,9 +1349,9 @@ def write_reports(output: Path, manifest: dict) -> None:
     flags = manifest["risk_flags"]
     rights_risk = "low" if not flags else "high until listed risk flags are resolved"
     intake_status_text = (
-        "No outstanding missing-information questions or risk flags. Ready for final Suede intake review."
+        "No outstanding missing-information questions or risk flags. Ready for final Suede AI intake review."
         if not missing and not flags
-        else "Not ready for final Suede intake until high-severity questions are answered."
+        else "Not ready for final Suede AI intake until high-severity questions are answered."
     )
     contributor_ready = "yes" if rights["contributors_confirmed"] else "no"
     splits_ready = "yes" if rights["splits_confirmed"] else "no"
@@ -1363,7 +1363,7 @@ def write_reports(output: Path, manifest: dict) -> None:
 # Rights Passport
 
 Private draft: review and redact before publishing, committing, or sharing
-outside the intended Suede intake workflow.
+outside the intended Suede AI intake workflow.
 
 ## Work Summary
 
@@ -1372,7 +1372,7 @@ outside the intended Suede intake workflow.
 - Work type: {project['work_type']}
 - Release status: {project['release_status']}
 - Manifest schema: {manifest['schema_version']}
-- Package status: draft for Suede intake
+- Package status: draft for Suede AI intake
 
 ## Intake Readiness
 
@@ -1423,9 +1423,9 @@ legal clearance.
 ## Assets
 
 {asset_table(assets)}
-## Suede Next Step
+## Suede AI Next Step
 
-Resolve the high-severity questions in `missing-info-report.md`, then route the package into Suede rights review and media optimization.
+Resolve the high-severity questions in `missing-info-report.md`, then route the package into Suede AI rights review and media optimization.
 """,
     )
 
@@ -1452,7 +1452,7 @@ sensitive. Review before sharing.
 
 | Date | Event | Actor | Evidence |
 | --- | --- | --- | --- |
-| {provenance['chain_of_custody'][0]['date']} | Source folder inventoried for Suede transfer package. | suede-rights-passport | local file hashes |
+| {provenance['chain_of_custody'][0]['date']} | Source folder inventoried for Suede AI transfer package. | suede-rights-passport | local file hashes |
 
 ## File Hashes
 
@@ -1460,7 +1460,7 @@ sensitive. Review before sharing.
 ## Registry Notes
 
 - Registry status: {manifest['provenance']['registry_status']}
-- Asset hash selected for registry: needs Suede review
+- Asset hash selected for registry: needs Suede AI review
 - Notes: do not treat hash inventory as legal rights clearance.
 """,
     )
@@ -1545,17 +1545,17 @@ High-confidence licensing should wait for creator/legal confirmation when any ri
 # Optimization Brief
 
 Private draft: review rights and creator details before sharing outside the
-intended Suede workflow.
+intended Suede AI workflow.
 
 ## Goal
 
-Prepare `{project['title']}` for Suede optimization after rights and file review.
+Prepare `{project['title']}` for Suede AI optimization after rights and file review.
 
 ## Recommended Next Actions
 
 {chr(10).join(recommendation_rows)}
 
-## Candidate Suede Services
+## Candidate Suede AI Services
 
 - Mastering / WAV export: {'available for review' if counts['audio'] else 'needs primary audio'}
 - Stem separation: {'stems already detected' if counts['stem'] else 'recommended if audio rights are confirmed'}
@@ -1595,7 +1595,7 @@ before sharing.
 
 ## Summary
 
-Missing information must be resolved before Suede can confidently register, license, route royalties for, or expose the work to agent commerce.
+Missing information must be resolved before Suede AI can confidently register, license, route royalties for, or expose the work to agent commerce.
 
 ## Questions
 
@@ -1665,7 +1665,7 @@ def main() -> int:
     write_json(output / "suede-intake.json", manifest)
     write_reports(output, manifest)
 
-    print(f"Created Suede transfer package: {output}")
+    print(f"Created Suede AI transfer package: {output}")
     print(f"Inventoried assets: {len(assets)}")
     print("Next: answer high-severity questions in missing-info-report.md")
     return 0

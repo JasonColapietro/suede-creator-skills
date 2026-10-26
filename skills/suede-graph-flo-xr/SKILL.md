@@ -1,6 +1,6 @@
 ---
 name: suede-graph-flo-xr
-description: "Use when asked \"compare implementation plans before building\" for one multi-file repository change. Suede AI runs Suede AI Thought Graph shipping search: it searches, scores, prunes and refutes plans, selects one winner, then builds in an isolated worktree with a sandboxed gate and handoff. Halts on hazards, collisions or exhausted budget. NOT FOR: bulk worker tasks, existing-diff review (use suede-code), CI wiring (use suede-ci-gate), or copy-only work (use suede-ship-copy)."
+description: "Suede AI Thought Graph shipping search for one multi-file repository change. Use when asked \"compare implementation plans before building\". It searches, scores, prunes and refutes plans, selects one winner, then builds in an isolated worktree with a sandboxed gate and handoff, halting on hazards, collisions or an exhausted budget. Runs on Claude Code for macOS; on other hosts it is a contract only. NOT FOR: bulk, cross-repo, or non-macOS builder lanes (use suede-agent-teams), existing-diff review (use suede-code), CI wiring (use suede-ci-gate), or copy-only work (use suede-ship-copy)."
 metadata:
   display-name: "Suede AI Graph Flo XR Skills"
 ---
@@ -13,7 +13,7 @@ any implementation lane mutates the worktree.
 
 ## Compatibility
 
-Bundled execution requires Claude Code Workflow on macOS, sandbox-exec, Node.js, Git and the six registered agent profiles. Other hosts can read the orchestration contract but must use direct implementation rather than claim Workflow execution.
+Bundled execution requires Claude Code Workflow on macOS, sandbox-exec, Node.js, Git and the six registered agent profiles. Other hosts can read the orchestration contract but must route the change to `suede-agent-teams` (one builder lane) or direct implementation for a contained change, rather than claim Workflow execution.
 
 ## Intake and budget gate
 
@@ -69,31 +69,13 @@ run these `.cjs` helpers: the per-spawn clamp cannot verify a rule that is
 multi-line or longer than roughly 400 characters, so inline `node -e` payloads
 are not usable. A missing or whitespace-containing path fails before the first
 agent call; a missing helper file surfaces as the Scout setup failure.
-Payload-carrying helper invocations are admitted by pinned prefixes (helper
-path plus worktree, temp root, or base SHA) rather than exact strings; each
-helper validates its remaining argv, and the diff attestations, not the clamp,
-remain the check that what was applied matches the selected bundle.
-
-The selected patch reaches the applier as bounded base64 chunks staged into the
-run's private temp root, because the clamp verifier cannot parse a command
-carrying a multi-kilobyte inline payload. Each append carries its offset and an
-FNV-1a checksum, and `--apply` verifies total length and payload checksum before
-decoding, so a mistyped chunk fails fast with a retry instruction instead of
-producing a corrupt patch.
 
 A skill-folder-only install, a generic skills-CLI install, and the Codex plugin do
 not by themselves register or execute Claude Workflow agent profiles. In those
 environments, treat this file as the orchestration contract and route the change
-to direct implementation; do not claim the bundled workflow ran. To enable it in
+to `suede-agent-teams` or direct implementation; do not claim the bundled workflow ran. To enable it in
 Claude Code after a manual single-skill copy, also copy the skill's bundled
 `agents/suede-graph-flo-xr-*.md` files into `~/.claude/agents` and restart Claude Code.
-
-The requested Scout setup command probes `/usr/bin/sandbox-exec` as its first
-subprocess, before fetch or worktree creation. If that command is invoked and
-the probe fails, Scout reports failure before its setup mutation. The returned
-Scout evidence is still a model attestation, not a host execution receipt. Gate
-also holds on any later reported sandbox rejection. Never retry an acceptance
-command outside the sandbox to turn that hold into a pass.
 
 ## Run the graph search
 
@@ -129,8 +111,8 @@ unselected thoughts remain evidence only; never build them speculatively.
 The workflow halts before the next agent call or entire mutating batch when its
 budget is exhausted; it does not undo mutations that completed earlier. It
 halts before any mutation unless an independent read-only verifier confirms a
-clean, registered origin/main worktree at one direct `${REPO}.worktrees/ship-*`
-child with the same Git common directory and non-symlink candidate files whose
+clean, registered worktree of the origin default branch (origin/HEAD, else
+origin/main) at one direct `${REPO}.worktrees/ship-*` child with the same Git common directory and non-symlink candidate files whose
 realpaths remain inside it. Case-folded or Unicode-normalized path aliases fail
 closed before graph search. It also halts for
 a tracked secret, a live target worktree, a protected-WIP collision, a duplicate
@@ -142,85 +124,26 @@ selected Build or Fix result that is blocked, missing context, fails, or reports
 no changed path also halts before the next verification stage; a result that is
 done with stated concerns proceeds, and its concerns travel into the review
 stage and the handoff. Patch authors receive the whole scope checklist as
-contract context, so a name another lane pins is imported, not guessed. On a halt, name the
-blocker in one line and offer 2–4 applicable
-resolutions (for example: narrow scope, exempt protected WIP, resolve the
-collision, choose a higher budget, or provide missing context), and wait. Do
-not relaunch or mutate while halted.
-
-### Reading a search halt
-
-An empty search used to report `no safe graph winner` however it ended, so an
-infrastructure flake and a genuine evidence conflict printed the same line. The
-halt output now names which happened, and `haltDetail` carries the counts behind it:
-
-| Reason | What it means |
-|---|---|
-| `every candidate lost its score to an agent failure` | No thought in the run was ever scored. Infrastructure, not evidence: rerun. |
-| `no candidate reached Select` | The search emptied upstream for some other reason; read `graph.dropped`. |
-| `every finalist lost its score before Select` | Finalists existed and were pruned as unscored. |
-| `every finalist was pruned before Select` | Finalists were pruned for a non-score reason. |
-| `every finalist carries a degraded or missing score` | Finalists reached Select without a valid score. |
-| `every finalist failed deterministic plan eligibility` | Real rejection. `haltDetail.eligibilityRejections` lists every reason. |
-| `no safe graph winner` | None of the above fits: read the graph. |
-
-`haltDetail.infrastructureDegraded` is independent of the reason: both can be
-true at once. Read the reason for what stopped Select and that flag for what
-degraded the pool feeding it.
-
-Score calls are read-only and idempotent, so a transport-level death is retried:
-twice per call, capped run-wide at 5% of the agent ceiling, and refused entirely
-once the remaining budget falls to the reserved floor (20% of the ceiling). A
-malformed score is never retried: the schema is enforced at the tool layer, so
-an invalid score is a judgment to keep, not a connection to redial. Every
-attempt and every refused retry lands in `graph.scoreRetries`, and
-`scoreReliability` rides out in the result on every run, halted or not: a flake
-that costs two finalists still degrades a run that goes on to ship.
-
-Claude's registered agent profiles enforce tool separation: local readers have
-no shell, write, or web tools; public-web readers have no local-file or shell
-tools; patch authors have no mutation tools; and appliers/verifiers have only
-Bash plus structured output. Patch authors return unified diffs, one clamped
-applier applies them, and a separately budget-reserved clamped verifier compares
-the exact path set and diff digest immediately after every Build or Fix Apply,
-before any reader or Gate call. Patch validation rejects symlinks, gitlinks,
-binary patches, renames, copies, and file-type transitions before Apply. Gate
-runs only allowlisted local validation
-commands under macOS `sandbox-exec`, with no network, host reads limited to
-runtime/system roots, the worktree, its `.git` common directory derived again
-inside the exact Gate clamp, and the run's private temp root. The model-reported
-common directory is never interpolated into sandbox permissions. Writes are limited to known generated artifacts
-and that private temp root. The allowlist includes bounded project-local checks
-for Node, Python, Go, Rust, Make, Swift Package Manager, Xcode simulator builds
-with derived data under the private temp root, and offline Gradle validation.
-Nested module `build` roots are derived only from selected files under that
-module's `src` tree and are rejected if a symlink or realpath can escape the
-worktree. A second diff attestation runs after Gate and hashes
-the binary Git diff plus every reported file's mode, size, and bytes, including
-untracked additions.
+contract context, so a name another lane pins is imported, not guessed. On a
+halt, name the blocker in one line and offer 2 to 4 applicable resolutions
+(for example: narrow scope, exempt protected WIP, resolve the collision,
+choose a higher budget, or provide missing context), and wait. Do not relaunch
+or mutate while halted.
 
 Gate removes credential-like and interpreter-injection environment variables,
 then redirects home, temporary, and cache paths before an acceptance command
 starts. If a check depends on removed credentials, report it as unverified;
-never rerun it outside the sandbox merely to obtain a pass.
+never rerun it outside the sandbox merely to obtain a pass. Gate sets `CI=1`
+so test runners skip watch mode, and kills a command that runs past 15 minutes
+(exit 124, reported as a hold). Never retry a sandbox rejection or timeout
+outside the sandbox to turn the hold into a pass.
 
-A successfully applied blocker patch is not treated as semantically cleared.
-The original blocker remains in `fixedBlockersPendingVerification`. The Gate
-attempt records its exact command set and reported output, but it cannot prove
-those commands ran because the Workflow API exposes no trusted required-tool
-execution receipt. The workflow therefore sets `claimedPassed` from the agent
-report, forces `passed:false`, sets `gateVerified:false`, and keeps the verdict
-and handoff status at `hold`. Only a trusted outer runner with immutable
-execution receipts can promote that evidence.
-
-These controls have a precise trust boundary. `bashCommandClamp` constrains a
-Bash command when an agent invokes it; Claude Workflow does not provide a
-required-tool-call receipt, so a structured verifier response remains a model
-attestation rather than cryptographic proof that Bash ran. Likewise,
-`authority`, `allowedRepo`, `allowedFiles`, and `allowedCommands` are audit
-metadata, not filesystem permissions. Local reader tools are separated from web
-tools but are not path-sandboxed by the Workflow API. Report these facts in any
-security-sensitive handoff and do not describe the result as host-certified.
+On a halt, read `references/runtime-and-trust-boundary.md` for the halt-reason
+table and score-retry budget; for a security-sensitive handoff, quote its
+trust-boundary section. In short: Gate results stay `hold` with
+`gateVerified:false` because Workflow returns no execution receipt, clamps and
+`allowed*` fields are audit metadata rather than filesystem permissions, and the
+result is never host-certified.
 
 Production inspection is read-only. This skill never deploys, publishes,
 releases, pushes, merges, changes credentials, deletes or reverts protected

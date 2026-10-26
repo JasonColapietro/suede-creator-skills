@@ -14,7 +14,7 @@ Needs creator confirmation.
 
 | Date | Event | Actor | Evidence |
 | --- | --- | --- | --- |
-| unknown | Project prepared for Suede intake | unknown | transfer package |
+| unknown | Project prepared for Suede AI intake | unknown | transfer package |
 
 ## File Hashes
 

@@ -3,6 +3,19 @@
 These are named design moves for Suede AI Site Alchemy. They are not shell
 commands. Use them to structure notes, edits, or a short critique.
 
+## Default stack
+
+Use this order for a fast polish pass:
+
+1. `/vibe-scan` - name the current feeling and the feeling the page should sell.
+2. `/hero-voltage` - make the first viewport impossible to misunderstand.
+3. `/offer-spine` - lock the page to one promise, one buyer, one action.
+4. `/trust-lacquer` - turn trust from decoration into a conversion argument.
+5. `/cta-magnet` - make the next click feel obvious and worth it.
+6. `/mobile-seduction` - make the small-screen version feel composed, not
+   collapsed.
+7. `/ship-polish` - verify links, responsiveness, copy fit, and live behavior.
+
 ## Core Read
 
 `/vibe-scan`
@@ -91,3 +104,20 @@ Do not mask weak hierarchy with animation.
 `/ship-polish`
 : Run formatting/check commands, browser QA, desktop/mobile screenshots when
 needed, and live verification before claiming anything public.
+
+## Premium by surface
+
+Use with Workflow step 7 in SKILL.md, only where a friction-audit finding names
+a conversion penalty. Token, type, color, or restyle work routes to
+`suede-design`. For each surface type, "premium" means:
+
+- **Hero**: one dominant type weight, one color for the CTA, nothing competing at the same visual size.
+- **Social proof sections**: real photos over stock, real numbers over vague claims, name + title + company over anonymous quotes.
+- **Pricing/offer sections**: generous whitespace, price isolated in visual hierarchy, guarantee text printed adjacent to CTA not buried in footer.
+- **Mobile**: readable type, WCAG-compliant target size/spacing, tested CTA
+  discovery, text scaling, and no unintended horizontal scroll.
+- **Motion**: motion clarifies state, respects reduced-motion settings, and
+  does not block reading or interaction. Choose duration from context and
+  test it rather than enforcing one universal threshold.
+
+Operate inside the existing color and type system. Introduce a new visual choice only when the current system has a direct conversion penalty.

@@ -848,7 +848,7 @@ ${scoutSetupCommand}
 The command first probes macOS sandbox-exec without network access, then creates a private
 0700 temp root for this run. Only then does it fetch origin, create one UUID-suffixed
 worktree under the requested prefix, and verify
-that it is a clean checkout of origin/main, and prints the repo/worktree/sibling manifest.
+that it is a clean checkout of the origin default branch (origin/HEAD, else origin/main), and prints the repo/worktree/sibling manifest.
 Do not copy environment files. Use read-only Glob, Grep, LS, and Read after the command only
 to choose at most 60 candidate file paths and inspect these hazards, without editing source:
    - bare api/ directory: every .js/.ts there is a PUBLIC serverless route. Flag test/fixture/scratch files as "vercel-api-route".
@@ -933,6 +933,7 @@ const worktreeAuditCommands = [
   `git -C ${REPO_SHELL} worktree list --porcelain`,
   `git -C ${REPO_SHELL} rev-parse --path-format=absolute --git-common-dir`,
   `git -C ${WORKTREE_SHELL} rev-parse --path-format=absolute --git-common-dir`,
+  `git -C ${REPO_SHELL} rev-parse --verify --quiet origin/HEAD`,
   `git -C ${REPO_SHELL} rev-parse origin/main`,
   `git -C ${WORKTREE_SHELL} rev-parse HEAD`,
   `git -C ${WORKTREE_SHELL} status --porcelain`,
@@ -950,9 +951,11 @@ command or tool:
 ${worktreeAuditCommands.map(command => `- ${command}`).join('\n')}
 
 Require an exact registered worktree path. Compare the Git common directories after
-realpath normalization and return that canonical absolute path as commonDir. Require
-origin/main, Expected HEAD, and worktree HEAD to be the
-same exact SHA, and require empty porcelain status. The Node candidate-audit commands
+realpath normalization and return that canonical absolute path as commonDir. The base is
+the origin default branch: origin/HEAD when that command prints a SHA, otherwise origin/main
+(an empty origin/HEAD result is expected when the remote has no default-branch symref, and
+an unresolvable origin/main is expected when origin/HEAD resolves). Require that base,
+Expected HEAD, and worktree HEAD to be the same exact SHA, and require empty porcelain status. The Node candidate-audit commands
 perform the no-follow candidate path audit and the tracked-at-base audit over bounded
 slices of the candidate list; run every one of them, then union their unsafeCandidateFiles
 outputs into unsafeCandidateFiles and union their trackedCandidateFiles outputs into

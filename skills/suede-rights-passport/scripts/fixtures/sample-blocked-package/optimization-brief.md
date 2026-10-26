@@ -2,11 +2,11 @@
 # Optimization Brief
 
 Private draft: review rights and creator details before sharing outside the
-intended Suede workflow.
+intended Suede AI workflow.
 
 ## Goal
 
-Prepare `Neon Static` for Suede optimization after rights and file review.
+Prepare `Neon Static` for Suede AI optimization after rights and file review.
 
 ## Recommended Next Actions
 
@@ -26,7 +26,7 @@ Prepare `Neon Static` for Suede optimization after rights and file review.
    Reason: No artwork was detected.
    Blocks: none
 
-## Candidate Suede Services
+## Candidate Suede AI Services
 
 - Mastering / WAV export: available for review
 - Stem separation: recommended if audio rights are confirmed

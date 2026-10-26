@@ -17,7 +17,3 @@ The 20% close rate is an all-time average and current leads have not matured. Pr
 ## Validation
 
 Reconcile spend/lead totals to the export, check currency and conversion windows, and compare mature qualified-lead cohorts. Verify live platform controls before proposing exact setting names; report account changes only after readback.
-
-## Coverage and routing
-
-Suede AI paid-acquisition operating system for channel choice, campaign structure, audiences, bidding, budget pacing, negative keywords, retargeting, B2B and ABM playbooks, and kill-or-scale decisions, with platform facts checked in October 2026 (Meta Andromeda and attribution windows, Performance Max controls). Use when planning, auditing, or optimizing paid campaigns on Google, Meta, LinkedIn, X, TikTok, or comparable platforms. NOT FOR: producing ad copy or creative variants (use suede-ad-creative), implementing tracking (use suede-analytics), attribution models or reconciliation (use suede-attribution), or the landing page (use suede-site-alchemy).

@@ -1,6 +1,6 @@
 ---
 name: suede-analytics
-description: "Suede AI Analytics Skills. Use when asked to \"fix our analytics events\" or set up GA4/GTM, key events, consent, UTMs and search/AI channels with readback proof. NOT FOR: experiment decisions (suede-ab-testing), campaign optimization (suede-ads), attribution reconciliation (suede-attribution), or revenue operations (suede-revops)."
+description: "Suede AI Analytics Skills. Use when asked to \"fix our analytics events\" or set up GA4/GTM, key events, consent, UTMs, ad pixels and CAPI, and search/AI channels with readback proof. NOT FOR: experiment decisions (suede-ab-testing), campaign optimization (suede-ads), attribution reconciliation (suede-attribution), or revenue operations (suede-revops)."
 metadata:
   display-name: "Suede AI Analytics Skills"
   version: 2.1.0
@@ -208,10 +208,12 @@ Channel groups) with an **AI assistants** channel placed above Referral:
 
 ```text
 Session source matches regex:
-chatgpt\.com|chat\.openai\.com|perplexity\.ai|gemini\.google\.com|copilot\.microsoft\.com|claude\.ai|you\.com
+^(chatgpt\.com|chat\.openai\.com|(www\.)?perplexity\.ai|gemini\.google\.com|copilot\.microsoft\.com|copilot\.com|claude\.ai|chat\.mistral\.ai|meta\.ai|grok\.com|chat\.deepseek\.com|you\.com)$
 ```
 
-Many AI-assisted visits arrive with no referrer and land in Direct, so pair the
+Canonical list: `suede-ai-seo` references/measurement.md; keep the two regexes
+identical, and change both together. The anchors stop lookalike hosts from
+matching. Many AI-assisted visits arrive with no referrer and land in Direct, so pair the
 channel with a "How did you hear about us?" field (see `suede-attribution`) and
 with Search Console data for organic queries. Review the regex quarterly as
 assistants change domains. For the visibility work itself, route to
@@ -338,6 +340,7 @@ official documentation before constructing a call.
 | Tag manager | Controlled client-side deployment | Preview trace plus published-version ID |
 | Customer data router | Send approved events to destinations | Source receipt plus destination receipt |
 | Session replay | Diagnose interaction friction | Consent, masking, sampling, and replay verification |
+| Ad-platform conversions | Google Ads tag and enhanced conversions, Meta Pixel and CAPI, LinkedIn, TikTok and X server events | Test event in the platform's event manager plus deduplication check; setup in [references/ad-platform-conversions.md](references/ad-platform-conversions.md) |
 
 ---
 
@@ -351,7 +354,7 @@ official documentation before constructing a call.
 ## Routing
 
 - Need experiment design or result interpretation -> use `suede-ab-testing`.
-- Need paid-campaign decisions -> use `suede-ads`.
+- Need paid-campaign decisions (which conversion a campaign optimizes for, budgets, bids) -> use `suede-ads`; this skill implements and verifies the pixels and server events.
 - Need attribution modeling, model comparison, or cross-tool reconciliation -> use `suede-attribution`.
 - Need pipeline and CRM attribution -> use `suede-revops`.
 - Need organic visibility diagnosis -> use `suede-seo-audit`.

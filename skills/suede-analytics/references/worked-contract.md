@@ -17,7 +17,3 @@ Debug access is unavailable. Supply the source-based diagnosis and exact verific
 ## Validation
 
 Observe one successful signup event, zero additional events on reload and zero on failure. Inspect the actual outbound payload for forbidden email fields and confirm consent behavior before publishing container changes.
-
-## Coverage and routing
-
-Suede AI measurement discipline: tracking plans, event and key-event instrumentation in GA4 and GTM, consent mode v2, UTM hygiene, AI assistant and organic search channel grouping, and readback proof of what actually fires. Use when setting up, auditing, or repairing analytics across web, product, paid, and lifecycle surfaces. NOT FOR: experiment design or significance (use suede-ab-testing), campaign optimization (use suede-ads), attribution models, model comparison, or cross-tool reconciliation (use suede-attribution), or revenue-process architecture (use suede-revops).

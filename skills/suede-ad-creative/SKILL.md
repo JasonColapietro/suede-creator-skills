@@ -125,41 +125,10 @@ Performance Max asset groups take 3 to 15 headlines (30 chars, at least one of
 - Include at least one keyword-focused headline
 - Include at least one benefit-focused headline
 - Include at least one CTA headline
-- The quantities above are Google's ceiling. When the request came through `suede-ads`, its RSA output spec mandates the full 15 headlines and 4 descriptions, ship all of them.
+- The quantities above are Google's ceiling. This skill owns RSA generation: whenever you produce RSAs, load [references/rsa-output-spec.md](references/rsa-output-spec.md) and follow it exactly. It mandates the full 15 headlines and 4 descriptions plus the sidecars (ad groups, negatives, sitelinks, callouts).
 
-### Meta Ads (Facebook/Instagram)
+For Meta, LinkedIn, TikTok and X limits, load [references/platform-specs.md](references/platform-specs.md) (dated source) before writing for those platforms.
 
-| Element | Limit | Notes |
-|---------|-------|-------|
-| Primary text | 125 chars visible (up to 2,200) | Front-load the hook |
-| Headline | 40 characters recommended | Below the image |
-| Description | 30 characters recommended | Below headline |
-| URL display link | 40 characters | Optional |
-
-### LinkedIn Ads
-
-| Element | Limit | Notes |
-|---------|-------|-------|
-| Intro text | 150 chars recommended (600 max) | Above the image |
-| Headline | 70 chars recommended (200 max) | Below the image |
-| Description | 100 chars recommended (300 max) | Appears in some placements |
-
-### TikTok Ads
-
-| Element | Limit | Notes |
-|---------|-------|-------|
-| Ad text | 80 chars recommended (100 max) | Above the video |
-| Display name | 40 characters | Brand name |
-
-### Twitter/X Ads
-
-| Element | Limit | Notes |
-|---------|-------|-------|
-| Tweet text | 280 characters | The ad copy |
-| Headline | 70 characters | Card headline |
-| Description | 200 characters | Card description |
-
-For detailed specs and format variations, see [references/platform-specs.md](references/platform-specs.md).
 
 ---
 
@@ -181,6 +150,8 @@ new angles.
 ---
 
 ## Generating Ad Copy
+
+For primary-text formulas (PAS, BAB and others), headline formulas, CTA ladders, and image and video creative basics, load [references/ad-copy-templates.md](references/ad-copy-templates.md).
 
 ### Step 1: Define Your Angles
 
@@ -221,48 +192,7 @@ Present creative in a structured format that maps to the ad platform's upload re
 
 ## Iterating from Performance Data
 
-When the user provides performance data, follow this process:
-
-### Step 1: Analyze Winners
-
-Look at the top-performing creative (by CTR, conversion rate, or ROAS, ask which metric matters most) and identify:
-
-- **Winning themes**: What topics or pain points appear in top performers?
-- **Winning structures**: Questions? Statements? Commands? Numbers?
-- **Winning word patterns**: Specific words or phrases that recur?
-- **Character utilization**: Are top performers shorter or longer?
-
-### Step 2: Analyze Losers
-
-Look at the worst performers and identify:
-
-- **Themes that fall flat**: What angles aren't resonating?
-- **Common patterns in low performers**: Too generic? Too long? Wrong tone?
-
-Name the underperformers explicitly and say why the angle failed. Do not open by praising the existing set, and do not soften a losing angle into "needs more testing" when the declared metric has already resolved it at sufficient volume, say it lost, and retire it.
-
-### Step 3: Generate New Variations
-
-Create new creative that:
-- **Doubles down** on winning themes with fresh phrasing
-- **Extends** winning angles into new variations
-- **Tests** 1-2 new angles not yet explored
-- **Avoids** patterns found in underperformers
-
-### Step 4: Document the Iteration
-
-Track what was learned and what's being tested:
-
-```
-## Iteration Log
-- Round: [number]
-- Date: [date]
-- Top performers: [list with metrics]
-- Winning patterns: [summary]
-- New variations: [count] headlines, [count] descriptions
-- New angles being tested: [list]
-- Angles retired: [list]
-```
+When the user provides performance data (Mode 2), load [references/iteration-process.md](references/iteration-process.md) and follow its four steps: analyze winners, analyze losers, generate new variations, document the iteration. Name underperformers explicitly and retire an angle the declared metric has already resolved at sufficient volume; do not soften a loss into "needs more testing".
 
 ---
 
@@ -272,67 +202,11 @@ Read [the writing quality standards](references/writing-quality.md) before draft
 
 ## Output Formats
 
-### Standard Output
-
-Organize by angle, with character counts:
-
-```
-## Angle: [Pain Point: Manual Reporting]
-
-### Headlines (30 char max)
-1. "Stop Building Reports by Hand" (29)
-2. "Automate Your Weekly Reports" (28)
-3. "Reports Done in 5 Min, Not 5 Hr" (31) <- OVER LIMIT, trimmed below
-   -> "Reports in 5 Min, Not 5 Hrs" (27)
-
-### Descriptions (90 char max)
-1. "Marketing teams save [verified hours]/week with automated reporting. Start free." (bracketed values come from inputs or reviews)
-2. "Connect your data sources once. Get automated reports forever. No code required." (80)
-```
-
-### Bulk CSV Output
-
-When generating at scale (10+ variations), offer CSV format for direct upload:
-
-```csv
-headline_1,headline_2,headline_3,description_1,description_2,platform
-"Stop Manual Reporting","Automate in 5 Minutes","Join [verified count] Teams","Save [verified hrs]/week on reports. Start free.","Connect data sources once. Reports forever.","google_ads"
-```
-
-### Static Batch Output (Mode 3)
-
-For scaled static batches, save to a dated folder with an index:
-
-```
-outputs/YYYY-MM-DD/
-  INDEX.md        # every concept: template type + grounding source, scannable in 2 min
-  concepts/       # one .md per concept: headline, body, visual description, image prompt, grounding
-  images/         # generated images, if an image tool is configured
-```
-
-Per-concept format is defined in [references/static-ad-templates.md](references/static-ad-templates.md). The human workflow this supports: open the folder, scan INDEX.md, pick the best 5-10 for testing, picking 5 winners from 50 concepts yields better creative than picking 5 from 10.
-
-### Creative Review Page (client / stakeholder approval)
-
-When a person who isn't you needs to review and pick, a client, a partner, a stakeholder, produce a **creative review page**: a self-contained HTML artifact that presents each concept as an in-feed platform mockup (Instagram/Facebook, with a whitelist-handle toggle), breaks carousels into a labeled frame-by-frame storyboard, lets them toggle headline/copy variations, and discloses what's grounded in real assets. It's the visual upgrade to INDEX.md, a decision made off one link instead of by reading markdown. The template ships at [assets/creative-review-template.html](assets/creative-review-template.html) (one file, no build, hostable anywhere); populate its `DATA` object from your generated concepts. Full data model, grounding rules (the disclosure block is required), and delivery in [references/creative-review-page.md](references/creative-review-page.md).
-
-### Iteration Report
-
-When iterating, include a summary:
-
-```
-## Performance Summary
-- Analyzed: [X] headlines, [Y] descriptions
-- Top performer: "[headline]": [metric]: [value]
-- Worst performer: "[headline]": [metric]: [value]
-- Pattern: [observation]
-
-## New Creative
-[organized variations]
-
-## Recommendations
-- [What to pause, what to scale, what to test next]
-```
+Load [references/output-formats.md](references/output-formats.md) before formatting a delivery. It holds the shapes for:
+- **Standard output**: by angle, with inline character counts; **Bulk CSV** for 10+ variations
+- **Static batch (Mode 3)**: the dated `outputs/YYYY-MM-DD/` folder with `INDEX.md`, concepts and images
+- **Creative review page**: the client or stakeholder approval artifact built from [assets/creative-review-template.html](assets/creative-review-template.html), spec in [references/creative-review-page.md](references/creative-review-page.md)
+- **Iteration report**: performance summary, new creative, recommendations
 
 ---
 
@@ -346,6 +220,8 @@ Every mode clears this gate before anything is handed over. It is not mode-speci
 - [ ] No two variants share an angle; near-duplicates are removed
 - [ ] Every Mode 3 concept cites its grounding source (which review, winning ad, or comment)
 - [ ] No string from the Never-ship list in references/writing-quality.md appears in any variant (load it before drafting)
+- [ ] Every RSA follows [references/rsa-output-spec.md](references/rsa-output-spec.md): 15 headlines, 4 descriptions, and the sidecars in the stated order
+- [ ] No example or template data ships: brand, grounding, rollout and approval lines match this client's inputs, and no `Example Co`, `Example Studio`, `example.com`, `[[grounding:` token, or another client's name, results or approvals remains in any output, the review page included
 - [ ] Nothing plausibly violates platform policy for the target placement
 
 Any failure means fix it before delivering. Do not ship a batch with the failure noted as a caveat.

@@ -1,6 +1,6 @@
 ---
 name: suede-launch-packaging
-description: "Suede AI Launch Packaging Skills: software release packaging, handoff notes, and clean-install verification. Use when asked \"fix this install command\" or to prepare README, release notes, docs, proof links, and handoff copy for software, skills, or MCP servers. NOT FOR: campaign strategy (suede-marketing-plan), new copy (suede-copy), code review (suede-code), or conversion design (suede-site-alchemy)."
+description: "Suede AI Launch Packaging Skills: software release packaging, handoff notes, and clean-install verification. Use when asked \"fix this install command\" or to prepare README, release notes, docs, proof links, and handoff copy for software, skills, or MCP servers. NOT FOR: product or service campaign strategy (suede-marketing-plan), artist campaigns (suede-campaign-in-a-box), new copy (suede-copy), code review (suede-code), or conversion design (suede-site-alchemy)."
 metadata:
   display-name: "Suede AI Launch Packaging Skills"
   version: 1.0.0

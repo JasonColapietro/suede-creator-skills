@@ -2,11 +2,11 @@
 # Optimization Brief
 
 Private draft: review rights and creator details before sharing outside the
-intended Suede workflow.
+intended Suede AI workflow.
 
 ## Goal
 
-Prepare `Golden Hour Reprise` for Suede optimization after rights and file review.
+Prepare `Golden Hour Reprise` for Suede AI optimization after rights and file review.
 
 ## Recommended Next Actions
 
@@ -20,7 +20,7 @@ Prepare `Golden Hour Reprise` for Suede optimization after rights and file revie
    Reason: Primary audio was found and can be reviewed for final delivery quality.
    Blocks: none
 
-## Candidate Suede Services
+## Candidate Suede AI Services
 
 - Mastering / WAV export: available for review
 - Stem separation: stems already detected

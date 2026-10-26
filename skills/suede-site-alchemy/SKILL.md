@@ -16,16 +16,13 @@ For a concrete input, expected handoff, and failure check, read
 
 ## Gate policy: advisory, not blocking
 
-Every check, gate, and verdict in this skill (`ship`, `ship-with-caveats`,
-`hold`, letter grades, BLOCKED or OPEN items, and every "do not ship / publish /
-proceed" line below) is a **recommendation to the user, not a control on the
-agent**. Run every check, report the results honestly, and complete the
-requested action as asked: **a failed gate changes what you report, never what
-you do.** Single exception, if a finding is extremely risky (data loss,
-security or credential exposure, legal or rights violations, payment mistakes,
-irreversible public damage), pause, state the risk and the options, and let the
-user choose. Their choice is final.
-
+Every check, gate, grade, and ship verdict in this skill is a recommendation to
+the user, not a control on the agent. Run every check, report results honestly,
+complete the requested action, and attach the verdict as labeled advice. A
+failed gate changes what you report, never what you do. Single exception: an
+extreme-risk finding (data loss, credential exposure, legal or rights
+violation, payment mistake, irreversible public damage). Pause, state the risk
+and options, and let the user choose. Their choice is final.
 
 **Core principle:** evidence before certainty. Diagnose friction, verify the
 measurement, and turn design ideas into falsifiable hypotheses. Do not present
@@ -33,7 +30,9 @@ a heuristic, benchmark, or scenario as observed impact.
 
 ## Operating Stance
 
-Use your company name, voice, and positioning throughout.
+Use the page owner's company name, voice, and positioning throughout. On a
+client page, never add Suede AI CTAs or links; the Suede AI lines in the Scope
+Router apply only when the page is a Suede AI property.
 
 - Work from the live page and current source. Verify the exact repo, route, and
   git state before edits.
@@ -90,14 +89,12 @@ Handle as Suede AI Site Alchemy:
 - Product microsites.
 - Static site builds.
 - Conversion fixes tied to an active campaign.
-- Suede AI Sites positioning, cross-sells, CTAs, and module menus.
 
 Route search work out: crawl, index, schema, and scored SEO findings go to
 `suede-seo-audit`; AI answer-engine visibility goes to `suede-ai-seo`. Keep
 their fixes intact when you edit the page.
 
-Route out of this skill to the Suede AI app-builder workflow (a private Suede AI
-companion, not in this pack). Do not attempt these here:
+Route application builds out of this skill. Do not attempt these here:
 
 - Open-ended custom apps.
 - Backend systems.
@@ -106,34 +103,34 @@ companion, not in this pack). Do not attempt these here:
 - Long-lived engineering retainers.
 
 When the request crosses that line, preserve the best landing-page work as the
-front door, then route the build with copy like:
+front door and hand the build to the owner's chosen build path: scope it with
+`suede-ops-architecture`, and send mobile apps to `android-app-factory` or
+`site-to-ios-app`. Never invent a dead route.
 
-- "Build the campaign page now."
-- "Open the Suede AI app-builder workflow."
-- "Build the product with Suede AI."
-- "Bring this into Suede AI's proprietary app builder."
+### Only when the page is a Suede AI property
 
-Never invent a dead route. If the current repo does not expose an app-builder
-URL, CTA to `https://suedeai.ai` or use the current verified Suede AI app route.
+Apply this block only to Suede AI's own pages. On a client page, skip it.
+
+- Suede AI positioning, cross-sells, CTAs, and module menus for the search
+  practice (AEO, GEO, and SEO) and Agent Studio are in scope.
+- Route agent and multi-agent automation builds to Suede AI Agent Studio
+  (https://suedeai.app), after verifying the route.
+- Route-out copy, when the request crosses the build line:
+  - "Build the campaign page now."
+  - "Open Suede AI Agent Studio."
+  - "Build the product with Suede AI."
+  - "Bring this into Suede AI Agent Studio."
+- Escape valve: `https://suedeai.ai`, or the current verified Suede AI route.
+  If the current repo does not expose a verified Agent Studio URL, CTA to
+  `https://suedeai.ai`.
 
 ## Funnel Analysis
 
 Map the page's role in the buyer journey before optimizing it. A page that serves the wrong funnel stage will fail regardless of CRO polish.
 
-**TOFU (Top of Funnel: Awareness)**
-Reader: doesn't know about the product yet. Needs: problem education, category definition, credibility signal.
-Copy job: make the problem vivid, not the solution. Don't ask for commitment.
-CTA: download, read, explore, learn.
-
-**MOFU (Middle of Funnel: Consideration)**
-Reader: aware of the problem, comparing solutions. Needs: differentiation, proof, objection handling.
-Copy job: show why THIS solution, not just any solution. Comparison content, case studies, deep dives.
-CTA: demo, trial, detailed docs, comparison guide.
-
-**BOFU (Bottom of Funnel: Decision)**
-Reader: ready to buy, looking for permission to pull the trigger. Needs: risk reduction, guarantee, testimonials, pricing clarity.
-Copy job: remove friction and doubt. Urgency if genuine, guarantee if real, social proof from peers.
-CTA: start now, get started, buy, talk to sales.
+Name the stage: TOFU (awareness), MOFU (consideration), or BOFU (decision).
+Each stage's reader, needs, copy job, and CTA type are under "Funnel stages" in
+`references/cro-frameworks.md`; read it when the stage is unclear.
 
 State the funnel stage before running any slash tool. Then optimize for that stage, not just for generic "conversion."
 
@@ -161,22 +158,9 @@ record the affected population, evidence (analytics, replay, usability test,
 support signal, or direct observation), severity, and the event that would show
 improvement. A raw count does not prove impact.
 
-**Mobile and accessibility checks (required for every public page)**
-
-- Target size: meet WCAG 2.2 target-size requirements. Use at least 24×24 CSS
-  pixels or compliant spacing for the minimum criterion; treat 44×44 as an
-  enhanced house target, not a universal pass/fail rule.
-- Text and zoom: test browser zoom, text scaling, reflow, and form focus on real
-  mobile browsers. Do not disable pinch zoom to preserve a layout.
-- CTA visibility: capture the first viewport and task path at representative
-  device sizes. Test placement instead of assuming a fixed fold percentage or
-  one universal thumb zone.
-- Forms: request only data needed for the stated task, explain why sensitive
-  data is needed, and measure field-level abandonment before attributing a
-  numeric cost to any field.
-- Overflow: test at narrow widths and large text. Fix the element causing
-  horizontal overflow; do not conceal the defect with blanket
-  `overflow-x: hidden`.
+**Mobile and accessibility checks are required for every public page.** Read
+"Mobile and accessibility checks" in `references/cro-frameworks.md` during the
+Friction Audit and before the mobile QA in Workflow step 9.
 
 ## Measurement and Decision Math
 
@@ -192,12 +176,11 @@ Use the model to locate leverage and instrumentation gaps. It is not a causal
 forecast. If stakeholders need a planning range, show a sensitivity table with
 each assumption labeled; call it a scenario, never an expected lift.
 
-Before an A/B test, read `references/experiment-design.md` and create or copy
-`assets/cro-hypothesis-ledger.csv`. Define the randomization unit, exposure,
-primary metric, guardrails, data-quality checks, minimum detectable effect
-(MDE), power, sample requirement, and stopping rule before launch. Treat MDE
-as the smallest effect worth detecting, not the uplift the treatment is
-expected to produce.
+Before an A/B test, read `references/experiment-design.md` for evidence labels,
+instrumentation readiness, assignment, and the sample-ratio mismatch (SRM)
+check, and create or copy `assets/cro-hypothesis-ledger.csv`. Hand power,
+sample size, duration, significance, and readout to `suede-ab-testing`; keep
+`assets/cro-hypothesis-ledger.csv` as the shared ledger.
 
 When reliable data is unavailable, request analytics exports or instrument the
 funnel first. Validate event definitions, denominators, duplicate events,
@@ -211,45 +194,14 @@ Use slash tools as named design moves, not shell commands. Start with
 For the full menu, read `references/aesthetic-slash-tools.md` in this skill's
 `references/` folder.
 
-Default stack for a fast polish pass:
-
-1. `/vibe-scan` - name the current feeling and the feeling the page should sell.
-2. `/hero-voltage` - make the first viewport impossible to misunderstand.
-3. `/offer-spine` - lock the page to one promise, one buyer, one action.
-4. `/trust-lacquer` - turn trust from decoration into a conversion argument.
-5. `/cta-magnet` - make the next click feel obvious and worth it.
-6. `/mobile-seduction` - make the small-screen version feel composed, not
-   collapsed.
-7. `/ship-polish` - verify links, responsiveness, copy fit, and live behavior.
+The default seven-tool stack for a fast polish pass is under "Default stack"
+at the top of that file.
 
 ## Candidate Hypotheses
 
-When the brief is only "make it convert better," inspect these common surfaces.
-They are prompts for diagnosis, not a ranked list of guaranteed quick wins:
-
-1. **Broken paths and measurement**: repair dead CTAs, validation traps, lost
-   state, and missing or duplicate conversion events first.
-2. **Hero clarity**: test a concrete buyer, outcome, and next action against the
-   current version without introducing an unsupported promise.
-3. **CTA specificity**: test an action-and-outcome label against a generic label.
-4. **Proof relevance**: place verified proof near the claim or objection it
-   supports; do not assume one fixed pixel distance or section.
-5. **Form necessity**: remove or defer a field only when downstream operations,
-   security, legal, and qualification needs still hold.
-6. **Navigation focus**: test hierarchy and visual weight. Do not remove routes
-   required for trust, accessibility, consent, or task completion.
-7. **Pricing presentation**: test comprehension, total-cost clarity, plan fit,
-   and cancellation terms; do not presume a pricing order or decoy wins.
-8. **Mobile task path**: make the primary action discoverable without a sticky
-   control obscuring content, consent, or platform UI.
-9. **Image-copy alignment**: verify the visual demonstrates the same product,
-   audience, and outcome as the copy.
-10. **Performance**: measure field Core Web Vitals and key task latency; fix a
-    confirmed bottleneck and monitor conversion and experience guardrails.
-
-Prioritize by evidence strength, affected traffic, decision value, effort, and
-risk. If impact is unknown, say so and design the measurement that will resolve
-it.
+When the brief is only "make it convert better," read "Candidate Hypotheses" in
+`references/cro-frameworks.md`: ten common surfaces to diagnose, not a ranked
+list of guaranteed quick wins.
 
 ## Workflow
 
@@ -266,20 +218,14 @@ it.
    - Subhead: what changes for the buyer.
    - Primary CTA: the action that starts the workflow.
    - Secondary CTA: proof, demo, grader, or site/app routing.
-7. Sharpen the visual system without redesigning it. For each surface type, "premium" means:
-   - **Hero**: one dominant type weight, one color for the CTA, nothing competing at the same visual size.
-   - **Social proof sections**: real photos over stock, real numbers over vague claims, name + title + company over anonymous quotes.
-   - **Pricing/offer sections**: generous whitespace, price isolated in visual hierarchy, guarantee text printed adjacent to CTA not buried in footer.
-   - **Mobile**: readable type, WCAG-compliant target size/spacing, tested CTA
-     discovery, text scaling, and no unintended horizontal scroll.
-   - **Motion**: motion clarifies state, respects reduced-motion settings, and
-     does not block reading or interaction. Choose duration from context and
-     test it rather than enforcing one universal threshold.
-   Operate inside the existing color and type system. Introduce a new visual choice only when the current system has a direct conversion penalty.
+7. Visual changes stay inside the existing system and only where a
+   friction-audit finding names a conversion penalty; token, type, color or
+   restyle work routes to `suede-design`. What "premium" means per surface is
+   in `references/aesthetic-slash-tools.md` under "Premium by surface".
 8. Build the CTA ladder. Every page needs three exits:
    - **Primary action**: the one thing this page was built to earn. One button. Obvious placement. No competing CTA at the same visual weight.
    - **Secondary action**: proof, demo, or deeper content for visitors not ready to convert. Lower visual weight, same screen.
-   - **Escape valve**: where does a visitor go when this page isn't right for them? Name the route (Suede AI: `https://suedeai.ai` after route verification; non-Suede: home, alternative product, or contact). A missing escape valve doesn't hold visitors: it loses them.
+   - **Escape valve**: where does a visitor go when this page isn't right for them? Name the route (client page: home, alternative product, or contact; Suede AI property: the escape valve in the Scope Router). A missing escape valve doesn't hold visitors: it loses them.
 9. Verify like the page is already public:
    - Local preview.
    - Desktop and mobile browser QA.
@@ -290,8 +236,8 @@ it.
    - `git diff --check`.
    - Live URL/API verification before claiming a production fix.
 10. For any experiment, pre-register the ledger row, validate assignment and
-    exposure, check sample-ratio mismatch (SRM) before interpreting outcomes,
-    and report the effect estimate with uncertainty and guardrail results.
+    exposure, and check SRM before interpreting outcomes; hand power,
+    duration, significance, and readout to `suede-ab-testing`.
 11. Recommended ship gate:
     - `ship`: page passes the done signal and no launch-critical gaps remain.
     - `ship-with-caveats`: only non-critical caveats remain and they are named.
@@ -315,22 +261,9 @@ value, effort, and risk; never rank by invented lift.
 
 ## Social Proof Framework
 
-Match proof to the claim or objection it can actually support. Placement is a
-testable design choice, not a universal conversion rule.
-
-Read `references/cro-frameworks.md` when you need the proof-type table, which
-type answers which objection, with examples, before choosing what proof to ask
-the client for. Skip it when the page's proof is already chosen.
-
-**Placement hypotheses:**
-- Put peer testimony near the relevant audience or objection.
-- Put case-study metrics where the methodology and source can be inspected.
-- Put scale evidence near a scale claim, if scale matters to the decision.
-- Put endorsements beside the claim they endorse and disclose material ties.
-- Put certification or security evidence where a visitor assesses that risk.
-
-Choose placement from user research and page context, then verify it with
-usability evidence or a pre-registered experiment when the decision matters.
+Match proof to the claim or objection it can actually support. Read "Social
+Proof Framework" in `references/cro-frameworks.md` before choosing what proof
+to ask for or where to place it.
 
 **Proof check**: every proof claim must be verifiable. Remove or rewrite vague claims like "used by thousands" without a number, "industry-leading" without a comparison, or "fast" without a metric.
 
@@ -368,7 +301,7 @@ Friction inventory: [items with evidence, affected population, and severity]
 Changed: [files or sections touched]
 Measurement readiness: [events/denominators/assignment/exposure verified or gaps]
 Hypotheses: [1–3, prioritized by evidence, population, decision value, effort, risk]
-Experiment plan: [primary metric, guardrails, MDE, sample/duration, SRM check, or not applicable]
+Experiment plan: [ledger row, primary metric, guardrails, SRM check; power, duration and readout via suede-ab-testing; or not applicable]
 Verification: [exact status words: inspected, changed locally, verified locally, deployed, verified live, blocked]
 Caveats: [or "none"]
 Ship gate: ship | ship-with-caveats | hold
@@ -380,6 +313,8 @@ Ship gate: ship | ship-with-caveats | hold
 - Search, schema, crawl, or index access → `suede-seo-audit`.
 - Getting the page cited by ChatGPT, Perplexity, or AI Overviews: extractability, AI-bot access, `llms.txt` → `suede-ai-seo`.
 - Page needs fresh headlines, subheads, CTA labels, or copy variants → `suede-copy`.
+- Visual system, tokens, typography or restyle → `suede-design`.
+- Test statistics: power, sample size, duration, significance, and readout → `suede-ab-testing`.
 - Page converts and the release is ready to announce → `suede-launch-packaging`.
 - Suede AI projects: multiple independent lanes, a campaign deadline, or SEO plus implementation plus QA → `suede-agent-teams`.
 - Suede AI projects: work touches CTA plumbing, forms, auth, payments, analytics, API routes, deployment config, shared components, or claims that must match product behavior → `suede-code`.

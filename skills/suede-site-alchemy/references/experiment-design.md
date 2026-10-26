@@ -2,7 +2,10 @@
 
 Use this reference whenever a page recommendation is described as an A/B test,
 experiment, expected lift, or revenue opportunity. The goal is a decision that
-survives instrumentation, statistical, and business-quality checks.
+survives instrumentation, statistical, and business-quality checks. This file
+covers the CRO side: evidence labels, instrumentation readiness, the ledger,
+assignment and SRM, and metric contracts. Test statistics (power, sample size,
+duration, significance, peeking) belong to `suede-ab-testing`.
 
 ## 1. Separate Evidence Types
 
@@ -62,26 +65,14 @@ Do not choose the MDE after seeing results. MDE is a design threshold: the
 smallest effect the team needs the experiment to detect with the selected
 power. It is not an expected treatment effect.
 
-## 4. Sample Size and Duration
+## 4. Sample Size, Power, and Duration
 
-Calculate sample size with the current baseline, chosen metric model, MDE,
-significance level, power, allocation, and planned analysis. Record the tool or
-formula used. For clustered units, repeated observations, rare events, or
-ratio metrics, use an analysis that matches the data-generating process.
-
-Duration must account for:
-
-- expected eligible and exposed traffic, not total sessions;
-- full business cycles and known seasonality;
-- delayed outcomes and attribution windows;
-- ramp time and operational monitoring;
-- mutually exclusive tests or known interaction risks.
-
-Do not promise a fixed two-week test. Do not stop when a conventional p-value
-first crosses a threshold unless the pre-registered sequential design permits
-that look. If traffic cannot support the MDE in a useful timeframe, simplify
-the question, use stronger qualitative evidence, aggregate only when valid, or
-state that the experiment is infeasible.
+`suede-ab-testing` owns sample size, power, MDE inputs, test duration,
+stopping rules, and significance. Hand those to it, then record its outputs in
+the ledger columns (`mde_absolute`, `mde_relative`, `alpha`, `power`,
+`required_sample_per_arm`, `planned_duration_days`). If traffic cannot support
+the MDE in a useful timeframe, say so and use stronger qualitative evidence
+instead.
 
 ## 5. Assignment, Exposure, and SRM
 

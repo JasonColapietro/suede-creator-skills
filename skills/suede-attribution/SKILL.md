@@ -1,6 +1,6 @@
 ---
 name: suede-attribution
-description: "Suede AI Attribution Skills. Use when asked to \"explain why dashboards disagree\", compare revenue models, design incrementality reads, or join first-party browsing to hosted bookings/checkouts. NOT FOR: GA4/GTM event plans and UTMs (suede-analytics), ad campaign decisions (suede-ads), or CRM pipeline operations (suede-revops)."
+description: "Suede AI Attribution Skills. Use when asked to \"explain why dashboards disagree\" or \"which channel drove revenue\": multi-touch attribution model comparison, MMM (marketing mix modeling) and incrementality or geo-holdout reads, self-reported \"how did you hear about us\" attribution, and joining first-party browsing to hosted bookings/checkouts. NOT FOR: GA4/GTM event plans and UTMs (suede-analytics), ad campaign decisions (suede-ads), or CRM pipeline operations (suede-revops)."
 metadata:
   display-name: "Suede AI Attribution Skills"
   version: 1.2.0
@@ -61,17 +61,7 @@ When a user demands one true number, reframe: "We can get you a *defensible, con
 
 ### 2. Attribution models
 
-The six standard models and when each one lies:
-
-| Model | Credit rule | Best for | How it lies |
-|---|---|---|---|
-| **First-touch** | 100% to the first known touch | Top-of-funnel / demand-gen valuation; short cycles | Ignores everything that closed the deal; over-credits awareness channels |
-| **Last-touch** | 100% to the last touch before conversion | Direct-response, quick e-comm | Over-credits bottom-funnel + branded search/direct; ignores what created demand |
-| **Last non-direct** | 100% to last touch, skipping "direct" | A cheap fix for direct pollution | Still single-touch; just moves the blind spot |
-| **Linear** | Equal credit to every touch | Long, multi-touch journeys where every step matters | Treats a throwaway visit like a demo; flatters high-frequency channels |
-| **Time-decay** | More credit to touches nearer conversion | Longer cycles where recency matters | Under-credits the top of funnel; still an assumption, not a measurement |
-| **Position-based (U-shaped)** | 40% first, 40% last, 20% middle | B2B with clear "created" + "closed" moments | The 40/40/20 split is arbitrary; middle touches get shortchanged |
-| **Data-driven (algorithmic/Shapley)** | Credit from modeled marginal contribution | High-volume accounts with enough conversions | A black box; needs volume; can't see offline/dark touches it was never fed |
+Six standard models: first-touch, last-touch, last non-direct, linear, time-decay, position-based (U-shaped), plus data-driven (Shapley). The credit rule, best use, and how each one lies are in the at-a-glance table at the top of `references/attribution-models.md`; load it before recommending a model.
 
 **Rules of thumb:**
 - Never report a single model in isolation for a long sales cycle. Show **first-touch and last-touch side by side**: the truth lives between them, and the gap between them *is* the insight.
@@ -85,11 +75,7 @@ For the model math, worked examples of one journey scored six ways, and Shapley 
 
 Models split credit *within* your tracked data. Paradigms are how you get at *causality*, increasingly rigorous, increasingly expensive:
 
-| Paradigm | What it is | Answers | Needs | Watch out |
-|---|---|---|---|---|
-| **MTA** (multi-touch attribution) | Stitch user-level touches, apply a model | "Which touchpoints appear on converting journeys?" | Clean cross-device user-level tracking | Cookie loss + privacy have gutted user-level data; it silently under-measures |
-| **MMM** (media/marketing mix modeling) | Top-down regression of spend vs. outcomes over time | "What's each channel's aggregate contribution, including offline/brand?" | 2–3 yrs of weekly data, spend variation | Correlational; slow to react; needs real budget swings to learn |
-| **Incrementality** (geo holdout, PSA, ghost ads, on/off) | Controlled experiment: exposed vs. withheld | "Did this channel *cause* lift I wouldn't have gotten anyway?" | Ability to withhold; enough volume for significance | The gold standard, but you can only test a few things at a time |
+MTA (stitch user-level touches, apply a model), MMM (top-down regression of spend against outcomes), and incrementality (withhold exposure, measure the difference). The side-by-side comparison of what each answers, needs, and misses is in `references/measurement-paradigms.md` ("The three, compared").
 
 **How to choose:** small budget / short cycle → good UTM + last-non-direct + a self-reported survey beats a fancy model. Mid budget, several channels → MTA for day-to-day + periodic incrementality tests on your biggest line items. Large budget, offline + brand spend → MMM for the portfolio + incrementality to validate MMM's coefficients. Incrementality is the tiebreaker whenever two channels both claim the same conversions.
 
@@ -182,7 +168,7 @@ Deliver an **attribution readout**, not a data dump:
 ## Routing
 
 - Use `suede-analytics` for event tracking, tracking plans, UTMs, GA4/GTM setup. Do this *before* attribution: the line between the two is: suede-analytics owns "what events and how to fire them"; attribution owns "how touches join to conversions and survive to revenue."
-- Use `suede-ads` for ad-platform pixels, CAPI, server-side conversion tracking (see the conversion-tracking reference bundled with suede-ads).
+- Use `suede-analytics` for ad-platform pixels, CAPI and server-side conversion events (its ad-platform conversions reference). Use `suede-ads` for campaign, budget, and bid decisions that act on the read.
 - Use `suede-revops` for pipeline stages, lead lifecycle, CRM revenue reporting. Attribution feeds it.
 - Use `suede-ai-seo` for the AI-search attribution blind spot in depth.
 - Use `suede-ab-testing` for controlled experiments; the incrementality mindset applied to on-site changes.

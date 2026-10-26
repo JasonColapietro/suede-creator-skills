@@ -2,7 +2,7 @@
 
 A shareable, self-contained web page that presents generated ad concepts for a client or stakeholder to **review and pick**: the visual upgrade to `INDEX.md`. Where the markdown outputs are built for the operator, the review page is built for the person approving the spend: it shows each concept as an in-feed platform mockup, breaks carousels into a labeled frame-by-frame storyboard, lets them toggle copy variations, and discloses what's grounded in real assets.
 
-The template ships at [assets/creative-review-template.html](../assets/creative-review-template.html). It's one file: inline CSS and JS, no build, no dependencies, no network. Open it locally, host it on any static host (Vercel/Netlify/GitHub Pages), or hand off the `.html` file directly.
+The template ships at [assets/creative-review-template.html](../assets/creative-review-template.html). It's one file: inline CSS and JS, no build, no dependencies, no network. Its default data is a fictional placeholder brand ("Example Co") with `[[grounding: ...]]` tokens; replace all of it before delivery. Open it locally, host it on any static host (Vercel/Netlify/GitHub Pages), or hand off the `.html` file directly.
 
 ## When to produce one
 
@@ -21,37 +21,37 @@ The template renders entirely from a JSON block near the top of the file, `<scri
 ```jsonc
 {
   project: {
-    brand: "Truvani",              // required
-    agency: "Light Labs",          // optional: adds the co-brand line + the default handle fallback (partner label/initials)
-    date: "2026-07-12",            // optional
+    brand: "Example Co",           // required (fictional placeholder; use this client's real brand)
+    agency: "Example Studio",      // optional: adds the co-brand line + the default handle fallback (partner label/initials)
+    date: "2026-01-01",            // optional
     note: "one-line context"       // optional
   },
   platforms: ["instagram", "facebook"],   // previews to offer; first is the default. Supported: instagram, facebook
   concepts: [                              // each concept is one strategic ANGLE (see SKILL.md "Define Your Angles")
     {
-      name: "Heavy-Metal Proof",           // required: the angle name
-      tagline: "Lifestyle hero, then the lab results",   // one line, what makes this concept distinct
+      name: "Proof-Led",                   // required: the angle name
+      tagline: "Product hero, then the verified result",   // one line, what makes this concept distinct
       handles: [                            // optional. 1 entry = normal post; 2 = whitelist handle toggle
-        { name: "truvani", partner: "Paid partnership with lightlabs", initials: "TV" },
-        { name: "Light Labs", partner: "Paid partnership with truvani", initials: "LL" }
+        { name: "exampleco", partner: "Paid partnership with examplestudio", initials: "EC" },
+        { name: "Example Studio", partner: "Paid partnership with exampleco", initials: "ES" }
       ],
       frames: [                             // 1 frame = single ad; multiple = carousel storyboard
         {
           label: "Hook",                    // the frame's job in the narrative arc
-          prompt: "Product bag hero on soft pink, gold-lace overlay",  // image description (shown as placeholder if no image)
-          image: "images/heavy-metal-01.png",   // optional: URL, relative path, or data URI; omit for text-only concepts
-          headline: "Finally: a plant-based protein that's third-party tested for heavy metals.",  // optional per-frame overlay
+          prompt: "Product hero shot from the client's own photography",  // image description (shown as placeholder if no image)
+          image: "images/proof-led-01.png",     // optional: URL, relative path, or data URI; omit for text-only concepts
+          headline: "[[grounding: hook line built from a verified product claim]]",  // optional per-frame overlay
           headlineTheme: "dark"             // optional: "dark" (default, white text) or "light" (dark text on light imagery)
         }
         // … one object per frame
       ],
       headlines: [                          // selectable variations; the picked one overlays frame 1 in the preview
-        "Finally: a plant-based protein that's third-party tested for heavy metals.",
-        "We tested our protein for heavy metals. Here's what an independent lab found.",
-        "Most protein powders are never tested for heavy metals. Ours is."
+        "[[grounding: headline variant 1 from a verified claim]]",
+        "[[grounding: headline variant 2 from a verified claim]]",
+        "[[grounding: headline variant 3 from a verified claim]]"
       ],
       primaryText: "The caption / body copy.",
-      destination: { url: "shop.truvani.com", cta: "Shop now", offer: "72% OFF Protein Starter Kit" },
+      destination: { url: "example.com", cta: "Shop now", offer: "[[grounding: the client's current offer, exactly as approved]]" },
       rollout: {                            // optional: the mechanics of how this runs (whitelist, launch plan)
         title: "How the whitelist runs",
         steps: ["step 1", "step 2", "…"]
@@ -77,7 +77,7 @@ Ship review pages with placeholders freely; they communicate the concept. Swap i
 
 ## Grounding: the disclosure block is required
 
-Every concept must carry a `grounding` line, and it must be true. This is the same rule as the Grounded Inputs corpus, surfaced to the client: state exactly what is real (which lab panel, which review, which product photography) and, by omission, what is illustrative. The source pattern's line is the model: *"Results are Truvani's actual Light Labs panel (Vanilla, tested Nov 13, 2025). Imagery is Truvani's own product & lifestyle photography."*
+Every concept must carry a `grounding` line, and it must be true. This is the same rule as the Grounded Inputs corpus, surfaced to the client: state exactly what is real (which lab panel, which review, which product photography) and, by omission, what is illustrative. The model shape: *"Results are [[grounding: name the exact real source, e.g. the client's named test report, with its date]]. Imagery is [[grounding: whose photography, e.g. the client's own product and lifestyle shots]]."* Fill each token from this client's inputs; never copy another client's sources, results, or approvals.
 
 Never present invented stats, fabricated test results, or stock imagery as the brand's own. If a concept's proof isn't real yet, the grounding line says so ("Results shown are illustrative pending the lab panel"): a review page that launders fiction as fact is worse than no review page.
 
@@ -93,7 +93,8 @@ The `DATA` lives in a `<script type="application/json" id="review-data">` block,
 1. Copy `assets/creative-review-template.html` into the batch's output folder as `review.html` (e.g. `outputs/YYYY-MM-DD/review.html`).
 2. Replace the `DATA` object with the real project: concepts, frames, copy, grounding. Populate `image` paths for any frames you've rendered (keep them relative to the html file so the folder stays portable).
 3. Verify it renders: open it in a browser, click through every concept tab, both platform and handle toggles, and each frame in the storyboard.
-4. Deliver: hand off the folder (html + `images/`), or host it. For a client link, `vercel deploy` or any static host works, it's a single page with local assets.
+4. Verify no template default survives: search the file for `Example Co`, `Example Studio`, `example.com` and `[[grounding:`. Any hit means a value was not replaced with this client's input; fix it before delivery.
+5. Deliver: hand off the folder (html + `images/`), or host it. For a client link, `vercel deploy` or any static host works, it's a single page with local assets.
 
 Keep the review page next to the markdown outputs, not instead of them: `INDEX.md` and the per-concept files remain the operator's record and the grounding audit trail; `review.html` is the approval surface built on top.
 

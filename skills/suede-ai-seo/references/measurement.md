@@ -65,12 +65,14 @@ Create a custom channel group with an "AI assistants" channel placed above
 Referral. Condition: session source matches regex:
 
 ```text
-^(chatgpt\.com|chat\.openai\.com|perplexity\.ai|www\.perplexity\.ai|copilot\.microsoft\.com|gemini\.google\.com|claude\.ai|chat\.mistral\.ai|meta\.ai|you\.com)$
+^(chatgpt\.com|chat\.openai\.com|(www\.)?perplexity\.ai|gemini\.google\.com|copilot\.microsoft\.com|copilot\.com|claude\.ai|chat\.mistral\.ai|meta\.ai|grok\.com|chat\.deepseek\.com|you\.com)$
 ```
 
 Also include `utm_source` values the assistants append (ChatGPT commonly uses
 `chatgpt.com`). Verify the list against your own Traffic acquisition report
-first: add domains you see, remove ones you never do.
+first: add domains you see, remove ones you never do. This is the canonical
+list (checked 2026-10); `suede-analytics` carries an identical copy, so change
+both together.
 
 Report: sessions, engaged sessions, key events, conversion rate, and top landing
 pages for the channel, month over month. Landing pages show which of your pages

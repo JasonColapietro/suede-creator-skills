@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Migrate a Suede intake manifest from schema 0.1.0 to 0.2.0.
+"""Migrate a Suede AI intake manifest from schema 0.1.0 to 0.2.0.
 
 The migration is evidence-preserving and non-destructive: it writes a sibling
 file by default, never upgrades confirmation state, never fills shares, and

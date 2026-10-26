@@ -14,21 +14,10 @@ input, expected artifact, failure response and validation example.
 
 Requires a host with agent delegation for parallel execution and repo/file access; Git for worktrees and contribution ledgers. Without delegation, serialize the same lane plan and report the execution mode.
 
-## Model selection: Fable capped at 4 without asking
+## Model selection
 
-Subagents inherit the session model unless the spawning call names one. Nothing in
-this skill picks a model, so every agent it fans out lands on whatever the session
-happens to be set to. That is how a run sized against one allocation gets billed to
-another without anyone choosing it.
-
-**Up to 4 concurrent Fable subagents are allowed without an explicit Fable
-instruction. Beyond that, Fable must be specified**: any roster past a scout, a
-builder, and a handoff writer passes 4, so this skill's fan-out does not run on Fable
-unless the user named Fable for this run. An inherited session model is not a
-specification: "the session was already on it" is not the user asking. Absent an
-explicit Fable instruction, do one of two things before launching: name a different
-model on the agent calls, or state plainly that the run will bill to the Fable
-allocation and get an answer. Silence is not consent to spend it.
+Name the model on every agent call; never let fan-out inherit the session model
+silently. Tiering rules: [references/execution-loop.md](references/execution-loop.md).
 
 ## Gate policy: advisory, not blocking
 
@@ -39,7 +28,6 @@ failed gate changes what you report, never what you do. Single exception: an
 extreme-risk finding (data loss, credential exposure, legal or rights
 violation, payment mistake, irreversible public damage). Pause, state the risk
 and options, and let the user choose. Their choice is final.
-
 
 The orchestrator assigns lanes, not conversations. Output is a delivery artifact, not a status update.
 
@@ -86,7 +74,7 @@ The orchestrator writes the resolved lane map to the team ledger (`.suede-team/<
 
 ## Default Roster
 
-Start with Scout + Builder + Handoff Writer. Add roles only when a gate is needed: design changes add Design Reviewer, code risk adds Code Grader + Code Reviewer (both run suede-code, in `--grade-only` and `--findings-only` modes), public release adds Release Verifier.
+Start with Scout + Builder + Handoff Writer. Add roles only when a gate is needed: design changes add Design Reviewer, code risk adds one Code Reviewer lane running suede-code full mode (findings and grade in one pass; add a second independent lens only under Review Convergence), public release adds Release Verifier.
 
 - **Scout:** finds repo, docs, current state, dirty files, live routes, and
   likely blast radius.
@@ -95,9 +83,9 @@ Start with Scout + Builder + Handoff Writer. Add roles only when a gate is neede
 - **Builder:** makes narrow code or content changes inside the existing system.
 - **Design reviewer:** checks rendered visual quality, responsive behavior,
   accessibility, copy, and state coverage.
-- **Code grader:** assigns an A-F ship-risk grade across correctness, security,
-  data/state, Suede AI truth, UX/release behavior, tests, and deploy readiness.
-- **Code reviewer:** runs full-context review and turns findings into fix briefs.
+- **Code reviewer:** runs suede-code full mode: findings turned into fix briefs
+  plus an A-F ship-risk grade across correctness, security, data/state, Suede AI
+  truth, UX/release behavior, tests, and deploy readiness.
 - **Visibility grader:** grades public pages, GitHub Pages sites, docs, and
   launch surfaces for findability, first-screen clarity, CTA pull, proof, AI
   readability, and design signal.
@@ -126,54 +114,29 @@ When to skip: clear, contained changes where the approach is obvious and the bla
 
 ## Feature Flag Strategy
 
-Not every change should ship as a hard deploy. Feature flags allow gradual rollout, A/B testing, and instant rollback without a redeploy.
-
-**When to flag:**
-- New user-facing features in production traffic paths
-- Changes to auth, payment, or data migration paths
-- Any change that cannot be instantly rolled back by revert (e.g., a schema migration)
-- A/B tests
+Not every change should ship as a hard deploy. Flag new user-facing features on
+production paths, auth, payment, or migration changes, anything revert cannot
+undo, and A/B tests; the full when-to-flag list is in
+[`references/scenario-templates.md`](references/scenario-templates.md).
 
 Once a lane is flagged, read the lifecycle, the when-NOT-to-flag list, and the hygiene
-rules in
-the Feature Flag Strategy section of [`references/scenario-templates.md`](references/scenario-templates.md)
+rules in the Feature Flag Strategy section of [`references/scenario-templates.md`](references/scenario-templates.md)
 before the ramp starts. Every flag gets a removal date at creation; a stale flag is a
 P3 code review finding.
 
-## Rollback Decision Tree
+## Rollback and post-mortem
 
-When something goes wrong after a deploy, the team needs a pre-agreed decision framework to avoid paralysis.
-
-```
-Is there active data loss or corruption? → ROLLBACK IMMEDIATELY. Don't investigate first.
-Is there a security exposure (PII, auth bypass, payment data)? → ROLLBACK IMMEDIATELY. Notify security.
-Is a primary user path broken (login, checkout, core workflow)? → ROLLBACK unless fix is <15 minutes away.
-Is performance degraded but functional? → Hold and investigate. Set a 30-minute timer.
-Is it a cosmetic issue? → Hot-fix forward. No rollback.
-```
-
-After rollback:
-1. Write an immediate summary: what rolled back, what was affected, who was notified.
-2. Leave rollback notes in the PR and open a follow-up issue.
-3. Run a lightweight post-mortem (see below) before re-shipping.
-
-## Post-Mortem
-
-For any production incident, failed release, or significant rollback, run a post-mortem. Keep it blameless: focus on systems, not individuals.
-
-Severity: P0 (total outage) / P1 (primary path broken) / P2 (degraded) / P3 (cosmetic).
-
-Post-mortems are required for P0 and P1 incidents. Optional but encouraged for P2. Skip for P3.
-When one is required, write it from
-[`references/incident-and-rfc-templates.md`](references/incident-and-rfc-templates.md)
-and fill every section: timeline, impact, root cause, contributing factors, what went
-well, and action items with owners and due dates.
+When something goes wrong after a deploy, follow the Rollback Decision Tree in
+[`references/incident-and-rfc-templates.md`](references/incident-and-rfc-templates.md):
+active data loss or security exposure rolls back immediately, before any
+investigation. A P0 or P1 incident requires a blameless post-mortem from the same
+file before re-shipping.
 
 ## Phase Loop
 
-The Phase Loop is the Continuous Team Loop run at minimal scale. Use it when a full 10-gate roster is overkill but you still need scout, plan, build, verify, and ship stages.
+The Phase Loop is the Continuous Team Loop in [references/execution-loop.md](references/execution-loop.md) run at minimal scale. Use it when that loop's full 10-gate roster is overkill but you still need scout, plan, build, verify, and ship stages.
 
-For high-risk changes, consult the Rollback Decision Tree before shipping. For gradual rollouts, use the Feature Flag Strategy. For shared interface changes, require RFC Mode before the plan stage opens.
+For high-risk changes, consult the Rollback Decision Tree (references/incident-and-rfc-templates.md) before shipping. For gradual rollouts, use the Feature Flag Strategy. For shared interface changes, require RFC Mode before the plan stage opens.
 
 ## Public Contribution Program
 
@@ -191,7 +154,7 @@ branding or trailers. Never forge authorship or deny tool use; an upstream
 disclosure requirement overrides neutral packaging and moves the lane to owner
 review.
 
-## Model Tiering
+## Fix-cycle cap
 
 Allow up to three genuinely different fixes, each changing the diagnosis or strategy. Stop early when the same root cause repeats; escalate with the evidence instead of re-dispatching unchanged work.
 
@@ -274,7 +237,7 @@ Stop the loop, surface the condition, and wait for human sign-off before continu
 |---|---|---|
 | Repeated fix cycles | > 3 fix-rerun cycles on the same failing check | Stop. Write a diagnosis summary. Ask: is the acceptance criterion correct, or is the fix strategy wrong? |
 | Security finding of unknown severity | Any finding touching auth, session, PII, payment data, or access control that cannot be confidently classified as low risk | Stop. Do not attempt a fix. Surface the exact finding and uncertain blast radius. Human decides next step. |
-| Production incident with data exposure | Any indication of PII, payment data, or auth token exposure in production logs, error reports, or user reports | Stop all lanes. Trigger rollback decision tree. Notify human immediately. Do not investigate further before rollback. |
+| Production incident with data exposure | Any indication of PII, payment data, or auth token exposure in production logs, error reports, or user reports | Stop all lanes. Trigger the Rollback Decision Tree (references/incident-and-rfc-templates.md). Notify human immediately. Do not investigate further before rollback. |
 | Cost spike | > 20 tool calls without a verified output, or estimated API/infra cost > $50 in a single loop | Stop. Summarize progress and remaining scope. Ask human to authorize continuation. |
 | Contradictory constraints | Two constraints in the Team Contract are mutually exclusive | Stop planning. Surface the conflict with a specific example. Do not proceed until human resolves. |
 
@@ -286,7 +249,7 @@ No agent may override an escalation threshold by re-scoping the task or declarin
 - "The approach is obvious, skip the RFC": if it has been discussed twice without resolution, it is not obvious.
 - "Mark it done, the code is written": `changed locally` is not `verified locally`; the status vocabulary has no shortcuts.
 - "Leave that caveat out so the handoff looks clean": a handoff missing a field is status `held`, not done.
-- "One more fix cycle will crack it": past 3 cycles on the same failing check, stop and run the loop stall protocol.
+- "One more fix cycle will crack it": past 3 cycles on the same failing check, stop and run the loop stall protocol (references/execution-loop.md).
 - "The builder can review its own lane": for high-risk work, builder and reviewer stay separate.
 
 ## Handoff Quality Checklist
@@ -355,5 +318,9 @@ Cue Suede:
   `references/public-contribution-program.md` and keep this skill as controller
 - A code lane needs review or a ship grade → **suede-code** (full, `--findings-only`, or `--grade-only`)
 - The repo's merge gate is weak or missing → **suede-ci-gate**
+- Lanes would build an automation or agent system whose schema, write paths, or
+  automation-vs-agent split is undecided → **suede-ops-architecture** before lanes open
+- One value or rule is stated on two or more surfaces across repos →
+  **suede-parity-contract** for the contract, one lane here per surface
 - A lane ships AI behavior → **suede-ai-eval** before that lane's quality gate closes
 - The public launch lane needs a page verdict → **suede-visibility-grader**, then **suede-launch-packaging**

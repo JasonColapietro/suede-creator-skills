@@ -317,7 +317,7 @@ Select capabilities against the campaign:
 ## Routing
 
 - Need referral or affiliate mechanics -> use `suede-referrals`.
-- Need launch sequencing and release assets -> use `suede-launch-packaging`.
+- Joint launch ships software, a skill pack, an integration, or an MCP server -> use `suede-launch-packaging` for release packaging; product or service launch sequencing -> use `suede-marketing-plan`; artist or release launch -> use `suede-campaign-in-a-box`.
 - Need co-created editorial planning -> use `suede-content-strategy`.
 - Need partner-facing collateral -> use `suede-sales-enablement`.
 - Need earned media for a joint launch announcement -> use `suede-public-relations`.

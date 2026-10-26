@@ -1,6 +1,6 @@
 ---
 name: suede-ops-assessment
-description: "Suede AI Operations Assessment Skills: map real work, silos (including spreadsheets and inboxes used as databases), friction, ownership, costs, and adoption signals from operator evidence. Use when asked \"where is our team losing time\", what to automate first, or to rank operational and AI agent opportunities before designing automation, or when a shipped system is being routed around. NOT FOR: choosing and building the target architecture (suede-ops-architecture), auditing requester-supplied figures, or unapproved system access."
+description: "Suede AI Operations Assessment Skills: map real work, silos (including spreadsheets and inboxes used as databases), friction, ownership, costs, and adoption signals from operator evidence. Use when asked \"where is our team losing time\", what to automate first, where tribal knowledge and key-person risk sit, or to rank operational and AI agent opportunities before designing automation, or when a shipped system is being routed around. NOT FOR: choosing the target architecture (use suede-ops-architecture); building it (use suede-graph-flo-xr or suede-agent-teams); lead lifecycle and CRM routing (use suede-revops); external customer research (use suede-customer-research); auditing requester-supplied figures, or unapproved system access."
 metadata:
   display-name: "Suede AI Operations Assessment Skills"
   version: 1.0.0

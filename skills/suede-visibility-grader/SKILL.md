@@ -71,25 +71,22 @@ files and mark live checks as unverified.
 Score each lane A-F, then give one overall grade:
 
 - **Findability:** status, canonical, robots (including `noindex` and snippet directives), sitemap, title, description,
-  durable keywords, and duplicate URL risk.
+  durable keywords, duplicate URL risk, and entity markup (JSON-LD declares the
+  entity type, the author or organization with a stable `@id`, and the
+  published or modified date, matching visible text).
 - **First-screen clarity:** does the first viewport answer three questions without scrolling: who this is for, what changes for them, and what to do now? Grade on the rendered first viewport, not the document structure.
 - **CTA pull:** primary action, secondary proof action, button text, link
   targets, and whether the visitor has a reason to click now.
 - **Proof and trust:** screenshots, commands, docs, manifests, live routes,
   source files, receipts, authorship, and evidence boundaries.
-- **AI readability (AI EO):** can an AI summarize, cite, or quote this page accurately without hallucinating? Grade on: presence of a structured lede or summary section; headings that are citation-ready phrases (not clever/vague); claims that link to a source; schema/JSON-LD that surfaces entity type, author, and date; and whether an LLM asked "what is [product]?" would return a correct, attributable answer from this page.
-
-  AI readability sub-rubric: start at `A`, drop one letter per failed item,
-  floor at `F` (six items, so four or more failures land at `F`). `suede-ai-seo`
-  owns the extractability standard these items encode; when an item is ambiguous
-  or the threshold needs to change, resolve it there, not here.
-
-  - Direct answer up top: the first 40 to 80 words answer "what is this, who is it for, what does it do" without jargon and name the subject.
-  - Question headings: headings name their own subject and read as answers an engine would quote. "Getting started" fails. "How to install X in 3 commands" passes.
-  - Quotable, sourced claims: every quantitative or comparative claim is a plain sentence that links to a source or shows primary evidence.
-  - Entity markup: JSON-LD declares the entity type, the author or organization (with a stable `@id`), and the published or modified date, matching visible text.
-  - Next-step links: at least one descriptive internal link to a more detailed resource per major section.
-  - AI test: if an assistant were asked "what is [product/page topic]?" using only this page, would it produce a correct, attributable answer? If no, cap AI readability at C.
+- **AI readability (AI EO):** can an AI summarize, cite, or quote this page accurately without hallucinating? Score the 9 extractability checks in `suede-ai-seo` section 3 ("Answer: is each page built to be quoted?"), the same standard `suede-seo-audit` Lane 6 reports, so both graders give one page the same AI-readiness result:
+  direct answer up top, question headings, self-contained passages, quotable
+  facts, original information, comparisons in tables, freshness, attribution,
+  and text, not pixels. 9 or 8 pass = `A`, 7 = `B`, 6 = `C`, 5 = `D`, 4 or
+  fewer = `F`. AI test: if an assistant asked "what is [product/page topic]?"
+  using only this page would not produce a correct, attributable answer, cap AI
+  readability at `C`. When a check is ambiguous or its threshold needs to
+  change, resolve it in `suede-ai-seo`, not here.
 - **Design signal:** seven pass/fail axes. The grade is the pass count: 7 → `A`,
   6 → `B`, 5 → `C`, 4 → `D`, 3 or fewer → `F`. A cap below overrides the count.
   1. Hierarchy: H1 > H2 > body weight is visually obvious at a glance.
@@ -106,7 +103,7 @@ Grade meaning: assign on evidence, not impression:
 - **B:** one or two lanes at C; none below C. Fix those; everything else is solid.
 - **C:** three or more lanes at C, or any lane at D. The page works but bleeds attention or trust somewhere in the first scroll. Not ready for paid promotion.
 - **D:** two or more lanes at D, or any lane at F short of the overall-F conditions. Visible but embarrassing under scrutiny. A focused rewrite of one surface fixes it.
-- **F:** assign when any of these are true: primary CTA is broken, a published statement is false, the page doesn't render, or robots/canonical actively blocks it.
+- **F:** assign when the page doesn't render, robots/canonical actively blocks it, or a published statement central to the product promise is false.
 
 Grade caps: non-negotiable:
 

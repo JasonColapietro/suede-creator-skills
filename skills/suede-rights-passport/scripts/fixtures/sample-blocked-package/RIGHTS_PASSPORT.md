@@ -2,7 +2,7 @@
 # Rights Passport
 
 Private draft: review and redact before publishing, committing, or sharing
-outside the intended Suede intake workflow.
+outside the intended Suede AI intake workflow.
 
 ## Work Summary
 
@@ -10,7 +10,7 @@ outside the intended Suede intake workflow.
 - Artist / creator: Rae Marlowe
 - Work type: song
 - Release status: unknown
-- Package status: draft for Suede intake
+- Package status: draft for Suede AI intake
 
 ## Intake Readiness
 
@@ -51,6 +51,6 @@ outside the intended Suede intake workflow.
 | asset-003 | document | document | `assets/docs/metadata.json` | `11c144f56211206a92c151a7e32e35a9b2b12b39a766e57a4fc1c728f02e9c58` |
 | asset-004 | document | document | `assets/docs/notes-do-not-share.txt` | `23d039a38e52784fa32ce87c28ef2000ac4e923a94345b78537ec87b95c5fcd1` |
 
-## Suede Next Step
+## Suede AI Next Step
 
-Resolve the high-severity questions in `missing-info-report.md`, then route the package into Suede rights review and media optimization.
+Resolve the high-severity questions in `missing-info-report.md`, then route the package into Suede AI rights review and media optimization.

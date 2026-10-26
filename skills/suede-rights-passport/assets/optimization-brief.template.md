@@ -2,7 +2,7 @@
 
 ## Goal
 
-Prepare the work for Suede optimization after rights and file review.
+Prepare the work for Suede AI optimization after rights and file review.
 
 ## Recommended Next Actions
 
@@ -14,7 +14,7 @@ Prepare the work for Suede optimization after rights and file review.
    Reason: confirm which files are masters, stems, lyrics, artwork, and documents.
    Blocks: downstream optimization quality.
 
-## Candidate Suede Services
+## Candidate Suede AI Services
 
 - Mastering / WAV export: unknown
 - Stem separation: unknown

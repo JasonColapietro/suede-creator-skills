@@ -1,6 +1,6 @@
-# Conversion Tracking Setup
+# Ad-Platform Conversions: Pixels, CAPI and Server Events
 
-How to set up conversion tracking pixels across ad platforms. This guide covers installation, event configuration, and validation: everything a marketer needs to ensure ad spend is properly attributed.
+How to set up conversion tracking pixels and server-side events across ad platforms: installation, event configuration, deduplication, and validation. `suede-analytics` owns this implementation; `suede-ads` decides which conversion each campaign optimizes for, and `suede-attribution` reconciles the numbers. Platform behavior changes often: re-check each platform's official docs before building, and treat the dated notes below as the last check, not a guarantee.
 
 ---
 
@@ -24,7 +24,7 @@ Get tracking right before spending a dollar on ads.
 | **Meta** | Meta Pixel + CAPI | Conversions API | Purchase, Lead, ViewContent, AddToCart |
 | **LinkedIn** | Insight Tag | Conversions API | conversion (URL or event-based) |
 | **TikTok** | TikTok Pixel | Events API | Purchase, ViewContent, AddToCart, CompleteRegistration |
-| **Twitter/X** | Twitter Pixel | - | Purchase, SignUp, Download |
+| **X** | X Pixel | Conversion API (checked 2026-10) | Purchase, SignUp, Download |
 
 ---
 
@@ -167,12 +167,14 @@ Set up via:
 
 Key: send the same events from both pixel (browser) AND CAPI (server), with a shared `event_id` for deduplication.
 
-### Aggregated Event Measurement
+### Aggregated Event Measurement (checked 2026-10)
 
-Required for iOS 14+ tracking. In Events Manager > Aggregated Event Measurement:
-1. Verify your domain
-2. Configure and prioritize your top 8 events in order of business importance
-3. Purchase should typically be #1, Lead #2
+Meta still applies Aggregated Event Measurement to iOS traffic, but since 2023 it runs on Meta's side: the 8-event configuration and ranking step and the separate AEM tab in Events Manager were removed, and domain verification is recommended rather than required. Do not ask a user to prioritize 8 events. Instead:
+1. Verify the domain anyway (it still governs who can edit event settings and helps with brand safety)
+2. Send the optimization events from both pixel and CAPI with a shared `event_id`
+3. Confirm in Events Manager that each optimization event shows recent activity and an acceptable match quality
+
+Re-check Meta's current Business Help Center AEM page before relying on this; the change was announced through secondary coverage and Meta's documentation has shifted more than once.
 
 ---
 
@@ -299,6 +301,14 @@ ttq.identify({
 
 ---
 
+## X (checked 2026-10)
+
+### X Pixel plus Conversion API
+
+Install the X Pixel (base code plus event code per conversion), then send the same events server side through the X Ads Conversion API. Requirements: a developer account with Ads API access and a token from a user with AD_MANAGER or ACCOUNT_ADMIN access. For Google Tag Manager server containers, X publishes an official "X Ads Conversion API" template. Send a shared conversion ID from pixel and API so X can deduplicate. Endpoint and field details: X's web conversions reference at docs.x.com (x-ads-api/measurement/web-conversions).
+
+---
+
 ## Validation Checklist
 
 After installing any pixel, verify before going live:
@@ -346,8 +356,8 @@ After installing any pixel, verify before going live:
 
 Browser-only tracking is increasingly unreliable due to:
 - iOS 14+ App Tracking Transparency
-- Third-party cookie deprecation
-- Ad blockers (30%+ of tech audiences)
+- Third-party cookie blocking in Safari and Firefox
+- Ad blockers, which are common among technical audiences
 
 **Use server-side (CAPI/Events API) when:**
 - Running Meta or TikTok ads (strongly recommended)
