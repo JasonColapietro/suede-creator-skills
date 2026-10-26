@@ -1,0 +1,18 @@
+{
+  "previous_revision": "1c039ab9ed51bc67bcbdb1d2ed690a5151ab6abf",
+  "target_revision": "016c0afd1f98cb3f6caa91419bdb569fdee38777",
+  "changed_files": [
+    "skills/suede-ad-creative/references/writing-quality.md",
+    "skills/suede-ads/references/optimization-and-retargeting.md",
+    "skills/suede-agent-teams/references/execution-loop.md",
+    "skills/suede-attribution/references/first-party-summary.md",
+    "skills/suede-code/references/grading-contract.md",
+    "skills/suede-deslop/references/editing-rules.md",
+    "skills/suede-ship-copy/references/claim-origin-policy.md",
+    "skills/suede-ship-copy/references/phase-and-threshold-reference.md",
+    "skills/suede-site-alchemy/references/hypothesis-recipes.md",
+    "skills/suede-site-alchemy/references/pricing-and-urgency.md"
+  ],
+  "change": "EOF blank line removal only",
+  "unchanged_package_files": 624
+}

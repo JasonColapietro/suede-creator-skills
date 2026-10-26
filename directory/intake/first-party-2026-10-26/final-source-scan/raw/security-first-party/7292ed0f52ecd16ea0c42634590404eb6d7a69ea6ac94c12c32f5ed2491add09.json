@@ -1,0 +1,456 @@
+{
+  "schema_version": 1,
+  "source": {
+    "repository": "JasonColapietro/suede-creator-skills",
+    "path": "skills/suede-rights-passport",
+    "revision": "016c0afd1f98cb3f6caa91419bdb569fdee38777"
+  },
+  "scanner": {
+    "name": "cisco-ai-skill-scanner",
+    "version": "2.3.1",
+    "adapter_version": 2,
+    "analyzers": [
+      "static_analyzer",
+      "bytecode",
+      "pipeline",
+      "correlation",
+      "behavioral_analyzer"
+    ],
+    "policy": "strict",
+    "cel_mode": "shadow",
+    "network": "disabled",
+    "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+  },
+  "started_at": "2026-10-26T03:47:35.441040+00:00",
+  "state": "completed",
+  "analysis": {
+    "skill_name": "suede-rights-passport",
+    "skill_path": "/source/target-053",
+    "is_safe": true,
+    "max_severity": "MEDIUM",
+    "findings_count": 2,
+    "findings": [
+      {
+        "id": "MANIFEST_MISSING_LICENSE_c5ae9be793",
+        "rule_id": "MANIFEST_MISSING_LICENSE",
+        "category": "policy_violation",
+        "severity": "INFO",
+        "title": "Skill does not specify a license",
+        "description": "Skill manifest does not include a 'license' field. Specifying a license helps users understand usage terms.",
+        "file_path": "SKILL.md",
+        "line_number": null,
+        "snippet": null,
+        "remediation": "Add 'license' field to SKILL.md frontmatter (e.g., MIT, Apache-2.0)",
+        "analyzer": "static",
+        "metadata": {
+          "aitech": null,
+          "aitech_name": null,
+          "aisubtech": null,
+          "aisubtech_name": null,
+          "aitech_mappings": [],
+          "aisubtech_mappings": [],
+          "framework_mappings": [],
+          "taxonomy_status": "not_applicable",
+          "taxonomy_source": "rule",
+          "scan_policy_name": "strict",
+          "scan_policy_version": "1.0",
+          "scan_policy_preset_base": "strict",
+          "scan_policy_fingerprint_sha256": "7f4560dea6f3f1c11067735bab3759c4daedfcd6d67f46b4e40899507a2c2ea9"
+        }
+      },
+      {
+        "id": "FILE_MAGIC_MISMATCH_4aada5db59",
+        "rule_id": "FILE_MAGIC_MISMATCH",
+        "category": "obfuscation",
+        "severity": "MEDIUM",
+        "title": "File extension does not match actual content type",
+        "description": "File 'Neon Static - Rough Mix.mp3' extension (.mp3, expected audio) does not match its actual content type (Generic text document, text).",
+        "file_path": "scripts/fixtures/sample-blocked-package/assets/audio/Neon Static - Rough Mix.mp3",
+        "line_number": null,
+        "snippet": null,
+        "remediation": "Rename the file to match its actual content type, or remove it if it appears malicious.",
+        "analyzer": "static",
+        "metadata": {
+          "actual_type": "text/txt",
+          "actual_family": "text",
+          "claimed_extension": ".mp3",
+          "confidence_score": 0.6078688502311707,
+          "semantic_facts": {
+            "evidence_kind": "file_magic",
+            "context_kind": "binary",
+            "signals": [
+              {
+                "rule_id": "FILE_MAGIC_MISMATCH",
+                "kind": "file_magic_mismatch",
+                "file_path": "scripts/fixtures/sample-blocked-package/assets/audio/Neon Static - Rough Mix.mp3",
+                "value_class": "binary"
+              }
+            ]
+          },
+          "aitech": "AITech-9.2",
+          "aitech_name": "Detection Evasion",
+          "aisubtech": "AISubtech-9.2.1",
+          "aisubtech_name": "Obfuscation Vulnerabilities",
+          "aitech_mappings": [
+            "OWASP: LLM09:2026: Vector and Embedding Weaknesses",
+            "OWASP: ASI04: Agentic Supply Chain Vulnerabilities",
+            "MITRE ATLAS: AML.T0074: Masquerading",
+            "MITRE ATLAS: AML.T0068: LLM Prompt Obfuscation",
+            "MITRE ATLAS: AML.T0107: Exploitation for Defense Evasion",
+            "NIST AML: N/A",
+            "Cisco AI MDL Code: MDL-001",
+            "Cisco AI MDL Code: MDL-003",
+            "Cisco AI MDL Code: MDL-009",
+            "Cisco AI MDL Code: MDL-011",
+            "Cisco AI MDL Code: MDL-016",
+            "Cisco AI MDL Code: MDL-017",
+            "Cisco AI MDL Code: MDL-019"
+          ],
+          "aisubtech_mappings": [
+            "OWASP: LLM09:2026: Vector and Embedding Weaknesses",
+            "OWASP: ASI04: Agentic Supply Chain Vulnerabilities",
+            "MITRE ATLAS: AML.T0074: Masquerading",
+            "MITRE ATLAS: AML.T0068: LLM Prompt Obfuscation",
+            "NIST AML: N/A",
+            "Cisco AI MDL Code: MDL-001",
+            "Cisco AI MDL Code: MDL-003",
+            "Cisco AI MDL Code: MDL-009",
+            "Cisco AI MDL Code: MDL-011",
+            "Cisco AI MDL Code: MDL-016",
+            "Cisco AI MDL Code: MDL-017",
+            "Cisco AI MDL Code: MDL-019"
+          ],
+          "framework_mappings": [
+            "OWASP: LLM09:2026: Vector and Embedding Weaknesses",
+            "OWASP: ASI04: Agentic Supply Chain Vulnerabilities",
+            "MITRE ATLAS: AML.T0074: Masquerading",
+            "MITRE ATLAS: AML.T0068: LLM Prompt Obfuscation",
+            "NIST AML: N/A",
+            "Cisco AI MDL Code: MDL-001",
+            "Cisco AI MDL Code: MDL-003",
+            "Cisco AI MDL Code: MDL-009",
+            "Cisco AI MDL Code: MDL-011",
+            "Cisco AI MDL Code: MDL-016",
+            "Cisco AI MDL Code: MDL-017",
+            "Cisco AI MDL Code: MDL-019"
+          ],
+          "taxonomy_status": "mapped",
+          "taxonomy_source": "rule",
+          "scan_policy_name": "strict",
+          "scan_policy_version": "1.0",
+          "scan_policy_preset_base": "strict",
+          "scan_policy_fingerprint_sha256": "7f4560dea6f3f1c11067735bab3759c4daedfcd6d67f46b4e40899507a2c2ea9"
+        }
+      }
+    ],
+    "scan_duration_seconds": 1.2159593105316162,
+    "duration_ms": 1215,
+    "analyzers_used": [
+      "static_analyzer",
+      "bytecode",
+      "pipeline",
+      "correlation",
+      "behavioral_analyzer"
+    ],
+    "timestamp": "2026-10-26T03:47:36.688065+00:00",
+    "scan_metadata": {
+      "policy_name": "strict",
+      "policy_version": "1.0",
+      "policy_preset_base": "strict",
+      "policy_fingerprint_sha256": "7f4560dea6f3f1c11067735bab3759c4daedfcd6d67f46b4e40899507a2c2ea9",
+      "cel": {
+        "mode": "shadow",
+        "runtime": "cel-go",
+        "runtime_version": "v0.32.0;helper=2.3.1",
+        "fact_schema": "v1",
+        "expression_set_hash": "f26459b8f4a46a974d7ab0aaae34127b5b6a40d693e266e12fca03a69a6d26aa",
+        "evaluated": 0,
+        "retained": 2,
+        "would_suppress": 0,
+        "suppressed": 0,
+        "fallbacks": 0,
+        "projection_incomplete": 0,
+        "elapsed_ms": 0.0,
+        "projection_ms": 0.0,
+        "evaluation_ms": 0.0,
+        "errors": [],
+        "per_rule": {},
+        "suppressed_candidates": []
+      },
+      "rule_contract": {
+        "status": "passed",
+        "schema_version": 2,
+        "checked": 2,
+        "invalid_findings": 0,
+        "errors": []
+      },
+      "taxonomy": {
+        "source": "builtin",
+        "version": "2.0.0",
+        "name": "Cisco AI Security and Safety Taxonomy",
+        "revision": "655a343ac943a51b6f61f86e47156e7752c15dc6",
+        "snapshot_sha256": "413e8ce9081e6d91b78aaa0d0b1c06cdc15d0406ad319e23e9f9f4f80735c441",
+        "findings": {
+          "mapped": 1,
+          "not_applicable": 1,
+          "unmapped": 0
+        }
+      }
+    },
+    "analyzers_failed": []
+  },
+  "diagnostics": [],
+  "coverage": {
+    "complete": true,
+    "files": [
+      {
+        "path": "CARD.md",
+        "size": 5281,
+        "sha256": "19ef84a0998e16ed47b2c4367cacf076c5eced6667c56a7e43dfd4796ec3c962"
+      },
+      {
+        "path": "SKILL.md",
+        "size": 14834,
+        "sha256": "61c1beed7320bf2460d4b5019421eba7143c17aa9dce20f6e5023b75c46bc574"
+      },
+      {
+        "path": "agents/openai.yaml",
+        "size": 641,
+        "sha256": "fd84435ab9f74f354168788faf97e608fcb86391e6c48ae9d8646b8afdf13243"
+      },
+      {
+        "path": "assets/credits-and-splits.template.md",
+        "size": 533,
+        "sha256": "8793048abc2a0834b26809703dd1bc00e07b74358acf51d3d5c5b811410a4059"
+      },
+      {
+        "path": "assets/license-notes.template.md",
+        "size": 488,
+        "sha256": "1a80d252b5610cbad13f3ffcae6bcdd0fd6ee5905c124867157e51bf31388a53"
+      },
+      {
+        "path": "assets/missing-info-report.template.md",
+        "size": 882,
+        "sha256": "4f7e90bd1acf75c3e5d653cf81669b34e567ad0db7027b5476cae24f5b7942fb"
+      },
+      {
+        "path": "assets/optimization-brief.template.md",
+        "size": 823,
+        "sha256": "cd067614f9f352905f4cdca2ca603174b95ecfb8b4964383de6a83692effea45"
+      },
+      {
+        "path": "assets/provenance.template.md",
+        "size": 485,
+        "sha256": "11dae0548c90ea40fa36bd7b7484b7de1e84bc3e0bb731a0f4e5a25e3bf142db"
+      },
+      {
+        "path": "assets/rights-passport.template.md",
+        "size": 898,
+        "sha256": "f2e7bd8b8b7cff6fe4fb4ee8e23071f2a77fa55d0b8e6b97b70bc7dc2ef83b1a"
+      },
+      {
+        "path": "assets/suede-intake.schema.json",
+        "size": 15529,
+        "sha256": "fb027ffc7b785f9283e394ea58fdaf75fe9b84d6d2a7ac1ea7ae9c310864929a"
+      },
+      {
+        "path": "assets/suede-intake.template.json",
+        "size": 2045,
+        "sha256": "ea258e6b45ece1e33cf63a0bf2deb787f3a0a181edf6d7d41d24d2f63c9fb3b8"
+      },
+      {
+        "path": "references/audit-lanes.md",
+        "size": 7331,
+        "sha256": "eb4232bdd4b728e9b468317409323c802611efe59a396d23db57592dc52c8ee3"
+      },
+      {
+        "path": "references/creator-questions.md",
+        "size": 2001,
+        "sha256": "7111265836694cd40ddb27af7c59ad8632288ce6e51c5ab4929ddd5fed8d1268"
+      },
+      {
+        "path": "references/ddex-c2pa-crosswalk.md",
+        "size": 6761,
+        "sha256": "56d41491fe173d6b2b703f68fd89c5a8492d6ab2c9442a9bd7eb5918fa70d098"
+      },
+      {
+        "path": "references/intake-schema.md",
+        "size": 6611,
+        "sha256": "9ac34d12b6a14dddc4ec0fc0a93ccaed975158fcf20c2f8199bf1b3a3e64f384"
+      },
+      {
+        "path": "references/optimization-checklist.md",
+        "size": 1901,
+        "sha256": "f1da445e29c6201e29cb7588b82a2b75baa66fb9919b9a94ff0ea23a41d7e2df"
+      },
+      {
+        "path": "references/package-standard.md",
+        "size": 3991,
+        "sha256": "f7d450c4cf0f4986028dc61199be80b6e16b3bbfafb34c8c6c0cfca39db0b67c"
+      },
+      {
+        "path": "references/passport-context.md",
+        "size": 840,
+        "sha256": "c8ba40f310ab115e6aab49dd8b44b7ffc8a98febdc279f51b9036b1ed38a5c28"
+      },
+      {
+        "path": "references/worked-handoff.md",
+        "size": 1798,
+        "sha256": "57bd348849c83c4558cff824ea780744919d0cc28a93f05f6229ca25f8888f2a"
+      },
+      {
+        "path": "scripts/create_transfer_package.py",
+        "size": 60195,
+        "sha256": "ebe24d916bf6a52c84976e1db95c9a696838d9de19d77fb4ed45f23bda4c956f"
+      },
+      {
+        "path": "scripts/fixtures/README.md",
+        "size": 1613,
+        "sha256": "30b47d4e852c4ec25fa1384d1a77544bd7d1c23042ae1f3fa94d41cdea87b7ca"
+      },
+      {
+        "path": "scripts/fixtures/sample-blocked-package/RIGHTS_PASSPORT.md",
+        "size": 2000,
+        "sha256": "715f68c9903254c1dd79b136b22919f3ffb07b65b6d01efb5f7516d274cfe8ff"
+      },
+      {
+        "path": "scripts/fixtures/sample-blocked-package/assets/audio/Neon Static - Rough Mix.mp3",
+        "size": 2900,
+        "sha256": "d2b7ea13578c84c374b8ce5d68a902d15da7c7f9a456e60cdf89a80ff5892e7b"
+      },
+      {
+        "path": "scripts/fixtures/sample-blocked-package/assets/docs/metadata.json",
+        "size": 1683,
+        "sha256": "11c144f56211206a92c151a7e32e35a9b2b12b39a766e57a4fc1c728f02e9c58"
+      },
+      {
+        "path": "scripts/fixtures/sample-blocked-package/assets/docs/notes-do-not-share.txt",
+        "size": 320,
+        "sha256": "23d039a38e52784fa32ce87c28ef2000ac4e923a94345b78537ec87b95c5fcd1"
+      },
+      {
+        "path": "scripts/fixtures/sample-blocked-package/assets/lyrics/lyrics-draft.txt",
+        "size": 244,
+        "sha256": "6a83b7adc23c591455cf60dcf23e3e417864c8764b8a6239c0f20d6e05e33ed1"
+      },
+      {
+        "path": "scripts/fixtures/sample-blocked-package/credits-and-splits.md",
+        "size": 772,
+        "sha256": "e9d2b6ee12ff4e396409ef237742914c5be6668053dc38eb999bc42211b92c74"
+      },
+      {
+        "path": "scripts/fixtures/sample-blocked-package/license-notes.md",
+        "size": 665,
+        "sha256": "02af0562124982010f32fc251c7bcda36695ca868508754641a42748205976a6"
+      },
+      {
+        "path": "scripts/fixtures/sample-blocked-package/missing-info-report.md",
+        "size": 1740,
+        "sha256": "aa71c2176a3bd97bb13cd5b6b06a04124c169e0e6ae63a72ee46ff8acade528a"
+      },
+      {
+        "path": "scripts/fixtures/sample-blocked-package/optimization-brief.md",
+        "size": 1455,
+        "sha256": "6ef2fc30dbe5f30c7cc112e6ae71e7cfef69edaa27bb4ea8cc03977a34e7e910"
+      },
+      {
+        "path": "scripts/fixtures/sample-blocked-package/provenance.md",
+        "size": 1551,
+        "sha256": "4de3fd97d170aaa4ca17075a11f41dcc6dbeb9feff09cbb97e1a491411d877a0"
+      },
+      {
+        "path": "scripts/fixtures/sample-blocked-package/suede-intake.json",
+        "size": 6963,
+        "sha256": "89cf07d788ec262f5e3294d4d9f56389a96a22fd979d6bd106e00f4bcd9fe2df"
+      },
+      {
+        "path": "scripts/fixtures/sample-complete-package/RIGHTS_PASSPORT.md",
+        "size": 2312,
+        "sha256": "d9cefab73ee1fcd55fcf0b4bd3386dee6110471b65165153ea617bcc4243651b"
+      },
+      {
+        "path": "scripts/fixtures/sample-complete-package/assets/artwork/cover-artwork.png",
+        "size": 960,
+        "sha256": "a8f5976b87a9b8e603f3215266baf6c2fb81167fc6b362f3abbd63a419277872"
+      },
+      {
+        "path": "scripts/fixtures/sample-complete-package/assets/audio/Golden Hour Reprise - Master.wav",
+        "size": 2950,
+        "sha256": "35fd720d072bd35f4ca163bfad51453782a874659323b2a553dcc6da28d46aa1"
+      },
+      {
+        "path": "scripts/fixtures/sample-complete-package/assets/docs/metadata.json",
+        "size": 1528,
+        "sha256": "4b794bfee0893a61dde60e2c311f1c0f50fea1d315b789efc009ac37ebe04338"
+      },
+      {
+        "path": "scripts/fixtures/sample-complete-package/assets/docs/split-sheet.txt",
+        "size": 376,
+        "sha256": "5a3b2848b1292a4f0291e67e2ed1e548fe18f13b3ed37b6f4be66e84e9873e69"
+      },
+      {
+        "path": "scripts/fixtures/sample-complete-package/assets/lyrics/lyrics.txt",
+        "size": 213,
+        "sha256": "b70ec5ceaf4ad3828c15849f280a0c8ff68bc569fdf1e5b31504b85da33e5ca4"
+      },
+      {
+        "path": "scripts/fixtures/sample-complete-package/assets/stems/Golden Hour Reprise - Instrumental Stem.wav",
+        "size": 1840,
+        "sha256": "0a7505b8256ff3613f2c4baf35cd0e4153f4bbead269af01bbd6ab7e2264c94c"
+      },
+      {
+        "path": "scripts/fixtures/sample-complete-package/assets/stems/Golden Hour Reprise - Vocals Stem.wav",
+        "size": 1600,
+        "sha256": "b6eb13e6377dedc642b6ec3ce256a4b06387a19f7750a4b267861f960e930280"
+      },
+      {
+        "path": "scripts/fixtures/sample-complete-package/credits-and-splits.md",
+        "size": 685,
+        "sha256": "7e996ce4eace79d17a70f5241d213df8df3ae93a1ad0919fe07efe3679e1f75e"
+      },
+      {
+        "path": "scripts/fixtures/sample-complete-package/license-notes.md",
+        "size": 658,
+        "sha256": "b65bc4dc6a2f52bce3324778c10fad0ddc9ce63be062a744408aebacafa3ac7c"
+      },
+      {
+        "path": "scripts/fixtures/sample-complete-package/missing-info-report.md",
+        "size": 549,
+        "sha256": "70a91d4bb53c901782e302d0f9c218702da3d19b9964235a5cd929bbeaa1f92f"
+      },
+      {
+        "path": "scripts/fixtures/sample-complete-package/optimization-brief.md",
+        "size": 1207,
+        "sha256": "209d00f44b4e312f2d168b9e0a606a943e5943d631da9f866525ceea6c593576"
+      },
+      {
+        "path": "scripts/fixtures/sample-complete-package/provenance.md",
+        "size": 1962,
+        "sha256": "28528dff1978b83951fc99f9b4a302480c194b24c0ee06d5858877a0653b920a"
+      },
+      {
+        "path": "scripts/fixtures/sample-complete-package/suede-intake.json",
+        "size": 5558,
+        "sha256": "c1910af5fa730e8428ab8a83e15c1f2a9a2f2e56dacb4cb9641ad68aaecf0269"
+      },
+      {
+        "path": "scripts/migrate_intake_v1_to_v2.py",
+        "size": 6755,
+        "sha256": "0966da454581d9477966fec3b303ae089f16e63c4622c65fe46ffeb16b2c9054"
+      },
+      {
+        "path": "scripts/validate_json_schema.py",
+        "size": 7225,
+        "sha256": "0aa5d7f34c04e7dc6691cc77877aee2c55d44bd171de9a93481f348d53684338"
+      },
+      {
+        "path": "scripts/validate_transfer_package.py",
+        "size": 30765,
+        "sha256": "21e9a883e4d1efaf84d2a0bb1aaa59ac5abb4ac2a00db3aaf53bb11d9770e523"
+      }
+    ],
+    "skipped": []
+  },
+  "completed_at": "2026-10-26T03:47:36.705846+00:00",
+  "runtime_image": "sha256:66fdeec856547f8a07037d8d8608a883b503e9146a33e4322bff408566d42506"
+}

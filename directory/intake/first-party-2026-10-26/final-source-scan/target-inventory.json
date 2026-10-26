@@ -1,5 +1,5 @@
 {
-  "revision": "1c039ab9ed51bc67bcbdb1d2ed690a5151ab6abf",
+  "revision": "016c0afd1f98cb3f6caa91419bdb569fdee38777",
   "packages": {
     "android-app-factory": {
       "CARD.md": "3c2fd34db96386921d986b1e0c6e9e22555ef4b5370498c1bfc466b98449a378",
@@ -46,7 +46,7 @@
       "references/platform-specs.md": "9f546be521b7b682735cb06bec06cbae337a440c2b69b50c9b20767aab261105",
       "references/static-ad-templates.md": "ee7f362bf1e7654ff147dd16b3069dfa207b9af9db2d63d5d05a6711c04a2f77",
       "references/worked-contract.md": "83efb361df19fb250b61e00998eccc08265016cc432805225a27b7ea381edfda",
-      "references/writing-quality.md": "a9f489275c5fd3e13dfb05e2b5659e41740a4393026dc96094a4eb861ff1b913"
+      "references/writing-quality.md": "28b6bef01c88cefa40f6e5a941664acf70f76a080dc94877d6c3e391b62f6486"
     },
     "suede-ads": {
       "CARD.md": "da402954669b38c5691ec2746e735e7f453e686e0a74a3e862fa55c321c5fb66",
@@ -61,7 +61,7 @@
       "references/google-search-playbook.md": "2c4711a435874dbe40e0069980a1417aaa58bc777616e30e84450f3d48938b2d",
       "references/linkedin-b2b-playbook.md": "a08e1ec9e850322496ce9365b5ed50781994f0069fb45ccf96af86863dcaeebb",
       "references/meta-decision-system.md": "7ef1f8e0f9d51002ae4b62dcb69ed933ab4390e5aad5367bafa11ff537559454",
-      "references/optimization-and-retargeting.md": "0ad978a102e4b658d5382dfae931822a38af1bf17a95abba50b0e32c4c93bdf2",
+      "references/optimization-and-retargeting.md": "7f41a367a18289a05f2a66a9a42e6e63ca381da62f1ff5932c1f4f88422b6603",
       "references/platform-setup-checklists.md": "b86e206f8c7233c235d7d385a69e17fac16ac001ab130242b7700fe650752f69",
       "references/rsa-output-spec.md": "be44e2504e5b10c7113cef21eaf2d3b45aadbedfd0a33eef348506829c09d7e5",
       "references/worked-contract.md": "94d320394428bd5227a840655132fe89a83052632464c14140038fcc0cf0bef4"
@@ -70,7 +70,7 @@
       "CARD.md": "fcff2b4e1743ea3e902e7265cb25d0a6ceeff3cb1a56a4ac1b8d5d88488fd24a",
       "SKILL.md": "05f02f769731944d1ec4fe81c7ca13788d0494027ac488e5d11ce94e96627c2f",
       "agents/openai.yaml": "308c441fa718fea4664ec52380ec8e5fbca7b71a0fd07709c80882bac7914a3c",
-      "references/execution-loop.md": "25c9f098f2f48472423bc6856bdded592b0475409a7514faa3de9ac0a8489cab",
+      "references/execution-loop.md": "209dd2930562c482b1ee664b00d3506e0f2a3a39df08a85a4200c5bb8965bbea",
       "references/incident-and-rfc-templates.md": "a9034bfcebd92b46c0454733a704f9e0ffcc376caa229e70af73478e90998978",
       "references/public-contribution-program.md": "7f09608a4c07605a49985930bf9123764ce1fa55959c95d3c2a006fb241f052c",
       "references/scenario-templates.md": "1b8f5d2fc1e3d8eb5cdd65541e499d3d9b8c63903b7b6bd9b033b0587e610cd3",
@@ -128,7 +128,7 @@
       "evals/evals.json": "9f9435f361b8d6a02c9726e65380bbf2fe268f778685fe71b4e60f7b2f2082dc",
       "references/attribution-models.md": "168b29df44ba2cb67340cf00258a4cc9127f85f77a3a456b7bb5a590545c3856",
       "references/by-business-type.md": "ca4d76d0ae2256e989af139b1676eeb97b7fbb35a0e1c9cddd3d2f4c42cfa80e",
-      "references/first-party-summary.md": "59241f864311f4e39e367f23c3d6fc83410cd8fa823275d50fde27b34c50cbf7",
+      "references/first-party-summary.md": "cb47304afc3084d3f69c2571a5a94afe1ba806ec1b669d7b25d4a6755f8f23f7",
       "references/first-party-tracking.md": "84c6abd646e95c1dd7417b0225d24bd3a9db55c5042d8699fdbe2b84f9a729d4",
       "references/measurement-paradigms.md": "71a3b12d9ce783a98a7e78b21e5c64d2c210befecd6677f4205b3304a36ece6c",
       "references/worked-contract.md": "620a6e3a6797e74d23c36daad56c961efe7f313be0784ad1946d14ba903e2503"
@@ -181,7 +181,7 @@
       "CARD.md": "8ed97b445e1835d4572824bae09677d498039e137a3118521e0405dd8c7f173b",
       "SKILL.md": "82c33f0e1db6be3f0bf04df8b19fceb4b34e8bd59d7d58ab29e6856317914944",
       "agents/openai.yaml": "c0148f96d9117178488639a9899ecddb1eb036d0cd346fc5dba9a20e8f43086a",
-      "references/grading-contract.md": "ec5d78f5c06a2690320338b23b7210389abf69062283844dfabb35001064af9b",
+      "references/grading-contract.md": "a524fc376e988f4590bb42bd8ad8fbacc2b033344d08699b109526011fddfba9",
       "references/maintainability-baseline.md": "cba2d86e4d9fdd950ebd274e33a14c2a0249f9202ab35ef93a19fe383815a2c8",
       "references/security-baselines.md": "0c6d3a7e80e0f5fbc2d949b1dd84218c0eb842eb75cd0c4f01141947c4afae76",
       "references/threat-verify.md": "eef9f50524a65c61b87b9ea9a3e7df0a830b1e0355ef98323c055130ac648919",
@@ -272,7 +272,7 @@
       "CARD.md": "75b14fb747612f8ab1329564ba44f355031a928ba1ca48e00acf541b1008fe4f",
       "SKILL.md": "09b3e9a74ea0d5936febc87b56f2e58e233dfa036c4f885985663a39ad1f1b96",
       "agents/openai.yaml": "742d2e01c1574546094d6177ba552820cfd97125ac78a8ff7131104a331ac6e1",
-      "references/editing-rules.md": "8cf30ced2f0af0ea35e238b6dfd6a7147f30de758c591ba4f56162353dc62987",
+      "references/editing-rules.md": "e1e76536940f366407e43ced1186057b2a71f37ff160d59c7ffe5ce36b5f72a6",
       "references/kill-list.md": "b120b79d94ee7715507c2ec3f2cfa048746bf47939c1ea2146d0842950165fa5",
       "references/usage-contract.md": "18b65105b467d7a4620629b80ca302488af848b78cb8fb007c32a58fcb937e53"
     },
@@ -680,8 +680,8 @@
       "CARD.md": "1da475abc98200670ecfbf91a48a7a94c824fdf690c22cc101ff8d7ddbd721db",
       "SKILL.md": "c26bda2dff46bc31de69ab11fc64b3b4c11f5ad9fd21d67911fdf55b94b4c416",
       "agents/openai.yaml": "73f555b6dec095db5bb3d086666b0fd98caaaf3310c65b644decae81103a73b1",
-      "references/claim-origin-policy.md": "05691f39debc8ad7f60f34200c1cb7002b6e2fd57185f2b40c6f14836dae1341",
-      "references/phase-and-threshold-reference.md": "226c343943ba19059d4fea4b0df749143f3dc264d75b0c5e56d14ddf05dd52f6",
+      "references/claim-origin-policy.md": "05db8aea20068ba296139896b649652bb4b69b17f8e99dd329198a6b3a90115e",
+      "references/phase-and-threshold-reference.md": "70723e11dc0d46b46a3233a05a5f225d43ac546d7e02fb6071408da044c119a1",
       "references/worked-handoff.md": "412a592ffb80d474460a5bdd7c64528bbeb6e3f7b6e7ccc01911b4fadc511be5",
       "workflows/suede-ship-copy.js": "5dbc31d27ff024c58e63a902bd4f61a285824bbba9756fdecd676f3ae1e555b1"
     },
@@ -694,8 +694,8 @@
       "references/cro-frameworks.md": "dceec17b81119c5d453d372afece30c19ab51415625d0812022edf1d196c44e4",
       "references/evidence-boundary-worked-example.md": "03ec3076550b6f4a16790772b231c7dbd6d907cbd51c92f7584416b00678d870",
       "references/experiment-design.md": "58839df9fc5c864c873cfe1e713c9c00efdcfcd1ab1bf131c8ce2ea85c8204f3",
-      "references/hypothesis-recipes.md": "1f105db74eeee8b373d3a9465ff67c001e8eca602c71f79bf44cbbe08e87a852",
-      "references/pricing-and-urgency.md": "b234de814ecb09f87c984d538aa330b25a6f5ad94b447fdae450953635ce2f49",
+      "references/hypothesis-recipes.md": "781be308a9cf5918bd3250974e5b91f3c1e56a6dc8a16d08074340320804cdfb",
+      "references/pricing-and-urgency.md": "10704ac07964152b3b9c1a8dff9cd6a3e89d30b24ceadbdfac4d70b342110388",
       "references/worked-handoff.md": "d1b0a0dd06518924af099fbb4299c5904f413aa3de52381b0d7b2dcc6a933c33"
     },
     "suede-sms": {

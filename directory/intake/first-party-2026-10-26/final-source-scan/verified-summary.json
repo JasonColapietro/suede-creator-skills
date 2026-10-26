@@ -1,9 +1,9 @@
 {
-  "target_revision": "1c039ab9ed51bc67bcbdb1d2ed690a5151ab6abf",
-  "pipeline_revision": "31ce0572eb01d812d392caae0de262791cbcc86a",
-  "run_id": 40259009885,
-  "artifact_id": 12624310539,
-  "artifact_sha256": "8c840996d26eb7fcf886b7f6cd520a5b689a0e8cd2de21dff386ab102a3e5e2d",
+  "target_revision": "016c0afd1f98cb3f6caa91419bdb569fdee38777",
+  "pipeline_revision": "f2d82ffd4f1391d2b1e5c62fcf85e791bf27acc8",
+  "run_id": 40265716834,
+  "artifact_id": 12625249941,
+  "artifact_sha256": "0ff02322ec16721e6f6dec55e24e85a8a6b26467fb91fc3c850734d2bdf14055",
   "packages": 64,
   "package_files_hash_matched": 634,
   "mismatches": 0,
@@ -14,44 +14,30 @@
   },
   "findings_by_rule": {
     "MANIFEST_MISSING_LICENSE": 64,
-    "COMMAND_INJECTION_JS_CHILD_PROCESS": 16,
-    "DATA_EXFIL_JS_FS_ACCESS": 18,
     "LOW_ANALYZABILITY": 1,
     "BINARY_FILE_DETECTED": 4,
     "UNANALYZABLE_BINARY": 4,
     "FILE_MAGIC_MISMATCH": 3,
     "BEHAVIOR_BASH_TAINT_FLOW": 2,
+    "COMMAND_INJECTION_JS_CHILD_PROCESS": 16,
+    "DATA_EXFIL_JS_FS_ACCESS": 18,
     "TOOL_ABUSE_UNDECLARED_NETWORK": 1,
     "UNDECLARED_NETWORK_DESTINATION": 2,
     "DATA_EXFIL_NETWORK_REQUESTS": 4
   },
   "findings_by_severity": {
     "INFO": 64,
+    "MEDIUM": 19,
     "CRITICAL": 16,
-    "LOW": 20,
-    "MEDIUM": 19
+    "LOW": 20
   },
   "critical_findings": [
     {
-      "skill": "skills/suede-seo-audit",
-      "path": "scripts/tests/cli.test.mjs",
-      "line": 7,
+      "skill": "skills/suede-agent-teams",
+      "path": "scripts/contribution-ledger.mjs",
+      "line": 8,
       "rule": "COMMAND_INJECTION_JS_CHILD_PROCESS",
-      "snippet": "import { spawnSync } from 'node:child_process';"
-    },
-    {
-      "skill": "skills/suede-seo-audit",
-      "path": "scripts/tests/cli.test.mjs",
-      "line": 12,
-      "rule": "COMMAND_INJECTION_JS_CHILD_PROCESS",
-      "snippet": "const run = (...args) => spawnSync(process.execPath, [cli,...args], { encoding: 'utf8', cwd: scripts });"
-    },
-    {
-      "skill": "skills/suede-seo-audit",
-      "path": "scripts/tests/serp-overlap.test.mjs",
-      "line": 84,
-      "rule": "COMMAND_INJECTION_JS_CHILD_PROCESS",
-      "snippet": "const result = spawnSync(process.execPath, [\"--input-type=module\", \"-e\", script], { encoding: \"utf8\", env: { ...process.env, LANG: locale, LC_ALL: locale } });"
+      "snippet": "import { execFileSync } from \"node:child_process\";"
     },
     {
       "skill": "skills/suede-graph-flo-xr",
@@ -138,11 +124,25 @@
       "snippet": "import { execFileSync } from 'node:child_process'"
     },
     {
-      "skill": "skills/suede-agent-teams",
-      "path": "scripts/contribution-ledger.mjs",
-      "line": 8,
+      "skill": "skills/suede-seo-audit",
+      "path": "scripts/tests/cli.test.mjs",
+      "line": 7,
       "rule": "COMMAND_INJECTION_JS_CHILD_PROCESS",
-      "snippet": "import { execFileSync } from \"node:child_process\";"
+      "snippet": "import { spawnSync } from 'node:child_process';"
+    },
+    {
+      "skill": "skills/suede-seo-audit",
+      "path": "scripts/tests/cli.test.mjs",
+      "line": 12,
+      "rule": "COMMAND_INJECTION_JS_CHILD_PROCESS",
+      "snippet": "const run = (...args) => spawnSync(process.execPath, [cli,...args], { encoding: 'utf8', cwd: scripts });"
+    },
+    {
+      "skill": "skills/suede-seo-audit",
+      "path": "scripts/tests/serp-overlap.test.mjs",
+      "line": 84,
+      "rule": "COMMAND_INJECTION_JS_CHILD_PROCESS",
+      "snippet": "const result = spawnSync(process.execPath, [\"--input-type=module\", \"-e\", script], { encoding: \"utf8\", env: { ...process.env, LANG: locale, LC_ALL: locale } });"
     }
   ],
   "incomplete": [
