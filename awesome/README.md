@@ -26,8 +26,8 @@ The published quality scale is **0–99**. The rubric totals **100 points**; pub
 
 | Quality score / 100 | Accepted skills | Browse |
 | --- | ---: | --- |
-| **90–99 · A** | 176 | [View scored skills on Suede AI](https://skills.suedeai.ai/directory/?sort=score&grade=A) |
-| **80–89 · B** | 1,587 | [View scored skills on Suede AI](https://skills.suedeai.ai/directory/?sort=score&grade=B) |
+| **90–99 · A** | 182 | [View scored skills on Suede AI](https://skills.suedeai.ai/directory/?sort=score&grade=A) |
+| **80–89 · B** | 1,581 | [View scored skills on Suede AI](https://skills.suedeai.ai/directory/?sort=score&grade=B) |
 | **70–79 · C** | 1,379 | [View scored skills on Suede AI](https://skills.suedeai.ai/directory/?sort=score&grade=C) |
 | **0–69 · D** | 724 | [View scored skills on Suede AI](https://skills.suedeai.ai/directory/?sort=score&grade=D) |
 
@@ -117,7 +117,7 @@ The [publisher index](publishers.md) credits every listed repository and its own
 
 Accepted listing requests also enter through the [inclusion register](../directory/inclusions.json). Descriptions and scores come from [the saved dataset](../directory/skills.json); category copy comes from [the category definitions](../directory/categories.json). Upstream skills retain their own licenses and authorship.
 
-Dataset SHA-256: `442ad56be5df9eafaba0a0ee577c0eedd99dc630866ffd52400fa4fe6f19c9be`.
+Dataset SHA-256: `97e09a4a65382a078d21367078206bd8a33ba169afde64e85fed19147ab6f9d4`.
 
 ## Contribute and update
 
