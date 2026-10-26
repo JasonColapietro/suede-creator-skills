@@ -319,7 +319,7 @@ Skills for interface design and frontend engineering: UI systems, CSS, component
 
 [Repository](https://github.com/JasonColapietro/suede-creator-skills) · Publisher: [JasonColapietro](https://github.com/JasonColapietro) · [Suede AI listing](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/)
 
-- **91/100 · A** · [Suede AI Design Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/improve/first-party-quality/skills/suede-design/SKILL.md): Use when asked "restyle this dashboard" or to design, polish or audit an interface hierarchy, tokens, color, type, dark mode or a design system. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-design)
+- **91/100 · A** · [Suede AI Design Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/verify/first-party-source-whitespace/skills/suede-design/SKILL.md): Use when asked "restyle this dashboard" or to design, polish or audit an interface hierarchy, tokens, color, type, dark mode or a design system. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-design)
 
 <a id="jeffallan--claude-skills"></a>
 
