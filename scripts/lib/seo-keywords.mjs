@@ -591,8 +591,8 @@ export const SEO_KEYWORDS = {
     "Suede AI Skills",
   ],
   "skills/suede-pricing.html": [
-    "paywall design",
     "pricing",
+    "paywall design",
     "saas pricing",
     "pricing strategy",
     "value metric",
