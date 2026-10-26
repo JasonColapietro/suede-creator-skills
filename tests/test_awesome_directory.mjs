@@ -106,7 +106,8 @@ test('featured Appie scope and CoalWash full-plugin instructions retain their ev
   ]);
   assert.doesNotMatch(page, /appie-linkedin|appie-reddit|npx skills add|cp -R|score\.svg|badge\.svg/);
   for (const fact of ['claude plugin marketplace add TheColliery/CoalWash', 'claude plugin install coalwash@coalwash', 'SessionStart', 'PreToolUse', 'PostToolUse', 'without a new prompt', 'requires consent', 'Shell writes', 'semantic preservation']) assert.ok(page.includes(fact), fact);
-  assert.ok(page.includes('Editorial selection'));
+  assert.ok(page.includes('Featured placement'));
+  assert.ok(!page.includes('Editorial selection'));
   assert.ok(page.includes('Accepted scope: **3 skills**'));
   assert.ok(page.includes('security certification'));
   for (const p of inputs.editorial.projects) assert.ok(page.includes(`/tree/${p.commit}`));
