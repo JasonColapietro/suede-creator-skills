@@ -15,7 +15,7 @@ For a concrete input, expected handoff, and failure check, read
 [the worked handoff](references/worked-handoff.md).
 
 The copy side of the canonical Suede AI DAG. One brief in, one publishable draft out,
-with about thirty agents in between arranged as a graph rather than a chain.
+with 30 to 50 agents in between arranged as a graph rather than a chain.
 
 `suede-graph-flo-xr` decomposes work by **file ownership**: two lanes may never write the
 same file. This decomposes by **message ownership**: two sections may never make
@@ -82,8 +82,8 @@ finding.
 
 ## What it costs
 
-This is the expensive instrument: about thirty agents (26 floor, ~31 typical,
-42 ceiling), research-heavy and front-loaded, billed to the Claude limit. When the
+This is the expensive instrument: about 30 to 50 agents (light 30-36, standard
+38-45, deep 40-50; see the budget table), research-heavy and front-loaded, billed to the Claude limit. When the
 work is genuinely parallel and shallow instead, brute force beats surgery: the
 Routing section at the end says where each of those jobs goes.
 

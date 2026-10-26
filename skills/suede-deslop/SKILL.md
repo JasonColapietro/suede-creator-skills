@@ -112,7 +112,9 @@ Run every item before delivering prose:
 - Empty intensifiers or hedges? Cut them; preserve meaning-bearing adverbs.
 - Passive voice hiding responsibility? Name the actor; preserve useful technical passive voice.
 - Inanimate thing doing a human verb ("the decision emerges")? Name the person.
-- Sentence starts with What/When/Where/Which/Who/Why/How? Restructure it.
+- Declarative sentence opening on a wh- setup clause ("What makes this work
+  is...", "Why this matters:")? State the point directly. Leave headings, FAQ
+  questions, and real questions untouched.
 - "Here's what/this/that" opener? Cut to the point.
 - "Not X, it's Y" contrast? State Y directly.
 - Three consecutive sentences at the same length? Break one.
@@ -144,6 +146,8 @@ them on purpose.
 
 - Leave a watched phrase alone inside a quotation, a title, a proper name, or a passage that discusses the phrase rather than uses it.
 - Salutations and sign-offs on a letter or a comment predate chatbots.
+- Question-shaped headings and FAQ entries are answer-first SEO structure that
+  suede-copy requires; keep them.
 - Keep technical senses of watched words: a robust test suite, a gated rollout, landscape orientation.
 - Keep the details that carry voice: a specific unusual detail, mixed feelings the writer leaves unresolved, era-bound references, a first-person choice the writer can defend, a genuine aside or self-correction.
 - Act on a *weak alone* tell only when other tells share the passage.
