@@ -107,5 +107,9 @@
   "pypi_run": {
     "run_id": 40259010016,
     "conclusion": "success"
+  },
+  "operational_log_retention": {
+    "public_repository": "Original scan JSON, ZIP, source inventory and hashes are retained byte-for-byte; operational logs containing runner home paths are not included.",
+    "original_logs": "Unmodified logs remain in the local retained verification bundle and at the linked GitHub workflow jobs; their original hashes remain in files."
   }
 }
