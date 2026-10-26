@@ -70,29 +70,18 @@ Hyperframes may fit an HTML/CSS workflow. First check whether it is installed.
 If it is, read the installed version's documentation, inspect its license, and
 confirm the renderer and export path. If it is not installed, use a
 renderer-neutral handoff or request explicit installation authorization after
-showing the current package source, version, lockfile impact, and cost. The
-following command must not run without that authorization:
+showing the current package source, version, lockfile impact, and cost. These
+commands download and run the package; none may run without that authorization:
 
 ```bash
-npm install hyperframes
+npx hyperframes init my-video        # scaffold a project (Node 22 or later)
+npx hyperframes preview              # local studio for the HTML composition
+npx hyperframes render -c ./my-composition.html -o output.mp4
 ```
 
-**Key concept:** Each frame is an HTML document. Compose frames into a timeline, render to MP4.
-
-```typescript
-import { render } from "hyperframes";
-
-await render({
-  frames: [
-    { html: "<h1>Welcome to Acme</h1>", duration: 3 },
-    { html: "<h2>Here's what we built</h2>", duration: 3 },
-    { html: "<p>Try it free →</p>", duration: 2 },
-  ],
-  output: "intro.mp4",
-  width: 1080,
-  height: 1920, // 9:16 for vertical
-});
-```
+**Key concept:** The composition is an HTML document driven by the
+`hyperframes` CLI; the package exposes no `render()` import. Edit the HTML,
+preview it, then render to MP4. Run `npx hyperframes lint` before a render.
 
 **Candidate fit:** Product announcements, changelogs, data-driven reports, and
 approved personalized outreach videos. Verify determinism with a repeat-render

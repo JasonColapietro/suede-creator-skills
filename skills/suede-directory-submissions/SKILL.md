@@ -247,9 +247,10 @@ often cite review sites, marketplaces, and category directories when they
 build a shortlist. A directory plan is part of the off-site consensus layer
 in `suede-ai-seo`. Two rules stay this skill's own:
 
-1. **Entity consistency.** Every listing uses the canonical entity sheet from
-   `suede-ai-seo` (`references/entity-graph.md`): exact brand name, one-line
-   description, founder names, logo, category, and URL. A listing that
+1. **Entity consistency.** Every listing uses one canonical entity sheet:
+   exact brand name, one-line description, founder names, logo URL, category,
+   canonical URL, and verified profiles. When `suede-ai-seo` is installed,
+   build the sheet with its entity-graph reference. A listing that
    disagrees with the site is a finding, and fixing old listings often matters
    more than adding new ones. Add each verified listing URL to the brand's
    `sameAs` set only when the profile is controlled by the brand.

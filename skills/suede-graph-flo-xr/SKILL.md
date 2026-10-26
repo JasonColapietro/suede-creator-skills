@@ -97,11 +97,13 @@ command outside the sandbox to turn that hold into a pass.
 
 ## Run the graph search
 
-Invoke:
+Invoke `workflows/suede-graph-flo-xr.js` from this skill's own directory, as an
+absolute path resolved from this SKILL.md's location (an installed copy has no
+repo-root `skills/` folder):
 
 ```js
 Workflow({
-  scriptPath: "skills/suede-graph-flo-xr/workflows/suede-graph-flo-xr.js",
+  scriptPath: "<this skill directory>/workflows/suede-graph-flo-xr.js", // absolute path
   args: { repo, scope, agentBudget, agentNamespace, helperDir, workerModel, deploys, liveUrl, vault }
 })
 ```

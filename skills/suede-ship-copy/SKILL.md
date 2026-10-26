@@ -47,8 +47,11 @@ claims, keep protected strings byte-exact, and retain discarded findings in the
 evidence record. The reference preserves the full filtering, proportional-match,
 and output-path rules; follow them before launching the bundled workflow.
 
-Invoke `skills/suede-ship-copy/workflows/suede-ship-copy.js` through the host's
-`Workflow` API as shown below.
+Invoke `workflows/suede-ship-copy.js` from this skill's own directory through
+the host's `Workflow` API as shown below. Resolve the path from this SKILL.md's
+location: an installed plugin or `~/.claude/skills` copy has no repo-root
+`skills/` folder, and only a repo checkout uses
+`skills/suede-ship-copy/workflows/suede-ship-copy.js`.
 
 ## Gate policy: advisory, not blocking
 
@@ -153,7 +156,7 @@ Then state the choice in one line when you launch, this shape:
 
 ```
 Workflow({
-  scriptPath: "skills/suede-ship-copy/workflows/suede-ship-copy.js",
+  scriptPath: "<this skill directory>/workflows/suede-ship-copy.js", // absolute path
   args: { piece, surface, sources, given, audience, liveUrl, outDir, mustSay, wordBudget, houseStyle, agentBudget }
 })
 ```
