@@ -26,11 +26,26 @@ let tempReal;try{tempReal=fs.realpathSync(tempRoot)}catch{fail("temp root does n
 if(!tempReal.startsWith("/private/tmp/ship-")&&!tempReal.startsWith("/tmp/ship-"))fail("temp root is not a suede-graph-flo-xr private temp root");
 if(!fs.statSync(tempReal).isDirectory())fail("temp root is not a directory");
 const staging=path.join(tempReal,"apply-patch.b64");
-if(mode==="--start"){fs.writeFileSync(staging,"");process.stdout.write("staging reset\n");process.exit(0)}
+// Open without truncating: validate the descriptor before any write. O_NOFOLLOW
+// rejects symlinks, and fstat rejects hard links and non-regular staging files.
+// Keep I/O on that descriptor so replacing the pathname cannot redirect it.
+const openStaging=flags=>{
+  let fd;
+  try{
+    fd=fs.openSync(staging,flags|fs.constants.O_NOFOLLOW|fs.constants.O_NONBLOCK,0o600);
+    const stat=fs.fstatSync(fd);
+    if(!stat.isFile()||stat.nlink!==1)throw new Error("staging must be a regular file with no links");
+    return fd;
+  }catch(error){
+    if(fd!==undefined)try{fs.closeSync(fd)}catch{}
+    fail("cannot safely open staging file: "+error.message);
+  }
+};
+if(mode==="--start"){const fd=openStaging(fs.constants.O_WRONLY|fs.constants.O_CREAT);try{fs.ftruncateSync(fd,0);fs.fchmodSync(fd,0o600)}finally{fs.closeSync(fd)}process.stdout.write("staging reset\n");process.exit(0)}
 const fnv1a=text=>{let hash=0x811c9dc5;for(let i=0;i<text.length;i+=1){hash^=text.charCodeAt(i);hash=Math.imul(hash,0x01000193)}return (hash>>>0).toString(16).padStart(8,"0")};
-if(mode==="--append"){const offset=Number(process.argv[4]);const expectHash=process.argv[5];const chunk=process.argv[6];if(!Number.isInteger(offset)||offset<0)fail("append offset must be a non-negative integer");if(typeof chunk!=="string"||!chunk||/[^A-Za-z0-9+/=]/.test(chunk))fail("append chunk must be non-empty base64 text");const current=fs.existsSync(staging)?fs.statSync(staging).size:0;if(current!==offset)fail("append offset mismatch: staging has "+current+" chars but this chunk expects offset "+offset+". Re-run the failed append command exactly as given.");const actualHash=fnv1a(chunk);if(expectHash!==actualHash)fail("append chunk checksum mismatch (expected "+expectHash+", got "+actualHash+" for "+chunk.length+" chars): the chunk was mistyped in transit. Re-run this exact append command again, copying the chunk precisely.");fs.appendFileSync(staging,chunk);process.stdout.write("appended "+chunk.length+" at "+offset+"\n");process.exit(0)}
+if(mode==="--append"){const offset=Number(process.argv[4]);const expectHash=process.argv[5];const chunk=process.argv[6];if(!Number.isInteger(offset)||offset<0)fail("append offset must be a non-negative integer");if(typeof chunk!=="string"||!chunk||/[^A-Za-z0-9+/=]/.test(chunk))fail("append chunk must be non-empty base64 text");const fd=openStaging(fs.constants.O_WRONLY|fs.constants.O_CREAT|fs.constants.O_APPEND);const current=fs.fstatSync(fd).size;if(current!==offset)fail("append offset mismatch: staging has "+current+" chars but this chunk expects offset "+offset+". Re-run the failed append command exactly as given.");const actualHash=fnv1a(chunk);if(expectHash!==actualHash)fail("append chunk checksum mismatch (expected "+expectHash+", got "+actualHash+" for "+chunk.length+" chars): the chunk was mistyped in transit. Re-run this exact append command again, copying the chunk precisely.");try{fs.writeFileSync(fd,chunk)}finally{fs.closeSync(fd)};process.stdout.write("appended "+chunk.length+" at "+offset+"\n");process.exit(0)}
 if(!fs.existsSync(staging))fail("no staged patch");
-const payload=fs.readFileSync(staging,"utf8");
+const fd=openStaging(fs.constants.O_RDONLY);let payload;try{payload=fs.readFileSync(fd,"utf8")}finally{fs.closeSync(fd)};
 const expectLength=Number(process.argv[4]);const expectPayloadHash=process.argv[5];
 if(Number.isInteger(expectLength)&&payload.length!==expectLength){fail("staged payload is "+payload.length+" chars but "+expectLength+" were expected: one or more append chunks were dropped or truncated. Run --start again and replay every append command exactly as given.")}
 if(expectPayloadHash&&fnv1a(payload)!==expectPayloadHash){fail("staged payload checksum mismatch: a chunk was mistyped in transit. Run --start again and replay every append command exactly as given.")}
