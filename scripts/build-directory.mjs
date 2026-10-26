@@ -1329,10 +1329,11 @@ ${relatedRepos.length ? `      <section class="panel" aria-labelledby="related-t
 ${relatedRepos.map((o) => `          <a class="link-row" href="${rel(here, o.target)}"><b>${esc(o.repo)}</b><span>${plural(o.skills.length, "listed skill")}</span></a>`).join("\n")}
         </div>
       </section>` : ""}`;
-  const title = [`${r.repo} Agent Skills (${r.skills.length}) | Suede AI`, `${r.repo} Agent Skills (${r.skills.length})`, `${r.name} Agent Skills by ${r.owner}`, `${trimTo(r.repo, 46)} Agent Skills`].find((t) => t.length <= 60);
+  const ownCollection = r.repo.toLowerCase() === "jasoncolapietro/suede-creator-skills";
+  const title = ownCollection ? `Suede AI Skills: ${r.skills.length} Agent Skills` : [`${r.repo} Agent Skills (${r.skills.length}) | Suede AI`, `${r.repo} Agent Skills (${r.skills.length})`, `${r.name} Agent Skills by ${r.owner}`, `${trimTo(r.repo, 46)} Agent Skills`].find((t) => t.length <= 60);
   const top = r.skills.slice(0, 3).map((s) => displayName(s)).join(", ");
   const description = trimTo(`${plural(r.skills.length, "agent skill")} from ${r.repo}, including ${top}. Install steps, Suede Skill Check grades and a README badge.`, 158);
-  const keywords = r.indexable ? setKeywords(here, [`${r.repo} skills`, `${r.name} skills`, `${r.owner} agent skills`, `${r.name} claude skills`, `${primary.short} agent skills`, "agent skills directory"]) : null;
+  const keywords = r.indexable ? setKeywords(here, ownCollection ? ["marketing and workflow agent skills", "code review agent skills", "creator tools", "agent skills directory", "Suede AI Skills"] : [`${r.repo} skills`, `${r.name} skills`, `${r.owner} agent skills`, `${r.name} claude skills`, `${primary.short} agent skills`, "agent skills directory"]) : null;
   const collection = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
@@ -1357,7 +1358,7 @@ ${relatedRepos.map((o) => `          <a class="link-row" href="${rel(here, o.tar
     description,
     keywords,
     h1Html: `      <div class="eyebrow">Skill collection &middot; ${esc(r.owner)}</div>
-      <h1>${esc(r.name)} <span class="h1-sub">agent skills by ${esc(r.owner)}</span></h1>`,
+      <h1>${esc(ownCollection ? "Suede AI Skills" : r.name)} <span class="h1-sub">agent skills by ${esc(r.owner)}</span></h1>`,
     body,
     jsonld: [collection, bc.ld],
     robots: r.indexable ? undefined : "noindex, follow",

@@ -40,3 +40,12 @@ test('first-party reports and retained source inventories describe the exact rev
     assert.ok(report.source.skill_md_url.includes(`/blob/${receipt.source_revision}/skills/${skill.name}/SKILL.md`));
   }
 });
+
+test('the first-party collection uses its public name and useful category search terms', () => {
+  const html = read('docs/directory/jasoncolapietro/suede-creator-skills/index.html');
+  assert.match(html, /<h1>Suede AI Skills\b/);
+  assert.match(html, /<title>Suede AI Skills:/);
+  const keywords = html.match(/<meta name="keywords" content="([^"]+)"/)[1].split(', ');
+  assert.ok(!/suede/i.test(keywords[0]));
+  assert.equal(keywords.filter(k => /suede/i.test(k)).length, 1);
+});

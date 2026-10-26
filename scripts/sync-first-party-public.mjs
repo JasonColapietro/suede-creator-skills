@@ -69,7 +69,19 @@ export function syncFirstPartyPublic(root = ROOT, { check = false } = {}) {
   }
   for (const skill of catalog.skills) Object.assign(skill, sources.get(skill.name));
   changes.set('mcp/catalog.json', packBrand(JSON.stringify(catalog, null, 2) + '\n'));
-  for (const [name, { displayName }] of sources) changes.set(`docs/skills/${name}.html`, skillPage(read(`docs/skills/${name}.html`), displayName));
+  for (const [name, { displayName }] of sources) {
+    changes.set(`docs/skills/${name}.html`, skillPage(read(`docs/skills/${name}.html`), displayName));
+    const relative = `skills/${name}/agents/openai.yaml`;
+    if (fs.existsSync(path.join(root, relative))) {
+      const config = read(relative);
+      const parsed = load(config);
+      const labels = [...config.matchAll(/^([ \t]+display_name:)[^\r\n]*/gm)];
+      if (typeof parsed?.interface?.display_name !== 'string' || labels.length !== 1) throw new Error(`Missing or ambiguous installed UI display_name: ${name}`);
+      // Preserve default prompts, descriptions, policy, comments, and formatting
+      // byte-for-byte outside the one human-readable identity scalar.
+      changes.set(relative, config.replace(/^([ \t]+display_name:)[^\r\n]*/m, (_, key) => key + ' ' + JSON.stringify(displayName)));
+    }
+  }
   let index = packBrand(read('docs/skills/index.html')).replaceAll('Suede <span>Creator Skills</span>', 'Suede <span>AI Skills</span>');
   for (const [name, { displayName }] of sources) {
     const re = new RegExp(`(<a\\b[^>]*href="(?:\\./)?${pattern(name)}\\.html"[^>]*>)([\\s\\S]*?)(<\\/a>)`, 'g');

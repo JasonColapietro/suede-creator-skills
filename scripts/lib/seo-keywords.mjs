@@ -236,8 +236,8 @@ export const SEO_KEYWORDS = {
 
   // --------------------------------------------------------------- skills
   "skills/android-app-factory.html": [
-    "android app builder",
     "android app factory",
+    "android app builder",
     "kotlin jetpack compose",
     "google play billing",
     "google play data safety form",
@@ -245,6 +245,7 @@ export const SEO_KEYWORDS = {
     "Suede AI Skills",
   ],
   "skills/site-to-ios-app.html": [
+    "site to ios app",
     "convert a website to an ios app",
     "convert website to ios app",
     "app store guideline 4.2",
@@ -267,6 +268,7 @@ export const SEO_KEYWORDS = {
     "Suede AI Skills",
   ],
   "skills/suede-ads.html": [
+    "ads",
     "paid ads management",
     "ad campaign structure",
     "negative keywords",
@@ -282,6 +284,7 @@ export const SEO_KEYWORDS = {
     "Suede AI Skills",
   ],
   "skills/suede-ai-eval.html": [
+    "eval",
     "ai evals",
     "llm evaluation",
     "failure rubrics",
@@ -290,14 +293,15 @@ export const SEO_KEYWORDS = {
     "Suede AI Skills",
   ],
   "skills/suede-ai-seo.html": [
-    "ai seo",
     "answer engine optimization",
+    "ai seo",
     "llms.txt",
     "ai overviews optimization",
     "get cited by chatgpt",
     "Suede AI Skills",
   ],
   "skills/suede-analytics.html": [
+    "analytics",
     "analytics tracking plan",
     "event tracking",
     "conversion tracking",
@@ -313,6 +317,7 @@ export const SEO_KEYWORDS = {
     "Suede AI Skills",
   ],
   "skills/suede-attribution.html": [
+    "attribution",
     "marketing attribution",
     "attribution models",
     "self-reported attribution",
@@ -320,6 +325,7 @@ export const SEO_KEYWORDS = {
     "Suede AI Skills",
   ],
   "skills/suede-campaign-in-a-box.html": [
+    "campaign in a box",
     "music release campaign",
     "artist rollout plan",
     "release rollout calendar",
@@ -335,6 +341,7 @@ export const SEO_KEYWORDS = {
     "Suede AI Skills",
   ],
   "skills/suede-ci-gate.html": [
+    "ci gate",
     "ci merge gate",
     "github actions required checks",
     "branch protection",
@@ -355,6 +362,7 @@ export const SEO_KEYWORDS = {
     "Suede AI Skills",
   ],
   "skills/suede-code.html": [
+    "code",
     "code review and ship grade",
     "ai code review",
     "A-F code grade",
@@ -364,11 +372,10 @@ export const SEO_KEYWORDS = {
     "deploy readiness",
     "Next.js review",
     "TypeScript review",
-    "Suede AI Skills",
   ],
   "skills/suede-cold-email.html": [
-    "b2b cold email",
     "cold email",
+    "b2b cold email",
     "cold email personalization",
     "cold email subject lines",
     "follow-up sequence",
@@ -388,6 +395,7 @@ export const SEO_KEYWORDS = {
     "Suede AI Skills",
   ],
   "skills/suede-competitors.html": [
+    "competitor comparison",
     "competitor comparison page",
     "alternative pages",
     "versus pages",
@@ -402,6 +410,7 @@ export const SEO_KEYWORDS = {
     "Suede AI Skills",
   ],
   "skills/suede-copy.html": [
+    "copy",
     "conversion copy",
     "copywriting skill",
     "landing page copy",
@@ -411,7 +420,6 @@ export const SEO_KEYWORDS = {
     "email copy",
     "CTA writing",
     "anti-slop review",
-    "Suede AI Skills",
   ],
   "skills/suede-customer-research.html": [
     "customer research",
@@ -421,6 +429,7 @@ export const SEO_KEYWORDS = {
     "Suede AI Skills",
   ],
   "skills/suede-design.html": [
+    "design",
     "design system",
     "website redesign",
     "landing page design",
@@ -430,9 +439,9 @@ export const SEO_KEYWORDS = {
     "fluid typography",
     "dark mode tokens",
     "visual QA",
-    "Suede AI Skills",
   ],
   "skills/suede-deslop.html": [
+    "slop stop",
     "ai writing cleanup",
     "remove ai writing patterns",
     "ai prose cleanup",
@@ -457,6 +466,7 @@ export const SEO_KEYWORDS = {
     "Suede AI Skills",
   ],
   "skills/suede-free-tools.html": [
+    "free tools",
     "free tool marketing",
     "engineering as marketing",
     "calculator lead generation",
@@ -464,12 +474,14 @@ export const SEO_KEYWORDS = {
     "Suede AI Skills",
   ],
   "skills/suede-graph-flo-xr.html": [
+    "graph flo xr",
     "multi-agent plan search",
     "competing implementation plans",
     "adversarial verification",
     "Suede AI Skills",
   ],
   "skills/suede-image.html": [
+    "image",
     "marketing image",
     "ai image prompts",
     "open graph images",
@@ -494,6 +506,7 @@ export const SEO_KEYWORDS = {
     "Suede AI Skills",
   ],
   "skills/suede-lead-magnets.html": [
+    "lead magnet",
     "lead magnets",
     "gated content",
     "content upgrade",
@@ -501,6 +514,7 @@ export const SEO_KEYWORDS = {
     "Suede AI Skills",
   ],
   "skills/suede-marketing-council.html": [
+    "marketing council",
     "marketing strategy council",
     "marketing strategy frameworks",
     "marketing advisory",
@@ -508,6 +522,7 @@ export const SEO_KEYWORDS = {
     "Suede AI Skills",
   ],
   "skills/suede-marketing-loops.html": [
+    "marketing loop",
     "marketing automation loops",
     "ad fatigue",
     "ranking drop alerts",
@@ -515,6 +530,7 @@ export const SEO_KEYWORDS = {
     "Suede AI Skills",
   ],
   "skills/suede-marketing-plan.html": [
+    "marketing planning",
     "marketing plan",
     "90 day marketing plan",
     "marketing ideas",
@@ -524,6 +540,7 @@ export const SEO_KEYWORDS = {
     "Suede AI Skills",
   ],
   "skills/suede-newsroom.html": [
+    "newsroom",
     "ai content pipeline",
     "content team workflow",
     "content distribution",
@@ -541,6 +558,7 @@ export const SEO_KEYWORDS = {
     "Suede AI Skills",
   ],
   "skills/suede-onboarding.html": [
+    "onboarding",
     "user onboarding",
     "signup flow optimization",
     "activation metric",
@@ -564,6 +582,7 @@ export const SEO_KEYWORDS = {
     "Suede AI Skills",
   ],
   "skills/suede-parity-contract.html": [
+    "parity contract",
     "cross-surface parity",
     "shared constants across platforms",
     "web ios android parity",
@@ -571,6 +590,7 @@ export const SEO_KEYWORDS = {
     "Suede AI Skills",
   ],
   "skills/suede-paywalls.html": [
+    "paywall",
     "paywall design",
     "upgrade prompts",
     "feature gates",
@@ -585,6 +605,7 @@ export const SEO_KEYWORDS = {
     "Suede AI Skills",
   ],
   "skills/suede-pricing.html": [
+    "pricing",
     "saas pricing",
     "pricing strategy",
     "value metric",
@@ -608,6 +629,7 @@ export const SEO_KEYWORDS = {
     "Suede AI Skills",
   ],
   "skills/suede-prospecting.html": [
+    "prospecting",
     "sales prospecting",
     "lead enrichment",
     "account scoring",
@@ -621,6 +643,7 @@ export const SEO_KEYWORDS = {
     "Suede AI Skills",
   ],
   "skills/suede-referrals.html": [
+    "referral",
     "referral program",
     "refer a friend",
     "affiliate program",
@@ -628,6 +651,7 @@ export const SEO_KEYWORDS = {
     "Suede AI Skills",
   ],
   "skills/suede-release-linter.html": [
+    "release linter",
     "music metadata linter",
     "release readiness",
     "music release metadata",
@@ -635,14 +659,15 @@ export const SEO_KEYWORDS = {
     "Suede AI Skills",
   ],
   "skills/suede-revops.html": [
-    "revops",
     "revenue operations",
+    "revops",
     "lead scoring",
     "lead routing",
     "CRM hygiene",
     "Suede AI Skills",
   ],
   "skills/suede-rights-passport.html": [
+    "rights passport",
     "music rights package",
     "music rights audit",
     "creator provenance",
@@ -660,7 +685,7 @@ export const SEO_KEYWORDS = {
     "Suede AI Skills",
   ],
   "skills/suede-seo-audit.html": [
-    "SEO audit",
+    "seo audit",
     "ai visibility audit",
     "AEO audit",
     "schema validation",
@@ -669,12 +694,14 @@ export const SEO_KEYWORDS = {
     "Suede AI Skills",
   ],
   "skills/suede-ship-copy.html": [
+    "ship copy",
     "multi-agent copywriting",
     "copy research workflow",
     "agent DAG",
     "Suede AI Skills",
   ],
   "skills/suede-site-alchemy.html": [
+    "site alchemy",
     "conversion rate optimization",
     "funnel analysis",
     "friction audit",
@@ -683,6 +710,7 @@ export const SEO_KEYWORDS = {
     "Suede AI Skills",
   ],
   "skills/suede-sms.html": [
+    "sms",
     "sms marketing",
     "TCPA consent",
     "A2P 10DLC registration",
@@ -690,6 +718,7 @@ export const SEO_KEYWORDS = {
     "Suede AI Skills",
   ],
   "skills/suede-social.html": [
+    "social",
     "social media strategy",
     "instagram growth",
     "instagram audit",
@@ -700,6 +729,7 @@ export const SEO_KEYWORDS = {
     "Suede AI Skills",
   ],
   "skills/suede-sync-packaging.html": [
+    "sync packaging",
     "sync licensing",
     "sync one-sheet",
     "music supervisor pitch",
@@ -707,6 +737,7 @@ export const SEO_KEYWORDS = {
     "Suede AI Skills",
   ],
   "skills/suede-video.html": [
+    "video",
     "marketing video",
     "video scripting",
     "video storyboard",
@@ -715,12 +746,14 @@ export const SEO_KEYWORDS = {
     "Suede AI Skills",
   ],
   "skills/suede-visibility-grader.html": [
+    "visibility grader",
     "website visibility grader",
     "CTA grading",
     "AI readability",
     "Suede AI Skills",
   ],
   "skills/suede-workflow-skills.html": [
+    "workflow",
     "workflow skills router",
     "skill router",
     "workflow skills",

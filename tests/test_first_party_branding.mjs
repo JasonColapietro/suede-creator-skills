@@ -30,6 +30,7 @@ test('sync updates public identities while preserving machine routing and manual
   syncFirstPartyPublic(root);
   const after = JSON.parse(read(path.join(root, 'mcp/catalog.json')));
   assert.equal(after.name, 'Suede AI Skills');
+  assert.equal(fs.existsSync(path.join(root, 'skills/suede-example/agents/openai.yaml')), false, 'optional UI config is not invented');
   assert.deepEqual(after.specialties, catalog.specialties);
   assert.deepEqual(after.plugins.map(p => [p.name, p.skills]), catalog.plugins.map(p => [p.name, p.skills]));
   assert.deepEqual(after.skills.map(s => [s.name, s.specialty, s.lane, s.useWhen]), catalog.skills.map(s => [s.name, s.specialty, s.lane, s.useWhen]));
@@ -47,6 +48,19 @@ test('sync updates public identities while preserving machine routing and manual
   assert.equal(read(path.join(root, 'docs/skills/retired.html')), '<title>Historical title</title>');
   assert.match(read(path.join(root, 'docs/skills/index.html')), /<b>Suede AI Example Skills<\/b><span>Benefit stays/);
   assert.deepEqual(syncFirstPartyPublic(root, { check: true }), [], 'sync is idempotent');
+});
+test('installed UI labels synchronize without changing prompts, policy, or optional-file behavior', t => {
+  const { root } = fixture(t);
+  const relative = 'skills/suede-example/agents/openai.yaml';
+  const target = path.join(root, relative);
+  fs.mkdirSync(path.dirname(target), { recursive: true });
+  const config = 'interface:\n  display_name: "Old UI label"\n  short_description: "Keep benefit"\n  default_prompt: "Use $suede-example on [target]."\npolicy:\n  allow_implicit_invocation: false\n';
+  fs.writeFileSync(target, config);
+  assert.ok(syncFirstPartyPublic(root, { check: true }).includes(relative));
+  assert.equal(read(target), config, '--check never changes UI config');
+  syncFirstPartyPublic(root);
+  assert.equal(read(target), config.replace('"Old UI label"', '"Suede AI Example Skills"'));
+  assert.deepEqual(syncFirstPartyPublic(root, { check: true }), []);
 });
 test('rejects an identity mismatch before writing any catalog or page', t => {
   const { root } = fixture(t); const file = path.join(root, 'skills/suede-example/SKILL.md');
@@ -66,6 +80,8 @@ test('all active first-party sources, catalog entries, and public titles share t
     assert.match(fm.metadata['display-name'], /^Suede AI(?: .+)? Skills$/);
     assert.equal(skill.displayName, fm.metadata['display-name']);
     assert.equal(skill.description, fm.description);
+    const agentConfig = path.join(ROOT, 'skills', skill.name, 'agents/openai.yaml');
+    if (fs.existsSync(agentConfig)) assert.equal(load(read(agentConfig)).interface.display_name, skill.displayName, skill.name);
     const html = read(path.join(ROOT, 'docs/skills', skill.name + '.html'));
     assert.ok(html.includes(`<span class="h1-task">${skill.displayName.replaceAll('&', '&amp;')}</span>`), skill.name);
   }
