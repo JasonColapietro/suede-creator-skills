@@ -79,6 +79,8 @@ export function validateContract(contract = loadContract(), catalog = loadCatalo
     "growth-loops",
     "aeo-geo",
     "ops-discovery-design",
+    "pitches",
+    "measurement",
   ]);
   const catalogByName = new Map(catalog.skills.map((skill) => [skill.name, skill]));
   const seenGroups = new Set();

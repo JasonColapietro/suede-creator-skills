@@ -36,7 +36,7 @@ exact-content approval.
 
 Read `.agents/product-marketing.md` (or `.claude/product-marketing.md`, or the
 legacy `product-marketing-context.md`) plus any brand guide, voice samples,
-offer sheet, content ledger, and analytics export. Then fill:
+offer sheet, content ledger, and analytics export. If its Status line says `partial`, ask for the listed missing sections before using them and never infer them; treat `[unverified]` fields as absent. Then fill:
 
 ```text
 Handle and visible identity:        Account type: personal | creator | business

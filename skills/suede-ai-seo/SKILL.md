@@ -47,7 +47,7 @@ apply it; change thresholds here first.
 ## Before starting
 
 Read `.agents/product-marketing.md` (or `.claude/product-marketing.md`, or the
-legacy `product-marketing-context.md`) if present. Then collect only what is
+legacy `product-marketing-context.md`) if present. If its Status line says `partial`, ask for the listed missing sections before using them and never infer them; treat `[unverified]` fields as absent. Then collect only what is
 missing:
 
 1. The 20 to 50 buyer questions that matter commercially, in the buyer's words.

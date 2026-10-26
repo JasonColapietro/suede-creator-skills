@@ -16,7 +16,7 @@ Any agent with the product brief and audience evidence. Current search or compet
 
 ## Before Planning
 
-Read `.agents/product-marketing.md` first if it exists and ask only for what it does not cover; see `suede-product-marketing` for path fallbacks.
+Read `.agents/product-marketing.md` first if it exists and ask only for what it does not cover; see `suede-product-marketing` for path fallbacks. If its Status line says `partial`, ask for the listed missing sections before using them and never infer them; treat `[unverified]` fields as absent.
 
 Gather this context (ask if not provided):
 

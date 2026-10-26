@@ -17,7 +17,3 @@ A UI builder requests a change to src/api.ts while the API lane is active. Mark 
 ## Validation
 
 Compare actual changed paths with the ownership table, inspect the interface contract consumed by both lanes, and run the integrated tests at the final commit. A worker summary is not proof that the combined branch passes.
-
-## Coverage and routing
-
-Suede AI agent-team orchestrator, the method behind multi-agent automation: split complex work into coordinated lanes with explicit file ownership, WIP collision detection, quality gates, escalation thresholds, rollback plans, and handoffs that prove what shipped. Use when one shared change needs safe parallel ownership across builders and reviewers, when a lane map must be resolved before anyone opens a file, or when running a repeatable public-repository contribution program with issue scoring, atomic task leases, isolated worktrees, and explicit publication authority. NOT FOR: one repo change a bundled DAG can run end to end (use suede-graph-flo-xr); reviewing or grading a diff (use suede-code); CI, branch protection, or merge-gate wiring (use suede-ci-gate); picking which single skill fits a request (use suede-workflow-skills).

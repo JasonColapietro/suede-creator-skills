@@ -17,7 +17,3 @@ The runner is absent or model access fails. Deliver the case dataset and command
 ## Validation
 
 Validate dataset fields and case independence, run against the exact prompt/model/config revision, and inspect failures by dimension. A judge needs calibration evidence before its quality labels become acceptance evidence.
-
-## Coverage and routing
-
-Suede AI eval design and coverage audit: AI-SPEC, failure-mode rubric with severity scoring, concrete pass/fail eval cases, coverage and infrastructure scores, and mechanical acceptance gates. Use when a change ships LLM, RAG, agent, classifier, prompt, or generated-media behavior, or when asked to write evals for an AI feature, design test cases for a model surface, audit existing eval coverage, or judge whether AI behavior is safe to ship. No AI-SPEC means no eval plan, and no eval plan holds the recommended ship verdict. NOT FOR: reviewing or grading the implementation code behind the AI surface (use suede-code); wiring a passing suite into CI as a required check (use suede-ci-gate); coordinating the eval work as one lane of a larger build (use suede-agent-teams).

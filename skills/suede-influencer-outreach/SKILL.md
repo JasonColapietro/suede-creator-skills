@@ -17,7 +17,7 @@ Any agent with a vetted creator, cited audience evidence and approved compensati
 ## Before Writing
 
 **Check for product marketing context first:**
-If `.agents/product-marketing.md` exists (or `.claude/product-marketing.md`, or the legacy `product-marketing-context.md` filename, in older setups), read it before asking questions. Use it for brand, product, voice, and signer, and only ask for what it does not cover.
+If `.agents/product-marketing.md` exists (or `.claude/product-marketing.md`, or the legacy `product-marketing-context.md` filename, in older setups), read it before asking questions. Use it for brand, product, voice, and signer, and only ask for what it does not cover. If its Status line says `partial`, ask for the listed missing sections before using them and never infer them; treat `[unverified]` fields as absent.
 
 Collect these, one question per message, multiple choice where it helps. Skip anything already answered.
 

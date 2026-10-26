@@ -344,6 +344,112 @@
       ]
     },
     {
+      "id": "pitches",
+      "skills": ["suede-cold-email", "suede-influencer-outreach", "suede-public-relations"],
+      "fallback": "clarify",
+      "routes": [
+        {
+          "skill": "suede-cold-email",
+          "positive": ["cold email", "b2b outbound", "prospects", "sales email"],
+          "negative": ["creator", "influencer", "journalist", "reporter"],
+          "metadataMustContain": ["cold email", "b2b outbound"]
+        },
+        {
+          "skill": "suede-influencer-outreach",
+          "positive": ["creator", "influencer", "creator program", "sponsored post"],
+          "negative": ["journalist", "reporter", "cold email"],
+          "metadataMustContain": ["creator", "influencer"]
+        },
+        {
+          "skill": "suede-public-relations",
+          "positive": ["journalist", "reporter", "press kit", "media list", "earned media"],
+          "negative": ["creator", "influencer", "cold email"],
+          "metadataMustContain": ["journalist", "press kits"]
+        }
+      ],
+      "cases": [
+        {
+          "id": "creator-pitch-positive",
+          "mode": "positive",
+          "prompt": "Pitch this creator for a paid sponsored post with our influencer budget.",
+          "expected": "suede-influencer-outreach"
+        },
+        {
+          "id": "journalist-pitch-negative-creator",
+          "mode": "negative",
+          "prompt": "Draft a journalist pitch and a media list for our funding news.",
+          "expected": "suede-public-relations",
+          "forbidden": ["suede-influencer-outreach", "suede-cold-email"]
+        },
+        {
+          "id": "cold-email-negative-pr",
+          "mode": "negative",
+          "prompt": "Write a cold email to B2B outbound prospects in fintech.",
+          "expected": "suede-cold-email",
+          "forbidden": ["suede-public-relations"]
+        },
+        {
+          "id": "pitch-ambiguous",
+          "mode": "ambiguous",
+          "prompt": "Write a pitch for us.",
+          "expected": "clarify"
+        }
+      ]
+    },
+    {
+      "id": "measurement",
+      "skills": ["suede-analytics", "suede-attribution", "suede-ab-testing"],
+      "fallback": "clarify",
+      "routes": [
+        {
+          "skill": "suede-analytics",
+          "positive": ["ga4", "gtm", "key events", "utm", "consent", "tracking plan", "capi"],
+          "negative": ["mmm", "incrementality", "sample size", "significance"],
+          "metadataMustContain": ["ga4", "utms"]
+        },
+        {
+          "skill": "suede-attribution",
+          "positive": ["attribution", "mmm", "incrementality", "geo holdout", "dashboards disagree", "drove revenue"],
+          "negative": ["sample size", "significance", "key events"],
+          "metadataMustContain": ["attribution", "incrementality"]
+        },
+        {
+          "skill": "suede-ab-testing",
+          "positive": ["a b test", "sample size", "significance", "variants", "experiment backlog"],
+          "negative": ["mmm", "geo holdout", "gtm"],
+          "metadataMustContain": ["a b test", "experiment backlog"]
+        }
+      ],
+      "cases": [
+        {
+          "id": "attribution-positive",
+          "mode": "positive",
+          "prompt": "Our dashboards disagree; tell us which channel drove revenue with an MMM or geo holdout read.",
+          "expected": "suede-attribution"
+        },
+        {
+          "id": "ab-test-negative-attribution",
+          "mode": "negative",
+          "prompt": "Work out the sample size and significance threshold for this A/B test.",
+          "expected": "suede-ab-testing",
+          "forbidden": ["suede-attribution"]
+        },
+        {
+          "id": "analytics-negative-ab",
+          "mode": "negative",
+          "prompt": "Fix our GA4 key events and GTM consent setup and clean up UTM tags.",
+          "expected": "suede-analytics",
+          "forbidden": ["suede-ab-testing", "suede-attribution"]
+        },
+        {
+          "id": "measurement-ambiguous",
+          "mode": "ambiguous",
+          "prompt": "Our numbers look off.",
+          "expected": "clarify"
+        }
+      ]
+    },
+    {
       "id": "clip-social-video",
       "skills": ["suede-social", "suede-video"],
       "fallback": "suede-social",

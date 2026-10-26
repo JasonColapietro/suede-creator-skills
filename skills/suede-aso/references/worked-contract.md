@@ -17,7 +17,3 @@ The request includes competitor download estimates without a source. Omit them f
 ## Validation
 
 Check each field against current official locale/store rules and count the exact string, including punctuation. Confirm screenshots match the named build and claims do not introduce unsupported capabilities.
-
-## Coverage and routing
-
-Suede AI app-store optimization for keyword fields, titles, subtitles, descriptions, screenshots, ratings context, and competitor listing audits. Use when improving App Store or Google Play visibility or listing conversion from a live app URL and current console evidence, or when authoring keyword, name, subtitle, and promo fields for an app that has not shipped yet. NOT FOR: building or releasing the app (use android-app-factory or site-to-ios-app; native iOS builds are a private Suede AI companion, not in this pack: ios-app-factory), creating paid ad assets (use suede-ad-creative), or install-event instrumentation (use suede-analytics).

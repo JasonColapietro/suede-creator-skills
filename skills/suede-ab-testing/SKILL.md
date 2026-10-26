@@ -37,7 +37,7 @@ Two carve-outs, and only these two:
 
 ## Initial Assessment
 
-Check for `.agents/product-marketing.md` (or `.claude/product-marketing.md`, or the legacy `product-marketing-context.md`) and read it if present, baseline conversion rate, traffic volume, and available tooling decide whether a test is even powerable, and they are usually already written down there.
+Check for `.agents/product-marketing.md` (or `.claude/product-marketing.md`, or the legacy `product-marketing-context.md`) and read it if present, baseline conversion rate, traffic volume, and available tooling decide whether a test is even powerable, and they are usually already written down there. If its Status line says `partial`, ask for the listed missing sections before using them and never infer them; treat `[unverified]` fields as absent.
 
 Then work the intake list under Task-Specific Questions below; ask only what the context file did not already answer.
 

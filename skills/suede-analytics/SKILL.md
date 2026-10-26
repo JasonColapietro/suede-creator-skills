@@ -19,7 +19,7 @@ Use this measurement playbook to build tracking that supports auditable marketin
 
 ## Initial Assessment
 
-Check for `.agents/product-marketing.md` (or `.claude/product-marketing.md`, or the legacy `product-marketing-context.md`) and read it if present: the key conversions, the decisions the data has to serve, and the tools already in place drive every recommendation here.
+Check for `.agents/product-marketing.md` (or `.claude/product-marketing.md`, or the legacy `product-marketing-context.md`) and read it if present: the key conversions, the decisions the data has to serve, and the tools already in place drive every recommendation here. If its Status line says `partial`, ask for the listed missing sections before using them and never infer them; treat `[unverified]` fields as absent.
 
 Then work the intake list under Task-Specific Questions below; ask only what the context file did not already answer.
 

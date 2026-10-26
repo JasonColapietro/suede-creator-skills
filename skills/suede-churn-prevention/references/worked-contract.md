@@ -17,7 +17,3 @@ Failed-payment events include repeated retries on the same subscription. Dedupli
 ## Validation
 
 Recalculate from opening-cohort denominators, test cancellation completion after declining every offer, and verify recovery from actual settled payment/subscription state. Report jurisdiction-specific requirements with current sources.
-
-## Coverage and routing
-
-Suede AI retention discipline for voluntary and involuntary churn: transparent cancel flows that meet current cancellation law, pause and downgrade paths, reason-matched save offers, failed payment recovery with smart retries and dunning, health scores and proactive signals, and win-back design. Use when diagnosing subscriber loss or designing a bounded retention intervention. NOT FOR: writing the lifecycle emails themselves (use suede-emails), pricing architecture (use suede-pricing), paywall design (use suede-pricing, Paywall mode), or event instrumentation (use suede-analytics).

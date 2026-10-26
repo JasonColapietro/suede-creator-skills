@@ -18,7 +18,7 @@ before treating the task as complete.
 
 Suede AI turns verified client facts (budget, team, stage, evidence, constraints) into either a scored tactic shortlist or a full marketing operating plan across Acquisition, Activation, Retention, Referral, and Revenue. Both modes share one tactic library, one scoring rubric, and one status vocabulary, so a shortlist drops straight into a plan later.
 
-Read `.agents/product-marketing.md` first if it exists and ask only for what it does not cover; see `suede-product-marketing` for path fallbacks.
+Read `.agents/product-marketing.md` first if it exists and ask only for what it does not cover; see `suede-product-marketing` for path fallbacks. If its Status line says `partial`, ask for the listed missing sections before using them and never infer them; treat `[unverified]` fields as absent.
 
 ## Pick the mode
 

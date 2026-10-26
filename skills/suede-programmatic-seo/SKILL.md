@@ -48,7 +48,7 @@ side of this line. Source: https://developers.google.com/search/docs/essentials/
 ## Initial assessment
 
 Read `.agents/product-marketing.md` (or `.claude/product-marketing.md`, or the
-legacy `product-marketing-context.md`) if present. Then establish:
+legacy `product-marketing-context.md`) if present. If its Status line says `partial`, ask for the listed missing sections before using them and never infer them; treat `[unverified]` fields as absent. Then establish:
 
 1. **Business**: product, audience, the conversion each page should earn.
 2. **Pattern and demand**: the repeating query pattern, its variables, how many

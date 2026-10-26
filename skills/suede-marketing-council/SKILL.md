@@ -22,7 +22,7 @@ Advisors are roles, not people. Never present a take as the view of a real marke
 
 ## Before Starting
 
-Read `.agents/product-marketing.md` first if it exists and ask only for what it does not cover; see `suede-product-marketing` for path fallbacks.
+Read `.agents/product-marketing.md` first if it exists and ask only for what it does not cover; see `suede-product-marketing` for path fallbacks. If its Status line says `partial`, ask for the listed missing sections before using them and never infer them; treat `[unverified]` fields as absent.
 
 Then confirm, asking only for what is missing:
 1. **The question.** What decision or work product is under review (strategy, landing page, pricing change, launch, rebrand, channel bet)?
