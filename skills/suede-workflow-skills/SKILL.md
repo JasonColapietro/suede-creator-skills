@@ -54,8 +54,10 @@ damage). Pause, state the risk and the options, and let the user choose.
 ### Precedence
 
 1. A multi-file or multi-surface change to one repo that should be planned,
-   built, and gated as one graph → `suede-graph-flo-xr`, even when the request
-   also names copy or design.
+   built, and gated as one graph → `suede-graph-flo-xr` on a macOS Claude Code
+   host with the Workflow tool and its agents installed, even when the request
+   also names copy or design. On any other host → `suede-agent-teams` with one
+   builder lane.
 2. Several specialists must work in parallel on one shared change →
    `suede-agent-teams`.
 3. The request names one lane → that specialist, directly.
@@ -134,7 +136,7 @@ cap.
 | Paid strategy; the ad units themselves | `suede-ads`; `suede-ad-creative` |
 | Organic social, including Instagram account audits and clip-to-guide funnels; content pipeline | `suede-social`; `suede-newsroom` |
 | Outbound and pipeline | `suede-cold-email`, `suede-prospecting`, `suede-sales-enablement`, `suede-revops` |
-| PR, partners, community, referrals | `suede-public-relations`, `suede-co-marketing`, `suede-community-marketing`, `suede-referrals` |
+| PR, partners, creators, community, referrals | `suede-public-relations`, `suede-co-marketing`, `suede-influencer-outreach`, `suede-community-marketing`, `suede-referrals` |
 | Lifecycle email and SMS | `suede-emails`, `suede-sms` |
 | Lead magnets | `suede-lead-magnets` |
 | Offers and persuasion mechanics, pricing, paywalls | `suede-offers`, `suede-pricing` (including Paywall mode) |

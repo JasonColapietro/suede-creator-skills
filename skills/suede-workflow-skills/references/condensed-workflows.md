@@ -18,6 +18,8 @@ Each section is the minimum viable version of one specialist's workflow.
 | [Copy And SEO Workflow](#copy-and-seo-workflow) | `suede-copy`, `suede-seo-audit` |
 | [Visibility Grading Workflow](#visibility-grading-workflow) | `suede-visibility-grader` |
 | [Site Alchemy Workflow](#site-alchemy-workflow) | `suede-site-alchemy` |
+| [AEO And GEO Workflow](#aeo-and-geo-workflow) | `suede-ai-seo` |
+| [Ops Assessment To Architecture Workflow](#ops-assessment-to-architecture-workflow) | `suede-ops-assessment`, `suede-ops-architecture` |
 | [Code Review Workflow](#code-review-workflow) | `suede-code` |
 | [Agent Team Workflow](#agent-team-workflow) | `suede-agent-teams` |
 
@@ -175,6 +177,44 @@ Use these named moves as notes, not shell commands:
 - `/cta-magnet`
 - `/mobile-seduction`
 - `/ship-polish`
+
+## AEO And GEO Workflow
+
+For getting a brand cited and recommended in AI answers (Google AI Overviews
+and AI Mode, ChatGPT search, Perplexity, Copilot, Gemini, Claude):
+
+1. Crawler policy: read robots.txt and the CDN or WAF rules. Decide search and
+   training access separately for OAI-SearchBot and GPTBot, Claude-SearchBot
+   and ClaudeBot, PerplexityBot, and Google-Extended. Never block a search
+   crawler the brand wants citations from.
+2. Entity consistency: one exact brand name, description, founder, logo and
+   canonical URL across the site, Organization and Person JSON-LD with
+   `sameAs`, and every profile the brand controls.
+3. Citation-ready pages: a direct answer in the first paragraph, question
+   headings, self-contained passages, quotable dated facts, comparison tables
+   in HTML text, and an FAQ where the questions are real.
+4. Off-site evidence: list where answer engines already source the category
+   (reviews, directories, forums, publications) and where the brand is absent.
+5. Measure with a fixed prompt panel per engine, dated, recording mentions,
+   citations and the cited URLs, plus AI-assistant referrals in analytics.
+   Report change against the dated baseline; never promise placement.
+
+## Ops Assessment To Architecture Workflow
+
+For "what should we automate first" through a scoped automation or agent
+build:
+
+1. Interview the people who do the work, one process at a time, and write the
+   floor map from what they do, not from the org chart.
+2. Inventory every silo with a proof path, including spreadsheets and inboxes
+   used as databases, and name tribal knowledge and key-person risk.
+3. Cost friction in the requester's own numbers and rank opportunities by
+   annual value against build complexity.
+4. Architecture: entity schema first, exactly one write path per entity, and
+   each unit of work triaged to deterministic automation, an AI agent, or a
+   human decision. Mark every existing tool absorb, keep, or kill.
+5. Sequence the build into phases whose completion a command can prove, and
+   watch adoption for thirty days after launch.
 
 ## Code Review Workflow
 

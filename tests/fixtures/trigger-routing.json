@@ -251,6 +251,99 @@
       ]
     },
     {
+      "id": "aeo-geo",
+      "skills": ["suede-ai-seo", "suede-seo-audit", "suede-visibility-grader"],
+      "fallback": "clarify",
+      "routes": [
+        {
+          "skill": "suede-ai-seo",
+          "positive": ["ai citations", "aeo", "geo", "llms txt", "chatgpt", "perplexity", "ai overviews", "prompt panel", "ai crawler"],
+          "negative": ["nine lane", "indexation", "schema errors", "before we promote"],
+          "metadataMustContain": ["aeo", "geo"]
+        },
+        {
+          "skill": "suede-seo-audit",
+          "positive": ["seo audit", "nine lane", "indexation", "schema errors", "traffic drop", "scored seo report"],
+          "negative": ["ai citations", "llms txt", "before we promote"],
+          "metadataMustContain": ["audit"]
+        },
+        {
+          "skill": "suede-visibility-grader",
+          "positive": ["before we promote", "promotion ready", "grade this page", "first screen"],
+          "negative": ["nine lane", "indexation", "ai citations"],
+          "metadataMustContain": ["grade"]
+        }
+      ],
+      "cases": [
+        {
+          "id": "aeo-citations-positive",
+          "mode": "positive",
+          "prompt": "Improve our AI citations in ChatGPT and Perplexity and write our llms.txt.",
+          "expected": "suede-ai-seo"
+        },
+        {
+          "id": "seo-audit-negative-aeo",
+          "mode": "negative",
+          "prompt": "Run a nine-lane SEO audit for our indexation problems and schema errors.",
+          "expected": "suede-seo-audit",
+          "forbidden": ["suede-ai-seo"]
+        },
+        {
+          "id": "grader-negative-audit",
+          "mode": "negative",
+          "prompt": "Grade this page on first screen clarity before we promote it.",
+          "expected": "suede-visibility-grader",
+          "forbidden": ["suede-seo-audit"]
+        },
+        {
+          "id": "search-visibility-ambiguous",
+          "mode": "ambiguous",
+          "prompt": "Help our site show up more.",
+          "expected": "clarify"
+        }
+      ]
+    },
+    {
+      "id": "ops-discovery-design",
+      "skills": ["suede-ops-assessment", "suede-ops-architecture"],
+      "fallback": "suede-ops-assessment",
+      "routes": [
+        {
+          "skill": "suede-ops-assessment",
+          "positive": ["map how work happens", "what to automate first", "losing time", "shadow spreadsheet", "silo inventory"],
+          "negative": ["entity schema", "write path", "absorb keep or kill"],
+          "metadataMustContain": ["silos"]
+        },
+        {
+          "skill": "suede-ops-architecture",
+          "positive": ["entity schema", "write path", "agent build", "absorb keep or kill", "tool stack"],
+          "negative": ["what to automate first", "map how work happens"],
+          "metadataMustContain": ["write path"]
+        }
+      ],
+      "cases": [
+        {
+          "id": "ops-assessment-positive",
+          "mode": "positive",
+          "prompt": "Map how work happens on our ops team and tell us what to automate first.",
+          "expected": "suede-ops-assessment"
+        },
+        {
+          "id": "ops-architecture-negative-assessment",
+          "mode": "negative",
+          "prompt": "Scope our AI agent build: entity schema, one write path per entity, and absorb, keep, or kill for each tool.",
+          "expected": "suede-ops-architecture",
+          "forbidden": ["suede-ops-assessment"]
+        },
+        {
+          "id": "ops-ambiguous-fallback",
+          "mode": "ambiguous",
+          "prompt": "Help us automate operations.",
+          "expected": "suede-ops-assessment"
+        }
+      ]
+    },
+    {
       "id": "clip-social-video",
       "skills": ["suede-social", "suede-video"],
       "fallback": "suede-social",
