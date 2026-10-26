@@ -1,6 +1,6 @@
 ---
 name: suede-release-linter
-description: "Find missing files, malformed metadata, artwork and stem issues, split gaps, AI involvement, and delivery blockers in local music or media release folders. Use when asked to \"check this release folder\" or explain a delivery rejection. Writes scored Markdown and JSON reports; unknown facts remain unknown. NOT FOR: resolving rights or building a transfer package (use suede-rights-passport), sync one-sheets (use suede-sync-packaging), or rollout campaigns (use suede-campaign-in-a-box)."
+description: "Suede AI Release Linter Skills. Find missing files, malformed metadata, artwork and stem issues, split gaps, AI involvement, and delivery blockers in local music or media release folders. Use when asked to \"check this release folder\" or explain a delivery rejection. Writes scored Markdown and JSON reports; unknown facts remain unknown. NOT FOR: resolving rights or building a transfer package (use suede-rights-passport), sync one-sheets (use suede-sync-packaging), or rollout campaigns (use suede-campaign-in-a-box)."
 metadata:
   display-name: "Suede AI Release Linter Skills"
 ---

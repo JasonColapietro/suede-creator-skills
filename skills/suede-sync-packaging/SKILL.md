@@ -1,6 +1,6 @@
 ---
 name: suede-sync-packaging
-description: "Prepare a song for sync review: scene fit, supervisor one-sheet, asset checklist, lyric flags, mood tags, AI disclosure, and open clearance questions. Use when asked to \"make a sync one-sheet\" or package a track for film, TV, ads, games, trailers, or creator campaigns. Drafts pitch materials without clearance, placement, or sending claims. NOT FOR: rights investigations or transfer packages (use suede-rights-passport), folder linting (use suede-release-linter), or rollouts (use suede-campaign-in-a-box)."
+description: "Suede AI Sync Packaging Skills. Prepare a song for sync review: scene fit, supervisor one-sheet, asset checklist, lyric flags, mood tags, AI disclosure, and open clearance questions. Use when asked to \"make a sync one-sheet\" or package a track for film, TV, ads, games, trailers, or creator campaigns. Drafts pitch materials without clearance, placement, or sending claims. NOT FOR: rights investigations or transfer packages (use suede-rights-passport), folder linting (use suede-release-linter), or rollouts (use suede-campaign-in-a-box)."
 metadata:
   display-name: "Suede AI Sync Packaging Skills"
 ---

@@ -1,6 +1,6 @@
 ---
 name: suede-public-relations
-description: "Build earned-media angles, sourced media lists, journalist and podcast pitches, reporter replies, and press kits with consistent entity facts. Use when asked to \"draft a journalist pitch\", assess newsjacking, or prepare third-party coverage for search and AI citations. Returns review-ready drafts and measurement steps. NOT FOR: directory submissions (use suede-directory-submissions), release packaging (use suede-launch-packaging), social posts (use suede-social), or sending without approval."
+description: "Suede AI Public Relations Skills. Build earned-media angles, sourced media lists, journalist and podcast pitches, reporter replies, and press kits with consistent entity facts. Use when asked to \"draft a journalist pitch\", assess newsjacking, or prepare third-party coverage for search and AI citations. Returns review-ready drafts and measurement steps. NOT FOR: directory submissions (use suede-directory-submissions), release packaging (use suede-launch-packaging), social posts (use suede-social), or sending without approval."
 metadata:
   display-name: "Suede AI Public Relations Skills"
   version: 2.0.0

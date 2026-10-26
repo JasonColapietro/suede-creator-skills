@@ -330,7 +330,7 @@
       "area": "marketing",
       "specialty": "found",
       "lane": "Search & AI visibility",
-      "description": "Suede AI Answer Engine Optimization Skills. Use when asked to \"improve our AI citations\" or optimize for ChatGPT/Perplexity: crawler policy, entity consistency, citation-ready pages, off-site evidence and prompt-panel measurement. NOT FOR: nine-lane technical SEO audits (suede-seo-audit), quick promotion grades (suede-visibility-grader), or funnel implementation (suede-site-alchemy).",
+      "description": "Suede AI Answer Engine Optimization Skills. AEO and GEO program for getting a brand cited and recommended in Google AI Overviews and AI Mode, ChatGPT search, Perplexity, Copilot, Gemini, and Claude: AI crawler policy (GPTBot, OAI-SearchBot, ClaudeBot, PerplexityBot, Google-Extended), entity consistency with Organization and Person schema and sameAs, citation-ready pages, off-site evidence, llms.txt, and prompt-panel measurement. Use when asked to \"improve our AI citations\", optimize for ChatGPT or Perplexity, or for AI SEO, AEO, GEO, LLMO, AI visibility, or llms.txt work. NOT FOR: nine-lane technical SEO audits (suede-seo-audit), quick promotion grades (suede-visibility-grader), or funnel implementation (suede-site-alchemy).",
       "useWhen": "The user wants to get content cited by LLMs, appear in AI-generated answers, or make a site agent-readable.",
       "displayName": "Suede AI Answer Engine Optimization Skills"
     },
@@ -528,7 +528,7 @@
       "area": "workflow",
       "specialty": "ship",
       "lane": "Orchestration & routing",
-      "description": "Use when asked \"compare implementation plans before building\" for one multi-file repository change. Suede AI runs Suede Thought Graph shipping search: it searches, scores, prunes and refutes plans, selects one winner, then builds in an isolated worktree with a sandboxed gate and handoff. Halts on hazards, collisions or exhausted budget. NOT FOR: bulk worker tasks, existing-diff review (use suede-code), CI wiring (use suede-ci-gate), or copy-only work (use suede-ship-copy).",
+      "description": "Use when asked \"compare implementation plans before building\" for one multi-file repository change. Suede AI runs Suede AI Thought Graph shipping search: it searches, scores, prunes and refutes plans, selects one winner, then builds in an isolated worktree with a sandboxed gate and handoff. Halts on hazards, collisions or exhausted budget. NOT FOR: bulk worker tasks, existing-diff review (use suede-code), CI wiring (use suede-ci-gate), or copy-only work (use suede-ship-copy).",
       "useWhen": "Use the evidence-gated orchestration contract for a multi-file repo change; run the Suede Thought Graph workflow only in its supported Claude Code/macOS environment.",
       "displayName": "Suede AI Graph Flo XR Skills"
     },
@@ -699,7 +699,7 @@
       "area": "marketing",
       "specialty": "demand",
       "lane": "Paid & outbound",
-      "description": "Build a source-backed, scored prospect list across SaaS, B2B, local business, or early demand signals. Use when asked to \"find our first design partners\", define an ICP, enrich leads, or document disqualification evidence. Includes source dates, confidence, licensed-data checks, and a qualification handoff. NOT FOR: sending outreach (use suede-cold-email), CRM routing (use suede-revops), or competitor profiles (use suede-competitor-profiling).",
+      "description": "Suede AI Prospecting Skills. Build a source-backed, scored prospect list across SaaS, B2B, local business, or early demand signals. Use when asked to \"find our first design partners\", define an ICP, enrich leads, or document disqualification evidence. Includes source dates, confidence, licensed-data checks, and a qualification handoff. NOT FOR: sending outreach (use suede-cold-email), CRM routing (use suede-revops), or competitor profiles (use suede-competitor-profiling).",
       "useWhen": "The user needs a prospect or lead list, or is deciding which accounts to go after.",
       "displayName": "Suede AI Prospecting Skills"
     },
@@ -708,7 +708,7 @@
       "area": "marketing",
       "specialty": "found",
       "lane": "Content & audience",
-      "description": "Build earned-media angles, sourced media lists, journalist and podcast pitches, reporter replies, and press kits with consistent entity facts. Use when asked to \"draft a journalist pitch\", assess newsjacking, or prepare third-party coverage for search and AI citations. Returns review-ready drafts and measurement steps. NOT FOR: directory submissions (use suede-directory-submissions), release packaging (use suede-launch-packaging), social posts (use suede-social), or sending without approval.",
+      "description": "Suede AI Public Relations Skills. Build earned-media angles, sourced media lists, journalist and podcast pitches, reporter replies, and press kits with consistent entity facts. Use when asked to \"draft a journalist pitch\", assess newsjacking, or prepare third-party coverage for search and AI citations. Returns review-ready drafts and measurement steps. NOT FOR: directory submissions (use suede-directory-submissions), release packaging (use suede-launch-packaging), social posts (use suede-social), or sending without approval.",
       "useWhen": "The user wants press coverage, is pitching journalists, or is deciding how to announce something publicly.",
       "displayName": "Suede AI Public Relations Skills"
     },
@@ -717,7 +717,7 @@
       "area": "marketing",
       "specialty": "demand",
       "lane": "Acquisition assets",
-      "description": "Design a referral and affiliate program with incentives, commission and payout rules, fraud controls, disclosure, attribution, and cohort measurement. Use when asked to \"design our referral program\" or repair customer, ambassador, or partner incentives. Returns a program spec, economics, tooling options, and launch checklist. NOT FOR: payouts or billing changes, brand partnerships (use suede-co-marketing), launch packaging (use suede-launch-packaging), or lifecycle messages (use suede-emails).",
+      "description": "Suede AI Referral Skills. Design a referral and affiliate program with incentives, commission and payout rules, fraud controls, disclosure, attribution, and cohort measurement. Use when asked to \"design our referral program\" or repair customer, ambassador, or partner incentives. Returns a program spec, economics, tooling options, and launch checklist. NOT FOR: payouts or billing changes, brand partnerships (use suede-co-marketing), launch packaging (use suede-launch-packaging), or lifecycle messages (use suede-emails).",
       "useWhen": "The user wants existing users or partners bringing in new customers, or is designing a referral or affiliate program.",
       "displayName": "Suede AI Referral Skills"
     },
@@ -726,7 +726,7 @@
       "area": "creator",
       "specialty": "position",
       "lane": "Creator toolkit",
-      "description": "Find missing files, malformed metadata, artwork and stem issues, split gaps, AI involvement, and delivery blockers in local music or media release folders. Use when asked to \"check this release folder\" or explain a delivery rejection. Writes scored Markdown and JSON reports; unknown facts remain unknown. NOT FOR: resolving rights or building a transfer package (use suede-rights-passport), sync one-sheets (use suede-sync-packaging), or rollout campaigns (use suede-campaign-in-a-box).",
+      "description": "Suede AI Release Linter Skills. Find missing files, malformed metadata, artwork and stem issues, split gaps, AI involvement, and delivery blockers in local music or media release folders. Use when asked to \"check this release folder\" or explain a delivery rejection. Writes scored Markdown and JSON reports; unknown facts remain unknown. NOT FOR: resolving rights or building a transfer package (use suede-rights-passport), sync one-sheets (use suede-sync-packaging), or rollout campaigns (use suede-campaign-in-a-box).",
       "useWhen": "Check a release folder before release, licensing, registry prep, royalty routing, agent commerce, or transfer-package handoff.",
       "displayName": "Suede AI Release Linter Skills"
     },
@@ -735,7 +735,7 @@
       "area": "marketing",
       "specialty": "revenue",
       "lane": "Measure & operate",
-      "description": "Define lifecycle stages, fit and engagement scores, MQL/SQL handoffs, routing SLAs, pipeline hygiene, CRM automation, deal-desk tiers, and dashboard metrics. Use when asked to \"fix our lead routing\" or specify revenue operations. Returns implementation-ready rules with owners and measurement. NOT FOR: prospect lists (use suede-prospecting), outbound copy (use suede-cold-email), lifecycle campaigns (use suede-emails), pricing strategy (use suede-pricing), or unapproved production CRM changes.",
+      "description": "Suede AI Revenue Operations Skills. Define lifecycle stages, fit and engagement scores, MQL/SQL handoffs, routing SLAs, pipeline hygiene, CRM automation, deal-desk tiers, and dashboard metrics. Use when asked to \"fix our lead routing\" or specify revenue operations. Returns implementation-ready rules with owners and measurement. NOT FOR: prospect lists (use suede-prospecting), outbound copy (use suede-cold-email), lifecycle campaigns (use suede-emails), pricing strategy (use suede-pricing), or unapproved production CRM changes.",
       "useWhen": "The user is defining lead qualification, routing leads to sales, or fixing the handoff between marketing and revenue.",
       "displayName": "Suede AI Revenue Operations Skills"
     },
@@ -744,7 +744,7 @@
       "area": "creator",
       "specialty": "position",
       "lane": "Creator toolkit",
-      "description": "Audit rights gaps in ownership, contributors, splits, samples, licenses, provenance, and AI involvement, or assemble a hashed offline handoff package with a validated manifest. Use when asked to \"prepare a rights handoff\" or assess release, licensing, or royalty-routing evidence. Keeps confirmed facts separate from open questions; grants no clearance. NOT FOR: release file linting (use suede-release-linter), sync pitching (use suede-sync-packaging), or rollout campaigns (use suede-campaign-in-a-box).",
+      "description": "Suede AI Rights Passport Skills. Audit rights gaps in ownership, contributors, splits, samples, licenses, provenance, and AI involvement, or assemble a hashed offline handoff package with a validated manifest. Use when asked to \"prepare a rights handoff\" or assess release, licensing, or royalty-routing evidence. Keeps confirmed facts separate from open questions; grants no clearance. NOT FOR: release file linting (use suede-release-linter), sync pitching (use suede-sync-packaging), or rollout campaigns (use suede-campaign-in-a-box).",
       "useWhen": "Package a creative project into a rights and provenance transfer handoff.",
       "displayName": "Suede AI Rights Passport Skills"
     },
@@ -753,7 +753,7 @@
       "area": "marketing",
       "specialty": "revenue",
       "lane": "Measure & operate",
-      "description": "Create rep-ready pitch decks, one-pagers, objection libraries, demo scripts, battle cards, proposals, buyer cards, and ROI models with a claim-source table. Use when asked to \"build a competitive battle card\" or refresh sales collateral. Distinguishes sourced proof from modeled value. NOT FOR: pricing strategy (use suede-pricing), offer design (use suede-offers), public comparison pages (use suede-competitors), outreach (use suede-cold-email), or unsupported proof.",
+      "description": "Suede AI Sales Enablement Skills. Create rep-ready pitch decks, one-pagers, objection libraries, demo scripts, battle cards, proposals, buyer cards, and ROI models with a claim-source table. Use when asked to \"build a competitive battle card\" or refresh sales collateral. Distinguishes sourced proof from modeled value. NOT FOR: pricing strategy (use suede-pricing), offer design (use suede-offers), public comparison pages (use suede-competitors), outreach (use suede-cold-email), or unsupported proof.",
       "useWhen": "The user needs sales collateral, a demo script, objection handling, or materials for a sales conversation.",
       "displayName": "Suede AI Sales Enablement Skills"
     },
@@ -762,7 +762,7 @@
       "area": "workflow",
       "specialty": "found",
       "lane": "Search & AI visibility",
-      "description": "Audit technical access, intent, metadata, links, schema, generative search, copy, E-E-A-T, and topic architecture with A-F lanes and exact fixes. Use when asked to \"audit this site for SEO\", investigate traffic or indexation problems, or produce a scored report. Includes offline source-review tools. NOT FOR: a quick promotion grade (use suede-visibility-grader), AI crawler and citation measurement (use suede-ai-seo), or conversion-path changes (use suede-site-alchemy).",
+      "description": "Suede AI SEO Audit Skills. Audit technical access, intent, metadata, links, schema, generative search, copy, E-E-A-T, and topic architecture with A-F lanes and exact fixes. Use when asked to \"audit this site for SEO\", investigate traffic or indexation problems, or produce a scored report. Includes offline source-review tools. NOT FOR: a quick promotion grade (use suede-visibility-grader), AI crawler and citation measurement (use suede-ai-seo), or conversion-path changes (use suede-site-alchemy).",
       "useWhen": "Audit pages or supplied HTML; validate hreflang relationships, image markup and opt-in Product/Offer fields; compare metadata snapshots; cluster supplied SERP exports with collection context.",
       "displayName": "Suede AI SEO Audit Skills"
     },
@@ -771,7 +771,7 @@
       "area": "workflow",
       "specialty": "ship",
       "lane": "Orchestration & routing",
-      "description": "Produce one high-stakes public draft with parallel research, agent-claim audits, message ownership, adversarial review, publish readiness, and an evidence record. Use when asked to \"research and draft this launch page\" or rigorously develop one landing page, email, post, README, ad, or store listing. Preserves requester-supplied facts and writes drafts only. NOT FOR: routine or bulk copy (use suede-copy), code changes (use suede-graph-flo-xr), or cleaning existing prose (use suede-deslop).",
+      "description": "Suede AI Ship Copy Skills. Produce one high-stakes public draft with parallel research, agent-claim audits, message ownership, adversarial review, publish readiness, and an evidence record. Use when asked to \"research and draft this launch page\" or rigorously develop one landing page, email, post, README, ad, or store listing. Preserves requester-supplied facts and writes drafts only. NOT FOR: routine or bulk copy (use suede-copy), code changes (use suede-graph-flo-xr), or cleaning existing prose (use suede-deslop).",
       "useWhen": "Take one high-stakes piece of copy through a research-heavy agent graph that audits every agent-generated claim against its source, leaves [AUTHOR: supply X] rather than inventing a specific, and never audits what the requester supplied.",
       "displayName": "Suede AI Ship Copy Skills"
     },
@@ -780,7 +780,7 @@
       "area": "workflow",
       "specialty": "revenue",
       "lane": "Money & funnel",
-      "description": "Turn landing, launch, campaign, and product pages into measured conversion paths: funnel stage, friction, hero, proof, CTAs, pricing, mobile QA, and pre-registered experiments. Use when asked to \"fix this page that gets no signups\" or improve demos and sales from existing traffic. Implements and verifies changes within scope. NOT FOR: SEO scores (use suede-seo-audit), AI citations (use suede-ai-seo), promotion grades (use suede-visibility-grader), or copy alone (use suede-copy).",
+      "description": "Suede AI Site Alchemy Skills. Turn landing, launch, campaign, and product pages into measured conversion paths: funnel stage, friction, hero, proof, CTAs, pricing, mobile QA, and pre-registered experiments. Use when asked to \"fix this page that gets no signups\" or improve demos and sales from existing traffic. Implements and verifies changes within scope. NOT FOR: SEO scores (use suede-seo-audit), AI citations (use suede-ai-seo), promotion grades (use suede-visibility-grader), or copy alone (use suede-copy).",
       "useWhen": "Improve page conversion, package website growth offers, or route conversion work into the full design workflow.",
       "displayName": "Suede AI Site Alchemy Skills"
     },
@@ -789,7 +789,7 @@
       "area": "marketing",
       "specialty": "demand",
       "lane": "Lifecycle messaging",
-      "description": "Design consent-aware SMS/MMS programs: channel fit, welcome, cart recovery, post-purchase and win-back flows, exact copy, segment counts, cadence, quiet hours, platform selection, and measurement. Use when asked to \"draft our SMS welcome flow\" or audit a text program. Checks current consent, opt-out, and registration requirements. NOT FOR: email (use suede-emails), capture UX (use suede-site-alchemy), legal certification, or sending, scheduling, importing, or registering anything.",
+      "description": "Suede AI SMS Skills. Design consent-aware SMS/MMS programs: channel fit, welcome, cart recovery, post-purchase and win-back flows, exact copy, segment counts, cadence, quiet hours, platform selection, and measurement. Use when asked to \"draft our SMS welcome flow\" or audit a text program. Checks current consent, opt-out, and registration requirements. NOT FOR: email (use suede-emails), capture UX (use suede-site-alchemy), legal certification, or sending, scheduling, importing, or registering anything.",
       "useWhen": "The user is adding SMS or text-message marketing, or writing messages for an existing SMS list.",
       "displayName": "Suede AI SMS Skills"
     },
@@ -798,7 +798,7 @@
       "area": "marketing",
       "specialty": "found",
       "lane": "Content & audience",
-      "description": "Plan, audit, and draft organic social for founder/brand accounts: platform mix, 30-post audits, calendars, Instagram, LinkedIn/X, short-video scripts, social search, and listening. Use when asked to \"audit our Instagram growth\" or build an approval-ready content loop. NOT FOR: paid ads (use suede-ads or suede-ad-creative), editorial agents (use suede-newsroom), clip-to-guide work (use suede-clip-to-guide), video rendering (use suede-video), or broad content strategy (use suede-content-strategy).",
+      "description": "Suede AI Social Skills. Plan, audit, and draft organic social for founder/brand accounts: platform mix, 30-post audits, calendars, Instagram, LinkedIn/X, short-video scripts, social search, and listening. Use when asked to \"audit our Instagram growth\" or build an approval-ready content loop. NOT FOR: paid ads (use suede-ads or suede-ad-creative), editorial agents (use suede-newsroom), clip-to-guide work (use suede-clip-to-guide), video rendering (use suede-video), or broad content strategy (use suede-content-strategy).",
       "useWhen": "The user is planning social media strategy, content, or cadence for a brand or founder account.",
       "displayName": "Suede AI Social Skills"
     },
@@ -807,7 +807,7 @@
       "specialty": "position",
       "lane": "Creator toolkit",
       "name": "suede-sync-packaging",
-      "description": "Prepare a song for sync review: scene fit, supervisor one-sheet, asset checklist, lyric flags, mood tags, AI disclosure, and open clearance questions. Use when asked to \"make a sync one-sheet\" or package a track for film, TV, ads, games, trailers, or creator campaigns. Drafts pitch materials without clearance, placement, or sending claims. NOT FOR: rights investigations or transfer packages (use suede-rights-passport), folder linting (use suede-release-linter), or rollouts (use suede-campaign-in-a-box).",
+      "description": "Suede AI Sync Packaging Skills. Prepare a song for sync review: scene fit, supervisor one-sheet, asset checklist, lyric flags, mood tags, AI disclosure, and open clearance questions. Use when asked to \"make a sync one-sheet\" or package a track for film, TV, ads, games, trailers, or creator campaigns. Drafts pitch materials without clearance, placement, or sending claims. NOT FOR: rights investigations or transfer packages (use suede-rights-passport), folder linting (use suede-release-linter), or rollouts (use suede-campaign-in-a-box).",
       "useWhen": "Prepare a song or catalog asset for film, TV, ads, games, trailers, creator campaigns, or brand briefs with clear open questions.",
       "displayName": "Suede AI Sync Packaging Skills"
     },
@@ -816,7 +816,7 @@
       "area": "marketing",
       "specialty": "craft",
       "lane": "Creative assets",
-      "description": "Plan or produce marketing video with scripts, storyboards, shot and asset lists, consent-aware AI or avatar choices, programmatic rendering, edit decisions, pacing, export specs, and video-search metadata. Use when asked to \"turn this demo into a short video\" or build a repeatable production pipeline. NOT FOR: social calendars (use suede-social), clip-to-guide bridges (use suede-clip-to-guide), paid ad concepts (use suede-ad-creative), still images (use suede-image), or unapproved publishing.",
+      "description": "Suede AI Video Skills. Plan or produce marketing video with scripts, storyboards, shot and asset lists, consent-aware AI or avatar choices, programmatic rendering, edit decisions, pacing, export specs, and video-search metadata. Use when asked to \"turn this demo into a short video\" or build a repeatable production pipeline. NOT FOR: social calendars (use suede-social), clip-to-guide bridges (use suede-clip-to-guide), paid ad concepts (use suede-ad-creative), still images (use suede-image), or unapproved publishing.",
       "useWhen": "The user is planning, scripting, or repurposing video content for marketing or social.",
       "displayName": "Suede AI Video Skills"
     },
@@ -825,7 +825,7 @@
       "area": "workflow",
       "specialty": "found",
       "lane": "Search & AI visibility",
-      "description": "Grade one public page A-F across findability, first-screen clarity, CTA pull, proof and trust, AI citation readiness, and design signal, with up to five ranked fixes. Use when asked to \"grade this page before promotion\" or give a quick readiness check of a landing page, README, docs, or campaign. NOT FOR: deep SEO and schema audits (use suede-seo-audit), AI crawler/citation measurement (use suede-ai-seo), or implementing conversion changes (use suede-site-alchemy).",
+      "description": "Suede AI Visibility Grader Skills. Grade one public page A-F across findability, first-screen clarity, CTA pull, proof and trust, AI citation readiness, and design signal, with up to five ranked fixes. Use when asked to \"grade this page before promotion\" or give a quick readiness check of a landing page, README, docs, or campaign. NOT FOR: deep SEO and schema audits (use suede-seo-audit), AI crawler/citation measurement (use suede-ai-seo), or implementing conversion changes (use suede-site-alchemy).",
       "useWhen": "Judge whether a page can be found, understood, trusted, cited by AI systems, acted on, and promoted with confidence.",
       "displayName": "Suede AI Visibility Grader Skills"
     },
@@ -834,7 +834,7 @@
       "area": "workflow",
       "specialty": "ship",
       "lane": "Orchestration & routing",
-      "description": "Route requests across the full public Suede AI pack to the narrowest specialist and preserve the request verbatim. Use when asked \"which Suede skill should I use?\", when work crosses lanes, or when only the umbrella is installed. For next-action help: what’s next, recommend the next move, give me the prompt, expand prompt, or make it granular. NOT FOR: one clear lane (use its specialist), one multi-file implementation graph (use suede-graph-flo-xr), or parallel file ownership (use suede-agent-teams).",
+      "description": "Route requests across the full public Suede AI pack to the narrowest specialist and preserve the request verbatim. Use when asked \"which Suede AI skill should I use?\", when work crosses lanes, or when only the umbrella is installed. For next-action help: what’s next, recommend the next move, give me the prompt, expand prompt, or make it granular. NOT FOR: one clear lane (use its specialist), one multi-file implementation graph (use suede-graph-flo-xr), or parallel file ownership (use suede-agent-teams).",
       "useWhen": "Load the full public Suede workflow pack from one GitHub skill path with the quality gates intact.",
       "displayName": "Suede AI Workflow Skills"
     }

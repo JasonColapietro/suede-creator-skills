@@ -1,6 +1,6 @@
 ---
 name: suede-referrals
-description: "Design a referral and affiliate program with incentives, commission and payout rules, fraud controls, disclosure, attribution, and cohort measurement. Use when asked to \"design our referral program\" or repair customer, ambassador, or partner incentives. Returns a program spec, economics, tooling options, and launch checklist. NOT FOR: payouts or billing changes, brand partnerships (use suede-co-marketing), launch packaging (use suede-launch-packaging), or lifecycle messages (use suede-emails)."
+description: "Suede AI Referral Skills. Design a referral and affiliate program with incentives, commission and payout rules, fraud controls, disclosure, attribution, and cohort measurement. Use when asked to \"design our referral program\" or repair customer, ambassador, or partner incentives. Returns a program spec, economics, tooling options, and launch checklist. NOT FOR: payouts or billing changes, brand partnerships (use suede-co-marketing), launch packaging (use suede-launch-packaging), or lifecycle messages (use suede-emails)."
 metadata:
   display-name: "Suede AI Referral Skills"
   version: 2.1.0

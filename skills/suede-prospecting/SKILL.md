@@ -1,6 +1,6 @@
 ---
 name: suede-prospecting
-description: "Build a source-backed, scored prospect list across SaaS, B2B, local business, or early demand signals. Use when asked to \"find our first design partners\", define an ICP, enrich leads, or document disqualification evidence. Includes source dates, confidence, licensed-data checks, and a qualification handoff. NOT FOR: sending outreach (use suede-cold-email), CRM routing (use suede-revops), or competitor profiles (use suede-competitor-profiling)."
+description: "Suede AI Prospecting Skills. Build a source-backed, scored prospect list across SaaS, B2B, local business, or early demand signals. Use when asked to \"find our first design partners\", define an ICP, enrich leads, or document disqualification evidence. Includes source dates, confidence, licensed-data checks, and a qualification handoff. NOT FOR: sending outreach (use suede-cold-email), CRM routing (use suede-revops), or competitor profiles (use suede-competitor-profiling)."
 metadata:
   display-name: "Suede AI Prospecting Skills"
   version: 1.2.0

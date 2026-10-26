@@ -1,6 +1,6 @@
 ---
 name: suede-social
-description: "Plan, audit, and draft organic social for founder/brand accounts: platform mix, 30-post audits, calendars, Instagram, LinkedIn/X, short-video scripts, social search, and listening. Use when asked to \"audit our Instagram growth\" or build an approval-ready content loop. NOT FOR: paid ads (use suede-ads or suede-ad-creative), editorial agents (use suede-newsroom), clip-to-guide work (use suede-clip-to-guide), video rendering (use suede-video), or broad content strategy (use suede-content-strategy)."
+description: "Suede AI Social Skills. Plan, audit, and draft organic social for founder/brand accounts: platform mix, 30-post audits, calendars, Instagram, LinkedIn/X, short-video scripts, social search, and listening. Use when asked to \"audit our Instagram growth\" or build an approval-ready content loop. NOT FOR: paid ads (use suede-ads or suede-ad-creative), editorial agents (use suede-newsroom), clip-to-guide work (use suede-clip-to-guide), video rendering (use suede-video), or broad content strategy (use suede-content-strategy)."
 metadata:
   display-name: "Suede AI Social Skills"
   version: 3.0.0

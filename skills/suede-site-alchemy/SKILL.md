@@ -1,6 +1,6 @@
 ---
 name: suede-site-alchemy
-description: "Turn landing, launch, campaign, and product pages into measured conversion paths: funnel stage, friction, hero, proof, CTAs, pricing, mobile QA, and pre-registered experiments. Use when asked to \"fix this page that gets no signups\" or improve demos and sales from existing traffic. Implements and verifies changes within scope. NOT FOR: SEO scores (use suede-seo-audit), AI citations (use suede-ai-seo), promotion grades (use suede-visibility-grader), or copy alone (use suede-copy)."
+description: "Suede AI Site Alchemy Skills. Turn landing, launch, campaign, and product pages into measured conversion paths: funnel stage, friction, hero, proof, CTAs, pricing, mobile QA, and pre-registered experiments. Use when asked to \"fix this page that gets no signups\" or improve demos and sales from existing traffic. Implements and verifies changes within scope. NOT FOR: SEO scores (use suede-seo-audit), AI citations (use suede-ai-seo), promotion grades (use suede-visibility-grader), or copy alone (use suede-copy)."
 metadata:
   display-name: "Suede AI Site Alchemy Skills"
 ---

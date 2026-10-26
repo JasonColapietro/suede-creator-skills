@@ -1034,7 +1034,7 @@
           "skill": "suede-graph-flo-xr",
           "positive": [
             "shipping dag",
-            "suede thought graph shipping search",
+            "suede ai thought graph shipping search",
             "score and prune",
             "aggregate the best lanes",
             "multi-file repository change",
@@ -1051,7 +1051,7 @@
             "stems"
           ],
           "metadataMustContain": [
-            "suede thought graph shipping search"
+            "suede ai thought graph shipping search"
           ]
         },
         {
@@ -1062,7 +1062,7 @@
             "do not change code"
           ],
           "negative": [
-            "suede thought graph shipping search",
+            "suede ai thought graph shipping search",
             "score and prune",
             "branch protection",
             "release folders"

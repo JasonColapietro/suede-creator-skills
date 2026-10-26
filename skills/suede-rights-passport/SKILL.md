@@ -1,6 +1,6 @@
 ---
 name: suede-rights-passport
-description: "Audit rights gaps in ownership, contributors, splits, samples, licenses, provenance, and AI involvement, or assemble a hashed offline handoff package with a validated manifest. Use when asked to \"prepare a rights handoff\" or assess release, licensing, or royalty-routing evidence. Keeps confirmed facts separate from open questions; grants no clearance. NOT FOR: release file linting (use suede-release-linter), sync pitching (use suede-sync-packaging), or rollout campaigns (use suede-campaign-in-a-box)."
+description: "Suede AI Rights Passport Skills. Audit rights gaps in ownership, contributors, splits, samples, licenses, provenance, and AI involvement, or assemble a hashed offline handoff package with a validated manifest. Use when asked to \"prepare a rights handoff\" or assess release, licensing, or royalty-routing evidence. Keeps confirmed facts separate from open questions; grants no clearance. NOT FOR: release file linting (use suede-release-linter), sync pitching (use suede-sync-packaging), or rollout campaigns (use suede-campaign-in-a-box)."
 metadata:
   display-name: "Suede AI Rights Passport Skills"
 ---

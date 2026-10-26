@@ -1,6 +1,6 @@
 ---
 name: suede-sales-enablement
-description: "Create rep-ready pitch decks, one-pagers, objection libraries, demo scripts, battle cards, proposals, buyer cards, and ROI models with a claim-source table. Use when asked to \"build a competitive battle card\" or refresh sales collateral. Distinguishes sourced proof from modeled value. NOT FOR: pricing strategy (use suede-pricing), offer design (use suede-offers), public comparison pages (use suede-competitors), outreach (use suede-cold-email), or unsupported proof."
+description: "Suede AI Sales Enablement Skills. Create rep-ready pitch decks, one-pagers, objection libraries, demo scripts, battle cards, proposals, buyer cards, and ROI models with a claim-source table. Use when asked to \"build a competitive battle card\" or refresh sales collateral. Distinguishes sourced proof from modeled value. NOT FOR: pricing strategy (use suede-pricing), offer design (use suede-offers), public comparison pages (use suede-competitors), outreach (use suede-cold-email), or unsupported proof."
 metadata:
   display-name: "Suede AI Sales Enablement Skills"
   version: 2.1.0
