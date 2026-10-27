@@ -1,5 +1,6 @@
 import './test_agents_model.mjs';
 import './test_agents_site.mjs';
+import './test_agents_ungraded.mjs';
 // The standalone suedeai.directory build: URL rewrites and a full internal link check.
 import { test } from "node:test";
 import assert from "node:assert/strict";

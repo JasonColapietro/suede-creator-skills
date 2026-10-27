@@ -775,6 +775,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://skills.suedeai.ai/directory/agents/ungraded/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://skills.suedeai.ai/directory/agricidaniel/claude-seo/</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>

@@ -9,7 +9,7 @@ export const CRITERIA = {
   repository: ['license', 'attribution', 'revision', 'distribution', 'dependencies', 'resolved_dependencies', 'tests', 'ci', 'changes', 'security_policy'],
   hosted: ['terms', 'pricing', 'retention', 'training', 'authentication', 'permissions', 'audit_export', 'deletion_revocation', 'status', 'changes'],
 };
-const RESERVED = new Set(['methodology', 'submit', 'search-index', 'evidence']);
+const RESERVED = new Set(['ungraded', 'methodology', 'submit', 'search-index', 'evidence']);
 const HASH = /^[a-f0-9]{64}$/;
 const SHA = /^[a-f0-9]{40}$/;
 const SLUG = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;

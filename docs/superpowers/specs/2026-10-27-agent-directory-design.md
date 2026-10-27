@@ -41,3 +41,17 @@ The list is deliberately small; all licenses, scope, policy and rubric checks st
 **Implementation and acceptance.** After approval: (1) schema, rubric and deterministic validator; (2) reviewed candidate intake; (3) registered rendering, agent search, submission and SEO/report integration; (4) verification and review. Cover invalid/mismatched revisions, source and evidence digests, missing/unknown evidence, exact scoring, unsupported runtime/security claims, stale receipts, edition isolation, duplicate slugs, URL escaping, report hashes after host rewrite, orphan cleanup, canonical/sitemap coverage and browser search/filter/mobile behavior. Verify unchanged skill catalog bytes, scores, existing report semantics and skill search; shared navigation changes are expected. Run generated-output freshness checks, focused directory tests, relevant browser checks and the repository-required `npm test`; report any baseline failure honestly.
 
 Coordinate shared renderer/search files with [security PR #278](https://github.com/JasonColapietro/suede-creator-skills/pull/278); do not merge it or suppress its findings as part of this work. Preserve intake holds [#281](https://github.com/JasonColapietro/suede-creator-skills/pull/281) and [#288](https://github.com/JasonColapietro/suede-creator-skills/pull/288). Do not rescore skills, modify their promotion ledger or add agent edits to held branches. Runtime testing, hosted API usage, credentials, spending, maintainer contact and deployment are outside this design's authorization. Next gate: parent/user approval of this design, then implementation planning.
+
+## Approved expansion: ungraded discovery
+
+The user requested a large ungraded catalog alongside assessed listings on
+2026-10-27. Add `/agents/ungraded/`, reachable from the Agents hub, with compact
+static cards, search, task/deployment/source filters, URL state, live counts and
+no-JS fallback. Each product has official source links and a visible check date.
+Support multiple documented deployment options per product without duplicating
+its editions. Public repository availability is not an open-source-license claim.
+Do not grant numeric ratings, verification badges or security endorsements.
+Keep ungraded data and search separate from assessed editions and skill scores.
+Admission is limited to usable agents; exclude frameworks/models/servers/packs
+alone. Source-backed counts must follow the actual accepted records. The same
+signed draft PR holds the expansion, with no merge or deployment authorization.

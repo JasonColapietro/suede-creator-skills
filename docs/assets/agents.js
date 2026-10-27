@@ -27,3 +27,22 @@
  form.addEventListener('submit',e=>e.preventDefault());form.addEventListener('input',()=>update(true));form.addEventListener('change',()=>update(true));
  form.addEventListener('reset',()=>setTimeout(()=>update(true),0));window.addEventListener('popstate',()=>{restore();update(false);});
 })();
+
+/* Ungraded product discovery never joins the assessed-edition score ranking. */
+(() => {
+ const form=document.getElementById('ungraded-filters');if(!form)return;
+ const cards=[...document.querySelectorAll('#ungraded-results .ungraded-card')];
+ const keys=['q','task','deployment','source'];
+ function restore(){const params=new URLSearchParams(location.search);for(const k of keys){const el=form.elements.namedItem(k);el.value=params.get(k)||'';if(el.tagName==='SELECT'&&el.selectedIndex<0)el.value='';}}
+ function update(write){
+  const values=Object.fromEntries(keys.map(k=>[k,form.elements.namedItem(k).value]));
+  const terms=values.q.toLowerCase().trim().split(/\s+/).filter(Boolean);let count=0;
+  for(const card of cards){const d=card.dataset;card.hidden=!(terms.every(t=>d.search.includes(t))&&(!values.task||d.task.split(' ').includes(values.task))&&(!values.deployment||d.deployment.split(' ').includes(values.deployment))&&(!values.source||d.source===values.source));if(!card.hidden)count++;}
+  document.getElementById('ungraded-count').textContent=`${count} ungraded agent${count===1?'':'s'}`;
+  document.getElementById('ungraded-empty').hidden=count!==0;
+  if(write){const params=new URLSearchParams();for(const k of keys)if(values[k])params.set(k,values[k]);history.replaceState(null,'',location.pathname+(params.size?'?'+params:'')+location.hash);}
+ }
+ restore();update(false);form.hidden=false;
+ form.addEventListener('submit',e=>e.preventDefault());form.addEventListener('input',()=>update(true));form.addEventListener('change',()=>update(true));
+ form.addEventListener('reset',()=>setTimeout(()=>update(true),0));window.addEventListener('popstate',()=>{restore();update(false);});
+})();

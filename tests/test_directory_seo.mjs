@@ -53,7 +53,7 @@ const byRel = new Map(pages.map((p) => [p.rel, p]));
 const indexable = pages.filter((p) => p.indexable);
 const parsed = (p) => p.jsonld.map((b) => JSON.parse(b));
 const kindOf = (p) => {
-  if (p.rel === "directory/agents/") return "agent-hub";
+  if (["directory/agents/", "directory/agents/ungraded/"].includes(p.rel)) return "agent-hub";
   if (["directory/agents/methodology/", "directory/agents/submit/"].includes(p.rel)) return "agent-info";
   if (p.rel.startsWith("directory/agents/")) return "agent";
   const depth = p.rel.split("/").filter(Boolean).length;

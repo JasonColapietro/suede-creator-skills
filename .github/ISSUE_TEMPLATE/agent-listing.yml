@@ -16,6 +16,13 @@ body:
       description: Public official HTTPS page, not a tracking or login URL containing secrets.
     validations:
       required: true
+  - type: dropdown
+    id: listing-type
+    attributes:
+      label: Listing type
+      options: [Ungraded discovery, Edition evidence review]
+    validations:
+      required: true
   - type: input
     id: edition
     attributes:

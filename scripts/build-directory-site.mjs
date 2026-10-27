@@ -128,7 +128,7 @@ export function build(out) {
   fs.writeFileSync(path.join(out, "llms.txt"), [
     "# Suede AI Skills Directory",
     "",
-    "> A curated, graded index of public Agent Skills for Claude Code, Codex and Cursor. Skill listings link to the author's GitHub repository, state licenses and show 0–99 Suede Skill Check scores. A separate Agents catalog covers runnable local and hosted editions with evidence-specific /10 ratings, explicit missing evidence, and independent runtime/security status. Published by Suede AI; edited by Jason Colapietro.",
+    "> A curated, graded index of public Agent Skills for Claude Code, Codex and Cursor. Skill listings link to the author's GitHub repository, state licenses and show 0–99 Suede Skill Check scores. A separate Agents catalog covers runnable local and hosted editions with evidence-specific /10 ratings, explicit missing evidence, and independent runtime/security status, alongside a searchable ungraded catalog with official sources and no ratings or verification badges. Published by Suede AI; edited by Jason Colapietro.",
     "",
     ...llmsLines.map((l) => l.replace(OLD_DIR_RE, NEW)),
     "",

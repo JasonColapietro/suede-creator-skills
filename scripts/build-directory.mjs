@@ -2224,9 +2224,11 @@ let agentCounts = null;
 if (fs.existsSync(path.join(repoRoot, "directory/agents.json"))) {
   const { loadAgentCatalog } = await import("./directory/agents-model.mjs");
   const { renderAgents } = await import("./directory/agents-render.mjs");
+  const { loadUngradedCatalog } = await import("./directory/agents-ungraded.mjs");
   const agentModel = loadAgentCatalog(repoRoot);
-  agentCounts = { products: agentModel.products.length, editions: agentModel.editions.length };
-  const agentFiles = renderAgents(agentModel, { page, crumbs, rel, url, setKeywords, pageDate: PAGE_DATE, root: repoRoot });
+  const ungraded = loadUngradedCatalog(repoRoot, agentModel.products);
+  agentCounts = { products: agentModel.products.length, editions: agentModel.editions.length, ungraded: ungraded?.entries.length || 0 };
+  const agentFiles = renderAgents(agentModel, { page, crumbs, rel, url, setKeywords, pageDate: PAGE_DATE, root: repoRoot, ungraded });
   for (const [key, value] of agentFiles) files.set(key, value);
 }
 renderHub();
@@ -2276,7 +2278,7 @@ const llmsGuideLines = GUIDES.length
   ? [`- [Agent skills guides](${url(GUIDES_PATH)}): Guides by Jason Colapietro, Suede AI, built on the directory's published data:`, ...GUIDES.map((g) => `  - [${g.h1}](${url(g.path)}): ${g.meta_description}`)]
   : [];
 const llmsCheckLine = `- [Skill AI-visibility check](${url(CHECK_PATH)}): A free, in-browser check for skill publishers that shows a listed skill's 0–99 score by component and its largest open points. It sends nothing to Suede AI.`;
-const llmsAgents = fs.existsSync(path.join(repoRoot, "directory/agents.json")) ? [`- [AI Agents](${DIR_URL}agents/): ${agentCounts.products} products and ${agentCounts.editions} runnable repository and hosted editions, with separate documentation, repository evidence and hosted disclosure ratings /10. Incomplete reviews have no numerical score. Runtime not tested; security not assessed.`] : [];
+const llmsAgents = fs.existsSync(path.join(repoRoot, "directory/agents.json")) ? [`- [AI Agents](${DIR_URL}agents/): ${agentCounts.products} products and ${agentCounts.editions} runnable repository and hosted editions, with separate documentation, repository evidence and hosted disclosure ratings /10. Incomplete reviews have no numerical score. Runtime not tested; security not assessed.${agentCounts.ungraded ? ` Browse [${agentCounts.ungraded} ungraded agents](${DIR_URL}agents/ungraded/) with official sources and no ratings or verification badges.` : ""}`] : [];
 const llmsBlock = [llmsLine, ...llmsCategoryLines, ...llmsGuideLines, llmsCheckLine, ...llmsAgents].join("\n");
 const llmsCurrent = fs.readFileSync(llmsPath, "utf8");
 const LLMS_RE = /^- \[Agent Skills Directory\]\(.*$(?:\n  - \[.*$)*(?:\n- \[Agent skills guides\]\(.*$(?:\n  - \[.*$)*)?(?:\n- \[Skill AI-visibility check\]\(.*$)?(?:\n- \[AI Agents\]\(.*$)?/m;

@@ -9,7 +9,7 @@ import {loadAgentCatalog} from '../scripts/directory/agents-model.mjs';
 const root=new URL('..',import.meta.url).pathname;
 const read=p=>fs.readFileSync(path.join(root,'docs/directory/agents',p),'utf8');
 test('agent routes are public, separate and evidence-scoped',()=>{
- for(const p of ['', 'goose/','cline/','devin/','methodology/','submit/']){
+ for(const p of ['', 'ungraded/','goose/','cline/','devin/','methodology/','submit/']){
   const html=read(p+'index.html');
   assert.match(html,new RegExp(`rel="canonical" href="https://skills.suedeai.ai/directory/agents/${p}"`));
   assert.match(html,/index, follow/);assert.doesNotMatch(html,/aggregateRating|"ratingValue"/);
@@ -42,6 +42,14 @@ test('standalone agent reports rehash and retain receipt identity and untested s
   assert.ok(fs.readFileSync(path.join(out,'sitemap.xml'),'utf8').includes(report.listing_url));
  }
  assert.ok(fs.existsSync(path.join(out,'agents/catalog.schema.json')));
+ const ungraded=JSON.parse(read('ungraded/search-index.json'));
+ const ungradedHtml=fs.readFileSync(path.join(out,'agents/ungraded/index.html'),'utf8');
+ assert.equal(ungraded.kind,'ungraded-agent');
+ assert.match(ungradedHtml,new RegExp(`${ungraded.entries.length} ungraded agents`));
+ assert.match(ungradedHtml,/rel="canonical" href="https:\/\/suedeai.directory\/agents\/ungraded\/"/);
+ assert.ok(fs.readFileSync(path.join(out,'sitemap.xml'),'utf8').includes('https://suedeai.directory/agents/ungraded/'));
+ assert.ok(fs.existsSync(path.join(out,'agents/ungraded/catalog.schema.json')));
+ assert.doesNotMatch(ungradedHtml,/class="agent-rating|ratingValue|aggregateRating/);
  }finally{fs.rmSync(out,{recursive:true,force:true});}
 });
 

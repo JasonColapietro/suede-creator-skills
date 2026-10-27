@@ -70,3 +70,33 @@
 - [ ] Obtain independent whole-branch review against this spec, including source evidence, schema validation, rating integrity, unsafe text and existing holds. Reproduce substantive findings with failing tests, fix and rerun affected tests/full suite when warranted.
 - [ ] Build standalone preview, inspect actual rendered hub and profile desktop/mobile, and provide screenshots/preview URL.
 - [ ] Push signed feature commits and open a draft PR. Verify GitHub signature status is `verified=true` and retain draft/unmerged state. Report exact blockers instead of claiming unavailable checks passed.
+
+## Task 5: Ungraded discovery catalog (user expansion, 2026-10-27 05:34 UTC)
+
+**Goal:** Add a large, source-backed searchable list of actual agents to PR #289 without granting evidence ratings, verification badges or security claims.
+
+**Files:** Create `directory/agents/ungraded.json`, `directory/agents/ungraded.schema.json`, `scripts/directory/agents-ungraded.mjs` and `tests/test_agents_ungraded.mjs`; extend the agent renderer, enhancement script, styles, submission and browser/site tests.
+
+**Interfaces:** `validateUngradedCatalog(catalog, assessedProducts)` validates one record per product with official URL, optional repository, task tags, deployment options, source availability, dated source URLs and no rating fields. `loadUngradedCatalog(root, assessedProducts)` returns the local catalog. The renderer adds `/agents/ungraded/` and a downloadable ungraded index; assessed search remains independent.
+
+- [x] Write failing tests for unsafe links, duplicates within/across catalogs, invented assessment fields, future/missing source dates, escaped static cards and discovery metadata.
+- [x] Implement strict catalog validation and a compact static listing with progressive search, task/deployment/source filters, stable URL state, accurate live counts and no-JS fallback. No numeric rankings or verification/security badges.
+- [x] Integrate verified public-source research, deduplicate actual products and exclude frameworks, models, MCP servers and skill packs. Retain only descriptions supported by cited official sources.
+- [ ] Regenerate, run model/site/directory/browser checks and inspect desktop/mobile preview. Obtain independent review of the expansion, commit signed, push to the same draft PR and verify signature/CI status. Preserve all existing skills, scores and holds; no merge or deploy.
+
+### Verification checkpoint for Task 5
+
+- Catalog/model checks: 6 passed; invalid fields, URL credentials, duplicates,
+  deployment options and missing/future source facts were exercised red/green.
+- Existing skills plus agent browser checks passed, including populated ungraded
+  search, URL restoration, all documented deployment modes, keyboard, mobile,
+  no-JS and script-failure fallback. Desktop/mobile screenshots inspected.
+- Independent expansion review accepted after Factory/Qodo deployment corrections
+  and collection classification in the SEO suite. All 119 source URLs trace to
+  research records; all 82 dates are visible outside disclosures.
+- Directory suite: 94/95 passed; standalone-report copying hit ENOSPC. The exact
+  failed test passed when rerun serially after removing the failed generated build.
+  Generated-file freshness passed; protected skill/assessed data are unchanged.
+- Fresh full npm test passed validation and entered the keyword suite, then exited
+  7 without a final summary during local disk exhaustion. Do not call that a pass.
+  Original PR CI at 76521b3 passed; the expansion needs its own new-commit CI.

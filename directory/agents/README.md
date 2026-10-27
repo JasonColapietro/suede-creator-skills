@@ -15,3 +15,31 @@ Refresh manually when requested or when evidence is over 30 days old. Date the a
 Performance remains `not_tested`; security remains `not_assessed`. An empty findings list means no findings recorded by this intake, not a clean bill of health. Future runtime or security assessment requires a separate, approved method with reproducible conditions. Publisher warnings and any known findings must remain visible regardless of documentation score.
 
 The initial October 27 intake is intentionally partial. It does not infer missing CLI-specific dependencies or release history from adjacent monorepo packages, nor infer service behavior from marketing claims.
+
+## Ungraded discovery
+
+`ungraded.json` is an independent product catalog for discovery at `/agents/ungraded/`.
+It has no evidence checklists, grades, performance results, safety certifications or
+verification badges. `ungraded.schema.json` describes its structural contract;
+`agents-ungraded.mjs` also checks public links, dates and cross-catalog duplicates.
+
+Each entry has `id`, `name`, a factual `summary`, task slugs, a `deployments` array,
+`sourceAvailability`, an `officialUrl`, nullable `repositoryUrl`, `sourceUrls` and
+`observedAt`. `public-source` only means a public repository was identified. It
+makes no open-source-license claim. Local application access does not imply local
+model inference. A source-check date is not an assessment or endorsement.
+
+Admission requires a runnable agent product or named usable agent feature. Do not
+list a framework, model, MCP server, skill pack, duplicate edition, retired alias
+or benchmark-only implementation as another product. Read the official sources,
+retain their URLs and check date, and keep summaries within what those sources
+support. Never run an agent during listing intake. Promotion into assessed
+profiles must remove the duplicate ungraded entry in the same change.
+
+The 2026-10-27 discovery intake contains 82 entries from 42 hosted-product and 41
+public-repository research records. UI-TARS Desktop and Agent TARS are grouped as
+one repository family. Factory Droid includes local/cloud access and Qodo Git
+includes self-hosted/cloud access after checking their official product pages.
+The catalog links 119 official source URLs across 16 task categories. No listing
+was added solely to reach a count. Live source pages can change; these discovery
+records are not pinned source inspections or runtime reports.

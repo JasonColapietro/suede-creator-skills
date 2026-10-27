@@ -72,6 +72,11 @@
   "AI agent directory",
   "agent evidence ratings"
  ],
+ "directory/agents/ungraded/index.html": [
+  "Ungraded AI agents",
+  "AI agent directory",
+  "agent evidence ratings"
+ ],
  "directory/agiwhitelist/auteur/auteur/index.html": [
   "auteur skill by agiwhitelist",
   "auteur skill",
