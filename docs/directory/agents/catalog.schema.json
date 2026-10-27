@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://suedeai.directory/agents/catalog.schema.json",
+  "title": "Suede agent catalog v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "methodology_version", "generated", "snapshot_id", "products"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "methodology_version": {"const": "agent-evidence-v1"},
+    "generated": {"type":"string","format":"date"},
+    "snapshot_id": {"type":"string","pattern":"^[a-f0-9]{32}$"},
+    "products": {"type":"array","items":{"$ref":"#/$defs/product"}}
+  },
+  "$defs": {
+    "text": {"type":"string","minLength":1,"maxLength":4000},
+    "id": {"type":"string","pattern":"^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+    "url": {"type":"string","format":"uri","pattern":"^https://"},
+    "texts": {"type":"array","minItems":1,"items":{"$ref":"#/$defs/text"}},
+    "product": {
+      "type":"object","additionalProperties":false,
+      "required":["id","name","publisher","url","summary","tags","review_status","editions"],
+      "properties": {
+        "id":{"$ref":"#/$defs/id"},"name":{"$ref":"#/$defs/text"},"publisher":{"$ref":"#/$defs/text"},"url":{"$ref":"#/$defs/url"},"summary":{"$ref":"#/$defs/text"},
+        "tags":{"type":"array","minItems":1,"uniqueItems":true,"items":{"$ref":"#/$defs/id"}},
+        "review_status":{"const":"published"},"editions":{"type":"array","minItems":1,"items":{"$ref":"#/$defs/edition"}}
+      }
+    },
+    "source": {
+      "type":"object","additionalProperties":false,
+      "required":["repository","revision","license","license_url","distribution_url","deployment_revision"],
+      "properties": {
+        "repository":{"type":"string","pattern":"^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$"},"revision":{"type":"string","pattern":"^[a-f0-9]{40}$"},
+        "license":{"$ref":"#/$defs/text"},"license_url":{"$ref":"#/$defs/url"},"distribution_url":{"$ref":"#/$defs/url"},"deployment_revision":{"enum":["unknown","not_applicable"]}
+      }
+    },
+    "check": {
+      "type":"object","additionalProperties":false,"required":["state","reason","evidence"],
+      "properties":{"state":{"enum":["supported","absent","unknown"]},"reason":{"$ref":"#/$defs/text"},"evidence":{"type":"array","uniqueItems":true,"items":{"$ref":"#/$defs/id"}}}
+    },
+    "checks": {"type":"object","minProperties":10,"maxProperties":10,"additionalProperties":{"$ref":"#/$defs/check"}},
+    "finding": {
+      "type":"object","additionalProperties":false,"required":["id","severity","summary","url"],
+      "properties":{"id":{"$ref":"#/$defs/text"},"severity":{"enum":["unknown","info","low","medium","high","critical"]},"summary":{"$ref":"#/$defs/text"},"url":{"$ref":"#/$defs/url"}}
+    },
+    "edition": {
+      "type":"object","additionalProperties":false,
+      "required":["id","name","deployment","source","terms_url","access_url","requirements","permissions","costs","reviewed_at","reviewer","evidence_ids","ratings","performance","security"],
+      "properties": {
+        "id":{"$ref":"#/$defs/id"},"name":{"$ref":"#/$defs/text"},"deployment":{"enum":["local","self-hosted","hosted"]},
+        "source":{"anyOf":[{"$ref":"#/$defs/source"},{"type":"null"}]},"terms_url":{"anyOf":[{"$ref":"#/$defs/url"},{"type":"null"}]},"access_url":{"$ref":"#/$defs/url"},
+        "requirements":{"$ref":"#/$defs/texts"},"permissions":{"$ref":"#/$defs/texts"},"costs":{"$ref":"#/$defs/texts"},
+        "reviewed_at":{"type":"string","format":"date"},"reviewer":{"$ref":"#/$defs/text"},"evidence_ids":{"type":"array","minItems":1,"uniqueItems":true,"items":{"$ref":"#/$defs/id"}},
+        "ratings":{"type":"object","additionalProperties":false,"required":["documentation","repository","hosted"],"properties":{"documentation":{"$ref":"#/$defs/checks"},"repository":{"anyOf":[{"$ref":"#/$defs/checks"},{"type":"null"}]},"hosted":{"anyOf":[{"$ref":"#/$defs/checks"},{"type":"null"}]}}},
+        "performance":{"type":"object","additionalProperties":false,"required":["status","results"],"properties":{"status":{"const":"not_tested"},"results":{"type":"array","maxItems":0}}},
+        "security":{"type":"object","additionalProperties":false,"required":["status","findings"],"properties":{"status":{"const":"not_assessed"},"findings":{"type":"array","items":{"$ref":"#/$defs/finding"}}}}
+      }
+    }
+  }
+}

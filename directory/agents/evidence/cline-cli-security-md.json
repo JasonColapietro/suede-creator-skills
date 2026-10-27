@@ -1,0 +1,19 @@
+{
+  "id": "cline-cli-security-md",
+  "product_id": "cline",
+  "edition_id": "cli",
+  "type": "source_inspection",
+  "observed_at": "2026-10-27T05:02:48Z",
+  "reviewer": "Codex editorial source review",
+  "source": {
+    "url": "https://github.com/cline/cline/blob/c35b729049c7bb26c340df63ea9235c40b32dd29/SECURITY.md",
+    "locator": "Supported Versions and Reporting a Vulnerability",
+    "revision": "c35b729049c7bb26c340df63ea9235c40b32dd29",
+    "blob_sha": "4807686929f85d6e15eb364a303b857c3af0103b",
+    "content_sha256": "66a5f4da8565526b5bf35cb535164322f00b1fd0a266957732a3961d320962ee"
+  },
+  "observations": [
+    "Specifies the current minor release support scope, Bugcrowd private disclosure route and security email fallback. No security assessment was conducted."
+  ],
+  "record_sha256": "9612ed0cf10f5bb8d174dbc7b747eafdd44a57fd6a3f8212325afce907c549e3"
+}

@@ -1,0 +1,21 @@
+{
+  "id": "goose-cli-security-md",
+  "product_id": "goose",
+  "edition_id": "cli",
+  "type": "source_inspection",
+  "observed_at": "2026-10-27T05:02:48Z",
+  "reviewer": "Codex editorial source review",
+  "source": {
+    "url": "https://github.com/aaif-goose/goose/blob/2c6812a358db1b11953b9fafc05c6126eb818788/SECURITY.md",
+    "locator": "Risk notice and vulnerability reporting",
+    "revision": "2c6812a358db1b11953b9fafc05c6126eb818788",
+    "blob_sha": "42eca542be2860380447795671f652097adf5771",
+    "content_sha256": "e9b24f0a2ab5e6e1655cd178266d1afcb8f7b4e213f460cd643a1b986922e120"
+  },
+  "observations": [
+    "Warns that local code execution and actions create risk and that embedded instructions in untrusted content may be followed.",
+    "Recommends isolation, review of generated code and tests, avoiding sensitive information, and human confirmation for significant changes.",
+    "Specifies private reporting through the repository Security tab and an escalation contact. These are publisher disclosures, not an independent security assessment."
+  ],
+  "record_sha256": "95e802bdb54a179774ad911b2245d3877b4aacb8f2a007114ad4f398967767f3"
+}

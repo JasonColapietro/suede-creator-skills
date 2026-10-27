@@ -1,0 +1,20 @@
+{
+  "id": "devin-cloud-pricing",
+  "product_id": "devin",
+  "edition_id": "cloud",
+  "type": "publisher_documentation",
+  "observed_at": "2026-10-27T05:02:48Z",
+  "reviewer": "Codex editorial source review",
+  "source": {
+    "url": "https://devin.ai/pricing",
+    "locator": "Paid plans and usage FAQ",
+    "revision": null,
+    "blob_sha": null,
+    "content_sha256": null
+  },
+  "observations": [
+    "Pricing page lists paid access to cloud agents and explains daily/weekly included allowances and additional usage at API pricing.",
+    "Per-message cost varies with model, task size and reasoning. No purchase or billed API call was made; check current pricing before use."
+  ],
+  "record_sha256": "254682f95490d9c160dbdcab14b98701b41774bc81e0b57cee15d079441cd220"
+}

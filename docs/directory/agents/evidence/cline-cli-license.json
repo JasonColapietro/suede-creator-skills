@@ -1,0 +1,19 @@
+{
+  "id": "cline-cli-license",
+  "product_id": "cline",
+  "edition_id": "cli",
+  "type": "source_inspection",
+  "observed_at": "2026-10-27T05:02:48Z",
+  "reviewer": "Codex editorial source review",
+  "source": {
+    "url": "https://github.com/cline/cline/blob/c35b729049c7bb26c340df63ea9235c40b32dd29/LICENSE",
+    "locator": "Apache 2.0 terms and copyright notice",
+    "revision": "c35b729049c7bb26c340df63ea9235c40b32dd29",
+    "blob_sha": "05ae14a377caf4df24e26edde0c4f7b22ef3ef30",
+    "content_sha256": "f704446a5f1271608805598b557e4288cf8580477ea038c9c3d8b361f693f6b8"
+  },
+  "observations": [
+    "Contains Apache 2.0 terms with copyright 2026 Cline Bot Inc."
+  ],
+  "record_sha256": "ae0d3e4a9db4231c244a78592ab3916542c687cff1cabc6f8afda3bf5858f4d6"
+}

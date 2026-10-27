@@ -1,0 +1,326 @@
+{
+  "schema_version": 1,
+  "kind": "agent",
+  "product": {
+    "id": "cline",
+    "name": "Cline",
+    "publisher": "Cline Bot Inc.",
+    "url": "https://cline.bot/"
+  },
+  "listing_url": "https://skills.suedeai.ai/directory/agents/cline/",
+  "snapshot": {
+    "date": "2026-10-27",
+    "id": "7757fd06039b9b00cddb7b0f2d309d90",
+    "dataset_sha256": "19645f4aaae920f5af58f52fbd869f228cff6acd2ddce85771c463bb5c4f546a"
+  },
+  "methodology": {
+    "version": "agent-evidence-v1",
+    "url": "https://skills.suedeai.ai/directory/agents/methodology/",
+    "rubric_sha256": "ebd62319c4143ec4654035d5f4b2b3c92a2b25106eb51a6662ad9d045e08da49",
+    "scope": "Documentation and evidence coverage; no runtime or safety rating"
+  },
+  "editions": [
+    {
+      "id": "cli",
+      "name": "CLI",
+      "deployment": "local",
+      "source": {
+        "repository": "cline/cline",
+        "revision": "c35b729049c7bb26c340df63ea9235c40b32dd29",
+        "license": "Apache-2.0",
+        "license_url": "https://github.com/cline/cline/blob/c35b729049c7bb26c340df63ea9235c40b32dd29/LICENSE",
+        "distribution_url": "https://www.npmjs.com/package/cline",
+        "deployment_revision": "not_applicable"
+      },
+      "terms_url": null,
+      "access_url": "https://github.com/cline/cline/blob/c35b729049c7bb26c340df63ea9235c40b32dd29/apps/cli/README.md",
+      "requirements": [
+        "Compatible macOS, Linux or Windows platform and provider authentication."
+      ],
+      "permissions": [
+        "CLI tool calls auto-approve by default according to the reviewed README. Enable explicit review with --auto-approve false; headless approval behavior differs."
+      ],
+      "costs": [
+        "Apache-2.0 source; provider subscription or API usage may be billed separately."
+      ],
+      "reviewed_at": "2026-10-27",
+      "reviewer": "Codex editorial source review",
+      "evidence_ids": [
+        "cline-cli-apps-cli-readme-md",
+        "cline-cli-license",
+        "cline-cli-package-json",
+        "cline-cli-security-md",
+        "cline-cli-apps-cli-src-acp-auto-approve-test-ts"
+      ],
+      "ratings": {
+        "documentation": {
+          "tasks": {
+            "state": "supported",
+            "reason": "Quick start names audit, repair and summarization requests.",
+            "evidence": [
+              "cline-cli-apps-cli-readme-md"
+            ]
+          },
+          "boundaries": {
+            "state": "supported",
+            "reason": "Zen mode documents incompatible flags; required terminal approvals need a TTY.",
+            "evidence": [
+              "cline-cli-apps-cli-readme-md"
+            ]
+          },
+          "setup": {
+            "state": "supported",
+            "reason": "Install and Quick start give installation and launch steps.",
+            "evidence": [
+              "cline-cli-apps-cli-readme-md"
+            ]
+          },
+          "prerequisites": {
+            "state": "supported",
+            "reason": "Install names supported platforms; provider setup explains authentication.",
+            "evidence": [
+              "cline-cli-apps-cli-readme-md"
+            ]
+          },
+          "models": {
+            "state": "supported",
+            "reason": "Use any provider documents provider and model selection.",
+            "evidence": [
+              "cline-cli-apps-cli-readme-md"
+            ]
+          },
+          "example": {
+            "state": "supported",
+            "reason": "Quick start shows concrete prompts and structured output workflows.",
+            "evidence": [
+              "cline-cli-apps-cli-readme-md"
+            ]
+          },
+          "tools": {
+            "state": "supported",
+            "reason": "Features and MCP sections identify tool integrations.",
+            "evidence": [
+              "cline-cli-apps-cli-readme-md"
+            ]
+          },
+          "permissions": {
+            "state": "supported",
+            "reason": "Tool approval explicitly states default auto-approval and opt-in review.",
+            "evidence": [
+              "cline-cli-apps-cli-readme-md"
+            ]
+          },
+          "recovery": {
+            "state": "supported",
+            "reason": "Authentication failure, checkpoint undo and background history inspection are described.",
+            "evidence": [
+              "cline-cli-apps-cli-readme-md"
+            ]
+          },
+          "support": {
+            "state": "supported",
+            "reason": "Header links documentation and community/feature-request support.",
+            "evidence": [
+              "cline-cli-apps-cli-readme-md"
+            ]
+          }
+        },
+        "repository": {
+          "license": {
+            "state": "supported",
+            "reason": "Apache 2.0 terms are present.",
+            "evidence": [
+              "cline-cli-license"
+            ]
+          },
+          "attribution": {
+            "state": "supported",
+            "reason": "Cline Bot Inc. copyright notice is present.",
+            "evidence": [
+              "cline-cli-license"
+            ]
+          },
+          "revision": {
+            "state": "supported",
+            "reason": "CLI README retrieved and hashed at the exact commit.",
+            "evidence": [
+              "cline-cli-apps-cli-readme-md"
+            ]
+          },
+          "distribution": {
+            "state": "supported",
+            "reason": "CLI README identifies npm distribution and platform binaries.",
+            "evidence": [
+              "cline-cli-apps-cli-readme-md"
+            ]
+          },
+          "dependencies": {
+            "state": "unknown",
+            "reason": "Not reviewed in this intake; no point or failing score is inferred.",
+            "evidence": []
+          },
+          "resolved_dependencies": {
+            "state": "unknown",
+            "reason": "Not reviewed in this intake; no point or failing score is inferred.",
+            "evidence": []
+          },
+          "tests": {
+            "state": "supported",
+            "reason": "CLI approval configuration assertions were read, not run.",
+            "evidence": [
+              "cline-cli-apps-cli-src-acp-auto-approve-test-ts"
+            ]
+          },
+          "ci": {
+            "state": "unknown",
+            "reason": "Not reviewed in this intake; no point or failing score is inferred.",
+            "evidence": []
+          },
+          "changes": {
+            "state": "unknown",
+            "reason": "Not reviewed in this intake; no point or failing score is inferred.",
+            "evidence": []
+          },
+          "security_policy": {
+            "state": "supported",
+            "reason": "Disclosure route and supported version scope are specified.",
+            "evidence": [
+              "cline-cli-security-md"
+            ]
+          }
+        },
+        "hosted": null
+      },
+      "performance": {
+        "status": "not_tested",
+        "results": []
+      },
+      "security": {
+        "status": "not_assessed",
+        "findings": []
+      },
+      "assessments": {
+        "documentation": {
+          "status": "assessed",
+          "score": 10,
+          "reviewed": 10,
+          "total": 10
+        },
+        "repository": {
+          "status": "incomplete",
+          "score": null,
+          "reviewed": 6,
+          "total": 10
+        },
+        "hosted": {
+          "status": "not_applicable",
+          "score": null,
+          "reviewed": 0,
+          "total": 10
+        }
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "cline-cli-apps-cli-readme-md",
+      "product_id": "cline",
+      "edition_id": "cli",
+      "type": "source_inspection",
+      "observed_at": "2026-10-27T05:02:48Z",
+      "reviewer": "Codex editorial source review",
+      "source": {
+        "url": "https://github.com/cline/cline/blob/c35b729049c7bb26c340df63ea9235c40b32dd29/apps/cli/README.md",
+        "locator": "Install; Quick start; Use any provider; Modes; Features; Tool approval; Zen mode",
+        "revision": "c35b729049c7bb26c340df63ea9235c40b32dd29",
+        "blob_sha": "9f091c088c6de2b27424948cffd5875683712542",
+        "content_sha256": "8641efe0ba51b5fbe89cd8f1644422c456ad51139bd3650a18af763c12987653"
+      },
+      "observations": [
+        "Describes an interactive or headless terminal agent and publishes an npm install route with macOS, Linux and Windows platform binaries.",
+        "Documents provider login or API keys, concrete prompts and JSON output, MCP integration, plan/act modes and checkpoint undo.",
+        "Tool approval section says tool calls are auto-approved by default; --auto-approve false requests review, and terminal required-approval calls are denied without a TTY.",
+        "Documents authentication failure without saved credentials and history inspection for background sessions; Zen mode is incompatible with --data-dir and --tui.",
+        "Links official documentation, community support and feature requests. Listing source revision does not prove an installed binary matches it."
+      ],
+      "record_sha256": "07fb4397c5728207257f9f19abd605f4fbbf8d428f9ef7058f8b1a1a986af551"
+    },
+    {
+      "id": "cline-cli-license",
+      "product_id": "cline",
+      "edition_id": "cli",
+      "type": "source_inspection",
+      "observed_at": "2026-10-27T05:02:48Z",
+      "reviewer": "Codex editorial source review",
+      "source": {
+        "url": "https://github.com/cline/cline/blob/c35b729049c7bb26c340df63ea9235c40b32dd29/LICENSE",
+        "locator": "Apache 2.0 terms and copyright notice",
+        "revision": "c35b729049c7bb26c340df63ea9235c40b32dd29",
+        "blob_sha": "05ae14a377caf4df24e26edde0c4f7b22ef3ef30",
+        "content_sha256": "f704446a5f1271608805598b557e4288cf8580477ea038c9c3d8b361f693f6b8"
+      },
+      "observations": [
+        "Contains Apache 2.0 terms with copyright 2026 Cline Bot Inc."
+      ],
+      "record_sha256": "ae0d3e4a9db4231c244a78592ab3916542c687cff1cabc6f8afda3bf5858f4d6"
+    },
+    {
+      "id": "cline-cli-package-json",
+      "product_id": "cline",
+      "edition_id": "cli",
+      "type": "source_inspection",
+      "observed_at": "2026-10-27T05:02:48Z",
+      "reviewer": "Codex editorial source review",
+      "source": {
+        "url": "https://github.com/cline/cline/blob/c35b729049c7bb26c340df63ea9235c40b32dd29/package.json",
+        "locator": "workspaces; scripts; engines; devDependencies",
+        "revision": "c35b729049c7bb26c340df63ea9235c40b32dd29",
+        "blob_sha": "9d5c32bdbf9368e60df67e1a2d2ae93892c8deec",
+        "content_sha256": "c299767bf4267971a49274cde3bee5d7545dc900837e8b060568124592d2dd51"
+      },
+      "observations": [
+        "Root workspace manifest names apps/*, CLI build/test commands, and Bun/Node build requirements. CLI-specific runtime dependency review is incomplete."
+      ],
+      "record_sha256": "990e876df696739a784c43cb57a299fe1031428ccd8165cb2f7f3dab695fa3b6"
+    },
+    {
+      "id": "cline-cli-security-md",
+      "product_id": "cline",
+      "edition_id": "cli",
+      "type": "source_inspection",
+      "observed_at": "2026-10-27T05:02:48Z",
+      "reviewer": "Codex editorial source review",
+      "source": {
+        "url": "https://github.com/cline/cline/blob/c35b729049c7bb26c340df63ea9235c40b32dd29/SECURITY.md",
+        "locator": "Supported Versions and Reporting a Vulnerability",
+        "revision": "c35b729049c7bb26c340df63ea9235c40b32dd29",
+        "blob_sha": "4807686929f85d6e15eb364a303b857c3af0103b",
+        "content_sha256": "66a5f4da8565526b5bf35cb535164322f00b1fd0a266957732a3961d320962ee"
+      },
+      "observations": [
+        "Specifies the current minor release support scope, Bugcrowd private disclosure route and security email fallback. No security assessment was conducted."
+      ],
+      "record_sha256": "9612ed0cf10f5bb8d174dbc7b747eafdd44a57fd6a3f8212325afce907c549e3"
+    },
+    {
+      "id": "cline-cli-apps-cli-src-acp-auto-approve-test-ts",
+      "product_id": "cline",
+      "edition_id": "cli",
+      "type": "source_inspection",
+      "observed_at": "2026-10-27T05:02:48Z",
+      "reviewer": "Codex editorial source review",
+      "source": {
+        "url": "https://github.com/cline/cline/blob/c35b729049c7bb26c340df63ea9235c40b32dd29/apps/cli/src/acp/auto-approve.test.ts",
+        "locator": "auto-approve option and value parsing tests",
+        "revision": "c35b729049c7bb26c340df63ea9235c40b32dd29",
+        "blob_sha": "a5ee08ffc2dc9624332ee4089d234077bf86f398",
+        "content_sha256": "67b8eae7fb79097f96f5cf6c24bd4e31d9db28d8cef6cf546e89c825b76145b4"
+      },
+      "observations": [
+        "Contains assertions for boolean configuration, older string inputs, and rejection of unrecognized values. These tests were not executed."
+      ],
+      "record_sha256": "f6d4515b54abe3eedb8b104bfe82002acc180812675563a96141e0c53c8b4a98"
+    }
+  ],
+  "report_version": "744124a857c5a01deedfaac0aaa4ae0301cf4a555888563e01101d53ae39e737"
+}

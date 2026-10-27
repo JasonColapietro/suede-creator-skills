@@ -1,0 +1,19 @@
+{
+  "id": "goose-cli-cargo-toml",
+  "product_id": "goose",
+  "edition_id": "cli",
+  "type": "source_inspection",
+  "observed_at": "2026-10-27T05:02:48Z",
+  "reviewer": "Codex editorial source review",
+  "source": {
+    "url": "https://github.com/aaif-goose/goose/blob/2c6812a358db1b11953b9fafc05c6126eb818788/Cargo.toml",
+    "locator": "workspace members, package and dependencies",
+    "revision": "2c6812a358db1b11953b9fafc05c6126eb818788",
+    "blob_sha": "65ca757afbac50eea2aa191d822f616ba6d7bc1d",
+    "content_sha256": "c763358fd5bc581f5a87832482bd9e8ed78fc042ea127b79166de24bec2e916e"
+  },
+  "observations": [
+    "The workspace includes crates/* and lists Rust build requirements and dependency constraints."
+  ],
+  "record_sha256": "0d3134a63fab8d7270bfaefe837c929b7ecd294b40b9350a6f093f57f1fd9746"
+}

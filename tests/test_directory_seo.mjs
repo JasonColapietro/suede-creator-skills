@@ -53,6 +53,9 @@ const byRel = new Map(pages.map((p) => [p.rel, p]));
 const indexable = pages.filter((p) => p.indexable);
 const parsed = (p) => p.jsonld.map((b) => JSON.parse(b));
 const kindOf = (p) => {
+  if (["directory/agents/", "directory/agents/ungraded/"].includes(p.rel)) return "agent-hub";
+  if (["directory/agents/methodology/", "directory/agents/submit/"].includes(p.rel)) return "agent-info";
+  if (p.rel.startsWith("directory/agents/")) return "agent";
   const depth = p.rel.split("/").filter(Boolean).length;
   if (p.rel === "directory/") return "hub";
   if (categories.some((c) => p.rel === `directory/${c.slug}/`)) return "category";
@@ -137,10 +140,15 @@ test("hubs list their items and listings describe the third-party source code", 
   for (const p of indexable) {
     const kind = kindOf(p);
     const main = parsed(p)[0];
-    if (kind === "category" || kind === "repository" || kind === "hub") {
+    if (kind === "category" || kind === "repository" || kind === "hub" || kind === "agent-hub") {
       assert.equal(main["@type"], "CollectionPage", p.rel);
       assert.equal(main.mainEntity["@type"], "ItemList", p.rel);
       assert.ok(main.mainEntity.itemListElement.length > 0, `${p.rel}: empty ItemList`);
+    }
+    if (kind === "agent") {
+      assert.equal(main.mainEntity["@type"], "SoftwareApplication", p.rel);
+      assert.ok(main.mainEntity.publisher.name, `${p.rel}: actual publisher credit`);
+      assert.ok(p.html.includes(main.mainEntity.publisher.name), `${p.rel}: visible publisher credit`);
     }
     if (kind === "skill") {
       assert.equal(main.mainEntity["@type"], "SoftwareSourceCode", p.rel);

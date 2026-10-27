@@ -1,0 +1,19 @@
+{
+  "id": "goose-cli-cargo-lock",
+  "product_id": "goose",
+  "edition_id": "cli",
+  "type": "source_inspection",
+  "observed_at": "2026-10-27T05:02:48Z",
+  "reviewer": "Codex editorial source review",
+  "source": {
+    "url": "https://github.com/aaif-goose/goose/blob/2c6812a358db1b11953b9fafc05c6126eb818788/Cargo.lock",
+    "locator": "Resolved package records",
+    "revision": "2c6812a358db1b11953b9fafc05c6126eb818788",
+    "blob_sha": "ac3dcb2824dd1c7f9f80699587eba19a25d73657",
+    "content_sha256": "8d397ac09ca3b46fd38f7bba6edbbb2c91897184b19a4d04eddb4eacc18d71bf"
+  },
+  "observations": [
+    "Version 4 lockfile records exact dependency versions, registries and checksums. No dependency audit was performed."
+  ],
+  "record_sha256": "177d6a452ce3346c135904a7e3db3554e4b37537d05cd92ebad9d015457746e7"
+}

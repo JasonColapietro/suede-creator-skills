@@ -1,0 +1,581 @@
+{
+  "schema_version": 1,
+  "methodology_version": "agent-evidence-v1",
+  "generated": "2026-10-27",
+  "snapshot_id": "7757fd06039b9b00cddb7b0f2d309d90",
+  "products": [
+    {
+      "id": "goose",
+      "name": "goose",
+      "publisher": "Agentic AI Foundation",
+      "url": "https://goose-docs.ai/",
+      "summary": "A local general-purpose agent with a terminal edition for code and workflows.",
+      "tags": [
+        "coding",
+        "automation",
+        "research"
+      ],
+      "review_status": "published",
+      "editions": [
+        {
+          "id": "cli",
+          "name": "CLI",
+          "deployment": "local",
+          "source": {
+            "repository": "aaif-goose/goose",
+            "revision": "2c6812a358db1b11953b9fafc05c6126eb818788",
+            "license": "Apache-2.0",
+            "license_url": "https://github.com/aaif-goose/goose/blob/2c6812a358db1b11953b9fafc05c6126eb818788/LICENSE",
+            "distribution_url": "https://goose-docs.ai/docs/getting-started/installation",
+            "deployment_revision": "not_applicable"
+          },
+          "terms_url": null,
+          "access_url": "https://github.com/aaif-goose/goose/blob/2c6812a358db1b11953b9fafc05c6126eb818788/README.md",
+          "requirements": [
+            "Compatible local operating system and a configured model provider."
+          ],
+          "permissions": [
+            "Runs actions on the local machine. Publisher warns about prompt injection and recommends isolation and confirmation for significant actions."
+          ],
+          "costs": [
+            "Apache-2.0 source; model-provider access or usage can carry separate costs."
+          ],
+          "reviewed_at": "2026-10-27",
+          "reviewer": "Codex editorial source review",
+          "evidence_ids": [
+            "goose-cli-readme-md",
+            "goose-cli-security-md",
+            "goose-cli-license",
+            "goose-cli-cargo-toml",
+            "goose-cli-cargo-lock",
+            "goose-cli-crates-goose-cli-tests-roam-acp-client-rs",
+            "goose-cli-github-workflows-ci-yml",
+            "goose-cli-crates-goose-agent-changelog-md"
+          ],
+          "ratings": {
+            "documentation": {
+              "tasks": {
+                "state": "supported",
+                "reason": "Overview names concrete local agent tasks.",
+                "evidence": [
+                  "goose-cli-readme-md"
+                ]
+              },
+              "boundaries": {
+                "state": "supported",
+                "reason": "Security policy warns about untrusted content and sensitive information.",
+                "evidence": [
+                  "goose-cli-security-md"
+                ]
+              },
+              "setup": {
+                "state": "supported",
+                "reason": "Get started identifies the official CLI install route.",
+                "evidence": [
+                  "goose-cli-readme-md"
+                ]
+              },
+              "prerequisites": {
+                "state": "supported",
+                "reason": "Overview identifies supported desktop operating systems and provider access requirements.",
+                "evidence": [
+                  "goose-cli-readme-md"
+                ]
+              },
+              "models": {
+                "state": "supported",
+                "reason": "Overview names providers and API-key/subscription access.",
+                "evidence": [
+                  "goose-cli-readme-md"
+                ]
+              },
+              "example": {
+                "state": "unknown",
+                "reason": "Not reviewed in this intake; no point or failing score is inferred.",
+                "evidence": []
+              },
+              "tools": {
+                "state": "supported",
+                "reason": "Overview identifies MCP extensions.",
+                "evidence": [
+                  "goose-cli-readme-md"
+                ]
+              },
+              "permissions": {
+                "state": "unknown",
+                "reason": "Not reviewed in this intake; no point or failing score is inferred.",
+                "evidence": []
+              },
+              "recovery": {
+                "state": "unknown",
+                "reason": "Not reviewed in this intake; no point or failing score is inferred.",
+                "evidence": []
+              },
+              "support": {
+                "state": "supported",
+                "reason": "Need help links diagnostics and known issues.",
+                "evidence": [
+                  "goose-cli-readme-md"
+                ]
+              }
+            },
+            "repository": {
+              "license": {
+                "state": "supported",
+                "reason": "Apache 2.0 terms are present.",
+                "evidence": [
+                  "goose-cli-license"
+                ]
+              },
+              "attribution": {
+                "state": "supported",
+                "reason": "Block copyright notice is present.",
+                "evidence": [
+                  "goose-cli-license"
+                ]
+              },
+              "revision": {
+                "state": "supported",
+                "reason": "README retrieved and hashed at the exact commit.",
+                "evidence": [
+                  "goose-cli-readme-md"
+                ]
+              },
+              "distribution": {
+                "state": "supported",
+                "reason": "README identifies its official release installer.",
+                "evidence": [
+                  "goose-cli-readme-md"
+                ]
+              },
+              "dependencies": {
+                "state": "supported",
+                "reason": "Workspace manifest supplies dependency constraints.",
+                "evidence": [
+                  "goose-cli-cargo-toml"
+                ]
+              },
+              "resolved_dependencies": {
+                "state": "supported",
+                "reason": "Cargo lockfile records resolved versions and checksums.",
+                "evidence": [
+                  "goose-cli-cargo-lock"
+                ]
+              },
+              "tests": {
+                "state": "supported",
+                "reason": "Substantive CLI roaming test sources were read, not run.",
+                "evidence": [
+                  "goose-cli-crates-goose-cli-tests-roam-acp-client-rs"
+                ]
+              },
+              "ci": {
+                "state": "supported",
+                "reason": "CI defines CLI checks; run outcomes were not assessed.",
+                "evidence": [
+                  "goose-cli-github-workflows-ci-yml"
+                ]
+              },
+              "changes": {
+                "state": "unknown",
+                "reason": "Not reviewed in this intake; no point or failing score is inferred.",
+                "evidence": []
+              },
+              "security_policy": {
+                "state": "supported",
+                "reason": "Private disclosure and escalation are specified.",
+                "evidence": [
+                  "goose-cli-security-md"
+                ]
+              }
+            },
+            "hosted": null
+          },
+          "performance": {
+            "status": "not_tested",
+            "results": []
+          },
+          "security": {
+            "status": "not_assessed",
+            "findings": []
+          }
+        }
+      ]
+    },
+    {
+      "id": "cline",
+      "name": "Cline",
+      "publisher": "Cline Bot Inc.",
+      "url": "https://cline.bot/",
+      "summary": "A coding agent with an interactive and headless terminal edition.",
+      "tags": [
+        "coding",
+        "automation"
+      ],
+      "review_status": "published",
+      "editions": [
+        {
+          "id": "cli",
+          "name": "CLI",
+          "deployment": "local",
+          "source": {
+            "repository": "cline/cline",
+            "revision": "c35b729049c7bb26c340df63ea9235c40b32dd29",
+            "license": "Apache-2.0",
+            "license_url": "https://github.com/cline/cline/blob/c35b729049c7bb26c340df63ea9235c40b32dd29/LICENSE",
+            "distribution_url": "https://www.npmjs.com/package/cline",
+            "deployment_revision": "not_applicable"
+          },
+          "terms_url": null,
+          "access_url": "https://github.com/cline/cline/blob/c35b729049c7bb26c340df63ea9235c40b32dd29/apps/cli/README.md",
+          "requirements": [
+            "Compatible macOS, Linux or Windows platform and provider authentication."
+          ],
+          "permissions": [
+            "CLI tool calls auto-approve by default according to the reviewed README. Enable explicit review with --auto-approve false; headless approval behavior differs."
+          ],
+          "costs": [
+            "Apache-2.0 source; provider subscription or API usage may be billed separately."
+          ],
+          "reviewed_at": "2026-10-27",
+          "reviewer": "Codex editorial source review",
+          "evidence_ids": [
+            "cline-cli-apps-cli-readme-md",
+            "cline-cli-license",
+            "cline-cli-package-json",
+            "cline-cli-security-md",
+            "cline-cli-apps-cli-src-acp-auto-approve-test-ts"
+          ],
+          "ratings": {
+            "documentation": {
+              "tasks": {
+                "state": "supported",
+                "reason": "Quick start names audit, repair and summarization requests.",
+                "evidence": [
+                  "cline-cli-apps-cli-readme-md"
+                ]
+              },
+              "boundaries": {
+                "state": "supported",
+                "reason": "Zen mode documents incompatible flags; required terminal approvals need a TTY.",
+                "evidence": [
+                  "cline-cli-apps-cli-readme-md"
+                ]
+              },
+              "setup": {
+                "state": "supported",
+                "reason": "Install and Quick start give installation and launch steps.",
+                "evidence": [
+                  "cline-cli-apps-cli-readme-md"
+                ]
+              },
+              "prerequisites": {
+                "state": "supported",
+                "reason": "Install names supported platforms; provider setup explains authentication.",
+                "evidence": [
+                  "cline-cli-apps-cli-readme-md"
+                ]
+              },
+              "models": {
+                "state": "supported",
+                "reason": "Use any provider documents provider and model selection.",
+                "evidence": [
+                  "cline-cli-apps-cli-readme-md"
+                ]
+              },
+              "example": {
+                "state": "supported",
+                "reason": "Quick start shows concrete prompts and structured output workflows.",
+                "evidence": [
+                  "cline-cli-apps-cli-readme-md"
+                ]
+              },
+              "tools": {
+                "state": "supported",
+                "reason": "Features and MCP sections identify tool integrations.",
+                "evidence": [
+                  "cline-cli-apps-cli-readme-md"
+                ]
+              },
+              "permissions": {
+                "state": "supported",
+                "reason": "Tool approval explicitly states default auto-approval and opt-in review.",
+                "evidence": [
+                  "cline-cli-apps-cli-readme-md"
+                ]
+              },
+              "recovery": {
+                "state": "supported",
+                "reason": "Authentication failure, checkpoint undo and background history inspection are described.",
+                "evidence": [
+                  "cline-cli-apps-cli-readme-md"
+                ]
+              },
+              "support": {
+                "state": "supported",
+                "reason": "Header links documentation and community/feature-request support.",
+                "evidence": [
+                  "cline-cli-apps-cli-readme-md"
+                ]
+              }
+            },
+            "repository": {
+              "license": {
+                "state": "supported",
+                "reason": "Apache 2.0 terms are present.",
+                "evidence": [
+                  "cline-cli-license"
+                ]
+              },
+              "attribution": {
+                "state": "supported",
+                "reason": "Cline Bot Inc. copyright notice is present.",
+                "evidence": [
+                  "cline-cli-license"
+                ]
+              },
+              "revision": {
+                "state": "supported",
+                "reason": "CLI README retrieved and hashed at the exact commit.",
+                "evidence": [
+                  "cline-cli-apps-cli-readme-md"
+                ]
+              },
+              "distribution": {
+                "state": "supported",
+                "reason": "CLI README identifies npm distribution and platform binaries.",
+                "evidence": [
+                  "cline-cli-apps-cli-readme-md"
+                ]
+              },
+              "dependencies": {
+                "state": "unknown",
+                "reason": "Not reviewed in this intake; no point or failing score is inferred.",
+                "evidence": []
+              },
+              "resolved_dependencies": {
+                "state": "unknown",
+                "reason": "Not reviewed in this intake; no point or failing score is inferred.",
+                "evidence": []
+              },
+              "tests": {
+                "state": "supported",
+                "reason": "CLI approval configuration assertions were read, not run.",
+                "evidence": [
+                  "cline-cli-apps-cli-src-acp-auto-approve-test-ts"
+                ]
+              },
+              "ci": {
+                "state": "unknown",
+                "reason": "Not reviewed in this intake; no point or failing score is inferred.",
+                "evidence": []
+              },
+              "changes": {
+                "state": "unknown",
+                "reason": "Not reviewed in this intake; no point or failing score is inferred.",
+                "evidence": []
+              },
+              "security_policy": {
+                "state": "supported",
+                "reason": "Disclosure route and supported version scope are specified.",
+                "evidence": [
+                  "cline-cli-security-md"
+                ]
+              }
+            },
+            "hosted": null
+          },
+          "performance": {
+            "status": "not_tested",
+            "results": []
+          },
+          "security": {
+            "status": "not_assessed",
+            "findings": []
+          }
+        }
+      ]
+    },
+    {
+      "id": "devin",
+      "name": "Devin",
+      "publisher": "Cognition",
+      "url": "https://devin.ai/",
+      "summary": "A hosted coding agent for repository tasks and pull-request workflows.",
+      "tags": [
+        "coding"
+      ],
+      "review_status": "published",
+      "editions": [
+        {
+          "id": "cloud",
+          "name": "Cloud",
+          "deployment": "hosted",
+          "source": null,
+          "terms_url": "https://cognition.com/legal/platform-terms-of-service",
+          "access_url": "https://app.devin.ai/",
+          "requirements": [
+            "Registered Cognition account with cloud-agent access and repository setup. Deployed service revision is not disclosed in this intake."
+          ],
+          "permissions": [
+            "Cloud Agent sessions can modify code, execute commands and browse. Optional profiles restrict access; policy changes may require session resume.",
+            "Publisher discloses default training use with plan-dependent opt-out; review current data controls and terms."
+          ],
+          "costs": [
+            "Paid cloud-agent access and usage allowances vary by plan; additional usage can incur charges. See dated pricing evidence and current official terms."
+          ],
+          "reviewed_at": "2026-10-27",
+          "reviewer": "Codex editorial source review",
+          "evidence_ids": [
+            "devin-cloud-first-session",
+            "devin-cloud-security-profiles",
+            "devin-cloud-terms",
+            "devin-cloud-data-policy",
+            "devin-cloud-pricing"
+          ],
+          "ratings": {
+            "documentation": {
+              "tasks": {
+                "state": "supported",
+                "reason": "First-session guide describes code changes, debugging and PR tasks.",
+                "evidence": [
+                  "devin-cloud-first-session"
+                ]
+              },
+              "boundaries": {
+                "state": "unknown",
+                "reason": "Not reviewed in this intake; no point or failing score is inferred.",
+                "evidence": []
+              },
+              "setup": {
+                "state": "supported",
+                "reason": "First-session guide sequences repository setup, Ask and Agent sessions.",
+                "evidence": [
+                  "devin-cloud-first-session"
+                ]
+              },
+              "prerequisites": {
+                "state": "supported",
+                "reason": "Account registration and repository indexing/setup are required.",
+                "evidence": [
+                  "devin-cloud-first-session",
+                  "devin-cloud-terms"
+                ]
+              },
+              "models": {
+                "state": "supported",
+                "reason": "First-session guide explains agent selection and availability.",
+                "evidence": [
+                  "devin-cloud-first-session"
+                ]
+              },
+              "example": {
+                "state": "unknown",
+                "reason": "Not reviewed in this intake; no point or failing score is inferred.",
+                "evidence": []
+              },
+              "tools": {
+                "state": "supported",
+                "reason": "Guide identifies commands and browser use.",
+                "evidence": [
+                  "devin-cloud-first-session"
+                ]
+              },
+              "permissions": {
+                "state": "supported",
+                "reason": "Profiles explain scoped restrictions and when they apply.",
+                "evidence": [
+                  "devin-cloud-security-profiles"
+                ]
+              },
+              "recovery": {
+                "state": "unknown",
+                "reason": "Not reviewed in this intake; no point or failing score is inferred.",
+                "evidence": []
+              },
+              "support": {
+                "state": "unknown",
+                "reason": "Not reviewed in this intake; no point or failing score is inferred.",
+                "evidence": []
+              }
+            },
+            "repository": null,
+            "hosted": {
+              "terms": {
+                "state": "supported",
+                "reason": "Official platform terms apply to registered service access.",
+                "evidence": [
+                  "devin-cloud-terms"
+                ]
+              },
+              "pricing": {
+                "state": "supported",
+                "reason": "Pricing explains allowances and extra model-dependent usage.",
+                "evidence": [
+                  "devin-cloud-pricing"
+                ]
+              },
+              "retention": {
+                "state": "supported",
+                "reason": "Publisher states retention policy and exceptions.",
+                "evidence": [
+                  "devin-cloud-data-policy"
+                ]
+              },
+              "training": {
+                "state": "supported",
+                "reason": "Publisher states training defaults and plan-dependent opt-out.",
+                "evidence": [
+                  "devin-cloud-data-policy",
+                  "devin-cloud-terms"
+                ]
+              },
+              "authentication": {
+                "state": "supported",
+                "reason": "Terms describe account/password registration.",
+                "evidence": [
+                  "devin-cloud-terms"
+                ]
+              },
+              "permissions": {
+                "state": "supported",
+                "reason": "Profiles describe optional and mandatory restrictions.",
+                "evidence": [
+                  "devin-cloud-security-profiles"
+                ]
+              },
+              "audit_export": {
+                "state": "unknown",
+                "reason": "Not reviewed in this intake; no point or failing score is inferred.",
+                "evidence": []
+              },
+              "deletion_revocation": {
+                "state": "unknown",
+                "reason": "Not reviewed in this intake; no point or failing score is inferred.",
+                "evidence": []
+              },
+              "status": {
+                "state": "unknown",
+                "reason": "Not reviewed in this intake; no point or failing score is inferred.",
+                "evidence": []
+              },
+              "changes": {
+                "state": "unknown",
+                "reason": "Not reviewed in this intake; no point or failing score is inferred.",
+                "evidence": []
+              }
+            }
+          },
+          "performance": {
+            "status": "not_tested",
+            "results": []
+          },
+          "security": {
+            "status": "not_assessed",
+            "findings": []
+          }
+        }
+      ]
+    }
+  ]
+}
