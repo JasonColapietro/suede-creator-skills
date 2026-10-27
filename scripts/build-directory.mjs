@@ -118,8 +118,6 @@ const ORGANIZATION = {
   logo: `${BASE}/assets/suede-ai-logo-transparent.webp`,
   founder: { "@id": PERSON_ID },
   sameAs: [
-    "https://suedeai.agency/",
-    "https://suedeai.app/",
     "https://suedeai.org/",
     "https://github.com/Suede-AI",
     "https://x.com/AISUEDE",
@@ -129,6 +127,30 @@ const ORGANIZATION = {
     "https://www.wikidata.org/wiki/Q141169484",
   ],
 };
+// Product and practice aliases identify their own entities, with the company
+// linked as publisher or parent. Keep the IDs used by their canonical sites.
+const RELATED_ENTITIES = [
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "@id": "https://agents.suedeai.ai/#app",
+    name: "Suede AI Agent Studio",
+    url: "https://agents.suedeai.ai",
+    sameAs: ["https://suedeai.app/"],
+    applicationCategory: "DeveloperApplication",
+    operatingSystem: "Web",
+    publisher: { "@id": ORG_ID },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "@id": "https://seo.suedeai.ai/#organization",
+    name: "Suede AI SEO",
+    url: "https://seo.suedeai.ai/",
+    sameAs: ["https://suedeai.agency/"],
+    parentOrganization: { "@id": ORG_ID },
+  },
+];
 const PERSON = {
   "@type": "Person",
   "@id": PERSON_ID,
@@ -1677,6 +1699,7 @@ ${FAQ.map(([q, a]) => `        <h3>${esc(q)}</h3>\n        <p>${esc(a)}${q === "
         },
       },
       bc.ld,
+      ...RELATED_ENTITIES,
       {
         "@context": "https://schema.org",
         "@type": "FAQPage",
@@ -1860,6 +1883,7 @@ ${servicesCta("methodology", null, here)}`;
         about: { "@type": "Thing", name: "Agent Skills", url: "https://agentskills.io/specification" },
       },
       bc.ld,
+      ...RELATED_ENTITIES,
     ],
     footerNote: "The Suede Skill Check reads published SKILL.md files and the files beside them. It executes nothing.",
   }));
