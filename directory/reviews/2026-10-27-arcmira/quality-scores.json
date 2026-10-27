@@ -1,0 +1,74 @@
+[
+  {
+    "name": "arcmira",
+    "python_score": 77,
+    "grade": "C",
+    "checks": "11111111",
+    "size": [
+      71,
+      1359,
+      1
+    ],
+    "description_length": 153
+  },
+  {
+    "name": "company-watch",
+    "python_score": 69,
+    "grade": "D",
+    "checks": "11110111",
+    "size": [
+      144,
+      1760,
+      1
+    ],
+    "description_length": 153
+  },
+  {
+    "name": "compare-shows",
+    "python_score": 67,
+    "grade": "D",
+    "checks": "11110111",
+    "size": [
+      79,
+      736,
+      1
+    ],
+    "description_length": 149
+  },
+  {
+    "name": "find-quotes",
+    "python_score": 69,
+    "grade": "D",
+    "checks": "11110111",
+    "size": [
+      79,
+      882,
+      1
+    ],
+    "description_length": 158
+  },
+  {
+    "name": "person-research",
+    "python_score": 69,
+    "grade": "D",
+    "checks": "11110111",
+    "size": [
+      89,
+      893,
+      1
+    ],
+    "description_length": 150
+  },
+  {
+    "name": "sponsor-research",
+    "python_score": 67,
+    "grade": "D",
+    "checks": "11110111",
+    "size": [
+      101,
+      952,
+      1
+    ],
+    "description_length": 144
+  }
+]

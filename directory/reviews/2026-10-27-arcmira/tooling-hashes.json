@@ -1,0 +1,58 @@
+[
+  {
+    "path": "scripts/directory/parse_skills.py",
+    "sha256": "c6afe55cd156a84baf1fbe4b40709723a22d7ea3821302da1fbd8e1d4ffc4a4f"
+  },
+  {
+    "path": "scripts/directory/curate.py",
+    "sha256": "e79ac38fe416c589a1ac24b524c79146feb9b5444b7c88894f0d8b208065960d"
+  },
+  {
+    "path": "scripts/directory/grade.py",
+    "sha256": "f29f75d089b91b38312510ec8cffe7c0fc50c726e5fd73a84bd15fb9344d7877"
+  },
+  {
+    "path": "scripts/directory/badges.mjs",
+    "sha256": "75a67d9f268b0a57f24d548a60059641c595997359d0cef6b47a31c724f87a26"
+  },
+  {
+    "path": "scripts/directory/citations.py",
+    "sha256": "de6e8c5ff86e1006e4ceb740715ee56384e97f39a9c443af83f1c755abf5b54c"
+  },
+  {
+    "path": "scripts/check-public-privacy.py",
+    "sha256": "16b96c695e3ce27a7807b81b1ceb1a2b34f4069a82cdaaf30892673b6efac0cb"
+  },
+  {
+    "path": "scripts/public-privacy-policy.json",
+    "sha256": "e2dcf31347445f6d7a16099cb0f1d5293573e50c0f5b3d204261602ce8bab103"
+  },
+  {
+    "path": "directory/exclusions.json",
+    "sha256": "56518dd332103724c0c7e2dcf9ff725652f906ef7dc43fc916794d89efa577e7"
+  },
+  {
+    "path": "security-tooling/scripts/security/worker.py",
+    "sha256": "9b0423ead91a083b4929f436511983f084b4233a1ca75ce685fa2dd300fc3c0d"
+  },
+  {
+    "path": "security-tooling/scripts/security/profile.json",
+    "sha256": "358dc4ff0d2db83e3463f6ccfa1372468fcad6f54641219b3de4c7334b930d2a"
+  },
+  {
+    "path": "security-tooling/scripts/security/requirements.txt",
+    "sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+  },
+  {
+    "path": "security-tooling/scripts/security/evidence.mjs",
+    "sha256": "0016d5a07126c9fe92c8775561558287a9b94d546685b8e8dcae69a6368a5cde"
+  },
+  {
+    "path": "security-tooling/scripts/security/Dockerfile",
+    "sha256": "e96b39c71ad04ab50b02d6cfb45e6d9ffce0bcc6d7da22a90e703c7da7e516f6"
+  },
+  {
+    "path": "security-tooling/scripts/security/scan.py",
+    "sha256": "9dcfeb3409f0edf882450fea709398f5a9e45ffecb48401ecafb8d06115cbe86"
+  }
+]

@@ -1,0 +1,104 @@
+[
+  {
+    "name": "arcmira",
+    "javascript_score": 77,
+    "points": {
+      "structure": 56,
+      "description_length": 5,
+      "boundary": 0,
+      "example": 0,
+      "depth": 7,
+      "references": 0,
+      "scripts": 0,
+      "recency": 9,
+      "adoption": 0,
+      "allowed_tools": 0,
+      "compatibility": 0
+    }
+  },
+  {
+    "name": "company-watch",
+    "javascript_score": 69,
+    "points": {
+      "structure": 48,
+      "description_length": 5,
+      "boundary": 0,
+      "example": 0,
+      "depth": 7,
+      "references": 0,
+      "scripts": 0,
+      "recency": 9,
+      "adoption": 0,
+      "allowed_tools": 0,
+      "compatibility": 0
+    }
+  },
+  {
+    "name": "compare-shows",
+    "javascript_score": 67,
+    "points": {
+      "structure": 48,
+      "description_length": 3,
+      "boundary": 0,
+      "example": 0,
+      "depth": 7,
+      "references": 0,
+      "scripts": 0,
+      "recency": 9,
+      "adoption": 0,
+      "allowed_tools": 0,
+      "compatibility": 0
+    }
+  },
+  {
+    "name": "find-quotes",
+    "javascript_score": 69,
+    "points": {
+      "structure": 48,
+      "description_length": 5,
+      "boundary": 0,
+      "example": 0,
+      "depth": 7,
+      "references": 0,
+      "scripts": 0,
+      "recency": 9,
+      "adoption": 0,
+      "allowed_tools": 0,
+      "compatibility": 0
+    }
+  },
+  {
+    "name": "person-research",
+    "javascript_score": 69,
+    "points": {
+      "structure": 48,
+      "description_length": 5,
+      "boundary": 0,
+      "example": 0,
+      "depth": 7,
+      "references": 0,
+      "scripts": 0,
+      "recency": 9,
+      "adoption": 0,
+      "allowed_tools": 0,
+      "compatibility": 0
+    }
+  },
+  {
+    "name": "sponsor-research",
+    "javascript_score": 67,
+    "points": {
+      "structure": 48,
+      "description_length": 3,
+      "boundary": 0,
+      "example": 0,
+      "depth": 7,
+      "references": 0,
+      "scripts": 0,
+      "recency": 9,
+      "adoption": 0,
+      "allowed_tools": 0,
+      "compatibility": 0
+    }
+  }
+]

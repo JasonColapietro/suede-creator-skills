@@ -212,7 +212,13 @@ test("the featured page uses its editorial copy, nomination block and badge", ()
 test("the directory brand is Suede AI", () => {
   for (const rel of ["directory/", "directory/featured/", "directory/methodology/", "directory/submit/"]) {
     const html = pageHtml(rel);
-    assert.doesNotMatch(html, /Suede Skills Directory|Suede Directory\b|Suede Labs/, rel);
+    // This named membership category is distinct from the site's Suede AI brand.
+    // Allow its exact kicker only; titles, metadata and all other copy keep the brand guard.
+    const brandCopy = rel === "directory/featured/"
+      ? html.replaceAll('<p class="featured-kind">Suede Directory Member</p>', '')
+      : html;
+    assert.match(html, /Suede AI Skills Directory/, rel);
+    assert.doesNotMatch(brandCopy, /Suede Skills Directory|Suede Directory\b|Suede Labs/, rel);
   }
   assert.match(fs.readFileSync(path.join(docs, "directory/badge.svg"), "utf8"), /Suede AI Skills Directory: listed/);
 });

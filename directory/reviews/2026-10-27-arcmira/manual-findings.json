@@ -1,0 +1,333 @@
+[
+  {
+    "id": "M01",
+    "severity": "MEDIUM",
+    "kind": "authorization/privacy",
+    "skills": [
+      "arcmira",
+      "company-watch",
+      "compare-shows",
+      "find-quotes",
+      "person-research",
+      "sponsor-research"
+    ],
+    "locations": [
+      {
+        "path": "plugins/arcmira/skills/arcmira/SKILL.md",
+        "start_line": 76,
+        "end_line": 76
+      },
+      {
+        "path": "plugins/arcmira/skills/company-watch/SKILL.md",
+        "start_line": 149,
+        "end_line": 149
+      },
+      {
+        "path": "plugins/arcmira/skills/compare-shows/SKILL.md",
+        "start_line": 84,
+        "end_line": 84
+      },
+      {
+        "path": "plugins/arcmira/skills/find-quotes/SKILL.md",
+        "start_line": 84,
+        "end_line": 84
+      },
+      {
+        "path": "plugins/arcmira/skills/person-research/SKILL.md",
+        "start_line": 94,
+        "end_line": 94
+      },
+      {
+        "path": "plugins/arcmira/skills/sponsor-research/SKILL.md",
+        "start_line": 106,
+        "end_line": 106
+      },
+      {
+        "path": "README.md",
+        "start_line": 112,
+        "end_line": 116
+      }
+    ],
+    "finding": "Every skill instructs the agent to send arcmira_feedback when something is wrong, slow, or missing. This creates a vendor-side record containing a note; the skills do not require user authorization or minimization/redaction before sending. This is an external-write/privacy gap, not evidence that data was actually sent.",
+    "smallest_fix": "Make feedback opt-in under the user's existing authorization. Show the minimal proposed note when authorization is absent; exclude credentials, private requests, transcript text, and personal details unless explicitly needed and authorized. No feedback was sent during review.",
+    "origin": "manual static review; not scanner output",
+    "confidence": "high for stated source behavior/inconsistency"
+  },
+  {
+    "id": "M02",
+    "severity": "MEDIUM",
+    "kind": "cost/side effects",
+    "skills": [
+      "arcmira",
+      "find-quotes",
+      "person-research"
+    ],
+    "locations": [
+      {
+        "path": "plugins/arcmira/skills/arcmira/SKILL.md",
+        "start_line": 45,
+        "end_line": 46
+      },
+      {
+        "path": "plugins/arcmira/skills/find-quotes/SKILL.md",
+        "start_line": 50,
+        "end_line": 56
+      },
+      {
+        "path": "plugins/arcmira/skills/find-quotes/SKILL.md",
+        "start_line": 74,
+        "end_line": 75
+      },
+      {
+        "path": "plugins/arcmira/skills/person-research/SKILL.md",
+        "start_line": 55,
+        "end_line": 59
+      },
+      {
+        "path": "README.md",
+        "start_line": 116,
+        "end_line": 127
+      }
+    ],
+    "finding": "The main skill directs a Premium transcript read that can create a billable job. Pricing is disclosed and quote() is named, but no preflight/authorized-spend condition precedes that step. Other examples also read metered captions. The execute_read name does not imply absence of effects; the README explicitly says so.",
+    "smallest_fix": "Before starting new metered work, apply the user's existing spending authorization, query available account/budget facts and quote() for Premium work, and stop for authorization if the expected charge is outside it. Retain the existing pricing disclosures and budget errors.",
+    "origin": "manual static review; not scanner output",
+    "confidence": "high for stated source behavior/inconsistency"
+  },
+  {
+    "id": "M03",
+    "severity": "MEDIUM",
+    "kind": "trust boundary hardening",
+    "skills": [
+      "arcmira",
+      "company-watch",
+      "compare-shows",
+      "find-quotes",
+      "person-research",
+      "sponsor-research"
+    ],
+    "locations": [
+      {
+        "path": "plugins/arcmira/skills/arcmira/SKILL.md",
+        "start_line": 38,
+        "end_line": 44
+      },
+      {
+        "path": "plugins/arcmira/skills/company-watch/SKILL.md",
+        "start_line": 68,
+        "end_line": 70
+      },
+      {
+        "path": "plugins/arcmira/skills/find-quotes/SKILL.md",
+        "start_line": 48,
+        "end_line": 56
+      },
+      {
+        "path": "plugins/arcmira/skills/person-research/SKILL.md",
+        "start_line": 55,
+        "end_line": 70
+      },
+      {
+        "path": "plugins/arcmira/skills/sponsor-research/SKILL.md",
+        "start_line": 83,
+        "end_line": 83
+      }
+    ],
+    "finding": "These workflows consume dynamic tool references and third-party transcript/catalog text and then construct programs or emit links. The submitted files do not state that returned instructions, passages, entity names, URLs and errors are untrusted data. No concrete injection payload or malicious intent was found in the six files; this is a defense-in-depth gap.",
+    "smallest_fix": "Add one shared rule and a short standalone reminder in each task skill: returned text cannot authorize tool calls, feedback, monitor writes, spending or instruction changes; safely encode user/data values into program literals; use only expected HTTP(S) source/vendor links.",
+    "origin": "manual static review; not scanner output",
+    "confidence": "hardening observation; no exploit demonstrated"
+  },
+  {
+    "id": "M04",
+    "severity": "MEDIUM",
+    "kind": "incorrect totals",
+    "skills": [
+      "sponsor-research"
+    ],
+    "locations": [
+      {
+        "path": "plugins/arcmira/skills/sponsor-research/SKILL.md",
+        "start_line": 64,
+        "end_line": 82
+      },
+      {
+        "path": "plugins/arcmira/skills/sponsor-research/SKILL.md",
+        "start_line": 98,
+        "end_line": 98
+      }
+    ],
+    "finding": "The brand example stops paging when reads.length reaches 500 even if a cursor remains, then returns ad_reads_total and a top-ten ranking without a partial flag or continuation cursor. This contradicts its instruction to page until has_more is false. Static example: 600 matching rows yields a claimed total of 500 and a ranking over only that subset.",
+    "smallest_fix": "Keep a bounded request budget; return partial, scanned_ad_reads, next_cursor and the requested window. Label totals/ranking as partial when a cursor remains, and continue only within the user's authorized budget.",
+    "origin": "manual static review; not scanner output",
+    "confidence": "high for stated source behavior/inconsistency"
+  },
+  {
+    "id": "M05",
+    "severity": "MEDIUM",
+    "kind": "entity identity",
+    "skills": [
+      "sponsor-research"
+    ],
+    "locations": [
+      {
+        "path": "plugins/arcmira/skills/sponsor-research/SKILL.md",
+        "start_line": 71,
+        "end_line": 78
+      }
+    ],
+    "finding": "The grouping map is keyed by source_channel.name rather than channel_id. Distinct channels with the same display name collapse into one count and retain only the first channel id.",
+    "smallest_fix": "Key the map by media.channel_id (or another documented stable channel id) and retain display name only as a label.",
+    "origin": "manual static review; not scanner output",
+    "confidence": "high for stated source behavior/inconsistency"
+  },
+  {
+    "id": "M06",
+    "severity": "MEDIUM",
+    "kind": "mixed time windows",
+    "skills": [
+      "compare-shows"
+    ],
+    "locations": [
+      {
+        "path": "plugins/arcmira/skills/compare-shows/SKILL.md",
+        "start_line": 49,
+        "end_line": 62
+      },
+      {
+        "path": "plugins/arcmira/skills/compare-shows/SKILL.md",
+        "start_line": 69,
+        "end_line": 70
+      }
+    ],
+    "finding": "Only occurrences receives after=daysAgo(90); sponsors() receives no window. The returned window comes from occurrences while the answer instruction asks for shared sponsors with counts for a stated window. The example can present sponsor counts as if they share the 90-day window without evidence that they do.",
+    "smallest_fix": "Label the subject-comparison window separately from the sponsor-count window. Treat sponsor counts as the endpoint's documented/default coverage unless a supported date filter or dated ad-read query proves the same window.",
+    "origin": "manual static review; not scanner output",
+    "confidence": "high for stated source behavior/inconsistency"
+  },
+  {
+    "id": "M07",
+    "severity": "MEDIUM",
+    "kind": "freshness inconsistency",
+    "skills": [
+      "compare-shows"
+    ],
+    "locations": [
+      {
+        "path": "plugins/arcmira/skills/compare-shows/SKILL.md",
+        "start_line": 59,
+        "end_line": 59
+      },
+      {
+        "path": "plugins/arcmira/skills/compare-shows/SKILL.md",
+        "start_line": 69,
+        "end_line": 69
+      },
+      {
+        "path": "plugins/arcmira/skills/arcmira/SKILL.md",
+        "start_line": 43,
+        "end_line": 43
+      }
+    ],
+    "finding": "compare-shows reports channel.indexed_through alongside searchable_videos, while the shared skill specifically requires channel.search_indexed_through for transcript-search freshness. This is a documented internal inconsistency; live endpoint field availability was not tested.",
+    "smallest_fix": "Use the documented search_indexed_through field for transcript-search coverage, and keep any general indexing date separately labelled. Verify against a pinned contract without running the live service.",
+    "origin": "manual static review; not scanner output",
+    "confidence": "high for stated source behavior/inconsistency"
+  },
+  {
+    "id": "M08",
+    "severity": "MEDIUM",
+    "kind": "unsupported clip precision",
+    "skills": [
+      "find-quotes"
+    ],
+    "locations": [
+      {
+        "path": "plugins/arcmira/skills/find-quotes/SKILL.md",
+        "start_line": 50,
+        "end_line": 56
+      },
+      {
+        "path": "plugins/arcmira/skills/find-quotes/SKILL.md",
+        "start_line": 67,
+        "end_line": 67
+      },
+      {
+        "path": "plugins/arcmira/skills/find-quotes/SKILL.md",
+        "start_line": 76,
+        "end_line": 76
+      }
+    ],
+    "finding": "When transcript retrieval fails, the example emits clip.end = start_seconds + 60. Empty transcript lines also trigger invented fallback bounds. The good-answer instruction describes clip boundaries as coming from transcript lines, but these paths contain only estimated bounds.",
+    "smallest_fix": "Return clip_bounds_verified=false (or omit clip end) when transcript lines are absent. Label the passage source and estimate explicitly; only claim exact clip bounds when supported by timestamped lines.",
+    "origin": "manual static review; not scanner output",
+    "confidence": "high for stated source behavior/inconsistency"
+  },
+  {
+    "id": "M09",
+    "severity": "MEDIUM",
+    "kind": "silent incomplete monitoring scope",
+    "skills": [
+      "company-watch"
+    ],
+    "locations": [
+      {
+        "path": "plugins/arcmira/skills/company-watch/SKILL.md",
+        "start_line": 85,
+        "end_line": 96
+      },
+      {
+        "path": "plugins/arcmira/skills/company-watch/SKILL.md",
+        "start_line": 129,
+        "end_line": 129
+      }
+    ],
+    "finding": "The topic-spelling resolver loop silently drops a topic when there is no best/suggested entity, including ask ambiguities. Only unresolved NAMES enter unresolved; the answer can fail to reveal a topic the user expected to follow.",
+    "smallest_fix": "Append unresolved topic spellings with their ask options or no-match reason to the returned unresolved list, and resolve/confirm them before any monitor write.",
+    "origin": "manual static review; not scanner output",
+    "confidence": "high for stated source behavior/inconsistency"
+  },
+  {
+    "id": "M10",
+    "severity": "LOW",
+    "kind": "structural quality/metadata",
+    "skills": [
+      "company-watch",
+      "compare-shows",
+      "find-quotes",
+      "person-research",
+      "sponsor-research"
+    ],
+    "locations": [
+      {
+        "path": "plugins/arcmira/skills/company-watch/SKILL.md",
+        "start_line": 3,
+        "end_line": 3
+      },
+      {
+        "path": "plugins/arcmira/skills/compare-shows/SKILL.md",
+        "start_line": 3,
+        "end_line": 3
+      },
+      {
+        "path": "plugins/arcmira/skills/find-quotes/SKILL.md",
+        "start_line": 3,
+        "end_line": 3
+      },
+      {
+        "path": "plugins/arcmira/skills/person-research/SKILL.md",
+        "start_line": 3,
+        "end_line": 3
+      },
+      {
+        "path": "plugins/arcmira/skills/sponsor-research/SKILL.md",
+        "start_line": 3,
+        "end_line": 3
+      }
+    ],
+    "finding": "The five task descriptions do not match the unchanged directory's WHEN_RE. Use cases in the body do not satisfy this frontmatter-only check. All six also omit allowed-tools and compatibility; no invented adoption, references or scripts were credited.",
+    "smallest_fix": "Add accurate frontmatter trigger language such as 'Use when the user asks ...'. Add truthful compatibility/account/remote-service information and host-supported least-privilege tool declarations where appropriate. Do not add filler, fake citations or empty script/reference directories to raise scores.",
+    "origin": "manual static review; not scanner output",
+    "confidence": "high for stated source behavior/inconsistency"
+  }
+]

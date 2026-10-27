@@ -1,4 +1,42 @@
 // Editorial project selections are independent of skill scores and README-badge verification.
+// Members are a separate schema: no scored-catalog, certification or badge fields.
+export function directoryMembers(editorial) {
+  const members = editorial.members === undefined ? [] : editorial.members;
+  if (!Array.isArray(members)) throw new Error('Directory members must be an array');
+  const ids = new Set(['directory-members', 'featured-badge', 'nominate-title', 'selection-title', ...(editorial.projects || []).map((p) => p.id)]);
+  const repos = new Set((editorial.projects || []).map((p) => p.repo.toLowerCase()));
+  const slug = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
+  const safePath = (s) => typeof s === 'string' && /^[A-Za-z0-9_./-]+$/.test(s) && s.split('/').every((p) => p && p !== '.' && p !== '..');
+  const fields = new Set(['id', 'name', 'repo', 'commit', 'review', 'scope', 'license', 'license_file', 'headline', 'summary', 'setup', 'skills']);
+  for (const member of members) {
+    const fail = () => { throw new Error(`Invalid directory member: ${member?.id || 'unknown'}`); };
+    if (!member || typeof member !== 'object' || Array.isArray(member) || Object.keys(member).some((key) => !fields.has(key))) fail();
+    if ([...fields].filter((k) => k !== 'skills').some((k) => typeof member[k] !== 'string' || !member[k].trim())) fail();
+    if (!slug.test(member.id) || ids.has(member.id) || !/^[A-Za-z0-9][A-Za-z0-9-]*\/[A-Za-z0-9_.-]+$/.test(member.repo) || ['.', '..'].includes(member.repo.split('/')[1]) || repos.has(member.repo.toLowerCase()) || !/^[a-f0-9]{40}$/.test(member.commit)) fail();
+    if (!safePath(member.scope) || !safePath(member.license_file) || !safePath(member.review) || !member.review.startsWith('directory/reviews/') || !member.review.endsWith('.md')) fail();
+    if (!Array.isArray(member.skills) || !member.skills.length) fail();
+    const skillIds = new Set();
+    for (const skill of member.skills) {
+      if (!skill || Object.keys(skill).some((key) => !['id', 'title', 'description'].includes(key)) || ['id', 'title', 'description'].some((key) => typeof skill[key] !== 'string' || !skill[key].trim()) || !slug.test(skill.id) || skillIds.has(skill.id)) fail();
+      skillIds.add(skill.id);
+    }
+    ids.add(member.id); repos.add(member.repo.toLowerCase());
+  }
+  return members;
+}
+
+export function directoryMembersHtml(members, { esc, start = 0 }) {
+  return members.map((member, index) => {
+    const source = `https://github.com/${member.repo}`;
+    const pinned = `${source}/blob/${member.commit}`;
+    return `<article class="featured-project directory-member" id="${member.id}" data-directory-membership="member" aria-labelledby="${member.id}-title">
+      <header class="featured-project-heading"><p class="featured-number" aria-hidden="true">${String(start + index + 1).padStart(2, '0')}</p><div><p class="featured-kind">Suede Directory Member</p><h2 id="${member.id}-title">${esc(member.name)}</h2></div><span class="featured-license">${esc(member.license)}</span></header>
+      <div class="featured-project-body"><div><h3 class="featured-headline">${esc(member.headline)}</h3><p class="featured-summary">${esc(member.summary)}</p><ul class="featured-work">${member.skills.map((skill) => `<li><a href="${pinned}/${member.scope}/${skill.id}/SKILL.md"><span>${esc(skill.title)}</span><span aria-hidden="true">↗</span></a><p>${esc(skill.description)}</p></li>`).join('\n')}</ul></div><aside class="featured-setup"><h3>Before you start</h3><p>${esc(member.setup)}</p></aside></div>
+      <footer class="featured-project-footer"><a href="${source}">Explore ${esc(member.name)} on GitHub ↗</a><a href="https://github.com/JasonColapietro/suede-creator-skills/blob/main/${member.review}">Read the skill review ↗</a><a href="${pinned}/${member.license_file}">Plugin license ↗</a><a href="${source}/tree/${member.commit}/${member.scope}">Reviewed skills <code>${member.commit.slice(0, 7)}</code> ↗</a></footer>
+    </article>`;
+  }).join('\n');
+}
+
 export function featuredProjectsHtml(projects, { esc, rel, here, slugify }) {
   return projects.map((project, index) => {
     const source = `https://github.com/${project.repo}`;

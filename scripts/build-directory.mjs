@@ -17,7 +17,7 @@ import path from "node:path";
 import { createHash } from "node:crypto";
 import { fileURLToPath } from "node:url";
 import { SCORE_METHOD, qualityScore, scorePoints, letterGrade, listed, qualifies, badgePair, badgeMarkdown, badgeHtml, shieldSvg, listingTarget, promotionActive } from "./directory/badges.mjs";
-import { featuredProjectsHtml } from "./directory/featured.mjs";
+import { featuredProjectsHtml, directoryMembers, directoryMembersHtml } from "./directory/featured.mjs";
 import { parseGuide, renderGuideBody } from "./directory/editorial.mjs";
 
 const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -54,6 +54,7 @@ if (PROMOTION.ends_at !== null && (!/^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\dZ$/.test(PRO
 if (SCORE_METHOD !== "graded-v2" || data.score_method !== SCORE_METHOD || CHECKS.map((c) => c.id).join() !== "frontmatter,name_format,name_matches_folder,description_length,description_trigger,concise_body,license,maintained") throw new Error("Unsupported directory score method");
 const NOTES = JSON.parse(fs.readFileSync(path.join(repoRoot, "directory", "notes.json"), "utf8"));
 const EDITORIAL = JSON.parse(fs.readFileSync(path.join(repoRoot, "directory", "featured-projects.json"), "utf8"));
+const MEMBERS = directoryMembers(EDITORIAL);
 // The README badge for featured publishers, rendered with the other badges
 // once featured-projects.json marks it live.
 const FEATURED_BADGE = (() => {
@@ -1718,8 +1719,9 @@ function renderFeaturedProjects() {
   const copy = EDITORIAL.page || {};
   const bc = crumbs(here, [["directory/", "Directory"], [null, "Featured projects"]]);
   const title = copy.title || "Featured Agent Skill Projects | Suede AI";
-  const description = `Meet ${listPhrase(EDITORIAL.projects.map((p) => p.name))}: reviewed source, setup and data-use notes.`;
-  const keywords = setKeywords(here, ["featured agent projects", ...EDITORIAL.projects.map((p) => `${p.name} agent workflows`), "Suede AI Skills Directory"]);
+  const entries = [...EDITORIAL.projects, ...MEMBERS];
+  const description = `Meet ${listPhrase(entries.map((p) => p.name))}: reviewed source, setup and data-use notes.`;
+  const keywords = setKeywords(here, ["featured agent projects", ...entries.map((p) => `${p.name} agent workflows`), "Suede AI Skills Directory"]);
   const badge = FEATURED_BADGE;
   const nominate = copy.nominate
     ? `      <section class="panel featured-nominate" aria-labelledby="nominate-title">
@@ -1744,8 +1746,9 @@ ${EDITORIAL.projects.map((p) => codeBlock({ label: `${esc(p.name)}, Markdown`, k
     h1Html: `<div class="eyebrow">Suede AI Skills Directory · Editorial selection</div><h1>Featured projects</h1>`,
     body: `${bc.html}
       <div class="featured-intro"><p class="lead">${esc(copy.lede || "Good tools deserve a closer look.")}</p>${copy.intro ? `<p>${esc(copy.intro)}</p>` : ""}</div>
-      <nav class="featured-jump" aria-label="Featured project navigation"><a href="../">← Browse all skills</a>${EDITORIAL.projects.map((p) => `<a href="#${p.id}">${esc(p.name)} <span aria-hidden="true">↓</span></a>`).join("")}</nav>
+      <nav class="featured-jump" aria-label="Featured project navigation"><a href="../">← Browse all skills</a>${entries.map((p) => `<a href="#${p.id}">${esc(p.name)} <span aria-hidden="true">↓</span></a>`).join("")}</nav>
       ${featuredProjectsHtml(EDITORIAL.projects, { esc, rel, here, slugify })}
+${MEMBERS.length ? `      <section id="directory-members" aria-label="Directory members"><h2>Directory members</h2><p>Publisher membership with a defined skill scope. Linked reviews retain quality scores and scan findings.</p>${directoryMembersHtml(MEMBERS, { esc, start: EDITORIAL.projects.length })}</section>` : ""}
 ${copy.services_cta ? campaignPanel(here, campaignVariant(copy.services_cta, here)) : ""}
 ${nominate}
 ${badgePanel}
@@ -1756,8 +1759,8 @@ ${guideLinksPanel(here, pageGuides(here), "Guides")}`,
       name: "Featured projects", headline: title, description, url: url(here), dateModified: PAGE_DATE,
       inLanguage: "en", breadcrumb: { "@id": `${url(here)}#breadcrumb` },
       isPartOf: DIRECTORY_REF, publisher: PUBLISHER_REF,
-      mainEntity: { "@type": "ItemList", numberOfItems: EDITORIAL.projects.length,
-        itemListElement: EDITORIAL.projects.map((p, i) => ({ "@type": "ListItem", position: i + 1, name: p.name, url: `${url(here)}#${p.id}` })) },
+      mainEntity: { "@type": "ItemList", numberOfItems: entries.length,
+        itemListElement: entries.map((p, i) => ({ "@type": "ListItem", position: i + 1, name: p.name, url: `${url(here)}#${p.id}` })) },
     }, bc.ld],
     footerNote: "Editorial project selections from the Suede AI Skills Directory. Source and installation details belong to each publisher.",
   }));

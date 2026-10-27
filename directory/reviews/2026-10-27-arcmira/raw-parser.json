@@ -1,0 +1,522 @@
+[
+ {
+  "skill_md_bytes": 8889,
+  "fm_error": null,
+  "name": "arcmira",
+  "description": "Answers what YouTube shows and podcasts said: transcripts, who was mentioned, sponsors, recommendations, momentum. Use for the arcmira MCP server or CLI.",
+  "fm_license": null,
+  "compatibility": null,
+  "allowed_tools": null,
+  "display_name": null,
+  "fm_version": null,
+  "fm_author": null,
+  "body_lines": 71,
+  "body_words": 1359,
+  "headings": [
+   [
+    1,
+    "Arcmira"
+   ],
+   [
+    2,
+    "When to use"
+   ],
+   [
+    2,
+    "Task skills"
+   ],
+   [
+    2,
+    "Procedure"
+   ],
+   [
+    2,
+    "Monitors"
+   ],
+   [
+    2,
+    "The ID rule"
+   ],
+   [
+    2,
+    "Docs"
+   ],
+   [
+    2,
+    "After the answer"
+   ]
+  ],
+  "dir": "plugins/arcmira/skills/arcmira",
+  "folder": "arcmira",
+  "file_count": 1,
+  "files_sample": [
+   "SKILL.md"
+  ],
+  "has_scripts": false,
+  "has_references": false,
+  "has_assets": false,
+  "script_langs": {},
+  "env_read": [],
+  "env_docs": [],
+  "network": false,
+  "api_hosts": [],
+  "mcp": true,
+  "mcp_tools": [],
+  "captcha_files": false,
+  "run_commands": [],
+  "policy_text": "# Arcmira\n\nArcmira indexes YouTube and podcast transcripts and keeps a catalog of who is mentioned on which show, who sponsors whom, and who recommends what on air. The arcmira MCP server exposes four tools. `arcmira_describe` returns the client reference: every method with its arguments and return fields, worked programs, quirks and error codes. `arcmira_execute_read` runs a JavaScript program against the `arcmira` client and returns what the program returns; Premium transcripts included. `arcmira_execute_write` runs the same client plus the monitor writes. `arcmira_feedback` tells Arcmira what went wrong. The arcmira CLI has commands with the same names; `arcmira <command> --help`, `arcmira schema <command>` and `arcmira examples` are its reference.\n\n## When to use\n\nUse this skill when the user asks:\n\n- what a show, channel, or episode said about a topic, or for a transcript;\n- whether a person, company, or product was mentioned, how often, and where;\n- who sponsors a show, or which shows a brand sponsors;\n- who recommends a product on air, sponsored or organic;\n- whether talk about something is accelerating or fading;\n- to be kept posted on a company, person or topic;\n- how to use the arcmira MCP server or the arcmira CLI.\n\nUse Arcmira for the indexed transcript research the user requested. Cite returned passages and keep evidence from other sources distinct. An empty result means this query returned no matches.\n\n## Task skills\n\nWhen the ask matches one of these, load that skill and follow its worked program:\n\n- `sponsor-research`: Sponsor and ad-read research on podcasts and YouTube: who sponsors a show, or which shows a brand sponsors, how often, since when.\n- `company-watch`: Watches a company or topic on podcasts and YouTube: what was said lately (shows, counts, momentum, quotes), then an Arcmira monitor to keep following it.\n- `find-quotes`: Finds exact spoken quotes and clip-ready moments on podcasts and YouTube: verbatim words, speaker, date, a timestamped link, clip start and end.\n- `person-research`: Researches a person across podcasts and YouTube for interview or meeting prep: where they appeared, their own words, who discusses them.\n- `compare-shows`: Compares two podcasts or YouTube shows side by side: size, latest episode, what each talks about, what both cover, and shared sponsors.\n\nAnything else (one video's transcript, a topic across shows, who recommends a product on air) follows the procedure below.\n\n## Procedure\n\n1. Call `arcmira_describe` once before your first program. It is current on every call; `arcmira_describe({ topic })` narrows it to one method.\n2. A topic or phrase goes in `query` as typed. Resolve a name with `arcmira.resolve` when it becomes a filter: who said it, which show, or what it is about. Filters take ids only, as the ID rule below says.\n3. Before asserting a mention, read its description or passage and say which sense of the name it is (Mercury the bank, not the element).\n4. Write one `arcmira_execute_read` program per question. Resolve, check, and run every query the question needs inside that one program.\n5. Return only the fields the answer needs, not whole responses.\n6. Search as_of is the newest publication date among the returned passages, not the date the whole index was updated. For channel freshness, call arcmira.status({ channelId }) and report channel.search_indexed_through for transcript search. A result date or an empty query does not establish missing recent episodes. Build date windows from `arcmira.today()` and `arcmira.daysAgo(n)`. When the user names no window, use the last 90 days, and narrow it when a name returns more than the answer needs.\n7. Link each name in the answer to the `page` field the result carries. Do not build arcmira.com URLs by hand.\n8. Premium: `arcmira.transcript(video, { quality: \"premium\" })` returns the lines. When the video is not transcribed yet, that read starts a transcription. Still pending: `eta_seconds` says about how long; read again once it has passed.\n9. USAGE. Metered reads use credits from the account's plan, then the on-demand budget set in the dashboard. Arcmira enforces that budget, and no tool takes a spending amount. A search uses 4 credits per passage it returns past the first 5. A Premium read that starts a transcription reports charge { unit, amount, from: included | on_demand | mixed }; arcmira.quote(video) returns that price beforehand (a price, not a spoken quote) and uses no credits. A read the plan or budget blocks throws ArcmiraError with code paid_plan_required, quota_exceeded, spend_limit_exceeded, member_limit, fair_use_cap or on_demand_paused, a message naming the limit, its figures in limit when reported, and unlock { tier, url } when a plan or setting change lifts it. An account admin changes member_limit, fair_use_cap and on_demand_paused.\n\n## Monitors\n\nMONITORS. A monitor sends alerts for the entities it follows, by email to the account address or by Slack, realtime, hourly or daily. arcmira.monitors.list() lists the user's monitors and monitors.trackers(id) what one follows. Changes run only in arcmira_execute_write; nothing is deleted, and update(id, { paused: true }) pauses. Confirm the monitor and its delivery with the user before a write. create needs name and notify_frequency. Slack needs notify_slack: true and a workspace from arcmira.integrations.slack(): its id as slack_integration_id and default_channel_id as slack_channel_id; with none, the user connects one at https://arcmira.com/dashboard/integrations. addEntities takes up to 90 ids in one call. addName follows an exact name that resolve does not find (a show by its UC id). Topic spellings (\"data centers\", \"datacenters\") can be separate ids; follow each. A name may already be followed: list() and trackers(id) show what is, so check them before creating a monitor. A result with attached: false names its reason: entity_not_found, entity_type_not_trackable, tracker_limit_reached, or tracked_in_another_monitor (current_monitor_id names it; attachTrackers moves it once the user agrees). Creating a monitor uses no credits; each alert uses 25 credits from the account's plan, then its on-demand budget.\n\n## The ID rule\n\nID RULE. Filters take verbatim ids only: entity ids look like ent_14, channel ids like UC-DRzaGnL_vtBUpCFH5M0tg (UC plus 22 characters), video ids are 11 characters or a YouTube URL. A name where an id belongs throws id_required before any network call. Resolve the name first, then pass its id:\n\n```javascript\nconst r = await arcmira.resolve(\"Sam\", { context: \"the My First Million co-host\" });\nconst e = r.best ?? r.suggested;          // a show: resolve with { type: \"channel\" }, use e.youtube_channel_id\nif (!e) return { ask: r.ask };            // r.ask.options: [{ id, name, type, label }]\n```\n\nRESOLVE ANSWERS ONE OF THREE. best: the name means that row; use it and name it. suggested: no row is certain but one stands out (suggested.reason, suggested.evidence); use it and tell the user you assumed it, quoting the evidence (\"Sam Altman, assuming the most mentioned Sam: 4,399 appearances, 11x the next\"). ask: several rows fit and none stands out; return ask.options for the user to pick and stop, or check every option id against the data in one program (occurrences or momentum with all the ids) and answer per row, naming each. Resolve the exact name the user said (\"ICE\", \"Mercury\"), not a paraphrase, and always pass context with the user's own words about the name when they gave any (\"Sam, the My First Million co-host\" is resolve(\"Sam\", { context: \"the My First Million co-host\" })). Context is only words from the user's message, never your own guess: a bare \"Theo\" is resolve(\"Theo\") with no context, never \"Theo Von\" or context \"the comedian\", and its ask goes back to the user. Omit type for a brand (the catalog types some companies as product). A name that resolves to nothing (no best, suggested or ask) is not in the Arcmira index: say so and ask for another spelling",
+  "file_names": [
+   "SKILL.md"
+  ],
+  "repo_license": "Apache-2.0",
+  "license_file": "plugins/arcmira/LICENSE",
+  "license_evidence": [
+   {
+    "label": "Apache-2.0",
+    "file": "plugins/arcmira/LICENSE"
+   }
+  ],
+  "repo": "arcmira/mcp",
+  "repo_key": "arcmira/mcp",
+  "branch": "master",
+  "commit_date": "2026-10-22T18:17:18-07:00",
+  "commit_sha": "557fc76b697a2eaf1fee3bbfae90f25181ae2e93",
+  "lists": []
+ },
+ {
+  "skill_md_bytes": 12131,
+  "fm_error": null,
+  "name": "company-watch",
+  "description": "Watches a company or topic on podcasts and YouTube: what was said lately (shows, counts, momentum, quotes), then an Arcmira monitor to keep following it.",
+  "fm_license": null,
+  "compatibility": null,
+  "allowed_tools": null,
+  "display_name": null,
+  "fm_version": null,
+  "fm_author": null,
+  "body_lines": 144,
+  "body_words": 1760,
+  "headings": [
+   [
+    1,
+    "Company watch"
+   ],
+   [
+    2,
+    "When to use"
+   ],
+   [
+    2,
+    "Pick the entity the user meant"
+   ],
+   [
+    2,
+    "Steps"
+   ],
+   [
+    2,
+    "Worked program"
+   ],
+   [
+    3,
+    "The last 90 days about one company (arcmiraexecuteread)"
+   ],
+   [
+    3,
+    "Find what to follow, and the monitors that could hold it (arcmiraexecuteread)"
+   ],
+   [
+    3,
+    "Save to a monitor (arcmiraexecutewrite)"
+   ],
+   [
+    2,
+    "A good answer"
+   ],
+   [
+    2,
+    "Traps"
+   ],
+   [
+    2,
+    "After the answer"
+   ]
+  ],
+  "dir": "plugins/arcmira/skills/company-watch",
+  "folder": "company-watch",
+  "file_count": 1,
+  "files_sample": [
+   "SKILL.md"
+  ],
+  "has_scripts": false,
+  "has_references": false,
+  "has_assets": false,
+  "script_langs": {},
+  "env_read": [],
+  "env_docs": [],
+  "network": false,
+  "api_hosts": [],
+  "mcp": false,
+  "mcp_tools": [],
+  "captcha_files": false,
+  "run_commands": [],
+  "policy_text": "# Company watch\n\nAnswers \"what was said about X lately\" in one program, over the last 90 days unless the user names a window: episode counts per show from `occurrences`, the trend from `momentum`, the catalog notes from `mentions`, and quotes from `search` about the entity. Then it turns \"keep me posted on X\" into a monitor that delivers. Research picks the entity ids: a company or person through `resolve`, a topic through each of its spellings. The user's own monitors decide where they go: one that fits, or a new one the user confirms. Only the save runs in `arcmira_execute_write`; everything before it reads.\n\nRun each program with `arcmira_execute_read`; `arcmira_describe` has the method reference.\n\n## When to use\n\n- what is being said about a company, product or brand lately, this month or this week, and is talk rising or fading\n- did any show mention us, a competitor or an investor lately\n- keep me posted on a company, a competitor, a person or a topic\n- save what this research found to a monitor, or tell me when X comes up on a show\n- watch a topic like \"data center discourse\" across shows\n\n## Pick the entity the user meant\n\nUsers give names; filters take ids only (ent_..., UC..., 11-character video ids), and a name where an id belongs throws `id_required`.\n\n1. Resolve the exact name the user said, with their own words about it as `context` (a bare \"Theo\" has none).\n2. `best` and `suggested` give the id. A `suggested` pick is an assumption: the answer names it, with `suggested.evidence` as the reason.\n3. `ask`: several entities fit, and `ask.options` goes back to the user. No answer at all: the name is not in the index.\n\nFor this task:\n\n- Resolve a company with no type (the catalog types some companies as product) and a person with `{ type: \"person\" }`. A company name is often a common word (\"Linear\", \"Ramp\", \"ICE\"): name each pick, for example \"Linear, the software company (product, ent_279443)\", so the user can catch a wrong one before it is answered or saved.\n- A topic has spellings. Resolve each variant with `{ type: \"topic\" }` (\"data centers\", \"datacenters\", \"data centre\", \"data center\") and keep every distinct id: one tracker per spelling catches what one would miss.\n\n## Steps\n\n1. What was said lately: run the first program and answer.\n2. To follow the subject: the second program, in `arcmira_execute_read`, resolves every name and topic spelling (reuse ids the research already found) and reads the user's monitors, what each follows, and the connected Slack workspaces.\n3. To save: the third program, in `arcmira_execute_write`, uses the monitor that fits or creates one, follows every id with `addEntities` and every unresolved name with `addName`, and returns each id that did not attach with its reason and `current_monitor_name`. A `canonical_entity_id` means the id was merged into that entity.\n\nMONITORS. A monitor sends alerts for the entities it follows, by email to the account address or by Slack, realtime, hourly or daily. arcmira.monitors.list() lists the user's monitors and monitors.trackers(id) what one follows. Changes run only in arcmira_execute_write; nothing is deleted, and update(id, { paused: true }) pauses. Confirm the monitor and its delivery with the user before a write. create needs name and notify_frequency. Slack needs notify_slack: true and a workspace from arcmira.integrations.slack(): its id as slack_integration_id and default_channel_id as slack_channel_id; with none, the user connects one at https://arcmira.com/dashboard/integrations. addEntities takes up to 90 ids in one call. addName follows an exact name that resolve does not find (a show by its UC id). Topic spellings (\"data centers\", \"datacenters\") can be separate ids; follow each. A name may already be followed: list() and trackers(id) show what is, so check them before creating a monitor. A result with attached: false names its reason: entity_not_found, entity_type_not_trackable, tracker_limit_reached, or tracked_in_another_monitor (current_monitor_id names it; attachTrackers moves it once the user agrees). Creating a monitor uses no credits; each alert uses 25 credits from the account's plan, then its on-demand budget.\n\n## Worked program\n\nPass each block to `arcmira_execute_read` as one program (a block marked arcmira_execute_write goes to that tool), with the name swapped for the user's. It opens with the pick: set `CONTEXT` to the user's own words about the name. When several entities fit it returns `ask` and runs nothing else. Show those options to the user, then run it again with `ID` set to the pick. Build date windows from `arcmira.daysAgo(n)` and `arcmira.today()`.\n\n### The last 90 days about one company (arcmira_execute_read)\n\n```javascript\nconst NAME = \"Linear\", CONTEXT = undefined, ID = null;   // CONTEXT: the user's own words about the name, never a guess. After an ask, set ID to the picked option's id and run again\nconst r = ID ? null : await arcmira.resolve(NAME, { context: CONTEXT });\nconst e = r && (r.best ?? r.suggested);\nif (r && !e) return { ask: r.ask };\nconst id = ID ?? e.id;\nconst assumed = Boolean(r?.suggested), why = r?.suggested?.evidence ?? null;\nconst after = arcmira.daysAgo(90);   // the user's window when they name one (\"this week\": 7)\nconst [m, occ, notes] = await Promise.all([\n  arcmira.momentum(id),\n  arcmira.occurrences({ entityIds: [id], after, limit: 10 }),\n  arcmira.mentions({ entityId: id, after, limit: 8 }),\n]);\nlet quotes = await arcmira.search({ query: m.entity.name, about: [id], after, limit: 5 });\nconst quotesTagged = quotes.chunks.length > 0;   // false: the fallback matched the words, which can be a namesake; say so\nif (!quotesTagged) quotes = await arcmira.search({ query: m.entity.name, after, limit: 5 });\nreturn {\n  entity: { id, name: m.entity.name, type: m.entity.type, page: m.entity.page, assumed, why },\n  window: occ.window,\n  momentum: { verdict: m.verdict, last_7d: m.volume.mentions_7d, last_30d: m.volume.mentions_30d, prior_30d: m.volume.mentions_prior_30d, as_of: m.as_of },\n  shows: occ.rows.map(x => ({ show: x.channel_name, channel_id: x.channel_id, episodes: x.count, times_said: x.occurrences })),\n  context: notes.mentions.map(x => ({ show: x.media.source_channel?.name ?? null, episode: x.media.title, date: x.media.published_at, note: x.description })),\n  quotes_tagged_to_entity: quotesTagged,\n  quotes: quotes.chunks.map(c => ({ said: c.text.slice(0, 300), show: c.channel_name, episode: c.video_title, date: c.published_at, url: c.watch_url })),\n};\n```\n\n### Find what to follow, and the monitors that could hold it (arcmira_execute_read)\n\n```javascript\nconst NAMES = [\"Linear\", \"Height\"], TOPICS = [\"data centers\", \"datacenters\", \"data centre\"];   // the user's subjects; TOPICS: every spelling of one topic\nconst follow = [], unresolved = [];\nfor (const n of NAMES) {\n  const r = await arcmira.resolve(n);\n  const e = r.best ?? r.suggested;\n  if (e) follow.push({ name: e.name, id: e.id, type: e.type, assumed: Boolean(r.suggested), why: r.suggested?.evidence ?? null });\n  else unresolved.push({ name: n, ask: r.ask ?? null });\n}\nfor (const t of TOPICS) {\n  const r = await arcmira.resolve(t, { type: \"topic\" });\n  const e = r.best ?? r.suggested;\n  if (e && !follow.some(f => f.id === e.id)) follow.push({ name: e.name, id: e.id, type: e.type, spelling: t });\n}\nconst [{ monitors }, { integrations }] = await Promise.all([arcmira.monitors.list(), arcmira.integrations.slack()]);\nconst existing = await Promise.all(monitors.slice(0, 10).map(async m => ({\n  id: m.id, name: m.name, paused: m.paused, frequency: m.notify_frequency, slack: Boolean(m.notify_slack),\n  follows: (await arcmira.monitors.trackers(m.id)).trackers.map(t => t.display_name ?? t.entity_name),\n})));\nconst slack = integrations.map(i => ({ slack_integration_id: i.id, workspace: i.team_name, slack_channel_id: i.default_channel_id, channel: i.channels.find(c => c.id === i.default_channel_id)?.name ?? null }));\nreturn { follow, unresolved, monitors: existing, mo",
+  "file_names": [
+   "SKILL.md"
+  ],
+  "repo_license": "Apache-2.0",
+  "license_file": "plugins/arcmira/LICENSE",
+  "license_evidence": [
+   {
+    "label": "Apache-2.0",
+    "file": "plugins/arcmira/LICENSE"
+   }
+  ],
+  "repo": "arcmira/mcp",
+  "repo_key": "arcmira/mcp",
+  "branch": "master",
+  "commit_date": "2026-10-22T18:17:18-07:00",
+  "commit_sha": "557fc76b697a2eaf1fee3bbfae90f25181ae2e93",
+  "lists": []
+ },
+ {
+  "skill_md_bytes": 5188,
+  "fm_error": null,
+  "name": "compare-shows",
+  "description": "Compares two podcasts or YouTube shows side by side: size, latest episode, what each talks about, what both cover, and shared sponsors. Uses arcmira.",
+  "fm_license": null,
+  "compatibility": null,
+  "allowed_tools": null,
+  "display_name": null,
+  "fm_version": null,
+  "fm_author": null,
+  "body_lines": 79,
+  "body_words": 736,
+  "headings": [
+   [
+    1,
+    "Compare two shows"
+   ],
+   [
+    2,
+    "When to use"
+   ],
+   [
+    2,
+    "Pick the entity the user meant"
+   ],
+   [
+    2,
+    "Worked program"
+   ],
+   [
+    3,
+    "Two shows, last 90 days"
+   ],
+   [
+    2,
+    "A good answer"
+   ],
+   [
+    2,
+    "Traps"
+   ],
+   [
+    2,
+    "After the answer"
+   ]
+  ],
+  "dir": "plugins/arcmira/skills/compare-shows",
+  "folder": "compare-shows",
+  "file_count": 1,
+  "files_sample": [
+   "SKILL.md"
+  ],
+  "has_scripts": false,
+  "has_references": false,
+  "has_assets": false,
+  "script_langs": {},
+  "env_read": [],
+  "env_docs": [],
+  "network": false,
+  "api_hosts": [],
+  "mcp": false,
+  "mcp_tools": [],
+  "captcha_files": false,
+  "run_commands": [],
+  "policy_text": "# Compare two shows\n\n`status` sizes each show, `episodes` gives the latest, `occurrences` with both channel ids ranks what each covers and returns `shared` for what both mention, and `sponsors` of each, joined on entity id, gives shared sponsors.\n\nRun each program with `arcmira_execute_read`; `arcmira_describe` has the method reference.\n\n## When to use\n\n- compare two shows, or a show against a competitor\n- what two podcasts both talk about, or who they both advertise\n- a digest of what one or two shows covered this week or month\n\n## Pick the entity the user meant\n\nUsers give names; filters take ids only (ent_..., UC..., 11-character video ids), and a name where an id belongs throws `id_required`.\n\n1. Resolve the exact name the user said, with their own words about it as `context` (a bare \"Theo\" has none).\n2. `best` and `suggested` give the id. A `suggested` pick is an assumption: the answer names it, with `suggested.evidence` as the reason.\n3. `ask`: several entities fit, and `ask.options` goes back to the user. No answer at all: the name is not in the index.\n\nFor this task:\n\n- Resolve each show with `{ type: \"channel\" }` and use `youtube_channel_id`. Users shorten show names (\"All In\", \"MTS\"); resolve suggests a show by its initials or closest spelling, so say when a show was assumed. When nothing comes back, retry the full or hyphenated name before saying the show is not in the index.\n- Pass both UC ids in one `occurrences` call and read `shared`.\n\n## Worked program\n\nPass each block to `arcmira_execute_read` as one program (a block marked arcmira_execute_write goes to that tool), with the name swapped for the user's. It opens with the pick: set `CONTEXT` to the user's own words about the name. When several entities fit it returns `ask` and runs nothing else. Show those options to the user, then run it again with `ID` set to the pick. Build date windows from `arcmira.daysAgo(n)` and `arcmira.today()`.\n\n### Two shows, last 90 days\n\n```javascript\nconst SHOWS = [\"TBPN\", \"All-In Podcast\"], IDS = [null, null];   // after an ask, put the picked option's channel_id in IDS and run again\nconst ids = [], names = [], assumed = [];\nfor (const [i, n] of SHOWS.entries()) {\n  if (IDS[i]) { ids.push(IDS[i]); names.push(n); assumed.push(null); continue; }\n  const r = await arcmira.resolve(n, { type: \"channel\" });\n  const e = r.best ?? r.suggested;\n  if (!e) return { unresolved: n, ask: r.ask && { question: r.ask.question, options: r.ask.options.map(o => ({ ...o, channel_id: r.candidates.find(c => c.id === o.id)?.youtube_channel_id ?? null })) } };\n  ids.push(e.youtube_channel_id);\n  names.push(e.name);\n  assumed.push(r.suggested ? r.suggested.evidence : null);\n}\nconst after = arcmira.daysAgo(90);\nconst [s0, s1, e0, e1, occ, sp0, sp1] = await Promise.all([\n  arcmira.status({ channelId: ids[0] }), arcmira.status({ channelId: ids[1] }),\n  arcmira.episodes(ids[0], { limit: 1 }), arcmira.episodes(ids[1], { limit: 1 }),\n  arcmira.occurrences({ channelIds: ids, types: [\"organization\", \"product\"], after, limit: 40 }),\n  arcmira.sponsors(ids[0]), arcmira.sponsors(ids[1]),\n]);\nconst inOther = new Map(sp1.sponsors.map(x => [x.entity.id, x.ad_reads]));\nreturn {\n  window: occ.window,\n  shows: ids.map((id, i) => ({ name: names[i], channel_id: id, assumed: Boolean(assumed[i]), why: assumed[i], videos_indexed: [s0, s1][i].channel.searchable_videos, indexed_through: [s0, s1][i].channel.indexed_through, latest: [e0, e1][i].episodes[0]?.title ?? null,\n    top: occ.rows.filter(x => x.channel_id === id).slice(0, 5).map(x => [x.name, x.count]) })),\n  both_discussed: occ.shared.slice(0, 5).map(x => ({ name: x.name, id: x.entity_id, episodes_by_show: x.by_channel.map(c => [c.channel_name, c.count]) })),\n  shared_sponsors: sp0.sponsors.filter(x => inOther.has(x.entity.id)).map(x => ({ name: x.entity.name, id: x.entity.id, ad_reads: [x.ad_reads, inOther.get(x.entity.id)] })),\n};\n```\n\n## A good answer\n\n- Names both shows as resolved, with their channel ids.\n- A side-by-side: videos indexed and `indexed_through` for each, the latest episode, and each show's top subjects with episode counts.\n- What both covered, from `shared`, with episodes per show, and the shared sponsors with ad reads per show, for a stated window.\n\n## Traps\n\n- With two or more `channelIds`, `occurrences` puts the overlap in `shared`; `rows` alone never shows it.\n- Never count `episodes` to size a show; `status({ channelId }).channel.searchable_videos` is the count.\n- An empty `shared` in a short window is an answer (no overlap in the window), not an error; widen the window only if the user asked for a longer one.\n\nDocs: https://arcmira.com/docs/mcp-server\n\n## After the answer\n\nMonitors can follow what a research turn found, and each alert uses 25 credits from the account's plan, then its on-demand budget. The `company-watch` skill sets one up.\n\nIf anything was wrong, slow, or missing for the user, or they want a source or capability Arcmira lacks, send one arcmira_feedback.\n",
+  "file_names": [
+   "SKILL.md"
+  ],
+  "repo_license": "Apache-2.0",
+  "license_file": "plugins/arcmira/LICENSE",
+  "license_evidence": [
+   {
+    "label": "Apache-2.0",
+    "file": "plugins/arcmira/LICENSE"
+   }
+  ],
+  "repo": "arcmira/mcp",
+  "repo_key": "arcmira/mcp",
+  "branch": "master",
+  "commit_date": "2026-10-22T18:17:18-07:00",
+  "commit_sha": "557fc76b697a2eaf1fee3bbfae90f25181ae2e93",
+  "lists": []
+ },
+ {
+  "skill_md_bytes": 5602,
+  "fm_error": null,
+  "name": "find-quotes",
+  "description": "Finds exact spoken quotes and clip-ready moments on podcasts and YouTube: verbatim words, speaker, date, a timestamped link, clip start and end. Uses arcmira.",
+  "fm_license": null,
+  "compatibility": null,
+  "allowed_tools": null,
+  "display_name": null,
+  "fm_version": null,
+  "fm_author": null,
+  "body_lines": 79,
+  "body_words": 882,
+  "headings": [
+   [
+    1,
+    "Find quotes and clip moments"
+   ],
+   [
+    2,
+    "When to use"
+   ],
+   [
+    2,
+    "Pick the entity the user meant"
+   ],
+   [
+    2,
+    "Worked program"
+   ],
+   [
+    3,
+    "What one person said about a topic, with clip boundaries"
+   ],
+   [
+    2,
+    "A good answer"
+   ],
+   [
+    2,
+    "Traps"
+   ],
+   [
+    2,
+    "After the answer"
+   ]
+  ],
+  "dir": "plugins/arcmira/skills/find-quotes",
+  "folder": "find-quotes",
+  "file_count": 1,
+  "files_sample": [
+   "SKILL.md"
+  ],
+  "has_scripts": false,
+  "has_references": false,
+  "has_assets": false,
+  "script_langs": {},
+  "env_read": [],
+  "env_docs": [],
+  "network": false,
+  "api_hosts": [],
+  "mcp": false,
+  "mcp_tools": [],
+  "captcha_files": false,
+  "run_commands": [],
+  "policy_text": "# Find quotes and clip moments\n\n`search` finds the passage; `transcript` with `start` and `end` returns the exact lines around it with second offsets, which give the verbatim quote and the clip boundaries.\n\nRun each program with `arcmira_execute_read`; `arcmira_describe` has the method reference.\n\n## When to use\n\n- find a quote, with the source and a timestamp\n- the moment a show talked about a topic, to clip or cite\n- what a specific person said about a topic, in their words\n\n## Pick the entity the user meant\n\nUsers give names; filters take ids only (ent_..., UC..., 11-character video ids), and a name where an id belongs throws `id_required`.\n\n1. Resolve the exact name the user said, with their own words about it as `context` (a bare \"Theo\" has none).\n2. `best` and `suggested` give the id. A `suggested` pick is an assumption: the answer names it, with `suggested.evidence` as the reason.\n3. `ask`: several entities fit, and `ask.options` goes back to the user. No answer at all: the name is not in the index.\n\nFor this task:\n\n- A speaker resolves with `{ type: \"person\" }`; pass the id as `speakerIds` (who said it). A person or brand the passage is about goes in `about`. A show goes in `channelIds` as its UC id.\n- People are often named by first name (\"Chamath\"). Pass what the user said about them as `context`; resolve suggests the person when one stands out and asks when several fit.\n- The topic words go in `query`, never in `about`. If a filtered search returns no chunks, rerun it with fewer filters before saying nothing was found.\n\n## Worked program\n\nPass each block to `arcmira_execute_read` as one program (a block marked arcmira_execute_write goes to that tool), with the name swapped for the user's. It opens with the pick: set `CONTEXT` to the user's own words about the name. When several entities fit it returns `ask` and runs nothing else. Show those options to the user, then run it again with `ID` set to the pick. Build date windows from `arcmira.daysAgo(n)` and `arcmira.today()`.\n\n### What one person said about a topic, with clip boundaries\n\n```javascript\nconst NAME = \"Chamath\", CONTEXT = undefined, ID = null;   // CONTEXT: the user's own words about the name, never a guess. After an ask, set ID to the picked option's id and run again\nconst r = ID ? null : await arcmira.resolve(NAME, { type: \"person\", context: CONTEXT });\nconst e = r && (r.best ?? r.suggested);\nif (r && !e) return { ask: r.ask };\nconst id = ID ?? e.id;\nconst assumed = Boolean(r?.suggested), why = r?.suggested?.evidence ?? null;\nconst hits = await arcmira.search({ query: \"Anthropic IPO\", speakerIds: [id], limit: 5 });\nconst moments = [];\nfor (const c of hits.chunks.slice(0, 2)) {\n  const moment = { episode: c.video_title, show: c.channel_name, date: c.published_at, url: c.watch_url, speakers: c.speakers_by.map(s => s.name) };\n  try {\n    const t = await arcmira.transcript(c.video_id, { start: Math.max(0, c.start_seconds - 10), end: c.start_seconds + 50 });\n    moment.clip = { start: t.lines[0]?.start ?? c.start_seconds, end: t.lines.at(-1)?.end ?? c.start_seconds + 60 };\n    moment.lines = t.lines.map(l => `[${Math.round(l.start)}s] ${l.text}`);\n  } catch (err) {\n    moment.clip = { start: c.start_seconds, end: c.start_seconds + 60 };\n    moment.passage = c.text;\n    moment.transcript = err.code;\n  }\n  moments.push(moment);\n}\nreturn { speaker: { id, name: e?.name ?? null, assumed, why }, as_of: hits.as_of, ...(moments.length ? { moments } : { none: hits.note ?? null }) };\n```\n\n## A good answer\n\n- Names the speaker or show it searched, with the id, and quotes the words exactly as the transcript lines give them, trimmed to whole sentences, never paraphrased inside quotation marks.\n- Gives the show, the episode title, the date, and the speaker when the chunk or a premium transcript names one.\n- Links the `watch_url`, which starts at the moment, and gives a clip start and end in seconds from the transcript lines.\n- Says so when nothing matched, with `as_of`, instead of offering a quote from memory.\n\n## Traps\n\n- `search` ranks by the words in `query`; put the distinctive words of the phrase there, not a paraphrase.\n- A chunk found with `speakerIds` can include other people's lines. Lines start with \"Name: \" when the speaker is known. Quote only the speaker's lines (\"Chamath Palihapitiya: ...\"), never the whole passage. When no line names a speaker, the passage still matched that person; say the attribution covers the passage, not each line.\n- Caption lines are machine text: fix nothing inside the quotation marks. A premium transcript (`quality: \"premium\"`, paid plans) adds speaker ids into `speakers[]`.\n- A caption read uses 4 credits per started 15 minutes of its `start`/`end` window, and of the whole episode without one. A Premium read uses credits for the whole video whatever the window.\n- Some videos have no readable caption track yet (`transcript_unavailable`, `transcript_fetching`); quote the search chunk `text` for those and say the words come from the search passage.\n\nDocs: https://arcmira.com/docs/mcp-server\n\n## After the answer\n\nMonitors can follow what a research turn found, and each alert uses 25 credits from the account's plan, then its on-demand budget. The `company-watch` skill sets one up.\n\nIf anything was wrong, slow, or missing for the user, or they want a source or capability Arcmira lacks, send one arcmira_feedback.\n",
+  "file_names": [
+   "SKILL.md"
+  ],
+  "repo_license": "Apache-2.0",
+  "license_file": "plugins/arcmira/LICENSE",
+  "license_evidence": [
+   {
+    "label": "Apache-2.0",
+    "file": "plugins/arcmira/LICENSE"
+   }
+  ],
+  "repo": "arcmira/mcp",
+  "repo_key": "arcmira/mcp",
+  "branch": "master",
+  "commit_date": "2026-10-22T18:17:18-07:00",
+  "commit_sha": "557fc76b697a2eaf1fee3bbfae90f25181ae2e93",
+  "lists": []
+ },
+ {
+  "skill_md_bytes": 6205,
+  "fm_error": null,
+  "name": "person-research",
+  "description": "Researches a person across podcasts and YouTube for interview or meeting prep: where they appeared, their own words, who discusses them. Uses arcmira.",
+  "fm_license": null,
+  "compatibility": null,
+  "allowed_tools": null,
+  "display_name": null,
+  "fm_version": null,
+  "fm_author": null,
+  "body_lines": 89,
+  "body_words": 893,
+  "headings": [
+   [
+    1,
+    "Person research"
+   ],
+   [
+    2,
+    "When to use"
+   ],
+   [
+    2,
+    "Pick the entity the user meant"
+   ],
+   [
+    2,
+    "Worked program"
+   ],
+   [
+    3,
+    "Prep on one person"
+   ],
+   [
+    2,
+    "A good answer"
+   ],
+   [
+    2,
+    "Traps"
+   ],
+   [
+    2,
+    "After the answer"
+   ]
+  ],
+  "dir": "plugins/arcmira/skills/person-research",
+  "folder": "person-research",
+  "file_count": 1,
+  "files_sample": [
+   "SKILL.md"
+  ],
+  "has_scripts": false,
+  "has_references": false,
+  "has_assets": false,
+  "script_langs": {},
+  "env_read": [],
+  "env_docs": [],
+  "network": false,
+  "api_hosts": [],
+  "mcp": false,
+  "mcp_tools": [],
+  "captcha_files": false,
+  "run_commands": [],
+  "policy_text": "# Person research\n\nThree lenses on one person id. `momentum` gives attention and the shows that mention them most. `mentions` with `mode: \"appearances\"` lists the episodes they were on. `search` with `speakerIds` returns their own words; `about` returns what others said about them.\n\nRun each program with `arcmira_execute_read`; `arcmira_describe` has the method reference.\n\n## When to use\n\n- prep for an interview, a podcast booking or a meeting with someone\n- what has a person said recently, and where\n- who talks about a person, and is attention rising\n\n## Pick the entity the user meant\n\nUsers give names; filters take ids only (ent_..., UC..., 11-character video ids), and a name where an id belongs throws `id_required`.\n\n1. Resolve the exact name the user said, with their own words about it as `context` (a bare \"Theo\" has none).\n2. `best` and `suggested` give the id. A `suggested` pick is an assumption: the answer names it, with `suggested.evidence` as the reason.\n3. `ask`: several entities fit, and `ask.options` goes back to the user. No answer at all: the name is not in the index.\n\nFor this task:\n\n- Resolve with `{ type: \"person\" }`. A first name alone (\"Sam\") matches many people: pass what the user said about them (runs OpenAI, hosts a show) as `context`, and when resolve still answers `ask`, show its options.\n\n## Worked program\n\nPass each block to `arcmira_execute_read` as one program (a block marked arcmira_execute_write goes to that tool), with the name swapped for the user's. It opens with the pick: set `CONTEXT` to the user's own words about the name. When several entities fit it returns `ask` and runs nothing else. Show those options to the user, then run it again with `ID` set to the pick. Build date windows from `arcmira.daysAgo(n)` and `arcmira.today()`.\n\n### Prep on one person\n\n```javascript\nconst NAME = \"Jensen Huang\", CONTEXT = undefined, ID = null;   // CONTEXT: the user's own words about the name, never a guess. After an ask, set ID to the picked option's id and run again\nconst r = ID ? null : await arcmira.resolve(NAME, { type: \"person\", context: CONTEXT });\nconst e = r && (r.best ?? r.suggested);\nif (r && !e) return { ask: r.ask };\nconst id = ID ?? e.id;\nconst assumed = Boolean(r?.suggested), why = r?.suggested?.evidence ?? null;\nconst [m, rows, own] = await Promise.all([\n  arcmira.momentum(id),\n  arcmira.mentions({ entityId: id, mode: \"appearances\", after: arcmira.daysAgo(90), limit: 40 }),\n  arcmira.search({ query: \"AI\", speakerIds: [id], after: arcmira.daysAgo(180), limit: 5 }),\n]);\nconst about = await arcmira.search({ query: m.entity.name, about: [id], after: arcmira.daysAgo(90), limit: 3 });\nconst appeared = new Map();\nfor (const x of rows.mentions) appeared.set(x.media.video_id, { show: x.media.source_channel?.name ?? null, episode: x.media.title, date: x.media.published_at });\nlet fromAppearance = null;   // no speaker-tagged chunks: read their newest appearance instead\nconst ep = own.chunks.length === 0 ? rows.mentions[0] : undefined;\nif (ep) {\n  try {\n    const t = await arcmira.transcript(ep.media.video_id, { start: Math.max(0, ep.start_seconds - 5), end: ep.start_seconds + 90 });\n    const s = Math.floor(t.lines[0]?.start ?? ep.start_seconds);\n    fromAppearance = { episode: t.video.title, show: t.video.channel_name, date: t.video.published_at, url: `${t.video.watch_url}${t.video.watch_url.includes(\"?\") ? \"&\" : \"?\"}t=${s}`, lines: t.lines.map(l => `[${Math.round(l.start)}s] ${l.text}`), speaker_labelled: t.lines.some(l => l.speaker) };\n  } catch (err) {\n    fromAppearance = { episode: ep.media.title, error: err.code };\n  }\n}\nreturn {\n  person: { id, name: m.entity.name, page: m.entity.page, assumed, why },\n  attention: { verdict: m.verdict, last_30d: m.volume.mentions_30d, prior_30d: m.volume.mentions_prior_30d, as_of: m.as_of, top_shows: m.top_shows.map(s => [s.channel_name, s.mentions]) },\n  appeared_on: [...appeared.values()].slice(0, 8),\n  appeared_on_partial: rows.has_more || appeared.size > 8,\n  appeared_on_cursor: rows.has_more ? rows.next_cursor : null,\n  in_their_words: own.chunks.map(c => ({ said: c.text.slice(0, 300), episode: c.video_title, show: c.channel_name, date: c.published_at, url: c.watch_url })),\n  from_their_appearance: fromAppearance,\n  said_about_them: about.chunks.map(c => ({ said: c.text.slice(0, 200), show: c.channel_name, date: c.published_at, url: c.watch_url })),\n};\n```\n\n## A good answer\n\n- Names the person it researched (name and id), and any other person with the same name it set aside.\n- Separates what the person said (speaker-filtered) from what others said about them, each with show, date and link.\n- Gives the attention verdict, the 30-day count against the prior 30 days, and the top shows, with `as_of`.\n- Lists recent episodes they appeared on, and ends with a few questions or themes that follow from the quotes when the user is prepping.\n\n## Traps\n\n- A search with `about` returns other people talking; only `speakerIds` returns the person's own words. Speaker tags cover part of the index, so when the speaker search is empty, read a window of an episode they appeared on and say the lines come from their appearance, since caption lines do not name the speaker.\n- A chunk found with `speakerIds` can include other people's lines. Lines start with \"Name: \" when the speaker is known. Quote only the person's lines. When no line names a speaker, say the attribution covers the passage, not each line.\n- Put the user's topic in `query` for the speaker search (it needs a word or phrase of two or more characters).\n- Mentions and momentum count the shows Arcmira indexes, not all media.\n\nDocs: https://arcmira.com/docs/mcp-server\n\n## After the answer\n\nMonitors can follow what a research turn found, and each alert uses 25 credits from the account's plan, then its on-demand budget. The `company-watch` skill sets one up.\n\nIf anything was wrong, slow, or missing for the user, or they want a source or capability Arcmira lacks, send one arcmira_feedback.\n",
+  "file_names": [
+   "SKILL.md"
+  ],
+  "repo_license": "Apache-2.0",
+  "license_file": "plugins/arcmira/LICENSE",
+  "license_evidence": [
+   {
+    "label": "Apache-2.0",
+    "file": "plugins/arcmira/LICENSE"
+   }
+  ],
+  "repo": "arcmira/mcp",
+  "repo_key": "arcmira/mcp",
+  "branch": "master",
+  "commit_date": "2026-10-22T18:17:18-07:00",
+  "commit_sha": "557fc76b697a2eaf1fee3bbfae90f25181ae2e93",
+  "lists": []
+ },
+ {
+  "skill_md_bytes": 6305,
+  "fm_error": null,
+  "name": "sponsor-research",
+  "description": "Sponsor and ad-read research on podcasts and YouTube: who sponsors a show, or which shows a brand sponsors, how often, since when. Uses arcmira.",
+  "fm_license": null,
+  "compatibility": null,
+  "allowed_tools": null,
+  "display_name": null,
+  "fm_version": null,
+  "fm_author": null,
+  "body_lines": 101,
+  "body_words": 952,
+  "headings": [
+   [
+    1,
+    "Sponsor research"
+   ],
+   [
+    2,
+    "When to use"
+   ],
+   [
+    2,
+    "Pick the entity the user meant"
+   ],
+   [
+    2,
+    "Worked program"
+   ],
+   [
+    3,
+    "A show's sponsors"
+   ],
+   [
+    3,
+    "The shows a brand sponsors, last 90 days"
+   ],
+   [
+    2,
+    "A good answer"
+   ],
+   [
+    2,
+    "Traps"
+   ],
+   [
+    2,
+    "After the answer"
+   ]
+  ],
+  "dir": "plugins/arcmira/skills/sponsor-research",
+  "folder": "sponsor-research",
+  "file_count": 1,
+  "files_sample": [
+   "SKILL.md"
+  ],
+  "has_scripts": false,
+  "has_references": false,
+  "has_assets": false,
+  "script_langs": {},
+  "env_read": [],
+  "env_docs": [],
+  "network": false,
+  "api_hosts": [],
+  "mcp": false,
+  "mcp_tools": [],
+  "captcha_files": false,
+  "run_commands": [],
+  "policy_text": "# Sponsor research\n\nTwo directions. A show to its sponsors: `arcmira.sponsors(channelId)` ranks recurring sponsors by ad reads with first and last seen dates. A brand to the shows it sponsors: `arcmira.recommendations(entityId, { kind: \"sponsored\" })` lists each ad read, which the program groups by show.\n\nRun each program with `arcmira_execute_read`; `arcmira_describe` has the method reference.\n\n## When to use\n\n- who sponsors a show, how many ad reads, since when, still active\n- which shows a brand sponsors or advertises on, and how often\n- sponsors two shows share (sponsors of each, then intersect by entity.id)\n\n## Pick the entity the user meant\n\nUsers give names; filters take ids only (ent_..., UC..., 11-character video ids), and a name where an id belongs throws `id_required`.\n\n1. Resolve the exact name the user said, with their own words about it as `context` (a bare \"Theo\" has none).\n2. `best` and `suggested` give the id. A `suggested` pick is an assumption: the answer names it, with `suggested.evidence` as the reason.\n3. `ask`: several entities fit, and `ask.options` goes back to the user. No answer at all: the name is not in the index.\n\nFor this task:\n\n- A show resolves with `{ type: \"channel\" }`; its id is `youtube_channel_id` (a UC id).\n- A brand resolves with no type (a company can be typed product). A sponsor is a company: a person or a topic with the same name (\"Freddie Mercury\") is not the brand.\n- When two company rows compete, the one with ad reads is the sponsor: run the brand program for each and keep the one with reads.\n\n## Worked program\n\nPass each block to `arcmira_execute_read` as one program (a block marked arcmira_execute_write goes to that tool), with the name swapped for the user's. It opens with the pick: set `CONTEXT` to the user's own words about the name. When several entities fit it returns `ask` and runs nothing else. Show those options to the user, then run it again with `ID` set to the pick. Build date windows from `arcmira.daysAgo(n)` and `arcmira.today()`.\n\n### A show's sponsors\n\n```javascript\nconst NAME = \"TBPN\", CONTEXT = undefined, ID = null;   // CONTEXT: the user's own words about the name, never a guess. After an ask, set ID to the picked option's channel_id and run again\nconst r = ID ? null : await arcmira.resolve(NAME, { type: \"channel\", context: CONTEXT });\nconst e = r && (r.best ?? r.suggested);\nif (r && !e) return { ask: r.ask && { question: r.ask.question, options: r.ask.options.map(o => ({ ...o, channel_id: r.candidates.find(c => c.id === o.id)?.youtube_channel_id ?? null })) } };\nconst id = ID ?? e.youtube_channel_id;\nconst assumed = Boolean(r?.suggested), why = r?.suggested?.evidence ?? null;\nconst s = await arcmira.sponsors(id);   // limit is a Pro+ filter; slice instead\nreturn {\n  show: s.channel.name, channel_id: id, page: s.channel.page, assumed, why, sponsors_total: s.meta.total,\n  sponsors: s.sponsors.slice(0, 10).map(x => ({ name: x.entity.name, id: x.entity.id, page: x.entity.page, ad_reads: x.ad_reads, episodes: x.videos, first_seen: x.first_seen, last_seen: x.last_seen, status: x.sponsor_status?.status ?? null })),\n};\n```\n\n### The shows a brand sponsors, last 90 days\n\n```javascript\nconst NAME = \"Mercury\", CONTEXT = undefined, ID = null;   // CONTEXT: the user's own words about the name, never a guess. After an ask, set ID to the picked option's id and run again\nconst r = ID ? null : await arcmira.resolve(NAME, { context: CONTEXT });\nconst e = r && (r.best ?? r.suggested);\nif (r && !e) return { ask: r.ask };\nconst id = ID ?? e.id;\nconst assumed = Boolean(r?.suggested), why = r?.suggested?.evidence ?? null;\nconst after = arcmira.daysAgo(90);\nconst reads = [];\nlet cursor, entity, window;\ndo {\n  const page = await arcmira.recommendations(id, { kind: \"sponsored\", after, limit: 100, cursor });\n  entity = page.entity;\n  window = page.window;\n  reads.push(...page.recommendations);\n  cursor = page.has_more ? page.next_cursor : undefined;\n} while (cursor && reads.length < 500);\nconst shows = new Map();\nfor (const x of reads) {\n  const name = x.media.source_channel?.name ?? x.media.channel_id;\n  const row = shows.get(name) ?? { show: name, channel_id: x.media.channel_id, ad_reads: 0, episodes: new Set(), latest: \"\" };\n  row.ad_reads += 1;\n  row.episodes.add(x.media.video_id);\n  if (x.media.published_at > row.latest) row.latest = x.media.published_at;\n  shows.set(name, row);\n}\nreturn {\n  brand: { id, name: entity?.name ?? e?.name ?? null, type: entity?.type ?? e?.type ?? null, assumed, why }, window, ad_reads_total: reads.length,\n  shows: [...shows.values()].sort((a, b) => b.ad_reads - a.ad_reads).slice(0, 10).map(s => ({ ...s, episodes: s.episodes.size })),\n  sample_read: reads[0] ? { said: reads[0].verbatim_quote, show: reads[0].media.source_channel?.name ?? null, date: reads[0].media.published_at, promo_code: reads[0].promo_code } : null,\n};\n```\n\n## A good answer\n\n- Names the brand or show it used, with its type and id, and any look-alike it set aside.\n- Ranks sponsors (or shows) by ad reads and gives the counts, first and last seen dates, and the sponsor status.\n- States the window and the as-of date, and that counts cover the shows Arcmira indexes.\n- Quotes one ad read verbatim with its promo code when there is one, and links each name to the `page` the result carries.\n\n## Traps\n\n- `recommendations` can return `recommendations_not_enabled`. Explain the account-access limit and required tier reported by the API; a channel sponsor list does not answer which shows recommend a brand.\n- An ad read is sponsored; an unpaid on-air endorsement is `kind: \"organic\"`. Do not mix them in one count.\n- Page with `cursor` until `has_more` is false before you count reads; one page is at most 100 rows.\n\nDocs: https://arcmira.com/docs/mcp-server\n\n## After the answer\n\nMonitors can follow what a research turn found, and each alert uses 25 credits from the account's plan, then its on-demand budget. The `company-watch` skill sets one up.\n\nIf anything was wrong, slow, or missing for the user, or they want a source or capability Arcmira lacks, send one arcmira_feedback.\n",
+  "file_names": [
+   "SKILL.md"
+  ],
+  "repo_license": "Apache-2.0",
+  "license_file": "plugins/arcmira/LICENSE",
+  "license_evidence": [
+   {
+    "label": "Apache-2.0",
+    "file": "plugins/arcmira/LICENSE"
+   }
+  ],
+  "repo": "arcmira/mcp",
+  "repo_key": "arcmira/mcp",
+  "branch": "master",
+  "commit_date": "2026-10-22T18:17:18-07:00",
+  "commit_sha": "557fc76b697a2eaf1fee3bbfae90f25181ae2e93",
+  "lists": []
+ }
+]

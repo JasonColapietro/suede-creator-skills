@@ -6,7 +6,7 @@
 
 Editorial selection highlights a project’s workflow and accepted scope. It is separate from structural quality grades, security certification and README-badge verification. A plugin feature does not add its contents to the scored skill catalog.
 
-Selections updated **2026-10-25**. [View on Suede AI](https://skills.suedeai.ai/directory/featured/).
+Selections updated **2026-10-27**. [View on Suede AI](https://skills.suedeai.ai/directory/featured/).
 
 - [Appie](#appie)
 - [CoalWash](#coalwash)
@@ -149,6 +149,32 @@ Inspect skill instructions and bundled code for known prompt-injection, exfiltra
 Use the reviewed 2.3.1 release with verified dependency pins. Exclude the hijacked litellm 1.107.0 release and correct the certifi version in Cisco’s attached release lock. For local source review, disable hosted analyzers and behavioral alignment verification, use a network-disabled container, and retain every finding and error. Automated detection is best effort and does not certify a skill. This is an independent editorial selection, not a Cisco partnership.
 
 [Repository](https://github.com/cisco-ai-defense/skill-scanner) · [Intake review](../directory/reviews/2026-10-25-cisco-skill-scanner.md) · [Reviewed source c615acb](https://github.com/cisco-ai-defense/skill-scanner/tree/c615acb70994cdf3f4ba54d955fef2e92ac84437) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#cisco-skill-scanner)
+
+---
+
+## Directory members
+
+Publisher membership with a defined skill scope. Linked reviews retain quality scores and scan findings.
+
+<a id="arcmira"></a>
+
+### Arcmira
+
+**Suede Directory Member** · Apache-2.0 · Plugin skills
+
+Six plugin skills for transcript search, timestamped quotes, people and sponsor research, show comparisons, and company monitoring.
+
+- [arcmira](https://github.com/arcmira/mcp/blob/557fc76b697a2eaf1fee3bbfae90f25181ae2e93/plugins/arcmira/skills/arcmira/SKILL.md): Search transcripts, mentions and recommendations with Arcmira.
+- [company-watch](https://github.com/arcmira/mcp/blob/557fc76b697a2eaf1fee3bbfae90f25181ae2e93/plugins/arcmira/skills/company-watch/SKILL.md): Research company mentions and configure requested monitoring.
+- [compare-shows](https://github.com/arcmira/mcp/blob/557fc76b697a2eaf1fee3bbfae90f25181ae2e93/plugins/arcmira/skills/compare-shows/SKILL.md): Compare two shows by topics, coverage and shared sponsors.
+- [find-quotes](https://github.com/arcmira/mcp/blob/557fc76b697a2eaf1fee3bbfae90f25181ae2e93/plugins/arcmira/skills/find-quotes/SKILL.md): Find spoken quotes with source links and timestamps.
+- [person-research](https://github.com/arcmira/mcp/blob/557fc76b697a2eaf1fee3bbfae90f25181ae2e93/plugins/arcmira/skills/person-research/SKILL.md): Prepare research on a person across podcasts and YouTube.
+- [sponsor-research](https://github.com/arcmira/mcp/blob/557fc76b697a2eaf1fee3bbfae90f25181ae2e93/plugins/arcmira/skills/sponsor-research/SKILL.md): Research show sponsors and the shows a brand sponsors.
+
+Requires an Arcmira account and its hosted MCP connection. Research queries go to Arcmira; metered reads and monitor alerts use account credits. The linked source and Apache-2.0 license cover these six plugin skills.
+
+[Repository](https://github.com/arcmira/mcp) · [Skill review](../directory/reviews/2026-10-27-arcmira.md) · [Plugin license](https://github.com/arcmira/mcp/blob/557fc76b697a2eaf1fee3bbfae90f25181ae2e93/plugins/arcmira/LICENSE) · [Suede Directory Member](https://skills.suedeai.ai/directory/featured/#arcmira)
+
 
 ---
 
