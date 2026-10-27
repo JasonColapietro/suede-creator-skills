@@ -105,7 +105,7 @@
     "tests/test_linkedin.py"
   ],
   "manual_policy_disposition": "http_999_hold_resolved_at_accepted_revision",
-  "admission_disposition": "manual_review_complete_pending_exact_head_repository_checks",
+  "admission_disposition": "hold_retained_critical_scanner_finding",
   "security_review": {
     "scope": "Four-file accepted delta, unchanged transport/integrity/export safeguards, 16 offline security regressions, and HTTP-999 blocked-response regression.",
     "external_automated_scan": "completed",
@@ -121,7 +121,7 @@
     },
     "raw_evidence_sha256": "fc54beb225325f66c17ad05cea2d8ce0166e44801c086292fc24a38d2754fd2a",
     "files_verified": 35,
-    "manual_triage": "All six findings reviewed and retained; no confirmed vulnerability in the matched source. The raw failed verdict is unchanged.",
+    "manual_triage": "All six findings reviewed and retained; no confirmed vulnerability in the matched source. Manual counterevidence is not formal clearance. The raw failed verdict and active critical finding remain unchanged.",
     "scanner_tools_revision": "fe5dc1757cd6c8ff63aee853564249c00151778d",
     "scanner_tools_sha256": {
       "worker.py": "9b0423ead91a083b4929f436511983f084b4233a1ca75ce685fa2dd300fc3c0d",
@@ -134,7 +134,9 @@
     "runtime_image": "sha256:dba2e462e3001b0a6fe355fae191566aad6236ff9ed99118d61ebc834e8db24b",
     "source_acquisition": "Local git ls-tree/cat-file at exact accepted revision after URL acquisition failed; every Git blob and all 35 SHA-256 hashes independently matched.",
     "runtime_setup": "Hash-required wheels downloaded with host certificate verification, installed offline in immutable-base container. Temporary Dockerfile uses offline wheelhouse and read-only adapter permissions. Runtime: network none, source read-only, UID 65534, no capabilities, no new privileges, pids/memory/CPU limits.",
-    "self_test": "Clean fixture passed; synthetic exfiltration fixture failed with retained findings; both complete coverage."
+    "self_test": "Clean fixture passed; synthetic exfiltration fixture failed with retained findings; both complete coverage.",
+    "release_disposition": "hold_admission_feature_merge_deployment_and_social_publication",
+    "policy_disposition": "No shipped external-scan false-positive waiver was found. The scanner adapter derives failed from retained critical/high findings. Structural score and editorial selection do not waive the active flag; README-badge partner verification is absent."
   },
   "checks_evidence": {
     "python_version": "3.12.14",
