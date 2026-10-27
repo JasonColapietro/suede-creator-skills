@@ -1,0 +1,19 @@
+{
+  "id": "goose-cli-license",
+  "product_id": "goose",
+  "edition_id": "cli",
+  "type": "source_inspection",
+  "observed_at": "2026-10-27T05:15:00Z",
+  "reviewer": "Codex editorial source review",
+  "source": {
+    "url": "https://github.com/aaif-goose/goose/blob/2c6812a358db1b11953b9fafc05c6126eb818788/LICENSE",
+    "locator": "Apache 2.0 terms and copyright notice",
+    "revision": "2c6812a358db1b11953b9fafc05c6126eb818788",
+    "blob_sha": "c83043d4494071fbd93ef245a14e573c5a8280c4",
+    "content_sha256": "44459b86c2e96fdbfd8a6b5c33d30d4b04b5293fcb2ec96fe4dcc4e0f90b8962"
+  },
+  "observations": [
+    "Contains Apache 2.0 license terms and a 2024 Block, Inc. copyright notice."
+  ],
+  "record_sha256": "fae4b7ca3bbf07ce3565c177274309b22b47e605ab03723b43c798a750ad99be"
+}

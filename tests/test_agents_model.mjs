@@ -6,6 +6,21 @@ import { createHash } from 'node:crypto';
 const moduleUrl = new URL('../scripts/directory/agents-model.mjs', import.meta.url);
 const hasModel = fs.existsSync(moduleUrl);
 const model = hasModel ? await import(moduleUrl) : {};
+test('published intake includes real repository and hosted editions with honest assessment states', () => {
+  const m = model.loadAgentCatalog(new URL('..', import.meta.url).pathname);
+  assert.ok(m, 'agent catalog must exist');
+  assert.deepEqual(m.products.map(p => p.id).sort(), ['cline', 'devin', 'goose']);
+  assert.ok(m.editions.some(e => e.source));
+  assert.ok(m.editions.some(e => e.deployment === 'hosted' && e.terms_url));
+  for (const e of m.editions) {
+    assert.equal(e.performance.status, 'not_tested');
+    assert.equal(e.security.status, 'not_assessed');
+    for (const a of Object.values(e.assessments)) {
+      assert.equal(a.total, 10);
+      if (a.status !== 'assessed') assert.equal(a.score, null);
+    }
+  }
+});
 const DOC = ['tasks', 'boundaries', 'setup', 'prerequisites', 'models', 'example', 'tools', 'permissions', 'recovery', 'support'];
 const REPO = ['license', 'attribution', 'revision', 'distribution', 'dependencies', 'resolved_dependencies', 'tests', 'ci', 'changes', 'security_policy'];
 const HOST = ['terms', 'pricing', 'retention', 'training', 'authentication', 'permissions', 'audit_export', 'deletion_revocation', 'status', 'changes'];

@@ -1,0 +1,47 @@
+name: Agent listing or evidence review
+description: Add, recheck, correct or remove a specific runnable AI agent edition.
+title: "[Agent] "
+body:
+  - type: dropdown
+    id: request
+    attributes:
+      label: Request
+      options: [Add, Recheck, Correct, Remove]
+    validations:
+      required: true
+  - type: input
+    id: official
+    attributes:
+      label: Official product URL
+      description: Public official HTTPS page, not a tracking or login URL containing secrets.
+    validations:
+      required: true
+  - type: input
+    id: edition
+    attributes:
+      label: Exact product and edition
+      description: For example, CLI, desktop application or hosted cloud service.
+    validations:
+      required: true
+  - type: dropdown
+    id: deployment
+    attributes:
+      label: Deployment
+      options: [Local, Self-hosted, Hosted]
+    validations:
+      required: true
+  - type: input
+    id: repository
+    attributes:
+      label: Public source repository and revision (if available)
+      description: Optional for hosted agents. A source revision is not a deployed-service version.
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence and requested change
+      description: Link public setup, license/terms, permission and cost disclosures. For corrections/removal, link the listing and explain the exact issue. Do not post tokens, private data or unverified performance/safety scores.
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: Documentation, repository evidence and hosted disclosures are reviewed separately. Submitting does not run the agent, prove security or guarantee admission.

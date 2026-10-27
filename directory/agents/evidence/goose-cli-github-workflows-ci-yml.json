@@ -1,0 +1,19 @@
+{
+  "id": "goose-cli-github-workflows-ci-yml",
+  "product_id": "goose",
+  "edition_id": "cli",
+  "type": "source_inspection",
+  "observed_at": "2026-10-27T05:15:00Z",
+  "reviewer": "Codex editorial source review",
+  "source": {
+    "url": "https://github.com/aaif-goose/goose/blob/2c6812a358db1b11953b9fafc05c6126eb818788/.github/workflows/ci.yml",
+    "locator": "rust-build-and-test and rust-build-and-test-roaming",
+    "revision": "2c6812a358db1b11953b9fafc05c6126eb818788",
+    "blob_sha": "23070bdaa2e91740dc4896c9e4d75a1d4e96483d",
+    "content_sha256": "7319bed1c57b62e70079db50053920d20c457ca40bc04c47151d10c6105b0f5a"
+  },
+  "observations": [
+    "Defines locked Cargo test and CLI roaming build/test commands. Presence is not a CI success or runtime reliability claim."
+  ],
+  "record_sha256": "d4f79d355f7f4a2998c8db02905cbf8310b76a79f742bcac228f71f8ab7089b5"
+}
