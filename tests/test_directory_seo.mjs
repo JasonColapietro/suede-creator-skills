@@ -171,7 +171,24 @@ test("the hub declares Suede AI with sameAs, and the methodology names its autho
   const hub = parsed(byRel.get("directory/"))[0];
   assert.equal(hub.publisher["@id"], "https://suedeai.ai/#organization");
   assert.equal(hub.publisher.name, "Suede AI");
-  for (const u of ["https://suedeai.agency/", "https://suedeai.app/", "https://github.com/Suede-AI"]) assert.ok(hub.publisher.sameAs.includes(u), `hub sameAs lacks ${u}`);
+  for (const u of ["https://www.wikidata.org/wiki/Q141169484", "https://suedeai.org/", "https://github.com/Suede-AI"]) assert.ok(hub.publisher.sameAs.includes(u), `hub sameAs lacks ${u}`);
+  for (const rel of ["directory/", "directory/methodology/"]) {
+    const graph = parsed(byRel.get(rel));
+    const publisher = graph[0].publisher;
+    for (const alias of ["https://suedeai.app/", "https://suedeai.agency/"]) {
+      assert.ok(!publisher.sameAs.includes(alias), `${rel}: product/practice alias is not the company`);
+    }
+    const app = graph.find((node) => node["@id"] === "https://agents.suedeai.ai/#app");
+    assert.equal(app?.["@type"], "SoftwareApplication");
+    assert.equal(app.url, "https://agents.suedeai.ai");
+    assert.deepEqual(app.sameAs, ["https://suedeai.app/"]);
+    assert.equal(app.publisher["@id"], publisher["@id"]);
+    const practice = graph.find((node) => node["@id"] === "https://seo.suedeai.ai/#organization");
+    assert.equal(practice?.["@type"], "ProfessionalService");
+    assert.equal(practice.url, "https://seo.suedeai.ai/");
+    assert.deepEqual(practice.sameAs, ["https://suedeai.agency/"]);
+    assert.equal(practice.parentOrganization["@id"], publisher["@id"]);
+  }
   const method = byRel.get("directory/methodology/");
   const node = parsed(method)[0];
   assert.equal(node.author["@type"], "Person");
