@@ -11,7 +11,7 @@ const data = JSON.parse(read('directory/featured-projects.json'));
 const published = () => read('docs/directory/featured/index.html');
 
 test('editorial projects preserve accepted scopes and resolve their reviewed evidence', () => {
-  assert.deepEqual(data.projects.map((p) => p.repo), ['appierun/appie-mcp', 'TheColliery/CoalWash', 'costory-io/costory-finops-mcp-skills', 'cwong5/extra-caffeine-mcp', 'MelMayssonOwen/agent-skills', 'cisco-ai-defense/skill-scanner']);
+  assert.deepEqual(data.projects.map((p) => p.repo), ['appierun/appie-mcp', 'TheColliery/CoalWash', 'costory-io/costory-finops-mcp-skills', 'cwong5/extra-caffeine-mcp', 'MelMayssonOwen/agent-skills', 'cisco-ai-defense/skill-scanner', 'umutyesildal/berlin-job-search']);
   const page = published();
   const appie = page.split('id="appie"')[1].split('</article>')[0];
   const links = [...appie.matchAll(/href="(\.\.\/appierun\/appie-mcp\/[^"/]+\/)"/g)].map((m) => m[1]);
@@ -47,8 +47,8 @@ test('featured page has a discoverable route, truthful structured data and selec
   assert.equal((page.match(/<h1[ >]/g) || []).length, 1);
   const blocks = [...page.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map((m) => JSON.parse(m[1]));
   const collection = blocks.find((x) => x['@type'] === 'CollectionPage');
-  assert.equal(collection.mainEntity.numberOfItems, 6);
-  assert.deepEqual(collection.mainEntity.itemListElement.map((p) => p.name), ['Appie', 'CoalWash', 'Costory', 'Extra Caffeine', 'Opsibyte', 'Cisco AI Defense Skill Scanner']);
+  assert.equal(collection.mainEntity.numberOfItems, 7);
+  assert.deepEqual(collection.mainEntity.itemListElement.map((p) => p.name), ['Appie', 'CoalWash', 'Costory', 'Extra Caffeine', 'Opsibyte', 'Cisco AI Defense Skill Scanner', 'Berlin Job Search']);
   assert.match(page, /README-badge verification is tracked separately/);
   assert.match(page, /href="\.\.\/submit\/"/);
   assert.match(page, /href="\.\.\/methodology\/"/);
@@ -139,4 +139,27 @@ test('Costory features the four requested upstream skills with their source-deri
     assert.ok(listing.includes(`https://github.com/${evidence[0].source}/blob/${evidence[0].commit}/${evidence[0].path}`));
     assert.match(read(`docs/directory/${project.repo}/${record.slug}/badge.svg`), /Suede Skill Check: Grade B/);
   }
+});
+
+
+test('Berlin features only the accepted skill and preserves score and security boundaries', () => {
+  const catalog = JSON.parse(read('directory/skills.json'));
+  const evidence = JSON.parse(read('directory/intake/berlin-job-search-2026-10-27.json'));
+  const project = data.projects.find((p) => p.id === 'berlin-job-search');
+  assert.ok(project, 'Berlin editorial selection');
+  assert.equal(project.commit, evidence.source_revision);
+  const records = catalog.skills.filter((s) => s.repo === project.repo);
+  assert.deepEqual(records.map((s) => s.name), ['berlin-job-search']);
+  assert.deepEqual(project.skills.map((s) => s.id), ['berlin-job-search']);
+  assert.equal(catalog.repos[project.repo].commit_sha, project.commit);
+  assert.equal(records[0].score, 84);
+  assert.equal(records[0].score, qualityScore(records[0], catalog.repos[project.repo], catalog.generated));
+  assert.equal(records[0].security_scan_status, 'not_scanned');
+  const feature = published().split('id="berlin-job-search"')[1].split('</article>')[0];
+  assert.match(feature, /Python 3.9/);
+  assert.match(feature, /User Agreement/);
+  assert.match(feature, /not_scanned/);
+  assert.match(feature, /href="..\/umutyesildal\/berlin-job-search\/berlin-job-search\/"/);
+  const promotion = JSON.parse(read('directory/promotion.json'));
+  assert.ok(!Object.keys(promotion.verifications).some((id) => id.startsWith('umutyesildal/berlin-job-search/')));
 });

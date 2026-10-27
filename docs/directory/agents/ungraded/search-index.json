@@ -1,0 +1,1606 @@
+{
+  "schema_version": 1,
+  "kind": "ungraded-agent",
+  "generated": "2026-10-27",
+  "entries": [
+    {
+      "id": "11x-alice",
+      "name": "11x Alice",
+      "summary": "Outbound sales-development agent that identifies target accounts, researches prospects, personalizes outreach, handles replies, and books meetings through configured multichannel sequences and a company knowledge base.",
+      "tasks": [
+        "sales"
+      ],
+      "deployments": [
+        "hosted"
+      ],
+      "sourceAvailability": "not-reviewed",
+      "officialUrl": "https://docs.11x.ai/alice/overview",
+      "repositoryUrl": null,
+      "sourceUrls": [
+        "https://docs.11x.ai/alice/overview"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "ada",
+      "name": "Ada",
+      "summary": "Customer-service agents for voice, messaging, and email that use configured playbooks and connected systems to answer questions and carry out customer tasks across business workflows.",
+      "tasks": [
+        "customer-support"
+      ],
+      "deployments": [
+        "hosted"
+      ],
+      "sourceAvailability": "not-reviewed",
+      "officialUrl": "https://www.ada.cx/",
+      "repositoryUrl": null,
+      "sourceUrls": [
+        "https://www.ada.cx/"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "agent-s",
+      "name": "Agent S",
+      "summary": "Agent S is a computer-use agent that interprets screenshots and carries out plain-language tasks by clicking, typing and scrolling through desktop and web applications.",
+      "tasks": [
+        "computer-use",
+        "browser-automation"
+      ],
+      "deployments": [
+        "local"
+      ],
+      "sourceAvailability": "public-source",
+      "officialUrl": "https://github.com/simular-ai/Agent-S",
+      "repositoryUrl": "https://github.com/simular-ai/Agent-S",
+      "sourceUrls": [
+        "https://raw.githubusercontent.com/simular-ai/Agent-S/main/README.md",
+        "https://github.com/simular-ai/Agent-S"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "agent-zero",
+      "name": "Agent Zero",
+      "summary": "Agent Zero provides a runnable assistant with a Dockerized Linux desktop, browser, document tools and project memory, delegating research, coding and analysis to subagents.",
+      "tasks": [
+        "general-assistant",
+        "computer-use",
+        "coding"
+      ],
+      "deployments": [
+        "local",
+        "self-hosted"
+      ],
+      "sourceAvailability": "public-source",
+      "officialUrl": "https://agent-zero.ai",
+      "repositoryUrl": "https://github.com/agent0ai/agent-zero",
+      "sourceUrls": [
+        "https://raw.githubusercontent.com/agent0ai/agent-zero/main/README.md",
+        "https://github.com/agent0ai/agent-zero"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "agenticseek",
+      "name": "AgenticSeek",
+      "summary": "AgenticSeek combines local-model task planning, web browsing and code execution, routing requests between specialized agents to carry out multi-step work on the user's machine.",
+      "tasks": [
+        "browser-automation",
+        "coding",
+        "general-assistant"
+      ],
+      "deployments": [
+        "local",
+        "self-hosted"
+      ],
+      "sourceAvailability": "public-source",
+      "officialUrl": "https://fosowl.github.io/agenticSeek.html",
+      "repositoryUrl": "https://github.com/Fosowl/agenticSeek",
+      "sourceUrls": [
+        "https://raw.githubusercontent.com/Fosowl/agenticSeek/main/README.md",
+        "https://github.com/Fosowl/agenticSeek"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "aider",
+      "name": "Aider",
+      "summary": "Aider is a terminal coding assistant that maps codebases, edits files, integrates with Git, and can run linters and tests after changes.",
+      "tasks": [
+        "coding"
+      ],
+      "deployments": [
+        "local"
+      ],
+      "sourceAvailability": "public-source",
+      "officialUrl": "https://aider.chat",
+      "repositoryUrl": "https://github.com/Aider-AI/aider",
+      "sourceUrls": [
+        "https://github.com/Aider-AI/aider"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "aisdr-ami",
+      "name": "AiSDR Ami",
+      "summary": "Sales outreach agent that researches potential buyers, prepares personalized messages, and supports outbound campaigns and meeting generation, with connections to sales systems including HubSpot and Salesforce.",
+      "tasks": [
+        "sales"
+      ],
+      "deployments": [
+        "hosted"
+      ],
+      "sourceAvailability": "not-reviewed",
+      "officialUrl": "https://aisdr.com/",
+      "repositoryUrl": null,
+      "sourceUrls": [
+        "https://aisdr.com/"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "aisera-assistant",
+      "name": "Aisera Assistant",
+      "summary": "Enterprise assistant that uses company data and connected applications to carry out employee-service tasks, including ticket resolution, system updates, access provisioning, and cross-department workflow execution.",
+      "tasks": [
+        "workflow",
+        "customer-support"
+      ],
+      "deployments": [
+        "hosted"
+      ],
+      "sourceAvailability": "not-reviewed",
+      "officialUrl": "https://www.automationanywhere.com/products/ai-assistant",
+      "repositoryUrl": null,
+      "sourceUrls": [
+        "https://www.automationanywhere.com/products/ai-assistant"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "artisan-ava",
+      "name": "Artisan Ava",
+      "summary": "Outbound sales-development agent that identifies prospects, runs email and social outreach campaigns, and manages scheduling and follow-ups, with targeting informed by prospect and company data.",
+      "tasks": [
+        "sales"
+      ],
+      "deployments": [
+        "hosted"
+      ],
+      "sourceAvailability": "not-reviewed",
+      "officialUrl": "https://www.artisan.co/",
+      "repositoryUrl": null,
+      "sourceUrls": [
+        "https://www.artisan.co/"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "autogpt",
+      "name": "AutoGPT",
+      "summary": "AutoGPT provides a runnable team of task-specialized agents coordinated through conversation, with connected applications, recurring work and a visual workflow builder for repeatable processes.",
+      "tasks": [
+        "general-assistant",
+        "workflow"
+      ],
+      "deployments": [
+        "self-hosted",
+        "hosted"
+      ],
+      "sourceAvailability": "public-source",
+      "officialUrl": "https://agpt.co",
+      "repositoryUrl": "https://github.com/Significant-Gravitas/AutoGPT",
+      "sourceUrls": [
+        "https://raw.githubusercontent.com/Significant-Gravitas/AutoGPT/master/README.md",
+        "https://github.com/Significant-Gravitas/AutoGPT"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "browser-use",
+      "name": "Browser Use",
+      "summary": "Browser Use supplies a runnable browser agent through a CLI and Python library, supporting local browser tasks as well as a hosted agent service.",
+      "tasks": [
+        "browser-automation"
+      ],
+      "deployments": [
+        "local",
+        "hosted"
+      ],
+      "sourceAvailability": "public-source",
+      "officialUrl": "https://browser-use.com",
+      "repositoryUrl": "https://github.com/browser-use/browser-use",
+      "sourceUrls": [
+        "https://raw.githubusercontent.com/browser-use/browser-use/main/README.md",
+        "https://github.com/browser-use/browser-use"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "coderabbit-agent",
+      "name": "CodeRabbit Agent",
+      "summary": "Software-development agent that uses codebase context in Slack to investigate and triage incidents or support cases, draft responses, suggest fixes, and help plan engineering work.",
+      "tasks": [
+        "coding",
+        "workflow"
+      ],
+      "deployments": [
+        "hosted"
+      ],
+      "sourceAvailability": "not-reviewed",
+      "officialUrl": "https://www.coderabbit.ai/",
+      "repositoryUrl": null,
+      "sourceUrls": [
+        "https://www.coderabbit.ai/"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "codex-cli",
+      "name": "Codex CLI",
+      "summary": "Codex CLI is OpenAI's locally running coding agent, offering a terminal interface for software-development tasks alongside documented integrations with code editors and desktop applications.",
+      "tasks": [
+        "coding"
+      ],
+      "deployments": [
+        "local"
+      ],
+      "sourceAvailability": "public-source",
+      "officialUrl": "https://github.com/openai/codex",
+      "repositoryUrl": "https://github.com/openai/codex",
+      "sourceUrls": [
+        "https://github.com/openai/codex"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "cognigy-voice-ai-agents",
+      "name": "Cognigy Voice AI Agents",
+      "summary": "Customer-service voice agents from NiCE Cognigy that handle conversational contact-center interactions, with tooling for integration, agent configuration, and deployment into enterprise customer-service workflows.",
+      "tasks": [
+        "customer-support",
+        "voice"
+      ],
+      "deployments": [
+        "hosted"
+      ],
+      "sourceAvailability": "not-reviewed",
+      "officialUrl": "https://www.cognigy.com/solutions/voice-ai-agents",
+      "repositoryUrl": null,
+      "sourceUrls": [
+        "https://www.cognigy.com/solutions/voice-ai-agents"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "crush",
+      "name": "Crush",
+      "summary": "Crush is a terminal coding agent with multiple model providers, persistent project sessions, language-server context and MCP extensions, including model switching within a session.",
+      "tasks": [
+        "coding"
+      ],
+      "deployments": [
+        "local"
+      ],
+      "sourceAvailability": "public-source",
+      "officialUrl": "https://github.com/charmbracelet/crush",
+      "repositoryUrl": "https://github.com/charmbracelet/crush",
+      "sourceUrls": [
+        "https://raw.githubusercontent.com/charmbracelet/crush/main/README.md",
+        "https://github.com/charmbracelet/crush"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "cursor-cloud-agents",
+      "name": "Cursor Cloud Agents",
+      "summary": "Coding agents that work in cloud development environments, inspect repositories, edit and test software, use browser tools, and open pull requests across supported source-control workflows.",
+      "tasks": [
+        "coding"
+      ],
+      "deployments": [
+        "hosted"
+      ],
+      "sourceAvailability": "not-reviewed",
+      "officialUrl": "https://cursor.com/docs/cloud-agent",
+      "repositoryUrl": null,
+      "sourceUrls": [
+        "https://cursor.com/docs/cloud-agent"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "databricks-genie-agents",
+      "name": "Databricks Genie Agents",
+      "summary": "Domain-specific analytics agents that answer business questions using curated data and instructions, with an agent mode for exploratory questions involving multi-step reasoning and hypothesis testing.",
+      "tasks": [
+        "data-analysis"
+      ],
+      "deployments": [
+        "hosted"
+      ],
+      "sourceAvailability": "not-reviewed",
+      "officialUrl": "https://www.databricks.com/product/genie/agents",
+      "repositoryUrl": null,
+      "sourceUrls": [
+        "https://www.databricks.com/product/genie/agents"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "decagon",
+      "name": "Decagon",
+      "summary": "Customer-experience agents for enterprise service conversations, with voice and digital-channel experiences and configuration tools for building, optimizing, and managing customer-facing automated workflows.",
+      "tasks": [
+        "customer-support"
+      ],
+      "deployments": [
+        "hosted"
+      ],
+      "sourceAvailability": "not-reviewed",
+      "officialUrl": "https://decagon.ai/",
+      "repositoryUrl": null,
+      "sourceUrls": [
+        "https://decagon.ai/"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "deepcode-hkuds",
+      "name": "DeepCode",
+      "summary": "DeepCode is a coding agent with terminal, desktop and web clients sharing local project sessions, supporting goal-driven tasks, repeatable engineering automations and paper-to-code workflows.",
+      "tasks": [
+        "coding",
+        "research"
+      ],
+      "deployments": [
+        "local"
+      ],
+      "sourceAvailability": "public-source",
+      "officialUrl": "https://github.com/HKUDS/DeepCode",
+      "repositoryUrl": "https://github.com/HKUDS/DeepCode",
+      "sourceUrls": [
+        "https://raw.githubusercontent.com/HKUDS/DeepCode/main/README.md",
+        "https://github.com/HKUDS/DeepCode"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "deerflow",
+      "name": "DeerFlow",
+      "summary": "DeerFlow is a runnable general-purpose agent application that coordinates subagents, memory, tools and execution sandboxes, with Docker and local-development deployment options.",
+      "tasks": [
+        "general-assistant",
+        "research",
+        "workflow"
+      ],
+      "deployments": [
+        "local",
+        "self-hosted"
+      ],
+      "sourceAvailability": "public-source",
+      "officialUrl": "https://deerflow.tech",
+      "repositoryUrl": "https://github.com/bytedance/deer-flow",
+      "sourceUrls": [
+        "https://raw.githubusercontent.com/bytedance/deer-flow/main/README.md",
+        "https://github.com/bytedance/deer-flow"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "elicit-research-agent",
+      "name": "Elicit Research Agent",
+      "summary": "Scientific-research agent that gathers evidence from academic and public sources and uploaded documents, producing cited reports, tables, figures, calculations, and other research artifacts for user review.",
+      "tasks": [
+        "research",
+        "data-analysis"
+      ],
+      "deployments": [
+        "hosted"
+      ],
+      "sourceAvailability": "not-reviewed",
+      "officialUrl": "https://elicit.com/",
+      "repositoryUrl": null,
+      "sourceUrls": [
+        "https://elicit.com/"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "factory-droid",
+      "name": "Factory Droid",
+      "summary": "Software-development agent used to plan, build, and validate code changes, with web access and automation features for recurring engineering work, code review, and repository documentation.",
+      "tasks": [
+        "coding"
+      ],
+      "deployments": [
+        "local",
+        "hosted"
+      ],
+      "sourceAvailability": "not-reviewed",
+      "officialUrl": "https://factory.com/",
+      "repositoryUrl": null,
+      "sourceUrls": [
+        "https://factory.com/"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "fin",
+      "name": "Fin",
+      "summary": "Customer agent from Intercom that handles service conversations across chat, voice, email, and other channels, using business knowledge and connected tools to answer questions and perform tasks.",
+      "tasks": [
+        "customer-support",
+        "sales"
+      ],
+      "deployments": [
+        "hosted"
+      ],
+      "sourceAvailability": "not-reviewed",
+      "officialUrl": "https://fin.ai/",
+      "repositoryUrl": null,
+      "sourceUrls": [
+        "https://fin.ai/"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "forethought-solve",
+      "name": "Forethought Solve Agent",
+      "summary": "Omnichannel support agent that identifies customer intent and uses knowledge articles or configured Autoflows to resolve requests, with handoffs into Forethought's ticket-triage workflow when needed.",
+      "tasks": [
+        "customer-support"
+      ],
+      "deployments": [
+        "hosted"
+      ],
+      "sourceAvailability": "not-reviewed",
+      "officialUrl": "https://forethought.ai/platform/solve",
+      "repositoryUrl": null,
+      "sourceUrls": [
+        "https://forethought.ai/platform/solve"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "gemini-cli",
+      "name": "Gemini CLI",
+      "summary": "Gemini CLI brings Google's agent to the terminal for understanding and editing codebases, troubleshooting problems, and running noninteractive development or operational workflows.",
+      "tasks": [
+        "coding",
+        "workflow"
+      ],
+      "deployments": [
+        "local"
+      ],
+      "sourceAvailability": "public-source",
+      "officialUrl": "https://geminicli.com",
+      "repositoryUrl": "https://github.com/google-gemini/gemini-cli",
+      "sourceUrls": [
+        "https://raw.githubusercontent.com/google-gemini/gemini-cli/main/README.md",
+        "https://github.com/google-gemini/gemini-cli"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "gemini-deep-research",
+      "name": "Gemini Deep Research",
+      "summary": "Research agent feature in Gemini that develops a research plan, browses sources, and synthesizes reports, optionally incorporating uploaded files and the user's selected Google Workspace content.",
+      "tasks": [
+        "research"
+      ],
+      "deployments": [
+        "hosted"
+      ],
+      "sourceAvailability": "not-reviewed",
+      "officialUrl": "https://gemini.google/overview/deep-research/",
+      "repositoryUrl": null,
+      "sourceUrls": [
+        "https://gemini.google/overview/deep-research/"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "genspark-super-agent",
+      "name": "Genspark Super Agent",
+      "summary": "General-purpose agent that breaks requests into steps, selects tools, and completes research, analysis, content, coding, and communication tasks using connected apps, files, and a cloud workspace.",
+      "tasks": [
+        "workflow",
+        "research",
+        "data-analysis"
+      ],
+      "deployments": [
+        "hosted"
+      ],
+      "sourceAvailability": "not-reviewed",
+      "officialUrl": "https://www.genspark.ai/",
+      "repositoryUrl": null,
+      "sourceUrls": [
+        "https://www.genspark.ai/helpcenter/super-agent"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "github-copilot-coding-agent",
+      "name": "GitHub Copilot cloud coding agent",
+      "summary": "GitHub-based coding agent that researches repositories, plans changes, edits files, and runs tests in a cloud development environment, integrating task delegation with issue and pull-request workflows.",
+      "tasks": [
+        "coding"
+      ],
+      "deployments": [
+        "hosted"
+      ],
+      "sourceAvailability": "not-reviewed",
+      "officialUrl": "https://docs.github.com/en/copilot/concepts/copilot-surfaces/copilot-on-github",
+      "repositoryUrl": null,
+      "sourceUrls": [
+        "https://docs.github.com/en/copilot/concepts/copilot-surfaces/copilot-on-github"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "google-jules",
+      "name": "Google Jules",
+      "summary": "Coding agent that takes repository tasks, develops a plan in a cloud environment, proposes code changes, and creates pull requests for work such as fixes and tests.",
+      "tasks": [
+        "coding"
+      ],
+      "deployments": [
+        "hosted"
+      ],
+      "sourceAvailability": "not-reviewed",
+      "officialUrl": "https://jules.google/",
+      "repositoryUrl": null,
+      "sourceUrls": [
+        "https://jules.google/"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "gorgias-ai-agent",
+      "name": "Gorgias AI Agent",
+      "summary": "Ecommerce agent that supports product discovery and post-purchase service, using store knowledge and configured actions to handle returns, order changes, shipping updates, and human handoffs.",
+      "tasks": [
+        "customer-support",
+        "ecommerce"
+      ],
+      "deployments": [
+        "hosted"
+      ],
+      "sourceAvailability": "not-reviewed",
+      "officialUrl": "https://www.gorgias.com/ai-agent",
+      "repositoryUrl": null,
+      "sourceUrls": [
+        "https://docs.gorgias.com/en-US/ai-agent-explained-497772"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "gpt-researcher",
+      "name": "GPT Researcher",
+      "summary": "GPT Researcher is a research agent for web and local sources that gathers information and produces cited reports, with configurable models, tools and domain-specific workflows.",
+      "tasks": [
+        "research"
+      ],
+      "deployments": [
+        "local",
+        "self-hosted"
+      ],
+      "sourceAvailability": "public-source",
+      "officialUrl": "https://gptr.dev",
+      "repositoryUrl": "https://github.com/assafelovic/gpt-researcher",
+      "sourceUrls": [
+        "https://raw.githubusercontent.com/assafelovic/gpt-researcher/master/README.md",
+        "https://github.com/assafelovic/gpt-researcher"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "harvey-agents",
+      "name": "Harvey Agents",
+      "summary": "Legal-work agents that coordinate document analysis, research, drafting, and scheduled reviews, producing cited work products while allowing users to shape plans and review outputs.",
+      "tasks": [
+        "research",
+        "workflow",
+        "legal"
+      ],
+      "deployments": [
+        "hosted"
+      ],
+      "sourceAvailability": "not-reviewed",
+      "officialUrl": "https://www.harvey.ai/platform/agents",
+      "repositoryUrl": null,
+      "sourceUrls": [
+        "https://www.harvey.ai/platform/agents"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "hebbia-max",
+      "name": "Hebbia Max",
+      "summary": "Professional-work agent for financial and document-heavy analysis that uses firm information and connected sources to build models, prepare presentations, generate dashboards, and support repeatable research processes.",
+      "tasks": [
+        "research",
+        "data-analysis",
+        "workflow"
+      ],
+      "deployments": [
+        "hosted"
+      ],
+      "sourceAvailability": "not-reviewed",
+      "officialUrl": "https://www.hebbia.com/max/",
+      "repositoryUrl": null,
+      "sourceUrls": [
+        "https://www.hebbia.com/max/"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "hermes-agent",
+      "name": "Hermes Agent",
+      "summary": "Hermes Agent combines terminal and messaging interfaces with persistent memory, reusable skills, scheduled automations and subagents, running locally or on user-controlled remote infrastructure.",
+      "tasks": [
+        "general-assistant",
+        "workflow",
+        "coding"
+      ],
+      "deployments": [
+        "local",
+        "self-hosted"
+      ],
+      "sourceAvailability": "public-source",
+      "officialUrl": "https://hermes-agent.nousresearch.com/",
+      "repositoryUrl": "https://github.com/NousResearch/hermes-agent",
+      "sourceUrls": [
+        "https://raw.githubusercontent.com/NousResearch/hermes-agent/main/README.md",
+        "https://github.com/NousResearch/hermes-agent"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "hex-notebook-agent",
+      "name": "Hex Notebook Agent",
+      "summary": "Data-analysis agent inside Hex projects that uses notebook context and accessible warehouse schemas to generate code, explore data, create analysis cells, and help debug analytical workflows.",
+      "tasks": [
+        "data-analysis",
+        "coding"
+      ],
+      "deployments": [
+        "hosted"
+      ],
+      "sourceAvailability": "not-reviewed",
+      "officialUrl": "https://learn.hex.tech/docs/explore-data/notebook-view/notebook-agent",
+      "repositoryUrl": null,
+      "sourceUrls": [
+        "https://learn.hex.tech/docs/explore-data/notebook-view/notebook-agent"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "hubspot-customer-agent",
+      "name": "HubSpot Customer Agent",
+      "summary": "Customer-support agent that uses business content and CRM context to answer inquiries, resolve tickets, perform configured actions, and transfer complex conversations across supported service channels.",
+      "tasks": [
+        "customer-support",
+        "sales"
+      ],
+      "deployments": [
+        "hosted"
+      ],
+      "sourceAvailability": "not-reviewed",
+      "officialUrl": "https://www.hubspot.com/products/artificial-intelligence/ai-customer-service-agent",
+      "repositoryUrl": null,
+      "sourceUrls": [
+        "https://www.hubspot.com/products/artificial-intelligence/ai-customer-service-agent"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "jasper-research-agent",
+      "name": "Jasper Research Agent",
+      "summary": "Marketing-research agent that plans and conducts multi-step research across public sources, producing cited reports, briefs, comparisons, and outlines with user-defined scope and source preferences.",
+      "tasks": [
+        "marketing",
+        "research"
+      ],
+      "deployments": [
+        "hosted"
+      ],
+      "sourceAvailability": "not-reviewed",
+      "officialUrl": "https://www.jasper.ai/agents/research",
+      "repositoryUrl": null,
+      "sourceUrls": [
+        "https://www.jasper.ai/agents/research"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "khoj",
+      "name": "Khoj",
+      "summary": "Khoj is a personal research assistant that answers from documents and the web, supports custom agents, and automates recurring research through newsletters and notifications.",
+      "tasks": [
+        "research",
+        "general-assistant",
+        "workflow"
+      ],
+      "deployments": [
+        "local",
+        "self-hosted",
+        "hosted"
+      ],
+      "sourceAvailability": "public-source",
+      "officialUrl": "https://khoj.dev",
+      "repositoryUrl": "https://github.com/khoj-ai/khoj",
+      "sourceUrls": [
+        "https://raw.githubusercontent.com/khoj-ai/khoj/master/README.md",
+        "https://github.com/khoj-ai/khoj"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "kilo-code",
+      "name": "Kilo Code",
+      "summary": "Kilo Code provides a coding agent across VS Code, JetBrains and the command line, with model selection and the ability to switch models during tasks.",
+      "tasks": [
+        "coding"
+      ],
+      "deployments": [
+        "local"
+      ],
+      "sourceAvailability": "public-source",
+      "officialUrl": "https://kilo.ai",
+      "repositoryUrl": "https://github.com/Kilo-Org/kilocode",
+      "sourceUrls": [
+        "https://raw.githubusercontent.com/Kilo-Org/kilocode/main/README.md",
+        "https://github.com/Kilo-Org/kilocode"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "kimi-code-cli",
+      "name": "Kimi Code CLI",
+      "summary": "Kimi Code CLI is a terminal coding agent that reads and edits files, runs shell commands, fetches webpages and delegates focused tasks to subagents.",
+      "tasks": [
+        "coding"
+      ],
+      "deployments": [
+        "local"
+      ],
+      "sourceAvailability": "public-source",
+      "officialUrl": "https://moonshotai.github.io/kimi-code/en/",
+      "repositoryUrl": "https://github.com/MoonshotAI/kimi-code",
+      "sourceUrls": [
+        "https://raw.githubusercontent.com/MoonshotAI/kimi-code/main/README.md",
+        "https://github.com/MoonshotAI/kimi-code"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "kortix",
+      "name": "Kortix",
+      "summary": "Kortix runs work-performing agents on cloud computers, combining connectors, shared memory and scheduled workflows with human-reviewed changes, using self-hosted infrastructure or its managed service.",
+      "tasks": [
+        "general-assistant",
+        "coding",
+        "workflow"
+      ],
+      "deployments": [
+        "self-hosted",
+        "hosted"
+      ],
+      "sourceAvailability": "public-source",
+      "officialUrl": "https://kortix.com",
+      "repositoryUrl": "https://github.com/kortix-ai/suna",
+      "sourceUrls": [
+        "https://raw.githubusercontent.com/kortix-ai/suna/main/README.md",
+        "https://github.com/kortix-ai/suna"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "letta-code",
+      "name": "Letta Code",
+      "summary": "Letta Code provides stateful agents with editable memory and conversation search, accessible through a local CLI, browser or messaging channels for interactive and ongoing work.",
+      "tasks": [
+        "coding",
+        "general-assistant",
+        "workflow"
+      ],
+      "deployments": [
+        "local",
+        "hosted"
+      ],
+      "sourceAvailability": "public-source",
+      "officialUrl": "https://docs.letta.com/letta-code",
+      "repositoryUrl": "https://github.com/letta-ai/letta-code",
+      "sourceUrls": [
+        "https://raw.githubusercontent.com/letta-ai/letta-code/main/README.md",
+        "https://github.com/letta-ai/letta-code"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "lindy",
+      "name": "Lindy",
+      "summary": "Work agent that connects to business tools and carries out delegated tasks across areas including inbox management, scheduling, research, reporting, marketing operations, and customer support.",
+      "tasks": [
+        "workflow",
+        "marketing",
+        "customer-support"
+      ],
+      "deployments": [
+        "hosted"
+      ],
+      "sourceAvailability": "not-reviewed",
+      "officialUrl": "https://www.lindy.ai/",
+      "repositoryUrl": null,
+      "sourceUrls": [
+        "https://www.lindy.ai/"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "local-deep-research",
+      "name": "Local Deep Research",
+      "summary": "Local Deep Research is an agentic research application combining language models, search engines and a searchable knowledge base to produce sourced findings from user-controlled infrastructure.",
+      "tasks": [
+        "research"
+      ],
+      "deployments": [
+        "local",
+        "self-hosted"
+      ],
+      "sourceAvailability": "public-source",
+      "officialUrl": "https://github.com/LearningCircuit/local-deep-research",
+      "repositoryUrl": "https://github.com/LearningCircuit/local-deep-research",
+      "sourceUrls": [
+        "https://raw.githubusercontent.com/LearningCircuit/local-deep-research/main/README.md",
+        "https://github.com/LearningCircuit/local-deep-research"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "manus",
+      "name": "Manus",
+      "summary": "General-purpose task agent that plans and executes work using a virtual computer, internet access, and files, producing deliverables such as websites, presentations, research, and other artifacts.",
+      "tasks": [
+        "workflow",
+        "research"
+      ],
+      "deployments": [
+        "hosted"
+      ],
+      "sourceAvailability": "not-reviewed",
+      "officialUrl": "https://manus.im/",
+      "repositoryUrl": null,
+      "sourceUrls": [
+        "https://manus.im/docs/introduction/welcome"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "microsoft-copilot-researcher",
+      "name": "Microsoft Copilot Researcher",
+      "summary": "Research agent in Microsoft Copilot that investigates multi-step questions across the web and accessible work content, then produces structured reports with citations and supporting visuals.",
+      "tasks": [
+        "research"
+      ],
+      "deployments": [
+        "hosted"
+      ],
+      "sourceAvailability": "not-reviewed",
+      "officialUrl": "https://learn.microsoft.com/en-us/microsoft-365/copilot/researcher-agent",
+      "repositoryUrl": null,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/microsoft-365/copilot/researcher-agent"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "mini-swe-agent",
+      "name": "mini-SWE-agent",
+      "summary": "mini-SWE-agent is a compact software-engineering agent with runnable task scripts and support for local execution, Docker, Podman and other containerized environments.",
+      "tasks": [
+        "coding",
+        "research"
+      ],
+      "deployments": [
+        "local"
+      ],
+      "sourceAvailability": "public-source",
+      "officialUrl": "https://mini-swe-agent.com/latest/",
+      "repositoryUrl": "https://github.com/SWE-agent/mini-swe-agent",
+      "sourceUrls": [
+        "https://raw.githubusercontent.com/SWE-agent/mini-swe-agent/main/README.md",
+        "https://github.com/SWE-agent/mini-swe-agent"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "mistral-vibe",
+      "name": "Mistral Vibe",
+      "summary": "Mistral Vibe is a command-line coding assistant that uses natural-language requests to explore and modify projects, with built-in agents and subagent delegation.",
+      "tasks": [
+        "coding"
+      ],
+      "deployments": [
+        "local"
+      ],
+      "sourceAvailability": "public-source",
+      "officialUrl": "https://github.com/mistralai/mistral-vibe",
+      "repositoryUrl": "https://github.com/mistralai/mistral-vibe",
+      "sourceUrls": [
+        "https://raw.githubusercontent.com/mistralai/mistral-vibe/main/README.md",
+        "https://github.com/mistralai/mistral-vibe"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "moveworks-assistant",
+      "name": "Moveworks Assistant",
+      "summary": "Enterprise work assistant with agentic task execution that searches connected business applications and completes employee workflows, using a reasoning engine to plan and coordinate actions.",
+      "tasks": [
+        "workflow",
+        "customer-support"
+      ],
+      "deployments": [
+        "hosted"
+      ],
+      "sourceAvailability": "not-reviewed",
+      "officialUrl": "https://www.moveworks.com/",
+      "repositoryUrl": null,
+      "sourceUrls": [
+        "https://www.moveworks.com/"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "nanobot",
+      "name": "nanobot",
+      "summary": "nanobot is a self-hosted personal agent with browser, terminal and messaging interfaces, designed to work with files, remember preferences and schedule tasks using configurable models.",
+      "tasks": [
+        "general-assistant",
+        "workflow"
+      ],
+      "deployments": [
+        "local",
+        "self-hosted"
+      ],
+      "sourceAvailability": "public-source",
+      "officialUrl": "https://nanobot.wiki",
+      "repositoryUrl": "https://github.com/HKUDS/nanobot",
+      "sourceUrls": [
+        "https://raw.githubusercontent.com/HKUDS/nanobot/main/README.md",
+        "https://github.com/HKUDS/nanobot"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "nanobrowser",
+      "name": "Nanobrowser",
+      "summary": "Nanobrowser is a Chrome and Edge extension that turns side-panel requests into browser actions, including reading pages, navigating tabs and saving generated results.",
+      "tasks": [
+        "browser-automation"
+      ],
+      "deployments": [
+        "local"
+      ],
+      "sourceAvailability": "public-source",
+      "officialUrl": "https://nanobrowser.ai",
+      "repositoryUrl": "https://github.com/nanobrowser/nanobrowser",
+      "sourceUrls": [
+        "https://raw.githubusercontent.com/nanobrowser/nanobrowser/master/README.md",
+        "https://github.com/nanobrowser/nanobrowser"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "nanoclaw",
+      "name": "NanoClaw",
+      "summary": "NanoClaw is a personal assistant that runs agents in individual Linux containers, providing chat-channel integration, separate agent memories and a guided installation flow.",
+      "tasks": [
+        "general-assistant",
+        "workflow"
+      ],
+      "deployments": [
+        "local",
+        "self-hosted"
+      ],
+      "sourceAvailability": "public-source",
+      "officialUrl": "https://nanoclaw.dev",
+      "repositoryUrl": "https://github.com/nanocoai/nanoclaw",
+      "sourceUrls": [
+        "https://raw.githubusercontent.com/nanocoai/nanoclaw/main/README.md",
+        "https://github.com/nanocoai/nanoclaw"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "notion-custom-agents",
+      "name": "Notion Custom Agents",
+      "summary": "Configurable work agents in Notion that run from schedules or workspace events, read permitted content, update records, produce reports, and interact with selected connected applications.",
+      "tasks": [
+        "workflow"
+      ],
+      "deployments": [
+        "hosted"
+      ],
+      "sourceAvailability": "not-reviewed",
+      "officialUrl": "https://www.notion.com/product/agents",
+      "repositoryUrl": null,
+      "sourceUrls": [
+        "https://www.notion.com/help/custom-agents"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "omneky-ai-agent",
+      "name": "Omneky AI Agent",
+      "summary": "Advertising agent that helps plan campaigns, generate image and video creative, assess performance, and prepare advertising launches through Omneky's connected marketing workflow and approval interfaces.",
+      "tasks": [
+        "marketing"
+      ],
+      "deployments": [
+        "hosted"
+      ],
+      "sourceAvailability": "not-reviewed",
+      "officialUrl": "https://www.omneky.com/",
+      "repositoryUrl": null,
+      "sourceUrls": [
+        "https://www.omneky.com/"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "onyx-deep-research",
+      "name": "Onyx Deep Research",
+      "summary": "Onyx Deep Research runs multi-step research across connected organizational knowledge and web sources, with agents that can take external actions and generate downloadable artifacts.",
+      "tasks": [
+        "research",
+        "knowledge-management",
+        "workflow"
+      ],
+      "deployments": [
+        "self-hosted"
+      ],
+      "sourceAvailability": "public-source",
+      "officialUrl": "https://www.onyx.app",
+      "repositoryUrl": "https://github.com/onyx-dot-app/onyx",
+      "sourceUrls": [
+        "https://raw.githubusercontent.com/onyx-dot-app/onyx/main/README.md",
+        "https://github.com/onyx-dot-app/onyx"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "open-deep-research-langchain",
+      "name": "Open Deep Research",
+      "summary": "Open Deep Research is a runnable research agent that combines configurable model providers, search tools and MCP connections, with a local LangGraph server interface.",
+      "tasks": [
+        "research"
+      ],
+      "deployments": [
+        "local",
+        "self-hosted"
+      ],
+      "sourceAvailability": "public-source",
+      "officialUrl": "https://github.com/langchain-ai/open_deep_research",
+      "repositoryUrl": "https://github.com/langchain-ai/open_deep_research",
+      "sourceUrls": [
+        "https://raw.githubusercontent.com/langchain-ai/open_deep_research/main/README.md",
+        "https://github.com/langchain-ai/open_deep_research"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "open-interpreter",
+      "name": "Open Interpreter",
+      "summary": "Open Interpreter is a terminal coding agent focused on lower-cost models, with switchable agent harnesses and compatibility with ACP clients and Codex-based integrations.",
+      "tasks": [
+        "coding"
+      ],
+      "deployments": [
+        "local"
+      ],
+      "sourceAvailability": "public-source",
+      "officialUrl": "https://www.openinterpreter.com",
+      "repositoryUrl": "https://github.com/openinterpreter/open-interpreter",
+      "sourceUrls": [
+        "https://raw.githubusercontent.com/openinterpreter/open-interpreter/main/README.md",
+        "https://github.com/openinterpreter/open-interpreter"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "openclaw",
+      "name": "OpenClaw",
+      "summary": "OpenClaw runs a personal or shared assistant on user-controlled devices, connecting messaging channels to configurable models, agent harnesses, memory and tools through one gateway.",
+      "tasks": [
+        "general-assistant",
+        "workflow"
+      ],
+      "deployments": [
+        "local",
+        "self-hosted"
+      ],
+      "sourceAvailability": "public-source",
+      "officialUrl": "https://openclaw.ai",
+      "repositoryUrl": "https://github.com/openclaw/openclaw",
+      "sourceUrls": [
+        "https://raw.githubusercontent.com/openclaw/openclaw/main/README.md",
+        "https://github.com/openclaw/openclaw"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "opencode",
+      "name": "OpenCode",
+      "summary": "OpenCode is an installable coding agent with a terminal interface and support for software-development workflows, distributed through package managers and its official installer.",
+      "tasks": [
+        "coding"
+      ],
+      "deployments": [
+        "local"
+      ],
+      "sourceAvailability": "public-source",
+      "officialUrl": "https://opencode.ai",
+      "repositoryUrl": "https://github.com/anomalyco/opencode",
+      "sourceUrls": [
+        "https://github.com/anomalyco/opencode"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "openhands-agent-canvas",
+      "name": "OpenHands Agent Canvas",
+      "summary": "Agent Canvas runs the OpenHands coding agent out of the box, with local or remote backends and scheduled or event-triggered development automations.",
+      "tasks": [
+        "coding",
+        "workflow"
+      ],
+      "deployments": [
+        "local",
+        "self-hosted",
+        "hosted"
+      ],
+      "sourceAvailability": "public-source",
+      "officialUrl": "https://openhands.dev",
+      "repositoryUrl": "https://github.com/OpenHands/OpenHands",
+      "sourceUrls": [
+        "https://raw.githubusercontent.com/OpenHands/OpenHands/main/README.md",
+        "https://github.com/OpenHands/OpenHands"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "openmanus",
+      "name": "OpenManus",
+      "summary": "OpenManus is a configurable terminal agent for general tasks, with browser-tool integration and an optional multi-agent flow that includes data analysis and visualization.",
+      "tasks": [
+        "general-assistant",
+        "browser-automation",
+        "data-analysis"
+      ],
+      "deployments": [
+        "local"
+      ],
+      "sourceAvailability": "public-source",
+      "officialUrl": "https://github.com/FoundationAgents/OpenManus",
+      "repositoryUrl": "https://github.com/FoundationAgents/OpenManus",
+      "sourceUrls": [
+        "https://raw.githubusercontent.com/FoundationAgents/OpenManus/main/README.md",
+        "https://github.com/FoundationAgents/OpenManus"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "parloa-ai-agents",
+      "name": "Parloa AI Agents",
+      "summary": "Customer-service agents for enterprise conversations, with platform tools to configure experiences and manage agent lifecycles across tasks such as delivery queries, billing questions, and reservation changes.",
+      "tasks": [
+        "customer-support"
+      ],
+      "deployments": [
+        "hosted"
+      ],
+      "sourceAvailability": "not-reviewed",
+      "officialUrl": "https://www.parloa.com/",
+      "repositoryUrl": null,
+      "sourceUrls": [
+        "https://www.parloa.com/"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "perplexity-computer",
+      "name": "Perplexity Computer",
+      "summary": "General-purpose digital worker that coordinates subagents to research, browse, create artifacts, and execute connected-tool workflows, including recurring tasks and background monitoring configured by the user.",
+      "tasks": [
+        "workflow",
+        "research"
+      ],
+      "deployments": [
+        "hosted"
+      ],
+      "sourceAvailability": "not-reviewed",
+      "officialUrl": "https://www.perplexity.ai/products/computer",
+      "repositoryUrl": null,
+      "sourceUrls": [
+        "https://www.perplexity.ai/en-GB/products/computer"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "pi-coding-agent",
+      "name": "Pi Coding Agent",
+      "summary": "Pi provides a runnable terminal coding agent with interactive, print, JSON and RPC interfaces, customizable through extensions, prompt templates, themes and reusable packages.",
+      "tasks": [
+        "coding"
+      ],
+      "deployments": [
+        "local"
+      ],
+      "sourceAvailability": "public-source",
+      "officialUrl": "https://pi.dev",
+      "repositoryUrl": "https://github.com/earendil-works/pi",
+      "sourceUrls": [
+        "https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/README.md",
+        "https://github.com/earendil-works/pi"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "pipali",
+      "name": "Pipali",
+      "summary": "Pipali is a desktop coworker that researches files and the web, creates documents and spreadsheets, and runs scheduled workflows with connected applications.",
+      "tasks": [
+        "general-assistant",
+        "research",
+        "documents",
+        "workflow"
+      ],
+      "deployments": [
+        "local"
+      ],
+      "sourceAvailability": "public-source",
+      "officialUrl": "https://pipali.ai",
+      "repositoryUrl": "https://github.com/khoj-ai/pipali",
+      "sourceUrls": [
+        "https://raw.githubusercontent.com/khoj-ai/pipali/master/README.md",
+        "https://github.com/khoj-ai/pipali"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "plandex",
+      "name": "Plandex",
+      "summary": "Plandex is a terminal development agent for planning and executing multi-step coding tasks across many files, with project mapping and a documented self-hosted mode.",
+      "tasks": [
+        "coding"
+      ],
+      "deployments": [
+        "local",
+        "self-hosted"
+      ],
+      "sourceAvailability": "public-source",
+      "officialUrl": "https://plandex.ai",
+      "repositoryUrl": "https://github.com/plandex-ai/plandex",
+      "sourceUrls": [
+        "https://raw.githubusercontent.com/plandex-ai/plandex/main/README.md",
+        "https://github.com/plandex-ai/plandex"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "polyai-wren",
+      "name": "PolyAI Wren",
+      "summary": "Agent within PolyAI Dialog Studio that builds conversational agents, reviews live conversations, identifies issues, and drafts and tests improvements for teams to review before release.",
+      "tasks": [
+        "customer-support",
+        "workflow"
+      ],
+      "deployments": [
+        "hosted"
+      ],
+      "sourceAvailability": "not-reviewed",
+      "officialUrl": "https://poly.ai/wren",
+      "repositoryUrl": null,
+      "sourceUrls": [
+        "https://poly.ai/wren"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "qodo-git",
+      "name": "Qodo Git",
+      "summary": "Code-review agent for pull-request workflows that brings repository context and organizational standards into automated reviews, with related capabilities for cross-repository analysis and code-quality guidance.",
+      "tasks": [
+        "coding"
+      ],
+      "deployments": [
+        "self-hosted",
+        "hosted"
+      ],
+      "sourceAvailability": "not-reviewed",
+      "officialUrl": "https://www.qodo.ai/features/qodo-git/",
+      "repositoryUrl": null,
+      "sourceUrls": [
+        "https://www.qodo.ai/features/qodo-git/"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "qualified-piper",
+      "name": "Qualified Piper",
+      "summary": "Inbound sales-development agent that engages website visitors and email leads, shares relevant marketing content, and schedules sales meetings using Qualified's connected marketing and CRM workflows.",
+      "tasks": [
+        "sales",
+        "marketing"
+      ],
+      "deployments": [
+        "hosted"
+      ],
+      "sourceAvailability": "not-reviewed",
+      "officialUrl": "https://www.qualified.com/ai-sdr",
+      "repositoryUrl": null,
+      "sourceUrls": [
+        "https://www.qualified.com/ai-sdr"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "qwen-code",
+      "name": "Qwen Code",
+      "summary": "Qwen Code is a coding agent available through terminal, editor, desktop, browser and chat interfaces, supporting multiple model protocols and local model servers.",
+      "tasks": [
+        "coding"
+      ],
+      "deployments": [
+        "local"
+      ],
+      "sourceAvailability": "public-source",
+      "officialUrl": "https://qwenlm.github.io/qwen-code-docs/",
+      "repositoryUrl": "https://github.com/QwenLM/qwen-code",
+      "sourceUrls": [
+        "https://raw.githubusercontent.com/QwenLM/qwen-code/main/README.md",
+        "https://github.com/QwenLM/qwen-code"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "regiego-ai-agents",
+      "name": "RegieGO AI Agents",
+      "summary": "Sales agents that accept prospecting instructions and handle sourcing, ranking, call preparation, personalized messaging, and follow-ups within RegieGO's coordinated phone, email, and social outreach workflows.",
+      "tasks": [
+        "sales"
+      ],
+      "deployments": [
+        "hosted"
+      ],
+      "sourceAvailability": "not-reviewed",
+      "officialUrl": "https://regie.ai/",
+      "repositoryUrl": null,
+      "sourceUrls": [
+        "https://regie.ai/"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "replit-agent",
+      "name": "Replit Agent",
+      "summary": "Application-building agent that turns natural-language requests into apps and websites inside Replit, allowing users to guide development through chat in the hosted product workspace.",
+      "tasks": [
+        "coding"
+      ],
+      "deployments": [
+        "hosted"
+      ],
+      "sourceAvailability": "not-reviewed",
+      "officialUrl": "https://replit.com/products/agent",
+      "repositoryUrl": null,
+      "sourceUrls": [
+        "https://replit.com/products/agent"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "agentforce-service-agent",
+      "name": "Salesforce Agentforce Service Agent",
+      "summary": "Salesforce service agent that handles customer interactions and service tasks using business data, natural-language conversations, configured actions, and routing through Salesforce's supported messaging and service workflows.",
+      "tasks": [
+        "customer-support"
+      ],
+      "deployments": [
+        "hosted"
+      ],
+      "sourceAvailability": "not-reviewed",
+      "officialUrl": "https://www.salesforce.com/agentforce/",
+      "repositoryUrl": null,
+      "sourceUrls": [
+        "https://help.salesforce.com/s/articleView?id=service.bots_service_asa_about.htm&language=en_US&type=5"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "sierra",
+      "name": "Sierra",
+      "summary": "Customer-experience agents deployed across chat, SMS, WhatsApp, email, and voice, with tools for configuring business processes and reviewing changes to customer-facing agent behavior.",
+      "tasks": [
+        "customer-support",
+        "sales"
+      ],
+      "deployments": [
+        "hosted"
+      ],
+      "sourceAvailability": "not-reviewed",
+      "officialUrl": "https://sierra.ai/",
+      "repositoryUrl": null,
+      "sourceUrls": [
+        "https://sierra.ai/"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "skyvern",
+      "name": "Skyvern",
+      "summary": "Skyvern uses language models and computer vision to plan and execute browser workflows, with a no-code workflow builder and a Playwright-compatible developer interface.",
+      "tasks": [
+        "browser-automation",
+        "workflow"
+      ],
+      "deployments": [
+        "self-hosted",
+        "hosted"
+      ],
+      "sourceAvailability": "public-source",
+      "officialUrl": "https://www.skyvern.com",
+      "repositoryUrl": "https://github.com/Skyvern-AI/skyvern",
+      "sourceUrls": [
+        "https://raw.githubusercontent.com/Skyvern-AI/skyvern/main/README.md",
+        "https://github.com/Skyvern-AI/skyvern"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "snowflake-cowork",
+      "name": "Snowflake CoWork",
+      "summary": "Work agent within Snowflake that analyzes enterprise data, performs research, and takes actions through connected tools, combining data exploration and operational workflows in a conversational interface.",
+      "tasks": [
+        "data-analysis",
+        "workflow",
+        "research"
+      ],
+      "deployments": [
+        "hosted"
+      ],
+      "sourceAvailability": "not-reviewed",
+      "officialUrl": "https://www.snowflake.com/en/product/snowflake-cowork/",
+      "repositoryUrl": null,
+      "sourceUrls": [
+        "https://www.snowflake.com/en/product/snowflake-cowork/"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "storm",
+      "name": "STORM",
+      "summary": "STORM researches topics through internet search and multi-perspective questions to generate cited, Wikipedia-style articles; its repository also provides a local demonstration interface.",
+      "tasks": [
+        "research",
+        "writing"
+      ],
+      "deployments": [
+        "local",
+        "self-hosted"
+      ],
+      "sourceAvailability": "public-source",
+      "officialUrl": "https://storm-project.stanford.edu/",
+      "repositoryUrl": "https://github.com/stanford-oval/storm",
+      "sourceUrls": [
+        "https://raw.githubusercontent.com/stanford-oval/storm/main/README.md",
+        "https://github.com/stanford-oval/storm"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "surfsense",
+      "name": "SurfSense",
+      "summary": "SurfSense is a desktop document agent that researches, creates, transforms and edits files, including spreadsheets and presentations, using a local index and a selected model.",
+      "tasks": [
+        "research",
+        "documents",
+        "data-analysis"
+      ],
+      "deployments": [
+        "local"
+      ],
+      "sourceAvailability": "public-source",
+      "officialUrl": "https://www.surfsense.com",
+      "repositoryUrl": "https://github.com/MODSetter/SurfSense",
+      "sourceUrls": [
+        "https://raw.githubusercontent.com/MODSetter/SurfSense/main/README.md",
+        "https://github.com/MODSetter/SurfSense"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "thoughtspot-spotter",
+      "name": "ThoughtSpot Spotter",
+      "summary": "Analytics agent that translates natural-language business questions into governed queries and multi-step analyses, using warehouse data and connected context to support exploration within dashboards and other interfaces.",
+      "tasks": [
+        "data-analysis"
+      ],
+      "deployments": [
+        "hosted"
+      ],
+      "sourceAvailability": "not-reviewed",
+      "officialUrl": "https://www.thoughtspot.com/product/agents/spotter",
+      "repositoryUrl": null,
+      "sourceUrls": [
+        "https://www.thoughtspot.com/product/agents/spotter"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "ui-tars-desktop",
+      "name": "UI-TARS Desktop & Agent TARS",
+      "summary": "UI-TARS Desktop runs a GUI agent through a desktop application. Its companion Agent TARS provides a command-line and web interface for visual computer tasks, browser operations and external tools.",
+      "tasks": [
+        "computer-use",
+        "browser-automation",
+        "workflow"
+      ],
+      "deployments": [
+        "local"
+      ],
+      "sourceAvailability": "public-source",
+      "officialUrl": "https://github.com/bytedance/UI-TARS-desktop",
+      "repositoryUrl": "https://github.com/bytedance/UI-TARS-desktop",
+      "sourceUrls": [
+        "https://raw.githubusercontent.com/bytedance/UI-TARS-desktop/main/README.md",
+        "https://github.com/bytedance/UI-TARS-desktop"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "zendesk-ai-agents",
+      "name": "Zendesk AI agents",
+      "summary": "Customer-service agents that interpret requests, ask clarifying questions, and execute multi-step workflows across connected business systems, with deployment across messaging and other support channels.",
+      "tasks": [
+        "customer-support"
+      ],
+      "deployments": [
+        "hosted"
+      ],
+      "sourceAvailability": "not-reviewed",
+      "officialUrl": "https://www.zendesk.com/service/ai/ai-agents/",
+      "repositoryUrl": null,
+      "sourceUrls": [
+        "https://www.zendesk.com/au/service/ai/ai-agents/"
+      ],
+      "observedAt": "2026-10-27"
+    },
+    {
+      "id": "zeroclaw",
+      "name": "ZeroClaw",
+      "summary": "ZeroClaw is a configurable personal agent distributed as a Rust binary, connecting model providers and messaging channels with shell, browser, HTTP and other tools.",
+      "tasks": [
+        "general-assistant",
+        "workflow"
+      ],
+      "deployments": [
+        "local",
+        "self-hosted"
+      ],
+      "sourceAvailability": "public-source",
+      "officialUrl": "https://www.zeroclaw.com",
+      "repositoryUrl": "https://github.com/zeroclaw-labs/zeroclaw",
+      "sourceUrls": [
+        "https://raw.githubusercontent.com/zeroclaw-labs/zeroclaw/master/README.md",
+        "https://github.com/zeroclaw-labs/zeroclaw"
+      ],
+      "observedAt": "2026-10-27"
+    }
+  ]
+}

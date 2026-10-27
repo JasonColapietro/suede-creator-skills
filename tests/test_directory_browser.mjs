@@ -123,3 +123,6 @@ try {
   await browser.close();
   await new Promise((resolve) => server.close(resolve));
 }
+
+// Agent discovery has its own model and progressive enhancement contract.
+await import('./test_agents_browser.mjs');

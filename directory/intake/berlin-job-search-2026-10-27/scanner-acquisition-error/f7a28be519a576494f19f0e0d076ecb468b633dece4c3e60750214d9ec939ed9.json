@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "source": {
+    "repository": "umutyesildal/berlin-job-search",
+    "path": "skills/berlin-job-search",
+    "revision": "56631c64dffae651dda2d6e96f1e23d4c765f3df"
+  },
+  "scanner": {
+    "name": "cisco-ai-skill-scanner",
+    "version": "2.3.1",
+    "adapter_version": 2,
+    "analyzers": [
+      "static_analyzer",
+      "bytecode",
+      "pipeline",
+      "correlation",
+      "behavioral_analyzer"
+    ],
+    "policy": "strict",
+    "cel_mode": "shadow",
+    "network": "disabled",
+    "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+  },
+  "started_at": "2026-10-27T16:37:11.584738+00:00",
+  "state": "error",
+  "reason": "source_acquisition_error",
+  "error_type": "URLError",
+  "completed_at": "2026-10-27T16:37:11.710104+00:00"
+}

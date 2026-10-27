@@ -6,7 +6,7 @@
 
 Editorial selection highlights a project’s workflow and accepted scope. It is separate from structural quality grades, security certification and README-badge verification. A plugin feature does not add its contents to the scored skill catalog.
 
-Selections updated **2026-10-25**. [View on Suede AI](https://skills.suedeai.ai/directory/featured/).
+Selections updated **2026-10-27**. [View on Suede AI](https://skills.suedeai.ai/directory/featured/).
 
 - [Appie](#appie)
 - [CoalWash](#coalwash)
@@ -14,6 +14,7 @@ Selections updated **2026-10-25**. [View on Suede AI](https://skills.suedeai.ai/
 - [Extra Caffeine](#extra-caffeine)
 - [Opsibyte](#opsibyte)
 - [Cisco AI Defense Skill Scanner](#cisco-skill-scanner)
+- [Berlin Job Search](#berlin-job-search)
 
 <a id="appie"></a>
 
@@ -149,6 +150,26 @@ Inspect skill instructions and bundled code for known prompt-injection, exfiltra
 Use the reviewed 2.3.1 release with verified dependency pins. Exclude the hijacked litellm 1.107.0 release and correct the certifi version in Cisco’s attached release lock. For local source review, disable hosted analyzers and behavioral alignment verification, use a network-disabled container, and retain every finding and error. Automated detection is best effort and does not certify a skill. This is an independent editorial selection, not a Cisco partnership.
 
 [Repository](https://github.com/cisco-ai-defense/skill-scanner) · [Intake review](../directory/reviews/2026-10-25-cisco-skill-scanner.md) · [Reviewed source c615acb](https://github.com/cisco-ai-defense/skill-scanner/tree/c615acb70994cdf3f4ba54d955fef2e92ac84437) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#cisco-skill-scanner)
+
+---
+
+<a id="berlin-job-search"></a>
+
+## Berlin Job Search
+
+**One skill · Job search and applications in Germany** · License: MIT · Publisher: [umutyesildal](https://github.com/umutyesildal)
+
+Search public job sources for Berlin and Germany, prepare a German CV or cover letter, practise interviews, and track applications locally. The user reviews personal claims and controls every submission.
+
+- **[Search, prepare and track](https://skills.suedeai.ai/directory/umutyesildal/berlin-job-search/berlin-job-search/)** (berlin-job-search). Find relevant roles, evaluate requirements, prepare application materials and keep a local application tracker.
+
+### Setup
+
+Install the single berlin-job-search skill. Its scripts require Python 3.9+ and internet access, use the standard library, and need no API keys. Keep profiles, CVs and tracker data in local job-search/. PDF rendering optionally uses Chrome, Chromium or Edge; the Daily Berlin Jobs MCP connector is configured separately. LinkedIn guest automation is against its User Agreement; the skill stops blocked sources without connection-switch or browser workarounds. Catalog security status: not\_scanned; this editorial feature and the structural quality score do not certify runtime safety.
+
+Accepted scope: **1 skills**. Follow each linked skill’s individual setup instructions.
+
+[Repository](https://github.com/umutyesildal/berlin-job-search) · [Intake review](../directory/reviews/2026-10-26-berlin-job-search.md) · [Reviewed source 56631c6](https://github.com/umutyesildal/berlin-job-search/tree/56631c64dffae651dda2d6e96f1e23d4c765f3df) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#berlin-job-search)
 
 ---
 

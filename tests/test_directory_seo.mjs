@@ -53,6 +53,9 @@ const byRel = new Map(pages.map((p) => [p.rel, p]));
 const indexable = pages.filter((p) => p.indexable);
 const parsed = (p) => p.jsonld.map((b) => JSON.parse(b));
 const kindOf = (p) => {
+  if (["directory/agents/", "directory/agents/ungraded/"].includes(p.rel)) return "agent-hub";
+  if (["directory/agents/methodology/", "directory/agents/submit/"].includes(p.rel)) return "agent-info";
+  if (p.rel.startsWith("directory/agents/")) return "agent";
   const depth = p.rel.split("/").filter(Boolean).length;
   if (p.rel === "directory/") return "hub";
   if (categories.some((c) => p.rel === `directory/${c.slug}/`)) return "category";
@@ -137,10 +140,15 @@ test("hubs list their items and listings describe the third-party source code", 
   for (const p of indexable) {
     const kind = kindOf(p);
     const main = parsed(p)[0];
-    if (kind === "category" || kind === "repository" || kind === "hub") {
+    if (kind === "category" || kind === "repository" || kind === "hub" || kind === "agent-hub") {
       assert.equal(main["@type"], "CollectionPage", p.rel);
       assert.equal(main.mainEntity["@type"], "ItemList", p.rel);
       assert.ok(main.mainEntity.itemListElement.length > 0, `${p.rel}: empty ItemList`);
+    }
+    if (kind === "agent") {
+      assert.equal(main.mainEntity["@type"], "SoftwareApplication", p.rel);
+      assert.ok(main.mainEntity.publisher.name, `${p.rel}: actual publisher credit`);
+      assert.ok(p.html.includes(main.mainEntity.publisher.name), `${p.rel}: visible publisher credit`);
     }
     if (kind === "skill") {
       assert.equal(main.mainEntity["@type"], "SoftwareSourceCode", p.rel);
@@ -163,7 +171,24 @@ test("the hub declares Suede AI with sameAs, and the methodology names its autho
   const hub = parsed(byRel.get("directory/"))[0];
   assert.equal(hub.publisher["@id"], "https://suedeai.ai/#organization");
   assert.equal(hub.publisher.name, "Suede AI");
-  for (const u of ["https://suedeai.agency/", "https://suedeai.app/", "https://github.com/Suede-AI"]) assert.ok(hub.publisher.sameAs.includes(u), `hub sameAs lacks ${u}`);
+  for (const u of ["https://www.wikidata.org/wiki/Q141169484", "https://suedeai.org/", "https://github.com/Suede-AI"]) assert.ok(hub.publisher.sameAs.includes(u), `hub sameAs lacks ${u}`);
+  for (const rel of ["directory/", "directory/methodology/"]) {
+    const graph = parsed(byRel.get(rel));
+    const publisher = graph[0].publisher;
+    for (const alias of ["https://suedeai.app/", "https://suedeai.agency/"]) {
+      assert.ok(!publisher.sameAs.includes(alias), `${rel}: product/practice alias is not the company`);
+    }
+    const app = graph.find((node) => node["@id"] === "https://agents.suedeai.ai/#app");
+    assert.equal(app?.["@type"], "SoftwareApplication");
+    assert.equal(app.url, "https://agents.suedeai.ai");
+    assert.deepEqual(app.sameAs, ["https://suedeai.app/"]);
+    assert.equal(app.publisher["@id"], publisher["@id"]);
+    const practice = graph.find((node) => node["@id"] === "https://seo.suedeai.ai/#organization");
+    assert.equal(practice?.["@type"], "ProfessionalService");
+    assert.equal(practice.url, "https://seo.suedeai.ai/");
+    assert.deepEqual(practice.sameAs, ["https://suedeai.agency/"]);
+    assert.equal(practice.parentOrganization["@id"], publisher["@id"]);
+  }
   const method = byRel.get("directory/methodology/");
   const node = parsed(method)[0];
   assert.equal(node.author["@type"], "Person");

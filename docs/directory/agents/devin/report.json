@@ -1,0 +1,316 @@
+{
+  "schema_version": 1,
+  "kind": "agent",
+  "product": {
+    "id": "devin",
+    "name": "Devin",
+    "publisher": "Cognition",
+    "url": "https://devin.ai/"
+  },
+  "listing_url": "https://skills.suedeai.ai/directory/agents/devin/",
+  "snapshot": {
+    "date": "2026-10-27",
+    "id": "7757fd06039b9b00cddb7b0f2d309d90",
+    "dataset_sha256": "19645f4aaae920f5af58f52fbd869f228cff6acd2ddce85771c463bb5c4f546a"
+  },
+  "methodology": {
+    "version": "agent-evidence-v1",
+    "url": "https://skills.suedeai.ai/directory/agents/methodology/",
+    "rubric_sha256": "ebd62319c4143ec4654035d5f4b2b3c92a2b25106eb51a6662ad9d045e08da49",
+    "scope": "Documentation and evidence coverage; no runtime or safety rating"
+  },
+  "editions": [
+    {
+      "id": "cloud",
+      "name": "Cloud",
+      "deployment": "hosted",
+      "source": null,
+      "terms_url": "https://cognition.com/legal/platform-terms-of-service",
+      "access_url": "https://app.devin.ai/",
+      "requirements": [
+        "Registered Cognition account with cloud-agent access and repository setup. Deployed service revision is not disclosed in this intake."
+      ],
+      "permissions": [
+        "Cloud Agent sessions can modify code, execute commands and browse. Optional profiles restrict access; policy changes may require session resume.",
+        "Publisher discloses default training use with plan-dependent opt-out; review current data controls and terms."
+      ],
+      "costs": [
+        "Paid cloud-agent access and usage allowances vary by plan; additional usage can incur charges. See dated pricing evidence and current official terms."
+      ],
+      "reviewed_at": "2026-10-27",
+      "reviewer": "Codex editorial source review",
+      "evidence_ids": [
+        "devin-cloud-first-session",
+        "devin-cloud-security-profiles",
+        "devin-cloud-terms",
+        "devin-cloud-data-policy",
+        "devin-cloud-pricing"
+      ],
+      "ratings": {
+        "documentation": {
+          "tasks": {
+            "state": "supported",
+            "reason": "First-session guide describes code changes, debugging and PR tasks.",
+            "evidence": [
+              "devin-cloud-first-session"
+            ]
+          },
+          "boundaries": {
+            "state": "unknown",
+            "reason": "Not reviewed in this intake; no point or failing score is inferred.",
+            "evidence": []
+          },
+          "setup": {
+            "state": "supported",
+            "reason": "First-session guide sequences repository setup, Ask and Agent sessions.",
+            "evidence": [
+              "devin-cloud-first-session"
+            ]
+          },
+          "prerequisites": {
+            "state": "supported",
+            "reason": "Account registration and repository indexing/setup are required.",
+            "evidence": [
+              "devin-cloud-first-session",
+              "devin-cloud-terms"
+            ]
+          },
+          "models": {
+            "state": "supported",
+            "reason": "First-session guide explains agent selection and availability.",
+            "evidence": [
+              "devin-cloud-first-session"
+            ]
+          },
+          "example": {
+            "state": "unknown",
+            "reason": "Not reviewed in this intake; no point or failing score is inferred.",
+            "evidence": []
+          },
+          "tools": {
+            "state": "supported",
+            "reason": "Guide identifies commands and browser use.",
+            "evidence": [
+              "devin-cloud-first-session"
+            ]
+          },
+          "permissions": {
+            "state": "supported",
+            "reason": "Profiles explain scoped restrictions and when they apply.",
+            "evidence": [
+              "devin-cloud-security-profiles"
+            ]
+          },
+          "recovery": {
+            "state": "unknown",
+            "reason": "Not reviewed in this intake; no point or failing score is inferred.",
+            "evidence": []
+          },
+          "support": {
+            "state": "unknown",
+            "reason": "Not reviewed in this intake; no point or failing score is inferred.",
+            "evidence": []
+          }
+        },
+        "repository": null,
+        "hosted": {
+          "terms": {
+            "state": "supported",
+            "reason": "Official platform terms apply to registered service access.",
+            "evidence": [
+              "devin-cloud-terms"
+            ]
+          },
+          "pricing": {
+            "state": "supported",
+            "reason": "Pricing explains allowances and extra model-dependent usage.",
+            "evidence": [
+              "devin-cloud-pricing"
+            ]
+          },
+          "retention": {
+            "state": "supported",
+            "reason": "Publisher states retention policy and exceptions.",
+            "evidence": [
+              "devin-cloud-data-policy"
+            ]
+          },
+          "training": {
+            "state": "supported",
+            "reason": "Publisher states training defaults and plan-dependent opt-out.",
+            "evidence": [
+              "devin-cloud-data-policy",
+              "devin-cloud-terms"
+            ]
+          },
+          "authentication": {
+            "state": "supported",
+            "reason": "Terms describe account/password registration.",
+            "evidence": [
+              "devin-cloud-terms"
+            ]
+          },
+          "permissions": {
+            "state": "supported",
+            "reason": "Profiles describe optional and mandatory restrictions.",
+            "evidence": [
+              "devin-cloud-security-profiles"
+            ]
+          },
+          "audit_export": {
+            "state": "unknown",
+            "reason": "Not reviewed in this intake; no point or failing score is inferred.",
+            "evidence": []
+          },
+          "deletion_revocation": {
+            "state": "unknown",
+            "reason": "Not reviewed in this intake; no point or failing score is inferred.",
+            "evidence": []
+          },
+          "status": {
+            "state": "unknown",
+            "reason": "Not reviewed in this intake; no point or failing score is inferred.",
+            "evidence": []
+          },
+          "changes": {
+            "state": "unknown",
+            "reason": "Not reviewed in this intake; no point or failing score is inferred.",
+            "evidence": []
+          }
+        }
+      },
+      "performance": {
+        "status": "not_tested",
+        "results": []
+      },
+      "security": {
+        "status": "not_assessed",
+        "findings": []
+      },
+      "assessments": {
+        "documentation": {
+          "status": "incomplete",
+          "score": null,
+          "reviewed": 6,
+          "total": 10
+        },
+        "repository": {
+          "status": "not_applicable",
+          "score": null,
+          "reviewed": 0,
+          "total": 10
+        },
+        "hosted": {
+          "status": "incomplete",
+          "score": null,
+          "reviewed": 6,
+          "total": 10
+        }
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "devin-cloud-first-session",
+      "product_id": "devin",
+      "edition_id": "cloud",
+      "type": "publisher_documentation",
+      "observed_at": "2026-10-27T05:02:48Z",
+      "reviewer": "Codex editorial source review",
+      "source": {
+        "url": "https://docs.devin.ai/get-started/first-run",
+        "locator": "Your First Session: prerequisites, Ask/Agent modes and choosing an agent",
+        "revision": null,
+        "blob_sha": null,
+        "content_sha256": null
+      },
+      "observations": [
+        "Requires repository indexing/setup before a cloud session. Describes choosing repositories, planning in Ask mode and sending the plan to Agent mode.",
+        "Describes code changes, commands, browser use and pull requests. Explains selectable agents and differing cost/capability; availability depends on administration and plan."
+      ],
+      "record_sha256": "d5720a200ba6c647845e537d1af1607bf1126a64801f10f4679afbdf62f996f1"
+    },
+    {
+      "id": "devin-cloud-security-profiles",
+      "product_id": "devin",
+      "edition_id": "cloud",
+      "type": "publisher_documentation",
+      "observed_at": "2026-10-27T05:02:48Z",
+      "reviewer": "Codex editorial source review",
+      "source": {
+        "url": "https://docs.devin.ai/product-guides/security-profiles",
+        "locator": "Restrictions; enforcement; changes taking effect",
+        "revision": null,
+        "blob_sha": null,
+        "content_sha256": null
+      },
+      "observations": [
+        "Describes optional network and MCP allowlists, git read-only/full scope and GitHub CLI token restrictions.",
+        "Recommended profiles may be overridden; mandatory profiles constrain lower scopes. Existing sessions resolve changed restrictions on resume/reboot, not automatically mid-session.",
+        "These documented controls were not tested and are not proof of isolation or safety."
+      ],
+      "record_sha256": "c7e8887b45d12f7cb85506c58fd10bcdd496bdd435388eed0ffa425e9c4affe4"
+    },
+    {
+      "id": "devin-cloud-terms",
+      "product_id": "devin",
+      "edition_id": "cloud",
+      "type": "publisher_documentation",
+      "observed_at": "2026-10-27T05:02:48Z",
+      "reviewer": "Codex editorial source review",
+      "source": {
+        "url": "https://cognition.com/legal/platform-terms-of-service",
+        "locator": "June 30, 2026 terms: sections 2, 3.3, 5.1",
+        "revision": null,
+        "blob_sha": null,
+        "content_sha256": null
+      },
+      "observations": [
+        "Public terms govern registered access to the Cognition platform and describe account/password responsibilities and usage restrictions.",
+        "Terms allow customer data use for training by default, with a paid-tier opt-out and Teams administrator control; exceptions to zero retention include abuse and legal process."
+      ],
+      "record_sha256": "51343505259e49c506b9d837c8b0b1922f597621611c5408b4c56692938e383c"
+    },
+    {
+      "id": "devin-cloud-data-policy",
+      "product_id": "devin",
+      "edition_id": "cloud",
+      "type": "publisher_documentation",
+      "observed_at": "2026-10-27T05:02:48Z",
+      "reviewer": "Codex editorial source review",
+      "source": {
+        "url": "https://docs.devin.ai/admin/security",
+        "locator": "Privacy & Intellectual Property: retention and model training",
+        "revision": null,
+        "blob_sha": null,
+        "content_sha256": null
+      },
+      "observations": [
+        "Publisher states customer data is retained for the customer relationship unless otherwise specified; feedback and interaction data may be kept as long as Cognition determines necessary.",
+        "Publisher states training is enabled by default with paid-plan opt-out; enterprise training requires express written consent. This receipt records disclosures, not compliance verification."
+      ],
+      "record_sha256": "41f2240322fb979b8114ed1a1b899c9d652d3ad703998d8e6a5ce9b475ee2c3a"
+    },
+    {
+      "id": "devin-cloud-pricing",
+      "product_id": "devin",
+      "edition_id": "cloud",
+      "type": "publisher_documentation",
+      "observed_at": "2026-10-27T05:02:48Z",
+      "reviewer": "Codex editorial source review",
+      "source": {
+        "url": "https://devin.ai/pricing",
+        "locator": "Paid plans and usage FAQ",
+        "revision": null,
+        "blob_sha": null,
+        "content_sha256": null
+      },
+      "observations": [
+        "Pricing page lists paid access to cloud agents and explains daily/weekly included allowances and additional usage at API pricing.",
+        "Per-message cost varies with model, task size and reasoning. No purchase or billed API call was made; check current pricing before use."
+      ],
+      "record_sha256": "254682f95490d9c160dbdcab14b98701b41774bc81e0b57cee15d079441cd220"
+    }
+  ],
+  "report_version": "258801dab7fbdbee1c5bd77d84410c6612736b00dd1276feb4f0b2a2541d14aa"
+}

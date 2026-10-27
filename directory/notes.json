@@ -77,6 +77,6 @@
  },
  "umutyesildal/berlin-job-search/berlin-job-search": {
   "text": "Use Python 3.9+ and internet access for the public job-source APIs; the scripts use only the standard library and need no API keys. LinkedIn uses low-volume logged-out guest pages; automated access is against LinkedIn’s User Agreement. Keep CVs, profiles and tracker data locally in job-search/. PDF rendering optionally uses installed Chrome, Chromium or Edge. The repository’s plugin separately declares the Daily Berlin Jobs MCP connector; installing this skill folder alone does not configure that connector. The user controls accounts and submits applications.",
-  "source": "https://github.com/umutyesildal/berlin-job-search/blob/69a06e831e816943f8269a5c513a9d90ace87958/skills/berlin-job-search/SKILL.md"
+  "source": "https://github.com/umutyesildal/berlin-job-search/blob/56631c64dffae651dda2d6e96f1e23d4c765f3df/skills/berlin-job-search/SKILL.md"
  }
 }

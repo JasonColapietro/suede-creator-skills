@@ -64,8 +64,9 @@ Each skill appears in one category. A repository can contribute to several categ
 - **[Extra Caffeine](featured.md#extra-caffeine)** by [cwong5](https://github.com/cwong5). Give local AI and file-processing work time to finish. The Extra Caffeine workflow guides an agent through authorized awake sessions, state checks and requested one-time schedules while preserving existing sessions.
 - **[Opsibyte](featured.md#opsibyte)** by [MelMayssonOwen](https://github.com/MelMayssonOwen). Six focused workflows combine human-reviewed publishing and launch preparation with local budget, listing-copy, and chord helpers. Each listing carries its own source-derived quality report and setup details.
 - **[Cisco AI Defense Skill Scanner](featured.md#cisco-skill-scanner)** by [cisco-ai-defense](https://github.com/cisco-ai-defense). Inspect skill instructions and bundled code for known prompt-injection, exfiltration and command-execution patterns. The reviewed 2.3.1 release supports local static and behavioral analysis, with machine-readable findings to guide review.
+- **[Berlin Job Search](featured.md#berlin-job-search)** by [umutyesildal](https://github.com/umutyesildal). Search public job sources for Berlin and Germany, prepare a German CV or cover letter, practise interviews, and track applications locally. The user reviews personal claims and controls every submission.
 
-These 6 editorial selections have [reviewed scope and setup guidance](featured.md). Editorial selection is separate from quality scores, security certification and README-badge verification. Featured plugins outside the scored skill snapshot are not included in the skill or repository counts above.
+These 7 editorial selections have [reviewed scope and setup guidance](featured.md). Editorial selection is separate from quality scores, security certification and README-badge verification. Featured plugins outside the scored skill snapshot are not included in the skill or repository counts above.
 
 ## Guides
 
@@ -117,7 +118,7 @@ The [publisher index](publishers.md) credits every listed repository and its own
 
 Accepted listing requests also enter through the [inclusion register](../directory/inclusions.json). Descriptions and scores come from [the saved dataset](../directory/skills.json); category copy comes from [the category definitions](../directory/categories.json). Upstream skills retain their own licenses and authorship.
 
-Dataset SHA-256: `85c7b28b6c8a8a262c128527d0321144aff4898ae62a84f804d9427d54f51109`.
+Dataset SHA-256: `9611f1062846f6bf656a1177928ac6dcb54a1925154b199a424d00955d564340`.
 
 ## Contribute and update
 

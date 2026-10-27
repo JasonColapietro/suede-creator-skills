@@ -1,0 +1,170 @@
+{
+  "version": "agent-evidence-v1",
+  "ratings": {
+    "documentation": {
+      "label": "Documentation",
+      "checks": [
+        {
+          "id": "tasks",
+          "label": "Intended tasks",
+          "rule": "Names concrete tasks the selected edition is intended to perform."
+        },
+        {
+          "id": "boundaries",
+          "label": "Boundaries",
+          "rule": "States a limitation or condition under which this edition should not be used."
+        },
+        {
+          "id": "setup",
+          "label": "Setup instructions",
+          "rule": "Provides a sequenced install or access route for this edition, not just a product announcement."
+        },
+        {
+          "id": "prerequisites",
+          "label": "Prerequisites",
+          "rule": "Identifies required host software or account prerequisites for this edition."
+        },
+        {
+          "id": "models",
+          "label": "Model requirements",
+          "rule": "Identifies the model/provider requirements or explains provider selection."
+        },
+        {
+          "id": "example",
+          "label": "Worked example",
+          "rule": "Shows a concrete request/workflow and describes the expected outcome."
+        },
+        {
+          "id": "tools",
+          "label": "Tools and integrations",
+          "rule": "Identifies tools or integrations available to the selected edition."
+        },
+        {
+          "id": "permissions",
+          "label": "Permission description",
+          "rule": "Explains at least one permission boundary or approval behavior and its scope."
+        },
+        {
+          "id": "recovery",
+          "label": "Failure and recovery",
+          "rule": "Explains how to handle a concrete error, interruption or recovery case."
+        },
+        {
+          "id": "support",
+          "label": "Support route",
+          "rule": "Links a documented issue, support or troubleshooting route."
+        }
+      ]
+    },
+    "repository": {
+      "label": "Repository evidence",
+      "checks": [
+        {
+          "id": "license",
+          "label": "License text",
+          "rule": "The reviewed source contains substantive license terms applying to this edition."
+        },
+        {
+          "id": "attribution",
+          "label": "Attribution",
+          "rule": "Reviewed source supplies copyright or attribution notices; presence is not a legal completeness opinion."
+        },
+        {
+          "id": "revision",
+          "label": "Pinned source",
+          "rule": "Intake records an exact upstream commit and a verified file at that commit."
+        },
+        {
+          "id": "distribution",
+          "label": "Distribution relationship",
+          "rule": "Pinned source documents its official installation/distribution route for this edition; this does not prove binary equivalence."
+        },
+        {
+          "id": "dependencies",
+          "label": "Dependency manifest",
+          "rule": "A reviewed manifest identifies the edition's runtime/build dependencies."
+        },
+        {
+          "id": "resolved_dependencies",
+          "label": "Resolved dependencies",
+          "rule": "A reviewed lockfile or dependency inventory records exact resolved versions for this edition."
+        },
+        {
+          "id": "tests",
+          "label": "Test sources",
+          "rule": "Reviewed source contains substantive tests for this edition. No execution or pass claim is awarded."
+        },
+        {
+          "id": "ci",
+          "label": "CI definition",
+          "rule": "A reviewed CI definition invokes relevant checks. This does not establish that CI passed."
+        },
+        {
+          "id": "changes",
+          "label": "Change history",
+          "rule": "A reviewed release/changelog document records concrete product changes."
+        },
+        {
+          "id": "security_policy",
+          "label": "Security reporting",
+          "rule": "A reviewed policy specifies how to report a security concern. It is not a security assessment."
+        }
+      ]
+    },
+    "hosted": {
+      "label": "Hosted disclosures",
+      "checks": [
+        {
+          "id": "terms",
+          "label": "Service terms",
+          "rule": "Official service terms identify conditions applying to this hosted edition."
+        },
+        {
+          "id": "pricing",
+          "label": "Pricing and usage units",
+          "rule": "Dated official documentation explains pricing/access and the unit of usage charged."
+        },
+        {
+          "id": "retention",
+          "label": "Data retention",
+          "rule": "Official documentation states a retention period or retention/deletion policy for customer data."
+        },
+        {
+          "id": "training",
+          "label": "Training and data use",
+          "rule": "Official documentation states whether/how customer data is used for model training."
+        },
+        {
+          "id": "authentication",
+          "label": "Authentication",
+          "rule": "Official documentation identifies supported sign-in or account authentication controls."
+        },
+        {
+          "id": "permissions",
+          "label": "Permission controls",
+          "rule": "Official documentation explains scoped access restrictions or human approvals."
+        },
+        {
+          "id": "audit_export",
+          "label": "Audit and export",
+          "rule": "Official documentation identifies available audit records or session-data export and access conditions."
+        },
+        {
+          "id": "deletion_revocation",
+          "label": "Deletion and revocation",
+          "rule": "Official documentation explains how to delete relevant data or revoke access."
+        },
+        {
+          "id": "status",
+          "label": "Service status",
+          "rule": "An official public status or incident page identifies this service."
+        },
+        {
+          "id": "changes",
+          "label": "Product changes",
+          "rule": "An official changelog describes dated changes to this hosted service."
+        }
+      ]
+    }
+  }
+}

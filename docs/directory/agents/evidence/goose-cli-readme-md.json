@@ -1,0 +1,21 @@
+{
+  "id": "goose-cli-readme-md",
+  "product_id": "goose",
+  "edition_id": "cli",
+  "type": "source_inspection",
+  "observed_at": "2026-10-27T05:02:48Z",
+  "reviewer": "Codex editorial source review",
+  "source": {
+    "url": "https://github.com/aaif-goose/goose/blob/2c6812a358db1b11953b9fafc05c6126eb818788/README.md",
+    "locator": "Product overview; Get started; Quick links; Need help",
+    "revision": "2c6812a358db1b11953b9fafc05c6126eb818788",
+    "blob_sha": "44c960f0193de1ccd3a13721cfe2daf5e7707ac5",
+    "content_sha256": "0f1df85a0c457caf1f3c4e1c0370f2da3887fffa588d207862cfc298c1d39755"
+  },
+  "observations": [
+    "Describes a local general-purpose agent with a CLI, desktop and API. This listing reviews the CLI only.",
+    "Names coding, research, writing, automation and data analysis; lists model providers and API-key or subscription access.",
+    "Links the official CLI release installer and diagnostics/known-issues documentation; names MCP integrations."
+  ],
+  "record_sha256": "81cb0009f38952d5533d7fdbc55a22be36d0a0ec355223a66bf8feccee858c1f"
+}

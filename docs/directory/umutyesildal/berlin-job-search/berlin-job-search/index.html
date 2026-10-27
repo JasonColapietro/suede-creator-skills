@@ -30,7 +30,7 @@
         "name": "berlin-job-search Agent Skill by umutyesildal | Suede AI",
         "description": "Search public job sources for Berlin and Germany, prepare German CVs and interviews, and track applications locally. From umutyesildal/berlin-job-search, MIT.",
         "url": "https://skills.suedeai.ai/directory/umutyesildal/berlin-job-search/berlin-job-search/",
-        "dateModified": "2026-10-26",
+        "dateModified": "2026-10-27",
         "isPartOf": {
           "@type": "CollectionPage",
           "@id": "https://skills.suedeai.ai/directory/#directory",
@@ -53,7 +53,7 @@
           "codeRepository": "https://github.com/umutyesildal/berlin-job-search/tree/main/skills/berlin-job-search",
           "programmingLanguage": "Markdown",
           "license": "https://github.com/umutyesildal/berlin-job-search/blob/main/LICENSE",
-          "dateModified": "2026-10-26",
+          "dateModified": "2026-10-27",
           "keywords": [
             "Productivity and Knowledge Work",
             "Agent Skills",
@@ -112,7 +112,8 @@
       </summary>
       <div class="nav-links">
           <a href="../../../../">Home</a>
-          <a href="../../../">Directory</a>
+          <a href="../../../">Skills</a>
+          <a href="../../../agents/">Agents</a>
           <a href="../../../methodology/">How listing works</a>
           <a href="../../../../skills/">Suede AI skills</a>
           <a href="../../../../blog/">Blog</a>
@@ -136,8 +137,8 @@
             <tr><th scope="row">Repository</th><td><a href="https://github.com/umutyesildal/berlin-job-search" target="_blank" rel="noopener">github.com/umutyesildal/berlin-job-search</a></td></tr>
             <tr><th scope="row">Category</th><td><a href="../../../productivity-knowledge/">Productivity and Knowledge Work</a></td></tr>
             <tr><th scope="row">License</th><td><a href="https://github.com/umutyesildal/berlin-job-search/blob/main/LICENSE" target="_blank" rel="noopener">MIT</a></td></tr>
-            <tr><th scope="row">Last commit</th><td>October 26, 2026 (repository)</td></tr>
-            <tr><th scope="row">SKILL.md</th><td>200 lines, 1,722 words</td></tr>
+            <tr><th scope="row">Last commit</th><td>October 27, 2026 (repository)</td></tr>
+            <tr><th scope="row">SKILL.md</th><td>201 lines, 1,729 words</td></tr>
             <tr><th scope="row">Bundled files</th><td>35 files, including references, scripts, assets or templates</td></tr>
             <tr><th scope="row">Quality score</th><td><span class="grade grade-b" title="Suede Skill Check: 84/100, grade B">84/100 · B</span> <a href="#check">Passes all seven graded checks</a></td></tr>
             <tr><th scope="row">Security scan</th><td>Not scanned</td></tr>
@@ -151,13 +152,13 @@
         <p class="muted">Read from the skill's files at the directory's October 22, 2026 snapshot: what ships with it, what its code reads, and the terms it is published under.</p>
         <ul class="before-list">
           <li><b>Bundled scripts:</b> 9 script files (9 Python). Your agent may run them, so read them first.</li>
-          <li><b>Network:</b> its scripts use an HTTP client or a cloud SDK, and name <code>www.linkedin.com</code>, <code>daily-berlin-jobs.vercel.app</code>, <code>boards-api.greenhouse.io</code> and <code>api.lever.co</code>.</li>
+          <li><b>Network:</b> its scripts use an HTTP client or a cloud SDK, and name <code>www.linkedin.com</code>, <code>daily-berlin-jobs.vercel.app</code>, <code>www.arbeitsagentur.de</code> and <code>join.com</code>.</li>
           <li><b>License:</b> <a href="https://github.com/umutyesildal/berlin-job-search/blob/main/LICENSE" target="_blank" rel="noopener">MIT</a>, an open-source or open-content license.</li>
         </ul>
       </section>
       <section class="panel" aria-labelledby="install-title">
         <h2 id="install-title">Install berlin-job-search</h2>
-        <p>Use Python 3.9+ and internet access for the public job-source APIs; the scripts use only the standard library and need no API keys. LinkedIn uses low-volume logged-out guest pages; automated access is against LinkedIn’s User Agreement. Keep CVs, profiles and tracker data locally in job-search/. PDF rendering optionally uses installed Chrome, Chromium or Edge. The repository’s plugin separately declares the Daily Berlin Jobs MCP connector; installing this skill folder alone does not configure that connector. The user controls accounts and submits applications. <a href="https://github.com/umutyesildal/berlin-job-search/blob/69a06e831e816943f8269a5c513a9d90ace87958/skills/berlin-job-search/SKILL.md" target="_blank" rel="noopener">Publisher setup instructions</a>.</p>
+        <p>Use Python 3.9+ and internet access for the public job-source APIs; the scripts use only the standard library and need no API keys. LinkedIn uses low-volume logged-out guest pages; automated access is against LinkedIn’s User Agreement. Keep CVs, profiles and tracker data locally in job-search/. PDF rendering optionally uses installed Chrome, Chromium or Edge. The repository’s plugin separately declares the Daily Berlin Jobs MCP connector; installing this skill folder alone does not configure that connector. The user controls accounts and submits applications. <a href="https://github.com/umutyesildal/berlin-job-search/blob/56631c64dffae651dda2d6e96f1e23d4c765f3df/skills/berlin-job-search/SKILL.md" target="_blank" rel="noopener">Publisher setup instructions</a>.</p>
         <p>The skills CLI works with Claude Code, Codex, Cursor and other agents; the other routes copy the folder by hand.</p>
         <div class="snippet">
           <div class="snippet-head"><span>Skills CLI</span><button type="button" class="snippet-copy" data-copy-target="install-cli">Copy</button></div>
@@ -243,8 +244,8 @@ rm -rf &quot;$tmp&quot;</code></pre>
 <div class="report-summary">
           <p class="report-kicker">Report snapshot · <time datetime="2026-10-22">October 22, 2026</time> · graded-v2</p>
           <p>The rubric totals 100 points; published scores are capped at 99. Security scan: not scanned.</p>
-          <p class="muted">Source revision: <a href="https://github.com/umutyesildal/berlin-job-search/blob/69a06e831e816943f8269a5c513a9d90ace87958/skills/berlin-job-search/SKILL.md" target="_blank" rel="noopener"><code>69a06e831e81</code></a>. Report version <code>45c483a5df1d</code>. Badge URLs follow the latest listing; save the report to keep this version.</p>
-          <p class="report-actions"><a href="report.json" download="berlin-job-search-suede-report-2026-10-22.json">Download report</a> · <a href="https://github.com/JasonColapietro/suede-creator-skills/issues/new?template=directory-listing.yml&amp;request=Recheck+my+updated+skill&amp;repository=https%3A%2F%2Fgithub.com%2Fumutyesildal%2Fberlin-job-search&amp;skill-scope=berlin-job-search&amp;details=Listing%3A+https%3A%2F%2Fskills.suedeai.ai%2Fdirectory%2Fumutyesildal%2Fberlin-job-search%2Fberlin-job-search%2F%0APrevious+report%3A+https%3A%2F%2Fskills.suedeai.ai%2Fdirectory%2Fumutyesildal%2Fberlin-job-search%2Fberlin-job-search%2Freport.json%0ASnapshot%3A+2026-10-22+%285bb623a8fd674f69877ee465e41703ec%29%3B+methodology%3A+graded-v2%0A%0AUpdated+source+commit+or+PR%3A%0AChanges+to+review%3A%0A" target="_blank" rel="noopener">Request a fresh review</a></p>
+          <p class="muted">Source revision: <a href="https://github.com/umutyesildal/berlin-job-search/blob/56631c64dffae651dda2d6e96f1e23d4c765f3df/skills/berlin-job-search/SKILL.md" target="_blank" rel="noopener"><code>56631c64dffa</code></a>. Report version <code>4850eb1bc6f7</code>. Badge URLs follow the latest listing; save the report to keep this version.</p>
+          <p class="report-actions"><a href="report.json" download="berlin-job-search-suede-report-2026-10-22.json">Download report</a> · <a href="https://github.com/JasonColapietro/suede-creator-skills/issues/new?template=directory-listing.yml&amp;request=Recheck+my+updated+skill&amp;repository=https%3A%2F%2Fgithub.com%2Fumutyesildal%2Fberlin-job-search&amp;skill-scope=berlin-job-search&amp;details=Listing%3A+https%3A%2F%2Fskills.suedeai.ai%2Fdirectory%2Fumutyesildal%2Fberlin-job-search%2Fberlin-job-search%2F%0APrevious+report%3A+https%3A%2F%2Fskills.suedeai.ai%2Fdirectory%2Fumutyesildal%2Fberlin-job-search%2Fberlin-job-search%2Freport.json%0ASnapshot%3A+2026-10-22+%281ab74cb0d9a543e59ba531a4c3335080%29%3B+methodology%3A+graded-v2%0A%0AUpdated+source+commit+or+PR%3A%0AChanges+to+review%3A%0A" target="_blank" rel="noopener">Request a fresh review</a></p>
           <h3>What to review next</h3><ul><li><b>Boundary clause</b>: 0 of 4 points. 4 when the description says when not to use the skill (“Not for …”, “Do not use …”, “Use … instead”).</li><li><b>Example request</b>: 0 of 3 points. 3 when the description quotes an example request (3–60 characters in quotation marks).</li><li><b>Tool permissions declared</b>: 0 of 2 points. 2 when the frontmatter declares allowed-tools.</li></ul><p class="muted">Add declarations and bundled files when they describe the skill’s actual needs. Update the source, then request a fresh review with the changed commit or PR.</p>
         </div>
         <p>berlin-job-search passes the required frontmatter check and all seven graded checks, which cover the SKILL.md format, a declared license and a commit in the last year. Those checks earn 56 of the score’s points; the rest come from description quality, instruction depth, bundled files, maintenance and curated-list citations. <a href="../../../methodology/">How the score works</a>.</p>

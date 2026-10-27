@@ -1,0 +1,6 @@
+test_http_999_stops_without_retry_or_connection_switch_advice (test_linkedin.LinkedInNetworkTests.test_http_999_stops_without_retry_or_connection_switch_advice) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.009s
+
+OK

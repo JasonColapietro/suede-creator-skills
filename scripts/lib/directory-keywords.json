@@ -42,6 +42,41 @@
   "developer tools agent skills",
   "SKILL.md"
  ],
+ "directory/agents/cline/index.html": [
+  "Cline agent evidence",
+  "AI agent directory",
+  "agent evidence ratings"
+ ],
+ "directory/agents/devin/index.html": [
+  "Devin agent evidence",
+  "AI agent directory",
+  "agent evidence ratings"
+ ],
+ "directory/agents/goose/index.html": [
+  "goose agent evidence",
+  "AI agent directory",
+  "agent evidence ratings"
+ ],
+ "directory/agents/index.html": [
+  "AI agents with evidence",
+  "AI agent directory",
+  "agent evidence ratings"
+ ],
+ "directory/agents/methodology/index.html": [
+  "How AI agent evidence ratings work",
+  "AI agent directory",
+  "agent evidence ratings"
+ ],
+ "directory/agents/submit/index.html": [
+  "Submit an AI agent",
+  "AI agent directory",
+  "agent evidence ratings"
+ ],
+ "directory/agents/ungraded/index.html": [
+  "Ungraded AI agents",
+  "AI agent directory",
+  "agent evidence ratings"
+ ],
  "directory/agiwhitelist/auteur/auteur/index.html": [
   "auteur skill by agiwhitelist",
   "auteur skill",
@@ -2045,6 +2080,7 @@
   "Extra Caffeine agent workflows",
   "Opsibyte agent workflows",
   "Cisco AI Defense Skill Scanner agent workflows",
+  "Berlin Job Search agent workflows",
   "Suede AI Skills Directory"
  ],
  "directory/firebase/skills/firebase-ai-logic-basics/index.html": [

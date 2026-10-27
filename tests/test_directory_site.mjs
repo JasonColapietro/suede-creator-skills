@@ -1,3 +1,6 @@
+import './test_agents_model.mjs';
+import './test_agents_site.mjs';
+import './test_agents_ungraded.mjs';
 // The standalone suedeai.directory build: URL rewrites and a full internal link check.
 import { test } from "node:test";
 import assert from "node:assert/strict";
@@ -85,7 +88,7 @@ test("standalone reports verify independently and match their displayed versions
     for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
       const p = path.join(dir, e.name);
       if (e.isDirectory()) remember(p);
-      else if (e.name === "report.json") originals.set(path.relative(source, p), fs.readFileSync(p, "utf8"));
+      else if (e.name === "report.json" && JSON.parse(fs.readFileSync(p, "utf8")).kind !== "agent") originals.set(path.relative(source, p), fs.readFileSync(p, "utf8"));
     }
   };
   remember(source);

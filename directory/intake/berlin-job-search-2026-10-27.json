@@ -1,0 +1,207 @@
+{
+  "schema_version": 1,
+  "repository": "umutyesildal/berlin-job-search",
+  "source_revision": "56631c64dffae651dda2d6e96f1e23d4c765f3df",
+  "source_branch": "main",
+  "source_status": "accepted_upstream_revision",
+  "assessment_date": "2026-10-27",
+  "retained_catalog_date": "2026-10-22",
+  "scope": [
+    "berlin-job-search"
+  ],
+  "canonical_skill_path": "skills/berlin-job-search/SKILL.md",
+  "checks": "11111111",
+  "score": 84,
+  "grade": "B",
+  "score_method": "graded-v2",
+  "citation_credit": 0,
+  "security_scan_status": "not_scanned",
+  "source_files": {
+    "LICENSE": "bedf2f38914bfc3d853d5ea107503aaabec51a14393e9d962aad86e69194aa35",
+    "NOTICE.md": "8b701407ddaf99468678e0b7a6ed9ac7ce0ccc946604adbddd923e8859c8faeb",
+    "SECURITY.md": "c34a3ed481fdf666c85e8b5289363ef3f4340550ce0aee70720883d7c8995ac4",
+    "skills/berlin-job-search/SKILL.md": "7dc3289c83cb8e28124b68f7079d08a1532db64e8e4792416346cf7f0f7b735e",
+    "skills/berlin-job-search/assets/anschreiben-template-de.md": "d8158807c7f1a2758ef73cd6141f3b7ec2206ec776ca8004b8251aaf087b8882",
+    "skills/berlin-job-search/assets/application-report.html": "93dada5524d7fd4505b5d50c7ab5d0031a39b71d77657c1379c61fc5d4d71662",
+    "skills/berlin-job-search/assets/companies.json": "094c55a13a72a6b53a708cb50bb47f886705293b5d0e02ec60ae5024995b3317",
+    "skills/berlin-job-search/assets/cover-letter-template-en.md": "62519fd273977d5c158e52978a3562ce43f021c2597731455bf97e9a71e8e748",
+    "skills/berlin-job-search/assets/cv-template-en.md": "e637b872d1b37bfa221a006047111220f88519c906f3659b1e97d6aaf2c6eb34",
+    "skills/berlin-job-search/assets/lebenslauf-template-de.md": "d1f9dc12beadc6203d4dbef72ebaa824ecebc7e08f8e795722fe3a4dc6425f67",
+    "skills/berlin-job-search/assets/outreach-templates.md": "f474b0cb5c95e9275307a07cd99b71752a8f99d66852678aeb9350de510e8ec0",
+    "skills/berlin-job-search/assets/profile.template.yml": "f10aadf78c174ac2d054cb589338ad9ad1dfd16133dd663e3aa5bd8e5b8bfab9",
+    "skills/berlin-job-search/assets/render-doc.css": "3e90285051b5cf9c7885ac0dee06ff7d8dfce15ac2dfd44e5cddece6a809828d",
+    "skills/berlin-job-search/assets/tracker.template.csv": "68b9447e25ef6913b502bcb7bc8034f7a4a24304ed003743f4f9d24b99460d28",
+    "skills/berlin-job-search/references/accounts-and-profiles.md": "2a5c1d28430e0b11fa1ab180e819b27046b4eb9777780246936d4a6fa4b2dc42",
+    "skills/berlin-job-search/references/api-sources.md": "a96996be6a90881ed2bf9c8bfcc1b89babeee91cb600f967d4549accbadbac3c",
+    "skills/berlin-job-search/references/application-review.md": "42ab9a6dbfc758dfcab7ddd9f508083fa5667c91496d9475be25fde104b22649",
+    "skills/berlin-job-search/references/applications-germany.md": "41cc9f74b89ba60eb53ff39bb608cb3f2973f0071831d9df9e592614a119b119",
+    "skills/berlin-job-search/references/browser-search.md": "335089736c418530006ca0a7bf9db009e789b63ba49f993e63fa55668cda4593",
+    "skills/berlin-job-search/references/cities-and-regions.md": "f1fc81256f03f9fc360d225a1b24304baaf37aa84fe28fb385cc04d72004a456",
+    "skills/berlin-job-search/references/evaluating-jobs.md": "6553aefa66a021fbdf3e2571f122266d24956e8dd2ddd0e5dcf4795ba08ed689",
+    "skills/berlin-job-search/references/getting-started.md": "9569571ce45dd9e4b5613f08e4304011ef4b1764b859ef781a7342605daaa217",
+    "skills/berlin-job-search/references/glossary.md": "7d025b4f9cd880e7de9ae359cb5d6cba12fddc2cb3ebb42b377f5a2c0cf18e27",
+    "skills/berlin-job-search/references/interviews-and-offers.md": "648ac3853a8e4cf9f32fd514f651a2c0fe5702268dcdb798889f0367d1846328",
+    "skills/berlin-job-search/references/job-sources.md": "f7cc228a651e94dc09211e08563ef382dab312f2ea805407fc74505a4c17558c",
+    "skills/berlin-job-search/references/mock-interview.md": "83b7eeb318e2c55405c28afbd08a10bf6753d4561b405c7d1cbea0fecdd6df16",
+    "skills/berlin-job-search/references/salary-and-compensation.md": "0758ab4a51b4a6cdebe59fabe195b8a99a5232dec2698fb3e441a52d16fb4420",
+    "skills/berlin-job-search/references/unemployment-and-support.md": "1cef568d30bdd6521b30bd0b15a8e2f6338e7fecad9e3e79ed1b2898bcb15ded",
+    "skills/berlin-job-search/references/visa-and-work-permits.md": "03da3b94bee68c13a37e524c9ce7164fb5ab95702f96677b5704af0a255471f9",
+    "skills/berlin-job-search/scripts/_common.py": "5aafce84c54d21b77939e43254d78198f73abbe3125d5c3e6e7b6a1cda655b24",
+    "skills/berlin-job-search/scripts/analyze_jd.py": "11bf5acbda01a9b201e83c6006eae9ffb0d9099897e2042fff0cb0bd873744ff",
+    "skills/berlin-job-search/scripts/ats_check.py": "ec8782ded44729961315bce92b3734ad60f07dffb6ef7e815098dc0ab37e90d8",
+    "skills/berlin-job-search/scripts/job_detail.py": "56cc5b87ae2a299806e02cfe0186956cbabe4a717240e05720ccdfc4965310bf",
+    "skills/berlin-job-search/scripts/linkedin.py": "e6034fedc9ea9841d1824ed74034b8738fbbd1ce6f03981e532bc63d31b70e11",
+    "skills/berlin-job-search/scripts/render_doc.py": "925ba677632c1f50263ff77a570dcfdac2e80497396b35614dbfb83d858baf30",
+    "skills/berlin-job-search/scripts/report.py": "9b9153326b072403dfd589c897c832101d8ff390060ba5d2e7d35c9bd29b1dae",
+    "skills/berlin-job-search/scripts/search.py": "35c0d4a609600b91c58f8794cf7e6fb55c75e8cbf60420e0727f1fef6eeb2f19",
+    "skills/berlin-job-search/scripts/tracker.py": "65cb29ef56f3f8e831b247985e655010469a68dc376e66f3a0102302063f03f8",
+    "tests/fixtures/arbeitnow.json": "4bd2970bc27519655104129624c33378a2a45e4e489db517262d933d8198a172",
+    "tests/fixtures/ashby.json": "5f592c189ac8670dc09efcecf6055299466f30f67b25b23d1eaa11b04dce561a",
+    "tests/fixtures/ba_v6.json": "afe9381a553d3cd249a8e6b055d3032597d201a6cb8dd708c5abe1992b7daaac",
+    "tests/fixtures/dbj_detail_ats.json": "a72b64fa254c1b8eb6158fac49109be9c94e20d927748b6abdd2405feceeb28a",
+    "tests/fixtures/dbj_detail_linkedin.json": "f430203c64863e290aa4b72e0f527526ae405de79e6def458aa2cad777389d7d",
+    "tests/fixtures/dbj_jobs.json": "98e838b90b51568ed1b6021322fefa43e17fdce289820790baa1e8377a5404ff",
+    "tests/fixtures/dbj_status.json": "a77a09a9c4ddebffa4e93ddc86c369d43a290e985d9d8ce0fe68d17c3f4f99a6",
+    "tests/fixtures/fictional-posting.md": "ecbdb77fc6d68bbf6192cc1066b7ba5cc32c5c8c6c0e03dcde7ae42a86bc75bf",
+    "tests/fixtures/freehire.json": "d48b1da6759ae8c270dc731171e8e6f0dee83611328e25271c3f360597cd8dac",
+    "tests/fixtures/greenhouse.json": "3e8d840799cc6817764c8283fdb6449da6f680df5c1bdecdaa9d694cea7cae6b",
+    "tests/fixtures/jobposting.html": "d820a04a5faba44e17b71b52dfd8ce37ae04359977d8d3e6182f268ed8efebfe",
+    "tests/fixtures/lever.json": "41f55d4090b88d56e216bba13a665d14df53b3da2d9863ab9a829363aedd4f4f",
+    "tests/fixtures/linkedin_card.html": "53180e905e9aec013e2184c926aff3aaa362b8ec9dda0e5fcb822d13ab004fc9",
+    "tests/fixtures/linkedin_detail.html": "2cee544399756aeabf1dbce5c8f6c2cc6a48f130cb7d9944c5d49664b46be2b4",
+    "tests/fixtures/personio.xml": "893a8c268fc23a18ffa45c3563e16d05a375d43fb6378d9418c51d5418dc063c",
+    "tests/test_analyze_jd.py": "2c53930488bf57d9bcee662cc32c4c5e5c0db769b860dc6df762054f7cddf5b6",
+    "tests/test_assets.py": "a0484be2035bf147e2defe99b2b116a3fc63c2301e04ff60b40c048254c92056",
+    "tests/test_ats_check.py": "7561f958a297122d00f6746dcbe5038cad1fd2b05fdcac7549af3399526d8471",
+    "tests/test_common.py": "88e7e16bbc801304dc15d7f64033bd8dbb2e7a37906089d5cf20ed62ccb906b1",
+    "tests/test_job_detail.py": "ef097fbfa88a081029ca090eaecdbb086f540cbb034407981ea82a16e73738bf",
+    "tests/test_linkedin.py": "ab35add85d34073279a9c3fafe9ab0c56fadf439ce5f6843c48cb00e97507f4d",
+    "tests/test_render_doc.py": "74f8b1222ac2551480e40533daa74b586147923800da3291968a49ace52b8046",
+    "tests/test_report.py": "6cc1899ba9c16c4eba7c3aeb8f662cb6533050dcbfdb41afe4e00a180407723e",
+    "tests/test_safety_regressions.py": "03a22ee6e6e39b4d354d572ea6af462d6bcdda6415b7eb960c97325e5413dbb4",
+    "tests/test_search.py": "7c8f451e87b8aa33081ec8f7281ba81674e035c1e083c33d65e8b2e8754adb9e",
+    "tests/test_tracker.py": "1f26b6668a18d056da9f2029494bac485c322de6df05aa2fb0a6e7a5407f340a"
+  },
+  "tools": {
+    "parse_skills.py": "c6afe55cd156a84baf1fbe4b40709723a22d7ea3821302da1fbd8e1d4ffc4a4f",
+    "curate.py": "e79ac38fe416c589a1ac24b524c79146feb9b5444b7c88894f0d8b208065960d",
+    "grade.py": "f29f75d089b91b38312510ec8cffe7c0fc50c726e5fd73a84bd15fb9344d7877",
+    "badges.mjs": "75a67d9f268b0a57f24d548a60059641c595997359d0cef6b47a31c724f87a26"
+  },
+  "unrelated_before_sha256": "107d63b36b5be013d427ca6c8413e03072f79fa6b63317d366d37daeb63779db",
+  "unrelated_after_sha256": "107d63b36b5be013d427ca6c8413e03072f79fa6b63317d366d37daeb63779db",
+  "dataset_before_sha256": "85c7b28b6c8a8a262c128527d0321144aff4898ae62a84f804d9427d54f51109",
+  "dataset_after_sha256": "9611f1062846f6bf656a1177928ac6dcb54a1925154b199a424d00955d564340",
+  "previous_source_revision": "69a06e831e816943f8269a5c513a9d90ace87958",
+  "previous_review_head": "3cf6fca7e8045fef4989c7902e505c2ac21aa738",
+  "integrated_main_revision": "310520c242df79615b6837b59c85a11a392f6ff3",
+  "upstream_pull_request": "https://github.com/umutyesildal/berlin-job-search/pull/6",
+  "upstream_merged_at": "2026-10-27T09:24:31Z",
+  "maintainer_acceptance": "https://github.com/JasonColapietro/suede-creator-skills/issues/276#issuecomment-6438206893",
+  "changed_source_files": [
+    "skills/berlin-job-search/SKILL.md",
+    "skills/berlin-job-search/references/api-sources.md",
+    "skills/berlin-job-search/scripts/linkedin.py",
+    "tests/test_linkedin.py"
+  ],
+  "manual_policy_disposition": "http_999_hold_resolved_at_accepted_revision",
+  "admission_disposition": "manual_review_complete_pending_exact_head_repository_checks",
+  "security_review": {
+    "scope": "Four-file accepted delta, unchanged transport/integrity/export safeguards, 16 offline security regressions, and HTTP-999 blocked-response regression.",
+    "external_automated_scan": "completed",
+    "limitations": "Best-effort static/dataflow source review and offline regression tests do not certify runtime safety. Catalog status remains not_scanned under the shipped schema.",
+    "new_findings_in_reviewed_delta": [],
+    "raw_scanner_status": "failed",
+    "raw_scanner_findings": {
+      "CRITICAL": 1,
+      "HIGH": 0,
+      "MEDIUM": 4,
+      "LOW": 1,
+      "INFO": 0
+    },
+    "raw_evidence_sha256": "fc54beb225325f66c17ad05cea2d8ce0166e44801c086292fc24a38d2754fd2a",
+    "files_verified": 35,
+    "manual_triage": "All six findings reviewed and retained; no confirmed vulnerability in the matched source. The raw failed verdict is unchanged.",
+    "scanner_tools_revision": "fe5dc1757cd6c8ff63aee853564249c00151778d",
+    "scanner_tools_sha256": {
+      "worker.py": "9b0423ead91a083b4929f436511983f084b4233a1ca75ce685fa2dd300fc3c0d",
+      "scan.py": "9dcfeb3409f0edf882450fea709398f5a9e45ffecb48401ecafb8d06115cbe86",
+      "evidence.mjs": "0016d5a07126c9fe92c8775561558287a9b94d546685b8e8dcae69a6368a5cde",
+      "requirements.txt": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769",
+      "profile.json": "358dc4ff0d2db83e3463f6ccfa1372468fcad6f54641219b3de4c7334b930d2a",
+      "Dockerfile": "e9f53902104deedc2618d8de942b748a2685ab9cfb346322b47bd97edd860611"
+    },
+    "runtime_image": "sha256:dba2e462e3001b0a6fe355fae191566aad6236ff9ed99118d61ebc834e8db24b",
+    "source_acquisition": "Local git ls-tree/cat-file at exact accepted revision after URL acquisition failed; every Git blob and all 35 SHA-256 hashes independently matched.",
+    "runtime_setup": "Hash-required wheels downloaded with host certificate verification, installed offline in immutable-base container. Temporary Dockerfile uses offline wheelhouse and read-only adapter permissions. Runtime: network none, source read-only, UID 65534, no capabilities, no new privileges, pids/memory/CPU limits.",
+    "self_test": "Clean fixture passed; synthetic exfiltration fixture failed with retained findings; both complete coverage."
+  },
+  "checks_evidence": {
+    "python_version": "3.12.14",
+    "upstream_tests": {
+      "passed": 158,
+      "command": "python3 -m unittest discover -s tests -v"
+    },
+    "upstream_validator": {
+      "passed": true,
+      "command": "python3 tools/validate_skill.py"
+    },
+    "security_regressions": {
+      "passed": 16,
+      "command": "python3 -m unittest discover -s tests -p test_safety_regressions.py -v"
+    },
+    "http_999_regression": {
+      "accepted_revision": "pass",
+      "previous_revision_with_accepted_test": "expected_failure"
+    },
+    "automated_policy_match": null,
+    "duplicate_matches": 0,
+    "score_at_assessment_date": 84,
+    "score_at_retained_catalog_date": 84,
+    "upstream_ci": {
+      "run_id": 40480548262,
+      "url": "https://github.com/umutyesildal/berlin-job-search/actions/runs/40480548262",
+      "source_revision": "56631c64dffae651dda2d6e96f1e23d4c765f3df",
+      "conclusion": "success",
+      "python_versions": [
+        "3.9",
+        "3.12"
+      ]
+    },
+    "directory_python": {
+      "passed": 87,
+      "command": "python3 -m unittest discover -s tests -p 'test_directory_*.py' -v"
+    },
+    "directory_node": {
+      "passed": 76,
+      "scope": "badges, reports, discovery, directory site, SEO, Awesome catalog before editorial feature addition"
+    },
+    "feature_and_awesome": {
+      "passed": 15,
+      "negative_control": "Berlin feature test failed before its entry existed"
+    },
+    "repository_validation": {
+      "command": "npm run validate",
+      "exit_code": 0
+    }
+  },
+  "evidence_files": {
+    "berlin-job-search-2026-10-27/upstream-tests.log": "cede2b8c0df06b7893451773c91d845f90158059e3bcd0bce2438a989c394761",
+    "berlin-job-search-2026-10-27/upstream-validator.log": "26cb6dcb56d6325b478bbe965ae117b623b4755943817dc127fa8c722f3e6237",
+    "berlin-job-search-2026-10-27/security-regressions.log": "efc4a7011c6205decf86dcb4b1cf68a7021eb9063cae106176736ee74227de40",
+    "berlin-job-search-2026-10-27/accepted-regression.log": "8e84ab129d246808716fe007fb013f576fd356bf1c8fc437554fb3a69e69a501",
+    "berlin-job-search-2026-10-27/negative-regression.log": "b612a7d8d13c7a647c4219a740f638a5e86a461aa6a888be5f8e202a269e260b",
+    "berlin-job-search-2026-10-27/directory-python.log": "d35d0359f1bb81a4d02e2a1c76e1eadb2fb137d36e2035dcab65250e6e9f2398",
+    "berlin-job-search-2026-10-27/directory-node.log": "1ac648d6f8f1dd9dc91567d0e2b00497785b6ce9f25542ce64bfcbbf46f747fc",
+    "berlin-job-search-2026-10-27/feature-negative.log": "d0acd57dacdb720d7c7419e4b67b689ef3b59365849a2469e7a7ac1754054142",
+    "berlin-job-search-2026-10-27/feature-tests.log": "6a17fa6e81930bee8856d2063a30aab5481ba08eb4e670e039aaa4ace51e2f80",
+    "berlin-job-search-2026-10-27/final-validate.log": "1164c8ee099670b8bdcb24ec9de56cf86c3aadaa5f230e6c892d4ecab18b2d8c",
+    "berlin-job-search-2026-10-27/scanner/summary.json": "94ab8e11354324f0142896e5d571cf62deaca7dc5accd46c55ec10cfccbd253d",
+    "berlin-job-search-2026-10-27/scanner/fc54beb225325f66c17ad05cea2d8ce0166e44801c086292fc24a38d2754fd2a.json": "fc54beb225325f66c17ad05cea2d8ce0166e44801c086292fc24a38d2754fd2a",
+    "berlin-job-search-2026-10-27/scanner-self-test/summary.json": "53f41304bcdc9e06b407a5526dd68168162947b960e6ebf941ec5eecc61dff30",
+    "berlin-job-search-2026-10-27/scanner-self-test/160d1ce4bd72078d5341db37e22237f2d875c8ca720f9996c01e130605591b33.json": "160d1ce4bd72078d5341db37e22237f2d875c8ca720f9996c01e130605591b33",
+    "berlin-job-search-2026-10-27/scanner-self-test/e8a37a20ea0a0e2b0f83a1b01ab47146148a57e4c6cdc53a18c413b5ebb3a428.json": "e8a37a20ea0a0e2b0f83a1b01ab47146148a57e4c6cdc53a18c413b5ebb3a428",
+    "berlin-job-search-2026-10-27/scanner-acquisition-error/summary.json": "aa9b17652e55a21905c9245c7f0c25f0f7af557d89a69d9baf6e52c313f6a21c",
+    "berlin-job-search-2026-10-27/scanner-acquisition-error/f7a28be519a576494f19f0e0d076ecb468b633dece4c3e60750214d9ec939ed9.json": "f7a28be519a576494f19f0e0d076ecb468b633dece4c3e60750214d9ec939ed9"
+  }
+}

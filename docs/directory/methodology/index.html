@@ -31,7 +31,7 @@
         "headline": "How skills are listed and graded",
         "description": "How the Suede AI Skills Directory grades agent skills: source lists, the Suede Skill Check, the 0–99 quality score, letter grades and listing rules.",
         "url": "https://skills.suedeai.ai/directory/methodology/",
-        "dateModified": "2026-10-26",
+        "dateModified": "2026-10-27",
         "inLanguage": "en",
         "isPartOf": {
           "@type": "CollectionPage",
@@ -73,8 +73,6 @@
             "@id": "https://suedeai.ai/founder#person"
           },
           "sameAs": [
-            "https://suedeai.agency/",
-            "https://suedeai.app/",
             "https://suedeai.org/",
             "https://github.com/Suede-AI",
             "https://x.com/AISUEDE",
@@ -112,6 +110,38 @@
         ]
       }
     </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "@id": "https://agents.suedeai.ai/#app",
+        "name": "Suede AI Agent Studio",
+        "url": "https://agents.suedeai.ai",
+        "sameAs": [
+          "https://suedeai.app/"
+        ],
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "publisher": {
+          "@id": "https://suedeai.ai/#organization"
+        }
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "@id": "https://seo.suedeai.ai/#organization",
+        "name": "Suede AI SEO",
+        "url": "https://seo.suedeai.ai/",
+        "sameAs": [
+          "https://suedeai.agency/"
+        ],
+        "parentOrganization": {
+          "@id": "https://suedeai.ai/#organization"
+        }
+      }
+    </script>
     <link rel="preload" href="../../assets/fonts/fraunces-var.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="../../assets/site.css">
     <link rel="stylesheet" href="../../assets/skill.css">
@@ -135,7 +165,8 @@
       </summary>
       <div class="nav-links">
           <a href="../../">Home</a>
-          <a href="../">Directory</a>
+          <a href="../">Skills</a>
+          <a href="../agents/">Agents</a>
           <a href="./">How listing works</a>
           <a href="../../skills/">Suede AI skills</a>
           <a href="../../blog/">Blog</a>

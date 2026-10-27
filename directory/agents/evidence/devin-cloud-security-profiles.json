@@ -1,0 +1,21 @@
+{
+  "id": "devin-cloud-security-profiles",
+  "product_id": "devin",
+  "edition_id": "cloud",
+  "type": "publisher_documentation",
+  "observed_at": "2026-10-27T05:02:48Z",
+  "reviewer": "Codex editorial source review",
+  "source": {
+    "url": "https://docs.devin.ai/product-guides/security-profiles",
+    "locator": "Restrictions; enforcement; changes taking effect",
+    "revision": null,
+    "blob_sha": null,
+    "content_sha256": null
+  },
+  "observations": [
+    "Describes optional network and MCP allowlists, git read-only/full scope and GitHub CLI token restrictions.",
+    "Recommended profiles may be overridden; mandatory profiles constrain lower scopes. Existing sessions resolve changed restrictions on resume/reboot, not automatically mid-session.",
+    "These documented controls were not tested and are not proof of isolation or safety."
+  ],
+  "record_sha256": "c7e8887b45d12f7cb85506c58fd10bcdd496bdd435388eed0ffa425e9c4affe4"
+}
