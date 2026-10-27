@@ -3,7 +3,7 @@
   "product_id": "cline",
   "edition_id": "cli",
   "type": "source_inspection",
-  "observed_at": "2026-10-27T05:15:00Z",
+  "observed_at": "2026-10-27T05:02:48Z",
   "reviewer": "Codex editorial source review",
   "source": {
     "url": "https://github.com/cline/cline/blob/c35b729049c7bb26c340df63ea9235c40b32dd29/apps/cli/README.md",
@@ -19,5 +19,5 @@
     "Documents authentication failure without saved credentials and history inspection for background sessions; Zen mode is incompatible with --data-dir and --tui.",
     "Links official documentation, community support and feature requests. Listing source revision does not prove an installed binary matches it."
   ],
-  "record_sha256": "3c7c949193323e2e3eaa926669d7e981740fc7a111f936aa78d42d820c66b709"
+  "record_sha256": "07fb4397c5728207257f9f19abd605f4fbbf8d428f9ef7058f8b1a1a986af551"
 }

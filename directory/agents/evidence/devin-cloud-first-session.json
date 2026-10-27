@@ -3,7 +3,7 @@
   "product_id": "devin",
   "edition_id": "cloud",
   "type": "publisher_documentation",
-  "observed_at": "2026-10-27T05:15:00Z",
+  "observed_at": "2026-10-27T05:02:48Z",
   "reviewer": "Codex editorial source review",
   "source": {
     "url": "https://docs.devin.ai/get-started/first-run",
@@ -16,5 +16,5 @@
     "Requires repository indexing/setup before a cloud session. Describes choosing repositories, planning in Ask mode and sending the plan to Agent mode.",
     "Describes code changes, commands, browser use and pull requests. Explains selectable agents and differing cost/capability; availability depends on administration and plan."
   ],
-  "record_sha256": "1f0af5b14e64c5046486a466632d91b5a4c7d758c3706549c3a7aa44c4daf8fc"
+  "record_sha256": "d5720a200ba6c647845e537d1af1607bf1126a64801f10f4679afbdf62f996f1"
 }

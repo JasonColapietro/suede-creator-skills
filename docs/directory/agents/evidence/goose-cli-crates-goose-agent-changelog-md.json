@@ -1,0 +1,19 @@
+{
+  "id": "goose-cli-crates-goose-agent-changelog-md",
+  "product_id": "goose",
+  "edition_id": "cli",
+  "type": "source_inspection",
+  "observed_at": "2026-10-27T05:02:48Z",
+  "reviewer": "Codex editorial source review",
+  "source": {
+    "url": "https://github.com/aaif-goose/goose/blob/2c6812a358db1b11953b9fafc05c6126eb818788/crates/goose-agent/CHANGELOG.md",
+    "locator": "0.1.0-alpha.13 and alpha.12",
+    "revision": "2c6812a358db1b11953b9fafc05c6126eb818788",
+    "blob_sha": "8854b376a0195c800eff4a9b046038a4e826716d",
+    "content_sha256": "1080e8a2093420e993d12017fba0c8fb3fd6870bbabf363af2f16725c859b022"
+  },
+  "observations": [
+    "Records dated changes to the shared goose-agent crate. CLI release coverage has not been established, so this does not award the CLI change-history point."
+  ],
+  "record_sha256": "9669150e1c8492062968cf47f7f93858074843a660e78056582e22428eb8d04d"
+}

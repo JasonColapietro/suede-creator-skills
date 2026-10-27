@@ -92,3 +92,14 @@ test('agent reports bind catalog, methodology and receipts and hash independentl
   assert.equal(report.evidence[0].record_sha256, f.receipt.record_sha256);
   assert.equal(report.listing_url, 'https://skills.suedeai.ai/directory/agents/example/');
 });
+
+test('source and license URLs cannot escape a pinned revision through dot segments', () => {
+ for (const segment of ['..', '%2e%2e', '.%2e', '%2e.', '%2e%2e%2fmain']) {
+  const f=fixture();const prefix=`https://github.com/example/agent/blob/${f.edition.source.revision}/`;
+  const {record_sha256,...body}=structuredClone(f.receipt);
+  body.source.url=prefix+segment+'/main/README.md';f.receipts[body.id]=seal(body);
+  assert.throws(()=>model.validateAgentCatalog(f.catalog,f.receipts,f.rubric),/source URL/);
+  const g=fixture();g.edition.source.license_url=prefix+segment+'/main/LICENSE';
+  assert.throws(()=>model.validateAgentCatalog(g.catalog,g.receipts,g.rubric),/license URL/);
+ }
+});

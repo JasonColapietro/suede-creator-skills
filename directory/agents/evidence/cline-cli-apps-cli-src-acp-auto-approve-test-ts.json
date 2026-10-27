@@ -3,7 +3,7 @@
   "product_id": "cline",
   "edition_id": "cli",
   "type": "source_inspection",
-  "observed_at": "2026-10-27T05:15:00Z",
+  "observed_at": "2026-10-27T05:02:48Z",
   "reviewer": "Codex editorial source review",
   "source": {
     "url": "https://github.com/cline/cline/blob/c35b729049c7bb26c340df63ea9235c40b32dd29/apps/cli/src/acp/auto-approve.test.ts",
@@ -15,5 +15,5 @@
   "observations": [
     "Contains assertions for boolean configuration, older string inputs, and rejection of unrecognized values. These tests were not executed."
   ],
-  "record_sha256": "11a6be52a7b2558f09cd3680fbbdbd6fec01ec18189204b440c9451d6737e4b8"
+  "record_sha256": "f6d4515b54abe3eedb8b104bfe82002acc180812675563a96141e0c53c8b4a98"
 }

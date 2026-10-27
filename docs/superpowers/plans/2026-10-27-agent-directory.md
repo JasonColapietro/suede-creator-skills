@@ -1,6 +1,6 @@
 # Agent Directory Implementation Plan
 
-> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
+> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [x]`) syntax for tracking.
 
 **Goal:** Publish reviewable repository and hosted-agent profiles alongside the unchanged skill catalog.
 
@@ -33,10 +33,10 @@
 
 **Interfaces:** `validateAgentCatalog(catalog, receipts, rubric)` returns validated products/editions with derived ratings; throws on invalid evidence. `loadAgentCatalog(root)` loads bounded local records and returns catalog, receipts, rubric, catalog digest and derived editions. `agentReport(model, product, baseUrl)` returns a versioned report with content hash. `freshness(assessedAt, now)` labels a dated review without modifying its score.
 
-- [ ] Write behavior tests using a complete synthetic repo/hosted/hybrid fixture: 8 supported checks plus 2 absent yields 8/10; one unknown yields null; not-applicable differs from unknown; forged hash/revision, reused cross-edition evidence, duplicate IDs, unsafe URLs and unsupported performance/security states reject.
-- [ ] Run `node --test tests/test_agents_model.mjs`; confirm the new contract fails before implementation.
-- [ ] Implement strict local validation, independent rating applicability, canonical receipt/report hashing, versioned rubric and machine-readable schema. Source-to-deployment equivalence stays explicitly unknown.
-- [ ] Run the model tests; expected all pass. Commit signed with focused tests and model.
+- [x] Write behavior tests using a complete synthetic repo/hosted/hybrid fixture: 8 supported checks plus 2 absent yields 8/10; one unknown yields null; not-applicable differs from unknown; forged hash/revision, reused cross-edition evidence, duplicate IDs, unsafe URLs and unsupported performance/security states reject.
+- [x] Run `node --test tests/test_agents_model.mjs`; confirm the new contract fails before implementation.
+- [x] Implement strict local validation, independent rating applicability, canonical receipt/report hashing, versioned rubric and machine-readable schema. Source-to-deployment equivalence stays explicitly unknown.
+- [x] Run the model tests; expected all pass. Commit signed with focused tests and model.
 
 ## Task 2: Review and admit the initial catalog
 
@@ -44,10 +44,10 @@
 
 **Interfaces:** Catalog follows Task 1's schema. Each criterion has state, reason and evidence IDs; receipts bind product/edition, observation date, reviewer, URL/locator and source revision where applicable.
 
-- [ ] Add a test requiring a repository edition and hosted edition, valid reviewed source/terms, 30 explicit check results per edition including not-applicable ratings, and runtime/security unknown defaults. Confirm it fails before the catalog exists.
-- [ ] Read pinned official goose/Cline source and Devin official documentation; retain concise paraphrased observations and digests. Score only checks supported by reviewed evidence; leave any unreviewed criterion unknown. Do not infer results from test/CI presence.
-- [ ] Add exact-scope add/recheck/correct/remove intake form and maintainers' refresh instructions. No automatic remote ingestion or execution.
-- [ ] Run model/catalog tests; expected all pass. Commit signed.
+- [x] Add a test requiring a repository edition and hosted edition, valid reviewed source/terms, ten explicit checks per applicable rating plus null for not-applicable ratings, and runtime/security unknown defaults. Confirm it fails before the catalog exists.
+- [x] Read pinned official goose/Cline source and Devin official documentation; retain concise paraphrased observations and digests. Score only checks supported by reviewed evidence; leave any unreviewed criterion unknown. Do not infer results from test/CI presence.
+- [x] Add exact-scope add/recheck/correct/remove intake form and maintainers' refresh instructions. No automatic remote ingestion or execution.
+- [x] Run model/catalog tests; expected all pass. Commit signed.
 
 ## Task 3: Agent pages, search and build integration
 
@@ -55,12 +55,12 @@
 
 **Interfaces:** `renderAgents(model, {page, crumbs, rel, url, setKeywords, pageDate})` returns a `Map` of generated paths/content. Existing generator registers it before orphan cleanup. Agent search index is edition-shaped and independent from `search-index.json` for skills.
 
-- [ ] Write integration tests proving agent routes exist, score scope is explicit, reports verify, schema/links/canonicals/sitemap work, unscored editions render, malicious text is escaped, and skill data/report invariants survive. Confirm missing generated routes fail.
-- [ ] Implement static hub/profile/methodology/submission output and edition search with task/deployment/source/evidence filters, cohort-specific rating sorts, stable URL state, empty/error/no-JS states and mobile styles. Add a Skills/Agents switch while retaining skill navigation and shortlist behavior.
-- [ ] Integrate output registration, reserved `agents` route, optional agent catalog support for legacy fixtures, standalone llms description and report-schema discrimination. Regenerate through `npm run build:directory`; never hand-edit generated HTML.
-- [ ] Run `node --test tests/test_agents_model.mjs tests/test_agents_site.mjs` and `npm run test:directory`. Expected all pass, plus existing skill JSON/report hashes remain unchanged.
-- [ ] Run browser checks using the authorized browser/runtime: search/filter/URL restoration, mixed editions, mobile overflow, keyboard, no-JS and failure fallback; retain desktop/mobile screenshots and preview.
-- [ ] Commit signed generated output and integration.
+- [x] Write integration tests proving agent routes exist, score scope is explicit, reports verify, schema/links/canonicals/sitemap work, unscored editions render, malicious text is escaped, and skill data/report invariants survive. Confirm missing generated routes fail.
+- [x] Implement static hub/profile/methodology/submission output and edition search with task/deployment/source/evidence filters, cohort-specific rating sorts, stable URL state, empty/error/no-JS states and mobile styles. Add a Skills/Agents switch while retaining skill navigation and shortlist behavior.
+- [x] Integrate output registration, reserved `agents` route, optional agent catalog support for legacy fixtures, standalone llms description and report-schema discrimination. Regenerate through `npm run build:directory`; never hand-edit generated HTML.
+- [x] Run `node --test tests/test_agents_model.mjs tests/test_agents_site.mjs` and `npm run test:directory`. Expected all pass, plus existing skill JSON/report hashes remain unchanged.
+- [x] Run browser checks using the authorized browser/runtime: search/filter/URL restoration, mixed editions, mobile overflow, keyboard, no-JS and failure fallback; retain desktop/mobile screenshots and preview.
+- [x] Commit signed generated output and integration.
 
 ## Task 4: Whole-branch verification, review and draft PR
 

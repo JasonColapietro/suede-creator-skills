@@ -356,7 +356,7 @@ for (const r of repos.values()) {
   r.licenseCounts = [...licCounts.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
 }
 
-const RESERVED = new Set(["methodology", "submit", "badges", "featured", "guides", "check", ...categories.map((c) => c.slug)]);
+const RESERVED = new Set(["agents", "methodology", "submit", "badges", "featured", "guides", "check", ...categories.map((c) => c.slug)]);
 for (const r of repos.values()) {
   const owner = r.slug.split("/")[0];
   if (RESERVED.has(owner)) throw new Error(`owner slug "${owner}" collides with a reserved directory path`);
@@ -407,7 +407,8 @@ function titleName(s) {
 
 const NAV_LINKS = [
   ["", "Home"],
-  ["directory/", "Directory"],
+  ["directory/", "Skills"],
+  ...(fs.existsSync(path.join(repoRoot, "directory/agents.json")) ? [["directory/agents/", "Agents"]] : []),
   ["directory/methodology/", "How listing works"],
   ["skills/", "Suede AI skills"],
   ["blog/", "Blog"],
@@ -503,7 +504,7 @@ function page({ here, title, description, keywords, h1Html, body, jsonld, ogType
   const pageUrl = url(here);
   const a = absolute ? "/assets/" : rel(here, "assets/");
   const blocks = jsonld
-    .map((obj) => `    <script type="application/ld+json">\n${JSON.stringify(obj, null, 2).replace(/^/gm, "      ")}\n    </script>`)
+    .map((obj) => `    <script type="application/ld+json">\n${JSON.stringify(obj, null, 2).replace(/</g, "\\u003c").replace(/^/gm, "      ")}\n    </script>`)
     .join("\n");
   const head = [
     `    <meta charset="utf-8">`,
@@ -533,6 +534,7 @@ function page({ here, title, description, keywords, h1Html, body, jsonld, ogType
     `    <link rel="stylesheet" href="${a}skill.css">`,
     `    <link rel="stylesheet" href="${a}directory.css">`,
     `    <script src="${a}directory.js" defer></script>`,
+    here.startsWith("directory/agents/") ? `    <link rel="stylesheet" href="${a}agents.css">\n    <script src="${a}agents.js" defer></script>` : null,
     extraStyle ? `    <style>${extraStyle}</style>` : null,
   ].filter(Boolean);
   return `<!doctype html>
@@ -1646,6 +1648,7 @@ ${FAQ.map(([q, a]) => `        <h3>${esc(q)}</h3>\n        <p>${esc(a)}${q === "
     keywords,
     h1Html: `      <div class="eyebrow">Suede AI Skills Directory</div>
       <h1>Claude Code Skills Directory <span class="h1-sub">Agent skills for Claude, Codex and Cursor, graded</span></h1>
+      ${fs.existsSync(path.join(repoRoot, "directory/agents.json")) ? `<p class="directory-type-switch"><strong>Skills</strong> · <a href="${rel(here, "directory/agents/")}">Browse AI agents →</a></p>` : ""}
       <a class="florida-recognition" href="https://themanifest.com/artificial-intelligence/consulting/deployment/companies/florida">
         <strong>TOP 24 IN FLORIDA</strong>
         <span class="florida-category">AI deployment developers</span>
@@ -2217,6 +2220,15 @@ function render404() {
 
 // ------------------------------------------------------------------ run
 
+let agentCounts = null;
+if (fs.existsSync(path.join(repoRoot, "directory/agents.json"))) {
+  const { loadAgentCatalog } = await import("./directory/agents-model.mjs");
+  const { renderAgents } = await import("./directory/agents-render.mjs");
+  const agentModel = loadAgentCatalog(repoRoot);
+  agentCounts = { products: agentModel.products.length, editions: agentModel.editions.length };
+  const agentFiles = renderAgents(agentModel, { page, crumbs, rel, url, setKeywords, pageDate: PAGE_DATE, root: repoRoot });
+  for (const [key, value] of agentFiles) files.set(key, value);
+}
 renderHub();
 renderFeaturedProjects();
 renderMethodology();
@@ -2264,9 +2276,10 @@ const llmsGuideLines = GUIDES.length
   ? [`- [Agent skills guides](${url(GUIDES_PATH)}): Guides by Jason Colapietro, Suede AI, built on the directory's published data:`, ...GUIDES.map((g) => `  - [${g.h1}](${url(g.path)}): ${g.meta_description}`)]
   : [];
 const llmsCheckLine = `- [Skill AI-visibility check](${url(CHECK_PATH)}): A free, in-browser check for skill publishers that shows a listed skill's 0–99 score by component and its largest open points. It sends nothing to Suede AI.`;
-const llmsBlock = [llmsLine, ...llmsCategoryLines, ...llmsGuideLines, llmsCheckLine].join("\n");
+const llmsAgents = fs.existsSync(path.join(repoRoot, "directory/agents.json")) ? [`- [AI Agents](${DIR_URL}agents/): ${agentCounts.products} products and ${agentCounts.editions} runnable repository and hosted editions, with separate documentation, repository evidence and hosted disclosure ratings /10. Incomplete reviews have no numerical score. Runtime not tested; security not assessed.`] : [];
+const llmsBlock = [llmsLine, ...llmsCategoryLines, ...llmsGuideLines, llmsCheckLine, ...llmsAgents].join("\n");
 const llmsCurrent = fs.readFileSync(llmsPath, "utf8");
-const LLMS_RE = /^- \[Agent Skills Directory\]\(.*$(?:\n  - \[.*$)*(?:\n- \[Agent skills guides\]\(.*$(?:\n  - \[.*$)*)?(?:\n- \[Skill AI-visibility check\]\(.*$)?/m;
+const LLMS_RE = /^- \[Agent Skills Directory\]\(.*$(?:\n  - \[.*$)*(?:\n- \[Agent skills guides\]\(.*$(?:\n  - \[.*$)*)?(?:\n- \[Skill AI-visibility check\]\(.*$)?(?:\n- \[AI Agents\]\(.*$)?/m;
 if (!LLMS_RE.test(llmsCurrent)) throw new Error("docs/llms.txt has no Agent Skills Directory line to keep current");
 const llmsNext = llmsCurrent.replace(LLMS_RE, llmsBlock);
 

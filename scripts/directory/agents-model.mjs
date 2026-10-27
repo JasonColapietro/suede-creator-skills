@@ -38,6 +38,15 @@ function safeUrl(value, label) {
     && u.hostname.includes('.') && !/^(?:localhost|\[|\d+\.)/i.test(u.hostname) && !/\.(?:local|localhost|internal)$/i.test(u.hostname), `${label} must be a public HTTPS URL`);
   return u;
 }
+function pinnedUrl(value, prefix, label) {
+  const parsed = safeUrl(value, label);
+  const rawPath = value.split('?')[0].split('#')[0];
+  need(!/[\\\\]/.test(value) && !/%(?:2f|5c)/i.test(value)
+    && !rawPath.split('/').some(part => /^(?:\.|%2e){1,2}$/i.test(part))
+    && parsed.href.startsWith(prefix) && value.startsWith(prefix) && parsed.pathname.length > new URL(prefix).pathname.length,
+    `${label} must bind the exact repository/revision`);
+}
+
 function checkRubric(rubric) {
   exact(rubric, ['version', 'ratings'], 'rubric');
   need(rubric.version === AGENT_METHOD, 'unsupported methodology');
@@ -69,7 +78,7 @@ function validateReceipt(receipt, product, edition, generated) {
   if (receipt.type === 'source_inspection') {
     need(edition.source && receipt.source.revision === edition.source.revision && SHA.test(receipt.source.revision), 'source revision mismatch');
     const prefix = `https://github.com/${edition.source.repository}/blob/${edition.source.revision}/`;
-    need(receipt.source.url.startsWith(prefix) && receipt.source.url.length > prefix.length, 'source URL must bind the exact repository/revision');
+    pinnedUrl(receipt.source.url, prefix, 'source URL');
     need(SHA.test(receipt.source.blob_sha) && HASH.test(receipt.source.content_sha256), 'source needs blob and content digests');
   } else {
     need(receipt.source.revision === null && receipt.source.blob_sha === null && receipt.source.content_sha256 === null, 'hosted/document observations must not claim retained full-page or revision digests');
@@ -101,7 +110,7 @@ export function validateAgentCatalog(catalog, receipts, rubric) {
         exact(e.source, ['repository', 'revision', 'license', 'license_url', 'distribution_url', 'deployment_revision'], 'edition source');
         need(/^[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+$/.test(e.source.repository) && SHA.test(e.source.revision), 'source needs repository and exact revision');
         text(e.source.license, 'license'); safeUrl(e.source.license_url, 'license URL'); safeUrl(e.source.distribution_url, 'distribution URL');
-        need(e.source.license_url.startsWith(`https://github.com/${e.source.repository}/blob/${e.source.revision}/`), 'license URL must be pinned to source revision');
+        pinnedUrl(e.source.license_url, `https://github.com/${e.source.repository}/blob/${e.source.revision}/`, 'license URL');
         need(e.source.deployment_revision === (e.deployment === 'hosted' ? 'unknown' : 'not_applicable'), 'unsupported deployment revision equivalence claim');
       }
       need(e.source !== null || e.deployment === 'hosted', 'a non-hosted edition requires public source');

@@ -3,7 +3,7 @@
   "product_id": "goose",
   "edition_id": "cli",
   "type": "source_inspection",
-  "observed_at": "2026-10-27T05:15:00Z",
+  "observed_at": "2026-10-27T05:02:48Z",
   "reviewer": "Codex editorial source review",
   "source": {
     "url": "https://github.com/aaif-goose/goose/blob/2c6812a358db1b11953b9fafc05c6126eb818788/crates/goose-cli/tests/roam_acp_client.rs",
@@ -15,5 +15,5 @@
   "observations": [
     "Contains CLI client session-listing and delegation test code with a stub ACP agent and loopback transport. Tests were read, not executed."
   ],
-  "record_sha256": "cbd0026dade9eaaa9d4da9379e10fc0283d38ccd7f4b571336cbbba7cec85a6b"
+  "record_sha256": "fe412e5a16bdb7d451964af85e3b624a69866a8df0912d6e7ab53e69e2c19cf1"
 }

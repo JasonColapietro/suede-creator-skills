@@ -3,7 +3,7 @@
   "product_id": "devin",
   "edition_id": "cloud",
   "type": "publisher_documentation",
-  "observed_at": "2026-10-27T05:15:00Z",
+  "observed_at": "2026-10-27T05:02:48Z",
   "reviewer": "Codex editorial source review",
   "source": {
     "url": "https://cognition.com/legal/platform-terms-of-service",
@@ -16,5 +16,5 @@
     "Public terms govern registered access to the Cognition platform and describe account/password responsibilities and usage restrictions.",
     "Terms allow customer data use for training by default, with a paid-tier opt-out and Teams administrator control; exceptions to zero retention include abuse and legal process."
   ],
-  "record_sha256": "50ac4299428f2a8156a4e87a0bd169ba3ec232ce00c32676aa070dfb4398e46b"
+  "record_sha256": "51343505259e49c506b9d837c8b0b1922f597621611c5408b4c56692938e383c"
 }
