@@ -5,6 +5,7 @@ import path from 'node:path';
 import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { CHECK_IDS, SCORE_METHOD, listed, qualityScore, letterGrade, listingTarget } from './directory/badges.mjs';
+import { directoryMembers } from './directory/featured.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SITE = 'https://skills.suedeai.ai/directory/';
@@ -81,6 +82,9 @@ function validate({ data, categories, inclusions, exclusions, editorial }) {
     repoAnchors.set(anchor, s.repo);
   }
   const projects = new Set();
+  for (const member of directoryMembers(editorial)) {
+    if (excludedRepos.has(member.repo.toLowerCase()) || member.skills.some((skill) => excludedSkills.has(`${member.repo}/${skill.id}`.toLowerCase()))) throw new Error(`Directory member is excluded: ${member.repo}`);
+  }
   for (const p of editorial.projects) {
     if (!/^[a-z0-9-]+$/.test(p.id) || projects.has(p.id) || !/^[a-f0-9]{40}$/.test(p.commit)) throw new Error('Invalid featured project evidence');
     projects.add(p.id);
@@ -325,6 +329,27 @@ ${p.commands.join('\n')}
 ` : p.skills ? `\nAccepted scope: **${p.skills.length} skills**. Follow each linked skill’s individual setup instructions.\n` : ''}
 ${link('Repository', github(p.repo))} · ${link('Intake review', `../${p.review}`)} · ${link(`Reviewed source ${p.commit.slice(0, 7)}`, `${github(p.repo)}/tree/${p.commit}`)} · ${link('Suede AI feature', `${SITE}featured/#${p.id}`)}`;
 }).join('\n\n---\n\n')}
+${directoryMembers(editorial).length ? `
+---
+
+## Directory members
+
+Publisher membership with a defined skill scope. Linked reviews retain quality scores and scan findings.
+
+${directoryMembers(editorial).map((member) => `<a id="${member.id}"></a>
+
+### ${md(member.name)}
+
+**Suede Directory Member** · ${md(member.license)}
+
+${md(member.summary)}
+
+${member.skills.map((skill) => `- ${link(skill.title, `${github(member.repo)}/blob/${member.commit}/${member.scope}/${skill.id}/SKILL.md`)}: ${md(skill.description)}`).join('\n')}
+
+${md(member.setup)}
+
+${link('Repository', github(member.repo))} · ${link('Skill review', `../${member.review}`)} · ${link('Plugin license', `${github(member.repo)}/blob/${member.commit}/${member.license_file}`)} · ${link('Suede Directory Member', `${SITE}featured/#${member.id}`)}`).join('\n\n')}
+` : ''}
 ${editorial.page?.nominate ? `
 ---
 

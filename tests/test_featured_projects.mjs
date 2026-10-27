@@ -2,13 +2,81 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
+import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { qualityScore } from '../scripts/directory/badges.mjs';
+import * as featured from '../scripts/directory/featured.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const read = (file) => fs.readFileSync(path.join(root, file), 'utf8');
 const data = JSON.parse(read('directory/featured-projects.json'));
 const published = () => read('docs/directory/featured/index.html');
+
+test('Arcmira membership links only six pinned plugin skills and carries no certification', () => {
+  const members = featured.directoryMembers(data);
+  assert.deepEqual(members.map((m) => m.repo), ['arcmira/mcp']);
+  const member = members[0];
+  assert.equal(member.scope, 'plugins/arcmira/skills');
+  assert.equal(member.license_file, 'plugins/arcmira/LICENSE');
+  assert.equal(member.commit, '557fc76b697a2eaf1fee3bbfae90f25181ae2e93');
+  assert.deepEqual(member.skills.map((s) => s.id), ['arcmira', 'company-watch', 'compare-shows', 'find-quotes', 'person-research', 'sponsor-research']);
+  assert.ok(!data.projects.some((p) => p.repo === member.repo));
+  assert.ok(!JSON.parse(read('directory/skills.json')).skills.some((s) => s.repo === member.repo));
+  assert.ok(!JSON.stringify(JSON.parse(read('directory/promotion.json'))).includes(member.repo));
+  const page = published();
+  const card = page.split('id="arcmira"')[1]?.split('</article>')[0];
+  assert.ok(card, 'member card exists');
+  assert.match(card, /Suede Directory Member/);
+  assert.match(page, /id="directory-members"/);
+  assert.ok(page.indexOf('id="directory-members"') < page.indexOf('id="arcmira"'));
+  for (const skill of member.skills) assert.ok(card.includes(`href="https://github.com/${member.repo}/blob/${member.commit}/${member.scope}/${skill.id}/SKILL.md"`));
+  assert.ok(card.includes('href="https://github.com/arcmira/mcp"'));
+  assert.ok(card.includes(`/blob/${member.commit}/plugins/arcmira/LICENSE`));
+  assert.ok(fs.existsSync(path.join(root, member.review)));
+  assert.doesNotMatch(card, /certified|verified|score\.svg|badge\.svg|npx skills add|git clone/i);
+  assert.doesNotMatch(page, /featured-badge-arcmira/);
+  const awesome = read('awesome/featured.md').split('## Directory members')[1];
+  assert.match(awesome, /\*\*Suede Directory Member\*\*/);
+  for (const skill of member.skills) assert.ok(awesome.includes(`/blob/${member.commit}/${member.scope}/${skill.id}/SKILL.md`));
+  const ld = [...page.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].flatMap((m) => [JSON.parse(m[1])].flat());
+  const collection = ld.find((item) => item['@type'] === 'CollectionPage');
+  assert.equal(collection.mainEntity.numberOfItems, data.projects.length + members.length);
+  assert.equal(collection.mainEntity.itemListElement.at(-1).url, 'https://skills.suedeai.ai/directory/featured/#arcmira');
+});
+
+test('membership schema rejects qualification fields, ambiguous identities and unpinned paths', () => {
+  assert.equal(typeof featured.directoryMembers, 'function');
+  for (const patch of [{ score: 99 }, { grade: 'A' }, { certified: true }, { verified: true }, { badges: ['score'] }, { skills: [{ id: '../server', title: 'Server', description: 'Server' }] }, { scope: '.' }, { scope: 'plugins/../src' }, { commit: 'master' }, { id: data.projects[0].id }]) {
+    const invalid = structuredClone(data);
+    Object.assign(invalid.members[0], patch);
+    assert.throws(() => featured.directoryMembers(invalid), /member/i);
+  }
+  const duplicate = structuredClone(data);
+  duplicate.members.push(structuredClone(duplicate.members[0]));
+  assert.throws(() => featured.directoryMembers(duplicate), /member/i);
+});
+
+test('Arcmira review preserves original scores and every raw scan finding', () => {
+  const prefix = 'directory/reviews/2026-10-27-arcmira';
+  const quality = JSON.parse(read(`${prefix}/quality-scores.json`));
+  for (const [file, digest] of Object.entries(JSON.parse(read(`${prefix}/SHA256.json`)))) {
+    assert.equal(createHash('sha256').update(fs.readFileSync(path.join(root, prefix, file))).digest('hex'), digest, file);
+  }
+  assert.deepEqual(quality.map((s) => [s.name, s.python_score, s.grade]), [
+    ['arcmira', 77, 'C'], ['company-watch', 69, 'D'], ['compare-shows', 67, 'D'],
+    ['find-quotes', 69, 'D'], ['person-research', 69, 'D'], ['sponsor-research', 67, 'D'],
+  ]);
+  for (const skill of quality) {
+    const scan = JSON.parse(read(`${prefix}/security/${skill.name}.json`));
+    assert.equal(scan.source.revision, '557fc76b697a2eaf1fee3bbfae90f25181ae2e93');
+    assert.equal(scan.scanner.version, '2.3.1');
+    assert.equal(scan.coverage.complete, true);
+    assert.equal(scan.analysis.findings_count, 1);
+    assert.equal(scan.analysis.findings[0].rule_id, 'MANIFEST_MISSING_LICENSE');
+    assert.equal(scan.analysis.findings[0].severity, 'INFO');
+    assert.deepEqual(scan.analysis.analyzers_failed, []);
+  }
+});
 
 test('editorial projects preserve accepted scopes and resolve their reviewed evidence', () => {
   assert.deepEqual(data.projects.map((p) => p.repo), ['appierun/appie-mcp', 'TheColliery/CoalWash', 'costory-io/costory-finops-mcp-skills', 'cwong5/extra-caffeine-mcp', 'MelMayssonOwen/agent-skills', 'cisco-ai-defense/skill-scanner']);
@@ -47,8 +115,8 @@ test('featured page has a discoverable route, truthful structured data and selec
   assert.equal((page.match(/<h1[ >]/g) || []).length, 1);
   const blocks = [...page.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map((m) => JSON.parse(m[1]));
   const collection = blocks.find((x) => x['@type'] === 'CollectionPage');
-  assert.equal(collection.mainEntity.numberOfItems, 6);
-  assert.deepEqual(collection.mainEntity.itemListElement.map((p) => p.name), ['Appie', 'CoalWash', 'Costory', 'Extra Caffeine', 'Opsibyte', 'Cisco AI Defense Skill Scanner']);
+  assert.equal(collection.mainEntity.numberOfItems, 7);
+  assert.deepEqual(collection.mainEntity.itemListElement.map((p) => p.name), ['Appie', 'CoalWash', 'Costory', 'Extra Caffeine', 'Opsibyte', 'Cisco AI Defense Skill Scanner', 'Arcmira']);
   assert.match(page, /README-badge verification is tracked separately/);
   assert.match(page, /href="\.\.\/submit\/"/);
   assert.match(page, /href="\.\.\/methodology\/"/);

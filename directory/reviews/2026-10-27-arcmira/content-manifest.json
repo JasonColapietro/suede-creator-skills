@@ -1,0 +1,68 @@
+[
+  {
+    "path": "plugins/arcmira/skills/arcmira/SKILL.md",
+    "blob_sha1": "896aa2089481e38319712e01afa30c57604e2315",
+    "sha256": "844ea67207835136c74ae2af84d4578bfd75f30b445ce851b6274ff85d7ffbcd",
+    "bytes": 8889
+  },
+  {
+    "path": "plugins/arcmira/skills/company-watch/SKILL.md",
+    "blob_sha1": "dfa13b3a87c8e8b41eda8fb55bffb5d9a086e55f",
+    "sha256": "74d5a7ba13f407bc8a3336372e0f79d4fcf5e0891aba2df99f8b30027affa877",
+    "bytes": 12131
+  },
+  {
+    "path": "plugins/arcmira/skills/compare-shows/SKILL.md",
+    "blob_sha1": "adebdccf4b5c41dccfdca3b379a0b8259ae1978e",
+    "sha256": "40f905f278ba803a70600fa1ff25a200033febd0a461e84e7868733657935359",
+    "bytes": 5188
+  },
+  {
+    "path": "plugins/arcmira/skills/find-quotes/SKILL.md",
+    "blob_sha1": "676bfd550bf90f22fef63bf8059a9b1f55191418",
+    "sha256": "6d4431b66a043e8c0696f60ea9b3e826646a2fa6ade8ebd2379e92e09f7ca36c",
+    "bytes": 5602
+  },
+  {
+    "path": "plugins/arcmira/skills/person-research/SKILL.md",
+    "blob_sha1": "be3da893f2c36fca4b9b4d11387b5adcd6431bac",
+    "sha256": "eb9f275cef02933470289ba229c3fe0299a23fadc38f65779cf06fc5f9b8e435",
+    "bytes": 6205
+  },
+  {
+    "path": "plugins/arcmira/skills/sponsor-research/SKILL.md",
+    "blob_sha1": "fe73c0b53590ea7c3d859ed63919cc59b4fd8b02",
+    "sha256": "343a42945b2e590e483aff3438747a695341216979a65ebc9329439115604560",
+    "bytes": 6305
+  },
+  {
+    "path": "plugins/arcmira/LICENSE",
+    "blob_sha1": "1f25d649de0c60c6002b5c39c812a000f6a44e38",
+    "sha256": "28d6a1c0070657aeded12d943e4d7ca87daf84fa101b6030c27ec209d894973b",
+    "bytes": 11338
+  },
+  {
+    "path": "LICENSE",
+    "blob_sha1": "e3476a4b33fd01cd17871147e72a9582ae85f6b5",
+    "sha256": "7b6678dfa295540f718b7ca457abd0ceff6c77f3c4147337ea545c787f9c1caa",
+    "bytes": 307
+  },
+  {
+    "path": "README.md",
+    "blob_sha1": "e369ac7b4410f73e3dd22b5159f88abb50c7f85e",
+    "sha256": "091c27bb5e3296e7b6a73af105883db024a190595a039ee62ce5edc3f86705d1",
+    "bytes": 24336
+  },
+  {
+    "path": "plugins/arcmira/.claude-plugin/plugin.json",
+    "blob_sha1": "3b0a2e9a9cf581490ff2ea460dc688ae6a74805e",
+    "sha256": "c87bc8e9245e9131a5a14b90df6c522f337308a84e8ea42a6370f638a0f63d8c",
+    "bytes": 846
+  },
+  {
+    "path": "plugins/arcmira/.mcp.json",
+    "blob_sha1": "73e7719e41bd9126b8c575c9557227fe6a156c05",
+    "sha256": "baa32d36681ff0b98ad30f1251190186eb85bc8c04783eb8579969f3d344f20e",
+    "bytes": 114
+  }
+]

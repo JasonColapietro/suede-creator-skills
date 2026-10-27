@@ -1,0 +1,17 @@
+{
+  "REPRODUCE.md": "a1ecfc93cd3b68636d3bf745201c2c2f1cce9509794d2ad25e785d1863d8be3b",
+  "content-manifest.json": "eb05bf2475a60af9a2c08bed286a075b9cc07e01771c19790a00e85d2f9853cb",
+  "javascript-scores.json": "c43a7db7afaa147da35fbd6355bda38c95d4719c611f991618960d0bcc1b79bc",
+  "manual-findings.json": "6aee89f760df1e24640aef1384cbcf33191e3d146231b9e605b8672f9a616220",
+  "original-review.md": "bbfc73f907825adf7e2e65c26bc07b11e210159ab8d9a1d8916b830890430d2e",
+  "quality-scores.json": "2e63177b660e147339d28d307b243d8f7a2ae1c277b0c78a32085e9fa3e7a2db",
+  "raw-parser.json": "5d7c301e20a41acfbbc4a7431349976c13aa6a0e9f99cff4cceb4e0d2c5f43de",
+  "scanner-installed-versions.json": "af2c9256ba3a474eba4225302a0ee82b0c8510c9717aa7667e3b758cedf70a8e",
+  "security/arcmira.json": "2f8e1de89cc70c508cd49841760532606310f5f16f9283a4b7d096df51d60446",
+  "security/company-watch.json": "9b4059e76521d2c076b7f858294c212cf9e1b44169e640555501f466a409b2de",
+  "security/compare-shows.json": "87eb85c20c7defc8567a8a50854af2a13cf53d6e7b1f5a25c88170eaf3bcf5b3",
+  "security/find-quotes.json": "482714bf9fa3d63b7ccf4b10a41c2af9e346e7636dce29baa94e0b987ebc2ebb",
+  "security/person-research.json": "4a105c18ca036899da17b55ddcf52db5bc5fe5c1079e3ffc02ba34402914153e",
+  "security/sponsor-research.json": "be53071c3f87c5e48e158971998d68cad1e364473002c7d956eef66c06389b66",
+  "tooling-hashes.json": "02db0110f67cc58e40dd0300d4aac9b8dcb83b255a018dd7f39958d28df69600"
+}

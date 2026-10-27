@@ -52,6 +52,15 @@ test("the built site has no old directory URLs and no broken internal links", ()
     const sitemap = fs.readFileSync(path.join(out, "sitemap.xml"), "utf8");
     assert.ok(sitemap.includes(`<loc>${NEW}/</loc>`));
     assert.ok(!sitemap.includes(OLD));
+    const featured = fs.readFileSync(path.join(out, 'featured/index.html'), 'utf8');
+    assert.ok(sitemap.includes(`<loc>${NEW}/featured/</loc>`));
+    assert.ok(featured.includes(`rel="canonical" href="${NEW}/featured/"`));
+    assert.doesNotMatch(featured, /noindex/);
+    const member = featured.split('id="arcmira"')[1]?.split('</article>')[0];
+    assert.ok(member, 'standalone site retains the Arcmira member entry');
+    assert.match(member, /Suede Directory Member/);
+    assert.equal((member.match(/\/SKILL\.md"/g) || []).length, 6);
+    assert.doesNotMatch(featured, /featured-badge-arcmira/);
     const broken = [];
     const walk = (dir) => {
       for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
