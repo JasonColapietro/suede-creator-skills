@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-25",
+  "updated": "2026-10-27",
   "page": {
     "about": "Copy for /directory/featured/ and the awesome/featured.md view, rendered by scripts/build-directory.mjs and scripts/build-awesome-directory.mjs. Project entries below are the publishers’ own work: keep their names, repositories, setup facts and review links exactly as reviewed.",
     "title": "Featured Agent Skill Projects | Suede AI",
@@ -212,6 +212,25 @@
         }
       ],
       "setup": "Use the reviewed 2.3.1 release with verified dependency pins. Exclude the hijacked litellm 1.107.0 release and correct the certifi version in Cisco’s attached release lock. For local source review, disable hosted analyzers and behavioral alignment verification, use a network-disabled container, and retain every finding and error. Automated detection is best effort and does not certify a skill. This is an independent editorial selection, not a Cisco partnership."
+    },
+    {
+      "id": "berlin-job-search",
+      "name": "Berlin Job Search",
+      "repo": "umutyesildal/berlin-job-search",
+      "kind": "One skill · Job search and applications in Germany",
+      "license": "MIT",
+      "headline": "Find roles in Germany and organize your next application.",
+      "summary": "Search public job sources for Berlin and Germany, prepare a German CV or cover letter, practise interviews, and track applications locally. The user reviews personal claims and controls every submission.",
+      "review": "directory/reviews/2026-10-26-berlin-job-search.md",
+      "commit": "56631c64dffae651dda2d6e96f1e23d4c765f3df",
+      "skills": [
+        {
+          "id": "berlin-job-search",
+          "title": "Search, prepare and track",
+          "description": "Find relevant roles, evaluate requirements, prepare application materials and keep a local application tracker."
+        }
+      ],
+      "setup": "Install the single berlin-job-search skill. Its scripts require Python 3.9+ and internet access, use the standard library, and need no API keys. Keep profiles, CVs and tracker data in local job-search/. PDF rendering optionally uses Chrome, Chromium or Edge; the Daily Berlin Jobs MCP connector is configured separately. LinkedIn guest automation is against its User Agreement; the skill stops blocked sources without connection-switch or browser workarounds. Catalog security status: not_scanned; this editorial feature and the structural quality score do not certify runtime safety."
     }
   ]
 }

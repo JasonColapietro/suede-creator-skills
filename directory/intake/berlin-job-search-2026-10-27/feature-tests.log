@@ -1,0 +1,23 @@
+✔ 0–99 quality scoring leads the catalog and every listing, with higher scores first per publisher (41.743871ms)
+✔ every accepted skill appears exactly once in its category with its verified score and source (14282.461822ms)
+✔ all generated Markdown links resolve locally or to an existing website route and anchor (26606.696221ms)
+✔ allowlists and exclusions fail closed even if a stale dataset still contains the record (424.340625ms)
+✔ duplicate IDs, unknown categories, invalid grades and unsupported security claims are rejected (754.762925ms)
+✔ featured Appie scope and CoalWash full-plugin instructions retain their evidence and boundaries (294.600604ms)
+✔ freshness checks detect missing, edited and orphaned output without writing; regeneration is deterministic (2515.58235ms)
+✔ external descriptions are plain text and concise, and every publisher receives credit (12.242536ms)
+✔ guides link drafts to their source and published pages to the site; service links stay outside listings (1053.265527ms)
+✔ editorial projects preserve accepted scopes and resolve their reviewed evidence (28.279111ms)
+✔ CoalWash publishes only the complete plugin route with material hook behavior (2.687615ms)
+✔ featured page has a discoverable route, truthful structured data and selection context (2.228624ms)
+✔ Opsibyte publishes only six accepted upstream skills with current grades and disclosed fixes (220.536823ms)
+✔ Costory features the four requested upstream skills with their source-derived ratings (115.752561ms)
+✔ Berlin features only the accepted skill and preserves score and security boundaries (125.225047ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 15
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 47922.193919

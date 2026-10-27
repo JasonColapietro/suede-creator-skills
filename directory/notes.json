@@ -74,5 +74,9 @@
  "melmayssonowen/agent-skills/clef-music-tools": {
   "text": "The publisher documents https://clefdrills.com/mcp as a public, no-auth hosted MCP. Use a remote HTTP MCP client and check available tool schemas. Offline chord transposition uses Python 3 without additional packages. This review did not connect to the hosted service.",
   "source": "https://github.com/MelMayssonOwen/agent-skills/blob/aebddbe40090c99fe0c5a1810536637186335502/skills/clef-music-tools/references/setup.md"
+ },
+ "umutyesildal/berlin-job-search/berlin-job-search": {
+  "text": "Use Python 3.9+ and internet access for the public job-source APIs; the scripts use only the standard library and need no API keys. LinkedIn uses low-volume logged-out guest pages; automated access is against LinkedIn’s User Agreement. Keep CVs, profiles and tracker data locally in job-search/. PDF rendering optionally uses installed Chrome, Chromium or Edge. The repository’s plugin separately declares the Daily Berlin Jobs MCP connector; installing this skill folder alone does not configure that connector. The user controls accounts and submits applications.",
+  "source": "https://github.com/umutyesildal/berlin-job-search/blob/56631c64dffae651dda2d6e96f1e23d4c765f3df/skills/berlin-job-search/SKILL.md"
  }
 }

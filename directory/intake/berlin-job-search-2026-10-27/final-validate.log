@@ -1,0 +1,21 @@
+
+> suede-creator-skills@0.19.3 validate
+> node scripts/validate-skill-pack.mjs --strict && node scripts/validate-trigger-routing.mjs && node scripts/build-book-site.mjs --check && node scripts/build-book.mjs --check && node scripts/build-skill-cards.mjs --check && node scripts/build-skills-sh-json.mjs --check && node scripts/build-directory.mjs --check && node scripts/build-awesome-directory.mjs --check && node scripts/build-related-skills.mjs --check && node scripts/build-retired-skill-pages.mjs --check && node scripts/build-listings.mjs --check && node scripts/sync-first-party-public.mjs --check
+
+Validated 64 skills against 64 catalog entries.
+Trigger routing contract OK: 17 groups, 76 cases
+docs/book is current — 18 pages, 29,817 words.
+book/BOOK.md is current — 17 files, 29,833 words
+skill cards current — 64 cards + index
+skills.sh.json is current — 14 groupings covering 64 skills.
+docs/directory is up to date (12675 files).
+Awesome catalog current: 3869 skills, 162 repositories, 16 categories, 7 featured projects; 19 pages.
+docs/skills related sections are up to date (64 pages).
+Retired skill stubs are up to date (16 pages).
+Listings are current: 29 listings, 13 featured, updated 2026-10-22.
+Checked first-party public identities (0 files stale).
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice

@@ -1,0 +1,43 @@
+[
+  {
+    "id": "umutyesildal/berlin-job-search/berlin-job-search",
+    "status": "failed",
+    "reason": "review_retained_findings",
+    "source": {
+      "repository": "umutyesildal/berlin-job-search",
+      "path": "skills/berlin-job-search",
+      "revision": "56631c64dffae651dda2d6e96f1e23d4c765f3df"
+    },
+    "scanner": {
+      "name": "cisco-ai-skill-scanner",
+      "version": "2.3.1",
+      "adapter_version": 2,
+      "analyzers": [
+        "static_analyzer",
+        "bytecode",
+        "pipeline",
+        "correlation",
+        "behavioral_analyzer"
+      ],
+      "policy": "strict",
+      "cel_mode": "shadow",
+      "network": "disabled",
+      "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+    },
+    "started_at": "2026-10-27T16:39:38.376827+00:00",
+    "completed_at": "2026-10-27T16:39:47.193428+00:00",
+    "evaluated_on": "2026-10-27",
+    "valid_until": "2026-11-26T16:39:47.193Z",
+    "files_scanned": 35,
+    "coverage_complete": true,
+    "skipped": [],
+    "findings": {
+      "CRITICAL": 1,
+      "HIGH": 0,
+      "MEDIUM": 4,
+      "LOW": 1,
+      "INFO": 0
+    },
+    "evidence_sha256": "fc54beb225325f66c17ad05cea2d8ce0166e44801c086292fc24a38d2754fd2a"
+  }
+]

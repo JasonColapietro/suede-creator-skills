@@ -1,0 +1,19 @@
+test_http_999_stops_without_retry_or_connection_switch_advice (test_linkedin.LinkedInNetworkTests.test_http_999_stops_without_retry_or_connection_switch_advice) ... FAIL
+
+======================================================================
+FAIL: test_http_999_stops_without_retry_or_connection_switch_advice (test_linkedin.LinkedInNetworkTests.test_http_999_stops_without_retry_or_connection_switch_advice)
+----------------------------------------------------------------------
+linkedin.LinkedInBlockedError: LinkedIn blocks datacenter/VPN IPs; run from a home connection or use the browser recipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "previous-revision/tests/test_linkedin.py", line 135, in test_http_999_stops_without_retry_or_connection_switch_advice
+    with self.assertRaisesRegex(linkedin.LinkedInBlockedError, 'stop this source') as caught:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: "stop this source" does not match "LinkedIn blocks datacenter/VPN IPs; run from a home connection or use the browser recipe"
+
+----------------------------------------------------------------------
+Ran 1 test in 0.007s
+
+FAILED (failures=1)

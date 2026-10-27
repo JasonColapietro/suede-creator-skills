@@ -1,0 +1,84 @@
+[
+  {
+    "id": "self-test/clean",
+    "status": "passed",
+    "reason": "no_findings_in_recorded_coverage",
+    "source": {
+      "repository": "suede/self-test",
+      "path": "clean",
+      "revision": "0000000000000000000000000000000000000000"
+    },
+    "scanner": {
+      "name": "cisco-ai-skill-scanner",
+      "version": "2.3.1",
+      "adapter_version": 2,
+      "analyzers": [
+        "static_analyzer",
+        "bytecode",
+        "pipeline",
+        "correlation",
+        "behavioral_analyzer"
+      ],
+      "policy": "strict",
+      "cel_mode": "shadow",
+      "network": "disabled",
+      "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+    },
+    "started_at": "2026-10-27T16:36:36.411560+00:00",
+    "completed_at": "2026-10-27T16:36:38.425049+00:00",
+    "evaluated_on": "2026-10-27",
+    "valid_until": "2026-11-26T16:36:38.425Z",
+    "files_scanned": 1,
+    "coverage_complete": true,
+    "skipped": [],
+    "findings": {
+      "CRITICAL": 0,
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 0,
+      "INFO": 0
+    },
+    "evidence_sha256": "e8a37a20ea0a0e2b0f83a1b01ab47146148a57e4c6cdc53a18c413b5ebb3a428"
+  },
+  {
+    "id": "self-test/exfil",
+    "status": "failed",
+    "reason": "review_retained_findings",
+    "source": {
+      "repository": "suede/self-test",
+      "path": "exfil",
+      "revision": "0000000000000000000000000000000000000000"
+    },
+    "scanner": {
+      "name": "cisco-ai-skill-scanner",
+      "version": "2.3.1",
+      "adapter_version": 2,
+      "analyzers": [
+        "static_analyzer",
+        "bytecode",
+        "pipeline",
+        "correlation",
+        "behavioral_analyzer"
+      ],
+      "policy": "strict",
+      "cel_mode": "shadow",
+      "network": "disabled",
+      "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+    },
+    "started_at": "2026-10-27T16:36:38.425472+00:00",
+    "completed_at": "2026-10-27T16:36:38.765271+00:00",
+    "evaluated_on": "2026-10-27",
+    "valid_until": "2026-11-26T16:36:38.765Z",
+    "files_scanned": 2,
+    "coverage_complete": true,
+    "skipped": [],
+    "findings": {
+      "CRITICAL": 2,
+      "HIGH": 1,
+      "MEDIUM": 2,
+      "LOW": 0,
+      "INFO": 1
+    },
+    "evidence_sha256": "160d1ce4bd72078d5341db37e22237f2d875c8ca720f9996c01e130605591b33"
+  }
+]

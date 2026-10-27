@@ -1,0 +1,844 @@
+{
+  "schema_version": 1,
+  "source": {
+    "repository": "umutyesildal/berlin-job-search",
+    "path": "skills/berlin-job-search",
+    "revision": "56631c64dffae651dda2d6e96f1e23d4c765f3df"
+  },
+  "scanner": {
+    "name": "cisco-ai-skill-scanner",
+    "version": "2.3.1",
+    "adapter_version": 2,
+    "analyzers": [
+      "static_analyzer",
+      "bytecode",
+      "pipeline",
+      "correlation",
+      "behavioral_analyzer"
+    ],
+    "policy": "strict",
+    "cel_mode": "shadow",
+    "network": "disabled",
+    "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+  },
+  "started_at": "2026-10-27T16:39:38.376827+00:00",
+  "state": "completed",
+  "analysis": {
+    "skill_name": "berlin-job-search",
+    "skill_path": "/source/target-000",
+    "is_safe": false,
+    "max_severity": "CRITICAL",
+    "findings_count": 6,
+    "findings": [
+      {
+        "id": "LAZY_LOAD_DEEP_22f70036b0",
+        "rule_id": "LAZY_LOAD_DEEP_NESTING",
+        "category": "obfuscation",
+        "severity": "MEDIUM",
+        "title": "Deeply nested file references detected",
+        "description": "Skill has file references nested more than 3 levels deep. This could be an attempt to hide malicious content in files that are only loaded under specific conditions.",
+        "file_path": "SKILL.md",
+        "line_number": null,
+        "snippet": null,
+        "remediation": "Flatten the reference structure or ensure all nested files are safe",
+        "analyzer": "static",
+        "metadata": {
+          "aitech": "AITech-9.2",
+          "aitech_name": "Detection Evasion",
+          "aisubtech": "AISubtech-9.2.1",
+          "aisubtech_name": "Obfuscation Vulnerabilities",
+          "aitech_mappings": [
+            "OWASP: LLM09:2026: Vector and Embedding Weaknesses",
+            "OWASP: ASI04: Agentic Supply Chain Vulnerabilities",
+            "MITRE ATLAS: AML.T0074: Masquerading",
+            "MITRE ATLAS: AML.T0068: LLM Prompt Obfuscation",
+            "MITRE ATLAS: AML.T0107: Exploitation for Defense Evasion",
+            "NIST AML: N/A",
+            "Cisco AI MDL Code: MDL-001",
+            "Cisco AI MDL Code: MDL-003",
+            "Cisco AI MDL Code: MDL-009",
+            "Cisco AI MDL Code: MDL-011",
+            "Cisco AI MDL Code: MDL-016",
+            "Cisco AI MDL Code: MDL-017",
+            "Cisco AI MDL Code: MDL-019"
+          ],
+          "aisubtech_mappings": [
+            "OWASP: LLM09:2026: Vector and Embedding Weaknesses",
+            "OWASP: ASI04: Agentic Supply Chain Vulnerabilities",
+            "MITRE ATLAS: AML.T0074: Masquerading",
+            "MITRE ATLAS: AML.T0068: LLM Prompt Obfuscation",
+            "NIST AML: N/A",
+            "Cisco AI MDL Code: MDL-001",
+            "Cisco AI MDL Code: MDL-003",
+            "Cisco AI MDL Code: MDL-009",
+            "Cisco AI MDL Code: MDL-011",
+            "Cisco AI MDL Code: MDL-016",
+            "Cisco AI MDL Code: MDL-017",
+            "Cisco AI MDL Code: MDL-019"
+          ],
+          "framework_mappings": [
+            "OWASP: LLM09:2026: Vector and Embedding Weaknesses",
+            "OWASP: ASI04: Agentic Supply Chain Vulnerabilities",
+            "MITRE ATLAS: AML.T0074: Masquerading",
+            "MITRE ATLAS: AML.T0068: LLM Prompt Obfuscation",
+            "NIST AML: N/A",
+            "Cisco AI MDL Code: MDL-001",
+            "Cisco AI MDL Code: MDL-003",
+            "Cisco AI MDL Code: MDL-009",
+            "Cisco AI MDL Code: MDL-011",
+            "Cisco AI MDL Code: MDL-016",
+            "Cisco AI MDL Code: MDL-017",
+            "Cisco AI MDL Code: MDL-019"
+          ],
+          "taxonomy_status": "mapped",
+          "taxonomy_source": "rule",
+          "scan_policy_name": "strict",
+          "scan_policy_version": "1.0",
+          "scan_policy_preset_base": "strict",
+          "scan_policy_fingerprint_sha256": "7f4560dea6f3f1c11067735bab3759c4daedfcd6d67f46b4e40899507a2c2ea9"
+        }
+      },
+      {
+        "id": "FILE_MAGIC_MISMATCH_87b7149c8d",
+        "rule_id": "FILE_MAGIC_MISMATCH",
+        "category": "obfuscation",
+        "severity": "MEDIUM",
+        "title": "File extension does not match actual content type",
+        "description": "File 'profile.template.yml' extension (.yml) suggests one format but Magika detected a different text format: Text protocol buffer (textproto). This may indicate content obfuscation or a misnamed file.",
+        "file_path": "assets/profile.template.yml",
+        "line_number": null,
+        "snippet": null,
+        "remediation": "Rename the file to match its actual content type, or remove it if it appears malicious.",
+        "analyzer": "static",
+        "metadata": {
+          "actual_type": "code/textproto",
+          "actual_family": "code",
+          "claimed_extension": ".yml",
+          "confidence_score": 0.6799396276473999,
+          "semantic_facts": {
+            "evidence_kind": "file_magic",
+            "context_kind": "binary",
+            "signals": [
+              {
+                "rule_id": "FILE_MAGIC_MISMATCH",
+                "kind": "file_magic_mismatch",
+                "file_path": "assets/profile.template.yml",
+                "value_class": "binary"
+              }
+            ]
+          },
+          "aitech": "AITech-9.2",
+          "aitech_name": "Detection Evasion",
+          "aisubtech": "AISubtech-9.2.1",
+          "aisubtech_name": "Obfuscation Vulnerabilities",
+          "aitech_mappings": [
+            "OWASP: LLM09:2026: Vector and Embedding Weaknesses",
+            "OWASP: ASI04: Agentic Supply Chain Vulnerabilities",
+            "MITRE ATLAS: AML.T0074: Masquerading",
+            "MITRE ATLAS: AML.T0068: LLM Prompt Obfuscation",
+            "MITRE ATLAS: AML.T0107: Exploitation for Defense Evasion",
+            "NIST AML: N/A",
+            "Cisco AI MDL Code: MDL-001",
+            "Cisco AI MDL Code: MDL-003",
+            "Cisco AI MDL Code: MDL-009",
+            "Cisco AI MDL Code: MDL-011",
+            "Cisco AI MDL Code: MDL-016",
+            "Cisco AI MDL Code: MDL-017",
+            "Cisco AI MDL Code: MDL-019"
+          ],
+          "aisubtech_mappings": [
+            "OWASP: LLM09:2026: Vector and Embedding Weaknesses",
+            "OWASP: ASI04: Agentic Supply Chain Vulnerabilities",
+            "MITRE ATLAS: AML.T0074: Masquerading",
+            "MITRE ATLAS: AML.T0068: LLM Prompt Obfuscation",
+            "NIST AML: N/A",
+            "Cisco AI MDL Code: MDL-001",
+            "Cisco AI MDL Code: MDL-003",
+            "Cisco AI MDL Code: MDL-009",
+            "Cisco AI MDL Code: MDL-011",
+            "Cisco AI MDL Code: MDL-016",
+            "Cisco AI MDL Code: MDL-017",
+            "Cisco AI MDL Code: MDL-019"
+          ],
+          "framework_mappings": [
+            "OWASP: LLM09:2026: Vector and Embedding Weaknesses",
+            "OWASP: ASI04: Agentic Supply Chain Vulnerabilities",
+            "MITRE ATLAS: AML.T0074: Masquerading",
+            "MITRE ATLAS: AML.T0068: LLM Prompt Obfuscation",
+            "NIST AML: N/A",
+            "Cisco AI MDL Code: MDL-001",
+            "Cisco AI MDL Code: MDL-003",
+            "Cisco AI MDL Code: MDL-009",
+            "Cisco AI MDL Code: MDL-011",
+            "Cisco AI MDL Code: MDL-016",
+            "Cisco AI MDL Code: MDL-017",
+            "Cisco AI MDL Code: MDL-019"
+          ],
+          "taxonomy_status": "mapped",
+          "taxonomy_source": "rule",
+          "scan_policy_name": "strict",
+          "scan_policy_version": "1.0",
+          "scan_policy_preset_base": "strict",
+          "scan_policy_fingerprint_sha256": "7f4560dea6f3f1c11067735bab3759c4daedfcd6d67f46b4e40899507a2c2ea9"
+        }
+      },
+      {
+        "id": "DATA_EXFIL_SOCKET_CONNECT_13893e88a1",
+        "rule_id": "DATA_EXFIL_SOCKET_CONNECT",
+        "category": "data_exfiltration",
+        "severity": "CRITICAL",
+        "title": "Direct socket connection to external server",
+        "description": "Pattern detected: socket.getaddrinfo(",
+        "file_path": "scripts/_common.py",
+        "line_number": 250,
+        "snippet": "answers = socket.getaddrinfo(host, port, type=socket.SOCK_STREAM)",
+        "remediation": "Remove socket connections unless absolutely necessary and documented",
+        "analyzer": "static",
+        "metadata": {
+          "matched_pattern": "socket\\.getaddrinfo\\s*\\((?!\\s*(?:['\"](?:localhost|127\\.0\\.0\\.1|0\\.0\\.0\\.0|::1)['\"]|socket\\.gethostname\\s*\\(\\s*\\)))",
+          "matched_text": "socket.getaddrinfo(",
+          "signature_pattern_index": 2,
+          "signature_match_start": 10,
+          "signature_match_end": 29,
+          "signature_pattern_sha256": "cc4237499a5500d1375756624d0ce5e8ee0acbb37d3132a8afe4b72ea75104b8",
+          "scanner_category": "SECURITY VIOLATION",
+          "signature_context": "code",
+          "signature_polarity": "active",
+          "source_category": "data_exfiltration",
+          "category_normalization": "native",
+          "semantic_facts": {
+            "evidence_kind": "signature_pattern",
+            "context_kind": "code",
+            "signals": [
+              {
+                "rule_id": "DATA_EXFIL_SOCKET_CONNECT",
+                "kind": "signature_polarity",
+                "file_path": "scripts/_common.py",
+                "value_class": "active"
+              }
+            ]
+          },
+          "same_path_other_rule_ids": [
+            "DATA_EXFIL_NETWORK_REQUESTS"
+          ],
+          "same_path_unique_rule_count": 2,
+          "same_path_findings_count": 3,
+          "aitech": "AITech-8.2",
+          "aitech_name": "Data Exfiltration / Exposure",
+          "aisubtech": "AISubtech-8.2.3",
+          "aisubtech_name": "Data Exfiltration via Agent Tooling",
+          "aitech_mappings": [
+            "OWASP: LLM02:2026: Sensitive Information Disclosure",
+            "OWASP: ASI09: Human-Agent Trust Exploitation",
+            "MITRE ATLAS: AML.T0024.000: Exfiltration via AI Inference API: Infer Training Data Membership",
+            "MITRE ATLAS: AML.T0035: AI Artifact Collection",
+            "MITRE ATLAS: AML.T0037: Data From Local System",
+            "MITRE ATLAS: AML.T0057: LLM Data Leakage",
+            "NIST AML: NISTAML.037: Training Data Attacks"
+          ],
+          "aisubtech_mappings": [
+            "OWASP: LLM02:2026: Sensitive Information Disclosure",
+            "OWASP: ASI02: Tool Misuse & Exploitation",
+            "OWASP: ASI09: Human-Agent Trust Exploitation",
+            "MITRE ATLAS: AML.T0086: Exfiltration via AI Agent Tool Invocation",
+            "NIST AML: N/A"
+          ],
+          "framework_mappings": [
+            "OWASP: LLM02:2026: Sensitive Information Disclosure",
+            "OWASP: ASI02: Tool Misuse & Exploitation",
+            "OWASP: ASI09: Human-Agent Trust Exploitation",
+            "MITRE ATLAS: AML.T0086: Exfiltration via AI Agent Tool Invocation",
+            "NIST AML: N/A"
+          ],
+          "taxonomy_status": "mapped",
+          "taxonomy_source": "rule",
+          "scan_policy_name": "strict",
+          "scan_policy_version": "1.0",
+          "scan_policy_preset_base": "strict",
+          "scan_policy_fingerprint_sha256": "7f4560dea6f3f1c11067735bab3759c4daedfcd6d67f46b4e40899507a2c2ea9"
+        }
+      },
+      {
+        "id": "DATA_EXFIL_NETWORK_REQUESTS_187d0cc007",
+        "rule_id": "DATA_EXFIL_NETWORK_REQUESTS",
+        "category": "data_exfiltration",
+        "severity": "MEDIUM",
+        "title": "Outbound network request primitives that can transmit data externally",
+        "description": "Pattern detected: http.client.HTTPConnection",
+        "file_path": "scripts/_common.py",
+        "line_number": 266,
+        "snippet": "class _PublicHTTPConnection(http.client.HTTPConnection):",
+        "remediation": "Ensure network operations are necessary and document allowed destinations",
+        "analyzer": "static",
+        "metadata": {
+          "matched_pattern": "http\\.client\\.(?:HTTPConnection|HTTPSConnection)",
+          "matched_text": "http.client.HTTPConnection",
+          "signature_pattern_index": 4,
+          "signature_match_start": 28,
+          "signature_match_end": 54,
+          "signature_pattern_sha256": "571267a3d6524b96f1b20aaa24ca954b03e6f05e87de0f9dd0fcf21fe1df2243",
+          "scanner_category": "SECURITY VIOLATION",
+          "signature_context": "code",
+          "signature_polarity": "active",
+          "source_category": "data_exfiltration",
+          "category_normalization": "native",
+          "semantic_facts": {
+            "evidence_kind": "signature_pattern",
+            "context_kind": "code",
+            "signals": [
+              {
+                "rule_id": "DATA_EXFIL_NETWORK_REQUESTS",
+                "kind": "signature_polarity",
+                "file_path": "scripts/_common.py",
+                "value_class": "active"
+              }
+            ]
+          },
+          "same_path_other_rule_ids": [
+            "DATA_EXFIL_SOCKET_CONNECT"
+          ],
+          "same_path_unique_rule_count": 2,
+          "same_path_findings_count": 3,
+          "aitech": "AITech-8.2",
+          "aitech_name": "Data Exfiltration / Exposure",
+          "aisubtech": "AISubtech-8.2.3",
+          "aisubtech_name": "Data Exfiltration via Agent Tooling",
+          "aitech_mappings": [
+            "OWASP: LLM02:2026: Sensitive Information Disclosure",
+            "OWASP: ASI09: Human-Agent Trust Exploitation",
+            "MITRE ATLAS: AML.T0024.000: Exfiltration via AI Inference API: Infer Training Data Membership",
+            "MITRE ATLAS: AML.T0035: AI Artifact Collection",
+            "MITRE ATLAS: AML.T0037: Data From Local System",
+            "MITRE ATLAS: AML.T0057: LLM Data Leakage",
+            "NIST AML: NISTAML.037: Training Data Attacks"
+          ],
+          "aisubtech_mappings": [
+            "OWASP: LLM02:2026: Sensitive Information Disclosure",
+            "OWASP: ASI02: Tool Misuse & Exploitation",
+            "OWASP: ASI09: Human-Agent Trust Exploitation",
+            "MITRE ATLAS: AML.T0086: Exfiltration via AI Agent Tool Invocation",
+            "NIST AML: N/A"
+          ],
+          "framework_mappings": [
+            "OWASP: LLM02:2026: Sensitive Information Disclosure",
+            "OWASP: ASI02: Tool Misuse & Exploitation",
+            "OWASP: ASI09: Human-Agent Trust Exploitation",
+            "MITRE ATLAS: AML.T0086: Exfiltration via AI Agent Tool Invocation",
+            "NIST AML: N/A"
+          ],
+          "taxonomy_status": "mapped",
+          "taxonomy_source": "rule",
+          "scan_policy_name": "strict",
+          "scan_policy_version": "1.0",
+          "scan_policy_preset_base": "strict",
+          "scan_policy_fingerprint_sha256": "7f4560dea6f3f1c11067735bab3759c4daedfcd6d67f46b4e40899507a2c2ea9"
+        }
+      },
+      {
+        "id": "DATA_EXFIL_NETWORK_REQUESTS_18bb69b693",
+        "rule_id": "DATA_EXFIL_NETWORK_REQUESTS",
+        "category": "data_exfiltration",
+        "severity": "MEDIUM",
+        "title": "Outbound network request primitives that can transmit data externally",
+        "description": "Pattern detected: http.client.HTTPSConnection",
+        "file_path": "scripts/_common.py",
+        "line_number": 271,
+        "snippet": "class _PublicHTTPSConnection(http.client.HTTPSConnection):",
+        "remediation": "Ensure network operations are necessary and document allowed destinations",
+        "analyzer": "static",
+        "metadata": {
+          "matched_pattern": "http\\.client\\.(?:HTTPConnection|HTTPSConnection)",
+          "matched_text": "http.client.HTTPSConnection",
+          "signature_pattern_index": 4,
+          "signature_match_start": 29,
+          "signature_match_end": 56,
+          "signature_pattern_sha256": "571267a3d6524b96f1b20aaa24ca954b03e6f05e87de0f9dd0fcf21fe1df2243",
+          "scanner_category": "SECURITY VIOLATION",
+          "signature_context": "code",
+          "signature_polarity": "active",
+          "source_category": "data_exfiltration",
+          "category_normalization": "native",
+          "semantic_facts": {
+            "evidence_kind": "signature_pattern",
+            "context_kind": "code",
+            "signals": [
+              {
+                "rule_id": "DATA_EXFIL_NETWORK_REQUESTS",
+                "kind": "signature_polarity",
+                "file_path": "scripts/_common.py",
+                "value_class": "active"
+              }
+            ]
+          },
+          "same_path_other_rule_ids": [
+            "DATA_EXFIL_SOCKET_CONNECT"
+          ],
+          "same_path_unique_rule_count": 2,
+          "same_path_findings_count": 3,
+          "aitech": "AITech-8.2",
+          "aitech_name": "Data Exfiltration / Exposure",
+          "aisubtech": "AISubtech-8.2.3",
+          "aisubtech_name": "Data Exfiltration via Agent Tooling",
+          "aitech_mappings": [
+            "OWASP: LLM02:2026: Sensitive Information Disclosure",
+            "OWASP: ASI09: Human-Agent Trust Exploitation",
+            "MITRE ATLAS: AML.T0024.000: Exfiltration via AI Inference API: Infer Training Data Membership",
+            "MITRE ATLAS: AML.T0035: AI Artifact Collection",
+            "MITRE ATLAS: AML.T0037: Data From Local System",
+            "MITRE ATLAS: AML.T0057: LLM Data Leakage",
+            "NIST AML: NISTAML.037: Training Data Attacks"
+          ],
+          "aisubtech_mappings": [
+            "OWASP: LLM02:2026: Sensitive Information Disclosure",
+            "OWASP: ASI02: Tool Misuse & Exploitation",
+            "OWASP: ASI09: Human-Agent Trust Exploitation",
+            "MITRE ATLAS: AML.T0086: Exfiltration via AI Agent Tool Invocation",
+            "NIST AML: N/A"
+          ],
+          "framework_mappings": [
+            "OWASP: LLM02:2026: Sensitive Information Disclosure",
+            "OWASP: ASI02: Tool Misuse & Exploitation",
+            "OWASP: ASI09: Human-Agent Trust Exploitation",
+            "MITRE ATLAS: AML.T0086: Exfiltration via AI Agent Tool Invocation",
+            "NIST AML: N/A"
+          ],
+          "taxonomy_status": "mapped",
+          "taxonomy_source": "rule",
+          "scan_policy_name": "strict",
+          "scan_policy_version": "1.0",
+          "scan_policy_preset_base": "strict",
+          "scan_policy_fingerprint_sha256": "7f4560dea6f3f1c11067735bab3759c4daedfcd6d67f46b4e40899507a2c2ea9"
+        }
+      },
+      {
+        "id": "UNDECLARED_NETWORK_DESTINATION_aa5f931fb0",
+        "rule_id": "UNDECLARED_NETWORK_DESTINATION",
+        "category": "unauthorized_tool_use",
+        "severity": "LOW",
+        "title": "Script contacts a destination the documentation never mentions",
+        "description": "Script contacts or configures 'careers.smartrecruiters.com' but the skill documentation never visibly mentions it. Undocumented network destinations can indicate behaviour the manifest and description do not disclose.",
+        "file_path": "scripts/search.py",
+        "line_number": 268,
+        "snippet": null,
+        "remediation": "Document the destination in SKILL.md (or the manifest description) if it is intended, or remove the undisclosed network access. Organizations can list internal hosts in llm_analysis.trusted_reference_domains.",
+        "analyzer": "static",
+        "metadata": {
+          "aitech": "AITech-9.1",
+          "aitech_name": "Model or Agentic System Manipulation",
+          "aisubtech": "AISubtech-9.1.3",
+          "aisubtech_name": "Unauthorized or Unsolicited Network Access",
+          "aitech_mappings": [
+            "OWASP: LLM04:2026: Supply Chain",
+            "OWASP: ASI04: Agentic Supply Chain Vulnerabilities",
+            "OWASP: ASI05: Unexpected Code Execution (RCE)",
+            "MITRE ATLAS: AML.T0050: Command and Scripting Interpreter",
+            "NIST AML: NISTAML.023: Backdoor Poisoning",
+            "Cisco AI MDL Code: MDL-006",
+            "Cisco AI MDL Code: MDL-007",
+            "Cisco AI MDL Code: MDL-005",
+            "Cisco AI MDL Code: MDL-010",
+            "Cisco AI MDL Code: MDL-012",
+            "Cisco AI MDL Code: MDL-014",
+            "Cisco AI MDL Code: MDL-015",
+            "Cisco AI MDL Code: MDL-019"
+          ],
+          "aisubtech_mappings": [
+            "OWASP: LLM04:2026: Supply Chain",
+            "OWASP: ASI04: Agentic Supply Chain Vulnerabilities",
+            "OWASP: ASI05: Unexpected Code Execution (RCE)",
+            "MITRE ATLAS: AML.T0049: Exploit Public Facing Application",
+            "NIST AML: AML.T0072: Reverse Shell",
+            "NIST AML: N/A"
+          ],
+          "framework_mappings": [
+            "OWASP: LLM04:2026: Supply Chain",
+            "OWASP: ASI04: Agentic Supply Chain Vulnerabilities",
+            "OWASP: ASI05: Unexpected Code Execution (RCE)",
+            "MITRE ATLAS: AML.T0049: Exploit Public Facing Application",
+            "NIST AML: AML.T0072: Reverse Shell",
+            "NIST AML: N/A"
+          ],
+          "taxonomy_status": "mapped",
+          "taxonomy_source": "rule",
+          "scan_policy_name": "strict",
+          "scan_policy_version": "1.0",
+          "scan_policy_preset_base": "strict",
+          "scan_policy_fingerprint_sha256": "7f4560dea6f3f1c11067735bab3759c4daedfcd6d67f46b4e40899507a2c2ea9"
+        }
+      }
+    ],
+    "scan_duration_seconds": 8.48726201057434,
+    "duration_ms": 8487,
+    "analyzers_used": [
+      "static_analyzer",
+      "bytecode",
+      "pipeline",
+      "correlation",
+      "behavioral_analyzer"
+    ],
+    "timestamp": "2026-10-27T16:39:47.086764+00:00",
+    "scan_metadata": {
+      "policy_name": "strict",
+      "policy_version": "1.0",
+      "policy_preset_base": "strict",
+      "policy_fingerprint_sha256": "7f4560dea6f3f1c11067735bab3759c4daedfcd6d67f46b4e40899507a2c2ea9",
+      "cel": {
+        "mode": "shadow",
+        "runtime": "cel-go",
+        "runtime_version": "v0.32.0;helper=2.3.1",
+        "fact_schema": "v1",
+        "expression_set_hash": "f26459b8f4a46a974d7ab0aaae34127b5b6a40d693e266e12fca03a69a6d26aa",
+        "evaluated": 0,
+        "retained": 6,
+        "would_suppress": 0,
+        "suppressed": 0,
+        "fallbacks": 0,
+        "projection_incomplete": 0,
+        "elapsed_ms": 0.0,
+        "projection_ms": 0.0,
+        "evaluation_ms": 0.0,
+        "errors": [],
+        "per_rule": {},
+        "suppressed_candidates": []
+      },
+      "rule_contract": {
+        "status": "passed",
+        "schema_version": 2,
+        "checked": 3,
+        "invalid_findings": 0,
+        "errors": []
+      },
+      "taxonomy": {
+        "source": "builtin",
+        "version": "2.0.0",
+        "name": "Cisco AI Security and Safety Taxonomy",
+        "revision": "655a343ac943a51b6f61f86e47156e7752c15dc6",
+        "snapshot_sha256": "413e8ce9081e6d91b78aaa0d0b1c06cdc15d0406ad319e23e9f9f4f80735c441",
+        "findings": {
+          "mapped": 6,
+          "not_applicable": 0,
+          "unmapped": 0
+        }
+      }
+    },
+    "analyzers_failed": []
+  },
+  "diagnostics": [
+    {
+      "logger": "python",
+      "level": "WARNING",
+      "category": "PyparsingDeprecationWarning",
+      "blocking": false,
+      "message": "'enablePackrat' deprecated - use 'enable_packrat'"
+    },
+    {
+      "logger": "python",
+      "level": "WARNING",
+      "category": "PyparsingDeprecationWarning",
+      "blocking": false,
+      "message": "'setParseAction' deprecated - use 'set_parse_action'"
+    },
+    {
+      "logger": "python",
+      "level": "WARNING",
+      "category": "PyparsingDeprecationWarning",
+      "blocking": false,
+      "message": "'setParseAction' deprecated - use 'set_parse_action'"
+    },
+    {
+      "logger": "python",
+      "level": "WARNING",
+      "category": "PyparsingDeprecationWarning",
+      "blocking": false,
+      "message": "'setParseAction' deprecated - use 'set_parse_action'"
+    },
+    {
+      "logger": "python",
+      "level": "WARNING",
+      "category": "PyparsingDeprecationWarning",
+      "blocking": false,
+      "message": "'escQuote' argument is deprecated, use 'esc_quote'"
+    },
+    {
+      "logger": "python",
+      "level": "WARNING",
+      "category": "PyparsingDeprecationWarning",
+      "blocking": false,
+      "message": "'setParseAction' deprecated - use 'set_parse_action'"
+    },
+    {
+      "logger": "python",
+      "level": "WARNING",
+      "category": "PyparsingDeprecationWarning",
+      "blocking": false,
+      "message": "'setParseAction' deprecated - use 'set_parse_action'"
+    },
+    {
+      "logger": "python",
+      "level": "WARNING",
+      "category": "PyparsingDeprecationWarning",
+      "blocking": false,
+      "message": "'setParseAction' deprecated - use 'set_parse_action'"
+    },
+    {
+      "logger": "python",
+      "level": "WARNING",
+      "category": "PyparsingDeprecationWarning",
+      "blocking": false,
+      "message": "'setParseAction' deprecated - use 'set_parse_action'"
+    },
+    {
+      "logger": "python",
+      "level": "WARNING",
+      "category": "PyparsingDeprecationWarning",
+      "blocking": false,
+      "message": "'setParseAction' deprecated - use 'set_parse_action'"
+    },
+    {
+      "logger": "python",
+      "level": "WARNING",
+      "category": "PyparsingDeprecationWarning",
+      "blocking": false,
+      "message": "'setParseAction' deprecated - use 'set_parse_action'"
+    },
+    {
+      "logger": "python",
+      "level": "WARNING",
+      "category": "PyparsingDeprecationWarning",
+      "blocking": false,
+      "message": "'initChars' argument is deprecated, use 'init_chars'"
+    },
+    {
+      "logger": "python",
+      "level": "WARNING",
+      "category": "PyparsingDeprecationWarning",
+      "blocking": false,
+      "message": "'bodyChars' argument is deprecated, use 'body_chars'"
+    },
+    {
+      "logger": "python",
+      "level": "WARNING",
+      "category": "PyparsingDeprecationWarning",
+      "blocking": false,
+      "message": "'setParseAction' deprecated - use 'set_parse_action'"
+    },
+    {
+      "logger": "python",
+      "level": "WARNING",
+      "category": "PyparsingDeprecationWarning",
+      "blocking": false,
+      "message": "'setParseAction' deprecated - use 'set_parse_action'"
+    },
+    {
+      "logger": "python",
+      "level": "WARNING",
+      "category": "PyparsingDeprecationWarning",
+      "blocking": false,
+      "message": "'setParseAction' deprecated - use 'set_parse_action'"
+    },
+    {
+      "logger": "python",
+      "level": "WARNING",
+      "category": "PyparsingDeprecationWarning",
+      "blocking": false,
+      "message": "'setParseAction' deprecated - use 'set_parse_action'"
+    },
+    {
+      "logger": "python",
+      "level": "WARNING",
+      "category": "PyparsingDeprecationWarning",
+      "blocking": false,
+      "message": "'infixNotation' deprecated - use 'infix_notation'"
+    },
+    {
+      "logger": "python",
+      "level": "WARNING",
+      "category": "PyparsingDeprecationWarning",
+      "blocking": false,
+      "message": "'infixNotation' deprecated - use 'infix_notation'"
+    }
+  ],
+  "coverage": {
+    "complete": true,
+    "files": [
+      {
+        "path": "SKILL.md",
+        "size": 13122,
+        "sha256": "7dc3289c83cb8e28124b68f7079d08a1532db64e8e4792416346cf7f0f7b735e"
+      },
+      {
+        "path": "assets/anschreiben-template-de.md",
+        "size": 750,
+        "sha256": "d8158807c7f1a2758ef73cd6141f3b7ec2206ec776ca8004b8251aaf087b8882"
+      },
+      {
+        "path": "assets/application-report.html",
+        "size": 4470,
+        "sha256": "93dada5524d7fd4505b5d50c7ab5d0031a39b71d77657c1379c61fc5d4d71662"
+      },
+      {
+        "path": "assets/companies.json",
+        "size": 9548,
+        "sha256": "094c55a13a72a6b53a708cb50bb47f886705293b5d0e02ec60ae5024995b3317"
+      },
+      {
+        "path": "assets/cover-letter-template-en.md",
+        "size": 744,
+        "sha256": "62519fd273977d5c158e52978a3562ce43f021c2597731455bf97e9a71e8e748"
+      },
+      {
+        "path": "assets/cv-template-en.md",
+        "size": 1255,
+        "sha256": "e637b872d1b37bfa221a006047111220f88519c906f3659b1e97d6aaf2c6eb34"
+      },
+      {
+        "path": "assets/lebenslauf-template-de.md",
+        "size": 1555,
+        "sha256": "d1f9dc12beadc6203d4dbef72ebaa824ecebc7e08f8e795722fe3a4dc6425f67"
+      },
+      {
+        "path": "assets/outreach-templates.md",
+        "size": 5707,
+        "sha256": "f474b0cb5c95e9275307a07cd99b71752a8f99d66852678aeb9350de510e8ec0"
+      },
+      {
+        "path": "assets/profile.template.yml",
+        "size": 604,
+        "sha256": "f10aadf78c174ac2d054cb589338ad9ad1dfd16133dd663e3aa5bd8e5b8bfab9"
+      },
+      {
+        "path": "assets/render-doc.css",
+        "size": 3141,
+        "sha256": "3e90285051b5cf9c7885ac0dee06ff7d8dfce15ac2dfd44e5cddece6a809828d"
+      },
+      {
+        "path": "assets/tracker.template.csv",
+        "size": 140,
+        "sha256": "68b9447e25ef6913b502bcb7bc8034f7a4a24304ed003743f4f9d24b99460d28"
+      },
+      {
+        "path": "references/accounts-and-profiles.md",
+        "size": 6630,
+        "sha256": "2a5c1d28430e0b11fa1ab180e819b27046b4eb9777780246936d4a6fa4b2dc42"
+      },
+      {
+        "path": "references/api-sources.md",
+        "size": 21685,
+        "sha256": "a96996be6a90881ed2bf9c8bfcc1b89babeee91cb600f967d4549accbadbac3c"
+      },
+      {
+        "path": "references/application-review.md",
+        "size": 7094,
+        "sha256": "42ab9a6dbfc758dfcab7ddd9f508083fa5667c91496d9475be25fde104b22649"
+      },
+      {
+        "path": "references/applications-germany.md",
+        "size": 6879,
+        "sha256": "41cc9f74b89ba60eb53ff39bb608cb3f2973f0071831d9df9e592614a119b119"
+      },
+      {
+        "path": "references/browser-search.md",
+        "size": 6807,
+        "sha256": "335089736c418530006ca0a7bf9db009e789b63ba49f993e63fa55668cda4593"
+      },
+      {
+        "path": "references/cities-and-regions.md",
+        "size": 9646,
+        "sha256": "f1fc81256f03f9fc360d225a1b24304baaf37aa84fe28fb385cc04d72004a456"
+      },
+      {
+        "path": "references/evaluating-jobs.md",
+        "size": 9919,
+        "sha256": "6553aefa66a021fbdf3e2571f122266d24956e8dd2ddd0e5dcf4795ba08ed689"
+      },
+      {
+        "path": "references/getting-started.md",
+        "size": 7353,
+        "sha256": "9569571ce45dd9e4b5613f08e4304011ef4b1764b859ef781a7342605daaa217"
+      },
+      {
+        "path": "references/glossary.md",
+        "size": 18094,
+        "sha256": "7d025b4f9cd880e7de9ae359cb5d6cba12fddc2cb3ebb42b377f5a2c0cf18e27"
+      },
+      {
+        "path": "references/interviews-and-offers.md",
+        "size": 5625,
+        "sha256": "648ac3853a8e4cf9f32fd514f651a2c0fe5702268dcdb798889f0367d1846328"
+      },
+      {
+        "path": "references/job-sources.md",
+        "size": 9938,
+        "sha256": "f7cc228a651e94dc09211e08563ef382dab312f2ea805407fc74505a4c17558c"
+      },
+      {
+        "path": "references/mock-interview.md",
+        "size": 5895,
+        "sha256": "83b7eeb318e2c55405c28afbd08a10bf6753d4561b405c7d1cbea0fecdd6df16"
+      },
+      {
+        "path": "references/salary-and-compensation.md",
+        "size": 12634,
+        "sha256": "0758ab4a51b4a6cdebe59fabe195b8a99a5232dec2698fb3e441a52d16fb4420"
+      },
+      {
+        "path": "references/unemployment-and-support.md",
+        "size": 6099,
+        "sha256": "1cef568d30bdd6521b30bd0b15a8e2f6338e7fecad9e3e79ed1b2898bcb15ded"
+      },
+      {
+        "path": "references/visa-and-work-permits.md",
+        "size": 12934,
+        "sha256": "03da3b94bee68c13a37e524c9ce7164fb5ab95702f96677b5704af0a255471f9"
+      },
+      {
+        "path": "scripts/_common.py",
+        "size": 15055,
+        "sha256": "5aafce84c54d21b77939e43254d78198f73abbe3125d5c3e6e7b6a1cda655b24"
+      },
+      {
+        "path": "scripts/analyze_jd.py",
+        "size": 32375,
+        "sha256": "11bf5acbda01a9b201e83c6006eae9ffb0d9099897e2042fff0cb0bd873744ff"
+      },
+      {
+        "path": "scripts/ats_check.py",
+        "size": 17250,
+        "sha256": "ec8782ded44729961315bce92b3734ad60f07dffb6ef7e815098dc0ab37e90d8"
+      },
+      {
+        "path": "scripts/job_detail.py",
+        "size": 16847,
+        "sha256": "56cc5b87ae2a299806e02cfe0186956cbabe4a717240e05720ccdfc4965310bf"
+      },
+      {
+        "path": "scripts/linkedin.py",
+        "size": 18731,
+        "sha256": "e6034fedc9ea9841d1824ed74034b8738fbbd1ce6f03981e532bc63d31b70e11"
+      },
+      {
+        "path": "scripts/render_doc.py",
+        "size": 19129,
+        "sha256": "925ba677632c1f50263ff77a570dcfdac2e80497396b35614dbfb83d858baf30"
+      },
+      {
+        "path": "scripts/report.py",
+        "size": 12531,
+        "sha256": "9b9153326b072403dfd589c897c832101d8ff390060ba5d2e7d35c9bd29b1dae"
+      },
+      {
+        "path": "scripts/search.py",
+        "size": 53390,
+        "sha256": "35c0d4a609600b91c58f8794cf7e6fb55c75e8cbf60420e0727f1fef6eeb2f19"
+      },
+      {
+        "path": "scripts/tracker.py",
+        "size": 27912,
+        "sha256": "65cb29ef56f3f8e831b247985e655010469a68dc376e66f3a0102302063f03f8"
+      }
+    ],
+    "skipped": []
+  },
+  "completed_at": "2026-10-27T16:39:47.193428+00:00",
+  "runtime_image": "sha256:dba2e462e3001b0a6fe355fae191566aad6236ff9ed99118d61ebc834e8db24b"
+}

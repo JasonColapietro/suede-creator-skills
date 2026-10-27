@@ -2080,6 +2080,7 @@
   "Extra Caffeine agent workflows",
   "Opsibyte agent workflows",
   "Cisco AI Defense Skill Scanner agent workflows",
+  "Berlin Job Search agent workflows",
   "Suede AI Skills Directory"
  ],
  "directory/firebase/skills/firebase-ai-logic-basics/index.html": [
@@ -7345,6 +7346,15 @@
   "youtube-transcript agent skill",
   "youtube-transcript claude skill",
   "tubeagentkit skills",
+  "productivity agent skills",
+  "SKILL.md"
+ ],
+ "directory/umutyesildal/berlin-job-search/berlin-job-search/index.html": [
+  "berlin-job-search skill by umutyesildal",
+  "berlin-job-search skill",
+  "berlin-job-search agent skill",
+  "berlin-job-search claude skill",
+  "umutyesildal skills",
   "productivity agent skills",
   "SKILL.md"
  ],
