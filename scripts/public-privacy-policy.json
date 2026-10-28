@@ -10,6 +10,26 @@
       "sha256": "cd29c5ac348a026a3ec5286890908fffb5bf6ab77f20672171be323a70c95026",
       "path_pattern": "tests/test_contribution_ledger\\.mjs",
       "reason": "Public provider coauthor attribution in contribution-ledger tests."
+    },
+    {
+      "sha256": "203ddf8aba9d3ec3f972ccf8d11e574154abe3da932cabcd45f506e9414839ff",
+      "path_pattern": "directory/DISTRIBUTION\\.md",
+      "reason": "Public localskills operator contact published at https://localskills.sh/terms; verified 2026-10-28 for the directory outreach ledger."
+    },
+    {
+      "sha256": "d09b41bcc03fbb4133aa23ab858435f055ac98d9ea24d26a5cb63ab992abf49d",
+      "path_pattern": "directory/DISTRIBUTION\\.md",
+      "reason": "Public Claude Market contact published at https://www.claudemarket.ai/contact; verified 2026-10-28 for the directory outreach ledger."
+    },
+    {
+      "sha256": "fe1dd69699d89efe263bc6714cb448d6a497fa2bd9a19ee42973df9338966848",
+      "path_pattern": "directory/DISTRIBUTION\\.md",
+      "reason": "Public ExplainX contact published at https://explainx.ai/contact; verified 2026-10-28 for the directory outreach ledger."
+    },
+    {
+      "sha256": "70c465d9563c71c37613a0ccda82dc26f31f68cf532a373a34beee795bb9188f",
+      "path_pattern": "directory/DISTRIBUTION\\.md",
+      "reason": "Public AI Agents Library contact published via the encoded email link at https://www.aiagentslibrary.com/contact/; verified 2026-10-28 for the directory outreach ledger."
     }
   ],
   "recovery_surface_path_pattern": "COPY\\.md|README\\.md|book/.*|docs/.*|https://skills\\.suedeai\\.ai/.*|(?:dist-npm/)?mcp/catalog\\.json"

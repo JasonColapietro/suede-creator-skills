@@ -94,6 +94,18 @@ class PublicPrivacyTests(unittest.TestCase):
         self.assertEqual(self.check(self.contact)[0]['category'], 'unreviewed-email')
         self.assertEqual(self.check('different'+'@'+'business.tld', 'SECURITY.md')[0]['category'], 'unreviewed-email')
 
+    def test_distribution_contacts_are_approved_only_in_the_ledger(self):
+        label = 'directory/DISTRIBUTION.md'
+        policy = json.loads(privacy.POLICY.read_text())
+        contacts = {match[0].lower() for match in privacy.EMAIL.finditer((ROOT / label).read_text())}
+        self.assertEqual(len(contacts), 4)
+        for contact in contacts:
+            self.assertEqual(privacy.check_text(contact, label, policy), [])
+            for other_path in ('README.md', 'docs/index.html', 'DISTRIBUTION.md',
+                               'directory/DISTRIBUTION.md.backup', 'nested/' + label):
+                self.assertEqual(privacy.check_text(contact, other_path, policy)[0]['category'], 'unreviewed-email')
+            self.assertEqual(privacy.check_text('unreviewed-' + contact, label, policy)[0]['category'], 'unreviewed-email')
+
     def test_generated_package_is_checked_and_diagnostics_are_redacted(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp); package = root / 'package'; package.mkdir()
