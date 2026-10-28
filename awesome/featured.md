@@ -6,7 +6,7 @@
 
 Editorial selection highlights a project’s workflow and accepted scope. It is separate from structural quality grades, security certification and README-badge verification. A plugin feature does not add its contents to the scored skill catalog.
 
-Selections updated **2026-10-27**. [View on Suede AI](https://skills.suedeai.ai/directory/featured/).
+Selections updated **2026-10-28**. [View on Suede AI](https://skills.suedeai.ai/directory/featured/).
 
 - [Appie](#appie)
 - [CoalWash](#coalwash)
@@ -173,7 +173,7 @@ Six plugin skills for transcript search, timestamped quotes, people and sponsor 
 
 Requires an Arcmira account and its hosted MCP connection. Research queries go to Arcmira; metered reads and monitor alerts use account credits. The linked source and Apache-2.0 license cover these six plugin skills.
 
-[Repository](https://github.com/arcmira/mcp) · [Skill review](../directory/reviews/2026-10-27-arcmira.md) · [Plugin license](https://github.com/arcmira/mcp/blob/557fc76b697a2eaf1fee3bbfae90f25181ae2e93/plugins/arcmira/LICENSE) · [Suede Directory Member](https://skills.suedeai.ai/directory/featured/#arcmira)
+[Website](https://arcmira.com) · [MCP setup](https://arcmira.com/docs/mcp-server) · [API docs](https://arcmira.com/docs) · [Repository](https://github.com/arcmira/mcp) · [Skill review](../directory/reviews/2026-10-27-arcmira.md) · [Plugin license](https://github.com/arcmira/mcp/blob/557fc76b697a2eaf1fee3bbfae90f25181ae2e93/plugins/arcmira/LICENSE) · [Suede Directory Member](https://skills.suedeai.ai/directory/featured/#arcmira)
 
 
 ---

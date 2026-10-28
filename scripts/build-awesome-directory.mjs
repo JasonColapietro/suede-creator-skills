@@ -348,7 +348,7 @@ ${member.skills.map((skill) => `- ${link(skill.title, `${github(member.repo)}/bl
 
 ${md(member.setup)}
 
-${link('Repository', github(member.repo))} · ${link('Skill review', `../${member.review}`)} · ${link('Plugin license', `${github(member.repo)}/blob/${member.commit}/${member.license_file}`)} · ${link('Suede Directory Member', `${SITE}featured/#${member.id}`)}`).join('\n\n')}
+${(member.links || []).map((item) => `${link(item.label, item.url)} · `).join('')}${link('Repository', github(member.repo))} · ${link('Skill review', `../${member.review}`)} · ${link('Plugin license', `${github(member.repo)}/blob/${member.commit}/${member.license_file}`)} · ${link('Suede Directory Member', `${SITE}featured/#${member.id}`)}`).join('\n\n')}
 ` : ''}
 ${editorial.page?.nominate ? `
 ---

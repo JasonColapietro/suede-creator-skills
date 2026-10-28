@@ -1,5 +1,13 @@
 // Editorial project selections are independent of skill scores and README-badge verification.
 // Members are a separate schema: no scored-catalog, certification or badge fields.
+const MEMBER_LINKS = new Map([
+  ['arcmira/mcp', new Map([
+    ['Website', 'https://arcmira.com'],
+    ['MCP setup', 'https://arcmira.com/docs/mcp-server'],
+    ['API docs', 'https://arcmira.com/docs'],
+  ])],
+]);
+
 export function directoryMembers(editorial) {
   const members = editorial.members === undefined ? [] : editorial.members;
   if (!Array.isArray(members)) throw new Error('Directory members must be an array');
@@ -7,11 +15,11 @@ export function directoryMembers(editorial) {
   const repos = new Set((editorial.projects || []).map((p) => p.repo.toLowerCase()));
   const slug = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
   const safePath = (s) => typeof s === 'string' && /^[A-Za-z0-9_./-]+$/.test(s) && s.split('/').every((p) => p && p !== '.' && p !== '..');
-  const fields = new Set(['id', 'name', 'repo', 'commit', 'review', 'scope', 'license', 'license_file', 'headline', 'summary', 'setup', 'skills']);
+  const fields = new Set(['id', 'name', 'repo', 'commit', 'review', 'scope', 'license', 'license_file', 'headline', 'summary', 'setup', 'skills', 'links']);
   for (const member of members) {
     const fail = () => { throw new Error(`Invalid directory member: ${member?.id || 'unknown'}`); };
     if (!member || typeof member !== 'object' || Array.isArray(member) || Object.keys(member).some((key) => !fields.has(key))) fail();
-    if ([...fields].filter((k) => k !== 'skills').some((k) => typeof member[k] !== 'string' || !member[k].trim())) fail();
+    if ([...fields].filter((k) => k !== 'skills' && k !== 'links').some((k) => typeof member[k] !== 'string' || !member[k].trim())) fail();
     if (!slug.test(member.id) || ids.has(member.id) || !/^[A-Za-z0-9][A-Za-z0-9-]*\/[A-Za-z0-9_.-]+$/.test(member.repo) || ['.', '..'].includes(member.repo.split('/')[1]) || repos.has(member.repo.toLowerCase()) || !/^[a-f0-9]{40}$/.test(member.commit)) fail();
     if (!safePath(member.scope) || !safePath(member.license_file) || !safePath(member.review) || !member.review.startsWith('directory/reviews/') || !member.review.endsWith('.md')) fail();
     if (!Array.isArray(member.skills) || !member.skills.length) fail();
@@ -19,6 +27,15 @@ export function directoryMembers(editorial) {
     for (const skill of member.skills) {
       if (!skill || Object.keys(skill).some((key) => !['id', 'title', 'description'].includes(key)) || ['id', 'title', 'description'].some((key) => typeof skill[key] !== 'string' || !skill[key].trim()) || !slug.test(skill.id) || skillIds.has(skill.id)) fail();
       skillIds.add(skill.id);
+    }
+    if (member.links !== undefined) {
+      if (!Array.isArray(member.links)) fail();
+      const approved = MEMBER_LINKS.get(member.repo);
+      const labels = new Set();
+      for (const link of member.links) {
+        if (!link || Object.keys(link).some((key) => !['label', 'url'].includes(key)) || typeof link.url !== 'string' || approved?.get(link.label) !== link.url || labels.has(link.label)) fail();
+        labels.add(link.label);
+      }
     }
     ids.add(member.id); repos.add(member.repo.toLowerCase());
   }
@@ -32,7 +49,7 @@ export function directoryMembersHtml(members, { esc, start = 0 }) {
     return `<article class="featured-project directory-member" id="${member.id}" data-directory-membership="member" aria-labelledby="${member.id}-title">
       <header class="featured-project-heading"><p class="featured-number" aria-hidden="true">${String(start + index + 1).padStart(2, '0')}</p><div><p class="featured-kind">Suede Directory Member</p><h2 id="${member.id}-title">${esc(member.name)}</h2></div><span class="featured-license">${esc(member.license)}</span></header>
       <div class="featured-project-body"><div><h3 class="featured-headline">${esc(member.headline)}</h3><p class="featured-summary">${esc(member.summary)}</p><ul class="featured-work">${member.skills.map((skill) => `<li><a href="${pinned}/${member.scope}/${skill.id}/SKILL.md"><span>${esc(skill.title)}</span><span aria-hidden="true">↗</span></a><p>${esc(skill.description)}</p></li>`).join('\n')}</ul></div><aside class="featured-setup"><h3>Before you start</h3><p>${esc(member.setup)}</p></aside></div>
-      <footer class="featured-project-footer"><a href="${source}">Explore ${esc(member.name)} on GitHub ↗</a><a href="https://github.com/JasonColapietro/suede-creator-skills/blob/main/${member.review}">Read the skill review ↗</a><a href="${pinned}/${member.license_file}">Plugin license ↗</a><a href="${source}/tree/${member.commit}/${member.scope}">Reviewed skills <code>${member.commit.slice(0, 7)}</code> ↗</a></footer>
+      <footer class="featured-project-footer">${(member.links || []).map((link) => `<a href="${esc(link.url)}" rel="noopener noreferrer">${esc(link.label)} ↗</a>`).join('')}<a href="${source}">Explore ${esc(member.name)} on GitHub ↗</a><a href="https://github.com/JasonColapietro/suede-creator-skills/blob/main/${member.review}">Read the skill review ↗</a><a href="${pinned}/${member.license_file}">Plugin license ↗</a><a href="${source}/tree/${member.commit}/${member.scope}">Reviewed skills <code>${member.commit.slice(0, 7)}</code> ↗</a></footer>
     </article>`;
   }).join('\n');
 }
