@@ -1,0 +1,110 @@
+[
+ {
+  "skill_md_bytes": 4137,
+  "fm_error": null,
+  "name": "lava-news-heat",
+  "description": "\u67e5\u8be2\u80a1\u7968\u548c\u6982\u5ff5\u677f\u5757\u7684\u6d88\u606f\u9762\u70ed\u5ea6\uff08\u7194\u5ca9\uff09\u3002\u5f53\u7528\u6237\u95ee\u67d0\u53ea\u80a1\u7968/\u67d0\u4e2a\u6982\u5ff5\u6700\u8fd1\u6d88\u606f\u9762\u70ed\u4e0d\u70ed\u3001\u88ab\u54ea\u4e9b\u673a\u6784/\u5927V\u63d0\u53ca\u3001\u8981\u70b9\u662f\u4ec0\u4e48\u3001\u6982\u5ff5\u91cc\u54ea\u4e9b\u80a1\u7968\u6700\u70ed\u65f6\u4f7f\u7528\u3002",
+  "fm_license": null,
+  "compatibility": null,
+  "allowed_tools": null,
+  "display_name": null,
+  "fm_version": null,
+  "fm_author": null,
+  "body_lines": 48,
+  "body_words": 197,
+  "headings": [
+   [
+    1,
+    "\u7194\u5ca9 \u00b7 \u6d88\u606f\u9762\u70ed\u5ea6\u76d1\u6d4b"
+   ],
+   [
+    2,
+    "\u7ed9\u4eba\u770b\uff1a3 \u6b65\u88c5\u597d"
+   ],
+   [
+    2,
+    "\u7ed9 AI \u770b\uff1a\u6570\u636e\u8bf4\u660e"
+   ],
+   [
+    2,
+    "\u6d41\u7a0b"
+   ],
+   [
+    2,
+    "\u8f93\u51fa\u8981\u6c42"
+   ],
+   [
+    2,
+    "\u53c2\u8003"
+   ]
+  ],
+  "dir": ".",
+  "folder": "lava-mcp",
+  "file_count": 5,
+  "files_sample": [
+   "LICENSE",
+   "README.md",
+   "SKILL.md",
+   "glama.json",
+   "server.json"
+  ],
+  "has_scripts": false,
+  "has_references": false,
+  "has_assets": false,
+  "script_langs": {},
+  "env_read": [],
+  "env_docs": [],
+  "network": false,
+  "api_hosts": [],
+  "mcp": false,
+  "mcp_tools": [],
+  "captcha_files": false,
+  "run_commands": [],
+  "policy_text": "# \u7194\u5ca9 \u00b7 \u6d88\u606f\u9762\u70ed\u5ea6\u76d1\u6d4b\n\n## \u7ed9\u4eba\u770b\uff1a3 \u6b65\u88c5\u597d\n\n1. **\u62ff API Key**\uff1a\u767b\u5f55\u7194\u5ca9 \u2192 \u5de6\u4fa7\u70b9\u300cAI\u6570\u636e\u670d\u52a1\u300d\u2192 \u4e0a\u65b9\u70b9\u300cAPI Key\u300d\uff1a\u9996\u6b21\u767b\u5f55\u5df2\u81ea\u52a8\u9001\u4ee3\u91d1\u5238\u5e76\u751f\u6210\u300c\u9ed8\u8ba4\u300dKey\uff08`lvk_` \u5f00\u5934\uff0c\u9ed8\u8ba4\u8131\u654f\uff0c\u70b9\u773c\u775b\u663e\u793a\u3001\u70b9\u590d\u5236\uff09\uff0c\u63a5\u5165\u6587\u6863\u91cc\u7684 MCP JSON \u5df2\u81ea\u52a8\u586b\u597d\u3002\u5165\u53e3\uff1ahttps://lava.ai-dolphin.com/lava#/ai-data-service\n2. **\u6dfb\u52a0 MCP**\uff08MCP\uff1d\u8ba9 AI \u529e\u516c\u8f6f\u4ef6\u76f4\u63a5\u8c03\u6570\u636e\u7684\u63a5\u53e3\uff09\uff1a\u5728\u8c46\u5305\u529e\u516c / WorkBuddy / \u5343\u95ee\u529e\u516c\u7684\u300c\u8fde\u63a5\u5668\u300d\u91cc\u65b0\u5efa\u81ea\u5b9a\u4e49\u8fde\u63a5\u5668\uff0c\n   - \u8fde\u63a5\u65b9\u5f0f\uff1aStreamable HTTP\uff08\u8c46\u5305\u91cc\u53eb\u300cHTTP\u300d\uff09\n   - \u5730\u5740\uff1a`https://lava.ai-dolphin.com/subscribe/v1/mcp`\n   - \u8bf7\u6c42\u5934\uff1a`Authorization` = `Bearer lvk_\u4f60\u7684Key`\uff08Bearer \u540e\u6709\u4e00\u4e2a\u7a7a\u683c\uff09\n3. **\u65b0\u5efa\u5bf9\u8bdd\u63d0\u95ee**\uff1a\u4f8b\u5982\u300c\u5b81\u5fb7\u65f6\u4ee3\u6700\u8fd1\u4e00\u5468\u6d88\u606f\u9762\u70ed\u4e0d\u70ed\uff1f\u300d\n\n\u5206\u8f6f\u4ef6\u7684\u8be6\u7ec6\u6b65\u9aa4\uff1ahttps://lava.ai-dolphin.com/subscribe#ai-office\n\u8d39\u7528\uff1a\u5148\u9001 100 \u5143\u4ee3\u91d1\u5238\uff0c\u4e4b\u540e\u6309\u8bf7\u6c42\u6b21\u6570\u6263\u8d39\uff0c\u7ea6 1000 \u6b21 5 \u5143\uff1b\u5931\u8d25\u7684\u8bf7\u6c42\u4e0d\u6263\u94b1\u3002\n\n## \u7ed9 AI \u770b\uff1a\u6570\u636e\u8bf4\u660e\n\n\u6570\u636e\u6e90\uff1a\u7194\u5ca9\u8fdc\u7a0b MCP `https://lava.ai-dolphin.com/subscribe/v1/mcp`\uff08Streamable HTTP\uff0c\u8bf7\u6c42\u5934 `Authorization: Bearer <API Key>`\uff09\u3002\n\u6240\u6709\u5de5\u5177\u53ea\u8bfb\uff1b\u8fd4\u56de\u7ed3\u6784\u5316\u6587\u5b57\u4e0e\u673a\u6784/\u5927V ID\uff08agency_id\uff09\u3002\u9002\u5408\u91cf\u5316\u4ea4\u6613\u5de5\u5177\u4e0e AI Agent \u80a1\u5e02\u7814\u7a76\u63a5\u5165\u3002\u6bcf\u6b21\u5de5\u5177\u8c03\u7528\u8ba1 1 \u6b21\u8bf7\u6c42\uff08get_account \u67e5\u4f59\u989d\u4e0d\u8ba1\u8d39\uff09\u3002\n\n## \u6d41\u7a0b\n\n1. **\u4e2a\u80a1\u70ed\u5ea6**\uff1a`get_stock_news_heat(stock_name \u6216 ts_code, days=7)`\n   - \u770b `data.heat.mentions`\uff08\u63d0\u53ca\u6570\uff09\u3001`data.heat.agencies`\uff08\u53c2\u4e0e\u673a\u6784/\u5927V\u6570\uff09\uff0c\u518d\u8bfb `list[].summary` \u5f52\u7eb3\u8981\u70b9\u3002\n2. **\u4e2a\u80a1\u5173\u8054\u6982\u5ff5**\uff1a`get_stock_concept_heat(stock_name, days=30)` \u2192 \u53d6 `list[]` \u524d 5 \u4e2a\u6982\u5ff5\u53ca\u5176 `mentions`\u3002\n3. **\u6982\u5ff5\u5185\u4e2a\u80a1\u6392\u884c**\uff1a`get_concept_stock_heat(concept, days=7)` \u2192 \u5217\u51fa\u63d0\u53ca\u6700\u591a\u7684\u4e2a\u80a1\u3002\n4. **\u5173\u952e\u8bcd\u8ffd\u8e2a**\uff1a`search_news_flow(keyword, since)`\u3002\n   - **\u5168\u5e02\u573a\u70ed\u699c**\uff1a`get_market_hot_stocks(window=24h)` / `get_market_hot_concepts(window=24h)`\uff1b\u95ee\u201c\u9760\u8c31\u7684\u4eba\u5728\u63d0\u4ec0\u4e48\u201d\u7528 `get_weighted_hot_stocks(days=3)`\u3002\n   - **\u65b0\u5192\u5934**\uff1a`get_first_mention_stocks(hours=24)` \u2192 \u6b64\u524d 7 \u5929\u6ca1\u4eba\u63d0\u3001\u521a\u88ab\u7b2c\u4e00\u6b21\u63d0\u5230\u7684\u80a1\u7968\u3002\n   - **\u65b0\u95fb\u70b9\u540d**\uff1a`get_news_stock_hits(hours=24)` \u770b\u5168\u5e02\u573a\uff1b`get_news_stock_hits(stock_name)` \u770b\u67d0\u80a1\u88ab\u54ea\u4e9b\u5a92\u4f53\u70b9\u540d\u3002\n   - **\u5355\u80a1\u591a\u65f6\u95f4\u7a97**\uff1a`get_stock_heat_windows(stock_name) \u2192 windows[]\uff081h~7d\uff09\u4e0e hourly_24h[] \u9010\u5c0f\u65f6\u8d70\u52bf\u3002\n   - **\u70ed\u5ea6\u52a8\u91cf / \u52a0\u901f\u699c**\uff1aget_accelerating_hot_stocks(window=24h) \u2192 \u5217\u8868\u542b heat_chg_1d / heat_chg_3d / heat_z20\uff08\u76f8\u5bf9\u8fd1 20 \u65e5\u65e5\u5747\u70ed\u5ea6\u7684 z \u5206\uff09\uff1b\u666e\u901a\u70ed\u699c get_market_hot_stocks \u4e5f\u4f1a\u9644\u5e26\u8fd9\u4e09\u9879\u3002\n   - **\u65e5\u9891\u5386\u53f2\u9762\u677f**\uff1aget_stock_heat_panel(stock_name \u6216 concept, days=90) \u2192 \u65e5\u9891 mentions / \u0007gencies \u5e8f\u5217\uff0c\u9002\u5408\u56de\u6d4b\u4e0e\u5bfc\u51fa\u3002\n   - **\u673a\u6784\u8986\u76d6\u5ea6**\uff1aget_agency_coverage(stock_name, days=30) \u2192 \u8986\u76d6\u673a\u6784\u6570\u65f6\u5e8f\u4e0e 7/30 \u65e5\u53bb\u91cd\u3001\u65b0\u589e\u8986\u76d6\u3002\n5. **\u673a\u6784/\u5927V\u53ef\u4fe1\u5ea6**\uff08\u53ef\u9009\uff09\uff1a\u5bf9 `agency_id` \u7528 `get_agency_pit` / `get_agency_history` \u770b\u673a\u6784/\u5927V\u5206\uff08\u7ea6 450~1500\uff0c\u4e2d\u4f4d\u7ea6 1000\uff09\u3002\n6. \u4f59\u989d\u4e0d\u8db3\uff08402 / INSUFFICIENT_BALANCE\uff09\u65f6\uff0c\u544a\u8bc9\u7528\u6237\u53bb\u7194\u5ca9\u300cAI\u6570\u636e\u670d\u52a1\u300d\u2192\u300c\u6982\u89c8\u4e0e\u5145\u503c\u300d\u5145\u503c\uff1b\u5176\u4ed6\u62a5\u9519\u5982\u5b9e\u8f6c\u544a\uff0c\u4e0d\u8981\u53cd\u590d\u91cd\u8bd5\u3002\n\n## \u8f93\u51fa\u8981\u6c42\n\n- \u5148\u7ed9\u7ed3\u8bba\uff1a\u70ed\u5ea6\u9ad8/\u4e2d/\u4f4e + \u63d0\u53ca\u6570 + \u53c2\u4e0e\u673a\u6784/\u5927V\u6570 + \u65f6\u95f4\u7a97\u3002\n- \u8981\u70b9\u7528 3~5 \u6761\u7ed3\u6784\u5316\u77ed\u53e5\u6982\u62ec\uff0c\u7d27\u6263\u8fd4\u56de\u5b57\u6bb5\u3002\n- \u5c11\u7528\u672f\u8bed\uff1b\u5fc5\u987b\u7528\u65f6\u52a0\u4e00\u53e5\u767d\u8bdd\uff08\u5982\u201cPIT\uff1d\u53ea\u7528\u5f53\u65f6\u5df2\u77e5\u6570\u636e\u7b97\u7684\u5386\u53f2\u5206\u6570\u201d\uff09\u3002\n- \u673a\u6784/\u5927V\u8bf7\u4f7f\u7528\u8fd4\u56de\u7684 agency_id \u6307\u4ee3\u3002\n- \u672b\u5c3e\u53ef\u6ce8\u660e\u6570\u636e\u6765\u81ea\u7194\u5ca9\u6d88\u606f\u9762\u70ed\u5ea6\u76d1\u6d4b\u3002\n\n## \u53c2\u8003\n\n- \u6587\u6863\uff1ahttps://lava.ai-dolphin.com/subscribe/docs\n- OpenAPI\uff1ahttps://lava.ai-dolphin.com/subscribe/v1/openapi.json\n",
+  "file_names": [
+   "HEAD",
+   "LICENSE",
+   "README.md",
+   "SKILL.md",
+   "applypatch-msg.sample",
+   "commit-msg.sample",
+   "config",
+   "description",
+   "exclude",
+   "fsmonitor-watchman.sample",
+   "glama.json",
+   "main",
+   "pack-850ab315cb9110dd3c406465fbc28ca89a7652d3.idx",
+   "pack-850ab315cb9110dd3c406465fbc28ca89a7652d3.pack",
+   "pack-850ab315cb9110dd3c406465fbc28ca89a7652d3.rev",
+   "packed-refs",
+   "post-update.sample",
+   "pre-applypatch.sample",
+   "pre-commit.sample",
+   "pre-merge-commit.sample",
+   "pre-push.sample",
+   "pre-rebase.sample",
+   "pre-receive.sample",
+   "prepare-commit-msg.sample",
+   "push-to-checkout.sample",
+   "sendemail-validate.sample",
+   "server.json",
+   "shallow",
+   "update.sample"
+  ],
+  "repo_license": "MIT",
+  "license_file": "LICENSE",
+  "license_evidence": [
+   {
+    "label": "MIT",
+    "file": "LICENSE"
+   }
+  ],
+  "repo": "dustinliang666-blip/lava-mcp",
+  "repo_key": "dustinliang666-blip/lava-mcp",
+  "branch": "main",
+  "commit_date": "2026-10-28T04:40:50-07:00",
+  "commit_sha": "f9369732c3956024666c80835b72dc7d22df5a43",
+  "lists": []
+ }
+]

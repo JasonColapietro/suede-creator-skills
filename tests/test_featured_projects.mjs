@@ -12,6 +12,18 @@ const read = (file) => fs.readFileSync(path.join(root, file), 'utf8');
 const data = JSON.parse(read('directory/featured-projects.json'));
 const published = () => read('docs/directory/featured/index.html');
 
+test('single root SKILL.md membership links the exact file and rejects broader scopes', () => {
+  const sample = structuredClone(data);
+  sample.members = [{ ...sample.members[0], scope: 'SKILL.md', skills: [{ id: 'lava-news-heat', title: 'Lava', description: 'News-flow heat.' }] }];
+  const member = featured.directoryMembers(sample)[0];
+  const html = featured.directoryMembersHtml([member], { esc: (s) => s });
+  assert.ok(html.includes(`/blob/${member.commit}/SKILL.md`));
+  assert.ok(!html.includes('SKILL.md/lava-news-heat'));
+  assert.ok(!html.includes(`/tree/${member.commit}/SKILL.md`));
+  sample.members[0].skills.push({ id: 'other', title: 'Other', description: 'Unrequested.' });
+  assert.throws(() => featured.directoryMembers(sample), /member/i);
+});
+
 const arcmiraLinks = [
   { label: 'Website', url: 'https://arcmira.com' },
   { label: 'MCP setup', url: 'https://arcmira.com/docs/mcp-server' },
@@ -52,8 +64,8 @@ test('member resource URLs and labels are allowlisted and cannot carry extra beh
 
 test('Arcmira membership links only six pinned plugin skills and carries no certification', () => {
   const members = featured.directoryMembers(data);
-  assert.deepEqual(members.map((m) => m.repo), ['arcmira/mcp']);
-  const member = members[0];
+  assert.deepEqual(members.map((m) => m.repo), ['arcmira/mcp', 'dustinliang666-blip/lava-mcp']);
+  const member = members.find((m) => m.id === 'arcmira');
   assert.equal(member.scope, 'plugins/arcmira/skills');
   assert.equal(member.license_file, 'plugins/arcmira/LICENSE');
   assert.equal(member.commit, '557fc76b697a2eaf1fee3bbfae90f25181ae2e93');
@@ -79,7 +91,31 @@ test('Arcmira membership links only six pinned plugin skills and carries no cert
   const ld = [...page.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].flatMap((m) => [JSON.parse(m[1])].flat());
   const collection = ld.find((item) => item['@type'] === 'CollectionPage');
   assert.equal(collection.mainEntity.numberOfItems, data.projects.length + members.length);
-  assert.equal(collection.mainEntity.itemListElement.at(-1).url, 'https://skills.suedeai.ai/directory/featured/#arcmira');
+  assert.ok(collection.mainEntity.itemListElement.some((item) => item.url === 'https://skills.suedeai.ai/directory/featured/#arcmira'));
+});
+
+test('Lava membership admits only its pinned Chinese root skill with accurate setup', () => {
+  const member = featured.directoryMembers(data).find((m) => m.id === 'lava');
+  assert.equal(member.scope, 'SKILL.md');
+  assert.equal(member.commit, 'f9369732c3956024666c80835b72dc7d22df5a43');
+  assert.deepEqual(member.skills.map((s) => s.id), ['lava-news-heat']);
+  const skillUrl = `https://github.com/${member.repo}/blob/${member.commit}/SKILL.md`;
+  const card = published().split('id="lava"')[1]?.split('</article>')[0];
+  assert.ok(card.includes(`href="${skillUrl}"`));
+  assert.ok(read('awesome/featured.md').includes(`](${skillUrl})`));
+  for (const fact of ['original Chinese', 'API key', 'metered', 'runtime have not been tested', 'Suede Directory Member']) assert.ok(card.includes(fact), fact);
+  assert.doesNotMatch(card, /certified|verified|score\.svg|badge\.svg|subscribe\/v1\/skill|npx skills add|git clone/i);
+  assert.ok(!JSON.parse(read('directory/skills.json')).skills.some((s) => s.repo === member.repo));
+  assert.ok(!JSON.stringify(JSON.parse(read('directory/promotion.json'))).includes(member.repo));
+  assert.ok(!data.projects.some((p) => p.repo === member.repo));
+  const quality = JSON.parse(read('directory/reviews/2026-10-28-lava/quality.json'));
+  assert.equal(quality.python_score, 51);
+  assert.equal(quality.javascript_score, 51);
+  assert.equal(quality.grade, 'D');
+  assert.equal(quality.structurally_eligible, false);
+  const invalid = structuredClone(data);
+  invalid.members.find((m) => m.id === 'lava').links.push({ label: 'Hosted skill', url: 'https://lava.ai-dolphin.com/subscribe/v1/skill' });
+  assert.throws(() => featured.directoryMembers(invalid), /member/i);
 });
 
 test('membership schema rejects qualification fields, ambiguous identities and unpinned paths', () => {
@@ -153,8 +189,8 @@ test('featured page has a discoverable route, truthful structured data and selec
   assert.equal((page.match(/<h1[ >]/g) || []).length, 1);
   const blocks = [...page.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map((m) => JSON.parse(m[1]));
   const collection = blocks.find((x) => x['@type'] === 'CollectionPage');
-  assert.equal(collection.mainEntity.numberOfItems, 7);
-  assert.deepEqual(collection.mainEntity.itemListElement.map((p) => p.name), ['Appie', 'CoalWash', 'Costory', 'Extra Caffeine', 'Opsibyte', 'Cisco AI Defense Skill Scanner', 'Arcmira']);
+  assert.equal(collection.mainEntity.numberOfItems, 8);
+  assert.deepEqual(collection.mainEntity.itemListElement.map((p) => p.name), ['Appie', 'CoalWash', 'Costory', 'Extra Caffeine', 'Opsibyte', 'Cisco AI Defense Skill Scanner', 'Arcmira', 'Lava']);
   assert.match(page, /README-badge verification is tracked separately/);
   assert.match(page, /href="\.\.\/submit\/"/);
   assert.match(page, /href="\.\.\/methodology\/"/);

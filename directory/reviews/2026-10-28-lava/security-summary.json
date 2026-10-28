@@ -1,0 +1,122 @@
+[
+  {
+    "name": "lava-news-heat",
+    "status": "findings",
+    "reason": "review_retained_findings",
+    "source": {
+      "repository": "dustinliang666-blip/lava-mcp",
+      "path": ".",
+      "revision": "f9369732c3956024666c80835b72dc7d22df5a43"
+    },
+    "scanner": {
+      "name": "cisco-ai-skill-scanner",
+      "version": "2.3.1",
+      "adapter_version": 2,
+      "analyzers": [
+        "static_analyzer",
+        "bytecode",
+        "pipeline",
+        "correlation",
+        "behavioral_analyzer"
+      ],
+      "policy": "strict",
+      "cel_mode": "shadow",
+      "network": "disabled",
+      "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+    },
+    "started_at": "2026-10-28T19:29:33.726979+00:00",
+    "completed_at": "2026-10-28T19:29:34.079526+00:00",
+    "evaluated_on": "2026-10-28",
+    "valid_until": "2026-11-27T19:29:34.079Z",
+    "files_scanned": 5,
+    "coverage_complete": true,
+    "skipped": [],
+    "findings": {
+      "CRITICAL": 0,
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 0,
+      "INFO": 1
+    }
+  },
+  {
+    "name": "self-test-clean",
+    "status": "passed",
+    "reason": "no_findings_in_recorded_coverage",
+    "source": {
+      "repository": "suede/self-test",
+      "path": "clean",
+      "revision": "0000000000000000000000000000000000000000"
+    },
+    "scanner": {
+      "name": "cisco-ai-skill-scanner",
+      "version": "2.3.1",
+      "adapter_version": 2,
+      "analyzers": [
+        "static_analyzer",
+        "bytecode",
+        "pipeline",
+        "correlation",
+        "behavioral_analyzer"
+      ],
+      "policy": "strict",
+      "cel_mode": "shadow",
+      "network": "disabled",
+      "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+    },
+    "started_at": "2026-10-28T19:29:34.079972+00:00",
+    "completed_at": "2026-10-28T19:29:34.092992+00:00",
+    "evaluated_on": "2026-10-28",
+    "valid_until": "2026-11-27T19:29:34.092Z",
+    "files_scanned": 1,
+    "coverage_complete": true,
+    "skipped": [],
+    "findings": {
+      "CRITICAL": 0,
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 0,
+      "INFO": 0
+    }
+  },
+  {
+    "name": "self-test-exfil",
+    "status": "failed",
+    "reason": "review_retained_findings",
+    "source": {
+      "repository": "suede/self-test",
+      "path": "exfil",
+      "revision": "0000000000000000000000000000000000000000"
+    },
+    "scanner": {
+      "name": "cisco-ai-skill-scanner",
+      "version": "2.3.1",
+      "adapter_version": 2,
+      "analyzers": [
+        "static_analyzer",
+        "bytecode",
+        "pipeline",
+        "correlation",
+        "behavioral_analyzer"
+      ],
+      "policy": "strict",
+      "cel_mode": "shadow",
+      "network": "disabled",
+      "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+    },
+    "started_at": "2026-10-28T19:29:34.093145+00:00",
+    "completed_at": "2026-10-28T19:29:34.124329+00:00",
+    "evaluated_on": "2026-10-28",
+    "valid_until": "2026-11-27T19:29:34.124Z",
+    "files_scanned": 2,
+    "coverage_complete": true,
+    "skipped": [],
+    "findings": {
+      "CRITICAL": 2,
+      "HIGH": 1,
+      "MEDIUM": 2,
+      "LOW": 0,
+      "INFO": 1
+    }
+  }
+]
