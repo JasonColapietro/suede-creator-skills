@@ -251,8 +251,8 @@ Skills for writing and running tests, browser automation, visual regression and 
 
 [Repository](https://github.com/JasonColapietro/suede-creator-skills) · Publisher: [JasonColapietro](https://github.com/JasonColapietro) · [Suede AI listing](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/)
 
-- **91/100 · A** · [Suede AI A/B Testing Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/verify/first-party-source-whitespace/skills/suede-ab-testing/SKILL.md): Suede AI A/B Testing Skills. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-ab-testing)
-- **91/100 · A** · [Suede AI Eval Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/verify/first-party-source-whitespace/skills/suede-ai-eval/SKILL.md): Suede AI Eval Skills. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-ai-eval)
+- **91/100 · A** · [Suede AI A/B Testing Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/port-upstream-marketing-2026-10-27/skills/suede-ab-testing/SKILL.md): Suede AI A/B Testing Skills. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-ab-testing)
+- **91/100 · A** · [Suede AI Eval Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/port-upstream-marketing-2026-10-27/skills/suede-ai-eval/SKILL.md): Suede AI Eval Skills. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-ai-eval)
 
 <a id="jeffallan--claude-skills"></a>
 

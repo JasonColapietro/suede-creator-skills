@@ -3,7 +3,7 @@ name: suede-programmatic-seo
 description: "Suede AI Programmatic SEO Skills: playbook, source model, templates, unique value, internal links, sitemaps, phased rollout, and KPIs. Use when asked \"build location pages at scale\" or to rescue thin templated pages. NOT FOR: site audits (suede-seo-audit), AI-answer measurement (suede-ai-seo), editorial planning (suede-content-strategy), or bulk publishing without approval."
 metadata:
   display-name: "Suede AI Programmatic SEO Skills"
-  version: 3.0.0
+  version: 3.0.1
 ---
 
 # Suede AI Programmatic SEO Skills

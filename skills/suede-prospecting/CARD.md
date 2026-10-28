@@ -23,7 +23,7 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when asked to \"find our first design partners\", define an ICP, enrich leads, or document disqualification evidence. Includes source dates, confidence, licensed-data checks, and a qualification handoff.
+Use when asked to \"find our first design partners\", define an ICP, enrich leads, run gap plays or warm-path network mining, or document disqualification evidence. Includes source dates, confidence, licensed-data checks, and a qualification handoff.
 
 Out of scope — sending outreach (use suede-cold-email), CRM routing (use suede-revops), or competitor profiles (use suede-competitor-profiling).
 

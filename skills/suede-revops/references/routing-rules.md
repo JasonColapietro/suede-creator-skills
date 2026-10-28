@@ -179,7 +179,7 @@ Pull a trailing quarter, compare buckets, and set the SLA where the curve flatte
    - 5 min: Original rep alerted
    - 15 min: Backup rep alerted
    - 30 min: Manager alerted
-   - 1 hour: Lead reassigned to next available rep
+   - 1 hour: Lead reassigned to next available rep, only under an agreed reassignment rule; otherwise the manager owns the follow-up
 4. **Measure and report**: Track actual response times weekly; recognize fast responders
 
 ### Speed-to-Lead Automation
@@ -192,7 +192,7 @@ Pull a trailing quarter, compare buckets, and set the SLA where the curve flatte
 4. Start SLA timer
 5. If no activity logged in 15 min → alert backup rep
 6. If no activity in 30 min → alert manager
-7. If no activity in 60 min → reassign via round-robin
+7. If no activity in 60 min → reassign via round-robin under an agreed reassignment rule; otherwise keep the owner and escalate to the manager
 
 ### Measuring Speed-to-Lead
 

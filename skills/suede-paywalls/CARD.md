@@ -7,7 +7,7 @@ Release record for the `suede-paywalls` skill, following the NVIDIA skill-card t
 
 ## Description
 
-Suede AI Paywall Skills: paywalls, entitlement gates, usage limits, trial expiry, screen copy, trigger rules, and experiment plans.
+Suede AI Paywall Skills: paywalls, entitlement gates, usage limits, trial expiry, screen copy, trigger rules, experiment plans, and mobile subscription-app paywalls.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.3; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
@@ -23,7 +23,7 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when asked \"improve this upgrade prompt\" after users experience value.
+Use when asked \"improve this upgrade prompt\" after users experience value, or \"design our App Store subscription paywall.\".
 
 Out of scope — public pricing-page or tier architecture (suede-pricing), cancellation and save flows (suede-churn-prevention), or unapproved billing changes.
 
@@ -34,7 +34,7 @@ Global. The skill is a prompt-and-script package that runs locally inside the in
 ## Requirements / Dependencies
 
 - A Claude Code or Codex CLI session with the `suede-skills` plugin installed (install options: <https://skills.suedeai.ai/>).
-- Bundled files loaded relative to this directory: `agents/` (1 file), `references/` (3 files).
+- Bundled files loaded relative to this directory: `agents/` (1 file), `references/` (4 files).
 - Credentials: none are bundled or required by the skill files. Any tool or API credentials come from the host session; never paste credentials into skill files, prompts, or outputs.
 
 ## Known Risks and Mitigations

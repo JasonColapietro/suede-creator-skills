@@ -32,8 +32,8 @@ authorized, licensed for the asset, or still current. Before using any route:
 | Multi-language ad versions | Voice generation | Premium voice model, large-library multilingual voice platform |
 | Brand voice cloning | Voice generation | Premium voice model with cloning, enterprise on-premise cloning platform |
 | Product mockups and variations | Image generation + references | Open-weight multi-reference image model |
-| Templated video ads at scale | Code-based video | Remotion |
-| Personalized video (name, data) | Code-based video | Remotion |
+| Templated video ads at scale | Code-based video | Remotion, Hyperframes |
+| Personalized video (name, data) | Code-based video | Remotion, Hyperframes |
 | Brand-consistent variations | Image gen + style refs | Multi-reference image model, typography-specialist model with style references |
 
 ---
@@ -282,13 +282,13 @@ A full-stack, web-based video creation platform with cinematic camera presets.
 
 ## Voice & Audio Generation
 
-For layering realistic voiceovers onto video ads, adding narration to product demos, or generating audio for Remotion-rendered videos. These tools turn ad scripts into natural-sounding voice tracks.
+For layering realistic voiceovers onto video ads, adding narration to product demos, or generating audio for code-rendered videos. These tools turn ad scripts into natural-sounding voice tracks.
 
 ### When to Use Voice Tools
 
 Many video models now include native audio. Use a standalone voice model when you need:
 
-- **Voiceover on silent video**: controllable video models and Remotion produce silent output
+- **Voiceover on silent video**: add a voice track to silent AI-generated clips or code-rendered templates
 - **Brand voice consistency**: Clone a specific voice for all ads
 - **Multi-language versions**: Same ad script in 20+ languages
 - **Script iteration**: Re-record voiceover without reshooting video
@@ -431,25 +431,20 @@ Install only from the project's official release or source, after the user autho
 | **Actor-licensed voice platform** | Very good | No (actor voices) | English | ~300ms | Custom pricing |
 | **Open-source local voice studio** | Good | Yes (local) | 2+ | Local | Free (open source) |
 
-### Choosing a Voice Tool
+### Voice Tool Options by Need
+
+These are options to evaluate, not rankings. Run a short script through two or
+three tools and judge by ear, then check each vendor's current pricing and
+language list.
 
 ```
 Need voiceover for ads?
-├── Need to clone a specific brand voice (with consent)?
-│   ├── Best quality → premium voice model
-│   ├── Enterprise/on-premise → enterprise cloning platform
-│   └── Budget-friendly → budget expressive voice API, large-library platform
-├── Need multilingual (same ad, many languages)?
-│   ├── Most languages → large-library voice platform (140+)
-│   └── Best quality → premium voice model (29+)
-├── Need free / open source / local?
-│   └── Open-source local voice studio (runs on your machine)
-├── Need cheap, fast, good-enough?
-│   └── Low-cost TTS API (~$0.015/min)
-├── Need commercially-safe licensing?
-│   └── Actor-licensed voice platform (compensated voices)
-└── Need real-time/interactive?
-    └── Low-latency TTS model (~40ms TTFA)
+├── Clone a specific brand voice (with consent) → options include premium voice model, enterprise on-premise cloning platform, budget expressive voice API, large-library platform
+├── Multilingual (same ad, many languages) → options include large-library voice platform, premium voice model
+├── Free / open source / local → options include open-source local voice studio
+├── Cheap and fast → options include low-cost TTS API
+├── Actor-compensated voice licensing → options include actor-licensed voice platform
+└── Real-time / interactive → options include low-latency TTS model
 ```
 
 ### Workflow: Voice + Video
@@ -458,7 +453,7 @@ Need voiceover for ads?
 1. Write the ad script with `suede-ad-creative`
 2. Generate voiceover with a premium voice model or low-cost TTS API
 3. Generate or render video:
-   a. Silent video from a controllable video model or Remotion → layer voice track
+   a. Silent video (AI-generated or code-rendered) → layer voice track
    b. Or use a native-audio video model (skip separate VO)
 4. Combine with ffmpeg if layering separately:
    ffmpeg -i video.mp4 -i voiceover.mp3 -c:v copy -c:a aac output.mp4
@@ -467,18 +462,24 @@ Need voiceover for ads?
 
 ---
 
-## Code-Based Video: Remotion
+## Code-Based Video
 
-For templated, data-driven video ads at scale, Remotion is the best option. Unlike AI video generators that produce unique video from prompts, Remotion uses React code to render deterministic, brand-perfect video from templates and data.
+For templated, data-driven video ads, render video from code instead of
+prompts. AI video generators produce a different clip each time; code-based
+frameworks render deterministic, brand-exact video from templates and data. Two
+common options are **Remotion** (React components) and **Hyperframes** (HTML
+files). For how they differ and how to pick, use `suede-video`. For licensing
+and current features, check each project's own docs
+([remotion.dev](https://www.remotion.dev/docs),
+[hyperframes.heygen.com](https://hyperframes.heygen.com/introduction)).
+Remotion is source-available rather than open source, so read its license
+before commercial use.
 
 **Best for:** Templated ad variations, personalized video, brand-consistent production
-**Stack:** React + TypeScript
-**Pricing:** Free for individuals/small teams; commercial license required for 4+ employees
-**Docs:** [remotion.dev](https://www.remotion.dev/)
 
-### Why Remotion for Ads
+### Why Code-Based Video for Ads
 
-| AI Video Generators | Remotion |
+| AI Video Generators | Code-based video |
 |---------------------|----------|
 | Unique output each time | Deterministic, pixel-perfect |
 | Prompt-based, less control | Full code control over every frame |
@@ -489,7 +490,7 @@ For templated, data-driven video ads at scale, Remotion is the best option. Unli
 ### Ad Creative Use Cases
 
 **1. Dynamic product ads**
-Feed a JSON array of products and render a unique video ad for each:
+Feed a JSON array of products and render a unique video ad for each. Example in Remotion (the same template works as an HTML composition in Hyperframes):
 ```tsx
 // Simplified Remotion component for product ads
 export const ProductAd: React.FC<{
@@ -530,10 +531,10 @@ Render the same content across different aspect ratios:
 - 9:16 for Stories/Reels
 - 16:9 for YouTube
 
-### Remotion Workflow for Ad Creative
+### Code-Based Workflow for Ad Creative
 
 ```
-1. Design template in React (or use AI to generate the component)
+1. Design the template (or have an AI agent write it)
 2. Define data schema (products, headlines, CTAs, images)
 3. Feed data array into template
 4. Batch render all variations
@@ -545,7 +546,8 @@ Render the same content across different aspect ratios:
 Run these examples only when Node.js and Remotion are already available or the
 user has authorized the exact install, current official documentation confirms
 the commands, and the project path and output are understood. Otherwise return
-the React composition plan and render specification without executing.
+the React composition plan and render specification without executing. These
+are Remotion commands; for Hyperframes setup, use `suede-video`.
 
 ```bash
 # Create a new Remotion project
@@ -562,29 +564,37 @@ npx remotion render src/index.ts MyComposition --props='{"data": [...]}'
 
 ## Choosing the Right Tool
 
-### Decision Tree
+### Options by Need
+
+Start from the approach (code-based or AI generation), then pick a tool. The
+classes listed are options to evaluate, not rankings. Models change quickly, so
+run the same brief through two or three and compare the output, and check
+current versions and pricing on each vendor's site.
 
 ```
 Need video ads?
 ├── Templated, data-driven (same structure, different data)
-│   └── Use Remotion
+│   └── Code-based video (Remotion, Hyperframes; see suede-video)
 ├── Unique creative from prompts (exploratory)
-│   ├── Need dialogue/voiceover? → dialogue-focused, native-audio, long-form cinematic, or low-cost high-volume model
-│   ├── Need consistency across scenes? → controllable video model
-│   ├── Need vertical social video? → native-audio video model (native 9:16)
-│   ├── Need high volume at low cost? → low-cost high-volume video model
-│   └── Need cinematic camera work? → all-in-one video studio, long-form cinematic model
-└── Both → Use AI gen for hero creative, Remotion for variations
+│   ├── Dialogue/voiceover in the clip → options include dialogue-focused, native-audio, long-form cinematic, or low-cost high-volume models
+│   ├── Consistency across scenes → options include controllable video models
+│   ├── Native vertical (9:16) output → options include native-audio video models
+│   ├── High volume at low cost → options include low-cost high-volume video models
+│   └── Cinematic camera work → options include all-in-one video studios, long-form cinematic models
+└── Both → AI generation for hero creative, code-based video for variations
 
 Need image ads?
-├── Need text/headlines in image? → typography-specialist image model
-├── Need product consistency across variations? → multi-reference image model
-├── Need quick iterations on existing images? → premium image model with native editing
-├── Need highest visual quality? → multi-reference Pro tier, artistic community model
-└── Need high volume at low cost? → small/fast open-weight tier, fast tier of a premium image model
+├── Text/headlines in the image → options include typography-specialist models, premium image models with strong text rendering
+├── Product consistency across variations → options include multi-reference image models
+├── Quick iterations on existing images → options include premium image models with native editing
+├── Polished final assets → options include multi-reference Pro tiers, artistic community models
+└── High volume at low cost → options include small/fast open-weight tiers, fast tiers of premium image models
 ```
 
 ### Cost Comparison for 100 Ad Variations
+
+Rough order-of-magnitude estimates for comparing approaches, not quotes. Prices
+change often; verify on each vendor's pricing page before budgeting.
 
 | Approach | Tool Class | Approximate Cost |
 |----------|------|-----------------|
@@ -592,15 +602,15 @@ Need image ads?
 | 100 static images | Open-weight Dev tier | ~$1-2 |
 | 100 static images | Typography-specialist API | ~$6 |
 | 100 × 15-sec videos | Native-audio video model, fast tier | ~$225 |
-| 100 × 15-sec videos | Remotion (templated) | ~$0 (self-hosted render) |
-| 10 hero videos + 90 templated | Video model + Remotion | ~$22 + render time |
+| 100 × 15-sec videos | Code-based video (templated) | Render compute only (self-hosted); check license terms |
+| 10 hero videos + 90 templated | Video model + code-based video | ~$22 + render time |
 
-### Recommended Workflow for Scaled Ad Production
+### Workflow for Scaled Ad Production
 
 1. **Generate hero creative** with AI image and video models: high-quality, exploratory
-2. **Build templates** in Remotion based on winning creative patterns
-3. **Batch produce variations** with Remotion using data (products, headlines, CTAs)
-4. **Iterate**: use AI tools for new angles, Remotion for scale
+2. **Build templates** in code (Remotion or Hyperframes) based on winning creative patterns
+3. **Batch produce variations** from data (products, headlines, CTAs)
+4. **Iterate**: use AI tools for new angles, code-based templates for scale
 
 This hybrid approach gives you the creative exploration of AI generators and the consistency and scale of code-based rendering.
 

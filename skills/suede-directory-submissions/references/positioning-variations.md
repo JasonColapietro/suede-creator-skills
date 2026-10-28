@@ -179,7 +179,7 @@ features, integrations, time savings, prices, or outcomes to complete the copy.
 
 ## Template: B2B Review Platforms
 
-**Target:** G2, Capterra, TrustRadius, GetApp, Gartner Digital Markets, Crozdesk
+**Target:** G2, Capterra, TrustRadius, GetApp, Software Advice, Crozdesk
 
 **Tagline:**
 > [Business outcome] for [audience].

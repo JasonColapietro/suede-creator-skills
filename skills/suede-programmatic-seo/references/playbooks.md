@@ -289,7 +289,7 @@ The Suede programmatic playbooks. Each one names the value a page must carry to 
 
 | If you have... | Consider... |
 |----------------|-------------|
-| Proprietary data | Stats, Directories, Profiles |
+| Proprietary data | Directory, Profiles, Curation |
 | Product with integrations | Integrations |
 | Design/creative product | Templates, Examples |
 | Multi-segment audience | Personas |

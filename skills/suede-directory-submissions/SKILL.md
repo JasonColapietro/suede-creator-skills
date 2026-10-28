@@ -3,7 +3,7 @@ name: suede-directory-submissions
 description: "Use when asked \"plan our directory submissions\" or to select and sequence startup, SaaS, AI, MCP, marketplace or review listings. Suede AI adapts truthful positioning, maintains entity consistency and tracks submission evidence and verified backlinks. NOT FOR: release packaging (use suede-launch-packaging), scaled destination pages (use suede-programmatic-seo), or AI visibility audits (use suede-ai-seo)."
 metadata:
   display-name: "Suede AI Directory Submissions Skills"
-  version: 2.0.0
+  version: 2.0.1
 ---
 
 # Suede AI Directory Submissions Skills

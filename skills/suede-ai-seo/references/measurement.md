@@ -54,6 +54,34 @@ cycle because answers vary. Use clean sessions without personalization.
 Report ranges across runs, not a single value. A change smaller than run-to-run
 variance is noise.
 
+**Read results by buying topic, then fix before you create.** Score the panel
+by topic, not prompt by prompt. "Best auth API", "SSO provider for SaaS", and
+"SAML authentication tools" are one topic. Per topic, count how often the brand
+and each competitor appear across its prompts and runs. A competitor showing up
+in 18 of 25 runs while the brand shows up in 4 is where to start. A single
+prompt where both appeared once is not.
+
+For each topic the brand is losing:
+
+1. Open the sources the engine cited when competitors won. Log the page, the
+   domain, the page type, and the competitor it names. After 20 to 30 prompts
+   the same pages and domains repeat.
+2. Check whether an existing page should already win. If one exists, find out
+   why it is not surfacing (wrong intent, outdated, answer buried, missing the
+   proof or comparison the winning page has) and fix it first. Two weak pages
+   on one topic do worse than one fixed page.
+3. Rule out the technical layer (indexing, crawler access, internal links)
+   before rewriting anything.
+4. Pick the fix: a new page, a better existing page, corrected facts, or
+   third-party sources the brand is absent from (comparison pages, community
+   threads).
+5. Once the changes are crawled, rerun the identical panel on the same engines
+   and compare per topic.
+
+Topic-gap method adapted from Jam's AI search audit (October 2026). Writing one
+new post per missing prompt is the failure this method prevents, and at scale it
+runs into Google's scaled content abuse policy.
+
 Third-party prompt-tracking tools can automate this at scale. Before relying on
 one, confirm which engines, locales, and interfaces it queries (API versus the
 consumer product can differ), how often, and whether you can export raw
@@ -88,8 +116,10 @@ land in Direct. Treat this channel as a floor.
   device, and date where the property clears Google's threshold. No clicks or
   queries there.
 - **Bing Webmaster Tools AI Performance**: citations, cited pages, and grounding
-  queries for Copilot. Export monthly; grounding queries are the closest thing
-  to a published prompt list from any engine.
+  queries for Copilot. Export monthly. Grounding queries are Bing's own
+  interpretation of the request, not what the user typed, so they show what the
+  engine actually searched for. The report has no click data and does not map a
+  query to a specific citation.
 - **Server logs**: hits from `OAI-SearchBot`, `Claude-SearchBot`,
   `PerplexityBot`, `Bingbot`, and user-fetch agents on priority pages show
   retrieval even when no click follows.

@@ -3,7 +3,7 @@ name: suede-ads
 description: "Suede AI Ads Skills. Use when planning paid acquisition and asked to \"audit our paid campaigns\" or choose channels, structure campaigns, set budget pacing, retargeting and kill-or-scale rules from verified unit economics and performance. NOT FOR: ad asset production (suede-ad-creative), tracking implementation (suede-analytics), attribution reconciliation (suede-attribution), or landing-page work (suede-site-alchemy)."
 metadata:
   display-name: "Suede AI Ads Skills"
-  version: 2.3.0
+  version: 2.3.1
 ---
 
 # Suede AI Ads Skills
@@ -58,9 +58,11 @@ This skill's depth lives in references: load by intent. For **any operational de
 |---|---|---|
 | B2B strategy, funnel stages, budget splits, kill rules, lead quality, breakeven math | [b2b-paid-playbook.md](references/b2b-paid-playbook.md) | Demand lifecycle, leading/lagging signals, kill rules, offline conversion loop, U/B/F lead scoring, scaling quadrant |
 | Meta operations: when to kill/graduate/scale an ad, fatigue, testing structure | [meta-decision-system.md](references/meta-decision-system.md) | TCPL-anchored decision tree, ad-count ceiling, 80/20 CBO structure, fatigue bands, lead forms, Advantage+ transition |
+| Meta ad sequencing, ordered ad paths, Target frequency setup | [meta-ad-sequencing.md](references/meta-ad-sequencing.md) | Eligible objectives, flight math, hook-problem-proof-offer path, cost trade-off, retargeting workaround for Sales and Leads |
 | LinkedIn operations: bidding, audience sizing, scaling, benchmarks, TLAs, formats | [linkedin-b2b-playbook.md](references/linkedin-b2b-playbook.md) | Bidding progression, penetration scaling, sizing rules, funnel benchmarks, document/conversation ads, audit shortlist |
-| Google Search: what to spend on first, structure, match types, negatives, PMax | [google-search-playbook.md](references/google-search-playbook.md) | Intent ladder, account structure, match-type gates, negatives, bidding by volume, offline conversions, PMax guardrails |
+| Google Search: what to spend on first, structure, match types, negatives, PMax | [google-search-playbook.md](references/google-search-playbook.md) | Intent ladder, account structure, match-type gates (incl. AI Max), negatives, bidding by volume, offline conversions, PMax guardrails |
 | Named-account targeting, pipeline acceleration, cross-channel retargeting | [abm-playbook.md](references/abm-playbook.md) | LinkedIn/Meta ABM, list mechanics, acceleration campaigns, UTM cross-channel remarketing, ABM measurement |
+| Weekly competitor ad tracker, ad-library monitoring, build vs. buy for ad-spy tools | [competitor-ad-tracker.md](references/competitor-ad-tracker.md) | Scheduled pull from public ad libraries, creative storage, model tagging, weekly diff, gap questions, longevity as a proxy |
 | Generating Google RSAs | [rsa-output-spec.md](references/rsa-output-spec.md) | Mandatory output spec: limits, sidecars, template, self-check |
 | Audience setup, tracking setup, launch checklists, copy formulas | [audience-targeting.md](references/audience-targeting.md) · [conversion-tracking.md](references/conversion-tracking.md) · [platform-setup-checklists.md](references/platform-setup-checklists.md) · [ad-copy-templates.md](references/ad-copy-templates.md) | Existing foundations |
 
@@ -199,6 +201,13 @@ practice to test, not platform fact.
   no longer returns 7-day view and 28-day view windows. Available windows are
   1-day click, 7-day click, 28-day click, 1-day engaged-view, and 1-day view.
   Update dashboards and any report that compared view-through windows.
+
+### Ad sequencing
+
+Meta ranks the second ad someone sees against the first, so plan two or three
+ads as a path (hook, problem, proof, offer) rather than testing each alone.
+Setup limits, flight math, costs, and the retargeting workaround for Sales and
+Leads objectives live in [meta-ad-sequencing.md](references/meta-ad-sequencing.md).
 
 The full kill, graduate, and scale rules live in
 [meta-decision-system.md](references/meta-decision-system.md).

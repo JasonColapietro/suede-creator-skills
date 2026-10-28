@@ -3,7 +3,7 @@ name: suede-ad-creative
 description: "Suede AI Ad Creative Skills. Use when asked to \"write Google ad variants\" or iterate hooks, headlines, RSA/PMax assets, static or motion concepts from product and performance evidence. Returns grounded variants and a limit-checked review package. NOT FOR: budgets/targeting (suede-ads), experiment design (suede-ab-testing), organic posts (suede-social), general imagery (suede-image), or landing copy (suede-copy)."
 metadata:
   display-name: "Suede AI Ad Creative Skills"
-  version: 2.9.0
+  version: 2.9.1
 ---
 
 # Suede AI Ad Creative Skills
@@ -173,9 +173,9 @@ For detailed specs and format variations, see [references/platform-specs.md](ref
 
 **When you need to pick an image, video, voice, or code-based generation tool**, or price a batch, read [references/generative-tools.md](references/generative-tools.md). It owns the tool-class roster (described by capability, not brand), per-placement image specs, and cost comparisons; those age, so use its numbers rather than any you remember.
 
-**Recommended workflow for scaled production:** generate hero concepts with an
+**Workflow for scaled production:** generate hero concepts with an
 authorized image or video model, turn the winners into a code-rendered
-template, batch variations from a data feed, and return to generation only for
+template (Remotion or Hyperframes), batch variations from a data feed, and return to generation only for
 new angles.
 
 ---

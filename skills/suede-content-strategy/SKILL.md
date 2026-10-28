@@ -3,7 +3,7 @@ name: suede-content-strategy
 description: "Use when asked \"plan our content strategy\" or to decide what to publish, refresh or stop. Suede AI maps audience questions, pillars, topic clusters, AI answer gaps and original-data assets to priorities, cadence, distribution and KPIs. NOT FOR: drafting an asset (use suede-copy), SEO audits (use suede-seo-audit), AI visibility measurement (use suede-ai-seo), or social production (use suede-social)."
 metadata:
   display-name: "Suede AI Content Strategy Skills"
-  version: 2.0.0
+  version: 2.0.1
 ---
 
 # Suede AI Content Strategy Skills
@@ -298,7 +298,7 @@ record the chosen decision rule.
 
 | Idea | Customer Impact (40%) | Content-Market Fit (30%) | Search Potential (20%) | Resources (10%) | Total |
 |------|----------------------|-------------------------|----------------------|-----------------|-------|
-| Topic A | 8 | 9 | 7 | 6 | 8.0 |
+| Topic A | 8 | 9 | 7 | 6 | 7.9 |
 | Topic B | 6 | 7 | 9 | 8 | 7.1 |
 
 ---

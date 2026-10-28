@@ -654,7 +654,7 @@
       "area": "marketing",
       "specialty": "revenue",
       "lane": "Money & funnel",
-      "description": "Suede AI Paywall Skills: paywalls, entitlement gates, usage limits, trial expiry, screen copy, trigger rules, and experiment plans. Use when asked \"improve this upgrade prompt\" after users experience value. NOT FOR: public pricing-page or tier architecture (suede-pricing), cancellation and save flows (suede-churn-prevention), or unapproved billing changes.",
+      "description": "Suede AI Paywall Skills: paywalls, entitlement gates, usage limits, trial expiry, screen copy, trigger rules, experiment plans, and mobile subscription-app paywalls. Use when asked \"improve this upgrade prompt\" after users experience value, or \"design our App Store subscription paywall.\" NOT FOR: public pricing-page or tier architecture (suede-pricing), cancellation and save flows (suede-churn-prevention), or unapproved billing changes.",
       "useWhen": "The user wants to build or improve an in-product upgrade screen, feature gate, or trial-expiration prompt.",
       "displayName": "Suede AI Paywall Skills"
     },
@@ -699,7 +699,7 @@
       "area": "marketing",
       "specialty": "demand",
       "lane": "Paid & outbound",
-      "description": "Build a source-backed, scored prospect list across SaaS, B2B, local business, or early demand signals. Use when asked to \"find our first design partners\", define an ICP, enrich leads, or document disqualification evidence. Includes source dates, confidence, licensed-data checks, and a qualification handoff. NOT FOR: sending outreach (use suede-cold-email), CRM routing (use suede-revops), or competitor profiles (use suede-competitor-profiling).",
+      "description": "Build a source-backed, scored prospect list across SaaS, B2B, local business, or early demand signals. Use when asked to \"find our first design partners\", define an ICP, enrich leads, run gap plays or warm-path network mining, or document disqualification evidence. Includes source dates, confidence, licensed-data checks, and a qualification handoff. NOT FOR: sending outreach (use suede-cold-email), CRM routing (use suede-revops), or competitor profiles (use suede-competitor-profiling).",
       "useWhen": "The user needs a prospect or lead list, or is deciding which accounts to go after.",
       "displayName": "Suede AI Prospecting Skills"
     },

@@ -3,7 +3,7 @@ name: suede-analytics
 description: "Suede AI Analytics Skills. Use when asked to \"fix our analytics events\" or set up GA4/GTM, key events, consent, UTMs and search/AI channels with readback proof. NOT FOR: experiment decisions (suede-ab-testing), campaign optimization (suede-ads), attribution reconciliation (suede-attribution), or revenue operations (suede-revops)."
 metadata:
   display-name: "Suede AI Analytics Skills"
-  version: 2.1.0
+  version: 2.1.1
 ---
 
 # Suede AI Analytics Skills
@@ -143,10 +143,12 @@ checkout_payment_completed
    2024), then create Google Ads conversions from the key events that bidding
    should use
 
-### Custom Event Example
+### Event Example
 
 ```javascript
-gtag('event', 'signup_completed', {
+// GA4's recommended sign_up event, not a custom name, so it feeds built-in reports.
+// The tracking plan can still call it signup_completed; map the name explicitly.
+gtag('event', 'sign_up', {
   'method': 'email',
   'plan': 'free'
 });

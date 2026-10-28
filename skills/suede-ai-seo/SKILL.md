@@ -3,7 +3,7 @@ name: suede-ai-seo
 description: "Suede AI Answer Engine Optimization Skills. Use when asked to \"improve our AI citations\" or optimize for ChatGPT/Perplexity: crawler policy, entity consistency, citation-ready pages, off-site evidence and prompt-panel measurement. NOT FOR: nine-lane technical SEO audits (suede-seo-audit), quick promotion grades (suede-visibility-grader), or funnel implementation (suede-site-alchemy)."
 metadata:
   display-name: "Suede AI Answer Engine Optimization Skills"
-  version: 3.0.0
+  version: 3.0.1
 ---
 
 # Suede AI Answer Engine Optimization Skills
@@ -80,13 +80,16 @@ The load-bearing facts:
   user-initiated and may not follow robots.txt.
 - **Claude**: `ClaudeBot` is training, `Claude-SearchBot` indexes for search
   quality, `Claude-User` fetches for a user's question. Blocking the last two
-  reduces visibility in Claude answers.
+  reduces visibility in Claude answers. Anthropic's subprocessor list names
+  Brave Search for web search, so check the site at search.brave.com and
+  request a crawl at search.brave.com/submit-url if it is missing.
 - **Perplexity**: `PerplexityBot` surfaces and links sites and is not used for
   foundation-model training. `Perplexity-User` is user-initiated and generally
   ignores robots.txt.
 - **Copilot** grounds on the Bing index. Bing Webmaster Tools has an AI
   Performance report (public preview since February 2026) with citations,
-  cited pages, and grounding queries. IndexNow speeds Bing discovery.
+  cited pages, and grounding queries (Bing's interpretation of the request,
+  not the user's words). IndexNow speeds Bing discovery.
 
 Treat anything not in that file as unverified, and re-check before a ship
 decision: these surfaces change monthly.
@@ -187,6 +190,13 @@ Recommend them only as low-cost extras after layers 1 to 5:
   matched exactly to the visible pricing page.
 - OKF bundle: see `references/okf.md`. No engine has announced support.
 
+For developer documentation, agent-readiness scanners can turn this layer into a
+worklist. One option is Fern's Agent Score, which grades a docs site for coding
+agents (`npx afdocs check <docs-url>` locally, or a public report page at
+buildwithfern.com/agent-score). It is a vendor tool with a product behind it:
+use the failed checks, run it before and after the work, and do not quote the
+score as a citation signal.
+
 Never grade the presence of these files as a ranking or citation signal.
 
 ### 7. Measure: is visibility moving?
@@ -207,7 +217,9 @@ Read `references/measurement.md`. Minimum program:
   arrives as direct or branded traffic.
 
 Answers vary run to run. Report ranges across repeated runs, never a single
-screenshot as a trend.
+screenshot as a trend. Read the panel by buying topic, start with the biggest
+consistent competitor gaps, and fix an existing page before creating a new one
+(method in `references/measurement.md`).
 
 ## KPIs to tie every recommendation to
 

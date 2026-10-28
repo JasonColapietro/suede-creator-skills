@@ -24,6 +24,8 @@ manual, source-linked research worksheet or a user-supplied export.
 | **Visitor identification (warm intent)** | RB2B, HubSpot Breeze Intelligence | Anonymous traffic → company identification |
 | **Intent data** | ZoomInfo Intent, 6sense, Bombora | Pre-warmed signals; mid-market+ pricing |
 | **Trigger event monitoring** | Google Alerts, Feedly, LinkedIn Sales Nav alerts | Free options are sufficient for most |
+| **Public posts and announcements** | X search (Grok, for example, searches X directly), LinkedIn posts (manual), news search | Grok via the xAI API; Exa MCP. Read the original post, not a summary |
+| **Ad activity (gap plays)** | Meta Ad Library, Google Ads Transparency Center, LinkedIn Ad Library | Meta Ad Library API covers political and EU ads only; check its current scope. Otherwise browser research |
 | **Local business discovery** | Google Maps (manual), Yelp, Facebook Pages | Browser-assisted, not bulk-extracted |
 
 ---

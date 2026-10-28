@@ -45,14 +45,14 @@
     {
       "id": 4,
       "prompt": "Build me a customer persona for a marketing manager at a B2B SaaS company.",
-      "expected_output": "Should check for product-marketing.md first. Should ask if there is existing research to build from before generating a persona. Should warn against inventing details without data. Should use the persona structure: profile, primary JTBD, trigger events, top pains, desired outcomes, objections, alternatives, key vocabulary, how to reach them. Should note that personas should be built from at least 5-10 data points.",
+      "expected_output": "Should check for product-marketing.md first. Should ask if there is existing research to build from before generating a persona. Should warn against inventing details without data. Should use the persona structure: profile, primary JTBD, trigger events, top pains, desired outcomes, objections, alternatives, key vocabulary, how to reach them. Should note that personas should be built from at least 5 independent data points (10 is better).",
       "assertions": [
         "Checks for product-marketing.md",
         "Asks if there is existing research to build from before inventing details",
         "Warns against creating personas without data",
         "Includes jobs to be done, pains, triggers, and desired outcomes in persona structure",
         "Mentions the need to capture actual customer vocabulary",
-        "Notes minimum data threshold (5-10 data points)"
+        "Notes minimum data threshold (at least 5 independent data points, 10 is better)"
       ],
       "files": []
     },
