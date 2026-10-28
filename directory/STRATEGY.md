@@ -106,7 +106,7 @@ Outreach must be approved before anything is sent. Draft for approval:
 
 ### Roundup and press inclusion
 
-The two 2026 roundups of skill directories did not include us. Ask their authors to add the directory, leading with what nobody else has: a recomputable 0–99 score with every component published, and per-skill install-risk summaries. Press pitches use author framing: Jason Colapietro, author of *Stake Your Claim*, *Proof as Infrastructure* and *The Human Authenticity Layer*, holder of the VoicePrint patent. Offer the data report (calendar item 6) as the hook, close softly. Nothing is sent without approval.
+Targets, status and copy for this section live in [DISTRIBUTION.md](DISTRIBUTION.md) and [PUBLICITY.md](PUBLICITY.md) (audit of 2026-10-28: eleven roundups found, none names the directory). The two 2026 roundups of skill directories did not include us. Ask their authors to add the directory, leading with what nobody else has: a recomputable 0–99 score with every component published, and per-skill install-risk summaries. Press pitches use author framing: Jason Colapietro, author of *Stake Your Claim*, *Proof as Infrastructure* and *The Human Authenticity Layer*, holder of the VoicePrint patent. Offer the data report (calendar item 6) as the hook, close softly. Nothing is sent without approval.
 
 ### Measuring the loop
 

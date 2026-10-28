@@ -16,6 +16,10 @@ The [Suede Awesome Everything catalog](../awesome/README.md) is the GitHub Markd
 | `notes.json` | Publisher install routes for restricted-license skills, and required service setup for other skills, shown in the installation section with a link to the source | Hand-written |
 | `exclusions.json` | Repositories (`owner/repo`) and skills (`owner/repo/skill-name`) kept out of the directory, each with a recorded reason: author removal requests, and skills whose text trips the pack's public-source guards (`npm run validate` names the file) | Hand-written |
 
+## Getting the directory listed
+
+[DISTRIBUTION.md](DISTRIBUTION.md) is the ledger of roundups, awesome lists, launch sites and press where the directory is or is not listed, with the route for each. [PUBLICITY.md](PUBLICITY.md) holds the ready-to-send copy for those submissions. Nothing in either file is sent without owner approval.
+
 ## Standalone site: suedeai.directory
 
 `scripts/build-directory-site.mjs` turns the pages in `docs/directory/` into a
