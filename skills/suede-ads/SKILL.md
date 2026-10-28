@@ -58,6 +58,7 @@ This skill's depth lives in references: load by intent. For **any operational de
 |---|---|---|
 | B2B strategy, funnel stages, budget splits, kill rules, lead quality, breakeven math | [b2b-paid-playbook.md](references/b2b-paid-playbook.md) | Demand lifecycle, leading/lagging signals, kill rules, offline conversion loop, U/B/F lead scoring, scaling quadrant |
 | Meta operations: when to kill/graduate/scale an ad, fatigue, testing structure | [meta-decision-system.md](references/meta-decision-system.md) | TCPL-anchored decision tree, ad-count ceiling, 80/20 CBO structure, fatigue bands, lead forms, Advantage+ transition |
+| Meta ad sequencing, ordered ad paths, Target frequency setup | [meta-ad-sequencing.md](references/meta-ad-sequencing.md) | Eligible objectives, flight math, hook-problem-proof-offer path, cost trade-off, retargeting workaround for Sales and Leads |
 | LinkedIn operations: bidding, audience sizing, scaling, benchmarks, TLAs, formats | [linkedin-b2b-playbook.md](references/linkedin-b2b-playbook.md) | Bidding progression, penetration scaling, sizing rules, funnel benchmarks, document/conversation ads, audit shortlist |
 | Google Search: what to spend on first, structure, match types, negatives, PMax | [google-search-playbook.md](references/google-search-playbook.md) | Intent ladder, account structure, match-type gates (incl. AI Max), negatives, bidding by volume, offline conversions, PMax guardrails |
 | Named-account targeting, pipeline acceleration, cross-channel retargeting | [abm-playbook.md](references/abm-playbook.md) | LinkedIn/Meta ABM, list mechanics, acceleration campaigns, UTM cross-channel remarketing, ABM measurement |
@@ -201,42 +202,12 @@ practice to test, not platform fact.
   1-day click, 7-day click, 28-day click, 1-day engaged-view, and 1-day view.
   Update dashboards and any report that compared view-through windows.
 
-### Ad sequencing: plan the path, not one winner
+### Ad sequencing
 
-Meta's ranking model reads a person's activity as an ordered timeline of ad
-clicks, conversions, and organic engagement (Meta Engineering's posts on its GEM
-ads model, November 2025 and October 2026). In practice the second ad someone
-sees is judged against the first. So ask what ad 2 says to a person who already
-saw ad 1, instead of testing every ad in isolation.
-
-Explicit sequencing in auction campaigns rolled out account by account in early
-2026. The setup is narrow, so confirm it in Meta's current help docs before
-planning around it:
-
-- Objective: Awareness (Maximize reach) or Engagement (ThruPlay). Sales and
-  Leads objectives do not offer it.
-- Frequency control set to **Target frequency**, not the default cap.
-- **Lifetime budget** at the ad set level, at least 7 days, with Advantage
-  campaign budget off.
-- At least two ads published in the ad set.
-
-**Fit the sequence to the flight.** Campaign length and the frequency window
-cap how many ads fit: a 3-week flight showing one ad every 7 days holds three.
-Two or three ads is the usual range, since longer paths shed people.
-
-A typical path runs hook, then problem, then proof (testimonial or case study),
-then offer. Each ad assumes the last one landed, so ad 3 does not re-explain the
-product.
-
-Target frequency usually costs more per impression than standard delivery.
-Judge a sequence on downstream conversions, ideally against a holdout, not on
-CPM. On conversion objectives, where sequencing is unavailable, approximate the
-path with engagement retargeting: viewers or engagers of the hook ad get the
-proof ad, then the offer. Do not quote a conversion multiplier for sequencing
-unless the account has measured one.
-
-Sources: sequencing framing from Cody Schneider (October 2026); setup
-requirements from Jon Loomer's testing and Meta's documentation as of early 2026.
+Meta ranks the second ad someone sees against the first, so plan two or three
+ads as a path (hook, problem, proof, offer) rather than testing each alone.
+Setup limits, flight math, costs, and the retargeting workaround for Sales and
+Leads objectives live in [meta-ad-sequencing.md](references/meta-ad-sequencing.md).
 
 The full kill, graduate, and scale rules live in
 [meta-decision-system.md](references/meta-decision-system.md).
