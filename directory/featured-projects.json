@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-27",
+  "updated": "2026-10-28",
   "page": {
     "about": "Copy for /directory/featured/ and the awesome/featured.md view, rendered by scripts/build-directory.mjs and scripts/build-awesome-directory.mjs. Project entries below are the publishers’ own work: keep their names, repositories, setup facts and review links exactly as reviewed.",
     "title": "Featured Agent Skill Projects | Suede AI",
@@ -227,6 +227,11 @@
       "headline": "Research what podcasts and YouTube shows said.",
       "summary": "Six plugin skills for transcript search, timestamped quotes, people and sponsor research, show comparisons, and company monitoring.",
       "setup": "Requires an Arcmira account and its hosted MCP connection. Research queries go to Arcmira; metered reads and monitor alerts use account credits. The linked source and Apache-2.0 license cover these six plugin skills.",
+      "links": [
+        { "label": "Website", "url": "https://arcmira.com" },
+        { "label": "MCP setup", "url": "https://arcmira.com/docs/mcp-server" },
+        { "label": "API docs", "url": "https://arcmira.com/docs" }
+      ],
       "skills": [
         {
           "id": "arcmira",

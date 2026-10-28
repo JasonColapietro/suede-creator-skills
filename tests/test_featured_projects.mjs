@@ -12,6 +12,44 @@ const read = (file) => fs.readFileSync(path.join(root, file), 'utf8');
 const data = JSON.parse(read('directory/featured-projects.json'));
 const published = () => read('docs/directory/featured/index.html');
 
+const arcmiraLinks = [
+  { label: 'Website', url: 'https://arcmira.com' },
+  { label: 'MCP setup', url: 'https://arcmira.com/docs/mcp-server' },
+  { label: 'API docs', url: 'https://arcmira.com/docs' },
+];
+
+test('Arcmira member resources render only the three approved informational links', () => {
+  const member = data.members.find((m) => m.id === 'arcmira');
+  assert.deepEqual(member.links, arcmiraLinks);
+  const card = published().split('id="arcmira"')[1].split('</article>')[0];
+  const awesome = read('awesome/featured.md').split('## Directory members')[1];
+  for (const { label, url } of arcmiraLinks) {
+    assert.ok(card.includes(`<a href="${url}" rel="noopener noreferrer">${label} ↗</a>`));
+    assert.ok(awesome.includes(`[${label}](${url})`));
+  }
+  assert.doesNotMatch(card, /<(?:script|iframe|object|embed|img)\b|\son\w+=/i);
+});
+
+test('member resource URLs and labels are allowlisted and cannot carry extra behavior', () => {
+  const withLinks = structuredClone(data);
+  withLinks.members[0].links = arcmiraLinks;
+  assert.doesNotThrow(() => featured.directoryMembers(withLinks));
+  const withoutLinks = structuredClone(withLinks);
+  delete withoutLinks.members[0].links;
+  assert.doesNotThrow(() => featured.directoryMembers(withoutLinks));
+  for (const links of [
+    null, {},
+    ...['http://arcmira.com', 'javascript:alert(1)', '//arcmira.com', 'https://arcmira.com.evil.example', 'https://arcmira.com@evil.example', 'https://arcmira.com/docs?redirect=https://evil.example', 'https://arcmira.com/docs/../account', 'https://arcmira.com/#x'].map((url) => [{ label: 'Website', url }]),
+    [{ label: '<img src=x onerror=alert(1)>', url: 'https://arcmira.com' }],
+    [{ ...arcmiraLinks[0], onclick: 'alert(1)' }],
+    [arcmiraLinks[0], arcmiraLinks[0]],
+  ]) {
+    const invalid = structuredClone(withLinks);
+    invalid.members[0].links = links;
+    assert.throws(() => featured.directoryMembers(invalid), /member/i);
+  }
+});
+
 test('Arcmira membership links only six pinned plugin skills and carries no certification', () => {
   const members = featured.directoryMembers(data);
   assert.deepEqual(members.map((m) => m.repo), ['arcmira/mcp']);
