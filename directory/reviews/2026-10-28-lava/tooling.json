@@ -1,0 +1,21 @@
+{
+  "quality_revision": "a84ef1eb7ecbebeb95ddbda6f500ff09d2825fab",
+  "scanner_revision": "fe5dc1757cd6c8ff63aee853564249c00151778d",
+  "scanner_runtime_image": "sha256:c5cb259db36a7c81dd75a050fcde4bfee8213c1d116317aec402410c3a5a9aec",
+  "sha256": {
+    "scripts/directory/parse_skills.py": "c6afe55cd156a84baf1fbe4b40709723a22d7ea3821302da1fbd8e1d4ffc4a4f",
+    "scripts/directory/curate.py": "e79ac38fe416c589a1ac24b524c79146feb9b5444b7c88894f0d8b208065960d",
+    "scripts/directory/grade.py": "f29f75d089b91b38312510ec8cffe7c0fc50c726e5fd73a84bd15fb9344d7877",
+    "scripts/directory/badges.mjs": "75a67d9f268b0a57f24d548a60059641c595997359d0cef6b47a31c724f87a26",
+    "scripts/check-public-privacy.py": "16b96c695e3ce27a7807b81b1ceb1a2b34f4069a82cdaaf30892673b6efac0cb",
+    "scripts/public-privacy-policy.json": "e2dcf31347445f6d7a16099cb0f1d5293573e50c0f5b3d204261602ce8bab103",
+    "scripts/security/worker.py": "9b0423ead91a083b4929f436511983f084b4233a1ca75ce685fa2dd300fc3c0d",
+    "scripts/security/scan.py": "9dcfeb3409f0edf882450fea709398f5a9e45ffecb48401ecafb8d06115cbe86",
+    "scripts/security/requirements.txt": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769",
+    "scripts/security/requirements.in": "0ff96f2f610aa0c49bf966911a0e01ef6d66c2814ba4b1822d8a4696dfc038fd",
+    "scripts/security/profile.json": "358dc4ff0d2db83e3463f6ccfa1372468fcad6f54641219b3de4c7334b930d2a",
+    "scripts/security/evidence.mjs": "0016d5a07126c9fe92c8775561558287a9b94d546685b8e8dcae69a6368a5cde",
+    "scripts/security/Dockerfile": "e96b39c71ad04ab50b02d6cfb45e6d9ffce0bcc6d7da22a90e703c7da7e516f6",
+    "scripts/security/.dockerignore": "5da5cb9931c0e2ea5d600d34b69fb065324b30cb2decbc9d6f770aca3925f87d"
+  }
+}

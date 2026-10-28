@@ -1,0 +1,36 @@
+{
+  "repository": "dustinliang666-blip/lava-mcp",
+  "revision": "f9369732c3956024666c80835b72dc7d22df5a43",
+  "files": [
+    {
+      "path": "LICENSE",
+      "size": 1069,
+      "git_blob": "9e5ba0020f375174db88ed1e9bf203243b420a09",
+      "sha256": "55e021aefd841e3bd88691673562fcc172040900dcc8125462626f5ef59b5667"
+    },
+    {
+      "path": "README.md",
+      "size": 5611,
+      "git_blob": "2278117b2cc7fb685980751b2647e84b14b01269",
+      "sha256": "2befa7e89170ec984068e52aa12ecd6a58db5162497c105dc7ab08bdf625c1a9"
+    },
+    {
+      "path": "SKILL.md",
+      "size": 4189,
+      "git_blob": "8a157e14f41565a36b0b60132d560f2b68fffa85",
+      "sha256": "016b9612973668533df0a04caabb4107ed7e77b1322b3d3846549e1d49dfbde0"
+    },
+    {
+      "path": "glama.json",
+      "size": 93,
+      "git_blob": "dfa8be2f1a24b2e1a17d3fb93e80a04eea36ff82",
+      "sha256": "d2d101effd93090e01f57e2e6719ee2c0478084b49d5c2249d2816210b067e77"
+    },
+    {
+      "path": "server.json",
+      "size": 1054,
+      "git_blob": "c2a820394ea2c916f1073ddee329113945568707",
+      "sha256": "39e2775c84f1103b041ca533bf17f4b1b5bb3ef1b05a221ee5def36917fb2f2b"
+    }
+  ]
+}

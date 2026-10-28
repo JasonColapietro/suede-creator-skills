@@ -5,7 +5,7 @@ import path from 'node:path';
 import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { CHECK_IDS, SCORE_METHOD, listed, qualityScore, letterGrade, listingTarget } from './directory/badges.mjs';
-import { directoryMembers } from './directory/featured.mjs';
+import { directoryMembers, memberSkillPath } from './directory/featured.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SITE = 'https://skills.suedeai.ai/directory/';
@@ -344,11 +344,11 @@ ${directoryMembers(editorial).map((member) => `<a id="${member.id}"></a>
 
 ${md(member.summary)}
 
-${member.skills.map((skill) => `- ${link(skill.title, `${github(member.repo)}/blob/${member.commit}/${member.scope}/${skill.id}/SKILL.md`)}: ${md(skill.description)}`).join('\n')}
+${member.skills.map((skill) => `- ${link(skill.title, `${github(member.repo)}/blob/${member.commit}/${memberSkillPath(member, skill)}`)}: ${md(skill.description)}`).join('\n')}
 
 ${md(member.setup)}
 
-${(member.links || []).map((item) => `${link(item.label, item.url)} · `).join('')}${link('Repository', github(member.repo))} · ${link('Skill review', `../${member.review}`)} · ${link('Plugin license', `${github(member.repo)}/blob/${member.commit}/${member.license_file}`)} · ${link('Suede Directory Member', `${SITE}featured/#${member.id}`)}`).join('\n\n')}
+${(member.links || []).map((item) => `${link(item.label, item.url)} · `).join('')}${link('Repository', github(member.repo))} · ${link('Skill review', `../${member.review}`)} · ${link(member.scope === 'SKILL.md' ? 'Source license' : 'Plugin license', `${github(member.repo)}/blob/${member.commit}/${member.license_file}`)} · ${link('Suede Directory Member', `${SITE}featured/#${member.id}`)}`).join('\n\n')}
 ` : ''}
 ${editorial.page?.nominate ? `
 ---

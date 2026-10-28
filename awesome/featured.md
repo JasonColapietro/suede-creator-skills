@@ -175,6 +175,20 @@ Requires an Arcmira account and its hosted MCP connection. Research queries go t
 
 [Website](https://arcmira.com) · [MCP setup](https://arcmira.com/docs/mcp-server) · [API docs](https://arcmira.com/docs) · [Repository](https://github.com/arcmira/mcp) · [Skill review](../directory/reviews/2026-10-27-arcmira.md) · [Plugin license](https://github.com/arcmira/mcp/blob/557fc76b697a2eaf1fee3bbfae90f25181ae2e93/plugins/arcmira/LICENSE) · [Suede Directory Member](https://skills.suedeai.ai/directory/featured/#arcmira)
 
+<a id="lava"></a>
+
+### Lava
+
+**Suede Directory Member** · MIT
+
+Lava connects AI research workflows to structured stock and concept-board news-flow heat, mention counts, rankings and summary points. The accepted scope is the original Chinese lava-news-heat skill.
+
+- [lava-news-heat · 熔岩](https://github.com/dustinliang666-blip/lava-mcp/blob/f9369732c3956024666c80835b72dc7d22df5a43/SKILL.md): 查询 A 股股票与概念板块的消息面热度、提及数、机构覆盖和结构化要点。
+
+Requires a Lava account and API key for its remote MCP service. Requests are metered and can consume account credit. The linked review records the source checks; the hosted service and runtime have not been tested. News-flow statistics support research, not trading recommendations.
+
+[Website](https://lava.ai-dolphin.com/subscribe) · [API docs](https://lava.ai-dolphin.com/subscribe/docs) · [Repository](https://github.com/dustinliang666-blip/lava-mcp) · [Skill review](../directory/reviews/2026-10-28-lava.md) · [Source license](https://github.com/dustinliang666-blip/lava-mcp/blob/f9369732c3956024666c80835b72dc7d22df5a43/LICENSE) · [Suede Directory Member](https://skills.suedeai.ai/directory/featured/#lava)
+
 
 ---
 

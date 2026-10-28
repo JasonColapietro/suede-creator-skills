@@ -264,6 +264,36 @@
           "description": "Research show sponsors and the shows a brand sponsors."
         }
       ]
+    },
+    {
+      "id": "lava",
+      "name": "Lava",
+      "repo": "dustinliang666-blip/lava-mcp",
+      "commit": "f9369732c3956024666c80835b72dc7d22df5a43",
+      "review": "directory/reviews/2026-10-28-lava.md",
+      "scope": "SKILL.md",
+      "license": "MIT",
+      "license_file": "LICENSE",
+      "headline": "Explore China A-share news-flow heat.",
+      "summary": "Lava connects AI research workflows to structured stock and concept-board news-flow heat, mention counts, rankings and summary points. The accepted scope is the original Chinese lava-news-heat skill.",
+      "setup": "Requires a Lava account and API key for its remote MCP service. Requests are metered and can consume account credit. The linked review records the source checks; the hosted service and runtime have not been tested. News-flow statistics support research, not trading recommendations.",
+      "links": [
+        {
+          "label": "Website",
+          "url": "https://lava.ai-dolphin.com/subscribe"
+        },
+        {
+          "label": "API docs",
+          "url": "https://lava.ai-dolphin.com/subscribe/docs"
+        }
+      ],
+      "skills": [
+        {
+          "id": "lava-news-heat",
+          "title": "lava-news-heat · 熔岩",
+          "description": "查询 A 股股票与概念板块的消息面热度、提及数、机构覆盖和结构化要点。"
+        }
+      ]
     }
   ]
 }

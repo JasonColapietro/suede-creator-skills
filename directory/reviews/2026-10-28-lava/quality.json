@@ -1,0 +1,42 @@
+{
+  "name": "lava-news-heat",
+  "source": {
+    "repository": "dustinliang666-blip/lava-mcp",
+    "revision": "f9369732c3956024666c80835b72dc7d22df5a43",
+    "path": "SKILL.md"
+  },
+  "assessment_date": "2026-10-28",
+  "score_method": "graded-v2",
+  "checks": {
+    "frontmatter": true,
+    "name_format": true,
+    "name_matches_folder": false,
+    "description_length": true,
+    "description_trigger": false,
+    "concise_body": true,
+    "license": true,
+    "maintained": true
+  },
+  "record": {
+    "repo": "dustinliang666-blip/lava-mcp",
+    "description": "查询股票和概念板块的消息面热度（熔岩）。当用户问某只股票/某个概念最近消息面热不热、被哪些机构/大V提及、要点是什么、概念里哪些股票最热时使用。",
+    "checks": "11010111",
+    "size": [
+      48,
+      197,
+      5
+    ],
+    "kinds": "",
+    "allowed_tools": null,
+    "compatibility": null
+  },
+  "repository": {
+    "commit_date": "2026-10-28T04:40:50-07:00",
+    "lists": []
+  },
+  "python_score": 51,
+  "grade": "D",
+  "structurally_eligible": false,
+  "adoption_evidence": "No independently verified tracked-list citations; zero adoption points.",
+  "javascript_score": 51
+}
