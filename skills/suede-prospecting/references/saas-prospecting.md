@@ -86,6 +86,56 @@ export and use a manual review worksheet.
 
 ---
 
+## Gap Plays: a signal plus a gap you can verify
+
+The strongest plays for services and tooling sellers pair two things: a signal
+that the company is spending or growing, and a gap you can verify from outside
+that your offer fixes. The signal says they have budget and a reason to act. The
+gap gives you a specific, checkable opener instead of a guess. This applies to
+the B2B branch as well.
+
+| Signal | Gap to verify | How to check it from outside | Fits an offer like |
+|--------|---------------|------------------------------|--------------------|
+| Recent funding or a new marketing leader | The site hasn't changed in a long time, or doesn't match the new story | Wayback Machine snapshots, the copyright year, positioning that doesn't match the funding announcement | Website, CRO, positioning |
+| Hiring several SDRs or BDRs | The outbound stack doesn't match the plan | Tools named in the job post, sending-domain DNS (SPF, DKIM, DMARC), the tech stack | Email infrastructure, enrichment, deliverability |
+| Hiring for repetitive work (data entry, reporting, lead research, CRM admin) | The job post describes tasks that can be automated | The responsibilities list in the post itself | Automation, RevOps, AI agents |
+| Running paid ads | No visible ad or analytics tags | Page source, the browser network tab, or a tag-checker extension (Meta Pixel Helper, Google Tag Assistant) | Tracking and attribution setup |
+| Running paid ads | Paid traffic lands on the homepage | The destination link on each ad in the Meta Ad Library or LinkedIn Ad Library | Landing pages, CRO |
+| Running the same ads for months | Creative fatigue | Start dates in the Meta Ad Library; the Google Ads Transparency Center for search and YouTube | Ad creative |
+| Many locations | Missing or thin location pages | Store-locator count vs. pages found with `site:domain.com/locations`; Google Business Profiles per location | Local SEO |
+| Many integrations or use cases | Few pages about them | The integrations directory vs. a `site:` search for integration or use-case pages | Programmatic SEO, content |
+| A lead magnet (ebook, calculator, webinar) | No follow-up after opt-in | Opt in with an address you control, log every email for 14 days, then unsubscribe | Email nurture, lifecycle |
+| Expanding into a new country | The site isn't localized for it | Language switcher, `hreflang` tags, local currency and payment methods on pricing | Localization, international SEO |
+
+**Rules for gap plays:**
+
+1. **Verify the gap; never assume it.** Record what you checked, the date, and a
+   screenshot or URL, the same as any other row. An agent asked to find gaps will
+   invent them unless every gap needs evidence. "No gap found" is a valid result.
+2. **Know what can't be seen from outside.** Server-side tracking (Meta's
+   Conversions API, server-side Google Tag Manager) doesn't show in page source,
+   so a missing browser tag isn't proof of missing tracking. Ask, don't accuse. A
+   homepage is a normal destination for brand-name search ads, and an ad running
+   for months may be the winner rather than tired. Ad longevity is a proxy, not
+   proof.
+3. **Re-check before sending.** Gaps get fixed. Re-verify within 7 days of the
+   first touch, or drop the gap from the message.
+4. **The gap must map to your offer.** Spotting a problem you can't fix is
+   research, not a play.
+5. **Lead with the observation and a question, not a verdict.** "Your Meta ads
+   for the spring launch point to the homepage. Is that on purpose?" gets
+   replies. "Your landing pages are wasting your ad spend" gets deleted. Offer the
+   evidence, and any teardown, only after they say yes. The opener itself belongs
+   to `suede-cold-email`.
+
+Searching for these by hand is slow, which is why the plays used to be rare.
+Agents with web, ad-library, and X search access can build the candidate list. A
+human still reviews the evidence for every Hot row and a sample of Warm rows.
+Once a play gets replies, `suede-marketing-loops` can run it as a scheduled
+signal check.
+
+---
+
 ## Qualification Checklist (SaaS branch)
 
 For each candidate, verify:

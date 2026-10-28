@@ -3,7 +3,7 @@ name: suede-offers
 description: "Suede AI Offer Design Skills: risk reversal, value levers, scope, proof, bonuses, guarantees, deadlines, and testable persuasion hypotheses. Use when asked \"improve this service offer\" or to diagnose a course, agency, coaching, or B2B offer. NOT FOR: SaaS tier architecture (suede-pricing), sales-page copy (suede-copy), upgrade screens (suede-paywalls), or clinical advice."
 metadata:
   display-name: "Suede AI Offer Design Skills"
-  version: 2.0.0
+  version: 2.0.1
 ---
 
 # Suede AI Offer Design Skills

@@ -3,7 +3,7 @@ name: suede-video
 description: "Plan or produce marketing video with scripts, storyboards, shot and asset lists, consent-aware AI or avatar choices, programmatic rendering, edit decisions, pacing, export specs, and video-search metadata. Use when asked to \"turn this demo into a short video\" or build a repeatable production pipeline. NOT FOR: social calendars (use suede-social), clip-to-guide bridges (use suede-clip-to-guide), paid ad concepts (use suede-ad-creative), still images (use suede-image), or unapproved publishing."
 metadata:
   display-name: "Suede AI Video Skills"
-  version: 2.2.0
+  version: 2.2.1
 ---
 
 # Suede AI Video Skills
@@ -66,33 +66,25 @@ work; verify fit against the current stack, edit needs, cost, and review burden.
 
 ### HTML/CSS renderer candidate
 
-Hyperframes may fit an HTML/CSS workflow. First check whether it is installed.
+Hyperframes, from HeyGen, may fit an HTML/CSS workflow. Docs:
+[hyperframes.heygen.com](https://hyperframes.heygen.com/introduction). First
+check whether it is installed.
 If it is, read the installed version's documentation, inspect its license, and
 confirm the renderer and export path. If it is not installed, use a
 renderer-neutral handoff or request explicit installation authorization after
 showing the current package source, version, lockfile impact, and cost. The
-following command must not run without that authorization:
+following commands must not run without that authorization:
 
 ```bash
-npm install hyperframes
+npx hyperframes init my-video && cd my-video
+npx hyperframes preview               # live preview
+npx hyperframes render -o output.mp4  # render index.html
 ```
 
-**Key concept:** Each frame is an HTML document. Compose frames into a timeline, render to MP4.
-
-```typescript
-import { render } from "hyperframes";
-
-await render({
-  frames: [
-    { html: "<h1>Welcome to Acme</h1>", duration: 3 },
-    { html: "<h2>Here's what we built</h2>", duration: 3 },
-    { html: "<p>Try it free →</p>", duration: 2 },
-  ],
-  output: "intro.mp4",
-  width: 1080,
-  height: 1920, // 9:16 for vertical
-});
-```
+**Key concept:** A composition is plain HTML, CSS, and JS. Timing is declared in
+the markup, and the renderer seeks a paused animation timeline frame by frame.
+Confirm the current composition syntax and any programmatic render API in the
+installed version's docs before writing code against it.
 
 **Candidate fit:** Product announcements, changelogs, data-driven reports, and
 approved personalized outreach videos. Verify determinism with a repeat-render
@@ -100,8 +92,10 @@ test instead of assuming it.
 
 ### React renderer candidate
 
-Remotion may fit a React-based workflow. Verify the installed or callable
-version, current documentation, license, rendering path, and hosting cost. The
+Remotion may fit a React-based workflow. Docs:
+[remotion.dev](https://www.remotion.dev/docs). It is source-available, not open
+source, so check its license terms. Verify the installed or callable version,
+current documentation, license, rendering path, and hosting cost. The
 scaffold command may install packages or create files; run it only with explicit
 authorization for that change, otherwise provide a renderer-neutral plan:
 
@@ -109,15 +103,17 @@ authorization for that change, otherwise provide a renderer-neutral plan:
 npx create-video@latest
 ```
 
-**Key concept to verify:** React components express timed visuals and props
-drive content. Confirm whether rendering is local or uses an authorized hosted
-renderer.
+**Key concept to verify:** a composition is a React component that reads the
+current frame number and returns what is on screen; props drive content. Confirm
+whether rendering is local or uses an authorized hosted renderer.
 
 Read
 [references/programmatic-renderers.md](references/programmatic-renderers.md)
 when the repo already uses React, or when the choice between the HTML/CSS and
 React paths has to be justified: it carries the React component sample and the
-renderer selection table.
+renderer selection table. Neither framework is the more powerful one. Both
+render web pages to video in a headless browser; the difference is what the
+team writes.
 
 ---
 
@@ -281,6 +277,41 @@ music. Full method: [references/edit-anatomy.md](references/edit-anatomy.md).
 4. **Add platform-specific captions** with an available editor
 5. **Return approved export candidates** to `suede-social` for channel strategy;
    scheduling remains a separate explicit action
+
+### Personalized Video per Account
+
+A tailored product film for each target account, built by agents. One-off
+prompting reaches a decent film after 15 to 20 minutes of back-and-forth.
+Hundreds of films need the foundation built first.
+
+1. **Product component library**: agents walk the app and rebuild key screens
+   as reusable components, one source of truth every film pulls from instead of
+   redrawing.
+2. **Motion primitives**: reusable animated parts (camera pushes, screen
+   handoffs, click rhythm, product moves). Fix one and every film inherits the
+   fix.
+3. **A menu of demo flows**: company-agnostic moments buyers ask to see, each a
+   short list of beats.
+4. **Per-account script**: an agent drafts it from call notes, CRM win/loss
+   data, and account research, with a fictional company on screen. A cloned
+   narrator voice requires that narrator's documented consent.
+5. **A render engine**: code that turns a beat list into a film, covering
+   camera, transitions, captions, pointer timing, and end card.
+6. **Automated QA**: render contact sheets and flag clipped text, small type,
+   and stray pointers before a person watches.
+7. **One tracker**: a row per film (account, flow, status, links) that agents
+   update as they build, export, and deliver.
+
+Storyboard the first film before production; it sits between the brief and the
+render the way a spec sits between an idea and code. Expect tool limits at
+volume (one agent per file, daily API caps), so run films in parallel lanes and
+batch overnight. Any authorized programmatic renderer (Hyperframes, Remotion) or
+a design tool with agent access can carry it; none is the default. Rendering,
+voice cloning, and delivery each stay separate approvals under the Halt
+Contract.
+
+Source: adapted from Harvey's write-up of its agent-built launch and
+per-account films (Shawn Farsai and Gabe Pereyra, October 2026).
 
 ---
 

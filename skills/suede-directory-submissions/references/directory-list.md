@@ -30,12 +30,17 @@ moderation, and publishing authority.
 - G2
 - Capterra
 - GetApp
+- Software Advice
 - SourceForge
 - F6S
 - Startup Stash
 
 Research audience fit, category fit, listing requirements, review rules, exact
 cost, data use, and whether the live listing provides a measurable referral path.
+Ownership changes too: G2 announced in January 2026 that it agreed to buy
+Capterra, GetApp, and Software Advice from Gartner. Do not describe any of the
+three as a Gartner property, and check whether listings still sync between them
+in your category before treating them as separate submissions.
 
 ## AI Product Directory Candidates
 
@@ -78,6 +83,21 @@ commerce, or developer-platform marketplaces.
 Verify partner eligibility, app review, security requirements, support
 obligations, listing fields, trademark rules, fees, and whether the user is
 authorized to accept partner terms.
+
+Worked example, last checked October 2026 (re-verify against Notion's developer
+docs before building):
+
+- **Notion Marketplace** requires a working public Notion connection. Its
+  installation scope must be set to "Any workspace" when the connection is
+  created. The scope cannot be changed later, and other scopes are not eligible
+  for listing, so a connection created with the wrong scope means starting a new
+  one. Notion reviews each listing submission, including a security review, and
+  an approved listing gets a page at notion.com/connections/<name>.
+- A simple, genuine use case is enough to qualify, for example sending the
+  app's data into a Notion database. Build it because customers will use it;
+  the listing link is a side effect, not the reason.
+
+Source: https://developers.notion.com/guides/get-started/marketplace-listing
 
 ## Company Profile Candidates
 

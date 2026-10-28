@@ -32,7 +32,8 @@ data the moment it exists.
    roughly a 5th to 7th grade reading level.
 4. **A low-friction ask.** An interest question ("worth a look?") beats a
    30-minute meeting request on first touch.
-5. **Follow-up.** Most replies arrive after the first email. Each follow-up must
+5. **Follow-up.** The first email draws most replies (about 58% in Instantly's
+   2026 benchmark); the other ~42% arrive on follow-ups. Each follow-up must
    carry something new.
 6. **Contacts per account.** One or two people per company. Ten people at one
    company get the domain flagged and annoy the buyer.

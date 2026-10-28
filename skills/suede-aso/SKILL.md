@@ -3,7 +3,7 @@ name: suede-aso
 description: "Suede AI App Store Optimization Skills. Use when asked to \"improve our App Store listing\" or prepare prelaunch keyword, title, subtitle, description and screenshot fields from app and console evidence. NOT FOR: app builds (android-app-factory or site-to-ios-app), release rollout (suede-play-release), paid assets (suede-ad-creative), or install instrumentation (suede-analytics)."
 metadata:
   display-name: "Suede AI App Store Optimization Skills"
-  version: 2.0.0
+  version: 2.0.1
 ---
 
 # Suede AI App Store Optimization Skills

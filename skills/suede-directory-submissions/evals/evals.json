@@ -82,6 +82,19 @@
         "Checks each live listing against the canonical entity sheet and flags mismatches"
       ],
       "files": []
+    },
+    {
+      "id": 7,
+      "prompt": "I want to get our SaaS listed on the Notion Marketplace for the backlink. We don't have a Notion integration yet. What's involved?",
+      "expected_output": "Should load references/directory-list.md (integration marketplace candidates) and explain that a listing requires a working public Notion connection. Should flag that the installation scope must be set to \"Any workspace\" when the connection is created, because it cannot be changed later and other scopes are not eligible. Should suggest a simple genuine use case (for example sending the app's data into a Notion database), then submitting the listing for Notion's review, which includes a security review, with the approved page at notion.com/connections/<name>. Should mark these requirements as last-checked facts to re-verify in Notion's current developer docs, frame the integration as useful to customers rather than only a backlink, and not promise a link attribute or ranking effect.",
+      "assertions": [
+        "States a working public Notion connection is required",
+        "Warns the 'Any workspace' scope must be chosen at creation and can't be changed",
+        "Mentions Notion's review, including a security review",
+        "Suggests a simple genuine use case for the integration",
+        "Says to re-verify the requirements against Notion's current docs before building"
+      ],
+      "files": []
     }
   ]
 }

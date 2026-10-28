@@ -1,9 +1,9 @@
 ---
 name: suede-prospecting
-description: "Build a source-backed, scored prospect list across SaaS, B2B, local business, or early demand signals. Use when asked to \"find our first design partners\", define an ICP, enrich leads, or document disqualification evidence. Includes source dates, confidence, licensed-data checks, and a qualification handoff. NOT FOR: sending outreach (use suede-cold-email), CRM routing (use suede-revops), or competitor profiles (use suede-competitor-profiling)."
+description: "Build a source-backed, scored prospect list across SaaS, B2B, local business, or early demand signals. Use when asked to \"find our first design partners\", define an ICP, enrich leads, run gap plays or warm-path network mining, or document disqualification evidence. Includes source dates, confidence, licensed-data checks, and a qualification handoff. NOT FOR: sending outreach (use suede-cold-email), CRM routing (use suede-revops), or competitor profiles (use suede-competitor-profiling)."
 metadata:
   display-name: "Suede AI Prospecting Skills"
-  version: 1.2.0
+  version: 1.2.1
 ---
 
 # Suede AI Prospecting Skills
@@ -93,6 +93,33 @@ rather than grinding through more sources.
 A smaller evidence-complete list is preferable to padding the output with
 unverified candidates. Don't start qualification until every candidate has its
 source URL captured.
+
+**Warm paths before bought lists.** Mine the relationships the user already has
+before sourcing cold. A warm introduction gets read when the twentieth cold email
+of the day doesn't, and AI-written outreach widens that gap.
+
+1. **Export the network.** LinkedIn connections (Settings, Data privacy, Get a
+   copy of your data), calendar attendees, and inbox contacts. This is the user's
+   own data export, not scraping. LinkedIn's export includes emails only for
+   connections who allow it.
+2. **Enrich and score** every contact against the ICP like any other list.
+3. **Match against target accounts** to find first- and second-degree paths into
+   the companies the user wants.
+4. **Start with the calendar.** Recent meetings show who is in a buying moment now.
+5. **Find one connector per vertical**: someone trusted by buyers who ignore cold
+   outreach. Pay them the way you would pay for a qualified meeting, and disclose
+   the arrangement.
+6. **Double opt-in intros only.** Ask the connector, then the target, before
+   anyone is introduced. A human approves every intro, and no contact is asked to
+   take intros for two vendors in the same week. Trust is the asset; spend it
+   slowly.
+
+*Warm-path method adapted from Cody Schneider's podcast with Chris of Super
+Connector (October 2026).*
+
+For **gap plays** (a signal plus a gap you can verify from outside, such as ads
+running with no visible tracking), see
+the "Gap Plays" section of [references/saas-prospecting.md](references/saas-prospecting.md).
 
 ### Phase 3: Qualify each candidate
 

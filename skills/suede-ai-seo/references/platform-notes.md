@@ -73,10 +73,22 @@ Source: https://developers.openai.com/api/docs/bots
 - All honor robots.txt per Anthropic; IP blocking is not a reliable opt-out.
   Each subdomain needs its own robots.txt. Verify source IPs against Anthropic's
   published list.
-- Anthropic does not publish which search index backs Claude's web search. Do
-  not claim one.
+- Search index: Anthropic's crawler documentation does not name one. Its
+  subprocessor list has named Brave Search for web search since March 2025
+  (widely reported at the time; confirm against the current list before a
+  client deliverable quotes it). Treat Brave as the practical place to check,
+  not as a documented ranking dependency.
+- Check whether the site appears at search.brave.com for the brand and key
+  terms. If it is missing, request a crawl at search.brave.com/submit-url. That
+  page only alerts Brave's crawler: there is no webmaster console and no sitemap
+  submission, so confirm the result by watching referrals from
+  search.brave.com in analytics.
 
-Source: https://support.claude.com/en/articles/8896518
+Sources:
+- https://support.claude.com/en/articles/8896518
+- Report of the Brave subprocessor entry:
+  https://simonwillison.net/2025/Mar/21/anthropic-use-brave/
+- https://search.brave.com/submit-url
 
 ## Perplexity
 
@@ -95,7 +107,9 @@ Source: https://docs.perplexity.ai/docs/resources/perplexity-crawlers
 - Bing Webmaster Tools AI Performance report (public preview, February 2026):
   total citations, unique cited pages, page-level citation counts, and the
   grounding queries that triggered citations, exportable as CSV; no API at
-  preview.
+  preview. Grounding queries are Bing's interpretation of the request, not the
+  user's typed prompt. No click data, and no mapping from a query to a specific
+  citation.
 - IndexNow notifies participating engines (including Bing) of changed URLs.
   Google does not participate.
 
@@ -116,5 +130,5 @@ Sources:
 2. ChatGPT: allow `OAI-SearchBot`; earn corroboration on sites ChatGPT cites.
 3. Copilot: Bing indexation and IndexNow; read the AI Performance report.
 4. Perplexity and Claude: allow their search and user agents; publish quotable,
-   sourced passages.
+   sourced passages. For Claude, confirm the site is in Brave's index.
 5. Everywhere: one consistent entity and third-party consensus.

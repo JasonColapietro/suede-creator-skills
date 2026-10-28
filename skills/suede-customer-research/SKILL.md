@@ -3,7 +3,7 @@ name: suede-customer-research
 description: "Use when asked \"synthesize these interviews\" or to discover what a defined customer segment says, needs and resists. Suede AI analyzes transcripts, surveys, tickets, reviews and forums into traceable VOC quotes, jobs to be done, personas and buyer questions. NOT FOR: competitor-only profiling (use suede-competitor-profiling), final copy (use suede-copy), or unsupported product prioritization (use suede-product-marketing)."
 metadata:
   display-name: "Suede AI Customer Research Skills"
-  version: 2.1.0
+  version: 2.1.1
 ---
 
 # Suede AI Customer Research Skills
@@ -111,7 +111,7 @@ Label every insight with a confidence level before presenting it:
 - Reddit skews technical and skeptical vs. mainstream buyers
 - Factor this in when drawing conclusions about "all customers"
 
-**Minimum viable sample**: 5 independent data points per segment (interviews, reviews, tickets, or community posts) before building a persona or drawing a messaging conclusion for that segment. Below 5, present the material as raw signal, not as a finding.
+**Minimum viable sample**: 5 independent data points per segment (10 is better), drawn from interviews, reviews, tickets, or community posts, before building a persona or drawing a messaging conclusion for that segment. Below 5, present the material as raw signal, not as a finding.
 
 ---
 

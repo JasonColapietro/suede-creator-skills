@@ -1,7 +1,9 @@
 # Follow-Up Sequences
 
-Most replies to cold outreach come from follow-ups, not the first email. The
-follow-up only works when it adds something new.
+The first email draws most replies (about 58% in Instantly's 2026 benchmark),
+but the remaining 42% or so arrive on follow-ups. A sequence that stops after one
+send gives up nearly half its replies. The follow-up only works when it adds
+something new.
 
 ## Length: 3 to 5 emails total
 

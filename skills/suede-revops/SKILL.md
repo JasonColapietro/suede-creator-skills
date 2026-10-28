@@ -3,7 +3,7 @@ name: suede-revops
 description: "Define lifecycle stages, fit and engagement scores, MQL/SQL handoffs, routing SLAs, pipeline hygiene, CRM automation, deal-desk tiers, and dashboard metrics. Use when asked to \"fix our lead routing\" or specify revenue operations. Returns implementation-ready rules with owners and measurement. NOT FOR: prospect lists (use suede-prospecting), outbound copy (use suede-cold-email), lifecycle campaigns (use suede-emails), pricing strategy (use suede-pricing), or unapproved production CRM changes."
 metadata:
   display-name: "Suede AI Revenue Operations Skills"
-  version: 2.0.0
+  version: 2.0.1
 ---
 
 # Suede AI Revenue Operations Skills

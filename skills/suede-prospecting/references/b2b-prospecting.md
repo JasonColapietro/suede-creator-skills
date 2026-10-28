@@ -58,6 +58,11 @@ For when the user sells to non-SaaS B2B: services, agencies, manufacturers, mid-
 - **SEC filings** (public companies): material change disclosures
 - **State filings**: new entity formation, dissolution
 
+For gap plays (a signal plus a gap you can verify from outside, such as ads
+running with no visible tracking or many locations with thin location pages), see
+[saas-prospecting.md](saas-prospecting.md#gap-plays-a-signal-plus-a-gap-you-can-verify).
+The table and rules apply to B2B accounts too.
+
 ---
 
 ## Qualification Checklist (B2B branch)

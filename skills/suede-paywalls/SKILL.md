@@ -1,9 +1,9 @@
 ---
 name: suede-paywalls
-description: "Suede AI Paywall Skills: paywalls, entitlement gates, usage limits, trial expiry, screen copy, trigger rules, and experiment plans. Use when asked \"improve this upgrade prompt\" after users experience value. NOT FOR: public pricing-page or tier architecture (suede-pricing), cancellation and save flows (suede-churn-prevention), or unapproved billing changes."
+description: "Suede AI Paywall Skills: paywalls, entitlement gates, usage limits, trial expiry, screen copy, trigger rules, experiment plans, and mobile subscription-app paywalls. Use when asked \"improve this upgrade prompt\" after users experience value, or \"design our App Store subscription paywall.\" NOT FOR: public pricing-page or tier architecture (suede-pricing), cancellation and save flows (suede-churn-prevention), or unapproved billing changes."
 metadata:
   display-name: "Suede AI Paywall Skills"
-  version: 2.0.0
+  version: 2.0.1
 ---
 
 # Suede AI Paywall Skills
@@ -161,7 +161,7 @@ Any paywall that starts a trial, converts a trial, or renews a subscription must
 - When hitting genuine limits
 
 ### When NOT to Show
-- During onboarding (too early)
+- During onboarding (too early), except in consumer mobile subscription apps, where the paywall follows the first personalized result inside onboarding
 - When they're in a flow
 - Repeatedly after dismissal
 
@@ -192,6 +192,11 @@ including which of the above defaults are worth testing first: See
 [references/experiments.md](references/experiments.md). Use `suede-ab-testing`
 to design and read out the test.
 
+**For consumer iOS and Android subscription apps** (paywall inside onboarding,
+yearly-first plans, trials and reminders, store fees, web checkout, revenue per
+download): See
+[references/mobile-subscription-paywalls.md](references/mobile-subscription-paywalls.md).
+
 ---
 
 ## Anti-Patterns to Avoid
@@ -200,6 +205,7 @@ to design and read out the test.
 - Hiding the close button
 - Confusing plan selection
 - Guilt-trip copy
+- Fake countdowns or "limited" offers with no real deadline
 
 ### Conversion Killers
 - Asking before value delivered

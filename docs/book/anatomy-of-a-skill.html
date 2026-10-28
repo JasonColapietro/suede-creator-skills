@@ -36,7 +36,7 @@
   "position": 3,
   "wordCount": 2334,
   "datePublished": "2026-08-10",
-  "dateModified": "2026-10-25",
+  "dateModified": "2026-10-27",
   "inLanguage": "en",
   "isPartOf": {
     "@type": "Book",
@@ -104,7 +104,7 @@ description: "Suede AI code review and A-F ship grade for a diff, PR, branch, or
       <p>Across all 64 skills, the frontmatter carries <code>name</code> 64 times and <code>description</code> 64 times. Sixty-four of them add a <code>metadata</code> block with a version string, a convention the marketing and growth skills brought with them. Nothing else appears. The schema is small on purpose, because everything the frontmatter does happens before the body is read.</p>
       <p><code>name</code> matches the folder and is the handle. It is what you type when you invoke the skill directly, and what other skills reference when they route work elsewhere. Keep it stable. A rename breaks every routing line in every other skill that points at it, and those lines are plain text, so nothing will tell you.</p>
       <h2 id="the-description-carries-the-routing-burden">The description carries the routing burden</h2>
-      <p>The description is the only part of a skill that stays in the agent's context when the skill is not running. In this repo the 64 files total 895,276 bytes; the 64 descriptions together are 28,107. The agent holds the small number and reaches for the large one only when a description matches.</p>
+      <p>The description is the only part of a skill that stays in the agent's context when the skill is not running. In this repo the 64 files total 902,868 bytes; the 64 descriptions together are 28,234. The agent holds the small number and reaches for the large one only when a description matches.</p>
       <p>That makes the description a router, not a summary. It has to answer two questions well enough that an agent mid-task can decide in one pass: what does this produce, and when should it fire.</p>
       <p>Look at what <code>suede-code</code> does with 490 characters. "Suede AI code review and A-F ship grade for a diff, PR, branch, or commit range" states the artifact. The next clauses name what comes back and the three modes, so a caller who only wants the letter knows it can ask for one. The trigger list catches the request in the words a caller actually types: "find the bugs before merge", "give it a letter", "should this merge". Then the last sentence does the real work: "NOT FOR: making CI enforce the verdict on every merge (use suede-ci-gate)." That clause exists because <code>suede-ci-gate</code> lives next door and produces something different, and without it an agent would pick between them by coin flip.</p>
       <p><code>suede-deslop</code> does the same job in 436 characters:</p>

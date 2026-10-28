@@ -12,9 +12,9 @@ table.
 
 Remotion may fit a React-based workflow. Verify the installed or callable
 version, current documentation, license, rendering path, and hosting cost before
-recommending it. React components express timed visuals and props drive
-content; confirm whether rendering is local or uses an authorized hosted
-renderer.
+recommending it. A composition is a React component that reads the current
+frame number and returns what is on screen; props drive content. Confirm whether
+rendering is local or uses an authorized hosted renderer.
 
 ```tsx
 export const ProductDemo: React.FC<{ title: string; features: string[] }> = ({
@@ -34,12 +34,29 @@ export const ProductDemo: React.FC<{ title: string; features: string[] }> = ({
 };
 ```
 
-**Candidate fit:** complex animation, interactive previews, or batch rendering
-when the verified runtime supports them.
+**Candidate fit:** teams that already write React and want to reuse their
+components.
 
 ---
 
 ## When to Pick Which
+
+Both render web pages to video in a headless browser. The durable difference is
+what you write:
+
+| | HTML/CSS renderer (Hyperframes) | React renderer (Remotion) |
+|--|---------------------------------|---------------------------|
+| You write | HTML, CSS, JS | React components (TypeScript) |
+| Timing | Declared in markup; the renderer seeks a paused animation timeline | Computed in code from the current frame number |
+
+Existing HTML, CSS, or browser animations point to the HTML/CSS path; an
+existing React codebase points to the React path. Do not call either one more
+powerful. For rendering options, licensing, and current features, check each
+project's docs ([hyperframes.heygen.com](https://hyperframes.heygen.com/introduction),
+[remotion.dev](https://www.remotion.dev/docs)); they change faster than this
+file.
+
+Then verify fit in the repo:
 
 | Factor | HTML/CSS renderer | React renderer |
 |--------|-------------------|----------------|
