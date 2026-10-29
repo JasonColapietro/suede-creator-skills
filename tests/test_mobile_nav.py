@@ -109,11 +109,27 @@ class MobileNavTests(unittest.TestCase):
                 # it before reading the desktop row.
                 desktop = re.sub(r"<details\b.*?</details>", "", desktop, flags=re.S)
                 panel = slice_div(html, '<div id="nav-mobile-menu"')
-                self.assertEqual(
-                    hrefs(desktop),
-                    hrefs(panel),
-                    "mobile menu drifted from the desktop nav",
-                )
+                if page == DOCS / "index.html":
+                    # The homepage keeps a compact primary nav. Its mobile
+                    # menu may also expose secondary destinations, but those
+                    # must remain reachable on desktop through the footer.
+                    primary = hrefs(desktop)
+                    mobile = hrefs(panel)
+                    footer = hrefs(slice_div(html, '<div class="footer-links">'))
+                    self.assertTrue(primary, "primary navigation is empty")
+                    self.assertEqual(
+                        primary, [href for href in mobile if href in primary],
+                        "mobile menu lost or reordered a primary destination",
+                    )
+                    self.assertTrue(
+                        set(mobile) - set(primary) <= set(footer),
+                        "secondary navigation is unreachable on desktop",
+                    )
+                else:
+                    self.assertEqual(
+                        hrefs(desktop), hrefs(panel),
+                        "mobile menu drifted from the desktop nav",
+                    )
 
     def test_single_list_pages_never_grew_a_second_copy(self):
         # The other 99 pages wrap one .nav-links row, which is why they cannot

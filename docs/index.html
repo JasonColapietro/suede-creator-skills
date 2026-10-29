@@ -3987,8 +3987,9 @@
       .listed-on-list { gap: 0 16px; }
     }
   </style>
+  <link rel="stylesheet" href="assets/skills-premium.css">
 </head>
-<body>
+<body class="skills-home premium-skills">
 
 <a class="skip-link" href="#main">Skip to content</a>
 
@@ -4018,12 +4019,7 @@
     <div class="nav-right">
       <a href="skills/" class="nav-link">Skills</a>
       <a href="directory/" class="nav-link">Directory</a>
-      <a href="#changelog" class="nav-link">Changelog</a>
-      <a href="#scorecard" class="nav-link">Benchmarks</a>
       <a href="guide.html" class="nav-link">Guide</a>
-      <a href="book/" class="nav-link">Book</a>
-      <a href="blog/" class="nav-link">Blog</a>
-        <a href="cracked.html" class="nav-link nav-cracked">Cracked Devs</a>
       <a class="nav-star" href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener" aria-label="Star JasonColapietro/suede-creator-skills on GitHub"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" class="nav-star-icon"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.75.75 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"/></svg><span class="nav-star-label">Star</span><span class="nav-star-count" data-star-count hidden></span></a>
       <a href="plugins.html" class="nav-cta">Install</a>
       <details class="nav-disclosure" id="nav-disclosure" open>
@@ -4088,22 +4084,18 @@
 
     <div id="hero-grid">
       <div id="hero-copy">
-        <span id="hero-eyebrow" class="hero-anim">Open source &middot; MIT + BSD &middot; One author<a href="#changelog" class="eyebrow-ship">&middot; Released Aug 26</a></span>
+        <span id="hero-eyebrow" class="hero-anim">Suede AI Skills &middot; Free &amp; open source</span>
 
-        <h1 id="hero-headline" class="hero-anim">Claude Code skills for SEO and <em class="hh-risk">business growth</em>.</h1>
+        <h1 id="hero-headline" class="hero-anim">Put your agent to work on <em class="hh-risk">business growth</em>.</h1>
 
-        <p id="hero-subline" class="hero-anim"><strong>Suede AI Skills is a free, open-source pack of Agent Skills for Claude Code and OpenAI Codex.</strong> Built for founders, marketers, and small teams who need SEO audits, AI search visibility, conversion copy, and business operations workflows. Bring a page or business brief. Get prioritized findings, positioning and campaign plans, or an operations map you can act on.</p>
+        <p id="hero-subline" class="hero-anim"><strong>Open-source workflows for Claude Code and OpenAI Codex.</strong> Audit your SEO, improve conversion copy, plan a campaign, or map your operations. Bring a page or business brief. Leave with prioritized work you can act on.</p>
 
         <div id="hero-ctas" class="hero-anim">
-          <a id="hero-cta-star" href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener" aria-label="Star JasonColapietro/suede-creator-skills on GitHub">
-            <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.75.75 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"/></svg>
-            Star on GitHub
-            <span id="hero-star-count" data-star-count hidden></span>
-          </a>
-          <a id="hero-cta-secondary" href="#install">Install the skills</a>
+          <a id="hero-cta-star" href="#install">Install the skills <span aria-hidden="true">↗</span></a>
+          <a id="hero-cta-secondary" href="skills/">Explore the catalog <span aria-hidden="true">→</span></a>
         </div>
 
-        <div style="margin:0 0 24px"><a href="https://trendshift.io/repositories/82031?utm_source=trendshift-badge&amp;utm_medium=badge&amp;utm_campaign=badge-trendshift-82031" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/82031/daily?language=Python" alt="JasonColapietro%2Fsuede-creator-skills | Trendshift" width="250" height="55" style="max-width:100%;height:auto"/></a></div>
+
 
         <a id="hero-shiplog" class="hero-anim" data-status="released" href="#changelog" aria-label="Ship log. Released Oct 24 &middot; 89754d4 Five offline SEO tools in the public pack 491 commits &middot; 23 weeks &middot; read the full ship log -&gt;. Jump to the full changelog.">
           <span class="hero-spark" aria-hidden="true">
@@ -4178,32 +4170,6 @@
       </div>
     </div>
 
-    <div id="hero-bench" class="hero-anim">
-      <p class="bench-label">Self-graded on the Suede ship-gate rubric: Suede takes <span class="bench-highlight">4 of 14 categories</span> outright, and loses Overall to <a href="#scorecard">Superpowers, A to A-</a>. Every row is published.</p>
-      <div class="bench-grid">
-        <a class="bench-tile" href="#scorecard">
-          <span class="bench-grade">A+</span>
-          <span class="bench-cat">Code review + ship gate</span>
-          <span class="bench-vs">GSD A- &middot; Superpowers A</span>
-        </a>
-        <a class="bench-tile" href="#scorecard">
-          <span class="bench-grade">A+</span>
-          <span class="bench-cat">Breadth of coverage</span>
-          <span class="bench-vs">GSD A &middot; Superpowers B</span>
-        </a>
-        <a class="bench-tile" href="#scorecard">
-          <span class="bench-grade">A+</span>
-          <span class="bench-cat">Evidence integrity</span>
-          <span class="bench-vs">GSD B &middot; Superpowers B</span>
-        </a>
-        <a class="bench-tile" href="#scorecard">
-          <span class="bench-grade">A+</span>
-          <span class="bench-cat">Domain expertise</span>
-          <span class="bench-vs">GSD B &middot; Superpowers C</span>
-        </a>
-      </div>
-      <p class="bench-caption">One rubric, three packs, read from their published files on 2026-07-05: <a href="#scorecard">see every row</a>.</p>
-    </div>
 
   </div>
 
@@ -4253,6 +4219,868 @@
 </div>
 
 <!-- CHANGELOG / SHIP LOG -->
+
+
+<!-- LANE INDEX -->
+<section id="lanes" aria-labelledby="lanes-headline">
+  <div class="lanes-inner">
+    <p class="lanes-eyebrow reveal">Six specialities, one install</p>
+    <h2 id="lanes-headline" class="lanes-headline reveal reveal-d1">Find the skill for your next business task.</h2>
+    <p class="lanes-sub reveal reveal-d1">Choose a workflow for search visibility, content, acquisition, conversion, or operations. Each skill defines the inputs it needs and the work it returns. Code review, app delivery, and creator-rights tools support the work that follows.</p>
+    <div class="lanes-list reveal reveal-d2">
+      <a class="lane-row" href="#lane-ship">
+        <span class="lane-name">Ship</span>
+        <span class="lane-desc">Orchestration &amp; routing, Code review &amp; CI, Apps: iOS &amp; Android</span>
+        <span class="lane-count">13 skills</span>
+      </a>
+      <a class="lane-row" href="#lane-craft">
+        <span class="lane-name">Craft</span>
+        <span class="lane-desc">Design &amp; copy, Creative assets</span>
+        <span class="lane-count">7 skills</span>
+      </a>
+      <a class="lane-row" href="#lane-found">
+        <span class="lane-name">Get found</span>
+        <span class="lane-desc">Search &amp; AI visibility, Content &amp; audience</span>
+        <span class="lane-count">12 skills</span>
+      </a>
+      <a class="lane-row" href="#lane-demand">
+        <span class="lane-name">Demand channels</span>
+        <span class="lane-desc">Paid &amp; outbound, Lifecycle messaging, Acquisition assets</span>
+        <span class="lane-count">9 skills</span>
+      </a>
+      <a class="lane-row" href="#lane-revenue">
+        <span class="lane-name">Revenue &amp; retention</span>
+        <span class="lane-desc">Money &amp; funnel, Measure &amp; operate, Consumer recovery</span>
+        <span class="lane-count">12 skills</span>
+      </a>
+      <a class="lane-row" href="#lane-position">
+        <span class="lane-name">Strategy &amp; rights</span>
+        <span class="lane-desc">Strategy &amp; research, Creator toolkit</span>
+        <span class="lane-count">11 skills</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="install" style="background:#080808;padding:84px 0 0;font-family:system-ui,-apple-system,sans-serif;color:#f0ece4;">
+
+  <div class="install-inner">
+    <h2 class="install-headline reveal">Install the open-source pack in two commands.</h2>
+    <p class="install-sub reveal reveal-d1">Two lines in Claude Code, about thirty seconds, and the whole pack is on disk. Prefer less? <code>suede-marketing@suede</code> (40 growth skills), <code>suede-agent-workflows@suede</code>, and <code>suede-code@suede</code> install focused subsets, and <code>install.sh</code> covers the clone route. Bring your own company, repo, page, or product.</p>
+
+    <div class="install-terminal reveal reveal-d1">
+      <div class="install-terminal-bar" aria-hidden="true">
+        <span class="tdot"></span>
+        <span class="tdot"></span>
+        <span class="tdot"></span>
+        <span class="install-terminal-title">claude code</span>
+      </div>
+      <div class="install-code-block">
+        <code id="install-cmd" style="white-space:pre-line">/plugin marketplace add JasonColapietro/suede-creator-skills
+/plugin install suede-skills@suede</code>
+        <button class="copy-btn" id="copy-btn" onclick="
+          var cmd='/plugin marketplace add JasonColapietro/suede-creator-skills\n/plugin install suede-skills@suede';
+          navigator.clipboard.writeText(cmd).then(function(){
+            var b=document.getElementById('copy-btn');
+            b.textContent='Copied';
+            b.classList.add('copied');
+            setTimeout(function(){b.textContent='Copy';b.classList.remove('copied');},2000);
+          }).catch(function(){
+            var b=document.getElementById('copy-btn');
+            b.textContent='Copy';
+          });
+        ">Copy</button>
+      </div>
+    </div>
+
+    <div class="install-alts reveal reveal-d2">
+      <div class="install-alt" style="grid-column:1/-1">
+        <span class="install-alt-label">Python: install the pack from PyPI</span>
+        <code>pipx install suede-creator-skills &amp;&amp; suede-skills install</code>
+      </div>
+      <div class="install-alt">
+        <span class="install-alt-label">Supported agents: Cursor, Copilot, Windsurf, and more</span>
+        <code>npx skills add JasonColapietro/suede-creator-skills</code>
+      </div>
+      <div class="install-alt">
+        <span class="install-alt-label">Prefer a clone: it copies the pack into ~/.claude/skills/</span>
+        <code>git clone https://github.com/JasonColapietro/suede-creator-skills.git &amp;&amp; bash suede-creator-skills/install.sh</code>
+      </div>
+    </div>
+
+    <div class="install-links reveal reveal-d2">
+      <a class="install-link install-link-primary" href="skills/">Browse all skills</a>
+      <a class="install-link install-link-star" href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener" aria-label="Star JasonColapietro suede-creator-skills on GitHub">Star on GitHub</a>
+      <a class="install-link" href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener">GitHub repo</a>
+      <a class="install-link" href="plugins.html">Codex + MCP install docs</a>
+      <a class="install-link" href="plugins.html#python">Python / PyPI install</a>
+      <a class="install-link" href="guide.html">Read the full guide</a>
+    </div>
+
+    <p class="reveal reveal-d2" style="font-size:14px;color:#888880;margin:-56px 0 0;max-width:560px;">If the pack saves you an hour, <a href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener" style="color:#c8a96e;border-bottom:1px solid rgba(200,169,110,0.3);">star the repo</a>. Stars are how other builders find it.</p>
+
+    <!-- listings:start -->
+    <div class="listed-on reveal reveal-d2">
+      <p class="listed-on-label">Listed on</p>
+      <ul class="listed-on-list">
+        <li><a href="https://www.skills.sh/jasoncolapietro/suede-creator-skills" rel="noopener">skills.sh</a></li>
+        <li><a href="https://skillsmp.com/creators/jasoncolapietro/suede-creator-skills" rel="noopener">SkillsMP</a></li>
+        <li><a href="https://skillsllm.com/skill/suede-creator-skills" rel="noopener">SkillsLLM</a></li>
+        <li><a href="https://hol.org/registry/plugins/suede-ai%2Fsuede-skills" rel="noopener">HOL Plugin Registry</a></li>
+        <li><a href="https://www.skillsdirectory.com/authors/jasoncolapietro" rel="noopener">Skills Directory</a></li>
+        <li><a href="https://claudskills.com/author/jasoncolapietro/" rel="noopener">ClaudSkills</a></li>
+        <li><a href="https://pypi.org/project/suede-creator-skills/" rel="noopener">PyPI</a></li>
+        <li><a href="https://registry.modelcontextprotocol.io/v0.1/servers/io.github.JasonColapietro%2Fsuede-skills-mcp/versions/latest" rel="noopener">Official MCP Registry</a></li>
+        <li><a href="https://www.npmjs.com/package/suede-skills-mcp" rel="noopener">npm</a></li>
+        <li><a href="https://mcpmarket.com/server/suede-creator-skills" rel="noopener">MCP Market</a></li>
+        <li><a href="https://awesomeclaude.ai/awesome-claude-skills" rel="noopener">Awesome Claude Skills (awesomeclaude.ai)</a></li>
+        <li><a href="https://github.com/VoltAgent/awesome-agent-skills" rel="noopener">VoltAgent/awesome-agent-skills</a></li>
+        <li><a href="https://trendshift.io/repositories/82031" rel="noopener">Trendshift</a></li>
+      </ul>
+      <a class="listed-on-all" href="listings.html">See all 29 listings</a>
+    </div>
+    <!-- listings:end -->
+  </div>
+
+</section>
+
+<!-- SHIP FLOW -->
+<section id="flow" aria-labelledby="flow-headline">
+<details class="premium-disclosure"><summary>Explore the shipping workflow</summary>
+
+  <div class="flow-inner">
+    <p class="flow-eyebrow reveal">The Ship DAG</p>
+    <h2 id="flow-headline" class="flow-headline reveal reveal-d1">Max effort in. Proof or one blocker out.</h2>
+    <p class="flow-sub reveal reveal-d1">Tell most agents "max effort, fix everything" and you get vibes. <a href="skills/suede-graph-flo-xr.html">/suede-graph-flo-xr</a> turns that intent into a structure: one authorized controller, every useful non-colliding lane in parallel, adversarial reconciliation where lanes attack each other's claims, a call budget the file caps at 55, 110, or 200, and a close that is either concise proof or one named blocker. It reads production and never deploys.</p>
+    <div class="flow-scroll reveal reveal-d2">
+      <svg class="flow-svg" viewBox="0 0 1200 360" role="img" aria-labelledby="flow-svg-title flow-svg-desc" xmlns="http://www.w3.org/2000/svg">
+        <title id="flow-svg-title">The ship pipeline</title>
+        <desc id="flow-svg-desc">A broad authorized outcome flows through one controller into parallel code, docs, CI, and live-verification lanes, then adversarial reconciliation, then proof.</desc>
+        <g font-family="system-ui, -apple-system, sans-serif">
+          <rect x="4" y="136" width="172" height="88" rx="10" fill="#111111" stroke="#222222" stroke-width="1.5"/>
+          <text x="90" y="174" text-anchor="middle" fill="#f0ece4" font-size="16" font-weight="800">Broad authorized</text>
+          <text x="90" y="194" text-anchor="middle" fill="#f0ece4" font-size="16" font-weight="800">outcome</text>
+
+          <path d="M176 180H210" stroke="#c8a96e" stroke-width="2"/>
+          <path d="M210 180l-9 -5v10z" fill="#c8a96e"/>
+
+          <rect x="214" y="136" width="172" height="88" rx="10" fill="#111111" stroke="#c8a96e" stroke-width="1.5"/>
+          <text x="300" y="174" text-anchor="middle" fill="#c8a96e" font-size="16" font-weight="800">One controller</text>
+          <text x="300" y="196" text-anchor="middle" fill="#888880" font-size="13">single authority</text>
+
+          <path d="M386 180C428 180 428 74 470 74" stroke="#c8a96e" stroke-width="2" fill="none"/>
+          <path d="M386 180C428 180 428 144 470 144" stroke="#c8a96e" stroke-width="2" fill="none"/>
+          <path d="M386 180C428 180 428 214 470 214" stroke="#c8a96e" stroke-width="2" fill="none"/>
+          <path d="M386 180C428 180 428 284 470 284" stroke="#c8a96e" stroke-width="2" fill="none"/>
+
+          <rect x="474" y="48" width="230" height="52" rx="9" fill="#111111" stroke="#222222" stroke-width="1.5"/>
+          <circle cx="498" cy="74" r="4" fill="#c8a96e"/>
+          <text x="514" y="80" fill="#f0ece4" font-size="15.5" font-weight="700">Code lane</text>
+
+          <rect x="474" y="118" width="230" height="52" rx="9" fill="#111111" stroke="#222222" stroke-width="1.5"/>
+          <circle cx="498" cy="144" r="4" fill="#c8a96e"/>
+          <text x="514" y="150" fill="#f0ece4" font-size="15.5" font-weight="700">Docs lane</text>
+
+          <rect x="474" y="188" width="230" height="52" rx="9" fill="#111111" stroke="#222222" stroke-width="1.5"/>
+          <circle cx="498" cy="214" r="4" fill="#c8a96e"/>
+          <text x="514" y="220" fill="#f0ece4" font-size="15.5" font-weight="700">CI &amp; merge-gate lane</text>
+
+          <rect x="474" y="258" width="230" height="52" rx="9" fill="#111111" stroke="#222222" stroke-width="1.5"/>
+          <circle cx="498" cy="284" r="4" fill="#c8a96e"/>
+          <text x="514" y="290" fill="#f0ece4" font-size="15.5" font-weight="700">Live verification lane</text>
+
+          <path d="M704 74C746 74 746 180 788 180" stroke="#c8a96e" stroke-width="2" fill="none"/>
+          <path d="M704 144C746 144 746 180 788 180" stroke="#c8a96e" stroke-width="2" fill="none"/>
+          <path d="M704 214C746 214 746 180 788 180" stroke="#c8a96e" stroke-width="2" fill="none"/>
+          <path d="M704 284C746 284 746 180 788 180" stroke="#c8a96e" stroke-width="2" fill="none"/>
+          <path d="M788 180l-9 -5v10z" fill="#c8a96e"/>
+
+          <rect x="792" y="136" width="216" height="88" rx="10" fill="#111111" stroke="#222222" stroke-width="1.5"/>
+          <text x="900" y="168" text-anchor="middle" fill="#f0ece4" font-size="16" font-weight="800">Adversarial</text>
+          <text x="900" y="188" text-anchor="middle" fill="#f0ece4" font-size="16" font-weight="800">reconciliation</text>
+          <text x="900" y="209" text-anchor="middle" fill="#888880" font-size="12.5">lanes attack each other's claims</text>
+
+          <path d="M1008 180H1042" stroke="#c8a96e" stroke-width="2"/>
+          <path d="M1042 180l-9 -5v10z" fill="#c8a96e"/>
+
+          <rect x="1046" y="136" width="150" height="88" rx="10" fill="#161616" stroke="#c8a96e" stroke-width="2"/>
+          <text x="1121" y="187" text-anchor="middle" fill="#c8a96e" font-size="19" font-weight="900">Proof</text>
+        </g>
+      </svg>
+    </div>
+    <p class="flow-note reveal reveal-d2">House line: <strong>"Never end your allocation above zero."</strong> Dry joke, not a literal token promise. The Suede Thought Graph repo search ships as <a href="skills/suede-graph-flo-xr.html">/suede-graph-flo-xr</a>, and the separate copy-only DAG as <a href="skills/suede-ship-copy.html">/suede-ship-copy</a>.</p>
+  </div>
+
+</details>
+</section>
+
+<!-- SCORECARD -->
+<section id="scorecard" style="background:#080808;padding:84px 0;font-family:system-ui,-apple-system,sans-serif;">
+<details class="premium-disclosure"><summary>Read the benchmark methodology and scorecard</summary>
+    <div id="hero-bench" class="hero-anim">
+      <p class="bench-label">Self-graded on the Suede ship-gate rubric: Suede takes <span class="bench-highlight">4 of 14 categories</span> outright, and loses Overall to <a href="#scorecard">Superpowers, A to A-</a>. Every row is published.</p>
+      <div class="bench-grid">
+        <a class="bench-tile" href="#scorecard">
+          <span class="bench-grade">A+</span>
+          <span class="bench-cat">Code review + ship gate</span>
+          <span class="bench-vs">GSD A- &middot; Superpowers A</span>
+        </a>
+        <a class="bench-tile" href="#scorecard">
+          <span class="bench-grade">A+</span>
+          <span class="bench-cat">Breadth of coverage</span>
+          <span class="bench-vs">GSD A &middot; Superpowers B</span>
+        </a>
+        <a class="bench-tile" href="#scorecard">
+          <span class="bench-grade">A+</span>
+          <span class="bench-cat">Evidence integrity</span>
+          <span class="bench-vs">GSD B &middot; Superpowers B</span>
+        </a>
+        <a class="bench-tile" href="#scorecard">
+          <span class="bench-grade">A+</span>
+          <span class="bench-cat">Domain expertise</span>
+          <span class="bench-vs">GSD B &middot; Superpowers C</span>
+        </a>
+      </div>
+      <p class="bench-caption">One rubric, three packs, read from their published files on 2026-07-05: <a href="#scorecard">see every row</a>.</p>
+    </div>
+
+
+  <div class="scorecard-wrap">
+
+    <p class="scorecard-eyebrow reveal">Benchmarks: self-graded, losses shown</p>
+    <h2 class="scorecard-headline reveal reveal-d1">Suede against GSD and Superpowers, losses included.</h2>
+    <p class="scorecard-sub reveal reveal-d2">We ran the Suede ship-gate rubric on <a href="https://github.com/JasonColapietro/suede-creator-skills" rel="noopener">Suede AI Skills</a>, <strong>GSD</strong>, and <a href="https://github.com/obra/superpowers" rel="nofollow noopener">Superpowers</a> the same way, reading each pack's published skill files, on 2026-07-05. We wrote the rubric, so read this as our reading of three packs, not a neutral benchmark. Superpowers scores higher than Suede on Overall. The full category breakdown is below, including the rows where GSD or Superpowers beats Suede.</p>
+
+    <div class="scorecard-table-wrap reveal">
+      <table class="scorecard-table scorecard-table--usecase">
+        <thead>
+          <tr><th>Use case</th><th>Winner</th><th>Grade</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Suede product / company work</td>
+            <td><span class="sc-winner sc-winner--suede">Suede</span></td>
+            <td><span class="grade-pill is-win">A+</span></td>
+          </tr>
+          <tr>
+            <td>Public copy, design, SEO, rights, launch</td>
+            <td><span class="sc-winner sc-winner--suede">Suede</span></td>
+            <td><span class="grade-pill is-win">A+</span></td>
+          </tr>
+          <tr>
+            <td>Long project lifecycle</td>
+            <td><span class="sc-winner">GSD</span></td>
+            <td><span class="grade-pill">A+</span></td>
+          </tr>
+          <tr>
+            <td>Strict engineering discipline</td>
+            <td><span class="sc-winner">Superpowers</span></td>
+            <td><span class="grade-pill">A+</span></td>
+          </tr>
+          <tr>
+            <td>Multi-agent orchestration</td>
+            <td><span class="sc-winner sc-winner--suede">Suede</span> / <span class="sc-winner">GSD</span><span class="sc-tie">tie</span></td>
+            <td><span class="grade-pill">A</span></td>
+          </tr>
+          <tr>
+            <td>Skill ecosystem maintainability</td>
+            <td><span class="sc-winner">Superpowers</span></td>
+            <td><span class="grade-pill">A+</span></td>
+          </tr>
+          <tr>
+            <td>Ship-risk grading</td>
+            <td><span class="sc-winner sc-winner--suede">Suede</span></td>
+            <td><span class="grade-pill is-win">A+</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="scorecard-tally reveal">Suede wins outright on <strong>3 of 7</strong> use cases, plus a tie with GSD on multi-agent orchestration. GSD takes long project lifecycles. Superpowers takes strict engineering discipline and skill ecosystem maintainability. Install the pack that matches this week's work.</p>
+
+    <details class="scorecard-details reveal">
+      <summary>See the full scorecard</summary>
+      <div class="scorecard-table-wrap">
+        <table class="scorecard-table">
+          <thead>
+            <tr><th>Category</th><th>Suede Skills</th><th>GSD</th><th>Superpowers</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Overall</td>
+              <td><span class="grade-pill">A-</span></td>
+              <td><span class="grade-pill">A-</span></td>
+              <td><span class="grade-pill is-win">A</span></td>
+            </tr>
+            <tr>
+              <td>Breadth / Coverage</td>
+              <td><span class="grade-pill is-win">A+</span></td>
+              <td><span class="grade-pill">A</span></td>
+              <td><span class="grade-pill g-b">B</span></td>
+            </tr>
+            <tr>
+              <td>Planning / Specs</td>
+              <td><span class="grade-pill">A-</span></td>
+              <td><span class="grade-pill is-win">A+</span></td>
+              <td><span class="grade-pill">A</span></td>
+            </tr>
+            <tr>
+              <td>Execution Workflow</td>
+              <td><span class="grade-pill">A-</span></td>
+              <td><span class="grade-pill is-win">A</span></td>
+              <td><span class="grade-pill is-win">A</span></td>
+            </tr>
+            <tr>
+              <td>Debugging Method</td>
+              <td><span class="grade-pill">A-</span></td>
+              <td><span class="grade-pill">A</span></td>
+              <td><span class="grade-pill is-win">A+</span></td>
+            </tr>
+            <tr>
+              <td>Testing Discipline</td>
+              <td><span class="grade-pill g-b">B+</span></td>
+              <td><span class="grade-pill">A</span></td>
+              <td><span class="grade-pill is-win">A+</span></td>
+            </tr>
+            <tr>
+              <td>Verification Discipline</td>
+              <td><span class="grade-pill">A</span></td>
+              <td><span class="grade-pill">A</span></td>
+              <td><span class="grade-pill is-win">A+</span></td>
+            </tr>
+            <tr>
+              <td>Git / Worktree Hygiene</td>
+              <td><span class="grade-pill g-b">B+</span></td>
+              <td><span class="grade-pill">A</span></td>
+              <td><span class="grade-pill is-win">A+</span></td>
+            </tr>
+            <tr>
+              <td>Durable State / Resume</td>
+              <td><span class="grade-pill">A-</span></td>
+              <td><span class="grade-pill is-win">A+</span></td>
+              <td><span class="grade-pill g-b">B+</span></td>
+            </tr>
+            <tr>
+              <td>Code Review / Ship Gate</td>
+              <td><span class="grade-pill is-win">A+</span></td>
+              <td><span class="grade-pill">A-</span></td>
+              <td><span class="grade-pill">A</span></td>
+            </tr>
+            <tr>
+              <td>Skill Authoring / Governance</td>
+              <td><span class="grade-pill g-b">B+</span></td>
+              <td><span class="grade-pill g-b">B+</span></td>
+              <td><span class="grade-pill is-win">A+</span></td>
+            </tr>
+            <tr>
+              <td>Evidence / Legal Boundaries</td>
+              <td><span class="grade-pill is-win">A+</span></td>
+              <td><span class="grade-pill g-b">B</span></td>
+              <td><span class="grade-pill g-b">B</span></td>
+            </tr>
+            <tr>
+              <td>Domain Expertise</td>
+              <td><span class="grade-pill is-win">A+</span></td>
+              <td><span class="grade-pill g-b">B</span></td>
+              <td><span class="grade-pill g-c">C</span></td>
+            </tr>
+            <tr>
+              <td>Install / Portability</td>
+              <td><span class="grade-pill">A-</span></td>
+              <td><span class="grade-pill g-b">B+</span></td>
+              <td><span class="grade-pill is-win">A</span></td>
+            </tr>
+            <tr>
+              <td>Estate Cleanliness</td>
+              <td><span class="grade-pill g-b">B+</span></td>
+              <td><span class="grade-pill">A-</span></td>
+              <td><span class="grade-pill is-win">A</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+
+  </div>
+
+</details>
+</section>
+
+<!-- FEATURES GRID -->
+<section id="skills" style="background:#080808;padding:84px 0;font-family:system-ui,-apple-system,sans-serif;">
+  <div class="features-inner">
+    <h2 class="features-headline reveal">Work on search visibility, conversion, and delivery.</h2>
+    <div class="features-grid reveal-group">
+      <div class="feature-card feature-card--wide feature-card--red">
+        <span class="feature-num">01</span>
+        <span class="feature-label">Code review → ship verdict</span>
+        <h3 class="feature-title">Review that ends in<br>a blunt A-F grade.</h3>
+        <p class="feature-copy">Deep findings across TypeScript, React, Next.js, Swift/iOS, OWASP, and database checklists, then a letter verdict across 7 evidence-backed lanes. A hardcoded secret is an instant F with the exact file and line. No other lane can raise it. iOS gets its own traps list: force unwraps, main-thread violations, and native contract drift that crashes shipped apps.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-num">02</span>
+        <h3 class="feature-label">Cheap to carry</h3>
+        <p class="feature-copy">An installed skill costs your context its name and its description. The body loads only when a request matches it, so you carry the whole folder for about the price of its table of contents</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-num">03</span>
+        <h3 class="feature-label">Agent teams</h3>
+        <p class="feature-copy">The handoff will not close without evidence. Scout, build, review, verifier, and release lanes share one context instead of acting like siloed subagents, with WIP collision detection and rollback trees underneath</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-num">04</span>
+        <h3 class="feature-label">AI evals</h3>
+        <p class="feature-copy">A release that fails its own eval gate does not ship, and the spec names the case that killed it. LLM, RAG, classifier, and agent surfaces each become a measurable AI-SPEC with failure-mode rubrics and eval cases</p>
+      </div>
+      <div class="feature-card feature-card--red">
+        <span class="feature-num">05</span>
+        <h3 class="feature-label">CI ship gate</h3>
+        <p class="feature-copy">One required check that cannot deadlock, which is the failure mode every branch-protection setup hits. It reads your stack and your lockfile, writes the CI, and wires the protection rule to that single check</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-num">06</span>
+        <h3 class="feature-label">Suedify</h3>
+        <p class="feature-copy">Point it at any URL. It reverse-engineers the layout logic, type rhythm, and color strategy that make that site work, then rebuilds your page in that language, with your own copy and your own assets. Nothing traced, nothing copied</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-num">07</span>
+        <h3 class="feature-label">Conversion copy</h3>
+        <p class="feature-copy">Twelve headline formulas, and the framework that fits the reader's state: AIDA, PAS, StoryBrand, or JTBD. Every draft is scored out of 70 across seven dimensions, and below 58 it goes back before a word ships, below 62 for a launch surface</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-num">08</span>
+        <h3 class="feature-label">SEO, AEO &amp; AI EO</h3>
+        <p class="feature-copy">Nine audit lanes in one pass: technical, intent, metadata, structure, schema, AI citation readiness, copy quality, E-E-A-T, and topic clusters. It hands back the exact rewrites, not a list of complaints</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-num">09</span>
+        <h3 class="feature-label">Visibility grade</h3>
+        <p class="feature-copy">Tells you whether a page is worth the traffic you are about to buy, A to F, and names the screen that lost the grade: first-screen clarity, CTA pull, proof, AI readability, schema depth, search result fit</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-num">10</span>
+        <h3 class="feature-label">Site to iOS app</h3>
+        <p class="feature-copy">Takes a live URL through the App Store 4.2 wrapper-risk gate, a native or Capacitor shell, and the store screenshots. The same terminal that runs this pack has archived and uploaded 8 iOS apps</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-num">11</span>
+        <h3 class="feature-label">Design, from first principles</h3>
+        <p class="feature-copy">Never a template with your logo dropped in. It commits to a named aesthetic lane and writes that choice into the file before it picks a single color, then builds color, type, and motion up from it</p>
+      </div>
+      <div class="feature-card feature-card--red">
+        <span class="feature-num">12</span>
+        <h3 class="feature-label">Consumer recovery</h3>
+        <p class="feature-copy">Apply the same negotiation discipline to your own accounts: review Amazon refunds or audit subscriptions, then confirm each action before contacting support. Public examples are synthetic; your account records stay private.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-num">13</span>
+        <h3 class="feature-label">Taste memory</h3>
+        <p class="feature-copy">Say &quot;Cue Suede&quot; mid-run and choose: change something, preserve what worked, or accept as-is. The choice carries into every pass after it, so the pack accumulates judgment: what to do, what not to do, and when to stop</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-num">14</span>
+        <h3 class="feature-label">Android app factory</h3>
+        <p class="feature-copy">One prompt to a Play Store-ready native app: Kotlin + Jetpack Compose scaffolding, Play Billing, ASO listing copy sized to Play's character limits, and a signed release</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-num">15</span>
+        <h3 class="feature-label">Recommend next action</h3>
+        <p class="feature-copy">Ask &quot;what's next&quot; and get one move, written as a short prompt you can paste and run. It is scored against the goal, the clock, and the rework it prevents, and it opens into a full operator brief only when you ask for one</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROUTER -->
+<section id="router" aria-labelledby="router-headline">
+  <div class="router-inner">
+    <div class="reveal">
+      <p class="router-eyebrow">The router</p>
+      <h2 id="router-headline" class="router-headline">Don't memorize a command list.</h2>
+      <p class="router-sub">Ask in plain words. The umbrella skill, <code>/suede-workflow-skills</code>, reads the request and loads the right lane: one install, every skill reachable. Every description also carries a NOT FOR line naming the sibling that should win instead, which is why breadth does not turn into an argument inside one prompt. Agents that speak MCP get the same routing as structured tools: <code>list_suede_skills</code> finds the skill, <code>get_suede_skill</code> loads it.</p>
+      <p class="router-note">The optional MCP server ships in the repo and runs local with no dependencies: 9 tools, 7 resources, and 5 prompts over stdio. Wire-up lives on the <a href="plugins.html" style="color:#888880;border-bottom:1px solid rgba(136,136,128,0.35);">install page</a>.</p>
+    </div>
+    <div class="router-table reveal reveal-d1" role="list" aria-label="Example requests and the skill each one routes to">
+      <a class="router-row" role="listitem" href="skills/suede-code.html">
+        <span class="router-ask">"grade this diff before I merge"</span>
+        <span class="router-arrow" aria-hidden="true">-&gt;</span>
+        <span class="router-skill">/suede-code</span>
+      </a>
+      <a class="router-row" role="listitem" href="skills/suede-seo-audit.html">
+        <span class="router-ask">"why isn't this page cited by AI answers"</span>
+        <span class="router-arrow" aria-hidden="true">-&gt;</span>
+        <span class="router-skill">/suede-seo-audit</span>
+      </a>
+      <a class="router-row" role="listitem" href="skills/suede-design.html">
+        <span class="router-ask">"make this landing page much less boring"</span>
+        <span class="router-arrow" aria-hidden="true">-&gt;</span>
+        <span class="router-skill">/suede-design</span>
+      </a>
+      <a class="router-row" role="listitem" href="skills/site-to-ios-app.html">
+        <span class="router-ask">"turn this site into an iOS app"</span>
+        <span class="router-arrow" aria-hidden="true">-&gt;</span>
+        <span class="router-skill">/site-to-ios-app</span>
+      </a>
+      <a class="router-row" role="listitem" href="skills/suede-campaign-in-a-box.html">
+        <span class="router-ask">"plan the rollout for this single"</span>
+        <span class="router-arrow" aria-hidden="true">-&gt;</span>
+        <span class="router-skill">/suede-campaign-in-a-box</span>
+      </a>
+      <a class="router-row" role="listitem" href="skills/suede-ai-seo.html">
+        <span class="router-ask">"get our docs quoted in ChatGPT and AI Overviews"</span>
+        <span class="router-arrow" aria-hidden="true">-&gt;</span>
+        <span class="router-skill">/suede-ai-seo</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAND -->
+<section class="stats-band" aria-label="By the numbers">
+  <div class="stats-inner reveal">
+    <div class="stat">
+      <div class="stat-num"><span class="count" data-count="64">64</span></div>
+      <div class="stat-label">Public skills</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">2</div>
+      <div class="stat-label">runtimes: Claude Code + Codex</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num stat-num--money"><span class="unit">$</span>448<span class="unit">.31</span></div>
+      <div class="stat-label">clawed back from Amazon by one skill, one sitting</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">0</div>
+      <div class="stat-label">uploads by default</div>
+    </div>
+  </div>
+</section>
+
+<!-- INSTALL -->
+
+
+<section id="creator-training" style="background:#080808;padding:48px 24px;color:#d9d5cc;">
+  <div style="max-width:900px;margin:auto;">
+    <h2 style="font-size:clamp(24px,4vw,36px);color:#f0ece4;">Training behind the workflows</h2>
+    <p style="font-size:16px;line-height:1.75;">Jason Colapietro’s training includes Claude Academy / Anthropic badges in the Claude API, Claude Code, Model Context Protocol (MCP), Claude with Amazon Bedrock and Claude on Google Cloud. His search training includes HubSpot Academy’s AEO Fundamentals and Semrush Academy certificates in AI search, keyword research, on-page SEO, local SEO and digital PR. IBM SkillsBuild covers prompt engineering; Google Skills and Databricks Academy cover generative AI. Seven Microsoft Learn module achievements cover Azure AI Agents, Foundry IQ, Visual Studio Code, Microsoft 365, workflows and Microsoft Agent Framework.</p>
+    <p><a href="https://seo.suedeai.ai/evidence#training-credentials" style="color:#c8a96e;text-underline-offset:4px;">View Jason’s issued credentials and module achievements</a></p>
+  </div>
+</section>
+
+<!-- CATALOG -->
+<section id="catalog" style="background:#080808;padding:84px 0;font-family:system-ui,-apple-system,sans-serif;">
+<details class="premium-disclosure"><summary>Browse the full source catalog</summary>
+
+  <div class="catalog-inner">
+    <p class="catalog-eyebrow reveal">The full pack</p>
+    <h2 class="catalog-headline reveal reveal-d1">Read the source of any skill before you trust it.</h2>
+    <p class="catalog-sub reveal reveal-d2">Every skill is a plain-Markdown <code style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:15px;color:#c8a96e;">SKILL.md</code> folder, with its references, scripts, and templates beside it. Click any row for its docs, or browse the <a href="skills/">full catalog with install paths</a>.</p>
+
+    <div class="catalog-lane reveal" id="lane-ship">
+      <div class="catalog-lane-head">
+        <h3 class="catalog-lane-name">Ship</h3>
+        <span class="catalog-lane-count">13 skills</span>
+      </div>
+      <p class="catalog-lane-lead">Get the change built, reviewed, and merged.</p>
+      <p class="catalog-sublane">Orchestration &amp; routing</p>
+      <a class="catalog-row" href="skills/suede-agent-teams.html">
+        <span class="catalog-skill">suede-agent-teams</span>
+        <span class="catalog-desc">Coordinate agent lanes with WIP collision detection, RFC mode, rollback trees, and a signed handoff</span>
+        <span class="catalog-arrow">-&gt;</span>
+      </a>
+      <a class="catalog-row" href="skills/suede-graph-flo-xr.html">
+        <span class="catalog-skill">suede-graph-flo-xr</span>
+        <span class="catalog-desc">Suede Thought Graph shipping search: competing plans are scored, pruned, refuted, improved, and aggregated before only the selected plan mutates; 55/110/200-call caps; production reads only</span>
+        <span class="catalog-arrow">-&gt;</span>
+      </a>
+      <a class="catalog-row" href="skills/suede-ship-copy.html">
+        <span class="catalog-skill">suede-ship-copy</span>
+        <span class="catalog-desc">A separate copy-only DAG for one high-stakes piece of writing: blind research, claim audit, section writers, refutation, publish gate</span>
+        <span class="catalog-arrow">-&gt;</span>
+      </a>
+      <a class="catalog-row" href="skills/suede-workflow-skills.html">
+        <span class="catalog-skill">suede-workflow-skills</span>
+        <span class="catalog-desc">Umbrella router that loads the full pack, picks the specialist, and hands back one scored next move as a runnable prompt</span>
+        <span class="catalog-arrow">-&gt;</span>
+      </a>
+      <p class="catalog-sublane">Code review &amp; CI</p>
+      <a class="catalog-row" href="skills/suede-ai-eval.html">
+        <span class="catalog-skill">suede-ai-eval</span>
+        <span class="catalog-desc">AI-SPEC artifacts, failure-mode rubrics, eval cases, and acceptance gates for AI surfaces</span>
+        <span class="catalog-arrow">-&gt;</span>
+      </a>
+      <a class="catalog-row" href="skills/suede-code.html">
+        <span class="catalog-skill">suede-code</span>
+        <span class="catalog-desc">Deep review plus the A-F ship grade in one pass, from web stacks to Swift/iOS, with findings-only and grade-only modes</span>
+        <span class="catalog-arrow">-&gt;</span>
+      </a>
+      <a class="catalog-row" href="skills/suede-ci-gate.html">
+        <span class="catalog-skill">suede-ci-gate</span>
+        <span class="catalog-desc">CI that gates the merge: stack and lockfile detection, one required check, branch protection</span>
+        <span class="catalog-arrow">-&gt;</span>
+      </a>
+      <p class="catalog-sublane">Apps: iOS &amp; Android</p>
+      <a class="catalog-row" href="skills/android-app-factory.html">
+        <span class="catalog-skill">android-app-factory</span>
+        <span class="catalog-desc">One prompt to a Play Store-ready native app: Kotlin + Jetpack Compose scaffolding, Play Billing, ASO listing, signed release</span>
+        <span class="catalog-arrow">-&gt;</span>
+      </a>
+      <a class="catalog-row" href="skills/site-to-ios-app.html">
+        <span class="catalog-skill">site-to-ios-app</span>
+        <span class="catalog-desc">Convert any website into an App Store-ready iOS app: URL audit, 4.2 wrapper-risk gate, Capacitor or native shell, release gate</span>
+        <span class="catalog-arrow">-&gt;</span>
+      </a>
+    </div>
+    <div class="catalog-lane reveal" id="lane-craft">
+      <div class="catalog-lane-head">
+        <h3 class="catalog-lane-name">Craft</h3>
+        <span class="catalog-lane-count">7 skills</span>
+      </div>
+      <p class="catalog-lane-lead">Make the thing look and read like someone built it on purpose.</p>
+      <p class="catalog-sublane">Design &amp; copy</p>
+      <a class="catalog-row" href="skills/suede-copy.html">
+        <span class="catalog-skill">suede-copy</span>
+        <span class="catalog-desc">The full writing lane: conversion and SEO copy, headline formulas, A/B variants, anti-slop gate, copy score</span>
+        <span class="catalog-arrow">-&gt;</span>
+      </a>
+      <a class="catalog-row" href="skills/suede-design.html">
+        <span class="catalog-skill">suede-design</span>
+        <span class="catalog-desc">Design laws, dark-mode tokens, fluid type, component rules, and App Store screenshot specs. Includes Suedify</span>
+        <span class="catalog-arrow">-&gt;</span>
+      </a>
+      <a class="catalog-row" href="skills/suede-deslop.html">
+        <span class="catalog-skill">suede-deslop</span>
+        <span class="catalog-desc">Context-aware anti-slop cleanup or findings-only audit that preserves facts, voice, house style, and intentional phrasing</span>
+        <span class="catalog-arrow">-&gt;</span>
+      </a>
+      <p class="catalog-sublane">Creative assets</p>
+      <a class="catalog-row" href="skills/suede-clip-to-guide.html">
+        <span class="catalog-skill">suede-clip-to-guide</span>
+        <span class="catalog-desc">Turn a clip, talk moment, or transcript into a funnel package with rights routing and an evidence gate</span>
+        <span class="catalog-arrow">-&gt;</span>
+      </a>
+      <div class="catalog-chips">
+        <a class="catalog-chip" href="skills/suede-ad-creative.html">suede-ad-creative</a>
+        <a class="catalog-chip" href="skills/suede-image.html">suede-image</a>
+        <a class="catalog-chip" href="skills/suede-video.html">suede-video</a>
+      </div>
+    </div>
+    <div class="catalog-lane reveal" id="lane-found">
+      <div class="catalog-lane-head">
+        <h3 class="catalog-lane-name">Get found</h3>
+        <span class="catalog-lane-count">12 skills</span>
+      </div>
+      <p class="catalog-lane-lead">Be discoverable by search, by AI answers, and by an audience.</p>
+      <p class="catalog-sublane">Search &amp; AI visibility</p>
+      <a class="catalog-row" href="skills/suede-seo-audit.html">
+        <span class="catalog-skill">suede-seo-audit</span>
+        <span class="catalog-desc">SEO, AEO, and AI-EO audit: metadata, schema, internal links, and search intent</span>
+        <span class="catalog-arrow">-&gt;</span>
+      </a>
+      <a class="catalog-row" href="skills/suede-visibility-grader.html">
+        <span class="catalog-skill">suede-visibility-grader</span>
+        <span class="catalog-desc">A-F page grades for findability, clarity, CTA pull, proof, and AI citation readiness</span>
+        <span class="catalog-arrow">-&gt;</span>
+      </a>
+      <div class="catalog-chips">
+        <a class="catalog-chip" href="skills/suede-ai-seo.html">suede-ai-seo</a>
+        <a class="catalog-chip" href="skills/suede-aso.html">suede-aso</a>
+        <a class="catalog-chip" href="skills/suede-directory-submissions.html">suede-directory-submissions</a>
+        <a class="catalog-chip" href="skills/suede-programmatic-seo.html">suede-programmatic-seo</a>
+      </div>
+      <p class="catalog-sublane">Content &amp; audience</p>
+      <div class="catalog-chips">
+        <a class="catalog-chip" href="skills/suede-co-marketing.html">suede-co-marketing</a>
+        <a class="catalog-chip" href="skills/suede-community-marketing.html">suede-community-marketing</a>
+        <a class="catalog-chip" href="skills/suede-content-strategy.html">suede-content-strategy</a>
+        <a class="catalog-chip" href="skills/suede-newsroom.html">suede-newsroom</a>
+        <a class="catalog-chip" href="skills/suede-public-relations.html">suede-public-relations</a>
+        <a class="catalog-chip" href="skills/suede-social.html">suede-social</a>
+      </div>
+    </div>
+    <div class="catalog-lane reveal" id="lane-demand">
+      <div class="catalog-lane-head">
+        <h3 class="catalog-lane-name">Demand channels</h3>
+        <span class="catalog-lane-count">9 skills</span>
+      </div>
+      <p class="catalog-lane-lead">Reach people who have not heard of you yet.</p>
+      <p class="catalog-sublane">Paid &amp; outbound</p>
+      <div class="catalog-chips">
+        <a class="catalog-chip" href="skills/suede-ads.html">suede-ads</a>
+        <a class="catalog-chip" href="skills/suede-cold-email.html">suede-cold-email</a>
+        <a class="catalog-chip" href="skills/suede-influencer-outreach.html">suede-influencer-outreach</a>
+        <a class="catalog-chip" href="skills/suede-prospecting.html">suede-prospecting</a>
+      </div>
+      <p class="catalog-sublane">Lifecycle messaging</p>
+      <div class="catalog-chips">
+        <a class="catalog-chip" href="skills/suede-emails.html">suede-emails</a>
+        <a class="catalog-chip" href="skills/suede-sms.html">suede-sms</a>
+      </div>
+      <p class="catalog-sublane">Acquisition assets</p>
+      <div class="catalog-chips">
+        <a class="catalog-chip" href="skills/suede-free-tools.html">suede-free-tools</a>
+        <a class="catalog-chip" href="skills/suede-lead-magnets.html">suede-lead-magnets</a>
+        <a class="catalog-chip" href="skills/suede-referrals.html">suede-referrals</a>
+      </div>
+    </div>
+    <div class="catalog-lane reveal" id="lane-revenue">
+      <div class="catalog-lane-head">
+        <h3 class="catalog-lane-name">Revenue &amp; retention</h3>
+        <span class="catalog-lane-count">12 skills</span>
+      </div>
+      <p class="catalog-lane-lead">Convert the attention, then keep what it earned.</p>
+      <p class="catalog-sublane">Money &amp; funnel</p>
+      <a class="catalog-row" href="skills/suede-launch-packaging.html">
+        <span class="catalog-skill">suede-launch-packaging</span>
+        <span class="catalog-desc">Package work as a launch: docs, verified install commands, proof links, QA gate</span>
+        <span class="catalog-arrow">-&gt;</span>
+      </a>
+      <a class="catalog-row" href="skills/suede-site-alchemy.html">
+        <span class="catalog-skill">suede-site-alchemy</span>
+        <span class="catalog-desc">Funnel analysis, friction audit, conversion math, and ranked quick wins for landing pages</span>
+        <span class="catalog-arrow">-&gt;</span>
+      </a>
+      <div class="catalog-chips">
+        <a class="catalog-chip" href="skills/suede-churn-prevention.html">suede-churn-prevention</a>
+        <a class="catalog-chip" href="skills/suede-offers.html">suede-offers</a>
+        <a class="catalog-chip" href="skills/suede-onboarding.html">suede-onboarding</a>
+        <a class="catalog-chip" href="skills/suede-paywalls.html">suede-paywalls</a>
+        <a class="catalog-chip" href="skills/suede-pricing.html">suede-pricing</a>
+      </div>
+      <p class="catalog-sublane">Measure &amp; operate</p>
+      <div class="catalog-chips">
+        <a class="catalog-chip" href="skills/suede-ab-testing.html">suede-ab-testing</a>
+        <a class="catalog-chip" href="skills/suede-analytics.html">suede-analytics</a>
+        <a class="catalog-chip" href="skills/suede-attribution.html">suede-attribution</a>
+        <a class="catalog-chip" href="skills/suede-revops.html">suede-revops</a>
+        <a class="catalog-chip" href="skills/suede-sales-enablement.html">suede-sales-enablement</a>
+      </div>
+    </div>
+    <div class="catalog-lane reveal" id="lane-position">
+      <div class="catalog-lane-head">
+        <h3 class="catalog-lane-name">Strategy &amp; rights</h3>
+        <span class="catalog-lane-count">11 skills</span>
+      </div>
+      <p class="catalog-lane-lead">Know the market you are in and own what you make.</p>
+      <p class="catalog-sublane">Strategy &amp; research</p>
+      <div class="catalog-chips">
+        <a class="catalog-chip" href="skills/suede-competitor-profiling.html">suede-competitor-profiling</a>
+        <a class="catalog-chip" href="skills/suede-competitors.html">suede-competitors</a>
+        <a class="catalog-chip" href="skills/suede-customer-research.html">suede-customer-research</a>
+        <a class="catalog-chip" href="skills/suede-marketing-council.html">suede-marketing-council</a>
+        <a class="catalog-chip" href="skills/suede-marketing-loops.html">suede-marketing-loops</a>
+        <a class="catalog-chip" href="skills/suede-marketing-plan.html">suede-marketing-plan</a>
+        <a class="catalog-chip" href="skills/suede-product-marketing.html">suede-product-marketing</a>
+      </div>
+      <p class="catalog-sublane">Creator toolkit</p>
+      <a class="catalog-row" href="skills/suede-campaign-in-a-box.html">
+        <span class="catalog-skill">suede-campaign-in-a-box</span>
+        <span class="catalog-desc">Turn a song, release, or drop into a full artist campaign: eras, hooks, stunts, and fan missions</span>
+        <span class="catalog-arrow">-&gt;</span>
+      </a>
+      <a class="catalog-row" href="skills/suede-release-linter.html">
+        <span class="catalog-skill">suede-release-linter</span>
+        <span class="catalog-desc">Release folder audit before a drop: artwork, audio, metadata, and naming checks</span>
+        <span class="catalog-arrow">-&gt;</span>
+      </a>
+      <a class="catalog-row" href="skills/suede-rights-passport.html">
+        <span class="catalog-skill">suede-rights-passport</span>
+        <span class="catalog-desc">Audit ownership, splits, samples, and provenance, then prepare the rights package: licensing review, registry prep</span>
+        <span class="catalog-arrow">-&gt;</span>
+      </a>
+      <a class="catalog-row" href="skills/suede-sync-packaging.html">
+        <span class="catalog-skill">suede-sync-packaging</span>
+        <span class="catalog-desc">Package songs for sync pitching: scene-fit angles, supervisor-safe one-sheets, rights status</span>
+        <span class="catalog-arrow">-&gt;</span>
+      </a>
+    </div>
+  </div>
+
+</details>
+</section>
+
+<!-- GOLD SHIP BAND -->
+<!-- FIELD NOTES -->
+<section id="essays" aria-labelledby="essays-headline">
+  <div class="essays-inner">
+    <p class="essays-eyebrow reveal">Field notes</p>
+    <h2 id="essays-headline" class="essays-headline reveal reveal-d1">Why memory belongs in a skill, not a prompt.</h2>
+    <p class="essays-sub reveal reveal-d1">The design decisions behind the pack, written up as essays: how 64 skills stay cheap to carry, how they route without colliding, and where judgment should live when a prompt is the wrong place for it.</p>
+    <div class="essays-list reveal reveal-d2">
+      <a class="essay-row" href="blog/two-skills-and-the-bugs-that-wrote-them.html">
+        <span class="essay-date">Sep 2026</span>
+        <span class="essay-copy">
+          <span class="essay-title">Two skills, and the bugs that wrote them</span>
+          <span class="essay-hook">Google Play from the terminal, and a contract that keeps four surfaces honest</span>
+        </span>
+        <span class="essay-arrow" aria-hidden="true">-&gt;</span>
+      </a>
+      <a class="essay-row" href="blog/progressive-disclosure-ship-dag-and-mcp.html">
+        <span class="essay-date">Aug 2026</span>
+        <span class="essay-copy">
+          <span class="essay-title">71 skills installed. Your agent reads almost none of them.</span>
+          <span class="essay-hook">Progressive disclosure, Suede Thought Graph shipping search, and the MCP layer</span>
+        </span>
+        <span class="essay-arrow" aria-hidden="true">-&gt;</span>
+      </a>
+      <a class="essay-row" href="blog/why-breadth-is-free.html">
+        <span class="essay-date">Aug 2026</span>
+        <span class="essay-copy">
+          <span class="essay-title">Why breadth is free now, and what that changes</span>
+          <span class="essay-hook">The economics of a big pack</span>
+        </span>
+        <span class="essay-arrow" aria-hidden="true">-&gt;</span>
+      </a>
+      <a class="essay-row" href="blog/not-for-the-line-that-makes-a-pack-work.html">
+        <span class="essay-date">Aug 2026</span>
+        <span class="essay-copy">
+          <span class="essay-title">NOT FOR: the two words that make a big skill pack work</span>
+          <span class="essay-hook">How skills route without colliding</span>
+        </span>
+        <span class="essay-arrow" aria-hidden="true">-&gt;</span>
+      </a>
+      <a class="essay-row" href="blog/memory-belongs-in-skills.html">
+        <span class="essay-date">Aug 2026</span>
+        <span class="essay-copy">
+          <span class="essay-title">Your memory file is a tax you pay on every prompt</span>
+          <span class="essay-hook">Why memory belongs in skills</span>
+        </span>
+        <span class="essay-arrow" aria-hidden="true">-&gt;</span>
+      </a>
+      <a class="essay-row" href="blog/android-recommend-next-action-and-workflows.html">
+        <span class="essay-date">Jul 2026</span>
+        <span class="essay-copy">
+          <span class="essay-title">Two new lanes: a next-action recommender and a one-prompt Android app factory</span>
+          <span class="essay-hook">What shipped and why it exists</span>
+        </span>
+        <span class="essay-arrow" aria-hidden="true">-&gt;</span>
+      </a>
+    </div>
+    <p class="essays-more reveal reveal-d2"><a href="blog/">All essays -&gt;</a></p>
+  </div>
+</section>
+
+<section id="ship-band" aria-labelledby="ship-band-headline">
+  <div class="ship-band-inner reveal">
+    <p class="ship-band-kicker">Two commands from here</p>
+    <h2 id="ship-band-headline">Put the skills to work on your business.</h2>
+    <p class="ship-band-sub">Start with an SEO audit, a positioning brief, or an operations assessment. Read the workflow, install the pack, and bring your own business context.</p>
+    <div class="ship-band-ctas">
+      <button class="ship-band-btn" id="band-copy-btn" onclick="
+        var cmd='/plugin marketplace add JasonColapietro/suede-creator-skills\n/plugin install suede-skills@suede';
+        navigator.clipboard.writeText(cmd).then(function(){
+          var b=document.getElementById('band-copy-btn');
+          b.textContent='Copied';
+          setTimeout(function(){b.textContent='Copy both commands';},2000);
+        }).catch(function(){});
+      ">Copy both commands</button>
+      <a class="ship-band-link" href="skills/">Browse all skills</a>
+    </div>
+    <code class="ship-band-cmd">/plugin marketplace add JasonColapietro/suede-creator-skills &rarr; /plugin install suede-skills@suede</code>
+  </div>
+</section>
+
 <section id="changelog" aria-labelledby="changelog-headline">
   <div class="clog-inner">
 
@@ -4700,825 +5528,6 @@
   </div>
 </section>
 
-<!-- LANE INDEX -->
-<section id="lanes" aria-labelledby="lanes-headline">
-  <div class="lanes-inner">
-    <p class="lanes-eyebrow reveal">Six specialities, one install</p>
-    <h2 id="lanes-headline" class="lanes-headline reveal reveal-d1">Find the skill for your next business task.</h2>
-    <p class="lanes-sub reveal reveal-d1">Choose a workflow for search visibility, content, acquisition, conversion, or operations. Each skill defines the inputs it needs and the work it returns. Code review, app delivery, and creator-rights tools support the work that follows.</p>
-    <div class="lanes-list reveal reveal-d2">
-      <a class="lane-row" href="#lane-ship">
-        <span class="lane-name">Ship</span>
-        <span class="lane-desc">Orchestration &amp; routing, Code review &amp; CI, Apps: iOS &amp; Android</span>
-        <span class="lane-count">13 skills</span>
-      </a>
-      <a class="lane-row" href="#lane-craft">
-        <span class="lane-name">Craft</span>
-        <span class="lane-desc">Design &amp; copy, Creative assets</span>
-        <span class="lane-count">7 skills</span>
-      </a>
-      <a class="lane-row" href="#lane-found">
-        <span class="lane-name">Get found</span>
-        <span class="lane-desc">Search &amp; AI visibility, Content &amp; audience</span>
-        <span class="lane-count">12 skills</span>
-      </a>
-      <a class="lane-row" href="#lane-demand">
-        <span class="lane-name">Demand channels</span>
-        <span class="lane-desc">Paid &amp; outbound, Lifecycle messaging, Acquisition assets</span>
-        <span class="lane-count">9 skills</span>
-      </a>
-      <a class="lane-row" href="#lane-revenue">
-        <span class="lane-name">Revenue &amp; retention</span>
-        <span class="lane-desc">Money &amp; funnel, Measure &amp; operate, Consumer recovery</span>
-        <span class="lane-count">12 skills</span>
-      </a>
-      <a class="lane-row" href="#lane-position">
-        <span class="lane-name">Strategy &amp; rights</span>
-        <span class="lane-desc">Strategy &amp; research, Creator toolkit</span>
-        <span class="lane-count">11 skills</span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- SHIP FLOW -->
-<section id="flow" aria-labelledby="flow-headline">
-  <div class="flow-inner">
-    <p class="flow-eyebrow reveal">The Ship DAG</p>
-    <h2 id="flow-headline" class="flow-headline reveal reveal-d1">Max effort in. Proof or one blocker out.</h2>
-    <p class="flow-sub reveal reveal-d1">Tell most agents "max effort, fix everything" and you get vibes. <a href="skills/suede-graph-flo-xr.html">/suede-graph-flo-xr</a> turns that intent into a structure: one authorized controller, every useful non-colliding lane in parallel, adversarial reconciliation where lanes attack each other's claims, a call budget the file caps at 55, 110, or 200, and a close that is either concise proof or one named blocker. It reads production and never deploys.</p>
-    <div class="flow-scroll reveal reveal-d2">
-      <svg class="flow-svg" viewBox="0 0 1200 360" role="img" aria-labelledby="flow-svg-title flow-svg-desc" xmlns="http://www.w3.org/2000/svg">
-        <title id="flow-svg-title">The ship pipeline</title>
-        <desc id="flow-svg-desc">A broad authorized outcome flows through one controller into parallel code, docs, CI, and live-verification lanes, then adversarial reconciliation, then proof.</desc>
-        <g font-family="system-ui, -apple-system, sans-serif">
-          <rect x="4" y="136" width="172" height="88" rx="10" fill="#111111" stroke="#222222" stroke-width="1.5"/>
-          <text x="90" y="174" text-anchor="middle" fill="#f0ece4" font-size="16" font-weight="800">Broad authorized</text>
-          <text x="90" y="194" text-anchor="middle" fill="#f0ece4" font-size="16" font-weight="800">outcome</text>
-
-          <path d="M176 180H210" stroke="#c8a96e" stroke-width="2"/>
-          <path d="M210 180l-9 -5v10z" fill="#c8a96e"/>
-
-          <rect x="214" y="136" width="172" height="88" rx="10" fill="#111111" stroke="#c8a96e" stroke-width="1.5"/>
-          <text x="300" y="174" text-anchor="middle" fill="#c8a96e" font-size="16" font-weight="800">One controller</text>
-          <text x="300" y="196" text-anchor="middle" fill="#888880" font-size="13">single authority</text>
-
-          <path d="M386 180C428 180 428 74 470 74" stroke="#c8a96e" stroke-width="2" fill="none"/>
-          <path d="M386 180C428 180 428 144 470 144" stroke="#c8a96e" stroke-width="2" fill="none"/>
-          <path d="M386 180C428 180 428 214 470 214" stroke="#c8a96e" stroke-width="2" fill="none"/>
-          <path d="M386 180C428 180 428 284 470 284" stroke="#c8a96e" stroke-width="2" fill="none"/>
-
-          <rect x="474" y="48" width="230" height="52" rx="9" fill="#111111" stroke="#222222" stroke-width="1.5"/>
-          <circle cx="498" cy="74" r="4" fill="#c8a96e"/>
-          <text x="514" y="80" fill="#f0ece4" font-size="15.5" font-weight="700">Code lane</text>
-
-          <rect x="474" y="118" width="230" height="52" rx="9" fill="#111111" stroke="#222222" stroke-width="1.5"/>
-          <circle cx="498" cy="144" r="4" fill="#c8a96e"/>
-          <text x="514" y="150" fill="#f0ece4" font-size="15.5" font-weight="700">Docs lane</text>
-
-          <rect x="474" y="188" width="230" height="52" rx="9" fill="#111111" stroke="#222222" stroke-width="1.5"/>
-          <circle cx="498" cy="214" r="4" fill="#c8a96e"/>
-          <text x="514" y="220" fill="#f0ece4" font-size="15.5" font-weight="700">CI &amp; merge-gate lane</text>
-
-          <rect x="474" y="258" width="230" height="52" rx="9" fill="#111111" stroke="#222222" stroke-width="1.5"/>
-          <circle cx="498" cy="284" r="4" fill="#c8a96e"/>
-          <text x="514" y="290" fill="#f0ece4" font-size="15.5" font-weight="700">Live verification lane</text>
-
-          <path d="M704 74C746 74 746 180 788 180" stroke="#c8a96e" stroke-width="2" fill="none"/>
-          <path d="M704 144C746 144 746 180 788 180" stroke="#c8a96e" stroke-width="2" fill="none"/>
-          <path d="M704 214C746 214 746 180 788 180" stroke="#c8a96e" stroke-width="2" fill="none"/>
-          <path d="M704 284C746 284 746 180 788 180" stroke="#c8a96e" stroke-width="2" fill="none"/>
-          <path d="M788 180l-9 -5v10z" fill="#c8a96e"/>
-
-          <rect x="792" y="136" width="216" height="88" rx="10" fill="#111111" stroke="#222222" stroke-width="1.5"/>
-          <text x="900" y="168" text-anchor="middle" fill="#f0ece4" font-size="16" font-weight="800">Adversarial</text>
-          <text x="900" y="188" text-anchor="middle" fill="#f0ece4" font-size="16" font-weight="800">reconciliation</text>
-          <text x="900" y="209" text-anchor="middle" fill="#888880" font-size="12.5">lanes attack each other's claims</text>
-
-          <path d="M1008 180H1042" stroke="#c8a96e" stroke-width="2"/>
-          <path d="M1042 180l-9 -5v10z" fill="#c8a96e"/>
-
-          <rect x="1046" y="136" width="150" height="88" rx="10" fill="#161616" stroke="#c8a96e" stroke-width="2"/>
-          <text x="1121" y="187" text-anchor="middle" fill="#c8a96e" font-size="19" font-weight="900">Proof</text>
-        </g>
-      </svg>
-    </div>
-    <p class="flow-note reveal reveal-d2">House line: <strong>"Never end your allocation above zero."</strong> Dry joke, not a literal token promise. The Suede Thought Graph repo search ships as <a href="skills/suede-graph-flo-xr.html">/suede-graph-flo-xr</a>, and the separate copy-only DAG as <a href="skills/suede-ship-copy.html">/suede-ship-copy</a>.</p>
-  </div>
-</section>
-
-<!-- SCORECARD -->
-<section id="scorecard" style="background:#080808;padding:84px 0;font-family:system-ui,-apple-system,sans-serif;">
-  <div class="scorecard-wrap">
-
-    <p class="scorecard-eyebrow reveal">Benchmarks: self-graded, losses shown</p>
-    <h2 class="scorecard-headline reveal reveal-d1">Suede against GSD and Superpowers, losses included.</h2>
-    <p class="scorecard-sub reveal reveal-d2">We ran the Suede ship-gate rubric on <a href="https://github.com/JasonColapietro/suede-creator-skills" rel="noopener">Suede AI Skills</a>, <strong>GSD</strong>, and <a href="https://github.com/obra/superpowers" rel="nofollow noopener">Superpowers</a> the same way, reading each pack's published skill files, on 2026-07-05. We wrote the rubric, so read this as our reading of three packs, not a neutral benchmark. Superpowers scores higher than Suede on Overall. The full category breakdown is below, including the rows where GSD or Superpowers beats Suede.</p>
-
-    <div class="scorecard-table-wrap reveal">
-      <table class="scorecard-table scorecard-table--usecase">
-        <thead>
-          <tr><th>Use case</th><th>Winner</th><th>Grade</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Suede product / company work</td>
-            <td><span class="sc-winner sc-winner--suede">Suede</span></td>
-            <td><span class="grade-pill is-win">A+</span></td>
-          </tr>
-          <tr>
-            <td>Public copy, design, SEO, rights, launch</td>
-            <td><span class="sc-winner sc-winner--suede">Suede</span></td>
-            <td><span class="grade-pill is-win">A+</span></td>
-          </tr>
-          <tr>
-            <td>Long project lifecycle</td>
-            <td><span class="sc-winner">GSD</span></td>
-            <td><span class="grade-pill">A+</span></td>
-          </tr>
-          <tr>
-            <td>Strict engineering discipline</td>
-            <td><span class="sc-winner">Superpowers</span></td>
-            <td><span class="grade-pill">A+</span></td>
-          </tr>
-          <tr>
-            <td>Multi-agent orchestration</td>
-            <td><span class="sc-winner sc-winner--suede">Suede</span> / <span class="sc-winner">GSD</span><span class="sc-tie">tie</span></td>
-            <td><span class="grade-pill">A</span></td>
-          </tr>
-          <tr>
-            <td>Skill ecosystem maintainability</td>
-            <td><span class="sc-winner">Superpowers</span></td>
-            <td><span class="grade-pill">A+</span></td>
-          </tr>
-          <tr>
-            <td>Ship-risk grading</td>
-            <td><span class="sc-winner sc-winner--suede">Suede</span></td>
-            <td><span class="grade-pill is-win">A+</span></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <p class="scorecard-tally reveal">Suede wins outright on <strong>3 of 7</strong> use cases, plus a tie with GSD on multi-agent orchestration. GSD takes long project lifecycles. Superpowers takes strict engineering discipline and skill ecosystem maintainability. Install the pack that matches this week's work.</p>
-
-    <details class="scorecard-details reveal">
-      <summary>See the full scorecard</summary>
-      <div class="scorecard-table-wrap">
-        <table class="scorecard-table">
-          <thead>
-            <tr><th>Category</th><th>Suede Skills</th><th>GSD</th><th>Superpowers</th></tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Overall</td>
-              <td><span class="grade-pill">A-</span></td>
-              <td><span class="grade-pill">A-</span></td>
-              <td><span class="grade-pill is-win">A</span></td>
-            </tr>
-            <tr>
-              <td>Breadth / Coverage</td>
-              <td><span class="grade-pill is-win">A+</span></td>
-              <td><span class="grade-pill">A</span></td>
-              <td><span class="grade-pill g-b">B</span></td>
-            </tr>
-            <tr>
-              <td>Planning / Specs</td>
-              <td><span class="grade-pill">A-</span></td>
-              <td><span class="grade-pill is-win">A+</span></td>
-              <td><span class="grade-pill">A</span></td>
-            </tr>
-            <tr>
-              <td>Execution Workflow</td>
-              <td><span class="grade-pill">A-</span></td>
-              <td><span class="grade-pill is-win">A</span></td>
-              <td><span class="grade-pill is-win">A</span></td>
-            </tr>
-            <tr>
-              <td>Debugging Method</td>
-              <td><span class="grade-pill">A-</span></td>
-              <td><span class="grade-pill">A</span></td>
-              <td><span class="grade-pill is-win">A+</span></td>
-            </tr>
-            <tr>
-              <td>Testing Discipline</td>
-              <td><span class="grade-pill g-b">B+</span></td>
-              <td><span class="grade-pill">A</span></td>
-              <td><span class="grade-pill is-win">A+</span></td>
-            </tr>
-            <tr>
-              <td>Verification Discipline</td>
-              <td><span class="grade-pill">A</span></td>
-              <td><span class="grade-pill">A</span></td>
-              <td><span class="grade-pill is-win">A+</span></td>
-            </tr>
-            <tr>
-              <td>Git / Worktree Hygiene</td>
-              <td><span class="grade-pill g-b">B+</span></td>
-              <td><span class="grade-pill">A</span></td>
-              <td><span class="grade-pill is-win">A+</span></td>
-            </tr>
-            <tr>
-              <td>Durable State / Resume</td>
-              <td><span class="grade-pill">A-</span></td>
-              <td><span class="grade-pill is-win">A+</span></td>
-              <td><span class="grade-pill g-b">B+</span></td>
-            </tr>
-            <tr>
-              <td>Code Review / Ship Gate</td>
-              <td><span class="grade-pill is-win">A+</span></td>
-              <td><span class="grade-pill">A-</span></td>
-              <td><span class="grade-pill">A</span></td>
-            </tr>
-            <tr>
-              <td>Skill Authoring / Governance</td>
-              <td><span class="grade-pill g-b">B+</span></td>
-              <td><span class="grade-pill g-b">B+</span></td>
-              <td><span class="grade-pill is-win">A+</span></td>
-            </tr>
-            <tr>
-              <td>Evidence / Legal Boundaries</td>
-              <td><span class="grade-pill is-win">A+</span></td>
-              <td><span class="grade-pill g-b">B</span></td>
-              <td><span class="grade-pill g-b">B</span></td>
-            </tr>
-            <tr>
-              <td>Domain Expertise</td>
-              <td><span class="grade-pill is-win">A+</span></td>
-              <td><span class="grade-pill g-b">B</span></td>
-              <td><span class="grade-pill g-c">C</span></td>
-            </tr>
-            <tr>
-              <td>Install / Portability</td>
-              <td><span class="grade-pill">A-</span></td>
-              <td><span class="grade-pill g-b">B+</span></td>
-              <td><span class="grade-pill is-win">A</span></td>
-            </tr>
-            <tr>
-              <td>Estate Cleanliness</td>
-              <td><span class="grade-pill g-b">B+</span></td>
-              <td><span class="grade-pill">A-</span></td>
-              <td><span class="grade-pill is-win">A</span></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </details>
-
-  </div>
-</section>
-
-<!-- FEATURES GRID -->
-<section id="skills" style="background:#080808;padding:84px 0;font-family:system-ui,-apple-system,sans-serif;">
-  <div class="features-inner">
-    <h2 class="features-headline reveal">Work on search visibility, conversion, and delivery.</h2>
-    <div class="features-grid reveal-group">
-      <div class="feature-card feature-card--wide feature-card--red">
-        <span class="feature-num">01</span>
-        <span class="feature-label">Code review → ship verdict</span>
-        <h3 class="feature-title">Review that ends in<br>a blunt A-F grade.</h3>
-        <p class="feature-copy">Deep findings across TypeScript, React, Next.js, Swift/iOS, OWASP, and database checklists, then a letter verdict across 7 evidence-backed lanes. A hardcoded secret is an instant F with the exact file and line. No other lane can raise it. iOS gets its own traps list: force unwraps, main-thread violations, and native contract drift that crashes shipped apps.</p>
-      </div>
-      <div class="feature-card">
-        <span class="feature-num">02</span>
-        <h3 class="feature-label">Cheap to carry</h3>
-        <p class="feature-copy">An installed skill costs your context its name and its description. The body loads only when a request matches it, so you carry the whole folder for about the price of its table of contents</p>
-      </div>
-      <div class="feature-card">
-        <span class="feature-num">03</span>
-        <h3 class="feature-label">Agent teams</h3>
-        <p class="feature-copy">The handoff will not close without evidence. Scout, build, review, verifier, and release lanes share one context instead of acting like siloed subagents, with WIP collision detection and rollback trees underneath</p>
-      </div>
-      <div class="feature-card">
-        <span class="feature-num">04</span>
-        <h3 class="feature-label">AI evals</h3>
-        <p class="feature-copy">A release that fails its own eval gate does not ship, and the spec names the case that killed it. LLM, RAG, classifier, and agent surfaces each become a measurable AI-SPEC with failure-mode rubrics and eval cases</p>
-      </div>
-      <div class="feature-card feature-card--red">
-        <span class="feature-num">05</span>
-        <h3 class="feature-label">CI ship gate</h3>
-        <p class="feature-copy">One required check that cannot deadlock, which is the failure mode every branch-protection setup hits. It reads your stack and your lockfile, writes the CI, and wires the protection rule to that single check</p>
-      </div>
-      <div class="feature-card">
-        <span class="feature-num">06</span>
-        <h3 class="feature-label">Suedify</h3>
-        <p class="feature-copy">Point it at any URL. It reverse-engineers the layout logic, type rhythm, and color strategy that make that site work, then rebuilds your page in that language, with your own copy and your own assets. Nothing traced, nothing copied</p>
-      </div>
-      <div class="feature-card">
-        <span class="feature-num">07</span>
-        <h3 class="feature-label">Conversion copy</h3>
-        <p class="feature-copy">Twelve headline formulas, and the framework that fits the reader's state: AIDA, PAS, StoryBrand, or JTBD. Every draft is scored out of 70 across seven dimensions, and below 58 it goes back before a word ships, below 62 for a launch surface</p>
-      </div>
-      <div class="feature-card">
-        <span class="feature-num">08</span>
-        <h3 class="feature-label">SEO, AEO &amp; AI EO</h3>
-        <p class="feature-copy">Nine audit lanes in one pass: technical, intent, metadata, structure, schema, AI citation readiness, copy quality, E-E-A-T, and topic clusters. It hands back the exact rewrites, not a list of complaints</p>
-      </div>
-      <div class="feature-card">
-        <span class="feature-num">09</span>
-        <h3 class="feature-label">Visibility grade</h3>
-        <p class="feature-copy">Tells you whether a page is worth the traffic you are about to buy, A to F, and names the screen that lost the grade: first-screen clarity, CTA pull, proof, AI readability, schema depth, search result fit</p>
-      </div>
-      <div class="feature-card">
-        <span class="feature-num">10</span>
-        <h3 class="feature-label">Site to iOS app</h3>
-        <p class="feature-copy">Takes a live URL through the App Store 4.2 wrapper-risk gate, a native or Capacitor shell, and the store screenshots. The same terminal that runs this pack has archived and uploaded 8 iOS apps</p>
-      </div>
-      <div class="feature-card">
-        <span class="feature-num">11</span>
-        <h3 class="feature-label">Design, from first principles</h3>
-        <p class="feature-copy">Never a template with your logo dropped in. It commits to a named aesthetic lane and writes that choice into the file before it picks a single color, then builds color, type, and motion up from it</p>
-      </div>
-      <div class="feature-card feature-card--red">
-        <span class="feature-num">12</span>
-        <h3 class="feature-label">Consumer recovery</h3>
-        <p class="feature-copy">Apply the same negotiation discipline to your own accounts: review Amazon refunds or audit subscriptions, then confirm each action before contacting support. Public examples are synthetic; your account records stay private.</p>
-      </div>
-      <div class="feature-card">
-        <span class="feature-num">13</span>
-        <h3 class="feature-label">Taste memory</h3>
-        <p class="feature-copy">Say &quot;Cue Suede&quot; mid-run and choose: change something, preserve what worked, or accept as-is. The choice carries into every pass after it, so the pack accumulates judgment: what to do, what not to do, and when to stop</p>
-      </div>
-      <div class="feature-card">
-        <span class="feature-num">14</span>
-        <h3 class="feature-label">Android app factory</h3>
-        <p class="feature-copy">One prompt to a Play Store-ready native app: Kotlin + Jetpack Compose scaffolding, Play Billing, ASO listing copy sized to Play's character limits, and a signed release</p>
-      </div>
-      <div class="feature-card">
-        <span class="feature-num">15</span>
-        <h3 class="feature-label">Recommend next action</h3>
-        <p class="feature-copy">Ask &quot;what's next&quot; and get one move, written as a short prompt you can paste and run. It is scored against the goal, the clock, and the rework it prevents, and it opens into a full operator brief only when you ask for one</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ROUTER -->
-<section id="router" aria-labelledby="router-headline">
-  <div class="router-inner">
-    <div class="reveal">
-      <p class="router-eyebrow">The router</p>
-      <h2 id="router-headline" class="router-headline">Don't memorize a command list.</h2>
-      <p class="router-sub">Ask in plain words. The umbrella skill, <code>/suede-workflow-skills</code>, reads the request and loads the right lane: one install, every skill reachable. Every description also carries a NOT FOR line naming the sibling that should win instead, which is why breadth does not turn into an argument inside one prompt. Agents that speak MCP get the same routing as structured tools: <code>list_suede_skills</code> finds the skill, <code>get_suede_skill</code> loads it.</p>
-      <p class="router-note">The optional MCP server ships in the repo and runs local with no dependencies: 9 tools, 7 resources, and 5 prompts over stdio. Wire-up lives on the <a href="plugins.html" style="color:#888880;border-bottom:1px solid rgba(136,136,128,0.35);">install page</a>.</p>
-    </div>
-    <div class="router-table reveal reveal-d1" role="list" aria-label="Example requests and the skill each one routes to">
-      <a class="router-row" role="listitem" href="skills/suede-code.html">
-        <span class="router-ask">"grade this diff before I merge"</span>
-        <span class="router-arrow" aria-hidden="true">-&gt;</span>
-        <span class="router-skill">/suede-code</span>
-      </a>
-      <a class="router-row" role="listitem" href="skills/suede-seo-audit.html">
-        <span class="router-ask">"why isn't this page cited by AI answers"</span>
-        <span class="router-arrow" aria-hidden="true">-&gt;</span>
-        <span class="router-skill">/suede-seo-audit</span>
-      </a>
-      <a class="router-row" role="listitem" href="skills/suede-design.html">
-        <span class="router-ask">"make this landing page much less boring"</span>
-        <span class="router-arrow" aria-hidden="true">-&gt;</span>
-        <span class="router-skill">/suede-design</span>
-      </a>
-      <a class="router-row" role="listitem" href="skills/site-to-ios-app.html">
-        <span class="router-ask">"turn this site into an iOS app"</span>
-        <span class="router-arrow" aria-hidden="true">-&gt;</span>
-        <span class="router-skill">/site-to-ios-app</span>
-      </a>
-      <a class="router-row" role="listitem" href="skills/suede-campaign-in-a-box.html">
-        <span class="router-ask">"plan the rollout for this single"</span>
-        <span class="router-arrow" aria-hidden="true">-&gt;</span>
-        <span class="router-skill">/suede-campaign-in-a-box</span>
-      </a>
-      <a class="router-row" role="listitem" href="skills/suede-ai-seo.html">
-        <span class="router-ask">"get our docs quoted in ChatGPT and AI Overviews"</span>
-        <span class="router-arrow" aria-hidden="true">-&gt;</span>
-        <span class="router-skill">/suede-ai-seo</span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- STATS BAND -->
-<section class="stats-band" aria-label="By the numbers">
-  <div class="stats-inner reveal">
-    <div class="stat">
-      <div class="stat-num"><span class="count" data-count="64">64</span></div>
-      <div class="stat-label">Public skills</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num">2</div>
-      <div class="stat-label">runtimes: Claude Code + Codex</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num stat-num--money"><span class="unit">$</span>448<span class="unit">.31</span></div>
-      <div class="stat-label">clawed back from Amazon by one skill, one sitting</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num">0</div>
-      <div class="stat-label">uploads by default</div>
-    </div>
-  </div>
-</section>
-
-<!-- INSTALL -->
-<section id="install" style="background:#080808;padding:84px 0 0;font-family:system-ui,-apple-system,sans-serif;color:#f0ece4;">
-
-  <div class="install-inner">
-    <h2 class="install-headline reveal">Install the open-source pack in two commands.</h2>
-    <p class="install-sub reveal reveal-d1">Two lines in Claude Code, about thirty seconds, and the whole pack is on disk. Prefer less? <code>suede-marketing@suede</code> (40 growth skills), <code>suede-agent-workflows@suede</code>, and <code>suede-code@suede</code> install focused subsets, and <code>install.sh</code> covers the clone route. Bring your own company, repo, page, or product.</p>
-
-    <div class="install-terminal reveal reveal-d1">
-      <div class="install-terminal-bar" aria-hidden="true">
-        <span class="tdot"></span>
-        <span class="tdot"></span>
-        <span class="tdot"></span>
-        <span class="install-terminal-title">claude code</span>
-      </div>
-      <div class="install-code-block">
-        <code id="install-cmd" style="white-space:pre-line">/plugin marketplace add JasonColapietro/suede-creator-skills
-/plugin install suede-skills@suede</code>
-        <button class="copy-btn" id="copy-btn" onclick="
-          var cmd='/plugin marketplace add JasonColapietro/suede-creator-skills\n/plugin install suede-skills@suede';
-          navigator.clipboard.writeText(cmd).then(function(){
-            var b=document.getElementById('copy-btn');
-            b.textContent='Copied';
-            b.classList.add('copied');
-            setTimeout(function(){b.textContent='Copy';b.classList.remove('copied');},2000);
-          }).catch(function(){
-            var b=document.getElementById('copy-btn');
-            b.textContent='Copy';
-          });
-        ">Copy</button>
-      </div>
-    </div>
-
-    <div class="install-alts reveal reveal-d2">
-      <div class="install-alt" style="grid-column:1/-1">
-        <span class="install-alt-label">Python: install the pack from PyPI</span>
-        <code>pipx install suede-creator-skills &amp;&amp; suede-skills install</code>
-      </div>
-      <div class="install-alt">
-        <span class="install-alt-label">Supported agents: Cursor, Copilot, Windsurf, and more</span>
-        <code>npx skills add JasonColapietro/suede-creator-skills</code>
-      </div>
-      <div class="install-alt">
-        <span class="install-alt-label">Prefer a clone: it copies the pack into ~/.claude/skills/</span>
-        <code>git clone https://github.com/JasonColapietro/suede-creator-skills.git &amp;&amp; bash suede-creator-skills/install.sh</code>
-      </div>
-    </div>
-
-    <div class="install-links reveal reveal-d2">
-      <a class="install-link install-link-primary" href="skills/">Browse all skills</a>
-      <a class="install-link install-link-star" href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener" aria-label="Star JasonColapietro suede-creator-skills on GitHub">Star on GitHub</a>
-      <a class="install-link" href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener">GitHub repo</a>
-      <a class="install-link" href="plugins.html">Codex + MCP install docs</a>
-      <a class="install-link" href="plugins.html#python">Python / PyPI install</a>
-      <a class="install-link" href="guide.html">Read the full guide</a>
-    </div>
-
-    <p class="reveal reveal-d2" style="font-size:14px;color:#888880;margin:-56px 0 0;max-width:560px;">If the pack saves you an hour, <a href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener" style="color:#c8a96e;border-bottom:1px solid rgba(200,169,110,0.3);">star the repo</a>. Stars are how other builders find it.</p>
-
-    <!-- listings:start -->
-    <div class="listed-on reveal reveal-d2">
-      <p class="listed-on-label">Listed on</p>
-      <ul class="listed-on-list">
-        <li><a href="https://www.skills.sh/jasoncolapietro/suede-creator-skills" rel="noopener">skills.sh</a></li>
-        <li><a href="https://skillsmp.com/creators/jasoncolapietro/suede-creator-skills" rel="noopener">SkillsMP</a></li>
-        <li><a href="https://skillsllm.com/skill/suede-creator-skills" rel="noopener">SkillsLLM</a></li>
-        <li><a href="https://hol.org/registry/plugins/suede-ai%2Fsuede-skills" rel="noopener">HOL Plugin Registry</a></li>
-        <li><a href="https://www.skillsdirectory.com/authors/jasoncolapietro" rel="noopener">Skills Directory</a></li>
-        <li><a href="https://claudskills.com/author/jasoncolapietro/" rel="noopener">ClaudSkills</a></li>
-        <li><a href="https://pypi.org/project/suede-creator-skills/" rel="noopener">PyPI</a></li>
-        <li><a href="https://registry.modelcontextprotocol.io/v0.1/servers/io.github.JasonColapietro%2Fsuede-skills-mcp/versions/latest" rel="noopener">Official MCP Registry</a></li>
-        <li><a href="https://www.npmjs.com/package/suede-skills-mcp" rel="noopener">npm</a></li>
-        <li><a href="https://mcpmarket.com/server/suede-creator-skills" rel="noopener">MCP Market</a></li>
-        <li><a href="https://awesomeclaude.ai/awesome-claude-skills" rel="noopener">Awesome Claude Skills (awesomeclaude.ai)</a></li>
-        <li><a href="https://github.com/VoltAgent/awesome-agent-skills" rel="noopener">VoltAgent/awesome-agent-skills</a></li>
-        <li><a href="https://trendshift.io/repositories/82031" rel="noopener">Trendshift</a></li>
-      </ul>
-      <a class="listed-on-all" href="listings.html">See all 29 listings</a>
-    </div>
-    <!-- listings:end -->
-  </div>
-
-</section>
-
-<section id="creator-training" style="background:#080808;padding:48px 24px;color:#d9d5cc;">
-  <div style="max-width:900px;margin:auto;">
-    <h2 style="font-size:clamp(24px,4vw,36px);color:#f0ece4;">Training behind the workflows</h2>
-    <p style="font-size:16px;line-height:1.75;">Jason Colapietro’s training includes Claude Academy / Anthropic badges in the Claude API, Claude Code, Model Context Protocol (MCP), Claude with Amazon Bedrock and Claude on Google Cloud. His search training includes HubSpot Academy’s AEO Fundamentals and Semrush Academy certificates in AI search, keyword research, on-page SEO, local SEO and digital PR. IBM SkillsBuild covers prompt engineering; Google Skills and Databricks Academy cover generative AI. Seven Microsoft Learn module achievements cover Azure AI Agents, Foundry IQ, Visual Studio Code, Microsoft 365, workflows and Microsoft Agent Framework.</p>
-    <p><a href="https://seo.suedeai.ai/evidence#training-credentials" style="color:#c8a96e;text-underline-offset:4px;">View Jason’s issued credentials and module achievements</a></p>
-  </div>
-</section>
-
-<!-- CATALOG -->
-<section id="catalog" style="background:#080808;padding:84px 0;font-family:system-ui,-apple-system,sans-serif;">
-  <div class="catalog-inner">
-    <p class="catalog-eyebrow reveal">The full pack</p>
-    <h2 class="catalog-headline reveal reveal-d1">Read the source of any skill before you trust it.</h2>
-    <p class="catalog-sub reveal reveal-d2">Every skill is a plain-Markdown <code style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:15px;color:#c8a96e;">SKILL.md</code> folder, with its references, scripts, and templates beside it. Click any row for its docs, or browse the <a href="skills/">full catalog with install paths</a>.</p>
-
-    <div class="catalog-lane reveal" id="lane-ship">
-      <div class="catalog-lane-head">
-        <h3 class="catalog-lane-name">Ship</h3>
-        <span class="catalog-lane-count">13 skills</span>
-      </div>
-      <p class="catalog-lane-lead">Get the change built, reviewed, and merged.</p>
-      <p class="catalog-sublane">Orchestration &amp; routing</p>
-      <a class="catalog-row" href="skills/suede-agent-teams.html">
-        <span class="catalog-skill">suede-agent-teams</span>
-        <span class="catalog-desc">Coordinate agent lanes with WIP collision detection, RFC mode, rollback trees, and a signed handoff</span>
-        <span class="catalog-arrow">-&gt;</span>
-      </a>
-      <a class="catalog-row" href="skills/suede-graph-flo-xr.html">
-        <span class="catalog-skill">suede-graph-flo-xr</span>
-        <span class="catalog-desc">Suede Thought Graph shipping search: competing plans are scored, pruned, refuted, improved, and aggregated before only the selected plan mutates; 55/110/200-call caps; production reads only</span>
-        <span class="catalog-arrow">-&gt;</span>
-      </a>
-      <a class="catalog-row" href="skills/suede-ship-copy.html">
-        <span class="catalog-skill">suede-ship-copy</span>
-        <span class="catalog-desc">A separate copy-only DAG for one high-stakes piece of writing: blind research, claim audit, section writers, refutation, publish gate</span>
-        <span class="catalog-arrow">-&gt;</span>
-      </a>
-      <a class="catalog-row" href="skills/suede-workflow-skills.html">
-        <span class="catalog-skill">suede-workflow-skills</span>
-        <span class="catalog-desc">Umbrella router that loads the full pack, picks the specialist, and hands back one scored next move as a runnable prompt</span>
-        <span class="catalog-arrow">-&gt;</span>
-      </a>
-      <p class="catalog-sublane">Code review &amp; CI</p>
-      <a class="catalog-row" href="skills/suede-ai-eval.html">
-        <span class="catalog-skill">suede-ai-eval</span>
-        <span class="catalog-desc">AI-SPEC artifacts, failure-mode rubrics, eval cases, and acceptance gates for AI surfaces</span>
-        <span class="catalog-arrow">-&gt;</span>
-      </a>
-      <a class="catalog-row" href="skills/suede-code.html">
-        <span class="catalog-skill">suede-code</span>
-        <span class="catalog-desc">Deep review plus the A-F ship grade in one pass, from web stacks to Swift/iOS, with findings-only and grade-only modes</span>
-        <span class="catalog-arrow">-&gt;</span>
-      </a>
-      <a class="catalog-row" href="skills/suede-ci-gate.html">
-        <span class="catalog-skill">suede-ci-gate</span>
-        <span class="catalog-desc">CI that gates the merge: stack and lockfile detection, one required check, branch protection</span>
-        <span class="catalog-arrow">-&gt;</span>
-      </a>
-      <p class="catalog-sublane">Apps: iOS &amp; Android</p>
-      <a class="catalog-row" href="skills/android-app-factory.html">
-        <span class="catalog-skill">android-app-factory</span>
-        <span class="catalog-desc">One prompt to a Play Store-ready native app: Kotlin + Jetpack Compose scaffolding, Play Billing, ASO listing, signed release</span>
-        <span class="catalog-arrow">-&gt;</span>
-      </a>
-      <a class="catalog-row" href="skills/site-to-ios-app.html">
-        <span class="catalog-skill">site-to-ios-app</span>
-        <span class="catalog-desc">Convert any website into an App Store-ready iOS app: URL audit, 4.2 wrapper-risk gate, Capacitor or native shell, release gate</span>
-        <span class="catalog-arrow">-&gt;</span>
-      </a>
-    </div>
-    <div class="catalog-lane reveal" id="lane-craft">
-      <div class="catalog-lane-head">
-        <h3 class="catalog-lane-name">Craft</h3>
-        <span class="catalog-lane-count">7 skills</span>
-      </div>
-      <p class="catalog-lane-lead">Make the thing look and read like someone built it on purpose.</p>
-      <p class="catalog-sublane">Design &amp; copy</p>
-      <a class="catalog-row" href="skills/suede-copy.html">
-        <span class="catalog-skill">suede-copy</span>
-        <span class="catalog-desc">The full writing lane: conversion and SEO copy, headline formulas, A/B variants, anti-slop gate, copy score</span>
-        <span class="catalog-arrow">-&gt;</span>
-      </a>
-      <a class="catalog-row" href="skills/suede-design.html">
-        <span class="catalog-skill">suede-design</span>
-        <span class="catalog-desc">Design laws, dark-mode tokens, fluid type, component rules, and App Store screenshot specs. Includes Suedify</span>
-        <span class="catalog-arrow">-&gt;</span>
-      </a>
-      <a class="catalog-row" href="skills/suede-deslop.html">
-        <span class="catalog-skill">suede-deslop</span>
-        <span class="catalog-desc">Context-aware anti-slop cleanup or findings-only audit that preserves facts, voice, house style, and intentional phrasing</span>
-        <span class="catalog-arrow">-&gt;</span>
-      </a>
-      <p class="catalog-sublane">Creative assets</p>
-      <a class="catalog-row" href="skills/suede-clip-to-guide.html">
-        <span class="catalog-skill">suede-clip-to-guide</span>
-        <span class="catalog-desc">Turn a clip, talk moment, or transcript into a funnel package with rights routing and an evidence gate</span>
-        <span class="catalog-arrow">-&gt;</span>
-      </a>
-      <div class="catalog-chips">
-        <a class="catalog-chip" href="skills/suede-ad-creative.html">suede-ad-creative</a>
-        <a class="catalog-chip" href="skills/suede-image.html">suede-image</a>
-        <a class="catalog-chip" href="skills/suede-video.html">suede-video</a>
-      </div>
-    </div>
-    <div class="catalog-lane reveal" id="lane-found">
-      <div class="catalog-lane-head">
-        <h3 class="catalog-lane-name">Get found</h3>
-        <span class="catalog-lane-count">12 skills</span>
-      </div>
-      <p class="catalog-lane-lead">Be discoverable by search, by AI answers, and by an audience.</p>
-      <p class="catalog-sublane">Search &amp; AI visibility</p>
-      <a class="catalog-row" href="skills/suede-seo-audit.html">
-        <span class="catalog-skill">suede-seo-audit</span>
-        <span class="catalog-desc">SEO, AEO, and AI-EO audit: metadata, schema, internal links, and search intent</span>
-        <span class="catalog-arrow">-&gt;</span>
-      </a>
-      <a class="catalog-row" href="skills/suede-visibility-grader.html">
-        <span class="catalog-skill">suede-visibility-grader</span>
-        <span class="catalog-desc">A-F page grades for findability, clarity, CTA pull, proof, and AI citation readiness</span>
-        <span class="catalog-arrow">-&gt;</span>
-      </a>
-      <div class="catalog-chips">
-        <a class="catalog-chip" href="skills/suede-ai-seo.html">suede-ai-seo</a>
-        <a class="catalog-chip" href="skills/suede-aso.html">suede-aso</a>
-        <a class="catalog-chip" href="skills/suede-directory-submissions.html">suede-directory-submissions</a>
-        <a class="catalog-chip" href="skills/suede-programmatic-seo.html">suede-programmatic-seo</a>
-      </div>
-      <p class="catalog-sublane">Content &amp; audience</p>
-      <div class="catalog-chips">
-        <a class="catalog-chip" href="skills/suede-co-marketing.html">suede-co-marketing</a>
-        <a class="catalog-chip" href="skills/suede-community-marketing.html">suede-community-marketing</a>
-        <a class="catalog-chip" href="skills/suede-content-strategy.html">suede-content-strategy</a>
-        <a class="catalog-chip" href="skills/suede-newsroom.html">suede-newsroom</a>
-        <a class="catalog-chip" href="skills/suede-public-relations.html">suede-public-relations</a>
-        <a class="catalog-chip" href="skills/suede-social.html">suede-social</a>
-      </div>
-    </div>
-    <div class="catalog-lane reveal" id="lane-demand">
-      <div class="catalog-lane-head">
-        <h3 class="catalog-lane-name">Demand channels</h3>
-        <span class="catalog-lane-count">9 skills</span>
-      </div>
-      <p class="catalog-lane-lead">Reach people who have not heard of you yet.</p>
-      <p class="catalog-sublane">Paid &amp; outbound</p>
-      <div class="catalog-chips">
-        <a class="catalog-chip" href="skills/suede-ads.html">suede-ads</a>
-        <a class="catalog-chip" href="skills/suede-cold-email.html">suede-cold-email</a>
-        <a class="catalog-chip" href="skills/suede-influencer-outreach.html">suede-influencer-outreach</a>
-        <a class="catalog-chip" href="skills/suede-prospecting.html">suede-prospecting</a>
-      </div>
-      <p class="catalog-sublane">Lifecycle messaging</p>
-      <div class="catalog-chips">
-        <a class="catalog-chip" href="skills/suede-emails.html">suede-emails</a>
-        <a class="catalog-chip" href="skills/suede-sms.html">suede-sms</a>
-      </div>
-      <p class="catalog-sublane">Acquisition assets</p>
-      <div class="catalog-chips">
-        <a class="catalog-chip" href="skills/suede-free-tools.html">suede-free-tools</a>
-        <a class="catalog-chip" href="skills/suede-lead-magnets.html">suede-lead-magnets</a>
-        <a class="catalog-chip" href="skills/suede-referrals.html">suede-referrals</a>
-      </div>
-    </div>
-    <div class="catalog-lane reveal" id="lane-revenue">
-      <div class="catalog-lane-head">
-        <h3 class="catalog-lane-name">Revenue &amp; retention</h3>
-        <span class="catalog-lane-count">12 skills</span>
-      </div>
-      <p class="catalog-lane-lead">Convert the attention, then keep what it earned.</p>
-      <p class="catalog-sublane">Money &amp; funnel</p>
-      <a class="catalog-row" href="skills/suede-launch-packaging.html">
-        <span class="catalog-skill">suede-launch-packaging</span>
-        <span class="catalog-desc">Package work as a launch: docs, verified install commands, proof links, QA gate</span>
-        <span class="catalog-arrow">-&gt;</span>
-      </a>
-      <a class="catalog-row" href="skills/suede-site-alchemy.html">
-        <span class="catalog-skill">suede-site-alchemy</span>
-        <span class="catalog-desc">Funnel analysis, friction audit, conversion math, and ranked quick wins for landing pages</span>
-        <span class="catalog-arrow">-&gt;</span>
-      </a>
-      <div class="catalog-chips">
-        <a class="catalog-chip" href="skills/suede-churn-prevention.html">suede-churn-prevention</a>
-        <a class="catalog-chip" href="skills/suede-offers.html">suede-offers</a>
-        <a class="catalog-chip" href="skills/suede-onboarding.html">suede-onboarding</a>
-        <a class="catalog-chip" href="skills/suede-paywalls.html">suede-paywalls</a>
-        <a class="catalog-chip" href="skills/suede-pricing.html">suede-pricing</a>
-      </div>
-      <p class="catalog-sublane">Measure &amp; operate</p>
-      <div class="catalog-chips">
-        <a class="catalog-chip" href="skills/suede-ab-testing.html">suede-ab-testing</a>
-        <a class="catalog-chip" href="skills/suede-analytics.html">suede-analytics</a>
-        <a class="catalog-chip" href="skills/suede-attribution.html">suede-attribution</a>
-        <a class="catalog-chip" href="skills/suede-revops.html">suede-revops</a>
-        <a class="catalog-chip" href="skills/suede-sales-enablement.html">suede-sales-enablement</a>
-      </div>
-    </div>
-    <div class="catalog-lane reveal" id="lane-position">
-      <div class="catalog-lane-head">
-        <h3 class="catalog-lane-name">Strategy &amp; rights</h3>
-        <span class="catalog-lane-count">11 skills</span>
-      </div>
-      <p class="catalog-lane-lead">Know the market you are in and own what you make.</p>
-      <p class="catalog-sublane">Strategy &amp; research</p>
-      <div class="catalog-chips">
-        <a class="catalog-chip" href="skills/suede-competitor-profiling.html">suede-competitor-profiling</a>
-        <a class="catalog-chip" href="skills/suede-competitors.html">suede-competitors</a>
-        <a class="catalog-chip" href="skills/suede-customer-research.html">suede-customer-research</a>
-        <a class="catalog-chip" href="skills/suede-marketing-council.html">suede-marketing-council</a>
-        <a class="catalog-chip" href="skills/suede-marketing-loops.html">suede-marketing-loops</a>
-        <a class="catalog-chip" href="skills/suede-marketing-plan.html">suede-marketing-plan</a>
-        <a class="catalog-chip" href="skills/suede-product-marketing.html">suede-product-marketing</a>
-      </div>
-      <p class="catalog-sublane">Creator toolkit</p>
-      <a class="catalog-row" href="skills/suede-campaign-in-a-box.html">
-        <span class="catalog-skill">suede-campaign-in-a-box</span>
-        <span class="catalog-desc">Turn a song, release, or drop into a full artist campaign: eras, hooks, stunts, and fan missions</span>
-        <span class="catalog-arrow">-&gt;</span>
-      </a>
-      <a class="catalog-row" href="skills/suede-release-linter.html">
-        <span class="catalog-skill">suede-release-linter</span>
-        <span class="catalog-desc">Release folder audit before a drop: artwork, audio, metadata, and naming checks</span>
-        <span class="catalog-arrow">-&gt;</span>
-      </a>
-      <a class="catalog-row" href="skills/suede-rights-passport.html">
-        <span class="catalog-skill">suede-rights-passport</span>
-        <span class="catalog-desc">Audit ownership, splits, samples, and provenance, then prepare the rights package: licensing review, registry prep</span>
-        <span class="catalog-arrow">-&gt;</span>
-      </a>
-      <a class="catalog-row" href="skills/suede-sync-packaging.html">
-        <span class="catalog-skill">suede-sync-packaging</span>
-        <span class="catalog-desc">Package songs for sync pitching: scene-fit angles, supervisor-safe one-sheets, rights status</span>
-        <span class="catalog-arrow">-&gt;</span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- GOLD SHIP BAND -->
-<!-- FIELD NOTES -->
-<section id="essays" aria-labelledby="essays-headline">
-  <div class="essays-inner">
-    <p class="essays-eyebrow reveal">Field notes</p>
-    <h2 id="essays-headline" class="essays-headline reveal reveal-d1">Why memory belongs in a skill, not a prompt.</h2>
-    <p class="essays-sub reveal reveal-d1">The design decisions behind the pack, written up as essays: how 64 skills stay cheap to carry, how they route without colliding, and where judgment should live when a prompt is the wrong place for it.</p>
-    <div class="essays-list reveal reveal-d2">
-      <a class="essay-row" href="blog/two-skills-and-the-bugs-that-wrote-them.html">
-        <span class="essay-date">Sep 2026</span>
-        <span class="essay-copy">
-          <span class="essay-title">Two skills, and the bugs that wrote them</span>
-          <span class="essay-hook">Google Play from the terminal, and a contract that keeps four surfaces honest</span>
-        </span>
-        <span class="essay-arrow" aria-hidden="true">-&gt;</span>
-      </a>
-      <a class="essay-row" href="blog/progressive-disclosure-ship-dag-and-mcp.html">
-        <span class="essay-date">Aug 2026</span>
-        <span class="essay-copy">
-          <span class="essay-title">71 skills installed. Your agent reads almost none of them.</span>
-          <span class="essay-hook">Progressive disclosure, Suede Thought Graph shipping search, and the MCP layer</span>
-        </span>
-        <span class="essay-arrow" aria-hidden="true">-&gt;</span>
-      </a>
-      <a class="essay-row" href="blog/why-breadth-is-free.html">
-        <span class="essay-date">Aug 2026</span>
-        <span class="essay-copy">
-          <span class="essay-title">Why breadth is free now, and what that changes</span>
-          <span class="essay-hook">The economics of a big pack</span>
-        </span>
-        <span class="essay-arrow" aria-hidden="true">-&gt;</span>
-      </a>
-      <a class="essay-row" href="blog/not-for-the-line-that-makes-a-pack-work.html">
-        <span class="essay-date">Aug 2026</span>
-        <span class="essay-copy">
-          <span class="essay-title">NOT FOR: the two words that make a big skill pack work</span>
-          <span class="essay-hook">How skills route without colliding</span>
-        </span>
-        <span class="essay-arrow" aria-hidden="true">-&gt;</span>
-      </a>
-      <a class="essay-row" href="blog/memory-belongs-in-skills.html">
-        <span class="essay-date">Aug 2026</span>
-        <span class="essay-copy">
-          <span class="essay-title">Your memory file is a tax you pay on every prompt</span>
-          <span class="essay-hook">Why memory belongs in skills</span>
-        </span>
-        <span class="essay-arrow" aria-hidden="true">-&gt;</span>
-      </a>
-      <a class="essay-row" href="blog/android-recommend-next-action-and-workflows.html">
-        <span class="essay-date">Jul 2026</span>
-        <span class="essay-copy">
-          <span class="essay-title">Two new lanes: a next-action recommender and a one-prompt Android app factory</span>
-          <span class="essay-hook">What shipped and why it exists</span>
-        </span>
-        <span class="essay-arrow" aria-hidden="true">-&gt;</span>
-      </a>
-    </div>
-    <p class="essays-more reveal reveal-d2"><a href="blog/">All essays -&gt;</a></p>
-  </div>
-</section>
-
-<section id="ship-band" aria-labelledby="ship-band-headline">
-  <div class="ship-band-inner reveal">
-    <p class="ship-band-kicker">Two commands from here</p>
-    <h2 id="ship-band-headline">Put the skills to work on your business.</h2>
-    <p class="ship-band-sub">Start with an SEO audit, a positioning brief, or an operations assessment. Read the workflow, install the pack, and bring your own business context.</p>
-    <div class="ship-band-ctas">
-      <button class="ship-band-btn" id="band-copy-btn" onclick="
-        var cmd='/plugin marketplace add JasonColapietro/suede-creator-skills\n/plugin install suede-skills@suede';
-        navigator.clipboard.writeText(cmd).then(function(){
-          var b=document.getElementById('band-copy-btn');
-          b.textContent='Copied';
-          setTimeout(function(){b.textContent='Copy both commands';},2000);
-        }).catch(function(){});
-      ">Copy both commands</button>
-      <a class="ship-band-link" href="skills/">Browse all skills</a>
-    </div>
-    <code class="ship-band-cmd">/plugin marketplace add JasonColapietro/suede-creator-skills &rarr; /plugin install suede-skills@suede</code>
-  </div>
-</section>
-
 <!-- FAQ -->
 <section id="faq" style="background:#080808;padding:84px 0;font-family:system-ui,-apple-system,sans-serif;">
   <div class="faq-inner">
@@ -5556,6 +5565,9 @@
     <div class="footer-links">
       <a href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener">GitHub</a>
       <span class="footer-divider" aria-hidden="true">|</span>
+      <a href="#changelog">Changelog</a>
+      <a href="#scorecard">Benchmarks</a>
+      <a href="cracked.html">Cracked Devs</a>
       <a href="book/">Book</a>
       <span class="footer-divider" aria-hidden="true">|</span>
       <a href="blog/">Blog</a>
@@ -5574,6 +5586,39 @@
 <p><a href="/ai-instructions/">AI Instructions</a></p></footer>
 
 <script>
+  // Open native disclosures before navigating to their retained deep links.
+  (function () {
+    function revealHash(moveFocus) {
+      var id;
+      try { id = decodeURIComponent(window.location.hash.slice(1)); } catch (_) { return; }
+      var target = document.getElementById(id);
+      if (!target) return;
+      var parent = target.parentElement;
+      while (parent) {
+        if (parent.matches('details.premium-disclosure')) parent.open = true;
+        parent = parent.parentElement;
+      }
+      var ownDisclosure = target.querySelector('details.premium-disclosure');
+      if (ownDisclosure) ownDisclosure.open = true;
+      requestAnimationFrame(function () {
+        if (moveFocus) {
+          if (!target.hasAttribute('tabindex')) {
+            target.setAttribute('tabindex', '-1');
+            target.addEventListener('blur', function () { target.removeAttribute('tabindex'); }, { once: true });
+          }
+          target.focus({ preventScroll: true });
+        }
+        target.scrollIntoView({ block: 'start', behavior: 'instant' });
+      });
+    }
+    window.addEventListener('hashchange', function () { revealHash(true); });
+    document.addEventListener('click', function (event) {
+      var link = event.target.closest('a[href^="#"]');
+      if (link && link.getAttribute('href') === window.location.hash) revealHash(true);
+    });
+    revealHash(false);
+  })();
+
   // Scroll-to-top visibility
   (function() {
     var btn = document.getElementById('scroll-top');
@@ -5744,72 +5789,7 @@
       .catch(function() {});
   })();
 
-  // Sample-session replay + lane rotation: the code-review session lives in
-  // the DOM as static content; with motion allowed, it replays staged, then
-  // the terminal cycles through sessions from the pack's other lanes.
-  // Skipped entirely for reduced motion or no JS.
-  (function() {
-    var sess = document.getElementById('term-session');
-    if (!sess || reduceMotion) return;
-    var initial = Array.prototype.slice.call(sess.querySelectorAll('.term-line'));
-    if (!initial.length) return;
-    var cursor = '<span class="term-cursor" aria-hidden="true"></span>';
-    var SESSIONS = [
-      initial.map(function(el) { return el.innerHTML; }),
-      [
-        '<span class="t-dim">$ </span><span class="t-cmd">/suede-design &quot;make it less boring&quot;</span>',
-        '<span class="t-dim">register: brand &middot; one memorable move locked</span>',
-        '<span class="t-dim">render &rarr; compare &rarr; patch &middot; desktop + mobile</span>',
-        '<span class="t-dim">copy gate &middot; competitor-swap test passed</span>',
-        '<span class="term-grade">VISUAL QA: PASSED &middot; SHIP</span>' + cursor
-      ],
-      [
-        '<span class="t-dim">$ </span><span class="t-cmd">/suede-seo-audit https://yourapp.com/pricing</span>',
-        '<span class="t-dim">title &middot; meta &middot; schema &middot; internal links &middot; rendered text</span>',
-        '<span class="t-warn">example finding: no direct answer above the fold</span><span class="t-dim"> &middot; fix drafted</span>',
-        '<span class="t-dim">AI citation readiness scored &middot; FAQ schema matched to visible copy</span>',
-        '<span class="term-grade">FIXES RANKED BY IMPACT</span>' + cursor
-      ],
-      [
-        '<span class="t-dim">$ </span><span class="t-cmd">/site-to-ios-app https://yourapp.com</span>',
-        '<span class="t-dim">URL audit &middot; 4.2 wrapper-risk gate: pass</span>',
-        '<span class="t-dim">native value added: offline cache + share sheet</span>',
-        '<span class="t-dim">screenshots staged &middot; metadata drafted</span>',
-        '<span class="term-grade">ARCHIVE READY &middot; APP STORE LANE OPEN</span>' + cursor
-      ]
-    ];
-    var idx = 0;
-    function render(lines) {
-      sess.innerHTML = lines.map(function(l) {
-        return '<span class="term-line">' + l + '</span>';
-      }).join('');
-    }
-    function play(then) {
-      var els = Array.prototype.slice.call(sess.querySelectorAll('.term-line'));
-      var i = 0;
-      function next() {
-        if (i >= els.length) { setTimeout(then, 5600); return; }
-        els[i].classList.add('typed');
-        i += 1;
-        var upcoming = els[i];
-        var pause = i === 1 ? 950 : 460;
-        if (upcoming && upcoming.querySelector('.term-grade')) pause = 850;
-        setTimeout(next, pause);
-      }
-      next();
-    }
-    function cycle() {
-      idx = (idx + 1) % SESSIONS.length;
-      render(SESSIONS[idx]);
-      play(cycle);
-    }
-    // First paint keeps the static session fully visible; the typed replay
-    // only begins when the terminal rotates to its second session.
-    setTimeout(function() {
-      sess.classList.add('js-type');
-      cycle();
-    }, 9000);
-  })();
+  // The labeled example remains static so commands and findings stay readable.
 
   // Changelog: type filters + relative freshness
   (function() {

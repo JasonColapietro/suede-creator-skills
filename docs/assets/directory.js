@@ -121,6 +121,7 @@ if (browser) {
   function renderShortlist() {
     if (!shortlist || !skills) return;
     shortlist.hidden = false;
+    browser.querySelector('.shortlist-jump')?.removeAttribute('hidden');
     const picks = selected.map((href) => skills.find((skill) => skill.href === href)).filter(Boolean);
     selected = picks.map((skill) => skill.href);
     const list = shortlist.querySelector('[data-shortlist-items]');
