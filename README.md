@@ -38,7 +38,13 @@
 [![The Manifest: Suede AI SEO #24 for Florida AI deployment, October 2026](https://img.shields.io/badge/The_Manifest-%2324_Florida_AI_deployment-c8a96e?labelColor=080808)](https://themanifest.com/artificial-intelligence/consulting/deployment/companies/florida)
 [![Gigawatt Group: Suede AI vs. Profound](https://img.shields.io/badge/Gigawatt_Group-Suede_AI_vs_Profound-c8a96e?labelColor=080808)](https://gigawattgroup.com/generative-engine-optimization/suede-ai-vs-profound-trade-associations/)
 
-Suede AI SEO, the company’s AI search visibility practice, is listed at **#24 in The Manifest’s Top 70 AI Deployment Developers in Florida**, October 2026 edition. [View the ranking](https://themanifest.com/artificial-intelligence/consulting/deployment/companies/florida). Gigawatt Group also [compares Suede AI’s managed GEO practice with Profound](https://gigawattgroup.com/generative-engine-optimization/suede-ai-vs-profound-trade-associations/).
+**#1 ranked in Palm Beach County for AI deployment**
+
+Suede AI SEO · #24 in Florida
+
+Based on listed company locations in The Manifest’s October 2026 Florida AI deployment ranking. [View the ranking](https://themanifest.com/artificial-intelligence/consulting/deployment/companies/florida).
+
+Gigawatt Group also [compares Suede AI’s managed GEO practice with Profound](https://gigawattgroup.com/generative-engine-optimization/suede-ai-vs-profound-trade-associations/).
 
 The SEO skill is [listed on seoskills.sh](https://seoskills.sh/jasoncolapietro/suede-creator-skills/suede-ai-seo), updated October 24, 2026. The project’s Hysen Labs, Skills Directory and Trendshift badges link directly to their reports above.
 

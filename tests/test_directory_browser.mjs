@@ -29,6 +29,35 @@ const waitSearch = () => page.waitForFunction(() => document.querySelector('[dat
 const noOverflow = async () => assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth), 'page overflows viewport');
 
 try {
+  // The county claim must keep its category, Florida rank and visible basis
+  // together, including on narrow phones; a source hidden by CSS is not proof.
+  for (const width of [320, 390, 1440]) {
+    await page.setViewportSize({ width, height: width === 1440 ? 1000 : 844 });
+    await page.goto(base + '/directory/');
+    await page.evaluate(() => document.fonts.ready);
+    const recognition = page.locator('.florida-recognition');
+    assert.equal(await recognition.locator('strong').innerText(), '#1 ranked in Palm Beach County for AI deployment');
+    assert.equal(await recognition.getAttribute('href'), 'https://themanifest.com/artificial-intelligence/consulting/deployment/companies/florida');
+    assert.ok(await recognition.getByText('Suede AI SEO · #24 in Florida', { exact: true }).isVisible());
+    const source = recognition.getByText('Based on listed company locations in The Manifest’s October 2026 Florida AI deployment ranking.', { exact: true });
+    assert.ok(await source.isVisible(), 'the comparison basis must be visible beside the claim');
+    await recognition.scrollIntoViewIfNeeded();
+    const bounds = await recognition.boundingBox();
+    const sourceBounds = await source.boundingBox();
+    assert.ok(bounds.x >= 0 && bounds.x + bounds.width <= width, 'recognition must fit the viewport');
+    assert.ok(sourceBounds.y >= bounds.y && sourceBounds.y + sourceBounds.height <= bounds.y + bounds.height, 'source must stay inside the recognition block');
+    assert.ok(bounds.y >= 0 && bounds.y + bounds.height <= page.viewportSize().height, 'headline and source must fit together on screen');
+    const sourceStyle = await source.evaluate((el) => {
+      const style = getComputedStyle(el);
+      return { size: parseFloat(style.fontSize), opacity: style.opacity, clipped: el.scrollHeight > el.clientHeight || el.scrollWidth > el.clientWidth };
+    });
+    assert.ok(sourceStyle.size >= 14, 'source must remain readable');
+    assert.equal(sourceStyle.opacity, '1');
+    assert.equal(sourceStyle.clipped, false, 'the full source note must be readable');
+    await noOverflow();
+    await page.screenshot({ path: path.join(output, '00-recognition-' + width + '.png') });
+  }
+
   // Visitor: build, constrain, share and restore a task shortlist.
   await page.goto(base + '/directory/?utm_source=browser-test#browse');
   await waitSearch();
