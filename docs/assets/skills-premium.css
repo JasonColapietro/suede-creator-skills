@@ -3,7 +3,8 @@
 .premium-skills { --muted: #a19d94; }
 .premium-skills :is(a, button, summary, input):focus-visible { outline: 2px solid #c8a96e; outline-offset: 4px; }
 .premium-skills :is(button, summary, .btn, .nav-link, .nav-links a, .nav-cta, .row-src) { min-height: 44px; }
-.premium-skills :is(.nav-link, .nav-links a) { display: inline-flex; align-items: center; }
+.premium-skills .nav-link,
+.premium-skills .nav-links a { display: inline-flex; align-items: center; }
 .premium-skills :is(.nav-inner, .nav-right, .hero-band, #hero-grid) { min-width: 0; }
 .premium-skills :is(h1, h2) { text-wrap: balance; }
 .premium-skills :is(.noise-overlay, #hero-bg-ring, #hero-bg-glow, #hero-grain, #hero-vignette, #hero-scroll-hint, .hero-spark) { display: none; }

@@ -150,6 +150,14 @@ try {
   // Skills catalog: mobile browsing and installation are independently
   // reachable, including when the install panel starts collapsed.
   await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto(base + '/?entry=mobile');
+  await noOverflow();
+  await page.locator('.nav-disclosure > summary').press('Enter');
+  assert.ok(await page.getByRole('menu', { name: 'Mobile navigation' }).isVisible());
+  await noOverflow();
+  await page.locator('.nav-disclosure > summary').press('Enter');
+  await page.locator('#flow > details > summary').click();
+  await noOverflow();
   await page.goto(base + '/skills/');
   await noOverflow();
   assert.ok(await page.getByRole('searchbox', { name: 'Filter', exact: true }).isVisible());
