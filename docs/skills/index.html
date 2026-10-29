@@ -467,6 +467,7 @@
     /* Catalog filter: hidden until JS reveals it; the no-JS page is the
        full plain list. Terminal register: mono input, gold focus. */
     .catalog-filter { display: flex; align-items: center; gap: 14px; margin: 22px 0 4px; }
+    .catalog-filter[hidden] { display: none; }
     .filter-label {
       font-family: var(--mono); font-size: 11px; font-weight: 600;
       letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold);
@@ -819,8 +820,9 @@
   </style>
   <link rel="preload" href="../assets/fonts/fraunces-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="../assets/fonts/fraunces-var-italic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../assets/skills-premium.css">
 </head>
-<body>
+<body class="skills-catalog premium-skills">
 <a class="skip-link" href="#main">Skip to content</a>
 <div class="noise-overlay" aria-hidden="true"></div>
 
@@ -856,11 +858,11 @@
 
 <main id="main" tabindex="-1">
   <div class="shell page-head">
-    <p class="eyebrow">Skill catalog. One author.</p>
-    <h1>Suede AI Skills for SEO and <em class="hero-risk">business</em>.</h1>
+    <p class="eyebrow">The Suede AI Skills catalog</p>
+    <h1>A workflow for your <em class="hero-risk">next move</em>.</h1>
     <div class="hero-band">
       <div class="hero-band-text">
-    <p class="lead">Choose a workflow for search visibility, customer acquisition, conversion, or business operations. Each skill is a plain-Markdown <code>SKILL.md</code> file you can inspect before your agent runs it. <strong>Six specialities:</strong> ship (13), craft (7), get found (12), demand channels (9), revenue &amp; retention (12), and strategy &amp; rights (11). Each splits into sub-lanes, and every row links to its deep docs and its source folder on GitHub. Bring your own page, product, or business brief.</p>
+    <p class="lead">Find a workflow for search visibility, conversion, or business operations. Bring your page, product, or business brief; each skill explains the inputs it needs and the work it returns.</p>
 
     <a id="hero-shiplog" data-status="released" href="#changelog" aria-label="Ship log. Released Oct 24 &middot; 89754d4 Five offline SEO tools in the public pack 491 commits &middot; 23 weeks &middot; read the full ship log -&gt;. Jump to the changelog.">
       <span class="hero-spark" aria-hidden="true">
@@ -896,7 +898,7 @@
     </a>
 
       </div>
-      <div class="hero-band-term">
+      <details class="hero-band-term premium-install"><summary>Install the pack</summary>
     <div class="term">
       <div class="term-bar">
         <span class="term-dots" aria-hidden="true"><span></span><span></span><span></span></span>
@@ -909,10 +911,11 @@
       </div>
     </div>
     <p class="term-note">Codex installs the same pack natively with <code>codex plugin add suede-skills@suede-codex</code>; Cursor, Copilot, and Windsurf install through the skills CLI. Every path is on the <a href="../plugins.html">install page</a>, and every folder is readable first on <a href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener">GitHub</a>.</p>
-      </div>
+      </details>
     </div>
 
     <div class="lanemap reveal">
+      <details class="premium-map"><summary>Skills by specialty</summary>
       <div class="lanemap-head">
         <span class="lanemap-title">Where the weight sits</span>
         <span class="lanemap-hint">Jump to a specialty</span>
@@ -960,6 +963,7 @@
           </a>
         </g>
       </svg></div>
+      </details>
       <nav class="lanemap-jump" aria-label="Jump to a catalog specialty">
         <a href="#spec-ship">Ship</a>
         <a href="#spec-craft">Craft</a>
@@ -971,63 +975,14 @@
     </div>
   </div>
 
-  <section class="shell" aria-labelledby="start-here">
-    <h2 id="start-here">Start with the routers</h2>
-    <p class="section-sub">Five entry points cover most sessions. Everything else is one lane down.</p>
-    <div class="grid-2 reveal-group">
-      <article class="cell cell--red">
-        <span class="cell-label">The ship DAG</span>
-        <h3>Suede Graph Flo XR</h3>
-        <p>One prompt in, a shipped change out. Dozens of agents arranged as a graph: research that cites file and line, disjoint build lanes, adversarial review that attacks its own findings, and an evidence gate before anything lands.</p>
-        <div class="btn-row">
-          <a class="btn btn--red" href="suede-graph-flo-xr.html">Suede AI Graph Flo XR Skills</a>
-          <a class="btn" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-graph-flo-xr" target="_blank" rel="noopener">View skill folder</a>
-        </div>
-      </article>
-      <article class="cell">
-        <span class="cell-label">The umbrella</span>
-        <h3>Suede AI Workflow Skills</h3>
-        <p>Install this first. It picks the lane for you, from a staged diff that needs a grade to a launch page that needs words. Every description in the pack names the sibling that should win instead, so the router lands on one skill and two never fight over the same request.</p>
-        <div class="btn-row">
-          <a class="btn btn--gold" href="suede-workflow-skills.html">Suede AI Workflow Skills</a>
-          <a class="btn" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-workflow-skills" target="_blank" rel="noopener">View skill folder</a>
-        </div>
-      </article>
-      <article class="cell cell--red">
-        <span class="cell-label">The ship verdict</span>
-        <h3>Suede Code + Ship Gate</h3>
-        <p>suede-code reviews a staged diff against framework and OWASP checklists, then scores it A to F across 7 lanes, from correctness to deploy readiness. Ask for findings only or the grade only and it runs just that mode. The weakest lane caps the grade, so six A lanes and one F lane is an F. A hardcoded secret, or an auth check a request param can walk around, locks it at F with the file and the line. The ship gate blocks the merge.</p>
-        <div class="btn-row">
-          <a class="btn btn--red" href="suede-code.html">Suede AI Code Skills</a>
-          <a class="btn" href="suede-ci-gate.html">Suede AI CI Gate Skills</a>
-        </div>
-      </article>
-      <article class="cell">
-        <span class="cell-label">The public-work stack</span>
-        <h3>Suede Copy + Design</h3>
-        <p>One skill loads the whole writing stack, another the whole design stack. Copy leaves through a 50-point anti-slop gate that catches filler, manufactured emphasis, and formulaic contrast. Pages leave through an A to F visibility grade. Both hand back a score before anything publishes.</p>
-        <div class="btn-row">
-          <a class="btn btn--gold" href="suede-copy.html">Suede AI Copy Skills</a>
-          <a class="btn btn--gold" href="suede-design.html">Suede AI Design Skills</a>
-          <a class="btn" href="suede-visibility-grader.html">Suede AI Visibility Grader Skills</a>
-        </div>
-      </article>
-      <article class="cell">
-        <span class="cell-label">The growth org</span>
-        <h3>Marketing &amp; growth skills</h3>
-        <p>Most of the pack sits here, and this is the part that runs the operation. Zero employees, one terminal, and 30+ live sites that still need an audience. Start with the plan, then work the channel you need.</p>
-        <div class="btn-row">
-          <a class="btn btn--gold" href="suede-marketing-plan.html">Suede AI Marketing Planning Skills</a>
-          <a class="btn" href="suede-pricing.html">Suede AI Pricing Skills</a>
-          <a class="btn" href="#spec-revenue">Revenue &amp; retention -&gt;</a>
-        </div>
-      </article>
-    </div>
-  </section>
+
 
   <section class="shell" aria-labelledby="catalog">
     <h2 id="catalog">Every skill, by specialty.</h2>
+    <details class="premium-catalog-notes"><summary>About the pack and its six specialties</summary>
+    <p class="lead">Choose a workflow for search visibility, customer acquisition, conversion, or business operations. Each skill is a plain-Markdown <code>SKILL.md</code> file you can inspect before your agent runs it. <strong>Six specialities:</strong> ship (13), craft (7), get found (12), demand channels (9), revenue &amp; retention (12), and strategy &amp; rights (11). Each splits into sub-lanes, and every row links to its deep docs and its source folder on GitHub. Bring your own page, product, or business brief.</p>
     <p class="section-sub">Six specialities, each split into lanes. A row opens the skill's docs page; the folder link beside it opens the source on GitHub, so you can read the workflow before you install it.</p>
+    </details>
 
     <div class="catalog-bar-sentinel" aria-hidden="true"></div>
     <div class="catalog-bar catalog-filter" hidden>
@@ -1180,6 +1135,60 @@
         <div class="row-wrap"><a class="row" href="./suede-sync-packaging.html"><b>Suede AI Sync Packaging Skills</b><span>Prepares sync-style review packages without placement promises, clearance claims, outreach claims, or a Suede promo CTA.</span></a><a class="row-src" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-sync-packaging" target="_blank" rel="noopener" aria-label="suede-sync-packaging source folder on GitHub"><span>src</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 2.5h5v5"/><path d="M9.5 2.5 2.5 9.5"/></svg></a></div>
       </div>
     </section>
+  </section>
+
+  <section class="shell" aria-labelledby="start-here">
+    <h2 id="start-here">Start with the routers</h2>
+    <p class="section-sub">Five entry points cover most sessions. Everything else is one lane down.</p>
+    <div class="grid-2 reveal-group">
+      <article class="cell cell--red">
+        <span class="cell-label">The ship DAG</span>
+        <h3>Suede Graph Flo XR</h3>
+        <p>One prompt in, a shipped change out. Dozens of agents arranged as a graph: research that cites file and line, disjoint build lanes, adversarial review that attacks its own findings, and an evidence gate before anything lands.</p>
+        <div class="btn-row">
+          <a class="btn btn--red" href="suede-graph-flo-xr.html">Suede AI Graph Flo XR Skills</a>
+          <a class="btn" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-graph-flo-xr" target="_blank" rel="noopener">View skill folder</a>
+        </div>
+      </article>
+      <article class="cell">
+        <span class="cell-label">The umbrella</span>
+        <h3>Suede AI Workflow Skills</h3>
+        <p>Install this first. It picks the lane for you, from a staged diff that needs a grade to a launch page that needs words. Every description in the pack names the sibling that should win instead, so the router lands on one skill and two never fight over the same request.</p>
+        <div class="btn-row">
+          <a class="btn btn--gold" href="suede-workflow-skills.html">Suede AI Workflow Skills</a>
+          <a class="btn" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-workflow-skills" target="_blank" rel="noopener">View skill folder</a>
+        </div>
+      </article>
+      <article class="cell cell--red">
+        <span class="cell-label">The ship verdict</span>
+        <h3>Suede Code + Ship Gate</h3>
+        <p>suede-code reviews a staged diff against framework and OWASP checklists, then scores it A to F across 7 lanes, from correctness to deploy readiness. Ask for findings only or the grade only and it runs just that mode. The weakest lane caps the grade, so six A lanes and one F lane is an F. A hardcoded secret, or an auth check a request param can walk around, locks it at F with the file and the line. The ship gate blocks the merge.</p>
+        <div class="btn-row">
+          <a class="btn btn--red" href="suede-code.html">Suede AI Code Skills</a>
+          <a class="btn" href="suede-ci-gate.html">Suede AI CI Gate Skills</a>
+        </div>
+      </article>
+      <article class="cell">
+        <span class="cell-label">The public-work stack</span>
+        <h3>Suede Copy + Design</h3>
+        <p>One skill loads the whole writing stack, another the whole design stack. Copy leaves through a 50-point anti-slop gate that catches filler, manufactured emphasis, and formulaic contrast. Pages leave through an A to F visibility grade. Both hand back a score before anything publishes.</p>
+        <div class="btn-row">
+          <a class="btn btn--gold" href="suede-copy.html">Suede AI Copy Skills</a>
+          <a class="btn btn--gold" href="suede-design.html">Suede AI Design Skills</a>
+          <a class="btn" href="suede-visibility-grader.html">Suede AI Visibility Grader Skills</a>
+        </div>
+      </article>
+      <article class="cell">
+        <span class="cell-label">The growth org</span>
+        <h3>Marketing &amp; growth skills</h3>
+        <p>Most of the pack sits here, and this is the part that runs the operation. Zero employees, one terminal, and 30+ live sites that still need an audience. Start with the plan, then work the channel you need.</p>
+        <div class="btn-row">
+          <a class="btn btn--gold" href="suede-marketing-plan.html">Suede AI Marketing Planning Skills</a>
+          <a class="btn" href="suede-pricing.html">Suede AI Pricing Skills</a>
+          <a class="btn" href="#spec-revenue">Revenue &amp; retention -&gt;</a>
+        </div>
+      </article>
+    </div>
   </section>
 
   <section class="shell" aria-labelledby="field-notes">
@@ -1550,6 +1559,11 @@
       <span>Built by <strong>Jason Colapietro</strong> / Suede AI</span>
     </div>
     <div class="footer-links">
+      <a href="#changelog">Changelog</a>
+      <a href="../book/">Book</a>
+      <a href="../blog/">Blog</a>
+      <a href="../copy.html">Copy Bank</a>
+      <a href="../cracked.html">Cracked Devs</a>
       <a href="https://x.com/johnnysuede" target="_blank" rel="noopener">@johnnysuede</a>
       <span class="footer-divider" aria-hidden="true">|</span>
       <a href="https://suedeai.ai" target="_blank" rel="noopener">suedeai.ai</a>
@@ -1767,11 +1781,12 @@
         else vis[i - 1].focus();
       }
     });
-    bar.hidden = false;
     var initial = "";
     try { initial = new URLSearchParams(window.location.search).get("q") || ""; } catch (err) {}
     if (initial) input.value = initial;
     apply(false);
+    bar.hidden = false;
+    document.body.classList.add("catalog-filter-ready");
   })();
 </script>
 <script>

@@ -1589,21 +1589,20 @@ function renderHub() {
   const repoRow = (r) =>
     `          <a class="link-row" href="${rel(here, r.target)}"><b>${esc(r.repo)}</b><span>${plural(r.skills.length, "skill")} &middot; ${esc(catBySlug.get(r.primary).label)}${r.lists.length ? ` &middot; in ${plural(r.lists.length, "list")}` : ""}</span></a>`;
   const allRepos = [...linkedRepos].sort((a, b) => a.repo.toLowerCase().localeCompare(b.repo.toLowerCase()));
-  const body = `${bc.html}
-      <div class="directory-intro">
-        <div><p class="lead">Find the right skill for your next task.</p><p>Search ${fmt(data.skills.length)} agent skills for Claude Code, Codex and Cursor. Inspect the source. Choose what to install.</p><p class="directory-snapshot">${fmt(repos.size)} repositories <span aria-hidden="true"> / </span> ${categories.length} categories <span aria-hidden="true"> / </span> ${openPct}% openly licensed</p></div>
-        <aside class="grade-guide" aria-label="Suede AI quality grades"><div class="grade-guide-shields"><img src="badges/grade-a.svg" alt="Suede grade A: 90–99" width="96" height="105"><img src="badges/grade-b.svg" alt="Suede grade B: 80–89" width="96" height="105"></div><p><b>Structure. Description. Depth. Maintenance.</b><br>Scored 0–99. <a href="methodology/">What the scores measure →</a></p></aside>
-      </div>
-      <a class="featured-callout" href="featured/"><span><span class="featured-kind">The editorial selection</span><strong>Featured projects</strong><span>${listPhrase(EDITORIAL.projects.map((p) => esc(p.name)))}: explore the reviewed projects.</span></span><span aria-hidden="true">↗</span></a>
+  const body = `
       <section class="directory-browser" id="browse" aria-labelledby="browse-title" data-directory-browser>
-        <div class="browse-heading"><h2 id="browse-title">Explore the directory</h2><span class="muted">Public source. Clear license.</span></div>
+        <div class="browse-heading"><h2 id="browse-title">Find your next skill</h2><a class="shortlist-jump" href="#task-shortlist" hidden>Your shortlist <span aria-hidden="true">↓</span></a></div>
         <form class="discovery-controls" role="search" hidden>
           <label for="directory-query">Search skills</label>
           <div class="search-line"><span aria-hidden="true" class="search-icon">⌕</span><input id="directory-query" name="q" type="search" placeholder="Try SEO audits, React, or code review" autocomplete="off" aria-describedby="search-help" aria-keyshortcuts="Control+k Meta+k"><button type="button" data-clear>Clear</button><kbd aria-hidden="true">Ctrl K</kbd></div>
           <p id="search-help" class="muted">Search by task, skill name or publisher.</p>
           <div class="discovery-filters"><label>Category<select name="category"><option value="">All categories</option>${categories.map((c) => `<option value="${esc(c.slug)}">${esc(c.title)}</option>`).join("")}</select></label><label>Quality grade<select name="grade"><option value="">All grades</option>${GRADE_BANDS.map(([g, band]) => `<option value="${g}">${g} · ${band}</option>`).join("")}</select></label><label>Sort by<select name="sort"><option value="curated">Most-cited collections</option><option value="name">Name A–Z</option><option value="score">Quality score</option></select></label></div>
         </form>
-        <section class="task-shortlist" aria-labelledby="shortlist-title" data-shortlist hidden>
+        <div class="discovery-layout">
+          <aside class="category-rail"><details open><summary id="categories">Browse ${categories.length} categories</summary><nav aria-label="Skill categories"><a href="./" data-category="" aria-current="true"><span>All skills</span><span class="count-chip">${fmt(data.skills.length)}</span></a>${catCards}</nav></details></aside>
+          <div class="discovery-content"><div class="result-heading"><h3 data-result-title>Start exploring</h3><span class="muted" role="status" aria-live="polite" data-results-status>${starters.length} skills to explore</span></div><div data-search-error hidden><p>Search could not load. Try again, or browse a category.</p><button type="button" data-retry>Try again</button></div><div class="search-loading" hidden aria-hidden="true"><span></span><span></span><span></span></div><div data-search-results>${starterRows}</div><div class="search-empty" hidden><h3>No skills match these filters</h3><p>Try fewer words or a broader category.</p><button type="button" data-reset>Clear all filters</button></div><button type="button" class="load-more" data-load-more hidden>Show more skills</button><noscript><p>Choose a category to browse every listed skill. Search is available with JavaScript enabled.</p></noscript></div>
+        </div>
+        <section class="task-shortlist" id="task-shortlist" aria-labelledby="shortlist-title" data-shortlist hidden>
           <div class="browse-heading"><h3 id="shortlist-title">Your task shortlist</h3><span class="muted" data-shortlist-count>0 of 5 skills</span></div>
           <label for="shortlist-task">What are you working on?</label>
           <input id="shortlist-task" type="text" maxlength="120" placeholder="For example: review a React checkout" data-shortlist-task>
@@ -1612,11 +1611,9 @@ function renderHub() {
           <p role="status" aria-live="polite" data-shortlist-status></p>
           <details data-shortlist-export hidden><summary>Copy your shortlist as Markdown</summary><div class="snippet"><div class="snippet-head"><span>Task, scores and report links</span><button type="button" data-copy-target="shortlist-markdown">Copy shortlist</button></div><pre><code id="shortlist-markdown"></code></pre></div></details>
         </section>
-        <div class="discovery-layout">
-          <aside class="category-rail"><details open><summary id="categories">Browse ${categories.length} categories</summary><nav aria-label="Skill categories"><a href="./" data-category="" aria-current="true"><span>All skills</span><span class="count-chip">${fmt(data.skills.length)}</span></a>${catCards}</nav></details></aside>
-          <div class="discovery-content"><div class="result-heading"><h3 data-result-title>Start exploring</h3><span class="muted" role="status" aria-live="polite" data-results-status>${starters.length} skills to explore</span></div><div data-search-error hidden><p>Search could not load. Try again, or browse a category.</p><button type="button" data-retry>Try again</button></div><div class="search-loading" hidden aria-hidden="true"><span></span><span></span><span></span></div><div data-search-results>${starterRows}</div><div class="search-empty" hidden><h3>No skills match these filters</h3><p>Try fewer words or a broader category.</p><button type="button" data-reset>Clear all filters</button></div><button type="button" class="load-more" data-load-more hidden>Show more skills</button><noscript><p>Choose a category to browse every listed skill. Search is available with JavaScript enabled.</p></noscript></div>
-        </div>
       </section>
+      <a class="featured-callout" href="featured/"><span><span class="featured-kind">The editorial selection</span><strong>Featured projects</strong><span>${listPhrase(EDITORIAL.projects.map((p) => esc(p.name)))}: explore the reviewed projects.</span></span><span aria-hidden="true">↗</span></a>
+      <aside class="directory-scoring" aria-label="Suede AI quality grades"><p><b>Structure. Description. Depth. Maintenance.</b> Every skill has a published quality score from 0–99.</p><a href="methodology/">What the scores measure →</a></aside>
 ${campaignPanel(here, campaignVariant("home-hero-secondary", here), { quiet: true })}
 ${guideLinksPanel(here, GUIDES, "Guides")}${GUIDES.length ? `\n      <p><a href="${rel(here, GUIDES_PATH)}">All agent skills guides</a></p>` : ""}
       <section class="panel" aria-labelledby="cited-title">
@@ -1638,6 +1635,12 @@ ${official.slice(0, 24).map(repoRow).join("\n")}
         <p>The directory reads every SKILL.md in the repositories cited by at least two of ${plural(data.sources.length, "curated list")}, including ${data.sources.slice(0, 3).map(listLink).join(", ")}, plus the official collections those lists name and accepted listing requests. Each skill runs through the Suede Skill Check. Skills that pass the required frontmatter check, declare a license and pass at least six of seven graded checks are listed with a quality score from 0 to 99, one listing per skill: when a copy of a skill appears in several repositories, the copy in the most-cited repository keeps the listing. <a href="${rel(here, "directory/methodology/")}">Read the full method</a>.</p>
       </section>
 ${servicesCta("hub", null, here)}
+      <a class="florida-recognition" href="https://themanifest.com/artificial-intelligence/consulting/deployment/companies/florida">
+        <strong>TOP 24 IN FLORIDA</strong>
+        <span class="florida-category">AI deployment developers</span>
+        <span class="florida-detail">Suede AI SEO · Ranked #24 · October 2026</span>
+        <span class="florida-source">View ranking <span aria-hidden="true">↗</span></span>
+      </a>
 ${badgeBlock(here, {
   badgePath: "directory/badge.svg",
   value: "listed",
@@ -1669,15 +1672,14 @@ ${FAQ.map(([q, a]) => `        <h3>${esc(q)}</h3>\n        <p>${esc(a)}${q === "
     title,
     description,
     keywords,
-    h1Html: `      <div class="eyebrow">Suede AI Skills Directory</div>
-      <h1>Claude Code Skills Directory <span class="h1-sub">Agent skills for Claude, Codex and Cursor, graded</span></h1>
-      ${fs.existsSync(path.join(repoRoot, "directory/agents.json")) ? `<p class="directory-type-switch"><strong>Skills</strong> · <a href="${rel(here, "directory/agents/")}">Browse AI agents →</a></p>` : ""}
-      <a class="florida-recognition" href="https://themanifest.com/artificial-intelligence/consulting/deployment/companies/florida">
-        <strong>TOP 24 IN FLORIDA</strong>
-        <span class="florida-category">AI deployment developers</span>
-        <span class="florida-detail">Suede AI SEO · Ranked #24 · October 2026</span>
-        <span class="florida-source">View ranking <span aria-hidden="true">↗</span></span>
-      </a>`,
+    h1Html: `${bc.html}
+      <header class="directory-hero">
+        <div class="eyebrow">Suede AI · The skills directory</div>
+        <h1>Claude Code Skills Directory</h1>
+        <p class="lead">Find the right skill for your next task. Search ${fmt(data.skills.length)} agent skills for Claude Code, Codex and Cursor, graded and linked to source.</p>
+        <p class="directory-snapshot"><span><b>${fmt(repos.size)}</b> repositories</span><span><b>${categories.length}</b> categories</span><span><b>${openPct}%</b> openly licensed</span></p>
+      </header>
+      ${fs.existsSync(path.join(repoRoot, "directory/agents.json")) ? `<nav class="directory-type-switch" aria-label="Directory type"><a href="./" aria-current="page">Skills</a><a href="${rel(here, "directory/agents/")}">AI agents <span aria-hidden="true">↗</span></a></nav>` : ""}`,
     body,
     jsonld: [
       {

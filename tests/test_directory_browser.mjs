@@ -110,6 +110,13 @@ try {
   assert.ok(await fallback.locator('.skill-table tbody tr').count() > 0);
   await fallback.goto(base + sample.href);
   assert.equal(await fallback.getByRole('link', { name: 'Download report', exact: true }).count(), 1);
+  await fallback.goto(base + '/skills/');
+  // The native mobile menu starts open without scripts; visitors can close it.
+  await fallback.locator('.nav-disclosure > summary').click();
+  assert.ok(await fallback.getByRole('navigation', { name: 'Jump to a catalog specialty' }).isVisible());
+  assert.ok(await fallback.getByRole('searchbox', { name: 'Filter', exact: true }).isHidden());
+  await fallback.locator('.premium-install > summary').click();
+  assert.ok(await fallback.locator('.premium-install').getByText('codex plugin add suede-skills@suede-codex', { exact: true }).isVisible());
   await noJs.close();
   await page.route('**/search-index.json', (route) => route.abort());
   await page.goto(base + '/directory/');
@@ -117,8 +124,47 @@ try {
   assert.ok(await page.locator('[data-shortlist]').isHidden());
   await page.locator('.category-rail summary').click();
   assert.ok(await page.getByRole('navigation', { name: 'Skill categories' }).isVisible());
+
+  // Skills home: a compact navigation must fit a laptop, and links into
+  // collapsed source sections must both reveal and scroll to their target.
+  await page.setViewportSize({ width: 1280, height: 900 });
+  await page.goto(base + '/');
+  await noOverflow();
+  const foundLane = page.locator('#lane-found');
+  const expectLaneInView = () => page.waitForFunction(() => {
+    const target = document.getElementById('lane-found');
+    const rect = target.getBoundingClientRect();
+    return target.closest('details').open && rect.top >= 0 && rect.top < innerHeight / 2;
+  });
+  await page.locator('.lane-row[href="#lane-found"]').click();
+  await expectLaneInView();
+  assert.equal(await foundLane.evaluate((el) => el === document.activeElement), true);
+  // Repeating the same fragment does not fire hashchange. It still needs to
+  // reopen the section after the visitor closes its native disclosure.
+  await page.locator('#catalog > details > summary').click();
+  await page.locator('.lane-row[href="#lane-found"]').click();
+  await expectLaneInView();
+  await page.goto(base + '/?entry=direct#lane-found');
+  await expectLaneInView();
+
+  // Skills catalog: mobile browsing and installation are independently
+  // reachable, including when the install panel starts collapsed.
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto(base + '/skills/');
+  await noOverflow();
+  assert.ok(await page.getByRole('searchbox', { name: 'Filter', exact: true }).isVisible());
+  await page.getByRole('searchbox', { name: 'Filter', exact: true }).fill('zzno-skill-matches-zz');
+  await page.locator('.filter-empty').waitFor({ state: 'visible' });
+  await page.getByRole('searchbox', { name: 'Filter', exact: true }).fill('');
+  await page.locator('.premium-install > summary').click();
+  const installCopy = page.getByRole('button', { name: 'Copy install commands', exact: true });
+  assert.ok(await installCopy.isVisible());
+  assert.ok((await page.locator('.premium-install').textContent()).includes('codex plugin add suede-skills@suede-codex'));
+  await page.screenshot({ path: path.join(output, '06-skills-catalog-mobile.png') });
+  await noOverflow();
+
   assert.deepEqual(errors, []);
-  console.log('Directory browser checks passed: shortlist persistence/limits/export, report download/review scope, desktop/mobile overflow, palette contrast, keyboard, no-JS and fetch failure. Screenshots: ' + output);
+  console.log('Directory and skills browser checks passed: shortlist persistence/limits/export, report download/review scope, desktop/mobile overflow, palette contrast, keyboard, no-JS, fetch failure, disclosure deep links and catalog search/install. Screenshots: ' + output);
 } finally {
   await browser.close();
   await new Promise((resolve) => server.close(resolve));
