@@ -89,7 +89,7 @@
     "PHOTO_SOURCES.md": "8308744626a3f68ce2aa48ef0b467f1945911702c81c6142098b817461886501",
     "PRODUCT.md": "3d4ecd8453466642410b543d6ef6ead4616435b9bcaa5e8a1283e9cda63f3111",
     "PROMO.md": "8afde44a484e41d6a065dd476fb0428e9c990ec6f7542860848bbfda36d63ffd",
-    "README.md": "d3f3aa5b50d1e207072892d4321e1a8065618249de397f993e1193a92d67ef97",
+    "README.md": "9fa5c5b9d5780dc5807bd2a6b2545285720c2763d42634c2ac54b52343a73ef8",
     "SECURITY.md": "5404f465d5342d9f8aeccd4502fc7acee2379c314dea1d135f7340dc30faa2a3",
     "SKILL-CARDS.md": "9a0cccf6852ac4ea4b9b64d5a195aed6d246f97f02429312a5e392cad4ce25aa",
     "VERSION": "6f15c2bfbd4fb58b7b84f0a8f8036f4d6f3112cd3f0cb759dffe86cdd696b650",
@@ -782,5 +782,15 @@
   "external_after_sha256": "5def384a11bad9f50f95ad0a3ed00515edd204ac9ac8532bf6d6a195ab7a1a37",
   "security_scan_status": "not_scanned",
   "dataset_before_sha256": "803c46586374526f190024756c36173b0524e6125293eeffc9a760af3592707f",
-  "dataset_after_sha256": "77d117e652cbab258d7883c567164c4d03cc644f93baf7df09ebe4c04e454f25"
+  "dataset_after_sha256": "77d117e652cbab258d7883c567164c4d03cc644f93baf7df09ebe4c04e454f25",
+  "maintenance_updates": [
+    {
+      "date": "2026-10-30",
+      "path": "README.md",
+      "source_revision": "a3b103732a4a1bed44684769ac6b1e030fb3dd02",
+      "previous_sha256": "d3f3aa5b50d1e207072892d4321e1a8065618249de397f993e1193a92d67ef97",
+      "current_sha256": "9fa5c5b9d5780dc5807bd2a6b2545285720c2763d42634c2ac54b52343a73ef8",
+      "reason": "Correct dated recognition copy and badge to Florida #25 and derived Palm Beach County #1. Skill source, assessment date, scores and security status are unchanged."
+    }
+  ]
 }
