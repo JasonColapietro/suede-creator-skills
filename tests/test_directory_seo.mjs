@@ -293,3 +293,19 @@ test("the 404 page stays out of the index", () => {
   assert.match(html, /<meta name="robots" content="noindex">/);
   assert.doesNotMatch(html, /rel="canonical"/);
 });
+
+test("meta descriptions fit a result snippet and rarely end mid-sentence", () => {
+  const all = indexable.filter((p) => p.description);
+  const over = all.filter((p) => p.description.length > 155).map((p) => p.rel);
+  assert.deepEqual(over, [], `descriptions over 155 characters: ${over.slice(0, 5).join(", ")}`);
+  const repoCut = all.filter((p) => p.rel.split("/").length === 4 && p.description.includes("\u2026")).map((p) => p.rel);
+  assert.deepEqual(repoCut, [], `repository descriptions cut mid-sentence: ${repoCut.slice(0, 5).join(", ")}`);
+  const cut = all.filter((p) => p.description.includes("\u2026")).length;
+  assert.ok(cut <= all.length * 0.1, `${cut} of ${all.length} descriptions end mid-sentence`);
+});
+
+test("repository H1s read owner/repo with a graded skill count", () => {
+  const html = fs.readFileSync(path.join(docs, "directory", "anthropics", "skills", "index.html"), "utf8");
+  assert.match(html, /<h1>anthropics\/skills <span class="h1-sub">\d+ graded agent skills from Anthropic<\/span><\/h1>/);
+  assert.doesNotMatch(html, /agent skills by anthropics/);
+});

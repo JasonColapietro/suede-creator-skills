@@ -8,7 +8,7 @@ import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { build, rewriteUrl, rewriteText, OLD, NEW } from "../scripts/build-directory-site.mjs";
+import { build, rewriteUrl, rewriteText, rehomeWebsite, SITE_NODE, OLD, NEW } from "../scripts/build-directory-site.mjs";
 
 const page = `${OLD}/directory/obra/superpowers/index.html`;
 
@@ -133,4 +133,25 @@ test("standalone reports verify independently and match their displayed versions
       assert.equal(fs.readFileSync(sourceFile, "utf8"), before);
     }
   } finally { fs.rmSync(out, { recursive: true, force: true }); }
+});
+
+test("the standalone home names suedeai.directory as its own WebSite", () => {
+  const html = `<script type="application/ld+json">\n    {"@type":"CollectionPage","isPartOf":{"@type":"WebSite","@id":"${OLD}/#website","name":"Suede AI Skills","url":"${OLD}/"}}\n  </script>`;
+  const out = rehomeWebsite(html);
+  const ld = JSON.parse(out.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
+  assert.deepEqual(ld.isPartOf, SITE_NODE);
+  assert.equal(SITE_NODE["@id"], `${NEW}/#website`);
+  assert.ok(!out.includes(`${OLD}/#website`));
+  const other = `<script type="application/ld+json">{"@type":"WebPage"}</script>`;
+  assert.equal(rehomeWebsite(other), other, "JSON-LD without the old WebSite stays byte-identical");
+  const out2 = fs.mkdtempSync(path.join(os.tmpdir(), "suedeai-directory-site-"));
+  try {
+    build(out2);
+    const home = fs.readFileSync(path.join(out2, "index.html"), "utf8");
+    assert.ok(home.includes(`"@id": "${NEW}/#website"`), "home page JSON-LD names the directory WebSite");
+    assert.ok(!home.includes(`${OLD}/#website`), "home page still names the skills site as its WebSite");
+    const notFound = fs.readFileSync(path.join(out2, "404.html"), "utf8");
+    assert.ok(notFound.includes("This page is not on suedeai.directory."));
+    assert.ok(!notFound.includes("This page is not on skills.suedeai.ai."));
+  } finally { fs.rmSync(out2, { recursive: true, force: true }); }
 });

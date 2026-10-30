@@ -980,10 +980,38 @@ function skillTitle(s) {
   return `${name} Skill`;
 }
 
+// Whole sentences only, up to max characters, or null when not even the first
+// sentence fits. A meta description cut mid-sentence ("…") reads as broken in
+// a search result.
+function fitSentences(text, max) {
+  const t = ensureSentence(String(text || "").replace(/\s+/g, " ").trim());
+  if (t.length <= max) return t;
+  let out = "";
+  for (const part of t.match(/[^.!?]+[.!?]+(?=\s|$)/g) || []) {
+    const next = `${out} ${part.trim()}`.trim();
+    if (next.length > max) break;
+    out = next;
+  }
+  return out || null;
+}
+
+const META_MAX = 155;
+const META_MIN = 70;
 function skillDescription(s, withName) {
   const tail = /^See /.test(s.license) ? ` From ${s.repo}.` : ` From ${s.repo}, ${s.license}.`;
   const head = withName ? `${displayName(s)}: ` : "";
-  const room = 158 - tail.length - head.length;
+  // Prefer whole sentences with the repo and license credit, then whole
+  // sentences alone, and cut mid-sentence only when the first sentence alone
+  // is too long for a result snippet.
+  const whole = fitSentences(s.summary, META_MAX - tail.length - head.length);
+  if (whole && `${head}${whole}${tail}`.length >= META_MIN) return `${head}${whole}${tail}`;
+  const alone = fitSentences(s.summary, META_MAX - head.length);
+  if (alone && `${head}${alone}`.length >= META_MIN) return `${head}${alone}`;
+  // The first sentence alone is too long: end it at its last clause break.
+  const room = META_MAX - tail.length - head.length;
+  const t = String(s.summary || "").replace(/\s+/g, " ").trim();
+  const clause = t.slice(0, room).lastIndexOf(", ");
+  if (clause > room * 0.6) return `${head}${t.slice(0, clause).replace(/[\s,;:(-]+$/, "")}.${tail}`;
   return `${head}${trimTo(ensureSentence(s.summary), room)}${tail}`.replace(/…\./, "…");
 }
 // Two skills whose trimmed summaries match would share a meta description;
@@ -1358,7 +1386,12 @@ ${relatedRepos.map((o) => `          <a class="link-row" href="${rel(here, o.tar
   const ownCollection = r.repo.toLowerCase() === "jasoncolapietro/suede-creator-skills";
   const title = ownCollection ? `Suede AI Skills: ${r.skills.length} Agent Skills` : [`${r.repo} Agent Skills (${r.skills.length}) | Suede AI`, `${r.repo} Agent Skills (${r.skills.length})`, `${r.name} Agent Skills by ${r.owner}`, `${trimTo(r.repo, 46)} Agent Skills`].find((t) => t.length <= 60);
   const top = r.skills.slice(0, 3).map((s) => displayName(s)).join(", ");
-  const description = trimTo(`${plural(r.skills.length, "agent skill")} from ${r.repo}, including ${top}. Install steps, Suede Skill Check grades and a README badge.`, 158);
+  // Name as many top skills as fit, so the description stays a whole sentence.
+  const repoLead = `${plural(r.skills.length, "agent skill")} from ${r.repo}`;
+  const repoTail = "Install steps, Suede Skill Check grades and a README badge.";
+  const description = [3, 2, 1].map((k) => `${repoLead}, including ${r.skills.slice(0, k).map((s) => displayName(s)).join(", ")}. ${repoTail}`)
+    .concat(`${repoLead}. ${repoTail}`)
+    .find((d) => d.length <= META_MAX) || trimTo(`${repoLead}, including ${top}. ${repoTail}`, META_MAX);
   const keywords = r.indexable ? setKeywords(here, ownCollection ? ["marketing and workflow agent skills", "code review agent skills", "creator tools", "agent skills directory", "Suede AI Skills"] : [`${r.repo} skills`, `${r.name} skills`, `${r.owner} agent skills`, `${r.name} claude skills`, `${primary.short} agent skills`, "agent skills directory"]) : null;
   const collection = {
     "@context": "https://schema.org",
@@ -1384,7 +1417,7 @@ ${relatedRepos.map((o) => `          <a class="link-row" href="${rel(here, o.tar
     description,
     keywords,
     h1Html: `      <div class="eyebrow">Skill collection &middot; ${esc(r.owner)}</div>
-      <h1>${esc(ownCollection ? "Suede AI Skills" : r.name)} <span class="h1-sub">agent skills by ${esc(r.owner)}</span></h1>`,
+      <h1>${esc(ownCollection ? "Suede AI Skills" : r.repo)} <span class="h1-sub">${plural(r.skills.length, "graded agent skill")} from ${esc(r.official && r.publisher ? r.publisher : r.owner)}</span></h1>`,
     body,
     jsonld: [collection, bc.ld],
     robots: r.indexable ? undefined : "noindex, follow",
