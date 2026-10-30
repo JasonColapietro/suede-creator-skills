@@ -48,10 +48,42 @@ export function rewriteUrl(value, pageUrl) {
   return `${OLD}${p}${tail}`;
 }
 
+// On its own domain the directory is its own WebSite. The pages were built as
+// part of the Suede AI Skills site, so their isPartOf named that site; search
+// engines take the site name from this node, so it has to name this host.
+export const SITE_NODE = {
+  "@type": "WebSite",
+  "@id": `${NEW}/#website`,
+  name: "Suede AI Skills Directory",
+  url: `${NEW}/`,
+  inLanguage: "en",
+  publisher: { "@id": "https://suedeai.ai/#organization" },
+};
+const LD_RE = /(<script type="application\/ld\+json">)([\s\S]*?)(<\/script>)/g;
+
+export function rehomeWebsite(html) {
+  return html.replace(LD_RE, (whole, open, body, close) => {
+    let data;
+    try { data = JSON.parse(body); } catch { return whole; }
+    let changed = false;
+    const walk = (v) => {
+      if (Array.isArray(v)) return v.map(walk);
+      if (!v || typeof v !== "object") return v;
+      if (v["@type"] === "WebSite" && v["@id"] === `${OLD}/#website`) { changed = true; return { ...SITE_NODE }; }
+      return Object.fromEntries(Object.entries(v).map(([k, x]) => [k, walk(x)]));
+    };
+    const next = walk(data);
+    if (!changed) return whole;
+    const indent = body.match(/\n([ \t]*)\S[^\n]*\n?\s*$/)?.[1] ?? "";
+    return `${open}\n${JSON.stringify(next, null, 2).split("\n").map((l) => indent + l).join("\n")}\n${indent.slice(2)}${close}`;
+  });
+}
+
 export function rewriteText(text, ext, pageUrl) {
   let out = text;
   if (ext === ".html" || ext === ".svg") out = out.replace(ATTR_RE, (_, attr, v) => `${attr}="${rewriteUrl(v, pageUrl)}"`);
   out = out.replace(OLD_DIR_RE, NEW);
+  if (ext === ".html") out = rehomeWebsite(out);
   // The search index and report files carry root-absolute listing paths.
   if (ext === ".json" || ext === ".js") out = out.replace(/(["'])\/directory\//g, "$1/");
   return out;
@@ -104,7 +136,9 @@ export function build(out) {
   copyTree(path.join(docs, "assets"), path.join(out, "assets"), null);
 
   const notFound = path.join(docs, "404.html");
-  if (fs.existsSync(notFound)) fs.writeFileSync(path.join(out, "404.html"), rewriteText(fs.readFileSync(notFound, "utf8"), ".html", `${OLD}/404.html`));
+  // The shared 404 says which host the visitor missed; on this host, say this one.
+  if (fs.existsSync(notFound)) fs.writeFileSync(path.join(out, "404.html"), rewriteText(fs.readFileSync(notFound, "utf8"), ".html", `${OLD}/404.html`)
+    .replaceAll("This page is not on skills.suedeai.ai.", "This page is not on suedeai.directory."));
 
   const sitemap = fs.readFileSync(path.join(docs, "sitemap.xml"), "utf8");
   const urls = [...sitemap.matchAll(/  <url>[\s\S]*?<\/url>\n/g)].map((m) => m[0]).filter((u) => u.includes(`<loc>${OLD}/directory/`));
