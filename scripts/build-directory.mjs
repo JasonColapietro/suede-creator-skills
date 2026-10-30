@@ -298,6 +298,8 @@ function localToday() {
 const catPath = (slug) => `directory/${slug}/`;
 const skillPath = (s) => `directory/${s.repo_slug}/${s.slug}/`;
 const url = (p) => `${BASE}/${p}`;
+const DIRECTORY_HOST = "https://suedeai.directory";
+const movedUrl = (u) => (u === `${BASE}/directory` || u.startsWith(`${BASE}/directory/`) ? `${DIRECTORY_HOST}${u.slice(`${BASE}/directory`.length) || "/"}` : u);
 
 function rel(fromPath, toPath) {
   // Both are paths relative to docs/ ("" is the site root).
@@ -536,7 +538,11 @@ function page({ here, title, description, keywords, h1Html, body, jsonld, ogType
     `    <meta name="description" content="${esc(description)}">`,
     keywords ? `    <meta name="keywords" content="${esc(keywords.join(", "))}">` : null,
     `    <meta name="robots" content="${robots}">`,
-    canonical ? `    <link rel="canonical" href="${pageUrl}">` : null,
+    // The directory lives at suedeai.directory. GitHub Pages still serves this
+    // copy at skills.suedeai.ai/directory/ and cannot send a 301, so each
+    // indexable page names its suedeai.directory URL as canonical and search
+    // engines consolidate there.
+    canonical ? `    <link rel="canonical" href="${movedUrl(pageUrl)}">` : null,
     `    <link rel="icon" href="${a}favicon-64.png" type="image/png">`,
     `    <meta property="og:type" content="${ogType}">`,
     `    <meta property="og:site_name" content="${SITE_NAME}">`,

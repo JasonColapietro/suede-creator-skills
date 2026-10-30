@@ -140,7 +140,7 @@ export function build(out) {
   if (fs.existsSync(notFound)) fs.writeFileSync(path.join(out, "404.html"), rewriteText(fs.readFileSync(notFound, "utf8"), ".html", `${OLD}/404.html`)
     .replaceAll("This page is not on skills.suedeai.ai.", "This page is not on suedeai.directory."));
 
-  const sitemap = fs.readFileSync(path.join(docs, "sitemap.xml"), "utf8");
+  const sitemap = fs.readFileSync(path.join(docs, "directory-sitemap.xml"), "utf8");
   const urls = [...sitemap.matchAll(/  <url>[\s\S]*?<\/url>\n/g)].map((m) => m[0]).filter((u) => u.includes(`<loc>${OLD}/directory/`));
   fs.writeFileSync(path.join(out, "sitemap.xml"),
     `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((u) => u.replace(OLD_DIR_RE, NEW)).join("")}</urlset>\n`);

@@ -150,6 +150,8 @@ test("the standalone home names suedeai.directory as its own WebSite", () => {
     const home = fs.readFileSync(path.join(out2, "index.html"), "utf8");
     assert.ok(home.includes(`"@id": "${NEW}/#website"`), "home page JSON-LD names the directory WebSite");
     assert.ok(!home.includes(`${OLD}/#website`), "home page still names the skills site as its WebSite");
+    const repo = fs.readFileSync(path.join(out2, "anthropics", "skills", "index.html"), "utf8");
+    assert.match(repo, /<link rel="canonical" href="https:\/\/suedeai\.directory\/anthropics\/skills\/">/);
     const notFound = fs.readFileSync(path.join(out2, "404.html"), "utf8");
     assert.ok(notFound.includes("This page is not on suedeai.directory."));
     assert.ok(!notFound.includes("This page is not on skills.suedeai.ai."));

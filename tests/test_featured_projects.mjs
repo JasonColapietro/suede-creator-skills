@@ -185,7 +185,7 @@ test('CoalWash publishes only the complete plugin route with material hook behav
 test('featured page has a discoverable route, truthful structured data and selection context', () => {
   const page = published();
   assert.match(read('docs/directory/index.html'), /class="featured-callout" href="featured\/"/);
-  assert.match(page, /rel="canonical" href="https:\/\/skills\.suedeai\.ai\/directory\/featured\/"/);
+  assert.match(page, /rel="canonical" href="https:\/\/suedeai\.directory\/featured\/"/);
   assert.equal((page.match(/<h1[ >]/g) || []).length, 1);
   const blocks = [...page.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map((m) => JSON.parse(m[1]));
   const collection = blocks.find((x) => x['@type'] === 'CollectionPage');
