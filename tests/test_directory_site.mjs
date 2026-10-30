@@ -38,6 +38,15 @@ test("canonical tags, JSON-LD and search-index paths are rewritten", () => {
   assert.equal(rewriteText('{"href":"/directory/a/b/"}', ".json", page), '{"href":"/a/b/"}');
 });
 
+test("directory link rewrites preserve encoded queries, repeated values and fragments", () => {
+  const tail = "?q=anthropics%2Fskills&pick=a&pick=b&utm_source=shared#results";
+  assert.equal(rewriteUrl(`${OLD}/directory/check/${tail}`, page), `${NEW}/check/${tail}`);
+  assert.equal(rewriteUrl(`/directory/check/${tail}`, page), `/check/${tail}`);
+  assert.equal(rewriteUrl(`../../check/${tail}`, page), `../../check/${tail}`);
+  const html = `<link rel="canonical" href="${NEW}/check/"><a href="${OLD}/directory/check/${tail}">Check</a>`;
+  assert.equal(rewriteText(html, ".html", page), `<link rel="canonical" href="${NEW}/check/"><a href="${NEW}/check/${tail}">Check</a>`);
+});
+
 test("the built site has no old directory URLs and no broken internal links", () => {
   const out = fs.mkdtempSync(path.join(os.tmpdir(), "suedeai-directory-"));
   try {
@@ -71,6 +80,12 @@ test("the built site has no old directory URLs and no broken internal links", ()
         assert.ok(!text.includes(`${OLD}/directory`), `${path.relative(out, p)} still links to ${OLD}/directory`);
         if (!e.name.endsWith(".html")) continue;
         const rel = path.relative(out, p).split(path.sep).join("/");
+        if (e.name === "index.html" && !/<meta name="robots" content="[^"]*noindex/i.test(text)) {
+          const canonical = `${NEW}/${rel.replace(/index\.html$/, "")}`;
+          assert.equal(text.match(/<link rel="canonical" href="([^"]*)"/)?.[1], canonical, rel);
+          assert.ok(sitemap.includes(`<loc>${canonical}</loc>`), `${rel}: missing from sitemap`);
+          assert.doesNotMatch(text, /http-equiv=["']refresh["']/i, `${rel}: refresh would lose shared query state`);
+        }
         for (const m of text.matchAll(/\b(?:href|src|action)="([^"]*)"/g)) {
           if (!m[1] || /^(#|mailto:|tel:|data:|javascript:)/.test(m[1])) continue;
           const u = new URL(m[1], `${NEW}/${rel}`);
