@@ -1,0 +1,54 @@
+{
+  "recorded_at": "2026-10-30T22:08:45.556373+00:00",
+  "npm_test": {
+    "state": "completed",
+    "result": "failed",
+    "scope": "Unchanged main 728becbddfbcb134be24adb057ab964dfdd7863a",
+    "log": "npm-test.log",
+    "initial_attempt": "failed_missing_js_yaml_resolved_with_npm_ci_ignore_scripts",
+    "claim": "Full npm test did not pass. Failures occurred in the unchanged baseline; no changes or root-cause fix attempted.",
+    "exit_code": 1,
+    "reported_tests": 305,
+    "reported_passes": 302,
+    "reported_failures": 3,
+    "failure_suite": "test:ship-cost",
+    "failure_file": "skills/suede-graph-flo-xr/workflows/tests/test_gate_sandbox_staging_safety.mjs",
+    "failure_assertion": "Three link-preservation cases: mode 448 (0700) observed versus 493 (0755) expected at line 41.",
+    "not_run_after_chain_stopped": [
+      "test:contributions",
+      "test:directory",
+      "test:related",
+      "test:awesome",
+      "test:python",
+      "test:seo-offline",
+      "tests/test_first_party_branding.mjs"
+    ],
+    "stopped_manually": false
+  },
+  "security_evaluator_tests": {
+    "state": "completed",
+    "exit_code": 0,
+    "passed": 4,
+    "failed": 0,
+    "log": "security-evaluator-tests.log"
+  },
+  "security_adapter_tests": {
+    "state": "completed",
+    "exit_code": 0,
+    "passed": 7,
+    "failed": 0,
+    "log": "security-adapter-tests.log"
+  },
+  "scanner_self_tests": {
+    "state": "completed",
+    "clean": "passed",
+    "exfil": "failed_as_expected",
+    "fixtures_executed": false
+  },
+  "quality_parity": {
+    "state": "completed",
+    "python": 80,
+    "javascript": 80,
+    "grade": "B"
+  }
+}

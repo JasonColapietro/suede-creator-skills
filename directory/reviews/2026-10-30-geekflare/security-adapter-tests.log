@@ -1,0 +1,16 @@
+test_branch_names_and_arbitrary_hosts_are_not_pinned_sources (test_security_scan.PinnedSourceTests.test_branch_names_and_arbitrary_hosts_are_not_pinned_sources) ... ok
+test_deprecations_are_retained_while_analysis_warnings_block (test_security_scan.PinnedSourceTests.test_deprecations_are_retained_while_analysis_warnings_block) ... ok
+test_failed_acquisition_does_not_prevent_the_next_target (test_security_scan.PinnedSourceTests.test_failed_acquisition_does_not_prevent_the_next_target) ... ok
+test_pinned_archive_must_match_git_blob_inventory (test_security_scan.PinnedSourceTests.test_pinned_archive_must_match_git_blob_inventory) ... ok
+test_runtime_failure_retains_records_already_completed (test_security_scan.PinnedSourceTests.test_runtime_failure_retains_records_already_completed) ... ok
+test_source_writer_never_executes_and_refuses_escape_or_oversize (test_security_scan.PinnedSourceTests.test_source_writer_never_executes_and_refuses_escape_or_oversize) ... ok
+test_worker_normalizes_success_shape_and_marks_unparsed_or_opaque_source_incomplete (test_security_scan.PinnedSourceTests.test_worker_normalizes_success_shape_and_marks_unparsed_or_opaque_source_incomplete) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.015s
+
+OK
+publisher/skills/one: error (source_acquisition_error)
+publisher/skills/two: error (runtime_unavailable_or_no_result)
+self-test/clean: completed (test)
+self-test/exfil: error (test)

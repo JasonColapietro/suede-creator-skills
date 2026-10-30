@@ -1,0 +1,16 @@
+{
+  "scope": {
+    "SKILL.md": "skills/geekflare/SKILL.md",
+    "references/tools.md": "skills/geekflare/references/tools.md"
+  },
+  "packaging": {
+    ".gitignore": ".gitignore",
+    "LICENSE": "LICENSE",
+    "README.md": "README.md",
+    "gemini-extension.json": "gemini-extension.json",
+    "mcp.json": "mcp.json",
+    "plugin.json": "plugin.json",
+    "SKILL.md": "skills/geekflare/SKILL.md",
+    "references/tools.md": "skills/geekflare/references/tools.md"
+  }
+}

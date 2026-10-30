@@ -1,0 +1,184 @@
+{
+  "tooling-main": {
+    "revision": "728becbddfbcb134be24adb057ab964dfdd7863a",
+    "unchanged_against_git": true,
+    "files": [
+      {
+        "path": "AGENTS.md",
+        "size": 5845,
+        "sha256": "186619670118d669829e961f3d767fb6ad7b20ed7dce1a891ac4e8145fbb252e"
+      },
+      {
+        "path": ".agents/docs/domain.md",
+        "size": 2045,
+        "sha256": "25be404b58798b3cb2d51c93dba2ab052fc3a425632185726ac3f5fcff193b99"
+      },
+      {
+        "path": ".agents/docs/issue-tracker.md",
+        "size": 3746,
+        "sha256": "ec8332bb69e7e79e349989e940be481a0c79b552be3acc613e718278bcc5e03d"
+      },
+      {
+        "path": ".agents/docs/triage-labels.md",
+        "size": 1045,
+        "sha256": "4f53c9b40ce2651e3611aa090eaedbd6dbc9b71ef8c5f7e65eac0d8263190d0d"
+      },
+      {
+        "path": "directory/README.md",
+        "size": 17861,
+        "sha256": "3df996f610c47bb423948e6e06ca8b6785dedf9a6b6f3ad18bec454920060965"
+      },
+      {
+        "path": "directory/reviews/2026-10-28-lava.md",
+        "size": 4351,
+        "sha256": "6f7e56f5190126f4e0a38ee892fd52d07620daa31033a01c6b8dbcb22c128853"
+      },
+      {
+        "path": "directory/reviews/2026-10-25-cisco-skill-scanner.md",
+        "size": 4437,
+        "sha256": "ea08c27e85a2632ebc68af1c7ead0bc50b86390e502bb2e79e2c6ef9606a1da5"
+      },
+      {
+        "path": "scripts/directory/parse_skills.py",
+        "size": 17375,
+        "sha256": "c6afe55cd156a84baf1fbe4b40709723a22d7ea3821302da1fbd8e1d4ffc4a4f"
+      },
+      {
+        "path": "scripts/directory/curate.py",
+        "size": 32949,
+        "sha256": "e79ac38fe416c589a1ac24b524c79146feb9b5444b7c88894f0d8b208065960d"
+      },
+      {
+        "path": "scripts/directory/grade.py",
+        "size": 7645,
+        "sha256": "f29f75d089b91b38312510ec8cffe7c0fc50c726e5fd73a84bd15fb9344d7877"
+      },
+      {
+        "path": "scripts/directory/citations.py",
+        "size": 4959,
+        "sha256": "de6e8c5ff86e1006e4ceb740715ee56384e97f39a9c443af83f1c755abf5b54c"
+      },
+      {
+        "path": "scripts/directory/extract_links.py",
+        "size": 1111,
+        "sha256": "da69010bc3e3625cf32b021e31469921e893ba8623a6f28e3460ee5f95481eeb"
+      },
+      {
+        "path": "scripts/directory/badges.mjs",
+        "size": 6254,
+        "sha256": "75a67d9f268b0a57f24d548a60059641c595997359d0cef6b47a31c724f87a26"
+      },
+      {
+        "path": "scripts/directory/refresh.sh",
+        "size": 6413,
+        "sha256": "819f89aa1a79768b4f8e6ad504d8bab9aef052febf81dcd7ef4eec247e9aecd1"
+      },
+      {
+        "path": "scripts/directory/featured.mjs",
+        "size": 7924,
+        "sha256": "5562f5b83c2bf52bd676de52799b078bd0d8443df8a1ec09ad3b88c5cf6c2423"
+      },
+      {
+        "path": "scripts/build-directory.mjs",
+        "size": 157272,
+        "sha256": "1d1839c71ef7b8c840509b87c8f06695f0ea19efaf9edc78d808c6111cb56db0"
+      },
+      {
+        "path": "tests/test_directory_check.py",
+        "size": 23102,
+        "sha256": "dbdeee316b38b58bd4956c1e44063dd4cb44322188cec9c47c3857c46222882b"
+      },
+      {
+        "path": "scripts/check-public-privacy.py",
+        "size": 6242,
+        "sha256": "16b96c695e3ce27a7807b81b1ceb1a2b34f4069a82cdaaf30892673b6efac0cb"
+      },
+      {
+        "path": "scripts/public-privacy-policy.json",
+        "size": 2210,
+        "sha256": "b4e2c6bb06b8ed44ed75e7728a2ec133af0a4b0fdf176b106697f5ccd9c328f2"
+      },
+      {
+        "path": "directory/exclusions.json",
+        "size": 273,
+        "sha256": "56518dd332103724c0c7e2dcf9ff725652f906ef7dc43fc916794d89efa577e7"
+      },
+      {
+        "path": "directory/inclusions.json",
+        "size": 29128,
+        "sha256": "7dbffba93a9656999e1e9c79339e5418614ceec0881fcd57ff94e32d7f3f9de2"
+      },
+      {
+        "path": "package.json",
+        "size": 4521,
+        "sha256": "94844f4fc80d06232afe628e18086f74b720b75863e0f2468d1dabfee27b84c5"
+      },
+      {
+        "path": "package-lock.json",
+        "size": 1472,
+        "sha256": "17484f243e96747ff47adb3331e048689313341c635c7a2934816981330416ba"
+      },
+      {
+        "path": "skills/suede-graph-flo-xr/workflows/tests/test_gate_sandbox_staging_safety.mjs",
+        "size": 2497,
+        "sha256": "00bb3cd62229c5e20d325e09b9b8d86d24bccc9a1ce7d8bd78c123bd57bcbde2"
+      }
+    ]
+  },
+  "tooling-security": {
+    "revision": "fe5dc1757cd6c8ff63aee853564249c00151778d",
+    "unchanged_against_git": true,
+    "files": [
+      {
+        "path": "AGENTS.md",
+        "size": 5845,
+        "sha256": "186619670118d669829e961f3d767fb6ad7b20ed7dce1a891ac4e8145fbb252e"
+      },
+      {
+        "path": "scripts/security/scan.py",
+        "size": 14346,
+        "sha256": "9dcfeb3409f0edf882450fea709398f5a9e45ffecb48401ecafb8d06115cbe86"
+      },
+      {
+        "path": "scripts/security/worker.py",
+        "size": 6740,
+        "sha256": "9b0423ead91a083b4929f436511983f084b4233a1ca75ce685fa2dd300fc3c0d"
+      },
+      {
+        "path": "scripts/security/profile.json",
+        "size": 339,
+        "sha256": "358dc4ff0d2db83e3463f6ccfa1372468fcad6f54641219b3de4c7334b930d2a"
+      },
+      {
+        "path": "scripts/security/evidence.mjs",
+        "size": 5450,
+        "sha256": "0016d5a07126c9fe92c8775561558287a9b94d546685b8e8dcae69a6368a5cde"
+      },
+      {
+        "path": "scripts/security/requirements.txt",
+        "size": 221793,
+        "sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+      },
+      {
+        "path": "scripts/security/requirements.in",
+        "size": 142,
+        "sha256": "0ff96f2f610aa0c49bf966911a0e01ef6d66c2814ba4b1822d8a4696dfc038fd"
+      },
+      {
+        "path": "scripts/security/Dockerfile",
+        "size": 569,
+        "sha256": "e96b39c71ad04ab50b02d6cfb45e6d9ffce0bcc6d7da22a90e703c7da7e516f6"
+      },
+      {
+        "path": "tests/test_security_evidence.mjs",
+        "size": 3344,
+        "sha256": "a5c460240154b0da289174d4b69f28eaeaef512eb3c8f74e483e1d0bebfad2ba"
+      },
+      {
+        "path": "tests/test_security_scan.py",
+        "size": 9348,
+        "sha256": "4f18455913a2aaae286a4cde2104277615c592e2e597fb80906fe0b85e211856"
+      }
+    ]
+  }
+}

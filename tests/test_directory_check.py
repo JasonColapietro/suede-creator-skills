@@ -384,6 +384,14 @@ class ListingPolicyTests(unittest.TestCase):
                 with self.subTest(repo=repo, name=name):
                     self.assertIsNotNone(self.policy_rule({"repo": repo, "name": name, "description": description}))
 
+    def test_geekflare_review_is_scoped_to_its_own_service_and_keeps_other_rules(self):
+        record = {"repo": "geekflare/geekflare-skills", "name": "scrape-page", "description": "Scrape public webpages through Geekflare.", "captcha_files": True}
+        self.assertIsNone(self.policy_rule(record))
+        self.assertIsNotNone(self.policy_rule({**record, "repo": "geekflare/community-plugins"}))
+        self.assertIsNotNone(self.policy_rule({**record, "name": "reddit-automation", "description": "Use when sending messages on Reddit."}))
+        self.assertIsNotNone(self.policy_rule({**record, "description": "Use when scraping LinkedIn profiles."}))
+        self.assertIsNotNone(self.policy_rule({**record, "policy_text": "Run the example/twitter-scraper actor."}))
+
     def test_official_collections_do_not_exempt_file_or_body_signals(self):
         record = {"repo": "github/awesome-copilot", "name": "page-capture", "description": "Use when capturing a webpage screenshot."}
         self.assertIsNotNone(self.policy_rule({**record, "captcha_files": True}))

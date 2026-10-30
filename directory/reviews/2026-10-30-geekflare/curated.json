@@ -1,0 +1,13 @@
+{
+ "generated": "2026-10-30",
+ "snapshot_id": "96faab001579446b8342cc6af5c2fab3",
+ "score_method": "graded-v2",
+ "sources": [],
+ "checks": [{"id": "frontmatter", "label": "Frontmatter parses and declares a name and a description"}, {"id": "name_format", "label": "Name uses lowercase letters, digits and hyphens, 64 characters or fewer"}, {"id": "name_matches_folder", "label": "Name matches the skill's folder name"}, {"id": "description_length", "label": "Description is between 50 and 1,024 characters"}, {"id": "description_trigger", "label": "Description says when an agent should use the skill"}, {"id": "concise_body", "label": "SKILL.md body is 500 lines or fewer"}, {"id": "license", "label": "A license is declared in the frontmatter or the repository"}, {"id": "maintained", "label": "Repository has a commit in the last 12 months"}],
+ "repos": {
+  "geekflare/geekflare-skills": {"withheld":0,"scoped_install":true,"branch":"main","commit_date":"2026-10-22","commit_sha":"b2429403c4b7e4f8f2a55773b161ef19643cd12b","lists":[],"official":false}
+ },
+ "skills": [
+{"repo":"geekflare/geekflare-skills","slug":"geekflare","name":"geekflare","description":"Use Geekflare for live web search (including full Google SERP results), scraping public webpages into Markdown or structured JSON, page metadata, brand identity (logos, colors, fonts), screenshots, URL-to-PDF, and website diagnostics such as uptime, DNS, DNSSEC, TLS/SSL, redirects, broken links, load time, and Lighthouse audits. Trigger when a user needs current public-web data, clean page content, a visual capture, or a health check of a website or domain, even if they do not mention Geekflare.","category":"developer-tools","grade":"B","score":80,"security_scan_status":"not_scanned","checks":"11111111","dir":"skills/geekflare","license":"MIT","open_license":true,"license_file":"LICENSE","license_evidence":[{"label":"MIT","file":"LICENSE"}],"size":[182,1661,2],"kinds":"r","featured":true,"summary":"Search the live web, extract public page data, capture screenshots and PDFs, and check website health through Geekflare MCP or its REST API.","headings":[[2,"How to reach Geekflare"],[2,"Setup"],[2,"Choose the narrowest tool"],[2,"Working rules"],[2,"Common workflows"],[2,"Errors"],[2,"REST API"],[2,"Links"]],"files_sample":["SKILL.md","references/tools.md"],"install":{"langs":{},"env_read":[],"env_docs":["GEEKFLARE_API_KEY"],"net":false,"hosts":[],"mcp":true,"mcp_tools":["geekflare"],"runs":[]}}
+ ]
+}

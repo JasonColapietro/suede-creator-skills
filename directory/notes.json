@@ -74,5 +74,9 @@
  "melmayssonowen/agent-skills/clef-music-tools": {
   "text": "The publisher documents https://clefdrills.com/mcp as a public, no-auth hosted MCP. Use a remote HTTP MCP client and check available tool schemas. Offline chord transposition uses Python 3 without additional packages. This review did not connect to the hosted service.",
   "source": "https://github.com/MelMayssonOwen/agent-skills/blob/aebddbe40090c99fe0c5a1810536637186335502/skills/clef-music-tools/references/setup.md"
+ },
+ "geekflare/geekflare-skills/geekflare": {
+  "text": "Requires a Geekflare account and GEEKFLARE_API_KEY. Requests send queries, URLs and options to Geekflare and consume account credits; the source documents a free tier. Use public pages and authorized diagnostic targets. Hosted MCP places the key in the URL path, so keep connection URLs out of logs and shared text. The optional local MCP command runs the unpinned npm package @geekflare/mcp. The hosted scraping service advertises CAPTCHA solving and anti-bot handling. REST docs default stealth, proxyMode and renderJS to false; proxyCountry independently enables proxy routing. CAPTCHA fallback behavior is unspecified. The npm runtime and hosted service were not tested.",
+  "source": "https://github.com/geekflare/geekflare-skills/blob/b2429403c4b7e4f8f2a55773b161ef19643cd12b/skills/geekflare/SKILL.md"
  }
 }

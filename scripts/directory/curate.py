@@ -180,6 +180,7 @@ POLICY_VENDOR_REPOS = {
     "apify/agent-skills",
     "browserbase/skills",
     "firecrawl/skills",
+    "geekflare/geekflare-skills",
 }
 
 

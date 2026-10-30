@@ -1,0 +1,15 @@
+{
+  "repositories": [
+    "geekflare/geekflare-skills"
+  ],
+  "skills": {
+    "geekflare/geekflare-skills": [
+      "geekflare"
+    ]
+  },
+  "skill_roots": {
+    "geekflare/geekflare-skills": [
+      "skills/geekflare"
+    ]
+  }
+}

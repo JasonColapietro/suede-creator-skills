@@ -1,0 +1,38 @@
+{
+  "recorded_at": "2026-10-30T23:46:20.372389+00:00",
+  "publication_base_revision": "f7733ece58d4fc15b448f026c5b1d4942c590f9b",
+  "prior_local_implementation_base": "728becbddfbcb134be24adb057ab964dfdd7863a",
+  "source_revision": "b2429403c4b7e4f8f2a55773b161ef19643cd12b",
+  "existing_skill_records_preserved": 3868,
+  "existing_repository_records_preserved": 161,
+  "first_party_names_preserved": 64,
+  "metadata_fix_309_preserved": true,
+  "files": [
+    {
+      "path": "scripts/directory/parse_skills.py",
+      "sha256": "c6afe55cd156a84baf1fbe4b40709723a22d7ea3821302da1fbd8e1d4ffc4a4f",
+      "base_sha256": "c6afe55cd156a84baf1fbe4b40709723a22d7ea3821302da1fbd8e1d4ffc4a4f"
+    },
+    {
+      "path": "scripts/directory/grade.py",
+      "sha256": "f29f75d089b91b38312510ec8cffe7c0fc50c726e5fd73a84bd15fb9344d7877",
+      "base_sha256": "f29f75d089b91b38312510ec8cffe7c0fc50c726e5fd73a84bd15fb9344d7877"
+    },
+    {
+      "path": "scripts/directory/badges.mjs",
+      "sha256": "75a67d9f268b0a57f24d548a60059641c595997359d0cef6b47a31c724f87a26",
+      "base_sha256": "75a67d9f268b0a57f24d548a60059641c595997359d0cef6b47a31c724f87a26"
+    },
+    {
+      "path": "scripts/directory/curate.py",
+      "sha256": "9bd057ab7f56e98a42e8e6a06570b63cdb21db9352e29c2bd252c858b0783790",
+      "base_sha256": "e79ac38fe416c589a1ac24b524c79146feb9b5444b7c88894f0d8b208065960d"
+    },
+    {
+      "path": "scripts/build-directory.mjs",
+      "sha256": "6ee3a183be516d8e6ed6adde75013554b5ed7ac1222fa30f5e9e70a1a7ebd1bc",
+      "base_sha256": "1ddd6928daa01e1a5176d4bc00f188a626cd1a1e1ade73e22cf8a25b7dfc34f0"
+    }
+  ],
+  "test_environment": "Process-scoped umask 0022, matching CI; prior default-0077 failure evidence retained without changing assertions or security code."
+}

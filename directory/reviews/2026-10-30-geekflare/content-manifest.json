@@ -1,0 +1,63 @@
+{
+  "repository": "geekflare/geekflare-skills",
+  "revision": "b2429403c4b7e4f8f2a55773b161ef19643cd12b",
+  "verified_at": "2026-10-30T21:49:14.462750+00:00",
+  "files": [
+    {
+      "path": ".gitignore",
+      "mode": "100644",
+      "git_blob": "e43b0f988953ae3a84b00331d0ccf5f7d51cb3cf",
+      "size": 10,
+      "sha256": "cf237c7aff44efbe6e502e645c3e06da03a69d7bdeb43392108ef3348143417e"
+    },
+    {
+      "path": "LICENSE",
+      "mode": "100644",
+      "git_blob": "5d7b4863908b3de065b9e01b6a0b7f826f64c8e6",
+      "size": 1066,
+      "sha256": "2aab60a2fc013ec484f69c3625fe5727bbedafdbecc0dc5721d12727f31e5a76"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "git_blob": "ec40b34d7ed7ae85bf465d3dc4ee5aea56d1990d",
+      "size": 3801,
+      "sha256": "127835de5953bd42a31045fca8243e7f17474efd59228592f4b49482eac2a219"
+    },
+    {
+      "path": "gemini-extension.json",
+      "mode": "100644",
+      "git_blob": "8d64f68939080565872d395e23b71a21ce20b671",
+      "size": 601,
+      "sha256": "26788e06296138f2c2151f82b7d7c09a03c7661a902e52b531f84de34d761fe8"
+    },
+    {
+      "path": "mcp.json",
+      "mode": "100644",
+      "git_blob": "36afe16db9ca7d74014631a709f94f76a06c5be2",
+      "size": 275,
+      "sha256": "d50513bc07a9a88e3161cd7344caa8b2ff6569bc052ea9c45a5741e68e69fb01"
+    },
+    {
+      "path": "plugin.json",
+      "mode": "100644",
+      "git_blob": "c8eb91419e3b1307ccec3d8a6f45017c189f0c75",
+      "size": 943,
+      "sha256": "dc39a5aaf57ebbd68cf16f9b605394996e69cc9d516b57bf498dfae9c516796d"
+    },
+    {
+      "path": "skills/geekflare/SKILL.md",
+      "mode": "100644",
+      "git_blob": "ea4a4dde602cf1fc4ea1a3d0a10a9a361d8cda9c",
+      "size": 11699,
+      "sha256": "b2a5995f1b6feb5d3c20cbe0f27dbec9785eec462368d30d6d82a67d9d24df36"
+    },
+    {
+      "path": "skills/geekflare/references/tools.md",
+      "mode": "100644",
+      "git_blob": "a0aad5e16a27113d984cf1d9874cc90638090648",
+      "size": 5248,
+      "sha256": "d9ef4b2a0d3066638445de138e5e116e96623ecb634d8555c5abf90208c5a510"
+    }
+  ]
+}

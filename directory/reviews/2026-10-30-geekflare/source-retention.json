@@ -1,0 +1,10 @@
+{
+  "public_evidence": "exact Git blob/SHA-256 inventory and pinned upstream links",
+  "original_source_preserved": true,
+  "separate_local_archive": "geekflare-review-2026-10-30.tar.gz",
+  "archive_sha256": "152d96c6008abea7f898208924587506a150d16885856033cc795393a2ba27fd",
+  "public_vendoring": "not included; existing reserved-content guard rejects the upstream SKILL.md copy",
+  "guard_changed": false,
+  "upstream_bytes_changed": false,
+  "additional_local_records": "Original source, pinned citation documents, tooling copies and raw setup logs are preserved in the separate archive. Public evidence includes their hashes, versions, raw scan results and setup outcomes without machine user paths."
+}

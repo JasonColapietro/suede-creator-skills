@@ -6,7 +6,7 @@
 
 Framework, language, SDK and CLI skills that teach an agent the conventions of a specific stack, from Flutter, Angular and Expo to GraphQL, Go and mobile builds. Install the ones that match your codebase and the agent follows that stack's rules without a long prompt.
 
-**545 accepted skills · 64 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
+**546 accepted skills · 65 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
 **Compare on the 0–99 quality scale:** this category’s verified scores span **54–95 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede AI](https://skills.suedeai.ai/directory/?category=developer-tools&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
 
@@ -36,6 +36,7 @@ Framework, language, SDK and CLI skills that teach an agent the conventions of a
 - [firecrawl/skills](#firecrawl--skills)
 - [flutter/skills](#flutter--skills)
 - [garrytan/gstack](#garrytan--gstack)
+- [geekflare/geekflare-skills](#geekflare--geekflare-skills)
 - [getsentry/skills](#getsentry--skills)
 - [github/awesome-copilot](#github--awesome-copilot)
 - [google-labs-code/stitch-skills](#google-labs-code--stitch-skills)
@@ -345,6 +346,14 @@ Framework, language, SDK and CLI skills that teach an agent the conventions of a
 - **67/100 · D** · [ios-clean](https://github.com/garrytan/gstack/blob/main/ios-clean/SKILL.md): Remove the DebugBridge SPM package and all #if DEBUG wiring from an iOS app. (gstack) [Suede](https://skills.suedeai.ai/directory/garrytan/gstack/#ios-clean)
 - **67/100 · D** · [ios-sync](https://github.com/garrytan/gstack/blob/main/ios-sync/SKILL.md): Regenerate the iOS debug bridge against the latest upstream gstack templates. (gstack) [Suede](https://skills.suedeai.ai/directory/garrytan/gstack/#ios-sync)
 - **64/100 · D** · [unfreeze](https://github.com/garrytan/gstack/blob/main/unfreeze/SKILL.md): Clear the freeze boundary set by /freeze, allowing edits to all directories again. (gstack) [Suede](https://skills.suedeai.ai/directory/garrytan/gstack/#unfreeze)
+
+<a id="geekflare--geekflare-skills"></a>
+
+## geekflare/geekflare-skills
+
+[Repository](https://github.com/geekflare/geekflare-skills) · Publisher: [geekflare](https://github.com/geekflare) · [Suede AI listing](https://skills.suedeai.ai/directory/geekflare/geekflare-skills/geekflare/)
+
+- **80/100 · B** · [geekflare](https://github.com/geekflare/geekflare-skills/blob/main/skills/geekflare/SKILL.md): Search the live web, extract public page data, capture screenshots and PDFs, and check website health through Geekflare MCP or its REST API. [Suede](https://skills.suedeai.ai/directory/geekflare/geekflare-skills/geekflare/)
 
 <a id="getsentry--skills"></a>
 

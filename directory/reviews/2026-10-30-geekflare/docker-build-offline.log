@@ -1,0 +1,139 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 660B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/python:3.12-slim-bookworm@sha256:57d96f71de145a98e7ceca18ee4ade77bba4103a33a72dfaea026b23625c6bf0
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/5] FROM docker.io/library/python:3.12-slim-bookworm@sha256:57d96f71de145a98e7ceca18ee4ade77bba4103a33a72dfaea026b23625c6bf0
+#4 DONE 0.1s
+
+#5 [internal] load build context
+#5 ...
+
+#6 [2/5] WORKDIR /opt/scan
+#6 DONE 0.7s
+
+#5 [internal] load build context
+#5 transferring context: 126.71MB 1.2s done
+#5 DONE 1.2s
+
+#7 [3/5] COPY requirements.txt profile.json worker.py ./
+#7 DONE 0.5s
+
+#8 [4/5] COPY wheels /wheels
+#8 DONE 0.5s
+
+#9 [5/5] RUN python -m pip install --no-cache-dir --no-index --find-links=/wheels --only-binary=:all: --require-hashes -r requirements.txt     && python -m pip check
+#9 2.172 Looking in links: /wheels
+#9 2.184 Processing /wheels/aiohappyeyeballs-2.7.1-py3-none-any.whl (from -r requirements.txt (line 3))
+#9 2.189 Processing /wheels/aiohttp-3.14.5-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (from -r requirements.txt (line 6))
+#9 2.203 Processing /wheels/aiosignal-1.4.0-py3-none-any.whl (from -r requirements.txt (line 168))
+#9 2.206 Processing /wheels/annotated_doc-0.0.5-py3-none-any.whl (from -r requirements.txt (line 171))
+#9 2.209 Processing /wheels/annotated_types-0.8.0-py3-none-any.whl (from -r requirements.txt (line 174))
+#9 2.212 Processing /wheels/anthropic-0.125.0-py3-none-any.whl (from -r requirements.txt (line 177))
+#9 2.228 Processing /wheels/anyio-4.15.1-py3-none-any.whl (from -r requirements.txt (line 180))
+#9 2.234 Processing /wheels/attrs-26.1.0-py3-none-any.whl (from -r requirements.txt (line 183))
+#9 2.238 Processing /wheels/certifi-2026.10.19-py3-none-any.whl (from -r requirements.txt (line 186))
+#9 2.242 Processing /wheels/cffi-2.1.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (from -r requirements.txt (line 189))
+#9 2.248 Processing /wheels/charset_normalizer-3.5.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (from -r requirements.txt (line 290))
+#9 2.254 Processing /wheels/cisco_ai_skill_scanner-2.3.1-cp311.cp312.cp313.cp314-none-manylinux_2_17_x86_64.whl (from -r requirements.txt (line 463))
+#9 2.276 Processing /wheels/click-8.5.0-py3-none-any.whl (from -r requirements.txt (line 470))
+#9 2.278 Processing /wheels/colorclass-2.2.2-py2.py3-none-any.whl (from -r requirements.txt (line 473))
+#9 2.281 Processing /wheels/confusable_homoglyphs-3.3.1-py2.py3-none-any.whl (from -r requirements.txt (line 476))
+#9 2.284 Processing /wheels/cryptography-50.0.2-cp311-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (from -r requirements.txt (line 479))
+#9 2.307 Processing /wheels/distro-1.9.0-py3-none-any.whl (from -r requirements.txt (line 539))
+#9 2.310 Processing /wheels/docstring_parser-0.18.0-py3-none-any.whl (from -r requirements.txt (line 542))
+#9 2.313 Processing /wheels/easygui-0.98.3-py2.py3-none-any.whl (from -r requirements.txt (line 545))
+#9 2.316 Processing /wheels/fastapi-0.162.0-py3-none-any.whl (from -r requirements.txt (line 548))
+#9 2.326 Processing /wheels/fastuuid-0.14.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (from -r requirements.txt (line 551))
+#9 2.328 Processing /wheels/filelock-4.2.4-py3-none-any.whl (from -r requirements.txt (line 630))
+#9 2.330 Processing /wheels/flatbuffers-25.12.19-py2.py3-none-any.whl (from -r requirements.txt (line 633))
+#9 2.332 Processing /wheels/frozenlist-1.8.0-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (from -r requirements.txt (line 635))
+#9 2.336 Processing /wheels/fsspec-2026.9.0-py3-none-any.whl (from -r requirements.txt (line 766))
+#9 2.368 Processing /wheels/h11-0.16.0-py3-none-any.whl (from -r requirements.txt (line 769))
+#9 2.370 Processing /wheels/hf_xet-1.7.0-cp38-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (from -r requirements.txt (line 772))
+#9 2.385 Processing /wheels/httpcore-1.0.9-py3-none-any.whl (from -r requirements.txt (line 790))
+#9 2.390 Processing /wheels/httpcore2-2.16.0-py3-none-any.whl (from -r requirements.txt (line 793))
+#9 2.395 Processing /wheels/httptools-0.9.0-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (from -r requirements.txt (line 796))
+#9 2.399 Processing /wheels/httpx-0.28.1-py3-none-any.whl (from -r requirements.txt (line 915))
+#9 2.403 Processing /wheels/httpx2-2.16.0-py3-none-any.whl (from -r requirements.txt (line 918))
+#9 2.408 Processing /wheels/huggingface_hub-2.3.0-py3-none-any.whl (from -r requirements.txt (line 921))
+#9 2.428 Processing /wheels/idna-3.20-py3-none-any.whl (from -r requirements.txt (line 924))
+#9 2.431 Processing /wheels/importlib_metadata-8.9.0-py3-none-any.whl (from -r requirements.txt (line 927))
+#9 2.437 Processing /wheels/jinja2-3.1.6-py3-none-any.whl (from -r requirements.txt (line 930))
+#9 2.439 Processing /wheels/jiter-0.18.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (from -r requirements.txt (line 933))
+#9 2.442 Processing /wheels/jsonschema-4.26.0-py3-none-any.whl (from -r requirements.txt (line 1053))
+#9 2.448 Processing /wheels/jsonschema_specifications-2025.9.1-py3-none-any.whl (from -r requirements.txt (line 1056))
+#9 2.450 Processing /wheels/linkify_it_py-2.2.0-py3-none-any.whl (from -r requirements.txt (line 1059))
+#9 2.454 Processing /wheels/litellm-1.89.7-py3-none-any.whl (from -r requirements.txt (line 1062))
+#9 2.535 Processing /wheels/magika-1.0.3-py3-none-manylinux_2_28_x86_64.whl (from -r requirements.txt (line 1065))
+#9 2.575 Processing /wheels/markdown_it_py-4.2.0-py3-none-any.whl (from -r requirements.txt (line 1071))
+#9 2.583 Processing /wheels/markupsafe-3.0.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (from -r requirements.txt (line 1074))
+#9 2.585 Processing /wheels/mdit_py_plugins-0.6.1-py3-none-any.whl (from -r requirements.txt (line 1226))
+#9 2.588 Processing /wheels/mdurl-0.1.2-py3-none-any.whl (from -r requirements.txt (line 1229))
+#9 2.591 Processing /wheels/msoffcrypto_tool-6.0.0-py3-none-any.whl (from -r requirements.txt (line 1232))
+#9 2.595 Processing /wheels/multidict-7.2.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (from -r requirements.txt (line 1235))
+#9 2.600 Processing /wheels/numpy-2.5.4-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (from -r requirements.txt (line 1387))
+#9 2.658 Processing /wheels/olefile-0.47-py2.py3-none-any.whl (from -r requirements.txt (line 1454))
+#9 2.660 Processing /wheels/oletools-0.60.2-py2.py3-none-any.whl (from -r requirements.txt (line 1457))
+#9 2.668 Processing /wheels/onnxruntime-1.31.0-cp312-cp312-manylinux_2_28_x86_64.whl (from -r requirements.txt (line 1460))
+#9 2.725 Processing /wheels/openai-2.54.0-py3-none-any.whl (from -r requirements.txt (line 1485))
+#9 2.750 Processing /wheels/opentelemetry_api-1.45.1-py3-none-any.whl (from -r requirements.txt (line 1488))
+#9 2.753 Processing /wheels/packaging-26.3-py3-none-any.whl (from -r requirements.txt (line 1491))
+#9 2.755 Processing /wheels/pcodedmp-1.2.6-py2.py3-none-any.whl (from -r requirements.txt (line 1494))
+#9 2.758 Processing /wheels/pdfid-1.1.3-py3-none-any.whl (from -r requirements.txt (line 1497))
+#9 2.760 Processing /wheels/platformdirs-4.13.5-py3-none-any.whl (from -r requirements.txt (line 1500))
+#9 2.764 Processing /wheels/propcache-0.5.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (from -r requirements.txt (line 1503))
+#9 2.771 Processing /wheels/protobuf-6.33.6-cp39-abi3-manylinux2014_x86_64.whl (from -r requirements.txt (line 1642))
+#9 2.773 Processing /wheels/pycparser-3.12-py3-none-any.whl (from -r requirements.txt (line 1653))
+#9 2.776 Processing /wheels/pydantic-2.14.1-py3-none-any.whl (from -r requirements.txt (line 1656))
+#9 2.784 Processing /wheels/pydantic_core-2.50.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (from -r requirements.txt (line 1659))
+#9 2.794 Processing /wheels/pygments-2.21.0-py3-none-any.whl (from -r requirements.txt (line 1797))
+#9 2.802 Processing /wheels/pyjwt-2.15.1-py3-none-any.whl (from -r requirements.txt (line 1800))
+#9 2.805 Processing /wheels/pyparsing-3.3.3-py3-none-any.whl (from -r requirements.txt (line 1803))
+#9 2.808 Processing /wheels/python_dotenv-1.2.4-py3-none-any.whl (from -r requirements.txt (line 1806))
+#9 2.811 Processing /wheels/python_frontmatter-1.3.0-py3-none-any.whl (from -r requirements.txt (line 1809))
+#9 2.814 Processing /wheels/python_multipart-0.0.32-py3-none-any.whl (from -r requirements.txt (line 1812))
+#9 2.816 Processing /wheels/pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (from -r requirements.txt (line 1815))
+#9 2.820 Processing /wheels/referencing-0.37.0-py3-none-any.whl (from -r requirements.txt (line 1889))
+#9 2.823 Processing /wheels/regex-2026.9.29-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (from -r requirements.txt (line 1892))
+#9 2.827 Processing /wheels/requests-2.34.2-py3-none-any.whl (from -r requirements.txt (line 2023))
+#9 2.831 Processing /wheels/rich-14.3.4-py3-none-any.whl (from -r requirements.txt (line 2026))
+#9 2.835 Processing /wheels/rpds_py-2026.9.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (from -r requirements.txt (line 2029))
+#9 2.837 Processing /wheels/sniffio-1.3.1-py3-none-any.whl (from -r requirements.txt (line 2158))
+#9 2.840 Processing /wheels/starlette-1.10.0-py3-none-any.whl (from -r requirements.txt (line 2161))
+#9 2.843 Processing /wheels/tabulate-0.10.0-py3-none-any.whl (from -r requirements.txt (line 2164))
+#9 2.847 Processing /wheels/textual-8.2.8-py3-none-any.whl (from -r requirements.txt (line 2167))
+#9 2.856 Processing /wheels/tiktoken-0.14.0-cp312-cp312-manylinux_2_28_x86_64.whl (from -r requirements.txt (line 2170))
+#9 2.861 Processing /wheels/tokenizers-0.23.3-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (from -r requirements.txt (line 2235))
+#9 2.875 Processing /wheels/tqdm-4.70.1-py3-none-any.whl (from -r requirements.txt (line 2260))
+#9 2.883 Processing /wheels/truststore-0.10.5-py3-none-any.whl (from -r requirements.txt (line 2263))
+#9 2.885 Processing /wheels/typing_extensions-4.16.0-py3-none-any.whl (from -r requirements.txt (line 2266))
+#9 2.887 Processing /wheels/typing_inspection-0.4.4-py3-none-any.whl (from -r requirements.txt (line 2269))
+#9 2.890 Processing /wheels/urllib3-2.8.0-py3-none-any.whl (from -r requirements.txt (line 2272))
+#9 2.893 Processing /wheels/uvicorn-0.54.0-py3-none-any.whl (from -r requirements.txt (line 2275))
+#9 2.898 Processing /wheels/uvloop-0.23.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (from -r requirements.txt (line 2278))
+#9 2.914 Processing /wheels/watchfiles-1.3.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (from -r requirements.txt (line 2340))
+#9 2.918 Processing /wheels/websockets-17.3-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (from -r requirements.txt (line 2374))
+#9 2.921 Processing /wheels/yara_x-1.22.0-cp39-abi3-manylinux_2_28_x86_64.whl (from -r requirements.txt (line 2529))
+#9 2.944 Processing /wheels/yarl-1.25.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (from -r requirements.txt (line 2540))
+#9 2.953 Processing /wheels/zipp-4.1.2-py3-none-any.whl (from -r requirements.txt (line 2679))
+#9 3.447 Installing collected packages: flatbuffers, easygui, confusable-homoglyphs, zipp, yara-x, websockets, uvloop, urllib3, typing-extensions, truststore, tqdm, tabulate, sniffio, rpds-py, regex, pyyaml, python-multipart, python-dotenv, pyparsing, pyjwt, pygments, pycparser, protobuf, propcache, platformdirs, pdfid, packaging, olefile, numpy, multidict, mdurl, markupsafe, linkify-it-py, jiter, idna, httptools, hf-xet, h11, fsspec, frozenlist, filelock, fastuuid, docstring-parser, distro, colorclass, click, charset-normalizer, certifi, attrs, annotated-types, annotated-doc, aiohappyeyeballs, yarl, uvicorn, typing-inspection, requests, referencing, python-frontmatter, pydantic-core, opentelemetry-api, onnxruntime, markdown-it-py, jinja2, importlib-metadata, httpcore2, httpcore, cffi, anyio, aiosignal, watchfiles, tiktoken, starlette, rich, pydantic, mdit-py-plugins, magika, jsonschema-specifications, httpx2, httpx, cryptography, aiohttp, textual, openai, msoffcrypto-tool, jsonschema, huggingface-hub, fastapi, anthropic, tokenizers, litellm, pcodedmp, oletools, cisco-ai-skill-scanner
+#9 23.54 Successfully installed aiohappyeyeballs-2.7.1 aiohttp-3.14.5 aiosignal-1.4.0 annotated-doc-0.0.5 annotated-types-0.8.0 anthropic-0.125.0 anyio-4.15.1 attrs-26.1.0 certifi-2026.10.19 cffi-2.1.1 charset-normalizer-3.5.2 cisco-ai-skill-scanner-2.3.1 click-8.5.0 colorclass-2.2.2 confusable-homoglyphs-3.3.1 cryptography-50.0.2 distro-1.9.0 docstring-parser-0.18.0 easygui-0.98.3 fastapi-0.162.0 fastuuid-0.14.0 filelock-4.2.4 flatbuffers-25.12.19 frozenlist-1.8.0 fsspec-2026.9.0 h11-0.16.0 hf-xet-1.7.0 httpcore-1.0.9 httpcore2-2.16.0 httptools-0.9.0 httpx-0.28.1 httpx2-2.16.0 huggingface-hub-2.3.0 idna-3.20 importlib-metadata-8.9.0 jinja2-3.1.6 jiter-0.18.0 jsonschema-4.26.0 jsonschema-specifications-2025.9.1 linkify-it-py-2.2.0 litellm-1.89.7 magika-1.0.3 markdown-it-py-4.2.0 markupsafe-3.0.4 mdit-py-plugins-0.6.1 mdurl-0.1.2 msoffcrypto-tool-6.0.0 multidict-7.2.1 numpy-2.5.4 olefile-0.47 oletools-0.60.2 onnxruntime-1.31.0 openai-2.54.0 opentelemetry-api-1.45.1 packaging-26.3 pcodedmp-1.2.6 pdfid-1.1.3 platformdirs-4.13.5 propcache-0.5.4 protobuf-6.33.6 pycparser-3.12 pydantic-2.14.1 pydantic-core-2.50.1 pygments-2.21.0 pyjwt-2.15.1 pyparsing-3.3.3 python-dotenv-1.2.4 python-frontmatter-1.3.0 python-multipart-0.0.32 pyyaml-6.0.3 referencing-0.37.0 regex-2026.9.29 requests-2.34.2 rich-14.3.4 rpds-py-2026.9.1 sniffio-1.3.1 starlette-1.10.0 tabulate-0.10.0 textual-8.2.8 tiktoken-0.14.0 tokenizers-0.23.3 tqdm-4.70.1 truststore-0.10.5 typing-extensions-4.16.0 typing-inspection-0.4.4 urllib3-2.8.0 uvicorn-0.54.0 uvloop-0.23.0 watchfiles-1.3.0 websockets-17.3 yara-x-1.22.0 yarl-1.25.1 zipp-4.1.2
+#9 23.54 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+#9 24.98 No broken requirements found.
+#9 DONE 25.1s
+
+#10 exporting to image
+#10 exporting layers
+#10 exporting layers 3.8s done
+#10 writing image sha256:d2060403a7ef3f115b82916fa55ed099697f640ea71c2ef71671d5baf211eb16 done
+#10 naming to docker.io/library/suede-geekflare-review:f7e58c929686 done
+#10 DONE 3.9s

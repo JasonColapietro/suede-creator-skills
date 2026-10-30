@@ -1,0 +1,34 @@
+{
+  "id": "1428185193",
+  "name": "geekflare-skills",
+  "owner": {
+    "login": "geekflare",
+    "id": 86375854,
+    "type": "Organization",
+    "avatar_url": "https://avatars.githubusercontent.com/u/86375854?v=4",
+    "url": "https://api.github.com/users/geekflare"
+  },
+  "repository_full_name": "geekflare/geekflare-skills",
+  "permissions": {
+    "admin": false,
+    "maintain": false,
+    "pull": true,
+    "push": false,
+    "triage": false
+  },
+  "allow_auto_merge": null,
+  "allow_merge_commit": null,
+  "allow_rebase_merge": null,
+  "allow_squash_merge": null,
+  "allow_update_branch": null,
+  "clone_url": "https://github.com/geekflare/geekflare-skills.git",
+  "size": 19,
+  "default_branch": "main",
+  "git_commits_url": "https://api.github.com/repos/geekflare/geekflare-skills/git/commits{/sha}",
+  "git_refs_url": "https://api.github.com/repos/geekflare/geekflare-skills/git/refs{/sha}",
+  "git_url": "git://github.com/geekflare/geekflare-skills.git",
+  "master_branch": null,
+  "visibility": "public",
+  "archived": false,
+  "is_code_search_indexed": null
+}

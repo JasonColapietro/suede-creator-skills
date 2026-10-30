@@ -7,6 +7,7 @@
   "browser-use/browser-use",
   "costory-io/costory-finops-mcp-skills",
   "cwong5/extra-caffeine-mcp",
+  "geekflare/geekflare-skills",
   "github/awesome-copilot",
   "google-labs-code/stitch-skills",
   "heygen-com/hyperframes",
@@ -956,6 +957,9 @@
    "suede-video",
    "suede-visibility-grader",
    "suede-workflow-skills"
+  ],
+  "geekflare/geekflare-skills": [
+   "geekflare"
   ]
  },
  "skill_roots": {
@@ -1067,6 +1071,9 @@
   ],
   "JasonColapietro/suede-creator-skills": [
    "skills"
+  ],
+  "geekflare/geekflare-skills": [
+   "skills/geekflare"
   ]
  },
  "citations": {

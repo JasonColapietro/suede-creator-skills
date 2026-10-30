@@ -2080,9 +2080,9 @@
   "Extra Caffeine agent workflows",
   "Opsibyte agent workflows",
   "Cisco AI Defense Skill Scanner agent workflows",
+  "Geekflare agent workflows",
   "Arcmira agent workflows",
-  "Lava agent workflows",
-  "Suede AI Skills Directory"
+  "Lava agent workflows"
  ],
  "directory/firebase/skills/firebase-ai-logic-basics/index.html": [
   "firebase-ai-logic-basics skill by firebase",
@@ -2455,6 +2455,15 @@
   "gstack claude skills",
   "developer tools agent skills",
   "agent skills directory"
+ ],
+ "directory/geekflare/geekflare-skills/geekflare/index.html": [
+  "geekflare skill by geekflare",
+  "geekflare skill",
+  "geekflare agent skill",
+  "geekflare claude skill",
+  "geekflare skills",
+  "developer tools agent skills",
+  "SKILL.md"
  ],
  "directory/getsentry/skills/blog-writing-guide/index.html": [
   "blog-writing-guide skill by getsentry",

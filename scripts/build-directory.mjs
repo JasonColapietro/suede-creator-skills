@@ -1748,7 +1748,7 @@ function renderFeaturedProjects() {
   const bc = crumbs(here, [["directory/", "Directory"], [null, "Featured projects"]]);
   const title = copy.title || "Featured Agent Skill Projects | Suede AI";
   const entries = [...EDITORIAL.projects, ...MEMBERS];
-  const description = `Meet ${listPhrase(entries.map((p) => p.name))}: reviewed source, setup and data-use notes.`;
+  const description = `Meet ${listPhrase(entries.map((p) => p.name))}: reviewed source and setup.`;
   const keywords = setKeywords(here, ["featured agent projects", ...entries.map((p) => `${p.name} agent workflows`), "Suede AI Skills Directory"]);
   const badge = FEATURED_BADGE;
   const nominate = copy.nominate
