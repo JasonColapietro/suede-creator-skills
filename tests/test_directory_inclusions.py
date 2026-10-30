@@ -57,6 +57,7 @@ class DirectoryInclusionTests(unittest.TestCase):
             work = Path(tmp)
             for name in ("scripts/build-directory.mjs", "scripts/directory/badges.mjs",
                          "scripts/directory/featured.mjs", "scripts/directory/editorial.mjs", "scripts/directory/metadata.mjs", "scripts/directory/check-client.js", "directory/featured-projects.json",
+                         "scripts/directory/task-pages.mjs", "directory/task-pages.json",
                          "directory/categories.json", "directory/notes.json",
                          "directory/promotion.json", "directory/services-cta.json", "docs/llms.txt"):
                 target = work / name

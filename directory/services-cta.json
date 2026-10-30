@@ -42,6 +42,7 @@
   },
   "placements": {
     "hub": true,
+    "task": true,
     "category": true,
     "repository": true,
     "skill": true,

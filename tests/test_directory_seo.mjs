@@ -4,6 +4,10 @@
 // JSON-LD with a breadcrumb, sit within three clicks of the hub and appear in
 // the sitemap; noindex pages must stay out of it. The services module, entity
 // markup, robots.txt policy and llms.txt category lines are pinned here too.
+// The task and alternatives pages run with this group. package.json is part
+// of the first-party intake receipt (directory/intake/), so the test:directory
+// script stays byte-for-byte and the file joins through this import instead.
+import "./test_directory_qa_pages.mjs";
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
@@ -85,6 +89,9 @@ const kindOf = (p) => {
   if (p.rel.startsWith("directory/agents/")) return "agent";
   const depth = p.rel.split("/").filter(Boolean).length;
   if (p.rel === "directory/") return "hub";
+  if (p.rel === "directory/for/") return "task-hub";
+  if (p.rel.startsWith("directory/for/")) return "task";
+  if (p.rel.endsWith("/alternatives/")) return "alternatives";
   if (categories.some((c) => p.rel === `directory/${c.slug}/`)) return "category";
   if (["directory/methodology/", "directory/submit/", "directory/featured/", "directory/check/", "directory/guides/"].includes(p.rel)) return p.rel.split("/")[1];
   if (p.rel.startsWith("directory/guides/")) return "guide";
@@ -182,7 +189,7 @@ test("hubs list their items and listings describe the third-party source code", 
   for (const p of indexable) {
     const kind = kindOf(p);
     const main = parsed(p)[0];
-    if (kind === "category" || kind === "repository" || kind === "hub" || kind === "agent-hub") {
+    if (["category", "repository", "hub", "agent-hub", "task-hub", "task", "alternatives"].includes(kind)) {
       assert.equal(main["@type"], "CollectionPage", p.rel);
       assert.equal(main.mainEntity["@type"], "ItemList", p.rel);
       assert.ok(main.mainEntity.itemListElement.length > 0, `${p.rel}: empty ItemList`);

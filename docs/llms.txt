@@ -36,6 +36,28 @@ Runner boundary for Suede Graph Flo XR: the bundled Suede Thought Graph workflow
   - [Writing and Editing Skills for Claude Code and Codex](https://skills.suedeai.ai/directory/writing-content/): 116 listed writing and editing skills.
   - [Code Review and Code Quality Skills for Claude and Codex](https://skills.suedeai.ai/directory/code-review-quality/): 94 listed code review skills.
   - [Document and Office File Skills for Claude Code and Codex](https://skills.suedeai.ai/directory/documents-office/): 55 listed document and office file skills.
+- [Claude Code skills by task](https://skills.suedeai.ai/directory/for/): 21 graded shortlists, one per task, each with a comparison table and answers on install, licenses and agent support:
+  - [Best Claude Code skills for presentations](https://skills.suedeai.ai/directory/for/presentations/): slidewright from tronghieu/agent-skills leads at 90/100; 15 skills compared.
+  - [Best Claude Code skills for Playwright and browser testing](https://skills.suedeai.ai/directory/for/playwright/): cypress-skill from LambdaTest/agent-skills leads at 86/100; 15 skills compared.
+  - [Best Claude Code skills for Terraform](https://skills.suedeai.ai/directory/for/terraform/): agent-platform-alert-configuration from google/skills leads at 89/100; 13 skills compared.
+  - [Best Claude Code skills for SEO](https://skills.suedeai.ai/directory/for/seo/): seo-dataforseo from AgriciDaniel/claude-seo leads at 88/100; 15 skills compared.
+  - [Best Claude Code skills for code review](https://skills.suedeai.ai/directory/for/code-review/): go-concurrency-review from eduardo-sl/go-agent-skills leads at 95/100; 15 skills compared.
+  - [Best Claude Code skills for Git and pull requests](https://skills.suedeai.ai/directory/for/git/): pr-improver from trailofbits/skills leads at 93/100; 15 skills compared.
+  - [Best Claude Code skills for MCP servers](https://skills.suedeai.ai/directory/for/mcp-servers/): mcp-builder from anthropics/skills leads at 89/100; 15 skills compared.
+  - [Best Claude Code skills for data analysis](https://skills.suedeai.ai/directory/for/data-analysis/): scientific-visualization from K-Dense-AI/claude-scientific-skills leads at 89/100; 12 skills compared.
+  - [Best Claude Code skills for Kubernetes](https://skills.suedeai.ai/directory/for/kubernetes/): gke-ai-troubleshooting-jobset-interruption from google/skills leads at 89/100; 15 skills compared.
+  - [Best Claude Code skills for AWS](https://skills.suedeai.ai/directory/for/aws/): agents-deploy from aws/agent-toolkit-for-aws leads at 89/100; 15 skills compared.
+  - [Best Claude Code skills for security audits](https://skills.suedeai.ai/directory/for/security-audits/): codeql from trailofbits/skills leads at 92/100; 15 skills compared.
+  - [Best Claude Code skills for email](https://skills.suedeai.ai/directory/for/email/): cold-email from coreyhaines31/marketingskills leads at 88/100; 15 skills compared.
+  - [Best Claude Code skills for video](https://skills.suedeai.ai/directory/for/video/): youtube-api from ZeroPointRepo/youtube-skills leads at 90/100; 15 skills compared.
+  - [Best Claude Code skills for iOS and Swift](https://skills.suedeai.ai/directory/for/ios/): expo-migrate-module from expo/skills leads at 87/100; 15 skills compared.
+  - [Best Claude Code skills for Flutter and Dart](https://skills.suedeai.ai/directory/for/flutter/): dart-build-cli-app from flutter/skills leads at 84/100; 7 skills compared.
+  - [Best Claude Code skills for React and Next.js](https://skills.suedeai.ai/directory/for/react/): scaffold-nextjs from mblode/agent-skills leads at 89/100; 15 skills compared.
+  - [Best Claude Code skills for RAG and vector search](https://skills.suedeai.ai/directory/for/rag/): google-cloud-solution-rag-enterprise-search-gke-sqldb from google/skills leads at 87/100; 15 skills compared.
+  - [Best Claude Code skills for LLM evals](https://skills.suedeai.ai/directory/for/llm-evals/): advanced-evaluation from muratcankoylan/Agent-Skills-for-Context-Engineering leads at 86/100; 15 skills compared.
+  - [Best Claude Code skills for SQL and databases](https://skills.suedeai.ai/directory/for/sql/): go-database from eduardo-sl/go-agent-skills leads at 95/100; 15 skills compared.
+  - [Best Claude Code skills for technical documentation](https://skills.suedeai.ai/directory/for/documentation/): go-documentation from eduardo-sl/go-agent-skills leads at 95/100; 15 skills compared.
+  - [Best Claude Code skills for UI design](https://skills.suedeai.ai/directory/for/ui-design/): ui-verification from mblode/agent-skills leads at 89/100; 15 skills compared.
 - [Agent skills guides](https://skills.suedeai.ai/directory/guides/): Guides by Jason Colapietro, Suede AI, built on the directory's published data:
   - [Best SEO, AEO and GEO skills for Claude Code and Codex](https://skills.suedeai.ai/directory/guides/best-seo-skills/): The highest-scoring SEO skills for Claude Code and Codex, by job: audits, schema, AI search (AEO and GEO), keywords, local and programmatic SEO.
   - [How to install agent skills in Claude Code, Codex and Cursor](https://skills.suedeai.ai/directory/guides/install-agent-skills/): Where Claude Code and Codex load skills, how to install from GitHub with one command, how plugin marketplaces work, and what to check before you install.
