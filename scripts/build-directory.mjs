@@ -540,12 +540,9 @@ function page({ here, title, description, keywords, h1Html, body, jsonld, ogType
     `    <meta name="robots" content="${robots}">`,
     // The directory lives at suedeai.directory. GitHub Pages still serves this
     // copy at skills.suedeai.ai/directory/ and cannot send a 301, so each
-    // indexable page names its new URL as canonical and refreshes there at
-    // once, which search engines treat as a permanent redirect.
-    // scripts/build-directory-site.mjs strips the refresh from the standalone
-    // build, where the page is already at that URL.
+    // indexable page names its suedeai.directory URL as canonical and search
+    // engines consolidate there.
     canonical ? `    <link rel="canonical" href="${movedUrl(pageUrl)}">` : null,
-    canonical && movedUrl(pageUrl) !== pageUrl ? `    <meta http-equiv="refresh" content="0; url=${movedUrl(pageUrl)}">` : null,
     `    <link rel="icon" href="${a}favicon-64.png" type="image/png">`,
     `    <meta property="og:type" content="${ogType}">`,
     `    <meta property="og:site_name" content="${SITE_NAME}">`,

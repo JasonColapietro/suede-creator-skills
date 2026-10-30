@@ -59,8 +59,6 @@ export const SITE_NODE = {
   inLanguage: "en",
   publisher: { "@id": "https://suedeai.ai/#organization" },
 };
-// The GitHub Pages copy refreshes to this host; here the page is already home.
-export const REFRESH_RE = /^[ \t]*<meta http-equiv="refresh" content="0; url=https:\/\/suedeai\.directory\/[^"]*">\n/gm;
 const LD_RE = /(<script type="application\/ld\+json">)([\s\S]*?)(<\/script>)/g;
 
 export function rehomeWebsite(html) {
@@ -85,7 +83,7 @@ export function rewriteText(text, ext, pageUrl) {
   let out = text;
   if (ext === ".html" || ext === ".svg") out = out.replace(ATTR_RE, (_, attr, v) => `${attr}="${rewriteUrl(v, pageUrl)}"`);
   out = out.replace(OLD_DIR_RE, NEW);
-  if (ext === ".html") out = rehomeWebsite(out).replace(REFRESH_RE, "");
+  if (ext === ".html") out = rehomeWebsite(out);
   // The search index and report files carry root-absolute listing paths.
   if (ext === ".json" || ext === ".js") out = out.replace(/(["'])\/directory\//g, "$1/");
   return out;

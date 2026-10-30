@@ -50,7 +50,7 @@ for (const file of indexFiles(path.join(docs, "directory"))) {
   });
 }
 // The directory moved to suedeai.directory; the GitHub Pages copy at
-// skills.suedeai.ai/directory/ names its new URL as canonical and refreshes there.
+// skills.suedeai.ai/directory/ names its new URL as canonical.
 const moved = (u) => u.replace(`${BASE}/directory`, "https://suedeai.directory");
 const byRel = new Map(pages.map((p) => [p.rel, p]));
 const indexable = pages.filter((p) => p.indexable);
@@ -110,11 +110,11 @@ test("every indexable page has a unique meta description of 70 to 160 characters
   assert.deepEqual(dups, [], `duplicate descriptions: ${JSON.stringify(dups.slice(0, 5))}`);
 });
 
-test("every indexable page has one H1, a canonical and refresh to suedeai.directory, and its og:url", () => {
+test("every indexable page has one H1, a canonical on suedeai.directory, and its og:url", () => {
   for (const p of indexable) {
     assert.equal(p.h1Count, 1, `${p.rel}: ${p.h1Count} H1 elements`);
     assert.equal(p.canonical, moved(p.url), `${p.rel}: canonical ${p.canonical}`);
-    assert.ok(p.html.includes(`<meta http-equiv="refresh" content="0; url=${moved(p.url)}">`), `${p.rel}: no refresh to ${moved(p.url)}`);
+    assert.doesNotMatch(p.html, /http-equiv="refresh"/, `${p.rel}: a refresh would move browser sessions off the page`);
     assert.equal(p.ogUrl, p.url, `${p.rel}: og:url ${p.ogUrl}`);
   }
 });
