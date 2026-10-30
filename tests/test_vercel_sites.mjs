@@ -25,6 +25,13 @@ test("links into the directory move to the new host; other links stay", () => {
   assert.equal(toDirectoryHost("https://github.com/x", `${OLD}/index.html`), "https://github.com/x");
 });
 
+test("skills-site directory links keep shared query state and fragments", () => {
+  const tail = "?q=anthropics%2Fskills&pick=a&pick=b#results";
+  for (const link of [`${OLD}/directory/check/${tail}`, `/directory/check/${tail}`, `directory/check/${tail}`]) {
+    assert.equal(toDirectoryHost(link, `${OLD}/index.html`), `${NEW}/check/${tail}`);
+  }
+});
+
 test("the sitemap drops directory URLs and keeps the rest", () => {
   const xml = `<urlset>\n  <url>\n    <loc>${OLD}/</loc>\n  </url>\n  <url>\n    <loc>${OLD}/directory/obra/</loc>\n  </url>\n</urlset>\n`;
   const out = skillsText(xml, ".xml", `${OLD}/sitemap.xml`);

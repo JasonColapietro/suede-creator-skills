@@ -9,6 +9,30 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { fitSentences } from "../scripts/directory/metadata.mjs";
+
+for (const [name, text, max, expected] of [
+  ["Next.js", "Builds Next.js apps. Deploys them with detailed setup instructions.", 20, "Builds Next.js apps."],
+  ["domain", "Uses qdrant.tech docs. Covers performance and deployment advice.", 25, "Uses qdrant.tech docs."],
+  ["filename and version", "Reads SKILL.md on Node.js v22.4.1. Checks all required fields and reports failures.", 35, "Reads SKILL.md on Node.js v22.4.1."],
+  ["abbreviation", "Supports tools, e.g. Next.js and Node.js. Provides complete setup instructions.", 45, "Supports tools, e.g. Next.js and Node.js."],
+  ["abbreviation cannot end a snippet", "Supports tools, e.g. Next.js and Node.js. Provides complete setup instructions.", 22, null],
+  ["title", "Helps Dr. Smith write docs. Includes complete reference examples.", 12, null],
+  ["quoted abbreviation", 'Uses "e.g." in prose. More follows.', 12, null],
+  ["parenthesized abbreviation", "Uses examples (e.g.) in prose. More follows.", 20, null],
+  ["initialism", "Explains U.S. privacy rules. Includes complete reference examples.", 15, null],
+  ["quoted sentence", 'Says "ready." Deploys the app with a complete setup guide.', 15, 'Says "ready."'],
+  ["punctuation", "Ready? Ship it! Detailed instructions follow for every environment.", 15, "Ready? Ship it!"],
+  ["whitespace", "  Builds\napps.  Ships\tcode. More detailed instructions follow.", 24, "Builds apps. Ships code."],
+  ["overlong first sentence", "Builds Next.js apps with comprehensive deployment and monitoring instructions. Short.", 30, null],
+  ["unfinished sentence", "Builds Next.js applications with comprehensive setup instructions", 22, null],
+  ["exact budget", "Builds apps. More instructions follow.", 12, "Builds apps."],
+  ["short summary", "Builds apps", 12, "Builds apps."],
+]) {
+  test(`sentence fitting preserves the summary prefix: ${name}`, () => {
+    assert.equal(fitSentences(text, max), expected);
+  });
+}
 
 const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const docs = path.join(repoRoot, "docs");
@@ -109,6 +133,20 @@ test("every indexable page has a unique meta description of 70 to 160 characters
   const dups = [...seen].filter(([, v]) => v.length > 1);
   assert.deepEqual(dups, [], `duplicate descriptions: ${JSON.stringify(dups.slice(0, 5))}`);
 });
+
+for (const [rel, prefix] of [
+  ["directory/cloudflare/skills/nextjs-on-cloudflare/", "Builds, migrates, and deploys Next.js"],
+  ["directory/qdrant/skills/qdrant-advisor/", "Diagnoses, troubleshoots, and advises on Qdrant deployments"],
+]) {
+  test(`generated search and social descriptions retain the capability: ${rel}`, () => {
+    const p = byRel.get(rel);
+    assert.ok(p.description.startsWith(prefix), p.description);
+    for (const tag of ['property="og:description"', 'name="twitter:description"']) {
+      const value = p.html.match(new RegExp(`<meta ${tag} content="([^"]*)"`))?.[1];
+      assert.equal(decode(value || ""), p.description, tag);
+    }
+  });
+}
 
 test("every indexable page has one H1, a canonical on suedeai.directory, and its og:url", () => {
   for (const p of indexable) {

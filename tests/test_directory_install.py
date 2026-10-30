@@ -51,7 +51,7 @@ class DirectoryInstallTests(unittest.TestCase):
         cls.root = Path(cls.tmp.name)
         for name in ("scripts/build-directory.mjs", "directory/categories.json",
                      "directory/notes.json", "directory/promotion.json", "directory/featured-projects.json", "directory/services-cta.json",
-                     "scripts/directory/featured.mjs", "scripts/directory/badges.mjs", "scripts/directory/editorial.mjs",
+                     "scripts/directory/featured.mjs", "scripts/directory/badges.mjs", "scripts/directory/editorial.mjs", "scripts/directory/metadata.mjs",
                      "scripts/directory/check-client.js", "docs/llms.txt"):
             target = cls.root / name
             target.parent.mkdir(parents=True, exist_ok=True)

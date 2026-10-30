@@ -19,6 +19,7 @@ import { fileURLToPath } from "node:url";
 import { SCORE_METHOD, qualityScore, scorePoints, letterGrade, listed, qualifies, badgePair, badgeMarkdown, badgeHtml, shieldSvg, listingTarget, promotionActive } from "./directory/badges.mjs";
 import { featuredProjectsHtml, directoryMembers, directoryMembersHtml } from "./directory/featured.mjs";
 import { parseGuide, renderGuideBody } from "./directory/editorial.mjs";
+import { fitSentences } from "./directory/metadata.mjs";
 
 const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const docsRoot = path.join(repoRoot, "docs");
@@ -984,21 +985,6 @@ function skillTitle(s) {
   let name = s.name;
   while (`${name} Skill`.length > 60 && name.includes("-")) name = name.slice(0, name.lastIndexOf("-"));
   return `${name} Skill`;
-}
-
-// Whole sentences only, up to max characters, or null when not even the first
-// sentence fits. A meta description cut mid-sentence ("…") reads as broken in
-// a search result.
-function fitSentences(text, max) {
-  const t = ensureSentence(String(text || "").replace(/\s+/g, " ").trim());
-  if (t.length <= max) return t;
-  let out = "";
-  for (const part of t.match(/[^.!?]+[.!?]+(?=\s|$)/g) || []) {
-    const next = `${out} ${part.trim()}`.trim();
-    if (next.length > max) break;
-    out = next;
-  }
-  return out || null;
 }
 
 const META_MAX = 155;
