@@ -11,7 +11,7 @@ const read=p=>fs.readFileSync(path.join(root,'docs/directory/agents',p),'utf8');
 test('agent routes are public, separate and evidence-scoped',()=>{
  for(const p of ['', 'ungraded/','goose/','cline/','devin/','methodology/','submit/']){
   const html=read(p+'index.html');
-  assert.match(html,new RegExp(`rel="canonical" href="https://skills.suedeai.ai/directory/agents/${p}"`));
+  assert.match(html,new RegExp(`rel="canonical" href="https://suedeai.directory/agents/${p}"`));
   assert.match(html,/index, follow/);assert.doesNotMatch(html,/aggregateRating|"ratingValue"/);
  }
  const hub=read('index.html');assert.match(hub,/3 products/);assert.match(hub,/3 editions/);

@@ -17,6 +17,7 @@ const __filename = fileURLToPath(import.meta.url);
 const repoRoot = path.resolve(path.dirname(__filename), "..");
 const docsRoot = path.join(repoRoot, "docs");
 const sitemapPath = path.join(docsRoot, "sitemap.xml");
+const directorySitemapPath = path.join(docsRoot, "directory-sitemap.xml");
 const checkOnly = process.argv.includes("--check");
 
 const BASE_URL = "https://skills.suedeai.ai";
@@ -405,9 +406,15 @@ function renderXml(entries) {
   return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`;
 }
 
-const entries = buildEntries();
-const generated = renderXml(entries);
-const current = fs.existsSync(sitemapPath) ? readText(sitemapPath) : "";
+const allEntries = buildEntries();
+// The directory moved to suedeai.directory. Its pages on this host canonicalize
+// there, so they leave this host's sitemap; scripts/build-directory-site.mjs
+// builds the suedeai.directory sitemap from docs/directory-sitemap.xml.
+const isDirectory = (e) => e.loc.startsWith(`${BASE_URL}/directory/`);
+const outputs = [
+  { file: sitemapPath, label: "docs/sitemap.xml", entries: allEntries.filter((e) => !isDirectory(e)) },
+  { file: directorySitemapPath, label: "docs/directory-sitemap.xml", entries: allEntries.filter(isDirectory) },
+];
 
 if (checkOnly) {
   if (!canVerifyGitDates) {
@@ -417,35 +424,37 @@ if (checkOnly) {
     console.log(`Sitemap freshness check skipped: ${reason}.`);
     process.exit(0);
   }
-  const drift = compareSitemaps(current, entries);
-  if (drift.structural.length > 0) {
-    console.error(
-      `docs/sitemap.xml is out of date (${entries.length} URLs expected). Run: node scripts/generate-sitemap.mjs`
-    );
-    for (const problem of drift.structural) console.error(`  ${problem}`);
-    process.exit(1);
+  let failed = false;
+  for (const { file, label, entries } of outputs) {
+    const current = fs.existsSync(file) ? readText(file) : "";
+    const drift = compareSitemaps(current, entries);
+    if (drift.structural.length > 0) {
+      console.error(`${label} is out of date (${entries.length} URLs expected). Run: node scripts/generate-sitemap.mjs`);
+      for (const problem of drift.structural) console.error(`  ${problem}`);
+      failed = true;
+      continue;
+    }
+    if (drift.staleBeyondGrace.length > 0) {
+      console.error(`${label} has <lastmod> values more than ${LASTMOD_GRACE_DAYS} days behind Git. Run: node scripts/generate-sitemap.mjs`);
+      for (const problem of drift.staleBeyondGrace) console.error(`  ${problem}`);
+      failed = true;
+      continue;
+    }
+    if (drift.staleWithinGrace.length > 0) {
+      // A squash merge gives every file it touched a new commit date, so the
+      // committed sitemap goes stale the instant the merge lands, and no
+      // pre-merge check can catch it, because the commit that changes the date
+      // is created by the merge itself. Failing here would red main on every
+      // docs-touching PR. Structure is still enforced exactly; only a short
+      // date lag is tolerated, and it is reported rather than hidden.
+      console.log(`${label} <lastmod> lags Git by up to ${LASTMOD_GRACE_DAYS} days on ${drift.staleWithinGrace.length} URL(s), within grace. Run: node scripts/generate-sitemap.mjs to refresh.`);
+    }
+    console.log(`${label} is up to date (${entries.length} URLs).`);
   }
-  if (drift.staleBeyondGrace.length > 0) {
-    console.error(
-      `docs/sitemap.xml has <lastmod> values more than ${LASTMOD_GRACE_DAYS} days behind Git. Run: node scripts/generate-sitemap.mjs`
-    );
-    for (const problem of drift.staleBeyondGrace) console.error(`  ${problem}`);
-    process.exit(1);
-  }
-  if (drift.staleWithinGrace.length > 0) {
-    // A squash merge gives every file it touched a new commit date, so the
-    // committed sitemap goes stale the instant the merge lands — and no
-    // pre-merge check can catch it, because the commit that changes the date
-    // is created by the merge itself. Failing here would red main on every
-    // docs-touching PR. Structure is still enforced exactly; only a short
-    // date lag is tolerated, and it is reported rather than hidden.
-    console.log(
-      `docs/sitemap.xml <lastmod> lags Git by up to ${LASTMOD_GRACE_DAYS} days on ${drift.staleWithinGrace.length} URL(s) — within grace. Run: node scripts/generate-sitemap.mjs to refresh.`
-    );
-  }
-  console.log(`docs/sitemap.xml is up to date (${entries.length} URLs).`);
-  process.exit(0);
+  process.exit(failed ? 1 : 0);
 }
 
-fs.writeFileSync(sitemapPath, generated);
-console.log(`Wrote docs/sitemap.xml with ${entries.length} URLs.`);
+for (const { file, label, entries } of outputs) {
+  fs.writeFileSync(file, renderXml(entries));
+  console.log(`Wrote ${label} with ${entries.length} URLs.`);
+}

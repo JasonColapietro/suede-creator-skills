@@ -87,6 +87,13 @@ class PublicDiscoveryTests(unittest.TestCase):
             rel = path.relative_to(DOCS).as_posix()
             own_url = BASE + (rel[:-10] if path.name == 'index.html' else rel)
             with self.subTest(page=rel):
+                if rel.startswith('directory/'):
+                    # The directory moved to suedeai.directory: this host's copy
+                    # canonicalizes there and stays out of this host's sitemap.
+                    moved = 'https://suedeai.directory/' + own_url.removeprefix(BASE + 'directory/')
+                    self.assertEqual(canonicals, [moved])
+                    self.assertNotIn(own_url, urls, 'moved directory page still in the skills sitemap')
+                    continue
                 self.assertEqual(canonicals, [own_url])
                 self.assertIn(own_url, urls, 'indexable content omitted from sitemap')
 

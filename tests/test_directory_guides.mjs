@@ -75,7 +75,7 @@ test("every guide page has a unique title, a self canonical and Article JSON-LD 
     assert.equal(title, g.title, `${g.id}: title from the manifest`);
     assert.ok(title.length <= 60, `${g.id}: title over 60 characters`);
     titles.set(title.toLowerCase(), [...(titles.get(title.toLowerCase()) || []), g.id]);
-    assert.equal(html.match(/<link rel="canonical" href="([^"]*)"/)[1], `${BASE}/${g.path}`, `${g.id}: canonical`);
+    assert.equal(html.match(/<link rel="canonical" href="([^"]*)"/)[1], `${BASE}/${g.path}`.replace(`${BASE}/directory`, "https://suedeai.directory"), `${g.id}: canonical points at suedeai.directory`);
     assert.equal((html.match(/<h1[\s>]/g) || []).length, 1, `${g.id}: one H1`);
     const blocks = jsonld(html);
     const article = blocks.find((b) => b["@type"] === "Article");
@@ -186,7 +186,7 @@ test("the check is static: it reads only the directory's own files and collects 
 });
 
 test("sitemap and llms.txt carry the guides and the check", () => {
-  const sitemap = fs.readFileSync(path.join(docs, "sitemap.xml"), "utf8");
+  const sitemap = fs.readFileSync(path.join(docs, "directory-sitemap.xml"), "utf8");
   const llms = fs.readFileSync(path.join(docs, "llms.txt"), "utf8");
   for (const rel of ["directory/guides/", "directory/check/", ...published.map((g) => g.path)]) {
     assert.ok(sitemap.includes(`<loc>${BASE}/${rel}</loc>`), `sitemap lacks ${rel}`);

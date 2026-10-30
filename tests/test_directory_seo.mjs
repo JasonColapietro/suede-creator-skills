@@ -49,6 +49,9 @@ for (const file of indexFiles(path.join(docs, "directory"))) {
     hrefs: [...main.matchAll(/href="([^"#?]*)/g)].map((m) => m[1]).filter((h) => h && !/^[a-z]+:/i.test(h) && !h.startsWith("/")),
   });
 }
+// The directory moved to suedeai.directory; the GitHub Pages copy at
+// skills.suedeai.ai/directory/ names its new URL as canonical and refreshes there.
+const moved = (u) => u.replace(`${BASE}/directory`, "https://suedeai.directory");
 const byRel = new Map(pages.map((p) => [p.rel, p]));
 const indexable = pages.filter((p) => p.indexable);
 const parsed = (p) => p.jsonld.map((b) => JSON.parse(b));
@@ -76,13 +79,13 @@ test("published repository pages stay indexable even with one listed skill", () 
     const rel = `directory/${skill.repo.split("/").map(slug).join("/")}/`;
     counts.set(rel, (counts.get(rel) || 0) + 1);
   }
-  const sitemap = new Set([...fs.readFileSync(path.join(docs, "sitemap.xml"), "utf8").matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]));
+  const sitemap = new Set([...fs.readFileSync(path.join(docs, "directory-sitemap.xml"), "utf8").matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]));
   const published = [...counts].filter(([rel]) => byRel.has(rel));
   assert.ok(published.some(([, count]) => count === 1), "exercise a published one-skill repository");
   for (const [rel, count] of published) {
     const page = byRel.get(rel);
     assert.ok(page.indexable, `${rel}: a published repository with ${count} listed skill(s) must be indexable`);
-    assert.equal(page.canonical, page.url, `${rel}: published repository must be self-canonical`);
+    assert.equal(page.canonical, moved(page.url), `${rel}: published repository must be canonical on suedeai.directory`);
     assert.ok(sitemap.has(page.url), `${rel}: published repository must appear in the sitemap`);
   }
 });
@@ -107,10 +110,11 @@ test("every indexable page has a unique meta description of 70 to 160 characters
   assert.deepEqual(dups, [], `duplicate descriptions: ${JSON.stringify(dups.slice(0, 5))}`);
 });
 
-test("every indexable page has one H1 and a self-referencing canonical and og:url", () => {
+test("every indexable page has one H1, a canonical and refresh to suedeai.directory, and its og:url", () => {
   for (const p of indexable) {
     assert.equal(p.h1Count, 1, `${p.rel}: ${p.h1Count} H1 elements`);
-    assert.equal(p.canonical, p.url, `${p.rel}: canonical ${p.canonical}`);
+    assert.equal(p.canonical, moved(p.url), `${p.rel}: canonical ${p.canonical}`);
+    assert.ok(p.html.includes(`<meta http-equiv="refresh" content="0; url=${moved(p.url)}">`), `${p.rel}: no refresh to ${moved(p.url)}`);
     assert.equal(p.ogUrl, p.url, `${p.rel}: og:url ${p.ogUrl}`);
   }
 });
@@ -219,7 +223,10 @@ test("indexable pages are within three clicks of the hub", () => {
 });
 
 test("the sitemap lists every indexable page with its declared date and no noindex page", () => {
-  const xml = fs.readFileSync(path.join(docs, "sitemap.xml"), "utf8");
+  // Directory URLs live in docs/directory-sitemap.xml, the source of the
+  // suedeai.directory sitemap; the skills.suedeai.ai sitemap no longer lists them.
+  const xml = fs.readFileSync(path.join(docs, "directory-sitemap.xml"), "utf8");
+  assert.doesNotMatch(fs.readFileSync(path.join(docs, "sitemap.xml"), "utf8"), /<loc>https:\/\/skills\.suedeai\.ai\/directory\//, "skills.suedeai.ai sitemap still lists moved directory URLs");
   const entries = new Map([...xml.matchAll(/<loc>([^<]+)<\/loc>\s*<lastmod>([^<]+)<\/lastmod>/g)].map((m) => [m[1], m[2]]));
   for (const p of pages) {
     if (!p.indexable) {
