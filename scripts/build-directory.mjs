@@ -20,7 +20,7 @@ import { SCORE_METHOD, qualityScore, scorePoints, letterGrade, listed, qualifies
 import { featuredProjectsHtml, directoryMembers, directoryMembersHtml } from "./directory/featured.mjs";
 import { parseGuide, renderGuideBody } from "./directory/editorial.mjs";
 import { fitSentences } from "./directory/metadata.mjs";
-import { loadTaskConfig, planTasks, planAlternatives, isFirstParty, TASK_GATE } from "./directory/task-pages.mjs";
+import { loadTaskConfig, planTasks, planAlternatives, isFirstParty, withArticle, TASK_GATE } from "./directory/task-pages.mjs";
 
 const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const docsRoot = path.join(repoRoot, "docs");
@@ -422,14 +422,6 @@ for (const s of featured) {
 const displayName = (s) => s.display_name || s.name;
 const sharedName = (s) => ownerNameCount.get(`${s.owner}/${s.name}`.toLowerCase()) > 1;
 
-// A short generic name ("work", "query", "node") reads better in a title with
-// the repository in front of it.
-function titleName(s) {
-  if (s.display_name) return s.display_name;
-  const generic = s.name.length <= 8 && !s.name.includes("-");
-  return generic && slugify(s.repo_name) !== s.name ? `${s.repo_name} ${s.name}` : s.name;
-}
-
 // ------------------------------------------------------------------ task plan
 
 // Task pages ("What are the best Claude Code skills for <topic>?") and
@@ -801,7 +793,11 @@ const LEAD_CAMPAIGN = {
   category: (lead) => (lead === "agents" ? "category-agent-studio" : "category-agency"),
   skill: () => "skill-page-aside",
 };
-function servicesCta(kind, category = null, here = "") {
+// compact (skill pages): the lead card keeps its short routed copy, the second
+// card shows its heading and button, and `publisher` (a campaign variant) adds
+// a one-line note for the skill's author, so every Suede AI call to action on
+// the page sits in this one aside below the listing's own content.
+function servicesCta(kind, category = null, here = "", { compact = false, publisher = null } = {}) {
   if (!CTA.enabled || !CTA.placements?.[kind]) return "";
   const lead = routeFor(category);
   const order = [lead, ...Object.keys(CTA.offers).filter((k) => k !== lead)];
@@ -816,17 +812,20 @@ function servicesCta(kind, category = null, here = "") {
     const o = CTA.offers[id];
     const v = i === 0 && leadVariant ? leadVariant.variant : null;
     const copy = v ? { heading: v.headline, body: v.body, cta: v.button, href: v.url, tag: `${leadVariant.campaign.id}:${v.id}` } : { heading: o.heading, body: o.body, cta: o.cta, href: href(o), tag: id };
+    const body = compact && i > 0 ? "" : `\n            <p>${esc(copy.body)}</p>`;
     return `          <div class="svc-card${i === 0 ? " svc-lead" : ""}" data-offer="${esc(id)}">
-            <h3>${esc(copy.heading)}</h3>
-            <p>${esc(copy.body)}</p>
+            <h3>${esc(copy.heading)}</h3>${body}
             <p>${ctaLink(here, copy.href, copy.cta, i === 0 ? "button" : "button secondary", ` data-cta="${esc(copy.tag)}"`)}</p>
           </div>`;
   }).join("\n");
-  return `      <aside class="panel svc-cta" aria-labelledby="svc-title" data-services-cta="${esc(kind)}">
+  const note = publisher
+    ? `\n        <p class="svc-publisher" data-cta-placement="${esc(publisher.campaign.id)}" data-cta-variant="${esc(publisher.variant.id)}"><b>${esc(publisher.variant.headline)}</b> ${ctaLink(here, publisher.variant.url, publisher.variant.button, "svc-publisher-link", ` data-cta="${esc(publisher.campaign.id)}:${esc(publisher.variant.id)}"`)}</p>`
+    : "";
+  return `      <aside class="panel svc-cta${compact ? " svc-compact" : ""}" aria-labelledby="svc-title" data-services-cta="${esc(kind)}">
         <h2 class="svc-kicker" id="svc-title">${esc(CTA.kicker)}</h2>
         <div class="svc-cards">
 ${cards}
-        </div>
+        </div>${note}
       </aside>`;
 }
 
@@ -1000,18 +999,51 @@ function filterField(id, total, noun) {
 
 // ------------------------------------------------------------------ skill pages
 
-function skillTitle(s) {
-  if (s.display_name) return s.display_name;
-  const n = titleName(s);
-  const by = sharedName(s) ? `in ${s.repo}` : `by ${s.owner}`;
-  const options = [`${n} Agent Skill ${by} | Suede AI`, `${n} Agent Skill ${by}`, `${n} Agent Skill`, `${n} Skill`];
-  const fit = options.find((t) => t.length <= 60);
-  if (fit) return fit;
+// "<skill>: Claude Code Skill by <Publisher> (<score>/100)" when it fits in 60
+// characters, then without the score, then without the publisher. The
+// publisher is the company name for official publishers and the GitHub owner
+// otherwise. A skill whose owner publishes the same name in two repositories
+// names the repository instead. Product names (display_name) stay as they are.
+const TITLE_MAX = 60;
+function skillTitleCandidates(s) {
+  const n = s.name;
+  const by = sharedName(s) ? `in ${s.repo}` : `by ${publisherName(s.owner, s.official)}`;
   // Cut a very long name at a hyphen so the title never ends mid-word.
-  let name = s.name;
-  while (`${name} Skill`.length > 60 && name.includes("-")) name = name.slice(0, name.lastIndexOf("-"));
-  return `${name} Skill`;
+  let cut = s.name;
+  while (`${cut} Skill`.length > TITLE_MAX && cut.includes("-")) cut = cut.slice(0, cut.lastIndexOf("-"));
+  return {
+    preferred: [`${n}: Claude Code Skill ${by} (${s.score}/100)`, `${n}: Claude Code Skill ${by}`, `${n}: Claude Code Skill`],
+    // Used only when the preferred title would repeat another page's.
+    distinct: [`${n} Skill ${by}`, `${n} ${by}`, `${cut} ${by}`, `${n}: Claude Code Skill in ${s.repo}`, `${n} in ${s.repo}`],
+    last: [`${n} Claude Code Skill`, `${n} Skill`, `${cut} Skill`],
+  };
 }
+const SKILL_TITLES = (() => {
+  const fits = (t) => t.length <= TITLE_MAX;
+  const chosen = new Map();
+  for (const s of featured) {
+    if (s.display_name) { chosen.set(s.id, s.display_name); continue; }
+    const c = skillTitleCandidates(s);
+    chosen.set(s.id, [...c.preferred, ...c.last].find(fits));
+  }
+  const taken = new Map();
+  for (const [id, t] of chosen) taken.set(t.toLowerCase(), [...(taken.get(t.toLowerCase()) || []), id]);
+  for (const ids of taken.values()) {
+    if (ids.length < 2) continue;
+    for (const id of ids) {
+      const s = featured.find((o) => o.id === id);
+      const c = skillTitleCandidates(s);
+      const t = [...c.preferred, ...c.distinct].find((x) => fits(x) && !(taken.get(x.toLowerCase()) || []).some((o) => o !== id));
+      if (!t) throw new Error(`no unique title fits for ${id}`);
+      const prev = chosen.get(id).toLowerCase();
+      taken.set(prev, taken.get(prev).filter((o) => o !== id));
+      taken.set(t.toLowerCase(), [...(taken.get(t.toLowerCase()) || []), id]);
+      chosen.set(id, t);
+    }
+  }
+  return chosen;
+})();
+const skillTitle = (s) => SKILL_TITLES.get(s.id);
 
 const META_MAX = 155;
 const META_MIN = 70;
@@ -1306,14 +1338,11 @@ ${pointRows}
           </div>
         </details>
       </section>
-${qualityBadgeBlock(here, s)}
-${campaignPanel(here, publisherClaim(here))}
       <section class="panel" aria-labelledby="cited-title">
         <h2 id="cited-title">Where this skill is cited</h2>
         <p>${s.lists.length ? `${esc(s.repo)} appears in ${plural(s.lists.length, "curated list")}: ${s.lists.map(listLink).join(", ")}.` : `${esc(s.repo)} is listed from its publisher's official collection or a listing request.`}</p>${citationEvidence(s.repo)}
       </section>
 ${guideLinksPanel(here, skillGuides(s), "Read next")}
-${servicesCta("skill", s.category, here)}
 ${related.length ? `      <section class="panel" aria-labelledby="related-title">
         <h2 id="related-title">More ${esc(cat.short)} skills</h2>
         <div class="links">
@@ -1327,7 +1356,9 @@ ${siblings.length ? `      <section class="panel" aria-labelledby="siblings-titl
 ${relatedRows(here, siblings)}
         </div>
         <p><a href="${rel(here, r.target)}">All ${plural(r.skills.length, "skill")} in ${esc(s.repo)}</a></p>
-      </section>` : ""}`;
+      </section>` : ""}
+${qualityBadgeBlock(here, s)}
+${servicesCta("skill", s.category, here, { compact: true, publisher: publisherClaim(here) })}`;
   const description = skillDescription(s, descriptionNeedsName.has(s.id));
   const ownSkill = s.repo.toLowerCase() === "jasoncolapietro/suede-creator-skills";
   const taskName = s.name.replace(/^suede-/, "").replaceAll("-", " ");
@@ -1516,6 +1547,14 @@ function topPicks(c, feat) {
   });
 }
 
+// Where a table row's name points: the full skill page, else the row on its
+// repository page, else the skill folder on GitHub.
+function listItemUrl(s) {
+  if (s.featured) return url(skillPath(s));
+  const r = repos.get(s.repo_slug);
+  return r.hasPage ? `${url(r.target)}#${s.slug}` : s.folder_url;
+}
+
 function renderCategory(c) {
   const here = catPath(c.slug);
   const all = skillsByCat.get(c.slug);
@@ -1617,10 +1656,12 @@ ${topRepos.map(([slug, n]) => `          <a class="link-row" href="${rel(here, r
         dateModified: PAGE_DATE,
         isPartOf: DIRECTORY_REF, publisher: PUBLISHER_REF,
         breadcrumb: { "@id": `${url(here)}#breadcrumb` },
+        // Every row of the "All N skills" table, in table order, so the list
+        // and its numberOfItems match what the page shows.
         mainEntity: {
           "@type": "ItemList",
-          numberOfItems: all.length,
-          itemListElement: feat.slice(0, 30).map((s, i) => ({ "@type": "ListItem", position: i + 1, name: displayName(s), url: url(skillPath(s)) })),
+          numberOfItems: sorted.length,
+          itemListElement: sorted.map((s, i) => ({ "@type": "ListItem", position: i + 1, name: displayName(s), url: listItemUrl(s) })),
         },
       },
       bc.ld,
@@ -1754,7 +1795,7 @@ function taskFaq(t) {
   const subject = `${t.job.noun} skills on this page`;
   const faq = [
     [`Which ${t.job.noun} skill has the highest Suede Skill Check score?`, `${displayName(top)} from ${top.repo} scores ${top.score}/100, grade ${top.grade}, the highest of the ${fmt(t.matches.length)} listed ${t.job.noun} skills in the ${longDate(data.generated)} snapshot.${drivers.length ? ` It earns full points for ${listPhrase(drivers)}.` : ""}${t.rows[1] ? ` ${displayName(t.rows[1])} from ${t.rows[1].repo} follows at ${t.rows[1].score}/100.` : ""}`],
-    [`How do I install a ${t.job.noun} skill in Claude Code?`, installAnswer(t.rows, t.job.noun)],
+    [`How do I install ${withArticle(t.job.noun)} skill in Claude Code?`, installAnswer(t.rows, t.job.noun)],
     [`Are these ${t.job.noun} skills free?`, freeAnswer(t.rows, subject)],
     [`Do these ${t.job.noun} skills work with Codex and Cursor?`, agentsAnswer(t.rows, subject)],
     [`How does ${SITE_LABEL} rank ${t.job.noun} skills?`, `By Suede Skill Check score from 0 to 99, which adds structure, description quality, instruction depth, bundled files, maintenance and curated-list citations, all read from each skill's published files. A skill joins this page when its name or summary matches the ${t.job.topic} keyword map; each repository fills at most three rows, so the table compares publishers.`],

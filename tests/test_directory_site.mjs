@@ -8,7 +8,7 @@ import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { build, rewriteUrl, rewriteText, rehomeWebsite, SITE_NODE, OLD, NEW } from "../scripts/build-directory-site.mjs";
+import { build, rewriteUrl, rewriteText, rehomeWebsite, retagUtmSource, rehomeSocialImages, SITE_NODE, OLD, NEW } from "../scripts/build-directory-site.mjs";
 
 const page = `${OLD}/directory/obra/superpowers/index.html`;
 
@@ -176,5 +176,40 @@ test("the standalone home names suedeai.directory as its own WebSite", () => {
     const notFound = fs.readFileSync(path.join(out2, "404.html"), "utf8");
     assert.ok(notFound.includes("This page is not on suedeai.directory."));
     assert.ok(!notFound.includes("This page is not on skills.suedeai.ai."));
+    // Every page on this host tags its CTAs and serves its social card from here.
+    const skill = fs.readFileSync(path.join(out2, "anthropics", "skills", "pdf", "index.html"), "utf8");
+    for (const [rel, html] of [["index.html", home], ["anthropics/skills/index.html", repo], ["anthropics/skills/pdf/index.html", skill], ["404.html", notFound]]) {
+      assert.doesNotMatch(html, /utm_source=skills\.suedeai\.ai/, `${rel}: CTA still tagged with the old host`);
+      for (const m of html.matchAll(/<meta (?:property="og:image"|name="twitter:image") content="([^"]*)"/g)) {
+        assert.ok(m[1].startsWith(`${NEW}/assets/`), `${rel}: social image ${m[1]} not on ${NEW}`);
+        assert.ok(fs.existsSync(path.join(out2, ...m[1].slice(NEW.length + 1).split("/"))), `${rel}: ${m[1]} is not in the build`);
+      }
+    }
+    assert.match(skill, /href="https:\/\/suedeai\.(?:agency|app)\/\?utm_source=suedeai\.directory&amp;/, "skill page CTA carries the directory source tag");
+    assert.match(skill, /<meta property="og:image" content="https:\/\/suedeai\.directory\/assets\/social\/directory-card\.png">/);
+    // docs/ is the skills.suedeai.ai copy and keeps its own tags.
+    const docsSkill = fs.readFileSync(path.join(path.dirname(fileURLToPath(import.meta.url)), "..", "docs", "directory", "anthropics", "skills", "pdf", "index.html"), "utf8");
+    assert.match(docsSkill, /utm_source=skills\.suedeai\.ai/);
+    assert.match(docsSkill, /<meta property="og:image" content="https:\/\/skills\.suedeai\.ai\/assets\/social\/directory-card\.png">/);
   } finally { fs.rmSync(out2, { recursive: true, force: true }); }
+});
+
+test("directory pages retag CTA utm_source and keep other parameters", () => {
+  const a = `<a href="https://suedeai.agency/?utm_source=skills.suedeai.ai&amp;utm_medium=directory&amp;utm_content=x">A</a>`;
+  assert.equal(retagUtmSource(a), `<a href="https://suedeai.agency/?utm_source=suedeai.directory&amp;utm_medium=directory&amp;utm_content=x">A</a>`);
+  const b = `<a href="https://suedeai.app/?utm_medium=directory&utm_source=skills.suedeai.ai">B</a>`;
+  assert.equal(retagUtmSource(b), `<a href="https://suedeai.app/?utm_medium=directory&utm_source=suedeai.directory">B</a>`);
+  for (const keep of [`utm_source=skills.suedeai.ai.example`, `?utm_source=trendshift-badge`, `<p>skills.suedeai.ai</p>`]) assert.equal(retagUtmSource(keep), keep);
+  const page = rewriteText(`<a href="https://suedeai.agency/?utm_source=skills.suedeai.ai&amp;utm_medium=directory">A</a>`, ".html", `${OLD}/directory/x/`);
+  assert.ok(page.includes("utm_source=suedeai.directory"));
+});
+
+test("social images move to the directory host only when the asset ships with it", () => {
+  const html = `<meta property="og:image" content="${OLD}/assets/social/directory-card.png">\n<meta name="twitter:image" content="${OLD}/assets/social/directory-card.png">`;
+  assert.equal(rehomeSocialImages(html), html.replaceAll(`${OLD}/assets/`, `${NEW}/assets/`));
+  const missing = `<meta property="og:image" content="${OLD}/assets/social/not-built.png">`;
+  assert.equal(rehomeSocialImages(missing), missing, "an image outside docs/assets keeps its URL");
+  assert.equal(rehomeSocialImages(html, () => false), html);
+  const other = `<meta property="og:image" content="https://example.com/assets/x.png">`;
+  assert.equal(rehomeSocialImages(other), other);
 });

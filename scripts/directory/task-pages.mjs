@@ -24,6 +24,29 @@ export const PER_REPO_MAX = 3;
 export const ALTERNATIVES_MIN_PEERS = 3;
 export const ALTERNATIVES_MAX = 8;
 
+// "a" or "an" for a phrase, by how its first word is said rather than spelled.
+// An acronym read letter by letter takes "an" when its first letter's name
+// starts with a vowel sound (SEO, SQL, AWS, LLM, MCP, iOS, HTML) and "a"
+// otherwise (PDF, UI); an acronym said as a word (RAG, SaaS) follows the word.
+const VOWEL_SOUND_LETTERS = new Set([..."AEFHILMNORSX"]);
+const WORD_ACRONYMS = new Set(["RAG", "SAAS", "NASA", "JSON", "YAML", "GIF", "JPEG", "SCSS", "SASS", "CRUD", "REST", "OAUTH", "WASM", "LAN", "SIM", "SOAP"]);
+const CONSONANT_SOUND_WORDS = /^(?:uni(?!nstall|ndent|mport)|use|usu|uti|ura|ure|uro|eu|ewe|one\b|once\b|ubiq|ufo)/i;
+const VOWEL_SOUND_WORDS = /^(?:hour|honest|honor|honour|heir)/i;
+export function indefiniteArticle(phrase) {
+  const word = String(phrase || "").trim().split(/[\s/-]+/)[0] || "";
+  if (!word) return "a";
+  if (/^\d/.test(word)) return /^(?:8|11|18)(?!\d)|^8\d/.test(word) ? "an" : "a";
+  const letters = word.replace(/[^A-Za-z]/g, "");
+  // Letter-by-letter acronyms: two or more capitals after an optional
+  // lowercase prefix letter (iOS, eBPF), or a lone capital.
+  const acronym = /^[a-z]?[A-Z]{2,}[a-z]*$/.test(letters) && !WORD_ACRONYMS.has(letters.toUpperCase()) || /^[A-Z]$/.test(letters);
+  if (acronym) return VOWEL_SOUND_LETTERS.has(letters[0].toUpperCase()) ? "an" : "a";
+  if (VOWEL_SOUND_WORDS.test(letters)) return "an";
+  if (CONSONANT_SOUND_WORDS.test(letters)) return "a";
+  return /^[aeiou]/i.test(letters) ? "an" : "a";
+}
+export const withArticle = (phrase) => `${indefiniteArticle(phrase)} ${phrase}`;
+
 const firstSentence = (t) => (String(t || "").replace(/\s+/g, " ").trim().match(/^.*?[.!?](?=\s|$)/) || [String(t || "")])[0];
 
 export function loadTaskConfig(file, categorySlugs) {

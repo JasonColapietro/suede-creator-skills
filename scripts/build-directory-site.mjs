@@ -14,6 +14,10 @@
 //     except /assets/..., which ships with this site
 //   - relative links that stay inside the directory are left alone: every page
 //     moves up one level together, so they still resolve
+//   - Suede AI call-to-action links tagged utm_source=skills.suedeai.ai are
+//     retagged utm_source=suedeai.directory
+//   - og:image and twitter:image move to https://suedeai.directory/assets/...
+//     when the image ships in docs/assets/
 // It also writes robots.txt, sitemap.xml, llms.txt and 404.html for the new host.
 // Nothing under docs/ is modified. vercel.json runs this as the build command.
 import fs from "node:fs";
@@ -79,11 +83,29 @@ export function rehomeWebsite(html) {
   });
 }
 
-export function rewriteText(text, ext, pageUrl) {
+// Outbound Suede AI calls to action carry utm_source naming the host the
+// visitor clicked from. Every page this build writes is served on
+// suedeai.directory, so its links say so; docs/ keeps skills.suedeai.ai.
+const UTM_SOURCE_RE = /([?&]|&amp;)utm_source=skills\.suedeai\.ai(?=&|"|'|#|\s|$)/g;
+export const retagUtmSource = (html) => html.replace(UTM_SOURCE_RE, "$1utm_source=suedeai.directory");
+
+// The social card ships with this site under /assets/, so the preview image
+// is served from the same host as the page. An image that is not part of
+// docs/assets/ keeps its original URL.
+const SOCIAL_IMAGE_RE = /(<meta (?:property="og:image(?::secure_url)?"|name="twitter:image(?::src)?") content=")https:\/\/skills\.suedeai\.ai\/assets\/([^"?#]+)([^"]*")/g;
+const shippedAsset = (rel) => {
+  const file = path.join(ROOT, "docs", "assets", ...rel.split("/"));
+  return !rel.split("/").includes("..") && fs.existsSync(file) && fs.statSync(file).isFile();
+};
+export function rehomeSocialImages(html, assetExists = shippedAsset) {
+  return html.replace(SOCIAL_IMAGE_RE, (whole, open, rel, rest) => (assetExists(rel) ? `${open}${NEW}/assets/${rel}${rest}` : whole));
+}
+
+export function rewriteText(text, ext, pageUrl, { assetExists = shippedAsset } = {}) {
   let out = text;
   if (ext === ".html" || ext === ".svg") out = out.replace(ATTR_RE, (_, attr, v) => `${attr}="${rewriteUrl(v, pageUrl)}"`);
   out = out.replace(OLD_DIR_RE, NEW);
-  if (ext === ".html") out = rehomeWebsite(out);
+  if (ext === ".html") out = rehomeSocialImages(retagUtmSource(rehomeWebsite(out)), assetExists);
   // The search index and report files carry root-absolute listing paths.
   if (ext === ".json" || ext === ".js") out = out.replace(/(["'])\/directory\//g, "$1/");
   return out;
