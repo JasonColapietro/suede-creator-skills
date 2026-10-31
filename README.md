@@ -4,7 +4,7 @@
 
 <br><br>
 
-[![Skills: 64](https://img.shields.io/badge/skills-64-c8a96e?labelColor=080808)](#the-skills)
+[![Skills: 66](https://img.shields.io/badge/skills-66-c8a96e?labelColor=080808)](#the-skills)
 [![Licenses: MIT + BSD](https://img.shields.io/badge/licenses-MIT_%2B_BSD-c8a96e?labelColor=080808)](NOTICE.md)
 [![Claude Code](https://img.shields.io/badge/Claude_Code-plugin-c8a96e?labelColor=080808)](#install-in-30-seconds)
 [![Codex](https://img.shields.io/badge/Codex-plugin-c8a96e?labelColor=080808)](#install-in-30-seconds)
@@ -220,7 +220,9 @@ Every link below goes to the skill's folder in this repo; the [skill catalog](ht
 | Skill | What it does |
 |---|---|
 | [`suede-seo-audit`](skills/suede-seo-audit) | SEO/AEO/GEO, metadata, schema, internal-link, and intent audit |
-| [`suede-design`](skills/suede-design) | Full design lane: brand and product surfaces, design laws, dark-mode tokens, fluid type, visual QA, vetted component sources with an adoption checklist |
+| [`suede-design`](skills/suede-design) | Read-only whole-flow and UI diff reviews, plus authorized builds with existing brand, tokens, hierarchy, accessibility and rendered visual QA |
+| [`suede-component-lab`](skills/suede-component-lab) | Dev-only workbenches importing real components with synthetic states, stress fixtures and live variants |
+| [`suede-interface-explain`](skills/suede-interface-explain) | Read-only explanations of interface mechanisms, traced to source locations and observed behavior |
 | [`suede-copy`](skills/suede-copy) | Full writing lane: conversion and SEO copy, headline formulas, persuasion frameworks, A/B variants, anti-slop gate, copy score |
 | [`suede-deslop`](skills/suede-deslop) | Context-aware anti-slop cleanup or findings-only audit that preserves facts, voice, house style, and intentional phrasing, with a 50-point score gate |
 | [`suede-visibility-grader`](skills/suede-visibility-grader) | A–F page grades for findability, clarity, CTA pull, proof, and AI citation readiness |

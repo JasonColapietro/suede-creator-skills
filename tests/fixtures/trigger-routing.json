@@ -126,14 +126,26 @@
     },
     {
       "id": "design-visibility",
-      "skills": ["suede-design", "suede-visibility-grader"],
+      "skills": ["suede-design", "suede-component-lab", "suede-interface-explain", "suede-visibility-grader"],
       "fallback": "suede-design",
       "routes": [
         {
           "skill": "suede-design",
-          "positive": ["design tokens", "color system", "typography", "component hierarchy", "visual hierarchy", "dark mode"],
-          "negative": ["grade this public page", "findability", "a f visibility"],
-          "metadataMustContain": ["tokens", "hierarchy"]
+          "positive": ["design tokens", "color system", "typography", "component hierarchy", "visual hierarchy", "dark mode", "whole-flow review", "review this flow", "UI diff", "review this interface", "build this interface", "selected design", "supplied screenshot"],
+          "negative": ["grade this public page", "findability", "a f visibility", "component workbench", "stress fixtures", "live variants", "explain this interface", "mechanism explanation", "trace the mechanism"],
+          "metadataMustContain": ["tokens", "hierarchy", "whole-flow review", "UI diff"]
+        },
+        {
+          "skill": "suede-component-lab",
+          "positive": ["component workbench", "component lab", "stress fixtures", "live variants", "synthetic states", "component preview"],
+          "negative": ["whole-flow review", "UI diff", "explain this interface", "mechanism explanation", "trace the mechanism"],
+          "metadataMustContain": ["component workbench", "stress fixtures", "live variants"]
+        },
+        {
+          "skill": "suede-interface-explain",
+          "positive": ["explain this interface", "mechanism explanation", "trace the mechanism", "how this interface works", "source-backed explanation", "explain this interaction"],
+          "negative": ["component workbench", "stress fixtures", "live variants", "build this interface", "selected design", "whole-flow review", "UI diff"],
+          "metadataMustContain": ["explain this interface", "mechanism", "source"]
         },
         {
           "skill": "suede-visibility-grader",
@@ -160,6 +172,76 @@
           "id": "design-ambiguous-fallback",
           "mode": "ambiguous",
           "prompt": "Make this landing page more compelling.",
+          "expected": "suede-design"
+        },
+        {
+          "id": "design-flow-review-positive",
+          "mode": "positive",
+          "prompt": "Do a whole-flow review of onboarding and prioritize task completion. Keep the audit read-only.",
+          "expected": "suede-design"
+        },
+        {
+          "id": "design-ui-diff-positive",
+          "mode": "positive",
+          "prompt": "Review this UI diff for hierarchy, accessibility, and conversion regressions without editing.",
+          "expected": "suede-design"
+        },
+        {
+          "id": "design-build-negative-lab",
+          "mode": "negative",
+          "prompt": "Build this interface from the selected design and supplied screenshot using our existing tokens.",
+          "expected": "suede-design",
+          "forbidden": ["suede-component-lab", "suede-interface-explain"]
+        },
+        {
+          "id": "component-workbench-positive",
+          "mode": "positive",
+          "prompt": "Build a component workbench importing our real components, with synthetic states, stress fixtures and live variants.",
+          "expected": "suede-component-lab"
+        },
+        {
+          "id": "component-workbench-negative-design",
+          "mode": "negative",
+          "prompt": "I need a component lab with stress fixtures for a reusable button family. Keep production behavior untouched.",
+          "expected": "suede-component-lab",
+          "forbidden": ["suede-design", "suede-interface-explain"]
+        },
+        {
+          "id": "component-preview-ambiguous",
+          "mode": "ambiguous",
+          "prompt": "Can we look at these controls in a component preview with synthetic states?",
+          "expected": "suede-component-lab"
+        },
+        {
+          "id": "interface-explain-positive",
+          "mode": "positive",
+          "prompt": "Explain this interface using source evidence: trace the mechanism behind its sticky header and state transitions.",
+          "expected": "suede-interface-explain"
+        },
+        {
+          "id": "interface-explain-negative-build",
+          "mode": "negative",
+          "prompt": "I want a source-backed explanation of how this interface works. Leave every application file unchanged.",
+          "expected": "suede-interface-explain",
+          "forbidden": ["suede-design", "suede-component-lab"]
+        },
+        {
+          "id": "interaction-explain-ambiguous",
+          "mode": "ambiguous",
+          "prompt": "Could you explain this interaction and show where its state comes from?",
+          "expected": "suede-interface-explain"
+        },
+        {
+          "id": "design-audit-negative-explain",
+          "mode": "negative",
+          "prompt": "Review this interface for task success and conversion with a whole-flow review. Do not rebuild it.",
+          "expected": "suede-design",
+          "forbidden": ["suede-interface-explain", "suede-component-lab"]
+        },
+        {
+          "id": "design-component-ambiguous-fallback",
+          "mode": "ambiguous",
+          "prompt": "Take a look at this component and make it easier to use.",
           "expected": "suede-design"
         }
       ]

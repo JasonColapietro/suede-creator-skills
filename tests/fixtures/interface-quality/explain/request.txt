@@ -1,0 +1,1 @@
+Explain how the soft color field behind this page is constructed. These are the only supplied source artifacts. The target browser and original screenshot are unavailable. Give the mechanism, what is known, and what still requires evidence. Do not rebuild the page.

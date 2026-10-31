@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Suede AI Component Lab Skills</title>
+    <meta name="description" content="Build a dev-only component workbench with real imports, synthetic stress fixtures and live variants. Check states before changing production UI.">
+    <meta name="keywords" content="component lab, component workbench, synthetic UI states, component stress fixtures, live component variants, Suede AI Skills">
+    <meta name="author" content="Jason Colapietro">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <link rel="canonical" href="https://skills.suedeai.ai/skills/suede-component-lab.html">
+    <link rel="icon" href="../assets/favicon-64.png" type="image/png">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Suede AI Component Lab Skills">
+    <meta property="og:description" content="Build a dev-only component workbench with real imports, synthetic stress fixtures and live variants. Check states before changing production UI.">
+    <meta property="og:url" content="https://skills.suedeai.ai/skills/suede-component-lab.html">
+    <meta property="og:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Suede AI Component Lab Skills">
+    <meta name="twitter:description" content="Build a dev-only component workbench with real imports, synthetic stress fixtures and live variants. Check states before changing production UI.">
+    <meta name="twitter:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "@id": "https://skills.suedeai.ai/skills/suede-component-lab.html#article",
+  "headline": "Suede AI Component Lab Skills",
+  "description": "Explore the components your product already uses in a local workbench. Compare supported loading, empty, error, long-content and keyboard states with synthetic fixtures, then inspect live variants against the same task. Reuse the current stack, tokens and brand while keeping production data and behavior separate.",
+  "url": "https://skills.suedeai.ai/skills/suede-component-lab.html",
+  "author": {
+    "@type": "Person",
+    "@id": "https://suedeai.ai/founder#person",
+    "name": "Jason Colapietro"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://suedeai.ai/#organization",
+    "name": "Suede AI",
+    "url": "https://suedeai.ai"
+  },
+  "about": [
+    "Suede AI Skills",
+    "component lab",
+    "component workbench",
+    "synthetic UI states",
+    "component stress fixtures",
+    "live component variants"
+  ],
+  "mainEntity": {
+    "@type": "SoftwareSourceCode",
+    "name": "suede-component-lab",
+    "codeRepository": "https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-component-lab",
+    "programmingLanguage": "Markdown",
+    "genre": "DeveloperTool",
+    "license": "https://github.com/JasonColapietro/suede-creator-skills/blob/main/LICENSE"
+  }
+}
+    </script>
+    <link rel="preload" href="../assets/fonts/fraunces-var.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../assets/site.css">
+    <link rel="stylesheet" href="../assets/skill.css">
+</head>
+  <body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="nav">
+      <nav class="shell nav-inner" aria-label="Main navigation">
+        <a href="../" class="nav-logo" aria-label="Suede AI Skills home">
+          <img src="../assets/suede-ai-logo-transparent.webp" alt="Suede AI" width="28" height="28" onerror="this.style.display='none'">
+          <span class="nav-logo-wordmark">Suede <span>AI Skills</span></span>
+        </a>
+        <details class="nav-disclosure" open>
+      <summary class="nav-hamburger" aria-label="Open navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </summary>
+      <div class="nav-links">
+          <a href="../">Home</a>
+          <a href="./">Skills</a>
+          <a href="../directory/">Directory</a>
+          <a href="../guide.html">Guide</a>
+          <a href="../book/">Book</a>
+          <a href="../blog/">Blog</a>
+          <a href="../copy.html">Copy Bank</a>
+      <a href="../cracked.html">Cracked Devs</a>
+          <a href="../plugins.html" class="nav-cta">Install</a>
+        </div>
+    </details>
+      </nav>
+    </header>
+    <main id="main" tabindex="-1" class="shell">
+      <div class="eyebrow">/suede-component-lab &middot; Design system</div>
+      <h1><span class="h1-task">Suede AI Component Lab Skills</span> See real components in the states that matter.</h1>
+      <p class="lead">Explore the components your product already uses in a local workbench. Compare supported loading, empty, error, long-content and keyboard states with synthetic fixtures, then inspect live variants against the same task. Reuse the current stack, tokens and brand while keeping production data and behavior separate.</p>
+      <p><a class="button" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-component-lab">Read the skill</a> <a class="button secondary" href="../plugins.html">Install options</a></p>
+      <div class="plain-ask" aria-label="Example request that routes to this skill">
+        <span class="plain-ask-quote">&quot;Build a component workbench with stress fixtures and live variants.&quot;</span>
+        <span class="plain-ask-arrow" aria-hidden="true">-&gt;</span>
+        <code class="plain-ask-cmd">/suede-component-lab</code>
+        <span class="plain-ask-note">The <a href="suede-workflow-skills.html">workflow router</a> selects this task when the skill is available.</span>
+      </div>
+      <section class="grid">
+        <article class="card">
+          <h2>What you get</h2>
+          <ul>
+            <li>A local workbench that imports the actual product components and their existing providers.</li>
+            <li>A state matrix with synthetic fixtures for supported loading, empty, error, success, disabled and long-content cases.</li>
+            <li>Live variants compared under the same task, content, viewport and theme.</li>
+            <li>Rendered observations, keyboard checks and a record of which states still need verification.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h2>Keep the preview isolated</h2>
+          <ul>
+            <li>Use the project's existing preview and build tools; request a dependency change only if the task requires it.</li>
+            <li>Use synthetic data, inert callbacks and request stubs. Keep production accounts, credentials and mutations outside the workbench.</li>
+            <li>Check the actual routing and build configuration before calling the preview dev-only.</li>
+            <li>Keep behavioral stress fixtures distinct from design variants so each comparison answers a clear question.</li>
+          </ul>
+        </article>
+      </section>
+      <section class="panel">
+        <h2>Review states, then decide</h2>
+        <p>Start with the user's task and the action each control supports. Compare error recovery, readability, keyboard access and content fit before cosmetic differences. Existing components, tokens and brand supply the baseline. A preferred variant is a design judgment; a conversion improvement requires separate measurement.</p>
+        <p>When the runtime cannot render a state, the report identifies it as unobserved. A fixture file or source inspection alone does not prove that the interface renders correctly.</p>
+      </section>
+      <section class="panel">
+        <h2>Example request</h2>
+        <pre><code>Use $suede-component-lab for the existing checkout controls. Import the real components into our current preview tooling, use synthetic states and inert callbacks, and compare long-content, error, loading, disabled and keyboard states. Preserve our tokens and brand. Verify the workbench stays out of production routes and output, then report what you actually rendered.</code></pre>
+      </section>
+      <section class="panel">
+        <h2>Choose the matching task</h2>
+        <p><a href="suede-design.html">Suede AI Design Skills</a> reviews whole flows and UI diffs or implements an authorized design. <a href="suede-interface-explain.html">Suede AI Interface Explain Skills</a> explains an existing mechanism without rebuilding it. <a href="suede-code.html">Suede AI Code Skills</a> reviews implementation correctness.</p>
+      </section>
+      <section class="panel">
+        <h2>Repository and installation</h2>
+        <p>This documentation-only skill lives under <code>skills/suede-component-lab/</code>. Keeping it in the repository prepares it for future full-pack distribution; it does not install dependencies or activate the skill globally. Installation into an agent is a separate action.</p>
+      </section>
+      <!-- related-skills:start (generated by scripts/build-related-skills.mjs) -->
+      <section aria-labelledby="related-skills-title">
+        <h2 id="related-skills-title">Related skills</h2>
+        <ul>
+          <li><a href="suede-design.html">Suede AI Design Skills</a>: Review flows and UI diffs, or build within your existing brand. Prioritize task success, hierarchy, tokens, accessibility and rendered visual evidence.</li>
+          <li><a href="suede-interface-explain.html">Suede AI Interface Explain Skills</a>: Trace an interface mechanism through source, events, state and layout. Get a read-only explanation with source facts and rendered observations separated.</li>
+          <li><a href="suede-site-alchemy.html">Suede AI Site Alchemy Skills</a>: Conversion rate optimization that ranks every fix by evidence, traffic and effort, and inventories cognitive, physical and trust friction.</li>
+          <li><a href="suede-code.html">Suede AI Code Skills</a>: Code review and ship grade in one run: severity-ranked findings with file and line evidence, plus an A to F grade capped by the weakest of seven lanes.</li>
+          <li><a href="suede-copy.html">Suede AI Copy Skills</a>: Conversion copy for landing sections, email, microcopy, buttons, headlines and CTAs, with one pass per surface and a score on every piece.</li>
+        </ul>
+      </section>
+      <!-- related-skills:end -->
+      <section class="install-block" aria-labelledby="install-block-title">
+        <h2 id="install-block-title">Install this skill</h2>
+        <p class="install-lede">The repository includes this skill in full-pack discovery. Install a revision containing it to use the new entry point. Claude Code takes two commands the first time and one after that; Codex installs the same pack natively.</p>
+        <div class="install-term">
+          <div class="install-term-bar">
+            <span class="install-term-dots" aria-hidden="true"><span></span><span></span><span></span></span>
+            <b>terminal &middot; install the pack</b>
+          </div>
+          <div class="install-row">
+            <div class="install-cmd">
+              <span class="install-label">Claude Code</span>
+              <pre class="install-code"><span class="install-prompt">$</span> /plugin marketplace add JasonColapietro/suede-creator-skills
+<span class="install-prompt">$</span> /plugin install suede-skills@suede</pre>
+            </div>
+            <button class="install-copy" type="button" data-install-copy aria-label="Copy the Claude Code install commands">Copy</button>
+          </div>
+          <div class="install-row">
+            <div class="install-cmd">
+              <span class="install-label">Codex</span>
+              <pre class="install-code"><span class="install-prompt">$</span> codex plugin add suede-skills@suede-codex</pre>
+            </div>
+            <button class="install-copy" type="button" data-install-copy aria-label="Copy the Codex install command">Copy</button>
+          </div>
+        </div>
+        <p class="install-status" role="status" aria-live="polite" data-install-status></p>
+        <p class="install-note">Cursor, Copilot, and Windsurf install through the skills CLI. Every path is on the <a href="../plugins.html">install page</a>, and every folder is readable first on <a href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener">GitHub</a>.</p>
+      </section>
+    </main>
+    <section class="ship-strip" aria-label="Install the pack">
+      <div class="shell">
+        <p class="ship-strip-head">Proof is part of the release.</p>
+        <p class="ship-strip-sub">First install takes two commands. After the marketplace is added, install is one. Every skill is plain Markdown.</p>
+        <div class="ship-strip-row">
+          <code><span class="prompt">$</span> /plugin marketplace add JasonColapietro/suede-creator-skills &rarr; /plugin install suede-skills@suede</code>
+          <a href="../plugins.html">All install paths</a>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="shell">
+        <p class="footer-note">Suede AI Component Lab Skills is part of Suede AI Skills. Read the workflow and its evidence boundaries before use.</p>
+        <div class="footer-inner">
+          <div class="footer-brand">
+            <img src="../assets/suede-ai-logo-transparent.webp" alt="Suede AI" width="24" height="24" onerror="this.style.display='none'">
+            <span>Built by <strong>Jason Colapietro</strong> / Suede AI</span>
+          </div>
+          <div class="footer-links">
+            <a href="https://x.com/johnnysuede" target="_blank" rel="noopener">@johnnysuede</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="https://suedeai.ai" target="_blank" rel="noopener">suedeai.ai</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener">GitHub</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="https://suedeai.ai/privacy" target="_blank" rel="noopener">Privacy</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="https://suedeai.ai/contact" target="_blank" rel="noopener">Contact</a>
+          </div>
+        </div>
+      </div>
+    <div class="trendshift-recognition" style="width:250px;max-width:100%;margin:24px auto;text-align:center"><p style="margin:0 0 8px;font-size:13px">Suede AI Skills on Trendshift</p><a href="https://trendshift.io/repositories/82031?utm_source=trendshift-badge&amp;utm_medium=badge&amp;utm_campaign=badge-trendshift-82031" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/82031/daily?language=Python" alt="JasonColapietro%2Fsuede-creator-skills | Trendshift" width="250" height="55" loading="lazy" style="display:block;max-width:100%;height:auto"/></a></div>
+</footer>
+  <script>
+  // Mobile nav disclosure. The markup ships <details open> so a no-JS visit
+  // still reaches every link; this collapses it at mobile widths only and
+  // keeps the summary label in sync with the state.
+  (function () {
+    var box = document.querySelector('.nav-disclosure');
+    if (!box) return;
+    var summary = box.querySelector('summary');
+    var mq = window.matchMedia('(max-width: 768px)');
+    function collapseForViewport() { box.open = !mq.matches; }
+    function syncLabel() {
+      if (summary) summary.setAttribute('aria-label', box.open ? 'Close navigation menu' : 'Open navigation menu');
+    }
+    collapseForViewport();
+    syncLabel();
+    box.addEventListener('toggle', syncLabel);
+    if (mq.addEventListener) mq.addEventListener('change', collapseForViewport);
+    else if (mq.addListener) mq.addListener(collapseForViewport);
+    box.querySelectorAll('.nav-links a').forEach(function (link) {
+      link.addEventListener('click', function () { if (mq.matches) box.open = false; });
+    });
+  })();
+</script>
+<script>
+  // Progressive enhancement only: the commands are plain selectable text
+  // without JS. The button reports state twice -- its own accessible name for
+  // anyone focused on it, and the block's live region for anyone who is not.
+  document.querySelectorAll("[data-install-copy]").forEach(function (btn) {
+    var idleLabel = btn.getAttribute("aria-label");
+    btn.addEventListener("click", function () {
+      var row = btn.closest(".install-row");
+      var code = row && row.querySelector(".install-code");
+      var block = btn.closest(".install-block");
+      var status = block && block.querySelector("[data-install-status]");
+      if (!code || !navigator.clipboard) return;
+      navigator.clipboard.writeText(code.textContent.replace(/^\$ /gm, "").trim()).then(function () {
+        btn.textContent = "Copied";
+        btn.classList.add("copied");
+        btn.setAttribute("aria-label", idleLabel.replace(/^Copy /, "Copied ") + " to clipboard");
+        if (status) status.textContent = idleLabel.replace(/^Copy the /, "") + " copied to clipboard";
+        setTimeout(function () {
+          btn.textContent = "Copy";
+          btn.classList.remove("copied");
+          btn.setAttribute("aria-label", idleLabel);
+          if (status) status.textContent = "";
+        }, 2000);
+      });
+    });
+  });
+</script>
+</body>
+</html>

@@ -44,6 +44,8 @@ python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-githu
   skills/suede-deslop \
   skills/suede-ship-copy \
   skills/suede-design \
+  skills/suede-component-lab \
+  skills/suede-interface-explain \
   skills/suede-code \
   skills/suede-ci-gate \
   skills/suede-agent-teams \
@@ -64,3 +66,8 @@ skills install the same way: substitute their directory names from
 which is the current source of truth for the full list.
 
 Restart Codex after installing new skills.
+
+Keeping a skill under this repository's `skills/` directory prepares it for
+future full-pack distribution. Editing those files does not activate the skill
+globally or copy it into an agent's installed skill directory. Installation is
+a separate, explicitly requested action.

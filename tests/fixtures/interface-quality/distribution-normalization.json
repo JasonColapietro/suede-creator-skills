@@ -1,0 +1,22 @@
+{
+  "original_snapshot_revision": "981c3c1346d704ecf136a35a2438c2a559129a67",
+  "reason": "The branch-range whitespace gate rejects an extra blank line at EOF. Remove exactly one terminal LF from these two synthetic modules; all preceding bytes are unchanged. Recorded baseline and forward runs used the original bytes.",
+  "files": [
+    {
+      "path": "booking/raw/Reservation.mjs",
+      "original_sha256": "2057bad30824f029d4da4bddf54d53a2474f0bfba855c13fae1c87ab7f22f735",
+      "packaged_sha256": "6615c74d460d719ed9f74e08a0d776d4a4037caad1de33ad04c428d6286fdcca",
+      "original_bytes": 1100,
+      "packaged_bytes": 1099,
+      "removed_terminal_bytes_hex": "0a"
+    },
+    {
+      "path": "lead/raw/LeadForm.mjs",
+      "original_sha256": "0da07261c77aa461d81909219bde90d9a88e6400d85d8158fc9a58f4b2c255b6",
+      "packaged_sha256": "b32aabaf0ea67c4e6a8d0956818e93d88e0c25b624e8e35dda409234ea14b29c",
+      "original_bytes": 1147,
+      "packaged_bytes": 1146,
+      "removed_terminal_bytes_hex": "0a"
+    }
+  ]
+}

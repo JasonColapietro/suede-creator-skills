@@ -407,7 +407,7 @@ Skills for deploying, operating and observing software: cloud platforms, infrast
 
 [Repository](https://github.com/JasonColapietro/suede-creator-skills) · Publisher: [JasonColapietro](https://github.com/JasonColapietro) · [Suede AI listing](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/)
 
-- **91/100 · A** · [Suede AI CI Gate Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/port-upstream-marketing-2026-10-27/skills/suede-ci-gate/SKILL.md): Suede AI CI Gate Skills. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-ci-gate)
+- **91/100 · A** · [Suede AI CI Gate Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/feat/suede-interface-quality/skills/suede-ci-gate/SKILL.md): Suede AI CI Gate Skills. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-ci-gate)
 
 <a id="jeffallan--claude-skills"></a>
 

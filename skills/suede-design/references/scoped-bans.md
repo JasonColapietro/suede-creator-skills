@@ -1,12 +1,17 @@
 # Scoped Bans And Exceptions
 
-What is banned, where the ban applies, and the narrow cases that are allowed to break it. Check this before arguing an exception.
+Art-direction prompts for authorized new design work. These suggestions are
+not defects by themselves and do not authorize changing an intentional brand,
+approved copy or a surface outside scope. Content-integrity rules remain firm.
 
 ## Scoped Bans And Exceptions
 
-These are not blanket bans. Keep or recreate a pattern when source fidelity, platform convention, accessibility, a confirmed brand system, or a direct user request makes it the right choice. When making an exception, name why it is earned.
+Keep a pattern when it serves the task or belongs to the confirmed brand or
+platform. An audit need not justify an exception to a reviewer's taste. Apply
+standards, documented project conventions and optional suggestions distinctly.
 
-Rewrite the element if any of these appear as a lazy default:
+When exploring new art direction, consider whether these familiar defaults
+serve the subject. Rewrite only inside an authorized design scope:
 
 ### Scaffolding And Typography Devices
 
@@ -22,9 +27,9 @@ AFTER: reserve numbering for a real ordered sequence (an actual 3-step flow, a t
 BEFORE: 3×2 grid of cards each with icon + title + one-line description
 AFTER: A task-driven layout where each row or section maps to a specific user action, not a product category
 
-**Em dashes in UI or marketing copy.**
-BEFORE: "Distribute your music. Own every right."
-AFTER: "Distribute your music. Own every right." Use a period, a colon, or a comma. If the clause needs an em dash, restructure the sentence.
+**Punctuation repeated as a style reflex.**
+Follow the established voice. Punctuation alone is not a review finding; do not
+rewrite approved sales copy or claims for personal preference.
 
 ### Surface And Color Treatments
 

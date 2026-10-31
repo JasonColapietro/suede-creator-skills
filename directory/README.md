@@ -210,7 +210,7 @@ the failed checks, and request another review.
 
 The accepted first-party distribution is
 `JasonColapietro/suede-creator-skills`, rooted at `skills/` with an explicit
-64-name allowlist in `inclusions.json`. Retired pages, vendorable examples,
+allowlist in `inclusions.json`. Retired pages, vendorable examples,
 internal material and private repositories are outside that scope. The
 Suede-AI fork is an older mirror; canonical source revisions come from the
 JasonColapietro repository. Third-party adaptations keep their existing

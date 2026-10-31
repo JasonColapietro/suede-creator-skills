@@ -1,17 +1,16 @@
 # UI Component Sources
 
-Vetted third-party component sources for build work. Vetted means each entry
-was loaded live, its license and pricing read, its domain run through threat
-reputation, and its source repository pinned before it entered the table.
-Reach for one when the local design system lacks the piece, the standing rule
-still holds: existing local tokens, components, and icon libraries win over
-any import.
+Historical third-party source notes for an authorized component import. The
+recorded checks below are dated 2026-08-26, not a current security or license
+certification. They do not authorize downloads, installation or execution.
+Verify the actual selected repository revision, dependency behavior, license and
+runtime suitability before reuse. Existing local tokens/components/icons win.
+A review does not need a new component package.
 
-Entries verified 2026-08-26 (live load + reputation scan + repo check). If a
-URL 404s, a license changed, a tier moved, or a repo pin goes stale, fix this
-file in the same change that works around it.
+The repository names in the table identify sources; they are not immutable
+commit pins. Resolve and record a real commit/version before importing code.
 
-| Source | URL | Pinned repo | Holds | Stack | License / tier |
+| Source | URL | Source repo | Holds | Stack | License / tier |
 |---|---|---|---|---|---|
 | shadcn/ui | https://ui.shadcn.com | github.com/shadcn-ui/ui | Design-system foundation: primitives, forms, dialogs, tables, blocks: the registry the rest plug into | React, Tailwind | MIT, free |
 | beUI | https://beui.dev | github.com/starc007/ui-components | 100+ animated components: modals, docks, command palettes, dynamic islands, carousels | React/Next.js, Motion (Framer), Tailwind | MIT core; paid Pro (pro.beui.dev) |
@@ -20,7 +19,7 @@ file in the same change that works around it.
 
 Name-collision warning: an unrelated project also called "RareUI" lives at
 rareui.in (different author, different repo). The vetted one is rareui.com
-backed by the pinned repo above: check the pin before installing.
+backed by the source repo above: resolve and inspect a revision before importing.
 
 ## Not yet vetted: do not treat as a vetted source
 
@@ -35,9 +34,9 @@ backed by the pinned repo above: check the pin before installing.
   beautifului.dev" and its owner account has been active since 2017), but
   consistent-with is not cleared. Promote it to the table only when both
   hold: the threat verdict has cleared, and the domain is older than 90
-  days. Until then, if a build needs an AI-native primitive now, take the
-  code from the pinned GitHub repo, not the domain, and read every file
-  before it lands.
+  days. These historical notes do not establish current safety. For a proposed
+  import, verify an exact source revision, read every file and dependency,
+  and use the authorized adoption checklist below.
 
 ## Which source for which job
 
@@ -57,9 +56,10 @@ backed by the pinned repo above: check the pin before installing.
 1. **Local first.** Name the local gap before importing: which token,
    component, or pattern the system lacks. If the local system has the piece,
    style it instead.
-2. **Registry over hand-copy.** Install through the shadcn CLI/registry when
-   the source supports it (shadcn/ui, beUI, Rare UI); hand-copy only what has
-   no registry path, and record the source URL in the commit message.
+2. **Inspect before import.** Use only an authorized, reviewed source and
+   installation path. Read the selected component, dependency and install-hook
+   behavior first; record its exact revision and license. No automatic CLI,
+   remote execution or install belongs in an audit.
 3. **Signature test.** A stock component from a public library is raw
    material, not a signature move: anyone can install the same one. It counts
    as the surface's memorable move only after subject-native customization:
@@ -68,10 +68,9 @@ backed by the pinned repo above: check the pin before installing.
 4. **Retokenize before commit.** Replace the import's palette, radii, spacing,
    and font references with local tokens. An import still carrying its source
    palette is unfinished.
-5. **Motion law still applies.** Imported animation animates `transform` and
-   `opacity` only, within the timing rules in `references/design-laws.md`, and
-   ships a `prefers-reduced-motion` variant: trim whatever the import does
-   beyond that.
+5. **Behavior still applies.** Match the project's motion language and verify
+   reduced-motion behavior. Use the contextual checks in `design-laws.md`; do
+   not import a fixed easing, scaling or stagger recipe as a universal rule.
 6. **License and tier check.** Confirm the license file in the source repo
    before shipping to a public or client surface. Free tiers only unless the
    user owns the paid tier (beUI Pro, Transitions.dev Pro), never paste paid

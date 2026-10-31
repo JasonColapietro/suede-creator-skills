@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Suede AI Interface Explain Skills</title>
+    <meta name="description" content="Trace an interface mechanism through source, events, state and layout. Get a read-only explanation with source facts and rendered observations separated.">
+    <meta name="keywords" content="interface explain, interface mechanism explanation, source-backed UI explanation, UI state transitions, read-only interface analysis, Suede AI Skills">
+    <meta name="author" content="Jason Colapietro">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <link rel="canonical" href="https://skills.suedeai.ai/skills/suede-interface-explain.html">
+    <link rel="icon" href="../assets/favicon-64.png" type="image/png">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Suede AI Interface Explain Skills">
+    <meta property="og:description" content="Trace an interface mechanism through source, events, state and layout. Get a read-only explanation with source facts and rendered observations separated.">
+    <meta property="og:url" content="https://skills.suedeai.ai/skills/suede-interface-explain.html">
+    <meta property="og:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Suede AI Interface Explain Skills">
+    <meta name="twitter:description" content="Trace an interface mechanism through source, events, state and layout. Get a read-only explanation with source facts and rendered observations separated.">
+    <meta name="twitter:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "@id": "https://skills.suedeai.ai/skills/suede-interface-explain.html#article",
+  "headline": "Suede AI Interface Explain Skills",
+  "description": "Bring an interface question: why a header sticks, how a panel opens, where a filter gets its state, or what controls a responsive layout. The skill traces the existing implementation and explains the causal path with source locations. Browser observations and inferred behavior are labeled separately, and application files stay unchanged.",
+  "url": "https://skills.suedeai.ai/skills/suede-interface-explain.html",
+  "author": {
+    "@type": "Person",
+    "@id": "https://suedeai.ai/founder#person",
+    "name": "Jason Colapietro"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://suedeai.ai/#organization",
+    "name": "Suede AI",
+    "url": "https://suedeai.ai"
+  },
+  "about": [
+    "Suede AI Skills",
+    "interface explain",
+    "interface mechanism explanation",
+    "source-backed UI explanation",
+    "UI state transitions",
+    "read-only interface analysis"
+  ],
+  "mainEntity": {
+    "@type": "SoftwareSourceCode",
+    "name": "suede-interface-explain",
+    "codeRepository": "https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-interface-explain",
+    "programmingLanguage": "Markdown",
+    "genre": "DeveloperTool",
+    "license": "https://github.com/JasonColapietro/suede-creator-skills/blob/main/LICENSE"
+  }
+}
+    </script>
+    <link rel="preload" href="../assets/fonts/fraunces-var.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../assets/site.css">
+    <link rel="stylesheet" href="../assets/skill.css">
+</head>
+  <body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="nav">
+      <nav class="shell nav-inner" aria-label="Main navigation">
+        <a href="../" class="nav-logo" aria-label="Suede AI Skills home">
+          <img src="../assets/suede-ai-logo-transparent.webp" alt="Suede AI" width="28" height="28" onerror="this.style.display='none'">
+          <span class="nav-logo-wordmark">Suede <span>AI Skills</span></span>
+        </a>
+        <details class="nav-disclosure" open>
+      <summary class="nav-hamburger" aria-label="Open navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </summary>
+      <div class="nav-links">
+          <a href="../">Home</a>
+          <a href="./">Skills</a>
+          <a href="../directory/">Directory</a>
+          <a href="../guide.html">Guide</a>
+          <a href="../book/">Book</a>
+          <a href="../blog/">Blog</a>
+          <a href="../copy.html">Copy Bank</a>
+      <a href="../cracked.html">Cracked Devs</a>
+          <a href="../plugins.html" class="nav-cta">Install</a>
+        </div>
+    </details>
+      </nav>
+    </header>
+    <main id="main" tabindex="-1" class="shell">
+      <div class="eyebrow">/suede-interface-explain &middot; Design system</div>
+      <h1><span class="h1-task">Suede AI Interface Explain Skills</span> Understand what makes the interface work.</h1>
+      <p class="lead">Bring an interface question: why a header sticks, how a panel opens, where a filter gets its state, or what controls a responsive layout. The skill traces the existing implementation and explains the causal path with source locations. Browser observations and inferred behavior are labeled separately, and application files stay unchanged.</p>
+      <p><a class="button" href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-interface-explain">Read the skill</a> <a class="button secondary" href="../plugins.html">Install options</a></p>
+      <div class="plain-ask" aria-label="Example request that routes to this skill">
+        <span class="plain-ask-quote">&quot;Explain this interface and trace the mechanism in the source.&quot;</span>
+        <span class="plain-ask-arrow" aria-hidden="true">-&gt;</span>
+        <code class="plain-ask-cmd">/suede-interface-explain</code>
+        <span class="plain-ask-note">The <a href="suede-workflow-skills.html">workflow router</a> selects this task when the skill is available.</span>
+      </div>
+      <section class="grid">
+        <article class="card">
+          <h2>Follow the mechanism</h2>
+          <ul>
+            <li>Locate the source entry points and dependencies relevant to the user's question.</li>
+            <li>Trace inputs, event handlers, state transitions, layout rules and rendered output.</li>
+            <li>Cite concrete file locations for mechanism claims.</li>
+            <li>Explain the causal sequence in plain language, using a diagram when it makes that sequence easier to follow.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h2>Know what the evidence shows</h2>
+          <ul>
+            <li>Source facts describe what the inspected code declares.</li>
+            <li>Rendered observations describe behavior actually seen in the available interface.</li>
+            <li>Inferences identify conclusions that still depend on runtime, data or environment assumptions.</li>
+            <li>Unobserved states stay explicit; source inspection does not earn a rendered visual pass.</li>
+          </ul>
+        </article>
+      </section>
+      <section class="panel">
+        <h2>Read-only by default</h2>
+        <p>The explanation preserves the existing interface. It does not refactor, rebuild, add a demonstration route or perform live transactions. If source access is unavailable, it can explain observed behavior while identifying the mechanism details that remain uncertain.</p>
+        <p>The output follows the question's scope. A design review, workbench or implementation is a separate task with its own entry point.</p>
+      </section>
+      <section class="panel">
+        <h2>Example request</h2>
+        <pre><code>Use $suede-interface-explain to explain how this filter panel opens, updates the URL and restores its state. Trace the relevant files, event handlers, state and rendering. Keep application files unchanged. Separate source facts, observed browser behavior and inference, and say which parts you could not observe.</code></pre>
+      </section>
+      <section class="panel">
+        <h2>Choose the matching task</h2>
+        <p><a href="suede-design.html">Suede AI Design Skills</a> reviews task flow and visual hierarchy or implements an authorized design. <a href="suede-component-lab.html">Suede AI Component Lab Skills</a> builds isolated workbenches for real components and synthetic states. <a href="suede-code.html">Suede AI Code Skills</a> reviews implementation correctness.</p>
+      </section>
+      <section class="panel">
+        <h2>Repository and installation</h2>
+        <p>This documentation-only skill lives under <code>skills/suede-interface-explain/</code>. Keeping it in the repository prepares it for future full-pack distribution; it does not install dependencies or activate the skill globally. Installation into an agent is a separate action.</p>
+      </section>
+      <!-- related-skills:start (generated by scripts/build-related-skills.mjs) -->
+      <section aria-labelledby="related-skills-title">
+        <h2 id="related-skills-title">Related skills</h2>
+        <ul>
+          <li><a href="suede-design.html">Suede AI Design Skills</a>: Review flows and UI diffs, or build within your existing brand. Prioritize task success, hierarchy, tokens, accessibility and rendered visual evidence.</li>
+          <li><a href="suede-component-lab.html">Suede AI Component Lab Skills</a>: Build a dev-only component workbench with real imports, synthetic stress fixtures and live variants. Check states before changing production UI.</li>
+          <li><a href="suede-code.html">Suede AI Code Skills</a>: Code review and ship grade in one run: severity-ranked findings with file and line evidence, plus an A to F grade capped by the weakest of seven lanes.</li>
+          <li><a href="suede-copy.html">Suede AI Copy Skills</a>: Conversion copy for landing sections, email, microcopy, buttons, headlines and CTAs, with one pass per surface and a score on every piece.</li>
+          <li><a href="suede-workflow-skills.html">Suede AI Workflow Skills</a>: Workflow skills router that picks the one specialist for your outcome across copy, design, review, SEO, launch and growth, then loads only that skill.</li>
+        </ul>
+      </section>
+      <!-- related-skills:end -->
+      <section class="install-block" aria-labelledby="install-block-title">
+        <h2 id="install-block-title">Install this skill</h2>
+        <p class="install-lede">The repository includes this skill in full-pack discovery. Install a revision containing it to use the new entry point. Claude Code takes two commands the first time and one after that; Codex installs the same pack natively.</p>
+        <div class="install-term">
+          <div class="install-term-bar">
+            <span class="install-term-dots" aria-hidden="true"><span></span><span></span><span></span></span>
+            <b>terminal &middot; install the pack</b>
+          </div>
+          <div class="install-row">
+            <div class="install-cmd">
+              <span class="install-label">Claude Code</span>
+              <pre class="install-code"><span class="install-prompt">$</span> /plugin marketplace add JasonColapietro/suede-creator-skills
+<span class="install-prompt">$</span> /plugin install suede-skills@suede</pre>
+            </div>
+            <button class="install-copy" type="button" data-install-copy aria-label="Copy the Claude Code install commands">Copy</button>
+          </div>
+          <div class="install-row">
+            <div class="install-cmd">
+              <span class="install-label">Codex</span>
+              <pre class="install-code"><span class="install-prompt">$</span> codex plugin add suede-skills@suede-codex</pre>
+            </div>
+            <button class="install-copy" type="button" data-install-copy aria-label="Copy the Codex install command">Copy</button>
+          </div>
+        </div>
+        <p class="install-status" role="status" aria-live="polite" data-install-status></p>
+        <p class="install-note">Cursor, Copilot, and Windsurf install through the skills CLI. Every path is on the <a href="../plugins.html">install page</a>, and every folder is readable first on <a href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener">GitHub</a>.</p>
+      </section>
+    </main>
+    <section class="ship-strip" aria-label="Install the pack">
+      <div class="shell">
+        <p class="ship-strip-head">Proof is part of the release.</p>
+        <p class="ship-strip-sub">First install takes two commands. After the marketplace is added, install is one. Every skill is plain Markdown.</p>
+        <div class="ship-strip-row">
+          <code><span class="prompt">$</span> /plugin marketplace add JasonColapietro/suede-creator-skills &rarr; /plugin install suede-skills@suede</code>
+          <a href="../plugins.html">All install paths</a>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="shell">
+        <p class="footer-note">Suede AI Interface Explain Skills is part of Suede AI Skills. Read the workflow and its evidence boundaries before use.</p>
+        <div class="footer-inner">
+          <div class="footer-brand">
+            <img src="../assets/suede-ai-logo-transparent.webp" alt="Suede AI" width="24" height="24" onerror="this.style.display='none'">
+            <span>Built by <strong>Jason Colapietro</strong> / Suede AI</span>
+          </div>
+          <div class="footer-links">
+            <a href="https://x.com/johnnysuede" target="_blank" rel="noopener">@johnnysuede</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="https://suedeai.ai" target="_blank" rel="noopener">suedeai.ai</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener">GitHub</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="https://suedeai.ai/privacy" target="_blank" rel="noopener">Privacy</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="https://suedeai.ai/contact" target="_blank" rel="noopener">Contact</a>
+          </div>
+        </div>
+      </div>
+    <div class="trendshift-recognition" style="width:250px;max-width:100%;margin:24px auto;text-align:center"><p style="margin:0 0 8px;font-size:13px">Suede AI Skills on Trendshift</p><a href="https://trendshift.io/repositories/82031?utm_source=trendshift-badge&amp;utm_medium=badge&amp;utm_campaign=badge-trendshift-82031" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/82031/daily?language=Python" alt="JasonColapietro%2Fsuede-creator-skills | Trendshift" width="250" height="55" loading="lazy" style="display:block;max-width:100%;height:auto"/></a></div>
+</footer>
+  <script>
+  // Mobile nav disclosure. The markup ships <details open> so a no-JS visit
+  // still reaches every link; this collapses it at mobile widths only and
+  // keeps the summary label in sync with the state.
+  (function () {
+    var box = document.querySelector('.nav-disclosure');
+    if (!box) return;
+    var summary = box.querySelector('summary');
+    var mq = window.matchMedia('(max-width: 768px)');
+    function collapseForViewport() { box.open = !mq.matches; }
+    function syncLabel() {
+      if (summary) summary.setAttribute('aria-label', box.open ? 'Close navigation menu' : 'Open navigation menu');
+    }
+    collapseForViewport();
+    syncLabel();
+    box.addEventListener('toggle', syncLabel);
+    if (mq.addEventListener) mq.addEventListener('change', collapseForViewport);
+    else if (mq.addListener) mq.addListener(collapseForViewport);
+    box.querySelectorAll('.nav-links a').forEach(function (link) {
+      link.addEventListener('click', function () { if (mq.matches) box.open = false; });
+    });
+  })();
+</script>
+<script>
+  // Progressive enhancement only: the commands are plain selectable text
+  // without JS. The button reports state twice -- its own accessible name for
+  // anyone focused on it, and the block's live region for anyone who is not.
+  document.querySelectorAll("[data-install-copy]").forEach(function (btn) {
+    var idleLabel = btn.getAttribute("aria-label");
+    btn.addEventListener("click", function () {
+      var row = btn.closest(".install-row");
+      var code = row && row.querySelector(".install-code");
+      var block = btn.closest(".install-block");
+      var status = block && block.querySelector("[data-install-status]");
+      if (!code || !navigator.clipboard) return;
+      navigator.clipboard.writeText(code.textContent.replace(/^\$ /gm, "").trim()).then(function () {
+        btn.textContent = "Copied";
+        btn.classList.add("copied");
+        btn.setAttribute("aria-label", idleLabel.replace(/^Copy /, "Copied ") + " to clipboard");
+        if (status) status.textContent = idleLabel.replace(/^Copy the /, "") + " copied to clipboard";
+        setTimeout(function () {
+          btn.textContent = "Copy";
+          btn.classList.remove("copied");
+          btn.setAttribute("aria-label", idleLabel);
+          if (status) status.textContent = "";
+        }, 2000);
+      });
+    });
+  });
+</script>
+</body>
+</html>

@@ -75,6 +75,13 @@ explainer, or investor-adjacent copy, aim for 62/70 or higher.
 Run this gate before major visual work, reusable UI, public launch surfaces,
 Suedify work, product screenshot assets, or design-system passes.
 
+Preserve the existing product brand, deliberate style and authorized scope.
+A read-only review reports findings and proposed fixes without editing files;
+approved copy, claims and assets remain unchanged unless their revision is
+authorized. Distinguish standards for accessibility and correctness from
+context-dependent conventions and stylistic suggestions. A deliberate departure
+from a convention is not a defect without a concrete task or usability impact.
+
 - Name the subject, audience, page job, primary action, launch stage, and
   register before making visual decisions.
 - Pick the register deliberately:
@@ -88,23 +95,26 @@ Suedify work, product screenshot assets, or design-system passes.
 - Write the physical scene: who uses this, where, under what pressure, what is
   on screen, and what they need to do next.
 - Choose a color strategy before values: restrained, committed, full palette,
-  or drenched. Use OKLCH when practical, tint neutrals, and make color carry
-  meaning.
+  or drenched. Start from existing tokens and semantic roles; assess contrast,
+  state distinctions and color meaning. OKLCH and tinted neutral palettes are
+  optional techniques, not requirements to replace an approved palette.
 - Use typography as product voice: deliberate pairing, clear roles, body copy
-  around 65-75 characters, hierarchy ratio of at least 1.25 between major type
-  steps, letter spacing at 0 by default, and no viewport-based font scaling.
-- Make the structure explain the product. Avoid lazy cards, nested cards,
-  identical icon-card grids, hero-metric templates, decorative glass, gradient
-  text, side-stripe card borders, stock-feeling gradient heroes, decorative
-  blobs, and modal-first interaction.
-- Spend boldness in one place: a rights passport, waveform ledger, provenance
-  receipt, chain-of-title map, studio console, claim graph, screenshot stack, or
-  another Suede-native signature. Keep surrounding UI disciplined.
-- Motion must serve state or comprehension. Avoid layout-property animation,
-  bounce, elastic motion, and decorative scroll effects. Respect reduced
-  motion.
+  that fits the reading task, and hierarchy that remains legible across states
+  and viewports. Evaluate type steps, measure, tracking and fluid sizing in the
+  actual product; do not impose a fixed ratio or remove approved fluid type.
+- Make the structure explain the product. Evaluate cards, nested groups,
+  repeated grids, glass, gradients and modal interactions against the task,
+  content hierarchy and accessibility. Name the concrete failure before
+  recommending a structural or stylistic replacement.
+- Give emphasis to the product's important action or information. An approved
+  Suede surface may use a rights passport, waveform ledger, provenance receipt,
+  chain-of-title map or studio console; other products keep their own vocabulary
+  and deliberate visual identity.
+- Motion must serve state or comprehension and respect reduced motion. Inspect
+  animation performance and interaction feedback; stylistic motion choices
+  need a contextual reason, not a blanket prohibition.
 - Self-critique before build: name the generic default this could fall into,
-  then state the concrete Suede move that prevents it.
+  then state the specific product choice that prevents it.
 
 ## Design-System Gate
 
@@ -119,8 +129,8 @@ tokens. Capture the smallest useful artifact set:
 - state matrix for default, hover, focus, active, disabled, loading, empty,
   success, warning, error, offline, unauthenticated, and permission-denied
   states where relevant;
-- preview gallery or reproducible screenshot contract with seeded Suede
-  content;
+- preview gallery or reproducible screenshot contract with seeded synthetic
+  content representative of the target product;
 - asset register for logos, app icons, product images, screenshots, crop rules,
   attribution, and export sizes;
 - migration notes that name what old patterns remain and what not to rewrite.
@@ -148,6 +158,11 @@ Use the score to direct fixes, not as a vanity metric.
 For source-to-implementation comparison, use the source visual target and the
 rendered implementation together in the same comparison pass. Do not compare
 one from memory.
+
+Source-only inspection never establishes a rendered visual pass. Mark unavailable
+renders and states as not observed, with the exact limitation. Before executing
+a component preview, establish import, module and server isolation as required
+by the component workflow; browser request interception alone is insufficient.
 
 - Match viewport, device, state, theme, auth state, route, content, seeded data,
   and interaction state.
@@ -189,8 +204,13 @@ Use the smallest useful loop, but make quality measurable:
 5. Verify the done signal with commands, screenshots, live/API readback, or
    saved QA artifacts.
 6. If the same failure repeats, freeze broad work, isolate the failing unit,
-   reduce scope, patch only that gap, and rerun the failed check. Allow up to
-   three genuinely different fixes per failing check; stop early when the
-   same root cause repeats and hand the call to the user.
+   reduce scope, patch only the authorized gap, and rerun the failed check.
+   For interface validation, reproduce, make the authorized fix, recapture the
+   matched state, and inspect until the scoped outcome is verified or a concrete
+   blocker is identified. A fixed pass count cannot substitute for evidence.
+   Read-only interface reviews report findings without making application edits.
+   For other workflows, allow up to three genuinely different fixes per failing
+   check; stop early when the same root cause repeats and hand the call to the
+   user.
 7. End with evidence: changed files, commands, screenshots or URLs, caveats,
    status, and exact next action.

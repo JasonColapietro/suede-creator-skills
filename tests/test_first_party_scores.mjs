@@ -26,7 +26,7 @@ test('every maintained first-party package has an actual directory score above 9
 
 test('first-party reports and retained source inventories describe the exact reviewed source', () => {
   assert.ok(own.length > 0, 'first-party reports require actual listings');
-  const receipt = JSON.parse(read('directory/intake/2026-10-28-first-party.json'));
+  const receipt = JSON.parse(read('directory/intake/2026-10-31-interface-quality.json'));
   assert.equal(receipt.source_revision, data.repos[repo].commit_sha);
   for (const [relative, expected] of Object.entries(receipt.source_files)) {
     assert.equal(createHash('sha256').update(fs.readFileSync(path.join(root, relative))).digest('hex'), expected, relative);

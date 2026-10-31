@@ -1,0 +1,1 @@
+Make a state workbench for this reservation component in this disposable fixture copy. We need desktop and mobile views for available, loading, empty, failed, confirmed, disabled and member-without-access. Keep the component itself intact. Existing transport defaults are included with the source. Deliver the local workbench and verification evidence.

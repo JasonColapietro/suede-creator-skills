@@ -15,14 +15,20 @@ Each section is the minimum viable version of one specialist's workflow.
 |---|---|
 | [Suedify Workflow](#suedify-workflow) | `suede-design` (Restyle mode) |
 | [Design Workflow](#design-workflow) | `suede-design` |
+| [Component Lab Workflow](#component-lab-workflow) | `suede-component-lab` |
+| [Interface Explanation Workflow](#interface-explanation-workflow) | `suede-interface-explain` |
 | [Copy And SEO Workflow](#copy-and-seo-workflow) | `suede-copy`, `suede-seo-audit` |
 | [Visibility Grading Workflow](#visibility-grading-workflow) | `suede-visibility-grader` |
 | [Site Alchemy Workflow](#site-alchemy-workflow) | `suede-site-alchemy` |
 | [Code Review Workflow](#code-review-workflow) | `suede-code` |
 | [Agent Team Workflow](#agent-team-workflow) | `suede-agent-teams` |
 
-The Gate policy, Core Rule, Boundaries, and the fix-loop cap in SKILL.md govern
-everything here. Nothing in this file overrides them.
+The Gate policy, Core Rule and Boundaries in SKILL.md govern everything here.
+Its general fix-loop cap applies to the other workflows. Interface validation
+uses its stated exception: reproduce, make the authorized fix, recapture the
+matched state, and inspect until the scoped outcome is verified or a concrete
+blocker is identified. A fixed pass count cannot substitute for evidence.
+Read-only interface reviews report findings without changing application files.
 
 ## Suedify Workflow
 
@@ -34,12 +40,14 @@ reference_url -> target_url
 
 1. Capture the reference site's layout, hierarchy, spacing, typography, color
    roles, imagery, navigation, motion, proof structure, and mobile behavior.
-2. Capture the target site's current content, brand assets, claims, routes,
-   dead links, weak copy, and mobile behavior.
+2. Capture the target site's current approved content, brand assets, claims,
+   routes, copy constraints and mobile behavior.
 3. Map reference signals to target-safe equivalents. Do not copy proprietary
    code, logos, exact copy, private assets, fake proof, or unsupported claims.
 4. Implement inside the target's existing framework, components, tokens, and
-   routing patterns when possible.
+   routing patterns when possible. Preserve existing approved copy and claims;
+   a restyle request does not authorize rewriting them. Change words only when
+   the user has authorized that copy scope, following the approved-copy rules.
 5. Verify desktop and mobile render, text fit, links, accessibility basics,
    build/test commands, and live route before calling the restyle done.
 
@@ -60,17 +68,31 @@ Status: ship | ship-with-caveats | hold
 
 For design or frontend work:
 
-1. Identify the exact surface: repo/folder, route, live URL, branch, dirty
+1. Preserve the requested mode: a whole-flow review or UI diff review is
+   read-only; an authorized build or fix may edit the agreed surface.
+2. Identify the exact surface: repo/folder, route, live URL, branch, dirty
    files, and relevant local docs.
-2. Decide the register: brand page, product UI, dashboard, campaign page,
+3. Decide the register: brand page, product UI, dashboard, campaign page,
    docs surface, or app workflow.
-3. Name the user-visible job and primary action.
-4. Check layout, typography, color, spacing, imagery, state coverage,
+4. Name the user-visible job and primary action. Prioritize task completion,
+   clarity and conversion hypotheses while preserving the current brand.
+5. Check layout, typography, color, spacing, imagery, state coverage,
    responsiveness, accessibility basics, and copy fit.
-5. Render before and after when practical.
-6. For major visual work, compare source visual truth and rendered
+6. Inspect available renders. For edits, compare before and after; for a
+   review, inspect the current state without changing application source.
+7. For major visual work, compare source visual truth and rendered
    implementation together, with matched viewport, state, theme, content, and
    auth conditions.
+
+For a UI diff, resolve the requested base and head to exact available refs or
+commit IDs. Record the comparison command, selected files and working-tree
+inventory: staged, unstaged and untracked changes, plus any excluded paths.
+Inspect both sides and the shared components and affected consumers before
+attributing a finding. Classify each finding as introduced, regression,
+pre-existing or attribution unknown. If a ref or comparison side is unavailable,
+mark attribution unknown and state what could actually be inspected. Never
+invent a ref or commit, silently substitute another base, or present a
+working-tree-only observation as proof of a regression.
 
 Major design work needs a compact contract:
 
@@ -82,12 +104,60 @@ Constraints:
 Lanes:
 ```
 
-Do not call visual work done from source inspection alone when a rendered page
-can be checked.
+Source inspection alone never establishes a rendered visual pass. If the
+browser or render is unavailable, report source-backed findings and mark the
+visual checks as not observed. Treat predicted conversion effects as hypotheses
+until a valid measurement supports them.
+
+For a selected design or screenshot build, use an already available image-to-code
+capability, or implement with the existing local stack and components. Do not
+install a dependency or skill just to satisfy this routing fallback. An optional,
+explicitly selected visual kit supplies references with recorded reuse rights;
+preserve the target product's brand and approved assets.
 
 For design-system work, capture at least the token map, component inventory,
 state matrix, screenshot contract or preview board, asset register, migration
 notes, and a scored quality audit when the scope is broad enough.
+
+## Component Lab Workflow
+
+Use for a dev-only component workbench, stress fixtures or live variants:
+
+1. Inspect the existing component imports, providers, tokens and preview tooling.
+2. Reuse that tooling; if it is unavailable, provide a local fixture plan and
+   identify the missing runtime without installing dependencies automatically.
+3. Before importing components or starting the preview server, inspect transitive
+   imports, import-time module initializers, server-side actions, bootstrap hooks,
+   storage and analytics clients. Establish isolation at those execution points
+   with synthetic data, inert callbacks and existing safe substitutes. Exclude
+   production credentials and records; disable payment, booking, lead submission,
+   persistence and other outbound effects. Browser request-blocking alone is
+   insufficient: effects can occur during import or server execution.
+4. If any effect or required isolation remains unresolved, stop execution and
+   report the exact blocker with a non-executing fixture plan. Only after
+   verifying isolation, import the real components and start the preview in that
+   isolated runtime. Never copy production logic into a substitute component to
+   make a state appear covered.
+5. Exercise supported empty, loading, error, long-content, disabled, narrow-screen
+   and keyboard states. Keep design variants separate from behavior fixtures.
+6. Keep the preview out of production routes and output. Verify that isolation
+   from actual build configuration before describing it as development-only.
+7. Report actual rendered observations, state coverage, untouched production
+   behavior and remaining checks. A proposed fixture is not executed evidence.
+
+## Interface Explanation Workflow
+
+Use for a read-only explanation of how an existing interface works:
+
+1. Identify the user's specific question and trace the relevant source files.
+2. Map input, event handling, state changes, layout, rendering and outputs.
+3. Cite concrete file locations for each mechanism claim and distinguish an
+   inference from a source fact or a browser observation.
+4. Inspect current behavior when available without changing application source,
+   sending real transactions or creating a replacement implementation.
+5. Return a concise causal explanation and any uncertainty. Use a diagram only
+   if it clarifies the mechanism. Route requests for review to `suede-design`
+   and requests for a state workbench to `suede-component-lab`.
 
 ## Copy And SEO Workflow
 

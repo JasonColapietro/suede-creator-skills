@@ -47,10 +47,12 @@
         "suede-campaign-in-a-box",
         "suede-ci-gate",
         "suede-code",
+        "suede-component-lab",
         "suede-copy",
         "suede-design",
         "suede-deslop",
         "suede-graph-flo-xr",
+        "suede-interface-explain",
         "suede-launch-packaging",
         "suede-ops-architecture",
         "suede-ops-assessment",
@@ -154,11 +156,11 @@
       "key": "craft",
       "label": "Craft",
       "summary": "Make the thing look and read like someone built it on purpose.",
-      "count": 7,
+      "count": 9,
       "lanes": [
         {
           "label": "Design & copy",
-          "count": 3
+          "count": 5
         },
         {
           "label": "Creative assets",
@@ -452,6 +454,15 @@
       "displayName": "Suede AI Competitor Comparison Skills"
     },
     {
+      "name": "suede-component-lab",
+      "area": "workflow",
+      "specialty": "craft",
+      "lane": "Design & copy",
+      "description": "Use when asked \"stress test this component\", for a component workbench with reachable product states, or for stress fixtures and live variants of an existing UI component. Covers loading, empty, error, success, focus, disabled and permission scenarios. NOT FOR: whole-flow or UI diff review (use suede-design), mechanism explanations (use suede-interface-explain), funnel architecture (use suede-site-alchemy), or general correctness and payment review (use suede-code).",
+      "useWhen": "Build a local component lab to compare real components across synthetic states and stress fixtures without production data or production routes.",
+      "displayName": "Suede AI Component Lab Skills"
+    },
+    {
       "name": "suede-content-strategy",
       "area": "marketing",
       "specialty": "found",
@@ -483,8 +494,8 @@
       "area": "workflow",
       "specialty": "craft",
       "lane": "Design & copy",
-      "description": "Use when asked \"restyle this dashboard\" or to design, polish or audit an interface hierarchy, tokens, color, type, dark mode or a design system. Suede AI delivers layout and words together, reference-to-target restyles and rendered visual QA. NOT FOR: copy without layout (use suede-copy), funnel architecture (use suede-site-alchemy), promotion grades (use suede-visibility-grader), or parallel build coordination (use suede-agent-teams).",
-      "useWhen": "Polish UI, set tokens, fix hierarchy, and run focused design QA on a single surface.",
+      "description": "Use when asked \"review this UI diff\" or \"audit this flow\"; to design interface hierarchy, tokens, color, type, accessibility or a design system; run a whole-flow review; restyle a dashboard; or verify a visual build. NOT FOR: component state workbenches or live variants (use suede-component-lab), source-backed effect explanations (use suede-interface-explain), sales copy (use suede-copy), funnel architecture (use suede-site-alchemy), or general code/security review (use suede-code).",
+      "useWhen": "Review an existing flow or UI diff without editing, or implement an authorized design while preserving scope, existing brand and tokens; distinguish source findings from rendered proof.",
       "displayName": "Suede AI Design Skills"
     },
     {
@@ -549,6 +560,15 @@
       "description": "Use when asked \"pitch this creator\" or to repair an influencer or B2B creator-program first touch. Suede AI grounds one message in a named audience fact, states real compensation and one ask, fits the published contact route and stops the two-follow-up plan at a positive reply. NOT FOR: affiliate mechanics (use suede-referrals), brand partnerships (use suede-co-marketing), cold B2B email (use suede-cold-email), or journalist pitches (use suede-public-relations).",
       "useWhen": "The user is pitching an influencer, creator, newsletter writer, or podcaster for a sponsorship or collab, or their creator outreach gets no replies.",
       "displayName": "Suede AI Influencer Outreach Skills"
+    },
+    {
+      "name": "suede-interface-explain",
+      "area": "workflow",
+      "specialty": "craft",
+      "lane": "Design & copy",
+      "description": "Use when asked to \"explain this interface\", trace a visual mechanism from source, or identify how a site's layout, layers, styles, assets or motion work. NOT FOR: interface audits or fixes (use suede-design), component state fixtures or live variants (use suede-component-lab), general code or security review (use suede-code), or sales copy (use suede-copy).",
+      "useWhen": "Understand how an existing interface works through a read-only mechanism explanation tied to source locations and any available rendered observations.",
+      "displayName": "Suede AI Interface Explain Skills"
     },
     {
       "name": "suede-launch-packaging",

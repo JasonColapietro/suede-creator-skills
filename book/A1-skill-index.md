@@ -41,7 +41,9 @@ match, and the page must list exactly these three.
 
 | Skill | Use it when |
 |---|---|
-| `suede-design` | You want the full design lane across brand and product surfaces: tokens, color, type, hierarchy, motion, dark mode, redesigns, and visual QA on shipped screens |
+| `suede-design` | You want a read-only whole-flow or UI diff review, or an authorized design build using existing brand, tokens, hierarchy, accessibility and rendered visual QA |
+| `suede-component-lab` | You need a dev-only workbench importing real components with synthetic states, stress fixtures and live variants, isolated from production data and routes |
+| `suede-interface-explain` | You want to understand an existing interface mechanism through a read-only explanation tied to source locations and observed behavior |
 | `suede-copy` | You want the full writing lane: conversion and SEO copy, sections, email, microcopy, headlines, variants, persuasion, anti-slop gate, copy score |
 | `suede-ship-copy` | One high-stakes public surface has to be true, and you want research lenses, a claim audit, and a publish-readiness gate |
 | `suede-deslop` | Prose is finished and about to go public, and it still sounds generated |
