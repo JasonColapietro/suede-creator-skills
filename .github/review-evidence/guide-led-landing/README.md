@@ -1,6 +1,6 @@
 # Guide-led landing review
 
-Local Chromium captures of the public skills site, using repository HTML/CSS and
+Local Chromium captures of the public skills and directory sites, using repository HTML/CSS and
 assets. These are review evidence, not golden-image test baselines. They are
 outside `docs/` and are not served by either production site build.
 
@@ -27,6 +27,29 @@ request-to-evidence workflow, links useful first tasks including Cracked Devs,
 and shows both native install paths before the full specialty map. Guide remains
 the detailed reference. The existing catalog, skill records, directory links,
 benchmarks, design palette and Cracked page are retained.
+
+## Directory: Featured Skills near the top
+
+The separate directory now exposes **Featured Skills** in the shared desktop
+navigation, native mobile menu and homepage browse links above search. It links
+to `https://suedeai.directory/featured/`; curated projects, eligibility, scores
+and badge policies are unchanged. After captures use the locally built standalone
+directory output, including the production URL rewrites. Before captures use the
+unchanged directory source at the branch base.
+
+| Before | Proposed |
+| --- | --- |
+| ![Directory before on desktop](directory-before-desktop.png) | ![Featured Skills in desktop navigation and browse links](directory-after-desktop.png) |
+| ![Directory before on mobile](directory-before-mobile.png) | ![Featured Skills above search on mobile](directory-after-mobile.png) |
+
+![Featured Skills in the native mobile menu](directory-mobile-menu.png)
+
+Directory verification covers exact destination, keyboard focus and activation,
+first-viewport homepage link, no-JavaScript navigation and no horizontal overflow
+at 320/390/768/769/1280px. The browser checks exercise root, category, agent and
+featured pages. The production build test checks the shared navigation's resolved
+`https://suedeai.directory/featured/` destination throughout the built site. The
+new browser regression first failed on the missing navigation link.
 
 ## Verification scope
 

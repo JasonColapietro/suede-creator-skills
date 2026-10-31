@@ -459,6 +459,7 @@ const altName = (s) => (altNameCount.get(s.name.toLowerCase()) > 1 ? `${displayN
 const NAV_LINKS = [
   ["", "Home"],
   ["directory/", "Skills"],
+  ["directory/featured/", "Featured Skills"],
   ...(fs.existsSync(path.join(repoRoot, "directory/agents.json")) ? [["directory/agents/", "Agents"]] : []),
   ["directory/methodology/", "How listing works"],
   ["skills/", "Suede AI skills"],
@@ -2176,7 +2177,7 @@ ${FAQ.map(([q, a]) => `        <h3>${esc(q)}</h3>\n        <p>${esc(a)}${q === "
         <p class="lead">Find the right skill for your next task. Search ${fmt(data.skills.length)} agent skills for Claude Code, Codex and Cursor, graded and linked to source.</p>
         <p class="directory-snapshot"><span><b>${fmt(repos.size)}</b> repositories</span><span><b>${categories.length}</b> categories</span><span><b>${openPct}%</b> openly licensed</span></p>
       </header>
-      ${fs.existsSync(path.join(repoRoot, "directory/agents.json")) ? `<nav class="directory-type-switch" aria-label="Directory type"><a href="./" aria-current="page">Skills</a><a href="${rel(here, "directory/agents/")}">AI agents <span aria-hidden="true">↗</span></a></nav>` : ""}`,
+      ${fs.existsSync(path.join(repoRoot, "directory/agents.json")) ? `<nav class="directory-type-switch" aria-label="Directory type"><a href="./" aria-current="page">Skills</a><a href="${rel(here, "directory/featured/")}">Featured Skills</a><a href="${rel(here, "directory/agents/")}">AI agents <span aria-hidden="true">↗</span></a></nav>` : ""}`,
     body,
     jsonld: [
       {
