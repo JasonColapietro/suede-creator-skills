@@ -80,6 +80,12 @@ test("the built site has no old directory URLs and no broken internal links", ()
         assert.ok(!text.includes(`${OLD}/directory`), `${path.relative(out, p)} still links to ${OLD}/directory`);
         if (!e.name.endsWith(".html")) continue;
         const rel = path.relative(out, p).split(path.sep).join("/");
+        const header = text.match(/<header class="nav">([\s\S]*?)<\/header>/)?.[1];
+        if (header) {
+          const featuredLinks = [...header.matchAll(/<a href="([^"]+)">Featured Skills<\/a>/g)];
+          assert.equal(featuredLinks.length, 1, `${rel}: Featured Skills in shared navigation`);
+          assert.equal(new URL(featuredLinks[0][1], `${NEW}/${rel}`).href, `${NEW}/featured/`, rel);
+        }
         if (e.name === "index.html" && !/<meta name="robots" content="[^"]*noindex/i.test(text)) {
           const canonical = `${NEW}/${rel.replace(/index\.html$/, "")}`;
           assert.equal(text.match(/<link rel="canonical" href="([^"]*)"/)?.[1], canonical, rel);

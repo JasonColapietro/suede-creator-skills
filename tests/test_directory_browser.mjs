@@ -4,6 +4,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 import http from 'node:http';
 import { fileURLToPath } from 'node:url';
+import { verifySkillsLanding } from './test_skills_landing_browser.mjs';
+import { verifyFeaturedNavigation } from './test_featured_navigation_browser.mjs';
 
 const { chromium } = await import(process.env.DIRECTORY_PLAYWRIGHT_MODULE || 'playwright');
 const root = fileURLToPath(new URL('../docs/', import.meta.url));
@@ -29,6 +31,9 @@ const waitSearch = () => page.waitForFunction(() => document.querySelector('[dat
 const noOverflow = async () => assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth), 'page overflows viewport');
 
 try {
+  await verifySkillsLanding(page, base, output);
+  await verifyFeaturedNavigation(page, base, output);
+  await page.setViewportSize({ width: 1440, height: 1000 });
   // Visitor: build, constrain, share and restore a task shortlist.
   await page.goto(base + '/directory/?utm_source=browser-test#browse');
   await waitSearch();
@@ -106,6 +111,12 @@ try {
   assert.equal(await page.locator('input[name="q"]').evaluate((el) => el === document.activeElement), true);
   const noJs = await browser.newContext({ javaScriptEnabled: false, viewport: { width: 390, height: 844 } });
   const fallback = await noJs.newPage();
+  await fallback.goto(base + '/directory/');
+  const fallbackFeatured = fallback.getByRole('navigation', { name: 'Main navigation' }).getByRole('link', { name: 'Featured Skills', exact: true });
+  assert.ok(await fallbackFeatured.isVisible(), 'Featured Skills remains visible in the native mobile menu without JavaScript');
+  await fallbackFeatured.focus();
+  await fallback.keyboard.press('Enter');
+  await fallback.waitForURL(base + '/directory/featured/');
   await fallback.goto(base + '/directory/frontend-design/');
   assert.ok(await fallback.locator('.skill-table tbody tr').count() > 0);
   await fallback.goto(base + sample.href);
