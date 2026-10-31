@@ -23,7 +23,14 @@ are failures. Inspect actual outputs and relevant screenshots. A source-only
 case cannot earn a rendered pass. Baseline success must be reported as success;
 it does not establish an improvement from the new guidance.
 
-`source-hashes.json` identifies the unchanged scenario inputs. Deterministic
-tests check routing and package/instruction contracts. They cannot establish
+`source-hashes.json` preserves the original scenario identities used by every
+recorded baseline and forward run. The branch-range whitespace check later
+required removing exactly one terminal LF from `Reservation.mjs` and
+`LeadForm.mjs`; every preceding byte is unchanged. The original and packaged
+hashes, byte counts and pinned original revision are retained in
+`distribution-normalization.json`. All other scenario inputs retain their
+original hashes. Use the pinned original bytes for exact replay of those runs.
+
+Deterministic tests check routing and package/instruction contracts. They cannot establish
 that a language model will follow every instruction or that a UI is accessible.
 Fresh-context behavior runs provide separate, limited evidence.

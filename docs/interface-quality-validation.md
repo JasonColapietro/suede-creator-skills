@@ -16,6 +16,13 @@ references were not supplied. Each forward agent received only the same
 request/raw artifacts and the applicable finished skill with its references.
 Forward agents had fresh contexts and did not receive baseline answers,
 suspected defects or intended fixes. Raw inputs remained unchanged.
+After those runs, the branch-range whitespace gate found an extra blank line
+at EOF in each component module. The distributed fixtures remove one terminal
+LF each, with all preceding bytes unchanged. The original evaluation hashes
+remain in `source-hashes.json`; original and packaged hashes and byte counts
+are recorded separately in `distribution-normalization.json`. This formatting
+correction did not alter component behavior or the evidence from the original
+runs.
 After the design delivery contract moved into a focused reference, checkout
 and brand were rerun in two further fresh contexts; both preserved the same
 scope and findings.
