@@ -3626,6 +3626,20 @@
   "agent skills directory",
   "Suede AI Skills"
  ],
+ "directory/jasoncolapietro/suede-creator-skills/suede-component-lab/index.html": [
+  "component lab agent skill",
+  "component lab workflow",
+  "frontend and design agent skills",
+  "SKILL.md",
+  "Suede AI Component Lab Skills"
+ ],
+ "directory/jasoncolapietro/suede-creator-skills/suede-interface-explain/index.html": [
+  "interface explain agent skill",
+  "interface explain workflow",
+  "frontend and design agent skills",
+  "SKILL.md",
+  "Suede AI Interface Explain Skills"
+ ],
  "directory/jeffallan/claude-skills/chaos-engineer/index.html": [
   "chaos-engineer skill by jeffallan",
   "chaos-engineer skill",

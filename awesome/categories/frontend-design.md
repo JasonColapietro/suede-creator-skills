@@ -6,7 +6,7 @@
 
 Skills for interface design and frontend engineering: UI systems, CSS, components, motion and accessibility. They help an agent produce interfaces with deliberate visual decisions instead of default templates.
 
-**199 accepted skills · 33 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
+**201 accepted skills · 33 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
 **Compare on the 0–99 quality scale:** this category’s verified scores span **56–91 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede AI](https://skills.suedeai.ai/directory/?category=frontend-design&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
 
@@ -319,7 +319,9 @@ Skills for interface design and frontend engineering: UI systems, CSS, component
 
 [Repository](https://github.com/JasonColapietro/suede-creator-skills) · Publisher: [JasonColapietro](https://github.com/JasonColapietro) · [Suede AI listing](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/)
 
-- **91/100 · A** · [Suede AI Design Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/port-upstream-marketing-2026-10-27/skills/suede-design/SKILL.md): Use when asked "restyle this dashboard" or to design, polish or audit an interface hierarchy, tokens, color, type, dark mode or a design system. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-design)
+- **91/100 · A** · [Suede AI Component Lab Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/feat/suede-interface-quality/skills/suede-component-lab/SKILL.md): Build a local component lab to compare real components across synthetic states and stress fixtures without production data or production routes. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/suede-component-lab/)
+- **91/100 · A** · [Suede AI Design Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/feat/suede-interface-quality/skills/suede-design/SKILL.md): Use when asked "review this UI diff" or "audit this flow"; to design interface hierarchy, tokens, color, type, accessibility or a design system; run a whole-flow review; restyle a dashboard; or verify a visual build. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-design)
+- **91/100 · A** · [Suede AI Interface Explain Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/feat/suede-interface-quality/skills/suede-interface-explain/SKILL.md): Understand how an existing interface works through a read-only mechanism explanation tied to source locations and any available rendered observations. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/suede-interface-explain/)
 
 <a id="jeffallan--claude-skills"></a>
 

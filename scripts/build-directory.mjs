@@ -1263,7 +1263,15 @@ ${relatedRows(here, siblings)}
         <p><a href="${rel(here, r.target)}">All ${plural(r.skills.length, "skill")} in ${esc(s.repo)}</a></p>
       </section>` : ""}`;
   const description = skillDescription(s, descriptionNeedsName.has(s.id));
-  const keywords = setKeywords(here, [
+  const ownSkill = s.repo.toLowerCase() === "jasoncolapietro/suede-creator-skills";
+  const taskName = s.name.replace(/^suede-/, "").replaceAll("-", " ");
+  const keywords = setKeywords(here, ownSkill ? [
+    `${taskName} agent skill`,
+    `${taskName} workflow`,
+    `${cat.short} agent skills`,
+    "SKILL.md",
+    displayName(s),
+  ] : [
     sharedName(s) ? `${s.name} skill in ${s.repo}` : `${s.name} skill by ${s.owner}`,
     `${s.name} skill`,
     `${s.name} agent skill`,

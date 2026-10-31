@@ -183,7 +183,7 @@ Skills for reviewing pull requests, refactoring, linting and enforcing code stan
 
 [Repository](https://github.com/JasonColapietro/suede-creator-skills) · Publisher: [JasonColapietro](https://github.com/JasonColapietro) · [Suede AI listing](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/)
 
-- **93/100 · A** · [Suede AI Code Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/port-upstream-marketing-2026-10-27/skills/suede-code/SKILL.md): Use when explicitly asked "review this PR" or to grade a diff, branch, or commit range. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-code)
+- **93/100 · A** · [Suede AI Code Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/feat/suede-interface-quality/skills/suede-code/SKILL.md): Use when explicitly asked "review this PR" or to grade a diff, branch, or commit range. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-code)
 
 <a id="jeffallan--claude-skills"></a>
 

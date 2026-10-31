@@ -16,6 +16,9 @@ references were not supplied. Each forward agent received only the same
 request/raw artifacts and the applicable finished skill with its references.
 Forward agents had fresh contexts and did not receive baseline answers,
 suspected defects or intended fixes. Raw inputs remained unchanged.
+After the design delivery contract moved into a focused reference, checkout
+and brand were rerun in two further fresh contexts; both preserved the same
+scope and findings.
 
 | Scenario | Baseline observation | Forward observation |
 |---|---|---|
@@ -64,7 +67,16 @@ complete. It downloads nothing and retains staged output and input-digest
 checks. This host used that path; browser network requests were blocked during
 the self-contained book render.
 
-Structural directory scores and their exact source revision live in the dated
-first-party intake receipt and generated reports. They measure packaging
+The unchanged `graded-v2` intake measured 91 for `suede-design`,
+`suede-component-lab`, `suede-interface-explain` and the workflow router, with
+all eight structural checks passing. The first design draft measured 88: moving
+the detailed delivery contract into a focused reference reduced its entry point
+from 3,244 to 2,882 body words while retaining the contract verbatim. No content
+was padded and no scoring threshold changed.
+
+The exact source revision, `e42fdefb7b6b4bf9b6bbbd4701bae8f74b4c2c2e`, and
+inventory hashes live in the
+[dated first-party receipt](../directory/intake/2026-10-31-interface-quality.json)
+and generated reports. All 3,805 external records were preserved. Scores measure packaging
 signals, not security, rendered quality or customer outcomes. Source-review
 findings and tool-access limits remain separate from authored-suite validation.
