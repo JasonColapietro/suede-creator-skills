@@ -4,6 +4,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import http from 'node:http';
 import { fileURLToPath } from 'node:url';
+import { verifySkillsLanding } from './test_skills_landing_browser.mjs';
 
 const { chromium } = await import(process.env.DIRECTORY_PLAYWRIGHT_MODULE || 'playwright');
 const root = fileURLToPath(new URL('../docs/', import.meta.url));
@@ -29,6 +30,8 @@ const waitSearch = () => page.waitForFunction(() => document.querySelector('[dat
 const noOverflow = async () => assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth), 'page overflows viewport');
 
 try {
+  await verifySkillsLanding(page, base, output);
+  await page.setViewportSize({ width: 1440, height: 1000 });
   // Visitor: build, constrain, share and restore a task shortlist.
   await page.goto(base + '/directory/?utm_source=browser-test#browse');
   await waitSearch();

@@ -128,7 +128,7 @@
 @media (min-width: 769px) {
   .skills-catalog .nav-links { gap: 20px; }
   .skills-catalog .nav-links a { font-size: 13px; letter-spacing: 0; text-transform: none; }
-  .skills-catalog .nav-links :is([href="#changelog"], [href="../book/"], [href="../blog/"], [href="../copy.html"], [href="../cracked.html"], .nav-star) { display: none; }
+  .skills-catalog .nav-links :is([href="#changelog"], [href="../book/"], [href="../blog/"], [href="../copy.html"], .nav-star) { display: none; }
 }
 .skills-catalog :is(.premium-install, .premium-catalog-notes) > summary { min-height: 44px; cursor: pointer; color: #c8a96e; font-size: 14px; padding: 12px 0; }
 .skills-catalog .premium-install { border-top: 1px solid #343129; }
@@ -147,3 +147,51 @@
 
 /* Replace fallback specialty navigation only after filtering initializes. */
 .skills-catalog.catalog-filter-ready .lanemap-jump { display: none; }
+
+/* Guide-led landing: the method and useful starting points precede the catalog. */
+.skills-home #hero-headline { max-width: 18ch; font-size: clamp(38px, 4.2vw, 56px); }
+.skills-home #hero-subline { max-width: 48ch; }
+.skills-home .landing-section { padding: 56px 0; border-top: 1px solid #24231f; }
+.skills-home .landing-inner { max-width: 1180px; margin: 0 auto; padding: 0 40px; }
+.skills-home .landing-section h2 { font-family: var(--font-display); font-weight: 600; font-size: clamp(30px, 3.3vw, 42px); line-height: 1.15; max-width: 26ch; margin: 12px 0 20px; }
+.skills-home .landing-lede { max-width: 73ch; font-size: 16px; line-height: 1.75; color: var(--muted); }
+.skills-home .landing-section code { color: var(--color-text-primary); }
+.skills-home .start-steps { list-style: none; padding: 0; margin: 32px 0 24px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; counter-reset: steps; }
+.skills-home .start-steps li { border-top: 1px solid #64543b; padding-top: 20px; counter-increment: steps; }
+.skills-home .start-steps li::before { content: '0' counter(steps); display: block; color: var(--color-accent-gold); font: 12px monospace; margin-bottom: 12px; }
+.skills-home .start-steps h3, .skills-home .task-row h3 { font-family: system-ui, sans-serif; font-size: 18px; line-height: 1.4; color: var(--color-text-primary); margin: 0 0 10px; }
+.skills-home .start-steps p, .skills-home .task-row p, .skills-home .landing-detail { color: var(--muted); font-size: 14px; line-height: 1.75; }
+.skills-home .landing-detail a, .skills-home .landing-links a { color: var(--color-accent-gold); text-decoration: underline; text-underline-offset: 4px; }
+.skills-home .landing-links { display: flex; flex-wrap: wrap; gap: 8px 28px; margin-top: 20px; }
+.skills-home .landing-links a { display: inline-flex; align-items: center; min-height: 44px; font-size: 14px; }
+.skills-home .task-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr) minmax(0, .9fr); gap: 32px; align-items: center; padding: 24px 0; border-bottom: 1px solid #343129; }
+.skills-home .task-row h3, .skills-home .task-row p { margin: 0; }
+.skills-home .task-row:hover h3, .skills-home .task-row:focus-visible h3 { color: var(--color-accent-gold); }
+.skills-home .task-target { color: var(--color-accent-gold); font: 12px/1.6 monospace; overflow-wrap: anywhere; }
+.skills-home .task-cracked { border-left: 3px solid var(--color-accent-red); padding-left: 20px; }
+.skills-home .example-request, .skills-home .example-result { padding: 24px; }
+.skills-home .example-request { border-bottom: 1px solid #343129; background: #11110f; }
+.skills-home .example-label { font: 11px/1.6 monospace; text-transform: uppercase; letter-spacing: .1em; color: var(--color-accent-gold); margin: 0 0 12px; }
+.skills-home .example-request pre { font: 13px/1.8 monospace; color: var(--color-text-primary); white-space: pre-wrap; overflow-wrap: anywhere; margin: 0; }
+.skills-home .example-result { color: var(--muted); font-size: 14px; line-height: 1.7; }
+.skills-home .example-result a { color: var(--color-accent-gold); text-decoration: underline; text-underline-offset: 4px; }
+.skills-home .example-result dl { margin: 16px 0 8px; }
+.skills-home .example-result dl > div { display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 12px; border-top: 1px solid #343129; padding: 12px 0; }
+.skills-home .example-result dt { color: var(--color-text-primary); }
+.skills-home .example-result dd { margin: 0; }
+.skills-home .example-link { display: inline-flex; align-items: center; gap: 12px; min-height: 44px; }
+.skills-home .install-runtimes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin-top: 32px; }
+.skills-home .install-runtimes .install-terminal { margin: 0; }
+.skills-home .install-runtimes .install-code-block { display: flex; flex-direction: column; align-items: flex-start; gap: 20px; }
+.skills-home .install-runtimes code { min-width: 0; font-size: 12px; overflow-wrap: anywhere; }
+.skills-home .install-runtime-note { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.7; }
+.skills-home :is(#how-it-works, #use-cases, #install) { scroll-margin-top: 90px; }
+@media (max-width: 768px) {
+  .skills-home .landing-inner { padding: 0 24px; }
+  .skills-home .landing-section { padding: 40px 0; }
+  .skills-home .start-steps, .skills-home .install-runtimes { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .skills-home .task-row { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+  .skills-home .landing-links { flex-direction: column; align-items: flex-start; }
+  .skills-home .example-request, .skills-home .example-result { padding: 20px; }
+  .skills-home #hero-headline { max-width: 17ch; }
+}
