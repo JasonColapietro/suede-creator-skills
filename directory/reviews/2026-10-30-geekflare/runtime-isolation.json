@@ -1,0 +1,43 @@
+{
+  "container_id": "22a6fb3fd379651ec14a62ffd2d140a83619128bf22e555d190005b7c00aca9d",
+  "image": "sha256:d2060403a7ef3f115b82916fa55ed099697f640ea71c2ef71671d5baf211eb16",
+  "worker_exit": 0,
+  "user": "65534:65534",
+  "network": "none",
+  "readonly_rootfs": true,
+  "cap_drop": [
+    "ALL"
+  ],
+  "security_opt": [
+    "no-new-privileges"
+  ],
+  "pids_limit": 128,
+  "memory": 2147483648,
+  "nano_cpus": 2000000000,
+  "tmpfs": {
+    "/tmp": "rw,noexec,nosuid,size=256m"
+  },
+  "mounts": [
+    {
+      "Type": "bind",
+      "Source": "/workspace/geekflare-review-2026-10-30/scan-output",
+      "Destination": "/output",
+      "Mode": "",
+      "RW": true,
+      "Propagation": "rprivate"
+    },
+    {
+      "Type": "bind",
+      "Source": "/workspace/geekflare-review-2026-10-30/scan-source",
+      "Destination": "/source",
+      "Mode": "",
+      "RW": false,
+      "Propagation": "rprivate"
+    }
+  ],
+  "worker_checked_loopback_only_zero_capabilities_no_new_privileges_and_readonly_source": true,
+  "proxy_environment_present_but_network_namespace_has_only_loopback": true,
+  "target_code_executed": false,
+  "hosted_analyzers_enabled": false,
+  "credentials_provided": false
+}

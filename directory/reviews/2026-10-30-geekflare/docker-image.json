@@ -1,0 +1,62 @@
+[
+    {
+        "Id": "sha256:d2060403a7ef3f115b82916fa55ed099697f640ea71c2ef71671d5baf211eb16",
+        "RepoTags": [
+            "suede-geekflare-review:f7e58c929686"
+        ],
+        "RepoDigests": [],
+        "Parent": "",
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2026-10-30T21:49:54.424488629Z",
+        "DockerVersion": "",
+        "Author": "",
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 728552440,
+        "GraphDriver": {
+            "Data": null,
+            "Name": "vfs"
+        },
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:9b35de7893378218e365c34c2c735fb0032a859112fb7345ca8ea73f9aa1db70",
+                "sha256:535ecd2088497f5955e24fd33c534fc9ba37fb717a33a841315a358dd4ff8b35",
+                "sha256:536ebec0f9d8119e620ed0e261faa2cfdeab88621f35924fb0ec74f646b5c53b",
+                "sha256:b8a5c0b25a3657c3b43a3a4cf1815f27fd7ca6c8bc3ffd36164f90731ca83db4",
+                "sha256:b91f8320c943e52ae3a677af108a8f42a55f2c8d6317bf75e961e20ea5748800",
+                "sha256:276b0cb9d95b1a5d36d088f79bcda6a5c36c62ae4cc5785e74345a0f09b5e9aa",
+                "sha256:2b750ac55392d27f334555b97fc7ff19a05909d6314cad79848e3a43e3a674b6",
+                "sha256:7fab01163fe95f87fcb000af9a4899ee6b8b6bcbc0522047be3d55ddadfe76bf"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "2026-10-30T21:49:58.274422568Z"
+        },
+        "Config": {
+            "Cmd": null,
+            "Entrypoint": [
+                "python",
+                "-I",
+                "/opt/scan/worker.py"
+            ],
+            "Env": [
+                "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LANG=C.UTF-8",
+                "GPG_KEY=7169605F62C751356D054A26A821E680E5FA6305",
+                "PYTHON_VERSION=3.12.15",
+                "PYTHON_SHA256=c2c4321961fab0fb999d66e0cecf521c2ab3994c7992873ea99e306c1094fd5a",
+                "PYTHONDONTWRITEBYTECODE=1",
+                "PIP_DISABLE_PIP_VERSION_CHECK=1",
+                "LITELLM_LOCAL_MODEL_COST_MAP=True",
+                "HF_HUB_OFFLINE=1",
+                "TRANSFORMERS_OFFLINE=1"
+            ],
+            "Labels": null,
+            "OnBuild": null,
+            "User": "65534:65534",
+            "Volumes": null,
+            "WorkingDir": "/opt/scan"
+        }
+    }
+]

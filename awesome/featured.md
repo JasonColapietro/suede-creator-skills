@@ -6,7 +6,7 @@
 
 Editorial selection highlights a project’s workflow and accepted scope. It is separate from structural quality grades, security certification and README-badge verification. A plugin feature does not add its contents to the scored skill catalog.
 
-Selections updated **2026-10-28**. [View on Suede AI](https://skills.suedeai.ai/directory/featured/).
+Selections updated **2026-10-30**. [View on Suede AI](https://skills.suedeai.ai/directory/featured/).
 
 - [Appie](#appie)
 - [CoalWash](#coalwash)
@@ -14,6 +14,7 @@ Selections updated **2026-10-28**. [View on Suede AI](https://skills.suedeai.ai/
 - [Extra Caffeine](#extra-caffeine)
 - [Opsibyte](#opsibyte)
 - [Cisco AI Defense Skill Scanner](#cisco-skill-scanner)
+- [Geekflare](#geekflare)
 
 <a id="appie"></a>
 
@@ -149,6 +150,26 @@ Inspect skill instructions and bundled code for known prompt-injection, exfiltra
 Use the reviewed 2.3.1 release with verified dependency pins. Exclude the hijacked litellm 1.107.0 release and correct the certifi version in Cisco’s attached release lock. For local source review, disable hosted analyzers and behavioral alignment verification, use a network-disabled container, and retain every finding and error. Automated detection is best effort and does not certify a skill. This is an independent editorial selection, not a Cisco partnership.
 
 [Repository](https://github.com/cisco-ai-defense/skill-scanner) · [Intake review](../directory/reviews/2026-10-25-cisco-skill-scanner.md) · [Reviewed source c615acb](https://github.com/cisco-ai-defense/skill-scanner/tree/c615acb70994cdf3f4ba54d955fef2e92ac84437) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#cisco-skill-scanner)
+
+---
+
+<a id="geekflare"></a>
+
+## Geekflare
+
+**One skill · Public web data and website diagnostics** · License: MIT · Publisher: [geekflare](https://github.com/geekflare)
+
+The Geekflare skill guides agents through web search, structured page extraction, metadata, brand assets, screenshots, PDFs and website diagnostics. The reviewed scope is the single geekflare skill at skills/geekflare.
+
+- **[geekflare](https://skills.suedeai.ai/directory/geekflare/geekflare-skills/geekflare/)** (geekflare). Choose tools for live search, page data, visual captures and website health checks through Geekflare MCP or its REST API.
+
+### Setup
+
+Requires a Geekflare account and GEEKFLARE\_API\_KEY. Requests send queries, URLs and options to Geekflare and consume account credits; the source documents a free tier. Use public pages and authorized diagnostic targets. Hosted MCP places the key in the URL path, so keep connection URLs out of logs and shared text. The optional local MCP command runs the unpinned npm package @geekflare/mcp. The hosted scraping service advertises CAPTCHA solving and anti-bot handling. REST docs default stealth, proxyMode and renderJS to false; proxyCountry independently enables proxy routing. CAPTCHA fallback behavior is unspecified. The npm runtime and hosted service were not tested.
+
+Accepted scope: **1 skills**. Follow each linked skill’s individual setup instructions.
+
+[Repository](https://github.com/geekflare/geekflare-skills) · [Intake review](../directory/reviews/2026-10-30-geekflare.md) · [Reviewed source b242940](https://github.com/geekflare/geekflare-skills/tree/b2429403c4b7e4f8f2a55773b161ef19643cd12b) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#geekflare)
 
 ---
 

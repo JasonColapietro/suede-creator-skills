@@ -1858,6 +1858,10 @@
  "garrytan/gstack/unfreeze": {
   "category": "developer-tools"
  },
+ "geekflare/geekflare-skills/geekflare": {
+  "category": "developer-tools",
+  "summary": "Search the live web, extract public page data, capture screenshots and PDFs, and check website health through Geekflare MCP or its REST API."
+ },
  "getsentry/skills/agents-md": {
   "category": "ai-agents-llm"
  },

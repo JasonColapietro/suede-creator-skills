@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-28",
+  "updated": "2026-10-30",
   "page": {
     "about": "Copy for /directory/featured/ and the awesome/featured.md view, rendered by scripts/build-directory.mjs and scripts/build-awesome-directory.mjs. Project entries below are the publishers’ own work: keep their names, repositories, setup facts and review links exactly as reviewed.",
     "title": "Featured Agent Skill Projects | Suede AI",
@@ -212,6 +212,25 @@
         }
       ],
       "setup": "Use the reviewed 2.3.1 release with verified dependency pins. Exclude the hijacked litellm 1.107.0 release and correct the certifi version in Cisco’s attached release lock. For local source review, disable hosted analyzers and behavioral alignment verification, use a network-disabled container, and retain every finding and error. Automated detection is best effort and does not certify a skill. This is an independent editorial selection, not a Cisco partnership."
+    },
+    {
+      "id": "geekflare",
+      "name": "Geekflare",
+      "repo": "geekflare/geekflare-skills",
+      "commit": "b2429403c4b7e4f8f2a55773b161ef19643cd12b",
+      "review": "directory/reviews/2026-10-30-geekflare.md",
+      "license": "MIT",
+      "headline": "Turn public web pages into useful data and website checks.",
+      "summary": "The Geekflare skill guides agents through web search, structured page extraction, metadata, brand assets, screenshots, PDFs and website diagnostics. The reviewed scope is the single geekflare skill at skills/geekflare.",
+      "setup": "Requires a Geekflare account and GEEKFLARE_API_KEY. Requests send queries, URLs and options to Geekflare and consume account credits; the source documents a free tier. Use public pages and authorized diagnostic targets. Hosted MCP places the key in the URL path, so keep connection URLs out of logs and shared text. The optional local MCP command runs the unpinned npm package @geekflare/mcp. The hosted scraping service advertises CAPTCHA solving and anti-bot handling. REST docs default stealth, proxyMode and renderJS to false; proxyCountry independently enables proxy routing. CAPTCHA fallback behavior is unspecified. The npm runtime and hosted service were not tested.",
+      "skills": [
+        {
+          "id": "geekflare",
+          "title": "geekflare",
+          "description": "Choose tools for live search, page data, visual captures and website health checks through Geekflare MCP or its REST API."
+        }
+      ],
+      "kind": "One skill · Public web data and website diagnostics"
     }
   ],
   "members": [

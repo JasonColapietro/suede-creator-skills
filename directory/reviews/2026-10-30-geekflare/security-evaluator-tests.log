@@ -1,0 +1,12 @@
+✔ security pass requires completed evidence for the exact source and configured analyzers (2.466864ms)
+✔ findings and analyzer errors cannot become approvals even if upstream is_safe says true (0.503752ms)
+✔ error, skipped, future timestamps and missing skill coverage remain explicit (0.237066ms)
+✔ a null revision, branch or empty manifest cannot receive a security pass (0.167461ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 103.871574

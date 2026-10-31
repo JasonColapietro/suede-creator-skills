@@ -1,0 +1,157 @@
+{
+  "skill": {
+    "status": "findings",
+    "reason": "review_retained_findings",
+    "source": {
+      "repository": "geekflare/geekflare-skills",
+      "path": "skills/geekflare",
+      "revision": "b2429403c4b7e4f8f2a55773b161ef19643cd12b"
+    },
+    "scanner": {
+      "name": "cisco-ai-skill-scanner",
+      "version": "2.3.1",
+      "adapter_version": 2,
+      "analyzers": [
+        "static_analyzer",
+        "bytecode",
+        "pipeline",
+        "correlation",
+        "behavioral_analyzer"
+      ],
+      "policy": "strict",
+      "cel_mode": "shadow",
+      "network": "disabled",
+      "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+    },
+    "started_at": "2026-10-30T21:50:43.717375+00:00",
+    "completed_at": "2026-10-30T21:50:44.235184+00:00",
+    "evaluated_on": "2026-10-30",
+    "valid_until": "2026-11-29T21:50:44.235Z",
+    "files_scanned": 2,
+    "coverage_complete": true,
+    "skipped": [],
+    "findings": {
+      "CRITICAL": 0,
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 0,
+      "INFO": 1
+    }
+  },
+  "packaging": {
+    "status": "error",
+    "reason": "incomplete_file_coverage",
+    "source": {
+      "repository": "geekflare/geekflare-skills",
+      "path": ".",
+      "revision": "b2429403c4b7e4f8f2a55773b161ef19643cd12b"
+    },
+    "scanner": {
+      "name": "cisco-ai-skill-scanner",
+      "version": "2.3.1",
+      "adapter_version": 2,
+      "analyzers": [
+        "static_analyzer",
+        "bytecode",
+        "pipeline",
+        "correlation",
+        "behavioral_analyzer"
+      ],
+      "policy": "strict",
+      "cel_mode": "shadow",
+      "network": "disabled",
+      "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+    },
+    "started_at": "2026-10-30T21:50:44.235538+00:00",
+    "completed_at": "2026-10-30T21:50:44.390416+00:00",
+    "evaluated_on": "2026-10-30",
+    "valid_until": "2026-11-29T21:50:44.390Z",
+    "files_scanned": 8,
+    "coverage_complete": false,
+    "skipped": [
+      {
+        "path": ".gitignore",
+        "reason": "extensionless_source_coverage"
+      }
+    ]
+  },
+  "clean": {
+    "status": "passed",
+    "reason": "no_findings_in_recorded_coverage",
+    "source": {
+      "repository": "suede/self-test",
+      "path": "clean",
+      "revision": "0000000000000000000000000000000000000000"
+    },
+    "scanner": {
+      "name": "cisco-ai-skill-scanner",
+      "version": "2.3.1",
+      "adapter_version": 2,
+      "analyzers": [
+        "static_analyzer",
+        "bytecode",
+        "pipeline",
+        "correlation",
+        "behavioral_analyzer"
+      ],
+      "policy": "strict",
+      "cel_mode": "shadow",
+      "network": "disabled",
+      "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+    },
+    "started_at": "2026-10-30T21:50:44.390754+00:00",
+    "completed_at": "2026-10-30T21:50:44.406697+00:00",
+    "evaluated_on": "2026-10-30",
+    "valid_until": "2026-11-29T21:50:44.406Z",
+    "files_scanned": 1,
+    "coverage_complete": true,
+    "skipped": [],
+    "findings": {
+      "CRITICAL": 0,
+      "HIGH": 0,
+      "MEDIUM": 0,
+      "LOW": 0,
+      "INFO": 0
+    }
+  },
+  "exfil": {
+    "status": "failed",
+    "reason": "review_retained_findings",
+    "source": {
+      "repository": "suede/self-test",
+      "path": "exfil",
+      "revision": "0000000000000000000000000000000000000000"
+    },
+    "scanner": {
+      "name": "cisco-ai-skill-scanner",
+      "version": "2.3.1",
+      "adapter_version": 2,
+      "analyzers": [
+        "static_analyzer",
+        "bytecode",
+        "pipeline",
+        "correlation",
+        "behavioral_analyzer"
+      ],
+      "policy": "strict",
+      "cel_mode": "shadow",
+      "network": "disabled",
+      "lock_sha256": "f7e58c92968673145d6f6f36f3d685c28e836851f5766dd349c3ff8a5b655769"
+    },
+    "started_at": "2026-10-30T21:50:44.406986+00:00",
+    "completed_at": "2026-10-30T21:50:44.438973+00:00",
+    "evaluated_on": "2026-10-30",
+    "valid_until": "2026-11-29T21:50:44.438Z",
+    "files_scanned": 2,
+    "coverage_complete": true,
+    "skipped": [],
+    "findings": {
+      "CRITICAL": 2,
+      "HIGH": 1,
+      "MEDIUM": 2,
+      "LOW": 0,
+      "INFO": 1
+    }
+  },
+  "self_tests_match_expected": true
+}

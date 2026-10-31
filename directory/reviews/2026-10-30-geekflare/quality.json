@@ -1,0 +1,75 @@
+{
+  "assessment_date": "2026-10-30",
+  "source": {
+    "repository": "geekflare/geekflare-skills",
+    "revision": "b2429403c4b7e4f8f2a55773b161ef19643cd12b",
+    "path": "skills/geekflare"
+  },
+  "score_method": "graded-v2",
+  "checks": {
+    "frontmatter": true,
+    "name_format": true,
+    "name_matches_folder": true,
+    "description_length": true,
+    "description_trigger": true,
+    "concise_body": true,
+    "license": true,
+    "maintained": true
+  },
+  "record": {
+    "repo": "geekflare/geekflare-skills",
+    "slug": "geekflare",
+    "name": "geekflare",
+    "description": "Use Geekflare for live web search (including full Google SERP results), scraping public webpages into Markdown or structured JSON, page metadata, brand identity (logos, colors, fonts), screenshots, URL-to-PDF, and website diagnostics such as uptime, DNS, DNSSEC, TLS/SSL, redirects, broken links, load time, and Lighthouse audits. Trigger when a user needs current public-web data, clean page content, a visual capture, or a health check of a website or domain, even if they do not mention Geekflare.",
+    "category": "documents-office",
+    "grade": "B",
+    "score": 80,
+    "security_scan_status": "not_scanned",
+    "checks": "11111111",
+    "dir": "skills/geekflare",
+    "license": "MIT",
+    "open_license": true,
+    "license_file": "LICENSE",
+    "license_evidence": [
+      {
+        "label": "MIT",
+        "file": "LICENSE"
+      }
+    ],
+    "size": [
+      182,
+      1661,
+      2
+    ],
+    "kinds": "r"
+  },
+  "repository": {
+    "withheld": 0,
+    "scoped_install": true,
+    "branch": "main",
+    "commit_date": "2026-10-22",
+    "commit_sha": "b2429403c4b7e4f8f2a55773b161ef19643cd12b",
+    "lists": [],
+    "official": false
+  },
+  "python_score": 80,
+  "grade": "B",
+  "structurally_eligible": true,
+  "adoption_evidence": "All eight tracked-list README documents verified at current default-branch revisions; no matching citation. Zero adoption points.",
+  "javascript_score": 80,
+  "javascript_points": {
+    "structure": 56,
+    "description_length": 5,
+    "boundary": 0,
+    "example": 0,
+    "depth": 7,
+    "references": 3,
+    "scripts": 0,
+    "recency": 9,
+    "adoption": 0,
+    "allowed_tools": 0,
+    "compatibility": 0
+  },
+  "javascript_grade": "B",
+  "javascript_structural_pass": true
+}

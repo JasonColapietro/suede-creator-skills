@@ -1,0 +1,29 @@
+[
+  {
+    "url": "https://geekflare.com/",
+    "accessed_on": "2026-10-30",
+    "retrieval": "web.run public-page retrieval; not a service API call",
+    "recorded_at": "2026-10-30T21:54:51.566042+00:00",
+    "retrieval_file": "service-web-retrieval.json",
+    "retrieval_sha256": "7b980ba2266eb292c2d03930f0bc6446990ccaa653fde9ed8aa743f30106b0ff",
+    "retrieval_retained_in": "Original local review archive; public review publishes source URLs and factual summaries."
+  },
+  {
+    "url": "https://geekflare.com/webscraping/",
+    "accessed_on": "2026-10-30",
+    "retrieval": "web.run public-page retrieval; not a service API call",
+    "recorded_at": "2026-10-30T21:54:51.566093+00:00",
+    "retrieval_file": "service-web-retrieval.json",
+    "retrieval_sha256": "7b980ba2266eb292c2d03930f0bc6446990ccaa653fde9ed8aa743f30106b0ff",
+    "retrieval_retained_in": "Original local review archive; public review publishes source URLs and factual summaries."
+  },
+  {
+    "url": "https://docs.geekflare.com/endpoint/webscraping",
+    "accessed_on": "2026-10-30",
+    "retrieval": "web.run public-page retrieval; not a service API call",
+    "recorded_at": "2026-10-30T21:54:51.566116+00:00",
+    "retrieval_file": "service-web-retrieval.json",
+    "retrieval_sha256": "7b980ba2266eb292c2d03930f0bc6446990ccaa653fde9ed8aa743f30106b0ff",
+    "retrieval_retained_in": "Original local review archive; public review publishes source URLs and factual summaries."
+  }
+]

@@ -1,0 +1,29 @@
+{
+  "initial_npm_test": {
+    "exit_code": 1,
+    "reason": "Missing js-yaml dependency in fresh trusted tooling snapshot",
+    "log": "npm-test-initial.log"
+  },
+  "npm_dependency_setup": {
+    "exit_code": 0,
+    "command": "npm ci --ignore-scripts --no-audit --no-fund",
+    "scope": "Isolated trusted Suede tooling snapshot only",
+    "log": "npm-ci.log"
+  },
+  "initial_docker_build": {
+    "exit_code": 1,
+    "reason": "Default Docker build configuration directory was read-only",
+    "log": "docker-build.log"
+  },
+  "offline_docker_build": {
+    "exit_code": 0,
+    "resolution": "Task-local DOCKER_CONFIG; no privilege escalation or adapter change",
+    "log": "docker-build-offline.log"
+  },
+  "direct_public_document_fetch": {
+    "exit_code": 1,
+    "reason": "Proxy HTTP CONNECT 403; web.run fallback retained",
+    "log": "service-direct-fetch-error.json"
+  },
+  "raw_records": "Full original logs remain in the separate local review archive; public summary omits the machine user path."
+}

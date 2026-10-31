@@ -1,0 +1,10 @@
+{
+  "python": "Python 3.12.14",
+  "node": "v24.19.0",
+  "npm": "11.9.0",
+  "git": "git version 2.52.0",
+  "docker": "Docker version 28.4.0, build d8eb465",
+  "pyyaml": "6.0.3",
+  "js-yaml": "5.5.0",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41"
+}

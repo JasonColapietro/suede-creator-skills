@@ -1,0 +1,9 @@
+{
+  "verified_at": "2026-10-30T21:57:24.453098+00:00",
+  "git_blobs_and_sha256_match": true,
+  "source_files": 8,
+  "primary_scope_files": 2,
+  "supplemental_packaging_files": 8,
+  "all_scanner_inventory_bytes_match_pinned_git": true,
+  "packaging_path_mapping_required": true
+}

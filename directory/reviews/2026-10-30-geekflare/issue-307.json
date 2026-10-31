@@ -1,0 +1,30 @@
+{
+  "issue": {
+    "url": "https://github.com/JasonColapietro/suede-creator-skills/issues/307",
+    "title": "Directory: geekflare/geekflare-skills (Geekflare web data and website checks)",
+    "issue_number": 307,
+    "body": "### Request\n\nAdd my skills\n\n### Public GitHub repository\n\nhttps://github.com/geekflare/geekflare-skills\n\n### Skill names or listing scope\n\ngeekflare\n\n### Details\n\nSuggested category: Developer Tools and Frameworks (developer-tools). Data, Analytics and Databases (data-databases) would also fit.\n\nGeekflare (https://geekflare.com/api) is a web data API. This skill teaches an agent when and how to use it, through the official Geekflare MCP server or the REST API. It covers:\n- live web search, including the full Google results page by country or city\n- turning public pages into Markdown or JSON\n- page metadata, and brand data (logos, colors, fonts) for a domain\n- screenshots and URL-to-PDF\n- website checks: uptime, DNS, TLS, redirects, broken links, load time and Lighthouse\n\nIt works with public pages only. It doesn't bypass logins, paywalls, CAPTCHAs or bot protection.\n- Hosted MCP server: https://mcp.geekflare.com/mcp\n- MCP documentation: https://docs.geekflare.com/mcp/overview\n- MCP Registry name: com.geekflare/mcp\n- Authentication: a Geekflare API key in GEEKFLARE_API_KEY. A free tier is available.\n- License: MIT\n\n### Confirmation\n\n- [x] I maintain this repository, or I am requesting a listing for a public repository on its maintainers' behalf.\n",
+    "state": "open",
+    "user": {
+      "login": "scorpiock",
+      "name": "scorpiock",
+      "email": null,
+      "avatar_url": "https://avatars.githubusercontent.com/u/19984273?v=4",
+      "id": 19984273
+    },
+    "assignees": null,
+    "labels": null,
+    "milestone": null,
+    "state_reason": null,
+    "comments": 0,
+    "created_at": "2026-10-30T19:20:48Z",
+    "updated_at": "2026-10-30T19:20:48Z",
+    "closed_at": null,
+    "display_url": "https://github.com/JasonColapietro/suede-creator-skills/issues/307",
+    "display_title": "Directory: geekflare/geekflare-skills (Geekflare web data and website checks)"
+  },
+  "url": "https://github.com/JasonColapietro/suede-creator-skills/issues/307",
+  "title": "Directory: geekflare/geekflare-skills (Geekflare web data and website checks)",
+  "display_url": "https://github.com/JasonColapietro/suede-creator-skills/issues/307",
+  "display_title": "Directory: geekflare/geekflare-skills (Geekflare web data and website checks)"
+}

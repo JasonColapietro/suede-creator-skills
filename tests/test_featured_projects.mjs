@@ -4,13 +4,81 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
-import { qualityScore } from '../scripts/directory/badges.mjs';
+import { qualityScore, shieldSvg } from '../scripts/directory/badges.mjs';
 import * as featured from '../scripts/directory/featured.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const read = (file) => fs.readFileSync(path.join(root, file), 'utf8');
 const data = JSON.parse(read('directory/featured-projects.json'));
 const published = () => read('docs/directory/featured/index.html');
+
+test('Geekflare has one pinned 80/B listing, an editorial feature and accurate service disclosures', () => {
+  const repo = 'geekflare/geekflare-skills';
+  const revision = 'b2429403c4b7e4f8f2a55773b161ef19643cd12b';
+  const catalog = JSON.parse(read('directory/skills.json'));
+  const inclusions = JSON.parse(read('directory/inclusions.json'));
+  const project = data.projects.find((p) => p.id === 'geekflare');
+  assert.ok(project);
+  assert.equal(project.commit, revision);
+  assert.deepEqual(project.skills.map((s) => s.id), ['geekflare']);
+  assert.deepEqual(inclusions.skills[repo], ['geekflare']);
+  assert.deepEqual(inclusions.skill_roots[repo], ['skills/geekflare']);
+  const records = catalog.skills.filter((s) => s.repo === repo);
+  assert.equal(records.length, 1);
+  const [record] = records;
+  assert.equal(record.dir, 'skills/geekflare');
+  assert.equal(record.score, 80);
+  assert.equal(record.grade, 'B');
+  assert.equal(record.score, qualityScore(record, catalog.repos[repo], '2026-10-30'));
+  assert.equal(record.license, 'MIT');
+  assert.equal(record.checks, '11111111');
+  assert.equal(record.security_scan_status, 'not_scanned');
+  assert.equal(catalog.repos[repo].commit_sha, revision);
+  assert.equal(catalog.repos[repo].scoped_install, true);
+  assert.deepEqual(catalog.repos[repo].lists, []);
+  const folder = `docs/directory/${repo}/geekflare/`;
+  const listing = read(folder + 'index.html');
+  const report = JSON.parse(read(folder + 'report.json'));
+  assert.equal(report.source.revision, revision);
+  assert.equal(report.quality.score, 80);
+  assert.deepEqual(report.badges.map((b) => b.kind), ['score', 'grade']);
+  assert.equal(read(folder + 'badge.svg'), shieldSvg(80, 'grade'));
+  assert.equal(read(folder + 'score.svg'), shieldSvg(80, 'score'));
+  const page = published();
+  const card = page.split('id="geekflare"')[1]?.split('</article>')[0];
+  assert.ok(card.includes('href="../geekflare/geekflare-skills/geekflare/"'));
+  for (const surface of [listing, card]) {
+    for (const fact of ['GEEKFLARE_API_KEY', 'account credits', 'URL path', 'unpinned', 'CAPTCHA', 'proxyCountry', 'unspecified', 'were not tested']) assert.ok(surface.includes(fact), fact);
+    assert.doesNotMatch(surface, /security certified|security-scan-passed/i);
+  }
+  assert.ok(listing.includes('npx skills add https://github.com/geekflare/geekflare-skills/tree/main/skills/geekflare</code>'));
+  assert.match(page, /featured-badge-geekflare/);
+  assert.ok(!Object.keys(JSON.parse(read('directory/promotion.json')).verifications).some((id) => id.startsWith(repo + '/')));
+});
+
+test('Geekflare evidence keeps all findings, complete skill coverage and incomplete packaging coverage', () => {
+  const prefix = 'directory/reviews/2026-10-30-geekflare';
+  for (const [file, digest] of Object.entries(JSON.parse(read(`${prefix}/SHA256.json`)))) {
+    assert.equal(createHash('sha256').update(fs.readFileSync(path.join(root, prefix, file))).digest('hex'), digest, file);
+  }
+  const quality = JSON.parse(read(`${prefix}/quality.json`));
+  assert.equal(quality.python_score, 80);
+  assert.equal(quality.javascript_score, 80);
+  assert.equal(quality.javascript_points.adoption, 0);
+  const scan = JSON.parse(read(`${prefix}/security-skill.json`));
+  assert.equal(scan.coverage.complete, true);
+  assert.equal(scan.coverage.files.length, 2);
+  assert.deepEqual(scan.coverage.skipped, []);
+  assert.deepEqual(scan.analysis.analyzers_failed, []);
+  assert.deepEqual(scan.analysis.findings.map((f) => [f.rule_id, f.severity]), [['MANIFEST_MISSING_LICENSE', 'INFO']]);
+  const outcomes = JSON.parse(read(`${prefix}/security-summary.json`));
+  assert.equal(outcomes.skill.status, 'findings');
+  assert.equal(outcomes.packaging.status, 'error');
+  assert.equal(outcomes.packaging.reason, 'incomplete_file_coverage');
+  assert.deepEqual(outcomes.packaging.skipped, [{ path: '.gitignore', reason: 'extensionless_source_coverage' }]);
+  assert.equal(outcomes.clean.status, 'passed');
+  assert.equal(outcomes.exfil.status, 'failed');
+});
 
 test('single root SKILL.md membership links the exact file and rejects broader scopes', () => {
   const sample = structuredClone(data);
@@ -153,7 +221,7 @@ test('Arcmira review preserves original scores and every raw scan finding', () =
 });
 
 test('editorial projects preserve accepted scopes and resolve their reviewed evidence', () => {
-  assert.deepEqual(data.projects.map((p) => p.repo), ['appierun/appie-mcp', 'TheColliery/CoalWash', 'costory-io/costory-finops-mcp-skills', 'cwong5/extra-caffeine-mcp', 'MelMayssonOwen/agent-skills', 'cisco-ai-defense/skill-scanner']);
+  assert.deepEqual(data.projects.map((p) => p.repo), ['appierun/appie-mcp', 'TheColliery/CoalWash', 'costory-io/costory-finops-mcp-skills', 'cwong5/extra-caffeine-mcp', 'MelMayssonOwen/agent-skills', 'cisco-ai-defense/skill-scanner', 'geekflare/geekflare-skills']);
   const page = published();
   const appie = page.split('id="appie"')[1].split('</article>')[0];
   const links = [...appie.matchAll(/href="(\.\.\/appierun\/appie-mcp\/[^"/]+\/)"/g)].map((m) => m[1]);
@@ -189,8 +257,8 @@ test('featured page has a discoverable route, truthful structured data and selec
   assert.equal((page.match(/<h1[ >]/g) || []).length, 1);
   const blocks = [...page.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map((m) => JSON.parse(m[1]));
   const collection = blocks.find((x) => x['@type'] === 'CollectionPage');
-  assert.equal(collection.mainEntity.numberOfItems, 8);
-  assert.deepEqual(collection.mainEntity.itemListElement.map((p) => p.name), ['Appie', 'CoalWash', 'Costory', 'Extra Caffeine', 'Opsibyte', 'Cisco AI Defense Skill Scanner', 'Arcmira', 'Lava']);
+  assert.equal(collection.mainEntity.numberOfItems, 9);
+  assert.deepEqual(collection.mainEntity.itemListElement.map((p) => p.name), ['Appie', 'CoalWash', 'Costory', 'Extra Caffeine', 'Opsibyte', 'Cisco AI Defense Skill Scanner', 'Geekflare', 'Arcmira', 'Lava']);
   assert.match(page, /README-badge verification is tracked separately/);
   assert.match(page, /href="\.\.\/submit\/"/);
   assert.match(page, /href="\.\.\/methodology\/"/);

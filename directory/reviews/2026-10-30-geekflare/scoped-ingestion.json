@@ -1,0 +1,15 @@
+{
+  "source_revision": "b2429403c4b7e4f8f2a55773b161ef19643cd12b",
+  "assessment_date": "2026-10-30",
+  "preserved_snapshot_date": "2026-10-22",
+  "previous_snapshot_id": "ab3fdfb2959447c6a29caa80554895d3",
+  "new_snapshot_id": "51943badafcf43518f4a4894d25d7949",
+  "unchanged_existing_skills": 3868,
+  "unchanged_existing_repositories": 161,
+  "first_party_count": 64,
+  "new_skills": [
+    "geekflare"
+  ],
+  "copy_predicate": "unchanged norm/shingles/jaccard; no overlap",
+  "curator_change": "add separately reviewed own-service repository; grading and policy rules unchanged"
+}
