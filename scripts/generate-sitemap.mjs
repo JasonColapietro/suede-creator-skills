@@ -310,6 +310,11 @@ function buildEntries() {
       // check is the publisher entry point.
       if (rel === "directory/guides" || rel.startsWith("directory/guides/")) return { priority: DIRECTORY_CATEGORY_PRIORITY, changefreq: rel === "directory/guides" ? "weekly" : "monthly" };
       if (rel === "directory/check") return { priority: "0.7", changefreq: "monthly" };
+      // Task pages ("best Claude Code skills for <task>") answer the same
+      // buying question as the category hubs, so they share the tier; each
+      // "<skill> alternatives" page ranks above the skill page it compares.
+      if (rel === "directory/for" || rel.startsWith("directory/for/")) return { priority: DIRECTORY_CATEGORY_PRIORITY, changefreq: "weekly" };
+      if (rel.endsWith("/alternatives")) return { priority: DIRECTORY_REPO_PRIORITY, changefreq: "weekly" };
       if (depth === 1) return { priority: DIRECTORY_CATEGORY_PRIORITY, changefreq: "weekly" };
       if (depth === 2) return { priority: DIRECTORY_REPO_PRIORITY, changefreq: "weekly" };
       return { priority: DIRECTORY_SKILL_PRIORITY, changefreq: "monthly" };

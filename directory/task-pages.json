@@ -1,0 +1,425 @@
+{
+ "_comment": "Keyword map for the directory's task pages (/for/<id>/) and alternatives pages. A skill matches a job when its name matches `name`, or when its summary (first sentence of the description when it has no full page) matches `text` and its category is in `categories`. `exclude` lists skills (owner/repo/slug) whose summary names the job only in passing. A page is published only when at least 5 listed skills match and at least 3 of them have full pages scoring 80 or more; scripts/build-directory.mjs applies the gate. `job` is the title-case topic for titles, `topic` the topic in a sentence (\"best Claude Code skills for <topic>\"), `noun` the word before \"skill\" (\"which <noun> skill\"). Patterns are case-insensitive regular expressions. Order matters: a skill's alternatives page uses the first published job whose name pattern matches it, else the first published job that lists it.",
+ "jobs": [
+  {
+   "id": "pdf",
+   "job": "PDF",
+   "topic": "PDF",
+   "noun": "PDF",
+   "name": "\\bpdfs?\\b",
+   "text": "\\bpdfs?\\b",
+   "categories": [
+    "documents-office"
+   ],
+   "exclude": [
+    "tronghieu/agent-skills/slidewright",
+    "Orchestra-Research/AI-Research-SKILLs/presenting-conference-talks",
+    "github/awesome-copilot/exam-ready"
+   ]
+  },
+  {
+   "id": "spreadsheets",
+   "job": "Excel and Spreadsheets",
+   "topic": "Excel and spreadsheets",
+   "noun": "spreadsheet",
+   "name": "\\bxlsx\\b|\\bexcel\\b|spreadsheets?|google sheets",
+   "text": "\\bxlsx\\b|\\bexcel\\b|spreadsheets?|google sheets",
+   "categories": [
+    "documents-office",
+    "business-finance",
+    "data-databases"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "word-documents",
+   "job": "Word Documents",
+   "topic": "Word documents",
+   "noun": "Word document",
+   "name": "\\bdocx\\b|\\bword docs?\\b",
+   "text": "\\bdocx\\b|\\bword documents?\\b|microsoft word",
+   "categories": [
+    "documents-office"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "presentations",
+   "job": "Presentations",
+   "topic": "presentations",
+   "noun": "presentation",
+   "name": "\\bpptx\\b|powerpoint|\\bslides?\\b|presentations?",
+   "text": "\\bpptx\\b|powerpoint|slide decks?|presentations?",
+   "categories": [
+    "documents-office",
+    "media-creative",
+    "frontend-design"
+   ],
+   "exclude": [
+    "github/awesome-copilot/react-container-presentation-component",
+    "nextlevelbuilder/ui-ux-pro-max-skill/design"
+   ]
+  },
+  {
+   "id": "playwright",
+   "job": "Playwright and Browser Testing",
+   "topic": "Playwright and browser testing",
+   "noun": "browser testing",
+   "name": "playwright|cypress|selenium|puppeteer|\\be2e\\b|end to end",
+   "text": "playwright|cypress|selenium|puppeteer|end-to-end tests?|\\be2e\\b|browser tests?",
+   "categories": [
+    "testing-qa",
+    "developer-tools"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "terraform",
+   "job": "Terraform",
+   "topic": "Terraform",
+   "noun": "Terraform",
+   "name": "terraform|opentofu",
+   "text": "terraform|opentofu",
+   "categories": [
+    "devops-cloud",
+    "developer-tools"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "figma",
+   "job": "Figma",
+   "topic": "Figma",
+   "noun": "Figma",
+   "name": "figma",
+   "text": "figma",
+   "categories": [
+    "frontend-design",
+    "developer-tools",
+    "media-creative"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "stripe",
+   "job": "Stripe",
+   "topic": "Stripe",
+   "noun": "Stripe",
+   "name": "stripe",
+   "text": "stripe",
+   "categories": [
+    "business-finance",
+    "developer-tools"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "seo",
+   "job": "SEO",
+   "topic": "SEO",
+   "noun": "SEO",
+   "name": "\\bseo\\b|hreflang|schema markup|sitemaps?",
+   "text": "\\bseo\\b|search engine optimi[sz]ation|search rankings?",
+   "categories": [
+    "marketing-seo",
+    "writing-content"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "code-review",
+   "job": "Code Review",
+   "topic": "code review",
+   "noun": "code review",
+   "name": "code review|\\breview(?:er|ing|s)?\\b",
+   "nameCategories": [
+    "code-review-quality",
+    "developer-tools",
+    "security"
+   ],
+   "text": "code reviews?|reviews? (?:pull requests?|prs|diffs?|code changes)",
+   "categories": [
+    "code-review-quality",
+    "developer-tools",
+    "security"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "git",
+   "job": "Git and Pull Requests",
+   "topic": "Git and pull requests",
+   "noun": "Git",
+   "name": "\\bgit\\b|worktrees?|\\bcommits?\\b|\\bprs?\\b|pull requests?|gitmoji",
+   "text": "\\bgit\\b|commit messages?|pull requests?|\\bprs\\b|worktrees?",
+   "categories": [
+    "developer-tools",
+    "code-review-quality",
+    "devops-cloud"
+   ],
+   "exclude": [
+    "Necmttn/ax/ax-repo",
+    "wondelai/skills/clean-code"
+   ]
+  },
+  {
+   "id": "mcp-servers",
+   "job": "MCP Servers",
+   "topic": "MCP servers",
+   "noun": "MCP server",
+   "name": "\\bmcp\\b",
+   "text": "\\bmcp servers?\\b|model context protocol",
+   "categories": [
+    "ai-agents-llm",
+    "developer-tools"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "data-analysis",
+   "job": "Data Analysis",
+   "topic": "data analysis",
+   "noun": "data analysis",
+   "name": "data analy|pandas|data scien|exploratory data|visuali[sz]ation",
+   "nameCategories": [
+    "data-databases",
+    "science-research",
+    "business-finance"
+   ],
+   "text": "data analysis|analy[sz]es? (?:data|datasets)|exploratory data|data visuali[sz]ation|pandas",
+   "categories": [
+    "data-databases",
+    "science-research",
+    "business-finance"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "kubernetes",
+   "job": "Kubernetes",
+   "topic": "Kubernetes",
+   "noun": "Kubernetes",
+   "name": "kubernetes|\\bk8s\\b|\\bhelm\\b|\\bgke\\b|\\beks\\b|\\baks\\b",
+   "text": "kubernetes|\\bk8s\\b|helm charts?",
+   "categories": [
+    "devops-cloud",
+    "developer-tools"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "aws",
+   "job": "AWS",
+   "topic": "AWS",
+   "noun": "AWS",
+   "name": "\\baws\\b|\\bcdk\\b|\\bs3\\b|sagemaker|bedrock|cloudwatch",
+   "nameCategories": [
+    "devops-cloud",
+    "developer-tools",
+    "ai-agents-llm"
+   ],
+   "text": "\\baws\\b|amazon web services",
+   "categories": [
+    "devops-cloud",
+    "developer-tools",
+    "ai-agents-llm"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "security-audits",
+   "job": "Security Audits",
+   "topic": "security audits",
+   "noun": "security audit",
+   "name": "security|vulnerab|semgrep|codeql|threat model|pentest|\\bsast\\b|scanner",
+   "nameCategories": [
+    "security",
+    "code-review-quality",
+    "developer-tools",
+    "devops-cloud"
+   ],
+   "text": "security (?:reviews?|audits?|scans?)|vulnerabilit(?:y|ies)|static analysis",
+   "categories": [
+    "security",
+    "code-review-quality"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "email",
+   "job": "Email",
+   "topic": "email",
+   "noun": "email",
+   "name": "\\be-?mails?\\b|inbox|resend|mailtrap|smtp",
+   "text": "(?:send(?:s|ing)?|writ(?:e|es|ing)|cold|transactional|outbound|marketing|lifecycle|html) e-?mails?|e-?mail (?:sequences?|campaigns?|templates?|api|sending|deliverability|marketing)",
+   "categories": [
+    "marketing-seo",
+    "developer-tools",
+    "productivity-knowledge",
+    "business-finance",
+    "writing-content"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "video",
+   "job": "Video",
+   "topic": "video",
+   "noun": "video",
+   "name": "\\bvideos?\\b|youtube|remotion",
+   "nameCategories": [
+    "media-creative",
+    "productivity-knowledge",
+    "marketing-seo"
+   ],
+   "text": "\\bvideos?\\b",
+   "categories": [
+    "media-creative"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "ios",
+   "job": "iOS and Swift",
+   "topic": "iOS and Swift",
+   "noun": "iOS",
+   "name": "\\bios\\b|\\bswift(?:ui)?\\b|xcode|xcuitest",
+   "text": "\\bios\\b|\\bswift(?:ui)?\\b|xcode",
+   "categories": [
+    "developer-tools",
+    "testing-qa",
+    "frontend-design"
+   ],
+   "exclude": [
+    "flutter/skills/dart-use-ffigen"
+   ]
+  },
+  {
+   "id": "flutter",
+   "job": "Flutter and Dart",
+   "topic": "Flutter and Dart",
+   "noun": "Flutter",
+   "name": "flutter|\\bdart\\b",
+   "text": "flutter|\\bdart\\b",
+   "categories": [
+    "developer-tools",
+    "testing-qa",
+    "frontend-design"
+   ],
+   "exclude": [
+    "google/skills/retrieving-developer-knowledge"
+   ]
+  },
+  {
+   "id": "react",
+   "job": "React and Next.js",
+   "topic": "React and Next.js",
+   "noun": "React",
+   "name": "\\breact\\b|next\\.?js",
+   "text": "\\breact\\b|next\\.js",
+   "categories": [
+    "frontend-design",
+    "developer-tools",
+    "testing-qa"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "rag",
+   "job": "RAG and Vector Search",
+   "topic": "RAG and vector search",
+   "noun": "RAG",
+   "name": "\\brag\\b|retrieval|vector (?:db|search|stores?|database)|qdrant|pinecone",
+   "text": "\\brag\\b|retrieval[- ]augmented|vector (?:search|databases?|stores?)|semantic search",
+   "categories": [
+    "ai-agents-llm",
+    "data-databases"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "llm-evals",
+   "job": "LLM Evals",
+   "topic": "LLM evals",
+   "noun": "LLM eval",
+   "name": "\\bevals?\\b|evaluation",
+   "nameCategories": [
+    "ai-agents-llm"
+   ],
+   "text": "\\bevals?\\b|evaluat(?:es?|ion|ing) (?:llms?|models?|agents?|prompts?)",
+   "categories": [
+    "ai-agents-llm"
+   ],
+   "exclude": [
+    "NVIDIA/skills/tao-train-single-step"
+   ]
+  },
+  {
+   "id": "sql",
+   "job": "SQL and Databases",
+   "topic": "SQL and databases",
+   "noun": "SQL",
+   "name": "\\bsql\\b|postgres|mysql|mssql|sqlite|database|clickhouse|duckdb|supabase|\\bneon\\b",
+   "text": "\\bsql\\b|postgres(?:ql)?|mysql|database (?:schemas?|queries|migrations?)",
+   "categories": [
+    "data-databases",
+    "developer-tools"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "documentation",
+   "job": "Technical Documentation",
+   "topic": "technical documentation",
+   "noun": "documentation",
+   "name": "\\bdocs?\\b|documentation|readmes?|diataxis|changelogs?|documenter",
+   "nameCategories": [
+    "writing-content",
+    "developer-tools",
+    "documents-office",
+    "productivity-knowledge"
+   ],
+   "text": "(?:writes?|creates?|generates?|reviews?|maintains?|structures?|drafts?)\\b[^.]{0,40}\\b(?:documentation|readmes?|docstrings?|changelogs?)",
+   "categories": [
+    "writing-content",
+    "documents-office",
+    "developer-tools"
+   ],
+   "exclude": [
+    "sanjay3290/ai-skills/google-docs"
+   ]
+  },
+  {
+   "id": "ui-design",
+   "job": "UI Design",
+   "topic": "UI design",
+   "noun": "UI design",
+   "name": "\\bui\\b|\\bux\\b|design system|tailwind|\\bcss\\b|frontend design",
+   "nameCategories": [
+    "frontend-design",
+    "testing-qa"
+   ],
+   "text": "user interfaces?|\\bui\\b|design systems?|tailwind",
+   "categories": [
+    "frontend-design"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "unit-testing",
+   "job": "Unit Testing and TDD",
+   "topic": "unit testing and TDD",
+   "noun": "unit testing",
+   "name": "unit tests?|\\btdd\\b|test driven|pytest|jest|vitest",
+   "text": "unit tests?|test-driven|\\btdd\\b|pytest|jest|vitest",
+   "categories": [
+    "testing-qa",
+    "code-review-quality",
+    "developer-tools"
+   ],
+   "exclude": [
+    "jeffallan/claude-skills/laravel-specialist"
+   ]
+  }
+ ]
+}

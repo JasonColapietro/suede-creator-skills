@@ -77,6 +77,12 @@
   "AI agent directory",
   "agent evidence ratings"
  ],
+ "directory/agiwhitelist/auteur/auteur/alternatives/index.html": [
+  "auteur alternatives",
+  "auteur skill alternatives",
+  "skills like auteur",
+  "UI design skills for claude code"
+ ],
  "directory/agiwhitelist/auteur/auteur/index.html": [
   "auteur skill by agiwhitelist",
   "auteur skill",
@@ -103,6 +109,12 @@
   "marketing and SEO agent skills",
   "SKILL.md"
  ],
+ "directory/agricidaniel/claude-seo/seo-content-brief/alternatives/index.html": [
+  "seo-content-brief alternatives",
+  "seo-content-brief skill alternatives",
+  "skills like seo-content-brief",
+  "SEO skills for claude code"
+ ],
  "directory/agricidaniel/claude-seo/seo-content-brief/index.html": [
   "seo-content-brief skill by AgriciDaniel",
   "seo-content-brief skill",
@@ -111,6 +123,12 @@
   "AgriciDaniel skills",
   "marketing and SEO agent skills",
   "SKILL.md"
+ ],
+ "directory/agricidaniel/claude-seo/seo-dataforseo/alternatives/index.html": [
+  "seo-dataforseo alternatives",
+  "seo-dataforseo skill alternatives",
+  "skills like seo-dataforseo",
+  "SEO skills for claude code"
  ],
  "directory/agricidaniel/claude-seo/seo-dataforseo/index.html": [
   "seo-dataforseo skill by AgriciDaniel",
@@ -217,6 +235,12 @@
   "Alisa0808 skills",
   "video image and audio agent skills",
   "SKILL.md"
+ ],
+ "directory/alisa0808/vox-director/vox-director/alternatives/index.html": [
+  "vox-director alternatives",
+  "vox-director skill alternatives",
+  "skills like vox-director",
+  "video skills for claude code"
  ],
  "directory/alisa0808/vox-director/vox-director/index.html": [
   "vox-director skill by Alisa0808",
@@ -340,6 +364,12 @@
   "document and office file agent skills",
   "SKILL.md"
  ],
+ "directory/anthropics/skills/pptx/alternatives/index.html": [
+  "pptx alternatives",
+  "pptx skill alternatives",
+  "skills like pptx",
+  "presentation skills for claude code"
+ ],
  "directory/anthropics/skills/pptx/index.html": [
   "pptx skill by anthropics",
   "pptx skill",
@@ -348,6 +378,12 @@
   "anthropics skills",
   "document and office file agent skills",
   "SKILL.md"
+ ],
+ "directory/anthropics/skills/skill-creator/alternatives/index.html": [
+  "skill-creator alternatives",
+  "skill-creator skill alternatives",
+  "skills like skill-creator",
+  "LLM eval skills for claude code"
  ],
  "directory/anthropics/skills/skill-creator/index.html": [
   "skill-creator skill by anthropics",
@@ -411,6 +447,12 @@
   "developer tools agent skills",
   "SKILL.md"
  ],
+ "directory/apollographql/skills/apollo-client/alternatives/index.html": [
+  "apollo-client alternatives",
+  "apollo-client skill alternatives",
+  "skills like apollo-client",
+  "React skills for claude code"
+ ],
  "directory/apollographql/skills/apollo-client/index.html": [
   "apollo-client skill by apollographql",
   "apollo-client skill",
@@ -437,6 +479,12 @@
   "apollographql skills",
   "developer tools agent skills",
   "SKILL.md"
+ ],
+ "directory/apollographql/skills/apollo-ios/alternatives/index.html": [
+  "apollo-ios alternatives",
+  "apollo-ios skill alternatives",
+  "skills like apollo-ios",
+  "iOS skills for claude code"
  ],
  "directory/apollographql/skills/apollo-ios/index.html": [
   "apollo-ios skill by apollographql",
@@ -864,6 +912,12 @@
   "video image and audio agent skills",
   "SKILL.md"
  ],
+ "directory/bria-ai/bria-skill/video-remove-background/alternatives/index.html": [
+  "video-remove-background alternatives",
+  "video-remove-background skill alternatives",
+  "skills like video-remove-background",
+  "video skills for claude code"
+ ],
  "directory/bria-ai/bria-skill/video-remove-background/index.html": [
   "video-remove-background skill by Bria-AI",
   "video-remove-background skill",
@@ -1105,6 +1159,12 @@
   "code review skills for codex",
   "best code review skills",
   "agent skills directory"
+ ],
+ "directory/coderabbitai/skills/code-review/alternatives/index.html": [
+  "code-review by coderabbitai alternatives",
+  "code-review skill alternatives coderabbitai",
+  "skills like code-review by coderabbitai",
+  "code review skills for claude code"
  ],
  "directory/coderabbitai/skills/code-review/index.html": [
   "code-review skill by coderabbitai",
@@ -1414,6 +1474,12 @@
   "video image and audio agent skills",
   "SKILL.md"
  ],
+ "directory/cypress-io/ai-toolkit/cypress-author/alternatives/index.html": [
+  "cypress-author alternatives",
+  "cypress-author skill alternatives",
+  "skills like cypress-author",
+  "browser testing skills for claude code"
+ ],
  "directory/cypress-io/ai-toolkit/cypress-author/index.html": [
   "cypress-author skill by cypress-io",
   "cypress-author skill",
@@ -1432,6 +1498,12 @@
   "testing and QA agent skills",
   "SKILL.md"
  ],
+ "directory/cypress-io/ai-toolkit/cypress-explain/alternatives/index.html": [
+  "cypress-explain alternatives",
+  "cypress-explain skill alternatives",
+  "skills like cypress-explain",
+  "browser testing skills for claude code"
+ ],
  "directory/cypress-io/ai-toolkit/cypress-explain/index.html": [
   "cypress-explain skill by cypress-io",
   "cypress-explain skill",
@@ -1440,6 +1512,12 @@
   "cypress-io skills",
   "testing and QA agent skills",
   "SKILL.md"
+ ],
+ "directory/cypress-io/ai-toolkit/cypress-tap/alternatives/index.html": [
+  "cypress-tap alternatives",
+  "cypress-tap skill alternatives",
+  "skills like cypress-tap",
+  "browser testing skills for claude code"
  ],
  "directory/cypress-io/ai-toolkit/cypress-tap/index.html": [
   "cypress-tap skill by cypress-io",
@@ -1735,6 +1813,12 @@
   "DevOps and cloud agent skills",
   "SKILL.md"
  ],
+ "directory/eduardo-sl/go-agent-skills/go-coding-standards/alternatives/index.html": [
+  "go-coding-standards alternatives",
+  "go-coding-standards skill alternatives",
+  "skills like go-coding-standards",
+  "code review skills for claude code"
+ ],
  "directory/eduardo-sl/go-agent-skills/go-coding-standards/index.html": [
   "go-coding-standards skill by eduardo-sl",
   "go-coding-standards skill",
@@ -1869,6 +1953,12 @@
   "developer tools agent skills",
   "SKILL.md"
  ],
+ "directory/emblemcompany/agent-skills/emblem-ai/alternatives/index.html": [
+  "emblem-ai alternatives",
+  "emblem-ai skill alternatives",
+  "skills like emblem-ai",
+  "React skills for claude code"
+ ],
  "directory/emblemcompany/agent-skills/emblem-ai/index.html": [
   "emblem-ai skill by EmblemCompany",
   "emblem-ai skill",
@@ -1957,6 +2047,12 @@
   "DevOps and cloud agent skills",
   "SKILL.md"
  ],
+ "directory/expo/skills/eas-simulator/alternatives/index.html": [
+  "eas-simulator alternatives",
+  "eas-simulator skill alternatives",
+  "skills like eas-simulator",
+  "iOS skills for claude code"
+ ],
  "directory/expo/skills/eas-simulator/index.html": [
   "eas-simulator skill by expo",
   "eas-simulator skill",
@@ -1984,6 +2080,12 @@
   "developer tools agent skills",
   "SKILL.md"
  ],
+ "directory/expo/skills/expo-brownfield/alternatives/index.html": [
+  "expo-brownfield alternatives",
+  "expo-brownfield skill alternatives",
+  "skills like expo-brownfield",
+  "React skills for claude code"
+ ],
  "directory/expo/skills/expo-brownfield/index.html": [
   "expo-brownfield skill by expo",
   "expo-brownfield skill",
@@ -1992,6 +2094,12 @@
   "expo skills",
   "developer tools agent skills",
   "SKILL.md"
+ ],
+ "directory/expo/skills/expo-data-fetching/alternatives/index.html": [
+  "expo-data-fetching alternatives",
+  "expo-data-fetching skill alternatives",
+  "skills like expo-data-fetching",
+  "React skills for claude code"
  ],
  "directory/expo/skills/expo-data-fetching/index.html": [
   "expo-data-fetching skill by expo",
@@ -2020,6 +2128,12 @@
   "developer tools agent skills",
   "SKILL.md"
  ],
+ "directory/expo/skills/expo-migrate-module/alternatives/index.html": [
+  "expo-migrate-module alternatives",
+  "expo-migrate-module skill alternatives",
+  "skills like expo-migrate-module",
+  "iOS skills for claude code"
+ ],
  "directory/expo/skills/expo-migrate-module/index.html": [
   "expo-migrate-module skill by expo",
   "expo-migrate-module skill",
@@ -2029,6 +2143,12 @@
   "developer tools agent skills",
   "SKILL.md"
  ],
+ "directory/expo/skills/expo-module/alternatives/index.html": [
+  "expo-module alternatives",
+  "expo-module skill alternatives",
+  "skills like expo-module",
+  "iOS skills for claude code"
+ ],
  "directory/expo/skills/expo-module/index.html": [
   "expo-module skill by expo",
   "expo-module skill",
@@ -2037,6 +2157,12 @@
   "expo skills",
   "developer tools agent skills",
   "SKILL.md"
+ ],
+ "directory/expo/skills/expo-web-to-native/alternatives/index.html": [
+  "expo-web-to-native alternatives",
+  "expo-web-to-native skill alternatives",
+  "skills like expo-web-to-native",
+  "React skills for claude code"
  ],
  "directory/expo/skills/expo-web-to-native/index.html": [
   "expo-web-to-native skill by expo",
@@ -2138,6 +2264,12 @@
   "DevOps and cloud agent skills",
   "SKILL.md"
  ],
+ "directory/firebase/skills/firebase-remote-config-basics/alternatives/index.html": [
+  "firebase-remote-config-basics alternatives",
+  "firebase-remote-config-basics skill alternatives",
+  "skills like firebase-remote-config-basics",
+  "iOS skills for claude code"
+ ],
  "directory/firebase/skills/firebase-remote-config-basics/index.html": [
   "firebase-remote-config-basics skill by firebase",
   "firebase-remote-config-basics skill",
@@ -2163,6 +2295,12 @@
   "skills claude skills",
   "developer tools agent skills",
   "agent skills directory"
+ ],
+ "directory/firebase/skills/xcode-project-setup/alternatives/index.html": [
+  "xcode-project-setup alternatives",
+  "xcode-project-setup skill alternatives",
+  "skills like xcode-project-setup",
+  "iOS skills for claude code"
  ],
  "directory/firebase/skills/xcode-project-setup/index.html": [
   "xcode-project-setup skill by firebase",
@@ -2405,6 +2543,180 @@
   "developer tools agent skills",
   "agent skills directory"
  ],
+ "directory/for/aws/index.html": [
+  "claude code skills for AWS",
+  "best AWS skills for claude code",
+  "AWS claude skills",
+  "AWS agent skills",
+  "AWS skills for codex",
+  "best claude skills for AWS"
+ ],
+ "directory/for/code-review/index.html": [
+  "claude code skills for code review",
+  "best code review skills for claude code",
+  "code review claude skills",
+  "code review agent skills",
+  "code review skills for codex",
+  "best claude skills for code review"
+ ],
+ "directory/for/data-analysis/index.html": [
+  "claude code skills for data analysis",
+  "best data analysis skills for claude code",
+  "data analysis claude skills",
+  "data analysis agent skills",
+  "data analysis skills for codex",
+  "best claude skills for data analysis"
+ ],
+ "directory/for/documentation/index.html": [
+  "claude code skills for technical documentation",
+  "best documentation skills for claude code",
+  "documentation claude skills",
+  "documentation agent skills",
+  "documentation skills for codex",
+  "best claude skills for technical documentation"
+ ],
+ "directory/for/email/index.html": [
+  "claude code skills for email",
+  "best email skills for claude code",
+  "email claude skills",
+  "email agent skills",
+  "email skills for codex",
+  "best claude skills for email"
+ ],
+ "directory/for/flutter/index.html": [
+  "claude code skills for Flutter and Dart",
+  "best Flutter skills for claude code",
+  "Flutter claude skills",
+  "Flutter agent skills",
+  "Flutter skills for codex",
+  "best claude skills for Flutter and Dart"
+ ],
+ "directory/for/git/index.html": [
+  "claude code skills for Git and pull requests",
+  "best Git skills for claude code",
+  "Git claude skills",
+  "Git agent skills",
+  "Git skills for codex",
+  "best claude skills for Git and pull requests"
+ ],
+ "directory/for/index.html": [
+  "claude code skills by task",
+  "best claude code skills for every task",
+  "agent skills by use case",
+  "claude skills shortlist"
+ ],
+ "directory/for/ios/index.html": [
+  "claude code skills for iOS and Swift",
+  "best iOS skills for claude code",
+  "iOS claude skills",
+  "iOS agent skills",
+  "iOS skills for codex",
+  "best claude skills for iOS and Swift"
+ ],
+ "directory/for/kubernetes/index.html": [
+  "claude code skills for Kubernetes",
+  "best Kubernetes skills for claude code",
+  "Kubernetes claude skills",
+  "Kubernetes agent skills",
+  "Kubernetes skills for codex",
+  "best claude skills for Kubernetes"
+ ],
+ "directory/for/llm-evals/index.html": [
+  "claude code skills for LLM evals",
+  "best LLM eval skills for claude code",
+  "LLM eval claude skills",
+  "LLM eval agent skills",
+  "LLM eval skills for codex",
+  "best claude skills for LLM evals"
+ ],
+ "directory/for/mcp-servers/index.html": [
+  "claude code skills for MCP servers",
+  "best MCP server skills for claude code",
+  "MCP server claude skills",
+  "MCP server agent skills",
+  "MCP server skills for codex",
+  "best claude skills for MCP servers"
+ ],
+ "directory/for/playwright/index.html": [
+  "claude code skills for Playwright and browser testing",
+  "best browser testing skills for claude code",
+  "browser testing claude skills",
+  "browser testing agent skills",
+  "browser testing skills for codex",
+  "best claude skills for Playwright and browser testing"
+ ],
+ "directory/for/presentations/index.html": [
+  "claude code skills for presentations",
+  "best presentation skills for claude code",
+  "presentation claude skills",
+  "presentation agent skills",
+  "presentation skills for codex",
+  "best claude skills for presentations"
+ ],
+ "directory/for/rag/index.html": [
+  "claude code skills for RAG and vector search",
+  "best RAG skills for claude code",
+  "RAG claude skills",
+  "RAG agent skills",
+  "RAG skills for codex",
+  "best claude skills for RAG and vector search"
+ ],
+ "directory/for/react/index.html": [
+  "claude code skills for React and Next.js",
+  "best React skills for claude code",
+  "React claude skills",
+  "React agent skills",
+  "React skills for codex",
+  "best claude skills for React and Next.js"
+ ],
+ "directory/for/security-audits/index.html": [
+  "claude code skills for security audits",
+  "best security audit skills for claude code",
+  "security audit claude skills",
+  "security audit agent skills",
+  "security audit skills for codex",
+  "best claude skills for security audits"
+ ],
+ "directory/for/seo/index.html": [
+  "claude code skills for SEO",
+  "best SEO skills for claude code",
+  "SEO claude skills",
+  "SEO agent skills",
+  "SEO skills for codex",
+  "best claude skills for SEO"
+ ],
+ "directory/for/sql/index.html": [
+  "claude code skills for SQL and databases",
+  "best SQL skills for claude code",
+  "SQL claude skills",
+  "SQL agent skills",
+  "SQL skills for codex",
+  "best claude skills for SQL and databases"
+ ],
+ "directory/for/terraform/index.html": [
+  "claude code skills for Terraform",
+  "best Terraform skills for claude code",
+  "Terraform claude skills",
+  "Terraform agent skills",
+  "Terraform skills for codex",
+  "best claude skills for Terraform"
+ ],
+ "directory/for/ui-design/index.html": [
+  "claude code skills for UI design",
+  "best UI design skills for claude code",
+  "UI design claude skills",
+  "UI design agent skills",
+  "UI design skills for codex",
+  "best claude skills for UI design"
+ ],
+ "directory/for/video/index.html": [
+  "claude code skills for video",
+  "best video skills for claude code",
+  "video claude skills",
+  "video agent skills",
+  "video skills for codex",
+  "best claude skills for video"
+ ],
  "directory/frontend-design/index.html": [
   "frontend and design agent skills",
   "frontend and design claude skills",
@@ -2509,6 +2821,12 @@
   "code review agent skills",
   "agent skills directory"
  ],
+ "directory/getsentry/skills/iterate-pr/alternatives/index.html": [
+  "iterate-pr alternatives",
+  "iterate-pr skill alternatives",
+  "skills like iterate-pr",
+  "Git skills for claude code"
+ ],
  "directory/getsentry/skills/iterate-pr/index.html": [
   "iterate-pr skill by getsentry",
   "iterate-pr skill",
@@ -2518,6 +2836,12 @@
   "code review agent skills",
   "SKILL.md"
  ],
+ "directory/getsentry/skills/presentation-creator/alternatives/index.html": [
+  "presentation-creator alternatives",
+  "presentation-creator skill alternatives",
+  "skills like presentation-creator",
+  "presentation skills for claude code"
+ ],
  "directory/getsentry/skills/presentation-creator/index.html": [
   "presentation-creator skill by getsentry",
   "presentation-creator skill",
@@ -2526,6 +2850,12 @@
   "getsentry skills",
   "document and office file agent skills",
   "SKILL.md"
+ ],
+ "directory/getsentry/skills/prompt-optimizer/alternatives/index.html": [
+  "prompt-optimizer alternatives",
+  "prompt-optimizer skill alternatives",
+  "skills like prompt-optimizer",
+  "LLM eval skills for claude code"
  ],
  "directory/getsentry/skills/prompt-optimizer/index.html": [
   "prompt-optimizer skill by getsentry",
@@ -2553,6 +2883,12 @@
   "getsentry skills",
   "security agent skills",
   "SKILL.md"
+ ],
+ "directory/getsentry/skills/skill-scanner/alternatives/index.html": [
+  "skill-scanner alternatives",
+  "skill-scanner skill alternatives",
+  "skills like skill-scanner",
+  "security audit skills for claude code"
  ],
  "directory/getsentry/skills/skill-scanner/index.html": [
   "skill-scanner skill by getsentry",
@@ -2624,6 +2960,12 @@
   "security agent skills",
   "SKILL.md"
  ],
+ "directory/google/skills/cloud-monitoring-notification-channels-configuration/alternatives/index.html": [
+  "cloud-monitoring-notification-channels-configuration alternatives",
+  "cloud-monitoring-notification-channels-configuration skill alternatives",
+  "skills like cloud-monitoring-notification-channels-configuration",
+  "Terraform skills for claude code"
+ ],
  "directory/google/skills/cloud-monitoring-notification-channels-configuration/index.html": [
   "cloud-monitoring-notification-channels-configuration skill by google",
   "cloud-monitoring-notification-channels-configuration skill",
@@ -2641,6 +2983,12 @@
   "google skills",
   "DevOps and cloud agent skills",
   "SKILL.md"
+ ],
+ "directory/google/skills/dbt-sf-to-bq-translator/alternatives/index.html": [
+  "dbt-sf-to-bq-translator alternatives",
+  "dbt-sf-to-bq-translator skill alternatives",
+  "skills like dbt-sf-to-bq-translator",
+  "SQL skills for claude code"
  ],
  "directory/google/skills/dbt-sf-to-bq-translator/index.html": [
   "dbt-sf-to-bq-translator skill by google",
@@ -2819,6 +3167,12 @@
   "video image and audio agent skills",
   "SKILL.md"
  ],
+ "directory/gooseworks-ai/goose-skills/render-hook-replacement/alternatives/index.html": [
+  "render-hook-replacement alternatives",
+  "render-hook-replacement skill alternatives",
+  "skills like render-hook-replacement",
+  "video skills for claude code"
+ ],
  "directory/gooseworks-ai/goose-skills/render-hook-replacement/index.html": [
   "render-hook-replacement skill by gooseworks-ai",
   "render-hook-replacement skill",
@@ -2827,6 +3181,12 @@
   "gooseworks-ai skills",
   "video image and audio agent skills",
   "SKILL.md"
+ ],
+ "directory/gooseworks-ai/goose-skills/render-proof-points-overlay/alternatives/index.html": [
+  "render-proof-points-overlay alternatives",
+  "render-proof-points-overlay skill alternatives",
+  "skills like render-proof-points-overlay",
+  "video skills for claude code"
  ],
  "directory/gooseworks-ai/goose-skills/render-proof-points-overlay/index.html": [
   "render-proof-points-overlay skill by gooseworks-ai",
@@ -2910,6 +3270,12 @@
   "developer tools agent skills",
   "SKILL.md"
  ],
+ "directory/hashicorp/agent-skills/provider-docs/alternatives/index.html": [
+  "provider-docs alternatives",
+  "provider-docs skill alternatives",
+  "skills like provider-docs",
+  "documentation skills for claude code"
+ ],
  "directory/hashicorp/agent-skills/provider-docs/index.html": [
   "provider-docs skill by hashicorp",
   "provider-docs skill",
@@ -2955,6 +3321,12 @@
   "DevOps and cloud agent skills",
   "SKILL.md"
  ],
+ "directory/hashicorp/agent-skills/terraform-search-import/alternatives/index.html": [
+  "terraform-search-import alternatives",
+  "terraform-search-import skill alternatives",
+  "skills like terraform-search-import",
+  "Terraform skills for claude code"
+ ],
  "directory/hashicorp/agent-skills/terraform-search-import/index.html": [
   "terraform-search-import skill by hashicorp",
   "terraform-search-import skill",
@@ -2963,6 +3335,12 @@
   "hashicorp skills",
   "DevOps and cloud agent skills",
   "SKILL.md"
+ ],
+ "directory/hashicorp/agent-skills/terraform-stacks/alternatives/index.html": [
+  "terraform-stacks alternatives",
+  "terraform-stacks skill alternatives",
+  "skills like terraform-stacks",
+  "Terraform skills for claude code"
  ],
  "directory/hashicorp/agent-skills/terraform-stacks/index.html": [
   "terraform-stacks skill by hashicorp",
@@ -3221,6 +3599,12 @@
   "AI agent agent skills",
   "SKILL.md"
  ],
+ "directory/huangchihhungleo/claude-real-video/claude-real-video-for-agents/alternatives/index.html": [
+  "claude-real-video-for-agents alternatives",
+  "claude-real-video-for-agents skill alternatives",
+  "skills like claude-real-video-for-agents",
+  "video skills for claude code"
+ ],
  "directory/huangchihhungleo/claude-real-video/claude-real-video-for-agents/index.html": [
   "claude-real-video-for-agents skill by HUANGCHIHHUNGLeo",
   "claude-real-video-for-agents skill",
@@ -3247,6 +3631,12 @@
   "video image and audio agent skills",
   "agent skills directory"
  ],
+ "directory/huggingface/skills/hf-cloud-python-env-setup/alternatives/index.html": [
+  "hf-cloud-python-env-setup alternatives",
+  "hf-cloud-python-env-setup skill alternatives",
+  "skills like hf-cloud-python-env-setup",
+  "AWS skills for claude code"
+ ],
  "directory/huggingface/skills/hf-cloud-python-env-setup/index.html": [
   "hf-cloud-python-env-setup skill by huggingface",
   "hf-cloud-python-env-setup skill",
@@ -3255,6 +3645,12 @@
   "huggingface skills",
   "DevOps and cloud agent skills",
   "SKILL.md"
+ ],
+ "directory/huggingface/skills/hf-cloud-sagemaker-iam-preflight/alternatives/index.html": [
+  "hf-cloud-sagemaker-iam-preflight alternatives",
+  "hf-cloud-sagemaker-iam-preflight skill alternatives",
+  "skills like hf-cloud-sagemaker-iam-preflight",
+  "AWS skills for claude code"
  ],
  "directory/huggingface/skills/hf-cloud-sagemaker-iam-preflight/index.html": [
   "hf-cloud-sagemaker-iam-preflight skill by huggingface",
@@ -3282,6 +3678,12 @@
   "huggingface skills",
   "DevOps and cloud agent skills",
   "SKILL.md"
+ ],
+ "directory/huggingface/skills/huggingface-community-evals/alternatives/index.html": [
+  "huggingface-community-evals alternatives",
+  "huggingface-community-evals skill alternatives",
+  "skills like huggingface-community-evals",
+  "LLM eval skills for claude code"
  ],
  "directory/huggingface/skills/huggingface-community-evals/index.html": [
   "huggingface-community-evals skill by huggingface",
@@ -3575,6 +3977,12 @@
   "marketing and SEO agent skills",
   "SKILL.md"
  ],
+ "directory/inhouseseo/superseo-skills/page-audit/alternatives/index.html": [
+  "page-audit alternatives",
+  "page-audit skill alternatives",
+  "skills like page-audit",
+  "SEO skills for claude code"
+ ],
  "directory/inhouseseo/superseo-skills/page-audit/index.html": [
   "page-audit skill by inhouseseo",
   "page-audit skill",
@@ -3601,6 +4009,12 @@
   "inhouseseo skills",
   "marketing and SEO agent skills",
   "SKILL.md"
+ ],
+ "directory/inhouseseo/superseo-skills/write-content/alternatives/index.html": [
+  "write-content alternatives",
+  "write-content skill alternatives",
+  "skills like write-content",
+  "SEO skills for claude code"
  ],
  "directory/inhouseseo/superseo-skills/write-content/index.html": [
   "write-content skill by inhouseseo",
@@ -3649,6 +4063,12 @@
   "DevOps and cloud agent skills",
   "SKILL.md"
  ],
+ "directory/jeffallan/claude-skills/cloud-architect/alternatives/index.html": [
+  "cloud-architect alternatives",
+  "cloud-architect skill alternatives",
+  "skills like cloud-architect",
+  "AWS skills for claude code"
+ ],
  "directory/jeffallan/claude-skills/cloud-architect/index.html": [
   "cloud-architect skill by jeffallan",
   "cloud-architect skill",
@@ -3658,6 +4078,12 @@
   "DevOps and cloud agent skills",
   "SKILL.md"
  ],
+ "directory/jeffallan/claude-skills/code-reviewer/alternatives/index.html": [
+  "code-reviewer alternatives",
+  "code-reviewer skill alternatives",
+  "skills like code-reviewer",
+  "code review skills for claude code"
+ ],
  "directory/jeffallan/claude-skills/code-reviewer/index.html": [
   "code-reviewer skill by jeffallan",
   "code-reviewer skill",
@@ -3666,6 +4092,12 @@
   "jeffallan skills",
   "code review agent skills",
   "SKILL.md"
+ ],
+ "directory/jeffallan/claude-skills/devops-engineer/alternatives/index.html": [
+  "devops-engineer alternatives",
+  "devops-engineer skill alternatives",
+  "skills like devops-engineer",
+  "Terraform skills for claude code"
  ],
  "directory/jeffallan/claude-skills/devops-engineer/index.html": [
   "devops-engineer skill by jeffallan",
@@ -3692,6 +4124,12 @@
   "jeffallan skills",
   "developer tools agent skills",
   "SKILL.md"
+ ],
+ "directory/jeffallan/claude-skills/kubernetes-specialist/alternatives/index.html": [
+  "kubernetes-specialist alternatives",
+  "kubernetes-specialist skill alternatives",
+  "skills like kubernetes-specialist",
+  "Kubernetes skills for claude code"
  ],
  "directory/jeffallan/claude-skills/kubernetes-specialist/index.html": [
   "kubernetes-specialist skill by jeffallan",
@@ -3746,6 +4184,12 @@
   "jeffallan skills",
   "frontend and design agent skills",
   "SKILL.md"
+ ],
+ "directory/jeffallan/claude-skills/pandas-pro/alternatives/index.html": [
+  "pandas-pro alternatives",
+  "pandas-pro skill alternatives",
+  "skills like pandas-pro",
+  "data analysis skills for claude code"
  ],
  "directory/jeffallan/claude-skills/pandas-pro/index.html": [
   "pandas-pro skill by jeffallan",
@@ -3881,6 +4325,12 @@
   "AI agent agent skills",
   "SKILL.md"
  ],
+ "directory/lackeyjb/playwright-skill/playwright-skill/alternatives/index.html": [
+  "playwright-skill by lackeyjb alternatives",
+  "playwright-skill skill alternatives lackeyjb",
+  "skills like playwright-skill by lackeyjb",
+  "browser testing skills for claude code"
+ ],
  "directory/lackeyjb/playwright-skill/playwright-skill/index.html": [
   "playwright-skill skill by lackeyjb",
   "playwright-skill skill",
@@ -3907,6 +4357,12 @@
   "LambdaTest skills",
   "testing and QA agent skills",
   "SKILL.md"
+ ],
+ "directory/lambdatest/agent-skills/cypress-skill/alternatives/index.html": [
+  "cypress-skill alternatives",
+  "cypress-skill skill alternatives",
+  "skills like cypress-skill",
+  "browser testing skills for claude code"
  ],
  "directory/lambdatest/agent-skills/cypress-skill/index.html": [
   "cypress-skill skill by LambdaTest",
@@ -3961,6 +4417,12 @@
   "developer tools agent skills",
   "SKILL.md"
  ],
+ "directory/lambdatest/agent-skills/playwright-skill/alternatives/index.html": [
+  "playwright-skill by LambdaTest alternatives",
+  "playwright-skill skill alternatives LambdaTest",
+  "skills like playwright-skill by LambdaTest",
+  "browser testing skills for claude code"
+ ],
  "directory/lambdatest/agent-skills/playwright-skill/index.html": [
   "playwright-skill skill by LambdaTest",
   "playwright-skill skill",
@@ -3978,6 +4440,12 @@
   "LambdaTest skills",
   "testing and QA agent skills",
   "SKILL.md"
+ ],
+ "directory/lambdatest/agent-skills/selenium-skill/alternatives/index.html": [
+  "selenium-skill alternatives",
+  "selenium-skill skill alternatives",
+  "skills like selenium-skill",
+  "browser testing skills for claude code"
  ],
  "directory/lambdatest/agent-skills/selenium-skill/index.html": [
   "selenium-skill skill by LambdaTest",
@@ -4048,6 +4516,12 @@
   "developer tools agent skills",
   "SKILL.md"
  ],
+ "directory/mailtrap/mailtrap-skills/converting-email-templates/alternatives/index.html": [
+  "converting-email-templates alternatives",
+  "converting-email-templates skill alternatives",
+  "skills like converting-email-templates",
+  "email skills for claude code"
+ ],
  "directory/mailtrap/mailtrap-skills/converting-email-templates/index.html": [
   "converting-email-templates skill by mailtrap",
   "converting-email-templates skill",
@@ -4073,6 +4547,12 @@
   "mailtrap skills",
   "marketing and SEO agent skills",
   "SKILL.md"
+ ],
+ "directory/mailtrap/mailtrap-skills/sending-emails/alternatives/index.html": [
+  "sending-emails alternatives",
+  "sending-emails skill alternatives",
+  "skills like sending-emails",
+  "email skills for claude code"
  ],
  "directory/mailtrap/mailtrap-skills/sending-emails/index.html": [
   "sending-emails skill by mailtrap",
@@ -4100,6 +4580,12 @@
   "mailtrap skills",
   "testing and QA agent skills",
   "SKILL.md"
+ ],
+ "directory/mailtrap/mailtrap-skills/using-email-templates/alternatives/index.html": [
+  "using-email-templates alternatives",
+  "using-email-templates skill alternatives",
+  "skills like using-email-templates",
+  "email skills for claude code"
  ],
  "directory/mailtrap/mailtrap-skills/using-email-templates/index.html": [
   "using-email-templates skill by mailtrap",
@@ -4248,6 +4734,12 @@
   "AI agent agent skills",
   "agent skills directory"
  ],
+ "directory/mblode/agent-skills/pr-babysitter/alternatives/index.html": [
+  "pr-babysitter alternatives",
+  "pr-babysitter skill alternatives",
+  "skills like pr-babysitter",
+  "Git skills for claude code"
+ ],
  "directory/mblode/agent-skills/pr-babysitter/index.html": [
   "pr-babysitter skill by mblode",
   "pr-babysitter skill",
@@ -4275,6 +4767,12 @@
   "code review agent skills",
   "SKILL.md"
  ],
+ "directory/mblode/agent-skills/ui-animation/alternatives/index.html": [
+  "ui-animation alternatives",
+  "ui-animation skill alternatives",
+  "skills like ui-animation",
+  "UI design skills for claude code"
+ ],
  "directory/mblode/agent-skills/ui-animation/index.html": [
   "ui-animation skill by mblode",
   "ui-animation skill",
@@ -4283,6 +4781,12 @@
   "mblode skills",
   "frontend and design agent skills",
   "SKILL.md"
+ ],
+ "directory/mblode/agent-skills/ui-design/alternatives/index.html": [
+  "ui-design alternatives",
+  "ui-design skill alternatives",
+  "skills like ui-design",
+  "UI design skills for claude code"
  ],
  "directory/mblode/agent-skills/ui-design/index.html": [
   "ui-design skill by mblode",
@@ -4301,6 +4805,12 @@
   "mblode skills",
   "testing and QA agent skills",
   "SKILL.md"
+ ],
+ "directory/mcollina/skills/documentation/alternatives/index.html": [
+  "documentation alternatives",
+  "documentation skill alternatives",
+  "skills like documentation",
+  "documentation skills for claude code"
  ],
  "directory/mcollina/skills/documentation/index.html": [
   "documentation skill by mcollina",
@@ -4486,6 +4996,12 @@
   "testing and QA agent skills",
   "SKILL.md"
  ],
+ "directory/metalbear-co/skills/mirrord-ci/alternatives/index.html": [
+  "mirrord-ci alternatives",
+  "mirrord-ci skill alternatives",
+  "skills like mirrord-ci",
+  "Kubernetes skills for claude code"
+ ],
  "directory/metalbear-co/skills/mirrord-ci/index.html": [
   "mirrord-ci skill by metalbear-co",
   "mirrord-ci skill",
@@ -4494,6 +5010,12 @@
   "metalbear-co skills",
   "DevOps and cloud agent skills",
   "SKILL.md"
+ ],
+ "directory/metalbear-co/skills/mirrord-config/alternatives/index.html": [
+  "mirrord-config alternatives",
+  "mirrord-config skill alternatives",
+  "skills like mirrord-config",
+  "Kubernetes skills for claude code"
  ],
  "directory/metalbear-co/skills/mirrord-config/index.html": [
   "mirrord-config skill by metalbear-co",
@@ -4521,6 +5043,12 @@
   "metalbear-co skills",
   "DevOps and cloud agent skills",
   "SKILL.md"
+ ],
+ "directory/metalbear-co/skills/mirrord-quickstart/alternatives/index.html": [
+  "mirrord-quickstart alternatives",
+  "mirrord-quickstart skill alternatives",
+  "skills like mirrord-quickstart",
+  "Kubernetes skills for claude code"
  ],
  "directory/metalbear-co/skills/mirrord-quickstart/index.html": [
   "mirrord-quickstart skill by metalbear-co",
@@ -4911,6 +5439,12 @@
   "writing and editing agent skills",
   "SKILL.md"
  ],
+ "directory/muratcankoylan/agent-skills-for-context-engineering/advanced-evaluation/alternatives/index.html": [
+  "advanced-evaluation alternatives",
+  "advanced-evaluation skill alternatives",
+  "skills like advanced-evaluation",
+  "LLM eval skills for claude code"
+ ],
  "directory/muratcankoylan/agent-skills-for-context-engineering/advanced-evaluation/index.html": [
   "advanced-evaluation skill by muratcankoylan",
   "advanced-evaluation skill",
@@ -4955,6 +5489,12 @@
   "muratcankoylan skills",
   "AI agent agent skills",
   "SKILL.md"
+ ],
+ "directory/muratcankoylan/agent-skills-for-context-engineering/evaluation/alternatives/index.html": [
+  "evaluation alternatives",
+  "evaluation skill alternatives",
+  "skills like evaluation",
+  "LLM eval skills for claude code"
  ],
  "directory/muratcankoylan/agent-skills-for-context-engineering/evaluation/index.html": [
   "evaluation skill by muratcankoylan",
@@ -5364,6 +5904,12 @@
   "marketing and SEO agent skills",
   "agent skills directory"
  ],
+ "directory/nowork-studio/notfair/keyword-research/alternatives/index.html": [
+  "keyword-research alternatives",
+  "keyword-research skill alternatives",
+  "skills like keyword-research",
+  "SEO skills for claude code"
+ ],
  "directory/nowork-studio/notfair/keyword-research/index.html": [
   "keyword-research skill by nowork-studio",
   "keyword-research skill",
@@ -5568,6 +6114,12 @@
   "AI agent agent skills",
   "agent skills directory"
  ],
+ "directory/obra/superpowers/receiving-code-review/alternatives/index.html": [
+  "receiving-code-review alternatives",
+  "receiving-code-review skill alternatives",
+  "skills like receiving-code-review",
+  "code review skills for claude code"
+ ],
  "directory/obra/superpowers/receiving-code-review/index.html": [
   "receiving-code-review skill by obra",
   "receiving-code-review skill",
@@ -5603,6 +6155,12 @@
   "obra skills",
   "testing and QA agent skills",
   "SKILL.md"
+ ],
+ "directory/obra/superpowers/using-git-worktrees/alternatives/index.html": [
+  "using-git-worktrees alternatives",
+  "using-git-worktrees skill alternatives",
+  "skills like using-git-worktrees",
+  "Git skills for claude code"
  ],
  "directory/obra/superpowers/using-git-worktrees/index.html": [
   "using-git-worktrees skill by obra",
@@ -5851,6 +6409,12 @@
   "video image and audio agent skills",
   "SKILL.md"
  ],
+ "directory/orkas-ai/orkas-videostudio/video-router/alternatives/index.html": [
+  "video-router alternatives",
+  "video-router skill alternatives",
+  "skills like video-router",
+  "video skills for claude code"
+ ],
  "directory/orkas-ai/orkas-videostudio/video-router/index.html": [
   "video-router skill by Orkas-AI",
   "video-router skill",
@@ -5886,6 +6450,12 @@
   "phuryn skills",
   "product management agent skills",
   "SKILL.md"
+ ],
+ "directory/phuryn/pm-skills/code-review/alternatives/index.html": [
+  "code-review by phuryn alternatives",
+  "code-review skill alternatives phuryn",
+  "skills like code-review by phuryn",
+  "code review skills for claude code"
  ],
  "directory/phuryn/pm-skills/code-review/index.html": [
   "code-review skill by phuryn",
@@ -6470,6 +7040,12 @@
   "AI agent agent skills",
   "SKILL.md"
  ],
+ "directory/renezander030/capcut-cli/capcut-edit/alternatives/index.html": [
+  "capcut-edit alternatives",
+  "capcut-edit skill alternatives",
+  "skills like capcut-edit",
+  "video skills for claude code"
+ ],
  "directory/renezander030/capcut-cli/capcut-edit/index.html": [
   "capcut-edit skill by renezander030",
   "capcut-edit skill",
@@ -6549,6 +7125,12 @@
   "developer tools agent skills",
   "agent skills directory"
  ],
+ "directory/resend/resend-skills/react-email/alternatives/index.html": [
+  "react-email alternatives",
+  "react-email skill alternatives",
+  "skills like react-email",
+  "email skills for claude code"
+ ],
  "directory/resend/resend-skills/react-email/index.html": [
   "react-email skill by resend",
   "react-email skill",
@@ -6566,6 +7148,12 @@
   "resend skills",
   "developer tools agent skills",
   "SKILL.md"
+ ],
+ "directory/resend/resend-skills/resend/alternatives/index.html": [
+  "resend alternatives",
+  "resend skill alternatives",
+  "skills like resend",
+  "email skills for claude code"
  ],
  "directory/resend/resend-skills/resend/index.html": [
   "resend skill by resend",
@@ -6629,6 +7217,12 @@
   "document and office file agent skills",
   "SKILL.md"
  ],
+ "directory/sanjay3290/ai-skills/google-slides/alternatives/index.html": [
+  "google-slides alternatives",
+  "google-slides skill alternatives",
+  "skills like google-slides",
+  "presentation skills for claude code"
+ ],
  "directory/sanjay3290/ai-skills/google-slides/index.html": [
   "google-slides skill by sanjay3290",
   "google-slides skill",
@@ -6664,6 +7258,12 @@
   "AI agent agent skills",
   "SKILL.md"
  ],
+ "directory/sanjay3290/ai-skills/mssql/alternatives/index.html": [
+  "mssql alternatives",
+  "mssql skill alternatives",
+  "skills like mssql",
+  "SQL skills for claude code"
+ ],
  "directory/sanjay3290/ai-skills/mssql/index.html": [
   "mssql skill by sanjay3290",
   "mssql skill",
@@ -6672,6 +7272,12 @@
   "sanjay3290 skills",
   "data and database agent skills",
   "SKILL.md"
+ ],
+ "directory/sanjay3290/ai-skills/mysql/alternatives/index.html": [
+  "mysql alternatives",
+  "mysql skill alternatives",
+  "skills like mysql",
+  "SQL skills for claude code"
  ],
  "directory/sanjay3290/ai-skills/mysql/index.html": [
   "mysql skill by sanjay3290",
@@ -6690,6 +7296,12 @@
   "sanjay3290 skills",
   "productivity agent skills",
   "SKILL.md"
+ ],
+ "directory/sanjay3290/ai-skills/postgres/alternatives/index.html": [
+  "postgres alternatives",
+  "postgres skill alternatives",
+  "skills like postgres",
+  "data analysis skills for claude code"
  ],
  "directory/sanjay3290/ai-skills/postgres/index.html": [
   "postgres skill by sanjay3290",
@@ -7002,6 +7614,12 @@
   "product management agent skills",
   "agent skills directory"
  ],
+ "directory/tencent/ai-infra-guard/aig-scanner/alternatives/index.html": [
+  "aig-scanner alternatives",
+  "aig-scanner skill alternatives",
+  "skills like aig-scanner",
+  "security audit skills for claude code"
+ ],
  "directory/tencent/ai-infra-guard/aig-scanner/index.html": [
   "aig-scanner skill by Tencent",
   "aig-scanner skill",
@@ -7026,6 +7644,12 @@
   "playwright-skill claude skills",
   "testing and QA agent skills",
   "agent skills directory"
+ ],
+ "directory/testdino-hq/playwright-skill/playwright-cli/alternatives/index.html": [
+  "playwright-cli alternatives",
+  "playwright-cli skill alternatives",
+  "skills like playwright-cli",
+  "browser testing skills for claude code"
  ],
  "directory/testdino-hq/playwright-skill/playwright-cli/index.html": [
   "playwright-cli skill by testdino-hq",
@@ -7132,6 +7756,12 @@
   "security agent skills",
   "SKILL.md"
  ],
+ "directory/trailofbits/skills/codeql/alternatives/index.html": [
+  "codeql alternatives",
+  "codeql skill alternatives",
+  "skills like codeql",
+  "security audit skills for claude code"
+ ],
  "directory/trailofbits/skills/codeql/index.html": [
   "codeql skill by trailofbits",
   "codeql skill",
@@ -7194,6 +7824,12 @@
   "AI agent agent skills",
   "SKILL.md"
  ],
+ "directory/trailofbits/skills/semgrep/alternatives/index.html": [
+  "semgrep alternatives",
+  "semgrep skill alternatives",
+  "skills like semgrep",
+  "security audit skills for claude code"
+ ],
  "directory/trailofbits/skills/semgrep/index.html": [
   "semgrep skill by trailofbits",
   "semgrep skill",
@@ -7248,6 +7884,12 @@
   "productivity agent skills",
   "SKILL.md"
  ],
+ "directory/tronghieu/agent-skills/data-scientist/alternatives/index.html": [
+  "data-scientist alternatives",
+  "data-scientist skill alternatives",
+  "skills like data-scientist",
+  "data analysis skills for claude code"
+ ],
  "directory/tronghieu/agent-skills/data-scientist/index.html": [
   "data-scientist skill by tronghieu",
   "data-scientist skill",
@@ -7265,6 +7907,12 @@
   "tronghieu skills",
   "productivity agent skills",
   "SKILL.md"
+ ],
+ "directory/tronghieu/agent-skills/diataxis-writer/alternatives/index.html": [
+  "diataxis-writer alternatives",
+  "diataxis-writer skill alternatives",
+  "skills like diataxis-writer",
+  "documentation skills for claude code"
  ],
  "directory/tronghieu/agent-skills/diataxis-writer/index.html": [
   "diataxis-writer skill by tronghieu",
@@ -7327,6 +7975,12 @@
   "tronghieu skills",
   "productivity agent skills",
   "SKILL.md"
+ ],
+ "directory/tronghieu/agent-skills/slidewright/alternatives/index.html": [
+  "slidewright alternatives",
+  "slidewright skill alternatives",
+  "skills like slidewright",
+  "presentation skills for claude code"
  ],
  "directory/tronghieu/agent-skills/slidewright/index.html": [
   "slidewright skill by tronghieu",
@@ -7829,6 +8483,12 @@
   "AI agent agent skills",
   "SKILL.md"
  ],
+ "directory/zxkane/aws-skills/aws-cdk-development/alternatives/index.html": [
+  "aws-cdk-development alternatives",
+  "aws-cdk-development skill alternatives",
+  "skills like aws-cdk-development",
+  "AWS skills for claude code"
+ ],
  "directory/zxkane/aws-skills/aws-cdk-development/index.html": [
   "aws-cdk-development skill by zxkane",
   "aws-cdk-development skill",
@@ -7864,6 +8524,12 @@
   "zxkane skills",
   "DevOps and cloud agent skills",
   "SKILL.md"
+ ],
+ "directory/zxkane/aws-skills/aws-sst-development/alternatives/index.html": [
+  "aws-sst-development alternatives",
+  "aws-sst-development skill alternatives",
+  "skills like aws-sst-development",
+  "AWS skills for claude code"
  ],
  "directory/zxkane/aws-skills/aws-sst-development/index.html": [
   "aws-sst-development skill by zxkane",

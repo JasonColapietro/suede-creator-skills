@@ -64,7 +64,7 @@ class LicenseEvidenceTests(unittest.TestCase):
             work = Path(tmp)
             for name in ('scripts/build-directory.mjs', 'directory/featured-projects.json',
                          'directory/categories.json', 'directory/notes.json',
-                         'directory/promotion.json', 'directory/services-cta.json', 'docs/llms.txt'):
+                         'directory/promotion.json', 'directory/services-cta.json', 'directory/task-pages.json', 'docs/llms.txt'):
                 target = work / name
                 target.parent.mkdir(parents=True, exist_ok=True)
                 shutil.copy2(ROOT / name, target)
