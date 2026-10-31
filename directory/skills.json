@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-22",
- "snapshot_id": "887c92dc078b4cf8af6fbbdaecf4fd00",
+ "snapshot_id": "bf4c2f5b5c364566aa2851baf511ccb9",
  "score_method": "graded-v2",
  "sources": ["BehiSecc/awesome-claude-skills", "ComposioHQ/awesome-claude-skills", "VoltAgent/awesome-agent-skills", "heilcheng/awesome-agent-skills", "hesreallyhim/awesome-claude-code", "karanb192/awesome-claude-skills", "skillmatic-ai/awesome-agent-skills", "travisvn/awesome-claude-skills"],
  "checks": [{"id": "frontmatter", "label": "Frontmatter parses and declares a name and a description"}, {"id": "name_format", "label": "Name uses lowercase letters, digits and hyphens, 64 characters or fewer"}, {"id": "name_matches_folder", "label": "Name matches the skill's folder name"}, {"id": "description_length", "label": "Description is between 50 and 1,024 characters"}, {"id": "description_trigger", "label": "Description says when an agent should use the skill"}, {"id": "concise_body", "label": "SKILL.md body is 500 lines or fewer"}, {"id": "license", "label": "A license is declared in the frontmatter or the repository"}, {"id": "maintained", "label": "Repository has a commit in the last 12 months"}],
@@ -17,7 +17,7 @@
   "Ericyoung-183/alpha-insights": {"withheld":0,"branch":"main","commit_date":"2026-06-29","commit_sha":"30c1e874f1de74bdcd488f1158c03c92c808be55","lists":["BehiSecc/awesome-claude-skills","VoltAgent/awesome-agent-skills"],"official":false},
   "HUANGCHIHHUNGLeo/claude-real-video": {"withheld":0,"branch":"master","commit_date":"2026-10-09","commit_sha":"ab4b9b2b23790f5d63a6d15165d3d8ba284c6023","lists":["BehiSecc/awesome-claude-skills","VoltAgent/awesome-agent-skills"],"official":false},
   "HeshamFS/materials-simulation-skills": {"withheld":0,"branch":"main","commit_date":"2026-06-25","commit_sha":"fa1ce8de76b2ab7a856f81891525cfa227fadfe9","lists":["BehiSecc/awesome-claude-skills","VoltAgent/awesome-agent-skills"],"official":false},
-  "JasonColapietro/suede-creator-skills": {"withheld":0,"scoped_install":true,"branch":"feat/suede-interface-quality","commit_date":"2026-10-31","commit_sha":"84b9aa1e937b8ba034193a5758e072fb74fd61fb","lists":["BehiSecc/awesome-claude-skills","VoltAgent/awesome-agent-skills","karanb192/awesome-claude-skills"],"official":false,"assessment_date":"2026-10-31"},
+  "JasonColapietro/suede-creator-skills": {"withheld":0,"scoped_install":true,"branch":"feat/guide-led-landing","commit_date":"2026-10-31","commit_sha":"a6f013f82628eabf352f8cfe4b48a970eba3a31a","lists":["BehiSecc/awesome-claude-skills","VoltAgent/awesome-agent-skills","karanb192/awesome-claude-skills"],"official":false,"assessment_date":"2026-10-31"},
   "K-Dense-AI/claude-scientific-skills": {"withheld":0,"branch":"main","commit_date":"2026-10-12","commit_sha":"a1043ef544e3a100c28e70a736b6cf32554d0677","lists":["BehiSecc/awesome-claude-skills","travisvn/awesome-claude-skills"],"official":false},
   "LambdaTest/agent-skills": {"withheld":0,"branch":"main","commit_date":"2026-10-14","commit_sha":"992638bccbc311f42c0bd8b2b3387a0d1ce6288d","lists":["VoltAgent/awesome-agent-skills"],"official":true},
   "Leonxlnx/taste-skill": {"withheld":0,"branch":"main","commit_date":"2026-10-19","commit_sha":"a9c73c3d5dbf401e3e47f86e7b41f29ede1687df","lists":["VoltAgent/awesome-agent-skills","heilcheng/awesome-agent-skills"],"official":false},
