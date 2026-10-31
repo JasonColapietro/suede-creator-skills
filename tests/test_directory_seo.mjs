@@ -6,8 +6,9 @@
 // markup, robots.txt policy and llms.txt category lines are pinned here too.
 // The task and alternatives pages run with this group. package.json is part
 // of the first-party intake receipt (directory/intake/), so the test:directory
-// script stays byte-for-byte and the file joins through this import instead.
+// script stays byte-for-byte and the files join through these imports instead.
 import "./test_directory_qa_pages.mjs";
+import "./test_directory_page_template.mjs";
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
