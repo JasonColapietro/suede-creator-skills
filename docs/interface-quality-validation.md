@@ -52,6 +52,12 @@ provenance mapping and critical instruction contracts, including the umbrella
 fallback. These are static regressions, not proof that every future model will
 follow the guidance. New package checks failed before the additions existed.
 
+Each adapted skill folder was also copied into isolation. A portability
+regression exposed inventory links that left the standalone folder; those links
+now use the canonical repository's pinned adaptation document. The MIT notice
+still travels locally with every folder. The regression failed before this
+change and passed afterward; the correction changes provenance links only.
+
 An independent reviewer identified three umbrella fallback gaps: isolation
 before module/server execution, exact diff attribution, and companion rules
 that reinstated stylistic mandates and a fixed verification cap. Those rules
@@ -74,8 +80,7 @@ the detailed delivery contract into a focused reference reduced its entry point
 from 3,244 to 2,882 body words while retaining the contract verbatim. No content
 was padded and no scoring threshold changed.
 
-The exact source revision, `e42fdefb7b6b4bf9b6bbbd4701bae8f74b4c2c2e`, and
-inventory hashes live in the
+The exact reviewed source revision and inventory hashes live in the
 [dated first-party receipt](../directory/intake/2026-10-31-interface-quality.json)
 and generated reports. All 3,805 external records were preserved. Scores measure packaging
 signals, not security, rendered quality or customer outcomes. Source-review

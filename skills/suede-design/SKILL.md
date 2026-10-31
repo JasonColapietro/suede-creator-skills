@@ -379,6 +379,6 @@ capability. Do not invent tools or silently install another skill.
 Review and domain guidance selectively adapts documentation from
 [jakubkrehel/skills at 592aedc](https://github.com/jakubkrehel/skills/tree/592aedc44d7d5b3e29740984252902f3e5402a1c),
 MIT © 2026 Jakub Krehel. See [traveling notice](LICENSE.jakubkrehel-skills-MIT.txt)
-and the [all-skill adaptation map](../../docs/interface-quality-adaptation.md).
+and the [all-skill adaptation map](https://github.com/JasonColapietro/suede-creator-skills/blob/5cf10d950173db470d3bdd4b8db1cf50e2929e31/docs/interface-quality-adaptation.md).
 No upstream executable drawing code or assets are included. Attribution does not
 imply the author's endorsement of Suede.

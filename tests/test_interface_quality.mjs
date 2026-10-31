@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
+import os from 'node:os';
 import { fileURLToPath } from 'node:url';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -11,6 +12,32 @@ const walk = dir => fs.readdirSync(dir, { withFileTypes: true }).flatMap(e =>
   e.isDirectory() ? walk(path.join(dir, e.name)) : [path.join(dir, e.name)]);
 const guidance = name => walk(path.join(root, 'skills', name))
   .filter(p => p.endsWith('.md') && !p.endsWith('CARD.md')).map(p => fs.readFileSync(p, 'utf8')).join('\n');
+
+test('provenance survives installing each adapted skill folder alone', () => {
+  const isolated = fs.mkdtempSync(path.join(os.tmpdir(), 'suede-provenance-'));
+  try {
+    for (const name of names) {
+      const installed = path.join(isolated, name);
+      fs.cpSync(path.join(root, 'skills', name), installed, { recursive: true });
+      const provenance = fs.readFileSync(path.join(installed, 'SKILL.md'), 'utf8').split('## Provenance')[1];
+      assert.ok(provenance, `${name}: provenance is present`);
+      const links = [...provenance.matchAll(/\[[^\]]+\]\(([^)]+)\)/g)].map(m => m[1]);
+      assert.ok(links.length >= 2, `${name}: inventory and license links`);
+      for (const link of links) {
+        if (link.startsWith('https://')) {
+          if (link === 'https://github.com/jakubkrehel/skills/tree/592aedc44d7d5b3e29740984252902f3e5402a1c') continue;
+          assert.match(link, /^https:\/\/github\.com\/JasonColapietro\/suede-creator-skills\/blob\/[a-f0-9]{40}\/docs\/interface-quality-adaptation\.md$/);
+        } else {
+          const target = path.resolve(installed, link);
+          assert.ok(target.startsWith(installed + path.sep), `${name}: ${link} leaves the standalone folder`);
+          assert.ok(fs.existsSync(target), `${name}: ${link} travels with the folder`);
+        }
+      }
+    }
+  } finally {
+    fs.rmSync(isolated, { recursive: true, force: true });
+  }
+});
 
 // These are packaging and instruction-contract regressions, not model-behavior
 // or rendered-interface tests. Independent scenario runs supply that evidence.

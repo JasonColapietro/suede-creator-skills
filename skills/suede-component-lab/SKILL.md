@@ -182,7 +182,7 @@ delete an entire shared directory to remove one harness.
 
 Selectively adapted from Jakub Krehel's `break`, `state-machine`, and `variant`
 documentation at commit `592aedc44d7d5b3e29740984252902f3e5402a1c`.
-See the [adaptation inventory](../../docs/interface-quality-adaptation.md) and
+See the [adaptation inventory](https://github.com/JasonColapietro/suede-creator-skills/blob/5cf10d950173db470d3bdd4b8db1cf50e2929e31/docs/interface-quality-adaptation.md) and
 [retained MIT notice](LICENSE.jakubkrehel-skills-MIT.txt). This Suede adaptation
 is independent and implies no endorsement. No upstream scripts or assets are
 included; the teardown drawing subsystem is excluded.
