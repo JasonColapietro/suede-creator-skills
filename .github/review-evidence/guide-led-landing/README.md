@@ -49,4 +49,8 @@ Safari/Firefox, physical mobile device, live-edge visual check, or conversion
 uplift was established. Screenshots prove only the captured local renders.
 
 This is a draft proposal. Merge and production deployment require approval of
-the revised landing scope.
+the revised landing scope. `vercel.json` disables automatic deployments for
+`feat/guide-led-landing` only, using Vercel's documented
+[`git.deploymentEnabled`](https://vercel.com/docs/project-configuration/git-configuration#git.deploymentenabled)
+setting. Other branches keep their normal behavior. Review images are provided
+here without starting a hosted preview.

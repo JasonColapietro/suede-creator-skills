@@ -1,5 +1,10 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "git": {
+    "deploymentEnabled": {
+      "feat/guide-led-landing": false
+    }
+  },
   "framework": null,
   "installCommand": "echo 'no install step: the build uses only Node built-ins'",
   "buildCommand": "node scripts/build-vercel.mjs",
