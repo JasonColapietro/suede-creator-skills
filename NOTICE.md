@@ -57,3 +57,17 @@ text: [`licenses/fraunces-OFL.txt`](licenses/fraunces-OFL.txt)
 
 Files: `docs/assets/fonts/fraunces-var.woff2`,
 `docs/assets/fonts/fraunces-var-italic.woff2`.
+
+## jakubkrehel/skills
+
+Copyright (c) 2026 Jakub Krehel. MIT License. Full text:
+[`licenses/jakubkrehel-skills-MIT.txt`](licenses/jakubkrehel-skills-MIT.txt).
+
+Select documentation and workflow ideas in `skills/suede-design/`,
+`skills/suede-component-lab/`, and `skills/suede-interface-explain/` are adapted
+from [jakubkrehel/skills](https://github.com/jakubkrehel/skills/tree/592aedc44d7d5b3e29740984252902f3e5402a1c)
+at commit `592aedc44d7d5b3e29740984252902f3e5402a1c`.
+Each folder carries the complete MIT notice. No upstream executable drawing
+subsystem or assets are included. See the
+[all-skill mapping](docs/interface-quality-adaptation.md).
+Suede's adaptations imply no endorsement by the upstream author.

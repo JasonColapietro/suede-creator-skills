@@ -16,6 +16,7 @@ import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
 import { spawnSync } from "node:child_process";
+import { pathToFileURL } from "node:url";
 import { PARTS, PUBLISHED, SKILL_COUNT, loadSources, renderMarkdown, repoRoot } from "./lib/book.mjs";
 import { PDF_PROVENANCE_RELATIVE, bookPdfDigest, bookPdfInputDigest } from "./lib/book-pdf-provenance.mjs";
 
@@ -314,12 +315,36 @@ if (!chrome) {
 fs.mkdirSync(path.dirname(outPdf), { recursive: true });
 const tempPdfDir = fs.mkdtempSync(path.join(path.dirname(outPdf), ".s-tier-pdf-"));
 const tempPdf = path.join(tempPdfDir, "s-tier.pdf");
-const result = spawnSync(
+let result;
+// Constrained build hosts can explicitly select an already installed local
+// Playwright module. Nothing is downloaded or added to the package dependency
+// graph. Both paths write the same staged PDF and retain the checks below.
+if (process.env.SUEDE_BOOK_PLAYWRIGHT_MODULE) {
+  let browser;
+  try {
+    const modulePath = path.resolve(process.env.SUEDE_BOOK_PLAYWRIGHT_MODULE);
+    const { chromium } = await import(pathToFileURL(modulePath).href);
+    browser = await chromium.launch({ executablePath: chrome, headless: true, args: ["--no-sandbox"] });
+    const page = await browser.newPage();
+    await page.route("**/*", route => route.abort());
+    await page.setContent(printHtml, { waitUntil: "load" });
+    await page.pdf({ path: tempPdf, preferCSSPageSize: true, printBackground: true, tagged: true, outline: true });
+    result = { status: 0 };
+  } catch (error) {
+    result = { status: 1, stderr: `Installed browser PDF build failed: ${error.message}` };
+  } finally {
+    if (browser) await browser.close();
+  }
+} else {
+result = spawnSync(
   chrome,
   [
     "--headless=new",
     "--disable-gpu",
     "--no-sandbox",
+    // A disposable profile keeps builds independent of the caller's writable
+    // home directory and browser session. It is removed with tempPdfDir below.
+    `--user-data-dir=${path.join(tempPdfDir, "chrome-profile")}`,
     "--no-pdf-header-footer",
     // Tags the output, which gives the PDF a real heading structure for
     // screen readers and gives most viewers a navigable outline.
@@ -328,8 +353,9 @@ const result = spawnSync(
     `--print-to-pdf=${tempPdf}`,
     `file://${tmpHtml}`,
   ],
-  { encoding: "utf8" }
+  { encoding: "utf8", timeout: 60000 }
 );
+}
 
 if (result.status !== 0 || !fs.existsSync(tempPdf) || fs.statSync(tempPdf).size === 0) {
   fs.rmSync(tempPdfDir, { recursive: true, force: true });

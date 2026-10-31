@@ -1213,15 +1213,35 @@ countChecks.push(
 // Every specialty's number, on every surface that prints it. Built from the
 // catalog rather than hand-listed, so adding a sixth specialty extends the
 // guard automatically instead of shipping an unguarded chart.
+// Preserve the catalog chart's existing scale and spacing: the 13-skill Ship
+// bar is 338 px wide from x=264, with its count at x=616 (a 14 px gap).
+// Geometry is part of the same claim as the printed count, so --fix derives
+// both from the catalog instead of leaving bars at an older pack size.
+const LANEMAP_PIXELS_PER_SKILL = 26;
+const LANEMAP_BAR_X = 264;
+const LANEMAP_LABEL_GAP = 14;
 for (const spec of specialtyIndex) {
   const label = spec.label.replace(/&/g, "&amp;");
   const descLabel = spec.label.replace(/&/g, "and");
+  const chartRow = `<a class="lanemap-row" href="#spec-${escapeRegExp(spec.key)}"[^>]*>(?:(?!</a>)[\\s\\S])*?`;
   countChecks.push(
     {
       file: "docs/skills/index.html",
       label: `lanemap bar value: ${spec.key}`,
       re: new RegExp(`>${escapeRegExp(label)}</text>\\s*<rect[^>]*/>\\s*<text[^>]*>(\\d+)</text>`),
       expected: spec.count
+    },
+    {
+      file: "docs/skills/index.html",
+      label: `lanemap bar width: ${spec.key}`,
+      re: new RegExp(`${chartRow}<rect class="lanemap-bar"[^>]*\\bwidth="(\\d+)"`),
+      expected: spec.count * LANEMAP_PIXELS_PER_SKILL
+    },
+    {
+      file: "docs/skills/index.html",
+      label: `lanemap count position: ${spec.key}`,
+      re: new RegExp(`${chartRow}<text class="lanemap-count"[^>]*\\bx="(\\d+)"`),
+      expected: LANEMAP_BAR_X + spec.count * LANEMAP_PIXELS_PER_SKILL + LANEMAP_LABEL_GAP
     },
     {
       file: "docs/skills/index.html",
@@ -1254,6 +1274,15 @@ for (const spec of specialtyIndex) {
       expected: spec.count
     }
   );
+  for (const lane of spec.lanes) {
+    const laneLabel = lane.label.replace(/&/g, "&amp;");
+    countChecks.push({
+      file: "docs/skills/index.html",
+      label: `catalog sub-lane badge: ${spec.key}/${lane.label}`,
+      re: new RegExp(`id="spec-${escapeRegExp(spec.key)}"(?:(?!</section>)[\\s\\S])*?<h4>${escapeRegExp(laneLabel)}</h4>\\s*<span class="lane-count">(\\d+)</span>`),
+      expected: lane.count
+    });
+  }
 }
 
 // --- Writer side of the count guard -----------------------------------------

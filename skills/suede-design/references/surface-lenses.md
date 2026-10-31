@@ -2,6 +2,13 @@
 
 Named lenses for shaping or critiquing a surface in suede-design. These are lenses (notes, not shell commands) to name and apply while shaping a surface. Use them where useful; do not run all of them by default.
 
+During review, these produce observations and proposals only. Implement changes
+only within the named authorized scope. Preserve approved sales copy, factual
+claims, assets and brand conventions; a lens is not a conversion case or consent
+to rewrite them. Record task evidence before suggesting aesthetic changes.
+Lenses about analytics, follow-up or publication do not authorize external
+actions, tracking or new network dependencies.
+
 - `/vibe-scan`: name the current feeling, desired feeling, and the mismatch that blocks trust, desire, clarity, or action.
 - `/first-frame`: judge only the first viewport for brand, offer, proof, and primary action.
 - `/desire-line`: trace the path from first glance to click and remove sections that do not increase want, trust, urgency, or clarity.

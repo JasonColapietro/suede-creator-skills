@@ -48,6 +48,11 @@ damage). Pause, state the risk and the options, and let the user choose.
   unit and rerun only that check. Allow up to three genuinely different fixes,
   each changing the diagnosis or strategy. Stop early if the same root cause
   repeats and let the user pick the next move.
+  Interface validation is exempt from this cap: reproduce, make the authorized
+  fix, recapture the matched state, and inspect until the scoped outcome is
+  verified or a concrete blocker is identified. A fixed pass count cannot
+  substitute for evidence. Read-only interface reviews report findings without
+  changing application files.
 
 ## Route
 
@@ -111,9 +116,27 @@ cap.
 | Any copy surface, docs, explainers, agent docs, answer-first SEO pass | `suede-copy` |
 | Strip AI patterns from finished text, or a findings-only slop audit | `suede-deslop` |
 | One high-stakes public piece with research and an adversarial fact audit | `suede-ship-copy` |
-| Tokens, components, dark mode, full surface builds, restyles, visual QA | `suede-design` |
+| Read-only whole-flow review or UI diff review; tokens, hierarchy, accessibility, authorized surface builds, restyles and visual QA | `suede-design` |
+| Dev-only component workbench importing real components, synthetic states, stress fixtures and live variants | `suede-component-lab` |
+| Read-only explanation of an interface mechanism, with source locations, state transitions and observed behavior | `suede-interface-explain` |
 | Image and graphic specs | `suede-image` |
 | Video scripts and edits | `suede-video` |
+
+For an interface request, preserve the requested action. An audit or review is
+read-only; return findings and proposed fixes without editing the application.
+An explanation traces the existing mechanism without rebuilding it. A component
+lab creates an isolated development preview using the project's real components
+and synthetic fixtures, with no production data, writes or exposed production
+route. Design work starts from the user's task, primary action and existing
+brand; visual novelty does not establish task success or conversion improvement.
+
+For an authorized build from a selected design, screenshot or supplied mock,
+route to `suede-design`. If an image-to-code capability is already available,
+use it for that implementation; otherwise use the existing local stack and
+component system. Do not install another skill or tool merely to complete this
+route. A supplied visual kit may guide the work when explicitly selected, with
+its source and reuse rights recorded; it never silently overrides the product's
+brand. Source inspection supports source findings, not a rendered visual pass.
 
 **Apps and stores**
 

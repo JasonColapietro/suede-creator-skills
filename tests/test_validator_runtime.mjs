@@ -23,13 +23,13 @@ const completeSourceHistoryTest = hasCompleteSourceHistory
   ? {}
   : { skip: "requires a complete source checkout Git history" };
 
-function runValidator(targetRoot, extraEnv = {}) {
+function runValidator(targetRoot, extraEnv = {}, extraArgs = []) {
   const nodePath = [path.join(repoRoot, "node_modules"), process.env.NODE_PATH]
     .filter(Boolean)
     .join(path.delimiter);
   return spawnSync(
     process.execPath,
-    [path.join(targetRoot, "scripts", "validate-skill-pack.mjs"), "--strict"],
+    [path.join(targetRoot, "scripts", "validate-skill-pack.mjs"), "--strict", ...extraArgs],
     {
       cwd: targetRoot,
       encoding: "utf8",
@@ -162,6 +162,75 @@ function digestText(value) {
   return createHash("sha256").update(value).digest("hex");
 }
 
+test("count fixer derives catalog lane badges and SVG geometry while preserving dated history", (t) => {
+  const packagedRoot = createPackagedFixture(t, "suede-catalog-counts-");
+  const catalog = JSON.parse(fs.readFileSync(path.join(packagedRoot, "mcp", "catalog.json"), "utf8"));
+  const pagePath = path.join(packagedRoot, "docs", "skills", "index.html");
+  const readPage = () => fs.readFileSync(pagePath, "utf8");
+  const historical = new Map();
+  function retainBlogFiles(dir) {
+    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+      const file = path.join(dir, entry.name);
+      if (entry.isDirectory()) retainBlogFiles(file);
+      else historical.set(file, digestText(fs.readFileSync(file)));
+    }
+  }
+  retainBlogFiles(path.join(packagedRoot, "docs", "blog"));
+  const changelog = (text) => text.match(/<section\b[^>]*id="changelog"[\s\S]*?<\/section>/)?.[0];
+  const changelogs = new Map(["docs/index.html", "docs/skills/index.html"].map((relative) => {
+    const file = path.join(packagedRoot, relative);
+    const block = changelog(fs.readFileSync(file, "utf8"));
+    assert.ok(block, `${relative} must include dated changelog entries`);
+    return [file, block];
+  }));
+
+  // Poison every badge and chart row, including the already-stale Demand bar.
+  // The live catalog has several distinct sizes, so a fixed replacement cannot pass.
+  const before = readPage();
+  const stale = before
+    .replace(/(<span class="lane-count">)\d+(<\/span>)/g, "$10$2")
+    .replace(/(<rect class="lanemap-bar"[^>]*\bwidth=")\d+("[^>]*>)/g, "$11$2")
+    .replace(/(<text class="lanemap-count"[^>]*\bx=")\d+("[^>]*>)/g, "$12$2");
+  assert.notEqual(stale, before, "fixture must create real stale values");
+  fs.writeFileSync(pagePath, stale);
+
+  const check = runValidator(packagedRoot);
+  assert.notEqual(check.status, 0);
+  assert.match(check.stderr, /catalog sub-lane badge: craft\/Design & copy/);
+  assert.match(check.stderr, /lanemap bar width: demand/);
+  assert.match(check.stderr, /lanemap count position: craft/);
+  assert.equal(readPage(), stale, "check mode must not repair the fixture");
+
+  const fix = runValidator(packagedRoot, {}, ["--fix"]);
+  const fixed = readPage();
+  for (const spec of catalog.specialties) {
+    const chart = fixed.split(`href="#spec-${spec.key}"`)[1]?.split("</a>")[0];
+    assert.ok(chart, `${spec.key}: chart row must survive`);
+    const bar = chart.match(/<rect class="lanemap-bar"[^>]*>/)?.[0];
+    const label = chart.match(/<text class="lanemap-count"[^>]*>/)?.[0];
+    const width = Number(bar?.match(/\bwidth="(\d+)"/)?.[1]);
+    const origin = Number(bar?.match(/\bx="(\d+)"/)?.[1]);
+    const labelX = Number(label?.match(/\bx="(\d+)"/)?.[1]);
+    assert.equal(width, spec.count * 26, `${spec.key}: bar must scale at 26 px per skill`);
+    assert.equal(origin, 264, `${spec.key}: preserve the existing chart origin`);
+    assert.equal(labelX - origin - width, 14, `${spec.key}: preserve the 14 px label gap`);
+    const section = fixed.split(`id="spec-${spec.key}"`)[1]?.split('<section class="spec"')[0];
+    for (const lane of spec.lanes) {
+      const renderedLabel = lane.label.replaceAll("&", "&amp;");
+      const badge = section?.split(`<h4>${renderedLabel}</h4>`)[1]?.match(/class="lane-count">(\d+)</);
+      assert.equal(Number(badge?.[1]), lane.count, `${spec.key}/${lane.label}: badge must match catalog`);
+    }
+  }
+  const targetedDiagnostics = /(?:Stale skill count|Count check pattern not found)[^\n]*(?:catalog sub-lane badge|lanemap bar width|lanemap count position)/;
+  assert.doesNotMatch(`${fix.stdout}\n${fix.stderr}`, targetedDiagnostics);
+  for (const [file, expected] of historical) assert.equal(digestText(fs.readFileSync(file)), expected, file);
+  for (const [file, expected] of changelogs) assert.equal(changelog(fs.readFileSync(file, "utf8")), expected, file);
+
+  const secondFix = runValidator(packagedRoot, {}, ["--fix"]);
+  assert.equal(readPage(), fixed, "a second fix must leave the catalog page byte-identical");
+  assert.doesNotMatch(`${secondFix.stdout}\n${secondFix.stderr}`, targetedDiagnostics);
+});
+
 test("PDF builder stages output and verifies a stable input snapshot", () => {
   const builder = fs.readFileSync(path.join(repoRoot, "scripts", "build-book-pdf.mjs"), "utf8");
   const before = builder.indexOf("const inputDigestBefore = bookPdfInputDigest(repoRoot)");
@@ -171,6 +240,12 @@ test("PDF builder stages output and verifies a stable input snapshot", () => {
   assert.ok(before >= 0 && before < snapshot);
   assert.ok(after > snapshot && rename > after);
   assert.match(builder, /--print-to-pdf=\$\{tempPdf\}/);
+  assert.match(builder, /--user-data-dir=\$\{path\.join\(tempPdfDir, ["']chrome-profile["']\)\}/,
+    'headless Chrome must keep its profile inside the disposable build directory');
+  assert.match(builder, /SUEDE_BOOK_PLAYWRIGHT_MODULE/,
+    'an explicitly supplied installed Playwright module supports constrained build hosts');
+  assert.match(builder, /page\.pdf\(\{[^}]*path:\s*tempPdf/s,
+    'the optional browser path must use the same staged output and provenance checks');
   assert.match(builder, /inputDigestAfter !== inputDigestBefore/);
   assert.match(builder, /inputSha256: inputDigestBefore/);
 });

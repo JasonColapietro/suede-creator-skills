@@ -1,0 +1,1 @@
+.hero{position:relative;isolation:isolate;overflow:hidden;min-height:60vh}.glow{position:absolute;inset:-20%;z-index:-1;background:radial-gradient(ellipse at 30% 20%,#b7d891 0%,transparent 55%),linear-gradient(120deg,#e7ebf6,#f8f8f8);filter:blur(48px);transform:scale(1.12)}@media(max-width:600px){.glow{filter:blur(30px)}}

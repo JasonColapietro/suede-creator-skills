@@ -1,0 +1,1 @@
+Audit this checkout change before tomorrow’s launch. Report what this change introduced or regressed, and the smallest fix. Do not edit application files. The approved offer is fixed. Use the evidence available; do not contact external services.

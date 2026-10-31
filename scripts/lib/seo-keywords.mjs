@@ -409,6 +409,22 @@ export const SEO_KEYWORDS = {
     "topic prioritization",
     "Suede AI Skills",
   ],
+  "skills/suede-component-lab.html": [
+    "component lab",
+    "component workbench",
+    "synthetic UI states",
+    "component stress fixtures",
+    "live component variants",
+    "Suede AI Skills",
+  ],
+  "skills/suede-interface-explain.html": [
+    "interface explain",
+    "interface mechanism explanation",
+    "source-backed UI explanation",
+    "UI state transitions",
+    "read-only interface analysis",
+    "Suede AI Skills",
+  ],
   "skills/suede-copy.html": [
     "copy",
     "conversion copy",

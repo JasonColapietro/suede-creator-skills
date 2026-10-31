@@ -37,9 +37,11 @@
       "title": "Design & copy",
       "description": "Craft: Make the thing look and read like someone built it on purpose.",
       "skills": [
+        "suede-component-lab",
         "suede-copy",
         "suede-design",
-        "suede-deslop"
+        "suede-deslop",
+        "suede-interface-explain"
       ]
     },
     {

@@ -7,7 +7,7 @@ Release record for the `suede-design` skill, following the NVIDIA skill-card tem
 
 ## Description
 
-Use when asked \"restyle this dashboard\" or to design, polish or audit an interface hierarchy, tokens, color, type, dark mode or a design system.
+Use when asked \"review this UI diff\" or \"audit this flow\"; to design interface hierarchy, tokens, color, type, accessibility or a design system; run a whole-flow review; restyle a dashboard; or verify a visual build.
 
 Status: production. Ships in the `suede-skills` plugin (the full pack) at release 0.19.3; loads as a Claude Code / Codex agent skill from this directory's [SKILL.md](./SKILL.md).
 
@@ -17,15 +17,15 @@ Jason Colapietro, Suede AI (<https://github.com/JasonColapietro>). Security cont
 
 ## License / Terms of Use
 
-MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT AND BSD-3-Clause`; this skill bundles no third-party licensed material of its own.
+Pack license: MIT ([LICENSE](../../LICENSE)). This skill additionally bundles third-party licensed material — see [`LICENSE.jakubkrehel-skills-MIT.txt`](./LICENSE.jakubkrehel-skills-MIT.txt) in this directory. The pack's combined license expression is `MIT AND BSD-3-Clause`.
 
 ## Use Case
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when asked \"restyle this dashboard\" or to design, polish or audit an interface hierarchy, tokens, color, type, dark mode or a design system. Suede AI delivers layout and words together, reference-to-target restyles and rendered visual QA.
+Use when asked \"review this UI diff\" or \"audit this flow\"; to design interface hierarchy, tokens, color, type, accessibility or a design system; run a whole-flow review; restyle a dashboard; or verify a visual build.
 
-Out of scope — copy without layout (use suede-copy), funnel architecture (use suede-site-alchemy), promotion grades (use suede-visibility-grader), or parallel build coordination (use suede-agent-teams).
+Out of scope — component state workbenches or live variants (use suede-component-lab), source-backed effect explanations (use suede-interface-explain), sales copy (use suede-copy), funnel architecture (use suede-site-alchemy), or general code/security review (use suede-code).
 
 ## Deployment Geography
 
@@ -34,7 +34,7 @@ Global. The skill is a prompt-and-script package that runs locally inside the in
 ## Requirements / Dependencies
 
 - A Claude Code or Codex CLI session with the `suede-skills` plugin installed (install options: <https://skills.suedeai.ai/>).
-- Bundled files loaded relative to this directory: `agents/` (1 file), `references/` (6 files).
+- Bundled files loaded relative to this directory: `agents/` (1 file), `references/` (13 files).
 - Credentials: none are bundled or required by the skill files. Any tool or API credentials come from the host session; never paste credentials into skill files, prompts, or outputs.
 
 ## Known Risks and Mitigations
@@ -44,7 +44,10 @@ Global. The skill is a prompt-and-script package that runs locally inside the in
 
 From "Boundaries":
 
-- Preserve WIP. Never edit unrelated files.
+- Preserve WIP. Audit requests are read-only; fixes stay within the named scope.
+- Use local, synthetic state data and non-mutating seams. No live payments, bookings, leads, analytics, email, credentials or customer records in fixtures.
+- Keep fixture routes dev-only and excluded from production artifacts; remove only owned harness files when their purpose ends. Use suede-component-lab.
+- Optional visual-kit lane: only a user-selected authoritative kit for an applicable marketing asset. Inspect its original pixels before deriving an image-specific contract. Do not impose a kit on unrelated UI, copy surrounding social-platform chrome, transfer certification/safety claims, or publish private kit identifiers and originals. If originals are inaccessible, report that gap and continue independent work without guessing.
 - Never copy protected site assets, exact copy, proprietary code, or trademarked identity during a restyle.
 - Never invent metrics, pricing, partners, testimonials, legal clearance, or release outcomes.
 - Never call work done until the done signal has been checked or the remaining gap is named.

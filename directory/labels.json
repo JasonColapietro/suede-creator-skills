@@ -4468,6 +4468,10 @@
  "jasoncolapietro/suede-creator-skills/suede-competitors": {
   "category": "marketing-seo"
  },
+ "jasoncolapietro/suede-creator-skills/suede-component-lab": {
+  "category": "frontend-design",
+  "summary": "Build a local component lab to compare real components across synthetic states and stress fixtures without production data or production routes."
+ },
  "jasoncolapietro/suede-creator-skills/suede-content-strategy": {
   "category": "marketing-seo"
  },
@@ -4500,6 +4504,10 @@
  },
  "jasoncolapietro/suede-creator-skills/suede-influencer-outreach": {
   "category": "productivity-knowledge"
+ },
+ "jasoncolapietro/suede-creator-skills/suede-interface-explain": {
+  "category": "frontend-design",
+  "summary": "Understand how an existing interface works through a read-only mechanism explanation tied to source locations and any available rendered observations."
  },
  "jasoncolapietro/suede-creator-skills/suede-launch-packaging": {
   "category": "marketing-seo"

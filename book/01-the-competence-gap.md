@@ -73,7 +73,7 @@ not reusable across a hundred tasks.
 Mechanically, a skill is boring, which is the best thing about it.
 
 It is a folder with a `SKILL.md` file inside. In this repo they live at
-`skills/<name>/SKILL.md`, 64 of them, under documented open-source licenses. The file opens with YAML
+`skills/<name>/SKILL.md`, 66 of them, under documented open-source licenses. The file opens with YAML
 frontmatter carrying a `name` and a `description`. Everything after the closing
 `---` is the body: the procedure the agent reads when the skill fires.
 
@@ -98,14 +98,14 @@ phrases with replacements, ten formulaic structures with their fixes, and a
 is clever. All of it is written down, which means it runs the same way on a
 Tuesday afternoon as it does at midnight.
 
-## Progressive disclosure, or why 64 skills fit
+## Progressive disclosure, or why 66 skills fit
 
-Here is the objection that arrives immediately. The 64 `SKILL.md` files in this
-repo total 901,560 bytes. Loading all of them into every conversation would
+Here is the objection that arrives immediately. The 66 `SKILL.md` files in this
+repo total 926,552 bytes. Loading all of them into every conversation would
 crowd out the thing you actually came to do.
 
 They are not all loaded. Only the frontmatter descriptions stay resident, and
-all 64 descriptions together come to 28,234 bytes. That is roughly a
+all 66 descriptions together come to 29,149 bytes. That is roughly a
 thirty-second of the corpus. The agent holds a catalog of what exists and reads
 a body only when a description matches the task in front of it.
 
@@ -113,7 +113,7 @@ This is progressive disclosure, and it changes what a description is for. The
 description is not marketing copy for the skill. It is the router. It carries
 the entire burden of deciding whether 400 lines of procedure load or stay on
 disk. Chapter 2 takes that apart in detail, including the `NOT FOR:` convention
-that 64 of the 64 descriptions in this repo use to push work toward a better
+that 66 of the 66 descriptions in this repo use to push work toward a better
 match.
 
 The consequence for you is direct: a skill you install and never trigger costs

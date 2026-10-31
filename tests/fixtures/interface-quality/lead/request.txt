@@ -1,0 +1,1 @@
+Stress-test the lead capture component with realistic content and all reachable states in a disposable local copy. Keep the approved offer and claim exactly. It is a quick conversion check before handoff; the real component should be represented. Report only what the evidence supports and leave unrelated copy alone.
