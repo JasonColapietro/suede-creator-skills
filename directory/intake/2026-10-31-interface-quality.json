@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "repository": "JasonColapietro/suede-creator-skills",
-  "source_revision": "a6f013f82628eabf352f8cfe4b48a970eba3a31a",
-  "source_branch": "feat/guide-led-landing",
+  "source_revision": "84b9aa1e937b8ba034193a5758e072fb74fd61fb",
+  "source_branch": "feat/suede-interface-quality",
   "source_status": "proposed_draft_revision",
   "assessment_date": "2026-10-31",
   "external_snapshot_date": "2026-10-22",
@@ -759,7 +759,7 @@
     "skills/suede-workflow-skills/references/next-action-prompts.md": "a99fbe85c37ac03b57cdbce941aef95e75c42134ed6747cda2636097c2fadd9f",
     "skills/suede-workflow-skills/references/no-missed-quality-gates.md": "45adf1bc2580614fdecf5a13a515ca04ec5c4b6aaf1c25d9003eb13118b6f448",
     "skills/suede-workflow-skills/references/worked-handoff.md": "35136c89f81da1dd55d9c9d9253198871a21949aed81b30ec5f2facab458edc4",
-    "vercel.json": "893a040940bd911de411759074c0d5e06d3888776f188e7bf1b2f7d59d9ba1ba",
+    "vercel.json": "adb12bc5679de250dd4b6b300a277ad274b4f09e776dc4bd07b4d6812c3d800b",
     "visual-qa-report.md": "a1a148c3487a0c75774ed1ad0a2a9f1b9ed26e4084ca6dce2152fa5902c922ab"
   },
   "tools": {
@@ -805,6 +805,6 @@
   "external_before_sha256": "316f93b89836abef2c2b5dd15dcc0ea543d7eed7ff52282c1debc72e5aa98034",
   "external_after_sha256": "316f93b89836abef2c2b5dd15dcc0ea543d7eed7ff52282c1debc72e5aa98034",
   "security_scan_status": "not_scanned",
-  "dataset_before_sha256": "c1784d1056afc1419a78a8b6fe363c8941a5dff8dd9ee61772caf0ce468b455f",
-  "dataset_after_sha256": "23c722a119e8737b392ea2f2720d5935bc92d9a055ec0a7e48b4920d14eadc6f"
+  "dataset_before_sha256": "8a1e814a6cd41c6ebb5c873126252820bcecee0f0e0a9f37da24b133b1789b99",
+  "dataset_after_sha256": "c1784d1056afc1419a78a8b6fe363c8941a5dff8dd9ee61772caf0ce468b455f"
 }

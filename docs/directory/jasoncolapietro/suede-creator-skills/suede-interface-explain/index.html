@@ -50,9 +50,9 @@
           "@type": "SoftwareSourceCode",
           "name": "Suede AI Interface Explain Skills",
           "description": "Understand how an existing interface works through a read-only mechanism explanation tied to source locations and any available rendered observations. Suede Skill Check: 91/100, grade A. Security scan: not scanned.",
-          "codeRepository": "https://github.com/JasonColapietro/suede-creator-skills/tree/feat/guide-led-landing/skills/suede-interface-explain",
+          "codeRepository": "https://github.com/JasonColapietro/suede-creator-skills/tree/feat/suede-interface-quality/skills/suede-interface-explain",
           "programmingLanguage": "Markdown",
-          "license": "https://github.com/JasonColapietro/suede-creator-skills/blob/feat/guide-led-landing/LICENSE",
+          "license": "https://github.com/JasonColapietro/suede-creator-skills/blob/feat/suede-interface-quality/LICENSE",
           "dateModified": "2026-10-31",
           "keywords": [
             "Frontend and Design",
@@ -134,7 +134,7 @@
       <h1>Suede AI Interface Explain Skills <span class="h1-sub">agent skill by JasonColapietro</span></h1>
       <nav class="crumbs" aria-label="Breadcrumb"><a href="../../../">Directory</a> <span class="crumb-sep" aria-hidden="true">/</span> <a href="../../../frontend-design/">Frontend and Design</a> <span class="crumb-sep" aria-hidden="true">/</span> <a href="../">JasonColapietro/suede-creator-skills</a> <span class="crumb-sep" aria-hidden="true">/</span> <span aria-current="page">Suede AI Interface Explain Skills</span></nav>
       <p class="lead">Understand how an existing interface works through a read-only mechanism explanation tied to source locations and any available rendered observations.</p>
-      <p><a class="button" href="https://github.com/JasonColapietro/suede-creator-skills/tree/feat/guide-led-landing/skills/suede-interface-explain" target="_blank" rel="noopener">View on GitHub</a> <a class="button secondary" href="https://github.com/JasonColapietro/suede-creator-skills/blob/feat/guide-led-landing/skills/suede-interface-explain/SKILL.md" target="_blank" rel="noopener">Read SKILL.md</a></p>
+      <p><a class="button" href="https://github.com/JasonColapietro/suede-creator-skills/tree/feat/suede-interface-quality/skills/suede-interface-explain" target="_blank" rel="noopener">View on GitHub</a> <a class="button secondary" href="https://github.com/JasonColapietro/suede-creator-skills/blob/feat/suede-interface-quality/skills/suede-interface-explain/SKILL.md" target="_blank" rel="noopener">Read SKILL.md</a></p>
       <section class="panel" aria-labelledby="facts-title">
         <h2 id="facts-title">At a glance</h2>
         <div class="table-wrap">
@@ -143,7 +143,7 @@
             <tr><th scope="row">Publisher</th><td><a href="https://github.com/JasonColapietro" target="_blank" rel="noopener">JasonColapietro</a></td></tr>
             <tr><th scope="row">Repository</th><td><a href="../">JasonColapietro/suede-creator-skills</a> (66 listed skills)</td></tr>
             <tr><th scope="row">Category</th><td><a href="../../../frontend-design/">Frontend and Design</a></td></tr>
-            <tr><th scope="row">License</th><td><a href="https://github.com/JasonColapietro/suede-creator-skills/blob/feat/guide-led-landing/LICENSE" target="_blank" rel="noopener">MIT</a></td></tr>
+            <tr><th scope="row">License</th><td><a href="https://github.com/JasonColapietro/suede-creator-skills/blob/feat/suede-interface-quality/LICENSE" target="_blank" rel="noopener">MIT</a></td></tr>
             <tr><th scope="row">Last commit</th><td>October 31, 2026 (repository)</td></tr>
             <tr><th scope="row">SKILL.md</th><td>123 lines, 993 words</td></tr>
             <tr><th scope="row">Bundled files</th><td>6 files, including references</td></tr>
@@ -159,7 +159,7 @@
         <p class="muted">Read from the skill's files at the directory's October 22, 2026 snapshot: what ships with it, what its code reads, and the terms it is published under.</p>
         <ul class="before-list">
           <li><b>Bundled scripts:</b> none.</li>
-          <li><b>License:</b> <a href="https://github.com/JasonColapietro/suede-creator-skills/blob/feat/guide-led-landing/LICENSE" target="_blank" rel="noopener">MIT</a>, an open-source or open-content license.</li>
+          <li><b>License:</b> <a href="https://github.com/JasonColapietro/suede-creator-skills/blob/feat/suede-interface-quality/LICENSE" target="_blank" rel="noopener">MIT</a>, an open-source or open-content license.</li>
         </ul>
       </section>
       <section class="panel" aria-labelledby="install-title">
@@ -167,12 +167,12 @@
         <p>The skills CLI works with Claude Code, Codex, Cursor and other agents; the other routes copy the folder by hand.</p>
         <div class="snippet">
           <div class="snippet-head"><span>Skills CLI</span><button type="button" class="snippet-copy" data-copy-target="install-cli">Copy</button></div>
-          <pre><code id="install-cli">npx skills add https://github.com/JasonColapietro/suede-creator-skills/tree/feat/guide-led-landing/skills/suede-interface-explain</code></pre>
+          <pre><code id="install-cli">npx skills add https://github.com/JasonColapietro/suede-creator-skills/tree/feat/suede-interface-quality/skills/suede-interface-explain</code></pre>
         </div>
         <div class="snippet">
           <div class="snippet-head"><span>Claude Code, project-level copy</span><button type="button" class="snippet-copy" data-copy-target="install-claude">Copy</button></div>
           <pre><code id="install-claude">tmp=&quot;$(mktemp -d)&quot;
-git clone --depth 1 --branch feat/guide-led-landing https://github.com/JasonColapietro/suede-creator-skills.git &quot;$tmp/repo&quot;
+git clone --depth 1 --branch feat/suede-interface-quality https://github.com/JasonColapietro/suede-creator-skills.git &quot;$tmp/repo&quot;
 mkdir -p .claude/skills
 cp -R &quot;$tmp/repo/&quot;skills/suede-interface-explain .claude/skills/
 rm -rf &quot;$tmp&quot;</code></pre>
@@ -180,7 +180,7 @@ rm -rf &quot;$tmp&quot;</code></pre>
         <div class="snippet">
           <div class="snippet-head"><span>Codex, project-level copy</span><button type="button" class="snippet-copy" data-copy-target="install-codex">Copy</button></div>
           <pre><code id="install-codex">tmp=&quot;$(mktemp -d)&quot;
-git clone --depth 1 --branch feat/guide-led-landing https://github.com/JasonColapietro/suede-creator-skills.git &quot;$tmp/repo&quot;
+git clone --depth 1 --branch feat/suede-interface-quality https://github.com/JasonColapietro/suede-creator-skills.git &quot;$tmp/repo&quot;
 mkdir -p .agents/skills
 cp -R &quot;$tmp/repo/&quot;skills/suede-interface-explain .agents/skills/
 rm -rf &quot;$tmp&quot;</code></pre>
@@ -194,10 +194,10 @@ rm -rf &quot;$tmp&quot;</code></pre>
       </section>
       <section class="panel" aria-labelledby="author-title">
         <h2 id="author-title">How the author describes it</h2>
-        <blockquote class="author-quote" cite="https://github.com/JasonColapietro/suede-creator-skills/blob/feat/guide-led-landing/skills/suede-interface-explain/SKILL.md">
+        <blockquote class="author-quote" cite="https://github.com/JasonColapietro/suede-creator-skills/blob/feat/suede-interface-quality/skills/suede-interface-explain/SKILL.md">
           <p>Use when asked to &quot;explain this interface&quot;, trace a visual mechanism from source, or identify how a site's layout, layers, styles, assets or motion work. NOT FOR: interface audits or fixes (use suede-design), component state fixtures or live variants (use suede-component-lab), general code or security review (use suede-code), or sales copy (use suede-copy).</p>
         </blockquote>
-        <p class="muted">From the <code>description</code> field of <a href="https://github.com/JasonColapietro/suede-creator-skills/blob/feat/guide-led-landing/skills/suede-interface-explain/SKILL.md" target="_blank" rel="noopener">SKILL.md</a>. Agents read this line to decide when to load the skill.</p>
+        <p class="muted">From the <code>description</code> field of <a href="https://github.com/JasonColapietro/suede-creator-skills/blob/feat/suede-interface-quality/skills/suede-interface-explain/SKILL.md" target="_blank" rel="noopener">SKILL.md</a>. Agents read this line to decide when to load the skill.</p>
 
         <h3>Sections in SKILL.md</h3>
         <ul class="outline">
@@ -225,8 +225,8 @@ rm -rf &quot;$tmp&quot;</code></pre>
 <div class="report-summary">
           <p class="report-kicker">Report snapshot · <time datetime="2026-10-22">October 22, 2026</time> · graded-v2</p>
           <p>The rubric totals 100 points; published scores are capped at 99. Security scan: not scanned.</p>
-          <p class="muted">Source revision: <a href="https://github.com/JasonColapietro/suede-creator-skills/blob/a6f013f82628eabf352f8cfe4b48a970eba3a31a/skills/suede-interface-explain/SKILL.md" target="_blank" rel="noopener"><code>a6f013f82628</code></a>. Report version <code>e192e3fbf865</code>. Badge URLs follow the latest listing; save the report to keep this version.</p>
-          <p class="report-actions"><a href="report.json" download="suede-interface-explain-suede-report-2026-10-22.json">Download report</a> · <a href="https://github.com/JasonColapietro/suede-creator-skills/issues/new?template=directory-listing.yml&amp;request=Recheck+my+updated+skill&amp;repository=https%3A%2F%2Fgithub.com%2FJasonColapietro%2Fsuede-creator-skills&amp;skill-scope=suede-interface-explain&amp;details=Listing%3A+https%3A%2F%2Fskills.suedeai.ai%2Fdirectory%2Fjasoncolapietro%2Fsuede-creator-skills%2Fsuede-interface-explain%2F%0APrevious+report%3A+https%3A%2F%2Fskills.suedeai.ai%2Fdirectory%2Fjasoncolapietro%2Fsuede-creator-skills%2Fsuede-interface-explain%2Freport.json%0ASnapshot%3A+2026-10-22+%28bf4c2f5b5c364566aa2851baf511ccb9%29%3B+methodology%3A+graded-v2%0A%0AUpdated+source+commit+or+PR%3A%0AChanges+to+review%3A%0A" target="_blank" rel="noopener">Request a fresh review</a></p>
+          <p class="muted">Source revision: <a href="https://github.com/JasonColapietro/suede-creator-skills/blob/84b9aa1e937b8ba034193a5758e072fb74fd61fb/skills/suede-interface-explain/SKILL.md" target="_blank" rel="noopener"><code>84b9aa1e937b</code></a>. Report version <code>d2f15181a19e</code>. Badge URLs follow the latest listing; save the report to keep this version.</p>
+          <p class="report-actions"><a href="report.json" download="suede-interface-explain-suede-report-2026-10-22.json">Download report</a> · <a href="https://github.com/JasonColapietro/suede-creator-skills/issues/new?template=directory-listing.yml&amp;request=Recheck+my+updated+skill&amp;repository=https%3A%2F%2Fgithub.com%2FJasonColapietro%2Fsuede-creator-skills&amp;skill-scope=suede-interface-explain&amp;details=Listing%3A+https%3A%2F%2Fskills.suedeai.ai%2Fdirectory%2Fjasoncolapietro%2Fsuede-creator-skills%2Fsuede-interface-explain%2F%0APrevious+report%3A+https%3A%2F%2Fskills.suedeai.ai%2Fdirectory%2Fjasoncolapietro%2Fsuede-creator-skills%2Fsuede-interface-explain%2Freport.json%0ASnapshot%3A+2026-10-22+%28887c92dc078b4cf8af6fbbdaecf4fd00%29%3B+methodology%3A+graded-v2%0A%0AUpdated+source+commit+or+PR%3A%0AChanges+to+review%3A%0A" target="_blank" rel="noopener">Request a fresh review</a></p>
           <h3>What to review next</h3><ul><li><b>Bundled scripts</b>: 0 of 2 points. 2 when the skill folder ships a scripts/ folder.</li><li><b>Tool permissions declared</b>: 0 of 2 points. 2 when the frontmatter declares allowed-tools.</li><li><b>Compatibility declared</b>: 0 of 2 points. 2 when the frontmatter declares compatibility.</li></ul><p class="muted">Add declarations and bundled files when they describe the skill’s actual needs. Update the source, then request a fresh review with the changed commit or PR.</p>
         </div>
         <p>Suede AI Interface Explain Skills passes the required frontmatter check and all seven graded checks, which cover the SKILL.md format, a declared license and a commit in the last year. Those checks earn 56 of the score’s points; the rest come from description quality, instruction depth, bundled files, maintenance and curated-list citations. <a href="../../../methodology/">How the score works</a>.</p>
