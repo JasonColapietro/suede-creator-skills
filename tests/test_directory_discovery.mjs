@@ -172,7 +172,7 @@ test('skills below 80 offer the improve route instead of quality badges', () => 
   // Repository rows: a row below 80 links to the improve route, never "Get badges".
   const row = data.skills.find((s) => !s.featured && s.score < 80);
   const repoPage = read(skillDir(row).replace(/[^/]+\/$/, '') + 'index.html');
-  const tr = repoPage.split(`<tr id="${row.slug}">`)[1].split('</tr>')[0];
+  const tr = repoPage.split(`<tr id="${row.slug}" `)[1].split('</tr>')[0];
   assert.ok(tr.includes('Improve this score'));
   assert.ok(!tr.includes('Get badges'));
 });

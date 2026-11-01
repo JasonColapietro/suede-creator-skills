@@ -439,3 +439,99 @@ button.link-row.check-pick { width: 100%; text-align: left; font: inherit; color
   .directory a.featured-callout { padding: 22px; }
   .discovery-row h3 { font-size: 19px; }
 }
+
+/* Browse tools before a skill table: sort select, cost-lane and capability
+   chips, reset. Hidden until directory.js binds them; chips toggle aria-pressed. */
+.directory .table-tools { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; margin: 24px 0 0; padding: 20px 0 4px; border-top: 1px solid var(--border); }
+.directory .tools-label { color: var(--cream); font-size: 14px; font-weight: 600; }
+.directory .table-tools select { min-height: 44px; max-width: 100%; padding: 8px 12px; border: 1px solid var(--border); border-radius: 4px; background: var(--surface); color: var(--cream); font: inherit; font-size: 14px; }
+.directory .facet-chips { display: flex; flex-wrap: wrap; gap: 8px; flex-basis: 100%; min-width: 0; margin: 4px 0 0; padding: 0; border: 0; }
+.directory .facet-chips legend { padding: 0; margin: 0 0 10px; color: var(--muted); font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }
+.directory .facet-chip {
+  display: inline-flex; align-items: center; gap: 8px; min-height: 44px; max-width: 100%; padding: 8px 16px;
+  border: 1px solid var(--border); border-radius: 999px; background: var(--surface); color: var(--cream);
+  font: inherit; font-size: 14px; line-height: 1.3; text-align: left; cursor: pointer; transition: border-color 0.15s, background 0.15s;
+}
+.directory .facet-chip:hover { border-color: var(--gold); color: var(--gold); }
+.directory .facet-chip[aria-pressed="true"] { border-color: var(--gold); background: rgba(200, 169, 110, 0.14); color: var(--gold); }
+.directory .facet-chip .count-chip { color: var(--muted); font-size: 12px; }
+.directory .facet-chip[aria-pressed="true"] .count-chip { color: inherit; }
+.directory .tools-reset, .directory .saved-remove, .directory [data-saved-clear] {
+  min-height: 44px; padding: 8px 16px; border: 1px solid var(--border); border-radius: 4px;
+  background: transparent; color: var(--cream); font: inherit; font-size: 14px; cursor: pointer; transition: border-color 0.15s, color 0.15s;
+}
+.directory .tools-reset:hover, .directory .saved-remove:hover, .directory [data-saved-clear]:hover { border-color: var(--gold); color: var(--gold); }
+.directory .tools-reset { flex-basis: 100%; width: fit-content; margin-top: 4px; }
+
+/* Save buttons: skill pages use .save-button, table rows the compact .save-row.
+   aria-pressed="true" is the saved state. */
+.directory .save-button, .directory .save-row {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; min-width: 44px; padding: 8px 16px;
+  border: 1px solid var(--border); border-radius: 4px; background: transparent; color: var(--cream);
+  font: inherit; font-size: 14px; line-height: 1.3; cursor: pointer; transition: border-color 0.15s, background 0.15s, color 0.15s;
+}
+.directory .save-row { margin-top: 10px; padding: 8px 12px; font-size: 13px; }
+.directory :is(.save-button, .save-row):hover { border-color: var(--gold); color: var(--gold); }
+.directory :is(.save-button, .save-row)::before { content: "☆" / ""; font-size: 16px; line-height: 1; }
+.directory :is(.save-button, .save-row)[aria-pressed="true"] { border-color: var(--gold); background: rgba(200, 169, 110, 0.14); color: var(--gold); }
+.directory :is(.save-button, .save-row)[aria-pressed="true"]::before { content: "★" / ""; }
+
+/* Saved list page (/saved/): rows come from localStorage via directory.js. */
+.directory [data-saved-table] td { vertical-align: middle; }
+.directory [data-saved-table] td.name a { font-weight: 600; }
+.directory [data-saved-table] td.num { font-family: var(--mono); white-space: nowrap; }
+.directory [data-saved-table] td.actions { text-align: right; }
+.directory [data-saved-clear] { margin-top: 16px; }
+@media (max-width: 720px) {
+  .directory [data-saved-table] thead { display: none; }
+  .directory [data-saved-table], .directory [data-saved-table] tbody, .directory [data-saved-table] tr, .directory [data-saved-table] td { display: block; width: auto; }
+  .directory [data-saved-table] tr { padding: 12px 14px; border-bottom: 1px solid var(--hairline); }
+  .directory [data-saved-table] td { padding: 2px 0; border: none; }
+  .directory [data-saved-table] td.actions { padding-top: 8px; text-align: left; }
+}
+
+/* Share row on skill pages: X, LinkedIn and a copy-link button. The .share-url
+   code node appears only when the clipboard is unavailable. */
+.directory .share { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin: 24px 0; }
+.directory .share-label { margin-right: 4px; color: var(--muted); font-size: 14px; }
+.directory .share a, .directory .share button {
+  display: inline-flex; align-items: center; min-height: 44px; padding: 8px 16px;
+  border: 1px solid var(--border); border-radius: 4px; background: transparent; color: var(--cream);
+  font: inherit; font-size: 14px; cursor: pointer; transition: border-color 0.15s, color 0.15s;
+}
+.directory .share a:hover, .directory .share button:hover { border-color: var(--gold); color: var(--gold); }
+.directory .share-url { flex-basis: 100%; font-family: var(--mono); font-size: 13px; color: var(--cream); overflow-wrap: anywhere; user-select: all; }
+
+/* Topic pills, the "new" label on fresh listings and the cost-lane label. */
+.directory .topic-chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 0; padding: 0; list-style: none; }
+.directory .topic-chips li { margin: 0; padding: 0; }
+.directory .topic-chips li::before { content: none; }
+.directory .topic-chips a {
+  display: inline-flex; align-items: center; gap: 8px; min-height: 44px; max-width: 100%; padding: 8px 16px;
+  border: 1px solid var(--border); border-radius: 999px; background: var(--surface); color: var(--cream);
+  font-size: 14px; line-height: 1.3; overflow-wrap: anywhere; transition: border-color 0.15s, color 0.15s;
+}
+.directory .topic-chips a:hover, .directory .topic-chips a[aria-current] { border-color: var(--gold); color: var(--gold); }
+.directory .topic-chips .count-chip { color: var(--muted); }
+.directory .new-chip {
+  display: inline-block; vertical-align: 2px; margin-left: 6px; padding: 2px 8px; border-radius: 3px;
+  background: var(--gold); color: var(--bg);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.08em; line-height: 1.4; text-transform: uppercase;
+}
+.directory .lane-chip {
+  display: inline-flex; align-items: center; gap: 6px; max-width: 100%; padding: 2px 10px;
+  border: 1px solid var(--border); border-radius: 999px; color: var(--muted); font-size: 12px; line-height: 1.6; text-align: left;
+}
+.directory a.lane-chip { color: var(--cream); }
+.directory a.lane-chip:hover { border-color: var(--gold); color: var(--gold); }
+@media (max-width: 600px) {
+  .directory .table-tools { gap: 10px 12px; }
+  .directory .table-tools select { flex: 1 1 100%; }
+  .directory .facet-chip { padding: 8px 14px; }
+  .directory .share a, .directory .share button { padding: 8px 14px; }
+}
+.result-quality .save-row { width: 100%; margin-top: 0; padding: 8px; }
+
+/* Q&A answers can quote long install URLs; let them wrap on phones. */
+.faq p { overflow-wrap: anywhere; }

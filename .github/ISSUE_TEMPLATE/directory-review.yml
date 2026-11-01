@@ -1,0 +1,67 @@
+name: Directory skill review
+description: Share how a skill listed in the Agent Skills Directory worked for you.
+title: "Review: "
+labels: ["directory", "review", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Reader reviews of skills in the [Agent Skills Directory](https://suedeai.directory/) are published as GitHub issues credited to their authors. A review never changes a skill's [Suede Skill Check](https://suedeai.directory/methodology/) score, which measures the skill's files, not opinions about them. Describe what you asked the skill to do and what happened. Do not post tokens, private data or details about other people.
+  - type: input
+    id: skill
+    attributes:
+      label: Skill
+      description: The directory id of the skill, as owner/repo/skill-name.
+      placeholder: owner/repo/skill-name
+    validations:
+      required: true
+  - type: input
+    id: listing
+    attributes:
+      label: Listing URL
+      placeholder: https://suedeai.directory/skills/owner/repo/skill-name/
+    validations:
+      required: false
+  - type: dropdown
+    id: agent
+    attributes:
+      label: Agent
+      description: The agent you ran the skill with.
+      options:
+        - Claude Code
+        - Codex
+        - Cursor
+        - Other
+    validations:
+      required: true
+  - type: dropdown
+    id: verdict
+    attributes:
+      label: Verdict
+      options:
+        - Worked as described
+        - Worked with changes
+        - Did not work for me
+    validations:
+      required: true
+  - type: textarea
+    id: experience
+    attributes:
+      label: Your experience
+      description: What you asked the skill to do and what happened. Name the task, the result, and anything you had to change or redo.
+    validations:
+      required: true
+  - type: textarea
+    id: setup
+    attributes:
+      label: Setup it needed
+      description: Credentials, MCP servers or scripts the skill needed before it ran, if any. Leave blank if it worked as installed.
+    validations:
+      required: false
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Confirmation
+      options:
+        - label: This review is my own experience, contains no personal data about other people, and may be published on the directory.
+          required: true

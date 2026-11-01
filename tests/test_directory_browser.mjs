@@ -6,6 +6,7 @@ import http from 'node:http';
 import { fileURLToPath } from 'node:url';
 import { verifySkillsLanding } from './test_skills_landing_browser.mjs';
 import { verifyFeaturedNavigation } from './test_featured_navigation_browser.mjs';
+import './test_directory_browse_client.mjs';
 
 const { chromium } = await import(process.env.DIRECTORY_PLAYWRIGHT_MODULE || 'playwright');
 const root = fileURLToPath(new URL('../docs/', import.meta.url));
@@ -38,9 +39,9 @@ try {
   await page.goto(base + '/directory/?utm_source=browser-test#browse');
   await waitSearch();
   await page.locator('[data-shortlist-task]').fill('Review React checkout <script>');
-  for (let i = 0; i < 5; i++) await page.locator('[data-search-results] button[aria-pressed="false"]:enabled').first().click();
+  for (let i = 0; i < 5; i++) await page.locator('[data-search-results] button.shortlist-add[aria-pressed="false"]:enabled').first().click();
   assert.equal(await page.locator('[data-shortlist-items] li').count(), 5);
-  assert.ok(await page.locator('[data-search-results] button[aria-pressed="false"]').first().isDisabled());
+  assert.ok(await page.locator('[data-search-results] button.shortlist-add[aria-pressed="false"]').first().isDisabled());
   const saved = page.url();
   assert.equal(new URL(saved).searchParams.getAll('pick').length, 5);
   assert.equal(new URL(saved).searchParams.get('utm_source'), 'browser-test');

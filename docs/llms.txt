@@ -58,6 +58,203 @@ Runner boundary for Suede Graph Flo XR: the bundled Suede Thought Graph workflow
   - [Best Claude Code skills for SQL and databases](https://skills.suedeai.ai/directory/for/sql/): go-database from eduardo-sl/go-agent-skills leads at 95/100; 15 skills compared.
   - [Best Claude Code skills for technical documentation](https://skills.suedeai.ai/directory/for/documentation/): go-documentation from eduardo-sl/go-agent-skills leads at 95/100; 15 skills compared.
   - [Best Claude Code skills for UI design](https://skills.suedeai.ai/directory/for/ui-design/): ui-verification from mblode/agent-skills leads at 89/100; 15 skills compared.
+- [Agent skills by topic](https://skills.suedeai.ai/directory/topics/): 192 topic pages in 12 groups, each listing every matching skill with its score, license and source:
+  - [Customer Service skills](https://skills.suedeai.ai/directory/topics/customer-service/): 7 listed skills.
+  - [Sales skills](https://skills.suedeai.ai/directory/topics/sales/): 64 listed skills.
+  - [CRM skills](https://skills.suedeai.ai/directory/topics/crm/): 11 listed skills.
+  - [Finance and Accounting skills](https://skills.suedeai.ai/directory/topics/finance/): 30 listed skills.
+  - [Legal skills](https://skills.suedeai.ai/directory/topics/legal/): 5 listed skills.
+  - [HR and Recruiting skills](https://skills.suedeai.ai/directory/topics/hr-recruiting/): 33 listed skills.
+  - [Project Management skills](https://skills.suedeai.ai/directory/topics/project-management/): 27 listed skills.
+  - [E-commerce skills](https://skills.suedeai.ai/directory/topics/e-commerce/): 19 listed skills.
+  - [Startup Tools skills](https://skills.suedeai.ai/directory/topics/startup-tools/): 24 listed skills.
+  - [Presentations skills](https://skills.suedeai.ai/directory/topics/presentations/): 18 listed skills.
+  - [Spreadsheets skills](https://skills.suedeai.ai/directory/topics/spreadsheets/): 14 listed skills.
+  - [Note Taking skills](https://skills.suedeai.ai/directory/topics/note-taking/): 24 listed skills.
+  - [Personal Assistant skills](https://skills.suedeai.ai/directory/topics/personal-assistant/): 15 listed skills.
+  - [Scheduling and Calendar skills](https://skills.suedeai.ai/directory/topics/scheduling/): 19 listed skills.
+  - [Meeting Assistant skills](https://skills.suedeai.ai/directory/topics/meeting-assistant/): 26 listed skills.
+  - [Task Management skills](https://skills.suedeai.ai/directory/topics/task-management/): 15 listed skills.
+  - [Summarizer skills](https://skills.suedeai.ai/directory/topics/summarizer/): 16 listed skills.
+  - [Translation and Localization skills](https://skills.suedeai.ai/directory/topics/translation/): 11 listed skills.
+  - [Web Search skills](https://skills.suedeai.ai/directory/topics/search-engine/): 16 listed skills.
+  - [Prompt Generators skills](https://skills.suedeai.ai/directory/topics/prompt-generators/): 19 listed skills.
+  - [Workflow Automation skills](https://skills.suedeai.ai/directory/topics/workflow-automation/): 13 listed skills.
+  - [Documents skills](https://skills.suedeai.ai/directory/topics/documents/): 19 listed skills.
+  - [PDF skills](https://skills.suedeai.ai/directory/topics/pdf/): 12 listed skills.
+  - [SEO skills](https://skills.suedeai.ai/directory/topics/seo/): 103 listed skills.
+  - [AI Search Visibility skills](https://skills.suedeai.ai/directory/topics/ai-search-visibility/): 26 listed skills.
+  - [Email skills](https://skills.suedeai.ai/directory/topics/email/): 36 listed skills.
+  - [Social Media skills](https://skills.suedeai.ai/directory/topics/social-media/): 40 listed skills.
+  - [Advertising skills](https://skills.suedeai.ai/directory/topics/ads/): 59 listed skills.
+  - [Content Marketing skills](https://skills.suedeai.ai/directory/topics/content-marketing/): 24 listed skills.
+  - [Marketing Analytics skills](https://skills.suedeai.ai/directory/topics/marketing-analytics/): 19 listed skills.
+  - [Lead Generation skills](https://skills.suedeai.ai/directory/topics/lead-generation/): 10 listed skills.
+  - [Influencer Marketing skills](https://skills.suedeai.ai/directory/topics/influencer-marketing/): 6 listed skills.
+  - [Affiliate and Referral Programs skills](https://skills.suedeai.ai/directory/topics/affiliate-referral/): 6 listed skills.
+  - [Branding skills](https://skills.suedeai.ai/directory/topics/branding/): 23 listed skills.
+  - [Landing Pages and Conversion skills](https://skills.suedeai.ai/directory/topics/landing-pages/): 18 listed skills.
+  - [Product Descriptions skills](https://skills.suedeai.ai/directory/topics/product-descriptions/): 10 listed skills.
+  - [Marketing Automation skills](https://skills.suedeai.ai/directory/topics/marketing-automation/): 8 listed skills.
+  - [Marketing Strategy skills](https://skills.suedeai.ai/directory/topics/marketing-strategy/): 28 listed skills.
+  - [Copywriting skills](https://skills.suedeai.ai/directory/topics/copywriting/): 13 listed skills.
+  - [Rewriting and Paraphrasing skills](https://skills.suedeai.ai/directory/topics/paraphrasing/): 8 listed skills.
+  - [Storytelling and Fiction skills](https://skills.suedeai.ai/directory/topics/storytelling/): 21 listed skills.
+  - [Grammar and Proofreading skills](https://skills.suedeai.ai/directory/topics/grammar-checker/): 6 listed skills.
+  - [AI Detection and Humanizing skills](https://skills.suedeai.ai/directory/topics/ai-humanizer/): 21 listed skills.
+  - [General Writing skills](https://skills.suedeai.ai/directory/topics/general-writing/): 12 listed skills.
+  - [Resumes and Cover Letters skills](https://skills.suedeai.ai/directory/topics/resume-builder/): 15 listed skills.
+  - [Essays and Academic Writing skills](https://skills.suedeai.ai/directory/topics/essay-writing/): 6 listed skills.
+  - [Blog Writing skills](https://skills.suedeai.ai/directory/topics/blog-writing/): 34 listed skills.
+  - [Scriptwriting skills](https://skills.suedeai.ai/directory/topics/scriptwriting/): 3 listed skills.
+  - [Books and Publishing skills](https://skills.suedeai.ai/directory/topics/books-publishing/): 7 listed skills.
+  - [Technical Writing and Documentation skills](https://skills.suedeai.ai/directory/topics/technical-writing/): 33 listed skills.
+  - [Code Assistants skills](https://skills.suedeai.ai/directory/topics/code-assistant/): 21 listed skills.
+  - [SQL and Databases skills](https://skills.suedeai.ai/directory/topics/sql/): 116 listed skills.
+  - [Low-Code and No-Code skills](https://skills.suedeai.ai/directory/topics/low-code-no-code/): 8 listed skills.
+  - [App Builders skills](https://skills.suedeai.ai/directory/topics/app-builders/): 15 listed skills.
+  - [Website Builders skills](https://skills.suedeai.ai/directory/topics/website-builders/): 3 listed skills.
+  - [CLIs and Terminal Tools skills](https://skills.suedeai.ai/directory/topics/cli-tools/): 9 listed skills.
+  - [Game Development skills](https://skills.suedeai.ai/directory/topics/game-development/): 4 listed skills.
+  - [React and Next.js skills](https://skills.suedeai.ai/directory/topics/react-nextjs/): 30 listed skills.
+  - [Vue and Nuxt skills](https://skills.suedeai.ai/directory/topics/vue-nuxt/): 3 listed skills.
+  - [Angular skills](https://skills.suedeai.ai/directory/topics/angular/): 4 listed skills.
+  - [Flutter and Dart skills](https://skills.suedeai.ai/directory/topics/flutter-dart/): 29 listed skills.
+  - [Expo and React Native skills](https://skills.suedeai.ai/directory/topics/expo-react-native/): 29 listed skills.
+  - [iOS and Swift skills](https://skills.suedeai.ai/directory/topics/ios-swift/): 19 listed skills.
+  - [Android and Kotlin skills](https://skills.suedeai.ai/directory/topics/android-kotlin/): 16 listed skills.
+  - [Python skills](https://skills.suedeai.ai/directory/topics/python/): 32 listed skills.
+  - [TypeScript and Node.js skills](https://skills.suedeai.ai/directory/topics/typescript-node/): 18 listed skills.
+  - [Go skills](https://skills.suedeai.ai/directory/topics/golang/): 34 listed skills.
+  - [Rust skills](https://skills.suedeai.ai/directory/topics/rust/): 6 listed skills.
+  - [Java and JVM skills](https://skills.suedeai.ai/directory/topics/java-jvm/): 20 listed skills.
+  - [PHP and Laravel skills](https://skills.suedeai.ai/directory/topics/php-laravel/): 6 listed skills.
+  - [Ruby and Rails skills](https://skills.suedeai.ai/directory/topics/ruby-rails/): 5 listed skills.
+  - [.NET and C# skills](https://skills.suedeai.ai/directory/topics/dotnet-csharp/): 31 listed skills.
+  - [GraphQL and gRPC skills](https://skills.suedeai.ai/directory/topics/graphql/): 18 listed skills.
+  - [REST APIs and OpenAPI skills](https://skills.suedeai.ai/directory/topics/rest-apis/): 31 listed skills.
+  - [Authentication and Login skills](https://skills.suedeai.ai/directory/topics/authentication/): 16 listed skills.
+  - [Payments and Stripe skills](https://skills.suedeai.ai/directory/topics/payments-stripe/): 13 listed skills.
+  - [Transactional Email skills](https://skills.suedeai.ai/directory/topics/email-sending/): 11 listed skills.
+  - [CMS, Sanity and WordPress skills](https://skills.suedeai.ai/directory/topics/cms/): 13 listed skills.
+  - [Supabase and Firebase skills](https://skills.suedeai.ai/directory/topics/supabase-firebase/): 22 listed skills.
+  - [Shopify and E-commerce Development skills](https://skills.suedeai.ai/directory/topics/shopify-ecommerce-dev/): 4 listed skills.
+  - [Web Scraping and Browser Automation skills](https://skills.suedeai.ai/directory/topics/web-scraping/): 30 listed skills.
+  - [C, C++ and Embedded skills](https://skills.suedeai.ai/directory/topics/c-cpp-embedded/): 8 listed skills.
+  - [CI/CD and DevOps skills](https://skills.suedeai.ai/directory/topics/ci-cd/): 39 listed skills.
+  - [Kubernetes skills](https://skills.suedeai.ai/directory/topics/kubernetes/): 72 listed skills.
+  - [Docker and Containers skills](https://skills.suedeai.ai/directory/topics/docker-containers/): 22 listed skills.
+  - [Terraform and Infrastructure as Code skills](https://skills.suedeai.ai/directory/topics/infrastructure-as-code/): 32 listed skills.
+  - [AWS skills](https://skills.suedeai.ai/directory/topics/aws/): 151 listed skills.
+  - [Google Cloud skills](https://skills.suedeai.ai/directory/topics/google-cloud/): 146 listed skills.
+  - [Azure skills](https://skills.suedeai.ai/directory/topics/azure/): 78 listed skills.
+  - [Cloudflare skills](https://skills.suedeai.ai/directory/topics/cloudflare/): 20 listed skills.
+  - [Deployment and Hosting skills](https://skills.suedeai.ai/directory/topics/deployment-hosting/): 40 listed skills.
+  - [Serverless skills](https://skills.suedeai.ai/directory/topics/serverless/): 21 listed skills.
+  - [Observability and Monitoring skills](https://skills.suedeai.ai/directory/topics/observability/): 54 listed skills.
+  - [Incident Response and SRE skills](https://skills.suedeai.ai/directory/topics/incident-response/): 22 listed skills.
+  - [Test Automation skills](https://skills.suedeai.ai/directory/topics/test-automation/): 134 listed skills.
+  - [Unit Testing skills](https://skills.suedeai.ai/directory/topics/unit-testing/): 42 listed skills.
+  - [End-to-End and Browser Testing skills](https://skills.suedeai.ai/directory/topics/e2e-browser-testing/): 56 listed skills.
+  - [Performance and Load Testing skills](https://skills.suedeai.ai/directory/topics/performance-testing/): 14 listed skills.
+  - [Accessibility Testing skills](https://skills.suedeai.ai/directory/topics/accessibility-testing/): 6 listed skills.
+  - [Security Auditing and Review skills](https://skills.suedeai.ai/directory/topics/security-auditing/): 108 listed skills.
+  - [Secrets and Credentials skills](https://skills.suedeai.ai/directory/topics/secrets-credentials/): 18 listed skills.
+  - [Vulnerability Scanning skills](https://skills.suedeai.ai/directory/topics/vulnerability-scanning/): 55 listed skills.
+  - [Smart Contracts and Blockchain skills](https://skills.suedeai.ai/directory/topics/smart-contract-security/): 22 listed skills.
+  - [Code Review skills](https://skills.suedeai.ai/directory/topics/code-review/): 50 listed skills.
+  - [Code Quality and Linting skills](https://skills.suedeai.ai/directory/topics/code-quality-linting/): 22 listed skills.
+  - [Refactoring skills](https://skills.suedeai.ai/directory/topics/refactoring/): 23 listed skills.
+  - [Documentation and READMEs skills](https://skills.suedeai.ai/directory/topics/documentation/): 42 listed skills.
+  - [Git and Version Control skills](https://skills.suedeai.ai/directory/topics/git-version-control/): 39 listed skills.
+  - [Pull Requests skills](https://skills.suedeai.ai/directory/topics/pull-requests/): 40 listed skills.
+  - [Dependency Management skills](https://skills.suedeai.ai/directory/topics/dependency-management/): 23 listed skills.
+  - [Data Engineering and Pipelines skills](https://skills.suedeai.ai/directory/topics/data-pipelines/): 31 listed skills.
+  - [Data Warehouses skills](https://skills.suedeai.ai/directory/topics/data-warehouses/): 29 listed skills.
+  - [Vector Databases and Embeddings skills](https://skills.suedeai.ai/directory/topics/vector-databases/): 57 listed skills.
+  - [AI Agent Builders skills](https://skills.suedeai.ai/directory/topics/ai-agent-builders/): 56 listed skills.
+  - [MCP Servers skills](https://skills.suedeai.ai/directory/topics/mcp-servers/): 82 listed skills.
+  - [Subagents and Multi-Agent Orchestration skills](https://skills.suedeai.ai/directory/topics/subagents/): 40 listed skills.
+  - [Prompt Engineering skills](https://skills.suedeai.ai/directory/topics/prompt-engineering/): 28 listed skills.
+  - [Context Engineering and Agent Memory skills](https://skills.suedeai.ai/directory/topics/context-memory/): 31 listed skills.
+  - [Evals and Benchmarks skills](https://skills.suedeai.ai/directory/topics/evals/): 27 listed skills.
+  - [Agent Tracing and Observability skills](https://skills.suedeai.ai/directory/topics/agent-observability/): 41 listed skills.
+  - [RAG and Retrieval skills](https://skills.suedeai.ai/directory/topics/rag-retrieval/): 32 listed skills.
+  - [Fine-Tuning and Model Training skills](https://skills.suedeai.ai/directory/topics/fine-tuning/): 127 listed skills.
+  - [Inference and Model Serving skills](https://skills.suedeai.ai/directory/topics/inference-serving/): 39 listed skills.
+  - [LLM APIs and SDKs skills](https://skills.suedeai.ai/directory/topics/llm-apis/): 28 listed skills.
+  - [Browser Agents and Computer Use skills](https://skills.suedeai.ai/directory/topics/browser-agents/): 29 listed skills.
+  - [Voice Agents skills](https://skills.suedeai.ai/directory/topics/voice-agents/): 4 listed skills.
+  - [Agent Safety and Guardrails skills](https://skills.suedeai.ai/directory/topics/agent-safety/): 27 listed skills.
+  - [Skill Authoring skills](https://skills.suedeai.ai/directory/topics/skill-authoring/): 37 listed skills.
+  - [Claude Code Setup and Hooks skills](https://skills.suedeai.ai/directory/topics/claude-code-config/): 31 listed skills.
+  - [Codex, Cursor and Coding Agents skills](https://skills.suedeai.ai/directory/topics/coding-agents/): 23 listed skills.
+  - [Research skills](https://skills.suedeai.ai/directory/topics/research/): 46 listed skills.
+  - [Literature Search skills](https://skills.suedeai.ai/directory/topics/literature-search/): 13 listed skills.
+  - [Scientific Writing skills](https://skills.suedeai.ai/directory/topics/scientific-writing/): 13 listed skills.
+  - [Data Analysis skills](https://skills.suedeai.ai/directory/topics/data-analysis/): 27 listed skills.
+  - [Data Visualization and Charts skills](https://skills.suedeai.ai/directory/topics/data-visualization/): 15 listed skills.
+  - [Statistics skills](https://skills.suedeai.ai/directory/topics/statistics/): 12 listed skills.
+  - [Machine Learning skills](https://skills.suedeai.ai/directory/topics/machine-learning/): 29 listed skills.
+  - [Notebooks skills](https://skills.suedeai.ai/directory/topics/notebooks/): 3 listed skills.
+  - [Bioinformatics and Genomics skills](https://skills.suedeai.ai/directory/topics/bioinformatics/): 59 listed skills.
+  - [Chemistry and Drug Discovery skills](https://skills.suedeai.ai/directory/topics/chemistry/): 28 listed skills.
+  - [Materials Science and Simulation skills](https://skills.suedeai.ai/directory/topics/materials-science/): 31 listed skills.
+  - [Physics and Quantum Computing skills](https://skills.suedeai.ai/directory/topics/physics/): 26 listed skills.
+  - [Image Generation skills](https://skills.suedeai.ai/directory/topics/image-generation/): 16 listed skills.
+  - [Image Editing skills](https://skills.suedeai.ai/directory/topics/image-editing/): 11 listed skills.
+  - [Background Removal skills](https://skills.suedeai.ai/directory/topics/background-removal/): 5 listed skills.
+  - [Logos and Brand Identity skills](https://skills.suedeai.ai/directory/topics/logo-generation/): 5 listed skills.
+  - [Characters, Avatars and Portraits skills](https://skills.suedeai.ai/directory/topics/characters-avatars/): 5 listed skills.
+  - [Product Photography skills](https://skills.suedeai.ai/directory/topics/product-photography/): 5 listed skills.
+  - [Social and Marketing Images skills](https://skills.suedeai.ai/directory/topics/social-media-graphics/): 8 listed skills.
+  - [Graphic Design and Posters skills](https://skills.suedeai.ai/directory/topics/graphic-design/): 8 listed skills.
+  - [Icons and Illustrations skills](https://skills.suedeai.ai/directory/topics/icons-illustrations/): 8 listed skills.
+  - [Generative Art skills](https://skills.suedeai.ai/directory/topics/generative-art/): 3 listed skills.
+  - [3D Generation and Rendering skills](https://skills.suedeai.ai/directory/topics/3d-generation/): 7 listed skills.
+  - [Design Systems and Tokens skills](https://skills.suedeai.ai/directory/topics/design-systems/): 20 listed skills.
+  - [Figma and Design Tools skills](https://skills.suedeai.ai/directory/topics/figma/): 14 listed skills.
+  - [UI and UX Design skills](https://skills.suedeai.ai/directory/topics/ui-ux-design/): 24 listed skills.
+  - [Color and Typography skills](https://skills.suedeai.ai/directory/topics/color-typography/): 14 listed skills.
+  - [Diagrams and Infographics skills](https://skills.suedeai.ai/directory/topics/diagrams-infographics/): 19 listed skills.
+  - [Image Recognition and Analysis skills](https://skills.suedeai.ai/directory/topics/image-analysis/): 4 listed skills.
+  - [AI Video Generation skills](https://skills.suedeai.ai/directory/topics/video-generation/): 18 listed skills.
+  - [Video Editing skills](https://skills.suedeai.ai/directory/topics/video-editing/): 10 listed skills.
+  - [Video Enhancement skills](https://skills.suedeai.ai/directory/topics/video-enhancement/): 3 listed skills.
+  - [Video Avatars and AI Presenters skills](https://skills.suedeai.ai/directory/topics/video-avatars/): 11 listed skills.
+  - [Subtitles and Captions skills](https://skills.suedeai.ai/directory/topics/subtitles-captions/): 6 listed skills.
+  - [Animation and Motion Graphics skills](https://skills.suedeai.ai/directory/topics/animation-motion/): 23 listed skills.
+  - [YouTube Tools skills](https://skills.suedeai.ai/directory/topics/youtube/): 21 listed skills.
+  - [Short-Form Clips and Reels skills](https://skills.suedeai.ai/directory/topics/short-form-clips/): 7 listed skills.
+  - [Screen Recording and Product Demos skills](https://skills.suedeai.ai/directory/topics/screen-recording/): 8 listed skills.
+  - [Video Scripts and Storyboards skills](https://skills.suedeai.ai/directory/topics/video-scripts/): 7 listed skills.
+  - [Video Ads skills](https://skills.suedeai.ai/directory/topics/video-ads/): 45 listed skills.
+  - [Video Analysis and Summaries skills](https://skills.suedeai.ai/directory/topics/video-understanding/): 8 listed skills.
+  - [Music Generation skills](https://skills.suedeai.ai/directory/topics/music-audio/): 9 listed skills.
+  - [Text to Speech and Voiceover skills](https://skills.suedeai.ai/directory/topics/text-to-speech/): 11 listed skills.
+  - [Transcription and Speech to Text skills](https://skills.suedeai.ai/directory/topics/speech-to-text/): 10 listed skills.
+  - [Voice Cloning and Voice Changers skills](https://skills.suedeai.ai/directory/topics/voice-cloning/): 3 listed skills.
+  - [Podcast Tools skills](https://skills.suedeai.ai/directory/topics/podcasts/): 4 listed skills.
+  - [Audio Editing and Mastering skills](https://skills.suedeai.ai/directory/topics/audio-editing/): 4 listed skills.
+  - [Sound Effects skills](https://skills.suedeai.ai/directory/topics/sound-effects/): 3 listed skills.
+  - [Lyrics and Songwriting skills](https://skills.suedeai.ai/directory/topics/lyrics-songwriting/): 9 listed skills.
+  - [Music Release and Rights skills](https://skills.suedeai.ai/directory/topics/music-release-rights/): 5 listed skills.
+  - [Tutoring and Courses skills](https://skills.suedeai.ai/directory/topics/tutoring-courses/): 5 listed skills.
+  - [Health and Medical skills](https://skills.suedeai.ai/directory/topics/health-medical/): 15 listed skills.
+  - [Personal Finance skills](https://skills.suedeai.ai/directory/topics/personal-finance/): 5 listed skills.
+  - [Fun Tools skills](https://skills.suedeai.ai/directory/topics/fun-tools/): 5 listed skills.
+  - [Experiments and Playgrounds skills](https://skills.suedeai.ai/directory/topics/experiments-playgrounds/): 3 listed skills.
+  - [Job Search skills](https://skills.suedeai.ai/directory/topics/job-search/): 10 listed skills.
+  - [Career Coaching skills](https://skills.suedeai.ai/directory/topics/career-coaching/): 6 listed skills.
+  - [Personal Productivity skills](https://skills.suedeai.ai/directory/topics/personal-productivity/): 4 listed skills.
+  - [Events and Weddings skills](https://skills.suedeai.ai/directory/topics/events-weddings/): 3 listed skills.
+  - [Market Research skills](https://skills.suedeai.ai/directory/topics/market-research/): 12 listed skills.
+  - [Press Releases and PR skills](https://skills.suedeai.ai/directory/topics/press-releases/): 4 listed skills.
+  - [Newsletters skills](https://skills.suedeai.ai/directory/topics/newsletters/): 6 listed skills.
+- [Skills by cost and license](https://skills.suedeai.ai/directory/pricing/): free and open source (3,478), free skill, needs a service (287), non-commercial license (80), restricted license (26).
+- [Skills by capability](https://skills.suedeai.ai/directory/features/): 14 capability filters, including official publishers, MCP servers, API keys and no-setup skills.
+- [New agent skills](https://skills.suedeai.ai/directory/new/): 7 skills newly listed and 2,979 updated in the 30 days before the October 22, 2026 snapshot.
+- [Top 100 agent skills](https://skills.suedeai.ai/directory/top/): the highest Suede Skill Check scores among third-party skills.
 - [Agent skills guides](https://skills.suedeai.ai/directory/guides/): Guides by Jason Colapietro, Suede AI, built on the directory's published data:
   - [Best SEO, AEO and GEO skills for Claude Code and Codex](https://skills.suedeai.ai/directory/guides/best-seo-skills/): The highest-scoring SEO skills for Claude Code and Codex, by job: audits, schema, AI search (AEO and GEO), keywords, local and programmatic SEO.
   - [How to install agent skills in Claude Code, Codex and Cursor](https://skills.suedeai.ai/directory/guides/install-agent-skills/): Where Claude Code and Codex load skills, how to install from GitHub with one command, how plugin marketplaces work, and what to check before you install.

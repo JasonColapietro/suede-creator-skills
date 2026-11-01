@@ -52,7 +52,7 @@ class DirectoryInstallTests(unittest.TestCase):
         for name in ("scripts/build-directory.mjs", "directory/categories.json",
                      "directory/notes.json", "directory/promotion.json", "directory/featured-projects.json", "directory/services-cta.json",
                      "scripts/directory/featured.mjs", "scripts/directory/badges.mjs", "scripts/directory/editorial.mjs", "scripts/directory/metadata.mjs",
-                     "scripts/directory/check-client.js", "scripts/directory/task-pages.mjs", "directory/task-pages.json", "docs/llms.txt"):
+                     "scripts/directory/check-client.js", "scripts/directory/task-pages.mjs", "directory/task-pages.json", "scripts/directory/topics.mjs", "scripts/directory/facets.mjs", "scripts/directory/listed-since.mjs", "directory/topics.json", "docs/llms.txt"):
             target = cls.root / name
             target.parent.mkdir(parents=True, exist_ok=True)
             shutil.copy2(ROOT / name, target)
@@ -132,10 +132,10 @@ class DirectoryInstallTests(unittest.TestCase):
         self.assertIn('submit/#improve', page)
         self.assertIn('Points', page)
         repo = (self.root / 'docs/directory/fixture/low/index.html').read_text()
-        row = repo.split('<tr id="low-row">', 1)[1].split('</tr>', 1)[0]
+        row = repo.split('<tr id="low-row" ', 1)[1].split('</tr>', 1)[0]
         self.assertIn('Improve this score', row)
         self.assertNotIn('Get badges', row)
-        self.assertNotIn('Get badges', repo.split('<tr id="low-page">', 1)[1].split('</tr>', 1)[0])
+        self.assertNotIn('Get badges', repo.split('<tr id="low-page" ', 1)[1].split('</tr>', 1)[0])
 
     def test_builder_rejects_invented_score_or_security_result(self):
         path = self.root / 'directory/skills.json'

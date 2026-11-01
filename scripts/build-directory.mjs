@@ -21,6 +21,9 @@ import { featuredProjectsHtml, directoryMembers, directoryMembersHtml } from "./
 import { parseGuide, renderGuideBody } from "./directory/editorial.mjs";
 import { fitSentences } from "./directory/metadata.mjs";
 import { loadTaskConfig, planTasks, planAlternatives, isFirstParty, withArticle, TASK_GATE } from "./directory/task-pages.mjs";
+import { loadTopicConfig, planTopics, topicsBySkill, similarByTopic, TOPIC_GATE } from "./directory/topics.mjs";
+import { LANES, FLAGS, laneById, flagById, costLane, skillFlags, planFacets } from "./directory/facets.mjs";
+import { loadListedSince, applyListedSince, serializeLedger, isNewListing, isRecentlyUpdated, NEW_DAYS } from "./directory/listed-since.mjs";
 
 const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const docsRoot = path.join(repoRoot, "docs");
@@ -383,7 +386,7 @@ for (const r of repos.values()) {
   r.licenseCounts = [...licCounts.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
 }
 
-const RESERVED = new Set(["agents", "methodology", "submit", "badges", "featured", "guides", "check", "for", ...categories.map((c) => c.slug)]);
+const RESERVED = new Set(["agents", "methodology", "submit", "badges", "featured", "guides", "check", "for", "topics", "pricing", "features", "new", "top", "saved", ...categories.map((c) => c.slug)]);
 for (const r of repos.values()) {
   const owner = r.slug.split("/")[0];
   if (RESERVED.has(owner)) throw new Error(`owner slug "${owner}" collides with a reserved directory path`);
@@ -446,11 +449,51 @@ const altNameCount = new Map();
 for (const a of ALTERNATIVES) altNameCount.set(a.s.name.toLowerCase(), (altNameCount.get(a.s.name.toLowerCase()) || 0) + 1);
 const altName = (s) => (altNameCount.get(s.name.toLowerCase()) > 1 ? `${displayName(s)} by ${s.owner}` : displayName(s));
 
+// ------------------------------------------------------------------ browse plan
+
+// Topic pages (the subcategory and task layer under the categories), cost
+// lanes, capability flags and listing dates. directory/topics.json holds the
+// taxonomy; scripts/directory/facets.mjs derives lanes and flags from
+// published fields; directory/listed-since.json records when each skill was
+// first listed.
+const TOPICS_PATH = "directory/topics/";
+const PRICING_PATH = "directory/pricing/";
+const FEATURES_PATH = "directory/features/";
+const NEW_PATH = "directory/new/";
+const TOP_PATH = "directory/top/";
+const SAVED_PATH = "directory/saved/";
+const FEED_PATH = "directory/feed.xml";
+const TOP_MAX = 100;
+const FACET_TABLE_MAX = 400;
+for (const s of data.skills) {
+  s.lane = costLane(s);
+  s.flags = skillFlags(s);
+}
+const TOPIC_CONFIG = loadTopicConfig(path.join(repoRoot, "directory", "topics.json"), new Set(categories.map((c) => c.slug)));
+const TOPIC_PLAN = planTopics(TOPIC_CONFIG, data.skills);
+const TOPICS = TOPIC_PLAN.topics.filter((t) => t.published);
+const TOPICS_BY_SKILL = topicsBySkill(TOPIC_PLAN);
+const topicPath = (t) => `${TOPICS_PATH}${t.topic.id}/`;
+const groupById = new Map(TOPIC_CONFIG.groups.map((g) => [g.id, g]));
+const FACETS = planFacets(data.skills);
+const LANES_LIVE = FACETS.lanes.filter((l) => l.rows.length);
+const FLAGS_LIVE = FACETS.flags.filter((f) => f.rows.length);
+const lanePath = (id) => `${PRICING_PATH}${id}/`;
+const flagPath = (id) => `${FEATURES_PATH}${id}/`;
+const LISTED_FILE = path.join(repoRoot, "directory", "listed-since.json");
+const LISTED_NEXT = applyListedSince(loadListedSince(LISTED_FILE), data.skills, data.generated).next;
+const LISTED_FLOOR = Object.values(LISTED_NEXT.dates).reduce((m, d) => (d < m ? d : m), data.generated);
+const byScore = (a, b) => b.score - a.score || b.lists.length - a.lists.length || a.id.localeCompare(b.id);
+const NEW_LISTINGS = data.skills.filter((s) => !isFirstParty(s) && isNewListing(s, data.generated, LISTED_FLOOR)).sort((a, b) => b.listed_since.localeCompare(a.listed_since) || byScore(a, b));
+const RECENTLY_UPDATED = data.skills.filter((s) => !isFirstParty(s) && isRecentlyUpdated(s, data.generated)).sort((a, b) => b.commit_date.localeCompare(a.commit_date) || byScore(a, b));
+const TOP_SKILLS = data.skills.filter((s) => !isFirstParty(s)).sort(byScore).slice(0, TOP_MAX);
+
 // ------------------------------------------------------------------ chrome
 
 const NAV_LINKS = [
   ["", "Home"],
   ["directory/", "Skills"],
+  ["directory/topics/", "Topics"],
   ["directory/featured/", "Featured Skills"],
   ...(fs.existsSync(path.join(repoRoot, "directory/agents.json")) ? [["directory/agents/", "Agents"]] : []),
   ["directory/methodology/", "How listing works"],
@@ -478,6 +521,7 @@ function nav(here, absolute = false) {
       </summary>
       <div class="nav-links">
 ${links}
+          <a href="${rel(here, "directory/saved/")}" data-saved-link>Saved <span class="count-chip" data-saved-count hidden></span></a>
           <a href="${rel(here, "directory/submit/")}" class="nav-cta">List your skill</a>
         </div>
     </details>
@@ -500,6 +544,14 @@ function footer(here, note, absolute = false) {
             <a href="${rel(here, "directory/")}">Directory</a>
             <span class="footer-divider" aria-hidden="true">|</span>
             <a href="${rel(here, "directory/methodology/")}">How skills are listed</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="${rel(here, "directory/topics/")}">Topics</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="${rel(here, "directory/new/")}">New skills</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="${rel(here, "directory/top/")}">Top 100</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="${rel(here, "directory/feed.xml")}">RSS feed</a>
             <span class="footer-divider" aria-hidden="true">|</span>
             <a href="https://suedeai.ai" target="_blank" rel="noopener">suedeai.ai</a>
             <span class="footer-divider" aria-hidden="true">|</span>
@@ -582,6 +634,7 @@ function page({ here, title, description, keywords, h1Html, body, jsonld, ogType
     `    <link rel="stylesheet" href="${a}skill.css">`,
     `    <link rel="stylesheet" href="${a}directory.css">`,
     `    <script src="${a}directory.js" defer></script>`,
+    `    <link rel="alternate" type="application/rss+xml" title="Suede AI Skills Directory: new listings and guides" href="${absolute ? "/directory/feed.xml" : rel(here, "directory/feed.xml")}">`,
     here.startsWith("directory/agents/") ? `    <link rel="stylesheet" href="${a}agents.css">\n    <script src="${a}agents.js" defer></script>` : null,
     extraStyle ? `    <style>${extraStyle}</style>` : null,
   ].filter(Boolean);
@@ -949,6 +1002,20 @@ function reportPanel(here, s) {
         </div>`;
 }
 
+// Sort and facet data for the table tools in docs/assets/directory.js.
+const rowData = (s) => `data-id="${esc(s.id)}" data-name="${esc(displayName(s).toLowerCase())}" data-score="${s.score}" data-updated="${s.commit_date}" data-listed="${s.listed_since}" data-cited="${s.lists.length}" data-lane="${s.lane}" data-flags="${s.flags.join(" ")}" data-featured="${s.featured ? 1 : 0}"`;
+const TABLE_SORTS = [["listing", "Full pages first, then name"], ["score", "Quality score"], ["name", "Name A to Z"], ["updated", "Recently updated"], ["listed", "Newest listings"], ["cited", "Most cited"]];
+function tableTools(id, rows) {
+  const chip = (facet, value, label, n) => `<button type="button" class="facet-chip" data-facet="${facet}" data-value="${value}" aria-pressed="false">${esc(label)} <span class="count-chip">${fmt(n)}</span></button>`;
+  const lanes = LANES.map((l) => [l, rows.filter((s) => s.lane === l.id).length]).filter(([, n]) => n);
+  const flags = FLAGS.map((f) => [f, rows.filter((s) => s.flags.includes(f.id)).length]).filter(([, n]) => n);
+  return `        <div class="table-tools" data-table-tools="${id}" hidden>
+          <label class="tools-label" for="${id}-sort">Sort by</label>
+          <select id="${id}-sort" data-sort-for="${id}">${TABLE_SORTS.map(([v, l]) => `<option value="${v}">${l}</option>`).join("")}</select>
+${lanes.length > 1 ? `          <fieldset class="facet-chips" data-facet-for="${id}"><legend>Cost</legend>${lanes.map(([l, n]) => chip("lane", l.id, l.label, n)).join("")}</fieldset>\n` : ""}${flags.length ? `          <fieldset class="facet-chips" data-facet-for="${id}"><legend>Capabilities</legend>${flags.map(([f, n]) => chip("flag", f.id, f.label, n)).join("")}</fieldset>\n` : ""}          <button type="button" class="tools-reset" data-tools-reset>Reset</button>
+        </div>`;
+}
+
 function skillRow(here, s, { showRepo, showLicense = false }) {
   const cat = catBySlug.get(s.category);
   const nameCell = s.featured
@@ -971,7 +1038,7 @@ function skillRow(here, s, { showRepo, showLicense = false }) {
         ? `<p><a href="${rel(here, skillPath(s))}#badge">Get badges</a></p>`
         : `<details class="row-badges"><summary>Get badges</summary>${qualityBadgeContent(s, `-${s.slug}`)}</details>`;
   const report = showRepo ? "" : `<p class="row-report">${reportLinks(here, s)}</p>`;
-  return `            <tr${id}><td class="name">${nameCell} ${gradeChip(s)}</td><td class="meta">${second}</td><td class="desc">${esc(desc)}${badges}${report}</td></tr>`;
+  return `            <tr${id} ${rowData(s)}><td class="name">${nameCell} ${gradeChip(s)}</td><td class="meta">${second}</td><td class="desc">${esc(desc)}${badges}${report}</td></tr>`;
 }
 
 function skillTable(here, rows, { id, showRepo, caption, showLicense = false }) {
@@ -1262,8 +1329,12 @@ function renderSkill(s) {
     ["Publisher", `<a href="https://github.com/${esc(s.owner)}" target="_blank" rel="noopener">${esc(publisherName(s.owner, s.official))}</a>${officialTag(s.official)}`],
     ["Repository", repoCell],
     ["Category", `<a href="${rel(here, catPath(cat.slug))}">${esc(cat.title)}</a>`],
+    ["Topics", (TOPICS_BY_SKILL.get(s.id) || []).slice(0, 6).map((t) => `<a href="${rel(here, topicPath(t))}">${esc(t.topic.name)}</a>`).join(", ")],
+    ["Cost", `<a href="${rel(here, lanePath(s.lane))}">${esc(laneById.get(s.lane).label)}</a>`],
+    ["Capabilities", s.flags.filter((f) => f !== "full-page").map((f) => `<a href="${rel(here, flagPath(f))}">${esc(flagById.get(f).label)}</a>`).join(", ")],
     ["License", `<a href="${esc(s.license_url)}" target="_blank" rel="noopener">${esc(s.license)}</a>${s.license_evidence?.length > 1 ? "<ul>" + s.license_evidence.map(e => `<li><a href="https://github.com/${esc(s.repo)}/blob/${esc(s.branch)}/${esc(e.file)}" target="_blank" rel="noopener">${esc(e.label)} (${esc(e.file)})</a></li>`).join("") + "</ul>" : ""}`],
     ["Last commit", `${longDate(s.commit_date)} (repository)`],
+    ["Listed since", s.listed_since === LISTED_FLOOR ? `${longDate(s.listed_since)} or earlier` : longDate(s.listed_since)],
     ["SKILL.md", `${plural(s.body_lines, "line")}, ${plural(s.body_words, "word")}`],
     ["Bundled files", `${plural(s.file_count, "file")}${kinds.length ? `, including ${kinds.join(", ")}` : ""}`],
     ["Quality score", `${gradeChip(s)} <a href="#check">${checkSummary(s)}</a>`],
@@ -1294,9 +1365,11 @@ ${fileNames.map((f) => `          <li><code>${esc(f)}</code></li>`).join("\n")}
   const h = [...s.id].reduce((acc, ch) => (acc * 31 + ch.charCodeAt(0)) >>> 0, 7);
   const related = [...new Map(Array.from({ length: Math.min(6, sameCat.length) }, (_, k) => sameCat[(h + k * 7) % sameCat.length]).map((o) => [o.id, o])).values()];
   const siblings = r.skills.filter((o) => o.featured && o.id !== s.id).slice(0, 6);
+  const skillFaq = faqBlock(here, skillFaqItems(s));
   const body = `${bc.html}
       <p class="lead">${esc(ensureSentence(s.summary))}</p>
-      <p><a class="button" href="${esc(s.folder_url)}" target="_blank" rel="noopener">View on GitHub</a> <a class="button secondary" href="${esc(s.skill_md_url)}" target="_blank" rel="noopener">Read SKILL.md</a></p>
+      <p><a class="button" href="${esc(s.folder_url)}" target="_blank" rel="noopener">View on GitHub</a> <a class="button secondary" href="${esc(s.skill_md_url)}" target="_blank" rel="noopener">Read SKILL.md</a> ${saveButton(s)}</p>
+${shareRow(here, `${displayName(s)}: agent skill by ${publisherName(s.owner, s.official)}`)}
       <section class="panel" aria-labelledby="facts-title">
         <h2 id="facts-title">At a glance</h2>
 ${facts}
@@ -1342,6 +1415,10 @@ ${pointRows}
         <h2 id="cited-title">Where this skill is cited</h2>
         <p>${s.lists.length ? `${esc(s.repo)} appears in ${plural(s.lists.length, "curated list")}: ${s.lists.map(listLink).join(", ")}.` : `${esc(s.repo)} is listed from its publisher's official collection or a listing request.`}</p>${citationEvidence(s.repo)}
       </section>
+${strengthsPanel(s)}
+${reviewsPanel(here, s)}
+${skillFaq.html}
+${similarPanel(here, s)}
 ${guideLinksPanel(here, skillGuides(s), "Read next")}
 ${related.length ? `      <section class="panel" aria-labelledby="related-title">
         <h2 id="related-title">More ${esc(cat.short)} skills</h2>
@@ -1414,6 +1491,7 @@ ${servicesCta("skill", s.category, here, { compact: true, publisher: publisherCl
         mainEntity: code,
       },
       bc.ld,
+      skillFaq.ld,
     ],
     footerNote: `${esc(displayName(s))} is published by ${esc(s.owner)} in ${esc(s.repo)} and listed in the Suede AI Skills Directory, a curated index of public Agent Skills.`,
   }));
@@ -1602,6 +1680,7 @@ ${answer}
       <p><a class="button secondary" href="${rel(here, "directory/")}?category=${esc(c.slug)}#browse">Build a shortlist for your task →</a></p>
       <section class="panel" aria-labelledby="all-title">
         <h2 id="all-title">All ${fmt(all.length)} ${esc(c.short)} skills</h2>
+${tableTools("all-skills", all)}
 ${filterField("all-skills", all.length, "skills")}
 ${skillTable(here, sorted, { id: "all-skills", showRepo: true, caption: `${c.short} skills` })}
       </section>
@@ -1609,6 +1688,7 @@ ${skillTable(here, sorted, { id: "all-skills", showRepo: true, caption: `${c.sho
         <h2 id="choose-title">How to choose ${esc(c.lower)} skills</h2>
 ${c.guide.map((p) => `        <p>${esc(p)}</p>`).join("\n")}
       </section>
+${topicChipsPanel(here, c)}
 ${tasksPanel(here, TASKS.filter((t) => t.rows.some((s) => s.category === c.slug)), `Best ${c.short} skills by task`)}
 ${guideLinksPanel(here, pageGuides(here), `${c.short[0].toUpperCase()}${c.short.slice(1)} guides`)}
 ${picks.length ? `      <section class="panel" aria-labelledby="picks-title">
@@ -2119,6 +2199,7 @@ function renderHub() {
     category: s.category, label: catBySlug.get(s.category).label, license: s.license,
     grade: s.grade, score: s.score, href: listingTarget(s).replace(BASE, ""), full: s.featured,
     report: `/${skillPath(s)}report.json`, snapshot: snapshot.date, method: SCORE_METHOD,
+    id: s.id, lane: s.lane, flags: s.flags, topics: (TOPICS_BY_SKILL.get(s.id) || []).map((t) => t.topic.id), listed: s.listed_since, updated: s.commit_date,
   }))) + "\n");
   const starters = categories.slice(0, 8).map((c) => discovery.find((s) => s.featured && s.category === c.slug)).filter(Boolean);
   const starterRows = starters.map((s) => `<article class="discovery-row"><div><p class="result-meta">${esc(catBySlug.get(s.category).label)} <span> / ${esc(s.repo)}</span></p><h3><a href="${rel(here, skillPath(s))}">${esc(displayName(s))}</a></h3><p>${esc(s.summary || trimTo(s.description, 180))}</p><p class="result-foot">${esc(s.license)} · Full skill page</p></div><div class="result-quality">${s.shielded ? `<img class="result-shield" src="badges/score-${s.score}.svg" alt="Suede S shield" width="80" height="88" loading="lazy">` : ""}<span class="grade grade-${s.grade.toLowerCase()}">${s.score}/100 · ${s.grade}</span></div></article>`).join("\n");
@@ -2133,7 +2214,7 @@ function renderHub() {
           <label for="directory-query">Search skills</label>
           <div class="search-line"><span aria-hidden="true" class="search-icon">⌕</span><input id="directory-query" name="q" type="search" placeholder="Try SEO audits, React, or code review" autocomplete="off" aria-describedby="search-help" aria-keyshortcuts="Control+k Meta+k"><button type="button" data-clear>Clear</button><kbd aria-hidden="true">Ctrl K</kbd></div>
           <p id="search-help" class="muted">Search by task, skill name or publisher.</p>
-          <div class="discovery-filters"><label>Category<select name="category"><option value="">All categories</option>${categories.map((c) => `<option value="${esc(c.slug)}">${esc(c.title)}</option>`).join("")}</select></label><label>Quality grade<select name="grade"><option value="">All grades</option>${GRADE_BANDS.map(([g, band]) => `<option value="${g}">${g} · ${band}</option>`).join("")}</select></label><label>Sort by<select name="sort"><option value="curated">Most-cited collections</option><option value="name">Name A–Z</option><option value="score">Quality score</option></select></label></div>
+          <div class="discovery-filters"><label>Category<select name="category"><option value="">All categories</option>${categories.map((c) => `<option value="${esc(c.slug)}">${esc(c.title)}</option>`).join("")}</select></label><label>Quality grade<select name="grade"><option value="">All grades</option>${GRADE_BANDS.map(([g, band]) => `<option value="${g}">${g} · ${band}</option>`).join("")}</select></label><label>Cost<select name="lane"><option value="">Any cost or license</option>${LANES_LIVE.map((l) => `<option value="${l.lane.id}">${esc(l.lane.label)}</option>`).join("")}</select></label><label>Capability<select name="flag"><option value="">Any capability</option>${FLAGS_LIVE.map((f) => `<option value="${f.flag.id}">${esc(f.flag.label)}</option>`).join("")}</select></label><label>Sort by<select name="sort"><option value="curated">Most-cited collections</option><option value="name">Name A–Z</option><option value="score">Quality score</option><option value="listed">Newest listings</option><option value="updated">Recently updated</option></select></label></div>
         </form>
         <div class="discovery-layout">
           <aside class="category-rail"><details open><summary id="categories">Browse ${categories.length} categories</summary><nav aria-label="Skill categories"><a href="./" data-category="" aria-current="true"><span>All skills</span><span class="count-chip">${fmt(data.skills.length)}</span></a>${catCards}</nav></details></aside>
@@ -2150,6 +2231,7 @@ function renderHub() {
         </section>
       </section>
       <a class="featured-callout" href="featured/"><span><span class="featured-kind">The editorial selection</span><strong>Featured projects</strong><span>${listPhrase(EDITORIAL.projects.map((p) => esc(p.name)))}: explore the reviewed projects.</span></span><span aria-hidden="true">↗</span></a>
+${browseWaysPanel(here)}
       <aside class="directory-scoring" aria-label="Suede AI quality grades"><p><b>Structure. Description. Depth. Maintenance.</b> Every skill has a published quality score from 0–99.</p><a href="methodology/">What the scores measure →</a></aside>
 ${campaignPanel(here, campaignVariant("home-hero-secondary", here), { quiet: true })}
 ${tasksPanel(here, TASKS, "Best Claude Code skills by task")}
@@ -2786,6 +2868,538 @@ function render404() {
   }));
 }
 
+// ------------------------------------------------------------------ browse pages
+
+const REVIEW_FORM = "https://github.com/JasonColapietro/suede-creator-skills/issues/new?template=directory-review.yml";
+const REVIEW_SEARCH = "https://github.com/JasonColapietro/suede-creator-skills/issues";
+const titleTaken = new Set([...categories.map((c) => c.seo_title.toLowerCase())]);
+function pickTitle(candidates, label) {
+  const t = candidates.find((x) => x.length <= 60 && !titleTaken.has(x.toLowerCase()));
+  if (!t) throw new Error(`${label}: no unique title fits 60 characters`);
+  titleTaken.add(t.toLowerCase());
+  return t;
+}
+const listingHref = (here, s) => {
+  if (s.featured) return rel(here, skillPath(s));
+  const r = repos.get(s.repo_slug);
+  return r.hasPage ? `${rel(here, r.target)}#${s.slug}` : s.folder_url;
+};
+const listingLink = (here, s) => {
+  const h = listingHref(here, s);
+  return /^https:/.test(h) ? `<a href="${esc(h)}" target="_blank" rel="noopener">${esc(displayName(s))}</a>` : `<a href="${h}">${esc(displayName(s))}</a>`;
+};
+
+function saveButton(s) {
+  return `<button type="button" class="save-button" data-save="${esc(s.id)}" data-save-name="${esc(displayName(s))}" data-save-href="./" data-save-repo="${esc(s.repo)}" data-save-score="${s.score}" data-save-grade="${s.grade}" data-save-category="${esc(catBySlug.get(s.category).label)}" data-save-license="${esc(s.license)}" aria-pressed="false">Save</button>`;
+}
+
+function shareRow(here, text) {
+  const u = movedUrl(url(here));
+  const x = `https://x.com/intent/post?url=${encodeURIComponent(u)}&text=${encodeURIComponent(text)}`;
+  const li = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(u)}`;
+  return `      <div class="share" data-share><span class="share-label">Share</span><a href="${esc(x)}" target="_blank" rel="noopener">X</a><a href="${esc(li)}" target="_blank" rel="noopener">LinkedIn</a><button type="button" data-copy-url="${esc(u)}">Copy link</button></div>`;
+}
+
+// What earns the skill its score and what a reader should check, from the
+// rubric and the install record only.
+function strengthsPanel(s) {
+  const good = [];
+  const parts = s.score_parts;
+  for (const p of parts.filter((p) => p.points === p.max && p.max > 0).sort((a, b) => b.max - a.max)) good.push(`Full points for ${p.label.toLowerCase()} (${p.points} of ${p.max}).`);
+  if (s.official) good.push(`Published by ${publisherName(s.owner, true)}, the company behind the tool it works with.`);
+  if (s.lists.length >= 2) good.push(`Its repository is cited by ${plural(s.lists.length, "curated list")}.`);
+  if (s.flags.includes("no-setup")) good.push("Its files read no credential, call no outside host, connect to no MCP server and run no command.");
+  const check = [];
+  for (const p of parts.filter((p) => p.points < p.max && p.id !== "adoption").sort((a, b) => b.max - b.points - (a.max - a.points))) check.push(`${p.label}: ${p.points} of ${p.max} points.`);
+  const i = s.install || {};
+  const creds = [...new Set([...(i.env_read || []), ...(i.env_docs || [])])];
+  if (creds.length) check.push(`Needs ${listPhrase(creds.slice(0, 4))}${creds.length > 4 ? " and more" : ""} set in your environment.`);
+  if (i.mcp || (i.mcp_tools || []).length) check.push("Connects to an MCP server you configure separately.");
+  if (s.lane === "noncommercial") check.push(`${s.license} allows non-commercial use only.`);
+  if (s.lane === "restricted") check.push(`${s.license}: read the terms at the source before you install.`);
+  check.push("Security scan: not scanned by the directory. Read SKILL.md and any scripts before you install.");
+  return `      <section class="panel" id="strengths" aria-labelledby="strengths-title">
+        <h2 id="strengths-title">Strengths and open points</h2>
+        <div class="pros-cons">
+          <div><h3>What it does well</h3><ul>${good.map((g) => `<li>${esc(g)}</li>`).join("")}</ul></div>
+          <div><h3>What to check</h3><ul>${check.map((c) => `<li>${esc(c)}</li>`).join("")}</ul></div>
+        </div>
+      </section>`;
+}
+
+function reviewsPanel(here, s) {
+  const write = `${REVIEW_FORM}&title=${encodeURIComponent(`Review: ${s.id}`)}&skill=${encodeURIComponent(s.id)}&listing=${encodeURIComponent(movedUrl(url(here)))}`;
+  const read = `${REVIEW_SEARCH}?q=${encodeURIComponent(`is:issue label:review "${s.id}"`)}`;
+  return `      <section class="panel" id="reviews" aria-labelledby="reviews-title">
+        <h2 id="reviews-title">Reviews and ratings</h2>
+        <p><b>Directory rating:</b> ${gradeChip(s)} on the <a href="${rel(here, "directory/methodology/")}#score">Suede Skill Check</a>, computed from the skill's published files.</p>
+        <p>Used ${esc(displayName(s))}? Reader reviews are published on GitHub as issues credited to their authors. They never change the score.</p>
+        <p><a class="button secondary" href="${esc(write)}" target="_blank" rel="noopener">Write a review</a> <a href="${esc(read)}" target="_blank" rel="noopener">Read reviews of ${esc(displayName(s))}</a></p>
+      </section>`;
+}
+
+function skillFaqItems(s) {
+  const name = displayName(s);
+  const who = publisherName(s.owner, s.official);
+  const cat = catBySlug.get(s.category);
+  const i = s.install || {};
+  const creds = [...new Set([...(i.env_read || []), ...(i.env_docs || [])])];
+  const mcpTools = i.mcp_tools || [];
+  const needs = [
+    creds.length ? `reads ${listPhrase(creds.slice(0, 4))}${creds.length > 4 ? " and other variables" : ""}` : "",
+    mcpTools.length ? `calls tools from the ${listPhrase(mcpTools)} MCP server${mcpTools.length > 1 ? "s" : ""}` : i.mcp ? "mentions an MCP server" : "",
+    (i.hosts || []).length ? `names ${listPhrase(i.hosts.slice(0, 3))}` : i.net ? "uses an HTTP client or cloud SDK" : "",
+  ].filter(Boolean);
+  const free = {
+    "free-open-source": `Yes. ${who} publishes ${name} under ${s.license}, an open-source or open-content license, and its files name no paid service, API key or hosted account.`,
+    "free-with-service": `The skill is free under ${s.license}. Its files ${listPhrase(needs.length ? needs : ["connect to an outside service"])}, so the service it talks to may need an account or a paid plan.`,
+    noncommercial: `${name} is free for non-commercial use under ${s.license}. Check the license before using it in paid work.`,
+    restricted: `${who} publishes ${name} under its own terms (${s.license}). Read them at the source before you install.`,
+  }[s.lane];
+  const install = s.lane === "restricted"
+    ? `Follow ${who}'s install route shown on this page; its license restricts copying the files.`
+    : `Run npx skills add ${skillTreeUrl(s)} from your project, or copy the folder into .claude/skills/ for Claude Code or .agents/skills/ for Codex. The install section lists each route.`;
+  const faq = [
+    [`What does ${name} do?`, `${ensureSentence(s.summary)} It is listed in ${cat.title} on ${SITE_LABEL}.`],
+    [`Is ${name} free?`, free],
+    [`How do I install ${name}?`, install],
+    [`Does ${name} need an API key or MCP server?`, needs.length ? `Yes. At the ${longDate(data.generated)} snapshot its files ${listPhrase(needs)}. The Before you install section lists the details.` : `No. At the ${longDate(data.generated)} snapshot its files read no credential, connect to no MCP server and call no outside host.`],
+    [`How good is ${name}?`, `It scores ${s.score}/100, grade ${s.grade}, on the Suede Skill Check, which adds structure, description quality, instruction depth, bundled files, maintenance and curated-list citations from its published files.`],
+  ];
+  const alt = altBySkill.get(s.id);
+  const similar = similarByTopic(s, TOPICS_BY_SKILL, 3).filter((o) => !isFirstParty(o));
+  if (!isFirstParty(s) && alt) faq.push([`What are alternatives to ${name}?`, `${listPhrase(alt.peers.slice(0, 3).map((o) => `${displayName(o)} from ${o.repo}`))} do similar work. Its alternatives page compares ${plural(alt.peers.length, "skill")} from other publishers.`]);
+  else if (!isFirstParty(s) && similar.length) faq.push([`What are alternatives to ${name}?`, `Skills that share its topics include ${listPhrase(similar.map((o) => `${displayName(o)} from ${o.repo}`))}.`]);
+  return faq;
+}
+
+function similarPanel(here, s) {
+  if (isFirstParty(s)) return "";
+  const list = similarByTopic(s, TOPICS_BY_SKILL, 6).filter((o) => !isFirstParty(o));
+  if (!list.length) return "";
+  return `      <section class="panel" aria-labelledby="similar-title">
+        <h2 id="similar-title">Similar skills</h2>
+        <p class="muted">Skills from other publishers that share the most topics with ${esc(displayName(s))}.</p>
+        <div class="links">
+${list.map((o) => `          <a class="link-row" href="${rel(here, skillPath(o))}"><b>${esc(displayName(o))}</b><span>${esc(o.repo)} &middot; ${o.score}/100</span></a>`).join("\n")}
+        </div>
+      </section>`;
+}
+
+const topicChip = (here, t, n) => `<a href="${rel(here, topicPath(t))}">${esc(t.topic.name)} <span class="count-chip">${fmt(n)}</span></a>`;
+function topicChipsPanel(here, c) {
+  const list = TOPICS.map((t) => [t, t.rows.filter((s) => s.category === c.slug).length]).filter(([, n]) => n >= 2).sort((a, b) => b[1] - a[1] || a[0].topic.name.localeCompare(b[0].topic.name)).slice(0, 30);
+  if (!list.length) return "";
+  return `      <section class="panel" aria-labelledby="topics-title">
+        <h2 id="topics-title">${esc(c.short[0].toUpperCase() + c.short.slice(1))} skills by topic</h2>
+        <p class="topic-chips">${list.map(([t, n]) => topicChip(here, t, n)).join("")}</p>
+        <p><a href="${rel(here, TOPICS_PATH)}">All topics</a> &middot; <a href="${rel(here, PRICING_PATH)}">Skills by cost and license</a> &middot; <a href="${rel(here, FEATURES_PATH)}">Skills by capability</a></p>
+      </section>`;
+}
+
+function browseWaysPanel(here) {
+  const rows = [
+    TOPICS.length ? [TOPICS_PATH, "Topics", `${TOPICS.length} topics in ${TOPIC_CONFIG.groups.length} groups, from ${listPhrase(TOPICS.slice(0, 3).map((t) => t.topic.name))} to ${TOPICS.at(-1).topic.name}`] : null,
+    [PRICING_PATH, "Cost and license", LANES_LIVE.map((l) => `${l.lane.label} (${fmt(l.rows.length)})`).join(" &middot; ")],
+    [FEATURES_PATH, "Capabilities", `${FLAGS_LIVE.length} filters: official publishers, MCP servers, API keys, no setup required and more`],
+    [NEW_PATH, "New and updated", `${plural(NEW_LISTINGS.length, "new listing")} and ${plural(RECENTLY_UPDATED.length, "skill")} updated in the last ${NEW_DAYS} days`],
+    TOP_SKILLS.length ? [TOP_PATH, "Top 100", "The highest-scoring third-party skills"] : null,
+    [SAVED_PATH, "Saved skills", "Your saved list, kept in this browser"],
+  ].filter(Boolean);
+  return `      <section class="panel browse-ways" aria-labelledby="browse-ways-title">
+        <h2 id="browse-ways-title">More ways to browse</h2>
+        <div class="links">
+${rows.map(([p, label, text]) => `          <a class="link-row" href="${rel(here, p)}"><b>${label}</b><span>${text}</span></a>`).join("\n")}
+        </div>
+      </section>`;
+}
+
+// One page shape for every browse page: crumbs, an optional lead and the
+// body, a CollectionPage with its ItemList, and the breadcrumb.
+function browsePage({ here, trail, title, description, keywords, eyebrow, h1, body, items, footerNote, extraLd = [] }) {
+  const bc = crumbs(here, trail);
+  files.set(`${here}index.html`, page({
+    here, title, description, keywords: setKeywords(here, keywords),
+    h1Html: `      <div class="eyebrow">${eyebrow}</div>
+      <h1>${h1}</h1>`,
+    body: `${bc.html}\n${body}`,
+    jsonld: [
+      {
+        "@context": "https://schema.org", "@type": "CollectionPage", "@id": `${url(here)}#page`,
+        name: title, description, url: url(here), dateModified: PAGE_DATE, inLanguage: "en",
+        isPartOf: DIRECTORY_REF, publisher: PUBLISHER_REF, breadcrumb: { "@id": `${url(here)}#breadcrumb` },
+        mainEntity: { "@type": "ItemList", numberOfItems: items.length, itemListElement: items.map(([name, u], i) => ({ "@type": "ListItem", position: i + 1, name, url: u })) },
+      },
+      bc.ld,
+      ...extraLd,
+    ],
+    footerNote,
+  }));
+}
+
+function bestOf(rows, n = 3) {
+  const best = [];
+  for (const s of rows.filter((x) => x.featured && !isFirstParty(x)).sort(byScore)) {
+    if (best.some((o) => o.repo_slug === s.repo_slug)) continue;
+    best.push(s);
+    if (best.length === n) break;
+  }
+  return best;
+}
+
+function allTable(here, id, rows, caption) {
+  return `${tableTools(id, rows)}
+${filterField(id, rows.length, "skills")}
+${skillTable(here, rows, { id, showRepo: true, caption })}`;
+}
+
+function renderTopic(t) {
+  const here = topicPath(t);
+  const g = groupById.get(t.topic.group);
+  const { name, noun } = t.topic;
+  const rows = t.rows;
+  const repoCount = new Set(rows.map((s) => s.repo_slug)).size;
+  const full = rows.filter((s) => s.featured).length;
+  const best = bestOf(rows);
+  const intro = t.topic.intro || `Agent skills for ${noun} work in Claude Code, Codex and Cursor, collected from ${plural(repoCount, "repository", "repositories")} across the directory's categories.`;
+  const catCounts = t.categories.map((c) => [c, rows.filter((s) => s.category === c).length]).sort((a, b) => b[1] - a[1]);
+  const scripts = rows.filter((s) => s.has_scripts).length;
+  const service = rows.filter((s) => s.lane === "free-with-service").length;
+  const official = rows.filter((s) => s.official).length;
+  const related = TOPICS.filter((o) => o !== t).map((o) => [o, o.rows.filter((s) => t.reasons.has(s.id)).length]).filter(([o, n]) => n >= 2 || (o.topic.group === t.topic.group && n >= 1)).sort((a, b) => b[1] - a[1] || a[0].topic.name.localeCompare(b[0].topic.name)).slice(0, 8);
+  const tasks = TASKS.filter((k) => k.rows.filter((s) => t.reasons.has(s.id)).length >= 2);
+  const body = `      <p class="lead">${esc(intro)}</p>
+${best.length ? `      <p class="answer"><b>Highest-scoring ${esc(noun)} skills</b> in the ${longDate(data.generated)} snapshot: ${listPhrase(best.map((s) => `<a href="${rel(here, skillPath(s))}">${esc(displayName(s))}</a> from ${esc(s.repo)} (${s.score}/100)`))}. Scores come from the <a href="${rel(here, "directory/methodology/")}">Suede Skill Check</a>.</p>` : ""}
+      <ul class="stat-row" aria-label="Topic size">
+        <li><b>${fmt(rows.length)}</b> listed skills</li>
+        <li><b>${fmt(repoCount)}</b> repositories</li>
+        <li><b>${fmt(full)}</b> with full pages</li>
+      </ul>
+      <p class="muted">${official ? `${fmt(official)} from official publishers. ` : ""}${fmt(scripts)} bundle scripts. ${fmt(service)} connect to an outside service. Listed in ${catCounts.map(([c, n]) => `<a href="${rel(here, catPath(c))}">${esc(catBySlug.get(c).title)}</a> (${fmt(n)})`).join(", ")}.</p>
+      <section class="panel" aria-labelledby="all-title">
+        <h2 id="all-title">All ${fmt(rows.length)} ${esc(noun)} skills</h2>
+${allTable(here, "topic-skills", rows, `${noun} skills`)}
+      </section>
+${t.topic.guide ? `      <section class="panel" aria-labelledby="choose-title">
+        <h2 id="choose-title">How to choose ${esc(noun)} skills</h2>
+${t.topic.guide.map((p) => `        <p>${esc(p)}</p>`).join("\n")}
+      </section>` : ""}
+${tasksPanel(here, tasks, `Ranked ${noun} shortlists`)}
+${related.length ? `      <section class="panel" aria-labelledby="related-topics-title">
+        <h2 id="related-topics-title">Related topics</h2>
+        <p class="topic-chips">${related.map(([o, n]) => topicChip(here, o, o.rows.length)).join("")}</p>
+        <p><a href="${rel(here, TOPICS_PATH)}#group-${g.id}">More ${esc(g.name.toLowerCase())} topics</a></p>
+      </section>` : ""}
+${servicesCta("browse", catCounts[0][0], here)}`;
+  const top = best[0];
+  const n = rows.length;
+  browsePage({
+    here,
+    trail: [["directory/", "Directory"], [TOPICS_PATH, "Topics"], [null, name]],
+    title: pickTitle([`${name} Skills for Claude Code and Codex`, `${name} Agent Skills for Claude Code`, `${name} Agent Skills`, `${name} Skills | Suede AI`], `topic ${t.topic.id}`),
+    description: fitMeta([
+      `Browse ${fmt(n)} ${noun} skills for Claude Code and Codex from ${plural(repoCount, "repository", "repositories")}, graded 0 to 99 and linked to source.${top ? ` ${displayName(top)} leads at ${top.score}/100.` : ""}`,
+      `Browse ${fmt(n)} ${noun} skills for Claude Code and Codex from ${plural(repoCount, "repository", "repositories")}, graded 0 to 99 and linked to source.`,
+      `${fmt(n)} ${noun} skills for Claude Code and Codex, graded 0 to 99.`,
+      `${fmt(n)} ${noun} agent skills for Claude Code, Codex and Cursor, each graded 0 to 99 on the Suede Skill Check.`,
+    ], `topic ${t.topic.id}`),
+    keywords: [`${name.toLowerCase()} skills for claude code and codex`, `${noun} agent skills`, `${noun} claude skills`, `best ${noun} skills`, `${noun} skills for codex`],
+    eyebrow: `Topic &middot; ${esc(g.name)}`,
+    h1: `${esc(name)} skills <span class="h1-sub">for Claude Code and Codex</span>`,
+    body,
+    items: rows.map((s) => [displayName(s), listItemUrl(s)]),
+    footerNote: `${esc(name)} skills on ${SITE_LABEL}. Every skill belongs to its publisher and links to its source.`,
+  });
+}
+
+function renderTopicsHub() {
+  const here = TOPICS_PATH;
+  const groups = TOPIC_PLAN.groups.map(({ group: g, topics }) => {
+    const live = topics.filter((t) => t.published).sort((a, b) => b.rows.length - a.rows.length || a.topic.name.localeCompare(b.topic.name));
+    const waiting = topics.filter((t) => !t.published);
+    return `      <section class="panel" id="group-${g.id}" aria-labelledby="group-${g.id}-title">
+        <h2 id="group-${g.id}-title">${esc(g.name)}</h2>
+        <p>${esc(g.intro)}</p>
+${live.length ? `        <p class="topic-chips">${live.map((t) => topicChip(here, t, t.rows.length)).join("")}</p>` : `        <p class="muted">No topic in this group has three listed skills yet.</p>`}
+${waiting.length ? `        <p class="muted">No page yet: ${waiting.map((t) => `${esc(t.topic.name)} (${fmt(t.rows.length)})`).join(", ")}. Publish a skill for one of these? <a href="${rel(here, "directory/submit/")}">Request a listing</a>.</p>` : ""}
+      </section>`;
+  }).join("\n");
+  const covered = TOPICS_BY_SKILL.size;
+  browsePage({
+    here,
+    trail: [["directory/", "Directory"], [null, "Topics"]],
+    title: pickTitle([`Agent Skills by Topic: ${TOPICS.length} Topics, Graded`, "Agent Skills by Topic"], "topics hub"),
+    description: fitMeta([`Browse agent skills for Claude Code and Codex by topic: ${TOPICS.length} topics in ${TOPIC_CONFIG.groups.length} groups, from ${listPhrase(TOPICS.slice(0, 3).map((t) => t.topic.name))} to video and voice.`, `Browse agent skills for Claude Code and Codex by topic: ${TOPICS.length} topics in ${TOPIC_CONFIG.groups.length} groups, each graded and linked to source.`], "topics hub"),
+    keywords: ["agent skills by topic", "claude code skills by use case", "claude skills categories", "ai agent skills list by topic"],
+    eyebrow: "Suede AI Skills Directory &middot; Topics",
+    h1: "Agent skills by topic",
+    body: `      <p class="lead">Find skills by the job they do. ${fmt(TOPICS.length)} topics in ${TOPIC_CONFIG.groups.length} groups cover ${fmt(covered)} of the ${fmt(data.skills.length)} listed skills; each topic page lists every match with its score, license and source. A topic gets a page once ${TOPIC_GATE.minListed} listed skills match it.</p>
+      <nav class="topic-chips" aria-label="Topic groups">${TOPIC_CONFIG.groups.map((g) => `<a href="#group-${g.id}">${esc(g.name)}</a>`).join("")}</nav>
+${groups}
+      <section class="panel" aria-labelledby="other-ways-title">
+        <h2 id="other-ways-title">Other ways to browse</h2>
+        <p class="cat-links">${categories.map((c) => `<a href="${rel(here, catPath(c.slug))}">${esc(c.title)}</a>`).join(" &middot; ")}</p>
+        <p><a href="${rel(here, PRICING_PATH)}">By cost and license</a> &middot; <a href="${rel(here, FEATURES_PATH)}">By capability</a> &middot; <a href="${rel(here, TASKS_PATH)}">Ranked shortlists by task</a></p>
+      </section>
+${servicesCta("browse-hub", null, here)}`,
+    items: TOPICS.map((t) => [`${t.topic.name} skills`, url(topicPath(t))]),
+    footerNote: `Topics on ${SITE_LABEL} group listed skills by the job they do. Every skill belongs to its publisher.`,
+  });
+}
+
+function facetRows(rows) {
+  return rows.length <= FACET_TABLE_MAX ? { rows, ranked: false } : { rows: rows.filter((s) => !isFirstParty(s)).sort(byScore).slice(0, TOP_MAX), ranked: true };
+}
+function categoryBreakdown(here, rows, param, value) {
+  const counts = categories.map((c) => [c, rows.filter((s) => s.category === c.slug).length]).filter(([, n]) => n).sort((a, b) => b[1] - a[1]);
+  return `<p class="cat-links">${counts.map(([c, n]) => `<a href="${rel(here, catPath(c.slug))}?${param}=${value}#all-title">${esc(c.title)}</a> (${fmt(n)})`).join(" &middot; ")}</p>`;
+}
+
+const PRICING_FAQ = () => {
+  const by = Object.fromEntries(FACETS.lanes.map((l) => [l.lane.id, l.rows.length]));
+  return [
+    ["Are Claude Code skills free?", `Every listed skill is published in a public GitHub repository and costs nothing to download. In the ${longDate(data.generated)} snapshot, ${fmt(by["free-open-source"])} use an open license and name no paid service, ${fmt(by["free-with-service"])} use an open license but connect to an outside service, ${fmt(by.noncommercial)} allow non-commercial use only and ${fmt(by.restricted)} use restricted terms.`],
+    ["How does the directory decide a skill needs a service?", "For skills with full pages, from the install record the refresh reads from the skill's files: environment variables, MCP servers, outside hosts and HTTP clients. For other skills, from the compatibility line the author wrote in SKILL.md."],
+    ["Can I use these skills in commercial work?", "Skills under open-source or open-content licenses allow it under their terms. Non-commercial licenses do not, and restricted licenses need the publisher's permission. Each listing links to its license file."],
+  ];
+};
+
+function renderPricingHub() {
+  const here = PRICING_PATH;
+  const faq = faqBlock(here, PRICING_FAQ());
+  browsePage({
+    here,
+    trail: [["directory/", "Directory"], [null, "Cost and license"]],
+    title: pickTitle(["Free Agent Skills by License and Cost", "Agent Skills by Cost and License"], "pricing hub"),
+    description: fitMeta([`Which Claude Code skills are free? ${fmt(FACETS.lanes[0].rows.length)} use an open license with no paid service. Browse every listed skill by cost and license.`, "Browse Claude Code and Codex skills by cost and license: free and open source, needs a service, non-commercial and restricted."], "pricing hub"),
+    keywords: ["free claude code skills", "free agent skills", "open source claude skills", "agent skills license"],
+    eyebrow: "Suede AI Skills Directory &middot; Cost and license",
+    h1: "Free and open-source agent skills, by license",
+    body: `      <p class="lead">Every listed skill is free to download. What it costs to run depends on its license and on the services its files connect to. Four lanes sort all ${fmt(data.skills.length)} listed skills.</p>
+      <section class="panel" aria-labelledby="lanes-title">
+        <h2 id="lanes-title">Cost and license lanes</h2>
+        <div class="links">
+${LANES_LIVE.map((l) => `          <a class="link-row" href="${rel(here, lanePath(l.lane.id))}"><b>${esc(l.lane.label)} (${fmt(l.rows.length)})</b><span>${esc(l.lane.lede)}</span></a>`).join("\n")}
+        </div>
+      </section>
+${faq.html}
+${servicesCta("browse-hub", null, here)}`,
+    items: LANES_LIVE.map((l) => [l.lane.label, url(lanePath(l.lane.id))]),
+    footerNote: `Cost and license lanes on ${SITE_LABEL}, derived from each listing's license and install record.`,
+    extraLd: [faq.ld],
+  });
+}
+
+function renderLane({ lane, rows }) {
+  const here = lanePath(lane.id);
+  const shown = facetRows(rows);
+  const best = bestOf(rows);
+  browsePage({
+    here,
+    trail: [["directory/", "Directory"], [PRICING_PATH, "Cost and license"], [null, lane.label]],
+    title: pickTitle([lane.title, `${lane.label} Agent Skills`], `lane ${lane.id}`),
+    description: fitMeta([`${fmt(rows.length)} ${lane.noun} agent skills for Claude Code and Codex. ${lane.lede}`, `${fmt(rows.length)} ${lane.noun} agent skills for Claude Code and Codex, graded 0 to 99 and linked to source.`], `lane ${lane.id}`),
+    keywords: [`${lane.noun} claude code skills`, `${lane.noun} agent skills`, `${lane.short} skills for codex`],
+    eyebrow: "Cost and license",
+    h1: `${esc(lane.label)} <span class="h1-sub">agent skills</span>`,
+    body: `      <p class="lead">${esc(lane.lede)}</p>
+${best.length ? `      <p class="answer"><b>Highest-scoring</b> in this lane: ${listPhrase(best.map((s) => `<a href="${rel(here, skillPath(s))}">${esc(displayName(s))}</a> from ${esc(s.repo)} (${s.score}/100)`))}.</p>` : ""}
+      <ul class="stat-row" aria-label="Lane size"><li><b>${fmt(rows.length)}</b> listed skills</li><li><b>${fmt(new Set(rows.map((s) => s.repo_slug)).size)}</b> repositories</li></ul>
+      <section class="panel" aria-labelledby="by-cat-title">
+        <h2 id="by-cat-title">By category</h2>
+        ${categoryBreakdown(here, rows, "lane", lane.id)}
+      </section>
+      <section class="panel" aria-labelledby="all-title">
+        <h2 id="all-title">${shown.ranked ? `The ${TOP_MAX} highest-scoring of ${fmt(rows.length)}` : `All ${fmt(rows.length)}`} ${esc(lane.short)} skills</h2>
+${shown.ranked ? `        <p class="muted">Ranked by Suede Skill Check score; Suede AI's own skills are not ranked. Open a category above for the full list, filtered to this lane.</p>\n` : ""}${allTable(here, "lane-skills", shown.rows, `${lane.short} skills`)}
+      </section>
+      <p><a href="${rel(here, PRICING_PATH)}">All cost and license lanes</a></p>
+${servicesCta("browse", null, here)}`,
+    items: shown.rows.map((s) => [displayName(s), listItemUrl(s)]),
+    footerNote: `${esc(lane.label)} skills on ${SITE_LABEL}. Licenses belong to each publisher; read them at the source.`,
+  });
+}
+
+function renderFeaturesHub() {
+  const here = FEATURES_PATH;
+  browsePage({
+    here,
+    trail: [["directory/", "Directory"], [null, "Capabilities"]],
+    title: pickTitle(["Agent Skills by Capability: MCP, Scripts, No Setup", "Agent Skills by Capability"], "features hub"),
+    description: fitMeta([`Filter Claude Code skills by capability: official publishers, MCP servers, API keys, bundled scripts, no setup required and ${FLAGS_LIVE.length - 5} more.`, "Filter Claude Code and Codex skills by capability: official publishers, MCP servers, bundled scripts and no setup required."], "features hub"),
+    keywords: ["claude code skills with mcp", "agent skills capabilities", "official claude skills", "claude skills no setup"],
+    eyebrow: "Suede AI Skills Directory &middot; Capabilities",
+    h1: "Agent skills by capability",
+    body: `      <p class="lead">Each capability is a yes or no fact read from a skill's published files. Pick the ones your setup needs. Filters marked "full pages" count the ${fmt(featured.length)} skills whose files the directory reads in full.</p>
+      <section class="panel" aria-labelledby="flags-title">
+        <h2 id="flags-title">${FLAGS_LIVE.length} capabilities</h2>
+        <div class="links">
+${FLAGS_LIVE.map((f) => `          <a class="link-row" href="${rel(here, flagPath(f.flag.id))}"><b>${esc(f.flag.label)} (${fmt(f.rows.length)}${f.flag.scope === "install" ? ` of ${fmt(f.universe)} full pages` : ""})</b><span>${esc(f.flag.lede)}</span></a>`).join("\n")}
+        </div>
+      </section>
+${servicesCta("browse-hub", null, here)}`,
+    items: FLAGS_LIVE.map((f) => [f.flag.label, url(flagPath(f.flag.id))]),
+    footerNote: `Capability filters on ${SITE_LABEL}, read from each skill's published files.`,
+  });
+}
+
+function renderFlag({ flag, rows, universe }) {
+  const here = flagPath(flag.id);
+  const shown = facetRows(rows);
+  const best = bestOf(rows);
+  const scope = flag.scope === "install" ? ` Counted among the ${fmt(universe)} skills with full pages, whose files the directory reads in full.` : "";
+  browsePage({
+    here,
+    trail: [["directory/", "Directory"], [FEATURES_PATH, "Capabilities"], [null, flag.label]],
+    title: pickTitle([`${flag.label}: Agent Skills for Claude Code`, `${flag.label}: Agent Skills`, `${flag.label} | Suede AI`], `flag ${flag.id}`),
+    description: fitMeta([`${fmt(rows.length)} agent skills for Claude Code and Codex. ${flag.lede}`, `${fmt(rows.length)} agent skills for Claude Code and Codex: ${flag.label.toLowerCase()}, graded 0 to 99 and linked to source.`], `flag ${flag.id}`),
+    keywords: [`${flag.label.toLowerCase()} agent skills`, `claude code skills ${flag.label.toLowerCase()}`, `${flag.label.toLowerCase()} skills for codex`],
+    eyebrow: "Capability",
+    h1: `${esc(flag.label)} <span class="h1-sub">agent skills</span>`,
+    body: `      <p class="lead">${esc(flag.lede)}${esc(scope)}</p>
+${best.length ? `      <p class="answer"><b>Highest-scoring</b> with this capability: ${listPhrase(best.map((s) => `<a href="${rel(here, skillPath(s))}">${esc(displayName(s))}</a> from ${esc(s.repo)} (${s.score}/100)`))}.</p>` : ""}
+      <ul class="stat-row" aria-label="Filter size"><li><b>${fmt(rows.length)}</b> listed skills</li><li><b>${fmt(new Set(rows.map((s) => s.repo_slug)).size)}</b> repositories</li></ul>
+      <section class="panel" aria-labelledby="by-cat-title">
+        <h2 id="by-cat-title">By category</h2>
+        ${categoryBreakdown(here, rows, "flag", flag.id)}
+      </section>
+      <section class="panel" aria-labelledby="all-title">
+        <h2 id="all-title">${shown.ranked ? `The ${TOP_MAX} highest-scoring of ${fmt(rows.length)}` : `All ${fmt(rows.length)}`} skills</h2>
+${shown.ranked ? `        <p class="muted">Ranked by Suede Skill Check score; Suede AI's own skills are not ranked. Open a category above for the full list with this filter on.</p>\n` : ""}${allTable(here, "flag-skills", shown.rows, "skills")}
+      </section>
+      <p><a href="${rel(here, FEATURES_PATH)}">All capabilities</a></p>
+${servicesCta("browse", null, here)}`,
+    items: shown.rows.map((s) => [displayName(s), listItemUrl(s)]),
+    footerNote: `${esc(flag.label)}: a capability filter on ${SITE_LABEL}, read from each skill's published files.`,
+  });
+}
+
+function datedTable(here, id, rows, key, label) {
+  return `        <div class="table-wrap">
+          <table class="skill-table" id="${id}">
+            <thead><tr><th scope="col">Skill</th><th scope="col">Repository</th><th scope="col">${label}</th><th scope="col">What it does</th></tr></thead>
+            <tbody>
+${rows.map((s) => `            <tr ${rowData(s)}><td class="name">${listingLink(here, s)} ${gradeChip(s)}</td><td class="meta">${esc(s.repo)}</td><td><time datetime="${s[key]}">${longDate(s[key])}</time></td><td class="desc">${esc(s.featured ? s.summary : trimTo(s.description, 150))}</td></tr>`).join("\n")}
+            </tbody>
+          </table>
+        </div>`;
+}
+
+function renderNew() {
+  const here = NEW_PATH;
+  const updated = RECENTLY_UPDATED.slice(0, TOP_MAX);
+  const items = [...NEW_LISTINGS, ...updated.filter((s) => !NEW_LISTINGS.includes(s))];
+  browsePage({
+    here,
+    trail: [["directory/", "Directory"], [null, "New and updated"]],
+    title: pickTitle(["New Agent Skills for Claude Code and Codex", "New and Updated Agent Skills"], "new"),
+    description: fitMeta([`${plural(NEW_LISTINGS.length, "new agent skill")} and ${plural(RECENTLY_UPDATED.length, "skill")} updated in the ${NEW_DAYS} days before the ${longDate(data.generated)} snapshot, graded and linked to source.`, `New and recently updated agent skills for Claude Code and Codex, graded 0 to 99 and linked to source.`], "new"),
+    keywords: ["new claude code skills", "new agent skills", "latest claude skills", "recently updated agent skills"],
+    eyebrow: "Suede AI Skills Directory &middot; New",
+    h1: "New and updated agent skills",
+    body: `      <p class="lead">What changed in the directory: skills listed for the first time in the ${NEW_DAYS} days before the ${longDate(data.generated)} snapshot, and listed skills whose repository changed in that window. Follow along with the <a href="${rel(here, FEED_PATH)}">RSS feed</a>.</p>
+      <section class="panel" aria-labelledby="new-title">
+        <h2 id="new-title">${plural(NEW_LISTINGS.length, "new listing")}</h2>
+${NEW_LISTINGS.length ? datedTable(here, "new-skills", NEW_LISTINGS, "listed_since", "Listed") : `        <p>No skill joined the directory in this window. The next refresh adds accepted listing requests; <a href="${rel(here, "directory/submit/")}">request a listing</a>.</p>`}
+      </section>
+      <section class="panel" aria-labelledby="updated-title">
+        <h2 id="updated-title">Recently updated</h2>
+        <p class="muted">${fmt(RECENTLY_UPDATED.length)} listed skills sit in a repository with a commit in the ${NEW_DAYS} days before the snapshot${RECENTLY_UPDATED.length > TOP_MAX ? `; the ${TOP_MAX} most recent are shown` : ""}. Suede AI's own skills are listed in <a href="${rel(here, "skills/")}">their own section</a>.</p>
+${datedTable(here, "updated-skills", updated, "commit_date", "Last commit")}
+      </section>
+${servicesCta("browse-hub", null, here)}`,
+    items: items.map((s) => [displayName(s), listItemUrl(s)]),
+    footerNote: `New and updated listings on ${SITE_LABEL}. Every skill belongs to its publisher and links to its source.`,
+  });
+}
+
+function renderTop() {
+  const here = TOP_PATH;
+  const top = TOP_SKILLS[0];
+  const rowsHtml = TOP_SKILLS.map((s, i) => `            <tr ${rowData(s)}><td>${i + 1}</td><td class="name">${listingLink(here, s)}</td><td class="meta">${esc(publisherName(s.owner, s.official))}${officialTag(s.official)}<br><span class="row-license">${esc(s.repo)}</span></td><td>${gradeChip(s)}</td><td>${esc(s.license)}</td><td class="desc">${esc(s.featured ? s.summary : trimTo(s.description, 150))}</td></tr>`).join("\n");
+  browsePage({
+    here,
+    trail: [["directory/", "Directory"], [null, "Top 100"]],
+    title: pickTitle(["Top 100 Agent Skills for Claude Code, Graded", "Top 100 Agent Skills"], "top"),
+    description: fitMeta([`The 100 highest-scoring agent skills for Claude Code and Codex. ${displayName(top)} from ${top.repo} leads at ${top.score}/100 on the Suede Skill Check.`, `The 100 highest-scoring agent skills for Claude Code and Codex on the Suede Skill Check, with publishers and licenses.`], "top"),
+    keywords: ["top claude code skills", "top 100 agent skills", "best agent skills ranked", "highest rated claude skills"],
+    eyebrow: "Suede AI Skills Directory &middot; Top 100",
+    h1: "Top 100 agent skills",
+    body: `      <p class="answer">${esc(displayName(top))} from ${esc(top.repo)} has the highest Suede Skill Check score among third-party skills in the ${longDate(data.generated)} snapshot, at ${top.score}/100. The table ranks the top ${TOP_MAX} by score, then by curated-list citations. Suede AI's own skills are not ranked.</p>
+      <section class="panel" aria-labelledby="top-title">
+        <h2 id="top-title">The ${TOP_MAX} highest-scoring skills</h2>
+        <div class="table-wrap">
+          <table class="skill-table compare-table" id="top-skills">
+            <thead><tr><th scope="col">Rank</th><th scope="col">Skill</th><th scope="col">Publisher</th><th scope="col">Suede Skill Check</th><th scope="col">License</th><th scope="col">What it does</th></tr></thead>
+            <tbody>
+${rowsHtml}
+            </tbody>
+          </table>
+        </div>
+        <p class="muted">Scores measure structural evidence from published files, as the <a href="${rel(here, "directory/methodology/")}#score">rubric</a> describes. Browse <a href="${rel(here, TASKS_PATH)}">ranked shortlists by task</a> for the best skill for a specific job.</p>
+      </section>
+${servicesCta("browse-hub", null, here)}`,
+    items: TOP_SKILLS.map((s) => [displayName(s), listItemUrl(s)]),
+    footerNote: `Top 100 on ${SITE_LABEL}, ranked by the published Suede Skill Check. Every skill belongs to its publisher.`,
+  });
+}
+
+function renderSaved() {
+  const here = SAVED_PATH;
+  const bc = crumbs(here, [["directory/", "Directory"], [null, "Saved skills"]]);
+  files.set(`${here}index.html`, page({
+    here,
+    canonical: false,
+    robots: "noindex, follow",
+    title: "Saved Skills | Suede AI Skills Directory",
+    description: "Your saved agent skills from the Suede AI Skills Directory. The list stays in this browser and never leaves your device.",
+    keywords: null,
+    h1Html: `      <div class="eyebrow">Suede AI Skills Directory &middot; Saved</div>
+      <h1>Saved skills</h1>`,
+    body: `${bc.html}
+      <section class="panel" data-saved-page aria-labelledby="saved-title">
+        <h2 id="saved-title">Your list</h2>
+        <p class="muted">Press Save on any skill page to add it here. The list is kept in this browser only; nothing is sent to Suede AI.</p>
+        <div data-saved-empty><p>No saved skills yet. <a href="${rel(here, "directory/")}">Browse the directory</a> or start from the <a href="${rel(here, TOP_PATH)}">top 100</a>.</p></div>
+        <div class="table-wrap"><table class="skill-table" data-saved-table><thead><tr><th scope="col">Skill</th><th scope="col">Score</th><th scope="col">Grade</th><th scope="col">Category</th><th scope="col">License</th><th scope="col">Repository</th><th scope="col"><span class="visually-hidden">Remove</span></th></tr></thead><tbody></tbody></table></div>
+        <p><button type="button" class="button secondary" data-saved-clear>Clear all</button></p>
+        <details data-saved-export hidden><summary>Copy as Markdown</summary><div class="snippet"><div class="snippet-head"><span>Saved skills</span><button type="button" data-copy-target="saved-markdown">Copy list</button></div><pre><code id="saved-markdown"></code></pre></div></details>
+        <noscript><p>Saving skills needs JavaScript.</p></noscript>
+      </section>`,
+    jsonld: [],
+    footerNote: "Saved lists on the Suede AI Skills Directory stay in your browser.",
+  }));
+}
+
+function renderFeed() {
+  const rfc = (d) => new Date(`${d}T00:00:00Z`).toUTCString();
+  const x = (s) => esc(s).replace(/'/g, "&apos;");
+  const items = [
+    ...GUIDES.map((g) => ({ title: g.h1, link: movedUrl(url(g.path)), date: g.date_modified || g.date_published, text: g.meta_description })),
+    ...NEW_LISTINGS.map((s) => ({ title: `New listing: ${displayName(s)} from ${s.repo}`, link: movedUrl(listItemUrl(s)), date: s.listed_since, text: `${ensureSentence(s.summary || trimTo(s.description, 200))} Suede Skill Check: ${s.score}/100, grade ${s.grade}.` })),
+  ].sort((a, b) => b.date.localeCompare(a.date) || a.title.localeCompare(b.title)).slice(0, 60);
+  const last = items.length ? items[0].date : data.generated;
+  files.set(FEED_PATH, `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Suede AI Skills Directory</title>
+    <link>${DIRECTORY_HOST}/</link>
+    <atom:link href="${DIRECTORY_HOST}/feed.xml" rel="self" type="application/rss+xml"/>
+    <description>New agent skill listings and guides from the Suede AI Skills Directory, a graded index of public Agent Skills for Claude Code, Codex and Cursor.</description>
+    <language>en-us</language>
+    <lastBuildDate>${rfc(last)}</lastBuildDate>
+${items.map((i) => `    <item>
+      <title>${x(i.title)}</title>
+      <link>${x(i.link)}</link>
+      <guid isPermaLink="true">${x(i.link)}</guid>
+      <pubDate>${rfc(i.date)}</pubDate>
+      <description>${x(i.text)}</description>
+    </item>`).join("\n")}
+  </channel>
+</rss>
+`);
+}
+
 // ------------------------------------------------------------------ run
 
 let agentCounts = null;
@@ -2815,6 +3429,16 @@ if (TASKS.length) {
   for (const t of TASKS) renderTask(t);
 }
 for (const a of ALTERNATIVES) renderAlternatives(a);
+if (TOPICS.length) renderTopicsHub();
+for (const t of TOPICS) renderTopic(t);
+renderPricingHub();
+for (const l of LANES_LIVE) renderLane(l);
+renderFeaturesHub();
+for (const f of FLAGS_LIVE) renderFlag(f);
+renderNew();
+if (TOP_SKILLS.length) renderTop();
+renderSaved();
+renderFeed();
 for (const r of repos.values()) if (r.hasPage) renderRepo(r);
 for (const s of featured) renderSkill(s);
 for (const s of data.skills) files.set(`${skillPath(s)}report.json`, JSON.stringify(skillReport(s)) + "\n");
@@ -2856,9 +3480,17 @@ const llmsAgents = fs.existsSync(path.join(repoRoot, "directory/agents.json")) ?
 const llmsTaskLines = TASKS.length
   ? [`- [Claude Code skills by task](${url(TASKS_PATH)}): ${TASKS.length} graded shortlists, one per task, each with a comparison table and answers on install, licenses and agent support:`, ...TASKS.map((t) => `  - [Best Claude Code skills for ${t.job.topic}](${url(taskPath(t))}): ${displayName(t.rows[0])} from ${t.rows[0].repo} leads at ${t.rows[0].score}/100; ${t.rows.length} skills compared.`)]
   : [];
-const llmsBlock = [llmsLine, ...llmsCategoryLines, ...llmsTaskLines, ...llmsGuideLines, llmsCheckLine, ...llmsAgents].join("\n");
+const llmsBrowseLines = [
+  `- [Agent skills by topic](${url(TOPICS_PATH)}): ${TOPICS.length} topic pages in ${TOPIC_CONFIG.groups.length} groups, each listing every matching skill with its score, license and source:`,
+  ...TOPICS.map((t) => `  - [${t.topic.name} skills](${url(topicPath(t))}): ${fmt(t.rows.length)} listed skills.`),
+  `- [Skills by cost and license](${url(PRICING_PATH)}): ${LANES_LIVE.map((l) => `${l.lane.label.toLowerCase()} (${fmt(l.rows.length)})`).join(", ")}.`,
+  `- [Skills by capability](${url(FEATURES_PATH)}): ${FLAGS_LIVE.length} capability filters, including official publishers, MCP servers, API keys and no-setup skills.`,
+  `- [New agent skills](${url(NEW_PATH)}): ${fmt(NEW_LISTINGS.length)} skills newly listed and ${fmt(RECENTLY_UPDATED.length)} updated in the ${NEW_DAYS} days before the ${longDate(data.generated)} snapshot.`,
+  `- [Top 100 agent skills](${url(TOP_PATH)}): the highest Suede Skill Check scores among third-party skills.`,
+];
+const llmsBlock = [llmsLine, ...llmsCategoryLines, ...llmsTaskLines, ...llmsBrowseLines, ...llmsGuideLines, llmsCheckLine, ...llmsAgents].join("\n");
 const llmsCurrent = fs.readFileSync(llmsPath, "utf8");
-const LLMS_RE = /^- \[Agent Skills Directory\]\(.*$(?:\n  - \[.*$)*(?:\n- \[Claude Code skills by task\]\(.*$(?:\n  - \[.*$)*)?(?:\n- \[Agent skills guides\]\(.*$(?:\n  - \[.*$)*)?(?:\n- \[Skill AI-visibility check\]\(.*$)?(?:\n- \[AI Agents\]\(.*$)?/m;
+const LLMS_RE = /^- \[Agent Skills Directory\]\(.*$(?:\n  - \[.*$)*(?:\n- \[Claude Code skills by task\]\(.*$(?:\n  - \[.*$)*)?(?:\n- \[Agent skills by topic\]\(.*$(?:\n  - \[.*$)*)?(?:\n- \[Skills by cost and license\]\(.*$)?(?:\n- \[Skills by capability\]\(.*$)?(?:\n- \[New agent skills\]\(.*$)?(?:\n- \[Top 100 agent skills\]\(.*$)?(?:\n- \[Agent skills guides\]\(.*$(?:\n  - \[.*$)*)?(?:\n- \[Skill AI-visibility check\]\(.*$)?(?:\n- \[AI Agents\]\(.*$)?/m;
 if (!LLMS_RE.test(llmsCurrent)) throw new Error("docs/llms.txt has no Agent Skills Directory line to keep current");
 const llmsNext = llmsCurrent.replace(LLMS_RE, llmsBlock);
 
@@ -2886,6 +3518,7 @@ const expected = new Map([...files.entries()].map(([p, c]) => [path.join(docsRoo
 for (const [abs, c] of expected) expected.set(abs, dated(abs, c));
 expected.set(keywordsPath, keywordsJson);
 expected.set(llmsPath, llmsNext);
+expected.set(LISTED_FILE, serializeLedger(LISTED_NEXT));
 const onDisk = walk(outRoot);
 
 if (checkOnly) {

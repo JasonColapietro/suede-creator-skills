@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Suede AI Skills Directory</title>
+    <link>https://suedeai.directory/</link>
+    <atom:link href="https://suedeai.directory/feed.xml" rel="self" type="application/rss+xml"/>
+    <description>New agent skill listings and guides from the Suede AI Skills Directory, a graded index of public Agent Skills for Claude Code, Codex and Cursor.</description>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 23 Oct 2026 00:00:00 GMT</lastBuildDate>
+    <item>
+      <title>Agent skills vs MCP servers vs plugins: which one do you need?</title>
+      <link>https://suedeai.directory/guides/skills-vs-mcp-servers/</link>
+      <guid isPermaLink="true">https://suedeai.directory/guides/skills-vs-mcp-servers/</guid>
+      <pubDate>Fri, 23 Oct 2026 00:00:00 GMT</pubDate>
+      <description>A skill adds method, an MCP server adds access, a plugin packages both. When to use each, how they combine, and what each costs in context and risk.</description>
+    </item>
+    <item>
+      <title>Best SEO, AEO and GEO skills for Claude Code and Codex</title>
+      <link>https://suedeai.directory/guides/best-seo-skills/</link>
+      <guid isPermaLink="true">https://suedeai.directory/guides/best-seo-skills/</guid>
+      <pubDate>Fri, 23 Oct 2026 00:00:00 GMT</pubDate>
+      <description>The highest-scoring SEO skills for Claude Code and Codex, by job: audits, schema, AI search (AEO and GEO), keywords, local and programmatic SEO.</description>
+    </item>
+    <item>
+      <title>How to get your agent skill found in search and cited by AI assistants</title>
+      <link>https://suedeai.directory/guides/skill-ai-visibility/</link>
+      <guid isPermaLink="true">https://suedeai.directory/guides/skill-ai-visibility/</guid>
+      <pubDate>Fri, 23 Oct 2026 00:00:00 GMT</pubDate>
+      <description>How skill publishers get picked by agents, found in search and cited by AI assistants: descriptions that trigger, READMEs that answer, listings and badges.</description>
+    </item>
+    <item>
+      <title>How to install agent skills in Claude Code, Codex and Cursor</title>
+      <link>https://suedeai.directory/guides/install-agent-skills/</link>
+      <guid isPermaLink="true">https://suedeai.directory/guides/install-agent-skills/</guid>
+      <pubDate>Fri, 23 Oct 2026 00:00:00 GMT</pubDate>
+      <description>Where Claude Code and Codex load skills, how to install from GitHub with one command, how plugin marketplaces work, and what to check before you install.</description>
+    </item>
+    <item>
+      <title>New listing: amazon-listing-checker from MelMayssonOwen/agent-skills</title>
+      <link>https://suedeai.directory/melmayssonowen/agent-skills/amazon-listing-checker/</link>
+      <guid isPermaLink="true">https://suedeai.directory/melmayssonowen/agent-skills/amazon-listing-checker/</guid>
+      <pubDate>Thu, 22 Oct 2026 00:00:00 GMT</pubDate>
+      <description>Review pasted listing copy for length, repeated terms, risky wording, and keyword coverage using a local Python helper. Suede Skill Check: 73/100, grade C.</description>
+    </item>
+    <item>
+      <title>New listing: clef-music-tools from MelMayssonOwen/agent-skills</title>
+      <link>https://suedeai.directory/melmayssonowen/agent-skills/clef-music-tools/</link>
+      <guid isPermaLink="true">https://suedeai.directory/melmayssonowen/agent-skills/clef-music-tools/</guid>
+      <pubDate>Thu, 22 Oct 2026 00:00:00 GMT</pubDate>
+      <description>Transpose chord symbols locally or use Clef MCP tools for piano chords, guitar-tab notes, and music practice. Suede Skill Check: 76/100, grade C.</description>
+    </item>
+    <item>
+      <title>New listing: geekflare from geekflare/geekflare-skills</title>
+      <link>https://suedeai.directory/geekflare/geekflare-skills/geekflare/</link>
+      <guid isPermaLink="true">https://suedeai.directory/geekflare/geekflare-skills/geekflare/</guid>
+      <pubDate>Thu, 22 Oct 2026 00:00:00 GMT</pubDate>
+      <description>Search the live web, extract public page data, capture screenshots and PDFs, and check website health through Geekflare MCP or its REST API. Suede Skill Check: 80/100, grade B.</description>
+    </item>
+    <item>
+      <title>New listing: sheetfolk-budget-builder from MelMayssonOwen/agent-skills</title>
+      <link>https://suedeai.directory/melmayssonowen/agent-skills/sheetfolk-budget-builder/</link>
+      <guid isPermaLink="true">https://suedeai.directory/melmayssonowen/agent-skills/sheetfolk-budget-builder/</guid>
+      <pubDate>Thu, 22 Oct 2026 00:00:00 GMT</pubDate>
+      <description>Create a local Excel budget workbook with household, sinking-fund, and side-hustle inputs. Suede Skill Check: 73/100, grade C.</description>
+    </item>
+    <item>
+      <title>New listing: timetopost-autoseo-blog from MelMayssonOwen/agent-skills</title>
+      <link>https://suedeai.directory/melmayssonowen/agent-skills/timetopost-autoseo-blog/</link>
+      <guid isPermaLink="true">https://suedeai.directory/melmayssonowen/agent-skills/timetopost-autoseo-blog/</guid>
+      <pubDate>Thu, 22 Oct 2026 00:00:00 GMT</pubDate>
+      <description>Connect a publishing destination, explore article topics, and prepare blog drafts for human review. Suede Skill Check: 77/100, grade C.</description>
+    </item>
+    <item>
+      <title>New listing: timetopost-social-scheduler from MelMayssonOwen/agent-skills</title>
+      <link>https://suedeai.directory/melmayssonowen/agent-skills/timetopost-social-scheduler/</link>
+      <guid isPermaLink="true">https://suedeai.directory/melmayssonowen/agent-skills/timetopost-social-scheduler/</guid>
+      <pubDate>Thu, 22 Oct 2026 00:00:00 GMT</pubDate>
+      <description>Draft distinct social posts, review account timing, and approve the exact content and schedule before publication. Suede Skill Check: 79/100, grade C.</description>
+    </item>
+    <item>
+      <title>New listing: toolfound-launch-kit from MelMayssonOwen/agent-skills</title>
+      <link>https://suedeai.directory/melmayssonowen/agent-skills/toolfound-launch-kit/</link>
+      <guid isPermaLink="true">https://suedeai.directory/melmayssonowen/agent-skills/toolfound-launch-kit/</guid>
+      <pubDate>Thu, 22 Oct 2026 00:00:00 GMT</pubDate>
+      <description>Research a product category, prepare an approved Toolfound submission, and track owner verification and launch status. Suede Skill Check: 74/100, grade C.</description>
+    </item>
+  </channel>
+</rss>

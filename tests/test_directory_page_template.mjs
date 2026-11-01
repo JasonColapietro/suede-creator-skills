@@ -119,7 +119,7 @@ test("category ItemLists list every table row and count what they list", () => {
     const list = page.mainEntity;
     assert.equal(list["@type"], "ItemList");
     const section = html.split('aria-labelledby="all-title"')[1].split("</section>")[0];
-    const rows = [...section.matchAll(/<tr><td class="name"><a href="([^"]*)"[^>]*>([^<]*)<\/a>/g)].map((m) => ({ href: m[1], name: decode(m[2]) }));
+    const rows = [...section.matchAll(/<tr[^>]*><td class="name"><a href="([^"]*)"[^>]*>([^<]*)<\/a>/g)].map((m) => ({ href: m[1], name: decode(m[2]) }));
     const stated = Number(decode(html.match(/<h2 id="all-title">All ([\d,]+) /)[1]).replace(/,/g, ""));
     assert.equal(rows.length, stated, `${rel}: table rows`);
     assert.equal(list.numberOfItems, list.itemListElement.length, `${rel}: numberOfItems matches the list`);

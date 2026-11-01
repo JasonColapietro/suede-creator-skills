@@ -48,7 +48,9 @@
     "skill": true,
     "methodology": true,
     "submit": false,
-    "featured": false
+    "featured": false,
+    "browse": true,
+    "browse-hub": true
   },
   "destinations": {
     "search": "https://suedeai.agency/",
