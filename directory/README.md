@@ -21,6 +21,33 @@ The [Suede Awesome Everything catalog](../awesome/README.md) is the GitHub Markd
 
 Cost lanes (`/pricing/`) and capability flags (`/features/`) have no data file. `scripts/directory/facets.mjs` derives both from published fields in `skills.json`, so a reader can recompute them.
 
+## Featured publication order
+
+`/featured/` always renders newest first within its editorial-project and
+Directory Member sections. Each entry's optional `published_at` is its first
+publication on this page, in UTC (`YYYY-MM-DDTHH:mm:ssZ`). Preserve it when
+editing an existing feature. Record a known publication timestamp for new
+entries; leave it absent when unknown. Missing or invalid dates sort last,
+with stable entry IDs breaking ties. No browser preference changes this order.
+
+The initial dates below use the committer timestamps of the first commits on
+`main` containing each entry in both the editorial metadata and generated
+Featured page. They record repository publication, not an exact deployment time.
+Builds do not consult Git or infer dates from reviews, upstream activity, file
+mtimes, dataset refreshes or the metadata's shared `updated` field.
+
+| Entry | First published (UTC) | Publication commit |
+| --- | --- | --- |
+| appie | `2026-10-18T04:48:30Z` | [`50c8fea`](https://github.com/JasonColapietro/suede-creator-skills/commit/50c8feaae917cfc2d6059e165eae05585acba159) |
+| coalwash | `2026-10-18T04:48:30Z` | [`50c8fea`](https://github.com/JasonColapietro/suede-creator-skills/commit/50c8feaae917cfc2d6059e165eae05585acba159) |
+| costory | `2026-10-19T20:40:16Z` | [`85d13cd`](https://github.com/JasonColapietro/suede-creator-skills/commit/85d13cd0ad11b8c479dcae8244479f66eaf62ca7) |
+| extra-caffeine | `2026-10-23T18:49:23Z` | [`a05681c`](https://github.com/JasonColapietro/suede-creator-skills/commit/a05681c37bdf1194886138e183bc942ed79967fc) |
+| opsibyte | `2026-10-24T04:35:14Z` | [`e36587d`](https://github.com/JasonColapietro/suede-creator-skills/commit/e36587d37b8d721b43ed17ded52f5a68f1d36bc2) |
+| cisco-skill-scanner | `2026-10-25T21:52:58Z` | [`5f27789`](https://github.com/JasonColapietro/suede-creator-skills/commit/5f2778980c8ffeec7a0d1c40e2ea63109f313351) |
+| geekflare | `2026-10-31T00:34:27Z` | [`145ef80`](https://github.com/JasonColapietro/suede-creator-skills/commit/145ef80eb5e2e776e6bc419dc6c4061bf85d38cf) |
+| arcmira | `2026-10-27T23:06:04Z` | [`648e3eb`](https://github.com/JasonColapietro/suede-creator-skills/commit/648e3eb687838dc31d8ccd3185d781a22ac93b7f) |
+| lava | `2026-10-28T19:55:57Z` | [`62fc1c1`](https://github.com/JasonColapietro/suede-creator-skills/commit/62fc1c178a8c750bbf627821e9587b8cd017476c) |
+
 ## Getting the directory listed
 
 [DISTRIBUTION.md](DISTRIBUTION.md) is the ledger of roundups, awesome lists, launch sites and press where the directory is or is not listed, with the route for each. [PUBLICITY.md](PUBLICITY.md) holds the ready-to-send copy for those submissions. Nothing in either file is sent without owner approval.

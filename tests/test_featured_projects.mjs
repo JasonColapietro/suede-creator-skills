@@ -4,6 +4,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
+import os from 'node:os';
+import { execFileSync } from 'node:child_process';
 import { qualityScore, shieldSvg } from '../scripts/directory/badges.mjs';
 import * as featured from '../scripts/directory/featured.mjs';
 
@@ -11,6 +13,74 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const read = (file) => fs.readFileSync(path.join(root, file), 'utf8');
 const data = JSON.parse(read('directory/featured-projects.json'));
 const published = () => read('docs/directory/featured/index.html');
+const recentIds = ['geekflare', 'cisco-skill-scanner', 'opsibyte', 'extra-caffeine', 'costory', 'appie', 'coalwash', 'lava', 'arcmira'];
+const articleIds = (html) => [...html.matchAll(/<article class="featured-project[^"]*" id="([^"]+)"/g)].map((m) => m[1]);
+
+test('featured sorting uses publication timestamps descending without mutating source order', () => {
+  assert.equal(typeof featured.newestPublishedFirst, 'function');
+  const entries = Object.freeze([
+    Object.freeze({ id: 'alpha', published_at: '2026-10-18T04:48:30Z' }),
+    Object.freeze({ id: 'zulu', published_at: '2026-10-31T00:34:27Z' }),
+    Object.freeze({ id: 'middle', published_at: '2026-10-31T00:34:26Z' }),
+  ]);
+  assert.deepEqual(featured.newestPublishedFirst(entries).map((p) => p.id), ['zulu', 'middle', 'alpha']);
+  assert.deepEqual(entries.map((p) => p.id), ['alpha', 'zulu', 'middle']);
+});
+
+test('featured sorting breaks equal dates by stable ID independent of input order or display name', () => {
+  assert.equal(typeof featured.newestPublishedFirst, 'function');
+  const entries = [
+    { id: 'beta', name: 'A', published_at: '2026-10-18T04:48:30Z' },
+    { id: 'alpha', name: 'Z', published_at: '2026-10-18T04:48:30Z' },
+  ];
+  for (const input of [entries, [...entries].reverse()]) {
+    assert.deepEqual(featured.newestPublishedFirst(input).map((p) => p.id), ['alpha', 'beta']);
+  }
+});
+
+test('missing and invalid publication dates sort last without inferred chronology', () => {
+  assert.equal(typeof featured.newestPublishedFirst, 'function');
+  const entries = [undefined, null, '', 'yesterday', '2026-02-30T00:00:00Z', '2026-10-31', '2026-10-31T12:00:00', 1793404800000]
+    .map((published_at, i) => ({ id: `unknown-${i}`, published_at, updated: '2099-01-01', commit_date: '2099-01-01', review: 'directory/reviews/2099-01-01-example.md' }));
+  entries.push({ id: 'dated', published_at: '1960-01-01T00:00:00Z' });
+  const expected = ['dated', 'unknown-0', 'unknown-1', 'unknown-2', 'unknown-3', 'unknown-4', 'unknown-5', 'unknown-6', 'unknown-7'];
+  assert.deepEqual(featured.newestPublishedFirst(entries.reverse()).map((p) => p.id), expected);
+  assert.deepEqual(featured.newestPublishedFirst([]), []);
+});
+
+test('featured cards, navigation, numbering, badge snippets and structured data share publication order', () => {
+  const page = published();
+  assert.deepEqual(articleIds(page), recentIds);
+  const nav = page.match(/<nav class="featured-jump"[^>]*>([\s\S]*?)<\/nav>/)[1];
+  assert.deepEqual([...nav.matchAll(/href="#([^"]+)"/g)].map((m) => m[1]), recentIds);
+  assert.deepEqual([...page.matchAll(/class="featured-number"[^>]*>(\d+)</g)].map((m) => Number(m[1])), [1, 2, 3, 4, 5, 6, 7, 8, 9]);
+  assert.deepEqual([...page.matchAll(/<code id="featured-badge-([^"]+)"/g)].map((m) => m[1]), recentIds.slice(0, 7));
+  const collection = [...page.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map((m) => JSON.parse(m[1])).find((x) => x['@type'] === 'CollectionPage');
+  assert.deepEqual(collection.mainEntity.itemListElement.map((p) => new URL(p.url).hash.slice(1)), recentIds);
+});
+
+test('a newly published project comes first across regeneration and shuffled source order', () => {
+  const fixture = fs.mkdtempSync(path.join(os.tmpdir(), 'featured-recency-'));
+  try {
+    for (const dir of ['scripts', 'directory', 'docs']) fs.cpSync(path.join(root, dir), path.join(fixture, dir), { recursive: true });
+    const editorial = structuredClone(data);
+    editorial.projects.push({ ...editorial.projects.find((p) => p.id === 'coalwash'), id: 'z-new-feature', name: 'Z New Feature', repo: 'example/new-feature', published_at: '2026-11-01T12:00:00Z' });
+    const metadata = path.join(fixture, 'directory/featured-projects.json');
+    const output = path.join(fixture, 'docs/directory/featured/index.html');
+    const build = () => execFileSync(process.execPath, [path.join(fixture, 'scripts/build-directory.mjs')], { stdio: 'pipe' });
+    fs.writeFileSync(metadata, JSON.stringify(editorial));
+    build();
+    const first = fs.readFileSync(output, 'utf8');
+    assert.deepEqual(articleIds(first), ['z-new-feature', ...recentIds]);
+    editorial.projects.reverse(); editorial.members.reverse();
+    fs.writeFileSync(metadata, JSON.stringify(editorial));
+    fs.utimesSync(metadata, new Date('2099-01-01'), new Date('2099-01-01'));
+    build();
+    assert.equal(fs.readFileSync(output, 'utf8'), first, 'regeneration and input order cannot change the Featured default');
+  } finally {
+    fs.rmSync(fixture, { recursive: true, force: true });
+  }
+});
 
 test('Geekflare has one pinned 80/B listing, an editorial feature and accurate service disclosures', () => {
   const repo = 'geekflare/geekflare-skills';
@@ -258,7 +328,7 @@ test('featured page has a discoverable route, truthful structured data and selec
   const blocks = [...page.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map((m) => JSON.parse(m[1]));
   const collection = blocks.find((x) => x['@type'] === 'CollectionPage');
   assert.equal(collection.mainEntity.numberOfItems, 9);
-  assert.deepEqual(collection.mainEntity.itemListElement.map((p) => p.name), ['Appie', 'CoalWash', 'Costory', 'Extra Caffeine', 'Opsibyte', 'Cisco AI Defense Skill Scanner', 'Geekflare', 'Arcmira', 'Lava']);
+  assert.deepEqual(collection.mainEntity.itemListElement.map((p) => p.name), ['Geekflare', 'Cisco AI Defense Skill Scanner', 'Opsibyte', 'Extra Caffeine', 'Costory', 'Appie', 'CoalWash', 'Lava', 'Arcmira']);
   assert.match(page, /README-badge verification is tracked separately/);
   assert.match(page, /href="\.\.\/submit\/"/);
   assert.match(page, /href="\.\.\/methodology\/"/);
