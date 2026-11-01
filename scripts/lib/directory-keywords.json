@@ -2210,6 +2210,82 @@
   "Arcmira agent workflows",
   "Lava agent workflows"
  ],
+ "directory/features/allowed-tools/index.html": [
+  "declares tool permissions agent skills",
+  "claude code skills declares tool permissions",
+  "declares tool permissions skills for codex"
+ ],
+ "directory/features/api-key/index.html": [
+  "needs an api key or account agent skills",
+  "claude code skills needs an api key or account",
+  "needs an api key or account skills for codex"
+ ],
+ "directory/features/assets/index.html": [
+  "bundles assets or templates agent skills",
+  "claude code skills bundles assets or templates",
+  "bundles assets or templates skills for codex"
+ ],
+ "directory/features/badge-eligible/index.html": [
+  "quality badge agent skills",
+  "claude code skills quality badge",
+  "quality badge skills for codex"
+ ],
+ "directory/features/compatibility/index.html": [
+  "declares compatibility agent skills",
+  "claude code skills declares compatibility",
+  "declares compatibility skills for codex"
+ ],
+ "directory/features/full-page/index.html": [
+  "full directory page agent skills",
+  "claude code skills full directory page",
+  "full directory page skills for codex"
+ ],
+ "directory/features/index.html": [
+  "claude code skills with mcp",
+  "agent skills capabilities",
+  "official claude skills",
+  "claude skills no setup"
+ ],
+ "directory/features/markdown-only/index.html": [
+  "skill.md only agent skills",
+  "claude code skills skill.md only",
+  "skill.md only skills for codex"
+ ],
+ "directory/features/mcp/index.html": [
+  "uses an mcp server agent skills",
+  "claude code skills uses an mcp server",
+  "uses an mcp server skills for codex"
+ ],
+ "directory/features/network/index.html": [
+  "calls outside services agent skills",
+  "claude code skills calls outside services",
+  "calls outside services skills for codex"
+ ],
+ "directory/features/no-setup/index.html": [
+  "no setup required agent skills",
+  "claude code skills no setup required",
+  "no setup required skills for codex"
+ ],
+ "directory/features/official/index.html": [
+  "official publisher agent skills",
+  "claude code skills official publisher",
+  "official publisher skills for codex"
+ ],
+ "directory/features/references/index.html": [
+  "bundles reference files agent skills",
+  "claude code skills bundles reference files",
+  "bundles reference files skills for codex"
+ ],
+ "directory/features/runs-commands/index.html": [
+  "runs commands agent skills",
+  "claude code skills runs commands",
+  "runs commands skills for codex"
+ ],
+ "directory/features/scripts/index.html": [
+  "bundles scripts agent skills",
+  "claude code skills bundles scripts",
+  "bundles scripts skills for codex"
+ ],
  "directory/firebase/skills/firebase-ai-logic-basics/index.html": [
   "firebase-ai-logic-basics skill by firebase",
   "firebase-ai-logic-basics skill",
@@ -5789,6 +5865,12 @@
   "data and database agent skills",
   "agent skills directory"
  ],
+ "directory/new/index.html": [
+  "new claude code skills",
+  "new agent skills",
+  "latest claude skills",
+  "recently updated agent skills"
+ ],
  "directory/nextlevelbuilder/ui-ux-pro-max-skill/index.html": [
   "nextlevelbuilder/ui-ux-pro-max-skill skills",
   "ui-ux-pro-max-skill skills",
@@ -6571,6 +6653,32 @@
   "praneybehl skills",
   "productivity agent skills",
   "SKILL.md"
+ ],
+ "directory/pricing/free-open-source/index.html": [
+  "free open-source claude code skills",
+  "free open-source agent skills",
+  "free and open-source skills for codex"
+ ],
+ "directory/pricing/free-with-service/index.html": [
+  "service-backed claude code skills",
+  "service-backed agent skills",
+  "free needs a service skills for codex"
+ ],
+ "directory/pricing/index.html": [
+  "free claude code skills",
+  "free agent skills",
+  "open source claude skills",
+  "agent skills license"
+ ],
+ "directory/pricing/noncommercial/index.html": [
+  "non-commercial claude code skills",
+  "non-commercial agent skills",
+  "non-commercial skills for codex"
+ ],
+ "directory/pricing/restricted/index.html": [
+  "restricted-license claude code skills",
+  "restricted-license agent skills",
+  "restricted-license skills for codex"
  ],
  "directory/product-management/index.html": [
   "product management agent skills",
@@ -7737,6 +7845,1362 @@
   "tjboudreaux skills",
   "productivity agent skills",
   "SKILL.md"
+ ],
+ "directory/top/index.html": [
+  "top claude code skills",
+  "top 100 agent skills",
+  "best agent skills ranked",
+  "highest rated claude skills"
+ ],
+ "directory/topics/3d-generation/index.html": [
+  "3d generation and rendering skills for claude code and codex",
+  "3D agent skills",
+  "3D claude skills",
+  "best 3D skills",
+  "3D skills for codex"
+ ],
+ "directory/topics/accessibility-testing/index.html": [
+  "accessibility testing skills for claude code and codex",
+  "accessibility testing agent skills",
+  "accessibility testing claude skills",
+  "best accessibility testing skills",
+  "accessibility testing skills for codex"
+ ],
+ "directory/topics/ads/index.html": [
+  "advertising skills for claude code and codex",
+  "advertising agent skills",
+  "advertising claude skills",
+  "best advertising skills",
+  "advertising skills for codex"
+ ],
+ "directory/topics/affiliate-referral/index.html": [
+  "affiliate and referral programs skills for claude code and codex",
+  "affiliate and referral agent skills",
+  "affiliate and referral claude skills",
+  "best affiliate and referral skills",
+  "affiliate and referral skills for codex"
+ ],
+ "directory/topics/agent-observability/index.html": [
+  "agent tracing and observability skills for claude code and codex",
+  "agent tracing agent skills",
+  "agent tracing claude skills",
+  "best agent tracing skills",
+  "agent tracing skills for codex"
+ ],
+ "directory/topics/agent-safety/index.html": [
+  "agent safety and guardrails skills for claude code and codex",
+  "agent safety agent skills",
+  "agent safety claude skills",
+  "best agent safety skills",
+  "agent safety skills for codex"
+ ],
+ "directory/topics/ai-agent-builders/index.html": [
+  "ai agent builders skills for claude code and codex",
+  "AI agent builder agent skills",
+  "AI agent builder claude skills",
+  "best AI agent builder skills",
+  "AI agent builder skills for codex"
+ ],
+ "directory/topics/ai-humanizer/index.html": [
+  "ai detection and humanizing skills for claude code and codex",
+  "AI detection and humanizing agent skills",
+  "AI detection and humanizing claude skills",
+  "best AI detection and humanizing skills",
+  "AI detection and humanizing skills for codex"
+ ],
+ "directory/topics/ai-search-visibility/index.html": [
+  "ai search visibility skills for claude code and codex",
+  "AI search visibility agent skills",
+  "AI search visibility claude skills",
+  "best AI search visibility skills",
+  "AI search visibility skills for codex"
+ ],
+ "directory/topics/android-kotlin/index.html": [
+  "android and kotlin skills for claude code and codex",
+  "Android and Kotlin agent skills",
+  "Android and Kotlin claude skills",
+  "best Android and Kotlin skills",
+  "Android and Kotlin skills for codex"
+ ],
+ "directory/topics/angular/index.html": [
+  "angular skills for claude code and codex",
+  "Angular agent skills",
+  "Angular claude skills",
+  "best Angular skills",
+  "Angular skills for codex"
+ ],
+ "directory/topics/animation-motion/index.html": [
+  "animation and motion graphics skills for claude code and codex",
+  "animation and motion graphics agent skills",
+  "animation and motion graphics claude skills",
+  "best animation and motion graphics skills",
+  "animation and motion graphics skills for codex"
+ ],
+ "directory/topics/app-builders/index.html": [
+  "app builders skills for claude code and codex",
+  "app builder agent skills",
+  "app builder claude skills",
+  "best app builder skills",
+  "app builder skills for codex"
+ ],
+ "directory/topics/audio-editing/index.html": [
+  "audio editing and mastering skills for claude code and codex",
+  "audio editing agent skills",
+  "audio editing claude skills",
+  "best audio editing skills",
+  "audio editing skills for codex"
+ ],
+ "directory/topics/authentication/index.html": [
+  "authentication and login skills for claude code and codex",
+  "authentication agent skills",
+  "authentication claude skills",
+  "best authentication skills",
+  "authentication skills for codex"
+ ],
+ "directory/topics/aws/index.html": [
+  "aws skills for claude code and codex",
+  "AWS agent skills",
+  "AWS claude skills",
+  "best AWS skills",
+  "AWS skills for codex"
+ ],
+ "directory/topics/azure/index.html": [
+  "azure skills for claude code and codex",
+  "Azure agent skills",
+  "Azure claude skills",
+  "best Azure skills",
+  "Azure skills for codex"
+ ],
+ "directory/topics/background-removal/index.html": [
+  "background removal skills for claude code and codex",
+  "background removal agent skills",
+  "background removal claude skills",
+  "best background removal skills",
+  "background removal skills for codex"
+ ],
+ "directory/topics/bioinformatics/index.html": [
+  "bioinformatics and genomics skills for claude code and codex",
+  "bioinformatics agent skills",
+  "bioinformatics claude skills",
+  "best bioinformatics skills",
+  "bioinformatics skills for codex"
+ ],
+ "directory/topics/blog-writing/index.html": [
+  "blog writing skills for claude code and codex",
+  "blog agent skills",
+  "blog claude skills",
+  "best blog skills",
+  "blog skills for codex"
+ ],
+ "directory/topics/books-publishing/index.html": [
+  "books and publishing skills for claude code and codex",
+  "book writing and publishing agent skills",
+  "book writing and publishing claude skills",
+  "best book writing and publishing skills",
+  "book writing and publishing skills for codex"
+ ],
+ "directory/topics/branding/index.html": [
+  "branding skills for claude code and codex",
+  "branding agent skills",
+  "branding claude skills",
+  "best branding skills",
+  "branding skills for codex"
+ ],
+ "directory/topics/browser-agents/index.html": [
+  "browser agents and computer use skills for claude code and codex",
+  "browser agent agent skills",
+  "browser agent claude skills",
+  "best browser agent skills",
+  "browser agent skills for codex"
+ ],
+ "directory/topics/c-cpp-embedded/index.html": [
+  "c c++ and embedded skills for claude code and codex",
+  "C C++ and embedded agent skills",
+  "C C++ and embedded claude skills",
+  "best C C++ and embedded skills",
+  "C C++ and embedded skills for codex"
+ ],
+ "directory/topics/career-coaching/index.html": [
+  "career coaching skills for claude code and codex",
+  "career agent skills",
+  "career claude skills",
+  "best career skills",
+  "career skills for codex"
+ ],
+ "directory/topics/characters-avatars/index.html": [
+  "characters avatars and portraits skills for claude code and codex",
+  "character and avatar agent skills",
+  "character and avatar claude skills",
+  "best character and avatar skills",
+  "character and avatar skills for codex"
+ ],
+ "directory/topics/chemistry/index.html": [
+  "chemistry and drug discovery skills for claude code and codex",
+  "chemistry agent skills",
+  "chemistry claude skills",
+  "best chemistry skills",
+  "chemistry skills for codex"
+ ],
+ "directory/topics/ci-cd/index.html": [
+  "ci/cd and devops skills for claude code and codex",
+  "CI/CD agent skills",
+  "CI/CD claude skills",
+  "best CI/CD skills",
+  "CI/CD skills for codex"
+ ],
+ "directory/topics/claude-code-config/index.html": [
+  "claude code setup and hooks skills for claude code and codex",
+  "Claude Code setup agent skills",
+  "Claude Code setup claude skills",
+  "best Claude Code setup skills",
+  "Claude Code setup skills for codex"
+ ],
+ "directory/topics/cli-tools/index.html": [
+  "clis and terminal tools skills for claude code and codex",
+  "CLI agent skills",
+  "CLI claude skills",
+  "best CLI skills",
+  "CLI skills for codex"
+ ],
+ "directory/topics/cloudflare/index.html": [
+  "cloudflare skills for claude code and codex",
+  "Cloudflare agent skills",
+  "Cloudflare claude skills",
+  "best Cloudflare skills",
+  "Cloudflare skills for codex"
+ ],
+ "directory/topics/cms/index.html": [
+  "cms sanity and wordpress skills for claude code and codex",
+  "CMS agent skills",
+  "CMS claude skills",
+  "best CMS skills",
+  "CMS skills for codex"
+ ],
+ "directory/topics/code-assistant/index.html": [
+  "code assistants skills for claude code and codex",
+  "coding assistant agent skills",
+  "coding assistant claude skills",
+  "best coding assistant skills",
+  "coding assistant skills for codex"
+ ],
+ "directory/topics/code-quality-linting/index.html": [
+  "code quality and linting skills for claude code and codex",
+  "code quality agent skills",
+  "code quality claude skills",
+  "best code quality skills",
+  "code quality skills for codex"
+ ],
+ "directory/topics/code-review/index.html": [
+  "code review skills for claude code and codex",
+  "code review agent skills",
+  "code review claude skills",
+  "best code review skills",
+  "code review skills for codex"
+ ],
+ "directory/topics/coding-agents/index.html": [
+  "codex cursor and coding agents skills for claude code and codex",
+  "coding agent agent skills",
+  "coding agent claude skills",
+  "best coding agent skills",
+  "coding agent skills for codex"
+ ],
+ "directory/topics/color-typography/index.html": [
+  "color and typography skills for claude code and codex",
+  "color and typography agent skills",
+  "color and typography claude skills",
+  "best color and typography skills",
+  "color and typography skills for codex"
+ ],
+ "directory/topics/content-marketing/index.html": [
+  "content marketing skills for claude code and codex",
+  "content marketing agent skills",
+  "content marketing claude skills",
+  "best content marketing skills",
+  "content marketing skills for codex"
+ ],
+ "directory/topics/context-memory/index.html": [
+  "context engineering and agent memory skills for claude code and codex",
+  "context engineering agent skills",
+  "context engineering claude skills",
+  "best context engineering skills",
+  "context engineering skills for codex"
+ ],
+ "directory/topics/copywriting/index.html": [
+  "copywriting skills for claude code and codex",
+  "copywriting agent skills",
+  "copywriting claude skills",
+  "best copywriting skills",
+  "copywriting skills for codex"
+ ],
+ "directory/topics/crm/index.html": [
+  "crm skills for claude code and codex",
+  "CRM agent skills",
+  "CRM claude skills",
+  "best CRM skills",
+  "CRM skills for codex"
+ ],
+ "directory/topics/customer-service/index.html": [
+  "customer service skills for claude code and codex",
+  "customer service agent skills",
+  "customer service claude skills",
+  "best customer service skills",
+  "customer service skills for codex"
+ ],
+ "directory/topics/data-analysis/index.html": [
+  "data analysis skills for claude code and codex",
+  "data analysis agent skills",
+  "data analysis claude skills",
+  "best data analysis skills",
+  "data analysis skills for codex"
+ ],
+ "directory/topics/data-pipelines/index.html": [
+  "data engineering and pipelines skills for claude code and codex",
+  "data engineering agent skills",
+  "data engineering claude skills",
+  "best data engineering skills",
+  "data engineering skills for codex"
+ ],
+ "directory/topics/data-visualization/index.html": [
+  "data visualization and charts skills for claude code and codex",
+  "data visualization agent skills",
+  "data visualization claude skills",
+  "best data visualization skills",
+  "data visualization skills for codex"
+ ],
+ "directory/topics/data-warehouses/index.html": [
+  "data warehouses skills for claude code and codex",
+  "data warehouse agent skills",
+  "data warehouse claude skills",
+  "best data warehouse skills",
+  "data warehouse skills for codex"
+ ],
+ "directory/topics/dependency-management/index.html": [
+  "dependency management skills for claude code and codex",
+  "dependency management agent skills",
+  "dependency management claude skills",
+  "best dependency management skills",
+  "dependency management skills for codex"
+ ],
+ "directory/topics/deployment-hosting/index.html": [
+  "deployment and hosting skills for claude code and codex",
+  "deployment agent skills",
+  "deployment claude skills",
+  "best deployment skills",
+  "deployment skills for codex"
+ ],
+ "directory/topics/design-systems/index.html": [
+  "design systems and tokens skills for claude code and codex",
+  "design system agent skills",
+  "design system claude skills",
+  "best design system skills",
+  "design system skills for codex"
+ ],
+ "directory/topics/diagrams-infographics/index.html": [
+  "diagrams and infographics skills for claude code and codex",
+  "diagram and infographic agent skills",
+  "diagram and infographic claude skills",
+  "best diagram and infographic skills",
+  "diagram and infographic skills for codex"
+ ],
+ "directory/topics/docker-containers/index.html": [
+  "docker and containers skills for claude code and codex",
+  "Docker and container agent skills",
+  "Docker and container claude skills",
+  "best Docker and container skills",
+  "Docker and container skills for codex"
+ ],
+ "directory/topics/documentation/index.html": [
+  "documentation and readmes skills for claude code and codex",
+  "documentation agent skills",
+  "documentation claude skills",
+  "best documentation skills",
+  "documentation skills for codex"
+ ],
+ "directory/topics/documents/index.html": [
+  "documents skills for claude code and codex",
+  "document agent skills",
+  "document claude skills",
+  "best document skills",
+  "document skills for codex"
+ ],
+ "directory/topics/dotnet-csharp/index.html": [
+  ".net and c# skills for claude code and codex",
+  ".NET and C# agent skills",
+  ".NET and C# claude skills",
+  "best .NET and C# skills",
+  ".NET and C# skills for codex"
+ ],
+ "directory/topics/e-commerce/index.html": [
+  "e-commerce skills for claude code and codex",
+  "e-commerce agent skills",
+  "e-commerce claude skills",
+  "best e-commerce skills",
+  "e-commerce skills for codex"
+ ],
+ "directory/topics/e2e-browser-testing/index.html": [
+  "end-to-end and browser testing skills for claude code and codex",
+  "end-to-end testing agent skills",
+  "end-to-end testing claude skills",
+  "best end-to-end testing skills",
+  "end-to-end testing skills for codex"
+ ],
+ "directory/topics/email-sending/index.html": [
+  "transactional email skills for claude code and codex",
+  "transactional email agent skills",
+  "transactional email claude skills",
+  "best transactional email skills",
+  "transactional email skills for codex"
+ ],
+ "directory/topics/email/index.html": [
+  "email skills for claude code and codex",
+  "email agent skills",
+  "email claude skills",
+  "best email skills",
+  "email skills for codex"
+ ],
+ "directory/topics/essay-writing/index.html": [
+  "essays and academic writing skills for claude code and codex",
+  "academic writing agent skills",
+  "academic writing claude skills",
+  "best academic writing skills",
+  "academic writing skills for codex"
+ ],
+ "directory/topics/evals/index.html": [
+  "evals and benchmarks skills for claude code and codex",
+  "eval agent skills",
+  "eval claude skills",
+  "best eval skills",
+  "eval skills for codex"
+ ],
+ "directory/topics/events-weddings/index.html": [
+  "events and weddings skills for claude code and codex",
+  "event planning agent skills",
+  "event planning claude skills",
+  "best event planning skills",
+  "event planning skills for codex"
+ ],
+ "directory/topics/experiments-playgrounds/index.html": [
+  "experiments and playgrounds skills for claude code and codex",
+  "experiment and playground agent skills",
+  "experiment and playground claude skills",
+  "best experiment and playground skills",
+  "experiment and playground skills for codex"
+ ],
+ "directory/topics/expo-react-native/index.html": [
+  "expo and react native skills for claude code and codex",
+  "Expo and React Native agent skills",
+  "Expo and React Native claude skills",
+  "best Expo and React Native skills",
+  "Expo and React Native skills for codex"
+ ],
+ "directory/topics/figma/index.html": [
+  "figma and design tools skills for claude code and codex",
+  "Figma and design tool agent skills",
+  "Figma and design tool claude skills",
+  "best Figma and design tool skills",
+  "Figma and design tool skills for codex"
+ ],
+ "directory/topics/finance/index.html": [
+  "finance and accounting skills for claude code and codex",
+  "finance and accounting agent skills",
+  "finance and accounting claude skills",
+  "best finance and accounting skills",
+  "finance and accounting skills for codex"
+ ],
+ "directory/topics/fine-tuning/index.html": [
+  "fine-tuning and model training skills for claude code and codex",
+  "model training agent skills",
+  "model training claude skills",
+  "best model training skills",
+  "model training skills for codex"
+ ],
+ "directory/topics/flutter-dart/index.html": [
+  "flutter and dart skills for claude code and codex",
+  "Flutter and Dart agent skills",
+  "Flutter and Dart claude skills",
+  "best Flutter and Dart skills",
+  "Flutter and Dart skills for codex"
+ ],
+ "directory/topics/fun-tools/index.html": [
+  "fun tools skills for claude code and codex",
+  "fun agent skills",
+  "fun claude skills",
+  "best fun skills",
+  "fun skills for codex"
+ ],
+ "directory/topics/game-development/index.html": [
+  "game development skills for claude code and codex",
+  "game development agent skills",
+  "game development claude skills",
+  "best game development skills",
+  "game development skills for codex"
+ ],
+ "directory/topics/general-writing/index.html": [
+  "general writing skills for claude code and codex",
+  "writing agent skills",
+  "writing claude skills",
+  "best writing skills",
+  "writing skills for codex"
+ ],
+ "directory/topics/generative-art/index.html": [
+  "generative art skills for claude code and codex",
+  "generative art agent skills",
+  "generative art claude skills",
+  "best generative art skills",
+  "generative art skills for codex"
+ ],
+ "directory/topics/git-version-control/index.html": [
+  "git and version control skills for claude code and codex",
+  "Git agent skills",
+  "Git claude skills",
+  "best Git skills",
+  "Git skills for codex"
+ ],
+ "directory/topics/golang/index.html": [
+  "go skills for claude code and codex",
+  "Go agent skills",
+  "Go claude skills",
+  "best Go skills",
+  "Go skills for codex"
+ ],
+ "directory/topics/google-cloud/index.html": [
+  "google cloud skills for claude code and codex",
+  "Google Cloud agent skills",
+  "Google Cloud claude skills",
+  "best Google Cloud skills",
+  "Google Cloud skills for codex"
+ ],
+ "directory/topics/grammar-checker/index.html": [
+  "grammar and proofreading skills for claude code and codex",
+  "grammar and proofreading agent skills",
+  "grammar and proofreading claude skills",
+  "best grammar and proofreading skills",
+  "grammar and proofreading skills for codex"
+ ],
+ "directory/topics/graphic-design/index.html": [
+  "graphic design and posters skills for claude code and codex",
+  "graphic design agent skills",
+  "graphic design claude skills",
+  "best graphic design skills",
+  "graphic design skills for codex"
+ ],
+ "directory/topics/graphql/index.html": [
+  "graphql and grpc skills for claude code and codex",
+  "GraphQL agent skills",
+  "GraphQL claude skills",
+  "best GraphQL skills",
+  "GraphQL skills for codex"
+ ],
+ "directory/topics/health-medical/index.html": [
+  "health and medical skills for claude code and codex",
+  "health and medical agent skills",
+  "health and medical claude skills",
+  "best health and medical skills",
+  "health and medical skills for codex"
+ ],
+ "directory/topics/hr-recruiting/index.html": [
+  "hr and recruiting skills for claude code and codex",
+  "HR and recruiting agent skills",
+  "HR and recruiting claude skills",
+  "best HR and recruiting skills",
+  "HR and recruiting skills for codex"
+ ],
+ "directory/topics/icons-illustrations/index.html": [
+  "icons and illustrations skills for claude code and codex",
+  "icon and illustration agent skills",
+  "icon and illustration claude skills",
+  "best icon and illustration skills",
+  "icon and illustration skills for codex"
+ ],
+ "directory/topics/image-analysis/index.html": [
+  "image recognition and analysis skills for claude code and codex",
+  "image analysis agent skills",
+  "image analysis claude skills",
+  "best image analysis skills",
+  "image analysis skills for codex"
+ ],
+ "directory/topics/image-editing/index.html": [
+  "image editing skills for claude code and codex",
+  "image editing agent skills",
+  "image editing claude skills",
+  "best image editing skills",
+  "image editing skills for codex"
+ ],
+ "directory/topics/image-generation/index.html": [
+  "image generation skills for claude code and codex",
+  "image generation agent skills",
+  "image generation claude skills",
+  "best image generation skills",
+  "image generation skills for codex"
+ ],
+ "directory/topics/incident-response/index.html": [
+  "incident response and sre skills for claude code and codex",
+  "incident response agent skills",
+  "incident response claude skills",
+  "best incident response skills",
+  "incident response skills for codex"
+ ],
+ "directory/topics/index.html": [
+  "agent skills by topic",
+  "claude code skills by use case",
+  "claude skills categories",
+  "ai agent skills list by topic"
+ ],
+ "directory/topics/inference-serving/index.html": [
+  "inference and model serving skills for claude code and codex",
+  "inference agent skills",
+  "inference claude skills",
+  "best inference skills",
+  "inference skills for codex"
+ ],
+ "directory/topics/influencer-marketing/index.html": [
+  "influencer marketing skills for claude code and codex",
+  "influencer marketing agent skills",
+  "influencer marketing claude skills",
+  "best influencer marketing skills",
+  "influencer marketing skills for codex"
+ ],
+ "directory/topics/infrastructure-as-code/index.html": [
+  "terraform and infrastructure as code skills for claude code and codex",
+  "infrastructure as code agent skills",
+  "infrastructure as code claude skills",
+  "best infrastructure as code skills",
+  "infrastructure as code skills for codex"
+ ],
+ "directory/topics/ios-swift/index.html": [
+  "ios and swift skills for claude code and codex",
+  "iOS and Swift agent skills",
+  "iOS and Swift claude skills",
+  "best iOS and Swift skills",
+  "iOS and Swift skills for codex"
+ ],
+ "directory/topics/java-jvm/index.html": [
+  "java and jvm skills for claude code and codex",
+  "Java and JVM agent skills",
+  "Java and JVM claude skills",
+  "best Java and JVM skills",
+  "Java and JVM skills for codex"
+ ],
+ "directory/topics/job-search/index.html": [
+  "job search skills for claude code and codex",
+  "job search agent skills",
+  "job search claude skills",
+  "best job search skills",
+  "job search skills for codex"
+ ],
+ "directory/topics/kubernetes/index.html": [
+  "kubernetes skills for claude code and codex",
+  "Kubernetes agent skills",
+  "Kubernetes claude skills",
+  "best Kubernetes skills",
+  "Kubernetes skills for codex"
+ ],
+ "directory/topics/landing-pages/index.html": [
+  "landing pages and conversion skills for claude code and codex",
+  "landing page and conversion agent skills",
+  "landing page and conversion claude skills",
+  "best landing page and conversion skills",
+  "landing page and conversion skills for codex"
+ ],
+ "directory/topics/lead-generation/index.html": [
+  "lead generation skills for claude code and codex",
+  "lead generation agent skills",
+  "lead generation claude skills",
+  "best lead generation skills",
+  "lead generation skills for codex"
+ ],
+ "directory/topics/legal/index.html": [
+  "legal skills for claude code and codex",
+  "legal agent skills",
+  "legal claude skills",
+  "best legal skills",
+  "legal skills for codex"
+ ],
+ "directory/topics/literature-search/index.html": [
+  "literature search skills for claude code and codex",
+  "literature search agent skills",
+  "literature search claude skills",
+  "best literature search skills",
+  "literature search skills for codex"
+ ],
+ "directory/topics/llm-apis/index.html": [
+  "llm apis and sdks skills for claude code and codex",
+  "LLM API agent skills",
+  "LLM API claude skills",
+  "best LLM API skills",
+  "LLM API skills for codex"
+ ],
+ "directory/topics/logo-generation/index.html": [
+  "logos and brand identity skills for claude code and codex",
+  "logo and brand identity agent skills",
+  "logo and brand identity claude skills",
+  "best logo and brand identity skills",
+  "logo and brand identity skills for codex"
+ ],
+ "directory/topics/low-code-no-code/index.html": [
+  "low-code and no-code skills for claude code and codex",
+  "low-code agent skills",
+  "low-code claude skills",
+  "best low-code skills",
+  "low-code skills for codex"
+ ],
+ "directory/topics/lyrics-songwriting/index.html": [
+  "lyrics and songwriting skills for claude code and codex",
+  "lyrics and songwriting agent skills",
+  "lyrics and songwriting claude skills",
+  "best lyrics and songwriting skills",
+  "lyrics and songwriting skills for codex"
+ ],
+ "directory/topics/machine-learning/index.html": [
+  "machine learning skills for claude code and codex",
+  "machine learning agent skills",
+  "machine learning claude skills",
+  "best machine learning skills",
+  "machine learning skills for codex"
+ ],
+ "directory/topics/market-research/index.html": [
+  "market research skills for claude code and codex",
+  "market research agent skills",
+  "market research claude skills",
+  "best market research skills",
+  "market research skills for codex"
+ ],
+ "directory/topics/marketing-analytics/index.html": [
+  "marketing analytics skills for claude code and codex",
+  "marketing analytics agent skills",
+  "marketing analytics claude skills",
+  "best marketing analytics skills",
+  "marketing analytics skills for codex"
+ ],
+ "directory/topics/marketing-automation/index.html": [
+  "marketing automation skills for claude code and codex",
+  "marketing automation agent skills",
+  "marketing automation claude skills",
+  "best marketing automation skills",
+  "marketing automation skills for codex"
+ ],
+ "directory/topics/marketing-strategy/index.html": [
+  "marketing strategy skills for claude code and codex",
+  "marketing strategy agent skills",
+  "marketing strategy claude skills",
+  "best marketing strategy skills",
+  "marketing strategy skills for codex"
+ ],
+ "directory/topics/materials-science/index.html": [
+  "materials science and simulation skills for claude code and codex",
+  "materials science agent skills",
+  "materials science claude skills",
+  "best materials science skills",
+  "materials science skills for codex"
+ ],
+ "directory/topics/mcp-servers/index.html": [
+  "mcp servers skills for claude code and codex",
+  "MCP agent skills",
+  "MCP claude skills",
+  "best MCP skills",
+  "MCP skills for codex"
+ ],
+ "directory/topics/meeting-assistant/index.html": [
+  "meeting assistant skills for claude code and codex",
+  "meeting agent skills",
+  "meeting claude skills",
+  "best meeting skills",
+  "meeting skills for codex"
+ ],
+ "directory/topics/music-audio/index.html": [
+  "music generation skills for claude code and codex",
+  "music generation agent skills",
+  "music generation claude skills",
+  "best music generation skills",
+  "music generation skills for codex"
+ ],
+ "directory/topics/music-release-rights/index.html": [
+  "music release and rights skills for claude code and codex",
+  "music release and rights agent skills",
+  "music release and rights claude skills",
+  "best music release and rights skills",
+  "music release and rights skills for codex"
+ ],
+ "directory/topics/newsletters/index.html": [
+  "newsletters skills for claude code and codex",
+  "newsletter agent skills",
+  "newsletter claude skills",
+  "best newsletter skills",
+  "newsletter skills for codex"
+ ],
+ "directory/topics/note-taking/index.html": [
+  "note taking skills for claude code and codex",
+  "note taking agent skills",
+  "note taking claude skills",
+  "best note taking skills",
+  "note taking skills for codex"
+ ],
+ "directory/topics/notebooks/index.html": [
+  "notebooks skills for claude code and codex",
+  "notebook agent skills",
+  "notebook claude skills",
+  "best notebook skills",
+  "notebook skills for codex"
+ ],
+ "directory/topics/observability/index.html": [
+  "observability and monitoring skills for claude code and codex",
+  "observability agent skills",
+  "observability claude skills",
+  "best observability skills",
+  "observability skills for codex"
+ ],
+ "directory/topics/paraphrasing/index.html": [
+  "rewriting and paraphrasing skills for claude code and codex",
+  "rewriting agent skills",
+  "rewriting claude skills",
+  "best rewriting skills",
+  "rewriting skills for codex"
+ ],
+ "directory/topics/payments-stripe/index.html": [
+  "payments and stripe skills for claude code and codex",
+  "payments agent skills",
+  "payments claude skills",
+  "best payments skills",
+  "payments skills for codex"
+ ],
+ "directory/topics/pdf/index.html": [
+  "pdf skills for claude code and codex",
+  "PDF agent skills",
+  "PDF claude skills",
+  "best PDF skills",
+  "PDF skills for codex"
+ ],
+ "directory/topics/performance-testing/index.html": [
+  "performance and load testing skills for claude code and codex",
+  "performance testing agent skills",
+  "performance testing claude skills",
+  "best performance testing skills",
+  "performance testing skills for codex"
+ ],
+ "directory/topics/personal-assistant/index.html": [
+  "personal assistant skills for claude code and codex",
+  "personal assistant agent skills",
+  "personal assistant claude skills",
+  "best personal assistant skills",
+  "personal assistant skills for codex"
+ ],
+ "directory/topics/personal-finance/index.html": [
+  "personal finance skills for claude code and codex",
+  "personal finance agent skills",
+  "personal finance claude skills",
+  "best personal finance skills",
+  "personal finance skills for codex"
+ ],
+ "directory/topics/personal-productivity/index.html": [
+  "personal productivity skills for claude code and codex",
+  "personal productivity agent skills",
+  "personal productivity claude skills",
+  "best personal productivity skills",
+  "personal productivity skills for codex"
+ ],
+ "directory/topics/php-laravel/index.html": [
+  "php and laravel skills for claude code and codex",
+  "PHP and Laravel agent skills",
+  "PHP and Laravel claude skills",
+  "best PHP and Laravel skills",
+  "PHP and Laravel skills for codex"
+ ],
+ "directory/topics/physics/index.html": [
+  "physics and quantum computing skills for claude code and codex",
+  "physics agent skills",
+  "physics claude skills",
+  "best physics skills",
+  "physics skills for codex"
+ ],
+ "directory/topics/podcasts/index.html": [
+  "podcast tools skills for claude code and codex",
+  "podcast agent skills",
+  "podcast claude skills",
+  "best podcast skills",
+  "podcast skills for codex"
+ ],
+ "directory/topics/presentations/index.html": [
+  "presentations skills for claude code and codex",
+  "presentation agent skills",
+  "presentation claude skills",
+  "best presentation skills",
+  "presentation skills for codex"
+ ],
+ "directory/topics/press-releases/index.html": [
+  "press releases and pr skills for claude code and codex",
+  "press release agent skills",
+  "press release claude skills",
+  "best press release skills",
+  "press release skills for codex"
+ ],
+ "directory/topics/product-descriptions/index.html": [
+  "product descriptions skills for claude code and codex",
+  "product description and listing agent skills",
+  "product description and listing claude skills",
+  "best product description and listing skills",
+  "product description and listing skills for codex"
+ ],
+ "directory/topics/product-photography/index.html": [
+  "product photography skills for claude code and codex",
+  "product photography agent skills",
+  "product photography claude skills",
+  "best product photography skills",
+  "product photography skills for codex"
+ ],
+ "directory/topics/project-management/index.html": [
+  "project management skills for claude code and codex",
+  "project management agent skills",
+  "project management claude skills",
+  "best project management skills",
+  "project management skills for codex"
+ ],
+ "directory/topics/prompt-engineering/index.html": [
+  "prompt engineering skills for claude code and codex",
+  "prompt engineering agent skills",
+  "prompt engineering claude skills",
+  "best prompt engineering skills",
+  "prompt engineering skills for codex"
+ ],
+ "directory/topics/prompt-generators/index.html": [
+  "prompt generators skills for claude code and codex",
+  "prompt agent skills",
+  "prompt claude skills",
+  "best prompt skills",
+  "prompt skills for codex"
+ ],
+ "directory/topics/pull-requests/index.html": [
+  "pull requests skills for claude code and codex",
+  "pull request agent skills",
+  "pull request claude skills",
+  "best pull request skills",
+  "pull request skills for codex"
+ ],
+ "directory/topics/python/index.html": [
+  "python skills for claude code and codex",
+  "Python agent skills",
+  "Python claude skills",
+  "best Python skills",
+  "Python skills for codex"
+ ],
+ "directory/topics/rag-retrieval/index.html": [
+  "rag and retrieval skills for claude code and codex",
+  "RAG agent skills",
+  "RAG claude skills",
+  "best RAG skills",
+  "RAG skills for codex"
+ ],
+ "directory/topics/react-nextjs/index.html": [
+  "react and next.js skills for claude code and codex",
+  "React and Next.js agent skills",
+  "React and Next.js claude skills",
+  "best React and Next.js skills",
+  "React and Next.js skills for codex"
+ ],
+ "directory/topics/refactoring/index.html": [
+  "refactoring skills for claude code and codex",
+  "refactoring agent skills",
+  "refactoring claude skills",
+  "best refactoring skills",
+  "refactoring skills for codex"
+ ],
+ "directory/topics/research/index.html": [
+  "research skills for claude code and codex",
+  "research agent skills",
+  "research claude skills",
+  "best research skills",
+  "research skills for codex"
+ ],
+ "directory/topics/rest-apis/index.html": [
+  "rest apis and openapi skills for claude code and codex",
+  "REST API agent skills",
+  "REST API claude skills",
+  "best REST API skills",
+  "REST API skills for codex"
+ ],
+ "directory/topics/resume-builder/index.html": [
+  "resumes and cover letters skills for claude code and codex",
+  "resume and cover letter agent skills",
+  "resume and cover letter claude skills",
+  "best resume and cover letter skills",
+  "resume and cover letter skills for codex"
+ ],
+ "directory/topics/ruby-rails/index.html": [
+  "ruby and rails skills for claude code and codex",
+  "Ruby and Rails agent skills",
+  "Ruby and Rails claude skills",
+  "best Ruby and Rails skills",
+  "Ruby and Rails skills for codex"
+ ],
+ "directory/topics/rust/index.html": [
+  "rust skills for claude code and codex",
+  "Rust agent skills",
+  "Rust claude skills",
+  "best Rust skills",
+  "Rust skills for codex"
+ ],
+ "directory/topics/sales/index.html": [
+  "sales skills for claude code and codex",
+  "sales agent skills",
+  "sales claude skills",
+  "best sales skills",
+  "sales skills for codex"
+ ],
+ "directory/topics/scheduling/index.html": [
+  "scheduling and calendar skills for claude code and codex",
+  "scheduling agent skills",
+  "scheduling claude skills",
+  "best scheduling skills",
+  "scheduling skills for codex"
+ ],
+ "directory/topics/scientific-writing/index.html": [
+  "scientific writing skills for claude code and codex",
+  "scientific writing agent skills",
+  "scientific writing claude skills",
+  "best scientific writing skills",
+  "scientific writing skills for codex"
+ ],
+ "directory/topics/screen-recording/index.html": [
+  "screen recording and product demos skills for claude code and codex",
+  "screen recording and demo video agent skills",
+  "screen recording and demo video claude skills",
+  "best screen recording and demo video skills",
+  "screen recording and demo video skills for codex"
+ ],
+ "directory/topics/scriptwriting/index.html": [
+  "scriptwriting skills for claude code and codex",
+  "scriptwriting agent skills",
+  "scriptwriting claude skills",
+  "best scriptwriting skills",
+  "scriptwriting skills for codex"
+ ],
+ "directory/topics/search-engine/index.html": [
+  "web search skills for claude code and codex",
+  "web search agent skills",
+  "web search claude skills",
+  "best web search skills",
+  "web search skills for codex"
+ ],
+ "directory/topics/secrets-credentials/index.html": [
+  "secrets and credentials skills for claude code and codex",
+  "secrets management agent skills",
+  "secrets management claude skills",
+  "best secrets management skills",
+  "secrets management skills for codex"
+ ],
+ "directory/topics/security-auditing/index.html": [
+  "security auditing and review skills for claude code and codex",
+  "security audit agent skills",
+  "security audit claude skills",
+  "best security audit skills",
+  "security audit skills for codex"
+ ],
+ "directory/topics/seo/index.html": [
+  "seo skills for claude code and codex",
+  "SEO agent skills",
+  "SEO claude skills",
+  "best SEO skills",
+  "SEO skills for codex"
+ ],
+ "directory/topics/serverless/index.html": [
+  "serverless skills for claude code and codex",
+  "serverless agent skills",
+  "serverless claude skills",
+  "best serverless skills",
+  "serverless skills for codex"
+ ],
+ "directory/topics/shopify-ecommerce-dev/index.html": [
+  "shopify and e-commerce development skills for claude code and codex",
+  "Shopify and e-commerce development agent skills",
+  "Shopify and e-commerce development claude skills",
+  "best Shopify and e-commerce development skills",
+  "Shopify and e-commerce development skills for codex"
+ ],
+ "directory/topics/short-form-clips/index.html": [
+  "short-form clips and reels skills for claude code and codex",
+  "short-form video agent skills",
+  "short-form video claude skills",
+  "best short-form video skills",
+  "short-form video skills for codex"
+ ],
+ "directory/topics/skill-authoring/index.html": [
+  "skill authoring skills for claude code and codex",
+  "skill authoring agent skills",
+  "skill authoring claude skills",
+  "best skill authoring skills",
+  "skill authoring skills for codex"
+ ],
+ "directory/topics/smart-contract-security/index.html": [
+  "smart contracts and blockchain skills for claude code and codex",
+  "smart contract and blockchain agent skills",
+  "smart contract and blockchain claude skills",
+  "best smart contract and blockchain skills",
+  "smart contract and blockchain skills for codex"
+ ],
+ "directory/topics/social-media-graphics/index.html": [
+  "social and marketing images skills for claude code and codex",
+  "social and marketing image agent skills",
+  "social and marketing image claude skills",
+  "best social and marketing image skills",
+  "social and marketing image skills for codex"
+ ],
+ "directory/topics/social-media/index.html": [
+  "social media skills for claude code and codex",
+  "social media agent skills",
+  "social media claude skills",
+  "best social media skills",
+  "social media skills for codex"
+ ],
+ "directory/topics/sound-effects/index.html": [
+  "sound effects skills for claude code and codex",
+  "sound effect agent skills",
+  "sound effect claude skills",
+  "best sound effect skills",
+  "sound effect skills for codex"
+ ],
+ "directory/topics/speech-to-text/index.html": [
+  "transcription and speech to text skills for claude code and codex",
+  "transcription agent skills",
+  "transcription claude skills",
+  "best transcription skills",
+  "transcription skills for codex"
+ ],
+ "directory/topics/spreadsheets/index.html": [
+  "spreadsheets skills for claude code and codex",
+  "spreadsheet agent skills",
+  "spreadsheet claude skills",
+  "best spreadsheet skills",
+  "spreadsheet skills for codex"
+ ],
+ "directory/topics/sql/index.html": [
+  "sql and databases skills for claude code and codex",
+  "SQL and database agent skills",
+  "SQL and database claude skills",
+  "best SQL and database skills",
+  "SQL and database skills for codex"
+ ],
+ "directory/topics/startup-tools/index.html": [
+  "startup tools skills for claude code and codex",
+  "startup agent skills",
+  "startup claude skills",
+  "best startup skills",
+  "startup skills for codex"
+ ],
+ "directory/topics/statistics/index.html": [
+  "statistics skills for claude code and codex",
+  "statistics agent skills",
+  "statistics claude skills",
+  "best statistics skills",
+  "statistics skills for codex"
+ ],
+ "directory/topics/storytelling/index.html": [
+  "storytelling and fiction skills for claude code and codex",
+  "storytelling and fiction agent skills",
+  "storytelling and fiction claude skills",
+  "best storytelling and fiction skills",
+  "storytelling and fiction skills for codex"
+ ],
+ "directory/topics/subagents/index.html": [
+  "subagents and multi-agent orchestration skills for claude code and codex",
+  "subagent agent skills",
+  "subagent claude skills",
+  "best subagent skills",
+  "subagent skills for codex"
+ ],
+ "directory/topics/subtitles-captions/index.html": [
+  "subtitles and captions skills for claude code and codex",
+  "subtitle and caption agent skills",
+  "subtitle and caption claude skills",
+  "best subtitle and caption skills",
+  "subtitle and caption skills for codex"
+ ],
+ "directory/topics/summarizer/index.html": [
+  "summarizer skills for claude code and codex",
+  "summarizer agent skills",
+  "summarizer claude skills",
+  "best summarizer skills",
+  "summarizer skills for codex"
+ ],
+ "directory/topics/supabase-firebase/index.html": [
+  "supabase and firebase skills for claude code and codex",
+  "backend-as-a-service agent skills",
+  "backend-as-a-service claude skills",
+  "best backend-as-a-service skills",
+  "backend-as-a-service skills for codex"
+ ],
+ "directory/topics/task-management/index.html": [
+  "task management skills for claude code and codex",
+  "task management agent skills",
+  "task management claude skills",
+  "best task management skills",
+  "task management skills for codex"
+ ],
+ "directory/topics/technical-writing/index.html": [
+  "technical writing and documentation skills for claude code and codex",
+  "technical writing and documentation agent skills",
+  "technical writing and documentation claude skills",
+  "best technical writing and documentation skills",
+  "technical writing and documentation skills for codex"
+ ],
+ "directory/topics/test-automation/index.html": [
+  "test automation skills for claude code and codex",
+  "test automation agent skills",
+  "test automation claude skills",
+  "best test automation skills",
+  "test automation skills for codex"
+ ],
+ "directory/topics/text-to-speech/index.html": [
+  "text to speech and voiceover skills for claude code and codex",
+  "text to speech agent skills",
+  "text to speech claude skills",
+  "best text to speech skills",
+  "text to speech skills for codex"
+ ],
+ "directory/topics/translation/index.html": [
+  "translation and localization skills for claude code and codex",
+  "translation agent skills",
+  "translation claude skills",
+  "best translation skills",
+  "translation skills for codex"
+ ],
+ "directory/topics/tutoring-courses/index.html": [
+  "tutoring and courses skills for claude code and codex",
+  "tutoring and course agent skills",
+  "tutoring and course claude skills",
+  "best tutoring and course skills",
+  "tutoring and course skills for codex"
+ ],
+ "directory/topics/typescript-node/index.html": [
+  "typescript and node.js skills for claude code and codex",
+  "TypeScript and Node.js agent skills",
+  "TypeScript and Node.js claude skills",
+  "best TypeScript and Node.js skills",
+  "TypeScript and Node.js skills for codex"
+ ],
+ "directory/topics/ui-ux-design/index.html": [
+  "ui and ux design skills for claude code and codex",
+  "UI and UX design agent skills",
+  "UI and UX design claude skills",
+  "best UI and UX design skills",
+  "UI and UX design skills for codex"
+ ],
+ "directory/topics/unit-testing/index.html": [
+  "unit testing skills for claude code and codex",
+  "unit testing agent skills",
+  "unit testing claude skills",
+  "best unit testing skills",
+  "unit testing skills for codex"
+ ],
+ "directory/topics/vector-databases/index.html": [
+  "vector databases and embeddings skills for claude code and codex",
+  "vector database agent skills",
+  "vector database claude skills",
+  "best vector database skills",
+  "vector database skills for codex"
+ ],
+ "directory/topics/video-ads/index.html": [
+  "video ads skills for claude code and codex",
+  "video ad agent skills",
+  "video ad claude skills",
+  "best video ad skills",
+  "video ad skills for codex"
+ ],
+ "directory/topics/video-avatars/index.html": [
+  "video avatars and ai presenters skills for claude code and codex",
+  "video avatar agent skills",
+  "video avatar claude skills",
+  "best video avatar skills",
+  "video avatar skills for codex"
+ ],
+ "directory/topics/video-editing/index.html": [
+  "video editing skills for claude code and codex",
+  "video editing agent skills",
+  "video editing claude skills",
+  "best video editing skills",
+  "video editing skills for codex"
+ ],
+ "directory/topics/video-enhancement/index.html": [
+  "video enhancement skills for claude code and codex",
+  "video enhancement agent skills",
+  "video enhancement claude skills",
+  "best video enhancement skills",
+  "video enhancement skills for codex"
+ ],
+ "directory/topics/video-generation/index.html": [
+  "ai video generation skills for claude code and codex",
+  "AI video generation agent skills",
+  "AI video generation claude skills",
+  "best AI video generation skills",
+  "AI video generation skills for codex"
+ ],
+ "directory/topics/video-scripts/index.html": [
+  "video scripts and storyboards skills for claude code and codex",
+  "video script agent skills",
+  "video script claude skills",
+  "best video script skills",
+  "video script skills for codex"
+ ],
+ "directory/topics/video-understanding/index.html": [
+  "video analysis and summaries skills for claude code and codex",
+  "video analysis agent skills",
+  "video analysis claude skills",
+  "best video analysis skills",
+  "video analysis skills for codex"
+ ],
+ "directory/topics/voice-agents/index.html": [
+  "voice agents skills for claude code and codex",
+  "voice agent agent skills",
+  "voice agent claude skills",
+  "best voice agent skills",
+  "voice agent skills for codex"
+ ],
+ "directory/topics/voice-cloning/index.html": [
+  "voice cloning and voice changers skills for claude code and codex",
+  "voice cloning agent skills",
+  "voice cloning claude skills",
+  "best voice cloning skills",
+  "voice cloning skills for codex"
+ ],
+ "directory/topics/vue-nuxt/index.html": [
+  "vue and nuxt skills for claude code and codex",
+  "Vue and Nuxt agent skills",
+  "Vue and Nuxt claude skills",
+  "best Vue and Nuxt skills",
+  "Vue and Nuxt skills for codex"
+ ],
+ "directory/topics/vulnerability-scanning/index.html": [
+  "vulnerability scanning skills for claude code and codex",
+  "vulnerability scanning agent skills",
+  "vulnerability scanning claude skills",
+  "best vulnerability scanning skills",
+  "vulnerability scanning skills for codex"
+ ],
+ "directory/topics/web-scraping/index.html": [
+  "web scraping and browser automation skills for claude code and codex",
+  "web scraping agent skills",
+  "web scraping claude skills",
+  "best web scraping skills",
+  "web scraping skills for codex"
+ ],
+ "directory/topics/website-builders/index.html": [
+  "website builders skills for claude code and codex",
+  "website builder agent skills",
+  "website builder claude skills",
+  "best website builder skills",
+  "website builder skills for codex"
+ ],
+ "directory/topics/workflow-automation/index.html": [
+  "workflow automation skills for claude code and codex",
+  "workflow automation agent skills",
+  "workflow automation claude skills",
+  "best workflow automation skills",
+  "workflow automation skills for codex"
+ ],
+ "directory/topics/youtube/index.html": [
+  "youtube tools skills for claude code and codex",
+  "YouTube agent skills",
+  "YouTube claude skills",
+  "best YouTube skills",
+  "YouTube skills for codex"
  ],
  "directory/trailofbits/skills/agentic-actions-auditor/index.html": [
   "agentic-actions-auditor skill by trailofbits",

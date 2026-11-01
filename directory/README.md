@@ -13,9 +13,13 @@ The [Suede Awesome Everything catalog](../awesome/README.md) is the GitHub Markd
 | `featured-projects.json` | Editorial project selections, accepted scopes, pinned intake reviews and project-specific setup for `/directory/featured/`; independent of catalog scores and README-badge verification | Reviewed by hand or by an agent |
 | `categories.json` | The sixteen category directories: slug, title and intro copy | Hand-written |
 | `task-pages.json` | The keyword map behind the task pages (`/for/<job>/`, "What are the best Claude Code skills for <job>?") and the "<skill> alternatives" pages. A job gets a page only when at least 5 listed skills match and at least 3 of them have full pages scoring 80 or more; Suede AI's own skills are never ranked (`scripts/directory/task-pages.mjs`) | Hand-written |
+| `topics.json` | The taxonomy behind the topic pages (`/topics/<id>/`): groups, topics with keyword patterns, and the Futurepedia labels each one stands in for, which the parity audit reads. A topic gets a page when at least 3 listed skills match it (`scripts/directory/topics.mjs`) | Hand-written |
 | `inclusions.json` | Repositories (`owner/repo`) added from accepted listing requests, with optional per-repository skill-name allowlists; read on the next refresh even when no curated list cites them | Hand-written |
 | `notes.json` | Publisher install routes for restricted-license skills, and required service setup for other skills, shown in the installation section with a link to the source | Hand-written |
 | `exclusions.json` | Repositories (`owner/repo`) and skills (`owner/repo/skill-name`) kept out of the directory, each with a recorded reason: author removal requests, and skills whose text trips the pack's public-source guards (`npm run validate` names the file) | Hand-written |
+| `listed-since.json` | Ledger of the snapshot date that first listed each skill, keyed by skill id. It feeds the "Listed since" row on skill pages and the `/new/` page | `scripts/build-directory.mjs`, which adds new skills at the snapshot date and drops skills that left the dataset |
+
+Cost lanes (`/pricing/`) and capability flags (`/features/`) have no data file. `scripts/directory/facets.mjs` derives both from published fields in `skills.json`, so a reader can recompute them.
 
 ## Getting the directory listed
 
@@ -54,6 +58,20 @@ scripts/directory/refresh.sh     # re-read the source repositories, then rebuild
 
 Pass an optional work directory to reuse downloads: `scripts/directory/refresh.sh /tmp/suede-directory`. Every run fetches the current default branch of both the curated lists and selected repositories before parsing. Reused repositories become detached snapshots; `suede.directoryDefaultBranch` in their local Git configuration records the branch used for source links and install commands. Cached repositories no longer selected are retained but excluded from parsing. A clone/fetch failure or a dirty checkout stops the refresh before it changes the published dataset; preserve or move local edits before retrying.
 
+## Browse pages
+
+The build writes these pages beside the category directories:
+
+- `/topics/`: the groups and topics in `topics.json`. A topic gets its own page at `/topics/<id>/` when at least 3 listed skills match its patterns. A topic below that stays on the hub with its count and a listing request link.
+- `/pricing/<lane>/`: one cost lane per skill, from its license and whether its files name a paid or account-based service: free and open source, free skill that needs a service, non-commercial license, restricted license.
+- `/features/<flag>/`: capability flags such as official publisher, bundles scripts, uses an MCP server and no setup required. A skill can carry any number. Flags read from the install record cover skills with full pages only, and those pages say so.
+- `/new/`: skills first listed within the last 30 days, from `listed-since.json`, and skills whose repository was updated in that window.
+- `/top/`: the 100 highest-scoring listed skills. Rankings exclude Suede AI's own skills, as the task pages do.
+- `/saved/`: the reader's save list. It lives in the browser's local storage, needs no account, and never leaves the browser.
+- `/feed.xml`: an RSS feed of new listings for readers who follow the directory.
+
+When editing `topics.json`, run `node scripts/directory/topics-count.mjs`. It prints every topic's match count and whether it publishes. Give it a topic id to list that topic's matches with the reason each one matched, or `--unmatched` to list the skills no published topic claims.
+
 ## Listing requests
 
 Authors add, correct or remove listings through the `Directory listing request` issue form (`.github/ISSUE_TEMPLATE/directory-listing.yml`). An accepted addition is a line in `inclusions.json` followed by `refresh.sh`. A removal is an entry in `exclusions.json` followed by `refresh.sh`, or by re-running `curate.py` on the last parsed snapshot.
@@ -88,8 +106,8 @@ deduplicates source repositories and publishes the evidence with the listing.
 These citations share the existing rubric but do not expand the discovery pool.
 
 `score_method: "graded-v2"` adds `score` (integer 0–99) to each record. The
-score is computed only from published fields — the record, its repository's
-`commit_date` and `lists` in `repos`, and the snapshot's `generated` date — so
+score is computed only from published fields (the record, its repository's
+`commit_date` and `lists` in `repos`, and the snapshot's `generated` date), so
 `scripts/directory/grade.py` (`quality_score`) and
 `scripts/directory/badges.mjs` (`qualityScore`) recompute the same value from
 `skills.json`. All arithmetic is integer, with no rounding:

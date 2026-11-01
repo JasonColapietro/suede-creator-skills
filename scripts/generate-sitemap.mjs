@@ -314,6 +314,9 @@ function buildEntries() {
       // buying question as the category hubs, so they share the tier; each
       // "<skill> alternatives" page ranks above the skill page it compares.
       if (rel === "directory/for" || rel.startsWith("directory/for/")) return { priority: DIRECTORY_CATEGORY_PRIORITY, changefreq: "weekly" };
+      // Browse pages (topics, cost and license, capabilities, new, top 100)
+      // answer the same "which skills for X" question as the category hubs.
+      if (/^directory\/(?:topics|pricing|features|new|top)(?:\/|$)/.test(rel)) return { priority: DIRECTORY_CATEGORY_PRIORITY, changefreq: "weekly" };
       if (rel.endsWith("/alternatives")) return { priority: DIRECTORY_REPO_PRIORITY, changefreq: "weekly" };
       if (depth === 1) return { priority: DIRECTORY_CATEGORY_PRIORITY, changefreq: "weekly" };
       if (depth === 2) return { priority: DIRECTORY_REPO_PRIORITY, changefreq: "weekly" };

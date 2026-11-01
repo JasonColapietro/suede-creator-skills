@@ -30,7 +30,7 @@
         "name": "semgrep: Claude Code Skill by Trail of Bits (92/100)",
         "description": "Runs a Semgrep security scan over a codebase, detecting languages, selecting rulesets, requiring approval of the plan, and merging output to SARIF.",
         "url": "https://skills.suedeai.ai/directory/trailofbits/skills/semgrep/",
-        "dateModified": "2026-10-31",
+        "dateModified": "2026-11-01",
         "isPartOf": {
           "@type": "CollectionPage",
           "@id": "https://skills.suedeai.ai/directory/#directory",
@@ -100,11 +100,69 @@
         ]
       }
     </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "@id": "https://skills.suedeai.ai/directory/trailofbits/skills/semgrep/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What does semgrep do?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Runs a Semgrep security scan over a codebase, detecting languages, selecting rulesets, requiring approval of the plan, and merging output to SARIF. It is listed in Security on SuedeAI.directory."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is semgrep free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The skill is free under CC-BY-SA-4.0. Its files names json.schemastore.org, so the service it talks to may need an account or a paid plan."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I install semgrep?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Run npx skills add https://github.com/trailofbits/skills/tree/main/plugins/static-analysis/skills/semgrep from your project, or copy the folder into .claude/skills/ for Claude Code or .agents/skills/ for Codex. The install section lists each route."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does semgrep need an API key or MCP server?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. At the October 22, 2026 snapshot its files names json.schemastore.org. The Before you install section lists the details."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How good is semgrep?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It scores 92/100, grade A, on the Suede Skill Check, which adds structure, description quality, instruction depth, bundled files, maintenance and curated-list citations from its published files."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are alternatives to semgrep?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "skill-scanner from getsentry/skills, gha-security-review from getsentry/skills and security-review from getsentry/skills do similar work. Its alternatives page compares 7 skills from other publishers."
+            }
+          }
+        ]
+      }
+    </script>
     <link rel="preload" href="../../../../assets/fonts/fraunces-var.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="../../../../assets/site.css">
     <link rel="stylesheet" href="../../../../assets/skill.css">
     <link rel="stylesheet" href="../../../../assets/directory.css">
     <script src="../../../../assets/directory.js" defer></script>
+    <link rel="alternate" type="application/rss+xml" title="Suede AI Skills Directory: new listings and guides" href="../../../feed.xml">
 </head>
   <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -124,11 +182,13 @@
       <div class="nav-links">
           <a href="../../../../">Home</a>
           <a href="../../../">Skills</a>
+          <a href="../../../topics/">Topics</a>
           <a href="../../../featured/">Featured Skills</a>
           <a href="../../../agents/">Agents</a>
           <a href="../../../methodology/">How listing works</a>
           <a href="../../../../skills/">Suede AI skills</a>
           <a href="../../../../blog/">Blog</a>
+          <a href="../../../saved/" data-saved-link>Saved <span class="count-chip" data-saved-count hidden></span></a>
           <a href="../../../submit/" class="nav-cta">List your skill</a>
         </div>
     </details>
@@ -139,7 +199,8 @@
       <h1>semgrep <span class="h1-sub">agent skill by trailofbits</span></h1>
       <nav class="crumbs" aria-label="Breadcrumb"><a href="../../../">Directory</a> <span class="crumb-sep" aria-hidden="true">/</span> <a href="../../../security/">Security</a> <span class="crumb-sep" aria-hidden="true">/</span> <a href="../">trailofbits/skills</a> <span class="crumb-sep" aria-hidden="true">/</span> <span aria-current="page">semgrep</span></nav>
       <p class="lead">Runs a Semgrep security scan over a codebase, detecting languages, selecting rulesets, requiring approval of the plan, and merging output to SARIF.</p>
-      <p><a class="button" href="https://github.com/trailofbits/skills/tree/main/plugins/static-analysis/skills/semgrep" target="_blank" rel="noopener">View on GitHub</a> <a class="button secondary" href="https://github.com/trailofbits/skills/blob/main/plugins/static-analysis/skills/semgrep/SKILL.md" target="_blank" rel="noopener">Read SKILL.md</a></p>
+      <p><a class="button" href="https://github.com/trailofbits/skills/tree/main/plugins/static-analysis/skills/semgrep" target="_blank" rel="noopener">View on GitHub</a> <a class="button secondary" href="https://github.com/trailofbits/skills/blob/main/plugins/static-analysis/skills/semgrep/SKILL.md" target="_blank" rel="noopener">Read SKILL.md</a> <button type="button" class="save-button" data-save="trailofbits/skills/semgrep" data-save-name="semgrep" data-save-href="./" data-save-repo="trailofbits/skills" data-save-score="92" data-save-grade="A" data-save-category="Security" data-save-license="CC-BY-SA-4.0" aria-pressed="false">Save</button></p>
+      <div class="share" data-share><span class="share-label">Share</span><a href="https://x.com/intent/post?url=https%3A%2F%2Fsuedeai.directory%2Ftrailofbits%2Fskills%2Fsemgrep%2F&amp;text=semgrep%3A%20agent%20skill%20by%20Trail%20of%20Bits" target="_blank" rel="noopener">X</a><a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fsuedeai.directory%2Ftrailofbits%2Fskills%2Fsemgrep%2F" target="_blank" rel="noopener">LinkedIn</a><button type="button" data-copy-url="https://suedeai.directory/trailofbits/skills/semgrep/">Copy link</button></div>
       <section class="panel" aria-labelledby="facts-title">
         <h2 id="facts-title">At a glance</h2>
         <div class="table-wrap">
@@ -148,8 +209,12 @@
             <tr><th scope="row">Publisher</th><td><a href="https://github.com/trailofbits" target="_blank" rel="noopener">Trail of Bits</a> <span class="tag">Official</span></td></tr>
             <tr><th scope="row">Repository</th><td><a href="../">trailofbits/skills</a> (83 listed skills)</td></tr>
             <tr><th scope="row">Category</th><td><a href="../../../security/">Security</a></td></tr>
+            <tr><th scope="row">Topics</th><td><a href="../../../topics/security-auditing/">Security Auditing and Review</a>, <a href="../../../topics/vulnerability-scanning/">Vulnerability Scanning</a></td></tr>
+            <tr><th scope="row">Cost</th><td><a href="../../../pricing/free-with-service/">Free skill, needs a service</a></td></tr>
+            <tr><th scope="row">Capabilities</th><td><a href="../../../features/official/">Official publisher</a>, <a href="../../../features/badge-eligible/">Quality badge</a>, <a href="../../../features/scripts/">Bundles scripts</a>, <a href="../../../features/references/">Bundles reference files</a>, <a href="../../../features/assets/">Bundles assets or templates</a>, <a href="../../../features/allowed-tools/">Declares tool permissions</a>, <a href="../../../features/network/">Calls outside services</a></td></tr>
             <tr><th scope="row">License</th><td><a href="https://github.com/trailofbits/skills/blob/main/LICENSE" target="_blank" rel="noopener">CC-BY-SA-4.0</a></td></tr>
             <tr><th scope="row">Last commit</th><td>October 15, 2026 (repository)</td></tr>
+            <tr><th scope="row">Listed since</th><td>October 19, 2026 or earlier</td></tr>
             <tr><th scope="row">SKILL.md</th><td>257 lines, 2,030 words</td></tr>
             <tr><th scope="row">Bundled files</th><td>9 files, including references, scripts, assets or templates</td></tr>
             <tr><th scope="row">Quality score</th><td><span class="grade grade-a" title="Suede Skill Check: 92/100, grade A">92/100 · A</span> <a href="#check">Passes all seven graded checks</a></td></tr>
@@ -288,6 +353,46 @@ rm -rf &quot;$tmp&quot;</code></pre>
         <h2 id="cited-title">Where this skill is cited</h2>
         <p>trailofbits/skills appears in 4 curated lists: <a href="https://github.com/BehiSecc/awesome-claude-skills" target="_blank" rel="noopener">BehiSecc/awesome-claude-skills</a>, <a href="https://github.com/heilcheng/awesome-agent-skills" target="_blank" rel="noopener">heilcheng/awesome-agent-skills</a>, <a href="https://github.com/hesreallyhim/awesome-claude-code" target="_blank" rel="noopener">hesreallyhim/awesome-claude-code</a>, <a href="https://github.com/travisvn/awesome-claude-skills" target="_blank" rel="noopener">travisvn/awesome-claude-skills</a>.</p>
       </section>
+      <section class="panel" id="strengths" aria-labelledby="strengths-title">
+        <h2 id="strengths-title">Strengths and open points</h2>
+        <div class="pros-cons">
+          <div><h3>What it does well</h3><ul><li>Full points for structural checks (56 of 56).</li><li>Full points for recent maintenance (9 of 9).</li><li>Full points for instruction depth (7 of 7).</li><li>Full points for curated-list citations (7 of 7).</li><li>Full points for example request (3 of 3).</li><li>Full points for reference files (3 of 3).</li><li>Full points for bundled scripts (2 of 2).</li><li>Full points for tool permissions declared (2 of 2).</li><li>Published by Trail of Bits, the company behind the tool it works with.</li><li>Its repository is cited by 4 curated lists.</li></ul></div>
+          <div><h3>What to check</h3><ul><li>Boundary clause: 0 of 4 points.</li><li>Description length: 3 of 5 points.</li><li>Compatibility declared: 0 of 2 points.</li><li>Security scan: not scanned by the directory. Read SKILL.md and any scripts before you install.</li></ul></div>
+        </div>
+      </section>
+      <section class="panel" id="reviews" aria-labelledby="reviews-title">
+        <h2 id="reviews-title">Reviews and ratings</h2>
+        <p><b>Directory rating:</b> <span class="grade grade-a" title="Suede Skill Check: 92/100, grade A">92/100 · A</span> on the <a href="../../../methodology/#score">Suede Skill Check</a>, computed from the skill's published files.</p>
+        <p>Used semgrep? Reader reviews are published on GitHub as issues credited to their authors. They never change the score.</p>
+        <p><a class="button secondary" href="https://github.com/JasonColapietro/suede-creator-skills/issues/new?template=directory-review.yml&amp;title=Review%3A%20trailofbits%2Fskills%2Fsemgrep&amp;skill=trailofbits%2Fskills%2Fsemgrep&amp;listing=https%3A%2F%2Fsuedeai.directory%2Ftrailofbits%2Fskills%2Fsemgrep%2F" target="_blank" rel="noopener">Write a review</a> <a href="https://github.com/JasonColapietro/suede-creator-skills/issues?q=is%3Aissue%20label%3Areview%20%22trailofbits%2Fskills%2Fsemgrep%22" target="_blank" rel="noopener">Read reviews of semgrep</a></p>
+      </section>
+      <section class="panel faq" aria-labelledby="faq-title">
+        <h2 id="faq-title">Questions and answers</h2>
+        <h3>What does semgrep do?</h3>
+        <p>Runs a Semgrep security scan over a codebase, detecting languages, selecting rulesets, requiring approval of the plan, and merging output to SARIF. It is listed in Security on SuedeAI.directory.</p>
+        <h3>Is semgrep free?</h3>
+        <p>The skill is free under CC-BY-SA-4.0. Its files names json.schemastore.org, so the service it talks to may need an account or a paid plan.</p>
+        <h3>How do I install semgrep?</h3>
+        <p>Run npx skills add https://github.com/trailofbits/skills/tree/main/plugins/static-analysis/skills/semgrep from your project, or copy the folder into .claude/skills/ for Claude Code or .agents/skills/ for Codex. The install section lists each route.</p>
+        <h3>Does semgrep need an API key or MCP server?</h3>
+        <p>Yes. At the October 22, 2026 snapshot its files names json.schemastore.org. The Before you install section lists the details.</p>
+        <h3>How good is semgrep?</h3>
+        <p>It scores 92/100, grade A, on the Suede Skill Check, which adds structure, description quality, instruction depth, bundled files, maintenance and curated-list citations from its published files.</p>
+        <h3>What are alternatives to semgrep?</h3>
+        <p>skill-scanner from getsentry/skills, gha-security-review from getsentry/skills and security-review from getsentry/skills do similar work. Its alternatives page compares 7 skills from other publishers.</p>
+      </section>
+      <section class="panel" aria-labelledby="similar-title">
+        <h2 id="similar-title">Similar skills</h2>
+        <p class="muted">Skills from other publishers that share the most topics with semgrep.</p>
+        <div class="links">
+          <a class="link-row" href="../../../getsentry/skills/gha-security-review/"><b>gha-security-review</b><span>getsentry/skills &middot; 86/100</span></a>
+          <a class="link-row" href="../../../getsentry/skills/security-review/"><b>security-review</b><span>getsentry/skills &middot; 86/100</span></a>
+          <a class="link-row" href="../../../tencent/ai-infra-guard/aig-scanner/"><b>aig-scanner</b><span>Tencent/AI-Infra-Guard &middot; 82/100</span></a>
+          <a class="link-row" href="../../../firebase/skills/firebase-security-rules-auditor/"><b>firebase-security-rules-auditor</b><span>firebase/skills &middot; 78/100</span></a>
+          <a class="link-row" href="../../../cloudflare/security-audit-skill/security-audit/"><b>security-audit</b><span>cloudflare/security-audit-skill &middot; 72/100</span></a>
+          <a class="link-row" href="../../../google/skills/iam-helper-for-privileged-access-management/"><b>iam-helper-for-privileged-access-management</b><span>google/skills &middot; 89/100</span></a>
+        </div>
+      </section>
 
       <section class="panel" aria-labelledby="related-title">
         <h2 id="related-title">More security skills</h2>
@@ -347,6 +452,14 @@ rm -rf &quot;$tmp&quot;</code></pre>
             <a href="../../../">Directory</a>
             <span class="footer-divider" aria-hidden="true">|</span>
             <a href="../../../methodology/">How skills are listed</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="../../../topics/">Topics</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="../../../new/">New skills</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="../../../top/">Top 100</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="../../../feed.xml">RSS feed</a>
             <span class="footer-divider" aria-hidden="true">|</span>
             <a href="https://suedeai.ai" target="_blank" rel="noopener">suedeai.ai</a>
             <span class="footer-divider" aria-hidden="true">|</span>

@@ -9,6 +9,7 @@
 // script stays byte-for-byte and the files join through these imports instead.
 import "./test_directory_qa_pages.mjs";
 import "./test_directory_page_template.mjs";
+import "./test_directory_browse.mjs";
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
@@ -92,6 +93,9 @@ const kindOf = (p) => {
   if (p.rel === "directory/") return "hub";
   if (p.rel === "directory/for/") return "task-hub";
   if (p.rel.startsWith("directory/for/")) return "task";
+  if (["directory/topics/", "directory/pricing/", "directory/features/", "directory/new/", "directory/top/"].includes(p.rel)) return "browse-hub";
+  if (/^directory\/(?:topics|pricing|features)\/[^/]+\/$/.test(p.rel)) return "browse";
+  if (p.rel === "directory/saved/") return "saved";
   if (p.rel.endsWith("/alternatives/")) return "alternatives";
   if (categories.some((c) => p.rel === `directory/${c.slug}/`)) return "category";
   if (["directory/methodology/", "directory/submit/", "directory/featured/", "directory/check/", "directory/guides/"].includes(p.rel)) return p.rel.split("/")[1];
@@ -190,7 +194,7 @@ test("hubs list their items and listings describe the third-party source code", 
   for (const p of indexable) {
     const kind = kindOf(p);
     const main = parsed(p)[0];
-    if (["category", "repository", "hub", "agent-hub", "task-hub", "task", "alternatives"].includes(kind)) {
+    if (["category", "repository", "hub", "agent-hub", "task-hub", "task", "alternatives", "browse-hub", "browse"].includes(kind)) {
       assert.equal(main["@type"], "CollectionPage", p.rel);
       assert.equal(main.mainEntity["@type"], "ItemList", p.rel);
       assert.ok(main.mainEntity.itemListElement.length > 0, `${p.rel}: empty ItemList`);

@@ -6,6 +6,7 @@ import http from 'node:http';
 import { fileURLToPath } from 'node:url';
 import { verifySkillsLanding } from './test_skills_landing_browser.mjs';
 import { verifyFeaturedNavigation } from './test_featured_navigation_browser.mjs';
+import './test_directory_browse_client.mjs';
 
 const { chromium } = await import(process.env.DIRECTORY_PLAYWRIGHT_MODULE || 'playwright');
 const root = fileURLToPath(new URL('../docs/', import.meta.url));
