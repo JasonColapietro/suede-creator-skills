@@ -17,7 +17,7 @@ import path from "node:path";
 import { createHash } from "node:crypto";
 import { fileURLToPath } from "node:url";
 import { SCORE_METHOD, qualityScore, scorePoints, letterGrade, listed, qualifies, badgePair, badgeMarkdown, badgeHtml, shieldSvg, listingTarget, promotionActive } from "./directory/badges.mjs";
-import { featuredProjectsHtml, directoryMembers, directoryMembersHtml } from "./directory/featured.mjs";
+import { featuredProjectsHtml, directoryMembers, directoryMembersHtml, newestPublishedFirst } from "./directory/featured.mjs";
 import { parseGuide, renderGuideBody } from "./directory/editorial.mjs";
 import { fitSentences } from "./directory/metadata.mjs";
 import { loadTaskConfig, planTasks, planAlternatives, isFirstParty, withArticle, TASK_GATE } from "./directory/task-pages.mjs";
@@ -2342,7 +2342,9 @@ function renderFeaturedProjects() {
   const copy = EDITORIAL.page || {};
   const bc = crumbs(here, [["directory/", "Directory"], [null, "Featured projects"]]);
   const title = copy.title || "Featured Agent Skill Projects | Suede AI";
-  const entries = [...EDITORIAL.projects, ...MEMBERS];
+  const projects = newestPublishedFirst(EDITORIAL.projects);
+  const members = newestPublishedFirst(MEMBERS);
+  const entries = [...projects, ...members];
   const description = `Meet ${listPhrase(entries.map((p) => p.name))}: reviewed source and setup.`;
   const keywords = setKeywords(here, ["featured agent projects", ...entries.map((p) => `${p.name} agent workflows`), "Suede AI Skills Directory"]);
   const badge = FEATURED_BADGE;
@@ -2361,7 +2363,7 @@ ${copy.nominate.steps.map((step) => `          <li>${esc(step)}</li>`).join("\n"
         <h2 id="featured-badge-title">Badge for featured projects</h2>
         <p>Featured publishers can link their README to their section on this page.</p>
         <p class="badge-preview"><img src="${rel(here, "directory/badges/featured.svg")}" alt="${esc(badge.alt)}" width="${badgeSvg("featured").width}" height="20"></p>
-${EDITORIAL.projects.map((p) => codeBlock({ label: `${esc(p.name)}, Markdown`, key: `featured-badge-${p.id}` }, badge.markdown_pattern.split("{id}").join(p.id))).join("\n")}
+${projects.map((p) => codeBlock({ label: `${esc(p.name)}, Markdown`, key: `featured-badge-${p.id}` }, badge.markdown_pattern.split("{id}").join(p.id))).join("\n")}
       </section>`
     : "";
   files.set(`${here}index.html`, page({
@@ -2370,8 +2372,8 @@ ${EDITORIAL.projects.map((p) => codeBlock({ label: `${esc(p.name)}, Markdown`, k
     body: `${bc.html}
       <div class="featured-intro"><p class="lead">${esc(copy.lede || "Good tools deserve a closer look.")}</p>${copy.intro ? `<p>${esc(copy.intro)}</p>` : ""}</div>
       <nav class="featured-jump" aria-label="Featured project navigation"><a href="../">← Browse all skills</a>${entries.map((p) => `<a href="#${p.id}">${esc(p.name)} <span aria-hidden="true">↓</span></a>`).join("")}</nav>
-      ${featuredProjectsHtml(EDITORIAL.projects, { esc, rel, here, slugify })}
-${MEMBERS.length ? `      <section id="directory-members" aria-label="Directory members"><h2>Directory members</h2><p>Publisher membership with a defined skill scope. Linked reviews retain quality scores and scan findings.</p>${directoryMembersHtml(MEMBERS, { esc, start: EDITORIAL.projects.length })}</section>` : ""}
+      ${featuredProjectsHtml(projects, { esc, rel, here, slugify })}
+${members.length ? `      <section id="directory-members" aria-label="Directory members"><h2>Directory members</h2><p>Publisher membership with a defined skill scope. Linked reviews retain quality scores and scan findings.</p>${directoryMembersHtml(members, { esc, start: projects.length })}</section>` : ""}
 ${copy.services_cta ? campaignPanel(here, campaignVariant(copy.services_cta, here)) : ""}
 ${nominate}
 ${badgePanel}

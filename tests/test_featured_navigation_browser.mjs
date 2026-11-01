@@ -1,6 +1,12 @@
 import assert from 'node:assert/strict';
 import path from 'node:path';
 
+export async function verifyFeaturedOrder(page) {
+  const expected = ['geekflare', 'cisco-skill-scanner', 'opsibyte', 'extra-caffeine', 'costory', 'appie', 'coalwash', 'lava', 'arcmira'];
+  assert.deepEqual(await page.locator('article.featured-project').evaluateAll((cards) => cards.map((card) => card.id)), expected);
+  assert.deepEqual(await page.locator('.featured-jump a[href^="#"]').evaluateAll((links) => links.map((link) => link.hash.slice(1))), expected);
+}
+
 export async function verifyFeaturedNavigation(page, base, output, mount = '/directory') {
   const destination = mount + '/featured/';
   for (const width of [1280, 769, 768, 390, 320]) {
@@ -21,6 +27,7 @@ export async function verifyFeaturedNavigation(page, base, output, mount = '/dir
       await page.keyboard.press('Enter');
       await page.waitForURL(base + destination);
       assert.match(await page.locator('h1').innerText(), /Featured/);
+      await verifyFeaturedOrder(page);
     }
     await page.goto(base + mount + '/');
     const quickLink = page.locator('.directory-type-switch').getByRole('link', { name: 'Featured Skills', exact: true });
@@ -36,5 +43,9 @@ export async function verifyFeaturedNavigation(page, base, output, mount = '/dir
       }
     }
   }
+  await page.goto(base + destination + '?sort=name');
+  await verifyFeaturedOrder(page);
+  await page.reload();
+  await verifyFeaturedOrder(page);
   console.log('Featured navigation passed: exact local destination, shared desktop/mobile navigation, keyboard activation, first-viewport homepage link and 320–1280px reflow.');
 }

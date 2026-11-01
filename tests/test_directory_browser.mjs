@@ -5,7 +5,7 @@ import path from 'node:path';
 import http from 'node:http';
 import { fileURLToPath } from 'node:url';
 import { verifySkillsLanding } from './test_skills_landing_browser.mjs';
-import { verifyFeaturedNavigation } from './test_featured_navigation_browser.mjs';
+import { verifyFeaturedNavigation, verifyFeaturedOrder } from './test_featured_navigation_browser.mjs';
 import './test_directory_browse_client.mjs';
 
 const { chromium } = await import(process.env.DIRECTORY_PLAYWRIGHT_MODULE || 'playwright');
@@ -118,6 +118,7 @@ try {
   await fallbackFeatured.focus();
   await fallback.keyboard.press('Enter');
   await fallback.waitForURL(base + '/directory/featured/');
+  await verifyFeaturedOrder(fallback);
   await fallback.goto(base + '/directory/frontend-design/');
   assert.ok(await fallback.locator('.skill-table tbody tr').count() > 0);
   await fallback.goto(base + sample.href);

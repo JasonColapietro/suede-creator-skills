@@ -2200,15 +2200,15 @@
  ],
  "directory/featured/index.html": [
   "featured agent projects",
+  "Geekflare agent workflows",
+  "Cisco AI Defense Skill Scanner agent workflows",
+  "Opsibyte agent workflows",
+  "Extra Caffeine agent workflows",
+  "Costory agent workflows",
   "Appie agent workflows",
   "CoalWash agent workflows",
-  "Costory agent workflows",
-  "Extra Caffeine agent workflows",
-  "Opsibyte agent workflows",
-  "Cisco AI Defense Skill Scanner agent workflows",
-  "Geekflare agent workflows",
-  "Arcmira agent workflows",
-  "Lava agent workflows"
+  "Lava agent workflows",
+  "Arcmira agent workflows"
  ],
  "directory/features/allowed-tools/index.html": [
   "declares tool permissions agent skills",
