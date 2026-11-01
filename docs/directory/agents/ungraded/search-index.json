@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "kind": "ungraded-agent",
-  "generated": "2026-10-27",
+  "generated": "2026-11-01",
   "entries": [
     {
       "id": "11x-alice",
@@ -38,6 +38,26 @@
         "https://www.ada.cx/"
       ],
       "observedAt": "2026-10-27"
+    },
+    {
+      "id": "agent-qa",
+      "name": "agent-qa CLI",
+      "summary": "A CLI QA agent that runs natural-language tests for web, Android and iOS applications and records execution evidence.",
+      "tasks": [
+        "testing-qa"
+      ],
+      "deployments": [
+        "local"
+      ],
+      "sourceAvailability": "public-source",
+      "officialUrl": "https://vostride.com",
+      "repositoryUrl": "https://github.com/vostride/agent-qa",
+      "sourceUrls": [
+        "https://vostride.com",
+        "https://github.com/vostride/agent-qa/blob/2b848e3f094c3c81a9004eb63c236c32adc55da6/README.md",
+        "https://vostride.com/docs/agent-qa/quickstart"
+      ],
+      "observedAt": "2026-11-01"
     },
     {
       "id": "agent-s",
