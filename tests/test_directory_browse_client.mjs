@@ -7,10 +7,9 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { createRequire } from 'node:module';
 
-// ESM import ignores NODE_PATH; fall back to require for a globally installed Playwright.
-const { chromium } = await import(process.env.DIRECTORY_PLAYWRIGHT_MODULE || 'playwright').catch(() => createRequire(import.meta.url)('playwright'));
+// CI installs Playwright in the project; set DIRECTORY_PLAYWRIGHT_MODULE to use another copy.
+const { chromium } = await import(process.env.DIRECTORY_PLAYWRIGHT_MODULE || 'playwright');
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const script = fs.readFileSync(path.join(root, 'docs/assets/directory.js'), 'utf8');
 const css = fs.readFileSync(path.join(root, 'docs/assets/directory.css'), 'utf8');
@@ -116,7 +115,7 @@ let context;
 let page;
 const errors = [];
 const trackErrors = (target) => target.on('pageerror', (err) => errors.push(err.message));
-const names = (target, selector, visibleOnly = false) => target.$$eval(selector + ' tbody tr', (rows, visibleOnly) => rows.filter((r) => !visibleOnly || !r.hidden).map((r) => r.dataset.name), visibleOnly);
+const names = (target, selector, visibleOnly = false) => target.locator(selector + ' tbody tr').evaluateAll((rows, visibleOnly) => rows.filter((r) => !visibleOnly || !r.hidden).map((r) => r.dataset.name), visibleOnly);
 const status = (target) => target.locator('#all-skills-status').textContent();
 const url = (target) => new URL(target.url());
 const stored = (target) => target.evaluate(() => JSON.parse(localStorage.getItem('suede-directory-saved') || 'null'));
@@ -229,7 +228,7 @@ test('URL state is read on load and reset restores sort, facets and the text fil
   await page.goto(origin + '/directory/marketing-seo/?sort=score&lane=free-open-source&flag=scripts,official&utm_source=test#all-skills');
   await toolsReady(page);
   assert.equal(await page.locator('[data-sort-for="all-skills"]').inputValue(), 'score');
-  assert.deepEqual(await page.$$eval('.facet-chip[aria-pressed="true"]', (chips) => chips.map((c) => c.dataset.facet + '=' + c.dataset.value)), ['lane=free-open-source', 'flag=official', 'flag=scripts']);
+  assert.deepEqual(await page.locator('.facet-chip[aria-pressed="true"]').evaluateAll((chips) => chips.map((c) => c.dataset.facet + '=' + c.dataset.value)), ['lane=free-open-source', 'flag=official', 'flag=scripts']);
   assert.equal(await status(page), '1 of 6 skills');
   assert.deepEqual(await names(page, '#all-skills', true), []);
   assert.deepEqual(await names(page, '#all-skills-more', true), ['alpha-audit']);
@@ -304,7 +303,7 @@ test('the saved page renders the saved rows with Markdown export; remove and cle
   await page.waitForFunction(() => document.querySelector('[data-saved-empty]')?.hidden === true);
   const rows = page.locator('[data-saved-table] tbody tr');
   assert.equal(await rows.count(), 2);
-  assert.deepEqual(await page.$$eval('[data-saved-table] tbody tr', (trs) => trs.map((tr) => [...tr.cells].map((td) => td.textContent.trim()))), [
+  assert.deepEqual(await page.locator('[data-saved-table] tbody tr').evaluateAll((trs) => trs.map((tr) => [...tr.cells].map((td) => td.textContent.trim()))), [
     ['gamma-guide', '85/100', 'B', 'Marketing', 'MIT', 'owner/repo', 'Remove'],
     ['eta-extra', '83/100', 'B', 'Marketing', 'Apache-2.0', 'owner/repo', 'Remove'],
   ]);
@@ -395,7 +394,7 @@ test('copy link changes the button text and falls back to selectable text withou
 
 test('hub search filters by cost lane and capability, sorts by listed and updated, keeps URL state and tolerates old records', async () => {
   const ready = (text) => page.waitForFunction((text) => document.querySelector('[data-results-status]')?.textContent === text, text);
-  const shown = () => page.$$eval('[data-search-results] h3 a', (links) => links.map((a) => a.textContent));
+  const shown = () => page.locator('[data-search-results] h3 a').evaluateAll((links) => links.map((a) => a.textContent));
   await page.goto(origin + '/directory/');
   await ready('Showing 3 of 3 skills');
   await page.selectOption('select[name="lane"]', 'free-open-source');
