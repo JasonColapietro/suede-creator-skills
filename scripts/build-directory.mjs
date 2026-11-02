@@ -742,7 +742,7 @@ function page({ here, title, description, keywords, h1Html, body, jsonld, ogType
     `    <meta name="twitter:description" content="${esc(description)}">`,
     `    <meta name="twitter:image" content="${OG_IMAGE}">`,
     blocks || null,
-    `    <meta name="theme-color" content="#05060a">`,
+    `    <meta name="theme-color" content="#000000">`,
     `    <link rel="preload" href="${a}fonts/jetbrains-mono-var-latin.woff2" as="font" type="font/woff2" crossorigin>`,
     `    <link rel="preload" href="${a}fonts/pixelify-sans-var-latin.woff2" as="font" type="font/woff2" crossorigin>`,
     `    <link rel="stylesheet" href="${a}directory.css">`,
@@ -3125,7 +3125,7 @@ function boardRow(here, s, i, metric) {
   return `          <a class="board-row" href="${esc(h)}"${ext ? ' target="_blank" rel="noopener"' : ""}><span class="rank">${String(i + 1).padStart(2, "0")}</span><span class="who"><b>${esc(displayName(s))}</b><span>${esc(s.repo)}</span></span><span class="metric">${metric}</span>${gradeChip(s)}</a>`;
 }
 // Focal graphics: a dot per skill, colored by grade, and a bar chart of installs.
-const GRADE_COLORS = { A: "#5cf7a4", B: "#5fcbff", C: "#ffc55e", D: "#4a5261" };
+const GRADE_COLORS = { A: "#00ca52", B: "#50a8ff", C: "#ffb200", D: "#454545" };
 const gradeDot = (s) => GRADE_COLORS[s.grade] || GRADE_COLORS.D;
 function skillMatrix(rows, { cols, title }) {
   const sorted = [...rows].sort((a, b) => b.score - a.score || a.id.localeCompare(b.id));
@@ -3695,7 +3695,7 @@ ${items.map((i) => `    <item>
 // What the directory checks, what it leaves to the reader, and what has gone
 // wrong in other registries. Every figure comes from the dataset; every
 // incident cites its primary source.
-const TOUCH_COLORS = { none: "#5cf7a4", service: "#ffc55e", runs: "#ff5fe1", mcp: "#5fcbff" };
+const TOUCH_COLORS = { none: "#00ca52", service: "#ffb200", runs: "#ff5e63", mcp: "#50a8ff" };
 const touchOf = (s) => (s.flags.includes("runs-commands") ? "runs" : s.flags.includes("mcp") ? "mcp" : s.flags.includes("api-key") || s.flags.includes("network") ? "service" : "none");
 function renderSecurity() {
   const here = SECURITY_PATH;
