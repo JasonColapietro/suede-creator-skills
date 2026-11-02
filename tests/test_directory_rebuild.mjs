@@ -206,10 +206,12 @@ test("the directory stylesheet is self-contained: tokens, both themes, fonts and
   const css = read("docs/assets/directory.css");
   for (const token of ["--canvas", "--paper", "--ink", "--muted", "--accent", "--gold-fill", "--grade-a", "--grade-b", "--grade-c", "--grade-d", "--cream", "--gold", "--cool", "--surface", "--border"]) assert.ok(css.includes(`${token}:`), token);
   assert.match(css, /color-scheme: dark/);
-  assert.match(css, /font-family: "JetBrains Mono"/);
-  assert.match(css, /font-family: "Pixelify Sans"/);
-  for (const f of ["jetbrains-mono-var-latin.woff2", "jetbrains-mono-var-italic-latin.woff2", "pixelify-sans-var-latin.woff2"]) assert.ok(fs.existsSync(path.join(docs, "assets", "fonts", f)), f);
-  for (const f of ["jetbrains-mono-OFL.txt", "pixelify-sans-OFL.txt"]) assert.ok(fs.existsSync(path.join(root, "licenses", f)), f);
+  assert.match(css, /font-family: "Geist";/);
+  assert.match(css, /font-family: "Geist Mono";/);
+  assert.match(css, /font-family: "Pixelify Sans";/);
+  assert.doesNotMatch(css, /JetBrains/);
+  for (const f of ["geist-var-latin.woff2", "geist-var-italic-latin.woff2", "geist-mono-var-latin.woff2", "pixelify-sans-var-latin.woff2"]) assert.ok(fs.existsSync(path.join(docs, "assets", "fonts", f)), f);
+  for (const f of ["geist-OFL.txt", "pixelify-sans-OFL.txt"]) assert.ok(fs.existsSync(path.join(root, "licenses", f)), f);
   assert.match(css, /\.nav-disclosure > summary\.nav-hamburger \{[^}]*width: 44px; height: 44px;/, "the 44px hamburger floor");
   assert.doesNotMatch(read("docs/assets/agents.css"), /Fraunces|#c8a96e|#080808/, "agents.css uses the shared tokens");
 });
