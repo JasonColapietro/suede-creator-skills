@@ -190,3 +190,22 @@ test("--check fails when the listings page drifts from the JSON", (t) => {
   assert.equal(run.status, 1);
   assert.match(run.stderr, /docs\/listings\.html/);
 });
+
+test("the listings page states the count without review or check language", () => {
+  const page = fs.readFileSync(path.join(repoRoot, "docs", "listings.html"), "utf8");
+  const meta = page.match(/<p class="post-meta">([^<]*)<\/p>/);
+  assert.ok(meta, "listings.html needs a post-meta line");
+  assert.match(meta[1], /^\d+ third-party pages carry the pack\.$/);
+  assert.match(page, /<p class="eyebrow">Listings &middot; Updated [A-Z][a-z]+ \d{1,2}, \d{4}<\/p>/);
+  const data = JSON.parse(fs.readFileSync(path.join(repoRoot, "docs", "listings.json"), "utf8"));
+  const pypi = data.groups.flatMap((group) => group.items).find((item) => item.name === "PyPI");
+  assert.equal(pypi.note, "Python CLI with every skill bundled");
+  const surfaces = [
+    page.slice(page.indexOf("<main"), page.indexOf("</main>")),
+    fs.readFileSync(path.join(repoRoot, "README.md"), "utf8").split("<!-- listings:start -->")[1].split("<!-- listings:end -->")[0],
+    fs.readFileSync(path.join(repoRoot, "docs", "index.html"), "utf8").split("<!-- listings:start -->")[1].split("<!-- listings:end -->")[0],
+  ];
+  for (const text of surfaces) {
+    assert.doesNotMatch(text, /directory review|are checked when added|checked as of|reviewed as of|provenance for/i);
+  }
+});
