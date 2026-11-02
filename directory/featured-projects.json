@@ -31,6 +31,7 @@
   "projects": [
     {
       "id": "appie",
+      "published_at": "2026-10-18T04:48:30Z",
       "name": "Appie",
       "repo": "appierun/appie-mcp",
       "kind": "Hosted MCP · Three agent skills",
@@ -60,6 +61,7 @@
     },
     {
       "id": "coalwash",
+      "published_at": "2026-10-18T04:48:30Z",
       "name": "CoalWash",
       "repo": "TheColliery/CoalWash",
       "kind": "Claude Code plugin · Memory maintenance",
@@ -92,6 +94,7 @@
     },
     {
       "id": "costory",
+      "published_at": "2026-10-19T20:40:16Z",
       "name": "Costory",
       "repo": "costory-io/costory-finops-mcp-skills",
       "kind": "Hosted MCP · Four FinOps skills",
@@ -126,6 +129,7 @@
     },
     {
       "id": "extra-caffeine",
+      "published_at": "2026-10-23T18:49:23Z",
       "name": "Extra Caffeine",
       "repo": "cwong5/extra-caffeine-mcp",
       "kind": "Local Mac MCP · One workflow skill",
@@ -145,6 +149,7 @@
     },
     {
       "id": "opsibyte",
+      "published_at": "2026-10-24T04:35:14Z",
       "name": "Opsibyte",
       "repo": "MelMayssonOwen/agent-skills",
       "kind": "Six skills · Publishing, budgets, listings, and music",
@@ -189,6 +194,7 @@
     },
     {
       "id": "cisco-skill-scanner",
+      "published_at": "2026-10-25T21:52:58Z",
       "name": "Cisco AI Defense Skill Scanner",
       "repo": "cisco-ai-defense/skill-scanner",
       "kind": "Security tooling · Local source review",
@@ -215,6 +221,7 @@
     },
     {
       "id": "geekflare",
+      "published_at": "2026-10-31T00:34:27Z",
       "name": "Geekflare",
       "repo": "geekflare/geekflare-skills",
       "commit": "b2429403c4b7e4f8f2a55773b161ef19643cd12b",
@@ -236,6 +243,7 @@
   "members": [
     {
       "id": "arcmira",
+      "published_at": "2026-10-27T23:06:04Z",
       "name": "Arcmira",
       "repo": "arcmira/mcp",
       "commit": "557fc76b697a2eaf1fee3bbfae90f25181ae2e93",
@@ -286,6 +294,7 @@
     },
     {
       "id": "lava",
+      "published_at": "2026-10-28T19:55:57Z",
       "name": "Lava",
       "repo": "dustinliang666-blip/lava-mcp",
       "commit": "f9369732c3956024666c80835b72dc7d22df5a43",

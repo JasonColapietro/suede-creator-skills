@@ -1,5 +1,16 @@
 // Editorial project selections are independent of skill scores and README-badge verification.
 // Members are a separate schema: no scored-catalog, certification or badge fields.
+// Publication is recorded in featured-projects.json, never inferred from review,
+// upstream commit, snapshot or file-modification dates. Unknown dates go last.
+export function newestPublishedFirst(entries) {
+  const timestamp = ({ published_at }) => {
+    if (typeof published_at !== 'string' || !/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$/.test(published_at)) return -Infinity;
+    const time = Date.parse(published_at);
+    return Number.isFinite(time) && new Date(time).toISOString() === published_at.replace('Z', '.000Z') ? time : -Infinity;
+  };
+  return [...entries].sort((a, b) => timestamp(b) - timestamp(a) || (a.id < b.id ? -1 : a.id > b.id ? 1 : 0));
+}
+
 const MEMBER_LINKS = new Map([
   ['arcmira/mcp', new Map([
     ['Website', 'https://arcmira.com'],
@@ -22,7 +33,7 @@ export function directoryMembers(editorial) {
   const fields = new Set(['id', 'name', 'repo', 'commit', 'review', 'scope', 'license', 'license_file', 'headline', 'summary', 'setup', 'skills', 'links']);
   for (const member of members) {
     const fail = () => { throw new Error(`Invalid directory member: ${member?.id || 'unknown'}`); };
-    if (!member || typeof member !== 'object' || Array.isArray(member) || Object.keys(member).some((key) => !fields.has(key))) fail();
+    if (!member || typeof member !== 'object' || Array.isArray(member) || Object.keys(member).some((key) => key !== 'published_at' && !fields.has(key))) fail();
     if ([...fields].filter((k) => k !== 'skills' && k !== 'links').some((k) => typeof member[k] !== 'string' || !member[k].trim())) fail();
     if (!slug.test(member.id) || ids.has(member.id) || !/^[A-Za-z0-9][A-Za-z0-9-]*\/[A-Za-z0-9_.-]+$/.test(member.repo) || ['.', '..'].includes(member.repo.split('/')[1]) || repos.has(member.repo.toLowerCase()) || !/^[a-f0-9]{40}$/.test(member.commit)) fail();
     if (!safePath(member.scope) || !safePath(member.license_file) || !safePath(member.review) || !member.review.startsWith('directory/reviews/') || !member.review.endsWith('.md')) fail();
