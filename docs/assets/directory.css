@@ -689,7 +689,7 @@ main .featured-jump a:hover { color: var(--accent); text-decoration: underline; 
 .featured-project-body > * { min-width: 0; }
 .featured-headline { font-size: 20px; line-height: 1.35; margin: 0 0 14px; max-width: 30ch; }
 .featured-summary { margin-bottom: 20px; }
-.featured-project p { font-size: 15px; line-height: 1.65; }
+.featured-project p { font-size: 15px; line-height: 1.65; overflow-wrap: anywhere; }
 .featured-work { list-style: none; margin: 20px 0 0; padding: 0; }
 .featured-work li { margin: 0; padding: 14px 0; border-top: 1px solid var(--hairline); }
 .featured-work h4 { color: var(--ink); font-size: 15px; margin: 0 0 6px; }
@@ -706,6 +706,9 @@ main .featured-work a:hover { color: var(--accent); }
 .featured-install summary { cursor: pointer; color: var(--accent); min-height: 44px; display: flex; align-items: center; font-size: 14px; }
 .featured-project-footer { display: flex; flex-wrap: wrap; gap: 6px 24px; margin-top: 20px; }
 main .featured-project-footer a { display: inline-flex; align-items: center; flex-wrap: wrap; gap: 4px; min-height: 44px; font-size: 13.5px; }
+.featured-status { display: inline-flex; align-items: center; align-self: center; padding: 4px 12px; border: 1px solid var(--gold); border-radius: 999px; color: var(--gold); font-size: 14px; line-height: 1.4; white-space: nowrap; }
+.featured-badge-pending { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin: 16px 0; }
+.featured-badge-pending strong { color: var(--cream); }
 .featured-about { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; padding: 40px 0; }
 .featured-about h2 { max-width: 17ch; }
 main .featured-about a { display: inline-flex; align-items: center; min-height: 44px; }

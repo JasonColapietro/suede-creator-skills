@@ -2211,15 +2211,15 @@
  ],
  "directory/featured/index.html": [
   "featured agent projects",
-  "Geekflare agent workflows",
-  "Cisco AI Defense Skill Scanner agent workflows",
-  "Opsibyte agent workflows",
-  "Extra Caffeine agent workflows",
-  "Costory agent workflows",
-  "Appie agent workflows",
-  "CoalWash agent workflows",
-  "Lava agent workflows",
-  "Arcmira agent workflows"
+  "agent-qa CLI by Vostride agent workflows",
+  "Berlin Job Search agent workflows",
+  "BulkPublish agent workflows",
+  "Empacer agent workflows",
+  "Frametell agent workflows",
+  "InkRoom agent workflows",
+  "lfr agent workflows",
+  "Trong Hieu agent skills agent workflows",
+  "Geekflare agent workflows"
  ],
  "directory/features/allowed-tools/index.html": [
   "declares tool permissions agent skills",

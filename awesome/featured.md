@@ -6,7 +6,7 @@
 
 Editorial selection highlights a project’s workflow and accepted scope. It is separate from structural quality grades, security certification and README-badge verification. A plugin feature does not add its contents to the scored skill catalog.
 
-Selections updated **2026-10-30**. [View on Suede AI](https://skills.suedeai.ai/directory/featured/).
+Selections updated **2026-11-02**. [View on Suede AI](https://skills.suedeai.ai/directory/featured/).
 
 - [Appie](#appie)
 - [CoalWash](#coalwash)
@@ -15,6 +15,14 @@ Selections updated **2026-10-30**. [View on Suede AI](https://skills.suedeai.ai/
 - [Opsibyte](#opsibyte)
 - [Cisco AI Defense Skill Scanner](#cisco-skill-scanner)
 - [Geekflare](#geekflare)
+- [Trong Hieu agent skills](#trong-hieu)
+- [agent-qa CLI by Vostride](#agent-qa)
+- [Frametell](#frametell)
+- [BulkPublish](#bulkpublish)
+- [InkRoom](#inkroom)
+- [Empacer](#empacer)
+- [Berlin Job Search](#berlin-job-search)
+- [lfr](#lfr)
 
 <a id="appie"></a>
 
@@ -170,6 +178,181 @@ Requires a Geekflare account and GEEKFLARE\_API\_KEY. Requests send queries, URL
 Accepted scope: **1 skills**. Follow each linked skill’s individual setup instructions.
 
 [Repository](https://github.com/geekflare/geekflare-skills) · [Intake review](../directory/reviews/2026-10-30-geekflare.md) · [Reviewed source b242940](https://github.com/geekflare/geekflare-skills/tree/b2429403c4b7e4f8f2a55773b161ef19643cd12b) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#geekflare)
+
+---
+
+<a id="trong-hieu"></a>
+
+## Trong Hieu agent skills
+
+**Thirteen skills · Decisions, products, projects and writing** · License: MIT · Publisher: [tronghieu](https://github.com/tronghieu)
+
+Give your agent a working method for the job in front of you: audit an argument, find a root cause, size a market, write the PRD, run the sprint, or take a novel from idea to manuscript. You bring the context and make the call; each skill supplies the structure, analysis and quality checks.
+
+- **[Brainstorm with a coach](https://skills.suedeai.ai/directory/tronghieu/agent-skills/#brainstorm-coach)** (brainstorm-coach). Diverge on ideas together, then converge on priorities and next steps in a session document.
+- **[Audit an argument](https://skills.suedeai.ai/directory/tronghieu/agent-skills/critical-thinking/)** (critical-thinking). Examine the claims, evidence, assumptions, gaps and fallacies in a memo or draft, each anchored to quoted text.
+- **[Score CVs against a job](https://skills.suedeai.ai/directory/tronghieu/agent-skills/#cv-scorer)** (cv-scorer). Compare candidate CVs with a job description on a shared 100-point rubric with traceable evidence.
+- **[Analyze data end to end](https://skills.suedeai.ai/directory/tronghieu/agent-skills/data-scientist/)** (data-scientist). Turn business questions into defensible analysis, validated models and decision-ready reports.
+- **[Run design thinking](https://skills.suedeai.ai/directory/tronghieu/agent-skills/#design-thinking)** (design-thinking). Work from real user evidence through empathize, define, ideate, prototype and test.
+- **[Write fiction with a studio](https://skills.suedeai.ai/directory/tronghieu/agent-skills/fiction-studio/)** (fiction-studio). Take a bare idea to a polished prose manuscript with a team of named specialist agents.
+- **[Research a market](https://skills.suedeai.ai/directory/tronghieu/agent-skills/market-researcher/)** (market-researcher). Run citation-backed market scans, sizing, competitor analysis, demand signals and trend analysis.
+- **[Find the root cause](https://skills.suedeai.ai/directory/tronghieu/agent-skills/#problem-solver)** (problem-solver). Turn a recurring failure into a precise problem statement, verified root causes, traced solutions and a rollout plan.
+- **[Make product decisions](https://skills.suedeai.ai/directory/tronghieu/agent-skills/#product-manager)** (product-manager). Prioritize the backlog, write PRDs and user stories, set metrics and OKRs, and plan launches in a product workspace.
+- **[Manage project delivery](https://skills.suedeai.ai/directory/tronghieu/agent-skills/project-manager/)** (project-manager). Keep charters, schedules, estimates, risk registers, status reports and scope changes in a project workspace.
+- **[Run the sprint](https://skills.suedeai.ai/directory/tronghieu/agent-skills/scrum-master/)** (scrum-master). Plan sprints, run daily pulses and retrospectives, track impediments and spot process anti-patterns.
+- **[Learn through questions](https://skills.suedeai.ai/directory/tronghieu/agent-skills/#socratic-questor)** (socratic-questor). Explore a topic or a document in dialogue with Gadfly, a Socratic questioning partner.
+- **[Convene a strategy board](https://skills.suedeai.ai/directory/tronghieu/agent-skills/strategy-board/)** (strategy-board). Take a strategic question to a defended, board-ready recommendation with a team of named specialist advisers.
+
+### Setup
+
+Install the skills you need one at a time from their directory listings; each listing carries its own score and install route. Every skill runs inside your agent with bundled references. Several bundle small local scripts for workspaces and checks, and data-scientist’s helpers use Python with pandas, NumPy and scikit-learn. The MIT license at the repository root covers the reviewed source.
+
+Accepted scope: **13 skills**. Follow each linked skill’s individual setup instructions.
+
+[Repository](https://github.com/tronghieu/agent-skills) · [Intake review](../directory/reviews/2026-11-02-tronghieu-agent-skills.md) · [Reviewed source 831d1ae](https://github.com/tronghieu/agent-skills/tree/831d1ae5c686a81b10f9c5b9cca04a7b8b97303d) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#trong-hieu)
+
+---
+
+<a id="agent-qa"></a>
+
+## agent-qa CLI by Vostride
+
+**QA agent CLI · Dashboard, MCP and four skills** · License: FSL-1.1-ALv2 · Publisher: [vostride](https://github.com/vostride)
+
+agent-qa runs natural-language QA tests on web, Android and iOS apps and keeps the evidence from every run. Drive it from the CLI, review runs in the dashboard, or hand the work to your coding agent through MCP and four bundled skills.
+
+- **Write tests in plain language.** Describe a user journey and agent-qa tests it on web, Android or iOS.
+- **Keep the evidence.** Inspect each failed step beside its screenshot and the recorded run evidence in the dashboard.
+- **Remember what works.** memidex keeps facts and working procedures as reviewable files in your repository, and agent-qa validates lessons from each run.
+- **Work from your coding agent.** Author tests, triage failures, read run evidence and debug fixes through the agent-qa MCP tools and skills.
+
+### Setup
+
+Requires Node.js 24+ and a model connection. Install with npm install -D agent-qa, run npx agent-qa init, then follow the quickstart to connect a model and run the demo. Runs use the model provider you connect. Licensed under FSL-1.1-ALv2, the Functional Source License: any use other than a competing commercial product or service, with Apache-2.0 terms for each release two years after it is made available.
+
+[Repository](https://github.com/vostride/agent-qa) · [Intake review](../directory/reviews/2026-11-02-agent-qa.md) · [Reviewed source 2b848e3](https://github.com/vostride/agent-qa/tree/2b848e3f094c3c81a9004eb63c236c32adc55da6) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#agent-qa)
+
+---
+
+<a id="frametell"></a>
+
+## Frametell
+
+**macOS app for Apple Silicon · Explainer video agent** · License: AGPL-3.0 · Local app · Publisher: [sitor-ai](https://github.com/sitor-ai)
+
+Start from one sentence or hand Frametell notes, documents, PDFs, slides and images. Its director agent drafts a storyboard for you to approve, then writes and voices the narration, draws every page and checks its own work before rendering a 1080p video with subtitles and publishing notes.
+
+- **Approve the plan first.** Sign off on the storyboard before anything is drawn, and point at any page to say what to change.
+- **Narration and voice.** The agent writes the script and voices it with ElevenLabs, or with Volcengine TTS for Chinese.
+- **Pages in your style.** Every page is drawn in a built-in style (warm-story, study, chalkboard, whiteboard or tech-dark) and checked with lint and screenshots.
+- **A finished film.** A final check on the full video, then a 1080p MP4 with subtitles, with cost and time shown at every step.
+
+### Setup
+
+Download the signed and notarized app for macOS on Apple Silicon, with Chrome, Edge or Chromium installed for drawing and rendering pages. Add a model provider key under Settings (Anthropic, OpenAI, Google, OpenRouter or any OpenAI- or Anthropic-compatible endpoint) and an ElevenLabs key for the voiceover. The app runs locally with your own keys, and requests go to the model and voice providers you configure. Windows and Intel Macs run Frametell from source with Node.js 22.19+ and pnpm. AGPL-3.0 covers the app in this repository.
+
+[Repository](https://github.com/sitor-ai/frametell) · [Intake review](../directory/reviews/2026-11-02-frametell.md) · [Reviewed source 63d598f](https://github.com/sitor-ai/frametell/tree/63d598fa9aed1e6fe0cf8ef37a32a5a8eb437e74) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#frametell)
+
+---
+
+<a id="bulkpublish"></a>
+
+## BulkPublish
+
+**Hosted MCP · Eight agent skills** · License: MIT · Publisher: [azeemkafridi](https://github.com/azeemkafridi) · **Scan &amp; review pending**
+
+Eight skills connect your assistant to BulkPublish to draft, schedule, publish and measure posts through its hosted MCP server, across networks from Instagram, LinkedIn and X to YouTube, TikTok and Bluesky.
+
+- **Draft and schedule posts.** Review the draft first, then schedule it, publish it or queue it in the next free slot.
+- **Publish in bulk.** Upload media from files or URLs, manage the media library and batch-create posts.
+- **Manage channels and the inbox.** Check connected channels and their health, and answer DMs, reviews and comments with your yes on each reply.
+- **Measure and plan.** Pull engagement analytics, check plan limits and usage, and follow each platform’s post types, media rules and character limits.
+
+### Setup
+
+Requires a BulkPublish account and its hosted MCP server at https://mcp.bulkpublish.com/mcp, with OAuth sign-in that asks for your API key once. Posts, media and channel data go to BulkPublish within your plan’s limits; the Inbox is part of the Pro and Business plans. Hosts without OAuth can use the documented key-in-URL connection, which carries your API key, so keep that URL private.
+
+[Repository](https://github.com/azeemkafridi/bulkpublish-ai-toolkit) · **Scan &amp; review pending** · [Source at 256039e](https://github.com/azeemkafridi/bulkpublish-ai-toolkit/tree/256039e578a195aa8fd746deea386575c4e4fc1e) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#bulkpublish)
+
+---
+
+<a id="inkroom"></a>
+
+## InkRoom
+
+**Two skills · Image prompt library and prompt reverse** · License: MIT · Two skill folders · Publisher: [InkRoom-AI](https://github.com/InkRoom-AI) · **Scan &amp; review pending**
+
+Search InkRoom’s public prompt library by keyword and get each prompt with its original example image and source, or reconstruct reusable Chinese and English prompts from a single image.
+
+- **inkroom-prompts.** Search with one to three keyword groups, review up to three prompts with their example images, and optimize your own idea into a prompt when nothing matches. It also answers questions about public InkRoom models, prices and capabilities.
+- **inkroom-prompt-reverse.** Reconstruct Chinese and English image-generation prompts from one image through an existing InkRoom MCP connection, with a cost preview before analysis.
+
+### Setup
+
+inkroom-prompts needs no account, API key or MCP Token; it uses the InkRoom Prompts MCP tools, or its bundled scripts on Node.js 20.3+ with internet access. inkroom-prompt-reverse requires an InkRoom account, an MCP Token and the reverse\_prompt capability, and each analysis uses account credits at the quoted price. MIT applies to the two skill folders, prompts/skills/inkroom-prompts and skills/inkroom-prompt-reverse; the repository has no root license. Prompts and images returned by the library keep their own terms.
+
+[Repository](https://github.com/InkRoom-AI/inkroom-client) · **Scan &amp; review pending** · [Source at e5dace2](https://github.com/InkRoom-AI/inkroom-client/tree/e5dace2bc96e88a9b3eafc81a34c3bed605323a7) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#inkroom)
+
+---
+
+<a id="empacer"></a>
+
+## Empacer
+
+**Hosted assistant · Web app and Android** · Publisher: [empacer.com](https://empacer.com) · **Scan &amp; review pending**
+
+Say or type what you need, and Empacer prepares customer replies, social posts, documents and the week’s plan from your business details. It is built for owners who are also the whole team, from salons, barbershops and nail studios to bakeries, auto repair shops and photographers.
+
+- **Ask by voice or text.** Tap the voice button or type the task you need done.
+- **Work from your details.** Empacer prepares the work from your business details, with photos, price lists or invoices attached when you need them.
+- **Approve every result.** Each result arrives as a card you can edit, send back for changes, decline or approve. By default, nothing is sent until you approve it.
+
+### Setup
+
+Use Empacer in the browser at app.empacer.com on a computer, phone or tablet, or on Android as Empacer for Business on Google Play. Empacer is a hosted service, so your requests and business details are handled by Empacer.
+
+[Website](https://empacer.com) · **Scan &amp; review pending** · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#empacer)
+
+---
+
+<a id="berlin-job-search"></a>
+
+## Berlin Job Search
+
+**One skill · Claude Code and Codex plugin** · License: MIT · Publisher: [umutyesildal](https://github.com/umutyesildal) · **Scan &amp; review pending**
+
+An AI job-search coach that knows how hiring works in Germany, Berlin first and Germany-wide. Search live German job sources, check German-language and Blue Card requirements, prepare a Lebenslauf or CV, practise interviews and track applications.
+
+- **Find roles.** Search with German and English titles across sources chosen for your field, drop off-target titles and save a ranked shortlist.
+- **Check a posting.** See the German requirement with the quoted line, the salary against 2026 Blue Card thresholds, and agency and contract terms.
+- **Apply and interview.** Prepare a German Lebenslauf and Anschreiben or an English CV and letter, checked against your CV, then practise mock interviews with scored feedback.
+- **Track applications.** Log application news, draft follow-ups and see response rates on an offline dashboard.
+
+### Setup
+
+Install it as a Claude Code or Codex plugin, or add it to any agent from the repository, then say “Set up my job search.” The bundled scripts need Python 3.9+ (standard library only) and internet access, with no API keys. Your CV, profile and tracker stay on your machine in job-search/. Sources include Bundesagentur für Arbeit, Arbeitnow, Daily Berlin Jobs, company job boards and LinkedIn’s logged-out guest search, which is subject to LinkedIn’s User Agreement. The skill never applies, sends messages or creates accounts for you.
+
+[Repository](https://github.com/umutyesildal/berlin-job-search) · **Scan &amp; review pending** · [Source at 153a417](https://github.com/umutyesildal/berlin-job-search/tree/153a417c09391fac3f23cef1beb012e97bed1f79) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#berlin-job-search)
+
+---
+
+<a id="lfr"></a>
+
+## lfr
+
+**Go CLI · One root skill** · License: MIT · Publisher: [Anonyfox](https://github.com/Anonyfox) · **Scan &amp; review pending**
+
+One Go binary runs mail for your domains on one small server: mailboxes, and newsletters with their websites. Your agent operates it through the lfr CLI, on the server or over ssh.
+
+- **Set up a mail server.** Run lfr setup with your mail hostname, add a domain and publish exactly the DNS records lfr prints; lfr doctor checks them.
+- **Run mailboxes.** Create addresses, aliases and forwarding, search and answer mail, and train the spam filter as you move messages.
+- **Publish newsletters.** Run lists with double opt-in and stored consent proof, Markdown issues checked before sending, one-click unsubscribe and a website for each list.
+
+### Setup
+
+Requires a Linux or macOS server you control and a domain whose DNS you manage. The skill installs lfr with curl -fsSL https://lfr.email/install.sh \| sudo sh, which checks the release against its checksums; Homebrew and go install also work. lfr setup creates a hardened systemd service on ports 25, 80 and 443. Where a provider blocks outbound port 25, lfr hands DKIM-signed mail to an SMTP relay such as Amazon SES or SMTP2GO. Your agent asks for explicit approval before sending any message in your name.
+
+[Repository](https://github.com/Anonyfox/lfr) · **Scan &amp; review pending** · [Source at 091fa38](https://github.com/Anonyfox/lfr/tree/091fa38639c1ac2f133b4863135d7851561d25c4) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#lfr)
 
 ---
 

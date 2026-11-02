@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-30",
+  "updated": "2026-11-02",
   "page": {
     "about": "Copy for /directory/featured/ and the awesome/featured.md view, rendered by scripts/build-directory.mjs and scripts/build-awesome-directory.mjs. Project entries below are the publishers’ own work: keep their names, repositories, setup facts and review links exactly as reviewed.",
     "title": "Featured Agent Skill Projects | Suede AI",
@@ -238,6 +238,285 @@
         }
       ],
       "kind": "One skill · Public web data and website diagnostics"
+    },
+    {
+      "id": "trong-hieu",
+      "published_at": "2026-11-02T00:00:00Z",
+      "name": "Trong Hieu agent skills",
+      "repo": "tronghieu/agent-skills",
+      "commit": "831d1ae5c686a81b10f9c5b9cca04a7b8b97303d",
+      "review": "directory/reviews/2026-11-02-tronghieu-agent-skills.md",
+      "license": "MIT",
+      "kind": "Thirteen skills · Decisions, products, projects and writing",
+      "headline": "Structured methods for decisions, plans, research and writing.",
+      "summary": "Give your agent a working method for the job in front of you: audit an argument, find a root cause, size a market, write the PRD, run the sprint, or take a novel from idea to manuscript. You bring the context and make the call; each skill supplies the structure, analysis and quality checks.",
+      "skills": [
+        {
+          "id": "brainstorm-coach",
+          "title": "Brainstorm with a coach",
+          "description": "Diverge on ideas together, then converge on priorities and next steps in a session document."
+        },
+        {
+          "id": "critical-thinking",
+          "title": "Audit an argument",
+          "description": "Examine the claims, evidence, assumptions, gaps and fallacies in a memo or draft, each anchored to quoted text."
+        },
+        {
+          "id": "cv-scorer",
+          "title": "Score CVs against a job",
+          "description": "Compare candidate CVs with a job description on a shared 100-point rubric with traceable evidence."
+        },
+        {
+          "id": "data-scientist",
+          "title": "Analyze data end to end",
+          "description": "Turn business questions into defensible analysis, validated models and decision-ready reports."
+        },
+        {
+          "id": "design-thinking",
+          "title": "Run design thinking",
+          "description": "Work from real user evidence through empathize, define, ideate, prototype and test."
+        },
+        {
+          "id": "fiction-studio",
+          "title": "Write fiction with a studio",
+          "description": "Take a bare idea to a polished prose manuscript with a team of named specialist agents."
+        },
+        {
+          "id": "market-researcher",
+          "title": "Research a market",
+          "description": "Run citation-backed market scans, sizing, competitor analysis, demand signals and trend analysis."
+        },
+        {
+          "id": "problem-solver",
+          "title": "Find the root cause",
+          "description": "Turn a recurring failure into a precise problem statement, verified root causes, traced solutions and a rollout plan."
+        },
+        {
+          "id": "product-manager",
+          "title": "Make product decisions",
+          "description": "Prioritize the backlog, write PRDs and user stories, set metrics and OKRs, and plan launches in a product workspace."
+        },
+        {
+          "id": "project-manager",
+          "title": "Manage project delivery",
+          "description": "Keep charters, schedules, estimates, risk registers, status reports and scope changes in a project workspace."
+        },
+        {
+          "id": "scrum-master",
+          "title": "Run the sprint",
+          "description": "Plan sprints, run daily pulses and retrospectives, track impediments and spot process anti-patterns."
+        },
+        {
+          "id": "socratic-questor",
+          "title": "Learn through questions",
+          "description": "Explore a topic or a document in dialogue with Gadfly, a Socratic questioning partner."
+        },
+        {
+          "id": "strategy-board",
+          "title": "Convene a strategy board",
+          "description": "Take a strategic question to a defended, board-ready recommendation with a team of named specialist advisers."
+        }
+      ],
+      "setup": "Install the skills you need one at a time from their directory listings; each listing carries its own score and install route. Every skill runs inside your agent with bundled references. Several bundle small local scripts for workspaces and checks, and data-scientist’s helpers use Python with pandas, NumPy and scikit-learn. The MIT license at the repository root covers the reviewed source."
+    },
+    {
+      "id": "agent-qa",
+      "published_at": "2026-11-02T00:00:00Z",
+      "name": "agent-qa CLI by Vostride",
+      "repo": "vostride/agent-qa",
+      "commit": "2b848e3f094c3c81a9004eb63c236c32adc55da6",
+      "review": "directory/reviews/2026-11-02-agent-qa.md",
+      "license": "FSL-1.1-ALv2",
+      "kind": "QA agent CLI · Dashboard, MCP and four skills",
+      "headline": "Describe a user journey. Get a tested run with the evidence.",
+      "summary": "agent-qa runs natural-language QA tests on web, Android and iOS apps and keeps the evidence from every run. Drive it from the CLI, review runs in the dashboard, or hand the work to your coding agent through MCP and four bundled skills.",
+      "capabilities": [
+        {
+          "title": "Write tests in plain language",
+          "description": "Describe a user journey and agent-qa tests it on web, Android or iOS."
+        },
+        {
+          "title": "Keep the evidence",
+          "description": "Inspect each failed step beside its screenshot and the recorded run evidence in the dashboard."
+        },
+        {
+          "title": "Remember what works",
+          "description": "memidex keeps facts and working procedures as reviewable files in your repository, and agent-qa validates lessons from each run."
+        },
+        {
+          "title": "Work from your coding agent",
+          "description": "Author tests, triage failures, read run evidence and debug fixes through the agent-qa MCP tools and skills."
+        }
+      ],
+      "setup": "Requires Node.js 24+ and a model connection. Install with npm install -D agent-qa, run npx agent-qa init, then follow the quickstart to connect a model and run the demo. Runs use the model provider you connect. Licensed under FSL-1.1-ALv2, the Functional Source License: any use other than a competing commercial product or service, with Apache-2.0 terms for each release two years after it is made available."
+    },
+    {
+      "id": "frametell",
+      "published_at": "2026-11-02T00:00:00Z",
+      "name": "Frametell",
+      "repo": "sitor-ai/frametell",
+      "commit": "63d598fa9aed1e6fe0cf8ef37a32a5a8eb437e74",
+      "review": "directory/reviews/2026-11-02-frametell.md",
+      "license": "AGPL-3.0 · Local app",
+      "kind": "macOS app for Apple Silicon · Explainer video agent",
+      "headline": "Turn an idea or your material into a narrated explainer video.",
+      "summary": "Start from one sentence or hand Frametell notes, documents, PDFs, slides and images. Its director agent drafts a storyboard for you to approve, then writes and voices the narration, draws every page and checks its own work before rendering a 1080p video with subtitles and publishing notes.",
+      "capabilities": [
+        {
+          "title": "Approve the plan first",
+          "description": "Sign off on the storyboard before anything is drawn, and point at any page to say what to change."
+        },
+        {
+          "title": "Narration and voice",
+          "description": "The agent writes the script and voices it with ElevenLabs, or with Volcengine TTS for Chinese."
+        },
+        {
+          "title": "Pages in your style",
+          "description": "Every page is drawn in a built-in style (warm-story, study, chalkboard, whiteboard or tech-dark) and checked with lint and screenshots."
+        },
+        {
+          "title": "A finished film",
+          "description": "A final check on the full video, then a 1080p MP4 with subtitles, with cost and time shown at every step."
+        }
+      ],
+      "setup": "Download the signed and notarized app for macOS on Apple Silicon, with Chrome, Edge or Chromium installed for drawing and rendering pages. Add a model provider key under Settings (Anthropic, OpenAI, Google, OpenRouter or any OpenAI- or Anthropic-compatible endpoint) and an ElevenLabs key for the voiceover. The app runs locally with your own keys, and requests go to the model and voice providers you configure. Windows and Intel Macs run Frametell from source with Node.js 22.19+ and pnpm. AGPL-3.0 covers the app in this repository."
+    },
+    {
+      "id": "bulkpublish",
+      "published_at": "2026-11-02T00:00:00Z",
+      "status": "pending",
+      "name": "BulkPublish",
+      "repo": "azeemkafridi/bulkpublish-ai-toolkit",
+      "commit": "256039e578a195aa8fd746deea386575c4e4fc1e",
+      "license": "MIT",
+      "kind": "Hosted MCP · Eight agent skills",
+      "headline": "Schedule social posts across 15 networks from your agent.",
+      "summary": "Eight skills connect your assistant to BulkPublish to draft, schedule, publish and measure posts through its hosted MCP server, across networks from Instagram, LinkedIn and X to YouTube, TikTok and Bluesky.",
+      "capabilities": [
+        {
+          "title": "Draft and schedule posts",
+          "description": "Review the draft first, then schedule it, publish it or queue it in the next free slot."
+        },
+        {
+          "title": "Publish in bulk",
+          "description": "Upload media from files or URLs, manage the media library and batch-create posts."
+        },
+        {
+          "title": "Manage channels and the inbox",
+          "description": "Check connected channels and their health, and answer DMs, reviews and comments with your yes on each reply."
+        },
+        {
+          "title": "Measure and plan",
+          "description": "Pull engagement analytics, check plan limits and usage, and follow each platform’s post types, media rules and character limits."
+        }
+      ],
+      "setup": "Requires a BulkPublish account and its hosted MCP server at https://mcp.bulkpublish.com/mcp, with OAuth sign-in that asks for your API key once. Posts, media and channel data go to BulkPublish within your plan’s limits; the Inbox is part of the Pro and Business plans. Hosts without OAuth can use the documented key-in-URL connection, which carries your API key, so keep that URL private."
+    },
+    {
+      "id": "inkroom",
+      "published_at": "2026-11-02T00:00:00Z",
+      "status": "pending",
+      "name": "InkRoom",
+      "repo": "InkRoom-AI/inkroom-client",
+      "commit": "e5dace2bc96e88a9b3eafc81a34c3bed605323a7",
+      "license": "MIT · Two skill folders",
+      "kind": "Two skills · Image prompt library and prompt reverse",
+      "headline": "Find image prompts with real examples.",
+      "summary": "Search InkRoom’s public prompt library by keyword and get each prompt with its original example image and source, or reconstruct reusable Chinese and English prompts from a single image.",
+      "capabilities": [
+        {
+          "title": "inkroom-prompts",
+          "description": "Search with one to three keyword groups, review up to three prompts with their example images, and optimize your own idea into a prompt when nothing matches. It also answers questions about public InkRoom models, prices and capabilities."
+        },
+        {
+          "title": "inkroom-prompt-reverse",
+          "description": "Reconstruct Chinese and English image-generation prompts from one image through an existing InkRoom MCP connection, with a cost preview before analysis."
+        }
+      ],
+      "setup": "inkroom-prompts needs no account, API key or MCP Token; it uses the InkRoom Prompts MCP tools, or its bundled scripts on Node.js 20.3+ with internet access. inkroom-prompt-reverse requires an InkRoom account, an MCP Token and the reverse_prompt capability, and each analysis uses account credits at the quoted price. MIT applies to the two skill folders, prompts/skills/inkroom-prompts and skills/inkroom-prompt-reverse; the repository has no root license. Prompts and images returned by the library keep their own terms."
+    },
+    {
+      "id": "empacer",
+      "published_at": "2026-11-02T00:00:00Z",
+      "status": "pending",
+      "name": "Empacer",
+      "site": "https://empacer.com",
+      "kind": "Hosted assistant · Web app and Android",
+      "headline": "A voice-first assistant for small business owners.",
+      "summary": "Say or type what you need, and Empacer prepares customer replies, social posts, documents and the week’s plan from your business details. It is built for owners who are also the whole team, from salons, barbershops and nail studios to bakeries, auto repair shops and photographers.",
+      "capabilities": [
+        {
+          "title": "Ask by voice or text",
+          "description": "Tap the voice button or type the task you need done."
+        },
+        {
+          "title": "Work from your details",
+          "description": "Empacer prepares the work from your business details, with photos, price lists or invoices attached when you need them."
+        },
+        {
+          "title": "Approve every result",
+          "description": "Each result arrives as a card you can edit, send back for changes, decline or approve. By default, nothing is sent until you approve it."
+        }
+      ],
+      "setup": "Use Empacer in the browser at app.empacer.com on a computer, phone or tablet, or on Android as Empacer for Business on Google Play. Empacer is a hosted service, so your requests and business details are handled by Empacer."
+    },
+    {
+      "id": "berlin-job-search",
+      "published_at": "2026-11-02T00:00:00Z",
+      "status": "pending",
+      "name": "Berlin Job Search",
+      "repo": "umutyesildal/berlin-job-search",
+      "commit": "153a417c09391fac3f23cef1beb012e97bed1f79",
+      "license": "MIT",
+      "kind": "One skill · Claude Code and Codex plugin",
+      "headline": "Job search coaching built for Germany.",
+      "summary": "An AI job-search coach that knows how hiring works in Germany, Berlin first and Germany-wide. Search live German job sources, check German-language and Blue Card requirements, prepare a Lebenslauf or CV, practise interviews and track applications.",
+      "capabilities": [
+        {
+          "title": "Find roles",
+          "description": "Search with German and English titles across sources chosen for your field, drop off-target titles and save a ranked shortlist."
+        },
+        {
+          "title": "Check a posting",
+          "description": "See the German requirement with the quoted line, the salary against 2026 Blue Card thresholds, and agency and contract terms."
+        },
+        {
+          "title": "Apply and interview",
+          "description": "Prepare a German Lebenslauf and Anschreiben or an English CV and letter, checked against your CV, then practise mock interviews with scored feedback."
+        },
+        {
+          "title": "Track applications",
+          "description": "Log application news, draft follow-ups and see response rates on an offline dashboard."
+        }
+      ],
+      "setup": "Install it as a Claude Code or Codex plugin, or add it to any agent from the repository, then say “Set up my job search.” The bundled scripts need Python 3.9+ (standard library only) and internet access, with no API keys. Your CV, profile and tracker stay on your machine in job-search/. Sources include Bundesagentur für Arbeit, Arbeitnow, Daily Berlin Jobs, company job boards and LinkedIn’s logged-out guest search, which is subject to LinkedIn’s User Agreement. The skill never applies, sends messages or creates accounts for you."
+    },
+    {
+      "id": "lfr",
+      "published_at": "2026-11-02T00:00:00Z",
+      "status": "pending",
+      "name": "lfr",
+      "repo": "Anonyfox/lfr",
+      "commit": "091fa38639c1ac2f133b4863135d7851561d25c4",
+      "license": "MIT",
+      "kind": "Go CLI · One root skill",
+      "headline": "Your own mail server, run by your agent.",
+      "summary": "One Go binary runs mail for your domains on one small server: mailboxes, and newsletters with their websites. Your agent operates it through the lfr CLI, on the server or over ssh.",
+      "capabilities": [
+        {
+          "title": "Set up a mail server",
+          "description": "Run lfr setup with your mail hostname, add a domain and publish exactly the DNS records lfr prints; lfr doctor checks them."
+        },
+        {
+          "title": "Run mailboxes",
+          "description": "Create addresses, aliases and forwarding, search and answer mail, and train the spam filter as you move messages."
+        },
+        {
+          "title": "Publish newsletters",
+          "description": "Run lists with double opt-in and stored consent proof, Markdown issues checked before sending, one-click unsubscribe and a website for each list."
+        }
+      ],
+      "setup": "Requires a Linux or macOS server you control and a domain whose DNS you manage. The skill installs lfr with curl -fsSL https://lfr.email/install.sh | sudo sh, which checks the release against its checksums; Homebrew and go install also work. lfr setup creates a hardened systemd service on ports 25, 80 and 443. Where a provider blocks outbound port 25, lfr hands DKIM-signed mail to an SMTP relay such as Amazon SES or SMTP2GO. Your agent asks for explicit approval before sending any message in your name."
     }
   ],
   "members": [

@@ -5,7 +5,7 @@ import path from 'node:path';
 import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { CHECK_IDS, SCORE_METHOD, listed, qualityScore, letterGrade, listingTarget } from './directory/badges.mjs';
-import { directoryMembers, memberSkillPath } from './directory/featured.mjs';
+import { directoryMembers, memberSkillPath, featuredProjects, isPending, PENDING_LABEL } from './directory/featured.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SITE = 'https://skills.suedeai.ai/directory/';
@@ -85,10 +85,10 @@ function validate({ data, categories, inclusions, exclusions, editorial }) {
   for (const member of directoryMembers(editorial)) {
     if (excludedRepos.has(member.repo.toLowerCase()) || member.skills.some((skill) => excludedSkills.has(`${member.repo}/${skill.id}`.toLowerCase()))) throw new Error(`Directory member is excluded: ${member.repo}`);
   }
-  for (const p of editorial.projects) {
-    if (!/^[a-z0-9-]+$/.test(p.id) || projects.has(p.id) || !/^[a-f0-9]{40}$/.test(p.commit)) throw new Error('Invalid featured project evidence');
+  for (const p of featuredProjects(editorial)) {
+    if (!/^[a-z0-9-]+$/.test(p.id) || projects.has(p.id) || (p.repo && !/^[a-f0-9]{40}$/.test(p.commit))) throw new Error('Invalid featured project evidence');
     projects.add(p.id);
-    if (excludedRepos.has(p.repo.toLowerCase())) throw new Error(`Featured project is excluded: ${p.repo}`);
+    if (p.repo && excludedRepos.has(p.repo.toLowerCase())) throw new Error(`Featured project is excluded: ${p.repo}`);
     for (const skill of p.skills || []) {
       if (!data.skills.some((s) => s.repo === p.repo && s.slug === skill.id)) throw new Error(`Featured skill outside accepted scope: ${p.repo}/${skill.id}`);
     }
@@ -115,6 +115,9 @@ export function generateCatalog(inputs) {
   const pages = new Map();
   const nav = (prefix = '') => `${link('Awesome Everything', `${prefix}README.md`)} · ${link('Compare scores', `${prefix}README.md#compare-099-quality-scores`)} · ${link('Publishers', `${prefix}publishers.md`)} · ${link('Featured projects', `${prefix}featured.md`)} · ${guides.length ? `${link('Guides', `${prefix}README.md#guides`)} · ` : ''}${link('Contribute', `${prefix}CONTRIBUTING.md`)} · ${link('Search by score', `${SITE}?sort=score`)}`;
   const finish = (body) => `${GENERATED}\n\n${body.trim()}\n`;
+  const host = (url) => new URL(url).host;
+  const publisher = (p) => p.repo ? link(p.repo.split('/')[0], github(p.repo.split('/')[0])) : link(host(p.site), p.site);
+  const pendingCount = editorial.projects.filter(isPending).length;
   const stamp = `Snapshot: **${data.generated}** · Scores: **${SCORE_METHOD}** · [How scores work](${SITE}methodology/).`;
   const range = (skills) => `${Math.min(...skills.map((s) => s.score))}–${Math.max(...skills.map((s) => s.score))}`;
   const bands = [['90–99', 'A'], ['80–89', 'B'], ['70–79', 'C'], ['0–69', 'D']];
@@ -163,9 +166,9 @@ Each skill appears in one category. A repository can contribute to several categ
 
 ## Featured projects
 
-${editorial.projects.map((p) => `- **${link(p.name, `featured.md#${p.id}`)}** by ${link(p.repo.split('/')[0], github(p.repo.split('/')[0]))}. ${md(p.summary)}`).join('\n')}
+${editorial.projects.map((p) => `- **${link(p.name, `featured.md#${p.id}`)}** by ${publisher(p)}. ${md(p.summary)}${isPending(p) ? ` **${md(PENDING_LABEL)}.**` : ''}`).join('\n')}
 
-These ${editorial.projects.length} editorial selections have [reviewed scope and setup guidance](featured.md). Editorial selection is separate from quality scores, security certification and README-badge verification. Featured plugins outside the scored skill snapshot are not included in the skill or repository counts above.
+${pendingCount ? `These ${editorial.projects.length - pendingCount} editorial selections have [reviewed scope and setup guidance](featured.md); ${pendingCount} more are featured with ${md(PENDING_LABEL.toLowerCase())}.` : `These ${editorial.projects.length} editorial selections have [reviewed scope and setup guidance](featured.md).`} Editorial selection is separate from quality scores, security certification and README-badge verification. Featured plugins outside the scored skill snapshot are not included in the skill or repository counts above.
 ${guides.length ? `
 ## Guides
 
@@ -300,7 +303,6 @@ Selections updated **${editorial.updated}**. [View on Suede AI](${SITE}featured/
 ${editorial.projects.map((p) => `- ${link(p.name, `#${p.id}`)}`).join('\n')}
 
 ${editorial.projects.map((p) => {
-  const owner = p.repo.split('/')[0];
   const items = p.skills ? p.skills.map((item) => {
     const s = data.skills.find((s) => s.repo === p.repo && s.slug === item.id);
     return `- **${link(item.title, listingTarget(s))}** (${md(item.id)}). ${md(item.description)}`;
@@ -309,7 +311,7 @@ ${editorial.projects.map((p) => {
 
 ## ${md(p.name)}
 
-**${md(p.kind)}** · License: ${md(p.license)} · Publisher: ${link(owner, github(owner))}
+**${md(p.kind)}**${p.license ? ` · License: ${md(p.license)}` : ''} · Publisher: ${publisher(p)}${isPending(p) ? ` · **${md(PENDING_LABEL)}**` : ''}
 
 ${md(p.summary)}
 
@@ -327,7 +329,13 @@ ${p.commands.join('\n')}
 
 **Guard coverage.** ${md(p.guard_scope)}
 ` : p.skills ? `\nAccepted scope: **${p.skills.length} skills**. Follow each linked skill’s individual setup instructions.\n` : ''}
-${link('Repository', github(p.repo))} · ${link('Intake review', `../${p.review}`)} · ${link(`Reviewed source ${p.commit.slice(0, 7)}`, `${github(p.repo)}/tree/${p.commit}`)} · ${link('Suede AI feature', `${SITE}featured/#${p.id}`)}`;
+${[
+  p.site ? link('Website', p.site) : '',
+  p.repo ? link('Repository', github(p.repo)) : '',
+  isPending(p) ? `**${md(PENDING_LABEL)}**` : link('Intake review', `../${p.review}`),
+  p.repo ? link(`${isPending(p) ? 'Source at' : 'Reviewed source'} ${p.commit.slice(0, 7)}`, `${github(p.repo)}/tree/${p.commit}`) : '',
+  link('Suede AI feature', `${SITE}featured/#${p.id}`),
+].filter(Boolean).join(' · ')}`;
 }).join('\n\n---\n\n')}
 ${directoryMembers(editorial).length ? `
 ---

@@ -23,11 +23,60 @@ const MEMBER_LINKS = new Map([
   ])],
 ]);
 
+// A project entry is either reviewed (no status: pinned review, badge snippet)
+// or "pending": featured while its scan and review are pending. Pending
+// entries carry no review, score, grade or verdict, render this label where
+// the review link and badge snippet would be, and never get a badge snippet.
+export const PENDING_STATUS = 'pending';
+export const PENDING_LABEL = 'Scan & review pending';
+export const isPending = (project) => project?.status === PENDING_STATUS;
+const PENDING_FORBIDDEN = ['review', 'skills', 'score', 'grade', 'verdict', 'certified', 'verified', 'badges', 'commands'];
+const COPY_FIELDS = ['name', 'kind', 'headline', 'summary', 'setup'];
+
+function httpsSite(value) {
+  if (typeof value !== 'string') return false;
+  try {
+    const u = new URL(value);
+    return u.protocol === 'https:' && !u.username && !u.password && !u.port && !u.search && !u.hash && u.href.replace(/\/$/, '') === value.replace(/\/$/, '');
+  } catch {
+    return false;
+  }
+}
+
+export function featuredProjects(editorial) {
+  const projects = editorial.projects === undefined ? [] : editorial.projects;
+  if (!Array.isArray(projects)) throw new Error('Featured projects must be an array');
+  const ids = new Set();
+  const slug = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
+  const repoName = /^[A-Za-z0-9][A-Za-z0-9-]*\/[A-Za-z0-9_.-]+$/;
+  for (const project of projects) {
+    const fail = () => { throw new Error(`Invalid featured project: ${project?.id || 'unknown'}`); };
+    if (!project || typeof project !== 'object' || Array.isArray(project) || !slug.test(project.id) || ids.has(project.id)) fail();
+    if (COPY_FIELDS.some((k) => typeof project[k] !== 'string' || !project[k].trim())) fail();
+    if (project.status !== undefined && project.status !== PENDING_STATUS) fail();
+    if (project.license !== undefined && (typeof project.license !== 'string' || !project.license.trim())) fail();
+    if (project.site !== undefined && !httpsSite(project.site)) fail();
+    if (project.repo !== undefined && (typeof project.repo !== 'string' || !repoName.test(project.repo) || ['.', '..'].includes(project.repo.split('/')[1]))) fail();
+    if ((project.repo !== undefined || project.commit !== undefined) && !/^[a-f0-9]{40}$/.test(project.commit)) fail();
+    const items = project.skills || project.capabilities;
+    if (!Array.isArray(items) || !items.length || items.some((item) => !item || typeof item.title !== 'string' || !item.title.trim() || typeof item.description !== 'string' || !item.description.trim())) fail();
+    if (isPending(project)) {
+      if (PENDING_FORBIDDEN.some((k) => k in project)) fail();
+      if (project.repo === undefined && project.site === undefined) fail();
+    } else {
+      if (project.repo === undefined || typeof project.license !== 'string') fail();
+      if (typeof project.review !== 'string' || !/^directory\/reviews\/[A-Za-z0-9_.-]+\.md$/.test(project.review)) fail();
+    }
+    ids.add(project.id);
+  }
+  return projects;
+}
+
 export function directoryMembers(editorial) {
   const members = editorial.members === undefined ? [] : editorial.members;
   if (!Array.isArray(members)) throw new Error('Directory members must be an array');
   const ids = new Set(['directory-members', 'featured-badge', 'nominate-title', 'selection-title', ...(editorial.projects || []).map((p) => p.id)]);
-  const repos = new Set((editorial.projects || []).map((p) => p.repo.toLowerCase()));
+  const repos = new Set((editorial.projects || []).filter((p) => p.repo).map((p) => p.repo.toLowerCase()));
   const slug = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
   const safePath = (s) => typeof s === 'string' && /^[A-Za-z0-9_./-]+$/.test(s) && s.split('/').every((p) => p && p !== '.' && p !== '..');
   const fields = new Set(['id', 'name', 'repo', 'commit', 'review', 'scope', 'license', 'license_file', 'headline', 'summary', 'setup', 'skills', 'links']);
@@ -74,14 +123,18 @@ export function directoryMembersHtml(members, { esc, start = 0 }) {
   }).join('\n');
 }
 
-export function featuredProjectsHtml(projects, { esc, rel, here, slugify }) {
+export const pendingStatusHtml = (esc) => `<span class="featured-status" data-featured-status="${PENDING_STATUS}">${esc(PENDING_LABEL)}</span>`;
+
+// skillHref(project, item) may resolve a skill's listing (full page or its
+// repository-page row); without one, links use the full-page route.
+export function featuredProjectsHtml(projects, { esc, rel, here, slugify, skillHref }) {
   return projects.map((project, index) => {
-    const source = `https://github.com/${project.repo}`;
-    const route = project.repo.split('/').map(slugify).join('/');
-    const review = `https://github.com/JasonColapietro/suede-creator-skills/blob/main/${project.review}`;
+    const pending = isPending(project);
+    const source = project.repo ? `https://github.com/${project.repo}` : null;
+    const route = project.repo ? project.repo.split('/').map(slugify).join('/') : null;
     const items = project.skills || project.capabilities;
     const work = items.map((item) => `<li>${project.skills
-      ? `<a href="${rel(here, `directory/${route}/${item.id}/`)}"><span>${esc(item.title)}</span><span aria-hidden="true">↗</span></a>`
+      ? `<a href="${skillHref?.(project, item) ? esc(skillHref(project, item)) : rel(here, `directory/${route}/${item.id}/`)}"><span>${esc(item.title)}</span><span aria-hidden="true">↗</span></a>`
       : `<h4>${esc(item.title)}</h4>`}<p>${esc(item.description)}</p></li>`).join("\n");
     const install = project.commands ? `<aside class="featured-install" aria-labelledby="${project.id}-install">
       <h3 id="${project.id}-install">Install the Claude Code plugin</h3>
@@ -90,10 +143,17 @@ export function featuredProjectsHtml(projects, { esc, rel, here, slugify }) {
       <h4>What runs after installation</h4><p>${esc(project.behavior)}</p>
       <details><summary>Snapshot and token-check coverage</summary><p>${esc(project.guard_scope)}</p></details>
     </aside>` : `<aside class="featured-setup"><h3>Before you start</h3><p>${esc(project.setup)}</p></aside>`;
-    return `<article class="featured-project" id="${project.id}" aria-labelledby="${project.id}-title">
-      <header class="featured-project-heading"><p class="featured-number" aria-hidden="true">${String(index + 1).padStart(2, "0")}</p><div><p class="featured-kind">${esc(project.kind)}</p><h2 id="${project.id}-title">${esc(project.name)}</h2></div><span class="featured-license">${esc(project.license)}</span></header>
+    const footer = [
+      project.workflow_url ? `<a href="${esc(project.workflow_url)}">Read the workflow source ↗</a>` : "",
+      project.site ? `<a href="${esc(project.site)}" rel="noopener noreferrer">Visit ${esc(project.name)} ↗</a>` : "",
+      source ? `<a href="${source}">Explore ${esc(project.name)} on GitHub ↗</a>` : "",
+      pending ? pendingStatusHtml(esc) : `<a href="https://github.com/JasonColapietro/suede-creator-skills/blob/main/${project.review}">Read the intake review ↗</a>`,
+      source ? `<a href="${source}/tree/${project.commit}">${pending ? "Source at" : "Reviewed source"} <code>${project.commit.slice(0, 7)}</code> ↗</a>` : "",
+    ].join("");
+    return `<article class="featured-project" id="${project.id}"${pending ? ` data-featured-status="${PENDING_STATUS}"` : ""} aria-labelledby="${project.id}-title">
+      <header class="featured-project-heading"><p class="featured-number" aria-hidden="true">${String(index + 1).padStart(2, "0")}</p><div><p class="featured-kind">${esc(project.kind)}</p><h2 id="${project.id}-title">${esc(project.name)}</h2></div>${project.license ? `<span class="featured-license">${esc(project.license)}</span>` : ""}</header>
       <div class="featured-project-body"><div><h3 class="featured-headline">${esc(project.headline)}</h3><p class="featured-summary">${esc(project.summary)}</p><ul class="featured-work">${work}</ul></div>${install}</div>
-      <footer class="featured-project-footer">${project.workflow_url ? `<a href="${esc(project.workflow_url)}">Read the workflow source ↗</a>` : ""}<a href="${source}">Explore ${esc(project.name)} on GitHub ↗</a><a href="${review}">Read the intake review ↗</a><a href="${source}/tree/${project.commit}">Reviewed source <code>${project.commit.slice(0, 7)}</code> ↗</a></footer>
+      <footer class="featured-project-footer">${footer}</footer>
     </article>`;
   }).join("\n");
 }
