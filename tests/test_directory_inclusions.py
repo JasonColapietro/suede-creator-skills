@@ -55,7 +55,7 @@ class DirectoryInclusionTests(unittest.TestCase):
     def repository_page(self, data):
         with tempfile.TemporaryDirectory(prefix="directory-scoped-install-") as tmp:
             work = Path(tmp)
-            for name in ("scripts/build-directory.mjs", "scripts/directory/badges.mjs",
+            for name in ("scripts/build-directory.mjs", "scripts/directory/installs.mjs", "scripts/directory/pixel-icons.mjs", "scripts/directory/badges.mjs",
                          "scripts/directory/featured.mjs", "scripts/directory/editorial.mjs", "scripts/directory/metadata.mjs", "scripts/directory/check-client.js", "directory/featured-projects.json",
                          "scripts/directory/task-pages.mjs", "directory/task-pages.json", "scripts/directory/topics.mjs", "scripts/directory/facets.mjs", "scripts/directory/listed-since.mjs", "directory/topics.json",
                          "directory/categories.json", "directory/notes.json",

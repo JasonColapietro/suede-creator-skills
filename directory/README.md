@@ -18,6 +18,11 @@ The [Suede Awesome Everything catalog](../awesome/README.md) is the GitHub Markd
 | `notes.json` | Publisher install routes for restricted-license skills, and required service setup for other skills, shown in the installation section with a link to the source | Hand-written |
 | `exclusions.json` | Repositories (`owner/repo`) and skills (`owner/repo/skill-name`) kept out of the directory, each with a recorded reason: author removal requests, and skills whose text trips the pack's public-source guards (`npm run validate` names the file) | Hand-written |
 | `listed-since.json` | Ledger of the snapshot date that first listed each skill, keyed by skill id. It feeds the "Listed since" row on skill pages and the `/new/` page | `scripts/build-directory.mjs`, which adds new skills at the snapshot date and drops skills that left the dataset |
+| `installs.json` | Snapshot of install counts from skills.sh, keyed by `owner/repo/skill`: the all-time count and, where skills.sh publishes one, the weekly series, with the fetch date and source URL. It feeds the most-installed and rising boards, the Installs row on skill pages, the `installs` sort in search and the Top 100 install chart. Every surface that shows a count names skills.sh and the date | `scripts/directory/installs.mjs` |
+| `kinds.json` | The non-skill kinds (`/plugins/`, `/grok/`, `/mcp-servers/`, `/rules/`): docs links, install commands, sections of entries with verified repositories, and an FAQ. Entries are listed, not graded | Hand-written |
+| `editorial/stacks.json`, `editorial/stacks/*.md` | Jason's recommended stacks at `/stacks/`: one article per task. Each entry names the Suede AI skill that covers the task above the article; the article body recommends third-party skills only, and the build refuses a body that names Suede | Hand-written |
+
+[DESIGN.md](DESIGN.md) describes the directory's own design system (palette, type, the generated focal graphics) and the font licenses.
 
 Cost lanes (`/pricing/`) and capability flags (`/features/`) have no data file. `scripts/directory/facets.mjs` derives both from published fields in `skills.json`, so a reader can recompute them.
 
@@ -98,6 +103,7 @@ npm run build:directory-site
 npm run build:directory          # rebuild docs/directory/ and the sitemap from the data here
 node scripts/build-directory.mjs --check   # part of npm run validate
 scripts/directory/refresh.sh     # re-read the source repositories, then rebuild
+node scripts/directory/installs.mjs   # refresh installs.json from skills.sh (public endpoints, no key)
 ```
 
 `refresh.sh` clones the curated lists and the repositories they cite, reads every SKILL.md, applies the [published method](https://skills.suedeai.ai/directory/methodology/) and rewrites `skills.json`. It reads files only and never executes anything from a clone. Skills that are new since the last refresh get a keyword category and no page of their own until `labels.json` gives them a category and a summary.
@@ -112,7 +118,13 @@ The build writes these pages beside the category directories:
 - `/pricing/<lane>/`: one cost lane per skill, from its license and whether its files name a paid or account-based service: free and open source, free skill that needs a service, non-commercial license, restricted license.
 - `/features/<flag>/`: capability flags such as official publisher, bundles scripts, uses an MCP server and no setup required. A skill can carry any number. Flags read from the install record cover skills with full pages only, and those pages say so.
 - `/new/`: skills first listed within the last 30 days, from `listed-since.json`, and skills whose repository was updated in that window.
-- `/top/`: the 100 highest-scoring listed skills. Rankings exclude Suede AI's own skills, as the task pages do.
+- `/top/`: two Top 100 lists in tabs. Most installed ranks listed skills by the skills.sh snapshot in `installs.json`, with an install chart of the top twenty; highest scores ranks the 100 highest-scoring listed skills. A rising pane shows the largest weekly gains where skills.sh publishes a series. Rankings exclude Suede AI's own skills, as the task pages do.
+- `/trust/`: what the directory checks before listing a skill, what it does not (no malware scan, no runtime test), a matrix of every full-page skill by what its files touch, three documented registry attacks with sources, the scanners a reader can run, and a review checklist. No listing carries a security claim; the glance panel on every skill page says `Not scanned by the directory`.
+- `/stacks/` and `/stacks/<id>/`: the recommended-stack articles from `editorial/stacks.json`.
+- `/plugins/`, `/grok/`, `/mcp-servers/`, `/rules/`: the kinds in `kinds.json`.
+- `/compare/`: up to three skills side by side (score, grade, checks, license, cost, installs, what the files touch), built in the browser from `search-index.json` and each skill's `report.json`; the chosen skills round-trip through `?a=&b=&c=`.
+- `/publishers/`: every listed repository with its skill count, best score and install total.
+- `/api/`: every file the directory publishes (`search-index.json`, `installs.json`, `kinds.json`, per-skill `report.json`, badges, feeds) with its shape and refresh cadence.
 - `/saved/`: the reader's save list. It lives in the browser's local storage, needs no account, and never leaves the browser.
 - `/feed.xml`: an RSS feed of new listings for readers who follow the directory.
 

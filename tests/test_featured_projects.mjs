@@ -496,8 +496,10 @@ test('published pending features show the label, no badge snippet and no score o
   const empacer = cardOf(page, 'empacer');
   assert.ok(empacer.includes('<a href="https://empacer.com" rel="noopener noreferrer">Visit Empacer ↗</a>'));
   assert.doesNotMatch(empacer, /github\.com|Product Hunt|#1/);
-  const callout = read('docs/directory/index.html').match(/<a class="featured-callout"[\s\S]*?<\/a>/)[0];
-  for (const project of data.projects) assert.equal(callout.includes(esc(project.name)), project.status !== 'pending', project.id);
+  const strip = read('docs/directory/index.html').match(/<section class="panel" aria-labelledby="featured-strip-title">[\s\S]*?<\/section>/)[0];
+  const stripIds = [...strip.matchAll(/href="featured\/#([a-z0-9-]+)"/g)].map((m) => m[1]);
+  assert.equal(stripIds.length, 3);
+  for (const id of stripIds) assert.notEqual(data.projects.find((p) => p.id === id)?.status, 'pending', id);
   const awesome = read('awesome/featured.md');
   for (const project of pending) {
     const section = awesome.split(`<a id="${project.id}"></a>`)[1].split('\n---\n')[0];

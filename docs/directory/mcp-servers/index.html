@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MCP Servers: Reference, Official and Featured Projects</title>
+    <meta name="description" content="Model Context Protocol servers: the reference implementations, the official registry, popular official servers, and the MCP projects featured here.">
+    <meta name="keywords" content="mcp servers, mcp servers directory, model context protocol servers, install mcp servers, mcp server list, agent skills directory">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <link rel="canonical" href="https://suedeai.directory/mcp-servers/">
+    <link rel="icon" href="../../assets/favicon-64.png" type="image/png">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Suede AI Skills Directory">
+    <meta property="og:title" content="MCP Servers: Reference, Official and Featured Projects">
+    <meta property="og:description" content="Model Context Protocol servers: the reference implementations, the official registry, popular official servers, and the MCP projects featured here.">
+    <meta property="og:url" content="https://skills.suedeai.ai/directory/mcp-servers/">
+    <meta property="og:image" content="https://skills.suedeai.ai/assets/social/directory-card.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@AISUEDE">
+    <meta name="twitter:title" content="MCP Servers: Reference, Official and Featured Projects">
+    <meta name="twitter:description" content="Model Context Protocol servers: the reference implementations, the official registry, popular official servers, and the MCP projects featured here.">
+    <meta name="twitter:image" content="https://skills.suedeai.ai/assets/social/directory-card.png">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "@id": "https://skills.suedeai.ai/directory/mcp-servers/#page",
+        "name": "MCP Servers: Reference, Official and Featured Projects",
+        "description": "Model Context Protocol servers: the reference implementations, the official registry, popular official servers, and the MCP projects featured here.",
+        "url": "https://skills.suedeai.ai/directory/mcp-servers/",
+        "dateModified": "2026-11-01",
+        "inLanguage": "en",
+        "isPartOf": {
+          "@type": "CollectionPage",
+          "@id": "https://skills.suedeai.ai/directory/#directory",
+          "name": "Suede AI Skills Directory",
+          "url": "https://skills.suedeai.ai/directory/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "@id": "https://suedeai.ai/#organization",
+          "name": "Suede AI",
+          "url": "https://suedeai.ai"
+        },
+        "breadcrumb": {
+          "@id": "https://skills.suedeai.ai/directory/mcp-servers/#breadcrumb"
+        },
+        "mainEntity": {
+          "@type": "ItemList",
+          "numberOfItems": 6,
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "modelcontextprotocol/servers",
+              "url": "https://github.com/modelcontextprotocol/servers"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "MCP registry",
+              "url": "https://github.com/modelcontextprotocol/registry"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "awesome-mcp-servers",
+              "url": "https://github.com/punkpeye/awesome-mcp-servers"
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "name": "chrome-devtools-mcp",
+              "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp"
+            },
+            {
+              "@type": "ListItem",
+              "position": 5,
+              "name": "playwright-mcp",
+              "url": "https://github.com/microsoft/playwright-mcp"
+            },
+            {
+              "@type": "ListItem",
+              "position": 6,
+              "name": "Context7",
+              "url": "https://github.com/upstash/context7"
+            }
+          ]
+        }
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "@id": "https://skills.suedeai.ai/directory/mcp-servers/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Directory",
+            "item": "https://skills.suedeai.ai/directory/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "MCP servers",
+            "item": "https://skills.suedeai.ai/directory/mcp-servers/"
+          }
+        ]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "@id": "https://skills.suedeai.ai/directory/mcp-servers/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is an MCP server?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A program that speaks the Model Context Protocol and exposes tools an agent can call, resources it can read and prompts it can use. It usually holds the credentials for an outside service, such as a database or a billing API."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Should I use a skill or an MCP server?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Use a skill when the agent has the access it needs and is missing the method. Use a server when the job needs data or actions the agent cannot reach with files and a shell. Many featured projects in this directory pair a server with the skills that know how to use it."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I add a server to Claude Code?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Run claude mcp add with the server's command or URL, or commit a .mcp.json file in the project. Plugins can also declare servers, so one install brings the skills and the tools together."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are the servers here scanned or scored?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Servers are listed from their publisher's repository with a short description. They carry no quality score, no security result and no verification badge from the directory."
+            }
+          }
+        ]
+      }
+    </script>
+    <meta name="theme-color" content="#05060a">
+    <link rel="preload" href="../../assets/fonts/jetbrains-mono-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../../assets/fonts/pixelify-sans-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../../assets/directory.css">
+    <script src="../../assets/directory.js" defer></script>
+    <link rel="alternate" type="application/rss+xml" title="Suede AI Skills Directory: new listings and guides" href="../feed.xml">
+</head>
+  <body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="nav">
+      <nav class="shell nav-inner" aria-label="Main navigation">
+        <a href="../" class="nav-logo" aria-label="Suede AI Skills Directory home">
+          <img src="../../assets/suede-ai-logo-transparent.webp" alt="Suede AI" width="28" height="28" onerror="this.style.display='none'">
+          <span class="nav-logo-wordmark">SuedeAI<span>.directory</span></span>
+        </a>
+        <details class="nav-disclosure" open>
+      <summary class="nav-hamburger" aria-label="Open navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </summary>
+      <div class="nav-links">
+          <a href="../" aria-current="page">Skills</a>
+          <a href="../top/">Top 100</a>
+          <a href="../new/">New</a>
+          <a href="../topics/">Topics</a>
+          <a href="../featured/">Featured Skills</a>
+          <a href="../agents/">Agents</a>
+          <a href="../stacks/">Stacks</a>
+          <a href="../trust/">Security</a>
+          <a href="../saved/" data-saved-link>Saved <span class="count-chip" data-saved-count hidden></span></a>
+          <a href="../submit/" class="nav-cta">List your skill</a>
+        </div>
+    </details>
+      </nav>
+    </header>
+    <main id="main" tabindex="-1" class="shell directory">
+      <div class="eyebrow">Suede AI Skills Directory &middot; MCP servers</div>
+      <div class="hero-row"><svg class="pix page-icon" viewBox="0 0 12 12" width="56" height="56" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M0 0h12v1h-12zM0 1h1v1h-1zM11 1h1v1h-1zM0 2h1v1h-1zM2 2h2v1h-2zM9 2h1v1h-1zM11 2h1v1h-1zM0 3h12v1h-12zM0 4h1v1h-1zM11 4h1v1h-1zM0 5h1v1h-1zM2 5h2v1h-2zM9 5h1v1h-1zM11 5h1v1h-1zM0 6h12v1h-12zM0 7h1v1h-1zM11 7h1v1h-1zM0 8h1v1h-1zM2 8h2v1h-2zM9 8h1v1h-1zM11 8h1v1h-1zM0 9h12v1h-12z"/></svg><div><h1>MCP servers</h1></div></div>
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="../">Directory</a> <span class="crumb-sep" aria-hidden="true">/</span> <span aria-current="page">MCP servers</span></nav>
+      <p class="lead">A Model Context Protocol server gives an agent access to a system it cannot reach on its own: a browser, a database, a billing API. A skill teaches the method; a server supplies the tools. The best setups pair the two.</p>
+      <ul class="stat-row" aria-label="Kind size"><li><b>6</b> listed repositories</li><li><b>5</b> from official publishers</li><li><b>2</b> sections</li></ul>
+      <p>Claude Code reads servers from .mcp.json in a project or from a plugin's mcpServers entry; Cursor, Codex, Gemini CLI, Goose and Grok Build have their own configuration files for the same servers. The official registry publishes a server.json for each listed server with a verified namespace.</p>
+      <p>A server holds credentials and acts on outside systems, so check what tools it exposes and what scopes its keys carry before you add it. The directory lists servers from their publisher's repository and does not score or scan them.</p>
+      <section class="panel" aria-labelledby="install-title">
+        <h2 id="install-title">How a server installs</h2>
+        <p>Add the server to your agent's configuration. In Claude Code, claude mcp add registers a command or URL; a project can also commit a .mcp.json file so every collaborator gets the same servers.</p>
+        <div class="snippet">
+          <div class="snippet-head"><span>Commands</span><button type="button" class="snippet-copy" data-copy-target="install-mcp-servers">Copy</button></div>
+          <pre><code id="install-mcp-servers">claude mcp add &lt;name&gt; -- npx -y &lt;package&gt;
+claude mcp add --transport http &lt;name&gt; &lt;url&gt;</code></pre>
+        </div>
+        <p class="muted">Documentation: <a href="https://modelcontextprotocol.io/" target="_blank" rel="noopener">Model Context Protocol</a> &middot; <a href="https://registry.modelcontextprotocol.io/" target="_blank" rel="noopener">Official MCP registry</a> &middot; <a href="https://code.claude.com/docs/en/mcp" target="_blank" rel="noopener">MCP in Claude Code</a> &middot; <a href="https://skills.suedeai.ai/directory/guides/skills-vs-mcp-servers/" target="_blank" rel="noopener">Skills vs MCP servers vs plugins</a></p>
+      </section>
+      <section class="panel" id="reference" aria-labelledby="reference-title">
+        <h2 id="reference-title">Reference implementations and lists</h2>
+        <p class="muted">Where the protocol's own servers and the community lists live.</p>
+        <div class="kind-list">
+          <article class="kind-entry" id="modelcontextprotocol-servers">
+            <div><h3><a href="https://github.com/modelcontextprotocol/servers" target="_blank" rel="noopener">modelcontextprotocol/servers</a></h3><p class="kind-meta">modelcontextprotocol/servers</p><p>The reference servers maintained with the protocol: Everything, Fetch, Filesystem, Git, Memory, Sequential Thinking and Time, with older servers moved to an archive.</p></div>
+            <div class="kind-side"><span class="status-chip is-official">Official publisher</span><span>Listed, not graded</span><a href="https://github.com/modelcontextprotocol/servers" target="_blank" rel="noopener">GitHub</a></div>
+
+          </article>
+          <article class="kind-entry" id="modelcontextprotocol-registry">
+            <div><h3><a href="https://github.com/modelcontextprotocol/registry" target="_blank" rel="noopener">MCP registry</a></h3><p class="kind-meta">modelcontextprotocol/registry</p><p>The official registry: publishers describe a server in server.json, verify their namespace through GitHub or DNS, and publish with the mcp-publisher CLI.</p></div>
+            <div class="kind-side"><span class="status-chip is-official">Official publisher</span><span>Listed, not graded</span><a href="https://github.com/modelcontextprotocol/registry" target="_blank" rel="noopener">GitHub</a></div>
+
+          </article>
+          <article class="kind-entry" id="awesome-mcp-servers">
+            <div><h3><a href="https://github.com/punkpeye/awesome-mcp-servers" target="_blank" rel="noopener">awesome-mcp-servers</a></h3><p class="kind-meta">punkpeye/awesome-mcp-servers</p><p>The largest community list of MCP servers, grouped by category, with a companion directory at glama.ai.</p></div>
+            <div class="kind-side"><span class="status-chip">Community</span><span>Listed, not graded</span><a href="https://github.com/punkpeye/awesome-mcp-servers" target="_blank" rel="noopener">GitHub</a></div>
+
+          </article>
+        </div>
+      </section>
+      <section class="panel" id="popular" aria-labelledby="popular-title">
+        <h2 id="popular-title">Servers from the companies behind the tools</h2>
+        <p class="muted">Official servers that show up in most setups.</p>
+        <div class="kind-list">
+          <article class="kind-entry" id="chrome-devtools-mcp">
+            <div><h3><a href="https://github.com/ChromeDevTools/chrome-devtools-mcp" target="_blank" rel="noopener">chrome-devtools-mcp</a></h3><p class="kind-meta">ChromeDevTools/chrome-devtools-mcp</p><p>Drives a live Chrome through DevTools: navigate, inspect the DOM, read console and network activity, record performance traces.</p></div>
+            <div class="kind-side"><span class="status-chip is-official">Official publisher</span><span>Listed, not graded</span><a href="https://github.com/ChromeDevTools/chrome-devtools-mcp" target="_blank" rel="noopener">GitHub</a></div>
+
+          </article>
+          <article class="kind-entry" id="playwright-mcp">
+            <div><h3><a href="https://github.com/microsoft/playwright-mcp" target="_blank" rel="noopener">playwright-mcp</a></h3><p class="kind-meta">microsoft/playwright-mcp</p><p>Browser automation through Playwright's accessibility tree, so an agent can fill forms, click and read pages without screenshots.</p></div>
+            <div class="kind-side"><span class="status-chip is-official">Official publisher</span><span>Listed, not graded</span><a href="https://github.com/microsoft/playwright-mcp" target="_blank" rel="noopener">GitHub</a></div>
+
+          </article>
+          <article class="kind-entry" id="context7">
+            <div><h3><a href="https://github.com/upstash/context7" target="_blank" rel="noopener">Context7</a></h3><p class="kind-meta">upstash/context7</p><p>Pulls current, version-specific library documentation and examples into the agent's context.</p></div>
+            <div class="kind-side"><span class="status-chip is-official">Official publisher</span><span>Listed, not graded</span><a href="https://github.com/upstash/context7" target="_blank" rel="noopener">GitHub</a></div>
+
+          </article>
+        </div>
+      </section>
+      <section class="panel" aria-labelledby="mcp-featured-title">
+        <h2 id="mcp-featured-title">Featured projects built on MCP servers</h2>
+        <p class="muted">Reviewed by the directory's editors, each pairing a server with the skills that know how to use it.</p>
+        <div class="links">
+          <a class="link-row" href="../featured/#appie"><b>Appie</b><span>Hosted MCP · Three agent skills &middot; appierun/appie-mcp</span></a>
+          <a class="link-row" href="../featured/#costory"><b>Costory</b><span>Hosted MCP · Four FinOps skills &middot; costory-io/costory-finops-mcp-skills</span></a>
+          <a class="link-row" href="../featured/#extra-caffeine"><b>Extra Caffeine</b><span>Local Mac MCP · One workflow skill &middot; cwong5/extra-caffeine-mcp</span></a>
+          <a class="link-row" href="../featured/#agent-qa"><b>agent-qa CLI by Vostride</b><span>QA agent CLI · Dashboard, MCP and four skills &middot; vostride/agent-qa</span></a>
+          <a class="link-row" href="../featured/#bulkpublish"><b>BulkPublish</b><span>Hosted MCP · Eight agent skills &middot; azeemkafridi/bulkpublish-ai-toolkit</span></a>
+          <a class="link-row" href="../featured/#arcmira"><b>Arcmira</b><span>Directory member &middot; arcmira/mcp</span></a>
+          <a class="link-row" href="../featured/#lava"><b>Lava</b><span>Directory member &middot; dustinliang666-blip/lava-mcp</span></a>
+        </div>
+      </section>
+      <section class="panel" aria-labelledby="mcp-skills-title">
+        <h2 id="mcp-skills-title">Skills that use an MCP server</h2>
+        <p>60 listed skills with full pages connect to an MCP server or name MCP tools in their files. <a href="../features/mcp/">Browse them with their scores</a>.</p>
+      </section>
+      <section class="panel" aria-labelledby="listing-title">
+        <h2 id="listing-title">How this list is kept</h2>
+        <p>Entries are added by hand from their publisher's repository, checked to exist on November 2, 2026, and described from what the publisher documents. They carry no Suede Skill Check score, no security result and no verification badge: the score applies to SKILL.md skills only. To suggest a repository or a correction, <a href="https://github.com/JasonColapietro/suede-creator-skills/issues/new?template=directory-listing.yml" target="_blank" rel="noopener">open a listing request</a>.</p>
+      </section>
+      <section class="panel faq" aria-labelledby="faq-title">
+        <h2 id="faq-title">Questions and answers</h2>
+        <h3>What is an MCP server?</h3>
+        <p>A program that speaks the Model Context Protocol and exposes tools an agent can call, resources it can read and prompts it can use. It usually holds the credentials for an outside service, such as a database or a billing API.</p>
+        <h3>Should I use a skill or an MCP server?</h3>
+        <p>Use a skill when the agent has the access it needs and is missing the method. Use a server when the job needs data or actions the agent cannot reach with files and a shell. Many featured projects in this directory pair a server with the skills that know how to use it.</p>
+        <h3>How do I add a server to Claude Code?</h3>
+        <p>Run claude mcp add with the server's command or URL, or commit a .mcp.json file in the project. Plugins can also declare servers, so one install brings the skills and the tools together.</p>
+        <h3>Are the servers here scanned or scored?</h3>
+        <p>No. Servers are listed from their publisher's repository with a short description. They carry no quality score, no security result and no verification badge from the directory.</p>
+      </section>
+    </main>
+    <footer>
+      <div class="shell">
+        <p class="footer-note">MCP servers on SuedeAI.directory: listed from their publishers' repositories, not graded. Every entry belongs to its publisher.</p>
+        <div class="footer-inner">
+          <div class="footer-brand">
+            <img src="../../assets/suede-ai-logo-transparent.webp" alt="Suede AI" width="24" height="24" onerror="this.style.display='none'">
+            <span>Built by <strong>Jason Colapietro</strong> / Suede AI</span>
+          </div>
+          <div class="footer-links">
+            <a href="../">Skills</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="../top/">Top 100</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="../new/">New</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="../topics/">Topics</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="../for/">By task</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="../featured/">Featured projects</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="../agents/">AI agents</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="./">MCP servers</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="../plugins/">Plugins and mods</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="../grok/">Grok bots</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="../stacks/">Stacks</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="../security/">Security</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="../publishers/">Publishers</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="../compare/">Compare</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="../api/">API and data</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="../methodology/">How skills are listed</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="../submit/">List your skill</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="../feed.xml">RSS feed</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="../../skills/">Suede AI skills pack</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="https://suedeai.ai" target="_blank" rel="noopener">suedeai.ai</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener">GitHub</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="https://suedeai.ai/privacy" target="_blank" rel="noopener">Privacy</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="https://suedeai.ai/contact" target="_blank" rel="noopener">Contact</a>
+          </div>
+        </div>
+      </div>
+    <div class="trendshift-recognition" style="width:250px;max-width:100%;margin:24px auto;text-align:center"><p style="margin:0 0 8px;font-size:13px">Suede AI Skills on Trendshift</p><a href="https://trendshift.io/repositories/82031?utm_source=trendshift-badge&amp;utm_medium=badge&amp;utm_campaign=badge-trendshift-82031" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/82031/daily?language=Python" alt="JasonColapietro%2Fsuede-creator-skills | Trendshift" width="250" height="55" loading="lazy" style="display:block;max-width:100%;height:auto"/></a></div>
+</footer>
+  <script>
+  // Mobile nav disclosure. The markup ships <details open> so a no-JS visit
+  // still reaches every link; this collapses it at mobile widths only and
+  // keeps the summary label in sync with the state.
+  (function () {
+    var box = document.querySelector('.nav-disclosure');
+    if (!box) return;
+    var summary = box.querySelector('summary');
+    var mq = window.matchMedia('(max-width: 768px)');
+    function collapseForViewport() { box.open = !mq.matches; }
+    function syncLabel() {
+      if (summary) summary.setAttribute('aria-label', box.open ? 'Close navigation menu' : 'Open navigation menu');
+    }
+    collapseForViewport();
+    syncLabel();
+    box.addEventListener('toggle', syncLabel);
+    if (mq.addEventListener) mq.addEventListener('change', collapseForViewport);
+    else if (mq.addListener) mq.addListener(collapseForViewport);
+    box.querySelectorAll('.nav-links a').forEach(function (link) {
+      link.addEventListener('click', function () { if (mq.matches) box.open = false; });
+    });
+  })();
+</script>
+  </body>
+</html>

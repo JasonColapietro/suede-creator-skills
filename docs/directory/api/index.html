@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Directory API and Data: Index, Reports, Badges, Feed</title>
+    <meta name="description" content="Every file the directory publishes: the search index, per-skill reports, badges, the skills.sh install snapshot, the RSS feed and the sitemap.">
+    <meta name="keywords" content="agent skills api, skills directory json, skill score api, agent skills dataset">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <link rel="canonical" href="https://suedeai.directory/api/">
+    <link rel="icon" href="../../assets/favicon-64.png" type="image/png">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Suede AI Skills Directory">
+    <meta property="og:title" content="Directory API and Data: Index, Reports, Badges, Feed">
+    <meta property="og:description" content="Every file the directory publishes: the search index, per-skill reports, badges, the skills.sh install snapshot, the RSS feed and the sitemap.">
+    <meta property="og:url" content="https://skills.suedeai.ai/directory/api/">
+    <meta property="og:image" content="https://skills.suedeai.ai/assets/social/directory-card.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@AISUEDE">
+    <meta name="twitter:title" content="Directory API and Data: Index, Reports, Badges, Feed">
+    <meta name="twitter:description" content="Every file the directory publishes: the search index, per-skill reports, badges, the skills.sh install snapshot, the RSS feed and the sitemap.">
+    <meta name="twitter:image" content="https://skills.suedeai.ai/assets/social/directory-card.png">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "@id": "https://skills.suedeai.ai/directory/api/#page",
+        "name": "Directory API and Data: Index, Reports, Badges, Feed",
+        "description": "Every file the directory publishes: the search index, per-skill reports, badges, the skills.sh install snapshot, the RSS feed and the sitemap.",
+        "url": "https://skills.suedeai.ai/directory/api/",
+        "dateModified": "2026-11-02",
+        "inLanguage": "en",
+        "isPartOf": {
+          "@type": "CollectionPage",
+          "@id": "https://skills.suedeai.ai/directory/#directory",
+          "name": "Suede AI Skills Directory",
+          "url": "https://skills.suedeai.ai/directory/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "@id": "https://suedeai.ai/#organization",
+          "name": "Suede AI",
+          "url": "https://suedeai.ai"
+        },
+        "breadcrumb": {
+          "@id": "https://skills.suedeai.ai/directory/api/#breadcrumb"
+        }
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "@id": "https://skills.suedeai.ai/directory/api/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Directory",
+            "item": "https://skills.suedeai.ai/directory/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "API and data",
+            "item": "https://skills.suedeai.ai/directory/api/"
+          }
+        ]
+      }
+    </script>
+    <meta name="theme-color" content="#05060a">
+    <link rel="preload" href="../../assets/fonts/jetbrains-mono-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="../../assets/fonts/pixelify-sans-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../../assets/directory.css">
+    <script src="../../assets/directory.js" defer></script>
+    <link rel="alternate" type="application/rss+xml" title="Suede AI Skills Directory: new listings and guides" href="../feed.xml">
+</head>
+  <body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="nav">
+      <nav class="shell nav-inner" aria-label="Main navigation">
+        <a href="../" class="nav-logo" aria-label="Suede AI Skills Directory home">
+          <img src="../../assets/suede-ai-logo-transparent.webp" alt="Suede AI" width="28" height="28" onerror="this.style.display='none'">
+          <span class="nav-logo-wordmark">SuedeAI<span>.directory</span></span>
+        </a>
+        <details class="nav-disclosure" open>
+      <summary class="nav-hamburger" aria-label="Open navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </summary>
+      <div class="nav-links">
+          <a href="../" aria-current="page">Skills</a>
+          <a href="../top/">Top 100</a>
+          <a href="../new/">New</a>
+          <a href="../topics/">Topics</a>
+          <a href="../featured/">Featured Skills</a>
+          <a href="../agents/">Agents</a>
+          <a href="../stacks/">Stacks</a>
+          <a href="../trust/">Security</a>
+          <a href="../saved/" data-saved-link>Saved <span class="count-chip" data-saved-count hidden></span></a>
+          <a href="../submit/" class="nav-cta">List your skill</a>
+        </div>
+    </details>
+      </nav>
+    </header>
+    <main id="main" tabindex="-1" class="shell directory">
+      <div class="eyebrow">Suede AI Skills Directory &middot; Data</div>
+      <h1>API and data</h1>
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="../">Directory</a> <span class="crumb-sep" aria-hidden="true">/</span> <span aria-current="page">API and data</span></nav>
+      <p class="lead">Everything the directory publishes is a static file on this host. There is no key, no rate limit and no account; please link back to the listing when you quote a score, and name skills.sh when you quote an install count.</p>
+      <section class="panel" aria-labelledby="files-title">
+        <h2 id="files-title">Files</h2>
+        <div class="table-wrap"><table class="checks"><thead><tr><th scope="col">File</th><th scope="col">URL</th><th scope="col">What it holds</th></tr></thead><tbody>
+          <tr><td>Search index</td><td><a href="https://suedeai.directory/search-index.json">/search-index.json</a></td><td>One record per listed skill (3,871): name, repo, description, category, license, grade, score, href, full, report, lane, flags, topics, listed, updated, installs.</td></tr>
+          <tr><td>Skill report</td><td><a href="https://suedeai.directory/activeloopai/hivemind/hivemind-goals/report.json">/activeloopai/hivemind/hivemind-goals/report.json</a></td><td>A verifiable report per listing: snapshot id and dataset hash, score by component, source revision, badges and the methodology version. Every listed skill has one at its listing path.</td></tr>
+          <tr><td>Quality badges</td><td><a href="https://suedeai.directory/activeloopai/hivemind/hivemind-goals/score.svg">/activeloopai/hivemind/hivemind-goals/score.svg</a></td><td>score.svg and badge.svg per listing. Skills scoring 80 to 99 get the numeric and letter shields; others serve the general listing badge.</td></tr>
+          <tr><td>Install snapshot</td><td><a href="https://suedeai.directory/installs.json">/installs.json</a></td><td>Install counts for 2,865 listed skills as published by skills.sh, with the fetch date and the method. The directory measures no installs of its own.</td></tr>
+          <tr><td>Kinds</td><td><a href="https://suedeai.directory/kinds.json">/kinds.json</a></td><td>The plugins, Grok, MCP server and rules listings as one JSON document.</td></tr>
+          <tr><td>RSS feed</td><td><a href="https://suedeai.directory/feed.xml">/feed.xml</a></td><td>New listings and guides, RSS 2.0.</td></tr>
+          <tr><td>llms.txt</td><td><a href="https://suedeai.directory/llms.txt">/llms.txt</a></td><td>The directory described for answer engines, with every browse page.</td></tr>
+          <tr><td>Sitemap</td><td><a href="https://suedeai.directory/sitemap.xml">/sitemap.xml</a></td><td>Every indexable page with its last-modified date.</td></tr>
+        </tbody></table></div>
+      </section>
+      <section class="panel" id="installs" aria-labelledby="installs-title">
+        <h2 id="installs-title">Where install counts come from</h2>
+        <p>The directory does not measure installs. <code>installs.json</code> is a snapshot of counts published by <a href="https://skills.sh/" target="_blank" rel="noopener">skills.sh</a>, which records installs made with the skills CLI (<code>npx skills add</code>) from anonymous, deduplicated telemetry as its documentation describes. The snapshot was read on November 2, 2026 from its public search endpoint, one query per listed repository, and its home page leaderboard for eight weeks of history. 2,865 listed skills matched; skills without a count are not tracked there. The script is <a href="https://github.com/JasonColapietro/suede-creator-skills/blob/main/scripts/directory/installs.mjs" target="_blank" rel="noopener">scripts/directory/installs.mjs</a>.</p>
+      </section>
+      <section class="panel" aria-labelledby="score-api-title">
+        <h2 id="score-api-title">Recomputing a score</h2>
+        <p>Scores are computed only from published fields, so a report can be checked. <code>scripts/directory/badges.mjs</code> and <code>scripts/directory/grade.py</code> in the repository recompute the same value from <code>skills.json</code>; the <a href="../methodology/#score">methodology</a> lists every component and its points.</p>
+      </section>
+    </main>
+    <footer>
+      <div class="shell">
+        <p class="footer-note">The directory's data is published as static files. Scores follow the published methodology; install counts are skills.sh's.</p>
+        <div class="footer-inner">
+          <div class="footer-brand">
+            <img src="../../assets/suede-ai-logo-transparent.webp" alt="Suede AI" width="24" height="24" onerror="this.style.display='none'">
+            <span>Built by <strong>Jason Colapietro</strong> / Suede AI</span>
+          </div>
+          <div class="footer-links">
+            <a href="../">Skills</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="../top/">Top 100</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="../new/">New</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="../topics/">Topics</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="../for/">By task</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="../featured/">Featured projects</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="../agents/">AI agents</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="../mcp-servers/">MCP servers</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="../plugins/">Plugins and mods</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="../grok/">Grok bots</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="../stacks/">Stacks</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="../security/">Security</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="../publishers/">Publishers</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="../compare/">Compare</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="./">API and data</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="../methodology/">How skills are listed</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="../submit/">List your skill</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="../feed.xml">RSS feed</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="../../skills/">Suede AI skills pack</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="https://suedeai.ai" target="_blank" rel="noopener">suedeai.ai</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener">GitHub</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="https://suedeai.ai/privacy" target="_blank" rel="noopener">Privacy</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="https://suedeai.ai/contact" target="_blank" rel="noopener">Contact</a>
+          </div>
+        </div>
+      </div>
+    <div class="trendshift-recognition" style="width:250px;max-width:100%;margin:24px auto;text-align:center"><p style="margin:0 0 8px;font-size:13px">Suede AI Skills on Trendshift</p><a href="https://trendshift.io/repositories/82031?utm_source=trendshift-badge&amp;utm_medium=badge&amp;utm_campaign=badge-trendshift-82031" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/82031/daily?language=Python" alt="JasonColapietro%2Fsuede-creator-skills | Trendshift" width="250" height="55" loading="lazy" style="display:block;max-width:100%;height:auto"/></a></div>
+</footer>
+  <script>
+  // Mobile nav disclosure. The markup ships <details open> so a no-JS visit
+  // still reaches every link; this collapses it at mobile widths only and
+  // keeps the summary label in sync with the state.
+  (function () {
+    var box = document.querySelector('.nav-disclosure');
+    if (!box) return;
+    var summary = box.querySelector('summary');
+    var mq = window.matchMedia('(max-width: 768px)');
+    function collapseForViewport() { box.open = !mq.matches; }
+    function syncLabel() {
+      if (summary) summary.setAttribute('aria-label', box.open ? 'Close navigation menu' : 'Open navigation menu');
+    }
+    collapseForViewport();
+    syncLabel();
+    box.addEventListener('toggle', syncLabel);
+    if (mq.addEventListener) mq.addEventListener('change', collapseForViewport);
+    else if (mq.addListener) mq.addListener(collapseForViewport);
+    box.querySelectorAll('.nav-links a').forEach(function (link) {
+      link.addEventListener('click', function () { if (mq.matches) box.open = false; });
+    });
+  })();
+</script>
+  </body>
+</html>

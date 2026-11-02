@@ -430,6 +430,12 @@
   "DevOps and cloud agent skills",
   "SKILL.md"
  ],
+ "directory/api/index.html": [
+  "agent skills api",
+  "skills directory json",
+  "skill score api",
+  "agent skills dataset"
+ ],
  "directory/apify/agent-skills/index.html": [
   "apify/agent-skills skills",
   "agent-skills skills",
@@ -1208,6 +1214,11 @@
   "skills claude skills",
   "business and finance agent skills",
   "agent skills directory"
+ ],
+ "directory/compare/index.html": [
+  "compare agent skills",
+  "compare claude code skills",
+  "skill comparison"
  ],
  "directory/composiohq/skills/index.html": [
   "composiohq/skills skills",
@@ -3282,6 +3293,14 @@
   "video image and audio agent skills",
   "SKILL.md"
  ],
+ "directory/grok/index.html": [
+  "grok bots and grok build plugins",
+  "grok bots directory",
+  "grok build plugins",
+  "xai grok bot setup",
+  "grok sdk",
+  "agent skills directory"
+ ],
  "directory/guides/best-seo-skills/index.html": [
   "best seo skills for claude code",
   "claude code seo skills",
@@ -3864,6 +3883,7 @@
   "best claude skills",
   "SKILL.md directory",
   "ai agent skills list",
+  "most installed agent skills",
   "Suede AI Skills Directory"
  ],
  "directory/infrasity-labs/dev-gtm-claude-skills/agile-product-owner/index.html": [
@@ -4985,6 +5005,14 @@
   "mcollina skills",
   "developer tools agent skills",
   "SKILL.md"
+ ],
+ "directory/mcp-servers/index.html": [
+  "mcp servers",
+  "mcp servers directory",
+  "model context protocol servers",
+  "install mcp servers",
+  "mcp server list",
+  "agent skills directory"
  ],
  "directory/media-creative/index.html": [
   "video image and audio agent skills",
@@ -6645,6 +6673,14 @@
   "productivity agent skills",
   "agent skills directory"
  ],
+ "directory/plugins/index.html": [
+  "claude code plugins and mods",
+  "plugins and mods directory",
+  "claude code plugin marketplace",
+  "install claude code plugins",
+  "claude code hooks and mods",
+  "agent skills directory"
+ ],
  "directory/praneybehl/llm-wiki-plugin/llm-wiki/index.html": [
   "llm-wiki skill by praneybehl",
   "llm-wiki skill",
@@ -6818,6 +6854,11 @@
   "PSPDFKit-labs skills",
   "document and office file agent skills",
   "SKILL.md"
+ ],
+ "directory/publishers/index.html": [
+  "agent skill publishers",
+  "claude code skill repositories",
+  "official agent skills publishers"
  ],
  "directory/qdrant/skills/index.html": [
   "qdrant/skills skills",
@@ -7272,6 +7313,14 @@
   "developer tools agent skills",
   "SKILL.md"
  ],
+ "directory/rules/index.html": [
+  "rules instruction files and prompts",
+  "rules and prompts directory",
+  "cursor rules",
+  "agents.md examples",
+  "claude.md examples",
+  "prompt libraries"
+ ],
  "directory/sanity-io/agent-toolkit/index.html": [
   "sanity-io/agent-toolkit skills",
   "agent-toolkit skills",
@@ -7567,6 +7616,99 @@
   "video image and audio agent skills",
   "SKILL.md"
  ],
+ "directory/stacks/agent-building/index.html": [
+  "building agents and MCP servers skill stack",
+  "agent building skills",
+  "mcp builder skill",
+  "multi-agent workflow skills",
+  "context engineering skill",
+  "prompt optimizer skill",
+  "bedrock agentcore skill"
+ ],
+ "directory/stacks/code-review/index.html": [
+  "code review skill stack",
+  "code review agent skills",
+  "claude code review skill",
+  "security review skill",
+  "tidy skill",
+  "verification before completion"
+ ],
+ "directory/stacks/content-and-social/index.html": [
+  "content and social posts skill stack",
+  "content writing agent skills",
+  "social media skill claude code",
+  "ghostwriter skill",
+  "linkedin profile skill",
+  "line editing skill"
+ ],
+ "directory/stacks/documents-and-data/index.html": [
+  "documents and data skill stack",
+  "document agent skills",
+  "docx skill",
+  "read long pdf skill",
+  "sql query agent skill",
+  "literature review skill",
+  "data skills claude code"
+ ],
+ "directory/stacks/index.html": [
+  "agent skill stacks",
+  "best skills by task",
+  "claude code skill stack",
+  "codex skill stack",
+  "recommended agent skills"
+ ],
+ "directory/stacks/landing-page/index.html": [
+  "shipping a landing page skill stack",
+  "landing page agent skills",
+  "claude code landing page skill",
+  "auteur skill",
+  "conversion tracking skill",
+  "best skills for landing pages"
+ ],
+ "directory/stacks/research/index.html": [
+  "research skill stack",
+  "research agent skills",
+  "company research skill",
+  "market research agent",
+  "citation management skill",
+  "deep reader skill",
+  "chat history skill"
+ ],
+ "directory/stacks/seo-and-ai-search/index.html": [
+  "SEO and AI search visibility skill stack",
+  "seo agent skills",
+  "ai search visibility skill",
+  "seo-dataforseo",
+  "webmcp skill",
+  "claude code seo stack",
+  "get cited by ai"
+ ],
+ "directory/stacks/testing-and-ci/index.html": [
+  "testing and CI skill stack",
+  "testing agent skills",
+  "ci speedup skill",
+  "playwright skill",
+  "cypress skill claude code",
+  "manual testing skill",
+  "chaos testing skill"
+ ],
+ "directory/stacks/ui-design/index.html": [
+  "UI design skill stack",
+  "ui design agent skills",
+  "impeccable skill",
+  "frontend design skill claude code",
+  "ui animation skill",
+  "design system extraction skill"
+ ],
+ "directory/stacks/video-and-creative/index.html": [
+  "video images and audio skill stack",
+  "video agent skills",
+  "ai image generation skill",
+  "capcut skill",
+  "text to speech skill",
+  "creative director skill",
+  "video editing agent"
+ ],
  "directory/stripe/ai/index.html": [
   "stripe/ai skills",
   "ai skills",
@@ -7849,6 +7991,7 @@
  "directory/top/index.html": [
   "top claude code skills",
   "top 100 agent skills",
+  "most installed agent skills",
   "best agent skills ranked",
   "highest rated claude skills"
  ],
@@ -9463,6 +9606,13 @@
   "tronghieu skills",
   "business and finance agent skills",
   "SKILL.md"
+ ],
+ "directory/trust/index.html": [
+  "agent skill security",
+  "are claude skills safe",
+  "malicious agent skills",
+  "skill.md security scan",
+  "review a skill before installing"
  ],
  "directory/trycourier/courier-skills/courier/index.html": [
   "courier skill by trycourier",
