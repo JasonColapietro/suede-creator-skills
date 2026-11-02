@@ -13,7 +13,10 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const read = (file) => fs.readFileSync(path.join(root, file), 'utf8');
 const data = JSON.parse(read('directory/featured-projects.json'));
 const published = () => read('docs/directory/featured/index.html');
-const recentIds = ['geekflare', 'cisco-skill-scanner', 'opsibyte', 'extra-caffeine', 'costory', 'appie', 'coalwash', 'lava', 'arcmira'];
+const recentIds = ['agent-qa', 'berlin-job-search', 'bulkpublish', 'empacer', 'frametell', 'inkroom', 'lfr', 'trong-hieu', 'geekflare', 'cisco-skill-scanner', 'opsibyte', 'extra-caffeine', 'costory', 'appie', 'coalwash', 'lava', 'arcmira'];
+const pendingIds = ['berlin-job-search', 'bulkpublish', 'empacer', 'inkroom', 'lfr'];
+const reviewedIds = recentIds.filter((id) => !pendingIds.includes(id) && data.projects.some((p) => p.id === id));
+const cardOf = (html, id) => html.split(`id="${id}"`)[1]?.split('</article>')[0];
 const articleIds = (html) => [...html.matchAll(/<article class="featured-project[^"]*" id="([^"]+)"/g)].map((m) => m[1]);
 
 test('featured sorting uses publication timestamps descending without mutating source order', () => {
@@ -53,8 +56,9 @@ test('featured cards, navigation, numbering, badge snippets and structured data 
   assert.deepEqual(articleIds(page), recentIds);
   const nav = page.match(/<nav class="featured-jump"[^>]*>([\s\S]*?)<\/nav>/)[1];
   assert.deepEqual([...nav.matchAll(/href="#([^"]+)"/g)].map((m) => m[1]), recentIds);
-  assert.deepEqual([...page.matchAll(/class="featured-number"[^>]*>(\d+)</g)].map((m) => Number(m[1])), [1, 2, 3, 4, 5, 6, 7, 8, 9]);
-  assert.deepEqual([...page.matchAll(/<code id="featured-badge-([^"]+)"/g)].map((m) => m[1]), recentIds.slice(0, 7));
+  assert.deepEqual([...page.matchAll(/class="featured-number"[^>]*>(\d+)</g)].map((m) => Number(m[1])), recentIds.map((_, i) => i + 1));
+  assert.deepEqual([...page.matchAll(/<code id="featured-badge-([^"]+)"/g)].map((m) => m[1]), reviewedIds);
+  assert.deepEqual([...page.matchAll(/data-featured-badge-pending="([^"]+)"/g)].map((m) => m[1]), pendingIds);
   const collection = [...page.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map((m) => JSON.parse(m[1])).find((x) => x['@type'] === 'CollectionPage');
   assert.deepEqual(collection.mainEntity.itemListElement.map((p) => new URL(p.url).hash.slice(1)), recentIds);
 });
@@ -64,7 +68,7 @@ test('a newly published project comes first across regeneration and shuffled sou
   try {
     for (const dir of ['scripts', 'directory', 'docs']) fs.cpSync(path.join(root, dir), path.join(fixture, dir), { recursive: true });
     const editorial = structuredClone(data);
-    editorial.projects.push({ ...editorial.projects.find((p) => p.id === 'coalwash'), id: 'z-new-feature', name: 'Z New Feature', repo: 'example/new-feature', published_at: '2026-11-01T12:00:00Z' });
+    editorial.projects.push({ ...editorial.projects.find((p) => p.id === 'coalwash'), id: 'z-new-feature', name: 'Z New Feature', repo: 'example/new-feature', published_at: '2026-11-03T12:00:00Z' });
     const metadata = path.join(fixture, 'directory/featured-projects.json');
     const output = path.join(fixture, 'docs/directory/featured/index.html');
     const build = () => execFileSync(process.execPath, [path.join(fixture, 'scripts/build-directory.mjs')], { stdio: 'pipe' });
@@ -291,7 +295,7 @@ test('Arcmira review preserves original scores and every raw scan finding', () =
 });
 
 test('editorial projects preserve accepted scopes and resolve their reviewed evidence', () => {
-  assert.deepEqual(data.projects.map((p) => p.repo), ['appierun/appie-mcp', 'TheColliery/CoalWash', 'costory-io/costory-finops-mcp-skills', 'cwong5/extra-caffeine-mcp', 'MelMayssonOwen/agent-skills', 'cisco-ai-defense/skill-scanner', 'geekflare/geekflare-skills']);
+  assert.deepEqual(data.projects.map((p) => p.repo), ['appierun/appie-mcp', 'TheColliery/CoalWash', 'costory-io/costory-finops-mcp-skills', 'cwong5/extra-caffeine-mcp', 'MelMayssonOwen/agent-skills', 'cisco-ai-defense/skill-scanner', 'geekflare/geekflare-skills', 'tronghieu/agent-skills', 'vostride/agent-qa', 'sitor-ai/frametell', 'azeemkafridi/bulkpublish-ai-toolkit', 'InkRoom-AI/inkroom-client', undefined, 'umutyesildal/berlin-job-search', 'Anonyfox/lfr']);
   const page = published();
   const appie = page.split('id="appie"')[1].split('</article>')[0];
   const links = [...appie.matchAll(/href="(\.\.\/appierun\/appie-mcp\/[^"/]+\/)"/g)].map((m) => m[1]);
@@ -302,7 +306,7 @@ test('editorial projects preserve accepted scopes and resolve their reviewed evi
   ]);
   for (const href of links) assert.ok(fs.existsSync(path.resolve(root, 'docs/directory/featured', href, 'index.html')));
   assert.doesNotMatch(appie, /linkedin|reddit|npx skills add/i);
-  for (const project of data.projects) {
+  for (const project of data.projects.filter((p) => p.status !== 'pending')) {
     assert.ok(fs.existsSync(path.join(root, project.review)));
     assert.match(project.commit, /^[a-f0-9]{40}$/);
     assert.ok(page.includes(`https://github.com/${project.repo}/tree/${project.commit}`));
@@ -327,8 +331,11 @@ test('featured page has a discoverable route, truthful structured data and selec
   assert.equal((page.match(/<h1[ >]/g) || []).length, 1);
   const blocks = [...page.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map((m) => JSON.parse(m[1]));
   const collection = blocks.find((x) => x['@type'] === 'CollectionPage');
-  assert.equal(collection.mainEntity.numberOfItems, 9);
-  assert.deepEqual(collection.mainEntity.itemListElement.map((p) => p.name), ['Geekflare', 'Cisco AI Defense Skill Scanner', 'Opsibyte', 'Extra Caffeine', 'Costory', 'Appie', 'CoalWash', 'Lava', 'Arcmira']);
+  assert.equal(collection.mainEntity.numberOfItems, 17);
+  assert.deepEqual(collection.mainEntity.itemListElement.map((p) => p.name), ['agent-qa CLI by Vostride', 'Berlin Job Search', 'BulkPublish', 'Empacer', 'Frametell', 'InkRoom', 'lfr', 'Trong Hieu agent skills', 'Geekflare', 'Cisco AI Defense Skill Scanner', 'Opsibyte', 'Extra Caffeine', 'Costory', 'Appie', 'CoalWash', 'Lava', 'Arcmira']);
+  const description = page.match(/<meta name="description" content="([^"]*)"/)[1];
+  assert.ok(description.length >= 70 && description.length <= 155, description);
+  assert.match(description, /^Meet agent-qa CLI by Vostride, .* and \d+ more: featured agent projects with source and setup\.$/);
   assert.match(page, /README-badge verification is tracked separately/);
   assert.match(page, /href="\.\.\/submit\/"/);
   assert.match(page, /href="\.\.\/methodology\/"/);
@@ -403,7 +410,7 @@ test('Costory features the four requested upstream skills with their source-deri
   assert.match(feature, /Costory workspace/);
   assert.match(feature, /OAuth/);
   assert.doesNotMatch(feature, /model drift|compensation|proposed score|source improvement/i);
-  assert.match(page, /<meta name="description" content="[^"]*Costory/);
+  assert.ok(page.includes('<a href="#costory">Costory <span aria-hidden="true">↓</span></a>'), 'Costory in featured navigation');
   for (const record of records) {
     assert.ok(feature.includes(`href="../${project.repo}/${record.slug}/"`), record.name);
     const listing = read(`docs/directory/${project.repo}/${record.slug}/index.html`);
@@ -419,4 +426,137 @@ test('Costory features the four requested upstream skills with their source-deri
     assert.ok(listing.includes(`https://github.com/${evidence[0].source}/blob/${evidence[0].commit}/${evidence[0].path}`));
     assert.match(read(`docs/directory/${project.repo}/${record.slug}/badge.svg`), /Suede Skill Check: Grade B/);
   }
+});
+
+const esc = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+const renderOptions = { esc, rel: (_from, to) => `../${to.replace(/^directory\//, '')}`, here: 'directory/featured/', slugify: (s) => s.toLowerCase() };
+const pendingSample = {
+  id: 'sample-pending', status: 'pending', published_at: '2026-11-02T00:00:00Z', name: 'Sample', repo: 'example/sample', commit: 'a'.repeat(40), license: 'MIT',
+  kind: 'One skill', headline: 'Do the work.', summary: 'Sample summary.', setup: 'Sample setup.', capabilities: [{ title: 'Work', description: 'Does the work.' }],
+};
+
+test('pending entries render the scan and review label in place of the review link', () => {
+  const reviewed = { ...pendingSample, id: 'sample-reviewed', status: undefined, review: 'directory/reviews/2026-11-02-sample.md' };
+  const html = featured.featuredProjectsHtml([pendingSample, reviewed], renderOptions);
+  const pending = cardOf(html, 'sample-pending');
+  assert.match(pending, /<span class="featured-status" data-featured-status="pending">Scan &amp; review pending<\/span>/);
+  assert.match(html, /<article class="featured-project" id="sample-pending" data-featured-status="pending"/);
+  assert.doesNotMatch(pending, /intake review|Reviewed source|directory\/reviews|undefined/);
+  assert.ok(pending.includes(`https://github.com/example/sample/tree/${'a'.repeat(40)}">Source at <code>aaaaaaa</code>`));
+  const done = cardOf(html, 'sample-reviewed');
+  assert.ok(done.includes('Read the intake review ↗') && done.includes('Reviewed source <code>'));
+  assert.doesNotMatch(done, /featured-status|Scan &amp; review pending/);
+  const hosted = { ...pendingSample, id: 'sample-hosted', repo: undefined, commit: undefined, license: undefined, site: 'https://example.com' };
+  const site = cardOf(featured.featuredProjectsHtml([hosted], renderOptions), 'sample-hosted');
+  assert.ok(site.includes('<a href="https://example.com" rel="noopener noreferrer">Visit Sample ↗</a>'));
+  assert.match(site, /Scan &amp; review pending/);
+  assert.doesNotMatch(site, /github\.com|featured-license|undefined/);
+  assert.equal(featured.PENDING_LABEL, 'Scan & review pending');
+});
+
+test('pending status is an explicit, bounded schema addition', () => {
+  assert.equal(featured.featuredProjects(data), data.projects);
+  const withEntry = (entry) => ({ ...structuredClone(data), projects: [...structuredClone(data.projects), entry] });
+  assert.doesNotThrow(() => featured.featuredProjects(withEntry(pendingSample)));
+  assert.doesNotThrow(() => featured.featuredProjects(withEntry({ ...pendingSample, repo: undefined, commit: undefined, site: 'https://example.com' })));
+  for (const patch of [
+    { status: 'review-pending' }, { status: 'live' }, { status: true },
+    { review: 'directory/reviews/2026-11-02-sample.md' }, { score: 90 }, { grade: 'A' }, { verdict: 'accepted' }, { certified: true }, { verified: true },
+    { skills: [{ id: 'sample', title: 'Sample', description: 'Sample.' }] }, { commands: ['npx sample'] },
+    { repo: undefined, commit: undefined }, { commit: 'main' }, { repo: '../escape', commit: 'a'.repeat(40) },
+    { repo: undefined, commit: undefined, site: 'http://example.com' }, { repo: undefined, commit: undefined, site: 'javascript:alert(1)' }, { repo: undefined, commit: undefined, site: 'https://example.com/?ref=x' },
+    { capabilities: [] }, { headline: '' }, { id: 'geekflare' },
+  ]) {
+    assert.throws(() => featured.featuredProjects(withEntry({ ...pendingSample, ...patch })), /featured project/i, JSON.stringify(patch));
+  }
+  const unreviewed = structuredClone(data);
+  delete unreviewed.projects.find((p) => p.id === 'geekflare').review;
+  assert.throws(() => featured.featuredProjects(unreviewed), /featured project: geekflare/);
+});
+
+test('published pending features show the label, no badge snippet and no score or verdict', () => {
+  const page = published();
+  const pending = data.projects.filter((p) => p.status === 'pending');
+  assert.deepEqual(pending.map((p) => p.id).sort(), [...pendingIds].sort());
+  const panel = page.match(/<section class="panel badge-panel"[\s\S]*?<\/section>/)[0];
+  for (const project of pending) {
+    const card = cardOf(page, project.id);
+    assert.ok(card, project.id);
+    assert.equal((card.match(/Scan &amp; review pending/g) || []).length, 1, project.id);
+    assert.doesNotMatch(card, /Read the intake review|Reviewed source|directory\/reviews\/|class="grade|score\.svg|badge\.svg|\/100|certified|verified/i, project.id);
+    assert.ok(!panel.includes(`featured-badge-${project.id}`), `${project.id}: no badge snippet`);
+    assert.ok(!page.includes(`featured/#${project.id})`), `${project.id}: no badge Markdown`);
+    assert.match(panel, new RegExp(`data-featured-badge-pending="${project.id}"><strong>[^<]+</strong> <span class="featured-status" data-featured-status="pending">Scan &amp; review pending</span>`));
+    if (project.repo) assert.ok(card.includes(`https://github.com/${project.repo}/tree/${project.commit}">Source at <code>${project.commit.slice(0, 7)}</code>`), project.id);
+  }
+  for (const id of reviewedIds) {
+    assert.ok(panel.includes(`<code id="featured-badge-${id}">`), id);
+    assert.doesNotMatch(cardOf(page, id), /Scan &amp; review pending/, id);
+  }
+  const empacer = cardOf(page, 'empacer');
+  assert.ok(empacer.includes('<a href="https://empacer.com" rel="noopener noreferrer">Visit Empacer ↗</a>'));
+  assert.doesNotMatch(empacer, /github\.com|Product Hunt|#1/);
+  const callout = read('docs/directory/index.html').match(/<a class="featured-callout"[\s\S]*?<\/a>/)[0];
+  for (const project of data.projects) assert.equal(callout.includes(esc(project.name)), project.status !== 'pending', project.id);
+  const awesome = read('awesome/featured.md');
+  for (const project of pending) {
+    const section = awesome.split(`<a id="${project.id}"></a>`)[1].split('\n---\n')[0];
+    assert.match(section, /\*\*Scan &amp; review pending\*\*/);
+    assert.doesNotMatch(section, /Intake review|Reviewed source/);
+  }
+  for (const project of data.projects.slice(-8)) assert.equal(project.published_at, '2026-11-02T00:00:00Z', project.id);
+  assert.doesNotMatch(read('directory/featured-projects.json'), /—/);
+});
+
+test('Trong Hieu features exactly thirteen cleared skills scoring 80 or more with resolvable listings', () => {
+  const accepted = ['brainstorm-coach', 'critical-thinking', 'cv-scorer', 'data-scientist', 'design-thinking', 'fiction-studio', 'market-researcher', 'problem-solver', 'product-manager', 'project-manager', 'scrum-master', 'socratic-questor', 'strategy-board'];
+  const project = data.projects.find((p) => p.id === 'trong-hieu');
+  assert.equal(project.repo, 'tronghieu/agent-skills');
+  assert.equal(project.commit, '831d1ae5c686a81b10f9c5b9cca04a7b8b97303d');
+  assert.equal(project.license, 'MIT');
+  assert.equal(project.status, undefined);
+  assert.deepEqual(project.skills.map((s) => s.id), accepted);
+  const catalog = JSON.parse(read('directory/skills.json'));
+  const records = catalog.skills.filter((s) => s.repo === project.repo);
+  assert.equal(records.length, 19, 'the other six skills stay listed');
+  for (const id of accepted) {
+    const record = records.find((s) => s.slug === id);
+    assert.ok(record.score >= 80 && record.checks === '11111111', id);
+  }
+  const card = cardOf(published(), 'trong-hieu');
+  const hrefs = [...card.matchAll(/<li><a href="([^"]+)"/g)].map((m) => m[1]);
+  assert.equal(hrefs.length, accepted.length);
+  for (const [i, href] of hrefs.entries()) {
+    const record = records.find((s) => s.slug === accepted[i]);
+    const [target, anchor] = href.split('#');
+    assert.ok(fs.existsSync(path.resolve(root, 'docs/directory/featured', target, 'index.html')), href);
+    if (record.featured) assert.equal(href, `../tronghieu/agent-skills/${record.slug}/`);
+    else assert.ok(read(path.relative(root, path.resolve(root, 'docs/directory/featured', target, 'index.html'))).includes(`id="${anchor}"`), href);
+  }
+  for (const held of records.filter((s) => !accepted.includes(s.slug))) assert.ok(!card.includes(held.slug), held.slug);
+  assert.ok(published().includes('<code id="featured-badge-trong-hieu">'));
+  const review = read(project.review);
+  for (const fact of ['831d1ae5c686a81b10f9c5b9cca04a7b8b97303d', '25 raw warnings', '13 absent license fields', '12 descriptions over 512 characters', '1,024', 'ZIP packages excluded', 'root MIT license']) assert.ok(review.includes(fact), fact);
+});
+
+test('agent-qa and Frametell carry exact license facts, reviews and badge snippets', () => {
+  const page = published();
+  const qa = data.projects.find((p) => p.id === 'agent-qa');
+  assert.equal(qa.license, 'FSL-1.1-ALv2');
+  assert.equal(qa.commit, '2b848e3f094c3c81a9004eb63c236c32adc55da6');
+  const discovery = JSON.parse(read('directory/agents/ungraded.json')).entries.find((e) => e.id === 'agent-qa');
+  assert.equal(discovery.repositoryUrl, 'https://github.com/vostride/agent-qa');
+  const frametell = data.projects.find((p) => p.id === 'frametell');
+  assert.equal(frametell.commit, '63d598fa9aed1e6fe0cf8ef37a32a5a8eb437e74');
+  assert.match(frametell.license, /^AGPL-3\.0/);
+  for (const project of [qa, frametell]) {
+    const card = cardOf(page, project.id);
+    assert.ok(fs.existsSync(path.join(root, project.review)), project.review);
+    assert.ok(card.includes(`<span class="featured-license">${esc(project.license)}</span>`));
+    assert.ok(card.includes('Read the intake review ↗'));
+    assert.ok(page.includes(`<code id="featured-badge-${project.id}">`));
+    assert.doesNotMatch(card, /open[- ]source/i);
+  }
+  for (const fact of ['FSL-1.1-ALv2', 'Node.js 24']) assert.ok(cardOf(page, 'agent-qa').includes(fact), fact);
+  for (const fact of ['Apple Silicon', 'ElevenLabs', '1080p', 'AGPL-3.0']) assert.ok(cardOf(page, 'frametell').includes(fact), fact);
 });

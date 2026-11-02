@@ -109,7 +109,7 @@ test('featured Appie scope and CoalWash full-plugin instructions retain their ev
   assert.ok(page.includes('Editorial selection'));
   assert.ok(page.includes('Accepted scope: **3 skills**'));
   assert.ok(page.includes('security certification'));
-  for (const p of inputs.editorial.projects) assert.ok(page.includes(`/tree/${p.commit}`));
+  for (const p of inputs.editorial.projects.filter((p) => p.repo)) assert.ok(page.includes(`/tree/${p.commit}`));
   const invalid = structuredClone(inputs);
   invalid.editorial.projects[0].skills.push({ id: 'unapproved-skill', title: 'unapproved', description: 'unapproved' });
   assert.throws(() => generateCatalog(invalid), /accepted scope/);

@@ -339,6 +339,9 @@
 .featured-install summary { cursor: pointer; color: var(--cream); min-height: 44px; padding: 12px 0; font-size: 16px; }
 .featured-project-footer { display: flex; flex-wrap: wrap; gap: 8px 28px; margin-top: 24px; }
 .directory .featured-project-footer a { display: inline-flex; align-items: center; flex-wrap: wrap; gap: 4px; min-height: 44px; font-size: 14px; border: 0; }
+.featured-status { display: inline-flex; align-items: center; align-self: center; padding: 4px 12px; border: 1px solid var(--gold); border-radius: 999px; color: var(--gold); font-size: 14px; line-height: 1.4; white-space: nowrap; }
+.featured-badge-pending { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin: 16px 0; }
+.featured-badge-pending strong { color: var(--cream); }
 .directory .featured-about { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; padding: 48px 0; border-top: 0; }
 .featured-about h2 { max-width: 17ch; }
 .directory .featured-about a { display: inline-flex; align-items: center; min-height: 44px; }

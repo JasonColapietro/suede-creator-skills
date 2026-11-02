@@ -48,6 +48,25 @@ mtimes, dataset refreshes or the metadata's shared `updated` field.
 | arcmira | `2026-10-27T23:06:04Z` | [`648e3eb`](https://github.com/JasonColapietro/suede-creator-skills/commit/648e3eb687838dc31d8ccd3185d781a22ac93b7f) |
 | lava | `2026-10-28T19:55:57Z` | [`62fc1c1`](https://github.com/JasonColapietro/suede-creator-skills/commit/62fc1c178a8c750bbf627821e9587b8cd017476c) |
 
+Entries added after this table record their feature date. The eight entries
+featured on November 2, 2026 carry `2026-11-02T00:00:00Z` and order among
+themselves by entry ID.
+
+## Featured with scan and review pending
+
+A project entry without `status` is a reviewed feature: it needs `repo`,
+`commit`, `license` and a `review` record under `directory/reviews/`, and the
+page prints its featured README badge snippet. An entry with
+`"status": "pending"` is featured while its scan and review are pending. It
+carries `capabilities` and either `repo` with a full `commit`, or an `https`
+`site` for a hosted product with no public repository; `license` is optional.
+It must not carry `review`, `skills`, `score`, `grade`, `verdict` or a badge.
+The page and `awesome/featured.md` show the label "Scan & review pending"
+where the review link and badge snippet would be, and no featured badge
+snippet is generated for it. `scripts/directory/featured.mjs`
+(`featuredProjects`) rejects any other status or field mix. When the review
+lands, add the record, remove `status` and keep `published_at`.
+
 ## Getting the directory listed
 
 [DISTRIBUTION.md](DISTRIBUTION.md) is the ledger of roundups, awesome lists, launch sites and press where the directory is or is not listed, with the route for each. [PUBLICITY.md](PUBLICITY.md) holds the ready-to-send copy for those submissions. Nothing in either file is sent without owner approval.

@@ -17,7 +17,7 @@ import path from "node:path";
 import { createHash } from "node:crypto";
 import { fileURLToPath } from "node:url";
 import { SCORE_METHOD, qualityScore, scorePoints, letterGrade, listed, qualifies, badgePair, badgeMarkdown, badgeHtml, shieldSvg, listingTarget, promotionActive } from "./directory/badges.mjs";
-import { featuredProjectsHtml, directoryMembers, directoryMembersHtml, newestPublishedFirst } from "./directory/featured.mjs";
+import { featuredProjectsHtml, featuredProjects, directoryMembers, directoryMembersHtml, newestPublishedFirst, isPending, pendingStatusHtml } from "./directory/featured.mjs";
 import { parseGuide, renderGuideBody } from "./directory/editorial.mjs";
 import { fitSentences } from "./directory/metadata.mjs";
 import { loadTaskConfig, planTasks, planAlternatives, isFirstParty, withArticle, TASK_GATE } from "./directory/task-pages.mjs";
@@ -59,6 +59,7 @@ if (PROMOTION.ends_at !== null && (!/^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\dZ$/.test(PRO
 if (SCORE_METHOD !== "graded-v2" || data.score_method !== SCORE_METHOD || CHECKS.map((c) => c.id).join() !== "frontmatter,name_format,name_matches_folder,description_length,description_trigger,concise_body,license,maintained") throw new Error("Unsupported directory score method");
 const NOTES = JSON.parse(fs.readFileSync(path.join(repoRoot, "directory", "notes.json"), "utf8"));
 const EDITORIAL = JSON.parse(fs.readFileSync(path.join(repoRoot, "directory", "featured-projects.json"), "utf8"));
+const PROJECTS = featuredProjects(EDITORIAL);
 const MEMBERS = directoryMembers(EDITORIAL);
 // The README badge for featured publishers, rendered with the other badges
 // once featured-projects.json marks it live.
@@ -2230,7 +2231,7 @@ function renderHub() {
           <details data-shortlist-export hidden><summary>Copy your shortlist as Markdown</summary><div class="snippet"><div class="snippet-head"><span>Task, scores and report links</span><button type="button" data-copy-target="shortlist-markdown">Copy shortlist</button></div><pre><code id="shortlist-markdown"></code></pre></div></details>
         </section>
       </section>
-      <a class="featured-callout" href="featured/"><span><span class="featured-kind">The editorial selection</span><strong>Featured projects</strong><span>${listPhrase(EDITORIAL.projects.map((p) => esc(p.name)))}: explore the reviewed projects.</span></span><span aria-hidden="true">↗</span></a>
+      <a class="featured-callout" href="featured/"><span><span class="featured-kind">The editorial selection</span><strong>Featured projects</strong><span>${listPhrase(PROJECTS.filter((p) => !isPending(p)).map((p) => esc(p.name)))}: explore the reviewed projects.</span></span><span aria-hidden="true">↗</span></a>
 ${browseWaysPanel(here)}
       <aside class="directory-scoring" aria-label="Suede AI quality grades"><p><b>Structure. Description. Depth. Maintenance.</b> Every skill has a published quality score from 0–99.</p><a href="methodology/">What the scores measure →</a></aside>
 ${campaignPanel(here, campaignVariant("home-hero-secondary", here), { quiet: true })}
@@ -2342,10 +2343,15 @@ function renderFeaturedProjects() {
   const copy = EDITORIAL.page || {};
   const bc = crumbs(here, [["directory/", "Directory"], [null, "Featured projects"]]);
   const title = copy.title || "Featured Agent Skill Projects | Suede AI";
-  const projects = newestPublishedFirst(EDITORIAL.projects);
+  const projects = newestPublishedFirst(PROJECTS);
   const members = newestPublishedFirst(MEMBERS);
   const entries = [...projects, ...members];
-  const description = `Meet ${listPhrase(entries.map((p) => p.name))}: reviewed source and setup.`;
+  // Name every entry while the description fits a result snippet; past that,
+  // name the newest and count the rest.
+  const describe = (names) => `Meet ${names}: featured agent projects with source and setup.`;
+  let description = describe(listPhrase(entries.map((p) => p.name)));
+  for (let k = entries.length - 1; k > 0 && description.length > 155; k--) description = describe(`${entries.slice(0, k).map((p) => p.name).join(", ")} and ${entries.length - k} more`);
+  const catalogSkill = (project, item) => data.skills.find((s) => s.repo === project.repo && s.slug === item.id);
   const keywords = setKeywords(here, ["featured agent projects", ...entries.map((p) => `${p.name} agent workflows`), "Suede AI Skills Directory"]);
   const badge = FEATURED_BADGE;
   const nominate = copy.nominate
@@ -2363,7 +2369,9 @@ ${copy.nominate.steps.map((step) => `          <li>${esc(step)}</li>`).join("\n"
         <h2 id="featured-badge-title">Badge for featured projects</h2>
         <p>Featured publishers can link their README to their section on this page.</p>
         <p class="badge-preview"><img src="${rel(here, "directory/badges/featured.svg")}" alt="${esc(badge.alt)}" width="${badgeSvg("featured").width}" height="20"></p>
-${projects.map((p) => codeBlock({ label: `${esc(p.name)}, Markdown`, key: `featured-badge-${p.id}` }, badge.markdown_pattern.split("{id}").join(p.id))).join("\n")}
+${projects.map((p) => isPending(p)
+    ? `        <p class="featured-badge-pending" data-featured-badge-pending="${p.id}"><strong>${esc(p.name)}</strong> ${pendingStatusHtml(esc)}</p>`
+    : codeBlock({ label: `${esc(p.name)}, Markdown`, key: `featured-badge-${p.id}` }, badge.markdown_pattern.split("{id}").join(p.id))).join("\n")}
       </section>`
     : "";
   files.set(`${here}index.html`, page({
@@ -2372,7 +2380,7 @@ ${projects.map((p) => codeBlock({ label: `${esc(p.name)}, Markdown`, key: `featu
     body: `${bc.html}
       <div class="featured-intro"><p class="lead">${esc(copy.lede || "Good tools deserve a closer look.")}</p>${copy.intro ? `<p>${esc(copy.intro)}</p>` : ""}</div>
       <nav class="featured-jump" aria-label="Featured project navigation"><a href="../">← Browse all skills</a>${entries.map((p) => `<a href="#${p.id}">${esc(p.name)} <span aria-hidden="true">↓</span></a>`).join("")}</nav>
-      ${featuredProjectsHtml(projects, { esc, rel, here, slugify })}
+      ${featuredProjectsHtml(projects, { esc, rel, here, slugify, skillHref: (project, item) => { const s = catalogSkill(project, item); return s ? listingHref(here, s) : null; } })}
 ${members.length ? `      <section id="directory-members" aria-label="Directory members"><h2>Directory members</h2><p>Publisher membership with a defined skill scope. Linked reviews retain quality scores and scan findings.</p>${directoryMembersHtml(members, { esc, start: projects.length })}</section>` : ""}
 ${copy.services_cta ? campaignPanel(here, campaignVariant(copy.services_cta, here)) : ""}
 ${nominate}

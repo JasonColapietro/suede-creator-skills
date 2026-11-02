@@ -205,7 +205,11 @@ test("the featured page uses its editorial copy, nomination block and badge", ()
   assert.ok(html.indexOf(`data-cta-placement="${page.services_cta}"`) > html.lastIndexOf("</article>"), "CTA renders after the project list");
   if (featured.featured_badge.status === "live") {
     assert.ok(fs.existsSync(path.join(docs, "directory/badges/featured.svg")));
-    for (const p of featured.projects) assert.ok(decode(html).includes(featured.featured_badge.markdown_pattern.split("{id}").join(p.id)), p.id);
+    for (const p of featured.projects) {
+      const snippet = featured.featured_badge.markdown_pattern.split("{id}").join(p.id);
+      if (p.status === "pending") assert.ok(!decode(html).includes(snippet), `${p.id}: pending entries get no badge snippet`);
+      else assert.ok(decode(html).includes(snippet), p.id);
+    }
   }
 });
 
