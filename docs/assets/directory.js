@@ -15,6 +15,7 @@ const numberOf = (value, fallback) => {
 const dateOf = (value) => (/^\d{4}-\d{2}-\d{2}/.test(value || '') ? value : '');
 const termsFor = (value) => value.toLowerCase().trim().split(/\s+/).filter(Boolean);
 const markdownText = (text) => String(text).replace(/[\\`*_{}\[\]()<>#!|]/g, '\\$&').replace(/[\r\n]+/g, ' ');
+const compactCount = (n) => (n >= 1e6 ? (n / 1e6).toFixed(n >= 1e7 ? 0 : 1).replace(/\.0$/, '') + 'M' : n >= 1e3 ? (n / 1e3).toFixed(n >= 1e4 ? 0 : 1).replace(/\.0$/, '') + 'K' : String(n));
 
 // Shows a short confirmation on a button, then restores its idle label.
 const flashTimers = new WeakMap();
@@ -447,7 +448,8 @@ if (browser) {
     const link = node('a', '', skill.name);
     link.href = skill.href;
     heading.append(link);
-    body.append(meta, heading, node('p', '', skill.description), node('p', 'result-foot', skill.license + ' · ' + (skill.full ? 'Full skill page' : 'Repository listing')));
+    const installs = Number.isFinite(skill.installs) && skill.installs > 0 ? ' · ' + compactCount(skill.installs) + ' installs via skills.sh' : '';
+    body.append(meta, heading, node('p', '', skill.description), node('p', 'result-foot', skill.license + ' · ' + (skill.full ? 'Full skill page' : 'Repository listing') + installs));
     const quality = node('div', 'result-quality');
     // Quality shields exist only for listed skills scoring 80-99.
     if (skill.score >= 80) {
@@ -499,6 +501,7 @@ if (browser) {
       && (!flag || !flag.value || (Array.isArray(skill.flags) && skill.flags.includes(flag.value)))
       && terms.every((term) => skill.search.includes(term)));
     if (sort.value === 'name') matches.sort((a, b) => a.name.localeCompare(b.name) || a.repo.localeCompare(b.repo));
+    if (sort.value === 'installs') matches.sort((a, b) => (b.installs || 0) - (a.installs || 0) || b.score - a.score || a.name.localeCompare(b.name));
     if (sort.value === 'score') matches.sort((a, b) => b.score - a.score || a.name.localeCompare(b.name) || a.repo.localeCompare(b.repo));
     if (sort.value === 'listed') matches.sort(newestBy('listed'));
     if (sort.value === 'updated') matches.sort(newestBy('updated'));
@@ -562,4 +565,115 @@ if (browser) {
 for (const section of document.querySelectorAll('[data-promotion-end]')) {
   const end = section.dataset.promotionEnd;
   if (end && (!Number.isFinite(Date.parse(end)) || Date.now() >= Date.parse(end))) section.hidden = true;
+}
+
+
+// Tab bars: a nav[data-tabs] of in-page links, each naming a [data-pane]
+// section by its hash. Without this script every pane stays visible in
+// order; with it, one pane shows at a time and the hash follows the choice.
+document.querySelectorAll('[data-tabs]').forEach(function (bar) {
+  const tabs = [...bar.querySelectorAll('a[href^="#"]')];
+  const panes = tabs.map((tab) => document.getElementById(tab.hash.slice(1))).filter(Boolean);
+  if (tabs.length < 2 || panes.length !== tabs.length) return;
+  bar.closest('section, main')?.classList.add('js-tabs');
+  function show(id, push) {
+    tabs.forEach((tab, i) => {
+      const on = tab.hash.slice(1) === id;
+      if (on) tab.setAttribute('aria-current', 'true'); else tab.removeAttribute('aria-current');
+      panes[i].hidden = !on;
+    });
+    if (push) history.replaceState(null, '', '#' + id);
+  }
+  const wanted = location.hash.slice(1);
+  show(panes.some((p) => p.id === wanted) ? wanted : tabs[0].hash.slice(1), false);
+  tabs.forEach((tab) => tab.addEventListener('click', (event) => {
+    event.preventDefault();
+    show(tab.hash.slice(1), true);
+    document.getElementById(tab.hash.slice(1))?.querySelector('h2, h3')?.focus?.();
+  }));
+  window.addEventListener('hashchange', () => { const id = location.hash.slice(1); if (panes.some((p) => p.id === id)) show(id, false); });
+});
+
+// Compare two or three skills from the published index and their reports.
+const compareForm = document.querySelector('form[data-compare]');
+if (compareForm && compareForm.elements && typeof compareForm.getAttribute === 'function') {
+  const base = compareForm.getAttribute('data-directory') || './';
+  const results = document.querySelector('[data-compare-results]');
+  const status = compareForm.querySelector('[data-compare-status]');
+  const list = compareForm.querySelector('#compare-skills');
+  const inputs = ['a', 'b', 'c'].map((name) => compareForm.elements[name]);
+  let index = null;
+  compareForm.hidden = false;
+  const label = (s) => s.name + ' (' + s.repo + ')';
+  function find(text) {
+    const t = text.trim().toLowerCase();
+    if (!t || !index) return null;
+    return index.find((s) => label(s).toLowerCase() === t) || index.find((s) => s.id === t || s.href === t) || index.find((s) => s.name.toLowerCase() === t) || index.find((s) => (s.repo + '/' + s.name).toLowerCase() === t) || null;
+  }
+  async function load() {
+    const r = await fetch(base + 'search-index.json');
+    if (!r.ok) throw new Error('index');
+    index = await r.json();
+    list.replaceChildren(...index.map((s) => { const o = document.createElement('option'); o.value = label(s); return o; }));
+  }
+  function cell(text, cls) { const td = node('td', cls || ''); td.textContent = text; return td; }
+  async function render(push) {
+    const picks = inputs.map((input) => find(input.value)).filter(Boolean);
+    const seen = new Set();
+    const unique = picks.filter((s) => !seen.has(s.id) && seen.add(s.id));
+    if (push) {
+      const url = new URL(location.href);
+      ['a', 'b', 'c'].forEach((k, i) => { if (unique[i]) url.searchParams.set(k, unique[i].id); else url.searchParams.delete(k); });
+      history.replaceState(null, '', url);
+    }
+    if (unique.length < 2) { results.replaceChildren(); status.textContent = unique.length === 1 ? 'Pick one more skill to compare.' : 'Type a skill name and pick it from the list. The picks stay in this page\'s address.'; return; }
+    status.textContent = 'Comparing ' + unique.map((s) => s.name).join(', ') + '…';
+    const reports = await Promise.all(unique.map((s) => fetch(base + s.report.replace(/^\/directory\//, '')).then((r) => (r.ok ? r.json() : null)).catch(() => null)));
+    const rows = [
+      ['Score', (s) => s.score + '/100'],
+      ['Grade', (s) => s.grade],
+      ['Repository', (s) => s.repo],
+      ['License', (s) => s.license],
+      ['Cost lane', (s) => s.lane || ''],
+      ['Capabilities', (s) => (s.flags || []).join(', ')],
+      ['Topics', (s) => (s.topics || []).join(', ')],
+      ['Category', (s) => s.label],
+      ['Listed since', (s) => s.listed || ''],
+      ['Last commit', (s) => s.updated || ''],
+      ['Installs via skills.sh', (s) => (Number.isFinite(s.installs) && s.installs > 0 ? compactCount(s.installs) : 'no count')],
+    ];
+    const components = reports[0] && reports[0].quality && reports[0].quality.components ? reports[0].quality.components.map((c) => c.label || c.id) : [];
+    const table = document.createElement('table');
+    table.className = 'compare-grid';
+    const thead = table.createTHead().insertRow();
+    thead.append(node('th', '', 'Fact'));
+    unique.forEach((s) => { const th = node('th', ''); const a = node('a', '', s.name); a.href = base + s.href.replace(/^\/directory\//, ''); th.append(a); thead.append(th); });
+    const body = table.createTBody();
+    rows.forEach(([name, get]) => {
+      const tr = body.insertRow();
+      tr.append(node('th', '', name));
+      const values = unique.map(get);
+      const best = name === 'Score' ? Math.max(...unique.map((s) => s.score)) : null;
+      unique.forEach((s, i) => tr.append(cell(values[i], best !== null && s.score === best ? 'best' : '')));
+    });
+    components.forEach((name, ci) => {
+      const tr = body.insertRow();
+      tr.append(node('th', '', name));
+      const pts = reports.map((r) => (r && r.quality && r.quality.components[ci] ? r.quality.components[ci].points : null));
+      const best = Math.max(...pts.map((p) => (p === null ? -1 : p)));
+      reports.forEach((r, i) => tr.append(cell(pts[i] === null ? '' : pts[i] + ' of ' + (r.quality.components[ci].max ?? ''), pts[i] !== null && pts[i] === best && best > 0 ? 'best' : '')));
+    });
+    const wrap = node('div', 'table-wrap');
+    wrap.append(table);
+    results.replaceChildren(wrap);
+    status.textContent = 'Comparing ' + unique.length + ' skills from the ' + (unique[0].snapshot || '') + ' snapshot. Highlighted cells are the highest in their row.';
+  }
+  load().then(() => {
+    const params = new URL(location.href).searchParams;
+    ['a', 'b', 'c'].forEach((k, i) => { const s = index.find((x) => x.id === params.get(k)); if (s) inputs[i].value = label(s); });
+    return render(false);
+  }).catch(() => { status.textContent = 'The index could not load. Try again, or open two skill pages side by side.'; });
+  compareForm.addEventListener('submit', (event) => { event.preventDefault(); render(true); });
+  compareForm.addEventListener('change', () => render(true));
+  compareForm.querySelector('[data-compare-clear]').addEventListener('click', () => { inputs.forEach((i) => { i.value = ''; }); render(true); inputs[0].focus(); });
 }
