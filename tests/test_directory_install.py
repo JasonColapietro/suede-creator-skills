@@ -49,7 +49,7 @@ class DirectoryInstallTests(unittest.TestCase):
         cls.tmp = tempfile.TemporaryDirectory(prefix="directory-install-")
         cls.addClassCleanup(cls.tmp.cleanup)
         cls.root = Path(cls.tmp.name)
-        for name in ("scripts/build-directory.mjs", "directory/categories.json",
+        for name in ("scripts/build-directory.mjs", "scripts/directory/installs.mjs", "scripts/directory/pixel-icons.mjs", "directory/categories.json",
                      "directory/notes.json", "directory/promotion.json", "directory/featured-projects.json", "directory/services-cta.json",
                      "scripts/directory/featured.mjs", "scripts/directory/badges.mjs", "scripts/directory/editorial.mjs", "scripts/directory/metadata.mjs",
                      "scripts/directory/check-client.js", "scripts/directory/task-pages.mjs", "directory/task-pages.json", "scripts/directory/topics.mjs", "scripts/directory/facets.mjs", "scripts/directory/listed-since.mjs", "directory/topics.json", "docs/llms.txt"):

@@ -1,0 +1,1256 @@
+{
+  "about": "The directory kinds beyond skills: each kind is a hub page at /<path>/ with a short definition, the official documentation, the install convention and a reviewed list of real repositories. Entries are listed, not graded: the Suede Skill Check scores SKILL.md folders only, and nothing here carries a quality score, a security result or a verification badge. Every repository was checked to exist on the date in `checked`; summaries describe what the publisher documents. Keep em dashes out of every string.",
+  "updated": "2026-11-02",
+  "kinds": [
+    {
+      "id": "plugins",
+      "path": "plugins",
+      "name": "Claude Code plugins and mods",
+      "short": "Plugins and mods",
+      "title": "Claude Code Plugins and Mods: Marketplaces, Hooks, Mods",
+      "meta": "Claude Code plugins, mods, marketplaces, hooks and status lines: the official catalogs, the install commands and reviewed community repositories.",
+      "h1": "Claude Code plugins and mods",
+      "lead": "A plugin is a folder of skills, agents, hooks and MCP servers that Claude Code installs as one unit. A mod is a plugin whose JavaScript or TypeScript handlers run inside Claude Code itself, so it can draw panes, add commands and guard tool calls.",
+      "intro": [
+        "Plugins install from a marketplace with /plugin install name@marketplace, or from a repository with /plugin marketplace add owner/repo. Anthropic's own marketplace is added on the first interactive session; everything else is a catalog you add yourself.",
+        "Mods are the same package with one extra file: hooks/hooks.json names a modules entry, and the module exports a register function that subscribes to events such as tool calls, prompt submissions and interface draws. Claude Code 2.1.287 or later runs them. They are not sandboxed: a mod runs with your permissions, so read what it registers before you install it."
+      ],
+      "docs": [
+        {
+          "label": "Plugins reference",
+          "url": "https://code.claude.com/docs/en/plugins"
+        },
+        {
+          "label": "Mods overview",
+          "url": "https://code.claude.com/docs/en/plugins/mods/overview"
+        },
+        {
+          "label": "Create a mod",
+          "url": "https://code.claude.com/docs/en/plugins/mods/create"
+        },
+        {
+          "label": "Hooks",
+          "url": "https://code.claude.com/docs/en/hooks"
+        },
+        {
+          "label": "Status line",
+          "url": "https://code.claude.com/docs/en/statusline"
+        },
+        {
+          "label": "Subagents",
+          "url": "https://code.claude.com/docs/en/sub-agents"
+        },
+        {
+          "label": "Anthropic's plugin directory",
+          "url": "https://claude.com/marketplace/plugins"
+        }
+      ],
+      "install": {
+        "heading": "How a plugin installs",
+        "text": "Inside Claude Code, add a marketplace once, then install plugins from it. The same commands work from the shell as claude plugin marketplace add and claude plugin install. Validate a mod before installing it with claude plugin validate, which prints the hooks it registers and the calls it makes.",
+        "commands": [
+          "/plugin marketplace add owner/repo",
+          "/plugin install plugin-name@marketplace-name",
+          "claude plugin validate ./some-mod"
+        ]
+      },
+      "sections": [
+        {
+          "id": "mods",
+          "name": "Mods",
+          "intro": "Plugins that change how Claude Code looks and behaves from inside the process.",
+          "entries": [
+            {
+              "id": "claude-code-playground",
+              "name": "Claude Code playground mods",
+              "repo": "anthropics/claude-code-playground",
+              "url": "https://github.com/anthropics/claude-code-playground/tree/main/claude-code/mods",
+              "publisher": "Anthropic",
+              "official": true,
+              "summary": "Anthropic's sample mods: token-weather forecasts context use above the prompt, blast-radius holds risky commands such as force pushes until you confirm them, and replay-theater steps through the last turn's edits.",
+              "install": "claude plugin install token-weather@claude-code-playground-mods --scope user",
+              "tags": [
+                "official",
+                "samples"
+              ]
+            },
+            {
+              "id": "claude-code-built-in-mods",
+              "name": "Claude Code built-in mods",
+              "repo": "anthropics/claude-code",
+              "url": "https://github.com/anthropics/claude-code/tree/main/mods",
+              "publisher": "Anthropic",
+              "official": true,
+              "summary": "The source of the mods that ship inside Claude Code, including the diff pane and the AGENTS.md loader, with the type definitions a mod author imports.",
+              "install": "claude --plugin-dir mods/diff",
+              "tags": [
+                "official",
+                "source"
+              ]
+            },
+            {
+              "id": "hamzafer-claude-code-mods",
+              "name": "claude-code-mods",
+              "repo": "hamzafer/claude-code-mods",
+              "url": "https://github.com/hamzafer/claude-code-mods",
+              "publisher": "hamzafer",
+              "official": false,
+              "summary": "A community collection of mods, including a mission-control pane, a context bar, a usage meter, a merge gate, a session saver and a markdown preview, with one installer for all of them.",
+              "install": "npx claude-code-mods@latest",
+              "tags": [
+                "collection"
+              ]
+            },
+            {
+              "id": "plugin-kit",
+              "name": "plugin-kit",
+              "repo": "aeriondyseti/plugin-kit",
+              "url": "https://github.com/aeriondyseti/plugin-kit",
+              "publisher": "aeriondyseti",
+              "official": false,
+              "summary": "A typed TypeScript toolkit for writing hook scripts and mods: event classes, a styled output builder, widgets and status lines, and a test harness.",
+              "install": "npm install @aeriondyseti/plugin-kit",
+              "tags": [
+                "toolkit"
+              ]
+            },
+            {
+              "id": "claude-code-templates",
+              "name": "claude-code-templates",
+              "repo": "davila7/claude-code-templates",
+              "url": "https://github.com/davila7/claude-code-templates",
+              "publisher": "davila7",
+              "official": false,
+              "summary": "A catalog of Claude Code components, including agents, commands, skills, hooks, MCP configurations and mods, installed through one CLI and browsable at aitmpl.com.",
+              "install": "npx claude-code-templates@latest",
+              "tags": [
+                "catalog"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "marketplaces",
+          "name": "Plugins and marketplaces",
+          "intro": "Catalogs you add to Claude Code, and the plugins people install most from them.",
+          "entries": [
+            {
+              "id": "claude-plugins-official",
+              "name": "claude-plugins-official",
+              "repo": "anthropics/claude-plugins-official",
+              "url": "https://github.com/anthropics/claude-plugins-official",
+              "publisher": "Anthropic",
+              "official": true,
+              "summary": "Anthropic's default marketplace, added to Claude Code on the first interactive session: Anthropic-maintained plugins such as code review, feature development and language servers, plus partner plugins.",
+              "install": "/plugin install code-review@claude-plugins-official",
+              "tags": [
+                "official",
+                "marketplace"
+              ]
+            },
+            {
+              "id": "claude-plugins-community",
+              "name": "claude-plugins-community",
+              "repo": "anthropics/claude-plugins-community",
+              "url": "https://github.com/anthropics/claude-plugins-community",
+              "publisher": "Anthropic",
+              "official": true,
+              "summary": "The community marketplace, a read-only mirror synced from Anthropic's plugin review pipeline. Submissions go through Anthropic's plugin directory form.",
+              "install": "/plugin marketplace add anthropics/claude-plugins-community",
+              "tags": [
+                "official",
+                "marketplace"
+              ]
+            },
+            {
+              "id": "anthropic-agent-skills",
+              "name": "Anthropic skills marketplace",
+              "repo": "anthropics/skills",
+              "url": "https://github.com/anthropics/skills",
+              "publisher": "Anthropic",
+              "official": true,
+              "summary": "Anthropic's document skills (docx, pptx, xlsx, pdf) and example skills, installable as the anthropic-agent-skills marketplace.",
+              "install": "/plugin install document-skills@anthropic-agent-skills",
+              "tags": [
+                "official",
+                "skills"
+              ]
+            },
+            {
+              "id": "knowledge-work-plugins",
+              "name": "knowledge-work-plugins",
+              "repo": "anthropics/knowledge-work-plugins",
+              "url": "https://github.com/anthropics/knowledge-work-plugins",
+              "publisher": "Anthropic",
+              "official": true,
+              "summary": "Role plugins for productivity, sales, customer support, product management, marketing, legal, finance, data and enterprise search.",
+              "install": "claude plugin marketplace add anthropics/knowledge-work-plugins",
+              "tags": [
+                "official",
+                "marketplace"
+              ]
+            },
+            {
+              "id": "superpowers",
+              "name": "Superpowers",
+              "repo": "obra/superpowers",
+              "url": "https://github.com/obra/superpowers",
+              "publisher": "obra",
+              "official": false,
+              "summary": "A skills-driven development method for coding agents: brainstorm, plan, test-driven development and review, with installs for Claude Code, Codex, OpenCode, Cursor and other agents.",
+              "install": "/plugin install superpowers@claude-plugins-official",
+              "tags": [
+                "plugin",
+                "method"
+              ]
+            },
+            {
+              "id": "superpowers-marketplace",
+              "name": "superpowers-marketplace",
+              "repo": "obra/superpowers-marketplace",
+              "url": "https://github.com/obra/superpowers-marketplace",
+              "publisher": "obra",
+              "official": false,
+              "summary": "The marketplace that carries Superpowers and its companions, including elements-of-style and a private journal MCP server.",
+              "install": "/plugin marketplace add obra/superpowers-marketplace",
+              "tags": [
+                "marketplace"
+              ]
+            },
+            {
+              "id": "impeccable",
+              "name": "Impeccable",
+              "repo": "pbakaus/impeccable",
+              "url": "https://github.com/pbakaus/impeccable",
+              "publisher": "pbakaus",
+              "official": false,
+              "summary": "Design playbooks for coding agents (polish, bolder, critique, audit and more) with a detector for generic interface patterns. Ships as a Claude Code plugin, a Grok Build plugin and a VS Code extension.",
+              "install": "/plugin marketplace add pbakaus/impeccable",
+              "tags": [
+                "plugin",
+                "design"
+              ]
+            },
+            {
+              "id": "mattpocock-skills",
+              "name": "mattpocock/skills",
+              "repo": "mattpocock/skills",
+              "url": "https://github.com/mattpocock/skills",
+              "publisher": "mattpocock",
+              "official": false,
+              "summary": "Skills for test-driven development, grilling a plan, writing specs, handoffs and retros, among the most installed skill collections on skills.sh.",
+              "install": "claude plugin install mattpocock-skills@claude-plugins-official",
+              "tags": [
+                "plugin",
+                "skills"
+              ]
+            },
+            {
+              "id": "wshobson-agents",
+              "name": "claude-code-workflows",
+              "repo": "wshobson/agents",
+              "url": "https://github.com/wshobson/agents",
+              "publisher": "wshobson",
+              "official": false,
+              "summary": "A marketplace of dozens of plugins bundling agents, skills and commands, also installable in Codex.",
+              "install": "/plugin marketplace add wshobson/agents",
+              "tags": [
+                "marketplace",
+                "agents"
+              ]
+            },
+            {
+              "id": "awesome-claude-code-subagents",
+              "name": "awesome-claude-code-subagents",
+              "repo": "VoltAgent/awesome-claude-code-subagents",
+              "url": "https://github.com/VoltAgent/awesome-claude-code-subagents",
+              "publisher": "VoltAgent",
+              "official": false,
+              "summary": "Subagent definitions by language and role, installable as marketplaces.",
+              "tags": [
+                "agents",
+                "marketplace"
+              ]
+            },
+            {
+              "id": "claude-code-plugins-plus-skills",
+              "name": "claude-code-plugins-plus-skills",
+              "repo": "jeremylongshore/claude-code-plugins-plus-skills",
+              "url": "https://github.com/jeremylongshore/claude-code-plugins-plus-skills",
+              "publisher": "jeremylongshore",
+              "official": false,
+              "summary": "A large marketplace of plugins, skills and agents with its own ccpi command-line installer.",
+              "install": "/plugin marketplace add jeremylongshore/claude-code-plugins",
+              "tags": [
+                "marketplace"
+              ]
+            },
+            {
+              "id": "grok-build-plugin-cc",
+              "name": "grok-build-plugin-cc",
+              "repo": "xai-org/grok-build-plugin-cc",
+              "url": "https://github.com/xai-org/grok-build-plugin-cc",
+              "publisher": "xAI",
+              "official": true,
+              "summary": "A Claude Code plugin from xAI that hands reviews, rescue tasks and session transfers to the Grok Build CLI.",
+              "tags": [
+                "official",
+                "plugin"
+              ]
+            },
+            {
+              "id": "awesome-claude-code",
+              "name": "awesome-claude-code",
+              "repo": "hesreallyhim/awesome-claude-code",
+              "url": "https://github.com/hesreallyhim/awesome-claude-code",
+              "publisher": "hesreallyhim",
+              "official": false,
+              "summary": "A curated index of Claude Code tools: status lines, mods, skills, agent orchestration, memory, observability and more, submitted through an issue form and validated by a bot.",
+              "tags": [
+                "list"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "hooks",
+          "name": "Hooks, status lines and instruction files",
+          "intro": "Settings hooks run shell commands at session events; status lines draw one line under the prompt; CLAUDE.md files carry project instructions.",
+          "entries": [
+            {
+              "id": "claude-code-hooks-mastery",
+              "name": "claude-code-hooks-mastery",
+              "repo": "disler/claude-code-hooks-mastery",
+              "url": "https://github.com/disler/claude-code-hooks-mastery",
+              "publisher": "disler",
+              "official": false,
+              "summary": "Every lifecycle hook as a standalone script under .claude/hooks, with subagents, output styles and status lines beside them.",
+              "tags": [
+                "hooks",
+                "examples"
+              ]
+            },
+            {
+              "id": "ccusage",
+              "name": "ccusage",
+              "repo": "ryoppippi/ccusage",
+              "url": "https://github.com/ryoppippi/ccusage",
+              "publisher": "ryoppippi",
+              "official": false,
+              "summary": "Token and cost analytics for Claude Code, Codex, OpenCode and other agents, with a status line mode.",
+              "install": "npx ccusage@latest",
+              "tags": [
+                "status line",
+                "cost"
+              ]
+            },
+            {
+              "id": "awesome-claude-md",
+              "name": "awesome-claude-md",
+              "repo": "josix/awesome-claude-md",
+              "url": "https://github.com/josix/awesome-claude-md",
+              "publisher": "josix",
+              "official": false,
+              "summary": "A curated collection of CLAUDE.md files from public projects, for the project instructions Claude Code reads on every session.",
+              "tags": [
+                "instructions"
+              ]
+            },
+            {
+              "id": "claude-md-templates",
+              "name": "claude-md-templates",
+              "repo": "abhishekray07/claude-md-templates",
+              "url": "https://github.com/abhishekray07/claude-md-templates",
+              "publisher": "abhishekray07",
+              "official": false,
+              "summary": "CLAUDE.md templates for global, project and local scopes, with rules and workflow files to copy.",
+              "tags": [
+                "instructions",
+                "templates"
+              ]
+            }
+          ]
+        }
+      ],
+      "faq": [
+        [
+          "What is the difference between a plugin and a mod?",
+          "A plugin is a folder of components that Claude Code installs as one unit: skills, agents, settings hooks, MCP servers and language servers. A mod is a plugin that also ships a hooks module, JavaScript or TypeScript code that runs inside Claude Code and can draw interface elements, add commands and change tool calls."
+        ],
+        [
+          "How do I install a Claude Code plugin?",
+          "Add its marketplace with /plugin marketplace add owner/repo, then run /plugin install name@marketplace. Anthropic's claude-plugins-official marketplace is already present on the first interactive session. From a shell, the same commands are claude plugin marketplace add and claude plugin install."
+        ],
+        [
+          "Are mods safe to install?",
+          "A mod runs with your permissions and is not sandboxed. Run claude plugin validate on the folder first: it prints the hooks the mod registers and the calls it makes. Prefer mods from publishers you know, and read the register module before enabling it."
+        ],
+        [
+          "Does the directory grade plugins and mods?",
+          "No. The Suede Skill Check scores skills from their SKILL.md folders. Plugins and mods are listed from their publisher's repository with a short description; they carry no score, no security result and no verification badge."
+        ]
+      ],
+      "keywords": [
+        "claude code plugin marketplace",
+        "install claude code plugins",
+        "claude code hooks and mods",
+        "agent skills directory"
+      ]
+    },
+    {
+      "id": "grok",
+      "path": "grok",
+      "name": "Grok bots and Grok Build plugins",
+      "short": "Grok bots",
+      "title": "Grok Bots and Grok Build Plugins: Setups and SDKs",
+      "meta": "Grok Build plugins and marketplaces, bots built on the Grok API, and xAI's official SDKs and prompts, with install commands and documentation links.",
+      "h1": "Grok bots and Grok Build plugins",
+      "lead": "Grok Build is xAI's open-source terminal coding agent. It reads AGENTS.md, skills, plugins, hooks and MCP servers, and installs plugins from a marketplace pinned to commits. Beside it sit the bots people build on the Grok API for Discord and other chat apps.",
+      "intro": [
+        "Grok Build installs with one command and keeps skills in .grok/skills in a project or ~/.grok/skills for a user. Plugins use a .grok-plugin folder with a plugin.json manifest and the same components as other agent plugins: skills, commands, agents, hooks and MCP servers. The plugin marketplace is built into the terminal and every remote plugin is pinned to a commit.",
+        "Bots on the Grok API call the xAI Responses API with function calling, search and image generation. The repositories below are community projects unless marked official; read their setup notes and token handling before you run one."
+      ],
+      "docs": [
+        {
+          "label": "Grok API overview",
+          "url": "https://docs.x.ai/docs/overview"
+        },
+        {
+          "label": "Grok Build",
+          "url": "https://docs.x.ai/build/overview"
+        },
+        {
+          "label": "Grok Build CLI announcement",
+          "url": "https://x.ai/news/grok-build-cli"
+        },
+        {
+          "label": "Grok plugin marketplace",
+          "url": "https://x.ai/news/grok-plugin-marketplace"
+        },
+        {
+          "label": "Grok Bot",
+          "url": "https://docs.x.ai/grok-bot/overview"
+        },
+        {
+          "label": "Grok Skills",
+          "url": "https://x.ai/news/grok-skills"
+        }
+      ],
+      "install": {
+        "heading": "How Grok Build installs plugins and skills",
+        "text": "Install the CLI, then add plugins from the built-in marketplace or a community catalog. Plugins that register hooks need an explicit trust flag. Skills from this directory install into .grok/skills with the skills CLI.",
+        "commands": [
+          "curl -fsSL https://x.ai/cli/install.sh | bash",
+          "grok plugin marketplace add hashgraph-online/awesome-grok-plugins",
+          "grok plugin install pbakaus/impeccable#plugin --trust",
+          "npx skills add owner/repo -a grok"
+        ]
+      },
+      "sections": [
+        {
+          "id": "build",
+          "name": "Grok Build and its plugins",
+          "intro": "The agent, its catalogs and plugins published for it.",
+          "entries": [
+            {
+              "id": "grok-build",
+              "name": "Grok Build",
+              "repo": "xai-org/grok-build",
+              "url": "https://github.com/xai-org/grok-build",
+              "publisher": "xAI",
+              "official": true,
+              "license": "Apache-2.0",
+              "summary": "xAI's open-source terminal coding agent. The user guide covers configuration, theming, MCP servers, skills, plugins and hooks.",
+              "install": "curl -fsSL https://x.ai/cli/install.sh | bash",
+              "tags": [
+                "official",
+                "agent"
+              ]
+            },
+            {
+              "id": "plugin-marketplace",
+              "name": "Grok Build plugin marketplace",
+              "repo": "xai-org/plugin-marketplace",
+              "url": "https://github.com/xai-org/plugin-marketplace",
+              "publisher": "xAI",
+              "official": true,
+              "summary": "The catalog behind the built-in marketplace: .grok-plugin/marketplace.json lists first-party and external plugins, each remote source pinned to a commit.",
+              "install": "grok plugin marketplace list",
+              "tags": [
+                "official",
+                "marketplace"
+              ]
+            },
+            {
+              "id": "awesome-grok-plugins",
+              "name": "awesome-grok-plugins",
+              "repo": "hashgraph-online/awesome-grok-plugins",
+              "url": "https://github.com/hashgraph-online/awesome-grok-plugins",
+              "publisher": "hashgraph-online",
+              "official": false,
+              "summary": "A community marketplace and reference for the Grok plugin layout: manifest fields, component folders and load paths.",
+              "install": "grok plugin marketplace add hashgraph-online/awesome-grok-plugins",
+              "tags": [
+                "marketplace",
+                "community"
+              ]
+            },
+            {
+              "id": "awesome-grok-build",
+              "name": "awesome-grok-build",
+              "repo": "DominikTobureto/awesome-grok-build",
+              "url": "https://github.com/DominikTobureto/awesome-grok-build",
+              "publisher": "DominikTobureto",
+              "official": false,
+              "summary": "A starter kit and list of resources for working in Grok Build.",
+              "tags": [
+                "list"
+              ]
+            },
+            {
+              "id": "impeccable-grok",
+              "name": "Impeccable for Grok Build",
+              "repo": "pbakaus/impeccable",
+              "url": "https://github.com/pbakaus/impeccable",
+              "publisher": "pbakaus",
+              "official": false,
+              "summary": "The design playbooks ship as a Grok Build plugin with hooks that need the trust flag, and as skills under ~/.grok/skills.",
+              "install": "grok plugin install pbakaus/impeccable#plugin --trust",
+              "tags": [
+                "plugin",
+                "design"
+              ]
+            },
+            {
+              "id": "firecrawl-grok-plugin",
+              "name": "firecrawl-grok-plugin",
+              "repo": "firecrawl/firecrawl-grok-plugin",
+              "url": "https://github.com/firecrawl/firecrawl-grok-plugin",
+              "publisher": "Firecrawl",
+              "official": true,
+              "summary": "Firecrawl's plugin for Grok Build.",
+              "tags": [
+                "official",
+                "plugin"
+              ]
+            },
+            {
+              "id": "sentry-plugin-grok",
+              "name": "Sentry plugin for Grok",
+              "repo": "getsentry/plugin-grok",
+              "url": "https://github.com/getsentry/plugin-grok",
+              "publisher": "Sentry",
+              "official": true,
+              "summary": "Sentry's plugin for Grok Build.",
+              "tags": [
+                "official",
+                "plugin"
+              ]
+            },
+            {
+              "id": "hol-guard-grok-plugin",
+              "name": "hol-guard-grok-plugin",
+              "repo": "hashgraph-online/hol-guard-grok-plugin",
+              "url": "https://github.com/hashgraph-online/hol-guard-grok-plugin",
+              "publisher": "hashgraph-online",
+              "official": false,
+              "summary": "A Grok Build plugin from Hashgraph Online, the publisher of the HOL plugin scanner.",
+              "tags": [
+                "plugin",
+                "security"
+              ]
+            },
+            {
+              "id": "grok-build-plugin-cc",
+              "name": "grok-build-plugin-cc",
+              "repo": "xai-org/grok-build-plugin-cc",
+              "url": "https://github.com/xai-org/grok-build-plugin-cc",
+              "publisher": "xAI",
+              "official": true,
+              "summary": "The bridge in the other direction: a Claude Code plugin that delegates reviews and rescue tasks to the Grok Build CLI.",
+              "tags": [
+                "official",
+                "plugin"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "bots",
+          "name": "Bots built on the Grok API",
+          "intro": "Community agents and chat bots that call the xAI API.",
+          "entries": [
+            {
+              "id": "grok-cli",
+              "name": "grok-cli",
+              "repo": "superagent-ai/grok-cli",
+              "url": "https://github.com/superagent-ai/grok-cli",
+              "publisher": "superagent-ai",
+              "official": false,
+              "license": "MIT",
+              "summary": "A community terminal coding agent for the Grok API, with MCP server support through its settings and remote control from a paired chat app.",
+              "install": "bun add -g grok-dev",
+              "tags": [
+                "agent",
+                "community"
+              ]
+            },
+            {
+              "id": "discord-grok",
+              "name": "discord-grok",
+              "repo": "jdmsharpe/discord-grok",
+              "url": "https://github.com/jdmsharpe/discord-grok",
+              "publisher": "jdmsharpe",
+              "official": false,
+              "summary": "A Discord bot on the xAI Responses API with web and X search, code execution, remote MCP presets, image and video generation and speech.",
+              "tags": [
+                "discord",
+                "bot"
+              ]
+            },
+            {
+              "id": "grokbot",
+              "name": "grokbot",
+              "repo": "xlviitheroman/grokbot",
+              "url": "https://github.com/xlviitheroman/grokbot",
+              "publisher": "xlviitheroman",
+              "official": false,
+              "license": "MIT",
+              "summary": "A discord.py bot with chat, live web search, image generation, reminders and moderation commands.",
+              "tags": [
+                "discord",
+                "bot"
+              ]
+            },
+            {
+              "id": "openmausbot",
+              "name": "OpenMausBot",
+              "repo": "milind-soni/OpenMausBot",
+              "url": "https://github.com/milind-soni/OpenMausBot",
+              "publisher": "milind-soni",
+              "official": false,
+              "license": "Apache-2.0",
+              "summary": "An open-source team of bots that live in a chat app, each with its own virtual machine, driving your Claude, Codex or Grok command-line agents.",
+              "tags": [
+                "bots",
+                "self-hosted"
+              ]
+            },
+            {
+              "id": "awesome-grok-bot",
+              "name": "awesome-grok-bot",
+              "repo": "ZeroPointRepo/awesome-grok-bot",
+              "url": "https://github.com/ZeroPointRepo/awesome-grok-bot",
+              "publisher": "ZeroPointRepo",
+              "official": false,
+              "summary": "A community list of resources for Grok Bot, xAI's hosted bots with persistent cloud computers.",
+              "tags": [
+                "list"
+              ]
+            },
+            {
+              "id": "botskills",
+              "name": "botskills",
+              "repo": "PramodDutta/botskills",
+              "url": "https://github.com/PramodDutta/botskills",
+              "publisher": "PramodDutta",
+              "official": false,
+              "summary": "Community skill files written for Grok Bot.",
+              "tags": [
+                "skills"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "sdks",
+          "name": "Official SDKs and prompts",
+          "intro": "What xAI publishes for people building on the API.",
+          "entries": [
+            {
+              "id": "xai-sdk-python",
+              "name": "xai-sdk-python",
+              "repo": "xai-org/xai-sdk-python",
+              "url": "https://github.com/xai-org/xai-sdk-python",
+              "publisher": "xAI",
+              "official": true,
+              "summary": "The official Python SDK for the Grok API.",
+              "tags": [
+                "official",
+                "sdk"
+              ]
+            },
+            {
+              "id": "xai-sdk-ts",
+              "name": "xai-sdk-ts",
+              "repo": "xai-org/xai-sdk-ts",
+              "url": "https://github.com/xai-org/xai-sdk-ts",
+              "publisher": "xAI",
+              "official": true,
+              "summary": "The official TypeScript SDK for the Grok API.",
+              "tags": [
+                "official",
+                "sdk"
+              ]
+            },
+            {
+              "id": "xai-cookbook",
+              "name": "xai-cookbook",
+              "repo": "xai-org/xai-cookbook",
+              "url": "https://github.com/xai-org/xai-cookbook",
+              "publisher": "xAI",
+              "official": true,
+              "summary": "Worked examples for the Grok API, from function calling to search and generation.",
+              "tags": [
+                "official",
+                "examples"
+              ]
+            },
+            {
+              "id": "grok-prompts",
+              "name": "grok-prompts",
+              "repo": "xai-org/grok-prompts",
+              "url": "https://github.com/xai-org/grok-prompts",
+              "publisher": "xAI",
+              "official": true,
+              "summary": "The system prompts behind Grok chat and the Grok account on X, published by xAI.",
+              "tags": [
+                "official",
+                "prompts"
+              ]
+            }
+          ]
+        }
+      ],
+      "faq": [
+        [
+          "What is Grok Build?",
+          "Grok Build is xAI's terminal coding agent, published as open source under Apache-2.0. It reads AGENTS.md, Agent Skills, plugins, hooks and MCP servers, and installs plugins from a marketplace where every remote plugin is pinned to a commit."
+        ],
+        [
+          "Do skills from this directory work in Grok Build?",
+          "Yes. Grok Build reads skills from .grok/skills in a project and ~/.grok/skills for a user, and the skills CLI installs there with npx skills add owner/repo -a grok. Every skill page shows the command for its folder."
+        ],
+        [
+          "What is a Grok bot?",
+          "Two things share the name. Grok Bot is xAI's hosted product: a named bot with a persistent cloud computer, skills and routines, included with an X subscription. A Grok bot in a repository is a community program that calls the Grok API from a chat app such as Discord."
+        ],
+        [
+          "Does the directory grade these repositories?",
+          "No. They are listed from their publisher's repository with a short description. The Suede Skill Check scores skills only, and nothing on this page carries a score, a security result or a verification badge."
+        ]
+      ],
+      "keywords": [
+        "grok build plugins",
+        "xai grok bot setup",
+        "grok sdk",
+        "agent skills directory"
+      ]
+    },
+    {
+      "id": "mcp-servers",
+      "path": "mcp-servers",
+      "name": "MCP servers",
+      "short": "MCP servers",
+      "title": "MCP Servers: Reference, Official and Featured Projects",
+      "meta": "Model Context Protocol servers: the reference implementations, the official registry, popular official servers, and the MCP projects featured here.",
+      "h1": "MCP servers",
+      "lead": "A Model Context Protocol server gives an agent access to a system it cannot reach on its own: a browser, a database, a billing API. A skill teaches the method; a server supplies the tools. The best setups pair the two.",
+      "intro": [
+        "Claude Code reads servers from .mcp.json in a project or from a plugin's mcpServers entry; Cursor, Codex, Gemini CLI, Goose and Grok Build have their own configuration files for the same servers. The official registry publishes a server.json for each listed server with a verified namespace.",
+        "A server holds credentials and acts on outside systems, so check what tools it exposes and what scopes its keys carry before you add it. The directory lists servers from their publisher's repository and does not score or scan them."
+      ],
+      "docs": [
+        {
+          "label": "Model Context Protocol",
+          "url": "https://modelcontextprotocol.io/"
+        },
+        {
+          "label": "Official MCP registry",
+          "url": "https://registry.modelcontextprotocol.io/"
+        },
+        {
+          "label": "MCP in Claude Code",
+          "url": "https://code.claude.com/docs/en/mcp"
+        },
+        {
+          "label": "Skills vs MCP servers vs plugins",
+          "url": "https://skills.suedeai.ai/directory/guides/skills-vs-mcp-servers/"
+        }
+      ],
+      "install": {
+        "heading": "How a server installs",
+        "text": "Add the server to your agent's configuration. In Claude Code, claude mcp add registers a command or URL; a project can also commit a .mcp.json file so every collaborator gets the same servers.",
+        "commands": [
+          "claude mcp add <name> -- npx -y <package>",
+          "claude mcp add --transport http <name> <url>"
+        ]
+      },
+      "sections": [
+        {
+          "id": "reference",
+          "name": "Reference implementations and lists",
+          "intro": "Where the protocol's own servers and the community lists live.",
+          "entries": [
+            {
+              "id": "modelcontextprotocol-servers",
+              "name": "modelcontextprotocol/servers",
+              "repo": "modelcontextprotocol/servers",
+              "url": "https://github.com/modelcontextprotocol/servers",
+              "publisher": "Model Context Protocol",
+              "official": true,
+              "summary": "The reference servers maintained with the protocol: Everything, Fetch, Filesystem, Git, Memory, Sequential Thinking and Time, with older servers moved to an archive.",
+              "tags": [
+                "official",
+                "reference"
+              ]
+            },
+            {
+              "id": "modelcontextprotocol-registry",
+              "name": "MCP registry",
+              "repo": "modelcontextprotocol/registry",
+              "url": "https://github.com/modelcontextprotocol/registry",
+              "publisher": "Model Context Protocol",
+              "official": true,
+              "summary": "The official registry: publishers describe a server in server.json, verify their namespace through GitHub or DNS, and publish with the mcp-publisher CLI.",
+              "tags": [
+                "official",
+                "registry"
+              ]
+            },
+            {
+              "id": "awesome-mcp-servers",
+              "name": "awesome-mcp-servers",
+              "repo": "punkpeye/awesome-mcp-servers",
+              "url": "https://github.com/punkpeye/awesome-mcp-servers",
+              "publisher": "punkpeye",
+              "official": false,
+              "summary": "The largest community list of MCP servers, grouped by category, with a companion directory at glama.ai.",
+              "tags": [
+                "list"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "popular",
+          "name": "Servers from the companies behind the tools",
+          "intro": "Official servers that show up in most setups.",
+          "entries": [
+            {
+              "id": "chrome-devtools-mcp",
+              "name": "chrome-devtools-mcp",
+              "repo": "ChromeDevTools/chrome-devtools-mcp",
+              "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+              "publisher": "Chrome DevTools",
+              "official": true,
+              "summary": "Drives a live Chrome through DevTools: navigate, inspect the DOM, read console and network activity, record performance traces.",
+              "tags": [
+                "official",
+                "browser"
+              ]
+            },
+            {
+              "id": "playwright-mcp",
+              "name": "playwright-mcp",
+              "repo": "microsoft/playwright-mcp",
+              "url": "https://github.com/microsoft/playwright-mcp",
+              "publisher": "Microsoft",
+              "official": true,
+              "summary": "Browser automation through Playwright's accessibility tree, so an agent can fill forms, click and read pages without screenshots.",
+              "tags": [
+                "official",
+                "browser"
+              ]
+            },
+            {
+              "id": "context7",
+              "name": "Context7",
+              "repo": "upstash/context7",
+              "url": "https://github.com/upstash/context7",
+              "publisher": "Upstash",
+              "official": true,
+              "summary": "Pulls current, version-specific library documentation and examples into the agent's context.",
+              "tags": [
+                "official",
+                "docs"
+              ]
+            }
+          ]
+        }
+      ],
+      "faq": [
+        [
+          "What is an MCP server?",
+          "A program that speaks the Model Context Protocol and exposes tools an agent can call, resources it can read and prompts it can use. It usually holds the credentials for an outside service, such as a database or a billing API."
+        ],
+        [
+          "Should I use a skill or an MCP server?",
+          "Use a skill when the agent has the access it needs and is missing the method. Use a server when the job needs data or actions the agent cannot reach with files and a shell. Many featured projects in this directory pair a server with the skills that know how to use it."
+        ],
+        [
+          "How do I add a server to Claude Code?",
+          "Run claude mcp add with the server's command or URL, or commit a .mcp.json file in the project. Plugins can also declare servers, so one install brings the skills and the tools together."
+        ],
+        [
+          "Are the servers here scanned or scored?",
+          "No. Servers are listed from their publisher's repository with a short description. They carry no quality score, no security result and no verification badge from the directory."
+        ]
+      ],
+      "keywords": [
+        "model context protocol servers",
+        "install mcp servers",
+        "mcp server list",
+        "agent skills directory"
+      ]
+    },
+    {
+      "id": "rules",
+      "path": "rules",
+      "name": "Rules, instruction files and prompts",
+      "short": "Rules and prompts",
+      "title": "AGENTS.md, Cursor Rules, CLAUDE.md and Prompt Libraries",
+      "meta": "Instruction files and prompts for coding agents: AGENTS.md, CLAUDE.md templates, Cursor rules, Copilot instructions, persona files and prompt libraries.",
+      "h1": "Rules, instruction files and prompts",
+      "lead": "Before an agent loads a skill it reads the instruction files in your repository: AGENTS.md, CLAUDE.md, Cursor rules, Copilot instructions. These collections hold reviewed examples, templates and the standards that define the formats.",
+      "intro": [
+        "AGENTS.md is a plain Markdown file at the repository root that most coding agents read, including Codex, Cursor, Copilot, Gemini CLI, Grok Build and Claude Code when no CLAUDE.md is present. Cursor adds project rules in .cursor/rules as .mdc files with scoping frontmatter; Copilot reads .github/copilot-instructions.md and path-specific instruction files.",
+        "Persona files such as SOUL.md and prompt libraries such as Fabric's patterns are the same idea for assistants that live in chat apps: text the agent loads every session. None of these carry code, which makes them the easiest layer to review before you adopt them."
+      ],
+      "docs": [
+        {
+          "label": "AGENTS.md",
+          "url": "https://agents.md/"
+        },
+        {
+          "label": "Cursor rules",
+          "url": "https://cursor.com/docs/context/rules"
+        },
+        {
+          "label": "Copilot repository instructions",
+          "url": "https://docs.github.com/en/copilot/how-tos/configure-custom-instructions/add-repository-instructions"
+        },
+        {
+          "label": "Claude Code memory and CLAUDE.md",
+          "url": "https://code.claude.com/docs/en/memory"
+        },
+        {
+          "label": "Codex skills",
+          "url": "https://learn.chatgpt.com/docs/build-skills"
+        },
+        {
+          "label": "Gemini CLI extensions",
+          "url": "https://geminicli.com/docs/extensions/"
+        },
+        {
+          "label": "Agent Skills specification",
+          "url": "https://agentskills.io/specification"
+        },
+        {
+          "label": "Agent Plugins standard",
+          "url": "https://agent-plugins.org/"
+        }
+      ],
+      "install": {
+        "heading": "How instruction files install",
+        "text": "Copy the file into the place your agent reads. Most of them need no tooling: AGENTS.md goes at the repository root, Cursor rules into .cursor/rules, Copilot instructions into .github, CLAUDE.md beside your code. Plugins for Codex, Cursor and Gemini CLI install with each product's own command.",
+        "commands": [
+          "codex plugin marketplace add owner/repo",
+          "gemini extensions install https://github.com/gemini-cli-extensions/workspace",
+          "copilot plugin marketplace add github/awesome-copilot"
+        ]
+      },
+      "sections": [
+        {
+          "id": "instructions",
+          "name": "Instruction files",
+          "intro": "AGENTS.md, CLAUDE.md, Cursor rules and Copilot instructions.",
+          "entries": [
+            {
+              "id": "agents-md",
+              "name": "AGENTS.md",
+              "repo": "agentsmd/agents.md",
+              "url": "https://agents.md/",
+              "publisher": "Agentic AI Foundation",
+              "official": true,
+              "summary": "The open format for a README addressed to agents: one Markdown file at the repository root, nested files allowed, read by Codex, Cursor, Copilot, Gemini CLI, Grok Build and others.",
+              "tags": [
+                "standard"
+              ]
+            },
+            {
+              "id": "awesome-cursorrules",
+              "name": "awesome-cursorrules",
+              "repo": "PatrickJS/awesome-cursorrules",
+              "url": "https://github.com/PatrickJS/awesome-cursorrules",
+              "publisher": "PatrickJS",
+              "official": false,
+              "license": "CC0-1.0",
+              "summary": "Cursor rule files by framework and language, as .mdc files to copy into .cursor/rules.",
+              "tags": [
+                "cursor",
+                "rules"
+              ]
+            },
+            {
+              "id": "awesome-copilot",
+              "name": "awesome-copilot",
+              "repo": "github/awesome-copilot",
+              "url": "https://github.com/github/awesome-copilot",
+              "publisher": "GitHub",
+              "official": true,
+              "summary": "Community agents, instruction files, skills, hooks and plugins for GitHub Copilot, installable as a Copilot plugin marketplace.",
+              "install": "copilot plugin marketplace add github/awesome-copilot",
+              "tags": [
+                "official",
+                "copilot"
+              ]
+            },
+            {
+              "id": "awesome-claude-md-rules",
+              "name": "awesome-claude-md",
+              "repo": "josix/awesome-claude-md",
+              "url": "https://github.com/josix/awesome-claude-md",
+              "publisher": "josix",
+              "official": false,
+              "summary": "Exemplary CLAUDE.md files collected from public projects.",
+              "tags": [
+                "claude code",
+                "instructions"
+              ]
+            },
+            {
+              "id": "claude-md-templates-rules",
+              "name": "claude-md-templates",
+              "repo": "abhishekray07/claude-md-templates",
+              "url": "https://github.com/abhishekray07/claude-md-templates",
+              "publisher": "abhishekray07",
+              "official": false,
+              "summary": "CLAUDE.md templates by stack, with rules and workflow files.",
+              "tags": [
+                "claude code",
+                "templates"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "plugins",
+          "name": "Plugins for Cursor, Codex and Gemini CLI",
+          "intro": "The other agents' plugin formats and their official catalogs.",
+          "entries": [
+            {
+              "id": "cursor-plugins",
+              "name": "Cursor plugins",
+              "repo": "cursor/plugins",
+              "url": "https://github.com/cursor/plugins",
+              "publisher": "Cursor",
+              "official": true,
+              "summary": "The Cursor plugin specification and the official plugins, each a .cursor-plugin folder with rules, skills, agents, commands, MCP servers and hooks.",
+              "tags": [
+                "official",
+                "cursor"
+              ]
+            },
+            {
+              "id": "cursor-community-plugins",
+              "name": "Cursor community plugins",
+              "repo": "cursor/community-plugins",
+              "url": "https://github.com/cursor/community-plugins",
+              "publisher": "Cursor",
+              "official": true,
+              "summary": "The catalog behind cursor.directory, where community plugins and MCP servers are submitted by repository URL.",
+              "tags": [
+                "official",
+                "cursor"
+              ]
+            },
+            {
+              "id": "openai-plugins",
+              "name": "OpenAI Codex plugins",
+              "repo": "openai/plugins",
+              "url": "https://github.com/openai/plugins",
+              "publisher": "OpenAI",
+              "official": true,
+              "summary": "Curated Codex plugin examples, including Figma, Notion, Expo, Netlify, Remotion and Google Slides.",
+              "install": "codex plugin marketplace add openai/plugins",
+              "tags": [
+                "official",
+                "codex"
+              ]
+            },
+            {
+              "id": "openai-skills",
+              "name": "OpenAI Codex skills",
+              "repo": "openai/skills",
+              "url": "https://github.com/openai/skills",
+              "publisher": "OpenAI",
+              "official": true,
+              "summary": "Codex's system, curated and experimental skills. The repository now points new work at openai/plugins, but its curated skills still install by name with the skill installer.",
+              "tags": [
+                "official",
+                "codex"
+              ]
+            },
+            {
+              "id": "gemini-conductor",
+              "name": "Gemini CLI Conductor",
+              "repo": "gemini-cli-extensions/conductor",
+              "url": "https://github.com/gemini-cli-extensions/conductor",
+              "publisher": "Google",
+              "official": true,
+              "summary": "A spec-driven development extension for Gemini CLI, from Google's extensions organization.",
+              "install": "gemini extensions install https://github.com/gemini-cli-extensions/conductor",
+              "tags": [
+                "official",
+                "gemini"
+              ]
+            },
+            {
+              "id": "gemini-workspace",
+              "name": "Gemini CLI Workspace",
+              "repo": "gemini-cli-extensions/workspace",
+              "url": "https://github.com/gemini-cli-extensions/workspace",
+              "publisher": "Google",
+              "official": true,
+              "summary": "Google Workspace access for Gemini CLI, packaged as an extension with its MCP servers and commands.",
+              "install": "gemini extensions install https://github.com/gemini-cli-extensions/workspace",
+              "tags": [
+                "official",
+                "gemini"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "personas",
+          "name": "Personas and prompt libraries",
+          "intro": "Text the agent loads every session: who it is and how it writes.",
+          "entries": [
+            {
+              "id": "souls-directory",
+              "name": "souls-directory",
+              "repo": "thedaviddias/souls-directory",
+              "url": "https://github.com/thedaviddias/souls-directory",
+              "publisher": "thedaviddias",
+              "official": false,
+              "license": "MIT",
+              "summary": "SOUL.md persona templates for OpenClaw, the self-hosted assistant that lives in chat apps.",
+              "tags": [
+                "persona",
+                "openclaw"
+              ]
+            },
+            {
+              "id": "fabric",
+              "name": "Fabric",
+              "repo": "danielmiessler/fabric",
+              "url": "https://github.com/danielmiessler/fabric",
+              "publisher": "danielmiessler",
+              "official": false,
+              "summary": "An open-source framework of reusable prompt patterns, each a system.md file, run from the command line.",
+              "install": "fabric -p <pattern>",
+              "tags": [
+                "prompts"
+              ]
+            },
+            {
+              "id": "awesome-chatgpt-prompts",
+              "name": "awesome-chatgpt-prompts",
+              "repo": "f/awesome-chatgpt-prompts",
+              "url": "https://github.com/f/awesome-chatgpt-prompts",
+              "publisher": "f",
+              "official": false,
+              "summary": "The largest open prompt library, published as a CSV with a Claude Code plugin and an MCP server.",
+              "tags": [
+                "prompts"
+              ]
+            },
+            {
+              "id": "grok-prompts-rules",
+              "name": "grok-prompts",
+              "repo": "xai-org/grok-prompts",
+              "url": "https://github.com/xai-org/grok-prompts",
+              "publisher": "xAI",
+              "official": true,
+              "summary": "xAI's published system prompts for Grok.",
+              "tags": [
+                "official",
+                "prompts"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "standards",
+          "name": "The standards and the CLI",
+          "intro": "What defines a skill, a plugin and the installer most agents share.",
+          "entries": [
+            {
+              "id": "agentskills",
+              "name": "Agent Skills",
+              "repo": "agentskills/agentskills",
+              "url": "https://agentskills.io/",
+              "publisher": "Agent Skills",
+              "official": true,
+              "summary": "The open standard behind every skill in this directory: a SKILL.md with name and description frontmatter, optional scripts, references and assets, and a validator.",
+              "tags": [
+                "standard"
+              ]
+            },
+            {
+              "id": "agent-plugins-spec",
+              "name": "Agent Plugins",
+              "repo": "agentplugins/agent-plugins-spec",
+              "url": "https://agent-plugins.org/",
+              "publisher": "Agent Plugins",
+              "official": true,
+              "summary": "A vendor-neutral standard for packaging skills, MCP configuration and extensions into one portable plugin folder.",
+              "tags": [
+                "standard"
+              ]
+            },
+            {
+              "id": "skills-cli",
+              "name": "skills CLI",
+              "repo": "vercel-labs/skills",
+              "url": "https://github.com/vercel-labs/skills",
+              "publisher": "Vercel",
+              "official": true,
+              "summary": "The installer behind npx skills add: fetches a skill folder from GitHub or another source and places it in the directory each of more than 75 agents reads.",
+              "install": "npx skills add owner/repo -a claude-code",
+              "tags": [
+                "official",
+                "cli"
+              ]
+            }
+          ]
+        }
+      ],
+      "faq": [
+        [
+          "What is AGENTS.md?",
+          "A plain Markdown file at the repository root with instructions for coding agents, stewarded by the Agentic AI Foundation. Codex, Cursor, Copilot, Gemini CLI and Grok Build read it, and Claude Code reads it when the project has no CLAUDE.md."
+        ],
+        [
+          "Where do Cursor rules go?",
+          "Project rules live in .cursor/rules as .mdc files with description, globs and alwaysApply frontmatter. A plain .md file in that folder is ignored. Cursor also reads AGENTS.md at the root and in subfolders."
+        ],
+        [
+          "Do these files run code?",
+          "No. Instruction files, rules and prompts are text the agent reads. That makes them the easiest layer to review, but a file can still steer an agent toward risky actions, so read it before you adopt it."
+        ],
+        [
+          "Are these collections graded?",
+          "No. They are listed from their publisher's repository with a short description and carry no score, security result or verification badge. The Suede Skill Check applies to skills only."
+        ]
+      ],
+      "keywords": [
+        "cursor rules",
+        "agents.md examples",
+        "claude.md examples",
+        "prompt libraries"
+      ]
+    }
+  ]
+}
