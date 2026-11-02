@@ -40,12 +40,18 @@ the new values.
 
 ## Typography
 
-- JetBrains Mono (variable, OFL) for every word: body 15px/1.65, labels 12px
-  uppercase with 0.06em tracking, section titles 20 to 24px bold led by a white
-  `//`.
-- Pixelify Sans (variable, OFL) for display only: the H1 of every page, the
-  wordmark, the Top 100 heading, ranks, stat numbers and the score card, in
-  plain white.
+The pairing skills.sh uses, self-hosted as Latin subsets of the variable
+fonts:
+
+- Geist (variable, OFL) for prose and headings: body 15px/1.6, H1 at 30 to
+  40px semibold with tight tracking, H2 at 20 to 24px semibold.
+- Geist Mono (variable, OFL) for everything that is a label, a number or a
+  command: the nav, eyebrows and kickers, tabs, chips and tags, table heads
+  and numeric cells, ranks, install counts, stat tiles, the score card, the
+  glance panel, form controls, code and terminals. Labels are 12px uppercase
+  with 0.06em tracking.
+- Pixelify Sans (variable, OFL) only where skills.sh keeps its bitmap logo:
+  the wordmark and the hub headline, in plain white.
 - The eyebrow is a prompt: `> Skill directory · Design`. FAQ questions carry a
   `?` marker. The hub H1 ends in a blinking block cursor that freezes under
   reduced motion.
@@ -84,18 +90,19 @@ Each page type owns one graphic, all generated from the dataset at build time:
 
 ## Fonts and licenses
 
-Both faces are self-hosted Latin subsets of the variable fonts, served only on
-directory pages. The root `NOTICE.md` is pinned by the first-party intake
+All three faces are self-hosted Latin subsets of the variable fonts, served
+only on directory pages. The root `NOTICE.md` is pinned by the first-party intake
 receipt, so their notices live here until the next intake folds them in.
 
-### JetBrains Mono
+### Geist and Geist Mono
 
-Copyright 2020 The JetBrains Mono Project Authors
-(https://github.com/JetBrains/JetBrainsMono). SIL Open Font License 1.1. Full
-text: [`licenses/jetbrains-mono-OFL.txt`](../licenses/jetbrains-mono-OFL.txt).
+Copyright (c) 2023 Vercel, in collaboration with basement.studio
+(https://github.com/vercel/geist-font). SIL Open Font License 1.1. Full
+text: [`licenses/geist-OFL.txt`](../licenses/geist-OFL.txt).
 
-Files: `docs/assets/fonts/jetbrains-mono-var-latin.woff2`,
-`docs/assets/fonts/jetbrains-mono-var-italic-latin.woff2`.
+Files: `docs/assets/fonts/geist-var-latin.woff2`,
+`docs/assets/fonts/geist-var-italic-latin.woff2`,
+`docs/assets/fonts/geist-mono-var-latin.woff2`.
 
 ### Pixelify Sans
 
