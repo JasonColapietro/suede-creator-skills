@@ -331,7 +331,7 @@
         <p>The files bundle no scripts. They document RESEND_API_KEY and RESEND_WEBHOOK_SECRET, and references cover advanced patterns, security levels and webhook setup.</p>
         <p>Use it whenever email arrives and something acts on it, even if nobody calls it an agent. Skip it for outbound-only email.</p>
         <p>Start from the strictest setting:</p>
-        <div class="snippet"><pre><code class="language-text">Set up an inbox at support@ourdomain.com that turns emails from our three customer domains into Linear tasks. Use a strict sender allowlist and verify every webhook.</code></pre></div>
+        <div class="snippet"><pre><code class="language-text">Set up an inbox at support@example.com that turns emails from our three customer domains into Linear tasks. Use a strict sender allowlist and verify every webhook.</code></pre></div>
         <h3 id="converting-email-templates-moving-templates-to-mailtrap">converting-email-templates: moving templates to Mailtrap</h3>
         <p><a href="../../mailtrap/mailtrap-skills/converting-email-templates/">converting-email-templates</a> converts or migrates email templates from SendGrid, Mailgun, Mandrill, Postmark, Brevo or Amazon SES to Mailtrap-compatible Handlebars syntax. It handles a single file, a bulk directory or inline HTML. It is an official skill from mailtrap/mailtrap-skills, scores 85/100 (grade B), is MIT licensed, and has fewer than 1,000 installs recorded by skills.sh.</p>
         <p>The SKILL.md is a five-step workflow: detect the mode, run the converter script, handle flags in deep mode, present the results, and a reminder about API field mapping. Inline conversion without a file and a set of rules round it out.</p>

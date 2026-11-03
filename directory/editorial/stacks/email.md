@@ -74,7 +74,7 @@ Use it whenever email arrives and something acts on it, even if nobody calls it 
 Start from the strictest setting:
 
 ```text
-Set up an inbox at support@ourdomain.com that turns emails from our three customer domains into Linear tasks. Use a strict sender allowlist and verify every webhook.
+Set up an inbox at support@example.com that turns emails from our three customer domains into Linear tasks. Use a strict sender allowlist and verify every webhook.
 ```
 
 ### converting-email-templates: moving templates to Mailtrap
