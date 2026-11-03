@@ -7618,37 +7618,63 @@
  ],
  "directory/stacks/agent-building/index.html": [
   "building agents and MCP servers skill stack",
-  "agent building skills",
+  "mcp server",
+  "claude agent sdk",
+  "ai agent builder",
+  "claude code mcp",
+  "build ai agent",
   "mcp builder skill",
-  "multi-agent workflow skills",
-  "context engineering skill",
-  "prompt optimizer skill",
-  "bedrock agentcore skill"
+  "context engineering skill"
  ],
  "directory/stacks/code-review/index.html": [
   "code review skill stack",
+  "claude code review",
+  "ai code review",
+  "ai code review tool",
   "code review agent skills",
-  "claude code review skill",
   "security review skill",
   "tidy skill",
   "verification before completion"
  ],
  "directory/stacks/content-and-social/index.html": [
   "content and social posts skill stack",
-  "content writing agent skills",
-  "social media skill claude code",
+  "ai content creation",
+  "ai social media content generator",
+  "ai linkedin post generator",
   "ghostwriter skill",
   "linkedin profile skill",
-  "line editing skill"
+  "line editing skill",
+  "content strategy skill"
+ ],
+ "directory/stacks/copywriting/index.html": [
+  "copywriting skill stack",
+  "ai copywriting",
+  "ai copywriting tool",
+  "claude copywriting",
+  "copywriting agent skills",
+  "copy editing skill",
+  "ad copy skill",
+  "remove ai tells from copy"
  ],
  "directory/stacks/documents-and-data/index.html": [
   "documents and data skill stack",
-  "document agent skills",
+  "claude excel",
+  "ai spreadsheet",
+  "claude pdf",
+  "xlsx skill",
   "docx skill",
-  "read long pdf skill",
-  "sql query agent skill",
-  "literature review skill",
-  "data skills claude code"
+  "document agent skills",
+  "sql query agent skill"
+ ],
+ "directory/stacks/email/index.html": [
+  "email marketing and transactional email skill stack",
+  "ai email writer",
+  "ai email marketing",
+  "claude email",
+  "email agent skills",
+  "resend skill",
+  "react email skill",
+  "transactional email skill"
  ],
  "directory/stacks/index.html": [
   "agent skill stacks",
@@ -7657,57 +7683,145 @@
   "codex skill stack",
   "recommended agent skills"
  ],
+ "directory/stacks/infographics-and-diagrams/index.html": [
+  "making infographics and diagrams skill stack",
+  "ai infographic generator",
+  "ai diagram generator",
+  "claude diagram",
+  "archify skill",
+  "mermaid diagram skill",
+  "excalidraw diagram skill",
+  "scientific figure skill"
+ ],
  "directory/stacks/landing-page/index.html": [
   "shipping a landing page skill stack",
+  "ai landing page builder",
+  "ai landing page generator",
+  "claude code landing page",
   "landing page agent skills",
-  "claude code landing page skill",
   "auteur skill",
   "conversion tracking skill",
   "best skills for landing pages"
  ],
+ "directory/stacks/mobile-apps/index.html": [
+  "building mobile apps with Expo iOS and Android skill stack",
+  "ai app builder",
+  "claude code mobile app",
+  "claude code ios app",
+  "claude code react native",
+  "expo agent skills",
+  "eas simulator skill",
+  "app store optimization skill"
+ ],
+ "directory/stacks/motion-graphics/index.html": [
+  "animation and motion graphics skill stack",
+  "ai animation generator",
+  "ai motion graphics",
+  "motion graphics ai",
+  "claude code animation",
+  "hyperframes skill",
+  "ui animation skill",
+  "animated diagram skill"
+ ],
+ "directory/stacks/paid-ads/index.html": [
+  "running paid ads skill stack",
+  "ai ad generator",
+  "ai facebook ads",
+  "ai google ads",
+  "ad creative skill",
+  "meta ads analyzer",
+  "paid ads agent skills",
+  "google ads copy skill"
+ ],
+ "directory/stacks/presentations/index.html": [
+  "building presentations and slide decks skill stack",
+  "ai presentation maker",
+  "ai slide generator",
+  "claude powerpoint",
+  "claude code slides",
+  "pptx skill",
+  "slidewright skill",
+  "presentation agent skills"
+ ],
  "directory/stacks/research/index.html": [
   "research skill stack",
+  "ai research assistant",
+  "claude research",
+  "ai deep research",
   "research agent skills",
   "company research skill",
-  "market research agent",
   "citation management skill",
-  "deep reader skill",
-  "chat history skill"
+  "deep reader skill"
+ ],
+ "directory/stacks/sales-prospecting/index.html": [
+  "sales prospecting and outbound skill stack",
+  "ai lead generation tool",
+  "ai sales prospecting",
+  "cold email skill",
+  "prospecting agent skill",
+  "icp identification skill",
+  "company research skill",
+  "sales enablement skill"
+ ],
+ "directory/stacks/security-audits/index.html": [
+  "security audits of code and CI skill stack",
+  "claude code security",
+  "ai security audit",
+  "ai code security scanner",
+  "semgrep skill",
+  "codeql skill",
+  "github actions security review",
+  "agent skill scanner"
  ],
  "directory/stacks/seo-and-ai-search/index.html": [
   "SEO and AI search visibility skill stack",
+  "ai seo tools",
+  "ai search optimization",
+  "claude code seo",
   "seo agent skills",
-  "ai search visibility skill",
-  "seo audit skill",
+  "aeo and geo skills",
   "webmcp skill",
-  "claude code seo stack",
   "get cited by ai"
+ ],
+ "directory/stacks/technical-docs/index.html": [
+  "writing technical documentation skill stack",
+  "claude code documentation",
+  "ai documentation generator",
+  "ai technical writing",
+  "diataxis writer skill",
+  "openapi spec generator skill",
+  "llms.txt agent readiness",
+  "technical documentation agent skills"
  ],
  "directory/stacks/testing-and-ci/index.html": [
   "testing and CI skill stack",
+  "ai testing tools",
+  "ai test automation",
+  "claude code playwright",
   "testing agent skills",
   "ci speedup skill",
-  "playwright skill",
   "cypress skill claude code",
-  "manual testing skill",
-  "chaos testing skill"
+  "manual testing skill"
  ],
  "directory/stacks/ui-design/index.html": [
   "UI design skill stack",
-  "ui design agent skills",
+  "claude code design",
+  "ai ui design",
+  "ai ui generator",
+  "claude code frontend",
   "impeccable skill",
-  "frontend design skill claude code",
   "ui animation skill",
   "design system extraction skill"
  ],
  "directory/stacks/video-and-creative/index.html": [
   "video images and audio skill stack",
+  "ai image generator",
+  "ai video generator",
+  "ai video editor",
   "video agent skills",
-  "ai image generation skill",
   "capcut skill",
   "text to speech skill",
-  "creative director skill",
-  "video editing agent"
+  "creative director skill"
  ],
  "directory/stripe/ai/index.html": [
   "stripe/ai skills",

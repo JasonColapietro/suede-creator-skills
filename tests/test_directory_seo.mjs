@@ -12,6 +12,7 @@ import "./test_directory_page_template.mjs";
 import "./test_directory_browse.mjs";
 import "./test_directory_rebuild.mjs";
 import "./test_directory_kind_bar.mjs";
+import "./test_directory_stacks.mjs";
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";

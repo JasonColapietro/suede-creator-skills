@@ -4,15 +4,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Best Agent Skill Stack for Code Review (2026)</title>
-    <meta name="description" content="Five agent skills for code review, led by go-coding-standards at 95/100 and tidy at 87/100, with install commands and what to check first.">
-    <meta name="keywords" content="code review skill stack, code review agent skills, claude code review skill, security review skill, tidy skill, verification before completion">
+    <meta name="description" content="For Claude Code review, start with tidy (87/100) on diffs and PRs, then add security-review, a verification gate and Go standards (95/100).">
+    <meta name="keywords" content="code review skill stack, claude code review, ai code review, ai code review tool, code review agent skills, security review skill, tidy skill, verification before completion">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
     <link rel="canonical" href="https://suedeai.directory/stacks/code-review/">
     <link rel="icon" href="../../../assets/favicon-64.png" type="image/png">
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="Suede AI Skills Directory">
     <meta property="og:title" content="Best Agent Skill Stack for Code Review (2026)">
-    <meta property="og:description" content="Five agent skills for code review, led by go-coding-standards at 95/100 and tidy at 87/100, with install commands and what to check first.">
+    <meta property="og:description" content="For Claude Code review, start with tidy (87/100) on diffs and PRs, then add security-review, a verification gate and Go standards (95/100).">
     <meta property="og:url" content="https://skills.suedeai.ai/directory/stacks/code-review/">
     <meta property="og:image" content="https://skills.suedeai.ai/assets/social/directory-card-v2.png">
     <meta property="og:image:width" content="1200">
@@ -20,7 +20,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@AISUEDE">
     <meta name="twitter:title" content="Best Agent Skill Stack for Code Review (2026)">
-    <meta name="twitter:description" content="Five agent skills for code review, led by go-coding-standards at 95/100 and tidy at 87/100, with install commands and what to check first.">
+    <meta name="twitter:description" content="For Claude Code review, start with tidy (87/100) on diffs and PRs, then add security-review, a verification gate and Go standards (95/100).">
     <meta name="twitter:image" content="https://skills.suedeai.ai/assets/social/directory-card-v2.png">
     <script type="application/ld+json">
       {
@@ -29,7 +29,7 @@
         "@id": "https://skills.suedeai.ai/directory/stacks/code-review/#article",
         "headline": "What is the best agent skill stack for code review?",
         "name": "Best Agent Skill Stack for Code Review (2026)",
-        "description": "Five agent skills for code review, led by go-coding-standards at 95/100 and tidy at 87/100, with install commands and what to check first.",
+        "description": "For Claude Code review, start with tidy (87/100) on diffs and PRs, then add security-review, a verification gate and Go standards (95/100).",
         "url": "https://skills.suedeai.ai/directory/stacks/code-review/",
         "mainEntityOfPage": {
           "@type": "WebPage",
@@ -39,10 +39,10 @@
           }
         },
         "datePublished": "2026-11-02",
-        "dateModified": "2026-11-02",
+        "dateModified": "2026-11-03",
         "inLanguage": "en",
         "image": "https://skills.suedeai.ai/assets/social/directory-card-v2.png",
-        "keywords": "code review agent skills, claude code review skill, security review skill, tidy skill, verification before completion",
+        "keywords": "claude code review, ai code review, ai code review tool, code review agent skills, security review skill, tidy skill, verification before completion",
         "author": {
           "@type": "Person",
           "@id": "https://suedeai.ai/founder#person",
@@ -147,6 +147,71 @@
         ]
       }
     </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "@id": "https://skills.suedeai.ai/directory/stacks/code-review/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is the best Claude Code review skill?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "tidy from mblode/agent-skills, at 87/100, is the best general reviewer for Claude Code in this stack. It reviews a local diff, a branch diff or a PR, reports file:line findings in confirmed and plausible tiers, gates the tests the diff adds and can apply the fixes. go-coding-standards scores higher, at 95/100, but it only covers Go style, so it complements tidy rather than replacing it."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can tidy replace a human reviewer?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. It finds, tiers and can fix. A person still decides what merges, and verification-before-completion exists because an agent's claim that something passes is not the same as it passing. Use the stack to make the human review shorter and better informed, not to remove it."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is an AI code review tool built from skills free to use?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The skills themselves are free to install. Four are MIT licensed and security-review is CC-BY-SA-4.0, both open licenses. None of the five calls an outside service or reads an API key, according to the directory's read of their files. You pay only for the model usage of whichever agent runs them, such as Claude Code, Codex or Cursor."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which code review skill should I install first?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "verification-before-completion. It has about 261,000 installs recorded by skills.sh, more than any other skill here, and it changes the agent's behavior everywhere: no claim that work is complete, fixed or passing without running the verification command and showing the output. Add tidy second for the review itself, then security-review as a separate pass."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do these skills work in Codex and Cursor?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. All five use the Agent Skills format, so the same folder works in Claude Code, Codex, Cursor and any other agent that reads a SKILL.md. The skills CLI installs for each of them, and every skill page in the directory shows the commands and the manual copy routes."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How is security-review different from tidy's security checklist?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "tidy carries a security checklist as one reference file inside a general review. security-review is a dedicated process: it loads language and infrastructure guides, researches before flagging, verifies exploitability and reports high-confidence findings only, with a \"Do Not Flag\" list to cut noise. Run tidy for everything, and security-review when the change touches input handling, authentication, authorization or cryptography."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why include a Go-only skill in a general stack?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "At 95/100 it is the highest score in the set, and the other four are language-agnostic, so a team that does not write Go can simply drop it. For a team that does, it is the most specific reviewer here. It has fewer than 1,000 installs recorded by skills.sh against about 261,000 for verification-before-completion and about 22,000 for security-review, which shows where adoption sits today."
+            }
+          }
+        ]
+      }
+    </script>
     <meta name="theme-color" content="#000000">
     <link rel="preload" href="../../../assets/fonts/geist-var-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../../../assets/fonts/geist-mono-var-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -194,7 +259,7 @@
         <a href="../../grok/"><svg class="pix" viewBox="0 0 12 12" width="14" height="14" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M6 0h4v1h-4zM5 1h1v1h-1zM4 2h1v1h-1zM3 3h1v1h-1zM2 4h7v1h-7zM7 5h1v1h-1zM6 6h1v1h-1zM5 7h1v1h-1zM4 8h1v1h-1zM3 9h1v1h-1zM2 10h1v1h-1z"/></svg><span class="kind-label" data-short="Grok">Grok bots</span><span class="count-chip">19</span></a>
         <a href="../../mcp-servers/"><svg class="pix" viewBox="0 0 12 12" width="14" height="14" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M0 0h12v1h-12zM0 1h1v1h-1zM11 1h1v1h-1zM0 2h1v1h-1zM2 2h2v1h-2zM9 2h1v1h-1zM11 2h1v1h-1zM0 3h12v1h-12zM0 4h1v1h-1zM11 4h1v1h-1zM0 5h1v1h-1zM2 5h2v1h-2zM9 5h1v1h-1zM11 5h1v1h-1zM0 6h12v1h-12zM0 7h1v1h-1zM11 7h1v1h-1zM0 8h1v1h-1zM2 8h2v1h-2zM9 8h1v1h-1zM11 8h1v1h-1zM0 9h12v1h-12z"/></svg><span class="kind-label" data-short="MCP">MCP servers</span><span class="count-chip">6</span></a>
         <a href="../../rules/"><svg class="pix" viewBox="0 0 12 12" width="14" height="14" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M1 0h10v1h-10zM0 1h1v1h-1zM11 1h1v1h-1zM0 2h1v1h-1zM3 2h5v1h-5zM11 2h1v1h-1zM0 3h1v1h-1zM11 3h1v1h-1zM0 4h1v1h-1zM3 4h7v1h-7zM11 4h1v1h-1zM0 5h1v1h-1zM11 5h1v1h-1zM0 6h1v1h-1zM3 6h5v1h-5zM11 6h1v1h-1zM0 7h1v1h-1zM11 7h1v1h-1zM0 8h1v1h-1zM3 8h7v1h-7zM11 8h1v1h-1zM0 9h1v1h-1zM11 9h1v1h-1zM1 10h10v1h-10z"/></svg><span class="kind-label" data-short="Rules">Rules and prompts</span><span class="count-chip">18</span></a>
-        <a href="../" aria-current="page"><svg class="pix" viewBox="0 0 12 12" width="14" height="14" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M5 1h2v1h-2zM3 2h2v1h-2zM7 2h2v1h-2zM1 3h2v1h-2zM9 3h2v1h-2zM0 4h1v1h-1zM11 4h1v1h-1zM1 5h2v1h-2zM9 5h2v1h-2zM3 6h2v1h-2zM7 6h2v1h-2zM1 7h2v1h-2zM5 7h2v1h-2zM9 7h2v1h-2zM0 8h1v1h-1zM11 8h1v1h-1zM1 9h2v1h-2zM9 9h2v1h-2zM3 10h2v1h-2zM7 10h2v1h-2zM5 11h2v1h-2z"/></svg><span class="kind-label" data-short="Stacks">Stacks</span><span class="count-chip">10</span></a>
+        <a href="../" aria-current="page"><svg class="pix" viewBox="0 0 12 12" width="14" height="14" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M5 1h2v1h-2zM3 2h2v1h-2zM7 2h2v1h-2zM1 3h2v1h-2zM9 3h2v1h-2zM0 4h1v1h-1zM11 4h1v1h-1zM1 5h2v1h-2zM9 5h2v1h-2zM3 6h2v1h-2zM7 6h2v1h-2zM1 7h2v1h-2zM5 7h2v1h-2zM9 7h2v1h-2zM0 8h1v1h-1zM11 8h1v1h-1zM1 9h2v1h-2zM9 9h2v1h-2zM3 10h2v1h-2zM7 10h2v1h-2zM5 11h2v1h-2z"/></svg><span class="kind-label" data-short="Stacks">Stacks</span><span class="count-chip">20</span></a>
       </div>
     </nav>
     <main id="main" tabindex="-1" class="shell directory">
@@ -202,16 +267,17 @@
       <h1>What is the best agent skill stack for code review?</h1>
       <nav class="crumbs" aria-label="Breadcrumb"><a href="../../">Directory</a> <span class="crumb-sep" aria-hidden="true">/</span> <a href="../">Stacks</a> <span class="crumb-sep" aria-hidden="true">/</span> <span aria-current="page">What is the best agent skill stack for code review?</span></nav>
       <p class="byline muted">By <a href="https://suedeai.ai/founder" rel="author">Jason Colapietro</a>, Founder and CEO of Suede AI. Author of <cite>Stake Your Claim</cite>, <cite>Proof as Infrastructure</cite> and <cite>The Human Authenticity Layer</cite>, holder of the VoicePrint patent, and a builder of companies for two decades.</p>
-      <p class="dateline muted">Reviewed <time datetime="2026-11-02">November 2, 2026</time>. Scores and counts come from the directory snapshot of <time datetime="2026-10-22">October 22, 2026</time>.</p>
+      <p class="dateline muted">Reviewed <time datetime="2026-11-03">November 3, 2026</time>. Scores and counts come from the directory snapshot of <time datetime="2026-10-22">October 22, 2026</time>.</p>
       <aside class="suede-first" aria-label="Suede AI's skill for this task">
         <img src="../../../assets/suede-ai-logo-transparent.webp" alt="" width="40" height="40">
-        <p class="kicker">The Suede AI skill that covers this task</p>
+        <p class="kicker">Start here: built by Suede AI for code review</p>
         <b>suede-code</b>
-        <p>Reviews a pull request, diff or branch into evidence-backed P0 to P3 findings, fix paths and an A to F ship grade across seven review lanes. The article below leaves Suede AI's own skills out and recommends third-party skills only.</p>
-        <p class="suede-first-links"><a href="../../../skills/suede-code.html">Skill page</a><a href="../../jasoncolapietro/suede-creator-skills/#suede-code">Directory listing (93/100)</a><a href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-code" target="_blank" rel="noopener">Source</a></p>
+        <p>Reviews a pull request, diff or branch into evidence-backed P0 to P3 findings, fix paths and an A to F ship grade across seven review lanes.</p>
+        <code class="suede-first-install">npx skills add https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-code</code>
+        <p class="suede-first-links"><a href="#the-suede-ai-skill-built-for-this-job">Why I built it</a><a href="../../../skills/suede-code.html">Skill page</a><a href="../../jasoncolapietro/suede-creator-skills/#suede-code">Directory listing (93/100)</a><a href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-code" target="_blank" rel="noopener">Source</a></p>
       </aside>
       <div class="article">
-      <p class="answer guide-answer"><strong>Short answer:</strong> <a href="../../mblode/agent-skills/tidy/">tidy</a> from mblode/agent-skills (87/100) is the reviewer: it reads a local diff, a branch diff or a PR and returns file and line findings in confirmed and plausible tiers, and it can apply the fixes. Pair it with <a href="../../getsentry/skills/security-review/">security-review</a> from getsentry/skills (86/100) for a separate pass on injection, XSS, authentication, authorization and cryptography, and with <a href="../../obra/superpowers/verification-before-completion/">verification-before-completion</a> from obra/superpowers (84/100) so nothing gets called done without a verification command actually run. If you write Go, add go-coding-standards, the highest-scoring skill in the set.</p>
+      <p class="answer guide-answer"><strong>Short answer:</strong> For Claude Code review, start with <a href="../../mblode/agent-skills/tidy/">tidy</a> from mblode/agent-skills (87/100): it reads a local diff, a branch diff or a PR and returns file and line findings in confirmed and plausible tiers, and it can apply the fixes. Pair it with <a href="../../getsentry/skills/security-review/">security-review</a> from getsentry/skills (86/100) for a separate pass on injection, XSS, authentication, authorization and cryptography, and with <a href="../../obra/superpowers/verification-before-completion/">verification-before-completion</a> from obra/superpowers (84/100) so nothing gets called done until a verification command has run. If you write Go, add <a href="../../eduardo-sl/go-agent-skills/go-coding-standards/">go-coding-standards</a> (95/100), the top score in the set, and run <a href="../../mohamedabdallah-14/unslop/unslop-review/">unslop-review</a> over the comments before you post them.</p>
       <section class="panel" aria-labelledby="the-stack">
         <h2 id="the-stack">The stack</h2>
         <p>Five skills, in score order. Scores come from the directory snapshot of October 22, 2026, and install counts are the figures skills.sh published on November 2, 2026.</p>
@@ -228,14 +294,71 @@
           </table>
         </div>
       </section>
-      <section class="panel" aria-labelledby="how-to-use-it">
-        <h2 id="how-to-use-it">How to use it</h2>
+      <section class="panel" aria-labelledby="who-this-stack-is-for">
+        <h2 id="who-this-stack-is-for">Who this stack is for</h2>
+        <p>This stack is for anyone who wants AI code review that a human can act on in minutes, not a wall of suggestions. It fits a solo developer shipping with Claude Code who has no second pair of eyes, a team lead who wants every pull request pre-reviewed before a person opens it, and a maintainer triaging outside contributions who needs the security questions asked every time.</p>
+        <p>It also fits a less obvious case: the team whose agent keeps reporting &quot;all tests pass&quot; when it never ran them. Two of the five skills change how the agent behaves rather than what it reviews, which is often where review quality is lost.</p>
+        <p>Go teams get the most from it, because go-coding-standards and every alternative below are Go-specific. Everyone else can drop that skill and keep four.</p>
+        <p>All five use the <a href="https://agentskills.io/" target="_blank" rel="noopener">Agent Skills</a> format, a folder with a SKILL.md and reference files, so the same install works in Claude Code, Codex, Cursor and any agent that reads the format.</p>
+      </section>
+      <section class="panel" aria-labelledby="the-suede-ai-skill-built-for-this-job">
+        <h2 id="the-suede-ai-skill-built-for-this-job">The Suede AI skill built for this job</h2>
+        <p>I built <a href="../../jasoncolapietro/suede-creator-skills/#suede-code">suede-code</a> for exactly this job: you ask it to &quot;review this PR&quot;, or to grade a diff, a branch or a commit range, and it returns evidence-backed findings ranked P0 to P3, a fix path for each, and an A to F ship grade. It is my company's skill, so it stays out of this page's ranking.</p>
+        <p>The grade is the decision it makes for you. Instead of a pile of comments, you get a severity order and a ship call you can act on. It runs in three modes: findings-only when you want the list, grade-only when you need a merge decision, and fix mode when you want the repairs made. Its seven review lanes include security checks, deploy safety and commit dirt.</p>
+        <p>Start with it whenever a pull request needs a verdict, not only notes. It owns the first review of the diff and the ship grade a person reads before merging, which are steps 2 and 8 in the workflow below. The third-party picks then go deeper where they are strongest: security-review for the full security process, verification-before-completion to prove each fix with command output, and unslop-review for the comments you post. Its description sends CI enforcement, agent evaluations and parallel fix coordination elsewhere.</p>
+        <p>Put it in first:</p>
+        <div class="snippet"><pre><code class="language-bash">npx skills add https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-code</code></pre></div>
+      </section>
+      <section class="panel" aria-labelledby="the-skills-one-by-one">
+        <h2 id="the-skills-one-by-one">The skills, one by one</h2>
+        <h3 id="go-coding-standards-go-style-and-conventions">go-coding-standards: Go style and conventions</h3>
+        <p><a href="../../eduardo-sl/go-agent-skills/go-coding-standards/">go-coding-standards</a> from eduardo-sl/go-agent-skills scores 95/100, grade A, the highest in this stack. It applies Go coding standards grounded in Effective Go, Go Code Review Comments and production-proven idioms, for writing or reviewing Go.</p>
+        <p>Its SKILL.md reads like a numbered rulebook: import ordering, variable declarations (top-level and local), struct initialization, reducing nesting, grouping and ordering, line length, defer usage, enums, using the time package properly, receivers, struct tags and function shape. It closes with a verification checklist worth asking the agent to report against. Two reference files cover file organization, and receivers and tags.</p>
+        <p>The files are guidance only. There are no bundled scripts, it reads no environment variables, names no outside hosts and does not use MCP.</p>
+        <p>The description draws its borders clearly. It is not for naming (go-naming), concurrency (go-concurrency-review) or performance tuning (go-performance-review), which are separate skills from the same publisher and appear in the alternatives below. If you do not write Go, skip it.</p>
+        <p>It is MIT licensed, with fewer than 1,000 installs recorded by skills.sh, so adoption is early despite the top score.</p>
+        <p>A prompt that fits it:</p>
+        <div class="snippet"><pre><code class="language-text">Review internal/billing/*.go against Go conventions. Flag import ordering, struct initialization and receiver problems, then report against the verification checklist.</code></pre></div>
+        <h3 id="tidy-the-diff-reviewer">tidy: the diff reviewer</h3>
+        <p><a href="../../mblode/agent-skills/tidy/">tidy</a> from mblode/agent-skills (87/100, grade B) is the general reviewer and the center of the stack. It reviews a local diff, a branch diff or a PR and reports file:line findings in two tiers, confirmed and plausible. It also gates any test the diff adds or changes, and in apply mode it lands the fixes plus simplifications scoped to the diff.</p>
+        <p>The SKILL.md is organized around that choice: report or apply, mode dispatch, the workflow, the apply step, high-signal criteria, the output format and gotchas. The reference folder carries the depth: performance and security checklists, severity and structural-quality rubrics, a test gate, notes on context errors and a catalog of AI slop patterns. No bundled scripts, environment variables, outside hosts or MCP.</p>
+        <p>Its triggers include &quot;review my changes&quot;, &quot;simplify my diff&quot; and &quot;audit these tests in my PR&quot;. It also says what it hands off: pr-creator opens the PR, pr-babysitter handles CI and review threads, and test-audit prunes a whole suite. I like a reviewer that knows its boundary, because it stays on the diff.</p>
+        <p>Use report mode first; move to apply mode on a branch you can throw away. It is MIT licensed, with fewer than 1,000 installs recorded by skills.sh.</p>
+        <p>A prompt that fits it:</p>
+        <div class="snippet"><pre><code class="language-text">Review my branch against main in report mode. Confirmed findings first with file:line, then plausible ones, and gate the tests this diff adds.</code></pre></div>
+        <h3 id="security-review-the-dedicated-security-pass">security-review: the dedicated security pass</h3>
+        <p><a href="../../getsentry/skills/security-review/">security-review</a> from getsentry/skills (86/100, grade B) is a security code review for vulnerabilities: injection, XSS, authentication, authorization and cryptography, with a systematic process and confidence-based reporting. The directory marks getsentry/skills as an official publisher repository. With about 22,000 installs recorded by skills.sh, it is the most adopted security reviewer in this set.</p>
+        <p>Its SKILL.md separates research from reporting, defines confidence levels and has a &quot;Do Not Flag&quot; section covering server-controlled values that are not attacker-controlled and framework-mitigated patterns. The review process runs in six steps: detect context, load a language guide, load an infrastructure guide if one applies, research before flagging, verify exploitability, and report high-confidence findings only. Severity classification and a quick patterns reference, including an always-flag critical list, round it out.</p>
+        <p>The bundled guides cover JavaScript, Python and Docker, plus references on API security, authentication, authorization, business logic, cryptography, CSRF and data protection. There are no scripts and no network calls. Its docs name AWS_SECRET_ACCESS_KEY, but no file reads an environment variable.</p>
+        <p>Its license is CC-BY-SA-4.0, a share-alike license, which I cover in the checks section below.</p>
+        <p>A prompt that fits it:</p>
+        <div class="snippet"><pre><code class="language-text">Run a security review on the files changed in this PR. Load the JavaScript guide, verify exploitability before flagging, and report high-confidence findings only.</code></pre></div>
+        <h3 id="verification-before-completion-the-evidence-gate">verification-before-completion: the evidence gate</h3>
+        <p><a href="../../obra/superpowers/verification-before-completion/">verification-before-completion</a> from obra/superpowers (84/100, grade B) is not a reviewer. It is a rule for the agent: before claiming work is complete, fixed or passing, and before committing or creating a PR, run the verification commands and confirm their output. Its own phrase is &quot;evidence before assertions always&quot;.</p>
+        <p>That makes it the cheapest quality gain on this list. Most bad reviews I see start with an agent that said a fix worked without running the test.</p>
+        <p>The SKILL.md is short and pointed: an overview, the Iron Law, the Gate Function, common failures, a &quot;Red Flags - STOP&quot; list, rationalization prevention, key patterns and when to apply it. The whole skill is that one file. There are no scripts, environment variables, outside hosts or MCP.</p>
+        <p>It is also by far the most installed skill here: about 261,000 installs recorded by skills.sh, about 8,000 of them in the last week. It is MIT licensed. Install it even if you skip the rest, and keep it on for all work, not only review.</p>
+        <p>A prompt that fits it:</p>
+        <div class="snippet"><pre><code class="language-text">Before you tell me the null-check fix works, run the failing test and the full package suite, paste the output, and only then summarize.</code></pre></div>
+        <h3 id="unslop-review-comments-a-teammate-would-write">unslop-review: comments a teammate would write</h3>
+        <p><a href="../../mohamedabdallah-14/unslop/unslop-review/">unslop-review</a> from MohamedAbdallah-14/unslop (84/100, grade B) rewrites code review comments so they read like a human teammate wrote them. It cuts the corporate-AI throat-clearing (&quot;I noticed...&quot;, &quot;I was wondering if perhaps...&quot;, &quot;It might be worth considering...&quot;) so each comment is direct: the location, the issue and a concrete fix.</p>
+        <p>The SKILL.md covers purpose, trigger, format, rules (what to drop, what to keep, tone, and when to use full prose instead of one-liners), worked bad-to-good examples, how to write an approval, and boundaries. The auto-clarity rule allows full prose when a one-liner would hide a subtle bug. The skill is a single SKILL.md with no scripts, environment variables, outside hosts or MCP.</p>
+        <p>Two things to know before you install it. Its description says it auto-triggers when reviewing PRs, so expect it to shape review output even when you did not ask for it. And it rewrites tone, not substance: it will not find bugs tidy missed.</p>
+        <p>It is MIT licensed, with fewer than 100 installs recorded by skills.sh.</p>
+        <p>A prompt that fits it:</p>
+        <div class="snippet"><pre><code class="language-text">Rewrite these six review comments so each states the file and line, the problem and the fix in two sentences or fewer. Keep the approval note short.</code></pre></div>
+      </section>
+      <section class="panel" aria-labelledby="how-to-use-the-stack-together">
+        <h2 id="how-to-use-the-stack-together">How to use the stack together</h2>
         <ol>
-          <li>Put <strong>verification-before-completion</strong> in place before any reviewer. It requires the agent to run verification commands and confirm their output before claiming work is complete, fixed or passing, and before committing or creating a pull request. That changes the agent's default behavior, and it is the cheapest quality gain on this list.</li>
-          <li>Run <strong>tidy</strong> on the diff. Deal with the confirmed tier first. Treat the plausible tier as questions, not orders, and let tidy apply fixes only after you have read each one. It takes a local diff, a branch diff or a PR, so it fits wherever your review happens.</li>
-          <li>Run <strong>security-review</strong> as its own pass. It uses a systematic process with confidence-based reporting across injection, XSS, authentication, authorization and cryptography. Keep it separate from the general review so the security findings do not get buried under style notes.</li>
-          <li>If the code is Go, add <strong>go-coding-standards</strong>. It applies the conventions from Effective Go and Go Code Review Comments: import ordering, struct initialization, receivers and formatting rules. For other languages, skip it.</li>
-          <li>Before anything is posted, pass the comments through <strong>unslop-review</strong>. It rewrites review comments so each one states the location, the issue and a concrete fix, with the throat-clearing cut. A short, specific comment gets fixed; a paragraph gets argued with.</li>
+          <li>Enable <strong>verification-before-completion</strong> before anything else. Every later step that claims a fix works now has to show command output first.</li>
+          <li>Run <strong>tidy</strong> in report mode on the diff, the branch or the PR. Read the confirmed tier first and treat the plausible tier as questions, not orders.</li>
+          <li>If the diff is Go, run <strong>go-coding-standards</strong> on the changed files and ask for its verification checklist. Keep its style notes apart from tidy's correctness findings.</li>
+          <li>Run <strong>security-review</strong> as its own pass on the same diff, so injection or authorization findings never get buried under style notes.</li>
+          <li>Decide which findings to fix, then let <strong>tidy</strong> apply them on a disposable branch. Review its diff like a colleague's.</li>
+          <li>Have <strong>verification-before-completion</strong> run the tests and paste the output before anything is committed. No output, no commit.</li>
+          <li>Pass every comment you plan to post through <strong>unslop-review</strong>. Short comments with a location and a fix get fixed; paragraphs get argued with.</li>
+          <li>A person still merges. Use <strong>tidy</strong>'s confirmed tier and the security pass as the brief for that human review, not a replacement for it.</li>
         </ol>
       </section>
       <section class="panel" aria-labelledby="install-the-stack">
@@ -245,24 +368,62 @@ npx skills add https://github.com/mblode/agent-skills/tree/main/skills/tidy
 npx skills add https://github.com/getsentry/skills/tree/main/skills/security-review
 npx skills add https://github.com/obra/superpowers/tree/main/skills/verification-before-completion
 npx skills add https://github.com/MohamedAbdallah-14/unslop/tree/main/skills/unslop-review</code></pre></div>
-        <p>The <a href="https://skills.sh/" target="_blank" rel="noopener">skills CLI</a> works for Claude Code, Codex, Cursor and other agents, and each skill's page in the directory lists the copy-by-hand routes if you would rather not run npx.</p>
+        <p>The <a href="https://skills.sh/" target="_blank" rel="noopener">skills CLI</a> installs for Claude Code, Codex, Cursor and other agents, and each skill's page in the directory lists the copy-by-hand routes if you would rather not run npx.</p>
       </section>
-      <section class="panel" aria-labelledby="what-to-check-before-you-install">
-        <h2 id="what-to-check-before-you-install">What to check before you install</h2>
+      <section class="panel" aria-labelledby="alternatives-worth-knowing">
+        <h2 id="alternatives-worth-knowing">Alternatives worth knowing</h2>
+        <div class="table-wrap">
+          <table class="guide-table">
+            <thead><tr><th scope="col">Skill</th><th scope="col">Repository</th><th scope="col">Score</th><th scope="col">Swap in when</th></tr></thead>
+            <tbody>
+              <tr><td><a href="../../eduardo-sl/go-agent-skills/go-concurrency-review/">go-concurrency-review</a></td><td><a href="https://github.com/eduardo-sl/go-agent-skills" target="_blank" rel="noopener">eduardo-sl/go-agent-skills</a></td><td>95/100</td><td>The diff touches goroutines, channels, mutexes or context cancellation, or you are chasing a race condition or a goroutine leak.</td></tr>
+              <tr><td><a href="../../eduardo-sl/go-agent-skills/go-performance-review/">go-performance-review</a></td><td><a href="https://github.com/eduardo-sl/go-agent-skills" target="_blank" rel="noopener">eduardo-sl/go-agent-skills</a></td><td>95/100</td><td>You are reviewing a hot path and need allocations, benchmarks, pprof, GC tuning or HTTP client reuse checked.</td></tr>
+              <tr><td><a href="../../eduardo-sl/go-agent-skills/go-naming/">go-naming</a></td><td><a href="https://github.com/eduardo-sl/go-agent-skills" target="_blank" rel="noopener">eduardo-sl/go-agent-skills</a></td><td>95/100</td><td>The review keeps stalling on names: stuttering packages, Get prefixes, acronym casing or receiver names.</td></tr>
+              <tr><td><a href="../../eduardo-sl/go-agent-skills/go-ci/">go-ci</a></td><td><a href="https://github.com/eduardo-sl/go-agent-skills" target="_blank" rel="noopener">eduardo-sl/go-agent-skills</a></td><td>95/100</td><td>You want golangci-lint, coverage gates and vulnerability scanning to catch issues in CI before a reviewer sees them.</td></tr>
+              <tr><td><a href="../../eduardo-sl/go-agent-skills/#go-refactoring">go-refactoring</a></td><td><a href="https://github.com/eduardo-sl/go-agent-skills" target="_blank" rel="noopener">eduardo-sl/go-agent-skills</a></td><td>95/100</td><td>Review findings turn into a larger cleanup that needs behavior-preserving steps behind green tests.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Every alternative here is a Go skill from the same publisher, each scoped to a narrower question than go-coding-standards. Pick by the question the diff raises: concurrency, performance, naming, pipeline or refactor. None replaces tidy, which reviews any language.</p>
+      </section>
+      <section class="panel" aria-labelledby="common-mistakes">
+        <h2 id="common-mistakes">Common mistakes</h2>
         <ul>
-          <li>Licenses: go-coding-standards, tidy, verification-before-completion and unslop-review are MIT. security-review is CC-BY-SA-4.0, a share-alike license, so check what that means before you fold it into something you distribute.</li>
-          <li>Services: none of the five summaries names an outside service or API. tidy can apply fixes to your working tree, so run it on a branch you can throw away until you trust it.</li>
-          <li>Read each SKILL.md before you enable it. The directory has not security scanned any skill, and a skill that reviews code for security is still a text file you should read yourself.</li>
+          <li>Trusting &quot;tests pass&quot; without output. verification-before-completion requires the agent to run the command and show the result before it claims anything.</li>
+          <li>Treating every finding as an order. tidy separates confirmed from plausible findings for a reason, and the plausible tier deserves a second look before anyone acts on it.</li>
+          <li>Running apply mode on a shared branch. Let tidy land fixes on a disposable branch first, then read the diff it produced.</li>
+          <li>Folding security into the general review. security-review has its own process and reports high-confidence findings only, so it stays readable when it runs alone.</li>
+          <li>Posting comments that sound machine-written. unslop-review cuts the hedging so each comment names the location, the issue and the fix.</li>
+          <li>Installing several overlapping Go reviewers at once. go-coding-standards excludes naming, concurrency and performance by design, so add the specific alternative only when the diff needs it.</li>
         </ul>
+      </section>
+      <section class="panel" aria-labelledby="licenses-costs-and-checks-before-you-install">
+        <h2 id="licenses-costs-and-checks-before-you-install">Licenses, costs and checks before you install</h2>
+        <p>Four of the five picks are MIT licensed: go-coding-standards, tidy, verification-before-completion and unslop-review. security-review is CC-BY-SA-4.0, an open but share-alike license, so check what that means before you copy its guides into something you distribute. All five alternatives are MIT.</p>
+        <p>None of the picks bundles a script, calls the network, reads an environment variable or uses MCP, according to the directory's read of their files. security-review mentions AWS_SECRET_ACCESS_KEY in its documentation, but nothing in it reads that variable. The real cost is model usage: a full pass with tidy, security-review and go-coding-standards on a large diff takes time, so run it on pull requests, not every save.</p>
+        <p>The directory has not security scanned any listed skill, and a skill that reviews code for security is still a set of text files you should read yourself. The <a href="../../trust/">trust page</a> explains what the directory checks and what it does not, and the <a href="../../methodology/">methodology</a> explains how scores are built. Open each SKILL.md before you enable it, and remember that tidy's apply mode writes to your working tree.</p>
+      </section>
+      <section class="panel" aria-labelledby="related-topics-and-stacks">
+        <h2 id="related-topics-and-stacks">Related topics and stacks</h2>
+        <p>The <a href="../../topics/code-review/">Code Review</a> topic lists 50 skills, <a href="../../topics/security-auditing/">Security Auditing and Review</a> lists 108, <a href="../../topics/code-quality-linting/">Code Quality and Linting</a> lists 22 and <a href="../../topics/golang/">Go</a> lists 34. The full <a href="../../code-review-quality/">Code Review and Code Quality</a> category holds the rest.</p>
+        <p>Code review pairs naturally with the <a href="../testing-and-ci/">testing and CI stack</a>, which makes the checks tidy relies on faster and more complete, and the <a href="../security-audits/">security audits stack</a>, which goes deeper than a per-PR pass. If you are building the agents that do the reviewing, see the <a href="../agent-building/">agent-building stack</a>.</p>
       </section>
       <section class="panel faq" aria-labelledby="faq">
         <h2 id="faq">FAQ</h2>
+        <h3 id="what-is-the-best-claude-code-review-skill">What is the best Claude Code review skill?</h3>
+        <p>tidy from mblode/agent-skills, at 87/100, is the best general reviewer for Claude Code in this stack. It reviews a local diff, a branch diff or a PR, reports file:line findings in confirmed and plausible tiers, gates the tests the diff adds and can apply the fixes. go-coding-standards scores higher, at 95/100, but it only covers Go style, so it complements tidy rather than replacing it.</p>
         <h3 id="can-tidy-replace-a-human-reviewer">Can tidy replace a human reviewer?</h3>
         <p>No. It finds, tiers and can fix. A person still decides what merges, and verification-before-completion exists because an agent's claim that something passes is not the same as it passing. Use the stack to make the human review shorter and better informed, not to remove it.</p>
+        <h3 id="is-an-ai-code-review-tool-built-from-skills-free-to-use">Is an AI code review tool built from skills free to use?</h3>
+        <p>The skills themselves are free to install. Four are MIT licensed and security-review is CC-BY-SA-4.0, both open licenses. None of the five calls an outside service or reads an API key, according to the directory's read of their files. You pay only for the model usage of whichever agent runs them, such as Claude Code, Codex or Cursor.</p>
+        <h3 id="which-code-review-skill-should-i-install-first">Which code review skill should I install first?</h3>
+        <p>verification-before-completion. It has about 261,000 installs recorded by skills.sh, more than any other skill here, and it changes the agent's behavior everywhere: no claim that work is complete, fixed or passing without running the verification command and showing the output. Add tidy second for the review itself, then security-review as a separate pass.</p>
         <h3 id="do-these-skills-work-in-codex-and-cursor">Do these skills work in Codex and Cursor?</h3>
-        <p>Yes. All five use the <a href="https://agentskills.io/" target="_blank" rel="noopener">Agent Skills</a> format, so the same folder works in Claude Code, Codex, Cursor and any other agent that reads a SKILL.md. The skills CLI installs for each of them, and every skill page in the directory shows the commands.</p>
+        <p>Yes. All five use the <a href="https://agentskills.io/" target="_blank" rel="noopener">Agent Skills</a> format, so the same folder works in Claude Code, Codex, Cursor and any other agent that reads a SKILL.md. The skills CLI installs for each of them, and every skill page in the directory shows the commands and the manual copy routes.</p>
+        <h3 id="how-is-security-review-different-from-tidy-s-security-checklist">How is security-review different from tidy's security checklist?</h3>
+        <p>tidy carries a security checklist as one reference file inside a general review. security-review is a dedicated process: it loads language and infrastructure guides, researches before flagging, verifies exploitability and reports high-confidence findings only, with a &quot;Do Not Flag&quot; list to cut noise. Run tidy for everything, and security-review when the change touches input handling, authentication, authorization or cryptography.</p>
         <h3 id="why-include-a-go-only-skill-in-a-general-stack">Why include a Go-only skill in a general stack?</h3>
-        <p>Because at 95/100 it is the highest score in the set, and the other four are language-agnostic, so the stack costs nothing extra for a team that does not write Go: drop it. For a team that does, it is the most specific reviewer here. It has about 210 installs recorded by skills.sh against about 261,000 for verification-before-completion and about 22,000 for security-review, which tells you where adoption sits today.</p>
+        <p>At 95/100 it is the highest score in the set, and the other four are language-agnostic, so a team that does not write Go can simply drop it. For a team that does, it is the most specific reviewer here. It has fewer than 1,000 installs recorded by skills.sh against about 261,000 for verification-before-completion and about 22,000 for security-review, which shows where adoption sits today.</p>
       </section>
       </div>
       <aside class="panel cta-placement" aria-labelledby="cta-guide-footer-agency" data-cta-placement="guide-footer" data-cta-variant="agency">
@@ -273,15 +434,25 @@ npx skills add https://github.com/MohamedAbdallah-14/unslop/tree/main/skills/uns
       <section class="panel" aria-labelledby="more-stacks-title">
         <h2 id="more-stacks-title">More stacks</h2>
         <div class="links">
-          <a class="link-row" href="../landing-page/"><b>What is the best agent skill stack for shipping a landing page?</b><span>The skills I would install to design, build, measure and test a landing page, with scores and install commands.</span></a>
-          <a class="link-row" href="../seo-and-ai-search/"><b>Which agent skills help you rank in Google and get cited by AI?</b><span>A short, measured stack for search rankings and AI citations, built around SEO, AEO and GEO measurement and first-party WebMCP tools.</span></a>
-          <a class="link-row" href="../ui-design/"><b>Which agent skills should you stack to design a polished UI?</b><span>Reference extraction, variant exploration, build, audit and motion, in order, with scores and install commands.</span></a>
-          <a class="link-row" href="../content-and-social/"><b>What is the best agent skill stack for content and social posts?</b><span>Plan, angle, draft, polish, profile and distribution, covered by six scored skills with install commands.</span></a>
-          <a class="link-row" href="../documents-and-data/"><b>Which agent skills should you stack for documents and data?</b><span>Word documents, long reading, literature reviews, read-only SQL and data slides, with scores and a plain note on licenses.</span></a>
-          <a class="link-row" href="../research/"><b>What is the best agent skill stack for research?</b><span>Seven scored skills for company, market and paper research, from recovering past work to validating citations.</span></a>
-          <a class="link-row" href="../video-and-creative/"><b>What is the best agent skill stack for video, images and audio?</b><span>Concept, stills, video, edit, narration and review, covered by seven scored skills with the services each one needs.</span></a>
-          <a class="link-row" href="../testing-and-ci/"><b>What is the best agent skill stack for testing and faster CI?</b><span>Measure the pipeline, generate browser tests, run manual sessions and chaos test, with scores and install commands.</span></a>
-          <a class="link-row" href="../agent-building/"><b>Which agent skills should you stack to build agents and MCP servers?</b><span>Prompts and evals, MCP servers, context budgeting, delegation and deployment, covered by seven scored skills.</span></a>
+          <a class="link-row" href="../landing-page/"><b>What is the best agent skill stack for shipping a landing page?</b><span>Six scored skills that turn Claude Code, Codex or Cursor into an AI landing page builder that designs, tracks, polishes and tests the page.</span></a>
+          <a class="link-row" href="../seo-and-ai-search/"><b>Which agent skills help you rank in Google and get cited by AI?</b><span>A short, measured AI search optimization stack: SEO, AEO and GEO measurement, server-rendered metadata and first-party WebMCP tools.</span></a>
+          <a class="link-row" href="../ui-design/"><b>Which agent skills should you stack to design a polished UI?</b><span>Reference extraction, variant exploration, build, audit and motion for Claude Code design work, in order, with scores and install commands.</span></a>
+          <a class="link-row" href="../content-and-social/"><b>What is the best agent skill stack for content and social posts?</b><span>Plan, angle, draft, polish, profile and distribution for AI content creation, covered by six scored skills with install commands.</span></a>
+          <a class="link-row" href="../documents-and-data/"><b>Which agent skills should you stack for documents and data?</b><span>Word files, Excel workbooks, long PDFs, literature reviews, read-only SQL and data slides, with scores and a plain note on licenses.</span></a>
+          <a class="link-row" href="../research/"><b>What is the best agent skill stack for research?</b><span>Seven scored skills for company, market and paper research, from recovering past work and deep research to validating citations.</span></a>
+          <a class="link-row" href="../video-and-creative/"><b>What is the best agent skill stack for video, images and audio?</b><span>Concept, stills, cutouts, video, edit, narration and review, covered by seven scored skills with the services each one needs.</span></a>
+          <a class="link-row" href="../testing-and-ci/"><b>What is the best agent skill stack for testing and faster CI?</b><span>AI test automation in seven skills: measure and cut CI time, generate Playwright or Cypress tests, run manual sessions and chaos test.</span></a>
+          <a class="link-row" href="../agent-building/"><b>Which agent skills should you stack to build agents and MCP servers?</b><span>Build AI agents and MCP servers with seven scored skills: MCP servers, prompts and evals, context budgets, delegation and AWS deployment.</span></a>
+          <a class="link-row" href="../mobile-apps/"><b>What is the best Claude Code skill stack for building a mobile app?</b><span>Expo native modules, cloud simulators, update health, Remote Config flags, Apollo iOS and store listings, scored and explained.</span></a>
+          <a class="link-row" href="../presentations/"><b>Which agent skills turn Claude Code into an AI presentation maker?</b><span>The AI presentation maker stack I would install: story first, then a projected web deck, an editable PowerPoint file or Google Slides.</span></a>
+          <a class="link-row" href="../email/"><b>Which agent skills make the best AI email writer for marketing and transactional email?</b><span>The AI email marketing stack I would install: write lifecycle sequences, build React templates, send through an API and handle inbound mail.</span></a>
+          <a class="link-row" href="../motion-graphics/"><b>Which agent skills make the best AI animation generator for motion graphics?</b><span>Composition, motion rules, camera moves, animated diagrams, UI motion and Slack GIFs, covered by six scored skills with install commands.</span></a>
+          <a class="link-row" href="../security-audits/"><b>What is the best agent skill stack for Claude Code security audits?</b><span>An AI security audit in six skills: Semgrep and CodeQL scans, reachability triage, GitHub Actions reviews and a scanner for agent skills.</span></a>
+          <a class="link-row" href="../technical-docs/"><b>What is the best agent skill stack for writing technical documentation with Claude Code?</b><span>AI technical writing in six skills: Diataxis structure, agent-ready docs, OpenAPI specs, Go docs, co-written specs and release notes.</span></a>
+          <a class="link-row" href="../paid-ads/"><b>What is the best AI ad generator skill stack for Claude Code?</b><span>Meta intake and diagnosis, ad copy at scale, campaign strategy, Google search ads and placement resizing, scored and explained.</span></a>
+          <a class="link-row" href="../infographics-and-diagrams/"><b>Which agent skills make the best AI infographic and diagram generator?</b><span>Sketches, code-backed diagrams, protocol flows, scientific figures and infographics, covered by six scored skills with install commands.</span></a>
+          <a class="link-row" href="../copywriting/"><b>Which agent skills make the best AI copywriting tool for Claude Code?</b><span>The AI copywriting stack I would install: page copy with supportable claims, an editor that strips AI tells, and ad copy at volume.</span></a>
+          <a class="link-row" href="../sales-prospecting/"><b>Which agent skills make the best AI lead generation tool for sales prospecting?</b><span>ICP definition, account scoring, verified prospect lists, cold outbound, sales collateral and team LinkedIn posting, scored and explained.</span></a>
         </div>
       </section>
       <p><a href="../">All stacks</a> · <a href="../../">Browse the directory</a> · <a href="../../methodology/">How skills are scored</a></p>

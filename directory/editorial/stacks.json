@@ -1,9 +1,9 @@
 {
-  "about": "Manifest for the recommended stacks at /stacks/. Each entry names one Suede AI skill that covers the task (rendered above the article) and a Markdown body in directory/editorial/stacks/ that recommends third-party skills only; scripts/build-directory.mjs refuses a body that names Suede. The H1, byline, Reviewed date, JSON-LD and footer call to action come from this manifest and the directory's author record in editorial/pages.json. Keep em dashes out of every string.",
-  "updated": "2026-11-02",
+  "about": "Manifest for the recommended stacks at /stacks/. Each entry names one Suede AI skill that covers the task (rendered above the article) and a Markdown body in directory/editorial/stacks/ that ranks third-party skills only. One disclosed section, \"The Suede AI skill for this task\", may name the stack's Suede AI skill; scripts/build-directory.mjs refuses Suede anywhere else in the body. The H1, byline, Reviewed date, JSON-LD and footer call to action come from this manifest and the directory's author record in editorial/pages.json. Keep em dashes out of every string.",
+  "updated": "2026-11-03",
   "hub": {
     "title": "Agent Skill Stacks by Task: Jason Colapietro's Picks",
-    "meta_description": "Recommended agent skill stacks for ten tasks, from landing pages to code review and agent building, with install commands and a Suede AI pick for each.",
+    "meta_description": "Recommended agent skill stacks for twenty tasks, from presentations and email to security audits, with install commands and a Suede AI pick for each.",
     "h1": "Recommended stacks by task",
     "intro": "One job, one stack. Each article names the Suede AI skill that covers the task up front, then recommends the third-party skills to combine for it, with their scores, licenses and the exact install commands. Written by Jason Colapietro from the directory's published data.",
     "method": "A stack is chosen from the directory's snapshot: skills that match the task, fit together, carry full pages and score well on the Suede Skill Check, with install counts from skills.sh where they exist. The Suede AI skill named above each article is kept out of the ranking and out of the article body. Stacks are reviewed after each directory refresh.",
@@ -23,11 +23,13 @@
       "source": "directory/editorial/stacks/landing-page.md",
       "title": "Best Agent Skill Stack for Landing Pages (2026)",
       "h1": "What is the best agent skill stack for shipping a landing page?",
-      "meta_description": "Six scored agent skills for shipping a landing page that converts, led by auteur at 89/100, with install commands and pre-install checks.",
-      "summary": "The skills I would install to design, build, measure and test a landing page, with scores and install commands.",
+      "meta_description": "The AI landing page builder stack I would install: auteur (89/100) to build, analytics to track, impeccable to polish, plus SEO and test checks.",
+      "summary": "Six scored skills that turn Claude Code, Codex or Cursor into an AI landing page builder that designs, tracks, polishes and tests the page.",
       "keywords": [
+        "ai landing page builder",
+        "ai landing page generator",
+        "claude code landing page",
         "landing page agent skills",
-        "claude code landing page skill",
         "auteur skill",
         "conversion tracking skill",
         "best skills for landing pages"
@@ -38,7 +40,7 @@
         "pitch": "Turns landing, launch and product pages into measured conversion paths: funnel stage, friction, hero, proof, calls to action, pricing, mobile QA and pre-registered experiments."
       },
       "date_published": "2026-11-02",
-      "date_modified": "2026-11-02",
+      "date_modified": "2026-11-03",
       "data_snapshot": "2026-10-22"
     },
     {
@@ -48,14 +50,15 @@
       "source": "directory/editorial/stacks/seo-and-ai-search.md",
       "title": "Best Agent Skill Stack for SEO and AI Search (2026)",
       "h1": "Which agent skills help you rank in Google and get cited by AI?",
-      "meta_description": "Four agent skills for ranking in Google and getting cited by AI answers, led by the seo skill at 87/100, with install commands and checks.",
-      "summary": "A short, measured stack for search rankings and AI citations, built around SEO, AEO and GEO measurement and first-party WebMCP tools.",
+      "meta_description": "Four agent skills for SEO and generative engine optimization, led by seo at 87/100 for SEO, AEO and GEO measurement, with install commands.",
+      "summary": "A short, measured AI search optimization stack: SEO, AEO and GEO measurement, server-rendered metadata and first-party WebMCP tools.",
       "keywords": [
+        "ai seo tools",
+        "ai search optimization",
+        "claude code seo",
         "seo agent skills",
-        "ai search visibility skill",
-        "seo audit skill",
+        "aeo and geo skills",
         "webmcp skill",
-        "claude code seo stack",
         "get cited by ai"
       ],
       "task": "SEO and AI search visibility",
@@ -64,7 +67,7 @@
         "pitch": "Audits technical access, intent, metadata, links, schema, generative search, copy and topic architecture with A to F lanes and exact fixes."
       },
       "date_published": "2026-11-02",
-      "date_modified": "2026-11-02",
+      "date_modified": "2026-11-03",
       "data_snapshot": "2026-10-22"
     },
     {
@@ -74,11 +77,13 @@
       "source": "directory/editorial/stacks/code-review.md",
       "title": "Best Agent Skill Stack for Code Review (2026)",
       "h1": "What is the best agent skill stack for code review?",
-      "meta_description": "Five agent skills for code review, led by go-coding-standards at 95/100 and tidy at 87/100, with install commands and what to check first.",
-      "summary": "A reviewer, a security pass, a verification gate and a comment rewriter, with scores and install commands.",
+      "meta_description": "For Claude Code review, start with tidy (87/100) on diffs and PRs, then add security-review, a verification gate and Go standards (95/100).",
+      "summary": "AI code review in five skills: a diff reviewer, a security pass, a verification gate, Go standards and a comment rewriter.",
       "keywords": [
+        "claude code review",
+        "ai code review",
+        "ai code review tool",
         "code review agent skills",
-        "claude code review skill",
         "security review skill",
         "tidy skill",
         "verification before completion"
@@ -89,7 +94,7 @@
         "pitch": "Reviews a pull request, diff or branch into evidence-backed P0 to P3 findings, fix paths and an A to F ship grade across seven review lanes."
       },
       "date_published": "2026-11-02",
-      "date_modified": "2026-11-02",
+      "date_modified": "2026-11-03",
       "data_snapshot": "2026-10-22"
     },
     {
@@ -99,12 +104,14 @@
       "source": "directory/editorial/stacks/ui-design.md",
       "title": "Best Agent Skill Stack for UI Design (2026)",
       "h1": "Which agent skills should you stack to design a polished UI?",
-      "meta_description": "Six agent skills for designing and building a polished interface, led by auteur at 89/100 and impeccable at 86/100, with install commands.",
-      "summary": "Reference extraction, variant exploration, build, audit and motion, in order, with scores and install commands.",
+      "meta_description": "The best Claude Code design stack for AI UI design: impeccable at 86/100 to audit, auteur at 89/100 to build, plus four more skills with install commands.",
+      "summary": "Reference extraction, variant exploration, build, audit and motion for Claude Code design work, in order, with scores and install commands.",
       "keywords": [
-        "ui design agent skills",
+        "claude code design",
+        "ai ui design",
+        "ai ui generator",
+        "claude code frontend",
         "impeccable skill",
-        "frontend design skill claude code",
         "ui animation skill",
         "design system extraction skill"
       ],
@@ -114,7 +121,7 @@
         "pitch": "Reviews a UI diff or a whole flow, designs hierarchy, tokens, color, type and accessibility, and verifies the visual build before it ships."
       },
       "date_published": "2026-11-02",
-      "date_modified": "2026-11-02",
+      "date_modified": "2026-11-03",
       "data_snapshot": "2026-10-22"
     },
     {
@@ -124,14 +131,16 @@
       "source": "directory/editorial/stacks/content-and-social.md",
       "title": "Best Agent Skill Stack for Content and Social (2026)",
       "h1": "What is the best agent skill stack for content and social posts?",
-      "meta_description": "Six agent skills for marketing content and social posts, led by linkedin-profile-optimizer at 94/100 and ghostwriter at 87/100.",
-      "summary": "Plan, angle, draft, polish, profile and distribution, covered by six scored skills with install commands.",
+      "meta_description": "An AI content creation stack for agents: linkedin-profile-optimizer at 94/100, ghostwriter at 87/100 and four more skills, with install commands.",
+      "summary": "Plan, angle, draft, polish, profile and distribution for AI content creation, covered by six scored skills with install commands.",
       "keywords": [
-        "content writing agent skills",
-        "social media skill claude code",
+        "ai content creation",
+        "ai social media content generator",
+        "ai linkedin post generator",
         "ghostwriter skill",
         "linkedin profile skill",
-        "line editing skill"
+        "line editing skill",
+        "content strategy skill"
       ],
       "task": "content and social posts",
       "suede": {
@@ -139,7 +148,7 @@
         "pitch": "Writes and sharpens conversion copy and public explainers with voice frameworks, labeled variants, answer-first SEO and a 70-point ship score."
       },
       "date_published": "2026-11-02",
-      "date_modified": "2026-11-02",
+      "date_modified": "2026-11-03",
       "data_snapshot": "2026-10-22"
     },
     {
@@ -149,15 +158,16 @@
       "source": "directory/editorial/stacks/documents-and-data.md",
       "title": "Best Agent Skill Stack for Documents and Data (2026)",
       "h1": "Which agent skills should you stack for documents and data?",
-      "meta_description": "Six agent skills for documents and data work, led by docx at 91/100 and deep-reader at 90/100, with install commands and license notes.",
-      "summary": "Word documents, long reading, literature reviews, read-only SQL and data slides, with scores and a plain note on licenses.",
+      "meta_description": "Seven agent skills for Word, Excel, long PDFs and SQL in Claude, led by docx at 91/100, with xlsx at 85/100 for spreadsheets.",
+      "summary": "Word files, Excel workbooks, long PDFs, literature reviews, read-only SQL and data slides, with scores and a plain note on licenses.",
       "keywords": [
-        "document agent skills",
+        "claude excel",
+        "ai spreadsheet",
+        "claude pdf",
+        "xlsx skill",
         "docx skill",
-        "read long pdf skill",
-        "sql query agent skill",
-        "literature review skill",
-        "data skills claude code"
+        "document agent skills",
+        "sql query agent skill"
       ],
       "task": "documents and data",
       "suede": {
@@ -165,7 +175,7 @@
         "pitch": "Covers the measurement side of the job: GA4, Tag Manager, key events, consent, UTMs and search and AI channels, with readback proof."
       },
       "date_published": "2026-11-02",
-      "date_modified": "2026-11-02",
+      "date_modified": "2026-11-03",
       "data_snapshot": "2026-10-22"
     },
     {
@@ -175,15 +185,16 @@
       "source": "directory/editorial/stacks/research.md",
       "title": "Best Agent Skill Stack for Research (2026)",
       "h1": "What is the best agent skill stack for research?",
-      "meta_description": "Seven agent skills for researching a market, a company or a paper, led by chat-history at 91/100 and deep-reader at 90/100.",
-      "summary": "Seven scored skills for company, market and paper research, from recovering past work to validating citations.",
+      "meta_description": "Seven skills that make Claude Code an AI research assistant, led by chat-history at 91/100 and deep-reader at 90/100.",
+      "summary": "Seven scored skills for company, market and paper research, from recovering past work and deep research to validating citations.",
       "keywords": [
+        "ai research assistant",
+        "claude research",
+        "ai deep research",
         "research agent skills",
         "company research skill",
-        "market research agent",
         "citation management skill",
-        "deep reader skill",
-        "chat history skill"
+        "deep reader skill"
       ],
       "task": "research",
       "suede": {
@@ -191,7 +202,7 @@
         "pitch": "Synthesizes interviews, surveys, tickets, reviews and forums into traceable quotes, jobs to be done, personas and buyer questions."
       },
       "date_published": "2026-11-02",
-      "date_modified": "2026-11-02",
+      "date_modified": "2026-11-03",
       "data_snapshot": "2026-10-22"
     },
     {
@@ -201,15 +212,16 @@
       "source": "directory/editorial/stacks/video-and-creative.md",
       "title": "Best Agent Skill Stack for Video and Creative (2026)",
       "h1": "What is the best agent skill stack for video, images and audio?",
-      "meta_description": "Seven agent skills for producing video, images and audio, led by the image skill at 88/100 and vox-director at 85/100, with install commands.",
-      "summary": "Concept, stills, video, edit, narration and review, covered by seven scored skills with the services each one needs.",
+      "meta_description": "An AI image generator, video generator and video editor stack for agents: the image skill at 88/100, vox-director at 85/100 and capcut-edit at 85/100.",
+      "summary": "Concept, stills, cutouts, video, edit, narration and review, covered by seven scored skills with the services each one needs.",
       "keywords": [
+        "ai image generator",
+        "ai video generator",
+        "ai video editor",
         "video agent skills",
-        "ai image generation skill",
         "capcut skill",
         "text to speech skill",
-        "creative director skill",
-        "video editing agent"
+        "creative director skill"
       ],
       "task": "video, images and audio",
       "suede": {
@@ -217,7 +229,7 @@
         "pitch": "Plans or produces marketing video: scripts, storyboards, shot and asset lists, consent-aware AI choices, rendering, pacing and export specs."
       },
       "date_published": "2026-11-02",
-      "date_modified": "2026-11-02",
+      "date_modified": "2026-11-03",
       "data_snapshot": "2026-10-22"
     },
     {
@@ -227,15 +239,16 @@
       "source": "directory/editorial/stacks/testing-and-ci.md",
       "title": "Best Agent Skill Stack for Testing and CI (2026)",
       "h1": "What is the best agent skill stack for testing and faster CI?",
-      "meta_description": "Seven agent skills for testing an app and keeping CI fast, led by go-ci at 95/100 and ci-speedup at 91/100, with install commands.",
-      "summary": "Measure the pipeline, generate browser tests, run manual sessions and chaos test, with scores and install commands.",
+      "meta_description": "AI testing tools for Claude Code: ci-speedup (91/100) cuts CI time, manual-tester (92/100) runs manual sessions, plus Playwright, Cypress and go-ci.",
+      "summary": "AI test automation in seven skills: measure and cut CI time, generate Playwright or Cypress tests, run manual sessions and chaos test.",
       "keywords": [
+        "ai testing tools",
+        "ai test automation",
+        "claude code playwright",
         "testing agent skills",
         "ci speedup skill",
-        "playwright skill",
         "cypress skill claude code",
-        "manual testing skill",
-        "chaos testing skill"
+        "manual testing skill"
       ],
       "task": "testing and CI",
       "suede": {
@@ -243,7 +256,7 @@
         "pitch": "Sets up branch protection, path-aware CI, runtime and lockfile pinning and one aggregator gate from the real repository."
       },
       "date_published": "2026-11-02",
-      "date_modified": "2026-11-02",
+      "date_modified": "2026-11-03",
       "data_snapshot": "2026-10-22"
     },
     {
@@ -253,15 +266,16 @@
       "source": "directory/editorial/stacks/agent-building.md",
       "title": "Best Agent Skill Stack for Building Agents (2026)",
       "h1": "Which agent skills should you stack to build agents and MCP servers?",
-      "meta_description": "Seven agent skills for building agents, MCP servers and multi-agent workflows, led by mcp-builder at 89/100, with install commands.",
-      "summary": "Prompts and evals, MCP servers, context budgeting, delegation and deployment, covered by seven scored skills.",
+      "meta_description": "To build an MCP server, start with mcp-builder (89/100), then add skills for agent prompts and evals, context budgets, delegation and deployment.",
+      "summary": "Build AI agents and MCP servers with seven scored skills: MCP servers, prompts and evals, context budgets, delegation and AWS deployment.",
       "keywords": [
-        "agent building skills",
+        "mcp server",
+        "claude agent sdk",
+        "ai agent builder",
+        "claude code mcp",
+        "build ai agent",
         "mcp builder skill",
-        "multi-agent workflow skills",
-        "context engineering skill",
-        "prompt optimizer skill",
-        "bedrock agentcore skill"
+        "context engineering skill"
       ],
       "task": "building agents and MCP servers",
       "suede": {
@@ -269,7 +283,277 @@
         "pitch": "Splits work across agents in lanes with exclusive file ownership, collision checks, worktrees, rollback plans and evidence handoffs."
       },
       "date_published": "2026-11-02",
-      "date_modified": "2026-11-02",
+      "date_modified": "2026-11-03",
+      "data_snapshot": "2026-10-22"
+    },
+    {
+      "id": "mobile-apps",
+      "status": "published",
+      "priority": 11,
+      "source": "directory/editorial/stacks/mobile-apps.md",
+      "title": "Best Claude Code Skills for Mobile Apps (2026)",
+      "h1": "What is the best Claude Code skill stack for building a mobile app?",
+      "meta_description": "Six skills for building a mobile app with Claude Code, from expo-module at 87/100 to aso at 90/100 for the App Store listing.",
+      "summary": "Expo native modules, cloud simulators, update health, Remote Config flags, Apollo iOS and store listings, scored and explained.",
+      "keywords": [
+        "ai app builder",
+        "claude code mobile app",
+        "claude code ios app",
+        "claude code react native",
+        "expo agent skills",
+        "eas simulator skill",
+        "app store optimization skill"
+      ],
+      "task": "building mobile apps with Expo, iOS and Android",
+      "suede": {
+        "skill": "suede-aso",
+        "pitch": "Improves App Store and Google Play listings: keyword, title, subtitle, description and screenshot fields built from app and console evidence."
+      },
+      "date_published": "2026-11-03",
+      "date_modified": "2026-11-03",
+      "data_snapshot": "2026-10-22"
+    },
+    {
+      "id": "presentations",
+      "status": "published",
+      "priority": 12,
+      "source": "directory/editorial/stacks/presentations.md",
+      "title": "AI Presentation Maker Skills for Claude Code (2026)",
+      "h1": "Which agent skills turn Claude Code into an AI presentation maker?",
+      "meta_description": "Six scored skills for building decks with AI: slidewright (90/100) for projected talks, pptx for editable PowerPoint, plus story and data skills.",
+      "summary": "The AI presentation maker stack I would install: story first, then a projected web deck, an editable PowerPoint file or Google Slides.",
+      "keywords": [
+        "ai presentation maker",
+        "ai slide generator",
+        "claude powerpoint",
+        "claude code slides",
+        "pptx skill",
+        "slidewright skill",
+        "presentation agent skills"
+      ],
+      "task": "building presentations and slide decks",
+      "suede": {
+        "skill": "suede-sales-enablement",
+        "pitch": "Builds rep-ready pitch decks, one-pagers, objection libraries, demo scripts and battle cards, with a claim-source table behind every claim."
+      },
+      "date_published": "2026-11-03",
+      "date_modified": "2026-11-03",
+      "data_snapshot": "2026-10-22"
+    },
+    {
+      "id": "email",
+      "status": "published",
+      "priority": 13,
+      "source": "directory/editorial/stacks/email.md",
+      "title": "AI Email Writer and Sender Skills for Claude Code (2026)",
+      "h1": "Which agent skills make the best AI email writer for marketing and transactional email?",
+      "meta_description": "Six scored email skills, led by emails at 88/100 for lifecycle sequences, plus resend and react-email to build, send and receive email.",
+      "summary": "The AI email marketing stack I would install: write lifecycle sequences, build React templates, send through an API and handle inbound mail.",
+      "keywords": [
+        "ai email writer",
+        "ai email marketing",
+        "claude email",
+        "email agent skills",
+        "resend skill",
+        "react email skill",
+        "transactional email skill"
+      ],
+      "task": "email marketing and transactional email",
+      "suede": {
+        "skill": "suede-emails",
+        "pitch": "Designs welcome, nurture, onboarding, win-back and trigger-based lifecycle email flows with entry and exit rules, timing, exact copy and a measurement plan."
+      },
+      "date_published": "2026-11-03",
+      "date_modified": "2026-11-03",
+      "data_snapshot": "2026-10-22"
+    },
+    {
+      "id": "motion-graphics",
+      "status": "published",
+      "priority": 14,
+      "source": "directory/editorial/stacks/motion-graphics.md",
+      "title": "Best AI Animation and Motion Graphics Skills (2026)",
+      "h1": "Which agent skills make the best AI animation generator for motion graphics?",
+      "meta_description": "An AI animation generator stack for motion graphics: HyperFrames skills led by hyperframes-keyframes at 84/100, plus ui-animation at 86/100 for UI motion.",
+      "summary": "Composition, motion rules, camera moves, animated diagrams, UI motion and Slack GIFs, covered by six scored skills with install commands.",
+      "keywords": [
+        "ai animation generator",
+        "ai motion graphics",
+        "motion graphics ai",
+        "claude code animation",
+        "hyperframes skill",
+        "ui animation skill",
+        "animated diagram skill"
+      ],
+      "task": "animation and motion graphics",
+      "suede": {
+        "skill": "suede-video",
+        "pitch": "Plans and produces marketing video: scripts, storyboards, shot and asset lists, programmatic rendering, edit decisions, pacing, export specs and video-search metadata."
+      },
+      "date_published": "2026-11-03",
+      "date_modified": "2026-11-03",
+      "data_snapshot": "2026-10-22"
+    },
+    {
+      "id": "security-audits",
+      "status": "published",
+      "priority": 15,
+      "source": "directory/editorial/stacks/security-audits.md",
+      "title": "Best Claude Code Security Skills for Audits (2026)",
+      "h1": "What is the best agent skill stack for Claude Code security audits?",
+      "meta_description": "For Claude Code security audits, start with semgrep (92/100) and codeql (92/100), then triage findings and audit GitHub Actions workflows.",
+      "summary": "An AI security audit in six skills: Semgrep and CodeQL scans, reachability triage, GitHub Actions reviews and a scanner for agent skills.",
+      "keywords": [
+        "claude code security",
+        "ai security audit",
+        "ai code security scanner",
+        "semgrep skill",
+        "codeql skill",
+        "github actions security review",
+        "agent skill scanner"
+      ],
+      "task": "security audits of code and CI",
+      "suede": {
+        "skill": "suede-code",
+        "pitch": "Reviews a pull request, diff or branch and returns evidence-backed P0 to P3 findings with fix paths and an A to F ship grade, with security checks among its review lanes."
+      },
+      "date_published": "2026-11-03",
+      "date_modified": "2026-11-03",
+      "data_snapshot": "2026-10-22"
+    },
+    {
+      "id": "technical-docs",
+      "status": "published",
+      "priority": 16,
+      "source": "directory/editorial/stacks/technical-docs.md",
+      "title": "Best Claude Code Skills for Technical Documentation (2026)",
+      "h1": "What is the best agent skill stack for writing technical documentation with Claude Code?",
+      "meta_description": "For Claude Code documentation, start with diataxis-writer (87/100) and agent-ready (91/100), then add OpenAPI, Go docs and decision-doc skills.",
+      "summary": "AI technical writing in six skills: Diataxis structure, agent-ready docs, OpenAPI specs, Go docs, co-written specs and release notes.",
+      "keywords": [
+        "claude code documentation",
+        "ai documentation generator",
+        "ai technical writing",
+        "diataxis writer skill",
+        "openapi spec generator skill",
+        "llms.txt agent readiness",
+        "technical documentation agent skills"
+      ],
+      "task": "writing technical documentation",
+      "suede": {
+        "skill": "suede-launch-packaging",
+        "pitch": "Prepares the README, release notes, docs, proof links and handoff copy for software, skills and MCP servers, then verifies a clean install."
+      },
+      "date_published": "2026-11-03",
+      "date_modified": "2026-11-03",
+      "data_snapshot": "2026-10-22"
+    },
+    {
+      "id": "paid-ads",
+      "status": "published",
+      "priority": 17,
+      "source": "directory/editorial/stacks/paid-ads.md",
+      "title": "Best AI Ad Generator Skills for Claude Code (2026)",
+      "h1": "What is the best AI ad generator skill stack for Claude Code?",
+      "meta_description": "Six agent skills for paid ads, led by ad-resize at 86/100, with ad-creative and ads for copy and strategy on Meta and Google.",
+      "summary": "Meta intake and diagnosis, ad copy at scale, campaign strategy, Google search ads and placement resizing, scored and explained.",
+      "keywords": [
+        "ai ad generator",
+        "ai facebook ads",
+        "ai google ads",
+        "ad creative skill",
+        "meta ads analyzer",
+        "paid ads agent skills",
+        "google ads copy skill"
+      ],
+      "task": "running paid ads",
+      "suede": {
+        "skill": "suede-ads",
+        "pitch": "Plans paid acquisition: channel choice, campaign structure, budget pacing, retargeting and kill-or-scale rules from verified unit economics and performance."
+      },
+      "date_published": "2026-11-03",
+      "date_modified": "2026-11-03",
+      "data_snapshot": "2026-10-22"
+    },
+    {
+      "id": "infographics-and-diagrams",
+      "status": "published",
+      "priority": 18,
+      "source": "directory/editorial/stacks/infographics-and-diagrams.md",
+      "title": "Best AI Infographic and Diagram Skills (2026)",
+      "h1": "Which agent skills make the best AI infographic and diagram generator?",
+      "meta_description": "An AI infographic and diagram generator stack: archify at 87/100 for diagrams, infographics at 89/100 for data visuals, plus four more scored skills.",
+      "summary": "Sketches, code-backed diagrams, protocol flows, scientific figures and infographics, covered by six scored skills with install commands.",
+      "keywords": [
+        "ai infographic generator",
+        "ai diagram generator",
+        "claude diagram",
+        "archify skill",
+        "mermaid diagram skill",
+        "excalidraw diagram skill",
+        "scientific figure skill"
+      ],
+      "task": "making infographics and diagrams",
+      "suede": {
+        "skill": "suede-image",
+        "pitch": "Produces Open Graph images, marketing heroes, banners, social graphics and mockups, choosing generation, editing, templates or real screenshots, with export sizes and compression."
+      },
+      "date_published": "2026-11-03",
+      "date_modified": "2026-11-03",
+      "data_snapshot": "2026-10-22"
+    },
+    {
+      "id": "copywriting",
+      "status": "published",
+      "priority": 19,
+      "source": "directory/editorial/stacks/copywriting.md",
+      "title": "Best AI Copywriting Skills for Claude Code (2026)",
+      "h1": "Which agent skills make the best AI copywriting tool for Claude Code?",
+      "meta_description": "Six scored AI copywriting skills, led by copy-editing at 88/100 and copywriting at 86/100, for page copy, edits and ads without AI tells.",
+      "summary": "The AI copywriting stack I would install: page copy with supportable claims, an editor that strips AI tells, and ad copy at volume.",
+      "keywords": [
+        "ai copywriting",
+        "ai copywriting tool",
+        "claude copywriting",
+        "copywriting agent skills",
+        "copy editing skill",
+        "ad copy skill",
+        "remove ai tells from copy"
+      ],
+      "task": "copywriting",
+      "suede": {
+        "skill": "suede-copy",
+        "pitch": "Writes and sharpens conversion copy, public explainers and agent-facing docs with voice, frameworks, labeled variants, answer-first SEO and a 70-point ship score."
+      },
+      "date_published": "2026-11-03",
+      "date_modified": "2026-11-03",
+      "data_snapshot": "2026-10-22"
+    },
+    {
+      "id": "sales-prospecting",
+      "status": "published",
+      "priority": 20,
+      "source": "directory/editorial/stacks/sales-prospecting.md",
+      "title": "Best AI Lead Generation Skills for Sales Prospecting",
+      "h1": "Which agent skills make the best AI lead generation tool for sales prospecting?",
+      "meta_description": "Six agent skills for AI sales prospecting, led by linkedin-employee-advocacy at 94/100 and cold-email at 88/100.",
+      "summary": "ICP definition, account scoring, verified prospect lists, cold outbound, sales collateral and team LinkedIn posting, scored and explained.",
+      "keywords": [
+        "ai lead generation tool",
+        "ai sales prospecting",
+        "cold email skill",
+        "prospecting agent skill",
+        "icp identification skill",
+        "company research skill",
+        "sales enablement skill"
+      ],
+      "task": "sales prospecting and outbound",
+      "suede": {
+        "skill": "suede-prospecting",
+        "pitch": "Builds a source-backed, scored prospect list: ICP definition, lead enrichment, gap plays and warm-path network mining, with disqualification evidence."
+      },
+      "date_published": "2026-11-03",
+      "date_modified": "2026-11-03",
       "data_snapshot": "2026-10-22"
     }
   ]
