@@ -18,7 +18,7 @@ import { createHash } from "node:crypto";
 import { fileURLToPath } from "node:url";
 import { SCORE_METHOD, qualityScore, scorePoints, letterGrade, listed, qualifies, badgePair, badgeMarkdown, badgeHtml, shieldSvg, listingTarget, promotionActive } from "./directory/badges.mjs";
 import { featuredProjectsHtml, featuredProjects, directoryMembers, directoryMembersHtml, newestPublishedFirst, isPending, pendingStatusHtml } from "./directory/featured.mjs";
-import { parseGuide, renderGuideBody } from "./directory/editorial.mjs";
+import { parseGuide, renderGuideBody, headingId } from "./directory/editorial.mjs";
 import { fitSentences } from "./directory/metadata.mjs";
 import { loadTaskConfig, planTasks, planAlternatives, isFirstParty, withArticle, TASK_GATE } from "./directory/task-pages.mjs";
 import { loadTopicConfig, planTopics, topicsBySkill, similarByTopic, TOPIC_GATE } from "./directory/topics.mjs";
@@ -562,6 +562,7 @@ const kindEntries = (k) => k.sections.flatMap((sec) => sec.entries);
 // skills only, and the build refuses a body that names a Suede skill.
 const STACKS_FILE = path.join(repoRoot, "directory", "editorial", "stacks.json");
 const STACKS_DOC = fs.existsSync(STACKS_FILE) ? JSON.parse(fs.readFileSync(STACKS_FILE, "utf8")) : null;
+const STACK_SUEDE_HEADING = "## The Suede AI skill built for this job";
 const STACKS = (() => {
   if (!STACKS_DOC) return [];
   const out = [];
@@ -574,9 +575,17 @@ const STACKS = (() => {
     if (!data.skills.some((x) => isFirstParty(x) && x.name === st.suede.skill)) throw new Error(`stacks.json: ${st.id} names a Suede skill the directory does not list: ${st.suede.skill}`);
     const markdown = fs.readFileSync(path.join(repoRoot, st.source), "utf8");
     if (/—/.test(markdown)) throw new Error(`${st.source}: em dash`);
-    // The byline and the directory's own link targets may name Suede; the prose may not.
-    const body = markdown.split("\n").slice(1).join("\n").replace(/^\s*By \[Jason Colapietro\][^\n]*\n/m, "").replace(/\]\(https?:[^)\s]+\)/g, "]()");
-    if (/suede/i.test(body)) throw new Error(`${st.source}: the article body must not name Suede or a Suede skill`);
+    // The byline, the directory's own link targets and one disclosed section,
+    // "The Suede AI skill built for this job", may name Suede; the rest of the prose,
+    // the ranking table and the FAQ may not. That section must name this
+    // stack's own Suede pick.
+    const lines = markdown.split("\n");
+    const sAt = lines.indexOf(STACK_SUEDE_HEADING);
+    const sEnd = sAt < 0 ? -1 : lines.findIndex((l, k) => k > sAt && l.startsWith("## "));
+    if (sAt >= 0 && !lines.slice(sAt, sEnd < 0 ? undefined : sEnd).join("\n").includes(`[${st.suede.skill}](`)) throw new Error(`${st.source}: the Suede AI section must link ${st.suede.skill}`);
+    const outside = sAt < 0 ? lines : [...lines.slice(0, sAt), ...(sEnd < 0 ? [] : lines.slice(sEnd))];
+    const body = outside.slice(1).join("\n").replace(/^\s*By \[Jason Colapietro\][^\n]*\n/m, "").replace(/\]\(https?:[^)\s]+\)/g, "]()");
+    if (/suede/i.test(body)) throw new Error(`${st.source}: outside its Suede AI section, the article must not name Suede or a Suede skill`);
     out.push({ ...st, markdown });
   }
   return out.sort((a, b) => a.priority - b.priority || a.id.localeCompare(b.id));
@@ -3939,12 +3948,17 @@ function suedePick(here, st) {
     own ? `<a href="${listingHref(here, own)}">Directory listing${own.score ? ` (${own.score}/100)` : ""}</a>` : "",
     `<a href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/${esc(st.suede.skill)}" target="_blank" rel="noopener">Source</a>`,
   ].filter(Boolean);
+  // Start-here box: the Suede AI skill built for the task, its install line and
+  // a jump to the article section that makes the case. The ranking below it
+  // stays third-party only.
+  const inArticle = st.markdown.split("\n").includes(STACK_SUEDE_HEADING) ? `<a href="#${headingId(STACK_SUEDE_HEADING.slice(3))}">Why I built it</a>` : "";
   return `      <aside class="suede-first" aria-label="Suede AI's skill for this task">
         <img src="${rel(here, "assets/")}suede-ai-logo-transparent.webp" alt="" width="40" height="40">
-        <p class="kicker">The Suede AI skill that covers this task</p>
+        <p class="kicker">Start here: built by Suede AI for ${esc(st.task)}</p>
         <b>${esc(st.suede.skill)}</b>
-        <p>${esc(st.suede.pitch)} The article below leaves Suede AI's own skills out and recommends third-party skills only.</p>
-        <p class="suede-first-links">${links.join("")}</p>
+        <p>${esc(st.suede.pitch)}</p>
+        <code class="suede-first-install">npx skills add https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/${esc(st.suede.skill)}</code>
+        <p class="suede-first-links">${[inArticle, ...links].filter(Boolean).join("")}</p>
       </aside>`;
 }
 
@@ -3977,9 +3991,27 @@ ${servicesCta("browse-hub", null, here)}`;
   }));
 }
 
+// The Q&A under an article's "FAQ" heading, as plain-text pairs for its
+// FAQPage node: each H3 question with the paragraphs and list items under it,
+// Markdown stripped, so the structured answer reads as the visible one does.
+const mdPlain = (t) => String(t).replace(/\[([^\]]+)\]\([^)\s]+\)/g, "$1").replace(/\*\*(.+?)\*\*/g, "$1").replace(/\*([^*]+)\*/g, "$1").replace(/`([^`]+)`/g, "$1");
+function faqFromBlocks(blocks) {
+  const start = blocks.findIndex((b) => b.type === "h2" && /^FAQ$|^Questions$/i.test(b.text));
+  if (start < 0) return [];
+  const out = [];
+  for (const b of blocks.slice(start + 1)) {
+    if (b.type === "h2") break;
+    if (b.type === "h3") out.push([mdPlain(b.text), []]);
+    else if (out.length && b.type === "p") out.at(-1)[1].push(mdPlain(b.text));
+    else if (out.length && (b.type === "ul" || b.type === "ol")) out.at(-1)[1].push(b.items.map(mdPlain).join(" "));
+  }
+  return out.filter(([, a]) => a.length).map(([q, a]) => [q, a.join(" ")]);
+}
+
 function renderStack(st) {
   const here = stackPath(st);
   const { blocks } = parseGuide(st.markdown);
+  const faq = faqFromBlocks(blocks);
   const { html, tableLinks } = renderGuideBody(blocks, (t) => guideHref(here, t));
   const bc = crumbs(here, [["directory/", "Directory"], [STACKS_PATH, "Stacks"], [null, st.h1]]);
   const others = STACKS.filter((o) => o.id !== st.id);
@@ -4003,7 +4035,14 @@ ${others.map((o) => `          <a class="link-row" href="${rel(here, stackPath(o
       datePublished: st.date_published, dateModified: st.date_modified, inLanguage: "en", image: OG_IMAGE, keywords: (st.keywords || []).join(", "), author: PERSON, publisher: ORGANIZATION_PUBLISHER, isPartOf: DIRECTORY_REF },
     bc.ld,
   ];
-  if (tableLinks.length) jsonld.push({ "@context": "https://schema.org", "@type": "ItemList", "@id": `${url(here)}#picks`, name: st.h1, numberOfItems: tableLinks.length, itemListElement: tableLinks.map((t, i) => ({ "@type": "ListItem", position: i + 1, name: t.name, url: t.target })) });
+  // The picks are the rows of the table under "The stack"; the alternatives
+  // table further down is not part of the list.
+  const stackAt = blocks.findIndex((b) => b.type === "h2" && b.text === "The stack");
+  const nextH2 = blocks.findIndex((b, k) => k > stackAt && b.type === "h2");
+  const pickTable = stackAt < 0 ? null : blocks.slice(stackAt + 1, nextH2 < 0 ? undefined : nextH2).find((b) => b.type === "table");
+  const picks = pickTable ? pickTable.rows.map((r) => r.map((c) => c.match(/\[([^\]]+)\]\(([^)\s]+)\)/)).find(Boolean)).filter(Boolean).map((m) => ({ name: m[1], target: m[2] })) : tableLinks;
+  if (picks.length) jsonld.push({ "@context": "https://schema.org", "@type": "ItemList", "@id": `${url(here)}#picks`, name: st.h1, numberOfItems: picks.length, itemListElement: picks.map((t, i) => ({ "@type": "ListItem", position: i + 1, name: t.name, url: t.target })) });
+  if (faq.length) jsonld.push({ "@context": "https://schema.org", "@type": "FAQPage", "@id": `${url(here)}#faq`, mainEntity: faq.map(([q, a]) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } })) });
   files.set(`${here}index.html`, page({
     here, title: st.title, description: st.meta_description, keywords: setKeywords(here, [`${st.task} skill stack`, ...(st.keywords || [])]), ogType: "article",
     h1Html: `      <div class="eyebrow">Stack &middot; ${esc(st.task)}</div>

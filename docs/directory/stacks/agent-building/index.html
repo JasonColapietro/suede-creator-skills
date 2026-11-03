@@ -4,15 +4,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Best Agent Skill Stack for Building Agents (2026)</title>
-    <meta name="description" content="Seven agent skills for building agents, MCP servers and multi-agent workflows, led by mcp-builder at 89/100, with install commands.">
-    <meta name="keywords" content="building agents and MCP servers skill stack, agent building skills, mcp builder skill, multi-agent workflow skills, context engineering skill, prompt optimizer skill, bedrock agentcore skill">
+    <meta name="description" content="To build an MCP server, start with mcp-builder (89/100), then add skills for agent prompts and evals, context budgets, delegation and deployment.">
+    <meta name="keywords" content="building agents and MCP servers skill stack, mcp server, claude agent sdk, ai agent builder, claude code mcp, build ai agent, mcp builder skill, context engineering skill">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
     <link rel="canonical" href="https://suedeai.directory/stacks/agent-building/">
     <link rel="icon" href="../../../assets/favicon-64.png" type="image/png">
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="Suede AI Skills Directory">
     <meta property="og:title" content="Best Agent Skill Stack for Building Agents (2026)">
-    <meta property="og:description" content="Seven agent skills for building agents, MCP servers and multi-agent workflows, led by mcp-builder at 89/100, with install commands.">
+    <meta property="og:description" content="To build an MCP server, start with mcp-builder (89/100), then add skills for agent prompts and evals, context budgets, delegation and deployment.">
     <meta property="og:url" content="https://skills.suedeai.ai/directory/stacks/agent-building/">
     <meta property="og:image" content="https://skills.suedeai.ai/assets/social/directory-card-v2.png">
     <meta property="og:image:width" content="1200">
@@ -20,7 +20,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@AISUEDE">
     <meta name="twitter:title" content="Best Agent Skill Stack for Building Agents (2026)">
-    <meta name="twitter:description" content="Seven agent skills for building agents, MCP servers and multi-agent workflows, led by mcp-builder at 89/100, with install commands.">
+    <meta name="twitter:description" content="To build an MCP server, start with mcp-builder (89/100), then add skills for agent prompts and evals, context budgets, delegation and deployment.">
     <meta name="twitter:image" content="https://skills.suedeai.ai/assets/social/directory-card-v2.png">
     <script type="application/ld+json">
       {
@@ -29,7 +29,7 @@
         "@id": "https://skills.suedeai.ai/directory/stacks/agent-building/#article",
         "headline": "Which agent skills should you stack to build agents and MCP servers?",
         "name": "Best Agent Skill Stack for Building Agents (2026)",
-        "description": "Seven agent skills for building agents, MCP servers and multi-agent workflows, led by mcp-builder at 89/100, with install commands.",
+        "description": "To build an MCP server, start with mcp-builder (89/100), then add skills for agent prompts and evals, context budgets, delegation and deployment.",
         "url": "https://skills.suedeai.ai/directory/stacks/agent-building/",
         "mainEntityOfPage": {
           "@type": "WebPage",
@@ -39,10 +39,10 @@
           }
         },
         "datePublished": "2026-11-02",
-        "dateModified": "2026-11-02",
+        "dateModified": "2026-11-03",
         "inLanguage": "en",
         "image": "https://skills.suedeai.ai/assets/social/directory-card-v2.png",
-        "keywords": "agent building skills, mcp builder skill, multi-agent workflow skills, context engineering skill, prompt optimizer skill, bedrock agentcore skill",
+        "keywords": "mcp server, claude agent sdk, ai agent builder, claude code mcp, build ai agent, mcp builder skill, context engineering skill",
         "author": {
           "@type": "Person",
           "@id": "https://suedeai.ai/founder#person",
@@ -159,6 +159,63 @@
         ]
       }
     </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "@id": "https://skills.suedeai.ai/directory/stacks/agent-building/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is the best skill for building an MCP server?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "mcp-builder from anthropics/skills, at 89/100 with about 136,000 installs recorded by skills.sh. It guides an MCP server in Python with FastMCP or TypeScript with the MCP SDK through four phases: research and planning, implementation, review and test, and evaluations. For Java, java-mcp-server-generator is the alternative."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I build an MCP server with Claude Code?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Install mcp-builder with the skills CLI command in the install block above, then ask Claude Code for the server in plain language: the service, the language and the tools you want. Let it run all four phases, including evaluations."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do these skills work with the Claude Agent SDK?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "None of the seven names the Claude Agent SDK in its description, so none is an SDK tutorial. They cover the work around any agent you build: the MCP servers it calls (mcp-builder), its prompts and evals (prompt-optimizer), its context budget (context-optimization), delegation (slicing-code-context, grok-build, executing-plans) and deployment on AWS (aws-agentic-ai)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which skills do I need to build an AI agent?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Start with prompt-optimizer (81/100) for the contract, prompt and evals. Add mcp-builder (89/100) only when the agent needs a system it cannot otherwise reach: a skill adds method, an MCP server adds access, and files and a shell often do the job. Add context-optimization (86/100) once sessions get long, the delegation skills when a second agent joins, and aws-agentic-ai only on Bedrock AgentCore."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I stop a multi-agent setup from eating the context budget?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Three of the picks exist for that: context-optimization budgets and masks, slicing-code-context hands a subagent a bounded slice, and grok-build moves implementation out of the main session. Measure token cost before and after each; the skills describe what they do, not what they save."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do these skills work in Codex and Cursor?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. All seven use the Agent Skills format, so the same folder works in Claude Code, Codex, Cursor and any other agent that reads a SKILL.md. The skills CLI installs for each of them, and every skill page in the directory shows the commands."
+            }
+          }
+        ]
+      }
+    </script>
     <meta name="theme-color" content="#000000">
     <link rel="preload" href="../../../assets/fonts/geist-var-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="../../../assets/fonts/geist-mono-var-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -206,7 +263,7 @@
         <a href="../../grok/"><svg class="pix" viewBox="0 0 12 12" width="14" height="14" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M6 0h4v1h-4zM5 1h1v1h-1zM4 2h1v1h-1zM3 3h1v1h-1zM2 4h7v1h-7zM7 5h1v1h-1zM6 6h1v1h-1zM5 7h1v1h-1zM4 8h1v1h-1zM3 9h1v1h-1zM2 10h1v1h-1z"/></svg><span class="kind-label" data-short="Grok">Grok bots</span><span class="count-chip">19</span></a>
         <a href="../../mcp-servers/"><svg class="pix" viewBox="0 0 12 12" width="14" height="14" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M0 0h12v1h-12zM0 1h1v1h-1zM11 1h1v1h-1zM0 2h1v1h-1zM2 2h2v1h-2zM9 2h1v1h-1zM11 2h1v1h-1zM0 3h12v1h-12zM0 4h1v1h-1zM11 4h1v1h-1zM0 5h1v1h-1zM2 5h2v1h-2zM9 5h1v1h-1zM11 5h1v1h-1zM0 6h12v1h-12zM0 7h1v1h-1zM11 7h1v1h-1zM0 8h1v1h-1zM2 8h2v1h-2zM9 8h1v1h-1zM11 8h1v1h-1zM0 9h12v1h-12z"/></svg><span class="kind-label" data-short="MCP">MCP servers</span><span class="count-chip">6</span></a>
         <a href="../../rules/"><svg class="pix" viewBox="0 0 12 12" width="14" height="14" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M1 0h10v1h-10zM0 1h1v1h-1zM11 1h1v1h-1zM0 2h1v1h-1zM3 2h5v1h-5zM11 2h1v1h-1zM0 3h1v1h-1zM11 3h1v1h-1zM0 4h1v1h-1zM3 4h7v1h-7zM11 4h1v1h-1zM0 5h1v1h-1zM11 5h1v1h-1zM0 6h1v1h-1zM3 6h5v1h-5zM11 6h1v1h-1zM0 7h1v1h-1zM11 7h1v1h-1zM0 8h1v1h-1zM3 8h7v1h-7zM11 8h1v1h-1zM0 9h1v1h-1zM11 9h1v1h-1zM1 10h10v1h-10z"/></svg><span class="kind-label" data-short="Rules">Rules and prompts</span><span class="count-chip">18</span></a>
-        <a href="../" aria-current="page"><svg class="pix" viewBox="0 0 12 12" width="14" height="14" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M5 1h2v1h-2zM3 2h2v1h-2zM7 2h2v1h-2zM1 3h2v1h-2zM9 3h2v1h-2zM0 4h1v1h-1zM11 4h1v1h-1zM1 5h2v1h-2zM9 5h2v1h-2zM3 6h2v1h-2zM7 6h2v1h-2zM1 7h2v1h-2zM5 7h2v1h-2zM9 7h2v1h-2zM0 8h1v1h-1zM11 8h1v1h-1zM1 9h2v1h-2zM9 9h2v1h-2zM3 10h2v1h-2zM7 10h2v1h-2zM5 11h2v1h-2z"/></svg><span class="kind-label" data-short="Stacks">Stacks</span><span class="count-chip">10</span></a>
+        <a href="../" aria-current="page"><svg class="pix" viewBox="0 0 12 12" width="14" height="14" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M5 1h2v1h-2zM3 2h2v1h-2zM7 2h2v1h-2zM1 3h2v1h-2zM9 3h2v1h-2zM0 4h1v1h-1zM11 4h1v1h-1zM1 5h2v1h-2zM9 5h2v1h-2zM3 6h2v1h-2zM7 6h2v1h-2zM1 7h2v1h-2zM5 7h2v1h-2zM9 7h2v1h-2zM0 8h1v1h-1zM11 8h1v1h-1zM1 9h2v1h-2zM9 9h2v1h-2zM3 10h2v1h-2zM7 10h2v1h-2zM5 11h2v1h-2z"/></svg><span class="kind-label" data-short="Stacks">Stacks</span><span class="count-chip">20</span></a>
       </div>
     </nav>
     <main id="main" tabindex="-1" class="shell directory">
@@ -214,16 +271,17 @@
       <h1>Which agent skills should you stack to build agents and MCP servers?</h1>
       <nav class="crumbs" aria-label="Breadcrumb"><a href="../../">Directory</a> <span class="crumb-sep" aria-hidden="true">/</span> <a href="../">Stacks</a> <span class="crumb-sep" aria-hidden="true">/</span> <span aria-current="page">Which agent skills should you stack to build agents and MCP servers?</span></nav>
       <p class="byline muted">By <a href="https://suedeai.ai/founder" rel="author">Jason Colapietro</a>, Founder and CEO of Suede AI. Author of <cite>Stake Your Claim</cite>, <cite>Proof as Infrastructure</cite> and <cite>The Human Authenticity Layer</cite>, holder of the VoicePrint patent, and a builder of companies for two decades.</p>
-      <p class="dateline muted">Reviewed <time datetime="2026-11-02">November 2, 2026</time>. Scores and counts come from the directory snapshot of <time datetime="2026-10-22">October 22, 2026</time>.</p>
+      <p class="dateline muted">Reviewed <time datetime="2026-11-03">November 3, 2026</time>. Scores and counts come from the directory snapshot of <time datetime="2026-10-22">October 22, 2026</time>.</p>
       <aside class="suede-first" aria-label="Suede AI's skill for this task">
         <img src="../../../assets/suede-ai-logo-transparent.webp" alt="" width="40" height="40">
-        <p class="kicker">The Suede AI skill that covers this task</p>
+        <p class="kicker">Start here: built by Suede AI for building agents and MCP servers</p>
         <b>suede-agent-teams</b>
-        <p>Splits work across agents in lanes with exclusive file ownership, collision checks, worktrees, rollback plans and evidence handoffs. The article below leaves Suede AI's own skills out and recommends third-party skills only.</p>
-        <p class="suede-first-links"><a href="../../../skills/suede-agent-teams.html">Skill page</a><a href="../../jasoncolapietro/suede-creator-skills/#suede-agent-teams">Directory listing (93/100)</a><a href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-agent-teams" target="_blank" rel="noopener">Source</a></p>
+        <p>Splits work across agents in lanes with exclusive file ownership, collision checks, worktrees, rollback plans and evidence handoffs.</p>
+        <code class="suede-first-install">npx skills add https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-agent-teams</code>
+        <p class="suede-first-links"><a href="#the-suede-ai-skill-built-for-this-job">Why I built it</a><a href="../../../skills/suede-agent-teams.html">Skill page</a><a href="../../jasoncolapietro/suede-creator-skills/#suede-agent-teams">Directory listing (93/100)</a><a href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-agent-teams" target="_blank" rel="noopener">Source</a></p>
       </aside>
       <div class="article">
-      <p class="answer guide-answer"><strong>Short answer:</strong> <a href="../../anthropics/skills/mcp-builder/">mcp-builder</a> from anthropics/skills (89/100), with about 136,000 installs recorded by skills.sh, guides MCP servers in Python with FastMCP or TypeScript with the MCP SDK. <a href="../../getsentry/skills/prompt-optimizer/">prompt-optimizer</a> from getsentry/skills (81/100) writes the agent, system and developer prompts and the evals, and <a href="../../muratcankoylan/agent-skills-for-context-engineering/context-optimization/">context-optimization</a> from muratcankoylan/Agent-Skills-for-Context-Engineering (86/100) keeps the context budget under control. For multi-agent work, slicing-code-context, grok-build and executing-plans cover delegation, and aws-agentic-ai covers deployment on Bedrock AgentCore.</p>
+      <p class="answer guide-answer"><strong>Short answer:</strong> To build an MCP server, start with <a href="../../anthropics/skills/mcp-builder/">mcp-builder</a> from anthropics/skills (89/100), with about 136,000 installs recorded by skills.sh: it guides a server in Python with FastMCP or TypeScript with the MCP SDK, from research to evaluations. For the agent itself, add <a href="../../getsentry/skills/prompt-optimizer/">prompt-optimizer</a> from getsentry/skills (81/100) for agent and system prompts and their evals, and <a href="../../muratcankoylan/agent-skills-for-context-engineering/context-optimization/">context-optimization</a> (86/100) to keep the context budget under control. For multi-agent work, slicing-code-context, grok-build and executing-plans cover delegation, and aws-agentic-ai covers deployment on Bedrock AgentCore.</p>
       <section class="panel" aria-labelledby="the-stack">
         <h2 id="the-stack">The stack</h2>
         <p>Seven skills, in score order. Scores come from the directory snapshot of October 22, 2026, and install counts are the figures skills.sh published on November 2, 2026.</p>
@@ -242,15 +300,84 @@
           </table>
         </div>
       </section>
-      <section class="panel" aria-labelledby="how-to-use-it">
-        <h2 id="how-to-use-it">How to use it</h2>
+      <section class="panel" aria-labelledby="who-this-stack-is-for">
+        <h2 id="who-this-stack-is-for">Who this stack is for</h2>
+        <p>This stack is for people who build AI agents, not only use them. The common case is a developer who wants Claude Code to reach an internal API or database, which means an MCP server. Next is the team turning a prototype into an agent that holds up: a prompt contract, evals and a context budget that survives a long session.</p>
+        <p>It also fits engineers running multi-agent setups, where one model plans and others implement, and who need the delegated work kept small and reviewed. Platform teams deploying agents on AWS get a deployment skill for Bedrock AgentCore.</p>
+        <p>You do not need all seven on day one: mcp-builder and prompt-optimizer cover a single agent with tools, and the rest join as sessions grow, agents multiply or you deploy to AWS.</p>
+        <p>All seven use the <a href="https://agentskills.io/" target="_blank" rel="noopener">Agent Skills</a> format, so the same folder works in Claude Code, Codex, Cursor and any other agent that reads a SKILL.md.</p>
+      </section>
+      <section class="panel" aria-labelledby="the-suede-ai-skill-built-for-this-job">
+        <h2 id="the-suede-ai-skill-built-for-this-job">The Suede AI skill built for this job</h2>
+        <p>I built <a href="../../jasoncolapietro/suede-creator-skills/#suede-agent-teams">suede-agent-teams</a> for exactly this job: splitting one shared change across several agents without them stepping on each other. Ask it to &quot;split this work across agents&quot; and it runs the change in lanes with exclusive file ownership, collision checks, worktrees, rollback plans and evidence handoffs. It also runs bounded contribution programs. It is my company's skill, so it stays out of this page's ranking.</p>
+        <p>The value is in the decisions it makes before any agent writes a line: which lane owns which files, where lanes overlap, how each lane rolls back and what evidence it hands back. Those decisions sink a multi-agent build when nobody owns them.</p>
+        <p>Start with it the moment a build needs a second agent. It owns the lane plan and handoffs, and the picks below work inside each lane: slicing-code-context hands a subagent a bounded slice, grok-build runs well-specified tasks headlessly, executing-plans covers a lane you run inline, and context-optimization keeps each lane inside its budget. Its description sends diff review, CI wiring and skill selection elsewhere, so it stays on coordination.</p>
+        <p>Put it in before the second agent starts:</p>
+        <div class="snippet"><pre><code class="language-bash">npx skills add https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-agent-teams</code></pre></div>
+      </section>
+      <section class="panel" aria-labelledby="the-skills-one-by-one">
+        <h2 id="the-skills-one-by-one">The skills, one by one</h2>
+        <h3 id="mcp-builder-mcp-servers-in-python-or-typescript">mcp-builder: MCP servers in Python or TypeScript</h3>
+        <p><a href="../../anthropics/skills/mcp-builder/">mcp-builder</a> from anthropics/skills (89/100, grade B) is a guide for creating high-quality MCP (Model Context Protocol) servers that let LLMs reach external services through well-designed tools. It covers Python with FastMCP and Node or TypeScript with the MCP SDK. The directory marks anthropics/skills as an official publisher repository.</p>
+        <p>Its SKILL.md runs a four-phase workflow: deep research and planning, implementation, review and test, and creating evaluations. A documentation library tells the agent what to load when, from core MCP docs first to the evaluation guide in phase 4. References cover MCP best practices and Python and Node server patterns.</p>
+        <p>It bundles two Python scripts, connections.py and evaluation.py, with an example evaluation file. It makes network calls and uses MCP, and it reads no environment variables.</p>
+        <p>Reach for it whenever an agent needs a system it cannot otherwise reach. Skip it when files and a shell will do. It is Apache-2.0 licensed, with about 136,000 installs recorded by skills.sh, about 4,000 of them in the last week.</p>
+        <p>A prompt that fits it:</p>
+        <div class="snippet"><pre><code class="language-text">Build a TypeScript MCP server for our ticketing API with search_tickets and create_ticket tools, then write ten evaluation questions for it.</code></pre></div>
+        <h3 id="slicing-code-context-bounded-context-for-subagents">slicing-code-context: bounded context for subagents</h3>
+        <p><a href="../../trailofbits/skills/slicing-code-context/">slicing-code-context</a> from trailofbits/skills (89/100, grade B) selects bounded, graph-informed source slices with Trailmark and delegates focused code analysis or patch-proposal work to a smaller subagent. It is built for offloading function, class, caller, callee, call-path, entrypoint or line-focused tasks to constrained or locally hosted models without exposing the full repository. The directory marks trailofbits/skills as an official publisher repository.</p>
+        <p>The SKILL.md opens with when to use it, when not to, and rationalizations to reject. The workflow has five steps: define the worker task and anchors, build the packet, delegate without leaking context, validate the response, and permit one focused expansion. Error handling and worked examples follow.</p>
+        <p>It bundles two Python scripts, a packet builder and its test, with a pyproject file and lock file. It reads no environment variables, makes no network calls and uses no MCP.</p>
+        <p>Use it when a smaller or local model should see a slice, not the codebase. Its license is CC-BY-SA-4.0, a share-alike license, and it has about 1,000 installs recorded by skills.sh.</p>
+        <p>A prompt that fits it:</p>
+        <div class="snippet"><pre><code class="language-text">Slice the call path from handleWebhook to persistEvent and send only that packet to the local model for a patch proposal on the retry bug.</code></pre></div>
+        <h3 id="grok-build-delegate-implementation-to-grok-build">grok-build: delegate implementation to Grok Build</h3>
+        <p><a href="../../sanjay3290/ai-skills/grok-build/">grok-build</a> from sanjay3290/ai-skills (87/100, grade B) delegates well-specified implementation tasks to xAI's Grok Build CLI running headlessly. Your assistant stays in charge: it plans, writes the task specs, reviews every diff and owns the result. It executes a Markdown implementation plan task by task, or ad hoc tasks with an inline spec.</p>
+        <p>The SKILL.md starts with when to delegate and when to keep work with the orchestrator, then a one-time session preflight and a sequential per-task loop as the default. A task spec template and a section on Markdown plans follow. Parallel dispatch is an opt-in exception, and failure handling and model notes close it.</p>
+        <p>The skill bundles no scripts, reads no environment variables and uses no MCP, but it depends on the Grok Build CLI to do anything.</p>
+        <p>Use it when a second model should do implementation while your main agent keeps the review. It is Apache-2.0 licensed, with fewer than 100 installs recorded by skills.sh.</p>
+        <p>A prompt that fits it:</p>
+        <div class="snippet"><pre><code class="language-text">Use grok to execute docs/plans/rate-limiter.md task by task. Write a spec for each task and review each diff before the next dispatch.</code></pre></div>
+        <h3 id="context-optimization-the-context-budget">context-optimization: the context budget</h3>
+        <p><a href="../../muratcankoylan/agent-skills-for-context-engineering/context-optimization/">context-optimization</a> from muratcankoylan/Agent-Skills-for-Context-Engineering (86/100, grade B) improves context efficiency: context budgeting, observation masking, prefix or KV-cache strategy, partitioning, token-cost reduction and retrieval scoping. The aim is to extend effective context capacity without lowering answer quality.</p>
+        <p>The SKILL.md covers when to activate it and the core concepts, then detailed topics: compaction strategies, observation masking, KV-cache optimization, context partitioning and budget management. Practical guidance adds an optimization decision framework and performance targets, followed by examples, guidelines, gotchas and integration notes.</p>
+        <p>It bundles one Python script, compaction.py, plus a reference on optimization techniques. It reads no environment variables, makes no network calls and uses no MCP.</p>
+        <p>Reach for it before you add a second agent or a long-running loop, because context problems multiply with every agent. If token costs surprise you, this is the first skill I would read. It is MIT licensed, with fewer than 1,000 installs recorded by skills.sh.</p>
+        <p>A prompt that fits it:</p>
+        <div class="snippet"><pre><code class="language-text">Our research agent hits the context limit after 12 tool calls. Propose a budget, mask stale observations and restructure the prompt prefix for cache reuse.</code></pre></div>
+        <h3 id="executing-plans-inline-execution-without-subagents">executing-plans: inline execution without subagents</h3>
+        <p><a href="../../obra/superpowers/executing-plans/">executing-plans</a> from obra/superpowers (83/100, grade B) is for executing an implementation plan in the current session, as the implementer yourself. It applies when your human partner chose inline execution or when no subagent tool is available.</p>
+        <p>The SKILL.md walks through when to use it, the process and setup, then a task loop: take the task, work the steps, meet the completion contract and complete the task. A final review, a finish step, common rationalizations and an example workflow close it. The directory found no environment variables, outside hosts or MCP in its files.</p>
+        <p>It is the plain fallback in this stack. When grok-build or a subagent is not an option, executing-plans keeps the same discipline: one task at a time, with a contract for what done means. It executes a plan; it does not write one.</p>
+        <p>With about 250,000 installs recorded by skills.sh, about 6,000 of them in the last week, it is the most installed pick here. It is MIT licensed.</p>
+        <p>A prompt that fits it:</p>
+        <div class="snippet"><pre><code class="language-text">Execute docs/plans/mcp-auth.md inline. Work one task at a time, meet the completion contract for each, and run the final review before you finish.</code></pre></div>
+        <h3 id="aws-agentic-ai-deploy-on-bedrock-agentcore">aws-agentic-ai: deploy on Bedrock AgentCore</h3>
+        <p><a href="../../zxkane/aws-skills/aws-agentic-ai/">aws-agentic-ai</a> from zxkane/aws-skills (83/100, grade B) covers deploying and managing AI agents on AWS Bedrock AgentCore. It spans Gateway, Runtime, Memory, Identity, Code Interpreter, Browser, Observability, Agent Registry and Evaluations, with MCP tool integration, credential management, agent discovery and governance workflows.</p>
+        <p>The SKILL.md opens with an AWS documentation requirement and a services list, then common workflows: deploying a gateway target, managing credentials, discovering agents and tools in the registry, evaluating agent quality and monitoring agents. Deep-dive references cover advanced runtime and OAuth topics and runnable script templates, and cross-service guides cover credentials, persistence, registry integration and security resource policies.</p>
+        <p>It is the heaviest pick in its files: five Python and two shell scripts, including a runtime Dockerfile template and A2A and AG-UI server templates. It makes network calls and uses MCP, naming the acdocs and aws-mcp tools. It reads no environment variables.</p>
+        <p>Install it only if you deploy on AWS. It is MIT licensed, with fewer than 1,000 installs recorded by skills.sh.</p>
+        <p>A prompt that fits it:</p>
+        <div class="snippet"><pre><code class="language-text">Deploy our Python agent to AgentCore Runtime, register its MCP tools behind a Gateway target, and set up an evaluation for answer quality.</code></pre></div>
+        <h3 id="prompt-optimizer-prompts-and-prompt-evals">prompt-optimizer: prompts and prompt evals</h3>
+        <p><a href="../../getsentry/skills/prompt-optimizer/">prompt-optimizer</a> from getsentry/skills (81/100, grade B) creates, optimizes and iteratively refines agent prompts, system prompts, developer prompts and reusable prompt templates. It also ports prompts between OpenAI, Claude and Gemini and builds prompt evals. The directory marks getsentry/skills as an official publisher repository.</p>
+        <p>The SKILL.md is a six-step process: capture the contract, inventory external context, choose a model strategy, shape the prompt, optimize, and return a package. It opens with &quot;load only what you need&quot; and closes with failure modes. References cover core patterns, a meta-optimization loop, model-family notes and transformed examples, with a spec and a sources file alongside.</p>
+        <p>It bundles no scripts, reads no environment variables, makes no network calls and uses no MCP.</p>
+        <p>It has the lowest score in the stack and I still put it first in the workflow, because an agent without a written contract and an eval is a demo. It is Apache-2.0 licensed, with about 2,000 installs recorded by skills.sh.</p>
+        <p>A prompt that fits it:</p>
+        <div class="snippet"><pre><code class="language-text">Rewrite this support agent's system prompt for Claude. Capture the contract first, then build five eval cases that would catch a regression.</code></pre></div>
+      </section>
+      <section class="panel" aria-labelledby="how-to-use-the-stack-together">
+        <h2 id="how-to-use-the-stack-together">How to use the stack together</h2>
         <ol>
-          <li>Write the prompt and the eval first with <strong>prompt-optimizer</strong>. It creates and refines agent, system and developer prompts and reusable templates, ports prompts between OpenAI, Claude and Gemini, and builds prompt evals. An agent without an eval is a demo.</li>
-          <li>Give the agent access with <strong>mcp-builder</strong>. It guides an MCP server in Python with FastMCP or TypeScript with the MCP SDK. Check the <a href="https://github.com/modelcontextprotocol/servers" target="_blank" rel="noopener">reference servers</a> before you write one; a tool that already exists is a tool you do not maintain. The <a href="https://code.claude.com/docs/en/mcp" target="_blank" rel="noopener">Claude Code MCP docs</a> cover wiring it in.</li>
-          <li>Budget the context with <strong>context-optimization</strong>: context budgeting, observation masking, KV-cache strategy, partitioning and token-cost reduction. Do this before you add a second agent, because two agents double a context problem.</li>
-          <li>Run the plan with <strong>executing-plans</strong> when you are the implementer and no subagent tool is available. It executes an implementation plan inline in the current session.</li>
-          <li>Delegate, but keep the review. <strong>slicing-code-context</strong> selects bounded, graph-informed source slices with Trailmark and hands focused analysis or patch-proposal work to a smaller subagent, which sees a slice, not the repository. <strong>grok-build</strong> sends well-specified implementation to the Grok Build CLI running headlessly while the assistant writes the spec, reviews every diff and owns the result.</li>
-          <li>Deploy with <strong>aws-agentic-ai</strong> if you are on AWS. It covers Bedrock AgentCore Gateway, Runtime, Memory, Identity, Observability, Evaluations, MCP tool integration and governance workflows.</li>
+          <li>Write the contract, prompt and eval first with <strong>prompt-optimizer</strong>. Every later change gets measured against those eval cases.</li>
+          <li>Give the agent access with <strong>mcp-builder</strong>. Check whether a server already exists, then run all four phases through to evaluations.</li>
+          <li>Budget the context with <strong>context-optimization</strong> before you add a second agent. Two agents double a context problem.</li>
+          <li>Delegate code analysis with <strong>slicing-code-context</strong> when a smaller or local model should see a bounded slice, not the repository.</li>
+          <li>Send well-specified implementation to <strong>grok-build</strong>. Your main agent writes the specs and reviews every diff.</li>
+          <li>Run the plan with <strong>executing-plans</strong> when you are the implementer and no subagent tool is available. One task at a time, with the completion contract.</li>
+          <li>On AWS, deploy with <strong>aws-agentic-ai</strong>: Runtime for the agent, a Gateway target for tools, Evaluations for quality.</li>
+          <li>After every prompt or tool change, rerun the <strong>prompt-optimizer</strong> eval cases and the <strong>mcp-builder</strong> evaluations.</li>
         </ol>
       </section>
       <section class="panel" aria-labelledby="install-the-stack">
@@ -262,24 +389,60 @@ npx skills add https://github.com/muratcankoylan/Agent-Skills-for-Context-Engine
 npx skills add https://github.com/obra/superpowers/tree/main/skills/executing-plans
 npx skills add https://github.com/zxkane/aws-skills/tree/main/plugins/aws-agentic-ai/skills/aws-agentic-ai
 npx skills add https://github.com/getsentry/skills/tree/main/skills/prompt-optimizer</code></pre></div>
-        <p>The <a href="https://skills.sh/" target="_blank" rel="noopener">skills CLI</a> works for Claude Code, Codex, Cursor and other agents, and each skill's page in the directory lists the copy-by-hand routes if you would rather not run npx.</p>
+        <p>The <a href="https://skills.sh/" target="_blank" rel="noopener">skills CLI</a> installs for Claude Code, Codex, Cursor and other agents, and each skill's page in the directory lists the copy-by-hand routes if you would rather not run npx.</p>
       </section>
-      <section class="panel" aria-labelledby="what-to-check-before-you-install">
-        <h2 id="what-to-check-before-you-install">What to check before you install</h2>
+      <section class="panel" aria-labelledby="alternatives-worth-knowing">
+        <h2 id="alternatives-worth-knowing">Alternatives worth knowing</h2>
+        <div class="table-wrap">
+          <table class="guide-table">
+            <thead><tr><th scope="col">Skill</th><th scope="col">Repository</th><th scope="col">Score</th><th scope="col">Swap in when</th></tr></thead>
+            <tbody>
+              <tr><td><a href="../../mblode/agent-skills/chat-history/">chat-history</a></td><td><a href="https://github.com/mblode/agent-skills" target="_blank" rel="noopener">mblode/agent-skills</a></td><td>91/100</td><td>The agent needs past decisions recovered from local Claude Code, Codex, Grok or Cursor history.</td></tr>
+              <tr><td><a href="../../tronghieu/agent-skills/deep-reader/">deep-reader</a></td><td><a href="https://github.com/tronghieu/agent-skills" target="_blank" rel="noopener">tronghieu/agent-skills</a></td><td>90/100</td><td>The agent must read a book or paper of roughly 50+ pages without loading it all into context.</td></tr>
+              <tr><td><a href="../../google/skills/#api-gateway-mcp-server">api-gateway-mcp-server</a></td><td><a href="https://github.com/google/skills" target="_blank" rel="noopener">google/skills</a></td><td>89/100</td><td>Your REST APIs sit behind Google Cloud API Gateway and should become MCP tools without a new server.</td></tr>
+              <tr><td><a href="../../github/awesome-copilot/#java-mcp-server-generator">java-mcp-server-generator</a></td><td><a href="https://github.com/github/awesome-copilot" target="_blank" rel="noopener">github/awesome-copilot</a></td><td>89/100</td><td>The server must be Java or Spring Boot, with the MCP Java SDK 2.x and JUnit tests.</td></tr>
+              <tr><td><a href="../../aws/agent-toolkit-for-aws/#agents-get-started">agents-get-started</a></td><td><a href="https://github.com/aws/agent-toolkit-for-aws" target="_blank" rel="noopener">aws/agent-toolkit-for-aws</a></td><td>87/100</td><td>You are starting a new AgentCore project and need framework selection, scaffolding and a first deploy.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>mcp-builder stays the default for Python and TypeScript servers; the Google and Java skills replace it only when the platform or language is fixed. agents-get-started comes before aws-agentic-ai, not instead of it: one scaffolds an AgentCore project, the other deploys and manages agents. chat-history and deep-reader extend context-optimization with memory and long-document reading.</p>
+      </section>
+      <section class="panel" aria-labelledby="common-mistakes">
+        <h2 id="common-mistakes">Common mistakes</h2>
         <ul>
-          <li>Licenses: context-optimization, executing-plans and aws-agentic-ai are MIT; mcp-builder, grok-build and prompt-optimizer are Apache-2.0; slicing-code-context is CC-BY-SA-4.0, a share-alike license.</li>
-          <li>Services: grok-build needs xAI's Grok Build CLI, aws-agentic-ai needs an AWS account with Bedrock AgentCore, and slicing-code-context uses Trailmark. prompt-optimizer ports prompts between OpenAI, Claude and Gemini, so expect keys for whichever you test against.</li>
-          <li>Read each SKILL.md before you enable it. The directory has not security scanned any skill, and a skill that delegates work to another agent deserves a slower read than most.</li>
+          <li>Shipping an MCP server with no evaluations. mcp-builder's fourth phase creates them.</li>
+          <li>Tuning a prompt before writing down what it must do. prompt-optimizer captures the contract first and returns eval cases with the prompt.</li>
+          <li>Handing a subagent the whole repository. slicing-code-context builds a bounded packet and permits one focused expansion.</li>
+          <li>Delegating in parallel by default. grok-build keeps a sequential per-task loop and treats parallel dispatch as an opt-in exception.</li>
+          <li>Letting the delegate own the result. In grok-build the main assistant reviews every diff and owns what merges.</li>
+          <li>Adding agents before budgeting context. context-optimization covers masking, compaction and partitioning before they become a rewrite.</li>
         </ul>
+      </section>
+      <section class="panel" aria-labelledby="licenses-costs-and-checks-before-you-install">
+        <h2 id="licenses-costs-and-checks-before-you-install">Licenses, costs and checks before you install</h2>
+        <p>All seven licenses are open. context-optimization, executing-plans and aws-agentic-ai are MIT; mcp-builder, grok-build and prompt-optimizer are Apache-2.0; slicing-code-context is CC-BY-SA-4.0, a share-alike license.</p>
+        <p>None of the seven reads an environment variable, per the directory's read of their files. aws-agentic-ai bundles seven scripts, makes network calls, uses MCP tools and works against your AWS account, so read its credential guidance closely. mcp-builder bundles two Python scripts, makes network calls and uses MCP. grok-build needs xAI's Grok Build CLI.</p>
+        <p>The directory has not security scanned any listed skill. The <a href="../../trust/">trust page</a> explains what it checks and what it does not. Read each SKILL.md and every bundled script before you enable a skill, and read twice any skill that delegates work to another agent.</p>
+      </section>
+      <section class="panel" aria-labelledby="related-topics-and-stacks">
+        <h2 id="related-topics-and-stacks">Related topics and stacks</h2>
+        <p>The <a href="../../topics/mcp-servers/">MCP Servers</a> topic lists 82 skills, <a href="../../topics/ai-agent-builders/">AI Agent Builders</a> lists 56, <a href="../../topics/subagents/">Subagents and Multi-Agent Orchestration</a> lists 40, <a href="../../topics/context-memory/">Context Engineering and Agent Memory</a> lists 31 and <a href="../../topics/prompt-engineering/">Prompt Engineering</a> lists 28. The <a href="../../ai-agents-llm/">AI Agents and LLM Engineering</a> category holds the rest.</p>
+        <p>Agents that write code need the <a href="../code-review/">code review stack</a> and the <a href="../testing-and-ci/">testing and CI stack</a>. To document an MCP server, see the <a href="../technical-docs/">technical docs stack</a>.</p>
       </section>
       <section class="panel faq" aria-labelledby="faq">
         <h2 id="faq">FAQ</h2>
-        <h3 id="do-i-need-an-mcp-server-for-every-tool">Do I need an MCP server for every tool?</h3>
-        <p>No. A skill adds method and an MCP server adds access. If the agent can do the job with files and a shell, a skill is enough. Build a server when the job needs a system the agent cannot otherwise reach, and start from the reference servers before writing your own.</p>
+        <h3 id="what-is-the-best-skill-for-building-an-mcp-server">What is the best skill for building an MCP server?</h3>
+        <p>mcp-builder from anthropics/skills, at 89/100 with about 136,000 installs recorded by skills.sh. It guides an MCP server in Python with FastMCP or TypeScript with the MCP SDK through four phases: research and planning, implementation, review and test, and evaluations. For Java, java-mcp-server-generator is the alternative.</p>
+        <h3 id="how-do-i-build-an-mcp-server-with-claude-code">How do I build an MCP server with Claude Code?</h3>
+        <p>Install mcp-builder with the skills CLI command in the install block above, then ask Claude Code for the server in plain language: the service, the language and the tools you want. Let it run all four phases, including evaluations.</p>
+        <h3 id="do-these-skills-work-with-the-claude-agent-sdk">Do these skills work with the Claude Agent SDK?</h3>
+        <p>None of the seven names the Claude Agent SDK in its description, so none is an SDK tutorial. They cover the work around any agent you build: the MCP servers it calls (mcp-builder), its prompts and evals (prompt-optimizer), its context budget (context-optimization), delegation (slicing-code-context, grok-build, executing-plans) and deployment on AWS (aws-agentic-ai).</p>
+        <h3 id="which-skills-do-i-need-to-build-an-ai-agent">Which skills do I need to build an AI agent?</h3>
+        <p>Start with prompt-optimizer (81/100) for the contract, prompt and evals. Add mcp-builder (89/100) only when the agent needs a system it cannot otherwise reach: a skill adds method, an MCP server adds access, and files and a shell often do the job. Add context-optimization (86/100) once sessions get long, the delegation skills when a second agent joins, and aws-agentic-ai only on Bedrock AgentCore.</p>
+        <h3 id="how-do-i-stop-a-multi-agent-setup-from-eating-the-context-budget">How do I stop a multi-agent setup from eating the context budget?</h3>
+        <p>Three of the picks exist for that: context-optimization budgets and masks, slicing-code-context hands a subagent a bounded slice, and grok-build moves implementation out of the main session. Measure token cost before and after each; the skills describe what they do, not what they save.</p>
         <h3 id="do-these-skills-work-in-codex-and-cursor">Do these skills work in Codex and Cursor?</h3>
         <p>Yes. All seven use the <a href="https://agentskills.io/" target="_blank" rel="noopener">Agent Skills</a> format, so the same folder works in Claude Code, Codex, Cursor and any other agent that reads a SKILL.md. The skills CLI installs for each of them, and every skill page in the directory shows the commands.</p>
-        <h3 id="how-do-i-stop-a-multi-agent-setup-from-eating-the-context-budget">How do I stop a multi-agent setup from eating the context budget?</h3>
-        <p>Three of the picks exist for that: context-optimization budgets and masks, slicing-code-context hands a subagent a bounded slice, and grok-build moves implementation out of the main session entirely. Measure the token cost before and after each one; the summaries describe what the skills do, not what they will save you. executing-plans, at about 250,000 installs recorded by skills.sh, is the most installed pick here.</p>
       </section>
       </div>
       <aside class="panel cta-placement" aria-labelledby="cta-guide-footer-agency" data-cta-placement="guide-footer" data-cta-variant="agency">
@@ -290,15 +453,25 @@ npx skills add https://github.com/getsentry/skills/tree/main/skills/prompt-optim
       <section class="panel" aria-labelledby="more-stacks-title">
         <h2 id="more-stacks-title">More stacks</h2>
         <div class="links">
-          <a class="link-row" href="../landing-page/"><b>What is the best agent skill stack for shipping a landing page?</b><span>The skills I would install to design, build, measure and test a landing page, with scores and install commands.</span></a>
-          <a class="link-row" href="../seo-and-ai-search/"><b>Which agent skills help you rank in Google and get cited by AI?</b><span>A short, measured stack for search rankings and AI citations, built around SEO, AEO and GEO measurement and first-party WebMCP tools.</span></a>
-          <a class="link-row" href="../code-review/"><b>What is the best agent skill stack for code review?</b><span>A reviewer, a security pass, a verification gate and a comment rewriter, with scores and install commands.</span></a>
-          <a class="link-row" href="../ui-design/"><b>Which agent skills should you stack to design a polished UI?</b><span>Reference extraction, variant exploration, build, audit and motion, in order, with scores and install commands.</span></a>
-          <a class="link-row" href="../content-and-social/"><b>What is the best agent skill stack for content and social posts?</b><span>Plan, angle, draft, polish, profile and distribution, covered by six scored skills with install commands.</span></a>
-          <a class="link-row" href="../documents-and-data/"><b>Which agent skills should you stack for documents and data?</b><span>Word documents, long reading, literature reviews, read-only SQL and data slides, with scores and a plain note on licenses.</span></a>
-          <a class="link-row" href="../research/"><b>What is the best agent skill stack for research?</b><span>Seven scored skills for company, market and paper research, from recovering past work to validating citations.</span></a>
-          <a class="link-row" href="../video-and-creative/"><b>What is the best agent skill stack for video, images and audio?</b><span>Concept, stills, video, edit, narration and review, covered by seven scored skills with the services each one needs.</span></a>
-          <a class="link-row" href="../testing-and-ci/"><b>What is the best agent skill stack for testing and faster CI?</b><span>Measure the pipeline, generate browser tests, run manual sessions and chaos test, with scores and install commands.</span></a>
+          <a class="link-row" href="../landing-page/"><b>What is the best agent skill stack for shipping a landing page?</b><span>Six scored skills that turn Claude Code, Codex or Cursor into an AI landing page builder that designs, tracks, polishes and tests the page.</span></a>
+          <a class="link-row" href="../seo-and-ai-search/"><b>Which agent skills help you rank in Google and get cited by AI?</b><span>A short, measured AI search optimization stack: SEO, AEO and GEO measurement, server-rendered metadata and first-party WebMCP tools.</span></a>
+          <a class="link-row" href="../code-review/"><b>What is the best agent skill stack for code review?</b><span>AI code review in five skills: a diff reviewer, a security pass, a verification gate, Go standards and a comment rewriter.</span></a>
+          <a class="link-row" href="../ui-design/"><b>Which agent skills should you stack to design a polished UI?</b><span>Reference extraction, variant exploration, build, audit and motion for Claude Code design work, in order, with scores and install commands.</span></a>
+          <a class="link-row" href="../content-and-social/"><b>What is the best agent skill stack for content and social posts?</b><span>Plan, angle, draft, polish, profile and distribution for AI content creation, covered by six scored skills with install commands.</span></a>
+          <a class="link-row" href="../documents-and-data/"><b>Which agent skills should you stack for documents and data?</b><span>Word files, Excel workbooks, long PDFs, literature reviews, read-only SQL and data slides, with scores and a plain note on licenses.</span></a>
+          <a class="link-row" href="../research/"><b>What is the best agent skill stack for research?</b><span>Seven scored skills for company, market and paper research, from recovering past work and deep research to validating citations.</span></a>
+          <a class="link-row" href="../video-and-creative/"><b>What is the best agent skill stack for video, images and audio?</b><span>Concept, stills, cutouts, video, edit, narration and review, covered by seven scored skills with the services each one needs.</span></a>
+          <a class="link-row" href="../testing-and-ci/"><b>What is the best agent skill stack for testing and faster CI?</b><span>AI test automation in seven skills: measure and cut CI time, generate Playwright or Cypress tests, run manual sessions and chaos test.</span></a>
+          <a class="link-row" href="../mobile-apps/"><b>What is the best Claude Code skill stack for building a mobile app?</b><span>Expo native modules, cloud simulators, update health, Remote Config flags, Apollo iOS and store listings, scored and explained.</span></a>
+          <a class="link-row" href="../presentations/"><b>Which agent skills turn Claude Code into an AI presentation maker?</b><span>The AI presentation maker stack I would install: story first, then a projected web deck, an editable PowerPoint file or Google Slides.</span></a>
+          <a class="link-row" href="../email/"><b>Which agent skills make the best AI email writer for marketing and transactional email?</b><span>The AI email marketing stack I would install: write lifecycle sequences, build React templates, send through an API and handle inbound mail.</span></a>
+          <a class="link-row" href="../motion-graphics/"><b>Which agent skills make the best AI animation generator for motion graphics?</b><span>Composition, motion rules, camera moves, animated diagrams, UI motion and Slack GIFs, covered by six scored skills with install commands.</span></a>
+          <a class="link-row" href="../security-audits/"><b>What is the best agent skill stack for Claude Code security audits?</b><span>An AI security audit in six skills: Semgrep and CodeQL scans, reachability triage, GitHub Actions reviews and a scanner for agent skills.</span></a>
+          <a class="link-row" href="../technical-docs/"><b>What is the best agent skill stack for writing technical documentation with Claude Code?</b><span>AI technical writing in six skills: Diataxis structure, agent-ready docs, OpenAPI specs, Go docs, co-written specs and release notes.</span></a>
+          <a class="link-row" href="../paid-ads/"><b>What is the best AI ad generator skill stack for Claude Code?</b><span>Meta intake and diagnosis, ad copy at scale, campaign strategy, Google search ads and placement resizing, scored and explained.</span></a>
+          <a class="link-row" href="../infographics-and-diagrams/"><b>Which agent skills make the best AI infographic and diagram generator?</b><span>Sketches, code-backed diagrams, protocol flows, scientific figures and infographics, covered by six scored skills with install commands.</span></a>
+          <a class="link-row" href="../copywriting/"><b>Which agent skills make the best AI copywriting tool for Claude Code?</b><span>The AI copywriting stack I would install: page copy with supportable claims, an editor that strips AI tells, and ad copy at volume.</span></a>
+          <a class="link-row" href="../sales-prospecting/"><b>Which agent skills make the best AI lead generation tool for sales prospecting?</b><span>ICP definition, account scoring, verified prospect lists, cold outbound, sales collateral and team LinkedIn posting, scored and explained.</span></a>
         </div>
       </section>
       <p><a href="../">All stacks</a> · <a href="../../">Browse the directory</a> · <a href="../../methodology/">How skills are scored</a></p>
