@@ -127,7 +127,7 @@ body {
 [hidden] { display: none !important; }
 img { display: block; max-width: 100%; height: auto; }
 a { color: inherit; }
-main a:not(.button):not(.link-row):not(.dir-card):not(.board-row):not(.kind-card):not(.stack-card):not(.featured-callout):not(.nav-cta):not(.tab) {
+main a:not(.button):not(.link-row):not(.dir-card):not(.board-row):not(.kind-card):not(.stack-card):not(.featured-callout):not(.nav-cta):not(.tab):not(.topic-tile) {
   color: var(--accent);
   text-decoration: underline;
   text-decoration-color: var(--line-strong);
@@ -135,7 +135,7 @@ main a:not(.button):not(.link-row):not(.dir-card):not(.board-row):not(.kind-card
   text-underline-offset: 3px;
   transition: text-decoration-color 0.15s, color 0.15s;
 }
-main a:not(.button):not(.link-row):not(.dir-card):not(.board-row):not(.kind-card):not(.stack-card):not(.featured-callout):not(.nav-cta):not(.tab):hover { text-decoration-color: var(--ink); }
+main a:not(.button):not(.link-row):not(.dir-card):not(.board-row):not(.kind-card):not(.stack-card):not(.featured-callout):not(.nav-cta):not(.tab):not(.topic-tile):hover { text-decoration-color: var(--ink); }
 :where(a, button, summary, input, select, textarea, [tabindex]):focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
 ::selection { background: var(--accent); color: var(--on-accent); }
 h1, h2, h3, h4 { color: var(--ink); line-height: 1.2; margin: 0 0 12px; text-wrap: balance; overflow-wrap: anywhere; }
@@ -248,6 +248,44 @@ main.shell { padding-top: 28px; padding-bottom: 96px; position: relative; z-inde
   .nav-disclosure > .nav-links > a { min-height: 46px; font-size: 14px; }
   .nav-disclosure > .nav-links > a + a { border-top: 1px solid var(--hairline); border-radius: 0; }
   .nav-links a.nav-cta { margin: 8px 0 0; justify-content: center; }
+}
+
+/* ------------------------------------------------------------ kind bar */
+/* Every catalog the directory keeps, one row under the header on every page,
+   so Grok bots, MCP servers, plugins and rules are a click from anywhere. It
+   never wraps: when the row runs out of room it scrolls sideways under a fade,
+   so it cannot push the page head down on a phone. */
+.kind-bar { position: relative; z-index: 2; background: var(--canvas); border-bottom: 1px solid var(--hairline); }
+.kind-bar-inner { display: flex; gap: 0; overflow-x: auto; overscroll-behavior-x: contain; scrollbar-width: none; }
+.kind-bar-inner::-webkit-scrollbar { display: none; }
+.kind-bar a {
+  position: relative; display: inline-flex; align-items: center; gap: 6px; flex-shrink: 0; min-height: 44px; padding: 0 8px;
+  font-family: var(--mono); font-size: 12px; font-weight: 500; letter-spacing: 0.02em; text-transform: uppercase; white-space: nowrap;
+  color: var(--muted); text-decoration: none; transition: color 0.15s, background 0.15s;
+}
+.kind-bar a:first-child { margin-left: -8px; }
+.kind-bar a .pix { width: 13px; height: 13px; color: var(--faint); transition: color 0.15s; }
+.kind-bar a .count-chip { font-size: 11px; color: var(--faint); }
+.kind-bar a:hover { color: var(--ink); background: var(--paper); }
+.kind-bar a:hover .pix, .kind-bar a[aria-current="page"] .pix { color: var(--ink); }
+.kind-bar a[aria-current="page"] { color: var(--ink); }
+.kind-bar a[aria-current="page"] .count-chip { color: var(--muted); }
+.kind-bar a[aria-current="page"]::after { content: ""; position: absolute; left: 8px; right: 8px; bottom: -1px; height: 2px; background: var(--accent); }
+.kind-bar a:focus-visible { outline-offset: -2px; }
+/* Under the full shell width the labels shorten to one word (the full label
+   stays the link's accessible name); on phones and small tablets the bar
+   becomes a four-by-two grid, so every catalog shows without scrolling. */
+@media (max-width: 1179px) {
+  .kind-label { font-size: 0; letter-spacing: 0; }
+  .kind-label::before { content: attr(data-short) / ""; font-size: 12px; letter-spacing: 0.02em; }
+}
+@media (max-width: 899px) {
+  .kind-bar-inner { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); overflow: visible; }
+  .kind-bar a { justify-content: center; min-height: 42px; padding: 0 4px; }
+  .kind-bar a:first-child { margin-left: 0; }
+  .kind-bar a .count-chip { display: none; }
+  .kind-bar a:nth-child(-n + 4) { border-bottom: 1px solid var(--hairline); }
+  .kind-bar a[aria-current="page"]::after { left: 14px; right: 14px; }
 }
 
 /* -------------------------------------------------------------- footer */
@@ -445,7 +483,83 @@ main .topic-chips a { display: inline-flex; align-items: center; gap: 8px; min-h
 main .topic-chips a:hover, main .topic-chips a[aria-current] { border-color: var(--accent); color: var(--accent); }
 .topic-chips .count-chip { color: var(--muted); }
 
-/* ---------------------------------------------------- hub: hero, switch */
+/* --------------------------------------------------------- topic tiles */
+/* Best of tiles chart the topic they open: one dot per listed skill, best
+   score first, colored by grade, and the top pick named. On hover or focus
+   the corner brackets turn white, the dots brighten and a scan line sweeps
+   the field; the motion is decoration and stops under reduced motion. */
+.tile-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr)); gap: 12px; margin-top: 18px; }
+a.topic-tile {
+  position: relative; display: grid; grid-template-rows: auto auto 1fr auto; gap: 10px; min-width: 0; padding: 14px 16px 15px;
+  background: var(--paper); border: 1px solid var(--hairline); border-radius: var(--radius); color: var(--text); text-decoration: none;
+  transition: border-color 0.2s, background 0.2s;
+}
+a.topic-tile::before, a.topic-tile::after { content: ""; position: absolute; width: 10px; height: 10px; border-color: var(--line-strong); border-style: solid; transition: border-color 0.2s, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1); pointer-events: none; }
+a.topic-tile::before { top: -1px; left: -1px; border-width: 2px 0 0 2px; }
+a.topic-tile::after { bottom: -1px; right: -1px; border-width: 0 2px 2px 0; }
+a.topic-tile:is(:hover, :focus-visible) { border-color: var(--line); background: #0d0d0d; }
+a.topic-tile:is(:hover, :focus-visible)::before { border-color: var(--ink); transform: translate(-2px, -2px); }
+a.topic-tile:is(:hover, :focus-visible)::after { border-color: var(--ink); transform: translate(2px, 2px); }
+.tile-head { display: flex; justify-content: space-between; gap: 12px; min-width: 0; font-family: var(--mono); font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--faint); }
+.tile-head > span:first-child { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.tile-count { font-family: var(--mono); font-variant-numeric: tabular-nums; color: var(--muted); white-space: nowrap; }
+.tile-count::before { content: "[" / ""; margin-right: 3px; color: var(--faint); }
+.tile-count::after { content: "]" / ""; margin-left: 3px; color: var(--faint); }
+.tile-name { font-family: var(--display); font-size: 23px; font-weight: 600; line-height: 1.1; letter-spacing: 0.005em; color: var(--ink); overflow-wrap: anywhere; }
+.topic-tile:is(:hover, :focus-visible) .tile-name::after { content: "▮" / ""; margin-left: 4px; animation: cursor-blink 1.1s steps(1) infinite; }
+.tile-field { position: relative; display: flex; align-items: flex-start; min-height: 58px; padding: 8px; background: var(--canvas); border: 1px solid var(--hairline); border-radius: var(--radius-sm); overflow: hidden; }
+.tile-matrix { display: block; width: 100%; height: auto; transition: filter 0.3s; }
+.topic-tile:is(:hover, :focus-visible) .tile-matrix { filter: brightness(1.25) saturate(1.15); }
+.tile-more { position: absolute; right: 8px; bottom: 6px; font-family: var(--mono); font-size: 11px; color: var(--muted); background: var(--canvas); padding: 0 4px; }
+.tile-scan {
+  position: absolute; inset: 0; pointer-events: none; opacity: 0; transform: translateX(-100%);
+  background: linear-gradient(90deg, transparent 55%, rgba(237, 237, 237, 0.08) calc(100% - 2px), var(--ink) calc(100% - 2px));
+}
+.topic-tile:is(:hover, :focus-visible) .tile-scan { animation: tile-scan 1.6s cubic-bezier(0.16, 1, 0.3, 1) infinite; }
+@keyframes tile-scan { 0% { opacity: 1; transform: translateX(-100%); } 80% { opacity: 1; } 100% { opacity: 0; transform: translateX(0); } }
+.tile-top { display: flex; align-items: center; gap: 8px; min-width: 0; padding-top: 2px; font-family: var(--mono); font-size: 12px; color: var(--muted); }
+.tile-top-label { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--faint); }
+.tile-top-name { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--text); }
+.topic-tile:is(:hover, :focus-visible) .tile-top-name { color: var(--ink); }
+.tile-top .grade { font-size: 11px; padding: 0 6px; }
+/* Compact tiles on the topics hub: the name, the count and the grade mix as
+   one four-stop bar in the same grade colors as the matrices. */
+.tile-grid.is-compact { grid-template-columns: repeat(auto-fill, minmax(min(100%, 210px), 1fr)); gap: 8px; margin-top: 14px; }
+a.topic-tile.is-compact { grid-template-columns: minmax(0, 1fr) auto; grid-template-rows: auto auto; align-items: baseline; gap: 10px 12px; padding: 11px 13px 13px; }
+.is-compact .tile-name { font-family: var(--sans); font-size: 14px; font-weight: 600; letter-spacing: -0.005em; line-height: 1.3; }
+.is-compact .tile-count { font-size: 12px; }
+.tile-mix {
+  grid-column: 1 / -1; height: 4px; border-radius: 1px; transform-origin: left center; transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  background: linear-gradient(90deg,
+    var(--grade-a) 0 var(--a),
+    var(--grade-b) var(--a) calc(var(--a) + var(--b)),
+    var(--grade-c) calc(var(--a) + var(--b)) calc(var(--a) + var(--b) + var(--c)),
+    #454545 calc(var(--a) + var(--b) + var(--c)) 100%);
+}
+.is-compact:is(:hover, :focus-visible) .tile-mix { transform: scaleY(1.75); }
+/* Phones: Best of tiles two up, the group label and the Top label dropped. */
+@media (max-width: 600px) {
+  .tile-grid:not(.is-compact) { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .tile-grid:not(.is-compact) a.topic-tile { gap: 8px; padding: 11px 11px 12px; }
+  .tile-grid:not(.is-compact) .tile-head { justify-content: flex-end; }
+  .tile-grid:not(.is-compact) .tile-head > span:first-child, .tile-grid:not(.is-compact) .tile-top-label { display: none; }
+  .tile-grid:not(.is-compact) .tile-name { font-size: 16px; }
+  .tile-grid:not(.is-compact) .tile-field { min-height: 40px; padding: 6px; }
+  .tile-grid:not(.is-compact) .tile-top { gap: 6px; font-size: 11px; }
+  .tile-grid.is-compact { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* ------------------------------------------------------------ page head */
+/* Every page H1 wears the home page's pixel face and block cursor, a step
+   under the home headline so long titles stay readable. When an H1 carries a
+   subline, the cursor stays on the title line. */
+.directory h1 { font-family: var(--display); font-weight: 600; font-size: clamp(30px, 1.6vw + 20px, 46px); letter-spacing: 0.005em; line-height: 1.1; max-width: 22ch; }
+.directory h1::after { content: "▮" / ""; color: var(--accent); margin-left: 6px; animation: cursor-blink 1.1s steps(1) infinite; }
+.directory h1:has(> .h1-sub)::after { content: none; }
+.directory h1 > .h1-sub::after { content: "▮" / ""; margin-left: 4px; color: var(--accent); animation: cursor-blink 1.1s steps(1) infinite; }
+.hero-row h1 { margin-top: 2px; }
+
+/* ---------------------------------------------------- hub: hero, page hero */
 .directory-hero { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr); gap: 24px 48px; align-items: center; padding: 8px 0 24px; }
 .directory-hero > div { min-width: 0; }
 .directory-hero h1 { font-family: var(--display); font-weight: 600; font-size: clamp(34px, 2.4vw + 20px, 58px); letter-spacing: 0.005em; line-height: 1.08; max-width: 16ch; margin-bottom: 14px; }
@@ -454,11 +568,16 @@ main .topic-chips a:hover, main .topic-chips a[aria-current] { border-color: var
 .directory-snapshot { display: flex; flex-wrap: wrap; gap: 6px 22px; font-size: 13px; color: var(--muted); }
 .directory-snapshot b { font-family: var(--mono); font-size: 18px; font-weight: 500; color: var(--accent); font-variant-numeric: tabular-nums; }
 .hero-figure { margin: 0; min-width: 0; }
-.directory-type-switch { display: flex; flex-wrap: wrap; gap: 4px 4px; margin: 4px 0 12px; max-width: 100%; }
-main .directory-type-switch a { font-family: var(--mono); display: inline-flex; align-items: center; gap: 8px; min-height: 40px; padding: 6px 10px; border: 1px solid var(--hairline); border-radius: 2px; color: var(--muted); font-size: 12px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; white-space: nowrap; }
-main .directory-type-switch a:hover { color: var(--ink); border-color: var(--line); }
-main .directory-type-switch a[aria-current] { color: var(--accent); border-color: var(--accent); }
-main .directory-type-switch a .count-chip { color: inherit; opacity: 0.75; }
+/* Category and security pages: the home layout with the page's own matrix. */
+.directory-hero.page-hero { align-items: center; padding-bottom: 28px; }
+.directory-hero.page-hero h1 { font-size: clamp(30px, 1.6vw + 20px, 46px); max-width: 20ch; margin-bottom: 14px; }
+.page-hero .crumbs { margin-bottom: 14px; }
+.page-hero .lead { font-size: 16px; max-width: 58ch; }
+.page-hero .stat-row { margin-bottom: 0; }
+/* The figure is as wide as its matrix wants (--figure-w: 16px a column), up
+   to the column, so its caption wraps under the dots it explains. */
+.page-hero .hero-figure { justify-self: end; width: min(100%, var(--figure-w, 100%)); }
+@media (max-width: 900px) { .page-hero .hero-figure { justify-self: start; } }
 .hero-install { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; margin-top: 18px; font-size: 13.5px; color: var(--muted); }
 .hero-install code { padding: 8px 12px; font-size: 13.5px; background: var(--paper); border: 1px solid var(--hairline); border-radius: var(--radius-sm); }
 @keyframes cursor-blink { 50% { opacity: 0; } }
@@ -802,7 +921,8 @@ button.link-row.check-pick { width: 100%; text-align: left; font: inherit; color
 /* ------------------------------------------------------------ motion */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; animation: none !important; }
-  .directory-hero h1::after { opacity: 1; }
+  .directory-hero h1::after, .directory h1::after, .directory h1 > .h1-sub::after, .topic-tile .tile-name::after { opacity: 1; }
+  .tile-scan { display: none; }
 }
 @media print {
   .nav, footer, .share, .save-button, .snippet-copy, .table-tools, .table-filter, body::after { display: none !important; }

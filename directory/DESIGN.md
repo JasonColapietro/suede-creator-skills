@@ -50,19 +50,27 @@ fonts:
   and numeric cells, ranks, install counts, stat tiles, the score card, the
   glance panel, form controls, code and terminals. Labels are 12px uppercase
   with 0.06em tracking.
-- Pixelify Sans (variable, OFL) only where skills.sh keeps its bitmap logo:
-  the wordmark and the hub headline, in plain white.
+- Pixelify Sans (variable, OFL) for the wordmark and every page H1, in plain
+  white, plus the names on Best of topic tiles. The home headline is the
+  largest (34 to 58px); every other H1 runs 30 to 46px so long titles stay
+  readable.
 - The eyebrow is a prompt: `> Skill directory · Design`. FAQ questions carry a
-  `?` marker. The hub H1 ends in a blinking block cursor that freezes under
-  reduced motion.
+  `?` marker. Every H1 ends in a blinking block cursor that freezes under
+  reduced motion; when the H1 carries a subline (`.h1-sub`), the cursor ends
+  the subline instead, so it never wraps onto a line of its own.
 
 ## Focal graphics
 
 Each page type owns one graphic, all generated from the dataset at build time:
 
-- Skill matrix: one 8px dot per listed skill, sorted by score and colored by
-  grade (`/skill-matrix.svg` beside the hero; `matrix.svg` on every category
-  page). The trust page draws every full-page skill by what its files touch.
+- Skill matrix: one dot per listed skill, sorted by score and colored by
+  grade (`/skill-matrix.svg` beside the home hero; `matrix.svg` beside every
+  category hero). The security page draws every full-page skill by what its
+  files touch, beside its hero. Hero matrices are shaped to the column (about
+  2.4 dots wide per dot tall, 16 to 48 columns) and drawn at up to 16px a
+  cell, so a small category reads as a smaller block, not a stretched one.
+- Topic tile matrix: the same dots at tile scale, 24 to a row, on every Best
+  of tile; the compact topic tiles reduce it to a four-stop grade bar.
 - Install chart: a bar chart of the twenty most installed skills on Top 100,
   from the skills.sh snapshot.
 - Score card: the pixel-face score, grade chip, meter and, for scores of 80 to
@@ -75,6 +83,27 @@ Each page type owns one graphic, all generated from the dataset at build time:
 
 ## Components
 
+- Kind bar: one row under the header on every page, holding every catalog the
+  directory keeps (Skills, Featured Skills, AI agents, each kind in
+  `kinds.json`, Stacks) with a pixel glyph and a count each. The catalog that
+  owns the page is lit with a white underline; pages about the directory
+  itself (method, submit, check, guides, API, security, saved) light none.
+  Under the full shell width the labels shorten to one word (the full label
+  stays the accessible name); under 900px the bar is a four-by-two grid, so
+  Grok bots and MCP servers show on a phone without scrolling. The home hero
+  no longer repeats it.
+- Page hero: the home layout (copy left, focal graphic right, one column
+  under 900px) on every page that owns a matrix: the category pages and the
+  security page. Top 100 keeps its install chart at full width, where the
+  bar labels have room.
+- Best of tiles (`directory/editorial/best-of.json` picks the topics and their
+  order): group and count in a mono head, the topic name in the pixel face,
+  the tile matrix in a black field, and the top pick with its grade chip
+  (Suede AI's own skills are never the pick). On hover or focus the corner
+  brackets turn white and step out, the dots brighten, the name gains the
+  cursor and a white scan line sweeps the field; reduced motion removes the
+  scan. Two up on phones. The wall sits under Top 100 on the home page and
+  leads the topics hub, where every published topic is a compact tile.
 - Leaderboard: tabbed panes (most installed, highest scores, rising, new,
   updated), zero-padded ranks in the pixel face, white for the top three, an
   eight-week sparkline in white where skills.sh publishes one.
@@ -87,6 +116,14 @@ Each page type owns one graphic, all generated from the dataset at build time:
   green on near-black.
 - Mobile navigation keeps the `details.nav-disclosure` pattern at 768px and
   under, with a 44px hamburger in white.
+
+## Social card
+
+`docs/assets/social/directory-card.html` renders `directory-card-v2.png`, the
+Open Graph image for every directory page: the wordmark, the home headline in
+the pixel face, the live skill matrix and the catalog row on black. It states
+no counts, so it stays true between refreshes; re-render it after a design
+change (see `docs/assets/social/README.md`).
 
 ## Fonts and licenses
 

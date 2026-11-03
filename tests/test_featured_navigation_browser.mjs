@@ -30,8 +30,8 @@ export async function verifyFeaturedNavigation(page, base, output, mount = '/dir
       await verifyFeaturedOrder(page);
     }
     await page.goto(base + mount + '/');
-    const quickLink = page.locator('.directory-type-switch').getByRole('link', { name: 'Featured Skills', exact: true });
-    assert.ok(await quickLink.isVisible(), 'homepage browse links expose Featured Skills');
+    const quickLink = page.locator('.kind-bar').getByRole('link', { name: /^Featured Skills/ });
+    assert.ok(await quickLink.isVisible(), 'the kind bar exposes Featured Skills');
     assert.equal(await quickLink.evaluate(el => new URL(el.href).pathname), destination);
     assert.ok(await quickLink.evaluate(el => el.getBoundingClientRect().bottom <= innerHeight), 'Featured Skills appears in the first viewport at ' + width);
     if (width === 1280 || width === 390) {
