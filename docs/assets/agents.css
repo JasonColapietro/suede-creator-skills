@@ -4,21 +4,24 @@
  * cards, filters and rating lists with the directory's tokens, so the agents
  * catalog reads as one product with the skills directory.
  */
-.agent-hero { max-width: 880px; padding: 4px 0 8px; }
-.agent-hero h1 { max-width: 20ch; margin: 8px 0 14px; }
-.agent-hero > p:last-child { font-size: 18px; line-height: 1.6; max-width: 65ch; color: var(--text); }
-.agent-kicker { font-size: 13.5px; color: var(--muted); letter-spacing: 0; text-transform: none; }
+.agent-kicker { font-family: var(--mono); font-size: 12px; font-weight: 500; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; }
 .agent-directory { padding-bottom: 48px; }
 .agent-directory p, .agent-directory li { line-height: 1.65; }
-.agent-tabs { display: flex; flex-wrap: wrap; gap: 4px 6px; margin: 8px 0 24px; padding: 4px; background: var(--paper-2); border-radius: var(--radius); width: fit-content; max-width: 100%; }
-main .agent-tabs a, main .agent-action { display: inline-flex; align-items: center; min-height: 40px; padding: 6px 14px; border-radius: 6px; color: var(--muted); font-size: 14px; font-weight: 500; text-decoration: none; }
-main .agent-tabs a[aria-current] { background: var(--paper); color: var(--ink); box-shadow: var(--shadow); }
-main .agent-action { border: 1px solid var(--line); background: var(--paper); color: var(--ink); }
-.agent-intro { border-left: 3px solid var(--gold-fill); padding: 2px 18px; margin: 20px 0 24px; max-width: 76ch; font-size: 15px; }
+/* Collection tabs read as the directory's ranking tabs: mono labels on a
+   hairline, the current one bracketed in white. */
+.agent-tabs { display: flex; flex-wrap: wrap; gap: 2px; margin: 8px 0 24px; border-bottom: 1px solid var(--line); }
+main .agent-tabs a { font-family: var(--mono); display: inline-flex; align-items: center; min-height: 44px; padding: 8px 12px; margin-bottom: -1px; border-bottom: 2px solid transparent; color: var(--muted); font-size: 12.5px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; }
+main .agent-tabs a:hover { color: var(--ink); }
+main .agent-tabs a[aria-current] { color: var(--ink); border-bottom-color: var(--accent); font-weight: 700; }
+main .agent-tabs a[aria-current]::before { content: "[" / ""; margin-right: 2px; }
+main .agent-tabs a[aria-current]::after { content: "]" / ""; margin-left: 2px; }
+main .agent-action { display: inline-flex; align-items: center; min-height: 44px; padding: 8px 16px; border-radius: var(--radius-sm); background: var(--accent); color: var(--on-accent); font-family: var(--mono); font-size: 12.5px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; }
+main .agent-action:hover { background: #ffffff; }
+.agent-intro { position: relative; padding: 16px 20px; margin: 20px 0 24px; max-width: 80ch; font-size: 15px; background: var(--paper); border: 1px solid var(--hairline); border-radius: var(--radius); }
 .agent-filters { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; margin: 24px 0; padding: 20px; background: var(--paper); border: 1px solid var(--hairline); border-radius: var(--radius); }
-.agent-filters label { display: grid; gap: 6px; font-size: 13px; color: var(--muted); }
+.agent-filters label { font-family: var(--mono); display: grid; gap: 6px; font-size: 12px; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; }
 .agent-query { grid-column: span 2; }
-.agent-filters input, .agent-filters select { width: 100%; min-height: 44px; min-width: 0; border: 1px solid var(--line); background: var(--paper); color: var(--ink); border-radius: 6px; padding: 8px 12px; font: inherit; font-size: 14px; }
+.agent-filters input, .agent-filters select { width: 100%; min-height: 44px; min-width: 0; border: 1px solid var(--line); background: var(--canvas); color: var(--ink); border-radius: var(--radius-sm); padding: 8px 12px; font: inherit; font-size: 14px; letter-spacing: 0; text-transform: none; }
 .agent-filters button { align-self: end; }
 #agent-results { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; align-items: start; margin-top: 16px; }
 .agent-card, .agent-edition { min-width: 0; padding: 22px 24px; margin: 0; background: var(--paper); border: 1px solid var(--hairline); border-radius: var(--radius); }
@@ -44,7 +47,7 @@ main .agent-card h2 a:hover, main .ungraded-card h2 a:hover { color: var(--accen
 .agent-disclosures h3 { font-size: 16px; }
 .agent-directory ul { padding-left: 20px; }
 .agent-directory code { overflow-wrap: anywhere; word-break: break-word; font-size: 0.85em; }
-.agent-assessment { padding: 16px 20px; background: var(--paper); border: 1px solid var(--hairline); border-left: 3px solid var(--gold-fill); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; margin: 20px 0; }
+.agent-assessment { padding: 16px 20px; background: var(--canvas); border: 1px solid var(--line); border-radius: var(--radius); margin: 20px 0; }
 .agent-assessment h3 { font-size: 16px; margin-top: 10px; }
 .agent-checks { border-top: 1px solid var(--hairline); padding: 12px 0; }
 .agent-directory summary { cursor: pointer; min-height: 44px; display: flex; align-items: center; color: var(--ink); font-weight: 600; }
@@ -58,13 +61,13 @@ main .agent-card h2 a:hover, main .ungraded-card h2 a:hover { color: var(--accen
 .agent-evidence { overflow-wrap: anywhere; }
 .agent-directory > section > h2 { margin-top: 36px; }
 .agent-directory > section { max-width: 100%; }
-.ungraded-callout { padding: 20px 24px; margin: 28px 0; background: var(--gold-soft); border: 1px solid var(--gold-fill); border-radius: var(--radius); }
+.ungraded-callout { padding: 20px 24px; margin: 28px 0; background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); }
 .ungraded-callout h2 { font-size: 22px; margin: 0 0 8px; }
 .ungraded-callout p { font-size: 14.5px; }
 .ungraded-callout p:last-child { margin-bottom: 0; }
 .ungraded-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 16px; }
 .ungraded-card { min-width: 0; padding: 22px 24px; background: var(--paper); border: 1px solid var(--hairline); border-radius: var(--radius); }
-.ungraded-label { font-size: 12.5px; color: var(--muted); }
+.ungraded-label { font-family: var(--mono); font-size: 12px; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; }
 .ungraded-card > p { font-size: 14.5px; }
 .ungraded-tasks, .ungraded-sources { color: var(--muted); font-size: 13px; }
 .ungraded-sources { border-top: 1px solid var(--hairline); margin-top: 16px; overflow-wrap: anywhere; }
@@ -85,7 +88,6 @@ main .agent-card h2 a:hover, main .ungraded-card h2 a:hover { color: var(--accen
   .agent-checks th { border: 0; padding-bottom: 4px; }
 }
 @media (max-width: 600px) {
-  .agent-hero > p:last-child { font-size: 16px; }
   .agent-filters { padding: 16px; gap: 12px; }
   .agent-card-top { flex-direction: column; gap: 4px; }
 }

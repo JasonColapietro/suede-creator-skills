@@ -1,30 +1,63 @@
 <!doctype html><meta charset="utf-8">
 <meta name="robots" content="noindex">
-<title>Agent Skills Directory social card</title>
+<title>SuedeAI.directory social card</title>
+<!-- Open Graph image for every SuedeAI.directory page. Render at 1200x630:
+     see README.md. The matrix is directory-card-matrix.svg, a copy of
+     docs/directory/skill-matrix.svg; refresh the copy before a re-render.
+     The card states no counts, so it does not go stale between refreshes. -->
 <style>
+  @font-face{font-family:Geist;src:url("../fonts/geist-var-latin.woff2") format("woff2");font-weight:100 900}
+  @font-face{font-family:"Geist Mono";src:url("../fonts/geist-mono-var-latin.woff2") format("woff2");font-weight:100 900}
+  @font-face{font-family:"Pixelify Sans";src:url("../fonts/pixelify-sans-var-latin.woff2") format("woff2");font-weight:400 700}
   *{margin:0;padding:0;box-sizing:border-box}
-  html,body{width:1200px;height:630px;overflow:hidden;background:#080808}
-  body{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;color:#f0ece4}
-  .card{position:relative;width:1200px;height:630px;padding:64px 72px;display:flex;flex-direction:column;justify-content:space-between;
-    background:radial-gradient(60% 70% at 85% 20%,rgba(200,169,110,.18) 0%,rgba(200,169,110,0) 70%),linear-gradient(180deg,#0d0d0c 0%,#080808 100%)}
-  .eyebrow{font-size:20px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#c6625a}
-  h1{margin-top:22px;font-family:Georgia,"Times New Roman",serif;font-weight:600;font-size:92px;line-height:1;letter-spacing:-.02em}
-  .sub{margin-top:24px;font-size:32px;line-height:1.35;color:#c8c3b8;max-width:900px}
-  .row{display:flex;gap:16px;flex-wrap:wrap}
-  .chip{border:1px solid rgba(200,169,110,.55);border-radius:6px;padding:12px 18px;font-size:22px;color:#c8a96e;font-weight:600}
-  .foot{display:flex;justify-content:space-between;align-items:flex-end;font-size:22px;color:#888880}
-  .foot b{color:#f0ece4;font-weight:600}
+  html,body{width:1200px;height:630px;overflow:hidden;background:#000}
+  body{font-family:Geist,sans-serif;-webkit-font-smoothing:antialiased;color:#ededed}
+  .card{position:relative;width:1200px;height:630px;padding:48px 64px 52px;display:grid;grid-template-rows:auto 1fr auto;row-gap:28px;border:1px solid #1f1f1f}
+  .top{display:flex;justify-content:space-between;align-items:center}
+  .mark{display:flex;align-items:center;gap:14px;font-family:"Pixelify Sans";font-weight:600;font-size:30px;letter-spacing:.01em}
+  .mark img{width:40px;height:40px}
+  .by{font-family:"Geist Mono";font-size:16px;letter-spacing:.08em;text-transform:uppercase;color:#a0a0a0}
+  .by b{color:#ededed;font-weight:500}
+  .body{display:grid;grid-template-columns:610px 1fr;column-gap:44px;align-items:center}
+  h1{font-family:"Pixelify Sans";font-weight:600;font-size:62px;line-height:1.06;letter-spacing:.005em}
+  h1 i{font-style:normal;margin-left:10px}
+  .sub{margin-top:22px;font-size:23px;line-height:1.45;color:#d4d4d4;max-width:560px}
+  .field{position:relative;padding:12px;background:#0a0a0a;border:1px solid #292929;border-radius:4px}
+  .field img{display:block;width:100%;height:auto}
+  .field:before,.field:after{content:"";position:absolute;width:14px;height:14px;border-color:#ededed;border-style:solid}
+  .field:before{top:-1px;left:-1px;border-width:2px 0 0 2px}
+  .field:after{bottom:-1px;right:-1px;border-width:0 2px 2px 0}
+  .legend{display:flex;gap:18px;margin-top:12px;font-family:"Geist Mono";font-size:14px;color:#a0a0a0}
+  .legend i{display:inline-block;width:11px;height:11px;margin-right:7px;vertical-align:-1px}
+  .chips{display:flex;gap:8px}
+  .chip{display:inline-flex;align-items:center;gap:8px;padding:10px 12px;border:1px solid #292929;border-radius:3px;background:#0a0a0a;font-family:"Geist Mono";font-size:15px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:#a0a0a0;white-space:nowrap}
+  .chip svg{color:#7d7d7d}
+  .chip.on{color:#ededed;border-color:#ededed}
+  .chip.on svg{color:#ededed}
 </style>
 <div class="card">
-  <div>
-    <div class="eyebrow">Suede Skills Directory</div>
-    <h1>Agent Skills Directory</h1>
-    <p class="sub">Public skills for Claude Code, Codex and Cursor, sorted by what they do.</p>
+  <div class="top">
+    <div class="mark"><img src="../suede-ai-logo-transparent.png" alt="">SuedeAI.directory</div>
+    <div class="by">by <b>Suede AI</b></div>
   </div>
-  <div class="row">
-    <span class="chip">Graded by an 8-part check</span>
-    <span class="chip">Linked to the author's repo</span>
-    <span class="chip">License on every page</span>
+  <div class="body">
+    <div>
+      <h1>Agent skills, graded and ready to install<i>&#9646;</i></h1>
+      <p class="sub">Skills for Claude Code, Codex and Cursor, scored 0 to 99 from their files and linked to source.</p>
+    </div>
+    <div>
+      <div class="field"><img src="directory-card-matrix.svg" alt=""></div>
+      <div class="legend"><span><i style="background:#00ca52"></i>A</span><span><i style="background:#50a8ff"></i>B</span><span><i style="background:#ffb200"></i>C</span><span><i style="background:#454545"></i>D</span><span>one dot per listed skill</span></div>
+    </div>
   </div>
-  <div class="foot"><span><b>skills.suedeai.ai</b>/directory</span><span>Suede AI</span></div>
+  <div class="chips">
+    <span class="chip on"><svg class="pix" viewBox="0 0 12 12" width="16" height="16" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M0 0h4v1h-4zM5 0h4v1h-4zM0 1h4v1h-4zM5 1h4v1h-4zM0 2h4v1h-4zM5 2h4v1h-4zM0 4h4v1h-4zM5 4h4v1h-4zM0 5h4v1h-4zM5 5h4v1h-4zM0 6h4v1h-4zM5 6h4v1h-4zM0 8h4v1h-4zM5 8h4v1h-4zM0 9h4v1h-4zM5 9h4v1h-4zM0 10h4v1h-4zM5 10h4v1h-4z"/></svg>Skills</span>
+    <span class="chip"><svg class="pix" viewBox="0 0 12 12" width="16" height="16" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M5 0h2v1h-2zM5 1h2v1h-2zM4 2h4v1h-4zM4 3h4v1h-4zM0 4h12v1h-12zM1 5h10v1h-10zM2 6h8v1h-8zM3 7h6v1h-6zM3 8h2v1h-2zM7 8h2v1h-2zM2 9h2v1h-2zM8 9h2v1h-2zM1 10h1v1h-1zM10 10h1v1h-1z"/></svg>Featured</span>
+    <span class="chip"><svg class="pix" viewBox="0 0 12 12" width="16" height="16" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M5 0h2v1h-2zM5 1h2v1h-2zM2 2h8v1h-8zM1 3h1v1h-1zM10 3h1v1h-1zM1 4h1v1h-1zM3 4h2v1h-2zM7 4h2v1h-2zM10 4h1v1h-1zM1 5h1v1h-1zM3 5h2v1h-2zM7 5h2v1h-2zM10 5h1v1h-1zM1 6h1v1h-1zM10 6h1v1h-1zM1 7h1v1h-1zM3 7h6v1h-6zM10 7h1v1h-1zM1 8h1v1h-1zM10 8h1v1h-1zM2 9h8v1h-8zM3 10h1v1h-1zM8 10h1v1h-1zM3 11h1v1h-1zM8 11h1v1h-1z"/></svg>AI agents</span>
+    <span class="chip"><svg class="pix" viewBox="0 0 12 12" width="16" height="16" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M3 0h1v1h-1zM8 0h1v1h-1zM3 1h1v1h-1zM8 1h1v1h-1zM2 2h8v1h-8zM2 3h1v1h-1zM9 3h1v1h-1zM2 4h1v1h-1zM9 4h1v1h-1zM2 5h1v1h-1zM9 5h1v1h-1zM3 6h1v1h-1zM8 6h1v1h-1zM4 7h4v1h-4zM5 8h2v1h-2zM5 9h2v1h-2zM5 10h2v1h-2z"/></svg>Plugins</span>
+    <span class="chip"><svg class="pix" viewBox="0 0 12 12" width="16" height="16" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M6 0h4v1h-4zM5 1h1v1h-1zM4 2h1v1h-1zM3 3h1v1h-1zM2 4h7v1h-7zM7 5h1v1h-1zM6 6h1v1h-1zM5 7h1v1h-1zM4 8h1v1h-1zM3 9h1v1h-1zM2 10h1v1h-1z"/></svg>Grok bots</span>
+    <span class="chip"><svg class="pix" viewBox="0 0 12 12" width="16" height="16" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M0 0h12v1h-12zM0 1h1v1h-1zM11 1h1v1h-1zM0 2h1v1h-1zM2 2h2v1h-2zM9 2h1v1h-1zM11 2h1v1h-1zM0 3h12v1h-12zM0 4h1v1h-1zM11 4h1v1h-1zM0 5h1v1h-1zM2 5h2v1h-2zM9 5h1v1h-1zM11 5h1v1h-1zM0 6h12v1h-12zM0 7h1v1h-1zM11 7h1v1h-1zM0 8h1v1h-1zM2 8h2v1h-2zM9 8h1v1h-1zM11 8h1v1h-1zM0 9h12v1h-12z"/></svg>MCP servers</span>
+    <span class="chip"><svg class="pix" viewBox="0 0 12 12" width="16" height="16" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M1 0h10v1h-10zM0 1h1v1h-1zM11 1h1v1h-1zM0 2h1v1h-1zM3 2h5v1h-5zM11 2h1v1h-1zM0 3h1v1h-1zM11 3h1v1h-1zM0 4h1v1h-1zM3 4h7v1h-7zM11 4h1v1h-1zM0 5h1v1h-1zM11 5h1v1h-1zM0 6h1v1h-1zM3 6h5v1h-5zM11 6h1v1h-1zM0 7h1v1h-1zM11 7h1v1h-1zM0 8h1v1h-1zM3 8h7v1h-7zM11 8h1v1h-1zM0 9h1v1h-1zM11 9h1v1h-1zM1 10h10v1h-10z"/></svg>Rules</span>
+    <span class="chip"><svg class="pix" viewBox="0 0 12 12" width="16" height="16" shape-rendering="crispEdges" aria-hidden="true"><path fill="currentColor" d="M5 1h2v1h-2zM3 2h2v1h-2zM7 2h2v1h-2zM1 3h2v1h-2zM9 3h2v1h-2zM0 4h1v1h-1zM11 4h1v1h-1zM1 5h2v1h-2zM9 5h2v1h-2zM3 6h2v1h-2zM7 6h2v1h-2zM1 7h2v1h-2zM5 7h2v1h-2zM9 7h2v1h-2zM0 8h1v1h-1zM11 8h1v1h-1zM1 9h2v1h-2zM9 9h2v1h-2zM3 10h2v1h-2zM7 10h2v1h-2zM5 11h2v1h-2z"/></svg>Stacks</span>
+  </div>
 </div>

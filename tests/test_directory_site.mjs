@@ -186,11 +186,11 @@ test("the standalone home names suedeai.directory as its own WebSite", () => {
       }
     }
     assert.match(skill, /href="https:\/\/suedeai\.(?:agency|app)\/\?utm_source=suedeai\.directory&amp;/, "skill page CTA carries the directory source tag");
-    assert.match(skill, /<meta property="og:image" content="https:\/\/suedeai\.directory\/assets\/social\/directory-card\.png">/);
+    assert.match(skill, /<meta property="og:image" content="https:\/\/suedeai\.directory\/assets\/social\/directory-card-v2\.png">/);
     // docs/ is the skills.suedeai.ai copy and keeps its own tags.
     const docsSkill = fs.readFileSync(path.join(path.dirname(fileURLToPath(import.meta.url)), "..", "docs", "directory", "anthropics", "skills", "pdf", "index.html"), "utf8");
     assert.match(docsSkill, /utm_source=skills\.suedeai\.ai/);
-    assert.match(docsSkill, /<meta property="og:image" content="https:\/\/skills\.suedeai\.ai\/assets\/social\/directory-card\.png">/);
+    assert.match(docsSkill, /<meta property="og:image" content="https:\/\/skills\.suedeai\.ai\/assets\/social\/directory-card-v2\.png">/);
   } finally { fs.rmSync(out2, { recursive: true, force: true }); }
 });
 
@@ -205,7 +205,7 @@ test("directory pages retag CTA utm_source and keep other parameters", () => {
 });
 
 test("social images move to the directory host only when the asset ships with it", () => {
-  const html = `<meta property="og:image" content="${OLD}/assets/social/directory-card.png">\n<meta name="twitter:image" content="${OLD}/assets/social/directory-card.png">`;
+  const html = `<meta property="og:image" content="${OLD}/assets/social/directory-card-v2.png">\n<meta name="twitter:image" content="${OLD}/assets/social/directory-card-v2.png">`;
   assert.equal(rehomeSocialImages(html), html.replaceAll(`${OLD}/assets/`, `${NEW}/assets/`));
   const missing = `<meta property="og:image" content="${OLD}/assets/social/not-built.png">`;
   assert.equal(rehomeSocialImages(missing), missing, "an image outside docs/assets keeps its URL");
