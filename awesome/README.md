@@ -126,7 +126,7 @@ The [publisher index](publishers.md) credits every listed repository and its own
 
 Accepted listing requests also enter through the [inclusion register](../directory/inclusions.json). Descriptions and scores come from [the saved dataset](../directory/skills.json); category copy comes from [the category definitions](../directory/categories.json). Upstream skills retain their own licenses and authorship.
 
-Dataset SHA-256: `7f97fe9ab5ea941b78a2ca4eb0e7a7289ab9a0a9722b22e62bcc863999cdbd19`.
+Dataset SHA-256: `f4c9df034f85bc5a2be0121d052d3602467573807f70867b0864b08716f873a7`.
 
 ## Contribute and update
 
