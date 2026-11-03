@@ -1,7 +1,7 @@
 {
   "$comment": "Single source for every third-party page that lists Suede AI Skills or its MCP server. scripts/build-listings.mjs renders docs/listings.html, the README block and the homepage strip from this file, and --check (run by npm run validate) fails when any of them drift. Add a URL only after loading it and seeing the entry. Mark sameAs:true only for a page identifying this exact software pack; author profiles, individual skills, MCP components and multi-project collections remain editorial links.",
   "verified": "2026-10-08",
-  "updated": "2026-10-22",
+  "updated": "2026-11-02",
   "groups": [
     {
       "id": "directories",
@@ -18,7 +18,8 @@
         { "name": "Skills Directory: suede-seo-audit", "url": "https://www.skillsdirectory.com/skills/jasoncolapietro-suede-seo-audit", "note": "Skill page for the SEO, AEO and AI EO audit" },
         { "name": "ClaudSkills: suede-seo-audit", "url": "https://claudskills.com/skills/suede-seo-audit/", "note": "Skill page for the SEO, AEO and AI EO audit" },
         { "name": "SkillHub: suede-seo-audit", "url": "https://www.skillhub.club/skills/jasoncolapietro-suede-creator-skills-suede-seo-audit", "note": "Skill page on SkillHub" },
-        { "name": "SkillHub: suede-code", "url": "https://www.skillhub.club/skills/jasoncolapietro-suede-creator-skills-suede-code", "note": "Skill page for review plus the A-F ship grade" }
+        { "name": "SkillHub: suede-code", "url": "https://www.skillhub.club/skills/jasoncolapietro-suede-creator-skills-suede-code", "note": "Skill page for review plus the A-F ship grade" },
+        { "name": "Build with Claude", "url": "https://github.com/davepoon/buildwithclaude", "note": "suede-skills plugin in the Build with Claude marketplace" }
       ]
     },
     {
@@ -26,7 +27,8 @@
       "title": "Python package",
       "intro": "Install the skill pack from the Python Package Index.",
       "items": [
-        { "name": "PyPI", "url": "https://pypi.org/project/suede-creator-skills/", "sameAs": true, "note": "Python CLI with every skill bundled", "featured": true }
+        { "name": "PyPI", "url": "https://pypi.org/project/suede-creator-skills/", "sameAs": true, "note": "Python CLI with every skill bundled", "featured": true },
+        { "name": "Libraries.io (PyPI)", "url": "https://libraries.io/pypi/suede-creator-skills", "note": "Python package and release page" }
       ]
     },
     {
@@ -55,7 +57,9 @@
         { "name": "hashgraph-online/awesome-ai-plugins", "url": "https://github.com/hashgraph-online/awesome-ai-plugins", "note": "Development and workflow" },
         { "name": "gmh5225/awesome-skills", "url": "https://github.com/gmh5225/awesome-skills", "note": "Skill collections" },
         { "name": "JackyST0/awesome-agent-skills", "url": "https://github.com/JackyST0/awesome-agent-skills", "note": "Skills collections" },
-        { "name": "Chat2AnyLLM/awesome-claude-skills", "url": "https://github.com/Chat2AnyLLM/awesome-claude-skills", "note": "Source catalog" }
+        { "name": "Chat2AnyLLM/awesome-claude-skills", "url": "https://github.com/Chat2AnyLLM/awesome-claude-skills", "note": "Source catalog" },
+        { "name": "ichangyou/awesome-claude-code", "url": "https://github.com/ichangyou/awesome-claude-code", "note": "Skills and slash commands" },
+        { "name": "zients/awesome-agent-harness", "url": "https://github.com/zients/awesome-agent-harness", "note": "Agent harness skill collections" }
       ]
     },
     {
