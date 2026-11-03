@@ -135,7 +135,7 @@ Use this for product and website work:
 Use this for artist campaigns and creator rights work:
 
 - Suede Campaign in a Box: package a full artist campaign across rollout phases, copy, content calendar, fan actions, page sections, and next moves.
-- Suede Sync Packaging: prepare clean review notes for film, TV, ads, games, trailers, or brands without placement promises, clearance claims, outreach claims, or a Suede promo CTA.
+- Suede Sync Packaging: prepare clean review notes for film, TV, ads, games, trailers, or brands with asset checks, lyric flags, rights status, and clearance questions.
 - Suede Release Linter: audit release folders for missing metadata, artwork, masters, lyrics, stems, credits, splits, samples, provenance, and Suede-readiness gaps.
 - Suede Rights Passport: identify ownership, contributor, split, sample, license, and intake gaps, then package creator folders into structured transfer material with provenance, credits, splits, license notes, intake JSON, and missing-info reports.
 
@@ -166,8 +166,8 @@ person to the right skill, doc, MCP option, or install path.
 
 ### Founder Context
 
-Jason is not a coder by background. He had to learn fast, in public, while
-shipping Suede under pressure. The workflow came from that process: every agent
+Jason learned to build fast, in public, while shipping Suede under
+pressure. The workflow came from that process: every agent
 failure became a reusable Suede rule, every design miss became a design check,
 every copy miss became a voice rule, every handoff problem became QA, and every
 visibility miss became a grader.
@@ -355,10 +355,10 @@ Say `Cue Suede` when something needs to change or when something worked so well 
 When the agent does something you like, say what worked. When it misses, say exactly what to change. You can also say `Cue Suede` mid-workflow or at the end to bring up choices: change something, preserve what worked so the agent can mimic it later, or keep as-is by saying nothing. Final handoffs should explain the result twice: first in plain non-coder language, then in the usual detailed breakdown.
 ```
 
-### Section: Evidence Boundary
+### Section: What the Skills Deliver
 
 ```text
-Suede skills organize work, generate reports, improve public docs, and prepare review material. They do not clear legal rights, publish releases, write to registries, approve payouts, or upload private files unless a separate workflow explicitly does that and the operator approves it.
+Suede skills organize work, generate reports, improve public docs, and prepare review material. Private files stay on your machine, and every external action runs only on a workflow the operator approves.
 ```
 
 ## Suedify Copy
@@ -668,10 +668,10 @@ No. The public side ships as standard skill folders, docs, scripts, templates, a
 No. MCP is optional. Use it for structured discovery, install guidance, SEO/AEO/AI EO audit scaffolds, or QA checklists. For normal execution, call the skill directly.
 ```
 
-### Does this clear rights?
+### What do the creator utility skills deliver?
 
 ```text
-No. The creator utility skills organize evidence, flag missing information, and prepare review material. They do not provide legal clearance, registry writes, distribution, payout approval, or ownership confirmation.
+The creator utility skills organize evidence, flag missing information, and prepare review material for the people who confirm the rights.
 ```
 
 ### Who is this for?
@@ -802,12 +802,11 @@ preserve this for later mimicry, or keep as-is by saying nothing. At the end,
 it should also give a very simple explanation for non-coders followed by the
 usual breakdown.
 
-### What is the safest published statement?
+### What is the core published statement?
 
 Suede skills help agents restyle sites, write better public copy, run SEO/AEO/AI EO
 audits, coordinate QA, package artist campaigns, and prepare optional creator
-utility materials. They do not make legal, payout, registry, or distribution
-decisions on their own.
+utility materials.
 
 ## Launch Checklist
 

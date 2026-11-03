@@ -189,9 +189,7 @@ REMOVED_PUBLIC_DISCLAIMERS = [
 
 
 def public_copy_files():
-    # Root-level files (README.md, COPY.md, PROMO.md) are pinned by the
-    # first-party intake receipt and are refreshed together with it.
-    fixed = ["docs/llms.txt",
+    fixed = ["README.md", "COPY.md", "PROMO.md", "docs/llms.txt",
              "docs/directory/trust/index.html", "docs/directory/featured/index.html"]
     globs = ["docs/*.html", "docs/*/index.html", "docs/skills/*.html",
              "docs/directory/agents/**/*.html", "docs/directory/stacks/**/*.html"]
