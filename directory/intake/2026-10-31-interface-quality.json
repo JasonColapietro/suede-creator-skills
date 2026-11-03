@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
   "repository": "JasonColapietro/suede-creator-skills",
-  "source_revision": "84b9aa1e937b8ba034193a5758e072fb74fd61fb",
-  "source_branch": "feat/suede-interface-quality",
+  "source_revision": "0be23a37bccb1a81156c781ea12e07842f0554a3",
+  "source_branch": "listings-new-backlinks-2026-11",
   "source_status": "proposed_draft_revision",
-  "assessment_date": "2026-10-31",
+  "assessment_date": "2026-11-02",
   "external_snapshot_date": "2026-10-22",
   "scope": [
     "android-app-factory",
@@ -84,14 +84,14 @@
     "CLAUDE.md": "c4c6b319c3ede25c3c0136524d05671d37880bafd105973da69124688f96c6f8",
     "COPY.md": "bc5ab0e26fb123a54734f7bae1630d4161891062477823ab1112d9eb87668cf3",
     "DESIGN.md": "607caab0aac036edba536e1c5aebefdd5de1455693128d15cdbd70e39ae34a20",
-    "DISTRIBUTION.md": "98d6b542939c813e863040ec84c90221d7f0a91415805cfaad6074f51faff061",
+    "DISTRIBUTION.md": "9833fb5f62655ea601a7ae91a1827ae0ed5ee01e8aea77d7a78ab48c0a78ac59",
     "LICENSE": "af4e980dc3824c48dcfc54f40a25b9ef688bdf06b4c4787c5206e6bf0b9ddfe8",
     "NOTICE.md": "ecd383058ec52b498750506a0f801ba7cc0c6eebd6bc0d0790af90031182c6f3",
     "PASSPORT.md": "4d2c77adbfb23ddd2e7c5daabf73b10d26448f6c3b83f4eaa736a709e1d57356",
     "PHOTO_SOURCES.md": "8308744626a3f68ce2aa48ef0b467f1945911702c81c6142098b817461886501",
     "PRODUCT.md": "3d4ecd8453466642410b543d6ef6ead4616435b9bcaa5e8a1283e9cda63f3111",
     "PROMO.md": "8afde44a484e41d6a065dd476fb0428e9c990ec6f7542860848bbfda36d63ffd",
-    "README.md": "8181f451a89864fbe7637ccda775879cc6641c7aef822d430713508f6b4e9ce2",
+    "README.md": "fae91fcd22b6561e7a8c06c1597372ae7da103467051aaacac4c4c44d3a27818",
     "SECURITY.md": "5404f465d5342d9f8aeccd4502fc7acee2379c314dea1d135f7340dc30faa2a3",
     "SKILL-CARDS.md": "5a56b8adf8b9a356bfbd8cc23c1a0cff1799e36f263cd88d989623866e6ff190",
     "VERSION": "6f15c2bfbd4fb58b7b84f0a8f8036f4d6f3112cd3f0cb759dffe86cdd696b650",
@@ -772,21 +772,21 @@
   },
   "citations": [
     {
-      "source": "VoltAgent/awesome-agent-skills",
-      "commit": "ec7ae694479aaed73f4a655e3c346dde5e61b8c4",
-      "path": "README.md",
-      "blob": "ef753775f8377434d5cf6569311884ec3feaa6c4",
-      "document_sha256": "c98514cdd04f7116be1a45308af2b4cfa7a28659dcff20afce4d51225622f7a7",
-      "evidence_status": "caller_supplied_pinned_document",
-      "local_validation": "git_blob_integrity_only",
-      "target": "https://github.com/JasonColapietro/suede-creator-skills"
-    },
-    {
       "source": "BehiSecc/awesome-claude-skills",
       "commit": "c368a0ae3c61e226af761fe975cf869c0f3a087d",
       "path": "README.md",
       "blob": "f45951802eaf9365aca8777fc55cbf174de119cc",
       "document_sha256": "7ad97b51a1ee7a8eb255a27cc7006e80fa81444def1a9eb3de1cd9ae5742ea8c",
+      "evidence_status": "caller_supplied_pinned_document",
+      "local_validation": "git_blob_integrity_only",
+      "target": "https://github.com/JasonColapietro/suede-creator-skills"
+    },
+    {
+      "source": "VoltAgent/awesome-agent-skills",
+      "commit": "ec7ae694479aaed73f4a655e3c346dde5e61b8c4",
+      "path": "README.md",
+      "blob": "ef753775f8377434d5cf6569311884ec3feaa6c4",
+      "document_sha256": "c98514cdd04f7116be1a45308af2b4cfa7a28659dcff20afce4d51225622f7a7",
       "evidence_status": "caller_supplied_pinned_document",
       "local_validation": "git_blob_integrity_only",
       "target": "https://github.com/JasonColapietro/suede-creator-skills"
@@ -805,6 +805,6 @@
   "external_before_sha256": "316f93b89836abef2c2b5dd15dcc0ea543d7eed7ff52282c1debc72e5aa98034",
   "external_after_sha256": "316f93b89836abef2c2b5dd15dcc0ea543d7eed7ff52282c1debc72e5aa98034",
   "security_scan_status": "not_scanned",
-  "dataset_before_sha256": "8a1e814a6cd41c6ebb5c873126252820bcecee0f0e0a9f37da24b133b1789b99",
-  "dataset_after_sha256": "c1784d1056afc1419a78a8b6fe363c8941a5dff8dd9ee61772caf0ce468b455f"
+  "dataset_before_sha256": "c1784d1056afc1419a78a8b6fe363c8941a5dff8dd9ee61772caf0ce468b455f",
+  "dataset_after_sha256": "7f97fe9ab5ea941b78a2ca4eb0e7a7289ab9a0a9722b22e62bcc863999cdbd19"
 }
