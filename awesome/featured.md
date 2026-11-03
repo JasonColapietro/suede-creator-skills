@@ -155,7 +155,7 @@ Inspect skill instructions and bundled code for known prompt-injection, exfiltra
 
 ### Setup
 
-Use the reviewed 2.3.1 release with verified dependency pins. Exclude the hijacked litellm 1.107.0 release and correct the certifi version in Cisco’s attached release lock. For local source review, disable hosted analyzers and behavioral alignment verification, use a network-disabled container, and retain every finding and error. Automated detection is best effort and does not certify a skill. This is an independent editorial selection, not a Cisco partnership.
+Use the reviewed 2.3.1 release with verified dependency pins. Exclude the hijacked litellm 1.107.0 release and correct the certifi version in Cisco’s attached release lock. For local source review, disable hosted analyzers and behavioral alignment verification, use a network-disabled container, and retain every finding and error. Automated detection is best effort and does not certify a skill.
 
 [Repository](https://github.com/cisco-ai-defense/skill-scanner) · [Intake review](../directory/reviews/2026-10-25-cisco-skill-scanner.md) · [Reviewed source c615acb](https://github.com/cisco-ai-defense/skill-scanner/tree/c615acb70994cdf3f4ba54d955fef2e92ac84437) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#cisco-skill-scanner)
 

@@ -53,6 +53,6 @@ Because four skills cover the measurable parts of the job and the rest is writin
 
 Yes. All four use the [Agent Skills](https://agentskills.io/) format, so the same folder works in Claude Code, Codex, Cursor and any other agent that reads a SKILL.md. The skills CLI installs for each of them, and every skill page in the directory shows the commands.
 
-### Does any of these skills guarantee a citation in an AI answer?
+### How do these skills earn citations in AI answers?
 
-No, and none of them claims to. seo-dataforseo tracks AI visibility, so you can measure whether you are being cited. Whether you are cited depends on the page: a clean answer, specific facts, a consistent name, and a site that renders completely. Measure, fix, write, measure again.
+seo-dataforseo tracks AI visibility, so you can measure whether you are being cited. Citations follow the page: a clean answer, specific facts, a consistent name, and a site that renders completely. Measure, fix, write, measure again.

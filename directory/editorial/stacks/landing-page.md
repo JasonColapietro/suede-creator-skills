@@ -45,7 +45,7 @@ The [skills CLI](https://skills.sh/) works for Claude Code, Codex, Cursor and ot
 
 - Licenses: auteur, analytics, seo-dataforseo, data-scientist and ui-design are MIT, and impeccable is Apache-2.0. All permissive, but confirm the license file in each repository before you ship anything built from a skill's bundled assets.
 - Services: seo-dataforseo pulls its data through the DataForSEO server, so you need an account and credentials for it. analytics works on GA4 and tag manager, which means access to those properties and the right to change them.
-- Read each SKILL.md before you enable it. The directory scores structure and evidence in a skill's files; it has not security scanned any skill, and a listing is not a safety guarantee.
+- Read each SKILL.md before you enable it. The directory scores structure and evidence in a skill's files; it has not security scanned any skill.
 
 ## FAQ
 
