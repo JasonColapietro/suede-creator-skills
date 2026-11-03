@@ -4,7 +4,7 @@ By [Jason Colapietro](https://suedeai.ai/founder), Founder and CEO of Suede AI. 
 
 Reviewed November 2, 2026.
 
-**Short answer:** [seo-image-gen](https://skills.suedeai.ai/directory/agricidaniel/claude-seo/seo-image-gen/) from AgriciDaniel/claude-seo (88/100) generates images through Gemini via the nanobanana server, [remove-background](https://skills.suedeai.ai/directory/bria-ai/bria-skill/remove-background/) from Bria-AI/bria-skill (86/100) cuts them out with Bria RMBG 2.0, and [vox-director](https://skills.suedeai.ai/directory/alisa0808/vox-director/vox-director/) from Alisa0808/vox-director (85/100) turns one topic into an explainer or ad video with script, motion, voice-over, music and captions. capcut-edit edits the result and cuts long-form into shorts, blog-audio narrates posts, creative-director supplies the concept, and claude-real-video-for-agents lets the agent watch what it made.
+**Short answer:** [image](https://skills.suedeai.ai/directory/coreyhaines31/marketingskills/#image) from coreyhaines31/marketingskills (88/100) creates and edits marketing images with the generator you choose, [remove-background](https://skills.suedeai.ai/directory/bria-ai/bria-skill/remove-background/) from Bria-AI/bria-skill (86/100) cuts them out with Bria RMBG 2.0, and [vox-director](https://skills.suedeai.ai/directory/alisa0808/vox-director/vox-director/) from Alisa0808/vox-director (85/100) turns one topic into an explainer or ad video with script, motion, voice-over, music and captions. capcut-edit edits the result and cuts long-form into shorts, blog-audio narrates posts, creative-director supplies the concept, and claude-real-video-for-agents lets the agent watch what it made.
 
 ## The stack
 
@@ -12,7 +12,7 @@ Seven skills, in score order. Scores come from the directory snapshot of October
 
 | Skill | Repository | Score | What it does |
 | --- | --- | --- | --- |
-| [seo-image-gen](https://skills.suedeai.ai/directory/agricidaniel/claude-seo/seo-image-gen/) | [AgriciDaniel/claude-seo](https://github.com/AgriciDaniel/claude-seo) | 88/100 | Generates AI images for SEO assets such as social preview images, blog hero images, product photos and infographics, using Gemini through the nanobanana server. |
+| [image](https://skills.suedeai.ai/directory/coreyhaines31/marketingskills/#image) | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) | 88/100 | Creates, edits and optimizes marketing images such as blog heroes, social graphics, product mockups, banners and OG images, with tools like Flux, GPT Image, Gemini and Recraft. |
 | [remove-background](https://skills.suedeai.ai/directory/bria-ai/bria-skill/remove-background/) | [Bria-AI/bria-skill](https://github.com/Bria-AI/bria-skill) | 86/100 | Removes backgrounds from images to produce transparent PNGs, cutouts and masks by segmenting foreground from background, using Bria RMBG 2.0. |
 | [vox-director](https://skills.suedeai.ai/directory/alisa0808/vox-director/vox-director/) | [Alisa0808/vox-director](https://github.com/Alisa0808/vox-director) | 85/100 | Turns one topic into a Vox-style paper-collage explainer or ad video, automating script, motion, voice-over, music and captions via Atlas Cloud and ffmpeg. |
 | [capcut-edit](https://skills.suedeai.ai/directory/renezander030/capcut-cli/capcut-edit/) | [renezander030/capcut-cli](https://github.com/renezander030/capcut-cli) | 85/100 | Edits CapCut and JianYing video projects, including subtitles, timing, speed, volume, templates, animations, and cutting long-form video into shorts. |
@@ -23,7 +23,7 @@ Seven skills, in score order. Scores come from the directory snapshot of October
 ## How to use it
 
 1. Start with the idea, using **creative-director**. It generates concepts with SIT, TRIZ and lateral thinking, scores them against six weighted criteria and refines them until they clear a 9+ threshold. A weak concept is an expensive render, so spend the time here; every later step multiplies whatever you decide now.
-2. Make the stills with **seo-image-gen**: social preview images, blog hero images, product photos and infographics, generated with Gemini through the nanobanana server. Then run **remove-background** for transparent PNGs, cutouts and masks with Bria RMBG 2.0.
+2. Make the stills with **image**: blog heroes, social graphics, product mockups, banners and OG images, generated with the tool you already use, such as Flux, GPT Image or Gemini. Then run **remove-background** for transparent PNGs, cutouts and masks with Bria RMBG 2.0.
 3. Produce the video with **vox-director**. One topic in; a Vox-style paper-collage explainer or ad out, with the script, motion, voice-over, music and captions automated through Atlas Cloud and ffmpeg. Treat the first render as a draft, not a deliverable.
 4. Edit with **capcut-edit**: subtitles, timing, speed, volume, templates and animations in CapCut and JianYing projects, and cutting long-form video into shorts for each platform. Cut the shorts from the long version rather than rendering each one separately.
 5. Add the audio version with **blog-audio**. It generates MP3 narration of blog posts with Google Gemini text-to-speech, as summaries, full read-alouds or two-speaker podcast mode, with HTML5 embed code. A post people can listen to is a post people finish.
@@ -32,7 +32,7 @@ Seven skills, in score order. Scores come from the directory snapshot of October
 ## Install the stack
 
 ```bash
-npx skills add https://github.com/AgriciDaniel/claude-seo/tree/main/skills/seo-image-gen
+npx skills add https://github.com/coreyhaines31/marketingskills/tree/main/skills/image
 npx skills add https://github.com/Bria-AI/bria-skill/tree/dev/skills/remove-background
 npx skills add https://github.com/Alisa0808/vox-director
 npx skills add https://github.com/renezander030/capcut-cli/tree/master/skills/capcut-edit
@@ -46,7 +46,7 @@ The [skills CLI](https://skills.sh/) works for Claude Code, Codex, Cursor and ot
 ## What to check before you install
 
 - Licenses: six of the seven are MIT; creative-director is CC-BY-4.0, which requires attribution.
-- Services: seo-image-gen uses Gemini through the nanobanana server, blog-audio uses Google Gemini text-to-speech, remove-background uses Bria RMBG 2.0, vox-director uses Atlas Cloud and ffmpeg, and capcut-edit works on CapCut and JianYing projects. That is several accounts and at least a few metered APIs, so budget for them and keep the keys out of the repository.
+- Services: image works with the image generator you pick, blog-audio uses Google Gemini text-to-speech, remove-background uses Bria RMBG 2.0, vox-director uses Atlas Cloud and ffmpeg, and capcut-edit works on CapCut and JianYing projects. That is several accounts and at least a few metered APIs, so budget for them and keep the keys out of the repository.
 - Read each SKILL.md before you enable it. claude-real-video-for-agents installs a tool on your machine, and the directory has not security scanned any skill.
 
 ## FAQ
@@ -61,4 +61,4 @@ Yes. All seven use the [Agent Skills](https://agentskills.io/) format, so the sa
 
 ### What about music?
 
-vox-director adds music as part of its automated pipeline. None of the seven picks composes music on its own, so if you need a specific track, bring it to the edit in capcut-edit, which handles volume and timing. seo-image-gen, at about 6,400 installs recorded by skills.sh, is the most installed pick here; the video skills have far fewer installs recorded, so read their SKILL.md files with that in mind.
+vox-director adds music as part of its automated pipeline. None of the seven picks composes music on its own, so if you need a specific track, bring it to the edit in capcut-edit, which handles volume and timing. image, at about 91,000 installs recorded by skills.sh, is the most installed pick here; the video skills have far fewer installs recorded, so read their SKILL.md files with that in mind.

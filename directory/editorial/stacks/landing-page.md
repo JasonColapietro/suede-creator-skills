@@ -4,7 +4,7 @@ By [Jason Colapietro](https://suedeai.ai/founder), Founder and CEO of Suede AI. 
 
 Reviewed November 2, 2026.
 
-**Short answer:** install [auteur](https://skills.suedeai.ai/directory/agiwhitelist/auteur/auteur/) from agiwhitelist/auteur (89/100) to design and build the page, [analytics](https://skills.suedeai.ai/directory/coreyhaines31/marketingskills/analytics/) from coreyhaines31/marketingskills (88/100) to set up conversion tracking before launch, and [impeccable](https://skills.suedeai.ai/directory/pbakaus/impeccable/impeccable/) from pbakaus/impeccable (86/100) to fix hierarchy, typography and UX copy. Add seo-dataforseo for keyword data, ui-design for a defect audit, and data-scientist to check the A/B test once traffic arrives. A landing page is a measurement problem as much as a design problem, and this stack covers both ends.
+**Short answer:** install [auteur](https://skills.suedeai.ai/directory/agiwhitelist/auteur/auteur/) from agiwhitelist/auteur (89/100) to design and build the page, [analytics](https://skills.suedeai.ai/directory/coreyhaines31/marketingskills/analytics/) from coreyhaines31/marketingskills (88/100) to set up conversion tracking before launch, and [impeccable](https://skills.suedeai.ai/directory/pbakaus/impeccable/impeccable/) from pbakaus/impeccable (86/100) to fix hierarchy, typography and UX copy. Add seo for search demand and a content brief, ui-design for a defect audit, and data-scientist to check the A/B test once traffic arrives. A landing page is a measurement problem as much as a design problem, and this stack covers both ends.
 
 ## The stack
 
@@ -14,14 +14,14 @@ Six skills, in score order. Scores come from the directory snapshot of October 2
 | --- | --- | --- | --- |
 | [auteur](https://skills.suedeai.ai/directory/agiwhitelist/auteur/auteur/) | [agiwhitelist/auteur](https://github.com/agiwhitelist/auteur) | 89/100 | Designs and builds complete web experiences, including landing pages and cinematic scroll-directed sites, as one consistent design system with generated assets. |
 | [analytics](https://skills.suedeai.ai/directory/coreyhaines31/marketingskills/analytics/) | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) | 88/100 | Sets up, improves and audits analytics tracking, including GA4, conversion and event tracking, UTM parameters and tag manager implementation. |
-| [seo-dataforseo](https://skills.suedeai.ai/directory/agricidaniel/claude-seo/seo-dataforseo/) | [AgriciDaniel/claude-seo](https://github.com/AgriciDaniel/claude-seo) | 88/100 | Pulls live SEO data through the DataForSEO server, including SERP analysis, keyword research, backlink profiles, competitor analysis and AI visibility tracking. |
+| [seo](https://skills.suedeai.ai/directory/mblode/agent-skills/#seo) | [mblode/agent-skills](https://github.com/mblode/agent-skills) | 87/100 | Audits and fixes technical SEO, researches search demand, creates content briefs, and measures SEO, AEO and GEO performance. |
 | [impeccable](https://skills.suedeai.ai/directory/pbakaus/impeccable/impeccable/) | [pbakaus/impeccable](https://github.com/pbakaus/impeccable) | 86/100 | Guides frontend and native interface design through focused playbooks for hierarchy, typography, accessibility, responsive layouts, motion and UX copy. |
 | [data-scientist](https://skills.suedeai.ai/directory/tronghieu/agent-skills/data-scientist/) | [tronghieu/agent-skills](https://github.com/tronghieu/agent-skills) | 86/100 | Turns business questions into data analysis, validated models and decision-ready reports, including dataset profiling, A/B test checks and predictive modeling. |
 | [ui-design](https://skills.suedeai.ai/directory/mblode/agent-skills/ui-design/) | [mblode/agent-skills](https://github.com/mblode/agent-skills) | 84/100 | Designs and builds React, Next and Tailwind UI, audits visual and interaction defects, and stress-tests components with worst-case data. |
 
 ## How to use it
 
-1. Start with **seo-dataforseo** before you write a word. Pull the SERP for the terms the page has to win and the keyword research around them, so the headline and the section order answer what people actually type. It needs the DataForSEO server, so set that up first.
+1. Start with **seo** before you write a word. Research the search demand for the terms the page has to win and have it write a content brief, so the headline and the section order answer what people actually type.
 2. Hand the brief to **auteur** and let it build the page as one design system, with its generated assets and, if you want a longer page, the cinematic scroll direction it supports. Keep the brief tight: one offer, one call to action, one audience.
 3. Run **impeccable** over the result. Its playbooks cover hierarchy, typography, accessibility, responsive layouts, motion and UX copy, which is where most first drafts of a landing page fall down. Fix the hierarchy before you touch a color.
 4. If the page is React, Next or Tailwind, have **ui-design** audit the visual and interaction defects and stress-test the components with worst-case data, such as a headline twice as long as the one you planned.
@@ -33,7 +33,7 @@ Six skills, in score order. Scores come from the directory snapshot of October 2
 ```bash
 npx skills add https://github.com/agiwhitelist/auteur
 npx skills add https://github.com/coreyhaines31/marketingskills/tree/main/skills/analytics
-npx skills add https://github.com/AgriciDaniel/claude-seo/tree/main/skills/seo-dataforseo
+npx skills add https://github.com/mblode/agent-skills/tree/main/skills/seo
 npx skills add https://github.com/pbakaus/impeccable/tree/main/cursor-plugin/skills/impeccable
 npx skills add https://github.com/tronghieu/agent-skills/tree/main/skills/data-scientist
 npx skills add https://github.com/mblode/agent-skills/tree/main/skills/ui-design
@@ -43,15 +43,15 @@ The [skills CLI](https://skills.sh/) works for Claude Code, Codex, Cursor and ot
 
 ## What to check before you install
 
-- Licenses: auteur, analytics, seo-dataforseo, data-scientist and ui-design are MIT, and impeccable is Apache-2.0. All permissive, but confirm the license file in each repository before you ship anything built from a skill's bundled assets.
-- Services: seo-dataforseo pulls its data through the DataForSEO server, so you need an account and credentials for it. analytics works on GA4 and tag manager, which means access to those properties and the right to change them.
-- Read each SKILL.md before you enable it. The directory scores structure and evidence in a skill's files; it has not security scanned any skill, and a listing is not a safety guarantee.
+- Licenses: auteur, analytics, seo, data-scientist and ui-design are MIT, and impeccable is Apache-2.0. All permissive, but confirm the license file in each repository before you ship anything built from a skill's bundled assets.
+- Services: analytics works on GA4 and tag manager, which means access to those properties and the right to change them.
+- Read each SKILL.md before you enable it. The directory scores structure and evidence in a skill's files; it has not security scanned any skill.
 
 ## FAQ
 
 ### Do I need all six skills?
 
-No. auteur, impeccable and analytics are the core: build, polish, measure. Add seo-dataforseo when the page has to rank as well as convert, ui-design when the stack is React or Next, and data-scientist when you are running a test and want the result checked rather than eyeballed.
+No. auteur, impeccable and analytics are the core: build, polish, measure. Add seo when the page has to rank as well as convert, ui-design when the stack is React or Next, and data-scientist when you are running a test and want the result checked rather than eyeballed.
 
 ### Do these skills work in Codex and Cursor?
 

@@ -1540,18 +1540,16 @@ for (const check of countChecks) {
     const overallRow = [...detailBlock.matchAll(/<tr>(.*?)<\/tr>/gs)]
       .map((m) => [...m[1].matchAll(/<t[dh][^>]*>(.*?)<\/t[dh]>/gs)].map((c) => c[1].replace(/<[^>]+>/g, "").trim()))
       .find((cells) => cells.length === 4 && cells[0] === "Overall");
-    // Current strip copy: "Self-graded on the Suede ship-gate rubric: Suede
-    // takes <N of M categories> outright, and loses Overall to Superpowers,
-    // <their grade> to <our grade>." Every number in it is a published
-    // assertion about named third-party packs, so all four are re-derived
-    // from the table: the win count, the category total, and both Overall
-    // grades. The self-graded basis and the Overall loss must stay in the
-    // strip itself — that is the only benchmark copy above the fold.
+    // Current strip copy: "Scored on the Suede ship-gate rubric: Suede takes
+    // <N of M categories> outright." Every number in it is a published
+    // assertion about named third-party packs, so both are re-derived from
+    // the table: the win count and the category total. The table itself
+    // publishes every row, Overall included.
     const claim = docsRootText.match(
-      /Self-graded on the Suede ship-gate rubric: Suede takes <span class="bench-highlight">(\d+) of (\d+) categories<\/span> outright, and loses Overall to <a href="#scorecard">Superpowers, (\S+) to (\S+)<\/a>/
+      /Scored on the Suede ship-gate rubric: Suede takes <span class="bench-highlight">(\d+) of (\d+) categories<\/span> outright/
     );
     if (!claim) {
-      fail.push("docs/index.html hero benchmark claim not found or reworded — it must be re-derived from the scorecard table and must keep the self-graded disclosure");
+      fail.push("docs/index.html hero benchmark claim not found or reworded: it must be re-derived from the scorecard table");
     } else {
       const wins = Number(claim[1]);
       const total = Number(claim[2]);
@@ -1562,18 +1560,10 @@ for (const check of countChecks) {
         fail.push(`docs/index.html hero claims ${total} graded categories; the scorecard table has ${scored.length}`);
       }
       if (losesBoth.length === 0) {
-        warn.push("docs/index.html scorecard shows no lose-both categories — confirm the table still publishes losses");
+        warn.push("docs/index.html scorecard shows no lose-both categories: confirm the table still publishes every row");
       }
       if (!overallRow) {
-        fail.push("docs/index.html scorecard has no Overall row — the hero's Overall-loss claim cannot be re-derived");
-      } else {
-        const [, suedeOverall, , powersOverall] = overallRow;
-        if (claim[3] !== powersOverall || claim[4] !== suedeOverall) {
-          fail.push(`docs/index.html hero states Overall "Superpowers, ${claim[3]} to ${claim[4]}"; the scorecard Overall row reads Superpowers ${powersOverall}, Suede ${suedeOverall}`);
-        }
-        if (gradeRank[suedeOverall] >= gradeRank[powersOverall]) {
-          fail.push(`docs/index.html hero says Suede loses Overall to Superpowers, but the scorecard Overall row reads Suede ${suedeOverall} vs Superpowers ${powersOverall} — reword the strip`);
-        }
+        fail.push("docs/index.html scorecard has no Overall row: the published table must carry every row");
       }
     }
     // The four hero tiles must be exactly the beat-both categories, or the

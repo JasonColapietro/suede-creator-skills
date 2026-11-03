@@ -141,8 +141,8 @@
           {
             "@type": "ListItem",
             "position": 5,
-            "name": "seo-dataforseo",
-            "url": "https://skills.suedeai.ai/directory/agricidaniel/claude-seo/seo-dataforseo/"
+            "name": "seo",
+            "url": "https://skills.suedeai.ai/directory/mblode/agent-skills/#seo"
           },
           {
             "@type": "ListItem",
@@ -223,7 +223,7 @@
               <tr><td><a href="../../zeropointrepo/youtube-skills/youtube-full/">youtube-full</a></td><td><a href="https://github.com/ZeroPointRepo/youtube-skills" target="_blank" rel="noopener">ZeroPointRepo/youtube-skills</a></td><td>90/100</td><td>Provides YouTube access for transcripts, video and channel search, channel browsing, playlists and within-channel search, for summaries, quotes, translations and topic research.</td></tr>
               <tr><td><a href="../../tronghieu/agent-skills/deep-reader/">deep-reader</a></td><td><a href="https://github.com/tronghieu/agent-skills" target="_blank" rel="noopener">tronghieu/agent-skills</a></td><td>90/100</td><td>Reads and answers questions about long books and papers without loading the whole text into one context window, keeping page-anchored notes.</td></tr>
               <tr><td><a href="../../k-dense-ai/claude-scientific-skills/citation-management/">citation-management</a></td><td><a href="https://github.com/K-Dense-AI/claude-scientific-skills" target="_blank" rel="noopener">K-Dense-AI/claude-scientific-skills</a></td><td>89/100</td><td>Manages academic citations by searching OpenAlex, PubMed and Google Scholar, extracting metadata, validating references and generating formatted BibTeX entries.</td></tr>
-              <tr><td><a href="../../agricidaniel/claude-seo/seo-dataforseo/">seo-dataforseo</a></td><td><a href="https://github.com/AgriciDaniel/claude-seo" target="_blank" rel="noopener">AgriciDaniel/claude-seo</a></td><td>88/100</td><td>Pulls live SEO data through the DataForSEO server, including SERP analysis, keyword research, backlink profiles, competitor analysis and AI visibility tracking.</td></tr>
+              <tr><td><a href="../../mblode/agent-skills/#seo">seo</a></td><td><a href="https://github.com/mblode/agent-skills" target="_blank" rel="noopener">mblode/agent-skills</a></td><td>87/100</td><td>Audits and fixes technical SEO, researches search demand, creates content briefs, and measures SEO, AEO and GEO performance.</td></tr>
               <tr><td><a href="../../sanjay3290/ai-skills/manus/">manus</a></td><td><a href="https://github.com/sanjay3290/ai-skills" target="_blank" rel="noopener">sanjay3290/ai-skills</a></td><td>87/100</td><td>Delegates complex, long-running tasks to the Manus AI agent for autonomous execution, such as deep web research, market analysis, product comparisons and stock analysis.</td></tr>
               <tr><td><a href="../../browserbase/skills/company-research/">company-research</a></td><td><a href="https://github.com/browserbase/skills" target="_blank" rel="noopener">browserbase/skills</a></td><td>84/100</td><td>Researches a company's product and ICP, discovers target companies with the Browserbase Search API, researches each deeply and scores ICP fit.</td></tr>
             </tbody>
@@ -235,7 +235,7 @@
         <ol>
           <li>Check what you already know with <strong>chat-history</strong>. It recovers decisions, previous fixes and research from past AI conversations, with source evidence, by reading local Claude Code, Codex, Grok and Cursor history. A good share of the research I have paid for twice was sitting in an old session.</li>
           <li>For a company, run <strong>company-research</strong>. It researches the product and ICP, discovers target companies with the Browserbase Search API, researches each one deeply and scores ICP fit. Scoring fit is the useful part: a list of two hundred companies is noise, a list of twenty with reasons is a plan.</li>
-          <li>For a market, hand the long job to <strong>manus</strong>, which delegates deep web research, market analysis, product comparisons and stock analysis to the Manus agent for autonomous execution. Add <strong>seo-dataforseo</strong> for the demand side: keyword research, SERP analysis, backlink profiles and competitor analysis.</li>
+          <li>For a market, hand the long job to <strong>manus</strong>, which delegates deep web research, market analysis, product comparisons and stock analysis to the Manus agent for autonomous execution. Add <strong>seo</strong> for the demand side: search demand research, content briefs, and SEO, AEO and GEO measurement.</li>
           <li>For a paper, read it with <strong>deep-reader</strong>, which keeps page-anchored notes, then check the references with <strong>citation-management</strong>, which searches OpenAlex, PubMed and Google Scholar, validates references and produces formatted BibTeX.</li>
           <li>When the best source is a talk or an interview, <strong>youtube-full</strong> pulls transcripts, searches videos and channels, and supports quotes and topic research. Transcripts are searchable; a two-hour interview is not, until it is text.</li>
           <li>Write the brief with every claim pointing at a source from steps 2 to 5. A research note without sources is an opinion in a nicer font.</li>
@@ -247,7 +247,7 @@
 npx skills add https://github.com/ZeroPointRepo/youtube-skills/tree/main/clawhub/youtube-full
 npx skills add https://github.com/tronghieu/agent-skills/tree/main/skills/deep-reader
 npx skills add https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/skills/citation-management
-npx skills add https://github.com/AgriciDaniel/claude-seo/tree/main/skills/seo-dataforseo
+npx skills add https://github.com/mblode/agent-skills/tree/main/skills/seo
 npx skills add https://github.com/sanjay3290/ai-skills/tree/main/skills/manus
 npx skills add https://github.com/browserbase/skills/tree/main/skills/company-research</code></pre></div>
         <p>The <a href="https://skills.sh/" target="_blank" rel="noopener">skills CLI</a> works for Claude Code, Codex, Cursor and other agents, and each skill's page in the directory lists the copy-by-hand routes if you would rather not run npx.</p>
@@ -256,7 +256,7 @@ npx skills add https://github.com/browserbase/skills/tree/main/skills/company-re
         <h2 id="what-to-check-before-you-install">What to check before you install</h2>
         <ul>
           <li>Licenses: six of the seven are MIT; manus is Apache-2.0. Confirm the license file in each repository anyway.</li>
-          <li>Services: company-research uses the Browserbase Search API, manus needs access to the Manus agent, seo-dataforseo needs the DataForSEO server, and youtube-full needs YouTube access, so read each SKILL.md for what it expects. chat-history reads your local AI conversation history, which is as sensitive as anything on your machine.</li>
+          <li>Services: company-research uses the Browserbase Search API, manus needs access to the Manus agent, and youtube-full needs YouTube access, so read each SKILL.md for what it expects. chat-history reads your local AI conversation history, which is as sensitive as anything on your machine.</li>
           <li>Read each SKILL.md before you enable it. The directory has not security scanned any skill.</li>
         </ul>
       </section>
@@ -279,7 +279,7 @@ npx skills add https://github.com/browserbase/skills/tree/main/skills/company-re
         <h2 id="more-stacks-title">More stacks</h2>
         <div class="links">
           <a class="link-row" href="../landing-page/"><b>What is the best agent skill stack for shipping a landing page?</b><span>The skills I would install to design, build, measure and test a landing page, with scores and install commands.</span></a>
-          <a class="link-row" href="../seo-and-ai-search/"><b>Which agent skills help you rank in Google and get cited by AI?</b><span>A short, measured stack for search rankings and AI citations, built around live SEO data and first-party WebMCP tools.</span></a>
+          <a class="link-row" href="../seo-and-ai-search/"><b>Which agent skills help you rank in Google and get cited by AI?</b><span>A short, measured stack for search rankings and AI citations, built around SEO, AEO and GEO measurement and first-party WebMCP tools.</span></a>
           <a class="link-row" href="../code-review/"><b>What is the best agent skill stack for code review?</b><span>A reviewer, a security pass, a verification gate and a comment rewriter, with scores and install commands.</span></a>
           <a class="link-row" href="../ui-design/"><b>Which agent skills should you stack to design a polished UI?</b><span>Reference extraction, variant exploration, build, audit and motion, in order, with scores and install commands.</span></a>
           <a class="link-row" href="../content-and-social/"><b>What is the best agent skill stack for content and social posts?</b><span>Plan, angle, draft, polish, profile and distribution, covered by six scored skills with install commands.</span></a>
