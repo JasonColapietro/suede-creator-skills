@@ -1,0 +1,17 @@
+{
+  "about": "The topics the SuedeAI.directory home page and topics hub feature as Best of tiles, in display order. Each id must be a published topic in directory/topics.json; the build fails on an unknown or unpublished id. Edited by Jason Colapietro.",
+  "topics": [
+    "animation-motion",
+    "copywriting",
+    "diagrams-infographics",
+    "graphic-design",
+    "video-generation",
+    "image-generation",
+    "seo",
+    "ai-search-visibility",
+    "social-media",
+    "landing-pages",
+    "ui-ux-design",
+    "code-review"
+  ]
+}

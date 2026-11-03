@@ -36,7 +36,7 @@ const checkOnly = process.argv.includes("--check");
 const BASE = "https://skills.suedeai.ai";
 const DIR_URL = `${BASE}/directory/`;
 const SITE_NAME = "Suede AI Skills Directory";
-const OG_IMAGE = `${BASE}/assets/social/directory-card.png`;
+const OG_IMAGE = `${BASE}/assets/social/directory-card-v2.png`;
 const ISSUE_URL = "https://github.com/JasonColapietro/suede-creator-skills/issues/new?template=directory-listing.yml";
 const FULL_TABLE_ROWS = 100;
 
@@ -645,6 +645,40 @@ ${links}
     </header>`;
 }
 
+// The kind bar: one row under the header on every page, holding every catalog
+// the directory keeps, so Grok bots, MCP servers, plugins and rules are one
+// click from anywhere instead of only from the home hero and the footer. Each
+// entry is [path, label, count, pixel icon]. agentCounts is set before any
+// page renders, so the agent count is known by the time this is called.
+const kindBarItems = () => [
+  ["directory/", "Skills", data.skills.length, "skills"],
+  ["directory/featured/", "Featured Skills", EDITORIAL.projects.length + MEMBERS.length, "featured"],
+  ...(HAS_AGENTS ? [["directory/agents/", "AI agents", agentCounts ? agentCounts.products + agentCounts.ungraded : null, "ai-agents-llm"]] : []),
+  ...KINDS.map((k) => [kindPath(k), k.short, kindEntries(k).length, k.id]),
+  ...(STACKS.length ? [[STACKS_PATH, "Stacks", STACKS.length, "stacks"]] : []),
+];
+// Pages about the directory itself light no catalog; every other page that
+// no catalog claims is a skills page (categories, topics, rankings, listings).
+const KIND_BAR_NEUTRAL = ["directory/methodology/", "directory/submit/", "directory/saved/", "directory/check/", "directory/guides/", "directory/api/", "directory/trust/"];
+function kindBarCurrent(here, items) {
+  if (!here.startsWith("directory/")) return null;
+  const owner = items.filter(([p]) => p !== "directory/" && here.startsWith(p)).sort((a, b) => b[0].length - a[0].length)[0];
+  if (owner) return owner[0];
+  return KIND_BAR_NEUTRAL.some((p) => here.startsWith(p)) ? null : "directory/";
+}
+// One-word labels the bar shows when it runs short of room.
+const KIND_BAR_SHORT = { "Featured Skills": "Featured", "AI agents": "Agents", "Plugins and mods": "Plugins", "Grok bots": "Grok", "MCP servers": "MCP", "Rules and prompts": "Rules" };
+function kindBar(here, absolute = false) {
+  const items = kindBarItems();
+  const current = absolute ? null : kindBarCurrent(here, items);
+  const links = items.map(([p, label, count, icon]) => `        <a href="${link(here, p, absolute)}"${p === current ? ' aria-current="page"' : ""}>${pixelIcon(icon, { size: 14 })}<span class="kind-label" data-short="${esc(KIND_BAR_SHORT[label] || label)}">${esc(label)}</span>${count === null ? "" : `<span class="count-chip">${fmt(count)}</span>`}</a>`).join("\n");
+  return `    <nav class="kind-bar" aria-label="Directory catalogs">
+      <div class="shell kind-bar-inner">
+${links}
+      </div>
+    </nav>`;
+}
+
 const FOOTER_LINKS = [
   ["directory/", "Skills"], ["directory/top/", "Top 100"], ["directory/new/", "New"], ["directory/topics/", "Topics"], ["directory/for/", "By task"],
   ["directory/featured/", "Featured projects"], ...(HAS_AGENTS ? [["directory/agents/", "AI agents"]] : []),
@@ -761,6 +795,7 @@ ${head.join("\n")}
 <a class="skip-link" href="#main">Skip to content</a>
 
 ${nav(here, absolute)}
+${kindBar(here, absolute)}
     <main id="main" tabindex="-1" class="shell directory">
 ${h1Html}
 ${body}
@@ -1816,15 +1851,17 @@ function renderCategory(c) {
   const answer = best.length
     ? `      <p class="answer"><b>Highest-scoring ${esc(c.short)} skills</b> in the ${longDate(data.generated)} snapshot: ${listPhrase(best.map((s) => `<a href="${rel(here, skillPath(s))}">${esc(displayName(s))}</a> from ${esc(s.repo)} (${s.score}/100)`))}. Scores come from the <a href="${rel(here, "directory/methodology/")}">Suede Skill Check</a>.</p>`
     : "";
-  const body = `${bc.html}
-      <p class="lead">${esc(c.intro)}</p>
-${answer}
-      <ul class="stat-row" aria-label="Category size">
-        <li><b>${fmt(all.length)}</b> listed skills</li>
-        <li><b>${fmt(repoCounts.size)}</b> repositories</li>
-        <li><b>${fmt(feat.length)}</b> with full pages</li>
-      </ul>
-      <figure class="hero-figure"><img class="matrix" src="matrix.svg" width="720" height="${Math.ceil(all.length / 72) * 10}" alt="${fmt(all.length)} ${esc(c.lower)} skills as a grid of dots, one per skill, sorted by score and colored by grade" loading="lazy" decoding="async">${matrixCaption(`Every dot is a listed ${esc(c.lower)} skill, sorted by score.`)}</figure>
+  const matrixSize = heroMatrixSize(all.length);
+  const hero = pageHero(`          <div class="eyebrow">Skill directory &middot; ${esc(c.label)}</div>
+          <div class="hero-row">${pixelIcon(c.slug, { size: 56, className: "pix page-icon" })}<div><h1>${esc(c.title)} <span class="h1-sub">agent skills</span></h1></div></div>
+${bc.html}
+          <p class="lead">${esc(c.intro)}</p>
+          <ul class="stat-row" aria-label="Category size">
+            <li><b>${fmt(all.length)}</b> listed skills</li>
+            <li><b>${fmt(repoCounts.size)}</b> repositories</li>
+            <li><b>${fmt(feat.length)}</b> with full pages</li>
+          </ul>`, `        <figure class="hero-figure" style="--figure-w:${matrixSize.width + 22}px"><img class="matrix" src="matrix.svg" width="${matrixSize.width}" height="${matrixSize.height}" alt="${fmt(all.length)} ${esc(c.lower)} skills as a grid of dots, one per skill, sorted by score and colored by grade" loading="eager" decoding="async">${matrixCaption(`Every dot is a listed ${esc(c.lower)} skill, sorted by score.`)}</figure>`);
+  const body = `${answer}
       <p><a class="button secondary" href="${rel(here, "directory/")}?category=${esc(c.slug)}#browse">Build a shortlist for your task →</a></p>
       <section class="panel" aria-labelledby="all-title">
         <h2 id="all-title">All ${fmt(all.length)} ${esc(c.short)} skills</h2>
@@ -1865,14 +1902,13 @@ ${topRepos.map(([slug, n]) => `          <a class="link-row" href="${rel(here, r
   const title = c.seo_title;
   const description = c.meta;
   const keywords = setKeywords(here, [`${c.short} agent skills`, `${c.short} claude skills`, `${c.short} skills for codex`, `best ${c.short} skills`, "agent skills directory"]);
-  files.set(`${here}matrix.svg`, skillMatrix(all, { cols: 72, title: `${fmt(all.length)} ${c.lower} skills, one dot each, colored by Suede Skill Check grade` }));
+  files.set(`${here}matrix.svg`, skillMatrix(all, { cols: matrixSize.cols, title: `${fmt(all.length)} ${c.lower} skills, one dot each, colored by Suede Skill Check grade` }));
   files.set(`${here}index.html`, page({
     here,
     title,
     description,
     keywords,
-    h1Html: `      <div class="eyebrow">Skill directory &middot; ${esc(c.label)}</div>
-      <div class="hero-row">${pixelIcon(c.slug, { size: 56, className: "pix page-icon" })}<div><h1>${esc(c.title)} <span class="h1-sub">agent skills</span></h1></div></div>`,
+    h1Html: hero,
     body,
     jsonld: [
       {
@@ -2421,6 +2457,7 @@ ${kindCards.map(([p, name, text, count, icon]) => `          <a class="kind-card
       </section>`;
 
   const body = `${boardHtml}
+${bestOfSection(here)}
       <section class="directory-browser" id="browse" aria-labelledby="browse-title" data-directory-browser>
         <div class="browse-heading"><h2 id="browse-title">Find your next skill</h2><a class="shortlist-jump" href="#task-shortlist" hidden>Your shortlist <span aria-hidden="true">↓</span></a></div>
         <form class="discovery-controls" role="search" hidden>
@@ -2504,7 +2541,6 @@ ${FAQ.map(([q, a]) => `        <h3>${esc(q)}</h3>\n        <p>${esc(a)}${q === "
   const title = "Claude Code Skills Directory: Best Agent Skills, Graded";
   const description = trimTo(`Find the best Claude Code skills: ${fmt(data.skills.length)} agent skills for Claude, Codex and Cursor from ${fmt(repos.size)} GitHub repositories, graded and linked to source.`, 158);
   const keywords = setKeywords(here, ["claude code skills directory", "agent skills directory", "claude skills directory", "best claude skills", "SKILL.md directory", "ai agent skills list", "most installed agent skills", "Suede AI Skills Directory"]);
-  const typeSwitch = [["./", "Skills", `<span class="count-chip">${fmt(data.skills.length)}</span>`], [rel(here, "directory/featured/"), "Featured Skills", ""], ...(HAS_AGENTS ? [[rel(here, "directory/agents/"), "AI agents", ""]] : []), ...KINDS.map((k) => [rel(here, kindPath(k)), k.short, ""]), ...(STACKS.length ? [[rel(here, STACKS_PATH), "Stacks", ""]] : [])];
   files.set(`${here}index.html`, page({
     here,
     title,
@@ -2514,7 +2550,6 @@ ${FAQ.map(([q, a]) => `        <h3>${esc(q)}</h3>\n        <p>${esc(a)}${q === "
         <div>
           <p class="eyebrow">SuedeAI.directory, by Suede AI</p>
           <h1>Agent skills, graded and ready to install</h1>
-          <nav class="directory-type-switch" aria-label="Directory type">${typeSwitch.map(([h, label, extra], i) => `<a href="${h}"${i === 0 ? ' aria-current="page"' : ""}>${label}${extra ? ` ${extra}` : ""}</a>`).join("")}</nav>
           <p class="lead">${fmt(data.skills.length)} skills for Claude Code, Codex, Cursor and other agents, scored 0 to 99 from their published files and linked to source, with the install command for each.</p>
           <p class="directory-snapshot"><span><b>${fmt(repos.size)}</b> repositories</span><span><b>${categories.length}</b> categories</span><span><b>${openPct}%</b> openly licensed</span><span>Snapshot <b>${longDate(data.generated)}</b></span></p>
         </div>
@@ -3132,6 +3167,19 @@ function skillMatrix(rows, { cols, title }) {
   const sorted = [...rows].sort((a, b) => b.score - a.score || a.id.localeCompare(b.id));
   return dotMatrix(sorted, { cols, cell: 10, dot: 8, colorOf: gradeDot, title, legend: Object.entries(GRADE_COLORS).map(([g, c]) => [c, `grade ${g}`]) });
 }
+// The home page's hero layout for any page with a focal graphic: copy on the
+// left, the graphic on the right, one column under 900px. Hero matrices are
+// shaped to the column (about 2.4 dots wide per dot tall) and drawn with
+// cells of at most 16px, so a small category reads as a smaller block rather
+// than a stretched one.
+const heroMatrixCols = (n) => Math.max(16, Math.min(48, Math.round(Math.sqrt(n * 2.4))));
+const heroMatrixSize = (n) => { const cols = heroMatrixCols(n); return { cols, width: cols * 16, height: Math.ceil(n / cols) * 16 }; };
+const pageHero = (copy, figure) => `      <header class="directory-hero page-hero">
+        <div>
+${copy}
+        </div>
+${figure}
+      </header>`;
 const matrixCaption = (what) => `<p class="matrix-caption"><span>${what}</span>${["A", "B", "C", "D"].map((g) => `<span><i style="background:${GRADE_COLORS[g]}"></i>${g}</span>`).join("")}</p>`;
 function installChart(rows, here) {
   const top = rows.slice(0, 20);
@@ -3245,6 +3293,70 @@ ${list.map((o) => `          <a class="link-row" href="${rel(here, skillPath(o))
 }
 
 const topicChip = (here, t, n) => `<a href="${rel(here, topicPath(t))}">${esc(t.topic.name)} <span class="count-chip">${fmt(n)}</span></a>`;
+
+// ------------------------------------------------------------ topic tiles
+// Best of: the topics the home page and the topics hub feature as data tiles,
+// in the order directory/editorial/best-of.json gives. Each tile draws its
+// topic's skills as a dot matrix colored by grade and names the top pick, so
+// the tile is a small chart of the page it opens rather than a label.
+const BEST_OF_FILE = path.join(repoRoot, "directory", "editorial", "best-of.json");
+const BEST_OF = (() => {
+  if (!fs.existsSync(BEST_OF_FILE)) return [];
+  const ids = JSON.parse(fs.readFileSync(BEST_OF_FILE, "utf8")).topics || [];
+  return ids.map((id) => {
+    const t = TOPICS.find((x) => x.topic.id === id);
+    if (!t) throw new Error(`best-of.json: ${id} is not a published topic`);
+    return t;
+  });
+})();
+const TILE_COLS = 24;
+const TILE_MAX_DOTS = TILE_COLS * 6;
+const gradeCounts = (rows) => Object.fromEntries(["A", "B", "C", "D"].map((g) => [g, rows.filter((s) => s.grade === g).length]));
+const gradeSummary = (rows) => { const n = gradeCounts(rows); return `${n.A} grade A, ${n.B} grade B, ${n.C} grade C and ${n.D} grade D`; };
+function topPick(t) {
+  const ranked = t.rows.filter((s) => !isFirstParty(s)).sort((a, b) => Number(b.featured) - Number(a.featured) || byScore(a, b));
+  return ranked[0] || null;
+}
+// One 4px dot on a 6px cell per skill, best score first, one path per grade.
+function tileMatrix(t) {
+  const dots = [...t.rows].sort(byScore).slice(0, TILE_MAX_DOTS);
+  const rows = Math.max(1, Math.ceil(dots.length / TILE_COLS));
+  const byGrade = new Map();
+  dots.forEach((s, i) => byGrade.set(s.grade, `${byGrade.get(s.grade) || ""}M${(i % TILE_COLS) * 6} ${Math.floor(i / TILE_COLS) * 6}h4v4h-4z`));
+  const label = `${fmt(t.rows.length)} ${t.topic.noun.toLowerCase()} skills by Suede Skill Check grade: ${gradeSummary(t.rows)}`;
+  return `<svg class="tile-matrix" viewBox="0 0 ${TILE_COLS * 6} ${rows * 6}" width="${TILE_COLS * 6}" height="${rows * 6}" shape-rendering="crispEdges" role="img" aria-label="${esc(label)}">${[...byGrade].map(([g, d]) => `<path fill="${GRADE_COLORS[g] || GRADE_COLORS.D}" d="${d}"/>`).join("")}</svg>`;
+}
+function topicTile(here, t) {
+  const top = topPick(t);
+  const extra = t.rows.length > TILE_MAX_DOTS ? `<span class="tile-more">+${fmt(t.rows.length - TILE_MAX_DOTS)}</span>` : "";
+  return `          <a class="topic-tile" href="${rel(here, topicPath(t))}" data-count="${t.rows.length}">
+            <span class="tile-head"><span>${esc(groupById.get(t.topic.group).name)}</span><span class="tile-count">${fmt(t.rows.length)}<span class="visually-hidden"> skills</span></span></span>
+            <b class="tile-name">${esc(t.topic.name)}</b>
+            <span class="tile-field">${tileMatrix(t)}${extra}<span class="tile-scan" aria-hidden="true"></span></span>
+            ${top ? `<span class="tile-top"><span class="tile-top-label">Top</span><span class="tile-top-name">${esc(displayName(top))}</span><span class="grade grade-${top.grade.toLowerCase()}">${top.score} · ${top.grade}</span></span>` : `<span class="tile-top"><span class="tile-top-label">Top</span><span class="tile-top-name">No ranked pick yet</span></span>`}
+          </a>`;
+}
+// The grade mix as a four-stop bar: percentages of the topic's skills at each
+// grade, rounded to a tenth, the last stop taking the remainder.
+function gradeMix(rows) {
+  const n = gradeCounts(rows);
+  const total = rows.length || 1;
+  const a = Math.round((n.A / total) * 1000) / 10, b = Math.round((n.B / total) * 1000) / 10, c = Math.round((n.C / total) * 1000) / 10;
+  const d = Math.max(0, Math.round((100 - a - b - c) * 10) / 10);
+  return `--a:${a}%;--b:${b}%;--c:${c}%;--d:${d}%`;
+}
+const compactTile = (here, t) => `<a class="topic-tile is-compact" href="${rel(here, topicPath(t))}" data-count="${t.rows.length}"><b class="tile-name">${esc(t.topic.name)}</b><span class="tile-count">${fmt(t.rows.length)}<span class="visually-hidden"> skills</span></span><span class="tile-mix" style="${gradeMix(t.rows)}" title="${esc(gradeSummary(t.rows))}" aria-hidden="true"></span></a>`;
+function bestOfSection(here) {
+  if (!BEST_OF.length) return "";
+  const onHub = here === TOPICS_PATH;
+  return `      <section class="panel best-of" aria-labelledby="best-of-title">
+        <div class="board-head"><h2 id="best-of-title">Best of</h2>${onHub ? "" : `<a href="${rel(here, TOPICS_PATH)}">All ${fmt(TOPICS.length)} topics</a>`}</div>
+        <p class="muted">Each tile charts its topic: one dot per listed skill, best score first, colored by grade, with the top pick named. Suede AI's own skills are not ranked.</p>
+        <div class="tile-grid">
+${BEST_OF.map((t) => topicTile(here, t)).join("\n")}
+        </div>
+      </section>`;
+}
 function topicChipsPanel(here, c) {
   const list = TOPICS.map((t) => [t, t.rows.filter((s) => s.category === c.slug).length]).filter(([, n]) => n >= 2).sort((a, b) => b[1] - a[1] || a[0].topic.name.localeCompare(b[0].topic.name)).slice(0, 30);
   if (!list.length) return "";
@@ -3384,7 +3496,7 @@ function renderTopicsHub() {
     return `      <section class="panel" id="group-${g.id}" aria-labelledby="group-${g.id}-title">
         <h2 id="group-${g.id}-title">${esc(g.name)}</h2>
         <p>${esc(g.intro)}</p>
-${live.length ? `        <p class="topic-chips">${live.map((t) => topicChip(here, t, t.rows.length)).join("")}</p>` : `        <p class="muted">No topic in this group has three listed skills yet.</p>`}
+${live.length ? `        <div class="tile-grid is-compact">${live.map((t) => compactTile(here, t)).join("")}</div>` : `        <p class="muted">No topic in this group has three listed skills yet.</p>`}
 ${waiting.length ? `        <p class="muted">No page yet: ${waiting.map((t) => `${esc(t.topic.name)} (${fmt(t.rows.length)})`).join(", ")}. Publish a skill for one of these? <a href="${rel(here, "directory/submit/")}">Request a listing</a>.</p>` : ""}
       </section>`;
   }).join("\n");
@@ -3399,6 +3511,7 @@ ${waiting.length ? `        <p class="muted">No page yet: ${waiting.map((t) => `
     h1: "Agent skills by topic",
     body: `      <p class="lead">Find skills by the job they do. ${fmt(TOPICS.length)} topics in ${TOPIC_CONFIG.groups.length} groups cover ${fmt(covered)} of the ${fmt(data.skills.length)} listed skills; each topic page lists every match with its score, license and source. A topic gets a page once ${TOPIC_GATE.minListed} listed skills match it.</p>
       <nav class="topic-chips" aria-label="Topic groups">${TOPIC_CONFIG.groups.map((g) => `<a href="#group-${g.id}">${esc(g.name)}</a>`).join("")}</nav>
+${bestOfSection(here)}
 ${groups}
       <section class="panel" aria-labelledby="other-ways-title">
         <h2 id="other-ways-title">Other ways to browse</h2>
@@ -3700,7 +3813,8 @@ const TOUCH_COLORS = { none: "#00ca52", service: "#ffb200", runs: "#ff5e63", mcp
 const touchOf = (s) => (s.flags.includes("runs-commands") ? "runs" : s.flags.includes("mcp") ? "mcp" : s.flags.includes("api-key") || s.flags.includes("network") ? "service" : "none");
 function renderSecurity() {
   const here = SECURITY_PATH;
-  files.set(`${here}matrix.svg`, dotMatrix([...featured].sort((a, b) => ["none", "service", "mcp", "runs"].indexOf(touchOf(a)) - ["none", "service", "mcp", "runs"].indexOf(touchOf(b)) || b.score - a.score), { cols: 72, cell: 10, dot: 8, colorOf: (s) => TOUCH_COLORS[touchOf(s)], title: `${fmt(featured.length)} full-page skills colored by what their files touch`, legend: Object.entries(TOUCH_COLORS).map(([k, c]) => [c, k]) }));
+  const trustMatrix = heroMatrixSize(featured.length);
+  files.set(`${here}matrix.svg`, dotMatrix([...featured].sort((a, b) => ["none", "service", "mcp", "runs"].indexOf(touchOf(a)) - ["none", "service", "mcp", "runs"].indexOf(touchOf(b)) || b.score - a.score), { cols: trustMatrix.cols, cell: 10, dot: 8, colorOf: (s) => TOUCH_COLORS[touchOf(s)], title: `${fmt(featured.length)} full-page skills colored by what their files touch`, legend: Object.entries(TOUCH_COLORS).map(([k, c]) => [c, k]) }));
   const bc = crumbs(here, [["directory/", "Directory"], [null, "Security"]]);
   const flag = (id) => FLAGS_LIVE.find((f) => f.flag.id === id);
   const flagLink = (id, text) => (flag(id) ? `<a href="${rel(here, flagPath(id))}">${text}</a>` : text);
@@ -3732,8 +3846,11 @@ function renderSecurity() {
     ["Which skills are the safest to start with?", `Start with the ${n("no-setup")} full-page skills marked No setup required: their files read no credential, call no outside host, connect to no MCP server and run no command. They are still third-party text that an agent will follow, so read the SKILL.md first.`],
     ["How do I report a skill?", "Open a listing request on GitHub and choose a correction or removal; describe what you found and link the file. Reports about Suede AI's own skills go through the repository's security policy."],
   ]);
-  const body = `${bc.html}
-      <p class="lead">No listed skill is security scanned by the directory, and every listing says so. This page explains what the directory does check before a skill is listed, what it leaves to you, what has gone wrong in other registries, and how to review a skill in a few minutes.</p>
+  const hero = pageHero(`          <div class="eyebrow">Suede AI Skills Directory &middot; Security</div>
+          <div class="hero-row">${pixelIcon("trust", { size: 56, className: "pix page-icon" })}<div><h1>Security: what the directory checks, and what you should</h1></div></div>
+${bc.html}
+          <p class="lead">No listed skill is security scanned by the directory, and every listing says so. This page explains what the directory does check before a skill is listed, what it leaves to you, what has gone wrong in other registries, and how to review a skill in a few minutes.</p>`, `        <figure class="hero-figure" style="--figure-w:${trustMatrix.width + 22}px"><img class="matrix" src="matrix.svg" width="${trustMatrix.width}" height="${trustMatrix.height}" alt="${fmt(featured.length)} full-page skills as a grid of dots colored by what their files touch" loading="eager" decoding="async"><p class="matrix-caption"><span>Every dot is a skill whose files the directory read in full.</span><span><i style="background:${TOUCH_COLORS.none}"></i>No credential, host or command</span><span><i style="background:${TOUCH_COLORS.service}"></i>Credential or outside host</span><span><i style="background:${TOUCH_COLORS.runs}"></i>Runs commands</span><span><i style="background:${TOUCH_COLORS.mcp}"></i>MCP server</span></p></figure>`);
+  const body = `
       <section class="panel" aria-labelledby="checks-title">
         <h2 id="checks-title">What is checked before a skill is listed</h2>
         <ul>
@@ -3751,7 +3868,6 @@ function renderSecurity() {
           <div class="stat"><b>${n("runs-commands")}</b><span>${flagLink("runs-commands", "run package managers, CLIs or other commands")}</span></div>
         </div>
         <p class="muted">Counts from the ${longDate(data.generated)} snapshot. Filters marked full pages count only the skills whose files the directory reads in full.</p>
-        <figure class="hero-figure"><img class="matrix" src="matrix.svg" width="720" height="${Math.ceil(featured.length / 72) * 10}" alt="${fmt(featured.length)} full-page skills as a grid of dots colored by what their files touch" loading="lazy" decoding="async"><p class="matrix-caption"><span>Every dot is a skill whose files the directory read in full.</span><span><i style="background:${TOUCH_COLORS.none}"></i>No credential, host or command</span><span><i style="background:${TOUCH_COLORS.service}"></i>Credential or outside host</span><span><i style="background:${TOUCH_COLORS.runs}"></i>Runs commands</span><span><i style="background:${TOUCH_COLORS.mcp}"></i>MCP server</span></p></figure>
       </section>
       <section class="panel" aria-labelledby="not-title">
         <h2 id="not-title">What is not checked</h2>
@@ -3800,8 +3916,7 @@ ${faq.html}`;
   const keywords = setKeywords(here, ["agent skill security", "are claude skills safe", "malicious agent skills", "skill.md security scan", "review a skill before installing"]);
   files.set(`${here}index.html`, page({
     here, title, description, keywords,
-    h1Html: `      <div class="eyebrow">Suede AI Skills Directory &middot; Security</div>
-      <div class="hero-row">${pixelIcon("trust", { size: 56, className: "pix page-icon" })}<div><h1>Security: what the directory checks, and what you should</h1></div></div>`,
+    h1Html: hero,
     body,
     jsonld: [
       { "@context": "https://schema.org", "@type": "WebPage", "@id": `${url(here)}#page`, name: title, headline: "Security: what the directory checks, and what you should", description, url: url(here), dateModified: PAGE_DATE, inLanguage: "en", isPartOf: DIRECTORY_REF, publisher: PUBLISHER_REF, author: PERSON, breadcrumb: { "@id": `${url(here)}#breadcrumb` } },
