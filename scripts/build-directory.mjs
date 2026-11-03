@@ -25,6 +25,7 @@ import { loadTopicConfig, planTopics, topicsBySkill, similarByTopic, TOPIC_GATE 
 import { LANES, FLAGS, laneById, flagById, costLane, skillFlags, planFacets } from "./directory/facets.mjs";
 import { loadListedSince, applyListedSince, serializeLedger, isNewListing, isRecentlyUpdated, NEW_DAYS } from "./directory/listed-since.mjs";
 import { validateInstalls } from "./directory/installs.mjs";
+import { loadCompetitors, fill as fillVersus, FACT_ROWS, versusPath, altBrandPath } from "./directory/versus.mjs";
 import { pixelIcon, dotMatrix } from "./directory/pixel-icons.mjs";
 
 const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -473,6 +474,11 @@ const FEED_PATH = "directory/feed.xml";
 const SECURITY_PATH = "directory/trust/";
 const STACKS_PATH = "directory/stacks/";
 const COMPARE_PATH = "directory/compare/";
+// Brand comparison pages ("Suede AI Skills Directory vs <name>" and
+// "<name> alternatives") under the compare hub. directory/editorial/
+// competitors.json holds the sourced facts; scripts/directory/versus.mjs
+// validates them.
+const COMPETITORS = loadCompetitors(path.join(repoRoot, "directory", "editorial", "competitors.json"));
 const API_PATH = "directory/api/";
 const PUBLISHERS_PATH = "directory/publishers/";
 const TOP_MAX = 100;
@@ -4098,7 +4104,7 @@ function renderCompare() {
       <section class="panel" aria-labelledby="compare-how-title">
         <h2 id="compare-how-title">What the comparison shows</h2>
         <p>Each column reads the skill's record from the ${longDate(data.generated)} snapshot: the Suede Skill Check score and the points behind it, the letter grade, the license and cost lane, the capability flags, the topics it is listed under, its repository and the dates it was listed and last changed. Ranked task pages do the same for a whole job: <a href="${rel(here, TASKS_PATH)}">skills by task</a>.</p>
-      </section>`;
+      </section>${versusPanel(here)}`;
   const title = "Compare Agent Skills Side by Side | Suede AI";
   const description = "Compare two or three listed agent skills side by side: Suede Skill Check scores by component, licenses, cost lanes, capabilities and topics.";
   files.set(`${here}index.html`, page({
@@ -4112,6 +4118,249 @@ function renderCompare() {
     ],
     footerNote: "The comparison reads the directory's published index and reports in your browser. It stores and sends nothing.",
   }));
+}
+
+// ------------------------------------------------------------------ brand comparisons
+
+// Live figures for the comparison copy; competitors.json never types them.
+function versusValues(c) {
+  return {
+    skills: fmt(data.skills.length),
+    repos: fmt(repos.size),
+    categories: fmt(categories.length),
+    full: fmt(featured.length),
+    shielded: fmt(dist.shielded),
+    tasks: fmt(TASKS.length),
+    alternatives: fmt(ALTERNATIVES.length),
+    snapshot: longDate(data.generated),
+    installs_matched: INSTALLS ? fmt(INSTALLS_MATCHED) : null,
+    installs_date: INSTALLS ? longDate(INSTALLS.fetched) : null,
+    others: listPhrase(COMPETITORS.filter((o) => o.id !== c.id).map((o) => o.name)),
+  };
+}
+
+// The Suede AI column of every comparison table, from the live dataset.
+function suedeFacts() {
+  const KIND_NOUNS = { plugins: "Claude Code plugins", "mcp-servers": "MCP servers", grok: "Grok bots", rules: "rules files" };
+  const catalogs = [...KINDS.map((k) => KIND_NOUNS[k.id] || k.short), ...(HAS_AGENTS ? ["AI agents"] : [])];
+  return {
+    operator: "Suede AI, edited by Jason Colapietro",
+    lists: `${fmt(data.skills.length)} agent skills from ${fmt(repos.size)} GitHub repositories in ${categories.length} categories${catalogs.length ? `, plus catalogs of ${listPhrase(catalogs)}` : ""}`,
+    ranking: `Suede Skill Check score from 0 to 99 on a published 100-point rubric, with ${plural(TASKS.length, "task shortlist")}`,
+    signals: `A structural listing gate, the license on every listing, a verifiable report per skill, and the scripts, credentials and network calls summarized on ${fmt(featured.length)} full pages`,
+    install: "Install command on every listing for Claude Code, Codex and Cursor",
+    price: "Free with no account; listing a skill is free",
+  };
+}
+const NOT_STATED = "Not stated in the sources below";
+
+function suedeReasons(here) {
+  return `        <ul>
+          <li>Every one of the ${fmt(data.skills.length)} listings carries a Suede Skill Check score from 0 to 99, built from the skill's own files on a <a href="${rel(here, "directory/methodology/")}">published rubric</a>, with a report.json you can verify.</li>
+          <li>${fmt(featured.length)} full skill pages summarize the scripts, credentials and network calls found in the skill, so you know what it touches before you install it.</li>
+          <li><a href="${rel(here, TASKS_PATH)}">${plural(TASKS.length, "task shortlist")}</a> and ${plural(ALTERNATIVES.length, "alternatives page")} compare skills from different publishers that do the same job.</li>
+          <li>Every listing states its license and gives the install command for Claude Code, Codex and Cursor.</li>
+          <li>The <a href="${rel(here, API_PATH)}">search index, per-skill reports and RSS feed</a> are static files with no key and no account.</li>
+        </ul>`;
+}
+
+const SCORE_QA = ["How does the Suede AI Skills Directory score skills?", "Every listed skill gets a Suede Skill Check score from 0 to 99, read from its published files: structure, description quality, instruction depth, bundled files, maintenance and curated-list citations. The rubric is public on the methodology page."];
+const FREE_QA = ["Is the Suede AI Skills Directory free?", "Yes. Browsing, comparing and the static data files need no account, and listing a skill in the directory is free."];
+
+function versusSources(here, list) {
+  return `      <section class="panel" id="sources" aria-labelledby="sources-title">
+        <h2 id="sources-title">Where do these facts come from?</h2>
+${list.map((c) => `        <p>${esc(c.name)}, checked ${longDate(c.checked)}:</p>
+        <ul>
+${c.sources.map((s) => `          <li><a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.title)}</a></li>`).join("\n")}
+        </ul>`).join("\n")}
+        <p>Suede AI Skills Directory figures come from the directory's ${longDate(data.generated)} snapshot and update with every refresh. <a href="${rel(here, "directory/methodology/")}">How skills are listed and scored</a>.</p>
+      </section>`;
+}
+
+function versusMoreLinks(here, c, { onAlternatives }) {
+  const rows = [
+    onAlternatives ? [versusPath(c), `Suede AI Skills Directory vs ${c.name}`, "Side by side, with sourced facts"] : [altBrandPath(c), `${c.name} alternatives`, `${plural(COMPETITORS.length, "directory", "directories")} compared`],
+    ...COMPETITORS.filter((o) => o.id !== c.id).map((o) => [versusPath(o), `Suede AI Skills Directory vs ${o.name}`, `${o.name} and the Suede AI Skills Directory, side by side`]),
+    [COMPARE_PATH, "Compare skills side by side", "Pick two or three listed skills and read their scores by component"],
+  ];
+  return `      <section class="panel" aria-labelledby="more-title">
+        <h2 id="more-title">More comparisons</h2>
+        <div class="links">
+${rows.map(([p, b, s]) => `          <a class="link-row" href="${rel(here, p)}"><b>${esc(b)}</b><span>${esc(s)}</span></a>`).join("\n")}
+        </div>
+      </section>`;
+}
+
+const fitTitle = (options, label) => {
+  const t = options.find((x) => x.length >= 20 && x.length <= 60);
+  if (!t) throw new Error(`${label}: no title fits 20-60 characters`);
+  return t;
+};
+
+function renderVersus(c) {
+  const here = versusPath(c);
+  const v = versusValues(c);
+  const f = (s) => fillVersus(s, v);
+  const label = `Suede AI vs ${c.name}`;
+  const bc = crumbs(here, [["directory/", "Directory"], [COMPARE_PATH, "Compare"], [null, label]]);
+  const answer = answerWithin([f(c.vs_answer)], `versus ${c.id}`);
+  const faq = faqBlock(here, [...c.faq.map(([q, a]) => [f(q), f(a)]), SCORE_QA, FREE_QA]);
+  const suede = suedeFacts();
+  const body = `${bc.html}
+      <p class="answer" id="answer">${esc(answer)}</p>
+      <section class="panel" aria-labelledby="table-title">
+        <h2 id="table-title">How do the Suede AI Skills Directory and ${esc(c.name)} compare?</h2>
+        <div class="table-wrap"><table class="checks" id="versus-table"><thead><tr><th scope="col">Question</th><th scope="col">Suede AI Skills Directory</th><th scope="col">${esc(c.name)}</th></tr></thead><tbody>
+${FACT_ROWS.map(([k, l]) => `          <tr><th scope="row">${esc(l)}</th><td>${esc(suede[k])}</td><td>${esc(c.facts[k] === null ? NOT_STATED : f(c.facts[k]))}</td></tr>`).join("\n")}
+        </tbody></table></div>
+      </section>
+      <section class="panel" aria-labelledby="what-title">
+        <h2 id="what-title">What is ${esc(c.name)}?</h2>
+        <p>${esc(f(c.summary))}</p>
+      </section>
+      <section class="panel" aria-labelledby="why-title">
+        <h2 id="why-title">Why choose the Suede AI Skills Directory over ${esc(c.name)}?</h2>
+        <p>${esc(f(c.angle))}</p>
+${suedeReasons(here)}
+        <p><a class="button" href="${rel(here, "directory/")}">Browse ${fmt(data.skills.length)} graded skills</a> <a class="button secondary" href="${rel(here, "directory/submit/")}">List your skill free</a></p>
+      </section>${c.together ? `
+      <section class="panel" aria-labelledby="together-title">
+        <h2 id="together-title">Can you use ${esc(c.name)} and the Suede AI Skills Directory together?</h2>
+        <p>${esc(f(c.together))}</p>
+      </section>` : ""}
+${faq.html}
+${versusSources(here, [c])}
+${versusMoreLinks(here, c, { onAlternatives: false })}`;
+  const title = fitTitle([`Suede AI Skills Directory vs ${c.name}: Compared`, `Suede AI Skills Directory vs ${c.name}`, `Suede AI Directory vs ${c.name}`], `versus ${c.id}`);
+  const description = fitMeta([f(c.vs_meta)], `versus ${c.id}`);
+  const h1 = `How does the Suede AI Skills Directory compare with ${c.name}?`;
+  files.set(`${here}index.html`, page({
+    here, title, description,
+    keywords: setKeywords(here, [`${c.name} comparison`, `${c.name} vs suede ai skills directory`, `${c.name} features`, "agent skill directory comparison", "graded agent skills directory"]),
+    h1Html: `      <div class="eyebrow">Compare &middot; Suede AI Skills Directory vs ${esc(c.name)}</div>
+      <h1>${esc(h1)}</h1>`,
+    body,
+    jsonld: [
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "@id": `${url(here)}#page`,
+        name: title,
+        headline: h1,
+        description,
+        url: url(here),
+        dateModified: PAGE_DATE,
+        inLanguage: "en",
+        isPartOf: DIRECTORY_REF,
+        publisher: PUBLISHER_REF,
+        author: { "@id": PERSON_ID },
+        breadcrumb: { "@id": `${url(here)}#breadcrumb` },
+        about: [
+          { "@type": "WebSite", name: SITE_NAME, url: DIR_URL, publisher: { "@id": ORG_ID } },
+          { "@type": "WebSite", name: c.name, url: c.url },
+        ],
+        citation: c.sources.map((s) => s.url),
+      },
+      bc.ld,
+      faq.ld,
+    ],
+    footerNote: `A comparison from ${SITE_LABEL}. Facts about ${esc(c.name)} come from the public pages linked under the sources, checked ${longDate(c.checked)}.`,
+  }));
+}
+
+function renderBrandAlternatives(c) {
+  const here = altBrandPath(c);
+  const v = versusValues(c);
+  const f = (s) => fillVersus(s, v);
+  const others = COMPETITORS.filter((o) => o.id !== c.id);
+  const bc = crumbs(here, [["directory/", "Directory"], [COMPARE_PATH, "Compare"], [null, `${c.name} alternatives`]]);
+  const answer = answerWithin([f(c.alt_answer)], `alternatives ${c.id}`);
+  const ranking = c.facts.ranking ? `How ${c.name} ranks skills: ${ensureSentence(f(c.facts.ranking))} ` : "";
+  const faq = faqBlock(here, [
+    [`What is the best alternative to ${c.name}?`, `The Suede AI Skills Directory. It grades ${v.skills} agent skills from ${v.repos} GitHub repositories on a published 0 to 99 rubric, states each license and gives the install command for Claude Code, Codex and Cursor on every listing.`],
+    [`How is the Suede AI Skills Directory different from ${c.name}?`, `${ranking}How the Suede AI Skills Directory ranks them: by the Suede Skill Check score, built from each skill's own files, with the points behind it shown on every listing.`],
+    ...c.alt_faq.map(([q, a]) => [f(q), f(a)]),
+    FREE_QA,
+  ]);
+  const suede = suedeFacts();
+  const cols = FACT_ROWS.filter(([k]) => ["operator", "lists", "ranking", "price"].includes(k));
+  const cell = (o, k) => esc(o.facts[k] === null ? NOT_STATED : fillVersus(o.facts[k], versusValues(o)));
+  const body = `${bc.html}
+      <p class="answer" id="answer">${esc(answer)}</p>
+      <section class="panel" aria-labelledby="alts-table-title">
+        <h2 id="alts-table-title">Which directories are the best ${esc(c.name)} alternatives?</h2>
+        <div class="table-wrap"><table class="checks" id="brand-alternatives"><thead><tr><th scope="col">Directory</th>${cols.map(([, l]) => `<th scope="col">${esc(l)}</th>`).join("")}</tr></thead><tbody>
+          <tr class="compare-subject"><th scope="row"><a href="${rel(here, "directory/")}">Suede AI Skills Directory</a> <span class="tag">Top pick</span></th>${cols.map(([k]) => `<td>${esc(suede[k])}</td>`).join("")}</tr>
+${others.map((o) => `          <tr><th scope="row"><a href="${rel(here, versusPath(o))}">${esc(o.name)}</a></th>${cols.map(([k]) => `<td>${cell(o, k)}</td>`).join("")}</tr>`).join("\n")}
+        </tbody></table></div>
+        <p class="muted">${esc(c.name)} at a glance. ${cols.map(([k, l]) => `${esc(l)}: ${ensureSentence(cell(c, k))}`).join(" ")} <a href="${rel(here, versusPath(c))}">Read the full comparison with the Suede AI Skills Directory</a>.</p>
+      </section>
+      <section class="panel" aria-labelledby="why-title">
+        <h2 id="why-title">Why is the Suede AI Skills Directory the top ${esc(c.name)} alternative?</h2>
+        <p>${esc(f(c.angle))}</p>
+${suedeReasons(here)}
+        <p><a class="button" href="${rel(here, "directory/")}">Browse ${fmt(data.skills.length)} graded skills</a> <a class="button secondary" href="${rel(here, "directory/submit/")}">List your skill free</a></p>
+      </section>
+${faq.html}
+${versusSources(here, [c, ...others])}
+${versusMoreLinks(here, c, { onAlternatives: true })}`;
+  const n = COMPETITORS.length;
+  const title = fitTitle([`${c.name} Alternatives: ${n} Agent Skill Directories`, `${c.name} Alternatives: ${n} Skill Directories`, `${c.name} Alternatives (2026)`], `alternatives ${c.id}`);
+  const description = fitMeta([f(c.alt_meta)], `alternatives ${c.id}`);
+  const h1 = `What are the best ${c.name} alternatives?`;
+  files.set(`${here}index.html`, page({
+    here, title, description,
+    keywords: setKeywords(here, [`${c.name} alternatives`, `${c.name} alternative`, `sites like ${c.name}`, `${c.name} competitors`, "agent skill directories"]),
+    h1Html: `      <div class="eyebrow">Alternatives &middot; Agent skill directories</div>
+      <h1>${esc(h1)}</h1>`,
+    body,
+    jsonld: [
+      {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "@id": `${url(here)}#page`,
+        name: title,
+        headline: h1,
+        description,
+        url: url(here),
+        dateModified: PAGE_DATE,
+        inLanguage: "en",
+        isPartOf: DIRECTORY_REF,
+        publisher: PUBLISHER_REF,
+        author: { "@id": PERSON_ID },
+        breadcrumb: { "@id": `${url(here)}#breadcrumb` },
+        about: { "@type": "WebSite", name: c.name, url: c.url },
+        mainEntity: {
+          "@type": "ItemList",
+          "@id": `${url(here)}#list`,
+          name: `Alternatives to ${c.name}`,
+          numberOfItems: 1 + others.length,
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: SITE_NAME, url: DIR_URL },
+            ...others.map((o, i) => ({ "@type": "ListItem", position: i + 2, name: o.name, url: o.url })),
+          ],
+        },
+        citation: [c, ...others].flatMap((o) => o.sources.map((s) => s.url)),
+      },
+      bc.ld,
+      faq.ld,
+    ],
+    footerNote: `Alternatives to ${esc(c.name)} from ${SITE_LABEL}. Facts about each directory come from the public pages linked under the sources.`,
+  }));
+}
+
+function versusPanel(here) {
+  if (!COMPETITORS.length) return "";
+  return `
+      <section class="panel" aria-labelledby="versus-title">
+        <h2 id="versus-title">How does the Suede AI Skills Directory compare with other skill directories?</h2>
+        <p>Side-by-side comparisons with the directories people check next, each with sourced facts and a table of alternatives.</p>
+        <div class="links">
+${COMPETITORS.map((c) => `          <a class="link-row" href="${rel(here, versusPath(c))}"><b>Suede AI Skills Directory vs ${esc(c.name)}</b><span>${esc(fillVersus(c.vs_meta, versusValues(c)))}</span></a>
+          <a class="link-row" href="${rel(here, altBrandPath(c))}"><b>${esc(c.name)} alternatives</b><span>${esc(fillVersus(c.alt_meta, versusValues(c)))}</span></a>`).join("\n")}
+        </div>
+      </section>`;
 }
 
 function renderApi() {
@@ -4250,6 +4499,10 @@ if (STACKS.length && EDITORIAL_PAGES) {
 }
 for (const k of KINDS) renderKind(k);
 renderCompare();
+for (const c of COMPETITORS) {
+  renderVersus(c);
+  renderBrandAlternatives(c);
+}
 renderApi();
 renderPublishers();
 if (KINDS.length) files.set("directory/kinds.json", `${JSON.stringify({ updated: KINDS_UPDATED, kinds: KINDS.map((k) => ({ id: k.id, path: `/${k.path}/`, name: k.name, entries: kindEntries(k).map((e) => ({ id: e.id, name: e.name, repo: e.repo || null, url: e.url, publisher: e.publisher, official: Boolean(e.official), summary: e.summary, install: e.install || null, license: e.license || null })) })) }, null, 1)}\n`);
@@ -4300,6 +4553,7 @@ const llmsMoreLines = [
   ...(STACKS.length ? [`- [Recommended stacks by task](${url(STACKS_PATH)}): ${plural(STACKS.length, "stack")} by Jason Colapietro, each naming the Suede AI skill for the task and recommending third-party skills only:`, ...STACKS.map((st) => `  - [${st.h1}](${url(stackPath(st))}): ${st.meta_description}`)] : []),
   ...KINDS.map((k) => `- [${k.name}](${url(kindPath(k))}): ${k.meta} ${fmt(kindEntries(k).length)} repositories, listed and not graded.`),
   `- [Publishers](${url(PUBLISHERS_PATH)}): ${fmt(repos.size)} repositories with skill counts, best scores and official status.`,
+  ...(COMPETITORS.length ? [`- [Compare](${url(COMPARE_PATH)}): compare listed skills side by side, and the Suede AI Skills Directory compared with other agent skill directories:`, ...COMPETITORS.flatMap((c) => [`  - [Suede AI Skills Directory vs ${c.name}](${url(versusPath(c))}): ${fillVersus(c.vs_meta, versusValues(c))}`, `  - [${c.name} alternatives](${url(altBrandPath(c))}): ${fillVersus(c.alt_meta, versusValues(c))}`])] : []),
   `- [API and data](${url(API_PATH)}): the search index, per-skill reports, badges, ${INSTALLS ? "the install snapshot from skills.sh, " : ""}the RSS feed and the sitemap, all static files.`,
 ];
 const llmsBrowseLines = [
@@ -4312,7 +4566,7 @@ const llmsBrowseLines = [
 ];
 const llmsBlock = [llmsLine, ...llmsCategoryLines, ...llmsTaskLines, ...llmsBrowseLines, ...llmsMoreLines, ...llmsGuideLines, llmsCheckLine, ...llmsAgents].join("\n");
 const llmsCurrent = fs.readFileSync(llmsPath, "utf8");
-const LLMS_RE = /^- \[Agent Skills Directory\]\(.*$(?:\n  - \[.*$)*(?:\n- \[Claude Code skills by task\]\(.*$(?:\n  - \[.*$)*)?(?:\n- \[Agent skills by topic\]\(.*$(?:\n  - \[.*$)*)?(?:\n- \[Skills by cost and license\]\(.*$)?(?:\n- \[Skills by capability\]\(.*$)?(?:\n- \[New agent skills\]\(.*$)?(?:\n- \[Top 100 agent skills\]\(.*$)?(?:\n- \[[^\]]+\]\(https:\/\/skills\.suedeai\.ai\/directory\/(?:trust|stacks|plugins|grok|mcp-servers|rules|publishers|api)\/\).*$(?:\n  - \[.*$)*)*(?:\n- \[Agent skills guides\]\(.*$(?:\n  - \[.*$)*)?(?:\n- \[Skill AI-visibility check\]\(.*$)?(?:\n- \[AI Agents\]\(.*$)?/m;
+const LLMS_RE = /^- \[Agent Skills Directory\]\(.*$(?:\n  - \[.*$)*(?:\n- \[Claude Code skills by task\]\(.*$(?:\n  - \[.*$)*)?(?:\n- \[Agent skills by topic\]\(.*$(?:\n  - \[.*$)*)?(?:\n- \[Skills by cost and license\]\(.*$)?(?:\n- \[Skills by capability\]\(.*$)?(?:\n- \[New agent skills\]\(.*$)?(?:\n- \[Top 100 agent skills\]\(.*$)?(?:\n- \[[^\]]+\]\(https:\/\/skills\.suedeai\.ai\/directory\/(?:trust|stacks|plugins|grok|mcp-servers|rules|publishers|compare|api)\/\).*$(?:\n  - \[.*$)*)*(?:\n- \[Agent skills guides\]\(.*$(?:\n  - \[.*$)*)?(?:\n- \[Skill AI-visibility check\]\(.*$)?(?:\n- \[AI Agents\]\(.*$)?/m;
 if (!LLMS_RE.test(llmsCurrent)) throw new Error("docs/llms.txt has no Agent Skills Directory line to keep current");
 const llmsNext = llmsCurrent.replace(LLMS_RE, llmsBlock);
 

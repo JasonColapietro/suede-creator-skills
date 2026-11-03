@@ -250,9 +250,26 @@ test("new page copy avoids em dashes and the banned AI-tell words", () => {
   for (const rel of newPages) {
     const html = read(rel);
     const main = (html.match(/<main\b[\s\S]*<\/main>/) || [""])[0];
-    // Only Suede AI's own sentences: quoted third-party summaries sit in table cells.
-    const own = main.replace(/<td class="desc">[\s\S]*?<\/td>/g, "").replace(/<[^>]+>/g, " ");
+    // Only Suede AI's own sentences: quoted third-party summaries and the
+    // publisher and repository names (michalparkola/tapestry-skills-for-claude-code)
+    // sit in table cells.
+    const own = main.replace(/<td class="(?:desc|meta)">[\s\S]*?<\/td>/g, "").replace(/<[^>]+>/g, " ");
     assert.doesNotMatch(decode(own), banned, `${rel}: banned wording`);
     assert.match(main, /SuedeAI\.directory|Suede Skill Check/, `${rel}: names the directory or its score`);
   }
+});
+
+// The task table caps rows (TABLE_MAX, PER_REPO_MAX per repository) so one
+// collection cannot fill a ranking. That cap must not decide which strong
+// skills get an alternatives page: before 2026-11-03 a skill scoring 80+ that
+// matched a published task but fell outside its table had none.
+test("a strong match outside the capped task table still gets an alternatives page", () => {
+  const sk = (id, repo, score) => ({ id: `${repo}/${id}`, repo, repo_slug: repo, featured: true, score, category: "developer-tools" });
+  const peers = [sk("p1", "o/a", 95), sk("p2", "o/b", 92), sk("p3", "o/c", 90)];
+  const subject = sk("subject", "o/d", 84);
+  const task = { published: true, rows: peers, matches: [...peers, subject], reasons: new Map([...peers, subject].map((s) => [s.id, "name"])) };
+  const planned = planAlternatives([task]);
+  const alt = planned.find((a) => a.s.id === subject.id);
+  assert.ok(alt, "the strong match outside the table has no alternatives page");
+  assert.deepEqual(alt.peers.map((o) => o.id), peers.map((o) => o.id));
 });
