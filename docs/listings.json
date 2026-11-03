@@ -26,7 +26,7 @@
       "title": "Python package",
       "intro": "Install the skill pack from the Python Package Index.",
       "items": [
-        { "name": "PyPI", "url": "https://pypi.org/project/suede-creator-skills/", "sameAs": true, "note": "suede-creator-skills: Python CLI and bundled skill folders; first release published October 22, 2026 with provenance for both distribution files", "featured": true }
+        { "name": "PyPI", "url": "https://pypi.org/project/suede-creator-skills/", "sameAs": true, "note": "Python CLI with every skill bundled", "featured": true }
       ]
     },
     {

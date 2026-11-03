@@ -90,13 +90,6 @@ const updatedLong = new Date(`${updated}T00:00:00Z`).toLocaleDateString("en-US",
   year: "numeric", month: "long", day: "numeric", timeZone: "UTC",
 });
 const total = allItems.length;
-const [year, month, day] = data.verified.split("-").map(Number);
-const verifiedLong = new Date(Date.UTC(year, month - 1, day)).toLocaleDateString("en-US", {
-  year: "numeric",
-  month: "long",
-  day: "numeric",
-  timeZone: "UTC",
-});
 
 const esc = (s) =>
   String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
@@ -210,7 +203,7 @@ ${jsonLdText}
     <main id="main" tabindex="-1" class="shell">
       <p class="eyebrow">Listings &middot; Updated ${esc(updatedLong)}</p>
       <h1>Where to find Suede AI Skills</h1>
-      <p class="post-meta">${total} third-party pages carry the pack. Original directory review: ${esc(verifiedLong)}. New entries are checked when added.</p>
+      <p class="post-meta">${total} third-party pages carry the pack.</p>
 
       <p class="lead">Suede AI Skills is listed in the skill directories that grade and count installs, the official MCP Registry, npm and PyPI, the community awesome lists, and the open-source trackers. Pick the directory you already use, or install from <a href="plugins.html">GitHub</a> or <a href="plugins.html#python">PyPI</a>.</p>
 
