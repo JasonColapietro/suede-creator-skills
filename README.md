@@ -52,7 +52,7 @@ Suede AI Skills gives founders, marketers, and small teams reusable workflows fo
 - **Positioning and conversion:** define your audience and offer with `suede-product-marketing`, then write page copy with `suede-copy`.
 - **Business operations:** map bottlenecks with `suede-ops-assessment` and define the system with `suede-ops-architecture`.
 
-These are **public, broadly reusable, open-source skill folders**, installable from one path. Read each `skills/<name>/SKILL.md` before you install it. The pack also covers campaign planning, code review, app delivery, and music release prep. Original work is MIT licensed; adapted components keep their upstream licenses, listed in [NOTICE.md](NOTICE.md). No binaries, no telemetry, no accounts.
+These are **public, broadly reusable, open-source skill folders**, installable from one path. Every `skills/<name>/SKILL.md` is readable on GitHub. The pack also covers campaign planning, code review, app delivery, and music release prep. Original work is MIT licensed; adapted components keep their upstream licenses, listed in [NOTICE.md](NOTICE.md). No binaries, no telemetry, no accounts.
 
 <img src="docs/assets/readme/pack-map.svg" alt="The pack at a glance: 38 marketing and growth skills, 7 design copy and SEO, 7 orchestration and workflows, 4 code quality and shipping, 4 creator rights and release, 3 mobile apps." width="100%">
 
@@ -138,7 +138,7 @@ mkdir -p .claude/skills
 cp -R /tmp/suede-creator-skills/skills/suede-agent-teams .claude/skills/
 ```
 
-For a user-level install, copy into `~/.claude/skills/` instead. Claude.ai and organization-managed Claude Skills may use upload or admin-managed flows instead of filesystem copy. Review skill contents before enabling code execution.
+For a user-level install, copy into `~/.claude/skills/` instead. Claude.ai and organization-managed Claude Skills may use upload or admin-managed flows instead of filesystem copy.
 
 **MCP — dependency-free stdio server:**
 
@@ -155,7 +155,7 @@ Exposes 9 tools (`list_suede_skills`, `list_suede_specialties`, `search_suede_sk
 <!-- listings:start -->
 Listed on [skills.sh](https://www.skills.sh/jasoncolapietro/suede-creator-skills) · [SkillsMP](https://skillsmp.com/creators/jasoncolapietro/suede-creator-skills) · [SkillsLLM](https://skillsllm.com/skill/suede-creator-skills) · [HOL Plugin Registry](https://hol.org/registry/plugins/suede-ai%2Fsuede-skills) · [Skills Directory](https://www.skillsdirectory.com/authors/jasoncolapietro) · [ClaudSkills](https://claudskills.com/author/jasoncolapietro/) · [PyPI](https://pypi.org/project/suede-creator-skills/) · [Official MCP Registry](https://registry.modelcontextprotocol.io/v0.1/servers/io.github.JasonColapietro%2Fsuede-skills-mcp/versions/latest) · [npm](https://www.npmjs.com/package/suede-skills-mcp) · [MCP Market](https://mcpmarket.com/server/suede-creator-skills) · [Awesome Claude Skills (awesomeclaude.ai)](https://awesomeclaude.ai/awesome-claude-skills) · [VoltAgent/awesome-agent-skills](https://github.com/VoltAgent/awesome-agent-skills) · [Trendshift](https://trendshift.io/repositories/82031).
 
-All 29 directories, registries and curated lists: [skills.suedeai.ai/listings.html](https://skills.suedeai.ai/listings.html)
+All 33 directories, registries and curated lists: [skills.suedeai.ai/listings.html](https://skills.suedeai.ai/listings.html)
 <!-- listings:end -->
 
 ## Try it right now
@@ -299,12 +299,11 @@ node mcp/suede-skills-mcp.mjs --profile all
 
 Core local workflows inspect current files, pages, repos, and local folders
 without uploading by default or granting new authority. Explicit browser,
-deployment, marketplace, publishing, or support workflows may use the
-operator's existing authenticated access only when that action is authorized.
-The skills do not request secrets, write to a registry, or claim legal
-clearance.
+deployment, marketplace, publishing, or support workflows use the operator's
+existing authenticated access, and only when that action is authorized. The
+skills never request secrets.
 
-The creator skills generate private drafts by default — reports and packages can contain names, payment notes, file names, hashes, rights claims, and provenance notes. Review and redact before publishing or sending outside the intended workflow. A clean report is not a legal opinion, registry write, rights clearance, or payment guarantee.
+The creator skills generate private drafts by default: reports and packages can contain names, payment notes, file names, hashes, rights claims, and provenance notes. Review and redact before publishing or sending outside the intended workflow.
 
 CLI flags on the creator scripts: `--include-hidden`, `--include-other`, `--include-absolute-paths`, and `--force`. Scripts skip hidden files, secret-like files, dependency folders, and build outputs by default, and refuse to write a package into or under its source folder.
 

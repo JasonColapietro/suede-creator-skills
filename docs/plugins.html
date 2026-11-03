@@ -550,7 +550,7 @@
 
     <div class="prose">
       <p>Cursor, Copilot, Windsurf, and the rest take one line. The open <a href="https://github.com/vercel-labs/skills" target="_blank" rel="noopener">skills CLI</a> installs the whole pack into every agent it supports, Claude Code and Codex included:</p>
-      <p>Every route installs the portable skill contracts. One thing does not travel. The executable Suede Thought Graph workflow, capped at 55, 110 or 200 calls and read-only against production, needs Claude Code on macOS plus its six <code>suede-graph-flo-xr-*</code> agent profiles. The full plugin, the <code>suede-agent-workflows</code> subset, and <code>install.sh</code> register them; Codex and skills-CLI installs follow the contract by hand.</p>
+      <p>Every route installs the portable skill contracts. The executable Suede Thought Graph workflow, capped at 55, 110 or 200 calls and read-only against production, runs in Claude Code on macOS with its six <code>suede-graph-flo-xr-*</code> agent profiles. The full plugin, the <code>suede-agent-workflows</code> subset, and <code>install.sh</code> register them; Codex and skills-CLI installs follow the contract by hand.</p>
     </div>
 
     <div class="terminal">
@@ -583,7 +583,7 @@ suede-skills install</code></pre>
     <div class="prose">
       <p><a href="https://pipx.pypa.io/latest/how-to/install-pipx.html" rel="noopener">Install pipx</a> first if needed. It keeps the CLI in its own Python environment. For Codex, use <code>suede-skills install --target codex</code>. For a project, use <code>suede-skills install --target ./.claude/skills</code>. Install one skill with <code>--skill suede-seo-audit</code>.</p>
       <p>Restart your agent session after installation. Start with <code>suede-seo-audit</code> to review a page, <code>suede-product-marketing</code> to build a positioning brief, or <code>suede-code</code> to review a change. Browse the <a href="skills/">skill catalog</a> for the full pack.</p>
-      <p>To update: run <code>pipx upgrade suede-creator-skills</code>, then <code>suede-skills install --force</code> (add <code>--target codex</code> for Codex). Existing pack folders are refreshed only with <code>--force</code>; your other skills are left alone. Inspect the <a href="https://pypi.org/project/suede-creator-skills/#files" rel="noopener">release files and provenance on PyPI</a> before installing.</p>
+      <p>To update: run <code>pipx upgrade suede-creator-skills</code>, then <code>suede-skills install --force</code> (add <code>--target codex</code> for Codex). Existing pack folders are refreshed only with <code>--force</code>; your other skills are left alone. Every release publishes its <a href="https://pypi.org/project/suede-creator-skills/#files" rel="noopener">files and provenance on PyPI</a>.</p>
     </div>
   </section>
 
@@ -635,7 +635,7 @@ codex plugin add suede-skills@suede-codex</code></pre>
       </article>
       <article class="cell">
         <span class="cell-label">Creator toolkit</span>
-        <p>For music, media, and artist-campaign work: campaigns, sync packaging, release linting, rights evidence. They organize evidence; they do not clear rights.</p>
+        <p>For music, media, and artist-campaign work: campaigns, sync packaging, release linting, rights evidence. They organize the evidence into a package ready for review.</p>
         <pre>python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
   --repo JasonColapietro/suede-creator-skills \
   --path skills/suede-campaign-in-a-box \
@@ -672,13 +672,13 @@ hermes skills install JasonColapietro/suede-creator-skills/skills/suede-seo-audi
 
     <div class="prose">
       <p>Hermes downloads the whole skill folder, not just the contract: <code>references/</code>, <code>agents/</code>, and <code>evals/</code> come with it. Every install runs through Hermes' own security scan first, and the skill lands in <code>~/.hermes/skills/</code> as a <code>/skill-name</code> command. The repo ships a <code>skills.sh.json</code> grouping sidecar, so the hub files each skill under its lane — Code review &amp; CI, Search &amp; AI visibility, Money &amp; funnel — instead of guessing from tags.</p>
-      <p>What does not travel: the MCP discovery server and the executable Suede Thought Graph workflow, which are Claude Code and Codex surfaces. The orchestration contracts install and read normally.</p>
+      <p>The MCP discovery server and the executable Suede Thought Graph workflow run in Claude Code and Codex. In Hermes, the orchestration contracts install and read normally.</p>
     </div>
   </section>
 
   <section class="shell" id="mcp">
     <h2>The Suede AI Skills MCP: zero dependencies</h2>
-    <p class="section-sub">A dependency-free stdio MCP server ships in the repo at <a href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/mcp" target="_blank" rel="noopener" style="color:var(--gold);border-bottom:1px solid rgba(200,169,110,0.3);">mcp/</a>. Open it and read it before you point an agent at it, then run the one line below.</p>
+    <p class="section-sub">A dependency-free stdio MCP server ships in the repo at <a href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/mcp" target="_blank" rel="noopener" style="color:var(--gold);border-bottom:1px solid rgba(200,169,110,0.3);">mcp/</a>. Open it, read it, then run the one line below.</p>
 
     <div class="terminal">
       <div class="terminal-bar" aria-hidden="true">
@@ -813,11 +813,11 @@ hermes skills install JasonColapietro/suede-creator-skills/skills/suede-seo-audi
     <h2>Read PROMO.md before you install anything</h2>
     <div class="prose" style="max-width:720px;">
       <p><a href="https://github.com/JasonColapietro/suede-creator-skills/blob/main/PROMO.md" target="_blank" rel="noopener">PROMO.md</a> explains the whole workflow to people who did not build it. It names the mechanisms and their numbers: an A-F code grade across 7 lanes, and a 50-point score gate on deslop.</p>
-      <p>This page is the GitHub Pages surface generated from the public repo, not a separate marketing site. The install commands, docs, sitemap, and skill pages live beside the source.</p>
+      <p>This page is generated from the public repo. The install commands, docs, sitemap, and skill pages live beside the source.</p>
     </div>
 
     <div class="safety">
-      The skills and MCP inspect local files and pages and return structured context. They do not upload music, clear rights, write to a registry, distribute releases, approve payouts, or publish unsupported statements on their own.
+      The skills and MCP inspect local files and pages and return structured context.
     </div>
   </section>
 </main>
@@ -828,7 +828,7 @@ hermes skills install JasonColapietro/suede-creator-skills/skills/suede-seo-audi
         <p class="ship-strip-sub">First install takes two commands. After the marketplace is added, install is one. Every skill is plain Markdown.</p>
         <div class="ship-strip-row">
           <code><span class="prompt">$</span> /plugin marketplace add JasonColapietro/suede-creator-skills &rarr; /plugin install suede-skills@suede</code>
-          <a href="./skills/">Open one before you trust it</a>
+          <a href="./skills/">Open any skill</a>
         </div>
       </div>
     </section>

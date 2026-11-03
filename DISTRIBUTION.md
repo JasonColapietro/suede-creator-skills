@@ -2,7 +2,7 @@
 
 Where the Suede skill pack is listed, where it is not, what is stale, and what it takes to close each gap. Keep this file current when a listing changes. Numbers below are as of the last audit date and are not maintained by the validator.
 
-Last audit: 2026-10-08. Every listing below was loaded and its entry seen on that date. Nothing was submitted, claimed, or posted during the audit. The previous audit was 2026-09-05.
+Last audit: 2026-10-08. Every listing below was loaded and its entry seen on that date. Nothing was submitted, claimed, or posted during the audit. The previous audit was 2026-09-05. Rechecked 2026-11-02: four live listings added (below), every open upstream PR from the owner's account inventoried, and the remaining gaps written up as ready-to-send entries under "Ready to submit".
 
 Ground truth on the audit date: 76 skills, repository `JasonColapietro/suede-creator-skills`, homepage `https://skills.suedeai.ai`, MCP package `suede-skills-mcp` on npm and `io.github.JasonColapietro/suede-skills-mcp` in the official MCP Registry. The GitHub description no longer states a count, so it cannot go stale; 20 GitHub topics set.
 
@@ -35,6 +35,10 @@ Every row here is also in `docs/listings.json` unless marked otherwise. Stalenes
 | Chat2AnyLLM/awesome-claude-skills | Listed (new), source catalog | https://github.com/Chat2AnyLLM/awesome-claude-skills | None noted | Nothing to do. |
 | Trendshift | Listed (new) | https://trendshift.io/repositories/82031 | None noted | Nothing to do. |
 | ecosyste.ms awesome index | Listed (new) | https://awesome.ecosyste.ms/projects/github.com%2FJasonColapietro%2Fsuede-creator-skills | None noted | Nothing to do. |
+| Build with Claude (davepoon/buildwithclaude) | Listed (new 2026-11-02), merged from davepoon/buildwithclaude#305 | `suede-skills` entry in https://github.com/davepoon/buildwithclaude `.claude-plugin/marketplace.json` | Says 74 skills, version 0.16.0 | PR to refresh the entry from `.claude-plugin/plugin.json`. |
+| Libraries.io (PyPI) | Listed (new 2026-11-02) | https://libraries.io/pypi/suede-creator-skills, showing 0.19.3 | None noted | Nothing to do. |
+| ichangyou/awesome-claude-code | Listed (new 2026-11-02), merged from ichangyou/awesome-claude-code#9 | https://github.com/ichangyou/awesome-claude-code, README and README.zh-CN | None noted | Nothing to do. |
+| zients/awesome-agent-harness | Listed (new 2026-11-02), merged from the 2026-08-03 submission | https://github.com/zients/awesome-agent-harness | Says 71 skills | PR with the count-free line below. |
 | ComposioHQ/awesome-claude-skills | Pending, not in `docs/listings.json` | PR #1803 (`frontend-design-review`, a neutralized copy of suede-design), README-only entry linking the vendorable copy | The pack itself is not listed there; checked again 2026-10-08 | A pack entry is a separate submission (see Not listed). |
 | SaaSHub | Listed, wrong product; not in `docs/listings.json` | https://www.saashub.com/suede is the paid Suede creator-rights product, not this pack | Not a pack listing | Nothing to do here. |
 
@@ -71,6 +75,42 @@ Checked 2026-10-08 unless the row says otherwise. Reach is inferred from stars o
 | There's An AI For That, Futurepedia, Toolify | Broad, low fit | Submission forms; two sites blocked automated checks, so listing status is unconfirmed | Form |
 
 Not verified either way because the site blocked automated reads (as of 2026-09-05): LobeHub (market.lobehub.com), mcp-get.com, There's An AI For That, Toolify, cursor.directory (rate limited).
+
+## Ready to submit (prepared 2026-11-02)
+
+Prepared, not yet sent. Each entry follows that list's own CONTRIBUTING rules, checked on 2026-11-02. Issue links open GitHub's form with every field filled in; review it and press Submit. "Edit" links open the file in GitHub's editor, which forks the repo automatically: paste the line in the named section, then choose "Propose changes" and "Create pull request".
+
+### GitHub lists
+
+| Target | Route | Where | Entry |
+| --- | --- | --- | --- |
+| hesreallyhim/awesome-claude-code (≥100 stars rule met: 126) | [Prefilled issue form](https://github.com/hesreallyhim/awesome-claude-code/issues/new?template=recommend-resource.yml&title=%5BResource%5D%3A+Suede+Creator+Skills&display_name=Suede+Creator+Skills&category=Skills&link=https%3A%2F%2Fgithub.com%2FJasonColapietro%2Fsuede-creator-skills&author_name=Jason+Colapietro&author_link=https%3A%2F%2Fgithub.com%2FJasonColapietro&description=Open-source+Agent+Skills+for+Claude+Code+and+Codex%3A+SEO+and+GEO+audits%2C+code+review+with+an+A-F+ship+grade%2C+CI+gates%2C+AI+evals%2C+design+systems%2C+conversion+copy%2C+and+iOS+and+Android+app+shipping.+Installs+as+a+Claude+Code+plugin+marketplace+with+%2Fplugin+marketplace+add+JasonColapietro%2Fsuede-creator-skills.) | Category: Skills | Fields filled; tick the five checklist boxes yourself, as the form requires |
+| punkpeye/awesome-mcp-servers | [Edit README](https://github.com/punkpeye/awesome-mcp-servers/edit/main/README.md) | 💻 Developer Tools, alphabetical | `- [JasonColapietro/suede-creator-skills](https://github.com/JasonColapietro/suede-creator-skills) 📇 🏠 🍎 🪟 🐧 - Local MCP server (`npx suede-skills-mcp`) that serves every Suede Agent Skill: discovery, install options, code grading, SEO copy audits and QA checklists.` Add the Glama score badge after the Glama listing below goes live, matching neighbouring entries. |
+| RankSpotAI/awesome-seo-agent-skills | [Edit README](https://github.com/RankSpotAI/awesome-seo-agent-skills/edit/main/README.md) | Large multi-skill packs, star order (above nicepkg/ai-workflow) | `| [JasonColapietro/suede-creator-skills](https://github.com/JasonColapietro/suede-creator-skills) | SEO audits, AI SEO and GEO visibility, programmatic SEO, conversion copy and schema, inside a broader pack of agent skills | Claude Code, Codex | MIT | 126 | 2026-11-02 |` PR description: "Self-submission: I maintain this pack." |
+| hashgraph-online/awesome-codex-plugins | [Edit README](https://github.com/hashgraph-online/awesome-codex-plugins/edit/main/README.md) | Community Plugins > Development & Workflow, alphabetical | `- [Suede Creator Skills](https://github.com/JasonColapietro/suede-creator-skills) - Open-source Codex plugin with SEO and GEO audits, code review with an A-F ship grade, CI gates, AI evals and app shipping skills.` The repo already carries `.codex-plugin/plugin.json`, SECURITY.md, LICENSE and the HOL scanner. |
+| ZeroPointRepo/awesome-hermes-skills | [Edit README](https://github.com/ZeroPointRepo/awesome-hermes-skills/edit/main/README.md) | Community Skills > 💻 Dev & Skill Authoring | `- [Suede Creator Skills](https://github.com/JasonColapietro/suede-creator-skills) by [JasonColapietro](https://github.com/JasonColapietro) - SEO and GEO audits, code review with an A-F ship grade, CI gates and app shipping, installable as a Hermes tap. **[production]**` PR note: "I'm the author." |
+| 0xNyk/awesome-hermes-agent | [Prefilled issue form](https://github.com/0xNyk/awesome-hermes-agent/issues/new?template=resource-submission.yml&title=Add+Suede+Creator+Skills&name=Suede+Creator+Skills&url=https%3A%2F%2Fgithub.com%2FJasonColapietro%2Fsuede-creator-skills&author=JasonColapietro&description=Open-source+Agent+Skills+for+Claude+Code+and+Codex%3A+SEO+and+GEO+audits%2C+code+review+with+an+A-F+ship+grade%2C+CI+gates%2C+AI+evals%2C+design+systems%2C+conversion+copy%2C+and+iOS+and+Android+app+shipping.+Installs+as+a+Hermes+tap%3A+hermes+skills+tap+add+JasonColapietro%2Fsuede-creator-skills.&why-awesome=Every+skill+follows+the+agentskills.io+SKILL.md+layout%2C+ships+with+evals%2C+and+the+repo+publishes+skills.sh.json+groupings+so+Hermes+shows+category+pills+in+the+Skills+Hub.&why-now=Hermes+users+get+a+full+SEO%2C+code+review+and+app+shipping+toolkit+from+one+tap%2C+with+no+API+keys+required.&license=MIT+AND+BSD-3-Clause&maturity=production) | Category: pick Skills in the form | Fields filled; tick "I am the author" |
+| heilcheng/awesome-agent-skills | [Edit README](https://github.com/heilcheng/awesome-agent-skills/edit/main/README.md) | Community Skills, end of the best-fit category | `- [JasonColapietro/suede-creator-skills](https://github.com/JasonColapietro/suede-creator-skills) - SEO and GEO audits, code review with A-F grades, CI gates and app shipping` (under 100 characters, as required). Tick "I am the author". |
+| gmh5225/awesome-skills (still says 67 skills) | [Edit README](https://github.com/gmh5225/awesome-skills/edit/main/README.md) | Replace the existing suede-creator-skills row text | Open-source Agent Skills for Claude Code and Codex: SEO and GEO audits, code review with an A-F ship grade, CI gates, AI evals, design systems, conversion copy, and iOS and Android app shipping. MIT. |
+
+Already open upstream, nothing to send: travisvn/awesome-claude-skills#1205, davila7/claude-code-templates#857 (aitmpl.com), GetBindu#188 and #194, composio-community/awesome-claude-plugins#396, composio-community/awesome-codex-skills#118, erkcet/awesome-claude-code#14, kodustech/awesome-agent-skills#71.
+
+### Directory forms (signed-in browser)
+
+| Directory | Where | What to enter |
+| --- | --- | --- |
+| Glama | https://glama.ai/mcp/servers, "Add Server" | Repository https://github.com/JasonColapietro/suede-creator-skills. Do this before the punkpeye PR so the score badge exists. |
+| Smithery | https://smithery.ai/servers/new | GitHub repo https://github.com/JasonColapietro/suede-creator-skills, package `suede-skills-mcp`, stdio, command `npx suede-skills-mcp` |
+| mcp.so | Submit form at https://mcp.so | Name Suede Skills MCP, URL https://github.com/JasonColapietro/suede-creator-skills, description: Local MCP server that serves every Suede Agent Skill. |
+| Cursor Directory | https://cursor.directory/plugins/new | Repo https://github.com/JasonColapietro/suede-creator-skills |
+| agenticskills.io | "Submit a Skill" | Repo https://github.com/JasonColapietro/suede-creator-skills |
+| codex-marketplace.com | https://codex-marketplace.com, Submit page | Repo https://github.com/JasonColapietro/suede-creator-skills, Codex plugin |
+| MCP Market | https://mcpmarket.com/server/suede-creator-skills, "Claim this listing" | Then replace the 23-skill description with: Open-source Agent Skills for Claude Code and Codex: SEO and GEO audits, code review with an A-F ship grade, CI gates, AI evals, design systems, conversion copy, and iOS and Android app shipping. |
+| ClaudSkills | Author page contact | Ask for the homepage to read https://skills.suedeai.ai |
+
+awesomeclaude.ai still shows the first-release "23-skill pack" line. That text is not in webfuse-com/awesome-claude (checked 2026-11-02), so the page is crawl-built and refreshes on its own schedule.
+
+Launch posts (Show HN, Product Hunt, r/ClaudeAI) are posts in your own voice and stay with you.
 
 ## Hermes Agent (Nous Research)
 

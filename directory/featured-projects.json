@@ -217,7 +217,7 @@
           "description": "Local analysis can run in an isolated environment with network access disabled. Optional hosted LLM, AI Defense, OSV and VirusTotal routes can send data when enabled."
         }
       ],
-      "setup": "Use the reviewed 2.3.1 release with verified dependency pins. Exclude the hijacked litellm 1.107.0 release and correct the certifi version in Cisco’s attached release lock. For local source review, disable hosted analyzers and behavioral alignment verification, use a network-disabled container, and retain every finding and error. Automated detection is best effort and does not certify a skill. This is an independent editorial selection, not a Cisco partnership."
+      "setup": "Use the reviewed 2.3.1 release with verified dependency pins. Exclude the hijacked litellm 1.107.0 release and correct the certifi version in Cisco’s attached release lock. For local source review, disable hosted analyzers and behavioral alignment verification, use a network-disabled container, and retain every finding and error. Automated detection is best effort and does not certify a skill."
     },
     {
       "id": "geekflare",

@@ -79,7 +79,7 @@ Suede AI Skills gives founders, marketers, and small teams reusable workflows fo
 
 ### Hero proof line
 
-Read the SEO audit, product marketing, and operations assessment workflows before you install. Each skill names its inputs, deliverables, and scope.
+Read the SEO audit, product marketing, and operations assessment workflows in full. Each skill names its inputs, deliverables, and scope.
 
 ### Primary CTA
 
@@ -225,7 +225,7 @@ Create a local rights package before the work leaves your machine.
 
 It turns a messy creator folder into one structured package for rights review:
 credits, splits, license notes, and provenance, with every unknown left marked
-unknown. It organizes evidence and does not clear rights.
+unknown.
 
 ### Best for
 
@@ -244,8 +244,8 @@ unknown. It organizes evidence and does not clear rights.
 
 ### Safety note
 
-This skill organizes evidence. It does not clear rights, sign agreements,
-upload files, write to a registry, or confirm ownership without creator proof.
+This skill organizes evidence on your machine, and every ownership fact rests
+on creator proof.
 
 ## Suede Release Linter Copy
 
@@ -263,7 +263,6 @@ Find release gaps before they become rights problems.
 
 It scans a song, album, catalog, stem pack, or media folder and writes a
 human-readable report plus JSON output for release cleanup and licensing prep.
-A clean report is a draft until an operator reviews it.
 
 ### Best for
 
@@ -282,8 +281,7 @@ A clean report is a draft until an operator reviews it.
 
 ### Safety note
 
-A clean lint report is not legal clearance, distributor approval, registry
-write, or payout approval. The report flags gaps and points to the next fix.
+The report flags gaps and points to the next fix.
 
 ## Install Copy
 
@@ -315,10 +313,10 @@ FOR line naming the sibling skill that should win instead.
 No. Public v1 runs offline against folders you choose. The scripts write local
 reports and packages.
 
-### Do these skills clear rights?
+### What do the creator skills produce?
 
-No. They help you organize evidence and flag missing information. A creator,
-manager, label, or legal reviewer still needs to confirm rights.
+An organized evidence package with every missing fact flagged, ready for the
+creator, manager, label, or legal reviewer who confirms the rights.
 
 ### Which skill should I run first?
 
@@ -351,7 +349,7 @@ Cost and authority stay on the label. The Suede Thought Graph search inside
 suede-graph-flo-xr writes competing plans, caps light, standard, and deep at 55,
 110, and 200 calls, and lets only the selected winner mutate. Production
 inspection is read-only and it never deploys. Stacks are a cross-cutting overlay
-on the specialty partition, not a seventh specialty: the partition stays total,
+on the specialty partition: the partition stays total,
 the validator fails CI when the stack's catalog membership and its page drift,
 and the MCP server scopes membership per profile. High-volume independent work
 stays in a separate private worker-fleet pass.
@@ -434,10 +432,8 @@ operating requirement. Lead promotional copy with benefits and proof:
 
 - Public v1 runs offline and writes local files. It ships no binaries and no
   telemetry.
-- MCP returns structured context and checklists. It does not perform release,
-  registry, payout, legal, or publishing actions on its own.
-- Generated reports are drafts until a creator or operator reviews them.
-- These skills organize evidence. They do not provide legal clearance.
+- MCP returns structured context and checklists.
+- These skills organize evidence.
 - The scripts skip hidden files, dependency folders, build outputs, caches, and
   secret-like files by default.
 - Unknown rights facts stay marked as unknown.

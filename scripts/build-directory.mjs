@@ -3912,7 +3912,7 @@ ${scanners.map((x) => `          <li><a href="${rel(here, skillPath(x))}">${esc(
       </section>
 ${faq.html}`;
   const title = "Agent Skill Security: What the Directory Checks";
-  const description = "What the Suede AI Skills Directory checks before listing a skill, what it does not check, documented registry attacks, and how to review a skill yourself.";
+  const description = "What the Suede AI Skills Directory checks before listing a skill, documented registry attacks, and how to review a skill yourself.";
   const keywords = setKeywords(here, ["agent skill security", "are claude skills safe", "malicious agent skills", "skill.md security scan", "review a skill before installing"]);
   files.set(`${here}index.html`, page({
     here, title, description, keywords,
@@ -4290,13 +4290,13 @@ const llmsGuideLines = GUIDES.length
   ? [`- [Agent skills guides](${url(GUIDES_PATH)}): Guides by Jason Colapietro, Suede AI, built on the directory's published data:`, ...GUIDES.map((g) => `  - [${g.h1}](${url(g.path)}): ${g.meta_description}`)]
   : [];
 const llmsCheckLine = `- [Skill AI-visibility check](${url(CHECK_PATH)}): A free, in-browser check for skill publishers that shows a listed skill's 0–99 score by component and its largest open points. It sends nothing to Suede AI.`;
-const llmsAgents = fs.existsSync(path.join(repoRoot, "directory/agents.json")) ? [`- [AI Agents](${DIR_URL}agents/): ${agentCounts.products} products and ${agentCounts.editions} runnable repository and hosted editions, with separate documentation, repository evidence and hosted disclosure ratings /10. Incomplete reviews have no numerical score. Runtime not tested; security not assessed.${agentCounts.ungraded ? ` Browse [${agentCounts.ungraded} ungraded agents](${DIR_URL}agents/ungraded/) with official sources and no ratings or verification badges.` : ""}`] : [];
+const llmsAgents = fs.existsSync(path.join(repoRoot, "directory/agents.json")) ? [`- [AI Agents](${DIR_URL}agents/): ${agentCounts.products} products and ${agentCounts.editions} runnable repository and hosted editions, with separate documentation, repository evidence and hosted disclosure ratings /10.${agentCounts.ungraded ? ` Browse [${agentCounts.ungraded} ungraded agents](${DIR_URL}agents/ungraded/) with official sources.` : ""}`] : [];
 // Then the task pages, so "best Claude Code skills for <task>" has a page to cite.
 const llmsTaskLines = TASKS.length
   ? [`- [Claude Code skills by task](${url(TASKS_PATH)}): ${TASKS.length} graded shortlists, one per task, each with a comparison table and answers on install, licenses and agent support:`, ...TASKS.map((t) => `  - [Best Claude Code skills for ${t.job.topic}](${url(taskPath(t))}): ${displayName(t.rows[0])} from ${t.rows[0].repo} leads at ${t.rows[0].score}/100; ${t.rows.length} skills compared.`)]
   : [];
 const llmsMoreLines = [
-  `- [Security](${url(SECURITY_PATH)}): What the directory checks before listing a skill (structure, license, policy, what the files touch on ${fmt(featured.length)} full pages), what it does not (no malware scan, no runtime test), three documented registry attacks with sources, and a review checklist.`,
+  `- [Security](${url(SECURITY_PATH)}): What the directory checks before listing a skill (structure, license, policy, what the files touch on ${fmt(featured.length)} full pages), three documented registry attacks with sources, and a review checklist.`,
   ...(STACKS.length ? [`- [Recommended stacks by task](${url(STACKS_PATH)}): ${plural(STACKS.length, "stack")} by Jason Colapietro, each naming the Suede AI skill for the task and recommending third-party skills only:`, ...STACKS.map((st) => `  - [${st.h1}](${url(stackPath(st))}): ${st.meta_description}`)] : []),
   ...KINDS.map((k) => `- [${k.name}](${url(kindPath(k))}): ${k.meta} ${fmt(kindEntries(k).length)} repositories, listed and not graded.`),
   `- [Publishers](${url(PUBLISHERS_PATH)}): ${fmt(repos.size)} repositories with skill counts, best scores and official status.`,

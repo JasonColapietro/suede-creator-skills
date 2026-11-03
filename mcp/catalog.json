@@ -764,7 +764,7 @@
       "area": "creator",
       "specialty": "position",
       "lane": "Creator toolkit",
-      "description": "Audit rights gaps in ownership, contributors, splits, samples, licenses, provenance, and AI involvement, or assemble a hashed offline handoff package with a validated manifest. Use when asked to \"prepare a rights handoff\" or assess release, licensing, or royalty-routing evidence. Keeps confirmed facts separate from open questions; grants no clearance. NOT FOR: release file linting (use suede-release-linter), sync pitching (use suede-sync-packaging), or rollout campaigns (use suede-campaign-in-a-box).",
+      "description": "Audit rights gaps in ownership, contributors, splits, samples, licenses, provenance, and AI involvement, or assemble a hashed offline handoff package with a validated manifest. Use when asked to \"prepare a rights handoff\" or assess release, licensing, or royalty-routing evidence. Keeps confirmed facts separate from open questions. NOT FOR: release file linting (use suede-release-linter), sync pitching (use suede-sync-packaging), or rollout campaigns (use suede-campaign-in-a-box).",
       "useWhen": "Package a creative project into a rights and provenance transfer handoff.",
       "displayName": "Suede AI Rights Passport Skills"
     },
@@ -827,7 +827,7 @@
       "specialty": "position",
       "lane": "Creator toolkit",
       "name": "suede-sync-packaging",
-      "description": "Prepare a song for sync review: scene fit, supervisor one-sheet, asset checklist, lyric flags, mood tags, AI disclosure, and open clearance questions. Use when asked to \"make a sync one-sheet\" or package a track for film, TV, ads, games, trailers, or creator campaigns. Drafts pitch materials without clearance, placement, or sending claims. NOT FOR: rights investigations or transfer packages (use suede-rights-passport), folder linting (use suede-release-linter), or rollouts (use suede-campaign-in-a-box).",
+      "description": "Prepare a song for sync review: scene fit, supervisor one-sheet, asset checklist, lyric flags, mood tags, AI disclosure, and open clearance questions. Use when asked to \"make a sync one-sheet\" or package a track for film, TV, ads, games, trailers, or creator campaigns. Drafts pitch materials with open clearance questions labeled. NOT FOR: rights investigations or transfer packages (use suede-rights-passport), folder linting (use suede-release-linter), or rollouts (use suede-campaign-in-a-box).",
       "useWhen": "Prepare a song or catalog asset for film, TV, ads, games, trailers, creator campaigns, or brand briefs with clear open questions.",
       "displayName": "Suede AI Sync Packaging Skills"
     },

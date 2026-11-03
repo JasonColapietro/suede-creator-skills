@@ -101,11 +101,11 @@ Tuesday afternoon as it does at midnight.
 ## Progressive disclosure, or why 66 skills fit
 
 Here is the objection that arrives immediately. The 66 `SKILL.md` files in this
-repo total 924,408 bytes. Loading all of them into every conversation would
+repo total 924,377 bytes. Loading all of them into every conversation would
 crowd out the thing you actually came to do.
 
 They are not all loaded. Only the frontmatter descriptions stay resident, and
-all 66 descriptions together come to 29,149 bytes. That is roughly a
+all 66 descriptions together come to 29,118 bytes. That is roughly a
 thirty-second of the corpus. The agent holds a catalog of what exists and reads
 a body only when a description matches the task in front of it.
 
