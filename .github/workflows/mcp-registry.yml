@@ -1,0 +1,79 @@
+name: MCP Registry
+
+# Publishes server.json to the official MCP Registry
+# (registry.modelcontextprotocol.io) as io.github.JasonColapietro/suede-skills-mcp.
+# It signs in with GitHub OIDC, which the registry accepts for io.github.<owner>
+# names published from that owner's repositories, so no login or token exists
+# anywhere. The npm package workflow calls this after a successful npm publish;
+# it can also be run by hand to refresh the listing for the current version.
+
+on:
+  workflow_dispatch:
+  workflow_call:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: mcp-registry
+  cancel-in-progress: false
+
+jobs:
+  mcp-registry:
+    name: mcp-registry
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Refuse a server.json that disagrees with VERSION
+        run: |
+          node -e '
+            const fs = require("fs");
+            const version = fs.readFileSync("VERSION", "utf8").trim();
+            const server = JSON.parse(fs.readFileSync("server.json", "utf8"));
+            const pkg = server.packages.find((entry) => entry.registryType === "npm");
+            const problems = [];
+            if (server.version !== version) problems.push(`server.json version ${server.version} != VERSION ${version}`);
+            if (!pkg || pkg.version !== version) problems.push(`npm package version ${pkg && pkg.version} != VERSION ${version}`);
+            if (server.description.length > 100) problems.push(`description is ${server.description.length} characters; the registry allows 100`);
+            if (problems.length) { problems.forEach((p) => console.error(`::error::${p}`)); process.exit(1); }
+            console.log(`server.json matches VERSION ${version}`);
+          '
+
+      # The registry checks that the npm package exists and names this server
+      # in its mcpName, so wait until npm serves the version being listed.
+      - name: Wait for the npm package version
+        run: |
+          set -euo pipefail
+          version="$(tr -d '[:space:]' < VERSION)"
+          for attempt in $(seq 1 40); do
+            if curl -fsS "https://registry.npmjs.org/suede-skills-mcp/${version}" > /dev/null 2>&1; then
+              echo "npm serves suede-skills-mcp@${version}"
+              exit 0
+            fi
+            sleep 15
+          done
+          echo "::error::suede-skills-mcp@${version} is not on npm; publish it first"
+          exit 1
+
+      - name: Install mcp-publisher
+        env:
+          MCP_PUBLISHER_VERSION: v1.8.1
+        run: |
+          set -euo pipefail
+          curl -fsSL "https://github.com/modelcontextprotocol/registry/releases/download/${MCP_PUBLISHER_VERSION}/mcp-publisher_linux_amd64.tar.gz" \
+            | tar -xz -C "$RUNNER_TEMP" mcp-publisher
+          "$RUNNER_TEMP/mcp-publisher" --help > /dev/null
+
+      - name: Sign in with GitHub OIDC
+        run: '"$RUNNER_TEMP/mcp-publisher" login github-oidc'
+
+      - name: Publish server.json
+        run: '"$RUNNER_TEMP/mcp-publisher" publish'
