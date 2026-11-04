@@ -126,5 +126,7 @@ jobs:
       - name: Install an npm that supports Trusted Publishing
         run: npm install -g npm@11.6.2
 
+      # The ./ matters: npm reads a bare "pack/name.tgz" as a GitHub
+      # owner/repo shorthand and tries to clone it.
       - name: Publish to npm with Trusted Publishing
-        run: npm publish pack/*.tgz --access public
+        run: npm publish ./pack/*.tgz --access public
