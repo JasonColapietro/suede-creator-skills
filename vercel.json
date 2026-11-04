@@ -3,7 +3,6 @@
   "framework": null,
   "installCommand": "echo 'no install step: the build uses only Node built-ins'",
   "buildCommand": "node scripts/build-vercel.mjs",
-  "ignoreCommand": "[ \"$VERCEL_ENV\" != \"production\" ] && exit 0 || exit 1",
   "outputDirectory": "dist/out",
   "trailingSlash": true,
   "redirects": [
