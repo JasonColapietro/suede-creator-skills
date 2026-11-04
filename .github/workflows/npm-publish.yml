@@ -130,3 +130,11 @@ jobs:
       # owner/repo shorthand and tries to clone it.
       - name: Publish to npm with Trusted Publishing
         run: npm publish ./pack/*.tgz --access public
+
+  # List the new version on the official MCP Registry once npm serves it.
+  mcp-registry:
+    needs: publish
+    permissions:
+      contents: read
+      id-token: write
+    uses: ./.github/workflows/mcp-registry.yml
