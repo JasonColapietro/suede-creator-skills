@@ -1,0 +1,7 @@
+# The image needs only mcp/ and skills/. Keep the build context small.
+*
+!mcp/
+!skills/
+skills/**/__pycache__/
+skills/**/*.pyc
+skills/**/.DS_Store

@@ -98,7 +98,7 @@ Install the skills
 ### One-line description
 
 Install the skills from the public GitHub repo. The MCP server is optional: a
-dependency-free stdio server with 9 tools, 7 resources, and 5 prompts, and it
+dependency-free stdio server with 12 tools, 7 resources, and 5 prompts, and it
 ships no binaries and no telemetry.
 
 ### Page hero
@@ -108,9 +108,9 @@ your machine in about 30 seconds.
 
 ### Page subhead
 
-The MCP server gives an agent structured access to the catalog, the public
-install paths, the copy audit scaffolds, and the QA checklists. It speaks
-JSON-RPC over stdio, with no dependencies and no network calls.
+The MCP server gives an agent the right skill for the task, a live A-F audit of
+any page for Google and AI search, copy checks against the house rules, and the
+public install paths. It speaks JSON-RPC over stdio, with no dependencies.
 
 ### CTA options
 

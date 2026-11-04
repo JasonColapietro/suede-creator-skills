@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import { once } from "node:events";
 import { spawn, spawnSync } from "node:child_process";
 import fs from "node:fs";
+import http from "node:http";
 import path from "node:path";
 import test from "node:test";
 import { fileURLToPath } from "node:url";
@@ -18,9 +19,10 @@ const CODEX_PLUGIN = JSON.parse(
 const REQUEST_TIMEOUT_MS = 3000;
 
 class McpSession {
-  constructor(profile = "all") {
+  constructor(profile = "all", env = {}) {
     this.child = spawn(process.execPath, [SERVER, "--profile", profile], {
       cwd: ROOT,
+      env: { ...process.env, SUEDE_MCP_OFFLINE: "", SUEDE_MCP_ALLOW_PRIVATE_HOSTS: "", ...env },
       stdio: ["pipe", "pipe", "pipe"]
     });
     this.buffer = "";
@@ -118,8 +120,8 @@ class McpSession {
   }
 }
 
-async function withSession(run, profile = "all") {
-  const session = new McpSession(profile);
+async function withSession(run, profile = "all", env = {}) {
+  const session = new McpSession(profile, env);
   try {
     await run(session);
   } finally {
@@ -142,7 +144,8 @@ test("enforces initialization and negotiates supported protocol versions", async
     assert.deepEqual(initialized.capabilities, {
       tools: { listChanged: false },
       resources: { subscribe: false, listChanged: false },
-      prompts: { listChanged: false }
+      prompts: { listChanged: false },
+      completions: {}
     });
 
     const ping = await session.request("ping", {});
@@ -157,8 +160,15 @@ test("enforces initialization and negotiates supported protocol versions", async
 
   await withSession(async (session) => {
     const initialized = await session.initialize("2099-01-01");
-    assert.equal(initialized.protocolVersion, "2025-06-18");
+    assert.equal(initialized.protocolVersion, "2025-11-25");
   });
+
+  for (const version of ["2025-11-25", "2025-06-18", "2024-11-05"]) {
+    await withSession(async (session) => {
+      const initialized = await session.initialize(version);
+      assert.equal(initialized.protocolVersion, version);
+    });
+  }
 });
 
 test("publishes closed input schemas, output schemas, and read-only annotations", async () => {
@@ -177,7 +187,8 @@ test("publishes closed input schemas, output schemas, and read-only annotations"
         readOnlyHint: true,
         destructiveHint: false,
         idempotentHint: true,
-        openWorldHint: false
+        // The live page audit is the one tool that reaches the network.
+        openWorldHint: tool.name === "suede_live_page_audit"
       });
     }
   });
@@ -363,7 +374,13 @@ const ROUTING_EVAL = [
   ["build an iOS app from my website", "site-to-ios-app"],
   ["find the rights gaps before I hand off a release", "suede-rights-passport"],
   ["design evals that catch model regressions", "suede-ai-eval"],
-  ["grow my instagram account", "suede-social"]
+  ["grow my instagram account", "suede-social"],
+  ["audit my landing page for AI search", "suede-seo-audit"],
+  ["get my business cited by ChatGPT", "suede-ai-seo"],
+  ["why don't I rank on Google", "suede-seo-audit"],
+  ["grade this page before I promote it", "suede-visibility-grader"],
+  ["show up in perplexity answers", "suede-ai-seo"],
+  ["write copy for my homepage hero", "suede-copy"]
 ];
 
 test("search routes real task phrasings to the owning skill", async () => {
@@ -379,7 +396,7 @@ test("search routes real task phrasings to the owning skill", async () => {
       if (!ranked.includes(expected)) misses.push(`"${query}" wanted ${expected}, got ${ranked.join(", ") || "nothing"}`);
     }
     assert.ok(
-      misses.length <= 2,
+      misses.length <= 1,
       `${misses.length}/${ROUTING_EVAL.length} routing cases fell out of the top 3:\n${misses.join("\n")}`
     );
   });
@@ -449,7 +466,7 @@ test("specialty profiles narrow the server and the specialties tool describes th
 });
 
 test("catalog, resources, prompts, and profile filters match the live server", async () => {
-  assert.equal(CATALOG.mcp.tools.length, 9);
+  assert.equal(CATALOG.mcp.tools.length, 12);
   assert.equal(CATALOG.mcp.resources.length, 7);
   assert.equal(CATALOG.mcp.prompts.length, 5);
 
@@ -576,4 +593,354 @@ test("bounds input and rejects unknown profiles without stdout leakage", async (
   assert.equal(invalid.status, 2);
   assert.equal(invalid.stdout, "");
   assert.match(invalid.stderr, /Unknown profile/);
+});
+
+// ---------------------------------------------------------------------------
+// Live page audit, copy check, workflow planner, skill resources, completions.
+
+const GOOD_PAGE = `<!doctype html><html lang="en"><head>
+<title>Free SEO and AI search audits for local businesses</title>
+<meta name="description" content="Find out why customers cannot find you on Google and ChatGPT, with the exact fix for each problem and a free A-F grade.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical" href="/">
+<meta property="og:title" content="Free AI search audit"><meta property="og:description" content="A-F grade in two minutes">
+<meta property="og:image" content="https://cdn.example.com/og.png"><meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","name":"Example"},{"@type":"FAQPage"}]}</script>
+</head><body><h1>Get found on Google and ChatGPT</h1><h2>What the audit checks</h2><h2>How long does it take?</h2>
+<p>${"Customers search before they call. ".repeat(60)}</p>
+<a href="/audit">Get my free audit</a> <a href="mailto:hello@example.com">Email us</a><img src="/a.png" alt="Audit report"></body></html>`;
+const CLIENT_RENDERED_NOINDEX = `<html><head><meta name="robots" content="noindex"></head><body><div id="root"></div><script src="/app.js"></script></body></html>`;
+
+async function withSite(run) {
+  const server = http.createServer((req, res) => {
+    if (req.url === "/robots.txt") {
+      res.setHeader("content-type", "text/plain");
+      res.end("User-agent: *\nAllow: /\n\nUser-agent: GPTBot\nDisallow: /\n\nUser-agent: PerplexityBot\nDisallow: /app\n\nSitemap: /sitemap.xml\n");
+      return;
+    }
+    if (req.url === "/sitemap.xml") {
+      res.setHeader("content-type", "application/xml");
+      res.end('<?xml version="1.0"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"></urlset>');
+      return;
+    }
+    if (req.url === "/llms.txt") {
+      res.setHeader("content-type", "text/plain");
+      res.end("# Example\n- [Audit](/audit)\n");
+      return;
+    }
+    if (req.url === "/moved") {
+      res.writeHead(301, { location: "/" });
+      res.end();
+      return;
+    }
+    if (req.url === "/gone") {
+      res.writeHead(404, { "content-type": "text/html" });
+      res.end("<html><body>Not found</body></html>");
+      return;
+    }
+    res.setHeader("content-type", "text/html; charset=utf-8");
+    res.end(req.url.startsWith("/app") ? CLIENT_RENDERED_NOINDEX : GOOD_PAGE);
+  });
+  await new Promise((resolve) => server.listen(0, "127.0.0.1", resolve));
+  try {
+    await run(`http://127.0.0.1:${server.address().port}`);
+  } finally {
+    await new Promise((resolve) => server.close(resolve));
+  }
+}
+
+const ALLOW_LOCAL = { SUEDE_MCP_ALLOW_PRIVATE_HOSTS: "1" };
+
+test("live page audit grades what the page actually serves", async () => {
+  await withSite(async (base) => {
+    await withSession(async (session) => {
+      await session.initialize();
+      const good = await session.request("tools/call", {
+        name: "suede_live_page_audit",
+        arguments: { url: `${base}/moved`, primaryAction: "free audit" }
+      });
+      assert.equal(good.result.isError, undefined);
+      const report = good.result.structuredContent;
+      assert.equal(report.ok, true);
+      assert.equal(report.finalUrl, `${base}/`);
+      assert.equal(report.status, 200);
+      const byId = Object.fromEntries(report.checks.map((check) => [check.id, check]));
+      for (const id of ["status", "indexable", "robots-google", "canonical", "title", "description", "sitemap", "answer-bots", "h1", "text", "schema", "answers", "llms", "cta", "primary-action", "og-image"]) {
+        assert.equal(byId[id]?.status, "pass", `${id}: ${JSON.stringify(byId[id])}`);
+      }
+      // Training crawlers are reported, never penalized; answer engines are scored.
+      assert.deepEqual(report.robots.blockedTrainingBots, ["GPTBot"]);
+      assert.deepEqual(report.robots.blockedAnswerBots, []);
+      assert.equal(byId["training-bots"].status, "info");
+      assert.deepEqual(report.page.schemaTypes.sort(), ["FAQPage", "Organization"]);
+      assert.ok(["A", "B"].includes(report.overall.grade), `good page graded ${report.overall.grade}`);
+      assert.equal(report.lanes.length, 4);
+      assert.match(good.result.content[0].text, /^# Suede Live Page Audit/);
+
+      const bad = await session.request("tools/call", {
+        name: "suede_live_page_audit",
+        arguments: { url: `${base}/app` }
+      });
+      const badReport = bad.result.structuredContent;
+      assert.equal(badReport.overall.grade, "F");
+      const badById = Object.fromEntries(badReport.checks.map((check) => [check.id, check]));
+      assert.equal(badById.indexable.status, "fail");
+      assert.equal(badById.text.status, "fail");
+      assert.equal(badById.h1.status, "fail");
+      assert.equal(badById["answer-bots"].status, "fail");
+      assert.deepEqual(badReport.robots.blockedAnswerBots, ["PerplexityBot"]);
+      assert.ok(badReport.topFixes.length > 0 && badReport.topFixes.length <= 5);
+
+      const missing = await session.request("tools/call", {
+        name: "suede_live_page_audit",
+        arguments: { url: `${base}/gone` }
+      });
+      assert.equal(missing.result.structuredContent.status, 404);
+      assert.equal(missing.result.structuredContent.overall.grade, "F");
+    }, "all", ALLOW_LOCAL);
+  });
+});
+
+test("live page audit refuses private hosts, bad schemes and offline mode as tool errors", async () => {
+  await withSite(async (base) => {
+    await withSession(async (session) => {
+      await session.initialize();
+      const local = await session.request("tools/call", { name: "suede_live_page_audit", arguments: { url: base } });
+      assert.equal(local.result.isError, true);
+      assert.equal(local.result.structuredContent.ok, false);
+      assert.match(local.result.structuredContent.error, /private or reserved address/);
+
+      const fileUrl = await session.request("tools/call", { name: "suede_live_page_audit", arguments: { url: "file:///etc/passwd" } });
+      assert.equal(fileUrl.result.isError, true);
+      assert.match(fileUrl.result.structuredContent.error, /Only http and https/);
+
+      const empty = await session.request("tools/call", { name: "suede_live_page_audit", arguments: { url: "  " } });
+      assert.equal(empty.error.code, -32602);
+    });
+  });
+
+  await withSession(async (session) => {
+    await session.initialize();
+    const offline = await session.request("tools/call", {
+      name: "suede_live_page_audit",
+      arguments: { url: "https://example.com" }
+    });
+    assert.equal(offline.result.isError, true);
+    assert.equal(offline.result.structuredContent.error, "offline");
+  }, "all", { SUEDE_MCP_OFFLINE: "1" });
+});
+
+test("copy check scores copy against the house rules", async () => {
+  await withSession(async (session) => {
+    await session.initialize();
+    const bad = await session.request("tools/call", {
+      name: "suede_copy_check",
+      arguments: {
+        copy: "We help you grow your business with innovative solutions. Our world-class team can help you unlock seamless growth! We believe it is basically a game-changer \u2014 here\u2019s the thing.",
+        primaryAction: "free audit"
+      }
+    });
+    const result = bad.result.structuredContent;
+    assert.equal(result.grade, "F");
+    const rules = result.findings.map((finding) => finding.rule);
+    for (const rule of ["House ban: Em dash", 'House ban: "unlock/unleash"', 'House ban: "seamless"', 'House ban: "game-changer"', "Hedge or softener", "Vague or buzzword claim", "No call to action", "Primary action missing", "Promotional exclamation point"]) {
+      assert.ok(rules.includes(rule), `missing finding ${rule}; got ${rules.join(", ")}`);
+    }
+    assert.ok(result.findings.every((finding) => ["high", "medium", "low"].includes(finding.severity)));
+
+    const good = await session.request("tools/call", {
+      name: "suede_copy_check",
+      arguments: {
+        copy: "You get a free A-F grade for your site in two minutes. The audit checks 26 signals, from your title tag to whether ChatGPT can read the page, and lists the exact fix for each one. Run your free audit now.",
+        primaryAction: "free audit"
+      }
+    });
+    assert.equal(good.result.structuredContent.grade, "A");
+    assert.deepEqual(good.result.structuredContent.findings, []);
+    assert.equal(good.result.structuredContent.metrics.hasCallToAction, true);
+
+    // Several problems packed into one short line must not score like a page.
+    const shortLine = await session.request("tools/call", {
+      name: "suede_copy_check",
+      arguments: { copy: "Unlock seamless growth with our innovative solutions!" }
+    });
+    assert.equal(shortLine.result.structuredContent.grade, "F");
+
+    const otherBrand = await session.request("tools/call", {
+      name: "suede_copy_check",
+      arguments: { copy: "Seamless onboarding \u2014 sign up today.", houseStyle: false }
+    });
+    assert.ok(!otherBrand.result.structuredContent.findings.some((finding) => finding.rule.startsWith("House ban")));
+
+    const empty = await session.request("tools/call", { name: "suede_copy_check", arguments: { copy: "   " } });
+    assert.equal(empty.error.code, -32602);
+    const tooLong = await session.request("tools/call", { name: "suede_copy_check", arguments: { copy: "a".repeat(20001) } });
+    assert.equal(tooLong.error.code, -32602);
+  });
+});
+
+test("workflow planner orders matching skills by phase", async () => {
+  await withSession(async (session) => {
+    await session.initialize();
+    const plan = await session.request("tools/call", {
+      name: "plan_suede_workflow",
+      arguments: { goal: "get my business cited by ChatGPT and fix a landing page that gets no signups", maxSteps: 6 }
+    });
+    const { steps } = plan.result.structuredContent;
+    const names = steps.map((step) => step.name);
+    assert.ok(names.includes("suede-ai-seo"), names.join(", "));
+    assert.ok(names.includes("suede-site-alchemy"), names.join(", "));
+    assert.ok(steps.length <= 6);
+    assert.deepEqual(steps.map((step) => step.step), steps.map((_, index) => index + 1));
+    const phases = ["position", "craft", "ship", "found", "demand", "revenue"];
+    const order = steps.map((step) => phases.indexOf(step.specialty));
+    assert.deepEqual(order, [...order].sort((a, b) => a - b), "steps must run in phase order");
+    assert.match(plan.result.content[0].text, /Start with step 1: call get_suede_skill/);
+
+    const ios = await session.request("tools/call", { name: "plan_suede_workflow", arguments: { goal: "launch my iOS app and get downloads" } });
+    const iosNames = ios.result.structuredContent.steps.map((step) => step.name);
+    assert.ok(iosNames.includes("site-to-ios-app") && iosNames.includes("suede-aso"), iosNames.join(", "));
+    assert.ok(!iosNames.includes("android-app-factory"), `iOS plan pulled in Android: ${iosNames.join(", ")}`);
+
+    const nothing = await session.request("tools/call", { name: "plan_suede_workflow", arguments: { goal: "zzzqqq" } });
+    assert.deepEqual(nothing.result.structuredContent.steps, []);
+    const tooMany = await session.request("tools/call", { name: "plan_suede_workflow", arguments: { goal: "seo", maxSteps: 99 } });
+    assert.equal(tooMany.error.code, -32602);
+  });
+});
+
+test("every skill's instructions are readable through the skill resource template", async () => {
+  await withSession(async (session) => {
+    await session.initialize();
+    const templates = await session.request("resources/templates/list", {});
+    assert.deepEqual(templates.result.resourceTemplates.map((template) => template.uriTemplate), ["suede://skill/{name}"]);
+
+    const read = await session.request("resources/read", { uri: "suede://skill/suede-copy" });
+    assert.equal(read.result.contents[0].mimeType, "text/markdown");
+    assert.match(read.result.contents[0].text, /^---\nname: suede-copy/);
+
+    for (const uri of ["suede://skill/not-a-skill", "suede://skill/..%2F..%2Fetc%2Fpasswd", "suede://skill/%E0%A4%A"]) {
+      const refused = await session.request("resources/read", { uri });
+      assert.equal(refused.error.code, -32602, uri);
+    }
+  });
+
+  // A narrowed profile only serves its own skills.
+  await withSession(async (session) => {
+    await session.initialize();
+    const outside = await session.request("resources/read", { uri: "suede://skill/suede-graph-flo-xr" });
+    assert.equal(outside.error.code, -32602);
+  }, "creator");
+});
+
+test("completions suggest skill names and prompt argument values", async () => {
+  await withSession(async (session) => {
+    await session.initialize();
+    const skills = await session.request("completion/complete", {
+      ref: { type: "ref/resource", uri: "suede://skill/{name}" },
+      argument: { name: "name", value: "suede-ai" }
+    });
+    const values = skills.result.completion.values;
+    assert.ok(values.includes("suede-ai-seo") && values.includes("suede-ai-eval"), values.join(", "));
+    assert.ok(values.every((value) => value.includes("suede-ai")));
+    assert.equal(skills.result.completion.total, values.length);
+    assert.equal(skills.result.completion.hasMore, false);
+
+    const surface = await session.request("completion/complete", {
+      ref: { type: "ref/prompt", name: "suede-plugin-install" },
+      argument: { name: "surface", value: "c" }
+    });
+    assert.deepEqual(surface.result.completion.values, ["codex", "claude"]);
+
+    const freeText = await session.request("completion/complete", {
+      ref: { type: "ref/prompt", name: "suede-full-qa" },
+      argument: { name: "target", value: "x" }
+    });
+    assert.deepEqual(freeText.result.completion.values, []);
+
+    const unknownPrompt = await session.request("completion/complete", {
+      ref: { type: "ref/prompt", name: "nope" },
+      argument: { name: "surface", value: "" }
+    });
+    assert.equal(unknownPrompt.error.code, -32602);
+  });
+});
+
+test("regressions: specialties resource shape, ranked search text, specialty hints", async () => {
+  await withSession(async (session) => {
+    await session.initialize();
+    // suede://specialties used to come back as contents[0].contents (double wrapped).
+    const specialties = await session.request("resources/read", { uri: "suede://specialties" });
+    assert.equal(specialties.result.contents.length, 1);
+    assert.equal(specialties.result.contents[0].uri, "suede://specialties");
+    const parsed = JSON.parse(specialties.result.contents[0].text);
+    assert.deepEqual(parsed.map((entry) => entry.key), CATALOG.specialties.map((entry) => entry.key));
+
+    // The text result used to regroup matches by specialty, printing a weaker
+    // match above the best one. It must read best-first.
+    const search = await session.request("tools/call", {
+      name: "search_suede_skills",
+      arguments: { query: "audit my landing page for AI search", limit: 5 }
+    });
+    const best = search.result.structuredContent.matches[0].name;
+    assert.match(search.result.content[0].text, new RegExp(`^1\\. \\$${best} `));
+
+    // The schemas advertised a specialty ("earn") that the server rejects.
+    const tools = (await session.request("tools/list", {})).result.tools;
+    for (const tool of tools) {
+      const property = tool.inputSchema.properties.specialty;
+      if (!property) continue;
+      for (const key of property.enum.filter((value) => value !== "all")) {
+        assert.ok(property.description.includes(key), `${tool.name} specialty hint omits ${key}`);
+      }
+      assert.ok(!/\bearn\b/.test(property.description), `${tool.name} still advertises "earn"`);
+    }
+  });
+});
+
+test("handles a client that pipelines initialize, initialized and a request in one write", async () => {
+  await withSession(async (session) => {
+    const lines = [
+      { jsonrpc: "2.0", id: 1, method: "initialize", params: { protocolVersion: "2025-11-25", capabilities: {}, clientInfo: { name: "pipeline", version: "1" } } },
+      { jsonrpc: "2.0", method: "notifications/initialized" },
+      { jsonrpc: "2.0", id: 2, method: "tools/list", params: {} }
+    ].map((message) => JSON.stringify(message)).join("\n");
+    await session.sendRaw(`${lines}\n`);
+    const first = await session.nextMessage();
+    const second = await session.nextMessage();
+    assert.equal(first.id, 1);
+    assert.equal(second.id, 2);
+    assert.equal(second.result.tools.length, CATALOG.mcp.tools.length);
+    session.nextId = 3;
+  });
+});
+
+test("the server runs from the minimal layout the Dockerfile and npm package ship", async () => {
+  const dockerfile = fs.readFileSync(path.join(ROOT, "Dockerfile"), "utf8");
+  assert.match(dockerfile, /^FROM node:22/m);
+  assert.match(dockerfile, /COPY mcp\/ \.\/mcp\//);
+  assert.match(dockerfile, /COPY skills\/ \.\/skills\//);
+  assert.match(dockerfile, /ENTRYPOINT \["node", "mcp\/suede-skills-mcp\.mjs"\]/);
+
+  const tmp = fs.mkdtempSync(path.join(ROOT, "tests", "fixtures", "image-"));
+  try {
+    fs.cpSync(path.join(ROOT, "mcp"), path.join(tmp, "mcp"), { recursive: true });
+    fs.cpSync(path.join(ROOT, "skills"), path.join(tmp, "skills"), { recursive: true });
+    const child = spawn(process.execPath, [path.join(tmp, "mcp", "suede-skills-mcp.mjs"), "--profile", "all"], { cwd: tmp, stdio: ["pipe", "pipe", "pipe"] });
+    let out = "";
+    let err = "";
+    child.stdout.on("data", (chunk) => { out += chunk; });
+    child.stderr.on("data", (chunk) => { err += chunk; });
+    child.stdin.write(`${JSON.stringify({ jsonrpc: "2.0", id: 1, method: "initialize", params: { protocolVersion: "2025-11-25", capabilities: {}, clientInfo: { name: "image", version: "1" } } })}\n`);
+    child.stdin.write(`${JSON.stringify({ jsonrpc: "2.0", method: "notifications/initialized" })}\n`);
+    child.stdin.write(`${JSON.stringify({ jsonrpc: "2.0", id: 2, method: "tools/call", params: { name: "get_suede_skill", arguments: { name: "suede-copy", includeBody: true } } })}\n`);
+    child.stdin.end();
+    await once(child, "exit");
+    assert.equal(err, "");
+    const responses = out.trim().split("\n").map((line) => JSON.parse(line));
+    assert.equal(responses[1].result.structuredContent.found, true);
+    assert.match(responses[1].result.structuredContent.body, /^---\nname: suede-copy/);
+  } finally {
+    fs.rmSync(tmp, { recursive: true, force: true });
+  }
 });
