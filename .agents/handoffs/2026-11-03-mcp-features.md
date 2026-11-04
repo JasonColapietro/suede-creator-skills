@@ -68,3 +68,9 @@ if the session ends.
   `npm run build:directory` rewrote ~4.8k generated files (normal). Full `npm test` running.
   NEXT: if green, commit receipt + generated files, push, open PR via gh api, wait CI, merge squash
   with explicit message, verify main and Vercel deploy of skills.suedeai.ai pages (plugins.html).
+- Full npm test run: everything green except one python check (plugins.html line 592 still said
+  "9 tools"); fixed. Remaining chain steps + CI extras (seo-offline, branding, indexnow,
+  build-mcp-package --check, build-pypi-package --check) all pass. Built npm package runs e2e.
+- Tuned: short copy weighs findings more (one-line slop now F), app-store synonyms, a mobile
+  platform rule (iOS goals no longer pull the Android skill). Routing eval now top1 21/23, top3 23/23.
+  NEXT: commit, push, open PR, CI, merge.

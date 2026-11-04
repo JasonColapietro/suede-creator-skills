@@ -161,7 +161,10 @@ export function checkCopy(input, { primaryAction, houseStyle = true } = {}) {
     // Repeats of one weak signal count less than a spread of distinct problems.
     return sum + per + Math.min(finding.count - 1, 3) * (per / 2);
   }, 0);
-  const score = Math.max(0, Math.round(100 - penalty));
+  // Four problems in one short line is worse than four across a page, so short
+  // copy weighs each finding more, up to double under 20 words.
+  const density = wordCount && wordCount < 40 ? Math.min(2, 40 / Math.max(wordCount, 20)) : 1;
+  const score = Math.max(0, Math.round(100 - penalty * density));
   const order = { high: 0, medium: 1, low: 2 };
   findings.sort((a, b) => order[a.severity] - order[b.severity] || b.count - a.count);
   return {

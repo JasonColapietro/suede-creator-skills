@@ -759,6 +759,13 @@ test("copy check scores copy against the house rules", async () => {
     assert.deepEqual(good.result.structuredContent.findings, []);
     assert.equal(good.result.structuredContent.metrics.hasCallToAction, true);
 
+    // Several problems packed into one short line must not score like a page.
+    const shortLine = await session.request("tools/call", {
+      name: "suede_copy_check",
+      arguments: { copy: "Unlock seamless growth with our innovative solutions!" }
+    });
+    assert.equal(shortLine.result.structuredContent.grade, "F");
+
     const otherBrand = await session.request("tools/call", {
       name: "suede_copy_check",
       arguments: { copy: "Seamless onboarding \u2014 sign up today.", houseStyle: false }
@@ -789,6 +796,11 @@ test("workflow planner orders matching skills by phase", async () => {
     const order = steps.map((step) => phases.indexOf(step.specialty));
     assert.deepEqual(order, [...order].sort((a, b) => a - b), "steps must run in phase order");
     assert.match(plan.result.content[0].text, /Start with step 1: call get_suede_skill/);
+
+    const ios = await session.request("tools/call", { name: "plan_suede_workflow", arguments: { goal: "launch my iOS app and get downloads" } });
+    const iosNames = ios.result.structuredContent.steps.map((step) => step.name);
+    assert.ok(iosNames.includes("site-to-ios-app") && iosNames.includes("suede-aso"), iosNames.join(", "));
+    assert.ok(!iosNames.includes("android-app-factory"), `iOS plan pulled in Android: ${iosNames.join(", ")}`);
 
     const nothing = await session.request("tools/call", { name: "plan_suede_workflow", arguments: { goal: "zzzqqq" } });
     assert.deepEqual(nothing.result.structuredContent.steps, []);

@@ -265,7 +265,8 @@ const PHRASE_SYNONYMS = [
   [/\b(cited|cite|citations?|mentioned) by\b/, ["citation", "cited", "llms"]],
   [/\b(google|bing|rank|ranking|rankings|organic|indexed|indexing)\b/, ["seo", "search", "indexation"]],
   [/\blanding page\b/, ["conversion", "page", "landing"]],
-  [/\b(not converting|no signups|bounce|bouncing)\b/, ["conversion", "signups", "funnel"]]
+  [/\b(not converting|no signups|bounce|bouncing)\b/, ["conversion", "signups", "funnel"]],
+  [/\b(app store|play store|downloads|installs)\b/, ["aso", "store", "listing"]]
 ];
 const TERM_SYNONYMS = {
   search: ["seo"],
@@ -278,7 +279,9 @@ const TERM_SYNONYMS = {
   churn: ["cancel", "retention"],
   ads: ["paid", "ad"],
   email: ["emails", "outbound"],
-  launch: ["release", "ship"]
+  launch: ["release", "ship"],
+  downloads: ["aso", "store", "installs"],
+  installs: ["aso", "store"]
 };
 
 // The catalog closes every description with "NOT FOR: ..." naming the
@@ -314,6 +317,10 @@ function searchSkills(skills, query, limit) {
     useWhen: tokenize(skill.useWhen),
     description: tokenize(routingText(skill.description))
   }));
+  const lowerQuery = String(query).toLowerCase();
+  const wantsIos = /\b(ios|iphone|ipad|swift|app store)\b/.test(lowerQuery);
+  const wantsAndroid = /\b(android|kotlin|play store|google play)\b/.test(lowerQuery);
+  const platform = wantsIos === wantsAndroid ? null : wantsIos ? { wanted: "ios", other: "android" } : { wanted: "android", other: "ios" };
   const idf = new Map();
   for (const { term } of terms) {
     const df = indexed.filter((entry) =>
@@ -330,6 +337,8 @@ function searchSkills(skills, query, limit) {
         score += rarity * 3 * fieldMatch(term, entry.useWhen);
         score += rarity * 1 * fieldMatch(term, entry.description);
       }
+      // A query that names one mobile platform is not asking for the other.
+      if (platform && entry.name.includes(platform.other) && !entry.name.includes(platform.wanted)) score *= 0.3;
       return { skill: entry.skill, score: Math.round(score * 10) / 10 };
     })
     .filter((entry) => entry.score > 0)
