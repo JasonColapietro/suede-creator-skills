@@ -33,7 +33,7 @@ function buildPackageJson() {
     // io.github.JasonColapietro namespace. Must match server.json `name`.
     mcpName: MCP_NAME,
     description:
-      "Read-only MCP server for Suede skills — discovery, install options, SEO/AEO/AI EO copy audits, visibility and code grading, and QA checklists.",
+      "Read-only MCP server for Suede skills: skill routing and workflow plans, live A-F page audits for Google and AI search, copy checks, install options, and grading and QA checklists.",
     type: "module",
     license: "MIT AND BSD-3-Clause",
     author: "Jason Colapietro",
@@ -51,7 +51,11 @@ function build() {
   fs.rmSync(OUT, { recursive: true, force: true });
   fs.mkdirSync(OUT, { recursive: true });
 
-  copyFile(path.join(ROOT, "mcp", "suede-skills-mcp.mjs"), path.join(OUT, "mcp", "suede-skills-mcp.mjs"));
+  // The server imports its sibling modules (page audit, copy checks), so every
+  // .mjs file in mcp/ ships, not only the entry point.
+  for (const file of fs.readdirSync(path.join(ROOT, "mcp")).filter((name) => name.endsWith(".mjs")).sort()) {
+    copyFile(path.join(ROOT, "mcp", file), path.join(OUT, "mcp", file));
+  }
   fs.chmodSync(path.join(OUT, "mcp", "suede-skills-mcp.mjs"), 0o755);
   copyFile(path.join(ROOT, "mcp", "catalog.json"), path.join(OUT, "mcp", "catalog.json"));
   copyFile(path.join(ROOT, "mcp", "README.md"), path.join(OUT, "README.md"));

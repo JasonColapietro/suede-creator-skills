@@ -74,7 +74,7 @@ codex plugin marketplace add JasonColapietro/suede-creator-skills --ref main
 codex plugin add suede-skills@suede-codex
 ```
 
-The Codex plugin loads every skill and registers 1 read-only MCP server with 9 tools. Restart Codex after installing or updating.
+The Codex plugin loads every skill and registers 1 read-only MCP server with 12 tools. Restart Codex after installing or updating.
 
 **Hermes Agent** ([Nous Research](https://hermes-agent.nousresearch.com/docs/user-guide/features/skills)) — this repo is a skills tap. Subscribe to browse and search the whole pack, or install one skill without subscribing:
 
@@ -146,7 +146,7 @@ For a user-level install, copy into `~/.claude/skills/` instead. Claude.ai and o
 node mcp/suede-skills-mcp.mjs --profile all
 ```
 
-Exposes 9 tools (`list_suede_skills`, `list_suede_specialties`, `search_suede_skills`, `get_suede_skill`, `suede_install_options`, `suede_copy_seo_audit`, `suede_visibility_grade`, `suede_code_grade`, `suede_qa_checklist`), 7 resources, and 5 prompts over JSON-RPC.
+Exposes 12 tools (`list_suede_skills`, `list_suede_specialties`, `search_suede_skills`, `get_suede_skill`, `plan_suede_workflow`, `suede_live_page_audit`, `suede_copy_check`, `suede_install_options`, `suede_copy_seo_audit`, `suede_visibility_grade`, `suede_code_grade`, `suede_qa_checklist`), 7 resources, a `suede://skill/{name}` template, and 5 prompts over JSON-RPC. `suede_live_page_audit` grades any public URL A-F for Google and AI search from the HTML it serves. Run it in Docker with `docker build -t suede-skills-mcp . && docker run -i --rm suede-skills-mcp`.
 
 </details>
 

@@ -869,7 +869,10 @@
       "suede_copy_seo_audit",
       "suede_visibility_grade",
       "suede_code_grade",
-      "suede_qa_checklist"
+      "suede_qa_checklist",
+      "suede_live_page_audit",
+      "suede_copy_check",
+      "plan_suede_workflow"
     ],
     "resources": [
       "suede://catalog",
