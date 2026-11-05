@@ -406,3 +406,51 @@ test("every competitor in competitors.json has a vs page and an alternatives pag
     }
   }
 });
+
+// Owner direction (2026-11-05): competitor pricing reads "Pricing varies",
+// linked to the competitor's site, on every comparison page. No competitor
+// price figure may render anywhere: tables, copy, meta, JSON-LD or llms.txt.
+test("competitor pricing renders as Pricing varies with no price figure", () => {
+  const competitors = JSON.parse(fs.readFileSync(path.join(repoRoot, "directory", "editorial", "competitors.json"), "utf8")).competitors;
+  const figure = /[$€£]\s?\d/;
+  const esc = (u) => u.replace(/&/g, "&amp;");
+  for (const c of competitors) {
+    assert.ok(!("price" in c.facts), `${c.id}: competitors.json must not carry a price fact`);
+    const priceCell = `<a href="${esc(c.url)}" target="_blank" rel="noopener">Pricing varies</a>`;
+    const vs = byRel.get(`directory/compare/suede-vs-${c.id}/`);
+    assert.ok(vs.html.includes(`<tr><th scope="row">Price</th><td>`) && vs.html.includes(`${priceCell}</td></tr>`), `suede-vs-${c.id}: price row should read Pricing varies linked to ${c.url}`);
+    for (const rel of [`directory/compare/suede-vs-${c.id}/`, `directory/compare/${c.id}-alternatives/`]) {
+      const p = byRel.get(rel);
+      assert.doesNotMatch(p.html, figure, `${rel}: a price figure renders on a competitor comparison page`);
+      assert.doesNotMatch(p.html, /Not stated in the sources below/, `${rel}: price must read Pricing varies, never not stated`);
+      for (const o of competitors.filter((x) => rel.includes("-alternatives/") || x.id === c.id)) {
+        assert.ok(p.html.includes(`<a href="${esc(o.url)}" target="_blank" rel="noopener">Pricing varies</a>`), `${rel}: ${o.name} price should read Pricing varies`);
+      }
+    }
+  }
+  const llms = fs.readFileSync(path.join(docs, "llms.txt"), "utf8").split("\n").filter((l) => l.includes("/directory/compare/"));
+  for (const line of llms) assert.doesNotMatch(line, figure, `llms.txt: ${line}`);
+  assert.doesNotMatch(byRel.get("directory/compare/").html, figure, "compare hub: a price figure renders");
+});
+
+test("competitors.json validation rejects a competitor price fact or price wording", async () => {
+  const { loadCompetitors } = await import("../scripts/directory/versus.mjs");
+  const src = JSON.parse(fs.readFileSync(path.join(repoRoot, "directory", "editorial", "competitors.json"), "utf8"));
+  const tmp = fs.mkdtempSync(path.join((await import("node:os")).tmpdir(), "competitors-"));
+  const file = path.join(tmp, "competitors.json");
+  const tryWith = (mutate) => {
+    const cfg = structuredClone(src);
+    mutate(cfg.competitors[0]);
+    fs.writeFileSync(file, JSON.stringify(cfg));
+    return () => loadCompetitors(file);
+  };
+  try {
+    assert.doesNotThrow(tryWith(() => {}), "the committed data must validate");
+    assert.throws(tryWith((c) => { c.facts.price = "Free"; }), /must not carry facts\.price/);
+    assert.throws(tryWith((c) => { c.summary += " Plans start at $29."; }), /talks price \("\$2/);
+    assert.throws(tryWith((c) => { c.alt_meta = c.alt_meta.replace("how it ranks", "how it ranks and what it costs"); }), /talks price \("costs"\)/);
+    assert.throws(tryWith((c) => { c.faq.push(["Is it paid?", "It is 10 USD a month."]); }), /talks price/);
+  } finally {
+    fs.rmSync(tmp, { recursive: true, force: true });
+  }
+});
