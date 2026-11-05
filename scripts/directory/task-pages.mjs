@@ -100,18 +100,22 @@ export function planTasks(cfg, skills) {
   });
 }
 
-// One alternatives page per full-page skill scoring 80 or more that appears in
-// a published task table and has at least three full-page peers from other
+// One alternatives page per full-page skill scoring 80 or more that matches a
+// published task and has at least three full-page peers from other
 // repositories in the same category and the same primary job. The primary job
 // is the first published job, in task-pages.json order, whose name pattern
-// matches the skill, else the first that lists it. Sharing a job and a
-// category keeps peers to skills that do the same work.
+// matches the skill, else the first that matches its summary. Sharing a job
+// and a category keeps peers to skills that do the same work. Eligibility
+// reads every match, not only the capped task table (TABLE_MAX rows,
+// PER_REPO_MAX per repository): the table cap keeps one collection from
+// filling a ranking, and it should not decide which strong skills get an
+// alternatives page.
 export function planAlternatives(tasks) {
   const live = tasks.filter((t) => t.published);
   const primary = new Map();
   for (const pass of ["name", "text"]) {
     for (const t of live) {
-      for (const s of t.rows) {
+      for (const s of t.matches) {
         if (!s.featured || s.score < TASK_GATE.strongScore || primary.has(s.id)) continue;
         if (pass === "name" && t.reasons.get(s.id) !== "name") continue;
         primary.set(s.id, t);
@@ -120,7 +124,7 @@ export function planAlternatives(tasks) {
   }
   const out = [];
   for (const [id, t] of primary) {
-    const s = t.rows.find((o) => o.id === id);
+    const s = t.matches.find((o) => o.id === id);
     const peers = t.matches.filter((o) => o.featured && o.repo_slug !== s.repo_slug && o.category === s.category);
     if (peers.length < ALTERNATIVES_MIN_PEERS) continue;
     // Peers in score order, one per repository first, so the list compares

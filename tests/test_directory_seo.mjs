@@ -99,6 +99,8 @@ const kindOf = (p) => {
   if (/^directory\/(?:plugins|grok|mcp-servers|rules)\/$/.test(p.rel)) return "kind";
   if (/^directory\/stacks\/[^/]+\/$/.test(p.rel)) return "stack";
   if (["directory/trust/", "directory/compare/", "directory/api/"].includes(p.rel)) return "info";
+  if (/^directory\/compare\/[^/]+-alternatives\/$/.test(p.rel)) return "brand-alternatives";
+  if (/^directory\/compare\/suede-vs-[^/]+\/$/.test(p.rel)) return "versus";
   if (/^directory\/(?:topics|pricing|features)\/[^/]+\/$/.test(p.rel)) return "browse";
   if (p.rel === "directory/saved/") return "saved";
   if (p.rel.endsWith("/alternatives/")) return "alternatives";
@@ -199,7 +201,7 @@ test("hubs list their items and listings describe the third-party source code", 
   for (const p of indexable) {
     const kind = kindOf(p);
     const main = parsed(p)[0];
-    if (["category", "repository", "hub", "agent-hub", "task-hub", "task", "alternatives", "browse-hub", "browse", "kind"].includes(kind)) {
+    if (["category", "repository", "hub", "agent-hub", "task-hub", "task", "alternatives", "brand-alternatives", "browse-hub", "browse", "kind"].includes(kind)) {
       assert.equal(main["@type"], "CollectionPage", p.rel);
       assert.equal(main.mainEntity["@type"], "ItemList", p.rel);
       assert.ok(main.mainEntity.itemListElement.length > 0, `${p.rel}: empty ItemList`);
@@ -370,4 +372,37 @@ test("repository H1s read owner/repo with a graded skill count", () => {
   const html = fs.readFileSync(path.join(docs, "directory", "anthropics", "skills", "index.html"), "utf8");
   assert.match(html, /<h1>anthropics\/skills <span class="h1-sub">\d+ graded agent skills from Anthropic<\/span><\/h1>/);
   assert.doesNotMatch(html, /agent skills by anthropics/);
+});
+
+// Brand comparison pages (directory/editorial/competitors.json): a
+// "Suede AI Skills Directory vs <name>" page and a "<name> alternatives" page
+// per competing directory, both linked from the compare hub and llms.txt.
+test("every competitor in competitors.json has a vs page and an alternatives page on the compare hub", () => {
+  const competitors = JSON.parse(fs.readFileSync(path.join(repoRoot, "directory", "editorial", "competitors.json"), "utf8")).competitors;
+  assert.ok(competitors.length >= 5, "expected at least five competing directories");
+  const hub = byRel.get("directory/compare/");
+  const llms = fs.readFileSync(path.join(docs, "llms.txt"), "utf8");
+  const banned = /—|\bmoreover\b|\bdelve|game-changer|\bunlock|\belevate|\bseamless|\blandscape\b|\btapestry\b|it's important to note/i;
+  for (const c of competitors) {
+    for (const [rel, kind] of [[`directory/compare/suede-vs-${c.id}/`, "versus"], [`directory/compare/${c.id}-alternatives/`, "brand-alternatives"]]) {
+      const p = byRel.get(rel);
+      assert.ok(p && p.indexable, `${rel}: missing or noindex`);
+      assert.equal(kindOf(p), kind, rel);
+      assert.ok(hub.hrefs.some((h) => path.posix.join("directory/compare/", h).replace(/\/?$/, "/") === rel), `compare hub lacks ${rel}`);
+      assert.ok(llms.includes(`(${BASE}/${rel})`), `llms.txt lacks ${rel}`);
+      const blocks = parsed(p);
+      const faq = blocks.find((b) => b["@type"] === "FAQPage");
+      assert.ok(faq && faq.mainEntity.length >= 3, `${rel}: FAQPage with at least three questions`);
+      for (const q of faq.mainEntity) assert.ok(p.html.includes(`<h3>${q.name.replace(/&/g, "&amp;").replace(/'/g, "&#39;")}</h3>`) || decode(p.html).includes(`<h3>${q.name}</h3>`), `${rel}: FAQ question not visible: ${q.name}`);
+      assert.ok(blocks.some((b) => b["@type"] === "BreadcrumbList"), `${rel}: BreadcrumbList`);
+      assert.match(p.html, /<p class="answer" id="answer">/, `${rel}: direct answer`);
+      assert.match(p.html, /<table class="checks" id="(?:versus-table|brand-alternatives)">/, `${rel}: comparison table`);
+      assert.match(p.html, /<h2 id="sources-title">/, `${rel}: sources section`);
+      for (const s of c.sources) assert.ok(p.html.includes(`href="${s.url}"`), `${rel}: source ${s.url} not linked`);
+      const main = decode((p.html.match(/<main\b[\s\S]*<\/main>/) || [""])[0].replace(/<[^>]+>/g, " "));
+      assert.doesNotMatch(main, banned, `${rel}: house-style ban`);
+      assert.doesNotMatch(main, /\{[a-z_]+\}/, `${rel}: unfilled token`);
+      for (const h2 of [...p.html.matchAll(/<h2 id="(?:table|what|why|together|alts-table)-title">([^<]*)<\/h2>/g)].map((m) => m[1])) assert.match(h2, /\?$/, `${rel}: H2 should be a question: ${h2}`);
+    }
+  }
 });

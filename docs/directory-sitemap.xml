@@ -44,7 +44,7 @@
   </url>
   <url>
     <loc>https://skills.suedeai.ai/directory/compare/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -379,6 +379,66 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://skills.suedeai.ai/directory/compare/awesome-claude-skills-alternatives/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/compare/claude-marketplaces-alternatives/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/compare/claude-plugins-dev-alternatives/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/compare/skills-sh-alternatives/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/compare/skillsmp-alternatives/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/compare/suede-vs-awesome-claude-skills/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/compare/suede-vs-claude-marketplaces/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/compare/suede-vs-claude-plugins-dev/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/compare/suede-vs-skills-sh/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/compare/suede-vs-skillsmp/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://skills.suedeai.ai/directory/composiohq/skills/</loc>
     <lastmod>2026-11-04</lastmod>
     <changefreq>weekly</changefreq>
@@ -578,7 +638,7 @@
   </url>
   <url>
     <loc>https://skills.suedeai.ai/directory/for/data-analysis/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -650,7 +710,7 @@
   </url>
   <url>
     <loc>https://skills.suedeai.ai/directory/for/react/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -6926,25 +6986,85 @@
   </url>
   <url>
     <loc>https://skills.suedeai.ai/directory/agiwhitelist/auteur/auteur/alternatives/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/agricidaniel/claude-seo/seo-cluster/alternatives/</loc>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://skills.suedeai.ai/directory/agricidaniel/claude-seo/seo-content-brief/alternatives/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://skills.suedeai.ai/directory/agricidaniel/claude-seo/seo-dataforseo/alternatives/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/agricidaniel/claude-seo/seo-drift/alternatives/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/agricidaniel/claude-seo/seo-flow/alternatives/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/agricidaniel/claude-seo/seo-google/alternatives/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/agricidaniel/claude-seo/seo-hreflang/alternatives/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/agricidaniel/claude-seo/seo-plan/alternatives/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/agricidaniel/claude-seo/seo-schema/alternatives/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/agricidaniel/claude-seo/seo-sxo/alternatives/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/agricidaniel/claude-seo/seo/alternatives/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/alisa0808/vibe-creating-skill/vibe-creating-prompt/alternatives/</loc>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://skills.suedeai.ai/directory/alisa0808/vox-director/vox-director/alternatives/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -6962,19 +7082,19 @@
   </url>
   <url>
     <loc>https://skills.suedeai.ai/directory/apollographql/skills/apollo-client/alternatives/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://skills.suedeai.ai/directory/apollographql/skills/apollo-ios/alternatives/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://skills.suedeai.ai/directory/bria-ai/bria-skill/video-remove-background/alternatives/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -6985,20 +7105,32 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://skills.suedeai.ai/directory/coreyhaines31/marketingskills/ai-seo/alternatives/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://skills.suedeai.ai/directory/cypress-io/ai-toolkit/cypress-author/alternatives/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/cypress-io/ai-toolkit/cypress-cloud-cli/alternatives/</loc>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://skills.suedeai.ai/directory/cypress-io/ai-toolkit/cypress-explain/alternatives/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://skills.suedeai.ai/directory/cypress-io/ai-toolkit/cypress-tap/alternatives/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -7010,7 +7142,7 @@
   </url>
   <url>
     <loc>https://skills.suedeai.ai/directory/emblemcompany/agent-skills/emblem-ai/alternatives/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -7021,8 +7153,14 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://skills.suedeai.ai/directory/expo/skills/expo-app-clip/alternatives/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://skills.suedeai.ai/directory/expo/skills/expo-brownfield/alternatives/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -7046,19 +7184,25 @@
   </url>
   <url>
     <loc>https://skills.suedeai.ai/directory/expo/skills/expo-web-to-native/alternatives/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://skills.suedeai.ai/directory/firebase/skills/firebase-remote-config-basics/alternatives/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://skills.suedeai.ai/directory/firebase/skills/xcode-project-setup/alternatives/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/firecrawl/skills/firecrawl-website-design-clone/alternatives/</loc>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -7082,7 +7226,7 @@
   </url>
   <url>
     <loc>https://skills.suedeai.ai/directory/getsentry/skills/skill-scanner/alternatives/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -7094,19 +7238,31 @@
   </url>
   <url>
     <loc>https://skills.suedeai.ai/directory/google/skills/dbt-sf-to-bq-translator/alternatives/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/render-chatgpt-chat/alternatives/</loc>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/render-hook-replacement/alternatives/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/render-proof-points-overlay/alternatives/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/gooseworks-ai/goose-skills/render-whiteboard-explainer/alternatives/</loc>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -7130,19 +7286,25 @@
   </url>
   <url>
     <loc>https://skills.suedeai.ai/directory/huangchihhungleo/claude-real-video/claude-real-video-for-agents/alternatives/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://skills.suedeai.ai/directory/huggingface/skills/hf-cloud-python-env-setup/alternatives/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://skills.suedeai.ai/directory/huggingface/skills/hf-cloud-sagemaker-iam-preflight/alternatives/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/huggingface/skills/hf-cloud-sagemaker-production-defaults/alternatives/</loc>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -7153,20 +7315,32 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://skills.suedeai.ai/directory/infrasity-labs/dev-gtm-claude-skills/brief-outline-generator/alternatives/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/infrasity-labs/dev-gtm-claude-skills/content-brief/alternatives/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://skills.suedeai.ai/directory/inhouseseo/superseo-skills/page-audit/alternatives/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://skills.suedeai.ai/directory/inhouseseo/superseo-skills/write-content/alternatives/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://skills.suedeai.ai/directory/jeffallan/claude-skills/cloud-architect/alternatives/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -7190,49 +7364,67 @@
   </url>
   <url>
     <loc>https://skills.suedeai.ai/directory/jeffallan/claude-skills/pandas-pro/alternatives/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://skills.suedeai.ai/directory/lackeyjb/playwright-skill/playwright-skill/alternatives/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://skills.suedeai.ai/directory/lambdatest/agent-skills/cypress-skill/alternatives/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/lambdatest/agent-skills/detox-skill/alternatives/</loc>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://skills.suedeai.ai/directory/lambdatest/agent-skills/playwright-skill/alternatives/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/lambdatest/agent-skills/reqnroll-skill/alternatives/</loc>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://skills.suedeai.ai/directory/lambdatest/agent-skills/selenium-skill/alternatives/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/lambdatest/agent-skills/smartui-skill/alternatives/</loc>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://skills.suedeai.ai/directory/mailtrap/mailtrap-skills/converting-email-templates/alternatives/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://skills.suedeai.ai/directory/mailtrap/mailtrap-skills/sending-emails/alternatives/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://skills.suedeai.ai/directory/mailtrap/mailtrap-skills/using-email-templates/alternatives/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -7244,13 +7436,13 @@
   </url>
   <url>
     <loc>https://skills.suedeai.ai/directory/mblode/agent-skills/ui-animation/alternatives/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://skills.suedeai.ai/directory/mblode/agent-skills/ui-design/alternatives/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -7292,7 +7484,7 @@
   </url>
   <url>
     <loc>https://skills.suedeai.ai/directory/nowork-studio/notfair/keyword-research/alternatives/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -7310,7 +7502,7 @@
   </url>
   <url>
     <loc>https://skills.suedeai.ai/directory/orkas-ai/orkas-videostudio/video-router/alternatives/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -7322,13 +7514,25 @@
   </url>
   <url>
     <loc>https://skills.suedeai.ai/directory/renezander030/capcut-cli/capcut-edit/alternatives/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/resend/resend-skills/email-best-practices/alternatives/</loc>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://skills.suedeai.ai/directory/resend/resend-skills/react-email/alternatives/</loc>
     <lastmod>2026-11-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/resend/resend-skills/resend-cli/alternatives/</loc>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -7346,31 +7550,43 @@
   </url>
   <url>
     <loc>https://skills.suedeai.ai/directory/sanjay3290/ai-skills/mssql/alternatives/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://skills.suedeai.ai/directory/sanjay3290/ai-skills/mysql/alternatives/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://skills.suedeai.ai/directory/sanjay3290/ai-skills/postgres/alternatives/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/supabase/agent-skills/supabase/alternatives/</loc>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://skills.suedeai.ai/directory/tencent/ai-infra-guard/aig-scanner/alternatives/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://skills.suedeai.ai/directory/testdino-hq/playwright-skill/playwright-cli/alternatives/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/trailofbits/skills/agentic-actions-auditor/alternatives/</loc>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -7388,7 +7604,7 @@
   </url>
   <url>
     <loc>https://skills.suedeai.ai/directory/tronghieu/agent-skills/data-scientist/alternatives/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -7405,14 +7621,32 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://skills.suedeai.ai/directory/tubeagentkit/youtube-transcript-skills/youtube-transcript/alternatives/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://skills.suedeai.ai/directory/zxkane/aws-skills/aws-cdk-development/alternatives/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/zxkane/aws-skills/aws-cost-operations/alternatives/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/zxkane/aws-skills/aws-serverless-eda/alternatives/</loc>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://skills.suedeai.ai/directory/zxkane/aws-skills/aws-sst-development/alternatives/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
