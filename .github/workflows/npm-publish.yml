@@ -1,0 +1,140 @@
+name: npm package
+
+# Builds the `suede-skills-mcp` npm package on every pull request, installs the
+# packed tarball and drives the server through an MCP handshake. Publishes it to
+# npm through Trusted Publishing (OIDC) when the owner runs this workflow by hand
+# or pushes an `npm-v<version>` tag. No npm token exists anywhere: npm trusts
+# this exact repository, workflow file and environment.
+#
+# One-time setup on npmjs.com: package suede-skills-mcp > Settings > Trusted
+# Publisher > GitHub Actions, with organization or user JasonColapietro,
+# repository suede-creator-skills, workflow filename npm-publish.yml and
+# environment npm.
+
+on:
+  pull_request:
+  workflow_dispatch:
+  push:
+    tags:
+      - "npm-v*"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: npm-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  # Not named `build`: that context is the required check produced by
+  # skill-pack-ci.yml, and a second job with the same name would blur it.
+  npm-build:
+    name: npm-build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: "22"
+
+      - name: Refuse a tag that disagrees with VERSION
+        if: startsWith(github.ref, 'refs/tags/npm-v')
+        env:
+          TAG: ${{ github.ref_name }}
+        run: |
+          expected="npm-v$(tr -d '[:space:]' < VERSION)"
+          if [ "$TAG" != "$expected" ]; then
+            echo "::error::Tag $TAG does not match VERSION; push $expected instead"
+            exit 1
+          fi
+
+      - name: Build the package into dist-npm/
+        run: node scripts/build-mcp-package.mjs --check
+
+      - name: Pack the tarball
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/pack"
+          (cd dist-npm && npm pack --pack-destination "$RUNNER_TEMP/pack")
+          ls -l "$RUNNER_TEMP/pack"
+
+      - name: Install the tarball and drive an MCP handshake
+        run: |
+          set -euo pipefail
+          prefix="$RUNNER_TEMP/install"
+          npm install --prefix "$prefix" --no-audit --no-fund "$RUNNER_TEMP"/pack/*.tgz
+          server="$prefix/node_modules/suede-skills-mcp/mcp/suede-skills-mcp.mjs"
+          printf '%s\n' \
+            '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-11-25","capabilities":{},"clientInfo":{"name":"ci","version":"1"}}}' \
+            '{"jsonrpc":"2.0","method":"notifications/initialized"}' \
+            '{"jsonrpc":"2.0","id":2,"method":"tools/list","params":{}}' \
+            '{"jsonrpc":"2.0","id":3,"method":"tools/call","params":{"name":"get_suede_skill","arguments":{"name":"suede-copy","includeBody":true}}}' \
+            '{"jsonrpc":"2.0","id":4,"method":"tools/call","params":{"name":"suede_copy_check","arguments":{"copy":"Run your free audit now."}}}' \
+            | SUEDE_MCP_OFFLINE=1 node "$server" > "$RUNNER_TEMP/responses.jsonl"
+          node -e '
+            const fs = require("fs");
+            const catalog = JSON.parse(fs.readFileSync("mcp/catalog.json", "utf8"));
+            const lines = fs.readFileSync(process.argv[1], "utf8").trim().split("\n").map((line) => JSON.parse(line));
+            const byId = Object.fromEntries(lines.map((message) => [message.id, message]));
+            const fail = (message) => { console.error(`::error::${message}`); process.exit(1); };
+            if (byId[1]?.result?.serverInfo?.version !== catalog.version) fail("installed server reports the wrong version");
+            const tools = byId[2]?.result?.tools?.map((tool) => tool.name) || [];
+            if (JSON.stringify(tools) !== JSON.stringify(catalog.mcp.tools)) fail(`installed server lists ${tools.length} tools, catalog declares ${catalog.mcp.tools.length}`);
+            if (!/^---\nname: suede-copy/.test(byId[3]?.result?.structuredContent?.body || "")) fail("installed package cannot read skill bodies");
+            if (typeof byId[4]?.result?.structuredContent?.score !== "number") fail("copy check did not run from the installed package");
+            console.log(`Installed package OK: ${tools.length} tools, version ${catalog.version}`);
+          ' "$RUNNER_TEMP/responses.jsonl"
+
+      - name: Keep the tarball for the publish job
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: npm-tarball
+          path: ${{ runner.temp }}/pack/
+          if-no-files-found: error
+          retention-days: 7
+
+  publish:
+    needs: npm-build
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: npm
+      url: https://www.npmjs.com/package/suede-skills-mcp
+    permissions:
+      id-token: write
+    steps:
+      - name: Download the tarball
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: npm-tarball
+          path: pack/
+
+      - name: Set up Node.js
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: "22"
+          registry-url: "https://registry.npmjs.org"
+
+      # Trusted Publishing needs npm 11.5.1 or later; Node 22 ships npm 10.
+      - name: Install an npm that supports Trusted Publishing
+        run: npm install -g npm@11.6.2
+
+      # The ./ matters: npm reads a bare "pack/name.tgz" as a GitHub
+      # owner/repo shorthand and tries to clone it.
+      - name: Publish to npm with Trusted Publishing
+        run: npm publish ./pack/*.tgz --access public
+
+  # List the new version on the official MCP Registry once npm serves it.
+  mcp-registry:
+    needs: publish
+    permissions:
+      contents: read
+      id-token: write
+    uses: ./.github/workflows/mcp-registry.yml

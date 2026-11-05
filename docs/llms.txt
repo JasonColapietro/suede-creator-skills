@@ -6,7 +6,7 @@ Maintained by Jason Colapietro (Suede AI, https://suedeai.ai), one author. These
 
 Install for Claude Code: `/plugin marketplace add JasonColapietro/suede-creator-skills` then `/plugin install suede-skills@suede`. Two commands, about thirty seconds. Focused subsets exist for narrower work, and they cost the same per skill because an unmatched skill never loads its body: `suede-marketing@suede` (40 skills for paid acquisition, outbound, pricing, offers, lifecycle, social growth, AI search optimization, attribution, and analytics), `suede-agent-workflows@suede` (orchestration, workflows, evals), and `suede-code@suede` (review, grade, ship-gate).
 
-Install the full pack for Codex: `codex plugin marketplace add JasonColapietro/suede-creator-skills --ref main` then `codex plugin add suede-skills@suede-codex`. The plugin registers 1 read-only MCP server with 9 tools. For one skill only, use the built-in skill installer with `--repo JasonColapietro/suede-creator-skills --path skills/<name>`.
+Install the full pack for Codex: `codex plugin marketplace add JasonColapietro/suede-creator-skills --ref main` then `codex plugin add suede-skills@suede-codex`. The plugin registers 1 read-only MCP server with 12 tools. For one skill only, use the built-in skill installer with `--repo JasonColapietro/suede-creator-skills --path skills/<name>`.
 
 Install from PyPI: https://pypi.org/project/suede-creator-skills/. With pipx installed, run `pipx install suede-creator-skills` then `suede-skills install` for Claude Code, or `suede-skills install --target codex` for Codex. The Python CLI requires Python 3.9 or newer and has no runtime dependencies. Existing skill folders are preserved unless `--force` is used. Python installation and upgrade instructions: https://skills.suedeai.ai/plugins.html.
 
@@ -388,7 +388,7 @@ Runner for Suede Graph Flo XR: the bundled Suede Thought Graph workflow runs on 
 
 ## MCP server
 
-- Suede AI Skills MCP: Optional Model Context Protocol server for structured skill discovery, install guidance, SEO/AEO/GEO/AI EO audit scaffolds, and QA checklists. 9 tools, 7 resources, 5 prompts, dependency-free stdio. Source: https://github.com/JasonColapietro/suede-creator-skills/blob/main/mcp/suede-skills-mcp.mjs
+- Suede AI Skills MCP: Optional Model Context Protocol server for skill routing and workflow plans, live A-F page audits for Google and AI search, copy checks against the house rules, install guidance, and grading and QA checklists. 12 tools, 7 resources, 5 prompts, a suede://skill/{name} template for every SKILL.md, dependency-free stdio. Source: https://github.com/JasonColapietro/suede-creator-skills/blob/main/mcp/suede-skills-mcp.mjs
 
 ## What the skills deliver
 

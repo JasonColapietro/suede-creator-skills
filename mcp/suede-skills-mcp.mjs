@@ -2,9 +2,16 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { auditUrl, reportMarkdown } from "./page-audit.mjs";
+import { checkCopy, copyReportMarkdown } from "./copy-check.mjs";
 
-const PROTOCOL_VERSION = "2025-06-18";
-const SUPPORTED_PROTOCOL_VERSIONS = new Set([PROTOCOL_VERSION, "2025-03-26", "2024-11-05"]);
+const PROTOCOL_VERSION = "2025-11-25";
+const SUPPORTED_PROTOCOL_VERSIONS = new Set([PROTOCOL_VERSION, "2025-06-18", "2025-03-26", "2024-11-05"]);
+// The live page audit is the only tool that leaves the machine. SUEDE_MCP_OFFLINE=1
+// turns it off; SUEDE_MCP_ALLOW_PRIVATE_HOSTS=1 lets it reach localhost and
+// private ranges (for auditing a local dev server, and for the test suite).
+const OFFLINE = process.env.SUEDE_MCP_OFFLINE === "1";
+const ALLOW_PRIVATE_HOSTS = process.env.SUEDE_MCP_ALLOW_PRIVATE_HOSTS === "1";
 const SPECIALTY_KEYS = ["ship", "craft", "found", "demand", "revenue", "position"];
 // Profiles come in two flavours now. The area profiles (workflow/creator/
 // marketing) mirror the plugin bundles; `consumer` stays accepted as a legacy
@@ -72,6 +79,8 @@ const MAX_INPUT_BUFFER_BYTES = 1024 * 1024;
 const MAX_TEXT_CHARS = 2000;
 const MAX_BODY_CHARS = 24000;
 const MAX_SEARCH_RESULTS = 25;
+const MAX_COPY_CHARS = 20000;
+const MAX_PLAN_STEPS = 8;
 
 function isObject(value) {
   return value !== null && typeof value === "object" && !Array.isArray(value);
@@ -248,24 +257,89 @@ function fieldMatch(term, tokens) {
   return best;
 }
 
-// Rank skills against a free-text task description. The pack ships 73 skills,
-// so listing them all is not routing; this scores name, useWhen, and
-// description in that order of authority and drops anything that scores zero.
+// How people phrase a task versus how the catalog words it. Expansions score at
+// half weight, so an exact catalog word in the query still wins.
+const PHRASE_SYNONYMS = [
+  [/\b(ai|llm|answer engine|generative) (search|answers?|results|visibility|overviews?)\b/, ["citation", "cited", "chatgpt", "perplexity", "answers", "llms"]],
+  [/\b(chatgpt|perplexity|gemini|copilot|claude|ai overviews?)\b/, ["citation", "cited", "llms", "answers"]],
+  [/\b(cited|cite|citations?|mentioned) by\b/, ["citation", "cited", "llms"]],
+  [/\b(google|bing|rank|ranking|rankings|organic|indexed|indexing)\b/, ["seo", "search", "indexation"]],
+  [/\blanding page\b/, ["conversion", "page", "landing"]],
+  [/\b(not converting|no signups|bounce|bouncing)\b/, ["conversion", "signups", "funnel"]],
+  [/\b(app store|play store|downloads|installs)\b/, ["aso", "store", "listing"]]
+];
+const TERM_SYNONYMS = {
+  search: ["seo"],
+  seo: ["search"],
+  geo: ["citation", "llms", "answers"],
+  aeo: ["citation", "answers"],
+  grade: ["grader", "graded"],
+  audit: ["audits"],
+  pr: ["pull", "diff"],
+  churn: ["cancel", "retention"],
+  ads: ["paid", "ad"],
+  email: ["emails", "outbound"],
+  launch: ["release", "ship"],
+  downloads: ["aso", "store", "installs"],
+  installs: ["aso", "store"]
+};
+
+// The catalog closes every description with "NOT FOR: ..." naming the
+// neighbouring skills' work. Those words describe what the skill does not do,
+// so scoring them as matches routes queries to the wrong neighbour.
+function routingText(description) {
+  return String(description).split(/\bNOT FOR:/)[0];
+}
+
+function expandQuery(query) {
+  const lower = String(query).toLowerCase();
+  const exact = [...new Set(tokenize(lower))].filter((term) => term.length > 1 && !STOPWORDS.has(term));
+  const expanded = new Set();
+  for (const [pattern, adds] of PHRASE_SYNONYMS) {
+    if (pattern.test(lower)) adds.forEach((term) => expanded.add(term));
+  }
+  for (const term of exact) (TERM_SYNONYMS[term] || []).forEach((add) => expanded.add(add));
+  exact.forEach((term) => expanded.delete(term));
+  return [...exact.map((term) => ({ term, weight: 1 })), ...[...expanded].map((term) => ({ term, weight: 0.5 }))];
+}
+
+// Rank skills against a free-text task description. The pack ships dozens of
+// skills, so listing them all is not routing; this scores name, useWhen, and
+// description in that order of authority, weights each query word by how rare
+// it is across the pack (so "ai" or "page", which half the pack mentions,
+// cannot outvote "citation"), and drops anything that scores zero.
 function searchSkills(skills, query, limit) {
-  const terms = [...new Set(tokenize(query))].filter((term) => term.length > 1 && !STOPWORDS.has(term));
+  const terms = expandQuery(query);
   if (!terms.length) return [];
-  return skills
-    .map((skill) => {
-      const name = tokenize(skill.name);
-      const useWhen = tokenize(skill.useWhen);
-      const description = tokenize(skill.description);
+  const indexed = skills.map((skill) => ({
+    skill,
+    name: tokenize(skill.name).filter((token) => token !== "suede"),
+    useWhen: tokenize(skill.useWhen),
+    description: tokenize(routingText(skill.description))
+  }));
+  const lowerQuery = String(query).toLowerCase();
+  const wantsIos = /\b(ios|iphone|ipad|swift|app store)\b/.test(lowerQuery);
+  const wantsAndroid = /\b(android|kotlin|play store|google play)\b/.test(lowerQuery);
+  const platform = wantsIos === wantsAndroid ? null : wantsIos ? { wanted: "ios", other: "android" } : { wanted: "android", other: "ios" };
+  const idf = new Map();
+  for (const { term } of terms) {
+    const df = indexed.filter((entry) =>
+      fieldMatch(term, entry.name) || fieldMatch(term, entry.useWhen) || fieldMatch(term, entry.description)
+    ).length;
+    idf.set(term, Math.log((indexed.length + 1) / (df + 1)) + 1);
+  }
+  return indexed
+    .map((entry) => {
       let score = 0;
-      for (const term of terms) {
-        score += 6 * fieldMatch(term, name);
-        score += 3 * fieldMatch(term, useWhen);
-        score += 1 * fieldMatch(term, description);
+      for (const { term, weight } of terms) {
+        const rarity = idf.get(term) * weight;
+        score += rarity * 6 * fieldMatch(term, entry.name);
+        score += rarity * 3 * fieldMatch(term, entry.useWhen);
+        score += rarity * 1 * fieldMatch(term, entry.description);
       }
-      return { skill, score: Math.round(score * 10) / 10 };
+      // A query that names one mobile platform is not asking for the other.
+      if (platform && entry.name.includes(platform.other) && !entry.name.includes(platform.wanted)) score *= 0.3;
+      return { skill: entry.skill, score: Math.round(score * 10) / 10 };
     })
     .filter((entry) => entry.score > 0)
     .sort((a, b) => b.score - a.score || a.skill.name.localeCompare(b.skill.name))
@@ -526,7 +600,7 @@ const tools = [
         specialty: {
           type: "string",
           enum: SPECIALTY_ENUM,
-          description: "Optional specialty filter (how the pack is browsed): ship, craft, found, earn, position."
+          description: `Optional specialty filter (how the pack is browsed): ${SPECIALTY_KEYS.join(", ")}.`
         }
       }
     }
@@ -546,7 +620,7 @@ const tools = [
       properties: {
         query: { type: "string", description: "Task, problem, or intent to route." },
         area: { type: "string", enum: AREA_ENUM, description: "Optional area filter." },
-        specialty: { type: "string", enum: SPECIALTY_ENUM, description: "Optional specialty filter: ship, craft, found, earn, position." },
+        specialty: { type: "string", enum: SPECIALTY_ENUM, description: `Optional specialty filter: ${SPECIALTY_KEYS.join(", ")}.` },
         limit: {
           type: "integer",
           minimum: 1,
@@ -643,6 +717,47 @@ const tools = [
         target: { type: "string", description: "Target repo, URL, skill, MCP server, page, or change." },
         scope: { type: "string", description: "QA depth, such as fast, full, release, seo, or mcp." }
       }
+    }
+  },
+  {
+    name: "suede_live_page_audit",
+    title: "Suede Live Page Audit",
+    description: "Fetch a public URL and grade what crawlers and answer engines actually receive: status, HTTPS, noindex, robots.txt for Google and AI answer bots (ChatGPT, Perplexity, Claude), canonical, title, description, H1, readable text, JSON-LD, FAQ, llms.txt, sitemap, calls to action and share previews. Returns an A-F grade per lane, every check, and the top fixes.",
+    inputSchema: {
+      type: "object",
+      properties: {
+        url: { type: "string", description: "Public http(s) URL to audit. A bare domain is treated as https." },
+        primaryAction: { type: "string", description: "Optional main action the page should drive, checked against its links and buttons." }
+      },
+      required: ["url"]
+    }
+  },
+  {
+    name: "suede_copy_check",
+    title: "Suede Copy Check",
+    description: "Check pasted copy against the pack's copy rules and return an A-F score with each finding: house bans (em dashes, \"unlock\", \"seamless\"), hedges, buzzwords, throat-clearing openers, passive voice, long sentences, reading grade, reader focus, and a missing call to action.",
+    inputSchema: {
+      type: "object",
+      properties: {
+        copy: { type: "string", maxLength: MAX_COPY_CHARS, description: `Copy to check, up to ${MAX_COPY_CHARS} characters.` },
+        primaryAction: { type: "string", description: "Optional action the copy must ask for." },
+        houseStyle: { type: "boolean", description: "Apply the Suede AI house bans. Defaults to true; pass false for another brand's copy." }
+      },
+      required: ["copy"]
+    }
+  },
+  {
+    name: "plan_suede_workflow",
+    title: "Plan Suede Workflow",
+    description: "Turn a goal (\"launch my app\", \"get cited by ChatGPT\", \"fix a page that gets no signups\") into an ordered sequence of Suede skills: strategy first, then build and craft, then visibility, demand and revenue.",
+    inputSchema: {
+      type: "object",
+      properties: {
+        goal: { type: "string", description: "The outcome to plan for." },
+        area: { type: "string", enum: AREA_ENUM, description: "Optional area filter." },
+        maxSteps: { type: "integer", minimum: 1, maximum: MAX_PLAN_STEPS, description: `Maximum steps, up to ${MAX_PLAN_STEPS}. Defaults to 5.` }
+      },
+      required: ["goal"]
     }
   }
 ];
@@ -754,6 +869,101 @@ const toolOutputSchemas = {
     properties: { target: nullableString, scope: { type: "string" } },
     required: ["target", "scope"],
     additionalProperties: false
+  },
+  suede_live_page_audit: {
+    type: "object",
+    properties: {
+      ok: { type: "boolean" },
+      error: { type: "string" },
+      requestedUrl: { type: "string" },
+      finalUrl: { type: "string" },
+      status: { type: "integer" },
+      fetchedAt: { type: "string" },
+      fetchMs: { type: "number" },
+      htmlBytes: { type: "number" },
+      htmlTruncated: { type: "boolean" },
+      overall: {
+        type: "object",
+        properties: { grade: { type: "string" }, score: { type: "number" }, caps: { type: "array", items: { type: "string" } } },
+        required: ["grade", "score", "caps"]
+      },
+      lanes: {
+        type: "array",
+        items: {
+          type: "object",
+          properties: { key: { type: "string" }, label: { type: "string" }, score: { type: "number" }, grade: { type: "string" } },
+          required: ["key", "label", "score", "grade"]
+        }
+      },
+      page: { type: "object" },
+      robots: { type: "object" },
+      checks: {
+        type: "array",
+        items: {
+          type: "object",
+          properties: {
+            lane: { type: "string" },
+            id: { type: "string" },
+            label: { type: "string" },
+            status: { type: "string", enum: ["pass", "warn", "fail", "info"] },
+            detail: { type: "string" },
+            fix: { type: ["string", "null"] }
+          },
+          required: ["lane", "id", "label", "status", "detail", "fix"]
+        }
+      },
+      topFixes: { type: "array", items: { type: "object" } },
+      notChecked: { type: "array", items: { type: "string" } }
+    },
+    required: ["ok"],
+    additionalProperties: false
+  },
+  suede_copy_check: {
+    type: "object",
+    properties: {
+      score: { type: "number" },
+      grade: { type: "string" },
+      metrics: { type: "object" },
+      findings: {
+        type: "array",
+        items: {
+          type: "object",
+          properties: {
+            rule: { type: "string" },
+            severity: { type: "string", enum: ["high", "medium", "low"] },
+            count: { type: "integer" },
+            examples: { type: "array", items: { type: "string" } },
+            suggestion: { type: "string" }
+          },
+          required: ["rule", "severity", "count", "examples", "suggestion"]
+        }
+      }
+    },
+    required: ["score", "grade", "metrics", "findings"],
+    additionalProperties: false
+  },
+  plan_suede_workflow: {
+    type: "object",
+    properties: {
+      goal: { type: "string" },
+      steps: {
+        type: "array",
+        items: {
+          type: "object",
+          properties: {
+            step: { type: "integer" },
+            name: { type: "string" },
+            specialty: { type: "string" },
+            lane: { type: "string" },
+            useWhen: { type: "string" },
+            score: { type: "number" }
+          },
+          required: ["step", "name", "specialty", "lane", "useWhen", "score"]
+        }
+      }
+    },
+    required: ["goal", "steps"],
+    additionalProperties: false
   }
 };
 
@@ -767,7 +977,9 @@ for (const tool of tools) {
     readOnlyHint: true,
     destructiveHint: false,
     idempotentHint: true,
-    openWorldHint: false
+    // Only the live audit reaches the network; every other tool answers from
+    // the bundled catalog and skill files.
+    openWorldHint: tool.name === "suede_live_page_audit"
   };
 }
 
@@ -822,6 +1034,54 @@ const resources = [
     mimeType: "text/markdown"
   }
 ];
+
+const SKILL_URI_PREFIX = "suede://skill/";
+const resourceTemplates = [
+  {
+    uriTemplate: `${SKILL_URI_PREFIX}{name}`,
+    name: "skill",
+    title: "Suede Skill Instructions",
+    description: "The SKILL.md instructions for one skill in this profile, by name.",
+    mimeType: "text/markdown"
+  }
+];
+
+const PROMPT_ARGUMENT_VALUES = {
+  surface: ["all", "codex", "plugin", "mcp", "claude"],
+  scope: ["fast", "full", "release", "seo", "mcp"]
+};
+
+// completion/complete: suggest skill names for the skill resource template and
+// the fixed choices for prompt arguments that have them.
+function complete(params) {
+  const ref = params.ref;
+  const argument = params.argument;
+  if (!isObject(ref) || typeof ref.type !== "string") throw rpcError("completion/complete ref must be an object with a type");
+  if (!isObject(argument) || typeof argument.name !== "string" || typeof argument.value !== "string") {
+    throw rpcError("completion/complete argument must have string name and value");
+  }
+  const typed = argument.value.toLowerCase().replace(/^\$/, "");
+  let pool = [];
+  if (ref.type === "ref/resource") {
+    if (ref.uri !== resourceTemplates[0].uriTemplate) throw rpcError(`No completions for resource: ${ref.uri}`);
+    if (argument.name === "name") pool = profileCatalog().skills.map((skill) => skill.name);
+  } else if (ref.type === "ref/prompt") {
+    const prompt = prompts.find((item) => item.name === ref.name);
+    if (!prompt) throw rpcError(`Unknown prompt: ${ref.name}`);
+    if (!prompt.arguments.some((item) => item.name === argument.name)) {
+      throw rpcError(`Prompt ${ref.name} has no argument ${argument.name}`);
+    }
+    pool = PROMPT_ARGUMENT_VALUES[argument.name] || [];
+  } else {
+    throw rpcError(`Unsupported completion ref type: ${ref.type}`);
+  }
+  const starts = pool.filter((value) => value.toLowerCase().startsWith(typed));
+  // One typed character matches too much mid-word, so substring matches wait
+  // for a second character.
+  const contains = typed.length < 2 ? [] : pool.filter((value) => !starts.includes(value) && value.toLowerCase().includes(typed));
+  const matches = [...starts, ...contains];
+  return { completion: { values: matches.slice(0, 100), total: matches.length, hasMore: matches.length > 100 } };
+}
 
 const prompts = [
   {
@@ -938,8 +1198,10 @@ function callTool(name, args = {}) {
     const query = boundedString(args.query);
     const limit = args.limit === undefined ? 10 : args.limit;
     const matches = searchSkills(scopeBySpecialty(scopeByArea(data.skills, args.area), args.specialty), query, limit);
+    // Ranked results read best-first. The grouped catalog layout would reorder
+    // them by specialty and put a weaker match above the best one.
     const humanText = matches.length
-      ? asMarkdownSkillList({ skills: matches })
+      ? matches.map((skill, index) => `${index + 1}. $${skill.name} (score ${skill.score}): ${routingText(skill.description).trim()} Use when: ${skill.useWhen}`).join("\n")
       : `No Suede skill in this profile matches: ${query}`;
     return toolResult(humanText, { query, matches });
   }
@@ -995,13 +1257,90 @@ function callTool(name, args = {}) {
         scope: boundedString(args.scope, "full")
     });
   }
+  if (name === "suede_live_page_audit") return liveAudit(args);
+  if (name === "suede_copy_check") {
+    if (!args.copy.trim()) throw rpcError("Argument copy for suede_copy_check must not be empty");
+    const result = checkCopy(args.copy, { primaryAction: args.primaryAction, houseStyle: args.houseStyle !== false });
+    return toolResult(copyReportMarkdown(result), result);
+  }
+  if (name === "plan_suede_workflow") {
+    const goal = boundedString(args.goal);
+    const steps = planWorkflow(scopeByArea(data.skills, args.area), goal, args.maxSteps ?? 5);
+    return toolResult(workflowMarkdown(goal, steps), { goal, steps });
+  }
   throw rpcError(`Unknown tool: ${name}`);
+}
+
+// Tool failures (an unreachable site, a refused host) are results the agent can
+// read and act on, so they come back as isError tool results, not protocol errors.
+async function liveAudit(args) {
+  const target = args.url.trim();
+  if (!target) throw rpcError("Argument url for suede_live_page_audit must not be empty");
+  if (OFFLINE) {
+    return toolResult("The live page audit is turned off on this server (SUEDE_MCP_OFFLINE=1). Use suede_visibility_grade for the offline checklist.",
+      { ok: false, error: "offline" }, { isError: true });
+  }
+  try {
+    const report = await auditUrl(target, { primaryAction: args.primaryAction, allowPrivate: ALLOW_PRIVATE_HOSTS });
+    return toolResult(reportMarkdown(report), { ok: true, ...report });
+  } catch (error) {
+    const message = error?.auditFailure ? error.message : `Audit failed: ${error?.message || error}`;
+    return toolResult(`Could not audit ${boundedString(target)}. ${message}`, { ok: false, error: message }, { isError: true });
+  }
+}
+
+// Order a goal's matching skills the way the work runs: decide the position,
+// make the thing, ship it, get it found, reach people, then convert and keep them.
+const WORKFLOW_PHASES = ["position", "craft", "ship", "found", "demand", "revenue"];
+function planWorkflow(skills, goal, maxSteps) {
+  const ranked = searchSkills(skills, goal, MAX_SEARCH_RESULTS);
+  if (!ranked.length) return [];
+  const floor = ranked[0].score * 0.35;
+  const phase = (skill) => {
+    const index = WORKFLOW_PHASES.indexOf(skill.specialty);
+    return index === -1 ? WORKFLOW_PHASES.length : index;
+  };
+  return ranked
+    .filter((skill) => skill.score >= floor)
+    .slice(0, maxSteps)
+    .sort((a, b) => phase(a) - phase(b) || b.score - a.score)
+    .map((skill, index) => ({
+      step: index + 1,
+      name: skill.name,
+      specialty: skill.specialty,
+      lane: skill.lane,
+      useWhen: skill.useWhen,
+      score: skill.score
+    }));
+}
+
+function workflowMarkdown(goal, steps) {
+  if (!steps.length) return `No Suede skill in this profile matches the goal: ${goal}. Try list_suede_specialties to browse.`;
+  return [
+    `# Suede workflow: ${goal}`,
+    "",
+    ...steps.map((step) => `${step.step}. **$${step.name}** (${step.lane}): ${step.useWhen}`),
+    "",
+    `Start with step 1: call get_suede_skill with name "${steps[0].name}" and includeBody true, then follow its instructions.`
+  ].join("\n");
 }
 
 function readResource(uri) {
   const data = profileCatalog();
   if (uri === "suede://specialties") {
-    return { contents: [{ uri, mimeType: "application/json", text: JSON.stringify(profileCatalog().specialties || [], null, 2) }] };
+    return { uri, mimeType: "application/json", text: JSON.stringify(data.specialties || [], null, 2) };
+  }
+  if (uri.startsWith(SKILL_URI_PREFIX)) {
+    let name;
+    try {
+      name = decodeURIComponent(uri.slice(SKILL_URI_PREFIX.length)).replace(/^\$/, "");
+    } catch {
+      throw rpcError(`Malformed skill resource URI: ${uri}`);
+    }
+    if (!data.skills.some((skill) => skill.name === name)) throw rpcError(`Unknown skill resource: ${uri}`);
+    const body = readSkillBody(name);
+    if (!body) throw rpcError(`SKILL.md for ${name} is not readable from this install`, -32002);
+    return { uri, mimeType: "text/markdown", text: body.text };
   }
   if (uri === "suede://catalog") {
     return { uri, mimeType: "application/json", text: JSON.stringify(data, null, 2) };
@@ -1148,10 +1487,11 @@ function initialize(params) {
     capabilities: {
       tools: { listChanged: false },
       resources: { subscribe: false, listChanged: false },
-      prompts: { listChanged: false }
+      prompts: { listChanged: false },
+      completions: {}
     },
     serverInfo: { name: "suede-skills-mcp", title: "Suede AI Skills MCP", version: catalog.version },
-    instructions: "Use this read-only MCP when Suede skill discovery, install guidance, visibility grading, code grading, SEO/AEO/AI EO copy audits, or QA checklists will materially help the task."
+    instructions: "Use this read-only MCP to route a task to the right Suede skill (search_suede_skills, plan_suede_workflow), read its instructions (get_suede_skill or suede://skill/{name}), grade a live page for Google and AI search (suede_live_page_audit), check copy against the house rules (suede_copy_check), or pull install, grading and QA checklists."
   };
 }
 
@@ -1186,6 +1526,15 @@ function handleRequest(message) {
     assertOnlyKeys(params, ["cursor"], method);
     if ("cursor" in params && typeof params.cursor !== "string") throw rpcError("resources/list cursor must be a string");
     return { resources };
+  }
+  if (method === "resources/templates/list") {
+    assertOnlyKeys(params, ["cursor"], method);
+    if ("cursor" in params && typeof params.cursor !== "string") throw rpcError("resources/templates/list cursor must be a string");
+    return { resourceTemplates };
+  }
+  if (method === "completion/complete") {
+    assertOnlyKeys(params, ["ref", "argument", "context"], method);
+    return complete(params);
   }
   if (method === "resources/read") {
     assertOnlyKeys(params, ["uri"], method);
@@ -1256,7 +1605,16 @@ process.stdin.on("data", (chunk) => {
         handleNotification(message);
         continue;
       }
-      sendResult(message.id, handleRequest(message));
+      const result = handleRequest(message);
+      // Only the live audit is asynchronous. Everything else answers inline so a
+      // client that pipelines initialize, initialized and a request in one write
+      // still sees them handled in order.
+      if (result && typeof result.then === "function") {
+        const id = message.id;
+        result.then((value) => sendResult(id, value), (error) => sendError(id, error));
+      } else {
+        sendResult(message.id, result);
+      }
     } catch (error) {
       sendError(message && Object.prototype.hasOwnProperty.call(message, "id") ? message.id : null, error);
     }

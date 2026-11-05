@@ -174,6 +174,7 @@ const PERSON = {
     "https://www.linkedin.com/in/jasoncolapietro",
     "https://x.com/johnnysuede",
     "https://www.crunchbase.com/person/jason-colapietro-d83e",
+    "https://apps.apple.com/us/developer/jason-colapietro/id1895958699",
     "https://www.wikidata.org/wiki/Q140235755",
   ],
 };
