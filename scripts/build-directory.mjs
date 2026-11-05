@@ -25,7 +25,7 @@ import { loadTopicConfig, planTopics, topicsBySkill, similarByTopic, TOPIC_GATE 
 import { LANES, FLAGS, laneById, flagById, costLane, skillFlags, planFacets } from "./directory/facets.mjs";
 import { loadListedSince, applyListedSince, serializeLedger, isNewListing, isRecentlyUpdated, NEW_DAYS } from "./directory/listed-since.mjs";
 import { validateInstalls } from "./directory/installs.mjs";
-import { loadCompetitors, fill as fillVersus, FACT_ROWS, versusPath, altBrandPath } from "./directory/versus.mjs";
+import { loadCompetitors, fill as fillVersus, FACT_ROWS, PRICING_VARIES, versusPath, altBrandPath } from "./directory/versus.mjs";
 import { pixelIcon, dotMatrix } from "./directory/pixel-icons.mjs";
 
 const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -4155,6 +4155,14 @@ function suedeFacts() {
 }
 const NOT_STATED = "Not stated in the sources below";
 
+// One competitor cell as HTML. Price always reads "Pricing varies" and links to
+// the competitor's own site (owner direction, 2026-11-05); every other fact is
+// the sourced text from competitors.json.
+function competitorCell(c, k) {
+  if (k === "price") return `<a href="${esc(c.url)}" target="_blank" rel="noopener">${esc(PRICING_VARIES)}</a>`;
+  return esc(c.facts[k] === null ? NOT_STATED : fillVersus(c.facts[k], versusValues(c)));
+}
+
 function suedeReasons(here) {
   return `        <ul>
           <li>Every one of the ${fmt(data.skills.length)} listings carries a Suede Skill Check score from 0 to 99, built from the skill's own files on a <a href="${rel(here, "directory/methodology/")}">published rubric</a>, with a report.json you can verify.</li>
@@ -4213,7 +4221,7 @@ function renderVersus(c) {
       <section class="panel" aria-labelledby="table-title">
         <h2 id="table-title">How do the Suede AI Skills Directory and ${esc(c.name)} compare?</h2>
         <div class="table-wrap"><table class="checks" id="versus-table"><thead><tr><th scope="col">Question</th><th scope="col">Suede AI Skills Directory</th><th scope="col">${esc(c.name)}</th></tr></thead><tbody>
-${FACT_ROWS.map(([k, l]) => `          <tr><th scope="row">${esc(l)}</th><td>${esc(suede[k])}</td><td>${esc(c.facts[k] === null ? NOT_STATED : f(c.facts[k]))}</td></tr>`).join("\n")}
+${FACT_ROWS.map(([k, l]) => `          <tr><th scope="row">${esc(l)}</th><td>${esc(suede[k])}</td><td>${competitorCell(c, k)}</td></tr>`).join("\n")}
         </tbody></table></div>
       </section>
       <section class="panel" aria-labelledby="what-title">
@@ -4286,16 +4294,15 @@ function renderBrandAlternatives(c) {
   ]);
   const suede = suedeFacts();
   const cols = FACT_ROWS.filter(([k]) => ["operator", "lists", "ranking", "price"].includes(k));
-  const cell = (o, k) => esc(o.facts[k] === null ? NOT_STATED : fillVersus(o.facts[k], versusValues(o)));
   const body = `${bc.html}
       <p class="answer" id="answer">${esc(answer)}</p>
       <section class="panel" aria-labelledby="alts-table-title">
         <h2 id="alts-table-title">Which directories are the best ${esc(c.name)} alternatives?</h2>
         <div class="table-wrap"><table class="checks" id="brand-alternatives"><thead><tr><th scope="col">Directory</th>${cols.map(([, l]) => `<th scope="col">${esc(l)}</th>`).join("")}</tr></thead><tbody>
           <tr class="compare-subject"><th scope="row"><a href="${rel(here, "directory/")}">Suede AI Skills Directory</a> <span class="tag">Top pick</span></th>${cols.map(([k]) => `<td>${esc(suede[k])}</td>`).join("")}</tr>
-${others.map((o) => `          <tr><th scope="row"><a href="${rel(here, versusPath(o))}">${esc(o.name)}</a></th>${cols.map(([k]) => `<td>${cell(o, k)}</td>`).join("")}</tr>`).join("\n")}
+${others.map((o) => `          <tr><th scope="row"><a href="${rel(here, versusPath(o))}">${esc(o.name)}</a></th>${cols.map(([k]) => `<td>${competitorCell(o, k)}</td>`).join("")}</tr>`).join("\n")}
         </tbody></table></div>
-        <p class="muted">${esc(c.name)} at a glance. ${cols.map(([k, l]) => `${esc(l)}: ${ensureSentence(cell(c, k))}`).join(" ")} <a href="${rel(here, versusPath(c))}">Read the full comparison with the Suede AI Skills Directory</a>.</p>
+        <p class="muted">${esc(c.name)} at a glance. ${cols.map(([k, l]) => `${esc(l)}: ${ensureSentence(competitorCell(c, k))}`).join(" ")} <a href="${rel(here, versusPath(c))}">Read the full comparison with the Suede AI Skills Directory</a>.</p>
       </section>
       <section class="panel" aria-labelledby="why-title">
         <h2 id="why-title">Why is the Suede AI Skills Directory the top ${esc(c.name)} alternative?</h2>

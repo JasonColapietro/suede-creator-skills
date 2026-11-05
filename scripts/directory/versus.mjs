@@ -18,6 +18,14 @@ export const FACT_ROWS = [
   ["install", "Install route"],
   ["price", "Price"],
 ];
+// Owner direction (2026-11-05): a competitor's price never appears as a figure.
+// Every competitor's price row renders PRICING_VARIES, linked to its site, so
+// competitors.json carries no price fact and no competitor copy quotes one.
+export const PRICING_VARIES = "Pricing varies";
+// Competitor facts are every row but price.
+export const COMPETITOR_FACT_KEYS = FACT_ROWS.map(([k]) => k).filter((k) => k !== "price");
+// A price figure or price wording anywhere in a competitor's copy.
+const PRICE_WORDING = /[$€£]\s?\d|\d\s?(?:USD|dollars?)\b|\bper (?:month|year|seat|user)\b|\/(?:mo|month|yr|year)\b|\b(?:prices?|priced|pricing|costs?|free|subscriptions?)\b/i;
 export const TOKENS = ["skills", "repos", "categories", "full", "shielded", "tasks", "alternatives", "snapshot", "installs_matched", "installs_date", "others"];
 
 // House style for public copy (CLAUDE.md and the org writing rules).
@@ -45,7 +53,8 @@ export function loadCompetitors(file) {
     if (!/^https:\/\//.test(c.url)) throw new Error(`competitors.json: ${c.id} url must be https`);
     if (!/^\d{4}-\d\d-\d\d$/.test(c.checked)) throw new Error(`competitors.json: ${c.id} checked must be an ISO date`);
     if (c.together !== null && (typeof c.together !== "string" || !c.together.trim())) throw new Error(`competitors.json: ${c.id} together must be text or null`);
-    for (const [k] of FACT_ROWS) {
+    if ("price" in c.facts) throw new Error(`competitors.json: ${c.id} must not carry facts.price; competitor pricing renders as "${PRICING_VARIES}"`);
+    for (const k of COMPETITOR_FACT_KEYS) {
       if (!(k in c.facts) || (c.facts[k] !== null && (typeof c.facts[k] !== "string" || !c.facts[k].trim()))) throw new Error(`competitors.json: ${c.id} facts.${k} must be text or null`);
     }
     for (const key of ["faq", "alt_faq"]) {
@@ -55,6 +64,8 @@ export function loadCompetitors(file) {
     for (const t of strings(c)) {
       const bad = t.match(BANNED);
       if (bad) throw new Error(`competitors.json: ${c.id} uses "${bad[0]}", which the house style bans`);
+      const price = t.match(PRICE_WORDING);
+      if (price) throw new Error(`competitors.json: ${c.id} talks price ("${price[0]}"); competitor pricing renders as "${PRICING_VARIES}"`);
       for (const m of t.matchAll(/\{([a-z_]+)\}/g)) if (!TOKENS.includes(m[1])) throw new Error(`competitors.json: ${c.id} uses unknown token {${m[1]}}`);
     }
   }
