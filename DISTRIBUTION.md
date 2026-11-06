@@ -55,7 +55,7 @@ Checked 2026-10-08 unless the row says otherwise. Reach is inferred from stars o
 | RankSpotAI/awesome-seo-agent-skills | SEO-specific list, high fit for `suede-seo-audit` and `suede-ai-seo` | PR against README | PR to a third-party repo |
 | Anthropic official marketplace (`anthropics/claude-plugins-official`) | Default Claude Code marketplace | Owner submitted the plugin-directory form on or before 2026-09-05 (owner statement); not in the repo as of 2026-10-08 | Watch for the entry; nothing else to file |
 | claudemarketplaces.com | Claims 380k monthly visitors | Crawl-based; no form found | Lists only the sibling `agentic-commerce-catalog` MCP, not this pack. Unknown route for the pack. |
-| Glama (glama.ai/mcp/servers) | 82k servers indexed | Listed 2026-11-05: https://glama.ai/mcp/servers/JasonColapietro/suede-creator-skills. `glama.json` names the maintainer | Claim via GitHub login on the admin page, then add a Dockerfile there so the safety and quality checks pass (only passing servers show in Glama search) |
+| Glama (glama.ai/mcp/servers) | 82k servers indexed | Auto-crawl plus owner claim; "Add Server" button | Add or claim after crawl; the npm package and registry entry should help the crawl |
 | Smithery (smithery.ai) | One-click installs in several clients | https://smithery.ai/servers/new behind GitHub login, or `smithery mcp publish` | GitHub login |
 | mcp.so | Large MCP index | Submit form on the site | Form |
 | claudemarketplace.net | Claims 150k monthly visitors | Not stated | Unknown |
