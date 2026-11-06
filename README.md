@@ -153,9 +153,9 @@ Exposes 12 tools (`list_suede_skills`, `list_suede_specialties`, `search_suede_s
 ## Find it on
 
 <!-- listings:start -->
-Listed on [skills.sh](https://www.skills.sh/jasoncolapietro/suede-creator-skills) · [SkillsMP](https://skillsmp.com/creators/jasoncolapietro/suede-creator-skills) · [SkillsLLM](https://skillsllm.com/skill/suede-creator-skills) · [HOL Plugin Registry](https://hol.org/registry/plugins/suede-ai%2Fsuede-skills) · [Skills Directory](https://www.skillsdirectory.com/authors/jasoncolapietro) · [ClaudSkills](https://claudskills.com/author/jasoncolapietro/) · [PyPI](https://pypi.org/project/suede-creator-skills/) · [Official MCP Registry](https://registry.modelcontextprotocol.io/v0.1/servers/io.github.JasonColapietro%2Fsuede-skills-mcp/versions/latest) · [npm](https://www.npmjs.com/package/suede-skills-mcp) · [MCP Market](https://mcpmarket.com/server/suede-creator-skills) · [Awesome Claude Skills (awesomeclaude.ai)](https://awesomeclaude.ai/awesome-claude-skills) · [VoltAgent/awesome-agent-skills](https://github.com/VoltAgent/awesome-agent-skills) · [Trendshift](https://trendshift.io/repositories/82031).
+Listed on [skills.sh](https://www.skills.sh/jasoncolapietro/suede-creator-skills) · [SkillsMP](https://skillsmp.com/creators/jasoncolapietro/suede-creator-skills) · [SkillsLLM](https://skillsllm.com/skill/suede-creator-skills) · [HOL Plugin Registry](https://hol.org/registry/plugins/suede-ai%2Fsuede-skills) · [Skills Directory](https://www.skillsdirectory.com/authors/jasoncolapietro) · [ClaudSkills](https://claudskills.com/author/jasoncolapietro/) · [PyPI](https://pypi.org/project/suede-creator-skills/) · [Official MCP Registry](https://registry.modelcontextprotocol.io/v0.1/servers/io.github.JasonColapietro%2Fsuede-skills-mcp/versions/latest) · [npm](https://www.npmjs.com/package/suede-skills-mcp) · [Glama](https://glama.ai/mcp/servers/JasonColapietro/suede-creator-skills) · [MCP Market](https://mcpmarket.com/server/suede-creator-skills) · [Awesome Claude Skills (awesomeclaude.ai)](https://awesomeclaude.ai/awesome-claude-skills) · [VoltAgent/awesome-agent-skills](https://github.com/VoltAgent/awesome-agent-skills) · [Trendshift](https://trendshift.io/repositories/82031).
 
-All 33 directories, registries and curated lists: [skills.suedeai.ai/listings.html](https://skills.suedeai.ai/listings.html)
+All 34 directories, registries and curated lists: [skills.suedeai.ai/listings.html](https://skills.suedeai.ai/listings.html)
 <!-- listings:end -->
 
 ## Try it right now
@@ -341,7 +341,7 @@ Yes. Original work is MIT licensed, and adapted components keep their upstream l
 
 ### Does Suede AI Skills include an MCP server?
 
-Yes. A dependency-free stdio MCP server ships in [`mcp/`](mcp/) and is published to npm as [`suede-skills-mcp`](https://www.npmjs.com/package/suede-skills-mcp) and listed in the [Official MCP Registry](https://registry.modelcontextprotocol.io/v0.1/servers/io.github.JasonColapietro%2Fsuede-skills-mcp/versions/latest).
+Yes. A dependency-free stdio MCP server ships in [`mcp/`](mcp/) and is published to npm as [`suede-skills-mcp`](https://www.npmjs.com/package/suede-skills-mcp) and listed in the [Official MCP Registry](https://registry.modelcontextprotocol.io/v0.1/servers/io.github.JasonColapietro%2Fsuede-skills-mcp/versions/latest) and on [Glama](https://glama.ai/mcp/servers/JasonColapietro/suede-creator-skills).
 
 ### Which skills help with SEO, AEO and GEO?
 
