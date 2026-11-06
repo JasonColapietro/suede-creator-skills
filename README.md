@@ -13,6 +13,7 @@
 [![Skills Directory: Grade A](https://www.skillsdirectory.com/api/skills/jasoncolapietro-suede-design/badge)](https://www.skillsdirectory.com/skills/jasoncolapietro-suede-design)
 [![seoskills.sh: Suede AI SEO listed](https://img.shields.io/badge/seoskills.sh-Suede_AI_SEO_listed-c8a96e?labelColor=080808)](https://seoskills.sh/jasoncolapietro/suede-creator-skills/suede-ai-seo)
 [![Hysen Labs](https://hysenlabs.com/badge/jasoncolapietro-suede-creator-skills.svg)](https://hysenlabs.com/projects/jasoncolapietro-suede-creator-skills)
+[![suede-skills-mcp MCP server – quality and maintenance score on Glama](https://glama.ai/mcp/servers/JasonColapietro/suede-creator-skills/badges/score.svg)](https://glama.ai/mcp/servers/JasonColapietro/suede-creator-skills)
 [![GitHub stars](https://img.shields.io/github/stars/JasonColapietro/suede-creator-skills?style=social)](https://github.com/JasonColapietro/suede-creator-skills/stargazers)
 
 <a href="https://trendshift.io/repositories/82031?utm_source=trendshift-badge&amp;utm_medium=badge&amp;utm_campaign=badge-trendshift-82031" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/82031/daily?language=Python" alt="JasonColapietro%2Fsuede-creator-skills | Trendshift" width="250" height="55"/></a>
