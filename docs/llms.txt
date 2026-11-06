@@ -402,3 +402,12 @@ Suede skills organize work, generate reports, improve public docs, and prepare r
 
 Jason Colapietro’s training includes Claude Academy / Anthropic badges in the Claude API, Claude Code, Model Context Protocol (MCP), Claude with Amazon Bedrock and Claude on Google Cloud. His search training includes HubSpot Academy’s AEO Fundamentals and Semrush Academy certificates in AI search, keyword research, on-page SEO, local SEO and digital PR. IBM SkillsBuild covers prompt engineering; Google Skills and Databricks Academy cover generative AI. Seven Microsoft Learn module achievements cover Azure AI Agents, Foundry IQ, Visual Studio Code, Microsoft 365, workflows and Microsoft Agent Framework.
 Individual course awards and Microsoft Learn module achievements: https://seo.suedeai.ai/evidence#training-credentials
+
+## Founder record and coverage
+
+- [Suede AI SEO on The Manifest](https://themanifest.com/artificial-intelligence/consulting/deployment/companies/florida): #1 in Palm Beach County and Top 25 in Florida for AI deployment, October 31, 2026.
+- [Suede AI SEO on Clutch](https://clutch.co/profile/suede-ai-seo): 5.0/5 client rating.
+- [IA Práctica](https://goyohernandez.com/ia/caso/despide-a-la-agencia-y-lleva-el-seo-dentro-con-claude-el-playbook-de-s/): Spanish-language coverage of Jason Colapietro’s six-step playbook for bringing SEO in-house with Claude, November 4, 2026.
+- [NeuralAdX: The Three Pillars of AI Visibility](https://neuraladx.com/the-three-pillars-of-ai-platform-visibility/): Updated October 28, 2026; cites Suede AI SEO’s comparison of AI visibility tools and managed GEO implementation.
+- [Glama](https://glama.ai/mcp/servers/JasonColapietro/suede-creator-skills): Suede Creator Skills MCP server listing.
+- [Complete app catalog](https://jasoncolapietro.com/apps/): 9 iOS apps, 6 Android apps and 2 Chrome extensions across AI agents, music, guitar tools, vocal training and children’s stories.
