@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
   "repository": "JasonColapietro/suede-creator-skills",
-  "source_revision": "3b34c5f2c94f55fc259e46ff92a0f1bf1df93a2b",
-  "source_branch": "mcp-registry-publish",
+  "source_revision": "1c71f561861d59631c7edc722e9fb3b02fba76fd",
+  "source_branch": "glama-listing",
   "source_status": "proposed_draft_revision",
-  "assessment_date": "2026-11-04",
+  "assessment_date": "2026-11-05",
   "external_snapshot_date": "2026-10-22",
   "scope": [
     "android-app-factory",
@@ -93,10 +93,11 @@
     "PHOTO_SOURCES.md": "8308744626a3f68ce2aa48ef0b467f1945911702c81c6142098b817461886501",
     "PRODUCT.md": "3d4ecd8453466642410b543d6ef6ead4616435b9bcaa5e8a1283e9cda63f3111",
     "PROMO.md": "031da41f4b2af5187318c772a9068946c99e4eb04d6316055df285144c2bb0cc",
-    "README.md": "9b9c93a1b99c430c4204062d69c44687c63ea071efe7d080831f786fe731e7d6",
+    "README.md": "1c2d78ec07c4b9cebc0e128d2993cedb621dc4e4a0c47ad508a474836f7d4c67",
     "SECURITY.md": "5404f465d5342d9f8aeccd4502fc7acee2379c314dea1d135f7340dc30faa2a3",
     "SKILL-CARDS.md": "5a56b8adf8b9a356bfbd8cc23c1a0cff1799e36f263cd88d989623866e6ff190",
     "VERSION": "6f15c2bfbd4fb58b7b84f0a8f8036f4d6f3112cd3f0cb759dffe86cdd696b650",
+    "glama.json": "23c3e56b030cccab00615de9d9601375a2aba7f4dc6c4aaa3c0e028979b002e7",
     "install.sh": "0cb722040d368fcf68fe9b09de1c3fbf891cfe4d0a7ee00f5d6d1049ada4e4df",
     "package-lock.json": "17484f243e96747ff47adb3331e048689313341c635c7a2934816981330416ba",
     "package.json": "aac26fd8c60e3051e9f82cae50870155dbdbd033d8deb075eda28740d8967b9c",
@@ -807,6 +808,6 @@
   "external_before_sha256": "316f93b89836abef2c2b5dd15dcc0ea543d7eed7ff52282c1debc72e5aa98034",
   "external_after_sha256": "316f93b89836abef2c2b5dd15dcc0ea543d7eed7ff52282c1debc72e5aa98034",
   "security_scan_status": "not_scanned",
-  "dataset_before_sha256": "4d75bad35123ec8bf500859c066d8fc957f811e81b1e97ededbe7eff53216eff",
-  "dataset_after_sha256": "9639a9620dc3b6ab5cca0657a78b4a5c2e7a7b3de23826a4ef81abf291b50a9b"
+  "dataset_before_sha256": "9639a9620dc3b6ab5cca0657a78b4a5c2e7a7b3de23826a4ef81abf291b50a9b",
+  "dataset_after_sha256": "f9afb9eeabeb8ba3905d445bdca1bd1d634b0490e9c9d66ba5a59fec28fa5549"
 }
