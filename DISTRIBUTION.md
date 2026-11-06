@@ -55,7 +55,7 @@ Checked 2026-10-08 unless the row says otherwise. Reach is inferred from stars o
 | RankSpotAI/awesome-seo-agent-skills | SEO-specific list, high fit for `suede-seo-audit` and `suede-ai-seo` | PR against README | PR to a third-party repo |
 | Anthropic official marketplace (`anthropics/claude-plugins-official`) | Default Claude Code marketplace | Owner submitted the plugin-directory form on or before 2026-09-05 (owner statement); not in the repo as of 2026-10-08 | Watch for the entry; nothing else to file |
 | claudemarketplaces.com | Claims 380k monthly visitors | Crawl-based; no form found | Lists only the sibling `agentic-commerce-catalog` MCP, not this pack. Unknown route for the pack. |
-| Glama (glama.ai/mcp/servers) | 82k servers indexed | Auto-crawl plus owner claim; "Add Server" button | Add or claim after crawl; the npm package and registry entry should help the crawl |
+| Glama (glama.ai/mcp/servers) | 82k servers indexed | Listed and claimed 2026-11-05: https://glama.ai/mcp/servers/JasonColapietro/suede-creator-skills. Docker build test passed, release published, score badge (A) in the README. `glama.json` names the maintainer | Nothing to do. Future GitHub releases auto-publish on Glama |
 | Smithery (smithery.ai) | One-click installs in several clients | https://smithery.ai/servers/new behind GitHub login, or `smithery mcp publish` | GitHub login |
 | mcp.so | Large MCP index | Submit form on the site | Form |
 | claudemarketplace.net | Claims 150k monthly visitors | Not stated | Unknown |
@@ -99,7 +99,7 @@ Already open upstream, nothing to send: travisvn/awesome-claude-skills#1205, dav
 
 | Directory | Where | What to enter |
 | --- | --- | --- |
-| Glama | https://glama.ai/mcp/servers, "Add Server" | Repository https://github.com/JasonColapietro/suede-creator-skills. Do this before the punkpeye PR so the score badge exists. |
+| Glama | Done 2026-11-05: https://glama.ai/mcp/servers/JasonColapietro/suede-creator-skills | Score badge: `https://glama.ai/mcp/servers/JasonColapietro/suede-creator-skills/badges/score.svg`, now ready for the punkpeye PR. |
 | Smithery | https://smithery.ai/servers/new | GitHub repo https://github.com/JasonColapietro/suede-creator-skills, package `suede-skills-mcp`, stdio, command `npx suede-skills-mcp` |
 | mcp.so | Submit form at https://mcp.so | Name Suede Skills MCP, URL https://github.com/JasonColapietro/suede-creator-skills, description: Local MCP server that serves every Suede Agent Skill. |
 | Cursor Directory | https://cursor.directory/plugins/new | Repo https://github.com/JasonColapietro/suede-creator-skills |
