@@ -803,6 +803,12 @@
   "DevOps and cloud agent skills",
   "agent skills directory"
  ],
+ "directory/badges/index.html": [
+  "agent skill badge",
+  "Claude Code skill badge",
+  "Suede Skill Check badge",
+  "README quality badge"
+ ],
  "directory/bitwize-music-studio/claude-ai-music-skills/album-conceptualizer/index.html": [
   "album-conceptualizer skill by bitwize-music-studio",
   "album-conceptualizer skill",

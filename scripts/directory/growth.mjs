@@ -157,4 +157,42 @@ ${installSection(here, s)}${qualityBadgeBlock(here, s)}${servicesCta("skill", s.
 <section class="panel"><h2>Top five in the recorded week</h2>${rising.length ? table(['Skill', 'Quality score', 'Weekly installs'], risingRows) : '<p>No weekly install history is available in this snapshot.</p>'}<p><a href="issue.md" download>Download this issue</a> · <a href="${rel(risingHere, 'directory/top/')}#rising">Explore the rising leaderboard</a></p></section>
 <section class="panel"><h2>Follow new skills</h2>${newsletter.signup_url ? `<p><a class="button" href="${esc(newsletter.signup_url)}">Get Rising Skills by email</a></p>` : '<p>Email signup is not open yet. Follow new listings and guides through the RSS feed.</p>'}<p><a href="${rel(risingHere, 'directory/feed.xml')}">Subscribe by RSS</a></p></section>`,
   });
+
+  renderBadgesHub({ data, emit, rel, esc, fmt, link, thirdParty });
+}
+
+// One page to send a publisher: what the quality badges are, who earns them,
+// where to copy the snippet, and the repositories with the most eligible skills.
+export function badgeHubStats(skills) {
+  const eligible = skills.filter(s => Number.isInteger(s.score) && s.score >= 80 && s.score <= 99 && ['A', 'B'].includes(s.grade));
+  const byRepo = new Map();
+  for (const s of eligible) {
+    const r = byRepo.get(s.repo) || { repo: s.repo, count: 0, best: null };
+    r.count++;
+    if (!r.best || s.score > r.best.score || (s.score === r.best.score && `${s.repo}/${s.name}`.localeCompare(`${r.best.repo}/${r.best.name}`) < 0)) r.best = s;
+    byRepo.set(s.repo, r);
+  }
+  const repos = [...byRepo.values()].sort((a, b) => b.count - a.count || b.best.score - a.best.score || a.repo.localeCompare(b.repo));
+  return { eligible: eligible.length, gradeA: eligible.filter(s => s.grade === 'A').length, gradeB: eligible.filter(s => s.grade === 'B').length, repos };
+}
+
+function renderBadgesHub({ data, emit, rel, esc, fmt, link, thirdParty }) {
+  const here = 'directory/badges/';
+  const st = badgeHubStats(thirdParty);
+  const below = thirdParty.length - st.eligible;
+  const rows = st.repos.slice(0, 25).map(r => [`<a href="${rel(here, `directory/${r.repo.split('/').map(seg => seg.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '') || 'skill').join('/')}/`)}">${esc(r.repo)}</a>`, fmt(r.count), `${link(here, r.best)} · ${r.best.score}/100 · ${r.best.grade}`]);
+  emit({ here, title: 'Suede Skill Check Badges for Agent Skill READMEs', heading: 'Quality badges for your agent skill',
+    keywords: ['agent skill badge', 'Claude Code skill badge', 'Suede Skill Check badge', 'README quality badge'],
+    description: `${fmt(st.eligible)} listed agent skills qualify for a Suede Skill Check badge. Show your score in your README and link readers to the full report.`,
+    body: `<p class="lead">Show readers your skill’s Suede Skill Check score right in your README. Each badge links to your listing, with the score breakdown, license, source and install command.</p>
+<section class="panel"><h2>Two shields for skills scoring 80–99</h2><p class="shield-pair"><img src="${rel(here, 'directory/badges/grade-a.svg')}" alt="Suede Skill Check: Grade A" width="160" height="175" loading="lazy"> <img src="${rel(here, 'directory/badges/grade-b.svg')}" alt="Suede Skill Check: Grade B" width="160" height="175" loading="lazy"></p>
+<p>Grade A (90–99) shows a gold shield; grade B (80–89) shows the standard shield. Each skill also gets a numeric score shield. In the ${esc(data.generated)} snapshot, ${fmt(st.eligible)} third-party skills qualify: ${fmt(st.gradeA)} at grade A and ${fmt(st.gradeB)} at grade B, across ${fmt(st.repos.length)} repositories.</p></section>
+<section class="panel" id="get"><h2>Add your badge in three steps</h2><ol>
+<li><b>Find your skill.</b> Search the <a href="${rel(here, 'directory/')}">directory</a> or run the <a href="${rel(here, 'directory/check/')}">free skill check</a> with your repository URL.</li>
+<li><b>Copy the snippet.</b> Every eligible listing has a Badge section with Markdown and HTML for the score shield, the grade shield, or both.</li>
+<li><b>Paste it into your README.</b> The image updates when the directory refreshes, so the badge always shows your current score.</li></ol>
+<p>Display a linked badge, then <a href="${rel(here, 'directory/submit/')}">request badge verification</a>: eligible verified skills can receive a featured placement while the offer is open.</p></section>
+<section class="panel"><h2>Repositories with the most badge-ready skills</h2><div class="table-wrap"><table class="checks"><thead><tr><th scope="col">Repository</th><th scope="col">Skills scoring 80+</th><th scope="col">Top skill</th></tr></thead><tbody>${rows.map(r => `<tr>${r.map(v => `<td>${v}</td>`).join('')}</tr>`).join('')}</tbody></table></div><p>Suede AI’s own skills are excluded from this list.</p></section>
+<section class="panel" id="improve"><h2>Raise your score to 80</h2><p>${fmt(below)} listed skills score below 80. Your listing names the components with the most points still open, such as description length, examples, references and recent maintenance. Update your skill, then <a href="${rel(here, 'directory/submit/')}#improve">request a fresh review</a>.</p><p><a href="${rel(here, 'directory/methodology/')}">Read the scoring rubric</a></p></section>`,
+  });
 }

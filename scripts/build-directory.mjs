@@ -697,7 +697,7 @@ ${links}
 }
 
 const FOOTER_LINKS = [
-  ...(GROWTH ? [["directory/finder/", "Find skills in your agent"], ["directory/state-of-agent-skills/", "State of Agent Skills"], ["directory/rising/", "Rising Skills"]] : []),
+  ...(GROWTH ? [["directory/finder/", "Find skills in your agent"], ["directory/state-of-agent-skills/", "State of Agent Skills"], ["directory/rising/", "Rising Skills"], ["directory/badges/", "Skill badges"]] : []),
   ["directory/", "Skills"], ["directory/top/", "Top 100"], ["directory/new/", "New"], ["directory/topics/", "Topics"], ["directory/for/", "By task"],
   ["directory/featured/", "Featured projects"], ...(HAS_AGENTS ? [["directory/agents/", "AI agents"]] : []),
   ["directory/mcp-servers/", "MCP servers"], ["directory/plugins/", "Plugins and mods"], ["directory/grok/", "Grok bots"],
@@ -2823,7 +2823,7 @@ function renderSubmit() {
           <li><b>Publish the skill</b> in a public GitHub repository as a folder with a SKILL.md, a license and a description that says when to use it.</li>
           <li><b>Open a listing request</b> with the repository URL. One request can cover the repository or specific named skills; a request naming selected skills covers only those accepted names.</li>
           <li><b>The request is reviewed by hand.</b> An accepted repository is read at the next directory refresh and runs through the <a href="${rel(here, "directory/methodology/")}">Suede Skill Check</a> and the listing rules. Skills that pass the frontmatter check, declare a license and pass at least six of seven graded checks are listed with their quality score and grade.</li>
-          <li><b>Add either badge.</b> Listed skills scoring 80–99 get two shields: a numeric score and an A/B grade, each linking to their Suede AI listing. Choose either badge or both from the listing and request README verification for the limited-time feature offer.</li>
+          <li><b>Add either badge.</b> Listed skills scoring 80–99 get two shields: a numeric score and an A/B grade, each linking to their Suede AI listing. Choose either badge or both from the listing${GROWTH ? ` (<a href="${rel(here, "directory/badges/")}">how badges work</a>)` : ""} and request README verification for the limited-time feature offer.</li>
         </ol>
       </section>
       <section class="panel" id="improve" aria-labelledby="pass-title">
@@ -3140,7 +3140,7 @@ function render404() {
     robots: "noindex",
     extraStyle: "@media (max-width: 768px) { .nav-disclosure > summary.nav-hamburger { width: 44px; height: 44px; } }",
     title: "Page not found | Suede AI Skills",
-    description: "This page is not on skills.suedeai.ai. Browse the Agent Skills Directory or the Suede AI Skills pack instead.",
+    description: "This page is not on skills.suedeai.ai. Browse the Suede AI Skills Directory or the Suede AI Skills pack instead.",
     keywords: null,
     h1Html: `      <div class="eyebrow">404</div>
       <h1>This page is not here</h1>`,
