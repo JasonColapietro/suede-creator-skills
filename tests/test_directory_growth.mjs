@@ -108,3 +108,14 @@ test('badge hub counts eligible third-party skills and links every repository it
   }
   assert.match(read('docs/directory/submit/index.html'), /href="[^"]*badges\/">how badges work/);
 });
+
+test('a configured newsletter shows the signup CTA on Rising Skills and the home page', () => {
+  const { signup_url } = JSON.parse(read('directory/growth/newsletter.json'));
+  if (!signup_url) return;
+  assert.equal(new URL(signup_url).protocol, 'https:');
+  const href = signup_url.replaceAll('&', '&amp;');
+  for (const page of ['docs/directory/rising/index.html', 'docs/directory/index.html']) {
+    assert.match(read(page), new RegExp(`<a class="button" href="${href.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}">Get Rising Skills by email</a>`), page);
+  }
+  assert.doesNotMatch(read('docs/directory/rising/index.html'), /Email signup is not open yet/);
+});
