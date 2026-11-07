@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { search, fetchIndex, main } from '../directory/suede-directory/scripts/search.mjs';
-import { comparisonPairs } from '../scripts/directory/growth.mjs';
+import { comparisonPairs, badgeHubStats } from '../scripts/directory/growth.mjs';
 
 const read = p => fs.readFileSync(new URL(`../${p}`, import.meta.url), 'utf8');
 const index = JSON.parse(read('docs/directory/search-index.json'));
@@ -91,4 +91,20 @@ test('finder is distributed with matching source and email availability is truth
     assert.match(html, /Email signup is not open yet/);
     assert.doesNotMatch(html, /type="email"|successfully subscribed/);
   }
+});
+
+test('badge hub counts eligible third-party skills and links every repository it ranks', () => {
+  const rows = snapshot.skills.filter(s => !/^jasoncolapietro\/suede-creator-skills$|^suede-ai\//i.test(s.repo));
+  const stats = badgeHubStats(rows);
+  assert.equal(stats.eligible, rows.filter(s => s.score >= 80 && s.score <= 99).length);
+  assert.equal(stats.gradeA + stats.gradeB, stats.eligible);
+  assert.ok(stats.repos.every(r => !/suede/i.test(r.repo)));
+  const html = read('docs/directory/badges/index.html');
+  assert.match(html, new RegExp(`${stats.eligible.toLocaleString('en-US')} third-party skills qualify`));
+  for (const r of stats.repos.slice(0, 25)) {
+    const href = html.match(new RegExp(`<a href="([^"]+)">${r.repo.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}</a>`))?.[1];
+    assert.ok(href, `badge hub links ${r.repo}`);
+    assert.ok(fs.existsSync(new URL(`../docs/directory/badges/${href}index.html`, import.meta.url)), `${href} resolves`);
+  }
+  assert.match(read('docs/directory/submit/index.html'), /href="[^"]*badges\/">how badges work/);
 });
