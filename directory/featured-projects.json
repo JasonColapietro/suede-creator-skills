@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02",
+  "updated": "2026-11-07",
   "page": {
     "about": "Copy for /directory/featured/ and the awesome/featured.md view, rendered by scripts/build-directory.mjs and scripts/build-awesome-directory.mjs. Project entries below are the publishers’ own work: keep their names, repositories, setup facts and review links exactly as reviewed.",
     "title": "Featured Agent Skill Projects | Suede AI",
@@ -517,6 +517,87 @@
         }
       ],
       "setup": "Requires a Linux or macOS server you control and a domain whose DNS you manage. The skill installs lfr with curl -fsSL https://lfr.email/install.sh | sudo sh, which checks the release against its checksums; Homebrew and go install also work. lfr setup creates a hardened systemd service on ports 25, 80 and 443. Where a provider blocks outbound port 25, lfr hands DKIM-signed mail to an SMTP relay such as Amazon SES or SMTP2GO. Your agent asks for explicit approval before sending any message in your name."
+    },
+    {
+      "id": "shiptopaid-lite",
+      "name": "ShipToPaid Lite",
+      "repo": "shiptopaid/shiptopaid-lite",
+      "commit": "b508f878086491518709a2d17761821abfd4b084",
+      "kind": "Three agent skills · Polar payments",
+      "license": "MIT",
+      "headline": "Take your Next.js app from checkout to paid access.",
+      "summary": "Add Polar subscriptions to an existing app with three focused skills for checkout, signed webhooks and a launch checklist. Keep payment state connected to server-side access.",
+      "capabilities": [
+        {
+          "title": "Create authenticated checkout",
+          "description": "Connect a signed-in user to a Polar subscription checkout and a payment-pending success screen."
+        },
+        {
+          "title": "Handle payment events",
+          "description": "Verify webhook signatures, deduplicate deliveries, allowlist products and guard against stale entitlement updates."
+        },
+        {
+          "title": "Check launch readiness",
+          "description": "Review production configuration, access checks and billing evidence with PASS, FAIL and NOT RUN outcomes."
+        }
+      ],
+      "setup": "Requires Node.js 22+ and a Polar sandbox account. Examples use Next.js App Router, TypeScript, Better Auth and PostgreSQL/Drizzle. Use an email address you control for tests. This free three-skill feature covers Polar; the separate paid pack and Stripe support are outside its scope.",
+      "published_at": "2026-11-07T09:07:30Z",
+      "review": "directory/reviews/2026-11-07-shiptopaid-lite.md"
+    },
+    {
+      "id": "video-director",
+      "name": "Video Director",
+      "repo": "aakashH242/video-director",
+      "commit": "1d0ed60aa9bfffa36302d9042a87a2b1fcb8aeeb",
+      "kind": "Agent skill · Editable video production",
+      "license": "MIT code and docs · Separate media terms",
+      "headline": "Make product demos you can revise in code.",
+      "summary": "Combine real app screens, editable SVG, AI artwork and procedural 3D into a local review MP4. Change words, timing and camera moves while keeping the useful assets.",
+      "capabilities": [
+        {
+          "title": "Show the actual interface",
+          "description": "Use readable real screenshots, deliberate close-ups and labels that follow the action."
+        },
+        {
+          "title": "Keep the scene editable",
+          "description": "Separate artwork from SVG/HTML foregrounds and procedural 3D so revisions stay precise."
+        },
+        {
+          "title": "Capture and inspect the export",
+          "description": "Use exact-frame local capture and encoded MP4 checks before handing over the video."
+        }
+      ],
+      "setup": "Requires Node.js 22.20+, FFmpeg/FFprobe and Playwright with Chromium; Three.js supports the 3D starter. The code-only first example needs no paid generation. AI artwork or voice services may charge separately. Original code and docs are MIT; bundled media has separate provenance and rights.",
+      "published_at": "2026-11-07T09:07:30Z",
+      "review": "directory/reviews/2026-11-07-video-director.md"
+    },
+    {
+      "id": "poptin-email-marketing",
+      "name": "Email Marketing Skills by Poptin",
+      "repo": "email-marketing-skills-hub/email-marketing-skills",
+      "commit": "13ea992854c4b3cbd93d2a427b391161be23b033",
+      "kind": "Twenty agent skills · Email and audience growth",
+      "license": "MIT",
+      "headline": "Give each email workflow its own specialist.",
+      "summary": "Choose from twenty focused skills for campaign copy, lifecycle automation, segmentation, deliverability and signup experiences. Five core workflows and fifteen industry specialists work with your chosen marketing stack.",
+      "capabilities": [
+        {
+          "title": "Plan the campaign",
+          "description": "Build useful briefs, messages and measurement plans from approved offers and audience facts."
+        },
+        {
+          "title": "Design the customer journey",
+          "description": "Specify triggers, suppression rules, branches and exits for lifecycle automation and audience segments."
+        },
+        {
+          "title": "Match the industry",
+          "description": "Use dedicated guidance for ecommerce, SaaS, education, events and eleven other industries while keeping their data and review boundaries clear."
+        }
+      ],
+      "setup": "Read or copy each selected skill directory with its references. The documented Skills CLI requires Node.js 22.20+. A Poptin account is not needed to use the instructions. Live campaigns still need consent checks and authorization. The collection preserves the original standalone skills and is featured once, without duplicate catalog entries.",
+      "published_at": "2026-11-07T09:07:30Z",
+      "review": "directory/reviews/2026-11-07-poptin-email-marketing.md"
     }
   ],
   "members": [
@@ -534,9 +615,18 @@
       "summary": "Six plugin skills for transcript search, timestamped quotes, people and sponsor research, show comparisons, and company monitoring.",
       "setup": "Requires an Arcmira account and its hosted MCP connection. Research queries go to Arcmira; metered reads and monitor alerts use account credits. The linked source and Apache-2.0 license cover these six plugin skills.",
       "links": [
-        { "label": "Website", "url": "https://arcmira.com" },
-        { "label": "MCP setup", "url": "https://arcmira.com/docs/mcp-server" },
-        { "label": "API docs", "url": "https://arcmira.com/docs" }
+        {
+          "label": "Website",
+          "url": "https://arcmira.com"
+        },
+        {
+          "label": "MCP setup",
+          "url": "https://arcmira.com/docs/mcp-server"
+        },
+        {
+          "label": "API docs",
+          "url": "https://arcmira.com/docs"
+        }
       ],
       "skills": [
         {

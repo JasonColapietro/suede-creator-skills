@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import path from 'node:path';
 
 export async function verifyFeaturedOrder(page) {
-  const expected = ['agent-qa', 'berlin-job-search', 'bulkpublish', 'empacer', 'frametell', 'inkroom', 'lfr', 'trong-hieu', 'geekflare', 'cisco-skill-scanner', 'opsibyte', 'extra-caffeine', 'costory', 'appie', 'coalwash', 'lava', 'arcmira'];
+  const expected = ['poptin-email-marketing', 'shiptopaid-lite', 'video-director', 'agent-qa', 'berlin-job-search', 'bulkpublish', 'empacer', 'frametell', 'inkroom', 'lfr', 'trong-hieu', 'geekflare', 'cisco-skill-scanner', 'opsibyte', 'extra-caffeine', 'costory', 'appie', 'coalwash', 'lava', 'arcmira'];
   assert.deepEqual(await page.locator('article.featured-project').evaluateAll((cards) => cards.map((card) => card.id)), expected);
   assert.deepEqual(await page.locator('.featured-jump a[href^="#"]').evaluateAll((links) => links.map((link) => link.hash.slice(1))), expected);
 }

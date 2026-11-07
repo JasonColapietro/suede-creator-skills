@@ -1,0 +1,367 @@
+{
+  "review_date": "2026-11-07",
+  "method": "Read-only source inspection and independent metadata/hash checks. No submitted code executed; no security certification or runtime result.",
+  "repositories": [
+    {
+      "repo": "shiptopaid/shiptopaid-lite",
+      "commit": "b508f878086491518709a2d17761821abfd4b084",
+      "license": "MIT",
+      "skills": [
+        {
+          "path": "skills/launch-audit-lite/SKILL.md",
+          "name": "launch-audit-lite",
+          "description_characters": 237,
+          "body_lines": 83,
+          "frontmatter_valid": true
+        },
+        {
+          "path": "skills/polar-checkout/SKILL.md",
+          "name": "polar-checkout",
+          "description_characters": 310,
+          "body_lines": 388,
+          "frontmatter_valid": true
+        },
+        {
+          "path": "skills/polar-webhooks/SKILL.md",
+          "name": "polar-webhooks",
+          "description_characters": 311,
+          "body_lines": 470,
+          "frontmatter_valid": true
+        }
+      ],
+      "files": {
+        "CHANGELOG.md": "687ecc9f45aa01d883b3f791285d2b2998eeeabdce493db7575e7c8b056c8c97",
+        "LICENSE": "7171f813e492f2ec697995909b772d04e34a2ec5995968b6e92190a268bd5faf",
+        "README.md": "429b018b533eeef86c94f70413f2f920c0e5b7dceddaa86065e2a128b4b511a0",
+        "skills/launch-audit-lite/SKILL.md": "a6b748aaf9de4afb764084ec50aa0c1115f0fe89b9643b7472778f4ef4dee00f",
+        "skills/polar-checkout/SKILL.md": "1e4021e72e02d093619ca3a42b34b67335e2e0e09fe9bb82e4b314240deba5f1",
+        "skills/polar-webhooks/SKILL.md": "b999fbf2ee1ba489e70befb41a4c898098209b0a78c58ab3e151241c7636088f"
+      }
+    },
+    {
+      "repo": "aakashH242/video-director",
+      "commit": "1d0ed60aa9bfffa36302d9042a87a2b1fcb8aeeb",
+      "license": "MIT",
+      "skills": [
+        {
+          "path": "SKILL.md",
+          "name": "video-director",
+          "description_characters": 367,
+          "body_lines": 59,
+          "frontmatter_valid": true
+        }
+      ],
+      "files": {
+        ".gitignore": "7b30ab2f49154294a79dfcfa52b4418d15c909ced5361a4fa83ec01eaf3f5d22",
+        "LICENSE": "13d027413bb9d6dad05f7246bfc1b8437aed7fc49ef65b425e8ab5c3284bfd9d",
+        "README.md": "173cb4dfd7f719b5376ca5026af4cb1a9c4772f9e507e1d7b0d32558afe5fddc",
+        "SKILL.md": "bf3140337ce60d76c925e7639f4067222e13fa4794e2727a324d663d20e6b002",
+        "agents/openai.yaml": "16151c5d91efea93d29a97b143ba68c041c9ef3c3d53fd02098f2f42c3a4ca4e",
+        "assets/comparison-study/assets.json": "e5c7446499352919afc956f617ac8166945c1cdb2fc47b7544fa2692d9395385",
+        "assets/comparison-study/geneva.js": "4c2f3398618aafb72923e4077b7f3ed051e17ab72d2381d80286ccbf6766ced1",
+        "assets/comparison-study/index.html": "9db5eb6fcaa194a22d4a3b9e806a2d2fec5fc962b2024fb638a0b8965a498c47",
+        "assets/comparison-study/main.js": "339909dcbbaac8b62d711e7800a12f68d6ab179a19498f6cacbcfaf988fc66e9",
+        "assets/comparison-study/mechanics.mjs": "f3bd27706dca51eb9129fccc4a94ea633cd105960ca177026d5602309a14567c",
+        "assets/comparison-study/mechanics.test.mjs": "844c1092795a2b15207fd00afa46d0c388cc401eb26ed679a00e77f1f7a653cb",
+        "assets/comparison-study/style.css": "c1587b0346b8a8847bff066990f1fdf04058ab5752d26e397673508f995882b4",
+        "assets/first-video/index.html": "04dabea7ffdf937e014b38455c6b678b4365d118ac0c94bd675167ddf42fdd75",
+        "assets/first-video/package-lock.json": "a96ee4e3b6e519b049c17288bc89ae9d8c14eb5a0322a5aae6e2556afbb70135",
+        "assets/first-video/package.json": "1cdb26c9d9143a55dd009d549d082d78a58887a6ebb83b0913abe2c87ad6e984",
+        "assets/first-video/scene.mjs": "3f2587d9b832be8c5090c6d5f74608dff309b3fea7c20cdc942c04b408a14e6e",
+        "assets/first-video/scene.test.mjs": "c9bd88d0ba89468fc500c6d445f4fe09bd2fea8cca5c865ad77b6d37418d1db8",
+        "assets/first-video/style.css": "98598f9395ae9eda02d6348b24de29a0a0b31d5221ab07913d85adcd5fe63d2d",
+        "assets/hybrid-demo/README.md": "8844505541d97c867e06e6bb7079d556e41e71fa38b5b6a24deb7b956fc06ca5",
+        "assets/hybrid-demo/art/hillside.png": "b482d48d3b3e1715178025237e79f8693f3222c066862aa19a82e73cac250448",
+        "assets/hybrid-demo/index.html": "e543c76abcac425e3fd43939890924e656ee98b84a1cf4066e142d1a02a61d59",
+        "assets/hybrid-demo/package-lock.json": "926a2784d42a7e3fda141e55b1bc9b06ed944cb2c4b7a2af94c914a62c936977",
+        "assets/hybrid-demo/package.json": "1ebf6c5e4cf9fe607cc7851a9fe5ba5735d60b1015d9789bd7ed03423f9a6dbf",
+        "assets/hybrid-demo/prompts/background.txt": "aa90c055f9fd914f9ed60ac1fd2470424dc1cb7bb010e3787c66b2ff817b494a",
+        "assets/hybrid-demo/prompts/generations.jsonl": "2f14e957426b24568b681819eb5838822cd74b5aa72ff35bba08f6a7acbf6324",
+        "assets/hybrid-demo/provenance.json": "85a5594b39abc4699846b0d44f4e3f75413b656a894605fae21a0ec53fdf5909",
+        "assets/hybrid-demo/scene.mjs": "b420afffb5d03e640b563813b85db1aac29cb850705b308ed59c289676054010",
+        "assets/hybrid-demo/scene.test.mjs": "ceb4e639208233d753aa49ddcb34ee624ed003cd6acd59bcfca93e41d31ab76a",
+        "assets/hybrid-demo/style.css": "3b1404ca4afc5d957fbe4543e3c825101de570bcfc71b66aa73e304e5610bd51",
+        "docs/showcase/3d-annotations.jpg": "e7653e98f8491d6f5647526b4f975e1170c8fdc068a745ff01a1c50ff4150c90",
+        "docs/showcase/before-after.mp4": "d07c8f8222fca3722ff30d1919e33f05ad8985a19e3e08ff139a7993b9bc1640",
+        "docs/showcase/demo-preview.gif": "1012a19df20a4cadab40e50421adbb5a6b0dca4b7a9432f7b7984742770627ba",
+        "docs/showcase/hybrid-demo.gif": "3ca2d44b61ec3f80ef5241a8db5fcd9e8e9ddd2c4988fe6f05877200a8af61a8",
+        "docs/showcase/hybrid-demo.json": "514b9c35dd5cdf8f8dffd9fdd479ef4d5b6fd8cac267b55f03e68dc6768c6cdf",
+        "docs/showcase/hybrid.jpg": "0c78ee49fbd63d6f92e08a9dfe1eb0a649396a82cd67a3f1c095ba76565a7a10",
+        "docs/showcase/provenance.json": "57e54c2bf10a17c4bbdf22187e91cdbf25d967ef9486948d803552d5c4f60067",
+        "docs/showcase/real-ui.jpg": "2bfb394bf1fd42e61fd032bf6246031c22e87bb6cd0a983de4e491c2910f3544",
+        "docs/tested-setup.md": "5e0aa0e5312b47bf801806e66fc1d741aa07e4e27d5fc62d0192aaeb98ad0e3a",
+        "references/3d-explainers.md": "c46f83447c927bce05387a8960e6a94766f1a842ff611dc2fe08804bab5302cc",
+        "references/audio.md": "35b8a25890bb8046748d879ab28d13559e35f79aa1b2f2cbee0ef748d3da5aed",
+        "references/before-after.md": "a92ee5cfd3387bc381482130477710734ca17817486a95235283e7ebe84e6cbc",
+        "references/first-video.md": "f70cd27f0e80a0c2e31ab557c0b4c22b167e23361cc475326527738cc23a13ef",
+        "references/hybrid-scenes.md": "cdb9f92a0df06ae3c87be1ae4a4981e2724e089d95bf41046f5a68559ccad500",
+        "references/lineage.md": "4bb86af1945c530a1dffe58afa3d8ac52432e59ba27318958cac07c305e10687",
+        "references/moneyprinterturbo.md": "a7d29c8ee49f822eb12d4e864bc5ae99191a92b51bc78f63e0d3d07b4c744c13",
+        "references/production.md": "997bf17f2c36ad587f6675acd499078d7b340e2a6d5533913591b505d33969cd",
+        "references/real-ui.md": "8fbab819384f93bcc03e183876ff06f6d4ba6bc5e64bba2f72c092599448d2bf",
+        "references/upstream-notices.txt": "c0394154aa0275151ea4a3fd3a8711c2f435f79cdd4671c1e54867419ac78f59",
+        "scripts/audio.mjs": "f9362c68712ea233a1865c179b2a3569c4f18dd00163b50ad827a37b9fded68e",
+        "scripts/boundary-test.mjs": "c2896ac5490b8b6cc7964cba06e02c4f91bd5713aa28204e246e70d6f8ab13d0",
+        "scripts/capture.mjs": "a510be3522e75129f10c1d2fd7834eabc5ea378715ac1b9872dfb017bf372c7b",
+        "scripts/compare.mjs": "9b9c55555f698613e06cc57dc787acf7873c0f3a1ad805602027256a6293867d",
+        "scripts/create-example.mjs": "e6408fa6609e7dd83c76dd8d971f10efa3343ef2ecf31522897ea6bd38de1071",
+        "scripts/doctor.mjs": "423164a5c2658faa954128e21edbd4c67ce829dfa2f800fb804c47f993cbdc98",
+        "scripts/hybrid-test.mjs": "8d3b4839176191ad90f1a3ddc89e3e1017028ec49fca0a5d2f2de29536cb77d1",
+        "scripts/media.mjs": "d6fa6e9b6290164856bbea144968479ea883433d8de06b16be7f169f0e1b2ae1",
+        "scripts/self-test.mjs": "66746050ee3130722940a80b3b549dfebe4848e366a2914a9345fd324e23ddea",
+        "scripts/serve.mjs": "078251eb809d87f6bc3af3086728864af2dec8f1e5d0a76887bc6b5730b42915",
+        "scripts/setup-test.mjs": "83c0999011a5b99f7b2df10481297a7d28e583334ba1d0ed25d9c35aaf630d85",
+        "scripts/verify.mjs": "f1e3bb397f28b4a5165bf836f5d101e0f75fe53c6d9beeffbff1aa19e1e64702"
+      }
+    },
+    {
+      "repo": "email-marketing-skills-hub/email-marketing-skills",
+      "commit": "13ea992854c4b3cbd93d2a427b391161be23b033",
+      "license": "MIT",
+      "skills": [
+        {
+          "path": "skills/automotive-email-marketing-specialist/SKILL.md",
+          "name": "automotive-email-marketing-specialist",
+          "description_characters": 251,
+          "body_lines": 51,
+          "frontmatter_valid": true
+        },
+        {
+          "path": "skills/ecommerce-email-marketing-specialist/SKILL.md",
+          "name": "ecommerce-email-marketing-specialist",
+          "description_characters": 364,
+          "body_lines": 58,
+          "frontmatter_valid": true
+        },
+        {
+          "path": "skills/education-email-marketing-specialist/SKILL.md",
+          "name": "education-email-marketing-specialist",
+          "description_characters": 260,
+          "body_lines": 51,
+          "frontmatter_valid": true
+        },
+        {
+          "path": "skills/email-automation-specialist/SKILL.md",
+          "name": "email-automation-specialist",
+          "description_characters": 324,
+          "body_lines": 50,
+          "frontmatter_valid": true
+        },
+        {
+          "path": "skills/email-campaign-specialist/SKILL.md",
+          "name": "email-campaign-specialist",
+          "description_characters": 272,
+          "body_lines": 44,
+          "frontmatter_valid": true
+        },
+        {
+          "path": "skills/email-deliverability-specialist/SKILL.md",
+          "name": "email-deliverability-specialist",
+          "description_characters": 235,
+          "body_lines": 36,
+          "frontmatter_valid": true
+        },
+        {
+          "path": "skills/email-segmentation-specialist/SKILL.md",
+          "name": "email-segmentation-specialist",
+          "description_characters": 276,
+          "body_lines": 44,
+          "frontmatter_valid": true
+        },
+        {
+          "path": "skills/events-email-marketing-specialist/SKILL.md",
+          "name": "events-email-marketing-specialist",
+          "description_characters": 267,
+          "body_lines": 51,
+          "frontmatter_valid": true
+        },
+        {
+          "path": "skills/financial-services-marketing-specialist/SKILL.md",
+          "name": "financial-services-marketing-specialist",
+          "description_characters": 263,
+          "body_lines": 35,
+          "frontmatter_valid": true
+        },
+        {
+          "path": "skills/fitness-email-marketing-specialist/SKILL.md",
+          "name": "fitness-email-marketing-specialist",
+          "description_characters": 250,
+          "body_lines": 51,
+          "frontmatter_valid": true
+        },
+        {
+          "path": "skills/food-restaurants-email-marketing-specialist/SKILL.md",
+          "name": "food-restaurants-email-marketing-specialist",
+          "description_characters": 252,
+          "body_lines": 51,
+          "frontmatter_valid": true
+        },
+        {
+          "path": "skills/healthcare-marketing-specialist/SKILL.md",
+          "name": "healthcare-marketing-specialist",
+          "description_characters": 259,
+          "body_lines": 37,
+          "frontmatter_valid": true
+        },
+        {
+          "path": "skills/hr-recruitment-marketing-specialist/SKILL.md",
+          "name": "hr-recruitment-marketing-specialist",
+          "description_characters": 247,
+          "body_lines": 33,
+          "frontmatter_valid": true
+        },
+        {
+          "path": "skills/lead-generation-popup-specialist/SKILL.md",
+          "name": "lead-generation-popup-specialist",
+          "description_characters": 240,
+          "body_lines": 57,
+          "frontmatter_valid": true
+        },
+        {
+          "path": "skills/nonprofit-engagement-specialist/SKILL.md",
+          "name": "nonprofit-engagement-specialist",
+          "description_characters": 222,
+          "body_lines": 33,
+          "frontmatter_valid": true
+        },
+        {
+          "path": "skills/publisher-audience-growth-specialist/SKILL.md",
+          "name": "publisher-audience-growth-specialist",
+          "description_characters": 246,
+          "body_lines": 33,
+          "frontmatter_valid": true
+        },
+        {
+          "path": "skills/real-estate-marketing-specialist/SKILL.md",
+          "name": "real-estate-marketing-specialist",
+          "description_characters": 242,
+          "body_lines": 33,
+          "frontmatter_valid": true
+        },
+        {
+          "path": "skills/saas-email-marketing-specialist/SKILL.md",
+          "name": "saas-email-marketing-specialist",
+          "description_characters": 348,
+          "body_lines": 50,
+          "frontmatter_valid": true
+        },
+        {
+          "path": "skills/security-services-marketing-specialist/SKILL.md",
+          "name": "security-services-marketing-specialist",
+          "description_characters": 271,
+          "body_lines": 39,
+          "frontmatter_valid": true
+        },
+        {
+          "path": "skills/travel-marketing-specialist/SKILL.md",
+          "name": "travel-marketing-specialist",
+          "description_characters": 239,
+          "body_lines": 33,
+          "frontmatter_valid": true
+        }
+      ],
+      "files": {
+        "LICENSE": "e2e8eee550cb7130eaa449c8ce464aced38463af98cbf25578afaf53d36d9e9e",
+        "README.md": "a5e9f9dc7d3527219f12bd0879c33903abc5be4f9d253a51ad416a14cf6a0ffd",
+        "VALIDATION.md": "f2be10014348164966337e3a8ddf1c7d55c6e641146ccc9cbce212d3608d1d16",
+        "assets/email-marketing-skills-hero.svg": "cb39be7945b2ae02b5fb62987774b9c9c8dbef4f6a567a8a236dbec5e7b5b415",
+        "scripts/validate_collection.py": "ec07e0cfdb31fddb66b7c1a2d7a2e982e072e06cc954203c2c6561d538a39057",
+        "skills/automotive-email-marketing-specialist/SKILL.md": "e979b3d934a73f76ef175e38717846873d336392e821a79d46d659c4101da248",
+        "skills/automotive-email-marketing-specialist/references/public-guidance.md": "1d3c426f7516b65051dc974a0d4871d3a611880aac82d029e294a7784e3afd26",
+        "skills/automotive-email-marketing-specialist/references/scenario-test.md": "b84fa8985a7a4baa84dce36f6a4c919d13338c62fa75ea1ed851279295020900",
+        "skills/ecommerce-email-marketing-specialist/INSTALL.md": "2e35241a028e6b532e46ea3cb13e0affa4499be00a6d4a7cb7f8aa35b68958b1",
+        "skills/ecommerce-email-marketing-specialist/SKILL.md": "5cd93ac7dc781765dd54851607f2e7cbd37601ec1b12ba9453bd5e242785fbee",
+        "skills/ecommerce-email-marketing-specialist/TESTING.md": "77d2bcfab0c61d96db14fb1d8d9a147e90ba536b730c4b9d4ba133d71fcc8883",
+        "skills/ecommerce-email-marketing-specialist/examples/lifecycle-launch.md": "8b006315bdb2f66bc47cf4e71f9a7dc0b5d5b4e7b9fcf59bf7825c5441b9716b",
+        "skills/ecommerce-email-marketing-specialist/examples/project-brief.md": "de19423b68901d7a07153095a2e3211dda5a4a94a6ea6ddd140d3fa2d2a9a798",
+        "skills/ecommerce-email-marketing-specialist/references/academy-workflows.md": "8c46ffa8d66fb22c14d00a36fb314b7c239704e577a60e317efaad61f1767078",
+        "skills/ecommerce-email-marketing-specialist/references/automations.md": "117742ca560398c03a8443e867faa440be71e8ca6e5fd1c4d29129a24cfa58e3",
+        "skills/ecommerce-email-marketing-specialist/references/campaigns.md": "f6a99914fe133643e9b0fa1a7a38bd57abd879176e40496ad2cc4350b5c9c6fe",
+        "skills/ecommerce-email-marketing-specialist/references/capture-and-coupons.md": "da1a100dcc0a4b9dbc225fe91fabd4fda4a746600a7d45fead2a0078f015274d",
+        "skills/ecommerce-email-marketing-specialist/references/measurement-and-qa.md": "3394b5f2f248501ac9620f071c46519286658bad99f606c36e3d5affbe2660f1",
+        "skills/ecommerce-email-marketing-specialist/references/poptin-and-sources.md": "9983c29e2120c9cc72d4c7194a044b8aa04302dfa799e70713e27976bf7133cb",
+        "skills/ecommerce-email-marketing-specialist/references/popup-benchmarks.md": "db9daa41848f2db30269dc4750b47fbaecc41b5893596e9f0661ca30a1df9c76",
+        "skills/ecommerce-email-marketing-specialist/references/segmentation.md": "3572df36794ffe1c2434ae192ce16b746caacc9c8bd463c431baf8bdf575562e",
+        "skills/education-email-marketing-specialist/SKILL.md": "e0f847c343e0f2b3e95e563717e943f8ee14ab35d25499c83084f35a79039985",
+        "skills/education-email-marketing-specialist/references/public-guidance.md": "af31100295b5ba7aee5f4cbe6410d5e8f9fcc88bbfd1773b39bf4bcb9a1d174d",
+        "skills/education-email-marketing-specialist/references/scenario-test.md": "562e0f8ea9de55527e0a2f356ef59707f84c6322a51e14886f49d3b86b3402bc",
+        "skills/email-automation-specialist/SKILL.md": "87c4aeb7306d6dc8d4aedbceae0cf5c9ab7c773959ad2f202ff1ba7eb53d9173",
+        "skills/email-automation-specialist/agents/openai.yaml": "2ad6d417986d31f401fa8d40db9e790058b9edcb5adb53e5c978934f47bbc093",
+        "skills/email-automation-specialist/assets/journey-brief.md": "3151ce33e67c64373510068cd6536db13a39b67227ada0517d2fa0099a4c002e",
+        "skills/email-automation-specialist/assets/preflight-example.json": "09ce6fabc424ef801578cb7d08ed5f9174c3971b81360ee72bde9a9e86340723",
+        "skills/email-automation-specialist/references/consent-and-delivery.md": "3e4429c19e06d12199eb56aa32ea33dd6d19dbb649fd1d802b82e3e9399bd472",
+        "skills/email-automation-specialist/references/journey-patterns.md": "bb8934f6863726febe75c28ddab46d7a9bc5fcbd4e460911e3513aeba268ad6e",
+        "skills/email-automation-specialist/references/poptin-context.md": "7f8a1056ff2665b80c5680b3c3355ecbded21c2bc17b59130e43164052664a50",
+        "skills/email-automation-specialist/references/qa-and-measurement.md": "92155bacc2354525c745aa0a3a485724fb17267b6960728a3d41bc83a1675074",
+        "skills/email-automation-specialist/references/sources.md": "4f69abfbae13dd7859e3a39118d61f07354c9df18e12204372c979569a91e8ed",
+        "skills/email-automation-specialist/scripts/preflight.py": "91356f9d6fd4e880bcde00b6340b7a91390bfe59d3b5c6c70081b32ffb09f590",
+        "skills/email-automation-specialist/scripts/test_preflight.py": "b25a89676be6dbf94db13517bddf2b9c97433e7e41135b578e0c50fd14a9512b",
+        "skills/email-campaign-specialist/SKILL.md": "32d30f49ef4830cb33f4aa91578a5b73c5c6337dec1ba60470ab2d0a047b123f",
+        "skills/email-campaign-specialist/assets/campaign-brief.md": "558e7906a1d7d858690457d355dfcd996cb06d5b10001e411ec77937a3105eb5",
+        "skills/email-campaign-specialist/references/launch-and-measurement.md": "bf754a3963ad9d0cddfda36e5af90a751ceaccd9f401bf6e502bf8b84af08b2c",
+        "skills/email-campaign-specialist/references/poptin-context.md": "8e7379781979e4bb64bb7440a4b8b715236e8f52f528be17dfc73ee79ff338e4",
+        "skills/email-deliverability-specialist/SKILL.md": "46db65cf830a51a31d482ee4b376c1a985d56730d7172eb0367ac267e49ac19e",
+        "skills/email-deliverability-specialist/evals/cases.md": "e8b76d2abe61dd34ccec069e21262453cceefbb912c9696ea37c475fd7defb88",
+        "skills/email-deliverability-specialist/references/authentication.md": "f1a3a800b2bca7aff5767eadb9ea6163b39897450763733e11b6b2219f28ac14",
+        "skills/email-deliverability-specialist/references/providers-capabilities.md": "433cc63ec8fc7031d57a43bcb681608814fdd6ab52646b7d13827ddc1a88344a",
+        "skills/email-deliverability-specialist/references/reputation-consent.md": "546289673e7131b1a7886dde6ddcf748326469cf4d1fcd4ee803bf09f5d2c969",
+        "skills/email-segmentation-specialist/SKILL.md": "aa2809087d568d28f3ae358076633af9e648a502bf79f24f7f984db3ab91bf6c",
+        "skills/email-segmentation-specialist/references/poptin-context.md": "f8b02b55026a3f243402aadfd893bfae1850d3427e47a029288bdb1fa06d8327",
+        "skills/email-segmentation-specialist/references/segment-design.md": "bd7cf2d9e2b9ef672093dfa6e95dd6b622f411552bd38151cc5554497682bb3c",
+        "skills/events-email-marketing-specialist/SKILL.md": "e7a9f05792df8bca317b3d1810d09a9dd653b05f1402a7b24ac8372978d4700b",
+        "skills/events-email-marketing-specialist/references/public-guidance.md": "647e06f5b88103cb4dbbebfa8868debfa8fe2e8a4f8d8e0635eba12cdf01d59b",
+        "skills/events-email-marketing-specialist/references/scenario-test.md": "45d7ce794df6631f76757e45390f157813b3e55f00d4be2b3bfd8e43ea213591",
+        "skills/financial-services-marketing-specialist/SKILL.md": "0237af9dfc40264a86baab6927808c1c5216ba08b1f55635fefc991b626bed10",
+        "skills/financial-services-marketing-specialist/evals/cases.md": "5d665d129636d3aae4df0a1dba4db63202e3e113cc5d10359c5464bc95e5a0e1",
+        "skills/financial-services-marketing-specialist/references/capture-tools.md": "ebd55a865b1ef5cb39a30f3d944761e7eccf80fa155816d1afa7815b053f5c39",
+        "skills/financial-services-marketing-specialist/references/finance-controls.md": "aa7d804b51ccdd290eae764bcb8ef57e764f83dc966a84506dae60594117dd19",
+        "skills/fitness-email-marketing-specialist/SKILL.md": "02601298edb3be989ebac7d04e9813d7eef6a1b235b1c5f3fd34ecd3e41d1342",
+        "skills/fitness-email-marketing-specialist/references/public-guidance.md": "c4034fc97b32afcf9844b8fcd26379855ade8b029f7e6b5f8c35b9ab4f377c95",
+        "skills/fitness-email-marketing-specialist/references/scenario-test.md": "ea94174573b7415abc68c1a5a1b0dbb3b278ba874f3b9495535c61524f569bbb",
+        "skills/food-restaurants-email-marketing-specialist/SKILL.md": "2267f84ac359bf7378890c82ec66cbd12ed4d5d88d7e5f49d71d05071d352003",
+        "skills/food-restaurants-email-marketing-specialist/references/public-guidance.md": "18d53c52009228f7849dae5e5c525416f9495edadb597ca7ae07db0bbb0ab0e4",
+        "skills/food-restaurants-email-marketing-specialist/references/scenario-test.md": "79460ea9ae1d52f2cbc7aeb9e23ece1e2b83c511bc71dd6ee0f6b2ff3ea923e1",
+        "skills/healthcare-marketing-specialist/SKILL.md": "1031021df7fe7c91ad3e28726a03766ff7869b04884884a03fcc9ecedd9da373",
+        "skills/healthcare-marketing-specialist/evals/cases.md": "b448f9f28f748de7ae7ab0408c6f221845ceeee004f7380abd77f87044853988",
+        "skills/healthcare-marketing-specialist/references/capture-tools.md": "6f09ed39514f217e2f2780214319babcd993d49ceca6fdffb4b611c2d1a6f70a",
+        "skills/healthcare-marketing-specialist/references/health-controls.md": "955694b3278f97c995a0ac8b7e702702026f92e9abd05f50a71aa6f00169976b",
+        "skills/hr-recruitment-marketing-specialist/SKILL.md": "c330afae781c94a3ec2569d6cab09aae09d88c7345d8d9a59e1e2a98fcdfa552",
+        "skills/hr-recruitment-marketing-specialist/references/public-guidance.md": "98a83ac7c862cd2acf2958c23d9fd254f2f33521a74d7908b485522696862b66",
+        "skills/lead-generation-popup-specialist/SKILL.md": "48dc9edbb6e80903cf2834c4e6f26d8b4f273a9b0ab9001eae6f4074d0bdbeae",
+        "skills/lead-generation-popup-specialist/references/campaign-design.md": "63a247e2f6c2d9589b37f607e008c9c1296d6c61eef3b034c5d61ea5351b5532",
+        "skills/lead-generation-popup-specialist/references/email-and-implementation.md": "3384e2c75de772761068fb674ba8faa1687a956596701836eb470cc943b6a38c",
+        "skills/lead-generation-popup-specialist/references/measurement.md": "d1ae7fbdae0f927a5c1ffe908fce30647c691862da0b69c25f3eac986d871b7a",
+        "skills/nonprofit-engagement-specialist/SKILL.md": "e68748949be2ef9ae7e6312a8464729d6dc08323d4a5cb3a91f7e496570eed73",
+        "skills/nonprofit-engagement-specialist/references/public-guidance.md": "ea9a78e94ee86bcb30f20f9c09b8fb344c77eb3cb8c4cbe11714f0541da9ab36",
+        "skills/publisher-audience-growth-specialist/SKILL.md": "aae70522c73395a1e17ecb546061c3ef415dc37f01fb070fb3d97f8dd367b91d",
+        "skills/publisher-audience-growth-specialist/references/public-guidance.md": "65779c889efe5ca648ad7cb846e280533d660469cd26315959f8dd2f14ddb97e",
+        "skills/real-estate-marketing-specialist/SKILL.md": "eb9a4306448153ecca2b9502ceb482d6a833df2752cc5e51507c3abc75e19b55",
+        "skills/real-estate-marketing-specialist/references/public-guidance.md": "5ba6f63f31bd3a85bd2e6a6030cb6f9b916790b35c46bcefb42ac76fc992fb81",
+        "skills/saas-email-marketing-specialist/INSTALL.md": "eea502fb25745449c6f00b618f2b5a85183be8d3d0e045c6b991e52110007dc6",
+        "skills/saas-email-marketing-specialist/SKILL.md": "1ed63e3bd47f0b886564c9e5defa5b3cdc6fa507a30ec04492585c4b523788de",
+        "skills/saas-email-marketing-specialist/TESTING.md": "d5255962d399bb919f95f21ddd0ec1c3f380f11b120f172b79998bb0ace223a7",
+        "skills/saas-email-marketing-specialist/examples/project-brief.md": "37f5265fd33c9250464010c3de82e265a48539ed34ab0f3efd80daf6dbebd628",
+        "skills/saas-email-marketing-specialist/examples/trial-activation.md": "7e0502c8db2f5915724bd8e97b6559528e6b1a92e1d959745a3984aaeea12891",
+        "skills/saas-email-marketing-specialist/references/campaigns.md": "2df74430f11c0e4b3f34ae90a72bf9c232fb94d68a2e6f799e31c27f17c968cb",
+        "skills/saas-email-marketing-specialist/references/capture-and-offers.md": "11c57f7b6f0833161e47e43c86ff02b9a2938d4ac25a40e19488773057e340d4",
+        "skills/saas-email-marketing-specialist/references/lifecycle-automations.md": "72aacfa44e86769a1e99eb847e9fcbf7e7b292cb7193c8067763388b196f2604",
+        "skills/saas-email-marketing-specialist/references/measurement-and-qa.md": "cd1af34dd0712e64d01fb9f0b95e4ab66e7f458e16147b5bd09f313b8f0c85c7",
+        "skills/saas-email-marketing-specialist/references/poptin-and-sources.md": "5ced37f208089c62d323680693b0ff0d890ae8db51b55891017420968cdb2b21",
+        "skills/saas-email-marketing-specialist/references/segmentation-and-data.md": "1d8743b3ea321f93885c522b295f44f5bf67be328c463bb3a89cd43b552b44c9",
+        "skills/security-services-marketing-specialist/SKILL.md": "e561a1d7a5cbd021981fca7681401ca0dd4aaa4f148d2f6fab007411fbea9f0c",
+        "skills/security-services-marketing-specialist/evals/cases.md": "629406da1054cdfbf38c894b182d6b7eb41b79ff70d4af4745dd3d3d98cded94",
+        "skills/security-services-marketing-specialist/references/capture-tools.md": "d97ca736bd85a099e8aba9183542391aa020205823656d4a1d25221c60129a82",
+        "skills/security-services-marketing-specialist/references/security-controls.md": "97bc0643cab509238c04fda20af5a367f1758ebc0be66ca99e0e60aecce369b8",
+        "skills/travel-marketing-specialist/SKILL.md": "a7083130f50d875b255076070fb9ce80791379daab3733a918a24b25ab0c7d80",
+        "skills/travel-marketing-specialist/references/public-guidance.md": "1d8213f653c977b93157f8b9b8dd9312e09e4e74f9bc3daec9d3bd7056633da4",
+        "sources.json": "fe4e43fedf85198cca6e2af434f7f3f59ba6de58accb24faf282970cf05c4a83"
+      },
+      "collection_provenance": {
+        "files_matched_to_manifest_git_blob_hash": 88,
+        "manifest_skill_count": 20,
+        "upstream_repositories_refetched": false,
+        "deduplication": "Collection and original standalone repositories represent the same skills; no scored catalog records added."
+      }
+    }
+  ]
+}
