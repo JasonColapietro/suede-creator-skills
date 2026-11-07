@@ -91,6 +91,7 @@ const kindOf = (p) => {
   if (["directory/agents/", "directory/agents/ungraded/"].includes(p.rel)) return "agent-hub";
   if (["directory/agents/methodology/", "directory/agents/submit/"].includes(p.rel)) return "agent-info";
   if (p.rel.startsWith("directory/agents/")) return "agent";
+  if (["directory/finder/", "directory/rising/", "directory/state-of-agent-skills/"].includes(p.rel) || p.rel.startsWith("directory/compare/skills/")) return "info";
   const depth = p.rel.split("/").filter(Boolean).length;
   if (p.rel === "directory/") return "hub";
   if (p.rel === "directory/for/") return "task-hub";

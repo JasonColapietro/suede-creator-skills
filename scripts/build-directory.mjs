@@ -46,6 +46,15 @@ const data = JSON.parse(datasetBytes.toString("utf8"));
 const snapshot = { date: data.generated, sha256: createHash("sha256").update(datasetBytes).digest("hex") };
 if (!/^[a-f0-9]{32}$/.test(data.snapshot_id || "")) throw new Error("skills.json: missing refresh snapshot_id");
 const categories = JSON.parse(fs.readFileSync(path.join(repoRoot, "directory", "categories.json"), "utf8"));
+const GROWTH_FILE = path.join(repoRoot, 'directory/growth/full-pages.json');
+const GROWTH = fs.existsSync(GROWTH_FILE) ? JSON.parse(fs.readFileSync(GROWTH_FILE, 'utf8')) : null;
+const FULL_PAGES = new Set(GROWTH?.skills || []);
+const NEWSLETTER_FILE = path.join(repoRoot, 'directory/growth/newsletter.json');
+const NEWSLETTER = fs.existsSync(NEWSLETTER_FILE) ? JSON.parse(fs.readFileSync(NEWSLETTER_FILE, 'utf8')) : { signup_url: null };
+if (NEWSLETTER.signup_url !== null) {
+  const signup = new URL(NEWSLETTER.signup_url);
+  if (signup.protocol !== 'https:' || signup.username || signup.password) throw new Error('Newsletter signup must use a public HTTPS URL');
+}
 const CHECKS = data.checks;
 const PROMOTION = JSON.parse(fs.readFileSync(path.join(repoRoot, "directory", "promotion.json"), "utf8"));
 if (typeof PROMOTION.enabled !== "boolean" || !PROMOTION.verifications || typeof PROMOTION.verifications !== "object" || Array.isArray(PROMOTION.verifications)) throw new Error("promotion.json: expected enabled and a verification map");
@@ -234,6 +243,7 @@ data.skills = data.skills.map((c) => {
     repo_name: name,
     repo_slug: repoSlug,
     featured: Boolean(c.featured),
+    full_page: FULL_PAGES.has(`${c.repo}/${c.slug}`.toLowerCase()),
     checks: Object.fromEntries(CHECKS.map((k, i) => [k.id, c.checks[i] === "1"])),
     folder_url: c.dir === "." ? `https://github.com/${c.repo}` : `https://github.com/${c.repo}/tree/${meta.branch}/${c.dir}`,
     skill_md_url: blob(`${tree}SKILL.md`),
@@ -391,7 +401,7 @@ for (const r of repos.values()) {
   r.licenseCounts = [...licCounts.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
 }
 
-const RESERVED = new Set(["agents", "methodology", "submit", "badges", "featured", "guides", "check", "for", "topics", "pricing", "features", "new", "top", "saved", "trust", "stacks", "compare", "api", "publishers", "mcp-servers", "plugins", "grok", "rules", "bots", ...categories.map((c) => c.slug)]);
+const RESERVED = new Set(["agents", "methodology", "submit", "badges", "featured", "guides", "check", "finder", "rising", "state-of-agent-skills", "for", "topics", "pricing", "features", "new", "top", "saved", "trust", "stacks", "compare", "api", "publishers", "mcp-servers", "plugins", "grok", "rules", "bots", ...categories.map((c) => c.slug)]);
 for (const r of repos.values()) {
   const owner = r.slug.split("/")[0];
   if (RESERVED.has(owner)) throw new Error(`owner slug "${owner}" collides with a reserved directory path`);
@@ -427,7 +437,7 @@ const linkedRepos = reposByScore.filter((r) => r.target);
 // One owner can publish the same skill name in two repositories; their pages
 // lead with the repository, so titles and lead keywords stay distinct.
 const ownerNameCount = new Map();
-for (const s of featured) {
+for (const s of data.skills.filter(s => s.featured || s.full_page)) {
   const k = `${s.owner}/${s.name}`.toLowerCase();
   ownerNameCount.set(k, (ownerNameCount.get(k) || 0) + 1);
 }
@@ -687,6 +697,7 @@ ${links}
 }
 
 const FOOTER_LINKS = [
+  ...(GROWTH ? [["directory/finder/", "Find skills in your agent"], ["directory/state-of-agent-skills/", "State of Agent Skills"], ["directory/rising/", "Rising Skills"]] : []),
   ["directory/", "Skills"], ["directory/top/", "Top 100"], ["directory/new/", "New"], ["directory/topics/", "Topics"], ["directory/for/", "By task"],
   ["directory/featured/", "Featured projects"], ...(HAS_AGENTS ? [["directory/agents/", "AI agents"]] : []),
   ["directory/mcp-servers/", "MCP servers"], ["directory/plugins/", "Plugins and mods"], ["directory/grok/", "Grok bots"],
@@ -806,6 +817,7 @@ ${kindBar(here, absolute)}
     <main id="main" tabindex="-1" class="shell directory">
 ${h1Html}
 ${body}
+${GROWTH && (here === "directory/" || here === "directory/top/" || here === "directory/check/" || here.startsWith("directory/topics/") || categories.some(c => here === `directory/${c.slug}/`)) ? `<section class="panel" aria-labelledby="rising-signup"><h2 id="rising-signup">Find your next useful skill</h2><p>Explore Rising Skills with quality scores and source reports, or search from inside your agent.</p><p>${NEWSLETTER.signup_url ? `<a class="button" href="${esc(NEWSLETTER.signup_url)}">Get Rising Skills by email</a> · ` : ""}<a href="${rel(here, 'directory/rising/')}">Read Rising Skills</a> · <a href="${rel(here, 'directory/finder/')}">Install the finder</a> · <a href="${rel(here, 'directory/state-of-agent-skills/')}">State of Agent Skills</a></p></section>` : ""}
     </main>
 ${footer(here, footerNote, absolute)}
 ${NAV_SCRIPT}
@@ -1174,7 +1186,7 @@ ${lanes.length > 1 ? `          <fieldset class="facet-chips" data-facet-for="${
 
 function skillRow(here, s, { showRepo, showLicense = false }) {
   const cat = catBySlug.get(s.category);
-  const nameCell = s.featured
+  const nameCell = (s.featured || s.full_page)
     ? `<a href="${rel(here, skillPath(s))}">${esc(displayName(s))}</a>`
     : `<a href="${esc(s.folder_url)}" target="_blank" rel="noopener">${esc(displayName(s))}</a>`;
   const desc = s.featured ? s.summary : trimTo(s.description, 150);
@@ -1244,7 +1256,7 @@ function skillTitleCandidates(s) {
 const SKILL_TITLES = (() => {
   const fits = (t) => t.length <= TITLE_MAX;
   const chosen = new Map();
-  for (const s of featured) {
+  for (const s of data.skills.filter(s => s.featured || s.full_page)) {
     if (s.display_name) { chosen.set(s.id, s.display_name); continue; }
     const c = skillTitleCandidates(s);
     chosen.set(s.id, [...c.preferred, ...c.last].find(fits));
@@ -1254,7 +1266,7 @@ const SKILL_TITLES = (() => {
   for (const ids of taken.values()) {
     if (ids.length < 2) continue;
     for (const id of ids) {
-      const s = featured.find((o) => o.id === id);
+      const s = data.skills.find((o) => o.id === id);
       const c = skillTitleCandidates(s);
       const t = [...c.preferred, ...c.distinct].find((x) => fits(x) && !(taken.get(x.toLowerCase()) || []).some((o) => o !== id));
       if (!t) throw new Error(`no unique title fits for ${id}`);
@@ -1771,7 +1783,7 @@ ${relatedRepos.map((o) => `          <a class="link-row" href="${rel(here, o.tar
     mainEntity: {
       "@type": "ItemList",
       numberOfItems: r.skills.length,
-      itemListElement: r.skills.slice(0, 50).map((s, i) => ({ "@type": "ListItem", position: i + 1, name: displayName(s), url: s.featured ? url(skillPath(s)) : s.folder_url })),
+      itemListElement: r.skills.slice(0, 50).map((s, i) => ({ "@type": "ListItem", position: i + 1, name: displayName(s), url: (s.featured || s.full_page) ? url(skillPath(s)) : s.folder_url })),
     },
   };
   if (r.official) collection.about.author = { "@type": "Organization", name: r.publisher, url: `https://github.com/${r.owner}` };
@@ -1817,7 +1829,7 @@ function topPicks(c, feat) {
 // Where a table row's name points: the full skill page, else the row on its
 // repository page, else the skill folder on GitHub.
 function listItemUrl(s) {
-  if (s.featured) return url(skillPath(s));
+  if (s.featured || s.full_page) return url(skillPath(s));
   const r = repos.get(s.repo_slug);
   return r.hasPage ? `${url(r.target)}#${s.slug}` : s.folder_url;
 }
@@ -2153,7 +2165,7 @@ ${servicesCta("task", cats[0], here)}
           "@id": `${url(here)}#list`,
           name: `Claude Code skills for ${t.job.topic}`,
           numberOfItems: t.rows.length,
-          itemListElement: t.rows.map((s, i) => ({ "@type": "ListItem", position: i + 1, name: displayName(s), url: s.featured ? url(skillPath(s)) : s.folder_url })),
+          itemListElement: t.rows.map((s, i) => ({ "@type": "ListItem", position: i + 1, name: displayName(s), url: (s.featured || s.full_page) ? url(skillPath(s)) : s.folder_url })),
         },
       },
       bc.ld,
@@ -2390,7 +2402,9 @@ function renderHub() {
   files.set("directory/search-index.json", JSON.stringify(discovery.map((s) => ({
     name: displayName(s), ...(s.display_name ? { slug: s.name } : {}), repo: s.repo, description: s.summary || trimTo(s.description, 180),
     category: s.category, label: catBySlug.get(s.category).label, license: s.license,
-    grade: s.grade, score: s.score, href: listingTarget(s).replace(BASE, ""), full: s.featured,
+    grade: s.grade, score: s.score, href: listingTarget(s).replace(BASE, ""), full: s.featured || s.full_page,
+    install: licenseKind(s) === "restricted" ? null : `npx skills add ${shq(skillTreeUrl(s))}`,
+    install_reviewed: Boolean(s.install),
     report: `/${skillPath(s)}report.json`, snapshot: snapshot.date, method: SCORE_METHOD,
     id: s.id, lane: s.lane, flags: s.flags, topics: (TOPICS_BY_SKILL.get(s.id) || []).map((t) => t.topic.id), listed: s.listed_since, updated: s.commit_date,
     installs: installsFor(s)?.installs ?? null,
@@ -3153,7 +3167,7 @@ function pickTitle(candidates, label) {
   return t;
 }
 const listingHref = (here, s) => {
-  if (s.featured) return rel(here, skillPath(s));
+  if (s.featured || s.full_page) return rel(here, skillPath(s));
   const r = repos.get(s.repo_slug);
   return r.hasPage ? `${rel(here, r.target)}#${s.slug}` : s.folder_url;
 };
@@ -4084,6 +4098,16 @@ ${faq.html}`;
 }
 
 // ------------------------------------------------------------------ compare, API, publishers
+let GROWTH_MODULE = null;
+let COMPARISON_PLAN = [];
+if (GROWTH) {
+  GROWTH_MODULE = await import('./directory/growth.mjs');
+  COMPARISON_PLAN = GROWTH_MODULE.comparisonPairs(TOPICS, installsFor);
+}
+function staticComparisonsPanel(here) {
+  return `<section class="panel"><h2>Compare skills for the same task</h2><p>Saved comparisons with score components, licenses and source links. Read any comparison without JavaScript.</p><div class="links">${COMPARISON_PLAN.map(p => `<a class="link-row" href="${rel(here, `directory/compare/skills/${p.slug}/`)}"><b>${esc(displayName(p.a))} vs ${esc(displayName(p.b))}</b><span>${esc(p.a.repo)} · ${esc(p.b.repo)} · ${esc(p.topics[0].name)}</span></a>`).join('')}</div></section>`;
+}
+
 
 function renderCompare() {
   const here = COMPARE_PATH;
@@ -4105,7 +4129,7 @@ function renderCompare() {
       <section class="panel" aria-labelledby="compare-how-title">
         <h2 id="compare-how-title">What the comparison shows</h2>
         <p>Each column reads the skill's record from the ${longDate(data.generated)} snapshot: the Suede Skill Check score and the points behind it, the letter grade, the license and cost lane, the capability flags, the topics it is listed under, its repository and the dates it was listed and last changed. Ranked task pages do the same for a whole job: <a href="${rel(here, TASKS_PATH)}">skills by task</a>.</p>
-      </section>${versusPanel(here)}`;
+      </section>${GROWTH ? staticComparisonsPanel(here) : ""}${versusPanel(here)}`;
   const title = "Compare Agent Skills Side by Side | Suede AI";
   const description = "Compare two or three listed agent skills side by side: Suede Skill Check scores by component, licenses, cost lanes, capabilities and topics.";
   files.set(`${here}index.html`, page({
@@ -4382,6 +4406,8 @@ function renderApi() {
     ["Quality badges", `${host}/${skillPath(sample).replace(/^directory\//, "")}score.svg`, "score.svg and badge.svg per listing. Skills scoring 80 to 99 get the numeric and letter shields; others serve the general listing badge."],
     INSTALLS ? ["Install snapshot", `${host}/installs.json`, `Install counts for ${fmt(INSTALLS_MATCHED)} listed skills as published by skills.sh, with the fetch date and the method. The directory measures no installs of its own.`] : null,
     ["Kinds", `${host}/kinds.json`, "The plugins, Grok, MCP server and rules listings as one JSON document."],
+    GROWTH ? ["Finder skill", `${host}/finder/`, "Install the read-only directory search skill for Claude Code, Codex or Cursor."] : null,
+    GROWTH ? ["State of Agent Skills", `${host}/state-of-agent-skills/data.json`, "Snapshot-based grade distribution, category and license counts, and score-component gaps; Suede AI excluded."] : null,
     ["RSS feed", `${host}/feed.xml`, "New listings and guides, RSS 2.0."],
     ["llms.txt", `${host}/llms.txt`, "The directory described for answer engines, with every browse page."],
     ["Sitemap", `${host}/sitemap.xml`, "Every indexable page with its last-modified date."],
@@ -4517,6 +4543,10 @@ if (KINDS.length) files.set("directory/kinds.json", `${JSON.stringify({ updated:
 if (INSTALLS) files.set("directory/installs.json", `${JSON.stringify({ source: INSTALLS.source, fetched: INSTALLS.fetched, all_time_total: INSTALLS.all_time_total, listed_matches: INSTALLS_MATCHED, skills: Object.fromEntries(data.skills.filter((x) => installsFor(x)).map((x) => [installKey(x), installsFor(x).installs])) }, null, 1)}\n`);
 for (const r of repos.values()) if (r.hasPage) renderRepo(r);
 for (const s of featured) renderSkill(s);
+if (GROWTH_MODULE) GROWTH_MODULE.renderGrowth({ root: repoRoot, files, data, page, crumbs, rel, url, esc, fmt, setKeywords,
+  pageDate: PAGE_DATE, publisher: PUBLISHER_REF, directoryRef: DIRECTORY_REF, skillPath, listingTarget, reportPanel,
+  qualityBadgeBlock, installSection, factsTable, skillTitle, servicesCta, publisherClaim, installsFor, installsDate: INSTALLS?.fetched,
+  topics: TOPICS, comparisonPlan: COMPARISON_PLAN, newsletter: NEWSLETTER, skillReport });
 for (const s of data.skills) files.set(`${skillPath(s)}report.json`, JSON.stringify(skillReport(s)) + "\n");
 // Quality shields only for listed skills scoring 80-99. A listed skill below
 // 80 keeps valid badge.svg and score.svg URLs, which serve the general listing

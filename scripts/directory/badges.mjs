@@ -50,7 +50,7 @@ export function qualifies(s) {
 const slugify = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '') || 'skill';
 export function listingTarget(s) {
   const repoSlug = s.repo.split('/').map(slugify).join('/');
-  return `${BASE}/directory/${repoSlug}/${s.featured ? `${s.slug}/` : `#${s.slug}`}`;
+  return `${BASE}/directory/${repoSlug}/${(s.featured || s.full_page) ? `${s.slug}/` : `#${s.slug}`}`;
 }
 export function badgePair(s) {
   if (!qualifies(s)) throw new Error('Only eligible, scored listings receive quality badges');

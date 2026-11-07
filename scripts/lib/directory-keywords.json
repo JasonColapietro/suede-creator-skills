@@ -398,6 +398,11 @@
   "document and office file agent skills",
   "SKILL.md"
  ],
+ "directory/anthropics/skills/frontend-design/index.html": [
+  "frontend-design skill by anthropics/skills",
+  "frontend-design skills",
+  "agent skill assessment"
+ ],
  "directory/anthropics/skills/index.html": [
   "anthropics/skills skills",
   "skills skills",
@@ -405,6 +410,11 @@
   "skills claude skills",
   "document and office file agent skills",
   "agent skills directory"
+ ],
+ "directory/anthropics/skills/internal-comms/index.html": [
+  "internal-comms skill by anthropics/skills",
+  "writing-content skills",
+  "agent skill assessment"
  ],
  "directory/anthropics/skills/mcp-builder/index.html": [
   "mcp-builder skill by anthropics",
@@ -463,6 +473,11 @@
   "video image and audio agent skills",
   "SKILL.md"
  ],
+ "directory/anthropics/skills/theme-factory/index.html": [
+  "theme-factory skill by anthropics/skills",
+  "frontend-design skills",
+  "agent skill assessment"
+ ],
  "directory/anthropics/skills/web-artifacts-builder/index.html": [
   "web-artifacts-builder skill by anthropics",
   "web-artifacts-builder skill",
@@ -471,6 +486,11 @@
   "anthropics skills",
   "frontend and design agent skills",
   "SKILL.md"
+ ],
+ "directory/anthropics/skills/webapp-testing/index.html": [
+  "webapp-testing skill by anthropics/skills",
+  "testing-qa skills",
+  "agent skill assessment"
  ],
  "directory/anthropics/skills/xlsx/index.html": [
   "xlsx skill by anthropics",
@@ -765,6 +785,16 @@
   "AI agent agent skills",
   "SKILL.md"
  ],
+ "directory/aws/agent-toolkit-for-aws/agents-deploy/index.html": [
+  "agents-deploy skill by aws/agent-toolkit-for-aws",
+  "devops-cloud skills",
+  "agent skill assessment"
+ ],
+ "directory/aws/agent-toolkit-for-aws/agents-get-started/index.html": [
+  "agents-get-started skill by aws/agent-toolkit-for-aws",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
  "directory/aws/agent-toolkit-for-aws/index.html": [
   "aws/agent-toolkit-for-aws skills",
   "agent-toolkit-for-aws skills",
@@ -993,6 +1023,11 @@
   "video image and audio agent skills",
   "SKILL.md"
  ],
+ "directory/browser-use/browser-use/browser-use/index.html": [
+  "browser-use skill by browser-use/browser-use",
+  "testing-qa skills",
+  "agent skill assessment"
+ ],
  "directory/browser-use/browser-use/index.html": [
   "browser-use/browser-use skills",
   "browser-use skills",
@@ -1148,6 +1183,11 @@
   "security agent skills",
   "SKILL.md"
  ],
+ "directory/cloudflare/skills/agents-sdk/index.html": [
+  "agents-sdk skill by cloudflare/skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
  "directory/cloudflare/skills/basin/index.html": [
   "basin skill by cloudflare",
   "basin skill",
@@ -1166,6 +1206,21 @@
   "DevOps and cloud agent skills",
   "SKILL.md"
  ],
+ "directory/cloudflare/skills/cloudflare-email-service/index.html": [
+  "cloudflare-email-service skill by cloudflare/skills",
+  "devops-cloud skills",
+  "agent skill assessment"
+ ],
+ "directory/cloudflare/skills/cloudflare-one-migrations/index.html": [
+  "cloudflare-one-migrations skill by cloudflare/skills",
+  "security skills",
+  "agent skill assessment"
+ ],
+ "directory/cloudflare/skills/cloudflare-one/index.html": [
+  "cloudflare-one skill by cloudflare/skills",
+  "security skills",
+  "agent skill assessment"
+ ],
  "directory/cloudflare/skills/cloudflare/index.html": [
   "cloudflare skill by cloudflare",
   "cloudflare skill",
@@ -1174,6 +1229,11 @@
   "cloudflare skills",
   "DevOps and cloud agent skills",
   "SKILL.md"
+ ],
+ "directory/cloudflare/skills/durable-objects/index.html": [
+  "durable-objects skill by cloudflare/skills",
+  "devops-cloud skills",
+  "agent skill assessment"
  ],
  "directory/cloudflare/skills/index.html": [
   "cloudflare/skills skills",
@@ -1201,6 +1261,11 @@
   "DevOps and cloud agent skills",
   "SKILL.md"
  ],
+ "directory/cloudflare/skills/sandbox-migrate-to-next/index.html": [
+  "sandbox-migrate-to-next skill by cloudflare/skills",
+  "devops-cloud skills",
+  "agent skill assessment"
+ ],
  "directory/cloudflare/skills/sandbox-next/index.html": [
   "sandbox-next skill by cloudflare",
   "sandbox-next skill",
@@ -1210,6 +1275,21 @@
   "DevOps and cloud agent skills",
   "SKILL.md"
  ],
+ "directory/cloudflare/skills/sandbox-stable/index.html": [
+  "sandbox-stable skill by cloudflare/skills",
+  "devops-cloud skills",
+  "agent skill assessment"
+ ],
+ "directory/cloudflare/skills/turnstile-spin/index.html": [
+  "turnstile-spin skill by cloudflare/skills",
+  "security skills",
+  "agent skill assessment"
+ ],
+ "directory/cloudflare/skills/web-perf/index.html": [
+  "web-perf skill by cloudflare/skills",
+  "frontend-design skills",
+  "agent skill assessment"
+ ],
  "directory/cloudflare/skills/workers-best-practices/index.html": [
   "workers-best-practices skill by cloudflare",
   "workers-best-practices skill",
@@ -1218,6 +1298,16 @@
   "cloudflare skills",
   "DevOps and cloud agent skills",
   "SKILL.md"
+ ],
+ "directory/cloudflare/skills/workers-profiling/index.html": [
+  "workers-profiling skill by cloudflare/skills",
+  "devops-cloud skills",
+  "agent skill assessment"
+ ],
+ "directory/cloudflare/skills/wrangler/index.html": [
+  "wrangler skill by cloudflare/skills",
+  "devops-cloud skills",
+  "agent skill assessment"
  ],
  "directory/code-review-quality/index.html": [
   "code review agent skills",
@@ -1307,6 +1397,256 @@
   "sites like skills.sh",
   "skills.sh competitors",
   "agent skill directories"
+ ],
+ "directory/compare/skills/azure-app-onboard-prereq-vs-vercel-cli-with-tokens-bac28173/index.html": [
+  "microsoft/azure-skills/azure-app-onboard-prereq vs vercel-labs/agent-skills/vercel-cli-with-tokens",
+  "compare agent skills",
+  "agent skill quality"
+ ],
+ "directory/compare/skills/azure-app-onboard-vs-vercel-cli-with-tokens-54adc03c/index.html": [
+  "microsoft/azure-skills/azure-app-onboard vs vercel-labs/agent-skills/vercel-cli-with-tokens",
+  "compare agent skills",
+  "agent skill quality"
+ ],
+ "directory/compare/skills/azure-deploy-vs-vercel-cli-with-tokens-22170c7c/index.html": [
+  "microsoft/azure-skills/azure-deploy vs vercel-labs/agent-skills/vercel-cli-with-tokens",
+  "compare agent skills",
+  "agent skill quality"
+ ],
+ "directory/compare/skills/brand-guidelines-vs-impeccable-fabab654/index.html": [
+  "anthropics/skills/brand-guidelines vs pbakaus/impeccable/impeccable",
+  "compare agent skills",
+  "agent skill quality"
+ ],
+ "directory/compare/skills/browser-use-vs-agent-browser-402f62bd/index.html": [
+  "browser-use/browser-use/browser-use vs vercel-labs/agent-browser/agent-browser",
+  "compare agent skills",
+  "agent skill quality"
+ ],
+ "directory/compare/skills/cloudflare-email-service-vs-cold-email-36b2841a/index.html": [
+  "cloudflare/skills/cloudflare-email-service vs coreyhaines31/marketingskills/cold-email",
+  "compare agent skills",
+  "agent skill quality"
+ ],
+ "directory/compare/skills/cloudflare-email-service-vs-emails-99cd2bb9/index.html": [
+  "cloudflare/skills/cloudflare-email-service vs coreyhaines31/marketingskills/emails",
+  "compare agent skills",
+  "agent skill quality"
+ ],
+ "directory/compare/skills/cloudflare-one-migrations-vs-azure-compliance-80e269ad/index.html": [
+  "cloudflare/skills/cloudflare-one-migrations vs microsoft/azure-skills/azure-compliance",
+  "compare agent skills",
+  "agent skill quality"
+ ],
+ "directory/compare/skills/cloudflare-one-vs-azure-compliance-1585323e/index.html": [
+  "cloudflare/skills/cloudflare-one vs microsoft/azure-skills/azure-compliance",
+  "compare agent skills",
+  "agent skill quality"
+ ],
+ "directory/compare/skills/code-review-vs-receiving-code-review-b2894e6d/index.html": [
+  "mattpocock/skills/code-review vs obra/superpowers/receiving-code-review",
+  "compare agent skills",
+  "agent skill quality"
+ ],
+ "directory/compare/skills/code-review-vs-requesting-code-review-2016073f/index.html": [
+  "mattpocock/skills/code-review vs obra/superpowers/requesting-code-review",
+  "compare agent skills",
+  "agent skill quality"
+ ],
+ "directory/compare/skills/copy-editing-vs-writing-guidelines-6233f56b/index.html": [
+  "coreyhaines31/marketingskills/copy-editing vs vercel-labs/agent-skills/writing-guidelines",
+  "compare agent skills",
+  "agent skill quality"
+ ],
+ "directory/compare/skills/expo-dev-client-vs-vercel-react-native-skills-4842e69b/index.html": [
+  "expo/skills/expo-dev-client vs vercel-labs/agent-skills/vercel-react-native-skills",
+  "compare agent skills",
+  "agent skill quality"
+ ],
+ "directory/compare/skills/git-guardrails-claude-code-vs-entra-agent-id-3152ea6f/index.html": [
+  "mattpocock/skills/git-guardrails-claude-code vs microsoft/azure-skills/entra-agent-id",
+  "compare agent skills",
+  "agent skill quality"
+ ],
+ "directory/compare/skills/git-guardrails-claude-code-vs-finishing-a-development-branch-dab4c3fd/index.html": [
+  "mattpocock/skills/git-guardrails-claude-code vs obra/superpowers/finishing-a-development-branch",
+  "compare agent skills",
+  "agent skill quality"
+ ],
+ "directory/compare/skills/git-guardrails-claude-code-vs-using-git-worktrees-4701d69d/index.html": [
+  "mattpocock/skills/git-guardrails-claude-code vs obra/superpowers/using-git-worktrees",
+  "compare agent skills",
+  "agent skill quality"
+ ],
+ "directory/compare/skills/git-guardrails-claude-code-vs-using-superpowers-257e457d/index.html": [
+  "mattpocock/skills/git-guardrails-claude-code vs obra/superpowers/using-superpowers",
+  "compare agent skills",
+  "agent skill quality"
+ ],
+ "directory/compare/skills/internal-comms-vs-writing-guidelines-012bc9de/index.html": [
+  "anthropics/skills/internal-comms vs vercel-labs/agent-skills/writing-guidelines",
+  "compare agent skills",
+  "agent skill quality"
+ ],
+ "directory/compare/skills/launch-vs-product-launch-video-af2c6bad/index.html": [
+  "coreyhaines31/marketingskills/launch vs heygen-com/hyperframes/product-launch-video",
+  "compare agent skills",
+  "agent skill quality"
+ ],
+ "directory/compare/skills/marketing-ideas-vs-product-launch-video-d20bd91c/index.html": [
+  "coreyhaines31/marketingskills/marketing-ideas vs heygen-com/hyperframes/product-launch-video",
+  "compare agent skills",
+  "agent skill quality"
+ ],
+ "directory/compare/skills/marketing-psychology-vs-product-launch-video-e510c053/index.html": [
+  "coreyhaines31/marketingskills/marketing-psychology vs heygen-com/hyperframes/product-launch-video",
+  "compare agent skills",
+  "agent skill quality"
+ ],
+ "directory/compare/skills/mcp-builder-vs-azure-aigateway-b3d5df36/index.html": [
+  "anthropics/skills/mcp-builder vs microsoft/azure-skills/azure-aigateway",
+  "compare agent skills",
+  "agent skill quality"
+ ],
+ "directory/compare/skills/migrate-to-shoehorn-vs-test-driven-development-b6ee2004/index.html": [
+  "mattpocock/skills/migrate-to-shoehorn vs obra/superpowers/test-driven-development",
+  "compare agent skills",
+  "agent skill quality"
+ ],
+ "directory/compare/skills/neon-postgres-vs-supabase-9f8a867d/index.html": [
+  "neondatabase/agent-skills/neon-postgres vs supabase/agent-skills/supabase",
+  "compare agent skills",
+  "agent skill quality"
+ ],
+ "directory/compare/skills/neon-postgres-vs-supabase-postgres-best-practices-a2953672/index.html": [
+  "neondatabase/agent-skills/neon-postgres vs supabase/agent-skills/supabase-postgres-best-practices",
+  "compare agent skills",
+  "agent skill quality"
+ ],
+ "directory/compare/skills/neon-vs-supabase-95a55d62/index.html": [
+  "neondatabase/agent-skills/neon vs supabase/agent-skills/supabase",
+  "compare agent skills",
+  "agent skill quality"
+ ],
+ "directory/compare/skills/neon-vs-supabase-postgres-best-practices-51b9abf4/index.html": [
+  "neondatabase/agent-skills/neon vs supabase/agent-skills/supabase-postgres-best-practices",
+  "compare agent skills",
+  "agent skill quality"
+ ],
+ "directory/compare/skills/product-marketing-vs-product-launch-video-7cee59d8/index.html": [
+  "coreyhaines31/marketingskills/product-marketing vs heygen-com/hyperframes/product-launch-video",
+  "compare agent skills",
+  "agent skill quality"
+ ],
+ "directory/compare/skills/python-appservice-deploy-vs-vercel-cli-with-tokens-cef6c832/index.html": [
+  "microsoft/azure-skills/python-appservice-deploy vs vercel-labs/agent-skills/vercel-cli-with-tokens",
+  "compare agent skills",
+  "agent skill quality"
+ ],
+ "directory/compare/skills/security-audit-vs-azure-compliance-0739a8e1/index.html": [
+  "cloudflare/security-audit-skill/security-audit vs microsoft/azure-skills/azure-compliance",
+  "compare agent skills",
+  "agent skill quality"
+ ],
+ "directory/compare/skills/security-audit-vs-cloudflare-one-9bfd7cd0/index.html": [
+  "cloudflare/security-audit-skill/security-audit vs cloudflare/skills/cloudflare-one",
+  "compare agent skills",
+  "agent skill quality"
+ ],
+ "directory/compare/skills/security-audit-vs-cloudflare-one-migrations-dfd6916b/index.html": [
+  "cloudflare/security-audit-skill/security-audit vs cloudflare/skills/cloudflare-one-migrations",
+  "compare agent skills",
+  "agent skill quality"
+ ],
+ "directory/compare/skills/setup-pre-commit-vs-finishing-a-development-branch-61bb8169/index.html": [
+  "mattpocock/skills/setup-pre-commit vs obra/superpowers/finishing-a-development-branch",
+  "compare agent skills",
+  "agent skill quality"
+ ],
+ "directory/compare/skills/setup-pre-commit-vs-test-driven-development-a1a41272/index.html": [
+  "mattpocock/skills/setup-pre-commit vs obra/superpowers/test-driven-development",
+  "compare agent skills",
+  "agent skill quality"
+ ],
+ "directory/compare/skills/setup-pre-commit-vs-using-git-worktrees-5fd1df23/index.html": [
+  "mattpocock/skills/setup-pre-commit vs obra/superpowers/using-git-worktrees",
+  "compare agent skills",
+  "agent skill quality"
+ ],
+ "directory/compare/skills/skill-creator-vs-find-skills-2937cef9/index.html": [
+  "anthropics/skills/skill-creator vs vercel-labs/skills/find-skills",
+  "compare agent skills",
+  "agent skill quality"
+ ],
+ "directory/compare/skills/skill-creator-vs-writing-for-agents-ea9a2a31/index.html": [
+  "anthropics/skills/skill-creator vs mattpocock/skills/writing-for-agents",
+  "compare agent skills",
+  "agent skill quality"
+ ],
+ "directory/compare/skills/skill-creator-vs-writing-skills-135c8340/index.html": [
+  "anthropics/skills/skill-creator vs obra/superpowers/writing-skills",
+  "compare agent skills",
+  "agent skill quality"
+ ],
+ "directory/compare/skills/tdd-vs-test-driven-development-0825da13/index.html": [
+  "mattpocock/skills/tdd vs obra/superpowers/test-driven-development",
+  "compare agent skills",
+  "agent skill quality"
+ ],
+ "directory/compare/skills/ui-ux-pro-max-vs-impeccable-ddd1f24b/index.html": [
+  "nextlevelbuilder/ui-ux-pro-max-skill/ui-ux-pro-max vs pbakaus/impeccable/impeccable",
+  "compare agent skills",
+  "agent skill quality"
+ ],
+ "directory/compare/skills/web-artifacts-builder-vs-vercel-composition-patterns-77a1eeaa/index.html": [
+  "anthropics/skills/web-artifacts-builder vs vercel-labs/agent-skills/vercel-composition-patterns",
+  "compare agent skills",
+  "agent skill quality"
+ ],
+ "directory/compare/skills/web-artifacts-builder-vs-vercel-react-best-practices-612f1368/index.html": [
+  "anthropics/skills/web-artifacts-builder vs vercel-labs/agent-skills/vercel-react-best-practices",
+  "compare agent skills",
+  "agent skill quality"
+ ],
+ "directory/compare/skills/web-artifacts-builder-vs-vercel-react-view-transitions-d8707862/index.html": [
+  "anthropics/skills/web-artifacts-builder vs vercel-labs/agent-skills/vercel-react-view-transitions",
+  "compare agent skills",
+  "agent skill quality"
+ ],
+ "directory/compare/skills/webapp-testing-vs-migrate-to-shoehorn-1adaaf6c/index.html": [
+  "anthropics/skills/webapp-testing vs mattpocock/skills/migrate-to-shoehorn",
+  "compare agent skills",
+  "agent skill quality"
+ ],
+ "directory/compare/skills/webapp-testing-vs-setup-pre-commit-60dcad04/index.html": [
+  "anthropics/skills/webapp-testing vs mattpocock/skills/setup-pre-commit",
+  "compare agent skills",
+  "agent skill quality"
+ ],
+ "directory/compare/skills/webapp-testing-vs-tdd-81398eb3/index.html": [
+  "anthropics/skills/webapp-testing vs mattpocock/skills/tdd",
+  "compare agent skills",
+  "agent skill quality"
+ ],
+ "directory/compare/skills/webapp-testing-vs-test-driven-development-65cf92c5/index.html": [
+  "anthropics/skills/webapp-testing vs obra/superpowers/test-driven-development",
+  "compare agent skills",
+  "agent skill quality"
+ ],
+ "directory/compare/skills/writing-for-agents-vs-find-skills-e2cfaa26/index.html": [
+  "mattpocock/skills/writing-for-agents vs vercel-labs/skills/find-skills",
+  "compare agent skills",
+  "agent skill quality"
+ ],
+ "directory/compare/skills/writing-for-agents-vs-writing-skills-55eb73b9/index.html": [
+  "mattpocock/skills/writing-for-agents vs obra/superpowers/writing-skills",
+  "compare agent skills",
+  "agent skill quality"
+ ],
+ "directory/compare/skills/writing-skills-vs-find-skills-228f93a2/index.html": [
+  "obra/superpowers/writing-skills vs vercel-labs/skills/find-skills",
+  "compare agent skills",
+  "agent skill quality"
  ],
  "directory/compare/skillsmp-alternatives/index.html": [
   "SkillsMP alternatives",
@@ -1560,6 +1900,61 @@
   "marketing and SEO agent skills",
   "SKILL.md"
  ],
+ "directory/coreyhaines31/marketingskills/competitors/index.html": [
+  "competitors skill by coreyhaines31/marketingskills",
+  "marketing-seo skills",
+  "agent skill assessment"
+ ],
+ "directory/coreyhaines31/marketingskills/content-strategy/index.html": [
+  "content-strategy skill by coreyhaines31/marketingskills",
+  "marketing-seo skills",
+  "agent skill assessment"
+ ],
+ "directory/coreyhaines31/marketingskills/copy-editing/index.html": [
+  "copy-editing skill by coreyhaines31/marketingskills",
+  "marketing-seo skills",
+  "agent skill assessment"
+ ],
+ "directory/coreyhaines31/marketingskills/copywriting/index.html": [
+  "copywriting skill by coreyhaines31/marketingskills",
+  "marketing-seo skills",
+  "agent skill assessment"
+ ],
+ "directory/coreyhaines31/marketingskills/cro/index.html": [
+  "cro skill by coreyhaines31/marketingskills",
+  "marketing-seo skills",
+  "agent skill assessment"
+ ],
+ "directory/coreyhaines31/marketingskills/customer-research/index.html": [
+  "customer-research skill by coreyhaines31/marketingskills",
+  "product-management skills",
+  "agent skill assessment"
+ ],
+ "directory/coreyhaines31/marketingskills/directory-submissions/index.html": [
+  "directory-submissions skill by coreyhaines31/marketingskills",
+  "marketing-seo skills",
+  "agent skill assessment"
+ ],
+ "directory/coreyhaines31/marketingskills/emails/index.html": [
+  "emails skill by coreyhaines31/marketingskills",
+  "marketing-seo skills",
+  "agent skill assessment"
+ ],
+ "directory/coreyhaines31/marketingskills/events/index.html": [
+  "events skill by coreyhaines31/marketingskills",
+  "marketing-seo skills",
+  "agent skill assessment"
+ ],
+ "directory/coreyhaines31/marketingskills/free-tools/index.html": [
+  "free-tools skill by coreyhaines31/marketingskills",
+  "marketing-seo skills",
+  "agent skill assessment"
+ ],
+ "directory/coreyhaines31/marketingskills/image/index.html": [
+  "image skill by coreyhaines31/marketingskills",
+  "media-creative skills",
+  "agent skill assessment"
+ ],
  "directory/coreyhaines31/marketingskills/index.html": [
   "coreyhaines31/marketingskills skills",
   "marketingskills skills",
@@ -1567,6 +1962,136 @@
   "marketingskills claude skills",
   "marketing and SEO agent skills",
   "agent skills directory"
+ ],
+ "directory/coreyhaines31/marketingskills/launch/index.html": [
+  "launch skill by coreyhaines31/marketingskills",
+  "marketing-seo skills",
+  "agent skill assessment"
+ ],
+ "directory/coreyhaines31/marketingskills/lead-magnets/index.html": [
+  "lead-magnets skill by coreyhaines31/marketingskills",
+  "marketing-seo skills",
+  "agent skill assessment"
+ ],
+ "directory/coreyhaines31/marketingskills/marketing-council/index.html": [
+  "marketing-council skill by coreyhaines31/marketingskills",
+  "marketing-seo skills",
+  "agent skill assessment"
+ ],
+ "directory/coreyhaines31/marketingskills/marketing-ideas/index.html": [
+  "marketing-ideas skill by coreyhaines31/marketingskills",
+  "marketing-seo skills",
+  "agent skill assessment"
+ ],
+ "directory/coreyhaines31/marketingskills/marketing-loops/index.html": [
+  "marketing-loops skill by coreyhaines31/marketingskills",
+  "marketing-seo skills",
+  "agent skill assessment"
+ ],
+ "directory/coreyhaines31/marketingskills/marketing-plan/index.html": [
+  "marketing-plan skill by coreyhaines31/marketingskills",
+  "marketing-seo skills",
+  "agent skill assessment"
+ ],
+ "directory/coreyhaines31/marketingskills/marketing-psychology/index.html": [
+  "marketing-psychology skill by coreyhaines31/marketingskills",
+  "marketing-seo skills",
+  "agent skill assessment"
+ ],
+ "directory/coreyhaines31/marketingskills/offers/index.html": [
+  "offers skill by coreyhaines31/marketingskills",
+  "marketing-seo skills",
+  "agent skill assessment"
+ ],
+ "directory/coreyhaines31/marketingskills/onboarding/index.html": [
+  "onboarding skill by coreyhaines31/marketingskills",
+  "product-management skills",
+  "agent skill assessment"
+ ],
+ "directory/coreyhaines31/marketingskills/paywalls/index.html": [
+  "paywalls skill by coreyhaines31/marketingskills",
+  "marketing-seo skills",
+  "agent skill assessment"
+ ],
+ "directory/coreyhaines31/marketingskills/popups/index.html": [
+  "popups skill by coreyhaines31/marketingskills",
+  "marketing-seo skills",
+  "agent skill assessment"
+ ],
+ "directory/coreyhaines31/marketingskills/pricing/index.html": [
+  "pricing skill by coreyhaines31/marketingskills",
+  "business-finance skills",
+  "agent skill assessment"
+ ],
+ "directory/coreyhaines31/marketingskills/product-marketing/index.html": [
+  "product-marketing skill by coreyhaines31/marketingskills",
+  "marketing-seo skills",
+  "agent skill assessment"
+ ],
+ "directory/coreyhaines31/marketingskills/programmatic-seo/index.html": [
+  "programmatic-seo skill by coreyhaines31/marketingskills",
+  "marketing-seo skills",
+  "agent skill assessment"
+ ],
+ "directory/coreyhaines31/marketingskills/prospecting/index.html": [
+  "prospecting skill by coreyhaines31/marketingskills",
+  "business-finance skills",
+  "agent skill assessment"
+ ],
+ "directory/coreyhaines31/marketingskills/public-relations/index.html": [
+  "public-relations skill by coreyhaines31/marketingskills",
+  "marketing-seo skills",
+  "agent skill assessment"
+ ],
+ "directory/coreyhaines31/marketingskills/referrals/index.html": [
+  "referrals skill by coreyhaines31/marketingskills",
+  "marketing-seo skills",
+  "agent skill assessment"
+ ],
+ "directory/coreyhaines31/marketingskills/revops/index.html": [
+  "revops skill by coreyhaines31/marketingskills",
+  "business-finance skills",
+  "agent skill assessment"
+ ],
+ "directory/coreyhaines31/marketingskills/sales-enablement/index.html": [
+  "sales-enablement skill by coreyhaines31/marketingskills",
+  "business-finance skills",
+  "agent skill assessment"
+ ],
+ "directory/coreyhaines31/marketingskills/schema/index.html": [
+  "schema skill by coreyhaines31/marketingskills",
+  "marketing-seo skills",
+  "agent skill assessment"
+ ],
+ "directory/coreyhaines31/marketingskills/seo-audit/index.html": [
+  "seo-audit skill by coreyhaines31/marketingskills",
+  "marketing-seo skills",
+  "agent skill assessment"
+ ],
+ "directory/coreyhaines31/marketingskills/signup/index.html": [
+  "signup skill by coreyhaines31/marketingskills",
+  "marketing-seo skills",
+  "agent skill assessment"
+ ],
+ "directory/coreyhaines31/marketingskills/site-architecture/index.html": [
+  "site-architecture skill by coreyhaines31/marketingskills",
+  "marketing-seo skills",
+  "agent skill assessment"
+ ],
+ "directory/coreyhaines31/marketingskills/sms/index.html": [
+  "sms skill by coreyhaines31/marketingskills",
+  "marketing-seo skills",
+  "agent skill assessment"
+ ],
+ "directory/coreyhaines31/marketingskills/social/index.html": [
+  "social skill by coreyhaines31/marketingskills",
+  "marketing-seo skills",
+  "agent skill assessment"
+ ],
+ "directory/coreyhaines31/marketingskills/video/index.html": [
+  "video skill by coreyhaines31/marketingskills",
+  "media-creative skills",
+  "agent skill assessment"
  ],
  "directory/costory-io/costory-finops-mcp-skills/bigquery/index.html": [
   "bigquery skill by costory-io",
@@ -1716,6 +2241,11 @@
   "writing and editing agent skills",
   "SKILL.md"
  ],
+ "directory/danjdewhurst/story-skills/discovery-drafting/index.html": [
+  "discovery-drafting skill by danjdewhurst/story-skills",
+  "writing-content skills",
+  "agent skill assessment"
+ ],
  "directory/danjdewhurst/story-skills/editorial-review/index.html": [
   "editorial-review skill by danjdewhurst",
   "editorial-review skill",
@@ -1733,6 +2263,11 @@
   "danjdewhurst skills",
   "writing and editing agent skills",
   "SKILL.md"
+ ],
+ "directory/danjdewhurst/story-skills/genre-craft/index.html": [
+  "genre-craft skill by danjdewhurst/story-skills",
+  "writing-content skills",
+  "agent skill assessment"
  ],
  "directory/danjdewhurst/story-skills/index.html": [
   "danjdewhurst/story-skills skills",
@@ -1796,6 +2331,21 @@
   "writing and editing agent skills",
   "SKILL.md"
  ],
+ "directory/danjdewhurst/story-skills/scene-craft/index.html": [
+  "scene-craft skill by danjdewhurst/story-skills",
+  "writing-content skills",
+  "agent skill assessment"
+ ],
+ "directory/danjdewhurst/story-skills/series-continuity/index.html": [
+  "series-continuity skill by danjdewhurst/story-skills",
+  "writing-content skills",
+  "agent skill assessment"
+ ],
+ "directory/danjdewhurst/story-skills/story-init/index.html": [
+  "story-init skill by danjdewhurst/story-skills",
+  "writing-content skills",
+  "agent skill assessment"
+ ],
  "directory/danjdewhurst/story-skills/story-maintenance/index.html": [
   "story-maintenance skill by danjdewhurst",
   "story-maintenance skill",
@@ -1804,6 +2354,31 @@
   "danjdewhurst skills",
   "writing and editing agent skills",
   "SKILL.md"
+ ],
+ "directory/danjdewhurst/story-skills/submission/index.html": [
+  "submission skill by danjdewhurst/story-skills",
+  "writing-content skills",
+  "agent skill assessment"
+ ],
+ "directory/danjdewhurst/story-skills/theme-craft/index.html": [
+  "theme-craft skill by danjdewhurst/story-skills",
+  "writing-content skills",
+  "agent skill assessment"
+ ],
+ "directory/danjdewhurst/story-skills/verse-craft/index.html": [
+  "verse-craft skill by danjdewhurst/story-skills",
+  "writing-content skills",
+  "agent skill assessment"
+ ],
+ "directory/danjdewhurst/story-skills/voice-style/index.html": [
+  "voice-style skill by danjdewhurst/story-skills",
+  "writing-content skills",
+  "agent skill assessment"
+ ],
+ "directory/danjdewhurst/story-skills/worldbuilding/index.html": [
+  "worldbuilding skill by danjdewhurst/story-skills",
+  "writing-content skills",
+  "agent skill assessment"
  ],
  "directory/data-databases/index.html": [
   "data and database agent skills",
@@ -1957,6 +2532,26 @@
   "best document and office file skills",
   "agent skills directory"
  ],
+ "directory/eduardo-sl/go-agent-skills/git-commit/index.html": [
+  "git-commit skill by eduardo-sl/go-agent-skills",
+  "developer-tools skills",
+  "agent skill assessment"
+ ],
+ "directory/eduardo-sl/go-agent-skills/go-api-design/index.html": [
+  "go-api-design skill by eduardo-sl/go-agent-skills",
+  "developer-tools skills",
+  "agent skill assessment"
+ ],
+ "directory/eduardo-sl/go-agent-skills/go-binary-size/index.html": [
+  "go-binary-size skill by eduardo-sl/go-agent-skills",
+  "developer-tools skills",
+  "agent skill assessment"
+ ],
+ "directory/eduardo-sl/go-agent-skills/go-build-release/index.html": [
+  "go-build-release skill by eduardo-sl/go-agent-skills",
+  "devops-cloud skills",
+  "agent skill assessment"
+ ],
  "directory/eduardo-sl/go-agent-skills/go-ci/index.html": [
   "go-ci skill by eduardo-sl",
   "go-ci skill",
@@ -1965,6 +2560,11 @@
   "eduardo-sl skills",
   "DevOps and cloud agent skills",
   "SKILL.md"
+ ],
+ "directory/eduardo-sl/go-agent-skills/go-cli/index.html": [
+  "go-cli skill by eduardo-sl/go-agent-skills",
+  "developer-tools skills",
+  "agent skill assessment"
  ],
  "directory/eduardo-sl/go-agent-skills/go-coding-standards/alternatives/index.html": [
   "go-coding-standards alternatives",
@@ -1999,6 +2599,16 @@
   "developer tools agent skills",
   "SKILL.md"
  ],
+ "directory/eduardo-sl/go-agent-skills/go-data-structures/index.html": [
+  "go-data-structures skill by eduardo-sl/go-agent-skills",
+  "developer-tools skills",
+  "agent skill assessment"
+ ],
+ "directory/eduardo-sl/go-agent-skills/go-database/index.html": [
+  "go-database skill by eduardo-sl/go-agent-skills",
+  "data-databases skills",
+  "agent skill assessment"
+ ],
  "directory/eduardo-sl/go-agent-skills/go-defensive-coding/index.html": [
   "go-defensive-coding skill by eduardo-sl",
   "go-defensive-coding skill",
@@ -2007,6 +2617,21 @@
   "eduardo-sl skills",
   "code review agent skills",
   "SKILL.md"
+ ],
+ "directory/eduardo-sl/go-agent-skills/go-dependency-injection/index.html": [
+  "go-dependency-injection skill by eduardo-sl/go-agent-skills",
+  "developer-tools skills",
+  "agent skill assessment"
+ ],
+ "directory/eduardo-sl/go-agent-skills/go-design-patterns/index.html": [
+  "go-design-patterns skill by eduardo-sl/go-agent-skills",
+  "developer-tools skills",
+  "agent skill assessment"
+ ],
+ "directory/eduardo-sl/go-agent-skills/go-documentation/index.html": [
+  "go-documentation skill by eduardo-sl/go-agent-skills",
+  "writing-content skills",
+  "agent skill assessment"
  ],
  "directory/eduardo-sl/go-agent-skills/go-error-handling/index.html": [
   "go-error-handling skill by eduardo-sl",
@@ -2017,6 +2642,16 @@
   "developer tools agent skills",
   "SKILL.md"
  ],
+ "directory/eduardo-sl/go-agent-skills/go-graphql/index.html": [
+  "go-graphql skill by eduardo-sl/go-agent-skills",
+  "developer-tools skills",
+  "agent skill assessment"
+ ],
+ "directory/eduardo-sl/go-agent-skills/go-grpc/index.html": [
+  "go-grpc skill by eduardo-sl/go-agent-skills",
+  "developer-tools skills",
+  "agent skill assessment"
+ ],
  "directory/eduardo-sl/go-agent-skills/go-interface-design/index.html": [
   "go-interface-design skill by eduardo-sl",
   "go-interface-design skill",
@@ -2025,6 +2660,11 @@
   "eduardo-sl skills",
   "developer tools agent skills",
   "SKILL.md"
+ ],
+ "directory/eduardo-sl/go-agent-skills/go-modernize/index.html": [
+  "go-modernize skill by eduardo-sl/go-agent-skills",
+  "developer-tools skills",
+  "agent skill assessment"
  ],
  "directory/eduardo-sl/go-agent-skills/go-naming/index.html": [
   "go-naming skill by eduardo-sl",
@@ -2035,6 +2675,16 @@
   "code review agent skills",
   "SKILL.md"
  ],
+ "directory/eduardo-sl/go-agent-skills/go-observability/index.html": [
+  "go-observability skill by eduardo-sl/go-agent-skills",
+  "devops-cloud skills",
+  "agent skill assessment"
+ ],
+ "directory/eduardo-sl/go-agent-skills/go-openapi/index.html": [
+  "go-openapi skill by eduardo-sl/go-agent-skills",
+  "developer-tools skills",
+  "agent skill assessment"
+ ],
  "directory/eduardo-sl/go-agent-skills/go-performance-review/index.html": [
   "go-performance-review skill by eduardo-sl",
   "go-performance-review skill",
@@ -2043,6 +2693,16 @@
   "eduardo-sl skills",
   "developer tools agent skills",
   "SKILL.md"
+ ],
+ "directory/eduardo-sl/go-agent-skills/go-project-layout/index.html": [
+  "go-project-layout skill by eduardo-sl/go-agent-skills",
+  "developer-tools skills",
+  "agent skill assessment"
+ ],
+ "directory/eduardo-sl/go-agent-skills/go-refactoring/index.html": [
+  "go-refactoring skill by eduardo-sl/go-agent-skills",
+  "code-review-quality skills",
+  "agent skill assessment"
  ],
  "directory/eduardo-sl/go-agent-skills/go-semantic-tools/index.html": [
   "go-semantic-tools skill by eduardo-sl",
@@ -2053,6 +2713,11 @@
   "developer tools agent skills",
   "SKILL.md"
  ],
+ "directory/eduardo-sl/go-agent-skills/go-skills-router/index.html": [
+  "go-skills-router skill by eduardo-sl/go-agent-skills",
+  "developer-tools skills",
+  "agent skill assessment"
+ ],
  "directory/eduardo-sl/go-agent-skills/go-test-quality/index.html": [
   "go-test-quality skill by eduardo-sl",
   "go-test-quality skill",
@@ -2061,6 +2726,11 @@
   "eduardo-sl skills",
   "testing and QA agent skills",
   "SKILL.md"
+ ],
+ "directory/eduardo-sl/go-agent-skills/go-test-table-driven/index.html": [
+  "go-test-table-driven skill by eduardo-sl/go-agent-skills",
+  "testing-qa skills",
+  "agent skill assessment"
  ],
  "directory/eduardo-sl/go-agent-skills/go-troubleshooting/index.html": [
   "go-troubleshooting skill by eduardo-sl",
@@ -2191,6 +2861,11 @@
   "DevOps and cloud agent skills",
   "SKILL.md"
  ],
+ "directory/expo/skills/eas-hosting/index.html": [
+  "eas-hosting skill by expo/skills",
+  "devops-cloud skills",
+  "agent skill assessment"
+ ],
  "directory/expo/skills/eas-observe/index.html": [
   "eas-observe skill by expo",
   "eas-observe skill",
@@ -2223,6 +2898,16 @@
   "expo skills",
   "DevOps and cloud agent skills",
   "SKILL.md"
+ ],
+ "directory/expo/skills/eas-workflows/index.html": [
+  "eas-workflows skill by expo/skills",
+  "devops-cloud skills",
+  "agent skill assessment"
+ ],
+ "directory/expo/skills/expo-animation/index.html": [
+  "expo-animation skill by expo/skills",
+  "frontend-design skills",
+  "agent skill assessment"
  ],
  "directory/expo/skills/expo-app-clip/alternatives/index.html": [
   "expo-app-clip alternatives",
@@ -2278,6 +2963,16 @@
   "frontend and design agent skills",
   "SKILL.md"
  ],
+ "directory/expo/skills/expo-dev-client/index.html": [
+  "expo-dev-client skill by expo/skills",
+  "developer-tools skills",
+  "agent skill assessment"
+ ],
+ "directory/expo/skills/expo-dom/index.html": [
+  "expo-dom skill by expo/skills",
+  "developer-tools skills",
+  "agent skill assessment"
+ ],
  "directory/expo/skills/expo-examples/index.html": [
   "expo-examples skill by expo",
   "expo-examples skill",
@@ -2316,6 +3011,41 @@
   "expo skills",
   "developer tools agent skills",
   "SKILL.md"
+ ],
+ "directory/expo/skills/expo-native-ui/index.html": [
+  "expo-native-ui skill by expo/skills",
+  "frontend-design skills",
+  "agent skill assessment"
+ ],
+ "directory/expo/skills/expo-overview/index.html": [
+  "expo-overview skill by expo/skills",
+  "developer-tools skills",
+  "agent skill assessment"
+ ],
+ "directory/expo/skills/expo-project-structure/index.html": [
+  "expo-project-structure skill by expo/skills",
+  "developer-tools skills",
+  "agent skill assessment"
+ ],
+ "directory/expo/skills/expo-router/index.html": [
+  "expo-router skill by expo/skills",
+  "developer-tools skills",
+  "agent skill assessment"
+ ],
+ "directory/expo/skills/expo-skill-feedback/index.html": [
+  "expo-skill-feedback skill by expo/skills",
+  "developer-tools skills",
+  "agent skill assessment"
+ ],
+ "directory/expo/skills/expo-ui/index.html": [
+  "expo-ui skill by expo/skills",
+  "frontend-design skills",
+  "agent skill assessment"
+ ],
+ "directory/expo/skills/expo-upgrade/index.html": [
+  "expo-upgrade skill by expo/skills",
+  "developer-tools skills",
+  "agent skill assessment"
  ],
  "directory/expo/skills/expo-web-to-native/alternatives/index.html": [
   "expo-web-to-native alternatives",
@@ -2444,6 +3174,11 @@
   "bundles scripts agent skills",
   "claude code skills bundles scripts",
   "bundles scripts skills for codex"
+ ],
+ "directory/finder/index.html": [
+  "find graded skills inside your agent",
+  "graded agent skills",
+  "Suede AI Skills Directory"
  ],
  "directory/firebase/skills/firebase-ai-logic-basics/index.html": [
   "firebase-ai-logic-basics skill by firebase",
@@ -3001,6 +3736,11 @@
   "productivity agent skills",
   "SKILL.md"
  ],
+ "directory/garrytan/gstack/gstack/index.html": [
+  "gstack skill by garrytan/gstack",
+  "developer-tools skills",
+  "agent skill assessment"
+ ],
  "directory/garrytan/gstack/index.html": [
   "garrytan/gstack skills",
   "gstack skills",
@@ -3158,6 +3898,31 @@
   "developer tools agent skills",
   "SKILL.md"
  ],
+ "directory/github/awesome-copilot/conventional-commit/index.html": [
+  "conventional-commit skill by github/awesome-copilot",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
+ "directory/github/awesome-copilot/documentation-writer/index.html": [
+  "documentation-writer skill by github/awesome-copilot",
+  "developer-tools skills",
+  "agent skill assessment"
+ ],
+ "directory/github/awesome-copilot/excalidraw-diagram-generator/index.html": [
+  "excalidraw-diagram-generator skill by github/awesome-copilot",
+  "media-creative skills",
+  "agent skill assessment"
+ ],
+ "directory/github/awesome-copilot/git-commit/index.html": [
+  "git-commit skill by github/awesome-copilot",
+  "developer-tools skills",
+  "agent skill assessment"
+ ],
+ "directory/github/awesome-copilot/github-issues/index.html": [
+  "github-issues skill by github/awesome-copilot",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
  "directory/github/awesome-copilot/index.html": [
   "github/awesome-copilot skills",
   "awesome-copilot skills",
@@ -3165,6 +3930,41 @@
   "awesome-copilot claude skills",
   "developer tools agent skills",
   "agent skills directory"
+ ],
+ "directory/github/awesome-copilot/java-mcp-server-generator/index.html": [
+  "java-mcp-server-generator skill by github/awesome-copilot",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
+ "directory/github/awesome-copilot/java-springboot/index.html": [
+  "java-springboot skill by github/awesome-copilot",
+  "code-review-quality skills",
+  "agent skill assessment"
+ ],
+ "directory/github/awesome-copilot/multi-stage-dockerfile/index.html": [
+  "multi-stage-dockerfile skill by github/awesome-copilot",
+  "devops-cloud skills",
+  "agent skill assessment"
+ ],
+ "directory/github/awesome-copilot/playwright-generate-test/index.html": [
+  "playwright-generate-test skill by github/awesome-copilot",
+  "testing-qa skills",
+  "agent skill assessment"
+ ],
+ "directory/github/awesome-copilot/postgresql-optimization/index.html": [
+  "postgresql-optimization skill by github/awesome-copilot",
+  "data-databases skills",
+  "agent skill assessment"
+ ],
+ "directory/github/awesome-copilot/prd/index.html": [
+  "prd skill by github/awesome-copilot",
+  "product-management skills",
+  "agent skill assessment"
+ ],
+ "directory/github/awesome-copilot/refactor/index.html": [
+  "refactor skill by github/awesome-copilot",
+  "code-review-quality skills",
+  "agent skill assessment"
  ],
  "directory/glacierphonk/naming/naming/index.html": [
   "naming skill by glacierphonk",
@@ -3175,6 +3975,16 @@
   "marketing and SEO agent skills",
   "SKILL.md"
  ],
+ "directory/google-labs-code/stitch-skills/design-md/index.html": [
+  "design-md skill by google-labs-code/stitch-skills",
+  "frontend-design skills",
+  "agent skill assessment"
+ ],
+ "directory/google-labs-code/stitch-skills/enhance-prompt/index.html": [
+  "enhance-prompt skill by google-labs-code/stitch-skills",
+  "frontend-design skills",
+  "agent skill assessment"
+ ],
  "directory/google-labs-code/stitch-skills/index.html": [
   "google-labs-code/stitch-skills skills",
   "stitch-skills skills",
@@ -3182,6 +3992,31 @@
   "stitch-skills claude skills",
   "frontend and design agent skills",
   "agent skills directory"
+ ],
+ "directory/google-labs-code/stitch-skills/remotion/index.html": [
+  "remotion skill by google-labs-code/stitch-skills",
+  "media-creative skills",
+  "agent skill assessment"
+ ],
+ "directory/google-labs-code/stitch-skills/shadcn-ui/index.html": [
+  "shadcn-ui skill by google-labs-code/stitch-skills",
+  "frontend-design skills",
+  "agent skill assessment"
+ ],
+ "directory/google-labs-code/stitch-skills/stitch-loop/index.html": [
+  "stitch-loop skill by google-labs-code/stitch-skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
+ "directory/google-labs-code/stitch-skills/taste-design/index.html": [
+  "taste-design skill by google-labs-code/stitch-skills",
+  "frontend-design skills",
+  "agent skill assessment"
+ ],
+ "directory/google/skills/agent-platform-alert-configuration/index.html": [
+  "agent-platform-alert-configuration skill by google/skills",
+  "devops-cloud skills",
+  "agent skill assessment"
  ],
  "directory/google/skills/agent-platform-deploy/index.html": [
   "agent-platform-deploy skill by google",
@@ -3192,6 +4027,26 @@
   "AI agent agent skills",
   "SKILL.md"
  ],
+ "directory/google/skills/agent-platform-prompt-management/index.html": [
+  "agent-platform-prompt-management skill by google/skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
+ "directory/google/skills/alloydb-basics/index.html": [
+  "alloydb-basics skill by google/skills",
+  "data-databases skills",
+  "agent skill assessment"
+ ],
+ "directory/google/skills/api-gateway-backend-security-and-rate-limiting/index.html": [
+  "api-gateway-backend-security-and-rate-limiting skill by google/skills",
+  "devops-cloud skills",
+  "agent skill assessment"
+ ],
+ "directory/google/skills/api-gateway-mcp-server/index.html": [
+  "api-gateway-mcp-server skill by google/skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
  "directory/google/skills/assuredworkloads-environment-assessor/index.html": [
   "assuredworkloads-environment-assessor skill by google",
   "assuredworkloads-environment-assessor skill",
@@ -3200,6 +4055,41 @@
   "google skills",
   "security agent skills",
   "SKILL.md"
+ ],
+ "directory/google/skills/bigquery-basics/index.html": [
+  "bigquery-basics skill by google/skills",
+  "data-databases skills",
+  "agent skill assessment"
+ ],
+ "directory/google/skills/bigquery-bigframes/index.html": [
+  "bigquery-bigframes skill by google/skills",
+  "data-databases skills",
+  "agent skill assessment"
+ ],
+ "directory/google/skills/bigtable-basics/index.html": [
+  "bigtable-basics skill by google/skills",
+  "data-databases skills",
+  "agent skill assessment"
+ ],
+ "directory/google/skills/cloud-build-basics/index.html": [
+  "cloud-build-basics skill by google/skills",
+  "devops-cloud skills",
+  "agent skill assessment"
+ ],
+ "directory/google/skills/cloud-databases-onboarding/index.html": [
+  "cloud-databases-onboarding skill by google/skills",
+  "data-databases skills",
+  "agent skill assessment"
+ ],
+ "directory/google/skills/cloud-logging-query-generation/index.html": [
+  "cloud-logging-query-generation skill by google/skills",
+  "devops-cloud skills",
+  "agent skill assessment"
+ ],
+ "directory/google/skills/cloud-monitoring-list-time-series-request/index.html": [
+  "cloud-monitoring-list-time-series-request skill by google/skills",
+  "devops-cloud skills",
+  "agent skill assessment"
  ],
  "directory/google/skills/cloud-monitoring-notification-channels-configuration/alternatives/index.html": [
   "cloud-monitoring-notification-channels-configuration alternatives",
@@ -3216,6 +4106,21 @@
   "DevOps and cloud agent skills",
   "SKILL.md"
  ],
+ "directory/google/skills/cloud-monitoring-promql-query/index.html": [
+  "cloud-monitoring-promql-query skill by google/skills",
+  "devops-cloud skills",
+  "agent skill assessment"
+ ],
+ "directory/google/skills/cloud-run-alert-configuration/index.html": [
+  "cloud-run-alert-configuration skill by google/skills",
+  "devops-cloud skills",
+  "agent skill assessment"
+ ],
+ "directory/google/skills/cloud-run-basics/index.html": [
+  "cloud-run-basics skill by google/skills",
+  "devops-cloud skills",
+  "agent skill assessment"
+ ],
  "directory/google/skills/cloud-trace-querying/index.html": [
   "cloud-trace-querying skill by google",
   "cloud-trace-querying skill",
@@ -3224,6 +4129,16 @@
   "google skills",
   "DevOps and cloud agent skills",
   "SKILL.md"
+ ],
+ "directory/google/skills/data-manager-api-audience-ingestion/index.html": [
+  "data-manager-api-audience-ingestion skill by google/skills",
+  "marketing-seo skills",
+  "agent skill assessment"
+ ],
+ "directory/google/skills/datalineage-summary/index.html": [
+  "datalineage-summary skill by google/skills",
+  "data-databases skills",
+  "agent skill assessment"
  ],
  "directory/google/skills/dbt-sf-to-bq-translator/alternatives/index.html": [
   "dbt-sf-to-bq-translator alternatives",
@@ -3240,6 +4155,71 @@
   "data and database agent skills",
   "SKILL.md"
  ],
+ "directory/google/skills/developer-device-platform-basics/index.html": [
+  "developer-device-platform-basics skill by google/skills",
+  "developer-tools skills",
+  "agent skill assessment"
+ ],
+ "directory/google/skills/gcloud/index.html": [
+  "gcloud skill by google/skills",
+  "devops-cloud skills",
+  "agent skill assessment"
+ ],
+ "directory/google/skills/gemini-api/index.html": [
+  "gemini-api skill by google/skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
+ "directory/google/skills/gemini-live-api/index.html": [
+  "gemini-live-api skill by google/skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
+ "directory/google/skills/gke-ai-troubleshooting-jobset-interruption/index.html": [
+  "gke-ai-troubleshooting-jobset-interruption skill by google/skills",
+  "devops-cloud skills",
+  "agent skill assessment"
+ ],
+ "directory/google/skills/gke-ai-troubleshooting-tpu-dynamic-slices-monitoring/index.html": [
+  "gke-ai-troubleshooting-tpu-dynamic-slices-monitoring skill by google/skills",
+  "devops-cloud skills",
+  "agent skill assessment"
+ ],
+ "directory/google/skills/gke-ai-troubleshooting-tpu-metrics-monitoring/index.html": [
+  "gke-ai-troubleshooting-tpu-metrics-monitoring skill by google/skills",
+  "devops-cloud skills",
+  "agent skill assessment"
+ ],
+ "directory/google/skills/gke-ai-troubleshooting-tpu-vbar-oom/index.html": [
+  "gke-ai-troubleshooting-tpu-vbar-oom skill by google/skills",
+  "devops-cloud skills",
+  "agent skill assessment"
+ ],
+ "directory/google/skills/gke-alert-configuration/index.html": [
+  "gke-alert-configuration skill by google/skills",
+  "devops-cloud skills",
+  "agent skill assessment"
+ ],
+ "directory/google/skills/gke-app-onboarding/index.html": [
+  "gke-app-onboarding skill by google/skills",
+  "devops-cloud skills",
+  "agent skill assessment"
+ ],
+ "directory/google/skills/gke-cluster-autoscaler/index.html": [
+  "gke-cluster-autoscaler skill by google/skills",
+  "devops-cloud skills",
+  "agent skill assessment"
+ ],
+ "directory/google/skills/gke-cost-analysis/index.html": [
+  "gke-cost-analysis skill by google/skills",
+  "devops-cloud skills",
+  "agent skill assessment"
+ ],
+ "directory/google/skills/google-analytics-data-api-basics/index.html": [
+  "google-analytics-data-api-basics skill by google/skills",
+  "data-databases skills",
+  "agent skill assessment"
+ ],
  "directory/google/skills/google-cloud-filestore-auditing/index.html": [
   "google-cloud-filestore-auditing skill by google",
   "google-cloud-filestore-auditing skill",
@@ -3249,6 +4229,11 @@
   "DevOps and cloud agent skills",
   "SKILL.md"
  ],
+ "directory/google/skills/google-cloud-filestore-autoscale/index.html": [
+  "google-cloud-filestore-autoscale skill by google/skills",
+  "devops-cloud skills",
+  "agent skill assessment"
+ ],
  "directory/google/skills/google-cloud-filestore-log-troubleshooting/index.html": [
   "google-cloud-filestore-log-troubleshooting skill by google",
   "google-cloud-filestore-log-troubleshooting skill",
@@ -3257,6 +4242,46 @@
   "google skills",
   "DevOps and cloud agent skills",
   "SKILL.md"
+ ],
+ "directory/google/skills/google-cloud-filestore-nfs-browser/index.html": [
+  "google-cloud-filestore-nfs-browser skill by google/skills",
+  "devops-cloud skills",
+  "agent skill assessment"
+ ],
+ "directory/google/skills/google-cloud-networking-observability/index.html": [
+  "google-cloud-networking-observability skill by google/skills",
+  "devops-cloud skills",
+  "agent skill assessment"
+ ],
+ "directory/google/skills/google-cloud-recipe-foundation-builder/index.html": [
+  "google-cloud-recipe-foundation-builder skill by google/skills",
+  "devops-cloud skills",
+  "agent skill assessment"
+ ],
+ "directory/google/skills/google-cloud-recipe-onboarding/index.html": [
+  "google-cloud-recipe-onboarding skill by google/skills",
+  "devops-cloud skills",
+  "agent skill assessment"
+ ],
+ "directory/google/skills/google-cloud-scc-query/index.html": [
+  "google-cloud-scc-query skill by google/skills",
+  "security skills",
+  "agent skill assessment"
+ ],
+ "directory/google/skills/google-cloud-slo-alert-configuration/index.html": [
+  "google-cloud-slo-alert-configuration skill by google/skills",
+  "devops-cloud skills",
+  "agent skill assessment"
+ ],
+ "directory/google/skills/google-cloud-solution-agentic-ai-bidirectional-streaming/index.html": [
+  "google-cloud-solution-agentic-ai-bidirectional-streaming skill by google/skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
+ "directory/google/skills/google-cloud-solution-agentic-ai-data-science-workflow/index.html": [
+  "google-cloud-solution-agentic-ai-data-science-workflow skill by google/skills",
+  "data-databases skills",
+  "agent skill assessment"
  ],
  "directory/google/skills/google-cloud-solution-agentic-analytics-spark-knowledge-catalog/index.html": [
   "google-cloud-solution-agentic-analytics-spark-knowledge-catalog skill by google",
@@ -3276,6 +4301,11 @@
   "DevOps and cloud agent skills",
   "SKILL.md"
  ],
+ "directory/google/skills/google-cloud-solution-build-deploy-agents/index.html": [
+  "google-cloud-solution-build-deploy-agents skill by google/skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
  "directory/google/skills/google-cloud-solution-hybrid-search-alloydb/index.html": [
   "google-cloud-solution-hybrid-search-alloydb skill by google",
   "google-cloud-solution-hybrid-search-alloydb skill",
@@ -3284,6 +4314,11 @@
   "google skills",
   "data and database agent skills",
   "SKILL.md"
+ ],
+ "directory/google/skills/google-cloud-solution-n-tier-serverless-web-app/index.html": [
+  "google-cloud-solution-n-tier-serverless-web-app skill by google/skills",
+  "devops-cloud skills",
+  "agent skill assessment"
  ],
  "directory/google/skills/google-cloud-solution-rag-enterprise-search-gke-sqldb/index.html": [
   "google-cloud-solution-rag-enterprise-search-gke-sqldb skill by google",
@@ -3311,6 +4346,136 @@
   "DevOps and cloud agent skills",
   "agent skills directory"
  ],
+ "directory/google/skills/managed-airflow-migrations/index.html": [
+  "managed-airflow-migrations skill by google/skills",
+  "data-databases skills",
+  "agent skill assessment"
+ ],
+ "directory/google/skills/retrieving-developer-knowledge/index.html": [
+  "retrieving-developer-knowledge skill by google/skills",
+  "developer-tools skills",
+  "agent skill assessment"
+ ],
+ "directory/googleworkspace/cli/gws-admin-reports/index.html": [
+  "gws-admin-reports skill by googleworkspace/cli",
+  "productivity-knowledge skills",
+  "agent skill assessment"
+ ],
+ "directory/googleworkspace/cli/gws-calendar-agenda/index.html": [
+  "gws-calendar-agenda skill by googleworkspace/cli",
+  "productivity-knowledge skills",
+  "agent skill assessment"
+ ],
+ "directory/googleworkspace/cli/gws-classroom/index.html": [
+  "gws-classroom skill by googleworkspace/cli",
+  "productivity-knowledge skills",
+  "agent skill assessment"
+ ],
+ "directory/googleworkspace/cli/gws-drive-upload/index.html": [
+  "gws-drive-upload skill by googleworkspace/cli",
+  "productivity-knowledge skills",
+  "agent skill assessment"
+ ],
+ "directory/googleworkspace/cli/gws-drive/index.html": [
+  "gws-drive skill by googleworkspace/cli",
+  "productivity-knowledge skills",
+  "agent skill assessment"
+ ],
+ "directory/googleworkspace/cli/gws-events-renew/index.html": [
+  "gws-events-renew skill by googleworkspace/cli",
+  "productivity-knowledge skills",
+  "agent skill assessment"
+ ],
+ "directory/googleworkspace/cli/gws-events-subscribe/index.html": [
+  "gws-events-subscribe skill by googleworkspace/cli",
+  "productivity-knowledge skills",
+  "agent skill assessment"
+ ],
+ "directory/googleworkspace/cli/gws-gmail-read/index.html": [
+  "gws-gmail-read skill by googleworkspace/cli",
+  "productivity-knowledge skills",
+  "agent skill assessment"
+ ],
+ "directory/googleworkspace/cli/gws-gmail-reply-all/index.html": [
+  "gws-gmail-reply-all skill by googleworkspace/cli",
+  "productivity-knowledge skills",
+  "agent skill assessment"
+ ],
+ "directory/googleworkspace/cli/gws-gmail-reply/index.html": [
+  "gws-gmail-reply skill by googleworkspace/cli",
+  "productivity-knowledge skills",
+  "agent skill assessment"
+ ],
+ "directory/googleworkspace/cli/gws-gmail-triage/index.html": [
+  "gws-gmail-triage skill by googleworkspace/cli",
+  "productivity-knowledge skills",
+  "agent skill assessment"
+ ],
+ "directory/googleworkspace/cli/gws-gmail-watch/index.html": [
+  "gws-gmail-watch skill by googleworkspace/cli",
+  "productivity-knowledge skills",
+  "agent skill assessment"
+ ],
+ "directory/googleworkspace/cli/gws-modelarmor-create-template/index.html": [
+  "gws-modelarmor-create-template skill by googleworkspace/cli",
+  "security skills",
+  "agent skill assessment"
+ ],
+ "directory/googleworkspace/cli/gws-modelarmor-sanitize-prompt/index.html": [
+  "gws-modelarmor-sanitize-prompt skill by googleworkspace/cli",
+  "security skills",
+  "agent skill assessment"
+ ],
+ "directory/googleworkspace/cli/gws-modelarmor-sanitize-response/index.html": [
+  "gws-modelarmor-sanitize-response skill by googleworkspace/cli",
+  "security skills",
+  "agent skill assessment"
+ ],
+ "directory/googleworkspace/cli/gws-modelarmor/index.html": [
+  "gws-modelarmor skill by googleworkspace/cli",
+  "security skills",
+  "agent skill assessment"
+ ],
+ "directory/googleworkspace/cli/gws-script-push/index.html": [
+  "gws-script-push skill by googleworkspace/cli",
+  "developer-tools skills",
+  "agent skill assessment"
+ ],
+ "directory/googleworkspace/cli/gws-shared/index.html": [
+  "gws-shared skill by googleworkspace/cli",
+  "developer-tools skills",
+  "agent skill assessment"
+ ],
+ "directory/googleworkspace/cli/gws-workflow-email-to-task/index.html": [
+  "gws-workflow-email-to-task skill by googleworkspace/cli",
+  "productivity-knowledge skills",
+  "agent skill assessment"
+ ],
+ "directory/googleworkspace/cli/gws-workflow-file-announce/index.html": [
+  "gws-workflow-file-announce skill by googleworkspace/cli",
+  "productivity-knowledge skills",
+  "agent skill assessment"
+ ],
+ "directory/googleworkspace/cli/gws-workflow-meeting-prep/index.html": [
+  "gws-workflow-meeting-prep skill by googleworkspace/cli",
+  "productivity-knowledge skills",
+  "agent skill assessment"
+ ],
+ "directory/googleworkspace/cli/gws-workflow-standup-report/index.html": [
+  "gws-workflow-standup-report skill by googleworkspace/cli",
+  "productivity-knowledge skills",
+  "agent skill assessment"
+ ],
+ "directory/googleworkspace/cli/gws-workflow-weekly-digest/index.html": [
+  "gws-workflow-weekly-digest skill by googleworkspace/cli",
+  "productivity-knowledge skills",
+  "agent skill assessment"
+ ],
+ "directory/googleworkspace/cli/gws-workflow/index.html": [
+  "gws-workflow skill by googleworkspace/cli",
+  "productivity-knowledge skills",
+  "agent skill assessment"
+ ],
  "directory/googleworkspace/cli/index.html": [
   "googleworkspace/cli skills",
   "cli skills",
@@ -3318,6 +4483,256 @@
   "cli claude skills",
   "productivity agent skills",
   "agent skills directory"
+ ],
+ "directory/googleworkspace/cli/persona-content-creator/index.html": [
+  "persona-content-creator skill by googleworkspace/cli",
+  "productivity-knowledge skills",
+  "agent skill assessment"
+ ],
+ "directory/googleworkspace/cli/persona-customer-support/index.html": [
+  "persona-customer-support skill by googleworkspace/cli",
+  "productivity-knowledge skills",
+  "agent skill assessment"
+ ],
+ "directory/googleworkspace/cli/persona-event-coordinator/index.html": [
+  "persona-event-coordinator skill by googleworkspace/cli",
+  "productivity-knowledge skills",
+  "agent skill assessment"
+ ],
+ "directory/googleworkspace/cli/persona-exec-assistant/index.html": [
+  "persona-exec-assistant skill by googleworkspace/cli",
+  "productivity-knowledge skills",
+  "agent skill assessment"
+ ],
+ "directory/googleworkspace/cli/persona-hr-coordinator/index.html": [
+  "persona-hr-coordinator skill by googleworkspace/cli",
+  "productivity-knowledge skills",
+  "agent skill assessment"
+ ],
+ "directory/googleworkspace/cli/persona-it-admin/index.html": [
+  "persona-it-admin skill by googleworkspace/cli",
+  "devops-cloud skills",
+  "agent skill assessment"
+ ],
+ "directory/googleworkspace/cli/persona-project-manager/index.html": [
+  "persona-project-manager skill by googleworkspace/cli",
+  "productivity-knowledge skills",
+  "agent skill assessment"
+ ],
+ "directory/googleworkspace/cli/persona-researcher/index.html": [
+  "persona-researcher skill by googleworkspace/cli",
+  "productivity-knowledge skills",
+  "agent skill assessment"
+ ],
+ "directory/googleworkspace/cli/persona-sales-ops/index.html": [
+  "persona-sales-ops skill by googleworkspace/cli",
+  "business-finance skills",
+  "agent skill assessment"
+ ],
+ "directory/googleworkspace/cli/persona-team-lead/index.html": [
+  "persona-team-lead skill by googleworkspace/cli",
+  "productivity-knowledge skills",
+  "agent skill assessment"
+ ],
+ "directory/googleworkspace/cli/recipe-backup-sheet-as-csv/index.html": [
+  "recipe-backup-sheet-as-csv skill by googleworkspace/cli",
+  "documents-office skills",
+  "agent skill assessment"
+ ],
+ "directory/googleworkspace/cli/recipe-batch-invite-to-event/index.html": [
+  "recipe-batch-invite-to-event skill by googleworkspace/cli",
+  "productivity-knowledge skills",
+  "agent skill assessment"
+ ],
+ "directory/googleworkspace/cli/recipe-block-focus-time/index.html": [
+  "recipe-block-focus-time skill by googleworkspace/cli",
+  "productivity-knowledge skills",
+  "agent skill assessment"
+ ],
+ "directory/googleworkspace/cli/recipe-bulk-download-folder/index.html": [
+  "recipe-bulk-download-folder skill by googleworkspace/cli",
+  "productivity-knowledge skills",
+  "agent skill assessment"
+ ],
+ "directory/googleworkspace/cli/recipe-compare-sheet-tabs/index.html": [
+  "recipe-compare-sheet-tabs skill by googleworkspace/cli",
+  "documents-office skills",
+  "agent skill assessment"
+ ],
+ "directory/googleworkspace/cli/recipe-copy-sheet-for-new-month/index.html": [
+  "recipe-copy-sheet-for-new-month skill by googleworkspace/cli",
+  "documents-office skills",
+  "agent skill assessment"
+ ],
+ "directory/googleworkspace/cli/recipe-create-classroom-course/index.html": [
+  "recipe-create-classroom-course skill by googleworkspace/cli",
+  "productivity-knowledge skills",
+  "agent skill assessment"
+ ],
+ "directory/googleworkspace/cli/recipe-create-doc-from-template/index.html": [
+  "recipe-create-doc-from-template skill by googleworkspace/cli",
+  "documents-office skills",
+  "agent skill assessment"
+ ],
+ "directory/googleworkspace/cli/recipe-create-events-from-sheet/index.html": [
+  "recipe-create-events-from-sheet skill by googleworkspace/cli",
+  "productivity-knowledge skills",
+  "agent skill assessment"
+ ],
+ "directory/googleworkspace/cli/recipe-create-expense-tracker/index.html": [
+  "recipe-create-expense-tracker skill by googleworkspace/cli",
+  "documents-office skills",
+  "agent skill assessment"
+ ],
+ "directory/googleworkspace/cli/recipe-create-feedback-form/index.html": [
+  "recipe-create-feedback-form skill by googleworkspace/cli",
+  "documents-office skills",
+  "agent skill assessment"
+ ],
+ "directory/googleworkspace/cli/recipe-create-gmail-filter/index.html": [
+  "recipe-create-gmail-filter skill by googleworkspace/cli",
+  "productivity-knowledge skills",
+  "agent skill assessment"
+ ],
+ "directory/googleworkspace/cli/recipe-create-meet-space/index.html": [
+  "recipe-create-meet-space skill by googleworkspace/cli",
+  "productivity-knowledge skills",
+  "agent skill assessment"
+ ],
+ "directory/googleworkspace/cli/recipe-create-presentation/index.html": [
+  "recipe-create-presentation skill by googleworkspace/cli",
+  "documents-office skills",
+  "agent skill assessment"
+ ],
+ "directory/googleworkspace/cli/recipe-create-shared-drive/index.html": [
+  "recipe-create-shared-drive skill by googleworkspace/cli",
+  "productivity-knowledge skills",
+  "agent skill assessment"
+ ],
+ "directory/googleworkspace/cli/recipe-create-task-list/index.html": [
+  "recipe-create-task-list skill by googleworkspace/cli",
+  "productivity-knowledge skills",
+  "agent skill assessment"
+ ],
+ "directory/googleworkspace/cli/recipe-create-vacation-responder/index.html": [
+  "recipe-create-vacation-responder skill by googleworkspace/cli",
+  "productivity-knowledge skills",
+  "agent skill assessment"
+ ],
+ "directory/googleworkspace/cli/recipe-draft-email-from-doc/index.html": [
+  "recipe-draft-email-from-doc skill by googleworkspace/cli",
+  "productivity-knowledge skills",
+  "agent skill assessment"
+ ],
+ "directory/googleworkspace/cli/recipe-email-drive-link/index.html": [
+  "recipe-email-drive-link skill by googleworkspace/cli",
+  "productivity-knowledge skills",
+  "agent skill assessment"
+ ],
+ "directory/googleworkspace/cli/recipe-find-free-time/index.html": [
+  "recipe-find-free-time skill by googleworkspace/cli",
+  "productivity-knowledge skills",
+  "agent skill assessment"
+ ],
+ "directory/googleworkspace/cli/recipe-find-large-files/index.html": [
+  "recipe-find-large-files skill by googleworkspace/cli",
+  "productivity-knowledge skills",
+  "agent skill assessment"
+ ],
+ "directory/googleworkspace/cli/recipe-forward-labeled-emails/index.html": [
+  "recipe-forward-labeled-emails skill by googleworkspace/cli",
+  "productivity-knowledge skills",
+  "agent skill assessment"
+ ],
+ "directory/googleworkspace/cli/recipe-generate-report-from-sheet/index.html": [
+  "recipe-generate-report-from-sheet skill by googleworkspace/cli",
+  "documents-office skills",
+  "agent skill assessment"
+ ],
+ "directory/googleworkspace/cli/recipe-label-and-archive-emails/index.html": [
+  "recipe-label-and-archive-emails skill by googleworkspace/cli",
+  "productivity-knowledge skills",
+  "agent skill assessment"
+ ],
+ "directory/googleworkspace/cli/recipe-log-deal-update/index.html": [
+  "recipe-log-deal-update skill by googleworkspace/cli",
+  "business-finance skills",
+  "agent skill assessment"
+ ],
+ "directory/googleworkspace/cli/recipe-organize-drive-folder/index.html": [
+  "recipe-organize-drive-folder skill by googleworkspace/cli",
+  "productivity-knowledge skills",
+  "agent skill assessment"
+ ],
+ "directory/googleworkspace/cli/recipe-plan-weekly-schedule/index.html": [
+  "recipe-plan-weekly-schedule skill by googleworkspace/cli",
+  "productivity-knowledge skills",
+  "agent skill assessment"
+ ],
+ "directory/googleworkspace/cli/recipe-post-mortem-setup/index.html": [
+  "recipe-post-mortem-setup skill by googleworkspace/cli",
+  "productivity-knowledge skills",
+  "agent skill assessment"
+ ],
+ "directory/googleworkspace/cli/recipe-reschedule-meeting/index.html": [
+  "recipe-reschedule-meeting skill by googleworkspace/cli",
+  "productivity-knowledge skills",
+  "agent skill assessment"
+ ],
+ "directory/googleworkspace/cli/recipe-review-meet-participants/index.html": [
+  "recipe-review-meet-participants skill by googleworkspace/cli",
+  "productivity-knowledge skills",
+  "agent skill assessment"
+ ],
+ "directory/googleworkspace/cli/recipe-review-overdue-tasks/index.html": [
+  "recipe-review-overdue-tasks skill by googleworkspace/cli",
+  "productivity-knowledge skills",
+  "agent skill assessment"
+ ],
+ "directory/googleworkspace/cli/recipe-save-email-attachments/index.html": [
+  "recipe-save-email-attachments skill by googleworkspace/cli",
+  "productivity-knowledge skills",
+  "agent skill assessment"
+ ],
+ "directory/googleworkspace/cli/recipe-save-email-to-doc/index.html": [
+  "recipe-save-email-to-doc skill by googleworkspace/cli",
+  "productivity-knowledge skills",
+  "agent skill assessment"
+ ],
+ "directory/googleworkspace/cli/recipe-schedule-recurring-event/index.html": [
+  "recipe-schedule-recurring-event skill by googleworkspace/cli",
+  "productivity-knowledge skills",
+  "agent skill assessment"
+ ],
+ "directory/googleworkspace/cli/recipe-send-team-announcement/index.html": [
+  "recipe-send-team-announcement skill by googleworkspace/cli",
+  "productivity-knowledge skills",
+  "agent skill assessment"
+ ],
+ "directory/googleworkspace/cli/recipe-share-doc-and-notify/index.html": [
+  "recipe-share-doc-and-notify skill by googleworkspace/cli",
+  "productivity-knowledge skills",
+  "agent skill assessment"
+ ],
+ "directory/googleworkspace/cli/recipe-share-event-materials/index.html": [
+  "recipe-share-event-materials skill by googleworkspace/cli",
+  "productivity-knowledge skills",
+  "agent skill assessment"
+ ],
+ "directory/googleworkspace/cli/recipe-share-folder-with-team/index.html": [
+  "recipe-share-folder-with-team skill by googleworkspace/cli",
+  "productivity-knowledge skills",
+  "agent skill assessment"
+ ],
+ "directory/googleworkspace/cli/recipe-sync-contacts-to-sheet/index.html": [
+  "recipe-sync-contacts-to-sheet skill by googleworkspace/cli",
+  "productivity-knowledge skills",
+  "agent skill assessment"
+ ],
+ "directory/googleworkspace/cli/recipe-watch-drive-changes/index.html": [
+  "recipe-watch-drive-changes skill by googleworkspace/cli",
+  "productivity-knowledge skills",
+  "agent skill assessment"
  ],
  "directory/gooseworks-ai/goose-skills/ad-management-intake/index.html": [
   "ad-management-intake skill by gooseworks-ai",
@@ -3755,6 +5170,71 @@
   "science and research agent skills",
   "SKILL.md"
  ],
+ "directory/heygen-com/hyperframes/embedded-captions/index.html": [
+  "embedded-captions skill by heygen-com/hyperframes",
+  "writing-content skills",
+  "agent skill assessment"
+ ],
+ "directory/heygen-com/hyperframes/faceless-explainer/index.html": [
+  "faceless-explainer skill by heygen-com/hyperframes",
+  "media-creative skills",
+  "agent skill assessment"
+ ],
+ "directory/heygen-com/hyperframes/figma/index.html": [
+  "figma skill by heygen-com/hyperframes",
+  "frontend-design skills",
+  "agent skill assessment"
+ ],
+ "directory/heygen-com/hyperframes/general-video/index.html": [
+  "general-video skill by heygen-com/hyperframes",
+  "media-creative skills",
+  "agent skill assessment"
+ ],
+ "directory/heygen-com/hyperframes/hyperframes-animation/index.html": [
+  "hyperframes-animation skill by heygen-com/hyperframes",
+  "frontend-design skills",
+  "agent skill assessment"
+ ],
+ "directory/heygen-com/hyperframes/hyperframes-audio/index.html": [
+  "hyperframes-audio skill by heygen-com/hyperframes",
+  "media-creative skills",
+  "agent skill assessment"
+ ],
+ "directory/heygen-com/hyperframes/hyperframes-cli/index.html": [
+  "hyperframes-cli skill by heygen-com/hyperframes",
+  "developer-tools skills",
+  "agent skill assessment"
+ ],
+ "directory/heygen-com/hyperframes/hyperframes-core/index.html": [
+  "hyperframes-core skill by heygen-com/hyperframes",
+  "writing-content skills",
+  "agent skill assessment"
+ ],
+ "directory/heygen-com/hyperframes/hyperframes-creative/index.html": [
+  "hyperframes-creative skill by heygen-com/hyperframes",
+  "frontend-design skills",
+  "agent skill assessment"
+ ],
+ "directory/heygen-com/hyperframes/hyperframes-keyframes/index.html": [
+  "hyperframes-keyframes skill by heygen-com/hyperframes",
+  "frontend-design skills",
+  "agent skill assessment"
+ ],
+ "directory/heygen-com/hyperframes/hyperframes-registry/index.html": [
+  "hyperframes-registry skill by heygen-com/hyperframes",
+  "frontend-design skills",
+  "agent skill assessment"
+ ],
+ "directory/heygen-com/hyperframes/hyperframes-studio/index.html": [
+  "hyperframes-studio skill by heygen-com/hyperframes",
+  "writing-content skills",
+  "agent skill assessment"
+ ],
+ "directory/heygen-com/hyperframes/hyperframes/index.html": [
+  "hyperframes skill by heygen-com/hyperframes",
+  "frontend-design skills",
+  "agent skill assessment"
+ ],
  "directory/heygen-com/hyperframes/index.html": [
   "heygen-com/hyperframes skills",
   "hyperframes skills",
@@ -3762,6 +5242,41 @@
   "hyperframes claude skills",
   "video image and audio agent skills",
   "agent skills directory"
+ ],
+ "directory/heygen-com/hyperframes/media-use/index.html": [
+  "media-use skill by heygen-com/hyperframes",
+  "media-creative skills",
+  "agent skill assessment"
+ ],
+ "directory/heygen-com/hyperframes/motion-graphics/index.html": [
+  "motion-graphics skill by heygen-com/hyperframes",
+  "frontend-design skills",
+  "agent skill assessment"
+ ],
+ "directory/heygen-com/hyperframes/music-to-video/index.html": [
+  "music-to-video skill by heygen-com/hyperframes",
+  "media-creative skills",
+  "agent skill assessment"
+ ],
+ "directory/heygen-com/hyperframes/pr-to-video/index.html": [
+  "pr-to-video skill by heygen-com/hyperframes",
+  "media-creative skills",
+  "agent skill assessment"
+ ],
+ "directory/heygen-com/hyperframes/product-launch-video/index.html": [
+  "product-launch-video skill by heygen-com/hyperframes",
+  "media-creative skills",
+  "agent skill assessment"
+ ],
+ "directory/heygen-com/hyperframes/remotion-to-hyperframes/index.html": [
+  "remotion-to-hyperframes skill by heygen-com/hyperframes",
+  "media-creative skills",
+  "agent skill assessment"
+ ],
+ "directory/heygen-com/hyperframes/talking-head-recut/index.html": [
+  "talking-head-recut skill by heygen-com/hyperframes",
+  "media-creative skills",
+  "agent skill assessment"
  ],
  "directory/honeydew-ai/honeydew-ai-coding-agents-plugins/conversation-review/index.html": [
   "conversation-review skill by honeydew-ai",
@@ -4388,6 +5903,11 @@
   "DevOps and cloud agent skills",
   "SKILL.md"
  ],
+ "directory/jeffallan/claude-skills/golang-pro/index.html": [
+  "golang-pro skill by jeffallan/claude-skills",
+  "developer-tools skills",
+  "agent skill assessment"
+ ],
  "directory/jeffallan/claude-skills/index.html": [
   "jeffallan/claude-skills skills",
   "claude-skills skills",
@@ -4489,6 +6009,11 @@
   "science and research agent skills",
   "SKILL.md"
  ],
+ "directory/k-dense-ai/claude-scientific-skills/autoskill/index.html": [
+  "autoskill skill by K-Dense-AI/claude-scientific-skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
  "directory/k-dense-ai/claude-scientific-skills/citation-management/index.html": [
   "citation-management skill by K-Dense-AI",
   "citation-management skill",
@@ -4498,6 +6023,41 @@
   "science and research agent skills",
   "SKILL.md"
  ],
+ "directory/k-dense-ai/claude-scientific-skills/diffdock/index.html": [
+  "diffdock skill by K-Dense-AI/claude-scientific-skills",
+  "science-research skills",
+  "agent skill assessment"
+ ],
+ "directory/k-dense-ai/claude-scientific-skills/experimental-design/index.html": [
+  "experimental-design skill by K-Dense-AI/claude-scientific-skills",
+  "science-research skills",
+  "agent skill assessment"
+ ],
+ "directory/k-dense-ai/claude-scientific-skills/fictiv/index.html": [
+  "fictiv skill by K-Dense-AI/claude-scientific-skills",
+  "business-finance skills",
+  "agent skill assessment"
+ ],
+ "directory/k-dense-ai/claude-scientific-skills/flowio/index.html": [
+  "flowio skill by K-Dense-AI/claude-scientific-skills",
+  "science-research skills",
+  "agent skill assessment"
+ ],
+ "directory/k-dense-ai/claude-scientific-skills/fluidsim/index.html": [
+  "fluidsim skill by K-Dense-AI/claude-scientific-skills",
+  "science-research skills",
+  "agent skill assessment"
+ ],
+ "directory/k-dense-ai/claude-scientific-skills/generate-image/index.html": [
+  "generate-image skill by K-Dense-AI/claude-scientific-skills",
+  "media-creative skills",
+  "agent skill assessment"
+ ],
+ "directory/k-dense-ai/claude-scientific-skills/hypogenic/index.html": [
+  "hypogenic skill by K-Dense-AI/claude-scientific-skills",
+  "science-research skills",
+  "agent skill assessment"
+ ],
  "directory/k-dense-ai/claude-scientific-skills/index.html": [
   "K-Dense-AI/claude-scientific-skills skills",
   "claude-scientific-skills skills",
@@ -4505,6 +6065,11 @@
   "claude-scientific-skills claude skills",
   "science and research agent skills",
   "agent skills directory"
+ ],
+ "directory/k-dense-ai/claude-scientific-skills/infographics/index.html": [
+  "infographics skill by K-Dense-AI/claude-scientific-skills",
+  "media-creative skills",
+  "agent skill assessment"
  ],
  "directory/k-dense-ai/claude-scientific-skills/iso-standards-readiness/index.html": [
   "iso-standards-readiness skill by K-Dense-AI",
@@ -4524,6 +6089,21 @@
   "science and research agent skills",
   "SKILL.md"
  ],
+ "directory/k-dense-ai/claude-scientific-skills/latchbio-integration/index.html": [
+  "latchbio-integration skill by K-Dense-AI/claude-scientific-skills",
+  "science-research skills",
+  "agent skill assessment"
+ ],
+ "directory/k-dense-ai/claude-scientific-skills/latex-posters/index.html": [
+  "latex-posters skill by K-Dense-AI/claude-scientific-skills",
+  "science-research skills",
+  "agent skill assessment"
+ ],
+ "directory/k-dense-ai/claude-scientific-skills/liteparse/index.html": [
+  "liteparse skill by K-Dense-AI/claude-scientific-skills",
+  "documents-office skills",
+  "agent skill assessment"
+ ],
  "directory/k-dense-ai/claude-scientific-skills/literature-review/index.html": [
   "literature-review skill by K-Dense-AI",
   "literature-review skill",
@@ -4532,6 +6112,26 @@
   "K-Dense-AI skills",
   "science and research agent skills",
   "SKILL.md"
+ ],
+ "directory/k-dense-ai/claude-scientific-skills/matchms/index.html": [
+  "matchms skill by K-Dense-AI/claude-scientific-skills",
+  "science-research skills",
+  "agent skill assessment"
+ ],
+ "directory/k-dense-ai/claude-scientific-skills/matlab/index.html": [
+  "matlab skill by K-Dense-AI/claude-scientific-skills",
+  "developer-tools skills",
+  "agent skill assessment"
+ ],
+ "directory/k-dense-ai/claude-scientific-skills/ncats-arax/index.html": [
+  "ncats-arax skill by K-Dense-AI/claude-scientific-skills",
+  "science-research skills",
+  "agent skill assessment"
+ ],
+ "directory/k-dense-ai/claude-scientific-skills/neurokit2/index.html": [
+  "neurokit2 skill by K-Dense-AI/claude-scientific-skills",
+  "science-research skills",
+  "agent skill assessment"
  ],
  "directory/k-dense-ai/claude-scientific-skills/neuropixels-analysis/index.html": [
   "neuropixels-analysis skill by K-Dense-AI",
@@ -4551,6 +6151,31 @@
   "science and research agent skills",
   "SKILL.md"
  ],
+ "directory/k-dense-ai/claude-scientific-skills/ontology-term-resolution/index.html": [
+  "ontology-term-resolution skill by K-Dense-AI/claude-scientific-skills",
+  "science-research skills",
+  "agent skill assessment"
+ ],
+ "directory/k-dense-ai/claude-scientific-skills/openpiv/index.html": [
+  "openpiv skill by K-Dense-AI/claude-scientific-skills",
+  "science-research skills",
+  "agent skill assessment"
+ ],
+ "directory/k-dense-ai/claude-scientific-skills/opentrons-integration/index.html": [
+  "opentrons-integration skill by K-Dense-AI/claude-scientific-skills",
+  "science-research skills",
+  "agent skill assessment"
+ ],
+ "directory/k-dense-ai/claude-scientific-skills/pathml/index.html": [
+  "pathml skill by K-Dense-AI/claude-scientific-skills",
+  "science-research skills",
+  "agent skill assessment"
+ ],
+ "directory/k-dense-ai/claude-scientific-skills/pathogen-variant-surveillance/index.html": [
+  "pathogen-variant-surveillance skill by K-Dense-AI/claude-scientific-skills",
+  "science-research skills",
+  "agent skill assessment"
+ ],
  "directory/k-dense-ai/claude-scientific-skills/pkpd-modeling/index.html": [
   "pkpd-modeling skill by K-Dense-AI",
   "pkpd-modeling skill",
@@ -4569,6 +6194,26 @@
   "science and research agent skills",
   "SKILL.md"
  ],
+ "directory/k-dense-ai/claude-scientific-skills/pydeseq2/index.html": [
+  "pydeseq2 skill by K-Dense-AI/claude-scientific-skills",
+  "science-research skills",
+  "agent skill assessment"
+ ],
+ "directory/k-dense-ai/claude-scientific-skills/pymatgen/index.html": [
+  "pymatgen skill by K-Dense-AI/claude-scientific-skills",
+  "science-research skills",
+  "agent skill assessment"
+ ],
+ "directory/k-dense-ai/claude-scientific-skills/pymc/index.html": [
+  "pymc skill by K-Dense-AI/claude-scientific-skills",
+  "science-research skills",
+  "agent skill assessment"
+ ],
+ "directory/k-dense-ai/claude-scientific-skills/pytdc/index.html": [
+  "pytdc skill by K-Dense-AI/claude-scientific-skills",
+  "science-research skills",
+  "agent skill assessment"
+ ],
  "directory/k-dense-ai/claude-scientific-skills/relsa-severity-assessment/index.html": [
   "relsa-severity-assessment skill by K-Dense-AI",
   "relsa-severity-assessment skill",
@@ -4577,6 +6222,16 @@
   "K-Dense-AI skills",
   "science and research agent skills",
   "SKILL.md"
+ ],
+ "directory/k-dense-ai/claude-scientific-skills/scholar-evaluation/index.html": [
+  "scholar-evaluation skill by K-Dense-AI/claude-scientific-skills",
+  "science-research skills",
+  "agent skill assessment"
+ ],
+ "directory/k-dense-ai/claude-scientific-skills/scientific-visualization/index.html": [
+  "scientific-visualization skill by K-Dense-AI/claude-scientific-skills",
+  "science-research skills",
+  "agent skill assessment"
  ],
  "directory/k-dense-ai/claude-scientific-skills/scientific-writing/index.html": [
   "scientific-writing skill by K-Dense-AI",
@@ -4587,6 +6242,31 @@
   "writing and editing agent skills",
   "SKILL.md"
  ],
+ "directory/k-dense-ai/claude-scientific-skills/scikit-learn/index.html": [
+  "scikit-learn skill by K-Dense-AI/claude-scientific-skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
+ "directory/k-dense-ai/claude-scientific-skills/shap/index.html": [
+  "shap skill by K-Dense-AI/claude-scientific-skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
+ "directory/k-dense-ai/claude-scientific-skills/simpy/index.html": [
+  "simpy skill by K-Dense-AI/claude-scientific-skills",
+  "science-research skills",
+  "agent skill assessment"
+ ],
+ "directory/k-dense-ai/claude-scientific-skills/statistical-power/index.html": [
+  "statistical-power skill by K-Dense-AI/claude-scientific-skills",
+  "science-research skills",
+  "agent skill assessment"
+ ],
+ "directory/k-dense-ai/claude-scientific-skills/torch-geometric/index.html": [
+  "torch-geometric skill by K-Dense-AI/claude-scientific-skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
  "directory/k-dense-ai/claude-scientific-skills/treatment-plans/index.html": [
   "treatment-plans skill by K-Dense-AI",
   "treatment-plans skill",
@@ -4595,6 +6275,11 @@
   "K-Dense-AI skills",
   "science and research agent skills",
   "SKILL.md"
+ ],
+ "directory/k-dense-ai/claude-scientific-skills/uncertainty-and-units/index.html": [
+  "uncertainty-and-units skill by K-Dense-AI/claude-scientific-skills",
+  "science-research skills",
+  "agent skill assessment"
  ],
  "directory/k-kolomeitsev/data-structure-protocol/data-structure-protocol/index.html": [
   "data-structure-protocol skill by k-kolomeitsev",
@@ -4772,6 +6457,11 @@
   "testing and QA agent skills",
   "SKILL.md"
  ],
+ "directory/langchain-ai/langchain-skills/deep-agents-memory/index.html": [
+  "deep-agents-memory skill by langchain-ai/langchain-skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
  "directory/langchain-ai/langchain-skills/index.html": [
   "langchain-ai/langchain-skills skills",
   "langchain-skills skills",
@@ -4779,6 +6469,46 @@
   "langchain-skills claude skills",
   "AI agent agent skills",
   "agent skills directory"
+ ],
+ "directory/langchain-ai/langchain-skills/langchain-fundamentals/index.html": [
+  "langchain-fundamentals skill by langchain-ai/langchain-skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
+ "directory/langchain-ai/langchain-skills/langchain-middleware/index.html": [
+  "langchain-middleware skill by langchain-ai/langchain-skills",
+  "developer-tools skills",
+  "agent skill assessment"
+ ],
+ "directory/langchain-ai/langchain-skills/langchain-rag/index.html": [
+  "langchain-rag skill by langchain-ai/langchain-skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
+ "directory/langchain-ai/langchain-skills/langgraph-fundamentals/index.html": [
+  "langgraph-fundamentals skill by langchain-ai/langchain-skills",
+  "writing-content skills",
+  "agent skill assessment"
+ ],
+ "directory/langchain-ai/langchain-skills/langgraph-persistence/index.html": [
+  "langgraph-persistence skill by langchain-ai/langchain-skills",
+  "writing-content skills",
+  "agent skill assessment"
+ ],
+ "directory/leonxlnx/taste-skill/brandkit/index.html": [
+  "brandkit skill by Leonxlnx/taste-skill",
+  "media-creative skills",
+  "agent skill assessment"
+ ],
+ "directory/leonxlnx/taste-skill/imagegen-frontend-mobile/index.html": [
+  "imagegen-frontend-mobile skill by Leonxlnx/taste-skill",
+  "frontend-design skills",
+  "agent skill assessment"
+ ],
+ "directory/leonxlnx/taste-skill/imagegen-frontend-web/index.html": [
+  "imagegen-frontend-web skill by Leonxlnx/taste-skill",
+  "frontend-design skills",
+  "agent skill assessment"
  ],
  "directory/leonxlnx/taste-skill/index.html": [
   "Leonxlnx/taste-skill skills",
@@ -4962,6 +6692,61 @@
   "AI agent agent skills",
   "SKILL.md"
  ],
+ "directory/mattpocock/skills/ask-matt/index.html": [
+  "ask-matt skill by mattpocock/skills",
+  "developer-tools skills",
+  "agent skill assessment"
+ ],
+ "directory/mattpocock/skills/code-review/index.html": [
+  "code-review skill by mattpocock/skills",
+  "code-review-quality skills",
+  "agent skill assessment"
+ ],
+ "directory/mattpocock/skills/codebase-design/index.html": [
+  "codebase-design skill by mattpocock/skills",
+  "frontend-design skills",
+  "agent skill assessment"
+ ],
+ "directory/mattpocock/skills/diagnosing-bugs/index.html": [
+  "diagnosing-bugs skill by mattpocock/skills",
+  "testing-qa skills",
+  "agent skill assessment"
+ ],
+ "directory/mattpocock/skills/domain-modeling/index.html": [
+  "domain-modeling skill by mattpocock/skills",
+  "writing-content skills",
+  "agent skill assessment"
+ ],
+ "directory/mattpocock/skills/git-guardrails-claude-code/index.html": [
+  "git-guardrails-claude-code skill by mattpocock/skills",
+  "developer-tools skills",
+  "agent skill assessment"
+ ],
+ "directory/mattpocock/skills/grill-me/index.html": [
+  "grill-me skill by mattpocock/skills",
+  "frontend-design skills",
+  "agent skill assessment"
+ ],
+ "directory/mattpocock/skills/grill-with-docs/index.html": [
+  "grill-with-docs skill by mattpocock/skills",
+  "frontend-design skills",
+  "agent skill assessment"
+ ],
+ "directory/mattpocock/skills/grilling/index.html": [
+  "grilling skill by mattpocock/skills",
+  "testing-qa skills",
+  "agent skill assessment"
+ ],
+ "directory/mattpocock/skills/handoff/index.html": [
+  "handoff skill by mattpocock/skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
+ "directory/mattpocock/skills/improve-codebase-architecture/index.html": [
+  "improve-codebase-architecture skill by mattpocock/skills",
+  "developer-tools skills",
+  "agent skill assessment"
+ ],
  "directory/mattpocock/skills/index.html": [
   "mattpocock/skills skills",
   "skills skills",
@@ -4969,6 +6754,91 @@
   "skills claude skills",
   "developer tools agent skills",
   "agent skills directory"
+ ],
+ "directory/mattpocock/skills/migrate-to-shoehorn/index.html": [
+  "migrate-to-shoehorn skill by mattpocock/skills",
+  "testing-qa skills",
+  "agent skill assessment"
+ ],
+ "directory/mattpocock/skills/pr/index.html": [
+  "pr skill by mattpocock/skills",
+  "writing-content skills",
+  "agent skill assessment"
+ ],
+ "directory/mattpocock/skills/prototype/index.html": [
+  "prototype skill by mattpocock/skills",
+  "frontend-design skills",
+  "agent skill assessment"
+ ],
+ "directory/mattpocock/skills/research/index.html": [
+  "research skill by mattpocock/skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
+ "directory/mattpocock/skills/scaffold-exercises/index.html": [
+  "scaffold-exercises skill by mattpocock/skills",
+  "code-review-quality skills",
+  "agent skill assessment"
+ ],
+ "directory/mattpocock/skills/setup-matt-pocock-skills/index.html": [
+  "setup-matt-pocock-skills skill by mattpocock/skills",
+  "documents-office skills",
+  "agent skill assessment"
+ ],
+ "directory/mattpocock/skills/setup-pre-commit/index.html": [
+  "setup-pre-commit skill by mattpocock/skills",
+  "testing-qa skills",
+  "agent skill assessment"
+ ],
+ "directory/mattpocock/skills/tdd/index.html": [
+  "tdd skill by mattpocock/skills",
+  "testing-qa skills",
+  "agent skill assessment"
+ ],
+ "directory/mattpocock/skills/teach/index.html": [
+  "teach skill by mattpocock/skills",
+  "developer-tools skills",
+  "agent skill assessment"
+ ],
+ "directory/mattpocock/skills/to-questionnaire/index.html": [
+  "to-questionnaire skill by mattpocock/skills",
+  "developer-tools skills",
+  "agent skill assessment"
+ ],
+ "directory/mattpocock/skills/to-spec/index.html": [
+  "to-spec skill by mattpocock/skills",
+  "developer-tools skills",
+  "agent skill assessment"
+ ],
+ "directory/mattpocock/skills/to-tickets/index.html": [
+  "to-tickets skill by mattpocock/skills",
+  "developer-tools skills",
+  "agent skill assessment"
+ ],
+ "directory/mattpocock/skills/triage/index.html": [
+  "triage skill by mattpocock/skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
+ "directory/mattpocock/skills/wait-what/index.html": [
+  "wait-what skill by mattpocock/skills",
+  "developer-tools skills",
+  "agent skill assessment"
+ ],
+ "directory/mattpocock/skills/wayfinder/index.html": [
+  "wayfinder skill by mattpocock/skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
+ "directory/mattpocock/skills/wizard/index.html": [
+  "wizard skill by mattpocock/skills",
+  "devops-cloud skills",
+  "agent skill assessment"
+ ],
+ "directory/mattpocock/skills/writing-for-agents/index.html": [
+  "writing-for-agents skill by mattpocock/skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
  ],
  "directory/mblode/agent-skills/agent-ready/index.html": [
   "agent-ready skill by mblode",
@@ -4987,6 +6857,26 @@
   "mblode skills",
   "AI agent agent skills",
   "SKILL.md"
+ ],
+ "directory/mblode/agent-skills/agents-md/index.html": [
+  "agents-md skill by mblode/agent-skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
+ "directory/mblode/agent-skills/app-verification/index.html": [
+  "app-verification skill by mblode/agent-skills",
+  "testing-qa skills",
+  "agent skill assessment"
+ ],
+ "directory/mblode/agent-skills/autoship/index.html": [
+  "autoship skill by mblode/agent-skills",
+  "devops-cloud skills",
+  "agent skill assessment"
+ ],
+ "directory/mblode/agent-skills/ax-audit/index.html": [
+  "ax-audit skill by mblode/agent-skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
  ],
  "directory/mblode/agent-skills/chat-history/index.html": [
   "chat-history skill by mblode",
@@ -5015,6 +6905,16 @@
   "code review agent skills",
   "SKILL.md"
  ],
+ "directory/mblode/agent-skills/dx-audit/index.html": [
+  "dx-audit skill by mblode/agent-skills",
+  "code-review-quality skills",
+  "agent skill assessment"
+ ],
+ "directory/mblode/agent-skills/eli5/index.html": [
+  "eli5 skill by mblode/agent-skills",
+  "writing-content skills",
+  "agent skill assessment"
+ ],
  "directory/mblode/agent-skills/ghostwriter/index.html": [
   "ghostwriter skill by mblode",
   "ghostwriter skill",
@@ -5032,6 +6932,16 @@
   "AI agent agent skills",
   "agent skills directory"
  ],
+ "directory/mblode/agent-skills/multi-tenant-architecture/index.html": [
+  "multi-tenant-architecture skill by mblode/agent-skills",
+  "devops-cloud skills",
+  "agent skill assessment"
+ ],
+ "directory/mblode/agent-skills/planning/index.html": [
+  "planning skill by mblode/agent-skills",
+  "productivity-knowledge skills",
+  "agent skill assessment"
+ ],
  "directory/mblode/agent-skills/pr-babysitter/alternatives/index.html": [
   "pr-babysitter alternatives",
   "pr-babysitter skill alternatives",
@@ -5046,6 +6956,36 @@
   "mblode skills",
   "code review agent skills",
   "SKILL.md"
+ ],
+ "directory/mblode/agent-skills/pr-creator/index.html": [
+  "pr-creator skill by mblode/agent-skills",
+  "developer-tools skills",
+  "agent skill assessment"
+ ],
+ "directory/mblode/agent-skills/presentation-creator/index.html": [
+  "presentation-creator skill by mblode/agent-skills",
+  "documents-office skills",
+  "agent skill assessment"
+ ],
+ "directory/mblode/agent-skills/product-design/index.html": [
+  "product-design skill by mblode/agent-skills",
+  "frontend-design skills",
+  "agent skill assessment"
+ ],
+ "directory/mblode/agent-skills/scaffold-cli/index.html": [
+  "scaffold-cli skill by mblode/agent-skills",
+  "developer-tools skills",
+  "agent skill assessment"
+ ],
+ "directory/mblode/agent-skills/scaffold-nextjs/index.html": [
+  "scaffold-nextjs skill by mblode/agent-skills",
+  "developer-tools skills",
+  "agent skill assessment"
+ ],
+ "directory/mblode/agent-skills/seo/index.html": [
+  "seo skill by mblode/agent-skills",
+  "marketing-seo skills",
+  "agent skill assessment"
  ],
  "directory/mblode/agent-skills/test-audit/index.html": [
   "test-audit skill by mblode",
@@ -5118,6 +7058,11 @@
   "mcollina skills",
   "writing and editing agent skills",
   "SKILL.md"
+ ],
+ "directory/mcollina/skills/fastify-best-practices/index.html": [
+  "fastify-best-practices skill by mcollina/skills",
+  "developer-tools skills",
+  "agent skill assessment"
  ],
  "directory/mcollina/skills/index.html": [
   "mcollina/skills skills",
@@ -5577,6 +7522,136 @@
   "productivity agent skills",
   "SKILL.md"
  ],
+ "directory/microsoft/azure-skills/airunway-aks-setup/index.html": [
+  "airunway-aks-setup skill by microsoft/azure-skills",
+  "devops-cloud skills",
+  "agent skill assessment"
+ ],
+ "directory/microsoft/azure-skills/appinsights-instrumentation/index.html": [
+  "appinsights-instrumentation skill by microsoft/azure-skills",
+  "developer-tools skills",
+  "agent skill assessment"
+ ],
+ "directory/microsoft/azure-skills/azure-ai/index.html": [
+  "azure-ai skill by microsoft/azure-skills",
+  "devops-cloud skills",
+  "agent skill assessment"
+ ],
+ "directory/microsoft/azure-skills/azure-aigateway/index.html": [
+  "azure-aigateway skill by microsoft/azure-skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
+ "directory/microsoft/azure-skills/azure-app-onboard-prereq/index.html": [
+  "azure-app-onboard-prereq skill by microsoft/azure-skills",
+  "devops-cloud skills",
+  "agent skill assessment"
+ ],
+ "directory/microsoft/azure-skills/azure-app-onboard/index.html": [
+  "azure-app-onboard skill by microsoft/azure-skills",
+  "devops-cloud skills",
+  "agent skill assessment"
+ ],
+ "directory/microsoft/azure-skills/azure-cloud-migrate/index.html": [
+  "azure-cloud-migrate skill by microsoft/azure-skills",
+  "devops-cloud skills",
+  "agent skill assessment"
+ ],
+ "directory/microsoft/azure-skills/azure-compliance/index.html": [
+  "azure-compliance skill by microsoft/azure-skills",
+  "devops-cloud skills",
+  "agent skill assessment"
+ ],
+ "directory/microsoft/azure-skills/azure-compute/index.html": [
+  "azure-compute skill by microsoft/azure-skills",
+  "devops-cloud skills",
+  "agent skill assessment"
+ ],
+ "directory/microsoft/azure-skills/azure-deploy/index.html": [
+  "azure-deploy skill by microsoft/azure-skills",
+  "devops-cloud skills",
+  "agent skill assessment"
+ ],
+ "directory/microsoft/azure-skills/azure-diagnostics/index.html": [
+  "azure-diagnostics skill by microsoft/azure-skills",
+  "devops-cloud skills",
+  "agent skill assessment"
+ ],
+ "directory/microsoft/azure-skills/azure-enterprise-infra-planner/index.html": [
+  "azure-enterprise-infra-planner skill by microsoft/azure-skills",
+  "devops-cloud skills",
+  "agent skill assessment"
+ ],
+ "directory/microsoft/azure-skills/azure-kubernetes/index.html": [
+  "azure-kubernetes skill by microsoft/azure-skills",
+  "devops-cloud skills",
+  "agent skill assessment"
+ ],
+ "directory/microsoft/azure-skills/azure-kusto/index.html": [
+  "azure-kusto skill by microsoft/azure-skills",
+  "devops-cloud skills",
+  "agent skill assessment"
+ ],
+ "directory/microsoft/azure-skills/azure-messaging/index.html": [
+  "azure-messaging skill by microsoft/azure-skills",
+  "developer-tools skills",
+  "agent skill assessment"
+ ],
+ "directory/microsoft/azure-skills/azure-prepare/index.html": [
+  "azure-prepare skill by microsoft/azure-skills",
+  "devops-cloud skills",
+  "agent skill assessment"
+ ],
+ "directory/microsoft/azure-skills/azure-quotas/index.html": [
+  "azure-quotas skill by microsoft/azure-skills",
+  "devops-cloud skills",
+  "agent skill assessment"
+ ],
+ "directory/microsoft/azure-skills/azure-reliability/index.html": [
+  "azure-reliability skill by microsoft/azure-skills",
+  "devops-cloud skills",
+  "agent skill assessment"
+ ],
+ "directory/microsoft/azure-skills/azure-resource-lookup/index.html": [
+  "azure-resource-lookup skill by microsoft/azure-skills",
+  "devops-cloud skills",
+  "agent skill assessment"
+ ],
+ "directory/microsoft/azure-skills/azure-resource-visualizer/index.html": [
+  "azure-resource-visualizer skill by microsoft/azure-skills",
+  "devops-cloud skills",
+  "agent skill assessment"
+ ],
+ "directory/microsoft/azure-skills/azure-storage/index.html": [
+  "azure-storage skill by microsoft/azure-skills",
+  "devops-cloud skills",
+  "agent skill assessment"
+ ],
+ "directory/microsoft/azure-skills/azure-upgrade/index.html": [
+  "azure-upgrade skill by microsoft/azure-skills",
+  "devops-cloud skills",
+  "agent skill assessment"
+ ],
+ "directory/microsoft/azure-skills/azure-validate/index.html": [
+  "azure-validate skill by microsoft/azure-skills",
+  "devops-cloud skills",
+  "agent skill assessment"
+ ],
+ "directory/microsoft/azure-skills/discover-azure-skills/index.html": [
+  "discover-azure-skills skill by microsoft/azure-skills",
+  "devops-cloud skills",
+  "agent skill assessment"
+ ],
+ "directory/microsoft/azure-skills/entra-agent-id/index.html": [
+  "entra-agent-id skill by microsoft/azure-skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
+ "directory/microsoft/azure-skills/entra-app-registration/index.html": [
+  "entra-app-registration skill by microsoft/azure-skills",
+  "devops-cloud skills",
+  "agent skill assessment"
+ ],
  "directory/microsoft/azure-skills/index.html": [
   "microsoft/azure-skills skills",
   "azure-skills skills",
@@ -5584,6 +7659,16 @@
   "azure-skills claude skills",
   "DevOps and cloud agent skills",
   "agent skills directory"
+ ],
+ "directory/microsoft/azure-skills/microsoft-foundry/index.html": [
+  "microsoft-foundry skill by microsoft/azure-skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
+ "directory/microsoft/azure-skills/python-appservice-deploy/index.html": [
+  "python-appservice-deploy skill by microsoft/azure-skills",
+  "devops-cloud skills",
+  "agent skill assessment"
  ],
  "directory/minimax-ai/skills/design-style-skill/index.html": [
   "design-style-skill skill by MiniMax-AI",
@@ -6095,11 +8180,66 @@
   "data and database agent skills",
   "agent skills directory"
  ],
+ "directory/neondatabase/agent-skills/neon-ai-gateway/index.html": [
+  "neon-ai-gateway skill by neondatabase/agent-skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
+ "directory/neondatabase/agent-skills/neon-auth/index.html": [
+  "neon-auth skill by neondatabase/agent-skills",
+  "data-databases skills",
+  "agent skill assessment"
+ ],
+ "directory/neondatabase/agent-skills/neon-object-storage/index.html": [
+  "neon-object-storage skill by neondatabase/agent-skills",
+  "data-databases skills",
+  "agent skill assessment"
+ ],
+ "directory/neondatabase/agent-skills/neon-postgres-branches/index.html": [
+  "neon-postgres-branches skill by neondatabase/agent-skills",
+  "testing-qa skills",
+  "agent skill assessment"
+ ],
+ "directory/neondatabase/agent-skills/neon-postgres-egress-optimizer/index.html": [
+  "neon-postgres-egress-optimizer skill by neondatabase/agent-skills",
+  "data-databases skills",
+  "agent skill assessment"
+ ],
+ "directory/neondatabase/agent-skills/neon-postgres/index.html": [
+  "neon-postgres skill by neondatabase/agent-skills",
+  "data-databases skills",
+  "agent skill assessment"
+ ],
+ "directory/neondatabase/agent-skills/neon/index.html": [
+  "neon skill by neondatabase/agent-skills",
+  "data-databases skills",
+  "agent skill assessment"
+ ],
  "directory/new/index.html": [
   "new claude code skills",
   "new agent skills",
   "latest claude skills",
   "recently updated agent skills"
+ ],
+ "directory/nextlevelbuilder/ui-ux-pro-max-skill/banner-design/index.html": [
+  "banner-design skill by nextlevelbuilder/ui-ux-pro-max-skill",
+  "frontend-design skills",
+  "agent skill assessment"
+ ],
+ "directory/nextlevelbuilder/ui-ux-pro-max-skill/brand/index.html": [
+  "brand skill by nextlevelbuilder/ui-ux-pro-max-skill",
+  "marketing-seo skills",
+  "agent skill assessment"
+ ],
+ "directory/nextlevelbuilder/ui-ux-pro-max-skill/design-system/index.html": [
+  "design-system skill by nextlevelbuilder/ui-ux-pro-max-skill",
+  "frontend-design skills",
+  "agent skill assessment"
+ ],
+ "directory/nextlevelbuilder/ui-ux-pro-max-skill/design/index.html": [
+  "design skill by nextlevelbuilder/ui-ux-pro-max-skill",
+  "frontend-design skills",
+  "agent skill assessment"
  ],
  "directory/nextlevelbuilder/ui-ux-pro-max-skill/index.html": [
   "nextlevelbuilder/ui-ux-pro-max-skill skills",
@@ -6108,6 +8248,21 @@
   "ui-ux-pro-max-skill claude skills",
   "frontend and design agent skills",
   "agent skills directory"
+ ],
+ "directory/nextlevelbuilder/ui-ux-pro-max-skill/slides/index.html": [
+  "slides skill by nextlevelbuilder/ui-ux-pro-max-skill",
+  "documents-office skills",
+  "agent skill assessment"
+ ],
+ "directory/nextlevelbuilder/ui-ux-pro-max-skill/ui-styling/index.html": [
+  "ui-styling skill by nextlevelbuilder/ui-ux-pro-max-skill",
+  "frontend-design skills",
+  "agent skill assessment"
+ ],
+ "directory/nextlevelbuilder/ui-ux-pro-max-skill/ui-ux-pro-max/index.html": [
+  "ui-ux-pro-max skill by nextlevelbuilder/ui-ux-pro-max-skill",
+  "frontend-design skills",
+  "agent skill assessment"
  ],
  "directory/nowork-studio/notfair/backlink-audit/index.html": [
   "backlink-audit skill by nowork-studio",
@@ -6240,6 +8395,16 @@
   "developer tools agent skills",
   "SKILL.md"
  ],
+ "directory/nvidia/skills/digital-health-clinical-asr-build/index.html": [
+  "digital-health-clinical-asr-build skill by NVIDIA/skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
+ "directory/nvidia/skills/digital-health-clinical-asr-finetune/index.html": [
+  "digital-health-clinical-asr-finetune skill by NVIDIA/skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
  "directory/nvidia/skills/hsb-ip-def/index.html": [
   "hsb-ip-def skill by NVIDIA",
   "hsb-ip-def skill",
@@ -6266,6 +8431,26 @@
   "developer tools agent skills",
   "SKILL.md"
  ],
+ "directory/nvidia/skills/nv-generate-ct-rflow/index.html": [
+  "nv-generate-ct-rflow skill by NVIDIA/skills",
+  "science-research skills",
+  "agent skill assessment"
+ ],
+ "directory/nvidia/skills/nv-generate-mr-brain/index.html": [
+  "nv-generate-mr-brain skill by NVIDIA/skills",
+  "science-research skills",
+  "agent skill assessment"
+ ],
+ "directory/nvidia/skills/nv-generate-mr/index.html": [
+  "nv-generate-mr skill by NVIDIA/skills",
+  "science-research skills",
+  "agent skill assessment"
+ ],
+ "directory/nvidia/skills/nvflare-autofl/index.html": [
+  "nvflare-autofl skill by NVIDIA/skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
  "directory/nvidia/skills/physical-ai-defect-image-generation/index.html": [
   "physical-ai-defect-image-generation skill by NVIDIA",
   "physical-ai-defect-image-generation skill",
@@ -6274,6 +8459,11 @@
   "NVIDIA skills",
   "video image and audio agent skills",
   "SKILL.md"
+ ],
+ "directory/nvidia/skills/physical-ai-neural-reconstruction/index.html": [
+  "physical-ai-neural-reconstruction skill by NVIDIA/skills",
+  "media-creative skills",
+  "agent skill assessment"
  ],
  "directory/nvidia/skills/physical-ai-video-data-augmentation/index.html": [
   "physical-ai-video-data-augmentation skill by NVIDIA",
@@ -6293,6 +8483,16 @@
   "developer tools agent skills",
   "SKILL.md"
  ],
+ "directory/nvidia/skills/skill-card-generator/index.html": [
+  "skill-card-generator skill by NVIDIA/skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
+ "directory/nvidia/skills/tao-analyze-changenet-rca/index.html": [
+  "tao-analyze-changenet-rca skill by NVIDIA/skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
  "directory/nvidia/skills/tao-analyze-detection-kpi/index.html": [
   "tao-analyze-detection-kpi skill by NVIDIA",
   "tao-analyze-detection-kpi skill",
@@ -6301,6 +8501,91 @@
   "NVIDIA skills",
   "AI agent agent skills",
   "SKILL.md"
+ ],
+ "directory/nvidia/skills/tao-analyze-gaps-od-map/index.html": [
+  "tao-analyze-gaps-od-map skill by NVIDIA/skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
+ "directory/nvidia/skills/tao-analyze-gaps-vlm-bcq/index.html": [
+  "tao-analyze-gaps-vlm-bcq skill by NVIDIA/skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
+ "directory/nvidia/skills/tao-artifacts/index.html": [
+  "tao-artifacts skill by NVIDIA/skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
+ "directory/nvidia/skills/tao-finetune-anomalygennext/index.html": [
+  "tao-finetune-anomalygennext skill by NVIDIA/skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
+ "directory/nvidia/skills/tao-finetune-clip/index.html": [
+  "tao-finetune-clip skill by NVIDIA/skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
+ "directory/nvidia/skills/tao-finetune-cosmos-embed/index.html": [
+  "tao-finetune-cosmos-embed skill by NVIDIA/skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
+ "directory/nvidia/skills/tao-finetune-kumo-anomaly/index.html": [
+  "tao-finetune-kumo-anomaly skill by NVIDIA/skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
+ "directory/nvidia/skills/tao-finetune-kumo-forecast/index.html": [
+  "tao-finetune-kumo-forecast skill by NVIDIA/skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
+ "directory/nvidia/skills/tao-finetune-video-clip/index.html": [
+  "tao-finetune-video-clip skill by NVIDIA/skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
+ "directory/nvidia/skills/tao-generate-anomalies/index.html": [
+  "tao-generate-anomalies skill by NVIDIA/skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
+ "directory/nvidia/skills/tao-generate-image-embeddings/index.html": [
+  "tao-generate-image-embeddings skill by NVIDIA/skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
+ "directory/nvidia/skills/tao-generate-image-grounding/index.html": [
+  "tao-generate-image-grounding skill by NVIDIA/skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
+ "directory/nvidia/skills/tao-generate-video-reasoning-annotations/index.html": [
+  "tao-generate-video-reasoning-annotations skill by NVIDIA/skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
+ "directory/nvidia/skills/tao-prepare-anomalygennext-inputs/index.html": [
+  "tao-prepare-anomalygennext-inputs skill by NVIDIA/skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
+ "directory/nvidia/skills/tao-run-automl/index.html": [
+  "tao-run-automl skill by NVIDIA/skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
+ "directory/nvidia/skills/tao-run-deft-aoi-cosmos3/index.html": [
+  "tao-run-deft-aoi-cosmos3 skill by NVIDIA/skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
+ "directory/nvidia/skills/tao-run-deft-aoi/index.html": [
+  "tao-run-deft-aoi skill by NVIDIA/skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
  ],
  "directory/nvidia/skills/tao-run-deft-cr-its-mining/index.html": [
   "tao-run-deft-cr-its-mining skill by NVIDIA",
@@ -6320,6 +8605,186 @@
   "AI agent agent skills",
   "SKILL.md"
  ],
+ "directory/nvidia/skills/tao-run-deft-pas/index.html": [
+  "tao-run-deft-pas skill by NVIDIA/skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
+ "directory/nvidia/skills/tao-run-on-kubernetes/index.html": [
+  "tao-run-on-kubernetes skill by NVIDIA/skills",
+  "devops-cloud skills",
+  "agent skill assessment"
+ ],
+ "directory/nvidia/skills/tao-run-on-slurm/index.html": [
+  "tao-run-on-slurm skill by NVIDIA/skills",
+  "devops-cloud skills",
+  "agent skill assessment"
+ ],
+ "directory/nvidia/skills/tao-run-on-virtualenv/index.html": [
+  "tao-run-on-virtualenv skill by NVIDIA/skills",
+  "devops-cloud skills",
+  "agent skill assessment"
+ ],
+ "directory/nvidia/skills/tao-setup-nvidia-gpu-host/index.html": [
+  "tao-setup-nvidia-gpu-host skill by NVIDIA/skills",
+  "devops-cloud skills",
+  "agent skill assessment"
+ ],
+ "directory/nvidia/skills/tao-token-efficient-execution/index.html": [
+  "tao-token-efficient-execution skill by NVIDIA/skills",
+  "developer-tools skills",
+  "agent skill assessment"
+ ],
+ "directory/nvidia/skills/tao-train-action-recognition/index.html": [
+  "tao-train-action-recognition skill by NVIDIA/skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
+ "directory/nvidia/skills/tao-train-bevfusion/index.html": [
+  "tao-train-bevfusion skill by NVIDIA/skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
+ "directory/nvidia/skills/tao-train-centerpose/index.html": [
+  "tao-train-centerpose skill by NVIDIA/skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
+ "directory/nvidia/skills/tao-train-codetr/index.html": [
+  "tao-train-codetr skill by NVIDIA/skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
+ "directory/nvidia/skills/tao-train-deformable-detr/index.html": [
+  "tao-train-deformable-detr skill by NVIDIA/skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
+ "directory/nvidia/skills/tao-train-depth-anything-v2/index.html": [
+  "tao-train-depth-anything-v2 skill by NVIDIA/skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
+ "directory/nvidia/skills/tao-train-dino/index.html": [
+  "tao-train-dino skill by NVIDIA/skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
+ "directory/nvidia/skills/tao-train-fast-foundation-stereo/index.html": [
+  "tao-train-fast-foundation-stereo skill by NVIDIA/skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
+ "directory/nvidia/skills/tao-train-foundation-stereo/index.html": [
+  "tao-train-foundation-stereo skill by NVIDIA/skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
+ "directory/nvidia/skills/tao-train-grounding-dino/index.html": [
+  "tao-train-grounding-dino skill by NVIDIA/skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
+ "directory/nvidia/skills/tao-train-image-classification/index.html": [
+  "tao-train-image-classification skill by NVIDIA/skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
+ "directory/nvidia/skills/tao-train-mask-auto-encoder/index.html": [
+  "tao-train-mask-auto-encoder skill by NVIDIA/skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
+ "directory/nvidia/skills/tao-train-mask-auto-label/index.html": [
+  "tao-train-mask-auto-label skill by NVIDIA/skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
+ "directory/nvidia/skills/tao-train-mask-grounding-dino/index.html": [
+  "tao-train-mask-grounding-dino skill by NVIDIA/skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
+ "directory/nvidia/skills/tao-train-mask2former/index.html": [
+  "tao-train-mask2former skill by NVIDIA/skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
+ "directory/nvidia/skills/tao-train-metric-learning-recognition/index.html": [
+  "tao-train-metric-learning-recognition skill by NVIDIA/skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
+ "directory/nvidia/skills/tao-train-nvdinov2/index.html": [
+  "tao-train-nvdinov2 skill by NVIDIA/skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
+ "directory/nvidia/skills/tao-train-nvpanoptix3d/index.html": [
+  "tao-train-nvpanoptix3d skill by NVIDIA/skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
+ "directory/nvidia/skills/tao-train-ocdnet/index.html": [
+  "tao-train-ocdnet skill by NVIDIA/skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
+ "directory/nvidia/skills/tao-train-ocrnet/index.html": [
+  "tao-train-ocrnet skill by NVIDIA/skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
+ "directory/nvidia/skills/tao-train-oneformer/index.html": [
+  "tao-train-oneformer skill by NVIDIA/skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
+ "directory/nvidia/skills/tao-train-optical-inspection/index.html": [
+  "tao-train-optical-inspection skill by NVIDIA/skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
+ "directory/nvidia/skills/tao-train-pointpillars/index.html": [
+  "tao-train-pointpillars skill by NVIDIA/skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
+ "directory/nvidia/skills/tao-train-pose-classification/index.html": [
+  "tao-train-pose-classification skill by NVIDIA/skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
+ "directory/nvidia/skills/tao-train-reid/index.html": [
+  "tao-train-reid skill by NVIDIA/skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
+ "directory/nvidia/skills/tao-train-rtdetr/index.html": [
+  "tao-train-rtdetr skill by NVIDIA/skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
+ "directory/nvidia/skills/tao-train-segformer/index.html": [
+  "tao-train-segformer skill by NVIDIA/skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
+ "directory/nvidia/skills/tao-train-single-step/index.html": [
+  "tao-train-single-step skill by NVIDIA/skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
+ "directory/nvidia/skills/tao-train-sparse4d/index.html": [
+  "tao-train-sparse4d skill by NVIDIA/skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
+ "directory/nvidia/skills/tao-train-visual-changenet/index.html": [
+  "tao-train-visual-changenet skill by NVIDIA/skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
  "directory/nvidia/skills/tao-validate-recipe-transfer/index.html": [
   "tao-validate-recipe-transfer skill by NVIDIA",
   "tao-validate-recipe-transfer skill",
@@ -6337,6 +8802,21 @@
   "NVIDIA skills",
   "DevOps and cloud agent skills",
   "SKILL.md"
+ ],
+ "directory/nvidia/skills/vss-deploy-profile/index.html": [
+  "vss-deploy-profile skill by NVIDIA/skills",
+  "devops-cloud skills",
+  "agent skill assessment"
+ ],
+ "directory/nvidia/skills/vss-manage-alerts/index.html": [
+  "vss-manage-alerts skill by NVIDIA/skills",
+  "devops-cloud skills",
+  "agent skill assessment"
+ ],
+ "directory/nvidia/skills/warp-compile-time-optimizer/index.html": [
+  "warp-compile-time-optimizer skill by NVIDIA/skills",
+  "developer-tools skills",
+  "agent skill assessment"
  ],
  "directory/nvidia/skills/warp-eval/index.html": [
   "warp-eval skill by NVIDIA",
@@ -6381,6 +8861,11 @@
   "obra skills",
   "DevOps and cloud agent skills",
   "SKILL.md"
+ ],
+ "directory/obra/superpowers/brainstorming/index.html": [
+  "brainstorming skill by obra/superpowers",
+  "ai-agents-llm skills",
+  "agent skill assessment"
  ],
  "directory/obra/superpowers/diagnosing-superpowers/index.html": [
   "diagnosing-superpowers skill by obra",
@@ -6450,6 +8935,11 @@
   "code review agent skills",
   "SKILL.md"
  ],
+ "directory/obra/superpowers/subagent-driven-development/index.html": [
+  "subagent-driven-development skill by obra/superpowers",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
  "directory/obra/superpowers/systematic-debugging/index.html": [
   "systematic-debugging skill by obra",
   "systematic-debugging skill",
@@ -6509,6 +8999,11 @@
   "obra skills",
   "AI agent agent skills",
   "SKILL.md"
+ ],
+ "directory/obra/superpowers/writing-skills/index.html": [
+  "writing-skills skill by obra/superpowers",
+  "ai-agents-llm skills",
+  "agent skill assessment"
  ],
  "directory/octav-labs/octav-api-skill/index.html": [
   "Octav-Labs/octav-api-skill skills",
@@ -6925,6 +9420,11 @@
   "best product management skills",
   "agent skills directory"
  ],
+ "directory/product-on-purpose/pm-skills/define-opportunity-tree/index.html": [
+  "define-opportunity-tree skill by product-on-purpose/pm-skills",
+  "product-management skills",
+  "agent skill assessment"
+ ],
  "directory/product-on-purpose/pm-skills/discover-journey-map/index.html": [
   "discover-journey-map skill by product-on-purpose",
   "discover-journey-map skill",
@@ -6933,6 +9433,11 @@
   "product-on-purpose skills",
   "product management agent skills",
   "SKILL.md"
+ ],
+ "directory/product-on-purpose/pm-skills/discover-stakeholder-summary/index.html": [
+  "discover-stakeholder-summary skill by product-on-purpose/pm-skills",
+  "product-management skills",
+  "agent skill assessment"
  ],
  "directory/product-on-purpose/pm-skills/foundation-lean-canvas/index.html": [
   "foundation-lean-canvas skill by product-on-purpose",
@@ -7527,6 +10032,11 @@
   "developer tools agent skills",
   "SKILL.md"
  ],
+ "directory/rising/index.html": [
+  "rising skills",
+  "graded agent skills",
+  "Suede AI Skills Directory"
+ ],
  "directory/rules/index.html": [
   "rules instruction files and prompts",
   "rules and prompts directory",
@@ -7542,6 +10052,16 @@
   "agent-toolkit claude skills",
   "frontend and design agent skills",
   "agent skills directory"
+ ],
+ "directory/sanity-io/agent-toolkit/sanity-best-practices/index.html": [
+  "sanity-best-practices skill by sanity-io/agent-toolkit",
+  "frontend-design skills",
+  "agent skill assessment"
+ ],
+ "directory/sanity-io/agent-toolkit/sanity-migration/index.html": [
+  "sanity-migration skill by sanity-io/agent-toolkit",
+  "frontend-design skills",
+  "agent skill assessment"
  ],
  "directory/sanjay3290/ai-skills/apple-container/index.html": [
   "apple-container skill by sanjay3290",
@@ -7923,6 +10443,11 @@
   "creative director skill",
   "video editing agent"
  ],
+ "directory/state-of-agent-skills/index.html": [
+  "state of agent skills",
+  "graded agent skills",
+  "Suede AI Skills Directory"
+ ],
  "directory/stripe/ai/index.html": [
   "stripe/ai skills",
   "ai skills",
@@ -7930,6 +10455,11 @@
   "ai claude skills",
   "data and database agent skills",
   "agent skills directory"
+ ],
+ "directory/stripe/ai/stripe-best-practices/index.html": [
+  "stripe-best-practices skill by stripe/ai",
+  "business-finance skills",
+  "agent skill assessment"
  ],
  "directory/submit/index.html": [
   "submit agent skill",
@@ -7945,6 +10475,11 @@
   "agent-skills claude skills",
   "data and database agent skills",
   "agent skills directory"
+ ],
+ "directory/supabase/agent-skills/supabase-postgres-best-practices/index.html": [
+  "supabase-postgres-best-practices skill by supabase/agent-skills",
+  "data-databases skills",
+  "agent skill assessment"
  ],
  "directory/supabase/agent-skills/supabase/alternatives/index.html": [
   "supabase alternatives",
@@ -9589,6 +12124,26 @@
   "security agent skills",
   "SKILL.md"
  ],
+ "directory/trailofbits/skills/audit-prep-assistant/index.html": [
+  "audit-prep-assistant skill by trailofbits/skills",
+  "security skills",
+  "agent skill assessment"
+ ],
+ "directory/trailofbits/skills/burpsuite-project-parser/index.html": [
+  "burpsuite-project-parser skill by trailofbits/skills",
+  "security skills",
+  "agent skill assessment"
+ ],
+ "directory/trailofbits/skills/chrome-mcp-troubleshooting/index.html": [
+  "chrome-mcp-troubleshooting skill by trailofbits/skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
+ "directory/trailofbits/skills/code-improver/index.html": [
+  "code-improver skill by trailofbits/skills",
+  "code-review-quality skills",
+  "agent skill assessment"
+ ],
  "directory/trailofbits/skills/codeql/alternatives/index.html": [
   "codeql alternatives",
   "codeql skill alternatives",
@@ -9604,6 +12159,16 @@
   "security agent skills",
   "SKILL.md"
  ],
+ "directory/trailofbits/skills/constant-time-analysis/index.html": [
+  "constant-time-analysis skill by trailofbits/skills",
+  "security skills",
+  "agent skill assessment"
+ ],
+ "directory/trailofbits/skills/constant-time-testing/index.html": [
+  "constant-time-testing skill by trailofbits/skills",
+  "security skills",
+  "agent skill assessment"
+ ],
  "directory/trailofbits/skills/crypto-protocol-diagram/index.html": [
   "crypto-protocol-diagram skill by trailofbits",
   "crypto-protocol-diagram skill",
@@ -9612,6 +12177,11 @@
   "trailofbits skills",
   "security agent skills",
   "SKILL.md"
+ ],
+ "directory/trailofbits/skills/devcontainer-setup/index.html": [
+  "devcontainer-setup skill by trailofbits/skills",
+  "developer-tools skills",
+  "agent skill assessment"
  ],
  "directory/trailofbits/skills/diagramming-code/index.html": [
   "diagramming-code skill by trailofbits",
@@ -9631,6 +12201,31 @@
   "code review agent skills",
   "SKILL.md"
  ],
+ "directory/trailofbits/skills/entry-point-analyzer/index.html": [
+  "entry-point-analyzer skill by trailofbits/skills",
+  "security skills",
+  "agent skill assessment"
+ ],
+ "directory/trailofbits/skills/firebase-apk-scanner/index.html": [
+  "firebase-apk-scanner skill by trailofbits/skills",
+  "security skills",
+  "agent skill assessment"
+ ],
+ "directory/trailofbits/skills/fp-check/index.html": [
+  "fp-check skill by trailofbits/skills",
+  "security skills",
+  "agent skill assessment"
+ ],
+ "directory/trailofbits/skills/genotoxic/index.html": [
+  "genotoxic skill by trailofbits/skills",
+  "testing-qa skills",
+  "agent skill assessment"
+ ],
+ "directory/trailofbits/skills/goal-prompt/index.html": [
+  "goal-prompt skill by trailofbits/skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
  "directory/trailofbits/skills/graph-evolution/index.html": [
   "graph-evolution skill by trailofbits",
   "graph-evolution skill",
@@ -9648,6 +12243,11 @@
   "security agent skills",
   "agent skills directory"
  ],
+ "directory/trailofbits/skills/interpreting-culture-index/index.html": [
+  "interpreting-culture-index skill by trailofbits/skills",
+  "business-finance skills",
+  "agent skill assessment"
+ ],
  "directory/trailofbits/skills/let-fate-decide/index.html": [
   "let-fate-decide skill by trailofbits",
   "let-fate-decide skill",
@@ -9656,6 +12256,66 @@
   "trailofbits skills",
   "AI agent agent skills",
   "SKILL.md"
+ ],
+ "directory/trailofbits/skills/mermaid-to-proverif/index.html": [
+  "mermaid-to-proverif skill by trailofbits/skills",
+  "security skills",
+  "agent skill assessment"
+ ],
+ "directory/trailofbits/skills/modern-cpp/index.html": [
+  "modern-cpp skill by trailofbits/skills",
+  "developer-tools skills",
+  "agent skill assessment"
+ ],
+ "directory/trailofbits/skills/modern-python/index.html": [
+  "modern-python skill by trailofbits/skills",
+  "developer-tools skills",
+  "agent skill assessment"
+ ],
+ "directory/trailofbits/skills/mutation-testing/index.html": [
+  "mutation-testing skill by trailofbits/skills",
+  "testing-qa skills",
+  "agent skill assessment"
+ ],
+ "directory/trailofbits/skills/open-sourcing/index.html": [
+  "open-sourcing skill by trailofbits/skills",
+  "developer-tools skills",
+  "agent skill assessment"
+ ],
+ "directory/trailofbits/skills/post-patch-validation/index.html": [
+  "post-patch-validation skill by trailofbits/skills",
+  "security skills",
+  "agent skill assessment"
+ ],
+ "directory/trailofbits/skills/pr-improver/index.html": [
+  "pr-improver skill by trailofbits/skills",
+  "code-review-quality skills",
+  "agent skill assessment"
+ ],
+ "directory/trailofbits/skills/property-based-testing/index.html": [
+  "property-based-testing skill by trailofbits/skills",
+  "testing-qa skills",
+  "agent skill assessment"
+ ],
+ "directory/trailofbits/skills/sarif-parsing/index.html": [
+  "sarif-parsing skill by trailofbits/skills",
+  "security skills",
+  "agent skill assessment"
+ ],
+ "directory/trailofbits/skills/second-opinion/index.html": [
+  "second-opinion skill by trailofbits/skills",
+  "code-review-quality skills",
+  "agent skill assessment"
+ ],
+ "directory/trailofbits/skills/semgrep-rule-creator/index.html": [
+  "semgrep-rule-creator skill by trailofbits/skills",
+  "security skills",
+  "agent skill assessment"
+ ],
+ "directory/trailofbits/skills/semgrep-rule-variant-creator/index.html": [
+  "semgrep-rule-variant-creator skill by trailofbits/skills",
+  "security skills",
+  "agent skill assessment"
  ],
  "directory/trailofbits/skills/semgrep/alternatives/index.html": [
   "semgrep alternatives",
@@ -9672,6 +12332,16 @@
   "security agent skills",
   "SKILL.md"
  ],
+ "directory/trailofbits/skills/sharp-edges/index.html": [
+  "sharp-edges skill by trailofbits/skills",
+  "security skills",
+  "agent skill assessment"
+ ],
+ "directory/trailofbits/skills/skill-improver/index.html": [
+  "skill-improver skill by trailofbits/skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
  "directory/trailofbits/skills/slicing-code-context/index.html": [
   "slicing-code-context skill by trailofbits",
   "slicing-code-context skill",
@@ -9681,6 +12351,16 @@
   "AI agent agent skills",
   "SKILL.md"
  ],
+ "directory/trailofbits/skills/supply-chain-risk-auditor/index.html": [
+  "supply-chain-risk-auditor skill by trailofbits/skills",
+  "security skills",
+  "agent skill assessment"
+ ],
+ "directory/trailofbits/skills/testing-handbook-generator/index.html": [
+  "testing-handbook-generator skill by trailofbits/skills",
+  "ai-agents-llm skills",
+  "agent skill assessment"
+ ],
  "directory/trailofbits/skills/trailmark-finding-triage/index.html": [
   "trailmark-finding-triage skill by trailofbits",
   "trailmark-finding-triage skill",
@@ -9689,6 +12369,26 @@
   "trailofbits skills",
   "security agent skills",
   "SKILL.md"
+ ],
+ "directory/trailofbits/skills/trailmark-review-gate/index.html": [
+  "trailmark-review-gate skill by trailofbits/skills",
+  "security skills",
+  "agent skill assessment"
+ ],
+ "directory/trailofbits/skills/vector-forge/index.html": [
+  "vector-forge skill by trailofbits/skills",
+  "testing-qa skills",
+  "agent skill assessment"
+ ],
+ "directory/trailofbits/skills/vulnerability-triage-brocards/index.html": [
+  "vulnerability-triage-brocards skill by trailofbits/skills",
+  "security skills",
+  "agent skill assessment"
+ ],
+ "directory/trailofbits/skills/writing-lean-proofs/index.html": [
+  "writing-lean-proofs skill by trailofbits/skills",
+  "science-research skills",
+  "agent skill assessment"
  ],
  "directory/trailofbits/skills/yara-rule-authoring/index.html": [
   "yara-rule-authoring skill by trailofbits",
@@ -9707,6 +12407,11 @@
   "tronghieu skills",
   "AI agent agent skills",
   "SKILL.md"
+ ],
+ "directory/tronghieu/agent-skills/brainstorm-coach/index.html": [
+  "brainstorm-coach skill by tronghieu/agent-skills",
+  "productivity-knowledge skills",
+  "agent skill assessment"
  ],
  "directory/tronghieu/agent-skills/critical-thinking/index.html": [
   "critical-thinking skill by tronghieu",
@@ -9740,6 +12445,11 @@
   "tronghieu skills",
   "productivity agent skills",
   "SKILL.md"
+ ],
+ "directory/tronghieu/agent-skills/design-thinking/index.html": [
+  "design-thinking skill by tronghieu/agent-skills",
+  "product-management skills",
+  "agent skill assessment"
  ],
  "directory/tronghieu/agent-skills/diataxis-writer/alternatives/index.html": [
   "diataxis-writer alternatives",
@@ -9790,6 +12500,16 @@
   "tronghieu skills",
   "business and finance agent skills",
   "SKILL.md"
+ ],
+ "directory/tronghieu/agent-skills/problem-solver/index.html": [
+  "problem-solver skill by tronghieu/agent-skills",
+  "productivity-knowledge skills",
+  "agent skill assessment"
+ ],
+ "directory/tronghieu/agent-skills/product-manager/index.html": [
+  "product-manager skill by tronghieu/agent-skills",
+  "product-management skills",
+  "agent skill assessment"
  ],
  "directory/tronghieu/agent-skills/project-manager/index.html": [
   "project-manager skill by tronghieu",
@@ -9908,6 +12628,11 @@
   "AI agent agent skills",
   "SKILL.md"
  ],
+ "directory/vercel-labs/agent-browser/agent-browser/index.html": [
+  "agent-browser skill by vercel-labs/agent-browser",
+  "productivity-knowledge skills",
+  "agent skill assessment"
+ ],
  "directory/vercel-labs/agent-browser/index.html": [
   "vercel-labs/agent-browser skills",
   "agent-browser skills",
@@ -9924,6 +12649,41 @@
   "frontend and design agent skills",
   "agent skills directory"
  ],
+ "directory/vercel-labs/agent-skills/vercel-cli-with-tokens/index.html": [
+  "vercel-cli-with-tokens skill by vercel-labs/agent-skills",
+  "devops-cloud skills",
+  "agent skill assessment"
+ ],
+ "directory/vercel-labs/agent-skills/vercel-composition-patterns/index.html": [
+  "vercel-composition-patterns skill by vercel-labs/agent-skills",
+  "frontend-design skills",
+  "agent skill assessment"
+ ],
+ "directory/vercel-labs/agent-skills/vercel-optimize/index.html": [
+  "vercel-optimize skill by vercel-labs/agent-skills",
+  "devops-cloud skills",
+  "agent skill assessment"
+ ],
+ "directory/vercel-labs/agent-skills/vercel-react-best-practices/index.html": [
+  "vercel-react-best-practices skill by vercel-labs/agent-skills",
+  "code-review-quality skills",
+  "agent skill assessment"
+ ],
+ "directory/vercel-labs/agent-skills/vercel-react-native-skills/index.html": [
+  "vercel-react-native-skills skill by vercel-labs/agent-skills",
+  "frontend-design skills",
+  "agent skill assessment"
+ ],
+ "directory/vercel-labs/agent-skills/vercel-react-view-transitions/index.html": [
+  "vercel-react-view-transitions skill by vercel-labs/agent-skills",
+  "frontend-design skills",
+  "agent skill assessment"
+ ],
+ "directory/vercel-labs/agent-skills/writing-guidelines/index.html": [
+  "writing-guidelines skill by vercel-labs/agent-skills",
+  "writing-content skills",
+  "agent skill assessment"
+ ],
  "directory/vercel-labs/skills/find-skills/index.html": [
   "find-skills skill by vercel-labs",
   "find-skills skill",
@@ -9932,6 +12692,11 @@
   "vercel-labs skills",
   "AI agent agent skills",
   "SKILL.md"
+ ],
+ "directory/vercel/ai/ai-sdk/index.html": [
+  "ai-sdk skill by vercel/ai",
+  "developer-tools skills",
+  "agent skill assessment"
  ],
  "directory/vercel/ai/index.html": [
   "vercel/ai skills",
