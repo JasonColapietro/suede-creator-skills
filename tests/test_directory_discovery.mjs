@@ -223,3 +223,6 @@ test('search results show a shield only for scores of 80–99 and sort by score 
     }
   }
 });
+
+// Growth surfaces extend the directory discovery contract.
+import './test_directory_growth.mjs';
