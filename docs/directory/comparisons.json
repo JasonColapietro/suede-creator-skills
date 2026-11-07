@@ -1,0 +1,558 @@
+[
+  {
+    "skills": [
+      "mattpocock/skills/writing-for-agents",
+      "vercel-labs/skills/find-skills"
+    ],
+    "topics": [
+      "skill-authoring"
+    ],
+    "href": "/directory/compare/skills/writing-for-agents-vs-find-skills-e2cfaa26/",
+    "snapshot": "2026-10-22"
+  },
+  {
+    "skills": [
+      "anthropics/skills/skill-creator",
+      "mattpocock/skills/writing-for-agents"
+    ],
+    "topics": [
+      "skill-authoring"
+    ],
+    "href": "/directory/compare/skills/skill-creator-vs-writing-for-agents-ea9a2a31/",
+    "snapshot": "2026-10-22"
+  },
+  {
+    "skills": [
+      "anthropics/skills/skill-creator",
+      "vercel-labs/skills/find-skills"
+    ],
+    "topics": [
+      "skill-authoring"
+    ],
+    "href": "/directory/compare/skills/skill-creator-vs-find-skills-2937cef9/",
+    "snapshot": "2026-10-22"
+  },
+  {
+    "skills": [
+      "nextlevelbuilder/ui-ux-pro-max-skill/ui-ux-pro-max",
+      "pbakaus/impeccable/impeccable"
+    ],
+    "topics": [
+      "ui-ux-design"
+    ],
+    "href": "/directory/compare/skills/ui-ux-pro-max-vs-impeccable-ddd1f24b/",
+    "snapshot": "2026-10-22"
+  },
+  {
+    "skills": [
+      "mattpocock/skills/git-guardrails-claude-code",
+      "microsoft/azure-skills/entra-agent-id"
+    ],
+    "topics": [
+      "agent-safety"
+    ],
+    "href": "/directory/compare/skills/git-guardrails-claude-code-vs-entra-agent-id-3152ea6f/",
+    "snapshot": "2026-10-22"
+  },
+  {
+    "skills": [
+      "neondatabase/agent-skills/neon-postgres",
+      "supabase/agent-skills/supabase"
+    ],
+    "topics": [
+      "sql",
+      "supabase-firebase"
+    ],
+    "href": "/directory/compare/skills/neon-postgres-vs-supabase-9f8a867d/",
+    "snapshot": "2026-10-22"
+  },
+  {
+    "skills": [
+      "neondatabase/agent-skills/neon-postgres",
+      "supabase/agent-skills/supabase-postgres-best-practices"
+    ],
+    "topics": [
+      "sql",
+      "supabase-firebase"
+    ],
+    "href": "/directory/compare/skills/neon-postgres-vs-supabase-postgres-best-practices-a2953672/",
+    "snapshot": "2026-10-22"
+  },
+  {
+    "skills": [
+      "mattpocock/skills/git-guardrails-claude-code",
+      "obra/superpowers/using-superpowers"
+    ],
+    "topics": [
+      "claude-code-config"
+    ],
+    "href": "/directory/compare/skills/git-guardrails-claude-code-vs-using-superpowers-257e457d/",
+    "snapshot": "2026-10-22"
+  },
+  {
+    "skills": [
+      "mattpocock/skills/code-review",
+      "obra/superpowers/requesting-code-review"
+    ],
+    "topics": [
+      "code-review"
+    ],
+    "href": "/directory/compare/skills/code-review-vs-requesting-code-review-2016073f/",
+    "snapshot": "2026-10-22"
+  },
+  {
+    "skills": [
+      "mattpocock/skills/migrate-to-shoehorn",
+      "obra/superpowers/test-driven-development"
+    ],
+    "topics": [
+      "test-automation"
+    ],
+    "href": "/directory/compare/skills/migrate-to-shoehorn-vs-test-driven-development-b6ee2004/",
+    "snapshot": "2026-10-22"
+  },
+  {
+    "skills": [
+      "mattpocock/skills/setup-pre-commit",
+      "obra/superpowers/test-driven-development"
+    ],
+    "topics": [
+      "test-automation"
+    ],
+    "href": "/directory/compare/skills/setup-pre-commit-vs-test-driven-development-a1a41272/",
+    "snapshot": "2026-10-22"
+  },
+  {
+    "skills": [
+      "mattpocock/skills/tdd",
+      "obra/superpowers/test-driven-development"
+    ],
+    "topics": [
+      "test-automation",
+      "unit-testing"
+    ],
+    "href": "/directory/compare/skills/tdd-vs-test-driven-development-0825da13/",
+    "snapshot": "2026-10-22"
+  },
+  {
+    "skills": [
+      "neondatabase/agent-skills/neon",
+      "supabase/agent-skills/supabase"
+    ],
+    "topics": [
+      "sql",
+      "supabase-firebase"
+    ],
+    "href": "/directory/compare/skills/neon-vs-supabase-95a55d62/",
+    "snapshot": "2026-10-22"
+  },
+  {
+    "skills": [
+      "neondatabase/agent-skills/neon",
+      "supabase/agent-skills/supabase-postgres-best-practices"
+    ],
+    "topics": [
+      "sql",
+      "supabase-firebase"
+    ],
+    "href": "/directory/compare/skills/neon-vs-supabase-postgres-best-practices-51b9abf4/",
+    "snapshot": "2026-10-22"
+  },
+  {
+    "skills": [
+      "mattpocock/skills/code-review",
+      "obra/superpowers/receiving-code-review"
+    ],
+    "topics": [
+      "code-review"
+    ],
+    "href": "/directory/compare/skills/code-review-vs-receiving-code-review-b2894e6d/",
+    "snapshot": "2026-10-22"
+  },
+  {
+    "skills": [
+      "anthropics/skills/skill-creator",
+      "obra/superpowers/writing-skills"
+    ],
+    "topics": [
+      "skill-authoring"
+    ],
+    "href": "/directory/compare/skills/skill-creator-vs-writing-skills-135c8340/",
+    "snapshot": "2026-10-22"
+  },
+  {
+    "skills": [
+      "mattpocock/skills/writing-for-agents",
+      "obra/superpowers/writing-skills"
+    ],
+    "topics": [
+      "skill-authoring"
+    ],
+    "href": "/directory/compare/skills/writing-for-agents-vs-writing-skills-55eb73b9/",
+    "snapshot": "2026-10-22"
+  },
+  {
+    "skills": [
+      "obra/superpowers/writing-skills",
+      "vercel-labs/skills/find-skills"
+    ],
+    "topics": [
+      "skill-authoring"
+    ],
+    "href": "/directory/compare/skills/writing-skills-vs-find-skills-228f93a2/",
+    "snapshot": "2026-10-22"
+  },
+  {
+    "skills": [
+      "mattpocock/skills/git-guardrails-claude-code",
+      "obra/superpowers/using-git-worktrees"
+    ],
+    "topics": [
+      "git-version-control"
+    ],
+    "href": "/directory/compare/skills/git-guardrails-claude-code-vs-using-git-worktrees-4701d69d/",
+    "snapshot": "2026-10-22"
+  },
+  {
+    "skills": [
+      "mattpocock/skills/setup-pre-commit",
+      "obra/superpowers/using-git-worktrees"
+    ],
+    "topics": [
+      "git-version-control"
+    ],
+    "href": "/directory/compare/skills/setup-pre-commit-vs-using-git-worktrees-5fd1df23/",
+    "snapshot": "2026-10-22"
+  },
+  {
+    "skills": [
+      "mattpocock/skills/git-guardrails-claude-code",
+      "obra/superpowers/finishing-a-development-branch"
+    ],
+    "topics": [
+      "git-version-control"
+    ],
+    "href": "/directory/compare/skills/git-guardrails-claude-code-vs-finishing-a-development-branch-dab4c3fd/",
+    "snapshot": "2026-10-22"
+  },
+  {
+    "skills": [
+      "mattpocock/skills/setup-pre-commit",
+      "obra/superpowers/finishing-a-development-branch"
+    ],
+    "topics": [
+      "git-version-control"
+    ],
+    "href": "/directory/compare/skills/setup-pre-commit-vs-finishing-a-development-branch-61bb8169/",
+    "snapshot": "2026-10-22"
+  },
+  {
+    "skills": [
+      "anthropics/skills/webapp-testing",
+      "mattpocock/skills/migrate-to-shoehorn"
+    ],
+    "topics": [
+      "test-automation"
+    ],
+    "href": "/directory/compare/skills/webapp-testing-vs-migrate-to-shoehorn-1adaaf6c/",
+    "snapshot": "2026-10-22"
+  },
+  {
+    "skills": [
+      "anthropics/skills/webapp-testing",
+      "mattpocock/skills/setup-pre-commit"
+    ],
+    "topics": [
+      "test-automation"
+    ],
+    "href": "/directory/compare/skills/webapp-testing-vs-setup-pre-commit-60dcad04/",
+    "snapshot": "2026-10-22"
+  },
+  {
+    "skills": [
+      "anthropics/skills/webapp-testing",
+      "mattpocock/skills/tdd"
+    ],
+    "topics": [
+      "test-automation"
+    ],
+    "href": "/directory/compare/skills/webapp-testing-vs-tdd-81398eb3/",
+    "snapshot": "2026-10-22"
+  },
+  {
+    "skills": [
+      "anthropics/skills/webapp-testing",
+      "obra/superpowers/test-driven-development"
+    ],
+    "topics": [
+      "test-automation"
+    ],
+    "href": "/directory/compare/skills/webapp-testing-vs-test-driven-development-65cf92c5/",
+    "snapshot": "2026-10-22"
+  },
+  {
+    "skills": [
+      "coreyhaines31/marketingskills/marketing-psychology",
+      "heygen-com/hyperframes/product-launch-video"
+    ],
+    "topics": [
+      "marketing-strategy"
+    ],
+    "href": "/directory/compare/skills/marketing-psychology-vs-product-launch-video-e510c053/",
+    "snapshot": "2026-10-22"
+  },
+  {
+    "skills": [
+      "coreyhaines31/marketingskills/marketing-ideas",
+      "heygen-com/hyperframes/product-launch-video"
+    ],
+    "topics": [
+      "marketing-strategy"
+    ],
+    "href": "/directory/compare/skills/marketing-ideas-vs-product-launch-video-d20bd91c/",
+    "snapshot": "2026-10-22"
+  },
+  {
+    "skills": [
+      "microsoft/azure-skills/azure-app-onboard",
+      "vercel-labs/agent-skills/vercel-cli-with-tokens"
+    ],
+    "topics": [
+      "deployment-hosting"
+    ],
+    "href": "/directory/compare/skills/azure-app-onboard-vs-vercel-cli-with-tokens-54adc03c/",
+    "snapshot": "2026-10-22"
+  },
+  {
+    "skills": [
+      "microsoft/azure-skills/azure-app-onboard-prereq",
+      "vercel-labs/agent-skills/vercel-cli-with-tokens"
+    ],
+    "topics": [
+      "deployment-hosting"
+    ],
+    "href": "/directory/compare/skills/azure-app-onboard-prereq-vs-vercel-cli-with-tokens-bac28173/",
+    "snapshot": "2026-10-22"
+  },
+  {
+    "skills": [
+      "microsoft/azure-skills/azure-deploy",
+      "vercel-labs/agent-skills/vercel-cli-with-tokens"
+    ],
+    "topics": [
+      "deployment-hosting"
+    ],
+    "href": "/directory/compare/skills/azure-deploy-vs-vercel-cli-with-tokens-22170c7c/",
+    "snapshot": "2026-10-22"
+  },
+  {
+    "skills": [
+      "microsoft/azure-skills/python-appservice-deploy",
+      "vercel-labs/agent-skills/vercel-cli-with-tokens"
+    ],
+    "topics": [
+      "deployment-hosting"
+    ],
+    "href": "/directory/compare/skills/python-appservice-deploy-vs-vercel-cli-with-tokens-cef6c832/",
+    "snapshot": "2026-10-22"
+  },
+  {
+    "skills": [
+      "anthropics/skills/mcp-builder",
+      "microsoft/azure-skills/azure-aigateway"
+    ],
+    "topics": [
+      "mcp-servers"
+    ],
+    "href": "/directory/compare/skills/mcp-builder-vs-azure-aigateway-b3d5df36/",
+    "snapshot": "2026-10-22"
+  },
+  {
+    "skills": [
+      "anthropics/skills/web-artifacts-builder",
+      "vercel-labs/agent-skills/vercel-composition-patterns"
+    ],
+    "topics": [
+      "react-nextjs"
+    ],
+    "href": "/directory/compare/skills/web-artifacts-builder-vs-vercel-composition-patterns-77a1eeaa/",
+    "snapshot": "2026-10-22"
+  },
+  {
+    "skills": [
+      "anthropics/skills/web-artifacts-builder",
+      "vercel-labs/agent-skills/vercel-react-best-practices"
+    ],
+    "topics": [
+      "react-nextjs"
+    ],
+    "href": "/directory/compare/skills/web-artifacts-builder-vs-vercel-react-best-practices-612f1368/",
+    "snapshot": "2026-10-22"
+  },
+  {
+    "skills": [
+      "anthropics/skills/web-artifacts-builder",
+      "vercel-labs/agent-skills/vercel-react-view-transitions"
+    ],
+    "topics": [
+      "react-nextjs"
+    ],
+    "href": "/directory/compare/skills/web-artifacts-builder-vs-vercel-react-view-transitions-d8707862/",
+    "snapshot": "2026-10-22"
+  },
+  {
+    "skills": [
+      "anthropics/skills/brand-guidelines",
+      "pbakaus/impeccable/impeccable"
+    ],
+    "topics": [
+      "color-typography"
+    ],
+    "href": "/directory/compare/skills/brand-guidelines-vs-impeccable-fabab654/",
+    "snapshot": "2026-10-22"
+  },
+  {
+    "skills": [
+      "coreyhaines31/marketingskills/copy-editing",
+      "vercel-labs/agent-skills/writing-guidelines"
+    ],
+    "topics": [
+      "grammar-checker"
+    ],
+    "href": "/directory/compare/skills/copy-editing-vs-writing-guidelines-6233f56b/",
+    "snapshot": "2026-10-22"
+  },
+  {
+    "skills": [
+      "cloudflare/skills/cloudflare-email-service",
+      "coreyhaines31/marketingskills/cold-email"
+    ],
+    "topics": [
+      "email"
+    ],
+    "href": "/directory/compare/skills/cloudflare-email-service-vs-cold-email-36b2841a/",
+    "snapshot": "2026-10-22"
+  },
+  {
+    "skills": [
+      "cloudflare/skills/cloudflare-one",
+      "microsoft/azure-skills/azure-compliance"
+    ],
+    "topics": [
+      "security-auditing"
+    ],
+    "href": "/directory/compare/skills/cloudflare-one-vs-azure-compliance-1585323e/",
+    "snapshot": "2026-10-22"
+  },
+  {
+    "skills": [
+      "browser-use/browser-use/browser-use",
+      "vercel-labs/agent-browser/agent-browser"
+    ],
+    "topics": [
+      "web-scraping",
+      "browser-agents"
+    ],
+    "href": "/directory/compare/skills/browser-use-vs-agent-browser-402f62bd/",
+    "snapshot": "2026-10-22"
+  },
+  {
+    "skills": [
+      "cloudflare/skills/cloudflare-one-migrations",
+      "microsoft/azure-skills/azure-compliance"
+    ],
+    "topics": [
+      "security-auditing"
+    ],
+    "href": "/directory/compare/skills/cloudflare-one-migrations-vs-azure-compliance-80e269ad/",
+    "snapshot": "2026-10-22"
+  },
+  {
+    "skills": [
+      "coreyhaines31/marketingskills/product-marketing",
+      "heygen-com/hyperframes/product-launch-video"
+    ],
+    "topics": [
+      "marketing-strategy"
+    ],
+    "href": "/directory/compare/skills/product-marketing-vs-product-launch-video-7cee59d8/",
+    "snapshot": "2026-10-22"
+  },
+  {
+    "skills": [
+      "anthropics/skills/internal-comms",
+      "vercel-labs/agent-skills/writing-guidelines"
+    ],
+    "topics": [
+      "general-writing"
+    ],
+    "href": "/directory/compare/skills/internal-comms-vs-writing-guidelines-012bc9de/",
+    "snapshot": "2026-10-22"
+  },
+  {
+    "skills": [
+      "coreyhaines31/marketingskills/launch",
+      "heygen-com/hyperframes/product-launch-video"
+    ],
+    "topics": [
+      "marketing-strategy"
+    ],
+    "href": "/directory/compare/skills/launch-vs-product-launch-video-af2c6bad/",
+    "snapshot": "2026-10-22"
+  },
+  {
+    "skills": [
+      "cloudflare/skills/cloudflare-email-service",
+      "coreyhaines31/marketingskills/emails"
+    ],
+    "topics": [
+      "email"
+    ],
+    "href": "/directory/compare/skills/cloudflare-email-service-vs-emails-99cd2bb9/",
+    "snapshot": "2026-10-22"
+  },
+  {
+    "skills": [
+      "cloudflare/security-audit-skill/security-audit",
+      "cloudflare/skills/cloudflare-one"
+    ],
+    "topics": [
+      "security-auditing"
+    ],
+    "href": "/directory/compare/skills/security-audit-vs-cloudflare-one-9bfd7cd0/",
+    "snapshot": "2026-10-22"
+  },
+  {
+    "skills": [
+      "cloudflare/security-audit-skill/security-audit",
+      "cloudflare/skills/cloudflare-one-migrations"
+    ],
+    "topics": [
+      "security-auditing"
+    ],
+    "href": "/directory/compare/skills/security-audit-vs-cloudflare-one-migrations-dfd6916b/",
+    "snapshot": "2026-10-22"
+  },
+  {
+    "skills": [
+      "cloudflare/security-audit-skill/security-audit",
+      "microsoft/azure-skills/azure-compliance"
+    ],
+    "topics": [
+      "security-auditing"
+    ],
+    "href": "/directory/compare/skills/security-audit-vs-azure-compliance-0739a8e1/",
+    "snapshot": "2026-10-22"
+  },
+  {
+    "skills": [
+      "expo/skills/expo-dev-client",
+      "vercel-labs/agent-skills/vercel-react-native-skills"
+    ],
+    "topics": [
+      "expo-react-native"
+    ],
+    "href": "/directory/compare/skills/expo-dev-client-vs-vercel-react-native-skills-4842e69b/",
+    "snapshot": "2026-10-22"
+  }
+]

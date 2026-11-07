@@ -133,6 +133,8 @@
           <tr><td>Quality badges</td><td><a href="https://suedeai.directory/activeloopai/hivemind/hivemind-goals/score.svg">/activeloopai/hivemind/hivemind-goals/score.svg</a></td><td>score.svg and badge.svg per listing. Skills scoring 80 to 99 get the numeric and letter shields; others serve the general listing badge.</td></tr>
           <tr><td>Install snapshot</td><td><a href="https://suedeai.directory/installs.json">/installs.json</a></td><td>Install counts for 2,865 listed skills as published by skills.sh, with the fetch date and the method. The directory measures no installs of its own.</td></tr>
           <tr><td>Kinds</td><td><a href="https://suedeai.directory/kinds.json">/kinds.json</a></td><td>The plugins, Grok, MCP server and rules listings as one JSON document.</td></tr>
+          <tr><td>Finder skill</td><td><a href="https://suedeai.directory/finder/">/finder/</a></td><td>Install the read-only directory search skill for Claude Code, Codex or Cursor.</td></tr>
+          <tr><td>State of Agent Skills</td><td><a href="https://suedeai.directory/state-of-agent-skills/data.json">/state-of-agent-skills/data.json</a></td><td>Snapshot-based grade distribution, category and license counts, and score-component gaps; Suede AI excluded.</td></tr>
           <tr><td>RSS feed</td><td><a href="https://suedeai.directory/feed.xml">/feed.xml</a></td><td>New listings and guides, RSS 2.0.</td></tr>
           <tr><td>llms.txt</td><td><a href="https://suedeai.directory/llms.txt">/llms.txt</a></td><td>The directory described for answer engines, with every browse page.</td></tr>
           <tr><td>Sitemap</td><td><a href="https://suedeai.directory/sitemap.xml">/sitemap.xml</a></td><td>Every indexable page with its last-modified date.</td></tr>
@@ -146,6 +148,7 @@
         <h2 id="score-api-title">Recomputing a score</h2>
         <p>Scores are computed only from published fields, so a report can be checked. <code>scripts/directory/badges.mjs</code> and <code>scripts/directory/grade.py</code> in the repository recompute the same value from <code>skills.json</code>; the <a href="../methodology/#score">methodology</a> lists every component and its points.</p>
       </section>
+
     </main>
     <footer>
       <div class="shell">
@@ -156,6 +159,12 @@
             <span>Built by <strong>Jason Colapietro</strong> / Suede AI</span>
           </div>
           <div class="footer-links">
+            <a href="../finder/">Find skills in your agent</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="../state-of-agent-skills/">State of Agent Skills</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
+            <a href="../rising/">Rising Skills</a>
+            <span class="footer-divider" aria-hidden="true">|</span>
             <a href="../">Skills</a>
             <span class="footer-divider" aria-hidden="true">|</span>
             <a href="../top/">Top 100</a>

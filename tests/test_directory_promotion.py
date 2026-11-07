@@ -18,6 +18,12 @@ HTML = ''.join(f'<a href="{TARGET}"><img src="{src}" width="160" height="175"></
 
 
 class EmbeddingTests(unittest.TestCase):
+    def test_standalone_host_badges_match_the_published_contract(self):
+        standalone = HTML.replace('https://skills.suedeai.ai/directory/', 'https://suedeai.directory/')
+        self.assertEqual(mod.embedded_badges(standalone, TARGET, IMAGES), sorted(IMAGES))
+        spoof = standalone.replace('https://suedeai.directory/', 'https://suedeai.directory.evil.example/')
+        self.assertEqual(mod.embedded_badges(spoof, TARGET, IMAGES), [])
+
     def test_detects_each_expected_rendered_image(self):
         self.assertEqual(mod.embedded_badges(HTML, TARGET, IMAGES), sorted(IMAGES))
         one = HTML[:HTML.index('</a>') + 4]
@@ -66,6 +72,16 @@ class EmbeddingTests(unittest.TestCase):
 
 
 class VerificationTests(unittest.TestCase):
+    def test_full_assessment_selection_is_passed_to_the_badge_contract(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            skill = {'repo': 'Example/Skills', 'slug': 'sample', 'featured': False}
+            self.assertFalse(mod.with_page_selection(skill, root)['full_page'])
+            (root / 'directory/growth').mkdir(parents=True)
+            (root / 'directory/growth/full-pages.json').write_text(json.dumps({'skills': ['example/skills/sample']}))
+            self.assertTrue(mod.with_page_selection(skill, root)['full_page'])
+            self.assertFalse(skill['featured'])
+
     def verify(self, rendered, concurrent_refresh=False, fail_fetch=False):
         with tempfile.TemporaryDirectory(prefix='directory-verification-') as tmp:
             root = Path(tmp)

@@ -1,0 +1,461 @@
+{
+  "selected_on": "2026-11-07",
+  "pairs": [
+    {
+      "skills": [
+        "mattpocock/skills/writing-for-agents",
+        "vercel-labs/skills/find-skills"
+      ],
+      "topics": [
+        "skill-authoring"
+      ]
+    },
+    {
+      "skills": [
+        "anthropics/skills/skill-creator",
+        "mattpocock/skills/writing-for-agents"
+      ],
+      "topics": [
+        "skill-authoring"
+      ]
+    },
+    {
+      "skills": [
+        "anthropics/skills/skill-creator",
+        "vercel-labs/skills/find-skills"
+      ],
+      "topics": [
+        "skill-authoring"
+      ]
+    },
+    {
+      "skills": [
+        "nextlevelbuilder/ui-ux-pro-max-skill/ui-ux-pro-max",
+        "pbakaus/impeccable/impeccable"
+      ],
+      "topics": [
+        "ui-ux-design"
+      ]
+    },
+    {
+      "skills": [
+        "mattpocock/skills/git-guardrails-claude-code",
+        "microsoft/azure-skills/entra-agent-id"
+      ],
+      "topics": [
+        "agent-safety"
+      ]
+    },
+    {
+      "skills": [
+        "neondatabase/agent-skills/neon-postgres",
+        "supabase/agent-skills/supabase"
+      ],
+      "topics": [
+        "sql",
+        "supabase-firebase"
+      ]
+    },
+    {
+      "skills": [
+        "neondatabase/agent-skills/neon-postgres",
+        "supabase/agent-skills/supabase-postgres-best-practices"
+      ],
+      "topics": [
+        "sql",
+        "supabase-firebase"
+      ]
+    },
+    {
+      "skills": [
+        "mattpocock/skills/git-guardrails-claude-code",
+        "obra/superpowers/using-superpowers"
+      ],
+      "topics": [
+        "claude-code-config"
+      ]
+    },
+    {
+      "skills": [
+        "mattpocock/skills/code-review",
+        "obra/superpowers/requesting-code-review"
+      ],
+      "topics": [
+        "code-review"
+      ]
+    },
+    {
+      "skills": [
+        "mattpocock/skills/migrate-to-shoehorn",
+        "obra/superpowers/test-driven-development"
+      ],
+      "topics": [
+        "test-automation"
+      ]
+    },
+    {
+      "skills": [
+        "mattpocock/skills/setup-pre-commit",
+        "obra/superpowers/test-driven-development"
+      ],
+      "topics": [
+        "test-automation"
+      ]
+    },
+    {
+      "skills": [
+        "mattpocock/skills/tdd",
+        "obra/superpowers/test-driven-development"
+      ],
+      "topics": [
+        "test-automation",
+        "unit-testing"
+      ]
+    },
+    {
+      "skills": [
+        "neondatabase/agent-skills/neon",
+        "supabase/agent-skills/supabase"
+      ],
+      "topics": [
+        "sql",
+        "supabase-firebase"
+      ]
+    },
+    {
+      "skills": [
+        "neondatabase/agent-skills/neon",
+        "supabase/agent-skills/supabase-postgres-best-practices"
+      ],
+      "topics": [
+        "sql",
+        "supabase-firebase"
+      ]
+    },
+    {
+      "skills": [
+        "mattpocock/skills/code-review",
+        "obra/superpowers/receiving-code-review"
+      ],
+      "topics": [
+        "code-review"
+      ]
+    },
+    {
+      "skills": [
+        "anthropics/skills/skill-creator",
+        "obra/superpowers/writing-skills"
+      ],
+      "topics": [
+        "skill-authoring"
+      ]
+    },
+    {
+      "skills": [
+        "mattpocock/skills/writing-for-agents",
+        "obra/superpowers/writing-skills"
+      ],
+      "topics": [
+        "skill-authoring"
+      ]
+    },
+    {
+      "skills": [
+        "obra/superpowers/writing-skills",
+        "vercel-labs/skills/find-skills"
+      ],
+      "topics": [
+        "skill-authoring"
+      ]
+    },
+    {
+      "skills": [
+        "mattpocock/skills/git-guardrails-claude-code",
+        "obra/superpowers/using-git-worktrees"
+      ],
+      "topics": [
+        "git-version-control"
+      ]
+    },
+    {
+      "skills": [
+        "mattpocock/skills/setup-pre-commit",
+        "obra/superpowers/using-git-worktrees"
+      ],
+      "topics": [
+        "git-version-control"
+      ]
+    },
+    {
+      "skills": [
+        "mattpocock/skills/git-guardrails-claude-code",
+        "obra/superpowers/finishing-a-development-branch"
+      ],
+      "topics": [
+        "git-version-control"
+      ]
+    },
+    {
+      "skills": [
+        "mattpocock/skills/setup-pre-commit",
+        "obra/superpowers/finishing-a-development-branch"
+      ],
+      "topics": [
+        "git-version-control"
+      ]
+    },
+    {
+      "skills": [
+        "anthropics/skills/webapp-testing",
+        "mattpocock/skills/migrate-to-shoehorn"
+      ],
+      "topics": [
+        "test-automation"
+      ]
+    },
+    {
+      "skills": [
+        "anthropics/skills/webapp-testing",
+        "mattpocock/skills/setup-pre-commit"
+      ],
+      "topics": [
+        "test-automation"
+      ]
+    },
+    {
+      "skills": [
+        "anthropics/skills/webapp-testing",
+        "mattpocock/skills/tdd"
+      ],
+      "topics": [
+        "test-automation"
+      ]
+    },
+    {
+      "skills": [
+        "anthropics/skills/webapp-testing",
+        "obra/superpowers/test-driven-development"
+      ],
+      "topics": [
+        "test-automation"
+      ]
+    },
+    {
+      "skills": [
+        "coreyhaines31/marketingskills/marketing-psychology",
+        "heygen-com/hyperframes/product-launch-video"
+      ],
+      "topics": [
+        "marketing-strategy"
+      ]
+    },
+    {
+      "skills": [
+        "coreyhaines31/marketingskills/marketing-ideas",
+        "heygen-com/hyperframes/product-launch-video"
+      ],
+      "topics": [
+        "marketing-strategy"
+      ]
+    },
+    {
+      "skills": [
+        "microsoft/azure-skills/azure-app-onboard",
+        "vercel-labs/agent-skills/vercel-cli-with-tokens"
+      ],
+      "topics": [
+        "deployment-hosting"
+      ]
+    },
+    {
+      "skills": [
+        "microsoft/azure-skills/azure-app-onboard-prereq",
+        "vercel-labs/agent-skills/vercel-cli-with-tokens"
+      ],
+      "topics": [
+        "deployment-hosting"
+      ]
+    },
+    {
+      "skills": [
+        "microsoft/azure-skills/azure-deploy",
+        "vercel-labs/agent-skills/vercel-cli-with-tokens"
+      ],
+      "topics": [
+        "deployment-hosting"
+      ]
+    },
+    {
+      "skills": [
+        "microsoft/azure-skills/python-appservice-deploy",
+        "vercel-labs/agent-skills/vercel-cli-with-tokens"
+      ],
+      "topics": [
+        "deployment-hosting"
+      ]
+    },
+    {
+      "skills": [
+        "anthropics/skills/mcp-builder",
+        "microsoft/azure-skills/azure-aigateway"
+      ],
+      "topics": [
+        "mcp-servers"
+      ]
+    },
+    {
+      "skills": [
+        "anthropics/skills/web-artifacts-builder",
+        "vercel-labs/agent-skills/vercel-composition-patterns"
+      ],
+      "topics": [
+        "react-nextjs"
+      ]
+    },
+    {
+      "skills": [
+        "anthropics/skills/web-artifacts-builder",
+        "vercel-labs/agent-skills/vercel-react-best-practices"
+      ],
+      "topics": [
+        "react-nextjs"
+      ]
+    },
+    {
+      "skills": [
+        "anthropics/skills/web-artifacts-builder",
+        "vercel-labs/agent-skills/vercel-react-view-transitions"
+      ],
+      "topics": [
+        "react-nextjs"
+      ]
+    },
+    {
+      "skills": [
+        "anthropics/skills/brand-guidelines",
+        "pbakaus/impeccable/impeccable"
+      ],
+      "topics": [
+        "color-typography"
+      ]
+    },
+    {
+      "skills": [
+        "coreyhaines31/marketingskills/copy-editing",
+        "vercel-labs/agent-skills/writing-guidelines"
+      ],
+      "topics": [
+        "grammar-checker"
+      ]
+    },
+    {
+      "skills": [
+        "cloudflare/skills/cloudflare-email-service",
+        "coreyhaines31/marketingskills/cold-email"
+      ],
+      "topics": [
+        "email"
+      ]
+    },
+    {
+      "skills": [
+        "cloudflare/skills/cloudflare-one",
+        "microsoft/azure-skills/azure-compliance"
+      ],
+      "topics": [
+        "security-auditing"
+      ]
+    },
+    {
+      "skills": [
+        "browser-use/browser-use/browser-use",
+        "vercel-labs/agent-browser/agent-browser"
+      ],
+      "topics": [
+        "web-scraping",
+        "browser-agents"
+      ]
+    },
+    {
+      "skills": [
+        "cloudflare/skills/cloudflare-one-migrations",
+        "microsoft/azure-skills/azure-compliance"
+      ],
+      "topics": [
+        "security-auditing"
+      ]
+    },
+    {
+      "skills": [
+        "coreyhaines31/marketingskills/product-marketing",
+        "heygen-com/hyperframes/product-launch-video"
+      ],
+      "topics": [
+        "marketing-strategy"
+      ]
+    },
+    {
+      "skills": [
+        "anthropics/skills/internal-comms",
+        "vercel-labs/agent-skills/writing-guidelines"
+      ],
+      "topics": [
+        "general-writing"
+      ]
+    },
+    {
+      "skills": [
+        "coreyhaines31/marketingskills/launch",
+        "heygen-com/hyperframes/product-launch-video"
+      ],
+      "topics": [
+        "marketing-strategy"
+      ]
+    },
+    {
+      "skills": [
+        "cloudflare/skills/cloudflare-email-service",
+        "coreyhaines31/marketingskills/emails"
+      ],
+      "topics": [
+        "email"
+      ]
+    },
+    {
+      "skills": [
+        "cloudflare/security-audit-skill/security-audit",
+        "cloudflare/skills/cloudflare-one"
+      ],
+      "topics": [
+        "security-auditing"
+      ]
+    },
+    {
+      "skills": [
+        "cloudflare/security-audit-skill/security-audit",
+        "cloudflare/skills/cloudflare-one-migrations"
+      ],
+      "topics": [
+        "security-auditing"
+      ]
+    },
+    {
+      "skills": [
+        "cloudflare/security-audit-skill/security-audit",
+        "microsoft/azure-skills/azure-compliance"
+      ],
+      "topics": [
+        "security-auditing"
+      ]
+    },
+    {
+      "skills": [
+        "expo/skills/expo-dev-client",
+        "vercel-labs/agent-skills/vercel-react-native-skills"
+      ],
+      "topics": [
+        "expo-react-native"
+      ]
+    }
+  ]
+}

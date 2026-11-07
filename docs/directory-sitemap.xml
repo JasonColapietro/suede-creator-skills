@@ -85,6 +85,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://skills.suedeai.ai/directory/finder/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://skills.suedeai.ai/directory/for/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>weekly</changefreq>
@@ -169,6 +175,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://skills.suedeai.ai/directory/rising/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://skills.suedeai.ai/directory/rules/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>weekly</changefreq>
@@ -189,6 +201,12 @@
   <url>
     <loc>https://skills.suedeai.ai/directory/stacks/</loc>
     <lastmod>2026-11-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/state-of-agent-skills/</loc>
+    <lastmod>2026-11-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -2683,6 +2701,18 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://skills.suedeai.ai/directory/anthropics/skills/frontend-design/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/anthropics/skills/internal-comms/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://skills.suedeai.ai/directory/anthropics/skills/mcp-builder/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
@@ -2713,7 +2743,19 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://skills.suedeai.ai/directory/anthropics/skills/theme-factory/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://skills.suedeai.ai/directory/anthropics/skills/web-artifacts-builder/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/anthropics/skills/webapp-testing/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -2881,6 +2923,18 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/agents-deploy/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/aws/agent-toolkit-for-aws/agents-get-started/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/album-conceptualizer/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
@@ -3013,6 +3067,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://skills.suedeai.ai/directory/browser-use/browser-use/browser-use/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://skills.suedeai.ai/directory/browserbase/skills/add-webmcp/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
@@ -3097,6 +3157,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://skills.suedeai.ai/directory/cloudflare/skills/agents-sdk/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://skills.suedeai.ai/directory/cloudflare/skills/basin/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
@@ -3115,6 +3181,30 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://skills.suedeai.ai/directory/cloudflare/skills/cloudflare-email-service/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/cloudflare/skills/cloudflare-one/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/cloudflare/skills/cloudflare-one-migrations/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/cloudflare/skills/durable-objects/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://skills.suedeai.ai/directory/cloudflare/skills/k2/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
@@ -3127,13 +3217,49 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://skills.suedeai.ai/directory/cloudflare/skills/sandbox-migrate-to-next/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://skills.suedeai.ai/directory/cloudflare/skills/sandbox-next/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://skills.suedeai.ai/directory/cloudflare/skills/sandbox-stable/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/cloudflare/skills/turnstile-spin/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/cloudflare/skills/web-perf/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://skills.suedeai.ai/directory/cloudflare/skills/workers-best-practices/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/cloudflare/skills/workers-profiling/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/cloudflare/skills/wrangler/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -3155,6 +3281,306 @@
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/compare/skills/azure-app-onboard-prereq-vs-vercel-cli-with-tokens-bac28173/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/compare/skills/azure-app-onboard-vs-vercel-cli-with-tokens-54adc03c/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/compare/skills/azure-deploy-vs-vercel-cli-with-tokens-22170c7c/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/compare/skills/brand-guidelines-vs-impeccable-fabab654/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/compare/skills/browser-use-vs-agent-browser-402f62bd/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/compare/skills/cloudflare-email-service-vs-cold-email-36b2841a/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/compare/skills/cloudflare-email-service-vs-emails-99cd2bb9/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/compare/skills/cloudflare-one-migrations-vs-azure-compliance-80e269ad/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/compare/skills/cloudflare-one-vs-azure-compliance-1585323e/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/compare/skills/code-review-vs-receiving-code-review-b2894e6d/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/compare/skills/code-review-vs-requesting-code-review-2016073f/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/compare/skills/copy-editing-vs-writing-guidelines-6233f56b/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/compare/skills/expo-dev-client-vs-vercel-react-native-skills-4842e69b/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/compare/skills/git-guardrails-claude-code-vs-entra-agent-id-3152ea6f/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/compare/skills/git-guardrails-claude-code-vs-finishing-a-development-branch-dab4c3fd/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/compare/skills/git-guardrails-claude-code-vs-using-git-worktrees-4701d69d/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/compare/skills/git-guardrails-claude-code-vs-using-superpowers-257e457d/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/compare/skills/internal-comms-vs-writing-guidelines-012bc9de/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/compare/skills/launch-vs-product-launch-video-af2c6bad/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/compare/skills/marketing-ideas-vs-product-launch-video-d20bd91c/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/compare/skills/marketing-psychology-vs-product-launch-video-e510c053/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/compare/skills/mcp-builder-vs-azure-aigateway-b3d5df36/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/compare/skills/migrate-to-shoehorn-vs-test-driven-development-b6ee2004/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/compare/skills/neon-postgres-vs-supabase-9f8a867d/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/compare/skills/neon-postgres-vs-supabase-postgres-best-practices-a2953672/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/compare/skills/neon-vs-supabase-95a55d62/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/compare/skills/neon-vs-supabase-postgres-best-practices-51b9abf4/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/compare/skills/product-marketing-vs-product-launch-video-7cee59d8/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/compare/skills/python-appservice-deploy-vs-vercel-cli-with-tokens-cef6c832/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/compare/skills/security-audit-vs-azure-compliance-0739a8e1/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/compare/skills/security-audit-vs-cloudflare-one-9bfd7cd0/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/compare/skills/security-audit-vs-cloudflare-one-migrations-dfd6916b/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/compare/skills/setup-pre-commit-vs-finishing-a-development-branch-61bb8169/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/compare/skills/setup-pre-commit-vs-test-driven-development-a1a41272/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/compare/skills/setup-pre-commit-vs-using-git-worktrees-5fd1df23/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/compare/skills/skill-creator-vs-find-skills-2937cef9/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/compare/skills/skill-creator-vs-writing-for-agents-ea9a2a31/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/compare/skills/skill-creator-vs-writing-skills-135c8340/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/compare/skills/tdd-vs-test-driven-development-0825da13/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/compare/skills/ui-ux-pro-max-vs-impeccable-ddd1f24b/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/compare/skills/web-artifacts-builder-vs-vercel-composition-patterns-77a1eeaa/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/compare/skills/web-artifacts-builder-vs-vercel-react-best-practices-612f1368/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/compare/skills/web-artifacts-builder-vs-vercel-react-view-transitions-d8707862/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/compare/skills/webapp-testing-vs-migrate-to-shoehorn-1adaaf6c/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/compare/skills/webapp-testing-vs-setup-pre-commit-60dcad04/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/compare/skills/webapp-testing-vs-tdd-81398eb3/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/compare/skills/webapp-testing-vs-test-driven-development-65cf92c5/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/compare/skills/writing-for-agents-vs-find-skills-e2cfaa26/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/compare/skills/writing-for-agents-vs-writing-skills-55eb73b9/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/compare/skills/writing-skills-vs-find-skills-228f93a2/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://skills.suedeai.ai/directory/conorbronsdon/avoid-ai-writing/ai-writing-detector/</loc>
@@ -3277,6 +3703,228 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://skills.suedeai.ai/directory/coreyhaines31/marketingskills/competitors/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/coreyhaines31/marketingskills/content-strategy/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/coreyhaines31/marketingskills/copy-editing/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/coreyhaines31/marketingskills/copywriting/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/coreyhaines31/marketingskills/cro/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/coreyhaines31/marketingskills/customer-research/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/coreyhaines31/marketingskills/directory-submissions/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/coreyhaines31/marketingskills/emails/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/coreyhaines31/marketingskills/events/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/coreyhaines31/marketingskills/free-tools/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/coreyhaines31/marketingskills/image/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/coreyhaines31/marketingskills/launch/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/coreyhaines31/marketingskills/lead-magnets/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/coreyhaines31/marketingskills/marketing-council/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/coreyhaines31/marketingskills/marketing-ideas/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/coreyhaines31/marketingskills/marketing-loops/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/coreyhaines31/marketingskills/marketing-plan/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/coreyhaines31/marketingskills/marketing-psychology/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/coreyhaines31/marketingskills/offers/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/coreyhaines31/marketingskills/onboarding/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/coreyhaines31/marketingskills/paywalls/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/coreyhaines31/marketingskills/popups/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/coreyhaines31/marketingskills/pricing/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/coreyhaines31/marketingskills/product-marketing/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/coreyhaines31/marketingskills/programmatic-seo/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/coreyhaines31/marketingskills/prospecting/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/coreyhaines31/marketingskills/public-relations/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/coreyhaines31/marketingskills/referrals/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/coreyhaines31/marketingskills/revops/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/coreyhaines31/marketingskills/sales-enablement/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/coreyhaines31/marketingskills/schema/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/coreyhaines31/marketingskills/seo-audit/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/coreyhaines31/marketingskills/signup/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/coreyhaines31/marketingskills/site-architecture/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/coreyhaines31/marketingskills/sms/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/coreyhaines31/marketingskills/social/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/coreyhaines31/marketingskills/video/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://skills.suedeai.ai/directory/costory-io/costory-finops-mcp-skills/bigquery/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
@@ -3349,6 +3997,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://skills.suedeai.ai/directory/danjdewhurst/story-skills/discovery-drafting/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://skills.suedeai.ai/directory/danjdewhurst/story-skills/editorial-review/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
@@ -3356,6 +4010,12 @@
   </url>
   <url>
     <loc>https://skills.suedeai.ai/directory/danjdewhurst/story-skills/feedback-triage/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/danjdewhurst/story-skills/genre-craft/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -3397,7 +4057,55 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://skills.suedeai.ai/directory/danjdewhurst/story-skills/scene-craft/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/danjdewhurst/story-skills/series-continuity/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/danjdewhurst/story-skills/story-init/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://skills.suedeai.ai/directory/danjdewhurst/story-skills/story-maintenance/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/danjdewhurst/story-skills/submission/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/danjdewhurst/story-skills/theme-craft/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/danjdewhurst/story-skills/verse-craft/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/danjdewhurst/story-skills/voice-style/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/danjdewhurst/story-skills/worldbuilding/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -3475,7 +4183,37 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/git-commit/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-api-design/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-binary-size/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-build-release/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-ci/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-cli/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -3499,7 +4237,37 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-data-structures/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-database/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-defensive-coding/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-dependency-injection/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-design-patterns/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-documentation/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -3511,7 +4279,25 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-graphql/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-grpc/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-interface-design/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-modernize/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -3523,7 +4309,31 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-observability/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-openapi/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-performance-review/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-project-layout/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-refactoring/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -3535,7 +4345,19 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-skills-router/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-test-quality/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-test-table-driven/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -3607,6 +4429,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://skills.suedeai.ai/directory/expo/skills/eas-hosting/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://skills.suedeai.ai/directory/expo/skills/eas-observe/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
@@ -3620,6 +4448,18 @@
   </url>
   <url>
     <loc>https://skills.suedeai.ai/directory/expo/skills/eas-update-insights/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/expo/skills/eas-workflows/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/expo/skills/expo-animation/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -3649,6 +4489,18 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://skills.suedeai.ai/directory/expo/skills/expo-dev-client/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/expo/skills/expo-dom/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://skills.suedeai.ai/directory/expo/skills/expo-examples/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
@@ -3662,6 +4514,48 @@
   </url>
   <url>
     <loc>https://skills.suedeai.ai/directory/expo/skills/expo-module/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/expo/skills/expo-native-ui/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/expo/skills/expo-overview/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/expo/skills/expo-project-structure/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/expo/skills/expo-router/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/expo/skills/expo-skill-feedback/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/expo/skills/expo-ui/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/expo/skills/expo-upgrade/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -3877,6 +4771,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://skills.suedeai.ai/directory/garrytan/gstack/gstack/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://skills.suedeai.ai/directory/garrytan/gstack/gstack-openclaw-ceo-review/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
@@ -3979,7 +4879,121 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://skills.suedeai.ai/directory/github/awesome-copilot/conventional-commit/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/github/awesome-copilot/documentation-writer/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/github/awesome-copilot/excalidraw-diagram-generator/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/github/awesome-copilot/git-commit/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/github/awesome-copilot/github-issues/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/github/awesome-copilot/java-mcp-server-generator/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/github/awesome-copilot/java-springboot/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/github/awesome-copilot/multi-stage-dockerfile/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/github/awesome-copilot/playwright-generate-test/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/github/awesome-copilot/postgresql-optimization/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/github/awesome-copilot/prd/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/github/awesome-copilot/refactor/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://skills.suedeai.ai/directory/glacierphonk/naming/naming/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/google-labs-code/stitch-skills/design-md/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/google-labs-code/stitch-skills/enhance-prompt/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/google-labs-code/stitch-skills/remotion/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/google-labs-code/stitch-skills/shadcn-ui/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/google-labs-code/stitch-skills/stitch-loop/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/google-labs-code/stitch-skills/taste-design/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/google/skills/agent-platform-alert-configuration/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -3991,7 +5005,73 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://skills.suedeai.ai/directory/google/skills/agent-platform-prompt-management/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/google/skills/alloydb-basics/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/google/skills/api-gateway-backend-security-and-rate-limiting/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/google/skills/api-gateway-mcp-server/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://skills.suedeai.ai/directory/google/skills/assuredworkloads-environment-assessor/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/google/skills/bigquery-basics/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/google/skills/bigquery-bigframes/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/google/skills/bigtable-basics/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/google/skills/cloud-build-basics/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/google/skills/cloud-databases-onboarding/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/google/skills/cloud-logging-query-generation/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/google/skills/cloud-monitoring-list-time-series-request/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -4003,7 +5083,37 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://skills.suedeai.ai/directory/google/skills/cloud-monitoring-promql-query/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/google/skills/cloud-run-alert-configuration/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/google/skills/cloud-run-basics/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://skills.suedeai.ai/directory/google/skills/cloud-trace-querying/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/google/skills/data-manager-api-audience-ingestion/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/google/skills/datalineage-summary/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -4015,13 +5125,145 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://skills.suedeai.ai/directory/google/skills/developer-device-platform-basics/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/google/skills/gcloud/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/google/skills/gemini-api/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/google/skills/gemini-live-api/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/google/skills/gke-ai-troubleshooting-jobset-interruption/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/google/skills/gke-ai-troubleshooting-tpu-dynamic-slices-monitoring/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/google/skills/gke-ai-troubleshooting-tpu-metrics-monitoring/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/google/skills/gke-ai-troubleshooting-tpu-vbar-oom/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/google/skills/gke-alert-configuration/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/google/skills/gke-app-onboarding/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/google/skills/gke-cluster-autoscaler/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/google/skills/gke-cost-analysis/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/google/skills/google-analytics-data-api-basics/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://skills.suedeai.ai/directory/google/skills/google-cloud-filestore-auditing/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://skills.suedeai.ai/directory/google/skills/google-cloud-filestore-autoscale/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://skills.suedeai.ai/directory/google/skills/google-cloud-filestore-log-troubleshooting/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/google/skills/google-cloud-filestore-nfs-browser/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/google/skills/google-cloud-networking-observability/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/google/skills/google-cloud-recipe-foundation-builder/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/google/skills/google-cloud-recipe-onboarding/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/google/skills/google-cloud-scc-query/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/google/skills/google-cloud-slo-alert-configuration/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/google/skills/google-cloud-solution-agentic-ai-bidirectional-streaming/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/google/skills/google-cloud-solution-agentic-ai-data-science-workflow/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -4039,7 +5281,19 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://skills.suedeai.ai/directory/google/skills/google-cloud-solution-build-deploy-agents/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://skills.suedeai.ai/directory/google/skills/google-cloud-solution-hybrid-search-alloydb/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/google/skills/google-cloud-solution-n-tier-serverless-web-app/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -4052,6 +5306,462 @@
   </url>
   <url>
     <loc>https://skills.suedeai.ai/directory/google/skills/iam-helper-for-privileged-access-management/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/google/skills/managed-airflow-migrations/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/google/skills/retrieving-developer-knowledge/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/googleworkspace/cli/gws-admin-reports/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/googleworkspace/cli/gws-calendar-agenda/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/googleworkspace/cli/gws-classroom/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/googleworkspace/cli/gws-drive/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/googleworkspace/cli/gws-drive-upload/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/googleworkspace/cli/gws-events-renew/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/googleworkspace/cli/gws-events-subscribe/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/googleworkspace/cli/gws-gmail-read/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/googleworkspace/cli/gws-gmail-reply/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/googleworkspace/cli/gws-gmail-reply-all/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/googleworkspace/cli/gws-gmail-triage/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/googleworkspace/cli/gws-gmail-watch/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/googleworkspace/cli/gws-modelarmor/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/googleworkspace/cli/gws-modelarmor-create-template/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/googleworkspace/cli/gws-modelarmor-sanitize-prompt/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/googleworkspace/cli/gws-modelarmor-sanitize-response/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/googleworkspace/cli/gws-script-push/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/googleworkspace/cli/gws-shared/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/googleworkspace/cli/gws-workflow/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/googleworkspace/cli/gws-workflow-email-to-task/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/googleworkspace/cli/gws-workflow-file-announce/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/googleworkspace/cli/gws-workflow-meeting-prep/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/googleworkspace/cli/gws-workflow-standup-report/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/googleworkspace/cli/gws-workflow-weekly-digest/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/googleworkspace/cli/persona-content-creator/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/googleworkspace/cli/persona-customer-support/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/googleworkspace/cli/persona-event-coordinator/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/googleworkspace/cli/persona-exec-assistant/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/googleworkspace/cli/persona-hr-coordinator/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/googleworkspace/cli/persona-it-admin/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/googleworkspace/cli/persona-project-manager/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/googleworkspace/cli/persona-researcher/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/googleworkspace/cli/persona-sales-ops/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/googleworkspace/cli/persona-team-lead/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/googleworkspace/cli/recipe-backup-sheet-as-csv/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/googleworkspace/cli/recipe-batch-invite-to-event/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/googleworkspace/cli/recipe-block-focus-time/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/googleworkspace/cli/recipe-bulk-download-folder/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/googleworkspace/cli/recipe-compare-sheet-tabs/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/googleworkspace/cli/recipe-copy-sheet-for-new-month/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/googleworkspace/cli/recipe-create-classroom-course/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/googleworkspace/cli/recipe-create-doc-from-template/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/googleworkspace/cli/recipe-create-events-from-sheet/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/googleworkspace/cli/recipe-create-expense-tracker/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/googleworkspace/cli/recipe-create-feedback-form/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/googleworkspace/cli/recipe-create-gmail-filter/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/googleworkspace/cli/recipe-create-meet-space/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/googleworkspace/cli/recipe-create-presentation/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/googleworkspace/cli/recipe-create-shared-drive/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/googleworkspace/cli/recipe-create-task-list/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/googleworkspace/cli/recipe-create-vacation-responder/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/googleworkspace/cli/recipe-draft-email-from-doc/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/googleworkspace/cli/recipe-email-drive-link/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/googleworkspace/cli/recipe-find-free-time/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/googleworkspace/cli/recipe-find-large-files/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/googleworkspace/cli/recipe-forward-labeled-emails/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/googleworkspace/cli/recipe-generate-report-from-sheet/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/googleworkspace/cli/recipe-label-and-archive-emails/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/googleworkspace/cli/recipe-log-deal-update/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/googleworkspace/cli/recipe-organize-drive-folder/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/googleworkspace/cli/recipe-plan-weekly-schedule/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/googleworkspace/cli/recipe-post-mortem-setup/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/googleworkspace/cli/recipe-reschedule-meeting/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/googleworkspace/cli/recipe-review-meet-participants/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/googleworkspace/cli/recipe-review-overdue-tasks/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/googleworkspace/cli/recipe-save-email-attachments/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/googleworkspace/cli/recipe-save-email-to-doc/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/googleworkspace/cli/recipe-schedule-recurring-event/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/googleworkspace/cli/recipe-send-team-announcement/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/googleworkspace/cli/recipe-share-doc-and-notify/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/googleworkspace/cli/recipe-share-event-materials/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/googleworkspace/cli/recipe-share-folder-with-team/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/googleworkspace/cli/recipe-sync-contacts-to-sheet/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/googleworkspace/cli/recipe-watch-drive-changes/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -4268,6 +5978,126 @@
   </url>
   <url>
     <loc>https://skills.suedeai.ai/directory/heshamfs/materials-simulation-skills/parameter-optimization/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/heygen-com/hyperframes/embedded-captions/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/heygen-com/hyperframes/faceless-explainer/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/heygen-com/hyperframes/figma/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/heygen-com/hyperframes/general-video/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/heygen-com/hyperframes/hyperframes/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/heygen-com/hyperframes/hyperframes-animation/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/heygen-com/hyperframes/hyperframes-audio/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/heygen-com/hyperframes/hyperframes-cli/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/heygen-com/hyperframes/hyperframes-core/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/heygen-com/hyperframes/hyperframes-creative/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/heygen-com/hyperframes/hyperframes-keyframes/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/heygen-com/hyperframes/hyperframes-registry/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/heygen-com/hyperframes/hyperframes-studio/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/heygen-com/hyperframes/media-use/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/heygen-com/hyperframes/motion-graphics/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/heygen-com/hyperframes/music-to-video/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/heygen-com/hyperframes/pr-to-video/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/heygen-com/hyperframes/product-launch-video/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/heygen-com/hyperframes/remotion-to-hyperframes/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/heygen-com/hyperframes/talking-head-recut/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -4585,6 +6415,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://skills.suedeai.ai/directory/jeffallan/claude-skills/golang-pro/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://skills.suedeai.ai/directory/jeffallan/claude-skills/kotlin-specialist/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
@@ -4639,7 +6475,61 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/autoskill/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/citation-management/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/diffdock/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/experimental-design/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/fictiv/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/flowio/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/fluidsim/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/generate-image/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/hypogenic/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/infographics/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -4657,7 +6547,49 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/latchbio-integration/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/latex-posters/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/liteparse/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/literature-review/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/matchms/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/matlab/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/ncats-arax/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/neurokit2/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -4675,6 +6607,36 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/ontology-term-resolution/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/openpiv/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/opentrons-integration/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/pathml/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/pathogen-variant-surveillance/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/pkpd-modeling/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
@@ -4687,7 +6649,43 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/pydeseq2/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/pymatgen/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/pymc/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/pytdc/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/relsa-severity-assessment/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/scholar-evaluation/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/scientific-visualization/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -4699,7 +6697,43 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/scikit-learn/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/shap/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/simpy/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/statistical-power/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/torch-geometric/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/treatment-plans/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/uncertainty-and-units/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -4789,6 +6823,60 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://skills.suedeai.ai/directory/langchain-ai/langchain-skills/deep-agents-memory/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/langchain-ai/langchain-skills/langchain-fundamentals/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/langchain-ai/langchain-skills/langchain-middleware/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/langchain-ai/langchain-skills/langchain-rag/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/langchain-ai/langchain-skills/langgraph-fundamentals/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/langchain-ai/langchain-skills/langgraph-persistence/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/leonxlnx/taste-skill/brandkit/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/leonxlnx/taste-skill/imagegen-frontend-mobile/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/leonxlnx/taste-skill/imagegen-frontend-web/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://skills.suedeai.ai/directory/luoyuctl/agenttrace/agenttrace-session-audit/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
@@ -4867,6 +6955,174 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://skills.suedeai.ai/directory/mattpocock/skills/ask-matt/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/mattpocock/skills/code-review/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/mattpocock/skills/codebase-design/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/mattpocock/skills/diagnosing-bugs/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/mattpocock/skills/domain-modeling/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/mattpocock/skills/git-guardrails-claude-code/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/mattpocock/skills/grill-me/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/mattpocock/skills/grill-with-docs/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/mattpocock/skills/grilling/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/mattpocock/skills/handoff/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/mattpocock/skills/improve-codebase-architecture/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/mattpocock/skills/migrate-to-shoehorn/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/mattpocock/skills/pr/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/mattpocock/skills/prototype/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/mattpocock/skills/research/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/mattpocock/skills/scaffold-exercises/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/mattpocock/skills/setup-matt-pocock-skills/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/mattpocock/skills/setup-pre-commit/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/mattpocock/skills/tdd/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/mattpocock/skills/teach/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/mattpocock/skills/to-questionnaire/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/mattpocock/skills/to-spec/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/mattpocock/skills/to-tickets/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/mattpocock/skills/triage/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/mattpocock/skills/wait-what/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/mattpocock/skills/wayfinder/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/mattpocock/skills/wizard/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/mattpocock/skills/writing-for-agents/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://skills.suedeai.ai/directory/mblode/agent-skills/agent-ready/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
@@ -4874,6 +7130,30 @@
   </url>
   <url>
     <loc>https://skills.suedeai.ai/directory/mblode/agent-skills/agent-skills-creator/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/mblode/agent-skills/agents-md/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/mblode/agent-skills/app-verification/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/mblode/agent-skills/autoship/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/mblode/agent-skills/ax-audit/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -4897,13 +7177,73 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://skills.suedeai.ai/directory/mblode/agent-skills/dx-audit/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/mblode/agent-skills/eli5/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://skills.suedeai.ai/directory/mblode/agent-skills/ghostwriter/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://skills.suedeai.ai/directory/mblode/agent-skills/multi-tenant-architecture/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/mblode/agent-skills/planning/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://skills.suedeai.ai/directory/mblode/agent-skills/pr-babysitter/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/mblode/agent-skills/pr-creator/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/mblode/agent-skills/presentation-creator/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/mblode/agent-skills/product-design/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/mblode/agent-skills/scaffold-cli/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/mblode/agent-skills/scaffold-nextjs/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/mblode/agent-skills/seo/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -4940,6 +7280,12 @@
   </url>
   <url>
     <loc>https://skills.suedeai.ai/directory/mcollina/skills/documentation/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/mcollina/skills/fastify-best-practices/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -5192,6 +7538,174 @@
   </url>
   <url>
     <loc>https://skills.suedeai.ai/directory/michalparkola/tapestry-skills-for-claude-code/youtube-transcript/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/microsoft/azure-skills/airunway-aks-setup/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/microsoft/azure-skills/appinsights-instrumentation/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/microsoft/azure-skills/azure-ai/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/microsoft/azure-skills/azure-aigateway/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/microsoft/azure-skills/azure-app-onboard/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/microsoft/azure-skills/azure-app-onboard-prereq/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/microsoft/azure-skills/azure-cloud-migrate/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/microsoft/azure-skills/azure-compliance/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/microsoft/azure-skills/azure-compute/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/microsoft/azure-skills/azure-deploy/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/microsoft/azure-skills/azure-diagnostics/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/microsoft/azure-skills/azure-enterprise-infra-planner/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/microsoft/azure-skills/azure-kubernetes/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/microsoft/azure-skills/azure-kusto/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/microsoft/azure-skills/azure-messaging/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/microsoft/azure-skills/azure-prepare/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/microsoft/azure-skills/azure-quotas/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/microsoft/azure-skills/azure-reliability/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/microsoft/azure-skills/azure-resource-lookup/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/microsoft/azure-skills/azure-resource-visualizer/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/microsoft/azure-skills/azure-storage/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/microsoft/azure-skills/azure-upgrade/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/microsoft/azure-skills/azure-validate/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/microsoft/azure-skills/discover-azure-skills/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/microsoft/azure-skills/entra-agent-id/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/microsoft/azure-skills/entra-app-registration/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/microsoft/azure-skills/microsoft-foundry/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/microsoft/azure-skills/python-appservice-deploy/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -5497,6 +8011,90 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://skills.suedeai.ai/directory/neondatabase/agent-skills/neon/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/neondatabase/agent-skills/neon-ai-gateway/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/neondatabase/agent-skills/neon-auth/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/neondatabase/agent-skills/neon-object-storage/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/neondatabase/agent-skills/neon-postgres/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/neondatabase/agent-skills/neon-postgres-branches/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/neondatabase/agent-skills/neon-postgres-egress-optimizer/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/nextlevelbuilder/ui-ux-pro-max-skill/banner-design/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/nextlevelbuilder/ui-ux-pro-max-skill/brand/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/nextlevelbuilder/ui-ux-pro-max-skill/design/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/nextlevelbuilder/ui-ux-pro-max-skill/design-system/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/nextlevelbuilder/ui-ux-pro-max-skill/slides/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/nextlevelbuilder/ui-ux-pro-max-skill/ui-styling/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/nextlevelbuilder/ui-ux-pro-max-skill/ui-ux-pro-max/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://skills.suedeai.ai/directory/nowork-studio/notfair/backlink-audit/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
@@ -5575,6 +8173,18 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://skills.suedeai.ai/directory/nvidia/skills/digital-health-clinical-asr-build/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/nvidia/skills/digital-health-clinical-asr-finetune/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://skills.suedeai.ai/directory/nvidia/skills/hsb-ip-def/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
@@ -5587,7 +8197,37 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://skills.suedeai.ai/directory/nvidia/skills/nv-generate-ct-rflow/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/nvidia/skills/nv-generate-mr/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/nvidia/skills/nv-generate-mr-brain/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/nvidia/skills/nvflare-autofl/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://skills.suedeai.ai/directory/nvidia/skills/physical-ai-defect-image-generation/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/nvidia/skills/physical-ai-neural-reconstruction/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -5605,7 +8245,121 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://skills.suedeai.ai/directory/nvidia/skills/skill-card-generator/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/nvidia/skills/tao-analyze-changenet-rca/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://skills.suedeai.ai/directory/nvidia/skills/tao-analyze-detection-kpi/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/nvidia/skills/tao-analyze-gaps-od-map/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/nvidia/skills/tao-analyze-gaps-vlm-bcq/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/nvidia/skills/tao-artifacts/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/nvidia/skills/tao-finetune-anomalygennext/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/nvidia/skills/tao-finetune-clip/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/nvidia/skills/tao-finetune-cosmos-embed/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/nvidia/skills/tao-finetune-kumo-anomaly/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/nvidia/skills/tao-finetune-kumo-forecast/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/nvidia/skills/tao-finetune-video-clip/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/nvidia/skills/tao-generate-anomalies/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/nvidia/skills/tao-generate-image-embeddings/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/nvidia/skills/tao-generate-image-grounding/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/nvidia/skills/tao-generate-video-reasoning-annotations/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/nvidia/skills/tao-prepare-anomalygennext-inputs/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/nvidia/skills/tao-run-automl/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/nvidia/skills/tao-run-deft-aoi/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/nvidia/skills/tao-run-deft-aoi-cosmos3/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -5623,6 +8377,222 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://skills.suedeai.ai/directory/nvidia/skills/tao-run-deft-pas/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/nvidia/skills/tao-run-on-kubernetes/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/nvidia/skills/tao-run-on-slurm/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/nvidia/skills/tao-run-on-virtualenv/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/nvidia/skills/tao-setup-nvidia-gpu-host/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/nvidia/skills/tao-token-efficient-execution/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/nvidia/skills/tao-train-action-recognition/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/nvidia/skills/tao-train-bevfusion/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/nvidia/skills/tao-train-centerpose/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/nvidia/skills/tao-train-codetr/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/nvidia/skills/tao-train-deformable-detr/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/nvidia/skills/tao-train-depth-anything-v2/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/nvidia/skills/tao-train-dino/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/nvidia/skills/tao-train-fast-foundation-stereo/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/nvidia/skills/tao-train-foundation-stereo/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/nvidia/skills/tao-train-grounding-dino/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/nvidia/skills/tao-train-image-classification/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/nvidia/skills/tao-train-mask-auto-encoder/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/nvidia/skills/tao-train-mask-auto-label/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/nvidia/skills/tao-train-mask-grounding-dino/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/nvidia/skills/tao-train-mask2former/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/nvidia/skills/tao-train-metric-learning-recognition/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/nvidia/skills/tao-train-nvdinov2/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/nvidia/skills/tao-train-nvpanoptix3d/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/nvidia/skills/tao-train-ocdnet/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/nvidia/skills/tao-train-ocrnet/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/nvidia/skills/tao-train-oneformer/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/nvidia/skills/tao-train-optical-inspection/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/nvidia/skills/tao-train-pointpillars/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/nvidia/skills/tao-train-pose-classification/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/nvidia/skills/tao-train-reid/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/nvidia/skills/tao-train-rtdetr/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/nvidia/skills/tao-train-segformer/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/nvidia/skills/tao-train-single-step/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/nvidia/skills/tao-train-sparse4d/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/nvidia/skills/tao-train-visual-changenet/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://skills.suedeai.ai/directory/nvidia/skills/tao-validate-recipe-transfer/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
@@ -5630,6 +8600,24 @@
   </url>
   <url>
     <loc>https://skills.suedeai.ai/directory/nvidia/skills/vss-deploy-detection-tracking-2d/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/nvidia/skills/vss-deploy-profile/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/nvidia/skills/vss-manage-alerts/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/nvidia/skills/warp-compile-time-optimizer/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -5654,6 +8642,12 @@
   </url>
   <url>
     <loc>https://skills.suedeai.ai/directory/obra/superpowers-lab/windows-vm/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/obra/superpowers/brainstorming/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -5695,6 +8689,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://skills.suedeai.ai/directory/obra/superpowers/subagent-driven-development/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://skills.suedeai.ai/directory/obra/superpowers/systematic-debugging/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
@@ -5726,6 +8726,12 @@
   </url>
   <url>
     <loc>https://skills.suedeai.ai/directory/obra/superpowers/writing-plans/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/obra/superpowers/writing-skills/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -5935,7 +8941,19 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://skills.suedeai.ai/directory/product-on-purpose/pm-skills/define-opportunity-tree/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://skills.suedeai.ai/directory/product-on-purpose/pm-skills/discover-journey-map/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/product-on-purpose/pm-skills/discover-stakeholder-summary/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -6271,6 +9289,18 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://skills.suedeai.ai/directory/sanity-io/agent-toolkit/sanity-best-practices/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/sanity-io/agent-toolkit/sanity-migration/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://skills.suedeai.ai/directory/sanjay3290/ai-skills/apple-container/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
@@ -6421,7 +9451,19 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://skills.suedeai.ai/directory/stripe/ai/stripe-best-practices/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://skills.suedeai.ai/directory/supabase/agent-skills/supabase/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/supabase/agent-skills/supabase-postgres-best-practices/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -6559,13 +9601,55 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://skills.suedeai.ai/directory/trailofbits/skills/audit-prep-assistant/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/trailofbits/skills/burpsuite-project-parser/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/trailofbits/skills/chrome-mcp-troubleshooting/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/trailofbits/skills/code-improver/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://skills.suedeai.ai/directory/trailofbits/skills/codeql/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://skills.suedeai.ai/directory/trailofbits/skills/constant-time-analysis/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/trailofbits/skills/constant-time-testing/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://skills.suedeai.ai/directory/trailofbits/skills/crypto-protocol-diagram/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/trailofbits/skills/devcontainer-setup/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -6583,7 +9667,43 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://skills.suedeai.ai/directory/trailofbits/skills/entry-point-analyzer/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/trailofbits/skills/firebase-apk-scanner/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/trailofbits/skills/fp-check/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/trailofbits/skills/genotoxic/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/trailofbits/skills/goal-prompt/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://skills.suedeai.ai/directory/trailofbits/skills/graph-evolution/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/trailofbits/skills/interpreting-culture-index/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -6595,7 +9715,91 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://skills.suedeai.ai/directory/trailofbits/skills/mermaid-to-proverif/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/trailofbits/skills/modern-cpp/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/trailofbits/skills/modern-python/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/trailofbits/skills/mutation-testing/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/trailofbits/skills/open-sourcing/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/trailofbits/skills/post-patch-validation/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/trailofbits/skills/pr-improver/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/trailofbits/skills/property-based-testing/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/trailofbits/skills/sarif-parsing/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/trailofbits/skills/second-opinion/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://skills.suedeai.ai/directory/trailofbits/skills/semgrep/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/trailofbits/skills/semgrep-rule-creator/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/trailofbits/skills/semgrep-rule-variant-creator/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/trailofbits/skills/sharp-edges/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/trailofbits/skills/skill-improver/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -6607,7 +9811,43 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://skills.suedeai.ai/directory/trailofbits/skills/supply-chain-risk-auditor/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/trailofbits/skills/testing-handbook-generator/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://skills.suedeai.ai/directory/trailofbits/skills/trailmark-finding-triage/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/trailofbits/skills/trailmark-review-gate/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/trailofbits/skills/vector-forge/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/trailofbits/skills/vulnerability-triage-brocards/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/trailofbits/skills/writing-lean-proofs/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -6620,6 +9860,12 @@
   </url>
   <url>
     <loc>https://skills.suedeai.ai/directory/tronghieu/agent-skills/bmad-run-inspector/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/tronghieu/agent-skills/brainstorm-coach/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -6638,6 +9884,12 @@
   </url>
   <url>
     <loc>https://skills.suedeai.ai/directory/tronghieu/agent-skills/deep-reader/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/tronghieu/agent-skills/design-thinking/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -6662,6 +9914,18 @@
   </url>
   <url>
     <loc>https://skills.suedeai.ai/directory/tronghieu/agent-skills/market-researcher/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/tronghieu/agent-skills/problem-solver/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/tronghieu/agent-skills/product-manager/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -6727,7 +9991,61 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://skills.suedeai.ai/directory/vercel-labs/agent-browser/agent-browser/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/vercel-labs/agent-skills/vercel-cli-with-tokens/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/vercel-labs/agent-skills/vercel-composition-patterns/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/vercel-labs/agent-skills/vercel-optimize/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/vercel-labs/agent-skills/vercel-react-best-practices/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/vercel-labs/agent-skills/vercel-react-native-skills/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/vercel-labs/agent-skills/vercel-react-view-transitions/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/vercel-labs/agent-skills/writing-guidelines/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://skills.suedeai.ai/directory/vercel-labs/skills/find-skills/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/vercel/ai/ai-sdk/</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>

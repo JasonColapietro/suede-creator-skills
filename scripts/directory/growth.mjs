@@ -1,0 +1,160 @@
+// Evidence-backed discovery surfaces. All values come from the saved dataset;
+// these pages never imply a fresh scan, runtime test or editorial endorsement.
+import fs from 'node:fs';
+import path from 'node:path';
+import { createHash } from 'node:crypto';
+import { isFirstParty } from './task-pages.mjs';
+
+export function comparisonPairs(topics, installsFor, limit = 50, retained = null, skills = []) {
+  const candidates = new Map();
+  for (const t of topics) {
+    const rows = t.rows.filter(s => !isFirstParty(s))
+      .sort((a, b) => (installsFor(b)?.installs || 0) - (installsFor(a)?.installs || 0) || b.score - a.score || a.id.localeCompare(b.id)).slice(0, 5);
+    for (let i = 0; i < rows.length; i++) for (let j = i + 1; j < rows.length; j++) {
+      if (rows[i].repo === rows[j].repo) continue;
+      const [a, b] = [rows[i], rows[j]].sort((x, y) => x.id.localeCompare(y.id));
+      const key = `${a.id}|${b.id}`;
+      if (!candidates.has(key)) candidates.set(key, { a, b, topics: [], demand: Math.min(installsFor(a)?.installs || 0, installsFor(b)?.installs || 0) });
+      candidates.get(key).topics.push(t.topic);
+    }
+  }
+  let chosen = [...candidates.values()].sort((a, b) => b.demand - a.demand || a.a.id.localeCompare(b.a.id) || a.b.id.localeCompare(b.b.id)).slice(0, limit);
+  if (retained) {
+    const byId = new Map(skills.map(s => [s.id, s]));
+    const topicById = new Map(topics.map(t => [t.topic.id, t.topic]));
+    chosen = retained.map(p => ({ a: byId.get(p.skills[0]), b: byId.get(p.skills[1]),
+      topics: p.topics.map(id => topicById.get(id) || { id, name: id.replaceAll('-', ' ') }) }))
+      .filter(p => p.a && p.b && !isFirstParty(p.a) && !isFirstParty(p.b));
+  }
+  return chosen
+    .map(p => ({ ...p, slug: `${p.a.slug.slice(0, 35)}-vs-${p.b.slug.slice(0, 35)}-${createHash('sha256').update(`${p.a.id}|${p.b.id}`).digest('hex').slice(0, 8)}` }));
+}
+
+export function renderGrowth(c) {
+  const { root, files, data, page, crumbs, rel, url, esc, fmt, setKeywords, pageDate, publisher, directoryRef,
+    skillPath, listingTarget, reportPanel, qualityBadgeBlock, installSection, factsTable, skillTitle, servicesCta, publisherClaim,
+    installsFor, installsDate, topics, comparisonPlan, newsletter, skillReport } = c;
+  const name = s => s.display_name || s.name;
+  const link = (here, s) => `<a href="${rel(here, listingTarget(s).replace('https://skills.suedeai.ai/', ''))}">${esc(name(s))}</a>`;
+  const reportLink = (here, s) => `<a href="${rel(here, `${skillPath(s)}report.json`)}">Score report</a>`;
+  const table = (heads, rows) => `<div class="table-wrap"><table class="checks"><thead><tr>${heads.map(h => `<th scope="col">${esc(h)}</th>`).join('')}</tr></thead><tbody>${rows.map(row => `<tr>${row.map(v => `<td>${v}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+  function emit({ here, title, description, heading = title, body, trail = [], mainEntity, type = 'WebPage', keywords, h1Html }) {
+    const bc = crumbs(here, [['directory/', 'Directory'], ...trail, [null, heading]]);
+    files.set(`${here}index.html`, page({ here, title, description, keywords: setKeywords(here, keywords || [heading.toLowerCase(), 'graded agent skills', 'Suede AI Skills Directory']),
+      h1Html: h1Html || `<div class="eyebrow">Suede AI Skills Directory</div><h1>${esc(heading)}</h1>`, body: `${bc.html}\n${body}`,
+      jsonld: [{ '@context': 'https://schema.org', '@type': type, '@id': `${url(here)}#page`, name: title, description, url: url(here), dateModified: pageDate, publisher, isPartOf: directoryRef,
+        breadcrumb: { '@id': `${url(here)}#breadcrumb` }, ...(mainEntity ? { mainEntity } : {}) }, bc.ld],
+      footerNote: `Published by Suede AI from the ${esc(data.generated)} directory snapshot. Source repositories belong to their publishers.`,
+    }));
+  }
+
+  for (const s of data.skills.filter(s => s.full_page && !s.featured)) {
+    const here = skillPath(s);
+    const title = skillTitle(s);
+    const description = `${name(s)} by ${s.owner}: ${s.score}/100 (${s.grade}). Read the score breakdown, source, license and installation route.`;
+    const meta = description.length > 160 ? `${name(s).slice(0, 65)}: ${s.score}/100 (${s.grade}). ${s.repo.slice(0, 45)}. Read the score, license and source report.` : description;
+    emit({ here, title, description: meta, heading: name(s), keywords: [`${s.name} skill by ${s.repo}`, `${s.category} skills`, "agent skill assessment"], trail: [[`directory/${s.category}/`, s.category]],
+      h1Html: `<div class="eyebrow">Agent skill &middot; ${esc(s.category)} &middot; ${esc(s.owner)}</div><h1>${esc(name(s))} <span class="h1-sub">agent skill by ${esc(s.owner)}</span></h1>`,
+      body: `<p class="lead">${esc(s.description)}</p>
+<section class="panel"><h2>Source and license</h2>${factsTable([
+        ['Publisher', `<a href="https://github.com/${esc(s.owner)}">${esc(s.owner)}</a>`],
+        ['Repository', `<a href="${esc(s.folder_url)}">${esc(s.repo)}</a>`],
+        ['License', `<a href="${esc(s.license_url)}">${esc(s.license)}</a>`],
+        ['Snapshot', esc(data.generated)], ['Last repository commit', esc(s.commit_date)],
+        ['Instruction size', `${fmt(s.body_words)} words; ${fmt(s.body_lines)} lines`], ['Bundled files', fmt(s.file_count)],
+      ])}<p><a href="${esc(s.skill_md_url)}">Read the publisher’s SKILL.md</a></p></section>
+<section class="panel" id="check"><h2>Suede Skill Check: ${s.score}/100 · ${s.grade}</h2>${reportPanel(here, s)}
+${table(['Component', 'Points earned', 'Available'], s.score_parts.map(p => [esc(p.label), p.points, p.max]))}
+<p>The published score is capped at 99. It measures the published files, documentation and maintenance signals. Security scan: not scanned. This assessment does not include a runtime test or a full installation-dependency review.</p></section>
+${installSection(here, s)}${qualityBadgeBlock(here, s)}${servicesCta("skill", s.category, here, { compact: true, publisher: publisherClaim(here) })}
+<section class="panel"><h2>Compare skills for this task</h2><p><a href="${rel(here, `directory/${s.category}/`)}">Browse ${esc(s.category)} skills</a> or <a href="${rel(here, 'directory/compare/')}">compare scores side by side</a>.</p></section>`,
+      mainEntity: { '@type': 'SoftwareSourceCode', name: name(s), description: s.description, codeRepository: s.folder_url, license: s.license_url, programmingLanguage: 'Markdown' },
+    });
+  }
+
+  const comparisonTitles = new Set();
+  const pairLinks = comparisonPlan.map(p => [p, `directory/compare/skills/${p.slug}/`]);
+  for (const [p, here] of pairLinks) {
+    const { a, b } = p;
+    const heading = `${name(a)} vs ${name(b)}`;
+    const baseTitle = `${name(a).slice(0, 25)} vs ${name(b).slice(0, 25)}`;
+    let title = baseTitle.length < 20 ? `${baseTitle} | Skill comparison` : baseTitle;
+    if (comparisonTitles.has(title.toLowerCase())) title = `${name(a).slice(0, 16)} vs ${name(b).slice(0, 16)}: ${a.owner.slice(0, 16)}`;
+    if (comparisonTitles.has(title.toLowerCase())) throw new Error(`Duplicate comparison title: ${title}`);
+    comparisonTitles.add(title.toLowerCase());
+    emit({ here, title: title.length < 20 ? `${title} skills` : title, description: `Compare ${name(a).slice(0, 35)} and ${name(b).slice(0, 35)}: quality scores, licenses, install routes and component evidence from the directory.`, heading, keywords: [`${p.a.id} vs ${p.b.id}`, "compare agent skills", "agent skill quality"],
+      trail: [['directory/compare/', 'Compare']],
+      body: `<p class="lead">A comparison selected for ${esc(p.topics.map(t => t.name).join(', '))}. Compare the task description and license first, then use the score breakdown to inspect their published files.</p>
+<p>Quality snapshot: ${esc(data.generated)}. Install counts: skills.sh, ${esc(installsDate || 'unavailable')}. This pair was selected from shared topics and recorded installs; it is not a claim about joint search volume.</p>
+<section class="panel"><h2>At a glance</h2>${table(['Evidence', `${name(a)} (${a.repo})`, `${name(b)} (${b.repo})`], [
+        ['Listing', link(here, a), link(here, b)], ['Task', esc(a.description), esc(b.description)],
+        ['Quality score', `${a.score}/100 · ${a.grade}`, `${b.score}/100 · ${b.grade}`],
+        ['License', esc(a.license), esc(b.license)], ['Cost lane', esc(a.lane), esc(b.lane)],
+        ['Recorded installs', installsFor(a) ? fmt(installsFor(a).installs) : 'Not recorded', installsFor(b) ? fmt(installsFor(b).installs) : 'Not recorded'],
+        ['Report', reportLink(here, a), reportLink(here, b)],
+      ])}</section>
+<section class="panel"><h2>Where the scores differ</h2>${table(['Component', name(a), name(b)], a.score_parts.map((part, i) => [esc(part.label), `${part.points} / ${part.max}`, `${b.score_parts[i].points} / ${part.max}`]))}
+<p>${a.score === b.score ? 'Both skills have the same total score.' : `${esc(name(a.score > b.score ? a : b))} has the higher structural-quality score by ${Math.abs(a.score - b.score)} points.`} Use the task descriptions above to judge fit. These scores do not measure runtime performance or security.</p></section>
+<section class="panel"><h2>Inspect before installing</h2><p>${link(here, a)} and ${link(here, b)} link to their publishers, licenses and installation routes. Read the source before giving either skill access to your project.</p></section>`,
+    });
+  }
+  files.set('directory/comparisons.json', JSON.stringify(pairLinks.map(([p, here]) => ({ skills: [p.a.id, p.b.id], topics: p.topics.map(t => t.id), href: `/${here}`, snapshot: data.generated })), null, 2) + '\n');
+
+  const here = 'directory/state-of-agent-skills/';
+  const thirdParty = data.skills.filter(s => !isFirstParty(s));
+  const grades = Object.fromEntries(['A', 'B', 'C', 'D'].map(g => [g, thirdParty.filter(s => s.grade === g).length]));
+  const pct = n => (100 * n / thirdParty.length).toFixed(1);
+  const laneLabel = id => ({ 'free-open-source': 'Free and open source', 'free-with-service': 'Free skill, needs a service', noncommercial: 'Non-commercial license', restricted: 'Restricted license' }[id] || id);
+  const counts = key => Object.entries(thirdParty.reduce((acc, s) => { acc[s[key]] = (acc[s[key]] || 0) + 1; return acc; }, {})).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
+  const components = thirdParty[0]?.score_parts.map((p, i) => ({ name: p.label, max: p.max, missing: thirdParty.filter(s => s.score_parts[i].points < p.max).length,
+    lost: thirdParty.reduce((n, s) => n + p.max - s.score_parts[i].points, 0) })).sort((a, b) => b.lost - a.lost) || [];
+  const popular = [...thirdParty].filter(s => installsFor(s)).sort((a, b) => installsFor(b).installs - installsFor(a).installs || a.id.localeCompare(b.id)).slice(0, 10);
+  const top = [...thirdParty].sort((a, b) => b.score - a.score || a.id.localeCompare(b.id)).slice(0, 10);
+  const overlap = popular.filter(s => top.some(t => t.id === s.id)).length;
+  const stats = { snapshot: data.generated, install_snapshot: installsDate, scope: 'Third-party listed skills; Suede AI excluded', total: thirdParty.length, grades, cost_lanes: counts('lane'), categories: counts('category'), components, top_ten_overlap: overlap };
+  files.set(`${here}data.json`, JSON.stringify(stats, null, 2) + '\n');
+  files.set(`${here}grades.csv`, 'grade,skills,percent\n' + Object.entries(grades).map(([g, n]) => `${g},${n},${pct(n)}`).join('\n') + '\n');
+  const colors = { A: '#00ca52', B: '#50a8ff', C: '#ffb200', D: '#a0a0a0' };
+  files.set(`${here}grades.svg`, `<svg xmlns="http://www.w3.org/2000/svg" width="960" height="390" viewBox="0 0 960 390" role="img" aria-labelledby="title desc"><title id="title">Agent skill grade distribution</title><desc id="desc">${Object.entries(grades).map(([g, n]) => `${g}: ${n} skills`).join('; ')}. Snapshot ${esc(data.generated)}; Suede AI excluded.</desc><rect width="960" height="390" fill="#000"/><g font-family="sans-serif" fill="#ededed"><text x="32" y="42" font-size="26">State of Agent Skills · ${esc(data.generated)}</text>${Object.entries(grades).map(([g, n], i) => `<text x="32" y="${100 + i * 62}" font-size="20">${g}</text><rect x="75" y="${77 + i * 62}" width="${Math.round(n / Math.max(...Object.values(grades)) * 630)}" height="32" fill="${colors[g]}"/><text x="730" y="${100 + i * 62}" font-size="19">${fmt(n)} (${pct(n)}%)</text>`).join('')}<text x="32" y="365" font-size="15">Source: suedeai.directory · ${fmt(thirdParty.length)} third-party skills · structural quality</text></g></svg>`);
+  const ranking = rows => table(['Skill', 'Quality score', 'Recorded installs'], rows.map(s => [link(here, s), `${s.score}/100 · ${s.grade}`, installsFor(s) ? fmt(installsFor(s).installs) : 'Not recorded']));
+  emit({ here, title: 'State of Agent Skills: Quality, Adoption and Licenses', heading: 'State of Agent Skills',
+    description: `${fmt(thirdParty.length)} third-party agent skills assessed: ${pct(grades.A)}% earn an A. Explore grades, licenses, missing points and popularity versus quality.`,
+    body: `<p class="lead">${fmt(grades.A)} of ${fmt(thirdParty.length)} third-party agent skills earn an A (${pct(grades.A)}%). Every grade comes from the published files and the same 0–99 rubric.</p>
+<p>Quality snapshot: <time datetime="${data.generated}">${data.generated}</time>. Install snapshot: ${esc(installsDate || 'unavailable')}. This is the directory’s listed sample, not a census of all agent skills. Suede AI’s own skills are excluded from every figure and ranking in this report.</p>
+<section class="panel"><h2>How the grades fall</h2><img src="grades.svg" alt="${esc(Object.entries(grades).map(([g, n]) => `${g}: ${fmt(n)} skills (${pct(n)}%)`).join('; '))}" width="960" height="390" style="width:100%;height:auto">${table(['Grade', 'Skills', 'Share'], Object.entries(grades).map(([g, n]) => [g, fmt(n), `${pct(n)}%`]))}<p><a href="grades.svg" download>Download chart (SVG)</a> · <a href="grades.csv" download>Download grade data (CSV)</a> · <a href="data.json">Report data (JSON)</a></p></section>
+<section class="panel"><h2>Where skills leave points on the table</h2>${table(['Score component', 'Skills below maximum', 'Total unearned points'], components.map(p => [esc(p.name), fmt(p.missing), fmt(p.lost)]))}<p>Unearned rubric points are opportunities to improve the published assessment. They are not evidence that a skill fails at its task. <a href="${rel(here, 'directory/check/')}">Check your own skill</a>.</p></section>
+<section class="panel"><h2>Popularity and quality answer different questions</h2><p>The ten most installed skills and the ten highest-scoring skills share ${overlap} ${overlap === 1 ? 'entry' : 'entries'}. Equal quality scores are ordered by listing ID, so this overlap depends on the stated tie-break. Install counts come from skills.sh; missing counts are not zero.</p><h3>Most installed</h3>${ranking(popular)}<h3>Highest scores</h3>${ranking(top)}</section>
+<section class="panel"><h2>Licenses and service requirements</h2>${table(['Cost and license lane', 'Skills'], counts('lane').map(([k, n]) => [esc(laneLabel(k)), fmt(n)]))}<p>Cost lanes use recorded license and installation evidence. Compact assessments may not include a full service-dependency review; always check the publisher’s terms.</p></section>
+<section class="panel"><h2>The largest categories</h2>${table(['Category', 'Skills'], counts('category').map(([k, n]) => [`<a href="${rel(here, `directory/${k}/`)}">${esc(k.replaceAll('-', ' '))}</a>`, fmt(n)]))}</section>
+<section class="panel"><h2>Read the evidence</h2><p><a href="${rel(here, 'directory/methodology/')}">Published grading rubric</a> · <a href="${rel(here, 'directory/api/')}">Open index and per-skill reports</a> · <a href="${rel(here, 'directory/finder/')}">Find skills inside your agent</a></p><p>Scores measure structure, documentation, bundled files, maintenance and curated-list citations. No third-party code was executed; no runtime or security results are inferred.</p></section>`,
+  });
+
+  const finder = 'directory/finder/';
+  emit({ here: finder, title: 'Find Graded Agent Skills from Claude Code or Codex', heading: 'Find graded skills inside your agent',
+    description: 'Install the Suede directory finder for Claude Code, Codex or Cursor. Search by task and compare quality scores, licenses, reports and install commands.',
+    body: `<p class="lead">Ask “find a graded skill for React testing” and get a shortlist with scores, licenses, source reports and install commands.</p>
+<section class="panel"><h2>Install the finder</h2><pre><code id="finder-install">npx skills add https://github.com/JasonColapietro/suede-creator-skills/tree/main/directory/suede-directory</code></pre><button class="button" type="button" data-copy-target="finder-install">Copy install command</button><p>Choose your agent when the skills CLI asks. The finder requires Node.js 22 or later and reads the public index over HTTPS.</p><p><a href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/directory/suede-directory">Inspect the source and SKILL.md</a> · <a href="SKILL.md" download>Download SKILL.md</a> · <a href="search.mjs" download>Download the search script</a></p></section>
+<section class="panel"><h2>Try these requests</h2><ul><li>Find a free, graded skill for React testing.</li><li>Compare the best-scoring PostgreSQL skills and show their licenses.</li><li>Find a security-review skill scoring at least 80 and show its report.</li></ul><p>Searches run locally against the downloaded index. The finder returns commands for you to inspect; it does not install or execute a discovered skill. Suede AI’s own skills are excluded from its rankings.</p></section>
+<section class="panel"><h2>Use it without an agent</h2><p>Save the search script, then run:</p><pre><code>node search.mjs "react testing" --min-score 80 --limit 5</code></pre><p>Scores describe structural quality in the dated snapshot. They do not certify runtime performance or security. <a href="${rel(finder, 'directory/api/')}">Read the API documentation</a>.</p></section>`,
+  });
+  const finderSource = path.join(root, 'directory/suede-directory');
+  files.set(`${finder}SKILL.md`, fs.readFileSync(path.join(finderSource, 'SKILL.md'), 'utf8'));
+  files.set(`${finder}search.mjs`, fs.readFileSync(path.join(finderSource, 'scripts/search.mjs'), 'utf8'));
+
+  const risingHere = 'directory/rising/';
+  const rising = thirdParty.filter(s => (installsFor(s)?.weekly?.at(-1) || 0) > 0)
+    .sort((a, b) => installsFor(b).weekly.at(-1) - installsFor(a).weekly.at(-1) || a.id.localeCompare(b.id)).slice(0, 5);
+  const risingRows = rising.map(s => [link(risingHere, s), `${s.score}/100 · ${s.grade}`, fmt(installsFor(s).weekly.at(-1))]);
+  const issue = [`# Rising Skills`, ``, `Install snapshot: ${installsDate}. Quality snapshot: ${data.generated}.`, ``,
+    `The five listed skills with the most recorded installs in the final week of the saved skills.sh history. These are snapshot figures, not a live leaderboard.`, ``,
+    ...rising.map(s => `- ${name(s)} (${s.repo}): ${s.score}/100, ${s.grade}; ${installsFor(s).weekly.at(-1)} installs in the recorded week. ${listingTarget(s).replace("https://skills.suedeai.ai/directory", "https://suedeai.directory")}`),
+    ``, `Explore: https://suedeai.directory/top/`, `Read the report: https://suedeai.directory/state-of-agent-skills/`, ``,
+  ].join('\n');
+  files.set(`${risingHere}issue.md`, issue);
+  emit({ here: risingHere, title: 'Rising Skills: Five Agent Skills to Explore Next', heading: 'Rising Skills',
+    description: 'Explore five rising agent skills with their quality scores, licenses and sources. Read the latest saved weekly install snapshot from skills.sh.',
+    body: `<p class="lead">Five skills to explore next, with quality scores and source reports alongside recorded adoption.</p><p>Install snapshot: ${esc(installsDate || 'unavailable')}. Quality snapshot: ${esc(data.generated)}. “Rising” means installs in the final recorded week of the saved skills.sh history, not growth since your last visit.</p>
+<section class="panel"><h2>Top five in the recorded week</h2>${rising.length ? table(['Skill', 'Quality score', 'Weekly installs'], risingRows) : '<p>No weekly install history is available in this snapshot.</p>'}<p><a href="issue.md" download>Download this issue</a> · <a href="${rel(risingHere, 'directory/top/')}#rising">Explore the rising leaderboard</a></p></section>
+<section class="panel"><h2>Follow new skills</h2>${newsletter.signup_url ? `<p><a class="button" href="${esc(newsletter.signup_url)}">Get Rising Skills by email</a></p>` : '<p>Email signup is not open yet. Follow new listings and guides through the RSS feed.</p>'}<p><a href="${rel(risingHere, 'directory/feed.xml')}">Subscribe by RSS</a></p></section>`,
+  });
+}

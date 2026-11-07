@@ -18,6 +18,18 @@ ROOT = Path(__file__).resolve().parents[2]
 BASE = 'https://skills.suedeai.ai/directory/'
 
 
+def contract_url(value):
+    """The standalone host serves the same evidence as the legacy directory."""
+    prefix = 'https://suedeai.directory/'
+    return BASE + value[len(prefix):] if isinstance(value, str) and value.startswith(prefix) else value
+
+
+def with_page_selection(skill, root):
+    manifest = root / 'directory/growth/full-pages.json'
+    selected = json.loads(manifest.read_text())['skills'] if manifest.exists() else []
+    return {**skill, 'full_page': f"{skill['repo']}/{skill['slug']}".lower() in selected}
+
+
 class BadgeParser(HTMLParser):
     """Read rendered HTML only: code examples are text, never image evidence."""
     VOID = {'area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link', 'meta', 'param', 'source', 'track', 'wbr'}
@@ -42,7 +54,8 @@ class BadgeParser(HTMLParser):
             source = attrs.get('src')
             if (source or '').startswith('https://camo.githubusercontent.com/'):
                 source = attrs.get('data-canonical-src')
-            if anchor.get('href') == self.target and source in self.expected:
+            source = contract_url(source)
+            if contract_url(anchor.get('href')) == self.target and source in self.expected:
                 self.found.add(source)
         if tag not in self.VOID:
             self.stack.append((tag, attrs, hidden))
@@ -78,7 +91,7 @@ def main():
     matches = [s for s in data['skills'] if '/'.join(map(slugify, s['repo'].split('/'))) + '/' + s['slug'] == args.skill_id]
     if len(matches) != 1:
         parser.error('Skill must already be accepted in directory/skills.json')
-    skill = matches[0]
+    skill = with_page_selection(matches[0], ROOT)
     # Reuse the builder's exact eligibility, URL and badge contract.
     contract = json.loads(subprocess.run(['node', '--input-type=module', '-e',
         "import {badgePair,listingTarget} from './scripts/directory/badges.mjs'; let s=JSON.parse(process.argv[1]); console.log(JSON.stringify({target:listingTarget(s),badges:badgePair(s).map(b=>b.src)}));", json.dumps(skill)],

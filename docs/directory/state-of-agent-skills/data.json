@@ -1,0 +1,165 @@
+{
+  "snapshot": "2026-10-22",
+  "install_snapshot": "2026-11-02",
+  "scope": "Third-party listed skills; Suede AI excluded",
+  "total": 3805,
+  "grades": {
+    "A": 120,
+    "B": 1582,
+    "C": 1379,
+    "D": 724
+  },
+  "cost_lanes": [
+    [
+      "free-open-source",
+      3412
+    ],
+    [
+      "free-with-service",
+      287
+    ],
+    [
+      "noncommercial",
+      80
+    ],
+    [
+      "restricted",
+      26
+    ]
+  ],
+  "categories": [
+    [
+      "ai-agents-llm",
+      599
+    ],
+    [
+      "developer-tools",
+      542
+    ],
+    [
+      "devops-cloud",
+      359
+    ],
+    [
+      "marketing-seo",
+      310
+    ],
+    [
+      "product-management",
+      237
+    ],
+    [
+      "media-creative",
+      231
+    ],
+    [
+      "productivity-knowledge",
+      213
+    ],
+    [
+      "science-research",
+      210
+    ],
+    [
+      "frontend-design",
+      198
+    ],
+    [
+      "testing-qa",
+      190
+    ],
+    [
+      "data-databases",
+      178
+    ],
+    [
+      "business-finance",
+      163
+    ],
+    [
+      "security",
+      115
+    ],
+    [
+      "writing-content",
+      112
+    ],
+    [
+      "code-review-quality",
+      93
+    ],
+    [
+      "documents-office",
+      55
+    ]
+  ],
+  "components": [
+    {
+      "name": "Curated-list citations",
+      "max": 7,
+      "missing": 3587,
+      "lost": 17463
+    },
+    {
+      "name": "Boundary clause",
+      "max": 4,
+      "missing": 3293,
+      "lost": 13172
+    },
+    {
+      "name": "Structural checks",
+      "max": 56,
+      "missing": 1291,
+      "lost": 10328
+    },
+    {
+      "name": "Example request",
+      "max": 3,
+      "missing": 2849,
+      "lost": 8547
+    },
+    {
+      "name": "Compatibility declared",
+      "max": 2,
+      "missing": 3278,
+      "lost": 6556
+    },
+    {
+      "name": "Tool permissions declared",
+      "max": 2,
+      "missing": 3247,
+      "lost": 6494
+    },
+    {
+      "name": "Bundled scripts",
+      "max": 2,
+      "missing": 3144,
+      "lost": 6288
+    },
+    {
+      "name": "Reference files",
+      "max": 3,
+      "missing": 2012,
+      "lost": 6036
+    },
+    {
+      "name": "Instruction depth",
+      "max": 7,
+      "missing": 1054,
+      "lost": 4467
+    },
+    {
+      "name": "Recent maintenance",
+      "max": 9,
+      "missing": 826,
+      "lost": 4366
+    },
+    {
+      "name": "Description length",
+      "max": 5,
+      "missing": 1272,
+      "lost": 3647
+    }
+  ],
+  "top_ten_overlap": 0
+}

@@ -532,7 +532,8 @@ test('Trong Hieu features exactly thirteen cleared skills scoring 80 or more wit
     const record = records.find((s) => s.slug === accepted[i]);
     const [target, anchor] = href.split('#');
     assert.ok(fs.existsSync(path.resolve(root, 'docs/directory/featured', target, 'index.html')), href);
-    if (record.featured) assert.equal(href, `../tronghieu/agent-skills/${record.slug}/`);
+    const fullPages = JSON.parse(read('directory/growth/full-pages.json')).skills;
+    if (record.featured || fullPages.includes(`${record.repo}/${record.slug}`.toLowerCase())) assert.equal(href, `../tronghieu/agent-skills/${record.slug}/`);
     else assert.ok(read(path.relative(root, path.resolve(root, 'docs/directory/featured', target, 'index.html'))).includes(`id="${anchor}"`), href);
   }
   for (const held of records.filter((s) => !accepted.includes(s.slug))) assert.ok(!card.includes(held.slug), held.slug);
