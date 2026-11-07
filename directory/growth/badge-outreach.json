@@ -10,7 +10,7 @@
     "listing": "https://suedeai.directory/heygen-com/hyperframes/hyperframes/",
     "report": "https://suedeai.directory/heygen-com/hyperframes/hyperframes/report.json",
     "badge": "[![Suede Skill Check: 80/100](https://suedeai.directory/heygen-com/hyperframes/hyperframes/score.svg)](https://suedeai.directory/heygen-com/hyperframes/hyperframes/)",
-    "status": "draft; contact route and repository contribution policy need review"
+    "status": "sent 2026-11-07 to the contact address the project publishes in its .claude-plugin metadata"
   },
   {
     "repo": "coreyhaines31/marketingskills",
@@ -23,7 +23,7 @@
     "listing": "https://suedeai.directory/coreyhaines31/marketingskills/seo-audit/",
     "report": "https://suedeai.directory/coreyhaines31/marketingskills/seo-audit/report.json",
     "badge": "[![Suede Skill Check: 88/100](https://suedeai.directory/coreyhaines31/marketingskills/seo-audit/score.svg)](https://suedeai.directory/coreyhaines31/marketingskills/seo-audit/)",
-    "status": "draft; contact route and repository contribution policy need review"
+    "status": "not sent: no published email contact found in README, CONTRIBUTING or plugin metadata"
   },
   {
     "repo": "vercel-labs/skills",
@@ -36,7 +36,7 @@
     "listing": "https://suedeai.directory/vercel-labs/skills/find-skills/",
     "report": "https://suedeai.directory/vercel-labs/skills/find-skills/report.json",
     "badge": "[![Suede Skill Check: 81/100](https://suedeai.directory/vercel-labs/skills/find-skills/score.svg)](https://suedeai.directory/vercel-labs/skills/find-skills/)",
-    "status": "draft; contact route and repository contribution policy need review"
+    "status": "not sent: no published email contact found in README, CONTRIBUTING or plugin metadata"
   },
   {
     "repo": "microsoft/azure-skills",
@@ -49,7 +49,7 @@
     "listing": "https://suedeai.directory/microsoft/azure-skills/azure-prepare/",
     "report": "https://suedeai.directory/microsoft/azure-skills/azure-prepare/report.json",
     "badge": "[![Suede Skill Check: 82/100](https://suedeai.directory/microsoft/azure-skills/azure-prepare/score.svg)](https://suedeai.directory/microsoft/azure-skills/azure-prepare/)",
-    "status": "draft; contact route and repository contribution policy need review"
+    "status": "not sent: no published email contact found in README, CONTRIBUTING or plugin metadata"
   },
   {
     "repo": "anthropics/skills",
@@ -62,7 +62,7 @@
     "listing": "https://suedeai.directory/anthropics/skills/frontend-design/",
     "report": "https://suedeai.directory/anthropics/skills/frontend-design/report.json",
     "badge": "[![Suede Skill Check: 84/100](https://suedeai.directory/anthropics/skills/frontend-design/score.svg)](https://suedeai.directory/anthropics/skills/frontend-design/)",
-    "status": "draft; contact route and repository contribution policy need review"
+    "status": "not sent: only a company employee address is published"
   },
   {
     "repo": "obra/superpowers",
@@ -75,7 +75,7 @@
     "listing": "https://suedeai.directory/obra/superpowers/systematic-debugging/",
     "report": "https://suedeai.directory/obra/superpowers/systematic-debugging/report.json",
     "badge": "[![Suede Skill Check: 80/100](https://suedeai.directory/obra/superpowers/systematic-debugging/score.svg)](https://suedeai.directory/obra/superpowers/systematic-debugging/)",
-    "status": "draft; contact route and repository contribution policy need review"
+    "status": "not sent: maintainer already contacted about the directory on 2026-10-25"
   },
   {
     "repo": "mattpocock/skills",
@@ -88,7 +88,7 @@
     "listing": "https://suedeai.directory/mattpocock/skills/diagnosing-bugs/",
     "report": "https://suedeai.directory/mattpocock/skills/diagnosing-bugs/report.json",
     "badge": "[![Suede Skill Check: 83/100](https://suedeai.directory/mattpocock/skills/diagnosing-bugs/score.svg)](https://suedeai.directory/mattpocock/skills/diagnosing-bugs/)",
-    "status": "draft; contact route and repository contribution policy need review"
+    "status": "not sent: maintainer already contacted about the directory on 2026-10-27"
   },
   {
     "repo": "google/skills",
@@ -101,7 +101,7 @@
     "listing": "https://suedeai.directory/google/skills/bigquery-basics/",
     "report": "https://suedeai.directory/google/skills/bigquery-basics/report.json",
     "badge": "[![Suede Skill Check: 80/100](https://suedeai.directory/google/skills/bigquery-basics/score.svg)](https://suedeai.directory/google/skills/bigquery-basics/)",
-    "status": "draft; contact route and repository contribution policy need review"
+    "status": "not sent: no published email contact found in README, CONTRIBUTING or plugin metadata"
   },
   {
     "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
@@ -114,7 +114,7 @@
     "listing": "https://suedeai.directory/nextlevelbuilder/ui-ux-pro-max-skill/ui-ux-pro-max/",
     "report": "https://suedeai.directory/nextlevelbuilder/ui-ux-pro-max-skill/ui-ux-pro-max/report.json",
     "badge": "[![Suede Skill Check: 83/100](https://suedeai.directory/nextlevelbuilder/ui-ux-pro-max-skill/ui-ux-pro-max/score.svg)](https://suedeai.directory/nextlevelbuilder/ui-ux-pro-max-skill/ui-ux-pro-max/)",
-    "status": "draft; contact route and repository contribution policy need review"
+    "status": "not sent: no published email contact found in README, CONTRIBUTING or plugin metadata"
   },
   {
     "repo": "jeffallan/claude-skills",
@@ -127,7 +127,7 @@
     "listing": "https://suedeai.directory/jeffallan/claude-skills/laravel-specialist/",
     "report": "https://suedeai.directory/jeffallan/claude-skills/laravel-specialist/report.json",
     "badge": "[![Suede Skill Check: 84/100](https://suedeai.directory/jeffallan/claude-skills/laravel-specialist/score.svg)](https://suedeai.directory/jeffallan/claude-skills/laravel-specialist/)",
-    "status": "draft; contact route and repository contribution policy need review"
+    "status": "not sent: maintainer already contacted about the directory on 2026-10-25"
   },
   {
     "repo": "expo/skills",
@@ -140,7 +140,7 @@
     "listing": "https://suedeai.directory/expo/skills/expo-module/",
     "report": "https://suedeai.directory/expo/skills/expo-module/report.json",
     "badge": "[![Suede Skill Check: 87/100](https://suedeai.directory/expo/skills/expo-module/score.svg)](https://suedeai.directory/expo/skills/expo-module/)",
-    "status": "draft; contact route and repository contribution policy need review"
+    "status": "not sent: only a support queue is published"
   },
   {
     "repo": "neondatabase/agent-skills",
@@ -153,7 +153,7 @@
     "listing": "https://suedeai.directory/neondatabase/agent-skills/neon-postgres/",
     "report": "https://suedeai.directory/neondatabase/agent-skills/neon-postgres/report.json",
     "badge": "[![Suede Skill Check: 82/100](https://suedeai.directory/neondatabase/agent-skills/neon-postgres/score.svg)](https://suedeai.directory/neondatabase/agent-skills/neon-postgres/)",
-    "status": "draft; contact route and repository contribution policy need review"
+    "status": "not sent: only a company employee address is published"
   },
   {
     "repo": "pbakaus/impeccable",
@@ -166,7 +166,7 @@
     "listing": "https://suedeai.directory/pbakaus/impeccable/impeccable/",
     "report": "https://suedeai.directory/pbakaus/impeccable/impeccable/report.json",
     "badge": "[![Suede Skill Check: 86/100](https://suedeai.directory/pbakaus/impeccable/impeccable/score.svg)](https://suedeai.directory/pbakaus/impeccable/impeccable/)",
-    "status": "draft; contact route and repository contribution policy need review"
+    "status": "not sent: maintainer already contacted about the directory on 2026-10-27"
   },
   {
     "repo": "trailofbits/skills",
@@ -179,7 +179,7 @@
     "listing": "https://suedeai.directory/trailofbits/skills/semgrep/",
     "report": "https://suedeai.directory/trailofbits/skills/semgrep/report.json",
     "badge": "[![Suede Skill Check: 92/100](https://suedeai.directory/trailofbits/skills/semgrep/score.svg)](https://suedeai.directory/trailofbits/skills/semgrep/)",
-    "status": "draft; contact route and repository contribution policy need review"
+    "status": "sent 2026-11-07 to the contact address the project publishes in its .claude-plugin metadata"
   },
   {
     "repo": "supabase/agent-skills",
@@ -192,7 +192,7 @@
     "listing": "https://suedeai.directory/supabase/agent-skills/supabase/",
     "report": "https://suedeai.directory/supabase/agent-skills/supabase/report.json",
     "badge": "[![Suede Skill Check: 81/100](https://suedeai.directory/supabase/agent-skills/supabase/score.svg)](https://suedeai.directory/supabase/agent-skills/supabase/)",
-    "status": "draft; contact route and repository contribution policy need review"
+    "status": "not sent: only a support queue is published"
   },
   {
     "repo": "wondelai/skills",
@@ -205,7 +205,7 @@
     "listing": "https://suedeai.directory/wondelai/skills/#ux-heuristics",
     "report": "https://suedeai.directory/wondelai/skills/ux-heuristics/report.json",
     "badge": "[![Suede Skill Check: 83/100](https://suedeai.directory/wondelai/skills/ux-heuristics/score.svg)](https://suedeai.directory/wondelai/skills/#ux-heuristics)",
-    "status": "draft; contact route and repository contribution policy need review"
+    "status": "sent 2026-11-07 to the contact address the project publishes in its .claude-plugin metadata"
   },
   {
     "repo": "tt-a1i/archify",
@@ -218,7 +218,7 @@
     "listing": "https://suedeai.directory/tt-a1i/archify/archify/",
     "report": "https://suedeai.directory/tt-a1i/archify/archify/report.json",
     "badge": "[![Suede Skill Check: 87/100](https://suedeai.directory/tt-a1i/archify/archify/score.svg)](https://suedeai.directory/tt-a1i/archify/archify/)",
-    "status": "draft; contact route and repository contribution policy need review"
+    "status": "not sent: published address is for sponsorship only"
   },
   {
     "repo": "NVIDIA/skills",
@@ -231,7 +231,7 @@
     "listing": "https://suedeai.directory/nvidia/skills/#rag-eval",
     "report": "https://suedeai.directory/nvidia/skills/rag-eval/report.json",
     "badge": "[![Suede Skill Check: 81/100](https://suedeai.directory/nvidia/skills/rag-eval/score.svg)](https://suedeai.directory/nvidia/skills/#rag-eval)",
-    "status": "draft; contact route and repository contribution policy need review"
+    "status": "not sent: only a placeholder address is published"
   },
   {
     "repo": "github/awesome-copilot",
@@ -244,7 +244,7 @@
     "listing": "https://suedeai.directory/github/awesome-copilot/github-issues/",
     "report": "https://suedeai.directory/github/awesome-copilot/github-issues/report.json",
     "badge": "[![Suede Skill Check: 81/100](https://suedeai.directory/github/awesome-copilot/github-issues/score.svg)](https://suedeai.directory/github/awesome-copilot/github-issues/)",
-    "status": "draft; contact route and repository contribution policy need review"
+    "status": "not sent: no published email contact found in README, CONTRIBUTING or plugin metadata"
   },
   {
     "repo": "aws/agent-toolkit-for-aws",
@@ -257,7 +257,7 @@
     "listing": "https://suedeai.directory/aws/agent-toolkit-for-aws/#aws-cdk",
     "report": "https://suedeai.directory/aws/agent-toolkit-for-aws/aws-cdk/report.json",
     "badge": "[![Suede Skill Check: 80/100](https://suedeai.directory/aws/agent-toolkit-for-aws/aws-cdk/score.svg)](https://suedeai.directory/aws/agent-toolkit-for-aws/#aws-cdk)",
-    "status": "draft; contact route and repository contribution policy need review"
+    "status": "not sent: no published email contact found in README, CONTRIBUTING or plugin metadata"
   },
   {
     "repo": "AgriciDaniel/claude-seo",
@@ -270,7 +270,7 @@
     "listing": "https://suedeai.directory/agricidaniel/claude-seo/seo/",
     "report": "https://suedeai.directory/agricidaniel/claude-seo/seo/report.json",
     "badge": "[![Suede Skill Check: 81/100](https://suedeai.directory/agricidaniel/claude-seo/seo/score.svg)](https://suedeai.directory/agricidaniel/claude-seo/seo/)",
-    "status": "draft; contact route and repository contribution policy need review"
+    "status": "not sent: maintainer already contacted about the directory on 2026-10-25"
   },
   {
     "repo": "phuryn/pm-skills",
@@ -283,7 +283,7 @@
     "listing": "https://suedeai.directory/phuryn/pm-skills/#create-prd",
     "report": "https://suedeai.directory/phuryn/pm-skills/create-prd/report.json",
     "badge": "[![Suede Skill Check: 81/100](https://suedeai.directory/phuryn/pm-skills/create-prd/score.svg)](https://suedeai.directory/phuryn/pm-skills/#create-prd)",
-    "status": "draft; contact route and repository contribution policy need review"
+    "status": "not sent: maintainer already contacted about the directory on 2026-10-25"
   },
   {
     "repo": "vercel-labs/agent-skills",
@@ -296,7 +296,7 @@
     "listing": "https://suedeai.directory/vercel-labs/agent-skills/vercel-optimize/",
     "report": "https://suedeai.directory/vercel-labs/agent-skills/vercel-optimize/report.json",
     "badge": "[![Suede Skill Check: 80/100](https://suedeai.directory/vercel-labs/agent-skills/vercel-optimize/score.svg)](https://suedeai.directory/vercel-labs/agent-skills/vercel-optimize/)",
-    "status": "draft; contact route and repository contribution policy need review"
+    "status": "not sent: no published email contact found in README, CONTRIBUTING or plugin metadata"
   },
   {
     "repo": "deanpeters/Product-Manager-Skills",
@@ -309,7 +309,7 @@
     "listing": "https://suedeai.directory/deanpeters/product-manager-skills/user-story/",
     "report": "https://suedeai.directory/deanpeters/product-manager-skills/user-story/report.json",
     "badge": "[![Suede Skill Check: 83/100](https://suedeai.directory/deanpeters/product-manager-skills/user-story/score.svg)](https://suedeai.directory/deanpeters/product-manager-skills/user-story/)",
-    "status": "draft; contact route and repository contribution policy need review"
+    "status": "not sent: maintainer already contacted about the directory on 2026-10-23"
   },
   {
     "repo": "resend/resend-skills",
@@ -322,6 +322,6 @@
     "listing": "https://suedeai.directory/resend/resend-skills/resend/",
     "report": "https://suedeai.directory/resend/resend-skills/resend/report.json",
     "badge": "[![Suede Skill Check: 84/100](https://suedeai.directory/resend/resend-skills/resend/score.svg)](https://suedeai.directory/resend/resend-skills/resend/)",
-    "status": "draft; contact route and repository contribution policy need review"
+    "status": "not sent: only a support queue is published"
   }
 ]

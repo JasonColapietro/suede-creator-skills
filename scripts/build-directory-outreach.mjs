@@ -9,6 +9,9 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const index = JSON.parse(fs.readFileSync(path.join(root, 'docs/directory/search-index.json'), 'utf8'));
 const source = JSON.parse(fs.readFileSync(path.join(root, 'directory/installs.json'), 'utf8'));
 const absolute = p => `https://suedeai.directory${p.replace(/^\/directory/, '')}`;
+// Keep recorded outcomes (sent, prior contact, skipped) when the queue is rebuilt.
+const queuePath = path.join(root, 'directory/growth/badge-outreach.json');
+const recorded = new Map((fs.existsSync(queuePath) ? JSON.parse(fs.readFileSync(queuePath, 'utf8')) : []).map(q => [q.repo, q.status]));
 const groups = new Map();
 for (const s of index.filter(s => s.score >= 80 && !isFirstParty(s))) {
   if (!groups.has(s.repo)) groups.set(s.repo, []);
@@ -22,7 +25,7 @@ const queue = [...groups].map(([repo, skills]) => {
   return { repo, skill: s.name, score: s.score, grade: s.grade, eligible_skills: skills.length,
     recorded_eligible_installs: skills.reduce((n, s) => n + (s.installs || 0), 0), install_snapshot: source.fetched,
     listing, report, badge: `[![Suede Skill Check: ${s.score}/100](${report.replace(/report\.json$/, 'score.svg')})](${listing})`,
-    status: 'draft; contact route and repository contribution policy need review',
+    status: recorded.get(repo) || 'draft; contact route and repository contribution policy need review',
   };
 }).sort((a, b) => b.recorded_eligible_installs - a.recorded_eligible_installs || a.repo.localeCompare(b.repo)).slice(0, 25);
 const markdown = ['# Badge outreach: first 25 repositories', '',
@@ -42,4 +45,4 @@ for (const [file, text] of [['badge-outreach.json', JSON.stringify(queue, null, 
     if (!fs.existsSync(dest) || fs.readFileSync(dest, 'utf8') !== text) throw new Error(`${file} is stale; run node scripts/build-directory-outreach.mjs`);
   } else fs.writeFileSync(dest, text);
 }
-console.log(`Prepared ${queue.length} unsent badge outreach drafts.`);
+console.log(`Prepared ${queue.length} badge outreach entries (${queue.filter(q => q.status.startsWith("draft")).length} unsent drafts).`);
