@@ -6,7 +6,7 @@
 
 Editorial selection highlights a project’s workflow and accepted scope. It is separate from structural quality grades, security certification and README-badge verification. A plugin feature does not add its contents to the scored skill catalog.
 
-Selections updated **2026-11-02**. [View on Suede AI](https://skills.suedeai.ai/directory/featured/).
+Selections updated **2026-11-07**. [View on Suede AI](https://skills.suedeai.ai/directory/featured/).
 
 - [Appie](#appie)
 - [CoalWash](#coalwash)
@@ -23,6 +23,9 @@ Selections updated **2026-11-02**. [View on Suede AI](https://skills.suedeai.ai/
 - [Empacer](#empacer)
 - [Berlin Job Search](#berlin-job-search)
 - [lfr](#lfr)
+- [ShipToPaid Lite](#shiptopaid-lite)
+- [Video Director](#video-director)
+- [Email Marketing Skills by Poptin](#poptin-email-marketing)
 
 <a id="appie"></a>
 
@@ -353,6 +356,66 @@ One Go binary runs mail for your domains on one small server: mailboxes, and new
 Requires a Linux or macOS server you control and a domain whose DNS you manage. The skill installs lfr with curl -fsSL https://lfr.email/install.sh \| sudo sh, which checks the release against its checksums; Homebrew and go install also work. lfr setup creates a hardened systemd service on ports 25, 80 and 443. Where a provider blocks outbound port 25, lfr hands DKIM-signed mail to an SMTP relay such as Amazon SES or SMTP2GO. Your agent asks for explicit approval before sending any message in your name.
 
 [Repository](https://github.com/Anonyfox/lfr) · **Scan &amp; review pending** · [Source at 091fa38](https://github.com/Anonyfox/lfr/tree/091fa38639c1ac2f133b4863135d7851561d25c4) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#lfr)
+
+---
+
+<a id="shiptopaid-lite"></a>
+
+## ShipToPaid Lite
+
+**Three agent skills · Polar payments** · License: MIT · Publisher: [shiptopaid](https://github.com/shiptopaid)
+
+Add Polar subscriptions to an existing app with three focused skills for checkout, signed webhooks and a launch checklist. Keep payment state connected to server-side access.
+
+- **Create authenticated checkout.** Connect a signed-in user to a Polar subscription checkout and a payment-pending success screen.
+- **Handle payment events.** Verify webhook signatures, deduplicate deliveries, allowlist products and guard against stale entitlement updates.
+- **Check launch readiness.** Review production configuration, access checks and billing evidence with PASS, FAIL and NOT RUN outcomes.
+
+### Setup
+
+Requires Node.js 22+ and a Polar sandbox account. Examples use Next.js App Router, TypeScript, Better Auth and PostgreSQL/Drizzle. Use an email address you control for tests. This free three-skill feature covers Polar; the separate paid pack and Stripe support are outside its scope.
+
+[Repository](https://github.com/shiptopaid/shiptopaid-lite) · [Intake review](../directory/reviews/2026-11-07-shiptopaid-lite.md) · [Reviewed source b508f87](https://github.com/shiptopaid/shiptopaid-lite/tree/b508f878086491518709a2d17761821abfd4b084) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#shiptopaid-lite)
+
+---
+
+<a id="video-director"></a>
+
+## Video Director
+
+**Agent skill · Editable video production** · License: MIT code and docs · Separate media terms · Publisher: [aakashH242](https://github.com/aakashH242)
+
+Combine real app screens, editable SVG, AI artwork and procedural 3D into a local review MP4. Change words, timing and camera moves while keeping the useful assets.
+
+- **Show the actual interface.** Use readable real screenshots, deliberate close-ups and labels that follow the action.
+- **Keep the scene editable.** Separate artwork from SVG/HTML foregrounds and procedural 3D so revisions stay precise.
+- **Capture and inspect the export.** Use exact-frame local capture and encoded MP4 checks before handing over the video.
+
+### Setup
+
+Requires Node.js 22.20+, FFmpeg/FFprobe and Playwright with Chromium; Three.js supports the 3D starter. The code-only first example needs no paid generation. AI artwork or voice services may charge separately. Original code and docs are MIT; bundled media has separate provenance and rights.
+
+[Repository](https://github.com/aakashH242/video-director) · [Intake review](../directory/reviews/2026-11-07-video-director.md) · [Reviewed source 1d0ed60](https://github.com/aakashH242/video-director/tree/1d0ed60aa9bfffa36302d9042a87a2b1fcb8aeeb) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#video-director)
+
+---
+
+<a id="poptin-email-marketing"></a>
+
+## Email Marketing Skills by Poptin
+
+**Twenty agent skills · Email and audience growth** · License: MIT · Publisher: [email-marketing-skills-hub](https://github.com/email-marketing-skills-hub)
+
+Choose from twenty focused skills for campaign copy, lifecycle automation, segmentation, deliverability and signup experiences. Five core workflows and fifteen industry specialists work with your chosen marketing stack.
+
+- **Plan the campaign.** Build useful briefs, messages and measurement plans from approved offers and audience facts.
+- **Design the customer journey.** Specify triggers, suppression rules, branches and exits for lifecycle automation and audience segments.
+- **Match the industry.** Use dedicated guidance for ecommerce, SaaS, education, events and eleven other industries while keeping their data and review boundaries clear.
+
+### Setup
+
+Read or copy each selected skill directory with its references. The documented Skills CLI requires Node.js 22.20+. A Poptin account is not needed to use the instructions. Live campaigns still need consent checks and authorization. The collection preserves the original standalone skills and is featured once, without duplicate catalog entries.
+
+[Repository](https://github.com/email-marketing-skills-hub/email-marketing-skills) · [Intake review](../directory/reviews/2026-11-07-poptin-email-marketing.md) · [Reviewed source 13ea992](https://github.com/email-marketing-skills-hub/email-marketing-skills/tree/13ea992854c4b3cbd93d2a427b391161be23b033) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#poptin-email-marketing)
 
 ---
 
