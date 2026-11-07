@@ -5,7 +5,7 @@ import path from 'node:path';
 import { createHash } from 'node:crypto';
 import { isFirstParty } from './task-pages.mjs';
 
-export function comparisonPairs(topics, installsFor, limit = 50) {
+export function comparisonPairs(topics, installsFor, limit = 50, retained = null, skills = []) {
   const candidates = new Map();
   for (const t of topics) {
     const rows = t.rows.filter(s => !isFirstParty(s))
@@ -18,7 +18,15 @@ export function comparisonPairs(topics, installsFor, limit = 50) {
       candidates.get(key).topics.push(t.topic);
     }
   }
-  return [...candidates.values()].sort((a, b) => b.demand - a.demand || a.a.id.localeCompare(b.a.id) || a.b.id.localeCompare(b.b.id)).slice(0, limit)
+  let chosen = [...candidates.values()].sort((a, b) => b.demand - a.demand || a.a.id.localeCompare(b.a.id) || a.b.id.localeCompare(b.b.id)).slice(0, limit);
+  if (retained) {
+    const byId = new Map(skills.map(s => [s.id, s]));
+    const topicById = new Map(topics.map(t => [t.topic.id, t.topic]));
+    chosen = retained.map(p => ({ a: byId.get(p.skills[0]), b: byId.get(p.skills[1]),
+      topics: p.topics.map(id => topicById.get(id) || { id, name: id.replaceAll('-', ' ') }) }))
+      .filter(p => p.a && p.b && !isFirstParty(p.a) && !isFirstParty(p.b));
+  }
+  return chosen
     .map(p => ({ ...p, slug: `${p.a.slug.slice(0, 35)}-vs-${p.b.slug.slice(0, 35)}-${createHash('sha256').update(`${p.a.id}|${p.b.id}`).digest('hex').slice(0, 8)}` }));
 }
 
@@ -76,7 +84,7 @@ ${installSection(here, s)}${qualityBadgeBlock(here, s)}${servicesCta("skill", s.
     comparisonTitles.add(title.toLowerCase());
     emit({ here, title: title.length < 20 ? `${title} skills` : title, description: `Compare ${name(a).slice(0, 35)} and ${name(b).slice(0, 35)}: quality scores, licenses, install routes and component evidence from the directory.`, heading, keywords: [`${p.a.id} vs ${p.b.id}`, "compare agent skills", "agent skill quality"],
       trail: [['directory/compare/', 'Compare']],
-      body: `<p class="lead">Two skills listed for ${esc(p.topics.map(t => t.name).join(', '))}. Compare the task description and license first, then use the score breakdown to inspect their published files.</p>
+      body: `<p class="lead">A comparison selected for ${esc(p.topics.map(t => t.name).join(', '))}. Compare the task description and license first, then use the score breakdown to inspect their published files.</p>
 <p>Quality snapshot: ${esc(data.generated)}. Install counts: skills.sh, ${esc(installsDate || 'unavailable')}. This pair was selected from shared topics and recorded installs; it is not a claim about joint search volume.</p>
 <section class="panel"><h2>At a glance</h2>${table(['Evidence', `${name(a)} (${a.repo})`, `${name(b)} (${b.repo})`], [
         ['Listing', link(here, a), link(here, b)], ['Task', esc(a.description), esc(b.description)],

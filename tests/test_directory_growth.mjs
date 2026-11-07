@@ -59,6 +59,8 @@ test('comparison selection requires shared topics and separate third-party publi
   const plan = comparisonPairs([{ topic: { id: 'testing', name: 'Testing' }, rows: [a, b, own] }], () => ({ installs: 50 }));
   assert.equal(plan.length, 1);
   assert.deepEqual([plan[0].a.id, plan[0].b.id], ['a', 'b']);
+  const retained = comparisonPairs([], () => null, 50, [{ skills: ['a', 'b'], topics: ['testing'] }], [a, b]);
+  assert.equal(retained[0].slug, plan[0].slug, 'a popularity or topic refresh must not retire a published comparison');
   const pairs = JSON.parse(read('docs/directory/comparisons.json'));
   assert.equal(pairs.length, 50);
   for (const p of pairs) {

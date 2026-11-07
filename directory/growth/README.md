@@ -17,6 +17,7 @@ Regenerate through `npm run build:directory`. The normal Vercel build rehomes
 the generated output to suedeai.directory. Existing editorial pages, scores,
 licenses and repository anchors remain available. The full-page manifest is
 retained across data refreshes so a ranking change does not retire a public URL.
+`comparisons.json` also retains the selected pairs while both skills remain listed.
 
 ## Email connection
 

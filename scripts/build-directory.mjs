@@ -4102,7 +4102,8 @@ let GROWTH_MODULE = null;
 let COMPARISON_PLAN = [];
 if (GROWTH) {
   GROWTH_MODULE = await import('./directory/growth.mjs');
-  COMPARISON_PLAN = GROWTH_MODULE.comparisonPairs(TOPICS, installsFor);
+  const selected = JSON.parse(fs.readFileSync(path.join(repoRoot, 'directory/growth/comparisons.json'), 'utf8'));
+  COMPARISON_PLAN = GROWTH_MODULE.comparisonPairs(TOPICS, installsFor, 50, selected.pairs, data.skills);
 }
 function staticComparisonsPanel(here) {
   return `<section class="panel"><h2>Compare skills for the same task</h2><p>Saved comparisons with score components, licenses and source links. Read any comparison without JavaScript.</p><div class="links">${COMPARISON_PLAN.map(p => `<a class="link-row" href="${rel(here, `directory/compare/skills/${p.slug}/`)}"><b>${esc(displayName(p.a))} vs ${esc(displayName(p.b))}</b><span>${esc(p.a.repo)} · ${esc(p.b.repo)} · ${esc(p.topics[0].name)}</span></a>`).join('')}</div></section>`;
