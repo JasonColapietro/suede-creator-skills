@@ -1,0 +1,39 @@
+Find the right agent skills for the work in front of you.
+
+Suede AI Skills Directory is live at https://suedeai.directory/
+
+3,871 skills for Claude Code, Codex, Cursor and other compatible agents. 162 repositories. 16 categories. 192 topics. Each skill has a 0–99 quality score, an A–D grade, source attribution and a score report. License terms and installation routes help you decide what belongs in your setup.
+
+All 10 recommended stacks are ready to explore:
+
+1. Landing pages: design, build, measurement and testing.
+2. SEO and AI search: SEO, AEO and GEO measurement, plus WebMCP tools.
+3. Code review: review, security review, verification and comment cleanup.
+4. UI design: references, variants, implementation, audits and motion.
+5. Content and social: planning, angles, drafting, editing, profiles and distribution.
+6. Documents and data: Word files, long-form reading, literature reviews, read-only SQL and data presentations.
+7. Research: company, market and academic research, saved context and citation validation.
+8. Video and creative: concepts, images, video, editing, narration and review.
+9. Testing and CI: pipeline measurement, browser tests, manual testing and chaos testing.
+10. Agent building: prompts, evaluations, MCP servers, context budgets, delegation and deployment.
+
+Each stack includes third-party recommendations, scores, licenses and install commands. A separate Suede pick is disclosed above each article. Browse them: https://suedeai.directory/stacks/
+
+What else is inside:
+
+• Search by task, skill or publisher. Filter by category, grade, cost/license and capabilities: scripts, references, assets, permissions, compatibility, MCP use, credentials, outside services, commands and setup requirements.
+• Top 100 views for most installed, highest scored and rising skills, plus new and recently updated listings. Browse by topic, category, task or publisher.
+• Saved skills, shareable task shortlists and Markdown export.
+• Interactive comparisons and 50 dedicated comparison pages.
+• 1,242 full skill pages, including 500 new assessments, with source evidence and score breakdowns. Existing reviewed pages include detailed pre-install disclosures.
+• 20 featured projects and members, 86 AI agents, 22 plugins/mods, 19 Grok bots/plugins, 6 MCP servers and 18 rules/prompt collections. Agent documentation/disclosure ratings are separate from skill scores.
+• A free Skill AI-visibility checker, listing and recheck requests, publisher tools, installation guides, grading methodology and security guidance.
+• Numeric and letter-grade README badges for eligible skills scoring 80–99. Verified badge placement can qualify for the featured-placement offer while it remains open.
+• A read-only suede-directory finder skill for searching from inside your agent. It returns scores, licenses, source reports and install commands.
+• The State of Agent Skills report with downloadable chart, CSV and JSON data.
+• Rising Skills, RSS updates, an open JSON API, downloadable search/index and per-skill report data, install-count snapshots, sitemap and llms.txt for crawlers.
+
+The quality snapshot is dated October 22, 2026; install data is dated November 2. Scores describe published-file quality, not security certification. Suede's own skills are excluded from rankings and the third-party report. Rising Skills and RSS are available now.
+
+Choose a task. Inspect the evidence. Build your stack.
+https://suedeai.directory/

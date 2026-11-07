@@ -1,0 +1,33 @@
+Find the right agent skills for your next task.
+
+Suede AI Skills Directory: 3,871 skills for Claude Code, Codex and Cursor, across 162 repos, 16 categories and 192 topics. Scores 0–99, grades A–D, source links, licenses, install routes and reports.
+
+ALL 10 STACKS
+1. Landing pages: design, build, measure, test.
+2. SEO + AI search: SEO, AEO, GEO, WebMCP.
+3. Code review: review, security, verify, polish.
+4. UI design: references, variants, build, audit, motion.
+5. Content + social: plan, draft, edit, distribute.
+6. Documents + data: Word, reading, reviews, SQL, slides.
+7. Research: companies, markets, papers, citations.
+8. Video + creative: images, video, edits, narration.
+9. Testing + CI: pipelines, browser/manual/chaos tests.
+10. Agent building: prompts, evals, MCP, context, delegation, deploy.
+Each has recommendations, scores, licenses and install commands, with a separately disclosed Suede pick.
+
+EXPLORE
+• Search by task/name/publisher; category, grade, cost/license and capability filters.
+• Top 100 installed/scored/rising; new/updated lists; topic, task and publisher browsing.
+• Saved skills, shareable shortlists and Markdown export.
+• Interactive comparisons + 50 comparison pages.
+• 1,242 full skill pages: 500 new assessments, score breakdowns and source evidence.
+• 20 featured projects/members, 86 agents, 22 plugins/mods, 19 Grok bots/plugins, 6 MCP servers, 18 rules/prompt collections.
+• Free Skill AI-visibility checker; listing/recheck requests; publisher tools; install, grading and security guides.
+• Score/grade README badges for 80–99 skills; verified badges can qualify for featured placement while the offer is open.
+• In-agent finder with scores, licenses, reports and install commands.
+• State of Agent Skills report + chart/CSV/JSON.
+• Rising Skills, RSS, open JSON API, search/report/install data, sitemap and llms.txt.
+
+Quality snapshot: Oct 22; installs: Nov 2, 2026. Quality scores aren't security scans. Suede is excluded from rankings.
+
+Explore: https://suedeai.directory/
