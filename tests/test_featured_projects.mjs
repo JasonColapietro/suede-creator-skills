@@ -13,7 +13,7 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const read = (file) => fs.readFileSync(path.join(root, file), 'utf8');
 const data = JSON.parse(read('directory/featured-projects.json'));
 const published = () => read('docs/directory/featured/index.html');
-const recentIds = ['agent-qa', 'berlin-job-search', 'bulkpublish', 'empacer', 'frametell', 'inkroom', 'lfr', 'trong-hieu', 'geekflare', 'cisco-skill-scanner', 'opsibyte', 'extra-caffeine', 'costory', 'appie', 'coalwash', 'lava', 'arcmira'];
+const recentIds = ['poptin-email-marketing', 'shiptopaid-lite', 'video-director', 'agent-qa', 'berlin-job-search', 'bulkpublish', 'empacer', 'frametell', 'inkroom', 'lfr', 'trong-hieu', 'geekflare', 'cisco-skill-scanner', 'opsibyte', 'extra-caffeine', 'costory', 'appie', 'coalwash', 'lava', 'arcmira'];
 const pendingIds = ['berlin-job-search', 'bulkpublish', 'empacer', 'inkroom', 'lfr'];
 const reviewedIds = recentIds.filter((id) => !pendingIds.includes(id) && data.projects.some((p) => p.id === id));
 const cardOf = (html, id) => html.split(`id="${id}"`)[1]?.split('</article>')[0];
@@ -68,7 +68,7 @@ test('a newly published project comes first across regeneration and shuffled sou
   try {
     for (const dir of ['scripts', 'directory', 'docs']) fs.cpSync(path.join(root, dir), path.join(fixture, dir), { recursive: true });
     const editorial = structuredClone(data);
-    editorial.projects.push({ ...editorial.projects.find((p) => p.id === 'coalwash'), id: 'z-new-feature', name: 'Z New Feature', repo: 'example/new-feature', published_at: '2026-11-03T12:00:00Z' });
+    editorial.projects.push({ ...editorial.projects.find((p) => p.id === 'coalwash'), id: 'z-new-feature', name: 'Z New Feature', repo: 'example/new-feature', published_at: '2098-11-03T12:00:00Z' });
     const metadata = path.join(fixture, 'directory/featured-projects.json');
     const output = path.join(fixture, 'docs/directory/featured/index.html');
     const build = () => execFileSync(process.execPath, [path.join(fixture, 'scripts/build-directory.mjs')], { stdio: 'pipe' });
@@ -295,7 +295,7 @@ test('Arcmira review preserves original scores and every raw scan finding', () =
 });
 
 test('editorial projects preserve accepted scopes and resolve their reviewed evidence', () => {
-  assert.deepEqual(data.projects.map((p) => p.repo), ['appierun/appie-mcp', 'TheColliery/CoalWash', 'costory-io/costory-finops-mcp-skills', 'cwong5/extra-caffeine-mcp', 'MelMayssonOwen/agent-skills', 'cisco-ai-defense/skill-scanner', 'geekflare/geekflare-skills', 'tronghieu/agent-skills', 'vostride/agent-qa', 'sitor-ai/frametell', 'azeemkafridi/bulkpublish-ai-toolkit', 'InkRoom-AI/inkroom-client', undefined, 'umutyesildal/berlin-job-search', 'Anonyfox/lfr']);
+  assert.deepEqual(data.projects.map((p) => p.repo), ['appierun/appie-mcp', 'TheColliery/CoalWash', 'costory-io/costory-finops-mcp-skills', 'cwong5/extra-caffeine-mcp', 'MelMayssonOwen/agent-skills', 'cisco-ai-defense/skill-scanner', 'geekflare/geekflare-skills', 'tronghieu/agent-skills', 'vostride/agent-qa', 'sitor-ai/frametell', 'azeemkafridi/bulkpublish-ai-toolkit', 'InkRoom-AI/inkroom-client', undefined, 'umutyesildal/berlin-job-search', 'Anonyfox/lfr', 'shiptopaid/shiptopaid-lite', 'aakashH242/video-director', 'email-marketing-skills-hub/email-marketing-skills']);
   const page = published();
   const appie = page.split('id="appie"')[1].split('</article>')[0];
   const links = [...appie.matchAll(/href="(\.\.\/appierun\/appie-mcp\/[^"/]+\/)"/g)].map((m) => m[1]);
@@ -331,11 +331,11 @@ test('featured page has a discoverable route, truthful structured data and selec
   assert.equal((page.match(/<h1[ >]/g) || []).length, 1);
   const blocks = [...page.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map((m) => JSON.parse(m[1]));
   const collection = blocks.find((x) => x['@type'] === 'CollectionPage');
-  assert.equal(collection.mainEntity.numberOfItems, 17);
-  assert.deepEqual(collection.mainEntity.itemListElement.map((p) => p.name), ['agent-qa CLI by Vostride', 'Berlin Job Search', 'BulkPublish', 'Empacer', 'Frametell', 'InkRoom', 'lfr', 'Trong Hieu agent skills', 'Geekflare', 'Cisco AI Defense Skill Scanner', 'Opsibyte', 'Extra Caffeine', 'Costory', 'Appie', 'CoalWash', 'Lava', 'Arcmira']);
+  assert.equal(collection.mainEntity.numberOfItems, 20);
+  assert.deepEqual(collection.mainEntity.itemListElement.map((p) => p.name), ['Email Marketing Skills by Poptin', 'ShipToPaid Lite', 'Video Director', 'agent-qa CLI by Vostride', 'Berlin Job Search', 'BulkPublish', 'Empacer', 'Frametell', 'InkRoom', 'lfr', 'Trong Hieu agent skills', 'Geekflare', 'Cisco AI Defense Skill Scanner', 'Opsibyte', 'Extra Caffeine', 'Costory', 'Appie', 'CoalWash', 'Lava', 'Arcmira']);
   const description = page.match(/<meta name="description" content="([^"]*)"/)[1];
   assert.ok(description.length >= 70 && description.length <= 155, description);
-  assert.match(description, /^Meet agent-qa CLI by Vostride, .* and \d+ more: featured agent projects with source and setup\.$/);
+  assert.match(description, /^Meet Email Marketing Skills by Poptin, .* and \d+ more: featured agent projects with source and setup\.$/);
   assert.match(page, /README-badge verification is tracked separately/);
   assert.match(page, /href="\.\.\/submit\/"/);
   assert.match(page, /href="\.\.\/methodology\/"/);
@@ -506,7 +506,7 @@ test('published pending features show the label, no badge snippet and no score o
     assert.match(section, /\*\*Scan &amp; review pending\*\*/);
     assert.doesNotMatch(section, /Intake review|Reviewed source/);
   }
-  for (const project of data.projects.slice(-8)) assert.equal(project.published_at, '2026-11-02T00:00:00Z', project.id);
+  for (const project of data.projects.filter((p) => ['trong-hieu', 'agent-qa', 'frametell', 'bulkpublish', 'inkroom', 'empacer', 'berlin-job-search', 'lfr'].includes(p.id))) assert.equal(project.published_at, '2026-11-02T00:00:00Z', project.id);
   assert.doesNotMatch(read('directory/featured-projects.json'), /—/);
 });
 
@@ -561,4 +561,34 @@ test('agent-qa and Frametell carry exact license facts, reviews and badge snippe
   }
   for (const fact of ['FSL-1.1-ALv2', 'Node.js 24']) assert.ok(cardOf(page, 'agent-qa').includes(fact), fact);
   for (const fact of ['Apple Silicon', 'ElevenLabs', '1080p', 'AGPL-3.0']) assert.ok(cardOf(page, 'frametell').includes(fact), fact);
+});
+
+
+test('November applicants have pinned editorial features without invented scores or promotion verification', () => {
+  const expected = {
+    'shiptopaid-lite': ['shiptopaid/shiptopaid-lite', 'b508f878086491518709a2d17761821abfd4b084'],
+    'video-director': ['aakashH242/video-director', '1d0ed60aa9bfffa36302d9042a87a2b1fcb8aeeb'],
+    'poptin-email-marketing': ['email-marketing-skills-hub/email-marketing-skills', '13ea992854c4b3cbd93d2a427b391161be23b033'],
+  };
+  for (const [id, [repo, commit]] of Object.entries(expected)) {
+    const project = data.projects.find((p) => p.id === id);
+    assert.ok(project, id);
+    assert.equal(project.repo, repo);
+    assert.equal(project.commit, commit);
+    assert.ok(project.capabilities.length >= 3);
+    assert.equal(project.status, undefined);
+    for (const key of ['score', 'grade', 'skills', 'certified', 'verified']) assert.ok(!(key in project), `${id}: ${key}`);
+    const review = read(project.review);
+    assert.ok(review.includes(commit));
+    assert.match(review, /not (?:a )?security certification/i);
+    const card = cardOf(published(), id);
+    assert.ok(card.includes(commit));
+    assert.ok(card.includes(project.review));
+    assert.ok(published().includes(`featured-badge-${id}`));
+    assert.ok(!Object.keys(JSON.parse(read('directory/promotion.json')).verifications).some((key) => key.startsWith(repo + '/')));
+  }
+  assert.match(data.projects.find((p) => p.id === 'video-director').setup, /22\.20\+/);
+  assert.match(data.projects.find((p) => p.id === 'video-director').setup, /media.*separate/i);
+  assert.match(data.projects.find((p) => p.id === 'poptin-email-marketing').setup, /consent/i);
+  assert.match(data.projects.find((p) => p.id === 'shiptopaid-lite').setup, /sandbox/i);
 });
