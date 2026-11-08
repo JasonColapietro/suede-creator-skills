@@ -1,0 +1,146 @@
+{
+  "articles": [
+    {
+      "id": "landing-page",
+      "intents": [
+        "landing-page"
+      ],
+      "title": "What is the best agent skill stack for shipping a landing page?",
+      "summary": "The skills I would install to design, build, measure and test a landing page, with scores and install commands.",
+      "href": "https://suedeai.directory/stacks/landing-page/",
+      "author": "Jason Colapietro"
+    },
+    {
+      "id": "seo-and-ai-search",
+      "intents": [
+        "seo-and-ai-search"
+      ],
+      "title": "Which agent skills help you rank in Google and get cited by AI?",
+      "summary": "A short, measured stack for search rankings and AI citations, built around SEO, AEO and GEO measurement and first-party WebMCP tools.",
+      "href": "https://suedeai.directory/stacks/seo-and-ai-search/",
+      "author": "Jason Colapietro"
+    },
+    {
+      "id": "ui-design",
+      "intents": [
+        "web-app"
+      ],
+      "title": "Which agent skills should you stack to design a polished UI?",
+      "summary": "Reference extraction, variant exploration, build, audit and motion, in order, with scores and install commands.",
+      "href": "https://suedeai.directory/stacks/ui-design/",
+      "author": "Jason Colapietro"
+    },
+    {
+      "id": "content-and-social",
+      "intents": [
+        "content-and-social"
+      ],
+      "title": "What is the best agent skill stack for content and social posts?",
+      "summary": "Plan, angle, draft, polish, profile and distribution, covered by six scored skills with install commands.",
+      "href": "https://suedeai.directory/stacks/content-and-social/",
+      "author": "Jason Colapietro"
+    },
+    {
+      "id": "documents-and-data",
+      "intents": [
+        "documents-and-data"
+      ],
+      "title": "Which agent skills should you stack for documents and data?",
+      "summary": "Word documents, long reading, literature reviews, read-only SQL and data slides, with scores and a plain note on licenses.",
+      "href": "https://suedeai.directory/stacks/documents-and-data/",
+      "author": "Jason Colapietro"
+    },
+    {
+      "id": "research",
+      "intents": [
+        "research"
+      ],
+      "title": "What is the best agent skill stack for research?",
+      "summary": "Seven scored skills for company, market and paper research, from recovering past work to validating citations.",
+      "href": "https://suedeai.directory/stacks/research/",
+      "author": "Jason Colapietro"
+    },
+    {
+      "id": "video-and-creative",
+      "intents": [
+        "video-and-creative"
+      ],
+      "title": "What is the best agent skill stack for video, images and audio?",
+      "summary": "Concept, stills, video, edit, narration and review, covered by seven scored skills with the services each one needs.",
+      "href": "https://suedeai.directory/stacks/video-and-creative/",
+      "author": "Jason Colapietro"
+    },
+    {
+      "id": "agent-building",
+      "intents": [
+        "agent-building"
+      ],
+      "title": "Which agent skills should you stack to build agents and MCP servers?",
+      "summary": "Prompts and evals, MCP servers, context budgeting, delegation and deployment, covered by seven scored skills.",
+      "href": "https://suedeai.directory/stacks/agent-building/",
+      "author": "Jason Colapietro"
+    },
+    {
+      "id": "code-review",
+      "intents": [
+        "web-app"
+      ],
+      "title": "What is the best agent skill stack for code review?",
+      "summary": "A reviewer, a security pass, a verification gate and a comment rewriter, with scores and install commands.",
+      "href": "https://suedeai.directory/stacks/code-review/",
+      "author": "Jason Colapietro"
+    },
+    {
+      "id": "testing-and-ci",
+      "intents": [
+        "web-app"
+      ],
+      "title": "What is the best agent skill stack for testing and faster CI?",
+      "summary": "Measure the pipeline, generate browser tests, run manual sessions and chaos test, with scores and install commands.",
+      "href": "https://suedeai.directory/stacks/testing-and-ci/",
+      "author": "Jason Colapietro"
+    },
+    {
+      "id": "best-seo-skills",
+      "intents": [
+        "seo-and-ai-search"
+      ],
+      "title": "Best SEO, AEO and GEO skills for Claude Code and Codex",
+      "summary": "The highest-scoring SEO skills for Claude Code and Codex, by job: audits, schema, AI search (AEO and GEO), keywords, local and programmatic SEO.",
+      "href": "https://suedeai.directory/guides/best-seo-skills/",
+      "author": "Jason Colapietro"
+    },
+    {
+      "id": "install-agent-skills",
+      "intents": [
+        "agent-building",
+        "web-app"
+      ],
+      "title": "How to install agent skills in Claude Code, Codex and Cursor",
+      "summary": "Where Claude Code and Codex load skills, how to install from GitHub with one command, how plugin marketplaces work, and what to check before you install.",
+      "href": "https://suedeai.directory/guides/install-agent-skills/",
+      "author": "Jason Colapietro"
+    },
+    {
+      "id": "skills-vs-mcp-servers",
+      "intents": [
+        "agent-building"
+      ],
+      "title": "Agent skills vs MCP servers vs plugins: which one do you need?",
+      "summary": "A skill adds method, an MCP server adds access, a plugin packages both. When to use each, how they combine, and what each costs in context and risk.",
+      "href": "https://suedeai.directory/guides/skills-vs-mcp-servers/",
+      "author": "Jason Colapietro"
+    },
+    {
+      "id": "skill-ai-visibility",
+      "intents": [
+        "seo-and-ai-search",
+        "agent-building"
+      ],
+      "title": "How to get your agent skill found in search and cited by AI assistants",
+      "summary": "How skill publishers get picked by agents, found in search and cited by AI assistants: descriptions that trigger, READMEs that answer, listings and badges.",
+      "href": "https://suedeai.directory/guides/skill-ai-visibility/",
+      "author": "Jason Colapietro"
+    }
+  ]
+}
