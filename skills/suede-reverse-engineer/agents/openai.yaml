@@ -1,6 +1,0 @@
-interface:
-  display_name: "Suede Reverse Engineer — 0 to 100 Growth Maps"
-  short_description: "Reverse engineer any brand's 0 to 100 and copy the right moves"
-  default_prompt: "Use $suede-reverse-engineer to reverse engineer how [target] grew. Build a dated, sourced growth map, find the inflection points, diagnose my stage on the 0-1-10-25-50-100 ladder, filter every move COPY/ADAPT/SKIP, and give me the next 3 moves with leading indicators and kill rules."
-policy:
-  allow_implicit_invocation: true

@@ -42,7 +42,7 @@ Install for Codex (skill installer): `python3 ~/.codex/skills/.system/skill-inst
 - Suede Campaign in a Box — Turn a song, release, or era into a complete artist campaign: https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-campaign-in-a-box/SKILL.md
 - Suede Rights Audit — Find ownership, split, sample, and provenance gaps before packaging: https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-rights-audit/SKILL.md
 - Suede Sync Packaging — Package songs for sync pitching with scene-fit angles and clean asset checklists: https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-sync-packaging/SKILL.md
-- Suede Reverse Engineer — Reverse engineer how any brand, business, creator, or career went from 0 to 100 and get the next 3 moves to copy at your stage: https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-reverse-engineer
+- Suede Reverse Engineer — Reverse engineer how any brand, business, creator, or career went from 0 to 100 and get the next 3 moves to copy at your stage: https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-rea
 
 ## MCP server
 

@@ -116,7 +116,7 @@ If the pack saves you an hour, [star the repo](https://github.com/JasonColapietr
 | [`suede-site-alchemy`](skills/suede-site-alchemy) | Funnel analysis, friction audit, conversion math, ranked quick-wins |
 | [`suede-launch-packaging`](skills/suede-launch-packaging) | Package work as a launch: docs, install commands, proof links, QA |
 | [`suede-mcp-qa`](skills/suede-mcp-qa) | QA the Suede Skills MCP before it ships |
-| [`suede-reverse-engineer`](skills/suede-reverse-engineer) | Reverse engineer any brand, business, creator, or career from 0 to 100: sourced growth map, inflection points, stage diagnosis, next 3 moves |
+| [`suede-rea`](skills/suede-rea) | Reverse engineer any brand, business, creator, or career from 0 to 100: sourced growth map, inflection points, stage diagnosis, next 3 moves |
 
 Plus a creator toolkit (rights, release prep) — see [docs](https://jasoncolapietro.github.io/suede-creator-skills/skills/): `suede-campaign-in-a-box`, `suede-sync-packaging`, `suede-release-linter`, `suede-rights-passport`, `suede-rights-audit`.
 

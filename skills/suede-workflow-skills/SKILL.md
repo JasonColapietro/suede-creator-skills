@@ -1,6 +1,6 @@
 ---
 name: suede-workflow-skills
-description: "Umbrella workflow for 21 public skills — johnny-suede-write, johnny-suede-design, suede-code, suede-code-review, suede-code-grader, suede-copy, suede-design, suede-agent-teams, suede-ai-eval, suede-ship-gate, suede-seo-audit, suede-visibility-grader, suede-site-alchemy, suede-launch-packaging, suede-mcp-qa, and five creator skills (suede-campaign-in-a-box, suede-sync-packaging, suede-release-linter, suede-rights-passport, suede-rights-audit), plus suede-reverse-engineer for 0-to-100 growth maps. Use when a user asks to load the full Suede workflow pack, improve a site, write Suede copy, audit SEO/AEO/AI EO, run AI evals, run design QA, review code with a CI gate, prepare public docs, package an artist campaign, or reverse engineer how a brand grew."
+description: "Umbrella workflow for 21 public skills — johnny-suede-write, johnny-suede-design, suede-code, suede-code-review, suede-code-grader, suede-copy, suede-design, suede-agent-teams, suede-ai-eval, suede-ship-gate, suede-seo-audit, suede-visibility-grader, suede-site-alchemy, suede-launch-packaging, suede-mcp-qa, and five creator skills (suede-campaign-in-a-box, suede-sync-packaging, suede-release-linter, suede-rights-passport, suede-rights-audit), plus suede-rea for 0-to-100 growth maps. Use when a user asks to load the full Suede workflow pack, improve a site, write Suede copy, audit SEO/AEO/AI EO, run AI evals, run design QA, review code with a CI gate, prepare public docs, package an artist campaign, or reverse engineer how a brand grew."
 ---
 
 # Suede Workflow Skills
@@ -64,7 +64,7 @@ their names match the task:
 - `suede-launch-packaging`
 - `suede-mcp-qa`
 - `suede-campaign-in-a-box`
-- `suede-reverse-engineer`
+- `suede-rea`
 - `suede-sync-packaging`
 - `suede-release-linter`
 - `suede-rights-passport`
@@ -430,7 +430,7 @@ Launch lane, in pipeline order:
 Creator lane:
 
 - Artist campaign work: `suede-campaign-in-a-box`.
-- Reverse engineer how a brand, business, creator, or career grew (0 to 100) and what to copy next: `suede-reverse-engineer`.
+- Reverse engineer how a brand, business, creator, or career grew (0 to 100) and what to copy next: `suede-rea`.
 - Sync review package: `suede-sync-packaging`. Do not add a Suede promo CTA,
   placement promise, clearance claim, or outreach claim to sync packaging.
 - Release folder audit: `suede-release-linter`.

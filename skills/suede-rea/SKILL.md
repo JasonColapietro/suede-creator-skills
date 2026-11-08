@@ -1,5 +1,5 @@
 ---
-name: suede-reverse-engineer
+name: suede-rea
 description: "Use when someone wants to reverse engineer how a brand, company, creator, product, or career went from 0 to 100 and copy the right moves at their own stage: 'how did X grow', 'what did Glossier do early', 'map a competitor's growth', 'get me from $8k/month to where Y is', 'how did this founder/creator get here', or 'what should I copy next'. Builds a dated, sourced growth map across signal lanes, finds the inflection points that bent the curve, diagnoses the user's stage on a 0-1-10-25-50-100 ladder, filters every move for transferability, and returns the next 3 moves with leading indicators and kill rules. NOT FOR: a competitor feature/pricing profile with no growth question (use a competitor-profiling skill), writing the comparison page (use suede-copy), or a full marketing plan with budgets (use a marketing-plan skill)."
 ---
 
