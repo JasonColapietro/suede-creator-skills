@@ -180,3 +180,28 @@ test('finder page ships the briefing script and explains weekly briefings', () =
   assert.match(read('docs/directory/finder/index.html'), /id="briefing"/);
   assert.match(read('directory/suede-directory/SKILL.md'), /brief\.mjs/);
 });
+
+import { proxyRetryEnv } from '../directory/suede-directory/scripts/search.mjs';
+import { spawnSync } from 'node:child_process';
+
+test('finder scripts retry through the environment proxy when fetch cannot reach the directory', () => {
+  const failed = new TypeError('fetch failed');
+  assert.equal(proxyRetryEnv(failed, {}), null);
+  assert.equal(proxyRetryEnv(new Error('Directory returned HTTP 500'), { HTTPS_PROXY: 'http://p:1' }), null);
+  assert.equal(proxyRetryEnv(failed, { HTTPS_PROXY: 'http://p:1', NODE_USE_ENV_PROXY: '1' }), null);
+  for (const key of ['HTTPS_PROXY', 'https_proxy', 'HTTP_PROXY']) {
+    const env = proxyRetryEnv(failed, { [key]: 'http://p:1' });
+    assert.equal(env.NODE_USE_ENV_PROXY, '1', key);
+    assert.equal(env[key], 'http://p:1');
+  }
+  // A proxy that refuses everything. With direct internet (CI runners) the first fetch
+  // succeeds and exits 0; without it (sandboxes) the single retry fails. Either way the
+  // script never loops and reports at most one error.
+  for (const script of ['search.mjs', 'brief.mjs']) {
+    const r = spawnSync(process.execPath, [new URL(`../directory/suede-directory/scripts/${script}`, import.meta.url).pathname, ...(script === 'search.mjs' ? ['react'] : ['--interests', 'sales'])],
+      { env: { PATH: process.env.PATH, HOME: os.tmpdir(), XDG_CONFIG_HOME: os.tmpdir(), HTTPS_PROXY: 'http://127.0.0.1:9', HTTP_PROXY: 'http://127.0.0.1:9' }, encoding: 'utf8', timeout: 60000 });
+    const errors = (r.stderr.match(/failed:/g) || []).length;
+    assert.notEqual(r.status, null, `${script} timed out`);
+    assert.equal(errors, r.status === 0 ? 0 : 1, `${script}: ${r.stderr}`);
+  }
+});
