@@ -271,3 +271,22 @@ test('the generated issue keeps the approved structure, voice and data', () => {
   for (const m of issue.matchAll(/https:\/\/suedeai\.directory\/([^)\s#]+)/g)) assert.ok(!own.test(m[1]), m[1]);
   if (breakout.repos[0]) assert.ok(issue.includes(breakout.repos[0].url));
 });
+
+test('GitHub star buttons appear on every directory page and in every outgoing message', () => {
+  const repo = 'https://github.com/JasonColapietro/suede-creator-skills';
+  const stars = JSON.parse(read('directory/growth/github-stars.json')).snapshots.at(-1).stars['JasonColapietro/suede-creator-skills'];
+  const count = (html) => (html.match(/data-gh-star/g) || []).length;
+  for (const page of ['docs/directory/coreyhaines31/marketingskills/cold-email/index.html', 'docs/directory/topics/sales/index.html']) {
+    const html = read(page);
+    assert.equal(count(html), 2, `${page}: nav + footer`);
+    assert.ok(html.includes(`href="${repo}" target="_blank" rel="noopener" data-gh-star`), page);
+    if (Number.isInteger(stars)) assert.match(html, new RegExp(`gh-star-count">${stars.toLocaleString('en-US')}<`));
+  }
+  for (const page of ['index', 'finder/index', 'badges/index', 'rising/index', 'state-of-agent-skills/index', 'submit/index'])
+    assert.equal(count(read(`docs/directory/${page}.html`)), 3, `${page}: nav + panel + footer`);
+  assert.ok(read(`directory/growth/issues/${breakout.date}.md`).includes(repo) || issue.includes(repo));
+  assert.ok(issue.includes(`[Star the directory on GitHub](${repo})`));
+  assert.ok(read('directory/growth/badge-outreach.md').includes(`P.S. The directory and its grading rubric are open source. A star on GitHub puts graded skills in front of more builders: ${repo}`));
+  assert.equal(brief(feed, ['sales']).star, repo);
+  assert.match(read('directory/suede-directory/SKILL.md'), /star the directory on\nGitHub/);
+});
