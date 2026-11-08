@@ -3,7 +3,8 @@
 ```markdown
 # Reverse Engineer: <Target> → <User or "research">
 
-> Research mode: <live web | no browsing: all figures unverified>
+> Research mode: <live web | no browsing: figures marked RECALLED>
+> Assumptions: <anything the user didn't give, e.g. cash, hours/week>
 > Growth proxy: <proxy> (<one-line weakness>)
 
 ## Verdict

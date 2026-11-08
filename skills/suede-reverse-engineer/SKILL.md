@@ -13,15 +13,17 @@ Most "how X grew" answers fail the same three ways. They retell the founder myth
 
 ## Inputs
 
-Read what the user already gave you before asking anything. Ask only for what blocks the stage diagnosis:
+Read what the user already gave you. If the target and a rough sense of the user's business are there, proceed: state your assumptions for anything missing (numbers, cash, hours) at the top of the report and size the plan to them. Ask first only when you can't tell who the target is or what the user sells.
 
 ```text
 Target:        the brand, company, creator, or person to reverse engineer
 You:           what you sell, to whom, and where you are now
 Your numbers:  revenue/month, customers, audience size, or the closest proxy you have
 Your limits:   cash, hours/week, team size, things you won't do
-Goal:          the next milestone you actually care about (not "be Glossier")
+Goal:          the next milestone you actually care about
 ```
+
+When the stated goal is the target's end state ("become Pentagram"), keep it as the north star, set the working goal to the user's next ladder gate, and say so in the Verdict.
 
 If the user is reverse engineering for research only (no "me" side), skip the stage diagnosis and the copy plan and deliver the growth map and inflection analysis.
 
@@ -45,6 +47,8 @@ Rules that make the ladder honest:
 - Diagnose the user from **evidence**, not ambition. A shop at $8k/month with mostly paid traffic and low repeat rate is a 10 at best, not a 25.
 - If the user's numbers are missing, give the diagnosis as a range and say which number would settle it.
 - The only part of the target's story that is directly copyable is the part from the user's current stage to the next one. Later stages are context, not instructions.
+- If the user sits between two stages, copy toward the next gate they haven't passed.
+- If the target skipped a stage (it launched with an audience, a famous founder, or funding), say what it skipped with and look for the user's moves in what it did *after* that head start, run through the Unfair advantage filter. Where the target has nothing useful for that stage, borrow from a comparable at the user's stage and label it.
 
 ## Workflow
 
@@ -65,14 +69,15 @@ Research the target across the signal lanes below. Read `references/lanes-and-so
 Log every claim in a ledger row:
 
 ```text
-| Date | Lane | Claim | Source (URL or doc) | Type: FACT / INFERENCE / UNKNOWN |
+| Date | Lane | Claim | Source (URL or doc) | Type: FACT / RECALLED / INFERENCE / UNKNOWN |
 ```
 
 - **FACT** has a dated, linkable source.
+- **RECALLED** is a figure or date you remember but could not verify this session. Keep it distinct from UNKNOWN so the reader can tell "roughly X, check it" from "no idea".
 - **INFERENCE** is your reasoning from facts; say which facts.
 - **UNKNOWN** is a gap worth naming ("revenue before 2016 is not public").
 
-Numbers from memory with no source are UNKNOWN until verified. When you can't browse, say so at the top of the report and mark every number as unverified; never present a remembered figure as a fact.
+When you can't browse, say so at the top of the report; remembered figures go in as RECALLED, never as FACT.
 
 ### 2. Draw the growth curve
 
@@ -122,7 +127,7 @@ Three, not ten, because a small team that runs three moves well beats one that s
 
 ## Output
 
-Use this order. Read `references/report-template.md` for the full template.
+Aim for a report someone reads in ten minutes: about 1,200–2,000 words for sections 1–6 (the ledger and unknowns are appendices and don't count), with the ledger capped at the 10–15 rows that the inflection points and moves actually cite. Use this order. Read `references/report-template.md` for the full template.
 
 1. **Verdict** (3 lines): the one thing that actually drove the target's growth, the user's stage, and the single highest-leverage move.
 2. **Growth map**: timeline of stages and inflection points, one line per lane per period.
@@ -138,6 +143,7 @@ Use this order. Read `references/report-template.md` for the full template.
 - **Brand / business** (default): as above.
 - **Creator**: proxy is audience size and engagement; lanes weight content formats, collaborations, and the first product.
 - **Career**: the target is a person's public professional path. Proxy is scope (role, team, revenue owned, audience). Ladder: 0 learning, 1 first paid work, 10 known for one thing, 25 repeatable demand for that thing, 50 inbound by reputation, 100 sets the standard in the field. Use only public, professional sources.
+- **Agency / services**: the people are the product. Proxy is clients, average engagement size, and inbound share. Ladder: 0 skills, 1 first paying client, 10 repeat and referred clients, 25 a repeatable way to win work (a niche, a signature offer, or a content engine), 50 inbound by reputation and a team that delivers without the founder, 100 sets the standard others cite.
 - **Head-to-head**: two targets at the same stage; the useful output is what one did that the other didn't before their curves split.
 
 ## Quick Reference
