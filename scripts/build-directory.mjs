@@ -2422,7 +2422,8 @@ function renderHub() {
   const bc = crumbs(here, [["", "Home"], [null, "Directory"]]);
   const catCards = categories.map((c) => `<a href="${rel(here, catPath(c.slug))}" data-category="${esc(c.slug)}">${pixelIcon(c.slug, { size: 14 })}<span>${esc(c.title)}</span><span class="count-chip">${fmt(skillsByCat.get(c.slug).length)}</span></a>`).join("\n");
   // Reading cards use only verified, already-published writing by Jason.
-  const articleSource = JSON.parse(fs.readFileSync(path.join(repoRoot, "directory/editorial/workflow-articles.json"), "utf8"));
+  const articleFile = path.join(repoRoot, "directory/editorial/workflow-articles.json");
+  const articleSource = fs.existsSync(articleFile) ? JSON.parse(fs.readFileSync(articleFile, "utf8")) : { articles: [] };
   const articles = articleSource.articles.map((article) => {
     if (article.author !== "Jason Colapietro" || !article.authorship_source || !/^https:\/\/suedeai\.directory\/(stacks|guides)\/[a-z0-9-]+\/$/.test(article.href) || !Array.isArray(article.intents) || !article.intents.length || !article.title || !article.summary) throw new Error(`Invalid workflow article: ${article.id}`);
     const { id, intents, title, summary, href, author } = article;
