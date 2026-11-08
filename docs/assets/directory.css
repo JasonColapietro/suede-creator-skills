@@ -947,3 +947,5 @@ a.gh-star--lg:hover { background: #ffffff; color: var(--on-accent); }
 .footer-star { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px 20px; padding: 16px 0 20px; margin-bottom: 16px; border-bottom: 1px solid var(--line); }
 .footer-star p { margin: 0; color: var(--text); }
 @media (max-width: 768px) { .gh-star--nav { margin-left: 4px; } }
+@media (max-width: 389px) { .gh-star--nav { padding: 4px 7px; margin-left: 2px; } .gh-star--nav .gh-star-count { display: none; } }
+@media (max-width: 359px) { .nav-logo { gap: 6px; } .nav-logo-wordmark { font-size: 15px; } }
