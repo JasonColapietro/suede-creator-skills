@@ -119,3 +119,64 @@ test('a configured newsletter shows the signup CTA on Rising Skills and the home
   }
   assert.doesNotMatch(read('docs/directory/rising/index.html'), /Email signup is not open yet/);
 });
+
+import os from 'node:os';
+import path from 'node:path';
+import { brief, parseInterests, main as briefMain } from '../directory/suede-directory/scripts/brief.mjs';
+import { starGains, validateStars } from '../scripts/directory/github-stars.mjs';
+
+const feed = JSON.parse(read('docs/directory/weekly.json'));
+
+test('weekly feed excludes Suede AI, links only to the directory and reconciles topic installs', () => {
+  const own = /^jasoncolapietro\/suede-creator-skills$|^suede-ai\//i;
+  assert.ok(Object.values(feed.skills).every(s => !own.test(s.repo) && s.listing.startsWith('https://suedeai.directory/')));
+  assert.ok(feed.repositories.every(r => !own.test(r.repo)));
+  for (const list of ['rising', 'climbing', 'new_listings']) assert.ok(feed[list].every(id => feed.skills[id]), list);
+  const w = feed.rising.map(id => feed.skills[id].weekly_installs);
+  assert.deepEqual(w, [...w].sort((a, b) => b - a));
+  assert.equal(feed.install_snapshot, JSON.parse(read('directory/installs.json')).fetched);
+  assert.ok(feed.topics.every(t => t.best.every(id => feed.skills[id])));
+});
+
+test('briefing filters the feed to the reader’s interests and rejects foreign links', () => {
+  const r = brief(feed, parseInterests('sales, video'), { limit: 3 });
+  assert.deepEqual(r.interests, ['sales', 'video']);
+  const sales = r.sections[0];
+  assert.ok(sales.topics.some(t => /sales/i.test(t.name)));
+  for (const c of [...sales.rising, ...sales.climbing, ...sales.new_listings]) assert.ok(c.listing.startsWith('https://suedeai.directory/'));
+  assert.ok(sales.rising.length <= 3);
+  assert.equal(brief(feed, ['zzqx-nothing-matches']).empty, true);
+  const seo = brief(feed, ['seo'], { limit: 20 }).sections[0];
+  const seoTopics = new Set(feed.topics.filter(t => /seo/i.test(`${t.id} ${t.name}`)).map(t => t.id));
+  for (const c of [...seo.rising, ...seo.climbing]) assert.ok(c.topics.some(t => seoTopics.has(t)) || /seo/i.test(`${c.name} ${c.description}`), `${c.name} is not about SEO`);
+  const bad = { ...feed, skills: { x: { ...Object.values(feed.skills)[0], listing: 'https://evil.example/x' } } };
+  assert.throws(() => brief(bad, ['sales']), /Unexpected directory link/);
+  assert.throws(() => parseInterests(' , '), /at least one interest/);
+});
+
+test('briefing saves interests locally and reuses them', async () => {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'brief-'));
+  const env = { XDG_CONFIG_HOME: dir };
+  const feedFile = new URL('../docs/directory/weekly.json', import.meta.url).pathname;
+  await assert.rejects(briefMain(['--feed', feedFile], env), /No saved interests/);
+  const first = await briefMain(['--interests', 'Marketing, SEO', '--save', '--feed', feedFile], env);
+  assert.equal(first.saved_to, path.join(dir, 'suede-directory', 'interests.json'));
+  const again = await briefMain(['--feed', feedFile], env);
+  assert.deepEqual(again.interests, ['marketing', 'seo']);
+  await assert.rejects(briefMain(['--bogus'], env), /Unknown option/);
+});
+
+test('star snapshots validate and report gains between consecutive dates', () => {
+  const doc = { snapshots: [{ date: '2026-11-01', stars: { 'a/b': 10 } }, { date: '2026-11-08', stars: { 'a/b': 25, 'c/d': 4 } }] };
+  const g = starGains(validateStars(doc));
+  assert.deepEqual(g.repos, { 'a/b': { stars: 25, gained: 15 }, 'c/d': { stars: 4, gained: null } });
+  assert.equal(g.since, '2026-11-01');
+  assert.throws(() => validateStars({ snapshots: [{ date: '2026-11-08', stars: {} }, { date: '2026-11-01', stars: {} }] }), /ascending/);
+  validateStars(JSON.parse(read('directory/growth/github-stars.json')));
+});
+
+test('finder page ships the briefing script and explains weekly briefings', () => {
+  assert.equal(read('docs/directory/finder/brief.mjs'), read('directory/suede-directory/scripts/brief.mjs'));
+  assert.match(read('docs/directory/finder/index.html'), /id="briefing"/);
+  assert.match(read('directory/suede-directory/SKILL.md'), /brief\.mjs/);
+});

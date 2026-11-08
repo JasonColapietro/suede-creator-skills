@@ -4408,6 +4408,7 @@ function renderApi() {
     INSTALLS ? ["Install snapshot", `${host}/installs.json`, `Install counts for ${fmt(INSTALLS_MATCHED)} listed skills as published by skills.sh, with the fetch date and the method. The directory measures no installs of its own.`] : null,
     ["Kinds", `${host}/kinds.json`, "The plugins, Grok, MCP server and rules listings as one JSON document."],
     GROWTH ? ["Finder skill", `${host}/finder/`, "Install the read-only directory search skill for Claude Code, Codex or Cursor."] : null,
+    GROWTH ? ["Weekly feed", `${host}/weekly.json`, "Rising and climbing skills, topic growth, new listings and repository stars for the latest snapshots; read by the finder’s weekly briefing. Suede AI excluded."] : null,
     GROWTH ? ["State of Agent Skills", `${host}/state-of-agent-skills/data.json`, "Snapshot-based grade distribution, category and license counts, and score-component gaps; Suede AI excluded."] : null,
     ["RSS feed", `${host}/feed.xml`, "New listings and guides, RSS 2.0."],
     ["llms.txt", `${host}/llms.txt`, "The directory described for answer engines, with every browse page."],
