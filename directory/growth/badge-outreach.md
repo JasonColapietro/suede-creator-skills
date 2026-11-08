@@ -26,6 +26,8 @@ The badge reflects structural and documentation quality; it is not a security ce
 
 Jason / Suede AI
 
+P.S. The directory and its grading rubric are open source. A star on GitHub puts graded skills in front of more builders: https://github.com/JasonColapietro/suede-creator-skills
+
 ## 2. coreyhaines31/marketingskills
 
 Eligible skills: 49. Recorded eligible installs: 4,952,727.
@@ -47,6 +49,8 @@ Listing: https://suedeai.directory/coreyhaines31/marketingskills/seo-audit/
 The badge reflects structural and documentation quality; it is not a security certification. If the source has changed, the listing has a recheck-request link.
 
 Jason / Suede AI
+
+P.S. The directory and its grading rubric are open source. A star on GitHub puts graded skills in front of more builders: https://github.com/JasonColapietro/suede-creator-skills
 
 ## 3. vercel-labs/skills
 
@@ -70,6 +74,8 @@ The badge reflects structural and documentation quality; it is not a security ce
 
 Jason / Suede AI
 
+P.S. The directory and its grading rubric are open source. A star on GitHub puts graded skills in front of more builders: https://github.com/JasonColapietro/suede-creator-skills
+
 ## 4. microsoft/azure-skills
 
 Eligible skills: 20. Recorded eligible installs: 3,608,947.
@@ -91,6 +97,8 @@ Listing: https://suedeai.directory/microsoft/azure-skills/azure-prepare/
 The badge reflects structural and documentation quality; it is not a security certification. If the source has changed, the listing has a recheck-request link.
 
 Jason / Suede AI
+
+P.S. The directory and its grading rubric are open source. A star on GitHub puts graded skills in front of more builders: https://github.com/JasonColapietro/suede-creator-skills
 
 ## 5. anthropics/skills
 
@@ -114,6 +122,8 @@ The badge reflects structural and documentation quality; it is not a security ce
 
 Jason / Suede AI
 
+P.S. The directory and its grading rubric are open source. A star on GitHub puts graded skills in front of more builders: https://github.com/JasonColapietro/suede-creator-skills
+
 ## 6. obra/superpowers
 
 Eligible skills: 11. Recorded eligible installs: 2,583,360.
@@ -135,6 +145,8 @@ Listing: https://suedeai.directory/obra/superpowers/systematic-debugging/
 The badge reflects structural and documentation quality; it is not a security certification. If the source has changed, the listing has a recheck-request link.
 
 Jason / Suede AI
+
+P.S. The directory and its grading rubric are open source. A star on GitHub puts graded skills in front of more builders: https://github.com/JasonColapietro/suede-creator-skills
 
 ## 7. mattpocock/skills
 
@@ -158,6 +170,8 @@ The badge reflects structural and documentation quality; it is not a security ce
 
 Jason / Suede AI
 
+P.S. The directory and its grading rubric are open source. A star on GitHub puts graded skills in front of more builders: https://github.com/JasonColapietro/suede-creator-skills
+
 ## 8. google/skills
 
 Eligible skills: 151. Recorded eligible installs: 773,754.
@@ -179,6 +193,8 @@ Listing: https://suedeai.directory/google/skills/bigquery-basics/
 The badge reflects structural and documentation quality; it is not a security certification. If the source has changed, the listing has a recheck-request link.
 
 Jason / Suede AI
+
+P.S. The directory and its grading rubric are open source. A star on GitHub puts graded skills in front of more builders: https://github.com/JasonColapietro/suede-creator-skills
 
 ## 9. nextlevelbuilder/ui-ux-pro-max-skill
 
@@ -202,6 +218,8 @@ The badge reflects structural and documentation quality; it is not a security ce
 
 Jason / Suede AI
 
+P.S. The directory and its grading rubric are open source. A star on GitHub puts graded skills in front of more builders: https://github.com/JasonColapietro/suede-creator-skills
+
 ## 10. jeffallan/claude-skills
 
 Eligible skills: 67. Recorded eligible installs: 444,223.
@@ -223,6 +241,8 @@ Listing: https://suedeai.directory/jeffallan/claude-skills/laravel-specialist/
 The badge reflects structural and documentation quality; it is not a security certification. If the source has changed, the listing has a recheck-request link.
 
 Jason / Suede AI
+
+P.S. The directory and its grading rubric are open source. A star on GitHub puts graded skills in front of more builders: https://github.com/JasonColapietro/suede-creator-skills
 
 ## 11. expo/skills
 
@@ -246,6 +266,8 @@ The badge reflects structural and documentation quality; it is not a security ce
 
 Jason / Suede AI
 
+P.S. The directory and its grading rubric are open source. A star on GitHub puts graded skills in front of more builders: https://github.com/JasonColapietro/suede-creator-skills
+
 ## 12. neondatabase/agent-skills
 
 Eligible skills: 5. Recorded eligible installs: 405,295.
@@ -267,6 +289,8 @@ Listing: https://suedeai.directory/neondatabase/agent-skills/neon-postgres/
 The badge reflects structural and documentation quality; it is not a security certification. If the source has changed, the listing has a recheck-request link.
 
 Jason / Suede AI
+
+P.S. The directory and its grading rubric are open source. A star on GitHub puts graded skills in front of more builders: https://github.com/JasonColapietro/suede-creator-skills
 
 ## 13. pbakaus/impeccable
 
@@ -290,6 +314,8 @@ The badge reflects structural and documentation quality; it is not a security ce
 
 Jason / Suede AI
 
+P.S. The directory and its grading rubric are open source. A star on GitHub puts graded skills in front of more builders: https://github.com/JasonColapietro/suede-creator-skills
+
 ## 14. trailofbits/skills
 
 Eligible skills: 76. Recorded eligible installs: 365,470.
@@ -311,6 +337,8 @@ Listing: https://suedeai.directory/trailofbits/skills/semgrep/
 The badge reflects structural and documentation quality; it is not a security certification. If the source has changed, the listing has a recheck-request link.
 
 Jason / Suede AI
+
+P.S. The directory and its grading rubric are open source. A star on GitHub puts graded skills in front of more builders: https://github.com/JasonColapietro/suede-creator-skills
 
 ## 15. supabase/agent-skills
 
@@ -334,6 +362,8 @@ The badge reflects structural and documentation quality; it is not a security ce
 
 Jason / Suede AI
 
+P.S. The directory and its grading rubric are open source. A star on GitHub puts graded skills in front of more builders: https://github.com/JasonColapietro/suede-creator-skills
+
 ## 16. wondelai/skills
 
 Eligible skills: 52. Recorded eligible installs: 291,856.
@@ -355,6 +385,8 @@ Listing: https://suedeai.directory/wondelai/skills/#ux-heuristics
 The badge reflects structural and documentation quality; it is not a security certification. If the source has changed, the listing has a recheck-request link.
 
 Jason / Suede AI
+
+P.S. The directory and its grading rubric are open source. A star on GitHub puts graded skills in front of more builders: https://github.com/JasonColapietro/suede-creator-skills
 
 ## 17. tt-a1i/archify
 
@@ -378,6 +410,8 @@ The badge reflects structural and documentation quality; it is not a security ce
 
 Jason / Suede AI
 
+P.S. The directory and its grading rubric are open source. A star on GitHub puts graded skills in front of more builders: https://github.com/JasonColapietro/suede-creator-skills
+
 ## 18. NVIDIA/skills
 
 Eligible skills: 215. Recorded eligible installs: 182,400.
@@ -399,6 +433,8 @@ Listing: https://suedeai.directory/nvidia/skills/#rag-eval
 The badge reflects structural and documentation quality; it is not a security certification. If the source has changed, the listing has a recheck-request link.
 
 Jason / Suede AI
+
+P.S. The directory and its grading rubric are open source. A star on GitHub puts graded skills in front of more builders: https://github.com/JasonColapietro/suede-creator-skills
 
 ## 19. github/awesome-copilot
 
@@ -422,6 +458,8 @@ The badge reflects structural and documentation quality; it is not a security ce
 
 Jason / Suede AI
 
+P.S. The directory and its grading rubric are open source. A star on GitHub puts graded skills in front of more builders: https://github.com/JasonColapietro/suede-creator-skills
+
 ## 20. aws/agent-toolkit-for-aws
 
 Eligible skills: 36. Recorded eligible installs: 158,760.
@@ -443,6 +481,8 @@ Listing: https://suedeai.directory/aws/agent-toolkit-for-aws/#aws-cdk
 The badge reflects structural and documentation quality; it is not a security certification. If the source has changed, the listing has a recheck-request link.
 
 Jason / Suede AI
+
+P.S. The directory and its grading rubric are open source. A star on GitHub puts graded skills in front of more builders: https://github.com/JasonColapietro/suede-creator-skills
 
 ## 21. AgriciDaniel/claude-seo
 
@@ -466,6 +506,8 @@ The badge reflects structural and documentation quality; it is not a security ce
 
 Jason / Suede AI
 
+P.S. The directory and its grading rubric are open source. A star on GitHub puts graded skills in front of more builders: https://github.com/JasonColapietro/suede-creator-skills
+
 ## 22. phuryn/pm-skills
 
 Eligible skills: 36. Recorded eligible installs: 126,409.
@@ -487,6 +529,8 @@ Listing: https://suedeai.directory/phuryn/pm-skills/#create-prd
 The badge reflects structural and documentation quality; it is not a security certification. If the source has changed, the listing has a recheck-request link.
 
 Jason / Suede AI
+
+P.S. The directory and its grading rubric are open source. A star on GitHub puts graded skills in front of more builders: https://github.com/JasonColapietro/suede-creator-skills
 
 ## 23. vercel-labs/agent-skills
 
@@ -510,6 +554,8 @@ The badge reflects structural and documentation quality; it is not a security ce
 
 Jason / Suede AI
 
+P.S. The directory and its grading rubric are open source. A star on GitHub puts graded skills in front of more builders: https://github.com/JasonColapietro/suede-creator-skills
+
 ## 24. deanpeters/Product-Manager-Skills
 
 Eligible skills: 49. Recorded eligible installs: 97,102.
@@ -532,6 +578,8 @@ The badge reflects structural and documentation quality; it is not a security ce
 
 Jason / Suede AI
 
+P.S. The directory and its grading rubric are open source. A star on GitHub puts graded skills in front of more builders: https://github.com/JasonColapietro/suede-creator-skills
+
 ## 25. resend/resend-skills
 
 Eligible skills: 5. Recorded eligible installs: 78,553.
@@ -553,3 +601,5 @@ Listing: https://suedeai.directory/resend/resend-skills/resend/
 The badge reflects structural and documentation quality; it is not a security certification. If the source has changed, the listing has a recheck-request link.
 
 Jason / Suede AI
+
+P.S. The directory and its grading rubric are open source. A star on GitHub puts graded skills in front of more builders: https://github.com/JasonColapietro/suede-creator-skills

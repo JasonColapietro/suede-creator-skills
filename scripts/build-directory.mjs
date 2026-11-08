@@ -636,6 +636,26 @@ function navCurrent(here) {
 // Absolute links serve the 404 page, which GitHub Pages returns at any path.
 const link = (here, p, absolute) => (absolute ? `/${p}` : rel(here, p));
 
+// GitHub star button: the directory's own repository, with the star count
+// from the latest saved snapshot (directory/growth/github-stars.json), so the
+// page needs no third-party script and no request at view time.
+const STAR_REPO = "JasonColapietro/suede-creator-skills";
+const STAR_URL = `https://github.com/${STAR_REPO}`;
+const STAR_COUNT = (() => {
+  const f = path.join(repoRoot, "directory/growth/github-stars.json");
+  if (!fs.existsSync(f)) return null;
+  const snap = JSON.parse(fs.readFileSync(f, "utf8")).snapshots.at(-1)?.stars || {};
+  const hit = Object.entries(snap).find(([r]) => r.toLowerCase() === STAR_REPO.toLowerCase());
+  return hit ? hit[1] : null;
+})();
+const STAR_ICON = `<svg class="gh-star-icon" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"/></svg>`;
+function starButton(variant = "") {
+  const count = Number.isInteger(STAR_COUNT) ? STAR_COUNT.toLocaleString("en-US") : null;
+  return `<a class="gh-star${variant ? ` gh-star--${variant}` : ""}" href="${STAR_URL}" target="_blank" rel="noopener" data-gh-star aria-label="Star Suede AI Skills on GitHub${count ? `, ${count} stars` : ""}">${STAR_ICON}<span>Star</span>${count ? `<span class="gh-star-count">${count}</span>` : ""}</a>`;
+}
+const STAR_PAGES = new Set(["directory/", "directory/finder/", "directory/badges/", "directory/rising/", "directory/state-of-agent-skills/", "directory/submit/", "directory/featured/", "directory/check/"]);
+const starPanel = () => `<section class="panel star-panel" aria-labelledby="star-title"><div><h2 id="star-title">Star the directory on GitHub</h2><p>Every star puts graded skills in front of more builders. The directory, the finder and the grading rubric are open source.</p></div>${starButton("lg")}</section>`;
+
 function nav(here, absolute = false) {
   const rel = (h, p) => link(h, p, absolute);
   const current = here.startsWith("directory/") ? navCurrent(here) : null;
@@ -646,6 +666,7 @@ function nav(here, absolute = false) {
           <img src="${rel(here, "assets/")}suede-ai-logo-transparent.webp" alt="Suede AI" width="28" height="28" onerror="this.style.display='none'">
           <span class="nav-logo-wordmark">SuedeAI<span>.directory</span></span>
         </a>
+        ${starButton("nav")}
         <details class="nav-disclosure" open>
       <summary class="nav-hamburger" aria-label="Open navigation menu">
         <span></span>
@@ -710,6 +731,7 @@ function footer(here, note, absolute = false) {
   return `    <footer>
       <div class="shell">
         <p class="footer-note">${note}</p>
+        <div class="footer-star"><p>Like the directory? Star it on GitHub so more builders find graded skills.</p>${starButton("lg")}</div>
         <div class="footer-inner">
           <div class="footer-brand">
             <img src="${a}suede-ai-logo-transparent.webp" alt="Suede AI" width="24" height="24" onerror="this.style.display='none'">
@@ -818,6 +840,7 @@ ${kindBar(here, absolute)}
 ${h1Html}
 ${body}
 ${GROWTH && (here === "directory/" || here === "directory/top/" || here === "directory/check/" || here.startsWith("directory/topics/") || categories.some(c => here === `directory/${c.slug}/`)) ? `<section class="panel" aria-labelledby="rising-signup"><h2 id="rising-signup">Find your next useful skill</h2><p>Explore Rising Skills with quality scores and source reports, or search from inside your agent.</p><p>${NEWSLETTER.signup_url ? `<a class="button" href="${esc(NEWSLETTER.signup_url)}">Get Rising Skills by email</a> · ` : ""}<a href="${rel(here, 'directory/rising/')}">Read Rising Skills</a> · <a href="${rel(here, 'directory/finder/')}">Install the finder</a> · <a href="${rel(here, 'directory/state-of-agent-skills/')}">State of Agent Skills</a></p></section>` : ""}
+${STAR_PAGES.has(here) ? starPanel() : ""}
     </main>
 ${footer(here, footerNote, absolute)}
 ${NAV_SCRIPT}

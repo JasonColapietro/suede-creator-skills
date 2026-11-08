@@ -2,6 +2,7 @@
   "_comment": "Editorial playbook for the weekly Rising Skills newsletter. scripts/directory/newsletter-issue.mjs fills it with the week's data. Demand and Tools scores are computed each week from topic growth and skill grades; Autonomy and Buyers are fixed editorial scores. Wording here is the owner-approved voice: keep claims at full strength.",
   "studio": "https://agents.suedeai.ai",
   "subscribe": "https://jasoncolapietro.substack.com/subscribe",
+  "star": "https://github.com/JasonColapietro/suede-creator-skills",
   "money_topics": [
     "sales",
     "lead-generation",

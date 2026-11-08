@@ -60,7 +60,7 @@ export function brief(feed, interests, { limit = 5 } = {}) {
   });
   const repos = new Set(sections.flatMap(s => [...s.rising, ...s.climbing, ...s.new_listings, ...s.topics.flatMap(t => t.best)].map(c => c.repo)));
   return {
-    source: FEED_URL, quality_snapshot: feed.quality_snapshot, install_snapshot: feed.install_snapshot, stars_snapshot: feed.stars_snapshot, stars_since: feed.stars_since,
+    source: FEED_URL, star: 'https://github.com/JasonColapietro/suede-creator-skills', quality_snapshot: feed.quality_snapshot, install_snapshot: feed.install_snapshot, stars_snapshot: feed.stars_snapshot, stars_since: feed.stars_since,
     interests, sections,
     repositories: (feed.repositories || []).filter(r => repos.has(r.repo)).slice(0, limit * 2),
     empty: sections.every(s => !s.topics.length && !s.rising.length && !s.climbing.length && !s.new_listings.length),
