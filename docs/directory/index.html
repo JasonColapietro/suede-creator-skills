@@ -284,6 +284,8 @@
     <link rel="preload" href="../assets/fonts/pixelify-sans-var-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="../assets/directory.css">
     <script src="../assets/directory.js" defer></script>
+    <link rel="stylesheet" href="../assets/workflow-builder.css">
+    <script type="module" src="../assets/workflow-builder.js"></script>
     <link rel="alternate" type="application/rss+xml" title="Suede AI Skills Directory: new listings and guides" href="feed.xml">
 </head>
   <body>
@@ -342,6 +344,24 @@
           <p class="matrix-caption"><span>Every dot is a listed skill, sorted by score.</span><span><i style="background:#00ca52"></i>A</span><span><i style="background:#50a8ff"></i>B</span><span><i style="background:#ffb200"></i>C</span><span><i style="background:#454545"></i>D</span></p>
         </figure>
       </header>
+      <section class="workflow-builder" id="workflow-builder" aria-labelledby="workflow-title" data-workflow-builder>
+        <div class="workflow-intro"><div><p class="eyebrow">From idea to first step</p><h2 id="workflow-title">Your next idea. A way to build it.</h2><p>Describe the result. Get a step-by-step workflow with complementary skills and a few tips to get moving.</p></div><span class="workflow-mark" aria-hidden="true">01 → 02 → 03</span></div>
+        <form data-workflow-form hidden novalidate>
+          <label for="workflow-brief">What do you want to build?</label>
+          <div class="workflow-composer"><textarea id="workflow-brief" rows="3" maxlength="600" placeholder="A landing page for my SaaS, with clear copy and a polished design…" aria-describedby="workflow-help workflow-status"></textarea><div class="workflow-submit-row"><span id="workflow-help">Task-based matches from the directory. Your brief stays in this browser.</span><button type="submit" class="button workflow-submit">Build my workflow <span aria-hidden="true">↗</span></button></div></div>
+          <div class="workflow-examples"><span>Start with an idea</span><div data-workflow-examples></div></div>
+        </form>
+        <p id="workflow-status" class="workflow-status" role="status" aria-live="polite" data-workflow-status></p>
+        <section class="workflow-results" aria-labelledby="workflow-result-title" data-workflow-results hidden>
+          <div class="workflow-result-head"><div><p class="eyebrow">Suggested workflow</p><h3 id="workflow-result-title" tabindex="-1" data-workflow-heading></h3><p class="muted" data-workflow-summary></p></div><button type="button" class="button" data-workflow-copy>Copy workflow</button></div>
+          <ol class="workflow-steps" data-workflow-steps></ol>
+          <aside class="workflow-tips"><h4>A few tips before you start</h4><ul data-workflow-tips></ul></aside>
+          <aside class="workflow-reading" data-workflow-reading hidden></aside>
+          <div class="workflow-result-footer"><p>Review each skill’s setup and license before installing. Quality scores describe published files, not security or a guarantee of fit.</p><button type="button" data-workflow-refine>Refine this workflow <span aria-hidden="true">↑</span></button></div>
+          <details class="workflow-export" data-workflow-copy-fallback><summary>View the complete workflow</summary><label for="workflow-export">Workflow text, ready for your agent</label><textarea id="workflow-export" rows="12" readonly data-workflow-export></textarea></details>
+        </section>
+        <noscript><p><a href="stacks/">Explore recommended stacks</a> for step-by-step skill combinations. Turn on JavaScript to match a brief here.</p></noscript>
+      </section>
       <section class="board-section" aria-labelledby="board-title">
         <div class="board-head"><h2 id="board-title">Top 100</h2><p class="muted">Ranked by installs recorded by skills.sh, by Suede Skill Check score, and by what is new. Suede AI's own skills are not ranked.</p></div>
         <nav class="tabs" data-tabs aria-label="Rankings"><a class="tab" href="#most-installed" aria-current="true">Most installed</a><a class="tab" href="#highest-scores">Highest scores</a><a class="tab" href="#rising">Rising this week</a><a class="tab" href="#new-listings">New</a><a class="tab" href="#recently-updated">Updated</a></nav>
