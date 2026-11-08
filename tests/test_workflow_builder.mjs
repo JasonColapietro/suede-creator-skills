@@ -7,7 +7,7 @@ test('homepage offers a labeled workflow brief before the rankings with honest p
   assert.ok(home.includes('id="workflow-brief"'), 'a build brief is available on the homepage');
   assert.ok(home.indexOf('id="workflow-builder"') < home.indexOf('id="board-title"'));
   assert.match(home, /<label[^>]+for="workflow-brief"/);
-  assert.match(home, /<textarea[^>]+maxlength="600"/);
+  assert.match(home, /<textarea[^>]+maxlength="2000"/);
   assert.match(home, /data-workflow-form hidden/);
   assert.match(home, /<noscript>[\s\S]*?stacks\//);
   assert.ok(home.includes('data-workflow-status'));
@@ -33,4 +33,9 @@ test('reading recommendations only publish verified user-authored sources with c
     assert.ok(html.includes('Jason Colapietro'));
   }
   for (const intent of ['landing-page', 'web-app', 'seo-and-ai-search', 'content-and-social', 'agent-building', 'documents-and-data', 'research', 'video-and-creative']) assert.ok(published.articles.some(article => article.intents.includes(intent)), intent);
+});
+
+test('best-of topic charts appear before rankings and have a direct builder shortcut', () => {
+  assert.ok(home.indexOf('id="best-of-title"') < home.indexOf('id="board-title"'));
+  assert.match(home, /href="#best-of-title"[^>]*>Explore the best skills by topic/);
 });

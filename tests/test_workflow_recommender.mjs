@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import test from 'node:test';
-import { recommendWorkflow, WORKFLOW_EXAMPLES } from '../docs/assets/workflow-recommender.js';
+import { planWorkflow, recommendWorkflow, WORKFLOW_EXAMPLES } from '../docs/assets/workflow-recommender.js';
 
 const catalog = JSON.parse(readFileSync(new URL('../docs/directory/search-index.json', import.meta.url)));
 const byId = new Map(catalog.map(skill => [skill.id, skill]));
@@ -230,4 +230,351 @@ test('does not claim a ready preset that includes an explicitly excluded capabil
     assert.equal(result.status, 'no-match');
     assert.deepEqual(result.steps, []);
   }
+});
+
+test('planner composes independent landing-page and social goals with shared measurement last', () => {
+  const result = planWorkflow('Launch a SaaS landing page and create a social campaign for it', catalog);
+  assert.equal(result.status, 'ready');
+  assert.deepEqual(result.intents.map(intent => intent.id), ['landing-page', 'content-and-social']);
+  assert.ok(ids(result).includes('agiwhitelist/auteur/auteur'));
+  assert.ok(ids(result).includes('mblode/agent-skills/ghostwriter'));
+  assert.equal(ids(result).at(-1), 'coreyhaines31/marketingskills/analytics');
+  assert.equal(new Set(ids(result)).size, result.steps.length);
+  assert.ok(result.steps.length <= 10);
+  assert.deepEqual(result.steps.at(-1).intentIds, ['landing-page', 'content-and-social']);
+  assert.ok(result.matchedTerms.includes('landing page'));
+  assert.ok(result.matchedTerms.includes('social campaign'));
+});
+
+test('planner recognizes independent noun goals, sentence goals, and ordered next steps', () => {
+  for (const prompt of [
+    'I need a landing page plus a social campaign',
+    'Build a landing page. Then create a social campaign.',
+    'Build a landing page + social posts',
+    'Build a landing page, create a social campaign',
+    'Not just a landing page but also a social campaign',
+  ]) {
+    const result = planWorkflow(prompt, catalog);
+    assert.equal(result.status, 'ready', prompt);
+    assert.deepEqual(result.intents.map(intent => intent.id), ['landing-page', 'content-and-social'], prompt);
+  }
+});
+
+test('planner keeps purpose clauses and website subjects subordinate', () => {
+  for (const [prompt, intent] of [
+    ['Build a web app for a social campaign', 'web-app'],
+    ['Build a web app to analyze sales data from CSV spreadsheets', 'web-app'],
+    ['Create a social campaign for AI search visibility', 'content-and-social'],
+    ['Build a social media website', 'web-app'],
+    ['Build an AI agent for data analysis', 'agent-building'],
+  ]) {
+    const result = planWorkflow(prompt, catalog);
+    assert.equal(result.status, 'ready', prompt);
+    assert.deepEqual(result.intents.map(item => item.id), [intent], prompt);
+  }
+});
+
+test('planner asks a useful question for alternatives, unknown tasks, and unsupported extra tasks', () => {
+  for (const prompt of [
+    'Build a landing page or create a social campaign',
+    'qzxy blorp snorpf', 'buy a sofa', 'help me build something amazing',
+    'Build a landing page and book a flight to Rome',
+    'Create a social campaign and build a nuclear reactor',
+  ]) {
+    const result = planWorkflow(prompt, catalog);
+    assert.equal(result.status, 'clarify', prompt);
+    assert.deepEqual(result.steps, []);
+    assert.ok(result.choices.length > 0 && result.choices.length <= 8);
+    for (const choice of result.choices) {
+      assert.ok(choice.label.length > 3);
+      assert.equal(planWorkflow(choice.prompt, catalog).status, 'ready', choice.prompt);
+    }
+  }
+});
+
+test('planner keeps empty and underspecified briefs distinct without throwing', () => {
+  for (const value of ['', ' \n\t ', null, undefined, [], {}, 24]) {
+    const result = planWorkflow(value, catalog);
+    assert.equal(result.status, 'empty');
+    assert.deepEqual(result.steps, []);
+    assert.deepEqual(result.intents, []);
+  }
+  assert.equal(planWorkflow('seo', catalog).status, 'clarify');
+  assert.doesNotThrow(() => planWorkflow('Build a landing page', catalog, null));
+});
+
+test('planner handles negated goals and rejects excluded required capabilities', () => {
+  for (const prompt of ['Not a landing page. Create an explainer video instead.', 'Not SEO. Landing page please.']) {
+    const result = planWorkflow(prompt, catalog);
+    assert.equal(result.status, 'ready');
+    assert.equal(result.intents.length, 1);
+  }
+  for (const prompt of ['No need for a landing page', 'Build a chatbot without an MCP server', 'Create a social campaign without analytics']) {
+    const result = planWorkflow(prompt, catalog);
+    assert.equal(result.status, 'clarify', prompt);
+    assert.deepEqual(result.steps, []);
+  }
+});
+
+test('planner free-only filter uses catalog lanes and never implies that runtime services are free', () => {
+  const result = planWorkflow('Build a landing page', catalog, { freeOnly: true });
+  assert.equal(result.status, 'ready');
+  assert.equal(result.constraints.freeOnly, true);
+  assert.ok(!ids(result).includes('agiwhitelist/auteur/auteur'));
+  for (const step of result.steps) for (const skill of [step.skill, ...step.alternatives]) {
+    assert.equal(skill.lane, 'free-open-source');
+  }
+  assert.match(result.notices.join(' '), /service|runtime/i);
+  const restricted = planWorkflow('Analyze CSV sales data and prepare a report', catalog, { freeOnly: true });
+  assert.equal(restricted.status, 'clarify');
+  assert.deepEqual(restricted.steps, []);
+});
+
+test('planner simple mode keeps a short buildable sequence rather than dropping the core skill', () => {
+  const full = planWorkflow('Launch a landing page', catalog);
+  const simple = planWorkflow('Launch a landing page', catalog, { mode: 'simple' });
+  assert.equal(simple.status, 'ready');
+  assert.equal(simple.constraints.mode, 'simple');
+  assert.equal(simple.steps.length, 3);
+  assert.ok(simple.steps.length < full.steps.length);
+  assert.deepEqual(ids(simple), [
+    'coreyhaines31/marketingskills/copywriting', 'agiwhitelist/auteur/auteur', 'anthropics/skills/webapp-testing',
+  ]);
+  assert.match(simple.notices.join(' '), /short|simple|essential/i);
+  assert.doesNotMatch(simple.summary, /measure signups/i, 'Shortened plans cannot claim omitted measurement work');
+});
+
+test('planner keeps all goals or asks to narrow instead of silently truncating beyond ten steps', () => {
+  const prompt = 'Build a web app and create a social campaign and build an AI agent and create an explainer video';
+  const result = planWorkflow(prompt, catalog);
+  assert.equal(result.status, 'clarify');
+  assert.deepEqual(result.steps, []);
+  assert.ok(result.choices.length >= 2);
+  assert.match(result.summary, /narrow|fewer|one|two|10|ten/i);
+  const simple = planWorkflow('Build a landing page and create a social campaign and create an explainer video', catalog, { mode: 'simple' });
+  assert.equal(simple.status, 'ready');
+  assert.equal(simple.intents.length, 3);
+  assert.ok(simple.steps.length <= 10);
+});
+
+test('planner returns role-specific alternatives from the actual catalog without repeating planned skills', () => {
+  const result = planWorkflow('Build a landing page and create a social campaign', catalog);
+  const build = result.steps.find(step => step.skill.id === 'agiwhitelist/auteur/auteur');
+  assert.ok(build.alternatives.some(skill => skill.id === 'anthropics/skills/frontend-design'));
+  const selected = new Set(ids(result));
+  for (const step of result.steps) {
+    assert.ok(step.id && step.intentIds.length);
+    assert.deepEqual(step.skill, byId.get(step.skill.id));
+    for (const skill of step.alternatives) {
+      assert.deepEqual(skill, byId.get(skill.id));
+      assert.ok(!selected.has(skill.id), `${skill.id} already has a workflow role`);
+    }
+  }
+});
+
+test('planner preserves explicit platform suitability rather than recommending an arbitrary high score', () => {
+  const result = planWorkflow('Build a Next.js web app and create a social campaign', catalog);
+  assert.equal(result.status, 'ready');
+  assert.ok(ids(result).includes('jeffallan/claude-skills/nextjs-developer'));
+  const generic = planWorkflow('Build a web app', catalog);
+  assert.ok(!generic.steps.flatMap(step => step.alternatives).some(skill => skill.id === 'jeffallan/claude-skills/nextjs-developer'));
+});
+
+test('planner never fills catalog gaps with invented or unrelated skills', () => {
+  for (const source of [undefined, null, {}, [], catalog.filter(skill => skill.category === 'security')]) {
+    const result = planWorkflow('Build a landing page and create a social campaign', source);
+    assert.equal(result.status, 'clarify');
+    assert.deepEqual(result.steps, []);
+    assert.deepEqual(result.choices, []);
+  }
+  const missingAnchor = catalog.filter(skill => skill.id !== 'coreyhaines31/marketingskills/content-strategy');
+  const result = planWorkflow('Build a landing page and create a social campaign', missingAnchor);
+  assert.equal(result.status, 'clarify');
+  assert.deepEqual(result.steps, []);
+  assert.ok(result.choices.every(choice => planWorkflow(choice.prompt, missingAnchor).status === 'ready'));
+});
+
+test('planner refuses malicious navigation values for both selected skills and alternatives', () => {
+  for (const field of ['href', 'report']) for (const value of ['javascript:alert(1)', '//evil.example/path', '/directory/../evil/', '/%2f%2fevil.example']) {
+    const poisoned = catalog.map(skill => ({ ...skill, [field]: value }));
+    const result = planWorkflow('Build a landing page', poisoned);
+    assert.equal(result.status, 'clarify');
+    assert.deepEqual(result.steps, []);
+    assert.deepEqual(result.choices, []);
+  }
+  const onePoisoned = catalog.map(skill => skill.id === 'anthropics/skills/frontend-design' ? { ...skill, href: 'javascript:alert(1)' } : skill);
+  const safe = planWorkflow('Build a landing page', onePoisoned);
+  assert.equal(safe.status, 'ready');
+  assert.ok(!safe.steps.flatMap(step => step.alternatives).some(skill => skill.id === 'anthropics/skills/frontend-design'));
+});
+
+test('planner bounds and normalizes input without reflecting arbitrary markup or unknown constraints', () => {
+  const plain = planWorkflow('Launch a SaaS landing page', catalog);
+  assert.deepEqual(planWorkflow('Launch a SaaS landing page' + ' '.repeat(2000) + ' and build an AI agent', catalog), plain);
+  assert.equal(planWorkflow(' '.repeat(2000) + 'Build a landing page', catalog).status, 'empty');
+  assert.deepEqual(planWorkflow('ＬＡＵＮＣＨ a ＳａａＳ landing—page!', catalog), plain);
+  const injected = planWorkflow('<img src=x onerror=alert(1)> Launch a landing page under $50 by Friday with HIPAA compliance', catalog);
+  assert.equal(injected.status, 'ready');
+  assert.doesNotMatch(JSON.stringify(injected), /onerror|<img|\$50|Friday|HIPAA/);
+  assert.match(injected.notices.join(' '), /budget|cost|timing|constraint/i);
+});
+
+test('planner is deterministic and does not mutate supplied options or catalog', () => {
+  const before = JSON.stringify(catalog);
+  const options = Object.freeze({ mode: 'simple', freeOnly: true });
+  const prompt = 'Build a landing page and create a social campaign';
+  const result = planWorkflow(prompt, catalog, options);
+  assert.deepEqual(planWorkflow(prompt, [...catalog].reverse(), options), result);
+  assert.deepEqual(planWorkflow(prompt, [...catalog, ...catalog, null, {}, 3], options), result);
+  assert.equal(JSON.stringify(catalog), before);
+  assert.deepEqual(options, { mode: 'simple', freeOnly: true });
+});
+
+test('planner keeps the original eight supported workflows usable with their natural output requests', () => {
+  for (const [prompt, intent, required] of briefs) {
+    const result = planWorkflow(prompt, catalog);
+    assert.equal(result.status, 'ready', prompt);
+    assert.deepEqual(result.intents.map(item => item.id), [intent], prompt);
+    assert.ok(ids(result).includes(required), prompt);
+  }
+});
+
+test('planner does not promise omitted phases when a valid catalog has only partial supporting coverage', () => {
+  const reduced = catalog.filter(skill => !['coreyhaines31/marketingskills/analytics', 'pbakaus/impeccable/impeccable'].includes(skill.id));
+  const result = planWorkflow('Build a landing page', reduced);
+  assert.equal(result.status, 'ready');
+  assert.equal(result.steps.length, 3);
+  assert.doesNotMatch(result.summary, /measure signups/i);
+  assert.match(result.notices.join(' '), /missing|available|omitted|coverage/i);
+});
+
+test('planner does not attach platform-specific handoffs to an incompatible alternative', () => {
+  const result = planWorkflow('Research competitors and compare companies', catalog);
+  const source = result.steps[0];
+  assert.equal(source.skill.id, 'browserbase/skills/company-research');
+  assert.deepEqual(source.skill, byId.get(source.skill.id));
+  const scientific = planWorkflow('Create a scientific research report', catalog);
+  assert.equal(scientific.status, 'ready');
+  assert.equal(scientific.steps[0].skill.id, 'k-dense-ai/claude-scientific-skills/literature-review');
+  assert.ok(!scientific.steps[0].alternatives.some(skill => skill.id === 'browserbase/skills/company-research'));
+});
+
+test('planner keeps coordinated negation scoped until a new positive instruction', () => {
+  for (const prompt of ['Do not create a landing page and a social campaign', 'Avoid SEO and social media']) {
+    const result = planWorkflow(prompt, catalog);
+    assert.equal(result.status, 'clarify', prompt);
+    assert.deepEqual(result.steps, []);
+  }
+  const positive = planWorkflow('Not a landing page and create a social campaign instead', catalog);
+  assert.equal(positive.status, 'ready');
+  assert.deepEqual(positive.intents.map(intent => intent.id), ['content-and-social']);
+});
+
+test('planner clarifies unsupported coordinated noun goals rather than hiding them', () => {
+  for (const prompt of ['Build a landing page plus a flight booking', 'Create a social campaign and a nuclear reactor']) {
+    const result = planWorkflow(prompt, catalog);
+    assert.equal(result.status, 'clarify', prompt);
+    assert.deepEqual(result.steps, []);
+  }
+});
+
+test('planner preserves purpose scope across coordinated nouns until a new explicit action', () => {
+  for (const prompt of [
+    'Build a web app to analyze CSV and sales data',
+    'Build a web app for SEO and social media',
+    'Build a web app for SEO, social media and sales data',
+  ]) {
+    const result = planWorkflow(prompt, catalog);
+    assert.equal(result.status, 'ready', prompt);
+    assert.deepEqual(result.intents.map(intent => intent.id), ['web-app'], prompt);
+  }
+  const independent = planWorkflow('Build a web app for SEO and create a social campaign', catalog);
+  assert.equal(independent.status, 'ready');
+  assert.deepEqual(independent.intents.map(intent => intent.id), ['web-app', 'content-and-social']);
+});
+
+test('planner clarifies unsupported writing, design and analysis tasks rather than silently dropping them', () => {
+  for (const suffix of ['write an email', 'design a logo', 'analyze our sales', 'analyse our sales']) {
+    const result = planWorkflow(`Build a landing page and ${suffix}`, catalog);
+    assert.equal(result.status, 'clarify', suffix);
+    assert.deepEqual(result.steps, []);
+  }
+  for (const prompt of ['Build a landing page and write copy', 'Analyze CSV sales data and write a report']) {
+    const result = planWorkflow(prompt, catalog);
+    assert.equal(result.status, 'ready', prompt);
+    assert.equal(result.intents.length, 1, prompt);
+  }
+});
+
+test('planner ranks role choices using their own goal rather than unrelated company or platform context', () => {
+  const scientific = planWorkflow('Create a scientific research report and build a landing page for my company', catalog);
+  assert.equal(scientific.status, 'ready');
+  assert.ok(ids(scientific).includes('k-dense-ai/claude-scientific-skills/literature-review'));
+  assert.ok(!ids(scientific).includes('browserbase/skills/company-research'));
+  assert.ok(!scientific.steps.flatMap(step => step.alternatives).some(skill => skill.id === 'browserbase/skills/company-research'));
+  const app = planWorkflow('Build a landing page for a Next.js library and build a web app with Vue', catalog);
+  assert.equal(app.status, 'ready');
+  assert.ok(ids(app).includes('agiwhitelist/auteur/auteur'));
+  assert.ok(!ids(app).includes('jeffallan/claude-skills/nextjs-developer'));
+  assert.ok(!app.steps.flatMap(step => step.alternatives).some(skill => skill.id === 'jeffallan/claude-skills/nextjs-developer'));
+});
+
+test('planner keeps explicit exclusions across sentences when selecting clause-local skills', () => {
+  for (const prompt of ['Build an AI agent. Do not use MCP.', 'Create an explainer video. Avoid CapCut.']) {
+    const result = planWorkflow(prompt, catalog);
+    assert.ok(!result.steps.some(step => ['anthropics/skills/mcp-builder', 'renezander030/capcut-cli/capcut-edit'].includes(step.skill.id)), prompt);
+  }
+});
+
+test('planner keeps explicit action lists negated across and and or without a clear replacement', () => {
+  for (const prompt of [
+    'Do not build a landing page or create a social campaign',
+    "Don't build a landing page or build an AI agent",
+    'Do not create a landing page and create a social campaign',
+  ]) {
+    const result = planWorkflow(prompt, catalog);
+    assert.equal(result.status, 'clarify', prompt);
+    assert.deepEqual(result.steps, []);
+  }
+  const contrast = planWorkflow('Do not build a landing page but create a social campaign', catalog);
+  assert.equal(contrast.status, 'ready');
+  assert.deepEqual(contrast.intents.map(intent => intent.id), ['content-and-social']);
+});
+
+test('planner keeps an excluded modifier from negating the next positive goal', () => {
+  for (const prompt of [
+    'Build a landing page without SEO and create a social campaign',
+    'Build a landing page with no video and create a social campaign',
+  ]) {
+    const result = planWorkflow(prompt, catalog);
+    assert.equal(result.status, 'ready', prompt);
+    assert.deepEqual(result.intents.map(intent => intent.id), ['landing-page', 'content-and-social'], prompt);
+  }
+  const excludedNouns = planWorkflow('Build a landing page without SEO and a social campaign', catalog);
+  assert.deepEqual(excludedNouns.intents.map(intent => intent.id), ['landing-page']);
+});
+
+test('planner treats then as an explicit new outcome after a purpose clause', () => {
+  for (const prompt of [
+    'Build a web app for my team, then a landing page',
+    'Build a web app for my team and then a landing page',
+    'Build a web app for SEO then a social campaign',
+  ]) {
+    const result = planWorkflow(prompt, catalog);
+    assert.equal(result.status, 'ready', prompt);
+    assert.equal(result.intents.length, 2, prompt);
+  }
+});
+
+test('planner handles strong unknown directives consistently instead of dropping unlisted verbs', () => {
+  for (const prefix of ['Build a landing page and ', 'Build a web app for my team and ']) {
+    for (const task of ['prepare an email', 'fix a security vulnerability', 'draft an email', 'debug my application', 'organize our files']) {
+      const result = planWorkflow(prefix + task, catalog);
+      assert.equal(result.status, 'clarify', prefix + task);
+      assert.deepEqual(result.steps, []);
+    }
+  }
+  const report = planWorkflow('Analyze CSV sales data and prepare a report', catalog);
+  assert.equal(report.status, 'ready');
+  assert.equal(report.intents.length, 1);
 });

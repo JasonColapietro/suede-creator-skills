@@ -318,3 +318,207 @@ export function recommendWorkflow(prompt, catalog) {
   if (steps.length < 3) return noMatch();
   return { status: 'ready', intent: flow.id, title: flow.title, summary: flow.summary, steps, tips: [...flow.tips], matchedTerms: [...new Set(matchedTerms)] };
 }
+
+// The composable API is intentionally separate from the original single-goal
+// matcher. These are authored paths, not model responses or constraint proofs.
+const PLAN_LABELS = {
+  'landing-page': ['Landing page', 'Build a landing page'],
+  'web-app': ['Web app', 'Build a web app'],
+  'seo-and-ai-search': ['Search visibility', 'Improve SEO and AI search visibility'],
+  'content-and-social': ['Social campaign', 'Create a social campaign'],
+  'agent-building': ['AI agent', 'Build an AI agent with MCP tools'],
+  'documents-and-data': ['Data report', 'Analyze CSV sales data and prepare a report'],
+  research: ['Research report', 'Research competitors and compare companies'],
+  'video-and-creative': ['Explainer video', 'Create an explainer video'],
+};
+const SIMPLE_PHASES = {
+  'landing-page': [0, 1, 3], 'web-app': [0, 1, 3],
+  'seo-and-ai-search': [0, 1, 2], 'content-and-social': [0, 1, 2],
+  'agent-building': [0, 2, 4], 'documents-and-data': [0, 1, 2],
+  research: [0, 1, 2], 'video-and-creative': [0, 1, 3],
+};
+const PLAN_SCOPE = 'Local task matching suggests catalog skills. Budgets, deadlines, compliance, tool compatibility and other project constraints still need review.';
+// A bounded directive cue, shared by scope boundaries and unsupported-task
+// detection. The verb + determiner shape catches unfamiliar commands such as
+// "prepare an email" without needing a list of every unsupported activity.
+const DIRECTIVE_START = /^(?:(?:i|we) (?:want|need) (?:to )?)?(?:(?:build|create|launch|develop|make|produce|write|design|analyze|analyse|research|improve|generate|book|buy|reserve|pay|send|schedule|translate|cook|repair|invest|cure)\b|(?!(?:for|to|with|without|in|on|at|by|under|over|from|of|as|a|an|the|my|our|your|their|this|that|it|its|is|are|has|have|who|which|what|so)\b)[\p{L}]+ (?:a|an|the|my|our|your|their|this|that)\b)/u;
+
+function focusedPlanMatches(text) {
+  for (const clause of text.matchAll(/\b(?:for|to)\b/gu)) {
+    const focused = rankFlows(text.slice(0, clause.index).trim());
+    if (focused.length) return { matches: focused, purpose: true };
+  }
+  return { matches: rankFlows(text), purpose: false };
+}
+
+function findPlanGoals(text) {
+  const goals = new Map();
+  const unsupported = [];
+  let unclear = false;
+  let negationScope = null;
+  let purposeScope = false;
+  // Only recognizable conjunctions introduce independent goals. A purpose
+  // clause stays with its artifact, so an app "for social media" stays an app.
+  const clauses = text.split(/(\s*\|\s*|\b(?:and then|and|plus|then|also|or)\b)/u).map(part => part.trim()).filter(Boolean);
+  for (const clause of clauses) {
+    if (/^(?:\||and then|and|plus|then|also|or)$/u.test(clause)) {
+      if (clause === '|') { negationScope = null; purposeScope = false; }
+      if (clause === 'then' || clause === 'and then') {
+        purposeScope = false;
+        if (negationScope === 'modifier') negationScope = null;
+      }
+      continue;
+    }
+    const positiveAction = DIRECTIVE_START.test(clause);
+    if (negationScope === 'goal' && !(positiveAction && /\binstead\b/u.test(clause))) continue;
+    if (negationScope === 'modifier' && !positiveAction) continue;
+    if (purposeScope && !positiveAction) continue;
+    const { matches, purpose } = focusedPlanMatches(clause);
+    const hasNegation = /\b(?:not|no|without|avoid|don t)\b/u.test(clause);
+    // A recognized positive artifact before an exclusion keeps that exclusion
+    // on its modifier list, not on the next independent positive action.
+    negationScope = hasNegation ? (matches.length ? 'modifier' : 'goal') : null;
+    purposeScope = purpose;
+    if (!matches.length) {
+      // Explicit unsupported actions must not disappear from a partial plan.
+      // Other context is not interpreted as a promise to satisfy constraints.
+      if (!hasNegation && (positiveAction || /^(?:a|an|another)\b/u.test(clause))) unsupported.push(clause);
+      continue;
+    }
+    if (matches[1]?.score >= 12 && matches[0].score - matches[1].score <= 3) unclear = true;
+    const match = matches[0];
+    const existing = goals.get(match.flow.id);
+    if (existing) {
+      existing.matchedTerms = [...new Set([...existing.matchedTerms, ...match.matchedTerms])];
+      existing.text += ` | ${clause}`;
+    } else goals.set(match.flow.id, { ...match, text: clause });
+  }
+  const includesReport = goals.has('documents-and-data') || goals.has('research');
+  const includesPageCopy = goals.has('landing-page');
+  if (unsupported.some(clause => {
+    const report = includesReport && /^(?:write|create|prepare|assemble|generate|deliver|produce) (?:a |an |the )?(?:(?:decision ready|sourced|data|research|business) )?report$/u.test(clause);
+    const pageCopy = includesPageCopy && /^write (?:the )?(?:(?:page|landing page|marketing) )?copy$/u.test(clause);
+    return !report && !pageCopy;
+  })) unclear = true;
+  if (/\bor\b/u.test(text) && goals.size > 1) unclear = true;
+  return { goals: [...goals.values()], unclear };
+}
+
+function planRoles(flow, entries, text, mode, exclusions = text) {
+  const used = new Set();
+  const roles = mode === 'simple' ? flow.phases.filter((_, index) => SIMPLE_PHASES[flow.id].includes(index)) : flow.phases;
+  // Check the complete preset for explicit exclusions even in simple mode.
+  // Otherwise shortening it could silently bypass a requested constraint.
+  const excluded = flow.phases.some(role => role.choices.some(candidate => {
+    const entry = entries.get(candidate.id);
+    if (!entry) return false;
+    const term = normalize(entry.name);
+    return ` ${exclusions} `.includes(` ${term} `) && !containsTerm(exclusions, term);
+  }));
+  if (excluded) return null;
+  const steps = [];
+  for (const role of roles) {
+    // Suitability belongs to this goal, while explicit platform exclusions can
+    // still appear in another sentence of the same brief.
+    const choices = role.choices.filter(candidate => !(REQUIRED_PLATFORMS[candidate.id] || [])
+      .some(term => ` ${exclusions} `.includes(` ${term} `) && !containsTerm(exclusions, term)));
+    const skill = chooseSkill(choices, entries, used, text);
+    if (!skill) {
+      if (role.required) return null;
+      continue;
+    }
+    const alternatives = [];
+    const excludedIds = new Set([...used, skill.id]);
+    for (let alternative = chooseSkill(choices, entries, excludedIds, text); alternative;
+      alternative = chooseSkill(choices, entries, excludedIds, text)) {
+      alternatives.push(alternative);
+      excludedIds.add(alternative.id);
+    }
+    used.add(skill.id);
+    steps.push({ id: skill.id, title: role.title, skill, why: role.why, output: role.output,
+      intentIds: [flow.id], required: role.required, alternatives });
+  }
+  return steps.length >= 3 ? steps : null;
+}
+
+function composePlanSteps(sequences) {
+  const nodes = new Map();
+  const after = new Map();
+  for (const sequence of sequences) {
+    for (const [index, step] of sequence.entries()) {
+      const existing = nodes.get(step.id);
+      if (existing) {
+        existing.intentIds.push(...step.intentIds.filter(id => !existing.intentIds.includes(id)));
+        existing.required ||= step.required;
+        if (!existing.output.includes(step.output)) existing.output += ` ${step.output}`;
+        // An alternative for a shared skill must fit every role it replaces.
+        existing.alternatives = existing.alternatives.filter(skill => step.alternatives.some(other => other.id === skill.id));
+      } else {
+        nodes.set(step.id, { ...step, intentIds: [...step.intentIds] });
+        after.set(step.id, new Set());
+      }
+      if (index) after.get(step.id).add(sequence[index - 1].id);
+    }
+  }
+  // Stable topological order preserves each workflow's handoffs. In particular,
+  // shared measurement belongs after both the page and the campaign drafts.
+  const result = [];
+  const remaining = new Set(nodes.keys());
+  while (remaining.size) {
+    const id = [...remaining].find(key => [...after.get(key)].every(dependency => !remaining.has(dependency)));
+    if (!id) return null;
+    remaining.delete(id);
+    const step = nodes.get(id);
+    step.alternatives = step.alternatives.filter(skill => !nodes.has(skill.id));
+    result.push(step);
+  }
+  return result;
+}
+
+/**
+ * Compose recognized independent goals using the supplied directory snapshot.
+ * Input is processed locally, bounded to 2,000 characters and never reflected
+ * into result text. The caller owns displaying/exporting the original brief.
+ * freeOnly selects the free-open-source catalog lane, not zero runtime cost.
+ * @param {string} prompt
+ * @param {Array<object>} catalog
+ * @param {{freeOnly?: boolean, mode?: 'full'|'simple'}} options
+ * @returns {{status:string, title:string, summary:string, intent?:string,
+ * intents:Array, steps:Array, tips:string[], matchedTerms:string[],
+ * constraints:object, notices:string[], choices:Array}}
+ */
+export function planWorkflow(prompt, catalog, options = {}) {
+  const constraints = { freeOnly: options?.freeOnly === true, mode: options?.mode === 'simple' ? 'simple' : 'full' };
+  const notices = [PLAN_SCOPE];
+  if (constraints.freeOnly) notices.push('Only catalog entries labeled free and open source are included. Runtime tools, hosting and external services can still cost money.');
+  if (constraints.mode === 'simple') notices.push('Simple mode keeps three essential roles per goal and combines shared skills. Add specialist reviews when the project needs them.');
+  const entries = new Map();
+  for (const entry of Array.isArray(catalog) ? catalog : []) {
+    if (safeCatalogEntry(entry) && (!constraints.freeOnly || entry.lane === 'free-open-source') && !entries.has(entry.id)) entries.set(entry.id, entry);
+  }
+  const text = typeof prompt === 'string' ? normalize(prompt.slice(0, MAX_PROMPT_LENGTH)
+    .replace(/[+,]/g, ' plus ').replace(/\bnot (?:just|only)\b/gi, '')) : '';
+  const { goals, unclear } = findPlanGoals(text);
+  const intents = goals.map(({ flow, matchedTerms }) => ({ id: flow.id, title: PLAN_LABELS[flow.id][0], matchedTerms }));
+  const metadata = { intents, matchedTerms: [...new Set(goals.flatMap(goal => goal.matchedTerms))], constraints, notices };
+  const choices = () => FLOWS.filter(flow => planRoles(flow, entries, normalize(PLAN_LABELS[flow.id][1]), constraints.mode))
+    .map(flow => ({ label: PLAN_LABELS[flow.id][0], prompt: PLAN_LABELS[flow.id][1] }));
+  const clarify = (title, summary) => ({ ...state('clarify', title, summary), ...metadata, choices: choices() });
+  if (!text) return { ...state('empty', 'What would you like to make?', 'Describe the project, audience and outcome, or choose a starting idea.'), ...metadata, choices: [] };
+  if (text.split(' ').length < 2 || !goals.length || unclear) return clarify('Choose a concrete outcome', 'Choose the result you want to make. You can combine supported goals with “and”, or start with one of these workflows.');
+  const sequences = goals.map(goal => planRoles(goal.flow, entries, goal.text, constraints.mode, text));
+  if (sequences.some(sequence => !sequence)) return clarify('Choose a workflow that fits', 'The current catalog and selected filters do not cover every requested goal or exclusion. Try an available workflow below or revise the brief and filters.');
+  const steps = composePlanSteps(sequences);
+  if (!steps || steps.length > 10) return clarify('Start with fewer outcomes', 'This combination needs more than 10 steps or conflicting handoffs. Choose one or two outcomes first, or try simple mode for a shorter plan.');
+  const labels = intents.map(intent => intent.title);
+  const multiple = goals.length > 1;
+  const partial = sequences.some((sequence, index) => sequence.length < (constraints.mode === 'simple' ? 3 : goals[index].flow.phases.length));
+  if (partial) notices.push('Some supporting roles are unavailable under the current catalog and filters. The plan includes only the available roles shown below.');
+  const summary = multiple || constraints.mode === 'simple' || partial
+    ? `Task-based ${constraints.mode === 'simple' ? 'starter ' : ''}plan: ${steps.length} ordered steps for ${labels.join(' + ')}. Shared skills appear once; review the handoff from each step before moving on.`
+    : goals[0].flow.summary;
+  return { status: 'ready', intent: goals[0].flow.id,
+    title: multiple ? `${labels.join(' + ')} workflow` : goals[0].flow.title,
+    summary, steps, tips: [...new Set(goals.flatMap(({ flow }) => flow.tips))],
+    ...metadata, choices: [] };
+}
