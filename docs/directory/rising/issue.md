@@ -1,6 +1,6 @@
 # Rising Skills
 
-Install snapshot: 2026-11-02. Quality snapshot: 2026-10-22.
+Install snapshot: 2026-11-08. Quality snapshot: 2026-10-22.
 
 The five listed skills with the most recorded installs in the final week of the saved skills.sh history. These are snapshot figures, not a live leaderboard.
 
