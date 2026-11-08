@@ -32,7 +32,8 @@ export async function verifyWorkflowBuilder(page, base, output, route = '/direct
   assert.match(await page.locator('[data-workflow-heading]').textContent(), /social|content|campaign/i);
   await brief.fill('zzzzfrobnicate qqqqqq'); await submit.click();
   assert.ok(await page.locator('[data-workflow-results]').isHidden());
-  assert.match(await page.locator('[data-workflow-status]').textContent(), /specific|match|recognize|detail/i);
+  assert.match(await page.locator('[data-workflow-status]').textContent(), /Choose the result/i);
+  assert.ok(await page.locator('[data-workflow-choices] button').count() >= 1);
   for (const width of [1440, 390]) {
     await page.setViewportSize({ width, height: width === 390 ? 844 : 1000 });
     await page.locator('[data-workflow-examples] button').first().click();
@@ -48,6 +49,37 @@ export async function verifyWorkflowBuilder(page, base, output, route = '/direct
     assert.ok(clip, 'workflow module has a capture area');
     await page.screenshot({ fullPage: true, clip, path: path.join(output, 'workflow-' + (route === '/' ? 'standalone-' : '') + width + '.png') });
   }
+  await page.setViewportSize({ width: 1440, height: 1000 });
+  await brief.fill('Build a landing page and create a social campaign'); await submit.click();
+  await page.locator('[data-workflow-results]').waitFor({ state: 'visible' });
+  assert.match(await page.locator('[data-workflow-heading]').textContent(), /Landing page \+ Social campaign/);
+  const roadmap = page.locator('[data-workflow-route] button');
+  assert.equal(await roadmap.count(), 8);
+  await roadmap.nth(1).focus(); await page.keyboard.press('Enter');
+  assert.equal(await roadmap.nth(1).getAttribute('aria-current'), 'step');
+  assert.equal(await page.locator('.workflow-step:not([hidden])').count(), 1);
+  const activeStage = page.locator('.workflow-step:not([hidden])');
+  await activeStage.getByRole('button', { name: 'Mark step complete', exact: true }).click();
+  assert.match(await page.locator('[data-workflow-progress-label]').textContent(), /^1 of 8/);
+  assert.match(await page.locator('[data-workflow-export]').inputValue(), /\[done\]/);
+  const alternative = activeStage.getByLabel('Choose a skill', { exact: true });
+  await alternative.selectOption('anthropics/skills/frontend-design');
+  assert.match(await activeStage.locator('.workflow-skill').textContent(), /frontend-design/);
+  assert.match(await page.locator('[data-workflow-export]').inputValue(), /Skill: frontend-design/);
+  assert.match(await page.locator('[data-workflow-progress-label]').textContent(), /^0 of 8/);
+  assert.equal(await page.locator('#workflow-alternative-1').evaluate(el => el === document.activeElement), true);
+  await activeStage.getByRole('button', { name: 'Next step', exact: false }).click();
+  assert.equal(await roadmap.nth(2).getAttribute('aria-current'), 'step');
+  assert.equal(await page.locator('.workflow-step:not([hidden]) h4').evaluate(el => el === document.activeElement), true);
+  await page.getByLabel('Plan depth', { exact: false }).selectOption('simple');
+  assert.ok(await page.locator('[data-workflow-results]').isHidden());
+  await submit.click(); await page.locator('[data-workflow-results]').waitFor({ state: 'visible' });
+  assert.equal(await page.locator('.workflow-step').count(), 6);
+  await page.getByLabel('Open-source licenses only', { exact: true }).check();
+  await submit.click(); await page.locator('[data-workflow-results]').waitFor({ state: 'visible' });
+  assert.match(await page.locator('[data-workflow-export]').inputValue(), /open-source licenses only/);
+  await page.getByLabel('Open-source licenses only', { exact: true }).uncheck();
+  await page.getByLabel('Plan depth', { exact: false }).selectOption('full');
   await brief.fill('Build a landing page <img src=x onerror=alert(1)>'); await submit.click();
   await page.locator('[data-workflow-results]').waitFor({ state: 'visible' });
   assert.equal(await page.locator('#workflow-builder img').count(), 0);

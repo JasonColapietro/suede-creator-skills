@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import vm from 'node:vm';
+import * as planner from '../docs/assets/workflow-recommender.js';
 import { recommendWorkflow, WORKFLOW_EXAMPLES } from '../docs/assets/workflow-recommender.js';
 const catalog = JSON.parse(fs.readFileSync(new URL('../docs/directory/search-index.json', import.meta.url)));
 const articles = JSON.parse(fs.readFileSync(new URL('../docs/directory/workflow-articles.json', import.meta.url)));
@@ -15,12 +16,12 @@ function client(fetcher = async file => ({ ok: true, json: async () => file === 
     append(...children) { this.children.push(...children); }, replaceChildren(...children) { this.children = children; },
     focus() { doc.activeElement = this; }, scrollIntoView() {}, select() { this.selected = true; },
   });
-  const selectors = ['[data-workflow-form]', '#workflow-brief', '[type="submit"]', '[data-workflow-status]', '[data-workflow-results]', '[data-workflow-heading]', '[data-workflow-summary]', '[data-workflow-export]', '[data-workflow-steps]', '[data-workflow-tips]', '[data-workflow-reading]', '[data-workflow-copy-fallback]', '[data-workflow-examples]', '[data-workflow-refine]', '[data-workflow-copy]'];
+  const selectors = ['[data-workflow-form]', '#workflow-brief', '[type="submit"]', '[data-workflow-status]', '[data-workflow-results]', '[data-workflow-heading]', '[data-workflow-summary]', '[data-workflow-export]', '[data-workflow-steps]', '[data-workflow-tips]', '[data-workflow-reading]', '[data-workflow-copy-fallback]', '[data-workflow-examples]', '[data-workflow-refine]', '[data-workflow-copy]', '[data-workflow-mode]', '[data-workflow-free]', '[data-workflow-choices]', '[data-workflow-overview]', '[data-workflow-route]', '[data-workflow-progress]', '[data-workflow-progress-label]', '[data-workflow-reset-progress]'];
   const elements = Object.fromEntries(selectors.map(s => [s, element()]));
   elements['[data-workflow-form]'].querySelector = selector => elements[selector];
   doc = { querySelector: () => ({ querySelector: selector => elements[selector] }), createElement: element, createTextNode: text => ({ textContent: text }) };
   const requests = [];
-  vm.runInNewContext(source, { document: doc, recommendWorkflow, WORKFLOW_EXAMPLES, URL,
+  vm.runInNewContext(source, { document: doc, recommendWorkflow, planWorkflow: planner.planWorkflow, WORKFLOW_EXAMPLES, URL,
     location: { href: 'https://suedeai.directory/?utm_source=test' }, navigator: { clipboard }, AbortController, setTimeout, clearTimeout,
     fetch: (...args) => { requests.push(args); return fetcher(...args); },
   });
@@ -78,4 +79,65 @@ test('service and license constraints accompany selected skills and the copied w
     const c = client(async file => ({ ok: true, json: async () => file === 'search-index.json' ? data : articles }));
     await c.build('Launch a SaaS landing page'); assert.match(c.elements['[data-workflow-export]'].value, expected);
   }
+});
+
+test('planner shows a selectable roadmap and tracks completed steps in the copied AI brief', async () => {
+  const c = client(); await c.build('Launch a SaaS landing page');
+  const route = c.elements['[data-workflow-route]'];
+  assert.ok(route.children.length >= 3, 'roadmap contains each stage');
+  assert.match(c.elements['[data-workflow-progress-label]'].textContent, /0 of/);
+  const steps = c.elements['[data-workflow-steps]'].children;
+  assert.equal(steps[0].hidden, false); assert.equal(steps[1].hidden, true);
+  route.children[1].dispatchEvent(new Event('click'));
+  assert.equal(steps[0].hidden, true); assert.equal(steps[1].hidden, false);
+  const find = (node, attr) => node.attributes?.has(attr) ? node : node.children?.map(child => find(child, attr)).find(Boolean);
+  find(steps[1], 'data-workflow-complete').dispatchEvent(new Event('click'));
+  assert.match(c.elements['[data-workflow-progress-label]'].textContent, /1 of/);
+  assert.match(c.elements['[data-workflow-export]'].value, /\[done\]/);
+  assert.match(c.elements['[data-workflow-export]'].value, /AI handoff/);
+});
+
+test('unsupported briefs offer actionable starting choices without pretending AI is connected', async () => {
+  const c = client(); await c.build('help me build something amazing');
+  assert.equal(c.results.hidden, true);
+  assert.ok(c.elements['[data-workflow-choices]'].children.length >= 1);
+  assert.doesNotMatch(c.status.textContent, /AI generated|AI powered/);
+});
+
+test('changing planner controls invalidates the previous plan without transmitting the brief', async () => {
+  const c = client(); await c.build('Launch a SaaS landing page');
+  c.elements['[data-workflow-mode]'].value = 'simple';
+  c.elements['[data-workflow-mode]'].dispatchEvent(new Event('change'));
+  assert.equal(c.results.hidden, true);
+  assert.equal(c.brief.value, 'Launch a SaaS landing page');
+  assert.equal(c.requests.length, 2);
+});
+
+
+test('combined goals keep both authored reading matches and an agent-ready export', async () => {
+  const c = client(); await c.build('Build a landing page and create a social campaign');
+  assert.equal(c.elements['[data-workflow-route]'].children.length, 8);
+  const exported = c.elements['[data-workflow-export]'].value;
+  assert.match(exported, /stacks\/landing-page/); assert.match(exported, /stacks\/content-and-social/);
+  assert.match(exported, /Planning method: browser-local/);
+  assert.equal(c.requests.length, 2);
+});
+
+test('article loading from a superseded result never overwrites the current plan', async () => {
+  let resolve;
+  const pending = new Promise(r => { resolve = r; });
+  const c = client(async file => file === 'search-index.json' ? {ok:true,json:async()=>catalog} : pending);
+  await c.build('Build a landing page');
+  c.brief.value = 'Create a social campaign'; c.brief.dispatchEvent(new Event('input'));
+  await c.build(); resolve({ok:true,json:async()=>articles}); await tick(); await tick();
+  const exported = c.elements['[data-workflow-export]'].value;
+  assert.match(exported, /stacks\/content-and-social/); assert.doesNotMatch(exported, /stacks\/landing-page/);
+});
+
+test('essential steps and open-source selection are applied by the controller, not just displayed', async () => {
+  const c = client(); c.elements['[data-workflow-mode]'].value = 'simple';
+  c.elements['[data-workflow-free]'].checked = true;
+  await c.build('Build a landing page');
+  assert.equal(c.elements['[data-workflow-steps]'].children.length, 3);
+  assert.match(c.elements['[data-workflow-export]'].value, /Essential steps; open-source licenses only/);
 });
