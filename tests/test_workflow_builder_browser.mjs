@@ -38,7 +38,15 @@ export async function verifyWorkflowBuilder(page, base, output, route = '/direct
     await page.locator('[data-workflow-examples] button').first().click();
     await page.locator('[data-workflow-results]').waitFor({ state: 'visible' });
     assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), 'workflow does not overflow');
-    await page.locator('#workflow-builder').screenshot({ path: path.join(output, 'workflow-' + (route === '/' ? 'standalone-' : '') + width + '.png') });
+    assert.equal(await page.locator('[data-workflow-heading]').evaluate(el => el === document.activeElement), true, 'the result heading receives focus');
+    assert.ok(await page.evaluate(() => document.querySelector('[data-workflow-heading]').getBoundingClientRect().top >= document.querySelector('.nav').getBoundingClientRect().bottom), 'sticky navigation does not cover the focused result heading');
+    // A tall locator screenshot scrolls midway through the module and captures
+    // sticky navigation there. Capture document coordinates from the page top
+    // instead, preserving the actual layout without hiding any elements.
+    await page.evaluate(() => window.scrollTo({ top: 0, behavior: 'instant' }));
+    const clip = await page.locator('#workflow-builder').boundingBox();
+    assert.ok(clip, 'workflow module has a capture area');
+    await page.screenshot({ fullPage: true, clip, path: path.join(output, 'workflow-' + (route === '/' ? 'standalone-' : '') + width + '.png') });
   }
   await brief.fill('Build a landing page <img src=x onerror=alert(1)>'); await submit.click();
   await page.locator('[data-workflow-results]').waitFor({ state: 'visible' });
