@@ -1,0 +1,184 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500;600;700&family=Pixelify+Sans:wght@400;500;600;700&display=block" rel="stylesheet">
+<style>
+/* Tokens from suedeai.directory */
+:root{--canvas:#000;--paper:#0a0a0a;--paper-2:#1a1a1a;--hairline:#1f1f1f;--line:#292929;--line-strong:#454545;
+--ink:#ededed;--text:#d4d4d4;--muted:#a0a0a0;--faint:#7d7d7d;--on-accent:#000;--accent-2:#ff5e63;
+--gold:#c8a96e;--gold-soft:#1a1710;--danger:#ff5e63;--danger-soft:#330a11;
+--a:#00ca52;--a-bg:#00250a;--b:#50a8ff;--b-bg:#06193a;--c:#ffb200;--c-bg:#291800;--d:#a0a0a0;--d-bg:#1a1a1a;
+--sans:"Geist",system-ui,sans-serif;--mono:"Geist Mono",ui-monospace,monospace;--display:"Pixelify Sans","Geist Mono",monospace;--r:4px}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;height:1920px;background:var(--canvas);overflow:hidden;font-family:var(--sans);color:var(--text)}
+#stage{position:relative;width:1080px;height:1920px;overflow:hidden;background:var(--canvas)}
+.abs{position:absolute}
+.mono{font-family:var(--mono)}
+.disp{font-family:var(--display)}
+#bignum{left:-20px;top:900px;font-family:var(--display);font-size:700px;font-weight:700;color:#0d0d0d;line-height:1}
+#brand{left:64px;top:62px;display:flex;align-items:center;gap:20px}
+#brand img{width:64px;height:64px}
+#brand span{font-family:var(--display);font-size:46px;font-weight:600;color:var(--ink)}
+#star{right:64px;top:66px;font-family:var(--mono);font-size:24px;border:2px solid var(--line);border-radius:var(--r);padding:10px 18px;color:var(--ink)}
+#rule{left:0;right:0;top:170px;height:2px;background:var(--line)}
+#label{left:64px;top:206px;font-family:var(--mono);font-size:28px;font-weight:500;letter-spacing:.12em;color:var(--ink)}
+#day{right:64px;top:206px;font-family:var(--mono);font-size:28px;letter-spacing:.12em;color:var(--muted)}
+.scene{left:0;top:0;width:1080px;height:1920px}
+.kin{left:64px;width:960px;bottom:400px;font-family:var(--display);font-size:108px;font-weight:600;line-height:1.1;color:var(--ink)}
+.kin .w{display:inline-block;margin:0 22px 12px 0}
+.kin .hl{background:var(--ink);color:var(--on-accent);padding:0 16px;border-radius:var(--r)}
+.kin .hr{background:var(--danger);color:var(--on-accent);padding:0 16px;border-radius:var(--r)}
+#tl{left:64px;right:64px;top:1560px;height:120px}
+#tlbar{left:0;right:0;top:42px;height:4px;background:var(--line)}
+#tlfill{left:0;top:42px;height:4px;background:var(--ink)}
+#knob{top:30px;width:28px;height:28px;border-radius:var(--r);background:var(--ink);margin-left:-14px}
+.tick{top:52px;width:2px;height:12px;background:var(--line-strong)}
+.tlab{top:72px;font-family:var(--mono);font-size:22px;color:var(--faint);transform:translateX(-50%)}
+#illus{left:64px;top:1684px;font-family:var(--mono);font-size:22px;color:var(--faint)}
+#dof{right:64px;top:1684px;font-family:var(--mono);font-size:22px;color:var(--faint)}
+#cap{left:64px;top:1760px;max-width:952px;background:var(--paper);border:2px solid var(--line);border-radius:var(--r);padding:18px 26px;font-size:32px;font-weight:500;line-height:1.3;color:var(--text)}
+.tile{background:var(--paper);border:2px solid var(--line);border-radius:var(--r);padding:20px 22px;width:300px;height:184px}
+.tile .cnt{position:absolute;right:18px;top:12px;font-family:var(--mono);font-size:18px;color:var(--muted)}
+.tile .tt{margin-top:22px;font-family:var(--display);font-size:24px;font-weight:600;color:var(--ink);line-height:1.15}
+.tile .site{position:absolute;left:22px;bottom:16px;font-family:var(--mono);font-size:17px;color:var(--muted)}
+.badge{font-family:var(--mono);font-weight:600;border:2px solid;border-radius:var(--r);padding:4px 12px;display:inline-block}
+.ga{color:var(--a);background:var(--a-bg);border-color:var(--a)}.gb{color:var(--b);background:var(--b-bg);border-color:var(--b)}
+.gc{color:var(--c);background:var(--c-bg);border-color:var(--c)}.gd{color:var(--d);background:var(--d-bg);border-color:var(--line-strong)}
+.gx{color:var(--danger);background:var(--danger-soft);border-color:var(--danger)}
+.dots{height:84px}
+.bnum{font-family:var(--display);font-size:60px;font-weight:600;color:var(--ink)}
+.bnum small{font-family:var(--mono);font-size:24px;color:var(--muted);margin-left:10px}
+.btt{font-family:var(--mono);font-size:22px;color:var(--muted);margin-top:2px}
+.pill{display:inline-block;background:var(--paper);border:2px solid var(--line);padding:10px 18px;border-radius:var(--r);font-family:var(--mono);font-size:24px;letter-spacing:.06em;color:var(--ink)}
+.vrow{left:64px;width:952px;height:132px;background:var(--paper);border:2px solid var(--line);border-radius:var(--r);display:flex;align-items:center;padding:0 28px;gap:24px}
+.vrow .n{font-family:var(--mono);font-size:30px;color:var(--muted);width:56px}
+.vrow .p{flex:1;font-size:30px;font-weight:600;color:var(--ink)}
+.vrow .p small{display:block;font-family:var(--mono);font-size:21px;color:var(--muted);font-weight:400;margin-top:6px}
+.vrow .badge{font-size:22px;letter-spacing:.06em;width:270px;text-align:center;padding:10px 0}
+.doc{left:96px;top:330px;width:888px;height:560px;background:var(--paper);border:2px solid var(--line-strong);border-radius:var(--r);padding:44px 50px;font-family:var(--mono);color:var(--text)}
+.cta{left:64px;width:952px;text-align:center}
+.btn{display:inline-block;background:var(--ink);color:var(--on-accent);font-family:var(--mono);font-weight:700;letter-spacing:.14em;font-size:40px;padding:24px 56px;border-radius:var(--r)}
+</style></head>
+<body><div id="stage">
+<div id="bignum" class="abs">01</div>
+<div id="brand" class="abs"><img src="logo.png"><span>Suede SEO</span></div>
+<div id="star" class="abs">[ 14 DAYS ]</div>
+<div id="rule" class="abs"></div>
+<div id="label" class="abs"></div>
+<div id="day" class="abs"></div>
+<div id="scenes"></div>
+<div id="tl" class="abs"><div id="tlbar" class="abs"></div><div id="tlfill" class="abs"></div><div id="ticks"></div><div id="knob" class="abs"></div></div>
+<div id="illus" class="abs">Values illustrative</div>
+<div id="dof" class="abs"></div>
+<div id="cap" class="abs"></div>
+</div>
+<script>
+const W=952, FPS=30;
+const clamp=(x,a=0,b=1)=>Math.max(a,Math.min(b,x));
+const seg=(t,a,b)=>clamp((t-a)/(b-a));
+const eo=x=>1-Math.pow(1-x,3);
+const eback=x=>{const c1=1.70158,c3=c1+1;return 1+c3*Math.pow(x-1,3)+c1*Math.pow(x-1,2)};
+const lerp=(a,b,x)=>a+(b-a)*x;
+const $=id=>document.getElementById(id);
+const G={a:'#00ca52',b:'#50a8ff',c:'#ffb200',d:'#454545',x:'#ff5e63'};
+
+(function(){let h='';for(let d=1;d<=14;d++){const x=(d-1)/13*W;h+=`<div class="abs tick" style="left:${x}px"></div>`;if(d%2==1)h+=`<div class="abs tlab" style="left:${x}px">D${d}</div>`;}$('ticks').innerHTML=h;})();
+
+// dot strip like the directory's charts
+function dots(n,colors,shown,size=18,gap=6){let h='';for(let i=0;i<n;i++){h+=`<span style="display:inline-block;width:${size}px;height:${size}px;margin:0 ${gap}px ${gap}px 0;background:${i<shown?colors[i%colors.length]:'#1a1a1a'}"></span>`}return h}
+function dotGrid(cols,rows,t,start,dur){ // sorted by grade A,B,C,D
+  const N=cols*rows,k=Math.floor(N*eo(seg(t,start,start+dur)));let h='';
+  for(let i=0;i<N;i++){const f=i/N;const c=f<.12?G.a:f<.45?G.b:f<.82?G.c:G.d;h+=`<span style="display:inline-block;width:14px;height:14px;margin:0 4px 4px 0;background:${i<k?c:'#111'}"></span>`}return h}
+
+const TITLES=[
+ ["Bookkeeping Checklist + Free Template","b",88],["How to Do Payroll Yourself in 7 Steps","a",94],["Accrual Accounting in 2 Minutes","b",86],
+ ["Contractor Job Costing Guide","c",76],["1099 vs W-2: Which to File","b",83],["Invoice Templates That Get Paid","b",81],
+ ["Small Business Tax Deadlines","c",72],["Cash vs Accrual in 60 Seconds","a",91],["Monthly Close Checklist","b",84]];
+function tile(title,grade,score,extra,i){return `<div class="tile abs" style="${extra}"><div class="cnt">[ TEST ]</div><div class="tt">${title}</div><div class="site">yoursite.com</div><div class="badge g${grade} abs" style="right:16px;bottom:12px;font-size:17px;padding:2px 8px">${score} · ${grade.toUpperCase()}</div></div>`}
+function kin(words,t,start,step=0.18){
+  return `<div class="abs kin">`+words.map((w,i)=>{const p=eo(seg(t,start+i*step,start+i*step+0.3));return `<span class="w ${w[1]||''}" style="opacity:${p>0?1:0};clip-path:inset(0 ${(1-p)*100}% 0 0)">${w[0]}</span>`}).join('')+`<span class="w" style="opacity:${Math.floor(t*2.5)%2};color:var(--ink)">▌</span></div>`}
+const fmt=n=>Math.round(n).toLocaleString('en-US');
+const typed=(s,t,a,b)=>s.slice(0,Math.round(s.length*seg(t,a,b)));
+
+const S=[
+ [0,4.2,"> SUEDE SEO, BY SUEDE AI","[ DAY 00 ]","14 days. No new pages. Just better titles.",(t)=>{
+   const head=typed("Your titles, tested and kept.",t,0.2,1.4);
+   return `<div class="abs disp" style="left:64px;top:300px;width:952px;font-size:92px;font-weight:600;line-height:1.08;color:var(--ink)">${head}<span style="opacity:${Math.floor(t*2.5)%2}">▌</span></div>
+   <div class="abs" style="left:64px;top:660px;font-size:34px;line-height:1.4;color:var(--text);width:900px;opacity:${seg(t,1.2,1.6)}">Suede tests every page-1 title against Search Console data and keeps only the winners.</div>
+   <div class="abs" style="left:64px;top:840px;width:952px;padding:22px;border:2px solid var(--line);border-radius:4px;background:var(--paper);opacity:${seg(t,0.8,1.1)}">${dotGrid(48,10,t,1.0,2.2)}</div>
+   <div class="abs mono" style="left:64px;top:1105px;font-size:22px;color:var(--muted);opacity:${seg(t,1.4,1.8)}">Every dot is a tested title, sorted by result. <span style="color:${G.a}">■</span> win <span style="color:${G.b}">■</span> up <span style="color:${G.c}">■</span> flat <span style="color:#7d7d7d">■</span> no data</div>`
+   + kin([["Rank"],["higher"],["in"],["14","hl"],["days","hl"]],t,2.2,0.15)}],
+ [4.2,9.0,"> CLICKS PER TITLE","[ DAY 01 ]","Same page. Same rank. Different title. Different clicks.",(t)=>{
+   const rows=[[2140,"How to Do Payroll Yourself in 7 Steps",G.a,"94 · A","a"],[1960,"Payroll Yourself: Step-by-Step",G.b,"88 · B","b"],[1250,"DIY Payroll Without Penalties",G.b,"81 · B","b"],[1220,"Payroll for Small Teams",G.c,"72 · C","c"],[860,"How to Do Payroll",'#7d7d7d',"59 · D","d"]];
+   let h=`<div class="abs pill" style="left:64px;top:290px;opacity:${seg(t,0.1,0.4)}">[ TESTED BY SUEDE ]</div>`;
+   rows.forEach((r,i)=>{const p=eo(seg(t,0.2+i*.15,1.8+i*.15));const n=Math.round(r[0]/2140*24);const y=390+i*150;
+     h+=`<div class="abs" style="left:64px;top:${y}px;width:620px">${dots(24,[r[2]],Math.round(n*p),20,5)}</div>
+     <div class="abs" style="left:64px;top:${y+30}px;opacity:${seg(t,.3+i*.15,.8+i*.15)}"><span class="bnum">${fmt(r[0]*p)}</span><span class="bnum"><small>clicks</small></span></div>
+     <div class="abs btt" style="left:64px;top:${y+104}px;opacity:${seg(t,.3+i*.15,.8+i*.15)}">${r[1]}</div>
+     <div class="abs badge g${r[4]}" style="right:64px;top:${y+40}px;font-size:22px;opacity:${seg(t,1.4+i*.15,1.7+i*.15)}">${r[3]}</div>`});
+   return h+kin([["Suede"],["tests"],["titles","hl"]],t,2.2)}],
+ [9.0,13.8,"> TITLES SUEDE TESTS A WEEK","[ DAY 02 ]","Every page already on page 1 gets a test. All at once.",(t)=>{
+   const n=Math.round(lerp(0,25,eo(seg(t,0.2,3.2))));
+   let h=`<div class="abs disp" style="left:64px;top:270px;font-size:150px;font-weight:700;color:var(--ink);line-height:1">${n}</div><div class="abs pill" style="left:${n>9?290:200}px;top:318px;background:var(--ink);color:#000;border-color:var(--ink);font-weight:700">TITLES A WEEK</div>`;
+   TITLES.forEach((c,i)=>{const p=eback(seg(t,0.3+i*.2,0.8+i*.2));const col=i%3,row=Math.floor(i/3);
+     h+=tile(c[0],c[1],c[2],`left:${64+col*326}px;top:${470+row*200}px;opacity:${seg(t,0.3+i*.2,0.5+i*.2)};transform:scale(${lerp(.85,1,p)})`,i)});
+   return h+kin([["on"],["every"],["page","hl"],["at"],["once"]],t,1.8,0.15)}],
+ [13.8,18.6,"> WHY CLICKS MATTER","[ DAY 04 ]","Google witnesses testified that click data feeds its ranking systems.",(t)=>{
+   const p=eo(seg(t,0.1,0.6));
+   const s="Witness testimony described Navboost, a system that learns from user clicks.";
+   return `<div class="abs doc" style="opacity:${p};transform:translateY(${(1-p)*40}px)">
+     <div style="font-size:22px;color:var(--muted);letter-spacing:.1em">&gt; PUBLIC RECORD</div>
+     <div class="disp" style="font-size:44px;font-weight:600;color:var(--ink);margin-top:18px">United States v. Google LLC</div>
+     <div style="font-size:22px;margin-top:10px;color:var(--muted)">Trial testimony · 2023</div>
+     <div style="height:2px;background:var(--line);margin:26px 0 30px"></div>
+     <div style="font-size:32px;line-height:1.5;color:var(--text)">${typed(s,t,0.8,3.0)}<span style="opacity:${Math.floor(t*2.5)%2};color:var(--ink)">▌</span></div>
+     <div class="badge ga abs" style="right:44px;bottom:36px;font-size:24px;opacity:${seg(t,3.1,3.4)}">CLICKS · SIGNAL</div></div>`
+   + kin([["clicks"],["count","hl"]],t,1.8)}],
+ [18.6,23.4,"> NEW TITLE VS. NEW ARTICLE","[ DAY 05 ]","A new article: 3 to 6 months. A title test: about two weeks.",(t)=>{
+   const a=eo(seg(t,0.3,3.6)), b=eo(seg(t,0.3,1.6));
+   return `<div class="abs pill" style="left:64px;top:300px">[ NEW ARTICLE ]</div>
+   <div class="abs" style="left:64px;top:380px;width:952px">${dots(36,['#7d7d7d'],Math.round(6*a),20,5)}</div>
+   <div class="abs disp" style="left:64px;top:430px;font-size:64px;font-weight:600;color:var(--muted)">3 to 6 months</div>
+   <div class="abs pill" style="left:64px;top:580px;background:var(--ink);color:#000;border-color:var(--ink);font-weight:700">[ NEW TITLE ]</div>
+   <div class="abs" style="left:64px;top:660px;width:952px">${dots(36,[G.a],Math.round(36*b),20,5)}</div>
+   <div class="abs disp" style="left:64px;top:710px;font-size:64px;font-weight:600;color:${G.a};opacity:${seg(t,1.3,1.7)}">Day 14 ✓</div>`
+   + kin([["takes"],["two","hl"],["weeks","hl"]],t,1.8)}],
+ [23.4,28.6,"> THE VERDICT","[ DAY 09 ]","Math calls it. A win has to beat the control pages, not just look up.",(t)=>{
+   const V=[["/payroll-yourself","CTR 0.45% → 0.84% · z +3.62","WIN","ga"],["/bookkeeping-checklist","CTR 0.39% → 0.45% · z +0.56","INCONCLUSIVE","gd"],["/contractors","rank moved 1.7 spots · z +3.05","CONFOUNDED","gc"],["/invoice-templates","CTR 1.9% → 1.2% · z −2.40","LOSS","gx"]];
+   let h='';V.forEach((v,i)=>{const p=eo(seg(t,0.2+i*.35,0.7+i*.35));const s=eback(seg(t,0.7+i*.35,1.05+i*.35));
+     h+=`<div class="abs vrow" style="top:${300+i*160}px;opacity:${p};transform:translateY(${(1-p)*30}px)"><div class="n">0${i+1}</div><div class="p">${v[0]}<small>${v[1]}</small></div><div class="badge ${v[3]}" style="transform:scale(${s})">${v[2]}</div></div>`});
+   return h+kin([["math","hl"],["decides"]],t,2.2)}],
+ [28.6,32.8,"> KEEP THE WINNERS","[ DAY 14 ]","Winners stay live. Losers roll back. Next batch starts Monday.",(t)=>{
+   let h='';const L=[["How to Do Payroll Yourself in 7 Steps",1,44],["Payroll for Small Teams",0],["Bookkeeping Checklist + Free Template",1,30],["Invoice Templates That Get Paid",0],["Accrual Accounting in 2 Minutes",1,17]];
+   L.forEach((l,i)=>{const p=eo(seg(t,0.1+i*.12,0.5+i*.12));const k=seg(t,1.0+i*.15,1.3+i*.15);const win=l[1];const y=300+i*130;
+     h+=`<div class="abs" style="left:64px;top:${y}px;width:952px;height:106px;border-radius:4px;display:flex;align-items:center;padding:0 28px;gap:20px;font-size:32px;font-weight:600;opacity:${win?p:p*(1-0.55*k)};
+       background:${win&&k>.5?'var(--a-bg)':'var(--paper)'};border:2px solid ${win&&k>.5?'var(--a)':'var(--line)'};color:${win?'var(--ink)':'var(--faint)'};text-decoration:${!win&&k>.5?'line-through':'none'}">
+       <span class="mono" style="color:${win?G.a:'#7d7d7d'}">${win?'[✓]':'[↺]'}</span><span style="flex:1">${l[0]}</span>
+       ${win?`<span class="mono" style="color:${G.a};font-size:28px;opacity:${eo(seg(t,1.3+i*.15,1.7+i*.15))}">+${l[2]} clicks</span>`:`<span class="mono" style="font-size:24px;opacity:${k}">REVERTED</span>`}</div>`});
+   return h+kin([["keep"],["winners","hl"]],t,1.8)}],
+ [32.8,36.5,"> SUEDE SEO, BY SUEDE AI","","Suede SEO. Your titles, tested every week.",(t)=>{
+   const p=eback(seg(t,0.1,0.8)),q=eo(seg(t,0.5,1.1)),r=eo(seg(t,1.0,1.6));
+   return `<div class="abs" style="left:390px;top:360px;width:300px;height:300px;transform:scale(${lerp(.8,1,p)});opacity:${seg(t,0.1,0.4)}"><img src="logo.png" style="width:300px;height:300px"></div>
+   <div class="abs cta disp" style="top:720px;font-size:110px;font-weight:700;color:var(--ink);opacity:${q}">Suede SEO</div>
+   <div class="abs cta mono" style="top:870px;font-size:30px;letter-spacing:.08em;color:var(--muted);opacity:${q}">&gt; TEST TITLES. KEEP WINNERS. REPEAT.</div>
+   <div class="abs cta" style="top:1000px;opacity:${r};transform:translateY(${(1-r)*20}px)"><span class="btn">SUEDEAI.AI ↗</span></div>`}]
+];
+const TOTAL=36.5;
+function render(T){
+  let i=S.findIndex(s=>T>=s[0]&&T<s[1]); if(i<0)i=S.length-1;
+  const s=S[i], t=T-s[0], dur=s[1]-s[0];
+  const fin=seg(t,0,0.2), fout=1-seg(t,dur-0.2,dur);
+  const op=Math.min(fin,fout);
+  $('scenes').innerHTML=`<div class="abs scene" style="opacity:${op}">${s[5](t,dur)}</div>`;
+  $('label').textContent=s[2]; $('day').textContent=s[3];
+  const dn=(s[3].match(/\d+/)||['14'])[0];
+  $('bignum').textContent=i===S.length-1?'':dn; $('bignum').style.opacity=op;
+  const cur=+dn||1, nxt=i<S.length-1?(+(S[i+1][3].match(/\d+/)||[14])[0]||1):14;
+  const end=i===0?1:(i===S.length-1?14:Math.max(1,lerp(cur,nxt,seg(t,0.3,dur))));
+  const x=(end-1)/13*W; $('knob').style.left=x+'px'; $('tlfill').style.width=x+'px';
+  $('dof').textContent=`Day ${Math.max(1,Math.floor(end))} of 14`;
+  const c=$('cap'); const cp=eo(seg(t,0.3,0.6))*fout; c.style.opacity=cp; c.textContent=s[4];
+}
+window.render=render; window.TOTAL=TOTAL; window.FPS=FPS;
+render(0);
+</script></body></html>
