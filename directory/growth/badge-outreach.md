@@ -26,7 +26,7 @@ The badge reflects structural and documentation quality; it is not a security ce
 
 Jason / Suede AI
 
-P.S. The directory and its grading rubric are open source. A star on GitHub puts graded skills in front of more builders: https://github.com/JasonColapietro/suede-creator-skills
+P.S. Suede AI Skills and the grading rubric are open source. A star on GitHub puts graded skills in front of more builders: https://github.com/JasonColapietro/suede-creator-skills
 
 ## 2. coreyhaines31/marketingskills
 
@@ -50,7 +50,7 @@ The badge reflects structural and documentation quality; it is not a security ce
 
 Jason / Suede AI
 
-P.S. The directory and its grading rubric are open source. A star on GitHub puts graded skills in front of more builders: https://github.com/JasonColapietro/suede-creator-skills
+P.S. Suede AI Skills and the grading rubric are open source. A star on GitHub puts graded skills in front of more builders: https://github.com/JasonColapietro/suede-creator-skills
 
 ## 3. vercel-labs/skills
 
@@ -74,7 +74,7 @@ The badge reflects structural and documentation quality; it is not a security ce
 
 Jason / Suede AI
 
-P.S. The directory and its grading rubric are open source. A star on GitHub puts graded skills in front of more builders: https://github.com/JasonColapietro/suede-creator-skills
+P.S. Suede AI Skills and the grading rubric are open source. A star on GitHub puts graded skills in front of more builders: https://github.com/JasonColapietro/suede-creator-skills
 
 ## 4. microsoft/azure-skills
 
@@ -98,7 +98,7 @@ The badge reflects structural and documentation quality; it is not a security ce
 
 Jason / Suede AI
 
-P.S. The directory and its grading rubric are open source. A star on GitHub puts graded skills in front of more builders: https://github.com/JasonColapietro/suede-creator-skills
+P.S. Suede AI Skills and the grading rubric are open source. A star on GitHub puts graded skills in front of more builders: https://github.com/JasonColapietro/suede-creator-skills
 
 ## 5. anthropics/skills
 
@@ -122,7 +122,7 @@ The badge reflects structural and documentation quality; it is not a security ce
 
 Jason / Suede AI
 
-P.S. The directory and its grading rubric are open source. A star on GitHub puts graded skills in front of more builders: https://github.com/JasonColapietro/suede-creator-skills
+P.S. Suede AI Skills and the grading rubric are open source. A star on GitHub puts graded skills in front of more builders: https://github.com/JasonColapietro/suede-creator-skills
 
 ## 6. obra/superpowers
 
@@ -146,7 +146,7 @@ The badge reflects structural and documentation quality; it is not a security ce
 
 Jason / Suede AI
 
-P.S. The directory and its grading rubric are open source. A star on GitHub puts graded skills in front of more builders: https://github.com/JasonColapietro/suede-creator-skills
+P.S. Suede AI Skills and the grading rubric are open source. A star on GitHub puts graded skills in front of more builders: https://github.com/JasonColapietro/suede-creator-skills
 
 ## 7. mattpocock/skills
 
@@ -170,7 +170,7 @@ The badge reflects structural and documentation quality; it is not a security ce
 
 Jason / Suede AI
 
-P.S. The directory and its grading rubric are open source. A star on GitHub puts graded skills in front of more builders: https://github.com/JasonColapietro/suede-creator-skills
+P.S. Suede AI Skills and the grading rubric are open source. A star on GitHub puts graded skills in front of more builders: https://github.com/JasonColapietro/suede-creator-skills
 
 ## 8. google/skills
 
@@ -194,7 +194,7 @@ The badge reflects structural and documentation quality; it is not a security ce
 
 Jason / Suede AI
 
-P.S. The directory and its grading rubric are open source. A star on GitHub puts graded skills in front of more builders: https://github.com/JasonColapietro/suede-creator-skills
+P.S. Suede AI Skills and the grading rubric are open source. A star on GitHub puts graded skills in front of more builders: https://github.com/JasonColapietro/suede-creator-skills
 
 ## 9. nextlevelbuilder/ui-ux-pro-max-skill
 
@@ -218,7 +218,7 @@ The badge reflects structural and documentation quality; it is not a security ce
 
 Jason / Suede AI
 
-P.S. The directory and its grading rubric are open source. A star on GitHub puts graded skills in front of more builders: https://github.com/JasonColapietro/suede-creator-skills
+P.S. Suede AI Skills and the grading rubric are open source. A star on GitHub puts graded skills in front of more builders: https://github.com/JasonColapietro/suede-creator-skills
 
 ## 10. jeffallan/claude-skills
 
@@ -242,7 +242,7 @@ The badge reflects structural and documentation quality; it is not a security ce
 
 Jason / Suede AI
 
-P.S. The directory and its grading rubric are open source. A star on GitHub puts graded skills in front of more builders: https://github.com/JasonColapietro/suede-creator-skills
+P.S. Suede AI Skills and the grading rubric are open source. A star on GitHub puts graded skills in front of more builders: https://github.com/JasonColapietro/suede-creator-skills
 
 ## 11. expo/skills
 
@@ -266,7 +266,7 @@ The badge reflects structural and documentation quality; it is not a security ce
 
 Jason / Suede AI
 
-P.S. The directory and its grading rubric are open source. A star on GitHub puts graded skills in front of more builders: https://github.com/JasonColapietro/suede-creator-skills
+P.S. Suede AI Skills and the grading rubric are open source. A star on GitHub puts graded skills in front of more builders: https://github.com/JasonColapietro/suede-creator-skills
 
 ## 12. neondatabase/agent-skills
 
@@ -290,7 +290,7 @@ The badge reflects structural and documentation quality; it is not a security ce
 
 Jason / Suede AI
 
-P.S. The directory and its grading rubric are open source. A star on GitHub puts graded skills in front of more builders: https://github.com/JasonColapietro/suede-creator-skills
+P.S. Suede AI Skills and the grading rubric are open source. A star on GitHub puts graded skills in front of more builders: https://github.com/JasonColapietro/suede-creator-skills
 
 ## 13. pbakaus/impeccable
 
@@ -314,7 +314,7 @@ The badge reflects structural and documentation quality; it is not a security ce
 
 Jason / Suede AI
 
-P.S. The directory and its grading rubric are open source. A star on GitHub puts graded skills in front of more builders: https://github.com/JasonColapietro/suede-creator-skills
+P.S. Suede AI Skills and the grading rubric are open source. A star on GitHub puts graded skills in front of more builders: https://github.com/JasonColapietro/suede-creator-skills
 
 ## 14. trailofbits/skills
 
@@ -338,7 +338,7 @@ The badge reflects structural and documentation quality; it is not a security ce
 
 Jason / Suede AI
 
-P.S. The directory and its grading rubric are open source. A star on GitHub puts graded skills in front of more builders: https://github.com/JasonColapietro/suede-creator-skills
+P.S. Suede AI Skills and the grading rubric are open source. A star on GitHub puts graded skills in front of more builders: https://github.com/JasonColapietro/suede-creator-skills
 
 ## 15. supabase/agent-skills
 
@@ -362,7 +362,7 @@ The badge reflects structural and documentation quality; it is not a security ce
 
 Jason / Suede AI
 
-P.S. The directory and its grading rubric are open source. A star on GitHub puts graded skills in front of more builders: https://github.com/JasonColapietro/suede-creator-skills
+P.S. Suede AI Skills and the grading rubric are open source. A star on GitHub puts graded skills in front of more builders: https://github.com/JasonColapietro/suede-creator-skills
 
 ## 16. wondelai/skills
 
@@ -386,7 +386,7 @@ The badge reflects structural and documentation quality; it is not a security ce
 
 Jason / Suede AI
 
-P.S. The directory and its grading rubric are open source. A star on GitHub puts graded skills in front of more builders: https://github.com/JasonColapietro/suede-creator-skills
+P.S. Suede AI Skills and the grading rubric are open source. A star on GitHub puts graded skills in front of more builders: https://github.com/JasonColapietro/suede-creator-skills
 
 ## 17. tt-a1i/archify
 
@@ -410,7 +410,7 @@ The badge reflects structural and documentation quality; it is not a security ce
 
 Jason / Suede AI
 
-P.S. The directory and its grading rubric are open source. A star on GitHub puts graded skills in front of more builders: https://github.com/JasonColapietro/suede-creator-skills
+P.S. Suede AI Skills and the grading rubric are open source. A star on GitHub puts graded skills in front of more builders: https://github.com/JasonColapietro/suede-creator-skills
 
 ## 18. NVIDIA/skills
 
@@ -434,7 +434,7 @@ The badge reflects structural and documentation quality; it is not a security ce
 
 Jason / Suede AI
 
-P.S. The directory and its grading rubric are open source. A star on GitHub puts graded skills in front of more builders: https://github.com/JasonColapietro/suede-creator-skills
+P.S. Suede AI Skills and the grading rubric are open source. A star on GitHub puts graded skills in front of more builders: https://github.com/JasonColapietro/suede-creator-skills
 
 ## 19. github/awesome-copilot
 
@@ -458,7 +458,7 @@ The badge reflects structural and documentation quality; it is not a security ce
 
 Jason / Suede AI
 
-P.S. The directory and its grading rubric are open source. A star on GitHub puts graded skills in front of more builders: https://github.com/JasonColapietro/suede-creator-skills
+P.S. Suede AI Skills and the grading rubric are open source. A star on GitHub puts graded skills in front of more builders: https://github.com/JasonColapietro/suede-creator-skills
 
 ## 20. aws/agent-toolkit-for-aws
 
@@ -482,7 +482,7 @@ The badge reflects structural and documentation quality; it is not a security ce
 
 Jason / Suede AI
 
-P.S. The directory and its grading rubric are open source. A star on GitHub puts graded skills in front of more builders: https://github.com/JasonColapietro/suede-creator-skills
+P.S. Suede AI Skills and the grading rubric are open source. A star on GitHub puts graded skills in front of more builders: https://github.com/JasonColapietro/suede-creator-skills
 
 ## 21. AgriciDaniel/claude-seo
 
@@ -506,7 +506,7 @@ The badge reflects structural and documentation quality; it is not a security ce
 
 Jason / Suede AI
 
-P.S. The directory and its grading rubric are open source. A star on GitHub puts graded skills in front of more builders: https://github.com/JasonColapietro/suede-creator-skills
+P.S. Suede AI Skills and the grading rubric are open source. A star on GitHub puts graded skills in front of more builders: https://github.com/JasonColapietro/suede-creator-skills
 
 ## 22. phuryn/pm-skills
 
@@ -530,7 +530,7 @@ The badge reflects structural and documentation quality; it is not a security ce
 
 Jason / Suede AI
 
-P.S. The directory and its grading rubric are open source. A star on GitHub puts graded skills in front of more builders: https://github.com/JasonColapietro/suede-creator-skills
+P.S. Suede AI Skills and the grading rubric are open source. A star on GitHub puts graded skills in front of more builders: https://github.com/JasonColapietro/suede-creator-skills
 
 ## 23. vercel-labs/agent-skills
 
@@ -554,7 +554,7 @@ The badge reflects structural and documentation quality; it is not a security ce
 
 Jason / Suede AI
 
-P.S. The directory and its grading rubric are open source. A star on GitHub puts graded skills in front of more builders: https://github.com/JasonColapietro/suede-creator-skills
+P.S. Suede AI Skills and the grading rubric are open source. A star on GitHub puts graded skills in front of more builders: https://github.com/JasonColapietro/suede-creator-skills
 
 ## 24. deanpeters/Product-Manager-Skills
 
@@ -578,7 +578,7 @@ The badge reflects structural and documentation quality; it is not a security ce
 
 Jason / Suede AI
 
-P.S. The directory and its grading rubric are open source. A star on GitHub puts graded skills in front of more builders: https://github.com/JasonColapietro/suede-creator-skills
+P.S. Suede AI Skills and the grading rubric are open source. A star on GitHub puts graded skills in front of more builders: https://github.com/JasonColapietro/suede-creator-skills
 
 ## 25. resend/resend-skills
 
@@ -602,4 +602,4 @@ The badge reflects structural and documentation quality; it is not a security ce
 
 Jason / Suede AI
 
-P.S. The directory and its grading rubric are open source. A star on GitHub puts graded skills in front of more builders: https://github.com/JasonColapietro/suede-creator-skills
+P.S. Suede AI Skills and the grading rubric are open source. A star on GitHub puts graded skills in front of more builders: https://github.com/JasonColapietro/suede-creator-skills

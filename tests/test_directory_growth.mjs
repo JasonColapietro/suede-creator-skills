@@ -285,8 +285,20 @@ test('GitHub star buttons appear on every directory page and in every outgoing m
   for (const page of ['index', 'finder/index', 'badges/index', 'rising/index', 'state-of-agent-skills/index', 'submit/index'])
     assert.equal(count(read(`docs/directory/${page}.html`)), 3, `${page}: nav + panel + footer`);
   assert.ok(read(`directory/growth/issues/${breakout.date}.md`).includes(repo) || issue.includes(repo));
-  assert.ok(issue.includes(`[Star the directory on GitHub](${repo})`));
-  assert.ok(read('directory/growth/badge-outreach.md').includes(`P.S. The directory and its grading rubric are open source. A star on GitHub puts graded skills in front of more builders: ${repo}`));
+  assert.ok(issue.includes(`[Star Suede AI Skills on GitHub](${repo})`));
+  assert.ok(read('directory/growth/badge-outreach.md').includes(`P.S. Suede AI Skills and the grading rubric are open source. A star on GitHub puts graded skills in front of more builders: ${repo}`));
   assert.equal(brief(feed, ['sales']).star, repo);
-  assert.match(read('directory/suede-directory/SKILL.md'), /star the directory on\nGitHub/);
+  assert.match(read('directory/suede-directory/SKILL.md'), /star Suede AI Skills on\nGitHub/);
+});
+
+test('every star call to action names Suede AI Skills and points at its repository', () => {
+  const repo = 'https://github.com/JasonColapietro/suede-creator-skills';
+  assert.equal((issue.match(/Suede AI Skills.{0,40}on GitHub|star it on GitHub/g) || []).length, 3, 'newsletter: three star lines');
+  for (const page of ['docs/index.html', 'docs/guide.html', 'docs/skills/android-app-factory.html', 'docs/listings.html'])
+    assert.ok(read(page).includes(`href="${repo}" target="_blank" rel="noopener">★ Star Suede AI Skills on GitHub</a>`), page);
+  assert.doesNotMatch(read('docs/directory/finder/index.html'), /Star the directory/);
+  assert.ok(read('docs/directory/finder/index.html').includes('Star Suede AI Skills on GitHub'));
+  assert.equal(JSON.parse(read('docs/directory/weekly.json')).star, repo);
+  assert.match(read('directory/suede-directory/scripts/search.mjs'), new RegExp(`star: '${repo}'`));
+  assert.match(read('README.md'), /img\.shields\.io\/github\/stars\/JasonColapietro\/suede-creator-skills/);
 });

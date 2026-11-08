@@ -110,6 +110,7 @@ export function buildIssue({ index, feed, breakout, playbook, date }) {
   if (money.length) L.push(`- **Money skills are climbing.** ${money.map((t) => `${t.name} ${pct(t.change_pct)}`).join(', ')} week over week.`);
   if (hero) L.push(`- **A new repo hit ${fmt(hero.stars)} stars in its first week.** [${hero.repo}](${hero.url}) leads the breakout list.`);
   if (lowGraded) L.push(`- **Popular isn't the same as good.** [${lowGraded.name}](${lowGraded.listing}) drew ${fmt(lowGraded.weekly_installs)} installs this week with a ${lowGraded.grade} grade, and only ${fmt(aCount)} of ${fmt(third.length)} skills earn an A. The 10 most-installed and the 10 best-graded skills have ${overlap === 0 ? 'zero' : overlap} in common.`);
+  if (playbook.star) L.push(`- **Every grade here comes from Suede AI Skills.** Free and open source: [⭐ star it on GitHub](${playbook.star}).`);
   L.push('', '---', '', `## 💼 ${ideas.length} AI businesses in two models, ranked by score: start with #1`, '');
   L.push('We scored each idea on four questions, 1–5 each, and ranked them by score within each business model:',
     '- **Demand:** is this week\'s install growth rising for this kind of work?',
@@ -123,7 +124,7 @@ export function buildIssue({ index, feed, breakout, playbook, date }) {
     if (k === rank('autonomous').length) L.push('### You sell it, agents do the heavy lifting', '');
     L.push(card(i, k + 1));
   });
-  L.push(`> **Know someone picking an AI side business? Forward them #1.**`, '', ...(playbook.star ? [`**⭐ [Star the directory on GitHub](${playbook.star})** so more builders find graded skills.`, ''] : []), '---', '');
+  L.push(`> **Know someone picking an AI side business? Forward them #1.**`, '', ...(playbook.star ? [`**⭐ [Star Suede AI Skills on GitHub](${playbook.star})** so more builders find graded skills.`, ''] : []), '---', '');
   L.push('## 🧰 Pick your stack: the best-graded tool for each money job', '', 'The best-graded skill people actually use (500+ installs), then the Agent Studio workflow that runs the job for you.', '');
   L.push(...playbook.jobs.map(job), '');
   if (restricted) L.push('⚠️ Anthropic\'s document skills (docx, pdf, xlsx) use a restricted license. Read the terms before using them in paid client work.', '');
@@ -147,7 +148,7 @@ export function buildIssue({ index, feed, breakout, playbook, date }) {
     'npx skills add https://github.com/JasonColapietro/suede-creator-skills/tree/main/directory/suede-directory', '```', '',
     `Then ask your agent: **"Brief me on agent skills for sales, video and SEO, and remember those interests."** Each week it pulls the rising skills, fastest-growing topics, new listings and repo stars for just what you care about. Your interests stay on your machine. [How it works →](${SITE}/finder/#briefing)`, '',
     `**Ready to start #1? [→ Open the ${ctaTpl[1]} template](${studio}/build/new?template=${ctaTpl[0]})**`, '',
-    `**Next week:** a new ranking, plus who gained the most GitHub stars that week. Got this forwarded? [Subscribe](${playbook.subscribe}) so you get the next one.${playbook.star ? ` The finder is open source: [⭐ star it on GitHub](${playbook.star}).` : ''}`, '', '---', '',
+    `**Next week:** a new ranking, plus who gained the most GitHub stars that week. Got this forwarded? [Subscribe](${playbook.subscribe}) so you get the next one.${playbook.star ? ` The finder is open source: [⭐ star Suede AI Skills on GitHub](${playbook.star}).` : ''}`, '', '---', '',
     `*Install counts come from skills.sh and cover installs made with the skills CLI during the week ending ${shortDate(feed.install_snapshot)}. Grades come from the ${longDate(feed.quality_snapshot)} Suede AI Skills Directory snapshot. Star counts are from GitHub on ${shortDate(feed.stars_snapshot || date)}. Suede AI's own skills are excluded from every directory ranking. Agent Studio prices are template defaults; live runs bill from prepaid credit, with packs starting at $1. Publish skills? If yours scores 80 or higher, [add a quality badge to your README](${SITE}/badges/).*`, '');
   return L.join('\n');
 }
