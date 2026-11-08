@@ -822,6 +822,7 @@ function page({ here, title, description, keywords, h1Html, body, jsonld, ogType
     `    <link rel="preload" href="${a}fonts/pixelify-sans-var-latin.woff2" as="font" type="font/woff2" crossorigin>`,
     `    <link rel="stylesheet" href="${a}directory.css">`,
     `    <script src="${a}directory.js" defer></script>`,
+    here === "directory/" ? `    <link rel="stylesheet" href="${a}workflow-builder.css">\n    <script type="module" src="${a}workflow-builder.js"></script>` : null,
     `    <link rel="alternate" type="application/rss+xml" title="Suede AI Skills Directory: new listings and guides" href="${absolute ? "/directory/feed.xml" : rel(here, "directory/feed.xml")}">`,
     here.startsWith("directory/agents/") ? `    <link rel="stylesheet" href="${a}agents.css">\n    <script src="${a}agents.js" defer></script>` : null,
     extraStyle ? `    <style>${extraStyle}</style>` : null,
@@ -2420,6 +2421,14 @@ function renderHub() {
   const here = "directory/";
   const bc = crumbs(here, [["", "Home"], [null, "Directory"]]);
   const catCards = categories.map((c) => `<a href="${rel(here, catPath(c.slug))}" data-category="${esc(c.slug)}">${pixelIcon(c.slug, { size: 14 })}<span>${esc(c.title)}</span><span class="count-chip">${fmt(skillsByCat.get(c.slug).length)}</span></a>`).join("\n");
+  // Reading cards use only verified, already-published writing by Jason.
+  const articleSource = JSON.parse(fs.readFileSync(path.join(repoRoot, "directory/editorial/workflow-articles.json"), "utf8"));
+  const articles = articleSource.articles.map((article) => {
+    if (article.author !== "Jason Colapietro" || !article.authorship_source || !/^https:\/\/suedeai\.directory\/(stacks|guides)\/[a-z0-9-]+\/$/.test(article.href) || !Array.isArray(article.intents) || !article.intents.length || !article.title || !article.summary) throw new Error(`Invalid workflow article: ${article.id}`);
+    const { id, intents, title, summary, href, author } = article;
+    return { id, intents, title, summary, href, author };
+  });
+  files.set("directory/workflow-articles.json", JSON.stringify({ articles }, null, 2) + "\n");
   files.set("directory/skill-matrix.svg", skillMatrix(data.skills, { cols: 96, title: `${fmt(data.skills.length)} listed skills, one dot each, colored by Suede Skill Check grade` }));
   const discovery = [...data.skills].sort((a, b) => b.lists.length - a.lists.length || Number(b.featured) - Number(a.featured) || a.name.localeCompare(b.name));
   files.set("directory/search-index.json", JSON.stringify(discovery.map((s) => ({
@@ -2500,7 +2509,26 @@ ${kindCards.map(([p, name, text, count, icon]) => `          <a class="kind-card
         </div>
       </section>`;
 
-  const body = `${boardHtml}
+  const workflowHtml = `      <section class="workflow-builder" id="workflow-builder" aria-labelledby="workflow-title" data-workflow-builder>
+        <div class="workflow-intro"><div><p class="eyebrow">From idea to first step</p><h2 id="workflow-title">Your next idea. A way to build it.</h2><p>Describe the result. Get a step-by-step workflow with complementary skills and a few tips to get moving.</p></div><span class="workflow-mark" aria-hidden="true">01 → 02 → 03</span></div>
+        <form data-workflow-form hidden novalidate>
+          <label for="workflow-brief">What do you want to build?</label>
+          <div class="workflow-composer"><textarea id="workflow-brief" rows="3" maxlength="600" placeholder="A landing page for my SaaS, with clear copy and a polished design…" aria-describedby="workflow-help workflow-status"></textarea><div class="workflow-submit-row"><span id="workflow-help">Task-based matches from the directory. Your brief stays in this browser.</span><button type="submit" class="button workflow-submit">Build my workflow <span aria-hidden="true">↗</span></button></div></div>
+          <div class="workflow-examples"><span>Start with an idea</span><div data-workflow-examples></div></div>
+        </form>
+        <p id="workflow-status" class="workflow-status" role="status" aria-live="polite" data-workflow-status></p>
+        <section class="workflow-results" aria-labelledby="workflow-result-title" data-workflow-results hidden>
+          <div class="workflow-result-head"><div><p class="eyebrow">Suggested workflow</p><h3 id="workflow-result-title" tabindex="-1" data-workflow-heading></h3><p class="muted" data-workflow-summary></p></div><button type="button" class="button" data-workflow-copy>Copy workflow</button></div>
+          <ol class="workflow-steps" data-workflow-steps></ol>
+          <aside class="workflow-tips"><h4>A few tips before you start</h4><ul data-workflow-tips></ul></aside>
+          <aside class="workflow-reading" data-workflow-reading hidden></aside>
+          <div class="workflow-result-footer"><p>Review each skill’s setup and license before installing. Quality scores describe published files, not security or a guarantee of fit.</p><button type="button" data-workflow-refine>Refine this workflow <span aria-hidden="true">↑</span></button></div>
+          <details class="workflow-export" data-workflow-copy-fallback><summary>View the complete workflow</summary><label for="workflow-export">Workflow text, ready for your agent</label><textarea id="workflow-export" rows="12" readonly data-workflow-export></textarea></details>
+        </section>
+        <noscript><p><a href="stacks/">Explore recommended stacks</a> for step-by-step skill combinations. Turn on JavaScript to match a brief here.</p></noscript>
+      </section>`;
+  const body = `${workflowHtml}
+${boardHtml}
 ${bestOfSection(here)}
       <section class="directory-browser" id="browse" aria-labelledby="browse-title" data-directory-browser>
         <div class="browse-heading"><h2 id="browse-title">Find your next skill</h2><a class="shortlist-jump" href="#task-shortlist" hidden>Your shortlist <span aria-hidden="true">↓</span></a></div>

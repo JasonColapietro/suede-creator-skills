@@ -7,6 +7,7 @@ import { fileURLToPath } from 'node:url';
 import { verifySkillsLanding } from './test_skills_landing_browser.mjs';
 import { verifyFeaturedNavigation, verifyFeaturedOrder } from './test_featured_navigation_browser.mjs';
 import './test_directory_browse_client.mjs';
+import { verifyWorkflowBuilder, verifyStandaloneWorkflow } from './test_workflow_builder_browser.mjs';
 
 const { chromium } = await import(process.env.DIRECTORY_PLAYWRIGHT_MODULE || 'playwright');
 const root = fileURLToPath(new URL('../docs/', import.meta.url));
@@ -32,6 +33,8 @@ const waitSearch = () => page.waitForFunction(() => document.querySelector('[dat
 const noOverflow = async () => assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth), 'page overflows viewport');
 
 try {
+  await verifyWorkflowBuilder(page, base, output);
+  await verifyStandaloneWorkflow(page, output);
   await verifySkillsLanding(page, base, output);
   await verifyFeaturedNavigation(page, base, output);
   await page.setViewportSize({ width: 1440, height: 1000 });
