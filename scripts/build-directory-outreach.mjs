@@ -36,7 +36,7 @@ const markdown = ['# Badge outreach: first 25 repositories', '',
     `Hi ${q.repo.split('/')[0]} maintainers,`, '',
     `Your ${q.skill} skill scored ${q.score}/100 (grade ${q.grade}) in the Suede AI Skills Directory’s ${index[0].snapshot} assessment. The report shows every component and the source snapshot: ${q.report}`, '',
     `If that assessment is useful to your users, here is an optional README badge linking to the evidence:`, '', '```markdown', q.badge, '```', '',
-    `Listing: ${q.listing}`, '', 'The badge reflects structural and documentation quality; it is not a security certification. If the source has changed, the listing has a recheck-request link.', '', 'Jason / Suede AI', '', 'P.S. The directory and its grading rubric are open source. A star on GitHub puts graded skills in front of more builders: https://github.com/JasonColapietro/suede-creator-skills', '',
+    `Listing: ${q.listing}`, '', 'The badge reflects structural and documentation quality; it is not a security certification. If the source has changed, the listing has a recheck-request link.', '', 'Jason / Suede AI', '', 'P.S. Suede AI Skills and the grading rubric are open source. A star on GitHub puts graded skills in front of more builders: https://github.com/JasonColapietro/suede-creator-skills', '',
   ]),
 ].join('\n');
 for (const [file, text] of [['badge-outreach.json', JSON.stringify(queue, null, 2) + '\n'], ['badge-outreach.md', markdown]]) {

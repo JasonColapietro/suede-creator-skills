@@ -654,7 +654,7 @@ function starButton(variant = "") {
   return `<a class="gh-star${variant ? ` gh-star--${variant}` : ""}" href="${STAR_URL}" target="_blank" rel="noopener" data-gh-star aria-label="Star Suede AI Skills on GitHub${count ? `, ${count} stars` : ""}">${STAR_ICON}<span>Star</span>${count ? `<span class="gh-star-count">${count}</span>` : ""}</a>`;
 }
 const STAR_PAGES = new Set(["directory/", "directory/finder/", "directory/badges/", "directory/rising/", "directory/state-of-agent-skills/", "directory/submit/", "directory/featured/", "directory/check/"]);
-const starPanel = () => `<section class="panel star-panel" aria-labelledby="star-title"><div><h2 id="star-title">Star the directory on GitHub</h2><p>Every star puts graded skills in front of more builders. The directory, the finder and the grading rubric are open source.</p></div>${starButton("lg")}</section>`;
+const starPanel = () => `<section class="panel star-panel" aria-labelledby="star-title"><div><h2 id="star-title">Star Suede AI Skills on GitHub</h2><p>Free, graded agent skills for Claude Code, Codex and Cursor. Every star puts them in front of more builders.</p></div>${starButton("lg")}</section>`;
 
 function nav(here, absolute = false) {
   const rel = (h, p) => link(h, p, absolute);
@@ -731,7 +731,7 @@ function footer(here, note, absolute = false) {
   return `    <footer>
       <div class="shell">
         <p class="footer-note">${note}</p>
-        <div class="footer-star"><p>Like the directory? Star it on GitHub so more builders find graded skills.</p>${starButton("lg")}</div>
+        <div class="footer-star"><p>Star Suede AI Skills on GitHub so more builders find graded skills.</p>${starButton("lg")}</div>
         <div class="footer-inner">
           <div class="footer-brand">
             <img src="${a}suede-ai-logo-transparent.webp" alt="Suede AI" width="24" height="24" onerror="this.style.display='none'">

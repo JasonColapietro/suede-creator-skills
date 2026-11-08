@@ -55,6 +55,7 @@ export function weeklyFeed({ skills, topics, installsFor, installsDate, generate
     .sort((a, b) => (b.gained ?? -1) - (a.gained ?? -1) || b.stars - a.stars) : [];
   const ids = new Set([...moving.map(s => s.id), ...newest.map(s => s.id), ...topicRows.flatMap(t => t.best)]);
   return {
+    star: 'https://github.com/JasonColapietro/suede-creator-skills',
     about: 'Weekly feed of the Suede AI Skills Directory for agents and newsletters. Suede AI is excluded from every list. Quality scores measure published files, not runtime or security.',
     quality_snapshot: generated, install_snapshot: installsDate || null, install_source: 'https://skills.sh/',
     stars_snapshot: g?.date || null, stars_since: g?.since || null,

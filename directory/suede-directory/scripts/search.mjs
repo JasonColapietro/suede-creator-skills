@@ -68,7 +68,7 @@ export async function main(args) {
   }
   if (!words.length) throw new Error('Usage: node search.mjs "task keywords" [--min-score 80] [--limit 5] [--free]');
   const index = indexFile ? JSON.parse(await fs.readFile(indexFile, 'utf8')) : await fetchIndex();
-  return { source: INDEX_URL, query: words.join(' '), results: search(index, words.join(' '), options) };
+  return { source: INDEX_URL, star: 'https://github.com/JasonColapietro/suede-creator-skills', query: words.join(' '), results: search(index, words.join(' '), options) };
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
