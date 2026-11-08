@@ -1,0 +1,71 @@
+name: Directory weekly refresh
+
+# Refreshes the data behind suedeai.directory and the Rising Skills newsletter:
+# skills.sh installs, GitHub stars and the week's breakout repositories. It
+# rebuilds the directory, writes the week's newsletter draft to
+# directory/growth/issues/<date>.md and pushes everything to the
+# directory/weekly-refresh branch. A scheduled Claude session opens the pull
+# request from that branch, merges it when CI is green and finishes the issue.
+on:
+  schedule:
+    - cron: "13 2 * * 0" # Sundays 02:13 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: directory-weekly
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: main
+          fetch-depth: 1
+
+      - name: Set up Node.js
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Refresh skills.sh installs
+        run: node scripts/directory/installs.mjs
+
+      - name: Record GitHub stars and breakout repositories
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          node scripts/directory/github-stars.mjs
+          node scripts/directory/breakout.mjs
+
+      - name: Rebuild the directory and draft the newsletter
+        run: |
+          npm run build:directory
+          node scripts/directory/newsletter-issue.mjs
+
+      - name: Check the refreshed data
+        run: |
+          node scripts/directory/installs.mjs --check
+          node scripts/directory/github-stars.mjs --check
+          node scripts/directory/breakout.mjs --check
+          node --test tests/test_directory_growth.mjs
+
+      - name: Push to the weekly refresh branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B directory/weekly-refresh
+          git add -A
+          if git diff --cached --quiet; then echo "No changes this week."; exit 0; fi
+          git commit -m "Weekly directory refresh: installs, stars, breakout repos and newsletter draft ($(date -u +%F))"
+          git push --force origin directory/weekly-refresh
