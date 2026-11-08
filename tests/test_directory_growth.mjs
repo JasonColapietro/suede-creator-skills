@@ -194,11 +194,14 @@ test('finder scripts retry through the environment proxy when fetch cannot reach
     assert.equal(env.NODE_USE_ENV_PROXY, '1', key);
     assert.equal(env[key], 'http://p:1');
   }
-  // A proxy that refuses everything: the retried run reports one clear error instead of looping.
+  // A proxy that refuses everything. With direct internet (CI runners) the first fetch
+  // succeeds and exits 0; without it (sandboxes) the single retry fails. Either way the
+  // script never loops and reports at most one error.
   for (const script of ['search.mjs', 'brief.mjs']) {
     const r = spawnSync(process.execPath, [new URL(`../directory/suede-directory/scripts/${script}`, import.meta.url).pathname, ...(script === 'search.mjs' ? ['react'] : ['--interests', 'sales'])],
       { env: { PATH: process.env.PATH, HOME: os.tmpdir(), XDG_CONFIG_HOME: os.tmpdir(), HTTPS_PROXY: 'http://127.0.0.1:9', HTTP_PROXY: 'http://127.0.0.1:9' }, encoding: 'utf8', timeout: 60000 });
-    assert.notEqual(r.status, 0, script);
-    assert.equal((r.stderr.match(/failed:/g) || []).length, 1, `${script}: ${r.stderr}`);
+    const errors = (r.stderr.match(/failed:/g) || []).length;
+    assert.notEqual(r.status, null, `${script} timed out`);
+    assert.equal(errors, r.status === 0 ? 0 : 1, `${script}: ${r.stderr}`);
   }
 });
