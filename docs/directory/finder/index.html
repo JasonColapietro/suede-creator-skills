@@ -30,7 +30,7 @@
         "name": "Find Graded Agent Skills from Claude Code or Codex",
         "description": "Install the Suede directory finder for Claude Code, Codex or Cursor. Search by task and compare quality scores, licenses, reports and install commands.",
         "url": "https://skills.suedeai.ai/directory/finder/",
-        "dateModified": "2026-11-07",
+        "dateModified": "2026-11-08",
         "publisher": {
           "@type": "Organization",
           "@id": "https://suedeai.ai/#organization",
@@ -125,6 +125,7 @@
 <p class="lead">Ask “find a graded skill for React testing” and get a shortlist with scores, licenses, source reports and install commands.</p>
 <section class="panel"><h2>Install the finder</h2><pre><code id="finder-install">npx skills add https://github.com/JasonColapietro/suede-creator-skills/tree/main/directory/suede-directory</code></pre><button class="button" type="button" data-copy-target="finder-install">Copy install command</button><p>Choose your agent when the skills CLI asks. The finder requires Node.js 22 or later and reads the public index over HTTPS.</p><p><a href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/directory/suede-directory">Inspect the source and SKILL.md</a> · <a href="SKILL.md" download>Download SKILL.md</a> · <a href="search.mjs" download>Download the search script</a></p></section>
 <section class="panel"><h2>Try these requests</h2><ul><li>Find a free, graded skill for React testing.</li><li>Compare the best-scoring PostgreSQL skills and show their licenses.</li><li>Find a security-review skill scoring at least 80 and show its report.</li></ul><p>Searches run locally against the downloaded index. The finder returns commands for you to inspect; it does not install or execute a discovered skill. Suede AI’s own skills are excluded from its rankings.</p></section>
+<section class="panel" id="briefing"><h2>Get a weekly briefing on what you care about</h2><p>Tell your agent your interests once, and it summarizes each week’s rising skills, fastest-growing topics, new listings and repository stars for just those areas.</p><p>Try: “Brief me on agent skills for marketing, sales and video, and remember those interests.”</p><p>The finder saves your interests on your own machine and reads the public <a href="../weekly.json">weekly feed</a>. To get it every week, ask your agent to schedule the briefing, for example with <code>/loop 7d brief me on agent skills</code> in Claude Code or a scheduled task in Codex or Cursor.</p><pre><code>node brief.mjs --interests "marketing, sales, video" --save</code></pre><p><a href="brief.mjs" download>Download the briefing script</a></p></section>
 <section class="panel"><h2>Use it without an agent</h2><p>Save the search script, then run:</p><pre><code>node search.mjs "react testing" --min-score 80 --limit 5</code></pre><p>Scores describe structural quality in the dated snapshot. They do not certify runtime performance or security. <a href="../api/">Read the API documentation</a>.</p></section>
 
     </main>

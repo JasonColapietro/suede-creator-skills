@@ -4,6 +4,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { createHash } from 'node:crypto';
 import { isFirstParty } from './task-pages.mjs';
+import { starGains, validateStars } from './github-stars.mjs';
 
 export function comparisonPairs(topics, installsFor, limit = 50, retained = null, skills = []) {
   const candidates = new Map();
@@ -28,6 +29,42 @@ export function comparisonPairs(topics, installsFor, limit = 50, retained = null
   }
   return chosen
     .map(p => ({ ...p, slug: `${p.a.slug.slice(0, 35)}-vs-${p.b.slug.slice(0, 35)}-${createHash('sha256').update(`${p.a.id}|${p.b.id}`).digest('hex').slice(0, 8)}` }));
+}
+
+
+// The machine-readable weekly feed agents read for personal briefings: what
+// moved in the recorded week, by topic, plus new listings and repository stars.
+// Every figure comes from the saved snapshots; nothing is fetched at build time.
+export function weeklyFeed({ skills, topics, installsFor, installsDate, generated, stars, href }) {
+  const third = skills.filter(s => !isFirstParty(s));
+  const week = s => { const w = installsFor(s)?.weekly; return w && w.length >= 2 ? { last: w.at(-1), prev: w.at(-2) } : null; };
+  const pct = (a, b) => (b > 0 ? Math.round((a - b) / b * 100) : null);
+  const card = s => ({ id: s.id, name: s.display_name || s.name, repo: s.repo, description: String(s.description || '').slice(0, 220), score: s.score, grade: s.grade, category: s.category,
+    topics: topicIds.get(s.id) || [], license: s.license, cost_lane: s.lane, listing: href(s), ...(week(s) ? { weekly_installs: week(s).last, change_pct: pct(week(s).last, week(s).prev) } : {}) });
+  const topicIds = new Map(); for (const t of topics) for (const s of t.rows) topicIds.set(s.id, [...(topicIds.get(s.id) || []), t.topic.id]);
+  const moving = third.filter(week);
+  const topicRows = topics.map(t => {
+    const rows = t.rows.filter(s => !isFirstParty(s));
+    const w = rows.filter(week); const last = w.reduce((n, s) => n + week(s).last, 0), prev = w.reduce((n, s) => n + week(s).prev, 0);
+    const best = [...rows].sort((a, b) => b.score - a.score || (installsFor(b)?.installs || 0) - (installsFor(a)?.installs || 0) || a.id.localeCompare(b.id)).slice(0, 3);
+    return { id: t.topic.id, name: t.topic.name, skills: rows.length, weekly_installs: last, change_pct: pct(last, prev), best: best.map(s => s.id) };
+  }).filter(t => t.skills).sort((a, b) => b.weekly_installs - a.weekly_installs || a.id.localeCompare(b.id));
+  const newest = [...third].filter(s => s.listed_since).sort((a, b) => b.listed_since.localeCompare(a.listed_since) || b.score - a.score).slice(0, 50);
+  const g = stars ? starGains(stars) : null;
+  const repoStars = g ? Object.entries(g.repos).filter(([r]) => !isFirstParty({ repo: r })).map(([repo, v]) => ({ repo, ...v }))
+    .sort((a, b) => (b.gained ?? -1) - (a.gained ?? -1) || b.stars - a.stars) : [];
+  const ids = new Set([...moving.map(s => s.id), ...newest.map(s => s.id), ...topicRows.flatMap(t => t.best)]);
+  return {
+    about: 'Weekly feed of the Suede AI Skills Directory for agents and newsletters. Suede AI is excluded from every list. Quality scores measure published files, not runtime or security.',
+    quality_snapshot: generated, install_snapshot: installsDate || null, install_source: 'https://skills.sh/',
+    stars_snapshot: g?.date || null, stars_since: g?.since || null,
+    rising: [...moving].sort((a, b) => week(b).last - week(a).last || a.id.localeCompare(b.id)).slice(0, 25).map(s => s.id),
+    climbing: moving.filter(s => week(s).last >= 1000 && week(s).prev > 0).sort((a, b) => pct(week(b).last, week(b).prev) - pct(week(a).last, week(a).prev) || a.id.localeCompare(b.id)).slice(0, 25).map(s => s.id),
+    new_listings: newest.map(s => s.id),
+    topics: topicRows,
+    repositories: repoStars,
+    skills: Object.fromEntries(third.filter(s => ids.has(s.id)).sort((a, b) => a.id.localeCompare(b.id)).map(s => [s.id, card(s)])),
+  };
 }
 
 export function renderGrowth(c) {
@@ -135,11 +172,13 @@ ${installSection(here, s)}${qualityBadgeBlock(here, s)}${servicesCta("skill", s.
     body: `<p class="lead">Ask “find a graded skill for React testing” and get a shortlist with scores, licenses, source reports and install commands.</p>
 <section class="panel"><h2>Install the finder</h2><pre><code id="finder-install">npx skills add https://github.com/JasonColapietro/suede-creator-skills/tree/main/directory/suede-directory</code></pre><button class="button" type="button" data-copy-target="finder-install">Copy install command</button><p>Choose your agent when the skills CLI asks. The finder requires Node.js 22 or later and reads the public index over HTTPS.</p><p><a href="https://github.com/JasonColapietro/suede-creator-skills/tree/main/directory/suede-directory">Inspect the source and SKILL.md</a> · <a href="SKILL.md" download>Download SKILL.md</a> · <a href="search.mjs" download>Download the search script</a></p></section>
 <section class="panel"><h2>Try these requests</h2><ul><li>Find a free, graded skill for React testing.</li><li>Compare the best-scoring PostgreSQL skills and show their licenses.</li><li>Find a security-review skill scoring at least 80 and show its report.</li></ul><p>Searches run locally against the downloaded index. The finder returns commands for you to inspect; it does not install or execute a discovered skill. Suede AI’s own skills are excluded from its rankings.</p></section>
+<section class="panel" id="briefing"><h2>Get a weekly briefing on what you care about</h2><p>Tell your agent your interests once, and it summarizes each week’s rising skills, fastest-growing topics, new listings and repository stars for just those areas.</p><p>Try: “Brief me on agent skills for marketing, sales and video, and remember those interests.”</p><p>The finder saves your interests on your own machine and reads the public <a href="${rel(finder, 'directory/weekly.json')}">weekly feed</a>. To get it every week, ask your agent to schedule the briefing, for example with <code>/loop 7d brief me on agent skills</code> in Claude Code or a scheduled task in Codex or Cursor.</p><pre><code>node brief.mjs --interests "marketing, sales, video" --save</code></pre><p><a href="brief.mjs" download>Download the briefing script</a></p></section>
 <section class="panel"><h2>Use it without an agent</h2><p>Save the search script, then run:</p><pre><code>node search.mjs "react testing" --min-score 80 --limit 5</code></pre><p>Scores describe structural quality in the dated snapshot. They do not certify runtime performance or security. <a href="${rel(finder, 'directory/api/')}">Read the API documentation</a>.</p></section>`,
   });
   const finderSource = path.join(root, 'directory/suede-directory');
   files.set(`${finder}SKILL.md`, fs.readFileSync(path.join(finderSource, 'SKILL.md'), 'utf8'));
   files.set(`${finder}search.mjs`, fs.readFileSync(path.join(finderSource, 'scripts/search.mjs'), 'utf8'));
+  files.set(`${finder}brief.mjs`, fs.readFileSync(path.join(finderSource, 'scripts/brief.mjs'), 'utf8'));
 
   const risingHere = 'directory/rising/';
   const rising = thirdParty.filter(s => (installsFor(s)?.weekly?.at(-1) || 0) > 0)
@@ -159,6 +198,10 @@ ${installSection(here, s)}${qualityBadgeBlock(here, s)}${servicesCta("skill", s.
   });
 
   renderBadgesHub({ data, emit, rel, esc, fmt, link, thirdParty });
+  const starsFile = path.join(root, 'directory/growth/github-stars.json');
+  const stars = fs.existsSync(starsFile) ? validateStars(JSON.parse(fs.readFileSync(starsFile, 'utf8'))) : null;
+  files.set('directory/weekly.json', JSON.stringify(weeklyFeed({ skills: data.skills, topics, installsFor, installsDate, generated: data.generated, stars,
+    href: s => listingTarget(s).replace('https://skills.suedeai.ai/directory', 'https://suedeai.directory') }), null, 2) + '\n');
 }
 
 // One page to send a publisher: what the quality badges are, who earns them,
