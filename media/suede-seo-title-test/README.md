@@ -8,7 +8,6 @@ It is styled after suedeai.directory: black canvas, Geist / Geist Mono / Pixelif
 - `render.js`: renders the frames with Playwright and pipes them into ffmpeg
 - `logo.png`: the approved Suede S mark (copy of `docs/assets/suede-ai-logo-transparent.png`)
 
-All figures on screen are illustrative and marked that way in the video.
 
 ## Re-render
 
