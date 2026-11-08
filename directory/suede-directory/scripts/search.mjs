@@ -1,6 +1,16 @@
 #!/usr/bin/env node
 import fs from 'node:fs/promises';
 import { pathToFileURL } from 'node:url';
+import { spawnSync } from 'node:child_process';
+
+// Node's built-in fetch ignores HTTPS_PROXY unless NODE_USE_ENV_PROXY=1 (Node 22.21+).
+// Agents in cloud sandboxes and company networks sit behind such proxies, so a
+// failed fetch with a proxy configured is retried once with proxy support on.
+export function proxyRetryEnv(error, env = process.env) {
+  const proxy = env.HTTPS_PROXY || env.https_proxy || env.HTTP_PROXY || env.http_proxy;
+  if (!proxy || env.NODE_USE_ENV_PROXY === '1' || !/fetch failed/i.test(String(error?.message))) return null;
+  return { ...env, NODE_USE_ENV_PROXY: '1', NODE_NO_WARNINGS: '1' };
+}
 
 export const INDEX_URL = 'https://suedeai.directory/search-index.json';
 const own = /^(jasoncolapietro\/suede-creator-skills|suede-ai\/)/i;
@@ -63,5 +73,13 @@ export async function main(args) {
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
   main(process.argv.slice(2)).then(result => process.stdout.write(JSON.stringify(result, null, 2) + '\n'))
-    .catch(error => { process.stderr.write(`Directory search failed: ${error.message}\n`); process.exitCode = 1; });
+    .catch(error => {
+      const env = proxyRetryEnv(error);
+      if (env) {
+        const retry = spawnSync(process.execPath, process.argv.slice(1), { env, stdio: 'inherit' });
+        process.exitCode = retry.status ?? 1;
+        return;
+      }
+      process.stderr.write(`Directory search failed: ${error.message}\n`); process.exitCode = 1;
+    });
 }

@@ -8,6 +8,16 @@ import fs from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
+import { spawnSync } from 'node:child_process';
+
+// Node's built-in fetch ignores HTTPS_PROXY unless NODE_USE_ENV_PROXY=1 (Node 22.21+).
+// Agents in cloud sandboxes and company networks sit behind such proxies, so a
+// failed fetch with a proxy configured is retried once with proxy support on.
+export function proxyRetryEnv(error, env = process.env) {
+  const proxy = env.HTTPS_PROXY || env.https_proxy || env.HTTP_PROXY || env.http_proxy;
+  if (!proxy || env.NODE_USE_ENV_PROXY === '1' || !/fetch failed/i.test(String(error?.message))) return null;
+  return { ...env, NODE_USE_ENV_PROXY: '1', NODE_NO_WARNINGS: '1' };
+}
 
 export const FEED_URL = 'https://suedeai.directory/weekly.json';
 const ORIGIN = new URL(FEED_URL).origin;
@@ -92,5 +102,13 @@ export async function main(args, env = process.env) {
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
   main(process.argv.slice(2)).then(r => process.stdout.write(JSON.stringify(r, null, 2) + '\n'))
-    .catch(e => { process.stderr.write(`Briefing failed: ${e.message}\n`); process.exitCode = 1; });
+    .catch(error => {
+      const env = proxyRetryEnv(error);
+      if (env) {
+        const retry = spawnSync(process.execPath, process.argv.slice(1), { env, stdio: 'inherit' });
+        process.exitCode = retry.status ?? 1;
+        return;
+      }
+      process.stderr.write(`Briefing failed: ${error.message}\n`); process.exitCode = 1;
+    });
 }
