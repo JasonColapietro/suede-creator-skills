@@ -2,7 +2,7 @@
   "star": "https://github.com/JasonColapietro/suede-creator-skills",
   "about": "Weekly feed of the Suede AI Skills Directory for agents and newsletters. Suede AI is excluded from every list. Quality scores measure published files, not runtime or security.",
   "quality_snapshot": "2026-10-22",
-  "install_snapshot": "2026-11-02",
+  "install_snapshot": "2026-11-08",
   "install_source": "https://skills.sh/",
   "stars_snapshot": "2026-11-08",
   "stars_since": null,
@@ -117,7 +117,7 @@
       "id": "azure",
       "name": "Azure",
       "skills": 78,
-      "weekly_installs": 203078,
+      "weekly_installs": 210768,
       "change_pct": 11,
       "best": [
         "microsoft/azure-skills/python-appservice-deploy",
@@ -1058,7 +1058,7 @@
       "best": [
         "coreyhaines31/marketingskills/churn-prevention",
         "gooseworks-ai/goose-skills/customer-story-builder",
-        "gooseworks-ai/goose-skills/customer-win-back-sequencer"
+        "gooseworks-ai/goose-skills/voice-of-customer-synthesizer"
       ]
     },
     {
@@ -2419,102 +2419,102 @@
   "repositories": [
     {
       "repo": "mattpocock/skills",
-      "stars": 317686,
+      "stars": 317885,
       "gained": null
     },
     {
       "repo": "obra/superpowers",
-      "stars": 314108,
+      "stars": 314193,
       "gained": null
     },
     {
       "repo": "anthropics/skills",
-      "stars": 188767,
+      "stars": 188913,
       "gained": null
     },
     {
       "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
-      "stars": 146543,
+      "stars": 146606,
       "gained": null
     },
     {
       "repo": "garrytan/gstack",
-      "stars": 140662,
+      "stars": 140685,
       "gained": null
     },
     {
       "repo": "browser-use/browser-use",
-      "stars": 120265,
+      "stars": 120280,
       "gained": null
     },
     {
       "repo": "Leonxlnx/taste-skill",
-      "stars": 111643,
+      "stars": 111720,
       "gained": null
     },
     {
       "repo": "pbakaus/impeccable",
-      "stars": 105521,
+      "stars": 105675,
       "gained": null
     },
     {
       "repo": "tt-a1i/archify",
-      "stars": 94460,
+      "stars": 94526,
       "gained": null
     },
     {
       "repo": "heygen-com/hyperframes",
-      "stars": 80570,
+      "stars": 80657,
       "gained": null
     },
     {
       "repo": "cloudflare/security-audit-skill",
-      "stars": 65682,
+      "stars": 65983,
       "gained": null
     },
     {
       "repo": "coreyhaines31/marketingskills",
-      "stars": 59065,
+      "stars": 59100,
       "gained": null
     },
     {
       "repo": "vercel-labs/agent-browser",
-      "stars": 46809,
+      "stars": 46970,
       "gained": null
     },
     {
       "repo": "anthropics/claude-plugins-official",
-      "stars": 46364,
+      "stars": 46383,
       "gained": null
     },
     {
       "repo": "github/awesome-copilot",
-      "stars": 40905,
+      "stars": 40907,
       "gained": null
     },
     {
       "repo": "vercel-labs/skills",
-      "stars": 38495,
+      "stars": 38512,
       "gained": null
     },
     {
       "repo": "vercel-labs/agent-skills",
-      "stars": 33689,
+      "stars": 33694,
       "gained": null
     },
     {
       "repo": "googleworkspace/cli",
-      "stars": 32169,
+      "stars": 32173,
       "gained": null
     },
     {
       "repo": "zarazhangrui/frontend-slides",
-      "stars": 32033,
+      "stars": 32043,
       "gained": null
     },
     {
       "repo": "openai/skills",
-      "stars": 28582,
+      "stars": 28590,
       "gained": null
     },
     {
@@ -2524,17 +2524,17 @@
     },
     {
       "repo": "phuryn/pm-skills",
-      "stars": 27755,
+      "stars": 27758,
       "gained": null
     },
     {
       "repo": "AgriciDaniel/claude-seo",
-      "stars": 27256,
+      "stars": 27308,
       "gained": null
     },
     {
       "repo": "google/skills",
-      "stars": 23382,
+      "stars": 23505,
       "gained": null
     },
     {
@@ -2544,12 +2544,12 @@
     },
     {
       "repo": "yusufkaraaslan/Skill_Seekers",
-      "stars": 15293,
+      "stars": 15292,
       "gained": null
     },
     {
       "repo": "Orchestra-Research/AI-Research-SKILLs",
-      "stars": 14338,
+      "stars": 14345,
       "gained": null
     },
     {
@@ -2564,7 +2564,7 @@
     },
     {
       "repo": "huggingface/skills",
-      "stars": 11294,
+      "stars": 11295,
       "gained": null
     },
     {
@@ -2574,12 +2574,12 @@
     },
     {
       "repo": "google-labs-code/stitch-skills",
-      "stars": 8693,
+      "stars": 8694,
       "gained": null
     },
     {
       "repo": "trailofbits/skills",
-      "stars": 8061,
+      "stars": 8064,
       "gained": null
     },
     {
@@ -2589,12 +2589,12 @@
     },
     {
       "repo": "PleasePrompto/notebooklm-skill",
-      "stars": 7786,
+      "stars": 7787,
       "gained": null
     },
     {
       "repo": "Tencent/AI-Infra-Guard",
-      "stars": 7424,
+      "stars": 7426,
       "gained": null
     },
     {
@@ -2604,22 +2604,22 @@
     },
     {
       "repo": "sergebulaev/linkedin-skills",
-      "stars": 5720,
+      "stars": 5723,
       "gained": null
     },
     {
       "repo": "conorbronsdon/avoid-ai-writing",
-      "stars": 5473,
+      "stars": 5477,
       "gained": null
     },
     {
       "repo": "expo/skills",
-      "stars": 4081,
+      "stars": 4083,
       "gained": null
     },
     {
       "repo": "NVIDIA/skills",
-      "stars": 3888,
+      "stars": 3890,
       "gained": null
     },
     {
@@ -2629,17 +2629,17 @@
     },
     {
       "repo": "aws/agent-toolkit-for-aws",
-      "stars": 3428,
+      "stars": 3430,
       "gained": null
     },
     {
       "repo": "cloudflare/skills",
-      "stars": 3300,
+      "stars": 3304,
       "gained": null
     },
     {
       "repo": "lackeyjb/playwright-skill",
-      "stars": 3271,
+      "stars": 3273,
       "gained": null
     },
     {
@@ -2649,17 +2649,17 @@
     },
     {
       "repo": "Alisa0808/vox-director",
-      "stars": 2698,
+      "stars": 2702,
       "gained": null
     },
     {
       "repo": "wondelai/skills",
-      "stars": 2626,
+      "stars": 2630,
       "gained": null
     },
     {
       "repo": "apify/agent-skills",
-      "stars": 2494,
+      "stars": 2495,
       "gained": null
     },
     {
@@ -2674,7 +2674,7 @@
     },
     {
       "repo": "stripe/ai",
-      "stars": 2047,
+      "stars": 2050,
       "gained": null
     },
     {
@@ -2689,7 +2689,7 @@
     },
     {
       "repo": "tjboudreaux/cc-thinking-skills",
-      "stars": 1714,
+      "stars": 1715,
       "gained": null
     },
     {
@@ -2704,7 +2704,7 @@
     },
     {
       "repo": "langchain-ai/langchain-skills",
-      "stars": 1325,
+      "stars": 1326,
       "gained": null
     },
     {
@@ -2719,17 +2719,17 @@
     },
     {
       "repo": "ZeroPointRepo/youtube-skills",
-      "stars": 1176,
-      "gained": null
-    },
-    {
-      "repo": "getsentry/skills",
-      "stars": 1131,
+      "stars": 1177,
       "gained": null
     },
     {
       "repo": "renezander030/capcut-cli",
-      "stars": 1131,
+      "stars": 1133,
+      "gained": null
+    },
+    {
+      "repo": "getsentry/skills",
+      "stars": 1132,
       "gained": null
     },
     {
@@ -2744,12 +2744,12 @@
     },
     {
       "repo": "hashicorp/agent-skills",
-      "stars": 919,
+      "stars": 920,
       "gained": null
     },
     {
       "repo": "unbrowse-ai/unbrowse",
-      "stars": 908,
+      "stars": 910,
       "gained": null
     },
     {
@@ -2764,7 +2764,7 @@
     },
     {
       "repo": "realkimbarrett/advertising-skills",
-      "stars": 777,
+      "stars": 778,
       "gained": null
     },
     {
@@ -2784,7 +2784,7 @@
     },
     {
       "repo": "mhattingpete/claude-skills-marketplace",
-      "stars": 693,
+      "stars": 692,
       "gained": null
     },
     {
@@ -2799,12 +2799,12 @@
     },
     {
       "repo": "ilyautov/humanizer-ru",
-      "stars": 535,
+      "stars": 536,
       "gained": null
     },
     {
       "repo": "alonw0/web-asset-generator",
-      "stars": 533,
+      "stars": 534,
       "gained": null
     },
     {
@@ -2824,7 +2824,7 @@
     },
     {
       "repo": "Continuum-AI-Corp/OrcaReplay",
-      "stars": 397,
+      "stars": 402,
       "gained": null
     },
     {
@@ -2899,7 +2899,7 @@
     },
     {
       "repo": "csthink/dashmotion",
-      "stars": 193,
+      "stars": 194,
       "gained": null
     },
     {
@@ -2949,7 +2949,7 @@
     },
     {
       "repo": "firecrawl/skills",
-      "stars": 148,
+      "stars": 149,
       "gained": null
     },
     {
@@ -2969,7 +2969,7 @@
     },
     {
       "repo": "apollographql/skills",
-      "stars": 127,
+      "stars": 128,
       "gained": null
     },
     {
@@ -7198,23 +7198,6 @@
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/gooseworks-ai/goose-skills/#customer-story-builder"
     },
-    "gooseworks-ai/goose-skills/customer-win-back-sequencer": {
-      "id": "gooseworks-ai/goose-skills/customer-win-back-sequencer",
-      "name": "customer-win-back-sequencer",
-      "repo": "gooseworks-ai/goose-skills",
-      "description": "For churned accounts, research what has changed since they left — new funding, team growth, competitor dissatisfaction, product updates that address their pain — then assess re-engagement potential and generate a persona",
-      "score": 73,
-      "grade": "C",
-      "category": "business-finance",
-      "topics": [
-        "customer-service",
-        "sales",
-        "email"
-      ],
-      "license": "MIT",
-      "cost_lane": "free-open-source",
-      "listing": "https://suedeai.directory/gooseworks-ai/goose-skills/#customer-win-back-sequencer"
-    },
     "gooseworks-ai/goose-skills/find-twitter-influencers": {
       "id": "gooseworks-ai/goose-skills/find-twitter-influencers",
       "name": "find-twitter-influencers",
@@ -7634,6 +7617,21 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/gooseworks-ai/goose-skills/#video-polish"
+    },
+    "gooseworks-ai/goose-skills/voice-of-customer-synthesizer": {
+      "id": "gooseworks-ai/goose-skills/voice-of-customer-synthesizer",
+      "name": "voice-of-customer-synthesizer",
+      "repo": "gooseworks-ai/goose-skills",
+      "description": "Aggregate customer feedback from multiple sources — support tickets, NPS comments, Slack messages, G2 reviews, call transcripts, survey responses — into a unified VoC report with theme clustering, sentiment analysis, tre",
+      "score": 73,
+      "grade": "C",
+      "category": "product-management",
+      "topics": [
+        "customer-service"
+      ],
+      "license": "MIT",
+      "cost_lane": "free-open-source",
+      "listing": "https://suedeai.directory/gooseworks-ai/goose-skills/#voice-of-customer-synthesizer"
     },
     "gooseworks-ai/goose-skills/weather": {
       "id": "gooseworks-ai/goose-skills/weather",
@@ -10664,6 +10662,23 @@
       "listing": "https://suedeai.directory/microsoft/azure-skills/azure-validate/",
       "weekly_installs": 7992,
       "change_pct": 13
+    },
+    "microsoft/azure-skills/discover-azure-skills": {
+      "id": "microsoft/azure-skills/discover-azure-skills",
+      "name": "discover-azure-skills",
+      "repo": "microsoft/azure-skills",
+      "description": "Searches the Azure skills catalog and recommends installable agent skills by matching an Azure task to skill metadata and plugin installation guidance. WHEN: before starting any task that involves an Azure or Microsoft-c",
+      "score": 66,
+      "grade": "D",
+      "category": "devops-cloud",
+      "topics": [
+        "azure"
+      ],
+      "license": "MIT",
+      "cost_lane": "free-open-source",
+      "listing": "https://suedeai.directory/microsoft/azure-skills/discover-azure-skills/",
+      "weekly_installs": 7690,
+      "change_pct": 11
     },
     "microsoft/azure-skills/entra-agent-id": {
       "id": "microsoft/azure-skills/entra-agent-id",
