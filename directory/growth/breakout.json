@@ -1,0 +1,115 @@
+{
+  "date": "2026-11-08",
+  "since": "2026-11-01",
+  "source": "https://api.github.com/search/repositories",
+  "repos": [
+    {
+      "repo": "KKKKhazix/agent-autoloop",
+      "url": "https://github.com/KKKKhazix/agent-autoloop",
+      "stars": 3966,
+      "created": "2026-11-03",
+      "language": "TypeScript",
+      "license": "MIT",
+      "description": "让你的命令行 Agent 在后台自己接活、自己跟进到底；平时不烦你，遇到拿不准的事才发卡片找你拍板。"
+    },
+    {
+      "repo": "mromidev/claude-animated-shorts",
+      "url": "https://github.com/mromidev/claude-animated-shorts",
+      "stars": 2233,
+      "created": "2026-11-01",
+      "language": "TypeScript",
+      "license": "MIT",
+      "description": "Free Claude skill: viral animated story shorts (2D characters in a 3D world) with three.js + Remotion"
+    },
+    {
+      "repo": "caru-ini/stack-diagram",
+      "url": "https://github.com/caru-ini/stack-diagram",
+      "stars": 2076,
+      "created": "2026-11-01",
+      "language": "TypeScript",
+      "license": "MIT",
+      "description": "Agent skill: describe your stack in a sentence, get an architecture diagram with official logos"
+    },
+    {
+      "repo": "voyager-so/vork",
+      "url": "https://github.com/voyager-so/vork",
+      "stars": 886,
+      "created": "2026-11-05",
+      "language": "Rust",
+      "license": "NOASSERTION",
+      "description": "Headless 3D and VFX engine for agents. Research preview."
+    },
+    {
+      "repo": "sarpstar/cinecode",
+      "url": "https://github.com/sarpstar/cinecode",
+      "stars": 833,
+      "created": "2026-11-03",
+      "language": "Python",
+      "license": "MIT",
+      "description": "Films made with code. Short films, long YouTube videos, ads, explainers and music videos: an AI coding agent writes the script, builds every frame in code, designs the sound and hands you an MP4."
+    },
+    {
+      "repo": "JosssphZhou/poki",
+      "url": "https://github.com/JosssphZhou/poki",
+      "stars": 515,
+      "created": "2026-11-05",
+      "language": "JavaScript",
+      "license": "AGPL-3.0",
+      "description": "Let AI agents operate a real iPhone. Local MCP server and agent, no jailbreak, no extra hardware."
+    },
+    {
+      "repo": "majorminorlabs/hermes-voice",
+      "url": "https://github.com/majorminorlabs/hermes-voice",
+      "stars": 506,
+      "created": "2026-11-05",
+      "language": "Python",
+      "license": "MIT",
+      "description": "Talk to a Hermes Agent profile through Home Assistant Assist"
+    },
+    {
+      "repo": "artemnovitckii/claude-animation-skills",
+      "url": "https://github.com/artemnovitckii/claude-animation-skills",
+      "stars": 487,
+      "created": "2026-11-01",
+      "language": "JavaScript",
+      "license": "NOASSERTION",
+      "description": "Six Claude Code skills that make animations for reels, no footage needed: 3D cartoon explainer, stick figure, minimal line art, 3D map route, exploded view, line graph."
+    },
+    {
+      "repo": "mhfed/vn-law-check",
+      "url": "https://github.com/mhfed/vn-law-check",
+      "stars": 471,
+      "created": "2026-11-02",
+      "language": "Shell",
+      "license": "NOASSERTION",
+      "description": "Audit pháp lý website theo luật Việt Nam (BVDLCN 91/2025, TMĐT 122/2025, ANM 116/2025, AI 134/2025) cho Claude Code, Cursor, Copilot, Windsurf, Cline"
+    },
+    {
+      "repo": "HerdBuilderEstimate/roblox-studio-mcp",
+      "url": "https://github.com/HerdBuilderEstimate/roblox-studio-mcp",
+      "stars": 428,
+      "created": "2026-11-06",
+      "language": "Python",
+      "license": "MIT",
+      "description": "Model Context Protocol server for Roblox Studio. Connect AI assistants (Claude, Cursor) to read object trees, edit scripts, and run playtests safely. Open-source and lightweight"
+    },
+    {
+      "repo": "andrew-babo/muse4ai",
+      "url": "https://github.com/andrew-babo/muse4ai",
+      "stars": 363,
+      "created": "2026-11-03",
+      "language": "TypeScript",
+      "license": "MIT",
+      "description": "Muse4AI — let your AI agent make the pictures and the videos. Local Windows bridge for Muse via REST, MCP, and OAuth."
+    },
+    {
+      "repo": "devvmhq/devvm",
+      "url": "https://github.com/devvmhq/devvm",
+      "stars": 363,
+      "created": "2026-11-06",
+      "language": "Go",
+      "license": "MIT",
+      "description": "One VM for every project. An isolated sandbox with your project’s toolchain, ready for you or a coding agent to start coding"
+    }
+  ]
+}

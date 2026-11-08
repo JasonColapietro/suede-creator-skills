@@ -71,3 +71,25 @@ submissions:
 > [Suede AI Skills Directory](https://suedeai.directory/) — A graded index of
 > agent skills for Claude Code, Codex and Cursor, with source links, license
 > details, per-skill score reports and an open JSON API.
+
+## Weekly newsletter automation
+
+Every Sunday at 02:13 UTC, `.github/workflows/directory-weekly.yml`:
+
+1. refreshes skills.sh installs (`scripts/directory/installs.mjs`);
+2. appends a GitHub star snapshot (`scripts/directory/github-stars.mjs`), so
+   `weekly.json` reports stars gained since the previous week;
+3. records the week's breakout repositories (`scripts/directory/breakout.mjs`),
+   dropping forks and malware-style lures;
+4. rebuilds the directory and writes the Rising Skills draft to
+   `directory/growth/issues/<date>.md` (`scripts/directory/newsletter-issue.mjs`);
+5. pushes all of it to the `directory/weekly-refresh` branch.
+
+A scheduled Claude session then opens the pull request, merges it when CI is
+green (deploying the fresh data and feed), finishes the issue and leaves it in
+the owner's Gmail drafts, ready to paste into Substack.
+
+`newsletter-playbook.json` holds the business ideas, money jobs and the
+owner-approved voice. Demand and Tools scores are computed from the week's
+data; Autonomy and Buyers are fixed editorial scores. Keep claims at full
+strength when editing.

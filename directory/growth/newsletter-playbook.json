@@ -1,0 +1,273 @@
+{
+  "_comment": "Editorial playbook for the weekly Rising Skills newsletter. scripts/directory/newsletter-issue.mjs fills it with the week's data. Demand and Tools scores are computed each week from topic growth and skill grades; Autonomy and Buyers are fixed editorial scores. Wording here is the owner-approved voice: keep claims at full strength.",
+  "studio": "https://agents.suedeai.ai",
+  "subscribe": "https://jasoncolapietro.substack.com/subscribe",
+  "money_topics": [
+    "sales",
+    "lead-generation",
+    "landing-pages",
+    "seo",
+    "ads",
+    "crm",
+    "email",
+    "marketing-analytics",
+    "affiliate-referral",
+    "social-media-graphics",
+    "social-media",
+    "vulnerability-scanning",
+    "security-auditing",
+    "startup-tools",
+    "finance",
+    "video-ads",
+    "video-generation",
+    "animation-motion",
+    "ui-ux-design",
+    "web-scraping",
+    "browser-agents",
+    "pdf",
+    "spreadsheets"
+  ],
+  "free_categories": [
+    "marketing-seo",
+    "business-finance",
+    "security",
+    "writing-content",
+    "product-management",
+    "documents-office",
+    "media-creative",
+    "frontend-design"
+  ],
+  "jobs": [
+    {
+      "label": "Cold email",
+      "template": [
+        "lead-qualifier",
+        "Lead Qualifier"
+      ],
+      "topics": [
+        "sales",
+        "email"
+      ]
+    },
+    {
+      "label": "SEO and AI search",
+      "template": [
+        "seo-studio-ai-visibility-audit",
+        "AI Visibility Audit"
+      ],
+      "topics": [
+        "seo"
+      ]
+    },
+    {
+      "label": "Landing pages",
+      "template": [
+        "lead-magnet-builder",
+        "Lead Magnet Builder"
+      ],
+      "topics": [
+        "landing-pages"
+      ]
+    },
+    {
+      "label": "Social content",
+      "template": [
+        "transcript-to-social-pack",
+        "Transcript-to-Social Pack"
+      ],
+      "topics": [
+        "social-media-graphics",
+        "social-media"
+      ]
+    },
+    {
+      "label": "Email marketing",
+      "template": [
+        "email-nurture-sequence",
+        "Email Nurture Sequence"
+      ],
+      "topics": [
+        "email"
+      ],
+      "pin": "coreyhaines31/marketingskills/emails"
+    },
+    {
+      "label": "Websites and UI",
+      "topics": [
+        "ui-ux-design",
+        "design-systems"
+      ]
+    },
+    {
+      "label": "Security audits",
+      "topics": [
+        "vulnerability-scanning",
+        "security-auditing"
+      ]
+    },
+    {
+      "label": "PDFs, Word and Excel",
+      "template": [
+        "invoice-chaser",
+        "Invoice Chaser"
+      ],
+      "topics": [
+        "pdf",
+        "spreadsheets"
+      ]
+    },
+    {
+      "label": "Browser automation",
+      "topics": [
+        "browser-agents",
+        "web-scraping"
+      ],
+      "pin": "apify/agent-skills/apify-actor-development"
+    },
+    {
+      "label": "Bookkeeping",
+      "template": [
+        "transaction-categorizer",
+        "Transaction Categorizer"
+      ],
+      "topics": [
+        "finance"
+      ],
+      "no_skill": true
+    }
+  ],
+  "businesses": [
+    {
+      "model": "autonomous",
+      "name": "AI-visibility audit shop",
+      "topics": [
+        "seo"
+      ],
+      "skills": [
+        "coreyhaines31/marketingskills/schema",
+        "coreyhaines31/marketingskills/seo-audit"
+      ],
+      "autonomy": 4,
+      "buyers": 4,
+      "pitch": "businesses pay to learn why AI answers skip them. Your agent runs the audit and hands over the fix list.",
+      "start": "the [Audit Shop]({studio}/company) company template (charges $0.50 per audit by default) plus the [AI Visibility Audit]({studio}/build/new?template=seo-studio-ai-visibility-audit) workflow. Add [Weekly Rank Watch]({studio}/build/new?template=seo-studio-rank-watch) as a retainer.",
+      "cta": [
+        "seo-studio-ai-visibility-audit",
+        "AI Visibility Audit"
+      ]
+    },
+    {
+      "model": "autonomous",
+      "name": "Lead qualification desk",
+      "topics": [
+        "sales",
+        "crm"
+      ],
+      "skills": [
+        "coreyhaines31/marketingskills/revops"
+      ],
+      "autonomy": 4,
+      "buyers": 4,
+      "pitch": "sales teams drown in unqualified leads. Your agent scores every inbound lead against the customer profile and flags deals that are stalling.",
+      "start": "the [Sales Pipeline Shop]({studio}/company) company template (defaults: $0.03 per lead, $0.05 per pipeline-risk read).",
+      "cta": [
+        "lead-qualifier",
+        "Lead Qualifier"
+      ]
+    },
+    {
+      "model": "autonomous",
+      "name": "Invoice and expense checker",
+      "topics": [
+        "finance"
+      ],
+      "skills": [],
+      "tools_floor": 4,
+      "autonomy": 4,
+      "buyers": 4,
+      "pitch": "catch bad invoices before they're paid. Your agent matches every invoice to its purchase order and flags out-of-policy expenses.",
+      "start": "the [Finance Ops Shop]({studio}/company) company template (defaults: $0.04–$0.06 per check).",
+      "cta": [
+        "transaction-categorizer",
+        "Transaction Categorizer"
+      ],
+      "demand_floor": 3
+    },
+    {
+      "model": "autonomous",
+      "name": "Support triage desk",
+      "topics": [],
+      "skills": [],
+      "tools_floor": 3,
+      "autonomy": 4,
+      "buyers": 4,
+      "pitch": "every ticket gets sorted by severity, and refunds get approved or escalated against your policy.",
+      "start": "the [Support Triage Shop]({studio}/company) company template (defaults: $0.03–$0.05 per ticket).",
+      "demand_floor": 3
+    },
+    {
+      "model": "service",
+      "name": "Done-for-you outbound",
+      "topics": [
+        "sales",
+        "lead-generation"
+      ],
+      "skills": [
+        "coreyhaines31/marketingskills/cold-email"
+      ],
+      "autonomy": 3,
+      "buyers": 4,
+      "pitch": "you own the client relationship, and agents research prospects and draft the sequences. You approve every send; anti-spam law requires a human sign-off.",
+      "start": "[cold-email]({skill:coreyhaines31/marketingskills/cold-email}), plus Agent Studio's [Lead Qualifier]({studio}/build/new?template=lead-qualifier) and [Email Nurture Sequence]({studio}/build/new?template=email-nurture-sequence)."
+    },
+    {
+      "model": "service",
+      "name": "Landing-page sprint studio",
+      "topics": [
+        "landing-pages"
+      ],
+      "skills": [
+        "pbakaus/impeccable/impeccable",
+        "coreyhaines31/marketingskills/cro"
+      ],
+      "autonomy": 3,
+      "buyers": 4,
+      "pitch": "fixed-price \"new page in a week\" packages.",
+      "start": "[impeccable]({skill:pbakaus/impeccable/impeccable}) for design and [cro]({skill:coreyhaines31/marketingskills/cro}) for conversion."
+    },
+    {
+      "model": "service",
+      "name": "Short-form video studio",
+      "topics": [
+        "animation-motion",
+        "video-editing",
+        "video-generation"
+      ],
+      "skills": [
+        "heygen-com/hyperframes/hyperframes",
+        "coreyhaines31/marketingskills/video"
+      ],
+      "autonomy": 3,
+      "buyers": 5,
+      "pitch": "faceless animated shorts and reels for brands.",
+      "start": "[Hyperframes](https://suedeai.directory/heygen-com/hyperframes/) and Agent Studio's [Transcript-to-Social Pack]({studio}/build/new?template=transcript-to-social-pack).",
+      "demand_floor": 4
+    },
+    {
+      "model": "service",
+      "name": "Security check add-on for dev shops",
+      "topics": [
+        "vulnerability-scanning",
+        "security-auditing"
+      ],
+      "skills": [
+        "trailofbits/skills/fp-check",
+        "trailofbits/skills/codeql"
+      ],
+      "autonomy": 2,
+      "buyers": 3,
+      "pitch": "a pre-launch security pass you sell to agencies. A human reviewer signs off on every report.",
+      "start": "Trail of Bits' [fp-check]({skill:trailofbits/skills/fp-check}) and [codeql]({skill:trailofbits/skills/codeql})."
+    }
+  ]
+}

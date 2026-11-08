@@ -205,3 +205,69 @@ test('finder scripts retry through the environment proxy when fetch cannot reach
     assert.equal(errors, r.status === 0 ? 0 : 1, `${script}: ${r.stderr}`);
   }
 });
+
+// Weekly newsletter generator and breakout picks
+import { buildIssue, demandScore, toolsScore } from '../scripts/directory/newsletter-issue.mjs';
+import { pickBreakouts, isLikelyLure, validateBreakout } from '../scripts/directory/breakout.mjs';
+
+const readJson = (p) => JSON.parse(fs.readFileSync(new URL(`../${p}`, import.meta.url), 'utf8'));
+const nlIndex = readJson('docs/directory/search-index.json');
+const nlFeed = readJson('docs/directory/weekly.json');
+const playbook = readJson('directory/growth/newsletter-playbook.json');
+const breakout = validateBreakout(readJson('directory/growth/breakout.json'));
+const issue = buildIssue({ index: nlIndex, feed: nlFeed, breakout, playbook, date: breakout.date });
+
+test('breakout picks drop forks, old repos, duplicates and malware-style lures', () => {
+  const repo = (full_name, stars, extra = {}) => ({ full_name, stargazers_count: stars, html_url: `https://github.com/${full_name}`, created_at: '2026-11-03T00:00:00Z', description: 'An agent skill for SEO audits', fork: false, archived: false, ...extra });
+  const picked = pickBreakouts([
+    repo('a/real', 50), repo('b/fork', 900, { fork: true }), repo('c/old', 800, { created_at: '2026-10-01T00:00:00Z' }),
+    repo('d/game-trainer', 700, { description: 'Aion 2 trainer tool, free download' }), repo('e/blank', 600, { description: '' }),
+    repo('A/Real', 50), repo('f/top', 400),
+  ], { since: '2026-11-01' });
+  assert.deepEqual(picked.map((r) => r.repo), ['f/top', 'a/real']);
+  assert.equal(isLikelyLure({ full_name: 'x/cheat-loader', description: 'Undetected aimbot' }), true);
+  assert.equal(isLikelyLure({ full_name: 'x/seo-skill', description: 'Agent skill for SEO audits' }), false);
+});
+
+test('demand and tools scores follow the published thresholds', () => {
+  assert.equal(demandScore([{ change_pct: 17, weekly_installs: 15000 }]).score, 5);
+  assert.equal(demandScore([{ change_pct: 10, weekly_installs: 31513 }]).score, 5);
+  assert.equal(demandScore([{ change_pct: 10, weekly_installs: 5000 }]).score, 4);
+  assert.equal(demandScore([{ change_pct: -64, weekly_installs: 169962 }]).score, 1);
+  assert.equal(demandScore([{ change_pct: null, weekly_installs: 0 }]), null);
+  assert.equal(toolsScore([{ score: 90 }], false), 5);
+  assert.equal(toolsScore([{ score: 88 }], true), 5);
+  assert.equal(toolsScore([], false), 0);
+});
+
+test('playbook references only real skills and topics', () => {
+  const ids = new Set(nlIndex.map((s) => s.id));
+  const topics = new Set(nlFeed.topics.map((t) => t.id));
+  for (const b of playbook.businesses) {
+    for (const s of b.skills) assert.ok(ids.has(s), `${b.name}: ${s}`);
+    for (const t of b.topics) assert.ok(topics.has(t), `${b.name}: ${t}`);
+    for (const m of `${b.start} ${b.pitch}`.matchAll(/\{skill:([^}]+)\}/g)) assert.ok(ids.has(m[1]), m[1]);
+  }
+  for (const j of playbook.jobs) {
+    if (j.pin) assert.ok(ids.has(j.pin), j.pin);
+    for (const t of j.topics) assert.ok(topics.has(t), `${j.label}: ${t}`);
+  }
+  for (const t of playbook.money_topics) assert.ok(topics.has(t), t);
+});
+
+test('the generated issue keeps the approved structure, voice and data', () => {
+  for (const heading of ['## This week in 60 seconds', 'AI businesses in two models, ranked by score', '## 🧰 Pick your stack', '## 🤖 Get this briefing from your own AI agent'])
+    assert.ok(issue.includes(heading), heading);
+  assert.match(issue, /🏆 most likely to succeed/);
+  assert.match(issue, /not revenue forecasts/);
+  assert.match(issue, /restricted license/);
+  assert.equal((issue.match(/→ Open the .+ template\]/g) || []).length, 3);
+  assert.ok(!/\{(studio|skill:)/.test(issue), 'unfilled placeholder');
+  assert.ok(!/undefined|NaN/.test(issue));
+  const scores = [...issue.matchAll(/\*\*#\d+ · .+? · (\d+)\/20/g)].map((m) => Number(m[1]));
+  assert.equal(scores.length, playbook.businesses.length);
+  for (const line of issue.matchAll(/Demand (\d) .*?· Tools (\d).*?· Autonomy (\d) · Buyers (\d)/g)) assert.ok(line.slice(1).every((n) => n >= 1 && n <= 5));
+  const own = /suede-creator-skills\/|suede-ai\//i;
+  for (const m of issue.matchAll(/https:\/\/suedeai\.directory\/([^)\s#]+)/g)) assert.ok(!own.test(m[1]), m[1]);
+  if (breakout.repos[0]) assert.ok(issue.includes(breakout.repos[0].url));
+});
