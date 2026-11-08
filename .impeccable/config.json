@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "gradient-text",
+        "value": "*",
+        "files": [
+          "promo/reverse-engineer-video/index.html"
+        ],
+        "createdAt": "2026-11-08T19:37:50.303Z",
+        "reason": "Claude: deliberate mirror of the reference promo's gradient 'growth.' kinetic-type frame the user asked to match"
+      }
+    ]
+  }
+}

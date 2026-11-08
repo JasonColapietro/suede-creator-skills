@@ -36,7 +36,7 @@
     {
       "name": "suede-workflow-skills",
       "displayName": "Suede Workflow Skills",
-      "description": "Public open-source workflow umbrella: full-stack design and writing modes, reference-site restyling, SEO/AEO/AI EO, visibility grading, AI eval design, site alchemy, one-pass code review+grade, any-repo CI ship-gate, MCP QA, launch + install packaging, artist campaigns, and creator rights utilities.",
+      "description": "Public open-source workflow umbrella: full-stack design and writing modes, reference-site restyling, SEO/AEO/AI EO, visibility grading, AI eval design, site alchemy, one-pass code review+grade, any-repo CI ship-gate, MCP QA, launch + install packaging, artist campaigns, 0-to-100 growth reverse engineering, and creator rights utilities.",
       "publicInstall": "python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py --repo JasonColapietro/suede-creator-skills --path skills/suede-workflow-skills",
       "mcpServer": "suede_workflow_mcp",
       "skills": [
@@ -60,7 +60,8 @@
         "suede-sync-packaging",
         "suede-release-linter",
         "suede-rights-passport",
-        "suede-rights-audit"
+        "suede-rights-audit",
+        "suede-reverse-engineer"
       ]
     },
     {
@@ -204,6 +205,12 @@
       "area": "creator",
       "description": "Find and organize the rights gaps before a creator project gets packaged — missing owners, unconfirmed splits, unclear samples, thin provenance/origin trail, metadata gaps, public URLs, licensing-clearance readiness, royalty-routing readiness, and intake blockers. Flags what is confirmed versus unknown across ownership, contributors, credits, licenses, provenance, and payment routing. Use before rights passporting, provenance mapping, licensing prep, sync or brand or partner licensing discussion, registry readiness, royalty routing, payment-destination layout, or Suede creator intake. Organizes evidence only — never clears rights, confirms ownership, adjudicates chain of title, approves payouts, moves money, or writes to a registry. NOT FOR: building the transfer package itself (use suede-rights-passport); linting release folders for files and metadata (use suede-release-linter); sync one-sheets (use suede-sync-packaging).",
       "useWhen": "Use before rights packaging, provenance mapping, licensing prep, registry readiness, royalty routing, or downstream creator review."
+    },
+    {
+      "name": "suede-reverse-engineer",
+      "area": "creator",
+      "description": "Use when someone wants to reverse engineer how a brand, company, creator, product, or career went from 0 to 100 and copy the right moves at their own stage: 'how did X grow', 'what did Glossier do early', 'map a competitor's growth', 'get me from $8k/month to where Y is', 'how did this founder/creator get here', or 'what should I copy next'. Builds a dated, sourced growth map across signal lanes, finds the inflection points that bent the curve, diagnoses the user's stage on a 0-1-10-25-50-100 ladder, filters every move for transferability, and returns the next 3 moves with leading indicators and kill rules. NOT FOR: a competitor feature/pricing profile with no growth question (use a competitor-profiling skill), writing the comparison page (use suede-copy), or a full marketing plan with budgets (use a marketing-plan skill).",
+      "useWhen": "Use to reverse engineer how a brand, company, creator, or career went from 0 to 100 and pick the next 3 moves to copy at your stage."
     }
   ],
   "mcp": {
