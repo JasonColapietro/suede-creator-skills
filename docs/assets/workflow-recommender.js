@@ -6,9 +6,9 @@
 const MAX_PROMPT_LENGTH = 2000;
 
 export const WORKFLOW_EXAMPLES = [
-  { label: 'Launch a SaaS landing page', prompt: 'Launch a SaaS landing page that explains my product and collects early signups.' },
-  { label: 'Get found in AI search', prompt: 'Get my business found in AI search with useful content and measurable SEO improvements.' },
-  { label: 'Create a social campaign', prompt: 'Turn one idea into a social campaign with a clear angle and posts in my voice.' },
+  { label: 'Get more signups', prompt: 'I’m launching a new product and want a landing page that turns visitors into early signups.' },
+  { label: 'Get found on Google and in AI answers', prompt: 'I run a small business and want more customers to find us on Google and in AI answers like ChatGPT.' },
+  { label: 'Grow my audience', prompt: 'I want to grow my audience with a social campaign and posts in my own voice.' },
 ];
 
 const choice = (id, terms = [], requiredTerms = []) => ({ id, terms, requiredTerms });
@@ -20,7 +20,7 @@ const signal = (weight, ...terms) => ({ weight, terms });
 const FLOWS = [
   {
     id: 'landing-page', title: 'From offer to launch-ready landing page',
-    signals: [signal(18, 'landing page', 'landing pages'), signal(13, 'launch page', 'waitlist page', 'signup page', 'product page', 'marketing website'), signal(8, 'homepage')],
+    signals: [signal(18, 'landing page', 'landing pages'), signal(13, 'launch page', 'waitlist page', 'signup page', 'product page', 'marketing website'), signal(8, 'homepage'), signal(12, 'more signups', 'get signups', 'conversion rate', 'convert visitors', 'convert more visitors')],
     summary: 'Task-based match: clarify the offer, build the page, check the experience, and measure signups.',
     phases: [
       phase('Write the offer and call to action', [choice('coreyhaines31/marketingskills/copywriting'), choice('mblode/agent-skills/ghostwriter')],
@@ -64,7 +64,7 @@ const FLOWS = [
   },
   {
     id: 'seo-and-ai-search', title: 'From search audit to measurable visibility',
-    signals: [signal(18, 'ai search', 'ai answers', 'cited by ai', 'search visibility'), signal(12, 'seo', 'search rankings', 'search engine optimization', 'rank in google', 'rank on google'), signal(8, 'aeo', 'geo optimization', 'indexing')],
+    signals: [signal(18, 'ai search', 'ai answers', 'cited by ai', 'search visibility'), signal(12, 'seo', 'search rankings', 'search engine optimization', 'rank in google', 'rank on google'), signal(8, 'aeo', 'geo optimization', 'indexing'), signal(12, 'found on google', 'found in google', 'show up on google', 'show up in google', 'customers from google', 'traffic from google', 'find us on google', 'find me on google', 'find us online', 'find us in google', 'organic traffic', 'google rankings', 'cited by chatgpt', 'found in chatgpt')],
     summary: 'Task-based match: audit search access, plan useful content, improve answer readiness, and track results.',
     phases: [
       phase('Audit search access and demand', [choice('mblode/agent-skills/seo'), choice('agricidaniel/claude-seo/seo')],
@@ -84,7 +84,7 @@ const FLOWS = [
   },
   {
     id: 'content-and-social', title: 'From one idea to a focused social campaign',
-    signals: [signal(16, 'social campaign', 'social media campaign', 'content campaign'), signal(12, 'social posts', 'social media', 'content strategy', 'content marketing', 'marketing campaign'), signal(8, 'linkedin posts', 'blog posts', 'newsletter', 'write posts', 'write content')],
+    signals: [signal(16, 'social campaign', 'social media campaign', 'content campaign'), signal(12, 'social posts', 'social media', 'content strategy', 'content marketing', 'marketing campaign'), signal(8, 'linkedin posts', 'blog posts', 'newsletter', 'write posts', 'write content'), signal(12, 'grow my audience', 'grow our audience', 'more followers', 'grow my following', 'grow our following')],
     summary: 'Task-based match: choose an audience and angle, draft in your voice, edit, and measure the response.',
     phases: [
       phase('Choose the campaign angle and topics', [choice('coreyhaines31/marketingskills/content-strategy')],
@@ -521,4 +521,202 @@ export function planWorkflow(prompt, catalog, options = {}) {
     title: multiple ? `${labels.join(' + ')} workflow` : goals[0].flow.title,
     summary, steps, tips: [...new Set(goals.flatMap(({ flow }) => flow.tips))],
     ...metadata, choices: [] };
+}
+
+// Goal-first recommendations. A person can describe what they are doing in
+// their own words; these helpers rank catalog skills and authored articles for
+// that goal even when no authored workflow preset matches it. Matching is
+// lexical and local: the brief is never sent anywhere or echoed into results.
+const STOPWORDS = new Set(('a about above after again all also am an and any are as at be because been before being below between both '
+  + 'but by can could did do does doing done down during each else ever every few for from further get gets getting got had has have having '
+  + 'he her here hers him his how i if in into is it its itself just let lets like ll me might more most much must my myself need needs no nor '
+  + 'not now of off on once one only or other our ours out over own please re really same she should so some something someone such than '
+  + 'that the their them then there these they thing things this those through to too try trying under until up us use using ve very want wants '
+  + 'was way we well were what when where which while who whom why will with without would you your yours able better best build building '
+  + 'create creating help helping make making start starting new good great lot lots work working doing currently am im ive id dont cant '
+  + 'kind sort stuff anything everything etc maybe sure think know looking look figure out achieve achieving goal goals project projects '
+  + 'currently plan planning next first ai agent agents skill skills claude codex cursor run running small own bit little big lots').split(' '));
+
+// Everyday goal language mapped to the words skill descriptions use. With
+// replace, the trigger word is dropped: "customers from Google" is an SEO
+// goal, not a request for Google Cloud skills.
+const EXPANSIONS = [
+  { terms: ['from google', 'on google', 'in google', 'google search', 'google rankings', 'google maps', 'rank on google', 'rank in google'], add: ['seo'], replace: ['google', 'maps', 'rankings'] },
+  { terms: ['organic traffic', 'website traffic', 'more traffic', 'search results', 'found online', 'show up'], add: ['seo'] },
+  { terms: ['chatgpt', 'perplexity', 'ai search', 'ai answers', 'ai overviews'], add: ['seo', 'citations'] },
+  { terms: ['customers', 'clients', 'more sales', 'sell more'], add: ['marketing'], replace: ['customers', 'clients'] },
+  { terms: ['get leads', 'more leads', 'find clients', 'find customers'], add: ['leads', 'prospects'] },
+  { terms: ['subscribers', 'mailing list', 'newsletter'], add: ['newsletter', 'email'] },
+  { terms: ['followers', 'audience', 'instagram', 'tiktok', 'linkedin', 'twitter', 'youtube'], add: ['social', 'content'] },
+  { terms: ['musician', 'musicians', 'artist', 'band', 'song', 'songs', 'album', 'record label', 'my single', 'new single', 'my music'], add: ['music', 'release', 'song'] },
+  { terms: ['app store', 'ios app', 'iphone app', 'testflight'], add: ['ios', 'aso'], replace: ['store'] },
+  { terms: ['play store', 'google play', 'android app'], add: ['android', 'play'], replace: ['google', 'store'] },
+  { terms: ['inbox', 'emails', 'gmail'], add: ['email'] },
+  { terms: ['investors', 'fundraising', 'raise money', 'pitch deck'], add: ['pitch', 'investor', 'deck'] },
+  { terms: ['podcast', 'podcasts'], add: ['podcast', 'audio'] },
+  { terms: ['bug', 'bugs', 'broken', 'crash', 'crashes'], add: ['debugging', 'debug'] },
+  { terms: ['ads', 'advertising', 'paid ads'], add: ['ads', 'advertising'] },
+  { terms: ['price', 'pricing', 'charge'], add: ['pricing'] },
+  { terms: ['thesis', 'dissertation', 'essay', 'term paper', 'homework'], add: ['academic', 'writing', 'research'], replace: ['thesis'] },
+];
+
+function goalTokens(text) {
+  const added = [];
+  const dropped = new Set();
+  for (const rule of EXPANSIONS) {
+    if (!rule.terms.some(term => containsTerm(text, term))) continue;
+    added.push(...rule.add);
+    for (const word of rule.replace || []) dropped.add(word);
+  }
+  const tokens = contentTokens(text).filter(token => !dropped.has(token));
+  for (const token of added) if (!tokens.some(other => stems(other).includes(token) || stems(token).includes(other))) tokens.push(token);
+  return tokens.slice(0, 28);
+}
+
+function contentTokens(text) {
+  const words = text.replace(/\|/g, ' ').split(' ').filter(Boolean);
+  const tokens = [];
+  for (const word of words) {
+    if (word.length < 3 || STOPWORDS.has(word) || /^\d+$/.test(word) || tokens.some(other => stems(other).includes(word) || stems(word).includes(other))) continue;
+    tokens.push(word);
+    if (tokens.length >= 24) break;
+  }
+  return tokens;
+}
+
+function stems(token) {
+  const forms = new Set([token]);
+  if (token.length > 4 && token.endsWith('ies')) forms.add(token.slice(0, -3) + 'y');
+  else if (token.length > 3 && token.endsWith('s') && !token.endsWith('ss')) forms.add(token.slice(0, -1));
+  else forms.add(token + 's');
+  if (token.length > 5 && token.endsWith('ing')) { forms.add(token.slice(0, -3)); forms.add(token.slice(0, -3) + 'e'); }
+  return [...forms];
+}
+
+const hasWord = (haystack, token) => stems(token).some(form => haystack.includes(` ${form} `));
+
+/**
+ * Rank catalog skills for a free-form goal.
+ * @param {string} prompt
+ * @param {Array<object>} catalog search-index entries
+ * @param {{exclude?: Iterable<string>, freeOnly?: boolean, limit?: number}} options
+ * @returns {Array<object>} catalog entries, best match first
+ */
+export function recommendSkills(prompt, catalog, options = {}) {
+  const text = typeof prompt === 'string' ? normalize(prompt.slice(0, MAX_PROMPT_LENGTH)) : '';
+  const tokens = goalTokens(text);
+  if (!tokens.length || !Array.isArray(catalog)) return [];
+  const limit = Number.isInteger(options?.limit) && options.limit > 0 ? Math.min(options.limit, 12) : 6;
+  const exclude = new Set(options?.exclude || []);
+  const words = text.replace(/\|/g, ' ').split(' ').filter(Boolean);
+  const phrases = [];
+  for (let i = 0; i < words.length - 1; i++) {
+    if (!STOPWORDS.has(words[i]) && !STOPWORDS.has(words[i + 1]) && words[i].length > 1 && words[i + 1].length > 1) phrases.push(`${words[i]} ${words[i + 1]}`);
+  }
+  const rows = [];
+  const frequency = new Array(tokens.length).fill(0);
+  let considered = 0;
+  for (const entry of catalog) {
+    if (!safeCatalogEntry(entry) || exclude.has(entry.id)) continue;
+    if (options?.freeOnly && entry.lane !== 'free-open-source') continue;
+    considered++;
+    const fields = {
+      name: ` ${normalize(entry.name.replace(/[-_]+/g, ' '))} `,
+      topics: ` ${normalize((Array.isArray(entry.topics) ? entry.topics : []).join(' ').replace(/-/g, ' '))} `,
+      description: ` ${normalize(typeof entry.description === 'string' ? entry.description : '')} `,
+      label: ` ${normalize(typeof entry.label === 'string' ? entry.label : '')} `,
+    };
+    const hits = tokens.map(token => ({ name: hasWord(fields.name, token), topics: hasWord(fields.topics, token),
+      description: hasWord(fields.description, token), label: hasWord(fields.label, token) }));
+    if (!hits.some(hit => hit.name || hit.topics || hit.description || hit.label)) continue;
+    hits.forEach((hit, i) => { if (hit.name || hit.topics || hit.description || hit.label) frequency[i]++; });
+    rows.push({ entry, fields, hits });
+  }
+  // Rare words carry the goal ("music", "bakery"); common ones ("release",
+  // "content") only support it. Weight each word by how few skills use it.
+  const weight = frequency.map(count => Math.max(0.5, Math.log((considered + 1) / (1 + count))));
+  const needed = tokens.length >= 3 ? 2 : 1;
+  const ranked = [];
+  for (const { entry, fields, hits } of rows) {
+    let relevance = 0;
+    let matched = 0;
+    hits.forEach((hit, i) => {
+      if (hit.name || hit.topics || hit.description || hit.label) matched++;
+      relevance += weight[i] * ((hit.name ? 5 : 0) + (hit.topics ? 3 : 0) + (hit.description ? 2 : 0) + (hit.label ? 1 : 0));
+    });
+    for (const phrase of phrases) {
+      if (fields.name.includes(` ${phrase} `)) relevance += 12;
+      else if (fields.description.includes(` ${phrase} `) || fields.topics.includes(` ${phrase} `)) relevance += 8;
+    }
+    if (matched < needed || relevance < 6) continue;
+    const quality = Number.isFinite(entry.score) ? entry.score / 20 : 0;
+    const reach = Number.isFinite(entry.installs) && entry.installs > 0 ? Math.log10(entry.installs) / 2 : 0;
+    ranked.push({ entry, total: relevance + quality + reach });
+  }
+  ranked.sort((a, b) => b.total - a.total || a.entry.id.localeCompare(b.entry.id));
+  const picks = [];
+  const seenNames = new Set();
+  for (const { entry } of ranked) {
+    const key = entry.name.toLowerCase();
+    if (seenNames.has(key)) continue;
+    seenNames.add(key);
+    picks.push(entry);
+    if (picks.length >= limit) break;
+  }
+  return picks;
+}
+
+const ARTICLE_HREF = /^https:\/\/(?:suedeai\.directory\/(?:stacks|guides)\/[a-z0-9-]+\/|skills\.suedeai\.ai\/(?:blog|book)\/(?:[a-z0-9-]+\.html)?)$/;
+
+/** True for an authored article the reading list may display. */
+export function isPublishableArticle(item) {
+  return Boolean(item && typeof item === 'object' && item.author === 'Jason Colapietro'
+    && typeof item.title === 'string' && item.title && typeof item.summary === 'string' && item.summary
+    && typeof item.href === 'string' && ARTICLE_HREF.test(item.href)
+    && Array.isArray(item.intents) && item.intents.every(intent => typeof intent === 'string')
+    && (item.intents.length || (Array.isArray(item.keywords) && item.keywords.length)));
+}
+
+/**
+ * Pick authored articles for a goal: the best article for each matched
+ * workflow first, then the strongest keyword matches.
+ * @param {string} prompt
+ * @param {string[]} intentIds workflow ids the plan matched, in order
+ * @param {Array<object>} articles published workflow-articles entries
+ * @param {number} limit
+ */
+export function recommendArticles(prompt, intentIds, articles, limit = 3) {
+  const text = typeof prompt === 'string' ? normalize(prompt.slice(0, MAX_PROMPT_LENGTH)) : '';
+  const intents = Array.isArray(intentIds) ? intentIds.filter(id => typeof id === 'string') : [];
+  const tokens = goalTokens(text);
+  const pool = (Array.isArray(articles) ? articles : []).filter(isPublishableArticle);
+  // A one-word keyword also matches an expanded goal word, so "releasing a
+  // single" reaches an article keyed on "music" or "release".
+  const keywordMatches = keyword => {
+    const term = normalize(keyword);
+    if (!term) return false;
+    if (containsTerm(text, term)) return true;
+    return !term.includes(' ') && tokens.some(token => stems(token).includes(term) || stems(term).includes(token));
+  };
+  const scored = pool.map((article, index) => {
+    const keywordHits = (Array.isArray(article.keywords) ? article.keywords : [])
+      .filter(keyword => typeof keyword === 'string' && keywordMatches(keyword)).length;
+    const copy = ` ${normalize(`${article.title} ${article.summary}`)} `;
+    const wordHits = tokens.filter(token => token.length >= 4 && hasWord(copy, token)).length;
+    const intentRank = intents.findIndex(id => article.intents.includes(id));
+    const intentScore = intentRank === -1 ? 0 : 10 - Math.min(intentRank, 3);
+    return { article, index, intentRank, keywordHits, score: intentScore + keywordHits * 6 + wordHits * 2 };
+  });
+  const order = (a, b) => b.score - a.score || a.index - b.index;
+  const picked = [];
+  for (const intent of intents) {
+    const best = scored.filter(item => item.article.intents.includes(intent) && !picked.includes(item)).sort(order)[0];
+    if (best && picked.length < limit) picked.push(best);
+  }
+  for (const item of [...scored].sort(order)) {
+    if (picked.length >= limit) break;
+    if (picked.includes(item) || item.score < 6 || (!item.keywordHits && item.intentRank === -1 && item.score < 8)) continue;
+    picked.push(item);
+  }
+  return picked.map(item => item.article);
 }

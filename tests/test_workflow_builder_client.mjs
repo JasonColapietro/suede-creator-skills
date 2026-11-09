@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import vm from 'node:vm';
 import * as planner from '../docs/assets/workflow-recommender.js';
-import { recommendWorkflow, WORKFLOW_EXAMPLES } from '../docs/assets/workflow-recommender.js';
+import { recommendWorkflow, recommendSkills, recommendArticles, WORKFLOW_EXAMPLES } from '../docs/assets/workflow-recommender.js';
 const catalog = JSON.parse(fs.readFileSync(new URL('../docs/directory/search-index.json', import.meta.url)));
 const articles = JSON.parse(fs.readFileSync(new URL('../docs/directory/workflow-articles.json', import.meta.url)));
 const source = fs.readFileSync(new URL('../docs/assets/workflow-builder.js', import.meta.url), 'utf8').replace(/^import[^\n]+\n/, '');
@@ -16,12 +16,13 @@ function client(fetcher = async file => ({ ok: true, json: async () => file === 
     append(...children) { this.children.push(...children); }, replaceChildren(...children) { this.children = children; },
     focus() { doc.activeElement = this; }, scrollIntoView() {}, select() { this.selected = true; },
   });
-  const selectors = ['[data-workflow-form]', '#workflow-brief', '[type="submit"]', '[data-workflow-status]', '[data-workflow-results]', '[data-workflow-heading]', '[data-workflow-summary]', '[data-workflow-export]', '[data-workflow-steps]', '[data-workflow-tips]', '[data-workflow-reading]', '[data-workflow-copy-fallback]', '[data-workflow-examples]', '[data-workflow-refine]', '[data-workflow-copy]', '[data-workflow-mode]', '[data-workflow-free]', '[data-workflow-choices]', '[data-workflow-overview]', '[data-workflow-route]', '[data-workflow-progress]', '[data-workflow-progress-label]', '[data-workflow-reset-progress]'];
+  const selectors = ['[data-workflow-form]', '#workflow-brief', '[type="submit"]', '[data-workflow-status]', '[data-workflow-results]', '[data-workflow-heading]', '[data-workflow-summary]', '[data-workflow-export]', '[data-workflow-steps]', '[data-workflow-tips]', '[data-workflow-reading]', '[data-workflow-copy-fallback]', '[data-workflow-examples]', '[data-workflow-refine]', '[data-workflow-copy]', '[data-workflow-mode]', '[data-workflow-free]', '[data-workflow-choices]', '[data-workflow-overview]', '[data-workflow-route]', '[data-workflow-progress]', '[data-workflow-progress-label]', '[data-workflow-reset-progress]',
+    '[data-workflow-suggestions]', '[data-workflow-skill-list]', '#workflow-suggestions-title', '[data-workflow-suggestions-summary]', '[data-workflow-suggest-reading]', '[data-workflow-suggest-refine]', '[data-workflow-more]', '[data-workflow-more-list]'];
   const elements = Object.fromEntries(selectors.map(s => [s, element()]));
   elements['[data-workflow-form]'].querySelector = selector => elements[selector];
   doc = { querySelector: () => ({ querySelector: selector => elements[selector] }), createElement: element, createTextNode: text => ({ textContent: text }) };
   const requests = [];
-  vm.runInNewContext(source, { document: doc, recommendWorkflow, planWorkflow: planner.planWorkflow, WORKFLOW_EXAMPLES, URL,
+  vm.runInNewContext(source, { document: doc, recommendWorkflow, planWorkflow: planner.planWorkflow, recommendSkills, recommendArticles, WORKFLOW_EXAMPLES, URL,
     location: { href: 'https://suedeai.directory/?utm_source=test' }, navigator: { clipboard }, AbortController, setTimeout, clearTimeout,
     fetch: (...args) => { requests.push(args); return fetcher(...args); },
   });
@@ -140,4 +141,34 @@ test('essential steps and open-source selection are applied by the controller, n
   await c.build('Build a landing page');
   assert.equal(c.elements['[data-workflow-steps]'].children.length, 3);
   assert.match(c.elements['[data-workflow-export]'].value, /Essential steps; open-source licenses only/);
+});
+
+const walk = (node, out = []) => { if (node && typeof node === 'object') { out.push(node); (node.children || []).forEach(child => walk(child, out)); } return out; };
+const links = node => walk(node).filter(child => typeof child.href === 'string').map(child => child.href);
+
+test('a goal outside the authored workflows still gets graded skills, workflow choices and Jason’s articles', async () => {
+  const c = client(); await c.build('I’m a musician releasing a new single and want to plan the rollout');
+  assert.equal(c.results.hidden, true, 'no preset workflow is claimed');
+  assert.equal(c.elements['[data-workflow-suggestions]'].hidden, false);
+  const skills = c.elements['[data-workflow-skill-list]'].children;
+  assert.ok(skills.length >= 3, 'skills are recommended');
+  assert.ok(links(c.elements['[data-workflow-skill-list]']).every(href => catalog.some(skill => skill.href === href)), 'every link is a real listing');
+  assert.ok(c.elements['[data-workflow-choices]'].children.length >= 1, 'workflow choices stay available');
+  assert.equal(c.elements['[data-workflow-suggest-reading]'].hidden, false);
+  assert.ok(links(c.elements['[data-workflow-suggest-reading]']).length >= 1);
+  assert.match(c.status.textContent, /Pick a goal/);
+  c.brief.value = 'something else'; c.brief.dispatchEvent(new Event('input'));
+  assert.equal(c.elements['[data-workflow-suggestions]'].hidden, true, 'editing clears stale suggestions');
+});
+
+test('a ready workflow adds extra matching skills that are not already steps or alternatives', async () => {
+  const c = client(); await c.build('I run a small bakery and want more customers to find us on Google');
+  assert.equal(c.results.hidden, false);
+  assert.equal(c.elements['[data-workflow-more]'].hidden, false);
+  const steps = links(c.elements['[data-workflow-steps]']);
+  const more = links(c.elements['[data-workflow-more-list]']);
+  assert.ok(more.length >= 1 && more.length <= 3);
+  assert.ok(more.every(href => !steps.includes(href)));
+  assert.match(c.elements['[data-workflow-export]'].value, /More skills for this goal/);
+  assert.match(c.elements['[data-workflow-export]'].value, /Read next: /);
 });
