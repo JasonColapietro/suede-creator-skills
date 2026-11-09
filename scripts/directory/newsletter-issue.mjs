@@ -37,7 +37,7 @@ export function toolsScore(skills, hasWorkflow) {
   return Math.min(5, base + (hasWorkflow ? 1 : 0));
 }
 
-export function buildIssue({ index, feed, breakout, playbook, date }) {
+export function buildIssue({ index, feed, breakout, playbook, date, firstIssue = false }) {
   const studio = playbook.studio;
   const third = index.filter((s) => !isFirstParty(s));
   const byId = new Map(index.map((s) => [s.id, s]));
@@ -94,6 +94,7 @@ export function buildIssue({ index, feed, breakout, playbook, date }) {
 
   const card = (i, n) => [
     `**#${n} · ${i.name} · ${i.total}/20${i === top ? ' 🏆 most likely to succeed' : ''}**`,
+    '',
     `- **What it is:** ${fill(i.pitch)}`,
     `- **Start with:** ${fill(i.start)}`,
     `- **Score:** Demand ${i.demand}${i.d ? ` (${i.topics.map((t) => topic.get(t)?.name).filter(Boolean).join(', ')}: ${pct(i.d.change)}, ${fmt(i.d.installs)} weekly installs)` : ''} · Tools ${i.tools}${i.best ? ` (${i.best.name} ${i.best.score} ${i.best.grade})` : ''} · Autonomy ${i.autonomy} · Buyers ${i.buyers}`,
@@ -102,22 +103,32 @@ export function buildIssue({ index, feed, breakout, playbook, date }) {
   ].join('\n');
 
   const L = [];
-  L.push(`**Subject (A):** ${ideas.length} AI businesses you can launch this week`);
-  L.push(`**Subject (B, test against A):** The AI business that scored ${top.total}/20 this week`, '');
+  L.push(`**Subject (A):** ${ideas.length} AI businesses you can launch this week | Suede AI`);
+  L.push(`**Subject (B, test against A):** The AI business that scored ${top.total}/20 this week | Suede AI`, '');
   L.push(`**Preview text:** Ranked, with the template to start #1 today.${lowGraded ? ` Plus: a skill with ${fmt(lowGraded.weekly_installs)} installs this week got a ${lowGraded.grade} grade.` : ''}`, '', '---', '');
-  L.push('# Rising Skills', '', `*Week of ${longDate(date)} · for builders using AI to make money*`, '', '## This week in 60 seconds', '');
+  L.push('# Suede AI Rising Skills', '', `*Week of ${longDate(date)} · for builders using AI to make money*`, '');
+  const gradesLine = `Every skill in the [Suede AI Skills Directory](${SITE}/) gets a Suede Skill Check score from 0 to 99, based on how well it is built: structure, documentation, examples and upkeep. A is 90 or higher, B is 80+, C is 70+ and D is below 70, so "88 B" means a score of 88, grade B. **Installs** are how many times builders installed a skill with the skills install command.`;
+  if (firstIssue) {
+    L.push('**Welcome to the first issue of Suede AI Rising Skills.** Every Sunday we track which AI agent skills builders install and star, and turn that data into tools you can use and businesses you can start.', '',
+      '**New to agent skills?** A skill is an add-on instruction pack that teaches an AI coding agent such as Claude Code, Codex or Cursor a new job: writing cold emails, auditing a website\'s SEO, editing video. You install it once, and your agent knows how to do that job.', '',
+      `**How to read the grades.** ${gradesLine}`, '');
+  } else {
+    L.push(`**New here?** Suede AI Rising Skills tracks the AI agent skills builders install and star each week. A skill is an add-on that teaches an AI coding agent such as Claude Code, Codex or Cursor a new job. ${gradesLine}`, '');
+  }
+  L.push('## This week in 60 seconds', '');
   L.push(`- **The business most likely to succeed this week: ${top.name}.** ${cap(fill(top.pitch))} It scored **${top.total}/20** on our launch checklist. ${cta}`);
   if (money.length) L.push(`- **Money skills are climbing.** ${money.map((t) => `${t.name} ${pct(t.change_pct)}`).join(', ')} week over week.`);
   if (hero) L.push(`- **A new repo hit ${fmt(hero.stars)} stars in its first week.** [${hero.repo}](${hero.url}) leads the breakout list.`);
   if (lowGraded) L.push(`- **Popular isn't the same as good.** [${lowGraded.name}](${lowGraded.listing}) drew ${fmt(lowGraded.weekly_installs)} installs this week with a ${lowGraded.grade} grade, and only ${fmt(aCount)} of ${fmt(third.length)} skills earn an A. The 10 most-installed and the 10 best-graded skills have ${overlap === 0 ? 'zero' : overlap} in common.`);
   if (playbook.star) L.push(`- **Every grade here comes from Suede AI Skills.** Free and open source: [⭐ star it on GitHub](${playbook.star}).`);
   L.push('', '---', '', `## 💼 ${ideas.length} AI businesses in two models, ranked by score: start with #1`, '');
-  L.push('We scored each idea on four questions, 1–5 each, and ranked them by score within each business model:',
+  L.push('We scored each idea on four questions, 1–5 each, and ranked them by score within each business model:', '',
     '- **Demand:** is this week\'s install growth rising for this kind of work?',
     '- **Tools:** are B-grade or better skills and a ready-made workflow available?',
     '- **Autonomy:** can it run without you?',
     '- **Buyers:** do businesses already pay people to do this job?', '',
-    '*These are our editorial scores from this week\'s data, not revenue forecasts.*', '');
+    '*These are our editorial scores from this week\'s data, not revenue forecasts.*', '',
+    `**Two ways to run them.** *Autonomous* ideas run on [Suede AI Agent Studio](${studio}/), an agent builder where you set up an agent that does one job and charges your customers per job. *You sell it* ideas are services you sell yourself, with agents doing the heavy lifting. A **template** is a ready-made Agent Studio workflow you open and adapt.`, '');
   L.push('### Autonomous: the agent does the work and charges per job', '',
     `These start from Agent Studio's [self-running companies](${studio}/company), where each "employee" agent has a job and a price it charges per call. Every price below is the template's default charge, and you set your own.`, '');
   ordered.forEach((i, k) => {
@@ -125,38 +136,40 @@ export function buildIssue({ index, feed, breakout, playbook, date }) {
     L.push(card(i, k + 1));
   });
   L.push(`> **Know someone picking an AI side business? Forward them #1.**`, '', ...(playbook.star ? [`**⭐ [Star Suede AI Skills on GitHub](${playbook.star})** so more builders find graded skills.`, ''] : []), '---', '');
-  L.push('## 🧰 Pick your stack: the best-graded tool for each money job', '', 'The best-graded skill people actually use (500+ installs), then the Agent Studio workflow that runs the job for you.', '');
+  L.push('## 🧰 Pick your stack: the best-graded tool for each money job', '', 'The best-graded skill people actually use (500+ installs), then the Agent Studio workflow that runs the job for you. Use the **skill** while you work alongside your AI agent; use the **workflow** when the job should run on its own.', '');
   L.push(...playbook.jobs.map(job), '');
   if (restricted) L.push('⚠️ Anthropic\'s document skills (docx, pdf, xlsx) use a restricted license. Read the terms before using them in paid client work.', '');
   L.push('**Rule of thumb:** use skills when you\'re at the keyboard with Claude Code, Codex or Cursor. Use an Agent Studio workflow when the job should run on a schedule, or for a paying customer, without you.', '');
   if (moving.length) {
-    L.push(`## 📈 Where buyers' work is moving: ${pct(moving.at(-1).change_pct)} to ${pct(moving[0].change_pct)} this week`, '', 'Weekly installs for each use case, compared with the week before:', '');
+    L.push(`## 📈 Where buyers' work is moving: ${pct(moving.at(-1).change_pct)} to ${pct(moving[0].change_pct)} this week`, '', 'A use case groups every skill for one kind of work, such as sales or SEO. The percentage compares installs in the latest week with the week before, so it shows where builders are putting agents to work right now.', '');
     L.push(...moving.map((t) => `- [${t.name}](${SITE}/topics/${t.id}/): ${pct(t.change_pct)} (${fmt(t.weekly_installs)})`), '');
     if (leadRepo) L.push(`**Leading the climb:** ${leadRepo[1].length} skills from [${leadRepo[0]}](${SITE}/${leadRepo[0].toLowerCase()}/), up ${Math.min(...leadRepo[1].map((s) => s.change_pct))}–${Math.max(...leadRepo[1].map((s) => s.change_pct))}%.`, '');
   }
   if (breakout.repos.length) {
-    L.push('## 🚀 Breakout repos: new this week, ranked by stars', '', `Created ${shortDate(breakout.since)} – ${shortDate(breakout.date)} and starred fastest. These are too new to be graded, so read the source before you install.`, '');
+    L.push('## 🚀 Breakout repos: new this week, ranked by stars', '', `Brand-new open-source projects for AI agents on GitHub, created ${shortDate(breakout.since)} – ${shortDate(breakout.date)} and ranked by stars (a star is GitHub's bookmark and vote of confidence). These are too new to be graded, so read the source before you install.`, '');
     L.push(...breakout.repos.slice(0, 8).map((r) => `- **[${r.repo}](${r.url})** · ${fmt(r.stars)} ⭐: ${r.description}`), '');
   }
   if (gainers.length) L.push(`**Most stars gained this week:** ${gainers.map((r) => `${r.repo} (+${fmt(r.gained)})`).join(', ')}.`, '');
-  else if (repos.length) L.push(`**All-time leaders:** ${repos.slice(0, 2).map((r) => `${r.repo} (${fmt(r.stars)} stars)`).join(' and ')}. Starting next week, this spot shows who gained the most stars that week.`, '');
+  else if (repos.length) L.push(`**All-time leaders** (the most-starred skill collections on GitHub): ${repos.slice(0, 2).map((r) => `${r.repo} (${fmt(r.stars)} stars)`).join(' and ')}. Starting next week, this spot shows who gained the most stars that week.`, '');
   if (free.length) {
     L.push(`## 🆓 ${free.length} A-grade skills you can use free`, '', 'Open-source license and no paid service required:', '');
     L.push(...free.map((s) => `- ${link(s)} · ${s.score} ${s.grade}. ${clip(s.description)}`), '');
   }
-  L.push('---', '', '## 🤖 Get this briefing from your own AI agent', '', 'Install the free finder skill once:', '', '```',
+  L.push('---', '', '## 🤖 Get this briefing from your own AI agent', '', 'The finder is a free skill that lets your AI agent search the directory for you. Install it once:', '', '```',
     'npx skills add https://github.com/JasonColapietro/suede-creator-skills/tree/main/directory/suede-directory', '```', '',
     `Then ask your agent: **"Brief me on agent skills for sales, video and SEO, and remember those interests."** Each week it pulls the rising skills, fastest-growing topics, new listings and repo stars for just what you care about. Your interests stay on your machine. [How it works →](${SITE}/finder/#briefing)`, '',
     `**Ready to start #1? [→ Open the ${ctaTpl[1]} template](${studio}/build/new?template=${ctaTpl[0]})**`, '',
     `**Next week:** a new ranking, plus who gained the most GitHub stars that week. Got this forwarded? [Subscribe](${playbook.subscribe}) so you get the next one.${playbook.star ? ` The finder is open source: [⭐ star Suede AI Skills on GitHub](${playbook.star}).` : ''}`, '', '---', '',
-    `*Install counts come from skills.sh and cover installs made with the skills CLI during the week ending ${shortDate(feed.install_snapshot)}. Grades come from the ${longDate(feed.quality_snapshot)} Suede AI Skills Directory snapshot. Star counts are from GitHub on ${shortDate(feed.stars_snapshot || date)}. Suede AI's own skills are excluded from every directory ranking. Agent Studio prices are template defaults; live runs bill from prepaid credit, with packs starting at $1. Publish skills? If yours scores 80 or higher, [add a quality badge to your README](${SITE}/badges/).*`, '');
+    `*Install counts and grades are from the [Suede AI Skills Directory](${SITE}/), covering the week ending ${shortDate(feed.install_snapshot)}. Grades come from the ${longDate(feed.quality_snapshot)} Suede AI Skills Directory snapshot. Star counts are from GitHub on ${shortDate(feed.stars_snapshot || date)}. Suede AI's own skills are excluded from every directory ranking. Agent Studio prices are template defaults; live runs bill from prepaid credit, with packs starting at $1. Publish skills? If yours scores 80 or higher, [add a quality badge to your README](${SITE}/badges/).*`, '');
   return L.join('\n');
 }
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
   const read = (p) => JSON.parse(fs.readFileSync(path.join(root, p), 'utf8'));
   const breakout = read('directory/growth/breakout.json');
-  const md = buildIssue({ index: read('docs/directory/search-index.json'), feed: read('docs/directory/weekly.json'), breakout, playbook: read('directory/growth/newsletter-playbook.json'), date: breakout.date });
+  const issuesDir = path.join(root, 'directory/growth/issues');
+  const earlier = fs.existsSync(issuesDir) ? fs.readdirSync(issuesDir).filter((f) => /^\d{4}-\d{2}-\d{2}\.md$/.test(f) && f < `${breakout.date}.md`) : [];
+  const md = buildIssue({ index: read('docs/directory/search-index.json'), feed: read('docs/directory/weekly.json'), breakout, playbook: read('directory/growth/newsletter-playbook.json'), date: breakout.date, firstIssue: earlier.length === 0 });
   const out = path.join(root, 'directory/growth/issues', `${breakout.date}.md`);
   fs.mkdirSync(path.dirname(out), { recursive: true });
   fs.writeFileSync(out, md);
