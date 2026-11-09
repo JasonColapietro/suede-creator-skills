@@ -119,6 +119,96 @@
           "sha256": "a9c06dc80b3a4d7fcb09d9c21b1edaa4d40b3d42e8418d0d291430530b731188",
           "reviewed_entire_file": true
         }
+      ],
+      "curated_list_checks": [
+        {
+          "repo": "BehiSecc/awesome-claude-skills",
+          "commit": "adf99015a0ad4dac11711c261f0f9b433e4215e7",
+          "path": "README.md",
+          "blob": "55d020b927bf00f4f242b58fe4c196feea596c08",
+          "verified_at": "2026-11-09",
+          "matches_target": false,
+          "url": "https://github.com/BehiSecc/awesome-claude-skills/blob/adf99015a0ad4dac11711c261f0f9b433e4215e7/README.md",
+          "sha256": "78f4ef90464fc29fbf1d31ca9bef572f4920afe8d2b4e8dd9b768c99be0c463d",
+          "blob_verified": true
+        },
+        {
+          "repo": "ComposioHQ/awesome-claude-skills",
+          "commit": "be2a406907dbc61b73e6827ded415c96139d13a2",
+          "path": "README.md",
+          "blob": "d28b9c3515147fba1242461eb2c11155ffca5bbf",
+          "verified_at": "2026-11-09",
+          "matches_target": false,
+          "url": "https://github.com/ComposioHQ/awesome-claude-skills/blob/be2a406907dbc61b73e6827ded415c96139d13a2/README.md",
+          "sha256": "e693f2701840f26fb04c3058d55215f2c6575fff7f1c197ada5b64e2f7ee0c12",
+          "blob_verified": true
+        },
+        {
+          "repo": "VoltAgent/awesome-agent-skills",
+          "commit": "6d483e29da745a010d88974ef6d0e50d15755e9a",
+          "path": "README.md",
+          "blob": "cfb805af027cf36699843b6760c9e277ef613eb5",
+          "verified_at": "2026-11-09",
+          "matches_target": false,
+          "url": "https://github.com/VoltAgent/awesome-agent-skills/blob/6d483e29da745a010d88974ef6d0e50d15755e9a/README.md",
+          "sha256": "c2f3447c752015a67db5e7eefb86790fc3945f311e9643232c4733da146160d4",
+          "blob_verified": true
+        },
+        {
+          "repo": "heilcheng/awesome-agent-skills",
+          "commit": "a92b1f3a9cdf00b056a8cc3247f214a139a95ae3",
+          "path": "README.md",
+          "blob": "a4d6d07ce1cd8d21e7ea9b1bdc25f1598d633172",
+          "verified_at": "2026-11-09",
+          "matches_target": false,
+          "url": "https://github.com/heilcheng/awesome-agent-skills/blob/a92b1f3a9cdf00b056a8cc3247f214a139a95ae3/README.md",
+          "sha256": "cf887b175e358dd1833ba4cc2f6ab6d62fee388da808290c2dfc10a0fea57b7a",
+          "blob_verified": true
+        },
+        {
+          "repo": "hesreallyhim/awesome-claude-code",
+          "commit": "f5df1a19699384b2ebd7a4cfb794fa2feed5e504",
+          "path": "README.md",
+          "blob": "d031a20828cd54d9da855f70123fd285170e6844",
+          "verified_at": "2026-11-09",
+          "matches_target": false,
+          "url": "https://github.com/hesreallyhim/awesome-claude-code/blob/f5df1a19699384b2ebd7a4cfb794fa2feed5e504/README.md",
+          "sha256": "d5a9f47112bbc755d06b118595d7c5baf7ff72cb867510eb3275eb058ad288c3",
+          "blob_verified": true
+        },
+        {
+          "repo": "karanb192/awesome-claude-skills",
+          "commit": "7b2650b08cd3e287a64b50897bc941dedee6c29d",
+          "path": "README.md",
+          "blob": "d986ccdf173639ec92ab1837b66062428b2e9eeb",
+          "verified_at": "2026-11-09",
+          "matches_target": false,
+          "url": "https://github.com/karanb192/awesome-claude-skills/blob/7b2650b08cd3e287a64b50897bc941dedee6c29d/README.md",
+          "sha256": "f112e0d168b32709061d3817e2cdeb8411958dcc09d96250024fb30ed6e77386",
+          "blob_verified": true
+        },
+        {
+          "repo": "skillmatic-ai/awesome-agent-skills",
+          "commit": "cdf5ae3ff506e6f3737122bb9d24ac7d727cb6a0",
+          "path": "README.md",
+          "blob": "b6d37764ca604af7ef05f34c182d5732e83df093",
+          "verified_at": "2026-11-09",
+          "matches_target": false,
+          "url": "https://github.com/skillmatic-ai/awesome-agent-skills/blob/cdf5ae3ff506e6f3737122bb9d24ac7d727cb6a0/README.md",
+          "sha256": "2415c6138808b505533ab5bad33b02e336be1b22faaf230e962e967760b96aea",
+          "blob_verified": true
+        },
+        {
+          "repo": "travisvn/awesome-claude-skills",
+          "commit": "1da55aa810f206d3fe2005e7e3989b15a275d942",
+          "path": "README.md",
+          "blob": "63064b36d5153e1342590651d1e7f62093450040",
+          "verified_at": "2026-11-09",
+          "matches_target": false,
+          "url": "https://github.com/travisvn/awesome-claude-skills/blob/1da55aa810f206d3fe2005e7e3989b15a275d942/README.md",
+          "sha256": "b15fa837edeb632f4a85871590df4dab64deec10af904d512a5ee12bce8773c9",
+          "blob_verified": true
+        }
       ]
     },
     {
@@ -178,6 +268,64 @@
         {
           "path": "skills/agentswarm-work/agents/openai.yaml",
           "sha256": "a1499d95abd8447558c535fe5554adcc3c9b988a0a39264a6283d430effe1e94"
+        }
+      ],
+      "curated_list_checks": [
+        {
+          "repo": "travisvn/awesome-claude-skills",
+          "commit": "1da55aa810f206d3fe2005e7e3989b15a275d942",
+          "path": "README.md",
+          "verified_at": "2026-11-09",
+          "direct_target_found": false
+        },
+        {
+          "repo": "ComposioHQ/awesome-claude-skills",
+          "commit": "be2a406907dbc61b73e6827ded415c96139d13a2",
+          "path": "README.md",
+          "verified_at": "2026-11-09",
+          "direct_target_found": false
+        },
+        {
+          "repo": "VoltAgent/awesome-agent-skills",
+          "commit": "6d483e29da745a010d88974ef6d0e50d15755e9a",
+          "path": "README.md",
+          "verified_at": "2026-11-09",
+          "direct_target_found": false
+        },
+        {
+          "repo": "hesreallyhim/awesome-claude-code",
+          "commit": "f5df1a19699384b2ebd7a4cfb794fa2feed5e504",
+          "path": "README.md",
+          "verified_at": "2026-11-09",
+          "direct_target_found": false
+        },
+        {
+          "repo": "BehiSecc/awesome-claude-skills",
+          "commit": "adf99015a0ad4dac11711c261f0f9b433e4215e7",
+          "path": "README.md",
+          "verified_at": "2026-11-09",
+          "direct_target_found": false
+        },
+        {
+          "repo": "karanb192/awesome-claude-skills",
+          "commit": "7b2650b08cd3e287a64b50897bc941dedee6c29d",
+          "path": "README.md",
+          "verified_at": "2026-11-09",
+          "direct_target_found": false
+        },
+        {
+          "repo": "heilcheng/awesome-agent-skills",
+          "commit": "a92b1f3a9cdf00b056a8cc3247f214a139a95ae3",
+          "path": "README.md",
+          "verified_at": "2026-11-09",
+          "direct_target_found": false
+        },
+        {
+          "repo": "skillmatic-ai/awesome-agent-skills",
+          "commit": "cdf5ae3ff506e6f3737122bb9d24ac7d727cb6a0",
+          "path": "README.md",
+          "verified_at": "2026-11-09",
+          "direct_target_found": false
         }
       ]
     }
