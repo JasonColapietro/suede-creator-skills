@@ -306,7 +306,11 @@ test('every star call to action names Suede AI Skills and points at its reposito
 test('every issue explains its terms, welcomes first readers once and renders lists cleanly', () => {
   const later = buildIssue({ index: nlIndex, feed: nlFeed, breakout, playbook, date: breakout.date });
   const first = buildIssue({ index: nlIndex, feed: nlFeed, breakout, playbook, date: breakout.date, firstIssue: true });
-  assert.match(first, /Welcome to the first issue of Rising Skills/);
+  assert.match(first, /Welcome to the first issue of Suede AI Rising Skills/);
+  for (const md of [first, later]) {
+    assert.match(md, /^\*\*Subject \(A\):\*\* .+ \| Suede AI$/m);
+    assert.match(md, /^# Suede AI Rising Skills$/m);
+  }
   assert.match(first, /\*\*New to agent skills\?\*\*/);
   assert.doesNotMatch(later, /Welcome to the first issue/);
   assert.match(later, /\*\*New here\?\*\*/);

@@ -103,17 +103,17 @@ export function buildIssue({ index, feed, breakout, playbook, date, firstIssue =
   ].join('\n');
 
   const L = [];
-  L.push(`**Subject (A):** ${ideas.length} AI businesses you can launch this week`);
-  L.push(`**Subject (B, test against A):** The AI business that scored ${top.total}/20 this week`, '');
+  L.push(`**Subject (A):** ${ideas.length} AI businesses you can launch this week | Suede AI`);
+  L.push(`**Subject (B, test against A):** The AI business that scored ${top.total}/20 this week | Suede AI`, '');
   L.push(`**Preview text:** Ranked, with the template to start #1 today.${lowGraded ? ` Plus: a skill with ${fmt(lowGraded.weekly_installs)} installs this week got a ${lowGraded.grade} grade.` : ''}`, '', '---', '');
-  L.push('# Rising Skills', '', `*Week of ${longDate(date)} · for builders using AI to make money*`, '');
+  L.push('# Suede AI Rising Skills', '', `*Week of ${longDate(date)} · for builders using AI to make money*`, '');
   const gradesLine = `Every skill in the [Suede AI Skills Directory](${SITE}/) gets a Suede Skill Check score from 0 to 99, based on how well it is built: structure, documentation, examples and upkeep. A is 90 or higher, B is 80+, C is 70+ and D is below 70, so "88 B" means a score of 88, grade B. **Installs** are how many times builders installed a skill with the skills install command.`;
   if (firstIssue) {
-    L.push('**Welcome to the first issue of Rising Skills.** Every Sunday we track which AI agent skills builders install and star, and turn that data into tools you can use and businesses you can start.', '',
+    L.push('**Welcome to the first issue of Suede AI Rising Skills.** Every Sunday we track which AI agent skills builders install and star, and turn that data into tools you can use and businesses you can start.', '',
       '**New to agent skills?** A skill is an add-on instruction pack that teaches an AI coding agent such as Claude Code, Codex or Cursor a new job: writing cold emails, auditing a website\'s SEO, editing video. You install it once, and your agent knows how to do that job.', '',
       `**How to read the grades.** ${gradesLine}`, '');
   } else {
-    L.push(`**New here?** Rising Skills tracks the AI agent skills builders install and star each week. A skill is an add-on that teaches an AI coding agent such as Claude Code, Codex or Cursor a new job. ${gradesLine}`, '');
+    L.push(`**New here?** Suede AI Rising Skills tracks the AI agent skills builders install and star each week. A skill is an add-on that teaches an AI coding agent such as Claude Code, Codex or Cursor a new job. ${gradesLine}`, '');
   }
   L.push('## This week in 60 seconds', '');
   L.push(`- **The business most likely to succeed this week: ${top.name}.** ${cap(fill(top.pitch))} It scored **${top.total}/20** on our launch checklist. ${cta}`);
