@@ -175,3 +175,22 @@ test('a ready workflow adds extra matching skills that are not already steps or 
   assert.match(more[0], /\/jasoncolapietro\/suede-creator-skills\//, 'a matching Suede AI skill leads');
   assert.match(c.elements['[data-workflow-export]'].value, /Read next: /);
 });
+
+test('Suede AI skill cards carry the gold accent and a pick badge; other publishers do not', async () => {
+  const c = client(); await c.build('I’m a musician releasing a new single');
+  const cards = c.elements['[data-workflow-skill-list]'].children;
+  const suede = cards.filter(card => links(card)[0]?.includes('/jasoncolapietro/suede-creator-skills/'));
+  const others = cards.filter(card => !suede.includes(card));
+  assert.ok(suede.length >= 1 && others.length >= 1);
+  for (const card of suede) {
+    assert.match(card.className, /\bis-suede\b/);
+    assert.ok(walk(card).some(node => node.className === 'workflow-suede-badge' && node.textContent === 'Suede AI pick'));
+  }
+  for (const card of others) {
+    assert.doesNotMatch(card.className, /\bis-suede\b/);
+    assert.ok(!walk(card).some(node => node.className === 'workflow-suede-badge'));
+  }
+  const plan = client(); await plan.build('Get my business found in AI search and improve SEO');
+  const box = walk(plan.elements['[data-workflow-steps]']).find(node => /\bworkflow-skill-box\b/.test(node.className || ''));
+  assert.match(box.className, /\bis-suede\b/, 'a Suede step skill gets the same treatment');
+});
