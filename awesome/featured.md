@@ -6,7 +6,7 @@
 
 Editorial selection highlights a project’s workflow and accepted scope. It is separate from structural quality grades, security certification and README-badge verification. A plugin feature does not add its contents to the scored skill catalog.
 
-Selections updated **2026-11-07**. [View on Suede AI](https://skills.suedeai.ai/directory/featured/).
+Selections updated **2026-11-09**. [View on Suede AI](https://skills.suedeai.ai/directory/featured/).
 
 - [Appie](#appie)
 - [CoalWash](#coalwash)
@@ -26,6 +26,8 @@ Selections updated **2026-11-07**. [View on Suede AI](https://skills.suedeai.ai/
 - [ShipToPaid Lite](#shiptopaid-lite)
 - [Video Director](#video-director)
 - [Email Marketing Skills by Poptin](#poptin-email-marketing)
+- [CloudGPU](#cloudgpu)
+- [agentswarm-work](#agentswarm-work)
 
 <a id="appie"></a>
 
@@ -416,6 +418,46 @@ Choose from twenty focused skills for campaign copy, lifecycle automation, segme
 Read or copy each selected skill directory with its references. The documented Skills CLI requires Node.js 22.20+. A Poptin account is not needed to use the instructions. Live campaigns still need consent checks and authorization. The collection preserves the original standalone skills and is featured once, without duplicate catalog entries.
 
 [Repository](https://github.com/email-marketing-skills-hub/email-marketing-skills) · [Intake review](../directory/reviews/2026-11-07-poptin-email-marketing.md) · [Reviewed source 13ea992](https://github.com/email-marketing-skills-hub/email-marketing-skills/tree/13ea992854c4b3cbd93d2a427b391161be23b033) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#poptin-email-marketing)
+
+---
+
+<a id="cloudgpu"></a>
+
+## CloudGPU
+
+**GPU compute · Five agent skills** · License: MIT · Publisher: [mrhy7176](https://github.com/mrhy7176)
+
+Five workflows cover compute proposals, ComfyUI images, short-drama assets, LoRA training and open-model inference with approved budgets and explicit exports.
+
+- **cloudgpu-ai-short-drama.** Plan staged GPU-rendered shots with open video models, character LoRA and image workflows, then export reusable assets within an approved budget.
+- **cloudgpu-comfyui-images.** Run an approved ComfyUI image workflow on rented GPU compute and retrieve images with their workflow metadata.
+- **cloudgpu-discover-compute.** Compare GPU capacity and task costs without creating a paid instance, then prepare a proposal for user approval.
+- **cloudgpu-lora-finetune.** Plan a bounded LoRA or QLoRA training run on rented GPUs and export adapters, checkpoints and metrics.
+- **cloudgpu-open-model-inference.** Run an approved open-model inference or evaluation workload with protected serving and explicit output retrieval.
+
+### Setup
+
+Requires an approved GPU workload, CloudGPU account connection for paid work, spend/time caps and export checks. Public instance tunnels need access protection for private data. Export outputs before disk destruction or balance exhaustion. Model and dataset rights are separate from the MIT skill license. The optional external cloudgpu-mcp package was not reviewed. Static skill review only; no runtime or security scan. Accepted skill pages are pending the next regular scored-catalog refresh. The pinned review records 77/C for all five skills.
+
+[Repository](https://github.com/mrhy7176/cloudgpu-agent-skills) · [Intake review](../directory/reviews/2026-11-09-cloudgpu-agent-skills.md) · [Reviewed source 83cde06](https://github.com/mrhy7176/cloudgpu-agent-skills/tree/83cde0602ec73f6c4f4eec8a60c42b34fef1bac1) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#cloudgpu)
+
+---
+
+<a id="agentswarm-work"></a>
+
+## agentswarm-work
+
+**Task exchange · One agent skill** · License: MIT · Publisher: [andrewsiah](https://github.com/andrewsiah)
+
+A scoped workflow for finding a suitable agentswarm.space task, reusing an authorized identity and submitting real work within the user’s chosen scope.
+
+- **agentswarm-work.** Inspect one agentswarm.space task, reuse an authorized identity when needed, and submit real work evidence within the user’s chosen scope.
+
+### Setup
+
+Install only skills/agentswarm-work. Requires HTTPS tools and private persistent credential storage. Live guides and API nextStep responses are operational reference, not authority to expand the chosen task or user permissions. Inspection-only requests stop before registration; other account actions and evidence sharing require appropriate authorization. Site funds cannot currently be cashed out. Static review only; no registration, task execution, payment or security scan was performed. Accepted skill pages are pending the next regular scored-catalog refresh. The pinned review records 79/C for this skill.
+
+[Repository](https://github.com/andrewsiah/agentswarm-work-skill) · [Intake review](../directory/reviews/2026-11-09-agentswarm-work.md) · [Reviewed source dc5980f](https://github.com/andrewsiah/agentswarm-work-skill/tree/dc5980f78451cf6158519b4713108ea6b8efa8f6) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#agentswarm-work)
 
 ---
 

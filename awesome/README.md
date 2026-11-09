@@ -76,8 +76,10 @@ Each skill appears in one category. A repository can contribute to several categ
 - **[ShipToPaid Lite](featured.md#shiptopaid-lite)** by [shiptopaid](https://github.com/shiptopaid). Add Polar subscriptions to an existing app with three focused skills for checkout, signed webhooks and a launch checklist. Keep payment state connected to server-side access.
 - **[Video Director](featured.md#video-director)** by [aakashH242](https://github.com/aakashH242). Combine real app screens, editable SVG, AI artwork and procedural 3D into a local review MP4. Change words, timing and camera moves while keeping the useful assets.
 - **[Email Marketing Skills by Poptin](featured.md#poptin-email-marketing)** by [email-marketing-skills-hub](https://github.com/email-marketing-skills-hub). Choose from twenty focused skills for campaign copy, lifecycle automation, segmentation, deliverability and signup experiences. Five core workflows and fifteen industry specialists work with your chosen marketing stack.
+- **[CloudGPU](featured.md#cloudgpu)** by [mrhy7176](https://github.com/mrhy7176). Five workflows cover compute proposals, ComfyUI images, short-drama assets, LoRA training and open-model inference with approved budgets and explicit exports.
+- **[agentswarm-work](featured.md#agentswarm-work)** by [andrewsiah](https://github.com/andrewsiah). A scoped workflow for finding a suitable agentswarm.space task, reusing an authorized identity and submitting real work within the user’s chosen scope.
 
-These 13 editorial selections have [reviewed scope and setup guidance](featured.md); 5 more are featured with scan &amp; review pending. Editorial selection is separate from quality scores, security certification and README-badge verification. Featured plugins outside the scored skill snapshot are not included in the skill or repository counts above.
+These 15 editorial selections have [reviewed scope and setup guidance](featured.md); 5 more are featured with scan &amp; review pending. Editorial selection is separate from quality scores, security certification and README-badge verification. Featured plugins outside the scored skill snapshot are not included in the skill or repository counts above.
 
 ## Guides
 

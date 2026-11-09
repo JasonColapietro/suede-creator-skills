@@ -9916,5 +9916,29 @@
  "zxkane/aws-skills/aws-sst-development": {
   "category": "devops-cloud",
   "summary": "Guides managing AWS resources as code with SST v4 and Pulumi, including sst.config.ts, infra modules, resource links, IAM scoping, and sst deploy workflows."
+ },
+ "mrhy7176/cloudgpu-agent-skills/cloudgpu-open-model-inference": {
+  "category": "ai-agents-llm",
+  "summary": "Run an approved open-model inference or evaluation workload with protected serving and explicit output retrieval."
+ },
+ "mrhy7176/cloudgpu-agent-skills/cloudgpu-lora-finetune": {
+  "category": "ai-agents-llm",
+  "summary": "Plan a bounded LoRA or QLoRA training run on rented GPUs and export adapters, checkpoints and metrics."
+ },
+ "mrhy7176/cloudgpu-agent-skills/cloudgpu-discover-compute": {
+  "category": "devops-cloud",
+  "summary": "Compare GPU capacity and task costs without creating a paid instance, then prepare a proposal for user approval."
+ },
+ "mrhy7176/cloudgpu-agent-skills/cloudgpu-ai-short-drama": {
+  "category": "media-creative",
+  "summary": "Plan staged GPU-rendered shots with open video models, character LoRA and image workflows, then export reusable assets within an approved budget."
+ },
+ "mrhy7176/cloudgpu-agent-skills/cloudgpu-comfyui-images": {
+  "category": "media-creative",
+  "summary": "Run an approved ComfyUI image workflow on rented GPU compute and retrieve images with their workflow metadata."
+ },
+ "andrewsiah/agentswarm-work-skill/agentswarm-work": {
+  "category": "ai-agents-llm",
+  "summary": "Inspect one agentswarm.space task, reuse an authorized identity when needed, and submit real work evidence within the user’s chosen scope."
  }
 }

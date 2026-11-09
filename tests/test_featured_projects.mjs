@@ -13,7 +13,7 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const read = (file) => fs.readFileSync(path.join(root, file), 'utf8');
 const data = JSON.parse(read('directory/featured-projects.json'));
 const published = () => read('docs/directory/featured/index.html');
-const recentIds = ['poptin-email-marketing', 'shiptopaid-lite', 'video-director', 'agent-qa', 'berlin-job-search', 'bulkpublish', 'empacer', 'frametell', 'inkroom', 'lfr', 'trong-hieu', 'geekflare', 'cisco-skill-scanner', 'opsibyte', 'extra-caffeine', 'costory', 'appie', 'coalwash', 'lava', 'arcmira'];
+const recentIds = ['agentswarm-work', 'cloudgpu', 'poptin-email-marketing', 'shiptopaid-lite', 'video-director', 'agent-qa', 'berlin-job-search', 'bulkpublish', 'empacer', 'frametell', 'inkroom', 'lfr', 'trong-hieu', 'geekflare', 'cisco-skill-scanner', 'opsibyte', 'extra-caffeine', 'costory', 'appie', 'coalwash', 'lava', 'arcmira'];
 const pendingIds = ['berlin-job-search', 'bulkpublish', 'empacer', 'inkroom', 'lfr'];
 const reviewedIds = recentIds.filter((id) => !pendingIds.includes(id) && data.projects.some((p) => p.id === id));
 const cardOf = (html, id) => html.split(`id="${id}"`)[1]?.split('</article>')[0];
@@ -295,7 +295,7 @@ test('Arcmira review preserves original scores and every raw scan finding', () =
 });
 
 test('editorial projects preserve accepted scopes and resolve their reviewed evidence', () => {
-  assert.deepEqual(data.projects.map((p) => p.repo), ['appierun/appie-mcp', 'TheColliery/CoalWash', 'costory-io/costory-finops-mcp-skills', 'cwong5/extra-caffeine-mcp', 'MelMayssonOwen/agent-skills', 'cisco-ai-defense/skill-scanner', 'geekflare/geekflare-skills', 'tronghieu/agent-skills', 'vostride/agent-qa', 'sitor-ai/frametell', 'azeemkafridi/bulkpublish-ai-toolkit', 'InkRoom-AI/inkroom-client', undefined, 'umutyesildal/berlin-job-search', 'Anonyfox/lfr', 'shiptopaid/shiptopaid-lite', 'aakashH242/video-director', 'email-marketing-skills-hub/email-marketing-skills']);
+  assert.deepEqual(data.projects.map((p) => p.repo), ['appierun/appie-mcp', 'TheColliery/CoalWash', 'costory-io/costory-finops-mcp-skills', 'cwong5/extra-caffeine-mcp', 'MelMayssonOwen/agent-skills', 'cisco-ai-defense/skill-scanner', 'geekflare/geekflare-skills', 'tronghieu/agent-skills', 'vostride/agent-qa', 'sitor-ai/frametell', 'azeemkafridi/bulkpublish-ai-toolkit', 'InkRoom-AI/inkroom-client', undefined, 'umutyesildal/berlin-job-search', 'Anonyfox/lfr', 'shiptopaid/shiptopaid-lite', 'aakashH242/video-director', 'email-marketing-skills-hub/email-marketing-skills', 'mrhy7176/cloudgpu-agent-skills', 'andrewsiah/agentswarm-work-skill']);
   const page = published();
   const appie = page.split('id="appie"')[1].split('</article>')[0];
   const links = [...appie.matchAll(/href="(\.\.\/appierun\/appie-mcp\/[^"/]+\/)"/g)].map((m) => m[1]);
@@ -331,11 +331,11 @@ test('featured page has a discoverable route, truthful structured data and selec
   assert.equal((page.match(/<h1[ >]/g) || []).length, 1);
   const blocks = [...page.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map((m) => JSON.parse(m[1]));
   const collection = blocks.find((x) => x['@type'] === 'CollectionPage');
-  assert.equal(collection.mainEntity.numberOfItems, 20);
-  assert.deepEqual(collection.mainEntity.itemListElement.map((p) => p.name), ['Email Marketing Skills by Poptin', 'ShipToPaid Lite', 'Video Director', 'agent-qa CLI by Vostride', 'Berlin Job Search', 'BulkPublish', 'Empacer', 'Frametell', 'InkRoom', 'lfr', 'Trong Hieu agent skills', 'Geekflare', 'Cisco AI Defense Skill Scanner', 'Opsibyte', 'Extra Caffeine', 'Costory', 'Appie', 'CoalWash', 'Lava', 'Arcmira']);
+  assert.equal(collection.mainEntity.numberOfItems, 22);
+  assert.deepEqual(collection.mainEntity.itemListElement.map((p) => p.name), ['agentswarm-work', 'CloudGPU', 'Email Marketing Skills by Poptin', 'ShipToPaid Lite', 'Video Director', 'agent-qa CLI by Vostride', 'Berlin Job Search', 'BulkPublish', 'Empacer', 'Frametell', 'InkRoom', 'lfr', 'Trong Hieu agent skills', 'Geekflare', 'Cisco AI Defense Skill Scanner', 'Opsibyte', 'Extra Caffeine', 'Costory', 'Appie', 'CoalWash', 'Lava', 'Arcmira']);
   const description = page.match(/<meta name="description" content="([^"]*)"/)[1];
   assert.ok(description.length >= 70 && description.length <= 155, description);
-  assert.match(description, /^Meet Email Marketing Skills by Poptin, .* and \d+ more: featured agent projects with source and setup\.$/);
+  assert.match(description, /^Meet agentswarm-work, .* and \d+ more: featured agent projects with source and setup\.$/);
   assert.match(page, /README-badge verification is tracked separately/);
   assert.match(page, /href="\.\.\/submit\/"/);
   assert.match(page, /href="\.\.\/methodology\/"/);
@@ -592,4 +592,26 @@ test('November applicants have pinned editorial features without invented scores
   assert.match(data.projects.find((p) => p.id === 'video-director').setup, /media.*separate/i);
   assert.match(data.projects.find((p) => p.id === 'poptin-email-marketing').setup, /consent/i);
   assert.match(data.projects.find((p) => p.id === 'shiptopaid-lite').setup, /sandbox/i);
+});
+
+
+test('November 9 editorial features preserve authentic scores and pending catalog scope', () => {
+  const intake = JSON.parse(read('directory/intake/2026-11-09-cloudgpu-agentswarm.json'));
+  const inclusions = JSON.parse(read('directory/inclusions.json'));
+  const catalog = JSON.parse(read('directory/skills.json'));
+  assert.equal(intake.repositories.length, 2);
+  for (const [repo, score, count] of [['mrhy7176/cloudgpu-agent-skills', 77, 5], ['andrewsiah/agentswarm-work-skill', 79, 1]]) {
+    const record = intake.repositories.find((r) => r.repo === repo);
+    assert.equal(record.skills.length, count);
+    assert.equal(record.security_scan_status, 'not_scanned');
+    assert.ok(record.skills.every((s) => s.score === score && s.grade === 'C'));
+    assert.deepEqual([...inclusions.skills[repo]].sort(), record.skills.map((s) => s.name).sort());
+    assert.equal(catalog.skills.filter((s) => s.repo === repo).length, 0);
+    const project = data.projects.find((p) => p.repo === repo);
+    assert.equal(project.commit, record.commit);
+    assert.ok(project.capabilities.length === count);
+    assert.match(project.setup, /pending the next regular scored-catalog refresh/);
+    assert.match(read(project.review), new RegExp(score + ', grade C'));
+    assert.ok(published().includes('featured-badge-' + project.id));
+  }
 });

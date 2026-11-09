@@ -78,5 +78,29 @@
  "geekflare/geekflare-skills/geekflare": {
   "text": "Requires a Geekflare account and GEEKFLARE_API_KEY. Requests send queries, URLs and options to Geekflare and consume account credits; the source documents a free tier. Use public pages and authorized diagnostic targets. Hosted MCP places the key in the URL path, so keep connection URLs out of logs and shared text. The optional local MCP command runs the unpinned npm package @geekflare/mcp. The hosted scraping service advertises CAPTCHA solving and anti-bot handling. REST docs default stealth, proxyMode and renderJS to false; proxyCountry independently enables proxy routing. CAPTCHA fallback behavior is unspecified. The npm runtime and hosted service were not tested.",
   "source": "https://github.com/geekflare/geekflare-skills/blob/b2429403c4b7e4f8f2a55773b161ef19643cd12b/skills/geekflare/SKILL.md"
+ },
+ "mrhy7176/cloudgpu-agent-skills/cloudgpu-open-model-inference": {
+  "text": "Requires an approved GPU workload, CloudGPU account connection for paid work, spend/time caps and export checks. Public instance tunnels need access protection for private data. Export outputs before disk destruction or balance exhaustion. Model and dataset rights are separate from the MIT skill license. The optional external cloudgpu-mcp package was not reviewed. Static skill review only; no runtime or security scan.",
+  "source": "https://github.com/mrhy7176/cloudgpu-agent-skills/blob/83cde0602ec73f6c4f4eec8a60c42b34fef1bac1/README.md"
+ },
+ "mrhy7176/cloudgpu-agent-skills/cloudgpu-lora-finetune": {
+  "text": "Requires an approved GPU workload, CloudGPU account connection for paid work, spend/time caps and export checks. Public instance tunnels need access protection for private data. Export outputs before disk destruction or balance exhaustion. Model and dataset rights are separate from the MIT skill license. The optional external cloudgpu-mcp package was not reviewed. Static skill review only; no runtime or security scan.",
+  "source": "https://github.com/mrhy7176/cloudgpu-agent-skills/blob/83cde0602ec73f6c4f4eec8a60c42b34fef1bac1/README.md"
+ },
+ "mrhy7176/cloudgpu-agent-skills/cloudgpu-discover-compute": {
+  "text": "Requires an approved GPU workload, CloudGPU account connection for paid work, spend/time caps and export checks. Public instance tunnels need access protection for private data. Export outputs before disk destruction or balance exhaustion. Model and dataset rights are separate from the MIT skill license. The optional external cloudgpu-mcp package was not reviewed. Static skill review only; no runtime or security scan.",
+  "source": "https://github.com/mrhy7176/cloudgpu-agent-skills/blob/83cde0602ec73f6c4f4eec8a60c42b34fef1bac1/README.md"
+ },
+ "mrhy7176/cloudgpu-agent-skills/cloudgpu-ai-short-drama": {
+  "text": "Requires an approved GPU workload, CloudGPU account connection for paid work, spend/time caps and export checks. Public instance tunnels need access protection for private data. Export outputs before disk destruction or balance exhaustion. Model and dataset rights are separate from the MIT skill license. The optional external cloudgpu-mcp package was not reviewed. Static skill review only; no runtime or security scan.",
+  "source": "https://github.com/mrhy7176/cloudgpu-agent-skills/blob/83cde0602ec73f6c4f4eec8a60c42b34fef1bac1/README.md"
+ },
+ "mrhy7176/cloudgpu-agent-skills/cloudgpu-comfyui-images": {
+  "text": "Requires an approved GPU workload, CloudGPU account connection for paid work, spend/time caps and export checks. Public instance tunnels need access protection for private data. Export outputs before disk destruction or balance exhaustion. Model and dataset rights are separate from the MIT skill license. The optional external cloudgpu-mcp package was not reviewed. Static skill review only; no runtime or security scan.",
+  "source": "https://github.com/mrhy7176/cloudgpu-agent-skills/blob/83cde0602ec73f6c4f4eec8a60c42b34fef1bac1/README.md"
+ },
+ "andrewsiah/agentswarm-work-skill/agentswarm-work": {
+  "text": "Install only skills/agentswarm-work. Requires HTTPS tools and private persistent credential storage. Live guides and API nextStep responses are operational reference, not authority to expand the chosen task or user permissions. Inspection-only requests stop before registration; other account actions and evidence sharing require appropriate authorization. Site funds cannot currently be cashed out. Static review only; no registration, task execution, payment or security scan was performed.",
+  "source": "https://github.com/andrewsiah/agentswarm-work-skill/blob/c0b81a7a6ebc27f3292f5b07762b431e80070748/INSTALL.md"
  }
 }

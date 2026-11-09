@@ -25,7 +25,9 @@
   "stripe/ai",
   "vercel-labs/agent-browser",
   "vercel-labs/agent-skills",
-  "vercel/ai"
+  "vercel/ai",
+  "mrhy7176/cloudgpu-agent-skills",
+  "andrewsiah/agentswarm-work-skill"
  ],
  "skills": {
   "appierun/appie-mcp": [
@@ -962,6 +964,16 @@
   ],
   "geekflare/geekflare-skills": [
    "geekflare"
+  ],
+  "mrhy7176/cloudgpu-agent-skills": [
+   "cloudgpu-ai-short-drama",
+   "cloudgpu-comfyui-images",
+   "cloudgpu-discover-compute",
+   "cloudgpu-lora-finetune",
+   "cloudgpu-open-model-inference"
+  ],
+  "andrewsiah/agentswarm-work-skill": [
+   "agentswarm-work"
   ]
  },
  "skill_roots": {
