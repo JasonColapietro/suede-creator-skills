@@ -61,7 +61,12 @@
         "suede-sync-packaging",
         "suede-release-linter",
         "suede-rights-passport",
-        "suede-rights-audit"
+        "suede-rights-audit",
+        "site-to-ios-app",
+        "android-app-factory",
+        "suede-play-release",
+        "suede-parity-contract",
+        "suede-deslop"
       ]
     },
     {
@@ -83,7 +88,7 @@
     {
       "name": "suede-workflow-skills",
       "area": "workflow",
-      "description": "Umbrella workflow for 21 public skills — johnny-suede-write, johnny-suede-design, suede-code, suede-code-review, suede-code-grader, suede-copy, suede-design, suede-agent-teams, suede-ai-eval, suede-ship-gate, suede-seo-audit, suede-visibility-grader, suede-seo-zero-to-100, suede-site-alchemy, suede-launch-packaging, suede-mcp-qa, and five creator skills (suede-campaign-in-a-box, suede-sync-packaging, suede-release-linter, suede-rights-passport, suede-rights-audit). Use when a user asks to load the full Suede workflow pack, improve a site, write Suede copy, audit SEO/AEO/AI EO, run AI evals, run design QA, review code with a CI gate, prepare public docs, or package an artist campaign.",
+      "description": "Umbrella workflow for 26 public skills — johnny-suede-write, johnny-suede-design, suede-code, suede-code-review, suede-code-grader, suede-copy, suede-design, suede-agent-teams, suede-ai-eval, suede-ship-gate, suede-seo-audit, suede-visibility-grader, suede-seo-zero-to-100, suede-deslop, suede-site-alchemy, suede-launch-packaging, suede-mcp-qa, four app-delivery skills (site-to-ios-app, android-app-factory, suede-play-release, suede-parity-contract), and five creator skills (suede-campaign-in-a-box, suede-sync-packaging, suede-release-linter, suede-rights-passport, suede-rights-audit). Use when a user asks to load the full Suede workflow pack, improve a site, write Suede copy, audit SEO/AEO/AI EO, run AI evals, run design QA, review code with a CI gate, prepare public docs, or package an artist campaign.",
       "useWhen": "Use when a user wants the full Suede workflow pack loaded from one public GitHub skill path with no-missed quality gates."
     },
     {
@@ -211,6 +216,36 @@
       "area": "creator",
       "description": "Find and organize the rights gaps before a creator project gets packaged — missing owners, unconfirmed splits, unclear samples, thin provenance/origin trail, metadata gaps, public URLs, licensing-clearance readiness, royalty-routing readiness, and intake blockers. Flags what is confirmed versus unknown across ownership, contributors, credits, licenses, provenance, and payment routing. Use before rights passporting, provenance mapping, licensing prep, sync or brand or partner licensing discussion, registry readiness, royalty routing, payment-destination layout, or Suede creator intake. Organizes evidence only — never clears rights, confirms ownership, adjudicates chain of title, approves payouts, moves money, or writes to a registry. NOT FOR: building the transfer package itself (use suede-rights-passport); linting release folders for files and metadata (use suede-release-linter); sync one-sheets (use suede-sync-packaging).",
       "useWhen": "Use before rights packaging, provenance mapping, licensing prep, registry readiness, royalty routing, or downstream creator review."
+    },
+    {
+      "name": "site-to-ios-app",
+      "area": "workflow",
+      "description": "Suede AI Site to iOS App Skills. Use when asked to 'turn this site into an iOS app' or convert a PWA: inspect the URL, choose shell or native strategy, then deliver an audit, build plan and release evidence. NOT FOR: Android builds (android-app-factory), Play rollout (suede-play-release), store listing strategy (an ASO workflow), or a native iOS app with no website.",
+      "useWhen": "Use when a site, PWA, dashboard, or marketplace needs to become an iOS app with an audit, build plan, and App Store release evidence."
+    },
+    {
+      "name": "android-app-factory",
+      "area": "workflow",
+      "description": "Suede AI Android App Factory Skills. Use when asked to 'build an Android app' or modernize a Kotlin/Compose product: architecture, policy, privacy, billing, tests and a Play-ready release evidence package. NOT FOR: Play uploads or rollout (suede-play-release), website-to-iOS conversion (site-to-ios-app), review-only work (suede-code), or store listing strategy (an ASO workflow).",
+      "useWhen": "Use when building or modernizing a native Kotlin/Compose Android app through to a Play-ready signed bundle with policy, privacy, and billing evidence."
+    },
+    {
+      "name": "suede-play-release",
+      "area": "workflow",
+      "description": "Suede AI Google Play Release Skills. Google Play release delivery with AAB preflight, test-track upload, exact versionCode promotion, staged rollout, locale notes, and API readback. Use when asked 'promote this Android build' or to diagnose Play publishing access and prove the served release. NOT FOR: app building or policy review (android-app-factory), listing assets (an ASO workflow), or CI gates (suede-ship-gate).",
+      "useWhen": "Use when uploading, promoting, or rolling out an Android build on Google Play and proving what is live with API readback."
+    },
+    {
+      "name": "suede-parity-contract",
+      "area": "workflow",
+      "description": "Suede AI Parity Contract Skills. cross-surface parity contracts generated from live reference constants and asserted through follower behavior. Use when asked 'these app and web thresholds disagree' or when rules are copied across web, mobile, docs, or services. NOT FOR: choosing the correct shipped value, diff review (suede-code), merge-gate setup (suede-ship-gate), or search audits (suede-seo-audit).",
+      "useWhen": "Use when the same rule, threshold, or constant lives on more than one surface (web, iOS, Android, docs, services) and must stay identical."
+    },
+    {
+      "name": "suede-deslop",
+      "area": "workflow",
+      "description": "Use when asked 'deslop this draft' or to audit finished prose before shipping. Suede AI Slop Stop Skills removes filler, false agency, formulaic rhythm, chat residue and misplaced formatting while preserving voice and protected facts. Returns edited prose and a 50-point score, or findings only. NOT FOR: rewriting the argument (use suede-copy), research orchestration (use johnny-suede-write), authorship detection, or certifying facts.",
+      "useWhen": "Use when finished prose needs filler, chat residue, formulaic rhythm, and AI tells removed without flattening the author's voice."
     }
   ],
   "mcp": {

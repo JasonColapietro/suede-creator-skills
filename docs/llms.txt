@@ -1,6 +1,6 @@
 # Suede Creator Skills
 
-> A public, open-source (MIT) pack of 22 installable Agent Skills for Claude Code and OpenAI Codex, plus an optional MCP server. One install gives an AI coding agent a reusable engineering workflow: multi-agent orchestration with quality gates and signed handoffs, code review with a blunt A-F ship grade, CI ship-gates, AI evaluation specs with acceptance gates, Suedify reference-site restyling, design, conversion copy, SEO/AEO/GEO/AI EO audits, visibility grading, launch packaging, and MCP QA, plus a creator toolkit for artist campaigns, sync packaging, release linting, and rights evidence. No accounts, no API keys, no config required.
+> A public, open-source (MIT) pack of 27 installable Agent Skills for Claude Code and OpenAI Codex, plus an optional MCP server. One install gives an AI coding agent a reusable engineering workflow: multi-agent orchestration with quality gates and signed handoffs, code review with a blunt A-F ship grade, CI ship-gates, AI evaluation specs with acceptance gates, Suedify reference-site restyling, design, conversion copy, SEO/AEO/GEO/AI EO audits, visibility grading, launch packaging, and MCP QA, plus a creator toolkit for artist campaigns, sync packaging, release linting, and rights evidence. No accounts, no API keys, no config required.
 
 Maintained by Jason Colapietro (Suede AI, https://suedeai.ai). Repository: https://github.com/JasonColapietro/suede-creator-skills (MIT License). The GitHub Pages site is generated from the same repo: landing page, skill folders, docs, install commands, MCP source, copy bank, sitemap, schema, Open Graph metadata, and founder attribution live beside the source.
 
@@ -12,7 +12,7 @@ Install for Codex (skill installer): `python3 ~/.codex/skills/.system/skill-inst
 
 - [Overview](https://jasoncolapietro.github.io/suede-creator-skills/): Public landing page with install commands, the full skill catalog, FAQ, schema, and proof links.
 - [Full guide](https://jasoncolapietro.github.io/suede-creator-skills/guide.html): Complete documentation of every skill, the MCP server, and the agent workflow.
-- [Skill index](https://jasoncolapietro.github.io/suede-creator-skills/skills/): Browse all 22 skills.
+- [Skill index](https://jasoncolapietro.github.io/suede-creator-skills/skills/): Browse all 27 skills.
 - [Installs and MCP](https://jasoncolapietro.github.io/suede-creator-skills/plugins.html): Install commands for Claude Code and Codex, plus the optional Suede Skills MCP server.
 - [Copy bank](https://jasoncolapietro.github.io/suede-creator-skills/copy.html): Public-safe explainer copy and reusable launch language.
 
@@ -32,6 +32,11 @@ Install for Codex (skill installer): `python3 ~/.codex/skills/.system/skill-inst
 - Suede SEO Audit — SEO, AEO, GEO, AI EO, metadata, schema, link, and crawlability audit: https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-seo-audit/SKILL.md
 - [Suede Visibility Grader](https://jasoncolapietro.github.io/suede-creator-skills/skills/suede-visibility-grader.html): Grade any public page for findability, first-screen clarity, CTA pull, proof, and AI citation readiness.
 - Suede SEO Zero to 100 — Take any company, brand, or person from invisible on Google to compounding search growth with title-test cohorts: https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-seo-zero-to-100/SKILL.md
+- Suede Site to iOS App — Turn a website or PWA into an App Store-ready iOS app: audit, strategy, build plan, release evidence: https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/site-to-ios-app/SKILL.md
+- Suede Android App Factory — Native Kotlin/Compose Android app from idea to Play-ready bundle with policy, privacy, billing gates: https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/android-app-factory/SKILL.md
+- Suede Play Release — Google Play delivery: AAB preflight, test tracks, exact versionCode promotion, staged rollout, readback: https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-play-release/SKILL.md
+- Suede Parity Contract — One canonical answer across web, iOS, Android, and docs via generated parity contracts: https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-parity-contract/SKILL.md
+- Suede Deslop — Slop Stop: strip AI tells and filler from finished prose while keeping voice and facts, with a 50-point score: https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-deslop/SKILL.md
 - Suede Site Alchemy — Turn a page into a conversion engine with funnel and friction analysis: https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-site-alchemy/SKILL.md
 - Suede Launch Packaging — Ship work as a launch people can actually install: https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-launch-packaging/SKILL.md
 - Suede MCP QA — Catch a broken Suede Skills MCP before it ships: https://github.com/JasonColapietro/suede-creator-skills/blob/main/skills/suede-mcp-qa/SKILL.md

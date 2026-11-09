@@ -1,6 +1,6 @@
 ---
 name: suede-workflow-skills
-description: "Umbrella workflow for 21 public skills — johnny-suede-write, johnny-suede-design, suede-code, suede-code-review, suede-code-grader, suede-copy, suede-design, suede-agent-teams, suede-ai-eval, suede-ship-gate, suede-seo-audit, suede-visibility-grader, suede-seo-zero-to-100, suede-site-alchemy, suede-launch-packaging, suede-mcp-qa, and five creator skills (suede-campaign-in-a-box, suede-sync-packaging, suede-release-linter, suede-rights-passport, suede-rights-audit). Use when a user asks to load the full Suede workflow pack, improve a site, write Suede copy, audit SEO/AEO/AI EO, run AI evals, run design QA, review code with a CI gate, prepare public docs, or package an artist campaign."
+description: "Umbrella workflow for 26 public skills — johnny-suede-write, johnny-suede-design, suede-code, suede-code-review, suede-code-grader, suede-copy, suede-design, suede-agent-teams, suede-ai-eval, suede-ship-gate, suede-seo-audit, suede-visibility-grader, suede-seo-zero-to-100, suede-deslop, suede-site-alchemy, suede-launch-packaging, suede-mcp-qa, four app-delivery skills (site-to-ios-app, android-app-factory, suede-play-release, suede-parity-contract), and five creator skills (suede-campaign-in-a-box, suede-sync-packaging, suede-release-linter, suede-rights-passport, suede-rights-audit). Use when a user asks to load the full Suede workflow pack, improve a site, write Suede copy, audit SEO/AEO/AI EO, run AI evals, run design QA, review code with a CI gate, prepare public docs, or package an artist campaign."
 ---
 
 # Suede Workflow Skills
@@ -60,9 +60,15 @@ their names match the task:
 - `suede-ship-gate`
 - `suede-seo-audit`
 - `suede-visibility-grader`
+- `suede-seo-zero-to-100`
+- `suede-deslop`
 - `suede-site-alchemy`
 - `suede-launch-packaging`
 - `suede-mcp-qa`
+- `site-to-ios-app`
+- `android-app-factory`
+- `suede-play-release`
+- `suede-parity-contract`
 - `suede-campaign-in-a-box`
 - `suede-sync-packaging`
 - `suede-release-linter`
@@ -423,8 +429,17 @@ Launch lane, in pipeline order:
 - Launch or public packaging: `suede-launch-packaging`.
 - Search/discovery audit: `suede-seo-audit`.
 - Page visibility and CTA grade: `suede-visibility-grader`.
+- Search growth from zero, title-test cohorts: `suede-seo-zero-to-100`.
+- Anti-slop pass on finished prose: `suede-deslop`.
 - Page polish and conversion: `suede-site-alchemy`.
 - MCP changes: `suede-mcp-qa`.
+
+App delivery lane:
+
+- Website or PWA to iOS app: `site-to-ios-app`.
+- Native Android app to a Play-ready bundle: `android-app-factory`.
+- Google Play upload, promotion, rollout, readback: `suede-play-release`.
+- Same constant held across web, iOS, Android, docs: `suede-parity-contract`.
 
 Creator lane:
 
@@ -460,7 +475,7 @@ Useful lanes:
 /plugin install suede-skills@suede
 ```
 
-`suede-skills` installs all 21 skills. Smaller subsets: `/plugin install suede-agent-workflows@suede` (orchestration, workflows, evals) or `/plugin install suede-code@suede` (review, grade, ship-gate). Prefer a clone? `install.sh` copies all 22 skills into `~/.claude/skills/`:
+`suede-skills` installs all 27 skills. Smaller subsets: `/plugin install suede-agent-workflows@suede` (orchestration, workflows, evals) or `/plugin install suede-code@suede` (review, grade, ship-gate). Prefer a clone? `install.sh` copies all 27 skills into `~/.claude/skills/`:
 
 ```bash
 git clone https://github.com/JasonColapietro/suede-creator-skills.git && bash suede-creator-skills/install.sh
@@ -491,9 +506,15 @@ python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-githu
   skills/suede-ship-gate \
   skills/suede-seo-audit \
   skills/suede-visibility-grader \
+  skills/suede-seo-zero-to-100 \
+  skills/suede-deslop \
   skills/suede-site-alchemy \
   skills/suede-launch-packaging \
-  skills/suede-mcp-qa
+  skills/suede-mcp-qa \
+  skills/site-to-ios-app \
+  skills/android-app-factory \
+  skills/suede-play-release \
+  skills/suede-parity-contract
 ```
 
 Install creator skills:
