@@ -77,9 +77,11 @@ Follow `references/title-testing.md` exactly. In short:
    ranks testable pages (position 1-15, enough impressions, CTR below expected),
    routes page-2+ pages to Level 70, and flags cannibalization.
 2. Ship flagged consolidations (merge, 301, relink) before the cohort starts.
-3. Split the eligible pool at random into test pages and 3+ control pages of
-   similar size. Every test page gets one variant: 3 candidates with a
-   hypothesis each, one chosen and why.
+3. Pick controls. With 8+ eligible pages, split them at random into test and
+   3+ control pages of similar size. With fewer, test every eligible page and
+   pool the site's other non-brand page-1 pages as the control group. Every
+   test page gets one variant: 3 candidates with a hypothesis each, one chosen
+   and why.
 4. Ship the cohort in one deploy, request indexing, change nothing else.
 5. Start the clock when Google displays the new title; log REWRITTEN if it
    doesn't within 7 days.

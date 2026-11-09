@@ -50,8 +50,11 @@ For every test page AND every control page, record before touching anything:
   2-3 queries (query-level CTR is cleaner than page totals);
 - date of the export and GSC's data lag (2-3 days).
 
-Controls: pick them from the same eligible pool (position 1-15, CTR below
-expected, similar page type), then assign test vs control at random. Picking
+Controls: with 8+ eligible pages, pick them from the same eligible pool
+(position 1-15, CTR below expected, similar page type) and assign test vs
+control at random. With fewer than 8, test every eligible page and pool the
+site's other non-brand page-1 pages as the control group; a small site should
+not give up most of its tests to controls. Picking
 controls from pages that already perform well biases every result toward a
 win, because low-CTR pages drift up on their own. Pooled control impressions
 should be at least as large as a typical test page's, or every verdict comes
