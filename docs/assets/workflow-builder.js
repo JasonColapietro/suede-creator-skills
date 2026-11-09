@@ -1,4 +1,4 @@
-import { planWorkflow, WORKFLOW_EXAMPLES } from './workflow-recommender.js';
+import { planWorkflow, recommendSkills, recommendArticles, isFirstParty, WORKFLOW_EXAMPLES } from './workflow-recommender.js';
 
 // All planning stays in this browser. The only requests fetch public catalog data.
 const root = document.querySelector('[data-workflow-builder]');
@@ -14,12 +14,14 @@ if (root) {
   const mode = get('[data-workflow-mode]');
   const freeOnly = get('[data-workflow-free]');
   const choices = get('[data-workflow-choices]');
+  const suggestions = get('[data-workflow-suggestions]');
   let catalogPromise;
   let articlesPromise;
   let revision = 0;
   let current;
   let currentBrief = '';
   let reading = [];
+  let moreSkills = [];
   let active = 0;
   const complete = new Set();
   let panels = [];
@@ -72,25 +74,63 @@ if (root) {
     if (current.notices?.length) lines.push('Scope notes', ...current.notices.map(note => '- ' + note), '');
     for (const [i, step] of current.steps.entries()) lines.push(`${i + 1}. [${complete.has(i) ? 'done' : 'to do'}] ${step.title}`, `Skill: ${step.skill.name} (${step.skill.repo})`, sourceUrl(step.skill.href), step.why, `Carry forward: ${step.output}`, setupFacts(step.skill), '');
     lines.push('Tips', ...current.tips.map(tip => '- ' + tip), '', 'Quality scores describe published files, not security or a guarantee of fit.');
-    for (const article of reading) lines.push('', `Go deeper: ${article.title}`, `By ${article.author}`, article.href);
+    if (moreSkills.length) lines.push('', 'Recommended skills for this goal', ...moreSkills.map(skill => `- ${skill.name} (${skill.repo}) ${sourceUrl(skill.href)}`));
+    for (const article of reading) lines.push('', `Read next: ${article.title}`, `By ${article.author}`, article.href);
     exportText.value = lines.join('\n');
   }
-  async function showReading(intents, token) {
+  function loadArticles() {
     if (!articlesPromise) articlesPromise = loadJson('workflow-articles.json').catch(() => { articlesPromise = undefined; return { articles: [] }; });
-    const data = await articlesPromise;
-    if (token !== revision || !current) return;
-    const safe = (Array.isArray(data?.articles) ? data.articles : []).filter(item => item && item.author === 'Jason Colapietro' && Array.isArray(item.intents) && /^https:\/\/suedeai\.directory\/(stacks|guides)\/[a-z0-9-]+\/$/.test(item.href) && item.title && item.summary);
-    reading = [...new Set(intents.map(intent => safe.find(item => item.intents.includes(intent))).filter(Boolean))].slice(0, 3);
-    const aside = get('[data-workflow-reading]'); aside.replaceChildren();
-    if (!reading.length) return;
-    aside.append(element('p', 'eyebrow', 'Go deeper with Jason'));
-    for (const article of reading) {
+    return articlesPromise;
+  }
+  // Authored reading: the best article for each matched workflow, then the
+  // strongest matches for the person's own words. Only Jason's published
+  // articles pass recommendArticles' checks.
+  function renderReading(aside, articles) {
+    aside.replaceChildren();
+    aside.hidden = !articles.length;
+    if (!articles.length) return;
+    aside.append(element('p', 'eyebrow', 'Read next, from Jason Colapietro'));
+    for (const article of articles) {
       const block = element('div', 'workflow-reading-item');
       const link = element('a', '', article.title); link.href = article.href;
       block.append(link, element('p', '', article.summary), element('p', 'muted', 'By ' + article.author));
       aside.append(block);
     }
-    aside.hidden = false; updateExport();
+  }
+  async function showReading(prompt, intents, token) {
+    const data = await loadArticles();
+    if (token !== revision || !current) return;
+    reading = recommendArticles(prompt, intents, data?.articles, 3);
+    renderReading(get('[data-workflow-reading]'), reading);
+    updateExport();
+  }
+  function skillItem(skill) {
+    const item = element('li', 'workflow-skill-item');
+    const head = element('p', 'workflow-skill-meta');
+    const link = element('a', 'workflow-skill', skill.name); link.href = skill.href;
+    const facts = element('span', '', skill.repo);
+    head.append(link, facts);
+    if (/^[A-D]$/.test(skill.grade) && Number.isFinite(skill.score)) head.append(element('span', 'grade grade-' + skill.grade.toLowerCase(), `${skill.score} · ${skill.grade}`));
+    item.append(head);
+    if (typeof skill.description === 'string' && skill.description) item.append(element('p', 'workflow-skill-description', skill.description));
+    item.append(element('p', 'workflow-setup', setupFacts(skill)));
+    return item;
+  }
+  async function showSuggestions(prompt, plan, catalog, token) {
+    const skills = recommendSkills(prompt, catalog, { freeOnly: Boolean(freeOnly.checked), limit: 6 });
+    const data = await loadArticles();
+    if (token !== revision) return false;
+    const articles = recommendArticles(prompt, (plan.intents || []).map(intent => intent.id), data?.articles, 3);
+    if (!skills.length && !articles.length) return false;
+    get('[data-workflow-skill-list]').replaceChildren(...skills.map(skillItem));
+    get('[data-workflow-skill-list]').hidden = !skills.length;
+    get('#workflow-suggestions-title').textContent = skills.length ? 'Skills that fit your goal' : 'Reading for your goal';
+    get('[data-workflow-suggestions-summary]').textContent = skills.length
+      ? `${skills.length} graded skills match what you described${skills.some(isFirstParty) ? ', Suede AI’s own skills first' : ', strongest match first'}. For a step-by-step workflow, pick a goal above or add more detail.`
+      : 'No listed skill matches those words closely yet. These articles cover the ground, or pick a goal above for a step-by-step workflow.';
+    renderReading(get('[data-workflow-suggest-reading]'), articles);
+    suggestions.hidden = false;
+    return true;
   }
   function updateProgress() {
     get('[data-workflow-progress]').max = current.steps.length;
@@ -160,8 +200,10 @@ if (root) {
       actions.append(navigate); item.append(actions); list.append(item); panels.push(item);
     });
   }
-  function render(plan, prompt, token) {
+  function render(plan, prompt, token, catalog) {
     current = plan; currentBrief = prompt; reading = []; complete.clear(); active = 0;
+    const planned = new Set(plan.steps.flatMap(step => [step.skill.id, ...(step.alternatives || []).map(skill => skill.id)]));
+    moreSkills = recommendSkills(prompt, catalog, { exclude: planned, freeOnly: Boolean(freeOnly.checked), limit: 3 });
     heading.textContent = plan.title;
     get('[data-workflow-summary]').textContent = plan.summary;
     const overview = get('[data-workflow-overview]'); overview.replaceChildren();
@@ -170,40 +212,52 @@ if (root) {
     renderSteps(); updateProgress(); selectStep(0);
     get('[data-workflow-tips]').replaceChildren(...plan.tips.map(tip => element('li', '', tip)));
     get('[data-workflow-reading]').hidden = true;
+    get('[data-workflow-more-list]').replaceChildren(...moreSkills.map(skillItem));
+    get('[data-workflow-more]').hidden = !moreSkills.length;
     get('[data-workflow-copy-fallback]').open = false;
     results.hidden = false;
     say(plan.steps.length + ' steps ready. Start with ' + plan.steps[0].title.toLowerCase() + '.');
     heading.focus({ preventScroll: true }); results.scrollIntoView({ behavior: 'instant', block: 'nearest' });
-    void showReading((plan.intents || [{ id: plan.intent }]).map(intent => intent.id), token);
+    void showReading(prompt, (plan.intents || [{ id: plan.intent }]).map(intent => intent.id), token);
   }
   function invalidate() {
-    revision++; current = undefined; reading = []; results.hidden = true; choices.replaceChildren();
+    revision++; current = undefined; reading = []; moreSkills = []; results.hidden = true; suggestions.hidden = true; choices.replaceChildren();
     submit.disabled = false; form.removeAttribute('aria-busy'); brief.removeAttribute('aria-invalid'); say('');
   }
   async function build() {
     const token = ++revision;
     const prompt = brief.value.trim().slice(0, 2000);
-    results.hidden = true; current = undefined; choices.replaceChildren();
-    if (!prompt) { say('Describe what you want to build, or choose a starting idea below.'); brief.setAttribute('aria-invalid', 'true'); brief.focus(); return; }
+    results.hidden = true; suggestions.hidden = true; current = undefined; choices.replaceChildren();
+    if (!prompt) { say('Describe what you’re working on or trying to achieve, or pick an example below.'); brief.setAttribute('aria-invalid', 'true'); brief.focus(); return; }
     brief.removeAttribute('aria-invalid'); submit.disabled = true; form.setAttribute('aria-busy', 'true');
-    say('Mapping your brief to complementary skills…');
+    say('Finding skills, workflows and articles for your goal…');
     try {
       const catalog = await loadCatalog(); if (token !== revision) return;
       const plan = planWorkflow(prompt, catalog, { mode: mode.value, freeOnly: Boolean(freeOnly.checked) });
       if (plan.status !== 'ready') {
-        say(plan.summary || 'Name a specific result, then try again.');
         for (const choice of plan.choices || WORKFLOW_EXAMPLES) choices.append(button(choice.label, 'workflow-choice', () => { brief.value = choice.prompt; void build(); }));
-        brief.focus(); return;
+        const suggested = await showSuggestions(prompt, plan, catalog, token);
+        if (token !== revision) return;
+        if (suggested) {
+          say('Here’s what fits what you described. Pick a goal below for a step-by-step workflow.');
+          get('#workflow-suggestions-title').focus({ preventScroll: true });
+        } else {
+          say(plan.summary || 'Name a specific result, then try again.');
+          brief.focus();
+        }
+        return;
       }
-      render(plan, prompt, token);
+      render(plan, prompt, token, catalog);
     } catch {
-      if (token === revision) say('The skill catalog could not load. Your brief is still here. Select Build my workflow to try again, or browse the recommended stacks.');
+      if (token === revision) say('The skill catalog could not load. What you wrote is still here. Select Get recommendations to try again, or browse the recommended stacks.');
     } finally { if (token === revision) { submit.disabled = false; form.removeAttribute('aria-busy'); } }
   }
   form.addEventListener('submit', event => { event.preventDefault(); void build(); });
   brief.addEventListener('input', invalidate); mode.addEventListener('change', invalidate); freeOnly.addEventListener('change', invalidate);
   for (const example of WORKFLOW_EXAMPLES) get('[data-workflow-examples]').append(button(example.label, '', () => { brief.value = example.prompt; void build(); }));
-  get('[data-workflow-refine]').addEventListener('click', () => { brief.focus(); brief.scrollIntoView({ block: 'center', behavior: 'instant' }); });
+  const refine = () => { brief.focus(); brief.scrollIntoView({ block: 'center', behavior: 'instant' }); };
+  get('[data-workflow-refine]').addEventListener('click', refine);
+  get('[data-workflow-suggest-refine]').addEventListener('click', refine);
   get('[data-workflow-reset-progress]').addEventListener('click', () => { if (current) { complete.clear(); updateProgress(); say('Progress reset. Your workflow and selected skills are unchanged.'); } });
   get('[data-workflow-copy]').addEventListener('click', async () => {
     const token = revision;

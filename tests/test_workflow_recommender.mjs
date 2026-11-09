@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import test from 'node:test';
-import { planWorkflow, recommendWorkflow, WORKFLOW_EXAMPLES } from '../docs/assets/workflow-recommender.js';
+import { planWorkflow, recommendWorkflow, recommendSkills, recommendArticles, isPublishableArticle, isFirstParty, WORKFLOW_EXAMPLES } from '../docs/assets/workflow-recommender.js';
 
 const catalog = JSON.parse(readFileSync(new URL('../docs/directory/search-index.json', import.meta.url)));
 const byId = new Map(catalog.map(skill => [skill.id, skill]));
@@ -9,12 +9,12 @@ const ids = result => result.steps.map(step => step.skill.id);
 const briefs = [
   ['Launch a SaaS landing page for a new invoicing product', 'landing-page', 'agiwhitelist/auteur/auteur'],
   ['Build a web app with Next.js for tracking team tasks', 'web-app', 'jeffallan/claude-skills/nextjs-developer'],
-  ['Get my business found in AI search and improve SEO', 'seo-and-ai-search', 'coreyhaines31/marketingskills/ai-seo'],
-  ['Turn one idea into a social campaign for our launch', 'content-and-social', 'mblode/agent-skills/ghostwriter'],
+  ['Get my business found in AI search and improve SEO', 'seo-and-ai-search', 'jasoncolapietro/suede-creator-skills/suede-ai-seo'],
+  ['Turn one idea into a social campaign for our launch', 'content-and-social', 'jasoncolapietro/suede-creator-skills/suede-social'],
   ['Build an AI agent with MCP tools for customer support', 'agent-building', 'anthropics/skills/mcp-builder'],
   ['Analyze a CSV of sales data and create a report', 'documents-and-data', 'tronghieu/agent-skills/data-scientist'],
-  ['Research competitors and compare companies in our market', 'research', 'browserbase/skills/company-research'],
-  ['Create an explainer video with captions for a product launch', 'video-and-creative', 'coreyhaines31/marketingskills/video'],
+  ['Research competitors and compare companies in our market', 'research', 'jasoncolapietro/suede-creator-skills/suede-competitor-profiling'],
+  ['Create an explainer video with captions for a product launch', 'video-and-creative', 'jasoncolapietro/suede-creator-skills/suede-video'],
 ];
 
 for (const [brief, intent, required] of briefs) {
@@ -38,7 +38,8 @@ for (const [brief, intent, required] of briefs) {
 test('different goals select different skills and place writing before build before testing', () => {
   const landing = recommendWorkflow(briefs[0][0], catalog);
   const order = ids(landing);
-  assert.ok(order.indexOf('coreyhaines31/marketingskills/copywriting') < order.indexOf('agiwhitelist/auteur/auteur'));
+  assert.ok(order.indexOf('jasoncolapietro/suede-creator-skills/suede-copy') !== -1);
+  assert.ok(order.indexOf('jasoncolapietro/suede-creator-skills/suede-copy') < order.indexOf('agiwhitelist/auteur/auteur'));
   assert.ok(order.indexOf('agiwhitelist/auteur/auteur') < order.indexOf('anthropics/skills/webapp-testing'));
   const signatures = briefs.map(([brief]) => ids(recommendWorkflow(brief, catalog)).join('|'));
   assert.equal(new Set(signatures).size, briefs.length);
@@ -237,8 +238,8 @@ test('planner composes independent landing-page and social goals with shared mea
   assert.equal(result.status, 'ready');
   assert.deepEqual(result.intents.map(intent => intent.id), ['landing-page', 'content-and-social']);
   assert.ok(ids(result).includes('agiwhitelist/auteur/auteur'));
-  assert.ok(ids(result).includes('mblode/agent-skills/ghostwriter'));
-  assert.equal(ids(result).at(-1), 'coreyhaines31/marketingskills/analytics');
+  assert.ok(ids(result).includes('jasoncolapietro/suede-creator-skills/suede-social'));
+  assert.equal(ids(result).at(-1), 'jasoncolapietro/suede-creator-skills/suede-analytics');
   assert.equal(new Set(ids(result)).size, result.steps.length);
   assert.ok(result.steps.length <= 10);
   assert.deepEqual(result.steps.at(-1).intentIds, ['landing-page', 'content-and-social']);
@@ -338,7 +339,7 @@ test('planner simple mode keeps a short buildable sequence rather than dropping 
   assert.equal(simple.steps.length, 3);
   assert.ok(simple.steps.length < full.steps.length);
   assert.deepEqual(ids(simple), [
-    'coreyhaines31/marketingskills/copywriting', 'agiwhitelist/auteur/auteur', 'anthropics/skills/webapp-testing',
+    'jasoncolapietro/suede-creator-skills/suede-copy', 'agiwhitelist/auteur/auteur', 'anthropics/skills/webapp-testing',
   ]);
   assert.match(simple.notices.join(' '), /short|simple|essential/i);
   assert.doesNotMatch(simple.summary, /measure signups/i, 'Shortened plans cannot claim omitted measurement work');
@@ -387,7 +388,7 @@ test('planner never fills catalog gaps with invented or unrelated skills', () =>
     assert.deepEqual(result.steps, []);
     assert.deepEqual(result.choices, []);
   }
-  const missingAnchor = catalog.filter(skill => skill.id !== 'coreyhaines31/marketingskills/content-strategy');
+  const missingAnchor = catalog.filter(skill => !['coreyhaines31/marketingskills/content-strategy', 'jasoncolapietro/suede-creator-skills/suede-content-strategy'].includes(skill.id));
   const result = planWorkflow('Build a landing page and create a social campaign', missingAnchor);
   assert.equal(result.status, 'clarify');
   assert.deepEqual(result.steps, []);
@@ -440,7 +441,7 @@ test('planner keeps the original eight supported workflows usable with their nat
 });
 
 test('planner does not promise omitted phases when a valid catalog has only partial supporting coverage', () => {
-  const reduced = catalog.filter(skill => !['coreyhaines31/marketingskills/analytics', 'pbakaus/impeccable/impeccable'].includes(skill.id));
+  const reduced = catalog.filter(skill => !['coreyhaines31/marketingskills/analytics', 'pbakaus/impeccable/impeccable', 'jasoncolapietro/suede-creator-skills/suede-analytics', 'jasoncolapietro/suede-creator-skills/suede-design'].includes(skill.id));
   const result = planWorkflow('Build a landing page', reduced);
   assert.equal(result.status, 'ready');
   assert.equal(result.steps.length, 3);
@@ -451,12 +452,13 @@ test('planner does not promise omitted phases when a valid catalog has only part
 test('planner does not attach platform-specific handoffs to an incompatible alternative', () => {
   const result = planWorkflow('Research competitors and compare companies', catalog);
   const source = result.steps[0];
-  assert.equal(source.skill.id, 'browserbase/skills/company-research');
+  assert.equal(source.skill.id, 'jasoncolapietro/suede-creator-skills/suede-competitor-profiling');
+  assert.ok(source.alternatives.some(skill => skill.id === 'browserbase/skills/company-research'));
   assert.deepEqual(source.skill, byId.get(source.skill.id));
   const scientific = planWorkflow('Create a scientific research report', catalog);
   assert.equal(scientific.status, 'ready');
   assert.equal(scientific.steps[0].skill.id, 'k-dense-ai/claude-scientific-skills/literature-review');
-  assert.ok(!scientific.steps[0].alternatives.some(skill => skill.id === 'browserbase/skills/company-research'));
+  assert.ok(!scientific.steps[0].alternatives.some(skill => ['browserbase/skills/company-research', 'jasoncolapietro/suede-creator-skills/suede-competitor-profiling'].includes(skill.id)));
 });
 
 test('planner keeps coordinated negation scoped until a new positive instruction', () => {
@@ -577,4 +579,127 @@ test('planner handles strong unknown directives consistently instead of dropping
   const report = planWorkflow('Analyze CSV sales data and prepare a report', catalog);
   assert.equal(report.status, 'ready');
   assert.equal(report.intents.length, 1);
+});
+
+const articleData = JSON.parse(readFileSync(new URL('../docs/directory/workflow-articles.json', import.meta.url), 'utf8')).articles;
+
+test('goal-phrased briefs reach the matching workflow', () => {
+  for (const [prompt, intent] of [
+    ['I run a small bakery and want more customers to find us on Google', 'seo-and-ai-search'],
+    ['I want to grow my audience on TikTok', 'content-and-social'],
+    ['I need more signups from my site visitors with a better landing page', 'landing-page'],
+  ]) {
+    const plan = planWorkflow(prompt, catalog);
+    assert.equal(plan.status, 'ready', prompt);
+    assert.equal(plan.intents[0].id, intent, prompt);
+  }
+});
+
+test('skill recommendations follow the goal, use real listings and respect filters', () => {
+  const cases = [
+    ['trying to get my app into the App Store', /\b(app store|ios|aso)\b/i],
+    ['I want to automate my email inbox', /\b(email|inbox|gmail)\b/i],
+    ['code review for my team’s pull requests', /\b(review|pull request|pr)\b/i],
+    ['seo', /\bseo\b/i],
+  ];
+  for (const [prompt, pattern] of cases) {
+    const skills = recommendSkills(prompt, catalog);
+    assert.ok(skills.length >= 3, prompt);
+    assert.ok(skills.length <= 6);
+    for (const skill of skills) assert.ok(catalog.includes(skill), 'returns catalog entries');
+    assert.match(`${skills[0].name} ${skills[0].description} ${(skills[0].topics || []).join(' ')}`, pattern, prompt);
+    assert.equal(new Set(skills.map(skill => skill.name.toLowerCase())).size, skills.length, 'no duplicate names');
+  }
+  const free = recommendSkills('seo audit', catalog, { freeOnly: true, limit: 12 });
+  assert.ok(free.length && free.every(skill => skill.lane === 'free-open-source'));
+  const first = recommendSkills('seo audit', catalog)[0];
+  assert.ok(!recommendSkills('seo audit', catalog, { exclude: [first.id] }).some(skill => skill.id === first.id));
+});
+
+test('everyday wording is mapped to what skills describe', () => {
+  const bakery = recommendSkills('I run a small bakery and want more customers to find us on Google', catalog);
+  assert.ok(!bakery.some(skill => skill.repo === 'google/skills'), 'Google Cloud skills are not an SEO answer');
+  const music = recommendSkills('I’m a musician releasing a new single', catalog);
+  assert.ok(music.some(skill => /music|song|album/i.test(`${skill.name} ${skill.description}`)));
+});
+
+test('skill recommendations ignore empty, filler and malformed input', () => {
+  for (const prompt of ['', '   ', null, 42, 'help me with something', 'I want to do it']) assert.deepEqual(recommendSkills(prompt, catalog), [], String(prompt));
+  assert.deepEqual(recommendSkills('seo audit', null), []);
+  const hostile = [{ id: '../../x/y', name: 'seo', repo: 'x', description: 'seo audit', href: 'https://evil.example/' }];
+  assert.deepEqual(recommendSkills('seo audit', hostile), []);
+});
+
+test('article picks lead with each matched workflow, then the visitor’s own words', () => {
+  const titles = (prompt, intents) => recommendArticles(prompt, intents, articleData).map(article => article.href);
+  const both = titles('Build a landing page and create a social campaign', ['landing-page', 'content-and-social']);
+  assert.equal(both[0], 'https://suedeai.directory/stacks/landing-page/');
+  assert.equal(both[1], 'https://suedeai.directory/stacks/content-and-social/');
+  assert.ok(titles('how do I write my own skill', []).includes('https://skills.suedeai.ai/book/write-your-own.html'));
+  assert.ok(titles('I’m new to Claude Code and want to get started', []).includes('https://suedeai.directory/guides/install-agent-skills/'));
+  assert.ok(titles('trying to get my app into the App Store', []).includes('https://skills.suedeai.ai/book/shipping-into-the-real-world.html'));
+  assert.deepEqual(titles('', []), []);
+  assert.ok(recommendArticles('seo', ['seo-and-ai-search'], articleData, 2).length <= 2);
+});
+
+test('only Jason’s published articles on approved paths can be recommended', () => {
+  const base = { author: 'Jason Colapietro', title: 'T', summary: 'S', intents: ['research'], keywords: [] };
+  assert.ok(isPublishableArticle({ ...base, href: 'https://suedeai.directory/stacks/research/' }));
+  assert.ok(isPublishableArticle({ ...base, href: 'https://skills.suedeai.ai/book/full-send.html' }));
+  assert.ok(isPublishableArticle({ ...base, href: 'https://skills.suedeai.ai/blog/why-breadth-is-free.html' }));
+  for (const bad of [
+    { ...base, author: 'Someone else', href: 'https://suedeai.directory/stacks/research/' },
+    { ...base, href: 'https://example.com/stacks/research/' },
+    { ...base, href: 'javascript:alert(1)' },
+    { ...base, href: 'https://skills.suedeai.ai/blog/../../x' },
+    { ...base, intents: [], keywords: [], href: 'https://suedeai.directory/stacks/research/' },
+  ]) assert.equal(isPublishableArticle(bad), false, JSON.stringify(bad));
+  assert.ok(articleData.every(isPublishableArticle), 'every published article passes');
+});
+
+test('Suede AI skills lead the recommendations when they match the goal', () => {
+  for (const prompt of ['seo', 'I’m a musician releasing a new single', 'write a cold email to investors', 'trying to get my app into the App Store', 'I want better analytics on my website']) {
+    const skills = recommendSkills(prompt, catalog);
+    assert.ok(isFirstParty(skills[0]), `${prompt}: ${skills[0]?.id}`);
+    const firstOther = skills.findIndex(skill => !isFirstParty(skill));
+    assert.ok(firstOther === -1 || skills.slice(firstOther).every(skill => !isFirstParty(skill)), `${prompt}: Suede skills are grouped first`);
+    assert.ok(skills.some(skill => !isFirstParty(skill)), `${prompt}: other publishers still appear`);
+  }
+  // No Suede skill fits an inbox goal, so none is pushed in.
+  assert.ok(!recommendSkills('I want to automate my email inbox', catalog).some(isFirstParty));
+});
+
+test('display-named listings match on their slug, and a NOT FOR clause is never a match', () => {
+  const listing = (over = {}) => ({ id: 'acme/pack/inbox-tool', name: 'Acme Inbox Tool Skills', slug: 'inbox-tool', repo: 'acme/pack',
+    href: '/directory/acme/pack/inbox-tool/', description: 'Triages an email inbox and drafts replies.', score: 80, ...over });
+  assert.equal(recommendSkills('triage my email inbox', [listing()]).length, 1);
+  assert.equal(recommendSkills('triage my email inbox', [listing({ slug: 'other-tool' })]).length, 0, 'slug must match the id');
+  assert.equal(recommendSkills('triage my email inbox', [listing({ slug: undefined })]).length, 0, 'a display name alone is not an id');
+  const negative = listing({ description: 'Plans SEO audits for websites. NOT FOR: email inbox triage or replies.' });
+  assert.equal(recommendSkills('triage my email inbox', [negative]).length, 0);
+});
+
+test('Suede AI skills lead the workflow steps they cover, with the earlier picks kept as alternatives', () => {
+  const cases = [
+    ['Launch a SaaS landing page', 'Write the offer and call to action', 'suede-copy', 'coreyhaines31/marketingskills/copywriting'],
+    ['Launch a SaaS landing page', 'Polish hierarchy and accessibility', 'suede-design', 'pbakaus/impeccable/impeccable'],
+    ['Launch a SaaS landing page', 'Measure the conversion path', 'suede-analytics', 'coreyhaines31/marketingskills/analytics'],
+    ['Build a web app for tracking team tasks', 'Review security before release', 'suede-code', 'getsentry/skills/security-review'],
+    ['Get my business found in AI search and improve SEO', 'Audit search access and demand', 'suede-seo-audit', 'mblode/agent-skills/seo'],
+    ['Get my business found in AI search and improve SEO', 'Make answers clear and supportable', 'suede-ai-seo', 'coreyhaines31/marketingskills/ai-seo'],
+    ['Turn one idea into a social campaign', 'Draft the posts in a consistent voice', 'suede-social', 'mblode/agent-skills/ghostwriter'],
+    ['Turn one idea into a social campaign', 'Edit for clarity and specificity', 'suede-deslop', 'danjdewhurst/story-skills/line-editing'],
+    ['Build an AI agent with MCP tools', 'Define behavior and evaluation cases', 'suede-ai-eval', 'getsentry/skills/prompt-optimizer'],
+    ['Create an explainer video', 'Plan and produce the video scenes', 'suede-video', 'coreyhaines31/marketingskills/video'],
+  ];
+  for (const [prompt, title, suede, previous] of cases) {
+    const step = planWorkflow(prompt, catalog).steps.find(item => item.title === title);
+    assert.ok(step, `${prompt}: ${title}`);
+    assert.equal(step.skill.id, 'jasoncolapietro/suede-creator-skills/' + suede, title);
+    assert.ok(isFirstParty(step.skill));
+    assert.ok(step.alternatives.some(skill => skill.id === previous), `${title} keeps ${previous} as an alternative`);
+  }
+  // Open-source mode keeps the Suede picks: the pack is MIT licensed.
+  const free = planWorkflow('Get my business found in AI search and improve SEO', catalog, { freeOnly: true });
+  assert.ok(free.steps.every(step => isFirstParty(step.skill)));
 });
