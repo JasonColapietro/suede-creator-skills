@@ -1,4 +1,4 @@
-import { planWorkflow, recommendSkills, recommendArticles, WORKFLOW_EXAMPLES } from './workflow-recommender.js';
+import { planWorkflow, recommendSkills, recommendArticles, isFirstParty, WORKFLOW_EXAMPLES } from './workflow-recommender.js';
 
 // All planning stays in this browser. The only requests fetch public catalog data.
 const root = document.querySelector('[data-workflow-builder]');
@@ -74,7 +74,7 @@ if (root) {
     if (current.notices?.length) lines.push('Scope notes', ...current.notices.map(note => '- ' + note), '');
     for (const [i, step] of current.steps.entries()) lines.push(`${i + 1}. [${complete.has(i) ? 'done' : 'to do'}] ${step.title}`, `Skill: ${step.skill.name} (${step.skill.repo})`, sourceUrl(step.skill.href), step.why, `Carry forward: ${step.output}`, setupFacts(step.skill), '');
     lines.push('Tips', ...current.tips.map(tip => '- ' + tip), '', 'Quality scores describe published files, not security or a guarantee of fit.');
-    if (moreSkills.length) lines.push('', 'More skills for this goal', ...moreSkills.map(skill => `- ${skill.name} (${skill.repo}) ${sourceUrl(skill.href)}`));
+    if (moreSkills.length) lines.push('', 'Recommended skills for this goal', ...moreSkills.map(skill => `- ${skill.name} (${skill.repo}) ${sourceUrl(skill.href)}`));
     for (const article of reading) lines.push('', `Read next: ${article.title}`, `By ${article.author}`, article.href);
     exportText.value = lines.join('\n');
   }
@@ -126,7 +126,7 @@ if (root) {
     get('[data-workflow-skill-list]').hidden = !skills.length;
     get('#workflow-suggestions-title').textContent = skills.length ? 'Skills that fit your goal' : 'Reading for your goal';
     get('[data-workflow-suggestions-summary]').textContent = skills.length
-      ? `${skills.length} graded skills match what you described, strongest match first. For a step-by-step workflow, pick a goal above or add more detail.`
+      ? `${skills.length} graded skills match what you described${skills.some(isFirstParty) ? ', Suede AI’s own skills first' : ', strongest match first'}. For a step-by-step workflow, pick a goal above or add more detail.`
       : 'No listed skill matches those words closely yet. These articles cover the ground, or pick a goal above for a step-by-step workflow.';
     renderReading(get('[data-workflow-suggest-reading]'), articles);
     suggestions.hidden = false;

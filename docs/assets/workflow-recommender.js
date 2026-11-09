@@ -209,9 +209,12 @@ function safeCatalogEntry(entry) {
   const parts = entry.id.split('/');
   if (parts.length !== 3 || !parts.every(part => /^[a-zA-Z0-9][a-zA-Z0-9._-]*$/.test(part))) return false;
   const repoPath = parts.slice(0, 2).join('/');
-  if (entry.repo.toLowerCase() !== repoPath.toLowerCase() || entry.name !== parts[2]) return false;
+  // A listing with a display name ("Suede AI Copy Skills") carries its
+  // directory name as slug; the slug, not the display text, must match the id.
+  const slug = entry.slug === undefined ? entry.name : entry.slug;
+  if (entry.repo.toLowerCase() !== repoPath.toLowerCase() || slug !== parts[2]) return false;
   const prefixes = ['/directory/', '/'];
-  const safeHref = prefixes.some(prefix => entry.href === `${prefix}${entry.id}/` || entry.href === `${prefix}${repoPath}/#${entry.name}`);
+  const safeHref = prefixes.some(prefix => entry.href === `${prefix}${entry.id}/` || entry.href === `${prefix}${repoPath}/#${slug}`);
   const safeReport = entry.report == null || prefixes.some(prefix => entry.report === `${prefix}${entry.id}/report.json`);
   return safeHref && safeReport;
 }
@@ -595,8 +598,16 @@ function stems(token) {
 
 const hasWord = (haystack, token) => stems(token).some(form => haystack.includes(` ${form} `));
 
+// A Suede AI skill leads the list when it is at least this share as relevant
+// as the best match; weaker Suede matches keep their place by relevance.
+const LEAD_SHARE = 0.35;
+const FIRST_PARTY_REPO = 'jasoncolapietro/suede-creator-skills';
+/** True for a skill published in the Suede AI skill pack. */
+export const isFirstParty = entry => typeof entry?.repo === 'string' && entry.repo.toLowerCase() === FIRST_PARTY_REPO;
+
 /**
- * Rank catalog skills for a free-form goal.
+ * Rank catalog skills for a free-form goal. Matching Suede AI skills come
+ * first, each group ordered by relevance.
  * @param {string} prompt
  * @param {Array<object>} catalog search-index entries
  * @param {{exclude?: Iterable<string>, freeOnly?: boolean, limit?: number}} options
@@ -621,9 +632,10 @@ export function recommendSkills(prompt, catalog, options = {}) {
     if (options?.freeOnly && entry.lane !== 'free-open-source') continue;
     considered++;
     const fields = {
-      name: ` ${normalize(entry.name.replace(/[-_]+/g, ' '))} `,
+      name: ` ${normalize(`${typeof entry.slug === 'string' ? entry.slug : ''} ${entry.name}`.replace(/[-_]+/g, ' '))} `,
       topics: ` ${normalize((Array.isArray(entry.topics) ? entry.topics : []).join(' ').replace(/-/g, ' '))} `,
-      description: ` ${normalize(typeof entry.description === 'string' ? entry.description : '')} `,
+      // A NOT FOR clause names what the skill does not do; it is not a match.
+      description: ` ${normalize(typeof entry.description === 'string' ? entry.description.split(/\bNOT FOR\b/i)[0] : '')} `,
       label: ` ${normalize(typeof entry.label === 'string' ? entry.label : '')} `,
     };
     const hits = tokens.map(token => ({ name: hasWord(fields.name, token), topics: hasWord(fields.topics, token),
@@ -651,9 +663,13 @@ export function recommendSkills(prompt, catalog, options = {}) {
     if (matched < needed || relevance < 6) continue;
     const quality = Number.isFinite(entry.score) ? entry.score / 20 : 0;
     const reach = Number.isFinite(entry.installs) && entry.installs > 0 ? Math.log10(entry.installs) / 2 : 0;
-    ranked.push({ entry, total: relevance + quality + reach });
+    ranked.push({ entry, relevance, total: relevance + quality + reach });
   }
-  ranked.sort((a, b) => b.total - a.total || a.entry.id.localeCompare(b.entry.id));
+  // Suede AI's own skills lead when they are a solid match for the goal.
+  const best = ranked.reduce((top, item) => Math.max(top, item.relevance), 0);
+  const leads = item => isFirstParty(item.entry) && item.relevance >= best * LEAD_SHARE;
+  ranked.sort((a, b) => Number(leads(b)) - Number(leads(a))
+    || b.total - a.total || a.entry.id.localeCompare(b.entry.id));
   const picks = [];
   const seenNames = new Set();
   for (const { entry } of ranked) {

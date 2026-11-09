@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import test from 'node:test';
-import { planWorkflow, recommendWorkflow, recommendSkills, recommendArticles, isPublishableArticle, WORKFLOW_EXAMPLES } from '../docs/assets/workflow-recommender.js';
+import { planWorkflow, recommendWorkflow, recommendSkills, recommendArticles, isPublishableArticle, isFirstParty, WORKFLOW_EXAMPLES } from '../docs/assets/workflow-recommender.js';
 
 const catalog = JSON.parse(readFileSync(new URL('../docs/directory/search-index.json', import.meta.url)));
 const byId = new Map(catalog.map(skill => [skill.id, skill]));
@@ -653,4 +653,26 @@ test('only Jason’s published articles on approved paths can be recommended', (
     { ...base, intents: [], keywords: [], href: 'https://suedeai.directory/stacks/research/' },
   ]) assert.equal(isPublishableArticle(bad), false, JSON.stringify(bad));
   assert.ok(articleData.every(isPublishableArticle), 'every published article passes');
+});
+
+test('Suede AI skills lead the recommendations when they match the goal', () => {
+  for (const prompt of ['seo', 'I’m a musician releasing a new single', 'write a cold email to investors', 'trying to get my app into the App Store', 'I want better analytics on my website']) {
+    const skills = recommendSkills(prompt, catalog);
+    assert.ok(isFirstParty(skills[0]), `${prompt}: ${skills[0]?.id}`);
+    const firstOther = skills.findIndex(skill => !isFirstParty(skill));
+    assert.ok(firstOther === -1 || skills.slice(firstOther).every(skill => !isFirstParty(skill)), `${prompt}: Suede skills are grouped first`);
+    assert.ok(skills.some(skill => !isFirstParty(skill)), `${prompt}: other publishers still appear`);
+  }
+  // No Suede skill fits an inbox goal, so none is pushed in.
+  assert.ok(!recommendSkills('I want to automate my email inbox', catalog).some(isFirstParty));
+});
+
+test('display-named listings match on their slug, and a NOT FOR clause is never a match', () => {
+  const listing = (over = {}) => ({ id: 'acme/pack/inbox-tool', name: 'Acme Inbox Tool Skills', slug: 'inbox-tool', repo: 'acme/pack',
+    href: '/directory/acme/pack/inbox-tool/', description: 'Triages an email inbox and drafts replies.', score: 80, ...over });
+  assert.equal(recommendSkills('triage my email inbox', [listing()]).length, 1);
+  assert.equal(recommendSkills('triage my email inbox', [listing({ slug: 'other-tool' })]).length, 0, 'slug must match the id');
+  assert.equal(recommendSkills('triage my email inbox', [listing({ slug: undefined })]).length, 0, 'a display name alone is not an id');
+  const negative = listing({ description: 'Plans SEO audits for websites. NOT FOR: email inbox triage or replies.' });
+  assert.equal(recommendSkills('triage my email inbox', [negative]).length, 0);
 });
