@@ -111,6 +111,13 @@
 .workflow-skill-description { margin: 0; font-size: 13px; color: var(--muted); display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
 .workflow-skill-item .workflow-setup { margin: auto 0 0; color: var(--faint); font-size: 11px; }
 .workflow-more { padding: 0 0 22px; }
+/* Suede AI's own skills: the gold "Suede first" border, warm fill and a pick badge. */
+.workflow-skill-item.is-suede, .workflow-skill-box.is-suede { position: relative; border-color: var(--gold-fill); background: var(--gold-soft); box-shadow: inset 3px 0 0 var(--gold-fill); }
+.workflow-skill-item.is-suede:hover { border-color: var(--gold-text); }
+.workflow-skill-item.is-suede .workflow-skill:hover, .workflow-skill-box.is-suede .workflow-skill:hover { color: var(--gold-text); }
+.workflow-suede-badge { align-self: flex-start; display: inline-flex; align-items: center; gap: 6px; padding: 3px 8px; border: 1px solid var(--gold-fill); border-radius: 999px; color: var(--gold-text); font: 10px/1.4 var(--mono); letter-spacing: .06em; text-transform: uppercase; white-space: nowrap; }
+.workflow-suede-badge::before { content: "★" / ""; }
+.workflow-skill-box > .workflow-suede-badge { display: flex; width: max-content; margin-top: 10px; }
 .workflow-more h4 { font-size: 15px; margin-bottom: 12px; }
 /* The finder and the Best of tiles share the first screen on wide displays.
    Once recommendations appear they take the full width and the tiles move
