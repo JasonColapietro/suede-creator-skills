@@ -110,7 +110,7 @@
 .workflow-skill-item .grade { align-self: flex-start; font-size: 11px; padding: 0 6px; }
 .workflow-skill-description { margin: 0; font-size: 13px; color: var(--muted); display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
 .workflow-skill-item .workflow-setup { margin: auto 0 0; color: var(--faint); font-size: 11px; }
-.workflow-more { padding: 22px 0 4px; }
+.workflow-more { padding: 0 0 22px; }
 .workflow-more h4 { font-size: 15px; margin-bottom: 12px; }
 /* The finder and the Best of tiles share the first screen on wide displays.
    Once recommendations appear they take the full width and the tiles move

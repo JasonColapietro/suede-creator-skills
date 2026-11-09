@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import vm from 'node:vm';
 import * as planner from '../docs/assets/workflow-recommender.js';
-import { recommendWorkflow, recommendSkills, recommendArticles, WORKFLOW_EXAMPLES } from '../docs/assets/workflow-recommender.js';
+import { recommendWorkflow, recommendSkills, recommendArticles, isFirstParty, WORKFLOW_EXAMPLES } from '../docs/assets/workflow-recommender.js';
 const catalog = JSON.parse(fs.readFileSync(new URL('../docs/directory/search-index.json', import.meta.url)));
 const articles = JSON.parse(fs.readFileSync(new URL('../docs/directory/workflow-articles.json', import.meta.url)));
 const source = fs.readFileSync(new URL('../docs/assets/workflow-builder.js', import.meta.url), 'utf8').replace(/^import[^\n]+\n/, '');
@@ -22,7 +22,7 @@ function client(fetcher = async file => ({ ok: true, json: async () => file === 
   elements['[data-workflow-form]'].querySelector = selector => elements[selector];
   doc = { querySelector: () => ({ querySelector: selector => elements[selector] }), createElement: element, createTextNode: text => ({ textContent: text }) };
   const requests = [];
-  vm.runInNewContext(source, { document: doc, recommendWorkflow, planWorkflow: planner.planWorkflow, recommendSkills, recommendArticles, WORKFLOW_EXAMPLES, URL,
+  vm.runInNewContext(source, { document: doc, recommendWorkflow, planWorkflow: planner.planWorkflow, recommendSkills, recommendArticles, isFirstParty, WORKFLOW_EXAMPLES, URL,
     location: { href: 'https://suedeai.directory/?utm_source=test' }, navigator: { clipboard }, AbortController, setTimeout, clearTimeout,
     fetch: (...args) => { requests.push(args); return fetcher(...args); },
   });
@@ -157,6 +157,8 @@ test('a goal outside the authored workflows still gets graded skills, workflow c
   assert.equal(c.elements['[data-workflow-suggest-reading]'].hidden, false);
   assert.ok(links(c.elements['[data-workflow-suggest-reading]']).length >= 1);
   assert.match(c.status.textContent, /Pick a goal/);
+  assert.match(c.elements['[data-workflow-suggestions-summary]'].textContent, /Suede AI’s own skills first/);
+  assert.match(links(c.elements['[data-workflow-skill-list]'])[0], /\/jasoncolapietro\/suede-creator-skills\//);
   c.brief.value = 'something else'; c.brief.dispatchEvent(new Event('input'));
   assert.equal(c.elements['[data-workflow-suggestions]'].hidden, true, 'editing clears stale suggestions');
 });
@@ -169,6 +171,7 @@ test('a ready workflow adds extra matching skills that are not already steps or 
   const more = links(c.elements['[data-workflow-more-list]']);
   assert.ok(more.length >= 1 && more.length <= 3);
   assert.ok(more.every(href => !steps.includes(href)));
-  assert.match(c.elements['[data-workflow-export]'].value, /More skills for this goal/);
+  assert.match(c.elements['[data-workflow-export]'].value, /Recommended skills for this goal/);
+  assert.match(more[0], /\/jasoncolapietro\/suede-creator-skills\//, 'a matching Suede AI skill leads');
   assert.match(c.elements['[data-workflow-export]'].value, /Read next: /);
 });
