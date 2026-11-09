@@ -313,7 +313,8 @@ test('every issue explains its terms, welcomes first readers once and renders li
   for (const md of [first, later]) {
     for (const term of ['How to read the grades', 'Suede Skill Check score from 0 to 99', 'Two ways to run them', 'A use case groups every skill', "a star is GitHub's bookmark", 'The finder is a free skill'])
       if (term !== 'How to read the grades' || md === first) assert.ok(md.includes(term), term);
-    assert.doesNotMatch(md, /\]\(https?:\/\/(www\.)?skills\.sh/, 'the issue never links readers to skills.sh');
+    assert.doesNotMatch(md, /skills\.sh/, 'the issue cites the directory, not skills.sh');
+    assert.match(md, /Install counts and grades are from the \[Suede AI Skills Directory\]/);
     const lines = md.split('\n');
     lines.forEach((line, i) => {
       if (line.startsWith('- ') && i > 0) assert.ok(lines[i - 1] === '' || lines[i - 1].startsWith('- '), `list item needs a blank line before it: ${line.slice(0, 50)}`);
