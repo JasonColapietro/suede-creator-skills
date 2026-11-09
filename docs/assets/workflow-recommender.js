@@ -12,6 +12,8 @@ export const WORKFLOW_EXAMPLES = [
 ];
 
 const choice = (id, terms = [], requiredTerms = []) => ({ id, terms, requiredTerms });
+// Suede AI's own skills lead each step they cover; the earlier picks stay as alternatives.
+const SUEDE = 'jasoncolapietro/suede-creator-skills/';
 const phase = (title, choices, why, output, required = false) => ({ title, choices, why, output, required });
 const signal = (weight, ...terms) => ({ weight, terms });
 
@@ -23,15 +25,15 @@ const FLOWS = [
     signals: [signal(18, 'landing page', 'landing pages'), signal(13, 'launch page', 'waitlist page', 'signup page', 'product page', 'marketing website'), signal(8, 'homepage'), signal(12, 'more signups', 'get signups', 'conversion rate', 'convert visitors', 'convert more visitors')],
     summary: 'Task-based match: clarify the offer, build the page, check the experience, and measure signups.',
     phases: [
-      phase('Write the offer and call to action', [choice('coreyhaines31/marketingskills/copywriting'), choice('mblode/agent-skills/ghostwriter')],
+      phase('Write the offer and call to action', [choice(SUEDE + 'suede-copy'), choice('coreyhaines31/marketingskills/copywriting'), choice('mblode/agent-skills/ghostwriter')],
         'Clear page copy gives the design one audience, one promise and one next step.', 'A headline, supporting proof, section outline and primary call to action.'),
       phase('Build the landing page experience', [choice('agiwhitelist/auteur/auteur'), choice('anthropics/skills/frontend-design'), choice('mblode/agent-skills/ui-design')],
         'Turn the copy into a coherent web interface before adding more sections.', 'A working page with a consistent layout, typography and signup path.', true),
-      phase('Polish hierarchy and accessibility', [choice('pbakaus/impeccable/impeccable')],
+      phase('Polish hierarchy and accessibility', [choice(SUEDE + 'suede-design'), choice('pbakaus/impeccable/impeccable')],
         'Review responsive layouts, readable type, interaction states and UX copy together.', 'A prioritized interface fix list and a cleaner mobile layout.'),
       phase('Test the visitor journey', [choice('anthropics/skills/webapp-testing'), choice('lackeyjb/playwright-skill/playwright-skill')],
         'Browser checks catch broken forms and interactions before launch traffic arrives.', 'Repeatable checks for the main call to action, form and confirmation state.'),
-      phase('Measure the conversion path', [choice('coreyhaines31/marketingskills/analytics')],
+      phase('Measure the conversion path', [choice(SUEDE + 'suede-analytics'), choice('coreyhaines31/marketingskills/analytics')],
         'A defined conversion event makes it possible to evaluate the page after launch.', 'An event plan for visits, signup attempts and completed conversions.'),
     ],
     tips: [
@@ -49,11 +51,11 @@ const FLOWS = [
         'A concrete implementation plan keeps the first version focused on one useful user journey.', 'An ordered build plan with acceptance checks for the core user flow.'),
       phase('Build the core web interface', [choice('agiwhitelist/auteur/auteur'), choice('jeffallan/claude-skills/nextjs-developer', ['next js', 'nextjs'], ['next js', 'nextjs']), choice('anthropics/skills/frontend-design')],
         'Use a web-building skill to turn the core flow into working screens.', 'The primary screens and their navigation, loading, empty and error states.', true),
-      phase('Refine the interaction design', [choice('pbakaus/impeccable/impeccable'), choice('mblode/agent-skills/ui-design')],
+      phase('Refine the interaction design', [choice(SUEDE + 'suede-design'), choice('pbakaus/impeccable/impeccable'), choice('mblode/agent-skills/ui-design')],
         'Check hierarchy, responsive behavior and UX copy before expanding the feature set.', 'A focused list of accessibility, layout and interaction improvements.'),
       phase('Exercise the main user journey', [choice('anthropics/skills/webapp-testing'), choice('lackeyjb/playwright-skill/playwright-skill')],
         'Test actual browser behavior instead of assuming that a successful build proves the app works.', 'Browser checks for the main journey plus failure and empty states.'),
-      phase('Review security before release', [choice('getsentry/skills/security-review')],
+      phase('Review security before release', [choice(SUEDE + 'suede-code'), choice('getsentry/skills/security-review')],
         'Review authentication, authorization and input handling before connecting real user data.', 'Prioritized code findings with evidence and specific fixes to verify.'),
     ],
     tips: [
@@ -67,13 +69,13 @@ const FLOWS = [
     signals: [signal(18, 'ai search', 'ai answers', 'cited by ai', 'search visibility'), signal(12, 'seo', 'search rankings', 'search engine optimization', 'rank in google', 'rank on google'), signal(8, 'aeo', 'geo optimization', 'indexing'), signal(12, 'found on google', 'found in google', 'show up on google', 'show up in google', 'customers from google', 'traffic from google', 'find us on google', 'find me on google', 'find us online', 'find us in google', 'organic traffic', 'google rankings', 'cited by chatgpt', 'found in chatgpt')],
     summary: 'Task-based match: audit search access, plan useful content, improve answer readiness, and track results.',
     phases: [
-      phase('Audit search access and demand', [choice('mblode/agent-skills/seo'), choice('agricidaniel/claude-seo/seo')],
+      phase('Audit search access and demand', [choice(SUEDE + 'suede-seo-audit'), choice('mblode/agent-skills/seo'), choice('agricidaniel/claude-seo/seo')],
         'Start with crawlability, technical issues and the questions your audience actually searches for.', 'A prioritized SEO fix list and a search-demand brief.', true),
-      phase('Plan the content that answers demand', [choice('coreyhaines31/marketingskills/content-strategy')],
+      phase('Plan the content that answers demand', [choice(SUEDE + 'suede-content-strategy'), choice('coreyhaines31/marketingskills/content-strategy')],
         'Use the audit to choose topics and page purposes instead of producing disconnected articles.', 'A focused content plan mapping audience questions to pages.'),
-      phase('Make answers clear and supportable', [choice('coreyhaines31/marketingskills/ai-seo')],
+      phase('Make answers clear and supportable', [choice(SUEDE + 'suede-ai-seo'), choice('coreyhaines31/marketingskills/ai-seo')],
         'Structure useful, attributable content for AI-generated answers as well as human readers.', 'An answer-first revision plan with sources, clear entities and useful page structure.'),
-      phase('Track search and conversion outcomes', [choice('coreyhaines31/marketingskills/analytics')],
+      phase('Track search and conversion outcomes', [choice(SUEDE + 'suede-analytics'), choice('coreyhaines31/marketingskills/analytics')],
         'Measure qualified visits and conversions so visibility work has a business outcome.', 'A baseline report and a repeatable check of channels, landing pages and conversions.'),
     ],
     tips: [
@@ -87,13 +89,13 @@ const FLOWS = [
     signals: [signal(16, 'social campaign', 'social media campaign', 'content campaign'), signal(12, 'social posts', 'social media', 'content strategy', 'content marketing', 'marketing campaign'), signal(8, 'linkedin posts', 'blog posts', 'newsletter', 'write posts', 'write content'), signal(12, 'grow my audience', 'grow our audience', 'more followers', 'grow my following', 'grow our following')],
     summary: 'Task-based match: choose an audience and angle, draft in your voice, edit, and measure the response.',
     phases: [
-      phase('Choose the campaign angle and topics', [choice('coreyhaines31/marketingskills/content-strategy')],
+      phase('Choose the campaign angle and topics', [choice(SUEDE + 'suede-content-strategy'), choice('coreyhaines31/marketingskills/content-strategy')],
         'A clear audience and topic plan give each post a job in the campaign.', 'A campaign brief with an audience, core idea and a short sequence of posts.', true),
-      phase('Draft the posts in a consistent voice', [choice('mblode/agent-skills/ghostwriter')],
+      phase('Draft the posts in a consistent voice', [choice(SUEDE + 'suede-social'), choice('mblode/agent-skills/ghostwriter')],
         'Turn the brief into channel-sized drafts using examples of your own writing.', 'A first set of posts with distinct hooks and one clear next action each.'),
-      phase('Edit for clarity and specificity', [choice('danjdewhurst/story-skills/line-editing')],
+      phase('Edit for clarity and specificity', [choice(SUEDE + 'suede-deslop'), choice('danjdewhurst/story-skills/line-editing')],
         'Tighten sentences and check grammar without losing the intended voice.', 'Polished drafts with repetitive phrasing, vague claims and clutter removed.'),
-      phase('Define how the campaign will be measured', [choice('coreyhaines31/marketingskills/analytics')],
+      phase('Define how the campaign will be measured', [choice(SUEDE + 'suede-analytics'), choice('coreyhaines31/marketingskills/analytics')],
         'Decide how links and conversions will be tracked before distributing the posts.', 'A simple campaign measurement plan with tagged links and one outcome metric.'),
     ],
     tips: [
@@ -107,7 +109,7 @@ const FLOWS = [
     signals: [signal(17, 'ai agent', 'ai agents', 'mcp server', 'mcp tools', 'multi agent', 'agentic workflow'), signal(12, 'chatbot', 'mcp', 'build an agent', 'build agents', 'llm agent'), signal(8, 'agent workflow', 'agent tools')],
     summary: 'Task-based match: define prompts and checks, design tools, build integrations, and verify the workflow.',
     phases: [
-      phase('Define behavior and evaluation cases', [choice('getsentry/skills/prompt-optimizer')],
+      phase('Define behavior and evaluation cases', [choice(SUEDE + 'suede-ai-eval'), choice('getsentry/skills/prompt-optimizer')],
         'Write down the agent behavior and examples of success and failure before connecting tools.', 'A prompt specification and representative evaluation cases.'),
       phase('Design the tool interfaces', [choice('muratcankoylan/agent-skills-for-context-engineering/tool-design')],
         'Clear schemas, responses and error messages make external tools easier to use correctly.', 'Tool descriptions, input schemas, response shapes and recovery rules.'),
@@ -147,7 +149,7 @@ const FLOWS = [
     signals: [signal(16, 'market research', 'company research', 'literature review', 'research competitors', 'research papers'), signal(12, 'compare companies', 'research a market', 'research a company', 'scientific research', 'academic research'), signal(8, 'competitors', 'research report', 'research paper')],
     summary: 'Task-based match: gather relevant sources, read the evidence, and assemble a traceable research report.',
     phases: [
-      phase('Find sources for the research question', [choice('k-dense-ai/claude-scientific-skills/literature-review'), choice('browserbase/skills/company-research', ['company', 'companies', 'competitors', 'market', 'business'], ['company', 'companies', 'competitors', 'market', 'business'])],
+      phase('Find sources for the research question', [choice(SUEDE + 'suede-competitor-profiling', ['competitor', 'competitors', 'company', 'companies', 'market', 'business'], ['competitor', 'competitors']), choice('k-dense-ai/claude-scientific-skills/literature-review'), choice('browserbase/skills/company-research', ['company', 'companies', 'competitors', 'market', 'business'], ['company', 'companies', 'competitors', 'market', 'business'])],
         'Use a focused source-gathering workflow for the research domain and comparison criteria.', 'A source list with the research scope, inclusion criteria and initial findings.', true),
       phase('Read and extract supporting evidence', [choice('tronghieu/agent-skills/deep-reader')],
         'Page-anchored notes preserve the connection between a source and what it actually says.', 'Evidence notes with source locations, key claims and unanswered questions.'),
@@ -167,7 +169,7 @@ const FLOWS = [
     phases: [
       phase('Choose the creative concept', [choice('smixs/creative-director-skill/creative-director')],
         'Choose an idea that serves the audience and message before spending time producing assets.', 'A concept brief with the key message, hook and visual direction.'),
-      phase('Plan and produce the video scenes', [choice('coreyhaines31/marketingskills/video')],
+      phase('Plan and produce the video scenes', [choice(SUEDE + 'suede-video'), choice('coreyhaines31/marketingskills/video')],
         'Translate the concept into a production workflow using appropriate video tools.', 'A script, scene plan and first video draft with the intended delivery format.', true),
       phase('Edit timing and captions', [choice('renezander030/capcut-cli/capcut-edit')],
         'Use the editing pass to refine timing, subtitles, audio and the final sequence in CapCut.', 'An edited CapCut project with checked timing, audio levels and captions.'),
