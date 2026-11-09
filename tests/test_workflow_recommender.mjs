@@ -9,12 +9,12 @@ const ids = result => result.steps.map(step => step.skill.id);
 const briefs = [
   ['Launch a SaaS landing page for a new invoicing product', 'landing-page', 'agiwhitelist/auteur/auteur'],
   ['Build a web app with Next.js for tracking team tasks', 'web-app', 'jeffallan/claude-skills/nextjs-developer'],
-  ['Get my business found in AI search and improve SEO', 'seo-and-ai-search', 'coreyhaines31/marketingskills/ai-seo'],
-  ['Turn one idea into a social campaign for our launch', 'content-and-social', 'mblode/agent-skills/ghostwriter'],
+  ['Get my business found in AI search and improve SEO', 'seo-and-ai-search', 'jasoncolapietro/suede-creator-skills/suede-ai-seo'],
+  ['Turn one idea into a social campaign for our launch', 'content-and-social', 'jasoncolapietro/suede-creator-skills/suede-social'],
   ['Build an AI agent with MCP tools for customer support', 'agent-building', 'anthropics/skills/mcp-builder'],
   ['Analyze a CSV of sales data and create a report', 'documents-and-data', 'tronghieu/agent-skills/data-scientist'],
-  ['Research competitors and compare companies in our market', 'research', 'browserbase/skills/company-research'],
-  ['Create an explainer video with captions for a product launch', 'video-and-creative', 'coreyhaines31/marketingskills/video'],
+  ['Research competitors and compare companies in our market', 'research', 'jasoncolapietro/suede-creator-skills/suede-competitor-profiling'],
+  ['Create an explainer video with captions for a product launch', 'video-and-creative', 'jasoncolapietro/suede-creator-skills/suede-video'],
 ];
 
 for (const [brief, intent, required] of briefs) {
@@ -38,7 +38,8 @@ for (const [brief, intent, required] of briefs) {
 test('different goals select different skills and place writing before build before testing', () => {
   const landing = recommendWorkflow(briefs[0][0], catalog);
   const order = ids(landing);
-  assert.ok(order.indexOf('coreyhaines31/marketingskills/copywriting') < order.indexOf('agiwhitelist/auteur/auteur'));
+  assert.ok(order.indexOf('jasoncolapietro/suede-creator-skills/suede-copy') !== -1);
+  assert.ok(order.indexOf('jasoncolapietro/suede-creator-skills/suede-copy') < order.indexOf('agiwhitelist/auteur/auteur'));
   assert.ok(order.indexOf('agiwhitelist/auteur/auteur') < order.indexOf('anthropics/skills/webapp-testing'));
   const signatures = briefs.map(([brief]) => ids(recommendWorkflow(brief, catalog)).join('|'));
   assert.equal(new Set(signatures).size, briefs.length);
@@ -237,8 +238,8 @@ test('planner composes independent landing-page and social goals with shared mea
   assert.equal(result.status, 'ready');
   assert.deepEqual(result.intents.map(intent => intent.id), ['landing-page', 'content-and-social']);
   assert.ok(ids(result).includes('agiwhitelist/auteur/auteur'));
-  assert.ok(ids(result).includes('mblode/agent-skills/ghostwriter'));
-  assert.equal(ids(result).at(-1), 'coreyhaines31/marketingskills/analytics');
+  assert.ok(ids(result).includes('jasoncolapietro/suede-creator-skills/suede-social'));
+  assert.equal(ids(result).at(-1), 'jasoncolapietro/suede-creator-skills/suede-analytics');
   assert.equal(new Set(ids(result)).size, result.steps.length);
   assert.ok(result.steps.length <= 10);
   assert.deepEqual(result.steps.at(-1).intentIds, ['landing-page', 'content-and-social']);
@@ -338,7 +339,7 @@ test('planner simple mode keeps a short buildable sequence rather than dropping 
   assert.equal(simple.steps.length, 3);
   assert.ok(simple.steps.length < full.steps.length);
   assert.deepEqual(ids(simple), [
-    'coreyhaines31/marketingskills/copywriting', 'agiwhitelist/auteur/auteur', 'anthropics/skills/webapp-testing',
+    'jasoncolapietro/suede-creator-skills/suede-copy', 'agiwhitelist/auteur/auteur', 'anthropics/skills/webapp-testing',
   ]);
   assert.match(simple.notices.join(' '), /short|simple|essential/i);
   assert.doesNotMatch(simple.summary, /measure signups/i, 'Shortened plans cannot claim omitted measurement work');
@@ -387,7 +388,7 @@ test('planner never fills catalog gaps with invented or unrelated skills', () =>
     assert.deepEqual(result.steps, []);
     assert.deepEqual(result.choices, []);
   }
-  const missingAnchor = catalog.filter(skill => skill.id !== 'coreyhaines31/marketingskills/content-strategy');
+  const missingAnchor = catalog.filter(skill => !['coreyhaines31/marketingskills/content-strategy', 'jasoncolapietro/suede-creator-skills/suede-content-strategy'].includes(skill.id));
   const result = planWorkflow('Build a landing page and create a social campaign', missingAnchor);
   assert.equal(result.status, 'clarify');
   assert.deepEqual(result.steps, []);
@@ -440,7 +441,7 @@ test('planner keeps the original eight supported workflows usable with their nat
 });
 
 test('planner does not promise omitted phases when a valid catalog has only partial supporting coverage', () => {
-  const reduced = catalog.filter(skill => !['coreyhaines31/marketingskills/analytics', 'pbakaus/impeccable/impeccable'].includes(skill.id));
+  const reduced = catalog.filter(skill => !['coreyhaines31/marketingskills/analytics', 'pbakaus/impeccable/impeccable', 'jasoncolapietro/suede-creator-skills/suede-analytics', 'jasoncolapietro/suede-creator-skills/suede-design'].includes(skill.id));
   const result = planWorkflow('Build a landing page', reduced);
   assert.equal(result.status, 'ready');
   assert.equal(result.steps.length, 3);
@@ -451,12 +452,13 @@ test('planner does not promise omitted phases when a valid catalog has only part
 test('planner does not attach platform-specific handoffs to an incompatible alternative', () => {
   const result = planWorkflow('Research competitors and compare companies', catalog);
   const source = result.steps[0];
-  assert.equal(source.skill.id, 'browserbase/skills/company-research');
+  assert.equal(source.skill.id, 'jasoncolapietro/suede-creator-skills/suede-competitor-profiling');
+  assert.ok(source.alternatives.some(skill => skill.id === 'browserbase/skills/company-research'));
   assert.deepEqual(source.skill, byId.get(source.skill.id));
   const scientific = planWorkflow('Create a scientific research report', catalog);
   assert.equal(scientific.status, 'ready');
   assert.equal(scientific.steps[0].skill.id, 'k-dense-ai/claude-scientific-skills/literature-review');
-  assert.ok(!scientific.steps[0].alternatives.some(skill => skill.id === 'browserbase/skills/company-research'));
+  assert.ok(!scientific.steps[0].alternatives.some(skill => ['browserbase/skills/company-research', 'jasoncolapietro/suede-creator-skills/suede-competitor-profiling'].includes(skill.id)));
 });
 
 test('planner keeps coordinated negation scoped until a new positive instruction', () => {
@@ -675,4 +677,29 @@ test('display-named listings match on their slug, and a NOT FOR clause is never 
   assert.equal(recommendSkills('triage my email inbox', [listing({ slug: undefined })]).length, 0, 'a display name alone is not an id');
   const negative = listing({ description: 'Plans SEO audits for websites. NOT FOR: email inbox triage or replies.' });
   assert.equal(recommendSkills('triage my email inbox', [negative]).length, 0);
+});
+
+test('Suede AI skills lead the workflow steps they cover, with the earlier picks kept as alternatives', () => {
+  const cases = [
+    ['Launch a SaaS landing page', 'Write the offer and call to action', 'suede-copy', 'coreyhaines31/marketingskills/copywriting'],
+    ['Launch a SaaS landing page', 'Polish hierarchy and accessibility', 'suede-design', 'pbakaus/impeccable/impeccable'],
+    ['Launch a SaaS landing page', 'Measure the conversion path', 'suede-analytics', 'coreyhaines31/marketingskills/analytics'],
+    ['Build a web app for tracking team tasks', 'Review security before release', 'suede-code', 'getsentry/skills/security-review'],
+    ['Get my business found in AI search and improve SEO', 'Audit search access and demand', 'suede-seo-audit', 'mblode/agent-skills/seo'],
+    ['Get my business found in AI search and improve SEO', 'Make answers clear and supportable', 'suede-ai-seo', 'coreyhaines31/marketingskills/ai-seo'],
+    ['Turn one idea into a social campaign', 'Draft the posts in a consistent voice', 'suede-social', 'mblode/agent-skills/ghostwriter'],
+    ['Turn one idea into a social campaign', 'Edit for clarity and specificity', 'suede-deslop', 'danjdewhurst/story-skills/line-editing'],
+    ['Build an AI agent with MCP tools', 'Define behavior and evaluation cases', 'suede-ai-eval', 'getsentry/skills/prompt-optimizer'],
+    ['Create an explainer video', 'Plan and produce the video scenes', 'suede-video', 'coreyhaines31/marketingskills/video'],
+  ];
+  for (const [prompt, title, suede, previous] of cases) {
+    const step = planWorkflow(prompt, catalog).steps.find(item => item.title === title);
+    assert.ok(step, `${prompt}: ${title}`);
+    assert.equal(step.skill.id, 'jasoncolapietro/suede-creator-skills/' + suede, title);
+    assert.ok(isFirstParty(step.skill));
+    assert.ok(step.alternatives.some(skill => skill.id === previous), `${title} keeps ${previous} as an alternative`);
+  }
+  // Open-source mode keeps the Suede picks: the pack is MIT licensed.
+  const free = planWorkflow('Get my business found in AI search and improve SEO', catalog, { freeOnly: true });
+  assert.ok(free.steps.every(step => isFirstParty(step.skill)));
 });
