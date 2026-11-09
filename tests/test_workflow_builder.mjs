@@ -58,3 +58,8 @@ test('the homepage chat asks what the visitor is working on and shares the first
   assert.ok(home.indexOf('id="best-of-title"') < home.indexOf('class="board-section"'));
   assert.ok(home.lastIndexOf('</div>', home.indexOf('class="board-section"')) > home.indexOf('id="best-of-title"'), 'Best of sits inside the shared start band');
 });
+
+test('recommended skills appear above the workflow steps in a ready plan', () => {
+  assert.ok(home.indexOf('data-workflow-more hidden') < home.indexOf('data-workflow-steps'));
+  assert.match(home, /<h4 id="workflow-more-title">Recommended skills for this goal<\/h4>/);
+});
