@@ -1,19 +1,19 @@
 # Suede Creator Skills
 
-A 21-skill toolkit for Claude Code and Codex: orchestrate multi-agent teams, run code review with an A-F ship grade, and design AI evals.
+A 22-skill toolkit for Claude Code and Codex: orchestrate multi-agent teams, run code review with an A-F ship grade, and design AI evals.
 
-![License: MIT](https://img.shields.io/badge/License-MIT-blue) ![Skills: 21](https://img.shields.io/badge/Skills-21-black) [![GitHub stars](https://img.shields.io/github/stars/JasonColapietro/suede-creator-skills?style=social)](https://github.com/JasonColapietro/suede-creator-skills/stargazers)
+![License: MIT](https://img.shields.io/badge/License-MIT-blue) ![Skills: 22](https://img.shields.io/badge/Skills-22-black) [![GitHub stars](https://img.shields.io/github/stars/JasonColapietro/suede-creator-skills?style=social)](https://github.com/JasonColapietro/suede-creator-skills/stargazers)
 
 > **By [Jason Colapietro](https://suedeai.ai/founder) / [Suede Labs AI](https://suedeai.ai)**
 
 ## What it is
 
-A free, MIT-licensed pack of **21 public skill folders** for Claude Code and OpenAI Codex. Each skill is a `skills/<name>/SKILL.md` file the agent loads on demand.
+A free, MIT-licensed pack of **22 public skill folders** for Claude Code and OpenAI Codex. Each skill is a `skills/<name>/SKILL.md` file the agent loads on demand.
 
 - **Agent orchestration**: wire complex changes into coordinated agent lanes with WIP collision detection, RFC mode, feature-flag strategy, rollback trees, and a handoff checklist that won't close without evidence (`suede-agent-teams`).
 - **Code review + A-F ship grade**: deep findings plus a blunt letter verdict across 7 evidence-backed lanes, with instant-F triggers and grade caps for auth and payment surfaces (`suede-code`, `suede-code-review`, `suede-code-grader`, `suede-ship-gate`).
 - **AI evaluation**: turn LLM, RAG, classifier, and agent surfaces into AI-SPEC artifacts, failure-mode rubrics, eval cases, and acceptance gates (`suede-ai-eval`).
-- **Design, copy, and SEO**: design systems and visual QA, conversion copy with an anti-slop gate, SEO/AEO/AI-EO audits, and A-F page visibility grades (`johnny-suede-design`, `johnny-suede-write`, `suede-design`, `suede-copy`, `suede-seo-audit`, `suede-visibility-grader`, `suede-site-alchemy`).
+- **Design, copy, and SEO**: design systems and visual QA, conversion copy with an anti-slop gate, SEO/AEO/AI-EO audits, and A-F page visibility grades (`johnny-suede-design`, `johnny-suede-write`, `suede-design`, `suede-copy`, `suede-seo-audit`, `suede-visibility-grader`, `suede-seo-zero-to-100`, `suede-site-alchemy`).
 - **Workflow umbrella**: load the whole pack with one skill (`suede-workflow-skills`).
 
 ## Install in one command
@@ -25,9 +25,9 @@ In Claude Code, add the marketplace and install the pack:
 /plugin install suede-skills@suede
 ```
 
-`suede-skills` installs all 21 skills. Two focused subsets are available if you want less: `/plugin install suede-agent-workflows@suede` (orchestration, workflows, evals) and `/plugin install suede-code@suede` (review, grade, ship-gate).
+`suede-skills` installs all 22 skills. Two focused subsets are available if you want less: `/plugin install suede-agent-workflows@suede` (orchestration, workflows, evals) and `/plugin install suede-code@suede` (review, grade, ship-gate).
 
-Prefer a clone? `install.sh` copies all 21 skills into `~/.claude/skills/` and prints the installed count:
+Prefer a clone? `install.sh` copies all 22 skills into `~/.claude/skills/` and prints the installed count:
 
 ```bash
 git clone https://github.com/JasonColapietro/suede-creator-skills.git && bash suede-creator-skills/install.sh
@@ -113,6 +113,7 @@ If the pack saves you an hour, [star the repo](https://github.com/JasonColapietr
 | [`suede-copy`](skills/suede-copy) | Conversion copy: headline formulas, A/B variants, anti-slop gate |
 | [`suede-seo-audit`](skills/suede-seo-audit) | SEO/AEO/AI-EO, metadata, schema, internal-link, and intent audit |
 | [`suede-visibility-grader`](skills/suede-visibility-grader) | A-F page grades for findability, clarity, CTA pull, proof, and AI citation readiness |
+| [`suede-seo-zero-to-100`](skills/suede-seo-zero-to-100) | 0-100 search ladder for any company, brand, or person: indexing, name SERP, Search Console title-test cohorts with significance-tested verdicts, authority, AI citations |
 | [`suede-site-alchemy`](skills/suede-site-alchemy) | Funnel analysis, friction audit, conversion math, ranked quick-wins |
 | [`suede-launch-packaging`](skills/suede-launch-packaging) | Package work as a launch: docs, install commands, proof links, QA |
 | [`suede-mcp-qa`](skills/suede-mcp-qa) | QA the Suede Skills MCP before it ships |
@@ -153,7 +154,7 @@ To install several at once, pass extra `skills/<name>` paths after `--path`. Res
 
 ## Install for Claude Code
 
-All 21 skills:
+All 22 skills:
 
 ```bash
 git clone https://github.com/JasonColapietro/suede-creator-skills.git && bash suede-creator-skills/install.sh

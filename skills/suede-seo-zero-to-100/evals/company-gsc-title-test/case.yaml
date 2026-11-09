@@ -1,0 +1,6 @@
+schema_version: "1.1"
+name: company-gsc-title-test
+expected_outcome: |
+  A ladder-scored plan that refuses to guarantee #1, tests every eligible page-1 page in one cohort with controls, routes page-2+ pages to content work, fixes cannibalization first, and reads results with a significance-tested verdict.
+context:
+  scaffold_script: place-files.sh

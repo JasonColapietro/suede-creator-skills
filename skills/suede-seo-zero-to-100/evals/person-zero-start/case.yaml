@@ -1,0 +1,4 @@
+schema_version: "1.1"
+name: person-zero-start
+expected_outcome: |
+  A from-zero plan that verifies indexability, sets up GSC/Bing/GBP, fixes the personal-name SERP, maps demand, builds pages, and schedules the title-test loop and AI-citation checks for when data exists, with honest timelines.

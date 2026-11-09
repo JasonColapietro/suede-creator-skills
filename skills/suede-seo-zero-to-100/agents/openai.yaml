@@ -1,0 +1,6 @@
+interface:
+  display_name: "Suede SEO Zero to 100"
+  short_description: "Take any brand or person from invisible to ranking"
+  default_prompt: "Use $suede-seo-zero-to-100 to place this company, brand, local business, creator, or person on the Suede 0-100 Search Ladder with evidence, fix the lower gates first, and run the Search Console title-testing loop in 14-day cohorts with controls and a verdict script, then climb, build authority, and check AI answer citations."
+policy:
+  allow_implicit_invocation: true
