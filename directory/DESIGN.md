@@ -8,42 +8,35 @@ else.
 
 ## Register and scene
 
-The Suede palette (Institutional IP Terminal, the canonical Suede brand in
-`Suede-AI-App/suede-home`) on five colors: a black page, blue-black Panel and
-Control Ink surfaces, Proof Sky blue links, Verified Emerald green for done and
-verified, Rights Red for the primary action and Registry Cyan for focus, labels
-and proof. A builder is deciding, in under a
-minute, which skill to install: compare the score, see what the files touch,
-copy the command. The surface is Operate (browse, compare) and Read (skill
-pages, guides, the trust page), so expression lives in precision: mono type, a
-pixel display face for the few words that carry the page, and four status
-colors that mean the same thing everywhere.
+The Vercel scheme, as skills.sh wears it: a pure black page, near-black
+panels, gray hairlines, white for text and action, and nothing that glows. A
+builder is deciding, in under a minute, which skill to install: compare the
+score, see what the files touch, copy the command. The surface is Operate
+(browse, compare) and Read (skill pages, guides, the trust page), so expression
+lives in precision: mono type, a pixel display face for the few words that
+carry the page, and four status colors that mean the same thing everywhere.
 
 ## Palette
 
-| Role | Value | Suede token | Use |
+Every value is a token from Vercel's dark scale, the one skills.sh ships.
+
+| Role | Value | Vercel token | Use |
 | --- | --- | --- | --- |
-| Canvas | `#020409` | black (Deep Ink family) | Page ground |
-| Paper | `#09101b` | Panel Ink | Rows, cards, the nav and footer |
-| Paper 2 | `#0d1726` | Control Ink | Insets, inline code, hover rows, the compare highlight |
-| Hairline / line / line strong | `#142033` / `#1d2b41` / `#34465f` | navy hairlines | Separators, borders, hover rings, corner brackets, terminal dots |
-| Ink / text / muted / faint | `#eef2f7` / `#d7dee8` / `#9aa7b8` / `#7a879a` | Page Mist / mist / Slate | Headings, body, supporting text, ranks and icons |
-| Link | `#38bdf8`, hover `#7dd3fc` | Proof Sky | Links in text, the reading list, the publisher group label |
-| Accent | `#22d3ee` (Deep Ink text on it) | Registry Cyan | Active tabs, focus rings, sparklines, chart bars, pixel glyphs, eyebrows |
-| Success | `#34d399` on `#062a1f` | Verified Emerald | Workflow progress, completed steps, the pressed "complete" button |
-| Primary action | `#9f101a`, hover `#d11f2b`, white text | Rights Red | The primary button, the nav call to action, the skip link, form submit buttons |
-| Accent 2 / danger | `#ff5e63` on `#330a11` | coral | Incident cards, errors, the "runs commands" matrix color |
-| Suede modules (`--gold-*` names) | fill and border `#d11f2b`, text `#22d3ee`, tint `#170c16` | Rights Red / Registry Cyan | The Suede-owned modules: the Suede pick callout, the services module, Jason's quote, the chat box accents |
-| Grades | A `#00ca52` on `#00250a`, B `#50a8ff` on `#06193a`, C `#ffb200` on `#291800`, D `#a0a0a0` on `#1a1a1a` | status colors | Chips, matrices and meters; the same four everywhere |
+| Canvas | `#000000` | background-200 | Page ground |
+| Paper | `#0a0a0a` | background-100 | Rows, cards, the nav and footer |
+| Paper 2 | `#1a1a1a` | gray-100 | Insets, inline code, hover rows, the compare highlight |
+| Hairline / line / line strong | `#1f1f1f` / `#292929` / `#454545` | gray-200 / 300 / 500 | Separators, borders, hover rings, corner brackets, terminal dots |
+| Ink / text / muted / faint | `#ededed` / `#d4d4d4` / `#a0a0a0` / `#7d7d7d` | gray-1000 / between / 900 / 800 | Headings, body, supporting text, ranks and icons |
+| Accent | `#ededed` | gray-1000 | Links, active tabs, focus rings, the primary button fill (black text), sparklines, chart bars, pixel glyphs |
+| Accent 2 / danger | `#ff5e63` on `#330a11` | red-900 / red-100 | Incident cards, errors, the "runs commands" matrix color |
+| Gold | `#c8a96e` | Suede brand | Only the Suede-owned modules: the Suede pick callout, the services module, Jason's quote |
+| Grades | A `#00ca52` on `#00250a`, B `#50a8ff` on `#06193a`, C `#ffb200` on `#291800`, D `#a0a0a0` on `#1a1a1a` | green-900, blue-900, amber-700, gray-900 | Chips, matrices and meters; the same four everywhere |
 
-The chat box's Suede skill cards use the same palette directly: a Rights Red
-head, Panel Ink body, a Registry Cyan proof row and a Control Ink footer.
-
-No scanline, no radial glow, no text shadow: emphasis comes from blue, green,
-red and cyan against black. Dark only, and `color-scheme: dark` says so. The legacy token
-names other sheets and tests read (`--cream`, `--gold`, `--cool`, `--surface`,
-`--border`) are aliased to the new values; `--gold-*` keeps its name for
-compatibility and carries Rights Red and Registry Cyan.
+No scanline, no radial glow, no text shadow: the page is flat black, and
+emphasis comes from white against gray. Dark only, as skills.sh is, and
+`color-scheme: dark` says so. The legacy token names other sheets and tests
+read (`--cream`, `--gold`, `--cool`, `--surface`, `--border`) are aliased to
+the new values.
 
 ## Typography
 
