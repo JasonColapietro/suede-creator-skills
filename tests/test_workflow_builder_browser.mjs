@@ -3,7 +3,9 @@ import path from 'node:path';
 import fs from 'node:fs';
 import os from 'node:os';
 import http from 'node:http';
-import { build } from '../scripts/build-directory-site.mjs';
+import { execFile } from 'node:child_process';
+import { promisify } from 'node:util';
+import { fileURLToPath } from 'node:url';
 export async function verifyWorkflowBuilder(page, base, output, route = '/directory/') {
   await page.goto(base + route + '?utm_source=workflow-test');
   const brief = page.getByRole('textbox', { name: 'What are you doing, or trying to achieve?' });
@@ -116,7 +118,11 @@ export async function verifyWorkflowBuilder(page, base, output, route = '/direct
 
 export async function verifyStandaloneWorkflow(page, output) {
   const root = fs.mkdtempSync(path.join(os.tmpdir(), 'suede-workflow-standalone-'));
-  build(root);
+  // The standalone build takes about seven seconds of synchronous file work.
+  // Run it in a child process: in this process it would block the event loop
+  // that the concurrently running browser tests depend on, and their Node-side
+  // waits (such as a 5 s label reset) would expire mid-build.
+  await promisify(execFile)(process.execPath, [fileURLToPath(new URL('../scripts/build-directory-site.mjs', import.meta.url)), '--out', root], { maxBuffer: 1 << 20 });
   const types = { '.html': 'text/html', '.css': 'text/css', '.js': 'text/javascript', '.json': 'application/json', '.svg': 'image/svg+xml', '.woff2': 'font/woff2', '.png': 'image/png' };
   const server = http.createServer((req, res) => {
     const pathname = decodeURIComponent(new URL(req.url, 'http://localhost').pathname);
