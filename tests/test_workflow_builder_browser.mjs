@@ -6,9 +6,9 @@ import http from 'node:http';
 import { build } from '../scripts/build-directory-site.mjs';
 export async function verifyWorkflowBuilder(page, base, output, route = '/directory/') {
   await page.goto(base + route + '?utm_source=workflow-test');
-  const brief = page.getByRole('textbox', { name: 'What do you want to build?' });
+  const brief = page.getByRole('textbox', { name: 'What are you doing, or trying to achieve?' });
   await brief.waitFor({ state: 'visible', timeout: 5000 });
-  const submit = page.getByRole('button', { name: 'Build my workflow', exact: true });
+  const submit = page.getByRole('button', { name: 'Get recommendations', exact: true });
   await submit.click();
   assert.match(await page.locator('[data-workflow-status]').textContent(), /Describe/);
   assert.equal(await brief.evaluate(el => el === document.activeElement), true);
@@ -16,7 +16,8 @@ export async function verifyWorkflowBuilder(page, base, output, route = '/direct
   await page.locator('[data-workflow-results]').waitFor({ state: 'visible' });
   assert.ok(await page.locator('.workflow-step').count() >= 3);
   await page.locator('[data-workflow-reading]').waitFor({ state: 'visible' });
-  assert.equal(await page.locator('[data-workflow-reading] a').getAttribute('href'), 'https://suedeai.directory/stacks/landing-page/');
+  assert.equal(await page.locator('[data-workflow-reading] a').first().getAttribute('href'), 'https://suedeai.directory/stacks/landing-page/');
+  assert.ok(await page.locator('[data-workflow-reading] a').count() >= 2, 'more than one authored article');
   assert.match(await page.locator('[data-workflow-reading]').textContent(), /By Jason Colapietro/);
   assert.equal(await page.locator('[data-workflow-tips] li').count(), 3);
   assert.match(await page.locator('[data-workflow-results]').textContent(), /Carry forward/);
@@ -34,6 +35,14 @@ export async function verifyWorkflowBuilder(page, base, output, route = '/direct
   assert.ok(await page.locator('[data-workflow-results]').isHidden());
   assert.match(await page.locator('[data-workflow-status]').textContent(), /Choose the result/i);
   assert.ok(await page.locator('[data-workflow-choices] button').count() >= 1);
+  assert.ok(await page.locator('[data-workflow-suggestions]').isHidden(), 'nonsense gets no invented suggestions');
+  // A goal outside the authored workflows still gets graded skills and reading.
+  await brief.fill('I want to automate my email inbox'); await submit.click();
+  await page.locator('[data-workflow-suggestions]').waitFor({ state: 'visible' });
+  assert.ok(await page.locator('[data-workflow-skill-list] li').count() >= 3);
+  assert.match(await page.locator('[data-workflow-skill-list] a').first().getAttribute('href'), /^\/(directory\/)?[\w.-]+\/[\w.-]+\//);
+  assert.ok(await page.locator('[data-workflow-choices] button').count() >= 1);
+  assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), 'suggestions do not overflow');
   for (const width of [1440, 390]) {
     await page.setViewportSize({ width, height: width === 390 ? 844 : 1000 });
     await page.locator('[data-workflow-examples] button').first().click();
