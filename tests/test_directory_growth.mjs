@@ -302,3 +302,20 @@ test('every star call to action names Suede AI Skills and points at its reposito
   assert.match(read('directory/suede-directory/scripts/search.mjs'), new RegExp(`star: '${repo}'`));
   assert.match(read('README.md'), /img\.shields\.io\/github\/stars\/JasonColapietro\/suede-creator-skills/);
 });
+
+test('every issue explains its terms, welcomes first readers once and renders lists cleanly', () => {
+  const later = buildIssue({ index: nlIndex, feed: nlFeed, breakout, playbook, date: breakout.date });
+  const first = buildIssue({ index: nlIndex, feed: nlFeed, breakout, playbook, date: breakout.date, firstIssue: true });
+  assert.match(first, /Welcome to the first issue of Rising Skills/);
+  assert.match(first, /\*\*New to agent skills\?\*\*/);
+  assert.doesNotMatch(later, /Welcome to the first issue/);
+  assert.match(later, /\*\*New here\?\*\*/);
+  for (const md of [first, later]) {
+    for (const term of ['How to read the grades', 'Suede Skill Check score from 0 to 99', 'Two ways to run them', 'A use case groups every skill', "a star is GitHub's bookmark", 'The finder is a free skill'])
+      if (term !== 'How to read the grades' || md === first) assert.ok(md.includes(term), term);
+    const lines = md.split('\n');
+    lines.forEach((line, i) => {
+      if (line.startsWith('- ') && i > 0) assert.ok(lines[i - 1] === '' || lines[i - 1].startsWith('- '), `list item needs a blank line before it: ${line.slice(0, 50)}`);
+    });
+  }
+});
