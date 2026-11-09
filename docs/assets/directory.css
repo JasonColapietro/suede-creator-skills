@@ -5,10 +5,11 @@
  * navigation, footer and every catalog component live here, so the directory
  * reads as its own product and never inherits the skills site's chrome.
  *
- * Design system (directory/DESIGN.md): the Vercel scheme, as skills.sh wears
- * it. A pure black page, near-black panels, gray hairlines, white for text
- * and action, four status colors from the same scale that mean the same thing
- * on every page. Geist for prose and headings, Geist Mono for labels, numbers
+ * Design system (directory/DESIGN.md): the Suede palette (Institutional IP
+ * Terminal) on five colors: a black page, blue-black Panel and Control Ink
+ * surfaces, Proof Sky blue links, Verified Emerald for done and verified,
+ * Rights Red for the primary action and Registry Cyan for focus, labels and
+ * proof, plus four grade colors that mean the same thing on every page. Geist for prose and headings, Geist Mono for labels, numbers
  * and commands, and Pixelify Sans, a pixel display face, for the wordmark and
  * the hub headline, as skills.sh keeps its bitmap logo. Each page type
  * owns one focal graphic: the skill matrix, the install chart, the score
@@ -56,33 +57,43 @@
   --mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   --display: "Pixelify Sans", "Geist Mono", ui-monospace, monospace;
 
-  /* Surfaces: Vercel's dark scale, as skills.sh uses it. A pure black page,
-     near-black panels, gray hairlines. */
-  --canvas: #000000;
-  --paper: #0a0a0a;
-  --paper-2: #1a1a1a;
-  --hairline: #1f1f1f;
-  --line: #292929;
-  --line-strong: #454545;
+  /* The Suede palette (Institutional IP Terminal, from suede-home), on five
+     colors: a black page, blue-black Panel and Control Ink surfaces, Proof
+     Sky blue links, Verified Emerald for done and verified, Rights Red for
+     action and Registry Cyan for focus, labels and proof. */
+  --canvas: #020409;
+  --paper: #09101b;
+  --paper-2: #0d1726;
+  --hairline: #142033;
+  --line: #1d2b41;
+  --line-strong: #34465f;
 
-  /* Text */
-  --ink: #ededed;
-  --text: #d4d4d4;
-  --muted: #a0a0a0;
-  --faint: #7d7d7d;
+  /* Text: Page Mist, mist and Slate. */
+  --ink: #eef2f7;
+  --text: #d7dee8;
+  --muted: #9aa7b8;
+  --faint: #7a879a;
 
-  /* Action is white, as on skills.sh: links, active tabs, the primary button.
-     Status colors come from the same scale. The Suede gold marks only the
-     Suede-owned modules. */
-  --accent: #ededed;
-  --accent-soft: #1a1a1a;
+  /* Registry Cyan marks links, active tabs, focus and glyphs. Rights Red is
+     the primary action. The --gold-* names are kept for the Suede-owned
+     modules and the sheets and tests that read them; they now carry Rights
+     Red (fills and borders) and Registry Cyan (text). */
+  --accent: #22d3ee;
+  --accent-soft: #0b2230;
   --accent-glow: transparent;
-  --on-accent: #000000;
+  --on-accent: #050b16;
   --accent-2: #ff5e63;
-  --focus: #ededed;
-  --gold-fill: #c8a96e;
-  --gold-text: #c8a96e;
-  --gold-soft: #1a1710;
+  --focus: #22d3ee;
+  --cta: #9f101a;
+  --cta-hover: #d11f2b;
+  --on-cta: #ffffff;
+  --link: #38bdf8;
+  --link-hover: #7dd3fc;
+  --success: #34d399;
+  --success-soft: #062a1f;
+  --gold-fill: #d11f2b;
+  --gold-text: #22d3ee;
+  --gold-soft: #170c16;
   --danger: #ff5e63;
   --danger-soft: #330a11;
 
@@ -128,7 +139,7 @@ body {
 img { display: block; max-width: 100%; height: auto; }
 a { color: inherit; }
 main a:not(.button):not(.link-row):not(.dir-card):not(.board-row):not(.kind-card):not(.stack-card):not(.featured-callout):not(.nav-cta):not(.gh-star):not(.tab):not(.topic-tile) {
-  color: var(--accent);
+  color: var(--link);
   text-decoration: underline;
   text-decoration-color: var(--line-strong);
   text-decoration-thickness: 1px;
@@ -155,7 +166,7 @@ code, kbd, pre, samp { font-family: var(--mono); }
 code { font-size: 0.94em; color: var(--grade-a); background: var(--paper-2); padding: 1px 5px; border-radius: 3px; overflow-wrap: anywhere; }
 pre {
   margin: 12px 0; padding: 14px 16px; overflow: auto;
-  background: #07080d; border: 1px solid var(--hairline); border-left: 2px solid var(--accent); border-radius: var(--radius-sm);
+  background: #040912; border: 1px solid var(--hairline); border-left: 2px solid var(--accent); border-radius: var(--radius-sm);
   font-size: 13.5px; line-height: 1.7; white-space: pre-wrap; overflow-wrap: anywhere; color: var(--grade-a);
 }
 pre code { background: none; padding: 0; font-size: inherit; color: inherit; }
@@ -173,7 +184,7 @@ td.num, th.num { font-family: var(--mono); text-align: right; font-variant-numer
 .visually-hidden { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 .skip-link {
   position: fixed; top: 12px; left: 12px; z-index: 3000; transform: translateY(-160%);
-  padding: 10px 14px; border-radius: var(--radius); background: var(--accent); color: var(--on-accent); font-weight: 700; text-decoration: none;
+  padding: 10px 14px; border-radius: var(--radius); background: var(--cta); color: var(--on-cta); font-weight: 700; text-decoration: none;
   transition: transform 160ms ease;
 }
 .skip-link:focus { transform: translateY(0); }
@@ -203,7 +214,7 @@ main.shell { padding-top: 28px; padding-bottom: 96px; position: relative; z-inde
 /* ----------------------------------------------------------------- nav */
 .nav {
   position: sticky; top: 0; z-index: 50;
-  background: rgba(5, 6, 10, 0.86);
+  background: rgba(2, 4, 9, 0.88);
   backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--hairline);
 }
@@ -223,8 +234,8 @@ main.shell { padding-top: 28px; padding-bottom: 96px; position: relative; z-inde
 .nav-links a[aria-current="page"] { color: var(--accent); }
 .nav-links a[aria-current="page"]::before { content: ">" / ""; margin-right: 2px; }
 .nav-links .count-chip { font-size: 11px; padding: 0 6px; border-radius: 2px; background: var(--accent); color: var(--on-accent); }
-.nav-links a.nav-cta { margin-left: 6px; background: var(--accent); color: var(--on-accent); padding: 6px 14px; font-weight: 700; }
-.nav-links a.nav-cta:hover { background: #ffffff; color: var(--on-accent); }
+.nav-links a.nav-cta { margin-left: 6px; background: var(--cta); color: var(--on-cta); padding: 6px 14px; font-weight: 700; }
+.nav-links a.nav-cta:hover { background: var(--cta-hover); color: var(--on-cta); }
 @media (max-width: 1100px) { .nav-links a { padding: 6px 6px; font-size: 12px; letter-spacing: 0.02em; } }
 @media (max-width: 768px) {
   .nav-inner { flex-wrap: nowrap; }
@@ -342,11 +353,11 @@ main a.lane-chip:hover { border-color: var(--accent); color: var(--accent); }
 /* ------------------------------------------------------------- buttons */
 .button, .directory button.button {
   display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px;
-  margin: 0 8px 8px 0; padding: 0 18px; border: 1px solid var(--accent); border-radius: var(--radius-sm);
-  background: var(--accent); color: var(--on-accent); font: inherit; font-family: var(--mono); font-size: 12.5px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; cursor: pointer;
+  margin: 0 8px 8px 0; padding: 0 18px; border: 1px solid var(--cta); border-radius: var(--radius-sm);
+  background: var(--cta); color: var(--on-cta); font: inherit; font-family: var(--mono); font-size: 12.5px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; cursor: pointer;
   transition: background 0.15s, box-shadow 0.15s, color 0.15s;
 }
-.button:hover { background: #ffffff; }
+.button:hover { background: var(--cta-hover); border-color: var(--cta-hover); }
 .button.secondary { background: transparent; color: var(--ink); border-color: var(--line); box-shadow: none; }
 .button.secondary:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
 .directory button:not(.button), .directory .table-filter button, .directory-browser button, .snippet-copy, .save-button, .save-row, .tools-reset, .saved-remove, [data-saved-clear], .share button, .facet-chip {
@@ -497,7 +508,7 @@ a.topic-tile {
 a.topic-tile::before, a.topic-tile::after { content: ""; position: absolute; width: 10px; height: 10px; border-color: var(--line-strong); border-style: solid; transition: border-color 0.2s, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1); pointer-events: none; }
 a.topic-tile::before { top: -1px; left: -1px; border-width: 2px 0 0 2px; }
 a.topic-tile::after { bottom: -1px; right: -1px; border-width: 0 2px 2px 0; }
-a.topic-tile:is(:hover, :focus-visible) { border-color: var(--line); background: #0d0d0d; }
+a.topic-tile:is(:hover, :focus-visible) { border-color: var(--line); background: #0b1422; }
 a.topic-tile:is(:hover, :focus-visible)::before { border-color: var(--ink); transform: translate(-2px, -2px); }
 a.topic-tile:is(:hover, :focus-visible)::after { border-color: var(--ink); transform: translate(2px, 2px); }
 .tile-head { display: flex; justify-content: space-between; gap: 12px; min-width: 0; font-family: var(--mono); font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--faint); }
@@ -513,7 +524,7 @@ a.topic-tile:is(:hover, :focus-visible)::after { border-color: var(--ink); trans
 .tile-more { position: absolute; right: 8px; bottom: 6px; font-family: var(--mono); font-size: 11px; color: var(--muted); background: var(--canvas); padding: 0 4px; }
 .tile-scan {
   position: absolute; inset: 0; pointer-events: none; opacity: 0; transform: translateX(-100%);
-  background: linear-gradient(90deg, transparent 55%, rgba(237, 237, 237, 0.08) calc(100% - 2px), var(--ink) calc(100% - 2px));
+  background: linear-gradient(90deg, transparent 55%, rgba(238, 242, 247, 0.08) calc(100% - 2px), var(--ink) calc(100% - 2px));
 }
 .topic-tile:is(:hover, :focus-visible) .tile-scan { animation: tile-scan 1.6s cubic-bezier(0.16, 1, 0.3, 1) infinite; }
 @keyframes tile-scan { 0% { opacity: 1; transform: translateX(-100%); } 80% { opacity: 1; } 100% { opacity: 0; transform: translateX(0); } }
@@ -736,7 +747,7 @@ main a.shortlist-jump { display: inline-flex; align-items: center; gap: 8px; min
 }
 
 /* --------------------------------------------------- snippets, install */
-.snippet { margin-top: 14px; background: #07080d; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+.snippet { margin-top: 14px; background: #040912; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
 .snippet-head { font-family: var(--mono); display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 6px 8px 6px 14px; border-bottom: 1px solid var(--hairline); font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); background: var(--paper); }
 .snippet-head > span { position: relative; padding-left: 40px; }
 .snippet-head > span::before { content: ""; position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; border-radius: 50%; background: var(--line-strong); box-shadow: 13px 0 0 var(--line-strong), 26px 0 0 var(--line-strong); }
@@ -891,8 +902,8 @@ main a.florida-recognition { display: grid; gap: 2px; width: fit-content; max-wi
 .suede-first .suede-first-links { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 13.5px; margin-top: 4px; }
 .check-form { padding: 22px; background: var(--paper); border: 1px solid var(--hairline); border-radius: var(--radius); margin-top: 20px; }
 .check-form label { display: block; font-weight: 700; color: var(--ink); margin-bottom: 8px; }
-.check-form .search-line button { font-family: var(--mono); white-space: nowrap; background: var(--accent); color: var(--on-accent); border-radius: var(--radius-sm); padding: 6px 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; font-size: 12.5px; }
-.check-form .search-line button:hover { background: #ffffff; }
+.check-form .search-line button { font-family: var(--mono); white-space: nowrap; background: var(--cta); color: var(--on-cta); border-radius: var(--radius-sm); padding: 6px 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; font-size: 12.5px; }
+.check-form .search-line button:hover { background: var(--cta-hover); }
 .check-result .result-meta { color: var(--muted); font-size: 13.5px; }
 button.link-row.check-pick { width: 100%; text-align: left; font: inherit; color: inherit; cursor: pointer; background: transparent; }
 
@@ -939,8 +950,8 @@ button.link-row.check-pick { width: 100%; text-align: left; font: inherit; color
 .gh-star--nav > span:not(.gh-star-count) { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 .gh-star--nav .gh-star-count { border-left: 0; padding: 0; margin: 0; }
 @media (min-width: 1101px) { .nav-links a { padding: 6px 8px; } }
-a.gh-star--lg { font-family: var(--mono); font-size: 13px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: var(--on-accent); background: var(--accent); padding: 10px 16px; border-radius: var(--radius-sm); min-height: 44px; }
-a.gh-star--lg:hover { background: #ffffff; color: var(--on-accent); }
+a.gh-star--lg { font-family: var(--mono); font-size: 13px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: var(--on-cta); background: var(--cta); padding: 10px 16px; border-radius: var(--radius-sm); min-height: 44px; }
+a.gh-star--lg:hover { background: var(--cta-hover); color: var(--on-cta); }
 .star-panel { display: flex; align-items: center; justify-content: space-between; gap: 16px 24px; flex-wrap: wrap; }
 .star-panel h2 { margin-top: 0; }
 .star-panel p { margin-bottom: 0; }
