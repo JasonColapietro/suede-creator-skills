@@ -2425,13 +2425,9 @@ function renderHub() {
   const articleFile = path.join(repoRoot, "directory/editorial/workflow-articles.json");
   const articleSource = fs.existsSync(articleFile) ? JSON.parse(fs.readFileSync(articleFile, "utf8")) : { articles: [] };
   const articles = articleSource.articles.map((article) => {
-    // Directory stacks and guides, plus Jason's blog posts and S-Tier chapters
-    // on skills.suedeai.ai. An article needs a workflow intent or keywords to be matched.
-    const href = /^https:\/\/(suedeai\.directory\/(stacks|guides)\/[a-z0-9-]+\/|skills\.suedeai\.ai\/(blog|book)\/([a-z0-9-]+\.html)?)$/;
-    const keywords = Array.isArray(article.keywords) ? article.keywords : [];
-    if (article.author !== "Jason Colapietro" || !article.authorship_source || !href.test(article.href) || !Array.isArray(article.intents) || !(article.intents.length || keywords.length) || !keywords.every((k) => typeof k === "string" && k.trim()) || !article.title || !article.summary) throw new Error(`Invalid workflow article: ${article.id}`);
-    const { id, intents, title, summary, author } = article;
-    return { id, intents, keywords, title, summary, href: article.href, author };
+    if (article.author !== "Jason Colapietro" || !article.authorship_source || !/^https:\/\/suedeai\.directory\/(stacks|guides)\/[a-z0-9-]+\/$/.test(article.href) || !Array.isArray(article.intents) || !article.intents.length || !article.title || !article.summary) throw new Error(`Invalid workflow article: ${article.id}`);
+    const { id, intents, title, summary, href, author } = article;
+    return { id, intents, title, summary, href, author };
   });
   files.set("directory/workflow-articles.json", JSON.stringify({ articles }, null, 2) + "\n");
   files.set("directory/skill-matrix.svg", skillMatrix(data.skills, { cols: 96, title: `${fmt(data.skills.length)} listed skills, one dot each, colored by Suede Skill Check grade` }));
@@ -2515,26 +2511,19 @@ ${kindCards.map(([p, name, text, count, icon]) => `          <a class="kind-card
       </section>`;
 
   const workflowHtml = `      <section class="workflow-builder" id="workflow-builder" aria-labelledby="workflow-title" data-workflow-builder>
-        <div class="workflow-intro"><div><p class="eyebrow">Ask the directory</p><h2 id="workflow-title">What are you working on?</h2><p>Tell us what you’re doing or trying to achieve. We’ll recommend the skills that fit, a step-by-step workflow and articles to read next.</p></div><span class="workflow-mark" aria-hidden="true">01 → 02 → 03</span></div>
+        <div class="workflow-intro"><div><p class="eyebrow">From idea to first step</p><h2 id="workflow-title">Your idea, mapped out.</h2><p>Turn a detailed brief into an ordered skill stack. Explore each step, choose your tools, and take the plan into your AI agent.</p></div><span class="workflow-mark" aria-hidden="true">01 → 02 → 03</span></div>
         <form data-workflow-form hidden novalidate>
-          <label class="visually-hidden" for="workflow-brief">What are you doing, or trying to achieve?</label>
-          <div class="workflow-composer"><textarea id="workflow-brief" rows="3" maxlength="2000" placeholder="I run a small bakery and want more customers to find us on Google…" aria-describedby="workflow-help workflow-status"></textarea><div class="workflow-submit-row"><span id="workflow-help">Matched against ${fmt(data.skills.length)} graded skills right in your browser. What you type stays on this page. No AI API call.</span><button type="submit" class="button workflow-submit">Get recommendations <span aria-hidden="true">↗</span></button></div></div>
+          <label for="workflow-brief">What do you want to build?</label>
+          <div class="workflow-composer"><textarea id="workflow-brief" rows="3" maxlength="2000" placeholder="Launch a SaaS landing page, then create a social campaign to bring in early users…" aria-describedby="workflow-help workflow-status"></textarea><div class="workflow-submit-row"><span id="workflow-help">Catalog-grounded planning. Your brief stays in this browser. No AI API call.</span><button type="submit" class="button workflow-submit">Build my workflow <span aria-hidden="true">↗</span></button></div></div>
           <div class="workflow-options"><label for="workflow-mode">Plan depth <select id="workflow-mode" data-workflow-mode><option value="full">Complete workflow</option><option value="simple">Essential steps</option></select></label><label class="workflow-check"><input type="checkbox" data-workflow-free> Open-source licenses only</label><span>Keep setup and service costs visible.</span></div>
-          <div class="workflow-examples"><span>Or try</span><div data-workflow-examples></div></div>
+          <div class="workflow-examples"><span>Start with an idea</span><div data-workflow-examples></div></div>
           <p class="workflow-explore"><a href="#best-of-title">Explore the best skills by topic <span aria-hidden="true">↓</span></a></p>
         </form>
         <p id="workflow-status" class="workflow-status" role="status" aria-live="polite" data-workflow-status></p>
         <div class="workflow-choices" data-workflow-choices></div>
-        <section class="workflow-suggestions" aria-labelledby="workflow-suggestions-title" data-workflow-suggestions hidden>
-          <div class="workflow-result-head"><div><p class="eyebrow">Recommended for you</p><h3 id="workflow-suggestions-title" tabindex="-1">Skills that fit your goal</h3><p class="muted" data-workflow-suggestions-summary></p></div></div>
-          <ul class="workflow-skill-list" data-workflow-skill-list></ul>
-          <aside class="workflow-reading" data-workflow-suggest-reading hidden></aside>
-          <div class="workflow-result-footer"><p>Review each skill’s setup and license before installing. Quality scores describe published files, not security or a guarantee of fit.</p><button type="button" data-workflow-suggest-refine>Tell us more <span aria-hidden="true">↑</span></button></div>
-        </section>
         <section class="workflow-results" aria-labelledby="workflow-result-title" data-workflow-results hidden>
-          <div class="workflow-result-head"><div><p class="eyebrow">Your workflow</p><h3 id="workflow-result-title" tabindex="-1" data-workflow-heading></h3><p class="muted" data-workflow-summary></p></div><button type="button" class="button" data-workflow-copy>Copy workflow</button></div>
+          <div class="workflow-result-head"><div><p class="eyebrow">Your build map</p><h3 id="workflow-result-title" tabindex="-1" data-workflow-heading></h3><p class="muted" data-workflow-summary></p></div><button type="button" class="button" data-workflow-copy>Copy workflow</button></div>
           <div class="workflow-overview" data-workflow-overview></div>
-          <aside class="workflow-more" aria-labelledby="workflow-more-title" data-workflow-more hidden><h4 id="workflow-more-title">Recommended skills for this goal</h4><ul class="workflow-skill-list" data-workflow-more-list></ul></aside>
           <div class="workflow-progress-row"><div><span data-workflow-progress-label>0 steps complete</span><progress max="1" value="0" aria-label="Workflow completion" data-workflow-progress></progress></div><button type="button" class="workflow-text-button" data-workflow-reset-progress>Reset progress</button></div>
           <div class="workflow-workspace"><nav class="workflow-route" aria-label="Workflow steps" data-workflow-route></nav><ol class="workflow-steps" data-workflow-steps></ol></div>
           <aside class="workflow-ai-handoff"><div><p class="eyebrow">Ready for your AI agent</p><h4>Give your next conversation a head start.</h4><p>Copy the full plan, selected skills, handoffs and your progress. Paste it into Claude Code, Codex or your preferred agent to work through the details.</p></div><span aria-hidden="true">↗</span></aside>
@@ -2543,14 +2532,10 @@ ${kindCards.map(([p, name, text, count, icon]) => `          <a class="kind-card
           <div class="workflow-result-footer"><p>Review each skill’s setup and license before installing. Quality scores describe published files, not security or a guarantee of fit.</p><button type="button" data-workflow-refine>Refine this workflow <span aria-hidden="true">↑</span></button></div>
           <details class="workflow-export" data-workflow-copy-fallback><summary>View the complete workflow</summary><label for="workflow-export">Workflow text, ready for your agent</label><textarea id="workflow-export" rows="12" readonly data-workflow-export></textarea></details>
         </section>
-        <noscript><p><a href="stacks/">Explore recommended stacks</a> for step-by-step skill combinations. Turn on JavaScript to get recommendations for your goal here.</p></noscript>
+        <noscript><p><a href="stacks/">Explore recommended stacks</a> for step-by-step skill combinations. Turn on JavaScript to match a brief here.</p></noscript>
       </section>`;
-  // The finder and the Best of topic tiles share the first screen: side by
-  // side on wide screens, stacked on narrow ones.
-  const body = `      <div class="directory-start">
-${workflowHtml}
+  const body = `${workflowHtml}
 ${bestOfSection(here)}
-      </div>
 ${boardHtml}
       <section class="directory-browser" id="browse" aria-labelledby="browse-title" data-directory-browser>
         <div class="browse-heading"><h2 id="browse-title">Find your next skill</h2><a class="shortlist-jump" href="#task-shortlist" hidden>Your shortlist <span aria-hidden="true">↓</span></a></div>

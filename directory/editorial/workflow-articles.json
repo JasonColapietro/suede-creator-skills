@@ -9,16 +9,7 @@
       "summary": "The skills I would install to design, build, measure and test a landing page, with scores and install commands.",
       "href": "https://suedeai.directory/stacks/landing-page/",
       "author": "Jason Colapietro",
-      "authorship_source": "https://suedeai.directory/stacks/landing-page/",
-      "keywords": [
-        "landing page",
-        "signups",
-        "conversion",
-        "waitlist",
-        "homepage",
-        "launch",
-        "sales page"
-      ]
+      "authorship_source": "https://suedeai.directory/stacks/landing-page/"
     },
     {
       "id": "seo-and-ai-search",
@@ -29,19 +20,7 @@
       "summary": "A short, measured stack for search rankings and AI citations, built around SEO, AEO and GEO measurement and first-party WebMCP tools.",
       "href": "https://suedeai.directory/stacks/seo-and-ai-search/",
       "author": "Jason Colapietro",
-      "authorship_source": "https://suedeai.directory/stacks/seo-and-ai-search/",
-      "keywords": [
-        "seo",
-        "google",
-        "rank",
-        "ai search",
-        "chatgpt",
-        "perplexity",
-        "citations",
-        "organic traffic",
-        "aeo",
-        "geo"
-      ]
+      "authorship_source": "https://suedeai.directory/stacks/seo-and-ai-search/"
     },
     {
       "id": "ui-design",
@@ -52,17 +31,7 @@
       "summary": "Reference extraction, variant exploration, build, audit and motion, in order, with scores and install commands.",
       "href": "https://suedeai.directory/stacks/ui-design/",
       "author": "Jason Colapietro",
-      "authorship_source": "https://suedeai.directory/stacks/ui-design/",
-      "keywords": [
-        "ui",
-        "design",
-        "interface",
-        "polish",
-        "motion",
-        "layout",
-        "figma",
-        "redesign"
-      ]
+      "authorship_source": "https://suedeai.directory/stacks/ui-design/"
     },
     {
       "id": "content-and-social",
@@ -73,19 +42,7 @@
       "summary": "Plan, angle, draft, polish, profile and distribution, covered by six scored skills with install commands.",
       "href": "https://suedeai.directory/stacks/content-and-social/",
       "author": "Jason Colapietro",
-      "authorship_source": "https://suedeai.directory/stacks/content-and-social/",
-      "keywords": [
-        "social",
-        "content",
-        "posts",
-        "linkedin",
-        "tiktok",
-        "instagram",
-        "audience",
-        "followers",
-        "newsletter",
-        "blog"
-      ]
+      "authorship_source": "https://suedeai.directory/stacks/content-and-social/"
     },
     {
       "id": "documents-and-data",
@@ -96,19 +53,7 @@
       "summary": "Word documents, long reading, literature reviews, read-only SQL and data slides, with scores and a plain note on licenses.",
       "href": "https://suedeai.directory/stacks/documents-and-data/",
       "author": "Jason Colapietro",
-      "authorship_source": "https://suedeai.directory/stacks/documents-and-data/",
-      "keywords": [
-        "documents",
-        "data",
-        "csv",
-        "spreadsheet",
-        "excel",
-        "sql",
-        "report",
-        "slides",
-        "word",
-        "pdf"
-      ]
+      "authorship_source": "https://suedeai.directory/stacks/documents-and-data/"
     },
     {
       "id": "research",
@@ -119,16 +64,7 @@
       "summary": "Seven scored skills for company, market and paper research, from recovering past work to validating citations.",
       "href": "https://suedeai.directory/stacks/research/",
       "author": "Jason Colapietro",
-      "authorship_source": "https://suedeai.directory/stacks/research/",
-      "keywords": [
-        "research",
-        "competitors",
-        "market",
-        "papers",
-        "sources",
-        "literature",
-        "thesis"
-      ]
+      "authorship_source": "https://suedeai.directory/stacks/research/"
     },
     {
       "id": "video-and-creative",
@@ -139,18 +75,7 @@
       "summary": "Concept, stills, video, edit, narration and review, covered by seven scored skills with the services each one needs.",
       "href": "https://suedeai.directory/stacks/video-and-creative/",
       "author": "Jason Colapietro",
-      "authorship_source": "https://suedeai.directory/stacks/video-and-creative/",
-      "keywords": [
-        "video",
-        "images",
-        "audio",
-        "music",
-        "song",
-        "narration",
-        "youtube",
-        "podcast",
-        "creative"
-      ]
+      "authorship_source": "https://suedeai.directory/stacks/video-and-creative/"
     },
     {
       "id": "agent-building",
@@ -161,18 +86,7 @@
       "summary": "Prompts and evals, MCP servers, context budgeting, delegation and deployment, covered by seven scored skills.",
       "href": "https://suedeai.directory/stacks/agent-building/",
       "author": "Jason Colapietro",
-      "authorship_source": "https://suedeai.directory/stacks/agent-building/",
-      "keywords": [
-        "agent",
-        "agents",
-        "mcp",
-        "evals",
-        "prompts",
-        "automation",
-        "automate",
-        "tools",
-        "chatbot"
-      ]
+      "authorship_source": "https://suedeai.directory/stacks/agent-building/"
     },
     {
       "id": "code-review",
@@ -183,15 +97,7 @@
       "summary": "A reviewer, a security pass, a verification gate and a comment rewriter, with scores and install commands.",
       "href": "https://suedeai.directory/stacks/code-review/",
       "author": "Jason Colapietro",
-      "authorship_source": "https://suedeai.directory/stacks/code-review/",
-      "keywords": [
-        "code review",
-        "pull request",
-        "pull requests",
-        "security",
-        "bugs",
-        "review my code"
-      ]
+      "authorship_source": "https://suedeai.directory/stacks/code-review/"
     },
     {
       "id": "testing-and-ci",
@@ -202,16 +108,7 @@
       "summary": "Measure the pipeline, generate browser tests, run manual sessions and chaos test, with scores and install commands.",
       "href": "https://suedeai.directory/stacks/testing-and-ci/",
       "author": "Jason Colapietro",
-      "authorship_source": "https://suedeai.directory/stacks/testing-and-ci/",
-      "keywords": [
-        "testing",
-        "tests",
-        "ci",
-        "pipeline",
-        "playwright",
-        "qa",
-        "flaky"
-      ]
+      "authorship_source": "https://suedeai.directory/stacks/testing-and-ci/"
     },
     {
       "id": "best-seo-skills",
@@ -222,16 +119,7 @@
       "summary": "The highest-scoring SEO skills for Claude Code and Codex, by job: audits, schema, AI search (AEO and GEO), keywords, local and programmatic SEO.",
       "href": "https://suedeai.directory/guides/best-seo-skills/",
       "author": "Jason Colapietro",
-      "authorship_source": "https://suedeai.directory/guides/best-seo-skills/",
-      "keywords": [
-        "seo",
-        "schema",
-        "keywords",
-        "local seo",
-        "programmatic seo",
-        "seo audit",
-        "google"
-      ]
+      "authorship_source": "https://suedeai.directory/guides/best-seo-skills/"
     },
     {
       "id": "install-agent-skills",
@@ -243,19 +131,7 @@
       "summary": "Where Claude Code and Codex load skills, how to install from GitHub with one command, how plugin marketplaces work, and what to check before you install.",
       "href": "https://suedeai.directory/guides/install-agent-skills/",
       "author": "Jason Colapietro",
-      "authorship_source": "https://suedeai.directory/guides/install-agent-skills/",
-      "keywords": [
-        "install",
-        "setup",
-        "set up",
-        "claude code",
-        "codex",
-        "cursor",
-        "plugin",
-        "marketplace",
-        "get started",
-        "getting started"
-      ]
+      "authorship_source": "https://suedeai.directory/guides/install-agent-skills/"
     },
     {
       "id": "skills-vs-mcp-servers",
@@ -266,15 +142,7 @@
       "summary": "A skill adds method, an MCP server adds access, a plugin packages both. When to use each, how they combine, and what each costs in context and risk.",
       "href": "https://suedeai.directory/guides/skills-vs-mcp-servers/",
       "author": "Jason Colapietro",
-      "authorship_source": "https://suedeai.directory/guides/skills-vs-mcp-servers/",
-      "keywords": [
-        "mcp",
-        "mcp server",
-        "plugin",
-        "plugins",
-        "skills vs",
-        "integrations"
-      ]
+      "authorship_source": "https://suedeai.directory/guides/skills-vs-mcp-servers/"
     },
     {
       "id": "skill-ai-visibility",
@@ -286,488 +154,7 @@
       "summary": "How skill publishers get picked by agents, found in search and cited by AI assistants: descriptions that trigger, READMEs that answer, listings and badges.",
       "href": "https://suedeai.directory/guides/skill-ai-visibility/",
       "author": "Jason Colapietro",
-      "authorship_source": "https://suedeai.directory/guides/skill-ai-visibility/",
-      "keywords": [
-        "publish my skill",
-        "my skill",
-        "skill listing",
-        "readme",
-        "discoverability",
-        "get found",
-        "skill publisher"
-      ]
-    },
-    {
-      "id": "memory-belongs-in-skills",
-      "intents": [
-        "agent-building"
-      ],
-      "keywords": [
-        "memory",
-        "claude md",
-        "agents md",
-        "context",
-        "tokens",
-        "context window",
-        "instructions file"
-      ],
-      "title": "Your memory file is a tax on every prompt",
-      "summary": "Memory files load on every turn, so every durable fact costs tokens and attention. Moving conditional knowledge into skills makes your agent faster and sharper.",
-      "href": "https://skills.suedeai.ai/blog/memory-belongs-in-skills.html",
-      "author": "Jason Colapietro",
-      "authorship_source": "https://skills.suedeai.ai/blog/memory-belongs-in-skills.html"
-    },
-    {
-      "id": "not-for-the-line",
-      "intents": [
-        "agent-building"
-      ],
-      "keywords": [
-        "skill description",
-        "routing",
-        "triggers",
-        "wrong skill",
-        "skill pack",
-        "write a skill"
-      ],
-      "title": "NOT FOR: two words that make a big skill pack work",
-      "summary": "A skill description is the router's only input. An explicit NOT FOR boundary sends each request to the skill that should win it.",
-      "href": "https://skills.suedeai.ai/blog/not-for-the-line-that-makes-a-pack-work.html",
-      "author": "Jason Colapietro",
-      "authorship_source": "https://skills.suedeai.ai/blog/not-for-the-line-that-makes-a-pack-work.html"
-    },
-    {
-      "id": "progressive-disclosure",
-      "intents": [
-        "agent-building"
-      ],
-      "keywords": [
-        "progressive disclosure",
-        "many skills",
-        "too many skills",
-        "context",
-        "skill pack",
-        "mcp"
-      ],
-      "title": "71 skills installed, almost none read by your agent",
-      "summary": "How progressive disclosure keeps a large skill pack installed and silent until one fits, plus an optional MCP server for agents that need tools.",
-      "href": "https://skills.suedeai.ai/blog/progressive-disclosure-ship-dag-and-mcp.html",
-      "author": "Jason Colapietro",
-      "authorship_source": "https://skills.suedeai.ai/blog/progressive-disclosure-ship-dag-and-mcp.html"
-    },
-    {
-      "id": "two-skills-and-the-bugs",
-      "intents": [
-        "web-app"
-      ],
-      "keywords": [
-        "google play",
-        "play store",
-        "android",
-        "mobile app",
-        "app release",
-        "publish my app",
-        "ios"
-      ],
-      "title": "Two skills, and the bugs that wrote them",
-      "summary": "Google Play publishing from the terminal, and a generated contract that keeps one product's web, iOS, Android and docs surfaces in agreement.",
-      "href": "https://skills.suedeai.ai/blog/two-skills-and-the-bugs-that-wrote-them.html",
-      "author": "Jason Colapietro",
-      "authorship_source": "https://skills.suedeai.ai/blog/two-skills-and-the-bugs-that-wrote-them.html"
-    },
-    {
-      "id": "vetted-is-a-procedure",
-      "intents": [
-        "web-app",
-        "agent-building"
-      ],
-      "keywords": [
-        "security",
-        "supply chain",
-        "vetting",
-        "dependencies",
-        "components",
-        "license",
-        "trust",
-        "safe to install"
-      ],
-      "title": "Vetted is a procedure, not a compliment",
-      "summary": "A skill that tells an agent where to get a component is a supply chain. The concrete steps that make a source safe to use: live load, license, reputation.",
-      "href": "https://skills.suedeai.ai/blog/vetted-is-a-procedure-not-a-compliment.html",
-      "author": "Jason Colapietro",
-      "authorship_source": "https://skills.suedeai.ai/blog/vetted-is-a-procedure-not-a-compliment.html"
-    },
-    {
-      "id": "why-breadth-is-free",
-      "intents": [
-        "agent-building"
-      ],
-      "keywords": [
-        "scope",
-        "product strategy",
-        "breadth",
-        "focus",
-        "features",
-        "roadmap"
-      ],
-      "title": "Why breadth is free now, and what changes",
-      "summary": "When an unused capability costs one line, the scope question changes. What that means for how you plan products and skill packs.",
-      "href": "https://skills.suedeai.ai/blog/why-breadth-is-free.html",
-      "author": "Jason Colapietro",
-      "authorship_source": "https://skills.suedeai.ai/blog/why-breadth-is-free.html"
-    },
-    {
-      "id": "next-action-and-android",
-      "intents": [
-        "web-app"
-      ],
-      "keywords": [
-        "android",
-        "android app",
-        "mobile app",
-        "what to do next",
-        "next step",
-        "prioritize",
-        "stuck"
-      ],
-      "title": "A next-action recommender and a one-prompt Android app factory",
-      "summary": "Two skills: one tells you the single best next move on a project, the other turns a prompt into a working Android app.",
-      "href": "https://skills.suedeai.ai/blog/android-recommend-next-action-and-workflows.html",
-      "author": "Jason Colapietro",
-      "authorship_source": "https://skills.suedeai.ai/blog/android-recommend-next-action-and-workflows.html"
-    },
-    {
-      "id": "s-tier-book",
-      "intents": [
-        "agent-building"
-      ],
-      "keywords": [
-        "get better",
-        "learn",
-        "book",
-        "level up",
-        "master",
-        "getting started"
-      ],
-      "title": "S-Tier: the builder's book behind the Suede skills",
-      "summary": "A free book on how agent skills actually work and how a builder gets genuinely good with them, chapter by chapter.",
-      "href": "https://skills.suedeai.ai/book/",
-      "author": "Jason Colapietro",
-      "authorship_source": "https://skills.suedeai.ai/book/"
-    },
-    {
-      "id": "competence-gap",
-      "intents": [
-        "agent-building"
-      ],
-      "keywords": [
-        "prompting",
-        "prompts",
-        "mediocre",
-        "generic",
-        "better results",
-        "quality",
-        "procedure"
-      ],
-      "title": "The competence gap (S-Tier, chapter 1)",
-      "summary": "A capable model plus a vague prompt produces confident mediocrity. The gap is procedure, and procedure is now a file you can install.",
-      "href": "https://skills.suedeai.ai/book/the-competence-gap.html",
-      "author": "Jason Colapietro",
-      "authorship_source": "https://skills.suedeai.ai/book/the-competence-gap.html"
-    },
-    {
-      "id": "anatomy-of-a-skill",
-      "intents": [
-        "agent-building"
-      ],
-      "keywords": [
-        "skill md",
-        "write a skill",
-        "create a skill",
-        "frontmatter",
-        "how skills work",
-        "skill structure"
-      ],
-      "title": "Anatomy of a skill (S-Tier, chapter 2)",
-      "summary": "A real SKILL.md taken apart: frontmatter, routing description, body, bundled references and scripts.",
-      "href": "https://skills.suedeai.ai/book/anatomy-of-a-skill.html",
-      "author": "Jason Colapietro",
-      "authorship_source": "https://skills.suedeai.ai/book/anatomy-of-a-skill.html"
-    },
-    {
-      "id": "description-contract",
-      "intents": [
-        "agent-building"
-      ],
-      "keywords": [
-        "skill description",
-        "triggers",
-        "routing",
-        "skill not triggering",
-        "not for"
-      ],
-      "title": "The description contract (S-Tier, chapter 3)",
-      "summary": "The description field is the router: trigger words, NOT FOR boundaries, overlapping descriptions and what a dead route costs.",
-      "href": "https://skills.suedeai.ai/book/the-description-contract.html",
-      "author": "Jason Colapietro",
-      "authorship_source": "https://skills.suedeai.ai/book/the-description-contract.html"
-    },
-    {
-      "id": "full-send",
-      "intents": [
-        "agent-building"
-      ],
-      "keywords": [
-        "autonomous",
-        "autonomy",
-        "ship faster",
-        "delegate",
-        "outcome",
-        "long running"
-      ],
-      "title": "Full send (S-Tier, chapter 4)",
-      "summary": "Outcome-bound work: freeze the mission, fill useful non-colliding lanes, and bring back a decision instead of a workshop.",
-      "href": "https://skills.suedeai.ai/book/full-send.html",
-      "author": "Jason Colapietro",
-      "authorship_source": "https://skills.suedeai.ai/book/full-send.html"
-    },
-    {
-      "id": "lanes-fleets",
-      "intents": [
-        "agent-building"
-      ],
-      "keywords": [
-        "multi agent",
-        "parallel agents",
-        "subagents",
-        "worktrees",
-        "team of agents",
-        "orchestration"
-      ],
-      "title": "Lanes, fleets and collisions (S-Tier, chapter 5)",
-      "summary": "Multi-agent work that delivers: disjoint file ownership, isolated worktrees, atomic leases and the measured cost of a fan-out.",
-      "href": "https://skills.suedeai.ai/book/lanes-fleets-and-collisions.html",
-      "author": "Jason Colapietro",
-      "authorship_source": "https://skills.suedeai.ai/book/lanes-fleets-and-collisions.html"
-    },
-    {
-      "id": "evidence-or-it-did-not-ship",
-      "intents": [
-        "web-app",
-        "agent-building"
-      ],
-      "keywords": [
-        "verification",
-        "verify",
-        "testing",
-        "tests",
-        "evidence",
-        "qa",
-        "quality"
-      ],
-      "title": "Evidence or it did not ship (S-Tier, chapter 6)",
-      "summary": "The verification discipline the rest of the book rests on, built from three real failures and the checks that catch them.",
-      "href": "https://skills.suedeai.ai/book/evidence-or-it-did-not-ship.html",
-      "author": "Jason Colapietro",
-      "authorship_source": "https://skills.suedeai.ai/book/evidence-or-it-did-not-ship.html"
-    },
-    {
-      "id": "grading-your-own-work",
-      "intents": [
-        "web-app"
-      ],
-      "keywords": [
-        "grading",
-        "grade",
-        "audit",
-        "review",
-        "score",
-        "quality bar",
-        "code review"
-      ],
-      "title": "Grading your own work (S-Tier, chapter 7)",
-      "summary": "Seven scored lanes, instant-F triggers, grade caps on auth and payment surfaces, and predicting the grade before you run it.",
-      "href": "https://skills.suedeai.ai/book/grading-your-own-work.html",
-      "author": "Jason Colapietro",
-      "authorship_source": "https://skills.suedeai.ai/book/grading-your-own-work.html"
-    },
-    {
-      "id": "design-and-copy",
-      "intents": [
-        "landing-page",
-        "content-and-social"
-      ],
-      "keywords": [
-        "design",
-        "copy",
-        "copywriting",
-        "design tokens",
-        "typography",
-        "ui",
-        "slop",
-        "brand voice"
-      ],
-      "title": "Design and copy are engineering (S-Tier, chapter 8)",
-      "summary": "Design tokens instead of hex codes chosen in the moment, numeric thresholds instead of opinions, and an anti-slop gate for prose.",
-      "href": "https://skills.suedeai.ai/book/design-and-copy-are-engineering.html",
-      "author": "Jason Colapietro",
-      "authorship_source": "https://skills.suedeai.ai/book/design-and-copy-are-engineering.html"
-    },
-    {
-      "id": "getting-found",
-      "intents": [
-        "seo-and-ai-search"
-      ],
-      "keywords": [
-        "seo",
-        "ai search",
-        "get found",
-        "visibility",
-        "citations",
-        "distribution",
-        "rank",
-        "google"
-      ],
-      "title": "Getting found (S-Tier, chapter 9)",
-      "summary": "Distribution as an engineering surface: the shift from ranking to being cited, nine audit lanes and an A to F visibility grade.",
-      "href": "https://skills.suedeai.ai/book/getting-found.html",
-      "author": "Jason Colapietro",
-      "authorship_source": "https://skills.suedeai.ai/book/getting-found.html"
-    },
-    {
-      "id": "shipping-real-world",
-      "intents": [
-        "web-app"
-      ],
-      "keywords": [
-        "app store",
-        "play store",
-        "ios",
-        "android",
-        "release",
-        "launch my app",
-        "publish my app",
-        "app review"
-      ],
-      "title": "Shipping into the real world (S-Tier, chapter 10)",
-      "summary": "The last mile: App Store and Play Store review, release evidence gates and an account-review procedure that runs outside a repo.",
-      "href": "https://skills.suedeai.ai/book/shipping-into-the-real-world.html",
-      "author": "Jason Colapietro",
-      "authorship_source": "https://skills.suedeai.ai/book/shipping-into-the-real-world.html"
-    },
-    {
-      "id": "s-tier-ladder",
-      "intents": [
-        "agent-building"
-      ],
-      "keywords": [
-        "get better",
-        "level up",
-        "improve",
-        "skill level",
-        "mastery",
-        "progress"
-      ],
-      "title": "The S-Tier ladder (S-Tier, chapter 11)",
-      "summary": "Five tiers defined by observable behavior, with the failure that holds you at each one and the move that promotes you.",
-      "href": "https://skills.suedeai.ai/book/the-s-tier-ladder.html",
-      "author": "Jason Colapietro",
-      "authorship_source": "https://skills.suedeai.ai/book/the-s-tier-ladder.html"
-    },
-    {
-      "id": "taste-judgment",
-      "intents": [
-        "agent-building"
-      ],
-      "keywords": [
-        "judgment",
-        "taste",
-        "when to stop",
-        "refactor",
-        "decisions",
-        "scope creep"
-      ],
-      "title": "Taste, judgment and knowing when to stop (S-Tier, chapter 12)",
-      "summary": "Which decisions are yours, why a bug fix that becomes a refactor is a judgment failure, and how to tell when work is finished.",
-      "href": "https://skills.suedeai.ai/book/taste-judgment-and-stopping.html",
-      "author": "Jason Colapietro",
-      "authorship_source": "https://skills.suedeai.ai/book/taste-judgment-and-stopping.html"
-    },
-    {
-      "id": "write-your-own",
-      "intents": [
-        "agent-building"
-      ],
-      "keywords": [
-        "write a skill",
-        "create a skill",
-        "author a skill",
-        "custom skill",
-        "my own skill",
-        "build a skill"
-      ],
-      "title": "Write your own skill (S-Tier, chapter 13)",
-      "summary": "When to write a skill, what goes in the body versus references, the competent-stranger test and how to lint your skills.",
-      "href": "https://skills.suedeai.ai/book/write-your-own.html",
-      "author": "Jason Colapietro",
-      "authorship_source": "https://skills.suedeai.ai/book/write-your-own.html"
-    },
-    {
-      "id": "first-ninety-days",
-      "intents": [
-        "agent-building"
-      ],
-      "keywords": [
-        "getting started",
-        "get started",
-        "beginner",
-        "new to",
-        "learn",
-        "practice",
-        "first steps"
-      ],
-      "title": "The first ninety days (S-Tier, chapter 14)",
-      "summary": "A practice plan in three phases, the anti-goals to avoid and two measurements that show you are improving.",
-      "href": "https://skills.suedeai.ai/book/the-first-ninety-days.html",
-      "author": "Jason Colapietro",
-      "authorship_source": "https://skills.suedeai.ai/book/the-first-ninety-days.html"
-    },
-    {
-      "id": "the-rules",
-      "intents": [
-        "agent-building"
-      ],
-      "keywords": [
-        "rules",
-        "principles",
-        "checklist",
-        "cheat sheet",
-        "best practices"
-      ],
-      "title": "The rules, on one page (S-Tier, appendix B)",
-      "summary": "Everything the book argues for in 29 rules across evidence, decisions, scope, parallelism, skills, craft and stopping.",
-      "href": "https://skills.suedeai.ai/book/the-rules.html",
-      "author": "Jason Colapietro",
-      "authorship_source": "https://skills.suedeai.ai/book/the-rules.html"
-    },
-    {
-      "id": "skill-index",
-      "intents": [],
-      "keywords": [
-        "which skill",
-        "find a skill",
-        "what skill",
-        "skill for",
-        "suede skills",
-        "music",
-        "release",
-        "marketing"
-      ],
-      "title": "The skill index, by intent (S-Tier, appendix A)",
-      "summary": "Every Suede skill grouped by what you are trying to do rather than by what it is called.",
-      "href": "https://skills.suedeai.ai/book/skill-index.html",
-      "author": "Jason Colapietro",
-      "authorship_source": "https://skills.suedeai.ai/book/skill-index.html"
+      "authorship_source": "https://suedeai.directory/guides/skill-ai-visibility/"
     }
   ]
 }
