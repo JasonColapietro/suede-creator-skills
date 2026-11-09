@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import test from 'node:test';
-import { planWorkflow, recommendWorkflow, WORKFLOW_EXAMPLES } from '../docs/assets/workflow-recommender.js';
+import { planWorkflow, recommendWorkflow, recommendSkills, recommendArticles, isPublishableArticle, WORKFLOW_EXAMPLES } from '../docs/assets/workflow-recommender.js';
 
 const catalog = JSON.parse(readFileSync(new URL('../docs/directory/search-index.json', import.meta.url)));
 const byId = new Map(catalog.map(skill => [skill.id, skill]));
@@ -577,4 +577,80 @@ test('planner handles strong unknown directives consistently instead of dropping
   const report = planWorkflow('Analyze CSV sales data and prepare a report', catalog);
   assert.equal(report.status, 'ready');
   assert.equal(report.intents.length, 1);
+});
+
+const articleData = JSON.parse(readFileSync(new URL('../docs/directory/workflow-articles.json', import.meta.url), 'utf8')).articles;
+
+test('goal-phrased briefs reach the matching workflow', () => {
+  for (const [prompt, intent] of [
+    ['I run a small bakery and want more customers to find us on Google', 'seo-and-ai-search'],
+    ['I want to grow my audience on TikTok', 'content-and-social'],
+    ['I need more signups from my site visitors with a better landing page', 'landing-page'],
+  ]) {
+    const plan = planWorkflow(prompt, catalog);
+    assert.equal(plan.status, 'ready', prompt);
+    assert.equal(plan.intents[0].id, intent, prompt);
+  }
+});
+
+test('skill recommendations follow the goal, use real listings and respect filters', () => {
+  const cases = [
+    ['trying to get my app into the App Store', /\b(app store|ios|aso)\b/i],
+    ['I want to automate my email inbox', /\b(email|inbox|gmail)\b/i],
+    ['code review for my team’s pull requests', /\b(review|pull request|pr)\b/i],
+    ['seo', /\bseo\b/i],
+  ];
+  for (const [prompt, pattern] of cases) {
+    const skills = recommendSkills(prompt, catalog);
+    assert.ok(skills.length >= 3, prompt);
+    assert.ok(skills.length <= 6);
+    for (const skill of skills) assert.ok(catalog.includes(skill), 'returns catalog entries');
+    assert.match(`${skills[0].name} ${skills[0].description} ${(skills[0].topics || []).join(' ')}`, pattern, prompt);
+    assert.equal(new Set(skills.map(skill => skill.name.toLowerCase())).size, skills.length, 'no duplicate names');
+  }
+  const free = recommendSkills('seo audit', catalog, { freeOnly: true, limit: 12 });
+  assert.ok(free.length && free.every(skill => skill.lane === 'free-open-source'));
+  const first = recommendSkills('seo audit', catalog)[0];
+  assert.ok(!recommendSkills('seo audit', catalog, { exclude: [first.id] }).some(skill => skill.id === first.id));
+});
+
+test('everyday wording is mapped to what skills describe', () => {
+  const bakery = recommendSkills('I run a small bakery and want more customers to find us on Google', catalog);
+  assert.ok(!bakery.some(skill => skill.repo === 'google/skills'), 'Google Cloud skills are not an SEO answer');
+  const music = recommendSkills('I’m a musician releasing a new single', catalog);
+  assert.ok(music.some(skill => /music|song|album/i.test(`${skill.name} ${skill.description}`)));
+});
+
+test('skill recommendations ignore empty, filler and malformed input', () => {
+  for (const prompt of ['', '   ', null, 42, 'help me with something', 'I want to do it']) assert.deepEqual(recommendSkills(prompt, catalog), [], String(prompt));
+  assert.deepEqual(recommendSkills('seo audit', null), []);
+  const hostile = [{ id: '../../x/y', name: 'seo', repo: 'x', description: 'seo audit', href: 'https://evil.example/' }];
+  assert.deepEqual(recommendSkills('seo audit', hostile), []);
+});
+
+test('article picks lead with each matched workflow, then the visitor’s own words', () => {
+  const titles = (prompt, intents) => recommendArticles(prompt, intents, articleData).map(article => article.href);
+  const both = titles('Build a landing page and create a social campaign', ['landing-page', 'content-and-social']);
+  assert.equal(both[0], 'https://suedeai.directory/stacks/landing-page/');
+  assert.equal(both[1], 'https://suedeai.directory/stacks/content-and-social/');
+  assert.ok(titles('how do I write my own skill', []).includes('https://skills.suedeai.ai/book/write-your-own.html'));
+  assert.ok(titles('I’m new to Claude Code and want to get started', []).includes('https://suedeai.directory/guides/install-agent-skills/'));
+  assert.ok(titles('trying to get my app into the App Store', []).includes('https://skills.suedeai.ai/book/shipping-into-the-real-world.html'));
+  assert.deepEqual(titles('', []), []);
+  assert.ok(recommendArticles('seo', ['seo-and-ai-search'], articleData, 2).length <= 2);
+});
+
+test('only Jason’s published articles on approved paths can be recommended', () => {
+  const base = { author: 'Jason Colapietro', title: 'T', summary: 'S', intents: ['research'], keywords: [] };
+  assert.ok(isPublishableArticle({ ...base, href: 'https://suedeai.directory/stacks/research/' }));
+  assert.ok(isPublishableArticle({ ...base, href: 'https://skills.suedeai.ai/book/full-send.html' }));
+  assert.ok(isPublishableArticle({ ...base, href: 'https://skills.suedeai.ai/blog/why-breadth-is-free.html' }));
+  for (const bad of [
+    { ...base, author: 'Someone else', href: 'https://suedeai.directory/stacks/research/' },
+    { ...base, href: 'https://example.com/stacks/research/' },
+    { ...base, href: 'javascript:alert(1)' },
+    { ...base, href: 'https://skills.suedeai.ai/blog/../../x' },
+    { ...base, intents: [], keywords: [], href: 'https://suedeai.directory/stacks/research/' },
+  ]) assert.equal(isPublishableArticle(bad), false, JSON.stringify(bad));
+  assert.ok(articleData.every(isPublishableArticle), 'every published article passes');
 });
