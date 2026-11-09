@@ -104,17 +104,45 @@ if (root) {
     renderReading(get('[data-workflow-reading]'), reading);
     updateExport();
   }
-  // Suede AI's own skills wear the site's gold "Suede first" treatment.
   const suedeBadge = () => element('span', 'workflow-suede-badge', 'Suede AI pick');
+  const gradeChip = skill => /^[A-D]$/.test(skill.grade) && Number.isFinite(skill.score)
+    ? element('span', 'grade grade-' + skill.grade.toLowerCase(), `${skill.score} · ${skill.grade}`) : null;
+  // Suede AI's own skills use the Suede brand palette (Rights Red, Registry
+  // Cyan, Deep Ink) in separate zones: a red head with the badge and name, the
+  // description, a proof row, and a footer with setup facts and a call to action.
+  function suedeItem(skill) {
+    const item = element('li', 'workflow-skill-item is-suede');
+    const head = element('div', 'suede-card-head');
+    const link = element('a', 'workflow-skill', skill.name); link.href = skill.href;
+    head.append(suedeBadge(), link);
+    item.append(head);
+    if (typeof skill.description === 'string' && skill.description) item.append(element('p', 'workflow-skill-description suede-card-body', skill.description));
+    const proof = element('div', 'suede-card-proof');
+    proof.append(element('span', 'suede-card-repo', skill.repo));
+    const grade = gradeChip(skill); if (grade) proof.append(grade);
+    item.append(proof);
+    const foot = element('div', 'suede-card-foot');
+    const cta = element('a', 'suede-card-cta', 'View skill →'); cta.href = skill.href; cta.setAttribute('aria-label', 'View ' + skill.name);
+    foot.append(element('p', 'workflow-setup', setupFacts(skill)), cta);
+    item.append(foot);
+    return item;
+  }
+  // Lists open with the Suede AI group, then other publishers, each labeled.
+  function skillItems(skills) {
+    const suede = skills.filter(isFirstParty);
+    const others = skills.filter(skill => !isFirstParty(skill));
+    if (!suede.length || !others.length) return skills.map(skillItem);
+    return [element('li', 'workflow-skill-group is-suede', 'From Suede AI'), ...suede.map(skillItem),
+      element('li', 'workflow-skill-group', 'From other publishers'), ...others.map(skillItem)];
+  }
   function skillItem(skill) {
-    const suede = isFirstParty(skill);
-    const item = element('li', 'workflow-skill-item' + (suede ? ' is-suede' : ''));
-    if (suede) item.append(suedeBadge());
+    if (isFirstParty(skill)) return suedeItem(skill);
+    const item = element('li', 'workflow-skill-item');
     const head = element('p', 'workflow-skill-meta');
     const link = element('a', 'workflow-skill', skill.name); link.href = skill.href;
     const facts = element('span', '', skill.repo);
     head.append(link, facts);
-    if (/^[A-D]$/.test(skill.grade) && Number.isFinite(skill.score)) head.append(element('span', 'grade grade-' + skill.grade.toLowerCase(), `${skill.score} · ${skill.grade}`));
+    const grade = gradeChip(skill); if (grade) head.append(grade);
     item.append(head);
     if (typeof skill.description === 'string' && skill.description) item.append(element('p', 'workflow-skill-description', skill.description));
     item.append(element('p', 'workflow-setup', setupFacts(skill)));
@@ -126,7 +154,7 @@ if (root) {
     if (token !== revision) return false;
     const articles = recommendArticles(prompt, (plan.intents || []).map(intent => intent.id), data?.articles, 3);
     if (!skills.length && !articles.length) return false;
-    get('[data-workflow-skill-list]').replaceChildren(...skills.map(skillItem));
+    get('[data-workflow-skill-list]').replaceChildren(...skillItems(skills));
     get('[data-workflow-skill-list]').hidden = !skills.length;
     get('#workflow-suggestions-title').textContent = skills.length ? 'Skills that fit your goal' : 'Reading for your goal';
     get('[data-workflow-suggestions-summary]').textContent = skills.length
@@ -170,8 +198,11 @@ if (root) {
       const title = element('h4', '', step.title); title.tabIndex = -1; item.append(title, element('p', 'workflow-step-why', step.why));
       const suede = isFirstParty(step.skill);
       const skillBox = element('div', 'workflow-skill-box' + (suede ? ' is-suede' : ''));
-      skillBox.append(element('span', 'eyebrow', 'Your skill for this step'));
-      if (suede) skillBox.append(suedeBadge());
+      if (suede) {
+        const head = element('div', 'suede-card-head');
+        head.append(element('span', 'eyebrow', 'Your skill for this step'), suedeBadge());
+        skillBox.append(head);
+      } else skillBox.append(element('span', 'eyebrow', 'Your skill for this step'));
       const skillLink = element('a', 'workflow-skill', step.skill.name); skillLink.href = step.skill.href;
       const meta = element('p', 'workflow-skill-meta'); meta.append(skillLink, element('span', '', step.skill.repo));
       skillBox.append(meta, element('p', 'workflow-setup', setupFacts(step.skill)));
@@ -218,7 +249,7 @@ if (root) {
     renderSteps(); updateProgress(); selectStep(0);
     get('[data-workflow-tips]').replaceChildren(...plan.tips.map(tip => element('li', '', tip)));
     get('[data-workflow-reading]').hidden = true;
-    get('[data-workflow-more-list]').replaceChildren(...moreSkills.map(skillItem));
+    get('[data-workflow-more-list]').replaceChildren(...skillItems(moreSkills));
     get('[data-workflow-more]').hidden = !moreSkills.length;
     get('[data-workflow-copy-fallback]').open = false;
     results.hidden = false;

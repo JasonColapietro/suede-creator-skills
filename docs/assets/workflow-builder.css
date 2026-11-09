@@ -111,13 +111,49 @@
 .workflow-skill-description { margin: 0; font-size: 13px; color: var(--muted); display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
 .workflow-skill-item .workflow-setup { margin: auto 0 0; color: var(--faint); font-size: 11px; }
 .workflow-more { padding: 0 0 22px; }
-/* Suede AI's own skills: the gold "Suede first" border, warm fill and a pick badge. */
-.workflow-skill-item.is-suede, .workflow-skill-box.is-suede { position: relative; border-color: var(--gold-fill); background: var(--gold-soft); box-shadow: inset 3px 0 0 var(--gold-fill); }
-.workflow-skill-item.is-suede:hover { border-color: var(--gold-text); }
-.workflow-skill-item.is-suede .workflow-skill:hover, .workflow-skill-box.is-suede .workflow-skill:hover { color: var(--gold-text); }
-.workflow-suede-badge { align-self: flex-start; display: inline-flex; align-items: center; gap: 6px; padding: 3px 8px; border: 1px solid var(--gold-fill); border-radius: 999px; color: var(--gold-text); font: 10px/1.4 var(--mono); letter-spacing: .06em; text-transform: uppercase; white-space: nowrap; }
-.workflow-suede-badge::before { content: "★" / ""; }
-.workflow-skill-box > .workflow-suede-badge { display: flex; width: max-content; margin-top: 10px; }
+/* Suede AI's own skills use the canonical Suede palette (Institutional IP
+   Terminal, from suede-home): Deep and Panel Ink surfaces, a Rights Red head,
+   Registry Cyan proof details and Page Mist text. Each card is split into a
+   head, body, proof row and footer so it reads as distinct zones. */
+.workflow-builder {
+  --suede-panel: #09101b; --suede-control: #0d1726; --suede-red: #9f101a; --suede-red-bright: #d11f2b;
+  --suede-cyan: #22d3ee; --suede-mist: #eef2f7; --suede-slate: #8a97a8; --suede-cyan-line: rgba(34, 211, 238, 0.22);
+}
+.workflow-skill-group { grid-column: 1 / -1; display: flex; align-items: center; gap: 10px; margin: 6px 0 -2px; font: 11px/1.4 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.workflow-skill-group::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+.workflow-skill-group.is-suede { color: var(--suede-cyan); }
+.workflow-skill-group.is-suede::before { content: "" / ""; width: 8px; height: 8px; background: var(--suede-red-bright); border-radius: 2px; }
+.workflow-skill-group.is-suede::after { background: var(--suede-cyan-line); }
+.workflow-skill-item.is-suede { gap: 0; padding: 0; overflow: hidden; background: var(--suede-panel); border: 1px solid var(--suede-cyan-line); border-radius: 6px; box-shadow: 0 10px 28px -18px rgba(209, 31, 43, 0.55); transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease; }
+.workflow-skill-item.is-suede:hover { transform: translateY(-2px); border-color: var(--suede-cyan); box-shadow: 0 16px 34px -18px rgba(209, 31, 43, 0.7); }
+.suede-card-head { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; padding: 14px 16px 13px; background: linear-gradient(135deg, var(--suede-red) 0%, #6d0b13 100%); }
+.workflow-skill-item.is-suede:hover .suede-card-head { background: linear-gradient(135deg, var(--suede-red-bright) 0%, var(--suede-red) 100%); }
+.suede-card-head .workflow-skill { color: var(--suede-mist); font-size: 16px; font-weight: 650; line-height: 1.3; text-decoration-color: rgba(238, 242, 247, .45); }
+.suede-card-head .workflow-skill:hover { text-decoration-color: var(--suede-mist); }
+.workflow-suede-badge { display: inline-flex; align-items: center; gap: 6px; padding: 3px 8px; border-radius: 999px; background: rgba(5, 11, 22, .38); color: var(--suede-mist); font: 10px/1.4 var(--mono); letter-spacing: .07em; text-transform: uppercase; white-space: nowrap; }
+.workflow-suede-badge::before { content: "" / ""; width: 6px; height: 6px; border-radius: 50%; background: var(--suede-cyan); box-shadow: 0 0 0 3px rgba(34, 211, 238, .22); }
+/* Margins, not padding: a line-clamped box paints clipped lines into its padding. */
+.suede-card-body { margin: 14px 16px 12px; padding: 0; color: #c4ccd8; font-size: 13px; }
+.suede-card-proof { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin: 0 16px; padding: 10px 0; border-top: 1px dashed var(--suede-cyan-line); }
+.suede-card-repo { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font: 10px/1.5 var(--mono); color: var(--suede-cyan); }
+.suede-card-proof .grade { flex: none; font-size: 11px; padding: 0 6px; }
+.suede-card-foot { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: auto; padding: 11px 16px; background: var(--suede-control); border-top: 1px solid var(--suede-cyan-line); }
+.suede-card-foot .workflow-setup { margin: 0; color: var(--suede-slate); font-size: 11px; }
+.suede-card-cta { flex: none; display: inline-flex; align-items: center; min-height: 32px; padding: 0 12px; border: 1px solid var(--suede-cyan); border-radius: 4px; color: var(--suede-cyan); font: 600 11px/1 var(--mono); letter-spacing: .04em; text-decoration: none; white-space: nowrap; }
+/* The directory's main link rule underlines every other anchor; a button-styled link opts out. */
+main a.suede-card-cta { text-decoration: none !important; }
+.suede-card-cta:hover, .suede-card-cta:focus-visible { background: var(--suede-cyan); color: #050b16; }
+.workflow-skill-box.is-suede { padding: 0; overflow: hidden; background: var(--suede-panel); border: 1px solid var(--suede-cyan-line); border-radius: 6px; }
+.workflow-skill-box.is-suede .suede-card-head { flex-direction: row; align-items: center; justify-content: space-between; flex-wrap: wrap; padding: 10px 16px; }
+.workflow-skill-box.is-suede .suede-card-head .eyebrow { margin: 0; color: var(--suede-mist); opacity: .85; }
+.workflow-skill-box.is-suede > :not(.suede-card-head) { margin-left: 16px; margin-right: 16px; }
+.workflow-skill-box.is-suede > .workflow-skill-meta { margin-top: 14px; }
+.workflow-skill-box.is-suede .workflow-skill { color: var(--suede-mist); }
+.workflow-skill-box.is-suede .workflow-skill-meta span { color: var(--suede-cyan); }
+.workflow-skill-box.is-suede .workflow-setup { color: var(--suede-slate); }
+.workflow-skill-box.is-suede > :last-child { margin-bottom: 16px; }
+.workflow-skill-box.is-suede .workflow-alternative { width: calc(100% - 32px); border-color: var(--suede-cyan-line); background: #050b16; }
+@media (prefers-reduced-motion: reduce) { .workflow-skill-item.is-suede, .workflow-skill-item.is-suede:hover { transition: none; transform: none; } }
 .workflow-more h4 { font-size: 15px; margin-bottom: 12px; }
 /* The finder and the Best of tiles share the first screen on wide displays.
    Once recommendations appear they take the full width and the tiles move
