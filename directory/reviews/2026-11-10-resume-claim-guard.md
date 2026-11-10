@@ -18,4 +18,8 @@ The main workflow uses candidate-confirmed facts, bounds personal-role and deliv
 
 This was structural assessment and targeted read-only source inspection. No submitted code, installer, model, recruiting site, external message or paid workload was executed. No full malware/security scan or runtime validation was performed. **security_scan_status: not_scanned.**
 
-[Assessment evidence](../intake/2026-11-10-three-applicants.json) records the pins, file digests, check results, arithmetic and curated-list evidence. Listing and the welcome workflow are on hold pending description revision and reassessment.
+[Assessment evidence](../intake/2026-11-10-three-applicants.json) records the pins, file digests, check results, arithmetic and curated-list evidence.
+
+## Editorial disposition
+
+Selected on November 10, 2026 as an **owner-selected editorial feature**, independent of the numeric rubric. The **neutral Featured badge** links to this project’s exact feature section and carries no grade or security certification. The authentic score and not_scanned status above remain unchanged. This editorial exception does not waive the mainly English description requirement for ordinary scored-catalog inclusion.

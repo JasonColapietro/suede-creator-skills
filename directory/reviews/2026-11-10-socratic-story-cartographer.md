@@ -6,7 +6,7 @@ Application: [issue #371](https://github.com/JasonColapietro/suede-creator-skill
 
 The unchanged graded-v2 rubric gives **72/100, grade C**, independently reproduced in Python and JavaScript: 48 structural + 5 description length + 7 body depth + 3 references + 9 recency. No direct repository citation was found in the eight configured curated-list README files at their recorded revisions.
 
-Required frontmatter and six of seven graded checks pass. The 775-line main body exceeds the 500-line limit, while its 2,783 words receive full depth points. The English-description and preliminary content-policy checks pass. Ordinary minimum listing eligibility and the 80-point welcome target are separate; this review does not grant listing, a feature or a quality badge.
+Required frontmatter and six of seven graded checks pass. The 775-line main body exceeds the 500-line limit, while its 2,783 words receive full depth points. The English-description and preliminary content-policy checks pass. Ordinary minimum listing eligibility and the 80-point welcome target are separate; the owner-selected editorial feature does not award a quality shield or change the score.
 
 ## Useful next revision
 
@@ -18,4 +18,8 @@ The main file and operational long-work and producer-review references describe 
 
 This was structural assessment and targeted read-only source inspection. No submitted code, CLI, model, external message or paid workload was executed. No full malware/security scan or runtime validation was performed. **security_scan_status: not_scanned.**
 
-[Assessment evidence](../intake/2026-11-10-three-applicants.json) records the pins, file digests, check results, arithmetic and curated-list evidence. The application remains on hold for the welcome workflow pending revision and reassessment.
+[Assessment evidence](../intake/2026-11-10-three-applicants.json) records the pins, file digests, check results, arithmetic and curated-list evidence.
+
+## Editorial disposition
+
+Selected on November 10, 2026 as an **owner-selected editorial feature**, independent of the numeric rubric. The **neutral Featured badge** links to this project’s exact feature section and carries no grade or security certification. The authentic score and not_scanned status above remain unchanged. The named skill is accepted through an explicit allowlist and exact source root for the next regular scored-catalog refresh; no scored skill page is published by this feature change.

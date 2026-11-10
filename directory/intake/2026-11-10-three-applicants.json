@@ -1,7 +1,7 @@
 {
   "review_date": "2026-11-10",
   "score_method": "graded-v2",
-  "method": "Pinned source structural assessment and targeted read-only source inspection. Python and JavaScript independently produced identical scores. No target execution, paid runs or full security scan. No listing, feature, badge or promotion granted.",
+  "method": "Pinned source structural assessment and targeted read-only source inspection. Python and JavaScript independently produced identical scores. No target execution, paid runs or full security scan. Owner-selected editorial features use neutral non-graded Featured badges; authentic scores are unchanged.",
   "repositories": [
     {
       "repo": "OakcoderX/awesome-agent-skills",
@@ -186,7 +186,9 @@
           "verified_at": "2026-11-10",
           "target_matches": []
         }
-      ]
+      ],
+      "editorial_disposition": "owner_selected_neutral_feature",
+      "catalog_disposition": "accepted_next_regular_refresh"
     },
     {
       "repo": "korey2028-prog/resume-claim-guard",
@@ -461,7 +463,9 @@
           "verified_at": "2026-11-10",
           "target_matches": []
         }
-      ]
+      ],
+      "editorial_disposition": "owner_selected_neutral_feature",
+      "catalog_disposition": "held_english_description"
     },
     {
       "repo": "waynehamadi/datacircle",
@@ -586,7 +590,9 @@
           "verified_at": "2026-11-10",
           "target_matches": []
         }
-      ]
+      ],
+      "editorial_disposition": "owner_selected_neutral_feature",
+      "catalog_disposition": "accepted_next_regular_refresh"
     }
   ]
 }
