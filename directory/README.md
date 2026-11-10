@@ -14,6 +14,8 @@ The [Suede Awesome Everything catalog](../awesome/README.md) is the GitHub Markd
 | `categories.json` | The sixteen category directories: slug, title and intro copy | Hand-written |
 | `task-pages.json` | The keyword map behind the task pages (`/for/<job>/`, "What are the best Claude Code skills for <job>?") and the "<skill> alternatives" pages. A job gets a page only when at least 5 listed skills match and at least 3 of them have full pages scoring 80 or more; Suede AI's own skills are never ranked (`scripts/directory/task-pages.mjs`) | Hand-written |
 | `topics.json` | The taxonomy behind the topic pages (`/topics/<id>/`): groups, topics with keyword patterns, and the Futurepedia labels each one stands in for, which the parity audit reads. A topic gets a page when at least 3 listed skills match it (`scripts/directory/topics.mjs`) | Hand-written |
+| `applications.json` | Sanitized public GitHub applications: source issue, requested repository/scope, submission date and issue state; public applicant handles, no private contacts | `npm run sync:applications` |
+| `application-decisions.json` | Explicit links from an application issue to its reviewed feature/member entry or standalone review; independent of GitHub issue state | Reviewed by hand or by an agent |
 | `inclusions.json` | Repositories (`owner/repo`) added from accepted listing requests, with optional per-repository skill-name allowlists; read on the next refresh even when no curated list cites them | Hand-written |
 | `notes.json` | Publisher install routes for restricted-license skills, and required service setup for other skills, shown in the installation section with a link to the source | Hand-written |
 | `exclusions.json` | Repositories (`owner/repo`) and skills (`owner/repo/skill-name`) kept out of the directory, each with a recorded reason: author removal requests, and skills whose text trips the pack's public-source guards (`npm run validate` names the file) | Hand-written |
@@ -346,3 +348,32 @@ Run the local intake regressions with:
 ```sh
 python3 -m unittest discover -s tests -p test_first_party_directory.py -v
 ```
+
+## Public direct-submission register
+
+[Project applications](https://suedeai.directory/applications/) records public
+maintainer-submitted listing requests and requests made on their behalf. It
+covers public GitHub applications, including AI-assisted requests. It does not
+publish private email or message submissions, contact details, private profile details, or issue bodies. A project discovered by curation is not an applicant.
+
+Run `npm run sync:applications` before rebuilding to read every page of the
+canonical public repository's issue tracker. The existing weekly refresh also
+runs this command on its normal proposal branch. The importer accepts only
+explicit listing requests with the maintainer confirmation (plus documented
+historical forms), preserves selected skill names, and never runs submitted code.
+Unknown scope stays unknown, never `all`. A malformed project URL remains a source-linked application awaiting clarification, so it cannot stop unrelated refresh work. A disappearing application stops the
+sync for review rather than silently erasing history. After confirming a removal
+or privacy request, remove the affected record and decision before resyncing.
+
+Add an issue-number key in `application-decisions.json` after reviewing the
+requested scope: `feature_id` links the exact accepted feature/member entry;
+`review` can link a standalone review even without any placement. Copy the current application `scope_version` into each reviewed decision. A change to the project or requested scope invalidates the old association until reviewed again. A later request
+for a different scope needs its own association. The page reads review status
+from that association, placement from current editorial metadata, and scored
+listing counts from exact names in the current catalog. A pending feature stays
+review-pending, and open/closed issue state never determines a verdict. Repeat
+issues remain traceable source records, not duplicate catalog listings.
+
+After updating applications or decisions, run `npm run build:directory` and
+`npm test`. The generated page is indexable, self-canonical and discoverable from
+Submit, Featured and the directory sitemap.

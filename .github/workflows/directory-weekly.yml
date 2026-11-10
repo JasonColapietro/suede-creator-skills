@@ -38,6 +38,11 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Refresh the public application register
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npm run sync:applications
+
       - name: Refresh skills.sh installs
         run: node scripts/directory/installs.mjs
 
