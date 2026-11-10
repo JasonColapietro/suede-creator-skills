@@ -3095,15 +3095,15 @@
  ],
  "directory/featured/index.html": [
   "featured agent projects",
+  "agentswarm-work agent workflows",
+  "CloudGPU agent workflows",
   "Email Marketing Skills by Poptin agent workflows",
   "ShipToPaid Lite agent workflows",
   "Video Director agent workflows",
   "agent-qa CLI by Vostride agent workflows",
   "Berlin Job Search agent workflows",
   "BulkPublish agent workflows",
-  "Empacer agent workflows",
-  "Frametell agent workflows",
-  "InkRoom agent workflows"
+  "Empacer agent workflows"
  ],
  "directory/features/allowed-tools/index.html": [
   "declares tool permissions agent skills",

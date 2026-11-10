@@ -1,0 +1,333 @@
+{
+  "review_date": "2026-11-09",
+  "method": "Pinned read-only source review and unchanged graded-v2 scoring. No target execution or security scan. Owner-selected editorial features are independent of numeric grades. Scored catalog inclusion is accepted for the next regular refresh; the existing catalog snapshot is unchanged.",
+  "repositories": [
+    {
+      "repo": "mrhy7176/cloudgpu-agent-skills",
+      "commit": "83cde0602ec73f6c4f4eec8a60c42b34fef1bac1",
+      "scope": [
+        "cloudgpu-open-model-inference",
+        "cloudgpu-lora-finetune",
+        "cloudgpu-discover-compute",
+        "cloudgpu-ai-short-drama",
+        "cloudgpu-comfyui-images"
+      ],
+      "license": "MIT",
+      "security_scan_status": "not_scanned",
+      "score_method": "graded-v2",
+      "skills": [
+        {
+          "name": "cloudgpu-open-model-inference",
+          "path": "cloudgpu-open-model-inference/SKILL.md",
+          "score": 77,
+          "grade": "C",
+          "checks": "11111111",
+          "body_lines": 44,
+          "body_words": 798
+        },
+        {
+          "name": "cloudgpu-lora-finetune",
+          "path": "cloudgpu-lora-finetune/SKILL.md",
+          "score": 77,
+          "grade": "C",
+          "checks": "11111111",
+          "body_lines": 44,
+          "body_words": 802
+        },
+        {
+          "name": "cloudgpu-discover-compute",
+          "path": "cloudgpu-discover-compute/SKILL.md",
+          "score": 77,
+          "grade": "C",
+          "checks": "11111111",
+          "body_lines": 41,
+          "body_words": 721
+        },
+        {
+          "name": "cloudgpu-ai-short-drama",
+          "path": "cloudgpu-ai-short-drama/SKILL.md",
+          "score": 77,
+          "grade": "C",
+          "checks": "11111111",
+          "body_lines": 45,
+          "body_words": 877
+        },
+        {
+          "name": "cloudgpu-comfyui-images",
+          "path": "cloudgpu-comfyui-images/SKILL.md",
+          "score": 77,
+          "grade": "C",
+          "checks": "11111111",
+          "body_lines": 44,
+          "body_words": 808
+        }
+      ],
+      "source_files": [
+        {
+          "path": "LICENSE",
+          "mode": "100644",
+          "git_blob": "b33a368546e9af883295fc53002df18f9990a69a",
+          "bytes": 1065,
+          "sha256": "7e60ccbff1c79606ddfdf84e3b0d38cac8a4e6e559d92bfffe23b846a376186d",
+          "reviewed_entire_file": true
+        },
+        {
+          "path": "README.md",
+          "mode": "100644",
+          "git_blob": "759428719f3a110450f46b7cc88fbaed85a8ac28",
+          "bytes": 2778,
+          "sha256": "72540d30428a2a1dc8a16ebc6df998992dbcd728551408c46e7b5e7ce58e4db1",
+          "reviewed_entire_file": true
+        },
+        {
+          "path": "cloudgpu-ai-short-drama/SKILL.md",
+          "mode": "100644",
+          "git_blob": "f1328c02eb3bdb19c3fc11ca373c14e8581cb65a",
+          "bytes": 7044,
+          "sha256": "141a209527060f45c4f02eca5b678cd77fc72efc146f36c58de37850a44cb909",
+          "reviewed_entire_file": true
+        },
+        {
+          "path": "cloudgpu-comfyui-images/SKILL.md",
+          "mode": "100644",
+          "git_blob": "6f1a1b8a87dc9e0e9beb145b11031c4ac67112c8",
+          "bytes": 6504,
+          "sha256": "e4715c7e152f49649be303290e9015495477a7625bbeac56cf2ff50fe3785776",
+          "reviewed_entire_file": true
+        },
+        {
+          "path": "cloudgpu-discover-compute/SKILL.md",
+          "mode": "100644",
+          "git_blob": "328129f49320ebe8425578abc33bbb1a97680e55",
+          "bytes": 5871,
+          "sha256": "bd2fe3ae29a77b3fb5357b0098c2b9ea5013fb4ec0f4896852cd447467e92b81",
+          "reviewed_entire_file": true
+        },
+        {
+          "path": "cloudgpu-lora-finetune/SKILL.md",
+          "mode": "100644",
+          "git_blob": "0423271d84d7156264ebf4dd9cbc90d7897e667e",
+          "bytes": 6524,
+          "sha256": "d4987dd7264dacb40ed6d27e9ef0ebd066e4784ef39cb08bffacbeb2e9eedf42",
+          "reviewed_entire_file": true
+        },
+        {
+          "path": "cloudgpu-open-model-inference/SKILL.md",
+          "mode": "100644",
+          "git_blob": "62a2a4b1f714258aaabbead66f060fadb18556eb",
+          "bytes": 6445,
+          "sha256": "a9c06dc80b3a4d7fcb09d9c21b1edaa4d40b3d42e8418d0d291430530b731188",
+          "reviewed_entire_file": true
+        }
+      ],
+      "curated_list_checks": [
+        {
+          "repo": "BehiSecc/awesome-claude-skills",
+          "commit": "adf99015a0ad4dac11711c261f0f9b433e4215e7",
+          "path": "README.md",
+          "blob": "55d020b927bf00f4f242b58fe4c196feea596c08",
+          "verified_at": "2026-11-09",
+          "matches_target": false,
+          "url": "https://github.com/BehiSecc/awesome-claude-skills/blob/adf99015a0ad4dac11711c261f0f9b433e4215e7/README.md",
+          "sha256": "78f4ef90464fc29fbf1d31ca9bef572f4920afe8d2b4e8dd9b768c99be0c463d",
+          "blob_verified": true
+        },
+        {
+          "repo": "ComposioHQ/awesome-claude-skills",
+          "commit": "be2a406907dbc61b73e6827ded415c96139d13a2",
+          "path": "README.md",
+          "blob": "d28b9c3515147fba1242461eb2c11155ffca5bbf",
+          "verified_at": "2026-11-09",
+          "matches_target": false,
+          "url": "https://github.com/ComposioHQ/awesome-claude-skills/blob/be2a406907dbc61b73e6827ded415c96139d13a2/README.md",
+          "sha256": "e693f2701840f26fb04c3058d55215f2c6575fff7f1c197ada5b64e2f7ee0c12",
+          "blob_verified": true
+        },
+        {
+          "repo": "VoltAgent/awesome-agent-skills",
+          "commit": "6d483e29da745a010d88974ef6d0e50d15755e9a",
+          "path": "README.md",
+          "blob": "cfb805af027cf36699843b6760c9e277ef613eb5",
+          "verified_at": "2026-11-09",
+          "matches_target": false,
+          "url": "https://github.com/VoltAgent/awesome-agent-skills/blob/6d483e29da745a010d88974ef6d0e50d15755e9a/README.md",
+          "sha256": "c2f3447c752015a67db5e7eefb86790fc3945f311e9643232c4733da146160d4",
+          "blob_verified": true
+        },
+        {
+          "repo": "heilcheng/awesome-agent-skills",
+          "commit": "a92b1f3a9cdf00b056a8cc3247f214a139a95ae3",
+          "path": "README.md",
+          "blob": "a4d6d07ce1cd8d21e7ea9b1bdc25f1598d633172",
+          "verified_at": "2026-11-09",
+          "matches_target": false,
+          "url": "https://github.com/heilcheng/awesome-agent-skills/blob/a92b1f3a9cdf00b056a8cc3247f214a139a95ae3/README.md",
+          "sha256": "cf887b175e358dd1833ba4cc2f6ab6d62fee388da808290c2dfc10a0fea57b7a",
+          "blob_verified": true
+        },
+        {
+          "repo": "hesreallyhim/awesome-claude-code",
+          "commit": "f5df1a19699384b2ebd7a4cfb794fa2feed5e504",
+          "path": "README.md",
+          "blob": "d031a20828cd54d9da855f70123fd285170e6844",
+          "verified_at": "2026-11-09",
+          "matches_target": false,
+          "url": "https://github.com/hesreallyhim/awesome-claude-code/blob/f5df1a19699384b2ebd7a4cfb794fa2feed5e504/README.md",
+          "sha256": "d5a9f47112bbc755d06b118595d7c5baf7ff72cb867510eb3275eb058ad288c3",
+          "blob_verified": true
+        },
+        {
+          "repo": "karanb192/awesome-claude-skills",
+          "commit": "7b2650b08cd3e287a64b50897bc941dedee6c29d",
+          "path": "README.md",
+          "blob": "d986ccdf173639ec92ab1837b66062428b2e9eeb",
+          "verified_at": "2026-11-09",
+          "matches_target": false,
+          "url": "https://github.com/karanb192/awesome-claude-skills/blob/7b2650b08cd3e287a64b50897bc941dedee6c29d/README.md",
+          "sha256": "f112e0d168b32709061d3817e2cdeb8411958dcc09d96250024fb30ed6e77386",
+          "blob_verified": true
+        },
+        {
+          "repo": "skillmatic-ai/awesome-agent-skills",
+          "commit": "cdf5ae3ff506e6f3737122bb9d24ac7d727cb6a0",
+          "path": "README.md",
+          "blob": "b6d37764ca604af7ef05f34c182d5732e83df093",
+          "verified_at": "2026-11-09",
+          "matches_target": false,
+          "url": "https://github.com/skillmatic-ai/awesome-agent-skills/blob/cdf5ae3ff506e6f3737122bb9d24ac7d727cb6a0/README.md",
+          "sha256": "2415c6138808b505533ab5bad33b02e336be1b22faaf230e962e967760b96aea",
+          "blob_verified": true
+        },
+        {
+          "repo": "travisvn/awesome-claude-skills",
+          "commit": "1da55aa810f206d3fe2005e7e3989b15a275d942",
+          "path": "README.md",
+          "blob": "63064b36d5153e1342590651d1e7f62093450040",
+          "verified_at": "2026-11-09",
+          "matches_target": false,
+          "url": "https://github.com/travisvn/awesome-claude-skills/blob/1da55aa810f206d3fe2005e7e3989b15a275d942/README.md",
+          "sha256": "b15fa837edeb632f4a85871590df4dab64deec10af904d512a5ee12bce8773c9",
+          "blob_verified": true
+        }
+      ]
+    },
+    {
+      "repo": "andrewsiah/agentswarm-work-skill",
+      "commit": "dc5980f78451cf6158519b4713108ea6b8efa8f6",
+      "scope": [
+        "skills/agentswarm-work"
+      ],
+      "license": "MIT",
+      "security_scan_status": "not_scanned",
+      "score_method": "graded-v2",
+      "skills": [
+        {
+          "name": "agentswarm-work",
+          "path": "skills/agentswarm-work/SKILL.md",
+          "score": 79,
+          "grade": "C",
+          "checks": "11111111",
+          "body_lines": 40,
+          "body_words": 643
+        }
+      ],
+      "setup_commit": "c0b81a7a6ebc27f3292f5b07762b431e80070748",
+      "source_files": [
+        {
+          "path": "LICENSE",
+          "sha256": "8dbb441ea93cc27d1a0abadb6a5c34f8d44f2d4abdce277041be03f04b481ce7"
+        },
+        {
+          "path": "README.md",
+          "sha256": "ecb93398504550c2c87ce923ead451c7fb3995c717838e91f7fa8927afea4619"
+        },
+        {
+          "path": "package.json",
+          "sha256": "bd66494eee233782a73ee9d1f5caed68b2713edb2aeba72e9f283af3026b91b7"
+        },
+        {
+          "path": "README.zh-CN.md",
+          "sha256": "1c60f23f3311f856224b6af26a5b886654985befee51bf57c42549f801bc0f95"
+        },
+        {
+          "path": "recipes/goose-preview.yaml",
+          "sha256": "8747313a66d70c1b89a63200076bba8560792c133267cd2948b99cdc6bfcded2"
+        },
+        {
+          "path": ".claude-plugin/marketplace.json",
+          "sha256": "688f4a34daa54acf9f9581a94300a88fff249b3b9cab928a58d36d8e9a0293f3"
+        },
+        {
+          "path": ".claude-plugin/plugin.json",
+          "sha256": "cc0a42088f3eb5d03528e53fc6bcd25219798226799b8dd8f21eae9ff5fda7f1"
+        },
+        {
+          "path": "skills/agentswarm-work/SKILL.md",
+          "sha256": "462de0878ea9661bed65275567ebca54d8c21a1a12375ea646cf687ef6cbfb16"
+        },
+        {
+          "path": "skills/agentswarm-work/agents/openai.yaml",
+          "sha256": "a1499d95abd8447558c535fe5554adcc3c9b988a0a39264a6283d430effe1e94"
+        }
+      ],
+      "curated_list_checks": [
+        {
+          "repo": "travisvn/awesome-claude-skills",
+          "commit": "1da55aa810f206d3fe2005e7e3989b15a275d942",
+          "path": "README.md",
+          "verified_at": "2026-11-09",
+          "direct_target_found": false
+        },
+        {
+          "repo": "ComposioHQ/awesome-claude-skills",
+          "commit": "be2a406907dbc61b73e6827ded415c96139d13a2",
+          "path": "README.md",
+          "verified_at": "2026-11-09",
+          "direct_target_found": false
+        },
+        {
+          "repo": "VoltAgent/awesome-agent-skills",
+          "commit": "6d483e29da745a010d88974ef6d0e50d15755e9a",
+          "path": "README.md",
+          "verified_at": "2026-11-09",
+          "direct_target_found": false
+        },
+        {
+          "repo": "hesreallyhim/awesome-claude-code",
+          "commit": "f5df1a19699384b2ebd7a4cfb794fa2feed5e504",
+          "path": "README.md",
+          "verified_at": "2026-11-09",
+          "direct_target_found": false
+        },
+        {
+          "repo": "BehiSecc/awesome-claude-skills",
+          "commit": "adf99015a0ad4dac11711c261f0f9b433e4215e7",
+          "path": "README.md",
+          "verified_at": "2026-11-09",
+          "direct_target_found": false
+        },
+        {
+          "repo": "karanb192/awesome-claude-skills",
+          "commit": "7b2650b08cd3e287a64b50897bc941dedee6c29d",
+          "path": "README.md",
+          "verified_at": "2026-11-09",
+          "direct_target_found": false
+        },
+        {
+          "repo": "heilcheng/awesome-agent-skills",
+          "commit": "a92b1f3a9cdf00b056a8cc3247f214a139a95ae3",
+          "path": "README.md",
+          "verified_at": "2026-11-09",
+          "direct_target_found": false
+        },
+        {
+          "repo": "skillmatic-ai/awesome-agent-skills",
+          "commit": "cdf5ae3ff506e6f3737122bb9d24ac7d727cb6a0",
+          "path": "README.md",
+          "verified_at": "2026-11-09",
+          "direct_target_found": false
+        }
+      ]
+    }
+  ]
+}

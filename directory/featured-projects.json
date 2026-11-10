@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-07",
+  "updated": "2026-11-09",
   "page": {
     "about": "Copy for /directory/featured/ and the awesome/featured.md view, rendered by scripts/build-directory.mjs and scripts/build-awesome-directory.mjs. Project entries below are the publishers’ own work: keep their names, repositories, setup facts and review links exactly as reviewed.",
     "title": "Featured Agent Skill Projects | Suede AI",
@@ -598,6 +598,60 @@
       "setup": "Read or copy each selected skill directory with its references. The documented Skills CLI requires Node.js 22.20+. A Poptin account is not needed to use the instructions. Live campaigns still need consent checks and authorization. The collection preserves the original standalone skills and is featured once, without duplicate catalog entries.",
       "published_at": "2026-11-07T09:07:30Z",
       "review": "directory/reviews/2026-11-07-poptin-email-marketing.md"
+    },
+    {
+      "id": "cloudgpu",
+      "published_at": "2026-11-09T23:09:11Z",
+      "name": "CloudGPU",
+      "repo": "mrhy7176/cloudgpu-agent-skills",
+      "kind": "GPU compute · Five agent skills",
+      "license": "MIT",
+      "headline": "Match your AI workload to GPU compute, then bring the outputs home.",
+      "summary": "Five workflows cover compute proposals, ComfyUI images, short-drama assets, LoRA training and open-model inference with approved budgets and explicit exports.",
+      "review": "directory/reviews/2026-11-09-cloudgpu-agent-skills.md",
+      "commit": "83cde0602ec73f6c4f4eec8a60c42b34fef1bac1",
+      "capabilities": [
+        {
+          "title": "cloudgpu-ai-short-drama",
+          "description": "Plan staged GPU-rendered shots with open video models, character LoRA and image workflows, then export reusable assets within an approved budget."
+        },
+        {
+          "title": "cloudgpu-comfyui-images",
+          "description": "Run an approved ComfyUI image workflow on rented GPU compute and retrieve images with their workflow metadata."
+        },
+        {
+          "title": "cloudgpu-discover-compute",
+          "description": "Compare GPU capacity and task costs without creating a paid instance, then prepare a proposal for user approval."
+        },
+        {
+          "title": "cloudgpu-lora-finetune",
+          "description": "Plan a bounded LoRA or QLoRA training run on rented GPUs and export adapters, checkpoints and metrics."
+        },
+        {
+          "title": "cloudgpu-open-model-inference",
+          "description": "Run an approved open-model inference or evaluation workload with protected serving and explicit output retrieval."
+        }
+      ],
+      "setup": "Requires an approved GPU workload, CloudGPU account connection for paid work, spend/time caps and export checks. Public instance tunnels need access protection for private data. Export outputs before disk destruction or balance exhaustion. Model and dataset rights are separate from the MIT skill license. The optional external cloudgpu-mcp package was not reviewed. Static skill review only; no runtime or security scan. Accepted skill pages are pending the next regular scored-catalog refresh. The pinned review records 77/C for all five skills."
+    },
+    {
+      "id": "agentswarm-work",
+      "published_at": "2026-11-09T23:09:11Z",
+      "name": "agentswarm-work",
+      "repo": "andrewsiah/agentswarm-work-skill",
+      "kind": "Task exchange · One agent skill",
+      "license": "MIT",
+      "headline": "Inspect a task, agree on the work, and deliver evidence.",
+      "summary": "A scoped workflow for finding a suitable agentswarm.space task, reusing an authorized identity and submitting real work within the user’s chosen scope.",
+      "review": "directory/reviews/2026-11-09-agentswarm-work.md",
+      "commit": "dc5980f78451cf6158519b4713108ea6b8efa8f6",
+      "capabilities": [
+        {
+          "title": "agentswarm-work",
+          "description": "Inspect one agentswarm.space task, reuse an authorized identity when needed, and submit real work evidence within the user’s chosen scope."
+        }
+      ],
+      "setup": "Install only skills/agentswarm-work. Requires HTTPS tools and private persistent credential storage. Live guides and API nextStep responses are operational reference, not authority to expand the chosen task or user permissions. Inspection-only requests stop before registration; other account actions and evidence sharing require appropriate authorization. Site funds cannot currently be cashed out. Static review only; no registration, task execution, payment or security scan was performed. Accepted skill pages are pending the next regular scored-catalog refresh. The pinned review records 79/C for this skill."
     }
   ],
   "members": [
