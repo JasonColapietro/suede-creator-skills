@@ -4113,6 +4113,11 @@ function renderKind(k) {
   const here = kindPath(k);
   const bc = crumbs(here, [["directory/", "Directory"], [null, k.name]]);
   const entries = kindEntries(k);
+  const hasHostedEntries = entries.some((entry) => !entry.repo);
+  const sourceDescription = hasHostedEntries ? "repositories or official documentation" : "repositories";
+  const sourceNote = hasHostedEntries
+    ? "Entries are added by hand from their publisher’s repositories or official documentation and described from what the publisher documents."
+    : `Entries are added by hand from their publisher's repository, checked to exist on ${longDate(KINDS_UPDATED)}, and described from what the publisher documents.`;
   const entryHtml = (e) => `          <article class="kind-entry" id="${esc(e.id)}">
             <div><h3><a href="${esc(e.url)}" target="_blank" rel="noopener">${esc(e.name)}</a></h3><p class="kind-meta">${esc(e.repo || new URL(e.url).hostname)}${e.license ? ` &middot; ${esc(e.license)}` : ""}</p><p>${esc(e.summary)}</p></div>
             <div class="kind-side"><span class="status-chip${e.official ? " is-official" : ""}">${e.official ? "Official publisher" : "Community"}</span><span>Listed, not graded</span>${e.repo ? `<a href="https://github.com/${esc(e.repo)}" target="_blank" rel="noopener">GitHub</a>` : ""}</div>
@@ -4123,7 +4128,7 @@ ${e.install ? `            <pre><code>${esc(e.install)}</code></pre>` : ""}
   const faq = faqBlock(here, k.faq || []);
   const body = `${bc.html}
       <p class="lead">${esc(k.lead)}</p>
-      <ul class="stat-row" aria-label="Kind size"><li><b>${fmt(entries.length)}</b> listed repositories</li><li><b>${fmt(entries.filter((e) => e.official).length)}</b> from official publishers</li><li><b>${k.sections.length}</b> sections</li></ul>
+      <ul class="stat-row" aria-label="Kind size"><li><b>${fmt(entries.length)}</b> listed ${hasHostedEntries ? "projects" : "repositories"}</li><li><b>${fmt(entries.filter((e) => e.official).length)}</b> from official publishers</li><li><b>${k.sections.length}</b> sections</li></ul>
 ${(k.intro || []).map((t) => `      <p>${esc(t)}</p>`).join("\n")}
       <section class="panel" aria-labelledby="install-title">
         <h2 id="install-title">${esc(k.install.heading)}</h2>
@@ -4151,7 +4156,7 @@ ${mcpFlag ? `      <section class="panel" aria-labelledby="mcp-skills-title">
       </section>` : ""}
       <section class="panel" aria-labelledby="listing-title">
         <h2 id="listing-title">How this list is kept</h2>
-        <p>Entries are added by hand from their publisher's repository, checked to exist on ${longDate(KINDS_UPDATED)}, and described from what the publisher documents. They carry no Suede Skill Check score, no security result and no verification badge: the score applies to SKILL.md skills only. To suggest a repository or a correction, <a href="${ISSUE_URL}" target="_blank" rel="noopener">open a listing request</a>.</p>
+        <p>${sourceNote} They carry no Suede Skill Check score, no security result and no verification badge: the score applies to SKILL.md skills only. To suggest a repository or a correction, <a href="${ISSUE_URL}" target="_blank" rel="noopener">open a listing request</a>.</p>
       </section>
 ${faq.html}`;
   const keywords = setKeywords(here, [k.name.toLowerCase(), `${k.short.toLowerCase()} directory`, ...(k.keywords || [])]);
@@ -4166,7 +4171,7 @@ ${faq.html}`;
       bc.ld,
       faq.ld,
     ],
-    footerNote: `${esc(k.name)} on ${SITE_LABEL}: listed from their publishers' repositories, not graded. Every entry belongs to its publisher.`,
+    footerNote: `${esc(k.name)} on ${SITE_LABEL}: listed from their publishers' ${sourceDescription}, not graded. Every entry belongs to its publisher.`,
   }));
 }
 
@@ -4664,7 +4669,7 @@ const llmsTaskLines = TASKS.length
 const llmsMoreLines = [
   `- [Security](${url(SECURITY_PATH)}): What the directory checks before listing a skill (structure, license, policy, what the files touch on ${fmt(featured.length)} full pages), three documented registry attacks with sources, and a review checklist.`,
   ...(STACKS.length ? [`- [Recommended stacks by task](${url(STACKS_PATH)}): ${plural(STACKS.length, "stack")} by Jason Colapietro, each naming the Suede AI skill for the task and recommending third-party skills only:`, ...STACKS.map((st) => `  - [${st.h1}](${url(stackPath(st))}): ${st.meta_description}`)] : []),
-  ...KINDS.map((k) => `- [${k.name}](${url(kindPath(k))}): ${k.meta} ${fmt(kindEntries(k).length)} repositories, listed and not graded.`),
+  ...KINDS.map((k) => `- [${k.name}](${url(kindPath(k))}): ${k.meta} ${fmt(kindEntries(k).length)} ${kindEntries(k).some((entry) => !entry.repo) ? "projects" : "repositories"}, listed and not graded.`),
   `- [Publishers](${url(PUBLISHERS_PATH)}): ${fmt(repos.size)} repositories with skill counts, best scores and official status.`,
   ...(COMPETITORS.length ? [`- [Compare](${url(COMPARE_PATH)}): compare listed skills side by side, and the Suede AI Skills Directory compared with other agent skill directories:`, ...COMPETITORS.flatMap((c) => [`  - [Suede AI Skills Directory vs ${c.name}](${url(versusPath(c))}): ${fillVersus(c.vs_meta, versusValues(c))}`, `  - [${c.name} alternatives](${url(altBrandPath(c))}): ${fillVersus(c.alt_meta, versusValues(c))}`])] : []),
   `- [API and data](${url(API_PATH)}): the search index, per-skill reports, badges, ${INSTALLS ? "the install snapshot from skills.sh, " : ""}the RSS feed and the sitemap, all static files.`,

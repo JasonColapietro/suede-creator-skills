@@ -536,6 +536,17 @@
      "summary": "Pulls current, version-specific library documentation and examples into the agent's context.",
      "install": null,
      "license": null
+    },
+    {
+     "id": "scrapeatlas",
+     "name": "Scrape Atlas",
+     "repo": null,
+     "url": "https://scrapeatlas.com/mcp/",
+     "publisher": "Scrape Atlas",
+     "official": true,
+     "summary": "Retrieve public profiles, posts, videos and conversations for research through Scrape Atlas’s hosted MCP. Requires a Scrape Atlas account and a compatible MCP client; use the publisher’s documented OAuth or customer-key setup. Successful retrievals, including partial results, consume account credits; paid access uses one-time credit top-ups. Follow source-platform terms and data-use permissions.",
+     "install": null,
+     "license": null
     }
    ]
   },

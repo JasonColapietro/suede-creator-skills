@@ -458,3 +458,30 @@ test("competitors.json validation rejects a competitor price fact or price wordi
     fs.rmSync(tmp, { recursive: true, force: true });
   }
 });
+
+test('Scrape Atlas has an ungraded hosted MCP listing with a direct anchor and setup facts', () => {
+  const kinds = JSON.parse(fs.readFileSync(path.join(repoRoot, 'directory/kinds.json'), 'utf8'));
+  const mcp = kinds.kinds.find((kind) => kind.id === 'mcp-servers');
+  const entries = mcp.sections.flatMap((section) => section.entries);
+  const matching = entries.filter((entry) => entry.id === 'scrapeatlas');
+  assert.equal(matching.length, 1);
+  const entry = matching[0];
+  assert.equal(entry.name, 'Scrape Atlas');
+  assert.equal(entry.url, 'https://scrapeatlas.com/mcp/');
+  assert.equal(entry.publisher, 'Scrape Atlas');
+  assert.equal(entry.repo, undefined);
+  for (const field of ['score', 'grade', 'certified', 'verified', 'badges']) assert.equal(entry[field], undefined);
+  assert.match(entry.summary, /public profiles, posts, videos and conversations/);
+  assert.match(entry.summary, /account/);
+  assert.match(entry.summary, /credits/);
+  const html = fs.readFileSync(path.join(repoRoot, 'docs/directory/mcp-servers/index.html'), 'utf8');
+  const card = html.split('id="scrapeatlas"')[1]?.split('</article>')[0];
+  assert.ok(card, 'direct Scrape Atlas anchor exists');
+  assert.match(card, /https:\/\/scrapeatlas\.com\/mcp\//);
+  assert.doesNotMatch(card, /badge\.svg|security certified|score-shield|grade-shield/i);
+  assert.ok(html.includes(`${entries.length}</b> listed projects`));
+  assert.match(html, /repositories or official documentation/);
+  const llms = fs.readFileSync(path.join(repoRoot, 'docs/llms.txt'), 'utf8');
+  const mcpLine = llms.split('\n').find((line) => line.includes('[MCP servers]'));
+  assert.ok(mcpLine?.includes(`${entries.length} projects, listed and not graded.`));
+});

@@ -758,7 +758,7 @@
       "lead": "A Model Context Protocol server gives an agent access to a system it cannot reach on its own: a browser, a database, a billing API. A skill teaches the method; a server supplies the tools. The best setups pair the two.",
       "intro": [
         "Claude Code reads servers from .mcp.json in a project or from a plugin's mcpServers entry; Cursor, Codex, Gemini CLI, Goose and Grok Build have their own configuration files for the same servers. The official registry publishes a server.json for each listed server with a verified namespace.",
-        "A server holds credentials and acts on outside systems, so check what tools it exposes and what scopes its keys carry before you add it. The directory lists servers from their publisher's repository and does not score or scan them."
+        "A server holds credentials and acts on outside systems, so check what tools it exposes and what scopes its keys carry before you add it. The directory lists servers from their publisher's repository or official documentation and does not score or scan them."
       ],
       "docs": [
         {
@@ -877,6 +877,26 @@
               ]
             }
           ]
+        },
+        {
+          "id": "hosted",
+          "name": "Hosted MCP services",
+          "intro": "Connect to a publisher-operated service using its documented authentication and usage model.",
+          "entries": [
+            {
+              "id": "scrapeatlas",
+              "name": "Scrape Atlas",
+              "url": "https://scrapeatlas.com/mcp/",
+              "publisher": "Scrape Atlas",
+              "official": true,
+              "summary": "Retrieve public profiles, posts, videos and conversations for research through Scrape Atlas’s hosted MCP. Requires a Scrape Atlas account and a compatible MCP client; use the publisher’s documented OAuth or customer-key setup. Successful retrievals, including partial results, consume account credits; paid access uses one-time credit top-ups. Follow source-platform terms and data-use permissions.",
+              "tags": [
+                "hosted",
+                "public-data",
+                "research"
+              ]
+            }
+          ]
         }
       ],
       "faq": [
@@ -894,7 +914,7 @@
         ],
         [
           "Are the servers here scanned or scored?",
-          "No. Servers are listed from their publisher's repository with a short description. They carry no quality score, no security result and no verification badge from the directory."
+          "No. Servers are listed from their publisher's repository or official documentation with a short description. They carry no quality score, no security result and no verification badge from the directory."
         ]
       ],
       "keywords": [
