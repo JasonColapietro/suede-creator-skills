@@ -114,3 +114,15 @@ test('changing an agent request title does not hide a valid application form', a
   const body='### Request\n\nAdd\n\n### Official product URL\n\nhttps://example.com\n\n### Exact product and edition\n\nHosted';
   assert.equal(importApplications([issue({number:700,title:'Please consider my agent',body})]).length,1);
 });
+test('the three direct applicants have their approved editorial placement, independently of catalog scores', async () => {
+  const { applicationStatus } = await getModule();
+  const read = file => JSON.parse(fs.readFileSync(path.join(root,file),'utf8'));
+  const apps=read('directory/applications.json').applications;
+  const decisions=read('directory/application-decisions.json');
+  const model={skills:read('directory/skills.json').skills,editorial:read('directory/featured-projects.json')};
+  for (const [issue,id] of [[375,'datacircle'],[374,'resume-claim-guard'],[371,'socratic-story-cartographer']]) {
+    const result=applicationStatus(apps.find(a=>a.issue===issue), decisions[issue], model);
+    assert.equal(result.placement?.id,id);
+    assert.equal(result.review,`directory/reviews/2026-11-10-${id}.md`);
+  }
+});

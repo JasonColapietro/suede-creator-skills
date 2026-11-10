@@ -154,6 +154,16 @@ Missing roots or roots outside the checkout stop parsing. Fixture, internal and
 template paths below a reviewed root still fail the listing rules. A named
 allowlist or reviewed-root scope always omits whole-repository install commands.
 
+`skill_paths` can further restrict an accepted repository to exact source
+folders rather than descendants. This preserves root-only approvals even if a
+future harness copy reuses the same skill name.
+
+An explicit owner approval can record a `language_exceptions` entry for an
+already accepted skill name and exact source path, with its public approval
+comment. It preserves that skill's original description through the normal
+language filter only. Other checks, removals, scope restrictions and all scoring
+remain unchanged. The exception does not accept future skills or other paths.
+
 ## Quality scores and the two README badges
 
 Accepted listing requests can record supplementary independent curated-list

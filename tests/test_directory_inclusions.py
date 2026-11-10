@@ -25,7 +25,7 @@ def record(repo, name):
 
 
 class DirectoryInclusionTests(unittest.TestCase):
-    def curate(self, scopes, exclusions=None, extra_records=(), roots=None, citations=None):
+    def curate(self, scopes, exclusions=None, extra_records=(), roots=None, citations=None, language_exceptions=None, paths=None):
         with tempfile.TemporaryDirectory(prefix="directory-inclusions-") as tmp:
             work = Path(tmp)
             records = [record("publisher/skills", name) for name in
@@ -37,7 +37,7 @@ class DirectoryInclusionTests(unittest.TestCase):
                 if r.get("description")}
             inputs = {
                 "raw": records, "labels": labels,
-                "inclusions": {"repositories": ["publisher/skills"], "skills": scopes, "skill_roots": roots or {}, "citations": citations or {}},
+                "inclusions": {"repositories": ["publisher/skills"], "skills": scopes, "skill_roots": roots or {}, "citations": citations or {}, "language_exceptions": language_exceptions or {}, "skill_paths": paths or {}},
                 "exclusions": exclusions or {},
             }
             for name, value in inputs.items():
@@ -55,7 +55,7 @@ class DirectoryInclusionTests(unittest.TestCase):
     def repository_page(self, data):
         with tempfile.TemporaryDirectory(prefix="directory-scoped-install-") as tmp:
             work = Path(tmp)
-            for name in ("scripts/build-directory.mjs", "scripts/directory/installs.mjs", "scripts/directory/pixel-icons.mjs", "scripts/directory/badges.mjs",
+            for name in ("scripts/build-directory.mjs", "scripts/directory/installs.mjs", "scripts/directory/applications.mjs", "scripts/directory/pixel-icons.mjs", "scripts/directory/badges.mjs",
                          "scripts/directory/featured.mjs", "scripts/directory/editorial.mjs", "scripts/directory/metadata.mjs", "scripts/directory/check-client.js", "directory/featured-projects.json",
                          "scripts/directory/task-pages.mjs", "scripts/directory/versus.mjs", "directory/task-pages.json", "scripts/directory/topics.mjs", "scripts/directory/facets.mjs", "scripts/directory/listed-since.mjs", "directory/topics.json",
                          "directory/categories.json", "directory/notes.json",
@@ -183,6 +183,40 @@ class DirectoryInclusionTests(unittest.TestCase):
         self.assertEqual((by_name["six-of-seven"]["score"], by_name["six-of-seven"]["grade"]), (59, "D"))
         self.assertNotIn("featured", by_name["six-of-seven"])
         self.assertTrue(by_name["existing-skill"]["featured"])
+
+    def test_language_exception_is_exact_scoped_and_preserves_checks_and_source(self):
+        repo, name = "korey2028-prog/resume-claim-guard", "resume-claim-guard"
+        chinese = "在准备简历和面试材料时使用。确认候选人的实际职责、交付阶段和证据，不编造指标或经历。" * 3
+        accepted = {**record(repo, name), "dir": ".", "description": chinese}
+        exceptions = {repo: [{"name": name, "path": ".",
+                             "approval": "https://github.com/JasonColapietro/suede-creator-skills/issues/374#issuecomment-6779995466"}]}
+        alternatives = [accepted, {**accepted, "dir": "copies/skill"},
+                        {**accepted, "repo": "other/language-skill"},
+                        {**accepted, "name": "future-skill", "folder": "future-skill"}]
+        baseline = self.curate({repo: [name]}, extra_records=alternatives)
+        self.assertFalse(any(s["repo"] == repo for s in baseline["skills"]))
+        scoped = self.curate({repo: [name]}, extra_records=alternatives, language_exceptions=exceptions)
+        matches = [s for s in scoped["skills"] if s["repo"] == repo]
+        self.assertEqual(len(matches), 1)
+        self.assertEqual(matches[0]["dir"], ".")
+        self.assertEqual(matches[0]["description"], chinese)
+        self.assertEqual(matches[0]["checks"][4], "0", "English trigger detector is not rewritten")
+        self.assertFalse(any(s["repo"] == "other/language-skill" for s in scoped["skills"]))
+        for extra, exclusions in [([{**accepted, "body_lines": 600}], None),
+                                  ([accepted], {"skills": [repo + "/" + name]})]:
+            blocked = self.curate({repo: [name]}, exclusions, extra_records=extra, language_exceptions=exceptions)
+            self.assertFalse(any(s["repo"] == repo for s in blocked["skills"]))
+        # An exception does not create an acceptance scope by itself.
+        unaccepted = self.curate({}, extra_records=[accepted], language_exceptions=exceptions)
+        self.assertFalse(any(s["repo"] == repo for s in unaccepted["skills"]))
+
+    def test_exact_root_acceptance_rejects_english_same_name_harness_copies(self):
+        repo, name = "korey2028-prog/resume-claim-guard", "resume-claim-guard"
+        root = {**record(repo, name), "dir": "."}
+        mirror = {**root, "dir": ".claude/skills/resume-claim-guard"}
+        data = self.curate({repo: [name]}, extra_records=[root, mirror], paths={repo: ["."]})
+        matches = [s for s in data["skills"] if s["repo"] == repo]
+        self.assertEqual([s["dir"] for s in matches], ["."])
 
     def test_acceptance_does_not_override_exclusions(self):
         data = self.curate({"publisher/skills": ["accepted-one", "accepted-two"]},

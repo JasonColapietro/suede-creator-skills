@@ -66,5 +66,17 @@
   "359": {
     "feature_id": "cloudgpu",
     "scope_version": "8e72048ab422fad09586c9881c4be9f99594daef3697513a59b96a0de7618062"
+  },
+  "375": {
+    "feature_id": "datacircle",
+    "scope_version": "4e585cd1dd821958883fd442080a8ae340bf0afc5e15109fafbbb38d13b72c2a"
+  },
+  "374": {
+    "feature_id": "resume-claim-guard",
+    "scope_version": "8f6eaff1b5cfe3ab1a917c30fef0a61f9b1c35404421a7e32da984dde2139597"
+  },
+  "371": {
+    "feature_id": "socratic-story-cartographer",
+    "scope_version": "32bab7220728b680a0ba9bd81fc48017415df2e46153f62eea8ff653df335ead"
   }
 }

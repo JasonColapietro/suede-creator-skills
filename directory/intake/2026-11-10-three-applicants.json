@@ -465,7 +465,8 @@
         }
       ],
       "editorial_disposition": "owner_selected_neutral_feature",
-      "catalog_disposition": "held_english_description"
+      "catalog_disposition": "accepted_next_regular_refresh",
+      "language_exception_approval": "https://github.com/JasonColapietro/suede-creator-skills/issues/374#issuecomment-6779995466"
     },
     {
       "repo": "waynehamadi/datacircle",
