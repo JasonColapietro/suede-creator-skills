@@ -104,8 +104,17 @@ if (root) {
     renderReading(get('[data-workflow-reading]'), reading);
     updateExport();
   }
+  function suedeBadge() {
+    const badge = element('span', 'workflow-suede-badge');
+    const mark = element('img', 'workflow-suede-mark');
+    mark.src = '/assets/suede-ai-logo-transparent.png'; mark.alt = ''; mark.width = 28; mark.height = 28;
+    badge.append(mark, element('span', '', 'Suede AI pick'));
+    return badge;
+  }
   function skillItem(skill) {
-    const item = element('li', 'workflow-skill-item');
+    const suede = isFirstParty(skill);
+    const item = element('li', 'workflow-skill-item' + (suede ? ' is-suede' : ''));
+    if (suede) item.append(suedeBadge());
     const head = element('p', 'workflow-skill-meta');
     const link = element('a', 'workflow-skill', skill.name); link.href = skill.href;
     const facts = element('span', '', skill.repo);
@@ -164,8 +173,10 @@ if (root) {
       const item = element('li', 'workflow-step'); item.id = 'workflow-stage-' + i; route.setAttribute('aria-controls', item.id);
       item.append(element('p', 'eyebrow', `Step ${String(i + 1).padStart(2, '0')} / ${String(current.steps.length).padStart(2, '0')}`));
       const title = element('h4', '', step.title); title.tabIndex = -1; item.append(title, element('p', 'workflow-step-why', step.why));
-      const skillBox = element('div', 'workflow-skill-box');
+      const suede = isFirstParty(step.skill);
+      const skillBox = element('div', 'workflow-skill-box' + (suede ? ' is-suede' : ''));
       skillBox.append(element('span', 'eyebrow', 'Your skill for this step'));
+      if (suede) skillBox.append(suedeBadge());
       const skillLink = element('a', 'workflow-skill', step.skill.name); skillLink.href = step.skill.href;
       const meta = element('p', 'workflow-skill-meta'); meta.append(skillLink, element('span', '', step.skill.repo));
       skillBox.append(meta, element('p', 'workflow-setup', setupFacts(step.skill)));

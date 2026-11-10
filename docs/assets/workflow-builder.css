@@ -111,6 +111,13 @@
 .workflow-skill-description { margin: 0; font-size: 13px; color: var(--muted); display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
 .workflow-skill-item .workflow-setup { margin: auto 0 0; color: var(--faint); font-size: 11px; }
 .workflow-more { padding: 0 0 22px; }
+/* First-party identity follows the directory landing page's neutral tokens.
+   Keep the supplied S artwork unchanged and let the text identify ownership. */
+.workflow-skill-item.is-suede, .workflow-skill-box.is-suede { background: var(--paper); border-color: var(--line-strong); }
+.workflow-skill-item.is-suede:hover { border-color: var(--ink); }
+.workflow-suede-badge { display: inline-flex; align-items: center; align-self: flex-start; gap: 20px; min-height: 48px; padding: 10px 0; color: var(--ink); font: 10px/1.4 var(--mono); letter-spacing: .06em; text-transform: uppercase; }
+.workflow-suede-mark { flex: none; width: 28px; height: 28px; object-fit: contain; }
+.workflow-skill-box > .workflow-suede-badge { display: flex; width: max-content; max-width: 100%; margin-top: 8px; }
 .workflow-more h4 { font-size: 15px; margin-bottom: 12px; }
 /* The finder and the Best of tiles share the first screen on wide displays.
    Once recommendations appear they take the full width and the tiles move
