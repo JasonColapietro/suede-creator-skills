@@ -78,8 +78,11 @@ Each skill appears in one category. A repository can contribute to several categ
 - **[Email Marketing Skills by Poptin](featured.md#poptin-email-marketing)** by [email-marketing-skills-hub](https://github.com/email-marketing-skills-hub). Choose from twenty focused skills for campaign copy, lifecycle automation, segmentation, deliverability and signup experiences. Five core workflows and fifteen industry specialists work with your chosen marketing stack.
 - **[CloudGPU](featured.md#cloudgpu)** by [mrhy7176](https://github.com/mrhy7176). Five workflows cover compute proposals, ComfyUI images, short-drama assets, LoRA training and open-model inference with approved budgets and explicit exports.
 - **[agentswarm-work](featured.md#agentswarm-work)** by [andrewsiah](https://github.com/andrewsiah). A scoped workflow for finding a suitable agentswarm.space task, reusing an authorized identity and submitting real work within the user’s chosen scope.
+- **[Datacircle](featured.md#datacircle)** by [waynehamadi](https://github.com/waynehamadi). Bring provider plans, prices per 1,000 results, returned fields and rate limits into one JSON or CSV dataset, then build a shortlist with local queries.
+- **[Resume Claim Guard](featured.md#resume-claim-guard)** by [korey2028-prog](https://github.com/korey2028-prog). Start with a job description, surface relevant real experience, confirm the facts, then draft a targeted resume and rehearse the questions each claim may invite.
+- **[Socratic Story Cartographer](featured.md#socratic-story-cartographer)** by [OakcoderX](https://github.com/OakcoderX). Compare competing explanations for a story problem, anchor each diagnosis in the manuscript, and test a small revision while preserving the qualities that already work.
 
-These 15 editorial selections have [reviewed scope and setup guidance](featured.md); 5 more are featured with scan &amp; review pending. Editorial selection is separate from quality scores, security certification and README-badge verification. Featured plugins outside the scored skill snapshot are not included in the skill or repository counts above.
+These 18 editorial selections have [reviewed scope and setup guidance](featured.md); 5 more are featured with scan &amp; review pending. Editorial selection is separate from quality scores, security certification and README-badge verification. Featured plugins outside the scored skill snapshot are not included in the skill or repository counts above.
 
 ## Guides
 

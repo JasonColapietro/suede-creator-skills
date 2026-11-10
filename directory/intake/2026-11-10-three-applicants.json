@@ -1,0 +1,598 @@
+{
+  "review_date": "2026-11-10",
+  "score_method": "graded-v2",
+  "method": "Pinned source structural assessment and targeted read-only source inspection. Python and JavaScript independently produced identical scores. No target execution, paid runs or full security scan. Owner-selected editorial features use neutral non-graded Featured badges; authentic scores are unchanged.",
+  "repositories": [
+    {
+      "repo": "OakcoderX/awesome-agent-skills",
+      "commit": "aa7f5c5ccc7ea0a3e9122c40d74a7a91d7289b3f",
+      "scope": [
+        "socratic-story-cartographer"
+      ],
+      "path": "socratic-story-cartographer",
+      "license": "MIT",
+      "security_scan_status": "not_scanned",
+      "score": 72,
+      "grade": "C",
+      "checks": {
+        "frontmatter": true,
+        "name_format": true,
+        "name_matches_folder": true,
+        "description_length": true,
+        "description_trigger": true,
+        "concise_body": false,
+        "license": true,
+        "maintained": true
+      },
+      "body_lines": 775,
+      "body_words": 2783,
+      "score_points": {
+        "structure": 48,
+        "description_length": 5,
+        "boundary": 0,
+        "example": 0,
+        "depth": 7,
+        "references": 3,
+        "scripts": 0,
+        "recency": 9,
+        "adoption": 0,
+        "allowed_tools": 0,
+        "compatibility": 0
+      },
+      "score_python_javascript_agree": true,
+      "english_description_policy_pass": true,
+      "preliminary_policy_rule": null,
+      "source_file_digests": [
+        {
+          "path": "LICENSE",
+          "sha256": "17a5b3b9a701b28197b4f921c363d0eba6d7a77f8289fa1aa34df572be7ce5b6",
+          "bytes": 1066
+        },
+        {
+          "path": "socratic-story-cartographer/AB-TEST.md",
+          "sha256": "14e5939c160994027c32efe16b4e37af783e6639f52be4ea543def2567a55951",
+          "bytes": 5420
+        },
+        {
+          "path": "socratic-story-cartographer/BENCHMARK.md",
+          "sha256": "c81f0ed7355f2d62da3647cf6b3ab43a4d6b919a1bb402ebd3b2f11fdcd63732",
+          "bytes": 7080
+        },
+        {
+          "path": "socratic-story-cartographer/FIRST-TEST.md",
+          "sha256": "9123c76cf7e5bba24e184f3799f85b77a2afcbbd313d31c4ec0b6772a911cf44",
+          "bytes": 2171
+        },
+        {
+          "path": "socratic-story-cartographer/PROMOTION_KIT.md",
+          "sha256": "f37c208091dae83559f048ac6e9ba537ad05208f34f71e167e03f0e1ae9f227e",
+          "bytes": 12136
+        },
+        {
+          "path": "socratic-story-cartographer/PROMOTION_LOG.md",
+          "sha256": "0b3baaf647751a72d681f7b0fb011023c341dd15ae376defb603ed30e4a2b43f",
+          "bytes": 16169
+        },
+        {
+          "path": "socratic-story-cartographer/README.en.md",
+          "sha256": "dde5318aed80352dfd4ac3f6ab5c7f257bfa5e3c9f3851ce25163c3ed201ccb4",
+          "bytes": 4277
+        },
+        {
+          "path": "socratic-story-cartographer/README.md",
+          "sha256": "66ebb7ee6f3f89044e8a9b1dedf8c9ae191c6923d37f7d460b6a8656ebed9349",
+          "bytes": 6100
+        },
+        {
+          "path": "socratic-story-cartographer/README.zh.md",
+          "sha256": "2d91b32c333500379817d2fbde24e76f29cd761515dfd770963012dc32952b38",
+          "bytes": 3977
+        },
+        {
+          "path": "socratic-story-cartographer/SKILL.md",
+          "sha256": "f61d3024b2ef3a0cbf149f8710a5f74a89019d1e632ad98f1724348582ecde6d",
+          "bytes": 19257
+        },
+        {
+          "path": "socratic-story-cartographer/references/BENCHMARK.md",
+          "sha256": "278e25468a2a7cb8631aacd4b99337f2e35d4702c2b60642086c4434b47dc1cf",
+          "bytes": 1189
+        },
+        {
+          "path": "socratic-story-cartographer/references/long-work-evidence.md",
+          "sha256": "2acb0e3e00317ff19003d36212d8932827bb5de729e82384a328ded181a01d6f",
+          "bytes": 3867
+        },
+        {
+          "path": "socratic-story-cartographer/references/producer-outline-review.md",
+          "sha256": "46484c45829a76fb366650f1e223d78ef3021a97ea89d7fd7e0d456c9a5de2f0",
+          "bytes": 6762
+        },
+        {
+          "path": "socratic-story-cartographer/references/promotion-review-2026-08-20.md",
+          "sha256": "d41de32e614744bc0f424f408a63dcd4a09cafca955e786821a7297cb5fed99e",
+          "bytes": 4514
+        },
+        {
+          "path": "socratic-story-cartographer/skill.json",
+          "sha256": "8981adb1cf20b474f3179122b28751183b991c03d4e4cb81c8dccf1727a51249",
+          "bytes": 534
+        }
+      ],
+      "curated_list_evidence": [
+        {
+          "repo": "BehiSecc/awesome-claude-skills",
+          "commit": "adf99015a0ad4dac11711c261f0f9b433e4215e7",
+          "path": "README.md",
+          "sha256": "78f4ef90464fc29fbf1d31ca9bef572f4920afe8d2b4e8dd9b768c99be0c463d",
+          "verified_at": "2026-11-10",
+          "target_matches": []
+        },
+        {
+          "repo": "ComposioHQ/awesome-claude-skills",
+          "commit": "be2a406907dbc61b73e6827ded415c96139d13a2",
+          "path": "README.md",
+          "sha256": "e693f2701840f26fb04c3058d55215f2c6575fff7f1c197ada5b64e2f7ee0c12",
+          "verified_at": "2026-11-10",
+          "target_matches": []
+        },
+        {
+          "repo": "VoltAgent/awesome-agent-skills",
+          "commit": "6d483e29da745a010d88974ef6d0e50d15755e9a",
+          "path": "README.md",
+          "sha256": "c2f3447c752015a67db5e7eefb86790fc3945f311e9643232c4733da146160d4",
+          "verified_at": "2026-11-10",
+          "target_matches": []
+        },
+        {
+          "repo": "heilcheng/awesome-agent-skills",
+          "commit": "a92b1f3a9cdf00b056a8cc3247f214a139a95ae3",
+          "path": "README.md",
+          "sha256": "cf887b175e358dd1833ba4cc2f6ab6d62fee388da808290c2dfc10a0fea57b7a",
+          "verified_at": "2026-11-10",
+          "target_matches": []
+        },
+        {
+          "repo": "hesreallyhim/awesome-claude-code",
+          "commit": "0553b11050d18fab078108256ee0b6df8214d7fa",
+          "path": "README.md",
+          "sha256": "d5a9f47112bbc755d06b118595d7c5baf7ff72cb867510eb3275eb058ad288c3",
+          "verified_at": "2026-11-10",
+          "target_matches": []
+        },
+        {
+          "repo": "karanb192/awesome-claude-skills",
+          "commit": "7b2650b08cd3e287a64b50897bc941dedee6c29d",
+          "path": "README.md",
+          "sha256": "f112e0d168b32709061d3817e2cdeb8411958dcc09d96250024fb30ed6e77386",
+          "verified_at": "2026-11-10",
+          "target_matches": [
+            "korey2028-prog/resume-claim-guard"
+          ]
+        },
+        {
+          "repo": "skillmatic-ai/awesome-agent-skills",
+          "commit": "cdf5ae3ff506e6f3737122bb9d24ac7d727cb6a0",
+          "path": "README.md",
+          "sha256": "2415c6138808b505533ab5bad33b02e336be1b22faaf230e962e967760b96aea",
+          "verified_at": "2026-11-10",
+          "target_matches": []
+        },
+        {
+          "repo": "travisvn/awesome-claude-skills",
+          "commit": "1da55aa810f206d3fe2005e7e3989b15a275d942",
+          "path": "README.md",
+          "sha256": "b15fa837edeb632f4a85871590df4dab64deec10af904d512a5ee12bce8773c9",
+          "verified_at": "2026-11-10",
+          "target_matches": []
+        }
+      ],
+      "editorial_disposition": "owner_selected_neutral_feature",
+      "catalog_disposition": "accepted_next_regular_refresh"
+    },
+    {
+      "repo": "korey2028-prog/resume-claim-guard",
+      "commit": "42406b9d9511705ec798922ac5d8e4b0c4f35505",
+      "scope": [
+        "resume-claim-guard"
+      ],
+      "path": ".",
+      "license": "MIT",
+      "security_scan_status": "not_scanned",
+      "score": 72,
+      "grade": "C",
+      "checks": {
+        "frontmatter": true,
+        "name_format": true,
+        "name_matches_folder": true,
+        "description_length": true,
+        "description_trigger": false,
+        "concise_body": true,
+        "license": true,
+        "maintained": true
+      },
+      "body_lines": 88,
+      "body_words": 274,
+      "score_points": {
+        "structure": 48,
+        "description_length": 5,
+        "boundary": 0,
+        "example": 0,
+        "depth": 4,
+        "references": 3,
+        "scripts": 2,
+        "recency": 9,
+        "adoption": 1,
+        "allowed_tools": 0,
+        "compatibility": 0
+      },
+      "score_python_javascript_agree": true,
+      "english_description_policy_pass": false,
+      "preliminary_policy_rule": null,
+      "source_file_digests": [
+        {
+          "path": ".github/workflows/validate.yml",
+          "sha256": "ac5a3752ec4aee5fb178072c699fbf13ad454f8bad984aeae7315a4bde7b57c8",
+          "bytes": 261
+        },
+        {
+          "path": "CHANGELOG.md",
+          "sha256": "73aab5749f27fbcf412c4a91f21b564cee75439f86b081f2bcba1fb3fb721838",
+          "bytes": 3137
+        },
+        {
+          "path": "LICENSE",
+          "sha256": "03641028958eef719d70c40af692a7d8fd36326df2fb5a923c7bf3022ef64858",
+          "bytes": 1088
+        },
+        {
+          "path": "PROMPT.md",
+          "sha256": "7a134cab417a299f0cc465fa0e882656970d2fae29415587aa465fb2584c978c",
+          "bytes": 5624
+        },
+        {
+          "path": "README.md",
+          "sha256": "1a0a509eeb25ad3a847498740e6cc504955be65e413fcb4e805c33ccea7792b7",
+          "bytes": 7506
+        },
+        {
+          "path": "SKILL.md",
+          "sha256": "84199908dea87ac8b995a07fe33dc048b82716f48f17460cc645e86219b1ae7b",
+          "bytes": 8632
+        },
+        {
+          "path": "agents/openai.yaml",
+          "sha256": "8634a6d30884ed9349c142c443ba7be8f35eb62f7a33a14936b0214ec3504b59",
+          "bytes": 391
+        },
+        {
+          "path": "examples/jd-to-interview/README.md",
+          "sha256": "9feaae1a8b8cb573c3f8165597ac1c2cb4ad7a2b96cea1b1ad2f3cdfc5f1aed4",
+          "bytes": 874
+        },
+        {
+          "path": "examples/jd-to-interview/conversation.md",
+          "sha256": "f7470dd3ddd9ae016603b9b761265520fd63a5327f15fb2adf99f53ac9757275",
+          "bytes": 6568
+        },
+        {
+          "path": "examples/jd-to-interview/facts.md",
+          "sha256": "367378422f9e207ca84e22577f5d2504dbb17dab9baff6bc855079b373af44e7",
+          "bytes": 3627
+        },
+        {
+          "path": "examples/jd-to-interview/jd.md",
+          "sha256": "cb6f1204338ec4e9fc519ffe936f59193d09d761a3415dad8092239e6f3f931c",
+          "bytes": 1261
+        },
+        {
+          "path": "examples/jd-to-interview/output.md",
+          "sha256": "2b37b72b60872338c78e1640f79348259e507567a28a47d5953eec15d81d7ccb",
+          "bytes": 21773
+        },
+        {
+          "path": "examples/jd-to-interview/resume-old.md",
+          "sha256": "e6e8a48f37f36eb8574e54f85406d80e8217c7552b678a1fe6211266ff25fa91",
+          "bytes": 1010
+        },
+        {
+          "path": "examples/jd-to-interview/resume-targeted.md",
+          "sha256": "20ebcf37ef5c5df1173addfe6c404b939ded6ec6bc6c1c6d1f99cd2a3ab87330",
+          "bytes": 1946
+        },
+        {
+          "path": "examples/multi-version/audit-result.md",
+          "sha256": "a7409212d9bd0fab39c1aa82dc5bc251f9bfbf1aee4e66102a0de106346ed259",
+          "bytes": 6071
+        },
+        {
+          "path": "examples/multi-version/facts.md",
+          "sha256": "b519b341675fc9519ac8729917a4bb2a9afc6eb52cfa42968ec8f7354876be85",
+          "bytes": 708
+        },
+        {
+          "path": "examples/multi-version/resume-a.txt",
+          "sha256": "619cd9363f5579578310f1898a569eee841b7310ca2efa333233efa003d40fc6",
+          "bytes": 295
+        },
+        {
+          "path": "examples/multi-version/resume-b.txt",
+          "sha256": "7307c97b6c1982652a86bb7ee17eae6d5aaf54dae16e791f1a6cdb9ca7084bcc",
+          "bytes": 355
+        },
+        {
+          "path": "examples/single-html/audit-result.md",
+          "sha256": "cd55469ea4b68a59b2402dc26de668bda536080a834df22dc29ddde98f1d2f4a",
+          "bytes": 3618
+        },
+        {
+          "path": "examples/single-html/facts.md",
+          "sha256": "d7591e797cf12ebdd59940fdfb4456609f82f8d2d3dee33db5c9e742fd05b206",
+          "bytes": 537
+        },
+        {
+          "path": "examples/single-html/resume.html",
+          "sha256": "27191852705a9438c44a51bb42af5fc6b5f97b49ad017804abe48c7c177fabaa",
+          "bytes": 538
+        },
+        {
+          "path": "platforms/chatgpt-gpt.md",
+          "sha256": "fb0973bc9bd5f109e93ead4ca8e2be7ec1f011cbb79379144c37672f87e2f4e8",
+          "bytes": 1165
+        },
+        {
+          "path": "platforms/doubao-agent.md",
+          "sha256": "83667f2ecbeaf8456ef69f828f716b785fcb5add89d23236d3f968f97b4f7533",
+          "bytes": 1314
+        },
+        {
+          "path": "references/claim-audit.md",
+          "sha256": "6933ed253c90f4310e0210d4236bb7ea3c3f7f129a436cfeeefd10e52468f2a5",
+          "bytes": 3614
+        },
+        {
+          "path": "references/intake-questions.md",
+          "sha256": "4b29c6c13b10cfdac9922bf2e91a935645828774d23be96b97eb160b8a043893",
+          "bytes": 4584
+        },
+        {
+          "path": "references/interview-probe.md",
+          "sha256": "4c5feec59a9f3686cb84d2297174c1a1522a8ca6833ce64c96e11fd126238636",
+          "bytes": 2335
+        },
+        {
+          "path": "references/jd-breakdown.md",
+          "sha256": "0ae8f6236bfb52e89a4de9281257baa00f182c3cf73b54c653e966787d09b608",
+          "bytes": 2589
+        },
+        {
+          "path": "references/output-formats.md",
+          "sha256": "6fe57f3be70527679445914f9c913a7fb703f11fd2dd043acf894e540390c1af",
+          "bytes": 2053
+        },
+        {
+          "path": "references/resume-writing.md",
+          "sha256": "9c663eeca906669d7b7a53b410a33d6ca89bf6ddd5e8d5bba63447fcdef96b46",
+          "bytes": 1977
+        },
+        {
+          "path": "references/typography.md",
+          "sha256": "0592b37100065ae26383bef8a70eef9fd7ec0b598f0839317802e34e1a0e2eb3",
+          "bytes": 1233
+        },
+        {
+          "path": "scripts/validate.py",
+          "sha256": "b7a0c429651197a3c811494929716cc149a594144f361cf9acc7196c6efc31e5",
+          "bytes": 3316
+        },
+        {
+          "path": "templates/facts.md",
+          "sha256": "09c96a52aa57066b2050746e7fed09fe7bd76fa1b196246bc82ad4aa1de02dfb",
+          "bytes": 1057
+        },
+        {
+          "path": "tests/web-chat.md",
+          "sha256": "d16fd72f80e782445c63c28ae0b235d15d90e118be20715c229b9c1f6f72d2af",
+          "bytes": 3775
+        }
+      ],
+      "curated_list_evidence": [
+        {
+          "repo": "BehiSecc/awesome-claude-skills",
+          "commit": "adf99015a0ad4dac11711c261f0f9b433e4215e7",
+          "path": "README.md",
+          "sha256": "78f4ef90464fc29fbf1d31ca9bef572f4920afe8d2b4e8dd9b768c99be0c463d",
+          "verified_at": "2026-11-10",
+          "target_matches": []
+        },
+        {
+          "repo": "ComposioHQ/awesome-claude-skills",
+          "commit": "be2a406907dbc61b73e6827ded415c96139d13a2",
+          "path": "README.md",
+          "sha256": "e693f2701840f26fb04c3058d55215f2c6575fff7f1c197ada5b64e2f7ee0c12",
+          "verified_at": "2026-11-10",
+          "target_matches": []
+        },
+        {
+          "repo": "VoltAgent/awesome-agent-skills",
+          "commit": "6d483e29da745a010d88974ef6d0e50d15755e9a",
+          "path": "README.md",
+          "sha256": "c2f3447c752015a67db5e7eefb86790fc3945f311e9643232c4733da146160d4",
+          "verified_at": "2026-11-10",
+          "target_matches": []
+        },
+        {
+          "repo": "heilcheng/awesome-agent-skills",
+          "commit": "a92b1f3a9cdf00b056a8cc3247f214a139a95ae3",
+          "path": "README.md",
+          "sha256": "cf887b175e358dd1833ba4cc2f6ab6d62fee388da808290c2dfc10a0fea57b7a",
+          "verified_at": "2026-11-10",
+          "target_matches": []
+        },
+        {
+          "repo": "hesreallyhim/awesome-claude-code",
+          "commit": "0553b11050d18fab078108256ee0b6df8214d7fa",
+          "path": "README.md",
+          "sha256": "d5a9f47112bbc755d06b118595d7c5baf7ff72cb867510eb3275eb058ad288c3",
+          "verified_at": "2026-11-10",
+          "target_matches": []
+        },
+        {
+          "repo": "karanb192/awesome-claude-skills",
+          "commit": "7b2650b08cd3e287a64b50897bc941dedee6c29d",
+          "path": "README.md",
+          "sha256": "f112e0d168b32709061d3817e2cdeb8411958dcc09d96250024fb30ed6e77386",
+          "verified_at": "2026-11-10",
+          "target_matches": [
+            "korey2028-prog/resume-claim-guard"
+          ]
+        },
+        {
+          "repo": "skillmatic-ai/awesome-agent-skills",
+          "commit": "cdf5ae3ff506e6f3737122bb9d24ac7d727cb6a0",
+          "path": "README.md",
+          "sha256": "2415c6138808b505533ab5bad33b02e336be1b22faaf230e962e967760b96aea",
+          "verified_at": "2026-11-10",
+          "target_matches": []
+        },
+        {
+          "repo": "travisvn/awesome-claude-skills",
+          "commit": "1da55aa810f206d3fe2005e7e3989b15a275d942",
+          "path": "README.md",
+          "sha256": "b15fa837edeb632f4a85871590df4dab64deec10af904d512a5ee12bce8773c9",
+          "verified_at": "2026-11-10",
+          "target_matches": []
+        }
+      ],
+      "editorial_disposition": "owner_selected_neutral_feature",
+      "catalog_disposition": "held_english_description"
+    },
+    {
+      "repo": "waynehamadi/datacircle",
+      "commit": "f01f6f79daecb3b190ee19f49a60cedc6789f354",
+      "scope": [
+        "datacircle"
+      ],
+      "path": "skills/datacircle",
+      "license": "MIT",
+      "security_scan_status": "not_scanned",
+      "score": 63,
+      "grade": "D",
+      "checks": {
+        "frontmatter": true,
+        "name_format": true,
+        "name_matches_folder": true,
+        "description_length": true,
+        "description_trigger": false,
+        "concise_body": true,
+        "license": true,
+        "maintained": true
+      },
+      "body_lines": 408,
+      "body_words": 12555,
+      "score_points": {
+        "structure": 48,
+        "description_length": 5,
+        "boundary": 0,
+        "example": 0,
+        "depth": 1,
+        "references": 0,
+        "scripts": 0,
+        "recency": 9,
+        "adoption": 0,
+        "allowed_tools": 0,
+        "compatibility": 0
+      },
+      "score_python_javascript_agree": true,
+      "english_description_policy_pass": true,
+      "preliminary_policy_rule": null,
+      "source_file_digests": [
+        {
+          "path": "LICENSE",
+          "sha256": "0e767f7f9bbfd6fbb6f36d461641d45d8d9d964d11612044ba6df74cc6842c3f",
+          "bytes": 1067
+        },
+        {
+          "path": "README.md",
+          "sha256": "5b730f2cf175cb6c3b48628c51134f8fd8c5ab4385ab72bd489086b032063f6c",
+          "bytes": 14369
+        },
+        {
+          "path": "skills/datacircle/SKILL.md",
+          "sha256": "40aedd88f44fa5e52be20b74f576ee4dc490e98d589f429732fae85da1bbbd33",
+          "bytes": 75566
+        }
+      ],
+      "curated_list_evidence": [
+        {
+          "repo": "BehiSecc/awesome-claude-skills",
+          "commit": "adf99015a0ad4dac11711c261f0f9b433e4215e7",
+          "path": "README.md",
+          "sha256": "78f4ef90464fc29fbf1d31ca9bef572f4920afe8d2b4e8dd9b768c99be0c463d",
+          "verified_at": "2026-11-10",
+          "target_matches": []
+        },
+        {
+          "repo": "ComposioHQ/awesome-claude-skills",
+          "commit": "be2a406907dbc61b73e6827ded415c96139d13a2",
+          "path": "README.md",
+          "sha256": "e693f2701840f26fb04c3058d55215f2c6575fff7f1c197ada5b64e2f7ee0c12",
+          "verified_at": "2026-11-10",
+          "target_matches": []
+        },
+        {
+          "repo": "VoltAgent/awesome-agent-skills",
+          "commit": "6d483e29da745a010d88974ef6d0e50d15755e9a",
+          "path": "README.md",
+          "sha256": "c2f3447c752015a67db5e7eefb86790fc3945f311e9643232c4733da146160d4",
+          "verified_at": "2026-11-10",
+          "target_matches": []
+        },
+        {
+          "repo": "heilcheng/awesome-agent-skills",
+          "commit": "a92b1f3a9cdf00b056a8cc3247f214a139a95ae3",
+          "path": "README.md",
+          "sha256": "cf887b175e358dd1833ba4cc2f6ab6d62fee388da808290c2dfc10a0fea57b7a",
+          "verified_at": "2026-11-10",
+          "target_matches": []
+        },
+        {
+          "repo": "hesreallyhim/awesome-claude-code",
+          "commit": "0553b11050d18fab078108256ee0b6df8214d7fa",
+          "path": "README.md",
+          "sha256": "d5a9f47112bbc755d06b118595d7c5baf7ff72cb867510eb3275eb058ad288c3",
+          "verified_at": "2026-11-10",
+          "target_matches": []
+        },
+        {
+          "repo": "karanb192/awesome-claude-skills",
+          "commit": "7b2650b08cd3e287a64b50897bc941dedee6c29d",
+          "path": "README.md",
+          "sha256": "f112e0d168b32709061d3817e2cdeb8411958dcc09d96250024fb30ed6e77386",
+          "verified_at": "2026-11-10",
+          "target_matches": [
+            "korey2028-prog/resume-claim-guard"
+          ]
+        },
+        {
+          "repo": "skillmatic-ai/awesome-agent-skills",
+          "commit": "cdf5ae3ff506e6f3737122bb9d24ac7d727cb6a0",
+          "path": "README.md",
+          "sha256": "2415c6138808b505533ab5bad33b02e336be1b22faaf230e962e967760b96aea",
+          "verified_at": "2026-11-10",
+          "target_matches": []
+        },
+        {
+          "repo": "travisvn/awesome-claude-skills",
+          "commit": "1da55aa810f206d3fe2005e7e3989b15a275d942",
+          "path": "README.md",
+          "sha256": "b15fa837edeb632f4a85871590df4dab64deec10af904d512a5ee12bce8773c9",
+          "verified_at": "2026-11-10",
+          "target_matches": []
+        }
+      ],
+      "editorial_disposition": "owner_selected_neutral_feature",
+      "catalog_disposition": "accepted_next_regular_refresh"
+    }
+  ]
+}
