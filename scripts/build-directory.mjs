@@ -4592,7 +4592,7 @@ if (fs.existsSync(path.join(repoRoot, 'directory/applications.json'))) {
   const agentFile = path.join(repoRoot, 'directory/agents/ungraded.json');
   const agents = fs.existsSync(agentFile) ? JSON.parse(fs.readFileSync(agentFile, 'utf8')).entries : [];
   files.set('directory/applications/index.html', renderApplications(applications, decisions, { skills: data.skills, editorial: EDITORIAL, agents }, {
-    page, crumbs, rel, url, esc, setKeywords, exists: file => fs.existsSync(path.join(repoRoot, file)),
+    page, crumbs, rel, url, esc, setKeywords, publisher: PUBLISHER_REF, directoryRef: DIRECTORY_REF, exists: file => fs.existsSync(path.join(repoRoot, file)),
   }));
 }
 renderCheck();

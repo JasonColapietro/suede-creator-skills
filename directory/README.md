@@ -14,7 +14,7 @@ The [Suede Awesome Everything catalog](../awesome/README.md) is the GitHub Markd
 | `categories.json` | The sixteen category directories: slug, title and intro copy | Hand-written |
 | `task-pages.json` | The keyword map behind the task pages (`/for/<job>/`, "What are the best Claude Code skills for <job>?") and the "<skill> alternatives" pages. A job gets a page only when at least 5 listed skills match and at least 3 of them have full pages scoring 80 or more; Suede AI's own skills are never ranked (`scripts/directory/task-pages.mjs`) | Hand-written |
 | `topics.json` | The taxonomy behind the topic pages (`/topics/<id>/`): groups, topics with keyword patterns, and the Futurepedia labels each one stands in for, which the parity audit reads. A topic gets a page when at least 3 listed skills match it (`scripts/directory/topics.mjs`) | Hand-written |
-| `applications.json` | Sanitized public GitHub applications: source issue, requested repository/scope, submission date and issue state; public applicant handles, no private contacts | `npm run sync:applications` |
+| `applications.json` | Sanitized public GitHub applications: source issue, requested repository/scope, submission date and issue state; public applicant handles, no private contacts | `node scripts/directory/sync-applications.mjs` |
 | `application-decisions.json` | Explicit links from an application issue to its reviewed feature/member entry or standalone review; independent of GitHub issue state | Reviewed by hand or by an agent |
 | `inclusions.json` | Repositories (`owner/repo`) added from accepted listing requests, with optional per-repository skill-name allowlists; read on the next refresh even when no curated list cites them | Hand-written |
 | `notes.json` | Publisher install routes for restricted-license skills, and required service setup for other skills, shown in the installation section with a link to the source | Hand-written |
@@ -356,7 +356,7 @@ maintainer-submitted listing requests and requests made on their behalf. It
 covers public GitHub applications, including AI-assisted requests. It does not
 publish private email or message submissions, contact details, private profile details, or issue bodies. A project discovered by curation is not an applicant.
 
-Run `npm run sync:applications` before rebuilding to read every page of the
+Run `node scripts/directory/sync-applications.mjs` before rebuilding to read every page of the
 canonical public repository's issue tracker. The existing weekly refresh also
 runs this command on its normal proposal branch. The importer accepts only
 explicit listing requests with the maintainer confirmation (plus documented
