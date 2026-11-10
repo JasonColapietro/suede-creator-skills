@@ -66,6 +66,12 @@ export async function verifyWorkflowBuilder(page, base, output, route = '/direct
   assert.match(await page.locator('[data-workflow-heading]').textContent(), /Landing page \+ Social campaign/);
   const roadmap = page.locator('[data-workflow-route] button');
   assert.equal(await roadmap.count(), 8);
+  const firstStep = page.locator('.workflow-step:not([hidden])');
+  assert.equal(await firstStep.locator('.workflow-suede-mark').count(), 1, 'Suede selections show the official S');
+  await firstStep.getByLabel('Choose a skill', { exact: true }).selectOption('mblode/agent-skills/ghostwriter');
+  assert.equal(await firstStep.locator('.workflow-suede-mark').count(), 0, 'third-party selections have no Suede publisher mark');
+  await firstStep.getByLabel('Choose a skill', { exact: true }).selectOption('jasoncolapietro/suede-creator-skills/suede-copy');
+  assert.equal(await firstStep.locator('.workflow-suede-mark').count(), 1, 'returning to Suede restores the mark');
   await roadmap.nth(1).focus(); await page.keyboard.press('Enter');
   assert.equal(await roadmap.nth(1).getAttribute('aria-current'), 'step');
   assert.equal(await page.locator('.workflow-step:not([hidden])').count(), 1);
@@ -75,6 +81,7 @@ export async function verifyWorkflowBuilder(page, base, output, route = '/direct
   assert.match(await page.locator('[data-workflow-export]').inputValue(), /\[done\]/);
   const alternative = activeStage.getByLabel('Choose a skill', { exact: true });
   await alternative.selectOption('anthropics/skills/frontend-design');
+  assert.equal(await activeStage.locator('.workflow-suede-mark').count(), 0, 'third-party selections have no Suede publisher mark');
   assert.match(await activeStage.locator('.workflow-skill').textContent(), /frontend-design/);
   assert.match(await page.locator('[data-workflow-export]').inputValue(), /Skill: frontend-design/);
   assert.match(await page.locator('[data-workflow-progress-label]').textContent(), /^0 of 8/);
@@ -93,7 +100,13 @@ export async function verifyWorkflowBuilder(page, base, output, route = '/direct
   await page.getByLabel('Plan depth', { exact: false }).selectOption('full');
   await brief.fill('Build a landing page <img src=x onerror=alert(1)>'); await submit.click();
   await page.locator('[data-workflow-results]').waitFor({ state: 'visible' });
-  assert.equal(await page.locator('#workflow-builder img').count(), 0);
+  assert.equal(await page.locator('#workflow-builder img:not(.workflow-suede-mark)').count(), 0, 'brief markup cannot inject an image');
+  const marks = page.locator('#workflow-builder .workflow-suede-mark');
+  assert.ok(await marks.count() > 0, 'official marks are rendered');
+  for (const mark of await marks.all()) {
+    assert.equal(await mark.getAttribute('src'), '/assets/suede-ai-logo-transparent.png');
+    assert.ok(await mark.evaluate(img => img.complete && img.naturalWidth === 400), 'the supplied logo loads');
+  }
   await page.context().grantPermissions(['clipboard-read', 'clipboard-write']);
   await page.getByRole('button', { name: 'Copy workflow', exact: true }).click();
   await page.waitForFunction(() => document.querySelector('[data-workflow-status]').textContent.includes('Copied'));

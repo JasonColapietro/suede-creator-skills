@@ -175,3 +175,23 @@ test('a ready workflow adds extra matching skills that are not already steps or 
   assert.match(more[0], /\/jasoncolapietro\/suede-creator-skills\//, 'a matching Suede AI skill leads');
   assert.match(c.elements['[data-workflow-export]'].value, /Read next: /);
 });
+
+test('only first-party recommendations and steps display the supplied Suede S mark', async () => {
+  const c = client(); await c.build('I’m a musician releasing a new single');
+  const cards = c.elements['[data-workflow-skill-list]'].children;
+  assert.ok(cards.some(card => !/\/jasoncolapietro\/suede-creator-skills\//.test(links(card)[0])));
+  for (const card of cards) {
+    const firstParty = /\/jasoncolapietro\/suede-creator-skills\//.test(links(card)[0]);
+    const marks = walk(card).filter(node => node.className === 'workflow-suede-mark');
+    assert.equal(marks.length, firstParty ? 1 : 0);
+    if (firstParty) {
+      assert.equal(marks[0].src, '/assets/suede-ai-logo-transparent.png');
+      assert.equal(marks[0].alt, '', 'the adjacent Suede AI label names the decorative mark');
+      assert.equal(marks[0].width, marks[0].height, 'the mark keeps its proportions');
+      assert.ok(walk(card).some(node => node.textContent === 'Suede AI pick'));
+    }
+  }
+  const plan = client(); await plan.build('Build a landing page');
+  const steps = walk(plan.elements['[data-workflow-steps]']);
+  assert.ok(steps.some(node => node.className === 'workflow-suede-mark'));
+});
