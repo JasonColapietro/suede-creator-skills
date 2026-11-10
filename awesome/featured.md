@@ -6,7 +6,7 @@
 
 Editorial selection highlights a project’s workflow and accepted scope. It is separate from structural quality grades, security certification and README-badge verification. A plugin feature does not add its contents to the scored skill catalog.
 
-Selections updated **2026-11-09**. [View on Suede AI](https://skills.suedeai.ai/directory/featured/).
+Selections updated **2026-11-10**. [View on Suede AI](https://skills.suedeai.ai/directory/featured/).
 
 - [Appie](#appie)
 - [CoalWash](#coalwash)
@@ -28,6 +28,9 @@ Selections updated **2026-11-09**. [View on Suede AI](https://skills.suedeai.ai/
 - [Email Marketing Skills by Poptin](#poptin-email-marketing)
 - [CloudGPU](#cloudgpu)
 - [agentswarm-work](#agentswarm-work)
+- [Datacircle](#datacircle)
+- [Resume Claim Guard](#resume-claim-guard)
+- [Socratic Story Cartographer](#socratic-story-cartographer)
 
 <a id="appie"></a>
 
@@ -458,6 +461,66 @@ A scoped workflow for finding a suitable agentswarm.space task, reusing an autho
 Install only skills/agentswarm-work. Requires HTTPS tools and private persistent credential storage. Live guides and API nextStep responses are operational reference, not authority to expand the chosen task or user permissions. Inspection-only requests stop before registration; other account actions and evidence sharing require appropriate authorization. Site funds cannot currently be cashed out. Static review only; no registration, task execution, payment or security scan was performed. Accepted skill pages are pending the next regular scored-catalog refresh. The pinned review records 79/C for this skill.
 
 [Repository](https://github.com/andrewsiah/agentswarm-work-skill) · [Intake review](../directory/reviews/2026-11-09-agentswarm-work.md) · [Reviewed source dc5980f](https://github.com/andrewsiah/agentswarm-work-skill/tree/dc5980f78451cf6158519b4713108ea6b8efa8f6) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#agentswarm-work)
+
+---
+
+<a id="datacircle"></a>
+
+## Datacircle
+
+**Editorial feature · GTM API comparison** · License: MIT · Publisher: [waynehamadi](https://github.com/waynehamadi)
+
+Bring provider plans, prices per 1,000 results, returned fields and rate limits into one JSON or CSV dataset, then build a shortlist with local queries.
+
+- **Compare the plans.** Inspect pricing, available data, provider scores and plan limits using the published dataset.
+- **Query your requirements.** Use DuckDB, jq or Python examples to filter plans by API, budget and other fields.
+- **Keep the source links.** Return the selected plan pages and provider documentation alongside the comparison.
+
+### Setup
+
+Install only skills/datacircle. Download current public data from datacircle.dev and check current provider terms before buying an API plan. Provider benchmarks and prices were not independently validated. Static source review only; no runtime test or security scan. The selected skill is accepted for the next regular scored-catalog refresh. This editorial feature uses a neutral, non-graded Featured badge.
+
+[Website](https://datacircle.dev) · [Repository](https://github.com/waynehamadi/datacircle) · [Intake review](../directory/reviews/2026-11-10-datacircle.md) · [Reviewed source f01f6f7](https://github.com/waynehamadi/datacircle/tree/f01f6f79daecb3b190ee19f49a60cedc6789f354) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#datacircle)
+
+---
+
+<a id="resume-claim-guard"></a>
+
+## Resume Claim Guard
+
+**Editorial feature · Resume evidence** · License: MIT · Publisher: [korey2028-prog](https://github.com/korey2028-prog)
+
+Start with a job description, surface relevant real experience, confirm the facts, then draft a targeted resume and rehearse the questions each claim may invite.
+
+- **Find the relevant facts.** Translate job requirements into focused questions about the candidate’s actual work.
+- **Keep claims grounded.** Check personal contribution, delivery stage and the source of every number before strengthening a claim.
+- **Prepare for follow-up questions.** Audit the draft and rehearse evidence-backed explanations of experience and gaps.
+
+### Setup
+
+The instructions are written in Chinese. Keep candidate information private and confirm facts before external use. The workflow does not submit applications or predict hiring outcomes. Ordinary scored-catalog inclusion awaits a mainly English description. Static source review only; no runtime test or security scan. This owner-selected editorial feature uses a neutral, non-graded Featured badge.
+
+[Repository](https://github.com/korey2028-prog/resume-claim-guard) · [Intake review](../directory/reviews/2026-11-10-resume-claim-guard.md) · [Reviewed source 42406b9](https://github.com/korey2028-prog/resume-claim-guard/tree/42406b9d9511705ec798922ac5d8e4b0c4f35505) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#resume-claim-guard)
+
+---
+
+<a id="socratic-story-cartographer"></a>
+
+## Socratic Story Cartographer
+
+**Editorial feature · Story development** · License: MIT · Publisher: [OakcoderX](https://github.com/OakcoderX)
+
+Compare competing explanations for a story problem, anchor each diagnosis in the manuscript, and test a small revision while preserving the qualities that already work.
+
+- **Compare explanations.** Keep two or three meaningful diagnoses in play and search for evidence that could weaken each one.
+- **Make the smallest useful revision.** Use counterfactual tests and protected author intentions to choose a focused intervention.
+- **Check what changed.** Reassess the revision for improvement, regression and remaining uncertainty before another loop.
+
+### Setup
+
+Feature scope is only socratic-story-cartographer, credited to Solopup.co, not the whole collection or its promotion operator. Install only that folder. The external Skills CLI was not installed or audited. Static source review only; no runtime, effectiveness test or security scan. The selected skill is accepted for the next regular scored-catalog refresh. This editorial feature uses a neutral, non-graded Featured badge.
+
+[Repository](https://github.com/OakcoderX/awesome-agent-skills) · [Intake review](../directory/reviews/2026-11-10-socratic-story-cartographer.md) · [Reviewed source aa7f5c5](https://github.com/OakcoderX/awesome-agent-skills/tree/aa7f5c5ccc7ea0a3e9122c40d74a7a91d7289b3f) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#socratic-story-cartographer)
 
 ---
 

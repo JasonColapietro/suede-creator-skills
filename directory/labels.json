@@ -9940,5 +9940,13 @@
  "andrewsiah/agentswarm-work-skill/agentswarm-work": {
   "category": "ai-agents-llm",
   "summary": "Inspect one agentswarm.space task, reuse an authorized identity when needed, and submit real work evidence within the user’s chosen scope."
+ },
+ "waynehamadi/datacircle/datacircle": {
+  "category": "developer-tools",
+  "summary": "Compares GTM API plans using public JSON or CSV data for prices, returned fields, scores and rate limits."
+ },
+ "oakcoderx/awesome-agent-skills/socratic-story-cartographer": {
+  "category": "writing-content",
+  "summary": "Tests competing story diagnoses against manuscript evidence before making a focused revision and checking for regressions."
  }
 }

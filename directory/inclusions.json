@@ -27,7 +27,9 @@
   "vercel-labs/agent-skills",
   "vercel/ai",
   "mrhy7176/cloudgpu-agent-skills",
-  "andrewsiah/agentswarm-work-skill"
+  "andrewsiah/agentswarm-work-skill",
+  "waynehamadi/datacircle",
+  "OakcoderX/awesome-agent-skills"
  ],
  "skills": {
   "appierun/appie-mcp": [
@@ -974,6 +976,12 @@
   ],
   "andrewsiah/agentswarm-work-skill": [
    "agentswarm-work"
+  ],
+  "waynehamadi/datacircle": [
+   "datacircle"
+  ],
+  "OakcoderX/awesome-agent-skills": [
+   "socratic-story-cartographer"
   ]
  },
  "skill_roots": {
@@ -1088,6 +1096,12 @@
   ],
   "geekflare/geekflare-skills": [
    "skills/geekflare"
+  ],
+  "waynehamadi/datacircle": [
+   "skills/datacircle"
+  ],
+  "OakcoderX/awesome-agent-skills": [
+   "socratic-story-cartographer"
   ]
  },
  "citations": {
