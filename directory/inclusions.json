@@ -29,7 +29,8 @@
   "mrhy7176/cloudgpu-agent-skills",
   "andrewsiah/agentswarm-work-skill",
   "waynehamadi/datacircle",
-  "OakcoderX/awesome-agent-skills"
+  "OakcoderX/awesome-agent-skills",
+  "korey2028-prog/resume-claim-guard"
  ],
  "skills": {
   "appierun/appie-mcp": [
@@ -982,6 +983,9 @@
   ],
   "OakcoderX/awesome-agent-skills": [
    "socratic-story-cartographer"
+  ],
+  "korey2028-prog/resume-claim-guard": [
+   "resume-claim-guard"
   ]
  },
  "skill_roots": {
@@ -1113,6 +1117,20 @@
     "target": "https://github.com/costory-io/costory-finops-mcp-skills",
     "verified_at": "2026-10-22"
    }
+  ]
+ },
+ "language_exceptions": {
+  "korey2028-prog/resume-claim-guard": [
+   {
+    "name": "resume-claim-guard",
+    "path": ".",
+    "approval": "https://github.com/JasonColapietro/suede-creator-skills/issues/374#issuecomment-6779995466"
+   }
+  ]
+ },
+ "skill_paths": {
+  "korey2028-prog/resume-claim-guard": [
+   "."
   ]
  }
 }

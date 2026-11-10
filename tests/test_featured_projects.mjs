@@ -641,6 +641,17 @@ test('November 10 editorial exceptions use neutral badges and preserve source as
   }
   assert.deepEqual(inclusions.skills['waynehamadi/datacircle'], ['datacircle']);
   assert.deepEqual(inclusions.skills['OakcoderX/awesome-agent-skills'], ['socratic-story-cartographer']);
-  assert.ok(!inclusions.repositories.includes('korey2028-prog/resume-claim-guard'));
-  assert.match(data.projects.find((p) => p.id === 'resume-claim-guard').setup, /English description/);
+  assert.ok(inclusions.repositories.includes('korey2028-prog/resume-claim-guard'));
+  assert.deepEqual(inclusions.skills['korey2028-prog/resume-claim-guard'], ['resume-claim-guard']);
+  assert.deepEqual(inclusions.skill_paths['korey2028-prog/resume-claim-guard'], ['.']);
+  assert.deepEqual(inclusions.language_exceptions['korey2028-prog/resume-claim-guard'], [{ name: 'resume-claim-guard', path: '.', approval: 'https://github.com/JasonColapietro/suede-creator-skills/issues/374#issuecomment-6779995466' }]);
+  const resume = data.projects.find((p) => p.id === 'resume-claim-guard');
+  assert.match(resume.setup, /written in Chinese/);
+  assert.match(resume.setup, /accepted for the next regular scored-catalog refresh/i);
+  assert.doesNotMatch(resume.setup, /awaits.*English|translation is required/i);
+  const record = intake.repositories.find((r) => r.repo === resume.repo);
+  assert.equal(record.catalog_disposition, 'accepted_next_regular_refresh');
+  assert.equal(record.english_description_policy_pass, false);
+  assert.match(read(resume.review), /Translation is not a condition/i);
+  assert.doesNotMatch(read(resume.review), /does not waive|mainly English.*requirement/i);
 });

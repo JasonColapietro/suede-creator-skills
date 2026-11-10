@@ -498,7 +498,7 @@ Start with a job description, surface relevant real experience, confirm the fact
 
 ### Setup
 
-The instructions are written in Chinese. Keep candidate information private and confirm facts before external use. The workflow does not submit applications or predict hiring outcomes. Ordinary scored-catalog inclusion awaits a mainly English description. Static source review only; no runtime test or security scan. This owner-selected editorial feature uses a neutral, non-graded Featured badge.
+The instructions are written in Chinese. Keep candidate information private and confirm facts before external use. The workflow does not submit applications or predict hiring outcomes. The single root skill is accepted for the next regular scored-catalog refresh; translation is not required. Static source review only; no runtime test or security scan. This owner-selected editorial feature uses a neutral, non-graded Featured badge.
 
 [Repository](https://github.com/korey2028-prog/resume-claim-guard) · [Intake review](../directory/reviews/2026-11-10-resume-claim-guard.md) · [Reviewed source 42406b9](https://github.com/korey2028-prog/resume-claim-guard/tree/42406b9d9511705ec798922ac5d8e4b0c4f35505) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#resume-claim-guard)
 

@@ -365,6 +365,16 @@ def main():
         r["lists"] = sorted(sources.values())
     scopes = {repo.lower(): set(names) for repo, names in inclusions.get("skills", {}).items()}
     source_roots = {repo.lower(): roots for repo, roots in inclusions.get("skill_roots", {}).items()}
+    source_paths = {repo.lower(): set(paths) for repo, paths in inclusions.get("skill_paths", {}).items()}
+    # Only the exact skill/path explicitly approved by the owner may retain a
+    # non-English description. The normal language rule and score stay intact.
+    language_exceptions = {
+        (repo.lower(), entry.get("name"), entry.get("path"))
+        for repo, entries in inclusions.get("language_exceptions", {}).items()
+        for entry in entries
+        if entry.get("name") in scopes.get(repo.lower(), set())
+        and re.fullmatch(r"https://github\.com/JasonColapietro/suede-creator-skills/issues/[1-9]\d*#issuecomment-[1-9]\d*", entry.get("approval", ""))
+    }
     def policy_path(r):
         # Explicitly reviewed distribution roots may themselves be hidden.
         # Fixture/internal/template folders below that root remain excluded.
@@ -382,7 +392,8 @@ def main():
     for r in raw:
         repo_key, name = (r.get("repo") or "").lower(), r.get("name") or ""
         out_of_roots = repo_key in source_roots and not any(root == "." or r["dir"] == root or r["dir"].startswith(root + "/") for root in source_roots[repo_key])
-        out_of_scope = (repo_key in scopes and name not in scopes[repo_key]) or out_of_roots
+        out_of_scope = ((repo_key in scopes and name not in scopes[repo_key]) or out_of_roots
+                        or (repo_key in source_paths and r.get("dir") not in source_paths[repo_key]))
         excluded = repo_key in excluded_repos or f"{repo_key}/{name}".lower() in excluded_skills
         # Scope is independent of the rejection reason: an excluded or
         # unavailable skill still makes a whole-repository install too broad.
@@ -402,7 +413,7 @@ def main():
             reasons["frontmatter failed or fewer than six of seven checks"] += 1
         elif not r["checks"]["license"]:
             reasons["no license"] += 1
-        elif not mostly_english(desc):
+        elif not mostly_english(desc) and (repo_key, name, r["dir"]) not in language_exceptions:
             reasons["not English"] += 1
         elif TEMPLATE_RE.match(name) or TEMPLATE_PATH_RE.search(policy_path(r)):
             reasons["template, example or draft"] += 1

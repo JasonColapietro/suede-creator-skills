@@ -7,6 +7,7 @@
 // The task and alternatives pages run with this group. package.json is part
 // of the first-party intake receipt (directory/intake/), so the test:directory
 // script stays byte-for-byte and the files join through these imports instead.
+import "./test_directory_applications.mjs";
 import "./test_directory_qa_pages.mjs";
 import "./test_directory_page_template.mjs";
 import "./test_directory_browse.mjs";
@@ -91,6 +92,7 @@ const byRel = new Map(pages.map((p) => [p.rel, p]));
 const indexable = pages.filter((p) => p.indexable);
 const parsed = (p) => p.jsonld.map((b) => JSON.parse(b));
 const kindOf = (p) => {
+  if (p.rel === "directory/applications/") return "applications";
   if (["directory/agents/", "directory/agents/ungraded/"].includes(p.rel)) return "agent-hub";
   if (["directory/agents/methodology/", "directory/agents/submit/"].includes(p.rel)) return "agent-info";
   if (p.rel.startsWith("directory/agents/")) return "agent";
@@ -205,7 +207,7 @@ test("hubs list their items and listings describe the third-party source code", 
   for (const p of indexable) {
     const kind = kindOf(p);
     const main = parsed(p)[0];
-    if (["category", "repository", "hub", "agent-hub", "task-hub", "task", "alternatives", "brand-alternatives", "browse-hub", "browse", "kind"].includes(kind)) {
+    if (["applications", "category", "repository", "hub", "agent-hub", "task-hub", "task", "alternatives", "brand-alternatives", "browse-hub", "browse", "kind"].includes(kind)) {
       assert.equal(main["@type"], "CollectionPage", p.rel);
       assert.equal(main.mainEntity["@type"], "ItemList", p.rel);
       assert.ok(main.mainEntity.itemListElement.length > 0, `${p.rel}: empty ItemList`);

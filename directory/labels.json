@@ -9948,5 +9948,9 @@
  "oakcoderx/awesome-agent-skills/socratic-story-cartographer": {
   "category": "writing-content",
   "summary": "Tests competing story diagnoses against manuscript evidence before making a focused revision and checking for regressions."
+ },
+ "korey2028-prog/resume-claim-guard/resume-claim-guard": {
+  "category": "writing-content",
+  "summary": "A Chinese-language workflow that checks resume claims against candidate-confirmed evidence, role boundaries and delivery stages before external use."
  }
 }

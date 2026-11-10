@@ -26,6 +26,7 @@ import { LANES, FLAGS, laneById, flagById, costLane, skillFlags, planFacets } fr
 import { loadListedSince, applyListedSince, serializeLedger, isNewListing, isRecentlyUpdated, NEW_DAYS } from "./directory/listed-since.mjs";
 import { validateInstalls } from "./directory/installs.mjs";
 import { loadCompetitors, fill as fillVersus, FACT_ROWS, PRICING_VARIES, versusPath, altBrandPath } from "./directory/versus.mjs";
+import { renderApplications } from "./directory/applications.mjs";
 import { pixelIcon, dotMatrix } from "./directory/pixel-icons.mjs";
 
 const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -2735,7 +2736,7 @@ ${members.length ? `      <section id="directory-members" aria-label="Directory 
 ${copy.services_cta ? campaignPanel(here, campaignVariant(copy.services_cta, here)) : ""}
 ${nominate}
 ${badgePanel}
-      <section class="panel featured-about" aria-labelledby="selection-title"><div><p class="featured-kind">How this page works</p><h2 id="selection-title">Selected for a closer look.</h2></div><div><p>${esc(copy.selection || "These editorial features introduce accepted project submissions and their reviewed scope. Individual skill pages carry the directory’s quality scores.")} README-badge verification is tracked separately.</p><p><a href="../methodology/">How directory checks work →</a></p><a class="featured-submit" href="../submit/">Submit your project →</a></div></section>
+      <section class="panel featured-about" aria-labelledby="selection-title"><div><p class="featured-kind">How this page works</p><h2 id="selection-title">Selected for a closer look.</h2></div><div><p>${esc(copy.selection || "These editorial features introduce accepted project submissions and their reviewed scope. Individual skill pages carry the directory’s quality scores.")} README-badge verification is tracked separately.</p><p><a href="../methodology/">How directory checks work →</a></p><p><a href="../applications/">Track public applications →</a></p><a class="featured-submit" href="../submit/">Submit your project →</a></div></section>
 ${guideLinksPanel(here, pageGuides(here), "Guides")}`,
     jsonld: [{
       "@context": "https://schema.org", "@type": "CollectionPage", "@id": `${url(here)}#featured`,
@@ -2890,6 +2891,7 @@ function renderSubmit() {
   const body = `${bc.html}
       <p class="lead">Put your skill in front of people browsing for exactly what it does. Listing is free: send the repository, and skills that pass the Suede Skill Check get a category placement and a listing page with a README badge that links to it.</p>
       <p><a class="button" href="${ISSUE_URL}" target="_blank" rel="noopener">Request a listing on GitHub</a></p>
+      <p><a href="../applications/">Track public applications</a> with separate review, listing and editorial placement records.</p>
       <section class="panel" aria-labelledby="steps-title">
         <h2 id="steps-title">How it works</h2>
         <ol class="steps">
@@ -4584,6 +4586,15 @@ renderHub();
 renderFeaturedProjects();
 renderMethodology();
 renderSubmit();
+if (fs.existsSync(path.join(repoRoot, 'directory/applications.json'))) {
+  const applications = JSON.parse(fs.readFileSync(path.join(repoRoot, 'directory/applications.json'), 'utf8'));
+  const decisions = JSON.parse(fs.readFileSync(path.join(repoRoot, 'directory/application-decisions.json'), 'utf8'));
+  const agentFile = path.join(repoRoot, 'directory/agents/ungraded.json');
+  const agents = fs.existsSync(agentFile) ? JSON.parse(fs.readFileSync(agentFile, 'utf8')).entries : [];
+  files.set('directory/applications/index.html', renderApplications(applications, decisions, { skills: data.skills, editorial: EDITORIAL, agents }, {
+    page, crumbs, rel, url, esc, setKeywords, publisher: PUBLISHER_REF, directoryRef: DIRECTORY_REF, exists: file => fs.existsSync(path.join(repoRoot, file)),
+  }));
+}
 renderCheck();
 if (GUIDES.length) {
   renderGuidesHub();
