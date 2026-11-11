@@ -6,7 +6,7 @@
 
 Framework, language, SDK and CLI skills that teach an agent the conventions of a specific stack, from Flutter, Angular and Expo to GraphQL, Go and mobile builds. Install the ones that match your codebase and the agent follows that stack's rules without a long prompt.
 
-**546 accepted skills · 65 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
+**548 accepted skills · 66 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
 **Compare on the 0–99 quality scale:** this category’s verified scores span **54–95 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede AI](https://skills.suedeai.ai/directory/?category=developer-tools&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
 
@@ -47,6 +47,7 @@ Framework, language, SDK and CLI skills that teach an agent the conventions of a
 - [heygen-com/hyperframes](#heygen-com--hyperframes)
 - [huggingface/skills](#huggingface--skills)
 - [infrasity-labs/dev-gtm-claude-skills](#infrasity-labs--dev-gtm-claude-skills)
+- [inhotel-io/govisit-toolkit](#inhotel-io--govisit-toolkit)
 - [JasonColapietro/suede-creator-skills](#jasoncolapietro--suede-creator-skills)
 - [jeffallan/claude-skills](#jeffallan--claude-skills)
 - [K-Dense-AI/claude-scientific-skills](#k-dense-ai--claude-scientific-skills)
@@ -565,6 +566,15 @@ Framework, language, SDK and CLI skills that teach an agent the conventions of a
 
 - **82/100 · B** · [senior-architect](https://github.com/infrasity-labs/dev-gtm-claude-skills/blob/main/coding-skills/senior-architect/SKILL.md): This skill should be used when the user asks to "design system architecture", "evaluate microservices vs monolith", "create architecture diagrams", "analyze dependencies", "choose a database", "plan for scalability", "make technical… [Suede](https://skills.suedeai.ai/directory/infrasity-labs/dev-gtm-claude-skills/#senior-architect)
 - **71/100 · C** · [karpathy-guidelines](https://github.com/infrasity-labs/dev-gtm-claude-skills/blob/main/coding-skills/karpathy-guidelines/SKILL.md): Behavioral guidelines to reduce common LLM coding mistakes. [Suede](https://skills.suedeai.ai/directory/infrasity-labs/dev-gtm-claude-skills/#karpathy-guidelines)
+
+<a id="inhotel-io--govisit-toolkit"></a>
+
+## inhotel-io/govisit-toolkit
+
+[Repository](https://github.com/inhotel-io/govisit-toolkit) · Publisher: [GoVisit.ai / inHotel Sàrl](https://github.com/inhotel-io) · [Suede AI listing](https://skills.suedeai.ai/directory/inhotel-io/govisit-toolkit/)
+
+- **80/100 · B** · [govisit-get-documentation-page](https://github.com/inhotel-io/govisit-toolkit/blob/main/skills/govisit-get-documentation-page/SKILL.md): Read bounded structured content from the selected published article. [Suede](https://skills.suedeai.ai/directory/inhotel-io/govisit-toolkit/#govisit-get-documentation-page) GoVisit.ai by inHotel Sàrl (inhotel-io). MIT skill files; hosted API access and returned data have separate GoVisit terms. [Service and data terms](https://govisit.ai/en/docs/general/data-use-license).
+- **80/100 · B** · [govisit-search-documentation](https://github.com/inhotel-io/govisit-toolkit/blob/main/skills/govisit-search-documentation/SKILL.md): Search links rendered on a documentation index; no corpus-wide full-text search. [Suede](https://skills.suedeai.ai/directory/inhotel-io/govisit-toolkit/govisit-search-documentation/) GoVisit.ai by inHotel Sàrl (inhotel-io). MIT skill files; hosted API access and returned data have separate GoVisit terms. [Service and data terms](https://govisit.ai/en/docs/general/data-use-license).
 
 <a id="jasoncolapietro--suede-creator-skills"></a>
 

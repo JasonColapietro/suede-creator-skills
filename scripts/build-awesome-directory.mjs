@@ -47,7 +47,7 @@ export function loadInputs(root = ROOT) {
     data: JSON.parse(bytes), sha256: createHash('sha256').update(bytes).digest('hex'),
     categories: read('categories'), inclusions: read('inclusions'), exclusions: read('exclusions'),
     // One CTA source for the site and this catalog: directory/services-cta.json.
-    editorial: read('featured-projects'), guides, ctas: optional('services-cta', { campaigns: [], lead_by_category: {} }),
+    editorial: read('featured-projects'), notes: optional('notes', {}), guides, ctas: optional('services-cta', { campaigns: [], lead_by_category: {} }),
   };
 }
 
@@ -232,10 +232,12 @@ These commands read local data only. CI rejects missing, stale or orphaned gener
       const owner = repo.split('/')[0], meta = data.repos[repo];
       const entries = skills.filter((s) => s.repo === repo).sort((a, b) => b.score - a.score || alphabetical(a.name, b.name)).map((s) => {
         const source = `${github(repo)}/blob/${encodedPath(meta.branch)}/${s.dir === '.' ? '' : `${encodedPath(s.dir)}/`}SKILL.md`;
+        const note = inputs.notes?.[`${s.repo}/${s.slug}`];
+        const notice = note?.notice ? ` ${md(note.notice)} ${link('Service and data terms', note.source)}.` : '';
         const license = s.open_license ? '' : ` · License: ${md(s.license)} (review terms)`;
-        return `- **${s.score}/100 · ${s.grade}** · ${link(s.display_name || s.name, source)}: ${excerpt(s.summary || s.description)} [Suede](${listingTarget(s)})${license}`;
+        return `- **${s.score}/100 · ${s.grade}** · ${link(s.display_name || s.name, source)}: ${excerpt(s.summary || s.description)} [Suede](${listingTarget(s)})${license}${notice}`;
       }).join('\n');
-      return `<a id="${repoAnchor(repo)}"></a>\n\n## ${md(repo)}\n\n${link('Repository', github(repo))} · Publisher: ${link(owner, github(owner))} · ${link('Suede AI listing', repoTargets.get(repo))}\n\n${entries}`;
+      return `<a id="${repoAnchor(repo)}"></a>\n\n## ${md(repo)}\n\n${link('Repository', github(repo))} · Publisher: ${link(inputs.notes?.[repo]?.publisher || owner, github(owner))} · ${link('Suede AI listing', repoTargets.get(repo))}\n\n${entries}`;
     }).join('\n\n');
     pages.set(`categories/${c.slug}.md`, finish(`
 ${nav('../')}
@@ -281,7 +283,7 @@ ${stamp}
 ${repos.map((repo) => {
   const skills = data.skills.filter((s) => s.repo === repo), owner = repo.split('/')[0];
   const links = categories.filter((c) => skills.some((s) => s.category === c.slug)).map((c) => link(c.label, `categories/${c.slug}.md#${repoAnchor(repo)}`)).join(' · ');
-  return `| ${link(repo, github(repo))} | ${link(owner, github(owner))} | ${skills.length} | ${links} | ${link('Listing', repoTargets.get(repo))} |`;
+  return `| ${link(repo, github(repo))} | ${link(inputs.notes?.[repo]?.publisher || owner, github(owner))} | ${skills.length} | ${links} | ${link('Listing', repoTargets.get(repo))} |`;
 }).join('\n')}
 
 Editorial plugin features outside this scored snapshot appear on the [featured projects page](featured.md).

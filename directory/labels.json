@@ -9952,5 +9952,93 @@
  "korey2028-prog/resume-claim-guard/resume-claim-guard": {
   "category": "writing-content",
   "summary": "A Chinese-language workflow that checks resume claims against candidate-confirmed evidence, role boundaries and delivery stages before external use."
+ },
+ "inhotel-io/govisit-toolkit/govisit-get-category-overview": {
+  "category": "productivity-knowledge",
+  "summary": "Category identity, hierarchy and published count within a destination."
+ },
+ "inhotel-io/govisit-toolkit/govisit-get-category-section": {
+  "category": "productivity-knowledge",
+  "summary": "One category section (overview or places); distinct selector-based response."
+ },
+ "inhotel-io/govisit-toolkit/govisit-get-collection-overview": {
+  "category": "productivity-knowledge",
+  "summary": "Named editorial collection identity, description and published count."
+ },
+ "inhotel-io/govisit-toolkit/govisit-get-collection-section": {
+  "category": "productivity-knowledge",
+  "summary": "One collection section (overview or places)."
+ },
+ "inhotel-io/govisit-toolkit/govisit-get-destination-overview": {
+  "category": "productivity-knowledge",
+  "summary": "Destination identity, geography, taxonomy and introductory profile."
+ },
+ "inhotel-io/govisit-toolkit/govisit-get-destination-section": {
+  "category": "productivity-knowledge",
+  "summary": "One destination section, including experiences, collections or updates."
+ },
+ "inhotel-io/govisit-toolkit/govisit-get-documentation-page": {
+  "category": "developer-tools",
+  "summary": "Bounded article content, optionally selected by a heading anchor."
+ },
+ "inhotel-io/govisit-toolkit/govisit-get-page-faq": {
+  "category": "productivity-knowledge",
+  "summary": "Article FAQs, with optional query and result limit; place FAQs use the place-section reader."
+ },
+ "inhotel-io/govisit-toolkit/govisit-get-place-overview": {
+  "category": "productivity-knowledge",
+  "summary": "Business/place identity and general published profile."
+ },
+ "inhotel-io/govisit-toolkit/govisit-get-place-section": {
+  "category": "productivity-knowledge",
+  "summary": "One place section, such as location, hours, accessibility, FAQ or nearby."
+ },
+ "inhotel-io/govisit-toolkit/govisit-get-place-visit-facts": {
+  "category": "productivity-knowledge",
+  "summary": "Compact normalized visiting facts: status, location, contact, hours and accessibility."
+ },
+ "inhotel-io/govisit-toolkit/govisit-get-statistics": {
+  "category": "productivity-knowledge",
+  "summary": "Dated, scoped catalog coverage measurements and missing-metric indicators."
+ },
+ "inhotel-io/govisit-toolkit/govisit-list-category-places": {
+  "category": "productivity-knowledge",
+  "summary": "Filter the bounded place cards published on a category page."
+ },
+ "inhotel-io/govisit-toolkit/govisit-list-collection-places": {
+  "category": "productivity-knowledge",
+  "summary": "Filter the bounded place cards published in a named collection."
+ },
+ "inhotel-io/govisit-toolkit/govisit-list-destination-activities": {
+  "category": "productivity-knowledge",
+  "summary": "Published destination activities; no booking or live schedule."
+ },
+ "inhotel-io/govisit-toolkit/govisit-list-destination-categories": {
+  "category": "productivity-knowledge",
+  "summary": "Published destination category projection."
+ },
+ "inhotel-io/govisit-toolkit/govisit-list-destination-highlights": {
+  "category": "productivity-knowledge",
+  "summary": "Published destination highlights, with a result limit."
+ },
+ "inhotel-io/govisit-toolkit/govisit-list-destination-places": {
+  "category": "productivity-knowledge",
+  "summary": "Filter place cards already published on a destination page."
+ },
+ "inhotel-io/govisit-toolkit/govisit-list-related-places": {
+  "category": "productivity-knowledge",
+  "summary": "Filter the page-local related/nearby place projection."
+ },
+ "inhotel-io/govisit-toolkit/govisit-search-destinations": {
+  "category": "productivity-knowledge",
+  "summary": "Indexed destination search by name or traveler intent; returns codes and URLs."
+ },
+ "inhotel-io/govisit-toolkit/govisit-search-documentation": {
+  "category": "developer-tools",
+  "summary": "Search links rendered on a documentation index; no corpus-wide full-text search."
+ },
+ "inhotel-io/govisit-toolkit/govisit-search-places": {
+  "category": "productivity-knowledge",
+  "summary": "Indexed place search by name/intent, with explicit country, destination or proximity constraints."
  }
 }

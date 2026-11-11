@@ -544,7 +544,10 @@ def main():
                 rec["summary"] = label["summary"]
                 rec["headings"] = [h for h in r["headings"] if h[0] in (2, 3)][:16]
                 rec["files_sample"] = r["files_sample"][:24]
+            if id(r) in featured or r.get("network"):
                 # Facts for the "Before you install" panel, read from the files.
+                # Keep service dependencies on ordinary rows as well: lacking
+                # a full editorial page does not make an HTTP skill offline.
                 rec["install"] = {
                     "langs": r.get("script_langs") or {},
                     "env_read": r.get("env_read") or [],

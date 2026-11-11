@@ -262,6 +262,16 @@ test("applyListedSince keeps known dates, adds new ids at the snapshot date and 
   assert.throws(() => applyListedSince(ledger, skills, "Oct 22"), /snapshot date must be ISO/);
 });
 
+test("scoped intake dates new rows at assessment and preserves existing dates", () => {
+  const skills = [{ id: "old", assessment_date: "2026-11-11" }, { id: "new", assessment_date: "2026-11-11" }];
+  const first = applyListedSince({ dates: { old: "2026-10-19" } }, skills, "2026-10-22");
+  assert.deepEqual(first.next.dates, { old: "2026-10-19", new: "2026-11-11" });
+  const second = applyListedSince(first.next, skills, "2026-10-22");
+  assert.deepEqual(second.next.dates, first.next.dates);
+  assert.deepEqual(second.added, []);
+  assert.throws(() => applyListedSince({ dates: {} }, [{ id: "bad", assessment_date: "Nov 11" }], "2026-10-22"), /assessment date must be ISO/);
+});
+
 test("serializeLedger sorts keys and round-trips", () => {
   const text = serializeLedger({ _comment: "c", dates: { "z/z/z": "2026-10-19", "a/a/a": "2026-10-22", "m/m/m": "2026-10-20" } });
   assert.ok(text.endsWith("}\n"));
@@ -306,6 +316,7 @@ const skills = data.skills.map((c) => {
     lists: meta.lists,
     official: meta.official,
     commit_date: meta.commit_date,
+    assessment_date: meta.assessment_date || null,
     file_count: c.size[2],
     has_references: c.kinds.includes("r"),
     has_scripts: c.kinds.includes("s"),
