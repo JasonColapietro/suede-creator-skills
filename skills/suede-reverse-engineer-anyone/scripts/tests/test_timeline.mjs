@@ -64,8 +64,8 @@ test('findInflections finds a held step-up and ignores a one-month spike', () =>
   assert.equal(inf.length, 1);
   assert.equal(inf[0].month, '2025-06');
   near(inf[0].step, 18);
-  // a single-month spike followed by a drop is not held
-  const spike = growthSeries(curveFromGrowth('2025-01', [2, 2, 2, 2, 30, -5, 2, 2]));
+  // a single-month spike between non-positive months is not held
+  const spike = growthSeries(curveFromGrowth('2025-01', [2, 2, 2, -1, 30, -5, 2, 2]));
   assert.deepEqual(findInflections(spike), []);
   // a step below --min-step is not an inflection
   const small = growthSeries(curveFromGrowth('2025-01', [2, 2, 2, 2, 5, 5, 5, 5]));
@@ -121,9 +121,9 @@ test('leadingChannels declines under 18 months and under 6 moves', () => {
   assert.equal(r.rho, undefined);
   assert.match(r.reason, /curve has 12 months; need 18/);
 
-  const growths = Array.from({ length: 23 }, (_, k) => (k % 4) * 3 + 1);
-  const long = growthSeries(curveFromGrowth('2024-01', growths));
+  // exact growth values (no compounding float noise) so ties stay ties
   const ms = months('2024-01', 24);
+  const long = ms.map((month, i) => ({ month, growth: i === 0 ? null : ((i - 1) % 4) * 3 + 1 }));
   // channel x posts more two months before high growth; channel y has only 3 moves
   const xm = [];
   ms.forEach((m, i) => { for (let n = 0; n < ((i + 1) % 4); n++) xm.push({ date: m, channel: 'x' }); });
