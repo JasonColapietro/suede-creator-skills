@@ -13,7 +13,7 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const read = (file) => fs.readFileSync(path.join(root, file), 'utf8');
 const data = JSON.parse(read('directory/featured-projects.json'));
 const published = () => read('docs/directory/featured/index.html');
-const recentIds = ['datacircle', 'resume-claim-guard', 'socratic-story-cartographer', 'agentswarm-work', 'cloudgpu', 'poptin-email-marketing', 'shiptopaid-lite', 'video-director', 'agent-qa', 'berlin-job-search', 'bulkpublish', 'empacer', 'frametell', 'inkroom', 'lfr', 'trong-hieu', 'geekflare', 'cisco-skill-scanner', 'opsibyte', 'extra-caffeine', 'costory', 'appie', 'coalwash', 'lava', 'arcmira'];
+const recentIds = ['govisit', 'datacircle', 'resume-claim-guard', 'socratic-story-cartographer', 'agentswarm-work', 'cloudgpu', 'poptin-email-marketing', 'shiptopaid-lite', 'video-director', 'agent-qa', 'berlin-job-search', 'bulkpublish', 'empacer', 'frametell', 'inkroom', 'lfr', 'trong-hieu', 'geekflare', 'cisco-skill-scanner', 'opsibyte', 'extra-caffeine', 'costory', 'appie', 'coalwash', 'lava', 'arcmira'];
 const pendingIds = ['berlin-job-search', 'bulkpublish', 'empacer', 'inkroom', 'lfr'];
 const reviewedIds = recentIds.filter((id) => !pendingIds.includes(id) && data.projects.some((p) => p.id === id));
 const cardOf = (html, id) => html.split(`id="${id}"`)[1]?.split('</article>')[0];
@@ -295,7 +295,7 @@ test('Arcmira review preserves original scores and every raw scan finding', () =
 });
 
 test('editorial projects preserve accepted scopes and resolve their reviewed evidence', () => {
-  assert.deepEqual(data.projects.map((p) => p.repo), ['appierun/appie-mcp', 'TheColliery/CoalWash', 'costory-io/costory-finops-mcp-skills', 'cwong5/extra-caffeine-mcp', 'MelMayssonOwen/agent-skills', 'cisco-ai-defense/skill-scanner', 'geekflare/geekflare-skills', 'tronghieu/agent-skills', 'vostride/agent-qa', 'sitor-ai/frametell', 'azeemkafridi/bulkpublish-ai-toolkit', 'InkRoom-AI/inkroom-client', undefined, 'umutyesildal/berlin-job-search', 'Anonyfox/lfr', 'shiptopaid/shiptopaid-lite', 'aakashH242/video-director', 'email-marketing-skills-hub/email-marketing-skills', 'mrhy7176/cloudgpu-agent-skills', 'andrewsiah/agentswarm-work-skill', 'waynehamadi/datacircle', 'korey2028-prog/resume-claim-guard', 'OakcoderX/awesome-agent-skills']);
+  assert.deepEqual(data.projects.map((p) => p.repo), ['appierun/appie-mcp', 'TheColliery/CoalWash', 'costory-io/costory-finops-mcp-skills', 'cwong5/extra-caffeine-mcp', 'MelMayssonOwen/agent-skills', 'cisco-ai-defense/skill-scanner', 'geekflare/geekflare-skills', 'tronghieu/agent-skills', 'vostride/agent-qa', 'sitor-ai/frametell', 'azeemkafridi/bulkpublish-ai-toolkit', 'InkRoom-AI/inkroom-client', undefined, 'umutyesildal/berlin-job-search', 'Anonyfox/lfr', 'shiptopaid/shiptopaid-lite', 'aakashH242/video-director', 'email-marketing-skills-hub/email-marketing-skills', 'mrhy7176/cloudgpu-agent-skills', 'andrewsiah/agentswarm-work-skill', 'waynehamadi/datacircle', 'korey2028-prog/resume-claim-guard', 'OakcoderX/awesome-agent-skills', 'inhotel-io/govisit-toolkit']);
   const page = published();
   const appie = page.split('id="appie"')[1].split('</article>')[0];
   const links = [...appie.matchAll(/href="(\.\.\/appierun\/appie-mcp\/[^"/]+\/)"/g)].map((m) => m[1]);
@@ -331,11 +331,11 @@ test('featured page has a discoverable route, truthful structured data and selec
   assert.equal((page.match(/<h1[ >]/g) || []).length, 1);
   const blocks = [...page.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map((m) => JSON.parse(m[1]));
   const collection = blocks.find((x) => x['@type'] === 'CollectionPage');
-  assert.equal(collection.mainEntity.numberOfItems, 25);
-  assert.deepEqual(collection.mainEntity.itemListElement.map((p) => p.name), ['Datacircle', 'Resume Claim Guard', 'Socratic Story Cartographer', 'agentswarm-work', 'CloudGPU', 'Email Marketing Skills by Poptin', 'ShipToPaid Lite', 'Video Director', 'agent-qa CLI by Vostride', 'Berlin Job Search', 'BulkPublish', 'Empacer', 'Frametell', 'InkRoom', 'lfr', 'Trong Hieu agent skills', 'Geekflare', 'Cisco AI Defense Skill Scanner', 'Opsibyte', 'Extra Caffeine', 'Costory', 'Appie', 'CoalWash', 'Lava', 'Arcmira']);
+  assert.equal(collection.mainEntity.numberOfItems, 26);
+  assert.deepEqual(collection.mainEntity.itemListElement.map((p) => p.name), ['GoVisit Agent Skills', 'Datacircle', 'Resume Claim Guard', 'Socratic Story Cartographer', 'agentswarm-work', 'CloudGPU', 'Email Marketing Skills by Poptin', 'ShipToPaid Lite', 'Video Director', 'agent-qa CLI by Vostride', 'Berlin Job Search', 'BulkPublish', 'Empacer', 'Frametell', 'InkRoom', 'lfr', 'Trong Hieu agent skills', 'Geekflare', 'Cisco AI Defense Skill Scanner', 'Opsibyte', 'Extra Caffeine', 'Costory', 'Appie', 'CoalWash', 'Lava', 'Arcmira']);
   const description = page.match(/<meta name="description" content="([^"]*)"/)[1];
   assert.ok(description.length >= 70 && description.length <= 155, description);
-  assert.match(description, /^Meet Datacircle, .* and \d+ more: featured agent projects with source and setup\.$/);
+  assert.match(description, /^Meet GoVisit Agent Skills, .* and \d+ more: featured agent projects with source and setup\.$/);
   assert.match(page, /README-badge verification is tracked separately/);
   assert.match(page, /href="\.\.\/submit\/"/);
   assert.match(page, /href="\.\.\/methodology\/"/);
