@@ -343,6 +343,7 @@ Only ask if not answered by context or input:
 ## Routing
 
 - Need a public comparison or alternative page -> use `suede-competitors`.
+- Need how a competitor grew over time and which moves to copy -> use `suede-reverse-engineer-anyone`.
 - Need a sales battle card -> use `suede-sales-enablement`.
 - Need review and forum synthesis -> use `suede-customer-research`.
 - Need pricing, ad, or content implications -> use `suede-pricing`, `suede-ads`, or `suede-content-strategy`.
