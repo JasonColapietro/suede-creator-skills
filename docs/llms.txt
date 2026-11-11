@@ -253,7 +253,7 @@ Runner for Suede Graph Flo XR: the bundled Suede Thought Graph workflow runs on 
   - [Newsletters skills](https://skills.suedeai.ai/directory/topics/newsletters/): 6 listed skills.
 - [Skills by cost and license](https://skills.suedeai.ai/directory/pricing/): free and open source (3,478), free skill, needs a service (309), non-commercial license (80), restricted license (26).
 - [Skills by capability](https://skills.suedeai.ai/directory/features/): 14 capability filters, including official publishers, MCP servers, API keys and no-setup skills.
-- [New agent skills](https://skills.suedeai.ai/directory/new/): 29 skills newly listed and 3,001 updated in the 30 days before the October 22, 2026 snapshot.
+- [New agent skills](https://skills.suedeai.ai/directory/new/): 29 skills newly listed and 2,738 updated in the 30 days through November 11, 2026; the global source snapshot remains October 22, 2026.
 - [Top 100 agent skills](https://skills.suedeai.ai/directory/top/): the highest Suede Skill Check scores among third-party skills.
 - [Security](https://skills.suedeai.ai/directory/trust/): What the directory checks before listing a skill (structure, license, policy, what the files touch on 754 full pages), three documented registry attacks with sources, and a review checklist.
 - [Recommended stacks by task](https://skills.suedeai.ai/directory/stacks/): 10 stacks by Jason Colapietro, each naming the Suede AI skill for the task and recommending third-party skills only:

@@ -127,10 +127,10 @@
           },
           {
             "@type": "Question",
-            "name": "Does slidewright need an API key or MCP server?",
+            "name": "Does slidewright need credentials, an MCP server or network access?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. At the October 22, 2026 snapshot its files reads SLIDEWRIGHT_TOKEN and names fonts.googleapis.com and cdn.tailwindcss.com. The Before you install section lists the details."
+              "text": "Yes. At the October 22, 2026 assessment its files reads SLIDEWRIGHT_TOKEN and names fonts.googleapis.com and cdn.tailwindcss.com. The Before you install section lists the details."
             }
           },
           {
@@ -252,11 +252,11 @@
       </section>
       <section class="panel" aria-labelledby="before-title">
         <h2 id="before-title">Before you install</h2>
-        <p class="muted">Read from the skill's files at the directory's October 22, 2026 snapshot: what ships with it, what its code reads, and the terms it is published under.</p>
+        <p class="muted">Read from the skill's files at the directory's October 22, 2026 assessment: what ships with it, what its code reads, and the terms it is published under.</p>
         <ul class="before-list">
           <li><b>Bundled scripts:</b> 6 script files (4 Shell, 1 JavaScript, 1 Python). Your agent may run them, so read them first.</li>
           <li><b>Environment variables its scripts read:</b> <code>SLIDEWRIGHT_TOKEN</code>. Check SKILL.md for which ones it needs.</li>
-          <li><b>Network:</b> its scripts use an HTTP client or a cloud SDK, and name <code>fonts.googleapis.com</code> and <code>cdn.tailwindcss.com</code>.</li>
+          <li><b>Network:</b> its scripts or instructions make HTTP requests or use a cloud SDK, and name <code>fonts.googleapis.com</code> and <code>cdn.tailwindcss.com</code>.</li>
           <li><b>License:</b> <a href="https://github.com/tronghieu/agent-skills/blob/main/LICENSE" target="_blank" rel="noopener">MIT</a>, an open-source or open-content license.</li>
         </ul>
       </section>
@@ -401,8 +401,8 @@ rm -rf &quot;$tmp&quot;</code></pre>
         <p>The skill is free under MIT. Its files reads SLIDEWRIGHT_TOKEN and names fonts.googleapis.com and cdn.tailwindcss.com, so the service it talks to may need an account or a paid plan.</p>
         <h3>How do I install slidewright?</h3>
         <p>Run npx skills add https://github.com/tronghieu/agent-skills/tree/main/skills/slidewright from your project, or copy the folder into .claude/skills/ for Claude Code or .agents/skills/ for Codex. The install section lists each route.</p>
-        <h3>Does slidewright need an API key or MCP server?</h3>
-        <p>Yes. At the October 22, 2026 snapshot its files reads SLIDEWRIGHT_TOKEN and names fonts.googleapis.com and cdn.tailwindcss.com. The Before you install section lists the details.</p>
+        <h3>Does slidewright need credentials, an MCP server or network access?</h3>
+        <p>Yes. At the October 22, 2026 assessment its files reads SLIDEWRIGHT_TOKEN and names fonts.googleapis.com and cdn.tailwindcss.com. The Before you install section lists the details.</p>
         <h3>How good is slidewright?</h3>
         <p>It scores 90/100, grade A, on the Suede Skill Check, which adds structure, description quality, instruction depth, bundled files, maintenance and curated-list citations from its published files.</p>
         <h3>What are alternatives to slidewright?</h3>

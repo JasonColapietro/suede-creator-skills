@@ -20,17 +20,19 @@ export function loadListedSince(file) {
 }
 
 // The ledger for the current dataset: known skills keep their date, new ones
-// take the snapshot date, departed ones leave. Returns the next ledger and the
+// take their source assessment date (or the snapshot date), departed ones leave. Returns the next ledger and the
 // ids it added, and sets listed_since on every skill.
 export function applyListedSince(ledger, skills, snapshotDate) {
   if (!DATE_RE.test(snapshotDate)) throw new Error("listed-since: snapshot date must be ISO");
   const dates = {};
   const added = [];
   for (const s of skills) {
+    if (s.assessment_date && !DATE_RE.test(s.assessment_date)) throw new Error("listed-since: assessment date must be ISO");
+    const referenceDate = s.assessment_date && s.assessment_date > snapshotDate ? s.assessment_date : snapshotDate;
     const d = ledger.dates[s.id];
-    if (d && d <= snapshotDate) dates[s.id] = d;
+    if (d && d <= referenceDate) dates[s.id] = d;
     else {
-      dates[s.id] = snapshotDate;
+      dates[s.id] = referenceDate;
       added.push(s.id);
     }
     s.listed_since = dates[s.id];

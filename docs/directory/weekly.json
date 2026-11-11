@@ -61,7 +61,6 @@
     "anthropics/skills/internal-comms"
   ],
   "new_listings": [
-    "geekflare/geekflare-skills/geekflare",
     "inhotel-io/govisit-toolkit/govisit-get-category-overview",
     "inhotel-io/govisit-toolkit/govisit-get-category-section",
     "inhotel-io/govisit-toolkit/govisit-get-collection-overview",
@@ -84,6 +83,7 @@
     "inhotel-io/govisit-toolkit/govisit-search-destinations",
     "inhotel-io/govisit-toolkit/govisit-search-documentation",
     "inhotel-io/govisit-toolkit/govisit-search-places",
+    "geekflare/geekflare-skills/geekflare",
     "melmayssonowen/agent-skills/timetopost-social-scheduler",
     "melmayssonowen/agent-skills/timetopost-autoseo-blog",
     "melmayssonowen/agent-skills/clef-music-tools",

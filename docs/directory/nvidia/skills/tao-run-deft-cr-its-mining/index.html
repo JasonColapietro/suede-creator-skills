@@ -132,10 +132,10 @@
           },
           {
             "@type": "Question",
-            "name": "Does tao-run-deft-cr-its-mining need an API key or MCP server?",
+            "name": "Does tao-run-deft-cr-its-mining need credentials, an MCP server or network access?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. At the October 22, 2026 snapshot its files reads HF_TOKEN and HUGGING_FACE_HUB_TOKEN and names huggingface.co. The Before you install section lists the details."
+              "text": "Yes. At the October 22, 2026 assessment its files reads HF_TOKEN and HUGGING_FACE_HUB_TOKEN and names huggingface.co. The Before you install section lists the details."
             }
           },
           {
@@ -247,11 +247,11 @@
       </section>
       <section class="panel" aria-labelledby="before-title">
         <h2 id="before-title">Before you install</h2>
-        <p class="muted">Read from the skill's files at the directory's October 22, 2026 snapshot: what ships with it, what its code reads, and the terms it is published under.</p>
+        <p class="muted">Read from the skill's files at the directory's October 22, 2026 assessment: what ships with it, what its code reads, and the terms it is published under.</p>
         <ul class="before-list">
           <li><b>Bundled scripts:</b> 28 script files (27 Python, 1 Shell). Your agent may run them, so read them first.</li>
           <li><b>Environment variables its scripts read:</b> <code>HF_TOKEN</code>, <code>HUGGING_FACE_HUB_TOKEN</code>. Check SKILL.md for which ones it needs.</li>
-          <li><b>Network:</b> its scripts use an HTTP client or a cloud SDK, and name <code>huggingface.co</code>.</li>
+          <li><b>Network:</b> its scripts or instructions make HTTP requests or use a cloud SDK, and name <code>huggingface.co</code>.</li>
           <li><b>Tool permissions requested:</b> <code>Read Bash Write Task</code> (the <code>allowed-tools</code> field of SKILL.md).</li>
           <li><b>License:</b> <a href="https://github.com/NVIDIA/skills/blob/main/skills/tao-run-deft-cr-its-mining/SKILL.md" target="_blank" rel="noopener">Apache-2.0</a>, an open-source or open-content license.</li>
         </ul>
@@ -414,8 +414,8 @@ rm -rf &quot;$tmp&quot;</code></pre>
         <p>The skill is free under Apache-2.0. Its files reads HF_TOKEN and HUGGING_FACE_HUB_TOKEN and names huggingface.co, so the service it talks to may need an account or a paid plan.</p>
         <h3>How do I install tao-run-deft-cr-its-mining?</h3>
         <p>Run npx skills add https://github.com/NVIDIA/skills/tree/main/skills/tao-run-deft-cr-its-mining from your project, or copy the folder into .claude/skills/ for Claude Code or .agents/skills/ for Codex. The install section lists each route.</p>
-        <h3>Does tao-run-deft-cr-its-mining need an API key or MCP server?</h3>
-        <p>Yes. At the October 22, 2026 snapshot its files reads HF_TOKEN and HUGGING_FACE_HUB_TOKEN and names huggingface.co. The Before you install section lists the details.</p>
+        <h3>Does tao-run-deft-cr-its-mining need credentials, an MCP server or network access?</h3>
+        <p>Yes. At the October 22, 2026 assessment its files reads HF_TOKEN and HUGGING_FACE_HUB_TOKEN and names huggingface.co. The Before you install section lists the details.</p>
         <h3>How good is tao-run-deft-cr-its-mining?</h3>
         <p>It scores 87/100, grade B, on the Suede Skill Check, which adds structure, description quality, instruction depth, bundled files, maintenance and curated-list citations from its published files.</p>
       </section>

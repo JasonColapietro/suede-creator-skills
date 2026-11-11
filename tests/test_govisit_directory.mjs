@@ -52,6 +52,12 @@ test('publisher and separate data terms appear before installation on every GoVi
     if (s.featured) {
       const page = read(`docs/directory/${repo}/${s.slug}/index.html`);
       assert.ok(page.includes(note.text));
+      assert.ok(!page.includes('its scripts use an HTTP client'));
+      assert.ok(page.includes('Source assessed'));
+      assert.ok(page.includes('need credentials, an MCP server or network access?'));
+      assert.ok(!page.includes('At the October 22, 2026 snapshot its files'));
+      assert.ok(page.includes('At the November 11, 2026 assessment its files'));
+      assert.ok(page.includes('November 11, 2026'));
       assert.ok(page.indexOf(note.text) < page.indexOf('id="install-cli"'));
     }
   }
@@ -62,4 +68,17 @@ test('scoped intake preserves every existing publisher record', () => {
   assert.equal(receipt.existing_before_sha256, receipt.existing_after_sha256);
   assert.equal(receipt.unchanged_existing_skills, data.skills.length - skills.length);
   assert.equal(receipt.unchanged_existing_repositories, Object.keys(data.repos).length - 1);
+});
+
+
+test('new GoVisit listings carry their assessment date without changing the global snapshot', () => {
+  assert.equal(data.generated, '2026-10-22');
+  const ledger = JSON.parse(read('directory/listed-since.json'));
+  for (const s of skills) assert.equal(ledger.dates[`${repo}/${s.slug}`], '2026-11-11');
+});
+
+test('legacy full pages do not render an empty source assessment field', () => {
+  const old = data.skills.find((s) => s.featured && !data.repos[s.repo].assessment_date);
+  const page = read(`docs/directory/${old.repo}/${old.slug}/index.html`);
+  assert.ok(!page.includes('<dt>Source assessed</dt><dd></dd>'));
 });

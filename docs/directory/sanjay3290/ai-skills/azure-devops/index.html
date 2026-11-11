@@ -127,10 +127,10 @@
           },
           {
             "@type": "Question",
-            "name": "Does azure-devops need an API key or MCP server?",
+            "name": "Does azure-devops need credentials, an MCP server or network access?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. At the October 22, 2026 snapshot its files names dev.azure.com, login.microsoftonline.com and vssps.dev.azure.com. The Before you install section lists the details."
+              "text": "Yes. At the October 22, 2026 assessment its files names dev.azure.com, login.microsoftonline.com and vssps.dev.azure.com. The Before you install section lists the details."
             }
           },
           {
@@ -252,10 +252,10 @@
       </section>
       <section class="panel" aria-labelledby="before-title">
         <h2 id="before-title">Before you install</h2>
-        <p class="muted">Read from the skill's files at the directory's October 22, 2026 snapshot: what ships with it, what its code reads, and the terms it is published under.</p>
+        <p class="muted">Read from the skill's files at the directory's October 22, 2026 assessment: what ships with it, what its code reads, and the terms it is published under.</p>
         <ul class="before-list">
           <li><b>Bundled scripts:</b> 15 script files (15 Python). Your agent may run them, so read them first.</li>
-          <li><b>Network:</b> its scripts use an HTTP client or a cloud SDK, and name <code>dev.azure.com</code>, <code>login.microsoftonline.com</code>, <code>vssps.dev.azure.com</code> and <code>almsearch.dev.azure.com</code>.</li>
+          <li><b>Network:</b> its scripts or instructions make HTTP requests or use a cloud SDK, and name <code>dev.azure.com</code>, <code>login.microsoftonline.com</code>, <code>vssps.dev.azure.com</code> and <code>almsearch.dev.azure.com</code>.</li>
           <li><b>License:</b> <a href="https://github.com/sanjay3290/ai-skills/blob/main/LICENSE" target="_blank" rel="noopener">Apache-2.0</a>, an open-source or open-content license.</li>
         </ul>
       </section>
@@ -410,8 +410,8 @@ rm -rf &quot;$tmp&quot;</code></pre>
         <p>The skill is free under Apache-2.0. Its files names dev.azure.com, login.microsoftonline.com and vssps.dev.azure.com, so the service it talks to may need an account or a paid plan.</p>
         <h3>How do I install azure-devops?</h3>
         <p>Run npx skills add https://github.com/sanjay3290/ai-skills/tree/main/skills/azure-devops from your project, or copy the folder into .claude/skills/ for Claude Code or .agents/skills/ for Codex. The install section lists each route.</p>
-        <h3>Does azure-devops need an API key or MCP server?</h3>
-        <p>Yes. At the October 22, 2026 snapshot its files names dev.azure.com, login.microsoftonline.com and vssps.dev.azure.com. The Before you install section lists the details.</p>
+        <h3>Does azure-devops need credentials, an MCP server or network access?</h3>
+        <p>Yes. At the October 22, 2026 assessment its files names dev.azure.com, login.microsoftonline.com and vssps.dev.azure.com. The Before you install section lists the details.</p>
         <h3>How good is azure-devops?</h3>
         <p>It scores 83/100, grade B, on the Suede Skill Check, which adds structure, description quality, instruction depth, bundled files, maintenance and curated-list citations from its published files.</p>
         <h3>What are alternatives to azure-devops?</h3>

@@ -36,8 +36,17 @@ class HttpInstructionTests(unittest.TestCase):
         self.assertEqual(parsed['script_langs'], {})
         self.assertEqual(parsed['env_read'], [])
 
+    def test_markdown_list_requests_are_recorded(self):
+        for prefix in ('- ', '* ', '1. '):
+            with self.subTest(prefix=prefix):
+                parsed = self.parse(prefix + 'Make one HTTPS POST request to `https://govisit.ai/api/tools/v1/search_places`.\n')
+                self.assertTrue(parsed['network'])
+                self.assertEqual(parsed['api_hosts'], ['govisit.ai'])
+
     def test_documentation_and_negated_requests_are_not_dependencies(self):
-        for body in ('Read documentation at https://govisit.ai/en/docs.\n',
+        for body in ('Never\nmake one HTTPS POST request to `https://govisit.ai/api/tools/v1/search_places`.\n',
+                     'Documentation example (do not execute):\n```text\nMake one HTTPS POST request to `https://govisit.ai/api/tools/v1/search_places`.\n```\n',
+                     'Read documentation at https://govisit.ai/en/docs.\n',
                      'Never make one HTTPS POST request to `https://govisit.ai/api/tools/v1/search_places`.\n',
                      'Make one HTTPS GET request to `http://localhost/status`.\n'):
             with self.subTest(body=body):

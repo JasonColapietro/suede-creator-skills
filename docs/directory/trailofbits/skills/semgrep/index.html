@@ -132,10 +132,10 @@
           },
           {
             "@type": "Question",
-            "name": "Does semgrep need an API key or MCP server?",
+            "name": "Does semgrep need credentials, an MCP server or network access?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. At the October 22, 2026 snapshot its files names json.schemastore.org. The Before you install section lists the details."
+              "text": "Yes. At the October 22, 2026 assessment its files names json.schemastore.org. The Before you install section lists the details."
             }
           },
           {
@@ -257,10 +257,10 @@
       </section>
       <section class="panel" aria-labelledby="before-title">
         <h2 id="before-title">Before you install</h2>
-        <p class="muted">Read from the skill's files at the directory's October 22, 2026 snapshot: what ships with it, what its code reads, and the terms it is published under.</p>
+        <p class="muted">Read from the skill's files at the directory's October 22, 2026 assessment: what ships with it, what its code reads, and the terms it is published under.</p>
         <ul class="before-list">
           <li><b>Bundled scripts:</b> 3 script files (2 Python, 1 Shell). Your agent may run them, so read them first.</li>
-          <li><b>Network:</b> its scripts use an HTTP client or a cloud SDK, and name <code>json.schemastore.org</code>.</li>
+          <li><b>Network:</b> its scripts or instructions make HTTP requests or use a cloud SDK, and name <code>json.schemastore.org</code>.</li>
           <li><b>Tool permissions requested:</b> <code>Bash Read Glob AskUserQuestion TaskCreate TaskList TaskUpdate</code> (the <code>allowed-tools</code> field of SKILL.md).</li>
           <li><b>License:</b> <a href="https://github.com/trailofbits/skills/blob/main/LICENSE" target="_blank" rel="noopener">CC-BY-SA-4.0</a>, an open-source or open-content license.</li>
         </ul>
@@ -405,8 +405,8 @@ rm -rf &quot;$tmp&quot;</code></pre>
         <p>The skill is free under CC-BY-SA-4.0. Its files names json.schemastore.org, so the service it talks to may need an account or a paid plan.</p>
         <h3>How do I install semgrep?</h3>
         <p>Run npx skills add https://github.com/trailofbits/skills/tree/main/plugins/static-analysis/skills/semgrep from your project, or copy the folder into .claude/skills/ for Claude Code or .agents/skills/ for Codex. The install section lists each route.</p>
-        <h3>Does semgrep need an API key or MCP server?</h3>
-        <p>Yes. At the October 22, 2026 snapshot its files names json.schemastore.org. The Before you install section lists the details.</p>
+        <h3>Does semgrep need credentials, an MCP server or network access?</h3>
+        <p>Yes. At the October 22, 2026 assessment its files names json.schemastore.org. The Before you install section lists the details.</p>
         <h3>How good is semgrep?</h3>
         <p>It scores 92/100, grade A, on the Suede Skill Check, which adds structure, description quality, instruction depth, bundled files, maintenance and curated-list citations from its published files.</p>
         <h3>What are alternatives to semgrep?</h3>

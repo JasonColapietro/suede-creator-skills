@@ -132,10 +132,10 @@
           },
           {
             "@type": "Question",
-            "name": "Does cookie-sync need an API key or MCP server?",
+            "name": "Does cookie-sync need credentials, an MCP server or network access?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. At the October 22, 2026 snapshot its files reads BROWSERBASE_API_KEY and uses an HTTP client or cloud SDK. The Before you install section lists the details."
+              "text": "Yes. At the October 22, 2026 assessment its files reads BROWSERBASE_API_KEY and uses an HTTP client or cloud SDK. The Before you install section lists the details."
             }
           },
           {
@@ -257,12 +257,12 @@
       </section>
       <section class="panel" aria-labelledby="before-title">
         <h2 id="before-title">Before you install</h2>
-        <p class="muted">Read from the skill's files at the directory's October 22, 2026 snapshot: what ships with it, what its code reads, and the terms it is published under.</p>
+        <p class="muted">Read from the skill's files at the directory's October 22, 2026 assessment: what ships with it, what its code reads, and the terms it is published under.</p>
         <ul class="before-list">
           <li><b>Bundled scripts:</b> 1 script file (1 JavaScript). Your agent may run them, so read them first.</li>
           <li><b>Commands in SKILL.md:</b> its code blocks run <code>npm install</code>, which fetches or runs software from outside the skill folder.</li>
           <li><b>Environment variables its scripts read:</b> <code>BROWSERBASE_API_KEY</code>. Check SKILL.md for which ones it needs.</li>
-          <li><b>Network:</b> its scripts use an HTTP client or a cloud SDK.</li>
+          <li><b>Network:</b> its scripts or instructions make HTTP requests or use a cloud SDK.</li>
           <li><b>Tool permissions requested:</b> <code>Bash</code> (the <code>allowed-tools</code> field of SKILL.md).</li>
           <li><b>License:</b> <a href="https://github.com/browserbase/skills/blob/main/skills/cookie-sync/LICENSE.txt" target="_blank" rel="noopener">MIT</a>, an open-source or open-content license.</li>
         </ul>
@@ -409,8 +409,8 @@ rm -rf &quot;$tmp&quot;</code></pre>
         <p>The skill is free under MIT. Its files reads BROWSERBASE_API_KEY and uses an HTTP client or cloud SDK, so the service it talks to may need an account or a paid plan.</p>
         <h3>How do I install cookie-sync?</h3>
         <p>Run npx skills add https://github.com/browserbase/skills/tree/main/skills/cookie-sync from your project, or copy the folder into .claude/skills/ for Claude Code or .agents/skills/ for Codex. The install section lists each route.</p>
-        <h3>Does cookie-sync need an API key or MCP server?</h3>
-        <p>Yes. At the October 22, 2026 snapshot its files reads BROWSERBASE_API_KEY and uses an HTTP client or cloud SDK. The Before you install section lists the details.</p>
+        <h3>Does cookie-sync need credentials, an MCP server or network access?</h3>
+        <p>Yes. At the October 22, 2026 assessment its files reads BROWSERBASE_API_KEY and uses an HTTP client or cloud SDK. The Before you install section lists the details.</p>
         <h3>How good is cookie-sync?</h3>
         <p>It scores 80/100, grade B, on the Suede Skill Check, which adds structure, description quality, instruction depth, bundled files, maintenance and curated-list citations from its published files.</p>
         <h3>What are alternatives to cookie-sync?</h3>

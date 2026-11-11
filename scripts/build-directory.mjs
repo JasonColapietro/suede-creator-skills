@@ -251,6 +251,7 @@ data.skills = data.skills.map((c) => {
     license_url: c.license_evidence?.length > 1 ? `https://github.com/${c.repo}/tree/${meta.branch}/${c.license_file}` : c.license_file ? blob(c.license_file) : blob(`${tree}SKILL.md`),
     branch: meta.branch,
     commit_date: meta.commit_date,
+    assessment_date: meta.assessment_date || null,
     lists: meta.lists,
     official: meta.official,
     repo_withheld: meta.withheld || 0,
@@ -514,8 +515,9 @@ const LISTED_FILE = path.join(repoRoot, "directory", "listed-since.json");
 const LISTED_NEXT = applyListedSince(loadListedSince(LISTED_FILE), data.skills, data.generated).next;
 const LISTED_FLOOR = Object.values(LISTED_NEXT.dates).reduce((m, d) => (d < m ? d : m), data.generated);
 const byScore = (a, b) => b.score - a.score || b.lists.length - a.lists.length || a.id.localeCompare(b.id);
-const NEW_LISTINGS = data.skills.filter((s) => !isFirstParty(s) && isNewListing(s, data.generated, LISTED_FLOOR)).sort((a, b) => b.listed_since.localeCompare(a.listed_since) || byScore(a, b));
-const RECENTLY_UPDATED = data.skills.filter((s) => !isFirstParty(s) && isRecentlyUpdated(s, data.generated)).sort((a, b) => b.commit_date.localeCompare(a.commit_date) || byScore(a, b));
+const BROWSE_DATE = data.skills.reduce((latest, s) => s.assessment_date && s.assessment_date > latest ? s.assessment_date : latest, data.generated);
+const NEW_LISTINGS = data.skills.filter((s) => !isFirstParty(s) && isNewListing(s, BROWSE_DATE, LISTED_FLOOR)).sort((a, b) => b.listed_since.localeCompare(a.listed_since) || byScore(a, b));
+const RECENTLY_UPDATED = data.skills.filter((s) => !isFirstParty(s) && isRecentlyUpdated(s, BROWSE_DATE)).sort((a, b) => b.commit_date.localeCompare(a.commit_date) || byScore(a, b));
 const TOP_SKILLS = data.skills.filter((s) => !isFirstParty(s)).sort(byScore).slice(0, TOP_MAX);
 
 // ------------------------------------------------------------------ installs (skills.sh)
@@ -1234,8 +1236,9 @@ function skillRow(here, s, { showRepo, showLicense = false }) {
         : `<details class="row-badges"><summary>Get badges</summary>${qualityBadgeContent(s, `-${s.slug}`)}</details>`;
   const report = showRepo ? "" : `<p class="row-report">${reportLinks(here, s)}</p>`;
   const note = NOTES[s.id];
+  const assessed = s.assessment_date ? `<p class="muted">Source assessed ${esc(longDate(s.assessment_date))}.</p>` : "";
   const notice = note?.notice ? `<p class="muted">${esc(note.notice)} <a href="${esc(note.source)}" target="_blank" rel="noopener">Service and data terms</a>.</p>` : "";
-  return `            <tr${id} ${rowData(s)}><td class="name">${nameCell} ${gradeChip(s)}</td><td class="meta">${second}</td><td class="desc">${esc(desc)}${notice}${badges}${report}</td></tr>`;
+  return `            <tr${id} ${rowData(s)}><td class="name">${nameCell} ${gradeChip(s)}</td><td class="meta">${second}</td><td class="desc">${esc(desc)}${assessed}${notice}${badges}${report}</td></tr>`;
 }
 
 function skillTable(here, rows, { id, showRepo, caption, showLicense = false }) {
@@ -1368,7 +1371,7 @@ function beforeInstall(s) {
     items.push(`<b>Credential names SKILL.md mentions:</b> ${codeList(i.env_docs)}.`);
   }
   if (i.net) {
-    items.push(`<b>Network:</b> its scripts use an HTTP client or a cloud SDK${i.hosts && i.hosts.length ? `, and name ${listPhrase(i.hosts.map((h) => `<code>${esc(h)}</code>`))}` : ""}.`);
+    items.push(`<b>Network:</b> its scripts or instructions make HTTP requests or use a cloud SDK${i.hosts && i.hosts.length ? `, and name ${listPhrase(i.hosts.map((h) => `<code>${esc(h)}</code>`))}` : ""}.`);
   }
   if (i.mcp_tools && i.mcp_tools.length) {
     items.push(`<b>MCP:</b> SKILL.md calls tools from the ${listPhrase(i.mcp_tools.map((t) => `<code>${esc(t)}</code>`))} MCP server${i.mcp_tools.length > 1 ? "s" : ""}.`);
@@ -1390,7 +1393,7 @@ function beforeInstall(s) {
   );
   return `      <section class="panel" aria-labelledby="before-title">
         <h2 id="before-title">Before you install</h2>
-        <p class="muted">Read from the skill's files at the directory's ${longDate(data.generated)} snapshot: what ships with it, what its code reads, and the terms it is published under.</p>
+        <p class="muted">Read from the skill's files at the directory's ${longDate(s.assessment_date || data.generated)} assessment: what ships with it, what its code reads, and the terms it is published under.</p>
         <ul class="before-list">
 ${items.map((t) => `          <li>${t}</li>`).join("\n")}
         </ul>
@@ -1528,6 +1531,7 @@ function glancePanel(here, s) {
     ["Outside hosts", (i.hosts || []).length ? `<span class="warn">${esc(i.hosts.slice(0, 2).join(", "))}${i.hosts.length > 2 ? ` and ${i.hosts.length - 2} more` : ""}</span>` : i.net ? `<span class="warn">HTTP client or cloud SDK</span>` : `<span class="ok">None</span>`],
     ["MCP server", i.mcp || (i.mcp_tools || []).length ? `<span class="warn">Yes</span>` : `<span class="ok">No</span>`],
     ["Security scan", `Not scanned by the directory${inst ? `. <a href="${esc(skillsShUrl(s))}" target="_blank" rel="noopener">Third-party audits on skills.sh</a>` : ""}`],
+    s.assessment_date ? ["Source assessed", longDate(s.assessment_date)] : null,
     ["Listed since", s.listed_since === LISTED_FLOOR ? `${longDate(s.listed_since)} or earlier` : longDate(s.listed_since)],
   ].filter(Boolean);
   return `      <dl class="glance" aria-label="At a glance">
@@ -1558,6 +1562,7 @@ function renderSkill(s) {
     ["Capabilities", s.flags.filter((f) => f !== "full-page").map((f) => `<a href="${rel(here, flagPath(f))}">${esc(flagById.get(f).label)}</a>`).join(", ")],
     ["License", `<a href="${esc(s.license_url)}" target="_blank" rel="noopener">${esc(s.license)}</a>${s.license_evidence?.length > 1 ? "<ul>" + s.license_evidence.map(e => `<li><a href="https://github.com/${esc(s.repo)}/blob/${esc(s.branch)}/${esc(e.file)}" target="_blank" rel="noopener">${esc(e.label)} (${esc(e.file)})</a></li>`).join("") + "</ul>" : ""}`],
     ["Last commit", `${longDate(s.commit_date)} (repository)`],
+    ["Source assessed", s.assessment_date ? longDate(s.assessment_date) : ""],
     ["Listed since", s.listed_since === LISTED_FLOOR ? `${longDate(s.listed_since)} or earlier` : longDate(s.listed_since)],
     ["SKILL.md", `${plural(s.body_lines, "line")}, ${plural(s.body_words, "word")}`],
     ["Bundled files", `${plural(s.file_count, "file")}${kinds.length ? `, including ${kinds.join(", ")}` : ""}`],
@@ -1741,6 +1746,7 @@ function renderRepo(r) {
     ["Publisher", `<a href="https://github.com/${esc(r.owner)}" target="_blank" rel="noopener">${esc(r.publisher)}</a>${officialTag(r.official)}`],
     ["Repository", `<a href="https://github.com/${esc(r.repo)}" target="_blank" rel="noopener">github.com/${esc(r.repo)}</a>`],
     ["Listed skills", fmt(r.skills.length)],
+    ["Source assessed", r.skills[0].assessment_date ? longDate(r.skills[0].assessment_date) : ""],
     ["Security scan", "Not scanned"],
     ["Categories", catLinks.join(", ")],
     ["License", esc(licenseText)],
@@ -2467,8 +2473,8 @@ function renderHub() {
     TOP_INSTALLED.length ? { id: "most-installed", label: "Most installed", rows: TOP_INSTALLED, metric: installMetric, note: `Installs recorded by skills.sh for the skills CLI, read ${longDate(INSTALLS.fetched)}.`, foot: `<a href="${rel(here, TOP_PATH)}#most-installed">The 100 most installed skills</a>` } : null,
     { id: "highest-scores", label: "Highest scores", rows: TOP_SKILLS, metric: (s) => (installsFor(s) ? `<b>${compact(installsFor(s).installs)}</b> installs` : `cited by <b>${s.lists.length}</b>`), note: "Suede Skill Check scores, 0 to 99, from each skill's published files.", foot: `<a href="${rel(here, TOP_PATH)}#highest-scores">The top 100 by score</a>` },
     RISING.length ? { id: "rising", label: "Rising this week", rows: RISING, metric: (s) => `${sparkline(installsFor(s).weekly)}<b>${compact(lastWeek(s))}</b> this week`, note: "Installs in the latest week skills.sh reports, among the skills it keeps history for.", foot: `<a href="${rel(here, TOP_PATH)}#rising">The 100 rising skills</a>` } : null,
-    NEW_LISTINGS.length ? { id: "new-listings", label: "New", rows: NEW_LISTINGS, metric: (s) => `Listed ${longDate(s.listed_since)}`, note: `Skills first listed in the ${NEW_DAYS} days before the ${longDate(data.generated)} snapshot.`, foot: `<a href="${rel(here, NEW_PATH)}">All new and updated skills</a>` } : null,
-    RECENTLY_UPDATED.length ? { id: "recently-updated", label: "Updated", rows: RECENTLY_UPDATED, metric: (s) => `Commit ${longDate(s.commit_date)}`, note: `Listed skills whose repository changed in the ${NEW_DAYS} days before the snapshot.`, foot: `<a href="${rel(here, NEW_PATH)}#updated-title">All recently updated skills</a>` } : null,
+    NEW_LISTINGS.length ? { id: "new-listings", label: "New", rows: NEW_LISTINGS, metric: (s) => `Listed ${longDate(s.listed_since)}`, note: `Skills first listed in the ${NEW_DAYS} days through ${longDate(BROWSE_DATE)}; the global source snapshot remains ${longDate(data.generated)}.`, foot: `<a href="${rel(here, NEW_PATH)}">All new and updated skills</a>` } : null,
+    RECENTLY_UPDATED.length ? { id: "recently-updated", label: "Updated", rows: RECENTLY_UPDATED, metric: (s) => `Commit ${longDate(s.commit_date)}`, note: `Listed skills whose repository changed in the ${NEW_DAYS} days through ${longDate(BROWSE_DATE)}.`, foot: `<a href="${rel(here, NEW_PATH)}#updated-title">All recently updated skills</a>` } : null,
   ].filter(Boolean);
   const boardHtml = `      <section class="board-section" aria-labelledby="board-title">
         <div class="board-head"><h2 id="board-title">Top 100</h2><p class="muted">${INSTALLS ? "Ranked by installs recorded by skills.sh, by Suede Skill Check score, and by what is new. Suede AI's own skills are not ranked." : "Ranked by Suede Skill Check score and by what is new. Suede AI's own skills are not ranked."}</p></div>
@@ -3371,7 +3377,7 @@ function skillFaqItems(s) {
     [`What does ${name} do?`, `${ensureSentence(s.summary)} It is listed in ${cat.title} on ${SITE_LABEL}.`],
     [`Is ${name} free?`, free],
     [`How do I install ${name}?`, install],
-    [`Does ${name} need an API key or MCP server?`, needs.length ? `Yes. At the ${longDate(data.generated)} snapshot its files ${listPhrase(needs)}. The Before you install section lists the details.` : `No. At the ${longDate(data.generated)} snapshot its files read no credential, connect to no MCP server and call no outside host.`],
+    [`Does ${name} need credentials, an MCP server or network access?`, needs.length ? `Yes. At the ${longDate(s.assessment_date || data.generated)} assessment its files ${listPhrase(needs)}. The Before you install section lists the details.` : `No. At the ${longDate(s.assessment_date || data.generated)} assessment its files read no credential, connect to no MCP server and call no outside host.`],
     [`How good is ${name}?`, `It scores ${s.score}/100, grade ${s.grade}, on the Suede Skill Check, which adds structure, description quality, instruction depth, bundled files, maintenance and curated-list citations from its published files.`],
   ];
   const alt = altBySkill.get(s.id);
@@ -3772,18 +3778,18 @@ function renderNew() {
     here,
     trail: [["directory/", "Directory"], [null, "New and updated"]],
     title: pickTitle(["New Agent Skills for Claude Code and Codex", "New and Updated Agent Skills"], "new"),
-    description: fitMeta([`${plural(NEW_LISTINGS.length, "new agent skill")} and ${plural(RECENTLY_UPDATED.length, "skill")} updated in the ${NEW_DAYS} days before the ${longDate(data.generated)} snapshot, graded and linked to source.`, `New and recently updated agent skills for Claude Code and Codex, graded 0 to 99 and linked to source.`], "new"),
+    description: fitMeta([`${plural(NEW_LISTINGS.length, "new agent skill")} and ${plural(RECENTLY_UPDATED.length, "skill")} updated in the ${NEW_DAYS} days through ${longDate(BROWSE_DATE)}, graded and linked to source.`, `New and recently updated agent skills for Claude Code and Codex, graded 0 to 99 and linked to source.`], "new"),
     keywords: ["new claude code skills", "new agent skills", "latest claude skills", "recently updated agent skills"],
     eyebrow: "Suede AI Skills Directory &middot; New",
     h1: "New and updated agent skills",
-    body: `      <p class="lead">What changed in the directory: skills listed for the first time in the ${NEW_DAYS} days before the ${longDate(data.generated)} snapshot, and listed skills whose repository changed in that window. Follow along with the <a href="${rel(here, FEED_PATH)}">RSS feed</a>.</p>
+    body: `      <p class="lead">What changed in the directory: skills listed for the first time in the ${NEW_DAYS} days through ${longDate(BROWSE_DATE)}, and listed skills whose repository changed in that window. Follow along with the <a href="${rel(here, FEED_PATH)}">RSS feed</a>.</p>
       <section class="panel" aria-labelledby="new-title">
         <h2 id="new-title">${plural(NEW_LISTINGS.length, "new listing")}</h2>
 ${NEW_LISTINGS.length ? datedTable(here, "new-skills", NEW_LISTINGS, "listed_since", "Listed") : `        <p>No skill joined the directory in this window. The next refresh adds accepted listing requests; <a href="${rel(here, "directory/submit/")}">request a listing</a>.</p>`}
       </section>
       <section class="panel" aria-labelledby="updated-title">
         <h2 id="updated-title">Recently updated</h2>
-        <p class="muted">${fmt(RECENTLY_UPDATED.length)} listed skills sit in a repository with a commit in the ${NEW_DAYS} days before the snapshot${RECENTLY_UPDATED.length > TOP_MAX ? `; the ${TOP_MAX} most recent are shown` : ""}. Suede AI's own skills are listed in <a href="${rel(here, "skills/")}">their own section</a>.</p>
+        <p class="muted">${fmt(RECENTLY_UPDATED.length)} listed skills sit in a repository with a commit in the ${NEW_DAYS} days through ${longDate(BROWSE_DATE)}${RECENTLY_UPDATED.length > TOP_MAX ? `; the ${TOP_MAX} most recent are shown` : ""}. Suede AI's own skills are listed in <a href="${rel(here, "skills/")}">their own section</a>.</p>
 ${datedTable(here, "updated-skills", updated, "commit_date", "Last commit")}
       </section>
 ${servicesCta("browse-hub", null, here)}`,
@@ -4696,7 +4702,7 @@ const llmsBrowseLines = [
   ...TOPICS.map((t) => `  - [${t.topic.name} skills](${url(topicPath(t))}): ${fmt(t.rows.length)} listed skills.`),
   `- [Skills by cost and license](${url(PRICING_PATH)}): ${LANES_LIVE.map((l) => `${l.lane.label.toLowerCase()} (${fmt(l.rows.length)})`).join(", ")}.`,
   `- [Skills by capability](${url(FEATURES_PATH)}): ${FLAGS_LIVE.length} capability filters, including official publishers, MCP servers, API keys and no-setup skills.`,
-  `- [New agent skills](${url(NEW_PATH)}): ${fmt(NEW_LISTINGS.length)} skills newly listed and ${fmt(RECENTLY_UPDATED.length)} updated in the ${NEW_DAYS} days before the ${longDate(data.generated)} snapshot.`,
+  `- [New agent skills](${url(NEW_PATH)}): ${fmt(NEW_LISTINGS.length)} skills newly listed and ${fmt(RECENTLY_UPDATED.length)} updated in the ${NEW_DAYS} days through ${longDate(BROWSE_DATE)}; the global source snapshot remains ${longDate(data.generated)}.`,
   `- [Top 100 agent skills](${url(TOP_PATH)}): the highest Suede Skill Check scores among third-party skills.`,
 ];
 const llmsBlock = [llmsLine, ...llmsCategoryLines, ...llmsTaskLines, ...llmsBrowseLines, ...llmsMoreLines, ...llmsGuideLines, llmsCheckLine, ...llmsAgents].join("\n");
