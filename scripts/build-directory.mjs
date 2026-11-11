@@ -4702,7 +4702,7 @@ const llmsBrowseLines = [
   ...TOPICS.map((t) => `  - [${t.topic.name} skills](${url(topicPath(t))}): ${fmt(t.rows.length)} listed skills.`),
   `- [Skills by cost and license](${url(PRICING_PATH)}): ${LANES_LIVE.map((l) => `${l.lane.label.toLowerCase()} (${fmt(l.rows.length)})`).join(", ")}.`,
   `- [Skills by capability](${url(FEATURES_PATH)}): ${FLAGS_LIVE.length} capability filters, including official publishers, MCP servers, API keys and no-setup skills.`,
-  `- [New agent skills](${url(NEW_PATH)}): ${fmt(NEW_LISTINGS.length)} skills newly listed and ${fmt(RECENTLY_UPDATED.length)} updated in the ${NEW_DAYS} days through ${longDate(BROWSE_DATE)}; the global source snapshot remains ${longDate(data.generated)}.`,
+  `- [New agent skills](${url(NEW_PATH)}): ${fmt(NEW_LISTINGS.length)} new listings and ${fmt(RECENTLY_UPDATED.length)} updated in the ${NEW_DAYS} days through ${longDate(BROWSE_DATE)}; the global source snapshot remains ${longDate(data.generated)}.`,
   `- [Top 100 agent skills](${url(TOP_PATH)}): the highest Suede Skill Check scores among third-party skills.`,
 ];
 const llmsBlock = [llmsLine, ...llmsCategoryLines, ...llmsTaskLines, ...llmsBrowseLines, ...llmsMoreLines, ...llmsGuideLines, llmsCheckLine, ...llmsAgents].join("\n");
