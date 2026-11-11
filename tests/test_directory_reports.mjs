@@ -1,3 +1,5 @@
+// Keep source-package metadata unchanged while covering canonical publisher intake.
+import './test_govisit_directory.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
