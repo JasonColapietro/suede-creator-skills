@@ -177,6 +177,14 @@ RUN_PATTERNS = [
     ("cargo install", re.compile(r"\bcargo\s+install\b")),
 ]
 FENCE_RE = re.compile(r"```[^\n]*\n(.*?)```", re.S)
+# Only an explicit imperative request is execution evidence. A linked API
+# reference or a prohibition on making requests does not declare network use.
+HTTP_REQUEST_RE = re.compile(
+    r"^\s*(?:make|send|perform)\s+(?:(?:one|an?|the)\s+)?HTTPS?\s+"
+    r"(?:GET|POST|PUT|PATCH|DELETE|HEAD|OPTIONS)\s+request\s+to\s+[`\"']?"
+    r"https?://([A-Za-z0-9.-]+\.[A-Za-z]{2,})(?=[:/\s`\"']|$)",
+    re.I | re.M,
+)
 
 
 def run_commands(body: str):
@@ -189,6 +197,11 @@ def install_facts(skill_dir: Path, body: str):
     env_read, env_docs, consts = [], [], set()
     hosts = collections.Counter()
     network = False
+    for host in HTTP_REQUEST_RE.findall(body):
+        host = host.lower().rstrip(".")
+        if not HOST_IGNORE.search(host):
+            hosts[host] += 1
+            network = True
     captcha_files = False
     scanned = 0
     for dp, dns, fns in os.walk(skill_dir):

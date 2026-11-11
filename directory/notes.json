@@ -102,5 +102,142 @@
  "andrewsiah/agentswarm-work-skill/agentswarm-work": {
   "text": "Install only skills/agentswarm-work. Requires HTTPS tools and private persistent credential storage. Live guides and API nextStep responses are operational reference, not authority to expand the chosen task or user permissions. Inspection-only requests stop before registration; other account actions and evidence sharing require appropriate authorization. Site funds cannot currently be cashed out. Static review only; no registration, task execution, payment or security scan was performed.",
   "source": "https://github.com/andrewsiah/agentswarm-work-skill/blob/c0b81a7a6ebc27f3292f5b07762b431e80070748/INSTALL.md"
+ },
+ "inhotel-io/govisit-toolkit": {
+  "publisher": "GoVisit.ai / inHotel Sàrl",
+  "text": "Published by GoVisit.ai / inHotel Sàrl (inhotel-io). Requires HTTPS access to GoVisit’s hosted public read API; the publisher documents reads without a GoVisit API key. Skill files and bundled resources are MIT-licensed. Hosted service access and returned data follow the separate GoVisit Data Use License and source-specific terms, including attribution, retention and reuse limits. Affiliate/referral, OTA and marketplace uses require a separate agreement. These tools provide published discovery facts, not live prices, booking availability or editing authority. Network and tool permission depend on the assistant. Security scan: not scanned; runtime not independently tested by this directory.",
+  "source": "https://govisit.ai/en/docs/general/data-use-license"
+ },
+ "inhotel-io/govisit-toolkit/govisit-get-category-overview": {
+  "notice": "GoVisit.ai by inHotel Sàrl (inhotel-io). MIT skill files; hosted API access and returned data have separate GoVisit terms.",
+  "text": "Published by GoVisit.ai / inHotel Sàrl (inhotel-io). Requires HTTPS access to GoVisit’s hosted public read API; the publisher documents reads without a GoVisit API key. Skill files and bundled resources are MIT-licensed. Hosted service access and returned data follow the separate GoVisit Data Use License and source-specific terms, including attribution, retention and reuse limits. Affiliate/referral, OTA and marketplace uses require a separate agreement. These tools provide published discovery facts, not live prices, booking availability or editing authority. Network and tool permission depend on the assistant. Security scan: not scanned; runtime not independently tested by this directory.",
+  "source": "https://govisit.ai/en/docs/general/data-use-license",
+  "source_label": "Service and data terms"
+ },
+ "inhotel-io/govisit-toolkit/govisit-get-category-section": {
+  "notice": "GoVisit.ai by inHotel Sàrl (inhotel-io). MIT skill files; hosted API access and returned data have separate GoVisit terms.",
+  "text": "Published by GoVisit.ai / inHotel Sàrl (inhotel-io). Requires HTTPS access to GoVisit’s hosted public read API; the publisher documents reads without a GoVisit API key. Skill files and bundled resources are MIT-licensed. Hosted service access and returned data follow the separate GoVisit Data Use License and source-specific terms, including attribution, retention and reuse limits. Affiliate/referral, OTA and marketplace uses require a separate agreement. These tools provide published discovery facts, not live prices, booking availability or editing authority. Network and tool permission depend on the assistant. Security scan: not scanned; runtime not independently tested by this directory.",
+  "source": "https://govisit.ai/en/docs/general/data-use-license",
+  "source_label": "Service and data terms"
+ },
+ "inhotel-io/govisit-toolkit/govisit-get-collection-overview": {
+  "notice": "GoVisit.ai by inHotel Sàrl (inhotel-io). MIT skill files; hosted API access and returned data have separate GoVisit terms.",
+  "text": "Published by GoVisit.ai / inHotel Sàrl (inhotel-io). Requires HTTPS access to GoVisit’s hosted public read API; the publisher documents reads without a GoVisit API key. Skill files and bundled resources are MIT-licensed. Hosted service access and returned data follow the separate GoVisit Data Use License and source-specific terms, including attribution, retention and reuse limits. Affiliate/referral, OTA and marketplace uses require a separate agreement. These tools provide published discovery facts, not live prices, booking availability or editing authority. Network and tool permission depend on the assistant. Security scan: not scanned; runtime not independently tested by this directory.",
+  "source": "https://govisit.ai/en/docs/general/data-use-license",
+  "source_label": "Service and data terms"
+ },
+ "inhotel-io/govisit-toolkit/govisit-get-collection-section": {
+  "notice": "GoVisit.ai by inHotel Sàrl (inhotel-io). MIT skill files; hosted API access and returned data have separate GoVisit terms.",
+  "text": "Published by GoVisit.ai / inHotel Sàrl (inhotel-io). Requires HTTPS access to GoVisit’s hosted public read API; the publisher documents reads without a GoVisit API key. Skill files and bundled resources are MIT-licensed. Hosted service access and returned data follow the separate GoVisit Data Use License and source-specific terms, including attribution, retention and reuse limits. Affiliate/referral, OTA and marketplace uses require a separate agreement. These tools provide published discovery facts, not live prices, booking availability or editing authority. Network and tool permission depend on the assistant. Security scan: not scanned; runtime not independently tested by this directory.",
+  "source": "https://govisit.ai/en/docs/general/data-use-license",
+  "source_label": "Service and data terms"
+ },
+ "inhotel-io/govisit-toolkit/govisit-get-destination-overview": {
+  "notice": "GoVisit.ai by inHotel Sàrl (inhotel-io). MIT skill files; hosted API access and returned data have separate GoVisit terms.",
+  "text": "Published by GoVisit.ai / inHotel Sàrl (inhotel-io). Requires HTTPS access to GoVisit’s hosted public read API; the publisher documents reads without a GoVisit API key. Skill files and bundled resources are MIT-licensed. Hosted service access and returned data follow the separate GoVisit Data Use License and source-specific terms, including attribution, retention and reuse limits. Affiliate/referral, OTA and marketplace uses require a separate agreement. These tools provide published discovery facts, not live prices, booking availability or editing authority. Network and tool permission depend on the assistant. Security scan: not scanned; runtime not independently tested by this directory.",
+  "source": "https://govisit.ai/en/docs/general/data-use-license",
+  "source_label": "Service and data terms"
+ },
+ "inhotel-io/govisit-toolkit/govisit-get-destination-section": {
+  "notice": "GoVisit.ai by inHotel Sàrl (inhotel-io). MIT skill files; hosted API access and returned data have separate GoVisit terms.",
+  "text": "Published by GoVisit.ai / inHotel Sàrl (inhotel-io). Requires HTTPS access to GoVisit’s hosted public read API; the publisher documents reads without a GoVisit API key. Skill files and bundled resources are MIT-licensed. Hosted service access and returned data follow the separate GoVisit Data Use License and source-specific terms, including attribution, retention and reuse limits. Affiliate/referral, OTA and marketplace uses require a separate agreement. These tools provide published discovery facts, not live prices, booking availability or editing authority. Network and tool permission depend on the assistant. Security scan: not scanned; runtime not independently tested by this directory.",
+  "source": "https://govisit.ai/en/docs/general/data-use-license",
+  "source_label": "Service and data terms"
+ },
+ "inhotel-io/govisit-toolkit/govisit-get-documentation-page": {
+  "notice": "GoVisit.ai by inHotel Sàrl (inhotel-io). MIT skill files; hosted API access and returned data have separate GoVisit terms.",
+  "text": "Published by GoVisit.ai / inHotel Sàrl (inhotel-io). Requires HTTPS access to GoVisit’s hosted public read API; the publisher documents reads without a GoVisit API key. Skill files and bundled resources are MIT-licensed. Hosted service access and returned data follow the separate GoVisit Data Use License and source-specific terms, including attribution, retention and reuse limits. Affiliate/referral, OTA and marketplace uses require a separate agreement. These tools provide published discovery facts, not live prices, booking availability or editing authority. Network and tool permission depend on the assistant. Security scan: not scanned; runtime not independently tested by this directory.",
+  "source": "https://govisit.ai/en/docs/general/data-use-license",
+  "source_label": "Service and data terms"
+ },
+ "inhotel-io/govisit-toolkit/govisit-get-page-faq": {
+  "notice": "GoVisit.ai by inHotel Sàrl (inhotel-io). MIT skill files; hosted API access and returned data have separate GoVisit terms.",
+  "text": "Published by GoVisit.ai / inHotel Sàrl (inhotel-io). Requires HTTPS access to GoVisit’s hosted public read API; the publisher documents reads without a GoVisit API key. Skill files and bundled resources are MIT-licensed. Hosted service access and returned data follow the separate GoVisit Data Use License and source-specific terms, including attribution, retention and reuse limits. Affiliate/referral, OTA and marketplace uses require a separate agreement. These tools provide published discovery facts, not live prices, booking availability or editing authority. Network and tool permission depend on the assistant. Security scan: not scanned; runtime not independently tested by this directory.",
+  "source": "https://govisit.ai/en/docs/general/data-use-license",
+  "source_label": "Service and data terms"
+ },
+ "inhotel-io/govisit-toolkit/govisit-get-place-overview": {
+  "notice": "GoVisit.ai by inHotel Sàrl (inhotel-io). MIT skill files; hosted API access and returned data have separate GoVisit terms.",
+  "text": "Published by GoVisit.ai / inHotel Sàrl (inhotel-io). Requires HTTPS access to GoVisit’s hosted public read API; the publisher documents reads without a GoVisit API key. Skill files and bundled resources are MIT-licensed. Hosted service access and returned data follow the separate GoVisit Data Use License and source-specific terms, including attribution, retention and reuse limits. Affiliate/referral, OTA and marketplace uses require a separate agreement. These tools provide published discovery facts, not live prices, booking availability or editing authority. Network and tool permission depend on the assistant. Security scan: not scanned; runtime not independently tested by this directory.",
+  "source": "https://govisit.ai/en/docs/general/data-use-license",
+  "source_label": "Service and data terms"
+ },
+ "inhotel-io/govisit-toolkit/govisit-get-place-section": {
+  "notice": "GoVisit.ai by inHotel Sàrl (inhotel-io). MIT skill files; hosted API access and returned data have separate GoVisit terms.",
+  "text": "Published by GoVisit.ai / inHotel Sàrl (inhotel-io). Requires HTTPS access to GoVisit’s hosted public read API; the publisher documents reads without a GoVisit API key. Skill files and bundled resources are MIT-licensed. Hosted service access and returned data follow the separate GoVisit Data Use License and source-specific terms, including attribution, retention and reuse limits. Affiliate/referral, OTA and marketplace uses require a separate agreement. These tools provide published discovery facts, not live prices, booking availability or editing authority. Network and tool permission depend on the assistant. Security scan: not scanned; runtime not independently tested by this directory.",
+  "source": "https://govisit.ai/en/docs/general/data-use-license",
+  "source_label": "Service and data terms"
+ },
+ "inhotel-io/govisit-toolkit/govisit-get-place-visit-facts": {
+  "notice": "GoVisit.ai by inHotel Sàrl (inhotel-io). MIT skill files; hosted API access and returned data have separate GoVisit terms.",
+  "text": "Published by GoVisit.ai / inHotel Sàrl (inhotel-io). Requires HTTPS access to GoVisit’s hosted public read API; the publisher documents reads without a GoVisit API key. Skill files and bundled resources are MIT-licensed. Hosted service access and returned data follow the separate GoVisit Data Use License and source-specific terms, including attribution, retention and reuse limits. Affiliate/referral, OTA and marketplace uses require a separate agreement. These tools provide published discovery facts, not live prices, booking availability or editing authority. Network and tool permission depend on the assistant. Security scan: not scanned; runtime not independently tested by this directory.",
+  "source": "https://govisit.ai/en/docs/general/data-use-license",
+  "source_label": "Service and data terms"
+ },
+ "inhotel-io/govisit-toolkit/govisit-get-statistics": {
+  "notice": "GoVisit.ai by inHotel Sàrl (inhotel-io). MIT skill files; hosted API access and returned data have separate GoVisit terms.",
+  "text": "Published by GoVisit.ai / inHotel Sàrl (inhotel-io). Requires HTTPS access to GoVisit’s hosted public read API; the publisher documents reads without a GoVisit API key. Skill files and bundled resources are MIT-licensed. Hosted service access and returned data follow the separate GoVisit Data Use License and source-specific terms, including attribution, retention and reuse limits. Affiliate/referral, OTA and marketplace uses require a separate agreement. These tools provide published discovery facts, not live prices, booking availability or editing authority. Network and tool permission depend on the assistant. Security scan: not scanned; runtime not independently tested by this directory.",
+  "source": "https://govisit.ai/en/docs/general/data-use-license",
+  "source_label": "Service and data terms"
+ },
+ "inhotel-io/govisit-toolkit/govisit-list-category-places": {
+  "notice": "GoVisit.ai by inHotel Sàrl (inhotel-io). MIT skill files; hosted API access and returned data have separate GoVisit terms.",
+  "text": "Published by GoVisit.ai / inHotel Sàrl (inhotel-io). Requires HTTPS access to GoVisit’s hosted public read API; the publisher documents reads without a GoVisit API key. Skill files and bundled resources are MIT-licensed. Hosted service access and returned data follow the separate GoVisit Data Use License and source-specific terms, including attribution, retention and reuse limits. Affiliate/referral, OTA and marketplace uses require a separate agreement. These tools provide published discovery facts, not live prices, booking availability or editing authority. Network and tool permission depend on the assistant. Security scan: not scanned; runtime not independently tested by this directory.",
+  "source": "https://govisit.ai/en/docs/general/data-use-license",
+  "source_label": "Service and data terms"
+ },
+ "inhotel-io/govisit-toolkit/govisit-list-collection-places": {
+  "notice": "GoVisit.ai by inHotel Sàrl (inhotel-io). MIT skill files; hosted API access and returned data have separate GoVisit terms.",
+  "text": "Published by GoVisit.ai / inHotel Sàrl (inhotel-io). Requires HTTPS access to GoVisit’s hosted public read API; the publisher documents reads without a GoVisit API key. Skill files and bundled resources are MIT-licensed. Hosted service access and returned data follow the separate GoVisit Data Use License and source-specific terms, including attribution, retention and reuse limits. Affiliate/referral, OTA and marketplace uses require a separate agreement. These tools provide published discovery facts, not live prices, booking availability or editing authority. Network and tool permission depend on the assistant. Security scan: not scanned; runtime not independently tested by this directory.",
+  "source": "https://govisit.ai/en/docs/general/data-use-license",
+  "source_label": "Service and data terms"
+ },
+ "inhotel-io/govisit-toolkit/govisit-list-destination-activities": {
+  "notice": "GoVisit.ai by inHotel Sàrl (inhotel-io). MIT skill files; hosted API access and returned data have separate GoVisit terms.",
+  "text": "Published by GoVisit.ai / inHotel Sàrl (inhotel-io). Requires HTTPS access to GoVisit’s hosted public read API; the publisher documents reads without a GoVisit API key. Skill files and bundled resources are MIT-licensed. Hosted service access and returned data follow the separate GoVisit Data Use License and source-specific terms, including attribution, retention and reuse limits. Affiliate/referral, OTA and marketplace uses require a separate agreement. These tools provide published discovery facts, not live prices, booking availability or editing authority. Network and tool permission depend on the assistant. Security scan: not scanned; runtime not independently tested by this directory.",
+  "source": "https://govisit.ai/en/docs/general/data-use-license",
+  "source_label": "Service and data terms"
+ },
+ "inhotel-io/govisit-toolkit/govisit-list-destination-categories": {
+  "notice": "GoVisit.ai by inHotel Sàrl (inhotel-io). MIT skill files; hosted API access and returned data have separate GoVisit terms.",
+  "text": "Published by GoVisit.ai / inHotel Sàrl (inhotel-io). Requires HTTPS access to GoVisit’s hosted public read API; the publisher documents reads without a GoVisit API key. Skill files and bundled resources are MIT-licensed. Hosted service access and returned data follow the separate GoVisit Data Use License and source-specific terms, including attribution, retention and reuse limits. Affiliate/referral, OTA and marketplace uses require a separate agreement. These tools provide published discovery facts, not live prices, booking availability or editing authority. Network and tool permission depend on the assistant. Security scan: not scanned; runtime not independently tested by this directory.",
+  "source": "https://govisit.ai/en/docs/general/data-use-license",
+  "source_label": "Service and data terms"
+ },
+ "inhotel-io/govisit-toolkit/govisit-list-destination-highlights": {
+  "notice": "GoVisit.ai by inHotel Sàrl (inhotel-io). MIT skill files; hosted API access and returned data have separate GoVisit terms.",
+  "text": "Published by GoVisit.ai / inHotel Sàrl (inhotel-io). Requires HTTPS access to GoVisit’s hosted public read API; the publisher documents reads without a GoVisit API key. Skill files and bundled resources are MIT-licensed. Hosted service access and returned data follow the separate GoVisit Data Use License and source-specific terms, including attribution, retention and reuse limits. Affiliate/referral, OTA and marketplace uses require a separate agreement. These tools provide published discovery facts, not live prices, booking availability or editing authority. Network and tool permission depend on the assistant. Security scan: not scanned; runtime not independently tested by this directory.",
+  "source": "https://govisit.ai/en/docs/general/data-use-license",
+  "source_label": "Service and data terms"
+ },
+ "inhotel-io/govisit-toolkit/govisit-list-destination-places": {
+  "notice": "GoVisit.ai by inHotel Sàrl (inhotel-io). MIT skill files; hosted API access and returned data have separate GoVisit terms.",
+  "text": "Published by GoVisit.ai / inHotel Sàrl (inhotel-io). Requires HTTPS access to GoVisit’s hosted public read API; the publisher documents reads without a GoVisit API key. Skill files and bundled resources are MIT-licensed. Hosted service access and returned data follow the separate GoVisit Data Use License and source-specific terms, including attribution, retention and reuse limits. Affiliate/referral, OTA and marketplace uses require a separate agreement. These tools provide published discovery facts, not live prices, booking availability or editing authority. Network and tool permission depend on the assistant. Security scan: not scanned; runtime not independently tested by this directory.",
+  "source": "https://govisit.ai/en/docs/general/data-use-license",
+  "source_label": "Service and data terms"
+ },
+ "inhotel-io/govisit-toolkit/govisit-list-related-places": {
+  "notice": "GoVisit.ai by inHotel Sàrl (inhotel-io). MIT skill files; hosted API access and returned data have separate GoVisit terms.",
+  "text": "Published by GoVisit.ai / inHotel Sàrl (inhotel-io). Requires HTTPS access to GoVisit’s hosted public read API; the publisher documents reads without a GoVisit API key. Skill files and bundled resources are MIT-licensed. Hosted service access and returned data follow the separate GoVisit Data Use License and source-specific terms, including attribution, retention and reuse limits. Affiliate/referral, OTA and marketplace uses require a separate agreement. These tools provide published discovery facts, not live prices, booking availability or editing authority. Network and tool permission depend on the assistant. Security scan: not scanned; runtime not independently tested by this directory.",
+  "source": "https://govisit.ai/en/docs/general/data-use-license",
+  "source_label": "Service and data terms"
+ },
+ "inhotel-io/govisit-toolkit/govisit-search-destinations": {
+  "notice": "GoVisit.ai by inHotel Sàrl (inhotel-io). MIT skill files; hosted API access and returned data have separate GoVisit terms.",
+  "text": "Published by GoVisit.ai / inHotel Sàrl (inhotel-io). Requires HTTPS access to GoVisit’s hosted public read API; the publisher documents reads without a GoVisit API key. Skill files and bundled resources are MIT-licensed. Hosted service access and returned data follow the separate GoVisit Data Use License and source-specific terms, including attribution, retention and reuse limits. Affiliate/referral, OTA and marketplace uses require a separate agreement. These tools provide published discovery facts, not live prices, booking availability or editing authority. Network and tool permission depend on the assistant. Security scan: not scanned; runtime not independently tested by this directory.",
+  "source": "https://govisit.ai/en/docs/general/data-use-license",
+  "source_label": "Service and data terms"
+ },
+ "inhotel-io/govisit-toolkit/govisit-search-documentation": {
+  "notice": "GoVisit.ai by inHotel Sàrl (inhotel-io). MIT skill files; hosted API access and returned data have separate GoVisit terms.",
+  "text": "Published by GoVisit.ai / inHotel Sàrl (inhotel-io). Requires HTTPS access to GoVisit’s hosted public read API; the publisher documents reads without a GoVisit API key. Skill files and bundled resources are MIT-licensed. Hosted service access and returned data follow the separate GoVisit Data Use License and source-specific terms, including attribution, retention and reuse limits. Affiliate/referral, OTA and marketplace uses require a separate agreement. These tools provide published discovery facts, not live prices, booking availability or editing authority. Network and tool permission depend on the assistant. Security scan: not scanned; runtime not independently tested by this directory.",
+  "source": "https://govisit.ai/en/docs/general/data-use-license",
+  "source_label": "Service and data terms"
+ },
+ "inhotel-io/govisit-toolkit/govisit-search-places": {
+  "notice": "GoVisit.ai by inHotel Sàrl (inhotel-io). MIT skill files; hosted API access and returned data have separate GoVisit terms.",
+  "text": "Published by GoVisit.ai / inHotel Sàrl (inhotel-io). Requires HTTPS access to GoVisit’s hosted public read API; the publisher documents reads without a GoVisit API key. Skill files and bundled resources are MIT-licensed. Hosted service access and returned data follow the separate GoVisit Data Use License and source-specific terms, including attribution, retention and reuse limits. Affiliate/referral, OTA and marketplace uses require a separate agreement. These tools provide published discovery facts, not live prices, booking availability or editing authority. Network and tool permission depend on the assistant. Security scan: not scanned; runtime not independently tested by this directory. Destination-scoped place-name queries have a reported timeout in upstream issue #3; preserve the requested scope rather than silently broadening it.",
+  "source": "https://govisit.ai/en/docs/general/data-use-license",
+  "source_label": "Service and data terms"
  }
 }

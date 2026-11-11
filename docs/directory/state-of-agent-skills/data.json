@@ -2,10 +2,10 @@
   "snapshot": "2026-10-22",
   "install_snapshot": "2026-11-08",
   "scope": "Third-party listed skills; Suede AI excluded",
-  "total": 3805,
+  "total": 3827,
   "grades": {
     "A": 120,
-    "B": 1582,
+    "B": 1604,
     "C": 1379,
     "D": 724
   },
@@ -16,7 +16,7 @@
     ],
     [
       "free-with-service",
-      287
+      309
     ],
     [
       "noncommercial",
@@ -34,7 +34,7 @@
     ],
     [
       "developer-tools",
-      542
+      544
     ],
     [
       "devops-cloud",
@@ -49,12 +49,12 @@
       237
     ],
     [
-      "media-creative",
-      231
+      "productivity-knowledge",
+      233
     ],
     [
-      "productivity-knowledge",
-      213
+      "media-creative",
+      231
     ],
     [
       "science-research",
@@ -97,14 +97,14 @@
     {
       "name": "Curated-list citations",
       "max": 7,
-      "missing": 3587,
-      "lost": 17463
+      "missing": 3609,
+      "lost": 17617
     },
     {
       "name": "Boundary clause",
       "max": 4,
-      "missing": 3293,
-      "lost": 13172
+      "missing": 3315,
+      "lost": 13260
     },
     {
       "name": "Structural checks",
@@ -115,26 +115,26 @@
     {
       "name": "Example request",
       "max": 3,
-      "missing": 2849,
-      "lost": 8547
+      "missing": 2871,
+      "lost": 8613
     },
     {
       "name": "Compatibility declared",
       "max": 2,
-      "missing": 3278,
-      "lost": 6556
+      "missing": 3300,
+      "lost": 6600
     },
     {
       "name": "Tool permissions declared",
       "max": 2,
-      "missing": 3247,
-      "lost": 6494
+      "missing": 3269,
+      "lost": 6538
     },
     {
       "name": "Bundled scripts",
       "max": 2,
-      "missing": 3144,
-      "lost": 6288
+      "missing": 3166,
+      "lost": 6332
     },
     {
       "name": "Reference files",

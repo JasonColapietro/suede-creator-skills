@@ -7,9 +7,8 @@
 // Lanes partition every listed skill by what it costs to use: the license it
 // ships under, and whether its files name a paid or account-based service.
 // Flags are independent yes/no facts; a skill carries any number of them. Flags
-// marked scope "install" come from the install record the refresh writes for
-// skills with full pages (the only skills whose files the directory reads in
-// full), so their pages count those skills only and say so.
+// marked scope "install" count skills with saved install evidence. This
+// includes full pages and ordinary listings with observed network use.
 
 export const LANES = [
   {
@@ -50,8 +49,8 @@ export const laneById = new Map(LANES.map((l) => [l.id, l]));
 const NONCOMMERCIAL_RE = /\bNC\b|noncommercial|non-commercial/i;
 const SERVICE_RE = /\b(api key|api token|access token|requires? (?:a |an |the )?(?:[\w.-]+ )?(?:mcp server|account|subscription|api)|paid|premium|credentials?|oauth|sign ?up|mcp server)\b/i;
 
-// Whether the skill's files name a service to sign up for: the install record
-// for full pages, else the compatibility line the author wrote.
+// Prefer saved install evidence, including public APIs without accounts;
+// otherwise fall back to the compatibility line the author wrote.
 export function needsService(s) {
   const i = s.install;
   if (i) return Boolean(i.mcp || (i.mcp_tools || []).length || (i.env_docs || []).length || (i.env_read || []).length || (i.hosts || []).length || i.net);

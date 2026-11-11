@@ -30,7 +30,8 @@
   "andrewsiah/agentswarm-work-skill",
   "waynehamadi/datacircle",
   "OakcoderX/awesome-agent-skills",
-  "korey2028-prog/resume-claim-guard"
+  "korey2028-prog/resume-claim-guard",
+  "inhotel-io/govisit-toolkit"
  ],
  "skills": {
   "appierun/appie-mcp": [
@@ -986,6 +987,30 @@
   ],
   "korey2028-prog/resume-claim-guard": [
    "resume-claim-guard"
+  ],
+  "inhotel-io/govisit-toolkit": [
+   "govisit-get-category-overview",
+   "govisit-get-category-section",
+   "govisit-get-collection-overview",
+   "govisit-get-collection-section",
+   "govisit-get-destination-overview",
+   "govisit-get-destination-section",
+   "govisit-get-documentation-page",
+   "govisit-get-page-faq",
+   "govisit-get-place-overview",
+   "govisit-get-place-section",
+   "govisit-get-place-visit-facts",
+   "govisit-get-statistics",
+   "govisit-list-category-places",
+   "govisit-list-collection-places",
+   "govisit-list-destination-activities",
+   "govisit-list-destination-categories",
+   "govisit-list-destination-highlights",
+   "govisit-list-destination-places",
+   "govisit-list-related-places",
+   "govisit-search-destinations",
+   "govisit-search-documentation",
+   "govisit-search-places"
   ]
  },
  "skill_roots": {
@@ -1106,6 +1131,9 @@
   ],
   "OakcoderX/awesome-agent-skills": [
    "socratic-story-cartographer"
+  ],
+  "inhotel-io/govisit-toolkit": [
+   "skills"
   ]
  },
  "citations": {
@@ -1131,6 +1159,30 @@
  "skill_paths": {
   "korey2028-prog/resume-claim-guard": [
    "."
+  ],
+  "inhotel-io/govisit-toolkit": [
+   "skills/govisit-get-category-overview",
+   "skills/govisit-get-category-section",
+   "skills/govisit-get-collection-overview",
+   "skills/govisit-get-collection-section",
+   "skills/govisit-get-destination-overview",
+   "skills/govisit-get-destination-section",
+   "skills/govisit-get-documentation-page",
+   "skills/govisit-get-page-faq",
+   "skills/govisit-get-place-overview",
+   "skills/govisit-get-place-section",
+   "skills/govisit-get-place-visit-facts",
+   "skills/govisit-get-statistics",
+   "skills/govisit-list-category-places",
+   "skills/govisit-list-collection-places",
+   "skills/govisit-list-destination-activities",
+   "skills/govisit-list-destination-categories",
+   "skills/govisit-list-destination-highlights",
+   "skills/govisit-list-destination-places",
+   "skills/govisit-list-related-places",
+   "skills/govisit-search-destinations",
+   "skills/govisit-search-documentation",
+   "skills/govisit-search-places"
   ]
  }
 }

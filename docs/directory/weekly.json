@@ -62,6 +62,28 @@
   ],
   "new_listings": [
     "geekflare/geekflare-skills/geekflare",
+    "inhotel-io/govisit-toolkit/govisit-get-category-overview",
+    "inhotel-io/govisit-toolkit/govisit-get-category-section",
+    "inhotel-io/govisit-toolkit/govisit-get-collection-overview",
+    "inhotel-io/govisit-toolkit/govisit-get-collection-section",
+    "inhotel-io/govisit-toolkit/govisit-get-destination-overview",
+    "inhotel-io/govisit-toolkit/govisit-get-destination-section",
+    "inhotel-io/govisit-toolkit/govisit-get-documentation-page",
+    "inhotel-io/govisit-toolkit/govisit-get-page-faq",
+    "inhotel-io/govisit-toolkit/govisit-get-place-overview",
+    "inhotel-io/govisit-toolkit/govisit-get-place-section",
+    "inhotel-io/govisit-toolkit/govisit-get-place-visit-facts",
+    "inhotel-io/govisit-toolkit/govisit-get-statistics",
+    "inhotel-io/govisit-toolkit/govisit-list-category-places",
+    "inhotel-io/govisit-toolkit/govisit-list-collection-places",
+    "inhotel-io/govisit-toolkit/govisit-list-destination-activities",
+    "inhotel-io/govisit-toolkit/govisit-list-destination-categories",
+    "inhotel-io/govisit-toolkit/govisit-list-destination-highlights",
+    "inhotel-io/govisit-toolkit/govisit-list-destination-places",
+    "inhotel-io/govisit-toolkit/govisit-list-related-places",
+    "inhotel-io/govisit-toolkit/govisit-search-destinations",
+    "inhotel-io/govisit-toolkit/govisit-search-documentation",
+    "inhotel-io/govisit-toolkit/govisit-search-places",
     "melmayssonowen/agent-skills/timetopost-social-scheduler",
     "melmayssonowen/agent-skills/timetopost-autoseo-blog",
     "melmayssonowen/agent-skills/clef-music-tools",
@@ -88,29 +110,7 @@
     "eduardo-sl/go-agent-skills/go-refactoring",
     "eduardo-sl/go-agent-skills/go-troubleshooting",
     "sergebulaev/linkedin-skills/linkedin-employee-advocacy",
-    "sergebulaev/linkedin-skills/linkedin-profile-optimizer",
-    "trailofbits/skills/let-fate-decide",
-    "eduardo-sl/go-agent-skills/go-build-release",
-    "eduardo-sl/go-agent-skills/go-defensive-coding",
-    "eduardo-sl/go-agent-skills/go-graphql",
-    "eduardo-sl/go-agent-skills/go-semantic-tools",
-    "eduardo-sl/go-agent-skills/go-test-quality",
-    "eduardo-sl/go-agent-skills/go-test-table-driven",
-    "k-dense-ai/claude-scientific-skills/generate-image",
-    "k-dense-ai/claude-scientific-skills/hypogenic",
-    "k-dense-ai/claude-scientific-skills/matchms",
-    "k-dense-ai/claude-scientific-skills/ncats-arax",
-    "k-dense-ai/claude-scientific-skills/neurokit2",
-    "k-dense-ai/claude-scientific-skills/opentrons-integration",
-    "trailofbits/skills/fp-check",
-    "trailofbits/skills/pr-improver",
-    "trailofbits/skills/skill-improver",
-    "coreyhaines31/marketingskills/onboarding",
-    "coreyhaines31/marketingskills/site-architecture",
-    "eduardo-sl/go-agent-skills/git-commit",
-    "eduardo-sl/go-agent-skills/go-dependency-injection",
-    "eduardo-sl/go-agent-skills/go-project-layout",
-    "google/skills/cloud-databases-onboarding"
+    "sergebulaev/linkedin-skills/linkedin-profile-optimizer"
   ],
   "topics": [
     {
@@ -1484,7 +1484,7 @@
     {
       "id": "documentation",
       "name": "Documentation and READMEs",
-      "skills": 42,
+      "skills": 44,
       "weekly_installs": 0,
       "change_pct": null,
       "best": [
@@ -2214,7 +2214,7 @@
     {
       "id": "technical-writing",
       "name": "Technical Writing and Documentation",
-      "skills": 33,
+      "skills": 35,
       "weekly_installs": 0,
       "change_pct": null,
       "best": [
@@ -5508,36 +5508,6 @@
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/eduardo-sl/go-agent-skills/go-database/"
     },
-    "eduardo-sl/go-agent-skills/go-defensive-coding": {
-      "id": "eduardo-sl/go-agent-skills/go-defensive-coding",
-      "name": "go-defensive-coding",
-      "repo": "eduardo-sl/go-agent-skills",
-      "description": "Prevent panics, silent corruption, and subtle runtime bugs in Go: typed-nil interfaces, slice aliasing, integer overflow on conversion, float comparison, defer in loops, defensive copying at API boundaries, and zero-valu",
-      "score": 93,
-      "grade": "A",
-      "category": "code-review-quality",
-      "topics": [
-        "golang"
-      ],
-      "license": "MIT",
-      "cost_lane": "free-open-source",
-      "listing": "https://suedeai.directory/eduardo-sl/go-agent-skills/go-defensive-coding/"
-    },
-    "eduardo-sl/go-agent-skills/go-dependency-injection": {
-      "id": "eduardo-sl/go-agent-skills/go-dependency-injection",
-      "name": "go-dependency-injection",
-      "repo": "eduardo-sl/go-agent-skills",
-      "description": "Dependency injection in Go: constructor injection, wiring in main, avoiding global state, and when frameworks (wire, fx, dig) earn their complexity. Use when: \"dependency injection\", \"wire up dependencies\", \"inject this\"",
-      "score": 92,
-      "grade": "A",
-      "category": "developer-tools",
-      "topics": [
-        "golang"
-      ],
-      "license": "MIT",
-      "cost_lane": "free-open-source",
-      "listing": "https://suedeai.directory/eduardo-sl/go-agent-skills/go-dependency-injection/"
-    },
     "eduardo-sl/go-agent-skills/go-design-patterns": {
       "id": "eduardo-sl/go-agent-skills/go-design-patterns",
       "name": "go-design-patterns",
@@ -5714,21 +5684,6 @@
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/eduardo-sl/go-agent-skills/go-performance-review/"
     },
-    "eduardo-sl/go-agent-skills/go-project-layout": {
-      "id": "eduardo-sl/go-agent-skills/go-project-layout",
-      "name": "go-project-layout",
-      "repo": "eduardo-sl/go-agent-skills",
-      "description": "Scaffold new Go projects and services: directory structure, cmd/ and internal/ conventions, when to use a flat layout, module naming, and main package wiring. Use when: \"new Go project\", \"scaffold a service\", \"create pro",
-      "score": 92,
-      "grade": "A",
-      "category": "developer-tools",
-      "topics": [
-        "golang"
-      ],
-      "license": "MIT",
-      "cost_lane": "free-open-source",
-      "listing": "https://suedeai.directory/eduardo-sl/go-agent-skills/go-project-layout/"
-    },
     "eduardo-sl/go-agent-skills/go-refactoring": {
       "id": "eduardo-sl/go-agent-skills/go-refactoring",
       "name": "go-refactoring",
@@ -5745,21 +5700,6 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/eduardo-sl/go-agent-skills/go-refactoring/"
-    },
-    "eduardo-sl/go-agent-skills/go-semantic-tools": {
-      "id": "eduardo-sl/go-agent-skills/go-semantic-tools",
-      "name": "go-semantic-tools",
-      "repo": "eduardo-sl/go-agent-skills",
-      "description": "Navigate and analyze Go codebases semantically with the toolchain instead of text search: gopls via its MCP server or CLI (references, implementations, call hierarchy, rename, extract/inline code actions, diagnostics), g",
-      "score": 93,
-      "grade": "A",
-      "category": "developer-tools",
-      "topics": [
-        "golang"
-      ],
-      "license": "MIT",
-      "cost_lane": "free-with-service",
-      "listing": "https://suedeai.directory/eduardo-sl/go-agent-skills/go-semantic-tools/"
     },
     "eduardo-sl/go-agent-skills/go-test-quality": {
       "id": "eduardo-sl/go-agent-skills/go-test-quality",
@@ -8212,6 +8152,298 @@
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/infrasity-labs/dev-gtm-claude-skills/#seo-ecommerce"
     },
+    "inhotel-io/govisit-toolkit/govisit-get-category-overview": {
+      "id": "inhotel-io/govisit-toolkit/govisit-get-category-overview",
+      "name": "govisit-get-category-overview",
+      "repo": "inhotel-io/govisit-toolkit",
+      "description": "Read the published overview for the selected destination category page. Use when an agent needs this published GoVisit evidence through HTTP for an integration or travel decision.",
+      "score": 80,
+      "grade": "B",
+      "category": "productivity-knowledge",
+      "topics": [],
+      "license": "MIT",
+      "cost_lane": "free-with-service",
+      "listing": "https://suedeai.directory/inhotel-io/govisit-toolkit/govisit-get-category-overview/"
+    },
+    "inhotel-io/govisit-toolkit/govisit-get-category-section": {
+      "id": "inhotel-io/govisit-toolkit/govisit-get-category-section",
+      "name": "govisit-get-category-section",
+      "repo": "inhotel-io/govisit-toolkit",
+      "description": "Read one published section for the selected destination category page. Use when an agent needs this published GoVisit evidence through HTTP for an integration or travel decision.",
+      "score": 80,
+      "grade": "B",
+      "category": "productivity-knowledge",
+      "topics": [],
+      "license": "MIT",
+      "cost_lane": "free-with-service",
+      "listing": "https://suedeai.directory/inhotel-io/govisit-toolkit/#govisit-get-category-section"
+    },
+    "inhotel-io/govisit-toolkit/govisit-get-collection-overview": {
+      "id": "inhotel-io/govisit-toolkit/govisit-get-collection-overview",
+      "name": "govisit-get-collection-overview",
+      "repo": "inhotel-io/govisit-toolkit",
+      "description": "Read the published overview for the selected destination collection page. Use when an agent needs this published GoVisit evidence through HTTP for an integration or travel decision.",
+      "score": 80,
+      "grade": "B",
+      "category": "productivity-knowledge",
+      "topics": [],
+      "license": "MIT",
+      "cost_lane": "free-with-service",
+      "listing": "https://suedeai.directory/inhotel-io/govisit-toolkit/govisit-get-collection-overview/"
+    },
+    "inhotel-io/govisit-toolkit/govisit-get-collection-section": {
+      "id": "inhotel-io/govisit-toolkit/govisit-get-collection-section",
+      "name": "govisit-get-collection-section",
+      "repo": "inhotel-io/govisit-toolkit",
+      "description": "Read one published section for the selected destination collection page. Use when an agent needs this published GoVisit evidence through HTTP for an integration or travel decision.",
+      "score": 80,
+      "grade": "B",
+      "category": "productivity-knowledge",
+      "topics": [],
+      "license": "MIT",
+      "cost_lane": "free-with-service",
+      "listing": "https://suedeai.directory/inhotel-io/govisit-toolkit/govisit-get-collection-section/"
+    },
+    "inhotel-io/govisit-toolkit/govisit-get-destination-overview": {
+      "id": "inhotel-io/govisit-toolkit/govisit-get-destination-overview",
+      "name": "govisit-get-destination-overview",
+      "repo": "inhotel-io/govisit-toolkit",
+      "description": "Read the published overview fields for the selected destination. Use when an agent needs this published GoVisit evidence through HTTP for an integration or travel decision.",
+      "score": 80,
+      "grade": "B",
+      "category": "productivity-knowledge",
+      "topics": [],
+      "license": "MIT",
+      "cost_lane": "free-with-service",
+      "listing": "https://suedeai.directory/inhotel-io/govisit-toolkit/#govisit-get-destination-overview"
+    },
+    "inhotel-io/govisit-toolkit/govisit-get-destination-section": {
+      "id": "inhotel-io/govisit-toolkit/govisit-get-destination-section",
+      "name": "govisit-get-destination-section",
+      "repo": "inhotel-io/govisit-toolkit",
+      "description": "Read one published section of the selected destination. Use when an agent needs this published GoVisit evidence through HTTP for an integration or travel decision.",
+      "score": 80,
+      "grade": "B",
+      "category": "productivity-knowledge",
+      "topics": [],
+      "license": "MIT",
+      "cost_lane": "free-with-service",
+      "listing": "https://suedeai.directory/inhotel-io/govisit-toolkit/#govisit-get-destination-section"
+    },
+    "inhotel-io/govisit-toolkit/govisit-get-documentation-page": {
+      "id": "inhotel-io/govisit-toolkit/govisit-get-documentation-page",
+      "name": "govisit-get-documentation-page",
+      "repo": "inhotel-io/govisit-toolkit",
+      "description": "Read bounded structured content from the selected published article. Use when an agent needs this published GoVisit evidence through HTTP for an integration or travel decision.",
+      "score": 80,
+      "grade": "B",
+      "category": "developer-tools",
+      "topics": [
+        "technical-writing",
+        "documentation"
+      ],
+      "license": "MIT",
+      "cost_lane": "free-with-service",
+      "listing": "https://suedeai.directory/inhotel-io/govisit-toolkit/#govisit-get-documentation-page"
+    },
+    "inhotel-io/govisit-toolkit/govisit-get-page-faq": {
+      "id": "inhotel-io/govisit-toolkit/govisit-get-page-faq",
+      "name": "govisit-get-page-faq",
+      "repo": "inhotel-io/govisit-toolkit",
+      "description": "Read the published questions and answers on the selected blog or documentation article. Use when an agent needs this published GoVisit evidence through HTTP for an integration or travel decision.",
+      "score": 80,
+      "grade": "B",
+      "category": "productivity-knowledge",
+      "topics": [],
+      "license": "MIT",
+      "cost_lane": "free-with-service",
+      "listing": "https://suedeai.directory/inhotel-io/govisit-toolkit/govisit-get-page-faq/"
+    },
+    "inhotel-io/govisit-toolkit/govisit-get-place-overview": {
+      "id": "inhotel-io/govisit-toolkit/govisit-get-place-overview",
+      "name": "govisit-get-place-overview",
+      "repo": "inhotel-io/govisit-toolkit",
+      "description": "Read the published overview fields for the selected place. Use when an agent needs this published GoVisit evidence through HTTP for an integration or travel decision.",
+      "score": 80,
+      "grade": "B",
+      "category": "productivity-knowledge",
+      "topics": [],
+      "license": "MIT",
+      "cost_lane": "free-with-service",
+      "listing": "https://suedeai.directory/inhotel-io/govisit-toolkit/#govisit-get-place-overview"
+    },
+    "inhotel-io/govisit-toolkit/govisit-get-place-section": {
+      "id": "inhotel-io/govisit-toolkit/govisit-get-place-section",
+      "name": "govisit-get-place-section",
+      "repo": "inhotel-io/govisit-toolkit",
+      "description": "Read one published section of the selected place, including spatial details when requested. Use when an agent needs this published GoVisit evidence through HTTP for an integration or travel decision.",
+      "score": 80,
+      "grade": "B",
+      "category": "productivity-knowledge",
+      "topics": [],
+      "license": "MIT",
+      "cost_lane": "free-with-service",
+      "listing": "https://suedeai.directory/inhotel-io/govisit-toolkit/govisit-get-place-section/"
+    },
+    "inhotel-io/govisit-toolkit/govisit-get-place-visit-facts": {
+      "id": "inhotel-io/govisit-toolkit/govisit-get-place-visit-facts",
+      "name": "govisit-get-place-visit-facts",
+      "repo": "inhotel-io/govisit-toolkit",
+      "description": "Read compact, normalized visit facts for the selected place. Use when an agent needs this published GoVisit evidence through HTTP for an integration or travel decision.",
+      "score": 80,
+      "grade": "B",
+      "category": "productivity-knowledge",
+      "topics": [],
+      "license": "MIT",
+      "cost_lane": "free-with-service",
+      "listing": "https://suedeai.directory/inhotel-io/govisit-toolkit/#govisit-get-place-visit-facts"
+    },
+    "inhotel-io/govisit-toolkit/govisit-get-statistics": {
+      "id": "inhotel-io/govisit-toolkit/govisit-get-statistics",
+      "name": "govisit-get-statistics",
+      "repo": "inhotel-io/govisit-toolkit",
+      "description": "Use when an agent needs exact GoVisit catalog coverage counts for the physical World or a selected Destination, with observation dates and provenance.",
+      "score": 80,
+      "grade": "B",
+      "category": "productivity-knowledge",
+      "topics": [],
+      "license": "MIT",
+      "cost_lane": "free-with-service",
+      "listing": "https://suedeai.directory/inhotel-io/govisit-toolkit/#govisit-get-statistics"
+    },
+    "inhotel-io/govisit-toolkit/govisit-list-category-places": {
+      "id": "inhotel-io/govisit-toolkit/govisit-list-category-places",
+      "name": "govisit-list-category-places",
+      "repo": "inhotel-io/govisit-toolkit",
+      "description": "Filter the published place cards shown on the selected destination category page. Use when an agent needs this published GoVisit evidence through HTTP for an integration or travel decision.",
+      "score": 80,
+      "grade": "B",
+      "category": "productivity-knowledge",
+      "topics": [],
+      "license": "MIT",
+      "cost_lane": "free-with-service",
+      "listing": "https://suedeai.directory/inhotel-io/govisit-toolkit/govisit-list-category-places/"
+    },
+    "inhotel-io/govisit-toolkit/govisit-list-collection-places": {
+      "id": "inhotel-io/govisit-toolkit/govisit-list-collection-places",
+      "name": "govisit-list-collection-places",
+      "repo": "inhotel-io/govisit-toolkit",
+      "description": "Filter the published place cards shown on the selected destination collection page. Use when an agent needs this published GoVisit evidence through HTTP for an integration or travel decision.",
+      "score": 80,
+      "grade": "B",
+      "category": "productivity-knowledge",
+      "topics": [],
+      "license": "MIT",
+      "cost_lane": "free-with-service",
+      "listing": "https://suedeai.directory/inhotel-io/govisit-toolkit/govisit-list-collection-places/"
+    },
+    "inhotel-io/govisit-toolkit/govisit-list-destination-activities": {
+      "id": "inhotel-io/govisit-toolkit/govisit-list-destination-activities",
+      "name": "govisit-list-destination-activities",
+      "repo": "inhotel-io/govisit-toolkit",
+      "description": "Read the bounded published activities shown on the destination page. Use when an agent needs this published GoVisit evidence through HTTP for an integration or travel decision.",
+      "score": 80,
+      "grade": "B",
+      "category": "productivity-knowledge",
+      "topics": [],
+      "license": "MIT",
+      "cost_lane": "free-with-service",
+      "listing": "https://suedeai.directory/inhotel-io/govisit-toolkit/#govisit-list-destination-activities"
+    },
+    "inhotel-io/govisit-toolkit/govisit-list-destination-categories": {
+      "id": "inhotel-io/govisit-toolkit/govisit-list-destination-categories",
+      "name": "govisit-list-destination-categories",
+      "repo": "inhotel-io/govisit-toolkit",
+      "description": "Read the published category projection shown on the destination page. Use when an agent needs this published GoVisit evidence through HTTP for an integration or travel decision.",
+      "score": 80,
+      "grade": "B",
+      "category": "productivity-knowledge",
+      "topics": [],
+      "license": "MIT",
+      "cost_lane": "free-with-service",
+      "listing": "https://suedeai.directory/inhotel-io/govisit-toolkit/#govisit-list-destination-categories"
+    },
+    "inhotel-io/govisit-toolkit/govisit-list-destination-highlights": {
+      "id": "inhotel-io/govisit-toolkit/govisit-list-destination-highlights",
+      "name": "govisit-list-destination-highlights",
+      "repo": "inhotel-io/govisit-toolkit",
+      "description": "Read the bounded published highlights shown on the destination page. Use when an agent needs this published GoVisit evidence through HTTP for an integration or travel decision.",
+      "score": 80,
+      "grade": "B",
+      "category": "productivity-knowledge",
+      "topics": [],
+      "license": "MIT",
+      "cost_lane": "free-with-service",
+      "listing": "https://suedeai.directory/inhotel-io/govisit-toolkit/#govisit-list-destination-highlights"
+    },
+    "inhotel-io/govisit-toolkit/govisit-list-destination-places": {
+      "id": "inhotel-io/govisit-toolkit/govisit-list-destination-places",
+      "name": "govisit-list-destination-places",
+      "repo": "inhotel-io/govisit-toolkit",
+      "description": "Filter the published place cards already present on the destination page. Use when an agent needs this published GoVisit evidence through HTTP for an integration or travel decision.",
+      "score": 80,
+      "grade": "B",
+      "category": "productivity-knowledge",
+      "topics": [],
+      "license": "MIT",
+      "cost_lane": "free-with-service",
+      "listing": "https://suedeai.directory/inhotel-io/govisit-toolkit/govisit-list-destination-places/"
+    },
+    "inhotel-io/govisit-toolkit/govisit-list-related-places": {
+      "id": "inhotel-io/govisit-toolkit/govisit-list-related-places",
+      "name": "govisit-list-related-places",
+      "repo": "inhotel-io/govisit-toolkit",
+      "description": "Find bounded, page-local related place cards using optional published-field filters. Use when an agent needs this published GoVisit evidence through HTTP for an integration or travel decision.",
+      "score": 80,
+      "grade": "B",
+      "category": "productivity-knowledge",
+      "topics": [],
+      "license": "MIT",
+      "cost_lane": "free-with-service",
+      "listing": "https://suedeai.directory/inhotel-io/govisit-toolkit/govisit-list-related-places/"
+    },
+    "inhotel-io/govisit-toolkit/govisit-search-destinations": {
+      "id": "inhotel-io/govisit-toolkit/govisit-search-destinations",
+      "name": "govisit-search-destinations",
+      "repo": "inhotel-io/govisit-toolkit",
+      "description": "Search GoVisit destinations by name or traveler intent and return canonical destination codes and URLs. Use when a traveler needs to identify or explore a country, region, district, city, or highlight.",
+      "score": 80,
+      "grade": "B",
+      "category": "productivity-knowledge",
+      "topics": [],
+      "license": "MIT",
+      "cost_lane": "free-with-service",
+      "listing": "https://suedeai.directory/inhotel-io/govisit-toolkit/govisit-search-destinations/"
+    },
+    "inhotel-io/govisit-toolkit/govisit-search-documentation": {
+      "id": "inhotel-io/govisit-toolkit/govisit-search-documentation",
+      "name": "govisit-search-documentation",
+      "repo": "inhotel-io/govisit-toolkit",
+      "description": "Search the published documentation links rendered on the selected documentation index page. Use when an agent needs this published GoVisit evidence through HTTP for an integration or travel decision.",
+      "score": 80,
+      "grade": "B",
+      "category": "developer-tools",
+      "topics": [
+        "technical-writing",
+        "documentation"
+      ],
+      "license": "MIT",
+      "cost_lane": "free-with-service",
+      "listing": "https://suedeai.directory/inhotel-io/govisit-toolkit/govisit-search-documentation/"
+    },
+    "inhotel-io/govisit-toolkit/govisit-search-places": {
+      "id": "inhotel-io/govisit-toolkit/govisit-search-places",
+      "name": "govisit-search-places",
+      "repo": "inhotel-io/govisit-toolkit",
+      "description": "Search GoVisit places by name or traveler intent, optionally constrained by country, destination, or proximity. Use when a traveler needs candidate places and canonical profile URLs.",
+      "score": 80,
+      "grade": "B",
+      "category": "productivity-knowledge",
+      "topics": [],
+      "license": "MIT",
+      "cost_lane": "free-with-service",
+      "listing": "https://suedeai.directory/inhotel-io/govisit-toolkit/govisit-search-places/"
+    },
     "inhouseseo/superseo-skills/write-content": {
       "id": "inhouseseo/superseo-skills/write-content",
       "name": "write-content",
@@ -8695,19 +8927,6 @@
       "cost_lane": "free-with-service",
       "listing": "https://suedeai.directory/k-dense-ai/claude-scientific-skills/generate-image/"
     },
-    "k-dense-ai/claude-scientific-skills/hypogenic": {
-      "id": "k-dense-ai/claude-scientific-skills/hypogenic",
-      "name": "hypogenic",
-      "repo": "K-Dense-AI/claude-scientific-skills",
-      "description": "Plans and audits use of ChicagoHAI HypoGeniC/HypoRefine for LLM-assisted hypothesis generation from labeled text datasets. Use for the `hypogenic` package, its task configs, hypothesis banks, or HypoBench datasets—not fo",
-      "score": 93,
-      "grade": "A",
-      "category": "science-research",
-      "topics": [],
-      "license": "MIT",
-      "cost_lane": "free-with-service",
-      "listing": "https://suedeai.directory/k-dense-ai/claude-scientific-skills/hypogenic/"
-    },
     "k-dense-ai/claude-scientific-skills/infographics": {
       "id": "k-dense-ai/claude-scientific-skills/infographics",
       "name": "infographics",
@@ -8864,32 +9083,6 @@
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/k-dense-ai/claude-scientific-skills/#modal"
     },
-    "k-dense-ai/claude-scientific-skills/ncats-arax": {
-      "id": "k-dense-ai/claude-scientific-skills/ncats-arax",
-      "name": "ncats-arax",
-      "repo": "K-Dense-AI/claude-scientific-skills",
-      "description": "Queries the NCATS Translator ARAX production API for bounded, typed, provenance-rich one-hop and endpoint-pinned two-hop biomedical knowledge-graph relationships. Use for Biolink-constrained RTX-KG2 lookup, explicit sele",
-      "score": 93,
-      "grade": "A",
-      "category": "science-research",
-      "topics": [],
-      "license": "MIT",
-      "cost_lane": "free-with-service",
-      "listing": "https://suedeai.directory/k-dense-ai/claude-scientific-skills/ncats-arax/"
-    },
-    "k-dense-ai/claude-scientific-skills/neurokit2": {
-      "id": "k-dense-ai/claude-scientific-skills/neurokit2",
-      "name": "neurokit2",
-      "repo": "K-Dense-AI/claude-scientific-skills",
-      "description": "Builds and audits reproducible NeuroKit2 research workflows for physiological time-series preprocessing, event/interval analysis, multimodal alignment, variability, and complexity. Use when code imports neurokit2 or need",
-      "score": 93,
-      "grade": "A",
-      "category": "science-research",
-      "topics": [],
-      "license": "MIT",
-      "cost_lane": "free-open-source",
-      "listing": "https://suedeai.directory/k-dense-ai/claude-scientific-skills/neurokit2/"
-    },
     "k-dense-ai/claude-scientific-skills/open-notebook": {
       "id": "k-dense-ai/claude-scientific-skills/open-notebook",
       "name": "open-notebook",
@@ -8920,19 +9113,6 @@
       "license": "BSD-3-Clause",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/k-dense-ai/claude-scientific-skills/openpiv/"
-    },
-    "k-dense-ai/claude-scientific-skills/opentrons-integration": {
-      "id": "k-dense-ai/claude-scientific-skills/opentrons-integration",
-      "name": "opentrons-integration",
-      "repo": "K-Dense-AI/claude-scientific-skills",
-      "description": "Authors, reviews, migrates, simulates, and troubleshoots official Opentrons Python Protocol API v2 protocols for Flex and OT-2 robots. Use for robot-specific liquid handling, deck and labware setup, pipettes, modules, ru",
-      "score": 93,
-      "grade": "A",
-      "category": "science-research",
-      "topics": [],
-      "license": "MIT",
-      "cost_lane": "free-open-source",
-      "listing": "https://suedeai.directory/k-dense-ai/claude-scientific-skills/opentrons-integration/"
     },
     "k-dense-ai/claude-scientific-skills/paper-lookup": {
       "id": "k-dense-ai/claude-scientific-skills/paper-lookup",

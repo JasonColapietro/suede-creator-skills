@@ -1,82 +1,86 @@
 {
-  "231": {
-    "feature_id": "appie",
-    "scope_version": "2dc5519afe193d8a1972f7b29234155dc80c63462abb9033033b08efcc1ad8a0"
-  },
-  "243": {
-    "feature_id": "costory",
-    "scope_version": "e7c8d2234670abcfc74e0314ddeaae0f1f3efa083ad9161b19e728dcb5b497d8"
-  },
-  "250": {
-    "feature_id": "opsibyte",
-    "scope_version": "94494f6fd1083bef0781eef0ff7e1f675729002b75ac431f6d5dd2aaa77680c3"
-  },
-  "259": {
-    "feature_id": "extra-caffeine",
-    "scope_version": "d35f58e783113157f3e6ffb98b2f7f7c3fc241fad010084d2ae20e2b951d3728"
-  },
-  "264": {
-    "feature_id": "lfr",
-    "scope_version": "e5852df7f7d31a737feb471943b89e11aff060871d23421327721673374a0f55"
-  },
-  "276": {
-    "feature_id": "berlin-job-search",
-    "scope_version": "6e811a55b5ff041238cc7609d2d3e46d16d244c6745471cefd2ca7233d152fe6"
-  },
-  "291": {
-    "feature_id": "arcmira",
-    "scope_version": "c4f5a1a2404f3cf8d9cf1cbca6db84c56382169ddefbadf1635725790019685b"
-  },
-  "294": {
-    "feature_id": "lava",
-    "scope_version": "08f1b852b31b77e19a2989bac10520a479f1dc82486cdf210eaa35c2152fd434"
-  },
-  "304": {
-    "feature_id": "bulkpublish",
-    "scope_version": "3c15de099738fc60fb88e0e608df3a61faa9fc4f33c64c83ca17dd03d1f17fa2"
-  },
-  "307": {
-    "feature_id": "geekflare",
-    "scope_version": "fe25e2090db95cb1d12e0ee33e58f8af331f575474b0b6c66d125a0eb50f9099"
-  },
-  "316": {
-    "feature_id": "inkroom",
-    "scope_version": "11b79f8dc2d00a40ec3f7cfd04e488c92ef2350dab93c16362bd5a90e596a15c"
-  },
-  "317": {
-    "feature_id": "agent-qa",
-    "scope_version": "7ecd4be9a2d235ffa35d0ce88b9c344e2809b3e489df4b6821c329df9e3c2716"
-  },
-  "336": {
-    "feature_id": "poptin-email-marketing",
-    "scope_version": "dee1703fd4173166aaf0c37ddc38d50f11f118c9a92e031fde2ef13ebae11ff0"
-  },
-  "339": {
-    "feature_id": "video-director",
-    "scope_version": "fbc5a8865006c89dce995edb4d9318b50af9d6861b170f1df19313740aaa9a2f"
-  },
-  "344": {
-    "feature_id": "shiptopaid-lite",
-    "scope_version": "ae20c756f5b668fa722e51b0690ce2d81c5d2e96c98f1fb142433996461d6fe1"
-  },
-  "348": {
-    "feature_id": "agentswarm-work",
-    "scope_version": "09da6327f066f4878ba768e0626c8f8c026ed77a665f8501eba5fa56a7c6325f"
-  },
-  "359": {
-    "feature_id": "cloudgpu",
-    "scope_version": "8e72048ab422fad09586c9881c4be9f99594daef3697513a59b96a0de7618062"
-  },
-  "375": {
-    "feature_id": "datacircle",
-    "scope_version": "4e585cd1dd821958883fd442080a8ae340bf0afc5e15109fafbbb38d13b72c2a"
-  },
-  "374": {
-    "feature_id": "resume-claim-guard",
-    "scope_version": "8f6eaff1b5cfe3ab1a917c30fef0a61f9b1c35404421a7e32da984dde2139597"
-  },
-  "371": {
-    "feature_id": "socratic-story-cartographer",
-    "scope_version": "32bab7220728b680a0ba9bd81fc48017415df2e46153f62eea8ff653df335ead"
-  }
+ "231": {
+  "feature_id": "appie",
+  "scope_version": "2dc5519afe193d8a1972f7b29234155dc80c63462abb9033033b08efcc1ad8a0"
+ },
+ "243": {
+  "feature_id": "costory",
+  "scope_version": "e7c8d2234670abcfc74e0314ddeaae0f1f3efa083ad9161b19e728dcb5b497d8"
+ },
+ "250": {
+  "feature_id": "opsibyte",
+  "scope_version": "94494f6fd1083bef0781eef0ff7e1f675729002b75ac431f6d5dd2aaa77680c3"
+ },
+ "259": {
+  "feature_id": "extra-caffeine",
+  "scope_version": "d35f58e783113157f3e6ffb98b2f7f7c3fc241fad010084d2ae20e2b951d3728"
+ },
+ "264": {
+  "feature_id": "lfr",
+  "scope_version": "e5852df7f7d31a737feb471943b89e11aff060871d23421327721673374a0f55"
+ },
+ "276": {
+  "feature_id": "berlin-job-search",
+  "scope_version": "6e811a55b5ff041238cc7609d2d3e46d16d244c6745471cefd2ca7233d152fe6"
+ },
+ "291": {
+  "feature_id": "arcmira",
+  "scope_version": "c4f5a1a2404f3cf8d9cf1cbca6db84c56382169ddefbadf1635725790019685b"
+ },
+ "294": {
+  "feature_id": "lava",
+  "scope_version": "08f1b852b31b77e19a2989bac10520a479f1dc82486cdf210eaa35c2152fd434"
+ },
+ "304": {
+  "feature_id": "bulkpublish",
+  "scope_version": "3c15de099738fc60fb88e0e608df3a61faa9fc4f33c64c83ca17dd03d1f17fa2"
+ },
+ "307": {
+  "feature_id": "geekflare",
+  "scope_version": "fe25e2090db95cb1d12e0ee33e58f8af331f575474b0b6c66d125a0eb50f9099"
+ },
+ "316": {
+  "feature_id": "inkroom",
+  "scope_version": "11b79f8dc2d00a40ec3f7cfd04e488c92ef2350dab93c16362bd5a90e596a15c"
+ },
+ "317": {
+  "feature_id": "agent-qa",
+  "scope_version": "7ecd4be9a2d235ffa35d0ce88b9c344e2809b3e489df4b6821c329df9e3c2716"
+ },
+ "336": {
+  "feature_id": "poptin-email-marketing",
+  "scope_version": "dee1703fd4173166aaf0c37ddc38d50f11f118c9a92e031fde2ef13ebae11ff0"
+ },
+ "339": {
+  "feature_id": "video-director",
+  "scope_version": "fbc5a8865006c89dce995edb4d9318b50af9d6861b170f1df19313740aaa9a2f"
+ },
+ "344": {
+  "feature_id": "shiptopaid-lite",
+  "scope_version": "ae20c756f5b668fa722e51b0690ce2d81c5d2e96c98f1fb142433996461d6fe1"
+ },
+ "348": {
+  "feature_id": "agentswarm-work",
+  "scope_version": "09da6327f066f4878ba768e0626c8f8c026ed77a665f8501eba5fa56a7c6325f"
+ },
+ "359": {
+  "feature_id": "cloudgpu",
+  "scope_version": "8e72048ab422fad09586c9881c4be9f99594daef3697513a59b96a0de7618062"
+ },
+ "375": {
+  "feature_id": "datacircle",
+  "scope_version": "4e585cd1dd821958883fd442080a8ae340bf0afc5e15109fafbbb38d13b72c2a"
+ },
+ "374": {
+  "feature_id": "resume-claim-guard",
+  "scope_version": "8f6eaff1b5cfe3ab1a917c30fef0a61f9b1c35404421a7e32da984dde2139597"
+ },
+ "371": {
+  "feature_id": "socratic-story-cartographer",
+  "scope_version": "32bab7220728b680a0ba9bd81fc48017415df2e46153f62eea8ff653df335ead"
+ },
+ "379": {
+  "review": "directory/reviews/2026-11-11-govisit.md",
+  "scope_version": "3c3d0b9ae519aff142e98a2ac107421538f7aa2f15e7b92bd69b49a72a169917"
+ }
 }

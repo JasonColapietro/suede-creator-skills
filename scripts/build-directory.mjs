@@ -393,7 +393,7 @@ for (const r of repos.values()) {
   r.hasPage = r.skills.length >= 2 || !r.skills[0].featured || fs.existsSync(path.join(outRoot, ...r.slug.split("/"), "index.html"));
   r.indexable = r.hasPage;
   r.target = r.hasPage ? `directory/${r.slug}/` : skillPath(r.skills[0]);
-  r.publisher = publisherName(r.owner, r.official);
+  r.publisher = NOTES[r.repo]?.publisher || publisherName(r.owner, r.official);
   r.hasRootSkill = r.skills.some((s) => s.dir === ".");
   r.withheld = r.skills[0].repo_withheld;
   r.scopedInstall = r.skills[0].repo_scoped_install;
@@ -1167,6 +1167,8 @@ function skillReport(s) {
     methodology: { version: SCORE_METHOD, url: `${DIR_URL}methodology/#score`, rubric_total: RUBRIC_MAX, published_cap: SCORE_CAP },
     quality: { score: s.score, grade: s.grade, components: s.score_parts, checks: s.checks },
     ...(data.repos[s.repo].supplementary_citations ? { supplementary_citations: data.repos[s.repo].supplementary_citations } : {}),
+    ...(NOTES[s.id]?.notice ? { service_notice: NOTES[s.id].notice, service_terms_url: NOTES[s.id].source } : {}),
+    ...(s.install ? { install: s.install } : {}),
     security_scan_status: "not_scanned",
     badges: s.shielded ? badgePair(s) : [{ kind: "listing", src: `${BASE}/${skillPath(s)}badge.svg`, alt: `${BADGE_LABEL}: listed` }],
   };
@@ -1231,7 +1233,9 @@ function skillRow(here, s, { showRepo, showLicense = false }) {
         ? `<p><a href="${rel(here, skillPath(s))}#badge">Get badges</a></p>`
         : `<details class="row-badges"><summary>Get badges</summary>${qualityBadgeContent(s, `-${s.slug}`)}</details>`;
   const report = showRepo ? "" : `<p class="row-report">${reportLinks(here, s)}</p>`;
-  return `            <tr${id} ${rowData(s)}><td class="name">${nameCell} ${gradeChip(s)}</td><td class="meta">${second}</td><td class="desc">${esc(desc)}${badges}${report}</td></tr>`;
+  const note = NOTES[s.id];
+  const notice = note?.notice ? `<p class="muted">${esc(note.notice)} <a href="${esc(note.source)}" target="_blank" rel="noopener">Service and data terms</a>.</p>` : "";
+  return `            <tr${id} ${rowData(s)}><td class="name">${nameCell} ${gradeChip(s)}</td><td class="meta">${second}</td><td class="desc">${esc(desc)}${notice}${badges}${report}</td></tr>`;
 }
 
 function skillTable(here, rows, { id, showRepo, caption, showLicense = false }) {
@@ -1450,7 +1454,7 @@ rm -rf "$tmp"`;
       : `<p class="muted">${esc(s.repo)} is third-party code. Read SKILL.md and any bundled scripts before you install it.</p>`;
   const setup = NOTES[s.id];
   const prerequisites = setup
-    ? `        <p>${esc(setup.text)} <a href="${esc(setup.source)}" target="_blank" rel="noopener">Publisher setup instructions</a>.</p>\n`
+    ? `        <p>${esc(setup.text)} <a href="${esc(setup.source)}" target="_blank" rel="noopener">${esc(setup.source_label || "Publisher setup instructions")}</a>.</p>\n`
     : "";
   return `      <section class="panel" aria-labelledby="install-title">
         <h2 id="install-title">Install ${esc(displayName(s))}</h2>
@@ -1749,6 +1753,8 @@ function renderRepo(r) {
     ["README badge", `<a href="#badge">Get the badge for this listing</a>`],
   ]);
   const relatedRepos = linkedRepos.filter((o) => o.primary === r.primary && o.slug !== r.slug && (o.indexable || !o.hasPage)).slice(0, 6);
+  const service = NOTES[r.repo];
+  const serviceNote = service?.text ? `      <section class="panel" aria-labelledby="service-title"><h2 id="service-title">Service and licensing</h2><p>${esc(service.text)} <a href="${esc(service.source)}" target="_blank" rel="noopener">Publisher terms</a>.</p></section>\n` : "";
   const body = `${bc.html}
       <p class="lead">${esc(lead)}</p>
       <p><a class="button" href="https://github.com/${esc(r.repo)}" target="_blank" rel="noopener">View ${esc(r.repo)} on GitHub</a></p>
@@ -1756,7 +1762,7 @@ function renderRepo(r) {
         <h2 id="facts-title">At a glance</h2>
 ${facts}
       </section>
-${badgeBlock(here, {
+${serviceNote}${badgeBlock(here, {
   badgePath: `${here}badge.svg`,
   value: "listed",
   target: url(here),
@@ -3632,7 +3638,7 @@ const PRICING_FAQ = () => {
   const by = Object.fromEntries(FACETS.lanes.map((l) => [l.lane.id, l.rows.length]));
   return [
     ["Are Claude Code skills free?", `Every listed skill is published in a public GitHub repository and costs nothing to download. In the ${longDate(data.generated)} snapshot, ${fmt(by["free-open-source"])} use an open license and name no paid service, ${fmt(by["free-with-service"])} use an open license but connect to an outside service, ${fmt(by.noncommercial)} allow non-commercial use only and ${fmt(by.restricted)} use restricted terms.`],
-    ["How does the directory decide a skill needs a service?", "For skills with full pages, from the install record the refresh reads from the skill's files: environment variables, MCP servers, outside hosts and HTTP clients. For other skills, from the compatibility line the author wrote in SKILL.md."],
+    ["How does the directory decide a skill needs a service?", "From saved install evidence: environment variables, MCP servers, outside hosts and HTTP requests declared in code or instructions. Network dependencies are retained even without a full page. Listings without install evidence fall back to the compatibility line in SKILL.md."],
     ["Can I use these skills in commercial work?", "Skills under open-source or open-content licenses allow it under their terms. Non-commercial licenses do not, and restricted licenses need the publisher's permission. Each listing links to its license file."],
   ];
 };
@@ -3703,11 +3709,11 @@ function renderFeaturesHub() {
     keywords: ["claude code skills with mcp", "agent skills capabilities", "official claude skills", "claude skills no setup"],
     eyebrow: "Suede AI Skills Directory &middot; Capabilities",
     h1: "Agent skills by capability",
-    body: `      <p class="lead">Each capability is a yes or no fact read from a skill's published files. Pick the ones your setup needs. Filters marked "full pages" count the ${fmt(featured.length)} skills whose files the directory reads in full.</p>
+    body: `      <p class="lead">Each capability is a yes or no fact read from a skill's published files. Pick the ones your setup needs. Filters marked "install evidence" count skills with saved install facts, including ordinary listings that declare network use.</p>
       <section class="panel" aria-labelledby="flags-title">
         <h2 id="flags-title">${FLAGS_LIVE.length} capabilities</h2>
         <div class="links">
-${FLAGS_LIVE.map((f) => `          <a class="link-row" href="${rel(here, flagPath(f.flag.id))}"><b>${esc(f.flag.label)} (${fmt(f.rows.length)}${f.flag.scope === "install" ? ` of ${fmt(f.universe)} full pages` : ""})</b><span>${esc(f.flag.lede)}</span></a>`).join("\n")}
+${FLAGS_LIVE.map((f) => `          <a class="link-row" href="${rel(here, flagPath(f.flag.id))}"><b>${esc(f.flag.label)} (${fmt(f.rows.length)}${f.flag.scope === "install" ? ` of ${fmt(f.universe)} with install evidence` : ""})</b><span>${esc(f.flag.lede)}</span></a>`).join("\n")}
         </div>
       </section>
 ${servicesCta("browse-hub", null, here)}`,
@@ -3720,7 +3726,7 @@ function renderFlag({ flag, rows, universe }) {
   const here = flagPath(flag.id);
   const shown = facetRows(rows);
   const best = bestOf(rows);
-  const scope = flag.scope === "install" ? ` Counted among the ${fmt(universe)} skills with full pages, whose files the directory reads in full.` : "";
+  const scope = flag.scope === "install" ? ` Counted among the ${fmt(universe)} skills with saved install evidence.` : "";
   browsePage({
     here,
     trail: [["directory/", "Directory"], [FEATURES_PATH, "Capabilities"], [null, flag.label]],
@@ -3963,7 +3969,7 @@ ${bc.html}
           <div class="stat"><b>${n("network")}</b><span>${flagLink("network", "call outside services")}</span></div>
           <div class="stat"><b>${n("runs-commands")}</b><span>${flagLink("runs-commands", "run package managers, CLIs or other commands")}</span></div>
         </div>
-        <p class="muted">Counts from the ${longDate(data.generated)} snapshot. Filters marked full pages count only the skills whose files the directory reads in full.</p>
+        <p class="muted">Counts from the ${longDate(data.generated)} snapshot. Filters marked install evidence count skills with saved install facts.</p>
       </section>
       <section class="panel" aria-labelledby="not-title">
         <h2 id="not-title">What is not checked</h2>
