@@ -20,26 +20,72 @@
     <meta name="twitter:description" content="CI merge gate: one required check aggregates path-filtered jobs, blocking bad merges while good ones never wait on a job that did not run.">
     <meta name="twitter:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
     <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "TechArticle",
-        "@id": "https://skills.suedeai.ai/skills/suede-ci-gate.html#article",
-        "headline": "Suede AI CI Gate Skills",
-        "description": "Path-filtered jobs are where required checks deadlock; this one aggregates them so a bad merge is blocked and a good one never waits on a job that did not run. The skill detects the stack, writes the workflow files, pins the runtime from the repo, and hands you the exact branch-protection settings to apply. It does not touch your repository access.",
-        "url": "https://skills.suedeai.ai/skills/suede-ci-gate.html",
-        "author": {"@type": "Person", "@id": "https://suedeai.ai/founder#person", "name": "Jason Colapietro"},
-        "publisher": {"@type":"Organization","@id":"https://suedeai.ai/#organization","name":"Suede AI", "url": "https://suedeai.ai"},
-        "about": ["Suede AI Skills", "GitHub Actions", "branch protection", "path-aware CI", "ci-success aggregator", "lockfile hygiene", "runtime detection"],
-        "mainEntity": {
-          "@type": "SoftwareSourceCode",
-          "name": "suede-ci-gate",
-          "codeRepository": "https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-ci-gate",
-          "programmingLanguage": "Markdown",
-          "genre": "DeveloperTool",
-          "license": "https://github.com/JasonColapietro/suede-creator-skills/blob/main/LICENSE"
-        }
-      }
-    </script>
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "@id": "https://skills.suedeai.ai/skills/suede-ci-gate.html#article",
+  "headline": "Suede AI CI Gate Skills",
+  "description": "Path-filtered jobs are where required checks deadlock; this one aggregates them so a bad merge is blocked and a good one never waits on a job that did not run. The skill detects the stack, writes the workflow files, pins the runtime from the repo, and hands you the exact branch-protection settings to apply. It does not touch your repository access.",
+  "url": "https://skills.suedeai.ai/skills/suede-ci-gate.html",
+  "author": {
+    "@type": "Person",
+    "@id": "https://suedeai.ai/founder#person",
+    "name": "Jason Colapietro"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://suedeai.ai/#organization",
+    "name": "Suede AI",
+    "url": "https://suedeai.ai",
+    "alternateName": [
+      "Suede Labs AI",
+      "Suede Labs",
+      "Suede"
+    ],
+    "parentOrganization": {
+      "@type": "Organization",
+      "@id": "https://jcinvestmentgroup.ventures/#organization",
+      "name": "JC Investment Group LLC",
+      "url": "https://jcinvestmentgroup.ventures/"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "138 Victorian Lane",
+      "addressLocality": "Jupiter",
+      "addressRegion": "FL",
+      "postalCode": "33458",
+      "addressCountry": "US"
+    },
+    "hasMerchantReturnPolicy": {
+      "@type": "MerchantReturnPolicy",
+      "@id": "https://suedeai.ai/terms#money-back-policy",
+      "name": "90-day money-back policy",
+      "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+      "merchantReturnDays": 90,
+      "returnFees": "https://schema.org/FreeReturn",
+      "refundType": "https://schema.org/FullRefund",
+      "merchantReturnLink": "https://suedeai.ai/terms#money-back-policy"
+    }
+  },
+  "about": [
+    "Suede AI Skills",
+    "GitHub Actions",
+    "branch protection",
+    "path-aware CI",
+    "ci-success aggregator",
+    "lockfile hygiene",
+    "runtime detection"
+  ],
+  "mainEntity": {
+    "@type": "SoftwareSourceCode",
+    "name": "suede-ci-gate",
+    "codeRepository": "https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-ci-gate",
+    "programmingLanguage": "Markdown",
+    "genre": "DeveloperTool",
+    "license": "https://github.com/JasonColapietro/suede-creator-skills/blob/main/LICENSE"
+  }
+}
+</script>
     <link rel="preload" href="../assets/fonts/fraunces-var.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="../assets/site.css">
     <link rel="stylesheet" href="../assets/skill.css">
