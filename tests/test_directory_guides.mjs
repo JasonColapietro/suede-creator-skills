@@ -218,9 +218,10 @@ test("the directory brand is Suede AI", () => {
     const html = pageHtml(rel);
     // This named membership category is distinct from the site's Suede AI brand.
     // Allow its exact kicker only; titles, metadata and all other copy keep the brand guard.
+    const visibleCopy = html.replace(/<script\b[^>]*type=["']application\/ld\+json["'][^>]*>[\s\S]*?<\/script>/gi, "");
     const brandCopy = rel === "directory/featured/"
-      ? html.replaceAll('<p class="featured-kind">Suede Directory Member</p>', '')
-      : html;
+      ? visibleCopy.replaceAll('<p class="featured-kind">Suede Directory Member</p>', '')
+      : visibleCopy;
     assert.match(html, /Suede AI Skills Directory/, rel);
     assert.doesNotMatch(brandCopy, /Suede Skills Directory|Suede Directory\b|Suede Labs/, rel);
   }
