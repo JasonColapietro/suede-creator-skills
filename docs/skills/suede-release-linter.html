@@ -20,34 +20,71 @@
     <meta name="twitter:description" content="Music metadata linter that scores release readiness for a song, album, stem pack or media project, flagging missing files, split gaps and rights blockers.">
     <meta name="twitter:image" content="https://skills.suedeai.ai/assets/release-linter-preview.png">
     <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "TechArticle",
-        "@id": "https://skills.suedeai.ai/skills/suede-release-linter.html#article",
-        "headline": "Suede AI Release Linter Skills",
-        "description": "It emits two reports, one a person reads and one a machine reads, and the public script runs offline, so the catalog never leaves the drive. Point it at a song, an album, a stem pack, an artwork or lyric folder, or a whole media project and it scores release readiness: missing files, malformed metadata, artwork and stem problems, split gaps, rights blockers, and platform-delivery issues. Findings only; it clears nothing.",
-        "url": "https://skills.suedeai.ai/skills/suede-release-linter.html",
-        "author": {
-          "@type": "Person", "@id": "https://suedeai.ai/founder#person",
-          "name": "Jason Colapietro"
-        },
-        "publisher": {
-          "@type": "Organization",
-          "@id": "https://suedeai.ai/#organization",
-          "name": "Suede AI",
-          "url": "https://suedeai.ai"
-        },
-        "about": ["music metadata", "release readiness", "sample status", "rights gaps", "downstream review", "agent commerce"],
-        "mainEntity": {
-          "@type": "SoftwareSourceCode",
-          "name": "suede-release-linter",
-          "codeRepository": "https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-release-linter",
-          "programmingLanguage": "Python",
-          "genre": "DeveloperTool",
-          "license": "https://github.com/JasonColapietro/suede-creator-skills/blob/main/LICENSE"
-        }
-      }
-    </script>
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "@id": "https://skills.suedeai.ai/skills/suede-release-linter.html#article",
+  "headline": "Suede AI Release Linter Skills",
+  "description": "It emits two reports, one a person reads and one a machine reads, and the public script runs offline, so the catalog never leaves the drive. Point it at a song, an album, a stem pack, an artwork or lyric folder, or a whole media project and it scores release readiness: missing files, malformed metadata, artwork and stem problems, split gaps, rights blockers, and platform-delivery issues. Findings only; it clears nothing.",
+  "url": "https://skills.suedeai.ai/skills/suede-release-linter.html",
+  "author": {
+    "@type": "Person",
+    "@id": "https://suedeai.ai/founder#person",
+    "name": "Jason Colapietro"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://suedeai.ai/#organization",
+    "name": "Suede AI",
+    "url": "https://suedeai.ai",
+    "alternateName": [
+      "Suede Labs AI",
+      "Suede Labs",
+      "Suede"
+    ],
+    "parentOrganization": {
+      "@type": "Organization",
+      "@id": "https://jcinvestmentgroup.ventures/#organization",
+      "name": "JC Investment Group LLC",
+      "url": "https://jcinvestmentgroup.ventures/"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "138 Victorian Lane",
+      "addressLocality": "Jupiter",
+      "addressRegion": "FL",
+      "postalCode": "33458",
+      "addressCountry": "US"
+    },
+    "hasMerchantReturnPolicy": {
+      "@type": "MerchantReturnPolicy",
+      "@id": "https://suedeai.ai/terms#money-back-policy",
+      "name": "90-day money-back policy",
+      "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+      "merchantReturnDays": 90,
+      "returnFees": "https://schema.org/FreeReturn",
+      "refundType": "https://schema.org/FullRefund",
+      "merchantReturnLink": "https://suedeai.ai/terms#money-back-policy"
+    }
+  },
+  "about": [
+    "music metadata",
+    "release readiness",
+    "sample status",
+    "rights gaps",
+    "downstream review",
+    "agent commerce"
+  ],
+  "mainEntity": {
+    "@type": "SoftwareSourceCode",
+    "name": "suede-release-linter",
+    "codeRepository": "https://github.com/JasonColapietro/suede-creator-skills/tree/main/skills/suede-release-linter",
+    "programmingLanguage": "Python",
+    "genre": "DeveloperTool",
+    "license": "https://github.com/JasonColapietro/suede-creator-skills/blob/main/LICENSE"
+  }
+}
+</script>
     <link rel="preload" href="../assets/fonts/fraunces-var.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="../assets/site.css">
     <link rel="stylesheet" href="../assets/skill.css">

@@ -20,60 +20,94 @@
     <meta name="twitter:description" content="Product updates for Suede Creator Skills: new skills, workflow changes, and what shipped in the open-source Claude Code and Codex skill pack.">
     <meta name="twitter:image" content="https://skills.suedeai.ai/assets/og-image-v2.png">
     <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Blog",
-        "@id": "https://skills.suedeai.ai/blog/#blog",
-        "url": "https://skills.suedeai.ai/blog/",
-        "name": "Suede Creator Skills Blog",
-        "description": "Product updates for the Suede Creator Skills pack: new skills, workflow changes, and what shipped.",
-        "publisher": {"@type":"Organization","@id":"https://suedeai.ai/#organization","name":"Suede AI", "url": "https://suedeai.ai"},
-        "blogPost": [
-          {
-            "@type": "BlogPosting",
-            "headline": "Two skills, and the bugs that wrote them",
-            "url": "https://skills.suedeai.ai/blog/two-skills-and-the-bugs-that-wrote-them.html",
-            "datePublished": "2026-09-06"
-          },
-          {
-            "@type": "BlogPosting",
-            "headline": "Vetted is a procedure, not a compliment",
-            "url": "https://skills.suedeai.ai/blog/vetted-is-a-procedure-not-a-compliment.html",
-            "datePublished": "2026-08-26"
-          },
-          {
-            "@type": "BlogPosting",
-            "headline": "Your memory file is a tax you pay on every prompt",
-            "url": "https://skills.suedeai.ai/blog/memory-belongs-in-skills.html",
-            "datePublished": "2026-08-07"
-          },
-          {
-            "@type": "BlogPosting",
-            "headline": "NOT FOR: the two words that make a big skill pack work",
-            "url": "https://skills.suedeai.ai/blog/not-for-the-line-that-makes-a-pack-work.html",
-            "datePublished": "2026-08-07"
-          },
-          {
-            "@type": "BlogPosting",
-            "headline": "Why breadth is free now, and what that changes",
-            "url": "https://skills.suedeai.ai/blog/why-breadth-is-free.html",
-            "datePublished": "2026-08-07"
-          },
-          {
-            "@type": "BlogPosting",
-            "headline": "71 skills installed. Your agent reads almost none of them.",
-            "url": "https://skills.suedeai.ai/blog/progressive-disclosure-ship-dag-and-mcp.html",
-            "datePublished": "2026-08-07"
-          },
-          {
-            "@type": "BlogPosting",
-            "headline": "Two new lanes: a next-action recommender and a one-prompt Android app factory",
-            "url": "https://skills.suedeai.ai/blog/android-recommend-next-action-and-workflows.html",
-            "datePublished": "2026-07-19"
-          }
-        ]
-      }
-    </script>
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "@id": "https://skills.suedeai.ai/blog/#blog",
+  "url": "https://skills.suedeai.ai/blog/",
+  "name": "Suede Creator Skills Blog",
+  "description": "Product updates for the Suede Creator Skills pack: new skills, workflow changes, and what shipped.",
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://suedeai.ai/#organization",
+    "name": "Suede AI",
+    "url": "https://suedeai.ai",
+    "alternateName": [
+      "Suede Labs AI",
+      "Suede Labs",
+      "Suede"
+    ],
+    "parentOrganization": {
+      "@type": "Organization",
+      "@id": "https://jcinvestmentgroup.ventures/#organization",
+      "name": "JC Investment Group LLC",
+      "url": "https://jcinvestmentgroup.ventures/"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "138 Victorian Lane",
+      "addressLocality": "Jupiter",
+      "addressRegion": "FL",
+      "postalCode": "33458",
+      "addressCountry": "US"
+    },
+    "hasMerchantReturnPolicy": {
+      "@type": "MerchantReturnPolicy",
+      "@id": "https://suedeai.ai/terms#money-back-policy",
+      "name": "90-day money-back policy",
+      "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+      "merchantReturnDays": 90,
+      "returnFees": "https://schema.org/FreeReturn",
+      "refundType": "https://schema.org/FullRefund",
+      "merchantReturnLink": "https://suedeai.ai/terms#money-back-policy"
+    }
+  },
+  "blogPost": [
+    {
+      "@type": "BlogPosting",
+      "headline": "Two skills, and the bugs that wrote them",
+      "url": "https://skills.suedeai.ai/blog/two-skills-and-the-bugs-that-wrote-them.html",
+      "datePublished": "2026-09-06"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "Vetted is a procedure, not a compliment",
+      "url": "https://skills.suedeai.ai/blog/vetted-is-a-procedure-not-a-compliment.html",
+      "datePublished": "2026-08-26"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "Your memory file is a tax you pay on every prompt",
+      "url": "https://skills.suedeai.ai/blog/memory-belongs-in-skills.html",
+      "datePublished": "2026-08-07"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "NOT FOR: the two words that make a big skill pack work",
+      "url": "https://skills.suedeai.ai/blog/not-for-the-line-that-makes-a-pack-work.html",
+      "datePublished": "2026-08-07"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "Why breadth is free now, and what that changes",
+      "url": "https://skills.suedeai.ai/blog/why-breadth-is-free.html",
+      "datePublished": "2026-08-07"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "71 skills installed. Your agent reads almost none of them.",
+      "url": "https://skills.suedeai.ai/blog/progressive-disclosure-ship-dag-and-mcp.html",
+      "datePublished": "2026-08-07"
+    },
+    {
+      "@type": "BlogPosting",
+      "headline": "Two new lanes: a next-action recommender and a one-prompt Android app factory",
+      "url": "https://skills.suedeai.ai/blog/android-recommend-next-action-and-workflows.html",
+      "datePublished": "2026-07-19"
+    }
+  ]
+}
+</script>
     <style>
     /* Display face: Fraunces variable (self-hosted, OFL). Display roles only. */
     @font-face {

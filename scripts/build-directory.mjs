@@ -131,6 +131,11 @@ const GUIDES = EDITORIAL_PAGES ? EDITORIAL_PAGES.pages.filter((g) => g.status ==
 const ORG_ID = "https://suedeai.ai/#organization";
 const PERSON_ID = "https://suedeai.ai/founder#person";
 const ORGANIZATION = {
+  "alternateName": ["Suede Labs AI","Suede Labs","Suede"],
+  "parentOrganization": {"@type":"Organization","@id":"https://jcinvestmentgroup.ventures/#organization","name":"JC Investment Group LLC","url":"https://jcinvestmentgroup.ventures/"},
+  "address": {"@type":"PostalAddress","streetAddress":"138 Victorian Lane","addressLocality":"Jupiter","addressRegion":"FL","postalCode":"33458","addressCountry":"US"},
+  "hasMerchantReturnPolicy": {"@type":"MerchantReturnPolicy","@id":"https://suedeai.ai/terms#money-back-policy","name":"90-day money-back policy","returnPolicyCategory":"https://schema.org/MerchantReturnFiniteReturnWindow","merchantReturnDays":90,"returnFees":"https://schema.org/FreeReturn","refundType":"https://schema.org/FullRefund","merchantReturnLink":"https://suedeai.ai/terms#money-back-policy"},
+
   "@type": "Organization",
   "@id": ORG_ID,
   name: "Suede AI",
@@ -162,6 +167,10 @@ const RELATED_ENTITIES = [
     publisher: { "@id": ORG_ID },
   },
   {
+    "alternateName": ["Suede SEO"],
+    "address": {"@type":"PostalAddress","streetAddress":"138 Victorian Lane","addressLocality":"Jupiter","addressRegion":"FL","postalCode":"33458","addressCountry":"US"},
+    "hasMerchantReturnPolicy": {"@type":"MerchantReturnPolicy","@id":"https://suedeai.ai/terms#money-back-policy","name":"90-day money-back policy","returnPolicyCategory":"https://schema.org/MerchantReturnFiniteReturnWindow","merchantReturnDays":90,"returnFees":"https://schema.org/FreeReturn","refundType":"https://schema.org/FullRefund","merchantReturnLink":"https://suedeai.ai/terms#money-back-policy"},
+
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "@id": "https://seo.suedeai.ai/#organization",
@@ -188,7 +197,12 @@ const PERSON = {
     "https://www.wikidata.org/wiki/Q140235755",
   ],
 };
-const PUBLISHER_REF = { "@type": "Organization", "@id": ORG_ID, name: "Suede AI", url: "https://suedeai.ai" };
+const PUBLISHER_REF = {
+  "alternateName": ["Suede Labs AI","Suede Labs","Suede"],
+  "parentOrganization": {"@type":"Organization","@id":"https://jcinvestmentgroup.ventures/#organization","name":"JC Investment Group LLC","url":"https://jcinvestmentgroup.ventures/"},
+  "address": {"@type":"PostalAddress","streetAddress":"138 Victorian Lane","addressLocality":"Jupiter","addressRegion":"FL","postalCode":"33458","addressCountry":"US"},
+  "hasMerchantReturnPolicy": {"@type":"MerchantReturnPolicy","@id":"https://suedeai.ai/terms#money-back-policy","name":"90-day money-back policy","returnPolicyCategory":"https://schema.org/MerchantReturnFiniteReturnWindow","merchantReturnDays":90,"returnFees":"https://schema.org/FreeReturn","refundType":"https://schema.org/FullRefund","merchantReturnLink":"https://suedeai.ai/terms#money-back-policy"},
+ "@type": "Organization", "@id": ORG_ID, name: "Suede AI", url: "https://suedeai.ai" };
 // Pages other than the hub describe the directory they belong to in full, so
 // the reference never dangles on a page that does not define it.
 const DIRECTORY_REF = { "@type": "CollectionPage", "@id": `${DIR_URL}#directory`, name: SITE_NAME, url: DIR_URL };
@@ -3004,7 +3018,12 @@ function guideFooterCta(here, g) {
   return campaignPanel(here, { campaign: { id: "guide-footer" }, variant: { id: "plain", headline: o.heading, body: o.body, button: o.cta, url: u.toString() } });
 }
 
-const ORGANIZATION_PUBLISHER = { "@type": "Organization", "@id": ORG_ID, name: "Suede AI", url: "https://suedeai.ai", logo: { "@type": "ImageObject", url: ORGANIZATION.logo } };
+const ORGANIZATION_PUBLISHER = {
+  "alternateName": ["Suede Labs AI","Suede Labs","Suede"],
+  "parentOrganization": {"@type":"Organization","@id":"https://jcinvestmentgroup.ventures/#organization","name":"JC Investment Group LLC","url":"https://jcinvestmentgroup.ventures/"},
+  "address": {"@type":"PostalAddress","streetAddress":"138 Victorian Lane","addressLocality":"Jupiter","addressRegion":"FL","postalCode":"33458","addressCountry":"US"},
+  "hasMerchantReturnPolicy": {"@type":"MerchantReturnPolicy","@id":"https://suedeai.ai/terms#money-back-policy","name":"90-day money-back policy","returnPolicyCategory":"https://schema.org/MerchantReturnFiniteReturnWindow","merchantReturnDays":90,"returnFees":"https://schema.org/FreeReturn","refundType":"https://schema.org/FullRefund","merchantReturnLink":"https://suedeai.ai/terms#money-back-policy"},
+ "@type": "Organization", "@id": ORG_ID, name: "Suede AI", url: "https://suedeai.ai", logo: { "@type": "ImageObject", url: ORGANIZATION.logo } };
 
 function renderGuide(g) {
   const here = g.path;

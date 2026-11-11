@@ -280,7 +280,12 @@ sources.forEach((page, index) => {
       inLanguage: "en",
       isPartOf: { "@type": "Book", "@id": `${BASE}/book/#book`, name: "S-Tier: The Builder's Book Behind the Suede Skills" },
       author: { "@type": "Person", "@id": "https://suedeai.ai/founder#person", name: "Jason Colapietro" },
-      publisher: { "@type": "Organization", "@id": "https://suedeai.ai/#organization", name: "Suede AI", url: "https://suedeai.ai" },
+      publisher: {
+        "alternateName": ["Suede Labs AI","Suede Labs","Suede"],
+        "parentOrganization": {"@type":"Organization","@id":"https://jcinvestmentgroup.ventures/#organization","name":"JC Investment Group LLC","url":"https://jcinvestmentgroup.ventures/"},
+        "address": {"@type":"PostalAddress","streetAddress":"138 Victorian Lane","addressLocality":"Jupiter","addressRegion":"FL","postalCode":"33458","addressCountry":"US"},
+        "hasMerchantReturnPolicy": {"@type":"MerchantReturnPolicy","@id":"https://suedeai.ai/terms#money-back-policy","name":"90-day money-back policy","returnPolicyCategory":"https://schema.org/MerchantReturnFiniteReturnWindow","merchantReturnDays":90,"returnFees":"https://schema.org/FreeReturn","refundType":"https://schema.org/FullRefund","merchantReturnLink":"https://suedeai.ai/terms#money-back-policy"},
+ "@type": "Organization", "@id": "https://suedeai.ai/#organization", name: "Suede AI", url: "https://suedeai.ai" },
       mainEntityOfPage: canonical,
     },
     body,
@@ -399,7 +404,12 @@ written.set(
       ...(pdfPages ? { numberOfPages: pdfPages } : {}),
       datePublished: PUBLISHED,
       author: { "@type": "Person", "@id": "https://suedeai.ai/founder#person", name: "Jason Colapietro" },
-      publisher: { "@type": "Organization", "@id": "https://suedeai.ai/#organization", name: "Suede AI", url: "https://suedeai.ai" },
+      publisher: {
+        "alternateName": ["Suede Labs AI","Suede Labs","Suede"],
+        "parentOrganization": {"@type":"Organization","@id":"https://jcinvestmentgroup.ventures/#organization","name":"JC Investment Group LLC","url":"https://jcinvestmentgroup.ventures/"},
+        "address": {"@type":"PostalAddress","streetAddress":"138 Victorian Lane","addressLocality":"Jupiter","addressRegion":"FL","postalCode":"33458","addressCountry":"US"},
+        "hasMerchantReturnPolicy": {"@type":"MerchantReturnPolicy","@id":"https://suedeai.ai/terms#money-back-policy","name":"90-day money-back policy","returnPolicyCategory":"https://schema.org/MerchantReturnFiniteReturnWindow","merchantReturnDays":90,"returnFees":"https://schema.org/FreeReturn","refundType":"https://schema.org/FullRefund","merchantReturnLink":"https://suedeai.ai/terms#money-back-policy"},
+ "@type": "Organization", "@id": "https://suedeai.ai/#organization", name: "Suede AI", url: "https://suedeai.ai" },
       hasPart: sources.map((p, i) => ({
         "@type": "Chapter",
         "@id": `${BASE}/book/${p.slug}.html#chapter`,
