@@ -1,7 +1,29 @@
 {
   "schema_version": 1,
-  "updated": "2026-11-10",
+  "updated": "2026-11-11",
   "applications": [
+    {
+      "issue": 379,
+      "applicant": "janpopovic",
+      "repo": "inhotel-io/govisit-toolkit",
+      "scope_version": "3c3d0b9ae519aff142e98a2ac107421538f7aa2f15e7b92bd69b49a72a169917",
+      "kind": "skill",
+      "scope": "all",
+      "applied_at": "2026-11-11T01:58:11Z",
+      "issue_state": "open"
+    },
+    {
+      "issue": 378,
+      "applicant": "f-o-x11",
+      "repo": "f-o-x11/deed-page-skill",
+      "scope_version": "ac1498cc3359caeb27e432b0b339833e3ce437da1d7e6e97f972595a9df21289",
+      "kind": "skill",
+      "scope": [
+        "deed-page"
+      ],
+      "applied_at": "2026-11-10T22:51:06Z",
+      "issue_state": "open"
+    },
     {
       "issue": 375,
       "applicant": "waynehamadi",
