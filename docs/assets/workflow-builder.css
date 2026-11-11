@@ -1,5 +1,5 @@
-/* The planner uses the directory's existing dark, warm-paper and gold palette. */
-.workflow-builder { margin: 0 0 44px; border: 1px solid var(--line-strong); border-radius: var(--radius); background: var(--paper); padding: clamp(20px, 3vw, 34px); }
+/* Keep the directory's dark base, with quiet section accents for scanning. */
+.workflow-builder { --workflow-step-accent: #8dcbb5; --workflow-step-surface: color-mix(in srgb, var(--workflow-step-accent) 5%, var(--canvas)); margin: 0 0 44px; border: 1px solid var(--line-strong); border-radius: var(--radius); background: var(--paper); padding: clamp(20px, 3vw, 34px); }
 .workflow-intro { display: flex; justify-content: space-between; gap: 24px; margin-bottom: 24px; }
 .workflow-intro h2 { font-size: clamp(28px, 3vw, 42px); letter-spacing: -.045em; line-height: 1.1; }
 .workflow-intro p:not(.eyebrow) { max-width: 64ch; color: var(--muted); font-size: 15px; }
@@ -42,22 +42,22 @@
 .workflow-progress-row { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin: 0 0 20px; padding: 14px 16px; border: 1px solid var(--line); background: var(--canvas); }
 .workflow-progress-row > div { width: min(100%, 420px); }
 .workflow-progress-row span { display: block; color: var(--muted); font: 11px var(--mono); margin-bottom: 9px; }
-.workflow-progress-row progress { display: block; width: 100%; height: 4px; accent-color: var(--gold-fill); border: 0; background: var(--line); }
+.workflow-progress-row progress { display: block; width: 100%; height: 4px; accent-color: var(--workflow-step-accent); border: 0; background: var(--line); }
 .workflow-progress-row progress::-webkit-progress-bar { background: var(--line); }
-.workflow-progress-row progress::-webkit-progress-value { background: var(--gold-fill); }
-.workflow-progress-row progress::-moz-progress-bar { background: var(--gold-fill); }
-.workflow-workspace { display: grid; grid-template-columns: minmax(180px, .8fr) minmax(0, 2fr); border: 1px solid var(--line-strong); background: var(--canvas); }
-.workflow-route { display: flex; flex-direction: column; gap: 2px; padding: 12px; border-right: 1px solid var(--line); align-self: stretch; }
+.workflow-progress-row progress::-webkit-progress-value { background: var(--workflow-step-accent); }
+.workflow-progress-row progress::-moz-progress-bar { background: var(--workflow-step-accent); }
+.workflow-workspace { display: grid; grid-template-columns: minmax(180px, .8fr) minmax(0, 2fr); border: 1px solid var(--line-strong); background: var(--workflow-step-surface); }
+.workflow-route { display: flex; flex-direction: column; gap: 2px; padding: 12px; border-right: 1px solid var(--line); align-self: stretch; background: var(--paper); }
 .workflow-route-step { display: flex; align-items: flex-start; gap: 12px; padding: 14px 12px; min-height: 58px; border: 1px solid transparent; border-radius: 3px; background: transparent; font: 12px/1.55 var(--sans); color: var(--muted); text-align: left; cursor: pointer; width: 100%; }
 .workflow-route-step:hover { color: var(--ink); background: var(--paper); }
-.workflow-route-step[aria-current="step"] { background: var(--paper-2); color: var(--ink); border-color: var(--line-strong); }
+.workflow-route-step[aria-current="step"] { background: color-mix(in srgb, var(--workflow-step-accent) 10%, var(--paper)); color: var(--ink); border-color: var(--line-strong); box-shadow: inset 2px 0 var(--workflow-step-accent); }
 .workflow-route-number { font: 11px/1.7 var(--mono); color: var(--faint); flex: none; }
-.workflow-route-step[aria-current="step"] .workflow-route-number { color: var(--gold-text); }
-.workflow-route-step[data-completed="true"] .workflow-route-number::after { content: ' ✓'; color: var(--gold-text); }
+.workflow-route-step[aria-current="step"] .workflow-route-number { color: var(--workflow-step-accent); }
+.workflow-route-step[data-completed="true"] .workflow-route-number::after { content: ' ✓'; color: var(--workflow-step-accent); }
 .workflow-steps { list-style: none; margin: 0; padding: 0; min-width: 0; }
 .workflow-step { padding: clamp(20px, 3vw, 32px); margin: 0; }
 .workflow-step[hidden] { display: none; }
-.workflow-step > .eyebrow { color: var(--gold-text); }
+.workflow-step > .eyebrow { color: var(--workflow-step-accent); }
 .workflow-step h4 { font-size: clamp(20px, 2vw, 26px); line-height: 1.25; letter-spacing: -.025em; margin-bottom: 12px; }
 .workflow-step h4:focus { outline: none; }
 .workflow-step h4:focus-visible { outline: 2px solid var(--gold-text); outline-offset: 5px; }
@@ -70,7 +70,7 @@
 .workflow-step .workflow-setup { color: var(--muted); font-size: 12px; margin-bottom: 0; }
 .workflow-builder .workflow-alternative-label { font-size: 11px; margin: 16px 0 6px; color: var(--muted); }
 .workflow-alternative { width: 100%; }
-.workflow-handoff { padding: 16px; border-left: 2px solid var(--gold-fill); background: var(--paper-2); }
+.workflow-handoff { padding: 16px; border-left: 2px solid var(--gold-fill); background: var(--gold-soft); }
 .workflow-handoff .eyebrow { color: var(--gold-text); font-size: 9px; }
 .workflow-handoff p { font-size: 14px; margin: 8px 0 0; }
 .workflow-step-actions { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
@@ -80,7 +80,7 @@
 .workflow-text-button { border: 0; background: transparent; color: var(--ink); font: 12px var(--sans); cursor: pointer; min-height: 44px; padding: 8px 0; text-underline-offset: 4px; }
 .workflow-text-button:hover { text-decoration: underline; }
 .workflow-text-button:disabled { color: var(--faint); cursor: default; text-decoration: none; }
-.workflow-ai-handoff { display: flex; align-items: center; justify-content: space-between; gap: 24px; border: 1px solid var(--line); border-top: 0; padding: 20px 24px; background: var(--paper-2); }
+.workflow-ai-handoff { display: flex; align-items: center; justify-content: space-between; gap: 24px; border: 1px solid var(--line); border-top: 0; padding: 20px 24px; background: var(--gold-soft); }
 .workflow-ai-handoff .eyebrow { color: var(--gold-text); font-size: 9px; }
 .workflow-ai-handoff h4 { font-size: 17px; margin: 6px 0; }
 .workflow-ai-handoff p:last-child { max-width: 75ch; font-size: 12px; color: var(--muted); margin: 0; }
@@ -88,7 +88,7 @@
 .workflow-tips { padding: 22px 0 4px; }
 .workflow-tips h4 { font-size: 15px; }
 .workflow-tips ul { margin-bottom: 0; font-size: 13px; color: var(--muted); }
-.workflow-reading { margin-top: 20px; padding: 20px; border: 1px solid var(--line); border-left: 2px solid var(--gold-fill); }
+.workflow-reading { margin-top: 20px; padding: 20px; border: 1px solid var(--line); border-left: 2px solid var(--gold-fill); background: color-mix(in srgb, var(--gold-soft) 50%, var(--paper)); }
 .workflow-reading-item + .workflow-reading-item { border-top: 1px solid var(--line); padding-top: 16px; margin-top: 16px; }
 .workflow-reading-item > a { display: inline-block; font-size: 16px; font-weight: 600; margin-bottom: 8px; }
 .workflow-reading-item p { font-size: 12px; margin-bottom: 6px; }
@@ -101,7 +101,8 @@
 .workflow-export label { margin-top: 14px; }
 .workflow-export textarea { font: 13px/1.6 var(--mono); border: 1px solid var(--line); }
 /* Goal-based suggestions: graded skills that match the person's own words. */
-.workflow-suggestions { border-top: 1px solid var(--line); margin-top: 28px; padding-top: 28px; }
+.workflow-suggestions { border-top: 2px solid var(--cool); margin-top: 28px; padding-top: 28px; }
+.workflow-suggestions > h3 { color: var(--cool); }
 .workflow-skill-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 10px; }
 .workflow-skill-list[hidden] { display: none; }
 .workflow-skill-item { display: flex; flex-direction: column; gap: 8px; margin: 0; padding: 16px; background: var(--canvas); border: 1px solid var(--line); border-radius: 3px; min-width: 0; }
@@ -110,7 +111,8 @@
 .workflow-skill-item .grade { align-self: flex-start; font-size: 11px; padding: 0 6px; }
 .workflow-skill-description { margin: 0; font-size: 13px; color: var(--muted); display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
 .workflow-skill-item .workflow-setup { margin: auto 0 0; color: var(--faint); font-size: 11px; }
-.workflow-more { padding: 0 0 22px; }
+.workflow-more { padding: 18px; margin-bottom: 22px; border-top: 2px solid var(--cool); border-radius: 3px; background: color-mix(in srgb, var(--cool) 6%, var(--paper)); }
+.workflow-more > h4 { color: var(--cool); }
 /* First-party identity follows the directory landing page's neutral tokens.
    Keep the supplied S artwork unchanged and let the text identify ownership. */
 .workflow-skill-item.is-suede, .workflow-skill-box.is-suede { background: var(--paper); border-color: var(--line-strong); }
