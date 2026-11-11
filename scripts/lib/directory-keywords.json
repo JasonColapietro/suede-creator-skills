@@ -3100,6 +3100,7 @@
  ],
  "directory/featured/index.html": [
   "featured agent projects",
+  "GoVisit Agent Skills agent workflows",
   "Datacircle agent workflows",
   "Resume Claim Guard agent workflows",
   "Socratic Story Cartographer agent workflows",
@@ -3107,8 +3108,7 @@
   "CloudGPU agent workflows",
   "Email Marketing Skills by Poptin agent workflows",
   "ShipToPaid Lite agent workflows",
-  "Video Director agent workflows",
-  "agent-qa CLI by Vostride agent workflows"
+  "Video Director agent workflows"
  ],
  "directory/features/allowed-tools/index.html": [
   "declares tool permissions agent skills",

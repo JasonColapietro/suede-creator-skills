@@ -81,8 +81,9 @@ Each skill appears in one category. A repository can contribute to several categ
 - **[Datacircle](featured.md#datacircle)** by [waynehamadi](https://github.com/waynehamadi). Bring provider plans, prices per 1,000 results, returned fields and rate limits into one JSON or CSV dataset, then build a shortlist with local queries.
 - **[Resume Claim Guard](featured.md#resume-claim-guard)** by [korey2028-prog](https://github.com/korey2028-prog). Start with a job description, surface relevant real experience, confirm the facts, then draft a targeted resume and rehearse the questions each claim may invite.
 - **[Socratic Story Cartographer](featured.md#socratic-story-cartographer)** by [OakcoderX](https://github.com/OakcoderX). Compare competing explanations for a story problem, anchor each diagnosis in the manuscript, and test a small revision while preserving the qualities that already work.
+- **[GoVisit Agent Skills](featured.md#govisit)** by [inhotel-io](https://github.com/inhotel-io). Explore destinations, local businesses and experiences with 22 focused agent skills. GoVisit brings published place profiles, visiting facts and destination collections into the conversation so you can compare options with source context.
 
-These 18 editorial selections have [reviewed scope and setup guidance](featured.md); 5 more are featured with scan &amp; review pending. Editorial selection is separate from quality scores, security certification and README-badge verification. Featured plugins outside the scored skill snapshot are not included in the skill or repository counts above.
+These 19 editorial selections have [reviewed scope and setup guidance](featured.md); 5 more are featured with scan &amp; review pending. Editorial selection is separate from quality scores, security certification and README-badge verification. Featured plugins outside the scored skill snapshot are not included in the skill or repository counts above.
 
 ## Guides
 

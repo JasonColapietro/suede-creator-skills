@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-10",
+  "updated": "2026-11-11",
   "page": {
     "about": "Copy for /directory/featured/ and the awesome/featured.md view, rendered by scripts/build-directory.mjs and scripts/build-awesome-directory.mjs. Project entries below are the publishers’ own work: keep their names, repositories, setup facts and review links exactly as reviewed.",
     "title": "Featured Agent Skill Projects | Suede AI",
@@ -737,6 +737,34 @@
       "workflow_url": "https://github.com/OakcoderX/awesome-agent-skills/tree/aa7f5c5ccc7ea0a3e9122c40d74a7a91d7289b3f/socratic-story-cartographer",
       "published_at": "2026-11-10T21:20:22Z",
       "review": "directory/reviews/2026-11-10-socratic-story-cartographer.md"
+    },
+    {
+      "id": "govisit",
+      "name": "GoVisit Agent Skills",
+      "repo": "inhotel-io/govisit-toolkit",
+      "commit": "0b318f836fe1bb66ea45099d302e24fc0bd11d3d",
+      "kind": "Editorial feature · Travel and place discovery",
+      "license": "MIT",
+      "headline": "Turn a travel question into a useful shortlist.",
+      "summary": "Explore destinations, local businesses and experiences with 22 focused agent skills. GoVisit brings published place profiles, visiting facts and destination collections into the conversation so you can compare options with source context.",
+      "capabilities": [
+        {
+          "title": "Find the right destination",
+          "description": "Search destinations and explore their published highlights, categories and activities."
+        },
+        {
+          "title": "Compare places with context",
+          "description": "Read place overviews, selected sections and visiting facts, then discover related places."
+        },
+        {
+          "title": "Go deeper without starting over",
+          "description": "Explore curated collections, page FAQs and documentation through purpose-built readers."
+        }
+      ],
+      "setup": "The 22 canonical skills use public HTTPS reads from govisit.ai without a GoVisit API key. Install the complete skill folders, including their JSON contracts. Toolkit files are MIT licensed; hosted access and returned data follow the GoVisit Data Use License. The listing covers the canonical skills, not duplicated plugin copies or the separate Floating Chat application.",
+      "workflow_url": "https://suedeai.directory/inhotel-io/govisit-toolkit/",
+      "published_at": "2026-11-11T06:00:00Z",
+      "review": "directory/reviews/2026-11-11-govisit.md"
     }
   ],
   "members": [

@@ -81,6 +81,7 @@
  },
  "379": {
   "review": "directory/reviews/2026-11-11-govisit.md",
-  "scope_version": "3c3d0b9ae519aff142e98a2ac107421538f7aa2f15e7b92bd69b49a72a169917"
+  "scope_version": "3c3d0b9ae519aff142e98a2ac107421538f7aa2f15e7b92bd69b49a72a169917",
+  "feature_id": "govisit"
  }
 }
