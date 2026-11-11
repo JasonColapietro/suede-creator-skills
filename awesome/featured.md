@@ -6,7 +6,7 @@
 
 Editorial selection highlights a project’s workflow and accepted scope. It is separate from structural quality grades, security certification and README-badge verification. A plugin feature does not add its contents to the scored skill catalog.
 
-Selections updated **2026-11-10**. [View on Suede AI](https://skills.suedeai.ai/directory/featured/).
+Selections updated **2026-11-11**. [View on Suede AI](https://skills.suedeai.ai/directory/featured/).
 
 - [Appie](#appie)
 - [CoalWash](#coalwash)
@@ -31,6 +31,7 @@ Selections updated **2026-11-10**. [View on Suede AI](https://skills.suedeai.ai/
 - [Datacircle](#datacircle)
 - [Resume Claim Guard](#resume-claim-guard)
 - [Socratic Story Cartographer](#socratic-story-cartographer)
+- [GoVisit Agent Skills](#govisit)
 
 <a id="appie"></a>
 
@@ -521,6 +522,26 @@ Compare competing explanations for a story problem, anchor each diagnosis in the
 Feature scope is only socratic-story-cartographer, credited to Solopup.co, not the whole collection or its promotion operator. Install only that folder. The external Skills CLI was not installed or audited. Static source review only; no runtime, effectiveness test or security scan. The selected skill is accepted for the next regular scored-catalog refresh. This editorial feature uses a neutral, non-graded Featured badge.
 
 [Repository](https://github.com/OakcoderX/awesome-agent-skills) · [Intake review](../directory/reviews/2026-11-10-socratic-story-cartographer.md) · [Reviewed source aa7f5c5](https://github.com/OakcoderX/awesome-agent-skills/tree/aa7f5c5ccc7ea0a3e9122c40d74a7a91d7289b3f) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#socratic-story-cartographer)
+
+---
+
+<a id="govisit"></a>
+
+## GoVisit Agent Skills
+
+**Editorial feature · Travel and place discovery** · License: MIT · Publisher: [inhotel-io](https://github.com/inhotel-io)
+
+Explore destinations, local businesses and experiences with 22 focused agent skills. GoVisit brings published place profiles, visiting facts and destination collections into the conversation so you can compare options with source context.
+
+- **Find the right destination.** Search destinations and explore their published highlights, categories and activities.
+- **Compare places with context.** Read place overviews, selected sections and visiting facts, then discover related places.
+- **Go deeper without starting over.** Explore curated collections, page FAQs and documentation through purpose-built readers.
+
+### Setup
+
+The 22 canonical skills use public HTTPS reads from govisit.ai without a GoVisit API key. Install the complete skill folders, including their JSON contracts. Toolkit files are MIT licensed; hosted access and returned data follow the GoVisit Data Use License. The listing covers the canonical skills, not duplicated plugin copies or the separate Floating Chat application.
+
+[Repository](https://github.com/inhotel-io/govisit-toolkit) · [Intake review](../directory/reviews/2026-11-11-govisit.md) · [Reviewed source 0b318f8](https://github.com/inhotel-io/govisit-toolkit/tree/0b318f836fe1bb66ea45099d302e24fc0bd11d3d) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#govisit)
 
 ---
 
