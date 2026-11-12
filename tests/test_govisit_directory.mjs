@@ -66,7 +66,13 @@ test('publisher and separate data terms appear before installation on every GoVi
 test('scoped intake preserves every existing publisher record', () => {
   const receipt = JSON.parse(read('directory/reviews/2026-11-11-govisit/scoped-ingestion.json'));
   assert.equal(receipt.existing_before_sha256, receipt.existing_after_sha256);
-  assert.equal(receipt.unchanged_existing_skills, data.skills.length - skills.length);
+  // First-party listings change through their own scoped intake
+  // (scripts/directory/first_party.py), so compare only third-party records
+  // against the 66 first-party listings present when GoVisit was ingested.
+  const firstParty = 'JasonColapietro/suede-creator-skills';
+  const firstPartyAtIntake = 66;
+  const thirdParty = data.skills.filter((s) => s.repo !== repo && s.repo !== firstParty).length;
+  assert.equal(receipt.unchanged_existing_skills, thirdParty + firstPartyAtIntake);
   assert.equal(receipt.unchanged_existing_repositories, Object.keys(data.repos).length - 1);
 });
 
