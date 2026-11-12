@@ -16,8 +16,8 @@
     </item>
     <item>
       <title>New listing: govisit-get-category-section from inhotel-io/govisit-toolkit</title>
-      <link>https://suedeai.directory/inhotel-io/govisit-toolkit/#govisit-get-category-section</link>
-      <guid isPermaLink="true">https://suedeai.directory/inhotel-io/govisit-toolkit/#govisit-get-category-section</guid>
+      <link>https://suedeai.directory/inhotel-io/govisit-toolkit/govisit-get-category-section/</link>
+      <guid isPermaLink="true">https://suedeai.directory/inhotel-io/govisit-toolkit/govisit-get-category-section/</guid>
       <pubDate>Wed, 11 Nov 2026 00:00:00 GMT</pubDate>
       <description>Read one published section for the selected destination category page. Use when an agent needs this published GoVisit evidence through HTTP for an integration or travel decision. Suede Skill Check: 80/100, grade B.</description>
     </item>
@@ -37,22 +37,22 @@
     </item>
     <item>
       <title>New listing: govisit-get-destination-overview from inhotel-io/govisit-toolkit</title>
-      <link>https://suedeai.directory/inhotel-io/govisit-toolkit/#govisit-get-destination-overview</link>
-      <guid isPermaLink="true">https://suedeai.directory/inhotel-io/govisit-toolkit/#govisit-get-destination-overview</guid>
+      <link>https://suedeai.directory/inhotel-io/govisit-toolkit/govisit-get-destination-overview/</link>
+      <guid isPermaLink="true">https://suedeai.directory/inhotel-io/govisit-toolkit/govisit-get-destination-overview/</guid>
       <pubDate>Wed, 11 Nov 2026 00:00:00 GMT</pubDate>
       <description>Read the published overview fields for the selected destination. Use when an agent needs this published GoVisit evidence through HTTP for an integration or travel decision. Suede Skill Check: 80/100, grade B.</description>
     </item>
     <item>
       <title>New listing: govisit-get-destination-section from inhotel-io/govisit-toolkit</title>
-      <link>https://suedeai.directory/inhotel-io/govisit-toolkit/#govisit-get-destination-section</link>
-      <guid isPermaLink="true">https://suedeai.directory/inhotel-io/govisit-toolkit/#govisit-get-destination-section</guid>
+      <link>https://suedeai.directory/inhotel-io/govisit-toolkit/govisit-get-destination-section/</link>
+      <guid isPermaLink="true">https://suedeai.directory/inhotel-io/govisit-toolkit/govisit-get-destination-section/</guid>
       <pubDate>Wed, 11 Nov 2026 00:00:00 GMT</pubDate>
       <description>Read one published section of the selected destination. Use when an agent needs this published GoVisit evidence through HTTP for an integration or travel decision. Suede Skill Check: 80/100, grade B.</description>
     </item>
     <item>
       <title>New listing: govisit-get-documentation-page from inhotel-io/govisit-toolkit</title>
-      <link>https://suedeai.directory/inhotel-io/govisit-toolkit/#govisit-get-documentation-page</link>
-      <guid isPermaLink="true">https://suedeai.directory/inhotel-io/govisit-toolkit/#govisit-get-documentation-page</guid>
+      <link>https://suedeai.directory/inhotel-io/govisit-toolkit/govisit-get-documentation-page/</link>
+      <guid isPermaLink="true">https://suedeai.directory/inhotel-io/govisit-toolkit/govisit-get-documentation-page/</guid>
       <pubDate>Wed, 11 Nov 2026 00:00:00 GMT</pubDate>
       <description>Read bounded structured content from the selected published article. Use when an agent needs this published GoVisit evidence through HTTP for an integration or travel decision. Suede Skill Check: 80/100, grade B.</description>
     </item>
@@ -65,8 +65,8 @@
     </item>
     <item>
       <title>New listing: govisit-get-place-overview from inhotel-io/govisit-toolkit</title>
-      <link>https://suedeai.directory/inhotel-io/govisit-toolkit/#govisit-get-place-overview</link>
-      <guid isPermaLink="true">https://suedeai.directory/inhotel-io/govisit-toolkit/#govisit-get-place-overview</guid>
+      <link>https://suedeai.directory/inhotel-io/govisit-toolkit/govisit-get-place-overview/</link>
+      <guid isPermaLink="true">https://suedeai.directory/inhotel-io/govisit-toolkit/govisit-get-place-overview/</guid>
       <pubDate>Wed, 11 Nov 2026 00:00:00 GMT</pubDate>
       <description>Read the published overview fields for the selected place. Use when an agent needs this published GoVisit evidence through HTTP for an integration or travel decision. Suede Skill Check: 80/100, grade B.</description>
     </item>
@@ -79,15 +79,15 @@
     </item>
     <item>
       <title>New listing: govisit-get-place-visit-facts from inhotel-io/govisit-toolkit</title>
-      <link>https://suedeai.directory/inhotel-io/govisit-toolkit/#govisit-get-place-visit-facts</link>
-      <guid isPermaLink="true">https://suedeai.directory/inhotel-io/govisit-toolkit/#govisit-get-place-visit-facts</guid>
+      <link>https://suedeai.directory/inhotel-io/govisit-toolkit/govisit-get-place-visit-facts/</link>
+      <guid isPermaLink="true">https://suedeai.directory/inhotel-io/govisit-toolkit/govisit-get-place-visit-facts/</guid>
       <pubDate>Wed, 11 Nov 2026 00:00:00 GMT</pubDate>
       <description>Read compact, normalized visit facts for the selected place. Use when an agent needs this published GoVisit evidence through HTTP for an integration or travel decision. Suede Skill Check: 80/100, grade B.</description>
     </item>
     <item>
       <title>New listing: govisit-get-statistics from inhotel-io/govisit-toolkit</title>
-      <link>https://suedeai.directory/inhotel-io/govisit-toolkit/#govisit-get-statistics</link>
-      <guid isPermaLink="true">https://suedeai.directory/inhotel-io/govisit-toolkit/#govisit-get-statistics</guid>
+      <link>https://suedeai.directory/inhotel-io/govisit-toolkit/govisit-get-statistics/</link>
+      <guid isPermaLink="true">https://suedeai.directory/inhotel-io/govisit-toolkit/govisit-get-statistics/</guid>
       <pubDate>Wed, 11 Nov 2026 00:00:00 GMT</pubDate>
       <description>Use when an agent needs exact GoVisit catalog coverage counts for the physical World or a selected Destination, with observation dates and provenance. Suede Skill Check: 80/100, grade B.</description>
     </item>
@@ -107,22 +107,22 @@
     </item>
     <item>
       <title>New listing: govisit-list-destination-activities from inhotel-io/govisit-toolkit</title>
-      <link>https://suedeai.directory/inhotel-io/govisit-toolkit/#govisit-list-destination-activities</link>
-      <guid isPermaLink="true">https://suedeai.directory/inhotel-io/govisit-toolkit/#govisit-list-destination-activities</guid>
+      <link>https://suedeai.directory/inhotel-io/govisit-toolkit/govisit-list-destination-activities/</link>
+      <guid isPermaLink="true">https://suedeai.directory/inhotel-io/govisit-toolkit/govisit-list-destination-activities/</guid>
       <pubDate>Wed, 11 Nov 2026 00:00:00 GMT</pubDate>
       <description>Read the bounded published activities shown on the destination page. Use when an agent needs this published GoVisit evidence through HTTP for an integration or travel decision. Suede Skill Check: 80/100, grade B.</description>
     </item>
     <item>
       <title>New listing: govisit-list-destination-categories from inhotel-io/govisit-toolkit</title>
-      <link>https://suedeai.directory/inhotel-io/govisit-toolkit/#govisit-list-destination-categories</link>
-      <guid isPermaLink="true">https://suedeai.directory/inhotel-io/govisit-toolkit/#govisit-list-destination-categories</guid>
+      <link>https://suedeai.directory/inhotel-io/govisit-toolkit/govisit-list-destination-categories/</link>
+      <guid isPermaLink="true">https://suedeai.directory/inhotel-io/govisit-toolkit/govisit-list-destination-categories/</guid>
       <pubDate>Wed, 11 Nov 2026 00:00:00 GMT</pubDate>
       <description>Read the published category projection shown on the destination page. Use when an agent needs this published GoVisit evidence through HTTP for an integration or travel decision. Suede Skill Check: 80/100, grade B.</description>
     </item>
     <item>
       <title>New listing: govisit-list-destination-highlights from inhotel-io/govisit-toolkit</title>
-      <link>https://suedeai.directory/inhotel-io/govisit-toolkit/#govisit-list-destination-highlights</link>
-      <guid isPermaLink="true">https://suedeai.directory/inhotel-io/govisit-toolkit/#govisit-list-destination-highlights</guid>
+      <link>https://suedeai.directory/inhotel-io/govisit-toolkit/govisit-list-destination-highlights/</link>
+      <guid isPermaLink="true">https://suedeai.directory/inhotel-io/govisit-toolkit/govisit-list-destination-highlights/</guid>
       <pubDate>Wed, 11 Nov 2026 00:00:00 GMT</pubDate>
       <description>Read the bounded published highlights shown on the destination page. Use when an agent needs this published GoVisit evidence through HTTP for an integration or travel decision. Suede Skill Check: 80/100, grade B.</description>
     </item>

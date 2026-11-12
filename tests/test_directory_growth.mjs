@@ -37,8 +37,8 @@ test('finder rejects foreign result links, HTTP failures and invalid CLI flags',
   assert.equal(result.length, 1);
 });
 
-test('500 selected assessments resolve from search to indexable evidence pages', () => {
-  assert.equal(new Set(manifest.skills).size, 500);
+test('510 selected assessments resolve from search to indexable evidence pages', () => {
+  assert.equal(new Set(manifest.skills).size, 510);
   for (const id of manifest.skills) {
     const s = index.find(s => s.id === id);
     assert.ok(s?.full, id);

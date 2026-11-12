@@ -6337,6 +6337,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://skills.suedeai.ai/directory/inhotel-io/govisit-toolkit/govisit-get-category-section/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://skills.suedeai.ai/directory/inhotel-io/govisit-toolkit/govisit-get-collection-overview/</loc>
     <lastmod>2026-11-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -6349,13 +6355,49 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://skills.suedeai.ai/directory/inhotel-io/govisit-toolkit/govisit-get-destination-overview/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/inhotel-io/govisit-toolkit/govisit-get-destination-section/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/inhotel-io/govisit-toolkit/govisit-get-documentation-page/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://skills.suedeai.ai/directory/inhotel-io/govisit-toolkit/govisit-get-page-faq/</loc>
     <lastmod>2026-11-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://skills.suedeai.ai/directory/inhotel-io/govisit-toolkit/govisit-get-place-overview/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://skills.suedeai.ai/directory/inhotel-io/govisit-toolkit/govisit-get-place-section/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/inhotel-io/govisit-toolkit/govisit-get-place-visit-facts/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/inhotel-io/govisit-toolkit/govisit-get-statistics/</loc>
     <lastmod>2026-11-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -6368,6 +6410,24 @@
   </url>
   <url>
     <loc>https://skills.suedeai.ai/directory/inhotel-io/govisit-toolkit/govisit-list-collection-places/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/inhotel-io/govisit-toolkit/govisit-list-destination-activities/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/inhotel-io/govisit-toolkit/govisit-list-destination-categories/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://skills.suedeai.ai/directory/inhotel-io/govisit-toolkit/govisit-list-destination-highlights/</loc>
     <lastmod>2026-11-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>

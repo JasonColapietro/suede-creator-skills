@@ -502,6 +502,16 @@
     "github/awesome-copilot/conventional-commit",
     "expo/skills/expo-overview",
     "github/awesome-copilot/postgresql-optimization",
-    "langchain-ai/langchain-skills/langchain-middleware"
+    "langchain-ai/langchain-skills/langchain-middleware",
+    "inhotel-io/govisit-toolkit/govisit-get-category-section",
+    "inhotel-io/govisit-toolkit/govisit-get-destination-overview",
+    "inhotel-io/govisit-toolkit/govisit-get-destination-section",
+    "inhotel-io/govisit-toolkit/govisit-get-documentation-page",
+    "inhotel-io/govisit-toolkit/govisit-get-place-overview",
+    "inhotel-io/govisit-toolkit/govisit-get-place-visit-facts",
+    "inhotel-io/govisit-toolkit/govisit-get-statistics",
+    "inhotel-io/govisit-toolkit/govisit-list-destination-activities",
+    "inhotel-io/govisit-toolkit/govisit-list-destination-categories",
+    "inhotel-io/govisit-toolkit/govisit-list-destination-highlights"
   ]
 }
