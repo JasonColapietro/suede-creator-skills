@@ -40,7 +40,7 @@ For GitHub browsing, choose a category below. Numeric scores lead every listing,
 | [AI Agents and LLM Engineering](categories/ai-agents-llm.md) | **56–94 / 100** | 604 | 69 |
 | [Developer Tools and Frameworks](categories/developer-tools.md) | **54–95 / 100** | 548 | 66 |
 | [Marketing and SEO](categories/marketing-seo.md) | **62–94 / 100** | 340 | 25 |
-| [Product Management](categories/product-management.md) | **56–92 / 100** | 239 | 17 |
+| [Product Management](categories/product-management.md) | **56–93 / 100** | 239 | 17 |
 | [Science and Research](categories/science-research.md) | **66–93 / 100** | 210 | 8 |
 | [DevOps and Cloud](categories/devops-cloud.md) | **53–95 / 100** | 360 | 38 |
 | [Video, Image, Audio and Creative](categories/media-creative.md) | **56–93 / 100** | 235 | 39 |
@@ -135,7 +135,7 @@ The [publisher index](publishers.md) credits every listed repository and its own
 
 Accepted listing requests also enter through the [inclusion register](../directory/inclusions.json). Descriptions and scores come from [the saved dataset](../directory/skills.json); category copy comes from [the category definitions](../directory/categories.json). Upstream skills retain their own licenses and authorship.
 
-Dataset SHA-256: `db2a04edf080366ee1ec20742701c1f643e450e190991d759b7c392a19442367`.
+Dataset SHA-256: `ce9b36021796d2be69c12f89d0ec36062b376abfba6a67cd0073a4104c60dd3b`.
 
 ## Contribute and update
 
