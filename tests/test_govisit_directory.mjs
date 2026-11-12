@@ -82,3 +82,13 @@ test('legacy full pages do not render an empty source assessment field', () => {
   const page = read(`docs/directory/${old.repo}/${old.slug}/index.html`);
   assert.ok(!page.includes('<dt>Source assessed</dt><dd></dd>'));
 });
+
+test('all 22 accepted GoVisit skills have directory detail pages and collection links', () => {
+  const collection = read(`docs/directory/${repo}/index.html`);
+  for (const s of skills) {
+    const page = read(`docs/directory/${repo}/${s.slug}/index.html`);
+    assert.ok(page.includes(`https://suedeai.directory/${repo}/${s.slug}/`), s.slug);
+    assert.ok(collection.includes(`href="${s.slug}/"`), s.slug);
+    assert.ok(page.includes(notes[`${repo}/${s.slug}`].text), s.slug);
+  }
+});

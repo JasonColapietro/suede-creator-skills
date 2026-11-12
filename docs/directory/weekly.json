@@ -8176,7 +8176,7 @@
       "topics": [],
       "license": "MIT",
       "cost_lane": "free-with-service",
-      "listing": "https://suedeai.directory/inhotel-io/govisit-toolkit/#govisit-get-category-section"
+      "listing": "https://suedeai.directory/inhotel-io/govisit-toolkit/govisit-get-category-section/"
     },
     "inhotel-io/govisit-toolkit/govisit-get-collection-overview": {
       "id": "inhotel-io/govisit-toolkit/govisit-get-collection-overview",
@@ -8215,7 +8215,7 @@
       "topics": [],
       "license": "MIT",
       "cost_lane": "free-with-service",
-      "listing": "https://suedeai.directory/inhotel-io/govisit-toolkit/#govisit-get-destination-overview"
+      "listing": "https://suedeai.directory/inhotel-io/govisit-toolkit/govisit-get-destination-overview/"
     },
     "inhotel-io/govisit-toolkit/govisit-get-destination-section": {
       "id": "inhotel-io/govisit-toolkit/govisit-get-destination-section",
@@ -8228,7 +8228,7 @@
       "topics": [],
       "license": "MIT",
       "cost_lane": "free-with-service",
-      "listing": "https://suedeai.directory/inhotel-io/govisit-toolkit/#govisit-get-destination-section"
+      "listing": "https://suedeai.directory/inhotel-io/govisit-toolkit/govisit-get-destination-section/"
     },
     "inhotel-io/govisit-toolkit/govisit-get-documentation-page": {
       "id": "inhotel-io/govisit-toolkit/govisit-get-documentation-page",
@@ -8244,7 +8244,7 @@
       ],
       "license": "MIT",
       "cost_lane": "free-with-service",
-      "listing": "https://suedeai.directory/inhotel-io/govisit-toolkit/#govisit-get-documentation-page"
+      "listing": "https://suedeai.directory/inhotel-io/govisit-toolkit/govisit-get-documentation-page/"
     },
     "inhotel-io/govisit-toolkit/govisit-get-page-faq": {
       "id": "inhotel-io/govisit-toolkit/govisit-get-page-faq",
@@ -8270,7 +8270,7 @@
       "topics": [],
       "license": "MIT",
       "cost_lane": "free-with-service",
-      "listing": "https://suedeai.directory/inhotel-io/govisit-toolkit/#govisit-get-place-overview"
+      "listing": "https://suedeai.directory/inhotel-io/govisit-toolkit/govisit-get-place-overview/"
     },
     "inhotel-io/govisit-toolkit/govisit-get-place-section": {
       "id": "inhotel-io/govisit-toolkit/govisit-get-place-section",
@@ -8296,7 +8296,7 @@
       "topics": [],
       "license": "MIT",
       "cost_lane": "free-with-service",
-      "listing": "https://suedeai.directory/inhotel-io/govisit-toolkit/#govisit-get-place-visit-facts"
+      "listing": "https://suedeai.directory/inhotel-io/govisit-toolkit/govisit-get-place-visit-facts/"
     },
     "inhotel-io/govisit-toolkit/govisit-get-statistics": {
       "id": "inhotel-io/govisit-toolkit/govisit-get-statistics",
@@ -8309,7 +8309,7 @@
       "topics": [],
       "license": "MIT",
       "cost_lane": "free-with-service",
-      "listing": "https://suedeai.directory/inhotel-io/govisit-toolkit/#govisit-get-statistics"
+      "listing": "https://suedeai.directory/inhotel-io/govisit-toolkit/govisit-get-statistics/"
     },
     "inhotel-io/govisit-toolkit/govisit-list-category-places": {
       "id": "inhotel-io/govisit-toolkit/govisit-list-category-places",
@@ -8348,7 +8348,7 @@
       "topics": [],
       "license": "MIT",
       "cost_lane": "free-with-service",
-      "listing": "https://suedeai.directory/inhotel-io/govisit-toolkit/#govisit-list-destination-activities"
+      "listing": "https://suedeai.directory/inhotel-io/govisit-toolkit/govisit-list-destination-activities/"
     },
     "inhotel-io/govisit-toolkit/govisit-list-destination-categories": {
       "id": "inhotel-io/govisit-toolkit/govisit-list-destination-categories",
@@ -8361,7 +8361,7 @@
       "topics": [],
       "license": "MIT",
       "cost_lane": "free-with-service",
-      "listing": "https://suedeai.directory/inhotel-io/govisit-toolkit/#govisit-list-destination-categories"
+      "listing": "https://suedeai.directory/inhotel-io/govisit-toolkit/govisit-list-destination-categories/"
     },
     "inhotel-io/govisit-toolkit/govisit-list-destination-highlights": {
       "id": "inhotel-io/govisit-toolkit/govisit-list-destination-highlights",
@@ -8374,7 +8374,7 @@
       "topics": [],
       "license": "MIT",
       "cost_lane": "free-with-service",
-      "listing": "https://suedeai.directory/inhotel-io/govisit-toolkit/#govisit-list-destination-highlights"
+      "listing": "https://suedeai.directory/inhotel-io/govisit-toolkit/govisit-list-destination-highlights/"
     },
     "inhotel-io/govisit-toolkit/govisit-list-destination-places": {
       "id": "inhotel-io/govisit-toolkit/govisit-list-destination-places",
