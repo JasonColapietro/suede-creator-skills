@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "repository": "JasonColapietro/suede-creator-skills",
-  "source_revision": "5749fc39f382bddd06850d5cdd2ddd9ae0837235",
+  "source_revision": "8826ee1744f636657c8c793844fbe148ed432f8c",
   "source_branch": "feat/suede-reverse-engineer-anyone",
   "source_status": "proposed_draft_revision",
   "assessment_date": "2026-11-12",
@@ -94,7 +94,7 @@
     "PHOTO_SOURCES.md": "8308744626a3f68ce2aa48ef0b467f1945911702c81c6142098b817461886501",
     "PRODUCT.md": "3d4ecd8453466642410b543d6ef6ead4616435b9bcaa5e8a1283e9cda63f3111",
     "PROMO.md": "031da41f4b2af5187318c772a9068946c99e4eb04d6316055df285144c2bb0cc",
-    "README.md": "fe4c5971f137de282575e42c6311f6ce24f451d32f672c66b346b57d58a0ff63",
+    "README.md": "a8f0bbfcc978f2b8bb83e6cc5f030d897fa496e428adeeaf2f1c8fe5174f7e51",
     "SECURITY.md": "5404f465d5342d9f8aeccd4502fc7acee2379c314dea1d135f7340dc30faa2a3",
     "SKILL-CARDS.md": "0af53973c098f2a7ad0b597e0226809ebfaa7a30c02b74decf96f2c101f5aa23",
     "VERSION": "6f15c2bfbd4fb58b7b84f0a8f8036f4d6f3112cd3f0cb759dffe86cdd696b650",
@@ -832,6 +832,6 @@
   "external_before_sha256": "5f4c72f699fa21372d07fb74940825fa7dc4a66222325cd19d94404782100977",
   "external_after_sha256": "5f4c72f699fa21372d07fb74940825fa7dc4a66222325cd19d94404782100977",
   "security_scan_status": "not_scanned",
-  "dataset_before_sha256": "db5806dfb96c2a33b3692028596344d8c303506bc090ef2f2aac625ce89d47fd",
-  "dataset_after_sha256": "a8c3f5a09b781b2d96313871aac267936c7256fe91260101dc75f58a7b23b80a"
+  "dataset_before_sha256": "a8c3f5a09b781b2d96313871aac267936c7256fe91260101dc75f58a7b23b80a",
+  "dataset_after_sha256": "fb80c9f1e314312787fe693038ea19e696e03f91c37f9e8277ad22f1fe3663a9"
 }
