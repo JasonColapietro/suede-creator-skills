@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "repository": "JasonColapietro/suede-creator-skills",
-  "source_revision": "66efffbd748b2589d61a0737caf72e9c593a04a6",
+  "source_revision": "44b6eaed78aa3c2c486aa68325f01112b9c66395",
   "source_branch": "feat/reverse-engineer-anyone-skill",
   "source_status": "proposed_draft_revision",
   "assessment_date": "2026-11-12",
@@ -619,7 +619,7 @@
     "skills/suede-reverse-engineer-anyone/references/data-sources.md": "2c68b6d175ee6ab7770234b33854220971bb14a774c7a0aa86addc17e2f63c1b",
     "skills/suede-reverse-engineer-anyone/references/funnel-hack.md": "69262c7db4f79ae45388777bec7c922e8ab68473fb31175ef73b8bccfe30a809",
     "skills/suede-reverse-engineer-anyone/references/funnel-read.md": "01a67311c0910d5314dbea45a7a3f5a3dc2347e602ebbd831d4744ba973ca211",
-    "skills/suede-reverse-engineer-anyone/references/go-inside.md": "45b099fd8e94d993944f4b123d3c63bfe8e65edbc6996b007ea738e47fc416f0",
+    "skills/suede-reverse-engineer-anyone/references/go-inside.md": "dbba02b787f9a9e3bb56b8de97e961e7d7d56fea016c3f223611be51a9bb4496",
     "skills/suede-reverse-engineer-anyone/references/hidden-signals.md": "dba5fe0544a4ae32253a667d1f761f36606d7e99b6260b40c9605e30ee1cf9fc",
     "skills/suede-reverse-engineer-anyone/references/industry-signals.md": "ff9c232ce6ca6199748f7e874ece5497f2b8b3e3b9511d597bfb49f61d0eeadd",
     "skills/suede-reverse-engineer-anyone/references/landscape.md": "22d49fd2a10fbe2d1b3b318733d277a820a119cb20bdb5efa39ad6d5b82912f8",
@@ -632,7 +632,7 @@
     "skills/suede-reverse-engineer-anyone/references/watch-mode.md": "7855dde0a8dbe630310cf5394a6520bbef89c21bca916a25b748e7e1ce94d28e",
     "skills/suede-reverse-engineer-anyone/references/weak-spots.md": "32b83c5bf24c14f0e0e4475533abcc263ebc6db6f0ab269baec7f18afb03f1b2",
     "skills/suede-reverse-engineer-anyone/scripts/collect.mjs": "d6e37202b9e239f5e0c07b92704ba932fcb0d93cd3798693f64f1c0f8dc859f1",
-    "skills/suede-reverse-engineer-anyone/scripts/tests/test_collect.mjs": "6ca2015c5c4472c5e11d7391178c30bc3cc97c855409b17f89f1392da11627af",
+    "skills/suede-reverse-engineer-anyone/scripts/tests/test_collect.mjs": "dc92c1a337fde86af02c5d721ee4069f2ee47796b53abcfd2ea4f06502882fa9",
     "skills/suede-reverse-engineer-anyone/scripts/tests/test_timeline.mjs": "46fd2a5eaf6a1fe19d335a21f3b9e4a53e04df9db8c653e2e41706dc45c6fe02",
     "skills/suede-reverse-engineer-anyone/scripts/timeline.mjs": "5f33bb405105942fe31ddc56d84b075c214889c92fba945e1578dfa1adccf3d9",
     "skills/suede-revops/CARD.md": "cb1de6e1088a8f24e16acc121c634e1e4adc3dceb7cd179a7fae3a1858cca017",
@@ -843,6 +843,6 @@
   "external_before_sha256": "5f4c72f699fa21372d07fb74940825fa7dc4a66222325cd19d94404782100977",
   "external_after_sha256": "5f4c72f699fa21372d07fb74940825fa7dc4a66222325cd19d94404782100977",
   "security_scan_status": "not_scanned",
-  "dataset_before_sha256": "47aa2a881c66765769ab6edb0644fcb2510dca3befa174fd335536650d82a197",
-  "dataset_after_sha256": "2e45196e703a690ad7b359e9ffd6760a42e1745a0d5f56eff1fbab3fc85a1ff0"
+  "dataset_before_sha256": "2e45196e703a690ad7b359e9ffd6760a42e1745a0d5f56eff1fbab3fc85a1ff0",
+  "dataset_after_sha256": "9b754a4a523e8528066431deb3b66bdd71ceed517a5791d4fd11c5a468fb0c8e"
 }
