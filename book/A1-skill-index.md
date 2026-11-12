@@ -93,7 +93,7 @@ Measurement and operations: `suede-analytics`, `suede-attribution`,
 `suede-ab-testing`, `suede-revops`, `suede-sales-enablement`,
 `suede-marketing-plan` (tactic shortlists included), `suede-marketing-loops`,
 `suede-marketing-council`, `suede-product-marketing`, `suede-customer-research`,
-`suede-competitor-profiling`.
+`suede-competitor-profiling`, `suede-reverse-engineer-anyone`.
 
 Thirty-eight skills in the pack, most of them listed here, are adapted from MIT-licensed
 source material, and `suede-influencer-outreach` adapts an MIT-licensed skill from

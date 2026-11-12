@@ -351,6 +351,7 @@ Runner for Suede Graph Flo XR: the bundled Suede Thought Graph workflow runs on 
 - [Suede Cold Email](https://skills.suedeai.ai/skills/suede-cold-email.html): Write B2B cold outreach that gets replies.
 - [Suede Community Marketing](https://skills.suedeai.ai/skills/suede-community-marketing.html): Build a community that compounds.
 - [Suede Competitor Profiling](https://skills.suedeai.ai/skills/suede-competitor-profiling.html): Research competitors from their public surfaces and turn the findings into structured profiles.
+- [Suede Reverse Engineer Anyone](https://skills.suedeai.ai/skills/suede-reverse-engineer-anyone.html): Work out how anyone grew, in date order, and which of their moves to copy.
 - [Suede Competitors](https://skills.suedeai.ai/skills/suede-competitors.html): Write comparison and alternative pages that rank and convert without misrepresenting anyone.
 - [Suede Content Strategy](https://skills.suedeai.ai/skills/suede-content-strategy.html): Decide what to publish and why.
 - [Suede Customer Research](https://skills.suedeai.ai/skills/suede-customer-research.html): Find out what customers actually think.
