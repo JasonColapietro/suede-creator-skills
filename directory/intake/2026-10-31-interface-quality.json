@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "repository": "JasonColapietro/suede-creator-skills",
-  "source_revision": "d3937196880475a9c3b5ee86c5b816f36a8c4b5a",
-  "source_branch": "feat/suede-reverse-engineer-anyone",
+  "source_revision": "66efffbd748b2589d61a0737caf72e9c593a04a6",
+  "source_branch": "feat/reverse-engineer-anyone-skill",
   "source_status": "proposed_draft_revision",
   "assessment_date": "2026-11-12",
   "external_snapshot_date": "2026-10-22",
@@ -83,7 +83,7 @@
     ".plugin-scanner.toml": "f875c40603c056f2a786e0375fc3dfdfb04b8f99a236b1646d863b0391a9fdf5",
     "AGENTS.md": "186619670118d669829e961f3d767fb6ad7b20ed7dce1a891ac4e8145fbb252e",
     "CITATION.cff": "35f157a1a5537e28f1a0185e03c161157eebd2a5a47dd0c4257e2060484a32e4",
-    "CLAUDE.md": "c4c6b319c3ede25c3c0136524d05671d37880bafd105973da69124688f96c6f8",
+    "CLAUDE.md": "4018ef356a32b4a2dd7d980a4cd5690119d4fb318bcf3093587cbd85b52da00e",
     "COPY.md": "d1a3243e3aca54015c0dd259a1ff6f98f96028614cf4303e6af057b27819d2fc",
     "DESIGN.md": "607caab0aac036edba536e1c5aebefdd5de1455693128d15cdbd70e39ae34a20",
     "DISTRIBUTION.md": "cfe470ac1674853a6b0020fc607f7dd7eb5ac563e334262fa2784613f408470a",
@@ -843,6 +843,6 @@
   "external_before_sha256": "5f4c72f699fa21372d07fb74940825fa7dc4a66222325cd19d94404782100977",
   "external_after_sha256": "5f4c72f699fa21372d07fb74940825fa7dc4a66222325cd19d94404782100977",
   "security_scan_status": "not_scanned",
-  "dataset_before_sha256": "ce9b36021796d2be69c12f89d0ec36062b376abfba6a67cd0073a4104c60dd3b",
-  "dataset_after_sha256": "47aa2a881c66765769ab6edb0644fcb2510dca3befa174fd335536650d82a197"
+  "dataset_before_sha256": "47aa2a881c66765769ab6edb0644fcb2510dca3befa174fd335536650d82a197",
+  "dataset_after_sha256": "2e45196e703a690ad7b359e9ffd6760a42e1745a0d5f56eff1fbab3fc85a1ff0"
 }
