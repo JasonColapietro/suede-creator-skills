@@ -102,7 +102,7 @@ test('site falls back to /sitemap.xml when robots has no Sitemap line and handle
 });
 
 test('robots parsing: own group wins over *, longest match, wildcards and $', () => {
-  const { rules, sitemaps } = parseRobots('User-agent: *\nDisallow: /\n\nUser-agent: suede-reverse-engineer-anyone\nDisallow: /x/*.xml$\nAllow: /x/keep.xml$\nSitemap: https://a.com/s.xml');
+  const { rules, sitemaps } = parseRobots('User-agent: *\nDisallow: /\n\nUser-agent: suede-collect\nDisallow: /x/*.xml$\nAllow: /x/keep.xml$\nSitemap: https://a.com/s.xml');
   assert.deepEqual(sitemaps, ['https://a.com/s.xml']);
   assert.equal(robotsAllows(rules, '/sitemap.xml'), true);
   assert.equal(robotsAllows(rules, '/x/a.xml'), false);
