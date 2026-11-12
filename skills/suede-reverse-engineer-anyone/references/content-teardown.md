@@ -18,7 +18,7 @@ Stage 6 in full: what the target's best posts have in common, turned into formul
 - **Handles:** only accounts linked from the target's site or link-in-bio, or whose bio links back. Founders' and members' personal accounts count when the site, label, or press links them.
 - **Window:** up to 100 posts from the last 180 days per channel.
 - **Settle time:** posts younger than 10 days are excluded. Their numbers are still moving.
-- **Source:** an authorized connector or official API, a data vendor the user licenses (within its terms), or manual reading with dated captures. LinkedIn is read by hand. See [data-sources.md](data-sources.md).
+- **Source:** an authorized connector or official API, a data vendor the user licenses (within its terms), or manual reading with dated captures. LinkedIn is read by hand. See `data-sources.md`.
 
 | Channel | Score each post by |
 |---|---|

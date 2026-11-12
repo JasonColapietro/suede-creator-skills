@@ -13,15 +13,15 @@ Stages 1 and 7 in depth: finding the inflections and finding which moves lined u
 
 ## Inputs
 
-**`curve.csv`**: `month,primary,secondary`, one row per month (`YYYY-MM`), from one source for the whole series (see [data-sources.md](data-sources.md)). `primary` is the main curve (visits, monthly listeners, subscribers, downloads). `secondary` is the second demand signal (brand search, a second metric from the same source) or blank. Blank cells and missing months are gaps, never zero. A month listed twice is an error.
+**`curve.csv`**: `month,primary,secondary`, one row per month (`YYYY-MM`), from one source for the whole series (see `data-sources.md`). `primary` is the main curve (visits, monthly listeners, subscribers, downloads). `secondary` is the second demand signal (brand search, a second metric from the same source) or blank. Blank cells and missing months are gaps, never zero. A month listed twice is an error.
 
 **`moves.csv`**: one row per dated move:
 
 | Column | Values |
 |---|---|
 | `date` | `YYYY-MM-DD` (the 1st of the month if only the month is known) |
-| `channel` | search, ai, paid, x, youtube, tiktok, instagram, linkedin, reddit, streaming, playlists, creators, sponsorship, pr, events, touring, sync, product-loop, referral, pricing, lifecycle, sales, store, infrastructure, hiring, launch, release, merch |
-| `kind` | launch, raise, release, founder-post, creator-video, ad-start, sponsorship, loop-first-seen, page-family, subdomain, tool-added, positioning-change, pricing-change, content-format, cadence-change, playlist-add, collaboration, tour, sync-placement, label-signing, review-spike, reported-claim, hire |
+| `channel` | search, ai, paid, x, youtube, tiktok, instagram, linkedin, reddit, streaming, playlists, creators, sponsorship, pr, events, touring, sync, product-loop, referral, pricing, lifecycle, sales, store, infrastructure, site, podcast, hiring, launch, release, merch |
+| `kind` | launch, raise, release, founder-post, creator-video, ad-start, sponsorship, loop-first-seen, page-family, subdomain, tool-added, tool-verified, page-change, positioning-change, pricing-change, content-format, cadence-change, playlist-add, collaboration, tour, sync-placement, label-signing, review-spike, reported-claim, hire |
 | `move` | One line: what happened |
 | `reach` | Views, likes, streams, or score, if any |
 | `link` | The evidence URL |

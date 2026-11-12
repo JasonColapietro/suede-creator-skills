@@ -100,7 +100,7 @@ Every play names the Suede skill that runs it and, for repeat work, the loop tha
 | A quiz or webinar funnel | `$suede-lead-magnets`, `$suede-site-alchemy` | The lead-capture-asset loop |
 | Conquesting ads on competitor names | `$suede-ads`, `$suede-competitors` | The paid-search query-mining loop |
 | Swipe file of hooks, headlines, subject lines | `$suede-copy`, `$suede-ad-creative` | The monthly-creative-retro loop |
-| An industry-specific play from [industry-signals.md](industry-signals.md) | The skill that section names | The loop that play needs, if any |
+| An industry-specific play from `industry-signals.md` | The skill that section names | The loop that play needs, if any |
 
 There is no separate link-building skill: link work goes to `$suede-seo-audit` (link gap, internal links, technical fixes) or `$suede-public-relations` (earned coverage and mentions).
 
@@ -115,7 +115,7 @@ Use `$suede-marketing-loops` to schedule any loop named above, with the teardown
    ```bash
    node <skill-dir>/scripts/timeline.mjs diff --old teardowns/<target-slug>/moves-YYYY-MM.csv --new teardowns/<target-slug>/moves.csv --out teardowns/<target-slug>/new-moves.csv
    ```
-3. Report only meaningful new moves (a new ad network, page family, loop, pricing change, content format, release pattern, hiring burst in one channel, complaint theme), plus any launch radar flag from [hidden-signals.md](hidden-signals.md). "No new moves" is the usual result.
+3. Report only meaningful new moves (a new ad network, page family, loop, pricing change, content format, release pattern, hiring burst in one channel, complaint theme), plus any launch radar flag from `hidden-signals.md`. "No new moves" is the usual result.
 4. For each new move, say whether it changes a play and which Suede skill takes it.
 5. **State:** the dated move logs in `teardowns/<target-slug>/`. **Stop:** when the user ends the watch or the target goes quiet for three months.
 

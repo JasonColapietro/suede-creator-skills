@@ -23,7 +23,7 @@ Pick the target type before Stage 1. It decides what the curve measures, which s
 | "How did [app, game, package] take off" | App or game | Downloads, store rank, wishlists, or package downloads |
 | "How did [launch, drop, tour, campaign] work" | Single launch or campaign | The parent target's curve, plus a daily launch log |
 
-Confirm the type with the user in one line, then load the matching section of [industry-signals.md](industry-signals.md) as well (two sections when the target spans two industries).
+Confirm the type with the user in one line, then load the matching section of `industry-signals.md` as well (two sections when the target spans two industries).
 
 ## Company
 
@@ -31,7 +31,7 @@ Confirm the type with the user in one line, then load the matching section of [i
 
 **Stages:** all nine. Stage 3 runs only with per-action approval.
 
-**Stage 3 equivalents:** sign up for the free plan or trial, log the email sequence, push to the upgrade wall without paying, walk the cancel flow, book a demo only under the user's own name, and ask the chat bot how the target compares with the user. Funnel Hack mode adds an approved purchase. See [go-inside.md](go-inside.md) and [funnel-hack.md](funnel-hack.md).
+**Stage 3 equivalents:** sign up for the free plan or trial, log the email sequence, push to the upgrade wall without paying, walk the cancel flow, book a demo only under the user's own name, and ask the chat bot how the target compares with the user. Funnel Hack mode adds an approved purchase. See `go-inside.md` and `funnel-hack.md`.
 
 **Privacy limits:** study the company. Leaders' public talks, posts, and interviews in a work capacity are in scope. Staff lists, customer lists, and follower lists are out.
 

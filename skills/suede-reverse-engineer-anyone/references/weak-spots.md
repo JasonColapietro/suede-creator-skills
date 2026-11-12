@@ -17,10 +17,10 @@ Stage 8's second half. Copying what worked is half of a teardown. The other half
 |---|---|---|
 | **What customers hate** | 1-2 star reviews on app stores, review sites, retailer pages, game store pages | Read or export to `reviews.csv` (`date,rating,source,title,text,link`), newest first |
 | | Reddit, Hacker News, forums, and comment threads | `site:reddit.com "<target>" (slow OR expensive OR switched OR alternative OR cancel)` |
-| | Regulated industries | Public complaint databases and regulator actions named in [industry-signals.md](industry-signals.md) |
+| | Regulated industries | Public complaint databases and regulator actions named in `industry-signals.md` |
 | **Why people leave** | "Switched from X" and "X alternative" posts, migration guides, competitors' import tools | Search `"switched from <target>"`, `"<target> alternative"`, `"migrate from <target>"` |
-| **Where support breaks** | Stage 3: response time, chat bot dead ends, cancel flow length | [go-inside.md](go-inside.md), with approval |
-| **Price pain** | Price rises in the pricing history, price complaints in reviews, removed plans | Pricing captures from [hidden-signals.md](hidden-signals.md) |
+| **Where support breaks** | Stage 3: response time, chat bot dead ends, cancel flow length | `go-inside.md`, with approval |
+| **Price pain** | Price rises in the pricing history, price complaints in reviews, removed plans | Pricing captures from `hidden-signals.md` |
 | **Search they gave up** | Page families that shrank or vanished, keywords where rank fell | Sitemap growth on Wayback; the SEO tool's lost keywords |
 | **Markets they left or ignore** | Locales dropped from the sitemap, countries with no pages or jobs, segments with no landing page | Sitemap and job board history |
 | **Slowing output** | Changelog, release, or posting cadence that dropped; a shrinking engineering hiring share | Changelog or release dates by month; job posts by function |

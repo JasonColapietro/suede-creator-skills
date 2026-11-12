@@ -18,11 +18,11 @@ Compare three to five targets side by side before tearing any one of them down. 
 - Before a full teardown, to pick the target most worth studying.
 - When the user has no clear lead competitor and needs to see the field first.
 
-Use three to five targets of the same type (see [target-types.md](target-types.md)). Fewer than three gives no pattern; more than six becomes noise.
+Use three to five targets of the same type (see `target-types.md`). Fewer than three gives no pattern; more than six becomes noise.
 
 ## Build the Matrix
 
-For each target, and for the user, collect the same free signals on the same date, using the procedures in [hidden-signals.md](hidden-signals.md):
+For each target, and for the user, collect the same free signals on the same date, using the procedures in `hidden-signals.md`:
 
 - **Homepage scripts:** ad pixels, analytics, testing, referral, and lifecycle tools in the current page source
 - **DNS:** marketing email platforms, ad and social account verifications, platforms behind marketing subdomains
@@ -78,6 +78,6 @@ Rank the targets by growth rate (same source), number of `only_one` bets, and cl
 2. **Table stakes:** what everyone does, and which of these the user lacks
 3. **Bets:** each target's unique signals, with whether that target is growing faster
 4. **Open lanes:** what nobody does, each checked against demand and Wayback
-5. **Where each one is weak:** the top complaint theme or gap per target (see [weak-spots.md](weak-spots.md))
-6. **Recommendation:** the target to tear down first, and the one gap to close this month, with the Suede skill that runs it (see [play-routing.md](play-routing.md))
+5. **Where each one is weak:** the top complaint theme or gap per target (see `weak-spots.md`)
+6. **Recommendation:** the target to tear down first, and the one gap to close this month, with the Suede skill that runs it (see `play-routing.md`)
 7. **Method notes:** sources, pull dates, unchecked cells, data cost

@@ -2,15 +2,12 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { mkdtempSync, writeFileSync, readFileSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
-import { join, dirname } from 'node:path';
-import { fileURLToPath } from 'node:url';
-import { spawnSync } from 'node:child_process';
+import { join } from 'node:path';
 import {
   parseCsv, toCsv, parseCurve, growthSeries, findInflections, clusterMoves, computeLift,
-  spearman, leadingChannels, splitThirds, diffMoves, InputError, CAVEAT,
+  spearman, leadingChannels, splitThirds, diffMoves, InputError, CAVEAT, main,
 } from '../timeline.mjs';
 
-const SCRIPT = join(dirname(fileURLToPath(import.meta.url)), '..', 'timeline.mjs');
 const near = (a, b, eps = 1e-6) => assert.ok(Math.abs(a - b) < eps, `${a} != ${b}`);
 
 function months(start, n) {
@@ -34,7 +31,13 @@ function withTmp(fn) {
     rmSync(dir, { recursive: true, force: true });
   }
 }
-const run = (...args) => spawnSync(process.execPath, [SCRIPT, ...args], { encoding: 'utf8' });
+// Runs the CLI entry point in-process and captures what it prints.
+const run = (...args) => {
+  const out = [];
+  const err = [];
+  const status = main(args, { log: (...a) => out.push(a.join(' ')), error: (...a) => err.push(a.join(' ')) });
+  return { status, stdout: out.length ? `${out.join('\n')}\n` : '', stderr: err.length ? `${err.join('\n')}\n` : '' };
+};
 
 test('parseCsv handles quotes, embedded commas, escaped quotes, newlines and CRLF', () => {
   const text = '﻿date,channel,move\r\n2026-01-02,x,"Launch, then ""thread"""\r\n2026-01-03,"li","two\nlines"\r\n\r\n';

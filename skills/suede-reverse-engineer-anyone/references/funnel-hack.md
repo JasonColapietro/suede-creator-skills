@@ -1,6 +1,6 @@
 # Funnel Hack
 
-Funnel Hack mode in full: buy from the target the way a customer or fan would, and map every step from the first ad to the last follow-up. It extends [go-inside.md](go-inside.md), and all of its rules apply: the user approves each action, the user's real identity, a dedicated inbox on the user's domain, and no payment without an explicit yes.
+Funnel Hack mode in full: buy from the target the way a customer or fan would, and map every step from the first ad to the last follow-up. It extends `go-inside.md`, and all of its rules apply: the user approves each action, the user's real identity, a dedicated inbox on the user's domain, and no payment without an explicit yes.
 
 ## Contents
 - Before you buy

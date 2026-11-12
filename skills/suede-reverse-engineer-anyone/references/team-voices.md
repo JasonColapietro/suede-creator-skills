@@ -38,7 +38,7 @@ Keep it to people speaking publicly in a work capacity. Don't profile private li
 
 ## Getting the Words
 
-- **Video:** the platform's own captions, or an authorized transcript tool (see [data-sources.md](data-sources.md)).
+- **Video:** the platform's own captions, or an authorized transcript tool (see `data-sources.md`).
 - **Podcasts:** a `podcast:transcript` tag in the feed, the show's video upload, or download the audio and transcribe it locally.
 - Save each transcript to `teardowns/<target-slug>/voices/<date>-<person>-<show>.txt` with the source link.
 
@@ -65,7 +65,7 @@ For companies, apps, and studios, read the full text of current and past job pos
 
 **Procedure:**
 1. Find the careers page and follow it to a public ATS board (Greenhouse, Lever, Ashby, or similar). Read the board's public listing.
-2. Record each open role in `jobs.csv`: `first_seen,title,function,location,channels,tools,mandate,link`.
+2. Record each open role in `jobs.csv`: `collect.mjs jobs <board-slug> --out jobs.csv` writes `title,department,location,posted,url,channels,function,source` from public Greenhouse, Lever, and Ashby boards. Add `tools` and `mandate` columns by hand as you read each full post; for boards it cannot reach, record the same columns manually.
 3. Find past posts on Wayback (`web.archive.org/web/*/target.com/careers*`) and on job boards.
 4. Save `jobs.csv` each month so Watch mode can spot new roles.
 

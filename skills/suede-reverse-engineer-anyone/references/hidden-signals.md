@@ -94,7 +94,7 @@ Public numbers that move with growth and carry dates:
 | **Open metrics** | Public revenue or traffic dashboards the target publishes | **Observed** numbers, not estimates |
 | **AI visibility** | The prompt check from Stage 2, repeated monthly | Share of voice by month |
 
-A counter goes on the timeline when it has dates. The complaints inside reviews feed [weak-spots.md](weak-spots.md).
+A counter goes on the timeline when it has dates. The complaints inside reviews feed `weak-spots.md`.
 
 ## Creator and App Signals
 
