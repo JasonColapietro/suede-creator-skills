@@ -1,6 +1,6 @@
 ---
 name: suede-reverse-engineer-anyone
-description: "Use when asked \"how did X grow\", \"reverse engineer their marketing\", \"what made this artist blow up\", or \"map their funnel\". Suede AI reverse-engineers any company, creator, artist, founder brand, app, or launch from dated public evidence: a one-source growth curve, a log of every move, funnel and content patterns, hidden signals, approved first-hand sign-ups, the user's gap, and ranked plays routed to the Suede skill that runs each one. NOT FOR: a current-state competitor snapshot (use suede-competitor-profiling), publishing comparison pages (use suede-competitors), or why one post traveled (use suede-social)."
+description: "Use when asked \"how did X grow\", \"reverse engineer their marketing\", \"what made this artist blow up\", or \"map their funnel\". Suede AI reverse-engineers any company, creator, artist, founder brand, app, or launch from dated public evidence: a one-source growth curve, a log of every move, funnel and content patterns, hidden signals, the user's gap, and ranked plays routed to the Suede skill that runs each one. NOT FOR: a current-state competitor snapshot (use suede-competitor-profiling), publishing comparison pages (use suede-competitors), or why one post traveled (use suede-social)."
 metadata:
   display-name: "Suede AI Reverse Engineer Anyone Skills"
   version: 1.0.0
@@ -51,7 +51,7 @@ Check for `.agents/product-marketing.md` (or `.claude/product-marketing.md`, or 
 - **Study the work, not the private person.** Public output, public stats, and public statements made in a professional capacity are in scope. Never build lists of a target's customers, fans, followers, staff, or private details, and never contact them or their audience.
 - **Pause between stages.** Report what you found in three lines, what the next stage checks, and its cost. Continue, skip, or stop as the user prefers. Never pass the data budget cap, or the purchase budget in Funnel Hack mode.
 
-**Availability gate.** Use a connector only when it is exposed in this session, connected to the intended account, authorized for this task, and its current schema has been read. Never invent a tool call. When a source is blocked (it needs an account you were not given, a platform is not connected, terms put it out of bounds, or the user wants output sent onward without authorizing it), halt in four parts: stop; name the blocker in one line; offer two to four options (skip and mark the field `Not found: not collected`, the user supplies an export, the user authorizes the connection, a permitted substitute source); wait for the answer.
+**Availability gate.** Use a connector only when it is exposed in this session, connected to the intended account, authorized for this task, and its current schema has been read. Never invent a tool call. When a source is blocked, stop, name the blocker in one line, offer two to four options (skip and mark it `Not found: not collected`, a user export, an authorized connection, a permitted substitute), and wait for the answer.
 
 Save everything to `teardowns/<target-slug>/` with the pull date in each file, so the numbers can be rechecked and Watch mode can diff against them.
 
@@ -64,12 +64,7 @@ The spine is two files every later stage writes into:
 - **`curve.csv`** (`month,primary,secondary`): the monthly curve from **one** source for the whole window. For a company, `primary` is web visits and `secondary` is brand search volume or search-interest index. For a creator or artist, `primary` is followers, subscribers, monthly listeners, or views from one platform, and `secondary` is a second platform or search interest. For an app, downloads or rank. For a developer tool, package downloads. Mixing vendors creates jumps that never happened.
 - **`moves.csv`** (`date,channel,kind,move,reach,link,evidence`): one row per dated move. Every stage adds rows.
 
-Collect the free history first, by whatever tool the session exposes or by hand:
-
-- **Page families** from the public sitemap (or site navigation when there is none), saved to `urls.csv`.
-- **Stack first-seen**: the first archived month each ad pixel, analytics tag, referral tool, or lifecycle tool appears in the homepage source (Wayback CDX and snapshots).
-- **Pricing and offer history**: archived snapshots of the pricing, merch, or offer page; log each month it changed.
-- **Ad libraries**: Meta Ad Library, Google Ads Transparency Center, LinkedIn, TikTok, with the filter and date recorded.
+Collect the free history first, by whatever tool the session exposes or by hand: page families from the public sitemap (saved to `urls.csv`), the first archived month each pixel or marketing tool appears, the months the pricing or offer page changed, and ad library links per network with the filter and date. Procedures are in [references/hidden-signals.md](references/hidden-signals.md).
 
 Then read the matching section of [references/industry-signals.md](references/industry-signals.md). A target that spans two industries (a marketplace for local services) gets both sections.
 
@@ -82,53 +77,14 @@ node <skill-dir>/scripts/timeline.mjs inflections --curve teardowns/<target>/cur
 An **inflection** is a month where growth stepped up and stayed up for at least two months. There can be more than one.
 
 ## Stage 2: Read the Funnel
+Walk the target's funnel one stage at a time: acquisition (search, AI answers, paid, social and creators, PR and launches), activation, revenue, referral, retention and expansion signals, and hiring. The per-channel collection checklist is in [references/funnel-read.md](references/funnel-read.md). Each finding goes in the write-up, and each dated one goes in `moves.csv`.
 
-Walk the target's funnel one stage at a time. Each finding goes in the write-up, and each dated one goes in `moves.csv`.
-
-### Acquisition
-
-| Channel | What to collect |
-|---|---|
-| **Search** | Ranked keywords by URL from an authorized SEO provider, mapped to the page families in `urls.csv`. Brand vs non-brand share, and which families carry non-brand traffic. Which families existed before the inflection (archives) and which came after. Without a provider, page families only. |
-| **AI answers** | The same fixed prompt set for the target and the user, in each assistant the user cares about, on a recorded date: whether each is named, in what order, and which pages are cited. Report counts over the prompt set. Method in `suede-ai-seo`. |
-| **Paid** | Per network: active ads, the longest-running ad (45+ days suggests it is worth testing, though performance is unknown), the hook, the offer, and the landing page. No ads found is Observed "no ads found in [library, filter, date]", which does not prove they never advertise. |
-| **Social and creators** | The target's best posts, the most-viewed creator videos and threads about it, and every contest, giveaway, launch week, invite drop, or release rollout. Label each item team, creator (paid if disclosed), user, or press. |
-| **PR and launches** | Funding announcements, launch days, press waves, podcast runs, playlist adds, and tour or event dates. Founder-stated revenue or streams are Reported. |
-
-### Activation
-
-Read the sign-up and getting-started pages, docs, and demo videos: sign-up method, what the first screen asks, and how quickly a new user reaches a first result. For a creator, the equivalent is the path from a first view to a follow, a subscribe, or an email capture. Stage 3 confirms it first-hand.
-
-### Revenue
-
-Plans, prices, what is free, how the trial ends, and for creators the offer stack (merch, memberships, courses, sponsorships, tickets). Line the months each changed up with the curve, because packaging changes often move growth.
-
-### Referral
-
-Every place a non-user meets the product or work: shared outputs, public pages, embeds, invites, "made with" badges, remixes, duets, features, and collaborations. One anchor text on thousands of domains is a loop, and its first-seen date dates it. Note any affiliate or referral program and its reward.
-
-### Retention and Expansion Signals
-
-Lighter evidence, but dated: changelog or release cadence, lifecycle email and in-app messaging tools from the stack history, and team, enterprise, or superfan tiers added over time.
-
-### Hiring
-
-Read public applicant-tracking boards (Greenhouse, Lever, Ashby) and archived copies: open roles by function, channels being hired for, tools named, languages required, and first-marketing-hire signals. New roles show which channel is being scaled next. Log a `jobs.csv`; stage 4 reads the full posts.
+Two rules carry most of the weight. An ad running 45+ days suggests it is worth testing, though performance is unknown. "No ads found" is Observed only with the library, filter, and date named, and never proves a target does not advertise.
 
 ## Stage 3: Go Inside
+With the user's approval for **each** action, use the product the way a new customer or fan would, under the user's real name and a dedicated inbox on the user's domain, and screenshot everything: sign-up and onboarding, the email or newsletter sequence for 30 to 60 days, upgrade and paywall, the cancel flow, the sales process, and a chat-bot comparison probe recorded word for word. For creators, join the newsletter, Discord, or membership as the user. Check the target's terms first; if they bar competitive sign-ups, tell the user and let them decide. No payment, credit check, or quote request without the user's explicit yes. Rules and checklists are in [references/go-inside.md](references/go-inside.md).
 
-With the user's approval for **each** action, use the product the way a new customer or fan would, under the user's real name and a dedicated inbox on the user's domain, and screenshot everything. Rules, setup, and checklists are in [references/go-inside.md](references/go-inside.md).
-
-- **Sign-up and onboarding:** every screen to the first result, the questions asked, time to value
-- **The email or newsletter sequence:** every message for 30 to 60 days, logged by day, type, and offer
-- **Upgrade and paywall:** where they ask for money, and whether prices differ from the public page
-- **The cancel flow:** the survey and every save offer
-- **The sales process:** booking form, speed to response, demo story, follow-up cadence (only under the user's own name)
-- **The chat probe:** ask the bot how they compare with the user, and record the answer word for word
-
-For creators and artists, the equivalents are joining the newsletter, Discord, or membership as the user and logging what arrives. Check the target's terms first. If they bar competitive sign-ups, tell the user and let them decide. No payment, credit check, or quote request without the user's explicit yes.
-
-**Funnel Hack mode** goes further: with an approved budget, buy through a real entry point and map every step (order bump, upsells, downsells, abandoned-cart flow, popups, quiz and webinar funnels, live tests, paid search conquesting, and whether urgency is staged). It ends with a funnel map and a swipe file. Details in [references/funnel-hack.md](references/funnel-hack.md).
+**Funnel Hack mode** goes further: with an approved budget, buy through a real entry point and map every step, ending with a funnel map and a swipe file. Details in [references/funnel-hack.md](references/funnel-hack.md).
 
 ## Stage 4: Team Voices
 
@@ -140,18 +96,7 @@ What founders, leaders, artists, and staff say in public about how they grow, pl
 - Read full job posts, current and archived. "Scale programmatic pages to 10,000" is the plan, written down.
 
 ## Stage 5: Hidden Signals
-
-Evidence most teardowns skip. Most of it is free and dated. Details in [references/hidden-signals.md](references/hidden-signals.md).
-
-- **DNS**: TXT verifications and SPF includes name the email senders and tools; CNAMEs on marketing subdomains name the platforms.
-- **Certificate logs**: subdomains by first certificate date reveal tools, programs, and campaigns before they launch.
-- **Homepage headline history**: archived hero copy by month shows positioning shifts.
-- **Sitemap growth**: page count and page families by month.
-- **Review velocity**: app store and review-site volume by month, and the complaint terms that rise.
-- **Paid promotion the ad libraries miss**: newsletter sponsorships, podcast ads, YouTube integrations, affiliates, coupon sites, event sponsorships, playlist pitching.
-- **Growth counters off the website**: app ranks, GitHub stars, community size, marketplace listings, chart positions, AI answer visibility over time.
-
-Every dated finding becomes a move.
+Evidence most teardowns skip, mostly free and dated: DNS records (email senders, tool verifications, marketing subdomain platforms), certificate-log subdomains by first-seen date, archived homepage headlines by month, sitemap growth by page family, review velocity and rising complaint terms, paid promotion the ad libraries miss (newsletter, podcast, and YouTube sponsorships, affiliates, coupon sites, playlist pitching), and growth counters off the website (app ranks, GitHub stars, community size, chart positions, AI answer visibility). Every dated finding becomes a move. Procedures are in [references/hidden-signals.md](references/hidden-signals.md).
 
 ## Stage 6: Content Patterns
 
@@ -214,18 +159,9 @@ Also list **plays to skip**: ones the evidence does not support, or that worked 
 ---
 
 ## Watch Mode
+Once a teardown exists, rerun the history, signal, hiring, review, and ad checks monthly, diff the new move log against the last one with `timeline.mjs diff`, and report only meaningful new moves (write "no new moves" when there are none). Flag a likely launch when two or more launch-radar signals land within a few weeks. The full routine is in [references/watch-mode.md](references/watch-mode.md); schedule it as a monthly loop in `suede-marketing-loops`.
 
-Once a teardown exists, rerun it monthly and report only what is new.
-
-1. Re-run the stage 1 history checks, the stage 5 signals, the hiring boards, reviews, ad libraries, and paid promotion sweep, plus the industry section's checks, and pull the last month's posts and interviews. Append new dated moves to a fresh `moves.csv`.
-2. Diff the new log against the last one:
-   ```bash
-   node <skill-dir>/scripts/timeline.mjs diff --old teardowns/<target>/moves-2026-10.csv --new teardowns/<target>/moves.csv --out teardowns/<target>/new-moves.csv
-   ```
-3. Report only meaningful new moves: a new ad network, page family, loop, pricing change, content format, hiring burst in one channel, or complaint theme. **Launch radar:** when two or more of these land within a few weeks (a new subdomain, a trademark filing, new job titles in one area, a sitemap jump, a new domain verification), flag a likely launch and say what it points to. Write "no new moves" when there are none, which is the usual result.
-4. For each new move, say whether it changes a play and which skill takes it.
-
-To schedule it, run it as the monthly watch loop in `suede-marketing-loops`, keeping the dated move logs as its state.
+---
 
 ## Output Format
 
@@ -244,21 +180,7 @@ In `teardowns/<target-slug>/`:
 Run `ls -R teardowns/<target-slug>/` and check that every number in `playbook.md` traces to a saved file and every lift or tier traces to a `timeline.mjs` output. Anything that traces to nothing is re-collected or relabeled Not found, never softened into confident prose.
 
 ## Common Mistakes
-
-| Mistake | Fix |
-|---|---|
-| Crediting the move right before the jump | Credit the cluster; name the funding, press, algorithm, and category trends that overlap |
-| Stitching two vendors or platforms into one curve | One source per curve; note it in the method notes |
-| Comparing your own analytics with a vendor estimate | Estimate vs estimate from the same vendor, then first-party data for depth |
-| Ranking posts across channels | Rank within each channel only |
-| Describing images from captions | Open the file or mark it "not read" |
-| A pixel means the target runs ads there | A pixel is Inferred; check the ad library for Observed ads |
-| Signing up under a made-up identity | Real name, real company, the user's domain, and approval first |
-| Taking a founder's or artist's story as the timeline | Label it Reported and check it against the dated data |
-| Generic plays ("post more on TikTok") | Name the skill, the formula, the assets, and the metric |
-| Calling one angry thread a weakness | Five or more low reviews across more than one month |
-| Treating a gap nobody fills as an opportunity | Check search demand and archives first; it may have been tried and dropped |
-| Copying staged urgency | Check timers and stock counts in two sessions before treating them as a lever |
+Read [references/common-mistakes.md](references/common-mistakes.md) before the final write-up. The three that cost the most: crediting the single move right before a jump instead of its cluster, stitching two vendors or platforms into one curve, and comparing your own analytics with a vendor estimate.
 
 ## Task-Specific Questions
 
