@@ -457,8 +457,10 @@ function cmdMoves(o, log) {
   const yn = (v) => (v == null ? '-' : v ? 'yes' : 'no');
   log(table(['#', 'start', 'end', 'moves', 'channels', 'lift primary', 'lift secondary', 'before infl.'],
     clusters.map((c) => [c.cluster, c.start, c.end, c.moves, c.channels.join(', '), pct(c.lift_primary_pp, 'pp'), hasSecondary ? pct(c.lift_secondary_pp, 'pp') : 'n/a', yn(c.before_inflection)])));
-  const notes = clusters.filter((c) => c.lift_primary_note || (hasSecondary && c.lift_secondary_note));
-  for (const c of notes) log(`  #${c.cluster}: no lift (${c.lift_primary_note ?? c.lift_secondary_note})`);
+  for (const c of clusters) {
+    if (c.lift_primary_note) log(`  #${c.cluster}: no primary lift (${c.lift_primary_note})`);
+    if (hasSecondary && c.lift_secondary_note) log(`  #${c.cluster}: no secondary lift (${c.lift_secondary_note})`);
+  }
   log('\nLeading channel (Spearman: monthly move count vs primary MoM growth):');
   log(table(['channel', 'moves', 'lag 0', 'lag 1', 'lag 2', 'best'],
     leading.map((l) => (l.note && l.best_lag == null ? [l.channel, l.moves, '-', '-', '-', `declined: ${l.note}`] : [l.channel, l.moves, l.rho_lag0 ?? '-', l.rho_lag1 ?? '-', l.rho_lag2 ?? '-', `lag ${l.best_lag}`]))));
