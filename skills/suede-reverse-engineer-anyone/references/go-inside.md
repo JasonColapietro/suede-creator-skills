@@ -30,7 +30,7 @@ Every action here is outward-facing. Confirm with the user before each sign-up, 
 ## Setup
 
 - **Browser:** a browser tool this session exposes, with a clean profile so personalization and retargeting start from zero. No browser tool: give the user a numbered click-path and screenshot list to run themselves.
-- **Inbox:** a dedicated address or labeled alias on the user's domain (for example `research@usercompany.com`), used only for this teardown. Every message that arrives is evidence.
+- **Inbox:** a dedicated address or labeled alias on the user's domain (for example `research@example.com`), used only for this teardown. Every message that arrives is evidence.
 - **Folder:** `teardowns/<target-slug>/inside/`, with `screens/`, `emails.csv`, and `notes.md`.
 
 ## Sign-Up and Onboarding

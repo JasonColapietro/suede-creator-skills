@@ -326,7 +326,7 @@ test('dns maps TXT verifications, SPF includes, MX and CNAMEs through a stubbed 
 // ---------- jobs ----------
 
 const GH = { jobs: [
-  { title: 'Senior SEO Manager', departments: [{ name: 'Marketing' }], location: { name: 'Remote' }, first_published: '2026-10-01T10:00:00-04:00', absolute_url: 'https://boards.greenhouse.io/acme/jobs/1', content: '&lt;p&gt;Own organic search and our AI search (AEO) program. Contact jane.doe@acme.com or @janedoe.&lt;/p&gt;' },
+  { title: 'Senior SEO Manager', departments: [{ name: 'Marketing' }], location: { name: 'Remote' }, first_published: '2026-10-01T10:00:00-04:00', absolute_url: 'https://boards.greenhouse.io/acme/jobs/1', content: '&lt;p&gt;Own organic search and our AI search (AEO) program. Contact jane.doe@example.com or @janedoe.&lt;/p&gt;' },
   { title: 'Account Executive', departments: [{ name: 'Sales' }], location: { name: 'NYC' }, updated_at: '2026-09-01T00:00:00Z', absolute_url: 'https://boards.greenhouse.io/acme/jobs/2', content: 'Close deals.' },
 ] };
 const LEVER = [{ text: 'Lifecycle Marketing Lead', categories: { team: 'Growth', location: 'London' }, createdAt: Date.UTC(2026, 8, 15), hostedUrl: 'https://jobs.lever.co/acme/1', descriptionPlain: 'Own email marketing and influencer partnerships.', lists: [{ text: 'You will', content: '<li>Run paid social tests</li>' }] }];
