@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "repository": "JasonColapietro/suede-creator-skills",
-  "source_revision": "44b6eaed78aa3c2c486aa68325f01112b9c66395",
-  "source_branch": "feat/reverse-engineer-anyone-skill",
+  "source_revision": "f0627c8dc33f165793fa02226dc4fa23c74d4056",
+  "source_branch": "main",
   "source_status": "proposed_draft_revision",
   "assessment_date": "2026-11-12",
   "external_snapshot_date": "2026-10-22",
@@ -811,30 +811,30 @@
   "citations": [
     {
       "source": "BehiSecc/awesome-claude-skills",
-      "commit": "c368a0ae3c61e226af761fe975cf869c0f3a087d",
+      "commit": "adf99015a0ad4dac11711c261f0f9b433e4215e7",
       "path": "README.md",
-      "blob": "f45951802eaf9365aca8777fc55cbf174de119cc",
-      "document_sha256": "7ad97b51a1ee7a8eb255a27cc7006e80fa81444def1a9eb3de1cd9ae5742ea8c",
+      "blob": "55d020b927bf00f4f242b58fe4c196feea596c08",
+      "document_sha256": "78f4ef90464fc29fbf1d31ca9bef572f4920afe8d2b4e8dd9b768c99be0c463d",
       "evidence_status": "caller_supplied_pinned_document",
       "local_validation": "git_blob_integrity_only",
       "target": "https://github.com/JasonColapietro/suede-creator-skills"
     },
     {
       "source": "VoltAgent/awesome-agent-skills",
-      "commit": "ec7ae694479aaed73f4a655e3c346dde5e61b8c4",
+      "commit": "ee23e580e34aeb65dacfd498ed70ef51c066e40e",
       "path": "README.md",
-      "blob": "ef753775f8377434d5cf6569311884ec3feaa6c4",
-      "document_sha256": "c98514cdd04f7116be1a45308af2b4cfa7a28659dcff20afce4d51225622f7a7",
+      "blob": "cfb805af027cf36699843b6760c9e277ef613eb5",
+      "document_sha256": "c2f3447c752015a67db5e7eefb86790fc3945f311e9643232c4733da146160d4",
       "evidence_status": "caller_supplied_pinned_document",
       "local_validation": "git_blob_integrity_only",
       "target": "https://github.com/JasonColapietro/suede-creator-skills"
     },
     {
       "source": "karanb192/awesome-claude-skills",
-      "commit": "38d9631719d6411376bc7cb7b0fe041829f6c8bb",
+      "commit": "7b2650b08cd3e287a64b50897bc941dedee6c29d",
       "path": "README.md",
-      "blob": "7c8ede03061be151acdddb2255b99007dcc193e3",
-      "document_sha256": "90944a12db5ca3f425e6fd68fd73ef53e314d57b7d611c15051b1573fe0670f0",
+      "blob": "d986ccdf173639ec92ab1837b66062428b2e9eeb",
+      "document_sha256": "f112e0d168b32709061d3817e2cdeb8411958dcc09d96250024fb30ed6e77386",
       "evidence_status": "caller_supplied_pinned_document",
       "local_validation": "git_blob_integrity_only",
       "target": "https://github.com/JasonColapietro/suede-creator-skills"
@@ -843,6 +843,6 @@
   "external_before_sha256": "5f4c72f699fa21372d07fb74940825fa7dc4a66222325cd19d94404782100977",
   "external_after_sha256": "5f4c72f699fa21372d07fb74940825fa7dc4a66222325cd19d94404782100977",
   "security_scan_status": "not_scanned",
-  "dataset_before_sha256": "2e45196e703a690ad7b359e9ffd6760a42e1745a0d5f56eff1fbab3fc85a1ff0",
-  "dataset_after_sha256": "9b754a4a523e8528066431deb3b66bdd71ceed517a5791d4fd11c5a468fb0c8e"
+  "dataset_before_sha256": "9b754a4a523e8528066431deb3b66bdd71ceed517a5791d4fd11c5a468fb0c8e",
+  "dataset_after_sha256": "b73996d45961aa527b4cea74a41a2e44497200dba9b2f85411e3602ab5f56641"
 }
