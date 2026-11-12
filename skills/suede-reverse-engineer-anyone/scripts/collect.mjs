@@ -12,9 +12,64 @@ import { gunzipSync } from 'node:zlib';
 import dnsPromises from 'node:dns/promises';
 import { pathToFileURL } from 'node:url';
 import { parseArgs } from 'node:util';
-import { parseCsv, toCsv } from './timeline.mjs';
 
-export const USER_AGENT = 'suede-reverse-engineer-anyone/1.0 (+https://skills.suedeai.ai)';
+// CSV helpers, kept in this file so every skill that bundles it runs standalone.
+export function parseCsv(text) {
+  const src = String(text).replace(/^﻿/, '');
+  const records = [];
+  let row = [];
+  let field = '';
+  let inQuotes = false;
+  for (let i = 0; i < src.length; i++) {
+    const c = src[i];
+    if (inQuotes) {
+      if (c === '"') {
+        if (src[i + 1] === '"') {
+          field += '"';
+          i++;
+        } else inQuotes = false;
+      } else field += c;
+    } else if (c === '"' && field === '') {
+      inQuotes = true;
+    } else if (c === ',') {
+      row.push(field);
+      field = '';
+    } else if (c === '\n' || c === '\r') {
+      row.push(field);
+      records.push(row);
+      row = [];
+      field = '';
+      if (c === '\r' && src[i + 1] === '\n') i++;
+    } else field += c;
+  }
+  if (inQuotes) fail('CSV has an unclosed quoted field');
+  if (field !== '' || row.length) {
+    row.push(field);
+    records.push(row);
+  }
+  const nonEmpty = records.filter((r) => !(r.length === 1 && r[0].trim() === ''));
+  if (!nonEmpty.length) return { headers: [], rows: [] };
+  const headers = nonEmpty[0].map((h) => h.trim());
+  const rows = nonEmpty.slice(1).map((r) => {
+    const obj = {};
+    headers.forEach((h, k) => {
+      if (h) obj[h] = r[k] ?? '';
+    });
+    return obj;
+  });
+  return { headers, rows };
+}
+
+export function toCsv(rows, headers) {
+  const cols = headers ?? (rows.length ? Object.keys(rows[0]) : []);
+  const esc = (v) => {
+    const s = v == null ? '' : String(v);
+    return /[",\r\n]|^\s|\s$/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
+  };
+  return [cols.map(esc).join(','), ...rows.map((r) => cols.map((c) => esc(r[c])).join(','))].join('\n') + '\n';
+}
+
+export const USER_AGENT = 'suede-collect/1.0 (+https://skills.suedeai.ai)';
 export const MOVE_HEADERS = ['date', 'channel', 'kind', 'move', 'reach', 'link', 'evidence'];
 export const FIXED_HOSTS = new Set([
   'web.archive.org', 'crt.sh', 'boards-api.greenhouse.io', 'api.lever.co', 'api.ashbyhq.com',
@@ -22,7 +77,7 @@ export const FIXED_HOSTS = new Set([
 ]);
 export const WAYBACK_DELAY_MS = 1500;
 export const TIMEOUT_MS = 20000;
-const ROBOTS_AGENT = 'suede-reverse-engineer-anyone';
+const ROBOTS_AGENT = 'suede-collect';
 
 export class InputError extends Error {}
 export class BlockedError extends Error {
@@ -1001,7 +1056,7 @@ async function cmdAdoption(o, ctx) {
   let rows = [];
   if (filled.length) {
     const span = list.slice(list.indexOf(filled[0]), list.indexOf(filled[filled.length - 1]) + 1);
-    if (span.some((m) => primary[m] == null)) notes.push('some months inside the window had no complete data; those rows are blank and timeline.mjs will flag them');
+    if (span.some((m) => primary[m] == null)) notes.push('some months inside the window had no complete data; those rows are blank');
     rows = span.map((m) => ({ month: m, primary: primary[m] ?? '', secondary: secondary?.[m] ?? '' }));
   }
   const labelP = registry ? source : `GitHub stars (${o.github})`;
@@ -1038,7 +1093,7 @@ async function cmdYoutube(o, ctx) {
   if (!/^UC[\w-]{22}$/.test(id)) fail('youtube needs a channel id that starts with UC (24 characters), found on the channel page source or its About share link');
   const posts = parseYoutubeFeed(await ctx.client().text(`https://www.youtube.com/feeds/videos.xml?channel_id=${id}`, 'application/atom+xml,application/xml'));
   const c = cadence(posts.map((p) => p.date));
-  const notes = ['The public feed holds only the latest ~15 uploads, so cadence covers a short window. Use timeline.mjs thirds only once 24+ settled posts exist.'];
+  const notes = ['The public feed holds only the latest ~15 uploads, so cadence covers a short window. Call no content pattern until 24+ settled posts exist.'];
   const text = [
     `YouTube ${id}: ${posts.length} recent upload(s), pulled ${ctx.today}${c.median != null ? `, median ${c.median.toFixed(1)} days between uploads` : ''}`,
     c.months.length ? table(['month', 'uploads'], c.months) : 'No uploads in the feed.',

@@ -38,7 +38,7 @@ Every command takes `--json` and `--help`. `--moves` appends rows to `moves.csv`
 
 ## How it behaves
 
-- **Identifies itself.** User-Agent `suede-reverse-engineer-anyone/1.0 (+https://skills.suedeai.ai)`. It never imitates a browser and reads no environment variables or tokens.
+- **Identifies itself.** User-Agent `suede-collect/1.0 (+https://skills.suedeai.ai)`. It never imitates a browser and reads no environment variables or tokens.
 - **Contacts only fixed public hosts:** web.archive.org, crt.sh, boards-api.greenhouse.io, api.lever.co, api.ashbyhq.com, itunes.apple.com, api.npmjs.org, pypistats.org, api.github.com (unauthenticated), and www.youtube.com, plus the target domain for `site` (robots.txt and sitemaps only) and the exact host of a podcast feed you pass. Each redirect hop is checked, and an off-list hop stops with a message.
 - **Stops at blocks.** A 401, 403, or 429, or a robots.txt Disallow, stops that source with `blocked by <host> (<status>): use an archived copy or a manual export`. One retry on a network error or 5xx, never more.
 - **Paces the archive.** At least 1.5 seconds between archive.org requests and `--max-requests` (default 40) per command. A 24-month `stack` or `hero` run takes about 25 requests and 40 seconds; a capped run says its output is partial.
