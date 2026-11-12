@@ -5721,6 +5721,11 @@
   "productivity agent skills",
   "SKILL.md"
  ],
+ "directory/inhotel-io/govisit-toolkit/govisit-get-category-section/index.html": [
+  "govisit-get-category-section skill by inhotel-io/govisit-toolkit",
+  "productivity-knowledge skills",
+  "agent skill assessment"
+ ],
  "directory/inhotel-io/govisit-toolkit/govisit-get-collection-overview/index.html": [
   "govisit-get-collection-overview skill by inhotel-io",
   "govisit-get-collection-overview skill",
@@ -5739,6 +5744,21 @@
   "productivity agent skills",
   "SKILL.md"
  ],
+ "directory/inhotel-io/govisit-toolkit/govisit-get-destination-overview/index.html": [
+  "govisit-get-destination-overview skill by inhotel-io/govisit-toolkit",
+  "productivity-knowledge skills",
+  "agent skill assessment"
+ ],
+ "directory/inhotel-io/govisit-toolkit/govisit-get-destination-section/index.html": [
+  "govisit-get-destination-section skill by inhotel-io/govisit-toolkit",
+  "productivity-knowledge skills",
+  "agent skill assessment"
+ ],
+ "directory/inhotel-io/govisit-toolkit/govisit-get-documentation-page/index.html": [
+  "govisit-get-documentation-page skill by inhotel-io/govisit-toolkit",
+  "developer-tools skills",
+  "agent skill assessment"
+ ],
  "directory/inhotel-io/govisit-toolkit/govisit-get-page-faq/index.html": [
   "govisit-get-page-faq skill by inhotel-io",
   "govisit-get-page-faq skill",
@@ -5748,6 +5768,11 @@
   "productivity agent skills",
   "SKILL.md"
  ],
+ "directory/inhotel-io/govisit-toolkit/govisit-get-place-overview/index.html": [
+  "govisit-get-place-overview skill by inhotel-io/govisit-toolkit",
+  "productivity-knowledge skills",
+  "agent skill assessment"
+ ],
  "directory/inhotel-io/govisit-toolkit/govisit-get-place-section/index.html": [
   "govisit-get-place-section skill by inhotel-io",
   "govisit-get-place-section skill",
@@ -5756,6 +5781,16 @@
   "inhotel-io skills",
   "productivity agent skills",
   "SKILL.md"
+ ],
+ "directory/inhotel-io/govisit-toolkit/govisit-get-place-visit-facts/index.html": [
+  "govisit-get-place-visit-facts skill by inhotel-io/govisit-toolkit",
+  "productivity-knowledge skills",
+  "agent skill assessment"
+ ],
+ "directory/inhotel-io/govisit-toolkit/govisit-get-statistics/index.html": [
+  "govisit-get-statistics skill by inhotel-io/govisit-toolkit",
+  "productivity-knowledge skills",
+  "agent skill assessment"
  ],
  "directory/inhotel-io/govisit-toolkit/govisit-list-category-places/index.html": [
   "govisit-list-category-places skill by inhotel-io",
@@ -5774,6 +5809,21 @@
   "inhotel-io skills",
   "productivity agent skills",
   "SKILL.md"
+ ],
+ "directory/inhotel-io/govisit-toolkit/govisit-list-destination-activities/index.html": [
+  "govisit-list-destination-activities skill by inhotel-io/govisit-toolkit",
+  "productivity-knowledge skills",
+  "agent skill assessment"
+ ],
+ "directory/inhotel-io/govisit-toolkit/govisit-list-destination-categories/index.html": [
+  "govisit-list-destination-categories skill by inhotel-io/govisit-toolkit",
+  "productivity-knowledge skills",
+  "agent skill assessment"
+ ],
+ "directory/inhotel-io/govisit-toolkit/govisit-list-destination-highlights/index.html": [
+  "govisit-list-destination-highlights skill by inhotel-io/govisit-toolkit",
+  "productivity-knowledge skills",
+  "agent skill assessment"
  ],
  "directory/inhotel-io/govisit-toolkit/govisit-list-destination-places/index.html": [
   "govisit-list-destination-places skill by inhotel-io",
