@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "repository": "JasonColapietro/suede-creator-skills",
-  "source_revision": "a4b00d8704d50767091152cf5a5533d4e7e5b45a",
+  "source_revision": "d3937196880475a9c3b5ee86c5b816f36a8c4b5a",
   "source_branch": "feat/suede-reverse-engineer-anyone",
   "source_status": "proposed_draft_revision",
   "assessment_date": "2026-11-12",
@@ -843,6 +843,6 @@
   "external_before_sha256": "5f4c72f699fa21372d07fb74940825fa7dc4a66222325cd19d94404782100977",
   "external_after_sha256": "5f4c72f699fa21372d07fb74940825fa7dc4a66222325cd19d94404782100977",
   "security_scan_status": "not_scanned",
-  "dataset_before_sha256": "db2a04edf080366ee1ec20742701c1f643e450e190991d759b7c392a19442367",
-  "dataset_after_sha256": "ce9b36021796d2be69c12f89d0ec36062b376abfba6a67cd0073a4104c60dd3b"
+  "dataset_before_sha256": "ce9b36021796d2be69c12f89d0ec36062b376abfba6a67cd0073a4104c60dd3b",
+  "dataset_after_sha256": "47aa2a881c66765769ab6edb0644fcb2510dca3befa174fd335536650d82a197"
 }
