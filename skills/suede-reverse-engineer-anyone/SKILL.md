@@ -14,7 +14,7 @@ A teardown is a history, not a profile. `suede-competitor-profiling` describes w
 
 ## Compatibility
 
-An agent with web access and local file writing. Collection uses whatever the session actually exposes: a browser, page fetch, and any authorized SEO, social, ad-library, or analytics connector. Every stage has a manual fallback. Arithmetic runs through `scripts/timeline.mjs` (Node 22 or later, no dependencies).
+An agent with web access and local file writing. Collection uses whatever the session actually exposes: a browser, page fetch, and any authorized SEO, social, ad-library, or analytics connector. Free public sources (archives, certificate logs, DNS, job boards, app reviews, package registries, video and podcast feeds) are collected by `scripts/collect.mjs`, which needs no API keys. Every stage keeps a manual fallback. Arithmetic runs through `scripts/timeline.mjs`. Both need Node 22 or later and no dependencies.
 
 ## Initial Assessment
 
@@ -64,7 +64,16 @@ The spine is two files every later stage writes into:
 - **`curve.csv`** (`month,primary,secondary`): the monthly curve from **one** source for the whole window. For a company, `primary` is web visits and `secondary` is brand search volume or search-interest index. For a creator or artist, `primary` is followers, subscribers, monthly listeners, or views from one platform, and `secondary` is a second platform or search interest. For an app, downloads or rank. For a developer tool, package downloads. Mixing vendors creates jumps that never happened.
 - **`moves.csv`** (`date,channel,kind,move,reach,link,evidence`): one row per dated move. Every stage adds rows.
 
-Collect the free history first, by whatever tool the session exposes or by hand: page families from the public sitemap (saved to `urls.csv`), the first archived month each pixel or marketing tool appears, the months the pricing or offer page changed, and ad library links per network with the filter and date. Procedures are in [references/hidden-signals.md](references/hidden-signals.md).
+Collect the free history first with `collect.mjs`, which appends dated moves as it goes:
+
+```bash
+node <skill-dir>/scripts/collect.mjs site <domain> --out teardowns/<target>/urls.csv
+node <skill-dir>/scripts/collect.mjs stack <domain> --moves teardowns/<target>/moves.csv
+node <skill-dir>/scripts/collect.mjs history <domain>/pricing --moves teardowns/<target>/moves.csv
+node <skill-dir>/scripts/collect.mjs ads "<Target>" --domain <domain>
+```
+
+Every command, its sources, and its known gaps are in [references/collector.md](references/collector.md). When a command is blocked, use the manual procedures in [references/hidden-signals.md](references/hidden-signals.md).
 
 Then read the matching section of [references/industry-signals.md](references/industry-signals.md). A target that spans two industries (a marketplace for local services) gets both sections.
 

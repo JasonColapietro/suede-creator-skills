@@ -94,7 +94,7 @@ Never record a call without the other side's consent. Take notes. Turn findings 
 
 ## Creator and Community Equivalents
 
-For a creator, artist, band, or personal brand (see [target-types.md](target-types.md)), each with approval and under the user's real identity:
+For a creator, artist, band, or personal brand (see `target-types.md`), each with approval and under the user's real identity:
 
 | Action | Record |
 |---|---|

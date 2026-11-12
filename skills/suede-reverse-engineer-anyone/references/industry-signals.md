@@ -2,7 +2,7 @@
 
 What changes by industry: the curve source, the signals worth logging, what Stage 3 may do, the rules that limit copying, the plays that usually transfer, and the metric to watch. Confirm the industry after Stage 1 and load its section. When a target spans two (a marketplace for local services, a creator who sells a course), load both and apply the stricter guardrail wherever they differ.
 
-Legal notes are dated pointers, not legal advice: check the current rule, and counsel for regulated claims, before copying a play. Every Stage 3 action needs per-action approval under the user's real identity ([go-inside.md](go-inside.md)). Routing follows [play-routing.md](play-routing.md).
+Legal notes are dated pointers, not legal advice: check the current rule, and counsel for regulated claims, before copying a play. Every Stage 3 action needs per-action approval under the user's real identity (`go-inside.md`). Routing follows `play-routing.md`.
 
 ---
 
@@ -280,7 +280,7 @@ Alcohol, cannabis, hemp, tobacco and vaping, firearms.
 ## Media and Creators
 
 Publishers, newsletters, podcasts, video creators.
-- **Curve:** one platform's audience metric from one tracker or archived captures; a self-published count is Reported ([target-types.md](target-types.md)).
+- **Curve:** one platform's audience metric from one tracker or archived captures; a self-published count is Reported (`target-types.md`).
 - **Signals:** audience claims on about and advertise pages over time; rate card history; sponsors per issue; cross-promotions and recommendation lists; paid recommendation networks; referral tiers; paid subscriber ads; cadence and format changes; guest appearances; product launches; chart positions.
 - **Stage 3:** subscribe and log 30 days of issues, sponsors, and upsells; walk the paid tier and stop. Never sign up fake addresses to test referral rewards; never pitch a swap the user won't run.
 - **Copying limits:** FTC Endorsement Guides (2023), UK CAP Code, platform paid-promotion labels; CAN-SPAM, GDPR, CASL; bans on bought lists; copyright on copied clips.
