@@ -8,7 +8,7 @@ Skills for PRDs, discovery, roadmaps, OKRs, user research and prioritization. Pr
 
 **239 accepted skills · 17 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
-**Compare on the 0–99 quality scale:** this category’s verified scores span **56–92 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede AI](https://skills.suedeai.ai/directory/?category=product-management&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
+**Compare on the 0–99 quality scale:** this category’s verified scores span **56–93 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede AI](https://skills.suedeai.ai/directory/?category=product-management&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
 
 [Read the score and license key](../README.md#read-a-listing). Descriptions are saved summaries or excerpts; full details and setup are on each Suede AI listing.
 
@@ -220,8 +220,8 @@ Skills for PRDs, discovery, roadmaps, OKRs, user research and prioritization. Pr
 
 [Repository](https://github.com/JasonColapietro/suede-creator-skills) · Publisher: [JasonColapietro](https://github.com/JasonColapietro) · [Suede AI listing](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/)
 
-- **91/100 · A** · [Suede AI Customer Research Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/glama-listing/skills/suede-customer-research/SKILL.md): Use when asked "synthesize these interviews" or to discover what a defined customer segment says, needs and resists. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-customer-research)
-- **91/100 · A** · [Suede AI Onboarding Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/glama-listing/skills/suede-onboarding/SKILL.md): Suede AI Onboarding Skills: time to value, ranked friction audits, first-value flows, empty states, checklists, and measurement. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-onboarding)
+- **93/100 · A** · [Suede AI Customer Research Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/feat/reverse-engineer-anyone-skill/skills/suede-customer-research/SKILL.md): Use when asked "synthesize these interviews" or to discover what a defined customer segment says, needs and resists. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-customer-research)
+- **91/100 · A** · [Suede AI Onboarding Skills](https://github.com/JasonColapietro/suede-creator-skills/blob/feat/reverse-engineer-anyone-skill/skills/suede-onboarding/SKILL.md): Suede AI Onboarding Skills: time to value, ranked friction audits, first-value flows, empty states, checklists, and measurement. [Suede](https://skills.suedeai.ai/directory/jasoncolapietro/suede-creator-skills/#suede-onboarding)
 
 <a id="jeffallan--claude-skills"></a>
 

@@ -443,7 +443,8 @@
       "id": "competitor-intel",
       "skills": [
         "suede-competitors",
-        "suede-competitor-profiling"
+        "suede-competitor-profiling",
+        "suede-reverse-engineer-anyone"
       ],
       "fallback": "clarify",
       "routes": [
@@ -476,10 +477,31 @@
           "negative": [
             "versus page",
             "alternative page",
-            "comparison page"
+            "comparison page",
+            "reverse engineer",
+            "growth teardown"
           ],
           "metadataMustContain": [
             "competitive intelligence"
+          ]
+        },
+        {
+          "skill": "suede-reverse-engineer-anyone",
+          "positive": [
+            "reverse engineer",
+            "growth teardown",
+            "how did",
+            "map their funnel"
+          ],
+          "negative": [
+            "versus page",
+            "alternative page",
+            "comparison page",
+            "competitor profiles"
+          ],
+          "metadataMustContain": [
+            "reverse engineer",
+            "map their funnel"
           ]
         }
       ],
@@ -497,6 +519,21 @@
           "expected": "suede-competitor-profiling",
           "forbidden": [
             "suede-competitors"
+          ]
+        },
+        {
+          "id": "reverse-engineer-positive",
+          "mode": "positive",
+          "prompt": "Reverse engineer how this indie artist grew and give me a growth teardown.",
+          "expected": "suede-reverse-engineer-anyone"
+        },
+        {
+          "id": "reverse-engineer-negative-profiling",
+          "mode": "negative",
+          "prompt": "How did this competitor grow? Reverse engineer it and map their funnel from public evidence.",
+          "expected": "suede-reverse-engineer-anyone",
+          "forbidden": [
+            "suede-competitor-profiling"
           ]
         },
         {

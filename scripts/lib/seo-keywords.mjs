@@ -394,6 +394,13 @@ export const SEO_KEYWORDS = {
     "competitor research",
     "Suede AI Skills",
   ],
+  "skills/suede-reverse-engineer-anyone.html": [
+    "reverse engineer anyone",
+    "reverse engineer marketing",
+    "growth teardown",
+    "how did they grow",
+    "Suede AI Skills",
+  ],
   "skills/suede-competitors.html": [
     "competitor comparison",
     "competitor comparison page",
