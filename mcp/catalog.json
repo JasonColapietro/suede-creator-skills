@@ -756,7 +756,7 @@
       "area": "marketing",
       "specialty": "position",
       "lane": "Strategy & research",
-      "description": "Use when asked \"how did X grow\", \"reverse engineer their marketing\", \"what made this artist blow up\", or \"map their funnel\". Suede AI reverse-engineers any company, creator, artist, founder brand, app, or launch from dated public evidence: a one-source growth curve, a log of every move, funnel and content patterns, hidden signals, approved first-hand sign-ups, the user's gap, and ranked plays routed to the Suede skill that runs each one. NOT FOR: a current-state competitor snapshot (use suede-competitor-profiling), publishing comparison pages (use suede-competitors), or why one post traveled (use suede-social).",
+      "description": "Use when asked \"how did X grow\", \"reverse engineer their marketing\", \"what made this artist blow up\", or \"map their funnel\". Suede AI reverse-engineers any company, creator, artist, founder brand, app, or launch from dated public evidence: a one-source growth curve, a log of every move, funnel and content patterns, hidden signals, the user's gap, and ranked plays routed to the Suede skill that runs each one. NOT FOR: a current-state competitor snapshot (use suede-competitor-profiling), publishing comparison pages (use suede-competitors), or why one post traveled (use suede-social).",
       "useWhen": "The user wants to know how a company, creator, artist, founder brand, app, or launch grew, and which of its moves to copy.",
       "displayName": "Suede AI Reverse Engineer Anyone Skills"
     },

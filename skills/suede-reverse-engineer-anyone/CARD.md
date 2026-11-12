@@ -23,7 +23,7 @@ MIT ([LICENSE](../../LICENSE)). The pack's combined license expression is `MIT A
 
 Target users: developers and creators running the skill inside a Claude Code or Codex CLI session.
 
-Use when asked \"how did X grow\", \"reverse engineer their marketing\", \"what made this artist blow up\", or \"map their funnel\". Suede AI reverse-engineers any company, creator, artist, founder brand, app, or launch from dated public evidence: a one-source growth curve, a log of every move, funnel and content patterns, hidden signals, approved first-hand sign-ups, the user's gap, and ranked plays routed to the Suede skill that runs each one.
+Use when asked \"how did X grow\", \"reverse engineer their marketing\", \"what made this artist blow up\", or \"map their funnel\". Suede AI reverse-engineers any company, creator, artist, founder brand, app, or launch from dated public evidence: a one-source growth curve, a log of every move, funnel and content patterns, hidden signals, the user's gap, and ranked plays routed to the Suede skill that runs each one.
 
 Out of scope — a current-state competitor snapshot (use suede-competitor-profiling), publishing comparison pages (use suede-competitors), or why one post traveled (use suede-social).
 
@@ -34,7 +34,7 @@ Global. The skill is a prompt-and-script package that runs locally inside the in
 ## Requirements / Dependencies
 
 - A Claude Code or Codex CLI session with the `suede-skills` plugin installed (install options: <https://skills.suedeai.ai/>).
-- Bundled files loaded relative to this directory: `agents/` (1 file), `scripts/` (2 files), `references/` (14 files).
+- Bundled files loaded relative to this directory: `agents/` (1 file), `scripts/` (2 files), `references/` (17 files).
 - Credentials: none are bundled or required by the skill files. Any tool or API credentials come from the host session; never paste credentials into skill files, prompts, or outputs.
 
 ## Known Risks and Mitigations
