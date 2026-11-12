@@ -35,10 +35,10 @@ Stage 6 in full: what the target's best posts have in common, turned into formul
 
 Save to `teardowns/<target-slug>/posts.csv`, one row per post, with the pull date in the method notes:
 
-`channel,posted_at,url,title,format,views,likes,comments,shares,saves,image`
+`channel,date,url,title,format,views,likes,comments,shares,saves,image`
 
 - `channel` keeps formats that score differently apart (`youtube-long`, `youtube-shorts`).
-- `posted_at` is `YYYY-MM-DD`.
+- `date` is `YYYY-MM-DD`.
 - `image` is the local path of the downloaded thumbnail or cover, blank if it didn't download.
 - If a metric is a sum (likes + comments), add it as its own column and pass that column name to `--metric`.
 
