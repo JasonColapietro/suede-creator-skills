@@ -1,0 +1,135 @@
+{
+  "review_date": "2026-11-13",
+  "method": "Pinned read-only source review for owner-selected editorial features. No target execution, security scan, numeric scoring or paid workload.",
+  "projects": [
+    {
+      "id": "resume-tribunal",
+      "repo": "mohiddin7/resume-tribunal",
+      "commit": "55d830f613bdfe9fabf8bed3fa1befb7c2f6b083",
+      "scope": "skills/resume-tribunal/SKILL.md",
+      "source_files": [
+        {
+          "path": "README.md",
+          "sha256": "aa93d1d98acf43e27c6bddabae7fff71312c54d1179242867cae8c828cd2da1d",
+          "bytes": 19384
+        },
+        {
+          "path": "LICENSE",
+          "sha256": "d8fcd8e60e58fff6884e675e868647a1e8829c9d2f9abab1edd0aa116f7d2d56",
+          "bytes": 1066
+        },
+        {
+          "path": "skills/resume-tribunal/SKILL.md",
+          "sha256": "dd6e141b49855ffbfeef0ce2ff01339424f21d57b087d44a94364cbad890b9ef",
+          "bytes": 29861
+        }
+      ],
+      "disposition": "editorial_feature",
+      "score": null,
+      "security_scan_status": "not_scanned"
+    },
+    {
+      "id": "siebly-crypto-exchange-api",
+      "repo": "sieblyio/agent-skills",
+      "commit": "a498cc26c37f44f7c813e4692e448f2b9fe1e07a",
+      "scope": "skills/siebly-crypto-exchange-api/SKILL.md",
+      "source_files": [
+        {
+          "path": "README.md",
+          "sha256": "dd4bc25ec6c0f649feb790d376d09be772b36efd7841119c2156639a008ee75f",
+          "bytes": 1735
+        },
+        {
+          "path": "LICENSE",
+          "sha256": "8919f7c823c09a4ff496f9704f9e9836e503b6582cb16128c98b7ede78492fbb",
+          "bytes": 1066
+        },
+        {
+          "path": "skills/siebly-crypto-exchange-api/SKILL.md",
+          "sha256": "64c34868683662f8d7b87649a47535c2f4276f6c27f572aa13fc97c220a96efc",
+          "bytes": 19140
+        }
+      ],
+      "disposition": "editorial_feature",
+      "score": null,
+      "security_scan_status": "not_scanned"
+    },
+    {
+      "id": "deed-page",
+      "repo": "f-o-x11/deed-page-skill",
+      "commit": "16e00cb963b0770f6a7da20cee52f5d1ea6ea4bf",
+      "scope": "skills/deed-page/SKILL.md",
+      "source_files": [
+        {
+          "path": "README.md",
+          "sha256": "2232acc896f40474b07f4fe213959c9a743ce2b58731e464a9be3f08a3e992f2",
+          "bytes": 13483
+        },
+        {
+          "path": "LICENSE",
+          "sha256": "2f137c63b7ff8a3564c864207d33b141c116d9ffe12246d3c63184d186a655ca",
+          "bytes": 1069
+        },
+        {
+          "path": "skills/deed-page/SKILL.md",
+          "sha256": "88f2e55284199a5e616a8d3e3194160213a475c0aa16edef4d70d7f6f0ccd9e9",
+          "bytes": 15016
+        },
+        {
+          "path": "skills/deed-page/scripts/publish.sh",
+          "sha256": "59a4b1865b98d5059c64043e3f81b0369525a6112449ebff8a0f18a68b734f4f",
+          "bytes": 11297
+        },
+        {
+          "path": "skills/deed-page/scripts/publish-large.mjs",
+          "sha256": "8f48033c1d444823ed317d8abeb9aee2d19e939241f732c1f76d8738e878b074",
+          "bytes": 15089
+        },
+        {
+          "path": "skills/deed-page/scripts/check-publish-filter.sh",
+          "sha256": "7cdf1a1b1f9da4fb7cb48055f8e66ed6ecafd4dc026a07ef0402437d45b1b438",
+          "bytes": 16250
+        }
+      ],
+      "disposition": "editorial_feature",
+      "score": null,
+      "security_scan_status": "not_scanned"
+    },
+    {
+      "id": "tecadrise-bot",
+      "repo": "tecadrise-ai/TecAdRiseBot",
+      "commit": "7f67f0212ae6a5ef623cee30dda6dc0d0ceaa36c",
+      "scope": "README.md",
+      "source_files": [
+        {
+          "path": "README.md",
+          "sha256": "3f80e19d01ad0c9bb5f488b7b56dc8ee5d423bd13c6597e575f392b6707a1ef6",
+          "bytes": 7583
+        },
+        {
+          "path": "LICENSE",
+          "sha256": "4beec35bb7ca12daa404c9908854706922b1a35c0071bba7641123782b857db4",
+          "bytes": 1066
+        },
+        {
+          "path": "defaults/skills/tecadrisebot/SKILL.md",
+          "sha256": "62ae5f2fd5ae018e0bfa7954c3d4b7c5b0073428dab1da8d1b920985dca42de2",
+          "bytes": 1785
+        },
+        {
+          "path": "defaults/skills/memory-management/SKILL.md",
+          "sha256": "493dd1c7f5d1c0800d7c1c28035de387a9c037f4a1f729d9ead5972c8b1a424f",
+          "bytes": 1969
+        }
+      ],
+      "disposition": "editorial_feature",
+      "score": null,
+      "security_scan_status": "not_scanned",
+      "application": {
+        "channel": "publisher_email",
+        "received_at": "2026-11-12T17:37:17Z",
+        "requested_scope": "Free ungraded discovery listing in Agents and Grok Bot alternatives"
+      }
+    }
+  ]
+}

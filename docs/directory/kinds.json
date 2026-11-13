@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-02",
+ "updated": "2026-11-13",
  "kinds": [
   {
    "id": "plugins",
@@ -463,6 +463,17 @@
      "summary": "The system prompts behind Grok chat and the Grok account on X, published by xAI.",
      "install": null,
      "license": null
+    },
+    {
+     "id": "tecadrise-bot",
+     "name": "TecAdRise Bot",
+     "repo": "tecadrise-ai/TecAdRiseBot",
+     "url": "https://tecadrise.ai/products/tecadrisebot",
+     "publisher": "TecAdRise",
+     "official": false,
+     "summary": "Run a local Windows multi-agent workspace with shared memory, MCP connections and scheduled routines, using Cursor SDK agents or a configured model-provider key. Independent Grok Bot alternative on Cursor SDK or BYOK.",
+     "install": null,
+     "license": "MIT"
     }
    ]
   },

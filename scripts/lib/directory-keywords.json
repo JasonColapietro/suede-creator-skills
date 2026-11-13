@@ -3100,15 +3100,15 @@
  ],
  "directory/featured/index.html": [
   "featured agent projects",
+  "deed.page agent workflows",
+  "Resume Tribunal agent workflows",
+  "Siebly Crypto Exchange API agent workflows",
+  "TecAdRise Bot agent workflows",
   "GoVisit Agent Skills agent workflows",
   "Datacircle agent workflows",
   "Resume Claim Guard agent workflows",
   "Socratic Story Cartographer agent workflows",
-  "agentswarm-work agent workflows",
-  "CloudGPU agent workflows",
-  "Email Marketing Skills by Poptin agent workflows",
-  "ShipToPaid Lite agent workflows",
-  "Video Director agent workflows"
+  "agentswarm-work agent workflows"
  ],
  "directory/features/allowed-tools/index.html": [
   "declares tool permissions agent skills",
