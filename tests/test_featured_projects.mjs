@@ -1,3 +1,4 @@
+import './test_nov13_applicants.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
