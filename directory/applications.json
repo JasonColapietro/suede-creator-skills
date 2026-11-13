@@ -1,7 +1,31 @@
 {
   "schema_version": 1,
-  "updated": "2026-11-11",
+  "updated": "2026-11-13",
   "applications": [
+    {
+      "issue": 390,
+      "applicant": "mohiddin7",
+      "repo": "mohiddin7/resume-tribunal",
+      "scope_version": "af9810a6e53ddeafd0dabb66715d121239bbc82cd8f960fab61e64a823e7ff8b",
+      "kind": "skill",
+      "scope": [
+        "resume-tribunal"
+      ],
+      "applied_at": "2026-11-13T04:52:44Z",
+      "issue_state": "open"
+    },
+    {
+      "issue": 384,
+      "applicant": "harbourlark",
+      "repo": "sieblyio/agent-skills",
+      "scope_version": "f3397d04a5b039e14c3c7eb9e4ab7bd4600509757f20f22aa5387b3178ca5698",
+      "kind": "skill",
+      "scope": [
+        "siebly-crypto-exchange-api"
+      ],
+      "applied_at": "2026-11-11T21:02:03Z",
+      "issue_state": "open"
+    },
     {
       "issue": 379,
       "applicant": "janpopovic",

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-11",
+  "updated": "2026-11-13",
   "page": {
     "about": "Copy for /directory/featured/ and the awesome/featured.md view, rendered by scripts/build-directory.mjs and scripts/build-awesome-directory.mjs. Project entries below are the publishers’ own work: keep their names, repositories, setup facts and review links exactly as reviewed.",
     "title": "Featured Agent Skill Projects | Suede AI",
@@ -765,6 +765,122 @@
       "workflow_url": "https://suedeai.directory/inhotel-io/govisit-toolkit/",
       "published_at": "2026-11-11T06:00:00Z",
       "review": "directory/reviews/2026-11-11-govisit.md"
+    },
+    {
+      "id": "resume-tribunal",
+      "name": "Resume Tribunal",
+      "repo": "mohiddin7/resume-tribunal",
+      "kind": "Editorial feature · Independent resume review",
+      "headline": "Tailor the resume. Have a different AI challenge the claims.",
+      "summary": "Match a resume to a specific role using the candidate’s facts, then give a blind reviewer the draft to catch unsupported wording before the candidate signs off.",
+      "setup": "Use the single resume-tribunal skill in a chat assistant or coding agent. Python 3 enables the optional checker and PDF output. Choose the review models, protect personal information with stand-ins, and confirm changed claims before using the final resume.",
+      "site": "https://tribunal.warmhop.com",
+      "commit": "55d830f613bdfe9fabf8bed3fa1befb7c2f6b083",
+      "license": "MIT",
+      "published_at": "2026-11-13T07:17:34Z",
+      "review": "directory/reviews/2026-11-13-resume-tribunal.md",
+      "workflow_url": "https://github.com/mohiddin7/resume-tribunal/blob/55d830f613bdfe9fabf8bed3fa1befb7c2f6b083/skills/resume-tribunal/SKILL.md",
+      "capabilities": [
+        {
+          "title": "Ground the rewrite",
+          "description": "Map the target job to the candidate’s real experience and keep team contributions distinct from individual claims."
+        },
+        {
+          "title": "Get an independent review",
+          "description": "Use an AI from a different company to challenge a draft without being told which model wrote it."
+        },
+        {
+          "title": "Finish with evidence",
+          "description": "Review checker findings, approve changed claims and prepare for the interview questions the resume invites."
+        }
+      ]
+    },
+    {
+      "id": "siebly-crypto-exchange-api",
+      "name": "Siebly Crypto Exchange API",
+      "repo": "sieblyio/agent-skills",
+      "kind": "Editorial feature · Exchange API development",
+      "headline": "Build exchange integrations with the right SDK and recovery logic.",
+      "summary": "Guide Node.js and TypeScript integrations across exchange REST and WebSocket APIs, with exchange-specific SDKs, explicit execution modes and connection-state handling.",
+      "setup": "Install only siebly-crypto-exchange-api. Start with public data, read-only access or mocked execution. Keep credentials outside source control, inspect the selected SDK and exchange documentation, and explicitly configure any write-capable mode.",
+      "site": "https://siebly.io",
+      "commit": "a498cc26c37f44f7c813e4692e448f2b9fe1e07a",
+      "license": "MIT",
+      "published_at": "2026-11-13T07:17:34Z",
+      "review": "directory/reviews/2026-11-13-siebly-crypto-exchange-api.md",
+      "workflow_url": "https://github.com/sieblyio/agent-skills/blob/a498cc26c37f44f7c813e4692e448f2b9fe1e07a/skills/siebly-crypto-exchange-api/SKILL.md",
+      "capabilities": [
+        {
+          "title": "Choose the exchange SDK",
+          "description": "Map the exchange and runtime to the documented Siebly package instead of inventing a generic API client."
+        },
+        {
+          "title": "Handle live data properly",
+          "description": "Distinguish socket open, subscription acknowledgement, hydration, replay and application readiness."
+        },
+        {
+          "title": "Make recovery explicit",
+          "description": "Add credential validation, rate-limit handling, reconnect logic, durable intent records and duplicate-call protection."
+        }
+      ]
+    },
+    {
+      "id": "deed-page",
+      "name": "deed.page",
+      "repo": "f-o-x11/deed-page-skill",
+      "kind": "Editorial feature · Static publishing",
+      "headline": "Turn an approved file or static folder into a shareable URL.",
+      "summary": "Publish a clean HTML file or static build to deed.page, then retain the owner token for updates. The workflow separates creating a draft from authorizing a public upload.",
+      "setup": "Use the deed-page skill with curl and network access; folder uploads also use tar, and larger uploads use Node.js 18+. Publish clean output only, keep the owner token private, and review the service’s current plan limits. Free sites include the publisher’s badge.",
+      "site": "https://deed.page",
+      "commit": "16e00cb963b0770f6a7da20cee52f5d1ea6ea4bf",
+      "license": "MIT",
+      "published_at": "2026-11-13T07:17:34Z",
+      "review": "directory/reviews/2026-11-13-deed-page.md",
+      "workflow_url": "https://github.com/f-o-x11/deed-page-skill/blob/16e00cb963b0770f6a7da20cee52f5d1ea6ea4bf/skills/deed-page/SKILL.md",
+      "capabilities": [
+        {
+          "title": "Publish the output, not the project",
+          "description": "Use a clean build folder and filter secrets, repository metadata, dependencies and symlinks out of the upload."
+        },
+        {
+          "title": "Keep the publishing decision explicit",
+          "description": "A draft stays local until the user asks to publish or confirms the public upload."
+        },
+        {
+          "title": "Keep control of the URL",
+          "description": "Save the returned owner token privately so later updates belong to the same owner."
+        }
+      ]
+    },
+    {
+      "id": "tecadrise-bot",
+      "name": "TecAdRise Bot",
+      "repo": "tecadrise-ai/TecAdRiseBot",
+      "kind": "Editorial feature · Windows multi-agent desktop",
+      "headline": "Give desktop agents shared memory and repeatable routines.",
+      "summary": "Run a local Windows multi-agent workspace with shared memory, MCP connections and scheduled routines, using Cursor SDK agents or a configured model-provider key.",
+      "setup": "Requires 64-bit Windows 10 or 11 and a Cursor API key or supported BYOK provider. Provider usage is billed separately by the chosen provider. Scheduled routines run while the app is open. Configure each connector’s permissions before use.",
+      "site": "https://tecadrise.ai/products/tecadrisebot",
+      "commit": "7f67f0212ae6a5ef623cee30dda6dc0d0ceaa36c",
+      "license": "MIT",
+      "published_at": "2026-11-13T07:17:34Z",
+      "review": "directory/reviews/2026-11-13-tecadrise-bot.md",
+      "workflow_url": "https://github.com/tecadrise-ai/TecAdRiseBot/blob/7f67f0212ae6a5ef623cee30dda6dc0d0ceaa36c/README.md",
+      "capabilities": [
+        {
+          "title": "Coordinate a team of agents",
+          "description": "Configure agents individually and let them exchange messages while sharing a persistent memory wiki."
+        },
+        {
+          "title": "Build repeatable workflows",
+          "description": "Use runner steps, owner review, hard checks and a record of recent runs."
+        },
+        {
+          "title": "Connect the working tools",
+          "description": "Configure common or per-agent MCP connections and schedule interval, daily, weekly or one-off routines."
+        }
+      ]
     }
   ],
   "members": [
