@@ -2,11 +2,11 @@
   "snapshot": "2026-10-22",
   "install_snapshot": "2026-11-08",
   "scope": "Third-party listed skills; Suede AI excluded",
-  "total": 3827,
+  "total": 3830,
   "grades": {
     "A": 120,
-    "B": 1604,
-    "C": 1379,
+    "B": 1606,
+    "C": 1380,
     "D": 724
   },
   "cost_lanes": [
@@ -16,7 +16,7 @@
     ],
     [
       "free-with-service",
-      309
+      312
     ],
     [
       "noncommercial",
@@ -49,12 +49,12 @@
       237
     ],
     [
-      "productivity-knowledge",
-      233
+      "media-creative",
+      234
     ],
     [
-      "media-creative",
-      231
+      "productivity-knowledge",
+      233
     ],
     [
       "science-research",
@@ -97,44 +97,44 @@
     {
       "name": "Curated-list citations",
       "max": 7,
-      "missing": 3609,
-      "lost": 17617
+      "missing": 3612,
+      "lost": 17638
     },
     {
       "name": "Boundary clause",
       "max": 4,
-      "missing": 3315,
-      "lost": 13260
+      "missing": 3318,
+      "lost": 13272
     },
     {
       "name": "Structural checks",
       "max": 56,
-      "missing": 1291,
-      "lost": 10328
+      "missing": 1292,
+      "lost": 10336
     },
     {
       "name": "Example request",
       "max": 3,
-      "missing": 2871,
-      "lost": 8613
+      "missing": 2874,
+      "lost": 8622
     },
     {
       "name": "Compatibility declared",
       "max": 2,
-      "missing": 3300,
-      "lost": 6600
+      "missing": 3303,
+      "lost": 6606
     },
     {
       "name": "Tool permissions declared",
       "max": 2,
-      "missing": 3269,
-      "lost": 6538
+      "missing": 3272,
+      "lost": 6544
     },
     {
       "name": "Bundled scripts",
       "max": 2,
-      "missing": 3166,
-      "lost": 6332
+      "missing": 3169,
+      "lost": 6338
     },
     {
       "name": "Reference files",

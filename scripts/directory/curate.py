@@ -558,6 +558,11 @@ def main():
                     "mcp_tools": r.get("mcp_tools") or [],
                     "runs": r.get("run_commands") or [],
                 }
+            context = inclusions.get("install_contexts", {}).get(sid)
+            if context:
+                if not context.get("source", "").startswith("https://github.com/") or not context.get("note"):
+                    raise ValueError(f"Reviewed install context needs source and note: {sid}")
+                rec["install"] = {**rec.get("install", {}), **context}
             if privacy_hit(json.dumps(rec, ensure_ascii=False)):
                 privacy_dropped.append(sid)
                 continue

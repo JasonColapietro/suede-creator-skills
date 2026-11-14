@@ -10040,5 +10040,14 @@
  "inhotel-io/govisit-toolkit/govisit-search-places": {
   "category": "productivity-knowledge",
   "summary": "Indexed place search by name/intent, with explicit country, destination or proximity constraints."
+ },
+ "klingai-tech/claude-plugin/kling-ai": {
+  "category": "media-creative"
+ },
+ "klingai-tech/claude-plugin/kling-ai-generate-image": {
+  "category": "media-creative"
+ },
+ "klingai-tech/claude-plugin/kling-ai-generate-video": {
+  "category": "media-creative"
  }
 }

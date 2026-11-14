@@ -56,7 +56,7 @@ class DirectoryInclusionTests(unittest.TestCase):
         with tempfile.TemporaryDirectory(prefix="directory-scoped-install-") as tmp:
             work = Path(tmp)
             for name in ("scripts/build-directory.mjs", "scripts/directory/installs.mjs", "scripts/directory/applications.mjs", "scripts/directory/pixel-icons.mjs", "scripts/directory/badges.mjs",
-                         "scripts/directory/featured.mjs", "scripts/directory/editorial.mjs", "scripts/directory/metadata.mjs", "scripts/directory/check-client.js", "directory/featured-projects.json",
+                         "scripts/directory/featured.mjs", "scripts/directory/editorial.mjs", "scripts/directory/editorial-ratings.mjs", "scripts/directory/metadata.mjs", "scripts/directory/check-client.js", "directory/featured-projects.json",
                          "scripts/directory/task-pages.mjs", "scripts/directory/versus.mjs", "directory/task-pages.json", "scripts/directory/topics.mjs", "scripts/directory/facets.mjs", "scripts/directory/listed-since.mjs", "directory/topics.json",
                          "directory/categories.json", "directory/notes.json",
                          "directory/promotion.json", "directory/services-cta.json", "docs/llms.txt"):

@@ -6,7 +6,28 @@
     <atom:link href="https://suedeai.directory/feed.xml" rel="self" type="application/rss+xml"/>
     <description>New agent skill listings and guides from the Suede AI Skills Directory, a graded index of public Agent Skills for Claude Code, Codex and Cursor.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 11 Nov 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 14 Nov 2026 00:00:00 GMT</lastBuildDate>
+    <item>
+      <title>New listing: kling-ai from klingai-tech/claude-plugin</title>
+      <link>https://suedeai.directory/klingai-tech/claude-plugin/#kling-ai</link>
+      <guid isPermaLink="true">https://suedeai.directory/klingai-tech/claude-plugin/#kling-ai</guid>
+      <pubDate>Sat, 14 Nov 2026 00:00:00 GMT</pubDate>
+      <description>Handle Kling AI / 可灵 requests in Claude Code, including prompt-only planning, missing-asset next steps, generation preparation and approved image/video creation. Route creative work to the dedicated… Suede Skill Check: 72/100, grade C.</description>
+    </item>
+    <item>
+      <title>New listing: kling-ai-generate-image from klingai-tech/claude-plugin</title>
+      <link>https://suedeai.directory/klingai-tech/claude-plugin/#kling-ai-generate-image</link>
+      <guid isPermaLink="true">https://suedeai.directory/klingai-tech/claude-plugin/#kling-ai-generate-image</guid>
+      <pubDate>Sat, 14 Nov 2026 00:00:00 GMT</pubDate>
+      <description>Write or refine Kling AI image prompts, including prompt-only requests, or generate and edit images through the Kling AI MCP in Claude Code. Use for posters, product photography, portraits, covers… Suede Skill Check: 80/100, grade B.</description>
+    </item>
+    <item>
+      <title>New listing: kling-ai-generate-video from klingai-tech/claude-plugin</title>
+      <link>https://suedeai.directory/klingai-tech/claude-plugin/#kling-ai-generate-video</link>
+      <guid isPermaLink="true">https://suedeai.directory/klingai-tech/claude-plugin/#kling-ai-generate-video</guid>
+      <pubDate>Sat, 14 Nov 2026 00:00:00 GMT</pubDate>
+      <description>Plan and generate Kling AI / 可灵 videos in Claude Code. Use for video prompts and storyboards even when the user says not to generate, next steps when a required image is missing, final settings for… Suede Skill Check: 80/100, grade B.</description>
+    </item>
     <item>
       <title>New listing: govisit-get-category-overview from inhotel-io/govisit-toolkit</title>
       <link>https://suedeai.directory/inhotel-io/govisit-toolkit/govisit-get-category-overview/</link>

@@ -61,6 +61,9 @@
     "anthropics/skills/internal-comms"
   ],
   "new_listings": [
+    "klingai-tech/claude-plugin/kling-ai-generate-image",
+    "klingai-tech/claude-plugin/kling-ai-generate-video",
+    "klingai-tech/claude-plugin/kling-ai",
     "inhotel-io/govisit-toolkit/govisit-get-category-overview",
     "inhotel-io/govisit-toolkit/govisit-get-category-section",
     "inhotel-io/govisit-toolkit/govisit-get-collection-overview",
@@ -107,10 +110,7 @@
     "eduardo-sl/go-agent-skills/go-naming",
     "eduardo-sl/go-agent-skills/go-observability",
     "eduardo-sl/go-agent-skills/go-performance-review",
-    "eduardo-sl/go-agent-skills/go-refactoring",
-    "eduardo-sl/go-agent-skills/go-troubleshooting",
-    "sergebulaev/linkedin-skills/linkedin-employee-advocacy",
-    "sergebulaev/linkedin-skills/linkedin-profile-optimizer"
+    "eduardo-sl/go-agent-skills/go-refactoring"
   ],
   "topics": [
     {
@@ -1676,7 +1676,7 @@
     {
       "id": "image-editing",
       "name": "Image Editing",
-      "skills": 11,
+      "skills": 12,
       "weekly_installs": 0,
       "change_pct": null,
       "best": [
@@ -1688,7 +1688,7 @@
     {
       "id": "image-generation",
       "name": "Image Generation",
-      "skills": 16,
+      "skills": 17,
       "weekly_installs": 0,
       "change_pct": null,
       "best": [
@@ -1998,7 +1998,7 @@
     {
       "id": "prompt-engineering",
       "name": "Prompt Engineering",
-      "skills": 28,
+      "skills": 29,
       "weekly_installs": 0,
       "change_pct": null,
       "best": [
@@ -2310,7 +2310,7 @@
     {
       "id": "video-generation",
       "name": "AI Video Generation",
-      "skills": 18,
+      "skills": 21,
       "weekly_installs": 0,
       "change_pct": null,
       "best": [
@@ -5734,21 +5734,6 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/eduardo-sl/go-agent-skills/go-test-table-driven/"
-    },
-    "eduardo-sl/go-agent-skills/go-troubleshooting": {
-      "id": "eduardo-sl/go-agent-skills/go-troubleshooting",
-      "name": "go-troubleshooting",
-      "repo": "eduardo-sl/go-agent-skills",
-      "description": "Diagnose runtime problems in Go programs: panics and stack traces, deadlocks, goroutine leaks, memory leaks, OOM kills, race reports, and debugging with delve and pprof. Use when: \"debug this panic\", \"read this stack tra",
-      "score": 95,
-      "grade": "A",
-      "category": "testing-qa",
-      "topics": [
-        "golang"
-      ],
-      "license": "MIT",
-      "cost_lane": "free-open-source",
-      "listing": "https://suedeai.directory/eduardo-sl/go-agent-skills/go-troubleshooting/"
     },
     "emblemcompany/agent-skills/emblem-ai-agent-wallet": {
       "id": "emblemcompany/agent-skills/emblem-ai-agent-wallet",
@@ -9360,6 +9345,54 @@
       "license": "MIT",
       "cost_lane": "free-with-service",
       "listing": "https://suedeai.directory/k-dense-ai/claude-scientific-skills/#zarr-python"
+    },
+    "klingai-tech/claude-plugin/kling-ai": {
+      "id": "klingai-tech/claude-plugin/kling-ai",
+      "name": "kling-ai",
+      "repo": "klingai-tech/claude-plugin",
+      "description": "Handle Kling AI / 可灵 requests in Claude Code, including prompt-only planning, missing-asset next steps, generation preparation and approved image/video creation. Route creative work to the dedicated Skills; manage Elemen",
+      "score": 72,
+      "grade": "C",
+      "category": "media-creative",
+      "topics": [
+        "video-generation"
+      ],
+      "license": "MIT",
+      "cost_lane": "free-with-service",
+      "listing": "https://suedeai.directory/klingai-tech/claude-plugin/#kling-ai"
+    },
+    "klingai-tech/claude-plugin/kling-ai-generate-image": {
+      "id": "klingai-tech/claude-plugin/kling-ai-generate-image",
+      "name": "kling-ai-generate-image",
+      "repo": "klingai-tech/claude-plugin",
+      "description": "Write or refine Kling AI image prompts, including prompt-only requests, or generate and edit images through the Kling AI MCP in Claude Code. Use for posters, product photography, portraits, covers, advertising stills, vi",
+      "score": 80,
+      "grade": "B",
+      "category": "media-creative",
+      "topics": [
+        "prompt-engineering",
+        "image-generation",
+        "image-editing",
+        "video-generation"
+      ],
+      "license": "MIT",
+      "cost_lane": "free-with-service",
+      "listing": "https://suedeai.directory/klingai-tech/claude-plugin/#kling-ai-generate-image"
+    },
+    "klingai-tech/claude-plugin/kling-ai-generate-video": {
+      "id": "klingai-tech/claude-plugin/kling-ai-generate-video",
+      "name": "kling-ai-generate-video",
+      "repo": "klingai-tech/claude-plugin",
+      "description": "Plan and generate Kling AI / 可灵 videos in Claude Code. Use for video prompts and storyboards even when the user says not to generate, next steps when a required image is missing, final settings for approval, and authoriz",
+      "score": 80,
+      "grade": "B",
+      "category": "media-creative",
+      "topics": [
+        "video-generation"
+      ],
+      "license": "MIT",
+      "cost_lane": "free-with-service",
+      "listing": "https://suedeai.directory/klingai-tech/claude-plugin/#kling-ai-generate-video"
     },
     "lackeyjb/playwright-skill/playwright-skill": {
       "id": "lackeyjb/playwright-skill/playwright-skill",
