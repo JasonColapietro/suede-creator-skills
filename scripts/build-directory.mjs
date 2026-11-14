@@ -58,7 +58,8 @@ if (NEWSLETTER.signup_url !== null) {
   if (signup.protocol !== 'https:' || signup.username || signup.password) throw new Error('Newsletter signup must use a public HTTPS URL');
 }
 const CHECKS = data.checks;
-const EDITORIAL_RATINGS = JSON.parse(fs.readFileSync(path.join(repoRoot, "directory", "editorial-ratings.json"), "utf8"));
+const editorialRatingsFile = path.join(repoRoot, "directory", "editorial-ratings.json");
+const EDITORIAL_RATINGS = fs.existsSync(editorialRatingsFile) ? JSON.parse(fs.readFileSync(editorialRatingsFile, "utf8")) : {};
 const PROMOTION = JSON.parse(fs.readFileSync(path.join(repoRoot, "directory", "promotion.json"), "utf8"));
 if (typeof PROMOTION.enabled !== "boolean" || !PROMOTION.verifications || typeof PROMOTION.verifications !== "object" || Array.isArray(PROMOTION.verifications)) throw new Error("promotion.json: expected enabled and a verification map");
 // Template copy lives in promotion.json; a file without it (a test fixture)
