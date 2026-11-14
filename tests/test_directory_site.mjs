@@ -55,6 +55,10 @@ test("the built site has no old directory URLs and no broken internal links", ()
       assert.ok(fs.existsSync(path.join(out, f)), `missing ${f}`);
     }
     assert.match(fs.readFileSync(path.join(out, "robots.txt"), "utf8"), /^Sitemap: https:\/\/suedeai\.directory\/sitemap\.xml$/m);
+    for (const name of ["google4b0bcf0a4950299c.html", "google2adc3d1aa9f93cf0.html"]) {
+      assert.equal(fs.readFileSync(path.join(out, name), "utf8").trim(), `google-site-verification: ${name}`,
+        `${name}: Google must be able to verify the standalone directory property`);
+    }
     const keys = fs.readdirSync(out).filter((f) => /^[A-Za-z0-9-]{8,128}\.txt$/.test(f) && f !== "llms.txt" && f !== "robots.txt");
     assert.equal(keys.length, 1, `expected one IndexNow key file at the site root, found ${keys.join(", ") || "none"}`);
     assert.equal(fs.readFileSync(path.join(out, keys[0]), "utf8").trim(), keys[0].slice(0, -4));

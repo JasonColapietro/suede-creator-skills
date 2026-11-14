@@ -180,6 +180,11 @@ export function build(out) {
     if (key && fs.readFileSync(path.join(docs, name), "utf8").trim() === key) fs.copyFileSync(path.join(docs, name), path.join(out, name));
   }
 
+  // Keep the existing Google ownership proofs on the directory's own host.
+  for (const name of fs.readdirSync(docs)) {
+    if (/^google[0-9a-f]+\.html$/.test(name)) fs.copyFileSync(path.join(docs, name), path.join(out, name));
+  }
+
   const llmsLines = fs.readFileSync(path.join(docs, "llms.txt"), "utf8").split("\n").filter((l) => l.includes(`${OLD}/directory`));
   fs.writeFileSync(path.join(out, "llms.txt"), [
     "# Suede AI Skills Directory",
