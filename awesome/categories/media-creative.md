@@ -6,7 +6,7 @@
 
 Skills for making and editing media: video production, image generation and editing, music, audio, diagrams and generative art. They pair an agent with the prompts, tools and file formats each medium needs.
 
-**235 accepted skills · 39 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
+**238 accepted skills · 40 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
 **Compare on the 0–99 quality scale:** this category’s verified scores span **56–93 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede AI](https://skills.suedeai.ai/directory/?category=media-creative&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
 
@@ -35,6 +35,7 @@ Skills for making and editing media: video production, image generation and edit
 - [infrasity-labs/dev-gtm-claude-skills](#infrasity-labs--dev-gtm-claude-skills)
 - [JasonColapietro/suede-creator-skills](#jasoncolapietro--suede-creator-skills)
 - [K-Dense-AI/claude-scientific-skills](#k-dense-ai--claude-scientific-skills)
+- [klingai-tech/claude-plugin](#klingai-tech--claude-plugin)
 - [Leonxlnx/taste-skill](#leonxlnx--taste-skill)
 - [mcollina/skills](#mcollina--skills)
 - [MelMayssonOwen/agent-skills](#melmayssonowen--agent-skills)
@@ -378,6 +379,16 @@ Skills for making and editing media: video production, image generation and edit
 - **93/100 · A** · [generate-image](https://github.com/K-Dense-AI/claude-scientific-skills/blob/main/skills/generate-image/SKILL.md): Generates or edits images with AI models through the OpenRouter Image API (Gemini, Seedream, Recraft, GPT-Image, Riverflow). [Suede](https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/#generate-image)
 - **89/100 · B** · [infographics](https://github.com/K-Dense-AI/claude-scientific-skills/blob/main/skills/infographics/SKILL.md): Creates and reviews infographics with Nano Banana 2 via OpenRouter. [Suede](https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/#infographics)
 - **81/100 · B** · [scientific-schematics](https://github.com/K-Dense-AI/claude-scientific-skills/blob/main/skills/scientific-schematics/SKILL.md): Generates scientific diagram drafts using Nano Banana 2 AI with smart iterative refinement. [Suede](https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/#scientific-schematics)
+
+<a id="klingai-tech--claude-plugin"></a>
+
+## klingai-tech/claude-plugin
+
+[Repository](https://github.com/klingai-tech/claude-plugin) · Publisher: [klingai-tech](https://github.com/klingai-tech) · [Suede AI listing](https://skills.suedeai.ai/directory/klingai-tech/claude-plugin/)
+
+- **80/100 · B** · [kling-ai-generate-image](https://github.com/klingai-tech/claude-plugin/blob/main/skills/kling-ai-generate-image/SKILL.md): Write or refine Kling AI image prompts, including prompt-only requests, or generate and edit images through the Kling AI MCP in Claude Code. [Suede](https://skills.suedeai.ai/directory/klingai-tech/claude-plugin/#kling-ai-generate-image) MIT-licensed client skills connect to Kling’s hosted service. Generation uses paid Personal-workspace credits. Global and China accounts, credits and tasks are separate. [Service and data terms](https://kling.ai/app/mcp/guide).
+- **80/100 · B** · [kling-ai-generate-video](https://github.com/klingai-tech/claude-plugin/blob/main/skills/kling-ai-generate-video/SKILL.md): Plan and generate Kling AI / 可灵 videos in Claude Code. [Suede](https://skills.suedeai.ai/directory/klingai-tech/claude-plugin/#kling-ai-generate-video) MIT-licensed client skills connect to Kling’s hosted service. Generation uses paid Personal-workspace credits. Global and China accounts, credits and tasks are separate. [Service and data terms](https://kling.ai/app/mcp/guide).
+- **72/100 · C** · [kling-ai](https://github.com/klingai-tech/claude-plugin/blob/main/skills/kling-ai/SKILL.md): Handle Kling AI / 可灵 requests in Claude Code, including prompt-only planning, missing-asset next steps, generation preparation and approved image/video creation. [Suede](https://skills.suedeai.ai/directory/klingai-tech/claude-plugin/#kling-ai) MIT-licensed client skills connect to Kling’s hosted service. Generation uses paid Personal-workspace credits. Global and China accounts, credits and tasks are separate. [Service and data terms](https://kling.ai/app/mcp/guide).
 
 <a id="leonxlnx--taste-skill"></a>
 

@@ -31,7 +31,8 @@
   "waynehamadi/datacircle",
   "OakcoderX/awesome-agent-skills",
   "korey2028-prog/resume-claim-guard",
-  "inhotel-io/govisit-toolkit"
+  "inhotel-io/govisit-toolkit",
+  "klingai-tech/claude-plugin"
  ],
  "skills": {
   "appierun/appie-mcp": [
@@ -1012,6 +1013,11 @@
    "govisit-search-destinations",
    "govisit-search-documentation",
    "govisit-search-places"
+  ],
+  "klingai-tech/claude-plugin": [
+   "kling-ai",
+   "kling-ai-generate-image",
+   "kling-ai-generate-video"
   ]
  },
  "skill_roots": {
@@ -1185,5 +1191,34 @@
    "skills/govisit-search-documentation",
    "skills/govisit-search-places"
   ]
+ },
+ "install_contexts": {
+  "klingai-tech/claude-plugin/kling-ai": {
+   "mcp": true,
+   "net": true,
+   "hosts": [
+    "kling.ai"
+   ],
+   "source": "https://github.com/klingai-tech/claude-plugin/blob/f470369fb0c275edcd1f10eae23341fb0a8773ec/.mcp.json",
+   "note": "Full plugin required; image and video skills inherit the core Global OAuth MCP connection."
+  },
+  "klingai-tech/claude-plugin/kling-ai-generate-image": {
+   "mcp": true,
+   "net": true,
+   "hosts": [
+    "kling.ai"
+   ],
+   "source": "https://github.com/klingai-tech/claude-plugin/blob/f470369fb0c275edcd1f10eae23341fb0a8773ec/.mcp.json",
+   "note": "Full plugin required; image and video skills inherit the core Global OAuth MCP connection."
+  },
+  "klingai-tech/claude-plugin/kling-ai-generate-video": {
+   "mcp": true,
+   "net": true,
+   "hosts": [
+    "kling.ai"
+   ],
+   "source": "https://github.com/klingai-tech/claude-plugin/blob/f470369fb0c275edcd1f10eae23341fb0a8773ec/.mcp.json",
+   "note": "Full plugin required; image and video skills inherit the core Global OAuth MCP connection."
+  }
  }
 }

@@ -1,3 +1,4 @@
+import './test_editorial_ratings.mjs';
 // Keep source-package metadata unchanged while covering canonical publisher intake.
 import './test_govisit_directory.mjs';
 import test from 'node:test';

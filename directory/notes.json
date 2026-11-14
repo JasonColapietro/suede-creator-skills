@@ -239,5 +239,20 @@
   "text": "Published by GoVisit.ai / inHotel Sàrl (inhotel-io). Requires HTTPS access to GoVisit’s hosted public read API; the publisher documents reads without a GoVisit API key. Skill files and bundled resources are MIT-licensed. Hosted service access and returned data follow the separate GoVisit Data Use License and source-specific terms, including attribution, retention and reuse limits. Affiliate/referral, OTA and marketplace uses require a separate agreement. These tools provide published discovery facts, not live prices, booking availability or editing authority. Network and tool permission depend on the assistant. Security scan: not scanned; runtime not independently tested by this directory. Destination-scoped place-name queries have a reported timeout in upstream issue #3; preserve the requested scope rather than silently broadening it.",
   "source": "https://govisit.ai/en/docs/general/data-use-license",
   "source_label": "Service and data terms"
+ },
+ "klingai-tech/claude-plugin/kling-ai": {
+  "text": "Install the complete Claude Code plugin and connect its Global MCP with browser OAuth. Image and video skills depend on the core skill; a skill-only install does not configure the connection.",
+  "notice": "MIT-licensed client skills connect to Kling’s hosted service. Generation uses paid Personal-workspace credits. Global and China accounts, credits and tasks are separate.",
+  "source": "https://kling.ai/app/mcp/guide"
+ },
+ "klingai-tech/claude-plugin/kling-ai-generate-image": {
+  "text": "Install the complete Claude Code plugin and connect its Global MCP with browser OAuth. Image and video skills depend on the core skill; a skill-only install does not configure the connection.",
+  "notice": "MIT-licensed client skills connect to Kling’s hosted service. Generation uses paid Personal-workspace credits. Global and China accounts, credits and tasks are separate.",
+  "source": "https://kling.ai/app/mcp/guide"
+ },
+ "klingai-tech/claude-plugin/kling-ai-generate-video": {
+  "text": "Install the complete Claude Code plugin and connect its Global MCP with browser OAuth. Image and video skills depend on the core skill; a skill-only install does not configure the connection.",
+  "notice": "MIT-licensed client skills connect to Kling’s hosted service. Generation uses paid Personal-workspace credits. Global and China accounts, credits and tasks are separate.",
+  "source": "https://kling.ai/app/mcp/guide"
  }
 }

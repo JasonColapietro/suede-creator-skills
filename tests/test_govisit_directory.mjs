@@ -71,9 +71,11 @@ test('scoped intake preserves every existing publisher record', () => {
   // against the 66 first-party listings present when GoVisit was ingested.
   const firstParty = 'JasonColapietro/suede-creator-skills';
   const firstPartyAtIntake = 66;
-  const thirdParty = data.skills.filter((s) => s.repo !== repo && s.repo !== firstParty).length;
+  // Later independently assessed intakes are outside this historical receipt.
+  const later = new Set(Object.entries(data.repos).filter(([name, r]) => name !== firstParty && r.assessment_date > '2026-11-11').map(([name]) => name));
+  const thirdParty = data.skills.filter((s) => s.repo !== repo && s.repo !== firstParty && !later.has(s.repo)).length;
   assert.equal(receipt.unchanged_existing_skills, thirdParty + firstPartyAtIntake);
-  assert.equal(receipt.unchanged_existing_repositories, Object.keys(data.repos).length - 1);
+  assert.equal(receipt.unchanged_existing_repositories, Object.keys(data.repos).length - 1 - later.size);
 });
 
 

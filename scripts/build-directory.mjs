@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { editorialRating } from './directory/editorial-ratings.mjs';
 // Builds the Agent Skills Directory at skills.suedeai.ai/directory/ from
 // directory/skills.json (the curated dataset) and directory/categories.json
 // (the category copy). Every page under docs/directory/, docs/404.html, the
@@ -57,6 +58,7 @@ if (NEWSLETTER.signup_url !== null) {
   if (signup.protocol !== 'https:' || signup.username || signup.password) throw new Error('Newsletter signup must use a public HTTPS URL');
 }
 const CHECKS = data.checks;
+const EDITORIAL_RATINGS = JSON.parse(fs.readFileSync(path.join(repoRoot, "directory", "editorial-ratings.json"), "utf8"));
 const PROMOTION = JSON.parse(fs.readFileSync(path.join(repoRoot, "directory", "promotion.json"), "utf8"));
 if (typeof PROMOTION.enabled !== "boolean" || !PROMOTION.verifications || typeof PROMOTION.verifications !== "object" || Array.isArray(PROMOTION.verifications)) throw new Error("promotion.json: expected enabled and a verification map");
 // Template copy lives in promotion.json; a file without it (a test fixture)
@@ -254,6 +256,7 @@ data.skills = data.skills.map((c) => {
   return {
     ...c,
     id: `${repoSlug}/${c.slug}`,
+    editorial_rating: editorialRating({id: `${repoSlug}/${c.slug}`}, EDITORIAL_RATINGS),
     owner,
     repo_name: name,
     repo_slug: repoSlug,
@@ -881,7 +884,7 @@ function crumbs(here, items) {
   return { html: `      <nav class="crumbs" aria-label="Breadcrumb">${html}</nav>`, ld };
 }
 
-const gradeChip = (s) => `<span class="grade grade-${s.grade.toLowerCase()}" title="Suede Skill Check: ${s.score}/100, grade ${s.grade}">${s.score}/100 · ${s.grade}</span>`;
+const gradeChip = (s) => s.editorial_rating ? `<span class="grade grade-${s.editorial_rating.grade.toLowerCase()}" title="Suede owner editorial assessment">${s.editorial_rating.score}/100 · ${s.editorial_rating.grade} · Editorial</span><small class="muted"> Skill Check: ${s.score}/100 · ${s.grade}</small>` : `<span class="grade grade-${s.grade.toLowerCase()}" title="Suede Skill Check: ${s.score}/100, grade ${s.grade}">${s.score}/100 · ${s.grade}</span>`;
 const listLink = (l) => `<a href="https://github.com/${esc(l)}" target="_blank" rel="noopener">${esc(l)}</a>`;
 const citationEvidence = (repo) => (data.repos[repo].supplementary_citations || []).map((c) =>
   `\n        <p>Verified citation: <a href="https://github.com/${esc(c.source)}/blob/${esc(c.commit)}/${esc(c.path)}" target="_blank" rel="noopener">${esc(c.source)}</a>, checked ${esc(c.verified_at)}.</p>`).join("");
@@ -1182,6 +1185,7 @@ function skillReport(s) {
       skill_md_url: revision ? `https://github.com/${s.repo}/blob/${revision}/${s.dir === "." ? "" : s.dir + "/"}SKILL.md` : s.skill_md_url },
     methodology: { version: SCORE_METHOD, url: `${DIR_URL}methodology/#score`, rubric_total: RUBRIC_MAX, published_cap: SCORE_CAP },
     quality: { score: s.score, grade: s.grade, components: s.score_parts, checks: s.checks },
+    ...(s.editorial_rating ? { editorial_rating: s.editorial_rating } : {}),
     ...(data.repos[s.repo].supplementary_citations ? { supplementary_citations: data.repos[s.repo].supplementary_citations } : {}),
     ...(NOTES[s.id]?.notice ? { service_notice: NOTES[s.id].notice, service_terms_url: NOTES[s.id].source } : {}),
     ...(s.install ? { install: s.install } : {}),
@@ -2466,7 +2470,7 @@ function renderHub() {
   files.set("directory/search-index.json", JSON.stringify(discovery.map((s) => ({
     name: displayName(s), ...(s.display_name ? { slug: s.name } : {}), repo: s.repo, description: s.summary || trimTo(s.description, 180),
     category: s.category, label: catBySlug.get(s.category).label, license: s.license,
-    grade: s.grade, score: s.score, href: listingTarget(s).replace(BASE, ""), full: s.featured || s.full_page,
+    grade: s.grade, score: s.score, ...(s.editorial_rating ? {editorial_rating: s.editorial_rating} : {}), href: listingTarget(s).replace(BASE, ""), full: s.featured || s.full_page,
     install: licenseKind(s) === "restricted" ? null : `npx skills add ${shq(skillTreeUrl(s))}`,
     install_reviewed: Boolean(s.install),
     report: `/${skillPath(s)}report.json`, snapshot: snapshot.date, method: SCORE_METHOD,
@@ -2829,6 +2833,7 @@ ${gradeRows}
       </section>
       <section class="panel" aria-labelledby="authors-title">
         <h2 id="authors-title">Two README badges and a limited-time feature offer</h2>
+        <p>Some listings also show a separately labeled owner editorial rating. It does not replace the reproducible Skill Check score, change its component totals, or establish badge verification.</p>
         <p>Skills scoring 80–${SCORE_CAP} receive separate numeric and A/B shields, each linking to their actual Suede AI listing. Scores from 90–${SCORE_CAP} and grade A use gold; scores from 80–89 and grade B use cool metallic styling. The Suede S remains the main mark on both shields. Every listed skill, at any score, keeps its listing badge, and its existing <code>badge.svg</code> and <code>score.svg</code> links keep working.</p>
         <p>Display either the numeric or letter badge in your repository or skill README, linked to your Suede AI listing, then request verification. Displaying both also qualifies. Suede AI checks the rendered README at a recorded commit before a feature placement is activated. An unverified request, no valid linked badge or failed fetch cannot activate promotion. Verification is checked again after a dataset refresh. Existing editorial full pages keep their separate rules.</p>
         ${promotionOffer(here)}
