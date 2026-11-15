@@ -15,15 +15,42 @@ export const QUERIES = ['claude skills', 'agent skills', 'claude code', 'mcp ser
 // Lures that impersonate tools to spread malware share a look: game cheats,
 // trainers, cracks and keygens, or a description that names no real function.
 const LURE = /\b(trainer|cheats?|crack(ed)?|keygen|activator|loader|injector|executor|spoofer|aimbot|unlocker|free[- ]download|mod menu)\b/i;
+// Pirated-software installers name a paid product next to setup wording.
+const PAID_APP = /\b(adobe|acrobat|photoshop|illustrator|premiere|after effects|lightroom|autocad|sketchup|fl studio|ableton|microsoft office|office 365|filmora|capcut pro|coreldraw)\b/i;
+const INSTALLER = /\b(setup|installer|desktop app|full version|license key|portable|20\d\d desktop)\b/i;
 export function isLikelyLure(repo) {
-  const text = `${repo.full_name} ${repo.description || ''}`;
-  return LURE.test(text) || !(repo.description || '').trim();
+  const text = `${repo.full_name.replace(/[-_]/g, ' ')} ${repo.description || ''}`;
+  return LURE.test(text) || (PAID_APP.test(text) && INSTALLER.test(text)) || !(repo.description || '').trim();
 }
 
+// Clone campaigns push one repo name from many throwaway accounts at once (nine
+// "GitHub-Copilot-app" copies in one week). A name under two or more owners is
+// dropped entirely: a real project's copies are forks, which are excluded anyway.
+const repoName = (r) => r.full_name.split('/')[1].toLowerCase();
+// Star farms vary the name instead ("blender-ai-copilot-flow", "-hub", "-lab")
+// and land every copy on nearly the same count. Three or more owners whose
+// names share a first word, with stars within 5% of each other, are a farm.
+const ownerOf = (r) => r.full_name.split('/')[0].toLowerCase();
+const firstWord = (r) => repoName(r).split(/[-_.]/)[0];
+export function starFarmed(items) {
+  const flagged = new Set();
+  const groups = new Map();
+  for (const r of items) groups.set(firstWord(r), [...(groups.get(firstWord(r)) || []), r]);
+  for (const group of groups.values()) {
+    for (const anchor of group) {
+      const band = group.filter((r) => Math.abs(r.stargazers_count - anchor.stargazers_count) <= anchor.stargazers_count * 0.05);
+      if (new Set(band.map(ownerOf)).size >= 3) band.forEach((r) => flagged.add(r.full_name));
+    }
+  }
+  return flagged;
+}
 export function pickBreakouts(items, { limit = 12, since } = {}) {
   const seen = new Set();
+  const owners = new Map();
+  for (const r of items) owners.set(repoName(r), (owners.get(repoName(r)) || new Set()).add(ownerOf(r)));
+  const farmed = starFarmed(items);
   return items
-    .filter((r) => !r.fork && !r.archived && (!since || r.created_at.slice(0, 10) >= since) && !isLikelyLure(r))
+    .filter((r) => !r.fork && !r.archived && (!since || r.created_at.slice(0, 10) >= since) && !isLikelyLure(r) && owners.get(repoName(r)).size < 2 && !farmed.has(r.full_name))
     .sort((a, b) => b.stargazers_count - a.stargazers_count || a.full_name.localeCompare(b.full_name))
     .filter((r) => (seen.has(r.full_name.toLowerCase()) ? false : seen.add(r.full_name.toLowerCase())))
     .slice(0, limit)
