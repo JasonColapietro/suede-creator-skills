@@ -13,7 +13,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { build as buildDirectory, OLD, NEW } from "./build-directory-site.mjs";
+import { build as buildDirectory, injectAgentView, OLD, NEW } from "./build-directory-site.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const TEXT = new Set([".html", ".xml", ".txt", ".json", ".js", ".svg"]);
@@ -35,6 +35,7 @@ export function skillsText(text, ext, pageUrl) {
   if (ext === ".xml" && path.basename(new URL(pageUrl).pathname) === "sitemap.xml") {
     out = out.replace(/  <url>\s*<loc>https:\/\/skills\.suedeai\.ai\/directory[\s\S]*?<\/url>\n/g, "");
   }
+  if (ext === ".html") out = injectAgentView(out);
   return out.replace(OLD_DIR_RE, NEW);
 }
 
