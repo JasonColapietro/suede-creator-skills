@@ -2,6 +2,21 @@
 
 Reviewed October 23, 2026 for [listing request #259](https://github.com/JasonColapietro/suede-creator-skills/issues/259).
 
+## Pricing correction — November 15, 2026
+
+The maintainer's [November 8 correction to #259](https://github.com/JasonColapietro/suede-creator-skills/issues/259)
+and [updated README at `193a3a0`](https://github.com/cwong5/extra-caffeine-mcp/blob/193a3a02748757c9a0a103e5340883cb4b2b2f40/README.md)
+confirm that the Extra Caffeine app and adapter are permanently free, with no
+payment, subscription or expiry. Install the app separately. This supersedes the
+purchase requirement recorded below from the October 23 source. Current feature,
+catalog summary and installation notes now reflect that correction.
+
+The proprietary, all-rights-reserved license, macOS 14+ requirement, app-open
+requirement, user opt-in for AI assistants and authorization for bounded sessions
+remain unchanged. This pricing-only correction does not change the original
+reviewed workflow revision, score, accepted scope or pending catalog intake.
+Security status remains not scanned; runtime remains unverified.
+
 ## Accepted editorial scope and source
 
 One instruction-only skill, `extra-caffeine-workflow`, from
