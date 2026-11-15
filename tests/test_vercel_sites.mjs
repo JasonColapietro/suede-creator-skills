@@ -70,3 +70,15 @@ test("the built skills site has no directory pages, no old directory URLs and no
     assert.deepEqual(broken.slice(0, 10), []);
   } finally { fs.rmSync(out, { recursive: true, force: true }); }
 });
+
+test("both builds add the agent-view switch once, only to full pages", async () => {
+  const { injectAgentView, rewriteText } = await import("../scripts/build-directory-site.mjs");
+  const tag = '<script src="https://suedeai.ai/agent-view.js" defer></script>';
+  const page = "<html><body><p>x</p></body></html>";
+  const once = injectAgentView(page);
+  assert.equal(once, `<html><body><p>x</p>${tag}\n</body></html>`);
+  assert.equal(injectAgentView(once), once);
+  assert.equal(injectAgentView("<!-- verification -->"), "<!-- verification -->");
+  assert.equal(skillsText(page, ".html", `${OLD}/index.html`).split("agent-view.js").length, 2);
+  assert.equal(rewriteText(page, ".html", `${OLD}/directory/index.html`).split("agent-view.js").length, 2);
+});

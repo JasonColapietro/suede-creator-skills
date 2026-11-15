@@ -87,6 +87,15 @@ export function rehomeWebsite(html) {
 // visitor clicked from. Every page this build writes is served on
 // suedeai.directory, so its links say so; docs/ keeps skills.suedeai.ai.
 const UTM_SOURCE_RE = /([?&]|&amp;)utm_source=skills\.suedeai\.ai(?=&|"|'|#|\s|$)/g;
+// Shared Light / Dark / AI agent view switch. Added to every served page at build
+// time (both hosts); idempotent and a no-op for fragments without </body>.
+export const AGENT_VIEW_SRC = "https://suedeai.ai/agent-view.js";
+export const AGENT_VIEW_TAG = `<script src="${AGENT_VIEW_SRC}" defer></script>`;
+export function injectAgentView(html) {
+  if (html.includes(AGENT_VIEW_SRC) || !html.includes("</body>")) return html;
+  const i = html.lastIndexOf("</body>");
+  return `${html.slice(0, i)}${AGENT_VIEW_TAG}\n${html.slice(i)}`;
+}
 export const retagUtmSource = (html) => html.replace(UTM_SOURCE_RE, "$1utm_source=suedeai.directory");
 
 // The social card ships with this site under /assets/, so the preview image
@@ -105,7 +114,7 @@ export function rewriteText(text, ext, pageUrl, { assetExists = shippedAsset } =
   let out = text;
   if (ext === ".html" || ext === ".svg") out = out.replace(ATTR_RE, (_, attr, v) => `${attr}="${rewriteUrl(v, pageUrl)}"`);
   out = out.replace(OLD_DIR_RE, NEW);
-  if (ext === ".html") out = rehomeSocialImages(retagUtmSource(rehomeWebsite(out)), assetExists);
+  if (ext === ".html") out = injectAgentView(rehomeSocialImages(retagUtmSource(rehomeWebsite(out)), assetExists));
   // The search index and report files carry root-absolute listing paths.
   if (ext === ".json" || ext === ".js") out = out.replace(/(["'])\/directory\//g, "$1/");
   return out;
