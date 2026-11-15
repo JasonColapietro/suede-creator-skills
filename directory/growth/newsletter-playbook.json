@@ -151,7 +151,7 @@
       "autonomy": 4,
       "buyers": 4,
       "pitch": "businesses pay to learn why AI answers skip them. Your agent runs the audit and hands over the fix list.",
-      "start": "the [Audit Shop]({studio}/company) company template (charges $0.50 per audit by default) plus the [AI Visibility Audit]({studio}/build/new?template=seo-studio-ai-visibility-audit) workflow. Add [Weekly Rank Watch]({studio}/build/new?template=seo-studio-rank-watch) as a retainer.",
+      "start": "the [Audit Shop]({studio}/company) company template plus the [AI Visibility Audit]({studio}/build/new?template=seo-studio-ai-visibility-audit) workflow. Add [Weekly Rank Watch]({studio}/build/new?template=seo-studio-rank-watch) as a retainer.",
       "cta": [
         "seo-studio-ai-visibility-audit",
         "AI Visibility Audit"
@@ -170,7 +170,7 @@
       "autonomy": 4,
       "buyers": 4,
       "pitch": "sales teams drown in unqualified leads. Your agent scores every inbound lead against the customer profile and flags deals that are stalling.",
-      "start": "the [Sales Pipeline Shop]({studio}/company) company template (defaults: $0.03 per lead, $0.05 per pipeline-risk read).",
+      "start": "the [Sales Pipeline Shop]({studio}/company) company template.",
       "cta": [
         "lead-qualifier",
         "Lead Qualifier"
@@ -178,7 +178,7 @@
     },
     {
       "model": "autonomous",
-      "name": "Invoice and expense checker",
+      "name": "Transaction categorization",
       "topics": [
         "finance"
       ],
@@ -186,8 +186,8 @@
       "tools_floor": 4,
       "autonomy": 4,
       "buyers": 4,
-      "pitch": "catch bad invoices before they're paid. Your agent matches every invoice to its purchase order and flags out-of-policy expenses.",
-      "start": "the [Finance Ops Shop]({studio}/company) company template (defaults: $0.04–$0.06 per check).",
+      "pitch": "organize transactions into categories so businesses can prepare cleaner bookkeeping records.",
+      "start": "the [Transaction Categorizer]({studio}/build/new?template=transaction-categorizer) workflow.",
       "cta": [
         "transaction-categorizer",
         "Transaction Categorizer"
@@ -203,7 +203,7 @@
       "autonomy": 4,
       "buyers": 4,
       "pitch": "every ticket gets sorted by severity, and refunds get approved or escalated against your policy.",
-      "start": "the [Support Triage Shop]({studio}/company) company template (defaults: $0.03–$0.05 per ticket).",
+      "start": "the [Support Triage Shop]({studio}/company) company template.",
       "demand_floor": 3
     },
     {
@@ -218,7 +218,7 @@
       ],
       "autonomy": 3,
       "buyers": 4,
-      "pitch": "you own the client relationship, and agents research prospects and draft the sequences. You approve every send; anti-spam law requires a human sign-off.",
+      "pitch": "you own the client relationship, and agents research prospects and draft the sequences. You choose the audience and review the outreach before sending.",
       "start": "[cold-email]({skill:coreyhaines31/marketingskills/cold-email}), plus Agent Studio's [Lead Qualifier]({studio}/build/new?template=lead-qualifier) and [Email Nurture Sequence]({studio}/build/new?template=email-nurture-sequence)."
     },
     {

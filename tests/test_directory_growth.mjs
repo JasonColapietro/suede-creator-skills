@@ -345,3 +345,15 @@ test('every issue explains its terms, welcomes first readers once and renders li
     });
   }
 });
+
+test('newsletter seed copy accurately describes grading, finance and sending', () => {
+  for (const firstIssue of [false, true]) {
+    const md = buildIssue({ index: nlIndex, feed: nlFeed, breakout, playbook, date: breakout.date, firstIssue });
+    assert.doesNotMatch(md, /anti-spam law requires a human sign-off/i);
+    assert.doesNotMatch(md, /Every skill in the .*gets a Suede Skill Check score/);
+    assert.match(md, /Graded listings in the .*Suede Skill Check score/);
+    assert.doesNotMatch(md, /matches every invoice to its purchase order/i);
+    assert.doesNotMatch(md, /packs starting at \$1|Building and previewing are free|\$0\.0[3456]|\$0\.50|template's default charge/);
+    assert.match(md, /Transaction categorization/);
+  }
+});
