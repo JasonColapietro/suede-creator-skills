@@ -1241,11 +1241,12 @@ test("validator rejects a prepared changelog item below the newest entry", compl
   // a released entry above it. Marking the first entry only exercised that rule
   // while the repo's own newest entry was already prepared and this replace
   // therefore skipped it; once one shipped, this marked the newest entry, which
-  // is legal, and the case stopped testing anything.
+  // is legal, and the case stopped testing anything. Replace an explicit
+  // released status too, so adding a new prepared release cannot disable it.
   const poisoned = docs.replace(/<li class="clog-item"([^>]*)>/g, (match, attrs) => {
     seen += 1;
-    return seen === 2 && !attrs.includes("data-status")
-      ? `<li class="clog-item"${attrs} data-status="prepared">`
+    return seen === 2
+      ? `<li class="clog-item"${attrs.replace(/\sdata-status="[^"]*"/, "")} data-status="prepared">`
       : match;
   });
   assert.ok(seen >= 2, "test fixture must contain a changelog item below the newest entry");
