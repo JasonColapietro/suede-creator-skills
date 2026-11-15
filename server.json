@@ -3,7 +3,7 @@
   "name": "io.github.JasonColapietro/suede-skills-mcp",
   "title": "Suede AI Skills MCP",
   "description": "Routes tasks to Suede skills, grades live pages A-F for Google and AI search, and checks copy.",
-  "version": "0.19.3",
+  "version": "0.19.4",
   "websiteUrl": "https://skills.suedeai.ai/",
   "repository": {
     "url": "https://github.com/JasonColapietro/suede-creator-skills",
@@ -15,7 +15,7 @@
       "registryType": "npm",
       "registryBaseUrl": "https://registry.npmjs.org",
       "identifier": "suede-skills-mcp",
-      "version": "0.19.3",
+      "version": "0.19.4",
       "runtimeHint": "npx",
       "transport": {
         "type": "stdio"

@@ -6,6 +6,7 @@ import http from 'node:http';
 import { fileURLToPath } from 'node:url';
 const { chromium } = await import(process.env.DIRECTORY_PLAYWRIGHT_MODULE || 'playwright');
 const root=fileURLToPath(new URL('../docs/',import.meta.url));
+const catalog=JSON.parse(fs.readFileSync(new URL('../mcp/catalog.json',import.meta.url),'utf8'));
 const output=process.env.SEO_SCREENSHOTS || '/tmp/suede-seo-browser';
 fs.mkdirSync(output,{recursive:true});
 const types={'.html':'text/html','.css':'text/css','.js':'text/javascript','.webp':'image/webp','.png':'image/png','.woff2':'font/woff2'};
@@ -24,7 +25,7 @@ try {
   await page.setViewportSize({width,height:1000});
   for(const [name,url,selector,count] of [
    ['skill','/skills/suede-seo-audit.html','.seo-toolkit-gallery',6],
-   ['changelog','/#changelog','.clog-item:first-child',1]]) {
+   ['changelog','/#changelog','.clog-item:has(img[src*="seo-toolkit/"])',1]]) {
    await page.goto(`http://127.0.0.1:${server.address().port}${url}`);
    const section=page.locator(selector);await section.scrollIntoViewIfNeeded();
    await page.evaluate(()=>document.fonts.ready);
@@ -48,8 +49,9 @@ try {
  const newest=page.locator('.clog-item').first();
  const status=await newest.getAttribute('data-status') || 'released';
  assert.equal(await page.locator('.clog-item[data-status="prepared"]').count(),status==='prepared'?1:0);
- assert.match(await newest.textContent(),status==='prepared'?/0\.19\.3 prepared/:/0\.19\.3 (released|landed)/);
- assert.match(await page.locator('#hero-shiplog').textContent(),/Five offline SEO tools/);
+ assert.ok((await newest.textContent()).includes(`Version ${catalog.version}`));
+ assert.ok((await page.locator('.clog-fresh').textContent()).includes(`Version ${catalog.version} ${status}`));
+ assert.ok((await page.locator('#hero-shiplog').textContent()).includes(await newest.locator('.clog-title').textContent()));
  assert.deepEqual(errors,[]);
  console.log('SEO site QA passed: desktop/mobile, seven image placements, accurate release state, no artwork clipping/overflow or page errors.');
 } finally {await browser.close();await new Promise(resolve=>server.close(resolve));}
