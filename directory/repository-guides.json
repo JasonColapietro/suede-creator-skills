@@ -1,0 +1,27 @@
+{
+  "Digidai/product-manager-skills": {
+    "source": "https://github.com/Digidai/product-manager-skills/blob/ab7a40662c8455ece631834dee9670b3322f465b/SKILL.md",
+    "summary": "Turn product questions into a decision, a draft and a next experiment. Digidai's single PM skill routes discovery, requirements, strategy and metrics requests to knowledge modules and templates in the same repository.",
+    "heading": "Example workflow: critique a PRD",
+    "inputs": "Bring a draft, target user, problem evidence and the outcome you want to change. Use a fictional product while evaluating the workflow; this collection's license permits non-commercial use.",
+    "steps": [
+      "Ask for a critique before a rewrite. Have the agent separate the user problem, proposed solution, acceptance criteria and success measure.",
+      "Ask it to label assumptions and identify the evidence needed for the next decision. The skill's routing table covers requirements, discovery and product metrics.",
+      "Compare the revised acceptance criteria with the original problem. Keep the decisions and open assumptions with the draft so the next review has context."
+    ],
+    "prompt": "Use product-manager-skills to critique this fictional onboarding PRD. Identify the decision it enables, separate evidence from assumptions, and propose measurable acceptance criteria. Keep the draft's constraints. Finish with the next experiment and what result would change the decision. [Paste draft and context]"
+  },
+  "vercel-labs/agent-browser": {
+    "source": "https://github.com/vercel-labs/agent-browser/blob/dac13bb87468fe9d74a040d862720f6cc17a9565/skills/agent-browser/SKILL.md",
+    "summary": "Give an agent a repeatable way to inspect and interact with browser pages. This collection supplies the agent-browser discovery skill; the separate CLI provides browser execution and version-matched workflow instructions.",
+    "heading": "Example workflow: inspect a web journey",
+    "inputs": "Bring a staging URL, a test account when needed, the steps a visitor should complete and the expected result. Start with a journey that does not place orders or change production data.",
+    "steps": [
+      "Install the browser CLI and its browser support separately from the skill folder. Load the core workflow for the version installed on your machine.",
+      "Ask the agent to inspect the page, follow the test journey and collect screenshots or observed values at the steps you specify.",
+      "Compare the observed result with the expected result. Ask for reproducible steps and supporting evidence for each reported failure; use the CLI's dogfood workflow for a broader exploratory review."
+    ],
+    "setup_commands": ["npm i -g agent-browser", "agent-browser install", "agent-browser skills get core"],
+    "prompt": "Use agent-browser to inspect this staging signup journey: [URL and steps]. Load the installed CLI's core workflow first. Record each step, the expected and observed result, and screenshots of failures. Stop before submitting a purchase or changing production data. Return reproducible findings with evidence."
+  }
+}

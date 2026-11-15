@@ -1,0 +1,225 @@
+{
+  "schema_version": 1,
+  "repository": "serpapi/skills",
+  "listing_url": "https://skills.suedeai.ai/directory/serpapi/skills/",
+  "snapshot": {
+    "date": "2026-10-22",
+    "id": "0083645c3974488e8803884c7af76698",
+    "dataset_sha256": "b73996d45961aa527b4cea74a41a2e44497200dba9b2f85411e3602ab5f56641"
+  },
+  "listed_skill_count": 2,
+  "scope": "Skills listed by the directory; this is not a complete inventory of every file in the repository.",
+  "security_scan_status": "not_scanned",
+  "skills": [
+    {
+      "id": "serpapi/skills/serpapi-web-search",
+      "name": "serpapi-web-search",
+      "description": "Structured search data via 130+ engines — use INSTEAD OF web_search when you need: exact citations (google_scholar), local business details (google_maps), flight prices (google_flights), hotel rates (google_hotels), shopping prices (google_shopping_light), job listings (google_jobs), or any task where web_search gives approximate/unstructured results. Returns machine-readable JSON. Default engine: google_light.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/serpapi/skills/blob/master/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "master",
+        "revision": "046af39d11d6b3fa91662e80e28fd6d6e4095448",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-07-06",
+        "skill_md_url": "https://github.com/serpapi/skills/blob/046af39d11d6b3fa91662e80e28fd6d6e4095448/skills/serpapi-web-search/SKILL.md"
+      },
+      "quality": {
+        "score": 77,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/serpapi/skills/serpapi-web-search/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/serpapi/skills/serpapi-web-search/",
+      "source_folder_url": "https://github.com/serpapi/skills/tree/master/skills/serpapi-web-search",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/serpapi/skills/tree/master/skills/serpapi-web-search",
+        "publisher_setup_url": "https://github.com/serpapi/skills/blob/master/skills/serpapi-web-search/SKILL.md"
+      }
+    },
+    {
+      "id": "serpapi/skills/agent-usability-test",
+      "name": "agent-usability-test",
+      "description": "Test whether agents can discover and use your tool — not whether agents are capable. The subject under test is the interface. A bad score means fix the docs/tool, not the agent.",
+      "category": "ai-agents-llm",
+      "license": "MIT",
+      "license_url": "https://github.com/serpapi/skills/blob/master/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "master",
+        "revision": "046af39d11d6b3fa91662e80e28fd6d6e4095448",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-07-06",
+        "skill_md_url": "https://github.com/serpapi/skills/blob/046af39d11d6b3fa91662e80e28fd6d6e4095448/skills/agent-usability-test/SKILL.md"
+      },
+      "quality": {
+        "score": 63,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/serpapi/skills/agent-usability-test/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/serpapi/skills/tree/master/skills/agent-usability-test",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/serpapi/skills/tree/master/skills/agent-usability-test",
+        "publisher_setup_url": "https://github.com/serpapi/skills/blob/master/skills/agent-usability-test/SKILL.md"
+      }
+    }
+  ]
+}

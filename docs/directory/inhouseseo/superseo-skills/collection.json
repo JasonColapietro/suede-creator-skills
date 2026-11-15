@@ -1,0 +1,1170 @@
+{
+  "schema_version": 1,
+  "repository": "inhouseseo/superseo-skills",
+  "listing_url": "https://skills.suedeai.ai/directory/inhouseseo/superseo-skills/",
+  "snapshot": {
+    "date": "2026-10-22",
+    "id": "0083645c3974488e8803884c7af76698",
+    "dataset_sha256": "b73996d45961aa527b4cea74a41a2e44497200dba9b2f85411e3602ab5f56641"
+  },
+  "listed_skill_count": 11,
+  "scope": "Skills listed by the directory; this is not a complete inventory of every file in the repository.",
+  "security_scan_status": "not_scanned",
+  "skills": [
+    {
+      "id": "inhouseseo/superseo-skills/content-brief",
+      "name": "content-brief",
+      "description": "Use when planning a new article. The agent Googles the keyword, reads the top 10 results, classifies intent, maps the content gap, and produces a writer-ready brief with structure, outline, and on-page artifacts. No keyword tool required.",
+      "category": "marketing-seo",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/inhouseseo/superseo-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "9cf22cc065a294bf0077ea6af6b4ea0eb7f89cdc",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-03",
+        "skill_md_url": "https://github.com/inhouseseo/superseo-skills/blob/9cf22cc065a294bf0077ea6af6b4ea0eb7f89cdc/skills/content-brief/SKILL.md"
+      },
+      "quality": {
+        "score": 81,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/inhouseseo/superseo-skills/content-brief/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/inhouseseo/superseo-skills/content-brief/",
+      "source_folder_url": "https://github.com/inhouseseo/superseo-skills/tree/main/skills/content-brief",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/inhouseseo/superseo-skills/tree/main/skills/content-brief",
+        "publisher_setup_url": "https://github.com/inhouseseo/superseo-skills/blob/main/skills/content-brief/SKILL.md"
+      }
+    },
+    {
+      "id": "inhouseseo/superseo-skills/eeat-audit",
+      "name": "eeat-audit",
+      "description": "Use when auditing a page for E-E-A-T signals. The agent reads the page and scores Experience, Expertise, Authoritativeness, and Trustworthiness — then tells you exactly what to add to each dimension.",
+      "category": "marketing-seo",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/inhouseseo/superseo-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "9cf22cc065a294bf0077ea6af6b4ea0eb7f89cdc",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-03",
+        "skill_md_url": "https://github.com/inhouseseo/superseo-skills/blob/9cf22cc065a294bf0077ea6af6b4ea0eb7f89cdc/skills/eeat-audit/SKILL.md"
+      },
+      "quality": {
+        "score": 81,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/inhouseseo/superseo-skills/eeat-audit/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/inhouseseo/superseo-skills/eeat-audit/",
+      "source_folder_url": "https://github.com/inhouseseo/superseo-skills/tree/main/skills/eeat-audit",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/inhouseseo/superseo-skills/tree/main/skills/eeat-audit",
+        "publisher_setup_url": "https://github.com/inhouseseo/superseo-skills/blob/main/skills/eeat-audit/SKILL.md"
+      }
+    },
+    {
+      "id": "inhouseseo/superseo-skills/expert-interview",
+      "name": "expert-interview",
+      "description": "Use when extracting first-party expertise from a subject-matter expert before writing content. Produces a knowledge document of contrarian takes, specific examples, and surprising outcomes that AI can't fabricate.",
+      "category": "writing-content",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/inhouseseo/superseo-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "9cf22cc065a294bf0077ea6af6b4ea0eb7f89cdc",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-03",
+        "skill_md_url": "https://github.com/inhouseseo/superseo-skills/blob/9cf22cc065a294bf0077ea6af6b4ea0eb7f89cdc/skills/expert-interview/SKILL.md"
+      },
+      "quality": {
+        "score": 81,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/inhouseseo/superseo-skills/expert-interview/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/inhouseseo/superseo-skills/expert-interview/",
+      "source_folder_url": "https://github.com/inhouseseo/superseo-skills/tree/main/skills/expert-interview",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/inhouseseo/superseo-skills/tree/main/skills/expert-interview",
+        "publisher_setup_url": "https://github.com/inhouseseo/superseo-skills/blob/main/skills/expert-interview/SKILL.md"
+      }
+    },
+    {
+      "id": "inhouseseo/superseo-skills/featured-snippet-optimizer",
+      "name": "featured-snippet-optimizer",
+      "description": "Use when you want to win a featured snippet for a keyword you already rank for. The agent checks the current snippet format, analyzes your content, and rewrites the relevant section to match what Google wants.",
+      "category": "marketing-seo",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/inhouseseo/superseo-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "9cf22cc065a294bf0077ea6af6b4ea0eb7f89cdc",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-03",
+        "skill_md_url": "https://github.com/inhouseseo/superseo-skills/blob/9cf22cc065a294bf0077ea6af6b4ea0eb7f89cdc/skills/featured-snippet-optimizer/SKILL.md"
+      },
+      "quality": {
+        "score": 81,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/inhouseseo/superseo-skills/featured-snippet-optimizer/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/inhouseseo/superseo-skills/featured-snippet-optimizer/",
+      "source_folder_url": "https://github.com/inhouseseo/superseo-skills/tree/main/skills/featured-snippet-optimizer",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/inhouseseo/superseo-skills/tree/main/skills/featured-snippet-optimizer",
+        "publisher_setup_url": "https://github.com/inhouseseo/superseo-skills/blob/main/skills/featured-snippet-optimizer/SKILL.md"
+      }
+    },
+    {
+      "id": "inhouseseo/superseo-skills/improve-content",
+      "name": "improve-content",
+      "description": "Use when rewriting or refreshing an existing page that's underperforming. The agent fetches the URL, analyzes the current content, researches the SERP, and rewrites using the full anti-AI-slop ruleset — no data exports needed.",
+      "category": "marketing-seo",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/inhouseseo/superseo-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "9cf22cc065a294bf0077ea6af6b4ea0eb7f89cdc",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-03",
+        "skill_md_url": "https://github.com/inhouseseo/superseo-skills/blob/9cf22cc065a294bf0077ea6af6b4ea0eb7f89cdc/skills/improve-content/SKILL.md"
+      },
+      "quality": {
+        "score": 81,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/inhouseseo/superseo-skills/improve-content/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/inhouseseo/superseo-skills/improve-content/",
+      "source_folder_url": "https://github.com/inhouseseo/superseo-skills/tree/main/skills/improve-content",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/inhouseseo/superseo-skills/tree/main/skills/improve-content",
+        "publisher_setup_url": "https://github.com/inhouseseo/superseo-skills/blob/main/skills/improve-content/SKILL.md"
+      }
+    },
+    {
+      "id": "inhouseseo/superseo-skills/keyword-deep-dive",
+      "name": "keyword-deep-dive",
+      "description": "Use when planning to rank for a specific keyword. The agent Googles it, reads the top 10, classifies intent, reads the top 3 competitor pages, and produces a 90-day ranking plan with intent, SERP analysis, and content recommendations.",
+      "category": "marketing-seo",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/inhouseseo/superseo-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "9cf22cc065a294bf0077ea6af6b4ea0eb7f89cdc",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-03",
+        "skill_md_url": "https://github.com/inhouseseo/superseo-skills/blob/9cf22cc065a294bf0077ea6af6b4ea0eb7f89cdc/skills/keyword-deep-dive/SKILL.md"
+      },
+      "quality": {
+        "score": 81,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/inhouseseo/superseo-skills/keyword-deep-dive/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/inhouseseo/superseo-skills/keyword-deep-dive/",
+      "source_folder_url": "https://github.com/inhouseseo/superseo-skills/tree/main/skills/keyword-deep-dive",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/inhouseseo/superseo-skills/tree/main/skills/keyword-deep-dive",
+        "publisher_setup_url": "https://github.com/inhouseseo/superseo-skills/blob/main/skills/keyword-deep-dive/SKILL.md"
+      }
+    },
+    {
+      "id": "inhouseseo/superseo-skills/linkbuilding",
+      "name": "linkbuilding",
+      "description": "Use when planning link acquisition. Classifies the site's authority phase from site age and visible signals, then recommends phase-appropriate tactics from the bundled tactic playbook library. No backlink tool required.",
+      "category": "marketing-seo",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/inhouseseo/superseo-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "9cf22cc065a294bf0077ea6af6b4ea0eb7f89cdc",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-03",
+        "skill_md_url": "https://github.com/inhouseseo/superseo-skills/blob/9cf22cc065a294bf0077ea6af6b4ea0eb7f89cdc/skills/linkbuilding/SKILL.md"
+      },
+      "quality": {
+        "score": 81,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/inhouseseo/superseo-skills/linkbuilding/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/inhouseseo/superseo-skills/linkbuilding/",
+      "source_folder_url": "https://github.com/inhouseseo/superseo-skills/tree/main/skills/linkbuilding",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/inhouseseo/superseo-skills/tree/main/skills/linkbuilding",
+        "publisher_setup_url": "https://github.com/inhouseseo/superseo-skills/blob/main/skills/linkbuilding/SKILL.md"
+      }
+    },
+    {
+      "id": "inhouseseo/superseo-skills/page-audit",
+      "name": "page-audit",
+      "description": "Use when auditing a specific page's SEO performance, content quality, and competitive position. The agent fetches the URL, Googles the primary keyword, reads the top 3 competitors, and produces a full 7-dimension audit — no exports, no analytics access required.",
+      "category": "marketing-seo",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/inhouseseo/superseo-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "9cf22cc065a294bf0077ea6af6b4ea0eb7f89cdc",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-03",
+        "skill_md_url": "https://github.com/inhouseseo/superseo-skills/blob/9cf22cc065a294bf0077ea6af6b4ea0eb7f89cdc/skills/page-audit/SKILL.md"
+      },
+      "quality": {
+        "score": 81,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/inhouseseo/superseo-skills/page-audit/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/inhouseseo/superseo-skills/page-audit/",
+      "source_folder_url": "https://github.com/inhouseseo/superseo-skills/tree/main/skills/page-audit",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/inhouseseo/superseo-skills/tree/main/skills/page-audit",
+        "publisher_setup_url": "https://github.com/inhouseseo/superseo-skills/blob/main/skills/page-audit/SKILL.md"
+      }
+    },
+    {
+      "id": "inhouseseo/superseo-skills/semantic-gap-analysis",
+      "name": "semantic-gap-analysis",
+      "description": "Use when a page ranks for a keyword but isn't in the top 3 and you want to know exactly what's missing. The agent compares the page to the top-ranking competitors and produces a specific list of entities, subtopics, and relationships to add.",
+      "category": "marketing-seo",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/inhouseseo/superseo-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "9cf22cc065a294bf0077ea6af6b4ea0eb7f89cdc",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-03",
+        "skill_md_url": "https://github.com/inhouseseo/superseo-skills/blob/9cf22cc065a294bf0077ea6af6b4ea0eb7f89cdc/skills/semantic-gap-analysis/SKILL.md"
+      },
+      "quality": {
+        "score": 81,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/inhouseseo/superseo-skills/semantic-gap-analysis/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/inhouseseo/superseo-skills/semantic-gap-analysis/",
+      "source_folder_url": "https://github.com/inhouseseo/superseo-skills/tree/main/skills/semantic-gap-analysis",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/inhouseseo/superseo-skills/tree/main/skills/semantic-gap-analysis",
+        "publisher_setup_url": "https://github.com/inhouseseo/superseo-skills/blob/main/skills/semantic-gap-analysis/SKILL.md"
+      }
+    },
+    {
+      "id": "inhouseseo/superseo-skills/topic-cluster-planning",
+      "name": "topic-cluster-planning",
+      "description": "Use when planning a topic cluster (hub + spokes) for a new content area. The agent researches the space, identifies the hub topic, maps the spokes, and produces a specific content plan with internal linking strategy.",
+      "category": "marketing-seo",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/inhouseseo/superseo-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "9cf22cc065a294bf0077ea6af6b4ea0eb7f89cdc",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-03",
+        "skill_md_url": "https://github.com/inhouseseo/superseo-skills/blob/9cf22cc065a294bf0077ea6af6b4ea0eb7f89cdc/skills/topic-cluster-planning/SKILL.md"
+      },
+      "quality": {
+        "score": 81,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/inhouseseo/superseo-skills/topic-cluster-planning/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/inhouseseo/superseo-skills/topic-cluster-planning/",
+      "source_folder_url": "https://github.com/inhouseseo/superseo-skills/tree/main/skills/topic-cluster-planning",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/inhouseseo/superseo-skills/tree/main/skills/topic-cluster-planning",
+        "publisher_setup_url": "https://github.com/inhouseseo/superseo-skills/blob/main/skills/topic-cluster-planning/SKILL.md"
+      }
+    },
+    {
+      "id": "inhouseseo/superseo-skills/write-content",
+      "name": "write-content",
+      "description": "Use when writing a complete SEO article. Includes the full anti-AI-slop ruleset (banned vocabulary, banned phrases, banned structural patterns) and voice rules. The agent researches the SERP itself if needed — no keyword data exports required.",
+      "category": "marketing-seo",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/inhouseseo/superseo-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "9cf22cc065a294bf0077ea6af6b4ea0eb7f89cdc",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-03",
+        "skill_md_url": "https://github.com/inhouseseo/superseo-skills/blob/9cf22cc065a294bf0077ea6af6b4ea0eb7f89cdc/skills/write-content/SKILL.md"
+      },
+      "quality": {
+        "score": 81,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/inhouseseo/superseo-skills/write-content/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/inhouseseo/superseo-skills/write-content/",
+      "source_folder_url": "https://github.com/inhouseseo/superseo-skills/tree/main/skills/write-content",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/inhouseseo/superseo-skills/tree/main/skills/write-content",
+        "publisher_setup_url": "https://github.com/inhouseseo/superseo-skills/blob/main/skills/write-content/SKILL.md"
+      }
+    }
+  ]
+}

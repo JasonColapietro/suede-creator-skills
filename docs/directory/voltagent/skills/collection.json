@@ -1,0 +1,330 @@
+{
+  "schema_version": 1,
+  "repository": "VoltAgent/skills",
+  "listing_url": "https://skills.suedeai.ai/directory/voltagent/skills/",
+  "snapshot": {
+    "date": "2026-10-22",
+    "id": "0083645c3974488e8803884c7af76698",
+    "dataset_sha256": "b73996d45961aa527b4cea74a41a2e44497200dba9b2f85411e3602ab5f56641"
+  },
+  "listed_skill_count": 3,
+  "scope": "Skills listed by the directory; this is not a complete inventory of every file in the repository.",
+  "security_scan_status": "not_scanned",
+  "skills": [
+    {
+      "id": "voltagent/skills/create-voltagent",
+      "name": "create-voltagent",
+      "description": "Skill for creating AI agent projects using the VoltAgent framework. Guide for CLI setup and manual bootstrapping.",
+      "category": "ai-agents-llm",
+      "license": "MIT",
+      "license_url": "https://github.com/VoltAgent/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "066b137c520a8739a899e160516d1f4044add7f3",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-01-27",
+        "skill_md_url": "https://github.com/VoltAgent/skills/blob/066b137c520a8739a899e160516d1f4044add7f3/skills/create-voltagent/SKILL.md"
+      },
+      "quality": {
+        "score": 68,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 1
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/voltagent/skills/create-voltagent/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/voltagent/skills/create-voltagent/",
+      "source_folder_url": "https://github.com/VoltAgent/skills/tree/main/skills/create-voltagent",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/VoltAgent/skills/tree/main/skills/create-voltagent",
+        "publisher_setup_url": "https://github.com/VoltAgent/skills/blob/main/skills/create-voltagent/SKILL.md"
+      }
+    },
+    {
+      "id": "voltagent/skills/voltagent-docs-bundle",
+      "name": "voltagent-docs-bundle",
+      "description": "Look up VoltAgent documentation embedded in node_modules/@voltagent/core/docs for version-matched docs. Use for API signatures, guides, and examples.",
+      "category": "ai-agents-llm",
+      "license": "MIT",
+      "license_url": "https://github.com/VoltAgent/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "066b137c520a8739a899e160516d1f4044add7f3",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-01-27",
+        "skill_md_url": "https://github.com/VoltAgent/skills/blob/066b137c520a8739a899e160516d1f4044add7f3/skills/voltagent-docs-bundle/SKILL.md"
+      },
+      "quality": {
+        "score": 62,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 1
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/voltagent/skills/voltagent-docs-bundle/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/voltagent/skills/voltagent-docs-bundle/",
+      "source_folder_url": "https://github.com/VoltAgent/skills/tree/main/skills/voltagent-docs-bundle",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/VoltAgent/skills/tree/main/skills/voltagent-docs-bundle",
+        "publisher_setup_url": "https://github.com/VoltAgent/skills/blob/main/skills/voltagent-docs-bundle/SKILL.md"
+      }
+    },
+    {
+      "id": "voltagent/skills/voltagent-best-practices",
+      "name": "voltagent-best-practices",
+      "description": "VoltAgent architectural patterns and conventions. Covers agents vs workflows, project layout, memory, servers, and observability.",
+      "category": "ai-agents-llm",
+      "license": "MIT",
+      "license_url": "https://github.com/VoltAgent/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "066b137c520a8739a899e160516d1f4044add7f3",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-01-27",
+        "skill_md_url": "https://github.com/VoltAgent/skills/blob/066b137c520a8739a899e160516d1f4044add7f3/skills/voltagent-best-practices/SKILL.md"
+      },
+      "quality": {
+        "score": 57,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 1
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/voltagent/skills/voltagent-best-practices/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/VoltAgent/skills/tree/main/skills/voltagent-best-practices",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/VoltAgent/skills/tree/main/skills/voltagent-best-practices",
+        "publisher_setup_url": "https://github.com/VoltAgent/skills/blob/main/skills/voltagent-best-practices/SKILL.md"
+      }
+    }
+  ]
+}

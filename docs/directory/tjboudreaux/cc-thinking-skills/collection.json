@@ -1,0 +1,2955 @@
+{
+  "schema_version": 1,
+  "repository": "tjboudreaux/cc-thinking-skills",
+  "listing_url": "https://skills.suedeai.ai/directory/tjboudreaux/cc-thinking-skills/",
+  "snapshot": {
+    "date": "2026-10-22",
+    "id": "0083645c3974488e8803884c7af76698",
+    "dataset_sha256": "b73996d45961aa527b4cea74a41a2e44497200dba9b2f85411e3602ab5f56641"
+  },
+  "listed_skill_count": 28,
+  "scope": "Skills listed by the directory; this is not a complete inventory of every file in the repository.",
+  "security_scan_status": "not_scanned",
+  "skills": [
+    {
+      "id": "tjboudreaux/cc-thinking-skills/thinking-bounded-rationality",
+      "name": "thinking-bounded-rationality",
+      "description": "Use when search or investigation could run forever. Set an explicit good-enough threshold first, then stop at the first option that clears it.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "7b8fece345dfaa11773be7152ccd194589cb5437",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-07",
+        "skill_md_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/7b8fece345dfaa11773be7152ccd194589cb5437/skills/thinking-bounded-rationality/SKILL.md"
+      },
+      "quality": {
+        "score": 72,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/tjboudreaux/cc-thinking-skills/thinking-bounded-rationality/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/tjboudreaux/cc-thinking-skills/thinking-bounded-rationality/",
+      "source_folder_url": "https://github.com/tjboudreaux/cc-thinking-skills/tree/main/skills/thinking-bounded-rationality",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/tjboudreaux/cc-thinking-skills/tree/main/skills/thinking-bounded-rationality",
+        "publisher_setup_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/main/skills/thinking-bounded-rationality/SKILL.md"
+      }
+    },
+    {
+      "id": "tjboudreaux/cc-thinking-skills/thinking-circle-of-competence",
+      "name": "thinking-circle-of-competence",
+      "description": "Use when a specific claim may lack grounding. Check evidence boundary, size wrongness cost, then answer, fetch, or abstain — never confabulate.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "7b8fece345dfaa11773be7152ccd194589cb5437",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-07",
+        "skill_md_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/7b8fece345dfaa11773be7152ccd194589cb5437/skills/thinking-circle-of-competence/SKILL.md"
+      },
+      "quality": {
+        "score": 72,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/tjboudreaux/cc-thinking-skills/thinking-circle-of-competence/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/tjboudreaux/cc-thinking-skills/thinking-circle-of-competence/",
+      "source_folder_url": "https://github.com/tjboudreaux/cc-thinking-skills/tree/main/skills/thinking-circle-of-competence",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/tjboudreaux/cc-thinking-skills/tree/main/skills/thinking-circle-of-competence",
+        "publisher_setup_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/main/skills/thinking-circle-of-competence/SKILL.md"
+      }
+    },
+    {
+      "id": "tjboudreaux/cc-thinking-skills/thinking-kepner-tregoe",
+      "name": "thinking-kepner-tregoe",
+      "description": "Use when a selective defect needs IS/IS-NOT difference analysis or a consequential option choice needs must/want weighting and adverse-consequence comparison.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "7b8fece345dfaa11773be7152ccd194589cb5437",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-07",
+        "skill_md_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/7b8fece345dfaa11773be7152ccd194589cb5437/skills/thinking-kepner-tregoe/SKILL.md"
+      },
+      "quality": {
+        "score": 74,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/tjboudreaux/cc-thinking-skills/thinking-kepner-tregoe/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/tjboudreaux/cc-thinking-skills/thinking-kepner-tregoe/",
+      "source_folder_url": "https://github.com/tjboudreaux/cc-thinking-skills/tree/main/skills/thinking-kepner-tregoe",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/tjboudreaux/cc-thinking-skills/tree/main/skills/thinking-kepner-tregoe",
+        "publisher_setup_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/main/skills/thinking-kepner-tregoe/SKILL.md"
+      }
+    },
+    {
+      "id": "tjboudreaux/cc-thinking-skills/thinking-lindy-effect",
+      "name": "thinking-lindy-effect",
+      "description": "Use when longevity of a non-perishable option matters. Treat survival duration as a remaining-life prior, then check domain drift before favoring the proven.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "7b8fece345dfaa11773be7152ccd194589cb5437",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-07",
+        "skill_md_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/7b8fece345dfaa11773be7152ccd194589cb5437/skills/thinking-lindy-effect/SKILL.md"
+      },
+      "quality": {
+        "score": 74,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/tjboudreaux/cc-thinking-skills/thinking-lindy-effect/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/tjboudreaux/cc-thinking-skills/thinking-lindy-effect/",
+      "source_folder_url": "https://github.com/tjboudreaux/cc-thinking-skills/tree/main/skills/thinking-lindy-effect",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/tjboudreaux/cc-thinking-skills/tree/main/skills/thinking-lindy-effect",
+        "publisher_setup_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/main/skills/thinking-lindy-effect/SKILL.md"
+      }
+    },
+    {
+      "id": "tjboudreaux/cc-thinking-skills/thinking-ooda",
+      "name": "thinking-ooda",
+      "description": "Use under time pressure when the situation is still changing and you must act before certainty — cycle Observe→Orient→Decide→Act on ~70% confidence, then re-observe.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "7b8fece345dfaa11773be7152ccd194589cb5437",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-07",
+        "skill_md_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/7b8fece345dfaa11773be7152ccd194589cb5437/skills/thinking-ooda/SKILL.md"
+      },
+      "quality": {
+        "score": 74,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/tjboudreaux/cc-thinking-skills/thinking-ooda/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/tjboudreaux/cc-thinking-skills/thinking-ooda/",
+      "source_folder_url": "https://github.com/tjboudreaux/cc-thinking-skills/tree/main/skills/thinking-ooda",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/tjboudreaux/cc-thinking-skills/tree/main/skills/thinking-ooda",
+        "publisher_setup_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/main/skills/thinking-ooda/SKILL.md"
+      }
+    },
+    {
+      "id": "tjboudreaux/cc-thinking-skills/thinking-probabilistic",
+      "name": "thinking-probabilistic",
+      "description": "Use when forecasting, estimating, or sizing risk — anchor on base rates, give ranges, update prior→likelihood→posterior on evidence, and factor unmeasured quantities into order-of-magnitude bounds.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "7b8fece345dfaa11773be7152ccd194589cb5437",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-07",
+        "skill_md_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/7b8fece345dfaa11773be7152ccd194589cb5437/skills/thinking-probabilistic/SKILL.md"
+      },
+      "quality": {
+        "score": 77,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/tjboudreaux/cc-thinking-skills/thinking-probabilistic/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/tjboudreaux/cc-thinking-skills/thinking-probabilistic/",
+      "source_folder_url": "https://github.com/tjboudreaux/cc-thinking-skills/tree/main/skills/thinking-probabilistic",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/tjboudreaux/cc-thinking-skills/tree/main/skills/thinking-probabilistic",
+        "publisher_setup_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/main/skills/thinking-probabilistic/SKILL.md"
+      }
+    },
+    {
+      "id": "tjboudreaux/cc-thinking-skills/thinking-via-negativa",
+      "name": "thinking-via-negativa",
+      "description": "Use when the reflex is to add a feature, layer, or process. Prefer removing harmful or nonessential elements first, with an irreversibility guard before deletion.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "7b8fece345dfaa11773be7152ccd194589cb5437",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-07",
+        "skill_md_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/7b8fece345dfaa11773be7152ccd194589cb5437/skills/thinking-via-negativa/SKILL.md"
+      },
+      "quality": {
+        "score": 74,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/tjboudreaux/cc-thinking-skills/thinking-via-negativa/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/tjboudreaux/cc-thinking-skills/thinking-via-negativa/",
+      "source_folder_url": "https://github.com/tjboudreaux/cc-thinking-skills/tree/main/skills/thinking-via-negativa",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/tjboudreaux/cc-thinking-skills/tree/main/skills/thinking-via-negativa",
+        "publisher_setup_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/main/skills/thinking-via-negativa/SKILL.md"
+      }
+    },
+    {
+      "id": "tjboudreaux/cc-thinking-skills/thinking-cynefin",
+      "name": "thinking-cynefin",
+      "description": "When the right response mode is unclear, classify the cause-effect domain first; decompose disorder.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "7b8fece345dfaa11773be7152ccd194589cb5437",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-07",
+        "skill_md_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/7b8fece345dfaa11773be7152ccd194589cb5437/skills/thinking-cynefin/SKILL.md"
+      },
+      "quality": {
+        "score": 64,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/tjboudreaux/cc-thinking-skills/thinking-cynefin/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/tjboudreaux/cc-thinking-skills/tree/main/skills/thinking-cynefin",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/tjboudreaux/cc-thinking-skills/tree/main/skills/thinking-cynefin",
+        "publisher_setup_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/main/skills/thinking-cynefin/SKILL.md"
+      }
+    },
+    {
+      "id": "tjboudreaux/cc-thinking-skills/thinking-effectuation",
+      "name": "thinking-effectuation",
+      "description": "Under genuine uncertainty with no reliable forecast, inventory means, cap downside at affordable loss, act for commitments, and let goals emerge from controllable moves.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "7b8fece345dfaa11773be7152ccd194589cb5437",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-07",
+        "skill_md_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/7b8fece345dfaa11773be7152ccd194589cb5437/skills/thinking-effectuation/SKILL.md"
+      },
+      "quality": {
+        "score": 69,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/tjboudreaux/cc-thinking-skills/thinking-effectuation/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/tjboudreaux/cc-thinking-skills/tree/main/skills/thinking-effectuation",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/tjboudreaux/cc-thinking-skills/tree/main/skills/thinking-effectuation",
+        "publisher_setup_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/main/skills/thinking-effectuation/SKILL.md"
+      }
+    },
+    {
+      "id": "tjboudreaux/cc-thinking-skills/thinking-first-principles",
+      "name": "thinking-first-principles",
+      "description": "When a constraint is treated as fixed, separate physics from convention, keep only independently supported primitives, and rebuild the simplest solution that satisfies real constraints.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "7b8fece345dfaa11773be7152ccd194589cb5437",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-07",
+        "skill_md_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/7b8fece345dfaa11773be7152ccd194589cb5437/skills/thinking-first-principles/SKILL.md"
+      },
+      "quality": {
+        "score": 66,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/tjboudreaux/cc-thinking-skills/thinking-first-principles/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/tjboudreaux/cc-thinking-skills/tree/main/skills/thinking-first-principles",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/tjboudreaux/cc-thinking-skills/tree/main/skills/thinking-first-principles",
+        "publisher_setup_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/main/skills/thinking-first-principles/SKILL.md"
+      }
+    },
+    {
+      "id": "tjboudreaux/cc-thinking-skills/thinking-five-whys-plus",
+      "name": "thinking-five-whys-plus",
+      "description": "When a fault is localized and the proximate cause is known but the systemic root is not, chain evidence-linked whys with a counterfactual stop and a countermeasure.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "7b8fece345dfaa11773be7152ccd194589cb5437",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-07",
+        "skill_md_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/7b8fece345dfaa11773be7152ccd194589cb5437/skills/thinking-five-whys-plus/SKILL.md"
+      },
+      "quality": {
+        "score": 69,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/tjboudreaux/cc-thinking-skills/thinking-five-whys-plus/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/tjboudreaux/cc-thinking-skills/tree/main/skills/thinking-five-whys-plus",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/tjboudreaux/cc-thinking-skills/tree/main/skills/thinking-five-whys-plus",
+        "publisher_setup_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/main/skills/thinking-five-whys-plus/SKILL.md"
+      }
+    },
+    {
+      "id": "tjboudreaux/cc-thinking-skills/thinking-jobs-to-be-done",
+      "name": "thinking-jobs-to-be-done",
+      "description": "Deciding what to build or why adoption fails. Recover the progress users hire a solution for under a circumstance, then rank by outcome and competing workarounds.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "7b8fece345dfaa11773be7152ccd194589cb5437",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-07",
+        "skill_md_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/7b8fece345dfaa11773be7152ccd194589cb5437/skills/thinking-jobs-to-be-done/SKILL.md"
+      },
+      "quality": {
+        "score": 69,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/tjboudreaux/cc-thinking-skills/thinking-jobs-to-be-done/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/tjboudreaux/cc-thinking-skills/tree/main/skills/thinking-jobs-to-be-done",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/tjboudreaux/cc-thinking-skills/tree/main/skills/thinking-jobs-to-be-done",
+        "publisher_setup_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/main/skills/thinking-jobs-to-be-done/SKILL.md"
+      }
+    },
+    {
+      "id": "tjboudreaux/cc-thinking-skills/thinking-map-territory",
+      "name": "thinking-map-territory",
+      "description": "When a claim, doc, test, metric, or assumption conflicts with observed behavior, stop theorizing from the map and verify the live code or data; let territory overrule.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "7b8fece345dfaa11773be7152ccd194589cb5437",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-07",
+        "skill_md_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/7b8fece345dfaa11773be7152ccd194589cb5437/skills/thinking-map-territory/SKILL.md"
+      },
+      "quality": {
+        "score": 66,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/tjboudreaux/cc-thinking-skills/thinking-map-territory/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/tjboudreaux/cc-thinking-skills/tree/main/skills/thinking-map-territory",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/tjboudreaux/cc-thinking-skills/tree/main/skills/thinking-map-territory",
+        "publisher_setup_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/main/skills/thinking-map-territory/SKILL.md"
+      }
+    },
+    {
+      "id": "tjboudreaux/cc-thinking-skills/thinking-margin-of-safety",
+      "name": "thinking-margin-of-safety",
+      "description": "When provisioning, setting a limit, or committing an estimate under uncertainty, size a buffer to residual error and the cost of breach—not to the optimistic edge.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "7b8fece345dfaa11773be7152ccd194589cb5437",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-07",
+        "skill_md_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/7b8fece345dfaa11773be7152ccd194589cb5437/skills/thinking-margin-of-safety/SKILL.md"
+      },
+      "quality": {
+        "score": 66,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/tjboudreaux/cc-thinking-skills/thinking-margin-of-safety/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/tjboudreaux/cc-thinking-skills/tree/main/skills/thinking-margin-of-safety",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/tjboudreaux/cc-thinking-skills/tree/main/skills/thinking-margin-of-safety",
+        "publisher_setup_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/main/skills/thinking-margin-of-safety/SKILL.md"
+      }
+    },
+    {
+      "id": "tjboudreaux/cc-thinking-skills/thinking-model-combination",
+      "name": "thinking-model-combination",
+      "description": "When one mental model leaves a material blind spot on a multi-domain or high-stakes problem, sequence complementary models with named roles and a conflict rule.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "7b8fece345dfaa11773be7152ccd194589cb5437",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-07",
+        "skill_md_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/7b8fece345dfaa11773be7152ccd194589cb5437/skills/thinking-model-combination/SKILL.md"
+      },
+      "quality": {
+        "score": 66,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/tjboudreaux/cc-thinking-skills/thinking-model-combination/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/tjboudreaux/cc-thinking-skills/tree/main/skills/thinking-model-combination",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/tjboudreaux/cc-thinking-skills/tree/main/skills/thinking-model-combination",
+        "publisher_setup_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/main/skills/thinking-model-combination/SKILL.md"
+      }
+    },
+    {
+      "id": "tjboudreaux/cc-thinking-skills/thinking-model-router",
+      "name": "thinking-model-router",
+      "description": "When unsure which thinking skill fits, map domain and problem type, then return NONE or one primary skill by default (at most three complementary).",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "7b8fece345dfaa11773be7152ccd194589cb5437",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-07",
+        "skill_md_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/7b8fece345dfaa11773be7152ccd194589cb5437/skills/thinking-model-router/SKILL.md"
+      },
+      "quality": {
+        "score": 67,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/tjboudreaux/cc-thinking-skills/thinking-model-router/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/tjboudreaux/cc-thinking-skills/tree/main/skills/thinking-model-router",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/tjboudreaux/cc-thinking-skills/tree/main/skills/thinking-model-router",
+        "publisher_setup_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/main/skills/thinking-model-router/SKILL.md"
+      }
+    },
+    {
+      "id": "tjboudreaux/cc-thinking-skills/thinking-opportunity-cost",
+      "name": "thinking-opportunity-cost",
+      "description": "Before committing scarce time, people, or money, name the best forgone use of those resources and the value delta of the chosen path versus that alternative.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "7b8fece345dfaa11773be7152ccd194589cb5437",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-07",
+        "skill_md_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/7b8fece345dfaa11773be7152ccd194589cb5437/skills/thinking-opportunity-cost/SKILL.md"
+      },
+      "quality": {
+        "score": 69,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/tjboudreaux/cc-thinking-skills/thinking-opportunity-cost/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/tjboudreaux/cc-thinking-skills/tree/main/skills/thinking-opportunity-cost",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/tjboudreaux/cc-thinking-skills/tree/main/skills/thinking-opportunity-cost",
+        "publisher_setup_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/main/skills/thinking-opportunity-cost/SKILL.md"
+      }
+    },
+    {
+      "id": "tjboudreaux/cc-thinking-skills/thinking-pre-mortem",
+      "name": "thinking-pre-mortem",
+      "description": "Before committing to a plan or launch, assume it already failed and reason backward through concrete causes — convert failure paths into mitigations, gates, and stop checks.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "7b8fece345dfaa11773be7152ccd194589cb5437",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-07",
+        "skill_md_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/7b8fece345dfaa11773be7152ccd194589cb5437/skills/thinking-pre-mortem/SKILL.md"
+      },
+      "quality": {
+        "score": 69,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/tjboudreaux/cc-thinking-skills/thinking-pre-mortem/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/tjboudreaux/cc-thinking-skills/tree/main/skills/thinking-pre-mortem",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/tjboudreaux/cc-thinking-skills/tree/main/skills/thinking-pre-mortem",
+        "publisher_setup_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/main/skills/thinking-pre-mortem/SKILL.md"
+      }
+    },
+    {
+      "id": "tjboudreaux/cc-thinking-skills/thinking-red-team",
+      "name": "thinking-red-team",
+      "description": "For authorized security review of code, auth, or APIs you control, model the attacker, map the attack surface, and report only findings with a reproducible exploit path and verified mitigation.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "7b8fece345dfaa11773be7152ccd194589cb5437",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-07",
+        "skill_md_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/7b8fece345dfaa11773be7152ccd194589cb5437/skills/thinking-red-team/SKILL.md"
+      },
+      "quality": {
+        "score": 69,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/tjboudreaux/cc-thinking-skills/thinking-red-team/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/tjboudreaux/cc-thinking-skills/tree/main/skills/thinking-red-team",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/tjboudreaux/cc-thinking-skills/tree/main/skills/thinking-red-team",
+        "publisher_setup_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/main/skills/thinking-red-team/SKILL.md"
+      }
+    },
+    {
+      "id": "tjboudreaux/cc-thinking-skills/thinking-reversibility",
+      "name": "thinking-reversibility",
+      "description": "Before heavy deliberation, classify the decision as cheap or costly to undo; decide two-way doors fast and stage one-way doors to preserve options.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "7b8fece345dfaa11773be7152ccd194589cb5437",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-07",
+        "skill_md_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/7b8fece345dfaa11773be7152ccd194589cb5437/skills/thinking-reversibility/SKILL.md"
+      },
+      "quality": {
+        "score": 64,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/tjboudreaux/cc-thinking-skills/thinking-reversibility/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/tjboudreaux/cc-thinking-skills/tree/main/skills/thinking-reversibility",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/tjboudreaux/cc-thinking-skills/tree/main/skills/thinking-reversibility",
+        "publisher_setup_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/main/skills/thinking-reversibility/SKILL.md"
+      }
+    },
+    {
+      "id": "tjboudreaux/cc-thinking-skills/thinking-scientific-method",
+      "name": "thinking-scientific-method",
+      "description": "When a symptom has several plausible causes, rank falsifiable hypotheses and run the cheapest discriminating observation first; prefer least-assumptive survivors only after evidence fit.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "7b8fece345dfaa11773be7152ccd194589cb5437",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-07",
+        "skill_md_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/7b8fece345dfaa11773be7152ccd194589cb5437/skills/thinking-scientific-method/SKILL.md"
+      },
+      "quality": {
+        "score": 69,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/tjboudreaux/cc-thinking-skills/thinking-scientific-method/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/tjboudreaux/cc-thinking-skills/tree/main/skills/thinking-scientific-method",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/tjboudreaux/cc-thinking-skills/tree/main/skills/thinking-scientific-method",
+        "publisher_setup_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/main/skills/thinking-scientific-method/SKILL.md"
+      }
+    },
+    {
+      "id": "tjboudreaux/cc-thinking-skills/thinking-second-order",
+      "name": "thinking-second-order",
+      "description": "When a change has effects past the immediate fix—incentives, scale, feedback—trace consequence chains with timing and probability before committing.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "7b8fece345dfaa11773be7152ccd194589cb5437",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-07",
+        "skill_md_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/7b8fece345dfaa11773be7152ccd194589cb5437/skills/thinking-second-order/SKILL.md"
+      },
+      "quality": {
+        "score": 64,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/tjboudreaux/cc-thinking-skills/thinking-second-order/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/tjboudreaux/cc-thinking-skills/tree/main/skills/thinking-second-order",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/tjboudreaux/cc-thinking-skills/tree/main/skills/thinking-second-order",
+        "publisher_setup_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/main/skills/thinking-second-order/SKILL.md"
+      }
+    },
+    {
+      "id": "tjboudreaux/cc-thinking-skills/thinking-socratic",
+      "name": "thinking-socratic",
+      "description": "When a request is vague, assumption-laden, or \"obvious,\" ask the few load-bearing questions that expose hidden requirements before building or committing.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "7b8fece345dfaa11773be7152ccd194589cb5437",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-07",
+        "skill_md_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/7b8fece345dfaa11773be7152ccd194589cb5437/skills/thinking-socratic/SKILL.md"
+      },
+      "quality": {
+        "score": 72,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/tjboudreaux/cc-thinking-skills/thinking-socratic/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/tjboudreaux/cc-thinking-skills/tree/main/skills/thinking-socratic",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/tjboudreaux/cc-thinking-skills/tree/main/skills/thinking-socratic",
+        "publisher_setup_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/main/skills/thinking-socratic/SKILL.md"
+      }
+    },
+    {
+      "id": "tjboudreaux/cc-thinking-skills/thinking-steel-manning",
+      "name": "thinking-steel-manning",
+      "description": "Before rejecting a proposal or reflexively agreeing, build the strongest faithful opposing case, state agreement conditions, then update or reaffirm.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "7b8fece345dfaa11773be7152ccd194589cb5437",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-07",
+        "skill_md_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/7b8fece345dfaa11773be7152ccd194589cb5437/skills/thinking-steel-manning/SKILL.md"
+      },
+      "quality": {
+        "score": 64,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/tjboudreaux/cc-thinking-skills/thinking-steel-manning/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/tjboudreaux/cc-thinking-skills/tree/main/skills/thinking-steel-manning",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/tjboudreaux/cc-thinking-skills/tree/main/skills/thinking-steel-manning",
+        "publisher_setup_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/main/skills/thinking-steel-manning/SKILL.md"
+      }
+    },
+    {
+      "id": "tjboudreaux/cc-thinking-skills/thinking-systems",
+      "name": "thinking-systems",
+      "description": "When behavior is emergent across components—fixes elsewhere break, loops/delays dominate—map boundary, stocks/flows, feedback, archetypes, then rank leverage.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "7b8fece345dfaa11773be7152ccd194589cb5437",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-07",
+        "skill_md_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/7b8fece345dfaa11773be7152ccd194589cb5437/skills/thinking-systems/SKILL.md"
+      },
+      "quality": {
+        "score": 69,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/tjboudreaux/cc-thinking-skills/thinking-systems/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/tjboudreaux/cc-thinking-skills/tree/main/skills/thinking-systems",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/tjboudreaux/cc-thinking-skills/tree/main/skills/thinking-systems",
+        "publisher_setup_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/main/skills/thinking-systems/SKILL.md"
+      }
+    },
+    {
+      "id": "tjboudreaux/cc-thinking-skills/thinking-theory-of-constraints",
+      "name": "thinking-theory-of-constraints",
+      "description": "When throughput or latency is pipeline-limited, identify the single binding constraint and exploit, subordinate, elevate, then recheck—ignore non-constraints.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "7b8fece345dfaa11773be7152ccd194589cb5437",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-07",
+        "skill_md_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/7b8fece345dfaa11773be7152ccd194589cb5437/skills/thinking-theory-of-constraints/SKILL.md"
+      },
+      "quality": {
+        "score": 66,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/tjboudreaux/cc-thinking-skills/thinking-theory-of-constraints/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/tjboudreaux/cc-thinking-skills/tree/main/skills/thinking-theory-of-constraints",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/tjboudreaux/cc-thinking-skills/tree/main/skills/thinking-theory-of-constraints",
+        "publisher_setup_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/main/skills/thinking-theory-of-constraints/SKILL.md"
+      }
+    },
+    {
+      "id": "tjboudreaux/cc-thinking-skills/thinking-thought-experiment",
+      "name": "thinking-thought-experiment",
+      "description": "When a real test is too rare, large, or irreversible, run a controlled counterfactual: isolate one variable, fix conditions, trace the mechanistic chain, and bound what the result implies.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "7b8fece345dfaa11773be7152ccd194589cb5437",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-07",
+        "skill_md_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/7b8fece345dfaa11773be7152ccd194589cb5437/skills/thinking-thought-experiment/SKILL.md"
+      },
+      "quality": {
+        "score": 69,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/tjboudreaux/cc-thinking-skills/thinking-thought-experiment/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/tjboudreaux/cc-thinking-skills/tree/main/skills/thinking-thought-experiment",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/tjboudreaux/cc-thinking-skills/tree/main/skills/thinking-thought-experiment",
+        "publisher_setup_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/main/skills/thinking-thought-experiment/SKILL.md"
+      }
+    },
+    {
+      "id": "tjboudreaux/cc-thinking-skills/thinking-triz",
+      "name": "thinking-triz",
+      "description": "When two design requirements seem mutually exclusive, name the contradiction, separate conflicting states, then invent a concrete no-compromise resolution.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "7b8fece345dfaa11773be7152ccd194589cb5437",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-07",
+        "skill_md_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/7b8fece345dfaa11773be7152ccd194589cb5437/skills/thinking-triz/SKILL.md"
+      },
+      "quality": {
+        "score": 66,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/tjboudreaux/cc-thinking-skills/thinking-triz/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/tjboudreaux/cc-thinking-skills/tree/main/skills/thinking-triz",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/tjboudreaux/cc-thinking-skills/tree/main/skills/thinking-triz",
+        "publisher_setup_url": "https://github.com/tjboudreaux/cc-thinking-skills/blob/main/skills/thinking-triz/SKILL.md"
+      }
+    }
+  ]
+}

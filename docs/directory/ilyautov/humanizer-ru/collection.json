@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "repository": "ilyautov/humanizer-ru",
+  "listing_url": "https://skills.suedeai.ai/directory/ilyautov/humanizer-ru/",
+  "snapshot": {
+    "date": "2026-10-22",
+    "id": "0083645c3974488e8803884c7af76698",
+    "dataset_sha256": "b73996d45961aa527b4cea74a41a2e44497200dba9b2f85411e3602ab5f56641"
+  },
+  "listed_skill_count": 1,
+  "scope": "Skills listed by the directory; this is not a complete inventory of every file in the repository.",
+  "security_scan_status": "not_scanned",
+  "skills": [
+    {
+      "id": "ilyautov/humanizer-ru/humanizer-ru-local-edit",
+      "name": "humanizer-ru-local-edit",
+      "description": "Use when a user asks to edit Russian prose that sounds formulaic or machine-generated while preserving its meaning and authorial voice.",
+      "category": "writing-content",
+      "license": "MIT",
+      "license_url": "https://github.com/ilyautov/humanizer-ru/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "bce912fc4ee8fbaa1e8995f68d633060d0efb1eb",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-16",
+        "skill_md_url": "https://github.com/ilyautov/humanizer-ru/blob/bce912fc4ee8fbaa1e8995f68d633060d0efb1eb/eval/candidates/local-edit/SKILL.md"
+      },
+      "quality": {
+        "score": 67,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": false,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/ilyautov/humanizer-ru/humanizer-ru-local-edit/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/ilyautov/humanizer-ru/tree/main/eval/candidates/local-edit",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/ilyautov/humanizer-ru/tree/main/eval/candidates/local-edit",
+        "publisher_setup_url": "https://github.com/ilyautov/humanizer-ru/blob/main/eval/candidates/local-edit/SKILL.md"
+      }
+    }
+  ]
+}

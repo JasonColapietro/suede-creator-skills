@@ -30,7 +30,7 @@
         "name": "resend/resend-skills Agent Skills (5) | Suede AI",
         "description": "5 agent skills from resend/resend-skills, including agent-email-inbox, email-best-practices. Install steps, Suede Skill Check grades and a README badge.",
         "url": "https://skills.suedeai.ai/directory/resend/resend-skills/",
-        "dateModified": "2026-11-13",
+        "dateModified": "2026-11-14",
         "isPartOf": {
           "@type": "CollectionPage",
           "@id": "https://skills.suedeai.ai/directory/#directory",
@@ -205,7 +205,7 @@
       <div class="eyebrow">Skill collection &middot; resend</div>
       <h1>resend/resend-skills <span class="h1-sub">5 graded agent skills from Resend</span></h1>
       <nav class="crumbs" aria-label="Breadcrumb"><a href="../../">Directory</a> <span class="crumb-sep" aria-hidden="true">/</span> <a href="../../developer-tools/">Developer Tools and Frameworks</a> <span class="crumb-sep" aria-hidden="true">/</span> <span aria-current="page">resend/resend-skills</span></nav>
-      <p class="lead">5 skills from resend/resend-skills are listed in the directory, across 2 categories. 5 skills have a full page with install steps and a pre-install summary.</p>
+      <p class="lead">resend/resend-skills brings together 5 skills for developer tools and frameworks, AI agent and LLM engineering. Start with the task descriptions below, then compare the individual skill's score, source files and license.</p>
       <p><a class="button" href="https://github.com/resend/resend-skills" target="_blank" rel="noopener">View resend/resend-skills on GitHub</a></p>
       <section class="panel" aria-labelledby="facts-title">
         <h2 id="facts-title">At a glance</h2>
@@ -224,6 +224,210 @@
             </tbody>
           </table>
         </div>
+      </section>
+      <section class="panel" id="collection-overview" aria-labelledby="collection-overview-title">
+        <h2 id="collection-overview-title">What this collection offers</h2>
+        <p>5 listed skills; recorded scores 80–86/100. 5 full reviews with separate installation details. Scores describe the saved source snapshot, using the <a href="../../methodology/#score">Suede Skill Check</a>.</p>
+        <p>Coverage: <a href="../../developer-tools/">Developer Tools and Frameworks</a> (4) · <a href="../../ai-agents-llm/">AI Agents and LLM Engineering</a> (1).</p>
+        <p class="muted">Snapshot: <time datetime="2026-10-22">October 22, 2026</time>. The checks measure published files, documentation and maintenance signals. Security scan: not scanned; this is not a runtime test.</p>
+        <p><a href="#choose-skill">Choose a skill</a> · <a href="#collection-install">Install and verify</a> · <a href="#skills-title">All listed skills</a> · <a href="#collection-compare">Compare collections</a></p>
+        <p><a href="collection.json" download="resend-skills-collection.json">Download the collection manifest</a>: complete task descriptions, scores, license information, source revisions and install routes for all 5 listed skills. Use it to compare options or hand your selection to an agent.</p>
+      </section>
+
+      <section class="panel" id="choose-skill" aria-labelledby="choose-skill-title">
+        <h2 id="choose-skill-title">Choose a skill for your task</h2>
+        <p>Every listed skill in this collection is explained below. Task descriptions come from the publisher; score explanations come from the saved report.</p>
+        <article class="collection-choice" id="choice-agent-email-inbox">
+          <h3>agent-email-inbox <span class="grade grade-b">86/100 · B</span></h3>
+          <p><b>Publisher's task description:</b> Use when building any system where email content triggers actions — AI agent inboxes, automated support handlers, email-to-task pipelines, or any workflow processing untrusted inbound email. Always use this skill when the user wants to receive emails and act on them programmatically, even if they don't mention &quot;agent&quot; — the skill contains critical security patterns (sender allowlists, content filtering, sandboxed processing) that prevent untrusted email from controlling your system.</p>
+          <p>2,874 words in SKILL.md; 4 bundled files; includes reference material. <a href="https://github.com/resend/resend-skills/blob/b2ae7b1798b70134faf679f35fc05b4331462988/skills/agent-email-inbox/SKILL.md" target="_blank" rel="noopener">Read the assessed SKILL.md</a>.</p>
+          <p><b>Score evidence:</b> Full points for structural checks, recent maintenance and instruction depth. Largest point gaps: boundary clause (0/4); curated-list citations (3/7).</p>
+          <details><summary>See all score components for agent-email-inbox</summary>
+        <div class="table-wrap">
+          <table class="facts">
+            <tbody>
+            <tr><th scope="row">Structural checks</th><td>56 of 56</td></tr>
+            <tr><th scope="row">Description length</th><td>5 of 5</td></tr>
+            <tr><th scope="row">Boundary clause</th><td>0 of 4</td></tr>
+            <tr><th scope="row">Example request</th><td>3 of 3</td></tr>
+            <tr><th scope="row">Instruction depth</th><td>7 of 7</td></tr>
+            <tr><th scope="row">Reference files</th><td>3 of 3</td></tr>
+            <tr><th scope="row">Bundled scripts</th><td>0 of 2</td></tr>
+            <tr><th scope="row">Recent maintenance</th><td>9 of 9</td></tr>
+            <tr><th scope="row">Curated-list citations</th><td>3 of 7</td></tr>
+            <tr><th scope="row">Tool permissions declared</th><td>0 of 2</td></tr>
+            <tr><th scope="row">Compatibility declared</th><td>0 of 2</td></tr>
+            </tbody>
+          </table>
+        </div>
+          </details>
+          <p><a href="https://github.com/resend/resend-skills/blob/main/LICENSE" target="_blank" rel="noopener">License</a>: MIT governs reuse and modification of these files.</p>
+          <ul><li>Named environment variables: <code>RESEND_API_KEY</code>, <code>RESEND_WEBHOOK_SECRET</code>.</li></ul>
+        <div class="snippet">
+          <div class="snippet-head"><span>Select one skill: agent-email-inbox</span><button type="button" class="snippet-copy" data-copy-target="collection-install-0">Copy</button></div>
+          <pre><code id="collection-install-0">npx skills add https://github.com/resend/resend-skills/tree/main/skills/agent-email-inbox</code></pre>
+        </div>
+          <p><a href="agent-email-inbox/report.json" download>Download agent-email-inbox score report</a> · <a href="agent-email-inbox/">Read the full agent-email-inbox review and install guide</a></p>
+        </article>
+        <article class="collection-choice" id="choice-email-best-practices">
+          <h3>email-best-practices <span class="grade grade-b">80/100 · B</span></h3>
+          <p><b>Publisher's task description:</b> Use when building email features, emails going to spam, high bounce rates, setting up SPF/DKIM/DMARC authentication, implementing email capture, ensuring compliance (CAN-SPAM, GDPR, CASL), handling webhooks, retry logic, making emails accessible (alt text, headings, contrast, screen readers), or deciding transactional vs marketing.</p>
+          <p>285 words in SKILL.md; 12 bundled files; includes reference material. <a href="https://github.com/resend/resend-skills/blob/b2ae7b1798b70134faf679f35fc05b4331462988/skills/email-best-practices/SKILL.md" target="_blank" rel="noopener">Read the assessed SKILL.md</a>.</p>
+          <p><b>Score evidence:</b> Full points for structural checks, recent maintenance and description length. Largest point gaps: boundary clause (0/4); curated-list citations (3/7).</p>
+          <details><summary>See all score components for email-best-practices</summary>
+        <div class="table-wrap">
+          <table class="facts">
+            <tbody>
+            <tr><th scope="row">Structural checks</th><td>56 of 56</td></tr>
+            <tr><th scope="row">Description length</th><td>5 of 5</td></tr>
+            <tr><th scope="row">Boundary clause</th><td>0 of 4</td></tr>
+            <tr><th scope="row">Example request</th><td>0 of 3</td></tr>
+            <tr><th scope="row">Instruction depth</th><td>4 of 7</td></tr>
+            <tr><th scope="row">Reference files</th><td>3 of 3</td></tr>
+            <tr><th scope="row">Bundled scripts</th><td>0 of 2</td></tr>
+            <tr><th scope="row">Recent maintenance</th><td>9 of 9</td></tr>
+            <tr><th scope="row">Curated-list citations</th><td>3 of 7</td></tr>
+            <tr><th scope="row">Tool permissions declared</th><td>0 of 2</td></tr>
+            <tr><th scope="row">Compatibility declared</th><td>0 of 2</td></tr>
+            </tbody>
+          </table>
+        </div>
+          </details>
+          <p><a href="https://github.com/resend/resend-skills/blob/main/LICENSE" target="_blank" rel="noopener">License</a>: MIT governs reuse and modification of these files.</p>
+        <div class="snippet">
+          <div class="snippet-head"><span>Select one skill: email-best-practices</span><button type="button" class="snippet-copy" data-copy-target="collection-install-1">Copy</button></div>
+          <pre><code id="collection-install-1">npx skills add https://github.com/resend/resend-skills/tree/main/skills/email-best-practices</code></pre>
+        </div>
+          <p><a href="email-best-practices/report.json" download>Download email-best-practices score report</a> · <a href="email-best-practices/">Read the full email-best-practices review and install guide</a></p>
+        </article>
+        <article class="collection-choice" id="choice-react-email">
+          <h3>react-email <span class="grade grade-b">83/100 · B</span></h3>
+          <p><b>Publisher's task description:</b> Use when building HTML email templates with React components, adding a visual email editor to an application using the React Email visual editor, rendering emails to HTML, or sending emails with Resend. Covers welcome emails, password resets, notifications, order confirmations, newsletters, transactional emails, and the embeddable email editor component.</p>
+          <p>1,767 words in SKILL.md; 7 bundled files; includes reference material. <a href="https://github.com/resend/resend-skills/blob/b2ae7b1798b70134faf679f35fc05b4331462988/skills/react-email/SKILL.md" target="_blank" rel="noopener">Read the assessed SKILL.md</a>.</p>
+          <p><b>Score evidence:</b> Full points for structural checks, recent maintenance and instruction depth. Largest point gaps: boundary clause (0/4); curated-list citations (3/7).</p>
+          <details><summary>See all score components for react-email</summary>
+        <div class="table-wrap">
+          <table class="facts">
+            <tbody>
+            <tr><th scope="row">Structural checks</th><td>56 of 56</td></tr>
+            <tr><th scope="row">Description length</th><td>5 of 5</td></tr>
+            <tr><th scope="row">Boundary clause</th><td>0 of 4</td></tr>
+            <tr><th scope="row">Example request</th><td>0 of 3</td></tr>
+            <tr><th scope="row">Instruction depth</th><td>7 of 7</td></tr>
+            <tr><th scope="row">Reference files</th><td>3 of 3</td></tr>
+            <tr><th scope="row">Bundled scripts</th><td>0 of 2</td></tr>
+            <tr><th scope="row">Recent maintenance</th><td>9 of 9</td></tr>
+            <tr><th scope="row">Curated-list citations</th><td>3 of 7</td></tr>
+            <tr><th scope="row">Tool permissions declared</th><td>0 of 2</td></tr>
+            <tr><th scope="row">Compatibility declared</th><td>0 of 2</td></tr>
+            </tbody>
+          </table>
+        </div>
+          </details>
+          <p><a href="https://github.com/resend/resend-skills/blob/main/LICENSE" target="_blank" rel="noopener">License</a>: MIT governs reuse and modification of these files.</p>
+          <ul><li>Named environment variables: <code>RESEND_API_KEY</code>.</li></ul>
+        <div class="snippet">
+          <div class="snippet-head"><span>Select one skill: react-email</span><button type="button" class="snippet-copy" data-copy-target="collection-install-2">Copy</button></div>
+          <pre><code id="collection-install-2">npx skills add https://github.com/resend/resend-skills/tree/main/skills/react-email</code></pre>
+        </div>
+          <p><a href="react-email/report.json" download>Download react-email score report</a> · <a href="react-email/">Read the full react-email review and install guide</a></p>
+        </article>
+        <article class="collection-choice" id="choice-resend">
+          <h3>resend <span class="grade grade-b">84/100 · B</span></h3>
+          <p><b>Publisher's task description:</b> Use when working with the Resend email API — sending transactional emails (single or batch), receiving inbound emails via webhooks, managing email templates, tracking delivery events, managing domains, contacts, broadcasts, webhooks, API keys, inboxes (threads, labels, drafts, replies), automations, events, viewing API request logs, checking account usage and quotas, or setting up the Resend SDK. Always use this skill when the user mentions Resend, even for simple tasks like &quot;send an email with Resend&quot; — the skill contains critical gotchas (idempotency keys, webhook verification, template variable syntax) that prevent common production issues.</p>
+          <p>1,522 words in SKILL.md; 23 bundled files; includes reference material. <a href="https://github.com/resend/resend-skills/blob/b2ae7b1798b70134faf679f35fc05b4331462988/skills/resend/SKILL.md" target="_blank" rel="noopener">Read the assessed SKILL.md</a>.</p>
+          <p><b>Score evidence:</b> Full points for structural checks, recent maintenance and instruction depth. Largest point gaps: boundary clause (0/4); curated-list citations (3/7).</p>
+          <details><summary>See all score components for resend</summary>
+        <div class="table-wrap">
+          <table class="facts">
+            <tbody>
+            <tr><th scope="row">Structural checks</th><td>56 of 56</td></tr>
+            <tr><th scope="row">Description length</th><td>3 of 5</td></tr>
+            <tr><th scope="row">Boundary clause</th><td>0 of 4</td></tr>
+            <tr><th scope="row">Example request</th><td>3 of 3</td></tr>
+            <tr><th scope="row">Instruction depth</th><td>7 of 7</td></tr>
+            <tr><th scope="row">Reference files</th><td>3 of 3</td></tr>
+            <tr><th scope="row">Bundled scripts</th><td>0 of 2</td></tr>
+            <tr><th scope="row">Recent maintenance</th><td>9 of 9</td></tr>
+            <tr><th scope="row">Curated-list citations</th><td>3 of 7</td></tr>
+            <tr><th scope="row">Tool permissions declared</th><td>0 of 2</td></tr>
+            <tr><th scope="row">Compatibility declared</th><td>0 of 2</td></tr>
+            </tbody>
+          </table>
+        </div>
+          </details>
+          <p><a href="https://github.com/resend/resend-skills/blob/main/LICENSE" target="_blank" rel="noopener">License</a>: MIT governs reuse and modification of these files.</p>
+          <ul><li>Named environment variables: <code>RESEND_API_KEY</code>, <code>RESEND_WEBHOOK_SECRET</code>.</li></ul>
+        <div class="snippet">
+          <div class="snippet-head"><span>Select one skill: resend</span><button type="button" class="snippet-copy" data-copy-target="collection-install-3">Copy</button></div>
+          <pre><code id="collection-install-3">npx skills add https://github.com/resend/resend-skills/tree/main/skills/resend</code></pre>
+        </div>
+          <p><a href="resend/report.json" download>Download resend score report</a> · <a href="resend/">Read the full resend review and install guide</a></p>
+        </article>
+        <article class="collection-choice" id="choice-resend-cli">
+          <h3>resend-cli <span class="grade grade-b">83/100 · B</span></h3>
+          <p><b>Publisher's task description:</b> Operate the Resend platform from the terminal — send emails (including React Email .tsx templates via --react-email), manage domains, contacts, broadcasts, templates, webhooks, API keys, logs, automations, and events via the `resend` CLI. Use when the user wants to run Resend commands in the shell, scripts, or CI/CD pipelines, or send/preview React Email templates. Always load this skill before running `resend` commands — it contains the non-interactive flag contract and gotchas that prevent silent failures.</p>
+          <p>1,303 words in SKILL.md; 19 bundled files; includes reference material. <a href="https://github.com/resend/resend-skills/blob/b2ae7b1798b70134faf679f35fc05b4331462988/skills/resend-cli/SKILL.md" target="_blank" rel="noopener">Read the assessed SKILL.md</a>.</p>
+          <p><b>Score evidence:</b> Full points for structural checks, recent maintenance and instruction depth. Largest point gaps: boundary clause (0/4); curated-list citations (3/7).</p>
+          <details><summary>See all score components for resend-cli</summary>
+        <div class="table-wrap">
+          <table class="facts">
+            <tbody>
+            <tr><th scope="row">Structural checks</th><td>56 of 56</td></tr>
+            <tr><th scope="row">Description length</th><td>5 of 5</td></tr>
+            <tr><th scope="row">Boundary clause</th><td>0 of 4</td></tr>
+            <tr><th scope="row">Example request</th><td>0 of 3</td></tr>
+            <tr><th scope="row">Instruction depth</th><td>7 of 7</td></tr>
+            <tr><th scope="row">Reference files</th><td>3 of 3</td></tr>
+            <tr><th scope="row">Bundled scripts</th><td>0 of 2</td></tr>
+            <tr><th scope="row">Recent maintenance</th><td>9 of 9</td></tr>
+            <tr><th scope="row">Curated-list citations</th><td>3 of 7</td></tr>
+            <tr><th scope="row">Tool permissions declared</th><td>0 of 2</td></tr>
+            <tr><th scope="row">Compatibility declared</th><td>0 of 2</td></tr>
+            </tbody>
+          </table>
+        </div>
+          </details>
+          <p><a href="https://github.com/resend/resend-skills/blob/main/LICENSE" target="_blank" rel="noopener">License</a>: MIT governs reuse and modification of these files.</p>
+          <ul><li>Named environment variables: <code>RESEND_API_KEY</code>.</li></ul>
+        <div class="snippet">
+          <div class="snippet-head"><span>Select one skill: resend-cli</span><button type="button" class="snippet-copy" data-copy-target="collection-install-4">Copy</button></div>
+          <pre><code id="collection-install-4">npx skills add https://github.com/resend/resend-skills/tree/main/skills/resend-cli</code></pre>
+        </div>
+          <p><a href="resend-cli/report.json" download>Download resend-cli score report</a> · <a href="resend-cli/">Read the full resend-cli review and install guide</a></p>
+        </article>
+      </section>
+      <section class="panel" id="collection-install" aria-labelledby="collection-install-title">
+        <h2 id="collection-install-title">Install and verify your selection</h2>
+        <ol>
+          <li><b>Select one skill.</b> Use the folder-specific command beside its description to start with the workflow you need. Skills with publisher-specific license terms link to that publisher's setup route.</li>
+          <li><b>Read the setup requirements.</b> Check the source, license and any named tools or environment variables. Installing a SKILL.md folder supplies instructions to the agent; any external CLI, MCP server, account or service still needs its own setup.</li>
+          <li><b>Check the result.</b> Open the installed SKILL.md and confirm that its name matches your selection. In Claude Code use the project's <code>.claude/skills/</code> folder; in Codex use <code>.agents/skills/</code>. The skills CLI also supports other Agent Skills hosts.</li>
+          <li><b>Try one representative task.</b> Supply the input files, expected output and success criteria. Compare the result with those criteria before adding more skills or running the workflow on live work.</li>
+        </ol>
+        <p><a href="../../guides/install-agent-skills/">Step-by-step installation for Claude Code, Codex and Cursor</a> · <a href="../../trust/">Read the directory's security and source policy</a>.</p>
+      </section>
+      <section class="panel" aria-labelledby="skills-title">
+        <h2 id="skills-title">Skills in resend/resend-skills</h2>
+        <p class="muted">Use the table to compare the full collection. Linked names open a detailed review when available; other names open the publisher's source folder.</p>
+
+        <div class="table-wrap">
+          <table class="skill-table" id="repo-skills" data-filter-group="repo-skills">
+            <thead><tr><th scope="col">Skill</th><th scope="col">Category</th><th scope="col">What it does</th></tr></thead>
+            <tbody>
+            <tr id="agent-email-inbox" data-id="resend/resend-skills/agent-email-inbox" data-name="agent-email-inbox" data-score="86" data-updated="2026-10-17" data-listed="2026-10-19" data-cited="2" data-lane="free-with-service" data-flags="official full-page badge-eligible references api-key" data-featured="1"><td class="name"><a href="agent-email-inbox/">agent-email-inbox</a> <span class="grade grade-b" title="Suede Skill Check: 86/100, grade B">86/100 · B</span></td><td class="meta"><a href="../../ai-agents-llm/">AI agents</a></td><td class="desc">Guides building email-triggered systems like AI agent inboxes, using sender allowlists, content filtering, and sandboxed processing to keep untrusted email from controlling the system.<p><a href="agent-email-inbox/#badge">Get badges</a></p><p class="row-report"><a href="agent-email-inbox/report.json" download="agent-email-inbox-suede-report-2026-10-22.json">Download report</a> · <a href="https://github.com/JasonColapietro/suede-creator-skills/issues/new?template=directory-listing.yml&amp;request=Recheck+my+updated+skill&amp;repository=https%3A%2F%2Fgithub.com%2Fresend%2Fresend-skills&amp;skill-scope=agent-email-inbox&amp;details=Listing%3A+https%3A%2F%2Fskills.suedeai.ai%2Fdirectory%2Fresend%2Fresend-skills%2Fagent-email-inbox%2F%0APrevious+report%3A+https%3A%2F%2Fskills.suedeai.ai%2Fdirectory%2Fresend%2Fresend-skills%2Fagent-email-inbox%2Freport.json%0ASnapshot%3A+2026-10-22+%280083645c3974488e8803884c7af76698%29%3B+methodology%3A+graded-v2%0A%0AUpdated+source+commit+or+PR%3A%0AChanges+to+review%3A%0A" target="_blank" rel="noopener">Request a fresh review</a></p></td></tr>
+            <tr id="email-best-practices" data-id="resend/resend-skills/email-best-practices" data-name="email-best-practices" data-score="80" data-updated="2026-10-17" data-listed="2026-10-19" data-cited="2" data-lane="free-open-source" data-flags="official full-page badge-eligible references no-setup" data-featured="1"><td class="name"><a href="email-best-practices/">email-best-practices</a> <span class="grade grade-b" title="Suede Skill Check: 80/100, grade B">80/100 · B</span></td><td class="meta"><a href="../../developer-tools/">Dev tools</a></td><td class="desc">Guides email feature work, including spam and bounce problems, SPF/DKIM/DMARC setup, compliance, webhooks, retry logic, accessibility, and transactional versus marketing email.<p><a href="email-best-practices/#badge">Get badges</a></p><p class="row-report"><a href="email-best-practices/report.json" download="email-best-practices-suede-report-2026-10-22.json">Download report</a> · <a href="https://github.com/JasonColapietro/suede-creator-skills/issues/new?template=directory-listing.yml&amp;request=Recheck+my+updated+skill&amp;repository=https%3A%2F%2Fgithub.com%2Fresend%2Fresend-skills&amp;skill-scope=email-best-practices&amp;details=Listing%3A+https%3A%2F%2Fskills.suedeai.ai%2Fdirectory%2Fresend%2Fresend-skills%2Femail-best-practices%2F%0APrevious+report%3A+https%3A%2F%2Fskills.suedeai.ai%2Fdirectory%2Fresend%2Fresend-skills%2Femail-best-practices%2Freport.json%0ASnapshot%3A+2026-10-22+%280083645c3974488e8803884c7af76698%29%3B+methodology%3A+graded-v2%0A%0AUpdated+source+commit+or+PR%3A%0AChanges+to+review%3A%0A" target="_blank" rel="noopener">Request a fresh review</a></p></td></tr>
+            <tr id="react-email" data-id="resend/resend-skills/react-email" data-name="react-email" data-score="83" data-updated="2026-10-17" data-listed="2026-10-19" data-cited="2" data-lane="free-with-service" data-flags="official full-page badge-eligible references api-key runs-commands" data-featured="1"><td class="name"><a href="react-email/">react-email</a> <span class="grade grade-b" title="Suede Skill Check: 83/100, grade B">83/100 · B</span></td><td class="meta"><a href="../../developer-tools/">Dev tools</a></td><td class="desc">Guides building HTML email templates with React components, rendering them to HTML, adding the visual email editor, and sending with Resend.<p><a href="react-email/#badge">Get badges</a></p><p class="row-report"><a href="react-email/report.json" download="react-email-suede-report-2026-10-22.json">Download report</a> · <a href="https://github.com/JasonColapietro/suede-creator-skills/issues/new?template=directory-listing.yml&amp;request=Recheck+my+updated+skill&amp;repository=https%3A%2F%2Fgithub.com%2Fresend%2Fresend-skills&amp;skill-scope=react-email&amp;details=Listing%3A+https%3A%2F%2Fskills.suedeai.ai%2Fdirectory%2Fresend%2Fresend-skills%2Freact-email%2F%0APrevious+report%3A+https%3A%2F%2Fskills.suedeai.ai%2Fdirectory%2Fresend%2Fresend-skills%2Freact-email%2Freport.json%0ASnapshot%3A+2026-10-22+%280083645c3974488e8803884c7af76698%29%3B+methodology%3A+graded-v2%0A%0AUpdated+source+commit+or+PR%3A%0AChanges+to+review%3A%0A" target="_blank" rel="noopener">Request a fresh review</a></p></td></tr>
+            <tr id="resend" data-id="resend/resend-skills/resend" data-name="resend" data-score="84" data-updated="2026-10-17" data-listed="2026-10-19" data-cited="2" data-lane="free-with-service" data-flags="official full-page badge-eligible references api-key" data-featured="1"><td class="name"><a href="resend/">resend</a> <span class="grade grade-b" title="Suede Skill Check: 84/100, grade B">84/100 · B</span></td><td class="meta"><a href="../../developer-tools/">Dev tools</a></td><td class="desc">Guides work with the Resend email API, including sending transactional emails, inbound webhooks, templates, delivery tracking, domains, contacts, broadcasts, and API keys.<p><a href="resend/#badge">Get badges</a></p><p class="row-report"><a href="resend/report.json" download="resend-suede-report-2026-10-22.json">Download report</a> · <a href="https://github.com/JasonColapietro/suede-creator-skills/issues/new?template=directory-listing.yml&amp;request=Recheck+my+updated+skill&amp;repository=https%3A%2F%2Fgithub.com%2Fresend%2Fresend-skills&amp;skill-scope=resend&amp;details=Listing%3A+https%3A%2F%2Fskills.suedeai.ai%2Fdirectory%2Fresend%2Fresend-skills%2Fresend%2F%0APrevious+report%3A+https%3A%2F%2Fskills.suedeai.ai%2Fdirectory%2Fresend%2Fresend-skills%2Fresend%2Freport.json%0ASnapshot%3A+2026-10-22+%280083645c3974488e8803884c7af76698%29%3B+methodology%3A+graded-v2%0A%0AUpdated+source+commit+or+PR%3A%0AChanges+to+review%3A%0A" target="_blank" rel="noopener">Request a fresh review</a></p></td></tr>
+            <tr id="resend-cli" data-id="resend/resend-skills/resend-cli" data-name="resend-cli" data-score="83" data-updated="2026-10-17" data-listed="2026-10-19" data-cited="2" data-lane="free-with-service" data-flags="official full-page badge-eligible references api-key runs-commands" data-featured="1"><td class="name"><a href="resend-cli/">resend-cli</a> <span class="grade grade-b" title="Suede Skill Check: 83/100, grade B">83/100 · B</span></td><td class="meta"><a href="../../developer-tools/">Dev tools</a></td><td class="desc">Operates the Resend platform from the terminal with the resend CLI, covering sending emails, domains, contacts, broadcasts, templates, webhooks, API keys, automations, and events.<p><a href="resend-cli/#badge">Get badges</a></p><p class="row-report"><a href="resend-cli/report.json" download="resend-cli-suede-report-2026-10-22.json">Download report</a> · <a href="https://github.com/JasonColapietro/suede-creator-skills/issues/new?template=directory-listing.yml&amp;request=Recheck+my+updated+skill&amp;repository=https%3A%2F%2Fgithub.com%2Fresend%2Fresend-skills&amp;skill-scope=resend-cli&amp;details=Listing%3A+https%3A%2F%2Fskills.suedeai.ai%2Fdirectory%2Fresend%2Fresend-skills%2Fresend-cli%2F%0APrevious+report%3A+https%3A%2F%2Fskills.suedeai.ai%2Fdirectory%2Fresend%2Fresend-skills%2Fresend-cli%2Freport.json%0ASnapshot%3A+2026-10-22+%280083645c3974488e8803884c7af76698%29%3B+methodology%3A+graded-v2%0A%0AUpdated+source+commit+or+PR%3A%0AChanges+to+review%3A%0A" target="_blank" rel="noopener">Request a fresh review</a></p></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section class="panel" id="collection-compare" aria-labelledby="collection-compare-title">
+        <h2 id="collection-compare-title">Compare before adding more skills</h2>
+        <p>For developer tools and frameworks, compare task fit first, then the score components, installation requirements and license. Two skills with the same score can earn their points in different ways; use their reports to see the difference.</p>
+        <p><a href="../../developer-tools/">Compare developer tools and frameworks skills across publishers</a> · <a href="../../compare/">Build a side-by-side comparison</a>.</p>
       </section>
       <section class="panel badge-panel" id="badge" aria-labelledby="badge-title">
         <h2 id="badge-title">Show the listing in your README</h2>
@@ -244,23 +448,6 @@
         <p>Add the badge to your README so readers can see the listing, then run the free Skill AI-visibility check to find the points you are missing.</p>
         <p><a class="button" href="../../check/" data-cta="publisher-claim:a-claim">Run the free check</a></p>
       </aside>
-      <section class="panel" aria-labelledby="skills-title">
-        <h2 id="skills-title">Skills in resend/resend-skills</h2>
-        <p class="muted">Linked names open the skill's directory page; the rest open the skill folder on GitHub. Descriptions on rows without a page are quoted from each SKILL.md.</p>
-
-        <div class="table-wrap">
-          <table class="skill-table" id="repo-skills" data-filter-group="repo-skills">
-            <thead><tr><th scope="col">Skill</th><th scope="col">Category</th><th scope="col">What it does</th></tr></thead>
-            <tbody>
-            <tr id="agent-email-inbox" data-id="resend/resend-skills/agent-email-inbox" data-name="agent-email-inbox" data-score="86" data-updated="2026-10-17" data-listed="2026-10-19" data-cited="2" data-lane="free-with-service" data-flags="official full-page badge-eligible references api-key" data-featured="1"><td class="name"><a href="agent-email-inbox/">agent-email-inbox</a> <span class="grade grade-b" title="Suede Skill Check: 86/100, grade B">86/100 · B</span></td><td class="meta"><a href="../../ai-agents-llm/">AI agents</a></td><td class="desc">Guides building email-triggered systems like AI agent inboxes, using sender allowlists, content filtering, and sandboxed processing to keep untrusted email from controlling the system.<p><a href="agent-email-inbox/#badge">Get badges</a></p><p class="row-report"><a href="agent-email-inbox/report.json" download="agent-email-inbox-suede-report-2026-10-22.json">Download report</a> · <a href="https://github.com/JasonColapietro/suede-creator-skills/issues/new?template=directory-listing.yml&amp;request=Recheck+my+updated+skill&amp;repository=https%3A%2F%2Fgithub.com%2Fresend%2Fresend-skills&amp;skill-scope=agent-email-inbox&amp;details=Listing%3A+https%3A%2F%2Fskills.suedeai.ai%2Fdirectory%2Fresend%2Fresend-skills%2Fagent-email-inbox%2F%0APrevious+report%3A+https%3A%2F%2Fskills.suedeai.ai%2Fdirectory%2Fresend%2Fresend-skills%2Fagent-email-inbox%2Freport.json%0ASnapshot%3A+2026-10-22+%280083645c3974488e8803884c7af76698%29%3B+methodology%3A+graded-v2%0A%0AUpdated+source+commit+or+PR%3A%0AChanges+to+review%3A%0A" target="_blank" rel="noopener">Request a fresh review</a></p></td></tr>
-            <tr id="email-best-practices" data-id="resend/resend-skills/email-best-practices" data-name="email-best-practices" data-score="80" data-updated="2026-10-17" data-listed="2026-10-19" data-cited="2" data-lane="free-open-source" data-flags="official full-page badge-eligible references no-setup" data-featured="1"><td class="name"><a href="email-best-practices/">email-best-practices</a> <span class="grade grade-b" title="Suede Skill Check: 80/100, grade B">80/100 · B</span></td><td class="meta"><a href="../../developer-tools/">Dev tools</a></td><td class="desc">Guides email feature work, including spam and bounce problems, SPF/DKIM/DMARC setup, compliance, webhooks, retry logic, accessibility, and transactional versus marketing email.<p><a href="email-best-practices/#badge">Get badges</a></p><p class="row-report"><a href="email-best-practices/report.json" download="email-best-practices-suede-report-2026-10-22.json">Download report</a> · <a href="https://github.com/JasonColapietro/suede-creator-skills/issues/new?template=directory-listing.yml&amp;request=Recheck+my+updated+skill&amp;repository=https%3A%2F%2Fgithub.com%2Fresend%2Fresend-skills&amp;skill-scope=email-best-practices&amp;details=Listing%3A+https%3A%2F%2Fskills.suedeai.ai%2Fdirectory%2Fresend%2Fresend-skills%2Femail-best-practices%2F%0APrevious+report%3A+https%3A%2F%2Fskills.suedeai.ai%2Fdirectory%2Fresend%2Fresend-skills%2Femail-best-practices%2Freport.json%0ASnapshot%3A+2026-10-22+%280083645c3974488e8803884c7af76698%29%3B+methodology%3A+graded-v2%0A%0AUpdated+source+commit+or+PR%3A%0AChanges+to+review%3A%0A" target="_blank" rel="noopener">Request a fresh review</a></p></td></tr>
-            <tr id="react-email" data-id="resend/resend-skills/react-email" data-name="react-email" data-score="83" data-updated="2026-10-17" data-listed="2026-10-19" data-cited="2" data-lane="free-with-service" data-flags="official full-page badge-eligible references api-key runs-commands" data-featured="1"><td class="name"><a href="react-email/">react-email</a> <span class="grade grade-b" title="Suede Skill Check: 83/100, grade B">83/100 · B</span></td><td class="meta"><a href="../../developer-tools/">Dev tools</a></td><td class="desc">Guides building HTML email templates with React components, rendering them to HTML, adding the visual email editor, and sending with Resend.<p><a href="react-email/#badge">Get badges</a></p><p class="row-report"><a href="react-email/report.json" download="react-email-suede-report-2026-10-22.json">Download report</a> · <a href="https://github.com/JasonColapietro/suede-creator-skills/issues/new?template=directory-listing.yml&amp;request=Recheck+my+updated+skill&amp;repository=https%3A%2F%2Fgithub.com%2Fresend%2Fresend-skills&amp;skill-scope=react-email&amp;details=Listing%3A+https%3A%2F%2Fskills.suedeai.ai%2Fdirectory%2Fresend%2Fresend-skills%2Freact-email%2F%0APrevious+report%3A+https%3A%2F%2Fskills.suedeai.ai%2Fdirectory%2Fresend%2Fresend-skills%2Freact-email%2Freport.json%0ASnapshot%3A+2026-10-22+%280083645c3974488e8803884c7af76698%29%3B+methodology%3A+graded-v2%0A%0AUpdated+source+commit+or+PR%3A%0AChanges+to+review%3A%0A" target="_blank" rel="noopener">Request a fresh review</a></p></td></tr>
-            <tr id="resend" data-id="resend/resend-skills/resend" data-name="resend" data-score="84" data-updated="2026-10-17" data-listed="2026-10-19" data-cited="2" data-lane="free-with-service" data-flags="official full-page badge-eligible references api-key" data-featured="1"><td class="name"><a href="resend/">resend</a> <span class="grade grade-b" title="Suede Skill Check: 84/100, grade B">84/100 · B</span></td><td class="meta"><a href="../../developer-tools/">Dev tools</a></td><td class="desc">Guides work with the Resend email API, including sending transactional emails, inbound webhooks, templates, delivery tracking, domains, contacts, broadcasts, and API keys.<p><a href="resend/#badge">Get badges</a></p><p class="row-report"><a href="resend/report.json" download="resend-suede-report-2026-10-22.json">Download report</a> · <a href="https://github.com/JasonColapietro/suede-creator-skills/issues/new?template=directory-listing.yml&amp;request=Recheck+my+updated+skill&amp;repository=https%3A%2F%2Fgithub.com%2Fresend%2Fresend-skills&amp;skill-scope=resend&amp;details=Listing%3A+https%3A%2F%2Fskills.suedeai.ai%2Fdirectory%2Fresend%2Fresend-skills%2Fresend%2F%0APrevious+report%3A+https%3A%2F%2Fskills.suedeai.ai%2Fdirectory%2Fresend%2Fresend-skills%2Fresend%2Freport.json%0ASnapshot%3A+2026-10-22+%280083645c3974488e8803884c7af76698%29%3B+methodology%3A+graded-v2%0A%0AUpdated+source+commit+or+PR%3A%0AChanges+to+review%3A%0A" target="_blank" rel="noopener">Request a fresh review</a></p></td></tr>
-            <tr id="resend-cli" data-id="resend/resend-skills/resend-cli" data-name="resend-cli" data-score="83" data-updated="2026-10-17" data-listed="2026-10-19" data-cited="2" data-lane="free-with-service" data-flags="official full-page badge-eligible references api-key runs-commands" data-featured="1"><td class="name"><a href="resend-cli/">resend-cli</a> <span class="grade grade-b" title="Suede Skill Check: 83/100, grade B">83/100 · B</span></td><td class="meta"><a href="../../developer-tools/">Dev tools</a></td><td class="desc">Operates the Resend platform from the terminal with the resend CLI, covering sending emails, domains, contacts, broadcasts, templates, webhooks, API keys, automations, and events.<p><a href="resend-cli/#badge">Get badges</a></p><p class="row-report"><a href="resend-cli/report.json" download="resend-cli-suede-report-2026-10-22.json">Download report</a> · <a href="https://github.com/JasonColapietro/suede-creator-skills/issues/new?template=directory-listing.yml&amp;request=Recheck+my+updated+skill&amp;repository=https%3A%2F%2Fgithub.com%2Fresend%2Fresend-skills&amp;skill-scope=resend-cli&amp;details=Listing%3A+https%3A%2F%2Fskills.suedeai.ai%2Fdirectory%2Fresend%2Fresend-skills%2Fresend-cli%2F%0APrevious+report%3A+https%3A%2F%2Fskills.suedeai.ai%2Fdirectory%2Fresend%2Fresend-skills%2Fresend-cli%2Freport.json%0ASnapshot%3A+2026-10-22+%280083645c3974488e8803884c7af76698%29%3B+methodology%3A+graded-v2%0A%0AUpdated+source+commit+or+PR%3A%0AChanges+to+review%3A%0A" target="_blank" rel="noopener">Request a fresh review</a></p></td></tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
       <aside class="panel svc-cta" aria-labelledby="svc-title" data-services-cta="repository">
         <h2 class="svc-kicker" id="svc-title">From Suede AI, the publisher of this directory</h2>
         <div class="svc-cards">

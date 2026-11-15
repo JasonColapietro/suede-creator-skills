@@ -1,0 +1,540 @@
+{
+  "schema_version": 1,
+  "repository": "ohad6k/emulo",
+  "listing_url": "https://skills.suedeai.ai/directory/ohad6k/emulo/",
+  "snapshot": {
+    "date": "2026-10-22",
+    "id": "0083645c3974488e8803884c7af76698",
+    "dataset_sha256": "b73996d45961aa527b4cea74a41a2e44497200dba9b2f85411e3602ab5f56641"
+  },
+  "listed_skill_count": 5,
+  "scope": "Skills listed by the directory; this is not a complete inventory of every file in the repository.",
+  "security_scan_status": "not_scanned",
+  "skills": [
+    {
+      "id": "ohad6k/emulo/design",
+      "name": "design",
+      "description": "Use for UI, UX, visual hierarchy, frontend-design judgment, references, redesigns, and design critique when the user's Emulo taste should guide the task. Do not use for unrelated execution or marketing/social writing alone.",
+      "category": "frontend-design",
+      "license": "MIT",
+      "license_url": "https://github.com/ohad6k/emulo/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "5b6745f0ecbb11027d5dfdc3c97778b0fbd273fe",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-02",
+        "skill_md_url": "https://github.com/ohad6k/emulo/blob/5b6745f0ecbb11027d5dfdc3c97778b0fbd273fe/skills/design/SKILL.md"
+      },
+      "quality": {
+        "score": 77,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/ohad6k/emulo/design/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/ohad6k/emulo/design/",
+      "source_folder_url": "https://github.com/ohad6k/emulo/tree/main/skills/design",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/ohad6k/emulo/tree/main/skills/design",
+        "publisher_setup_url": "https://github.com/ohad6k/emulo/blob/main/skills/design/SKILL.md"
+      }
+    },
+    {
+      "id": "ohad6k/emulo/mine",
+      "name": "mine",
+      "description": "Use only when the user explicitly asks to run, set up, update, re-mine, or deepen Emulo from real local AI coding-session history.",
+      "category": "ai-agents-llm",
+      "license": "MIT",
+      "license_url": "https://github.com/ohad6k/emulo/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "5b6745f0ecbb11027d5dfdc3c97778b0fbd273fe",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-02",
+        "skill_md_url": "https://github.com/ohad6k/emulo/blob/5b6745f0ecbb11027d5dfdc3c97778b0fbd273fe/skills/mine/SKILL.md"
+      },
+      "quality": {
+        "score": 75,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/ohad6k/emulo/mine/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/ohad6k/emulo/mine/",
+      "source_folder_url": "https://github.com/ohad6k/emulo/tree/main/skills/mine",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/ohad6k/emulo/tree/main/skills/mine",
+        "publisher_setup_url": "https://github.com/ohad6k/emulo/blob/main/skills/mine/SKILL.md"
+      }
+    },
+    {
+      "id": "ohad6k/emulo/work",
+      "name": "work",
+      "description": "Use for execution, debugging, verification, planning, and shipping when the user's Emulo working profile should guide the task. Do not use for design/UI/UX work, marketing or social writing, or Emulo setup/mining.",
+      "category": "ai-agents-llm",
+      "license": "MIT",
+      "license_url": "https://github.com/ohad6k/emulo/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "5b6745f0ecbb11027d5dfdc3c97778b0fbd273fe",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-02",
+        "skill_md_url": "https://github.com/ohad6k/emulo/blob/5b6745f0ecbb11027d5dfdc3c97778b0fbd273fe/skills/work/SKILL.md"
+      },
+      "quality": {
+        "score": 77,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/ohad6k/emulo/work/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/ohad6k/emulo/work/",
+      "source_folder_url": "https://github.com/ohad6k/emulo/tree/main/skills/work",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/ohad6k/emulo/tree/main/skills/work",
+        "publisher_setup_url": "https://github.com/ohad6k/emulo/blob/main/skills/work/SKILL.md"
+      }
+    },
+    {
+      "id": "ohad6k/emulo/write",
+      "name": "write",
+      "description": "Use for marketing, social, replies, product copy, launch copy, and writing in the user's voice when their Emulo writing profile should guide the task. Do not use for unrelated execution or UI/UX design alone.",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/ohad6k/emulo/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "5b6745f0ecbb11027d5dfdc3c97778b0fbd273fe",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-02",
+        "skill_md_url": "https://github.com/ohad6k/emulo/blob/5b6745f0ecbb11027d5dfdc3c97778b0fbd273fe/skills/write/SKILL.md"
+      },
+      "quality": {
+        "score": 81,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/ohad6k/emulo/write/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/ohad6k/emulo/write/",
+      "source_folder_url": "https://github.com/ohad6k/emulo/tree/main/skills/write",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/ohad6k/emulo/tree/main/skills/write",
+        "publisher_setup_url": "https://github.com/ohad6k/emulo/blob/main/skills/write/SKILL.md"
+      }
+    },
+    {
+      "id": "ohad6k/emulo/video",
+      "name": "video",
+      "description": "Use when a brief has to become a film. Turns a one line ask into a Claude Design prompt written in the animations-v3 engine's own language, plus the built piece.jsx and a contact sheet to look at before anyone renders. Covers reference roles, the kit, the storyboard gate, the motion floor, and the verification commands. Do not use for backend work, UI design, or marketing copy alone.",
+      "category": "media-creative",
+      "license": "MIT",
+      "license_url": "https://github.com/ohad6k/emulo/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "5b6745f0ecbb11027d5dfdc3c97778b0fbd273fe",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-02",
+        "skill_md_url": "https://github.com/ohad6k/emulo/blob/5b6745f0ecbb11027d5dfdc3c97778b0fbd273fe/skills/video/SKILL.md"
+      },
+      "quality": {
+        "score": 70,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": false,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/ohad6k/emulo/video/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/ohad6k/emulo/tree/main/skills/video",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/ohad6k/emulo/tree/main/skills/video",
+        "publisher_setup_url": "https://github.com/ohad6k/emulo/blob/main/skills/video/SKILL.md"
+      }
+    }
+  ]
+}

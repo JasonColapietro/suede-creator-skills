@@ -1,0 +1,435 @@
+{
+  "schema_version": 1,
+  "repository": "costory-io/costory-finops-mcp-skills",
+  "listing_url": "https://skills.suedeai.ai/directory/costory-io/costory-finops-mcp-skills/",
+  "snapshot": {
+    "date": "2026-10-22",
+    "id": "0083645c3974488e8803884c7af76698",
+    "dataset_sha256": "b73996d45961aa527b4cea74a41a2e44497200dba9b2f85411e3602ab5f56641"
+  },
+  "listed_skill_count": 4,
+  "scope": "Skills listed by the directory; this is not a complete inventory of every file in the repository.",
+  "security_scan_status": "not_scanned",
+  "skills": [
+    {
+      "id": "costory-io/costory-finops-mcp-skills/bigquery",
+      "name": "bigquery",
+      "description": "Use when the user asks about BigQuery costs, SKUs, on-demand Analysis vs capacity slots/editions, leftover on-demand, physical vs logical storage, time travel or fail-safe, streaming ingest, load/import jobs consuming a reservation, dbt or job labels, slot cost reallocation, dataset/table storage allocation, or unlabeled expensive queries. Call get_skill with skillId \"bigquery\" before investigating BigQuery spend or cloning the [BigQuery] dashboard. Not for GCP spend-based CUDs (recipes gcp-spend-cud).",
+      "category": "data-databases",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/costory-io/costory-finops-mcp-skills/blob/main/plugins/costory/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "38438bd87c39b1df3f07ca80e6577579c4c039ba",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-19",
+        "skill_md_url": "https://github.com/costory-io/costory-finops-mcp-skills/blob/38438bd87c39b1df3f07ca80e6577579c4c039ba/plugins/costory/skills/bigquery/SKILL.md"
+      },
+      "quality": {
+        "score": 85,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/costory-io/costory-finops-mcp-skills/bigquery/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/costory-io/costory-finops-mcp-skills/bigquery/",
+      "source_folder_url": "https://github.com/costory-io/costory-finops-mcp-skills/tree/main/plugins/costory/skills/bigquery",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/costory-io/costory-finops-mcp-skills/tree/main/plugins/costory/skills/bigquery",
+        "publisher_setup_url": "https://docs.costory.io/features/mcp"
+      }
+    },
+    {
+      "id": "costory-io/costory-finops-mcp-skills/cost-change-investigation",
+      "name": "cost-change-investigation",
+      "description": "Use when investigating a cost change to explain what changed, when, and the best-supported drivers with contribution, timing, usage, metric, event, alert, and terminology evidence. Call get_skill with skillId \"cost-change-investigation\" before starting the investigation.",
+      "category": "business-finance",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/costory-io/costory-finops-mcp-skills/blob/main/plugins/costory/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "38438bd87c39b1df3f07ca80e6577579c4c039ba",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-19",
+        "skill_md_url": "https://github.com/costory-io/costory-finops-mcp-skills/blob/38438bd87c39b1df3f07ca80e6577579c4c039ba/plugins/costory/skills/cost-change-investigation/SKILL.md"
+      },
+      "quality": {
+        "score": 81,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/costory-io/costory-finops-mcp-skills/cost-change-investigation/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/costory-io/costory-finops-mcp-skills/cost-change-investigation/",
+      "source_folder_url": "https://github.com/costory-io/costory-finops-mcp-skills/tree/main/plugins/costory/skills/cost-change-investigation",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/costory-io/costory-finops-mcp-skills/tree/main/plugins/costory/skills/cost-change-investigation",
+        "publisher_setup_url": "https://docs.costory.io/features/mcp"
+      }
+    },
+    {
+      "id": "costory-io/costory-finops-mcp-skills/costory-finops",
+      "name": "costory-finops",
+      "description": "Use when the user asks about cloud, Kubernetes, SaaS or AI spend through Costory: why a bill moved, cost by team/service/namespace, unit economics, budgets, allocating shared or untagged cost, or building Costory dashboards, scheduled reports and cost alerts. Covers org selection, the tool order, preview-then-confirm rules for write tools, and when to load the detailed Costory skills with get_skill.",
+      "category": "business-finance",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/costory-io/costory-finops-mcp-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "38438bd87c39b1df3f07ca80e6577579c4c039ba",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-19",
+        "skill_md_url": "https://github.com/costory-io/costory-finops-mcp-skills/blob/38438bd87c39b1df3f07ca80e6577579c4c039ba/powers/costory/skills/costory-finops/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/costory-io/costory-finops-mcp-skills/costory-finops/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/costory-io/costory-finops-mcp-skills/costory-finops/",
+      "source_folder_url": "https://github.com/costory-io/costory-finops-mcp-skills/tree/main/powers/costory/skills/costory-finops",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/costory-io/costory-finops-mcp-skills/tree/main/powers/costory/skills/costory-finops",
+        "publisher_setup_url": "https://docs.costory.io/features/mcp"
+      }
+    },
+    {
+      "id": "costory-io/costory-finops-mcp-skills/virtual-dimensions",
+      "name": "virtual-dimensions",
+      "description": "Use when creating, editing, previewing, or publishing Costory virtual dimensions (custom cost axes) with ordered CEL rules, leftover buckets, overlap/shadowing checks, or telemetry split-by-usage allocations. Call get_skill with skillId \"virtual-dimensions\" before create_virtual_dimension_draft or update_virtual_dimension_draft.",
+      "category": "data-databases",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/costory-io/costory-finops-mcp-skills/blob/main/plugins/costory/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "38438bd87c39b1df3f07ca80e6577579c4c039ba",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-19",
+        "skill_md_url": "https://github.com/costory-io/costory-finops-mcp-skills/blob/38438bd87c39b1df3f07ca80e6577579c4c039ba/plugins/costory/skills/virtual-dimensions/SKILL.md"
+      },
+      "quality": {
+        "score": 81,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/costory-io/costory-finops-mcp-skills/virtual-dimensions/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/costory-io/costory-finops-mcp-skills/virtual-dimensions/",
+      "source_folder_url": "https://github.com/costory-io/costory-finops-mcp-skills/tree/main/plugins/costory/skills/virtual-dimensions",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/costory-io/costory-finops-mcp-skills/tree/main/plugins/costory/skills/virtual-dimensions",
+        "publisher_setup_url": "https://docs.costory.io/features/mcp"
+      }
+    }
+  ]
+}

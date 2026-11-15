@@ -71,6 +71,14 @@ for (const k of ["offer_long", "partners_intro", "button"]) if (typeof PROMOTION
 if (PROMOTION.ends_at !== null && (!/^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\dZ$/.test(PROMOTION.ends_at) || !Number.isFinite(Date.parse(PROMOTION.ends_at)))) throw new Error("promotion.json: ends_at must be null or a UTC timestamp");
 if (SCORE_METHOD !== "graded-v2" || data.score_method !== SCORE_METHOD || CHECKS.map((c) => c.id).join() !== "frontmatter,name_format,name_matches_folder,description_length,description_trigger,concise_body,license,maintained") throw new Error("Unsupported directory score method");
 const NOTES = JSON.parse(fs.readFileSync(path.join(repoRoot, "directory", "notes.json"), "utf8"));
+const REPO_GUIDES = JSON.parse(fs.readFileSync(path.join(repoRoot, "directory", "repository-guides.json"), "utf8"));
+for (const [repo, guide] of Object.entries(REPO_GUIDES)) {
+  const revision = data.repos[repo]?.commit_sha;
+  if (!revision || !guide.source.startsWith(`https://github.com/${repo}/blob/${revision}/`)) throw new Error(`repository-guides.json: ${repo} needs a source at the assessed revision`);
+  for (const key of ["summary", "heading", "inputs", "prompt"]) if (typeof guide[key] !== "string" || !guide[key].trim()) throw new Error(`repository-guides.json: ${repo} needs ${key}`);
+  if (!Array.isArray(guide.steps) || guide.steps.length < 3 || guide.steps.some((s) => typeof s !== "string" || !s.trim())) throw new Error(`repository-guides.json: ${repo} needs workflow steps`);
+  if (guide.setup_commands && (!Array.isArray(guide.setup_commands) || guide.setup_commands.some((s) => typeof s !== "string" || !s.trim()))) throw new Error(`repository-guides.json: ${repo} has invalid setup commands`);
+}
 const EDITORIAL = JSON.parse(fs.readFileSync(path.join(repoRoot, "directory", "featured-projects.json"), "utf8"));
 const PROJECTS = featuredProjects(EDITORIAL);
 const MEMBERS = directoryMembers(EDITORIAL);
@@ -1748,14 +1756,114 @@ ${servicesCta("skill", s.category, here, { compact: true, publisher: publisherCl
 
 // ------------------------------------------------------------------ repository pages
 
+// Small collections show every skill in full. Large collections start with
+// the highest-scoring skill in each category, then fill by score. The complete
+// sortable table stays below this decision aid; no published URLs disappear.
+function collectionPicks(r) {
+  if (r.skills.length <= 6) return r.skills;
+  const ranked = [...r.skills].sort((a, b) => b.score - a.score || a.id.localeCompare(b.id));
+  const picked = [];
+  for (const s of ranked) if (!picked.some((o) => o.category === s.category) && picked.length < 6) picked.push(s);
+  for (const s of ranked) if (!picked.includes(s) && picked.length < 6) picked.push(s);
+  return picked;
+}
+
+function collectionWorkflow(r) {
+  const guide = REPO_GUIDES[r.repo];
+  if (!guide) return "";
+  return `      <section class="panel" aria-labelledby="collection-workflow-title">
+        <h2 id="collection-workflow-title">${esc(guide.heading)}</h2>
+        <p>${esc(guide.inputs)}</p>
+        <ol>${guide.steps.map((step) => `<li>${esc(step)}</li>`).join("")}</ol>
+${guide.setup_commands ? `        <p>The publisher's setup sequence installs the CLI and browser support. Installing the skill alone does not install these dependencies.</p>\n${codeBlock({ label: "Publisher CLI setup", key: "collection-cli-setup" }, guide.setup_commands.join("\n"))}\n` : ""}
+${codeBlock({ label: "Example request to adapt", key: "collection-example" }, guide.prompt)}
+        <p class="muted">Suggested evaluation workflow, based on the <a href="${esc(guide.source)}" target="_blank" rel="noopener">publisher's instructions at the assessed revision</a>. The prompt is an example to adapt to your task.</p>
+      </section>`;
+}
+
+function collectionChoice(here, s, index) {
+  const report = skillReport(s);
+  const drivers = fullPointDrivers(s);
+  const gaps = s.score_parts.filter((p) => p.points < p.max).sort((a, b) => (b.max - b.points) - (a.max - a.points)).slice(0, 2);
+  const kind = licenseKind(s);
+  const i = s.install;
+  const setup = NOTES[s.id];
+  const requirements = [
+    `${plural(s.body_words, "word")} in SKILL.md; ${plural(s.file_count, "bundled file")}`,
+    s.has_references ? "includes reference material" : null,
+    s.has_scripts ? "includes a scripts folder" : null,
+    s.has_assets ? "includes assets or templates" : null,
+  ].filter(Boolean).join("; ");
+  const credentials = [...new Set([...(i?.env_read || []), ...(i?.env_docs || [])])];
+  const operational = [
+    credentials.length ? `<li>Named environment variables: ${credentials.map((v) => `<code>${esc(v)}</code>`).join(", ")}.</li>` : "",
+    i?.hosts?.length ? `<li>Named external hosts: ${i.hosts.map((v) => `<code>${esc(v)}</code>`).join(", ")}.</li>` : "",
+    s.compatibility ? `<li>Publisher compatibility declaration: ${esc(s.compatibility)}.</li>` : "",
+    s.allowed_tools ? `<li>Requested tools: <code>${esc(s.allowed_tools)}</code>.</li>` : "",
+  ].filter(Boolean).join("");
+  const license = kind === "noncommercial" ? `${s.license} allows non-commercial use. Read the publisher's terms before using it in a commercial workflow.`
+    : kind === "restricted" ? `${s.license} restricts copying. Use the publisher's installation route.`
+      : kind === "open" ? `${s.license} governs reuse and modification of these files.` : `Reuse is governed by ${s.license}; read the linked license for the applicable terms.`;
+  const command = kind === "restricted" ? "" : codeBlock({ label: `Select one skill: ${esc(displayName(s))}`, key: `collection-install-${index}` }, `npx skills add ${shq(skillTreeUrl(s))}`);
+  return `        <article class="collection-choice" id="choice-${esc(s.slug)}">
+          <h3>${esc(displayName(s))} <span class="grade grade-${s.grade.toLowerCase()}">${s.score}/100 · ${s.grade}</span></h3>
+          <p><b>Publisher's task description:</b> ${esc(s.description)}</p>
+          <p>${esc(requirements)}. <a href="${esc(report.source.skill_md_url)}" target="_blank" rel="noopener">Read the assessed SKILL.md</a>${s.assessment_date ? ` (${longDate(s.assessment_date)})` : ""}.</p>
+          <p><b>Score evidence:</b> ${esc(drivers.length ? `Full points for ${listPhrase(drivers)}.` : "Points are itemized in the report.")} ${esc(gaps.length ? `Largest point gaps: ${gaps.map((p) => `${p.label.toLowerCase()} (${p.points}/${p.max})`).join("; ")}.` : "Every rubric component earned its available points; the published score is capped at 99.")}</p>
+          <details><summary>See all score components for ${esc(displayName(s))}</summary>
+${factsTable(s.score_parts.map((p) => [esc(p.label), `${p.points} of ${p.max}`]))}
+          </details>
+          <p><a href="${esc(s.license_url)}" target="_blank" rel="noopener">License</a>: ${esc(license)}</p>
+${operational ? `          <ul>${operational}</ul>\n` : ""}${setup?.text ? `          <p>${esc(setup.text)} <a href="${esc(setup.source)}" target="_blank" rel="noopener">Publisher setup instructions</a>.</p>\n` : ""}${command}
+          <p><a href="${rel(here, `${skillPath(s)}report.json`)}" download>Download ${esc(displayName(s))} score report</a>${s.featured || s.full_page ? ` · <a href="${rel(here, skillPath(s))}">Read the full ${esc(displayName(s))} review and install guide</a>` : ` · <a href="${esc(s.folder_url)}" target="_blank" rel="noopener">Browse the skill's source folder</a>`}</p>
+        </article>`;
+}
+
+function collectionUtility(here, r) {
+  const picks = collectionPicks(r);
+  const scores = r.skills.map((s) => s.score);
+  const scoreRange = Math.min(...scores) === Math.max(...scores) ? `${scores[0]}/100` : `${Math.min(...scores)}–${Math.max(...scores)}/100`;
+  const full = r.skills.filter((s) => s.featured || s.full_page).length;
+  const lead = REPO_GUIDES[r.repo]?.summary || (r.skills.length === 1
+    ? `${displayName(picks[0])}: ${fitSentences(picks[0].summary || picks[0].description, 240) || trimTo(picks[0].description, 240)}`
+    : `${r.repo} brings together ${plural(r.skills.length, "skill")} for ${r.categories.map((c) => catBySlug.get(c).lower).join(", ")}. Start with the task descriptions below, then compare the individual skill's score, source files and license.`);
+  return {
+    lead,
+    html: `      <section class="panel" id="collection-overview" aria-labelledby="collection-overview-title">
+        <h2 id="collection-overview-title">What this collection offers</h2>
+        <p>${esc(plural(r.skills.length, "listed skill"))}; recorded ${r.skills.length === 1 ? "score" : "scores"} ${scoreRange}.${full ? ` ${plural(full, "full review")} with separate installation details.` : ""} Scores describe the saved source snapshot, using the <a href="${rel(here, "directory/methodology/")}#score">Suede Skill Check</a>.</p>
+        <p>Coverage: ${r.categories.map((c) => `<a href="${rel(here, catPath(c))}">${esc(catBySlug.get(c).title)}</a> (${r.skills.filter((s) => s.category === c).length})`).join(" · ")}.</p>
+        <p class="muted">Snapshot: <time datetime="${snapshot.date}">${longDate(snapshot.date)}</time>. The checks measure published files, documentation and maintenance signals. Security scan: not scanned; this is not a runtime test.</p>
+        <p><a href="#choose-skill">Choose a skill</a> · <a href="#collection-install">Install and verify</a> · <a href="#skills-title">All listed skills</a> · <a href="#collection-compare">Compare collections</a></p>
+        <p><a href="collection.json" download="${esc(r.name)}-collection.json">Download the collection manifest</a>: complete task descriptions, scores, license information, source revisions and install routes for ${r.skills.length === 1 ? "the listed skill" : `all ${plural(r.skills.length, "listed skill")}`}. Use it to compare options or hand your selection to an agent.</p>
+      </section>
+${collectionWorkflow(r)}
+      <section class="panel" id="choose-skill" aria-labelledby="choose-skill-title">
+        <h2 id="choose-skill-title">${r.skills.length === 1 ? "Use this skill for your task" : "Choose a skill for your task"}</h2>
+        <p>${picks.length === r.skills.length ? "Every listed skill in this collection is explained below." : `Start with these ${picks.length} skills: the highest recorded score per category, then the highest remaining scores. The complete table below includes all ${fmt(r.skills.length)} listings.`} Task descriptions come from the publisher; score explanations come from the saved report.</p>
+${picks.map((s, index) => collectionChoice(here, s, index)).join("\n")}
+      </section>
+      <section class="panel" id="collection-install" aria-labelledby="collection-install-title">
+        <h2 id="collection-install-title">Install and verify your selection</h2>
+        <ol>
+          <li><b>Select one skill.</b> Use the folder-specific command beside its description${r.withheld || r.scopedInstall || (r.hasRootSkill && r.skills.length > 1) ? "; a whole-repository install can include other files or miss nested skills, so use the listed skill's folder" : " to start with the workflow you need"}. Skills with publisher-specific license terms link to that publisher's setup route.</li>
+          <li><b>Read the setup requirements.</b> Check the source, license and any named tools or environment variables. Installing a SKILL.md folder supplies instructions to the agent; any external CLI, MCP server, account or service still needs its own setup.</li>
+          <li><b>Check the result.</b> Open the installed SKILL.md and confirm that its name matches your selection. In Claude Code use the project's <code>.claude/skills/</code> folder; in Codex use <code>.agents/skills/</code>. The skills CLI also supports other Agent Skills hosts.</li>
+          <li><b>Try one representative task.</b> Supply the input files, expected output and success criteria. Compare the result with those criteria before adding more skills or running the workflow on live work.</li>
+        </ol>
+        <p><a href="${rel(here, "directory/guides/install-agent-skills/")}">Step-by-step installation for Claude Code, Codex and Cursor</a> · <a href="${rel(here, "directory/trust/")}">Read the directory's security and source policy</a>.</p>
+      </section>`,
+  };
+}
+
 function renderRepo(r) {
   const here = `directory/${r.slug}/`;
   const primary = catBySlug.get(r.primary);
   const bc = crumbs(here, [["directory/", "Directory"], [catPath(primary.slug), primary.title], [null, r.repo]]);
   const catLinks = r.categories.map((c) => `<a href="${rel(here, catPath(c))}">${esc(catBySlug.get(c).title)}</a>`);
   const licenseText = r.licenseCounts.length === 1 ? r.licenseCounts[0][0] : r.licenseCounts.map(([l, n]) => `${l} (${fmt(n)})`).join(", ");
-  const where = r.categories.length === 1 ? `in ${catBySlug.get(r.primary).lower}` : `across ${plural(r.categories.length, "category", "categories")}`;
-  const lead = `${plural(r.skills.length, "skill")} from ${r.repo} ${r.skills.length === 1 ? "is" : "are"} listed in the directory, ${where}.${r.featuredCount ? ` ${plural(r.featuredCount, "skill")} ${r.featuredCount === 1 ? "has" : "have"} a full page with install steps and a pre-install summary.` : ""}`;
+  const utility = collectionUtility(here, r);
+  const lead = utility.lead;
   const facts = factsTable([
     ["Publisher", `<a href="https://github.com/${esc(r.owner)}" target="_blank" rel="noopener">${esc(r.publisher)}</a>${officialTag(r.official)}`],
     ["Repository", `<a href="https://github.com/${esc(r.repo)}" target="_blank" rel="noopener">github.com/${esc(r.repo)}</a>`],
@@ -1782,23 +1890,29 @@ function renderRepo(r) {
         <h2 id="facts-title">At a glance</h2>
 ${facts}
       </section>
-${serviceNote}${badgeBlock(here, {
+${serviceNote}${utility.html}
+      <section class="panel" aria-labelledby="skills-title">
+        <h2 id="skills-title">Skills in ${esc(r.repo)}</h2>
+        <p class="muted">Use the table to compare the full collection. Linked names open a detailed review when available; other names open the publisher's source folder.</p>
+${r.skills.length > 30 ? filterField("repo-skills", r.skills.length, "skills") : ""}
+${skillTable(here, r.skills, { id: "repo-skills", showRepo: false, caption: "skills", showLicense: r.licenseCounts.length > 1 })}
+      </section>
+      <section class="panel" id="collection-compare" aria-labelledby="collection-compare-title">
+        <h2 id="collection-compare-title">Compare before adding more skills</h2>
+        <p>For ${esc(primary.lower)}, compare task fit first, then the score components, installation requirements and license. Two skills with the same score can earn their points in different ways; use their reports to see the difference.</p>
+        <p><a href="${rel(here, catPath(r.primary))}">Compare ${esc(primary.lower)} skills across publishers</a> · <a href="${rel(here, "directory/compare/")}">Build a side-by-side comparison</a>.</p>
+      </section>
+${badgeBlock(here, {
   badgePath: `${here}badge.svg`,
   value: "listed",
   target: url(here),
   heading: "Show the listing in your README",
   lede: r.skills.some((s) => s.shielded)
     ? `This general badge links to the repository listing. For the two quality badges and feature offer, choose <b>Get badges</b> beside a skill below. Each skill keeps its own score and grade.`
-    : `This general badge links to the repository listing. Each skill keeps its own score and grade; skills scoring 80–99 add a numeric and a letter quality badge. Choose <b>Improve this score</b> beside a skill below to request a fresh review.`,
+    : `This general badge links to the repository listing. Each skill keeps its own score and grade; skills scoring 80–99 add a numeric and a letter quality badge. Choose <b>Improve this score</b> in the skill table to request a fresh review.`,
 })}
 ${promotionOffer(here)}
 ${campaignPanel(here, publisherClaim(here))}
-      <section class="panel" aria-labelledby="skills-title">
-        <h2 id="skills-title">Skills in ${esc(r.repo)}</h2>
-        <p class="muted">Linked names open the skill's directory page; the rest open the skill folder on GitHub. Descriptions on rows without a page are quoted from each SKILL.md.</p>
-${r.skills.length > 30 ? filterField("repo-skills", r.skills.length, "skills") : ""}
-${skillTable(here, r.skills, { id: "repo-skills", showRepo: false, caption: "skills", showLicense: r.licenseCounts.length > 1 })}
-      </section>
 ${servicesCta("repository", r.primary, here)}
       <section class="panel" aria-labelledby="cited-title">
         <h2 id="cited-title">Where this repository is cited</h2>
@@ -1851,6 +1965,27 @@ ${relatedRepos.map((o) => `          <a class="link-row" href="${rel(here, o.tar
     footerNote: `${esc(r.repo)} is listed in the Suede AI Skills Directory, a curated index of public Agent Skills for Claude Code, Codex and other agents.`,
   }));
   files.set(`${here}badge.svg`, badgeSvg("listed").svg);
+  files.set(`${here}collection.json`, JSON.stringify({
+    schema_version: 1,
+    repository: r.repo,
+    listing_url: url(here),
+    snapshot: { date: snapshot.date, id: data.snapshot_id, dataset_sha256: snapshot.sha256 },
+    listed_skill_count: r.skills.length,
+    scope: "Skills listed by the directory; this is not a complete inventory of every file in the repository.",
+    security_scan_status: "not_scanned",
+    skills: r.skills.map((s) => {
+      const report = skillReport(s);
+      return {
+        id: s.id, name: displayName(s), description: s.description, category: s.category,
+        license: s.license, license_url: s.license_url, license_kind: licenseKind(s),
+        source: report.source, quality: report.quality,
+        report_url: `${url(skillPath(s))}report.json`,
+        review_url: s.featured || s.full_page ? url(skillPath(s)) : null,
+        source_folder_url: s.folder_url,
+        install: { skills_cli: licenseKind(s) === "restricted" ? null : `npx skills add ${shq(skillTreeUrl(s))}`, publisher_setup_url: NOTES[s.id]?.source || s.skill_md_url },
+      };
+    }),
+  }, null, 2) + "\n");
 }
 
 // ------------------------------------------------------------------ category pages

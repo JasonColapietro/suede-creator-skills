@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "repository": "Octav-Labs/octav-api-skill",
+  "listing_url": "https://skills.suedeai.ai/directory/octav-labs/octav-api-skill/",
+  "snapshot": {
+    "date": "2026-10-22",
+    "id": "0083645c3974488e8803884c7af76698",
+    "dataset_sha256": "b73996d45961aa527b4cea74a41a2e44497200dba9b2f85411e3602ab5f56641"
+  },
+  "listed_skill_count": 1,
+  "scope": "Skills listed by the directory; this is not a complete inventory of every file in the repository.",
+  "security_scan_status": "not_scanned",
+  "skills": [
+    {
+      "id": "octav-labs/octav-api-skill/octav-api",
+      "name": "octav-api",
+      "description": "Integrate with Octav API for cryptocurrency portfolio tracking, transaction history, and DeFi analytics across 50+ blockchain networks. Use when building applications that need to: (1) Track wallet balances and net worth across multiple chains, (2) Query transaction history with filtering and search, (3) Monitor DeFi protocol positions (Aave, Uniswap, etc.), (4) Access historical portfolio snapshots, (5) Analyze token distribution and holdings, (6) Pay per request as an autonomous agent via x402. Triggers on: \"Octav API\", \"crypto portfolio API\", \"blockchain portfolio tracking\", \"DeFi analytics API\", \"wallet balance API\", \"transaction history API\", \"multi-chain portfolio\", \"Octav x402\".",
+      "category": "business-finance",
+      "license": "MIT",
+      "license_url": "https://github.com/Octav-Labs/octav-api-skill/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "0c1a8632543a31dc36f82df1d93f6b2bba640d21",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-05",
+        "skill_md_url": "https://github.com/Octav-Labs/octav-api-skill/blob/0c1a8632543a31dc36f82df1d93f6b2bba640d21/SKILL.md"
+      },
+      "quality": {
+        "score": 70,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": false,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/octav-labs/octav-api-skill/octav-api/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/Octav-Labs/octav-api-skill",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/Octav-Labs/octav-api-skill",
+        "publisher_setup_url": "https://github.com/Octav-Labs/octav-api-skill/blob/main/SKILL.md"
+      }
+    }
+  ]
+}

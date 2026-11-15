@@ -1,0 +1,5580 @@
+{
+  "schema_version": 1,
+  "repository": "NeoLabHQ/context-engineering-kit",
+  "listing_url": "https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/",
+  "snapshot": {
+    "date": "2026-10-22",
+    "id": "0083645c3974488e8803884c7af76698",
+    "dataset_sha256": "b73996d45961aa527b4cea74a41a2e44497200dba9b2f85411e3602ab5f56641"
+  },
+  "listed_skill_count": 53,
+  "scope": "Skills listed by the directory; this is not a complete inventory of every file in the repository.",
+  "security_scan_status": "not_scanned",
+  "skills": [
+    {
+      "id": "neolabhq/context-engineering-kit/brainstorm",
+      "name": "brainstorm",
+      "description": "Use when creating or developing, before writing code or implementation plans - refines rough ideas into fully-formed designs through collaborative questioning, alternative exploration, and incremental validation. Don't use during clear 'mechanical' processes",
+      "category": "productivity-knowledge",
+      "license": "GPL-3.0",
+      "license_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "master",
+        "revision": "23e2428e809d77717f8acc9659c374a3a1fcb93e",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-26",
+        "skill_md_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/23e2428e809d77717f8acc9659c374a3a1fcb93e/skills/brainstorm/SKILL.md"
+      },
+      "quality": {
+        "score": 82,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/brainstorm/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/brainstorm/",
+      "source_folder_url": "https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/brainstorm",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/brainstorm",
+        "publisher_setup_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/skills/brainstorm/SKILL.md"
+      }
+    },
+    {
+      "id": "neolabhq/context-engineering-kit/git-notes",
+      "name": "git-notes",
+      "description": "Use when adding metadata to commits without changing history, tracking review status, test results, code quality annotations, or supplementing commit messages post-hoc - provides git notes commands and patterns for attaching non-invasive metadata to Git objects.",
+      "category": "developer-tools",
+      "license": "GPL-3.0",
+      "license_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "master",
+        "revision": "23e2428e809d77717f8acc9659c374a3a1fcb93e",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-26",
+        "skill_md_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/23e2428e809d77717f8acc9659c374a3a1fcb93e/skills/git-notes/SKILL.md"
+      },
+      "quality": {
+        "score": 78,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/git-notes/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/git-notes/",
+      "source_folder_url": "https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/git-notes",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/git-notes",
+        "publisher_setup_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/skills/git-notes/SKILL.md"
+      }
+    },
+    {
+      "id": "neolabhq/context-engineering-kit/load-pr-comments",
+      "name": "load-pr-comments",
+      "description": "Use to load open/unresolved PR review comments then aggregate them as tasks in .specs/comments/*.md for parallel agents to fix.",
+      "category": "code-review-quality",
+      "license": "GPL-3.0",
+      "license_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "master",
+        "revision": "23e2428e809d77717f8acc9659c374a3a1fcb93e",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-26",
+        "skill_md_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/23e2428e809d77717f8acc9659c374a3a1fcb93e/skills/load-pr-comments/SKILL.md"
+      },
+      "quality": {
+        "score": 76,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/load-pr-comments/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/load-pr-comments/",
+      "source_folder_url": "https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/load-pr-comments",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/load-pr-comments",
+        "publisher_setup_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/skills/load-pr-comments/SKILL.md"
+      }
+    },
+    {
+      "id": "neolabhq/context-engineering-kit/multi-agent-patterns",
+      "name": "multi-agent-patterns",
+      "description": "Design multi-agent architectures for complex tasks. Use when single-agent context limits are exceeded, when tasks decompose naturally into subtasks, or when specializing agents improves quality.",
+      "category": "ai-agents-llm",
+      "license": "GPL-3.0",
+      "license_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "master",
+        "revision": "23e2428e809d77717f8acc9659c374a3a1fcb93e",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-26",
+        "skill_md_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/23e2428e809d77717f8acc9659c374a3a1fcb93e/skills/multi-agent-patterns/SKILL.md"
+      },
+      "quality": {
+        "score": 75,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/multi-agent-patterns/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/multi-agent-patterns/",
+      "source_folder_url": "https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/multi-agent-patterns",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/multi-agent-patterns",
+        "publisher_setup_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/skills/multi-agent-patterns/SKILL.md"
+      }
+    },
+    {
+      "id": "neolabhq/context-engineering-kit/review-local-changes",
+      "name": "review-local-changes",
+      "description": "Review your local uncommitted working-tree changes (git diff plus untracked files) and return actionable improvement suggestions. Use before committing, when nothing has been pushed yet.",
+      "category": "code-review-quality",
+      "license": "GPL-3.0",
+      "license_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "master",
+        "revision": "23e2428e809d77717f8acc9659c374a3a1fcb93e",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-26",
+        "skill_md_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/23e2428e809d77717f8acc9659c374a3a1fcb93e/skills/review-local-changes/SKILL.md"
+      },
+      "quality": {
+        "score": 78,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/review-local-changes/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/review-local-changes/",
+      "source_folder_url": "https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/review-local-changes",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/review-local-changes",
+        "publisher_setup_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/skills/review-local-changes/SKILL.md"
+      }
+    },
+    {
+      "id": "neolabhq/context-engineering-kit/review-pr",
+      "name": "review-pr",
+      "description": "Review an existing GitHub pull request and post inline review comments on its diff. Use when the changes are on an opened PR rather than your local working tree.",
+      "category": "code-review-quality",
+      "license": "GPL-3.0",
+      "license_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "master",
+        "revision": "23e2428e809d77717f8acc9659c374a3a1fcb93e",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-26",
+        "skill_md_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/23e2428e809d77717f8acc9659c374a3a1fcb93e/skills/review-pr/SKILL.md"
+      },
+      "quality": {
+        "score": 78,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/review-pr/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/review-pr/",
+      "source_folder_url": "https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/review-pr",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/review-pr",
+        "publisher_setup_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/skills/review-pr/SKILL.md"
+      }
+    },
+    {
+      "id": "neolabhq/context-engineering-kit/root-cause-tracing",
+      "name": "root-cause-tracing",
+      "description": "Use when errors occur deep in execution and you need to trace back to find the original trigger - systematically traces bugs backward through call stack, adding instrumentation when needed, to identify source of invalid data or incorrect behavior",
+      "category": "testing-qa",
+      "license": "GPL-3.0",
+      "license_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "master",
+        "revision": "23e2428e809d77717f8acc9659c374a3a1fcb93e",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-26",
+        "skill_md_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/23e2428e809d77717f8acc9659c374a3a1fcb93e/skills/root-cause-tracing/SKILL.md"
+      },
+      "quality": {
+        "score": 78,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/root-cause-tracing/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/root-cause-tracing/",
+      "source_folder_url": "https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/root-cause-tracing",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/root-cause-tracing",
+        "publisher_setup_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/skills/root-cause-tracing/SKILL.md"
+      }
+    },
+    {
+      "id": "neolabhq/context-engineering-kit/subagent-driven-development",
+      "name": "subagent-driven-development",
+      "description": "Use when executing implementation plans with independent tasks in the current session or facing 3+ independent issues that can be investigated without shared state or dependencies - dispatches fresh subagent for each task with code review between tasks, enabling fast iteration with quality gates",
+      "category": "ai-agents-llm",
+      "license": "GPL-3.0",
+      "license_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "master",
+        "revision": "23e2428e809d77717f8acc9659c374a3a1fcb93e",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-26",
+        "skill_md_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/23e2428e809d77717f8acc9659c374a3a1fcb93e/skills/subagent-driven-development/SKILL.md"
+      },
+      "quality": {
+        "score": 78,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/subagent-driven-development/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/subagent-driven-development/",
+      "source_folder_url": "https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/subagent-driven-development",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/subagent-driven-development",
+        "publisher_setup_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/skills/subagent-driven-development/SKILL.md"
+      }
+    },
+    {
+      "id": "neolabhq/context-engineering-kit/test-skill",
+      "name": "test-skill",
+      "description": "Use when creating or editing skills, before deployment, to verify they work under pressure and resist rationalization - applies RED-GREEN-REFACTOR cycle to process documentation by running baseline without skill, writing to address failures, iterating to close loopholes",
+      "category": "ai-agents-llm",
+      "license": "GPL-3.0",
+      "license_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "master",
+        "revision": "23e2428e809d77717f8acc9659c374a3a1fcb93e",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-26",
+        "skill_md_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/23e2428e809d77717f8acc9659c374a3a1fcb93e/skills/test-skill/SKILL.md"
+      },
+      "quality": {
+        "score": 78,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/test-skill/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/test-skill/",
+      "source_folder_url": "https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/test-skill",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/test-skill",
+        "publisher_setup_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/skills/test-skill/SKILL.md"
+      }
+    },
+    {
+      "id": "neolabhq/context-engineering-kit/traiage-review",
+      "name": "traiage-review",
+      "description": "This skill should be used when need prioritize what changed code in repository human must review.",
+      "category": "code-review-quality",
+      "license": "GPL-3.0",
+      "license_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "master",
+        "revision": "23e2428e809d77717f8acc9659c374a3a1fcb93e",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-26",
+        "skill_md_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/23e2428e809d77717f8acc9659c374a3a1fcb93e/skills/traiage-review/SKILL.md"
+      },
+      "quality": {
+        "score": 74,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/traiage-review/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/traiage-review/",
+      "source_folder_url": "https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/traiage-review",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/traiage-review",
+        "publisher_setup_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/skills/traiage-review/SKILL.md"
+      }
+    },
+    {
+      "id": "neolabhq/context-engineering-kit/write-tests",
+      "name": "write-tests",
+      "description": "Add missing test coverage for your local code changes by generating new test files (covers uncommitted and untracked changes, or the latest commit if everything is committed). Use when you want write tests for new logic or increase test coverage.",
+      "category": "testing-qa",
+      "license": "GPL-3.0",
+      "license_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "master",
+        "revision": "23e2428e809d77717f8acc9659c374a3a1fcb93e",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-26",
+        "skill_md_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/23e2428e809d77717f8acc9659c374a3a1fcb93e/skills/write-tests/SKILL.md"
+      },
+      "quality": {
+        "score": 78,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/write-tests/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/write-tests/",
+      "source_folder_url": "https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/write-tests",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/write-tests",
+        "publisher_setup_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/skills/write-tests/SKILL.md"
+      }
+    },
+    {
+      "id": "neolabhq/context-engineering-kit/actualize",
+      "name": "actualize",
+      "description": "Reconcile the project's FPF state with recent repository changes",
+      "category": "ai-agents-llm",
+      "license": "GPL-3.0",
+      "license_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "master",
+        "revision": "23e2428e809d77717f8acc9659c374a3a1fcb93e",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-26",
+        "skill_md_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/23e2428e809d77717f8acc9659c374a3a1fcb93e/skills/actualize/SKILL.md"
+      },
+      "quality": {
+        "score": 66,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/actualize/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/actualize",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/actualize",
+        "publisher_setup_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/skills/actualize/SKILL.md"
+      }
+    },
+    {
+      "id": "neolabhq/context-engineering-kit/add-task",
+      "name": "add-task",
+      "description": "creates draft task file in .specs/tasks/draft/ with original user intent",
+      "category": "productivity-knowledge",
+      "license": "GPL-3.0",
+      "license_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "master",
+        "revision": "23e2428e809d77717f8acc9659c374a3a1fcb93e",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-26",
+        "skill_md_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/23e2428e809d77717f8acc9659c374a3a1fcb93e/skills/add-task/SKILL.md"
+      },
+      "quality": {
+        "score": 66,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/add-task/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/add-task",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/add-task",
+        "publisher_setup_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/skills/add-task/SKILL.md"
+      }
+    },
+    {
+      "id": "neolabhq/context-engineering-kit/agent-evaluation",
+      "name": "agent-evaluation",
+      "description": "Evaluate and improve Claude Code commands, skills, and agents. Use when testing prompt effectiveness, validating context engineering choices, or measuring improvement quality.",
+      "category": "ai-agents-llm",
+      "license": "GPL-3.0",
+      "license_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "master",
+        "revision": "23e2428e809d77717f8acc9659c374a3a1fcb93e",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-26",
+        "skill_md_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/23e2428e809d77717f8acc9659c374a3a1fcb93e/skills/agent-evaluation/SKILL.md"
+      },
+      "quality": {
+        "score": 64,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": false,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/agent-evaluation/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/agent-evaluation",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/agent-evaluation",
+        "publisher_setup_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/skills/agent-evaluation/SKILL.md"
+      }
+    },
+    {
+      "id": "neolabhq/context-engineering-kit/analyse-problem",
+      "name": "analyse-problem",
+      "description": "Comprehensive A3 one-page problem analysis with root cause and action plan",
+      "category": "productivity-knowledge",
+      "license": "GPL-3.0",
+      "license_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "master",
+        "revision": "23e2428e809d77717f8acc9659c374a3a1fcb93e",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-26",
+        "skill_md_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/23e2428e809d77717f8acc9659c374a3a1fcb93e/skills/analyse-problem/SKILL.md"
+      },
+      "quality": {
+        "score": 66,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/analyse-problem/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/analyse-problem",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/analyse-problem",
+        "publisher_setup_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/skills/analyse-problem/SKILL.md"
+      }
+    },
+    {
+      "id": "neolabhq/context-engineering-kit/analyze-issue",
+      "name": "analyze-issue",
+      "description": "Analyze a GitHub issue and create a detailed technical specification",
+      "category": "developer-tools",
+      "license": "GPL-3.0",
+      "license_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "master",
+        "revision": "23e2428e809d77717f8acc9659c374a3a1fcb93e",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-26",
+        "skill_md_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/23e2428e809d77717f8acc9659c374a3a1fcb93e/skills/analyze-issue/SKILL.md"
+      },
+      "quality": {
+        "score": 63,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/analyze-issue/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/analyze-issue",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/analyze-issue",
+        "publisher_setup_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/skills/analyze-issue/SKILL.md"
+      }
+    },
+    {
+      "id": "neolabhq/context-engineering-kit/apply-anthropic-skill-best-practices",
+      "name": "apply-anthropic-skill-best-practices",
+      "description": "Comprehensive guide for skill development based on Anthropic's official best practices - use for complex skills requiring detailed structure",
+      "category": "ai-agents-llm",
+      "license": "GPL-3.0",
+      "license_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "master",
+        "revision": "23e2428e809d77717f8acc9659c374a3a1fcb93e",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-26",
+        "skill_md_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/23e2428e809d77717f8acc9659c374a3a1fcb93e/skills/apply-anthropic-skill-best-practices/SKILL.md"
+      },
+      "quality": {
+        "score": 62,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": false,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/apply-anthropic-skill-best-practices/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/apply-anthropic-skill-best-practices",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/apply-anthropic-skill-best-practices",
+        "publisher_setup_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/skills/apply-anthropic-skill-best-practices/SKILL.md"
+      }
+    },
+    {
+      "id": "neolabhq/context-engineering-kit/cause-and-effect",
+      "name": "cause-and-effect",
+      "description": "Systematic Fishbone analysis exploring problem causes across six categories",
+      "category": "productivity-knowledge",
+      "license": "GPL-3.0",
+      "license_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "master",
+        "revision": "23e2428e809d77717f8acc9659c374a3a1fcb93e",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-26",
+        "skill_md_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/23e2428e809d77717f8acc9659c374a3a1fcb93e/skills/cause-and-effect/SKILL.md"
+      },
+      "quality": {
+        "score": 66,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/cause-and-effect/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/cause-and-effect",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/cause-and-effect",
+        "publisher_setup_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/skills/cause-and-effect/SKILL.md"
+      }
+    },
+    {
+      "id": "neolabhq/context-engineering-kit/commit",
+      "name": "commit",
+      "description": "Create well-formatted commits with conventional commit messages and emoji",
+      "category": "developer-tools",
+      "license": "GPL-3.0",
+      "license_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "master",
+        "revision": "23e2428e809d77717f8acc9659c374a3a1fcb93e",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-26",
+        "skill_md_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/23e2428e809d77717f8acc9659c374a3a1fcb93e/skills/commit/SKILL.md"
+      },
+      "quality": {
+        "score": 66,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/commit/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/commit",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/commit",
+        "publisher_setup_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/skills/commit/SKILL.md"
+      }
+    },
+    {
+      "id": "neolabhq/context-engineering-kit/context-engineering",
+      "name": "context-engineering",
+      "description": "Understand the components, mechanics, and constraints of context in agent systems. Use when writing, editing, or optimizing commands, skills, or sub-agents prompts.",
+      "category": "ai-agents-llm",
+      "license": "GPL-3.0",
+      "license_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "master",
+        "revision": "23e2428e809d77717f8acc9659c374a3a1fcb93e",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-26",
+        "skill_md_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/23e2428e809d77717f8acc9659c374a3a1fcb93e/skills/context-engineering/SKILL.md"
+      },
+      "quality": {
+        "score": 64,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": false,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/context-engineering/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/context-engineering",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/context-engineering",
+        "publisher_setup_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/skills/context-engineering/SKILL.md"
+      }
+    },
+    {
+      "id": "neolabhq/context-engineering-kit/create-agent",
+      "name": "create-agent",
+      "description": "Comprehensive guide for creating Claude Code agents with proper structure, triggering conditions, system prompts, and validation - combines official Anthropic best practices with proven patterns",
+      "category": "ai-agents-llm",
+      "license": "GPL-3.0",
+      "license_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "master",
+        "revision": "23e2428e809d77717f8acc9659c374a3a1fcb93e",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-26",
+        "skill_md_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/23e2428e809d77717f8acc9659c374a3a1fcb93e/skills/create-agent/SKILL.md"
+      },
+      "quality": {
+        "score": 70,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": false,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/create-agent/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/create-agent",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/create-agent",
+        "publisher_setup_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/skills/create-agent/SKILL.md"
+      }
+    },
+    {
+      "id": "neolabhq/context-engineering-kit/create-command",
+      "name": "create-command",
+      "description": "Interactive assistant for creating new Claude commands with proper structure, patterns, and MCP tool integration",
+      "category": "ai-agents-llm",
+      "license": "GPL-3.0",
+      "license_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "master",
+        "revision": "23e2428e809d77717f8acc9659c374a3a1fcb93e",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-26",
+        "skill_md_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/23e2428e809d77717f8acc9659c374a3a1fcb93e/skills/create-command/SKILL.md"
+      },
+      "quality": {
+        "score": 68,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": false,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/create-command/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/create-command",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/create-command",
+        "publisher_setup_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/skills/create-command/SKILL.md"
+      }
+    },
+    {
+      "id": "neolabhq/context-engineering-kit/create-ideas",
+      "name": "create-ideas",
+      "description": "Generate ideas in one shot using creative sampling",
+      "category": "productivity-knowledge",
+      "license": "GPL-3.0",
+      "license_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "master",
+        "revision": "23e2428e809d77717f8acc9659c374a3a1fcb93e",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-26",
+        "skill_md_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/23e2428e809d77717f8acc9659c374a3a1fcb93e/skills/create-ideas/SKILL.md"
+      },
+      "quality": {
+        "score": 60,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/create-ideas/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/create-ideas",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/create-ideas",
+        "publisher_setup_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/skills/create-ideas/SKILL.md"
+      }
+    },
+    {
+      "id": "neolabhq/context-engineering-kit/create-pr",
+      "name": "create-pr",
+      "description": "Create pull requests using GitHub CLI with proper templates and formatting",
+      "category": "developer-tools",
+      "license": "GPL-3.0",
+      "license_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "master",
+        "revision": "23e2428e809d77717f8acc9659c374a3a1fcb93e",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-26",
+        "skill_md_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/23e2428e809d77717f8acc9659c374a3a1fcb93e/skills/create-pr/SKILL.md"
+      },
+      "quality": {
+        "score": 66,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/create-pr/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/create-pr",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/create-pr",
+        "publisher_setup_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/skills/create-pr/SKILL.md"
+      }
+    },
+    {
+      "id": "neolabhq/context-engineering-kit/create-rule",
+      "name": "create-rule",
+      "description": "Use when found gap or repetative issue, that produced by you or implemenataion agent. Esentially use it each time when you say \"You absolutly right, I should have done it differently.\" -> need create rule for this issue so it not appears again.",
+      "category": "ai-agents-llm",
+      "license": "GPL-3.0",
+      "license_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "master",
+        "revision": "23e2428e809d77717f8acc9659c374a3a1fcb93e",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-26",
+        "skill_md_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/23e2428e809d77717f8acc9659c374a3a1fcb93e/skills/create-rule/SKILL.md"
+      },
+      "quality": {
+        "score": 70,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": false,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/create-rule/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/create-rule",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/create-rule",
+        "publisher_setup_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/skills/create-rule/SKILL.md"
+      }
+    },
+    {
+      "id": "neolabhq/context-engineering-kit/create-skill",
+      "name": "create-skill",
+      "description": "Guide for creating effective skills. This command should be used when users want to create a new skill (or update an existing skill) that extends Claude's capabilities with specialized knowledge, workflows, or tool integrations. Use when creating new skills, editing existing skills, or verifying skills work before deployment - applies TDD to process documentation by testing with subagents before writing, iterating until bulletproof against rationalization",
+      "category": "ai-agents-llm",
+      "license": "GPL-3.0",
+      "license_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "master",
+        "revision": "23e2428e809d77717f8acc9659c374a3a1fcb93e",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-26",
+        "skill_md_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/23e2428e809d77717f8acc9659c374a3a1fcb93e/skills/create-skill/SKILL.md"
+      },
+      "quality": {
+        "score": 67,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": false,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/create-skill/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/create-skill",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/create-skill",
+        "publisher_setup_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/skills/create-skill/SKILL.md"
+      }
+    },
+    {
+      "id": "neolabhq/context-engineering-kit/create-workflow-command",
+      "name": "create-workflow-command",
+      "description": "Create a workflow command that orchestrates multi-step execution through sub-agents with file-based task prompts",
+      "category": "ai-agents-llm",
+      "license": "GPL-3.0",
+      "license_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "master",
+        "revision": "23e2428e809d77717f8acc9659c374a3a1fcb93e",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-26",
+        "skill_md_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/23e2428e809d77717f8acc9659c374a3a1fcb93e/skills/create-workflow-command/SKILL.md"
+      },
+      "quality": {
+        "score": 68,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/create-workflow-command/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/create-workflow-command",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/create-workflow-command",
+        "publisher_setup_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/skills/create-workflow-command/SKILL.md"
+      }
+    },
+    {
+      "id": "neolabhq/context-engineering-kit/critique",
+      "name": "critique",
+      "description": "Comprehensive multi-perspective review using specialized judges with debate and consensus building",
+      "category": "code-review-quality",
+      "license": "GPL-3.0",
+      "license_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "master",
+        "revision": "23e2428e809d77717f8acc9659c374a3a1fcb93e",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-26",
+        "skill_md_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/23e2428e809d77717f8acc9659c374a3a1fcb93e/skills/critique/SKILL.md"
+      },
+      "quality": {
+        "score": 66,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/critique/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/critique",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/critique",
+        "publisher_setup_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/skills/critique/SKILL.md"
+      }
+    },
+    {
+      "id": "neolabhq/context-engineering-kit/decay",
+      "name": "decay",
+      "description": "Manage evidence freshness by identifying stale decisions and providing governance actions",
+      "category": "ai-agents-llm",
+      "license": "GPL-3.0",
+      "license_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "master",
+        "revision": "23e2428e809d77717f8acc9659c374a3a1fcb93e",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-26",
+        "skill_md_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/23e2428e809d77717f8acc9659c374a3a1fcb93e/skills/decay/SKILL.md"
+      },
+      "quality": {
+        "score": 66,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/decay/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/decay",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/decay",
+        "publisher_setup_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/skills/decay/SKILL.md"
+      }
+    },
+    {
+      "id": "neolabhq/context-engineering-kit/do-in-parallel",
+      "name": "do-in-parallel",
+      "description": "Run independent tasks concurrently across multiple files or targets using parallel sub-agents, with per-task model selection and LLM-as-a-judge verification. Use when tasks do not depend on each other and can run side by side.",
+      "category": "ai-agents-llm",
+      "license": "GPL-3.0",
+      "license_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "master",
+        "revision": "23e2428e809d77717f8acc9659c374a3a1fcb93e",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-26",
+        "skill_md_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/23e2428e809d77717f8acc9659c374a3a1fcb93e/skills/do-in-parallel/SKILL.md"
+      },
+      "quality": {
+        "score": 64,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": false,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/do-in-parallel/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/do-in-parallel",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/do-in-parallel",
+        "publisher_setup_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/skills/do-in-parallel/SKILL.md"
+      }
+    },
+    {
+      "id": "neolabhq/context-engineering-kit/do-in-steps",
+      "name": "do-in-steps",
+      "description": "Execute one complex task as ordered, dependent steps run sequentially, passing context from each step to the next, with per-step LLM-as-a-judge verification. Use when later steps depend on the results of earlier ones.",
+      "category": "ai-agents-llm",
+      "license": "GPL-3.0",
+      "license_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "master",
+        "revision": "23e2428e809d77717f8acc9659c374a3a1fcb93e",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-26",
+        "skill_md_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/23e2428e809d77717f8acc9659c374a3a1fcb93e/skills/do-in-steps/SKILL.md"
+      },
+      "quality": {
+        "score": 64,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": false,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/do-in-steps/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/do-in-steps",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/do-in-steps",
+        "publisher_setup_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/skills/do-in-steps/SKILL.md"
+      }
+    },
+    {
+      "id": "neolabhq/context-engineering-kit/fix-tests",
+      "name": "fix-tests",
+      "description": "Systematically fix all failing tests after business logic changes or refactoring",
+      "category": "testing-qa",
+      "license": "GPL-3.0",
+      "license_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "master",
+        "revision": "23e2428e809d77717f8acc9659c374a3a1fcb93e",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-26",
+        "skill_md_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/23e2428e809d77717f8acc9659c374a3a1fcb93e/skills/fix-tests/SKILL.md"
+      },
+      "quality": {
+        "score": 66,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/fix-tests/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/fix-tests",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/fix-tests",
+        "publisher_setup_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/skills/fix-tests/SKILL.md"
+      }
+    },
+    {
+      "id": "neolabhq/context-engineering-kit/git-worktrees",
+      "name": "git-worktrees",
+      "description": "Use when working on multiple branches simultaneously, context switching without stashing, reviewing PRs while developing, testing in isolation, or comparing implementations across branches - provides git worktree commands and workflow patterns for parallel development with multiple working directories.",
+      "category": "developer-tools",
+      "license": "GPL-3.0",
+      "license_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "master",
+        "revision": "23e2428e809d77717f8acc9659c374a3a1fcb93e",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-26",
+        "skill_md_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/23e2428e809d77717f8acc9659c374a3a1fcb93e/skills/git-worktrees/SKILL.md"
+      },
+      "quality": {
+        "score": 64,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": false,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/git-worktrees/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/git-worktrees",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/git-worktrees",
+        "publisher_setup_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/skills/git-worktrees/SKILL.md"
+      }
+    },
+    {
+      "id": "neolabhq/context-engineering-kit/judge",
+      "name": "judge",
+      "description": "Launch a meta-judge then a judge sub-agent to evaluate results produced in the current conversation",
+      "category": "ai-agents-llm",
+      "license": "GPL-3.0",
+      "license_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "master",
+        "revision": "23e2428e809d77717f8acc9659c374a3a1fcb93e",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-26",
+        "skill_md_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/23e2428e809d77717f8acc9659c374a3a1fcb93e/skills/judge/SKILL.md"
+      },
+      "quality": {
+        "score": 66,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/judge/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/judge",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/judge",
+        "publisher_setup_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/skills/judge/SKILL.md"
+      }
+    },
+    {
+      "id": "neolabhq/context-engineering-kit/judge-with-debate",
+      "name": "judge-with-debate",
+      "description": "Evaluate solutions through multi-round debate between independent judges until consensus",
+      "category": "ai-agents-llm",
+      "license": "GPL-3.0",
+      "license_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "master",
+        "revision": "23e2428e809d77717f8acc9659c374a3a1fcb93e",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-26",
+        "skill_md_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/23e2428e809d77717f8acc9659c374a3a1fcb93e/skills/judge-with-debate/SKILL.md"
+      },
+      "quality": {
+        "score": 66,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/judge-with-debate/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/judge-with-debate",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/judge-with-debate",
+        "publisher_setup_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/skills/judge-with-debate/SKILL.md"
+      }
+    },
+    {
+      "id": "neolabhq/context-engineering-kit/kaizen",
+      "name": "kaizen",
+      "description": "Use when Code implementation and refactoring, architecturing or designing systems, process and workflow improvements, error handling and validation. Provide tehniquest to avoid over-engineering and apply iterative improvements.",
+      "category": "code-review-quality",
+      "license": "GPL-3.0",
+      "license_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "master",
+        "revision": "23e2428e809d77717f8acc9659c374a3a1fcb93e",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-26",
+        "skill_md_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/23e2428e809d77717f8acc9659c374a3a1fcb93e/skills/kaizen/SKILL.md"
+      },
+      "quality": {
+        "score": 70,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": false,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/kaizen/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/kaizen",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/kaizen",
+        "publisher_setup_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/skills/kaizen/SKILL.md"
+      }
+    },
+    {
+      "id": "neolabhq/context-engineering-kit/launch-sub-agent",
+      "name": "launch-sub-agent",
+      "description": "Launch an intelligent sub-agent with automatic model selection based on task complexity, specialized agent matching, Zero-shot CoT reasoning, and mandatory self-critique verification",
+      "category": "ai-agents-llm",
+      "license": "GPL-3.0",
+      "license_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "master",
+        "revision": "23e2428e809d77717f8acc9659c374a3a1fcb93e",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-26",
+        "skill_md_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/23e2428e809d77717f8acc9659c374a3a1fcb93e/skills/launch-sub-agent/SKILL.md"
+      },
+      "quality": {
+        "score": 70,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/launch-sub-agent/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/launch-sub-agent",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/launch-sub-agent",
+        "publisher_setup_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/skills/launch-sub-agent/SKILL.md"
+      }
+    },
+    {
+      "id": "neolabhq/context-engineering-kit/load-issues",
+      "name": "load-issues",
+      "description": "Load all open issues from GitHub and save them as markdown files",
+      "category": "developer-tools",
+      "license": "GPL-3.0",
+      "license_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "master",
+        "revision": "23e2428e809d77717f8acc9659c374a3a1fcb93e",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-26",
+        "skill_md_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/23e2428e809d77717f8acc9659c374a3a1fcb93e/skills/load-issues/SKILL.md"
+      },
+      "quality": {
+        "score": 60,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/load-issues/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/load-issues",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/load-issues",
+        "publisher_setup_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/skills/load-issues/SKILL.md"
+      }
+    },
+    {
+      "id": "neolabhq/context-engineering-kit/memorize",
+      "name": "memorize",
+      "description": "Curates insights from reflections and critiques into CLAUDE.md using Agentic Context Engineering",
+      "category": "ai-agents-llm",
+      "license": "GPL-3.0",
+      "license_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "master",
+        "revision": "23e2428e809d77717f8acc9659c374a3a1fcb93e",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-26",
+        "skill_md_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/23e2428e809d77717f8acc9659c374a3a1fcb93e/skills/memorize/SKILL.md"
+      },
+      "quality": {
+        "score": 66,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/memorize/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/memorize",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/memorize",
+        "publisher_setup_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/skills/memorize/SKILL.md"
+      }
+    },
+    {
+      "id": "neolabhq/context-engineering-kit/plan-do-check-act",
+      "name": "plan-do-check-act",
+      "description": "Iterative PDCA cycle for systematic experimentation and continuous improvement",
+      "category": "productivity-knowledge",
+      "license": "GPL-3.0",
+      "license_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "master",
+        "revision": "23e2428e809d77717f8acc9659c374a3a1fcb93e",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-26",
+        "skill_md_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/23e2428e809d77717f8acc9659c374a3a1fcb93e/skills/plan-do-check-act/SKILL.md"
+      },
+      "quality": {
+        "score": 66,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/plan-do-check-act/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/plan-do-check-act",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/plan-do-check-act",
+        "publisher_setup_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/skills/plan-do-check-act/SKILL.md"
+      }
+    },
+    {
+      "id": "neolabhq/context-engineering-kit/prompt-engineering",
+      "name": "prompt-engineering",
+      "description": "Use this skill when you writing commands, hooks, skills for Agent, or prompts for sub agents or any other LLM interaction, including optimizing prompts, improving LLM outputs, or designing production prompt templates.",
+      "category": "ai-agents-llm",
+      "license": "GPL-3.0",
+      "license_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "master",
+        "revision": "23e2428e809d77717f8acc9659c374a3a1fcb93e",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-26",
+        "skill_md_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/23e2428e809d77717f8acc9659c374a3a1fcb93e/skills/prompt-engineering/SKILL.md"
+      },
+      "quality": {
+        "score": 70,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": false,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/prompt-engineering/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/prompt-engineering",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/prompt-engineering",
+        "publisher_setup_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/skills/prompt-engineering/SKILL.md"
+      }
+    },
+    {
+      "id": "neolabhq/context-engineering-kit/propose-hypotheses",
+      "name": "propose-hypotheses",
+      "description": "Execute complete FPF cycle from hypothesis generation to decision",
+      "category": "ai-agents-llm",
+      "license": "GPL-3.0",
+      "license_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "master",
+        "revision": "23e2428e809d77717f8acc9659c374a3a1fcb93e",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-26",
+        "skill_md_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/23e2428e809d77717f8acc9659c374a3a1fcb93e/skills/propose-hypotheses/SKILL.md"
+      },
+      "quality": {
+        "score": 66,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/propose-hypotheses/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/propose-hypotheses",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/propose-hypotheses",
+        "publisher_setup_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/skills/propose-hypotheses/SKILL.md"
+      }
+    },
+    {
+      "id": "neolabhq/context-engineering-kit/query",
+      "name": "query",
+      "description": "Search the FPF knowledge base and display hypothesis details with assurance information",
+      "category": "ai-agents-llm",
+      "license": "GPL-3.0",
+      "license_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "master",
+        "revision": "23e2428e809d77717f8acc9659c374a3a1fcb93e",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-26",
+        "skill_md_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/23e2428e809d77717f8acc9659c374a3a1fcb93e/skills/query/SKILL.md"
+      },
+      "quality": {
+        "score": 63,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/query/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/query",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/query",
+        "publisher_setup_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/skills/query/SKILL.md"
+      }
+    },
+    {
+      "id": "neolabhq/context-engineering-kit/resolve-fixed-pr-comments",
+      "name": "resolve-fixed-pr-comments",
+      "description": "Verify what PR review comments have been addressed (committed/pushed OR uncommitted local changes) and resolve the threads that are genuinely fixed or no longer relevant.",
+      "category": "code-review-quality",
+      "license": "GPL-3.0",
+      "license_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "master",
+        "revision": "23e2428e809d77717f8acc9659c374a3a1fcb93e",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-26",
+        "skill_md_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/23e2428e809d77717f8acc9659c374a3a1fcb93e/skills/resolve-fixed-pr-comments/SKILL.md"
+      },
+      "quality": {
+        "score": 70,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/resolve-fixed-pr-comments/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/resolve-fixed-pr-comments",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/resolve-fixed-pr-comments",
+        "publisher_setup_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/skills/resolve-fixed-pr-comments/SKILL.md"
+      }
+    },
+    {
+      "id": "neolabhq/context-engineering-kit/setup-arxiv-mcp",
+      "name": "setup-arxiv-mcp",
+      "description": "Guide for setup arXiv paper search MCP server using Docker MCP",
+      "category": "ai-agents-llm",
+      "license": "GPL-3.0",
+      "license_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "master",
+        "revision": "23e2428e809d77717f8acc9659c374a3a1fcb93e",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-26",
+        "skill_md_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/23e2428e809d77717f8acc9659c374a3a1fcb93e/skills/setup-arxiv-mcp/SKILL.md"
+      },
+      "quality": {
+        "score": 66,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/setup-arxiv-mcp/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/setup-arxiv-mcp",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/setup-arxiv-mcp",
+        "publisher_setup_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/skills/setup-arxiv-mcp/SKILL.md"
+      }
+    },
+    {
+      "id": "neolabhq/context-engineering-kit/setup-codemap-cli",
+      "name": "setup-codemap-cli",
+      "description": "Guide for setup Codemap CLI for intelligent codebase visualization and navigation",
+      "category": "developer-tools",
+      "license": "GPL-3.0",
+      "license_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "master",
+        "revision": "23e2428e809d77717f8acc9659c374a3a1fcb93e",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-26",
+        "skill_md_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/23e2428e809d77717f8acc9659c374a3a1fcb93e/skills/setup-codemap-cli/SKILL.md"
+      },
+      "quality": {
+        "score": 66,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/setup-codemap-cli/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/setup-codemap-cli",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/setup-codemap-cli",
+        "publisher_setup_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/skills/setup-codemap-cli/SKILL.md"
+      }
+    },
+    {
+      "id": "neolabhq/context-engineering-kit/setup-context7-mcp",
+      "name": "setup-context7-mcp",
+      "description": "Guide for setup Context7 MCP server to load documentation for specific technologies.",
+      "category": "ai-agents-llm",
+      "license": "GPL-3.0",
+      "license_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "master",
+        "revision": "23e2428e809d77717f8acc9659c374a3a1fcb93e",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-26",
+        "skill_md_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/23e2428e809d77717f8acc9659c374a3a1fcb93e/skills/setup-context7-mcp/SKILL.md"
+      },
+      "quality": {
+        "score": 60,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/setup-context7-mcp/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/setup-context7-mcp",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/setup-context7-mcp",
+        "publisher_setup_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/skills/setup-context7-mcp/SKILL.md"
+      }
+    },
+    {
+      "id": "neolabhq/context-engineering-kit/setup-serena-mcp",
+      "name": "setup-serena-mcp",
+      "description": "Guide for setup Serena MCP server for semantic code retrieval and editing capabilities",
+      "category": "ai-agents-llm",
+      "license": "GPL-3.0",
+      "license_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "master",
+        "revision": "23e2428e809d77717f8acc9659c374a3a1fcb93e",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-26",
+        "skill_md_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/23e2428e809d77717f8acc9659c374a3a1fcb93e/skills/setup-serena-mcp/SKILL.md"
+      },
+      "quality": {
+        "score": 66,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/setup-serena-mcp/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/setup-serena-mcp",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/setup-serena-mcp",
+        "publisher_setup_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/skills/setup-serena-mcp/SKILL.md"
+      }
+    },
+    {
+      "id": "neolabhq/context-engineering-kit/status",
+      "name": "status",
+      "description": "Display the current state of the FPF knowledge base",
+      "category": "ai-agents-llm",
+      "license": "GPL-3.0",
+      "license_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "master",
+        "revision": "23e2428e809d77717f8acc9659c374a3a1fcb93e",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-26",
+        "skill_md_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/23e2428e809d77717f8acc9659c374a3a1fcb93e/skills/status/SKILL.md"
+      },
+      "quality": {
+        "score": 63,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/status/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/status",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/status",
+        "publisher_setup_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/skills/status/SKILL.md"
+      }
+    },
+    {
+      "id": "neolabhq/context-engineering-kit/test-driven-development",
+      "name": "test-driven-development",
+      "description": "Use when implementing any feature or bugfix, before writing implementation code - write the test first, watch it fail, write minimal code to pass; ensures tests actually verify behavior by requiring failure first",
+      "category": "testing-qa",
+      "license": "GPL-3.0",
+      "license_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "master",
+        "revision": "23e2428e809d77717f8acc9659c374a3a1fcb93e",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-26",
+        "skill_md_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/23e2428e809d77717f8acc9659c374a3a1fcb93e/skills/test-driven-development/SKILL.md"
+      },
+      "quality": {
+        "score": 70,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": false,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/test-driven-development/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/test-driven-development",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/test-driven-development",
+        "publisher_setup_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/skills/test-driven-development/SKILL.md"
+      }
+    },
+    {
+      "id": "neolabhq/context-engineering-kit/test-prompt",
+      "name": "test-prompt",
+      "description": "Use when creating or editing any prompt (commands, hooks, skills, subagent instructions) to verify it produces desired behavior - applies RED-GREEN-REFACTOR cycle to prompt engineering using subagents for isolated testing",
+      "category": "ai-agents-llm",
+      "license": "GPL-3.0",
+      "license_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "master",
+        "revision": "23e2428e809d77717f8acc9659c374a3a1fcb93e",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-26",
+        "skill_md_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/23e2428e809d77717f8acc9659c374a3a1fcb93e/skills/test-prompt/SKILL.md"
+      },
+      "quality": {
+        "score": 70,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": false,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/test-prompt/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/test-prompt",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/test-prompt",
+        "publisher_setup_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/skills/test-prompt/SKILL.md"
+      }
+    },
+    {
+      "id": "neolabhq/context-engineering-kit/thought-based-reasoning",
+      "name": "thought-based-reasoning",
+      "description": "Use when tackling complex reasoning tasks requiring step-by-step logic, multi-step arithmetic, commonsense reasoning, symbolic manipulation, or problems where simple prompting fails - provides comprehensive guide to Chain-of-Thought and related prompting techniques (Zero-shot CoT, Self-Consistency, Tree of Thoughts, Least-to-Most, ReAct, PAL, Reflexion) with templates, decision matrices, and research-backed patterns",
+      "category": "ai-agents-llm",
+      "license": "GPL-3.0",
+      "license_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "master",
+        "revision": "23e2428e809d77717f8acc9659c374a3a1fcb93e",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-26",
+        "skill_md_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/23e2428e809d77717f8acc9659c374a3a1fcb93e/skills/thought-based-reasoning/SKILL.md"
+      },
+      "quality": {
+        "score": 67,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": false,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/thought-based-reasoning/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/thought-based-reasoning",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/thought-based-reasoning",
+        "publisher_setup_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/skills/thought-based-reasoning/SKILL.md"
+      }
+    },
+    {
+      "id": "neolabhq/context-engineering-kit/why",
+      "name": "why",
+      "description": "Iterative Five Whys root cause analysis drilling from symptoms to fundamentals",
+      "category": "productivity-knowledge",
+      "license": "GPL-3.0",
+      "license_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "master",
+        "revision": "23e2428e809d77717f8acc9659c374a3a1fcb93e",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-26",
+        "skill_md_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/23e2428e809d77717f8acc9659c374a3a1fcb93e/skills/why/SKILL.md"
+      },
+      "quality": {
+        "score": 63,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/neolabhq/context-engineering-kit/why/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/why",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/NeoLabHQ/context-engineering-kit/tree/master/skills/why",
+        "publisher_setup_url": "https://github.com/NeoLabHQ/context-engineering-kit/blob/master/skills/why/SKILL.md"
+      }
+    }
+  ]
+}

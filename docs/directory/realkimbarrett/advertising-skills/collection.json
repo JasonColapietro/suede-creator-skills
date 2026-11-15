@@ -1,0 +1,1275 @@
+{
+  "schema_version": 1,
+  "repository": "realkimbarrett/advertising-skills",
+  "listing_url": "https://skills.suedeai.ai/directory/realkimbarrett/advertising-skills/",
+  "snapshot": {
+    "date": "2026-10-22",
+    "id": "0083645c3974488e8803884c7af76698",
+    "dataset_sha256": "b73996d45961aa527b4cea74a41a2e44497200dba9b2f85411e3602ab5f56641"
+  },
+  "listed_skill_count": 12,
+  "scope": "Skills listed by the directory; this is not a complete inventory of every file in the repository.",
+  "security_scan_status": "not_scanned",
+  "skills": [
+    {
+      "id": "realkimbarrett/advertising-skills/ad-angle-multiplier",
+      "name": "ad-angle-multiplier",
+      "description": "Expand a core idea into multiple distinct ad angles. Trigger on \"more ads\", \"creative testing\", \"scale campaigns\".",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/realkimbarrett/advertising-skills/blob/main/README.md",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "45f4a4a1dabe24113193369b55b929b1de4ff04a",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-03-26",
+        "skill_md_url": "https://github.com/realkimbarrett/advertising-skills/blob/45f4a4a1dabe24113193369b55b929b1de4ff04a/skills/operator-os/ad-angle-multiplier/SKILL.md"
+      },
+      "quality": {
+        "score": 64,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 1
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/realkimbarrett/advertising-skills/ad-angle-multiplier/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/realkimbarrett/advertising-skills/ad-angle-multiplier/",
+      "source_folder_url": "https://github.com/realkimbarrett/advertising-skills/tree/main/skills/operator-os/ad-angle-multiplier",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/realkimbarrett/advertising-skills/tree/main/skills/operator-os/ad-angle-multiplier",
+        "publisher_setup_url": "https://github.com/realkimbarrett/advertising-skills/blob/main/skills/operator-os/ad-angle-multiplier/SKILL.md"
+      }
+    },
+    {
+      "id": "realkimbarrett/advertising-skills/avatar-extraction",
+      "name": "avatar-extraction",
+      "description": "Use when you need to define exactly who the buyer is, what they want, what they’ve tried, and what’s driving their decisions. Trigger on \"target audience\", \"ideal client\", \"who is this for\", \"avatar\", \"customer profile\".",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/realkimbarrett/advertising-skills/blob/main/README.md",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "45f4a4a1dabe24113193369b55b929b1de4ff04a",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-03-26",
+        "skill_md_url": "https://github.com/realkimbarrett/advertising-skills/blob/45f4a4a1dabe24113193369b55b929b1de4ff04a/skills/foundations/avatar-extraction/SKILL.md"
+      },
+      "quality": {
+        "score": 67,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 1
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/realkimbarrett/advertising-skills/avatar-extraction/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/realkimbarrett/advertising-skills/avatar-extraction/",
+      "source_folder_url": "https://github.com/realkimbarrett/advertising-skills/tree/main/skills/foundations/avatar-extraction",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/realkimbarrett/advertising-skills/tree/main/skills/foundations/avatar-extraction",
+        "publisher_setup_url": "https://github.com/realkimbarrett/advertising-skills/blob/main/skills/foundations/avatar-extraction/SKILL.md"
+      }
+    },
+    {
+      "id": "realkimbarrett/advertising-skills/conversion-path-builder",
+      "name": "conversion-path-builder",
+      "description": "Design the optimal funnel from click to conversion. Trigger on \"funnel\", \"conversion path\", \"booked calls\".",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/realkimbarrett/advertising-skills/blob/main/README.md",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "45f4a4a1dabe24113193369b55b929b1de4ff04a",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-03-26",
+        "skill_md_url": "https://github.com/realkimbarrett/advertising-skills/blob/45f4a4a1dabe24113193369b55b929b1de4ff04a/skills/operator-os/conversion-path-builder/SKILL.md"
+      },
+      "quality": {
+        "score": 67,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 1
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/realkimbarrett/advertising-skills/conversion-path-builder/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/realkimbarrett/advertising-skills/conversion-path-builder/",
+      "source_folder_url": "https://github.com/realkimbarrett/advertising-skills/tree/main/skills/operator-os/conversion-path-builder",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/realkimbarrett/advertising-skills/tree/main/skills/operator-os/conversion-path-builder",
+        "publisher_setup_url": "https://github.com/realkimbarrett/advertising-skills/blob/main/skills/operator-os/conversion-path-builder/SKILL.md"
+      }
+    },
+    {
+      "id": "realkimbarrett/advertising-skills/full-funnel-campaign-orchestrator",
+      "name": "full-funnel-campaign-orchestrator",
+      "description": "Coordinate all skills to build a complete advertising campaign. Trigger on \"build a campaign\", \"full funnel\", \"ads + funnel\".",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/realkimbarrett/advertising-skills/blob/main/README.md",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "45f4a4a1dabe24113193369b55b929b1de4ff04a",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-03-26",
+        "skill_md_url": "https://github.com/realkimbarrett/advertising-skills/blob/45f4a4a1dabe24113193369b55b929b1de4ff04a/skills/orchestrators/full-funnel-campaign-orchestrator/SKILL.md"
+      },
+      "quality": {
+        "score": 64,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 1
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/realkimbarrett/advertising-skills/full-funnel-campaign-orchestrator/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/realkimbarrett/advertising-skills/full-funnel-campaign-orchestrator/",
+      "source_folder_url": "https://github.com/realkimbarrett/advertising-skills/tree/main/skills/orchestrators/full-funnel-campaign-orchestrator",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/realkimbarrett/advertising-skills/tree/main/skills/orchestrators/full-funnel-campaign-orchestrator",
+        "publisher_setup_url": "https://github.com/realkimbarrett/advertising-skills/blob/main/skills/orchestrators/full-funnel-campaign-orchestrator/SKILL.md"
+      }
+    },
+    {
+      "id": "realkimbarrett/advertising-skills/generic-language-killer",
+      "name": "generic-language-killer",
+      "description": "Remove vague, corporate, or AI-sounding language and replace it with clear, specific, human wording. Trigger on \"improve copy\", \"sounds generic\", \"too fluffy\".",
+      "category": "writing-content",
+      "license": "MIT",
+      "license_url": "https://github.com/realkimbarrett/advertising-skills/blob/main/README.md",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "45f4a4a1dabe24113193369b55b929b1de4ff04a",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-03-26",
+        "skill_md_url": "https://github.com/realkimbarrett/advertising-skills/blob/45f4a4a1dabe24113193369b55b929b1de4ff04a/skills/qa/generic-language-killer/SKILL.md"
+      },
+      "quality": {
+        "score": 66,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 1
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/realkimbarrett/advertising-skills/generic-language-killer/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/realkimbarrett/advertising-skills/generic-language-killer/",
+      "source_folder_url": "https://github.com/realkimbarrett/advertising-skills/tree/main/skills/qa/generic-language-killer",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/realkimbarrett/advertising-skills/tree/main/skills/qa/generic-language-killer",
+        "publisher_setup_url": "https://github.com/realkimbarrett/advertising-skills/blob/main/skills/qa/generic-language-killer/SKILL.md"
+      }
+    },
+    {
+      "id": "realkimbarrett/advertising-skills/headline-matrix",
+      "name": "headline-matrix",
+      "description": "Generate high-performing headline variations across different angles. Trigger on \"headlines\", \"hooks\", \"ad copy\", \"email subject lines\".",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/realkimbarrett/advertising-skills/blob/main/README.md",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "45f4a4a1dabe24113193369b55b929b1de4ff04a",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-03-26",
+        "skill_md_url": "https://github.com/realkimbarrett/advertising-skills/blob/45f4a4a1dabe24113193369b55b929b1de4ff04a/skills/copy-chief/headline-matrix/SKILL.md"
+      },
+      "quality": {
+        "score": 64,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 1
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/realkimbarrett/advertising-skills/headline-matrix/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/realkimbarrett/advertising-skills/headline-matrix/",
+      "source_folder_url": "https://github.com/realkimbarrett/advertising-skills/tree/main/skills/copy-chief/headline-matrix",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/realkimbarrett/advertising-skills/tree/main/skills/copy-chief/headline-matrix",
+        "publisher_setup_url": "https://github.com/realkimbarrett/advertising-skills/blob/main/skills/copy-chief/headline-matrix/SKILL.md"
+      }
+    },
+    {
+      "id": "realkimbarrett/advertising-skills/mechanism-builder",
+      "name": "mechanism-builder",
+      "description": "Use when you need to explain why your solution works and others failed. Trigger on \"unique mechanism\", \"why this works\", \"different angle\", \"positioning\".",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/realkimbarrett/advertising-skills/blob/main/README.md",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "45f4a4a1dabe24113193369b55b929b1de4ff04a",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-03-26",
+        "skill_md_url": "https://github.com/realkimbarrett/advertising-skills/blob/45f4a4a1dabe24113193369b55b929b1de4ff04a/skills/copy-chief/mechanism-builder/SKILL.md"
+      },
+      "quality": {
+        "score": 69,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 1
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/realkimbarrett/advertising-skills/mechanism-builder/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/realkimbarrett/advertising-skills/mechanism-builder/",
+      "source_folder_url": "https://github.com/realkimbarrett/advertising-skills/tree/main/skills/copy-chief/mechanism-builder",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/realkimbarrett/advertising-skills/tree/main/skills/copy-chief/mechanism-builder",
+        "publisher_setup_url": "https://github.com/realkimbarrett/advertising-skills/blob/main/skills/copy-chief/mechanism-builder/SKILL.md"
+      }
+    },
+    {
+      "id": "realkimbarrett/advertising-skills/objection-crusher",
+      "name": "objection-crusher",
+      "description": "Identify and neutralize buyer objections. Trigger on \"why wouldn't someone buy\", \"objections\", \"hesitation\", \"conversion issues\".",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/realkimbarrett/advertising-skills/blob/main/README.md",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "45f4a4a1dabe24113193369b55b929b1de4ff04a",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-03-26",
+        "skill_md_url": "https://github.com/realkimbarrett/advertising-skills/blob/45f4a4a1dabe24113193369b55b929b1de4ff04a/skills/copy-chief/objection-crusher/SKILL.md"
+      },
+      "quality": {
+        "score": 64,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 1
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/realkimbarrett/advertising-skills/objection-crusher/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/realkimbarrett/advertising-skills/objection-crusher/",
+      "source_folder_url": "https://github.com/realkimbarrett/advertising-skills/tree/main/skills/copy-chief/objection-crusher",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/realkimbarrett/advertising-skills/tree/main/skills/copy-chief/objection-crusher",
+        "publisher_setup_url": "https://github.com/realkimbarrett/advertising-skills/blob/main/skills/copy-chief/objection-crusher/SKILL.md"
+      }
+    },
+    {
+      "id": "realkimbarrett/advertising-skills/offer-extraction",
+      "name": "offer-extraction",
+      "description": "Use when you need to turn a product or service into a compelling, high-converting offer. Trigger on \"offer\", \"why would someone buy\", \"improve conversions\", \"value proposition\".",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/realkimbarrett/advertising-skills/blob/main/README.md",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "45f4a4a1dabe24113193369b55b929b1de4ff04a",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-03-26",
+        "skill_md_url": "https://github.com/realkimbarrett/advertising-skills/blob/45f4a4a1dabe24113193369b55b929b1de4ff04a/skills/foundations/offer-extraction/SKILL.md"
+      },
+      "quality": {
+        "score": 67,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 1
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/realkimbarrett/advertising-skills/offer-extraction/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/realkimbarrett/advertising-skills/offer-extraction/",
+      "source_folder_url": "https://github.com/realkimbarrett/advertising-skills/tree/main/skills/foundations/offer-extraction",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/realkimbarrett/advertising-skills/tree/main/skills/foundations/offer-extraction",
+        "publisher_setup_url": "https://github.com/realkimbarrett/advertising-skills/blob/main/skills/foundations/offer-extraction/SKILL.md"
+      }
+    },
+    {
+      "id": "realkimbarrett/advertising-skills/performance-diagnosis",
+      "name": "performance-diagnosis",
+      "description": "Diagnose why campaigns are underperforming. Trigger on \"low performance\", \"high CPL\", \"bad ads\".",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/realkimbarrett/advertising-skills/blob/main/README.md",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "45f4a4a1dabe24113193369b55b929b1de4ff04a",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-03-26",
+        "skill_md_url": "https://github.com/realkimbarrett/advertising-skills/blob/45f4a4a1dabe24113193369b55b929b1de4ff04a/skills/operator-os/performance-diagnosis/SKILL.md"
+      },
+      "quality": {
+        "score": 62,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 1
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/realkimbarrett/advertising-skills/performance-diagnosis/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/realkimbarrett/advertising-skills/performance-diagnosis/",
+      "source_folder_url": "https://github.com/realkimbarrett/advertising-skills/tree/main/skills/operator-os/performance-diagnosis",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/realkimbarrett/advertising-skills/tree/main/skills/operator-os/performance-diagnosis",
+        "publisher_setup_url": "https://github.com/realkimbarrett/advertising-skills/blob/main/skills/operator-os/performance-diagnosis/SKILL.md"
+      }
+    },
+    {
+      "id": "realkimbarrett/advertising-skills/schwartz-awareness-mapper",
+      "name": "schwartz-awareness-mapper",
+      "description": "Use when you need to determine audience awareness level and the correct messaging approach. Trigger on \"awareness stage\", \"cold vs warm audience\", \"Schwartz\", \"message to market match\".",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/realkimbarrett/advertising-skills/blob/main/README.md",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "45f4a4a1dabe24113193369b55b929b1de4ff04a",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-03-26",
+        "skill_md_url": "https://github.com/realkimbarrett/advertising-skills/blob/45f4a4a1dabe24113193369b55b929b1de4ff04a/skills/copy-chief/schwartz-awareness-mapper/SKILL.md"
+      },
+      "quality": {
+        "score": 70,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 1
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/realkimbarrett/advertising-skills/schwartz-awareness-mapper/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/realkimbarrett/advertising-skills/schwartz-awareness-mapper/",
+      "source_folder_url": "https://github.com/realkimbarrett/advertising-skills/tree/main/skills/copy-chief/schwartz-awareness-mapper",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/realkimbarrett/advertising-skills/tree/main/skills/copy-chief/schwartz-awareness-mapper",
+        "publisher_setup_url": "https://github.com/realkimbarrett/advertising-skills/blob/main/skills/copy-chief/schwartz-awareness-mapper/SKILL.md"
+      }
+    },
+    {
+      "id": "realkimbarrett/advertising-skills/scroll-stopping-creative",
+      "name": "scroll-stopping-creative",
+      "description": "Create ad concepts that stop attention in the first 3 seconds. Trigger on \"ad creative\", \"thumbstopper\", \"video ideas\".",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/realkimbarrett/advertising-skills/blob/main/README.md",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "45f4a4a1dabe24113193369b55b929b1de4ff04a",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-03-26",
+        "skill_md_url": "https://github.com/realkimbarrett/advertising-skills/blob/45f4a4a1dabe24113193369b55b929b1de4ff04a/skills/operator-os/scroll-stopping-creative/SKILL.md"
+      },
+      "quality": {
+        "score": 64,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 1
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/realkimbarrett/advertising-skills/scroll-stopping-creative/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/realkimbarrett/advertising-skills/scroll-stopping-creative/",
+      "source_folder_url": "https://github.com/realkimbarrett/advertising-skills/tree/main/skills/operator-os/scroll-stopping-creative",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/realkimbarrett/advertising-skills/tree/main/skills/operator-os/scroll-stopping-creative",
+        "publisher_setup_url": "https://github.com/realkimbarrett/advertising-skills/blob/main/skills/operator-os/scroll-stopping-creative/SKILL.md"
+      }
+    }
+  ]
+}

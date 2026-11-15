@@ -1,0 +1,645 @@
+{
+  "schema_version": 1,
+  "repository": "MelMayssonOwen/agent-skills",
+  "listing_url": "https://skills.suedeai.ai/directory/melmayssonowen/agent-skills/",
+  "snapshot": {
+    "date": "2026-10-22",
+    "id": "0083645c3974488e8803884c7af76698",
+    "dataset_sha256": "b73996d45961aa527b4cea74a41a2e44497200dba9b2f85411e3602ab5f56641"
+  },
+  "listed_skill_count": 6,
+  "scope": "Skills listed by the directory; this is not a complete inventory of every file in the repository.",
+  "security_scan_status": "not_scanned",
+  "skills": [
+    {
+      "id": "melmayssonowen/agent-skills/amazon-listing-checker",
+      "name": "amazon-listing-checker",
+      "description": "Audit pasted Amazon listing text for length, structure, risky claims, repeated terms, and keyword coverage. Use when asked to review or improve a product title, bullets, description, or backend search terms.",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/MelMayssonOwen/agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "aebddbe40090c99fe0c5a1810536637186335502",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-22",
+        "skill_md_url": "https://github.com/MelMayssonOwen/agent-skills/blob/aebddbe40090c99fe0c5a1810536637186335502/skills/amazon-listing-checker/SKILL.md"
+      },
+      "quality": {
+        "score": 73,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/melmayssonowen/agent-skills/amazon-listing-checker/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/melmayssonowen/agent-skills/amazon-listing-checker/",
+      "source_folder_url": "https://github.com/MelMayssonOwen/agent-skills/tree/main/skills/amazon-listing-checker",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/MelMayssonOwen/agent-skills/tree/main/skills/amazon-listing-checker",
+        "publisher_setup_url": "https://github.com/MelMayssonOwen/agent-skills/blob/aebddbe40090c99fe0c5a1810536637186335502/skills/amazon-listing-checker/scripts/check_listing.py"
+      }
+    },
+    {
+      "id": "melmayssonowen/agent-skills/clef-music-tools",
+      "name": "clef-music-tools",
+      "description": "Practice note reading and solve common chord or guitar-tab questions with Clef's public music MCP or an offline transposition helper. Use when asked to transpose chord symbols, spell piano chords, map ASCII guitar tab to piano notes, or run a short note-reading drill.",
+      "category": "media-creative",
+      "license": "MIT",
+      "license_url": "https://github.com/MelMayssonOwen/agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "aebddbe40090c99fe0c5a1810536637186335502",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-22",
+        "skill_md_url": "https://github.com/MelMayssonOwen/agent-skills/blob/aebddbe40090c99fe0c5a1810536637186335502/skills/clef-music-tools/SKILL.md"
+      },
+      "quality": {
+        "score": 76,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/melmayssonowen/agent-skills/clef-music-tools/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/melmayssonowen/agent-skills/clef-music-tools/",
+      "source_folder_url": "https://github.com/MelMayssonOwen/agent-skills/tree/main/skills/clef-music-tools",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/MelMayssonOwen/agent-skills/tree/main/skills/clef-music-tools",
+        "publisher_setup_url": "https://github.com/MelMayssonOwen/agent-skills/blob/aebddbe40090c99fe0c5a1810536637186335502/skills/clef-music-tools/references/setup.md"
+      }
+    },
+    {
+      "id": "melmayssonowen/agent-skills/sheetfolk-budget-builder",
+      "name": "sheetfolk-budget-builder",
+      "description": "Create a local Excel workbook for a monthly budget, sinking funds, or side-hustle income and expenses. Use when asked to build a budget spreadsheet, plan recurring costs, track savings goals, or organize small business cash flow.",
+      "category": "business-finance",
+      "license": "MIT",
+      "license_url": "https://github.com/MelMayssonOwen/agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "aebddbe40090c99fe0c5a1810536637186335502",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-22",
+        "skill_md_url": "https://github.com/MelMayssonOwen/agent-skills/blob/aebddbe40090c99fe0c5a1810536637186335502/skills/sheetfolk-budget-builder/SKILL.md"
+      },
+      "quality": {
+        "score": 73,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/melmayssonowen/agent-skills/sheetfolk-budget-builder/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/melmayssonowen/agent-skills/sheetfolk-budget-builder/",
+      "source_folder_url": "https://github.com/MelMayssonOwen/agent-skills/tree/main/skills/sheetfolk-budget-builder",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/MelMayssonOwen/agent-skills/tree/main/skills/sheetfolk-budget-builder",
+        "publisher_setup_url": "https://github.com/MelMayssonOwen/agent-skills/blob/aebddbe40090c99fe0c5a1810536637186335502/skills/sheetfolk-budget-builder/scripts/build_budget.py"
+      }
+    },
+    {
+      "id": "melmayssonowen/agent-skills/timetopost-autoseo-blog",
+      "name": "timetopost-autoseo-blog",
+      "description": "Connect a site and run a human-reviewed AutoSEO blog workflow with TimeToPost MCP. Use when asked to set up an SEO blog pipeline, research article topics, generate a blog draft, review an AutoSEO post, or assess SEO and AI visibility.",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/MelMayssonOwen/agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "aebddbe40090c99fe0c5a1810536637186335502",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-22",
+        "skill_md_url": "https://github.com/MelMayssonOwen/agent-skills/blob/aebddbe40090c99fe0c5a1810536637186335502/skills/timetopost-autoseo-blog/SKILL.md"
+      },
+      "quality": {
+        "score": 77,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/melmayssonowen/agent-skills/timetopost-autoseo-blog/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/melmayssonowen/agent-skills/timetopost-autoseo-blog/",
+      "source_folder_url": "https://github.com/MelMayssonOwen/agent-skills/tree/main/skills/timetopost-autoseo-blog",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/MelMayssonOwen/agent-skills/tree/main/skills/timetopost-autoseo-blog",
+        "publisher_setup_url": "https://github.com/MelMayssonOwen/agent-skills/blob/aebddbe40090c99fe0c5a1810536637186335502/skills/timetopost-autoseo-blog/references/setup.md"
+      }
+    },
+    {
+      "id": "melmayssonowen/agent-skills/timetopost-social-scheduler",
+      "name": "timetopost-social-scheduler",
+      "description": "Draft, review, and schedule distinct social posts with the TimeToPost MCP. Use when asked to plan a social calendar, draft a post or thread, check approval drafts, choose a posting time, or schedule content.",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/MelMayssonOwen/agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "aebddbe40090c99fe0c5a1810536637186335502",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-22",
+        "skill_md_url": "https://github.com/MelMayssonOwen/agent-skills/blob/aebddbe40090c99fe0c5a1810536637186335502/skills/timetopost-social-scheduler/SKILL.md"
+      },
+      "quality": {
+        "score": 79,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/melmayssonowen/agent-skills/timetopost-social-scheduler/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/melmayssonowen/agent-skills/timetopost-social-scheduler/",
+      "source_folder_url": "https://github.com/MelMayssonOwen/agent-skills/tree/main/skills/timetopost-social-scheduler",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/MelMayssonOwen/agent-skills/tree/main/skills/timetopost-social-scheduler",
+        "publisher_setup_url": "https://github.com/MelMayssonOwen/agent-skills/blob/aebddbe40090c99fe0c5a1810536637186335502/skills/timetopost-social-scheduler/references/setup.md"
+      }
+    },
+    {
+      "id": "melmayssonowen/agent-skills/toolfound-launch-kit",
+      "name": "toolfound-launch-kit",
+      "description": "Research, prepare, submit, and track a maker product launch through the Toolfound MCP. Use when asked to list a product, compare directory alternatives, choose a launch date, verify ownership, check launch status, or get a listing badge.",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/MelMayssonOwen/agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "aebddbe40090c99fe0c5a1810536637186335502",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-22",
+        "skill_md_url": "https://github.com/MelMayssonOwen/agent-skills/blob/aebddbe40090c99fe0c5a1810536637186335502/skills/toolfound-launch-kit/SKILL.md"
+      },
+      "quality": {
+        "score": 74,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/melmayssonowen/agent-skills/toolfound-launch-kit/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/melmayssonowen/agent-skills/toolfound-launch-kit/",
+      "source_folder_url": "https://github.com/MelMayssonOwen/agent-skills/tree/main/skills/toolfound-launch-kit",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/MelMayssonOwen/agent-skills/tree/main/skills/toolfound-launch-kit",
+        "publisher_setup_url": "https://github.com/MelMayssonOwen/agent-skills/blob/aebddbe40090c99fe0c5a1810536637186335502/skills/toolfound-launch-kit/references/setup.md"
+      }
+    }
+  ]
+}

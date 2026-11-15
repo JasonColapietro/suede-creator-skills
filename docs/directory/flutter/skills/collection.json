@@ -1,0 +1,2535 @@
+{
+  "schema_version": 1,
+  "repository": "flutter/skills",
+  "listing_url": "https://skills.suedeai.ai/directory/flutter/skills/",
+  "snapshot": {
+    "date": "2026-10-22",
+    "id": "0083645c3974488e8803884c7af76698",
+    "dataset_sha256": "b73996d45961aa527b4cea74a41a2e44497200dba9b2f85411e3602ab5f56641"
+  },
+  "listed_skill_count": 24,
+  "scope": "Skills listed by the directory; this is not a complete inventory of every file in the repository.",
+  "security_scan_status": "not_scanned",
+  "skills": [
+    {
+      "id": "flutter/skills/dart-build-cli-app",
+      "name": "dart-build-cli-app",
+      "description": "Architectural patterns, entrypoint structure, exit codes, stream routing, and subprocess spawning for Dart command-line interface (CLI) applications. Use when building CLI tools, console utilities, scripts, argument parsing with `package:args` (ArgParser or CommandRunner), handling exit codes, configuring executables in pubspec.yaml, spawning Dart subprocesses, or compiling native CLI binaries. Don't use for Flutter UI widgets, web applications, or standalone HTTP backend servers.",
+      "category": "developer-tools",
+      "license": "BSD-3-Clause",
+      "license_url": "https://github.com/flutter/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "b60d0736a33a0de7d3f4ea2a7ad740ca0daa5c94",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-16",
+        "skill_md_url": "https://github.com/flutter/skills/blob/b60d0736a33a0de7d3f4ea2a7ad740ca0daa5c94/skills/dart-build-cli-app/SKILL.md"
+      },
+      "quality": {
+        "score": 84,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/flutter/skills/dart-build-cli-app/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/flutter/skills/dart-build-cli-app/",
+      "source_folder_url": "https://github.com/flutter/skills/tree/main/skills/dart-build-cli-app",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/flutter/skills/tree/main/skills/dart-build-cli-app",
+        "publisher_setup_url": "https://github.com/flutter/skills/blob/main/skills/dart-build-cli-app/SKILL.md"
+      }
+    },
+    {
+      "id": "flutter/skills/dart-generate-test-mocks",
+      "name": "dart-generate-test-mocks",
+      "description": "Define and generate mock objects for external dependencies using `package:mockito` and `build_runner`. Use when unit testing classes that depend on complex external services like APIs or databases.",
+      "category": "testing-qa",
+      "license": "BSD-3-Clause",
+      "license_url": "https://github.com/flutter/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "b60d0736a33a0de7d3f4ea2a7ad740ca0daa5c94",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-16",
+        "skill_md_url": "https://github.com/flutter/skills/blob/b60d0736a33a0de7d3f4ea2a7ad740ca0daa5c94/skills/dart-generate-test-mocks/SKILL.md"
+      },
+      "quality": {
+        "score": 77,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/flutter/skills/dart-generate-test-mocks/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/flutter/skills/dart-generate-test-mocks/",
+      "source_folder_url": "https://github.com/flutter/skills/tree/main/skills/dart-generate-test-mocks",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/flutter/skills/tree/main/skills/dart-generate-test-mocks",
+        "publisher_setup_url": "https://github.com/flutter/skills/blob/main/skills/dart-generate-test-mocks/SKILL.md"
+      }
+    },
+    {
+      "id": "flutter/skills/dart-setup-ffi-assets",
+      "name": "dart-setup-ffi-assets",
+      "description": "Guides agents in compiling and packaging C/C++ source code into dynamic or static libraries (Code Assets) using Dart's Native Assets hook system (via hook/build.dart and hook/link.dart utilizing package:hooks and package:native_toolchain_c). Use when a user asks to: 'setup native assets', 'compile C/C++ source code', 'bundle dynamic libraries', 'build native C code', 'link native assets', 'implement build.dart or link.dart hooks', or 'integrate C/C++ interop in Dart/Flutter'. Helps agents avoid manual toolchain orchestration and configures secure hash-validated binary downloads or advanced linker tree-shaking with package:record_use mapping.",
+      "category": "developer-tools",
+      "license": "BSD-3-Clause",
+      "license_url": "https://github.com/flutter/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "b60d0736a33a0de7d3f4ea2a7ad740ca0daa5c94",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-16",
+        "skill_md_url": "https://github.com/flutter/skills/blob/b60d0736a33a0de7d3f4ea2a7ad740ca0daa5c94/skills/dart-setup-ffi-assets/SKILL.md"
+      },
+      "quality": {
+        "score": 78,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/flutter/skills/dart-setup-ffi-assets/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/flutter/skills/dart-setup-ffi-assets/",
+      "source_folder_url": "https://github.com/flutter/skills/tree/main/skills/dart-setup-ffi-assets",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/flutter/skills/tree/main/skills/dart-setup-ffi-assets",
+        "publisher_setup_url": "https://github.com/flutter/skills/blob/main/skills/dart-setup-ffi-assets/SKILL.md"
+      }
+    },
+    {
+      "id": "flutter/skills/dart-use-ffigen",
+      "name": "dart-use-ffigen",
+      "description": "Guide agents to use `package:ffigen` to automatically generate FFI bindings instead of writing them manually. Use this skill when a task involves writing new FFI bindings, extending C/Objective-C/Swift integrations, or replacing hand-crafted `dart:ffi` setups.",
+      "category": "developer-tools",
+      "license": "BSD-3-Clause",
+      "license_url": "https://github.com/flutter/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "b60d0736a33a0de7d3f4ea2a7ad740ca0daa5c94",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-16",
+        "skill_md_url": "https://github.com/flutter/skills/blob/b60d0736a33a0de7d3f4ea2a7ad740ca0daa5c94/skills/dart-use-ffigen/SKILL.md"
+      },
+      "quality": {
+        "score": 81,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/flutter/skills/dart-use-ffigen/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/flutter/skills/dart-use-ffigen/",
+      "source_folder_url": "https://github.com/flutter/skills/tree/main/skills/dart-use-ffigen",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/flutter/skills/tree/main/skills/dart-use-ffigen",
+        "publisher_setup_url": "https://github.com/flutter/skills/blob/main/skills/dart-use-ffigen/SKILL.md"
+      }
+    },
+    {
+      "id": "flutter/skills/dart-use-path-package",
+      "name": "dart-use-path-package",
+      "description": "Cross-platform file and directory path manipulation, segment splitting, extension extraction, and context conversion using `package:path` and `package:file`. Use when writing, inspecting, joining, splitting, or refactoring file paths, directory names, or extensions, or replacing raw string path operations (`.split('/')`, `'$dir/$file'`, `.endsWith('.ext')`, `.replaceAll('\\\\', '/')`). Don't use for HTTP network URI routing, database query strings, or non-path string processing.",
+      "category": "developer-tools",
+      "license": "BSD-3-Clause",
+      "license_url": "https://github.com/flutter/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "b60d0736a33a0de7d3f4ea2a7ad740ca0daa5c94",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-16",
+        "skill_md_url": "https://github.com/flutter/skills/blob/b60d0736a33a0de7d3f4ea2a7ad740ca0daa5c94/skills/dart-use-path-package/SKILL.md"
+      },
+      "quality": {
+        "score": 84,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/flutter/skills/dart-use-path-package/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/flutter/skills/dart-use-path-package/",
+      "source_folder_url": "https://github.com/flutter/skills/tree/main/skills/dart-use-path-package",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/flutter/skills/tree/main/skills/dart-use-path-package",
+        "publisher_setup_url": "https://github.com/flutter/skills/blob/main/skills/dart-use-path-package/SKILL.md"
+      }
+    },
+    {
+      "id": "flutter/skills/dart-use-pattern-matching",
+      "name": "dart-use-pattern-matching",
+      "description": "Applies Dart 3 pattern matching, switch expressions, and destructuring idiomatically to validate data schemas, handle algebraic data types, and decompose control flow. Use when refactoring complex if-else chains, parsing polymorphic JSON or API responses, destructuring Lists, URI/path segments, String.split() tokens, Records, or Maps, or enforcing exhaustiveness on sealed classes. Don't use for simple boolean conditions, single-variable type promotion (use `is`), or basic collection filtering.",
+      "category": "developer-tools",
+      "license": "BSD-3-Clause",
+      "license_url": "https://github.com/flutter/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "b60d0736a33a0de7d3f4ea2a7ad740ca0daa5c94",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-16",
+        "skill_md_url": "https://github.com/flutter/skills/blob/b60d0736a33a0de7d3f4ea2a7ad740ca0daa5c94/skills/dart-use-pattern-matching/SKILL.md"
+      },
+      "quality": {
+        "score": 81,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/flutter/skills/dart-use-pattern-matching/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/flutter/skills/dart-use-pattern-matching/",
+      "source_folder_url": "https://github.com/flutter/skills/tree/main/skills/dart-use-pattern-matching",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/flutter/skills/tree/main/skills/dart-use-pattern-matching",
+        "publisher_setup_url": "https://github.com/flutter/skills/blob/main/skills/dart-use-pattern-matching/SKILL.md"
+      }
+    },
+    {
+      "id": "flutter/skills/dart-use-primary-constructors",
+      "name": "dart-use-primary-constructors",
+      "description": "Help users write syntactically and semantically correct primary constructors in Dart, and migrate/use the new constructor syntax, empty-body semicolon syntax, in-body initializer list syntax, and abbreviated concise constructor syntax.",
+      "category": "developer-tools",
+      "license": "BSD-3-Clause",
+      "license_url": "https://github.com/flutter/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "b60d0736a33a0de7d3f4ea2a7ad740ca0daa5c94",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-16",
+        "skill_md_url": "https://github.com/flutter/skills/blob/b60d0736a33a0de7d3f4ea2a7ad740ca0daa5c94/skills/dart-use-primary-constructors/SKILL.md"
+      },
+      "quality": {
+        "score": 77,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/flutter/skills/dart-use-primary-constructors/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/flutter/skills/dart-use-primary-constructors/",
+      "source_folder_url": "https://github.com/flutter/skills/tree/main/skills/dart-use-primary-constructors",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/flutter/skills/tree/main/skills/dart-use-primary-constructors",
+        "publisher_setup_url": "https://github.com/flutter/skills/blob/main/skills/dart-use-primary-constructors/SKILL.md"
+      }
+    },
+    {
+      "id": "flutter/skills/dart-write-documentation",
+      "name": "dart-write-documentation",
+      "description": "Rules and formatting guidelines for writing Dart /// API documentation and doc comments. Use when documenting Dart code, writing doc comments for any Dart declaration (libraries, classes, methods, variables, etc.), or when instructed to follow the Effective Dart documentation guidelines.",
+      "category": "writing-content",
+      "license": "BSD-3-Clause",
+      "license_url": "https://github.com/flutter/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "b60d0736a33a0de7d3f4ea2a7ad740ca0daa5c94",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-16",
+        "skill_md_url": "https://github.com/flutter/skills/blob/b60d0736a33a0de7d3f4ea2a7ad740ca0daa5c94/skills/dart-write-documentation/SKILL.md"
+      },
+      "quality": {
+        "score": 77,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/flutter/skills/dart-write-documentation/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/flutter/skills/dart-write-documentation/",
+      "source_folder_url": "https://github.com/flutter/skills/tree/main/skills/dart-write-documentation",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/flutter/skills/tree/main/skills/dart-write-documentation",
+        "publisher_setup_url": "https://github.com/flutter/skills/blob/main/skills/dart-write-documentation/SKILL.md"
+      }
+    },
+    {
+      "id": "flutter/skills/flutter-add-integration-test",
+      "name": "flutter-add-integration-test",
+      "description": "Configures Flutter Driver for app interaction and converts MCP actions into permanent integration tests. Use when adding integration testing to a project, exploring UI components via MCP, or automating user flows with the integration_test package.",
+      "category": "testing-qa",
+      "license": "BSD-3-Clause",
+      "license_url": "https://github.com/flutter/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "b60d0736a33a0de7d3f4ea2a7ad740ca0daa5c94",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-16",
+        "skill_md_url": "https://github.com/flutter/skills/blob/b60d0736a33a0de7d3f4ea2a7ad740ca0daa5c94/skills/flutter-add-integration-test/SKILL.md"
+      },
+      "quality": {
+        "score": 77,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/flutter/skills/flutter-add-integration-test/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/flutter/skills/flutter-add-integration-test/",
+      "source_folder_url": "https://github.com/flutter/skills/tree/main/skills/flutter-add-integration-test",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/flutter/skills/tree/main/skills/flutter-add-integration-test",
+        "publisher_setup_url": "https://github.com/flutter/skills/blob/main/skills/flutter-add-integration-test/SKILL.md"
+      }
+    },
+    {
+      "id": "flutter/skills/flutter-add-widget-preview",
+      "name": "flutter-add-widget-preview",
+      "description": "Adds interactive widget previews to the project using the previews.dart system. Use when creating new UI components or updating existing screens to ensure consistent design and interactive testing.",
+      "category": "frontend-design",
+      "license": "BSD-3-Clause",
+      "license_url": "https://github.com/flutter/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "b60d0736a33a0de7d3f4ea2a7ad740ca0daa5c94",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-16",
+        "skill_md_url": "https://github.com/flutter/skills/blob/b60d0736a33a0de7d3f4ea2a7ad740ca0daa5c94/skills/flutter-add-widget-preview/SKILL.md"
+      },
+      "quality": {
+        "score": 77,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/flutter/skills/flutter-add-widget-preview/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/flutter/skills/flutter-add-widget-preview/",
+      "source_folder_url": "https://github.com/flutter/skills/tree/main/skills/flutter-add-widget-preview",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/flutter/skills/tree/main/skills/flutter-add-widget-preview",
+        "publisher_setup_url": "https://github.com/flutter/skills/blob/main/skills/flutter-add-widget-preview/SKILL.md"
+      }
+    },
+    {
+      "id": "flutter/skills/flutter-setup-declarative-routing",
+      "name": "flutter-setup-declarative-routing",
+      "description": "Configure `MaterialApp.router` using a package like `go_router` for advanced URL-based navigation. Use when developing web applications or mobile apps that require specific deep linking and browser history support.",
+      "category": "developer-tools",
+      "license": "BSD-3-Clause",
+      "license_url": "https://github.com/flutter/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "b60d0736a33a0de7d3f4ea2a7ad740ca0daa5c94",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-16",
+        "skill_md_url": "https://github.com/flutter/skills/blob/b60d0736a33a0de7d3f4ea2a7ad740ca0daa5c94/skills/flutter-setup-declarative-routing/SKILL.md"
+      },
+      "quality": {
+        "score": 77,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/flutter/skills/flutter-setup-declarative-routing/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/flutter/skills/flutter-setup-declarative-routing/",
+      "source_folder_url": "https://github.com/flutter/skills/tree/main/skills/flutter-setup-declarative-routing",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/flutter/skills/tree/main/skills/flutter-setup-declarative-routing",
+        "publisher_setup_url": "https://github.com/flutter/skills/blob/main/skills/flutter-setup-declarative-routing/SKILL.md"
+      }
+    },
+    {
+      "id": "flutter/skills/flutter-setup-localization",
+      "name": "flutter-setup-localization",
+      "description": "Add `flutter_localizations` and `intl` dependencies, enable \"generate true\" in `pubspec.yaml`, and create an `l10n.yaml` configuration file. Use when initializing localization support for a new Flutter project.",
+      "category": "developer-tools",
+      "license": "BSD-3-Clause",
+      "license_url": "https://github.com/flutter/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "b60d0736a33a0de7d3f4ea2a7ad740ca0daa5c94",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-16",
+        "skill_md_url": "https://github.com/flutter/skills/blob/b60d0736a33a0de7d3f4ea2a7ad740ca0daa5c94/skills/flutter-setup-localization/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/flutter/skills/flutter-setup-localization/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/flutter/skills/flutter-setup-localization/",
+      "source_folder_url": "https://github.com/flutter/skills/tree/main/skills/flutter-setup-localization",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/flutter/skills/tree/main/skills/flutter-setup-localization",
+        "publisher_setup_url": "https://github.com/flutter/skills/blob/main/skills/flutter-setup-localization/SKILL.md"
+      }
+    },
+    {
+      "id": "flutter/skills/dart-add-unit-test",
+      "name": "dart-add-unit-test",
+      "description": "Write and organize unit tests for functions, methods, and classes using `package:test`. Use when creating new logic or fixing bugs to ensure code remains correct and regression-free.",
+      "category": "testing-qa",
+      "license": "BSD-3-Clause",
+      "license_url": "https://github.com/flutter/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "b60d0736a33a0de7d3f4ea2a7ad740ca0daa5c94",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-16",
+        "skill_md_url": "https://github.com/flutter/skills/blob/b60d0736a33a0de7d3f4ea2a7ad740ca0daa5c94/skills/dart-add-unit-test/SKILL.md"
+      },
+      "quality": {
+        "score": 77,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/flutter/skills/dart-add-unit-test/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/flutter/skills/tree/main/skills/dart-add-unit-test",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/flutter/skills/tree/main/skills/dart-add-unit-test",
+        "publisher_setup_url": "https://github.com/flutter/skills/blob/main/skills/dart-add-unit-test/SKILL.md"
+      }
+    },
+    {
+      "id": "flutter/skills/dart-collect-coverage",
+      "name": "dart-collect-coverage",
+      "description": "Collect coverage using the coverage packge and create an LCOV report",
+      "category": "testing-qa",
+      "license": "BSD-3-Clause",
+      "license_url": "https://github.com/flutter/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "b60d0736a33a0de7d3f4ea2a7ad740ca0daa5c94",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-16",
+        "skill_md_url": "https://github.com/flutter/skills/blob/b60d0736a33a0de7d3f4ea2a7ad740ca0daa5c94/skills/dart-collect-coverage/SKILL.md"
+      },
+      "quality": {
+        "score": 65,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/flutter/skills/dart-collect-coverage/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/flutter/skills/tree/main/skills/dart-collect-coverage",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/flutter/skills/tree/main/skills/dart-collect-coverage",
+        "publisher_setup_url": "https://github.com/flutter/skills/blob/main/skills/dart-collect-coverage/SKILL.md"
+      }
+    },
+    {
+      "id": "flutter/skills/dart-fix-runtime-errors",
+      "name": "dart-fix-runtime-errors",
+      "description": "Uses get_runtime_errors and lsp to fetch an active stack trace, locate the failing line, apply a fix, and verify resolution via hot_reload.",
+      "category": "testing-qa",
+      "license": "BSD-3-Clause",
+      "license_url": "https://github.com/flutter/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "b60d0736a33a0de7d3f4ea2a7ad740ca0daa5c94",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-16",
+        "skill_md_url": "https://github.com/flutter/skills/blob/b60d0736a33a0de7d3f4ea2a7ad740ca0daa5c94/skills/dart-fix-runtime-errors/SKILL.md"
+      },
+      "quality": {
+        "score": 67,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/flutter/skills/dart-fix-runtime-errors/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/flutter/skills/tree/main/skills/dart-fix-runtime-errors",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/flutter/skills/tree/main/skills/dart-fix-runtime-errors",
+        "publisher_setup_url": "https://github.com/flutter/skills/blob/main/skills/dart-fix-runtime-errors/SKILL.md"
+      }
+    },
+    {
+      "id": "flutter/skills/dart-resolve-package-conflicts",
+      "name": "dart-resolve-package-conflicts",
+      "description": "Workflow for fixing package version conflicts. Use this when `pub get` fails due to incompatible package versions.",
+      "category": "developer-tools",
+      "license": "BSD-3-Clause",
+      "license_url": "https://github.com/flutter/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "b60d0736a33a0de7d3f4ea2a7ad740ca0daa5c94",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-16",
+        "skill_md_url": "https://github.com/flutter/skills/blob/b60d0736a33a0de7d3f4ea2a7ad740ca0daa5c94/skills/dart-resolve-package-conflicts/SKILL.md"
+      },
+      "quality": {
+        "score": 75,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/flutter/skills/dart-resolve-package-conflicts/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/flutter/skills/tree/main/skills/dart-resolve-package-conflicts",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/flutter/skills/tree/main/skills/dart-resolve-package-conflicts",
+        "publisher_setup_url": "https://github.com/flutter/skills/blob/main/skills/dart-resolve-package-conflicts/SKILL.md"
+      }
+    },
+    {
+      "id": "flutter/skills/dart-run-static-analysis",
+      "name": "dart-run-static-analysis",
+      "description": "Execute `dart analyze` to identify warnings and errors, and use `dart fix --apply` to automatically resolve mechanical lint issues. Use during development to ensure code quality and before committing changes.",
+      "category": "code-review-quality",
+      "license": "BSD-3-Clause",
+      "license_url": "https://github.com/flutter/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "b60d0736a33a0de7d3f4ea2a7ad740ca0daa5c94",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-16",
+        "skill_md_url": "https://github.com/flutter/skills/blob/b60d0736a33a0de7d3f4ea2a7ad740ca0daa5c94/skills/dart-run-static-analysis/SKILL.md"
+      },
+      "quality": {
+        "score": 69,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/flutter/skills/dart-run-static-analysis/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/flutter/skills/tree/main/skills/dart-run-static-analysis",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/flutter/skills/tree/main/skills/dart-run-static-analysis",
+        "publisher_setup_url": "https://github.com/flutter/skills/blob/main/skills/dart-run-static-analysis/SKILL.md"
+      }
+    },
+    {
+      "id": "flutter/skills/dart-use-doc-examples",
+      "name": "dart-use-doc-examples",
+      "description": "How to inject external code examples into Dartdoc using the {@example} directive, and how to filter those files using #hide, #region, and #endregion tags.",
+      "category": "writing-content",
+      "license": "BSD-3-Clause",
+      "license_url": "https://github.com/flutter/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "b60d0736a33a0de7d3f4ea2a7ad740ca0daa5c94",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-16",
+        "skill_md_url": "https://github.com/flutter/skills/blob/b60d0736a33a0de7d3f4ea2a7ad740ca0daa5c94/skills/dart-use-doc-examples/SKILL.md"
+      },
+      "quality": {
+        "score": 69,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/flutter/skills/dart-use-doc-examples/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/flutter/skills/tree/main/skills/dart-use-doc-examples",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/flutter/skills/tree/main/skills/dart-use-doc-examples",
+        "publisher_setup_url": "https://github.com/flutter/skills/blob/main/skills/dart-use-doc-examples/SKILL.md"
+      }
+    },
+    {
+      "id": "flutter/skills/flutter-add-widget-test",
+      "name": "flutter-add-widget-test",
+      "description": "Implement a component-level test using `WidgetTester` to verify UI rendering and user interactions (tapping, scrolling, entering text). Use when validating that a specific widget displays correct data and responds to events as expected.",
+      "category": "testing-qa",
+      "license": "BSD-3-Clause",
+      "license_url": "https://github.com/flutter/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "b60d0736a33a0de7d3f4ea2a7ad740ca0daa5c94",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-16",
+        "skill_md_url": "https://github.com/flutter/skills/blob/b60d0736a33a0de7d3f4ea2a7ad740ca0daa5c94/skills/flutter-add-widget-test/SKILL.md"
+      },
+      "quality": {
+        "score": 77,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/flutter/skills/flutter-add-widget-test/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/flutter/skills/tree/main/skills/flutter-add-widget-test",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/flutter/skills/tree/main/skills/flutter-add-widget-test",
+        "publisher_setup_url": "https://github.com/flutter/skills/blob/main/skills/flutter-add-widget-test/SKILL.md"
+      }
+    },
+    {
+      "id": "flutter/skills/flutter-apply-architecture-best-practices",
+      "name": "flutter-apply-architecture-best-practices",
+      "description": "Architects a Flutter application using the recommended layered approach (UI, Logic, Data). Use when structuring a new project or refactoring for scalability.",
+      "category": "developer-tools",
+      "license": "BSD-3-Clause",
+      "license_url": "https://github.com/flutter/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "b60d0736a33a0de7d3f4ea2a7ad740ca0daa5c94",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-16",
+        "skill_md_url": "https://github.com/flutter/skills/blob/b60d0736a33a0de7d3f4ea2a7ad740ca0daa5c94/skills/flutter-apply-architecture-best-practices/SKILL.md"
+      },
+      "quality": {
+        "score": 77,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/flutter/skills/flutter-apply-architecture-best-practices/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/flutter/skills/tree/main/skills/flutter-apply-architecture-best-practices",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/flutter/skills/tree/main/skills/flutter-apply-architecture-best-practices",
+        "publisher_setup_url": "https://github.com/flutter/skills/blob/main/skills/flutter-apply-architecture-best-practices/SKILL.md"
+      }
+    },
+    {
+      "id": "flutter/skills/flutter-build-responsive-layout",
+      "name": "flutter-build-responsive-layout",
+      "description": "Use `LayoutBuilder`, `MediaQuery`, or `Expanded/Flexible` to create a layout that adapts to different screen sizes. Use when you need the UI to look good on both mobile and tablet/desktop form factors.",
+      "category": "frontend-design",
+      "license": "BSD-3-Clause",
+      "license_url": "https://github.com/flutter/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "b60d0736a33a0de7d3f4ea2a7ad740ca0daa5c94",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-16",
+        "skill_md_url": "https://github.com/flutter/skills/blob/b60d0736a33a0de7d3f4ea2a7ad740ca0daa5c94/skills/flutter-build-responsive-layout/SKILL.md"
+      },
+      "quality": {
+        "score": 77,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/flutter/skills/flutter-build-responsive-layout/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/flutter/skills/tree/main/skills/flutter-build-responsive-layout",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/flutter/skills/tree/main/skills/flutter-build-responsive-layout",
+        "publisher_setup_url": "https://github.com/flutter/skills/blob/main/skills/flutter-build-responsive-layout/SKILL.md"
+      }
+    },
+    {
+      "id": "flutter/skills/flutter-fix-layout-issues",
+      "name": "flutter-fix-layout-issues",
+      "description": "Fixes Flutter layout errors (overflows, unbounded constraints) using Dart and Flutter MCP tools. Use when addressing \"RenderFlex overflowed\", \"Vertical viewport was given unbounded height\", or similar layout issues.",
+      "category": "frontend-design",
+      "license": "BSD-3-Clause",
+      "license_url": "https://github.com/flutter/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "b60d0736a33a0de7d3f4ea2a7ad740ca0daa5c94",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-16",
+        "skill_md_url": "https://github.com/flutter/skills/blob/b60d0736a33a0de7d3f4ea2a7ad740ca0daa5c94/skills/flutter-fix-layout-issues/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/flutter/skills/flutter-fix-layout-issues/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/flutter/skills/tree/main/skills/flutter-fix-layout-issues",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/flutter/skills/tree/main/skills/flutter-fix-layout-issues",
+        "publisher_setup_url": "https://github.com/flutter/skills/blob/main/skills/flutter-fix-layout-issues/SKILL.md"
+      }
+    },
+    {
+      "id": "flutter/skills/flutter-implement-json-serialization",
+      "name": "flutter-implement-json-serialization",
+      "description": "Create model classes with `fromJson` and `toJson` methods using `dart:convert`. Use when manually mapping JSON keys to class properties for simple data structures.",
+      "category": "developer-tools",
+      "license": "BSD-3-Clause",
+      "license_url": "https://github.com/flutter/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "b60d0736a33a0de7d3f4ea2a7ad740ca0daa5c94",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-16",
+        "skill_md_url": "https://github.com/flutter/skills/blob/b60d0736a33a0de7d3f4ea2a7ad740ca0daa5c94/skills/flutter-implement-json-serialization/SKILL.md"
+      },
+      "quality": {
+        "score": 77,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/flutter/skills/flutter-implement-json-serialization/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/flutter/skills/tree/main/skills/flutter-implement-json-serialization",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/flutter/skills/tree/main/skills/flutter-implement-json-serialization",
+        "publisher_setup_url": "https://github.com/flutter/skills/blob/main/skills/flutter-implement-json-serialization/SKILL.md"
+      }
+    },
+    {
+      "id": "flutter/skills/flutter-use-http-package",
+      "name": "flutter-use-http-package",
+      "description": "Use the `http` package to execute GET, POST, PUT, or DELETE requests. Use when you need to fetch from or send data to a REST API.",
+      "category": "developer-tools",
+      "license": "BSD-3-Clause",
+      "license_url": "https://github.com/flutter/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "b60d0736a33a0de7d3f4ea2a7ad740ca0daa5c94",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-16",
+        "skill_md_url": "https://github.com/flutter/skills/blob/b60d0736a33a0de7d3f4ea2a7ad740ca0daa5c94/skills/flutter-use-http-package/SKILL.md"
+      },
+      "quality": {
+        "score": 75,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/flutter/skills/flutter-use-http-package/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/flutter/skills/tree/main/skills/flutter-use-http-package",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/flutter/skills/tree/main/skills/flutter-use-http-package",
+        "publisher_setup_url": "https://github.com/flutter/skills/blob/main/skills/flutter-use-http-package/SKILL.md"
+      }
+    }
+  ]
+}

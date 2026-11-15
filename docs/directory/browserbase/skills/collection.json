@@ -1,0 +1,1905 @@
+{
+  "schema_version": 1,
+  "repository": "browserbase/skills",
+  "listing_url": "https://skills.suedeai.ai/directory/browserbase/skills/",
+  "snapshot": {
+    "date": "2026-10-22",
+    "id": "0083645c3974488e8803884c7af76698",
+    "dataset_sha256": "b73996d45961aa527b4cea74a41a2e44497200dba9b2f85411e3602ab5f56641"
+  },
+  "listed_skill_count": 18,
+  "scope": "Skills listed by the directory; this is not a complete inventory of every file in the repository.",
+  "security_scan_status": "not_scanned",
+  "skills": [
+    {
+      "id": "browserbase/skills/add-webmcp",
+      "name": "add-webmcp",
+      "description": "Analyze an existing web application, identify safe user-visible capabilities across routes, forms, server actions, handlers, and schemas, then implement first-party WebMCP tools and validate discovery and invocation with Stagehand. Use when the user asks to make a codebase agent-ready, expose website features as WebMCP tools, or add WebMCP directly to an app rather than generating a standalone injection script from a URL.",
+      "category": "ai-agents-llm",
+      "license": "MIT",
+      "license_url": "https://github.com/browserbase/skills/blob/main/skills/add-webmcp/LICENSE.txt",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "6811ca31163332d9d60309cff48e77f09de37a17",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-01",
+        "skill_md_url": "https://github.com/browserbase/skills/blob/6811ca31163332d9d60309cff48e77f09de37a17/skills/add-webmcp/SKILL.md"
+      },
+      "quality": {
+        "score": 83,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/browserbase/skills/add-webmcp/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/browserbase/skills/add-webmcp/",
+      "source_folder_url": "https://github.com/browserbase/skills/tree/main/skills/add-webmcp",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/browserbase/skills/tree/main/skills/add-webmcp",
+        "publisher_setup_url": "https://github.com/browserbase/skills/blob/main/skills/add-webmcp/SKILL.md"
+      }
+    },
+    {
+      "id": "browserbase/skills/agent-experience",
+      "name": "agent-experience",
+      "description": "Audit the developer experience of a product, SDK, docs site, or SKILL.md by dropping multiple Claude subagents at it with only a tiny task prompt and real tools (WebFetch, Bash, Write). Agents must discover the docs themselves, install deps, ask for credentials if needed, and attempt real execution. The skill captures each agent's trace — tool calls, retries, wall time, errors — and scores on Setup Friction, Speed, Efficiency, Error Recovery, and Doc Quality, then emits an HTML report with an A–F grade and concrete fixes. Use when the user asks to audit agent experience, test a skill, audit docs for agents, check if a SDK is agent-friendly, validate a SKILL.md, measure agent DX, or benchmark how painful onboarding is for an AI agent. Triggers: 'audit agent experience', 'test this skill', 'audit docs for agents', 'is my SDK agent-friendly', 'run a DX audit', 'agent experience test', 'test my docs', 'how do agents do with my product'.",
+      "category": "ai-agents-llm",
+      "license": "MIT",
+      "license_url": "https://github.com/browserbase/skills/blob/main/skills/agent-experience/LICENSE.txt",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "6811ca31163332d9d60309cff48e77f09de37a17",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-01",
+        "skill_md_url": "https://github.com/browserbase/skills/blob/6811ca31163332d9d60309cff48e77f09de37a17/skills/agent-experience/SKILL.md"
+      },
+      "quality": {
+        "score": 74,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/browserbase/skills/agent-experience/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/browserbase/skills/agent-experience/",
+      "source_folder_url": "https://github.com/browserbase/skills/tree/main/skills/agent-experience",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/browserbase/skills/tree/main/skills/agent-experience",
+        "publisher_setup_url": "https://github.com/browserbase/skills/blob/main/skills/agent-experience/SKILL.md"
+      }
+    },
+    {
+      "id": "browserbase/skills/autobrowse",
+      "name": "autobrowse",
+      "description": "Self-improving browser automation via the auto-research loop. Iteratively runs a browsing task, reads the trace, and improves the navigation skill (strategy.md) until it reliably passes. Supports parallel runs across multiple tasks using sub-agents. Use when you want to build or improve browser automation skills for specific website tasks.",
+      "category": "ai-agents-llm",
+      "license": "MIT",
+      "license_url": "https://github.com/browserbase/skills/blob/main/skills/autobrowse/LICENSE.txt",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "6811ca31163332d9d60309cff48e77f09de37a17",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-01",
+        "skill_md_url": "https://github.com/browserbase/skills/blob/6811ca31163332d9d60309cff48e77f09de37a17/skills/autobrowse/SKILL.md"
+      },
+      "quality": {
+        "score": 83,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/browserbase/skills/autobrowse/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/browserbase/skills/autobrowse/",
+      "source_folder_url": "https://github.com/browserbase/skills/tree/main/skills/autobrowse",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/browserbase/skills/tree/main/skills/autobrowse",
+        "publisher_setup_url": "https://github.com/browserbase/skills/blob/main/skills/autobrowse/SKILL.md"
+      }
+    },
+    {
+      "id": "browserbase/skills/browser-to-api",
+      "name": "browser-to-api",
+      "description": "Turn a website's observable HTTP traffic into a best-effort OpenAPI 3.1 spec by analyzing a `browser-trace` capture. Use when the user wants to discover/extract API endpoints from a browser session, build an OpenAPI doc from network traffic, or document a third-party site's XHR/fetch surface for client integration.",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/browserbase/skills/blob/main/skills/browser-to-api/LICENSE.txt",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "6811ca31163332d9d60309cff48e77f09de37a17",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-01",
+        "skill_md_url": "https://github.com/browserbase/skills/blob/6811ca31163332d9d60309cff48e77f09de37a17/skills/browser-to-api/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/browserbase/skills/browser-to-api/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/browserbase/skills/browser-to-api/",
+      "source_folder_url": "https://github.com/browserbase/skills/tree/main/skills/browser-to-api",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/browserbase/skills/tree/main/skills/browser-to-api",
+        "publisher_setup_url": "https://github.com/browserbase/skills/blob/main/skills/browser-to-api/SKILL.md"
+      }
+    },
+    {
+      "id": "browserbase/skills/browser-trace",
+      "name": "browser-trace",
+      "description": "Capture a full DevTools-protocol trace of any browser automation — CDP firehose, screenshots, and DOM dumps — then bisect the stream into per-page searchable buckets. Use when the user wants to debug a failed run, audit network/console/DOM activity, attach a trace to an in-progress session, or feed structured per-page summaries back into an agent loop so its next iteration learns from the last one.",
+      "category": "testing-qa",
+      "license": "MIT",
+      "license_url": "https://github.com/browserbase/skills/blob/main/skills/browser-trace/LICENSE.txt",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "6811ca31163332d9d60309cff48e77f09de37a17",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-01",
+        "skill_md_url": "https://github.com/browserbase/skills/blob/6811ca31163332d9d60309cff48e77f09de37a17/skills/browser-trace/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/browserbase/skills/browser-trace/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/browserbase/skills/browser-trace/",
+      "source_folder_url": "https://github.com/browserbase/skills/tree/main/skills/browser-trace",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/browserbase/skills/tree/main/skills/browser-trace",
+        "publisher_setup_url": "https://github.com/browserbase/skills/blob/main/skills/browser-trace/SKILL.md"
+      }
+    },
+    {
+      "id": "browserbase/skills/browser-use-to-stagehand",
+      "name": "browser-use-to-stagehand",
+      "description": "Migrate browser-use (Python) browser-automation scripts to Stagehand v3 (TypeScript) on Browserbase. Use when the user wants to convert, port, rewrite, or migrate a browser-use Agent script to Stagehand, map browser-use features/APIs to Stagehand primitives (act/extract/observe/agent), or move agentic browser automation onto Browserbase with more determinism. Triggers on \"browser-use\", \"browser_use\", or \"Agent(task=...)\".",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/browserbase/skills/blob/main/skills/browser-use-to-stagehand/LICENSE.txt",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "6811ca31163332d9d60309cff48e77f09de37a17",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-01",
+        "skill_md_url": "https://github.com/browserbase/skills/blob/6811ca31163332d9d60309cff48e77f09de37a17/skills/browser-use-to-stagehand/SKILL.md"
+      },
+      "quality": {
+        "score": 84,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/browserbase/skills/browser-use-to-stagehand/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/browserbase/skills/browser-use-to-stagehand/",
+      "source_folder_url": "https://github.com/browserbase/skills/tree/main/skills/browser-use-to-stagehand",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/browserbase/skills/tree/main/skills/browser-use-to-stagehand",
+        "publisher_setup_url": "https://github.com/browserbase/skills/blob/main/skills/browser-use-to-stagehand/SKILL.md"
+      }
+    },
+    {
+      "id": "browserbase/skills/company-research",
+      "name": "company-research",
+      "description": "Company discovery and deep research skill. Researches a company's product and ICP, discovers target companies to sell to using Browserbase Search API, deeply researches each using a Plan→Research→Synthesize pattern, and scores ICP fit — compiled into a scored research report and CSV. Supports depth modes (quick/deep/deeper) for balancing scale vs intelligence. Use when the user wants to: (1) find companies to sell to, (2) research potential customers, (3) discover companies matching an ICP, (4) build a target company list, (5) do market research on prospects. Triggers: \"find companies to sell to\", \"company research\", \"find prospects\", \"ICP research\", \"target companies\", \"who should we sell to\", \"market research\", \"lead research\", \"prospect list\".",
+      "category": "business-finance",
+      "license": "MIT",
+      "license_url": "https://github.com/browserbase/skills/blob/main/skills/company-research/LICENSE.txt",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "6811ca31163332d9d60309cff48e77f09de37a17",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-01",
+        "skill_md_url": "https://github.com/browserbase/skills/blob/6811ca31163332d9d60309cff48e77f09de37a17/skills/company-research/SKILL.md"
+      },
+      "quality": {
+        "score": 84,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/browserbase/skills/company-research/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/browserbase/skills/company-research/",
+      "source_folder_url": "https://github.com/browserbase/skills/tree/main/skills/company-research",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/browserbase/skills/tree/main/skills/company-research",
+        "publisher_setup_url": "https://github.com/browserbase/skills/blob/main/skills/company-research/SKILL.md"
+      }
+    },
+    {
+      "id": "browserbase/skills/competitor-analysis",
+      "name": "competitor-analysis",
+      "description": "Competitor research and intelligence skill. Takes a user's company (with optional seed competitor URLs), auto-discovers additional competitors via Browserbase Search API, deeply researches each using a 4-lane pattern (marketing surface, external signal, public benchmarks, strategic diff vs the user's company), and compiles the results into an HTML report with four views: overview, per-competitor deep dive, side-by-side feature/pricing matrix, and a chronological mentions feed (news, reviews, social, comparison pages, and public benchmarks). Use when the user wants to: (1) analyze competitors, (2) build a competitive matrix, (3) extract competitor pricing / features, (4) find comparison pages and online mentions of competitors, (5) surface public benchmarks. Triggers: \"competitor analysis\", \"analyze competitors\", \"competitive intel\", \"competitor research\", \"competitor pricing\", \"feature comparison\", \"price comparison\", \"find comparisons\", \"who's comparing us\", \"competitor mentions\", \"competitor benchmarks\".",
+      "category": "business-finance",
+      "license": "MIT",
+      "license_url": "https://github.com/browserbase/skills/blob/main/skills/competitor-analysis/LICENSE.txt",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "6811ca31163332d9d60309cff48e77f09de37a17",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-01",
+        "skill_md_url": "https://github.com/browserbase/skills/blob/6811ca31163332d9d60309cff48e77f09de37a17/skills/competitor-analysis/SKILL.md"
+      },
+      "quality": {
+        "score": 79,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/browserbase/skills/competitor-analysis/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/browserbase/skills/competitor-analysis/",
+      "source_folder_url": "https://github.com/browserbase/skills/tree/main/skills/competitor-analysis",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/browserbase/skills/tree/main/skills/competitor-analysis",
+        "publisher_setup_url": "https://github.com/browserbase/skills/blob/main/skills/competitor-analysis/SKILL.md"
+      }
+    },
+    {
+      "id": "browserbase/skills/cookie-sync",
+      "name": "cookie-sync",
+      "description": "Sync cookies from local Chrome to a Browserbase persistent context so the browse CLI can access authenticated sites. Use when the user wants to browse as themselves, sync cookies, or log into sites via Browserbase.",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/browserbase/skills/blob/main/skills/cookie-sync/LICENSE.txt",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "6811ca31163332d9d60309cff48e77f09de37a17",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-01",
+        "skill_md_url": "https://github.com/browserbase/skills/blob/6811ca31163332d9d60309cff48e77f09de37a17/skills/cookie-sync/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/browserbase/skills/cookie-sync/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/browserbase/skills/cookie-sync/",
+      "source_folder_url": "https://github.com/browserbase/skills/tree/main/skills/cookie-sync",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/browserbase/skills/tree/main/skills/cookie-sync",
+        "publisher_setup_url": "https://github.com/browserbase/skills/blob/main/skills/cookie-sync/SKILL.md"
+      }
+    },
+    {
+      "id": "browserbase/skills/event-prospecting",
+      "name": "event-prospecting",
+      "description": "Event prospecting skill. Takes a conference / event speakers URL, extracts the people, filters their companies against the user's ICP, then deep-researches only the speakers at ICP-fit companies. Outputs a person-first HTML report where each card answers \"why should the AE talk to this person?\" with all public links and a one-click DM opener. Use when the user wants to: (1) find leads at a specific conference, (2) prep for an event, (3) research event speakers, (4) build a target list from a sponsor/exhibitor page, (5) scrape conference speakers and rank by ICP fit. Triggers: \"find leads at {event}\", \"research speakers at\", \"prospect this conference\", \"stripe sessions leads\", \"ai engineer summit prospects\", \"event prospecting\", \"scrape conference speakers\", \"who should I meet at\".",
+      "category": "business-finance",
+      "license": "MIT",
+      "license_url": "https://github.com/browserbase/skills/blob/main/skills/event-prospecting/LICENSE.txt",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "6811ca31163332d9d60309cff48e77f09de37a17",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-01",
+        "skill_md_url": "https://github.com/browserbase/skills/blob/6811ca31163332d9d60309cff48e77f09de37a17/skills/event-prospecting/SKILL.md"
+      },
+      "quality": {
+        "score": 84,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/browserbase/skills/event-prospecting/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/browserbase/skills/event-prospecting/",
+      "source_folder_url": "https://github.com/browserbase/skills/tree/main/skills/event-prospecting",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/browserbase/skills/tree/main/skills/event-prospecting",
+        "publisher_setup_url": "https://github.com/browserbase/skills/blob/main/skills/event-prospecting/SKILL.md"
+      }
+    },
+    {
+      "id": "browserbase/skills/optimize-agent-prompt",
+      "name": "optimize-agent-prompt",
+      "description": "Builds and improves Browserbase Agent API demos through an Autobrowse-style outer loop: run a fixed task, collect Agent messages and session logs, score the result, revise one system-prompt heuristic, and confirm convergence. Use when creating a Browserbase Agents demo or POC, optimizing an Agent system prompt, diagnosing flaky Agent runs, or applying auto-research/autobrowse to the Browserbase Agents API.",
+      "category": "ai-agents-llm",
+      "license": "MIT",
+      "license_url": "https://github.com/browserbase/skills/blob/main/skills/optimize-agent-prompt/LICENSE.txt",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "6811ca31163332d9d60309cff48e77f09de37a17",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-01",
+        "skill_md_url": "https://github.com/browserbase/skills/blob/6811ca31163332d9d60309cff48e77f09de37a17/skills/optimize-agent-prompt/SKILL.md"
+      },
+      "quality": {
+        "score": 81,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/browserbase/skills/optimize-agent-prompt/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/browserbase/skills/optimize-agent-prompt/",
+      "source_folder_url": "https://github.com/browserbase/skills/tree/main/skills/optimize-agent-prompt",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/browserbase/skills/tree/main/skills/optimize-agent-prompt",
+        "publisher_setup_url": "https://github.com/browserbase/skills/blob/main/skills/optimize-agent-prompt/SKILL.md"
+      }
+    },
+    {
+      "id": "browserbase/skills/safe-browser",
+      "name": "safe-browser",
+      "description": "Build local constrained-browser agents with a safe_browser tool that owns CDP, enforces a domain allowlist with Fetch interception, and lets a runtime Claude Agent SDK agent complete browsing tasks without raw browser, shell, or CDP access. Use when the user wants an agent to browse or scrape while staying on approved domains, demo blocked off-domain navigation, or generate a safe browser client.",
+      "category": "ai-agents-llm",
+      "license": "MIT",
+      "license_url": "https://github.com/browserbase/skills/blob/main/skills/safe-browser/LICENSE.txt",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "6811ca31163332d9d60309cff48e77f09de37a17",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-01",
+        "skill_md_url": "https://github.com/browserbase/skills/blob/6811ca31163332d9d60309cff48e77f09de37a17/skills/safe-browser/SKILL.md"
+      },
+      "quality": {
+        "score": 75,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/browserbase/skills/safe-browser/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/browserbase/skills/safe-browser/",
+      "source_folder_url": "https://github.com/browserbase/skills/tree/main/skills/safe-browser",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/browserbase/skills/tree/main/skills/safe-browser",
+        "publisher_setup_url": "https://github.com/browserbase/skills/blob/main/skills/safe-browser/SKILL.md"
+      }
+    },
+    {
+      "id": "browserbase/skills/browser",
+      "name": "browser",
+      "description": "Automate web browser interactions using natural language via CLI commands. Use when the user asks to browse websites, navigate web pages, extract data from websites, take screenshots, fill forms, click buttons, or interact with web applications. Supports remote Browserbase sessions with Browserbase Identity, Verified browsers, automatic CAPTCHA solving, and residential proxies — ideal for protected websites and JavaScript-heavy pages.",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/browserbase/skills/blob/main/skills/browser/LICENSE.txt",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "6811ca31163332d9d60309cff48e77f09de37a17",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-01",
+        "skill_md_url": "https://github.com/browserbase/skills/blob/6811ca31163332d9d60309cff48e77f09de37a17/skills/browser/SKILL.md"
+      },
+      "quality": {
+        "score": 78,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/browserbase/skills/browser/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/browserbase/skills/tree/main/skills/browser",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/browserbase/skills/tree/main/skills/browser",
+        "publisher_setup_url": "https://github.com/browserbase/skills/blob/main/skills/browser/SKILL.md"
+      }
+    },
+    {
+      "id": "browserbase/skills/fetch",
+      "name": "fetch",
+      "description": "Use this skill when the user wants to retrieve a URL without a full browser session: fetch HTML or JSON from static pages, inspect status codes or headers, follow redirects, or get page source for simple scraping. Prefer it over a browser when JavaScript rendering and page interaction are not needed. Supports proxies and redirect control.",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/browserbase/skills/blob/main/skills/fetch/LICENSE.txt",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "6811ca31163332d9d60309cff48e77f09de37a17",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-01",
+        "skill_md_url": "https://github.com/browserbase/skills/blob/6811ca31163332d9d60309cff48e77f09de37a17/skills/fetch/SKILL.md"
+      },
+      "quality": {
+        "score": 78,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/browserbase/skills/fetch/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/browserbase/skills/tree/main/skills/fetch",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/browserbase/skills/tree/main/skills/fetch",
+        "publisher_setup_url": "https://github.com/browserbase/skills/blob/main/skills/fetch/SKILL.md"
+      }
+    },
+    {
+      "id": "browserbase/skills/functions",
+      "name": "functions",
+      "description": "Deploy serverless browser automation as cloud functions using Browserbase. Use when the user wants to deploy browser automation to run on a schedule or cron, create a webhook endpoint for browser tasks, run automation in the cloud instead of locally, or asks about Browserbase Functions.",
+      "category": "devops-cloud",
+      "license": "MIT",
+      "license_url": "https://github.com/browserbase/skills/blob/main/skills/functions/LICENSE.txt",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "6811ca31163332d9d60309cff48e77f09de37a17",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-01",
+        "skill_md_url": "https://github.com/browserbase/skills/blob/6811ca31163332d9d60309cff48e77f09de37a17/skills/functions/SKILL.md"
+      },
+      "quality": {
+        "score": 75,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/browserbase/skills/functions/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/browserbase/skills/tree/main/skills/functions",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/browserbase/skills/tree/main/skills/functions",
+        "publisher_setup_url": "https://github.com/browserbase/skills/blob/main/skills/functions/SKILL.md"
+      }
+    },
+    {
+      "id": "browserbase/skills/search",
+      "name": "search",
+      "description": "Use this skill when the user wants to search the web without a full browser session: find URLs, titles, and metadata for a query. Prefer it over a browser when you just need search results, not page content. Returns structured results with titles, URLs, authors, and dates.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/browserbase/skills/blob/main/skills/search/LICENSE.txt",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "6811ca31163332d9d60309cff48e77f09de37a17",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-01",
+        "skill_md_url": "https://github.com/browserbase/skills/blob/6811ca31163332d9d60309cff48e77f09de37a17/skills/search/SKILL.md"
+      },
+      "quality": {
+        "score": 78,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/browserbase/skills/search/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/browserbase/skills/tree/main/skills/search",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/browserbase/skills/tree/main/skills/search",
+        "publisher_setup_url": "https://github.com/browserbase/skills/blob/main/skills/search/SKILL.md"
+      }
+    },
+    {
+      "id": "browserbase/skills/ui-test",
+      "name": "ui-test",
+      "description": "AI-powered adversarial UI testing via the browse CLI. Analyzes git diffs to test only what changed, or explores the full app to find bugs. Tests functional correctness, accessibility, responsive layout, and UX heuristics. Use when the user asks to test UI changes, QA a pull request, audit accessibility, or run exploratory testing. Supports local browser (localhost) and remote Browserbase (deployed sites).",
+      "category": "testing-qa",
+      "license": "MIT",
+      "license_url": "https://github.com/browserbase/skills/blob/main/skills/ui-test/LICENSE.txt",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "6811ca31163332d9d60309cff48e77f09de37a17",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-01",
+        "skill_md_url": "https://github.com/browserbase/skills/blob/6811ca31163332d9d60309cff48e77f09de37a17/skills/ui-test/SKILL.md"
+      },
+      "quality": {
+        "score": 70,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": false,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/browserbase/skills/ui-test/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/browserbase/skills/tree/main/skills/ui-test",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/browserbase/skills/tree/main/skills/ui-test",
+        "publisher_setup_url": "https://github.com/browserbase/skills/blob/main/skills/ui-test/SKILL.md"
+      }
+    },
+    {
+      "id": "browserbase/skills/webmcp-gen",
+      "name": "webmcp-gen",
+      "description": "Create, compile, and validate site-specific WebMCP init scripts from a target URL and desired tool capability. Use when the user wants to author WebMCP tools for a website, produce a webmcp.init.js artifact, or test WebMCP registration and invocation through Stagehand.",
+      "category": "ai-agents-llm",
+      "license": "MIT",
+      "license_url": "https://github.com/browserbase/skills/blob/main/skills/webmcp-gen/LICENSE.txt",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "6811ca31163332d9d60309cff48e77f09de37a17",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-01",
+        "skill_md_url": "https://github.com/browserbase/skills/blob/6811ca31163332d9d60309cff48e77f09de37a17/skills/webmcp-gen/SKILL.md"
+      },
+      "quality": {
+        "score": 77,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/browserbase/skills/webmcp-gen/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/browserbase/skills/tree/main/skills/webmcp-gen",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/browserbase/skills/tree/main/skills/webmcp-gen",
+        "publisher_setup_url": "https://github.com/browserbase/skills/blob/main/skills/webmcp-gen/SKILL.md"
+      }
+    }
+  ]
+}

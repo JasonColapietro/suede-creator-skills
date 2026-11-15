@@ -369,6 +369,10 @@ section.panel, aside.panel, .panel { background: transparent; border: 0; border-
 .panel > h3 { margin-top: 24px; }
 .panel .snippet + .snippet { margin-top: 12px; }
 .panel pre { margin: 8px 0 12px; }
+.collection-choice { padding-top: 24px; margin-top: 24px; border-top: 1px solid var(--hairline); }
+.collection-choice > h3 { margin-top: 0; overflow-wrap: anywhere; }
+.collection-choice > p, .collection-choice > details, .collection-choice > ul { margin-top: 12px; }
+.collection-choice .grade { display: inline-block; vertical-align: middle; white-space: nowrap; }
 .faq h3 { margin-top: 24px; font-size: 15.5px; color: var(--accent); }
 .faq h3::before { content: "? " / ""; color: var(--muted); }
 .faq p { overflow-wrap: anywhere; }

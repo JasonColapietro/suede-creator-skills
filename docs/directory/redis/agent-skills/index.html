@@ -30,7 +30,7 @@
         "name": "redis/agent-skills Agent Skills (8) | Suede AI",
         "description": "8 agent skills from redis/agent-skills, including iris-development, redis-clustering. Install steps, Suede Skill Check grades and a README badge.",
         "url": "https://skills.suedeai.ai/directory/redis/agent-skills/",
-        "dateModified": "2026-11-13",
+        "dateModified": "2026-11-14",
         "isPartOf": {
           "@type": "CollectionPage",
           "@id": "https://skills.suedeai.ai/directory/#directory",
@@ -223,7 +223,7 @@
       <div class="eyebrow">Skill collection &middot; redis</div>
       <h1>redis/agent-skills <span class="h1-sub">8 graded agent skills from Redis</span></h1>
       <nav class="crumbs" aria-label="Breadcrumb"><a href="../../">Directory</a> <span class="crumb-sep" aria-hidden="true">/</span> <a href="../../data-databases/">Data, Analytics and Databases</a> <span class="crumb-sep" aria-hidden="true">/</span> <span aria-current="page">redis/agent-skills</span></nav>
-      <p class="lead">8 skills from redis/agent-skills are listed in the directory, across 4 categories. 8 skills have a full page with install steps and a pre-install summary.</p>
+      <p class="lead">redis/agent-skills brings together 8 skills for data, analytics and databases, AI agent and LLM engineering, DevOps and cloud, security. Start with the task descriptions below, then compare the individual skill's score, source files and license.</p>
       <p><a class="button" href="https://github.com/redis/agent-skills" target="_blank" rel="noopener">View redis/agent-skills on GitHub</a></p>
       <section class="panel" aria-labelledby="facts-title">
         <h2 id="facts-title">At a glance</h2>
@@ -243,28 +243,219 @@
           </table>
         </div>
       </section>
-      <section class="panel badge-panel" id="badge" aria-labelledby="badge-title">
-        <h2 id="badge-title">Show the listing in your README</h2>
-        <p>This general badge links to the repository listing. Each skill keeps its own score and grade; skills scoring 80–99 add a numeric and a letter quality badge. Choose <b>Improve this score</b> beside a skill below to request a fresh review.</p>
-        <p class="badge-preview"><img src="badge.svg" alt="Suede AI Skills Directory: listed" width="215" height="20"></p>
-        <div class="snippet">
-          <div class="snippet-head"><span>Markdown</span><button type="button" class="snippet-copy" data-copy-target="badge-md">Copy</button></div>
-          <pre><code id="badge-md">[![Suede AI Skills Directory: listed](https://skills.suedeai.ai/directory/redis/agent-skills/badge.svg)](https://skills.suedeai.ai/directory/redis/agent-skills/)</code></pre>
-        </div>
-        <div class="snippet">
-          <div class="snippet-head"><span>HTML</span><button type="button" class="snippet-copy" data-copy-target="badge-html">Copy</button></div>
-          <pre><code id="badge-html">&lt;a href=&quot;https://skills.suedeai.ai/directory/redis/agent-skills/&quot;&gt;&lt;img src=&quot;https://skills.suedeai.ai/directory/redis/agent-skills/badge.svg&quot; alt=&quot;Suede AI Skills Directory: listed&quot; height=&quot;20&quot;&gt;&lt;/a&gt;</code></pre>
-        </div>
+      <section class="panel" id="collection-overview" aria-labelledby="collection-overview-title">
+        <h2 id="collection-overview-title">What this collection offers</h2>
+        <p>8 listed skills; recorded scores 75–78/100. 8 full reviews with separate installation details. Scores describe the saved source snapshot, using the <a href="../../methodology/#score">Suede Skill Check</a>.</p>
+        <p>Coverage: <a href="../../data-databases/">Data, Analytics and Databases</a> (4) · <a href="../../ai-agents-llm/">AI Agents and LLM Engineering</a> (2) · <a href="../../devops-cloud/">DevOps and Cloud</a> (1) · <a href="../../security/">Security</a> (1).</p>
+        <p class="muted">Snapshot: <time datetime="2026-10-22">October 22, 2026</time>. The checks measure published files, documentation and maintenance signals. Security scan: not scanned; this is not a runtime test.</p>
+        <p><a href="#choose-skill">Choose a skill</a> · <a href="#collection-install">Install and verify</a> · <a href="#skills-title">All listed skills</a> · <a href="#collection-compare">Compare collections</a></p>
+        <p><a href="collection.json" download="agent-skills-collection.json">Download the collection manifest</a>: complete task descriptions, scores, license information, source revisions and install routes for all 8 listed skills. Use it to compare options or hand your selection to an agent.</p>
       </section>
-<p class="badge-offer" data-promotion-end="">Limited-time feature offer: Display either quality badge in your repository or skill README, linked to your listing, then request verification. Suede AI checks the rendered README at a recorded commit. Eligible skills scoring 80–99 with a verified badge can receive a featured placement while the offer is open. <a href="../../submit/">Request badge verification</a>.</p>
-      <aside class="panel cta-placement" aria-labelledby="cta-publisher-claim-a-claim" data-cta-placement="publisher-claim" data-cta-variant="a-claim">
-        <h2 id="cta-publisher-claim-a-claim">Is this your skill?</h2>
-        <p>Add the badge to your README so readers can see the listing, then run the free Skill AI-visibility check to find the points you are missing.</p>
-        <p><a class="button" href="../../check/" data-cta="publisher-claim:a-claim">Run the free check</a></p>
-      </aside>
+
+      <section class="panel" id="choose-skill" aria-labelledby="choose-skill-title">
+        <h2 id="choose-skill-title">Choose a skill for your task</h2>
+        <p>Start with these 6 skills: the highest recorded score per category, then the highest remaining scores. The complete table below includes all 8 listings. Task descriptions come from the publisher; score explanations come from the saved report.</p>
+        <article class="collection-choice" id="choice-redis-connections">
+          <h3>redis-connections <span class="grade grade-c">78/100 · C</span></h3>
+          <p><b>Publisher's task description:</b> Redis client and connection guidance covering connection pooling, multiplexing, pipelining, client-side caching with RESP3, avoiding slow commands (KEYS, SMEMBERS, HGETALL), and tuning socket timeouts. Use when configuring a Redis client (redis-py, Jedis, Lettuce, NRedisStack), batching commands for throughput, eliminating per-request connection creation, iterating large keyspaces with SCAN, enabling client-side caching for read-heavy workloads, or setting connect and read timeouts.</p>
+          <p>577 words in SKILL.md; 6 bundled files; includes reference material. <a href="https://github.com/redis/agent-skills/blob/a84871d065f398fed55e1633f66b66f731eb4e2b/skills/redis-connections/SKILL.md" target="_blank" rel="noopener">Read the assessed SKILL.md</a>.</p>
+          <p><b>Score evidence:</b> Full points for structural checks, instruction depth and description length. Largest point gaps: curated-list citations (1/7); boundary clause (0/4).</p>
+          <details><summary>See all score components for redis-connections</summary>
+        <div class="table-wrap">
+          <table class="facts">
+            <tbody>
+            <tr><th scope="row">Structural checks</th><td>56 of 56</td></tr>
+            <tr><th scope="row">Description length</th><td>5 of 5</td></tr>
+            <tr><th scope="row">Boundary clause</th><td>0 of 4</td></tr>
+            <tr><th scope="row">Example request</th><td>0 of 3</td></tr>
+            <tr><th scope="row">Instruction depth</th><td>7 of 7</td></tr>
+            <tr><th scope="row">Reference files</th><td>3 of 3</td></tr>
+            <tr><th scope="row">Bundled scripts</th><td>0 of 2</td></tr>
+            <tr><th scope="row">Recent maintenance</th><td>6 of 9</td></tr>
+            <tr><th scope="row">Curated-list citations</th><td>1 of 7</td></tr>
+            <tr><th scope="row">Tool permissions declared</th><td>0 of 2</td></tr>
+            <tr><th scope="row">Compatibility declared</th><td>0 of 2</td></tr>
+            </tbody>
+          </table>
+        </div>
+          </details>
+          <p><a href="https://github.com/redis/agent-skills/blob/main/LICENSE" target="_blank" rel="noopener">License</a>: MIT governs reuse and modification of these files.</p>
+        <div class="snippet">
+          <div class="snippet-head"><span>Select one skill: redis-connections</span><button type="button" class="snippet-copy" data-copy-target="collection-install-0">Copy</button></div>
+          <pre><code id="collection-install-0">npx skills add https://github.com/redis/agent-skills/tree/main/skills/redis-connections</code></pre>
+        </div>
+          <p><a href="redis-connections/report.json" download>Download redis-connections score report</a> · <a href="redis-connections/">Read the full redis-connections review and install guide</a></p>
+        </article>
+        <article class="collection-choice" id="choice-iris-development">
+          <h3>iris-development <span class="grade grade-c">75/100 · C</span></h3>
+          <p><b>Publisher's task description:</b> Iris is Redis's umbrella for AI-focused products. Use this skill when integrating with the Iris Redis Agent Memory (RAM) data plane on Redis Cloud — recording session events for an AI agent, creating or searching long-term memories, configuring a memory store, or tuning background memory promotion. Code examples use the official `redis-agent-memory` (Python) and `@redis-iris/agent-memory` (TypeScript) SDKs.</p>
+          <p>483 words in SKILL.md; 10 bundled files; includes reference material. <a href="https://github.com/redis/agent-skills/blob/a84871d065f398fed55e1633f66b66f731eb4e2b/skills/iris-development/SKILL.md" target="_blank" rel="noopener">Read the assessed SKILL.md</a>.</p>
+          <p><b>Score evidence:</b> Full points for structural checks, description length and reference files. Largest point gaps: curated-list citations (1/7); boundary clause (0/4).</p>
+          <details><summary>See all score components for iris-development</summary>
+        <div class="table-wrap">
+          <table class="facts">
+            <tbody>
+            <tr><th scope="row">Structural checks</th><td>56 of 56</td></tr>
+            <tr><th scope="row">Description length</th><td>5 of 5</td></tr>
+            <tr><th scope="row">Boundary clause</th><td>0 of 4</td></tr>
+            <tr><th scope="row">Example request</th><td>0 of 3</td></tr>
+            <tr><th scope="row">Instruction depth</th><td>4 of 7</td></tr>
+            <tr><th scope="row">Reference files</th><td>3 of 3</td></tr>
+            <tr><th scope="row">Bundled scripts</th><td>0 of 2</td></tr>
+            <tr><th scope="row">Recent maintenance</th><td>6 of 9</td></tr>
+            <tr><th scope="row">Curated-list citations</th><td>1 of 7</td></tr>
+            <tr><th scope="row">Tool permissions declared</th><td>0 of 2</td></tr>
+            <tr><th scope="row">Compatibility declared</th><td>0 of 2</td></tr>
+            </tbody>
+          </table>
+        </div>
+          </details>
+          <p><a href="https://github.com/redis/agent-skills/blob/main/LICENSE" target="_blank" rel="noopener">License</a>: MIT governs reuse and modification of these files.</p>
+          <ul><li>Named environment variables: <code>AGENT_MEMORY_API_KEY</code>.</li></ul>
+        <div class="snippet">
+          <div class="snippet-head"><span>Select one skill: iris-development</span><button type="button" class="snippet-copy" data-copy-target="collection-install-1">Copy</button></div>
+          <pre><code id="collection-install-1">npx skills add https://github.com/redis/agent-skills/tree/main/skills/iris-development</code></pre>
+        </div>
+          <p><a href="iris-development/report.json" download>Download iris-development score report</a> · <a href="iris-development/">Read the full iris-development review and install guide</a></p>
+        </article>
+        <article class="collection-choice" id="choice-redis-observability">
+          <h3>redis-observability <span class="grade grade-c">75/100 · C</span></h3>
+          <p><b>Publisher's task description:</b> Redis observability guidance — which metrics to monitor (memory, connections, hit ratio, ops/sec, rejected connections), which built-in commands to reach for during incident triage (SLOWLOG, INFO, MEMORY DOCTOR, CLIENT LIST, FT.PROFILE), and when to use the Redis Insight GUI. Use when setting up monitoring or alerts for a Redis instance, diagnosing a performance regression, profiling a slow FT.SEARCH query, or wiring Redis metrics into Prometheus, Datadog, or similar.</p>
+          <p>418 words in SKILL.md; 3 bundled files; includes reference material. <a href="https://github.com/redis/agent-skills/blob/a84871d065f398fed55e1633f66b66f731eb4e2b/skills/redis-observability/SKILL.md" target="_blank" rel="noopener">Read the assessed SKILL.md</a>.</p>
+          <p><b>Score evidence:</b> Full points for structural checks, description length and reference files. Largest point gaps: curated-list citations (1/7); boundary clause (0/4).</p>
+          <details><summary>See all score components for redis-observability</summary>
+        <div class="table-wrap">
+          <table class="facts">
+            <tbody>
+            <tr><th scope="row">Structural checks</th><td>56 of 56</td></tr>
+            <tr><th scope="row">Description length</th><td>5 of 5</td></tr>
+            <tr><th scope="row">Boundary clause</th><td>0 of 4</td></tr>
+            <tr><th scope="row">Example request</th><td>0 of 3</td></tr>
+            <tr><th scope="row">Instruction depth</th><td>4 of 7</td></tr>
+            <tr><th scope="row">Reference files</th><td>3 of 3</td></tr>
+            <tr><th scope="row">Bundled scripts</th><td>0 of 2</td></tr>
+            <tr><th scope="row">Recent maintenance</th><td>6 of 9</td></tr>
+            <tr><th scope="row">Curated-list citations</th><td>1 of 7</td></tr>
+            <tr><th scope="row">Tool permissions declared</th><td>0 of 2</td></tr>
+            <tr><th scope="row">Compatibility declared</th><td>0 of 2</td></tr>
+            </tbody>
+          </table>
+        </div>
+          </details>
+          <p><a href="https://github.com/redis/agent-skills/blob/main/LICENSE" target="_blank" rel="noopener">License</a>: MIT governs reuse and modification of these files.</p>
+        <div class="snippet">
+          <div class="snippet-head"><span>Select one skill: redis-observability</span><button type="button" class="snippet-copy" data-copy-target="collection-install-2">Copy</button></div>
+          <pre><code id="collection-install-2">npx skills add https://github.com/redis/agent-skills/tree/main/skills/redis-observability</code></pre>
+        </div>
+          <p><a href="redis-observability/report.json" download>Download redis-observability score report</a> · <a href="redis-observability/">Read the full redis-observability review and install guide</a></p>
+        </article>
+        <article class="collection-choice" id="choice-redis-security">
+          <h3>redis-security <span class="grade grade-c">75/100 · C</span></h3>
+          <p><b>Publisher's task description:</b> Redis security guidance covering authentication (requirepass and ACL users), TLS, ACL-based least-privilege access control, restricting network exposure via bind and protected-mode, firewall rules, and disabling dangerous commands. Use when deploying Redis to production, defining ACL users for an application, configuring TLS connections, locking down a Redis instance behind a firewall, or auditing a Redis deployment for security hardening.</p>
+          <p>422 words in SKILL.md; 4 bundled files; includes reference material. <a href="https://github.com/redis/agent-skills/blob/a84871d065f398fed55e1633f66b66f731eb4e2b/skills/redis-security/SKILL.md" target="_blank" rel="noopener">Read the assessed SKILL.md</a>.</p>
+          <p><b>Score evidence:</b> Full points for structural checks, description length and reference files. Largest point gaps: curated-list citations (1/7); boundary clause (0/4).</p>
+          <details><summary>See all score components for redis-security</summary>
+        <div class="table-wrap">
+          <table class="facts">
+            <tbody>
+            <tr><th scope="row">Structural checks</th><td>56 of 56</td></tr>
+            <tr><th scope="row">Description length</th><td>5 of 5</td></tr>
+            <tr><th scope="row">Boundary clause</th><td>0 of 4</td></tr>
+            <tr><th scope="row">Example request</th><td>0 of 3</td></tr>
+            <tr><th scope="row">Instruction depth</th><td>4 of 7</td></tr>
+            <tr><th scope="row">Reference files</th><td>3 of 3</td></tr>
+            <tr><th scope="row">Bundled scripts</th><td>0 of 2</td></tr>
+            <tr><th scope="row">Recent maintenance</th><td>6 of 9</td></tr>
+            <tr><th scope="row">Curated-list citations</th><td>1 of 7</td></tr>
+            <tr><th scope="row">Tool permissions declared</th><td>0 of 2</td></tr>
+            <tr><th scope="row">Compatibility declared</th><td>0 of 2</td></tr>
+            </tbody>
+          </table>
+        </div>
+          </details>
+          <p><a href="https://github.com/redis/agent-skills/blob/main/LICENSE" target="_blank" rel="noopener">License</a>: MIT governs reuse and modification of these files.</p>
+        <div class="snippet">
+          <div class="snippet-head"><span>Select one skill: redis-security</span><button type="button" class="snippet-copy" data-copy-target="collection-install-3">Copy</button></div>
+          <pre><code id="collection-install-3">npx skills add https://github.com/redis/agent-skills/tree/main/skills/redis-security</code></pre>
+        </div>
+          <p><a href="redis-security/report.json" download>Download redis-security score report</a> · <a href="redis-security/">Read the full redis-security review and install guide</a></p>
+        </article>
+        <article class="collection-choice" id="choice-redis-search">
+          <h3>redis-search <span class="grade grade-c">76/100 · C</span></h3>
+          <p><b>Publisher's task description:</b> Redis Search guidance covering FT.CREATE schema design, field type selection (TEXT, TAG, NUMERIC, GEO, GEOSHAPE, VECTOR, JSON path), DIALECT 2 query syntax, FT.SEARCH / FT.AGGREGATE / FT.HYBRID command selection, vector similarity with HNSW or FLAT, hybrid retrieval combining lexical and vector ranking, RAG pipelines, zero-downtime index updates via aliases, and debugging with FT.PROFILE and FT.EXPLAIN. Use when defining a search index on Hash or JSON documents, writing FT.SEARCH queries with filters, sorting, aggregation, or vector KNN, tuning HNSW parameters, building a RAG retrieval pipeline, or troubleshooting slow or empty search results.</p>
+          <p>1,267 words in SKILL.md; 23 bundled files; includes reference material. <a href="https://github.com/redis/agent-skills/blob/a84871d065f398fed55e1633f66b66f731eb4e2b/skills/redis-search/SKILL.md" target="_blank" rel="noopener">Read the assessed SKILL.md</a>.</p>
+          <p><b>Score evidence:</b> Full points for structural checks, instruction depth and reference files. Largest point gaps: curated-list citations (1/7); boundary clause (0/4).</p>
+          <details><summary>See all score components for redis-search</summary>
+        <div class="table-wrap">
+          <table class="facts">
+            <tbody>
+            <tr><th scope="row">Structural checks</th><td>56 of 56</td></tr>
+            <tr><th scope="row">Description length</th><td>3 of 5</td></tr>
+            <tr><th scope="row">Boundary clause</th><td>0 of 4</td></tr>
+            <tr><th scope="row">Example request</th><td>0 of 3</td></tr>
+            <tr><th scope="row">Instruction depth</th><td>7 of 7</td></tr>
+            <tr><th scope="row">Reference files</th><td>3 of 3</td></tr>
+            <tr><th scope="row">Bundled scripts</th><td>0 of 2</td></tr>
+            <tr><th scope="row">Recent maintenance</th><td>6 of 9</td></tr>
+            <tr><th scope="row">Curated-list citations</th><td>1 of 7</td></tr>
+            <tr><th scope="row">Tool permissions declared</th><td>0 of 2</td></tr>
+            <tr><th scope="row">Compatibility declared</th><td>0 of 2</td></tr>
+            </tbody>
+          </table>
+        </div>
+          </details>
+          <p><a href="https://github.com/redis/agent-skills/blob/main/LICENSE" target="_blank" rel="noopener">License</a>: MIT governs reuse and modification of these files.</p>
+        <div class="snippet">
+          <div class="snippet-head"><span>Select one skill: redis-search</span><button type="button" class="snippet-copy" data-copy-target="collection-install-4">Copy</button></div>
+          <pre><code id="collection-install-4">npx skills add https://github.com/redis/agent-skills/tree/main/skills/redis-search</code></pre>
+        </div>
+          <p><a href="redis-search/report.json" download>Download redis-search score report</a> · <a href="redis-search/">Read the full redis-search review and install guide</a></p>
+        </article>
+        <article class="collection-choice" id="choice-redis-clustering">
+          <h3>redis-clustering <span class="grade grade-c">75/100 · C</span></h3>
+          <p><b>Publisher's task description:</b> Redis Cluster and replication guidance covering hash tags for multi-key operations, avoiding CROSSSLOT errors, and reading from replicas to scale read-heavy workloads. Use when designing keys for a sharded Redis Cluster, debugging CROSSSLOT errors on MGET / SDIFF / pipelines, configuring a multi-key transaction in a cluster, or routing reads to replicas for caches, analytics, or dashboards.</p>
+          <p>447 words in SKILL.md; 3 bundled files; includes reference material. <a href="https://github.com/redis/agent-skills/blob/a84871d065f398fed55e1633f66b66f731eb4e2b/skills/redis-clustering/SKILL.md" target="_blank" rel="noopener">Read the assessed SKILL.md</a>.</p>
+          <p><b>Score evidence:</b> Full points for structural checks, description length and reference files. Largest point gaps: curated-list citations (1/7); boundary clause (0/4).</p>
+          <details><summary>See all score components for redis-clustering</summary>
+        <div class="table-wrap">
+          <table class="facts">
+            <tbody>
+            <tr><th scope="row">Structural checks</th><td>56 of 56</td></tr>
+            <tr><th scope="row">Description length</th><td>5 of 5</td></tr>
+            <tr><th scope="row">Boundary clause</th><td>0 of 4</td></tr>
+            <tr><th scope="row">Example request</th><td>0 of 3</td></tr>
+            <tr><th scope="row">Instruction depth</th><td>4 of 7</td></tr>
+            <tr><th scope="row">Reference files</th><td>3 of 3</td></tr>
+            <tr><th scope="row">Bundled scripts</th><td>0 of 2</td></tr>
+            <tr><th scope="row">Recent maintenance</th><td>6 of 9</td></tr>
+            <tr><th scope="row">Curated-list citations</th><td>1 of 7</td></tr>
+            <tr><th scope="row">Tool permissions declared</th><td>0 of 2</td></tr>
+            <tr><th scope="row">Compatibility declared</th><td>0 of 2</td></tr>
+            </tbody>
+          </table>
+        </div>
+          </details>
+          <p><a href="https://github.com/redis/agent-skills/blob/main/LICENSE" target="_blank" rel="noopener">License</a>: MIT governs reuse and modification of these files.</p>
+        <div class="snippet">
+          <div class="snippet-head"><span>Select one skill: redis-clustering</span><button type="button" class="snippet-copy" data-copy-target="collection-install-5">Copy</button></div>
+          <pre><code id="collection-install-5">npx skills add https://github.com/redis/agent-skills/tree/main/skills/redis-clustering</code></pre>
+        </div>
+          <p><a href="redis-clustering/report.json" download>Download redis-clustering score report</a> · <a href="redis-clustering/">Read the full redis-clustering review and install guide</a></p>
+        </article>
+      </section>
+      <section class="panel" id="collection-install" aria-labelledby="collection-install-title">
+        <h2 id="collection-install-title">Install and verify your selection</h2>
+        <ol>
+          <li><b>Select one skill.</b> Use the folder-specific command beside its description to start with the workflow you need. Skills with publisher-specific license terms link to that publisher's setup route.</li>
+          <li><b>Read the setup requirements.</b> Check the source, license and any named tools or environment variables. Installing a SKILL.md folder supplies instructions to the agent; any external CLI, MCP server, account or service still needs its own setup.</li>
+          <li><b>Check the result.</b> Open the installed SKILL.md and confirm that its name matches your selection. In Claude Code use the project's <code>.claude/skills/</code> folder; in Codex use <code>.agents/skills/</code>. The skills CLI also supports other Agent Skills hosts.</li>
+          <li><b>Try one representative task.</b> Supply the input files, expected output and success criteria. Compare the result with those criteria before adding more skills or running the workflow on live work.</li>
+        </ol>
+        <p><a href="../../guides/install-agent-skills/">Step-by-step installation for Claude Code, Codex and Cursor</a> · <a href="../../trust/">Read the directory's security and source policy</a>.</p>
+      </section>
       <section class="panel" aria-labelledby="skills-title">
         <h2 id="skills-title">Skills in redis/agent-skills</h2>
-        <p class="muted">Linked names open the skill's directory page; the rest open the skill folder on GitHub. Descriptions on rows without a page are quoted from each SKILL.md.</p>
+        <p class="muted">Use the table to compare the full collection. Linked names open a detailed review when available; other names open the publisher's source folder.</p>
 
         <div class="table-wrap">
           <table class="skill-table" id="repo-skills" data-filter-group="repo-skills">
@@ -282,6 +473,30 @@
           </table>
         </div>
       </section>
+      <section class="panel" id="collection-compare" aria-labelledby="collection-compare-title">
+        <h2 id="collection-compare-title">Compare before adding more skills</h2>
+        <p>For data, analytics and databases, compare task fit first, then the score components, installation requirements and license. Two skills with the same score can earn their points in different ways; use their reports to see the difference.</p>
+        <p><a href="../../data-databases/">Compare data, analytics and databases skills across publishers</a> · <a href="../../compare/">Build a side-by-side comparison</a>.</p>
+      </section>
+      <section class="panel badge-panel" id="badge" aria-labelledby="badge-title">
+        <h2 id="badge-title">Show the listing in your README</h2>
+        <p>This general badge links to the repository listing. Each skill keeps its own score and grade; skills scoring 80–99 add a numeric and a letter quality badge. Choose <b>Improve this score</b> in the skill table to request a fresh review.</p>
+        <p class="badge-preview"><img src="badge.svg" alt="Suede AI Skills Directory: listed" width="215" height="20"></p>
+        <div class="snippet">
+          <div class="snippet-head"><span>Markdown</span><button type="button" class="snippet-copy" data-copy-target="badge-md">Copy</button></div>
+          <pre><code id="badge-md">[![Suede AI Skills Directory: listed](https://skills.suedeai.ai/directory/redis/agent-skills/badge.svg)](https://skills.suedeai.ai/directory/redis/agent-skills/)</code></pre>
+        </div>
+        <div class="snippet">
+          <div class="snippet-head"><span>HTML</span><button type="button" class="snippet-copy" data-copy-target="badge-html">Copy</button></div>
+          <pre><code id="badge-html">&lt;a href=&quot;https://skills.suedeai.ai/directory/redis/agent-skills/&quot;&gt;&lt;img src=&quot;https://skills.suedeai.ai/directory/redis/agent-skills/badge.svg&quot; alt=&quot;Suede AI Skills Directory: listed&quot; height=&quot;20&quot;&gt;&lt;/a&gt;</code></pre>
+        </div>
+      </section>
+<p class="badge-offer" data-promotion-end="">Limited-time feature offer: Display either quality badge in your repository or skill README, linked to your listing, then request verification. Suede AI checks the rendered README at a recorded commit. Eligible skills scoring 80–99 with a verified badge can receive a featured placement while the offer is open. <a href="../../submit/">Request badge verification</a>.</p>
+      <aside class="panel cta-placement" aria-labelledby="cta-publisher-claim-a-claim" data-cta-placement="publisher-claim" data-cta-variant="a-claim">
+        <h2 id="cta-publisher-claim-a-claim">Is this your skill?</h2>
+        <p>Add the badge to your README so readers can see the listing, then run the free Skill AI-visibility check to find the points you are missing.</p>
+        <p><a class="button" href="../../check/" data-cta="publisher-claim:a-claim">Run the free check</a></p>
+      </aside>
       <aside class="panel svc-cta" aria-labelledby="svc-title" data-services-cta="repository">
         <h2 class="svc-kicker" id="svc-title">From Suede AI, the publisher of this directory</h2>
         <div class="svc-cards">

@@ -1,0 +1,2220 @@
+{
+  "schema_version": 1,
+  "repository": "langchain-ai/langchain-skills",
+  "listing_url": "https://skills.suedeai.ai/directory/langchain-ai/langchain-skills/",
+  "snapshot": {
+    "date": "2026-10-22",
+    "id": "0083645c3974488e8803884c7af76698",
+    "dataset_sha256": "b73996d45961aa527b4cea74a41a2e44497200dba9b2f85411e3602ab5f56641"
+  },
+  "listed_skill_count": 21,
+  "scope": "Skills listed by the directory; this is not a complete inventory of every file in the repository.",
+  "security_scan_status": "not_scanned",
+  "skills": [
+    {
+      "id": "langchain-ai/langchain-skills/deep-agents-core",
+      "name": "deep-agents-core",
+      "description": "INVOKE THIS SKILL when building ANY Deep Agents application. Covers create_deep_agent(), harness architecture, SKILL.md format, and configuration options.",
+      "category": "ai-agents-llm",
+      "license": "MIT",
+      "license_url": "https://github.com/langchain-ai/langchain-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "16a992f09ab3ccfb642dd4f08d350d833d1990bf",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-02",
+        "skill_md_url": "https://github.com/langchain-ai/langchain-skills/blob/16a992f09ab3ccfb642dd4f08d350d833d1990bf/config/skills/deep-agents-core/SKILL.md"
+      },
+      "quality": {
+        "score": 77,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/langchain-ai/langchain-skills/deep-agents-core/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/langchain-ai/langchain-skills/tree/main/config/skills/deep-agents-core",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/langchain-ai/langchain-skills/tree/main/config/skills/deep-agents-core",
+        "publisher_setup_url": "https://github.com/langchain-ai/langchain-skills/blob/main/config/skills/deep-agents-core/SKILL.md"
+      }
+    },
+    {
+      "id": "langchain-ai/langchain-skills/deep-agents-memory",
+      "name": "deep-agents-memory",
+      "description": "INVOKE THIS SKILL when your Deep Agent needs memory, persistence, or filesystem access. Covers StateBackend (ephemeral), StoreBackend (persistent), FilesystemMiddleware, and CompositeBackend for routing.",
+      "category": "ai-agents-llm",
+      "license": "MIT",
+      "license_url": "https://github.com/langchain-ai/langchain-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "16a992f09ab3ccfb642dd4f08d350d833d1990bf",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-02",
+        "skill_md_url": "https://github.com/langchain-ai/langchain-skills/blob/16a992f09ab3ccfb642dd4f08d350d833d1990bf/config/skills/deep-agents-memory/SKILL.md"
+      },
+      "quality": {
+        "score": 77,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/langchain-ai/langchain-skills/deep-agents-memory/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/langchain-ai/langchain-skills/deep-agents-memory/",
+      "source_folder_url": "https://github.com/langchain-ai/langchain-skills/tree/main/config/skills/deep-agents-memory",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/langchain-ai/langchain-skills/tree/main/config/skills/deep-agents-memory",
+        "publisher_setup_url": "https://github.com/langchain-ai/langchain-skills/blob/main/config/skills/deep-agents-memory/SKILL.md"
+      }
+    },
+    {
+      "id": "langchain-ai/langchain-skills/deep-agents-orchestration",
+      "name": "deep-agents-orchestration",
+      "description": "INVOKE THIS SKILL when using subagents, task planning, or human approval in Deep Agents. Covers SubAgentMiddleware, TodoList for planning, and HITL interrupts.",
+      "category": "ai-agents-llm",
+      "license": "MIT",
+      "license_url": "https://github.com/langchain-ai/langchain-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "16a992f09ab3ccfb642dd4f08d350d833d1990bf",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-02",
+        "skill_md_url": "https://github.com/langchain-ai/langchain-skills/blob/16a992f09ab3ccfb642dd4f08d350d833d1990bf/config/skills/deep-agents-orchestration/SKILL.md"
+      },
+      "quality": {
+        "score": 69,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/langchain-ai/langchain-skills/deep-agents-orchestration/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/langchain-ai/langchain-skills/tree/main/config/skills/deep-agents-orchestration",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/langchain-ai/langchain-skills/tree/main/config/skills/deep-agents-orchestration",
+        "publisher_setup_url": "https://github.com/langchain-ai/langchain-skills/blob/main/config/skills/deep-agents-orchestration/SKILL.md"
+      }
+    },
+    {
+      "id": "langchain-ai/langchain-skills/deepagents-python-quickstart",
+      "name": "deepagents-python-quickstart",
+      "description": "Scaffold a minimal local Deep Agent in Python by following the official quickstart, using provider-native web search instead of Tavily. Use when the user wants to quickly build or try a Deep Agent locally.",
+      "category": "ai-agents-llm",
+      "license": "MIT",
+      "license_url": "https://github.com/langchain-ai/langchain-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "16a992f09ab3ccfb642dd4f08d350d833d1990bf",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-02",
+        "skill_md_url": "https://github.com/langchain-ai/langchain-skills/blob/16a992f09ab3ccfb642dd4f08d350d833d1990bf/config/skills/deepagents-python-quickstart/SKILL.md"
+      },
+      "quality": {
+        "score": 74,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/langchain-ai/langchain-skills/deepagents-python-quickstart/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/langchain-ai/langchain-skills/tree/main/config/skills/deepagents-python-quickstart",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/langchain-ai/langchain-skills/tree/main/config/skills/deepagents-python-quickstart",
+        "publisher_setup_url": "https://github.com/langchain-ai/langchain-skills/blob/main/config/skills/deepagents-python-quickstart/SKILL.md"
+      }
+    },
+    {
+      "id": "langchain-ai/langchain-skills/deepagents-typescript-quickstart",
+      "name": "deepagents-typescript-quickstart",
+      "description": "Scaffold a minimal local Deep Agent in TypeScript by following the official quickstart, using provider-native web search instead of Tavily. Use when the user wants to quickly build or try a Deep Agent locally.",
+      "category": "ai-agents-llm",
+      "license": "MIT",
+      "license_url": "https://github.com/langchain-ai/langchain-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "16a992f09ab3ccfb642dd4f08d350d833d1990bf",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-02",
+        "skill_md_url": "https://github.com/langchain-ai/langchain-skills/blob/16a992f09ab3ccfb642dd4f08d350d833d1990bf/config/skills/deepagents-typescript-quickstart/SKILL.md"
+      },
+      "quality": {
+        "score": 74,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/langchain-ai/langchain-skills/deepagents-typescript-quickstart/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/langchain-ai/langchain-skills/tree/main/config/skills/deepagents-typescript-quickstart",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/langchain-ai/langchain-skills/tree/main/config/skills/deepagents-typescript-quickstart",
+        "publisher_setup_url": "https://github.com/langchain-ai/langchain-skills/blob/main/config/skills/deepagents-typescript-quickstart/SKILL.md"
+      }
+    },
+    {
+      "id": "langchain-ai/langchain-skills/ecosystem-primer",
+      "name": "ecosystem-primer",
+      "description": "INVOKE FIRST for any LangChain / LangGraph / Deep Agents agent building project before consulting other skills or writing any agent code. Required starting point for up to date info on framework selection (LangChain vs LangGraph vs Deep Agents vs hybrid composition), agent patterns, install, environment setup, and which skill to load next.",
+      "category": "ai-agents-llm",
+      "license": "MIT",
+      "license_url": "https://github.com/langchain-ai/langchain-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "16a992f09ab3ccfb642dd4f08d350d833d1990bf",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-02",
+        "skill_md_url": "https://github.com/langchain-ai/langchain-skills/blob/16a992f09ab3ccfb642dd4f08d350d833d1990bf/config/skills/ecosystem-primer/SKILL.md"
+      },
+      "quality": {
+        "score": 69,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/langchain-ai/langchain-skills/ecosystem-primer/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/langchain-ai/langchain-skills/tree/main/config/skills/ecosystem-primer",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/langchain-ai/langchain-skills/tree/main/config/skills/ecosystem-primer",
+        "publisher_setup_url": "https://github.com/langchain-ai/langchain-skills/blob/main/config/skills/ecosystem-primer/SKILL.md"
+      }
+    },
+    {
+      "id": "langchain-ai/langchain-skills/eval-engineering",
+      "name": "eval-engineering",
+      "description": "Inspect an agent repository and optional traces, interview the user, write reviewed Task Specs, build and audit Harbor tasks, and bootstrap reusable project World Knowledge Skills. Use for agent evals, benchmark design, Task generation, controlled Environments, synthetic data, Verifiers, Harbor runs, calibration, or continuous benchmark maintenance.",
+      "category": "ai-agents-llm",
+      "license": "MIT",
+      "license_url": "https://github.com/langchain-ai/langchain-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "16a992f09ab3ccfb642dd4f08d350d833d1990bf",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-02",
+        "skill_md_url": "https://github.com/langchain-ai/langchain-skills/blob/16a992f09ab3ccfb642dd4f08d350d833d1990bf/config/skills/eval-engineering/SKILL.md"
+      },
+      "quality": {
+        "score": 82,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/langchain-ai/langchain-skills/eval-engineering/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/langchain-ai/langchain-skills/tree/main/config/skills/eval-engineering",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/langchain-ai/langchain-skills/tree/main/config/skills/eval-engineering",
+        "publisher_setup_url": "https://github.com/langchain-ai/langchain-skills/blob/main/config/skills/eval-engineering/SKILL.md"
+      }
+    },
+    {
+      "id": "langchain-ai/langchain-skills/langchain-dependencies",
+      "name": "langchain-dependencies",
+      "description": "INVOKE THIS SKILL when setting up a new project or when asked about package versions, installation, or dependency management for LangChain, LangGraph, LangSmith, or Deep Agents. Covers required packages, minimum versions, environment requirements, versioning best practices, and common community tool packages for both Python and TypeScript.",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/langchain-ai/langchain-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "16a992f09ab3ccfb642dd4f08d350d833d1990bf",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-02",
+        "skill_md_url": "https://github.com/langchain-ai/langchain-skills/blob/16a992f09ab3ccfb642dd4f08d350d833d1990bf/config/skills/langchain-dependencies/SKILL.md"
+      },
+      "quality": {
+        "score": 77,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/langchain-ai/langchain-skills/langchain-dependencies/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/langchain-ai/langchain-skills/tree/main/config/skills/langchain-dependencies",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/langchain-ai/langchain-skills/tree/main/config/skills/langchain-dependencies",
+        "publisher_setup_url": "https://github.com/langchain-ai/langchain-skills/blob/main/config/skills/langchain-dependencies/SKILL.md"
+      }
+    },
+    {
+      "id": "langchain-ai/langchain-skills/langchain-fundamentals",
+      "name": "langchain-fundamentals",
+      "description": "Create LangChain agents with create_agent, define tools, and use middleware for human-in-the-loop and error handling.",
+      "category": "ai-agents-llm",
+      "license": "MIT",
+      "license_url": "https://github.com/langchain-ai/langchain-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "16a992f09ab3ccfb642dd4f08d350d833d1990bf",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-02",
+        "skill_md_url": "https://github.com/langchain-ai/langchain-skills/blob/16a992f09ab3ccfb642dd4f08d350d833d1990bf/config/skills/langchain-fundamentals/SKILL.md"
+      },
+      "quality": {
+        "score": 67,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/langchain-ai/langchain-skills/langchain-fundamentals/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/langchain-ai/langchain-skills/langchain-fundamentals/",
+      "source_folder_url": "https://github.com/langchain-ai/langchain-skills/tree/main/config/skills/langchain-fundamentals",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/langchain-ai/langchain-skills/tree/main/config/skills/langchain-fundamentals",
+        "publisher_setup_url": "https://github.com/langchain-ai/langchain-skills/blob/main/config/skills/langchain-fundamentals/SKILL.md"
+      }
+    },
+    {
+      "id": "langchain-ai/langchain-skills/langchain-middleware",
+      "name": "langchain-middleware",
+      "description": "INVOKE THIS SKILL when you need human-in-the-loop approval, custom middleware, or structured output. Covers HumanInTheLoopMiddleware for human approval of dangerous tool calls, creating custom middleware with hooks, Command resume patterns, and structured output with Pydantic/Zod.",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/langchain-ai/langchain-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "16a992f09ab3ccfb642dd4f08d350d833d1990bf",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-02",
+        "skill_md_url": "https://github.com/langchain-ai/langchain-skills/blob/16a992f09ab3ccfb642dd4f08d350d833d1990bf/config/skills/langchain-middleware/SKILL.md"
+      },
+      "quality": {
+        "score": 77,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/langchain-ai/langchain-skills/langchain-middleware/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/langchain-ai/langchain-skills/langchain-middleware/",
+      "source_folder_url": "https://github.com/langchain-ai/langchain-skills/tree/main/config/skills/langchain-middleware",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/langchain-ai/langchain-skills/tree/main/config/skills/langchain-middleware",
+        "publisher_setup_url": "https://github.com/langchain-ai/langchain-skills/blob/main/config/skills/langchain-middleware/SKILL.md"
+      }
+    },
+    {
+      "id": "langchain-ai/langchain-skills/langchain-python-quickstart",
+      "name": "langchain-python-quickstart",
+      "description": "Scaffold a minimal local LangChain agent in Python by following the official quickstart. Use when the user wants to quickly build or try a LangChain agent locally.",
+      "category": "ai-agents-llm",
+      "license": "MIT",
+      "license_url": "https://github.com/langchain-ai/langchain-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "16a992f09ab3ccfb642dd4f08d350d833d1990bf",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-02",
+        "skill_md_url": "https://github.com/langchain-ai/langchain-skills/blob/16a992f09ab3ccfb642dd4f08d350d833d1990bf/config/skills/langchain-python-quickstart/SKILL.md"
+      },
+      "quality": {
+        "score": 71,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/langchain-ai/langchain-skills/langchain-python-quickstart/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/langchain-ai/langchain-skills/tree/main/config/skills/langchain-python-quickstart",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/langchain-ai/langchain-skills/tree/main/config/skills/langchain-python-quickstart",
+        "publisher_setup_url": "https://github.com/langchain-ai/langchain-skills/blob/main/config/skills/langchain-python-quickstart/SKILL.md"
+      }
+    },
+    {
+      "id": "langchain-ai/langchain-skills/langchain-rag",
+      "name": "langchain-rag",
+      "description": "INVOKE THIS SKILL when building ANY retrieval-augmented generation (RAG) system. Covers document loaders, RecursiveCharacterTextSplitter, embeddings (OpenAI), and vector stores (Chroma, FAISS, Pinecone).",
+      "category": "ai-agents-llm",
+      "license": "MIT",
+      "license_url": "https://github.com/langchain-ai/langchain-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "16a992f09ab3ccfb642dd4f08d350d833d1990bf",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-02",
+        "skill_md_url": "https://github.com/langchain-ai/langchain-skills/blob/16a992f09ab3ccfb642dd4f08d350d833d1990bf/config/skills/langchain-rag/SKILL.md"
+      },
+      "quality": {
+        "score": 69,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": false,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/langchain-ai/langchain-skills/langchain-rag/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/langchain-ai/langchain-skills/langchain-rag/",
+      "source_folder_url": "https://github.com/langchain-ai/langchain-skills/tree/main/config/skills/langchain-rag",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/langchain-ai/langchain-skills/tree/main/config/skills/langchain-rag",
+        "publisher_setup_url": "https://github.com/langchain-ai/langchain-skills/blob/main/config/skills/langchain-rag/SKILL.md"
+      }
+    },
+    {
+      "id": "langchain-ai/langchain-skills/langchain-typescript-quickstart",
+      "name": "langchain-typescript-quickstart",
+      "description": "Scaffold a minimal local LangChain agent in TypeScript by following the official quickstart. Use when the user wants to quickly build or try a LangChain agent locally.",
+      "category": "ai-agents-llm",
+      "license": "MIT",
+      "license_url": "https://github.com/langchain-ai/langchain-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "16a992f09ab3ccfb642dd4f08d350d833d1990bf",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-02",
+        "skill_md_url": "https://github.com/langchain-ai/langchain-skills/blob/16a992f09ab3ccfb642dd4f08d350d833d1990bf/config/skills/langchain-typescript-quickstart/SKILL.md"
+      },
+      "quality": {
+        "score": 71,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/langchain-ai/langchain-skills/langchain-typescript-quickstart/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/langchain-ai/langchain-skills/tree/main/config/skills/langchain-typescript-quickstart",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/langchain-ai/langchain-skills/tree/main/config/skills/langchain-typescript-quickstart",
+        "publisher_setup_url": "https://github.com/langchain-ai/langchain-skills/blob/main/config/skills/langchain-typescript-quickstart/SKILL.md"
+      }
+    },
+    {
+      "id": "langchain-ai/langchain-skills/langgraph-cli",
+      "name": "langgraph-cli",
+      "description": "INVOKE THIS SKILL when using the langgraph CLI to scaffold, develop, build, or deploy LangGraph applications. Covers langgraph new, dev, build, up, deploy, and langgraph.json configuration.",
+      "category": "devops-cloud",
+      "license": "MIT",
+      "license_url": "https://github.com/langchain-ai/langchain-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "16a992f09ab3ccfb642dd4f08d350d833d1990bf",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-02",
+        "skill_md_url": "https://github.com/langchain-ai/langchain-skills/blob/16a992f09ab3ccfb642dd4f08d350d833d1990bf/config/skills/langgraph-cli/SKILL.md"
+      },
+      "quality": {
+        "score": 69,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/langchain-ai/langchain-skills/langgraph-cli/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/langchain-ai/langchain-skills/tree/main/config/skills/langgraph-cli",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/langchain-ai/langchain-skills/tree/main/config/skills/langgraph-cli",
+        "publisher_setup_url": "https://github.com/langchain-ai/langchain-skills/blob/main/config/skills/langgraph-cli/SKILL.md"
+      }
+    },
+    {
+      "id": "langchain-ai/langchain-skills/langgraph-decision-models",
+      "name": "langgraph-decision-models",
+      "description": "INVOKE THIS SKILL when routing a LangGraph agent with a decision model (TypeSafe Jev, SemIf) instead of an LLM, or when auditing an existing agent for LLM calls that only produce a routing decision. Covers langchain-typesafe Noul/Choice/Score, reading answers correctly, threshold design, and LangSmith Gateway wiring.",
+      "category": "ai-agents-llm",
+      "license": "MIT",
+      "license_url": "https://github.com/langchain-ai/langchain-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "16a992f09ab3ccfb642dd4f08d350d833d1990bf",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-02",
+        "skill_md_url": "https://github.com/langchain-ai/langchain-skills/blob/16a992f09ab3ccfb642dd4f08d350d833d1990bf/config/skills/langgraph-decision-models/SKILL.md"
+      },
+      "quality": {
+        "score": 72,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/langchain-ai/langchain-skills/langgraph-decision-models/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/langchain-ai/langchain-skills/tree/main/config/skills/langgraph-decision-models",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/langchain-ai/langchain-skills/tree/main/config/skills/langgraph-decision-models",
+        "publisher_setup_url": "https://github.com/langchain-ai/langchain-skills/blob/main/config/skills/langgraph-decision-models/SKILL.md"
+      }
+    },
+    {
+      "id": "langchain-ai/langchain-skills/langgraph-fundamentals",
+      "name": "langgraph-fundamentals",
+      "description": "INVOKE THIS SKILL when writing ANY LangGraph code. Covers StateGraph, state schemas, nodes, edges, Command, Send, invoke, streaming, and error handling.",
+      "category": "writing-content",
+      "license": "MIT",
+      "license_url": "https://github.com/langchain-ai/langchain-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "16a992f09ab3ccfb642dd4f08d350d833d1990bf",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-02",
+        "skill_md_url": "https://github.com/langchain-ai/langchain-skills/blob/16a992f09ab3ccfb642dd4f08d350d833d1990bf/config/skills/langgraph-fundamentals/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/langchain-ai/langchain-skills/langgraph-fundamentals/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/langchain-ai/langchain-skills/langgraph-fundamentals/",
+      "source_folder_url": "https://github.com/langchain-ai/langchain-skills/tree/main/config/skills/langgraph-fundamentals",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/langchain-ai/langchain-skills/tree/main/config/skills/langgraph-fundamentals",
+        "publisher_setup_url": "https://github.com/langchain-ai/langchain-skills/blob/main/config/skills/langgraph-fundamentals/SKILL.md"
+      }
+    },
+    {
+      "id": "langchain-ai/langchain-skills/langgraph-persistence",
+      "name": "langgraph-persistence",
+      "description": "INVOKE THIS SKILL when your LangGraph needs to persist state, remember conversations, travel through history, or configure subgraph checkpointer scoping. Covers checkpointers, thread_id, time travel, Store, and subgraph persistence modes.",
+      "category": "writing-content",
+      "license": "MIT",
+      "license_url": "https://github.com/langchain-ai/langchain-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "16a992f09ab3ccfb642dd4f08d350d833d1990bf",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-02",
+        "skill_md_url": "https://github.com/langchain-ai/langchain-skills/blob/16a992f09ab3ccfb642dd4f08d350d833d1990bf/config/skills/langgraph-persistence/SKILL.md"
+      },
+      "quality": {
+        "score": 69,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": false,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/langchain-ai/langchain-skills/langgraph-persistence/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/langchain-ai/langchain-skills/langgraph-persistence/",
+      "source_folder_url": "https://github.com/langchain-ai/langchain-skills/tree/main/config/skills/langgraph-persistence",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/langchain-ai/langchain-skills/tree/main/config/skills/langgraph-persistence",
+        "publisher_setup_url": "https://github.com/langchain-ai/langchain-skills/blob/main/config/skills/langgraph-persistence/SKILL.md"
+      }
+    },
+    {
+      "id": "langchain-ai/langchain-skills/langgraph-python-quickstart",
+      "name": "langgraph-python-quickstart",
+      "description": "Scaffold a minimal local LangGraph agent in Python by following the official quickstart. Use when the user wants to quickly build or try a LangGraph agent locally.",
+      "category": "ai-agents-llm",
+      "license": "MIT",
+      "license_url": "https://github.com/langchain-ai/langchain-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "16a992f09ab3ccfb642dd4f08d350d833d1990bf",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-02",
+        "skill_md_url": "https://github.com/langchain-ai/langchain-skills/blob/16a992f09ab3ccfb642dd4f08d350d833d1990bf/config/skills/langgraph-python-quickstart/SKILL.md"
+      },
+      "quality": {
+        "score": 71,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/langchain-ai/langchain-skills/langgraph-python-quickstart/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/langchain-ai/langchain-skills/tree/main/config/skills/langgraph-python-quickstart",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/langchain-ai/langchain-skills/tree/main/config/skills/langgraph-python-quickstart",
+        "publisher_setup_url": "https://github.com/langchain-ai/langchain-skills/blob/main/config/skills/langgraph-python-quickstart/SKILL.md"
+      }
+    },
+    {
+      "id": "langchain-ai/langchain-skills/langgraph-typescript-quickstart",
+      "name": "langgraph-typescript-quickstart",
+      "description": "Scaffold a minimal local LangGraph agent in TypeScript by following the official quickstart. Use when the user wants to quickly build or try a LangGraph agent locally.",
+      "category": "ai-agents-llm",
+      "license": "MIT",
+      "license_url": "https://github.com/langchain-ai/langchain-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "16a992f09ab3ccfb642dd4f08d350d833d1990bf",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-02",
+        "skill_md_url": "https://github.com/langchain-ai/langchain-skills/blob/16a992f09ab3ccfb642dd4f08d350d833d1990bf/config/skills/langgraph-typescript-quickstart/SKILL.md"
+      },
+      "quality": {
+        "score": 71,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/langchain-ai/langchain-skills/langgraph-typescript-quickstart/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/langchain-ai/langchain-skills/tree/main/config/skills/langgraph-typescript-quickstart",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/langchain-ai/langchain-skills/tree/main/config/skills/langgraph-typescript-quickstart",
+        "publisher_setup_url": "https://github.com/langchain-ai/langchain-skills/blob/main/config/skills/langgraph-typescript-quickstart/SKILL.md"
+      }
+    },
+    {
+      "id": "langchain-ai/langchain-skills/managed-deep-agents",
+      "name": "managed-deep-agents",
+      "description": "INVOKE THIS SKILL when building, testing, or deploying Managed Deep Agents in LangSmith. Walks a user through their first agent end to end — interviewing them about what they want to build, mapping it onto what MDA can actually do, then scaffolding and deploying it. Covers the file-based project layout; define_deep_agent / defineDeepAgent; instructions, skills, memory, identity, tools, MCP servers, connections, middleware, sandboxes, schedules, channels, and evals; the mda CLI; GitHub deployments; and Context Hub.",
+      "category": "ai-agents-llm",
+      "license": "MIT",
+      "license_url": "https://github.com/langchain-ai/langchain-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "16a992f09ab3ccfb642dd4f08d350d833d1990bf",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-02",
+        "skill_md_url": "https://github.com/langchain-ai/langchain-skills/blob/16a992f09ab3ccfb642dd4f08d350d833d1990bf/config/skills/managed-deep-agents/SKILL.md"
+      },
+      "quality": {
+        "score": 63,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": false,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/langchain-ai/langchain-skills/managed-deep-agents/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/langchain-ai/langchain-skills/tree/main/config/skills/managed-deep-agents",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/langchain-ai/langchain-skills/tree/main/config/skills/managed-deep-agents",
+        "publisher_setup_url": "https://github.com/langchain-ai/langchain-skills/blob/main/config/skills/managed-deep-agents/SKILL.md"
+      }
+    },
+    {
+      "id": "langchain-ai/langchain-skills/swarm",
+      "name": "swarm",
+      "description": "Dispatches many independent items in parallel: create a table, fan out to subagents, aggregate results. One row = one unit of work.",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/langchain-ai/langchain-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "16a992f09ab3ccfb642dd4f08d350d833d1990bf",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-02",
+        "skill_md_url": "https://github.com/langchain-ai/langchain-skills/blob/16a992f09ab3ccfb642dd4f08d350d833d1990bf/config/skills/swarm/SKILL.md"
+      },
+      "quality": {
+        "score": 71,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/langchain-ai/langchain-skills/swarm/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/langchain-ai/langchain-skills/tree/main/config/skills/swarm",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/langchain-ai/langchain-skills/tree/main/config/skills/swarm",
+        "publisher_setup_url": "https://github.com/langchain-ai/langchain-skills/blob/main/config/skills/swarm/SKILL.md"
+      }
+    }
+  ]
+}

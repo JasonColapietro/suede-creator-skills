@@ -1,0 +1,750 @@
+{
+  "schema_version": 1,
+  "repository": "michalparkola/tapestry-skills-for-claude-code",
+  "listing_url": "https://skills.suedeai.ai/directory/michalparkola/tapestry-skills-for-claude-code/",
+  "snapshot": {
+    "date": "2026-10-22",
+    "id": "0083645c3974488e8803884c7af76698",
+    "dataset_sha256": "b73996d45961aa527b4cea74a41a2e44497200dba9b2f85411e3602ab5f56641"
+  },
+  "listed_skill_count": 7,
+  "scope": "Skills listed by the directory; this is not a complete inventory of every file in the repository.",
+  "security_scan_status": "not_scanned",
+  "skills": [
+    {
+      "id": "michalparkola/tapestry-skills-for-claude-code/article-extractor",
+      "name": "article-extractor",
+      "description": "Extract clean article content from URLs (blog posts, articles, tutorials) and save as readable text. Use when user wants to download, extract, or save an article/blog post from a URL without ads, navigation, or clutter.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/michalparkola/tapestry-skills-for-claude-code/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "80e1dc56df74d1cb849ad649c7ead9756e7929bb",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-03-11",
+        "skill_md_url": "https://github.com/michalparkola/tapestry-skills-for-claude-code/blob/80e1dc56df74d1cb849ad649c7ead9756e7929bb/article-extractor/SKILL.md"
+      },
+      "quality": {
+        "score": 74,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 1
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/michalparkola/tapestry-skills-for-claude-code/article-extractor/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/michalparkola/tapestry-skills-for-claude-code/article-extractor/",
+      "source_folder_url": "https://github.com/michalparkola/tapestry-skills-for-claude-code/tree/main/article-extractor",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/michalparkola/tapestry-skills-for-claude-code/tree/main/article-extractor",
+        "publisher_setup_url": "https://github.com/michalparkola/tapestry-skills-for-claude-code/blob/main/article-extractor/SKILL.md"
+      }
+    },
+    {
+      "id": "michalparkola/tapestry-skills-for-claude-code/learn-this",
+      "name": "learn-this",
+      "description": "Unified content extraction and action planning. Use when user says \"learn-this <URL>\", \"learn this <URL>\", \"weave <URL>\", \"help me plan <URL>\", \"extract and plan <URL>\", \"make this actionable <URL>\", or similar phrases indicating they want to extract content and create an action plan. Automatically detects content type (YouTube video, article, PDF) and processes accordingly.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/michalparkola/tapestry-skills-for-claude-code/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "80e1dc56df74d1cb849ad649c7ead9756e7929bb",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-03-11",
+        "skill_md_url": "https://github.com/michalparkola/tapestry-skills-for-claude-code/blob/80e1dc56df74d1cb849ad649c7ead9756e7929bb/learn-this/SKILL.md"
+      },
+      "quality": {
+        "score": 77,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 1
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/michalparkola/tapestry-skills-for-claude-code/learn-this/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/michalparkola/tapestry-skills-for-claude-code/learn-this/",
+      "source_folder_url": "https://github.com/michalparkola/tapestry-skills-for-claude-code/tree/main/learn-this",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/michalparkola/tapestry-skills-for-claude-code/tree/main/learn-this",
+        "publisher_setup_url": "https://github.com/michalparkola/tapestry-skills-for-claude-code/blob/main/learn-this/SKILL.md"
+      }
+    },
+    {
+      "id": "michalparkola/tapestry-skills-for-claude-code/scrum-sage",
+      "name": "scrum-sage",
+      "description": "AI-powered Scrum Master and Enterprise Agility Coach based on Jeff Sutherland, Taiichi Ohno, and First Principles thinking. Use when user needs help with Scrum, sprint analysis, backlog refinement, scaling advice, impediment removal, team dynamics, or agile coaching. Activate for questions about Scrum mechanics, Scrum@Scale, flow optimization, or team performance.",
+      "category": "product-management",
+      "license": "MIT",
+      "license_url": "https://github.com/michalparkola/tapestry-skills-for-claude-code/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "80e1dc56df74d1cb849ad649c7ead9756e7929bb",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-03-11",
+        "skill_md_url": "https://github.com/michalparkola/tapestry-skills-for-claude-code/blob/80e1dc56df74d1cb849ad649c7ead9756e7929bb/scrum-sage/SKILL.md"
+      },
+      "quality": {
+        "score": 74,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 1
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/michalparkola/tapestry-skills-for-claude-code/scrum-sage/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/michalparkola/tapestry-skills-for-claude-code/scrum-sage/",
+      "source_folder_url": "https://github.com/michalparkola/tapestry-skills-for-claude-code/tree/main/scrum-sage",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/michalparkola/tapestry-skills-for-claude-code/tree/main/scrum-sage",
+        "publisher_setup_url": "https://github.com/michalparkola/tapestry-skills-for-claude-code/blob/main/scrum-sage/SKILL.md"
+      }
+    },
+    {
+      "id": "michalparkola/tapestry-skills-for-claude-code/session-log",
+      "name": "session-log",
+      "description": "Summarize the current conversation session and append results to the weekly agent-log. Use when user says \"log this\", \"session log\", \"summarize this session\", or asks to write results to the agent-log.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/michalparkola/tapestry-skills-for-claude-code/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "80e1dc56df74d1cb849ad649c7ead9756e7929bb",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-03-11",
+        "skill_md_url": "https://github.com/michalparkola/tapestry-skills-for-claude-code/blob/80e1dc56df74d1cb849ad649c7ead9756e7929bb/session-log/SKILL.md"
+      },
+      "quality": {
+        "score": 77,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 1
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/michalparkola/tapestry-skills-for-claude-code/session-log/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/michalparkola/tapestry-skills-for-claude-code/session-log/",
+      "source_folder_url": "https://github.com/michalparkola/tapestry-skills-for-claude-code/tree/main/session-log",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/michalparkola/tapestry-skills-for-claude-code/tree/main/session-log",
+        "publisher_setup_url": "https://github.com/michalparkola/tapestry-skills-for-claude-code/blob/main/session-log/SKILL.md"
+      }
+    },
+    {
+      "id": "michalparkola/tapestry-skills-for-claude-code/ship-learn-next",
+      "name": "ship-learn-next",
+      "description": "Transform learning content (like YouTube transcripts, articles, tutorials) into actionable implementation plans using the Ship-Learn-Next framework. Use when user wants to turn advice, lessons, or educational content into concrete action steps, reps, or a learning quest.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/michalparkola/tapestry-skills-for-claude-code/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "80e1dc56df74d1cb849ad649c7ead9756e7929bb",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-03-11",
+        "skill_md_url": "https://github.com/michalparkola/tapestry-skills-for-claude-code/blob/80e1dc56df74d1cb849ad649c7ead9756e7929bb/ship-learn-next/SKILL.md"
+      },
+      "quality": {
+        "score": 74,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 1
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/michalparkola/tapestry-skills-for-claude-code/ship-learn-next/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/michalparkola/tapestry-skills-for-claude-code/ship-learn-next/",
+      "source_folder_url": "https://github.com/michalparkola/tapestry-skills-for-claude-code/tree/main/ship-learn-next",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/michalparkola/tapestry-skills-for-claude-code/tree/main/ship-learn-next",
+        "publisher_setup_url": "https://github.com/michalparkola/tapestry-skills-for-claude-code/blob/main/ship-learn-next/SKILL.md"
+      }
+    },
+    {
+      "id": "michalparkola/tapestry-skills-for-claude-code/unblock-action",
+      "name": "unblock-action",
+      "description": "Help the user unblock a vague or stuck action item by clarifying the intended output, scoping it to today, and identifying the concrete next action. Use when user says \"unblock\", \"unstick\", \"I'm stuck on\", or presents a vague task they can't start.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/michalparkola/tapestry-skills-for-claude-code/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "80e1dc56df74d1cb849ad649c7ead9756e7929bb",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-03-11",
+        "skill_md_url": "https://github.com/michalparkola/tapestry-skills-for-claude-code/blob/80e1dc56df74d1cb849ad649c7ead9756e7929bb/unblock-action/SKILL.md"
+      },
+      "quality": {
+        "score": 77,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 1
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/michalparkola/tapestry-skills-for-claude-code/unblock-action/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/michalparkola/tapestry-skills-for-claude-code/unblock-action/",
+      "source_folder_url": "https://github.com/michalparkola/tapestry-skills-for-claude-code/tree/main/unblock-action",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/michalparkola/tapestry-skills-for-claude-code/tree/main/unblock-action",
+        "publisher_setup_url": "https://github.com/michalparkola/tapestry-skills-for-claude-code/blob/main/unblock-action/SKILL.md"
+      }
+    },
+    {
+      "id": "michalparkola/tapestry-skills-for-claude-code/youtube-transcript",
+      "name": "youtube-transcript",
+      "description": "Download YouTube video transcripts when user provides a YouTube URL or asks to download/get/fetch a transcript from YouTube. Also use when user wants to transcribe or get captions/subtitles from a YouTube video.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/michalparkola/tapestry-skills-for-claude-code/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "80e1dc56df74d1cb849ad649c7ead9756e7929bb",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-03-11",
+        "skill_md_url": "https://github.com/michalparkola/tapestry-skills-for-claude-code/blob/80e1dc56df74d1cb849ad649c7ead9756e7929bb/youtube-transcript/SKILL.md"
+      },
+      "quality": {
+        "score": 74,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 1
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/michalparkola/tapestry-skills-for-claude-code/youtube-transcript/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/michalparkola/tapestry-skills-for-claude-code/youtube-transcript/",
+      "source_folder_url": "https://github.com/michalparkola/tapestry-skills-for-claude-code/tree/main/youtube-transcript",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/michalparkola/tapestry-skills-for-claude-code/tree/main/youtube-transcript",
+        "publisher_setup_url": "https://github.com/michalparkola/tapestry-skills-for-claude-code/blob/main/youtube-transcript/SKILL.md"
+      }
+    }
+  ]
+}

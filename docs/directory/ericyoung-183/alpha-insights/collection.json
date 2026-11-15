@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "repository": "Ericyoung-183/alpha-insights",
+  "listing_url": "https://skills.suedeai.ai/directory/ericyoung-183/alpha-insights/",
+  "snapshot": {
+    "date": "2026-10-22",
+    "id": "0083645c3974488e8803884c7af76698",
+    "dataset_sha256": "b73996d45961aa527b4cea74a41a2e44497200dba9b2f85411e3602ab5f56641"
+  },
+  "listed_skill_count": 1,
+  "scope": "Skills listed by the directory; this is not a complete inventory of every file in the repository.",
+  "security_scan_status": "not_scanned",
+  "skills": [
+    {
+      "id": "ericyoung-183/alpha-insights/alpha-insights",
+      "name": "alpha-insights",
+      "description": "Business Analyst Skill. Triggered when users ask about business analysis, industry research, competitive analysis, product analysis, business model analysis, business opportunity discovery, market entry strategy, investment decisions, strategic planning, due diligence, and other strategic topics. Delivers in-depth, decision-grade HTML research reports through a seven-stage workflow (Briefing → Framing → Planning → Research → Insights → Report → Iteration).",
+      "category": "business-finance",
+      "license": "MIT",
+      "license_url": "https://github.com/Ericyoung-183/alpha-insights/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "30c1e874f1de74bdcd488f1158c03c92c808be55",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-06-29",
+        "skill_md_url": "https://github.com/Ericyoung-183/alpha-insights/blob/30c1e874f1de74bdcd488f1158c03c92c808be55/SKILL.md"
+      },
+      "quality": {
+        "score": 65,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": false,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/ericyoung-183/alpha-insights/alpha-insights/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/Ericyoung-183/alpha-insights",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/Ericyoung-183/alpha-insights",
+        "publisher_setup_url": "https://github.com/Ericyoung-183/alpha-insights/blob/main/SKILL.md"
+      }
+    }
+  ]
+}
