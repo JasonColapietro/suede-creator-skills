@@ -1310,7 +1310,7 @@
       "best": [
         "danjdewhurst/story-skills/series-continuity",
         "danjdewhurst/story-skills/feedback-triage",
-        "danjdewhurst/story-skills/editorial-review"
+        "danjdewhurst/story-skills/publishing"
       ]
     },
     {
@@ -2419,158 +2419,158 @@
   "repositories": [
     {
       "repo": "cloudflare/security-audit-skill",
-      "stars": 72733,
-      "gained": 6750
+      "stars": 72816,
+      "gained": 6833
     },
     {
       "repo": "mattpocock/skills",
-      "stars": 324574,
-      "gained": 6689
+      "stars": 324666,
+      "gained": 6781
     },
     {
       "repo": "anthropics/skills",
-      "stars": 194693,
-      "gained": 5780
+      "stars": 194852,
+      "gained": 5939
     },
     {
       "repo": "pbakaus/impeccable",
-      "stars": 110309,
-      "gained": 4634
+      "stars": 110399,
+      "gained": 4724
     },
     {
       "repo": "vercel-labs/agent-browser",
-      "stars": 51287,
-      "gained": 4317
+      "stars": 51347,
+      "gained": 4377
     },
     {
       "repo": "Leonxlnx/taste-skill",
-      "stars": 115734,
-      "gained": 4014
+      "stars": 115810,
+      "gained": 4090
     },
     {
       "repo": "heygen-com/hyperframes",
-      "stars": 84410,
-      "gained": 3753
+      "stars": 84479,
+      "gained": 3822
     },
     {
       "repo": "obra/superpowers",
-      "stars": 317704,
-      "gained": 3511
+      "stars": 317778,
+      "gained": 3585
     },
     {
       "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
-      "stars": 149578,
-      "gained": 2972
+      "stars": 149663,
+      "gained": 3057
     },
     {
       "repo": "AgriciDaniel/claude-seo",
-      "stars": 29432,
-      "gained": 2124
+      "stars": 29476,
+      "gained": 2168
     },
     {
       "repo": "tt-a1i/archify",
-      "stars": 96495,
-      "gained": 1969
+      "stars": 96529,
+      "gained": 2003
     },
     {
       "repo": "coreyhaines31/marketingskills",
-      "stars": 60374,
-      "gained": 1274
+      "stars": 60418,
+      "gained": 1318
     },
     {
       "repo": "anthropics/claude-plugins-official",
-      "stars": 47319,
-      "gained": 936
+      "stars": 47332,
+      "gained": 949
     },
     {
       "repo": "garrytan/gstack",
-      "stars": 141593,
-      "gained": 908
+      "stars": 141607,
+      "gained": 922
     },
     {
       "repo": "vercel-labs/skills",
-      "stars": 39390,
-      "gained": 878
+      "stars": 39411,
+      "gained": 899
     },
     {
       "repo": "google/skills",
-      "stars": 24291,
-      "gained": 786
+      "stars": 24309,
+      "gained": 804
     },
     {
       "repo": "browser-use/browser-use",
-      "stars": 121050,
-      "gained": 770
+      "stars": 121065,
+      "gained": 785
     },
     {
       "repo": "vercel-labs/agent-skills",
-      "stars": 34077,
-      "gained": 383
+      "stars": 34083,
+      "gained": 389
     },
     {
       "repo": "Continuum-AI-Corp/OrcaReplay",
-      "stars": 725,
-      "gained": 323
-    },
-    {
-      "repo": "zarazhangrui/frontend-slides",
-      "stars": 32329,
-      "gained": 286
+      "stars": 737,
+      "gained": 335
     },
     {
       "repo": "google-labs-code/stitch-skills",
-      "stars": 8963,
-      "gained": 269
+      "stars": 9005,
+      "gained": 311
+    },
+    {
+      "repo": "zarazhangrui/frontend-slides",
+      "stars": 32337,
+      "gained": 294
     },
     {
       "repo": "github/awesome-copilot",
-      "stars": 41163,
-      "gained": 256
+      "stars": 41167,
+      "gained": 260
     },
     {
       "repo": "phuryn/pm-skills",
-      "stars": 27994,
-      "gained": 236
-    },
-    {
-      "repo": "sergebulaev/linkedin-skills",
-      "stars": 5924,
-      "gained": 201
+      "stars": 27996,
+      "gained": 238
     },
     {
       "repo": "Orchestra-Research/AI-Research-SKILLs",
-      "stars": 14543,
-      "gained": 198
+      "stars": 14549,
+      "gained": 204
+    },
+    {
+      "repo": "sergebulaev/linkedin-skills",
+      "stars": 5926,
+      "gained": 203
     },
     {
       "repo": "conorbronsdon/avoid-ai-writing",
-      "stars": 5644,
-      "gained": 167
-    },
-    {
-      "repo": "openai/skills",
-      "stars": 28752,
-      "gained": 162
+      "stars": 5648,
+      "gained": 171
     },
     {
       "repo": "vercel/ai",
-      "stars": 27961,
-      "gained": 157
+      "stars": 27969,
+      "gained": 165
+    },
+    {
+      "repo": "openai/skills",
+      "stars": 28753,
+      "gained": 163
     },
     {
       "repo": "googleworkspace/cli",
-      "stars": 32318,
-      "gained": 145
+      "stars": 32321,
+      "gained": 148
     },
     {
       "repo": "Alisa0808/vox-director",
-      "stars": 2839,
-      "gained": 137
+      "stars": 2847,
+      "gained": 145
     },
     {
       "repo": "trailofbits/skills",
-      "stars": 8195,
-      "gained": 131
+      "stars": 8196,
+      "gained": 132
     },
     {
       "repo": "deanpeters/Product-Manager-Skills",
@@ -2579,23 +2579,23 @@
     },
     {
       "repo": "NVIDIA/skills",
-      "stars": 3992,
-      "gained": 102
+      "stars": 3995,
+      "gained": 105
     },
     {
       "repo": "jeffallan/claude-skills",
-      "stars": 12366,
-      "gained": 99
+      "stars": 12370,
+      "gained": 103
     },
     {
       "repo": "Tencent/AI-Infra-Guard",
-      "stars": 7508,
-      "gained": 82
+      "stars": 7509,
+      "gained": 83
     },
     {
       "repo": "wondelai/skills",
-      "stars": 2702,
-      "gained": 72
+      "stars": 2703,
+      "gained": 73
     },
     {
       "repo": "expo/skills",
@@ -2608,14 +2608,14 @@
       "gained": 65
     },
     {
-      "repo": "aws/agent-toolkit-for-aws",
-      "stars": 3491,
-      "gained": 61
+      "repo": "renezander030/capcut-cli",
+      "stars": 1198,
+      "gained": 65
     },
     {
-      "repo": "renezander030/capcut-cli",
-      "stars": 1194,
-      "gained": 61
+      "repo": "aws/agent-toolkit-for-aws",
+      "stars": 3493,
+      "gained": 63
     },
     {
       "repo": "huggingface/skills",
@@ -2624,13 +2624,13 @@
     },
     {
       "repo": "superdesigndev/superdesign-skill",
-      "stars": 1007,
-      "gained": 48
+      "stars": 1010,
+      "gained": 51
     },
     {
       "repo": "supabase/agent-skills",
-      "stars": 3071,
-      "gained": 44
+      "stars": 3075,
+      "gained": 48
     },
     {
       "repo": "getsentry/skills",
@@ -2643,24 +2643,24 @@
       "gained": 35
     },
     {
+      "repo": "ilyautov/humanizer-ru",
+      "stars": 569,
+      "gained": 33
+    },
+    {
       "repo": "ZeroPointRepo/youtube-skills",
       "stars": 1207,
       "gained": 30
     },
     {
-      "repo": "ilyautov/humanizer-ru",
-      "stars": 566,
-      "gained": 30
-    },
-    {
       "repo": "muratcankoylan/Agent-Skills-for-Context-Engineering",
-      "stars": 18347,
-      "gained": 27
+      "stars": 18349,
+      "gained": 29
     },
     {
       "repo": "tjboudreaux/cc-thinking-skills",
-      "stars": 1742,
-      "gained": 27
+      "stars": 1744,
+      "gained": 29
     },
     {
       "repo": "bitwize-music-studio/claude-ai-music-skills",
@@ -2673,13 +2673,13 @@
       "gained": 24
     },
     {
-      "repo": "NeoLabHQ/context-engineering-kit",
-      "stars": 1830,
+      "repo": "HUANGCHIHHUNGLeo/claude-real-video",
+      "stars": 2318,
       "gained": 23
     },
     {
-      "repo": "danjdewhurst/story-skills",
-      "stars": 418,
+      "repo": "NeoLabHQ/context-engineering-kit",
+      "stars": 1830,
       "gained": 23
     },
     {
@@ -2693,8 +2693,8 @@
       "gained": 22
     },
     {
-      "repo": "HUANGCHIHHUNGLeo/claude-real-video",
-      "stars": 2317,
+      "repo": "danjdewhurst/story-skills",
+      "stars": 417,
       "gained": 22
     },
     {
@@ -2704,8 +2704,8 @@
     },
     {
       "repo": "microsoft/azure-skills",
-      "stars": 1643,
-      "gained": 16
+      "stars": 1644,
+      "gained": 17
     },
     {
       "repo": "unbrowse-ai/unbrowse",
@@ -2713,13 +2713,13 @@
       "gained": 16
     },
     {
-      "repo": "langchain-ai/langchain-skills",
-      "stars": 1341,
-      "gained": 15
+      "repo": "product-on-purpose/pm-skills",
+      "stars": 806,
+      "gained": 16
     },
     {
-      "repo": "product-on-purpose/pm-skills",
-      "stars": 805,
+      "repo": "langchain-ai/langchain-skills",
+      "stars": 1341,
       "gained": 15
     },
     {
@@ -2763,13 +2763,18 @@
       "gained": 10
     },
     {
+      "repo": "mcollina/skills",
+      "stars": 1972,
+      "gained": 9
+    },
+    {
       "repo": "infrasity-labs/dev-gtm-claude-skills",
       "stars": 168,
       "gained": 9
     },
     {
-      "repo": "mcollina/skills",
-      "stars": 1971,
+      "repo": "agiwhitelist/auteur",
+      "stars": 1048,
       "gained": 8
     },
     {
@@ -2796,11 +2801,6 @@
       "repo": "firecrawl/skills",
       "stars": 157,
       "gained": 8
-    },
-    {
-      "repo": "agiwhitelist/auteur",
-      "stars": 1047,
-      "gained": 7
     },
     {
       "repo": "swarmclawai/swarmclaw",
@@ -2833,8 +2833,18 @@
       "gained": 6
     },
     {
+      "repo": "activeloopai/hivemind",
+      "stars": 1655,
+      "gained": 6
+    },
+    {
       "repo": "fal-ai-community/skills",
       "stars": 270,
+      "gained": 6
+    },
+    {
+      "repo": "coderabbitai/skills",
+      "stars": 218,
       "gained": 6
     },
     {
@@ -2853,11 +2863,6 @@
       "gained": 5
     },
     {
-      "repo": "activeloopai/hivemind",
-      "stars": 1654,
-      "gained": 5
-    },
-    {
       "repo": "alonw0/web-asset-generator",
       "stars": 539,
       "gained": 5
@@ -2868,8 +2873,8 @@
       "gained": 5
     },
     {
-      "repo": "coderabbitai/skills",
-      "stars": 217,
+      "repo": "Alisa0808/vibe-creating-skill",
+      "stars": 164,
       "gained": 5
     },
     {
@@ -2880,11 +2885,6 @@
     {
       "repo": "ohad6k/emulo",
       "stars": 306,
-      "gained": 4
-    },
-    {
-      "repo": "Alisa0808/vibe-creating-skill",
-      "stars": 163,
       "gained": 4
     },
     {
@@ -5208,22 +5208,6 @@
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/danjdewhurst/story-skills/character-management/"
     },
-    "danjdewhurst/story-skills/editorial-review": {
-      "id": "danjdewhurst/story-skills/editorial-review",
-      "name": "editorial-review",
-      "repo": "danjdewhurst/story-skills",
-      "description": "This skill should be used when the user asks for a \"sensitivity reader\", \"authenticity reader\", \"cultural review\", \"is this portrayal okay\", \"real people in my novel\", \"defamation\", \"can I use song lyrics\", \"epigraph per",
-      "score": 88,
-      "grade": "B",
-      "category": "writing-content",
-      "topics": [
-        "storytelling",
-        "books-publishing"
-      ],
-      "license": "MIT",
-      "cost_lane": "free-open-source",
-      "listing": "https://suedeai.directory/danjdewhurst/story-skills/editorial-review/"
-    },
     "danjdewhurst/story-skills/feedback-triage": {
       "id": "danjdewhurst/story-skills/feedback-triage",
       "name": "feedback-triage",
@@ -5269,6 +5253,21 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/danjdewhurst/story-skills/plot-structure/"
+    },
+    "danjdewhurst/story-skills/publishing": {
+      "id": "danjdewhurst/story-skills/publishing",
+      "name": "publishing",
+      "repo": "danjdewhurst/story-skills",
+      "description": "This skill should be used when the user asks to \"self-publish\", \"publish my book\", \"ISBN\", \"copyright page\", \"book metadata\", \"BISAC\", \"keywords\", \"KDP\", \"IngramSpark\", \"Draft2Digital\", \"go wide\", \"Kindle Unlimited\", \"pr",
+      "score": 88,
+      "grade": "B",
+      "category": "writing-content",
+      "topics": [
+        "books-publishing"
+      ],
+      "license": "MIT",
+      "cost_lane": "free-open-source",
+      "listing": "https://suedeai.directory/danjdewhurst/story-skills/publishing/"
     },
     "danjdewhurst/story-skills/series-continuity": {
       "id": "danjdewhurst/story-skills/series-continuity",

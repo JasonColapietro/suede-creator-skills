@@ -6,9 +6,9 @@
   "method": "Install counts published by skills.sh for installs made with the skills CLI (npx skills add), from anonymous, deduplicated telemetry as skills.sh documents it. Read from its public search endpoint and the leaderboard on its home page."
  },
  "fetched": "2026-11-15",
- "all_time_total": 1405281,
+ "all_time_total": 1409037,
  "leaderboard_skills": 9903,
- "listed_matches": 3906,
+ "listed_matches": 3910,
  "skills": {
   "1nickpappas/move-code-quality-skill/move-code-quality": {
    "installs": 64
@@ -32,118 +32,118 @@
    "installs": 220
   },
   "agricidaniel/claude-seo/seo": {
-   "installs": 10290
+   "installs": 10316
   },
   "agricidaniel/claude-seo/seo-agentic": {
-   "installs": 1836
+   "installs": 1854
   },
   "agricidaniel/claude-seo/seo-ahrefs": {
-   "installs": 95
+   "installs": 96
   },
   "agricidaniel/claude-seo/seo-audit": {
-   "installs": 9045
+   "installs": 9064
   },
   "agricidaniel/claude-seo/seo-backlinks": {
-   "installs": 8088
+   "installs": 8105
   },
   "agricidaniel/claude-seo/seo-bing": {
-   "installs": 96
+   "installs": 97
   },
   "agricidaniel/claude-seo/seo-cluster": {
-   "installs": 7636
+   "installs": 7654
   },
   "agricidaniel/claude-seo/seo-competitor-pages": {
-   "installs": 8533
+   "installs": 8550
   },
   "agricidaniel/claude-seo/seo-content": {
-   "installs": 8765
+   "installs": 8786
   },
   "agricidaniel/claude-seo/seo-content-brief": {
-   "installs": 6809
+   "installs": 6828
   },
   "agricidaniel/claude-seo/seo-dataforseo": {
-   "installs": 7005
+   "installs": 7022
   },
   "agricidaniel/claude-seo/seo-drift": {
-   "installs": 6571
+   "installs": 6588
   },
   "agricidaniel/claude-seo/seo-ecommerce": {
-   "installs": 7135
+   "installs": 7156
   },
   "agricidaniel/claude-seo/seo-firecrawl": {
-   "installs": 109
+   "installs": 110
   },
   "agricidaniel/claude-seo/seo-flow": {
-   "installs": 6249
+   "installs": 6266
   },
   "agricidaniel/claude-seo/seo-geo": {
-   "installs": 8168
+   "installs": 8189
   },
   "agricidaniel/claude-seo/seo-google": {
-   "installs": 7289
+   "installs": 7307
   },
   "agricidaniel/claude-seo/seo-hreflang": {
-   "installs": 7658
+   "installs": 7676
   },
   "agricidaniel/claude-seo/seo-image-gen": {
-   "installs": 6922
+   "installs": 6939
   },
   "agricidaniel/claude-seo/seo-images": {
-   "installs": 7671
+   "installs": 7689
   },
   "agricidaniel/claude-seo/seo-local": {
-   "installs": 8361
+   "installs": 8385
   },
   "agricidaniel/claude-seo/seo-maps": {
-   "installs": 7121
+   "installs": 7137
   },
   "agricidaniel/claude-seo/seo-matomo": {
-   "installs": 27
+   "installs": 28
   },
   "agricidaniel/claude-seo/seo-page": {
-   "installs": 7823
+   "installs": 7843
   },
   "agricidaniel/claude-seo/seo-plan": {
-   "installs": 7656
+   "installs": 7674
   },
   "agricidaniel/claude-seo/seo-profound": {
-   "installs": 96
+   "installs": 97
   },
   "agricidaniel/claude-seo/seo-programmatic": {
-   "installs": 7468
+   "installs": 7486
   },
   "agricidaniel/claude-seo/seo-schema": {
-   "installs": 8032
+   "installs": 8052
   },
   "agricidaniel/claude-seo/seo-seranking": {
-   "installs": 94
+   "installs": 95
   },
   "agricidaniel/claude-seo/seo-sitemap": {
-   "installs": 8183
+   "installs": 8203
   },
   "agricidaniel/claude-seo/seo-sxo": {
-   "installs": 6516
+   "installs": 6535
   },
   "agricidaniel/claude-seo/seo-technical": {
-   "installs": 8224
+   "installs": 8243
   },
   "agricidaniel/claude-seo/seo-unlighthouse": {
-   "installs": 98
+   "installs": 99
   },
   "alisa0808/vibe-creating-skill/vibe-creating-prompt": {
    "installs": 61
   },
   "alisa0808/vox-director/vox-director": {
-   "installs": 283
+   "installs": 285
   },
   "alonw0/web-asset-generator/web-asset-generator": {
-   "installs": 1000
+   "installs": 1001
   },
   "anthropics/claude-plugins-official/access": {
-   "installs": 4667
+   "installs": 4676
   },
   "anthropics/claude-plugins-official/agent-development": {
-   "installs": 8260
+   "installs": 8270
   },
   "anthropics/claude-plugins-official/breakdown-diagnosis": {
    "installs": 2
@@ -245,22 +245,22 @@
    "installs": 306
   },
   "anthropics/claude-plugins-official/playground": {
-   "installs": 8815
+   "installs": 8827
   },
   "anthropics/claude-plugins-official/plugin-settings": {
-   "installs": 7653
+   "installs": 7665
   },
   "anthropics/claude-plugins-official/plugin-structure": {
-   "installs": 7691
+   "installs": 7704
   },
   "anthropics/claude-plugins-official/project-artifact": {
-   "installs": 3150
+   "installs": 3166
   },
   "anthropics/claude-plugins-official/quote-build": {
    "installs": 2
   },
   "anthropics/claude-plugins-official/receipts": {
-   "installs": 2865
+   "installs": 2878
   },
   "anthropics/claude-plugins-official/rfq-to-quote": {
    "installs": 2
@@ -269,22 +269,22 @@
    "installs": 2
   },
   "anthropics/claude-plugins-official/routines": {
-   "installs": 303
+   "installs": 316
   },
   "anthropics/claude-plugins-official/session-report": {
-   "installs": 4504
+   "installs": 4517
   },
   "anthropics/claude-plugins-official/siege": {
-   "installs": 1454
+   "installs": 1466
   },
   "anthropics/claude-plugins-official/skill-creator": {
-   "installs": 8511
+   "installs": 8525
   },
   "anthropics/claude-plugins-official/skill-development": {
-   "installs": 8115
+   "installs": 8128
   },
   "anthropics/claude-plugins-official/solo": {
-   "installs": 1459
+   "installs": 1471
   },
   "anthropics/claude-plugins-official/stripe-best-practices": {
    "installs": 1405
@@ -299,13 +299,13 @@
    "installs": 2
   },
   "anthropics/claude-plugins-official/writing-hookify-rules": {
-   "installs": 7749
+   "installs": 7758
   },
   "anthropics/skills/academy-guide": {
-   "installs": 17026
+   "installs": 17129
   },
   "anthropics/skills/algorithmic-art": {
-   "installs": 95731,
+   "installs": 95859,
    "weekly": [
     1359,
     1397,
@@ -441,7 +441,7 @@
    ]
   },
   "anthropics/skills/pptx": {
-   "installs": 255285,
+   "installs": 255589,
    "weekly": [
     4273,
     3330,
@@ -454,7 +454,7 @@
    ]
   },
   "anthropics/skills/skill-creator": {
-   "installs": 432421,
+   "installs": 432711,
    "weekly": [
     6261,
     5820,
@@ -467,7 +467,7 @@
    ]
   },
   "anthropics/skills/slack-gif-creator": {
-   "installs": 80944,
+   "installs": 81064,
    "weekly": [
     1214,
     1130,
@@ -480,7 +480,7 @@
    ]
   },
   "anthropics/skills/template-skill": {
-   "installs": 76041,
+   "installs": 76167,
    "weekly": [
     1126,
     1040,
@@ -493,7 +493,7 @@
    ]
   },
   "anthropics/skills/theme-factory": {
-   "installs": 102601,
+   "installs": 102786,
    "weekly": [
     1691,
     1577,
@@ -506,7 +506,7 @@
    ]
   },
   "anthropics/skills/web-artifacts-builder": {
-   "installs": 119631,
+   "installs": 119768,
    "weekly": [
     2187,
     1772,
@@ -519,7 +519,7 @@
    ]
   },
   "anthropics/skills/webapp-testing": {
-   "installs": 205284,
+   "installs": 205566,
    "weekly": [
     4539,
     4848,
@@ -532,7 +532,7 @@
    ]
   },
   "anthropics/skills/xlsx": {
-   "installs": 198841,
+   "installs": 199052,
    "weekly": [
     3626,
     2990,
@@ -545,13 +545,13 @@
    ]
   },
   "antonbabenko/terraform-skill/terraform-skill": {
-   "installs": 8047
+   "installs": 8050
   },
   "apify/agent-skills/apify-actor-development": {
-   "installs": 10960
+   "installs": 10964
   },
   "apify/agent-skills/apify-actorization": {
-   "installs": 10238
+   "installs": 10241
   },
   "apify/agent-skills/apify-audience-analysis": {
    "installs": 2460
@@ -569,13 +569,13 @@
    "installs": 3206
   },
   "apify/agent-skills/apify-generate-output-schema": {
-   "installs": 8012
+   "installs": 8015
   },
   "apify/agent-skills/apify-influencer-discovery": {
    "installs": 2495
   },
   "apify/agent-skills/apify-integration-development": {
-   "installs": 610
+   "installs": 613
   },
   "apify/agent-skills/apify-lead-generation": {
    "installs": 2815
@@ -590,37 +590,37 @@
    "installs": 2734
   },
   "apify/agent-skills/apify-ultimate-scraper": {
-   "installs": 16852
+   "installs": 16860
   },
   "apitube/news-api-skills/apitube-news-api": {
    "installs": 17
   },
   "apollographql/skills/apollo-client": {
-   "installs": 5808
+   "installs": 5822
   },
   "apollographql/skills/apollo-connectors": {
-   "installs": 2285
+   "installs": 2288
   },
   "apollographql/skills/apollo-federation": {
-   "installs": 2078
+   "installs": 2091
   },
   "apollographql/skills/apollo-ios": {
-   "installs": 1248
+   "installs": 1252
   },
   "apollographql/skills/apollo-kotlin": {
-   "installs": 1839
+   "installs": 1843
   },
   "apollographql/skills/apollo-mcp-server": {
-   "installs": 3337
+   "installs": 3351
   },
   "apollographql/skills/apollo-router": {
-   "installs": 1945
+   "installs": 1948
   },
   "apollographql/skills/apollo-router-plugin-creator": {
-   "installs": 1743
+   "installs": 1746
   },
   "apollographql/skills/apollo-server": {
-   "installs": 3191
+   "installs": 3206
   },
   "apollographql/skills/graphos-factory": {
    "installs": 251
@@ -632,13 +632,13 @@
    "installs": 4404
   },
   "apollographql/skills/rover": {
-   "installs": 2466
+   "installs": 2471
   },
   "apollographql/skills/rust-best-practices": {
-   "installs": 23150
+   "installs": 23174
   },
   "apollographql/skills/skill-creator": {
-   "installs": 2059
+   "installs": 2062
   },
   "appierun/appie-mcp/appie-article-writer": {
    "installs": 2
@@ -656,13 +656,13 @@
    "installs": 2
   },
   "avelikiy/great_cto/aesthetic-instrument": {
-   "installs": 16
+   "installs": 17
   },
   "avelikiy/great_cto/anti-patterns": {
-   "installs": 55
+   "installs": 56
   },
   "avelikiy/great_cto/anydesign": {
-   "installs": 29
+   "installs": 30
   },
   "avelikiy/great_cto/archetype-review-base": {
    "installs": 60
@@ -722,37 +722,40 @@
    "installs": 43
   },
   "avelikiy/great_cto/pm-planning": {
-   "installs": 57
+   "installs": 58
   },
   "avelikiy/great_cto/pre-mortem": {
-   "installs": 55
+   "installs": 56
   },
   "avelikiy/great_cto/product-economics": {
-   "installs": 16
+   "installs": 17
   },
   "avelikiy/great_cto/prose-style": {
-   "installs": 57
+   "installs": 58
   },
   "avelikiy/great_cto/quant-validation": {
-   "installs": 16
+   "installs": 17
+  },
+  "avelikiy/great_cto/reference-lock": {
+   "installs": 1
   },
   "avelikiy/great_cto/secrets-rotation": {
-   "installs": 15
+   "installs": 16
   },
   "avelikiy/great_cto/signing-preflight": {
-   "installs": 15
+   "installs": 16
   },
   "avelikiy/great_cto/skeptical-triage": {
-   "installs": 69
+   "installs": 70
   },
   "avelikiy/great_cto/stack-baseline": {
-   "installs": 29
+   "installs": 30
   },
   "avelikiy/great_cto/test-strategy": {
-   "installs": 27
+   "installs": 28
   },
   "avelikiy/great_cto/ui-ux-pro-max": {
-   "installs": 32
+   "installs": 33
   },
   "avelikiy/great_cto/vertical-construction": {
    "installs": 16
@@ -776,7 +779,7 @@
    "installs": 16
   },
   "avelikiy/great_cto/vertical-onboarding": {
-   "installs": 29
+   "installs": 30
   },
   "avelikiy/great_cto/vertical-professional-services": {
    "installs": 16
@@ -791,82 +794,85 @@
    "installs": 16
   },
   "avelikiy/great_cto/verticals": {
-   "installs": 12
+   "installs": 13
+  },
+  "avelikiy/great_cto/web-release": {
+   "installs": 1
   },
   "avelikiy/great_cto/well-architected": {
-   "installs": 55
+   "installs": 56
   },
   "aws/agent-toolkit-for-aws/agent-advisor": {
-   "installs": 524
+   "installs": 528
   },
   "aws/agent-toolkit-for-aws/agents-build": {
-   "installs": 2144
+   "installs": 2146
   },
   "aws/agent-toolkit-for-aws/agents-connect": {
-   "installs": 2091
+   "installs": 2093
   },
   "aws/agent-toolkit-for-aws/agents-debug": {
-   "installs": 2091
+   "installs": 2093
   },
   "aws/agent-toolkit-for-aws/agents-deploy": {
-   "installs": 2101
+   "installs": 2103
   },
   "aws/agent-toolkit-for-aws/agents-get-started": {
-   "installs": 2080
+   "installs": 2082
   },
   "aws/agent-toolkit-for-aws/agents-harden": {
-   "installs": 2076
+   "installs": 2078
   },
   "aws/agent-toolkit-for-aws/agents-optimize": {
-   "installs": 2075
+   "installs": 2076
   },
   "aws/agent-toolkit-for-aws/agents-pay": {
-   "installs": 915
+   "installs": 916
   },
   "aws/agent-toolkit-for-aws/amazon-aurora-mysql": {
-   "installs": 5836
+   "installs": 5847
   },
   "aws/agent-toolkit-for-aws/amazon-aurora-postgresql": {
-   "installs": 6223
+   "installs": 6235
   },
   "aws/agent-toolkit-for-aws/amazon-bedrock": {
-   "installs": 9259
+   "installs": 9274
   },
   "aws/agent-toolkit-for-aws/amazon-braket": {
-   "installs": 3217
+   "installs": 3227
   },
   "aws/agent-toolkit-for-aws/amazon-documentdb": {
-   "installs": 5628
+   "installs": 5638
   },
   "aws/agent-toolkit-for-aws/amazon-dynamodb": {
-   "installs": 5710
+   "installs": 5721
   },
   "aws/agent-toolkit-for-aws/amazon-ec2-image-builder": {
-   "installs": 2750
+   "installs": 2762
   },
   "aws/agent-toolkit-for-aws/amazon-elasticache": {
-   "installs": 6055
+   "installs": 6066
   },
   "aws/agent-toolkit-for-aws/amazon-eventbridge-event-bus": {
-   "installs": 1644
+   "installs": 1655
   },
   "aws/agent-toolkit-for-aws/amazon-keyspaces": {
-   "installs": 5523
+   "installs": 5534
   },
   "aws/agent-toolkit-for-aws/amazon-neptune": {
-   "installs": 1952
+   "installs": 1963
   },
   "aws/agent-toolkit-for-aws/amazon-opensearch-service": {
-   "installs": 6146
+   "installs": 6157
   },
   "aws/agent-toolkit-for-aws/amazon-ses": {
-   "installs": 3871
+   "installs": 3882
   },
   "aws/agent-toolkit-for-aws/amazon-workspaces-agent-access": {
-   "installs": 2329
+   "installs": 2339
   },
   "aws/agent-toolkit-for-aws/analyzing-release-readiness": {
-   "installs": 1597
+   "installs": 1599
   },
   "aws/agent-toolkit-for-aws/arc-region-switch": {
    "installs": 4510
@@ -1010,7 +1016,7 @@
    "installs": 5824
   },
   "aws/agent-toolkit-for-aws/configuring-vpc-endpoints-for-private-aws-service-access": {
-   "installs": 7002
+   "installs": 7010
   },
   "aws/agent-toolkit-for-aws/connecting-lambda-to-api-gateway": {
    "installs": 7206
@@ -1031,7 +1037,7 @@
    "installs": 1571
   },
   "aws/agent-toolkit-for-aws/creating-amazon-aurora-db-cluster-with-instances": {
-   "installs": 6595
+   "installs": 6603
   },
   "aws/agent-toolkit-for-aws/creating-api-gateway-stage": {
    "installs": 6892
@@ -1061,7 +1067,7 @@
    "installs": 5634
   },
   "aws/agent-toolkit-for-aws/developing-applications-on-managed-service-for-apache-flink": {
-   "installs": 5573
+   "installs": 5582
   },
   "aws/agent-toolkit-for-aws/diff-scanning-with-aws-security-agent": {
    "installs": 1583
@@ -1094,7 +1100,7 @@
    "installs": 7167
   },
   "aws/agent-toolkit-for-aws/investigating-incidents-with-aws-devops-agent": {
-   "installs": 1586
+   "installs": 1589
   },
   "aws/agent-toolkit-for-aws/knowledge-base-for-startups": {
    "installs": 504
@@ -1103,7 +1109,7 @@
    "installs": 5361
   },
   "aws/agent-toolkit-for-aws/launching-ec2-instance-with-best-practices": {
-   "installs": 6937
+   "installs": 6949
   },
   "aws/agent-toolkit-for-aws/llm-to-bedrock": {
    "installs": 513
@@ -1142,148 +1148,148 @@
    "installs": 1656
   },
   "aws/agent-toolkit-for-aws/processing-s3-uploads-with-step-functions": {
-   "installs": 5621
+   "installs": 5630
   },
   "aws/agent-toolkit-for-aws/prompt-library-for-startups": {
-   "installs": 502
+   "installs": 506
   },
   "aws/agent-toolkit-for-aws/querying-aws-athena": {
-   "installs": 244
+   "installs": 253
   },
   "aws/agent-toolkit-for-aws/querying-aws-cloudwatch": {
-   "installs": 6138
+   "installs": 6147
   },
   "aws/agent-toolkit-for-aws/querying-aws-redshift": {
-   "installs": 3187
+   "installs": 3196
   },
   "aws/agent-toolkit-for-aws/querying-aws-s3": {
-   "installs": 6176
+   "installs": 6185
   },
   "aws/agent-toolkit-for-aws/querying-aws-sagemaker-catalog": {
-   "installs": 5459
+   "installs": 5467
   },
   "aws/agent-toolkit-for-aws/querying-data-lake": {
-   "installs": 7247
+   "installs": 7255
   },
   "aws/agent-toolkit-for-aws/rds-db2": {
-   "installs": 5354
+   "installs": 5363
   },
   "aws/agent-toolkit-for-aws/rds-oracle": {
-   "installs": 5133
+   "installs": 5142
   },
   "aws/agent-toolkit-for-aws/rds-oss": {
-   "installs": 5720
+   "installs": 5730
   },
   "aws/agent-toolkit-for-aws/rds-sqlserver": {
-   "installs": 5201
+   "installs": 5210
   },
   "aws/agent-toolkit-for-aws/recovery-controller-setup": {
-   "installs": 4445
+   "installs": 4453
   },
   "aws/agent-toolkit-for-aws/redshift-guide": {
-   "installs": 3774
+   "installs": 3782
   },
   "aws/agent-toolkit-for-aws/remediating-with-aws-security-agent": {
-   "installs": 1575
+   "installs": 1576
   },
   "aws/agent-toolkit-for-aws/render-to-aws": {
-   "installs": 1
+   "installs": 4
   },
   "aws/agent-toolkit-for-aws/resilience-hub-failure-mode-assessment": {
-   "installs": 4470
+   "installs": 4478
   },
   "aws/agent-toolkit-for-aws/resilience-hub-getting-started": {
-   "installs": 4473
+   "installs": 4481
   },
   "aws/agent-toolkit-for-aws/resilience-hub-multi-account": {
-   "installs": 4468
+   "installs": 4476
   },
   "aws/agent-toolkit-for-aws/resilience-program-design": {
-   "installs": 4483
+   "installs": 4491
   },
   "aws/agent-toolkit-for-aws/route53": {
-   "installs": 4999
+   "installs": 5008
   },
   "aws/agent-toolkit-for-aws/routing-traffic-with-route53-and-cloudfront": {
    "installs": 6462
   },
   "aws/agent-toolkit-for-aws/running-release-tests": {
-   "installs": 1549
+   "installs": 1550
   },
   "aws/agent-toolkit-for-aws/scanning-with-aws-security-agent": {
-   "installs": 1591
+   "installs": 1592
   },
   "aws/agent-toolkit-for-aws/securing-s3-buckets": {
-   "installs": 7584
+   "installs": 7594
   },
   "aws/agent-toolkit-for-aws/setting-up-cloudtrail-multi-region": {
-   "installs": 6649
+   "installs": 6658
   },
   "aws/agent-toolkit-for-aws/setting-up-cloudwatch-alarm-notifications": {
-   "installs": 6951
+   "installs": 6961
   },
   "aws/agent-toolkit-for-aws/setting-up-cloudwatch-observability": {
-   "installs": 1891
+   "installs": 1901
   },
   "aws/agent-toolkit-for-aws/setting-up-ec2-instance-profiles": {
-   "installs": 6812
+   "installs": 6822
   },
   "aws/agent-toolkit-for-aws/setting-up-workspaces-applications": {
-   "installs": 37
+   "installs": 45
   },
   "aws/agent-toolkit-for-aws/setup": {
-   "installs": 1594
+   "installs": 1595
   },
   "aws/agent-toolkit-for-aws/setup-devops-agent": {
-   "installs": 1633
+   "installs": 1636
   },
   "aws/agent-toolkit-for-aws/setup-security-agent": {
-   "installs": 1616
+   "installs": 1617
   },
   "aws/agent-toolkit-for-aws/shieldadvanced": {
-   "installs": 4559
+   "installs": 4567
   },
   "aws/agent-toolkit-for-aws/signing-in-to-aws": {
-   "installs": 6785
+   "installs": 6796
   },
   "aws/agent-toolkit-for-aws/sitetositevpn": {
-   "installs": 5141
+   "installs": 5150
   },
   "aws/agent-toolkit-for-aws/start-building-for-startups": {
-   "installs": 502
+   "installs": 506
   },
   "aws/agent-toolkit-for-aws/storing-and-querying-vectors": {
-   "installs": 7207
+   "installs": 7215
   },
   "aws/agent-toolkit-for-aws/testing-mwaa-workflow": {
-   "installs": 1445
+   "installs": 1455
   },
   "aws/agent-toolkit-for-aws/tf-best-practices": {
-   "installs": 529
+   "installs": 533
   },
   "aws/agent-toolkit-for-aws/threat-modeling-with-aws-security-agent": {
-   "installs": 1683
+   "installs": 1685
   },
   "aws/agent-toolkit-for-aws/timestream-influxdb": {
-   "installs": 4884
+   "installs": 4892
   },
   "aws/agent-toolkit-for-aws/transitgateway": {
-   "installs": 4640
+   "installs": 4648
   },
   "aws/agent-toolkit-for-aws/troubleshooting-application-failures": {
-   "installs": 7092
+   "installs": 7103
   },
   "aws/agent-toolkit-for-aws/troubleshooting-efs": {
-   "installs": 6496
+   "installs": 6505
   },
   "aws/agent-toolkit-for-aws/troubleshooting-s3-files": {
-   "installs": 6916
+   "installs": 6925
   },
   "aws/agent-toolkit-for-aws/upgrading-mwaa-environments": {
-   "installs": 1444
+   "installs": 1452
   },
   "aws/agent-toolkit-for-aws/waf": {
-   "installs": 4943
+   "installs": 4951
   },
   "bitwize-music-studio/claude-ai-music-skills/about": {
    "installs": 244
@@ -1433,7 +1439,7 @@
    "installs": 89
   },
   "bitwize-music-studio/claude-ai-music-skills/suno-engineer": {
-   "installs": 500
+   "installs": 501
   },
   "bitwize-music-studio/claude-ai-music-skills/test": {
    "installs": 243
@@ -1497,19 +1503,19 @@
    "installs": 3733
   },
   "browser-use/browser-use/qa": {
-   "installs": 1581
+   "installs": 1584
   },
   "browser-use/browser-use/remote-browser": {
-   "installs": 4894
+   "installs": 4897
   },
   "browser-use/browser-use/x402": {
-   "installs": 1426
+   "installs": 1430
   },
   "browserbase/skills/add-webmcp": {
-   "installs": 239
+   "installs": 240
   },
   "browserbase/skills/agent-experience": {
-   "installs": 917
+   "installs": 918
   },
   "browserbase/skills/autobrowse": {
    "installs": 2815
@@ -1551,16 +1557,16 @@
    "installs": 271
   },
   "browserbase/skills/safe-browser": {
-   "installs": 1789
+   "installs": 1790
   },
   "browserbase/skills/search": {
-   "installs": 2874
+   "installs": 2876
   },
   "browserbase/skills/ui-test": {
-   "installs": 3116
+   "installs": 3119
   },
   "browserbase/skills/webmcp-gen": {
-   "installs": 615
+   "installs": 616
   },
   "browserbase/skills/what-antibot": {
    "installs": 275
@@ -1569,7 +1575,7 @@
    "installs": 10
   },
   "cloudflare/security-audit-skill/security-audit": {
-   "installs": 107799,
+   "installs": 108301,
    "weekly": [
     7354,
     4990,
@@ -1582,7 +1588,7 @@
    ]
   },
   "cloudflare/skills/agents-sdk": {
-   "installs": 123096,
+   "installs": 123409,
    "weekly": [
     6163,
     5934,
@@ -1687,7 +1693,7 @@
    "installs": 58676
   },
   "cloudflare/skills/sandbox-migrate-to-next": {
-   "installs": 83497,
+   "installs": 83771,
    "weekly": [
     5841,
     5713,
@@ -1700,7 +1706,7 @@
    ]
   },
   "cloudflare/skills/sandbox-next": {
-   "installs": 83597,
+   "installs": 83871,
    "weekly": [
     5847,
     5723,
@@ -1716,7 +1722,7 @@
    "installs": 32874
   },
   "cloudflare/skills/sandbox-stable": {
-   "installs": 84379,
+   "installs": 84663,
    "weekly": [
     5881,
     5736,
@@ -1729,7 +1735,7 @@
    ]
   },
   "cloudflare/skills/turnstile-spin": {
-   "installs": 109270,
+   "installs": 109576,
    "weekly": [
     6008,
     5824,
@@ -1742,7 +1748,7 @@
    ]
   },
   "cloudflare/skills/web-perf": {
-   "installs": 127655,
+   "installs": 127986,
    "weekly": [
     6297,
     6138,
@@ -1755,7 +1761,7 @@
    ]
   },
   "cloudflare/skills/workers-best-practices": {
-   "installs": 145004,
+   "installs": 145332,
    "weekly": [
     6767,
     6734,
@@ -1768,13 +1774,13 @@
    ]
   },
   "cloudflare/skills/workers-development": {
-   "installs": 6570
+   "installs": 6878
   },
   "cloudflare/skills/workers-profiling": {
-   "installs": 28482
+   "installs": 28791
   },
   "cloudflare/skills/wrangler": {
-   "installs": 147929,
+   "installs": 148257,
    "weekly": [
     6696,
     6993,
@@ -1835,7 +1841,7 @@
    "installs": 52125
   },
   "coreyhaines31/marketingskills/ab-testing": {
-   "installs": 87832,
+   "installs": 88033,
    "weekly": [
     2789,
     2817,
@@ -1848,7 +1854,7 @@
    ]
   },
   "coreyhaines31/marketingskills/ad-creative": {
-   "installs": 147061,
+   "installs": 147326,
    "weekly": [
     3111,
     3198,
@@ -1861,7 +1867,7 @@
    ]
   },
   "coreyhaines31/marketingskills/ads": {
-   "installs": 94337,
+   "installs": 94566,
    "weekly": [
     2920,
     3010,
@@ -1874,7 +1880,7 @@
    ]
   },
   "coreyhaines31/marketingskills/ai-seo": {
-   "installs": 164986,
+   "installs": 165256,
    "weekly": [
     3593,
     3694,
@@ -1887,7 +1893,7 @@
    ]
   },
   "coreyhaines31/marketingskills/analytics": {
-   "installs": 95587,
+   "installs": 95865,
    "weekly": [
     3009,
     3077,
@@ -2259,7 +2265,7 @@
    "installs": 51119
   },
   "coreyhaines31/marketingskills/popups": {
-   "installs": 80378,
+   "installs": 80557,
    "weekly": [
     2376,
     2207,
@@ -2275,7 +2281,7 @@
    "installs": 15
   },
   "coreyhaines31/marketingskills/pricing": {
-   "installs": 90985,
+   "installs": 91230,
    "weekly": [
     2670,
     2632,
@@ -2291,7 +2297,7 @@
    "installs": 61162
   },
   "coreyhaines31/marketingskills/product-marketing": {
-   "installs": 96767,
+   "installs": 97043,
    "weekly": [
     2895,
     2812,
@@ -2307,7 +2313,7 @@
    "installs": 61191
   },
   "coreyhaines31/marketingskills/programmatic-seo": {
-   "installs": 161749,
+   "installs": 161999,
    "weekly": [
     2767,
     2670,
@@ -2320,7 +2326,7 @@
    ]
   },
   "coreyhaines31/marketingskills/prospecting": {
-   "installs": 75891,
+   "installs": 76081,
    "weekly": [
     2435,
     2280,
@@ -2333,13 +2339,13 @@
    ]
   },
   "coreyhaines31/marketingskills/public-relations": {
-   "installs": 65011
+   "installs": 65184
   },
   "coreyhaines31/marketingskills/referral-program": {
    "installs": 52294
   },
   "coreyhaines31/marketingskills/referrals": {
-   "installs": 82133,
+   "installs": 82316,
    "weekly": [
     2417,
     2277,
@@ -2352,10 +2358,10 @@
    ]
   },
   "coreyhaines31/marketingskills/reverse-engineer-marketing": {
-   "installs": 7240
+   "installs": 7419
   },
   "coreyhaines31/marketingskills/revops": {
-   "installs": 123470,
+   "installs": 123645,
    "weekly": [
     2381,
     2350,
@@ -2368,7 +2374,7 @@
    ]
   },
   "coreyhaines31/marketingskills/sales-enablement": {
-   "installs": 129382,
+   "installs": 129573,
    "weekly": [
     2469,
     2472,
@@ -2381,7 +2387,7 @@
    ]
   },
   "coreyhaines31/marketingskills/schema": {
-   "installs": 90136,
+   "installs": 90345,
    "weekly": [
     2716,
     2787,
@@ -2397,7 +2403,7 @@
    "installs": 55479
   },
   "coreyhaines31/marketingskills/seo-audit": {
-   "installs": 254890,
+   "installs": 255185,
    "weekly": [
     4280,
     4498,
@@ -2410,7 +2416,7 @@
    ]
   },
   "coreyhaines31/marketingskills/signup": {
-   "installs": 81658,
+   "installs": 81837,
    "weekly": [
     2396,
     2434,
@@ -2426,7 +2432,7 @@
    "installs": 51842
   },
   "coreyhaines31/marketingskills/site-architecture": {
-   "installs": 134201,
+   "installs": 134397,
    "weekly": [
     2620,
     2741,
@@ -2439,7 +2445,7 @@
    ]
   },
   "coreyhaines31/marketingskills/sms": {
-   "installs": 73963,
+   "installs": 74139,
    "weekly": [
     2315,
     2301,
@@ -2452,7 +2458,7 @@
    ]
   },
   "coreyhaines31/marketingskills/social": {
-   "installs": 98793,
+   "installs": 99046,
    "weekly": [
     2694,
     2904,
@@ -2468,7 +2474,7 @@
    "installs": 67004
   },
   "coreyhaines31/marketingskills/video": {
-   "installs": 97124,
+   "installs": 97351,
    "weekly": [
     2461,
     2490,
@@ -2520,7 +2526,7 @@
    "installs": 3166
   },
   "danjdewhurst/story-skills/adaptation": {
-   "installs": 393
+   "installs": 396
   },
   "danjdewhurst/story-skills/chapter-writing": {
    "installs": 953
@@ -2547,67 +2553,67 @@
    "installs": 417
   },
   "danjdewhurst/story-skills/plot-structure": {
-   "installs": 987
+   "installs": 990
   },
   "danjdewhurst/story-skills/premise-workshop": {
-   "installs": 410
+   "installs": 414
   },
   "danjdewhurst/story-skills/publishing": {
-   "installs": 388
+   "installs": 392
   },
   "danjdewhurst/story-skills/reader-panel": {
-   "installs": 374
+   "installs": 379
   },
   "danjdewhurst/story-skills/research": {
-   "installs": 395
+   "installs": 398
   },
   "danjdewhurst/story-skills/revision-continuity": {
-   "installs": 939
+   "installs": 943
   },
   "danjdewhurst/story-skills/scene-craft": {
-   "installs": 453
+   "installs": 456
   },
   "danjdewhurst/story-skills/series-continuity": {
-   "installs": 451
+   "installs": 454
   },
   "danjdewhurst/story-skills/story-init": {
-   "installs": 954
+   "installs": 957
   },
   "danjdewhurst/story-skills/story-maintenance": {
-   "installs": 866
+   "installs": 869
   },
   "danjdewhurst/story-skills/submission": {
-   "installs": 389
+   "installs": 392
   },
   "danjdewhurst/story-skills/theme-craft": {
-   "installs": 421
+   "installs": 426
   },
   "danjdewhurst/story-skills/verse-craft": {
-   "installs": 371
+   "installs": 375
   },
   "danjdewhurst/story-skills/voice-style": {
-   "installs": 438
+   "installs": 443
   },
   "danjdewhurst/story-skills/worldbuilding": {
-   "installs": 1126
+   "installs": 1132
   },
   "deanpeters/product-manager-skills/acquisition-channel-advisor": {
-   "installs": 2787
+   "installs": 2791
   },
   "deanpeters/product-manager-skills/activation-design": {
-   "installs": 4
+   "installs": 8
   },
   "deanpeters/product-manager-skills/agent-orchestration-advisor": {
-   "installs": 1365
+   "installs": 1369
   },
   "deanpeters/product-manager-skills/ai-shaped-readiness-advisor": {
-   "installs": 2760
+   "installs": 2764
   },
   "deanpeters/product-manager-skills/altitude-horizon-framework": {
-   "installs": 2686
+   "installs": 2690
   },
   "deanpeters/product-manager-skills/ansoff-matrix": {
-   "installs": 1237
+   "installs": 1239
   },
   "deanpeters/product-manager-skills/assumption-mapping": {
    "installs": 8
@@ -2649,7 +2655,7 @@
    "installs": 3118
   },
   "deanpeters/product-manager-skills/customer-journey-mapping-workshop": {
-   "installs": 2821
+   "installs": 2825
   },
   "deanpeters/product-manager-skills/decision-rights-matrix": {
    "installs": 6
@@ -2712,7 +2718,7 @@
    "installs": 1180
   },
   "deanpeters/product-manager-skills/intelligence-collection-disciplines": {
-   "installs": 1205
+   "installs": 1209
   },
   "deanpeters/product-manager-skills/jobs-to-be-done": {
    "installs": 3302
@@ -2748,133 +2754,133 @@
    "installs": 999
   },
   "deanpeters/product-manager-skills/pm-role-charter": {
-   "installs": 6
+   "installs": 8
   },
   "deanpeters/product-manager-skills/pm-skill-creator": {
-   "installs": 1546
+   "installs": 1548
   },
   "deanpeters/product-manager-skills/pm-skills-navigator": {
-   "installs": 6
+   "installs": 8
   },
   "deanpeters/product-manager-skills/pol-probe": {
-   "installs": 2505
+   "installs": 2507
   },
   "deanpeters/product-manager-skills/pol-probe-advisor": {
-   "installs": 2501
+   "installs": 2503
   },
   "deanpeters/product-manager-skills/porters-five-forces": {
-   "installs": 984
+   "installs": 986
   },
   "deanpeters/product-manager-skills/positioning-statement": {
-   "installs": 2657
+   "installs": 2660
   },
   "deanpeters/product-manager-skills/positioning-workshop": {
-   "installs": 2570
+   "installs": 2572
   },
   "deanpeters/product-manager-skills/prd-development": {
-   "installs": 4872
+   "installs": 4874
   },
   "deanpeters/product-manager-skills/press-release": {
-   "installs": 2536
+   "installs": 2538
   },
   "deanpeters/product-manager-skills/pricing-packaging-tracker": {
-   "installs": 942
+   "installs": 944
   },
   "deanpeters/product-manager-skills/prioritization-advisor": {
-   "installs": 3208
+   "installs": 3210
   },
   "deanpeters/product-manager-skills/problem-framing-canvas": {
-   "installs": 2740
+   "installs": 2742
   },
   "deanpeters/product-manager-skills/problem-statement": {
-   "installs": 2709
+   "installs": 2711
   },
   "deanpeters/product-manager-skills/product-lifecycle-plays": {
-   "installs": 630
+   "installs": 632
   },
   "deanpeters/product-manager-skills/product-sense-interview-answer": {
-   "installs": 1809
+   "installs": 1811
   },
   "deanpeters/product-manager-skills/product-strategy-session": {
-   "installs": 3141
+   "installs": 3144
   },
   "deanpeters/product-manager-skills/proto-persona": {
-   "installs": 2395
+   "installs": 2397
   },
   "deanpeters/product-manager-skills/recommendation-canvas": {
-   "installs": 2219
+   "installs": 2221
   },
   "deanpeters/product-manager-skills/release-readiness": {
-   "installs": 6
+   "installs": 8
   },
   "deanpeters/product-manager-skills/research-synthesis": {
-   "installs": 6
+   "installs": 8
   },
   "deanpeters/product-manager-skills/retention-diagnostic-advisor": {
-   "installs": 6
+   "installs": 8
   },
   "deanpeters/product-manager-skills/roadmap-planning": {
-   "installs": 3908
+   "installs": 3912
   },
   "deanpeters/product-manager-skills/saas-economics-efficiency-metrics": {
-   "installs": 2369
+   "installs": 2374
   },
   "deanpeters/product-manager-skills/saas-revenue-growth-metrics": {
-   "installs": 2483
+   "installs": 2486
   },
   "deanpeters/product-manager-skills/sales-value-narrative": {
-   "installs": 6
+   "installs": 8
   },
   "deanpeters/product-manager-skills/skill-authoring-workflow": {
-   "installs": 2185
+   "installs": 2187
   },
   "deanpeters/product-manager-skills/sprint-planning": {
-   "installs": 5
+   "installs": 9
   },
   "deanpeters/product-manager-skills/stakeholder-engagement-advisor": {
-   "installs": 929
+   "installs": 931
   },
   "deanpeters/product-manager-skills/stakeholder-identification": {
-   "installs": 927
+   "installs": 929
   },
   "deanpeters/product-manager-skills/stakeholder-mapping": {
-   "installs": 984
+   "installs": 986
   },
   "deanpeters/product-manager-skills/storyboard": {
-   "installs": 2669
+   "installs": 2671
   },
   "deanpeters/product-manager-skills/survey-design-advisor": {
-   "installs": 5
+   "installs": 8
   },
   "deanpeters/product-manager-skills/swot-analysis": {
-   "installs": 711
+   "installs": 713
   },
   "deanpeters/product-manager-skills/tam-sam-som-calculator": {
-   "installs": 2370
+   "installs": 2372
   },
   "deanpeters/product-manager-skills/usage-data-investigation": {
-   "installs": 5
+   "installs": 9
   },
   "deanpeters/product-manager-skills/user-story": {
-   "installs": 4354
+   "installs": 4358
   },
   "deanpeters/product-manager-skills/user-story-mapping": {
-   "installs": 2802
+   "installs": 2807
   },
   "deanpeters/product-manager-skills/user-story-mapping-workshop": {
-   "installs": 2295
+   "installs": 2299
   },
   "deanpeters/product-manager-skills/user-story-splitting": {
-   "installs": 2597
+   "installs": 2601
   },
   "deanpeters/product-manager-skills/voice-of-customer-miner": {
-   "installs": 803
+   "installs": 808
   },
   "deanpeters/product-manager-skills/vp-cpo-readiness-advisor": {
-   "installs": 2096
+   "installs": 2100
   },
   "deanpeters/product-manager-skills/workshop-facilitation": {
-   "installs": 2400
+   "installs": 2404
   },
   "digidai/product-manager-skills/product-manager": {
    "installs": 1
@@ -3283,7 +3289,7 @@
    "installs": 24
   },
   "fal-ai-community/skills/storyboard-to-short-film": {
-   "installs": 31
+   "installs": 32
   },
   "fal-ai-community/skills/storytelling": {
    "installs": 525
@@ -3433,7 +3439,7 @@
    "installs": 10
   },
   "garrytan/gstack/alpha": {
-   "installs": 102
+   "installs": 103
   },
   "garrytan/gstack/autoplan": {
    "installs": 436
@@ -3595,79 +3601,79 @@
    "installs": 343
   },
   "garrytan/gstack/plan-ceo-review": {
-   "installs": 539
+   "installs": 540
   },
   "garrytan/gstack/plan-design-review": {
-   "installs": 530
+   "installs": 533
   },
   "garrytan/gstack/plan-devex-review": {
-   "installs": 376
+   "installs": 377
   },
   "garrytan/gstack/plan-eng-review": {
-   "installs": 543
+   "installs": 544
   },
   "garrytan/gstack/plan-tune": {
-   "installs": 328
+   "installs": 329
   },
   "garrytan/gstack/qa": {
-   "installs": 506
+   "installs": 507
   },
   "garrytan/gstack/qa-only": {
-   "installs": 434
+   "installs": 435
   },
   "garrytan/gstack/retro": {
-   "installs": 425
+   "installs": 426
   },
   "garrytan/gstack/review": {
-   "installs": 508
+   "installs": 509
   },
   "garrytan/gstack/runaway-stopper": {
-   "installs": 16
+   "installs": 17
   },
   "garrytan/gstack/scrape": {
-   "installs": 332
+   "installs": 333
   },
   "garrytan/gstack/setup-browser-cookies": {
-   "installs": 376
+   "installs": 377
   },
   "garrytan/gstack/setup-deploy": {
-   "installs": 359
+   "installs": 360
   },
   "garrytan/gstack/setup-gbrain": {
-   "installs": 322
+   "installs": 323
   },
   "garrytan/gstack/ship": {
-   "installs": 451
+   "installs": 452
   },
   "garrytan/gstack/skillify": {
-   "installs": 327
+   "installs": 328
   },
   "garrytan/gstack/spec": {
-   "installs": 302
+   "installs": 303
   },
   "garrytan/gstack/sync-gbrain": {
-   "installs": 314
+   "installs": 315
   },
   "garrytan/gstack/test-audit": {
-   "installs": 45
+   "installs": 47
   },
   "garrytan/gstack/ubicloud": {
-   "installs": 25
+   "installs": 26
   },
   "garrytan/gstack/unfreeze": {
-   "installs": 361
+   "installs": 362
   },
   "garrytan/gstack/verify": {
-   "installs": 19
+   "installs": 20
   },
   "garrytan/gstack/write-skill": {
-   "installs": 23
+   "installs": 24
   },
   "geekflare/geekflare-skills/geekflare": {
    "installs": 3
   },
   "getsentry/skills/agents-md": {
-   "installs": 7683
+   "installs": 7693
   },
   "getsentry/skills/blog-writing-guide": {
    "installs": 3450
@@ -3721,67 +3727,67 @@
    "installs": 4723
   },
   "getsentry/skills/pr-link-issue": {
-   "installs": 1375
+   "installs": 1377
   },
   "getsentry/skills/pr-screenshots": {
-   "installs": 221
+   "installs": 223
   },
   "getsentry/skills/pr-writer": {
-   "installs": 4660
+   "installs": 4662
   },
   "getsentry/skills/presentation-creator": {
-   "installs": 3065
+   "installs": 3068
   },
   "getsentry/skills/prompt-optimizer": {
-   "installs": 2486
+   "installs": 2488
   },
   "getsentry/skills/replay-ux-research": {
    "installs": 806
   },
   "getsentry/skills/secret-serialization": {
-   "installs": 476
+   "installs": 480
   },
   "getsentry/skills/security-model": {
-   "installs": 219
+   "installs": 223
   },
   "getsentry/skills/security-review": {
-   "installs": 23566
+   "installs": 23606
   },
   "getsentry/skills/skill-creator": {
    "installs": 412
   },
   "getsentry/skills/skill-scanner": {
-   "installs": 4096
+   "installs": 4102
   },
   "getsentry/skills/skill-writer": {
-   "installs": 2590
+   "installs": 2592
   },
   "getsentry/skills/sred-project-organizer": {
-   "installs": 2172
+   "installs": 2174
   },
   "getsentry/skills/sred-work-summary": {
-   "installs": 2182
+   "installs": 2184
   },
   "getsentry/skills/triage-frontend-issues": {
-   "installs": 1427
+   "installs": 1429
   },
   "getsentry/skills/typing-exclusion-worker": {
-   "installs": 1680
+   "installs": 1682
   },
   "getsentry/skills/warden-lint-judge": {
    "installs": 37
   },
   "github/awesome-copilot/add-educational-comments": {
-   "installs": 9259
+   "installs": 9260
   },
   "github/awesome-copilot/agent-governance": {
-   "installs": 9684
+   "installs": 9685
   },
   "github/awesome-copilot/agentic-eval": {
-   "installs": 10283
+   "installs": 10285
   },
   "github/awesome-copilot/ai-prompt-engineering-safety-review": {
-   "installs": 10419
+   "installs": 10420
   },
   "github/awesome-copilot/appinsights-instrumentation": {
    "installs": 9535
@@ -4180,7 +4186,7 @@
    "installs": 13731
   },
   "github/awesome-copilot/playwright-explore-website": {
-   "installs": 14844
+   "installs": 14845
   },
   "github/awesome-copilot/playwright-generate-test": {
    "installs": 18252
@@ -4189,16 +4195,16 @@
    "installs": 8437
   },
   "github/awesome-copilot/postgresql-code-review": {
-   "installs": 12865
+   "installs": 12869
   },
   "github/awesome-copilot/postgresql-optimization": {
-   "installs": 17029
+   "installs": 17038
   },
   "github/awesome-copilot/power-apps-code-app-scaffold": {
    "installs": 8745
   },
   "github/awesome-copilot/power-bi-dax-optimization": {
-   "installs": 9211
+   "installs": 9212
   },
   "github/awesome-copilot/power-bi-model-design-review": {
    "installs": 9007
@@ -4207,16 +4213,16 @@
    "installs": 8916
   },
   "github/awesome-copilot/power-bi-report-design-consultation": {
-   "installs": 9474
+   "installs": 9475
   },
   "github/awesome-copilot/power-platform-mcp-connector-suite": {
    "installs": 8679
   },
   "github/awesome-copilot/powerbi-modeling": {
-   "installs": 10034
+   "installs": 10037
   },
   "github/awesome-copilot/prd": {
-   "installs": 24586
+   "installs": 24595
   },
   "github/awesome-copilot/project-workflow-analysis-blueprint-generator": {
    "installs": 9386
@@ -4225,10 +4231,10 @@
    "installs": 9398
   },
   "github/awesome-copilot/pytest-coverage": {
-   "installs": 13012
+   "installs": 13017
   },
   "github/awesome-copilot/python-mcp-server-generator": {
-   "installs": 10494
+   "installs": 10496
   },
   "github/awesome-copilot/quasi-coder": {
    "installs": 9070
@@ -4237,7 +4243,7 @@
    "installs": 9731
   },
   "github/awesome-copilot/refactor": {
-   "installs": 22684
+   "installs": 22688
   },
   "github/awesome-copilot/refactor-method-complexity-reduce": {
    "installs": 10025
@@ -4255,7 +4261,7 @@
    "installs": 8956
   },
   "github/awesome-copilot/review-and-refactor": {
-   "installs": 11127
+   "installs": 11128
   },
   "github/awesome-copilot/ruby-mcp-server-generator": {
    "installs": 8607
@@ -4276,10 +4282,10 @@
    "installs": 8676
   },
   "github/awesome-copilot/sql-code-review": {
-   "installs": 15636
+   "installs": 15642
   },
   "github/awesome-copilot/sql-optimization": {
-   "installs": 16170
+   "installs": 16176
   },
   "github/awesome-copilot/structured-autonomy-generate": {
    "installs": 8740
@@ -4315,7 +4321,7 @@
    "installs": 8709
   },
   "github/awesome-copilot/typescript-mcp-server-generator": {
-   "installs": 12101
+   "installs": 12102
   },
   "github/awesome-copilot/typespec-api-operations": {
    "installs": 8778
@@ -4351,22 +4357,22 @@
    "installs": 8889
   },
   "github/awesome-copilot/web-design-reviewer": {
-   "installs": 14360
+   "installs": 14367
   },
   "github/awesome-copilot/webapp-testing": {
-   "installs": 12569
+   "installs": 12575
   },
   "github/awesome-copilot/what-context-needed": {
-   "installs": 8946
+   "installs": 8947
   },
   "github/awesome-copilot/winapp-cli": {
    "installs": 8450
   },
   "github/awesome-copilot/workiq-copilot": {
-   "installs": 8843
+   "installs": 8844
   },
   "github/awesome-copilot/write-coding-standards-from-file": {
-   "installs": 9599
+   "installs": 9600
   },
   "glacierphonk/naming/naming": {
    "installs": 157
@@ -4378,94 +4384,94 @@
    "installs": 59745
   },
   "google-labs-code/stitch-skills/react-vite-dashboard": {
-   "installs": 6436
+   "installs": 6456
   },
   "google-labs-code/stitch-skills/reactcomponents": {
    "installs": 50432
   },
   "google-labs-code/stitch-skills/remotion": {
-   "installs": 42436
+   "installs": 42457
   },
   "google-labs-code/stitch-skills/shadcn-ui": {
-   "installs": 54664
+   "installs": 54687
   },
   "google-labs-code/stitch-skills/site-md": {
-   "installs": 4579
+   "installs": 4598
   },
   "google-labs-code/stitch-skills/stitch-design": {
    "installs": 25095
   },
   "google-labs-code/stitch-skills/stitch-loop": {
-   "installs": 57524
+   "installs": 57548
   },
   "google-labs-code/stitch-skills/stitchcode-to-design": {
-   "installs": 11095
+   "installs": 11116
   },
   "google-labs-code/stitch-skills/stitchextract-design-md": {
-   "installs": 11622
+   "installs": 11645
   },
   "google-labs-code/stitch-skills/stitchextract-static-html": {
-   "installs": 10890
+   "installs": 10910
   },
   "google-labs-code/stitch-skills/stitchgenerate-design": {
-   "installs": 11801
+   "installs": 11826
   },
   "google-labs-code/stitch-skills/stitchmanage-design-system": {
-   "installs": 11245
+   "installs": 11267
   },
   "google-labs-code/stitch-skills/stitchreact-components": {
-   "installs": 8559
+   "installs": 8580
   },
   "google-labs-code/stitch-skills/stitchreact-native": {
-   "installs": 9404
+   "installs": 9425
   },
   "google-labs-code/stitch-skills/stitchupload-to-stitch": {
-   "installs": 10882
+   "installs": 10904
   },
   "google-labs-code/stitch-skills/taste-design": {
-   "installs": 21326
+   "installs": 21351
   },
   "google/skills/agent-platform-alert-configuration": {
-   "installs": 8019
+   "installs": 8031
   },
   "google/skills/agent-platform-deploy": {
-   "installs": 10021
+   "installs": 10035
   },
   "google/skills/agent-platform-endpoint-management": {
-   "installs": 9225
+   "installs": 9238
   },
   "google/skills/agent-platform-eval-flywheel": {
-   "installs": 9493
+   "installs": 9507
   },
   "google/skills/agent-platform-inference": {
-   "installs": 9288
+   "installs": 9301
   },
   "google/skills/agent-platform-migrate-from-ai-studio": {
-   "installs": 9102
+   "installs": 9114
   },
   "google/skills/agent-platform-model-registry": {
-   "installs": 9474
+   "installs": 9488
   },
   "google/skills/agent-platform-prompt-management": {
-   "installs": 9742
+   "installs": 9754
   },
   "google/skills/agent-platform-rag-engine-management": {
-   "installs": 9786
+   "installs": 9798
   },
   "google/skills/agent-platform-skill-registry": {
-   "installs": 11253
+   "installs": 11265
   },
   "google/skills/agent-platform-troubleshooting": {
-   "installs": 5990
+   "installs": 6002
   },
   "google/skills/agent-platform-tuning": {
-   "installs": 9750
+   "installs": 9763
   },
   "google/skills/agent-platform-tuning-management": {
-   "installs": 9636
+   "installs": 9649
   },
   "google/skills/alloydb-basics": {
-   "installs": 14169
+   "installs": 14181
   },
   "google/skills/application-design-center-design-deploy": {
    "installs": 5009
@@ -4699,16 +4705,16 @@
    "installs": 5423
   },
   "google/skills/google-cloud-solution-agentic-ai-bidirectional-streaming": {
-   "installs": 6500
+   "installs": 6515
   },
   "google/skills/google-cloud-solution-agentic-ai-borderless-data-lakehouse": {
    "installs": 6189
   },
   "google/skills/google-cloud-solution-agentic-ai-data-science-workflow": {
-   "installs": 6244
+   "installs": 6258
   },
   "google/skills/google-cloud-solution-agentic-analytics-spark-knowledge-catalog": {
-   "installs": 6115
+   "installs": 6129
   },
   "google/skills/google-cloud-solution-architecture": {
    "installs": 7183
@@ -4729,7 +4735,7 @@
    "installs": 6083
   },
   "google/skills/google-cloud-solution-rag-enterprise-search-gke-sqldb": {
-   "installs": 6080
+   "installs": 6094
   },
   "google/skills/google-cloud-storage-basics": {
    "installs": 6711
@@ -4804,19 +4810,22 @@
    "installs": 5327
   },
   "google/skills/retrieving-developer-knowledge": {
-   "installs": 5469
+   "installs": 5488
   },
   "google/skills/secops-detection-engineering": {
-   "installs": 2962
+   "installs": 2976
+  },
+  "google/skills/secops-investigate": {
+   "installs": 2975
   },
   "google/skills/secops-triage": {
-   "installs": 2966
+   "installs": 2980
   },
   "google/skills/spanner-basics": {
-   "installs": 5657
+   "installs": 5671
   },
   "google/skills/workload-manager-basics": {
-   "installs": 8098
+   "installs": 8111
   },
   "googleworkspace/cli/gws-admin": {
    "installs": 670
@@ -5041,10 +5050,10 @@
    "installs": 602
   },
   "googleworkspace/cli/recipe-backup-sheet-as-csv": {
-   "installs": 31955
+   "installs": 31963
   },
   "googleworkspace/cli/recipe-batch-invite-to-event": {
-   "installs": 31004
+   "installs": 31012
   },
   "googleworkspace/cli/recipe-batch-rename-files": {
    "installs": 634
@@ -5053,109 +5062,109 @@
    "installs": 621
   },
   "googleworkspace/cli/recipe-block-focus-time": {
-   "installs": 31257
+   "installs": 31265
   },
   "googleworkspace/cli/recipe-bulk-download-folder": {
-   "installs": 31622
+   "installs": 31631
   },
   "googleworkspace/cli/recipe-cancel-and-notify": {
    "installs": 624
   },
   "googleworkspace/cli/recipe-collect-form-responses": {
-   "installs": 30993
+   "installs": 31001
   },
   "googleworkspace/cli/recipe-compare-sheet-tabs": {
-   "installs": 31687
+   "installs": 31695
   },
   "googleworkspace/cli/recipe-copy-sheet-for-new-month": {
-   "installs": 31035
+   "installs": 31043
   },
   "googleworkspace/cli/recipe-create-classroom-course": {
-   "installs": 30262
+   "installs": 30270
   },
   "googleworkspace/cli/recipe-create-doc-from-template": {
-   "installs": 31622
+   "installs": 31630
   },
   "googleworkspace/cli/recipe-create-events-from-sheet": {
-   "installs": 30963
+   "installs": 30971
   },
   "googleworkspace/cli/recipe-create-expense-tracker": {
-   "installs": 30787
+   "installs": 30795
   },
   "googleworkspace/cli/recipe-create-feedback-form": {
-   "installs": 30757
+   "installs": 30765
   },
   "googleworkspace/cli/recipe-create-gmail-filter": {
-   "installs": 32211
+   "installs": 32219
   },
   "googleworkspace/cli/recipe-create-meet-space": {
-   "installs": 30798
+   "installs": 30806
   },
   "googleworkspace/cli/recipe-create-presentation": {
-   "installs": 33361
+   "installs": 33369
   },
   "googleworkspace/cli/recipe-create-shared-drive": {
-   "installs": 31223
+   "installs": 31231
   },
   "googleworkspace/cli/recipe-create-task-list": {
-   "installs": 31106
+   "installs": 31114
   },
   "googleworkspace/cli/recipe-create-vacation-responder": {
-   "installs": 30908
+   "installs": 30916
   },
   "googleworkspace/cli/recipe-deploy-apps-script": {
    "installs": 596
   },
   "googleworkspace/cli/recipe-draft-email-from-doc": {
-   "installs": 32475
+   "installs": 32483
   },
   "googleworkspace/cli/recipe-email-drive-link": {
-   "installs": 32350
+   "installs": 32358
   },
   "googleworkspace/cli/recipe-find-free-time": {
-   "installs": 31765
+   "installs": 31773
   },
   "googleworkspace/cli/recipe-find-large-files": {
-   "installs": 31119
+   "installs": 31129
   },
   "googleworkspace/cli/recipe-forward-labeled-emails": {
-   "installs": 30865
+   "installs": 30873
   },
   "googleworkspace/cli/recipe-generate-report-from-sheet": {
-   "installs": 31441
+   "installs": 31449
   },
   "googleworkspace/cli/recipe-label-and-archive-emails": {
-   "installs": 31303
+   "installs": 31311
   },
   "googleworkspace/cli/recipe-log-deal-update": {
-   "installs": 30418
+   "installs": 30426
   },
   "googleworkspace/cli/recipe-organize-drive-folder": {
-   "installs": 31915
+   "installs": 31924
   },
   "googleworkspace/cli/recipe-plan-weekly-schedule": {
-   "installs": 31642
+   "installs": 31650
   },
   "googleworkspace/cli/recipe-post-mortem-setup": {
-   "installs": 30722
+   "installs": 30730
   },
   "googleworkspace/cli/recipe-reschedule-meeting": {
-   "installs": 31302
+   "installs": 31310
   },
   "googleworkspace/cli/recipe-review-meet-participants": {
-   "installs": 31022
+   "installs": 31030
   },
   "googleworkspace/cli/recipe-review-overdue-tasks": {
-   "installs": 31064
+   "installs": 31072
   },
   "googleworkspace/cli/recipe-save-email-attachments": {
-   "installs": 31969
+   "installs": 31977
   },
   "googleworkspace/cli/recipe-save-email-to-doc": {
-   "installs": 31275
+   "installs": 31283
   },
   "googleworkspace/cli/recipe-schedule-recurring-event": {
-   "installs": 31100
+   "installs": 31108
   },
   "googleworkspace/cli/recipe-search-and-export-emails": {
    "installs": 619
@@ -5164,19 +5173,19 @@
    "installs": 620
   },
   "googleworkspace/cli/recipe-send-team-announcement": {
-   "installs": 30498
+   "installs": 30506
   },
   "googleworkspace/cli/recipe-share-doc-and-notify": {
-   "installs": 31130
+   "installs": 31138
   },
   "googleworkspace/cli/recipe-share-event-materials": {
-   "installs": 30582
+   "installs": 30590
   },
   "googleworkspace/cli/recipe-share-folder-with-team": {
-   "installs": 30895
+   "installs": 30903
   },
   "googleworkspace/cli/recipe-sync-contacts-to-sheet": {
-   "installs": 31554
+   "installs": 31562
   },
   "googleworkspace/cli/recipe-transfer-file-ownership": {
    "installs": 582
@@ -5185,7 +5194,7 @@
    "installs": 583
   },
   "googleworkspace/cli/recipe-watch-drive-changes": {
-   "installs": 31225
+   "installs": 31233
   },
   "gooseworks-ai/goose-skills/ad-angle-miner": {
    "installs": 46
@@ -5509,7 +5518,7 @@
    "installs": 49
   },
   "gooseworks-ai/goose-skills/reddit-post-finder": {
-   "installs": 43
+   "installs": 54
   },
   "gooseworks-ai/goose-skills/restaurant-booking": {
    "installs": 486
@@ -5596,7 +5605,7 @@
    "installs": 65
   },
   "gooseworks-ai/goose-skills/trending-ad-hook-spotter": {
-   "installs": 67
+   "installs": 47
   },
   "gooseworks-ai/goose-skills/twitter-mention-tracker": {
    "installs": 35
@@ -5671,28 +5680,28 @@
    "installs": 3103
   },
   "hashicorp/agent-skills/refactor-module": {
-   "installs": 6693
+   "installs": 6696
   },
   "hashicorp/agent-skills/run-acceptance-tests": {
    "installs": 3806
   },
   "hashicorp/agent-skills/terraform-policy": {
-   "installs": 1671
+   "installs": 1673
   },
   "hashicorp/agent-skills/terraform-search-import": {
-   "installs": 5115
+   "installs": 5118
   },
   "hashicorp/agent-skills/terraform-stacks": {
-   "installs": 5804
+   "installs": 5806
   },
   "hashicorp/agent-skills/terraform-style-guide": {
-   "installs": 13372
+   "installs": 13386
   },
   "hashicorp/agent-skills/terraform-test": {
-   "installs": 9275
+   "installs": 9283
   },
   "hashicorp/agent-skills/windows-builder": {
-   "installs": 2859
+   "installs": 2860
   },
   "heshamfs/materials-simulation-skills/benchmark-and-mms-planner": {
    "installs": 170
@@ -6074,7 +6083,7 @@
    "installs": 12570
   },
   "heygen-com/hyperframes/pr-to-video": {
-   "installs": 449388,
+   "installs": 449393,
    "weekly": [
     42571,
     23591,
@@ -6087,7 +6096,7 @@
    ]
   },
   "heygen-com/hyperframes/product-launch-video": {
-   "installs": 539453,
+   "installs": 539458,
    "weekly": [
     47868,
     30516,
@@ -6100,7 +6109,7 @@
    ]
   },
   "heygen-com/hyperframes/remotion-to-hyperframes": {
-   "installs": 617801,
+   "installs": 619902,
    "weekly": [
     42093,
     23681,
@@ -6113,7 +6122,7 @@
    ]
   },
   "heygen-com/hyperframes/reverse-any-video": {
-   "installs": 99436,
+   "installs": 103519,
    "weekly": [
     0,
     0,
@@ -6126,7 +6135,7 @@
    ]
   },
   "heygen-com/hyperframes/slideshow": {
-   "installs": 522922,
+   "installs": 524956,
    "weekly": [
     41746,
     21638,
@@ -6139,7 +6148,7 @@
    ]
   },
   "heygen-com/hyperframes/style-sampling": {
-   "installs": 92875,
+   "installs": 96956,
    "weekly": [
     0,
     0,
@@ -6152,20 +6161,10 @@
    ]
   },
   "heygen-com/hyperframes/tailwind": {
-   "installs": 70553,
-   "weekly": [
-    1,
-    1,
-    1,
-    0,
-    0,
-    0,
-    0,
-    0
-   ]
+   "installs": 70553
   },
   "heygen-com/hyperframes/talking-head-recut": {
-   "installs": 408082,
+   "installs": 408087,
    "weekly": [
     43688,
     20095,
@@ -6216,7 +6215,7 @@
    ]
   },
   "heygen-com/hyperframes/wireframe-portal-title": {
-   "installs": 12541
+   "installs": 12569
   },
   "honeydew-ai/honeydew-ai-coding-agents-plugins/attribute-creation": {
    "installs": 25
@@ -6384,13 +6383,13 @@
    "installs": 1415
   },
   "huggingface/skills/train-sentence-transformers": {
-   "installs": 1672
+   "installs": 1675
   },
   "huggingface/skills/transformers-js": {
-   "installs": 2217
+   "installs": 2220
   },
   "huggingface/skills/trl-training": {
-   "installs": 1009
+   "installs": 1012
   },
   "humanpen/humanpen-skill/humanpen": {
    "installs": 1
@@ -7365,10 +7364,10 @@
    "installs": 2
   },
   "jeffallan/claude-skills/angular-architect": {
-   "installs": 5162
+   "installs": 5172
   },
   "jeffallan/claude-skills/api-designer": {
-   "installs": 6960
+   "installs": 6972
   },
   "jeffallan/claude-skills/architecture-designer": {
    "installs": 8396
@@ -7485,91 +7484,91 @@
    "installs": 16271
   },
   "jeffallan/claude-skills/playwright-expert": {
-   "installs": 5653
+   "installs": 5659
   },
   "jeffallan/claude-skills/postgres-pro": {
-   "installs": 8333
+   "installs": 8339
   },
   "jeffallan/claude-skills/prompt-engineer": {
-   "installs": 6004
+   "installs": 6009
   },
   "jeffallan/claude-skills/python-pro": {
-   "installs": 9233
+   "installs": 9241
   },
   "jeffallan/claude-skills/rag-architect": {
-   "installs": 5023
+   "installs": 5029
   },
   "jeffallan/claude-skills/rails-expert": {
-   "installs": 5062
+   "installs": 5067
   },
   "jeffallan/claude-skills/react-expert": {
-   "installs": 5863
+   "installs": 5868
   },
   "jeffallan/claude-skills/react-native-expert": {
-   "installs": 5228
+   "installs": 5233
   },
   "jeffallan/claude-skills/rust-engineer": {
-   "installs": 6798
+   "installs": 6805
   },
   "jeffallan/claude-skills/salesforce-developer": {
-   "installs": 4601
+   "installs": 4606
   },
   "jeffallan/claude-skills/secure-code-guardian": {
-   "installs": 5510
+   "installs": 5515
   },
   "jeffallan/claude-skills/security-reviewer": {
-   "installs": 6629
+   "installs": 6635
   },
   "jeffallan/claude-skills/shopify-expert": {
-   "installs": 5336
+   "installs": 5341
   },
   "jeffallan/claude-skills/spark-engineer": {
-   "installs": 4144
+   "installs": 4150
   },
   "jeffallan/claude-skills/spec-miner": {
-   "installs": 4809
+   "installs": 4815
   },
   "jeffallan/claude-skills/spring-boot-engineer": {
-   "installs": 8809
+   "installs": 8814
   },
   "jeffallan/claude-skills/sql-pro": {
-   "installs": 6858
+   "installs": 6863
   },
   "jeffallan/claude-skills/sre-engineer": {
-   "installs": 5541
+   "installs": 5550
   },
   "jeffallan/claude-skills/swift-expert": {
-   "installs": 4450
+   "installs": 4455
   },
   "jeffallan/claude-skills/terraform-engineer": {
-   "installs": 5766
+   "installs": 5775
   },
   "jeffallan/claude-skills/test-master": {
-   "installs": 5746
+   "installs": 5754
   },
   "jeffallan/claude-skills/the-fool": {
-   "installs": 4803
+   "installs": 4810
   },
   "jeffallan/claude-skills/typescript-pro": {
-   "installs": 14811
+   "installs": 14821
   },
   "jeffallan/claude-skills/vue-expert": {
-   "installs": 4788
+   "installs": 4796
   },
   "jeffallan/claude-skills/vue-expert-js": {
-   "installs": 4356
+   "installs": 4363
   },
   "jeffallan/claude-skills/websocket-engineer": {
-   "installs": 7231
+   "installs": 7238
   },
   "jeffallan/claude-skills/wordpress-pro": {
-   "installs": 10288
+   "installs": 10298
   },
   "k-kolomeitsev/data-structure-protocol/data-structure-protocol": {
    "installs": 53
   },
   "lackeyjb/playwright-skill/playwright-skill": {
-   "installs": 7776
+   "installs": 7794
   },
   "lambdatest/agent-skills/accessibility-skill": {
    "installs": 83
@@ -7617,7 +7616,7 @@
    "installs": 28
   },
   "lambdatest/agent-skills/api-to-testcase-generator": {
-   "installs": 30
+   "installs": 31
   },
   "lambdatest/agent-skills/api-versioning-helper": {
    "installs": 21
@@ -7941,7 +7940,7 @@
    "installs": 10243
   },
   "langchain-ai/langchain-skills/swarm": {
-   "installs": 9695
+   "installs": 9705
   },
   "leonxlnx/taste-skill/brandkit": {
    "installs": 390761,
@@ -8140,7 +8139,7 @@
    "installs": 56
   },
   "mailtrap/mailtrap-skills/receiving-emails": {
-   "installs": 3
+   "installs": 4
   },
   "mailtrap/mailtrap-skills/sending-emails": {
    "installs": 62
@@ -8505,7 +8504,7 @@
    ]
   },
   "mattpocock/skills/pr": {
-   "installs": 250907,
+   "installs": 251828,
    "weekly": [
     11951,
     23342,
@@ -8518,7 +8517,7 @@
    ]
   },
   "mattpocock/skills/prototype": {
-   "installs": 1079697,
+   "installs": 1080574,
    "weekly": [
     38550,
     34601,
@@ -8531,7 +8530,7 @@
    ]
   },
   "mattpocock/skills/request-refactor-plan": {
-   "installs": 202444,
+   "installs": 202446,
    "weekly": [
     9,
     3,
@@ -8544,7 +8543,7 @@
    ]
   },
   "mattpocock/skills/research": {
-   "installs": 805518,
+   "installs": 806395,
    "weekly": [
     38186,
     34526,
@@ -8557,7 +8556,7 @@
    ]
   },
   "mattpocock/skills/resolving-merge-conflicts": {
-   "installs": 551231,
+   "installs": 551232,
    "weekly": [
     37178,
     33108,
@@ -8570,7 +8569,7 @@
    ]
   },
   "mattpocock/skills/retro": {
-   "installs": 360941,
+   "installs": 361727,
    "weekly": [
     26950,
     23862,
@@ -8583,7 +8582,7 @@
    ]
   },
   "mattpocock/skills/review": {
-   "installs": 89886,
+   "installs": 89887,
    "weekly": [
     0,
     0,
@@ -8596,7 +8595,7 @@
    ]
   },
   "mattpocock/skills/scaffold-exercises": {
-   "installs": 539745,
+   "installs": 540308,
    "weekly": [
     26083,
     23249,
@@ -8609,7 +8608,7 @@
    ]
   },
   "mattpocock/skills/setup-matt-pocock-skills": {
-   "installs": 1148394,
+   "installs": 1149323,
    "weekly": [
     38034,
     34332,
@@ -8622,7 +8621,7 @@
    ]
   },
   "mattpocock/skills/setup-pre-commit": {
-   "installs": 549724,
+   "installs": 550293,
    "weekly": [
     26499,
     23656,
@@ -8635,7 +8634,7 @@
    ]
   },
   "mattpocock/skills/setup-ts-deep-modules": {
-   "installs": 427421,
+   "installs": 427983,
    "weekly": [
     25969,
     23066,
@@ -8648,7 +8647,7 @@
    ]
   },
   "mattpocock/skills/tdd": {
-   "installs": 1240839,
+   "installs": 1241731,
    "weekly": [
     41124,
     36998,
@@ -8661,7 +8660,7 @@
    ]
   },
   "mattpocock/skills/teach": {
-   "installs": 952015,
+   "installs": 952882,
    "weekly": [
     37645,
     33746,
@@ -8674,7 +8673,7 @@
    ]
   },
   "mattpocock/skills/to-issues": {
-   "installs": 339113,
+   "installs": 339115,
    "weekly": [
     1,
     4,
@@ -8687,7 +8686,7 @@
    ]
   },
   "mattpocock/skills/to-prd": {
-   "installs": 351593,
+   "installs": 351595,
    "weekly": [
     9,
     5,
@@ -8700,7 +8699,7 @@
    ]
   },
   "mattpocock/skills/to-questionnaire": {
-   "installs": 579750,
+   "installs": 580523,
    "weekly": [
     35563,
     31444,
@@ -8713,7 +8712,7 @@
    ]
   },
   "mattpocock/skills/to-spec": {
-   "installs": 808739,
+   "installs": 809677,
    "weekly": [
     39678,
     35125,
@@ -8726,7 +8725,7 @@
    ]
   },
   "mattpocock/skills/to-tickets": {
-   "installs": 804785,
+   "installs": 805710,
    "weekly": [
     38793,
     34354,
@@ -8739,7 +8738,7 @@
    ]
   },
   "mattpocock/skills/triage": {
-   "installs": 1075743,
+   "installs": 1076590,
    "weekly": [
     35937,
     33093,
@@ -8752,7 +8751,7 @@
    ]
   },
   "mattpocock/skills/ubiquitous-language": {
-   "installs": 197208,
+   "installs": 197209,
    "weekly": [
     7,
     2,
@@ -8765,7 +8764,7 @@
    ]
   },
   "mattpocock/skills/wait-what": {
-   "installs": 530939,
+   "installs": 531737,
    "weekly": [
     35105,
     31392,
@@ -8778,7 +8777,7 @@
    ]
   },
   "mattpocock/skills/wayfinder": {
-   "installs": 810856,
+   "installs": 811741,
    "weekly": [
     37138,
     33461,
@@ -8791,7 +8790,7 @@
    ]
   },
   "mattpocock/skills/wizard": {
-   "installs": 634896,
+   "installs": 635699,
    "weekly": [
     34314,
     30866,
@@ -8817,7 +8816,7 @@
    ]
   },
   "mattpocock/skills/writing-beats": {
-   "installs": 542738,
+   "installs": 543331,
    "weekly": [
     26428,
     23646,
@@ -8830,7 +8829,7 @@
    ]
   },
   "mattpocock/skills/writing-for-agents": {
-   "installs": 557904,
+   "installs": 558794,
    "weekly": [
     37802,
     33470,
@@ -8843,7 +8842,7 @@
    ]
   },
   "mattpocock/skills/writing-fragments": {
-   "installs": 541543,
+   "installs": 542133,
    "weekly": [
     26398,
     23622,
@@ -8869,7 +8868,7 @@
    ]
   },
   "mattpocock/skills/writing-shape": {
-   "installs": 542373,
+   "installs": 542966,
    "weekly": [
     26445,
     23652,
@@ -8882,7 +8881,7 @@
    ]
   },
   "mattpocock/skills/zoom-out": {
-   "installs": 219154,
+   "installs": 219155,
    "weekly": [
     6,
     1,
@@ -8898,13 +8897,13 @@
    "installs": 140
   },
   "mblode/agent-skills/agent-ready": {
-   "installs": 244
+   "installs": 246
   },
   "mblode/agent-skills/agent-skills-creator": {
-   "installs": 1052
+   "installs": 1054
   },
   "mblode/agent-skills/agents-md": {
-   "installs": 911
+   "installs": 913
   },
   "mblode/agent-skills/anki": {
    "installs": 19
@@ -9006,25 +9005,25 @@
    "installs": 173
   },
   "mblode/agent-skills/planning": {
-   "installs": 539
+   "installs": 542
   },
   "mblode/agent-skills/pr-babysitter": {
-   "installs": 591
+   "installs": 594
   },
   "mblode/agent-skills/pr-comments": {
    "installs": 20
   },
   "mblode/agent-skills/pr-creator": {
-   "installs": 601
+   "installs": 604
   },
   "mblode/agent-skills/pr-reviewer": {
    "installs": 340
   },
   "mblode/agent-skills/presentation-creator": {
-   "installs": 987
+   "installs": 991
   },
   "mblode/agent-skills/product-design": {
-   "installs": 934
+   "installs": 939
   },
   "mblode/agent-skills/quiz": {
    "installs": 17
@@ -9039,16 +9038,16 @@
    "installs": 185
   },
   "mblode/agent-skills/save-md": {
-   "installs": 355
+   "installs": 357
   },
   "mblode/agent-skills/scaffold-cli": {
-   "installs": 772
+   "installs": 774
   },
   "mblode/agent-skills/scaffold-nextjs": {
-   "installs": 804
+   "installs": 807
   },
   "mblode/agent-skills/seo": {
-   "installs": 376
+   "installs": 379
   },
   "mblode/agent-skills/seo-program": {
    "installs": 26
@@ -9057,28 +9056,28 @@
    "installs": 18
   },
   "mblode/agent-skills/test-audit": {
-   "installs": 266
+   "installs": 270
   },
   "mblode/agent-skills/tidy": {
-   "installs": 524
+   "installs": 526
   },
   "mblode/agent-skills/tone-of-voice": {
    "installs": 10
   },
   "mblode/agent-skills/typography-audit": {
-   "installs": 1155
+   "installs": 1158
   },
   "mblode/agent-skills/ui-animation": {
-   "installs": 10994
+   "installs": 10997
   },
   "mblode/agent-skills/ui-audit": {
    "installs": 733
   },
   "mblode/agent-skills/ui-design": {
-   "installs": 1581
+   "installs": 1585
   },
   "mblode/agent-skills/ui-verification": {
-   "installs": 503
+   "installs": 508
   },
   "mblode/agent-skills/ux-audit": {
    "installs": 238
@@ -9127,7 +9126,7 @@
    "installs": 1019
   },
   "mcollina/skills/typescript-magician": {
-   "installs": 2997
+   "installs": 2999
   },
   "melmayssonowen/agent-skills/amazon-listing-checker": {
    "installs": 1
@@ -9193,7 +9192,7 @@
    "installs": 44
   },
   "mhattingpete/claude-skills-marketplace/architecture-diagram-creator": {
-   "installs": 513
+   "installs": 514
   },
   "mhattingpete/claude-skills-marketplace/code-auditor": {
    "installs": 344
@@ -9247,7 +9246,7 @@
    "installs": 336
   },
   "microsoft/azure-skills/airunway-aks-setup": {
-   "installs": 494477,
+   "installs": 495495,
    "weekly": [
     11076,
     12362,
@@ -9260,19 +9259,19 @@
    ]
   },
   "microsoft/azure-skills/aks-cost-optimization": {
-   "installs": 67
+   "installs": 69
   },
   "microsoft/azure-skills/aks-gpu-inference": {
-   "installs": 159
+   "installs": 160
   },
   "microsoft/azure-skills/aks-known-issues": {
-   "installs": 159
+   "installs": 161
   },
   "microsoft/azure-skills/aks-network-capture": {
-   "installs": 158
+   "installs": 160
   },
   "microsoft/azure-skills/aks-troubleshooting": {
-   "installs": 161
+   "installs": 163
   },
   "microsoft/azure-skills/appinsights-instrumentation": {
    "installs": 701780,
@@ -9741,7 +9740,7 @@
    "installs": 10
   },
   "microsoft/azure-skills/python-appservice-deploy": {
-   "installs": 364474,
+   "installs": 365382,
    "weekly": [
     11082,
     12370,
@@ -9808,16 +9807,16 @@
    "installs": 74
   },
   "minimax-ai/skills/pptx-generator": {
-   "installs": 6277
+   "installs": 6287
   },
   "minimax-ai/skills/pr-review": {
-   "installs": 1788
+   "installs": 1790
   },
   "minimax-ai/skills/react-native-dev": {
-   "installs": 1957
+   "installs": 1959
   },
   "minimax-ai/skills/shader-dev": {
-   "installs": 2714
+   "installs": 2717
   },
   "minimax-ai/skills/slide-making-skill": {
    "installs": 82
@@ -9847,7 +9846,7 @@
    "installs": 103
   },
   "muratcankoylan/agent-skills-for-context-engineering/advanced-evaluation": {
-   "installs": 196
+   "installs": 197
   },
   "muratcankoylan/agent-skills-for-context-engineering/bdi-mental-states": {
    "installs": 169
@@ -9862,10 +9861,10 @@
    "installs": 625
   },
   "muratcankoylan/agent-skills-for-context-engineering/context-degradation": {
-   "installs": 297
+   "installs": 298
   },
   "muratcankoylan/agent-skills-for-context-engineering/context-engineering-collection": {
-   "installs": 4440
+   "installs": 4444
   },
   "muratcankoylan/agent-skills-for-context-engineering/context-fundamentals": {
    "installs": 270
@@ -9895,10 +9894,10 @@
    "installs": 167
   },
   "muratcankoylan/agent-skills-for-context-engineering/memory-systems": {
-   "installs": 348
+   "installs": 351
   },
   "muratcankoylan/agent-skills-for-context-engineering/multi-agent-patterns": {
-   "installs": 350
+   "installs": 352
   },
   "muratcankoylan/agent-skills-for-context-engineering/project-development": {
    "installs": 201
@@ -9916,7 +9915,7 @@
    "installs": 119
   },
   "muratcankoylan/agent-skills-for-context-engineering/tool-design": {
-   "installs": 306
+   "installs": 307
   },
   "muthuishere/hand-drawn-diagrams/hand-drawn-diagrams": {
    "installs": 671
@@ -9937,43 +9936,43 @@
    "installs": 118
   },
   "necmttn/ax/release-announcement": {
-   "installs": 123
+   "installs": 124
   },
   "necmttn/ax/retro": {
-   "installs": 136
+   "installs": 137
   },
   "necmttn/ax/retro-meta": {
-   "installs": 127
+   "installs": 128
   },
   "necmttn/ax/setup": {
-   "installs": 130
+   "installs": 131
   },
   "necmttn/ax/ship-checklist": {
-   "installs": 104
+   "installs": 105
   },
   "necmttn/ax/tune": {
    "installs": 4
   },
   "neolabhq/context-engineering-kit/actualize": {
-   "installs": 1217
+   "installs": 1220
   },
   "neolabhq/context-engineering-kit/add-task": {
-   "installs": 1266
+   "installs": 1268
   },
   "neolabhq/context-engineering-kit/agent-evaluation": {
-   "installs": 1337
+   "installs": 1339
   },
   "neolabhq/context-engineering-kit/analyse": {
-   "installs": 1266
+   "installs": 1268
   },
   "neolabhq/context-engineering-kit/analyse-problem": {
-   "installs": 1276
+   "installs": 1278
   },
   "neolabhq/context-engineering-kit/analyze-issue": {
-   "installs": 1230
+   "installs": 1232
   },
   "neolabhq/context-engineering-kit/apply-anthropic-skill-best-practices": {
-   "installs": 1255
+   "installs": 1257
   },
   "neolabhq/context-engineering-kit/attach-review-to-pr": {
    "installs": 1212
@@ -10213,22 +10212,22 @@
    "installs": 17
   },
   "neolabhq/context-engineering-kit/plan-do-check-act": {
-   "installs": 1246
+   "installs": 1248
   },
   "neolabhq/context-engineering-kit/plan-task": {
-   "installs": 1310
+   "installs": 1311
   },
   "neolabhq/context-engineering-kit/prompt-engineering": {
-   "installs": 1509
+   "installs": 1510
   },
   "neolabhq/context-engineering-kit/propose-hypotheses": {
-   "installs": 1201
+   "installs": 1202
   },
   "neolabhq/context-engineering-kit/query": {
-   "installs": 1190
+   "installs": 1191
   },
   "neolabhq/context-engineering-kit/reflect": {
-   "installs": 1435
+   "installs": 1437
   },
   "neolabhq/context-engineering-kit/reflexioncritique": {
    "installs": 482
@@ -10240,19 +10239,19 @@
    "installs": 484
   },
   "neolabhq/context-engineering-kit/reset": {
-   "installs": 1188
+   "installs": 1189
   },
   "neolabhq/context-engineering-kit/resolve-fixed-pr-comments": {
-   "installs": 563
+   "installs": 564
   },
   "neolabhq/context-engineering-kit/review-local-changes": {
-   "installs": 1320
+   "installs": 1321
   },
   "neolabhq/context-engineering-kit/review-pr": {
-   "installs": 1267
+   "installs": 1268
   },
   "neolabhq/context-engineering-kit/root-cause-tracing": {
-   "installs": 1344
+   "installs": 1347
   },
   "neolabhq/context-engineering-kit/sadddo-and-judge": {
    "installs": 440
@@ -10300,25 +10299,25 @@
    "installs": 550
   },
   "neolabhq/context-engineering-kit/setup-arxiv-mcp": {
-   "installs": 1201
+   "installs": 1202
   },
   "neolabhq/context-engineering-kit/setup-codemap-cli": {
-   "installs": 1219
+   "installs": 1220
   },
   "neolabhq/context-engineering-kit/setup-context7-mcp": {
-   "installs": 1184
+   "installs": 1185
   },
   "neolabhq/context-engineering-kit/setup-serena-mcp": {
-   "installs": 1286
+   "installs": 1287
   },
   "neolabhq/context-engineering-kit/software-architecture": {
    "installs": 39
   },
   "neolabhq/context-engineering-kit/status": {
-   "installs": 1189
+   "installs": 1190
   },
   "neolabhq/context-engineering-kit/subagent-driven-development": {
-   "installs": 1326
+   "installs": 1328
   },
   "neolabhq/context-engineering-kit/tddfix-tests": {
    "installs": 478
@@ -10333,40 +10332,40 @@
    "installs": 440
   },
   "neolabhq/context-engineering-kit/test-coverage": {
-   "installs": 671
+   "installs": 673
   },
   "neolabhq/context-engineering-kit/test-driven-development": {
-   "installs": 1309
+   "installs": 1311
   },
   "neolabhq/context-engineering-kit/test-prompt": {
-   "installs": 1278
+   "installs": 1280
   },
   "neolabhq/context-engineering-kit/test-skill": {
-   "installs": 1258
+   "installs": 1260
   },
   "neolabhq/context-engineering-kit/thought-based-reasoning": {
-   "installs": 1436
+   "installs": 1439
   },
   "neolabhq/context-engineering-kit/traiage-review": {
-   "installs": 422
+   "installs": 424
   },
   "neolabhq/context-engineering-kit/tree-of-thoughts": {
-   "installs": 1256
+   "installs": 1258
   },
   "neolabhq/context-engineering-kit/update-docs": {
-   "installs": 1348
+   "installs": 1350
   },
   "neolabhq/context-engineering-kit/why": {
-   "installs": 1293
+   "installs": 1295
   },
   "neolabhq/context-engineering-kit/worktrees": {
    "installs": 20
   },
   "neolabhq/context-engineering-kit/write-concisely": {
-   "installs": 1394
+   "installs": 1396
   },
   "neolabhq/context-engineering-kit/write-tests": {
-   "installs": 1279
+   "installs": 1281
   },
   "neondatabase/agent-skills/claimable-postgres": {
    "installs": 2185
@@ -10473,13 +10472,13 @@
    "installs": 53310
   },
   "nextlevelbuilder/ui-ux-pro-max-skill/slides": {
-   "installs": 48652
+   "installs": 48822
   },
   "nextlevelbuilder/ui-ux-pro-max-skill/ui-styling": {
-   "installs": 50801
+   "installs": 50995
   },
   "nextlevelbuilder/ui-ux-pro-max-skill/ui-ux-pro-max": {
-   "installs": 451842,
+   "installs": 452424,
    "weekly": [
     8407,
     9100,
@@ -10492,7 +10491,7 @@
    ]
   },
   "nvidia/skills/accelerated-computing-cudf": {
-   "installs": 3191
+   "installs": 3195
   },
   "nvidia/skills/aiq-deploy": {
    "installs": 2522
@@ -10828,220 +10827,220 @@
    "installs": 2348
   },
   "nvidia/skills/physical-ai-defect-image-generation": {
-   "installs": 1991
+   "installs": 1992
   },
   "nvidia/skills/physical-ai-infrastructure-setup-and-resilient-scaling": {
    "installs": 2057
   },
   "nvidia/skills/physical-ai-neural-reconstruction": {
-   "installs": 2156
+   "installs": 2158
   },
   "nvidia/skills/physical-ai-video-data-augmentation": {
-   "installs": 2000
+   "installs": 2001
   },
   "nvidia/skills/physicsnemo-discover": {
-   "installs": 1937
+   "installs": 1938
   },
   "nvidia/skills/rag-blueprint": {
-   "installs": 3432
+   "installs": 3437
   },
   "nvidia/skills/rag-eval": {
-   "installs": 2492
+   "installs": 2493
   },
   "nvidia/skills/rag-perf": {
-   "installs": 2214
+   "installs": 2215
   },
   "nvidia/skills/skill-card-generator": {
-   "installs": 2279
+   "installs": 2281
   },
   "nvidia/skills/tao-analyze-changenet-rca": {
-   "installs": 1610
+   "installs": 1611
   },
   "nvidia/skills/tao-analyze-gaps-visual-changenet": {
-   "installs": 1608
+   "installs": 1609
   },
   "nvidia/skills/tao-analyze-gaps-vlm-bcq": {
-   "installs": 1606
+   "installs": 1607
   },
   "nvidia/skills/tao-convert-dataset-format": {
-   "installs": 1628
+   "installs": 1629
   },
   "nvidia/skills/tao-finetune-clip": {
-   "installs": 1633
+   "installs": 1634
   },
   "nvidia/skills/tao-finetune-cosmos-embed": {
-   "installs": 1647
+   "installs": 1648
   },
   "nvidia/skills/tao-finetune-cosmos-reason": {
-   "installs": 1645
+   "installs": 1646
   },
   "nvidia/skills/tao-finetune-huggingface-model": {
-   "installs": 1691
+   "installs": 1692
   },
   "nvidia/skills/tao-generate-image-grounding": {
-   "installs": 1620
+   "installs": 1621
   },
   "nvidia/skills/tao-generate-referring-expressions": {
-   "installs": 1598
+   "installs": 1599
   },
   "nvidia/skills/tao-generate-video-reasoning-annotations": {
-   "installs": 1626
+   "installs": 1627
   },
   "nvidia/skills/tao-launch-workflow": {
-   "installs": 1649
+   "installs": 1650
   },
   "nvidia/skills/tao-list-capabilities": {
-   "installs": 1628
+   "installs": 1629
   },
   "nvidia/skills/tao-mine-aoi-images": {
-   "installs": 1592
+   "installs": 1593
   },
   "nvidia/skills/tao-port-huggingface-model": {
-   "installs": 1631
+   "installs": 1632
   },
   "nvidia/skills/tao-route-visual-changenet-samples": {
    "installs": 1579
   },
   "nvidia/skills/tao-run-automl": {
-   "installs": 1629
+   "installs": 1630
   },
   "nvidia/skills/tao-run-automl-deft-pipeline": {
-   "installs": 1596
+   "installs": 1597
   },
   "nvidia/skills/tao-run-deft-aoi": {
-   "installs": 1599
+   "installs": 1600
   },
   "nvidia/skills/tao-run-inference-service": {
-   "installs": 1615
+   "installs": 1616
   },
   "nvidia/skills/tao-run-on-brev": {
-   "installs": 1605
+   "installs": 1606
   },
   "nvidia/skills/tao-run-on-kubernetes": {
-   "installs": 1616
+   "installs": 1618
   },
   "nvidia/skills/tao-run-on-local-docker": {
    "installs": 1596
   },
   "nvidia/skills/tao-run-on-slurm": {
-   "installs": 1585
+   "installs": 1586
   },
   "nvidia/skills/tao-run-platform": {
    "installs": 1550
   },
   "nvidia/skills/tao-setup-nvidia-gpu-host": {
-   "installs": 1698
+   "installs": 1699
   },
   "nvidia/skills/tao-train-action-recognition": {
-   "installs": 1611
-  },
-  "nvidia/skills/tao-train-bevfusion": {
-   "installs": 1591
-  },
-  "nvidia/skills/tao-train-centerpose": {
-   "installs": 1599
-  },
-  "nvidia/skills/tao-train-deformable-detr": {
-   "installs": 1589
-  },
-  "nvidia/skills/tao-train-depth-anything-v2": {
-   "installs": 1607
-  },
-  "nvidia/skills/tao-train-dino": {
-   "installs": 1602
-  },
-  "nvidia/skills/tao-train-fast-foundation-stereo": {
-   "installs": 1584
-  },
-  "nvidia/skills/tao-train-foundation-stereo": {
-   "installs": 1586
-  },
-  "nvidia/skills/tao-train-grounding-dino": {
-   "installs": 1613
-  },
-  "nvidia/skills/tao-train-image-classification": {
-   "installs": 1626
-  },
-  "nvidia/skills/tao-train-mask-auto-encoder": {
-   "installs": 1595
-  },
-  "nvidia/skills/tao-train-mask-auto-label": {
-   "installs": 1595
-  },
-  "nvidia/skills/tao-train-mask-grounding-dino": {
-   "installs": 1591
-  },
-  "nvidia/skills/tao-train-mask2former": {
-   "installs": 1602
-  },
-  "nvidia/skills/tao-train-metric-learning-recognition": {
-   "installs": 1599
-  },
-  "nvidia/skills/tao-train-nvdinov2": {
-   "installs": 1600
-  },
-  "nvidia/skills/tao-train-nvpanoptix3d": {
-   "installs": 1601
-  },
-  "nvidia/skills/tao-train-ocdnet": {
-   "installs": 1591
-  },
-  "nvidia/skills/tao-train-ocrnet": {
-   "installs": 1619
-  },
-  "nvidia/skills/tao-train-oneformer": {
-   "installs": 1587
-  },
-  "nvidia/skills/tao-train-optical-inspection": {
    "installs": 1612
   },
-  "nvidia/skills/tao-train-pointpillars": {
-   "installs": 1595
+  "nvidia/skills/tao-train-bevfusion": {
+   "installs": 1592
   },
-  "nvidia/skills/tao-train-pose-classification": {
-   "installs": 1610
-  },
-  "nvidia/skills/tao-train-reid": {
-   "installs": 1606
-  },
-  "nvidia/skills/tao-train-rtdetr": {
-   "installs": 1605
-  },
-  "nvidia/skills/tao-train-segformer": {
+  "nvidia/skills/tao-train-centerpose": {
    "installs": 1600
   },
-  "nvidia/skills/tao-train-single-step": {
-   "installs": 1597
+  "nvidia/skills/tao-train-deformable-detr": {
+   "installs": 1590
   },
-  "nvidia/skills/tao-train-sparse4d": {
-   "installs": 1586
+  "nvidia/skills/tao-train-depth-anything-v2": {
+   "installs": 1608
   },
-  "nvidia/skills/tao-train-visual-changenet": {
-   "installs": 1599
+  "nvidia/skills/tao-train-dino": {
+   "installs": 1603
   },
-  "nvidia/skills/tao-validate-dataset-format": {
-   "installs": 1597
+  "nvidia/skills/tao-train-fast-foundation-stereo": {
+   "installs": 1585
   },
-  "nvidia/skills/tilegym-adding-cutile-kernel": {
-   "installs": 1857
-  },
-  "nvidia/skills/tilegym-converting-cutile-to-julia": {
-   "installs": 1486
-  },
-  "nvidia/skills/tilegym-converting-cutile-to-triton": {
-   "installs": 1527
-  },
-  "nvidia/skills/tilegym-cutile-autotuning": {
-   "installs": 1549
-  },
-  "nvidia/skills/tilegym-cutile-python": {
-   "installs": 1666
-  },
-  "nvidia/skills/tilegym-improve-cutile-kernel-perf": {
+  "nvidia/skills/tao-train-foundation-stereo": {
    "installs": 1587
   },
+  "nvidia/skills/tao-train-grounding-dino": {
+   "installs": 1614
+  },
+  "nvidia/skills/tao-train-image-classification": {
+   "installs": 1627
+  },
+  "nvidia/skills/tao-train-mask-auto-encoder": {
+   "installs": 1596
+  },
+  "nvidia/skills/tao-train-mask-auto-label": {
+   "installs": 1596
+  },
+  "nvidia/skills/tao-train-mask-grounding-dino": {
+   "installs": 1592
+  },
+  "nvidia/skills/tao-train-mask2former": {
+   "installs": 1603
+  },
+  "nvidia/skills/tao-train-metric-learning-recognition": {
+   "installs": 1600
+  },
+  "nvidia/skills/tao-train-nvdinov2": {
+   "installs": 1601
+  },
+  "nvidia/skills/tao-train-nvpanoptix3d": {
+   "installs": 1602
+  },
+  "nvidia/skills/tao-train-ocdnet": {
+   "installs": 1592
+  },
+  "nvidia/skills/tao-train-ocrnet": {
+   "installs": 1620
+  },
+  "nvidia/skills/tao-train-oneformer": {
+   "installs": 1588
+  },
+  "nvidia/skills/tao-train-optical-inspection": {
+   "installs": 1613
+  },
+  "nvidia/skills/tao-train-pointpillars": {
+   "installs": 1596
+  },
+  "nvidia/skills/tao-train-pose-classification": {
+   "installs": 1611
+  },
+  "nvidia/skills/tao-train-reid": {
+   "installs": 1607
+  },
+  "nvidia/skills/tao-train-rtdetr": {
+   "installs": 1606
+  },
+  "nvidia/skills/tao-train-segformer": {
+   "installs": 1601
+  },
+  "nvidia/skills/tao-train-single-step": {
+   "installs": 1598
+  },
+  "nvidia/skills/tao-train-sparse4d": {
+   "installs": 1587
+  },
+  "nvidia/skills/tao-train-visual-changenet": {
+   "installs": 1600
+  },
+  "nvidia/skills/tao-validate-dataset-format": {
+   "installs": 1598
+  },
+  "nvidia/skills/tilegym-adding-cutile-kernel": {
+   "installs": 1858
+  },
+  "nvidia/skills/tilegym-converting-cutile-to-julia": {
+   "installs": 1487
+  },
+  "nvidia/skills/tilegym-converting-cutile-to-triton": {
+   "installs": 1528
+  },
+  "nvidia/skills/tilegym-cutile-autotuning": {
+   "installs": 1550
+  },
+  "nvidia/skills/tilegym-cutile-python": {
+   "installs": 1667
+  },
+  "nvidia/skills/tilegym-improve-cutile-kernel-perf": {
+   "installs": 1588
+  },
   "nvidia/skills/tilegym-monkey-patch-kernels-to-transformers": {
-   "installs": 1591
+   "installs": 1592
   },
   "nvidia/skills/vss-ask-video": {
    "installs": 1913
@@ -11159,7 +11158,7 @@
    ]
   },
   "obra/superpowers/receiving-code-review": {
-   "installs": 239701,
+   "installs": 239933,
    "weekly": [
     5708,
     5291,
@@ -11172,7 +11171,7 @@
    ]
   },
   "obra/superpowers/requesting-code-review": {
-   "installs": 281388,
+   "installs": 281631,
    "weekly": [
     6304,
     6243,
@@ -11185,7 +11184,7 @@
    ]
   },
   "obra/superpowers/subagent-driven-development": {
-   "installs": 256552,
+   "installs": 256786,
    "weekly": [
     6189,
     5887,
@@ -11198,7 +11197,7 @@
    ]
   },
   "obra/superpowers/systematic-debugging": {
-   "installs": 333306,
+   "installs": 333620,
    "weekly": [
     7805,
     7836,
@@ -11211,7 +11210,7 @@
    ]
   },
   "obra/superpowers/test-driven-development": {
-   "installs": 280104,
+   "installs": 280416,
    "weekly": [
     6629,
     6383,
@@ -11224,7 +11223,7 @@
    ]
   },
   "obra/superpowers/using-git-worktrees": {
-   "installs": 234653,
+   "installs": 234863,
    "weekly": [
     5736,
     5308,
@@ -11237,7 +11236,7 @@
    ]
   },
   "obra/superpowers/using-superpowers": {
-   "installs": 288032,
+   "installs": 288229,
    "weekly": [
     5840,
     5880,
@@ -11250,7 +11249,7 @@
    ]
   },
   "obra/superpowers/verification-before-completion": {
-   "installs": 276418,
+   "installs": 276692,
    "weekly": [
     6983,
     6740,
@@ -11263,7 +11262,7 @@
    ]
   },
   "obra/superpowers/writing-plans": {
-   "installs": 303843,
+   "installs": 304090,
    "weekly": [
     6767,
     6813,
@@ -11276,7 +11275,7 @@
    ]
   },
   "obra/superpowers/writing-skills": {
-   "installs": 235556,
+   "installs": 235759,
    "weekly": [
     5783,
     5657,
@@ -11406,37 +11405,37 @@
    "installs": 13838
   },
   "openai/skills/playwright": {
-   "installs": 9575
+   "installs": 9588
   },
   "openai/skills/playwright-interactive": {
-   "installs": 5782
+   "installs": 5788
   },
   "openai/skills/plugin-creator": {
-   "installs": 2699
+   "installs": 2703
   },
   "openai/skills/render-deploy": {
-   "installs": 3394
+   "installs": 3400
   },
   "openai/skills/screenshot": {
-   "installs": 6412
+   "installs": 6419
   },
   "openai/skills/security-best-practices": {
-   "installs": 12530
+   "installs": 12554
   },
   "openai/skills/security-ownership-map": {
-   "installs": 4083
+   "installs": 4089
   },
   "openai/skills/security-threat-model": {
-   "installs": 9154
+   "installs": 9171
   },
   "openai/skills/sentry": {
-   "installs": 3841
+   "installs": 3849
   },
   "openai/skills/skill-creator": {
-   "installs": 5200
+   "installs": 5206
   },
   "openai/skills/skill-installer": {
-   "installs": 3918
+   "installs": 3923
   },
   "openai/skills/slides": {
    "installs": 594
@@ -11445,25 +11444,25 @@
    "installs": 874
   },
   "openai/skills/speech": {
-   "installs": 3771
+   "installs": 3777
   },
   "openai/skills/spreadsheet": {
    "installs": 1575
   },
   "openai/skills/transcribe": {
-   "installs": 4115
+   "installs": 4121
   },
   "openai/skills/vercel-deploy": {
-   "installs": 3593
+   "installs": 3598
   },
   "openai/skills/winui-app": {
-   "installs": 3417
+   "installs": 3422
   },
   "openai/skills/yeet": {
-   "installs": 3641
+   "installs": 3645
   },
   "orchestra-research/ai-research-skills/academic-plotting": {
-   "installs": 1333
+   "installs": 1337
   },
   "orchestra-research/ai-research-skills/ara-compiler": {
    "installs": 894
@@ -11475,7 +11474,7 @@
    "installs": 914
   },
   "orchestra-research/ai-research-skills/audiocraft-audio-generation": {
-   "installs": 1104
+   "installs": 1105
   },
   "orchestra-research/ai-research-skills/autogpt-agents": {
    "installs": 1042
@@ -11493,7 +11492,7 @@
    "installs": 1042
   },
   "orchestra-research/ai-research-skills/brainstorming-research-ideas": {
-   "installs": 1367
+   "installs": 1369
   },
   "orchestra-research/ai-research-skills/chroma": {
    "installs": 1056
@@ -11505,7 +11504,7 @@
    "installs": 1043
   },
   "orchestra-research/ai-research-skills/creative-thinking-for-research": {
-   "installs": 1331
+   "installs": 1332
   },
   "orchestra-research/ai-research-skills/crewai-multi-agent": {
    "installs": 1084
@@ -11514,7 +11513,7 @@
    "installs": 1069
   },
   "orchestra-research/ai-research-skills/distributed-llm-pretraining-torchtitan": {
-   "installs": 1053
+   "installs": 1054
   },
   "orchestra-research/ai-research-skills/dspy": {
    "installs": 1064
@@ -11532,7 +11531,7 @@
    "installs": 933
   },
   "orchestra-research/ai-research-skills/experiment-tracking-swanlab": {
-   "installs": 997
+   "installs": 999
   },
   "orchestra-research/ai-research-skills/faiss": {
    "installs": 1148
@@ -11643,7 +11642,7 @@
    "installs": 1044
   },
   "orchestra-research/ai-research-skills/nnsight-remote-interpretability": {
-   "installs": 1042
+   "installs": 1044
   },
   "orchestra-research/ai-research-skills/openrlhf-training": {
    "installs": 1052
@@ -11658,106 +11657,106 @@
    "installs": 1117
   },
   "orchestra-research/ai-research-skills/phoenix-observability": {
-   "installs": 1040
+   "installs": 1044
   },
   "orchestra-research/ai-research-skills/pinecone": {
-   "installs": 1043
+   "installs": 1047
   },
   "orchestra-research/ai-research-skills/presenting-conference-talks": {
-   "installs": 1037
+   "installs": 1042
   },
   "orchestra-research/ai-research-skills/prompt-guard": {
-   "installs": 1075
+   "installs": 1079
   },
   "orchestra-research/ai-research-skills/pytorch-fsdp": {
    "installs": 2
   },
   "orchestra-research/ai-research-skills/pytorch-fsdp2": {
-   "installs": 1060
-  },
-  "orchestra-research/ai-research-skills/pytorch-lightning": {
-   "installs": 1064
-  },
-  "orchestra-research/ai-research-skills/pyvene-interventions": {
-   "installs": 1049
-  },
-  "orchestra-research/ai-research-skills/qdrant-vector-search": {
-   "installs": 1067
-  },
-  "orchestra-research/ai-research-skills/quantizing-models-bitsandbytes": {
-   "installs": 1066
-  },
-  "orchestra-research/ai-research-skills/ray-data": {
-   "installs": 1074
-  },
-  "orchestra-research/ai-research-skills/ray-train": {
-   "installs": 1094
-  },
-  "orchestra-research/ai-research-skills/rwkv-architecture": {
-   "installs": 1042
-  },
-  "orchestra-research/ai-research-skills/segment-anything-model": {
-   "installs": 1094
-  },
-  "orchestra-research/ai-research-skills/sentence-transformers": {
-   "installs": 1061
-  },
-  "orchestra-research/ai-research-skills/sentencepiece": {
-   "installs": 1051
-  },
-  "orchestra-research/ai-research-skills/serving-llms-vllm": {
-   "installs": 1164
-  },
-  "orchestra-research/ai-research-skills/sglang": {
-   "installs": 1055
-  },
-  "orchestra-research/ai-research-skills/simpo-training": {
-   "installs": 1049
-  },
-  "orchestra-research/ai-research-skills/skypilot-multi-cloud-orchestration": {
-   "installs": 1042
-  },
-  "orchestra-research/ai-research-skills/slime-rl-training": {
-   "installs": 1049
-  },
-  "orchestra-research/ai-research-skills/sparse-autoencoder-training": {
-   "installs": 1049
-  },
-  "orchestra-research/ai-research-skills/speculative-decoding": {
-   "installs": 1055
-  },
-  "orchestra-research/ai-research-skills/stable-diffusion-image-generation": {
-   "installs": 1144
-  },
-  "orchestra-research/ai-research-skills/systems-paper-writing": {
-   "installs": 1028
-  },
-  "orchestra-research/ai-research-skills/tensorboard": {
-   "installs": 1069
-  },
-  "orchestra-research/ai-research-skills/tensorrt-llm": {
-   "installs": 1136
-  },
-  "orchestra-research/ai-research-skills/torchforge-rl-training": {
-   "installs": 1044
-  },
-  "orchestra-research/ai-research-skills/training-llms-megatron": {
-   "installs": 1050
-  },
-  "orchestra-research/ai-research-skills/transformer-lens-interpretability": {
-   "installs": 1055
-  },
-  "orchestra-research/ai-research-skills/unsloth": {
-   "installs": 1084
-  },
-  "orchestra-research/ai-research-skills/verl-rl-training": {
    "installs": 1063
   },
+  "orchestra-research/ai-research-skills/pytorch-lightning": {
+   "installs": 1069
+  },
+  "orchestra-research/ai-research-skills/pyvene-interventions": {
+   "installs": 1053
+  },
+  "orchestra-research/ai-research-skills/qdrant-vector-search": {
+   "installs": 1070
+  },
+  "orchestra-research/ai-research-skills/quantizing-models-bitsandbytes": {
+   "installs": 1069
+  },
+  "orchestra-research/ai-research-skills/ray-data": {
+   "installs": 1077
+  },
+  "orchestra-research/ai-research-skills/ray-train": {
+   "installs": 1097
+  },
+  "orchestra-research/ai-research-skills/rwkv-architecture": {
+   "installs": 1045
+  },
+  "orchestra-research/ai-research-skills/segment-anything-model": {
+   "installs": 1097
+  },
+  "orchestra-research/ai-research-skills/sentence-transformers": {
+   "installs": 1064
+  },
+  "orchestra-research/ai-research-skills/sentencepiece": {
+   "installs": 1054
+  },
+  "orchestra-research/ai-research-skills/serving-llms-vllm": {
+   "installs": 1167
+  },
+  "orchestra-research/ai-research-skills/sglang": {
+   "installs": 1058
+  },
+  "orchestra-research/ai-research-skills/simpo-training": {
+   "installs": 1052
+  },
+  "orchestra-research/ai-research-skills/skypilot-multi-cloud-orchestration": {
+   "installs": 1045
+  },
+  "orchestra-research/ai-research-skills/slime-rl-training": {
+   "installs": 1052
+  },
+  "orchestra-research/ai-research-skills/sparse-autoencoder-training": {
+   "installs": 1052
+  },
+  "orchestra-research/ai-research-skills/speculative-decoding": {
+   "installs": 1058
+  },
+  "orchestra-research/ai-research-skills/stable-diffusion-image-generation": {
+   "installs": 1146
+  },
+  "orchestra-research/ai-research-skills/systems-paper-writing": {
+   "installs": 1031
+  },
+  "orchestra-research/ai-research-skills/tensorboard": {
+   "installs": 1073
+  },
+  "orchestra-research/ai-research-skills/tensorrt-llm": {
+   "installs": 1139
+  },
+  "orchestra-research/ai-research-skills/torchforge-rl-training": {
+   "installs": 1046
+  },
+  "orchestra-research/ai-research-skills/training-llms-megatron": {
+   "installs": 1052
+  },
+  "orchestra-research/ai-research-skills/transformer-lens-interpretability": {
+   "installs": 1057
+  },
+  "orchestra-research/ai-research-skills/unsloth": {
+   "installs": 1086
+  },
+  "orchestra-research/ai-research-skills/verl-rl-training": {
+   "installs": 1065
+  },
   "orchestra-research/ai-research-skills/weights-and-biases": {
-   "installs": 1096
+   "installs": 1099
   },
   "orchestra-research/ai-research-skills/whisper": {
-   "installs": 1082
+   "installs": 1084
   },
   "orchestra-research/ai-research-skills/writing-systems-papers": {
    "installs": 5
@@ -12001,13 +12000,13 @@
    "installs": 64670
   },
   "phuryn/pm-skills/ab-test-analysis": {
-   "installs": 3059
+   "installs": 3060
   },
   "phuryn/pm-skills/analyze-feature-requests": {
-   "installs": 2965
+   "installs": 2966
   },
   "phuryn/pm-skills/ansoff-matrix": {
-   "installs": 2910
+   "installs": 2911
   },
   "phuryn/pm-skills/beachhead-segment": {
    "installs": 2957
@@ -12127,28 +12126,28 @@
    "installs": 3085
   },
   "phuryn/pm-skills/pre-mortem": {
-   "installs": 10596
+   "installs": 10599
   },
   "phuryn/pm-skills/pricing-strategy": {
-   "installs": 3171
+   "installs": 3172
   },
   "phuryn/pm-skills/prioritization-frameworks": {
-   "installs": 10249
+   "installs": 10250
   },
   "phuryn/pm-skills/prioritize-assumptions": {
    "installs": 2984
   },
   "phuryn/pm-skills/prioritize-features": {
-   "installs": 3075
+   "installs": 3076
   },
   "phuryn/pm-skills/privacy-policy": {
-   "installs": 3759
+   "installs": 3760
   },
   "phuryn/pm-skills/product-name": {
-   "installs": 3373
+   "installs": 3374
   },
   "phuryn/pm-skills/product-strategy": {
-   "installs": 3381
+   "installs": 3382
   },
   "phuryn/pm-skills/product-vision": {
    "installs": 3067
@@ -12160,7 +12159,7 @@
    "installs": 2839
   },
   "phuryn/pm-skills/review-resume": {
-   "installs": 3151
+   "installs": 3152
   },
   "phuryn/pm-skills/sentiment-analysis": {
    "installs": 3301
@@ -12181,10 +12180,10 @@
    "installs": 3435
   },
   "phuryn/pm-skills/strategy-red-team": {
-   "installs": 9632
+   "installs": 9633
   },
   "phuryn/pm-skills/summarize-interview": {
-   "installs": 3013
+   "installs": 3014
   },
   "phuryn/pm-skills/summarize-meeting": {
    "installs": 3295
@@ -12193,28 +12192,28 @@
    "installs": 58
   },
   "phuryn/pm-skills/swot-analysis": {
-   "installs": 3228
+   "installs": 3229
   },
   "phuryn/pm-skills/test-scenarios": {
-   "installs": 3095
+   "installs": 3097
   },
   "phuryn/pm-skills/user-personas": {
-   "installs": 3173
+   "installs": 3175
   },
   "phuryn/pm-skills/user-segmentation": {
-   "installs": 2889
+   "installs": 2890
   },
   "phuryn/pm-skills/user-stories": {
-   "installs": 3445
+   "installs": 3450
   },
   "phuryn/pm-skills/value-prop-statements": {
-   "installs": 2958
+   "installs": 2959
   },
   "phuryn/pm-skills/value-proposition": {
-   "installs": 3353
+   "installs": 3355
   },
   "phuryn/pm-skills/wwas": {
-   "installs": 2852
+   "installs": 2853
   },
   "pleaseprompto/notebooklm-skill/notebooklm": {
    "installs": 7834
@@ -12352,85 +12351,85 @@
    "installs": 704
   },
   "product-on-purpose/pm-skills/tool-design-sprint-brief": {
-   "installs": 681
+   "installs": 682
   },
   "product-on-purpose/pm-skills/tool-design-sprint-decide-and-storyboard": {
    "installs": 684
   },
   "product-on-purpose/pm-skills/tool-design-sprint-map-and-target": {
-   "installs": 683
+   "installs": 684
   },
   "product-on-purpose/pm-skills/tool-design-sprint-prototype-plan": {
-   "installs": 683
+   "installs": 685
   },
   "product-on-purpose/pm-skills/tool-design-sprint-readiness": {
-   "installs": 680
+   "installs": 681
   },
   "product-on-purpose/pm-skills/tool-design-sprint-sketch": {
-   "installs": 678
+   "installs": 679
   },
   "product-on-purpose/pm-skills/tool-design-sprint-test-and-score": {
-   "installs": 683
+   "installs": 684
   },
   "product-on-purpose/pm-skills/tool-foundation-sprint-approach-options": {
    "installs": 685
   },
   "product-on-purpose/pm-skills/tool-foundation-sprint-basics": {
-   "installs": 683
+   "installs": 684
   },
   "product-on-purpose/pm-skills/tool-foundation-sprint-brief": {
-   "installs": 683
+   "installs": 684
   },
   "product-on-purpose/pm-skills/tool-foundation-sprint-differentiation": {
    "installs": 685
   },
   "product-on-purpose/pm-skills/tool-foundation-sprint-founding-hypothesis": {
-   "installs": 684
+   "installs": 685
   },
   "product-on-purpose/pm-skills/tool-foundation-sprint-magic-lenses": {
-   "installs": 683
+   "installs": 684
   },
   "product-on-purpose/pm-skills/tool-foundation-sprint-readiness": {
-   "installs": 679
+   "installs": 680
   },
   "product-on-purpose/pm-skills/tool-note-and-vote": {
-   "installs": 690
+   "installs": 691
   },
   "product-on-purpose/pm-skills/utility-mermaid-diagrams": {
-   "installs": 803
+   "installs": 804
   },
   "product-on-purpose/pm-skills/utility-pm-changelog-curator": {
-   "installs": 658
+   "installs": 659
   },
   "product-on-purpose/pm-skills/utility-pm-critic": {
-   "installs": 698
+   "installs": 699
   },
   "product-on-purpose/pm-skills/utility-pm-release-conductor": {
-   "installs": 655
+   "installs": 656
   },
   "product-on-purpose/pm-skills/utility-pm-skill-auditor": {
-   "installs": 663
+   "installs": 664
   },
   "product-on-purpose/pm-skills/utility-pm-skill-builder": {
-   "installs": 769
+   "installs": 770
   },
   "product-on-purpose/pm-skills/utility-pm-skill-iterate": {
-   "installs": 752
+   "installs": 753
   },
   "product-on-purpose/pm-skills/utility-pm-skill-validate": {
-   "installs": 754
+   "installs": 755
   },
   "product-on-purpose/pm-skills/utility-pm-workflow-builder": {
-   "installs": 546
+   "installs": 547
   },
   "product-on-purpose/pm-skills/utility-pm-workflow-orchestrator": {
-   "installs": 603
+   "installs": 604
   },
   "product-on-purpose/pm-skills/utility-slideshow-creator": {
-   "installs": 781
+   "installs": 783
   },
   "product-on-purpose/pm-skills/utility-update-pm-skills": {
-   "installs": 749
+   "installs": 750
   },
   "product-on-purpose/pm-skills/wrap-session": {
    "installs": 60
@@ -12439,10 +12438,10 @@
    "installs": 487
   },
   "qdrant/skills/qdrant-advisor": {
-   "installs": 764
+   "installs": 767
   },
   "qdrant/skills/qdrant-clients-sdk": {
-   "installs": 1844
+   "installs": 1845
   },
   "qdrant/skills/qdrant-deployment-options": {
    "installs": 1500
@@ -12493,16 +12492,16 @@
    "installs": 10
   },
   "qdrant/skills/qdrant-multitenancy": {
-   "installs": 292
+   "installs": 293
   },
   "qdrant/skills/qdrant-performance-optimization": {
-   "installs": 1733
+   "installs": 1734
   },
   "qdrant/skills/qdrant-relevance-feedback": {
    "installs": 5
   },
   "qdrant/skills/qdrant-scaling": {
-   "installs": 1514
+   "installs": 1515
   },
   "qdrant/skills/qdrant-scaling-data-volume": {
    "installs": 10
@@ -12514,7 +12513,7 @@
    "installs": 10
   },
   "qdrant/skills/qdrant-search-quality": {
-   "installs": 1850
+   "installs": 1851
   },
   "qdrant/skills/qdrant-search-quality-diagnosis": {
    "installs": 12
@@ -12535,7 +12534,7 @@
    "installs": 11
   },
   "qdrant/skills/qdrant-version-upgrade": {
-   "installs": 1443
+   "installs": 1444
   },
   "qdrant/skills/qdrant-vertical-scaling": {
    "installs": 10
@@ -12550,7 +12549,7 @@
    "installs": 2
   },
   "realkimbarrett/advertising-skills/ad-angle-multiplier": {
-   "installs": 352
+   "installs": 353
   },
   "realkimbarrett/advertising-skills/avatar-extraction": {
    "installs": 360
@@ -12580,28 +12579,28 @@
    "installs": 330
   },
   "realkimbarrett/advertising-skills/schwartz-awareness-mapper": {
-   "installs": 358
+   "installs": 359
   },
   "realkimbarrett/advertising-skills/scroll-stopping-creative": {
-   "installs": 433
+   "installs": 434
   },
   "redis/agent-skills/add-agent-memory": {
-   "installs": 92
+   "installs": 94
   },
   "redis/agent-skills/add-agent-playbooks": {
-   "installs": 89
+   "installs": 91
   },
   "redis/agent-skills/add-context-gateway": {
-   "installs": 86
+   "installs": 88
   },
   "redis/agent-skills/add-intent-router": {
-   "installs": 87
+   "installs": 89
   },
   "redis/agent-skills/add-lens": {
-   "installs": 86
+   "installs": 88
   },
   "redis/agent-skills/add-redis-iris": {
-   "installs": 89
+   "installs": 91
   },
   "redis/agent-skills/iris-development": {
    "installs": 1711
@@ -12610,34 +12609,34 @@
    "installs": 1
   },
   "redis/agent-skills/redis-clustering": {
-   "installs": 2038
+   "installs": 2045
   },
   "redis/agent-skills/redis-connections": {
-   "installs": 3110
+   "installs": 3117
   },
   "redis/agent-skills/redis-core": {
-   "installs": 4518
+   "installs": 4525
   },
   "redis/agent-skills/redis-development": {
    "installs": 3148
   },
   "redis/agent-skills/redis-docs-mcp": {
-   "installs": 81
+   "installs": 83
   },
   "redis/agent-skills/redis-observability": {
-   "installs": 2580
+   "installs": 2587
   },
   "redis/agent-skills/redis-query-engine": {
    "installs": 435
   },
   "redis/agent-skills/redis-search": {
-   "installs": 1835
+   "installs": 1842
   },
   "redis/agent-skills/redis-security": {
-   "installs": 2690
+   "installs": 2697
   },
   "redis/agent-skills/redis-semantic-cache": {
-   "installs": 2080
+   "installs": 2087
   },
   "redis/agent-skills/redis-vector-search": {
    "installs": 415
@@ -12655,34 +12654,34 @@
    "installs": 2534
   },
   "replicate/skills/prompt-images": {
-   "installs": 2985
+   "installs": 2993
   },
   "replicate/skills/prompt-videos": {
-   "installs": 2765
+   "installs": 2776
   },
   "replicate/skills/publish-models": {
-   "installs": 1970
+   "installs": 1976
   },
   "replicate/skills/replicate": {
    "installs": 459
   },
   "replicate/skills/run-models": {
-   "installs": 2520
+   "installs": 2526
   },
   "resend/resend-skills/agent-email-inbox": {
-   "installs": 14071
+   "installs": 14076
   },
   "resend/resend-skills/email-best-practices": {
    "installs": 14396
   },
   "resend/resend-skills/react-email": {
-   "installs": 13419
+   "installs": 13427
   },
   "resend/resend-skills/resend": {
-   "installs": 24669
+   "installs": 24682
   },
   "resend/resend-skills/resend-cli": {
-   "installs": 14101
+   "installs": 14112
   },
   "resend/resend-skills/resend-inbound": {
    "installs": 5
@@ -12700,28 +12699,28 @@
    "installs": 5117
   },
   "sanity-io/agent-toolkit/portable-text-conversion": {
-   "installs": 2939
+   "installs": 2940
   },
   "sanity-io/agent-toolkit/portable-text-serialization": {
-   "installs": 3056
+   "installs": 3057
   },
   "sanity-io/agent-toolkit/sanity-best-practices": {
-   "installs": 34259
+   "installs": 34283
   },
   "sanity-io/agent-toolkit/sanity-form-component-suspense": {
    "installs": 213
   },
   "sanity-io/agent-toolkit/sanity-migration": {
-   "installs": 24111
+   "installs": 24131
   },
   "sanity-io/agent-toolkit/sanity-singletons": {
    "installs": 326
   },
   "sanity-io/agent-toolkit/sanity-studio-upgrade": {
-   "installs": 754
+   "installs": 756
   },
   "sanity-io/agent-toolkit/seo-aeo-best-practices": {
-   "installs": 7713
+   "installs": 7714
   },
   "sanjay3290/ai-skills/apple-container": {
    "installs": 85
@@ -12862,10 +12861,10 @@
    "installs": 644
   },
   "stripe/ai/stripe-apps": {
-   "installs": 1657
+   "installs": 1658
   },
   "stripe/ai/stripe-best-practices": {
-   "installs": 32444,
+   "installs": 32462,
    "weekly": [
     2396,
     2247,
@@ -12878,16 +12877,19 @@
    ]
   },
   "stripe/ai/stripe-directory": {
-   "installs": 4462
+   "installs": 4468
   },
   "stripe/ai/stripe-docs": {
-   "installs": 2922
+   "installs": 2936
+  },
+  "stripe/ai/stripe-implementation-planner": {
+   "installs": 1
   },
   "stripe/ai/stripe-pay": {
-   "installs": 739
+   "installs": 745
   },
   "stripe/ai/stripe-projects": {
-   "installs": 7798,
+   "installs": 7804,
    "weekly": [
     1217,
     1186,
@@ -12900,7 +12902,7 @@
    ]
   },
   "stripe/ai/upgrade-stripe": {
-   "installs": 11358,
+   "installs": 11365,
    "weekly": [
     1245,
     1372,
@@ -12916,7 +12918,7 @@
    "installs": 691
   },
   "supabase/agent-skills/supabase": {
-   "installs": 365750,
+   "installs": 366050,
    "weekly": [
     11860,
     11925,
@@ -12929,7 +12931,7 @@
    ]
   },
   "supabase/agent-skills/supabase-postgres-best-practices": {
-   "installs": 485866,
+   "installs": 486233,
    "weekly": [
     10215,
     10470,
@@ -12942,7 +12944,7 @@
    ]
   },
   "superdesigndev/superdesign-skill/superdesign": {
-   "installs": 11994
+   "installs": 12007
   },
   "swarmclawai/swarmclaw/coding-agent": {
    "installs": 15
@@ -13002,28 +13004,28 @@
    "installs": 12
   },
   "testdino-hq/playwright-skill/playwright-ci": {
-   "installs": 551
+   "installs": 556
   },
   "testdino-hq/playwright-skill/playwright-cli": {
-   "installs": 852
+   "installs": 857
   },
   "testdino-hq/playwright-skill/playwright-core": {
-   "installs": 1013
+   "installs": 1018
   },
   "testdino-hq/playwright-skill/playwright-frontend": {
-   "installs": 368
+   "installs": 373
   },
   "testdino-hq/playwright-skill/playwright-mastery": {
    "installs": 2
   },
   "testdino-hq/playwright-skill/playwright-migration": {
-   "installs": 402
+   "installs": 406
   },
   "testdino-hq/playwright-skill/playwright-pom": {
-   "installs": 618
+   "installs": 622
   },
   "testdino-hq/playwright-skill/playwright-qa": {
-   "installs": 404
+   "installs": 409
   },
   "testdino-hq/playwright-skill/playwright-skill": {
    "installs": 6248
@@ -13146,19 +13148,19 @@
    "installs": 645
   },
   "trailofbits/skills/address-sanitizer": {
-   "installs": 5867
+   "installs": 5883
   },
   "trailofbits/skills/adjudicate-regression": {
-   "installs": 599
+   "installs": 616
   },
   "trailofbits/skills/aflpp": {
-   "installs": 5681
+   "installs": 5697
   },
   "trailofbits/skills/agentic-actions-auditor": {
-   "installs": 7309
+   "installs": 7327
   },
   "trailofbits/skills/algorand-vulnerability-scanner": {
-   "installs": 5703
+   "installs": 5719
   },
   "trailofbits/skills/ask-questions-if-underspecified": {
    "installs": 6783
@@ -13329,142 +13331,142 @@
    "installs": 638
   },
   "trailofbits/skills/post-patch-validation": {
-   "installs": 1307
+   "installs": 1324
   },
   "trailofbits/skills/pr-improver": {
-   "installs": 1516
+   "installs": 1535
   },
   "trailofbits/skills/prepare-regression": {
-   "installs": 606
+   "installs": 623
   },
   "trailofbits/skills/property-based-testing": {
-   "installs": 7970
+   "installs": 7990
   },
   "trailofbits/skills/prove-patch": {
-   "installs": 613
+   "installs": 627
   },
   "trailofbits/skills/regression-hunt": {
-   "installs": 621
+   "installs": 635
   },
   "trailofbits/skills/replay-regression": {
-   "installs": 604
+   "installs": 618
   },
   "trailofbits/skills/report-regressions": {
-   "installs": 606
+   "installs": 620
   },
   "trailofbits/skills/reproduce-bug": {
-   "installs": 628
+   "installs": 642
   },
   "trailofbits/skills/reproduce-regression": {
-   "installs": 607
+   "installs": 621
   },
   "trailofbits/skills/review-walkthrough": {
-   "installs": 1183
+   "installs": 1197
   },
   "trailofbits/skills/rust-review": {
-   "installs": 2616
+   "installs": 2634
   },
   "trailofbits/skills/ruzzy": {
-   "installs": 5607
+   "installs": 5621
   },
   "trailofbits/skills/sarif-parsing": {
-   "installs": 6578
+   "installs": 6593
   },
   "trailofbits/skills/seatbelt-sandboxer": {
    "installs": 3316
   },
   "trailofbits/skills/second-opinion": {
-   "installs": 5802
+   "installs": 5820
   },
   "trailofbits/skills/secure-workflow-guide": {
-   "installs": 7934
+   "installs": 7948
   },
   "trailofbits/skills/semgrep": {
-   "installs": 10571
+   "installs": 10588
   },
   "trailofbits/skills/semgrep-rule-creator": {
-   "installs": 6348
+   "installs": 6362
   },
   "trailofbits/skills/semgrep-rule-variant-creator": {
-   "installs": 5794
+   "installs": 5808
   },
   "trailofbits/skills/sharp-edges": {
-   "installs": 7955
+   "installs": 7978
   },
   "trailofbits/skills/skill-improver": {
-   "installs": 5532
+   "installs": 5548
   },
   "trailofbits/skills/slicing-code-context": {
-   "installs": 1821
+   "installs": 1835
   },
   "trailofbits/skills/solana-vulnerability-scanner": {
-   "installs": 6162
+   "installs": 6176
   },
   "trailofbits/skills/spec-to-code-compliance": {
-   "installs": 6428
+   "installs": 6444
   },
   "trailofbits/skills/substrate-vulnerability-scanner": {
-   "installs": 5655
+   "installs": 5669
   },
   "trailofbits/skills/supply-chain-risk-auditor": {
-   "installs": 9338
+   "installs": 9362
   },
   "trailofbits/skills/taint-trace": {
-   "installs": 65
+   "installs": 80
   },
   "trailofbits/skills/testing-handbook-generator": {
-   "installs": 5735
+   "installs": 5754
   },
   "trailofbits/skills/token-integration-analyzer": {
-   "installs": 5990
+   "installs": 6006
   },
   "trailofbits/skills/ton-vulnerability-scanner": {
-   "installs": 5678
+   "installs": 5694
   },
   "trailofbits/skills/trailmark": {
-   "installs": 4498
+   "installs": 4518
   },
   "trailofbits/skills/trailmark-finding-triage": {
-   "installs": 1794
+   "installs": 1811
   },
   "trailofbits/skills/trailmark-review-gate": {
-   "installs": 1779
+   "installs": 1798
   },
   "trailofbits/skills/trailmark-structural": {
-   "installs": 4384
+   "installs": 4400
   },
   "trailofbits/skills/trailmark-summary": {
-   "installs": 4393
+   "installs": 4409
   },
   "trailofbits/skills/trailmark-variant-neighborhood": {
-   "installs": 1780
+   "installs": 1797
   },
   "trailofbits/skills/using-gh-cli": {
    "installs": 212
   },
   "trailofbits/skills/validate-bug": {
-   "installs": 621
+   "installs": 638
   },
   "trailofbits/skills/variant-analysis": {
-   "installs": 7272
+   "installs": 7288
   },
   "trailofbits/skills/vector-forge": {
-   "installs": 4340
+   "installs": 4356
   },
   "trailofbits/skills/vulnerability-triage-brocards": {
-   "installs": 1952
+   "installs": 1969
   },
   "trailofbits/skills/writing-lean-proofs": {
-   "installs": 1684
+   "installs": 1701
   },
   "trailofbits/skills/wycheproof": {
-   "installs": 5659
+   "installs": 5675
   },
   "trailofbits/skills/yara-rule-authoring": {
-   "installs": 5615
+   "installs": 5632
   },
   "trailofbits/skills/zeroize-audit": {
-   "installs": 5230
+   "installs": 5247
   },
   "tronghieu/agent-skills/bmad-run-inspector": {
    "installs": 29
@@ -13615,7 +13617,7 @@
    "installs": 5
   },
   "veniceai/skills/venice-create-image": {
-   "installs": 5
+   "installs": 6
   },
   "veniceai/skills/venice-create-video": {
    "installs": 5
@@ -13636,7 +13638,7 @@
    "installs": 5
   },
   "veniceai/skills/venice-image-edit": {
-   "installs": 155
+   "installs": 156
   },
   "veniceai/skills/venice-image-generate": {
    "installs": 150
@@ -13663,7 +13665,7 @@
    "installs": 5
   },
   "vercel-labs/agent-browser/agent-browser": {
-   "installs": 1454106,
+   "installs": 1457535,
    "weekly": [
     49332,
     64115,
@@ -13734,7 +13736,7 @@
    "installs": 57
   },
   "vercel-labs/agent-skills/vercel-cli-with-tokens": {
-   "installs": 154971,
+   "installs": 155261,
    "weekly": [
     5889,
     5784,
@@ -13747,7 +13749,7 @@
    ]
   },
   "vercel-labs/agent-skills/vercel-composition-patterns": {
-   "installs": 454708,
+   "installs": 455155,
    "weekly": [
     12709,
     12319,
@@ -13763,7 +13765,7 @@
    "installs": 581
   },
   "vercel-labs/agent-skills/vercel-optimize": {
-   "installs": 130872,
+   "installs": 131177,
    "weekly": [
     6042,
     6068,
@@ -13776,7 +13778,7 @@
    ]
   },
   "vercel-labs/agent-skills/vercel-react-best-practices": {
-   "installs": 899778,
+   "installs": 900588,
    "weekly": [
     19251,
     18945,
@@ -13789,7 +13791,7 @@
    ]
   },
   "vercel-labs/agent-skills/vercel-react-native-skills": {
-   "installs": 277361,
+   "installs": 277707,
    "weekly": [
     7149,
     6933,
@@ -13802,7 +13804,7 @@
    ]
   },
   "vercel-labs/agent-skills/vercel-react-view-transitions": {
-   "installs": 190981,
+   "installs": 191333,
    "weekly": [
     7320,
     7366,
@@ -13815,7 +13817,7 @@
    ]
   },
   "vercel-labs/agent-skills/web-design-guidelines": {
-   "installs": 862630,
+   "installs": 863828,
    "weekly": [
     20722,
     21304,
@@ -13828,7 +13830,7 @@
    ]
   },
   "vercel-labs/agent-skills/writing-guidelines": {
-   "installs": 127420,
+   "installs": 127735,
    "weekly": [
     6263,
     6155,
@@ -13857,10 +13859,10 @@
    "installs": 44
   },
   "vercel-labs/skills/triage": {
-   "installs": 36
+   "installs": 38
   },
   "vercel/ai/ai-sdk": {
-   "installs": 72968
+   "installs": 73002
   },
   "vercel/ai/island-rescue": {
    "installs": 15
@@ -13896,7 +13898,7 @@
    "installs": 135
   },
   "wondelai/skills/37signals-way": {
-   "installs": 4733
+   "installs": 4740
   },
   "wondelai/skills/architecture-optimization": {
    "installs": 1696
@@ -14037,61 +14039,61 @@
    "installs": 5697
   },
   "wondelai/skills/pragmatic-programmer": {
-   "installs": 6188
+   "installs": 6194
   },
   "wondelai/skills/predictable-revenue": {
-   "installs": 5704
+   "installs": 5708
   },
   "wondelai/skills/refactoring-patterns": {
-   "installs": 6842
+   "installs": 6847
   },
   "wondelai/skills/refactoring-ui": {
-   "installs": 10389
+   "installs": 10408
   },
   "wondelai/skills/release-it": {
-   "installs": 5676
+   "installs": 5681
   },
   "wondelai/skills/remove-technical-debt": {
-   "installs": 2628
+   "installs": 2631
   },
   "wondelai/skills/scorecard-marketing": {
-   "installs": 5610
+   "installs": 5614
   },
   "wondelai/skills/software-design-philosophy": {
-   "installs": 6570
+   "installs": 6574
   },
   "wondelai/skills/steve-jobs-design-review": {
-   "installs": 3740
+   "installs": 3744
   },
   "wondelai/skills/storybrand-messaging": {
-   "installs": 6617
+   "installs": 6620
   },
   "wondelai/skills/system-design": {
-   "installs": 6734
+   "installs": 6741
   },
   "wondelai/skills/team-topologies": {
-   "installs": 3371
+   "installs": 3375
   },
   "wondelai/skills/technical-documentation": {
-   "installs": 1860
+   "installs": 1864
   },
   "wondelai/skills/top-design": {
-   "installs": 7747
+   "installs": 7758
   },
   "wondelai/skills/traction-eos": {
-   "installs": 5436
+   "installs": 5444
   },
   "wondelai/skills/ux-heuristics": {
-   "installs": 10724
+   "installs": 10742
   },
   "wondelai/skills/web-typography": {
-   "installs": 9886
+   "installs": 9896
   },
   "wondelai/skills/working-with-legacy-code": {
-   "installs": 3679
+   "installs": 3685
   },
   "wrsmith108/varlock-claude-skill/varlock": {
-   "installs": 267
+   "installs": 268
   },
   "ykdojo/claude-code-tips/clone": {
    "installs": 88
@@ -14217,7 +14219,7 @@
    "installs": 888
   },
   "zeropointrepo/youtube-skills/video-transcript": {
-   "installs": 964
+   "installs": 965
   },
   "zeropointrepo/youtube-skills/youtube-api": {
    "installs": 837
@@ -14229,7 +14231,7 @@
    "installs": 773
   },
   "zeropointrepo/youtube-skills/youtube-full": {
-   "installs": 2397
+   "installs": 2398
   },
   "zeropointrepo/youtube-skills/youtube-playlist": {
    "installs": 770

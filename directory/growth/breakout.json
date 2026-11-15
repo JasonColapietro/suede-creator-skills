@@ -6,7 +6,7 @@
     {
       "repo": "agentes-chat/agentes-chat",
       "url": "https://github.com/agentes-chat/agentes-chat",
-      "stars": 1414,
+      "stars": 1437,
       "created": "2026-11-09",
       "language": "TypeScript",
       "license": "AGPL-3.0",
@@ -15,7 +15,7 @@
     {
       "repo": "alexeyw/lot-map",
       "url": "https://github.com/alexeyw/lot-map",
-      "stars": 840,
+      "stars": 846,
       "created": "2026-11-09",
       "language": "TypeScript",
       "license": "MIT",
@@ -24,7 +24,7 @@
     {
       "repo": "JDhruv14/line-art-animation",
       "url": "https://github.com/JDhruv14/line-art-animation",
-      "stars": 778,
+      "stars": 799,
       "created": "2026-11-10",
       "language": "TypeScript",
       "license": "MIT",
@@ -33,7 +33,7 @@
     {
       "repo": "Dodaios/ste80-humanizer",
       "url": "https://github.com/Dodaios/ste80-humanizer",
-      "stars": 621,
+      "stars": 639,
       "created": "2026-11-09",
       "language": "Python",
       "license": "MIT",
@@ -42,11 +42,20 @@
     {
       "repo": "Moh4696/cinematic-skill",
       "url": "https://github.com/Moh4696/cinematic-skill",
-      "stars": 421,
+      "stars": 430,
       "created": "2026-11-09",
       "language": "Python",
       "license": "MIT",
       "description": "Agent skill for narrated cinematic films built entirely from code: one continuous camera over photos, maps and cards, timed to the voice. Claude Code, Codex, Cursor, Gemini CLI."
+    },
+    {
+      "repo": "op7418/guizang-game-skill",
+      "url": "https://github.com/op7418/guizang-game-skill",
+      "stars": 347,
+      "created": "2026-11-11",
+      "language": "JavaScript",
+      "license": "AGPL-3.0",
+      "description": "歸藏 Game Skill：让 AI 从零做出能在浏览器里玩的 3D 动作游戏，附可玩演示《雾锁山门》。Agent skill for Claude Code / Codex that builds a playable browser 3D action game with AI-generated assets (three.js, single-HTML). Playable demo included."
     },
     {
       "repo": "Outpostkrewhirl86/Capri-AI",
@@ -58,18 +67,9 @@
       "description": "Capri: a local-first desktop AI agent with a cyberpunk HUD. Your personal Jarvis for Windows. Controls files, apps, terminal and browser, powered by Claude Code, Codex, Antigravity or any backend. Inspired by Cyberpunk: "
     },
     {
-      "repo": "op7418/guizang-game-skill",
-      "url": "https://github.com/op7418/guizang-game-skill",
-      "stars": 343,
-      "created": "2026-11-11",
-      "language": "JavaScript",
-      "license": "AGPL-3.0",
-      "description": "歸藏 Game Skill：让 AI 从零做出能在浏览器里玩的 3D 动作游戏，附可玩演示《雾锁山门》。Agent skill for Claude Code / Codex that builds a playable browser 3D action game with AI-generated assets (three.js, single-HTML). Playable demo included."
-    },
-    {
       "repo": "threerocks/article2media",
       "url": "https://github.com/threerocks/article2media",
-      "stars": 316,
+      "stars": 329,
       "created": "2026-11-08",
       "language": "JavaScript",
       "license": "MIT",
@@ -78,11 +78,20 @@
     {
       "repo": "AFangTeam/PrintLab",
       "url": "https://github.com/AFangTeam/PrintLab",
-      "stars": 309,
+      "stars": 313,
       "created": "2026-11-11",
       "language": "Python",
       "license": "NOASSERTION",
-      "description": "Mac + Codex + 拓竹的个人 3D 打印工作台与工作流。允许非商业修改与再发布，保留署名。"
+      "description": "Mac / Windows + Codex + 拓竹的个人 3D 打印工作台与工作流。允许非商业修改与再发布，保留署名。"
+    },
+    {
+      "repo": "kociden/sakurai-skill",
+      "url": "https://github.com/kociden/sakurai-skill",
+      "stars": 301,
+      "created": "2026-11-12",
+      "language": "Python",
+      "license": null,
+      "description": "桜井政博のゲーム作るには 全本編257本の字幕から作ったゲーム制作の Agent Skill（非公式・日本語）"
     },
     {
       "repo": "gokayfem/image-to-sculpt",
@@ -92,15 +101,6 @@
       "language": "Python",
       "license": "MIT",
       "description": "Turn one image of anything into a 3D sculpt measured against that image: registered views, map-fitting passes, Blender replay and timelapse. A skill for coding agents."
-    },
-    {
-      "repo": "kociden/sakurai-skill",
-      "url": "https://github.com/kociden/sakurai-skill",
-      "stars": 274,
-      "created": "2026-11-12",
-      "language": "Python",
-      "license": null,
-      "description": "桜井政博のゲーム作るには 全本編257本の字幕から作ったゲーム制作の Agent Skill（非公式・日本語）"
     },
     {
       "repo": "ScottDuncanAI/PID-to-Knowledge-Graph",
