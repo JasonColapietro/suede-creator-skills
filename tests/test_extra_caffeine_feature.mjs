@@ -21,7 +21,15 @@ test('Extra Caffeine features one proprietary workflow without claiming catalog 
   const feature = page.split('id="extra-caffeine"')[1]?.split('</article>')[0];
   assert.ok(feature);
   assert.ok(feature.includes(`href="${project.workflow_url}"`));
-  for (const fact of ['macOS 14+', 'Extra Caffeine 1.2+', 'paid', 'All rights reserved', 'not scanned', 'runtime-unverified', 'catalog listing is pending']) assert.ok(feature.includes(fact), fact);
+  for (const fact of ['macOS 14+', 'Extra Caffeine 1.2+', 'free, separately installed', 'permanently free', 'no payment, subscription or expiry', 'All rights reserved', 'not scanned', 'runtime-unverified', 'catalog listing is pending']) assert.ok(feature.includes(fact), fact);
+  const note = JSON.parse(read('directory/notes.json'))[`${repo}/${id}`].text;
+  const summary = JSON.parse(read('directory/labels.json'))[`${repo}/${id}`].summary;
+  const catalogFeature = read('awesome/featured.md').split('<a id="extra-caffeine"></a>')[1]?.split('\n---')[0];
+  for (const text of [project.setup, feature, note, summary, catalogFeature]) {
+    assert.ok(text);
+    assert.match(text, /free, separately installed/);
+    assert.doesNotMatch(text, /\bpaid\b|separately purchased/i);
+  }
   assert.doesNotMatch(feature, /npx skills add|git clone|cp -R|security certified|score\.svg/);
   assert.ok(page.includes('https://skills.suedeai.ai/directory/featured/#extra-caffeine'));
   assert.ok(page.includes('https://skills.suedeai.ai/directory/badges/featured.svg'));
