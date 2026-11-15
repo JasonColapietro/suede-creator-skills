@@ -58,10 +58,22 @@ function isPrivateAddress(address) {
       (a === 172 && b >= 16 && b <= 31) || (a === 192 && b === 168) || (a === 198 && (b === 18 || b === 19)) || a >= 224
     );
   }
-  const lower = address.toLowerCase();
+  if (!net.isIPv6(address)) return true;
+  // URL parsing canonicalizes expanded forms and converts dotted IPv4 tails
+  // to hex. Judge mapped addresses as IPv4 rather than treating "7f00:1" as
+  // an unrelated IPv6 address and allowing a connection to loopback.
+  const lower = new URL(`http://[${address}]/`).hostname.slice(1, -1);
   if (lower === "::1" || lower === "::") return true;
-  if (lower.startsWith("::ffff:")) return isPrivateAddress(lower.slice(7));
-  return lower.startsWith("fc") || lower.startsWith("fd") || lower.startsWith("fe80") || lower.startsWith("ff");
+  const mapped = lower.match(/^::ffff:([0-9a-f]{1,4}):([0-9a-f]{1,4})$/);
+  if (mapped) {
+    const high = parseInt(mapped[1], 16);
+    const low = parseInt(mapped[2], 16);
+    return isPrivateAddress(`${high >> 8}.${high & 255}.${low >> 8}.${low & 255}`);
+  }
+  const first = parseInt(lower.split(":")[0] || "0", 16);
+  return (first & 0xfe00) === 0xfc00 || (first & 0xffc0) === 0xfe80 ||
+    (first & 0xff00) === 0xff00;
+
 }
 
 async function assertPublicHost(hostname, allowPrivate) {
