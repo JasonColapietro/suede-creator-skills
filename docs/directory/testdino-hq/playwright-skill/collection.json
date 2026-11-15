@@ -1,0 +1,435 @@
+{
+  "schema_version": 1,
+  "repository": "testdino-hq/playwright-skill",
+  "listing_url": "https://skills.suedeai.ai/directory/testdino-hq/playwright-skill/",
+  "snapshot": {
+    "date": "2026-10-22",
+    "id": "0083645c3974488e8803884c7af76698",
+    "dataset_sha256": "b73996d45961aa527b4cea74a41a2e44497200dba9b2f85411e3602ab5f56641"
+  },
+  "listed_skill_count": 4,
+  "scope": "Skills listed by the directory; this is not a complete inventory of every file in the repository.",
+  "security_scan_status": "not_scanned",
+  "skills": [
+    {
+      "id": "testdino-hq/playwright-skill/playwright-cli",
+      "name": "playwright-cli",
+      "description": "Automates browser interactions for testing and validating your own web applications using playwright-cli. Use when you need terminal-first browser control for navigation, form filling, screenshots, tracing, bound browser sessions, debugging, or generating Playwright test code. Only use against applications you own or have explicit authorization to test.",
+      "category": "testing-qa",
+      "license": "MIT",
+      "license_url": "https://github.com/testdino-hq/playwright-skill/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "178d1cb537604279d7b54500c4823a6db42b9de6",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-12",
+        "skill_md_url": "https://github.com/testdino-hq/playwright-skill/blob/178d1cb537604279d7b54500c4823a6db42b9de6/playwright-cli/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/testdino-hq/playwright-skill/playwright-cli/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/testdino-hq/playwright-skill/playwright-cli/",
+      "source_folder_url": "https://github.com/testdino-hq/playwright-skill/tree/main/playwright-cli",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/testdino-hq/playwright-skill/tree/main/playwright-cli",
+        "publisher_setup_url": "https://github.com/testdino-hq/playwright-skill/blob/main/playwright-cli/SKILL.md"
+      }
+    },
+    {
+      "id": "testdino-hq/playwright-skill/playwright-core",
+      "name": "playwright-core",
+      "description": "Battle-tested Playwright patterns for writing and debugging reliable E2E, API, component, visual, accessibility, and security tests. Use when you need locator strategy, assertions, fixtures, network mocking, auth flows, trace debugging, or framework recipes for React, Next.js, Vue, and Angular. TypeScript and JavaScript.",
+      "category": "testing-qa",
+      "license": "MIT",
+      "license_url": "https://github.com/testdino-hq/playwright-skill/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "178d1cb537604279d7b54500c4823a6db42b9de6",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-12",
+        "skill_md_url": "https://github.com/testdino-hq/playwright-skill/blob/178d1cb537604279d7b54500c4823a6db42b9de6/core/SKILL.md"
+      },
+      "quality": {
+        "score": 72,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": false,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/testdino-hq/playwright-skill/playwright-core/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/testdino-hq/playwright-skill/tree/main/core",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/testdino-hq/playwright-skill/tree/main/core",
+        "publisher_setup_url": "https://github.com/testdino-hq/playwright-skill/blob/main/core/SKILL.md"
+      }
+    },
+    {
+      "id": "testdino-hq/playwright-skill/playwright-frontend",
+      "name": "playwright-frontend",
+      "description": "For frontend engineers authoring UI — how to make components reliably locatable by tests and AI agents. Covers the official Playwright locator priority, semantic/accessible markup first, and how to add valid, unique, stable `data-testid` attributes (naming convention, uniqueness in lists, stability rules) for React, Vue, Angular, and Svelte. Use when writing or reviewing components, or when an agent needs durable locators.",
+      "category": "testing-qa",
+      "license": "MIT",
+      "license_url": "https://github.com/testdino-hq/playwright-skill/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "178d1cb537604279d7b54500c4823a6db42b9de6",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-12",
+        "skill_md_url": "https://github.com/testdino-hq/playwright-skill/blob/178d1cb537604279d7b54500c4823a6db42b9de6/frontend/SKILL.md"
+      },
+      "quality": {
+        "score": 69,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": false,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/testdino-hq/playwright-skill/playwright-frontend/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/testdino-hq/playwright-skill/tree/main/frontend",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/testdino-hq/playwright-skill/tree/main/frontend",
+        "publisher_setup_url": "https://github.com/testdino-hq/playwright-skill/blob/main/frontend/SKILL.md"
+      }
+    },
+    {
+      "id": "testdino-hq/playwright-skill/playwright-qa",
+      "name": "playwright-qa",
+      "description": "QA engineering workflows on top of Playwright. Use when a QA engineer asks to design test cases from a ticket, PRD or acceptance criteria, decide what to automate, write a bug report from a failing test or trace, convert manual test cases (TestRail, Xray, CSV) into Playwright specs with case-ID traceability, or review Playwright test code and pull requests.",
+      "category": "testing-qa",
+      "license": "MIT",
+      "license_url": "https://github.com/testdino-hq/playwright-skill/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "178d1cb537604279d7b54500c4823a6db42b9de6",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-12",
+        "skill_md_url": "https://github.com/testdino-hq/playwright-skill/blob/178d1cb537604279d7b54500c4823a6db42b9de6/qa/SKILL.md"
+      },
+      "quality": {
+        "score": 69,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": false,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/testdino-hq/playwright-skill/playwright-qa/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/testdino-hq/playwright-skill/tree/main/qa",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/testdino-hq/playwright-skill/tree/main/qa",
+        "publisher_setup_url": "https://github.com/testdino-hq/playwright-skill/blob/main/qa/SKILL.md"
+      }
+    }
+  ]
+}

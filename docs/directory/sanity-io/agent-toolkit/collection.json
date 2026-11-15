@@ -1,0 +1,960 @@
+{
+  "schema_version": 1,
+  "repository": "sanity-io/agent-toolkit",
+  "listing_url": "https://skills.suedeai.ai/directory/sanity-io/agent-toolkit/",
+  "snapshot": {
+    "date": "2026-10-22",
+    "id": "0083645c3974488e8803884c7af76698",
+    "dataset_sha256": "b73996d45961aa527b4cea74a41a2e44497200dba9b2f85411e3602ab5f56641"
+  },
+  "listed_skill_count": 9,
+  "scope": "Skills listed by the directory; this is not a complete inventory of every file in the repository.",
+  "security_scan_status": "not_scanned",
+  "skills": [
+    {
+      "id": "sanity-io/agent-toolkit/content-experimentation-best-practices",
+      "name": "content-experimentation-best-practices",
+      "description": "Content experimentation and A/B testing guidance covering experiment design, hypotheses, metrics, sample size, statistical foundations, CMS-managed variants, and common analysis pitfalls. Use this skill when planning experiments, setting up variants, choosing success metrics, interpreting statistical results, or building experimentation workflows in a CMS or frontend stack.",
+      "category": "frontend-design",
+      "license": "MIT",
+      "license_url": "https://github.com/sanity-io/agent-toolkit/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "feb9d38412426b0dfca7e6f21aeecdad8507c170",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-12",
+        "skill_md_url": "https://github.com/sanity-io/agent-toolkit/blob/feb9d38412426b0dfca7e6f21aeecdad8507c170/skills/content-experimentation-best-practices/SKILL.md"
+      },
+      "quality": {
+        "score": 75,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/sanity-io/agent-toolkit/content-experimentation-best-practices/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/sanity-io/agent-toolkit/tree/main/skills/content-experimentation-best-practices",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/sanity-io/agent-toolkit/tree/main/skills/content-experimentation-best-practices",
+        "publisher_setup_url": "https://github.com/sanity-io/agent-toolkit/blob/main/skills/content-experimentation-best-practices/SKILL.md"
+      }
+    },
+    {
+      "id": "sanity-io/agent-toolkit/content-modeling-best-practices",
+      "name": "content-modeling-best-practices",
+      "description": "Structured content modeling guidance for schema design, content architecture, content reuse, references versus embedded objects, separation of concerns, and taxonomies across Sanity and other headless CMSes. Use this skill when designing or refactoring content types, deciding field shapes, debating reusable versus nested content, planning omnichannel content models, or reviewing whether a schema is too page-shaped or presentation-driven.",
+      "category": "frontend-design",
+      "license": "MIT",
+      "license_url": "https://github.com/sanity-io/agent-toolkit/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "feb9d38412426b0dfca7e6f21aeecdad8507c170",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-12",
+        "skill_md_url": "https://github.com/sanity-io/agent-toolkit/blob/feb9d38412426b0dfca7e6f21aeecdad8507c170/skills/content-modeling-best-practices/SKILL.md"
+      },
+      "quality": {
+        "score": 75,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/sanity-io/agent-toolkit/content-modeling-best-practices/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/sanity-io/agent-toolkit/tree/main/skills/content-modeling-best-practices",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/sanity-io/agent-toolkit/tree/main/skills/content-modeling-best-practices",
+        "publisher_setup_url": "https://github.com/sanity-io/agent-toolkit/blob/main/skills/content-modeling-best-practices/SKILL.md"
+      }
+    },
+    {
+      "id": "sanity-io/agent-toolkit/portable-text-conversion",
+      "name": "portable-text-conversion",
+      "description": "Convert HTML and Markdown content into Portable Text blocks for Sanity. Use when migrating content from legacy CMSs, importing HTML or Markdown into Sanity, building content pipelines that ingest external content, converting rich text between formats, or programmatically creating Portable Text documents. Covers @portabletext/markdown (markdownToPortableText), @portabletext/block-tools (htmlToBlocks), custom deserializers, and the Portable Text specification for manual block construction.",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/sanity-io/agent-toolkit/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "feb9d38412426b0dfca7e6f21aeecdad8507c170",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-12",
+        "skill_md_url": "https://github.com/sanity-io/agent-toolkit/blob/feb9d38412426b0dfca7e6f21aeecdad8507c170/skills/portable-text-conversion/SKILL.md"
+      },
+      "quality": {
+        "score": 75,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/sanity-io/agent-toolkit/portable-text-conversion/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/sanity-io/agent-toolkit/tree/main/skills/portable-text-conversion",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/sanity-io/agent-toolkit/tree/main/skills/portable-text-conversion",
+        "publisher_setup_url": "https://github.com/sanity-io/agent-toolkit/blob/main/skills/portable-text-conversion/SKILL.md"
+      }
+    },
+    {
+      "id": "sanity-io/agent-toolkit/portable-text-serialization",
+      "name": "portable-text-serialization",
+      "description": "Render and serialize Portable Text to React, Svelte, Vue, Astro, HTML, Markdown, and plain text. Use when implementing Portable Text rendering in any frontend framework, building custom serializers for non-standard block types, converting Portable Text to HTML strings server-side, converting Portable Text to Markdown, extracting plain text from Portable Text, or troubleshooting rendering issues with marks, blocks, lists, or custom types.",
+      "category": "frontend-design",
+      "license": "MIT",
+      "license_url": "https://github.com/sanity-io/agent-toolkit/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "feb9d38412426b0dfca7e6f21aeecdad8507c170",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-12",
+        "skill_md_url": "https://github.com/sanity-io/agent-toolkit/blob/feb9d38412426b0dfca7e6f21aeecdad8507c170/skills/portable-text-serialization/SKILL.md"
+      },
+      "quality": {
+        "score": 78,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/sanity-io/agent-toolkit/portable-text-serialization/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/sanity-io/agent-toolkit/tree/main/skills/portable-text-serialization",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/sanity-io/agent-toolkit/tree/main/skills/portable-text-serialization",
+        "publisher_setup_url": "https://github.com/sanity-io/agent-toolkit/blob/main/skills/portable-text-serialization/SKILL.md"
+      }
+    },
+    {
+      "id": "sanity-io/agent-toolkit/sanity-best-practices",
+      "name": "sanity-best-practices",
+      "description": "Sanity development best practices for schema design, GROQ queries, TypeGen, Visual Editing, images, Portable Text, Studio structure, localization, migrations, Sanity Functions, webhooks, Blueprints, and framework integrations such as Next.js, Nuxt, Astro, Remix, SvelteKit, Angular, Hydrogen, the App SDK, and Studios or apps running in the Sanity Dashboard (defineApplication). Use this skill whenever working with Sanity schemas, defineType or defineField, GROQ or defineQuery, content modeling, Presentation or preview setups, Sanity-powered frontend integrations, event-driven content automation, documentEventHandler, defineDocumentFunction, defineMediaLibraryAssetFunction, @sanity/functions, @sanity/blueprints, sanity.blueprint.ts, event-driven content automation, or when reviewing and fixing a Sanity codebase.",
+      "category": "frontend-design",
+      "license": "MIT",
+      "license_url": "https://github.com/sanity-io/agent-toolkit/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "feb9d38412426b0dfca7e6f21aeecdad8507c170",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-12",
+        "skill_md_url": "https://github.com/sanity-io/agent-toolkit/blob/feb9d38412426b0dfca7e6f21aeecdad8507c170/skills/sanity-best-practices/SKILL.md"
+      },
+      "quality": {
+        "score": 79,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/sanity-io/agent-toolkit/sanity-best-practices/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/sanity-io/agent-toolkit/sanity-best-practices/",
+      "source_folder_url": "https://github.com/sanity-io/agent-toolkit/tree/main/skills/sanity-best-practices",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/sanity-io/agent-toolkit/tree/main/skills/sanity-best-practices",
+        "publisher_setup_url": "https://github.com/sanity-io/agent-toolkit/blob/main/skills/sanity-best-practices/SKILL.md"
+      }
+    },
+    {
+      "id": "sanity-io/agent-toolkit/sanity-migration",
+      "name": "sanity-migration",
+      "description": "Plans, implements, and reviews migrations from other CMSes and content systems into Sanity. Use when migrating or replatforming to Sanity from AEM, Adobe Experience Manager, Contentful, Strapi, Webflow, WordPress, Payload, Drupal, Markdown/MDX/frontmatter files, WXR/XML exports, CMS APIs, database dumps, static HTML, or when designing extraction, transformation, Portable Text conversion, asset migration, redirects, validation, and cutover workflows.",
+      "category": "frontend-design",
+      "license": "MIT",
+      "license_url": "https://github.com/sanity-io/agent-toolkit/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "feb9d38412426b0dfca7e6f21aeecdad8507c170",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-12",
+        "skill_md_url": "https://github.com/sanity-io/agent-toolkit/blob/feb9d38412426b0dfca7e6f21aeecdad8507c170/skills/sanity-migration/SKILL.md"
+      },
+      "quality": {
+        "score": 81,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/sanity-io/agent-toolkit/sanity-migration/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/sanity-io/agent-toolkit/sanity-migration/",
+      "source_folder_url": "https://github.com/sanity-io/agent-toolkit/tree/main/skills/sanity-migration",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/sanity-io/agent-toolkit/tree/main/skills/sanity-migration",
+        "publisher_setup_url": "https://github.com/sanity-io/agent-toolkit/blob/main/skills/sanity-migration/SKILL.md"
+      }
+    },
+    {
+      "id": "sanity-io/agent-toolkit/sanity-singletons",
+      "name": "sanity-singletons",
+      "description": "Configure singleton documents in a Sanity Studio using the document.singletons registry. Use when a developer wants a fixed-id document (settings, navigation, footer) edited in place, hidden from the default content list, with no \"create new\" or \"duplicate\" affordances — or when migrating a userland singleton implementation or a third-party singleton plugin (e.g. sanity-plugin-singleton-management) to the first-class API.",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/sanity-io/agent-toolkit/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "feb9d38412426b0dfca7e6f21aeecdad8507c170",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-12",
+        "skill_md_url": "https://github.com/sanity-io/agent-toolkit/blob/feb9d38412426b0dfca7e6f21aeecdad8507c170/skills/sanity-singletons/SKILL.md"
+      },
+      "quality": {
+        "score": 81,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/sanity-io/agent-toolkit/sanity-singletons/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/sanity-io/agent-toolkit/tree/main/skills/sanity-singletons",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/sanity-io/agent-toolkit/tree/main/skills/sanity-singletons",
+        "publisher_setup_url": "https://github.com/sanity-io/agent-toolkit/blob/main/skills/sanity-singletons/SKILL.md"
+      }
+    },
+    {
+      "id": "sanity-io/agent-toolkit/sanity-studio-upgrade",
+      "name": "sanity-studio-upgrade",
+      "description": "Produces a tailored Sanity Studio upgrade plan by inspecting the repository's installed versions, config, and source, then reporting only the breaking changes that actually apply. Covers Studio v3 and later; v2 projects are identified and redirected, not planned. Use this skill whenever someone wants to upgrade, migrate, or modernize a Sanity Studio across one or more major versions from v3 onward, asks what will break if they bump the `sanity` package, asks why their Studio broke after an upgrade, or asks how far behind their Studio is. Triggers on \"upgrade sanity studio\", \"migrate our studio to v6\", \"bump sanity\", \"what breaks if we upgrade\", \"our studio is on an old version\", \"sanity upgrade plan\", \"is our studio out of date\", \"we are several majors behind\". DO NOT load for upgrading non-Sanity dependencies, for Content Lake `apiVersion` questions, for content or schema migrations that change documents, or for setting up a new Sanity project.",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/sanity-io/agent-toolkit/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "feb9d38412426b0dfca7e6f21aeecdad8507c170",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-12",
+        "skill_md_url": "https://github.com/sanity-io/agent-toolkit/blob/feb9d38412426b0dfca7e6f21aeecdad8507c170/skills/sanity-studio-upgrade/SKILL.md"
+      },
+      "quality": {
+        "score": 79,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/sanity-io/agent-toolkit/sanity-studio-upgrade/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/sanity-io/agent-toolkit/tree/main/skills/sanity-studio-upgrade",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/sanity-io/agent-toolkit/tree/main/skills/sanity-studio-upgrade",
+        "publisher_setup_url": "https://github.com/sanity-io/agent-toolkit/blob/main/skills/sanity-studio-upgrade/SKILL.md"
+      }
+    },
+    {
+      "id": "sanity-io/agent-toolkit/seo-aeo-best-practices",
+      "name": "seo-aeo-best-practices",
+      "description": "SEO and AEO best practices for metadata, Open Graph, sitemaps, robots.txt, hreflang, JSON-LD structured data, EEAT, and content optimized for search engines and AI answer surfaces. Use this skill when implementing page SEO, technical SEO, schema markup, international SEO, AI-overview readiness, or improving content for Google, ChatGPT, Perplexity, and similar assistants.",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/sanity-io/agent-toolkit/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "feb9d38412426b0dfca7e6f21aeecdad8507c170",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-12",
+        "skill_md_url": "https://github.com/sanity-io/agent-toolkit/blob/feb9d38412426b0dfca7e6f21aeecdad8507c170/skills/seo-aeo-best-practices/SKILL.md"
+      },
+      "quality": {
+        "score": 75,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/sanity-io/agent-toolkit/seo-aeo-best-practices/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/sanity-io/agent-toolkit/tree/main/skills/seo-aeo-best-practices",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/sanity-io/agent-toolkit/tree/main/skills/seo-aeo-best-practices",
+        "publisher_setup_url": "https://github.com/sanity-io/agent-toolkit/blob/main/skills/seo-aeo-best-practices/SKILL.md"
+      }
+    }
+  ]
+}

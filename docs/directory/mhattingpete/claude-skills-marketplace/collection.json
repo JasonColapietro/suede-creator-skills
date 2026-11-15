@@ -1,0 +1,1905 @@
+{
+  "schema_version": 1,
+  "repository": "mhattingpete/claude-skills-marketplace",
+  "listing_url": "https://skills.suedeai.ai/directory/mhattingpete/claude-skills-marketplace/",
+  "snapshot": {
+    "date": "2026-10-22",
+    "id": "0083645c3974488e8803884c7af76698",
+    "dataset_sha256": "b73996d45961aa527b4cea74a41a2e44497200dba9b2f85411e3602ab5f56641"
+  },
+  "listed_skill_count": 18,
+  "scope": "Skills listed by the directory; this is not a complete inventory of every file in the repository.",
+  "security_scan_status": "not_scanned",
+  "skills": [
+    {
+      "id": "mhattingpete/claude-skills-marketplace/architecture-diagram-creator",
+      "name": "architecture-diagram-creator",
+      "description": "Create comprehensive HTML architecture diagrams showing data flows, business objectives, features, technical architecture, and deployment. Use when users request system architecture, project documentation, high-level overviews, or technical specifications.",
+      "category": "media-creative",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/mhattingpete/claude-skills-marketplace/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "b5b34bcf4c920bb72cee1c391b54a33cb5353c12",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-07-25",
+        "skill_md_url": "https://github.com/mhattingpete/claude-skills-marketplace/blob/b5b34bcf4c920bb72cee1c391b54a33cb5353c12/visual-documentation-plugin/skills/architecture-diagram-creator/SKILL.md"
+      },
+      "quality": {
+        "score": 78,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/mhattingpete/claude-skills-marketplace/architecture-diagram-creator/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/mhattingpete/claude-skills-marketplace/architecture-diagram-creator/",
+      "source_folder_url": "https://github.com/mhattingpete/claude-skills-marketplace/tree/main/visual-documentation-plugin/skills/architecture-diagram-creator",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/mhattingpete/claude-skills-marketplace/tree/main/visual-documentation-plugin/skills/architecture-diagram-creator",
+        "publisher_setup_url": "https://github.com/mhattingpete/claude-skills-marketplace/blob/main/visual-documentation-plugin/skills/architecture-diagram-creator/SKILL.md"
+      }
+    },
+    {
+      "id": "mhattingpete/claude-skills-marketplace/code-auditor",
+      "name": "code-auditor",
+      "description": "Performs comprehensive codebase analysis covering architecture, code quality, security, performance, testing, and maintainability. Use when user wants to audit code quality, identify technical debt, find security issues, assess test coverage, or get a codebase health check.",
+      "category": "code-review-quality",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/mhattingpete/claude-skills-marketplace/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "b5b34bcf4c920bb72cee1c391b54a33cb5353c12",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-07-25",
+        "skill_md_url": "https://github.com/mhattingpete/claude-skills-marketplace/blob/b5b34bcf4c920bb72cee1c391b54a33cb5353c12/productivity-skills-plugin/skills/code-auditor/SKILL.md"
+      },
+      "quality": {
+        "score": 75,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/mhattingpete/claude-skills-marketplace/code-auditor/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/mhattingpete/claude-skills-marketplace/code-auditor/",
+      "source_folder_url": "https://github.com/mhattingpete/claude-skills-marketplace/tree/main/productivity-skills-plugin/skills/code-auditor",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/mhattingpete/claude-skills-marketplace/tree/main/productivity-skills-plugin/skills/code-auditor",
+        "publisher_setup_url": "https://github.com/mhattingpete/claude-skills-marketplace/blob/main/productivity-skills-plugin/skills/code-auditor/SKILL.md"
+      }
+    },
+    {
+      "id": "mhattingpete/claude-skills-marketplace/code-refactor",
+      "name": "code-refactor",
+      "description": "Perform bulk code refactoring operations like renaming variables/functions across files, replacing patterns, and updating API calls. Use when users request renaming identifiers, replacing deprecated code patterns, updating method calls, or making consistent changes across multiple locations.",
+      "category": "code-review-quality",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/mhattingpete/claude-skills-marketplace/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "b5b34bcf4c920bb72cee1c391b54a33cb5353c12",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-07-25",
+        "skill_md_url": "https://github.com/mhattingpete/claude-skills-marketplace/blob/b5b34bcf4c920bb72cee1c391b54a33cb5353c12/code-operations-plugin/skills/code-refactor/SKILL.md"
+      },
+      "quality": {
+        "score": 75,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/mhattingpete/claude-skills-marketplace/code-refactor/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/mhattingpete/claude-skills-marketplace/code-refactor/",
+      "source_folder_url": "https://github.com/mhattingpete/claude-skills-marketplace/tree/main/code-operations-plugin/skills/code-refactor",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/mhattingpete/claude-skills-marketplace/tree/main/code-operations-plugin/skills/code-refactor",
+        "publisher_setup_url": "https://github.com/mhattingpete/claude-skills-marketplace/blob/main/code-operations-plugin/skills/code-refactor/SKILL.md"
+      }
+    },
+    {
+      "id": "mhattingpete/claude-skills-marketplace/code-transfer",
+      "name": "code-transfer",
+      "description": "Transfer code between files with line-based precision. Use when users request copying code from one location to another, moving functions or classes between files, extracting code blocks, or inserting code at specific line numbers.",
+      "category": "developer-tools",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/mhattingpete/claude-skills-marketplace/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "b5b34bcf4c920bb72cee1c391b54a33cb5353c12",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-07-25",
+        "skill_md_url": "https://github.com/mhattingpete/claude-skills-marketplace/blob/b5b34bcf4c920bb72cee1c391b54a33cb5353c12/code-operations-plugin/skills/code-transfer/SKILL.md"
+      },
+      "quality": {
+        "score": 77,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/mhattingpete/claude-skills-marketplace/code-transfer/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/mhattingpete/claude-skills-marketplace/code-transfer/",
+      "source_folder_url": "https://github.com/mhattingpete/claude-skills-marketplace/tree/main/code-operations-plugin/skills/code-transfer",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/mhattingpete/claude-skills-marketplace/tree/main/code-operations-plugin/skills/code-transfer",
+        "publisher_setup_url": "https://github.com/mhattingpete/claude-skills-marketplace/blob/main/code-operations-plugin/skills/code-transfer/SKILL.md"
+      }
+    },
+    {
+      "id": "mhattingpete/claude-skills-marketplace/codebase-documenter",
+      "name": "codebase-documenter",
+      "description": "Generates comprehensive documentation explaining how a codebase works, including architecture, key components, data flow, and development guidelines. Use when user wants to understand unfamiliar code, create onboarding docs, document architecture, or explain how the system works.",
+      "category": "writing-content",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/mhattingpete/claude-skills-marketplace/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "b5b34bcf4c920bb72cee1c391b54a33cb5353c12",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-07-25",
+        "skill_md_url": "https://github.com/mhattingpete/claude-skills-marketplace/blob/b5b34bcf4c920bb72cee1c391b54a33cb5353c12/productivity-skills-plugin/skills/codebase-documenter/SKILL.md"
+      },
+      "quality": {
+        "score": 75,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/mhattingpete/claude-skills-marketplace/codebase-documenter/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/mhattingpete/claude-skills-marketplace/codebase-documenter/",
+      "source_folder_url": "https://github.com/mhattingpete/claude-skills-marketplace/tree/main/productivity-skills-plugin/skills/codebase-documenter",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/mhattingpete/claude-skills-marketplace/tree/main/productivity-skills-plugin/skills/codebase-documenter",
+        "publisher_setup_url": "https://github.com/mhattingpete/claude-skills-marketplace/blob/main/productivity-skills-plugin/skills/codebase-documenter/SKILL.md"
+      }
+    },
+    {
+      "id": "mhattingpete/claude-skills-marketplace/conversation-analyzer",
+      "name": "conversation-analyzer",
+      "description": "Analyzes your Claude Code conversation history to identify patterns, common mistakes, and opportunities for workflow improvement. Use when user wants to understand usage patterns, optimize workflow, identify automation opportunities, or check if they're following best practices.",
+      "category": "ai-agents-llm",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/mhattingpete/claude-skills-marketplace/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "b5b34bcf4c920bb72cee1c391b54a33cb5353c12",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-07-25",
+        "skill_md_url": "https://github.com/mhattingpete/claude-skills-marketplace/blob/b5b34bcf4c920bb72cee1c391b54a33cb5353c12/productivity-skills-plugin/skills/conversation-analyzer/SKILL.md"
+      },
+      "quality": {
+        "score": 77,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/mhattingpete/claude-skills-marketplace/conversation-analyzer/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/mhattingpete/claude-skills-marketplace/conversation-analyzer/",
+      "source_folder_url": "https://github.com/mhattingpete/claude-skills-marketplace/tree/main/productivity-skills-plugin/skills/conversation-analyzer",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/mhattingpete/claude-skills-marketplace/tree/main/productivity-skills-plugin/skills/conversation-analyzer",
+        "publisher_setup_url": "https://github.com/mhattingpete/claude-skills-marketplace/blob/main/productivity-skills-plugin/skills/conversation-analyzer/SKILL.md"
+      }
+    },
+    {
+      "id": "mhattingpete/claude-skills-marketplace/dashboard-creator",
+      "name": "dashboard-creator",
+      "description": "Create HTML dashboards with KPI metric cards, bar/pie/line charts, progress indicators, and data visualizations. Use when users request dashboards, metrics displays, KPI visualizations, data charts, or monitoring interfaces.",
+      "category": "data-databases",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/mhattingpete/claude-skills-marketplace/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "b5b34bcf4c920bb72cee1c391b54a33cb5353c12",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-07-25",
+        "skill_md_url": "https://github.com/mhattingpete/claude-skills-marketplace/blob/b5b34bcf4c920bb72cee1c391b54a33cb5353c12/visual-documentation-plugin/skills/dashboard-creator/SKILL.md"
+      },
+      "quality": {
+        "score": 75,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/mhattingpete/claude-skills-marketplace/dashboard-creator/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/mhattingpete/claude-skills-marketplace/dashboard-creator/",
+      "source_folder_url": "https://github.com/mhattingpete/claude-skills-marketplace/tree/main/visual-documentation-plugin/skills/dashboard-creator",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/mhattingpete/claude-skills-marketplace/tree/main/visual-documentation-plugin/skills/dashboard-creator",
+        "publisher_setup_url": "https://github.com/mhattingpete/claude-skills-marketplace/blob/main/visual-documentation-plugin/skills/dashboard-creator/SKILL.md"
+      }
+    },
+    {
+      "id": "mhattingpete/claude-skills-marketplace/ensemble-solving",
+      "name": "ensemble-solving",
+      "description": "Generate multiple diverse solutions in parallel and select the best. Use for architecture decisions, code generation with multiple valid approaches, or creative tasks where exploring alternatives improves quality.",
+      "category": "ai-agents-llm",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/mhattingpete/claude-skills-marketplace/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "b5b34bcf4c920bb72cee1c391b54a33cb5353c12",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-07-25",
+        "skill_md_url": "https://github.com/mhattingpete/claude-skills-marketplace/blob/b5b34bcf4c920bb72cee1c391b54a33cb5353c12/engineering-workflow-plugin/skills/ensemble-solving/SKILL.md"
+      },
+      "quality": {
+        "score": 81,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/mhattingpete/claude-skills-marketplace/ensemble-solving/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/mhattingpete/claude-skills-marketplace/ensemble-solving/",
+      "source_folder_url": "https://github.com/mhattingpete/claude-skills-marketplace/tree/main/engineering-workflow-plugin/skills/ensemble-solving",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/mhattingpete/claude-skills-marketplace/tree/main/engineering-workflow-plugin/skills/ensemble-solving",
+        "publisher_setup_url": "https://github.com/mhattingpete/claude-skills-marketplace/blob/main/engineering-workflow-plugin/skills/ensemble-solving/SKILL.md"
+      }
+    },
+    {
+      "id": "mhattingpete/claude-skills-marketplace/feature-planning",
+      "name": "feature-planning",
+      "description": "Break down feature requests into detailed, implementable plans with clear tasks. Use when user requests a new feature, enhancement, or complex change.",
+      "category": "productivity-knowledge",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/mhattingpete/claude-skills-marketplace/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "b5b34bcf4c920bb72cee1c391b54a33cb5353c12",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-07-25",
+        "skill_md_url": "https://github.com/mhattingpete/claude-skills-marketplace/blob/b5b34bcf4c920bb72cee1c391b54a33cb5353c12/engineering-workflow-plugin/skills/feature-planning/SKILL.md"
+      },
+      "quality": {
+        "score": 81,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/mhattingpete/claude-skills-marketplace/feature-planning/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/mhattingpete/claude-skills-marketplace/feature-planning/",
+      "source_folder_url": "https://github.com/mhattingpete/claude-skills-marketplace/tree/main/engineering-workflow-plugin/skills/feature-planning",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/mhattingpete/claude-skills-marketplace/tree/main/engineering-workflow-plugin/skills/feature-planning",
+        "publisher_setup_url": "https://github.com/mhattingpete/claude-skills-marketplace/blob/main/engineering-workflow-plugin/skills/feature-planning/SKILL.md"
+      }
+    },
+    {
+      "id": "mhattingpete/claude-skills-marketplace/flowchart-creator",
+      "name": "flowchart-creator",
+      "description": "Create HTML flowcharts and process diagrams with decision trees, color-coded stages, arrows, and swimlanes. Use when users request flowcharts, process diagrams, workflow visualizations, or decision trees.",
+      "category": "media-creative",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/mhattingpete/claude-skills-marketplace/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "b5b34bcf4c920bb72cee1c391b54a33cb5353c12",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-07-25",
+        "skill_md_url": "https://github.com/mhattingpete/claude-skills-marketplace/blob/b5b34bcf4c920bb72cee1c391b54a33cb5353c12/visual-documentation-plugin/skills/flowchart-creator/SKILL.md"
+      },
+      "quality": {
+        "score": 75,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/mhattingpete/claude-skills-marketplace/flowchart-creator/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/mhattingpete/claude-skills-marketplace/flowchart-creator/",
+      "source_folder_url": "https://github.com/mhattingpete/claude-skills-marketplace/tree/main/visual-documentation-plugin/skills/flowchart-creator",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/mhattingpete/claude-skills-marketplace/tree/main/visual-documentation-plugin/skills/flowchart-creator",
+        "publisher_setup_url": "https://github.com/mhattingpete/claude-skills-marketplace/blob/main/visual-documentation-plugin/skills/flowchart-creator/SKILL.md"
+      }
+    },
+    {
+      "id": "mhattingpete/claude-skills-marketplace/technical-doc-creator",
+      "name": "technical-doc-creator",
+      "description": "Create HTML technical documentation with code blocks, API workflows, system architecture diagrams, and syntax highlighting. Use when users request technical documentation, API docs, API references, code examples, or developer documentation.",
+      "category": "writing-content",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/mhattingpete/claude-skills-marketplace/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "b5b34bcf4c920bb72cee1c391b54a33cb5353c12",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-07-25",
+        "skill_md_url": "https://github.com/mhattingpete/claude-skills-marketplace/blob/b5b34bcf4c920bb72cee1c391b54a33cb5353c12/visual-documentation-plugin/skills/technical-doc-creator/SKILL.md"
+      },
+      "quality": {
+        "score": 78,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/mhattingpete/claude-skills-marketplace/technical-doc-creator/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/mhattingpete/claude-skills-marketplace/technical-doc-creator/",
+      "source_folder_url": "https://github.com/mhattingpete/claude-skills-marketplace/tree/main/visual-documentation-plugin/skills/technical-doc-creator",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/mhattingpete/claude-skills-marketplace/tree/main/visual-documentation-plugin/skills/technical-doc-creator",
+        "publisher_setup_url": "https://github.com/mhattingpete/claude-skills-marketplace/blob/main/visual-documentation-plugin/skills/technical-doc-creator/SKILL.md"
+      }
+    },
+    {
+      "id": "mhattingpete/claude-skills-marketplace/timeline-creator",
+      "name": "timeline-creator",
+      "description": "Create HTML timelines and project roadmaps with Gantt charts, milestones, phase groupings, and progress indicators. Use when users request timelines, roadmaps, Gantt charts, project schedules, or milestone visualizations.",
+      "category": "productivity-knowledge",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/mhattingpete/claude-skills-marketplace/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "b5b34bcf4c920bb72cee1c391b54a33cb5353c12",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-07-25",
+        "skill_md_url": "https://github.com/mhattingpete/claude-skills-marketplace/blob/b5b34bcf4c920bb72cee1c391b54a33cb5353c12/visual-documentation-plugin/skills/timeline-creator/SKILL.md"
+      },
+      "quality": {
+        "score": 75,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/mhattingpete/claude-skills-marketplace/timeline-creator/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/mhattingpete/claude-skills-marketplace/timeline-creator/",
+      "source_folder_url": "https://github.com/mhattingpete/claude-skills-marketplace/tree/main/visual-documentation-plugin/skills/timeline-creator",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/mhattingpete/claude-skills-marketplace/tree/main/visual-documentation-plugin/skills/timeline-creator",
+        "publisher_setup_url": "https://github.com/mhattingpete/claude-skills-marketplace/blob/main/visual-documentation-plugin/skills/timeline-creator/SKILL.md"
+      }
+    },
+    {
+      "id": "mhattingpete/claude-skills-marketplace/code-execution",
+      "name": "code-execution",
+      "description": "Execute Python code locally with marketplace API access for 90%+ token savings on bulk operations. Activates when user requests bulk operations (10+ files), complex multi-step workflows, iterative processing, or mentions efficiency/performance.",
+      "category": "ai-agents-llm",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/mhattingpete/claude-skills-marketplace/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "b5b34bcf4c920bb72cee1c391b54a33cb5353c12",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-07-25",
+        "skill_md_url": "https://github.com/mhattingpete/claude-skills-marketplace/blob/b5b34bcf4c920bb72cee1c391b54a33cb5353c12/code-operations-plugin/skills/code-execution/SKILL.md"
+      },
+      "quality": {
+        "score": 75,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/mhattingpete/claude-skills-marketplace/code-execution/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/mhattingpete/claude-skills-marketplace/tree/main/code-operations-plugin/skills/code-execution",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/mhattingpete/claude-skills-marketplace/tree/main/code-operations-plugin/skills/code-execution",
+        "publisher_setup_url": "https://github.com/mhattingpete/claude-skills-marketplace/blob/main/code-operations-plugin/skills/code-execution/SKILL.md"
+      }
+    },
+    {
+      "id": "mhattingpete/claude-skills-marketplace/file-operations",
+      "name": "file-operations",
+      "description": "Analyze files and get detailed metadata including size, line counts, modification times, and content statistics. Use when users request file information, statistics, or analysis without modifying files.",
+      "category": "developer-tools",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/mhattingpete/claude-skills-marketplace/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "b5b34bcf4c920bb72cee1c391b54a33cb5353c12",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-07-25",
+        "skill_md_url": "https://github.com/mhattingpete/claude-skills-marketplace/blob/b5b34bcf4c920bb72cee1c391b54a33cb5353c12/code-operations-plugin/skills/file-operations/SKILL.md"
+      },
+      "quality": {
+        "score": 75,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/mhattingpete/claude-skills-marketplace/file-operations/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/mhattingpete/claude-skills-marketplace/tree/main/code-operations-plugin/skills/file-operations",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/mhattingpete/claude-skills-marketplace/tree/main/code-operations-plugin/skills/file-operations",
+        "publisher_setup_url": "https://github.com/mhattingpete/claude-skills-marketplace/blob/main/code-operations-plugin/skills/file-operations/SKILL.md"
+      }
+    },
+    {
+      "id": "mhattingpete/claude-skills-marketplace/git-pushing",
+      "name": "git-pushing",
+      "description": "Stage, commit, and push git changes with conventional commit messages. Use when user wants to commit and push changes, mentions pushing to remote, or asks to save and push their work. Also activates when user says \"push changes\", \"commit and push\", \"push this\", \"push to github\", or similar git workflow requests.",
+      "category": "developer-tools",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/mhattingpete/claude-skills-marketplace/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "b5b34bcf4c920bb72cee1c391b54a33cb5353c12",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-07-25",
+        "skill_md_url": "https://github.com/mhattingpete/claude-skills-marketplace/blob/b5b34bcf4c920bb72cee1c391b54a33cb5353c12/engineering-workflow-plugin/skills/git-pushing/SKILL.md"
+      },
+      "quality": {
+        "score": 77,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/mhattingpete/claude-skills-marketplace/git-pushing/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/mhattingpete/claude-skills-marketplace/tree/main/engineering-workflow-plugin/skills/git-pushing",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/mhattingpete/claude-skills-marketplace/tree/main/engineering-workflow-plugin/skills/git-pushing",
+        "publisher_setup_url": "https://github.com/mhattingpete/claude-skills-marketplace/blob/main/engineering-workflow-plugin/skills/git-pushing/SKILL.md"
+      }
+    },
+    {
+      "id": "mhattingpete/claude-skills-marketplace/project-bootstrapper",
+      "name": "project-bootstrapper",
+      "description": "Sets up new projects or improves existing projects with development best practices, tooling, documentation, and workflow automation. Use when user wants to start a new project, improve project structure, add development tooling, or establish professional workflows.",
+      "category": "developer-tools",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/mhattingpete/claude-skills-marketplace/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "b5b34bcf4c920bb72cee1c391b54a33cb5353c12",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-07-25",
+        "skill_md_url": "https://github.com/mhattingpete/claude-skills-marketplace/blob/b5b34bcf4c920bb72cee1c391b54a33cb5353c12/productivity-skills-plugin/skills/project-bootstrapper/SKILL.md"
+      },
+      "quality": {
+        "score": 78,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/mhattingpete/claude-skills-marketplace/project-bootstrapper/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/mhattingpete/claude-skills-marketplace/tree/main/productivity-skills-plugin/skills/project-bootstrapper",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/mhattingpete/claude-skills-marketplace/tree/main/productivity-skills-plugin/skills/project-bootstrapper",
+        "publisher_setup_url": "https://github.com/mhattingpete/claude-skills-marketplace/blob/main/productivity-skills-plugin/skills/project-bootstrapper/SKILL.md"
+      }
+    },
+    {
+      "id": "mhattingpete/claude-skills-marketplace/review-implementing",
+      "name": "review-implementing",
+      "description": "Process and implement code review feedback systematically. Use when user provides reviewer comments, PR feedback, code review notes, or asks to implement suggestions from reviews.",
+      "category": "code-review-quality",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/mhattingpete/claude-skills-marketplace/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "b5b34bcf4c920bb72cee1c391b54a33cb5353c12",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-07-25",
+        "skill_md_url": "https://github.com/mhattingpete/claude-skills-marketplace/blob/b5b34bcf4c920bb72cee1c391b54a33cb5353c12/engineering-workflow-plugin/skills/review-implementing/SKILL.md"
+      },
+      "quality": {
+        "score": 78,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/mhattingpete/claude-skills-marketplace/review-implementing/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/mhattingpete/claude-skills-marketplace/tree/main/engineering-workflow-plugin/skills/review-implementing",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/mhattingpete/claude-skills-marketplace/tree/main/engineering-workflow-plugin/skills/review-implementing",
+        "publisher_setup_url": "https://github.com/mhattingpete/claude-skills-marketplace/blob/main/engineering-workflow-plugin/skills/review-implementing/SKILL.md"
+      }
+    },
+    {
+      "id": "mhattingpete/claude-skills-marketplace/test-fixing",
+      "name": "test-fixing",
+      "description": "Run tests and systematically fix all failing tests using smart error grouping. Use when user asks to fix failing tests, mentions test failures, runs test suite and failures occur, or requests to make tests pass.",
+      "category": "testing-qa",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/mhattingpete/claude-skills-marketplace/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "b5b34bcf4c920bb72cee1c391b54a33cb5353c12",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-07-25",
+        "skill_md_url": "https://github.com/mhattingpete/claude-skills-marketplace/blob/b5b34bcf4c920bb72cee1c391b54a33cb5353c12/engineering-workflow-plugin/skills/test-fixing/SKILL.md"
+      },
+      "quality": {
+        "score": 75,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/mhattingpete/claude-skills-marketplace/test-fixing/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/mhattingpete/claude-skills-marketplace/tree/main/engineering-workflow-plugin/skills/test-fixing",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/mhattingpete/claude-skills-marketplace/tree/main/engineering-workflow-plugin/skills/test-fixing",
+        "publisher_setup_url": "https://github.com/mhattingpete/claude-skills-marketplace/blob/main/engineering-workflow-plugin/skills/test-fixing/SKILL.md"
+      }
+    }
+  ]
+}

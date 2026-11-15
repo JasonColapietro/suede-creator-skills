@@ -1,0 +1,435 @@
+{
+  "schema_version": 1,
+  "repository": "obra/superpowers-lab",
+  "listing_url": "https://skills.suedeai.ai/directory/obra/superpowers-lab/",
+  "snapshot": {
+    "date": "2026-10-22",
+    "id": "0083645c3974488e8803884c7af76698",
+    "dataset_sha256": "b73996d45961aa527b4cea74a41a2e44497200dba9b2f85411e3602ab5f56641"
+  },
+  "listed_skill_count": 4,
+  "scope": "Skills listed by the directory; this is not a complete inventory of every file in the repository.",
+  "security_scan_status": "not_scanned",
+  "skills": [
+    {
+      "id": "obra/superpowers-lab/finding-duplicate-functions",
+      "name": "finding-duplicate-functions",
+      "description": "Use when auditing a codebase for semantic duplication - functions that do the same thing but have different names or implementations. Especially useful for LLM-generated codebases where new functions are often created rather than reusing existing ones.",
+      "category": "code-review-quality",
+      "license": "MIT",
+      "license_url": "https://github.com/obra/superpowers-lab/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "51111f74f24058117752d9aa917cb19859f8ec86",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-06-01",
+        "skill_md_url": "https://github.com/obra/superpowers-lab/blob/51111f74f24058117752d9aa917cb19859f8ec86/skills/finding-duplicate-functions/SKILL.md"
+      },
+      "quality": {
+        "score": 76,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/obra/superpowers-lab/finding-duplicate-functions/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/obra/superpowers-lab/finding-duplicate-functions/",
+      "source_folder_url": "https://github.com/obra/superpowers-lab/tree/main/skills/finding-duplicate-functions",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/obra/superpowers-lab/tree/main/skills/finding-duplicate-functions",
+        "publisher_setup_url": "https://github.com/obra/superpowers-lab/blob/main/skills/finding-duplicate-functions/SKILL.md"
+      }
+    },
+    {
+      "id": "obra/superpowers-lab/using-tmux-for-interactive-commands",
+      "name": "using-tmux-for-interactive-commands",
+      "description": "Use when you need to run interactive CLI tools (vim, git rebase -i, Python REPL, etc.) that require real-time input/output - provides tmux-based approach for controlling interactive sessions through detached sessions and send-keys",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/obra/superpowers-lab/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "51111f74f24058117752d9aa917cb19859f8ec86",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-06-01",
+        "skill_md_url": "https://github.com/obra/superpowers-lab/blob/51111f74f24058117752d9aa917cb19859f8ec86/skills/using-tmux-for-interactive-commands/SKILL.md"
+      },
+      "quality": {
+        "score": 74,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/obra/superpowers-lab/using-tmux-for-interactive-commands/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/obra/superpowers-lab/using-tmux-for-interactive-commands/",
+      "source_folder_url": "https://github.com/obra/superpowers-lab/tree/main/skills/using-tmux-for-interactive-commands",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/obra/superpowers-lab/tree/main/skills/using-tmux-for-interactive-commands",
+        "publisher_setup_url": "https://github.com/obra/superpowers-lab/blob/main/skills/using-tmux-for-interactive-commands/SKILL.md"
+      }
+    },
+    {
+      "id": "obra/superpowers-lab/windows-vm",
+      "name": "windows-vm",
+      "description": "Create, manage, or connect to a headless Windows 11 VM running in Docker with SSH access. Use when the user wants to spin up, stop, restart, or SSH into a Windows VM.",
+      "category": "devops-cloud",
+      "license": "MIT",
+      "license_url": "https://github.com/obra/superpowers-lab/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "51111f74f24058117752d9aa917cb19859f8ec86",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-06-01",
+        "skill_md_url": "https://github.com/obra/superpowers-lab/blob/51111f74f24058117752d9aa917cb19859f8ec86/skills/windows-vm/SKILL.md"
+      },
+      "quality": {
+        "score": 76,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/obra/superpowers-lab/windows-vm/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/obra/superpowers-lab/windows-vm/",
+      "source_folder_url": "https://github.com/obra/superpowers-lab/tree/main/skills/windows-vm",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/obra/superpowers-lab/tree/main/skills/windows-vm",
+        "publisher_setup_url": "https://github.com/obra/superpowers-lab/blob/main/skills/windows-vm/SKILL.md"
+      }
+    },
+    {
+      "id": "obra/superpowers-lab/mcp-cli",
+      "name": "mcp-cli",
+      "description": "Use MCP servers on-demand via the mcp CLI tool - discover tools, resources, and prompts without polluting context with pre-loaded MCP integrations",
+      "category": "ai-agents-llm",
+      "license": "MIT",
+      "license_url": "https://github.com/obra/superpowers-lab/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "51111f74f24058117752d9aa917cb19859f8ec86",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-06-01",
+        "skill_md_url": "https://github.com/obra/superpowers-lab/blob/51111f74f24058117752d9aa917cb19859f8ec86/skills/mcp-cli/SKILL.md"
+      },
+      "quality": {
+        "score": 64,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/obra/superpowers-lab/mcp-cli/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/obra/superpowers-lab/tree/main/skills/mcp-cli",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/obra/superpowers-lab/tree/main/skills/mcp-cli",
+        "publisher_setup_url": "https://github.com/obra/superpowers-lab/blob/main/skills/mcp-cli/SKILL.md"
+      }
+    }
+  ]
+}

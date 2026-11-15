@@ -1,0 +1,1590 @@
+{
+  "schema_version": 1,
+  "repository": "apollographql/skills",
+  "listing_url": "https://skills.suedeai.ai/directory/apollographql/skills/",
+  "snapshot": {
+    "date": "2026-10-22",
+    "id": "0083645c3974488e8803884c7af76698",
+    "dataset_sha256": "b73996d45961aa527b4cea74a41a2e44497200dba9b2f85411e3602ab5f56641"
+  },
+  "listed_skill_count": 15,
+  "scope": "Skills listed by the directory; this is not a complete inventory of every file in the repository.",
+  "security_scan_status": "not_scanned",
+  "skills": [
+    {
+      "id": "apollographql/skills/apollo-client",
+      "name": "apollo-client",
+      "description": "Guide for building React applications with Apollo Client 4.x. Use this skill when: (1) setting up Apollo Client in a React project, (2) writing GraphQL queries or mutations with hooks, (3) configuring caching or cache policies, (4) managing local state with reactive variables, (5) troubleshooting Apollo Client errors or performance issues.",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/apollographql/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "aafc8944365a766d48cc519ce8b8575f93f953a4",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/apollographql/skills/blob/aafc8944365a766d48cc519ce8b8575f93f953a4/skills/apollo-client/SKILL.md"
+      },
+      "quality": {
+        "score": 84,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/apollographql/skills/apollo-client/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/apollographql/skills/apollo-client/",
+      "source_folder_url": "https://github.com/apollographql/skills/tree/main/skills/apollo-client",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/apollographql/skills/tree/main/skills/apollo-client",
+        "publisher_setup_url": "https://github.com/apollographql/skills/blob/main/skills/apollo-client/SKILL.md"
+      }
+    },
+    {
+      "id": "apollographql/skills/apollo-connectors",
+      "name": "apollo-connectors",
+      "description": "DEPRECATED: superseded by the graphos-factory skill (npx skills add apollographql/skills@graphos-factory), which builds and maintains a Connectors subgraph from a REST API with recorded decisions and verification. Guide for integrating REST APIs into GraphQL supergraphs using Apollo Connectors with @source and @connect directives. Use this skill when the user: (1) mentions \"connectors\", \"Apollo Connectors\", or \"REST Connector\", (2) wants to integrate a REST API into GraphQL, (3) references @source or @connect directives, (4) works with files containing \"# Note to AI Friends: This is an Apollo Connectors schema\".",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/apollographql/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "aafc8944365a766d48cc519ce8b8575f93f953a4",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/apollographql/skills/blob/aafc8944365a766d48cc519ce8b8575f93f953a4/skills/apollo-connectors/SKILL.md"
+      },
+      "quality": {
+        "score": 85,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/apollographql/skills/apollo-connectors/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/apollographql/skills/apollo-connectors/",
+      "source_folder_url": "https://github.com/apollographql/skills/tree/main/skills/apollo-connectors",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/apollographql/skills/tree/main/skills/apollo-connectors",
+        "publisher_setup_url": "https://github.com/apollographql/skills/blob/main/skills/apollo-connectors/SKILL.md"
+      }
+    },
+    {
+      "id": "apollographql/skills/apollo-federation",
+      "name": "apollo-federation",
+      "description": "Guide for authoring Apollo Federation subgraph schemas. Use this skill when: (1) creating new subgraph schemas for a federated supergraph, (2) defining or modifying entities with @key, (3) sharing types/fields across subgraphs with @shareable, (4) working with federation directives (@external, @requires, @provides, @override, @inaccessible), (5) troubleshooting composition errors, (6) any task involving federation schema design patterns.",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/apollographql/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "aafc8944365a766d48cc519ce8b8575f93f953a4",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/apollographql/skills/blob/aafc8944365a766d48cc519ce8b8575f93f953a4/skills/apollo-federation/SKILL.md"
+      },
+      "quality": {
+        "score": 81,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/apollographql/skills/apollo-federation/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/apollographql/skills/apollo-federation/",
+      "source_folder_url": "https://github.com/apollographql/skills/tree/main/skills/apollo-federation",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/apollographql/skills/tree/main/skills/apollo-federation",
+        "publisher_setup_url": "https://github.com/apollographql/skills/blob/main/skills/apollo-federation/SKILL.md"
+      }
+    },
+    {
+      "id": "apollographql/skills/apollo-ios",
+      "name": "apollo-ios",
+      "description": "Guide for building Apple-platform applications with Apollo iOS, the strongly-typed GraphQL client for Swift. Use this skill when: (1) adding Apollo iOS to a Swift Package Manager or Xcode project, (2) configuring `apollo-codegen-config.json` and running code generation, (3) configuring an `ApolloClient` with auth, interceptors, and caching, (4) writing queries, mutations, or subscriptions from SwiftUI views, (5) writing tests against generated operation mocks.",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/apollographql/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "aafc8944365a766d48cc519ce8b8575f93f953a4",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/apollographql/skills/blob/aafc8944365a766d48cc519ce8b8575f93f953a4/skills/apollo-ios/SKILL.md"
+      },
+      "quality": {
+        "score": 86,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/apollographql/skills/apollo-ios/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/apollographql/skills/apollo-ios/",
+      "source_folder_url": "https://github.com/apollographql/skills/tree/main/skills/apollo-ios",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/apollographql/skills/tree/main/skills/apollo-ios",
+        "publisher_setup_url": "https://github.com/apollographql/skills/blob/main/skills/apollo-ios/SKILL.md"
+      }
+    },
+    {
+      "id": "apollographql/skills/apollo-kotlin",
+      "name": "apollo-kotlin",
+      "description": "Guide for building applications with Apollo Kotlin, the GraphQL client library for Android and Kotlin. Use this skill when: (1) setting up Apollo Kotlin in a Gradle project for Android, Kotlin/JVM, or KMP, (2) configuring schema download and codegen for GraphQL services, (3) configuring an `ApolloClient` with auth, interceptors, and caching, (4) writing queries, mutations, or subscriptions,",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/apollographql/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "aafc8944365a766d48cc519ce8b8575f93f953a4",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/apollographql/skills/blob/aafc8944365a766d48cc519ce8b8575f93f953a4/skills/apollo-kotlin/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/apollographql/skills/apollo-kotlin/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/apollographql/skills/apollo-kotlin/",
+      "source_folder_url": "https://github.com/apollographql/skills/tree/main/skills/apollo-kotlin",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/apollographql/skills/tree/main/skills/apollo-kotlin",
+        "publisher_setup_url": "https://github.com/apollographql/skills/blob/main/skills/apollo-kotlin/SKILL.md"
+      }
+    },
+    {
+      "id": "apollographql/skills/apollo-router",
+      "name": "apollo-router",
+      "description": "Version-aware guide for configuring and running Apollo Router for federated GraphQL supergraphs. Generates correct YAML for both Router v1.x and v2.x. Use this skill when: (1) setting up Apollo Router to run a supergraph, (2) configuring routing, headers, or CORS, (3) implementing custom plugins (Rhai scripts or coprocessors), (4) configuring telemetry (tracing, metrics, logging), (5) troubleshooting Router performance or connectivity issues, (6) securing the graph with JWT, declarative field-level authorization directives, or persisted-query safelisting, (7) managing router.yaml as version-controlled config with CI/CD validation.",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/apollographql/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "aafc8944365a766d48cc519ce8b8575f93f953a4",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/apollographql/skills/blob/aafc8944365a766d48cc519ce8b8575f93f953a4/skills/apollo-router/SKILL.md"
+      },
+      "quality": {
+        "score": 82,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/apollographql/skills/apollo-router/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/apollographql/skills/apollo-router/",
+      "source_folder_url": "https://github.com/apollographql/skills/tree/main/skills/apollo-router",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/apollographql/skills/tree/main/skills/apollo-router",
+        "publisher_setup_url": "https://github.com/apollographql/skills/blob/main/skills/apollo-router/SKILL.md"
+      }
+    },
+    {
+      "id": "apollographql/skills/apollo-router-plugin-creator",
+      "name": "apollo-router-plugin-creator",
+      "description": "Guide for writing Apollo Router native Rust plugins. Use this skill when: (1) users want to create a new router plugin, (2) users want to add service hooks (router_service, supergraph_service, execution_service, subgraph_service), (3) users want to modify an existing router plugin, (4) users need to understand router plugin patterns or the request lifecycle. (5) triggers on requests like \"create a new plugin\", \"add a router plugin\", \"modify the X plugin\", or \"add subgraph_service hook\".",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/apollographql/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "aafc8944365a766d48cc519ce8b8575f93f953a4",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/apollographql/skills/blob/aafc8944365a766d48cc519ce8b8575f93f953a4/skills/apollo-router-plugin-creator/SKILL.md"
+      },
+      "quality": {
+        "score": 85,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/apollographql/skills/apollo-router-plugin-creator/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/apollographql/skills/apollo-router-plugin-creator/",
+      "source_folder_url": "https://github.com/apollographql/skills/tree/main/skills/apollo-router-plugin-creator",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/apollographql/skills/tree/main/skills/apollo-router-plugin-creator",
+        "publisher_setup_url": "https://github.com/apollographql/skills/blob/main/skills/apollo-router-plugin-creator/SKILL.md"
+      }
+    },
+    {
+      "id": "apollographql/skills/apollo-server",
+      "name": "apollo-server",
+      "description": "Guide for building GraphQL servers with Apollo Server 5.x. Use this skill when: (1) setting up a new Apollo Server project, (2) writing resolvers or defining GraphQL schemas, (3) implementing authentication or authorization, (4) creating plugins or custom data sources, (5) troubleshooting Apollo Server errors or performance issues.",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/apollographql/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "aafc8944365a766d48cc519ce8b8575f93f953a4",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/apollographql/skills/blob/aafc8944365a766d48cc519ce8b8575f93f953a4/skills/apollo-server/SKILL.md"
+      },
+      "quality": {
+        "score": 84,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/apollographql/skills/apollo-server/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/apollographql/skills/apollo-server/",
+      "source_folder_url": "https://github.com/apollographql/skills/tree/main/skills/apollo-server",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/apollographql/skills/tree/main/skills/apollo-server",
+        "publisher_setup_url": "https://github.com/apollographql/skills/blob/main/skills/apollo-server/SKILL.md"
+      }
+    },
+    {
+      "id": "apollographql/skills/graphos-factory",
+      "name": "graphos-factory",
+      "description": "Build and iterate on an Apollo Connectors subgraph for a GraphOS supergraph from a REST API, with or without an OpenAPI or Swagger spec, in a dedicated git workspace that records what the API offers, the user's operation and field selection, every design decision, and the evidence each verification layer produced. Use whenever the user wants to wrap a REST API as a GraphQL subgraph for their supergraph, add or remove operations or fields from an existing connector subgraph, refresh one against a new spec, or record live API traffic as test fixtures, even if they do not say \"connector\", \"subgraph\" or \"Apollo\".",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/apollographql/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "aafc8944365a766d48cc519ce8b8575f93f953a4",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/apollographql/skills/blob/aafc8944365a766d48cc519ce8b8575f93f953a4/skills/graphos-factory/SKILL.md"
+      },
+      "quality": {
+        "score": 79,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/apollographql/skills/graphos-factory/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/apollographql/skills/graphos-factory/",
+      "source_folder_url": "https://github.com/apollographql/skills/tree/main/skills/graphos-factory",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/apollographql/skills/tree/main/skills/graphos-factory",
+        "publisher_setup_url": "https://github.com/apollographql/skills/blob/main/skills/graphos-factory/SKILL.md"
+      }
+    },
+    {
+      "id": "apollographql/skills/graphql-schema",
+      "name": "graphql-schema",
+      "description": "Guide for designing and changing GraphQL schemas following industry best practices. Use this skill whenever you create or edit GraphQL SDL, such as a `schema.graphql` file or `typeDefs`, including when: (1) designing a new GraphQL schema or API, (2) adding or changing types, fields, arguments, mutations, or descriptions in an existing schema, (3) reviewing existing schema for improvements, (4) deciding on type structures or nullability, (5) implementing pagination or error patterns, (6) ensuring security in schema design.",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/apollographql/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "aafc8944365a766d48cc519ce8b8575f93f953a4",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/apollographql/skills/blob/aafc8944365a766d48cc519ce8b8575f93f953a4/skills/graphql-schema/SKILL.md"
+      },
+      "quality": {
+        "score": 84,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/apollographql/skills/graphql-schema/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/apollographql/skills/graphql-schema/",
+      "source_folder_url": "https://github.com/apollographql/skills/tree/main/skills/graphql-schema",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/apollographql/skills/tree/main/skills/graphql-schema",
+        "publisher_setup_url": "https://github.com/apollographql/skills/blob/main/skills/graphql-schema/SKILL.md"
+      }
+    },
+    {
+      "id": "apollographql/skills/rover",
+      "name": "rover",
+      "description": "Guide for using Apollo Rover CLI to manage GraphQL schemas and federation. Use this skill when: (1) publishing or fetching subgraph/graph schemas, (2) composing supergraph schemas locally or via GraphOS, (3) running local supergraph development with rover dev, (4) validating schemas with check and lint commands, (5) configuring Rover authentication and environment, (6) exploring or searching a graph's schema for agent-driven discovery (rover schema describe / rover schema search).",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/apollographql/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "aafc8944365a766d48cc519ce8b8575f93f953a4",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/apollographql/skills/blob/aafc8944365a766d48cc519ce8b8575f93f953a4/skills/rover/SKILL.md"
+      },
+      "quality": {
+        "score": 84,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/apollographql/skills/rover/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/apollographql/skills/rover/",
+      "source_folder_url": "https://github.com/apollographql/skills/tree/main/skills/rover",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/apollographql/skills/tree/main/skills/rover",
+        "publisher_setup_url": "https://github.com/apollographql/skills/blob/main/skills/rover/SKILL.md"
+      }
+    },
+    {
+      "id": "apollographql/skills/rust-best-practices",
+      "name": "rust-best-practices",
+      "description": "Guide for writing idiomatic Rust code based on Apollo GraphQL's best practices handbook. Use this skill when: (1) writing new Rust code or functions, (2) reviewing or refactoring existing Rust code, (3) deciding between borrowing vs cloning or ownership patterns, (4) implementing error handling with Result types, (5) optimizing Rust code for performance, (6) writing tests or documentation for Rust projects.",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/apollographql/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "aafc8944365a766d48cc519ce8b8575f93f953a4",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/apollographql/skills/blob/aafc8944365a766d48cc519ce8b8575f93f953a4/skills/rust-best-practices/SKILL.md"
+      },
+      "quality": {
+        "score": 81,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/apollographql/skills/rust-best-practices/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/apollographql/skills/rust-best-practices/",
+      "source_folder_url": "https://github.com/apollographql/skills/tree/main/skills/rust-best-practices",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/apollographql/skills/tree/main/skills/rust-best-practices",
+        "publisher_setup_url": "https://github.com/apollographql/skills/blob/main/skills/rust-best-practices/SKILL.md"
+      }
+    },
+    {
+      "id": "apollographql/skills/apollo-mcp-server",
+      "name": "apollo-mcp-server",
+      "description": "Guide for using Apollo MCP Server to connect AI agents with GraphQL APIs. Use this skill when: (1) setting up or configuring Apollo MCP Server, (2) defining MCP tools from GraphQL operations, (3) using introspection tools (introspect, search, validate, execute), (4) troubleshooting MCP server connectivity or tool execution issues.",
+      "category": "ai-agents-llm",
+      "license": "MIT",
+      "license_url": "https://github.com/apollographql/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "aafc8944365a766d48cc519ce8b8575f93f953a4",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/apollographql/skills/blob/aafc8944365a766d48cc519ce8b8575f93f953a4/skills/apollo-mcp-server/SKILL.md"
+      },
+      "quality": {
+        "score": 84,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/apollographql/skills/apollo-mcp-server/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/apollographql/skills/tree/main/skills/apollo-mcp-server",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/apollographql/skills/tree/main/skills/apollo-mcp-server",
+        "publisher_setup_url": "https://github.com/apollographql/skills/blob/main/skills/apollo-mcp-server/SKILL.md"
+      }
+    },
+    {
+      "id": "apollographql/skills/graphql-operations",
+      "name": "graphql-operations",
+      "description": "Guide for writing GraphQL operations (queries, mutations, fragments) following best practices. Use this skill when: (1) writing GraphQL queries or mutations, (2) organizing operations with fragments, (3) optimizing data fetching patterns, (4) setting up type generation or linting, (5) reviewing operations for efficiency.",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/apollographql/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "aafc8944365a766d48cc519ce8b8575f93f953a4",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/apollographql/skills/blob/aafc8944365a766d48cc519ce8b8575f93f953a4/skills/graphql-operations/SKILL.md"
+      },
+      "quality": {
+        "score": 84,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/apollographql/skills/graphql-operations/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/apollographql/skills/tree/main/skills/graphql-operations",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/apollographql/skills/tree/main/skills/graphql-operations",
+        "publisher_setup_url": "https://github.com/apollographql/skills/blob/main/skills/graphql-operations/SKILL.md"
+      }
+    },
+    {
+      "id": "apollographql/skills/skill-creator",
+      "name": "skill-creator",
+      "description": "Guide for creating effective skills for Apollo GraphQL and GraphQL development. Use this skill when: (1) users want to create a new skill, (2) users want to update an existing skill, (3) users ask about skill structure or best practices, (4) users need help writing SKILL.md files.",
+      "category": "ai-agents-llm",
+      "license": "MIT",
+      "license_url": "https://github.com/apollographql/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "aafc8944365a766d48cc519ce8b8575f93f953a4",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/apollographql/skills/blob/aafc8944365a766d48cc519ce8b8575f93f953a4/skills/skill-creator/SKILL.md"
+      },
+      "quality": {
+        "score": 84,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/apollographql/skills/skill-creator/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/apollographql/skills/tree/main/skills/skill-creator",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/apollographql/skills/tree/main/skills/skill-creator",
+        "publisher_setup_url": "https://github.com/apollographql/skills/blob/main/skills/skill-creator/SKILL.md"
+      }
+    }
+  ]
+}

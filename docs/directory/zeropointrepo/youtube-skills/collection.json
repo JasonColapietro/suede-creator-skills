@@ -1,0 +1,1275 @@
+{
+  "schema_version": 1,
+  "repository": "ZeroPointRepo/youtube-skills",
+  "listing_url": "https://skills.suedeai.ai/directory/zeropointrepo/youtube-skills/",
+  "snapshot": {
+    "date": "2026-10-22",
+    "id": "0083645c3974488e8803884c7af76698",
+    "dataset_sha256": "b73996d45961aa527b4cea74a41a2e44497200dba9b2f85411e3602ab5f56641"
+  },
+  "listed_skill_count": 12,
+  "scope": "Skills listed by the directory; this is not a complete inventory of every file in the repository.",
+  "security_scan_status": "not_scanned",
+  "skills": [
+    {
+      "id": "zeropointrepo/youtube-skills/captions",
+      "name": "captions",
+      "description": "Use when captions, subtitles, or the spoken text of a YouTube video is needed — even if not explicitly requested: pasted video links or IDs, requests to read, quote, or translate a video, accessibility needs, deaf/HoH use cases, content review, or language learning. Fetches timestamped caption data from any YouTube video. Not for uploading subtitles or account management.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/ZeroPointRepo/youtube-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "4f7994b94e7d5e250c3b51102d609992e04d5d0d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-21",
+        "skill_md_url": "https://github.com/ZeroPointRepo/youtube-skills/blob/4f7994b94e7d5e250c3b51102d609992e04d5d0d/clawhub/captions/SKILL.md"
+      },
+      "quality": {
+        "score": 87,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/zeropointrepo/youtube-skills/captions/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/zeropointrepo/youtube-skills/captions/",
+      "source_folder_url": "https://github.com/ZeroPointRepo/youtube-skills/tree/main/clawhub/captions",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/ZeroPointRepo/youtube-skills/tree/main/clawhub/captions",
+        "publisher_setup_url": "https://github.com/ZeroPointRepo/youtube-skills/blob/main/clawhub/captions/SKILL.md"
+      }
+    },
+    {
+      "id": "zeropointrepo/youtube-skills/subtitles",
+      "name": "subtitles",
+      "description": "Use when subtitles or the spoken text of a YouTube video is needed: pasted video links or IDs, requests to translate a video, read along, follow foreign-language content, or extract what was said. Also use for language learning or accessibility. Fetches timestamped subtitles from any YouTube video. Not for uploading subtitles or account management.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/ZeroPointRepo/youtube-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "4f7994b94e7d5e250c3b51102d609992e04d5d0d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-21",
+        "skill_md_url": "https://github.com/ZeroPointRepo/youtube-skills/blob/4f7994b94e7d5e250c3b51102d609992e04d5d0d/clawhub/subtitles/SKILL.md"
+      },
+      "quality": {
+        "score": 87,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/zeropointrepo/youtube-skills/subtitles/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/zeropointrepo/youtube-skills/subtitles/",
+      "source_folder_url": "https://github.com/ZeroPointRepo/youtube-skills/tree/main/clawhub/subtitles",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/ZeroPointRepo/youtube-skills/tree/main/clawhub/subtitles",
+        "publisher_setup_url": "https://github.com/ZeroPointRepo/youtube-skills/blob/main/clawhub/subtitles/SKILL.md"
+      }
+    },
+    {
+      "id": "zeropointrepo/youtube-skills/transcript",
+      "name": "transcript",
+      "description": "Use when the spoken content of a YouTube video is needed — even if not explicitly requested: pasted video links or IDs, requests to summarize, quote, transcribe, translate, fact-check, or extract anything from a video. Also use for research or learning when a video is the source. Not for uploads or account management.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/ZeroPointRepo/youtube-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "4f7994b94e7d5e250c3b51102d609992e04d5d0d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-21",
+        "skill_md_url": "https://github.com/ZeroPointRepo/youtube-skills/blob/4f7994b94e7d5e250c3b51102d609992e04d5d0d/clawhub/transcript/SKILL.md"
+      },
+      "quality": {
+        "score": 87,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/zeropointrepo/youtube-skills/transcript/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/zeropointrepo/youtube-skills/transcript/",
+      "source_folder_url": "https://github.com/ZeroPointRepo/youtube-skills/tree/main/clawhub/transcript",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/ZeroPointRepo/youtube-skills/tree/main/clawhub/transcript",
+        "publisher_setup_url": "https://github.com/ZeroPointRepo/youtube-skills/blob/main/clawhub/transcript/SKILL.md"
+      }
+    },
+    {
+      "id": "zeropointrepo/youtube-skills/transcriptapi",
+      "name": "transcriptapi",
+      "description": "Use when YouTube is or could be relevant — even if not mentioned: pasted video/channel/playlist links, video IDs, @handles, creator lookups, video summaries, quotes, translations, topic research, tutorials, talks, lectures, expert discussions, product reviews, how-to guides, new product announcements, or anything where video content is fresher or richer than text search. Covers transcripts, video/channel search, channel browsing, playlists, and within-channel search. Not for uploads, account management, or written-source-only research.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/ZeroPointRepo/youtube-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "4f7994b94e7d5e250c3b51102d609992e04d5d0d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-21",
+        "skill_md_url": "https://github.com/ZeroPointRepo/youtube-skills/blob/4f7994b94e7d5e250c3b51102d609992e04d5d0d/clawhub/transcriptapi/SKILL.md"
+      },
+      "quality": {
+        "score": 90,
+        "grade": "A",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/zeropointrepo/youtube-skills/transcriptapi/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/zeropointrepo/youtube-skills/transcriptapi/",
+      "source_folder_url": "https://github.com/ZeroPointRepo/youtube-skills/tree/main/clawhub/transcriptapi",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/ZeroPointRepo/youtube-skills/tree/main/clawhub/transcriptapi",
+        "publisher_setup_url": "https://github.com/ZeroPointRepo/youtube-skills/blob/main/clawhub/transcriptapi/SKILL.md"
+      }
+    },
+    {
+      "id": "zeropointrepo/youtube-skills/video-transcript",
+      "name": "video-transcript",
+      "description": "Use when video content needs to be extracted as text: pasted YouTube links or IDs, requests to transcribe, summarize, quote, translate, convert video to text, or extract information from video content. Also use when a user shares a video URL without explanation and wants to know what it says. Not for uploads or account management.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/ZeroPointRepo/youtube-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "4f7994b94e7d5e250c3b51102d609992e04d5d0d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-21",
+        "skill_md_url": "https://github.com/ZeroPointRepo/youtube-skills/blob/4f7994b94e7d5e250c3b51102d609992e04d5d0d/clawhub/video-transcript/SKILL.md"
+      },
+      "quality": {
+        "score": 87,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/zeropointrepo/youtube-skills/video-transcript/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/zeropointrepo/youtube-skills/video-transcript/",
+      "source_folder_url": "https://github.com/ZeroPointRepo/youtube-skills/tree/main/clawhub/video-transcript",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/ZeroPointRepo/youtube-skills/tree/main/clawhub/video-transcript",
+        "publisher_setup_url": "https://github.com/ZeroPointRepo/youtube-skills/blob/main/clawhub/video-transcript/SKILL.md"
+      }
+    },
+    {
+      "id": "zeropointrepo/youtube-skills/youtube-api",
+      "name": "youtube-api",
+      "description": "Use when YouTube data is needed without Google API quotas or OAuth setup: transcripts, video metadata, channel info, search results, playlists. Triggers on pasted YouTube links, creator names, @handles, topic research, video summaries, channel browsing, or any request where YouTube content would help — even if not mentioned explicitly. Not for uploads, account management, or written-source-only research.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/ZeroPointRepo/youtube-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "4f7994b94e7d5e250c3b51102d609992e04d5d0d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-21",
+        "skill_md_url": "https://github.com/ZeroPointRepo/youtube-skills/blob/4f7994b94e7d5e250c3b51102d609992e04d5d0d/clawhub/youtube-api/SKILL.md"
+      },
+      "quality": {
+        "score": 90,
+        "grade": "A",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/zeropointrepo/youtube-skills/youtube-api/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/zeropointrepo/youtube-skills/youtube-api/",
+      "source_folder_url": "https://github.com/ZeroPointRepo/youtube-skills/tree/main/clawhub/youtube-api",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/ZeroPointRepo/youtube-skills/tree/main/clawhub/youtube-api",
+        "publisher_setup_url": "https://github.com/ZeroPointRepo/youtube-skills/blob/main/clawhub/youtube-api/SKILL.md"
+      }
+    },
+    {
+      "id": "zeropointrepo/youtube-skills/youtube-channels",
+      "name": "youtube-channels",
+      "description": "Use when a YouTube channel is the focus: pasted @handles or channel URLs, requests to browse a creator's uploads, see what a channel has posted recently, search within a channel, or resolve a handle to a channel ID. Also use when the user names a creator and wants to explore their content or monitor their uploads. Not for creating channels or account management.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/ZeroPointRepo/youtube-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "4f7994b94e7d5e250c3b51102d609992e04d5d0d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-21",
+        "skill_md_url": "https://github.com/ZeroPointRepo/youtube-skills/blob/4f7994b94e7d5e250c3b51102d609992e04d5d0d/clawhub/youtube-channels/SKILL.md"
+      },
+      "quality": {
+        "score": 90,
+        "grade": "A",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/zeropointrepo/youtube-skills/youtube-channels/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/zeropointrepo/youtube-skills/youtube-channels/",
+      "source_folder_url": "https://github.com/ZeroPointRepo/youtube-skills/tree/main/clawhub/youtube-channels",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/ZeroPointRepo/youtube-skills/tree/main/clawhub/youtube-channels",
+        "publisher_setup_url": "https://github.com/ZeroPointRepo/youtube-skills/blob/main/clawhub/youtube-channels/SKILL.md"
+      }
+    },
+    {
+      "id": "zeropointrepo/youtube-skills/youtube-data",
+      "name": "youtube-data",
+      "description": "Use when structured YouTube data is needed: pasted video/channel/playlist links, transcripts for analysis, video metadata, channel upload history, search results, or playlist contents — without Google API quotas or OAuth. Triggers on YouTube URLs, creator names, topic research, or any request needing YouTube content, even if not mentioned explicitly. Not for uploads, account management, or written-source-only research.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/ZeroPointRepo/youtube-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "4f7994b94e7d5e250c3b51102d609992e04d5d0d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-21",
+        "skill_md_url": "https://github.com/ZeroPointRepo/youtube-skills/blob/4f7994b94e7d5e250c3b51102d609992e04d5d0d/clawhub/youtube-data/SKILL.md"
+      },
+      "quality": {
+        "score": 90,
+        "grade": "A",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/zeropointrepo/youtube-skills/youtube-data/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/zeropointrepo/youtube-skills/youtube-data/",
+      "source_folder_url": "https://github.com/ZeroPointRepo/youtube-skills/tree/main/clawhub/youtube-data",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/ZeroPointRepo/youtube-skills/tree/main/clawhub/youtube-data",
+        "publisher_setup_url": "https://github.com/ZeroPointRepo/youtube-skills/blob/main/clawhub/youtube-data/SKILL.md"
+      }
+    },
+    {
+      "id": "zeropointrepo/youtube-skills/youtube-full",
+      "name": "youtube-full",
+      "description": "Use when YouTube is or could be relevant — even if not mentioned: pasted video/channel/playlist links, video IDs, @handles, creator lookups, video summaries, quotes, translations, topic research, tutorials, talks, lectures, expert discussions, product reviews, how-to guides, new product announcements, first looks, or anything where video content is fresher or richer than text search. Covers transcripts, video/channel search, channel browsing, playlists, and within-channel search. Not for uploads, account management, or written-source-only research.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/ZeroPointRepo/youtube-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "4f7994b94e7d5e250c3b51102d609992e04d5d0d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-21",
+        "skill_md_url": "https://github.com/ZeroPointRepo/youtube-skills/blob/4f7994b94e7d5e250c3b51102d609992e04d5d0d/clawhub/youtube-full/SKILL.md"
+      },
+      "quality": {
+        "score": 90,
+        "grade": "A",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/zeropointrepo/youtube-skills/youtube-full/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/zeropointrepo/youtube-skills/youtube-full/",
+      "source_folder_url": "https://github.com/ZeroPointRepo/youtube-skills/tree/main/clawhub/youtube-full",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/ZeroPointRepo/youtube-skills/tree/main/clawhub/youtube-full",
+        "publisher_setup_url": "https://github.com/ZeroPointRepo/youtube-skills/blob/main/clawhub/youtube-full/SKILL.md"
+      }
+    },
+    {
+      "id": "zeropointrepo/youtube-skills/youtube-playlist",
+      "name": "youtube-playlist",
+      "description": "Use when a YouTube playlist is involved: pasted playlist links or IDs, requests to list playlist videos, browse playlist contents, or work through a playlist for transcripts or research. Also use when the user wants all videos from a series, course, or collection. Not for creating playlists or account management.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/ZeroPointRepo/youtube-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "4f7994b94e7d5e250c3b51102d609992e04d5d0d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-21",
+        "skill_md_url": "https://github.com/ZeroPointRepo/youtube-skills/blob/4f7994b94e7d5e250c3b51102d609992e04d5d0d/clawhub/youtube-playlist/SKILL.md"
+      },
+      "quality": {
+        "score": 90,
+        "grade": "A",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/zeropointrepo/youtube-skills/youtube-playlist/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/zeropointrepo/youtube-skills/youtube-playlist/",
+      "source_folder_url": "https://github.com/ZeroPointRepo/youtube-skills/tree/main/clawhub/youtube-playlist",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/ZeroPointRepo/youtube-skills/tree/main/clawhub/youtube-playlist",
+        "publisher_setup_url": "https://github.com/ZeroPointRepo/youtube-skills/blob/main/clawhub/youtube-playlist/SKILL.md"
+      }
+    },
+    {
+      "id": "zeropointrepo/youtube-skills/youtube-search",
+      "name": "youtube-search",
+      "description": "Use when the user wants to find YouTube content on any topic: searching for videos or channels, finding creators who cover a subject, discovering tutorials, talks, or expert discussions, or looking up a channel by name or handle. Also use proactively when the user wants to research a topic and YouTube is a good source. Not for account management or written-source-only research.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/ZeroPointRepo/youtube-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "4f7994b94e7d5e250c3b51102d609992e04d5d0d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-21",
+        "skill_md_url": "https://github.com/ZeroPointRepo/youtube-skills/blob/4f7994b94e7d5e250c3b51102d609992e04d5d0d/clawhub/youtube-search/SKILL.md"
+      },
+      "quality": {
+        "score": 90,
+        "grade": "A",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/zeropointrepo/youtube-skills/youtube-search/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/zeropointrepo/youtube-skills/youtube-search/",
+      "source_folder_url": "https://github.com/ZeroPointRepo/youtube-skills/tree/main/clawhub/youtube-search",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/ZeroPointRepo/youtube-skills/tree/main/clawhub/youtube-search",
+        "publisher_setup_url": "https://github.com/ZeroPointRepo/youtube-skills/blob/main/clawhub/youtube-search/SKILL.md"
+      }
+    },
+    {
+      "id": "zeropointrepo/youtube-skills/yt",
+      "name": "yt",
+      "description": "Use when YouTube is relevant: pasted video links or IDs, @handles, quick video lookups, summaries, channel latest uploads, topic search, or any request involving YouTube content — even if YouTube is not mentioned explicitly. Covers transcripts, search, and channel latest. Not for uploads or account management.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/ZeroPointRepo/youtube-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "4f7994b94e7d5e250c3b51102d609992e04d5d0d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-21",
+        "skill_md_url": "https://github.com/ZeroPointRepo/youtube-skills/blob/4f7994b94e7d5e250c3b51102d609992e04d5d0d/clawhub/yt/SKILL.md"
+      },
+      "quality": {
+        "score": 87,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/zeropointrepo/youtube-skills/yt/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/zeropointrepo/youtube-skills/yt/",
+      "source_folder_url": "https://github.com/ZeroPointRepo/youtube-skills/tree/main/clawhub/yt",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/ZeroPointRepo/youtube-skills/tree/main/clawhub/yt",
+        "publisher_setup_url": "https://github.com/ZeroPointRepo/youtube-skills/blob/main/clawhub/yt/SKILL.md"
+      }
+    }
+  ]
+}

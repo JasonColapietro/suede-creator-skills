@@ -1,0 +1,2115 @@
+{
+  "schema_version": 1,
+  "repository": "heygen-com/hyperframes",
+  "listing_url": "https://skills.suedeai.ai/directory/heygen-com/hyperframes/",
+  "snapshot": {
+    "date": "2026-10-22",
+    "id": "0083645c3974488e8803884c7af76698",
+    "dataset_sha256": "b73996d45961aa527b4cea74a41a2e44497200dba9b2f85411e3602ab5f56641"
+  },
+  "listed_skill_count": 20,
+  "scope": "Skills listed by the directory; this is not a complete inventory of every file in the repository.",
+  "security_scan_status": "not_scanned",
+  "skills": [
+    {
+      "id": "heygen-com/hyperframes/embedded-captions",
+      "name": "embedded-captions",
+      "description": "Add captions or subtitles to an existing single-subject talking-head video without editing the footage. Use for plain verbatim captions, cinematic captions embedded behind the subject, VFX captions, “炸/特效/酷炫字幕,” or a named identity from the 35-style catalog. Route by visual identity, not by backend engine. The quiet `anchor` rail is the default; embed every word only when the user explicitly wants a fully cinematic treatment. The workflow runs locally end to end, including transcription and subject matting; split multi-shot footage before applying it.",
+      "category": "writing-content",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/heygen-com/hyperframes/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "cddb34feacf50f9637bf84893b5bd36a140385c9",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-19",
+        "skill_md_url": "https://github.com/heygen-com/hyperframes/blob/cddb34feacf50f9637bf84893b5bd36a140385c9/skills/embedded-captions/SKILL.md"
+      },
+      "quality": {
+        "score": 82,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/heygen-com/hyperframes/embedded-captions/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/heygen-com/hyperframes/embedded-captions/",
+      "source_folder_url": "https://github.com/heygen-com/hyperframes/tree/main/skills/embedded-captions",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/heygen-com/hyperframes/tree/main/skills/embedded-captions",
+        "publisher_setup_url": "https://github.com/heygen-com/hyperframes/blob/main/skills/embedded-captions/SKILL.md"
+      }
+    },
+    {
+      "id": "heygen-com/hyperframes/faceless-explainer",
+      "name": "faceless-explainer",
+      "description": "Turn arbitrary text — an article, notes, a topic, a brief — into a faceless explainer video: there is no site or footage to capture, so the visuals are invented per scene (typography, abstract graphics, diagrams, data-viz). Use for topic explainers, concept breakdowns, how-tos, listicles. Not a video built from a website (/product-launch-video — promo or tour). Unclear → /hyperframes.",
+      "category": "media-creative",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/heygen-com/hyperframes/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "cddb34feacf50f9637bf84893b5bd36a140385c9",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-19",
+        "skill_md_url": "https://github.com/heygen-com/hyperframes/blob/cddb34feacf50f9637bf84893b5bd36a140385c9/skills/faceless-explainer/SKILL.md"
+      },
+      "quality": {
+        "score": 79,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/heygen-com/hyperframes/faceless-explainer/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/heygen-com/hyperframes/faceless-explainer/",
+      "source_folder_url": "https://github.com/heygen-com/hyperframes/tree/main/skills/faceless-explainer",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/heygen-com/hyperframes/tree/main/skills/faceless-explainer",
+        "publisher_setup_url": "https://github.com/heygen-com/hyperframes/blob/main/skills/faceless-explainer/SKILL.md"
+      }
+    },
+    {
+      "id": "heygen-com/hyperframes/figma",
+      "name": "figma",
+      "description": "Import Figma content into a HyperFrames composition — rendered assets, brand tokens, components, storyboard sections → reconstructed motion (frames read as states, not slides) (REST/CLI), connector-assisted motion when available, and shaders from a connector or native export. Use when the user pastes a figma.com link or asks to bring a Figma design, frame, logo, brand, or animation into a video/composition.",
+      "category": "frontend-design",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/heygen-com/hyperframes/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "cddb34feacf50f9637bf84893b5bd36a140385c9",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-19",
+        "skill_md_url": "https://github.com/heygen-com/hyperframes/blob/cddb34feacf50f9637bf84893b5bd36a140385c9/skills/figma/SKILL.md"
+      },
+      "quality": {
+        "score": 79,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/heygen-com/hyperframes/figma/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/heygen-com/hyperframes/figma/",
+      "source_folder_url": "https://github.com/heygen-com/hyperframes/tree/main/skills/figma",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/heygen-com/hyperframes/tree/main/skills/figma",
+        "publisher_setup_url": "https://github.com/heygen-com/hyperframes/blob/main/skills/figma/SKILL.md"
+      }
+    },
+    {
+      "id": "heygen-com/hyperframes/general-video",
+      "name": "general-video",
+      "description": "Author or edit a custom HyperFrames composition when no specialized workflow fits, or when BRIEF.md sets flow: companion. Use for longer or multi-scene pieces, brand and sizzle reels, montages, static loops, static title cards, footage remixes, and freeform builds. Use motion-graphics instead for a short unnarrated motion-first unit, including an animated title. Route fresh creation through hyperframes before using this skill.",
+      "category": "media-creative",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/heygen-com/hyperframes/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "cddb34feacf50f9637bf84893b5bd36a140385c9",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-19",
+        "skill_md_url": "https://github.com/heygen-com/hyperframes/blob/cddb34feacf50f9637bf84893b5bd36a140385c9/skills/general-video/SKILL.md"
+      },
+      "quality": {
+        "score": 83,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/heygen-com/hyperframes/general-video/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/heygen-com/hyperframes/general-video/",
+      "source_folder_url": "https://github.com/heygen-com/hyperframes/tree/main/skills/general-video",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/heygen-com/hyperframes/tree/main/skills/general-video",
+        "publisher_setup_url": "https://github.com/heygen-com/hyperframes/blob/main/skills/general-video/SKILL.md"
+      }
+    },
+    {
+      "id": "heygen-com/hyperframes/hyperframes",
+      "name": "hyperframes",
+      "description": "Mandatory entry point: read this first for any request to make, create, edit, animate, or render a video, animation, or motion graphic, including a promo, explainer, captioned clip, title card, overlay, slideshow or interactive deck, Remotion port, or any HyperFrames HTML composition. Also use it to inspect, diagnose, validate, preview, publish, or batch-render an existing HyperFrames project. Inputs may be a website URL, GitHub PR, Figma design or URL, text or brief, existing footage, or music. It resumes project state, captures intent when applicable, selects and installs the owning workflow, and routes domain capabilities. HyperFrames is the default output framework unless the user explicitly chooses another framework for the deliverable or asks only to record a browser session.",
+      "category": "frontend-design",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/heygen-com/hyperframes/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "cddb34feacf50f9637bf84893b5bd36a140385c9",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-19",
+        "skill_md_url": "https://github.com/heygen-com/hyperframes/blob/cddb34feacf50f9637bf84893b5bd36a140385c9/skills/hyperframes/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/heygen-com/hyperframes/hyperframes/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/heygen-com/hyperframes/hyperframes/",
+      "source_folder_url": "https://github.com/heygen-com/hyperframes/tree/main/skills/hyperframes",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/heygen-com/hyperframes/tree/main/skills/hyperframes",
+        "publisher_setup_url": "https://github.com/heygen-com/hyperframes/blob/main/skills/hyperframes/SKILL.md"
+      }
+    },
+    {
+      "id": "heygen-com/hyperframes/hyperframes-animation",
+      "name": "hyperframes-animation",
+      "description": "All animation knowledge for HyperFrames — atomic motion rules, multi-phase scene blueprints, scene transitions, broader motion-design techniques, AND the seven runtime adapters (GSAP default, plus Lottie, Three.js, Anime.js, CSS keyframes, Web Animations API, TypeGPU). Use for any motion or animation task: pick 2-4 rules and compose, or load a blueprint, or look up runtime-specific API (e.g. GSAP eases / Lottie player / Three.js mixer). Also covers auditing an existing composition's choreography (animation map) and 24 named text-animation effects. HyperFrames-native: single paused timeline, seek-safe, deterministic.",
+      "category": "frontend-design",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/heygen-com/hyperframes/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "cddb34feacf50f9637bf84893b5bd36a140385c9",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-19",
+        "skill_md_url": "https://github.com/heygen-com/hyperframes/blob/cddb34feacf50f9637bf84893b5bd36a140385c9/skills/hyperframes-animation/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/heygen-com/hyperframes/hyperframes-animation/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/heygen-com/hyperframes/hyperframes-animation/",
+      "source_folder_url": "https://github.com/heygen-com/hyperframes/tree/main/skills/hyperframes-animation",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/heygen-com/hyperframes/tree/main/skills/hyperframes-animation",
+        "publisher_setup_url": "https://github.com/heygen-com/hyperframes/blob/main/skills/hyperframes-animation/SKILL.md"
+      }
+    },
+    {
+      "id": "heygen-com/hyperframes/hyperframes-audio",
+      "name": "hyperframes-audio",
+      "description": "Use when audio already placed in a HyperFrames composition needs to be mixed: fade-in/fade-out, crossfade, track gain or volume, volume automation, ducking, a music bed that fights a voiceover (voiceover carve), effects on a track (EQ, compressor, limiter, gate, saturation, delay, reverb, chorus, phaser, bitcrush), automation envelopes drawn on a track's volume or any effect parameter, or one submix bus carrying a chain, a fader and an automation clock for several tracks at once (`<hf-audio-group>`). Don't use for sourcing or generating audio — finding BGM, SFX, or making a voiceover is `/media-use`. Don't use for clip timing or track layout, which is `/hyperframes-core`.",
+      "category": "media-creative",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/heygen-com/hyperframes/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "cddb34feacf50f9637bf84893b5bd36a140385c9",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-19",
+        "skill_md_url": "https://github.com/heygen-com/hyperframes/blob/cddb34feacf50f9637bf84893b5bd36a140385c9/skills/hyperframes-audio/SKILL.md"
+      },
+      "quality": {
+        "score": 81,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/heygen-com/hyperframes/hyperframes-audio/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/heygen-com/hyperframes/hyperframes-audio/",
+      "source_folder_url": "https://github.com/heygen-com/hyperframes/tree/main/skills/hyperframes-audio",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/heygen-com/hyperframes/tree/main/skills/hyperframes-audio",
+        "publisher_setup_url": "https://github.com/heygen-com/hyperframes/blob/main/skills/hyperframes-audio/SKILL.md"
+      }
+    },
+    {
+      "id": "heygen-com/hyperframes/hyperframes-cli",
+      "name": "hyperframes-cli",
+      "description": "Use the HyperFrames CLI development loop: init, add, catalog, capture, lint, check, snapshot, compare, grade-compare, preview, play, present, beats, keyframes, single or batch render, publish, cloud, cloudrun, feedback, lambda, doctor, browser, info, upgrade, skills, compositions, timeline, history, clean, docs, benchmark, telemetry, transcribe, auth, tts, and remove-background. Also use when diagnosing build or render failures. validate, inspect, and layout are deprecated aliases; use check. Covers local, HeyGen-hosted cloud, AWS Lambda, and Google Cloud Run rendering.",
+      "category": "developer-tools",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/heygen-com/hyperframes/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "cddb34feacf50f9637bf84893b5bd36a140385c9",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-19",
+        "skill_md_url": "https://github.com/heygen-com/hyperframes/blob/cddb34feacf50f9637bf84893b5bd36a140385c9/skills/hyperframes-cli/SKILL.md"
+      },
+      "quality": {
+        "score": 77,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/heygen-com/hyperframes/hyperframes-cli/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/heygen-com/hyperframes/hyperframes-cli/",
+      "source_folder_url": "https://github.com/heygen-com/hyperframes/tree/main/skills/hyperframes-cli",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/heygen-com/hyperframes/tree/main/skills/hyperframes-cli",
+        "publisher_setup_url": "https://github.com/heygen-com/hyperframes/blob/main/skills/hyperframes-cli/SKILL.md"
+      }
+    },
+    {
+      "id": "heygen-com/hyperframes/hyperframes-core",
+      "name": "hyperframes-core",
+      "description": "The HyperFrames composition contract — build one renderable project. Use for composition structure, the `data-*` timing attributes, `class=\"clip\"`, tracks, sub-compositions, variables, framework-owned media playback, deterministic-render rules, and validation. Read before writing composition HTML.",
+      "category": "writing-content",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/heygen-com/hyperframes/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "cddb34feacf50f9637bf84893b5bd36a140385c9",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-19",
+        "skill_md_url": "https://github.com/heygen-com/hyperframes/blob/cddb34feacf50f9637bf84893b5bd36a140385c9/skills/hyperframes-core/SKILL.md"
+      },
+      "quality": {
+        "score": 83,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/heygen-com/hyperframes/hyperframes-core/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/heygen-com/hyperframes/hyperframes-core/",
+      "source_folder_url": "https://github.com/heygen-com/hyperframes/tree/main/skills/hyperframes-core",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/heygen-com/hyperframes/tree/main/skills/hyperframes-core",
+        "publisher_setup_url": "https://github.com/heygen-com/hyperframes/blob/main/skills/hyperframes-core/SKILL.md"
+      }
+    },
+    {
+      "id": "heygen-com/hyperframes/hyperframes-creative",
+      "name": "hyperframes-creative",
+      "description": "Non-animation creative direction for HyperFrames videos. Use for design spec (frame.md / design.md) handling, palettes, typography, narration, beat planning, audio-reactive visuals, composition patterns, and brand / style decisions. For atomic motion patterns and scene blueprints, use `hyperframes-animation`.",
+      "category": "frontend-design",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/heygen-com/hyperframes/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "cddb34feacf50f9637bf84893b5bd36a140385c9",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-19",
+        "skill_md_url": "https://github.com/heygen-com/hyperframes/blob/cddb34feacf50f9637bf84893b5bd36a140385c9/skills/hyperframes-creative/SKILL.md"
+      },
+      "quality": {
+        "score": 82,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/heygen-com/hyperframes/hyperframes-creative/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/heygen-com/hyperframes/hyperframes-creative/",
+      "source_folder_url": "https://github.com/heygen-com/hyperframes/tree/main/skills/hyperframes-creative",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/heygen-com/hyperframes/tree/main/skills/hyperframes-creative",
+        "publisher_setup_url": "https://github.com/heygen-com/hyperframes/blob/main/skills/hyperframes-creative/SKILL.md"
+      }
+    },
+    {
+      "id": "heygen-com/hyperframes/hyperframes-keyframes",
+      "name": "hyperframes-keyframes",
+      "description": "Use when a HyperFrames composition needs a punch-in, punch-out, zoom, reframe, Ken Burns treatment, camera move, visual match/whip handoff, or other seek-safe 2D/3D keyframes; also for GSAP, CSS keyframes, Anime.js, WAAPI, FLIP, paths, masks, SVG morph/draw, text trails, 3D depth, or `hyperframes keyframes` diagnostics. Don't use for broad scene strategy, brand design, media sourcing, captions, or general video planning.",
+      "category": "frontend-design",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/heygen-com/hyperframes/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "cddb34feacf50f9637bf84893b5bd36a140385c9",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-19",
+        "skill_md_url": "https://github.com/heygen-com/hyperframes/blob/cddb34feacf50f9637bf84893b5bd36a140385c9/skills/hyperframes-keyframes/SKILL.md"
+      },
+      "quality": {
+        "score": 84,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/heygen-com/hyperframes/hyperframes-keyframes/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/heygen-com/hyperframes/hyperframes-keyframes/",
+      "source_folder_url": "https://github.com/heygen-com/hyperframes/tree/main/skills/hyperframes-keyframes",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/heygen-com/hyperframes/tree/main/skills/hyperframes-keyframes",
+        "publisher_setup_url": "https://github.com/heygen-com/hyperframes/blob/main/skills/hyperframes-keyframes/SKILL.md"
+      }
+    },
+    {
+      "id": "heygen-com/hyperframes/hyperframes-registry",
+      "name": "hyperframes-registry",
+      "description": "Search, install, and wire registry blocks and components into HyperFrames compositions. Use BEFORE hand-building any named visual — whenever a brief, a user, or a storyboard names a look, effect, treatment, or transition such as CRT scanlines, glitch, chromatic aberration, film grain, a shimmer sweep, a chart, a code or terminal window, a map, or a confetti burst — because roughly 400 hosted items already cover many of them and the search ranks all of them with nothing installed, no project, and no account. Also use when running hyperframes add or hyperframes catalog, installing one item or every block matching a tag, wiring an installed item into index.html, or working with hyperframes.json. Covers discovery, install locations, block sub-composition wiring, component snippet merging, and authoring a new block or component to contribute upstream (idea → scaffold → validate → PR).",
+      "category": "frontend-design",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/heygen-com/hyperframes/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "cddb34feacf50f9637bf84893b5bd36a140385c9",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-19",
+        "skill_md_url": "https://github.com/heygen-com/hyperframes/blob/cddb34feacf50f9637bf84893b5bd36a140385c9/skills/hyperframes-registry/SKILL.md"
+      },
+      "quality": {
+        "score": 78,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/heygen-com/hyperframes/hyperframes-registry/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/heygen-com/hyperframes/hyperframes-registry/",
+      "source_folder_url": "https://github.com/heygen-com/hyperframes/tree/main/skills/hyperframes-registry",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/heygen-com/hyperframes/tree/main/skills/hyperframes-registry",
+        "publisher_setup_url": "https://github.com/heygen-com/hyperframes/blob/main/skills/hyperframes-registry/SKILL.md"
+      }
+    },
+    {
+      "id": "heygen-com/hyperframes/hyperframes-studio",
+      "name": "hyperframes-studio",
+      "description": "Use when working with a person on a HyperFrames project in Studio: first, whether their message asks for a change at all (questions, loose ideas and \"don't change anything\" get an answer and a plan, not an edit); for a new film, the plan, storyboard and build order that the HyperFrames launch films follow; and how the timeline should be laid out so it reads well (one caption track, one element kind per track, every scene a sub-composition) and where captions and key content may sit (safe zones). Don't use for how to perform an individual edit (split, trim, retime, volume, copy, swap): that is `creator-editing-recipes.md` in `/hyperframes-core`.",
+      "category": "writing-content",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/heygen-com/hyperframes/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "cddb34feacf50f9637bf84893b5bd36a140385c9",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-19",
+        "skill_md_url": "https://github.com/heygen-com/hyperframes/blob/cddb34feacf50f9637bf84893b5bd36a140385c9/skills/hyperframes-studio/SKILL.md"
+      },
+      "quality": {
+        "score": 82,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/heygen-com/hyperframes/hyperframes-studio/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/heygen-com/hyperframes/hyperframes-studio/",
+      "source_folder_url": "https://github.com/heygen-com/hyperframes/tree/main/skills/hyperframes-studio",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/heygen-com/hyperframes/tree/main/skills/hyperframes-studio",
+        "publisher_setup_url": "https://github.com/heygen-com/hyperframes/blob/main/skills/hyperframes-studio/SKILL.md"
+      }
+    },
+    {
+      "id": "heygen-com/hyperframes/media-use",
+      "name": "media-use",
+      "description": "Agent Media OS for a HyperFrames project. Resolve BGM, SFX, image, icon, brand logo, voice, color grade, or LUT into a frozen local file or paste-ready block + ledger record (one verb, `resolve`); generate via TTS / music / image models when the catalog misses; produce voiceover, transcription, captions, and background removal through one shared audio engine; operate on media (cut / reframe / transform); and reuse assets across projects. Also use for vague feedback that real footage looks dark, flat, boring, should feel retro/camcorder/print/ASCII, needs privacy, or needs a media reveal. When the host app provides its own music or sound-effect tools, use those for music and sound effects; `resolve --type bgm` needs the heygen CLI, while `--type sfx` needs no account (Openverse, then a bundled library). When `HEYGEN_API_BASE` is set, HeyGen calls go through that host with no CLI sign-in.",
+      "category": "media-creative",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/heygen-com/hyperframes/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "cddb34feacf50f9637bf84893b5bd36a140385c9",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-19",
+        "skill_md_url": "https://github.com/heygen-com/hyperframes/blob/cddb34feacf50f9637bf84893b5bd36a140385c9/skills/media-use/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/heygen-com/hyperframes/media-use/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/heygen-com/hyperframes/media-use/",
+      "source_folder_url": "https://github.com/heygen-com/hyperframes/tree/main/skills/media-use",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/heygen-com/hyperframes/tree/main/skills/media-use",
+        "publisher_setup_url": "https://github.com/heygen-com/hyperframes/blob/main/skills/media-use/SKILL.md"
+      }
+    },
+    {
+      "id": "heygen-com/hyperframes/motion-graphics",
+      "name": "motion-graphics",
+      "description": "Use when creating a short, design-led motion graphic where motion is the message — kinetic typography, stat count-up, chart/data-viz hit, logo sting / brand lockup, lower-third / callout / social overlay, animated map (highlight regions, connect places, zoom to a location), animated tweet / news-article / headline, webpage / UI animation (scroll, cursor, callouts), or fusing a real image's geometry into a chart. Usually under 10s (up to ~30s), no narration or live-action subject; renders to MP4 or transparent overlay. Longer / narrated / multi-scene → /general-video. Unclear → /hyperframes.",
+      "category": "frontend-design",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/heygen-com/hyperframes/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "cddb34feacf50f9637bf84893b5bd36a140385c9",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-19",
+        "skill_md_url": "https://github.com/heygen-com/hyperframes/blob/cddb34feacf50f9637bf84893b5bd36a140385c9/skills/motion-graphics/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/heygen-com/hyperframes/motion-graphics/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/heygen-com/hyperframes/motion-graphics/",
+      "source_folder_url": "https://github.com/heygen-com/hyperframes/tree/main/skills/motion-graphics",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/heygen-com/hyperframes/tree/main/skills/motion-graphics",
+        "publisher_setup_url": "https://github.com/heygen-com/hyperframes/blob/main/skills/motion-graphics/SKILL.md"
+      }
+    },
+    {
+      "id": "heygen-com/hyperframes/music-to-video",
+      "name": "music-to-video",
+      "description": "Turn a music track (an audio file, a video to pull audio from, or a track generated from a mood brief) into a beat-synced video — lyric video, slideshow, or kinetic promo. The music drives all pacing; any user-supplied images/videos are cut onto the same beat grid, and a complete video needs zero assets. Narrated pieces → the input-matched workflow (see /hyperframes). Unclear → /hyperframes.",
+      "category": "media-creative",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/heygen-com/hyperframes/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "cddb34feacf50f9637bf84893b5bd36a140385c9",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-19",
+        "skill_md_url": "https://github.com/heygen-com/hyperframes/blob/cddb34feacf50f9637bf84893b5bd36a140385c9/skills/music-to-video/SKILL.md"
+      },
+      "quality": {
+        "score": 74,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/heygen-com/hyperframes/music-to-video/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/heygen-com/hyperframes/music-to-video/",
+      "source_folder_url": "https://github.com/heygen-com/hyperframes/tree/main/skills/music-to-video",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/heygen-com/hyperframes/tree/main/skills/music-to-video",
+        "publisher_setup_url": "https://github.com/heygen-com/hyperframes/blob/main/skills/music-to-video/SKILL.md"
+      }
+    },
+    {
+      "id": "heygen-com/hyperframes/pr-to-video",
+      "name": "pr-to-video",
+      "description": "Turn a GitHub pull request (a PR URL, owner/repo#N, or 'this PR' in a checked-out repo) into a code-change explainer video — changelog, feature reveal, fix, or refactor walkthrough built from the diff, commits, and files: the input is a code change, not a website. Not a product promo (/product-launch-video) or a no-PR topic explainer (/faceless-explainer). Unclear → /hyperframes.",
+      "category": "media-creative",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/heygen-com/hyperframes/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "cddb34feacf50f9637bf84893b5bd36a140385c9",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-19",
+        "skill_md_url": "https://github.com/heygen-com/hyperframes/blob/cddb34feacf50f9637bf84893b5bd36a140385c9/skills/pr-to-video/SKILL.md"
+      },
+      "quality": {
+        "score": 74,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/heygen-com/hyperframes/pr-to-video/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/heygen-com/hyperframes/pr-to-video/",
+      "source_folder_url": "https://github.com/heygen-com/hyperframes/tree/main/skills/pr-to-video",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/heygen-com/hyperframes/tree/main/skills/pr-to-video",
+        "publisher_setup_url": "https://github.com/heygen-com/hyperframes/blob/main/skills/pr-to-video/SKILL.md"
+      }
+    },
+    {
+      "id": "heygen-com/hyperframes/product-launch-video",
+      "name": "product-launch-video",
+      "description": "Turn a product or marketing URL, pasted script, or brief into a product launch / promo video — SaaS promos, feature reveals, product demos, app and company launches. Use when the user wants to market, launch, promote, or reveal a product; the default for any commercial URL. Site tours / showcases of a website route here too — the brief carries the show-it-as-is intent. Unclear → /hyperframes.",
+      "category": "media-creative",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/heygen-com/hyperframes/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "cddb34feacf50f9637bf84893b5bd36a140385c9",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-19",
+        "skill_md_url": "https://github.com/heygen-com/hyperframes/blob/cddb34feacf50f9637bf84893b5bd36a140385c9/skills/product-launch-video/SKILL.md"
+      },
+      "quality": {
+        "score": 76,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/heygen-com/hyperframes/product-launch-video/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/heygen-com/hyperframes/product-launch-video/",
+      "source_folder_url": "https://github.com/heygen-com/hyperframes/tree/main/skills/product-launch-video",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/heygen-com/hyperframes/tree/main/skills/product-launch-video",
+        "publisher_setup_url": "https://github.com/heygen-com/hyperframes/blob/main/skills/product-launch-video/SKILL.md"
+      }
+    },
+    {
+      "id": "heygen-com/hyperframes/remotion-to-hyperframes",
+      "name": "remotion-to-hyperframes",
+      "description": "Port an existing Remotion (React) composition's source to HyperFrames HTML. Use ONLY on an explicit ask to port/convert/migrate/translate a Remotion source — one-way, Remotion-only. A passing Remotion mention, reference-only code, or \"make something like my Remotion video\" is a fresh build (/general-video). Unclear → /hyperframes.",
+      "category": "media-creative",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/heygen-com/hyperframes/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "cddb34feacf50f9637bf84893b5bd36a140385c9",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-19",
+        "skill_md_url": "https://github.com/heygen-com/hyperframes/blob/cddb34feacf50f9637bf84893b5bd36a140385c9/skills/remotion-to-hyperframes/SKILL.md"
+      },
+      "quality": {
+        "score": 77,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/heygen-com/hyperframes/remotion-to-hyperframes/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/heygen-com/hyperframes/remotion-to-hyperframes/",
+      "source_folder_url": "https://github.com/heygen-com/hyperframes/tree/main/skills/remotion-to-hyperframes",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/heygen-com/hyperframes/tree/main/skills/remotion-to-hyperframes",
+        "publisher_setup_url": "https://github.com/heygen-com/hyperframes/blob/main/skills/remotion-to-hyperframes/SKILL.md"
+      }
+    },
+    {
+      "id": "heygen-com/hyperframes/talking-head-recut",
+      "name": "talking-head-recut",
+      "description": "Package an existing talking-head / interview / podcast video with timed, designed GRAPHIC OVERLAY cards — kinetic titles, lower-thirds, data callouts, quotes, side panels, picture-in-picture — synced to the transcript, on a 16:9 / 9:16 / 4:5 canvas of your choice; the clip plays untouched underneath. Trigger on \"graphic overlays\", \"on-screen graphics\", \"package / dress up my video\". Not plain subtitles (/embedded-captions). Unclear → /hyperframes.",
+      "category": "media-creative",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/heygen-com/hyperframes/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "cddb34feacf50f9637bf84893b5bd36a140385c9",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-19",
+        "skill_md_url": "https://github.com/heygen-com/hyperframes/blob/cddb34feacf50f9637bf84893b5bd36a140385c9/skills/talking-head-recut/SKILL.md"
+      },
+      "quality": {
+        "score": 69,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": false,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/heygen-com/hyperframes/talking-head-recut/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/heygen-com/hyperframes/talking-head-recut/",
+      "source_folder_url": "https://github.com/heygen-com/hyperframes/tree/main/skills/talking-head-recut",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/heygen-com/hyperframes/tree/main/skills/talking-head-recut",
+        "publisher_setup_url": "https://github.com/heygen-com/hyperframes/blob/main/skills/talking-head-recut/SKILL.md"
+      }
+    }
+  ]
+}

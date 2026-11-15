@@ -1,0 +1,1275 @@
+{
+  "schema_version": 1,
+  "repository": "Orkas-AI/Orkas-VideoStudio",
+  "listing_url": "https://skills.suedeai.ai/directory/orkas-ai/orkas-videostudio/",
+  "snapshot": {
+    "date": "2026-10-22",
+    "id": "0083645c3974488e8803884c7af76698",
+    "dataset_sha256": "b73996d45961aa527b4cea74a41a2e44497200dba9b2f85411e3602ab5f56641"
+  },
+  "listed_skill_count": 12,
+  "scope": "Skills listed by the directory; this is not a complete inventory of every file in the repository.",
+  "security_scan_status": "not_scanned",
+  "skills": [
+    {
+      "id": "orkas-ai/orkas-videostudio/gate-control",
+      "name": "gate-control",
+      "description": "Canonical VideoStudio review authorization and state-transition policy. Use after any Gate B/C/Preview/D decision, post-gate revision, resumed approval, or exhausted visual-QA result across COMPOSE/AUTO/GENERATE/EDIT; maps explicit user authority and durable artifact state to one next action with `ovs gate transition`. Do not use for ordinary planning or craft decisions before a gate exists.",
+      "category": "media-creative",
+      "license": "MIT",
+      "license_url": "https://github.com/Orkas-AI/Orkas-VideoStudio/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "8a2b51af787830e722f2565b3e13d479ffed5c17",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/Orkas-AI/Orkas-VideoStudio/blob/8a2b51af787830e722f2565b3e13d479ffed5c17/packages/skills/gate-control/SKILL.md"
+      },
+      "quality": {
+        "score": 87,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/orkas-ai/orkas-videostudio/gate-control/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/orkas-ai/orkas-videostudio/gate-control/",
+      "source_folder_url": "https://github.com/Orkas-AI/Orkas-VideoStudio/tree/main/packages/skills/gate-control",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/Orkas-AI/Orkas-VideoStudio/tree/main/packages/skills/gate-control",
+        "publisher_setup_url": "https://github.com/Orkas-AI/Orkas-VideoStudio/blob/main/packages/skills/gate-control/SKILL.md"
+      }
+    },
+    {
+      "id": "orkas-ai/orkas-videostudio/stage-consistency",
+      "name": "stage-consistency",
+      "description": "Multi-shot narrative & character consistency — a character bible with a locked front-portrait anchor, view-matched reference selection, recent-frame carry-forward, Cameo (a user photo as the lead), and global planning for long scripts/novels. Trigger on top of the generation line when the SAME character must look the same across many shots/scenes, or for long-form story→video; do NOT trigger for one-off single-shot generation.",
+      "category": "media-creative",
+      "license": "MIT",
+      "license_url": "https://github.com/Orkas-AI/Orkas-VideoStudio/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "8a2b51af787830e722f2565b3e13d479ffed5c17",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/Orkas-AI/Orkas-VideoStudio/blob/8a2b51af787830e722f2565b3e13d479ffed5c17/packages/skills/stage-consistency/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/orkas-ai/orkas-videostudio/stage-consistency/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/orkas-ai/orkas-videostudio/stage-consistency/",
+      "source_folder_url": "https://github.com/Orkas-AI/Orkas-VideoStudio/tree/main/packages/skills/stage-consistency",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/Orkas-AI/Orkas-VideoStudio/tree/main/packages/skills/stage-consistency",
+        "publisher_setup_url": "https://github.com/Orkas-AI/Orkas-VideoStudio/blob/main/packages/skills/stage-consistency/SKILL.md"
+      }
+    },
+    {
+      "id": "orkas-ai/orkas-videostudio/stage-decide",
+      "name": "stage-decide",
+      "description": "The decision layer for real footage — understand → select → produce an EVIDENCE-bearing rough cut. Trigger when the EDIT task is \"find / select / reduce / clean\" (remove dead air, drop fillers, pick highlights, cut 1 hour to 3 minutes), NOT executing a known timecode edit (that is stage-edit). Deterministic auto-cuts (silence/filler/quality) are reliable; narrative/emotional selection is a low-confidence DRAFT for the user to review.",
+      "category": "media-creative",
+      "license": "MIT",
+      "license_url": "https://github.com/Orkas-AI/Orkas-VideoStudio/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "8a2b51af787830e722f2565b3e13d479ffed5c17",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/Orkas-AI/Orkas-VideoStudio/blob/8a2b51af787830e722f2565b3e13d479ffed5c17/packages/skills/stage-decide/SKILL.md"
+      },
+      "quality": {
+        "score": 83,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/orkas-ai/orkas-videostudio/stage-decide/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/orkas-ai/orkas-videostudio/stage-decide/",
+      "source_folder_url": "https://github.com/Orkas-AI/Orkas-VideoStudio/tree/main/packages/skills/stage-decide",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/Orkas-AI/Orkas-VideoStudio/tree/main/packages/skills/stage-decide",
+        "publisher_setup_url": "https://github.com/Orkas-AI/Orkas-VideoStudio/blob/main/packages/skills/stage-decide/SKILL.md"
+      }
+    },
+    {
+      "id": "orkas-ai/orkas-videostudio/video-router",
+      "name": "video-router",
+      "description": "Read this FIRST on any video-production request to pick and lock the line — generate (AI footage), compose (designed HTML), edit (cut real footage), or AUTO end-to-end. Trigger when classifying a brief and committing to a primary path; do NOT trigger for authoring compositions, generating assets, or rendering output (those have their own stage skills).",
+      "category": "media-creative",
+      "license": "MIT",
+      "license_url": "https://github.com/Orkas-AI/Orkas-VideoStudio/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "8a2b51af787830e722f2565b3e13d479ffed5c17",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/Orkas-AI/Orkas-VideoStudio/blob/8a2b51af787830e722f2565b3e13d479ffed5c17/packages/skills/video-router/SKILL.md"
+      },
+      "quality": {
+        "score": 83,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/orkas-ai/orkas-videostudio/video-router/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/orkas-ai/orkas-videostudio/video-router/",
+      "source_folder_url": "https://github.com/Orkas-AI/Orkas-VideoStudio/tree/main/packages/skills/video-router",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/Orkas-AI/Orkas-VideoStudio/tree/main/packages/skills/video-router",
+        "publisher_setup_url": "https://github.com/Orkas-AI/Orkas-VideoStudio/blob/main/packages/skills/video-router/SKILL.md"
+      }
+    },
+    {
+      "id": "orkas-ai/orkas-videostudio/composition-design-review",
+      "name": "composition-design-review",
+      "description": "Design review layer for OrkasVideoStudio COMPOSE previews and drafts. Review the complete snapshot index and inspect the cover and risky frames at full size before showing a visual preview. Return one complete, actionable repair set without opening another user gate.",
+      "category": "media-creative",
+      "license": "MIT",
+      "license_url": "https://github.com/Orkas-AI/Orkas-VideoStudio/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "8a2b51af787830e722f2565b3e13d479ffed5c17",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/Orkas-AI/Orkas-VideoStudio/blob/8a2b51af787830e722f2565b3e13d479ffed5c17/packages/skills/composition-design-review/SKILL.md"
+      },
+      "quality": {
+        "score": 72,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/orkas-ai/orkas-videostudio/composition-design-review/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/Orkas-AI/Orkas-VideoStudio/tree/main/packages/skills/composition-design-review",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/Orkas-AI/Orkas-VideoStudio/tree/main/packages/skills/composition-design-review",
+        "publisher_setup_url": "https://github.com/Orkas-AI/Orkas-VideoStudio/blob/main/packages/skills/composition-design-review/SKILL.md"
+      }
+    },
+    {
+      "id": "orkas-ai/orkas-videostudio/design-system-importer",
+      "name": "design-system-importer",
+      "description": "Reference-media and design-system input layer for OrkasVideoStudio. Treat reference images, videos, screenshots, brand guides, and design notes uniformly, compiling reproduce/edit/guide intent into executable spatial and temporal constraints.",
+      "category": "media-creative",
+      "license": "MIT",
+      "license_url": "https://github.com/Orkas-AI/Orkas-VideoStudio/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "8a2b51af787830e722f2565b3e13d479ffed5c17",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/Orkas-AI/Orkas-VideoStudio/blob/8a2b51af787830e722f2565b3e13d479ffed5c17/packages/skills/design-system-importer/SKILL.md"
+      },
+      "quality": {
+        "score": 72,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/orkas-ai/orkas-videostudio/design-system-importer/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/Orkas-AI/Orkas-VideoStudio/tree/main/packages/skills/design-system-importer",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/Orkas-AI/Orkas-VideoStudio/tree/main/packages/skills/design-system-importer",
+        "publisher_setup_url": "https://github.com/Orkas-AI/Orkas-VideoStudio/blob/main/packages/skills/design-system-importer/SKILL.md"
+      }
+    },
+    {
+      "id": "orkas-ai/orkas-videostudio/frontend-design",
+      "name": "frontend-design",
+      "description": "Aesthetic direction for OrkasVideoStudio HTML and motion-graphics compositions. Use before stage-compose writes composition-manifest.json art_direction and index.html to choose a subject-specific visual point of view, type, palette, layout signature, restrained motion, and anti-template checks.",
+      "category": "media-creative",
+      "license": "MIT",
+      "license_url": "https://github.com/Orkas-AI/Orkas-VideoStudio/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "8a2b51af787830e722f2565b3e13d479ffed5c17",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/Orkas-AI/Orkas-VideoStudio/blob/8a2b51af787830e722f2565b3e13d479ffed5c17/packages/skills/frontend-design/SKILL.md"
+      },
+      "quality": {
+        "score": 75,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/orkas-ai/orkas-videostudio/frontend-design/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/Orkas-AI/Orkas-VideoStudio/tree/main/packages/skills/frontend-design",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/Orkas-AI/Orkas-VideoStudio/tree/main/packages/skills/frontend-design",
+        "publisher_setup_url": "https://github.com/Orkas-AI/Orkas-VideoStudio/blob/main/packages/skills/frontend-design/SKILL.md"
+      }
+    },
+    {
+      "id": "orkas-ai/orkas-videostudio/orchestration",
+      "name": "orchestration",
+      "description": "The master program for producing or editing a video end to end — read this at the START of any video task (after video-router), then follow the gates and the per-line steps. Trigger for \"make / edit / cut / caption / dub / animate a video\"; it sequences the compose / generate / edit lines and the approval gates. Do NOT trigger for a single low-level operation (just transcribe a file, just probe a clip) — call that operation directly.",
+      "category": "media-creative",
+      "license": "MIT",
+      "license_url": "https://github.com/Orkas-AI/Orkas-VideoStudio/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "8a2b51af787830e722f2565b3e13d479ffed5c17",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/Orkas-AI/Orkas-VideoStudio/blob/8a2b51af787830e722f2565b3e13d479ffed5c17/packages/skills/orchestration/SKILL.md"
+      },
+      "quality": {
+        "score": 75,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/orkas-ai/orkas-videostudio/orchestration/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/Orkas-AI/Orkas-VideoStudio/tree/main/packages/skills/orchestration",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/Orkas-AI/Orkas-VideoStudio/tree/main/packages/skills/orchestration",
+        "publisher_setup_url": "https://github.com/Orkas-AI/Orkas-VideoStudio/blob/main/packages/skills/orchestration/SKILL.md"
+      }
+    },
+    {
+      "id": "orkas-ai/orkas-videostudio/stage-compose",
+      "name": "stage-compose",
+      "description": "Authoring knowledge for Orkas/OVS HTML video compositions -- write an index.html, drive animation from a paused timeline, declare canvas + duration, then run the VideoStudio draft gate to render an mp4. Trigger for explainer / animation / motion-graphics / caption / lower-third / title-card work, or to build a compose segment inside an AUTO plan; do NOT trigger for cutting real footage (stage-edit) or AI footage (stage-generate).",
+      "category": "media-creative",
+      "license": "MIT",
+      "license_url": "https://github.com/Orkas-AI/Orkas-VideoStudio/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "8a2b51af787830e722f2565b3e13d479ffed5c17",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/Orkas-AI/Orkas-VideoStudio/blob/8a2b51af787830e722f2565b3e13d479ffed5c17/packages/skills/stage-compose/SKILL.md"
+      },
+      "quality": {
+        "score": 77,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/orkas-ai/orkas-videostudio/stage-compose/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/Orkas-AI/Orkas-VideoStudio/tree/main/packages/skills/stage-compose",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/Orkas-AI/Orkas-VideoStudio/tree/main/packages/skills/stage-compose",
+        "publisher_setup_url": "https://github.com/Orkas-AI/Orkas-VideoStudio/blob/main/packages/skills/stage-compose/SKILL.md"
+      }
+    },
+    {
+      "id": "orkas-ai/orkas-videostudio/stage-edit",
+      "name": "stage-edit",
+      "description": "Intelligent editing of real user-supplied footage—understand it with transcript/inspected-frame/scene/silence/quality evidence, then choose deterministic timeline operations or a constrained semantic AI edit. Trigger for repurpose, montage, cleanup, localization, narration, or local content changes.",
+      "category": "media-creative",
+      "license": "MIT",
+      "license_url": "https://github.com/Orkas-AI/Orkas-VideoStudio/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "8a2b51af787830e722f2565b3e13d479ffed5c17",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/Orkas-AI/Orkas-VideoStudio/blob/8a2b51af787830e722f2565b3e13d479ffed5c17/packages/skills/stage-edit/SKILL.md"
+      },
+      "quality": {
+        "score": 75,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/orkas-ai/orkas-videostudio/stage-edit/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/Orkas-AI/Orkas-VideoStudio/tree/main/packages/skills/stage-edit",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/Orkas-AI/Orkas-VideoStudio/tree/main/packages/skills/stage-edit",
+        "publisher_setup_url": "https://github.com/Orkas-AI/Orkas-VideoStudio/blob/main/packages/skills/stage-edit/SKILL.md"
+      }
+    },
+    {
+      "id": "orkas-ai/orkas-videostudio/stage-generate",
+      "name": "stage-generate",
+      "description": "AI-generated footage plus execution of bounded semantic video-edit segments already approved by EDIT/AUTO. Generate per shot with `ovs video`, preserve signed reference/settings, then assemble. For recurring characters also read stage-consistency.",
+      "category": "media-creative",
+      "license": "MIT",
+      "license_url": "https://github.com/Orkas-AI/Orkas-VideoStudio/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "8a2b51af787830e722f2565b3e13d479ffed5c17",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/Orkas-AI/Orkas-VideoStudio/blob/8a2b51af787830e722f2565b3e13d479ffed5c17/packages/skills/stage-generate/SKILL.md"
+      },
+      "quality": {
+        "score": 72,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/orkas-ai/orkas-videostudio/stage-generate/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/Orkas-AI/Orkas-VideoStudio/tree/main/packages/skills/stage-generate",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/Orkas-AI/Orkas-VideoStudio/tree/main/packages/skills/stage-generate",
+        "publisher_setup_url": "https://github.com/Orkas-AI/Orkas-VideoStudio/blob/main/packages/skills/stage-generate/SKILL.md"
+      }
+    },
+    {
+      "id": "orkas-ai/orkas-videostudio/video-craft",
+      "name": "video-craft",
+      "description": "The craft standard that makes a video GOOD, not just rendered — hooks, story pacing, visual hierarchy, type & safe zones, motion/easing, captions, audio mix, platform conventions, shot language, generation-prompt writing, and a pre-publish review. Trigger before scripting/storyboarding/composing/generating/editing on EVERY line, and again as the final review; do NOT trigger for tool mechanics (use the matching stage skill).",
+      "category": "media-creative",
+      "license": "MIT",
+      "license_url": "https://github.com/Orkas-AI/Orkas-VideoStudio/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "8a2b51af787830e722f2565b3e13d479ffed5c17",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/Orkas-AI/Orkas-VideoStudio/blob/8a2b51af787830e722f2565b3e13d479ffed5c17/packages/skills/video-craft/SKILL.md"
+      },
+      "quality": {
+        "score": 75,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/orkas-ai/orkas-videostudio/video-craft/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/Orkas-AI/Orkas-VideoStudio/tree/main/packages/skills/video-craft",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/Orkas-AI/Orkas-VideoStudio/tree/main/packages/skills/video-craft",
+        "publisher_setup_url": "https://github.com/Orkas-AI/Orkas-VideoStudio/blob/main/packages/skills/video-craft/SKILL.md"
+      }
+    }
+  ]
+}

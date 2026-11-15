@@ -1,0 +1,330 @@
+{
+  "schema_version": 1,
+  "repository": "activeloopai/hivemind",
+  "listing_url": "https://skills.suedeai.ai/directory/activeloopai/hivemind/",
+  "snapshot": {
+    "date": "2026-10-22",
+    "id": "0083645c3974488e8803884c7af76698",
+    "dataset_sha256": "b73996d45961aa527b4cea74a41a2e44497200dba9b2f85411e3602ab5f56641"
+  },
+  "listed_skill_count": 3,
+  "scope": "Skills listed by the directory; this is not a complete inventory of every file in the repository.",
+  "security_scan_status": "not_scanned",
+  "skills": [
+    {
+      "id": "activeloopai/hivemind/hivemind-goals",
+      "name": "hivemind-goals",
+      "description": "Create, track and update team goals via the Deeplake virtual filesystem at memory/goal/. Use whenever the user mentions a goal, objective, target, milestone, or asks to track progress on something measurable. ALSO use when the user says \"task\", \"todo\", \"work item\", \"remind me to\", \"fix X\", or any actionable work item — the goal system replaced the legacy `hivemind tasks` CLI and now covers both objectives and tasks.",
+      "category": "productivity-knowledge",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/activeloopai/hivemind/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "97f20e34889328cd3091ff5283c2f0a69aaebe7d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-14",
+        "skill_md_url": "https://github.com/activeloopai/hivemind/blob/97f20e34889328cd3091ff5283c2f0a69aaebe7d/harnesses/claude-code/skills/hivemind-goals/SKILL.md"
+      },
+      "quality": {
+        "score": 85,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/activeloopai/hivemind/hivemind-goals/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/activeloopai/hivemind/hivemind-goals/",
+      "source_folder_url": "https://github.com/activeloopai/hivemind/tree/main/harnesses/claude-code/skills/hivemind-goals",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/activeloopai/hivemind/tree/main/harnesses/claude-code/skills/hivemind-goals",
+        "publisher_setup_url": "https://github.com/activeloopai/hivemind/blob/main/harnesses/claude-code/skills/hivemind-goals/SKILL.md"
+      }
+    },
+    {
+      "id": "activeloopai/hivemind/hivemind-graph",
+      "name": "hivemind-graph",
+      "description": "Query the local code graph (functions, classes, calls, imports) through the Deeplake mount at memory/graph/. Use when the user asks structural questions about the codebase — \"what calls X?\", \"what does Y import?\", \"where is Z defined?\", \"what's the architecture / which subsystems exist?\", \"what's the impact of changing this?\". The graph is an AST-derived map of the repo, queried as files (no build needed — it rebuilds automatically).",
+      "category": "developer-tools",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/activeloopai/hivemind/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "97f20e34889328cd3091ff5283c2f0a69aaebe7d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-14",
+        "skill_md_url": "https://github.com/activeloopai/hivemind/blob/97f20e34889328cd3091ff5283c2f0a69aaebe7d/harnesses/claude-code/skills/hivemind-graph/SKILL.md"
+      },
+      "quality": {
+        "score": 85,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/activeloopai/hivemind/hivemind-graph/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/activeloopai/hivemind/hivemind-graph/",
+      "source_folder_url": "https://github.com/activeloopai/hivemind/tree/main/harnesses/claude-code/skills/hivemind-graph",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/activeloopai/hivemind/tree/main/harnesses/claude-code/skills/hivemind-graph",
+        "publisher_setup_url": "https://github.com/activeloopai/hivemind/blob/main/harnesses/claude-code/skills/hivemind-graph/SKILL.md"
+      }
+    },
+    {
+      "id": "activeloopai/hivemind/hivemind-memory",
+      "name": "hivemind-memory",
+      "description": "Global team and org memory powered by Activeloop. ALWAYS check BOTH built-in memory AND Hivemind memory when recalling information.",
+      "category": "ai-agents-llm",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/activeloopai/hivemind/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "97f20e34889328cd3091ff5283c2f0a69aaebe7d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-14",
+        "skill_md_url": "https://github.com/activeloopai/hivemind/blob/97f20e34889328cd3091ff5283c2f0a69aaebe7d/harnesses/claude-code/skills/hivemind-memory/SKILL.md"
+      },
+      "quality": {
+        "score": 72,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/activeloopai/hivemind/hivemind-memory/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/activeloopai/hivemind/tree/main/harnesses/claude-code/skills/hivemind-memory",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/activeloopai/hivemind/tree/main/harnesses/claude-code/skills/hivemind-memory",
+        "publisher_setup_url": "https://github.com/activeloopai/hivemind/blob/main/harnesses/claude-code/skills/hivemind-memory/SKILL.md"
+      }
+    }
+  ]
+}

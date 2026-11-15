@@ -1,0 +1,1170 @@
+{
+  "schema_version": 1,
+  "repository": "Necmttn/ax",
+  "listing_url": "https://skills.suedeai.ai/directory/necmttn/ax/",
+  "snapshot": {
+    "date": "2026-10-22",
+    "id": "0083645c3974488e8803884c7af76698",
+    "dataset_sha256": "b73996d45961aa527b4cea74a41a2e44497200dba9b2f85411e3602ab5f56641"
+  },
+  "listed_skill_count": 11,
+  "scope": "Skills listed by the directory; this is not a complete inventory of every file in the repository.",
+  "security_scan_status": "not_scanned",
+  "skills": [
+    {
+      "id": "necmttn/ax/ax-extract-workflow",
+      "name": "ax-extract-workflow",
+      "description": "Reconstruct the workflow behind a past artifact - \"what made X work\" / \"extract workflow from <date|sha>\" / \"how did we ship Y\". Uses ax to find the relevant sessions and narrate the ordered skill arcs that produced the result. Triggers on \"what made X work\", \"how did we build Y\", \"extract workflow from <date>\", \"extract workflow from <sha>\", \"what was the workflow around <topic>\", \"show me how I shipped <feature>\", \"reconstruct the recipe for <artifact>\". Do NOT fire on generic \"show recent activity\" - this skill is for reconstructing the workflow behind a specific artifact.",
+      "category": "ai-agents-llm",
+      "license": "AGPL-3.0",
+      "license_url": "https://github.com/Necmttn/ax/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "fca259c0f7accfdac756ac323924bde8732fd9c0",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-07",
+        "skill_md_url": "https://github.com/Necmttn/ax/blob/fca259c0f7accfdac756ac323924bde8732fd9c0/skills/ax-extract-workflow/SKILL.md"
+      },
+      "quality": {
+        "score": 84,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/necmttn/ax/ax-extract-workflow/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/necmttn/ax/ax-extract-workflow/",
+      "source_folder_url": "https://github.com/Necmttn/ax/tree/main/skills/ax-extract-workflow",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/Necmttn/ax/tree/main/skills/ax-extract-workflow",
+        "publisher_setup_url": "https://github.com/Necmttn/ax/blob/main/skills/ax-extract-workflow/SKILL.md"
+      }
+    },
+    {
+      "id": "necmttn/ax/ax-repo",
+      "name": "ax-repo",
+      "description": "Star the ax repo, file an issue / bug report, or fork-and-open-a-PR against github.com/Necmttn/ax on the user's behalf, by shelling out to the `gh` CLI. Triggers when the user says \"star ax\", \"star the repo\", \"I want to support ax\", \"report this as an ax bug\", \"file an ax issue\", \"open an issue on ax\", \"this looks like an ax bug\", \"I want to contribute to ax\", \"fix this in ax\", \"open a PR against ax\", or after an unhandled ax error when the user wants to report it. Acts only on an explicit user request - proactive star prompting is handled deterministically by the CLI (`ax star`), not this skill. Confirms before any account-mutating action (never stars without an explicit yes); falls back to a plain GitHub URL when `gh` is missing or unauthenticated. Do NOT auto-trigger on unrelated GitHub work or other repos.",
+      "category": "developer-tools",
+      "license": "AGPL-3.0",
+      "license_url": "https://github.com/Necmttn/ax/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "fca259c0f7accfdac756ac323924bde8732fd9c0",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-07",
+        "skill_md_url": "https://github.com/Necmttn/ax/blob/fca259c0f7accfdac756ac323924bde8732fd9c0/skills/ax-repo/SKILL.md"
+      },
+      "quality": {
+        "score": 82,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/necmttn/ax/ax-repo/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/necmttn/ax/ax-repo/",
+      "source_folder_url": "https://github.com/Necmttn/ax/tree/main/skills/ax-repo",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/Necmttn/ax/tree/main/skills/ax-repo",
+        "publisher_setup_url": "https://github.com/Necmttn/ax/blob/main/skills/ax-repo/SKILL.md"
+      }
+    },
+    {
+      "id": "necmttn/ax/dojo",
+      "name": "dojo",
+      "description": "Surplus-quota training loop over the ax graph - the agent burns the remaining 5h/7d plan-quota window on self-improvement: locking pending verdicts, filling briefs, backtesting routing classes, minting proposals, running worktree experiments, and drafting upstream issue reports. Triggers when the user says \"/dojo\", \"enter the dojo\", \"dojo time\", \"train overnight\", \"burn my surplus quota\", \"dream mode\" (legacy name), or invokes /loop /dojo. Requires ax (axctl) on PATH. ax uses embedded DuckDB; no database daemon is required. Do NOT auto-trigger on unrelated work or when the user merely mentions quotas.",
+      "category": "ai-agents-llm",
+      "license": "AGPL-3.0",
+      "license_url": "https://github.com/Necmttn/ax/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "fca259c0f7accfdac756ac323924bde8732fd9c0",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-07",
+        "skill_md_url": "https://github.com/Necmttn/ax/blob/fca259c0f7accfdac756ac323924bde8732fd9c0/skills/dojo/SKILL.md"
+      },
+      "quality": {
+        "score": 82,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/necmttn/ax/dojo/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/necmttn/ax/dojo/",
+      "source_folder_url": "https://github.com/Necmttn/ax/tree/main/skills/dojo",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/Necmttn/ax/tree/main/skills/dojo",
+        "publisher_setup_url": "https://github.com/Necmttn/ax/blob/main/skills/dojo/SKILL.md"
+      }
+    },
+    {
+      "id": "necmttn/ax/efficient-dispatch",
+      "name": "efficient-dispatch",
+      "description": "Model-routing orchestration for any expensive frontier model (Fable, Opus, GPT-5.x) - the main model keeps judgment and Q&A review, mechanical subagent dispatches carry an explicit cheaper model, and ax measures whether the routing actually worked. Use when orchestrating codebase-heavy or token-heavy work with subagents, when dispatching Agent tasks without a model, when the user says \"route to cheaper models\", \"efficient dispatch\", \"optimize model spend\", or asks where their token spend goes. Pairs with the route-dispatch hook (deterministic backstop) and `ax dispatches` (evidence). Do NOT fire on single-shot questions or tiny tasks with no dispatching.",
+      "category": "ai-agents-llm",
+      "license": "AGPL-3.0",
+      "license_url": "https://github.com/Necmttn/ax/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "fca259c0f7accfdac756ac323924bde8732fd9c0",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-07",
+        "skill_md_url": "https://github.com/Necmttn/ax/blob/fca259c0f7accfdac756ac323924bde8732fd9c0/skills/efficient-dispatch/SKILL.md"
+      },
+      "quality": {
+        "score": 82,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/necmttn/ax/efficient-dispatch/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/necmttn/ax/efficient-dispatch/",
+      "source_folder_url": "https://github.com/Necmttn/ax/tree/main/skills/efficient-dispatch",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/Necmttn/ax/tree/main/skills/efficient-dispatch",
+        "publisher_setup_url": "https://github.com/Necmttn/ax/blob/main/skills/efficient-dispatch/SKILL.md"
+      }
+    },
+    {
+      "id": "necmttn/ax/release-announcement",
+      "name": "release-announcement",
+      "description": "Draft or revise ax release announcements and website changelog pages. Triggers when the user says \"write release notes\", \"draft release announcement\", \"prepare changelog\", \"release page\", \"version page\", \"what changed in vX.Y.Z\", \"generate announcement for vX.Y.Z\", or asks for a release narrative. Uses Release Please range evidence, git changed files/commits, and ax sessions/recall to explain how the release got there. Do NOT trigger for ordinary commit messages or unrelated docs.",
+      "category": "writing-content",
+      "license": "AGPL-3.0",
+      "license_url": "https://github.com/Necmttn/ax/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "fca259c0f7accfdac756ac323924bde8732fd9c0",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-07",
+        "skill_md_url": "https://github.com/Necmttn/ax/blob/fca259c0f7accfdac756ac323924bde8732fd9c0/skills/release-announcement/SKILL.md"
+      },
+      "quality": {
+        "score": 84,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/necmttn/ax/release-announcement/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/necmttn/ax/release-announcement/",
+      "source_folder_url": "https://github.com/Necmttn/ax/tree/main/skills/release-announcement",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/Necmttn/ax/tree/main/skills/release-announcement",
+        "publisher_setup_url": "https://github.com/Necmttn/ax/blob/main/skills/release-announcement/SKILL.md"
+      }
+    },
+    {
+      "id": "necmttn/ax/retro",
+      "name": "retro",
+      "description": "Guided experiment-loop retrospective over the ax agent-experience graph. Walks the user through their open proposals (accept-with-scaffold or reject), pending verdicts (confirm the suggested verdict or override), and recent harness-hook effectiveness signal. Triggers when the user says \"let's do an ax retro\", \"ax retrospective\", \"review my ax proposals\", \"triage proposals\", \"experiment loop status\", \"lock pending verdicts\", \"hook effectiveness review\", \"intervention review\", \"self-improvement session\", or invokes /ax:retro. Reads/writes via the local `ax improve` and `ax hooks` CLIs. Do NOT auto-trigger on unrelated work.",
+      "category": "ai-agents-llm",
+      "license": "AGPL-3.0",
+      "license_url": "https://github.com/Necmttn/ax/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "fca259c0f7accfdac756ac323924bde8732fd9c0",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-07",
+        "skill_md_url": "https://github.com/Necmttn/ax/blob/fca259c0f7accfdac756ac323924bde8732fd9c0/skills/retro/SKILL.md"
+      },
+      "quality": {
+        "score": 82,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/necmttn/ax/retro/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/necmttn/ax/retro/",
+      "source_folder_url": "https://github.com/Necmttn/ax/tree/main/skills/retro",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/Necmttn/ax/tree/main/skills/retro",
+        "publisher_setup_url": "https://github.com/Necmttn/ax/blob/main/skills/retro/SKILL.md"
+      }
+    },
+    {
+      "id": "necmttn/ax/retro-meta",
+      "name": "retro-meta",
+      "description": "Deep retro of retros - investigation pass that surfaces improvements across older retros and the current ax setup. External AI agent drives the reasoning with high thinking enabled. Triggers when user says \"deep retro\", \"investigate ax\", \"what should I fix in my setup\", \"retro of retros\", or invokes /ax:retro-meta. Use after `ax:retro` if proposals are sparse or you want broader exploration.",
+      "category": "ai-agents-llm",
+      "license": "AGPL-3.0",
+      "license_url": "https://github.com/Necmttn/ax/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "fca259c0f7accfdac756ac323924bde8732fd9c0",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-07",
+        "skill_md_url": "https://github.com/Necmttn/ax/blob/fca259c0f7accfdac756ac323924bde8732fd9c0/skills/retro-meta/SKILL.md"
+      },
+      "quality": {
+        "score": 84,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/necmttn/ax/retro-meta/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/necmttn/ax/retro-meta/",
+      "source_folder_url": "https://github.com/Necmttn/ax/tree/main/skills/retro-meta",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/Necmttn/ax/tree/main/skills/retro-meta",
+        "publisher_setup_url": "https://github.com/Necmttn/ax/blob/main/skills/retro-meta/SKILL.md"
+      }
+    },
+    {
+      "id": "necmttn/ax/setup",
+      "name": "setup",
+      "description": "Install + verify ax (the agent experience layer). Triggers when the user says \"install ax\", \"set up ax\", \"ax not found\", \"ax doctor\", \"is ax running\", \"fix ax install\", \"first-time ax setup\", or any setup question about the ax CLI / skills / daemon. Walks the install via the install.sh + skills.sh + first ingest, validates with `ax doctor`, and points the user at ax:retro (experiment loop) and ax:extract-workflow (reconstruct workflow behind shipped artifacts).",
+      "category": "developer-tools",
+      "license": "AGPL-3.0",
+      "license_url": "https://github.com/Necmttn/ax/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "fca259c0f7accfdac756ac323924bde8732fd9c0",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-07",
+        "skill_md_url": "https://github.com/Necmttn/ax/blob/fca259c0f7accfdac756ac323924bde8732fd9c0/skills/setup/SKILL.md"
+      },
+      "quality": {
+        "score": 84,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/necmttn/ax/setup/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/necmttn/ax/setup/",
+      "source_folder_url": "https://github.com/Necmttn/ax/tree/main/skills/setup",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/Necmttn/ax/tree/main/skills/setup",
+        "publisher_setup_url": "https://github.com/Necmttn/ax/blob/main/skills/setup/SKILL.md"
+      }
+    },
+    {
+      "id": "necmttn/ax/ship-checklist",
+      "name": "ship-checklist",
+      "description": "Definition-of-done checklist for shipping a new write, signal, table, edge, or query to the ax graph. Use when adding a SurrealDB table/edge/field, an ingest derive-stage, a new analytic query, or any new ax capability - before opening the PR. Ensures every write gets an on-demand read AND a proactive (agent-facing) read AND docs/distribution, not just the write. Triggers on \"ship\", \"new signal\", \"new table/edge\", \"new lens/query\", \"wire this up\", \"is this done\", or finishing an ax feature branch.",
+      "category": "developer-tools",
+      "license": "AGPL-3.0",
+      "license_url": "https://github.com/Necmttn/ax/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "fca259c0f7accfdac756ac323924bde8732fd9c0",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-07",
+        "skill_md_url": "https://github.com/Necmttn/ax/blob/fca259c0f7accfdac756ac323924bde8732fd9c0/skills/ship-checklist/SKILL.md"
+      },
+      "quality": {
+        "score": 84,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/necmttn/ax/ship-checklist/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/necmttn/ax/ship-checklist/",
+      "source_folder_url": "https://github.com/Necmttn/ax/tree/main/skills/ship-checklist",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/Necmttn/ax/tree/main/skills/ship-checklist",
+        "publisher_setup_url": "https://github.com/Necmttn/ax/blob/main/skills/ship-checklist/SKILL.md"
+      }
+    },
+    {
+      "id": "necmttn/ax/tune",
+      "name": "tune",
+      "description": "Retrospective on one coding session that proposes changes to the agent's environment (hooks, checks, steering files, tool access) and files each as an ax proposal. Reads the raw session log through a bundled ledger script, with ax as the second source and the ledger. Triggers when the user says \"environment retro\", \"env retro\", \"what should I change in my setup after this session\", \"retro this session's tooling\", or invokes /ax:tune. Use /ax:retro to triage the proposals it files.",
+      "category": "ai-agents-llm",
+      "license": "AGPL-3.0",
+      "license_url": "https://github.com/Necmttn/ax/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "fca259c0f7accfdac756ac323924bde8732fd9c0",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-07",
+        "skill_md_url": "https://github.com/Necmttn/ax/blob/fca259c0f7accfdac756ac323924bde8732fd9c0/skills/tune/SKILL.md"
+      },
+      "quality": {
+        "score": 86,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/necmttn/ax/tune/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/necmttn/ax/tune/",
+      "source_folder_url": "https://github.com/Necmttn/ax/tree/main/skills/tune",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/Necmttn/ax/tree/main/skills/tune",
+        "publisher_setup_url": "https://github.com/Necmttn/ax/blob/main/skills/tune/SKILL.md"
+      }
+    },
+    {
+      "id": "necmttn/ax/ax-narrate",
+      "name": "ax-narrate",
+      "description": "Write the agent-generated narration of the current session - the reviewable story of what changed, including what never reaches a PR (user corrections, abandoned attempts, tool failures). Triggers on \"narrate this session\", \"summarize what changed\", \"write the session story\", \"narrate what we did\", \"session narration\". Output is .ax/narrations/<session-id>.json for the ax studio narration view. Do NOT fire on \"summarize this file\" or generic recap questions answered inline - this skill writes a structured artifact.",
+      "category": "ai-agents-llm",
+      "license": "AGPL-3.0",
+      "license_url": "https://github.com/Necmttn/ax/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "fca259c0f7accfdac756ac323924bde8732fd9c0",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-07",
+        "skill_md_url": "https://github.com/Necmttn/ax/blob/fca259c0f7accfdac756ac323924bde8732fd9c0/skills/narrate/SKILL.md"
+      },
+      "quality": {
+        "score": 76,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": false,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/necmttn/ax/ax-narrate/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/Necmttn/ax/tree/main/skills/narrate",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/Necmttn/ax/tree/main/skills/narrate",
+        "publisher_setup_url": "https://github.com/Necmttn/ax/blob/main/skills/narrate/SKILL.md"
+      }
+    }
+  ]
+}

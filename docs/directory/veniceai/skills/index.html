@@ -30,7 +30,7 @@
         "name": "veniceai/skills Agent Skills (22) | Suede AI",
         "description": "22 agent skills from veniceai/skills, including venice-models, venice-text-routing. Install steps, Suede Skill Check grades and a README badge.",
         "url": "https://skills.suedeai.ai/directory/veniceai/skills/",
-        "dateModified": "2026-11-13",
+        "dateModified": "2026-11-14",
         "isPartOf": {
           "@type": "CollectionPage",
           "@id": "https://skills.suedeai.ai/directory/#directory",
@@ -307,7 +307,7 @@
       <div class="eyebrow">Skill collection &middot; veniceai</div>
       <h1>veniceai/skills <span class="h1-sub">22 graded agent skills from Venice</span></h1>
       <nav class="crumbs" aria-label="Breadcrumb"><a href="../../">Directory</a> <span class="crumb-sep" aria-hidden="true">/</span> <a href="../../developer-tools/">Developer Tools and Frameworks</a> <span class="crumb-sep" aria-hidden="true">/</span> <span aria-current="page">veniceai/skills</span></nav>
-      <p class="lead">22 skills from veniceai/skills are listed in the directory, across 4 categories. 2 skills have a full page with install steps and a pre-install summary.</p>
+      <p class="lead">veniceai/skills brings together 22 skills for developer tools and frameworks, video, image, audio and creative, AI agent and LLM engineering, business, sales and finance. Start with the task descriptions below, then compare the individual skill's score, source files and license.</p>
       <p><a class="button" href="https://github.com/veniceai/skills" target="_blank" rel="noopener">View veniceai/skills on GitHub</a></p>
       <section class="panel" aria-labelledby="facts-title">
         <h2 id="facts-title">At a glance</h2>
@@ -327,28 +327,220 @@
           </table>
         </div>
       </section>
-      <section class="panel badge-panel" id="badge" aria-labelledby="badge-title">
-        <h2 id="badge-title">Show the listing in your README</h2>
-        <p>This general badge links to the repository listing. For the two quality badges and feature offer, choose <b>Get badges</b> beside a skill below. Each skill keeps its own score and grade.</p>
-        <p class="badge-preview"><img src="badge.svg" alt="Suede AI Skills Directory: listed" width="215" height="20"></p>
-        <div class="snippet">
-          <div class="snippet-head"><span>Markdown</span><button type="button" class="snippet-copy" data-copy-target="badge-md">Copy</button></div>
-          <pre><code id="badge-md">[![Suede AI Skills Directory: listed](https://skills.suedeai.ai/directory/veniceai/skills/badge.svg)](https://skills.suedeai.ai/directory/veniceai/skills/)</code></pre>
-        </div>
-        <div class="snippet">
-          <div class="snippet-head"><span>HTML</span><button type="button" class="snippet-copy" data-copy-target="badge-html">Copy</button></div>
-          <pre><code id="badge-html">&lt;a href=&quot;https://skills.suedeai.ai/directory/veniceai/skills/&quot;&gt;&lt;img src=&quot;https://skills.suedeai.ai/directory/veniceai/skills/badge.svg&quot; alt=&quot;Suede AI Skills Directory: listed&quot; height=&quot;20&quot;&gt;&lt;/a&gt;</code></pre>
-        </div>
+      <section class="panel" id="collection-overview" aria-labelledby="collection-overview-title">
+        <h2 id="collection-overview-title">What this collection offers</h2>
+        <p>22 listed skills; recorded scores 67–80/100. 2 full reviews with separate installation details. Scores describe the saved source snapshot, using the <a href="../../methodology/#score">Suede Skill Check</a>.</p>
+        <p>Coverage: <a href="../../developer-tools/">Developer Tools and Frameworks</a> (8) · <a href="../../media-creative/">Video, Image, Audio and Creative</a> (7) · <a href="../../ai-agents-llm/">AI Agents and LLM Engineering</a> (6) · <a href="../../business-finance/">Business, Sales and Finance</a> (1).</p>
+        <p class="muted">Snapshot: <time datetime="2026-10-22">October 22, 2026</time>. The checks measure published files, documentation and maintenance signals. Security scan: not scanned; this is not a runtime test.</p>
+        <p><a href="#choose-skill">Choose a skill</a> · <a href="#collection-install">Install and verify</a> · <a href="#skills-title">All listed skills</a> · <a href="#collection-compare">Compare collections</a></p>
+        <p><a href="collection.json" download="skills-collection.json">Download the collection manifest</a>: complete task descriptions, scores, license information, source revisions and install routes for all 22 listed skills. Use it to compare options or hand your selection to an agent.</p>
       </section>
-<p class="badge-offer" data-promotion-end="">Limited-time feature offer: Display either quality badge in your repository or skill README, linked to your listing, then request verification. Suede AI checks the rendered README at a recorded commit. Eligible skills scoring 80–99 with a verified badge can receive a featured placement while the offer is open. <a href="../../submit/">Request badge verification</a>.</p>
-      <aside class="panel cta-placement" aria-labelledby="cta-publisher-claim-b-feature" data-cta-placement="publisher-claim" data-cta-variant="b-feature">
-        <h2 id="cta-publisher-claim-b-feature">Publishers: get featured</h2>
-        <p>Skills scoring 80–99 can display a quality shield. While the feature offer is open, a verified badge can earn a featured placement.</p>
-        <p><a class="button" href="../../submit/" data-cta="publisher-claim:b-feature">Request badge verification</a></p>
-      </aside>
+
+      <section class="panel" id="choose-skill" aria-labelledby="choose-skill-title">
+        <h2 id="choose-skill-title">Choose a skill for your task</h2>
+        <p>Start with these 6 skills: the highest recorded score per category, then the highest remaining scores. The complete table below includes all 22 listings. Task descriptions come from the publisher; score explanations come from the saved report.</p>
+        <article class="collection-choice" id="choice-venice-text-routing">
+          <h3>venice-text-routing <span class="grade grade-b">80/100 · B</span></h3>
+          <p><b>Publisher's task description:</b> Route a prompt to the right Venice text model based on privacy tier (anonymized / private / TEE / E2EE), modality (vision / audio / video input), capability (reasoning, reasoning effort, code, function calling, X search, large context, structured output), uncensored needs, and cost. Use when a local agent (Claude Code, Hermes, NanoClaw, Codex CLI, etc.) needs to decide whether to handle a prompt locally or escalate to Venice, and if escalating, which Venice text model to call. Sits one level above venice-models (model discovery) and before venice-chat (the call surface).</p>
+          <p>2,733 words in SKILL.md; 4 bundled files; includes a scripts folder. <a href="https://github.com/veniceai/skills/blob/5eaeac576c099fcad61b494a07799e5e66d1d334/skills/venice-text-routing/SKILL.md" target="_blank" rel="noopener">Read the assessed SKILL.md</a>.</p>
+          <p><b>Score evidence:</b> Full points for structural checks, recent maintenance and instruction depth. Largest point gaps: curated-list citations (1/7); boundary clause (0/4).</p>
+          <details><summary>See all score components for venice-text-routing</summary>
+        <div class="table-wrap">
+          <table class="facts">
+            <tbody>
+            <tr><th scope="row">Structural checks</th><td>56 of 56</td></tr>
+            <tr><th scope="row">Description length</th><td>5 of 5</td></tr>
+            <tr><th scope="row">Boundary clause</th><td>0 of 4</td></tr>
+            <tr><th scope="row">Example request</th><td>0 of 3</td></tr>
+            <tr><th scope="row">Instruction depth</th><td>7 of 7</td></tr>
+            <tr><th scope="row">Reference files</th><td>0 of 3</td></tr>
+            <tr><th scope="row">Bundled scripts</th><td>2 of 2</td></tr>
+            <tr><th scope="row">Recent maintenance</th><td>9 of 9</td></tr>
+            <tr><th scope="row">Curated-list citations</th><td>1 of 7</td></tr>
+            <tr><th scope="row">Tool permissions declared</th><td>0 of 2</td></tr>
+            <tr><th scope="row">Compatibility declared</th><td>0 of 2</td></tr>
+            </tbody>
+          </table>
+        </div>
+          </details>
+          <p><a href="https://github.com/veniceai/skills/blob/main/LICENSE" target="_blank" rel="noopener">License</a>: MIT governs reuse and modification of these files.</p>
+          <ul><li>Named environment variables: <code>VENICE_API_KEY</code>.</li><li>Named external hosts: <code>api.venice.ai</code>.</li></ul>
+        <div class="snippet">
+          <div class="snippet-head"><span>Select one skill: venice-text-routing</span><button type="button" class="snippet-copy" data-copy-target="collection-install-0">Copy</button></div>
+          <pre><code id="collection-install-0">npx skills add https://github.com/veniceai/skills/tree/main/skills/venice-text-routing</code></pre>
+        </div>
+          <p><a href="venice-text-routing/report.json" download>Download venice-text-routing score report</a> · <a href="venice-text-routing/">Read the full venice-text-routing review and install guide</a></p>
+        </article>
+        <article class="collection-choice" id="choice-venice-api-keys">
+          <h3>venice-api-keys <span class="grade grade-c">70/100 · C</span></h3>
+          <p><b>Publisher's task description:</b> Manage Venice API keys. Covers GET/POST/PATCH/DELETE /api_keys, GET /api_keys/{id}, GET /api_keys/rate_limits, GET /api_keys/rate_limits/log, the two-step /api_keys/generate_web3_key wallet flow, INFERENCE vs ADMIN key types, per-key consumption limits (USD / DIEM) with EPOCH / MONTH / LIFETIME reset windows, and per-key modelPrivacy (ALL / PRIVATE_TEXT / PRIVATE_ONLY).</p>
+          <p>2,018 words in SKILL.md; 1 bundled file. <a href="https://github.com/veniceai/skills/blob/5eaeac576c099fcad61b494a07799e5e66d1d334/skills/venice-api-keys/SKILL.md" target="_blank" rel="noopener">Read the assessed SKILL.md</a>.</p>
+          <p><b>Score evidence:</b> Full points for recent maintenance, instruction depth and description length. Largest point gaps: structural checks (48/56); curated-list citations (1/7).</p>
+          <details><summary>See all score components for venice-api-keys</summary>
+        <div class="table-wrap">
+          <table class="facts">
+            <tbody>
+            <tr><th scope="row">Structural checks</th><td>48 of 56</td></tr>
+            <tr><th scope="row">Description length</th><td>5 of 5</td></tr>
+            <tr><th scope="row">Boundary clause</th><td>0 of 4</td></tr>
+            <tr><th scope="row">Example request</th><td>0 of 3</td></tr>
+            <tr><th scope="row">Instruction depth</th><td>7 of 7</td></tr>
+            <tr><th scope="row">Reference files</th><td>0 of 3</td></tr>
+            <tr><th scope="row">Bundled scripts</th><td>0 of 2</td></tr>
+            <tr><th scope="row">Recent maintenance</th><td>9 of 9</td></tr>
+            <tr><th scope="row">Curated-list citations</th><td>1 of 7</td></tr>
+            <tr><th scope="row">Tool permissions declared</th><td>0 of 2</td></tr>
+            <tr><th scope="row">Compatibility declared</th><td>0 of 2</td></tr>
+            </tbody>
+          </table>
+        </div>
+          </details>
+          <p><a href="https://github.com/veniceai/skills/blob/main/LICENSE" target="_blank" rel="noopener">License</a>: MIT governs reuse and modification of these files.</p>
+        <div class="snippet">
+          <div class="snippet-head"><span>Select one skill: venice-api-keys</span><button type="button" class="snippet-copy" data-copy-target="collection-install-1">Copy</button></div>
+          <pre><code id="collection-install-1">npx skills add https://github.com/veniceai/skills/tree/main/skills/venice-api-keys</code></pre>
+        </div>
+          <p><a href="venice-api-keys/report.json" download>Download venice-api-keys score report</a> · <a href="https://github.com/veniceai/skills/tree/main/skills/venice-api-keys" target="_blank" rel="noopener">Browse the skill's source folder</a></p>
+        </article>
+        <article class="collection-choice" id="choice-venice-audio-music">
+          <h3>venice-audio-music <span class="grade grade-c">70/100 · C</span></h3>
+          <p><b>Publisher's task description:</b> Async music, sound-effect and long-form voice generation via Venice. Covers the /audio/quote + /audio/queue + /audio/retrieve + /audio/complete lifecycle, lyrics vs instrumental and the lyrics optimizer, duration options, seamless loop (ElevenLabs sound effects), voice selection incl. custom ElevenLabs Voice IDs, language, speed, model capability probing via /models?type=music, pricing shapes, refunds, and polling.</p>
+          <p>1,460 words in SKILL.md; 1 bundled file. <a href="https://github.com/veniceai/skills/blob/5eaeac576c099fcad61b494a07799e5e66d1d334/skills/venice-audio-music/SKILL.md" target="_blank" rel="noopener">Read the assessed SKILL.md</a>.</p>
+          <p><b>Score evidence:</b> Full points for recent maintenance, instruction depth and description length. Largest point gaps: structural checks (48/56); curated-list citations (1/7).</p>
+          <details><summary>See all score components for venice-audio-music</summary>
+        <div class="table-wrap">
+          <table class="facts">
+            <tbody>
+            <tr><th scope="row">Structural checks</th><td>48 of 56</td></tr>
+            <tr><th scope="row">Description length</th><td>5 of 5</td></tr>
+            <tr><th scope="row">Boundary clause</th><td>0 of 4</td></tr>
+            <tr><th scope="row">Example request</th><td>0 of 3</td></tr>
+            <tr><th scope="row">Instruction depth</th><td>7 of 7</td></tr>
+            <tr><th scope="row">Reference files</th><td>0 of 3</td></tr>
+            <tr><th scope="row">Bundled scripts</th><td>0 of 2</td></tr>
+            <tr><th scope="row">Recent maintenance</th><td>9 of 9</td></tr>
+            <tr><th scope="row">Curated-list citations</th><td>1 of 7</td></tr>
+            <tr><th scope="row">Tool permissions declared</th><td>0 of 2</td></tr>
+            <tr><th scope="row">Compatibility declared</th><td>0 of 2</td></tr>
+            </tbody>
+          </table>
+        </div>
+          </details>
+          <p><a href="https://github.com/veniceai/skills/blob/main/LICENSE" target="_blank" rel="noopener">License</a>: MIT governs reuse and modification of these files.</p>
+        <div class="snippet">
+          <div class="snippet-head"><span>Select one skill: venice-audio-music</span><button type="button" class="snippet-copy" data-copy-target="collection-install-2">Copy</button></div>
+          <pre><code id="collection-install-2">npx skills add https://github.com/veniceai/skills/tree/main/skills/venice-audio-music</code></pre>
+        </div>
+          <p><a href="venice-audio-music/report.json" download>Download venice-audio-music score report</a> · <a href="https://github.com/veniceai/skills/tree/main/skills/venice-audio-music" target="_blank" rel="noopener">Browse the skill's source folder</a></p>
+        </article>
+        <article class="collection-choice" id="choice-venice-x402">
+          <h3>venice-x402 <span class="grade grade-c">70/100 · C</span></h3>
+          <p><b>Publisher's task description:</b> Manage Venice x402 wallet credits. Covers POST /x402/top-up (payment discovery + signed USDC settlement, $5 min / $10,000 max), GET /x402/balance/{walletAddress}, GET /x402/transactions/{walletAddress}, USDC on Base (eip155:8453) and Solana mainnet, the PAYMENT-SIGNATURE / SIGN-IN-WITH-X header names, transaction types TOP_UP/CHARGE/REFUND (multi-component charges, request-level refunds, clamped charges), and the 402 PAYMENT-REQUIRED responses returned by x402-enabled endpoints.</p>
+          <p>2,418 words in SKILL.md; 1 bundled file. <a href="https://github.com/veniceai/skills/blob/5eaeac576c099fcad61b494a07799e5e66d1d334/skills/venice-x402/SKILL.md" target="_blank" rel="noopener">Read the assessed SKILL.md</a>.</p>
+          <p><b>Score evidence:</b> Full points for recent maintenance, instruction depth and description length. Largest point gaps: structural checks (48/56); curated-list citations (1/7).</p>
+          <details><summary>See all score components for venice-x402</summary>
+        <div class="table-wrap">
+          <table class="facts">
+            <tbody>
+            <tr><th scope="row">Structural checks</th><td>48 of 56</td></tr>
+            <tr><th scope="row">Description length</th><td>5 of 5</td></tr>
+            <tr><th scope="row">Boundary clause</th><td>0 of 4</td></tr>
+            <tr><th scope="row">Example request</th><td>0 of 3</td></tr>
+            <tr><th scope="row">Instruction depth</th><td>7 of 7</td></tr>
+            <tr><th scope="row">Reference files</th><td>0 of 3</td></tr>
+            <tr><th scope="row">Bundled scripts</th><td>0 of 2</td></tr>
+            <tr><th scope="row">Recent maintenance</th><td>9 of 9</td></tr>
+            <tr><th scope="row">Curated-list citations</th><td>1 of 7</td></tr>
+            <tr><th scope="row">Tool permissions declared</th><td>0 of 2</td></tr>
+            <tr><th scope="row">Compatibility declared</th><td>0 of 2</td></tr>
+            </tbody>
+          </table>
+        </div>
+          </details>
+          <p><a href="https://github.com/veniceai/skills/blob/main/LICENSE" target="_blank" rel="noopener">License</a>: MIT governs reuse and modification of these files.</p>
+        <div class="snippet">
+          <div class="snippet-head"><span>Select one skill: venice-x402</span><button type="button" class="snippet-copy" data-copy-target="collection-install-3">Copy</button></div>
+          <pre><code id="collection-install-3">npx skills add https://github.com/veniceai/skills/tree/main/skills/venice-x402</code></pre>
+        </div>
+          <p><a href="venice-x402/report.json" download>Download venice-x402 score report</a> · <a href="https://github.com/veniceai/skills/tree/main/skills/venice-x402" target="_blank" rel="noopener">Browse the skill's source folder</a></p>
+        </article>
+        <article class="collection-choice" id="choice-venice-models">
+          <h3>venice-models <span class="grade grade-c">78/100 · C</span></h3>
+          <p><b>Publisher's task description:</b> Discover Venice models, their capabilities, constraints, and pricing. Covers GET /models (with the ?type filter - text, image, video, music, tts, asr, embedding, upscale, inpaint, decision, all, code), /models/traits, /models/compatibility_mapping, every ModelResponse field (capabilities, constraints, per-type pricing with promotional rates, uncensored, deprecation, voice-changer and voice-cloning specs), and how to use this to pick the right model programmatically.</p>
+          <p>2,081 words in SKILL.md; 1 bundled file. <a href="https://github.com/veniceai/skills/blob/5eaeac576c099fcad61b494a07799e5e66d1d334/skills/venice-models/SKILL.md" target="_blank" rel="noopener">Read the assessed SKILL.md</a>.</p>
+          <p><b>Score evidence:</b> Full points for structural checks, recent maintenance and instruction depth. Largest point gaps: curated-list citations (1/7); boundary clause (0/4).</p>
+          <details><summary>See all score components for venice-models</summary>
+        <div class="table-wrap">
+          <table class="facts">
+            <tbody>
+            <tr><th scope="row">Structural checks</th><td>56 of 56</td></tr>
+            <tr><th scope="row">Description length</th><td>5 of 5</td></tr>
+            <tr><th scope="row">Boundary clause</th><td>0 of 4</td></tr>
+            <tr><th scope="row">Example request</th><td>0 of 3</td></tr>
+            <tr><th scope="row">Instruction depth</th><td>7 of 7</td></tr>
+            <tr><th scope="row">Reference files</th><td>0 of 3</td></tr>
+            <tr><th scope="row">Bundled scripts</th><td>0 of 2</td></tr>
+            <tr><th scope="row">Recent maintenance</th><td>9 of 9</td></tr>
+            <tr><th scope="row">Curated-list citations</th><td>1 of 7</td></tr>
+            <tr><th scope="row">Tool permissions declared</th><td>0 of 2</td></tr>
+            <tr><th scope="row">Compatibility declared</th><td>0 of 2</td></tr>
+            </tbody>
+          </table>
+        </div>
+          </details>
+          <p><a href="https://github.com/veniceai/skills/blob/main/LICENSE" target="_blank" rel="noopener">License</a>: MIT governs reuse and modification of these files.</p>
+          <ul><li>Named environment variables: <code>VENICE_API_KEY</code>.</li></ul>
+        <div class="snippet">
+          <div class="snippet-head"><span>Select one skill: venice-models</span><button type="button" class="snippet-copy" data-copy-target="collection-install-4">Copy</button></div>
+          <pre><code id="collection-install-4">npx skills add https://github.com/veniceai/skills/tree/main/skills/venice-models</code></pre>
+        </div>
+          <p><a href="venice-models/report.json" download>Download venice-models score report</a> · <a href="venice-models/">Read the full venice-models review and install guide</a></p>
+        </article>
+        <article class="collection-choice" id="choice-venice-decisions">
+          <h3>venice-decisions <span class="grade grade-c">73/100 · C</span></h3>
+          <p><b>Publisher's task description:</b> Call Venice's Beta POST /decisions (and its TypeSafe-compatible alias POST /systemone) to get typed judgments instead of generated text. Covers the Jev &quot;System One&quot; decision model (jev-latest, aliases jev-1-13-0 / typesafe-jev), the state + questions request shape, the three question/answer types (noul yes/no probability, choice with probability distribution + confidence, score on an ordered rubric), token limits (maxStateTokens / maxTotalTokens), input-token pricing, rate limits, and how upstream 422 validation errors surface as 400.</p>
+          <p>2,229 words in SKILL.md; 1 bundled file. <a href="https://github.com/veniceai/skills/blob/5eaeac576c099fcad61b494a07799e5e66d1d334/skills/venice-decisions/SKILL.md" target="_blank" rel="noopener">Read the assessed SKILL.md</a>.</p>
+          <p><b>Score evidence:</b> Full points for recent maintenance, instruction depth and description length. Largest point gaps: structural checks (48/56); curated-list citations (1/7).</p>
+          <details><summary>See all score components for venice-decisions</summary>
+        <div class="table-wrap">
+          <table class="facts">
+            <tbody>
+            <tr><th scope="row">Structural checks</th><td>48 of 56</td></tr>
+            <tr><th scope="row">Description length</th><td>5 of 5</td></tr>
+            <tr><th scope="row">Boundary clause</th><td>0 of 4</td></tr>
+            <tr><th scope="row">Example request</th><td>3 of 3</td></tr>
+            <tr><th scope="row">Instruction depth</th><td>7 of 7</td></tr>
+            <tr><th scope="row">Reference files</th><td>0 of 3</td></tr>
+            <tr><th scope="row">Bundled scripts</th><td>0 of 2</td></tr>
+            <tr><th scope="row">Recent maintenance</th><td>9 of 9</td></tr>
+            <tr><th scope="row">Curated-list citations</th><td>1 of 7</td></tr>
+            <tr><th scope="row">Tool permissions declared</th><td>0 of 2</td></tr>
+            <tr><th scope="row">Compatibility declared</th><td>0 of 2</td></tr>
+            </tbody>
+          </table>
+        </div>
+          </details>
+          <p><a href="https://github.com/veniceai/skills/blob/main/LICENSE" target="_blank" rel="noopener">License</a>: MIT governs reuse and modification of these files.</p>
+        <div class="snippet">
+          <div class="snippet-head"><span>Select one skill: venice-decisions</span><button type="button" class="snippet-copy" data-copy-target="collection-install-5">Copy</button></div>
+          <pre><code id="collection-install-5">npx skills add https://github.com/veniceai/skills/tree/main/skills/venice-decisions</code></pre>
+        </div>
+          <p><a href="venice-decisions/report.json" download>Download venice-decisions score report</a> · <a href="https://github.com/veniceai/skills/tree/main/skills/venice-decisions" target="_blank" rel="noopener">Browse the skill's source folder</a></p>
+        </article>
+      </section>
+      <section class="panel" id="collection-install" aria-labelledby="collection-install-title">
+        <h2 id="collection-install-title">Install and verify your selection</h2>
+        <ol>
+          <li><b>Select one skill.</b> Use the folder-specific command beside its description to start with the workflow you need. Skills with publisher-specific license terms link to that publisher's setup route.</li>
+          <li><b>Read the setup requirements.</b> Check the source, license and any named tools or environment variables. Installing a SKILL.md folder supplies instructions to the agent; any external CLI, MCP server, account or service still needs its own setup.</li>
+          <li><b>Check the result.</b> Open the installed SKILL.md and confirm that its name matches your selection. In Claude Code use the project's <code>.claude/skills/</code> folder; in Codex use <code>.agents/skills/</code>. The skills CLI also supports other Agent Skills hosts.</li>
+          <li><b>Try one representative task.</b> Supply the input files, expected output and success criteria. Compare the result with those criteria before adding more skills or running the workflow on live work.</li>
+        </ol>
+        <p><a href="../../guides/install-agent-skills/">Step-by-step installation for Claude Code, Codex and Cursor</a> · <a href="../../trust/">Read the directory's security and source policy</a>.</p>
+      </section>
       <section class="panel" aria-labelledby="skills-title">
         <h2 id="skills-title">Skills in veniceai/skills</h2>
-        <p class="muted">Linked names open the skill's directory page; the rest open the skill folder on GitHub. Descriptions on rows without a page are quoted from each SKILL.md.</p>
+        <p class="muted">Use the table to compare the full collection. Linked names open a detailed review when available; other names open the publisher's source folder.</p>
 
         <div class="table-wrap">
           <table class="skill-table" id="repo-skills" data-filter-group="repo-skills">
@@ -380,6 +572,30 @@
           </table>
         </div>
       </section>
+      <section class="panel" id="collection-compare" aria-labelledby="collection-compare-title">
+        <h2 id="collection-compare-title">Compare before adding more skills</h2>
+        <p>For developer tools and frameworks, compare task fit first, then the score components, installation requirements and license. Two skills with the same score can earn their points in different ways; use their reports to see the difference.</p>
+        <p><a href="../../developer-tools/">Compare developer tools and frameworks skills across publishers</a> · <a href="../../compare/">Build a side-by-side comparison</a>.</p>
+      </section>
+      <section class="panel badge-panel" id="badge" aria-labelledby="badge-title">
+        <h2 id="badge-title">Show the listing in your README</h2>
+        <p>This general badge links to the repository listing. For the two quality badges and feature offer, choose <b>Get badges</b> beside a skill below. Each skill keeps its own score and grade.</p>
+        <p class="badge-preview"><img src="badge.svg" alt="Suede AI Skills Directory: listed" width="215" height="20"></p>
+        <div class="snippet">
+          <div class="snippet-head"><span>Markdown</span><button type="button" class="snippet-copy" data-copy-target="badge-md">Copy</button></div>
+          <pre><code id="badge-md">[![Suede AI Skills Directory: listed](https://skills.suedeai.ai/directory/veniceai/skills/badge.svg)](https://skills.suedeai.ai/directory/veniceai/skills/)</code></pre>
+        </div>
+        <div class="snippet">
+          <div class="snippet-head"><span>HTML</span><button type="button" class="snippet-copy" data-copy-target="badge-html">Copy</button></div>
+          <pre><code id="badge-html">&lt;a href=&quot;https://skills.suedeai.ai/directory/veniceai/skills/&quot;&gt;&lt;img src=&quot;https://skills.suedeai.ai/directory/veniceai/skills/badge.svg&quot; alt=&quot;Suede AI Skills Directory: listed&quot; height=&quot;20&quot;&gt;&lt;/a&gt;</code></pre>
+        </div>
+      </section>
+<p class="badge-offer" data-promotion-end="">Limited-time feature offer: Display either quality badge in your repository or skill README, linked to your listing, then request verification. Suede AI checks the rendered README at a recorded commit. Eligible skills scoring 80–99 with a verified badge can receive a featured placement while the offer is open. <a href="../../submit/">Request badge verification</a>.</p>
+      <aside class="panel cta-placement" aria-labelledby="cta-publisher-claim-b-feature" data-cta-placement="publisher-claim" data-cta-variant="b-feature">
+        <h2 id="cta-publisher-claim-b-feature">Publishers: get featured</h2>
+        <p>Skills scoring 80–99 can display a quality shield. While the feature offer is open, a verified badge can earn a featured placement.</p>
+        <p><a class="button" href="../../submit/" data-cta="publisher-claim:b-feature">Request badge verification</a></p>
+      </aside>
       <aside class="panel svc-cta" aria-labelledby="svc-title" data-services-cta="repository">
         <h2 class="svc-kicker" id="svc-title">From Suede AI, the publisher of this directory</h2>
         <div class="svc-cards">

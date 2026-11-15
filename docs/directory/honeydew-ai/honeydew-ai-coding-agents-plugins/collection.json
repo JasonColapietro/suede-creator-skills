@@ -1,0 +1,1380 @@
+{
+  "schema_version": 1,
+  "repository": "honeydew-ai/honeydew-ai-coding-agents-plugins",
+  "listing_url": "https://skills.suedeai.ai/directory/honeydew-ai/honeydew-ai-coding-agents-plugins/",
+  "snapshot": {
+    "date": "2026-10-22",
+    "id": "0083645c3974488e8803884c7af76698",
+    "dataset_sha256": "b73996d45961aa527b4cea74a41a2e44497200dba9b2f85411e3602ab5f56641"
+  },
+  "listed_skill_count": 13,
+  "scope": "Skills listed by the directory; this is not a complete inventory of every file in the repository.",
+  "security_scan_status": "not_scanned",
+  "skills": [
+    {
+      "id": "honeydew-ai/honeydew-ai-coding-agents-plugins/conversation-review",
+      "name": "conversation-review",
+      "description": "Use when a semantic/context layer curator wants to review past analysis conversations in bulk, categorize user feedback into actionable improvement areas, and apply targeted changes to the semantic model or context layer. Covers the full workflow from collecting conversations and classifying feedback through to creating action items and applying them on a branch.",
+      "category": "data-databases",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/honeydew-ai/honeydew-ai-coding-agents-plugins/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "36797d906d0ae0730e9580ab59995df48431d442",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-18",
+        "skill_md_url": "https://github.com/honeydew-ai/honeydew-ai-coding-agents-plugins/blob/36797d906d0ae0730e9580ab59995df48431d442/skills/conversation-review/SKILL.md"
+      },
+      "quality": {
+        "score": 77,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/honeydew-ai/honeydew-ai-coding-agents-plugins/conversation-review/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/honeydew-ai/honeydew-ai-coding-agents-plugins/conversation-review/",
+      "source_folder_url": "https://github.com/honeydew-ai/honeydew-ai-coding-agents-plugins/tree/main/skills/conversation-review",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/honeydew-ai/honeydew-ai-coding-agents-plugins/tree/main/skills/conversation-review",
+        "publisher_setup_url": "https://github.com/honeydew-ai/honeydew-ai-coding-agents-plugins/blob/main/skills/conversation-review/SKILL.md"
+      }
+    },
+    {
+      "id": "honeydew-ai/honeydew-ai-coding-agents-plugins/filtering",
+      "name": "filtering",
+      "description": "Use when the user needs to filter data — whether in a structured query, a metric aggregation, or an attribute expression. Covers filter syntax, date handling, and best practices.",
+      "category": "data-databases",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/honeydew-ai/honeydew-ai-coding-agents-plugins/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "36797d906d0ae0730e9580ab59995df48431d442",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-18",
+        "skill_md_url": "https://github.com/honeydew-ai/honeydew-ai-coding-agents-plugins/blob/36797d906d0ae0730e9580ab59995df48431d442/skills/filtering/SKILL.md"
+      },
+      "quality": {
+        "score": 77,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/honeydew-ai/honeydew-ai-coding-agents-plugins/filtering/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/honeydew-ai/honeydew-ai-coding-agents-plugins/filtering/",
+      "source_folder_url": "https://github.com/honeydew-ai/honeydew-ai-coding-agents-plugins/tree/main/skills/filtering",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/honeydew-ai/honeydew-ai-coding-agents-plugins/tree/main/skills/filtering",
+        "publisher_setup_url": "https://github.com/honeydew-ai/honeydew-ai-coding-agents-plugins/blob/main/skills/filtering/SKILL.md"
+      }
+    },
+    {
+      "id": "honeydew-ai/honeydew-ai-coding-agents-plugins/model-exploration",
+      "name": "model-exploration",
+      "description": "Use when exploring Honeydew semantic layer, discovering entities/fields, setting up workspace and branch context, or running structured queries to spot-check field values. Any question about the data itself — \"why\", \"how\", trends, root cause, anything needing multiple steps — belongs to the query skill's deep analysis, including when already mid-exploration. For creating metrics use metric-creation skill. For creating attributes use attribute-creation skill.",
+      "category": "data-databases",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/honeydew-ai/honeydew-ai-coding-agents-plugins/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "36797d906d0ae0730e9580ab59995df48431d442",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-18",
+        "skill_md_url": "https://github.com/honeydew-ai/honeydew-ai-coding-agents-plugins/blob/36797d906d0ae0730e9580ab59995df48431d442/skills/model-exploration/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/honeydew-ai/honeydew-ai-coding-agents-plugins/model-exploration/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/honeydew-ai/honeydew-ai-coding-agents-plugins/model-exploration/",
+      "source_folder_url": "https://github.com/honeydew-ai/honeydew-ai-coding-agents-plugins/tree/main/skills/model-exploration",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/honeydew-ai/honeydew-ai-coding-agents-plugins/tree/main/skills/model-exploration",
+        "publisher_setup_url": "https://github.com/honeydew-ai/honeydew-ai-coding-agents-plugins/blob/main/skills/model-exploration/SKILL.md"
+      }
+    },
+    {
+      "id": "honeydew-ai/honeydew-ai-coding-agents-plugins/query",
+      "name": "query",
+      "description": "Use when the user wants to query or analyze data through the Honeydew semantic layer — including natural language analysis questions, deep multi-step investigations, and structured queries. For model/field discovery use the model-exploration skill.",
+      "category": "data-databases",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/honeydew-ai/honeydew-ai-coding-agents-plugins/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "36797d906d0ae0730e9580ab59995df48431d442",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-18",
+        "skill_md_url": "https://github.com/honeydew-ai/honeydew-ai-coding-agents-plugins/blob/36797d906d0ae0730e9580ab59995df48431d442/skills/query/SKILL.md"
+      },
+      "quality": {
+        "score": 71,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/honeydew-ai/honeydew-ai-coding-agents-plugins/query/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/honeydew-ai/honeydew-ai-coding-agents-plugins/query/",
+      "source_folder_url": "https://github.com/honeydew-ai/honeydew-ai-coding-agents-plugins/tree/main/skills/query",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/honeydew-ai/honeydew-ai-coding-agents-plugins/tree/main/skills/query",
+        "publisher_setup_url": "https://github.com/honeydew-ai/honeydew-ai-coding-agents-plugins/blob/main/skills/query/SKILL.md"
+      }
+    },
+    {
+      "id": "honeydew-ai/honeydew-ai-coding-agents-plugins/query-debugging",
+      "name": "query-debugging",
+      "description": "Use when the user wants to review or inspect past query executions in Honeydew — what ran, from which client (BI tools, SQL interface, MCP, deep analysis), the semantic definition or compiled SQL behind a run, who ran it and when — and to debug failures. Uses the list_query_history MCP tool. For running new queries or analysis use the query skill.",
+      "category": "data-databases",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/honeydew-ai/honeydew-ai-coding-agents-plugins/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "36797d906d0ae0730e9580ab59995df48431d442",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-18",
+        "skill_md_url": "https://github.com/honeydew-ai/honeydew-ai-coding-agents-plugins/blob/36797d906d0ae0730e9580ab59995df48431d442/skills/query-debugging/SKILL.md"
+      },
+      "quality": {
+        "score": 77,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/honeydew-ai/honeydew-ai-coding-agents-plugins/query-debugging/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/honeydew-ai/honeydew-ai-coding-agents-plugins/query-debugging/",
+      "source_folder_url": "https://github.com/honeydew-ai/honeydew-ai-coding-agents-plugins/tree/main/skills/query-debugging",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/honeydew-ai/honeydew-ai-coding-agents-plugins/tree/main/skills/query-debugging",
+        "publisher_setup_url": "https://github.com/honeydew-ai/honeydew-ai-coding-agents-plugins/blob/main/skills/query-debugging/SKILL.md"
+      }
+    },
+    {
+      "id": "honeydew-ai/honeydew-ai-coding-agents-plugins/workspace-branch",
+      "name": "workspace-branch",
+      "description": "Use when setting up workspace and branch context, switching workspaces or branches, creating or deleting branches, reviewing branch history, or creating a pull request for a working branch. This skill should be used when the user asks to \"list workspaces\", \"switch workspace\", \"create a branch\", \"delete a branch\", \"switch branch\", \"show branch history\", \"create a PR\", or \"open a pull request\" in Honeydew.",
+      "category": "data-databases",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/honeydew-ai/honeydew-ai-coding-agents-plugins/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "36797d906d0ae0730e9580ab59995df48431d442",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-18",
+        "skill_md_url": "https://github.com/honeydew-ai/honeydew-ai-coding-agents-plugins/blob/36797d906d0ae0730e9580ab59995df48431d442/skills/workspace-branch/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/honeydew-ai/honeydew-ai-coding-agents-plugins/workspace-branch/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/honeydew-ai/honeydew-ai-coding-agents-plugins/workspace-branch/",
+      "source_folder_url": "https://github.com/honeydew-ai/honeydew-ai-coding-agents-plugins/tree/main/skills/workspace-branch",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/honeydew-ai/honeydew-ai-coding-agents-plugins/tree/main/skills/workspace-branch",
+        "publisher_setup_url": "https://github.com/honeydew-ai/honeydew-ai-coding-agents-plugins/blob/main/skills/workspace-branch/SKILL.md"
+      }
+    },
+    {
+      "id": "honeydew-ai/honeydew-ai-coding-agents-plugins/attribute-creation",
+      "name": "attribute-creation",
+      "description": "Guides you step-by-step through defining a calculated attribute (dimension) on a Honeydew entity. Covers SQL expression building and pushes to Honeydew via the MCP tools.",
+      "category": "data-databases",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/honeydew-ai/honeydew-ai-coding-agents-plugins/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "36797d906d0ae0730e9580ab59995df48431d442",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-18",
+        "skill_md_url": "https://github.com/honeydew-ai/honeydew-ai-coding-agents-plugins/blob/36797d906d0ae0730e9580ab59995df48431d442/skills/attribute-creation/SKILL.md"
+      },
+      "quality": {
+        "score": 69,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/honeydew-ai/honeydew-ai-coding-agents-plugins/attribute-creation/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/honeydew-ai/honeydew-ai-coding-agents-plugins/tree/main/skills/attribute-creation",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/honeydew-ai/honeydew-ai-coding-agents-plugins/tree/main/skills/attribute-creation",
+        "publisher_setup_url": "https://github.com/honeydew-ai/honeydew-ai-coding-agents-plugins/blob/main/skills/attribute-creation/SKILL.md"
+      }
+    },
+    {
+      "id": "honeydew-ai/honeydew-ai-coding-agents-plugins/context-item-creation",
+      "name": "context-item-creation",
+      "description": "Guides you through creating context items — instructions, skills, knowledge pointers, and memory events — that give the AI analyst persistent knowledge about your organization. Covers when to create each type, naming conventions, folder organization, and the hard boundary between context (rules and procedures) and the semantic layer (logic and calculations).",
+      "category": "data-databases",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/honeydew-ai/honeydew-ai-coding-agents-plugins/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "36797d906d0ae0730e9580ab59995df48431d442",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-18",
+        "skill_md_url": "https://github.com/honeydew-ai/honeydew-ai-coding-agents-plugins/blob/36797d906d0ae0730e9580ab59995df48431d442/skills/context-item-creation/SKILL.md"
+      },
+      "quality": {
+        "score": 66,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/honeydew-ai/honeydew-ai-coding-agents-plugins/context-item-creation/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/honeydew-ai/honeydew-ai-coding-agents-plugins/tree/main/skills/context-item-creation",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/honeydew-ai/honeydew-ai-coding-agents-plugins/tree/main/skills/context-item-creation",
+        "publisher_setup_url": "https://github.com/honeydew-ai/honeydew-ai-coding-agents-plugins/blob/main/skills/context-item-creation/SKILL.md"
+      }
+    },
+    {
+      "id": "honeydew-ai/honeydew-ai-coding-agents-plugins/domain-creation",
+      "name": "domain-creation",
+      "description": "Guides you through creating a Honeydew domain — a governance object that scopes entity/field visibility and applies mandatory filters — ideal for setting up contexts for deep analysis. Also covers domain hierarchy — extending parent domains, inheritance and merge rules, multiple inheritance, and removing inherited items.",
+      "category": "data-databases",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/honeydew-ai/honeydew-ai-coding-agents-plugins/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "36797d906d0ae0730e9580ab59995df48431d442",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-18",
+        "skill_md_url": "https://github.com/honeydew-ai/honeydew-ai-coding-agents-plugins/blob/36797d906d0ae0730e9580ab59995df48431d442/skills/domain-creation/SKILL.md"
+      },
+      "quality": {
+        "score": 69,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/honeydew-ai/honeydew-ai-coding-agents-plugins/domain-creation/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/honeydew-ai/honeydew-ai-coding-agents-plugins/tree/main/skills/domain-creation",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/honeydew-ai/honeydew-ai-coding-agents-plugins/tree/main/skills/domain-creation",
+        "publisher_setup_url": "https://github.com/honeydew-ai/honeydew-ai-coding-agents-plugins/blob/main/skills/domain-creation/SKILL.md"
+      }
+    },
+    {
+      "id": "honeydew-ai/honeydew-ai-coding-agents-plugins/entity-creation",
+      "name": "entity-creation",
+      "description": "Guides you through defining a new Honeydew entity from a data warehouse source — covering source type, granularity key, and initial attribute mapping — then pushes to Honeydew via the MCP tools.",
+      "category": "data-databases",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/honeydew-ai/honeydew-ai-coding-agents-plugins/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "36797d906d0ae0730e9580ab59995df48431d442",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-18",
+        "skill_md_url": "https://github.com/honeydew-ai/honeydew-ai-coding-agents-plugins/blob/36797d906d0ae0730e9580ab59995df48431d442/skills/entity-creation/SKILL.md"
+      },
+      "quality": {
+        "score": 69,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/honeydew-ai/honeydew-ai-coding-agents-plugins/entity-creation/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/honeydew-ai/honeydew-ai-coding-agents-plugins/tree/main/skills/entity-creation",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/honeydew-ai/honeydew-ai-coding-agents-plugins/tree/main/skills/entity-creation",
+        "publisher_setup_url": "https://github.com/honeydew-ai/honeydew-ai-coding-agents-plugins/blob/main/skills/entity-creation/SKILL.md"
+      }
+    },
+    {
+      "id": "honeydew-ai/honeydew-ai-coding-agents-plugins/metric-creation",
+      "name": "metric-creation",
+      "description": "Guides you step-by-step through defining a business metric (aggregation) on a Honeydew entity. Covers SQL expression building and pushes to Honeydew via the MCP tools.",
+      "category": "data-databases",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/honeydew-ai/honeydew-ai-coding-agents-plugins/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "36797d906d0ae0730e9580ab59995df48431d442",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-18",
+        "skill_md_url": "https://github.com/honeydew-ai/honeydew-ai-coding-agents-plugins/blob/36797d906d0ae0730e9580ab59995df48431d442/skills/metric-creation/SKILL.md"
+      },
+      "quality": {
+        "score": 69,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/honeydew-ai/honeydew-ai-coding-agents-plugins/metric-creation/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/honeydew-ai/honeydew-ai-coding-agents-plugins/tree/main/skills/metric-creation",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/honeydew-ai/honeydew-ai-coding-agents-plugins/tree/main/skills/metric-creation",
+        "publisher_setup_url": "https://github.com/honeydew-ai/honeydew-ai-coding-agents-plugins/blob/main/skills/metric-creation/SKILL.md"
+      }
+    },
+    {
+      "id": "honeydew-ai/honeydew-ai-coding-agents-plugins/relation-creation",
+      "name": "relation-creation",
+      "description": "Guides you through defining a relationship between two Honeydew entities — covering join type, direction, cross-filtering, and connection method — then pushes the updated entity YAML to Honeydew via the MCP tools.",
+      "category": "data-databases",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/honeydew-ai/honeydew-ai-coding-agents-plugins/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "36797d906d0ae0730e9580ab59995df48431d442",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-18",
+        "skill_md_url": "https://github.com/honeydew-ai/honeydew-ai-coding-agents-plugins/blob/36797d906d0ae0730e9580ab59995df48431d442/skills/relation-creation/SKILL.md"
+      },
+      "quality": {
+        "score": 69,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/honeydew-ai/honeydew-ai-coding-agents-plugins/relation-creation/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/honeydew-ai/honeydew-ai-coding-agents-plugins/tree/main/skills/relation-creation",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/honeydew-ai/honeydew-ai-coding-agents-plugins/tree/main/skills/relation-creation",
+        "publisher_setup_url": "https://github.com/honeydew-ai/honeydew-ai-coding-agents-plugins/blob/main/skills/relation-creation/SKILL.md"
+      }
+    },
+    {
+      "id": "honeydew-ai/honeydew-ai-coding-agents-plugins/validation",
+      "name": "validation",
+      "description": "Use after creating or modifying ANY Honeydew object (metric, attribute, entity, domain). Provides type-specific validation logic to ensure objects work correctly and return sensible results.",
+      "category": "data-databases",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/honeydew-ai/honeydew-ai-coding-agents-plugins/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "36797d906d0ae0730e9580ab59995df48431d442",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-18",
+        "skill_md_url": "https://github.com/honeydew-ai/honeydew-ai-coding-agents-plugins/blob/36797d906d0ae0730e9580ab59995df48431d442/skills/validation/SKILL.md"
+      },
+      "quality": {
+        "score": 69,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/honeydew-ai/honeydew-ai-coding-agents-plugins/validation/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/honeydew-ai/honeydew-ai-coding-agents-plugins/tree/main/skills/validation",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/honeydew-ai/honeydew-ai-coding-agents-plugins/tree/main/skills/validation",
+        "publisher_setup_url": "https://github.com/honeydew-ai/honeydew-ai-coding-agents-plugins/blob/main/skills/validation/SKILL.md"
+      }
+    }
+  ]
+}

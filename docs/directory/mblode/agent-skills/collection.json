@@ -1,0 +1,2955 @@
+{
+  "schema_version": 1,
+  "repository": "mblode/agent-skills",
+  "listing_url": "https://skills.suedeai.ai/directory/mblode/agent-skills/",
+  "snapshot": {
+    "date": "2026-10-22",
+    "id": "0083645c3974488e8803884c7af76698",
+    "dataset_sha256": "b73996d45961aa527b4cea74a41a2e44497200dba9b2f85411e3602ab5f56641"
+  },
+  "listed_skill_count": 28,
+  "scope": "Skills listed by the directory; this is not a complete inventory of every file in the repository.",
+  "security_scan_status": "not_scanned",
+  "skills": [
+    {
+      "id": "mblode/agent-skills/agent-ready",
+      "name": "agent-ready",
+      "description": "Implements agent-readiness on public sites and docs from Mintlify Agent Score, AFDocs, Is Agentic, Is It Agent Ready, or url-discovery-bench reports, or from server logs of agents 404ing on guessed URLs. Use when asked to \"make our site agent-ready\", \"improve Agent Score\", \"fix llms.txt coverage\", \"agents keep 404ing on our docs\", or when a pasted scorecard is the brief.",
+      "category": "ai-agents-llm",
+      "license": "MIT",
+      "license_url": "https://github.com/mblode/agent-skills/blob/main/LICENSE.md",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "81d0af2f6d4b32d791fb26caa82b17603ef4d807",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-17",
+        "skill_md_url": "https://github.com/mblode/agent-skills/blob/81d0af2f6d4b32d791fb26caa82b17603ef4d807/skills/agent-ready/SKILL.md"
+      },
+      "quality": {
+        "score": 91,
+        "grade": "A",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/mblode/agent-skills/agent-ready/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/mblode/agent-skills/agent-ready/",
+      "source_folder_url": "https://github.com/mblode/agent-skills/tree/main/skills/agent-ready",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/mblode/agent-skills/tree/main/skills/agent-ready",
+        "publisher_setup_url": "https://github.com/mblode/agent-skills/blob/main/skills/agent-ready/SKILL.md"
+      }
+    },
+    {
+      "id": "mblode/agent-skills/agent-skills-creator",
+      "name": "agent-skills-creator",
+      "description": "Creates and improves portable Agent Skills with a validator, routing scenarios, and evidence-based keep, cut, merge, or retire decisions. Use when asked to \"write a skill\", \"update all skills\", \"audit my SKILL.md\", \"remove redundant instructions\", or fix skill triggering.",
+      "category": "ai-agents-llm",
+      "license": "MIT",
+      "license_url": "https://github.com/mblode/agent-skills/blob/main/LICENSE.md",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "81d0af2f6d4b32d791fb26caa82b17603ef4d807",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-17",
+        "skill_md_url": "https://github.com/mblode/agent-skills/blob/81d0af2f6d4b32d791fb26caa82b17603ef4d807/skills/agent-skills-creator/SKILL.md"
+      },
+      "quality": {
+        "score": 91,
+        "grade": "A",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/mblode/agent-skills/agent-skills-creator/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/mblode/agent-skills/agent-skills-creator/",
+      "source_folder_url": "https://github.com/mblode/agent-skills/tree/main/skills/agent-skills-creator",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/mblode/agent-skills/tree/main/skills/agent-skills-creator",
+        "publisher_setup_url": "https://github.com/mblode/agent-skills/blob/main/skills/agent-skills-creator/SKILL.md"
+      }
+    },
+    {
+      "id": "mblode/agent-skills/chat-history",
+      "name": "chat-history",
+      "description": "Recovers decisions, previous fixes, research, and what followed a prompt from past AI conversations, with source evidence. Use when asked to \"search past chats\", \"we fixed this before\", \"what followed this prompt\", or \"why did the plan change\". Reads local Claude Code, Codex, Grok, and Cursor history plus explicit ChatGPT or Claude exports.",
+      "category": "ai-agents-llm",
+      "license": "MIT",
+      "license_url": "https://github.com/mblode/agent-skills/blob/main/LICENSE.md",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "81d0af2f6d4b32d791fb26caa82b17603ef4d807",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-17",
+        "skill_md_url": "https://github.com/mblode/agent-skills/blob/81d0af2f6d4b32d791fb26caa82b17603ef4d807/skills/chat-history/SKILL.md"
+      },
+      "quality": {
+        "score": 91,
+        "grade": "A",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/mblode/agent-skills/chat-history/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/mblode/agent-skills/chat-history/",
+      "source_folder_url": "https://github.com/mblode/agent-skills/tree/main/skills/chat-history",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/mblode/agent-skills/tree/main/skills/chat-history",
+        "publisher_setup_url": "https://github.com/mblode/agent-skills/blob/main/skills/chat-history/SKILL.md"
+      }
+    },
+    {
+      "id": "mblode/agent-skills/ci-speedup",
+      "name": "ci-speedup",
+      "description": "Cuts the wait from push to green by measuring a pipeline's critical path from run timestamps, then splitting, sharding, trimming setup and sharing test module state, with a before/after ledger. Use when asked to \"speed up CI\", \"CI is slow\", \"why does a PR take 15 minutes\", \"CI is the bottleneck\", or when agents merge faster than checks finish.",
+      "category": "devops-cloud",
+      "license": "MIT",
+      "license_url": "https://github.com/mblode/agent-skills/blob/main/LICENSE.md",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "81d0af2f6d4b32d791fb26caa82b17603ef4d807",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-17",
+        "skill_md_url": "https://github.com/mblode/agent-skills/blob/81d0af2f6d4b32d791fb26caa82b17603ef4d807/skills/ci-speedup/SKILL.md"
+      },
+      "quality": {
+        "score": 91,
+        "grade": "A",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/mblode/agent-skills/ci-speedup/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/mblode/agent-skills/ci-speedup/",
+      "source_folder_url": "https://github.com/mblode/agent-skills/tree/main/skills/ci-speedup",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/mblode/agent-skills/tree/main/skills/ci-speedup",
+        "publisher_setup_url": "https://github.com/mblode/agent-skills/blob/main/skills/ci-speedup/SKILL.md"
+      }
+    },
+    {
+      "id": "mblode/agent-skills/codebase-architecture",
+      "name": "codebase-architecture",
+      "description": "Designs module interfaces, deepens shallow modules, and installs enforceable repository guardrails and agent wayfinding. Use when asked to \"design the architecture\", \"simplify our modules\", \"find shallow modules\", \"harden the repo\", \"gate an unattended agent fix job\", or \"triage alerts with an agent\".",
+      "category": "code-review-quality",
+      "license": "MIT",
+      "license_url": "https://github.com/mblode/agent-skills/blob/main/LICENSE.md",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "81d0af2f6d4b32d791fb26caa82b17603ef4d807",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-17",
+        "skill_md_url": "https://github.com/mblode/agent-skills/blob/81d0af2f6d4b32d791fb26caa82b17603ef4d807/skills/codebase-architecture/SKILL.md"
+      },
+      "quality": {
+        "score": 84,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/mblode/agent-skills/codebase-architecture/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/mblode/agent-skills/codebase-architecture/",
+      "source_folder_url": "https://github.com/mblode/agent-skills/tree/main/skills/codebase-architecture",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/mblode/agent-skills/tree/main/skills/codebase-architecture",
+        "publisher_setup_url": "https://github.com/mblode/agent-skills/blob/main/skills/codebase-architecture/SKILL.md"
+      }
+    },
+    {
+      "id": "mblode/agent-skills/ghostwriter",
+      "name": "ghostwriter",
+      "description": "Writes, rewrites, and critiques messages, posts, review comments, tickets, PRDs, design docs, talk scripts, docs, READMEs, and copy as the user or their company, in a private profile's voice with machine tells stripped. Use when asked to \"write this in my voice\", \"draft a Slack reply\", \"make this sound less like AI\", \"write the README\", \"critique my draft\", or \"write my Slack profile\".",
+      "category": "writing-content",
+      "license": "MIT",
+      "license_url": "https://github.com/mblode/agent-skills/blob/main/LICENSE.md",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "81d0af2f6d4b32d791fb26caa82b17603ef4d807",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-17",
+        "skill_md_url": "https://github.com/mblode/agent-skills/blob/81d0af2f6d4b32d791fb26caa82b17603ef4d807/skills/ghostwriter/SKILL.md"
+      },
+      "quality": {
+        "score": 87,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/mblode/agent-skills/ghostwriter/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/mblode/agent-skills/ghostwriter/",
+      "source_folder_url": "https://github.com/mblode/agent-skills/tree/main/skills/ghostwriter",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/mblode/agent-skills/tree/main/skills/ghostwriter",
+        "publisher_setup_url": "https://github.com/mblode/agent-skills/blob/main/skills/ghostwriter/SKILL.md"
+      }
+    },
+    {
+      "id": "mblode/agent-skills/pr-babysitter",
+      "name": "pr-babysitter",
+      "description": "Monitors or repairs an open GitHub PR: CI failures, conflicts, review threads, and merge readiness, reporting state changes. Use when asked to \"watch this PR\", \"fix CI\", \"resolve conflicts\", or \"address review comments\".",
+      "category": "code-review-quality",
+      "license": "MIT",
+      "license_url": "https://github.com/mblode/agent-skills/blob/main/LICENSE.md",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "81d0af2f6d4b32d791fb26caa82b17603ef4d807",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-17",
+        "skill_md_url": "https://github.com/mblode/agent-skills/blob/81d0af2f6d4b32d791fb26caa82b17603ef4d807/skills/pr-babysitter/SKILL.md"
+      },
+      "quality": {
+        "score": 91,
+        "grade": "A",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/mblode/agent-skills/pr-babysitter/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/mblode/agent-skills/pr-babysitter/",
+      "source_folder_url": "https://github.com/mblode/agent-skills/tree/main/skills/pr-babysitter",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/mblode/agent-skills/tree/main/skills/pr-babysitter",
+        "publisher_setup_url": "https://github.com/mblode/agent-skills/blob/main/skills/pr-babysitter/SKILL.md"
+      }
+    },
+    {
+      "id": "mblode/agent-skills/test-audit",
+      "name": "test-audit",
+      "description": "Prunes low-value tests across a whole suite to a measured target while holding coverage. Use when asked to \"remove useless tests\", \"prune the test suite\", \"we have too many tests\", \"agents keep writing pointless tests\", or \"cut 20% of tests without losing coverage\".",
+      "category": "testing-qa",
+      "license": "MIT",
+      "license_url": "https://github.com/mblode/agent-skills/blob/main/LICENSE.md",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "81d0af2f6d4b32d791fb26caa82b17603ef4d807",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-17",
+        "skill_md_url": "https://github.com/mblode/agent-skills/blob/81d0af2f6d4b32d791fb26caa82b17603ef4d807/skills/test-audit/SKILL.md"
+      },
+      "quality": {
+        "score": 89,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/mblode/agent-skills/test-audit/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/mblode/agent-skills/test-audit/",
+      "source_folder_url": "https://github.com/mblode/agent-skills/tree/main/skills/test-audit",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/mblode/agent-skills/tree/main/skills/test-audit",
+        "publisher_setup_url": "https://github.com/mblode/agent-skills/blob/main/skills/test-audit/SKILL.md"
+      }
+    },
+    {
+      "id": "mblode/agent-skills/tidy",
+      "name": "tidy",
+      "description": "Reviews a local diff, branch diff, or PR with file:line findings in confirmed and plausible tiers, gates any test the diff adds or changes, and in apply mode lands the fixes and diff-scoped simplifications. Use when asked to \"review my changes\", \"code review\", \"tidy this\", \"simplify my diff\", \"deslop this\", \"structural review\", \"security audit\", or \"audit these tests in my PR\". For the PR itself use pr-creator; for CI and review threads use pr-babysitter; for UI defects use ui-design; for repo architecture use codebase-architecture; for pruning the whole suite to a target use test-audit.",
+      "category": "code-review-quality",
+      "license": "MIT",
+      "license_url": "https://github.com/mblode/agent-skills/blob/main/LICENSE.md",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "81d0af2f6d4b32d791fb26caa82b17603ef4d807",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-17",
+        "skill_md_url": "https://github.com/mblode/agent-skills/blob/81d0af2f6d4b32d791fb26caa82b17603ef4d807/skills/tidy/SKILL.md"
+      },
+      "quality": {
+        "score": 87,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/mblode/agent-skills/tidy/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/mblode/agent-skills/tidy/",
+      "source_folder_url": "https://github.com/mblode/agent-skills/tree/main/skills/tidy",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/mblode/agent-skills/tree/main/skills/tidy",
+        "publisher_setup_url": "https://github.com/mblode/agent-skills/blob/main/skills/tidy/SKILL.md"
+      }
+    },
+    {
+      "id": "mblode/agent-skills/ui-animation",
+      "name": "ui-animation",
+      "description": "Builds, reviews, and measures UI motion, including springs, gestures, scroll effects, curve fitting from recordings, and sparse interface sound. Use when asked to \"add animation\", \"match this easing\", \"reverse engineer this motion\", \"add a click sound\", or find animation opportunities.",
+      "category": "frontend-design",
+      "license": "MIT",
+      "license_url": "https://github.com/mblode/agent-skills/blob/main/LICENSE.md",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "81d0af2f6d4b32d791fb26caa82b17603ef4d807",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-17",
+        "skill_md_url": "https://github.com/mblode/agent-skills/blob/81d0af2f6d4b32d791fb26caa82b17603ef4d807/skills/ui-animation/SKILL.md"
+      },
+      "quality": {
+        "score": 86,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/mblode/agent-skills/ui-animation/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/mblode/agent-skills/ui-animation/",
+      "source_folder_url": "https://github.com/mblode/agent-skills/tree/main/skills/ui-animation",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/mblode/agent-skills/tree/main/skills/ui-animation",
+        "publisher_setup_url": "https://github.com/mblode/agent-skills/blob/main/skills/ui-animation/SKILL.md"
+      }
+    },
+    {
+      "id": "mblode/agent-skills/ui-design",
+      "name": "ui-design",
+      "description": "Designs and builds React/Next/Tailwind UI, audits visual and interaction defects, and stress-tests components with worst-case data. Use when asked to \"build a landing page\", \"extract our design system\", \"add dark mode\", \"make this responsive\", \"remove UI slop\", \"audit this component\", \"stress-test this component\", \"break this UI\", or \"show me the worst case\".",
+      "category": "frontend-design",
+      "license": "MIT",
+      "license_url": "https://github.com/mblode/agent-skills/blob/main/LICENSE.md",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "81d0af2f6d4b32d791fb26caa82b17603ef4d807",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-17",
+        "skill_md_url": "https://github.com/mblode/agent-skills/blob/81d0af2f6d4b32d791fb26caa82b17603ef4d807/skills/ui-design/SKILL.md"
+      },
+      "quality": {
+        "score": 84,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/mblode/agent-skills/ui-design/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/mblode/agent-skills/ui-design/",
+      "source_folder_url": "https://github.com/mblode/agent-skills/tree/main/skills/ui-design",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/mblode/agent-skills/tree/main/skills/ui-design",
+        "publisher_setup_url": "https://github.com/mblode/agent-skills/blob/main/skills/ui-design/SKILL.md"
+      }
+    },
+    {
+      "id": "mblode/agent-skills/ui-verification",
+      "name": "ui-verification",
+      "description": "Runs scoped browser probes for focus, hit targets, overflow, themes, request failures, and performance attribution, with evidence linked to UI rule IDs. Use when asked to \"verify this in the browser\", \"reproduce this UI finding\", \"re-measure after the UI fix\", or \"review before and after screenshots\".",
+      "category": "testing-qa",
+      "license": "MIT",
+      "license_url": "https://github.com/mblode/agent-skills/blob/main/LICENSE.md",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "81d0af2f6d4b32d791fb26caa82b17603ef4d807",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-17",
+        "skill_md_url": "https://github.com/mblode/agent-skills/blob/81d0af2f6d4b32d791fb26caa82b17603ef4d807/skills/ui-verification/SKILL.md"
+      },
+      "quality": {
+        "score": 89,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/mblode/agent-skills/ui-verification/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/mblode/agent-skills/ui-verification/",
+      "source_folder_url": "https://github.com/mblode/agent-skills/tree/main/skills/ui-verification",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/mblode/agent-skills/tree/main/skills/ui-verification",
+        "publisher_setup_url": "https://github.com/mblode/agent-skills/blob/main/skills/ui-verification/SKILL.md"
+      }
+    },
+    {
+      "id": "mblode/agent-skills/agents-md",
+      "name": "agents-md",
+      "description": "Audits and edits agent instruction files, verifies repository commands, and migrates repositories to AGENTS.md as the single shared source. Use when asked to \"improve my AGENTS.md\", \"migrate CLAUDE.md to AGENTS.md\", or make instructions work across agents.",
+      "category": "ai-agents-llm",
+      "license": "MIT",
+      "license_url": "https://github.com/mblode/agent-skills/blob/main/LICENSE.md",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "81d0af2f6d4b32d791fb26caa82b17603ef4d807",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-17",
+        "skill_md_url": "https://github.com/mblode/agent-skills/blob/81d0af2f6d4b32d791fb26caa82b17603ef4d807/skills/agents-md/SKILL.md"
+      },
+      "quality": {
+        "score": 87,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/mblode/agent-skills/agents-md/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/mblode/agent-skills/agents-md/",
+      "source_folder_url": "https://github.com/mblode/agent-skills/tree/main/skills/agents-md",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/mblode/agent-skills/tree/main/skills/agents-md",
+        "publisher_setup_url": "https://github.com/mblode/agent-skills/blob/main/skills/agents-md/SKILL.md"
+      }
+    },
+    {
+      "id": "mblode/agent-skills/app-verification",
+      "name": "app-verification",
+      "description": "Builds and maintains a repo's own verification harness (verify CLI, doctor, worktree isolation, feature map, seed data) and a reproduce-first bug handoff. Use when asked to \"build a verification harness\", \"add a doctor command\", \"prove every feature still works\", or \"reproduce this bug report\".",
+      "category": "testing-qa",
+      "license": "MIT",
+      "license_url": "https://github.com/mblode/agent-skills/blob/main/LICENSE.md",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "81d0af2f6d4b32d791fb26caa82b17603ef4d807",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-17",
+        "skill_md_url": "https://github.com/mblode/agent-skills/blob/81d0af2f6d4b32d791fb26caa82b17603ef4d807/skills/app-verification/SKILL.md"
+      },
+      "quality": {
+        "score": 89,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/mblode/agent-skills/app-verification/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/mblode/agent-skills/app-verification/",
+      "source_folder_url": "https://github.com/mblode/agent-skills/tree/main/skills/app-verification",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/mblode/agent-skills/tree/main/skills/app-verification",
+        "publisher_setup_url": "https://github.com/mblode/agent-skills/blob/main/skills/app-verification/SKILL.md"
+      }
+    },
+    {
+      "id": "mblode/agent-skills/autoship",
+      "name": "autoship",
+      "description": "Runs a changesets npm release through the version PR, CI publish, and registry verification. Use when asked to \"release this package\", \"autoship\", \"merge Version Packages\", or diagnose a release that did not publish.",
+      "category": "devops-cloud",
+      "license": "MIT",
+      "license_url": "https://github.com/mblode/agent-skills/blob/main/LICENSE.md",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "81d0af2f6d4b32d791fb26caa82b17603ef4d807",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-17",
+        "skill_md_url": "https://github.com/mblode/agent-skills/blob/81d0af2f6d4b32d791fb26caa82b17603ef4d807/skills/autoship/SKILL.md"
+      },
+      "quality": {
+        "score": 89,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/mblode/agent-skills/autoship/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/mblode/agent-skills/autoship/",
+      "source_folder_url": "https://github.com/mblode/agent-skills/tree/main/skills/autoship",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/mblode/agent-skills/tree/main/skills/autoship",
+        "publisher_setup_url": "https://github.com/mblode/agent-skills/blob/main/skills/autoship/SKILL.md"
+      }
+    },
+    {
+      "id": "mblode/agent-skills/ax-audit",
+      "name": "ax-audit",
+      "description": "Audits agentic products for tool parity, authority, approval payloads, recovery, and trust using 24 rules and a ship verdict. Use when asked for an \"AX audit\", to review an agent approval flow, or whether an agent can operate the product.",
+      "category": "ai-agents-llm",
+      "license": "MIT",
+      "license_url": "https://github.com/mblode/agent-skills/blob/main/LICENSE.md",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "81d0af2f6d4b32d791fb26caa82b17603ef4d807",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-17",
+        "skill_md_url": "https://github.com/mblode/agent-skills/blob/81d0af2f6d4b32d791fb26caa82b17603ef4d807/skills/ax-audit/SKILL.md"
+      },
+      "quality": {
+        "score": 87,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/mblode/agent-skills/ax-audit/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/mblode/agent-skills/ax-audit/",
+      "source_folder_url": "https://github.com/mblode/agent-skills/tree/main/skills/ax-audit",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/mblode/agent-skills/tree/main/skills/ax-audit",
+        "publisher_setup_url": "https://github.com/mblode/agent-skills/blob/main/skills/ax-audit/SKILL.md"
+      }
+    },
+    {
+      "id": "mblode/agent-skills/dx-audit",
+      "name": "dx-audit",
+      "description": "Audits libraries, CLIs, and SDKs using 38 rules for public contracts, package exports, piped output, errors, and configuration. Use when asked to \"audit my CLI\", \"review my SDK\", or diagnose package type resolution.",
+      "category": "code-review-quality",
+      "license": "MIT",
+      "license_url": "https://github.com/mblode/agent-skills/blob/main/LICENSE.md",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "81d0af2f6d4b32d791fb26caa82b17603ef4d807",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-17",
+        "skill_md_url": "https://github.com/mblode/agent-skills/blob/81d0af2f6d4b32d791fb26caa82b17603ef4d807/skills/dx-audit/SKILL.md"
+      },
+      "quality": {
+        "score": 87,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/mblode/agent-skills/dx-audit/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/mblode/agent-skills/dx-audit/",
+      "source_folder_url": "https://github.com/mblode/agent-skills/tree/main/skills/dx-audit",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/mblode/agent-skills/tree/main/skills/dx-audit",
+        "publisher_setup_url": "https://github.com/mblode/agent-skills/blob/main/skills/dx-audit/SKILL.md"
+      }
+    },
+    {
+      "id": "mblode/agent-skills/eli5",
+      "name": "eli5",
+      "description": "Picks the form that explains best and applies the house explanation style: plain prose, controlled English modelled on ASD-STE100, a diagram, an interactive HTML page, or a narrated explainer video. Use when asked for \"ELI5\", \"plain English\", \"re-pitch that\", \"stop using jargon\", \"explain it in STE100\", \"draw me a diagram of how this works\", \"make an interactive explainer\", or \"make a 3b1b style video on X\".",
+      "category": "writing-content",
+      "license": "MIT",
+      "license_url": "https://github.com/mblode/agent-skills/blob/main/LICENSE.md",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "81d0af2f6d4b32d791fb26caa82b17603ef4d807",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-17",
+        "skill_md_url": "https://github.com/mblode/agent-skills/blob/81d0af2f6d4b32d791fb26caa82b17603ef4d807/skills/eli5/SKILL.md"
+      },
+      "quality": {
+        "score": 87,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/mblode/agent-skills/eli5/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/mblode/agent-skills/eli5/",
+      "source_folder_url": "https://github.com/mblode/agent-skills/tree/main/skills/eli5",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/mblode/agent-skills/tree/main/skills/eli5",
+        "publisher_setup_url": "https://github.com/mblode/agent-skills/blob/main/skills/eli5/SKILL.md"
+      }
+    },
+    {
+      "id": "mblode/agent-skills/multi-tenant-architecture",
+      "name": "multi-tenant-architecture",
+      "description": "Designs tenant isolation, hostname routing, custom-domain lifecycle, and plan limits on Cloudflare or Vercel. Use when asked to \"isolate tenant data\", \"support custom domains\", \"build a white-label platform\", or assess PSL registration. For general module structure use codebase-architecture; for SEO content use seo.",
+      "category": "devops-cloud",
+      "license": "MIT",
+      "license_url": "https://github.com/mblode/agent-skills/blob/main/LICENSE.md",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "81d0af2f6d4b32d791fb26caa82b17603ef4d807",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-17",
+        "skill_md_url": "https://github.com/mblode/agent-skills/blob/81d0af2f6d4b32d791fb26caa82b17603ef4d807/skills/multi-tenant-architecture/SKILL.md"
+      },
+      "quality": {
+        "score": 87,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/mblode/agent-skills/multi-tenant-architecture/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/mblode/agent-skills/multi-tenant-architecture/",
+      "source_folder_url": "https://github.com/mblode/agent-skills/tree/main/skills/multi-tenant-architecture",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/mblode/agent-skills/tree/main/skills/multi-tenant-architecture",
+        "publisher_setup_url": "https://github.com/mblode/agent-skills/blob/main/skills/multi-tenant-architecture/SKILL.md"
+      }
+    },
+    {
+      "id": "mblode/agent-skills/planning",
+      "name": "planning",
+      "description": "Creates and reviews executable implementation plans grounded in repository evidence, with vertical slices, explicit decisions, and verification criteria. Use when asked to \"plan this feature\", \"stress-test this plan\", \"grill me\", or \"split this into tickets\". For architecture use codebase-architecture; for code review use tidy.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/mblode/agent-skills/blob/main/LICENSE.md",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "81d0af2f6d4b32d791fb26caa82b17603ef4d807",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-17",
+        "skill_md_url": "https://github.com/mblode/agent-skills/blob/81d0af2f6d4b32d791fb26caa82b17603ef4d807/skills/planning/SKILL.md"
+      },
+      "quality": {
+        "score": 87,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/mblode/agent-skills/planning/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/mblode/agent-skills/planning/",
+      "source_folder_url": "https://github.com/mblode/agent-skills/tree/main/skills/planning",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/mblode/agent-skills/tree/main/skills/planning",
+        "publisher_setup_url": "https://github.com/mblode/agent-skills/blob/main/skills/planning/SKILL.md"
+      }
+    },
+    {
+      "id": "mblode/agent-skills/pr-creator",
+      "name": "pr-creator",
+      "description": "Creates or updates GitHub PRs with house-style titles and bodies, issue linking, repository templates, and draft state. Use when asked to \"create a PR\", \"open a PR\", \"rewrite the PR description\", or \"polish this PR\".",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/mblode/agent-skills/blob/main/LICENSE.md",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "81d0af2f6d4b32d791fb26caa82b17603ef4d807",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-17",
+        "skill_md_url": "https://github.com/mblode/agent-skills/blob/81d0af2f6d4b32d791fb26caa82b17603ef4d807/skills/pr-creator/SKILL.md"
+      },
+      "quality": {
+        "score": 89,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/mblode/agent-skills/pr-creator/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/mblode/agent-skills/pr-creator/",
+      "source_folder_url": "https://github.com/mblode/agent-skills/tree/main/skills/pr-creator",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/mblode/agent-skills/tree/main/skills/pr-creator",
+        "publisher_setup_url": "https://github.com/mblode/agent-skills/blob/main/skills/pr-creator/SKILL.md"
+      }
+    },
+    {
+      "id": "mblode/agent-skills/presentation-creator",
+      "name": "presentation-creator",
+      "description": "Builds decks with a story spine, house visual system, setting-specific density, and speaker notes. Use when asked to \"create a presentation\", \"write a pitch deck\", or \"turn this doc into slides\". Defaults to Marp; use an available presentation tool for editable PowerPoint.",
+      "category": "documents-office",
+      "license": "MIT",
+      "license_url": "https://github.com/mblode/agent-skills/blob/main/LICENSE.md",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "81d0af2f6d4b32d791fb26caa82b17603ef4d807",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-17",
+        "skill_md_url": "https://github.com/mblode/agent-skills/blob/81d0af2f6d4b32d791fb26caa82b17603ef4d807/skills/presentation-creator/SKILL.md"
+      },
+      "quality": {
+        "score": 87,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/mblode/agent-skills/presentation-creator/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/mblode/agent-skills/presentation-creator/",
+      "source_folder_url": "https://github.com/mblode/agent-skills/tree/main/skills/presentation-creator",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/mblode/agent-skills/tree/main/skills/presentation-creator",
+        "publisher_setup_url": "https://github.com/mblode/agent-skills/blob/main/skills/presentation-creator/SKILL.md"
+      }
+    },
+    {
+      "id": "mblode/agent-skills/product-design",
+      "name": "product-design",
+      "description": "Specifies interaction choices, action scope, reversibility, recovery, and reachable states. Use when asked to \"design the flow\", \"should delete be undoable\", \"choose the control\", or \"review this product decision\".",
+      "category": "frontend-design",
+      "license": "MIT",
+      "license_url": "https://github.com/mblode/agent-skills/blob/main/LICENSE.md",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "81d0af2f6d4b32d791fb26caa82b17603ef4d807",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-17",
+        "skill_md_url": "https://github.com/mblode/agent-skills/blob/81d0af2f6d4b32d791fb26caa82b17603ef4d807/skills/product-design/SKILL.md"
+      },
+      "quality": {
+        "score": 87,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/mblode/agent-skills/product-design/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/mblode/agent-skills/product-design/",
+      "source_folder_url": "https://github.com/mblode/agent-skills/tree/main/skills/product-design",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/mblode/agent-skills/tree/main/skills/product-design",
+        "publisher_setup_url": "https://github.com/mblode/agent-skills/blob/main/skills/product-design/SKILL.md"
+      }
+    },
+    {
+      "id": "mblode/agent-skills/save-md",
+      "name": "save-md",
+      "description": "Saves a named source to Markdown with provenance and faithful extraction through direct export endpoints. Use when asked to \"save this article\", \"get the markdown\", \"transcribe this\", or \"keep this source\". A URL supplied as task context alone does not trigger conversion; a chat summary stays in chat.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/mblode/agent-skills/blob/main/LICENSE.md",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "81d0af2f6d4b32d791fb26caa82b17603ef4d807",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-17",
+        "skill_md_url": "https://github.com/mblode/agent-skills/blob/81d0af2f6d4b32d791fb26caa82b17603ef4d807/skills/save-md/SKILL.md"
+      },
+      "quality": {
+        "score": 84,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/mblode/agent-skills/save-md/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/mblode/agent-skills/tree/main/skills/save-md",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/mblode/agent-skills/tree/main/skills/save-md",
+        "publisher_setup_url": "https://github.com/mblode/agent-skills/blob/main/skills/save-md/SKILL.md"
+      }
+    },
+    {
+      "id": "mblode/agent-skills/scaffold-cli",
+      "name": "scaffold-cli",
+      "description": "Scaffolds a TypeScript CLI and npm package with the house toolchain, dual tsdown outputs, CLI contracts, changesets, and publishing templates. Use when asked to \"scaffold a CLI\" or \"start an npm package\".",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/mblode/agent-skills/blob/main/LICENSE.md",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "81d0af2f6d4b32d791fb26caa82b17603ef4d807",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-17",
+        "skill_md_url": "https://github.com/mblode/agent-skills/blob/81d0af2f6d4b32d791fb26caa82b17603ef4d807/skills/scaffold-cli/SKILL.md"
+      },
+      "quality": {
+        "score": 89,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/mblode/agent-skills/scaffold-cli/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/mblode/agent-skills/scaffold-cli/",
+      "source_folder_url": "https://github.com/mblode/agent-skills/tree/main/skills/scaffold-cli",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/mblode/agent-skills/tree/main/skills/scaffold-cli",
+        "publisher_setup_url": "https://github.com/mblode/agent-skills/blob/main/skills/scaffold-cli/SKILL.md"
+      }
+    },
+    {
+      "id": "mblode/agent-skills/scaffold-nextjs",
+      "name": "scaffold-nextjs",
+      "description": "Scaffolds a Next.js turborepo with Blode UI, icons, Ultracite (oxlint/shadcn), workspace hooks, and GitHub/Vercel setup. Use when asked to \"create a Next.js project\", \"bootstrap a turborepo\", or \"start a new web app\".",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/mblode/agent-skills/blob/main/LICENSE.md",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "81d0af2f6d4b32d791fb26caa82b17603ef4d807",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-17",
+        "skill_md_url": "https://github.com/mblode/agent-skills/blob/81d0af2f6d4b32d791fb26caa82b17603ef4d807/skills/scaffold-nextjs/SKILL.md"
+      },
+      "quality": {
+        "score": 89,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/mblode/agent-skills/scaffold-nextjs/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/mblode/agent-skills/scaffold-nextjs/",
+      "source_folder_url": "https://github.com/mblode/agent-skills/tree/main/skills/scaffold-nextjs",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/mblode/agent-skills/tree/main/skills/scaffold-nextjs",
+        "publisher_setup_url": "https://github.com/mblode/agent-skills/blob/main/skills/scaffold-nextjs/SKILL.md"
+      }
+    },
+    {
+      "id": "mblode/agent-skills/seo",
+      "name": "seo",
+      "description": "Audits and fixes technical SEO, researches search demand, creates content briefs, and measures SEO, AEO and GEO performance. Use when asked to \"audit SEO\", \"fix indexing\", \"improve AI visibility\", \"do AEO or GEO\", \"check keyword volume\", \"write an SEO brief\", or \"why did organic traffic drop\". For Mintlify Agent Score, AFDocs, or Is Agentic reports use agent-ready. For writing the article use ghostwriter; for visual redesign use ui-design.",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/mblode/agent-skills/blob/main/LICENSE.md",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "81d0af2f6d4b32d791fb26caa82b17603ef4d807",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-17",
+        "skill_md_url": "https://github.com/mblode/agent-skills/blob/81d0af2f6d4b32d791fb26caa82b17603ef4d807/skills/seo/SKILL.md"
+      },
+      "quality": {
+        "score": 87,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/mblode/agent-skills/seo/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/mblode/agent-skills/seo/",
+      "source_folder_url": "https://github.com/mblode/agent-skills/tree/main/skills/seo",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/mblode/agent-skills/tree/main/skills/seo",
+        "publisher_setup_url": "https://github.com/mblode/agent-skills/blob/main/skills/seo/SKILL.md"
+      }
+    },
+    {
+      "id": "mblode/agent-skills/typography-audit",
+      "name": "typography-audit",
+      "description": "Audits font loading, type scales, measure, spacing, OpenType, and rendered punctuation with 78 scoped rules. Use when asked to \"audit typography\", \"fix the fonts\", or \"review my type system\". For a new visual direction use ui-design Direction; for general UI defects use ui-design Audit.",
+      "category": "frontend-design",
+      "license": "MIT",
+      "license_url": "https://github.com/mblode/agent-skills/blob/main/LICENSE.md",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "81d0af2f6d4b32d791fb26caa82b17603ef4d807",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-17",
+        "skill_md_url": "https://github.com/mblode/agent-skills/blob/81d0af2f6d4b32d791fb26caa82b17603ef4d807/skills/typography-audit/SKILL.md"
+      },
+      "quality": {
+        "score": 84,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/mblode/agent-skills/typography-audit/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/mblode/agent-skills/tree/main/skills/typography-audit",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/mblode/agent-skills/tree/main/skills/typography-audit",
+        "publisher_setup_url": "https://github.com/mblode/agent-skills/blob/main/skills/typography-audit/SKILL.md"
+      }
+    }
+  ]
+}

@@ -1,0 +1,330 @@
+{
+  "schema_version": 1,
+  "repository": "Leonxlnx/taste-skill",
+  "listing_url": "https://skills.suedeai.ai/directory/leonxlnx/taste-skill/",
+  "snapshot": {
+    "date": "2026-10-22",
+    "id": "0083645c3974488e8803884c7af76698",
+    "dataset_sha256": "b73996d45961aa527b4cea74a41a2e44497200dba9b2f85411e3602ab5f56641"
+  },
+  "listed_skill_count": 3,
+  "scope": "Skills listed by the directory; this is not a complete inventory of every file in the repository.",
+  "security_scan_status": "not_scanned",
+  "skills": [
+    {
+      "id": "leonxlnx/taste-skill/brandkit",
+      "name": "brandkit",
+      "description": "Moved to github.com/Leonxlnx/imagegen-skills. Runs only when called by name.",
+      "category": "media-creative",
+      "license": "MIT",
+      "license_url": "https://github.com/Leonxlnx/taste-skill/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "a9c73c3d5dbf401e3e47f86e7b41f29ede1687df",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-19",
+        "skill_md_url": "https://github.com/Leonxlnx/taste-skill/blob/a9c73c3d5dbf401e3e47f86e7b41f29ede1687df/skills/brandkit/SKILL.md"
+      },
+      "quality": {
+        "score": 61,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/leonxlnx/taste-skill/brandkit/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/leonxlnx/taste-skill/brandkit/",
+      "source_folder_url": "https://github.com/Leonxlnx/taste-skill/tree/main/skills/brandkit",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/Leonxlnx/taste-skill/tree/main/skills/brandkit",
+        "publisher_setup_url": "https://github.com/Leonxlnx/taste-skill/blob/main/skills/brandkit/SKILL.md"
+      }
+    },
+    {
+      "id": "leonxlnx/taste-skill/imagegen-frontend-mobile",
+      "name": "imagegen-frontend-mobile",
+      "description": "Moved to github.com/Leonxlnx/imagegen-skills. Runs only when called by name.",
+      "category": "frontend-design",
+      "license": "MIT",
+      "license_url": "https://github.com/Leonxlnx/taste-skill/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "a9c73c3d5dbf401e3e47f86e7b41f29ede1687df",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-19",
+        "skill_md_url": "https://github.com/Leonxlnx/taste-skill/blob/a9c73c3d5dbf401e3e47f86e7b41f29ede1687df/skills/imagegen-frontend-mobile/SKILL.md"
+      },
+      "quality": {
+        "score": 61,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/leonxlnx/taste-skill/imagegen-frontend-mobile/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/leonxlnx/taste-skill/imagegen-frontend-mobile/",
+      "source_folder_url": "https://github.com/Leonxlnx/taste-skill/tree/main/skills/imagegen-frontend-mobile",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/Leonxlnx/taste-skill/tree/main/skills/imagegen-frontend-mobile",
+        "publisher_setup_url": "https://github.com/Leonxlnx/taste-skill/blob/main/skills/imagegen-frontend-mobile/SKILL.md"
+      }
+    },
+    {
+      "id": "leonxlnx/taste-skill/imagegen-frontend-web",
+      "name": "imagegen-frontend-web",
+      "description": "Moved to github.com/Leonxlnx/imagegen-skills. Runs only when called by name.",
+      "category": "frontend-design",
+      "license": "MIT",
+      "license_url": "https://github.com/Leonxlnx/taste-skill/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "a9c73c3d5dbf401e3e47f86e7b41f29ede1687df",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-19",
+        "skill_md_url": "https://github.com/Leonxlnx/taste-skill/blob/a9c73c3d5dbf401e3e47f86e7b41f29ede1687df/skills/imagegen-frontend-web/SKILL.md"
+      },
+      "quality": {
+        "score": 61,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/leonxlnx/taste-skill/imagegen-frontend-web/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/leonxlnx/taste-skill/imagegen-frontend-web/",
+      "source_folder_url": "https://github.com/Leonxlnx/taste-skill/tree/main/skills/imagegen-frontend-web",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/Leonxlnx/taste-skill/tree/main/skills/imagegen-frontend-web",
+        "publisher_setup_url": "https://github.com/Leonxlnx/taste-skill/blob/main/skills/imagegen-frontend-web/SKILL.md"
+      }
+    }
+  ]
+}

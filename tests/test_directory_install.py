@@ -92,6 +92,7 @@ class DirectoryInstallTests(unittest.TestCase):
         data["repos"] = {"fixture/skills": meta, "fixture/low": copy.deepcopy(data["repos"][low["repo"]])}
         cls.branch = meta["branch"]
         (cls.root / "directory/skills.json").write_text(json.dumps(data))
+        (cls.root / "directory/repository-guides.json").write_text("{}")
         subprocess.run(["node", str(cls.root / "scripts/build-directory.mjs")],
                        check=True, capture_output=True, text=True)
 

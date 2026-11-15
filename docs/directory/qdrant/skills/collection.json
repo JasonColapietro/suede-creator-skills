@@ -1,0 +1,3480 @@
+{
+  "schema_version": 1,
+  "repository": "qdrant/skills",
+  "listing_url": "https://skills.suedeai.ai/directory/qdrant/skills/",
+  "snapshot": {
+    "date": "2026-10-22",
+    "id": "0083645c3974488e8803884c7af76698",
+    "dataset_sha256": "b73996d45961aa527b4cea74a41a2e44497200dba9b2f85411e3602ab5f56641"
+  },
+  "listed_skill_count": 33,
+  "scope": "Skills listed by the directory; this is not a complete inventory of every file in the repository.",
+  "security_scan_status": "not_scanned",
+  "skills": [
+    {
+      "id": "qdrant/skills/qdrant-advisor",
+      "name": "qdrant-advisor",
+      "description": "Diagnose, troubleshoot, and advise on any Qdrant deployment by loading the latest official Qdrant skills live from skills.qdrant.tech. Use this whenever someone raises a Qdrant problem or question — slow or degraded search, high or growing memory / OOM crashes, optimizer stuck or slow, indexing slowness, scaling and sharding decisions (node count, QPS, latency, multitenancy, vertical vs horizontal), poor or irrelevant search results, hybrid search and reranking, embedding-model migration, version upgrades and compatibility, monitoring and observability (Prometheus, Grafana, health checks, /metrics, /telemetry), deployment choices (local, Docker, self-hosted, Qdrant Cloud, embedded), or client-SDK questions (Python, TypeScript, Rust, Go, .NET, Java). Trigger especially when the context is clearly a Qdrant cluster, collection, or vector-search deployment. Always prefer this skill over answering from memory: it pulls current, authoritative guidance and only the relevant context.",
+      "category": "data-databases",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/qdrant/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "d2127f6e1b9c6611fff10fe939c6fb17761aaec2",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/qdrant/skills/blob/d2127f6e1b9c6611fff10fe939c6fb17761aaec2/meta/qdrant-advisor/SKILL.md"
+      },
+      "quality": {
+        "score": 77,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/qdrant/skills/qdrant-advisor/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/qdrant/skills/qdrant-advisor/",
+      "source_folder_url": "https://github.com/qdrant/skills/tree/main/meta/qdrant-advisor",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/qdrant/skills/tree/main/meta/qdrant-advisor",
+        "publisher_setup_url": "https://github.com/qdrant/skills/blob/main/meta/qdrant-advisor/SKILL.md"
+      }
+    },
+    {
+      "id": "qdrant/skills/qdrant-deployment-options",
+      "name": "qdrant-deployment-options",
+      "description": "Guides Qdrant deployment selection. Use when someone asks 'how to deploy Qdrant', 'Docker vs Cloud', 'local mode', 'embedded Qdrant', 'Qdrant EDGE', 'which deployment option', 'self-hosted vs cloud', or 'need lowest latency deployment'. Also use when choosing between deployment types for a new project.",
+      "category": "data-databases",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/qdrant/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "d2127f6e1b9c6611fff10fe939c6fb17761aaec2",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/qdrant/skills/blob/d2127f6e1b9c6611fff10fe939c6fb17761aaec2/skills/qdrant-deployment-options/SKILL.md"
+      },
+      "quality": {
+        "score": 81,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/qdrant/skills/qdrant-deployment-options/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/qdrant/skills/qdrant-deployment-options/",
+      "source_folder_url": "https://github.com/qdrant/skills/tree/main/skills/qdrant-deployment-options",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/qdrant/skills/tree/main/skills/qdrant-deployment-options",
+        "publisher_setup_url": "https://github.com/qdrant/skills/blob/main/skills/qdrant-deployment-options/SKILL.md"
+      }
+    },
+    {
+      "id": "qdrant/skills/qdrant-edge",
+      "name": "qdrant-edge",
+      "description": "Guides building on Qdrant Edge, the embedded in-process shard. Use when someone asks 'how to sync Edge with the server', 'keep a local shard in sync with Qdrant Cloud', 'BM25 or keyword search on Edge', 'hybrid search on Edge', 'embeddings on device', 'Edge snapshots', 'apply a partial snapshot', 'why is my Edge search empty after inserts', or is writing custom sync, BM25, or fusion code against qdrant-edge. Also use when deciding what Edge ships built-in versus what you must implement.",
+      "category": "data-databases",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/qdrant/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "d2127f6e1b9c6611fff10fe939c6fb17761aaec2",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/qdrant/skills/blob/d2127f6e1b9c6611fff10fe939c6fb17761aaec2/skills/qdrant-edge/SKILL.md"
+      },
+      "quality": {
+        "score": 84,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/qdrant/skills/qdrant-edge/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/qdrant/skills/qdrant-edge/",
+      "source_folder_url": "https://github.com/qdrant/skills/tree/main/skills/qdrant-edge",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/qdrant/skills/tree/main/skills/qdrant-edge",
+        "publisher_setup_url": "https://github.com/qdrant/skills/blob/main/skills/qdrant-edge/SKILL.md"
+      }
+    },
+    {
+      "id": "qdrant/skills/qdrant-hybrid-cloud-setup",
+      "name": "qdrant-hybrid-cloud-setup",
+      "description": "Setting up and running Qdrant Hybrid Cloud on your own Kubernetes cluster (managed, on-prem, or edge): prerequisites, storage/CSI and backups, installing the Qdrant Cloud agent and operator, creating/exposing/securing clusters, registry mirroring, and secret rotation. Use when someone wants to set up, install, deploy, or configure Hybrid Cloud on their own infrastructure; is running Qdrant on their own EKS, GKE, AKS, OpenShift, or other Kubernetes; asks about the agent or operator, a storage class or volume snapshots for Hybrid Cloud, exposing a cluster, mirroring Qdrant images, or rotating secrets; or when a Hybrid Cloud install is failing on storage or connectivity.",
+      "category": "devops-cloud",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/qdrant/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "d2127f6e1b9c6611fff10fe939c6fb17761aaec2",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/qdrant/skills/blob/d2127f6e1b9c6611fff10fe939c6fb17761aaec2/skills/qdrant-hybrid-cloud-setup/SKILL.md"
+      },
+      "quality": {
+        "score": 79,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/qdrant/skills/qdrant-hybrid-cloud-setup/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/qdrant/skills/qdrant-hybrid-cloud-setup/",
+      "source_folder_url": "https://github.com/qdrant/skills/tree/main/skills/qdrant-hybrid-cloud-setup",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/qdrant/skills/tree/main/skills/qdrant-hybrid-cloud-setup",
+        "publisher_setup_url": "https://github.com/qdrant/skills/blob/main/skills/qdrant-hybrid-cloud-setup/SKILL.md"
+      }
+    },
+    {
+      "id": "qdrant/skills/qdrant-migration-tool",
+      "name": "qdrant-migration-tool",
+      "description": "Guides use of the Qdrant Migration Tool CLI to move vectors, metadata, and sparse embeddings from another vector database into Qdrant. Use when someone asks 'how do I migrate from Pinecone/Weaviate/Milvus/Elasticsearch/OpenSearch/pgvector/s3/Azure/Chroma/Redis/MongoDB/FAISS/Solr to Qdrant', 'move my vector database to Qdrant', 'is there a migration tool for Qdrant', 'my migration got interrupted, how do I resume it', 'migration is too slow', or 'collection wasn't created after migration'. Also use when picking migration batch size, deciding on `--net=host`, or verifying data after a migration.",
+      "category": "data-databases",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/qdrant/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "d2127f6e1b9c6611fff10fe939c6fb17761aaec2",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/qdrant/skills/blob/d2127f6e1b9c6611fff10fe939c6fb17761aaec2/skills/qdrant-migration-tool/SKILL.md"
+      },
+      "quality": {
+        "score": 84,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/qdrant/skills/qdrant-migration-tool/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/qdrant/skills/qdrant-migration-tool/",
+      "source_folder_url": "https://github.com/qdrant/skills/tree/main/skills/qdrant-migration-tool",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/qdrant/skills/tree/main/skills/qdrant-migration-tool",
+        "publisher_setup_url": "https://github.com/qdrant/skills/blob/main/skills/qdrant-migration-tool/SKILL.md"
+      }
+    },
+    {
+      "id": "qdrant/skills/qdrant-model-migration",
+      "name": "qdrant-model-migration",
+      "description": "Guides embedding model migration in Qdrant without downtime. Use when someone asks 'how to switch embedding models', 'how to migrate vectors', 'how to update to a new model', 'zero-downtime model change', 'how to re-embed my data', or 'can I use two models at once'. Also use when upgrading model dimensions, switching providers, or A/B testing models.",
+      "category": "data-databases",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/qdrant/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "d2127f6e1b9c6611fff10fe939c6fb17761aaec2",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/qdrant/skills/blob/d2127f6e1b9c6611fff10fe939c6fb17761aaec2/skills/qdrant-model-migration/SKILL.md"
+      },
+      "quality": {
+        "score": 84,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/qdrant/skills/qdrant-model-migration/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/qdrant/skills/qdrant-model-migration/",
+      "source_folder_url": "https://github.com/qdrant/skills/tree/main/skills/qdrant-model-migration",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/qdrant/skills/tree/main/skills/qdrant-model-migration",
+        "publisher_setup_url": "https://github.com/qdrant/skills/blob/main/skills/qdrant-model-migration/SKILL.md"
+      }
+    },
+    {
+      "id": "qdrant/skills/qdrant-monitoring",
+      "name": "qdrant-monitoring",
+      "description": "Guides Qdrant monitoring and observability setup. Use when someone asks 'how to monitor Qdrant', 'what metrics to track', 'is Qdrant healthy', 'optimizer stuck', 'why is memory growing', 'requests are slow', 'set up alerts', 'cluster health check', or needs to set up Prometheus, Grafana, health checks, or log centralization. Also use when debugging production issues that require metric analysis.",
+      "category": "devops-cloud",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/qdrant/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "d2127f6e1b9c6611fff10fe939c6fb17761aaec2",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/qdrant/skills/blob/d2127f6e1b9c6611fff10fe939c6fb17761aaec2/skills/qdrant-monitoring/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/qdrant/skills/qdrant-monitoring/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/qdrant/skills/qdrant-monitoring/",
+      "source_folder_url": "https://github.com/qdrant/skills/tree/main/skills/qdrant-monitoring",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/qdrant/skills/tree/main/skills/qdrant-monitoring",
+        "publisher_setup_url": "https://github.com/qdrant/skills/blob/main/skills/qdrant-monitoring/SKILL.md"
+      }
+    },
+    {
+      "id": "qdrant/skills/qdrant-multitenancy",
+      "name": "qdrant-multitenancy",
+      "description": "Guides tenant isolation architecture in Qdrant for multi-tenant or multi-user applications. Use when someone asks 'how to isolate customer data', 'how to build multi-tenant search/RAG', 'how many collections should I create', 'how to partition tenants by payload', 'a customer's data legally has to stay in a certain country or region'. Also use when they describe a symptom: one customer's data is way bigger than the rest and slowing everyone down, or one tenant is hogging resources.",
+      "category": "data-databases",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/qdrant/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "d2127f6e1b9c6611fff10fe939c6fb17761aaec2",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/qdrant/skills/blob/d2127f6e1b9c6611fff10fe939c6fb17761aaec2/skills/qdrant-multitenancy/SKILL.md"
+      },
+      "quality": {
+        "score": 84,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/qdrant/skills/qdrant-multitenancy/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/qdrant/skills/qdrant-multitenancy/",
+      "source_folder_url": "https://github.com/qdrant/skills/tree/main/skills/qdrant-multitenancy",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/qdrant/skills/tree/main/skills/qdrant-multitenancy",
+        "publisher_setup_url": "https://github.com/qdrant/skills/blob/main/skills/qdrant-multitenancy/SKILL.md"
+      }
+    },
+    {
+      "id": "qdrant/skills/qdrant-scaling",
+      "name": "qdrant-scaling",
+      "description": "Guides Qdrant scaling decisions. Use when someone asks 'how many nodes do I need', 'data doesn't fit on one node', 'need more throughput or QPS', 'CPU is pegged / can't keep up with the request rate', 'one query is slow / p99 or tail latency too high', 'cluster is slow', 'too many tenants', 'vertical or horizontal', 'how to shard', 'need to add capacity', 'large limit / pagination / scroll is slow', or 'only recent data matters / expiring old vectors / retention window'.",
+      "category": "data-databases",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/qdrant/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "d2127f6e1b9c6611fff10fe939c6fb17761aaec2",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/qdrant/skills/blob/d2127f6e1b9c6611fff10fe939c6fb17761aaec2/skills/qdrant-scaling/SKILL.md"
+      },
+      "quality": {
+        "score": 83,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/qdrant/skills/qdrant-scaling/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/qdrant/skills/qdrant-scaling/",
+      "source_folder_url": "https://github.com/qdrant/skills/tree/main/skills/qdrant-scaling",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/qdrant/skills/tree/main/skills/qdrant-scaling",
+        "publisher_setup_url": "https://github.com/qdrant/skills/blob/main/skills/qdrant-scaling/SKILL.md"
+      }
+    },
+    {
+      "id": "qdrant/skills/qdrant-search-quality",
+      "name": "qdrant-search-quality",
+      "description": "Diagnoses and improves Qdrant search relevance. Use when someone reports 'search results are bad', 'wrong results', 'low precision', 'low recall', 'irrelevant matches', 'missing expected results', or asks 'how to improve search quality?', 'which embedding model?', 'should I use hybrid search?', 'how to combine keyword and vector search / fusion / RRF / prefetch?', 'should I use reranking?', 'relevance feedback?', 'how to measure retrieval quality?', 'build a golden set', 'ground truth dataset', 'how to score recall@k?', 'is my improvement real / statistically significant?', or 'should I fine-tune my embedding model?'. Also use when search quality degrades after quantization, model change, or data growth.",
+      "category": "data-databases",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/qdrant/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "d2127f6e1b9c6611fff10fe939c6fb17761aaec2",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/qdrant/skills/blob/d2127f6e1b9c6611fff10fe939c6fb17761aaec2/skills/qdrant-search-quality/SKILL.md"
+      },
+      "quality": {
+        "score": 78,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/qdrant/skills/qdrant-search-quality/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/qdrant/skills/qdrant-search-quality/",
+      "source_folder_url": "https://github.com/qdrant/skills/tree/main/skills/qdrant-search-quality",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/qdrant/skills/tree/main/skills/qdrant-search-quality",
+        "publisher_setup_url": "https://github.com/qdrant/skills/blob/main/skills/qdrant-search-quality/SKILL.md"
+      }
+    },
+    {
+      "id": "qdrant/skills/qdrant-sizing",
+      "name": "qdrant-sizing",
+      "description": "Sizes a Qdrant deployment before it is provisioned. Use when someone asks 'how much RAM do I need', 'how many nodes', 'how big should my cluster be', 'sizing', 'capacity planning', 'will N vectors fit', 'what instance type should I pick', or gives a vector count and dimensions and asks what to provision. Also use when an existing estimate needs checking before hardware or a cluster tier is bought.",
+      "category": "data-databases",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/qdrant/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "d2127f6e1b9c6611fff10fe939c6fb17761aaec2",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/qdrant/skills/blob/d2127f6e1b9c6611fff10fe939c6fb17761aaec2/skills/qdrant-sizing/SKILL.md"
+      },
+      "quality": {
+        "score": 84,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/qdrant/skills/qdrant-sizing/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/qdrant/skills/qdrant-sizing/",
+      "source_folder_url": "https://github.com/qdrant/skills/tree/main/skills/qdrant-sizing",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/qdrant/skills/tree/main/skills/qdrant-sizing",
+        "publisher_setup_url": "https://github.com/qdrant/skills/blob/main/skills/qdrant-sizing/SKILL.md"
+      }
+    },
+    {
+      "id": "qdrant/skills/qdrant-version-upgrade",
+      "name": "qdrant-version-upgrade",
+      "description": "Covers upgrading Qdrant server and SDKs without interrupting availability or losing data integrity. Use when someone asks 'how do I upgrade Qdrant', 'can I jump from 1.15 to 1.18', 'rolling upgrade without downtime', 'do I upgrade the client or the server first', 'which SDK version matches my server', 'what should I check before upgrading', or 'something changed after we upgraded'.",
+      "category": "data-databases",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/qdrant/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "d2127f6e1b9c6611fff10fe939c6fb17761aaec2",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/qdrant/skills/blob/d2127f6e1b9c6611fff10fe939c6fb17761aaec2/skills/qdrant-version-upgrade/SKILL.md"
+      },
+      "quality": {
+        "score": 84,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/qdrant/skills/qdrant-version-upgrade/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/qdrant/skills/qdrant-version-upgrade/",
+      "source_folder_url": "https://github.com/qdrant/skills/tree/main/skills/qdrant-version-upgrade",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/qdrant/skills/tree/main/skills/qdrant-version-upgrade",
+        "publisher_setup_url": "https://github.com/qdrant/skills/blob/main/skills/qdrant-version-upgrade/SKILL.md"
+      }
+    },
+    {
+      "id": "qdrant/skills/qdrant-clients-sdk",
+      "name": "qdrant-clients-sdk",
+      "description": "Qdrant provides client SDKs for various programming languages, allowing easy integration with Qdrant deployments.",
+      "category": "data-databases",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/qdrant/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "d2127f6e1b9c6611fff10fe939c6fb17761aaec2",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/qdrant/skills/blob/d2127f6e1b9c6611fff10fe939c6fb17761aaec2/skills/qdrant-clients-sdk/SKILL.md"
+      },
+      "quality": {
+        "score": 70,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/qdrant/skills/qdrant-clients-sdk/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/qdrant/skills/tree/main/skills/qdrant-clients-sdk",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/qdrant/skills/tree/main/skills/qdrant-clients-sdk",
+        "publisher_setup_url": "https://github.com/qdrant/skills/blob/main/skills/qdrant-clients-sdk/SKILL.md"
+      }
+    },
+    {
+      "id": "qdrant/skills/qdrant-horizontal-scaling",
+      "name": "qdrant-horizontal-scaling",
+      "description": "Diagnoses and guides Qdrant horizontal scaling decisions. Use when someone asks 'vertical or horizontal?', 'how many nodes?', 'how many shards?', 'how to add nodes', 'resharding', 'data doesn't fit', or 'need more capacity'. Also use when data growth outpaces current deployment.",
+      "category": "data-databases",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/qdrant/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "d2127f6e1b9c6611fff10fe939c6fb17761aaec2",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/qdrant/skills/blob/d2127f6e1b9c6611fff10fe939c6fb17761aaec2/skills/qdrant-scaling/scaling-data-volume/horizontal-scaling/SKILL.md"
+      },
+      "quality": {
+        "score": 73,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": false,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/qdrant/skills/qdrant-horizontal-scaling/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/qdrant/skills/tree/main/skills/qdrant-scaling/scaling-data-volume/horizontal-scaling",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/qdrant/skills/tree/main/skills/qdrant-scaling/scaling-data-volume/horizontal-scaling",
+        "publisher_setup_url": "https://github.com/qdrant/skills/blob/main/skills/qdrant-scaling/scaling-data-volume/horizontal-scaling/SKILL.md"
+      }
+    },
+    {
+      "id": "qdrant/skills/qdrant-hybrid-search",
+      "name": "qdrant-hybrid-search",
+      "description": "Explains hybrid search in Qdrant. Use when someone asks 'how do I setup hybrid search?', 'how to combine keyword and semantic search?', 'sparse plus dense vectors?', 'missing keyword matches', 'how to combine results from multiple searches?' and 'combining multiple representations'. Also use for how a hybrid query is scoped: 'how is IDF scoped?', 'can one tenant's data contaminate another tenant's scoring?'",
+      "category": "data-databases",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/qdrant/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "d2127f6e1b9c6611fff10fe939c6fb17761aaec2",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/qdrant/skills/blob/d2127f6e1b9c6611fff10fe939c6fb17761aaec2/skills/qdrant-search-quality/search-strategies/hybrid-search/SKILL.md"
+      },
+      "quality": {
+        "score": 75,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": false,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/qdrant/skills/qdrant-hybrid-search/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/qdrant/skills/tree/main/skills/qdrant-search-quality/search-strategies/hybrid-search",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/qdrant/skills/tree/main/skills/qdrant-search-quality/search-strategies/hybrid-search",
+        "publisher_setup_url": "https://github.com/qdrant/skills/blob/main/skills/qdrant-search-quality/search-strategies/hybrid-search/SKILL.md"
+      }
+    },
+    {
+      "id": "qdrant/skills/qdrant-hybrid-search-combining",
+      "name": "qdrant-hybrid-search-combining",
+      "description": "Fusing scores from multiple searches into a single ranked result (RRF, DBSF, custom fusion). Use when someone asks 'RRF or DBSF?', 'how to combine sparse and dense', 'how to combine scores from multiple searches?', 'custom fusion', 'fusion is not producing good results', 'how do I tune RRF', 'what k should I use', or 'how do I set fusion weights'",
+      "category": "data-databases",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/qdrant/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "d2127f6e1b9c6611fff10fe939c6fb17761aaec2",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/qdrant/skills/blob/d2127f6e1b9c6611fff10fe939c6fb17761aaec2/skills/qdrant-search-quality/search-strategies/hybrid-search/combining-searches/SKILL.md"
+      },
+      "quality": {
+        "score": 76,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": false,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/qdrant/skills/qdrant-hybrid-search-combining/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/qdrant/skills/tree/main/skills/qdrant-search-quality/search-strategies/hybrid-search/combining-searches",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/qdrant/skills/tree/main/skills/qdrant-search-quality/search-strategies/hybrid-search/combining-searches",
+        "publisher_setup_url": "https://github.com/qdrant/skills/blob/main/skills/qdrant-search-quality/search-strategies/hybrid-search/combining-searches/SKILL.md"
+      }
+    },
+    {
+      "id": "qdrant/skills/qdrant-hybrid-search-prefetches",
+      "name": "qdrant-hybrid-search-prefetches",
+      "description": "Constructing prefetch queries for hybrid retrieval, including sparse/dense and multi-field setups, and choosing a sparse embedding model. Use when someone asks 'dense and sparse in one search?', 'how to combine multiple fields for retrieval?', 'payloads or sparse vectors for lexical?', 'which sparse embedding model to use?', or 'BM25 vs SPLADE?'",
+      "category": "data-databases",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/qdrant/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "d2127f6e1b9c6611fff10fe939c6fb17761aaec2",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/qdrant/skills/blob/d2127f6e1b9c6611fff10fe939c6fb17761aaec2/skills/qdrant-search-quality/search-strategies/hybrid-search/search-types/SKILL.md"
+      },
+      "quality": {
+        "score": 76,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": false,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/qdrant/skills/qdrant-hybrid-search-prefetches/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/qdrant/skills/tree/main/skills/qdrant-search-quality/search-strategies/hybrid-search/search-types",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/qdrant/skills/tree/main/skills/qdrant-search-quality/search-strategies/hybrid-search/search-types",
+        "publisher_setup_url": "https://github.com/qdrant/skills/blob/main/skills/qdrant-search-quality/search-strategies/hybrid-search/search-types/SKILL.md"
+      }
+    },
+    {
+      "id": "qdrant/skills/qdrant-indexing-performance-optimization",
+      "name": "qdrant-indexing-performance-optimization",
+      "description": "Diagnoses and fixes slow Qdrant indexing and data ingestion. Use when someone reports 'uploads are slow', 'indexing takes forever', 'optimizer is stuck', 'HNSW build time too long', or 'data uploaded but search is bad'. Also use when optimizer status shows errors, segments won't merge, or indexing threshold questions arise.",
+      "category": "data-databases",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/qdrant/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "d2127f6e1b9c6611fff10fe939c6fb17761aaec2",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/qdrant/skills/blob/d2127f6e1b9c6611fff10fe939c6fb17761aaec2/skills/qdrant-performance-optimization/indexing-performance-optimization/SKILL.md"
+      },
+      "quality": {
+        "score": 73,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": false,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/qdrant/skills/qdrant-indexing-performance-optimization/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/qdrant/skills/tree/main/skills/qdrant-performance-optimization/indexing-performance-optimization",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/qdrant/skills/tree/main/skills/qdrant-performance-optimization/indexing-performance-optimization",
+        "publisher_setup_url": "https://github.com/qdrant/skills/blob/main/skills/qdrant-performance-optimization/indexing-performance-optimization/SKILL.md"
+      }
+    },
+    {
+      "id": "qdrant/skills/qdrant-memory-usage-optimization",
+      "name": "qdrant-memory-usage-optimization",
+      "description": "Diagnoses and reduces Qdrant memory usage. Use when someone reports 'memory too high', 'RAM keeps growing', 'node crashed', 'out of memory', 'memory leak', or asks 'why is memory usage so high?', 'how to reduce RAM?'. Also use when memory doesn't match calculations, quantization didn't help, or nodes crash during recovery.",
+      "category": "data-databases",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/qdrant/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "d2127f6e1b9c6611fff10fe939c6fb17761aaec2",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/qdrant/skills/blob/d2127f6e1b9c6611fff10fe939c6fb17761aaec2/skills/qdrant-performance-optimization/memory-usage-optimization/SKILL.md"
+      },
+      "quality": {
+        "score": 76,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": false,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/qdrant/skills/qdrant-memory-usage-optimization/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/qdrant/skills/tree/main/skills/qdrant-performance-optimization/memory-usage-optimization",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/qdrant/skills/tree/main/skills/qdrant-performance-optimization/memory-usage-optimization",
+        "publisher_setup_url": "https://github.com/qdrant/skills/blob/main/skills/qdrant-performance-optimization/memory-usage-optimization/SKILL.md"
+      }
+    },
+    {
+      "id": "qdrant/skills/qdrant-minimize-latency",
+      "name": "qdrant-minimize-latency",
+      "description": "Guides Qdrant query latency optimization. Use when someone asks 'search is slow', 'how to reduce latency', 'p99 is too high', 'tail latency', 'single query too slow', 'how to make search faster', or 'latency spikes'.",
+      "category": "data-databases",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/qdrant/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "d2127f6e1b9c6611fff10fe939c6fb17761aaec2",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/qdrant/skills/blob/d2127f6e1b9c6611fff10fe939c6fb17761aaec2/skills/qdrant-scaling/minimize-latency/SKILL.md"
+      },
+      "quality": {
+        "score": 73,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": false,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/qdrant/skills/qdrant-minimize-latency/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/qdrant/skills/tree/main/skills/qdrant-scaling/minimize-latency",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/qdrant/skills/tree/main/skills/qdrant-scaling/minimize-latency",
+        "publisher_setup_url": "https://github.com/qdrant/skills/blob/main/skills/qdrant-scaling/minimize-latency/SKILL.md"
+      }
+    },
+    {
+      "id": "qdrant/skills/qdrant-monitoring-debugging",
+      "name": "qdrant-monitoring-debugging",
+      "description": "Diagnoses Qdrant production issues using metrics and observability tools. Use when someone reports 'optimizer stuck', 'indexing too slow', 'memory too high', 'OOM crash', 'queries are slow', 'latency spike', or 'search was fast now it's slow'. Also use when performance degrades without obvious config changes.",
+      "category": "devops-cloud",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/qdrant/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "d2127f6e1b9c6611fff10fe939c6fb17761aaec2",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/qdrant/skills/blob/d2127f6e1b9c6611fff10fe939c6fb17761aaec2/skills/qdrant-monitoring/debugging/SKILL.md"
+      },
+      "quality": {
+        "score": 73,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": false,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/qdrant/skills/qdrant-monitoring-debugging/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/qdrant/skills/tree/main/skills/qdrant-monitoring/debugging",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/qdrant/skills/tree/main/skills/qdrant-monitoring/debugging",
+        "publisher_setup_url": "https://github.com/qdrant/skills/blob/main/skills/qdrant-monitoring/debugging/SKILL.md"
+      }
+    },
+    {
+      "id": "qdrant/skills/qdrant-monitoring-setup",
+      "name": "qdrant-monitoring-setup",
+      "description": "Guides Qdrant monitoring setup including Prometheus scraping, health probes, Hybrid Cloud metrics, alerting, and log centralization. Use when someone asks 'how to set up monitoring', 'Prometheus config', 'Grafana dashboard', 'health check endpoints', 'how to scrape Hybrid Cloud', 'what alerts to set', 'how to centralize logs', or 'audit logging'.",
+      "category": "devops-cloud",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/qdrant/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "d2127f6e1b9c6611fff10fe939c6fb17761aaec2",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/qdrant/skills/blob/d2127f6e1b9c6611fff10fe939c6fb17761aaec2/skills/qdrant-monitoring/setup/SKILL.md"
+      },
+      "quality": {
+        "score": 73,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": false,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/qdrant/skills/qdrant-monitoring-setup/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/qdrant/skills/tree/main/skills/qdrant-monitoring/setup",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/qdrant/skills/tree/main/skills/qdrant-monitoring/setup",
+        "publisher_setup_url": "https://github.com/qdrant/skills/blob/main/skills/qdrant-monitoring/setup/SKILL.md"
+      }
+    },
+    {
+      "id": "qdrant/skills/qdrant-performance-optimization",
+      "name": "qdrant-performance-optimization",
+      "description": "Navigation hub linking sub-skills for proactive Qdrant tuning: search speed, indexing performance, and memory usage optimization. Use when planning configuration or capacity changes to improve speed and efficiency. For diagnosing an active production slowdown or analyzing live metrics, use qdrant-monitoring instead.",
+      "category": "data-databases",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/qdrant/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "d2127f6e1b9c6611fff10fe939c6fb17761aaec2",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/qdrant/skills/blob/d2127f6e1b9c6611fff10fe939c6fb17761aaec2/skills/qdrant-performance-optimization/SKILL.md"
+      },
+      "quality": {
+        "score": 81,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/qdrant/skills/qdrant-performance-optimization/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/qdrant/skills/tree/main/skills/qdrant-performance-optimization",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/qdrant/skills/tree/main/skills/qdrant-performance-optimization",
+        "publisher_setup_url": "https://github.com/qdrant/skills/blob/main/skills/qdrant-performance-optimization/SKILL.md"
+      }
+    },
+    {
+      "id": "qdrant/skills/qdrant-relevance-feedback",
+      "name": "qdrant-relevance-feedback",
+      "description": "Expanding the candidate pool via relevance feedback, as an alternative to reranking when a dense retriever is too weak. Use when someone asks about 'Qdrant's Relevance Feedback API', 'improving dense search relevance/recall', 'how to discover/get more relevant results from vector search', 'cheaper/better alternative to reranking', 'using a more heavy/big embedding model for dense search but can't afford it', 'finding more relevant documents beyond the initial search pool', or 'feedback loops'. Also trigger when the user has a search quality problem due to a dense retriever being weak and is considering reranking as a solution — this API may be a better fit",
+      "category": "data-databases",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/qdrant/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "d2127f6e1b9c6611fff10fe939c6fb17761aaec2",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/qdrant/skills/blob/d2127f6e1b9c6611fff10fe939c6fb17761aaec2/skills/qdrant-search-quality/search-strategies/relevance-feedback/SKILL.md"
+      },
+      "quality": {
+        "score": 74,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": false,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/qdrant/skills/qdrant-relevance-feedback/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/qdrant/skills/tree/main/skills/qdrant-search-quality/search-strategies/relevance-feedback",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/qdrant/skills/tree/main/skills/qdrant-search-quality/search-strategies/relevance-feedback",
+        "publisher_setup_url": "https://github.com/qdrant/skills/blob/main/skills/qdrant-search-quality/search-strategies/relevance-feedback/SKILL.md"
+      }
+    },
+    {
+      "id": "qdrant/skills/qdrant-scaling-data-volume",
+      "name": "qdrant-scaling-data-volume",
+      "description": "Guides Qdrant data volume scaling decisions. Use when someone asks 'data doesn't fit on one node', 'too much data', 'need more storage', 'vertical or horizontal scaling', 'tenant scaling', 'time window rotation', or 'data growth exceeds capacity'.",
+      "category": "data-databases",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/qdrant/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "d2127f6e1b9c6611fff10fe939c6fb17761aaec2",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/qdrant/skills/blob/d2127f6e1b9c6611fff10fe939c6fb17761aaec2/skills/qdrant-scaling/scaling-data-volume/SKILL.md"
+      },
+      "quality": {
+        "score": 72,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": false,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/qdrant/skills/qdrant-scaling-data-volume/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/qdrant/skills/tree/main/skills/qdrant-scaling/scaling-data-volume",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/qdrant/skills/tree/main/skills/qdrant-scaling/scaling-data-volume",
+        "publisher_setup_url": "https://github.com/qdrant/skills/blob/main/skills/qdrant-scaling/scaling-data-volume/SKILL.md"
+      }
+    },
+    {
+      "id": "qdrant/skills/qdrant-scaling-qps",
+      "name": "qdrant-scaling-qps",
+      "description": "Guides Qdrant query throughput (QPS) scaling. Use when someone asks 'how to increase QPS', 'need more throughput', 'queries per second too low', 'batch search', 'read replicas', or 'how to handle more concurrent queries'.",
+      "category": "data-databases",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/qdrant/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "d2127f6e1b9c6611fff10fe939c6fb17761aaec2",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/qdrant/skills/blob/d2127f6e1b9c6611fff10fe939c6fb17761aaec2/skills/qdrant-scaling/scaling-qps/SKILL.md"
+      },
+      "quality": {
+        "score": 73,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": false,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/qdrant/skills/qdrant-scaling-qps/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/qdrant/skills/tree/main/skills/qdrant-scaling/scaling-qps",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/qdrant/skills/tree/main/skills/qdrant-scaling/scaling-qps",
+        "publisher_setup_url": "https://github.com/qdrant/skills/blob/main/skills/qdrant-scaling/scaling-qps/SKILL.md"
+      }
+    },
+    {
+      "id": "qdrant/skills/qdrant-scaling-query-volume",
+      "name": "qdrant-scaling-query-volume",
+      "description": "Guides Qdrant query volume scaling. Use when someone asks 'query returns too many results', 'scroll performance', 'large limit values', 'paginating search results', 'fetching many vectors', or 'high cardinality results'.",
+      "category": "data-databases",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/qdrant/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "d2127f6e1b9c6611fff10fe939c6fb17761aaec2",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/qdrant/skills/blob/d2127f6e1b9c6611fff10fe939c6fb17761aaec2/skills/qdrant-scaling/scaling-query-volume/SKILL.md"
+      },
+      "quality": {
+        "score": 70,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": false,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/qdrant/skills/qdrant-scaling-query-volume/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/qdrant/skills/tree/main/skills/qdrant-scaling/scaling-query-volume",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/qdrant/skills/tree/main/skills/qdrant-scaling/scaling-query-volume",
+        "publisher_setup_url": "https://github.com/qdrant/skills/blob/main/skills/qdrant-scaling/scaling-query-volume/SKILL.md"
+      }
+    },
+    {
+      "id": "qdrant/skills/qdrant-search-quality-diagnosis",
+      "name": "qdrant-search-quality-diagnosis",
+      "description": "Diagnoses Qdrant search quality issues. Use when someone reports 'results are bad', 'wrong results', 'not relevant results', 'missing matches', 'recall is low', 'approximate search worse than exact', 'which embedding model', 'should I fine-tune my embedding model', 'quality dropped after quantization', 'how to measure retrieval quality', 'build a golden set', 'ground truth dataset', 'how to score recall@k', or 'is my improvement real / statistically significant'. Also use when search quality degrades without obvious changes.",
+      "category": "data-databases",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/qdrant/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "d2127f6e1b9c6611fff10fe939c6fb17761aaec2",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/qdrant/skills/blob/d2127f6e1b9c6611fff10fe939c6fb17761aaec2/skills/qdrant-search-quality/diagnosis/SKILL.md"
+      },
+      "quality": {
+        "score": 76,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": false,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/qdrant/skills/qdrant-search-quality-diagnosis/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/qdrant/skills/tree/main/skills/qdrant-search-quality/diagnosis",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/qdrant/skills/tree/main/skills/qdrant-search-quality/diagnosis",
+        "publisher_setup_url": "https://github.com/qdrant/skills/blob/main/skills/qdrant-search-quality/diagnosis/SKILL.md"
+      }
+    },
+    {
+      "id": "qdrant/skills/qdrant-search-speed-optimization",
+      "name": "qdrant-search-speed-optimization",
+      "description": "Diagnoses and fixes slow Qdrant search. Use when someone reports 'search is slow', 'high latency', 'queries take too long', 'low QPS', 'throughput too low', 'filtered search is slow', or 'search was fast but now it's slow'. Also use when search performance degrades after config changes or data growth.",
+      "category": "data-databases",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/qdrant/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "d2127f6e1b9c6611fff10fe939c6fb17761aaec2",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/qdrant/skills/blob/d2127f6e1b9c6611fff10fe939c6fb17761aaec2/skills/qdrant-performance-optimization/search-speed-optimization/SKILL.md"
+      },
+      "quality": {
+        "score": 76,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": false,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/qdrant/skills/qdrant-search-speed-optimization/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/qdrant/skills/tree/main/skills/qdrant-performance-optimization/search-speed-optimization",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/qdrant/skills/tree/main/skills/qdrant-performance-optimization/search-speed-optimization",
+        "publisher_setup_url": "https://github.com/qdrant/skills/blob/main/skills/qdrant-performance-optimization/search-speed-optimization/SKILL.md"
+      }
+    },
+    {
+      "id": "qdrant/skills/qdrant-search-strategies",
+      "name": "qdrant-search-strategies",
+      "description": "Guides Qdrant search strategy selection. Use when someone asks 'should I use hybrid search?', 'how to rerank?', 'results are not relevant', 'I don't get needed results from my dataset but they're there', 'retrieval quality is not good enough', 'results too similar', 'need diversity', 'MMR', 'relevance feedback', 'recommendation API', 'discovery API', or 'missing keyword matches'",
+      "category": "data-databases",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/qdrant/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "d2127f6e1b9c6611fff10fe939c6fb17761aaec2",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/qdrant/skills/blob/d2127f6e1b9c6611fff10fe939c6fb17761aaec2/skills/qdrant-search-quality/search-strategies/SKILL.md"
+      },
+      "quality": {
+        "score": 78,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": false,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/qdrant/skills/qdrant-search-strategies/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/qdrant/skills/tree/main/skills/qdrant-search-quality/search-strategies",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/qdrant/skills/tree/main/skills/qdrant-search-quality/search-strategies",
+        "publisher_setup_url": "https://github.com/qdrant/skills/blob/main/skills/qdrant-search-quality/search-strategies/SKILL.md"
+      }
+    },
+    {
+      "id": "qdrant/skills/qdrant-sliding-time-window",
+      "name": "qdrant-sliding-time-window",
+      "description": "Guides sliding time window scaling in Qdrant. Use when someone asks 'only recent data matters', 'how to expire old vectors', 'time-based data rotation', 'delete old data efficiently', 'social media feed search', 'news search', 'log search with retention', or 'how to keep only last N months of data'.",
+      "category": "data-databases",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/qdrant/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "d2127f6e1b9c6611fff10fe939c6fb17761aaec2",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/qdrant/skills/blob/d2127f6e1b9c6611fff10fe939c6fb17761aaec2/skills/qdrant-scaling/scaling-data-volume/sliding-time-window/SKILL.md"
+      },
+      "quality": {
+        "score": 76,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": false,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/qdrant/skills/qdrant-sliding-time-window/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/qdrant/skills/tree/main/skills/qdrant-scaling/scaling-data-volume/sliding-time-window",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/qdrant/skills/tree/main/skills/qdrant-scaling/scaling-data-volume/sliding-time-window",
+        "publisher_setup_url": "https://github.com/qdrant/skills/blob/main/skills/qdrant-scaling/scaling-data-volume/sliding-time-window/SKILL.md"
+      }
+    },
+    {
+      "id": "qdrant/skills/qdrant-tenant-scaling",
+      "name": "qdrant-tenant-scaling",
+      "description": "Guides Qdrant multi-tenant scaling. Use when someone asks 'how to scale tenants', 'one collection per tenant?', 'tenant isolation', 'dedicated shards', or reports tenant performance issues. Also use when multi-tenant workloads outgrow shared infrastructure.",
+      "category": "data-databases",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/qdrant/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "d2127f6e1b9c6611fff10fe939c6fb17761aaec2",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/qdrant/skills/blob/d2127f6e1b9c6611fff10fe939c6fb17761aaec2/skills/qdrant-scaling/scaling-data-volume/tenant-scaling/SKILL.md"
+      },
+      "quality": {
+        "score": 73,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": false,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/qdrant/skills/qdrant-tenant-scaling/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/qdrant/skills/tree/main/skills/qdrant-scaling/scaling-data-volume/tenant-scaling",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/qdrant/skills/tree/main/skills/qdrant-scaling/scaling-data-volume/tenant-scaling",
+        "publisher_setup_url": "https://github.com/qdrant/skills/blob/main/skills/qdrant-scaling/scaling-data-volume/tenant-scaling/SKILL.md"
+      }
+    },
+    {
+      "id": "qdrant/skills/qdrant-vertical-scaling",
+      "name": "qdrant-vertical-scaling",
+      "description": "Guides Qdrant vertical scaling decisions. Use when someone asks 'how to scale up a node', 'need more RAM', 'upgrade node size', 'vertical scaling', 'resize cluster', 'scale up vs scale out', or when memory/CPU is insufficient on current nodes. Also use when someone wants to avoid the complexity of horizontal scaling.",
+      "category": "data-databases",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/qdrant/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "d2127f6e1b9c6611fff10fe939c6fb17761aaec2",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/qdrant/skills/blob/d2127f6e1b9c6611fff10fe939c6fb17761aaec2/skills/qdrant-scaling/scaling-data-volume/vertical-scaling/SKILL.md"
+      },
+      "quality": {
+        "score": 76,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": false,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/qdrant/skills/qdrant-vertical-scaling/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/qdrant/skills/tree/main/skills/qdrant-scaling/scaling-data-volume/vertical-scaling",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/qdrant/skills/tree/main/skills/qdrant-scaling/scaling-data-volume/vertical-scaling",
+        "publisher_setup_url": "https://github.com/qdrant/skills/blob/main/skills/qdrant-scaling/scaling-data-volume/vertical-scaling/SKILL.md"
+      }
+    }
+  ]
+}

@@ -1,0 +1,2347 @@
+{
+  "schema_version": 1,
+  "repository": "inhotel-io/govisit-toolkit",
+  "listing_url": "https://skills.suedeai.ai/directory/inhotel-io/govisit-toolkit/",
+  "snapshot": {
+    "date": "2026-10-22",
+    "id": "0083645c3974488e8803884c7af76698",
+    "dataset_sha256": "b73996d45961aa527b4cea74a41a2e44497200dba9b2f85411e3602ab5f56641"
+  },
+  "listed_skill_count": 22,
+  "scope": "Skills listed by the directory; this is not a complete inventory of every file in the repository.",
+  "security_scan_status": "not_scanned",
+  "skills": [
+    {
+      "id": "inhotel-io/govisit-toolkit/govisit-get-category-overview",
+      "name": "govisit-get-category-overview",
+      "description": "Read the published overview for the selected destination category page. Use when an agent needs this published GoVisit evidence through HTTP for an integration or travel decision.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/inhotel-io/govisit-toolkit/blob/main/skills/govisit-get-category-overview/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "0b318f836fe1bb66ea45099d302e24fc0bd11d3d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-11-07",
+        "assessment_date": "2026-11-11",
+        "skill_md_url": "https://github.com/inhotel-io/govisit-toolkit/blob/0b318f836fe1bb66ea45099d302e24fc0bd11d3d/skills/govisit-get-category-overview/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/inhotel-io/govisit-toolkit/govisit-get-category-overview/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/inhotel-io/govisit-toolkit/govisit-get-category-overview/",
+      "source_folder_url": "https://github.com/inhotel-io/govisit-toolkit/tree/main/skills/govisit-get-category-overview",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/inhotel-io/govisit-toolkit/tree/main/skills/govisit-get-category-overview",
+        "publisher_setup_url": "https://govisit.ai/en/docs/general/data-use-license"
+      }
+    },
+    {
+      "id": "inhotel-io/govisit-toolkit/govisit-get-collection-overview",
+      "name": "govisit-get-collection-overview",
+      "description": "Read the published overview for the selected destination collection page. Use when an agent needs this published GoVisit evidence through HTTP for an integration or travel decision.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/inhotel-io/govisit-toolkit/blob/main/skills/govisit-get-collection-overview/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "0b318f836fe1bb66ea45099d302e24fc0bd11d3d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-11-07",
+        "assessment_date": "2026-11-11",
+        "skill_md_url": "https://github.com/inhotel-io/govisit-toolkit/blob/0b318f836fe1bb66ea45099d302e24fc0bd11d3d/skills/govisit-get-collection-overview/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/inhotel-io/govisit-toolkit/govisit-get-collection-overview/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/inhotel-io/govisit-toolkit/govisit-get-collection-overview/",
+      "source_folder_url": "https://github.com/inhotel-io/govisit-toolkit/tree/main/skills/govisit-get-collection-overview",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/inhotel-io/govisit-toolkit/tree/main/skills/govisit-get-collection-overview",
+        "publisher_setup_url": "https://govisit.ai/en/docs/general/data-use-license"
+      }
+    },
+    {
+      "id": "inhotel-io/govisit-toolkit/govisit-get-collection-section",
+      "name": "govisit-get-collection-section",
+      "description": "Read one published section for the selected destination collection page. Use when an agent needs this published GoVisit evidence through HTTP for an integration or travel decision.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/inhotel-io/govisit-toolkit/blob/main/skills/govisit-get-collection-section/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "0b318f836fe1bb66ea45099d302e24fc0bd11d3d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-11-07",
+        "assessment_date": "2026-11-11",
+        "skill_md_url": "https://github.com/inhotel-io/govisit-toolkit/blob/0b318f836fe1bb66ea45099d302e24fc0bd11d3d/skills/govisit-get-collection-section/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/inhotel-io/govisit-toolkit/govisit-get-collection-section/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/inhotel-io/govisit-toolkit/govisit-get-collection-section/",
+      "source_folder_url": "https://github.com/inhotel-io/govisit-toolkit/tree/main/skills/govisit-get-collection-section",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/inhotel-io/govisit-toolkit/tree/main/skills/govisit-get-collection-section",
+        "publisher_setup_url": "https://govisit.ai/en/docs/general/data-use-license"
+      }
+    },
+    {
+      "id": "inhotel-io/govisit-toolkit/govisit-get-page-faq",
+      "name": "govisit-get-page-faq",
+      "description": "Read the published questions and answers on the selected blog or documentation article. Use when an agent needs this published GoVisit evidence through HTTP for an integration or travel decision.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/inhotel-io/govisit-toolkit/blob/main/skills/govisit-get-page-faq/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "0b318f836fe1bb66ea45099d302e24fc0bd11d3d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-11-07",
+        "assessment_date": "2026-11-11",
+        "skill_md_url": "https://github.com/inhotel-io/govisit-toolkit/blob/0b318f836fe1bb66ea45099d302e24fc0bd11d3d/skills/govisit-get-page-faq/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/inhotel-io/govisit-toolkit/govisit-get-page-faq/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/inhotel-io/govisit-toolkit/govisit-get-page-faq/",
+      "source_folder_url": "https://github.com/inhotel-io/govisit-toolkit/tree/main/skills/govisit-get-page-faq",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/inhotel-io/govisit-toolkit/tree/main/skills/govisit-get-page-faq",
+        "publisher_setup_url": "https://govisit.ai/en/docs/general/data-use-license"
+      }
+    },
+    {
+      "id": "inhotel-io/govisit-toolkit/govisit-get-place-section",
+      "name": "govisit-get-place-section",
+      "description": "Read one published section of the selected place, including spatial details when requested. Use when an agent needs this published GoVisit evidence through HTTP for an integration or travel decision.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/inhotel-io/govisit-toolkit/blob/main/skills/govisit-get-place-section/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "0b318f836fe1bb66ea45099d302e24fc0bd11d3d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-11-07",
+        "assessment_date": "2026-11-11",
+        "skill_md_url": "https://github.com/inhotel-io/govisit-toolkit/blob/0b318f836fe1bb66ea45099d302e24fc0bd11d3d/skills/govisit-get-place-section/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/inhotel-io/govisit-toolkit/govisit-get-place-section/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/inhotel-io/govisit-toolkit/govisit-get-place-section/",
+      "source_folder_url": "https://github.com/inhotel-io/govisit-toolkit/tree/main/skills/govisit-get-place-section",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/inhotel-io/govisit-toolkit/tree/main/skills/govisit-get-place-section",
+        "publisher_setup_url": "https://govisit.ai/en/docs/general/data-use-license"
+      }
+    },
+    {
+      "id": "inhotel-io/govisit-toolkit/govisit-list-category-places",
+      "name": "govisit-list-category-places",
+      "description": "Filter the published place cards shown on the selected destination category page. Use when an agent needs this published GoVisit evidence through HTTP for an integration or travel decision.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/inhotel-io/govisit-toolkit/blob/main/skills/govisit-list-category-places/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "0b318f836fe1bb66ea45099d302e24fc0bd11d3d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-11-07",
+        "assessment_date": "2026-11-11",
+        "skill_md_url": "https://github.com/inhotel-io/govisit-toolkit/blob/0b318f836fe1bb66ea45099d302e24fc0bd11d3d/skills/govisit-list-category-places/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/inhotel-io/govisit-toolkit/govisit-list-category-places/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/inhotel-io/govisit-toolkit/govisit-list-category-places/",
+      "source_folder_url": "https://github.com/inhotel-io/govisit-toolkit/tree/main/skills/govisit-list-category-places",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/inhotel-io/govisit-toolkit/tree/main/skills/govisit-list-category-places",
+        "publisher_setup_url": "https://govisit.ai/en/docs/general/data-use-license"
+      }
+    },
+    {
+      "id": "inhotel-io/govisit-toolkit/govisit-list-collection-places",
+      "name": "govisit-list-collection-places",
+      "description": "Filter the published place cards shown on the selected destination collection page. Use when an agent needs this published GoVisit evidence through HTTP for an integration or travel decision.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/inhotel-io/govisit-toolkit/blob/main/skills/govisit-list-collection-places/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "0b318f836fe1bb66ea45099d302e24fc0bd11d3d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-11-07",
+        "assessment_date": "2026-11-11",
+        "skill_md_url": "https://github.com/inhotel-io/govisit-toolkit/blob/0b318f836fe1bb66ea45099d302e24fc0bd11d3d/skills/govisit-list-collection-places/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/inhotel-io/govisit-toolkit/govisit-list-collection-places/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/inhotel-io/govisit-toolkit/govisit-list-collection-places/",
+      "source_folder_url": "https://github.com/inhotel-io/govisit-toolkit/tree/main/skills/govisit-list-collection-places",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/inhotel-io/govisit-toolkit/tree/main/skills/govisit-list-collection-places",
+        "publisher_setup_url": "https://govisit.ai/en/docs/general/data-use-license"
+      }
+    },
+    {
+      "id": "inhotel-io/govisit-toolkit/govisit-list-destination-places",
+      "name": "govisit-list-destination-places",
+      "description": "Filter the published place cards already present on the destination page. Use when an agent needs this published GoVisit evidence through HTTP for an integration or travel decision.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/inhotel-io/govisit-toolkit/blob/main/skills/govisit-list-destination-places/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "0b318f836fe1bb66ea45099d302e24fc0bd11d3d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-11-07",
+        "assessment_date": "2026-11-11",
+        "skill_md_url": "https://github.com/inhotel-io/govisit-toolkit/blob/0b318f836fe1bb66ea45099d302e24fc0bd11d3d/skills/govisit-list-destination-places/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/inhotel-io/govisit-toolkit/govisit-list-destination-places/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/inhotel-io/govisit-toolkit/govisit-list-destination-places/",
+      "source_folder_url": "https://github.com/inhotel-io/govisit-toolkit/tree/main/skills/govisit-list-destination-places",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/inhotel-io/govisit-toolkit/tree/main/skills/govisit-list-destination-places",
+        "publisher_setup_url": "https://govisit.ai/en/docs/general/data-use-license"
+      }
+    },
+    {
+      "id": "inhotel-io/govisit-toolkit/govisit-list-related-places",
+      "name": "govisit-list-related-places",
+      "description": "Find bounded, page-local related place cards using optional published-field filters. Use when an agent needs this published GoVisit evidence through HTTP for an integration or travel decision.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/inhotel-io/govisit-toolkit/blob/main/skills/govisit-list-related-places/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "0b318f836fe1bb66ea45099d302e24fc0bd11d3d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-11-07",
+        "assessment_date": "2026-11-11",
+        "skill_md_url": "https://github.com/inhotel-io/govisit-toolkit/blob/0b318f836fe1bb66ea45099d302e24fc0bd11d3d/skills/govisit-list-related-places/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/inhotel-io/govisit-toolkit/govisit-list-related-places/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/inhotel-io/govisit-toolkit/govisit-list-related-places/",
+      "source_folder_url": "https://github.com/inhotel-io/govisit-toolkit/tree/main/skills/govisit-list-related-places",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/inhotel-io/govisit-toolkit/tree/main/skills/govisit-list-related-places",
+        "publisher_setup_url": "https://govisit.ai/en/docs/general/data-use-license"
+      }
+    },
+    {
+      "id": "inhotel-io/govisit-toolkit/govisit-search-destinations",
+      "name": "govisit-search-destinations",
+      "description": "Search GoVisit destinations by name or traveler intent and return canonical destination codes and URLs. Use when a traveler needs to identify or explore a country, region, district, city, or highlight.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/inhotel-io/govisit-toolkit/blob/main/skills/govisit-search-destinations/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "0b318f836fe1bb66ea45099d302e24fc0bd11d3d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-11-07",
+        "assessment_date": "2026-11-11",
+        "skill_md_url": "https://github.com/inhotel-io/govisit-toolkit/blob/0b318f836fe1bb66ea45099d302e24fc0bd11d3d/skills/govisit-search-destinations/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/inhotel-io/govisit-toolkit/govisit-search-destinations/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/inhotel-io/govisit-toolkit/govisit-search-destinations/",
+      "source_folder_url": "https://github.com/inhotel-io/govisit-toolkit/tree/main/skills/govisit-search-destinations",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/inhotel-io/govisit-toolkit/tree/main/skills/govisit-search-destinations",
+        "publisher_setup_url": "https://govisit.ai/en/docs/general/data-use-license"
+      }
+    },
+    {
+      "id": "inhotel-io/govisit-toolkit/govisit-search-documentation",
+      "name": "govisit-search-documentation",
+      "description": "Search the published documentation links rendered on the selected documentation index page. Use when an agent needs this published GoVisit evidence through HTTP for an integration or travel decision.",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/inhotel-io/govisit-toolkit/blob/main/skills/govisit-search-documentation/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "0b318f836fe1bb66ea45099d302e24fc0bd11d3d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-11-07",
+        "assessment_date": "2026-11-11",
+        "skill_md_url": "https://github.com/inhotel-io/govisit-toolkit/blob/0b318f836fe1bb66ea45099d302e24fc0bd11d3d/skills/govisit-search-documentation/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/inhotel-io/govisit-toolkit/govisit-search-documentation/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/inhotel-io/govisit-toolkit/govisit-search-documentation/",
+      "source_folder_url": "https://github.com/inhotel-io/govisit-toolkit/tree/main/skills/govisit-search-documentation",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/inhotel-io/govisit-toolkit/tree/main/skills/govisit-search-documentation",
+        "publisher_setup_url": "https://govisit.ai/en/docs/general/data-use-license"
+      }
+    },
+    {
+      "id": "inhotel-io/govisit-toolkit/govisit-search-places",
+      "name": "govisit-search-places",
+      "description": "Search GoVisit places by name or traveler intent, optionally constrained by country, destination, or proximity. Use when a traveler needs candidate places and canonical profile URLs.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/inhotel-io/govisit-toolkit/blob/main/skills/govisit-search-places/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "0b318f836fe1bb66ea45099d302e24fc0bd11d3d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-11-07",
+        "assessment_date": "2026-11-11",
+        "skill_md_url": "https://github.com/inhotel-io/govisit-toolkit/blob/0b318f836fe1bb66ea45099d302e24fc0bd11d3d/skills/govisit-search-places/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/inhotel-io/govisit-toolkit/govisit-search-places/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/inhotel-io/govisit-toolkit/govisit-search-places/",
+      "source_folder_url": "https://github.com/inhotel-io/govisit-toolkit/tree/main/skills/govisit-search-places",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/inhotel-io/govisit-toolkit/tree/main/skills/govisit-search-places",
+        "publisher_setup_url": "https://govisit.ai/en/docs/general/data-use-license"
+      }
+    },
+    {
+      "id": "inhotel-io/govisit-toolkit/govisit-get-category-section",
+      "name": "govisit-get-category-section",
+      "description": "Read one published section for the selected destination category page. Use when an agent needs this published GoVisit evidence through HTTP for an integration or travel decision.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/inhotel-io/govisit-toolkit/blob/main/skills/govisit-get-category-section/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "0b318f836fe1bb66ea45099d302e24fc0bd11d3d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-11-07",
+        "assessment_date": "2026-11-11",
+        "skill_md_url": "https://github.com/inhotel-io/govisit-toolkit/blob/0b318f836fe1bb66ea45099d302e24fc0bd11d3d/skills/govisit-get-category-section/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/inhotel-io/govisit-toolkit/govisit-get-category-section/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/inhotel-io/govisit-toolkit/govisit-get-category-section/",
+      "source_folder_url": "https://github.com/inhotel-io/govisit-toolkit/tree/main/skills/govisit-get-category-section",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/inhotel-io/govisit-toolkit/tree/main/skills/govisit-get-category-section",
+        "publisher_setup_url": "https://govisit.ai/en/docs/general/data-use-license"
+      }
+    },
+    {
+      "id": "inhotel-io/govisit-toolkit/govisit-get-destination-overview",
+      "name": "govisit-get-destination-overview",
+      "description": "Read the published overview fields for the selected destination. Use when an agent needs this published GoVisit evidence through HTTP for an integration or travel decision.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/inhotel-io/govisit-toolkit/blob/main/skills/govisit-get-destination-overview/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "0b318f836fe1bb66ea45099d302e24fc0bd11d3d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-11-07",
+        "assessment_date": "2026-11-11",
+        "skill_md_url": "https://github.com/inhotel-io/govisit-toolkit/blob/0b318f836fe1bb66ea45099d302e24fc0bd11d3d/skills/govisit-get-destination-overview/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/inhotel-io/govisit-toolkit/govisit-get-destination-overview/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/inhotel-io/govisit-toolkit/govisit-get-destination-overview/",
+      "source_folder_url": "https://github.com/inhotel-io/govisit-toolkit/tree/main/skills/govisit-get-destination-overview",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/inhotel-io/govisit-toolkit/tree/main/skills/govisit-get-destination-overview",
+        "publisher_setup_url": "https://govisit.ai/en/docs/general/data-use-license"
+      }
+    },
+    {
+      "id": "inhotel-io/govisit-toolkit/govisit-get-destination-section",
+      "name": "govisit-get-destination-section",
+      "description": "Read one published section of the selected destination. Use when an agent needs this published GoVisit evidence through HTTP for an integration or travel decision.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/inhotel-io/govisit-toolkit/blob/main/skills/govisit-get-destination-section/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "0b318f836fe1bb66ea45099d302e24fc0bd11d3d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-11-07",
+        "assessment_date": "2026-11-11",
+        "skill_md_url": "https://github.com/inhotel-io/govisit-toolkit/blob/0b318f836fe1bb66ea45099d302e24fc0bd11d3d/skills/govisit-get-destination-section/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/inhotel-io/govisit-toolkit/govisit-get-destination-section/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/inhotel-io/govisit-toolkit/govisit-get-destination-section/",
+      "source_folder_url": "https://github.com/inhotel-io/govisit-toolkit/tree/main/skills/govisit-get-destination-section",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/inhotel-io/govisit-toolkit/tree/main/skills/govisit-get-destination-section",
+        "publisher_setup_url": "https://govisit.ai/en/docs/general/data-use-license"
+      }
+    },
+    {
+      "id": "inhotel-io/govisit-toolkit/govisit-get-documentation-page",
+      "name": "govisit-get-documentation-page",
+      "description": "Read bounded structured content from the selected published article. Use when an agent needs this published GoVisit evidence through HTTP for an integration or travel decision.",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/inhotel-io/govisit-toolkit/blob/main/skills/govisit-get-documentation-page/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "0b318f836fe1bb66ea45099d302e24fc0bd11d3d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-11-07",
+        "assessment_date": "2026-11-11",
+        "skill_md_url": "https://github.com/inhotel-io/govisit-toolkit/blob/0b318f836fe1bb66ea45099d302e24fc0bd11d3d/skills/govisit-get-documentation-page/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/inhotel-io/govisit-toolkit/govisit-get-documentation-page/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/inhotel-io/govisit-toolkit/govisit-get-documentation-page/",
+      "source_folder_url": "https://github.com/inhotel-io/govisit-toolkit/tree/main/skills/govisit-get-documentation-page",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/inhotel-io/govisit-toolkit/tree/main/skills/govisit-get-documentation-page",
+        "publisher_setup_url": "https://govisit.ai/en/docs/general/data-use-license"
+      }
+    },
+    {
+      "id": "inhotel-io/govisit-toolkit/govisit-get-place-overview",
+      "name": "govisit-get-place-overview",
+      "description": "Read the published overview fields for the selected place. Use when an agent needs this published GoVisit evidence through HTTP for an integration or travel decision.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/inhotel-io/govisit-toolkit/blob/main/skills/govisit-get-place-overview/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "0b318f836fe1bb66ea45099d302e24fc0bd11d3d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-11-07",
+        "assessment_date": "2026-11-11",
+        "skill_md_url": "https://github.com/inhotel-io/govisit-toolkit/blob/0b318f836fe1bb66ea45099d302e24fc0bd11d3d/skills/govisit-get-place-overview/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/inhotel-io/govisit-toolkit/govisit-get-place-overview/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/inhotel-io/govisit-toolkit/govisit-get-place-overview/",
+      "source_folder_url": "https://github.com/inhotel-io/govisit-toolkit/tree/main/skills/govisit-get-place-overview",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/inhotel-io/govisit-toolkit/tree/main/skills/govisit-get-place-overview",
+        "publisher_setup_url": "https://govisit.ai/en/docs/general/data-use-license"
+      }
+    },
+    {
+      "id": "inhotel-io/govisit-toolkit/govisit-get-place-visit-facts",
+      "name": "govisit-get-place-visit-facts",
+      "description": "Read compact, normalized visit facts for the selected place. Use when an agent needs this published GoVisit evidence through HTTP for an integration or travel decision.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/inhotel-io/govisit-toolkit/blob/main/skills/govisit-get-place-visit-facts/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "0b318f836fe1bb66ea45099d302e24fc0bd11d3d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-11-07",
+        "assessment_date": "2026-11-11",
+        "skill_md_url": "https://github.com/inhotel-io/govisit-toolkit/blob/0b318f836fe1bb66ea45099d302e24fc0bd11d3d/skills/govisit-get-place-visit-facts/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/inhotel-io/govisit-toolkit/govisit-get-place-visit-facts/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/inhotel-io/govisit-toolkit/govisit-get-place-visit-facts/",
+      "source_folder_url": "https://github.com/inhotel-io/govisit-toolkit/tree/main/skills/govisit-get-place-visit-facts",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/inhotel-io/govisit-toolkit/tree/main/skills/govisit-get-place-visit-facts",
+        "publisher_setup_url": "https://govisit.ai/en/docs/general/data-use-license"
+      }
+    },
+    {
+      "id": "inhotel-io/govisit-toolkit/govisit-get-statistics",
+      "name": "govisit-get-statistics",
+      "description": "Use when an agent needs exact GoVisit catalog coverage counts for the physical World or a selected Destination, with observation dates and provenance.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/inhotel-io/govisit-toolkit/blob/main/skills/govisit-get-statistics/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "0b318f836fe1bb66ea45099d302e24fc0bd11d3d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-11-07",
+        "assessment_date": "2026-11-11",
+        "skill_md_url": "https://github.com/inhotel-io/govisit-toolkit/blob/0b318f836fe1bb66ea45099d302e24fc0bd11d3d/skills/govisit-get-statistics/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/inhotel-io/govisit-toolkit/govisit-get-statistics/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/inhotel-io/govisit-toolkit/govisit-get-statistics/",
+      "source_folder_url": "https://github.com/inhotel-io/govisit-toolkit/tree/main/skills/govisit-get-statistics",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/inhotel-io/govisit-toolkit/tree/main/skills/govisit-get-statistics",
+        "publisher_setup_url": "https://govisit.ai/en/docs/general/data-use-license"
+      }
+    },
+    {
+      "id": "inhotel-io/govisit-toolkit/govisit-list-destination-activities",
+      "name": "govisit-list-destination-activities",
+      "description": "Read the bounded published activities shown on the destination page. Use when an agent needs this published GoVisit evidence through HTTP for an integration or travel decision.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/inhotel-io/govisit-toolkit/blob/main/skills/govisit-list-destination-activities/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "0b318f836fe1bb66ea45099d302e24fc0bd11d3d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-11-07",
+        "assessment_date": "2026-11-11",
+        "skill_md_url": "https://github.com/inhotel-io/govisit-toolkit/blob/0b318f836fe1bb66ea45099d302e24fc0bd11d3d/skills/govisit-list-destination-activities/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/inhotel-io/govisit-toolkit/govisit-list-destination-activities/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/inhotel-io/govisit-toolkit/govisit-list-destination-activities/",
+      "source_folder_url": "https://github.com/inhotel-io/govisit-toolkit/tree/main/skills/govisit-list-destination-activities",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/inhotel-io/govisit-toolkit/tree/main/skills/govisit-list-destination-activities",
+        "publisher_setup_url": "https://govisit.ai/en/docs/general/data-use-license"
+      }
+    },
+    {
+      "id": "inhotel-io/govisit-toolkit/govisit-list-destination-categories",
+      "name": "govisit-list-destination-categories",
+      "description": "Read the published category projection shown on the destination page. Use when an agent needs this published GoVisit evidence through HTTP for an integration or travel decision.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/inhotel-io/govisit-toolkit/blob/main/skills/govisit-list-destination-categories/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "0b318f836fe1bb66ea45099d302e24fc0bd11d3d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-11-07",
+        "assessment_date": "2026-11-11",
+        "skill_md_url": "https://github.com/inhotel-io/govisit-toolkit/blob/0b318f836fe1bb66ea45099d302e24fc0bd11d3d/skills/govisit-list-destination-categories/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/inhotel-io/govisit-toolkit/govisit-list-destination-categories/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/inhotel-io/govisit-toolkit/govisit-list-destination-categories/",
+      "source_folder_url": "https://github.com/inhotel-io/govisit-toolkit/tree/main/skills/govisit-list-destination-categories",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/inhotel-io/govisit-toolkit/tree/main/skills/govisit-list-destination-categories",
+        "publisher_setup_url": "https://govisit.ai/en/docs/general/data-use-license"
+      }
+    },
+    {
+      "id": "inhotel-io/govisit-toolkit/govisit-list-destination-highlights",
+      "name": "govisit-list-destination-highlights",
+      "description": "Read the bounded published highlights shown on the destination page. Use when an agent needs this published GoVisit evidence through HTTP for an integration or travel decision.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/inhotel-io/govisit-toolkit/blob/main/skills/govisit-list-destination-highlights/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "0b318f836fe1bb66ea45099d302e24fc0bd11d3d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-11-07",
+        "assessment_date": "2026-11-11",
+        "skill_md_url": "https://github.com/inhotel-io/govisit-toolkit/blob/0b318f836fe1bb66ea45099d302e24fc0bd11d3d/skills/govisit-list-destination-highlights/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/inhotel-io/govisit-toolkit/govisit-list-destination-highlights/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/inhotel-io/govisit-toolkit/govisit-list-destination-highlights/",
+      "source_folder_url": "https://github.com/inhotel-io/govisit-toolkit/tree/main/skills/govisit-list-destination-highlights",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/inhotel-io/govisit-toolkit/tree/main/skills/govisit-list-destination-highlights",
+        "publisher_setup_url": "https://govisit.ai/en/docs/general/data-use-license"
+      }
+    }
+  ]
+}

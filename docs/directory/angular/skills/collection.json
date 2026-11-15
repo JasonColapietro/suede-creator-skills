@@ -1,0 +1,225 @@
+{
+  "schema_version": 1,
+  "repository": "angular/skills",
+  "listing_url": "https://skills.suedeai.ai/directory/angular/skills/",
+  "snapshot": {
+    "date": "2026-10-22",
+    "id": "0083645c3974488e8803884c7af76698",
+    "dataset_sha256": "b73996d45961aa527b4cea74a41a2e44497200dba9b2f85411e3602ab5f56641"
+  },
+  "listed_skill_count": 2,
+  "scope": "Skills listed by the directory; this is not a complete inventory of every file in the repository.",
+  "security_scan_status": "not_scanned",
+  "skills": [
+    {
+      "id": "angular/skills/angular-developer",
+      "name": "angular-developer",
+      "description": "Generates Angular code and provides architectural guidance. Trigger when creating projects, components, services, or HTTP communication, or for best practices on reactivity (signals, linkedSignal, resource, httpResource), queries and content projection, forms, dependency injection, routing, server and hybrid rendering (SSR, prerendering, hydration), accessibility (ARIA), animations, styling (component styles, Tailwind CSS), testing, naming conventions, or CLI tooling.",
+      "category": "frontend-design",
+      "license": "MIT",
+      "license_url": "https://github.com/angular/skills/blob/main/angular-developer/SKILL.md",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "ceb8ce8c3d0f0db9c1f56dd45b607e657314cb8f",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-18",
+        "skill_md_url": "https://github.com/angular/skills/blob/ceb8ce8c3d0f0db9c1f56dd45b607e657314cb8f/angular-developer/SKILL.md"
+      },
+      "quality": {
+        "score": 81,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/angular/skills/angular-developer/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/angular/skills/angular-developer/",
+      "source_folder_url": "https://github.com/angular/skills/tree/main/angular-developer",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/angular/skills/tree/main/angular-developer",
+        "publisher_setup_url": "https://github.com/angular/skills/blob/main/angular-developer/SKILL.md"
+      }
+    },
+    {
+      "id": "angular/skills/angular-new-app",
+      "name": "angular-new-app",
+      "description": "Creates a new Angular app using the Angular CLI. This skill should be used whenever a user wants to create a new Angular application and contains important guidelines for how to effectively create a modern Angular application.",
+      "category": "frontend-design",
+      "license": "MIT",
+      "license_url": "https://github.com/angular/skills/blob/main/angular-new-app/SKILL.md",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "ceb8ce8c3d0f0db9c1f56dd45b607e657314cb8f",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-18",
+        "skill_md_url": "https://github.com/angular/skills/blob/ceb8ce8c3d0f0db9c1f56dd45b607e657314cb8f/angular-new-app/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/angular/skills/angular-new-app/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/angular/skills/angular-new-app/",
+      "source_folder_url": "https://github.com/angular/skills/tree/main/angular-new-app",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/angular/skills/tree/main/angular-new-app",
+        "publisher_setup_url": "https://github.com/angular/skills/blob/main/angular-new-app/SKILL.md"
+      }
+    }
+  ]
+}

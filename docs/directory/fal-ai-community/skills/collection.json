@@ -1,0 +1,1695 @@
+{
+  "schema_version": 1,
+  "repository": "fal-ai-community/skills",
+  "listing_url": "https://skills.suedeai.ai/directory/fal-ai-community/skills/",
+  "snapshot": {
+    "date": "2026-10-22",
+    "id": "0083645c3974488e8803884c7af76698",
+    "dataset_sha256": "b73996d45961aa527b4cea74a41a2e44497200dba9b2f85411e3602ab5f56641"
+  },
+  "listed_skill_count": 16,
+  "scope": "Skills listed by the directory; this is not a complete inventory of every file in the repository.",
+  "security_scan_status": "not_scanned",
+  "skills": [
+    {
+      "id": "fal-ai-community/skills/fal-redesign",
+      "name": "fal-redesign",
+      "description": "Upgrade a coded website to award-tier, editorially-crafted design using fal.ai. Takes a local HTML file or a dev-server URL, screenshots it, has an opus-4.7 vision model write a gpt-image-2 edit prompt, uses fal-ai/gpt-image-2/edit to produce the redesigned reference image, then opus-4.7 vision writes a Markdown build-spec with a \"Hard constraints\" section + a tokens.json. Also supports iterate (screenshot implemented site → delta-spec vs reference) and greenfield generate (brief → mockup → single-file HTML). Invoke when the user says \"improve the design\", \"make it world-class\", \"redesign this landing page\", \"upgrade this site\", \"design pass\", or points at a local HTML / dev server for a visual review.",
+      "category": "frontend-design",
+      "license": "MIT",
+      "license_url": "https://github.com/fal-ai-community/skills/blob/main/skills/fal-redesign/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "9ca850412943251fc9a466c4c29fdaf7a303a3d8",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-05-13",
+        "skill_md_url": "https://github.com/fal-ai-community/skills/blob/9ca850412943251fc9a466c4c29fdaf7a303a3d8/skills/fal-redesign/SKILL.md"
+      },
+      "quality": {
+        "score": 73,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/fal-ai-community/skills/fal-redesign/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/fal-ai-community/skills/fal-redesign/",
+      "source_folder_url": "https://github.com/fal-ai-community/skills/tree/main/skills/fal-redesign",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/fal-ai-community/skills/tree/main/skills/fal-redesign",
+        "publisher_setup_url": "https://github.com/fal-ai-community/skills/blob/main/skills/fal-redesign/SKILL.md"
+      }
+    },
+    {
+      "id": "fal-ai-community/skills/character-design",
+      "name": "character-design",
+      "description": "Build consistent character designs and character media with genmedia. Use this for original characters, reference sheets, expression sheets, outfit variations, identity-preserving edits, and character-to-video workflows.",
+      "category": "frontend-design",
+      "license": "MIT",
+      "license_url": "https://github.com/fal-ai-community/skills/blob/main/README.md",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "9ca850412943251fc9a466c4c29fdaf7a303a3d8",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-05-13",
+        "skill_md_url": "https://github.com/fal-ai-community/skills/blob/9ca850412943251fc9a466c4c29fdaf7a303a3d8/skills/character-design/SKILL.md"
+      },
+      "quality": {
+        "score": 75,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/fal-ai-community/skills/character-design/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/fal-ai-community/skills/tree/main/skills/character-design",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/fal-ai-community/skills/tree/main/skills/character-design",
+        "publisher_setup_url": "https://github.com/fal-ai-community/skills/blob/main/skills/character-design/SKILL.md"
+      }
+    },
+    {
+      "id": "fal-ai-community/skills/cinematography",
+      "name": "cinematography",
+      "description": "Design cinematic image and video prompts for genmedia. Use this for shot language, camera movement, lighting, lens choices, color grade, film texture, scene blocking, and production-ready visual direction.",
+      "category": "media-creative",
+      "license": "MIT",
+      "license_url": "https://github.com/fal-ai-community/skills/blob/main/README.md",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "9ca850412943251fc9a466c4c29fdaf7a303a3d8",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-05-13",
+        "skill_md_url": "https://github.com/fal-ai-community/skills/blob/9ca850412943251fc9a466c4c29fdaf7a303a3d8/skills/cinematography/SKILL.md"
+      },
+      "quality": {
+        "score": 75,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/fal-ai-community/skills/cinematography/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/fal-ai-community/skills/tree/main/skills/cinematography",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/fal-ai-community/skills/tree/main/skills/cinematography",
+        "publisher_setup_url": "https://github.com/fal-ai-community/skills/blob/main/skills/cinematography/SKILL.md"
+      }
+    },
+    {
+      "id": "fal-ai-community/skills/commercial",
+      "name": "commercial",
+      "description": "Plan and run commercial image or video production with genmedia. Use this for product photography, ads, e-commerce batches, product reveals, lifestyle commercials, background replacement, social formats, and brand-safe prompt work.",
+      "category": "media-creative",
+      "license": "MIT",
+      "license_url": "https://github.com/fal-ai-community/skills/blob/main/README.md",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "9ca850412943251fc9a466c4c29fdaf7a303a3d8",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-05-13",
+        "skill_md_url": "https://github.com/fal-ai-community/skills/blob/9ca850412943251fc9a466c4c29fdaf7a303a3d8/skills/commercial/SKILL.md"
+      },
+      "quality": {
+        "score": 75,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/fal-ai-community/skills/commercial/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/fal-ai-community/skills/tree/main/skills/commercial",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/fal-ai-community/skills/tree/main/skills/commercial",
+        "publisher_setup_url": "https://github.com/fal-ai-community/skills/blob/main/skills/commercial/SKILL.md"
+      }
+    },
+    {
+      "id": "fal-ai-community/skills/fal-gamedev",
+      "name": "fal-gamedev",
+      "description": "Generate 2D pixel art game assets, characters, sprite sheets, background removal, and game backgrounds. Trigger for \"pixel art character\", \"sprite sheet\", \"walk cycle\", \"game sprites\", \"isometric sprites\", \"side-scroller assets\", \"RPG character sprites\", \"idle animation\", \"attack animation\", \"jump animation\", \"game background\", \"parallax background\", \"isometric map\", \"2D game art\", \"pixel art animation\". Covers character generation (nano-banana-pro / gpt-image-2), sprite sheet animation (nano/edit or gpt-image-2/edit), background removal (Bria), and background generation (parallax layers or isometric map).",
+      "category": "frontend-design",
+      "license": "MIT",
+      "license_url": "https://github.com/fal-ai-community/skills/blob/main/README.md",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "9ca850412943251fc9a466c4c29fdaf7a303a3d8",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-05-13",
+        "skill_md_url": "https://github.com/fal-ai-community/skills/blob/9ca850412943251fc9a466c4c29fdaf7a303a3d8/skills/fal-gamedev/SKILL.md"
+      },
+      "quality": {
+        "score": 62,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/fal-ai-community/skills/fal-gamedev/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/fal-ai-community/skills/tree/main/skills/fal-gamedev",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/fal-ai-community/skills/tree/main/skills/fal-gamedev",
+        "publisher_setup_url": "https://github.com/fal-ai-community/skills/blob/main/skills/fal-gamedev/SKILL.md"
+      }
+    },
+    {
+      "id": "fal-ai-community/skills/fal-models-catalog",
+      "name": "fal-models-catalog",
+      "description": "Choose the right fal.ai endpoint for a given task. Modality-organized catalog of production endpoint defaults, text-to-image, image-to-image, text-to-video, image-to-video, and more. Use when the user has not named a specific model, or asks \"which model for X\", \"best endpoint for Y\", \"what should I use for Z\".",
+      "category": "media-creative",
+      "license": "MIT",
+      "license_url": "https://github.com/fal-ai-community/skills/blob/main/README.md",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "9ca850412943251fc9a466c4c29fdaf7a303a3d8",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-05-13",
+        "skill_md_url": "https://github.com/fal-ai-community/skills/blob/9ca850412943251fc9a466c4c29fdaf7a303a3d8/skills/fal-models-catalog/SKILL.md"
+      },
+      "quality": {
+        "score": 75,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/fal-ai-community/skills/fal-models-catalog/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/fal-ai-community/skills/tree/main/skills/fal-models-catalog",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/fal-ai-community/skills/tree/main/skills/fal-models-catalog",
+        "publisher_setup_url": "https://github.com/fal-ai-community/skills/blob/main/skills/fal-models-catalog/SKILL.md"
+      }
+    },
+    {
+      "id": "fal-ai-community/skills/fal-prompting",
+      "name": "fal-prompting",
+      "description": "Model-family-specific prompt craft for fal.ai endpoints. Trigger when the user mentions a specific model family by name and asks how to prompt it (\"how do I prompt Kling\", \"GPT Image 2 prompt structure\", \"Happy Horse tips\"), or when prompts to a routed endpoint keep coming back generic and the family's known nuances should be applied. For endpoint selection (\"which model for X\"), use `fal-models-catalog` instead. This skill is about how to talk to a model once it has been chosen.",
+      "category": "ai-agents-llm",
+      "license": "MIT",
+      "license_url": "https://github.com/fal-ai-community/skills/blob/main/README.md",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "9ca850412943251fc9a466c4c29fdaf7a303a3d8",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-05-13",
+        "skill_md_url": "https://github.com/fal-ai-community/skills/blob/9ca850412943251fc9a466c4c29fdaf7a303a3d8/skills/fal-prompting/SKILL.md"
+      },
+      "quality": {
+        "score": 76,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/fal-ai-community/skills/fal-prompting/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/fal-ai-community/skills/tree/main/skills/fal-prompting",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/fal-ai-community/skills/tree/main/skills/fal-prompting",
+        "publisher_setup_url": "https://github.com/fal-ai-community/skills/blob/main/skills/fal-prompting/SKILL.md"
+      }
+    },
+    {
+      "id": "fal-ai-community/skills/fal-recipes",
+      "name": "fal-recipes",
+      "description": "Use-case-driven multi-step pipelines on fal.ai. Trigger when the user asks for a specific kind of content production rather than a single endpoint call: \"make a commercial\", \"ad creative\", \"product photography\", \"cinematic shot\", \"film look\", \"character design\", \"consistent character\", \"anchor system\", \"storyboard\", \"multi-shot\", \"narrative video\", \"talking head\", \"lip sync\", \"make this person talk\", \"virtual try-on\", \"garment transfer\", \"restore image\", \"deblur\", \"denoise\", \"fix face\", \"old photo restore\", \"add audio to video\", \"video sound effects\", \"product shot\", \"photoreal\", \"realistic photo\", \"candid photo\", \"editorial portrait\", \"documentary photo\", \"looks like a real photograph\", \"iPhone-style photo\", \"film photo\", \"archival photo\". Each recipe describes inputs, the genmedia call sequence, and quality checks.",
+      "category": "media-creative",
+      "license": "MIT",
+      "license_url": "https://github.com/fal-ai-community/skills/blob/main/README.md",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "9ca850412943251fc9a466c4c29fdaf7a303a3d8",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-05-13",
+        "skill_md_url": "https://github.com/fal-ai-community/skills/blob/9ca850412943251fc9a466c4c29fdaf7a303a3d8/skills/fal-recipes/SKILL.md"
+      },
+      "quality": {
+        "score": 73,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/fal-ai-community/skills/fal-recipes/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/fal-ai-community/skills/tree/main/skills/fal-recipes",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/fal-ai-community/skills/tree/main/skills/fal-recipes",
+        "publisher_setup_url": "https://github.com/fal-ai-community/skills/blob/main/skills/fal-recipes/SKILL.md"
+      }
+    },
+    {
+      "id": "fal-ai-community/skills/fal-regenerate-3d",
+      "name": "fal-regenerate-3d",
+      "description": "Build a fully-interactive 3D character-selector experience powered entirely by fal.ai. Generates stylized characters (FLUX.2 / GPT-Image-2), rigged animated GLBs (Meshy v6), themed companion creatures, per-character PATINA floor textures, looped Seedance video backgrounds, and a Three.js scene with palette swaps, breathing reflections, transition effects and a CREATE-YOUR-OWN flow.",
+      "category": "media-creative",
+      "license": "MIT",
+      "license_url": "https://github.com/fal-ai-community/skills/blob/main/README.md",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "9ca850412943251fc9a466c4c29fdaf7a303a3d8",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-05-13",
+        "skill_md_url": "https://github.com/fal-ai-community/skills/blob/9ca850412943251fc9a466c4c29fdaf7a303a3d8/skills/fal-regenerate-3d/SKILL.md"
+      },
+      "quality": {
+        "score": 64,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/fal-ai-community/skills/fal-regenerate-3d/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/fal-ai-community/skills/tree/main/skills/fal-regenerate-3d",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/fal-ai-community/skills/tree/main/skills/fal-regenerate-3d",
+        "publisher_setup_url": "https://github.com/fal-ai-community/skills/blob/main/skills/fal-regenerate-3d/SKILL.md"
+      }
+    },
+    {
+      "id": "fal-ai-community/skills/fan-cam",
+      "name": "fan-cam",
+      "description": "Create personalized live sports broadcast fan-cam videos with genmedia. Use this for realistic spectator cutaways, stadium or arena crowd reactions, broadcast screenshots, sports TV shots, scoreboard overlays, TV channel bugs, and identity-preserving fan reaction videos from a user photo.",
+      "category": "media-creative",
+      "license": "MIT",
+      "license_url": "https://github.com/fal-ai-community/skills/blob/main/README.md",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "9ca850412943251fc9a466c4c29fdaf7a303a3d8",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-05-13",
+        "skill_md_url": "https://github.com/fal-ai-community/skills/blob/9ca850412943251fc9a466c4c29fdaf7a303a3d8/skills/fan-cam/SKILL.md"
+      },
+      "quality": {
+        "score": 75,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/fal-ai-community/skills/fan-cam/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/fal-ai-community/skills/tree/main/skills/fan-cam",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/fal-ai-community/skills/tree/main/skills/fan-cam",
+        "publisher_setup_url": "https://github.com/fal-ai-community/skills/blob/main/skills/fan-cam/SKILL.md"
+      }
+    },
+    {
+      "id": "fal-ai-community/skills/genmedia",
+      "name": "genmedia",
+      "description": "Use the genmedia CLI to search, inspect, run, and manage 1200+ fal.ai model endpoints. Trigger when the user mentions \"genmedia\", \"fal CLI\", or asks to \"search models\", \"run a model\", \"fetch schema\", \"check pricing\", \"upload to fal\", \"queue async job\", \"track request\", or any direct interaction with the fal.ai endpoint catalog. This is the foundational skill. Every other fal.ai-related skill in this repo executes its work through genmedia commands. Use `--json` whenever the output will be parsed by an agent.",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/fal-ai-community/skills/blob/main/README.md",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "9ca850412943251fc9a466c4c29fdaf7a303a3d8",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-05-13",
+        "skill_md_url": "https://github.com/fal-ai-community/skills/blob/9ca850412943251fc9a466c4c29fdaf7a303a3d8/skills/genmedia/SKILL.md"
+      },
+      "quality": {
+        "score": 78,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/fal-ai-community/skills/genmedia/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/fal-ai-community/skills/tree/main/skills/genmedia",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/fal-ai-community/skills/tree/main/skills/genmedia",
+        "publisher_setup_url": "https://github.com/fal-ai-community/skills/blob/main/skills/genmedia/SKILL.md"
+      }
+    },
+    {
+      "id": "fal-ai-community/skills/genmedia-workflow",
+      "name": "genmedia-workflow",
+      "description": "Design and execute multi-step media workflows with genmedia. Use this for pipelines that combine planning, generation, editing, image or video utilities, audio, subtitles, batching, and final delivery manifests.",
+      "category": "media-creative",
+      "license": "MIT",
+      "license_url": "https://github.com/fal-ai-community/skills/blob/main/README.md",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "9ca850412943251fc9a466c4c29fdaf7a303a3d8",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-05-13",
+        "skill_md_url": "https://github.com/fal-ai-community/skills/blob/9ca850412943251fc9a466c4c29fdaf7a303a3d8/skills/genmedia-workflow/SKILL.md"
+      },
+      "quality": {
+        "score": 75,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/fal-ai-community/skills/genmedia-workflow/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/fal-ai-community/skills/tree/main/skills/genmedia-workflow",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/fal-ai-community/skills/tree/main/skills/genmedia-workflow",
+        "publisher_setup_url": "https://github.com/fal-ai-community/skills/blob/main/skills/genmedia-workflow/SKILL.md"
+      }
+    },
+    {
+      "id": "fal-ai-community/skills/marketing",
+      "name": "marketing",
+      "description": "Plan and run campaign-level marketing asset production with genmedia. Use this for launch kits, campaign matrices, paid social variants, landing-page visuals, email and banner imagery, hook/proof/conversion assets, creator ad packages, and channel-specific marketing deliverables.",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/fal-ai-community/skills/blob/main/README.md",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "9ca850412943251fc9a466c4c29fdaf7a303a3d8",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-05-13",
+        "skill_md_url": "https://github.com/fal-ai-community/skills/blob/9ca850412943251fc9a466c4c29fdaf7a303a3d8/skills/marketing/SKILL.md"
+      },
+      "quality": {
+        "score": 75,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/fal-ai-community/skills/marketing/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/fal-ai-community/skills/tree/main/skills/marketing",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/fal-ai-community/skills/tree/main/skills/marketing",
+        "publisher_setup_url": "https://github.com/fal-ai-community/skills/blob/main/skills/marketing/SKILL.md"
+      }
+    },
+    {
+      "id": "fal-ai-community/skills/model-routing",
+      "name": "model-routing",
+      "description": "Choose default fal.ai endpoint IDs for genmedia production skills. Use this with commercial, marketing, ugc, character-design, cinematography, storytelling, and workflow when the user has not named a specific model.",
+      "category": "frontend-design",
+      "license": "MIT",
+      "license_url": "https://github.com/fal-ai-community/skills/blob/main/README.md",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "9ca850412943251fc9a466c4c29fdaf7a303a3d8",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-05-13",
+        "skill_md_url": "https://github.com/fal-ai-community/skills/blob/9ca850412943251fc9a466c4c29fdaf7a303a3d8/skills/model-routing/SKILL.md"
+      },
+      "quality": {
+        "score": 72,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/fal-ai-community/skills/model-routing/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/fal-ai-community/skills/tree/main/skills/model-routing",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/fal-ai-community/skills/tree/main/skills/model-routing",
+        "publisher_setup_url": "https://github.com/fal-ai-community/skills/blob/main/skills/model-routing/SKILL.md"
+      }
+    },
+    {
+      "id": "fal-ai-community/skills/storytelling",
+      "name": "storytelling",
+      "description": "Build multi-shot narrative image, video, and audio workflows with genmedia. Use this for storyboards, shot lists, multi-prompt video, first-frame to last-frame pipelines, social stories, brand films, and sequence continuity.",
+      "category": "media-creative",
+      "license": "MIT",
+      "license_url": "https://github.com/fal-ai-community/skills/blob/main/README.md",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "9ca850412943251fc9a466c4c29fdaf7a303a3d8",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-05-13",
+        "skill_md_url": "https://github.com/fal-ai-community/skills/blob/9ca850412943251fc9a466c4c29fdaf7a303a3d8/skills/storytelling/SKILL.md"
+      },
+      "quality": {
+        "score": 75,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/fal-ai-community/skills/storytelling/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/fal-ai-community/skills/tree/main/skills/storytelling",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/fal-ai-community/skills/tree/main/skills/storytelling",
+        "publisher_setup_url": "https://github.com/fal-ai-community/skills/blob/main/skills/storytelling/SKILL.md"
+      }
+    },
+    {
+      "id": "fal-ai-community/skills/ugc",
+      "name": "ugc",
+      "description": "Plan and run UGC-style creator ads and social proof videos with genmedia. Use this for direct-to-camera creator scripts, talking-head ads, product demos, testimonials, founder clips, unboxing, reaction, before-after, faceless voiceover, and short vertical social videos.",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/fal-ai-community/skills/blob/main/README.md",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "9ca850412943251fc9a466c4c29fdaf7a303a3d8",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-05-13",
+        "skill_md_url": "https://github.com/fal-ai-community/skills/blob/9ca850412943251fc9a466c4c29fdaf7a303a3d8/skills/ugc/SKILL.md"
+      },
+      "quality": {
+        "score": 75,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/fal-ai-community/skills/ugc/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/fal-ai-community/skills/tree/main/skills/ugc",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/fal-ai-community/skills/tree/main/skills/ugc",
+        "publisher_setup_url": "https://github.com/fal-ai-community/skills/blob/main/skills/ugc/SKILL.md"
+      }
+    }
+  ]
+}

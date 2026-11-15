@@ -1,0 +1,330 @@
+{
+  "schema_version": 1,
+  "repository": "apify/agent-skills",
+  "listing_url": "https://skills.suedeai.ai/directory/apify/agent-skills/",
+  "snapshot": {
+    "date": "2026-10-22",
+    "id": "0083645c3974488e8803884c7af76698",
+    "dataset_sha256": "b73996d45961aa527b4cea74a41a2e44497200dba9b2f85411e3602ab5f56641"
+  },
+  "listed_skill_count": 3,
+  "scope": "Skills listed by the directory; this is not a complete inventory of every file in the repository.",
+  "security_scan_status": "not_scanned",
+  "skills": [
+    {
+      "id": "apify/agent-skills/apify-actor-development",
+      "name": "apify-actor-development",
+      "description": "Create, modify, debug, and deploy Apify Actors, and write their input and output schemas. Use when building an Actor from scratch, changing or troubleshooting Actor code, generating or updating .actor schema files, or pushing an Actor to the Apify platform. To wrap an existing non-Actor project, use apify-actorization instead.",
+      "category": "testing-qa",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/apify/agent-skills/blob/main/README.md",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "d522584df6d01746d76b0c674f375cc7d48a838f",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-08",
+        "skill_md_url": "https://github.com/apify/agent-skills/blob/d522584df6d01746d76b0c674f375cc7d48a838f/skills/apify-actor-development/SKILL.md"
+      },
+      "quality": {
+        "score": 84,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/apify/agent-skills/apify-actor-development/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/apify/agent-skills/tree/main/skills/apify-actor-development",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/apify/agent-skills/tree/main/skills/apify-actor-development",
+        "publisher_setup_url": "https://github.com/apify/agent-skills/blob/main/skills/apify-actor-development/SKILL.md"
+      }
+    },
+    {
+      "id": "apify/agent-skills/apify-generate-output-schema",
+      "name": "apify-generate-output-schema",
+      "description": "Deprecated. Output schema generation moved to the apify-actor-development skill; prefer that skill whenever it is available.",
+      "category": "developer-tools",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/apify/agent-skills/blob/main/README.md",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "d522584df6d01746d76b0c674f375cc7d48a838f",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-08",
+        "skill_md_url": "https://github.com/apify/agent-skills/blob/d522584df6d01746d76b0c674f375cc7d48a838f/skills/apify-generate-output-schema/SKILL.md"
+      },
+      "quality": {
+        "score": 61,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/apify/agent-skills/apify-generate-output-schema/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/apify/agent-skills/tree/main/skills/apify-generate-output-schema",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/apify/agent-skills/tree/main/skills/apify-generate-output-schema",
+        "publisher_setup_url": "https://github.com/apify/agent-skills/blob/main/skills/apify-generate-output-schema/SKILL.md"
+      }
+    },
+    {
+      "id": "apify/agent-skills/apify-integration-development",
+      "name": "apify-integration-development",
+      "description": "Design and build an official Apify integration for a company's product - workflow-automation apps (Zapier/n8n-style), AI agent plugins (coding-agent skills+MCP bundles or OpenClaw/Hermes-style harnesses), AI framework packages (LangChain/LlamaIndex-style), or direct application clients via apify-client. Use when planning, creating, or reviewing an integration that exposes Apify Actors, runs, datasets, or key-value stores inside another product.",
+      "category": "ai-agents-llm",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/apify/agent-skills/blob/main/README.md",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "d522584df6d01746d76b0c674f375cc7d48a838f",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-08",
+        "skill_md_url": "https://github.com/apify/agent-skills/blob/d522584df6d01746d76b0c674f375cc7d48a838f/skills/apify-integration-development/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/apify/agent-skills/apify-integration-development/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/apify/agent-skills/tree/main/skills/apify-integration-development",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/apify/agent-skills/tree/main/skills/apify-integration-development",
+        "publisher_setup_url": "https://github.com/apify/agent-skills/blob/main/skills/apify-integration-development/SKILL.md"
+      }
+    }
+  ]
+}

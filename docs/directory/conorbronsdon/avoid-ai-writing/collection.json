@@ -1,0 +1,750 @@
+{
+  "schema_version": 1,
+  "repository": "conorbronsdon/avoid-ai-writing",
+  "listing_url": "https://skills.suedeai.ai/directory/conorbronsdon/avoid-ai-writing/",
+  "snapshot": {
+    "date": "2026-10-22",
+    "id": "0083645c3974488e8803884c7af76698",
+    "dataset_sha256": "b73996d45961aa527b4cea74a41a2e44497200dba9b2f85411e3602ab5f56641"
+  },
+  "listed_skill_count": 7,
+  "scope": "Skills listed by the directory; this is not a complete inventory of every file in the repository.",
+  "security_scan_status": "not_scanned",
+  "skills": [
+    {
+      "id": "conorbronsdon/avoid-ai-writing/ai-writing-detector",
+      "name": "ai-writing-detector",
+      "description": "Use when the user asks to detect, scan, audit, score, or flag AI-writing patterns without rewriting the text, including requests for a deterministic local detector result when the host can execute Node.",
+      "category": "writing-content",
+      "license": "MIT",
+      "license_url": "https://github.com/conorbronsdon/avoid-ai-writing/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "013d1db6b43288c08fcba422fcda3b981ec93dd9",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-18",
+        "skill_md_url": "https://github.com/conorbronsdon/avoid-ai-writing/blob/013d1db6b43288c08fcba422fcda3b981ec93dd9/skills/ai-writing-detector/SKILL.md"
+      },
+      "quality": {
+        "score": 82,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/conorbronsdon/avoid-ai-writing/ai-writing-detector/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/conorbronsdon/avoid-ai-writing/ai-writing-detector/",
+      "source_folder_url": "https://github.com/conorbronsdon/avoid-ai-writing/tree/main/skills/ai-writing-detector",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/conorbronsdon/avoid-ai-writing/tree/main/skills/ai-writing-detector",
+        "publisher_setup_url": "https://github.com/conorbronsdon/avoid-ai-writing/blob/main/skills/ai-writing-detector/SKILL.md"
+      }
+    },
+    {
+      "id": "conorbronsdon/avoid-ai-writing/avoid-ai-writing",
+      "name": "avoid-ai-writing",
+      "description": "Audit and rewrite content to remove AI writing patterns (\"AI-isms\"). Use this skill when asked to \"remove AI-isms,\" \"clean up AI writing,\" \"edit writing for AI patterns,\" \"audit writing for AI tells,\" or \"make this sound less like AI.\" Supports a detect-only mode, an edit-in-place mode for files, an optional voice profile (casual / professional / technical / warm / blunt), and an iterate-to-convergence pass.",
+      "category": "writing-content",
+      "license": "MIT",
+      "license_url": "https://github.com/conorbronsdon/avoid-ai-writing/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "013d1db6b43288c08fcba422fcda3b981ec93dd9",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-18",
+        "skill_md_url": "https://github.com/conorbronsdon/avoid-ai-writing/blob/013d1db6b43288c08fcba422fcda3b981ec93dd9/SKILL.md"
+      },
+      "quality": {
+        "score": 82,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/conorbronsdon/avoid-ai-writing/avoid-ai-writing/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/conorbronsdon/avoid-ai-writing/avoid-ai-writing/",
+      "source_folder_url": "https://github.com/conorbronsdon/avoid-ai-writing",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/conorbronsdon/avoid-ai-writing",
+        "publisher_setup_url": "https://github.com/conorbronsdon/avoid-ai-writing/blob/main/SKILL.md"
+      }
+    },
+    {
+      "id": "conorbronsdon/avoid-ai-writing/avoid-ai-writing-router",
+      "name": "avoid-ai-writing-router",
+      "description": "Use when a request combines AI-writing audit, rewrite, file editing, voice preservation, false-positive interpretation, verification, or when the user invokes Avoid AI Writing without naming a mode.",
+      "category": "writing-content",
+      "license": "MIT",
+      "license_url": "https://github.com/conorbronsdon/avoid-ai-writing/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "013d1db6b43288c08fcba422fcda3b981ec93dd9",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-18",
+        "skill_md_url": "https://github.com/conorbronsdon/avoid-ai-writing/blob/013d1db6b43288c08fcba422fcda3b981ec93dd9/skills/avoid-ai-writing-router/SKILL.md"
+      },
+      "quality": {
+        "score": 85,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/conorbronsdon/avoid-ai-writing/avoid-ai-writing-router/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/conorbronsdon/avoid-ai-writing/avoid-ai-writing-router/",
+      "source_folder_url": "https://github.com/conorbronsdon/avoid-ai-writing/tree/main/skills/avoid-ai-writing-router",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/conorbronsdon/avoid-ai-writing/tree/main/skills/avoid-ai-writing-router",
+        "publisher_setup_url": "https://github.com/conorbronsdon/avoid-ai-writing/blob/main/skills/avoid-ai-writing-router/SKILL.md"
+      }
+    },
+    {
+      "id": "conorbronsdon/avoid-ai-writing/false-positive-reviewer",
+      "name": "false-positive-reviewer",
+      "description": "Use when a user asks what AI-writing flags mean, whether detector output proves AI authorship, or wants a careful interpretation of possible false positives, especially for academic, hiring, publication, disciplinary, or other consequential decisions.",
+      "category": "writing-content",
+      "license": "MIT",
+      "license_url": "https://github.com/conorbronsdon/avoid-ai-writing/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "013d1db6b43288c08fcba422fcda3b981ec93dd9",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-18",
+        "skill_md_url": "https://github.com/conorbronsdon/avoid-ai-writing/blob/013d1db6b43288c08fcba422fcda3b981ec93dd9/skills/false-positive-reviewer/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/conorbronsdon/avoid-ai-writing/false-positive-reviewer/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/conorbronsdon/avoid-ai-writing/false-positive-reviewer/",
+      "source_folder_url": "https://github.com/conorbronsdon/avoid-ai-writing/tree/main/skills/false-positive-reviewer",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/conorbronsdon/avoid-ai-writing/tree/main/skills/false-positive-reviewer",
+        "publisher_setup_url": "https://github.com/conorbronsdon/avoid-ai-writing/blob/main/skills/false-positive-reviewer/SKILL.md"
+      }
+    },
+    {
+      "id": "conorbronsdon/avoid-ai-writing/file-edit-in-place",
+      "name": "file-edit-in-place",
+      "description": "Use when the user names a local file and explicitly asks to clean, rewrite, humanize, or remove AI-writing patterns in that file itself, with minimal targeted edits and post-edit verification.",
+      "category": "writing-content",
+      "license": "MIT",
+      "license_url": "https://github.com/conorbronsdon/avoid-ai-writing/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "013d1db6b43288c08fcba422fcda3b981ec93dd9",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-18",
+        "skill_md_url": "https://github.com/conorbronsdon/avoid-ai-writing/blob/013d1db6b43288c08fcba422fcda3b981ec93dd9/skills/file-edit-in-place/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/conorbronsdon/avoid-ai-writing/file-edit-in-place/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/conorbronsdon/avoid-ai-writing/file-edit-in-place/",
+      "source_folder_url": "https://github.com/conorbronsdon/avoid-ai-writing/tree/main/skills/file-edit-in-place",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/conorbronsdon/avoid-ai-writing/tree/main/skills/file-edit-in-place",
+        "publisher_setup_url": "https://github.com/conorbronsdon/avoid-ai-writing/blob/main/skills/file-edit-in-place/SKILL.md"
+      }
+    },
+    {
+      "id": "conorbronsdon/avoid-ai-writing/preservation-verifier",
+      "name": "preservation-verifier",
+      "description": "Use when the user provides an original and rewritten version, asks whether a rewrite preserved protected content, or wants a deterministic check for code, frontmatter, quotes, tables, links, paths, numbers, headings, and residual AI-pattern regressions.",
+      "category": "writing-content",
+      "license": "MIT",
+      "license_url": "https://github.com/conorbronsdon/avoid-ai-writing/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "013d1db6b43288c08fcba422fcda3b981ec93dd9",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-18",
+        "skill_md_url": "https://github.com/conorbronsdon/avoid-ai-writing/blob/013d1db6b43288c08fcba422fcda3b981ec93dd9/skills/preservation-verifier/SKILL.md"
+      },
+      "quality": {
+        "score": 82,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/conorbronsdon/avoid-ai-writing/preservation-verifier/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/conorbronsdon/avoid-ai-writing/preservation-verifier/",
+      "source_folder_url": "https://github.com/conorbronsdon/avoid-ai-writing/tree/main/skills/preservation-verifier",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/conorbronsdon/avoid-ai-writing/tree/main/skills/preservation-verifier",
+        "publisher_setup_url": "https://github.com/conorbronsdon/avoid-ai-writing/blob/main/skills/preservation-verifier/SKILL.md"
+      }
+    },
+    {
+      "id": "conorbronsdon/avoid-ai-writing/voice-preserving-rewriter",
+      "name": "voice-preserving-rewriter",
+      "description": "Use when the user asks to rewrite, humanize, clean up, or remove AI-isms from text while preserving the writer's voice, facts, intent, structure, register, and protected material.",
+      "category": "writing-content",
+      "license": "MIT",
+      "license_url": "https://github.com/conorbronsdon/avoid-ai-writing/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "013d1db6b43288c08fcba422fcda3b981ec93dd9",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-18",
+        "skill_md_url": "https://github.com/conorbronsdon/avoid-ai-writing/blob/013d1db6b43288c08fcba422fcda3b981ec93dd9/skills/voice-preserving-rewriter/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/conorbronsdon/avoid-ai-writing/voice-preserving-rewriter/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/conorbronsdon/avoid-ai-writing/voice-preserving-rewriter/",
+      "source_folder_url": "https://github.com/conorbronsdon/avoid-ai-writing/tree/main/skills/voice-preserving-rewriter",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/conorbronsdon/avoid-ai-writing/tree/main/skills/voice-preserving-rewriter",
+        "publisher_setup_url": "https://github.com/conorbronsdon/avoid-ai-writing/blob/main/skills/voice-preserving-rewriter/SKILL.md"
+      }
+    }
+  ]
+}
