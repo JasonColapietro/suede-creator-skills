@@ -24,7 +24,12 @@ export async function verifyFeaturedNavigation(page, base, output, mount = '/dir
       assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), route + ' has no overflow at ' + width);
       await featured.focus();
       assert.equal(await featured.evaluate(el => getComputedStyle(el).outlineStyle), 'solid');
-      await page.keyboard.press('Enter');
+      // A featured-page link reloads the same URL. Wait for the new document,
+      // since waitForURL alone can resolve against the document being replaced.
+      await Promise.all([
+        page.waitForEvent('domcontentloaded'),
+        page.keyboard.press('Enter'),
+      ]);
       await page.waitForURL(base + destination);
       assert.match(await page.locator('h1').innerText(), /Featured/);
       await verifyFeaturedOrder(page);
