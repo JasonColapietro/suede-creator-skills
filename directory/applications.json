@@ -1,7 +1,45 @@
 {
   "schema_version": 1,
-  "updated": "2026-11-13",
+  "updated": "2026-11-15",
   "applications": [
+    {
+      "issue": 396,
+      "applicant": "KKKKhazix",
+      "repo": "KKKKhazix/khazix-skills",
+      "scope_version": "f524d0312ebec9c9cf7d7778dd49ca34ad5c9f628751fdcd216b093483d870ed",
+      "kind": "skill",
+      "scope": [
+        "aihot"
+      ],
+      "applied_at": "2026-11-14T12:04:54Z",
+      "issue_state": "open"
+    },
+    {
+      "issue": 394,
+      "applicant": "Wlain",
+      "repo": "klingai-tech/claude-plugin",
+      "scope_version": "00e95e7b8d3c1c9d1034a93d2701d8d87fed889f5b9ce118cf6ab5a41de2e19a",
+      "kind": "skill",
+      "scope": [
+        "kling-ai",
+        "kling-ai-generate-image",
+        "kling-ai-generate-video"
+      ],
+      "applied_at": "2026-11-14T07:07:33Z",
+      "issue_state": "open"
+    },
+    {
+      "issue": 392,
+      "applicant": "fengyiqicoder",
+      "repo": "fengyiqicoder/go-public",
+      "scope_version": "a341626744646d18fcb230f1163174d209ff24ad8dad5fe4ecaf2ec434a24267",
+      "kind": "skill",
+      "scope": [
+        "go-public"
+      ],
+      "applied_at": "2026-11-13T15:01:15Z",
+      "issue_state": "open"
+    },
     {
       "issue": 390,
       "applicant": "mohiddin7",
@@ -12,7 +50,7 @@
         "resume-tribunal"
       ],
       "applied_at": "2026-11-13T04:52:44Z",
-      "issue_state": "open"
+      "issue_state": "closed"
     },
     {
       "issue": 384,
@@ -24,7 +62,7 @@
         "siebly-crypto-exchange-api"
       ],
       "applied_at": "2026-11-11T21:02:03Z",
-      "issue_state": "open"
+      "issue_state": "closed"
     },
     {
       "issue": 379,
@@ -46,7 +84,7 @@
         "deed-page"
       ],
       "applied_at": "2026-11-10T22:51:06Z",
-      "issue_state": "open"
+      "issue_state": "closed"
     },
     {
       "issue": 375,
@@ -86,7 +124,7 @@
     },
     {
       "issue": 359,
-      "applicant": "mrhy7176",
+      "applicant": "cloudgpuapp",
       "repo": "mrhy7176/cloudgpu-agent-skills",
       "scope_version": "8e72048ab422fad09586c9881c4be9f99594daef3697513a59b96a0de7618062",
       "kind": "skill",
