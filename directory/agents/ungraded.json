@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated": "2026-11-01",
+  "generated": "2026-11-13",
   "entries": [
     {
       "id": "11x-alice",
@@ -1542,6 +1542,27 @@
         "https://github.com/MODSetter/SurfSense"
       ],
       "observedAt": "2026-10-27"
+    },
+    {
+      "id": "tecadrise-bot",
+      "name": "TecAdRise Bot",
+      "summary": "Run a local Windows multi-agent workspace with shared memory, MCP connections and scheduled routines, using Cursor SDK agents or a configured model-provider key.",
+      "tasks": [
+        "automation",
+        "coding",
+        "research"
+      ],
+      "deployments": [
+        "local"
+      ],
+      "sourceAvailability": "public-source",
+      "officialUrl": "https://tecadrise.ai/products/tecadrisebot",
+      "repositoryUrl": "https://github.com/tecadrise-ai/TecAdRiseBot",
+      "sourceUrls": [
+        "https://tecadrise.ai/products/tecadrisebot",
+        "https://github.com/tecadrise-ai/TecAdRiseBot/blob/7f67f0212ae6a5ef623cee30dda6dc0d0ceaa36c/README.md"
+      ],
+      "observedAt": "2026-11-13"
     },
     {
       "id": "thoughtspot-spotter",

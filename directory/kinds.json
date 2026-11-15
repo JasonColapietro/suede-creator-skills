@@ -1,6 +1,6 @@
 {
   "about": "The directory kinds beyond skills: each kind is a hub page at /<path>/ with a short definition, the official documentation, the install convention and a reviewed list of real repositories. Entries are listed, not graded: the Suede Skill Check scores SKILL.md folders only, and nothing here carries a quality score, a security result or a verification badge. Every repository was checked to exist on the date in `checked`; summaries describe what the publisher documents. Keep em dashes out of every string.",
-  "updated": "2026-11-02",
+  "updated": "2026-11-13",
   "kinds": [
     {
       "id": "plugins",
@@ -717,6 +717,28 @@
               "tags": [
                 "official",
                 "prompts"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "alternatives",
+          "name": "Grok Bot alternatives",
+          "intro": "Independent desktop agents with related workflows, using their own documented runtimes.",
+          "entries": [
+            {
+              "id": "tecadrise-bot",
+              "name": "TecAdRise Bot",
+              "repo": "tecadrise-ai/TecAdRiseBot",
+              "url": "https://tecadrise.ai/products/tecadrisebot",
+              "publisher": "TecAdRise",
+              "official": false,
+              "license": "MIT",
+              "summary": "Run a local Windows multi-agent workspace with shared memory, MCP connections and scheduled routines, using Cursor SDK agents or a configured model-provider key. Independent Grok Bot alternative on Cursor SDK or BYOK.",
+              "tags": [
+                "desktop",
+                "windows",
+                "alternative"
               ]
             }
           ]

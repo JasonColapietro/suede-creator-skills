@@ -6,7 +6,7 @@
 
 Editorial selection highlights a project’s workflow and accepted scope. It is separate from structural quality grades, security certification and README-badge verification. A plugin feature does not add its contents to the scored skill catalog.
 
-Selections updated **2026-11-11**. [View on Suede AI](https://skills.suedeai.ai/directory/featured/).
+Selections updated **2026-11-13**. [View on Suede AI](https://skills.suedeai.ai/directory/featured/).
 
 - [Appie](#appie)
 - [CoalWash](#coalwash)
@@ -32,6 +32,10 @@ Selections updated **2026-11-11**. [View on Suede AI](https://skills.suedeai.ai/
 - [Resume Claim Guard](#resume-claim-guard)
 - [Socratic Story Cartographer](#socratic-story-cartographer)
 - [GoVisit Agent Skills](#govisit)
+- [Resume Tribunal](#resume-tribunal)
+- [Siebly Crypto Exchange API](#siebly-crypto-exchange-api)
+- [deed.page](#deed-page)
+- [TecAdRise Bot](#tecadrise-bot)
 
 <a id="appie"></a>
 
@@ -542,6 +546,86 @@ Explore destinations, local businesses and experiences with 22 focused agent ski
 The 22 canonical skills use public HTTPS reads from govisit.ai without a GoVisit API key. Install the complete skill folders, including their JSON contracts. Toolkit files are MIT licensed; hosted access and returned data follow the GoVisit Data Use License. The listing covers the canonical skills, not duplicated plugin copies or the separate Floating Chat application.
 
 [Repository](https://github.com/inhotel-io/govisit-toolkit) · [Intake review](../directory/reviews/2026-11-11-govisit.md) · [Reviewed source 0b318f8](https://github.com/inhotel-io/govisit-toolkit/tree/0b318f836fe1bb66ea45099d302e24fc0bd11d3d) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#govisit)
+
+---
+
+<a id="resume-tribunal"></a>
+
+## Resume Tribunal
+
+**Editorial feature · Independent resume review** · License: MIT · Publisher: [mohiddin7](https://github.com/mohiddin7)
+
+Match a resume to a specific role using the candidate’s facts, then give a blind reviewer the draft to catch unsupported wording before the candidate signs off.
+
+- **Ground the rewrite.** Map the target job to the candidate’s real experience and keep team contributions distinct from individual claims.
+- **Get an independent review.** Use an AI from a different company to challenge a draft without being told which model wrote it.
+- **Finish with evidence.** Review checker findings, approve changed claims and prepare for the interview questions the resume invites.
+
+### Setup
+
+Use the single resume-tribunal skill in a chat assistant or coding agent. Python 3 enables the optional checker and PDF output. Choose the review models, protect personal information with stand-ins, and confirm changed claims before using the final resume.
+
+[Website](https://tribunal.warmhop.com) · [Repository](https://github.com/mohiddin7/resume-tribunal) · [Intake review](../directory/reviews/2026-11-13-resume-tribunal.md) · [Reviewed source 55d830f](https://github.com/mohiddin7/resume-tribunal/tree/55d830f613bdfe9fabf8bed3fa1befb7c2f6b083) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#resume-tribunal)
+
+---
+
+<a id="siebly-crypto-exchange-api"></a>
+
+## Siebly Crypto Exchange API
+
+**Editorial feature · Exchange API development** · License: MIT · Publisher: [sieblyio](https://github.com/sieblyio)
+
+Guide Node.js and TypeScript integrations across exchange REST and WebSocket APIs, with exchange-specific SDKs, explicit execution modes and connection-state handling.
+
+- **Choose the exchange SDK.** Map the exchange and runtime to the documented Siebly package instead of inventing a generic API client.
+- **Handle live data properly.** Distinguish socket open, subscription acknowledgement, hydration, replay and application readiness.
+- **Make recovery explicit.** Add credential validation, rate-limit handling, reconnect logic, durable intent records and duplicate-call protection.
+
+### Setup
+
+Install only siebly-crypto-exchange-api. Start with public data, read-only access or mocked execution. Keep credentials outside source control, inspect the selected SDK and exchange documentation, and explicitly configure any write-capable mode.
+
+[Website](https://siebly.io) · [Repository](https://github.com/sieblyio/agent-skills) · [Intake review](../directory/reviews/2026-11-13-siebly-crypto-exchange-api.md) · [Reviewed source a498cc2](https://github.com/sieblyio/agent-skills/tree/a498cc26c37f44f7c813e4692e448f2b9fe1e07a) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#siebly-crypto-exchange-api)
+
+---
+
+<a id="deed-page"></a>
+
+## deed.page
+
+**Editorial feature · Static publishing** · License: MIT · Publisher: [f-o-x11](https://github.com/f-o-x11)
+
+Publish a clean HTML file or static build to deed.page, then retain the owner token for updates. The workflow separates creating a draft from authorizing a public upload.
+
+- **Publish the output, not the project.** Use a clean build folder and filter secrets, repository metadata, dependencies and symlinks out of the upload.
+- **Keep the publishing decision explicit.** A draft stays local until the user asks to publish or confirms the public upload.
+- **Keep control of the URL.** Save the returned owner token privately so later updates belong to the same owner.
+
+### Setup
+
+Use the deed-page skill with curl and network access; folder uploads also use tar, and larger uploads use Node.js 18+. Publish clean output only, keep the owner token private, and review the service’s current plan limits. Free sites include the publisher’s badge.
+
+[Website](https://deed.page) · [Repository](https://github.com/f-o-x11/deed-page-skill) · [Intake review](../directory/reviews/2026-11-13-deed-page.md) · [Reviewed source 16e00cb](https://github.com/f-o-x11/deed-page-skill/tree/16e00cb963b0770f6a7da20cee52f5d1ea6ea4bf) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#deed-page)
+
+---
+
+<a id="tecadrise-bot"></a>
+
+## TecAdRise Bot
+
+**Editorial feature · Windows multi-agent desktop** · License: MIT · Publisher: [tecadrise-ai](https://github.com/tecadrise-ai)
+
+Run a local Windows multi-agent workspace with shared memory, MCP connections and scheduled routines, using Cursor SDK agents or a configured model-provider key.
+
+- **Coordinate a team of agents.** Configure agents individually and let them exchange messages while sharing a persistent memory wiki.
+- **Build repeatable workflows.** Use runner steps, owner review, hard checks and a record of recent runs.
+- **Connect the working tools.** Configure common or per-agent MCP connections and schedule interval, daily, weekly or one-off routines.
+
+### Setup
+
+Requires 64-bit Windows 10 or 11 and a Cursor API key or supported BYOK provider. Provider usage is billed separately by the chosen provider. Scheduled routines run while the app is open. Configure each connector’s permissions before use.
+
+[Website](https://tecadrise.ai/products/tecadrisebot) · [Repository](https://github.com/tecadrise-ai/TecAdRiseBot) · [Intake review](../directory/reviews/2026-11-13-tecadrise-bot.md) · [Reviewed source 7f67f02](https://github.com/tecadrise-ai/TecAdRiseBot/tree/7f67f0212ae6a5ef623cee30dda6dc0d0ceaa36c) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#tecadrise-bot)
 
 ---
 
