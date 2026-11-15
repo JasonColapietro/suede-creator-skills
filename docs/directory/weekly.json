@@ -2,63 +2,63 @@
   "star": "https://github.com/JasonColapietro/suede-creator-skills",
   "about": "Weekly feed of the Suede AI Skills Directory for agents and newsletters. Suede AI is excluded from every list. Quality scores measure published files, not runtime or security.",
   "quality_snapshot": "2026-10-22",
-  "install_snapshot": "2026-11-08",
+  "install_snapshot": "2026-11-15",
   "install_source": "https://skills.sh/",
-  "stars_snapshot": "2026-11-08",
-  "stars_since": null,
+  "stars_snapshot": "2026-11-15",
+  "stars_since": "2026-11-08",
   "rising": [
-    "heygen-com/hyperframes/hyperframes-cli",
+    "vercel-labs/skills/find-skills",
     "heygen-com/hyperframes/media-use",
+    "vercel-labs/agent-browser/agent-browser",
+    "heygen-com/hyperframes/hyperframes-cli",
     "heygen-com/hyperframes/hyperframes",
     "heygen-com/hyperframes/hyperframes-registry",
-    "vercel-labs/skills/find-skills",
-    "vercel-labs/agent-browser/agent-browser",
-    "mattpocock/skills/grilling",
-    "heygen-com/hyperframes/remotion-to-hyperframes",
-    "mattpocock/skills/grill-me",
-    "heygen-com/hyperframes/figma",
-    "mattpocock/skills/codebase-design",
-    "mattpocock/skills/improve-codebase-architecture",
-    "mattpocock/skills/code-review",
-    "mattpocock/skills/grill-with-docs",
-    "mattpocock/skills/domain-modeling",
-    "mattpocock/skills/setup-matt-pocock-skills",
-    "mattpocock/skills/tdd",
-    "mattpocock/skills/handoff",
-    "mattpocock/skills/diagnosing-bugs",
-    "mattpocock/skills/research",
-    "mattpocock/skills/wayfinder",
-    "mattpocock/skills/to-tickets",
-    "mattpocock/skills/to-spec",
-    "mattpocock/skills/prototype",
-    "mattpocock/skills/teach"
+    "microsoft/azure-skills/azure-diagnostics",
+    "microsoft/azure-skills/microsoft-foundry",
+    "microsoft/azure-skills/azure-validate",
+    "microsoft/azure-skills/azure-prepare",
+    "microsoft/azure-skills/azure-kubernetes",
+    "microsoft/azure-skills/azure-ai",
+    "microsoft/azure-skills/azure-app-onboard",
+    "microsoft/azure-skills/azure-deploy",
+    "microsoft/azure-skills/azure-storage",
+    "microsoft/azure-skills/azure-compliance",
+    "microsoft/azure-skills/azure-enterprise-infra-planner",
+    "microsoft/azure-skills/entra-app-registration",
+    "microsoft/azure-skills/azure-app-onboard-prereq",
+    "microsoft/azure-skills/azure-resource-lookup",
+    "microsoft/azure-skills/azure-upgrade",
+    "microsoft/azure-skills/azure-resource-visualizer",
+    "microsoft/azure-skills/appinsights-instrumentation",
+    "microsoft/azure-skills/python-appservice-deploy",
+    "microsoft/azure-skills/azure-quotas"
   ],
   "climbing": [
-    "vercel/ai/ai-sdk",
-    "coreyhaines31/marketingskills/paywalls",
-    "coreyhaines31/marketingskills/video",
-    "coreyhaines31/marketingskills/community-marketing",
-    "coreyhaines31/marketingskills/popups",
-    "coreyhaines31/marketingskills/prospecting",
-    "coreyhaines31/marketingskills/aso",
-    "coreyhaines31/marketingskills/image",
-    "coreyhaines31/marketingskills/cold-email",
-    "coreyhaines31/marketingskills/programmatic-seo",
-    "heygen-com/hyperframes/remotion-to-hyperframes",
-    "microsoft/azure-skills/azure-prepare",
-    "cloudflare/security-audit-skill/security-audit",
-    "coreyhaines31/marketingskills/ab-testing",
-    "coreyhaines31/marketingskills/customer-research",
-    "coreyhaines31/marketingskills/lead-magnets",
-    "coreyhaines31/marketingskills/marketing-ideas",
-    "coreyhaines31/marketingskills/revops",
-    "nextlevelbuilder/ui-ux-pro-max-skill/ui-ux-pro-max",
-    "coreyhaines31/marketingskills/directory-submissions",
-    "heygen-com/hyperframes/figma",
-    "microsoft/azure-skills/azure-diagnostics",
-    "coreyhaines31/marketingskills/ad-creative",
-    "coreyhaines31/marketingskills/sms",
-    "anthropics/skills/internal-comms"
+    "microsoft/azure-skills/discover-azure-skills",
+    "microsoft/azure-skills/azure-messaging",
+    "microsoft/azure-skills/entra-agent-id",
+    "microsoft/azure-skills/python-appservice-deploy",
+    "microsoft/azure-skills/azure-app-onboard-prereq",
+    "microsoft/azure-skills/azure-cloud-migrate",
+    "microsoft/azure-skills/azure-aigateway",
+    "microsoft/azure-skills/azure-app-onboard",
+    "microsoft/azure-skills/entra-app-registration",
+    "microsoft/azure-skills/azure-compute",
+    "microsoft/azure-skills/azure-reliability",
+    "microsoft/azure-skills/airunway-aks-setup",
+    "microsoft/azure-skills/appinsights-instrumentation",
+    "microsoft/azure-skills/azure-resource-lookup",
+    "microsoft/azure-skills/azure-kusto",
+    "microsoft/azure-skills/azure-resource-visualizer",
+    "microsoft/azure-skills/azure-enterprise-infra-planner",
+    "microsoft/azure-skills/azure-quotas",
+    "microsoft/azure-skills/azure-storage",
+    "microsoft/azure-skills/azure-compliance",
+    "microsoft/azure-skills/azure-deploy",
+    "microsoft/azure-skills/azure-ai",
+    "microsoft/azure-skills/azure-upgrade",
+    "microsoft/azure-skills/azure-validate",
+    "microsoft/azure-skills/azure-kubernetes"
   ],
   "new_listings": [
     "inhotel-io/govisit-toolkit/govisit-get-category-overview",
@@ -117,8 +117,8 @@
       "id": "azure",
       "name": "Azure",
       "skills": 78,
-      "weekly_installs": 210768,
-      "change_pct": 11,
+      "weekly_installs": 2036650,
+      "change_pct": 866,
       "best": [
         "microsoft/azure-skills/python-appservice-deploy",
         "microsoft/azure-skills/azure-deploy",
@@ -126,23 +126,23 @@
       ]
     },
     {
-      "id": "animation-motion",
-      "name": "Animation and Motion Graphics",
-      "skills": 23,
-      "weekly_installs": 169962,
-      "change_pct": -64,
+      "id": "deployment-hosting",
+      "name": "Deployment and Hosting",
+      "skills": 40,
+      "weekly_installs": 314960,
+      "change_pct": 585,
       "best": [
-        "anthropics/skills/slack-gif-creator",
-        "heygen-com/hyperframes/hyperframes-keyframes",
-        "heygen-com/hyperframes/hyperframes-core"
+        "nvidia/skills/vss-deploy-detection-tracking-2d",
+        "aws/agent-toolkit-for-aws/agents-deploy",
+        "google/skills/google-cloud-recipe-onboarding"
       ]
     },
     {
       "id": "skill-authoring",
       "name": "Skill Authoring",
       "skills": 37,
-      "weekly_installs": 158633,
-      "change_pct": -6,
+      "weekly_installs": 152391,
+      "change_pct": -4,
       "best": [
         "trailofbits/skills/skill-improver",
         "mblode/agent-skills/agent-skills-creator",
@@ -150,11 +150,47 @@
       ]
     },
     {
+      "id": "kubernetes",
+      "name": "Kubernetes",
+      "skills": 72,
+      "weekly_installs": 150881,
+      "change_pct": 849,
+      "best": [
+        "google/skills/gke-ai-troubleshooting-tpu-vbar-oom",
+        "google/skills/gke-ai-troubleshooting-tpu-dynamic-slices-monitoring",
+        "google/skills/gke-ai-troubleshooting-tpu-metrics-monitoring"
+      ]
+    },
+    {
+      "id": "animation-motion",
+      "name": "Animation and Motion Graphics",
+      "skills": 23,
+      "weekly_installs": 138514,
+      "change_pct": -19,
+      "best": [
+        "anthropics/skills/slack-gif-creator",
+        "heygen-com/hyperframes/hyperframes-keyframes",
+        "heygen-com/hyperframes/hyperframes-core"
+      ]
+    },
+    {
+      "id": "security-auditing",
+      "name": "Security Auditing and Review",
+      "skills": 108,
+      "weekly_installs": 105927,
+      "change_pct": 168,
+      "best": [
+        "trailofbits/skills/fp-check",
+        "trailofbits/skills/semgrep",
+        "trailofbits/skills/codeql"
+      ]
+    },
+    {
       "id": "sound-effects",
       "name": "Sound Effects",
       "skills": 3,
-      "weekly_installs": 125947,
-      "change_pct": -36,
+      "weekly_installs": 104392,
+      "change_pct": -17,
       "best": [
         "heygen-com/hyperframes/hyperframes-audio",
         "heygen-com/hyperframes/media-use",
@@ -162,23 +198,11 @@
       ]
     },
     {
-      "id": "test-automation",
-      "name": "Test Automation",
-      "skills": 134,
-      "weekly_installs": 92008,
-      "change_pct": -8,
-      "best": [
-        "eduardo-sl/go-agent-skills/go-test-quality",
-        "eduardo-sl/go-agent-skills/go-test-table-driven",
-        "tronghieu/agent-skills/manual-tester"
-      ]
-    },
-    {
       "id": "browser-agents",
       "name": "Browser Agents and Computer Use",
       "skills": 29,
-      "weekly_installs": 87518,
-      "change_pct": 10,
+      "weekly_installs": 103828,
+      "change_pct": 19,
       "best": [
         "trailofbits/skills/chrome-mcp-troubleshooting",
         "lackeyjb/playwright-skill/playwright-skill",
@@ -189,8 +213,8 @@
       "id": "web-scraping",
       "name": "Web Scraping and Browser Automation",
       "skills": 30,
-      "weekly_installs": 87518,
-      "change_pct": 10,
+      "weekly_installs": 103828,
+      "change_pct": 19,
       "best": [
         "apify/agent-skills/apify-actor-development",
         "browserbase/skills/browser-use-to-stagehand",
@@ -198,203 +222,11 @@
       ]
     },
     {
-      "id": "cloudflare",
-      "name": "Cloudflare",
-      "skills": 20,
-      "weekly_installs": 74983,
-      "change_pct": -5,
-      "best": [
-        "mblode/agent-skills/multi-tenant-architecture",
-        "expo/skills/eas-hosting",
-        "cloudflare/skills/workers-best-practices"
-      ]
-    },
-    {
-      "id": "sql",
-      "name": "SQL and Databases",
-      "skills": 116,
-      "weekly_installs": 55457,
-      "change_pct": -17,
-      "best": [
-        "eduardo-sl/go-agent-skills/go-database",
-        "google/skills/cloud-databases-onboarding",
-        "google/skills/dbt-sf-to-bq-translator"
-      ]
-    },
-    {
-      "id": "supabase-firebase",
-      "name": "Supabase and Firebase",
-      "skills": 22,
-      "weekly_installs": 55457,
-      "change_pct": -17,
-      "best": [
-        "trailofbits/skills/firebase-apk-scanner",
-        "google/skills/firebase-basics",
-        "firebase/skills/firebase-remote-config-basics"
-      ]
-    },
-    {
-      "id": "git-version-control",
-      "name": "Git and Version Control",
-      "skills": 39,
-      "weekly_installs": 53368,
-      "change_pct": -8,
-      "best": [
-        "eduardo-sl/go-agent-skills/git-commit",
-        "trailofbits/skills/github-triage",
-        "obra/superpowers/using-git-worktrees"
-      ]
-    },
-    {
-      "id": "pull-requests",
-      "name": "Pull Requests",
-      "skills": 39,
-      "weekly_installs": 50287,
-      "change_pct": -8,
-      "best": [
-        "trailofbits/skills/pr-improver",
-        "eduardo-sl/go-agent-skills/git-commit",
-        "mblode/agent-skills/pr-babysitter"
-      ]
-    },
-    {
-      "id": "code-review",
-      "name": "Code Review",
-      "skills": 49,
-      "weekly_installs": 49663,
-      "change_pct": -3,
-      "best": [
-        "eduardo-sl/go-agent-skills/go-coding-standards",
-        "eduardo-sl/go-agent-skills/go-concurrency-review",
-        "eduardo-sl/go-agent-skills/go-performance-review"
-      ]
-    },
-    {
-      "id": "react-nextjs",
-      "name": "React and Next.js",
-      "skills": 30,
-      "weekly_installs": 48873,
-      "change_pct": -5,
-      "best": [
-        "mblode/agent-skills/scaffold-nextjs",
-        "anthropics/skills/web-artifacts-builder",
-        "jeffallan/claude-skills/nextjs-developer"
-      ]
-    },
-    {
-      "id": "deployment-hosting",
-      "name": "Deployment and Hosting",
-      "skills": 40,
-      "weekly_installs": 45987,
-      "change_pct": 3,
-      "best": [
-        "nvidia/skills/vss-deploy-detection-tracking-2d",
-        "aws/agent-toolkit-for-aws/agents-deploy",
-        "google/skills/google-cloud-recipe-onboarding"
-      ]
-    },
-    {
-      "id": "unit-testing",
-      "name": "Unit Testing",
-      "skills": 42,
-      "weekly_installs": 42414,
-      "change_pct": -8,
-      "best": [
-        "eduardo-sl/go-agent-skills/go-test-quality",
-        "eduardo-sl/go-agent-skills/go-test-table-driven",
-        "trailofbits/skills/property-based-testing"
-      ]
-    },
-    {
-      "id": "figma",
-      "name": "Figma and Design Tools",
-      "skills": 14,
-      "weekly_installs": 41062,
-      "change_pct": 15,
-      "best": [
-        "avelikiy/great-cto/anydesign",
-        "openai/skills/figma-code-connect-components",
-        "github/awesome-copilot/penpot-uiux-design"
-      ]
-    },
-    {
-      "id": "security-auditing",
-      "name": "Security Auditing and Review",
-      "skills": 108,
-      "weekly_installs": 39465,
-      "change_pct": 8,
-      "best": [
-        "trailofbits/skills/fp-check",
-        "trailofbits/skills/semgrep",
-        "trailofbits/skills/codeql"
-      ]
-    },
-    {
-      "id": "refactoring",
-      "name": "Refactoring",
-      "skills": 23,
-      "weekly_installs": 38379,
-      "change_pct": -1,
-      "best": [
-        "eduardo-sl/go-agent-skills/go-modernize",
-        "eduardo-sl/go-agent-skills/go-refactoring",
-        "trailofbits/skills/code-improver"
-      ]
-    },
-    {
-      "id": "context-memory",
-      "name": "Context Engineering and Agent Memory",
-      "skills": 31,
-      "weekly_installs": 35344,
-      "change_pct": -10,
-      "best": [
-        "mblode/agent-skills/chat-history",
-        "tronghieu/agent-skills/deep-reader",
-        "trailofbits/skills/slicing-code-context"
-      ]
-    },
-    {
-      "id": "research",
-      "name": "Research",
-      "skills": 46,
-      "weekly_installs": 34879,
-      "change_pct": 3,
-      "best": [
-        "k-dense-ai/claude-scientific-skills/citation-management",
-        "k-dense-ai/claude-scientific-skills/literature-review",
-        "k-dense-ai/claude-scientific-skills/paper-lookup"
-      ]
-    },
-    {
-      "id": "ui-ux-design",
-      "name": "UI and UX Design",
-      "skills": 24,
-      "weekly_installs": 32134,
-      "change_pct": 7,
-      "best": [
-        "pbakaus/impeccable/impeccable",
-        "mblode/agent-skills/ui-design",
-        "nextlevelbuilder/ui-ux-pro-max-skill/ui-ux-pro-max"
-      ]
-    },
-    {
-      "id": "seo",
-      "name": "SEO",
-      "skills": 100,
-      "weekly_installs": 31513,
-      "change_pct": 10,
-      "best": [
-        "coreyhaines31/marketingskills/schema",
-        "coreyhaines31/marketingskills/seo-audit",
-        "coreyhaines31/marketingskills/programmatic-seo"
-      ]
-    },
-    {
       "id": "agent-safety",
       "name": "Agent Safety and Guardrails",
       "skills": 27,
-      "weekly_installs": 29141,
-      "change_pct": -4,
+      "weekly_installs": 95970,
+      "change_pct": 229,
       "best": [
         "getsentry/skills/skill-scanner",
         "mblode/agent-skills/ax-audit",
@@ -402,167 +234,23 @@
       ]
     },
     {
-      "id": "claude-code-config",
-      "name": "Claude Code Setup and Hooks",
-      "skills": 31,
-      "weekly_installs": 26838,
-      "change_pct": -7,
+      "id": "test-automation",
+      "name": "Test Automation",
+      "skills": 134,
+      "weekly_installs": 86776,
+      "change_pct": -6,
       "best": [
-        "trailofbits/skills/testing-handbook-generator",
-        "mblode/agent-skills/agents-md",
-        "anthropics/claude-plugins-official/agent-development"
-      ]
-    },
-    {
-      "id": "color-typography",
-      "name": "Color and Typography",
-      "skills": 14,
-      "weekly_installs": 22468,
-      "change_pct": 2,
-      "best": [
-        "pbakaus/impeccable/impeccable",
-        "mblode/agent-skills/typography-audit",
-        "avelikiy/great-cto/aesthetic-instrument"
-      ]
-    },
-    {
-      "id": "marketing-strategy",
-      "name": "Marketing Strategy",
-      "skills": 24,
-      "weekly_installs": 21623,
-      "change_pct": -54,
-      "best": [
-        "coreyhaines31/marketingskills/marketing-ideas",
-        "coreyhaines31/marketingskills/product-marketing",
-        "coreyhaines31/marketingskills/launch"
-      ]
-    },
-    {
-      "id": "code-quality-linting",
-      "name": "Code Quality and Linting",
-      "skills": 22,
-      "weekly_installs": 21314,
-      "change_pct": -8,
-      "best": [
-        "eduardo-sl/go-agent-skills/go-coding-standards",
-        "eduardo-sl/go-agent-skills/go-ci",
-        "eduardo-sl/go-agent-skills/go-naming"
-      ]
-    },
-    {
-      "id": "vulnerability-scanning",
-      "name": "Vulnerability Scanning",
-      "skills": 55,
-      "weekly_installs": 19665,
-      "change_pct": 17,
-      "best": [
-        "trailofbits/skills/fp-check",
-        "trailofbits/skills/semgrep",
-        "trailofbits/skills/codeql"
-      ]
-    },
-    {
-      "id": "copywriting",
-      "name": "Copywriting",
-      "skills": 11,
-      "weekly_installs": 17417,
-      "change_pct": 12,
-      "best": [
-        "coreyhaines31/marketingskills/copy-editing",
-        "coreyhaines31/marketingskills/copywriting",
-        "coreyhaines31/marketingskills/ad-creative"
-      ]
-    },
-    {
-      "id": "subagents",
-      "name": "Subagents and Multi-Agent Orchestration",
-      "skills": 39,
-      "weekly_installs": 17256,
-      "change_pct": -9,
-      "best": [
-        "trailofbits/skills/slicing-code-context",
-        "google/skills/google-cloud-solution-agentic-ai-bidirectional-streaming",
-        "google/skills/google-cloud-solution-build-deploy-agents"
-      ]
-    },
-    {
-      "id": "kubernetes",
-      "name": "Kubernetes",
-      "skills": 72,
-      "weekly_installs": 15898,
-      "change_pct": 10,
-      "best": [
-        "google/skills/gke-ai-troubleshooting-tpu-vbar-oom",
-        "google/skills/gke-ai-troubleshooting-tpu-dynamic-slices-monitoring",
-        "google/skills/gke-ai-troubleshooting-tpu-metrics-monitoring"
-      ]
-    },
-    {
-      "id": "sales",
-      "name": "Sales",
-      "skills": 61,
-      "weekly_installs": 15654,
-      "change_pct": 17,
-      "best": [
-        "coreyhaines31/marketingskills/cold-email",
-        "coreyhaines31/marketingskills/revops",
-        "coreyhaines31/marketingskills/prospecting"
-      ]
-    },
-    {
-      "id": "lead-generation",
-      "name": "Lead Generation",
-      "skills": 8,
-      "weekly_installs": 14785,
-      "change_pct": 15,
-      "best": [
-        "coreyhaines31/marketingskills/lead-magnets",
-        "coreyhaines31/marketingskills/free-tools",
-        "coreyhaines31/marketingskills/popups"
-      ]
-    },
-    {
-      "id": "email",
-      "name": "Email",
-      "skills": 34,
-      "weekly_installs": 14013,
-      "change_pct": 5,
-      "best": [
-        "coreyhaines31/marketingskills/cold-email",
-        "coreyhaines31/marketingskills/emails",
-        "resend/resend-skills/agent-email-inbox"
-      ]
-    },
-    {
-      "id": "grammar-checker",
-      "name": "Grammar and Proofreading",
-      "skills": 6,
-      "weekly_installs": 13012,
-      "change_pct": -1,
-      "best": [
-        "danjdewhurst/story-skills/voice-style",
-        "danjdewhurst/story-skills/line-editing",
-        "coreyhaines31/marketingskills/copy-editing"
-      ]
-    },
-    {
-      "id": "diagrams-infographics",
-      "name": "Diagrams and Infographics",
-      "skills": 19,
-      "weekly_installs": 11897,
-      "change_pct": -13,
-      "best": [
-        "trailofbits/skills/diagramming-code",
-        "k-dense-ai/claude-scientific-skills/infographics",
-        "tt-a1i/archify/archify"
+        "eduardo-sl/go-agent-skills/go-test-quality",
+        "eduardo-sl/go-agent-skills/go-test-table-driven",
+        "tronghieu/agent-skills/manual-tester"
       ]
     },
     {
       "id": "mcp-servers",
       "name": "MCP Servers",
       "skills": 82,
-      "weekly_installs": 11412,
-      "change_pct": 7,
+      "weekly_installs": 78859,
+      "change_pct": 591,
       "best": [
         "anthropics/skills/mcp-builder",
         "github/awesome-copilot/java-mcp-server-generator",
@@ -570,71 +258,11 @@
       ]
     },
     {
-      "id": "product-descriptions",
-      "name": "Product Descriptions",
-      "skills": 8,
-      "weekly_installs": 11317,
-      "change_pct": 11,
-      "best": [
-        "coreyhaines31/marketingskills/aso",
-        "coreyhaines31/marketingskills/copywriting",
-        "infrasity-labs/dev-gtm-claude-skills/seo-ecommerce"
-      ]
-    },
-    {
-      "id": "expo-react-native",
-      "name": "Expo and React Native",
-      "skills": 29,
-      "weekly_installs": 10987,
-      "change_pct": -5,
-      "best": [
-        "expo/skills/expo-module",
-        "expo/skills/expo-migrate-module",
-        "expo/skills/eas-update"
-      ]
-    },
-    {
-      "id": "general-writing",
-      "name": "General Writing",
-      "skills": 11,
-      "weekly_installs": 10165,
-      "change_pct": -5,
-      "best": [
-        "danjdewhurst/story-skills/chapter-writing",
-        "danjdewhurst/story-skills/voice-style",
-        "danjdewhurst/story-skills/line-editing"
-      ]
-    },
-    {
-      "id": "ads",
-      "name": "Advertising",
-      "skills": 57,
-      "weekly_installs": 9295,
-      "change_pct": 14,
-      "best": [
-        "google/skills/google-ads-api-quickstart",
-        "bria-ai/bria-skill/ad-delayer",
-        "bria-ai/bria-skill/ad-resize"
-      ]
-    },
-    {
-      "id": "landing-pages",
-      "name": "Landing Pages and Conversion",
-      "skills": 16,
-      "weekly_installs": 8717,
-      "change_pct": 16,
-      "best": [
-        "coreyhaines31/marketingskills/cro",
-        "coreyhaines31/marketingskills/paywalls",
-        "wondelai/skills/cro-methodology"
-      ]
-    },
-    {
       "id": "fine-tuning",
       "name": "Fine-Tuning and Model Training",
       "skills": 127,
-      "weekly_installs": 8608,
-      "change_pct": 13,
+      "weekly_installs": 75545,
+      "change_pct": 778,
       "best": [
         "nvidia/skills/tao-run-deft-aoi-cosmos3",
         "nvidia/skills/tao-finetune-anomalygennext",
@@ -645,8 +273,8 @@
       "id": "docker-containers",
       "name": "Docker and Containers",
       "skills": 22,
-      "weekly_installs": 8327,
-      "change_pct": 18,
+      "weekly_installs": 75487,
+      "change_pct": 807,
       "best": [
         "eduardo-sl/go-agent-skills/go-build-release",
         "google/skills/gke-app-onboarding",
@@ -657,8 +285,8 @@
       "id": "infrastructure-as-code",
       "name": "Terraform and Infrastructure as Code",
       "skills": 32,
-      "weekly_installs": 8327,
-      "change_pct": 18,
+      "weekly_installs": 75487,
+      "change_pct": 807,
       "best": [
         "google/skills/agent-platform-alert-configuration",
         "google/skills/gke-alert-configuration",
@@ -666,59 +294,11 @@
       ]
     },
     {
-      "id": "marketing-analytics",
-      "name": "Marketing Analytics",
-      "skills": 16,
-      "weekly_installs": 8286,
-      "change_pct": 14,
-      "best": [
-        "coreyhaines31/marketingskills/analytics",
-        "coreyhaines31/marketingskills/ab-testing",
-        "google/skills/google-analytics-data-api-basics"
-      ]
-    },
-    {
-      "id": "observability",
-      "name": "Observability and Monitoring",
-      "skills": 54,
-      "weekly_installs": 7745,
-      "change_pct": 10,
-      "best": [
-        "eduardo-sl/go-agent-skills/go-observability",
-        "google/skills/agent-platform-alert-configuration",
-        "google/skills/cloud-monitoring-promql-query"
-      ]
-    },
-    {
-      "id": "incident-response",
-      "name": "Incident Response and SRE",
-      "skills": 22,
-      "weekly_installs": 7726,
-      "change_pct": 10,
-      "best": [
-        "google/skills/cloud-run-alert-configuration",
-        "microsoft/azure-skills/aks-troubleshooting",
-        "jeffallan/claude-skills/devops-engineer"
-      ]
-    },
-    {
-      "id": "authentication",
-      "name": "Authentication and Login",
-      "skills": 16,
-      "weekly_installs": 7721,
-      "change_pct": 11,
-      "best": [
-        "google/skills/sign-in-with-google-web",
-        "microsoft/azure-skills/entra-app-registration",
-        "jeffallan/claude-skills/spring-boot-engineer"
-      ]
-    },
-    {
       "id": "app-builders",
       "name": "App Builders",
       "skills": 13,
-      "weekly_installs": 7719,
-      "change_pct": 10,
+      "weekly_installs": 75429,
+      "change_pct": 877,
       "best": [
         "mblode/agent-skills/scaffold-nextjs",
         "google/skills/google-cloud-solution-n-tier-serverless-web-app",
@@ -726,23 +306,35 @@
       ]
     },
     {
-      "id": "llm-apis",
-      "name": "LLM APIs and SDKs",
-      "skills": 28,
-      "weekly_installs": 7715,
-      "change_pct": 11,
+      "id": "authentication",
+      "name": "Authentication and Login",
+      "skills": 16,
+      "weekly_installs": 75423,
+      "change_pct": 877,
       "best": [
-        "google/skills/gemini-live-api",
-        "google/skills/gemini-api",
-        "google/skills/gemini-interactions-api"
+        "google/skills/sign-in-with-google-web",
+        "microsoft/azure-skills/entra-app-registration",
+        "jeffallan/claude-skills/spring-boot-engineer"
+      ]
+    },
+    {
+      "id": "observability",
+      "name": "Observability and Monitoring",
+      "skills": 54,
+      "weekly_installs": 75414,
+      "change_pct": 874,
+      "best": [
+        "eduardo-sl/go-agent-skills/go-observability",
+        "google/skills/agent-platform-alert-configuration",
+        "google/skills/cloud-monitoring-promql-query"
       ]
     },
     {
       "id": "python",
       "name": "Python",
       "skills": 32,
-      "weekly_installs": 7703,
-      "change_pct": 11,
+      "weekly_installs": 75414,
+      "change_pct": 879,
       "best": [
         "trailofbits/skills/modern-python",
         "k-dense-ai/claude-scientific-skills/zarr-python",
@@ -750,11 +342,407 @@
       ]
     },
     {
+      "id": "incident-response",
+      "name": "Incident Response and SRE",
+      "skills": 22,
+      "weekly_installs": 75411,
+      "change_pct": 876,
+      "best": [
+        "google/skills/cloud-run-alert-configuration",
+        "microsoft/azure-skills/aks-troubleshooting",
+        "jeffallan/claude-skills/devops-engineer"
+      ]
+    },
+    {
+      "id": "llm-apis",
+      "name": "LLM APIs and SDKs",
+      "skills": 28,
+      "weekly_installs": 75407,
+      "change_pct": 877,
+      "best": [
+        "google/skills/gemini-live-api",
+        "google/skills/gemini-api",
+        "google/skills/gemini-interactions-api"
+      ]
+    },
+    {
+      "id": "cloudflare",
+      "name": "Cloudflare",
+      "skills": 20,
+      "weekly_installs": 70132,
+      "change_pct": -6,
+      "best": [
+        "mblode/agent-skills/multi-tenant-architecture",
+        "expo/skills/eas-hosting",
+        "cloudflare/skills/workers-best-practices"
+      ]
+    },
+    {
+      "id": "git-version-control",
+      "name": "Git and Version Control",
+      "skills": 39,
+      "weekly_installs": 52872,
+      "change_pct": -1,
+      "best": [
+        "eduardo-sl/go-agent-skills/git-commit",
+        "trailofbits/skills/github-triage",
+        "obra/superpowers/using-git-worktrees"
+      ]
+    },
+    {
+      "id": "pull-requests",
+      "name": "Pull Requests",
+      "skills": 39,
+      "weekly_installs": 48268,
+      "change_pct": -4,
+      "best": [
+        "trailofbits/skills/pr-improver",
+        "eduardo-sl/go-agent-skills/git-commit",
+        "mblode/agent-skills/pr-babysitter"
+      ]
+    },
+    {
+      "id": "code-review",
+      "name": "Code Review",
+      "skills": 49,
+      "weekly_installs": 46356,
+      "change_pct": -7,
+      "best": [
+        "eduardo-sl/go-agent-skills/go-coding-standards",
+        "eduardo-sl/go-agent-skills/go-concurrency-review",
+        "eduardo-sl/go-agent-skills/go-performance-review"
+      ]
+    },
+    {
+      "id": "react-nextjs",
+      "name": "React and Next.js",
+      "skills": 30,
+      "weekly_installs": 43290,
+      "change_pct": -11,
+      "best": [
+        "mblode/agent-skills/scaffold-nextjs",
+        "anthropics/skills/web-artifacts-builder",
+        "jeffallan/claude-skills/nextjs-developer"
+      ]
+    },
+    {
+      "id": "unit-testing",
+      "name": "Unit Testing",
+      "skills": 42,
+      "weekly_installs": 39804,
+      "change_pct": -6,
+      "best": [
+        "eduardo-sl/go-agent-skills/go-test-quality",
+        "eduardo-sl/go-agent-skills/go-test-table-driven",
+        "trailofbits/skills/property-based-testing"
+      ]
+    },
+    {
+      "id": "refactoring",
+      "name": "Refactoring",
+      "skills": 23,
+      "weekly_installs": 33691,
+      "change_pct": -12,
+      "best": [
+        "eduardo-sl/go-agent-skills/go-modernize",
+        "eduardo-sl/go-agent-skills/go-refactoring",
+        "trailofbits/skills/code-improver"
+      ]
+    },
+    {
+      "id": "context-memory",
+      "name": "Context Engineering and Agent Memory",
+      "skills": 31,
+      "weekly_installs": 32356,
+      "change_pct": -8,
+      "best": [
+        "mblode/agent-skills/chat-history",
+        "tronghieu/agent-skills/deep-reader",
+        "trailofbits/skills/slicing-code-context"
+      ]
+    },
+    {
+      "id": "sql",
+      "name": "SQL and Databases",
+      "skills": 116,
+      "weekly_installs": 31380,
+      "change_pct": -43,
+      "best": [
+        "eduardo-sl/go-agent-skills/go-database",
+        "google/skills/cloud-databases-onboarding",
+        "google/skills/dbt-sf-to-bq-translator"
+      ]
+    },
+    {
+      "id": "supabase-firebase",
+      "name": "Supabase and Firebase",
+      "skills": 22,
+      "weekly_installs": 31380,
+      "change_pct": -43,
+      "best": [
+        "trailofbits/skills/firebase-apk-scanner",
+        "google/skills/firebase-basics",
+        "firebase/skills/firebase-remote-config-basics"
+      ]
+    },
+    {
+      "id": "research",
+      "name": "Research",
+      "skills": 46,
+      "weekly_installs": 30995,
+      "change_pct": -11,
+      "best": [
+        "k-dense-ai/claude-scientific-skills/citation-management",
+        "k-dense-ai/claude-scientific-skills/literature-review",
+        "k-dense-ai/claude-scientific-skills/paper-lookup"
+      ]
+    },
+    {
+      "id": "figma",
+      "name": "Figma and Design Tools",
+      "skills": 14,
+      "weekly_installs": 29786,
+      "change_pct": -26,
+      "best": [
+        "avelikiy/great-cto/anydesign",
+        "openai/skills/figma-code-connect-components",
+        "github/awesome-copilot/penpot-uiux-design"
+      ]
+    },
+    {
+      "id": "seo",
+      "name": "SEO",
+      "skills": 100,
+      "weekly_installs": 28871,
+      "change_pct": -8,
+      "best": [
+        "coreyhaines31/marketingskills/schema",
+        "coreyhaines31/marketingskills/seo-audit",
+        "coreyhaines31/marketingskills/programmatic-seo"
+      ]
+    },
+    {
+      "id": "ui-ux-design",
+      "name": "UI and UX Design",
+      "skills": 24,
+      "weekly_installs": 28470,
+      "change_pct": -11,
+      "best": [
+        "pbakaus/impeccable/impeccable",
+        "mblode/agent-skills/ui-design",
+        "nextlevelbuilder/ui-ux-pro-max-skill/ui-ux-pro-max"
+      ]
+    },
+    {
+      "id": "claude-code-config",
+      "name": "Claude Code Setup and Hooks",
+      "skills": 31,
+      "weekly_installs": 26521,
+      "change_pct": -1,
+      "best": [
+        "trailofbits/skills/testing-handbook-generator",
+        "mblode/agent-skills/agents-md",
+        "anthropics/claude-plugins-official/agent-development"
+      ]
+    },
+    {
+      "id": "code-quality-linting",
+      "name": "Code Quality and Linting",
+      "skills": 22,
+      "weekly_installs": 20478,
+      "change_pct": -4,
+      "best": [
+        "eduardo-sl/go-agent-skills/go-coding-standards",
+        "eduardo-sl/go-agent-skills/go-ci",
+        "eduardo-sl/go-agent-skills/go-naming"
+      ]
+    },
+    {
+      "id": "marketing-strategy",
+      "name": "Marketing Strategy",
+      "skills": 24,
+      "weekly_installs": 20295,
+      "change_pct": -6,
+      "best": [
+        "coreyhaines31/marketingskills/marketing-ideas",
+        "coreyhaines31/marketingskills/product-marketing",
+        "coreyhaines31/marketingskills/launch"
+      ]
+    },
+    {
+      "id": "vulnerability-scanning",
+      "name": "Vulnerability Scanning",
+      "skills": 55,
+      "weekly_installs": 19134,
+      "change_pct": -3,
+      "best": [
+        "trailofbits/skills/fp-check",
+        "trailofbits/skills/semgrep",
+        "trailofbits/skills/codeql"
+      ]
+    },
+    {
+      "id": "color-typography",
+      "name": "Color and Typography",
+      "skills": 14,
+      "weekly_installs": 18987,
+      "change_pct": -15,
+      "best": [
+        "pbakaus/impeccable/impeccable",
+        "mblode/agent-skills/typography-audit",
+        "avelikiy/great-cto/aesthetic-instrument"
+      ]
+    },
+    {
+      "id": "subagents",
+      "name": "Subagents and Multi-Agent Orchestration",
+      "skills": 39,
+      "weekly_installs": 18389,
+      "change_pct": 7,
+      "best": [
+        "trailofbits/skills/slicing-code-context",
+        "google/skills/google-cloud-solution-agentic-ai-bidirectional-streaming",
+        "google/skills/google-cloud-solution-build-deploy-agents"
+      ]
+    },
+    {
+      "id": "copywriting",
+      "name": "Copywriting",
+      "skills": 11,
+      "weekly_installs": 15427,
+      "change_pct": -11,
+      "best": [
+        "coreyhaines31/marketingskills/copy-editing",
+        "coreyhaines31/marketingskills/copywriting",
+        "coreyhaines31/marketingskills/ad-creative"
+      ]
+    },
+    {
+      "id": "sales",
+      "name": "Sales",
+      "skills": 61,
+      "weekly_installs": 14303,
+      "change_pct": -9,
+      "best": [
+        "coreyhaines31/marketingskills/cold-email",
+        "coreyhaines31/marketingskills/revops",
+        "coreyhaines31/marketingskills/prospecting"
+      ]
+    },
+    {
+      "id": "lead-generation",
+      "name": "Lead Generation",
+      "skills": 8,
+      "weekly_installs": 13684,
+      "change_pct": -7,
+      "best": [
+        "coreyhaines31/marketingskills/lead-magnets",
+        "coreyhaines31/marketingskills/free-tools",
+        "coreyhaines31/marketingskills/popups"
+      ]
+    },
+    {
+      "id": "email",
+      "name": "Email",
+      "skills": 34,
+      "weekly_installs": 12992,
+      "change_pct": -7,
+      "best": [
+        "coreyhaines31/marketingskills/cold-email",
+        "coreyhaines31/marketingskills/emails",
+        "resend/resend-skills/agent-email-inbox"
+      ]
+    },
+    {
+      "id": "grammar-checker",
+      "name": "Grammar and Proofreading",
+      "skills": 6,
+      "weekly_installs": 11409,
+      "change_pct": -12,
+      "best": [
+        "danjdewhurst/story-skills/voice-style",
+        "danjdewhurst/story-skills/line-editing",
+        "coreyhaines31/marketingskills/copy-editing"
+      ]
+    },
+    {
+      "id": "product-descriptions",
+      "name": "Product Descriptions",
+      "skills": 8,
+      "weekly_installs": 10266,
+      "change_pct": -9,
+      "best": [
+        "coreyhaines31/marketingskills/aso",
+        "coreyhaines31/marketingskills/copywriting",
+        "infrasity-labs/dev-gtm-claude-skills/seo-ecommerce"
+      ]
+    },
+    {
+      "id": "expo-react-native",
+      "name": "Expo and React Native",
+      "skills": 29,
+      "weekly_installs": 9503,
+      "change_pct": -14,
+      "best": [
+        "expo/skills/expo-module",
+        "expo/skills/expo-migrate-module",
+        "expo/skills/eas-update"
+      ]
+    },
+    {
+      "id": "general-writing",
+      "name": "General Writing",
+      "skills": 11,
+      "weekly_installs": 9085,
+      "change_pct": -11,
+      "best": [
+        "danjdewhurst/story-skills/chapter-writing",
+        "danjdewhurst/story-skills/voice-style",
+        "danjdewhurst/story-skills/line-editing"
+      ]
+    },
+    {
+      "id": "ads",
+      "name": "Advertising",
+      "skills": 57,
+      "weekly_installs": 8212,
+      "change_pct": -12,
+      "best": [
+        "google/skills/google-ads-api-quickstart",
+        "bria-ai/bria-skill/ad-delayer",
+        "bria-ai/bria-skill/ad-resize"
+      ]
+    },
+    {
+      "id": "landing-pages",
+      "name": "Landing Pages and Conversion",
+      "skills": 16,
+      "weekly_installs": 8031,
+      "change_pct": -8,
+      "best": [
+        "coreyhaines31/marketingskills/cro",
+        "coreyhaines31/marketingskills/paywalls",
+        "wondelai/skills/cro-methodology"
+      ]
+    },
+    {
+      "id": "marketing-analytics",
+      "name": "Marketing Analytics",
+      "skills": 16,
+      "weekly_installs": 7441,
+      "change_pct": -10,
+      "best": [
+        "coreyhaines31/marketingskills/analytics",
+        "coreyhaines31/marketingskills/ab-testing",
+        "google/skills/google-analytics-data-api-basics"
+      ]
+    },
+    {
       "id": "marketing-automation",
       "name": "Marketing Automation",
       "skills": 5,
-      "weekly_installs": 7393,
-      "change_pct": 13,
+      "weekly_installs": 6938,
+      "change_pct": -6,
       "best": [
         "coreyhaines31/marketingskills/emails",
         "coreyhaines31/marketingskills/sms",
@@ -762,23 +750,11 @@
       ]
     },
     {
-      "id": "secrets-credentials",
-      "name": "Secrets and Credentials",
-      "skills": 18,
-      "weekly_installs": 7332,
-      "change_pct": -9,
-      "best": [
-        "getsentry/skills/secret-serialization",
-        "google/skills/gke-workload-identity",
-        "avelikiy/great-cto/secrets-rotation"
-      ]
-    },
-    {
       "id": "affiliate-referral",
       "name": "Affiliate and Referral Programs",
       "skills": 4,
-      "weekly_installs": 7235,
-      "change_pct": 13,
+      "weekly_installs": 6784,
+      "change_pct": -6,
       "best": [
         "coreyhaines31/marketingskills/co-marketing",
         "coreyhaines31/marketingskills/referrals",
@@ -786,35 +762,23 @@
       ]
     },
     {
-      "id": "e2e-browser-testing",
-      "name": "End-to-End and Browser Testing",
-      "skills": 56,
-      "weekly_installs": 6780,
-      "change_pct": -5,
+      "id": "secrets-credentials",
+      "name": "Secrets and Credentials",
+      "skills": 18,
+      "weekly_installs": 6460,
+      "change_pct": -12,
       "best": [
-        "mblode/agent-skills/ui-verification",
-        "mblode/agent-skills/app-verification",
-        "lambdatest/agent-skills/playwright-skill"
-      ]
-    },
-    {
-      "id": "performance-testing",
-      "name": "Performance and Load Testing",
-      "skills": 14,
-      "weekly_installs": 6449,
-      "change_pct": -4,
-      "best": [
-        "eduardo-sl/go-agent-skills/go-performance-review",
-        "mblode/agent-skills/ci-speedup",
-        "jeffallan/claude-skills/monitoring-expert"
+        "getsentry/skills/secret-serialization",
+        "google/skills/gke-workload-identity",
+        "avelikiy/great-cto/secrets-rotation"
       ]
     },
     {
       "id": "rest-apis",
       "name": "REST APIs and OpenAPI",
       "skills": 31,
-      "weekly_installs": 6291,
-      "change_pct": -3,
+      "weekly_installs": 5998,
+      "change_pct": -5,
       "best": [
         "eduardo-sl/go-agent-skills/go-api-design",
         "eduardo-sl/go-agent-skills/go-openapi",
@@ -825,8 +789,8 @@
       "id": "typescript-node",
       "name": "TypeScript and Node.js",
       "skills": 18,
-      "weekly_installs": 6291,
-      "change_pct": -3,
+      "weekly_installs": 5998,
+      "change_pct": -5,
       "best": [
         "mblode/agent-skills/scaffold-cli",
         "jeffallan/claude-skills/typescript-pro",
@@ -837,8 +801,8 @@
       "id": "evals",
       "name": "Evals and Benchmarks",
       "skills": 26,
-      "weekly_installs": 6097,
-      "change_pct": -1,
+      "weekly_installs": 5974,
+      "change_pct": -2,
       "best": [
         "huggingface/skills/huggingface-community-evals",
         "muratcankoylan/agent-skills-for-context-engineering/evaluation",
@@ -846,10 +810,34 @@
       ]
     },
     {
+      "id": "performance-testing",
+      "name": "Performance and Load Testing",
+      "skills": 14,
+      "weekly_installs": 5968,
+      "change_pct": -7,
+      "best": [
+        "eduardo-sl/go-agent-skills/go-performance-review",
+        "mblode/agent-skills/ci-speedup",
+        "jeffallan/claude-skills/monitoring-expert"
+      ]
+    },
+    {
+      "id": "e2e-browser-testing",
+      "name": "End-to-End and Browser Testing",
+      "skills": 56,
+      "weekly_installs": 5784,
+      "change_pct": -15,
+      "best": [
+        "mblode/agent-skills/ui-verification",
+        "mblode/agent-skills/app-verification",
+        "lambdatest/agent-skills/playwright-skill"
+      ]
+    },
+    {
       "id": "ai-agent-builders",
       "name": "AI Agent Builders",
       "skills": 56,
-      "weekly_installs": 5988,
+      "weekly_installs": 5754,
       "change_pct": -4,
       "best": [
         "google/skills/google-cloud-solution-agentic-ai-bidirectional-streaming",
@@ -861,8 +849,8 @@
       "id": "email-sending",
       "name": "Transactional Email",
       "skills": 11,
-      "weekly_installs": 5919,
-      "change_pct": -6,
+      "weekly_installs": 5597,
+      "change_pct": -5,
       "best": [
         "resend/resend-skills/agent-email-inbox",
         "mailtrap/mailtrap-skills/converting-email-templates",
@@ -873,8 +861,8 @@
       "id": "ai-search-visibility",
       "name": "AI Search Visibility",
       "skills": 23,
-      "weekly_installs": 5441,
-      "change_pct": 9,
+      "weekly_installs": 4797,
+      "change_pct": -12,
       "best": [
         "mblode/agent-skills/seo",
         "agricidaniel/claude-seo/seo",
@@ -882,23 +870,11 @@
       ]
     },
     {
-      "id": "content-marketing",
-      "name": "Content Marketing",
-      "skills": 22,
-      "weekly_installs": 5239,
-      "change_pct": 12,
-      "best": [
-        "coreyhaines31/marketingskills/content-strategy",
-        "sergebulaev/linkedin-skills/linkedin-content-planner",
-        "agricidaniel/claude-seo/seo-content-brief"
-      ]
-    },
-    {
       "id": "social-media",
       "name": "Social Media",
       "skills": 39,
-      "weekly_installs": 5223,
-      "change_pct": 14,
+      "weekly_installs": 4745,
+      "change_pct": -9,
       "best": [
         "sergebulaev/linkedin-skills/linkedin-profile-optimizer",
         "sergebulaev/linkedin-skills/linkedin-employee-advocacy",
@@ -906,11 +882,23 @@
       ]
     },
     {
+      "id": "content-marketing",
+      "name": "Content Marketing",
+      "skills": 22,
+      "weekly_installs": 4689,
+      "change_pct": -10,
+      "best": [
+        "coreyhaines31/marketingskills/content-strategy",
+        "sergebulaev/linkedin-skills/linkedin-content-planner",
+        "agricidaniel/claude-seo/seo-content-brief"
+      ]
+    },
+    {
       "id": "presentations",
       "name": "Presentations",
       "skills": 18,
-      "weekly_installs": 4397,
-      "change_pct": 5,
+      "weekly_installs": 4395,
+      "change_pct": 0,
       "best": [
         "tronghieu/agent-skills/slidewright",
         "anthropics/skills/pptx",
@@ -918,11 +906,143 @@
       ]
     },
     {
+      "id": "pdf",
+      "name": "PDF",
+      "skills": 12,
+      "weekly_installs": 4309,
+      "change_pct": 4,
+      "best": [
+        "k-dense-ai/claude-scientific-skills/liteparse",
+        "anthropics/skills/pdf",
+        "pspdfkit-labs/nutrient-agent-skill/nutrient-document-processing"
+      ]
+    },
+    {
+      "id": "market-research",
+      "name": "Market Research",
+      "skills": 12,
+      "weekly_installs": 3836,
+      "change_pct": -9,
+      "best": [
+        "coreyhaines31/marketingskills/competitor-profiling",
+        "k-dense-ai/claude-scientific-skills/market-research-reports",
+        "tronghieu/agent-skills/market-researcher"
+      ]
+    },
+    {
+      "id": "documents",
+      "name": "Documents",
+      "skills": 19,
+      "weekly_installs": 3804,
+      "change_pct": -5,
+      "best": [
+        "anthropics/skills/docx",
+        "k-dense-ai/claude-scientific-skills/liteparse",
+        "pspdfkit-labs/nutrient-agent-skill/nutrient-document-processing"
+      ]
+    },
+    {
+      "id": "graphic-design",
+      "name": "Graphic Design and Posters",
+      "skills": 8,
+      "weekly_installs": 3726,
+      "change_pct": 11,
+      "best": [
+        "k-dense-ai/claude-scientific-skills/latex-posters",
+        "anthropics/skills/canvas-design",
+        "smixs/creative-director-skill/creative-director"
+      ]
+    },
+    {
+      "id": "spreadsheets",
+      "name": "Spreadsheets",
+      "skills": 14,
+      "weekly_installs": 3667,
+      "change_pct": -2,
+      "best": [
+        "anthropics/skills/xlsx",
+        "github/awesome-copilot/convert-excel-to-md",
+        "sanjay3290/ai-skills/google-sheets"
+      ]
+    },
+    {
+      "id": "diagrams-infographics",
+      "name": "Diagrams and Infographics",
+      "skills": 19,
+      "weekly_installs": 3645,
+      "change_pct": -69,
+      "best": [
+        "trailofbits/skills/diagramming-code",
+        "k-dense-ai/claude-scientific-skills/infographics",
+        "tt-a1i/archify/archify"
+      ]
+    },
+    {
+      "id": "social-media-graphics",
+      "name": "Social and Marketing Images",
+      "skills": 7,
+      "weekly_installs": 3621,
+      "change_pct": -8,
+      "best": [
+        "coreyhaines31/marketingskills/image",
+        "agricidaniel/claude-seo/seo-image-gen",
+        "bria-ai/bria-skill/ad-resize"
+      ]
+    },
+    {
+      "id": "statistics",
+      "name": "Statistics",
+      "skills": 11,
+      "weekly_installs": 3590,
+      "change_pct": -10,
+      "best": [
+        "k-dense-ai/claude-scientific-skills/statistical-power",
+        "k-dense-ai/claude-scientific-skills/uncertainty-and-units",
+        "k-dense-ai/claude-scientific-skills/pymc"
+      ]
+    },
+    {
+      "id": "customer-service",
+      "name": "Customer Service",
+      "skills": 6,
+      "weekly_installs": 3386,
+      "change_pct": -8,
+      "best": [
+        "coreyhaines31/marketingskills/churn-prevention",
+        "gooseworks-ai/goose-skills/customer-story-builder",
+        "gooseworks-ai/goose-skills/voice-of-customer-synthesizer"
+      ]
+    },
+    {
+      "id": "startup-tools",
+      "name": "Startup Tools",
+      "skills": 23,
+      "weekly_installs": 3385,
+      "change_pct": -11,
+      "best": [
+        "coreyhaines31/marketingskills/directory-submissions",
+        "product-on-purpose/pm-skills/foundation-lean-canvas",
+        "aws/agent-toolkit-for-aws/knowledge-base-for-startups"
+      ]
+    },
+    {
+      "id": "crm",
+      "name": "CRM",
+      "skills": 10,
+      "weekly_installs": 3377,
+      "change_pct": -9,
+      "best": [
+        "coreyhaines31/marketingskills/revops",
+        "jeffallan/claude-skills/salesforce-developer",
+        "mailtrap/mailtrap-skills/managing-contacts"
+      ]
+    },
+    {
       "id": "branding",
       "name": "Branding",
       "skills": 22,
-      "weekly_installs": 4359,
-      "change_pct": 8,
+      "weekly_installs": 3208,
+      "change_pct": -26,
       "best": [
         "gooseworks-ai/goose-skills/render-brand-identity-reveal",
         "gooseworks-ai/goose-skills/update-brand-kit",
@@ -933,8 +1053,8 @@
       "id": "logo-generation",
       "name": "Logos and Brand Identity",
       "skills": 5,
-      "weekly_installs": 4359,
-      "change_pct": 8,
+      "weekly_installs": 3208,
+      "change_pct": -26,
       "best": [
         "gooseworks-ai/goose-skills/update-brand-kit",
         "anthropics/skills/brand-guidelines",
@@ -945,8 +1065,8 @@
       "id": "payments-stripe",
       "name": "Payments and Stripe",
       "skills": 13,
-      "weekly_installs": 4275,
-      "change_pct": -8,
+      "weekly_installs": 2791,
+      "change_pct": -35,
       "best": [
         "browser-use/browser-use/x402",
         "stripe/ai/stripe-apps",
@@ -954,143 +1074,11 @@
       ]
     },
     {
-      "id": "market-research",
-      "name": "Market Research",
-      "skills": 12,
-      "weekly_installs": 4199,
-      "change_pct": 11,
-      "best": [
-        "coreyhaines31/marketingskills/competitor-profiling",
-        "k-dense-ai/claude-scientific-skills/market-research-reports",
-        "tronghieu/agent-skills/market-researcher"
-      ]
-    },
-    {
-      "id": "pdf",
-      "name": "PDF",
-      "skills": 12,
-      "weekly_installs": 4152,
-      "change_pct": 3,
-      "best": [
-        "k-dense-ai/claude-scientific-skills/liteparse",
-        "anthropics/skills/pdf",
-        "pspdfkit-labs/nutrient-agent-skill/nutrient-document-processing"
-      ]
-    },
-    {
-      "id": "documents",
-      "name": "Documents",
-      "skills": 19,
-      "weekly_installs": 4006,
-      "change_pct": 3,
-      "best": [
-        "anthropics/skills/docx",
-        "k-dense-ai/claude-scientific-skills/liteparse",
-        "pspdfkit-labs/nutrient-agent-skill/nutrient-document-processing"
-      ]
-    },
-    {
-      "id": "statistics",
-      "name": "Statistics",
-      "skills": 11,
-      "weekly_installs": 3997,
-      "change_pct": 17,
-      "best": [
-        "k-dense-ai/claude-scientific-skills/statistical-power",
-        "k-dense-ai/claude-scientific-skills/uncertainty-and-units",
-        "k-dense-ai/claude-scientific-skills/pymc"
-      ]
-    },
-    {
-      "id": "social-media-graphics",
-      "name": "Social and Marketing Images",
-      "skills": 7,
-      "weekly_installs": 3934,
-      "change_pct": 19,
-      "best": [
-        "coreyhaines31/marketingskills/image",
-        "agricidaniel/claude-seo/seo-image-gen",
-        "bria-ai/bria-skill/ad-resize"
-      ]
-    },
-    {
-      "id": "startup-tools",
-      "name": "Startup Tools",
-      "skills": 23,
-      "weekly_installs": 3822,
-      "change_pct": 16,
-      "best": [
-        "coreyhaines31/marketingskills/directory-submissions",
-        "product-on-purpose/pm-skills/foundation-lean-canvas",
-        "aws/agent-toolkit-for-aws/knowledge-base-for-startups"
-      ]
-    },
-    {
-      "id": "spreadsheets",
-      "name": "Spreadsheets",
-      "skills": 14,
-      "weekly_installs": 3758,
-      "change_pct": 5,
-      "best": [
-        "anthropics/skills/xlsx",
-        "github/awesome-copilot/convert-excel-to-md",
-        "sanjay3290/ai-skills/google-sheets"
-      ]
-    },
-    {
-      "id": "crm",
-      "name": "CRM",
-      "skills": 10,
-      "weekly_installs": 3704,
-      "change_pct": 17,
-      "best": [
-        "coreyhaines31/marketingskills/revops",
-        "jeffallan/claude-skills/salesforce-developer",
-        "mailtrap/mailtrap-skills/managing-contacts"
-      ]
-    },
-    {
-      "id": "customer-service",
-      "name": "Customer Service",
-      "skills": 6,
-      "weekly_installs": 3688,
-      "change_pct": 12,
-      "best": [
-        "coreyhaines31/marketingskills/churn-prevention",
-        "gooseworks-ai/goose-skills/customer-story-builder",
-        "gooseworks-ai/goose-skills/voice-of-customer-synthesizer"
-      ]
-    },
-    {
-      "id": "e-commerce",
-      "name": "E-commerce",
-      "skills": 19,
-      "weekly_installs": 3399,
-      "change_pct": -7,
-      "best": [
-        "jeffallan/claude-skills/wordpress-pro",
-        "jeffallan/claude-skills/shopify-expert",
-        "infrasity-labs/dev-gtm-claude-skills/seo-ecommerce"
-      ]
-    },
-    {
-      "id": "graphic-design",
-      "name": "Graphic Design and Posters",
-      "skills": 8,
-      "weekly_installs": 3355,
-      "change_pct": 1,
-      "best": [
-        "k-dense-ai/claude-scientific-skills/latex-posters",
-        "anthropics/skills/canvas-design",
-        "smixs/creative-director-skill/creative-director"
-      ]
-    },
-    {
       "id": "generative-art",
       "name": "Generative Art",
       "skills": 3,
-      "weekly_installs": 2101,
-      "change_pct": 2,
+      "weekly_installs": 2161,
+      "change_pct": 3,
       "best": [
         "anthropics/skills/algorithmic-art",
         "bitwize-music-studio/claude-ai-music-skills/album-art-director",
@@ -1098,11 +1086,23 @@
       ]
     },
     {
+      "id": "e-commerce",
+      "name": "E-commerce",
+      "skills": 19,
+      "weekly_installs": 2057,
+      "change_pct": -39,
+      "best": [
+        "jeffallan/claude-skills/wordpress-pro",
+        "jeffallan/claude-skills/shopify-expert",
+        "infrasity-labs/dev-gtm-claude-skills/seo-ecommerce"
+      ]
+    },
+    {
       "id": "dependency-management",
       "name": "Dependency Management",
       "skills": 23,
-      "weekly_installs": 1269,
-      "change_pct": 1,
+      "weekly_installs": 870,
+      "change_pct": -31,
       "best": [
         "eduardo-sl/go-agent-skills/go-ci",
         "trailofbits/skills/open-sourcing",
@@ -1113,8 +1113,8 @@
       "id": "screen-recording",
       "name": "Screen Recording and Product Demos",
       "skills": 8,
-      "weekly_installs": 645,
-      "change_pct": -99,
+      "weekly_installs": 477,
+      "change_pct": -26,
       "best": [
         "gooseworks-ai/goose-skills/terminal-gif-recordings",
         "gooseworks-ai/goose-skills/footage-cutlist",
@@ -1122,35 +1122,11 @@
       ]
     },
     {
-      "id": "design-systems",
-      "name": "Design Systems and Tokens",
-      "skills": 19,
-      "weekly_installs": 641,
-      "change_pct": -4,
-      "best": [
-        "agiwhitelist/auteur/auteur",
-        "avelikiy/great-cto/anydesign",
-        "nextlevelbuilder/ui-ux-pro-max-skill/design-system"
-      ]
-    },
-    {
-      "id": "audio-editing",
-      "name": "Audio Editing and Mastering",
-      "skills": 4,
-      "weekly_installs": 325,
-      "change_pct": -99,
-      "best": [
-        "bitwize-music-studio/claude-ai-music-skills/mastering-engineer",
-        "heygen-com/hyperframes/hyperframes-audio",
-        "gooseworks-ai/goose-skills/mix-master"
-      ]
-    },
-    {
       "id": "subtitles-captions",
       "name": "Subtitles and Captions",
       "skills": 6,
-      "weekly_installs": 323,
-      "change_pct": -99,
+      "weekly_installs": 239,
+      "change_pct": -26,
       "best": [
         "zeropointrepo/youtube-skills/subtitles",
         "zeropointrepo/youtube-skills/captions",
@@ -1158,23 +1134,23 @@
       ]
     },
     {
-      "id": "music-audio",
-      "name": "Music Generation",
-      "skills": 9,
-      "weekly_installs": 321,
-      "change_pct": -98,
+      "id": "audio-editing",
+      "name": "Audio Editing and Mastering",
+      "skills": 4,
+      "weekly_installs": 236,
+      "change_pct": -27,
       "best": [
-        "bitwize-music-studio/claude-ai-music-skills/pre-generation-check",
-        "gooseworks-ai/goose-skills/render-song-mv",
-        "gooseworks-ai/goose-skills/create-music-elevenlabs"
+        "bitwize-music-studio/claude-ai-music-skills/mastering-engineer",
+        "heygen-com/hyperframes/hyperframes-audio",
+        "gooseworks-ai/goose-skills/mix-master"
       ]
     },
     {
       "id": "podcasts",
       "name": "Podcast Tools",
       "skills": 4,
-      "weekly_installs": 321,
-      "change_pct": -98,
+      "weekly_installs": 236,
+      "change_pct": -26,
       "best": [
         "infrasity-labs/dev-gtm-claude-skills/blog-audio",
         "gooseworks-ai/goose-skills/render-editorial-motion-podcast",
@@ -1185,12 +1161,24 @@
       "id": "video-avatars",
       "name": "Video Avatars and AI Presenters",
       "skills": 11,
-      "weekly_installs": 321,
-      "change_pct": -98,
+      "weekly_installs": 236,
+      "change_pct": -26,
       "best": [
         "gooseworks-ai/goose-skills/compose-creator-layer",
         "gooseworks-ai/goose-skills/render-glassy-matte-grwm",
         "gooseworks-ai/goose-skills/create-creator-takes-h3"
+      ]
+    },
+    {
+      "id": "music-audio",
+      "name": "Music Generation",
+      "skills": 9,
+      "weekly_installs": 235,
+      "change_pct": -27,
+      "best": [
+        "bitwize-music-studio/claude-ai-music-skills/pre-generation-check",
+        "gooseworks-ai/goose-skills/render-song-mv",
+        "gooseworks-ai/goose-skills/create-music-elevenlabs"
       ]
     },
     {
@@ -1322,7 +1310,7 @@
       "best": [
         "danjdewhurst/story-skills/series-continuity",
         "danjdewhurst/story-skills/feedback-triage",
-        "danjdewhurst/story-skills/submission"
+        "danjdewhurst/story-skills/editorial-review"
       ]
     },
     {
@@ -1479,6 +1467,18 @@
         "google/skills/dbt-sf-to-bq-translator",
         "google/skills/bigquery-bigframes",
         "google/skills/datalineage-summary"
+      ]
+    },
+    {
+      "id": "design-systems",
+      "name": "Design Systems and Tokens",
+      "skills": 19,
+      "weekly_installs": 0,
+      "change_pct": null,
+      "best": [
+        "agiwhitelist/auteur/auteur",
+        "avelikiy/great-cto/anydesign",
+        "nextlevelbuilder/ui-ux-pro-max-skill/design-system"
       ]
     },
     {
@@ -2418,779 +2418,784 @@
   ],
   "repositories": [
     {
-      "repo": "mattpocock/skills",
-      "stars": 317885,
-      "gained": null
+      "repo": "cloudflare/security-audit-skill",
+      "stars": 72733,
+      "gained": 6750
     },
     {
-      "repo": "obra/superpowers",
-      "stars": 314193,
-      "gained": null
+      "repo": "mattpocock/skills",
+      "stars": 324574,
+      "gained": 6689
     },
     {
       "repo": "anthropics/skills",
-      "stars": 188913,
-      "gained": null
-    },
-    {
-      "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
-      "stars": 146606,
-      "gained": null
-    },
-    {
-      "repo": "garrytan/gstack",
-      "stars": 140685,
-      "gained": null
-    },
-    {
-      "repo": "browser-use/browser-use",
-      "stars": 120280,
-      "gained": null
-    },
-    {
-      "repo": "Leonxlnx/taste-skill",
-      "stars": 111720,
-      "gained": null
+      "stars": 194693,
+      "gained": 5780
     },
     {
       "repo": "pbakaus/impeccable",
-      "stars": 105675,
-      "gained": null
-    },
-    {
-      "repo": "tt-a1i/archify",
-      "stars": 94526,
-      "gained": null
-    },
-    {
-      "repo": "heygen-com/hyperframes",
-      "stars": 80657,
-      "gained": null
-    },
-    {
-      "repo": "cloudflare/security-audit-skill",
-      "stars": 65983,
-      "gained": null
-    },
-    {
-      "repo": "coreyhaines31/marketingskills",
-      "stars": 59100,
-      "gained": null
+      "stars": 110309,
+      "gained": 4634
     },
     {
       "repo": "vercel-labs/agent-browser",
-      "stars": 46970,
-      "gained": null
+      "stars": 51287,
+      "gained": 4317
     },
     {
-      "repo": "anthropics/claude-plugins-official",
-      "stars": 46383,
-      "gained": null
+      "repo": "Leonxlnx/taste-skill",
+      "stars": 115734,
+      "gained": 4014
     },
     {
-      "repo": "github/awesome-copilot",
-      "stars": 40907,
-      "gained": null
+      "repo": "heygen-com/hyperframes",
+      "stars": 84410,
+      "gained": 3753
     },
     {
-      "repo": "vercel-labs/skills",
-      "stars": 38512,
-      "gained": null
+      "repo": "obra/superpowers",
+      "stars": 317704,
+      "gained": 3511
     },
     {
-      "repo": "vercel-labs/agent-skills",
-      "stars": 33694,
-      "gained": null
-    },
-    {
-      "repo": "googleworkspace/cli",
-      "stars": 32173,
-      "gained": null
-    },
-    {
-      "repo": "zarazhangrui/frontend-slides",
-      "stars": 32043,
-      "gained": null
-    },
-    {
-      "repo": "openai/skills",
-      "stars": 28590,
-      "gained": null
-    },
-    {
-      "repo": "vercel/ai",
-      "stars": 27804,
-      "gained": null
-    },
-    {
-      "repo": "phuryn/pm-skills",
-      "stars": 27758,
-      "gained": null
+      "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "stars": 149578,
+      "gained": 2972
     },
     {
       "repo": "AgriciDaniel/claude-seo",
-      "stars": 27308,
-      "gained": null
+      "stars": 29432,
+      "gained": 2124
+    },
+    {
+      "repo": "tt-a1i/archify",
+      "stars": 96495,
+      "gained": 1969
+    },
+    {
+      "repo": "coreyhaines31/marketingskills",
+      "stars": 60374,
+      "gained": 1274
+    },
+    {
+      "repo": "anthropics/claude-plugins-official",
+      "stars": 47319,
+      "gained": 936
+    },
+    {
+      "repo": "garrytan/gstack",
+      "stars": 141593,
+      "gained": 908
+    },
+    {
+      "repo": "vercel-labs/skills",
+      "stars": 39390,
+      "gained": 878
     },
     {
       "repo": "google/skills",
-      "stars": 23505,
-      "gained": null
+      "stars": 24291,
+      "gained": 786
     },
     {
-      "repo": "muratcankoylan/Agent-Skills-for-Context-Engineering",
-      "stars": 18320,
-      "gained": null
+      "repo": "browser-use/browser-use",
+      "stars": 121050,
+      "gained": 770
     },
     {
-      "repo": "yusufkaraaslan/Skill_Seekers",
-      "stars": 15292,
-      "gained": null
+      "repo": "vercel-labs/agent-skills",
+      "stars": 34077,
+      "gained": 383
     },
     {
-      "repo": "Orchestra-Research/AI-Research-SKILLs",
-      "stars": 14345,
-      "gained": null
+      "repo": "Continuum-AI-Corp/OrcaReplay",
+      "stars": 725,
+      "gained": 323
     },
     {
-      "repo": "MiniMax-AI/skills",
-      "stars": 13797,
-      "gained": null
-    },
-    {
-      "repo": "jeffallan/claude-skills",
-      "stars": 12267,
-      "gained": null
-    },
-    {
-      "repo": "huggingface/skills",
-      "stars": 11295,
-      "gained": null
-    },
-    {
-      "repo": "ykdojo/claude-code-tips",
-      "stars": 10321,
-      "gained": null
+      "repo": "zarazhangrui/frontend-slides",
+      "stars": 32329,
+      "gained": 286
     },
     {
       "repo": "google-labs-code/stitch-skills",
-      "stars": 8694,
-      "gained": null
+      "stars": 8963,
+      "gained": 269
     },
     {
-      "repo": "trailofbits/skills",
-      "stars": 8064,
-      "gained": null
+      "repo": "github/awesome-copilot",
+      "stars": 41163,
+      "gained": 256
     },
     {
-      "repo": "deanpeters/Product-Manager-Skills",
-      "stars": 7918,
-      "gained": null
-    },
-    {
-      "repo": "PleasePrompto/notebooklm-skill",
-      "stars": 7787,
-      "gained": null
-    },
-    {
-      "repo": "Tencent/AI-Infra-Guard",
-      "stars": 7426,
-      "gained": null
-    },
-    {
-      "repo": "SawyerHood/dev-browser",
-      "stars": 6726,
-      "gained": null
+      "repo": "phuryn/pm-skills",
+      "stars": 27994,
+      "gained": 236
     },
     {
       "repo": "sergebulaev/linkedin-skills",
-      "stars": 5723,
-      "gained": null
+      "stars": 5924,
+      "gained": 201
+    },
+    {
+      "repo": "Orchestra-Research/AI-Research-SKILLs",
+      "stars": 14543,
+      "gained": 198
     },
     {
       "repo": "conorbronsdon/avoid-ai-writing",
-      "stars": 5477,
-      "gained": null
+      "stars": 5644,
+      "gained": 167
     },
     {
-      "repo": "expo/skills",
-      "stars": 4083,
-      "gained": null
+      "repo": "openai/skills",
+      "stars": 28752,
+      "gained": 162
+    },
+    {
+      "repo": "vercel/ai",
+      "stars": 27961,
+      "gained": 157
+    },
+    {
+      "repo": "googleworkspace/cli",
+      "stars": 32318,
+      "gained": 145
+    },
+    {
+      "repo": "Alisa0808/vox-director",
+      "stars": 2839,
+      "gained": 137
+    },
+    {
+      "repo": "trailofbits/skills",
+      "stars": 8195,
+      "gained": 131
+    },
+    {
+      "repo": "deanpeters/Product-Manager-Skills",
+      "stars": 8023,
+      "gained": 105
     },
     {
       "repo": "NVIDIA/skills",
-      "stars": 3890,
-      "gained": null
+      "stars": 3992,
+      "gained": 102
+    },
+    {
+      "repo": "jeffallan/claude-skills",
+      "stars": 12366,
+      "gained": 99
+    },
+    {
+      "repo": "Tencent/AI-Infra-Guard",
+      "stars": 7508,
+      "gained": 82
+    },
+    {
+      "repo": "wondelai/skills",
+      "stars": 2702,
+      "gained": 72
+    },
+    {
+      "repo": "expo/skills",
+      "stars": 4153,
+      "gained": 70
+    },
+    {
+      "repo": "cloudflare/skills",
+      "stars": 3369,
+      "gained": 65
+    },
+    {
+      "repo": "aws/agent-toolkit-for-aws",
+      "stars": 3491,
+      "gained": 61
+    },
+    {
+      "repo": "renezander030/capcut-cli",
+      "stars": 1194,
+      "gained": 61
+    },
+    {
+      "repo": "huggingface/skills",
+      "stars": 11351,
+      "gained": 56
+    },
+    {
+      "repo": "superdesigndev/superdesign-skill",
+      "stars": 1007,
+      "gained": 48
+    },
+    {
+      "repo": "supabase/agent-skills",
+      "stars": 3071,
+      "gained": 44
+    },
+    {
+      "repo": "getsentry/skills",
+      "stars": 1172,
+      "gained": 40
+    },
+    {
+      "repo": "MiniMax-AI/skills",
+      "stars": 13832,
+      "gained": 35
+    },
+    {
+      "repo": "ZeroPointRepo/youtube-skills",
+      "stars": 1207,
+      "gained": 30
+    },
+    {
+      "repo": "ilyautov/humanizer-ru",
+      "stars": 566,
+      "gained": 30
+    },
+    {
+      "repo": "muratcankoylan/Agent-Skills-for-Context-Engineering",
+      "stars": 18347,
+      "gained": 27
+    },
+    {
+      "repo": "tjboudreaux/cc-thinking-skills",
+      "stars": 1742,
+      "gained": 27
+    },
+    {
+      "repo": "bitwize-music-studio/claude-ai-music-skills",
+      "stars": 668,
+      "gained": 27
+    },
+    {
+      "repo": "gooseworks-ai/goose-skills",
+      "stars": 1320,
+      "gained": 24
+    },
+    {
+      "repo": "NeoLabHQ/context-engineering-kit",
+      "stars": 1830,
+      "gained": 23
+    },
+    {
+      "repo": "danjdewhurst/story-skills",
+      "stars": 418,
+      "gained": 23
+    },
+    {
+      "repo": "ykdojo/claude-code-tips",
+      "stars": 10343,
+      "gained": 22
+    },
+    {
+      "repo": "lackeyjb/playwright-skill",
+      "stars": 3295,
+      "gained": 22
+    },
+    {
+      "repo": "HUANGCHIHHUNGLeo/claude-real-video",
+      "stars": 2317,
+      "gained": 22
+    },
+    {
+      "repo": "yusufkaraaslan/Skill_Seekers",
+      "stars": 15309,
+      "gained": 17
+    },
+    {
+      "repo": "microsoft/azure-skills",
+      "stars": 1643,
+      "gained": 16
+    },
+    {
+      "repo": "unbrowse-ai/unbrowse",
+      "stars": 926,
+      "gained": 16
+    },
+    {
+      "repo": "langchain-ai/langchain-skills",
+      "stars": 1341,
+      "gained": 15
+    },
+    {
+      "repo": "product-on-purpose/pm-skills",
+      "stars": 805,
+      "gained": 15
+    },
+    {
+      "repo": "antonbabenko/terraform-skill",
+      "stars": 2466,
+      "gained": 14
+    },
+    {
+      "repo": "conorluddy/ios-simulator-skill",
+      "stars": 1328,
+      "gained": 14
+    },
+    {
+      "repo": "stripe/ai",
+      "stars": 2063,
+      "gained": 13
+    },
+    {
+      "repo": "mblode/agent-skills",
+      "stars": 202,
+      "gained": 13
+    },
+    {
+      "repo": "tronghieu/agent-skills",
+      "stars": 112,
+      "gained": 12
+    },
+    {
+      "repo": "realkimbarrett/advertising-skills",
+      "stars": 789,
+      "gained": 11
+    },
+    {
+      "repo": "Qiuner/birdview",
+      "stars": 688,
+      "gained": 10
+    },
+    {
+      "repo": "MohamedAbdallah-14/unslop",
+      "stars": 192,
+      "gained": 10
+    },
+    {
+      "repo": "infrasity-labs/dev-gtm-claude-skills",
+      "stars": 168,
+      "gained": 9
+    },
+    {
+      "repo": "mcollina/skills",
+      "stars": 1971,
+      "gained": 8
+    },
+    {
+      "repo": "hashicorp/agent-skills",
+      "stars": 928,
+      "gained": 8
+    },
+    {
+      "repo": "angular/skills",
+      "stars": 726,
+      "gained": 8
+    },
+    {
+      "repo": "inhouseseo/superseo-skills",
+      "stars": 396,
+      "gained": 8
+    },
+    {
+      "repo": "makenotion/notion-cookbook",
+      "stars": 230,
+      "gained": 8
+    },
+    {
+      "repo": "firecrawl/skills",
+      "stars": 157,
+      "gained": 8
+    },
+    {
+      "repo": "agiwhitelist/auteur",
+      "stars": 1047,
+      "gained": 7
+    },
+    {
+      "repo": "swarmclawai/swarmclaw",
+      "stars": 712,
+      "gained": 7
+    },
+    {
+      "repo": "testdino-hq/playwright-skill",
+      "stars": 419,
+      "gained": 7
+    },
+    {
+      "repo": "smixs/creative-director-skill",
+      "stars": 307,
+      "gained": 7
+    },
+    {
+      "repo": "csthink/dashmotion",
+      "stars": 201,
+      "gained": 7
+    },
+    {
+      "repo": "PleasePrompto/notebooklm-skill",
+      "stars": 7793,
+      "gained": 6
+    },
+    {
+      "repo": "SawyerHood/dev-browser",
+      "stars": 6732,
+      "gained": 6
+    },
+    {
+      "repo": "fal-ai-community/skills",
+      "stars": 270,
+      "gained": 6
+    },
+    {
+      "repo": "Digidai/product-manager-skills",
+      "stars": 204,
+      "gained": 6
+    },
+    {
+      "repo": "veniceai/skills",
+      "stars": 170,
+      "gained": 6
+    },
+    {
+      "repo": "apify/agent-skills",
+      "stars": 2500,
+      "gained": 5
+    },
+    {
+      "repo": "activeloopai/hivemind",
+      "stars": 1654,
+      "gained": 5
+    },
+    {
+      "repo": "alonw0/web-asset-generator",
+      "stars": 539,
+      "gained": 5
+    },
+    {
+      "repo": "Orkas-AI/Orkas-VideoStudio",
+      "stars": 349,
+      "gained": 5
+    },
+    {
+      "repo": "coderabbitai/skills",
+      "stars": 217,
+      "gained": 5
+    },
+    {
+      "repo": "zxkane/aws-skills",
+      "stars": 378,
+      "gained": 4
+    },
+    {
+      "repo": "ohad6k/emulo",
+      "stars": 306,
+      "gained": 4
+    },
+    {
+      "repo": "Alisa0808/vibe-creating-skill",
+      "stars": 163,
+      "gained": 4
+    },
+    {
+      "repo": "shepsci/kaggle-skill",
+      "stars": 112,
+      "gained": 4
+    },
+    {
+      "repo": "mhattingpete/claude-skills-marketplace",
+      "stars": 695,
+      "gained": 3
+    },
+    {
+      "repo": "sanjay3290/ai-skills",
+      "stars": 455,
+      "gained": 3
+    },
+    {
+      "repo": "qdrant/skills",
+      "stars": 270,
+      "gained": 3
+    },
+    {
+      "repo": "hqhq1025/skill-optimizer",
+      "stars": 193,
+      "gained": 3
+    },
+    {
+      "repo": "avelikiy/great_cto",
+      "stars": 115,
+      "gained": 3
+    },
+    {
+      "repo": "agentrhq/authsome",
+      "stars": 107,
+      "gained": 3
+    },
+    {
+      "repo": "vostride/agent-qa",
+      "stars": 857,
+      "gained": 2
+    },
+    {
+      "repo": "swarmclawai/swarmvault",
+      "stars": 735,
+      "gained": 2
+    },
+    {
+      "repo": "makenotion/skills",
+      "stars": 184,
+      "gained": 2
+    },
+    {
+      "repo": "redis/agent-skills",
+      "stars": 176,
+      "gained": 2
+    },
+    {
+      "repo": "luoyuctl/agenttrace",
+      "stars": 156,
+      "gained": 2
+    },
+    {
+      "repo": "bluzername/claude-code-terminal-title",
+      "stars": 147,
+      "gained": 2
+    },
+    {
+      "repo": "apollographql/skills",
+      "stars": 130,
+      "gained": 2
+    },
+    {
+      "repo": "neondatabase/agent-skills",
+      "stars": 113,
+      "gained": 2
+    },
+    {
+      "repo": "eduardo-sl/go-agent-skills",
+      "stars": 88,
+      "gained": 2
+    },
+    {
+      "repo": "metalbear-co/skills",
+      "stars": 31,
+      "gained": 2
+    },
+    {
+      "repo": "obra/superpowers-lab",
+      "stars": 438,
+      "gained": 1
+    },
+    {
+      "repo": "LambdaTest/agent-skills",
+      "stars": 392,
+      "gained": 1
+    },
+    {
+      "repo": "resend/resend-skills",
+      "stars": 212,
+      "gained": 1
+    },
+    {
+      "repo": "replicate/skills",
+      "stars": 148,
+      "gained": 1
+    },
+    {
+      "repo": "glacierphonk/naming",
+      "stars": 135,
+      "gained": 1
+    },
+    {
+      "repo": "praneybehl/llm-wiki-plugin",
+      "stars": 124,
+      "gained": 1
+    },
+    {
+      "repo": "Necmttn/ax",
+      "stars": 123,
+      "gained": 1
+    },
+    {
+      "repo": "muthuishere/hand-drawn-diagrams",
+      "stars": 86,
+      "gained": 1
+    },
+    {
+      "repo": "HeshamFS/materials-simulation-skills",
+      "stars": 84,
+      "gained": 1
+    },
+    {
+      "repo": "Ericyoung-183/alpha-insights",
+      "stars": 73,
+      "gained": 1
+    },
+    {
+      "repo": "takechanman1228/claude-persona",
+      "stars": 61,
+      "gained": 1
+    },
+    {
+      "repo": "wgwtest/novel-writing",
+      "stars": 56,
+      "gained": 1
+    },
+    {
+      "repo": "massimodeluisa/recursive-decomposition-skill",
+      "stars": 55,
+      "gained": 1
+    },
+    {
+      "repo": "cypress-io/ai-toolkit",
+      "stars": 48,
+      "gained": 1
     },
     {
       "repo": "browserbase/skills",
       "stars": 3756,
-      "gained": null
-    },
-    {
-      "repo": "aws/agent-toolkit-for-aws",
-      "stars": 3430,
-      "gained": null
-    },
-    {
-      "repo": "cloudflare/skills",
-      "stars": 3304,
-      "gained": null
-    },
-    {
-      "repo": "lackeyjb/playwright-skill",
-      "stars": 3273,
-      "gained": null
-    },
-    {
-      "repo": "supabase/agent-skills",
-      "stars": 3027,
-      "gained": null
-    },
-    {
-      "repo": "Alisa0808/vox-director",
-      "stars": 2702,
-      "gained": null
-    },
-    {
-      "repo": "wondelai/skills",
-      "stars": 2630,
-      "gained": null
-    },
-    {
-      "repo": "apify/agent-skills",
-      "stars": 2495,
-      "gained": null
-    },
-    {
-      "repo": "antonbabenko/terraform-skill",
-      "stars": 2452,
-      "gained": null
-    },
-    {
-      "repo": "HUANGCHIHHUNGLeo/claude-real-video",
-      "stars": 2295,
-      "gained": null
-    },
-    {
-      "repo": "stripe/ai",
-      "stars": 2050,
-      "gained": null
-    },
-    {
-      "repo": "mcollina/skills",
-      "stars": 1963,
-      "gained": null
-    },
-    {
-      "repo": "NeoLabHQ/context-engineering-kit",
-      "stars": 1807,
-      "gained": null
-    },
-    {
-      "repo": "tjboudreaux/cc-thinking-skills",
-      "stars": 1715,
-      "gained": null
-    },
-    {
-      "repo": "activeloopai/hivemind",
-      "stars": 1649,
-      "gained": null
-    },
-    {
-      "repo": "microsoft/azure-skills",
-      "stars": 1627,
-      "gained": null
-    },
-    {
-      "repo": "langchain-ai/langchain-skills",
-      "stars": 1326,
-      "gained": null
-    },
-    {
-      "repo": "conorluddy/ios-simulator-skill",
-      "stars": 1314,
-      "gained": null
-    },
-    {
-      "repo": "gooseworks-ai/goose-skills",
-      "stars": 1296,
-      "gained": null
-    },
-    {
-      "repo": "ZeroPointRepo/youtube-skills",
-      "stars": 1177,
-      "gained": null
-    },
-    {
-      "repo": "renezander030/capcut-cli",
-      "stars": 1133,
-      "gained": null
-    },
-    {
-      "repo": "getsentry/skills",
-      "stars": 1132,
-      "gained": null
-    },
-    {
-      "repo": "agiwhitelist/auteur",
-      "stars": 1040,
-      "gained": null
-    },
-    {
-      "repo": "superdesigndev/superdesign-skill",
-      "stars": 959,
-      "gained": null
-    },
-    {
-      "repo": "hashicorp/agent-skills",
-      "stars": 920,
-      "gained": null
-    },
-    {
-      "repo": "unbrowse-ai/unbrowse",
-      "stars": 910,
-      "gained": null
-    },
-    {
-      "repo": "vostride/agent-qa",
-      "stars": 855,
-      "gained": null
-    },
-    {
-      "repo": "product-on-purpose/pm-skills",
-      "stars": 790,
-      "gained": null
-    },
-    {
-      "repo": "realkimbarrett/advertising-skills",
-      "stars": 778,
-      "gained": null
-    },
-    {
-      "repo": "swarmclawai/swarmvault",
-      "stars": 733,
-      "gained": null
-    },
-    {
-      "repo": "angular/skills",
-      "stars": 718,
-      "gained": null
-    },
-    {
-      "repo": "swarmclawai/swarmclaw",
-      "stars": 705,
-      "gained": null
-    },
-    {
-      "repo": "mhattingpete/claude-skills-marketplace",
-      "stars": 692,
-      "gained": null
-    },
-    {
-      "repo": "Qiuner/birdview",
-      "stars": 678,
-      "gained": null
-    },
-    {
-      "repo": "bitwize-music-studio/claude-ai-music-skills",
-      "stars": 641,
-      "gained": null
-    },
-    {
-      "repo": "ilyautov/humanizer-ru",
-      "stars": 536,
-      "gained": null
-    },
-    {
-      "repo": "alonw0/web-asset-generator",
-      "stars": 534,
-      "gained": null
-    },
-    {
-      "repo": "sanjay3290/ai-skills",
-      "stars": 452,
-      "gained": null
-    },
-    {
-      "repo": "obra/superpowers-lab",
-      "stars": 437,
-      "gained": null
-    },
-    {
-      "repo": "testdino-hq/playwright-skill",
-      "stars": 412,
-      "gained": null
-    },
-    {
-      "repo": "Continuum-AI-Corp/OrcaReplay",
-      "stars": 402,
-      "gained": null
-    },
-    {
-      "repo": "danjdewhurst/story-skills",
-      "stars": 395,
-      "gained": null
-    },
-    {
-      "repo": "LambdaTest/agent-skills",
-      "stars": 391,
-      "gained": null
-    },
-    {
-      "repo": "inhouseseo/superseo-skills",
-      "stars": 388,
-      "gained": null
-    },
-    {
-      "repo": "zxkane/aws-skills",
-      "stars": 374,
-      "gained": null
-    },
-    {
-      "repo": "Orkas-AI/Orkas-VideoStudio",
-      "stars": 344,
-      "gained": null
-    },
-    {
-      "repo": "ohad6k/emulo",
-      "stars": 302,
-      "gained": null
-    },
-    {
-      "repo": "smixs/creative-director-skill",
-      "stars": 300,
-      "gained": null
-    },
-    {
-      "repo": "qdrant/skills",
-      "stars": 267,
-      "gained": null
-    },
-    {
-      "repo": "fal-ai-community/skills",
-      "stars": 264,
-      "gained": null
-    },
-    {
-      "repo": "makenotion/notion-cookbook",
-      "stars": 222,
-      "gained": null
-    },
-    {
-      "repo": "coderabbitai/skills",
-      "stars": 212,
-      "gained": null
-    },
-    {
-      "repo": "resend/resend-skills",
-      "stars": 211,
-      "gained": null
-    },
-    {
-      "repo": "Digidai/product-manager-skills",
-      "stars": 198,
-      "gained": null
+      "gained": 0
     },
     {
       "repo": "sanity-io/agent-toolkit",
       "stars": 197,
-      "gained": null
-    },
-    {
-      "repo": "csthink/dashmotion",
-      "stars": 194,
-      "gained": null
-    },
-    {
-      "repo": "hqhq1025/skill-optimizer",
-      "stars": 190,
-      "gained": null
-    },
-    {
-      "repo": "mblode/agent-skills",
-      "stars": 189,
-      "gained": null
-    },
-    {
-      "repo": "MohamedAbdallah-14/unslop",
-      "stars": 182,
-      "gained": null
-    },
-    {
-      "repo": "makenotion/skills",
-      "stars": 182,
-      "gained": null
-    },
-    {
-      "repo": "redis/agent-skills",
-      "stars": 174,
-      "gained": null
-    },
-    {
-      "repo": "veniceai/skills",
-      "stars": 164,
-      "gained": null
-    },
-    {
-      "repo": "Alisa0808/vibe-creating-skill",
-      "stars": 159,
-      "gained": null
-    },
-    {
-      "repo": "infrasity-labs/dev-gtm-claude-skills",
-      "stars": 159,
-      "gained": null
-    },
-    {
-      "repo": "luoyuctl/agenttrace",
-      "stars": 154,
-      "gained": null
-    },
-    {
-      "repo": "firecrawl/skills",
-      "stars": 149,
-      "gained": null
-    },
-    {
-      "repo": "replicate/skills",
-      "stars": 147,
-      "gained": null
-    },
-    {
-      "repo": "bluzername/claude-code-terminal-title",
-      "stars": 145,
-      "gained": null
-    },
-    {
-      "repo": "glacierphonk/naming",
-      "stars": 134,
-      "gained": null
-    },
-    {
-      "repo": "apollographql/skills",
-      "stars": 128,
-      "gained": null
-    },
-    {
-      "repo": "praneybehl/llm-wiki-plugin",
-      "stars": 123,
-      "gained": null
-    },
-    {
-      "repo": "Necmttn/ax",
-      "stars": 122,
-      "gained": null
-    },
-    {
-      "repo": "avelikiy/great_cto",
-      "stars": 112,
-      "gained": null
-    },
-    {
-      "repo": "neondatabase/agent-skills",
-      "stars": 111,
-      "gained": null
-    },
-    {
-      "repo": "shepsci/kaggle-skill",
-      "stars": 108,
-      "gained": null
-    },
-    {
-      "repo": "agentrhq/authsome",
-      "stars": 104,
-      "gained": null
-    },
-    {
-      "repo": "tronghieu/agent-skills",
-      "stars": 100,
-      "gained": null
+      "gained": 0
     },
     {
       "repo": "humanpen/humanpen-skill",
       "stars": 88,
-      "gained": null
-    },
-    {
-      "repo": "eduardo-sl/go-agent-skills",
-      "stars": 86,
-      "gained": null
-    },
-    {
-      "repo": "muthuishere/hand-drawn-diagrams",
-      "stars": 85,
-      "gained": null
-    },
-    {
-      "repo": "HeshamFS/materials-simulation-skills",
-      "stars": 83,
-      "gained": null
+      "gained": 0
     },
     {
       "repo": "vonarmen-wq/forward-deployed-selling",
       "stars": 76,
-      "gained": null
+      "gained": 0
     },
     {
       "repo": "Bria-AI/bria-skill",
       "stars": 75,
-      "gained": null
-    },
-    {
-      "repo": "Ericyoung-183/alpha-insights",
-      "stars": 72,
-      "gained": null
+      "gained": 0
     },
     {
       "repo": "k-kolomeitsev/data-structure-protocol",
       "stars": 68,
-      "gained": null
-    },
-    {
-      "repo": "yzfly/Mind-Cloning-Engineering",
-      "stars": 61,
-      "gained": null
+      "gained": 0
     },
     {
       "repo": "modem-dev/skills",
       "stars": 60,
-      "gained": null
-    },
-    {
-      "repo": "takechanman1228/claude-persona",
-      "stars": 60,
-      "gained": null
+      "gained": 0
     },
     {
       "repo": "jakedahn/pomodoro",
       "stars": 56,
-      "gained": null
-    },
-    {
-      "repo": "wgwtest/novel-writing",
-      "stars": 55,
-      "gained": null
-    },
-    {
-      "repo": "massimodeluisa/recursive-decomposition-skill",
-      "stars": 54,
-      "gained": null
+      "gained": 0
     },
     {
       "repo": "takechanman1228/claude-ecom",
       "stars": 54,
-      "gained": null
-    },
-    {
-      "repo": "cypress-io/ai-toolkit",
-      "stars": 47,
-      "gained": null
-    },
-    {
-      "repo": "tubeagentkit/youtube-transcript-skills",
-      "stars": 44,
-      "gained": null
+      "gained": 0
     },
     {
       "repo": "honeydew-ai/honeydew-ai-coding-agents-plugins",
       "stars": 43,
-      "gained": null
+      "gained": 0
     },
     {
       "repo": "lukstei/slop-grader",
       "stars": 38,
-      "gained": null
+      "gained": 0
     },
     {
       "repo": "coinpaprika/skills",
       "stars": 36,
-      "gained": null
+      "gained": 0
     },
     {
       "repo": "wrsmith108/varlock-claude-skill",
       "stars": 33,
-      "gained": null
-    },
-    {
-      "repo": "metalbear-co/skills",
-      "stars": 29,
-      "gained": null
+      "gained": 0
     },
     {
       "repo": "1NickPappas/move-code-quality-skill",
       "stars": 25,
-      "gained": null
+      "gained": 0
     },
     {
       "repo": "PSPDFKit-labs/nutrient-agent-skill",
       "stars": 19,
-      "gained": null
+      "gained": 0
     },
     {
       "repo": "VoltAgent/skills",
       "stars": 17,
-      "gained": null
+      "gained": 0
     },
     {
       "repo": "trycourier/courier-skills",
       "stars": 16,
-      "gained": null
+      "gained": 0
     },
     {
       "repo": "serpapi/skills",
       "stars": 13,
-      "gained": null
+      "gained": 0
     },
     {
       "repo": "EmblemCompany/Agent-skills",
       "stars": 12,
-      "gained": null
-    },
-    {
-      "repo": "Maksim-Burtsev/simple-man",
-      "stars": 12,
-      "gained": null
+      "gained": 0
     },
     {
       "repo": "BuildShipGrowRepeat/nextjs-sanity-blog-skill",
       "stars": 11,
-      "gained": null
+      "gained": 0
     },
     {
       "repo": "mailtrap/mailtrap-skills",
       "stars": 11,
-      "gained": null
+      "gained": 0
     },
     {
       "repo": "Octav-Labs/octav-api-skill",
       "stars": 4,
-      "gained": null
+      "gained": 0
     },
     {
       "repo": "costory-io/costory-finops-mcp-skills",
       "stars": 3,
-      "gained": null
+      "gained": 0
     },
     {
       "repo": "MelMayssonOwen/agent-skills",
       "stars": 1,
-      "gained": null
+      "gained": 0
     },
     {
       "repo": "appierun/appie-mcp",
       "stars": 1,
-      "gained": null
+      "gained": 0
     },
     {
       "repo": "geekflare/geekflare-skills",
       "stars": 1,
-      "gained": null
+      "gained": 0
     },
     {
       "repo": "apitube/news-api-skills",
       "stars": 0,
+      "gained": 0
+    },
+    {
+      "repo": "yzfly/Mind-Cloning-Engineering",
+      "stars": 60,
+      "gained": -1
+    },
+    {
+      "repo": "Maksim-Burtsev/simple-man",
+      "stars": 11,
+      "gained": -1
+    },
+    {
+      "repo": "inhotel-io/govisit-toolkit",
+      "stars": 2,
       "gained": null
+    },
+    {
+      "repo": "tubeagentkit/youtube-transcript-skills",
+      "stars": 41,
+      "gained": -3
     }
   ],
   "skills": {
@@ -3402,8 +3407,8 @@
       "license": "Apache-2.0",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/anthropics/skills/algorithmic-art/",
-      "weekly_installs": 2101,
-      "change_pct": 2
+      "weekly_installs": 2161,
+      "change_pct": 3
     },
     "anthropics/skills/brand-guidelines": {
       "id": "anthropics/skills/brand-guidelines",
@@ -3421,8 +3426,8 @@
       "license": "Apache-2.0",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/anthropics/skills/brand-guidelines/",
-      "weekly_installs": 4359,
-      "change_pct": 8
+      "weekly_installs": 3208,
+      "change_pct": -26
     },
     "anthropics/skills/canvas-design": {
       "id": "anthropics/skills/canvas-design",
@@ -3438,8 +3443,8 @@
       "license": "Apache-2.0",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/anthropics/skills/canvas-design/",
-      "weekly_installs": 3355,
-      "change_pct": 1
+      "weekly_installs": 3726,
+      "change_pct": 11
     },
     "anthropics/skills/docx": {
       "id": "anthropics/skills/docx",
@@ -3455,8 +3460,8 @@
       "license": "Proprietary",
       "cost_lane": "restricted",
       "listing": "https://suedeai.directory/anthropics/skills/docx/",
-      "weekly_installs": 4006,
-      "change_pct": 3
+      "weekly_installs": 3804,
+      "change_pct": -5
     },
     "anthropics/skills/frontend-design": {
       "id": "anthropics/skills/frontend-design",
@@ -3470,8 +3475,8 @@
       "license": "Apache-2.0",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/anthropics/skills/frontend-design/",
-      "weekly_installs": 30354,
-      "change_pct": 4
+      "weekly_installs": 30893,
+      "change_pct": 2
     },
     "anthropics/skills/internal-comms": {
       "id": "anthropics/skills/internal-comms",
@@ -3487,8 +3492,8 @@
       "license": "Apache-2.0",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/anthropics/skills/internal-comms/",
-      "weekly_installs": 2225,
-      "change_pct": 14
+      "weekly_installs": 2022,
+      "change_pct": -9
     },
     "anthropics/skills/mcp-builder": {
       "id": "anthropics/skills/mcp-builder",
@@ -3504,8 +3509,8 @@
       "license": "Apache-2.0",
       "cost_lane": "free-with-service",
       "listing": "https://suedeai.directory/anthropics/skills/mcp-builder/",
-      "weekly_installs": 3697,
-      "change_pct": 0
+      "weekly_installs": 3452,
+      "change_pct": -7
     },
     "anthropics/skills/pdf": {
       "id": "anthropics/skills/pdf",
@@ -3521,8 +3526,8 @@
       "license": "Proprietary",
       "cost_lane": "restricted",
       "listing": "https://suedeai.directory/anthropics/skills/pdf/",
-      "weekly_installs": 4152,
-      "change_pct": 3
+      "weekly_installs": 4309,
+      "change_pct": 4
     },
     "anthropics/skills/pptx": {
       "id": "anthropics/skills/pptx",
@@ -3538,8 +3543,8 @@
       "license": "Proprietary",
       "cost_lane": "restricted",
       "listing": "https://suedeai.directory/anthropics/skills/pptx/",
-      "weekly_installs": 4397,
-      "change_pct": 5
+      "weekly_installs": 4395,
+      "change_pct": 0
     },
     "anthropics/skills/skill-creator": {
       "id": "anthropics/skills/skill-creator",
@@ -3556,8 +3561,8 @@
       "license": "Apache-2.0",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/anthropics/skills/skill-creator/",
-      "weekly_installs": 6097,
-      "change_pct": -1
+      "weekly_installs": 5974,
+      "change_pct": -2
     },
     "anthropics/skills/slack-gif-creator": {
       "id": "anthropics/skills/slack-gif-creator",
@@ -3573,8 +3578,8 @@
       "license": "Apache-2.0",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/anthropics/skills/slack-gif-creator/",
-      "weekly_installs": 1804,
-      "change_pct": 0
+      "weekly_installs": 1842,
+      "change_pct": 2
     },
     "anthropics/skills/theme-factory": {
       "id": "anthropics/skills/theme-factory",
@@ -3588,8 +3593,8 @@
       "license": "Apache-2.0",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/anthropics/skills/theme-factory/",
-      "weekly_installs": 2436,
-      "change_pct": -1
+      "weekly_installs": 2494,
+      "change_pct": 2
     },
     "anthropics/skills/web-artifacts-builder": {
       "id": "anthropics/skills/web-artifacts-builder",
@@ -3605,8 +3610,8 @@
       "license": "Apache-2.0",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/anthropics/skills/web-artifacts-builder/",
-      "weekly_installs": 2396,
-      "change_pct": -6
+      "weekly_installs": 2466,
+      "change_pct": 3
     },
     "anthropics/skills/webapp-testing": {
       "id": "anthropics/skills/webapp-testing",
@@ -3623,8 +3628,8 @@
       "license": "Apache-2.0",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/anthropics/skills/webapp-testing/",
-      "weekly_installs": 6780,
-      "change_pct": -5
+      "weekly_installs": 5784,
+      "change_pct": -15
     },
     "anthropics/skills/xlsx": {
       "id": "anthropics/skills/xlsx",
@@ -3640,8 +3645,8 @@
       "license": "Proprietary",
       "cost_lane": "restricted",
       "listing": "https://suedeai.directory/anthropics/skills/xlsx/",
-      "weekly_installs": 3758,
-      "change_pct": 5
+      "weekly_installs": 3667,
+      "change_pct": -2
     },
     "apify/agent-skills/apify-actor-development": {
       "id": "apify/agent-skills/apify-actor-development",
@@ -4040,8 +4045,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/browser-use/browser-use/browser-use/",
-      "weekly_installs": 576,
-      "change_pct": -21
+      "weekly_installs": 531,
+      "change_pct": -8
     },
     "browser-use/browser-use/x402": {
       "id": "browser-use/browser-use/x402",
@@ -4108,8 +4113,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/cloudflare/security-audit-skill/security-audit/",
-      "weekly_installs": 19665,
-      "change_pct": 17
+      "weekly_installs": 19134,
+      "change_pct": -3
     },
     "cloudflare/skills/agents-sdk": {
       "id": "cloudflare/skills/agents-sdk",
@@ -4126,7 +4131,7 @@
       "license": "Apache-2.0",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/cloudflare/skills/agents-sdk/",
-      "weekly_installs": 5988,
+      "weekly_installs": 5754,
       "change_pct": -4
     },
     "cloudflare/skills/cloudflare": {
@@ -4143,8 +4148,8 @@
       "license": "Apache-2.0",
       "cost_lane": "free-with-service",
       "listing": "https://suedeai.directory/cloudflare/skills/cloudflare/",
-      "weekly_installs": 7902,
-      "change_pct": 1
+      "weekly_installs": 6615,
+      "change_pct": -16
     },
     "cloudflare/skills/cloudflare-email-service": {
       "id": "cloudflare/skills/cloudflare-email-service",
@@ -4162,8 +4167,8 @@
       "license": "Apache-2.0",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/cloudflare/skills/cloudflare-email-service/",
-      "weekly_installs": 5919,
-      "change_pct": -6
+      "weekly_installs": 5597,
+      "change_pct": -5
     },
     "cloudflare/skills/cloudflare-one": {
       "id": "cloudflare/skills/cloudflare-one",
@@ -4180,8 +4185,8 @@
       "license": "Apache-2.0",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/cloudflare/skills/cloudflare-one/",
-      "weekly_installs": 6275,
-      "change_pct": -6
+      "weekly_installs": 5849,
+      "change_pct": -7
     },
     "cloudflare/skills/cloudflare-one-migrations": {
       "id": "cloudflare/skills/cloudflare-one-migrations",
@@ -4198,8 +4203,8 @@
       "license": "Apache-2.0",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/cloudflare/skills/cloudflare-one-migrations/",
-      "weekly_installs": 5753,
-      "change_pct": -6
+      "weekly_installs": 5521,
+      "change_pct": -4
     },
     "cloudflare/skills/durable-objects": {
       "id": "cloudflare/skills/durable-objects",
@@ -4215,8 +4220,8 @@
       "license": "Apache-2.0",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/cloudflare/skills/durable-objects/",
-      "weekly_installs": 6251,
-      "change_pct": -3
+      "weekly_installs": 5933,
+      "change_pct": -5
     },
     "cloudflare/skills/sandbox-migrate-to-next": {
       "id": "cloudflare/skills/sandbox-migrate-to-next",
@@ -4232,8 +4237,8 @@
       "license": "Apache-2.0",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/cloudflare/skills/sandbox-migrate-to-next/",
-      "weekly_installs": 5592,
-      "change_pct": -7
+      "weekly_installs": 5448,
+      "change_pct": -3
     },
     "cloudflare/skills/sandbox-next": {
       "id": "cloudflare/skills/sandbox-next",
@@ -4249,8 +4254,8 @@
       "license": "Apache-2.0",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/cloudflare/skills/sandbox-next/",
-      "weekly_installs": 5594,
-      "change_pct": -7
+      "weekly_installs": 5451,
+      "change_pct": -3
     },
     "cloudflare/skills/sandbox-stable": {
       "id": "cloudflare/skills/sandbox-stable",
@@ -4266,8 +4271,8 @@
       "license": "Apache-2.0",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/cloudflare/skills/sandbox-stable/",
-      "weekly_installs": 5635,
-      "change_pct": -7
+      "weekly_installs": 5493,
+      "change_pct": -3
     },
     "cloudflare/skills/turnstile-spin": {
       "id": "cloudflare/skills/turnstile-spin",
@@ -4283,8 +4288,8 @@
       "license": "Apache-2.0",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/cloudflare/skills/turnstile-spin/",
-      "weekly_installs": 5843,
-      "change_pct": -6
+      "weekly_installs": 5620,
+      "change_pct": -4
     },
     "cloudflare/skills/web-perf": {
       "id": "cloudflare/skills/web-perf",
@@ -4300,8 +4305,8 @@
       "license": "Apache-2.0",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/cloudflare/skills/web-perf/",
-      "weekly_installs": 6449,
-      "change_pct": -4
+      "weekly_installs": 5968,
+      "change_pct": -7
     },
     "cloudflare/skills/workers-best-practices": {
       "id": "cloudflare/skills/workers-best-practices",
@@ -4317,8 +4322,8 @@
       "license": "Apache-2.0",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/cloudflare/skills/workers-best-practices/",
-      "weekly_installs": 7318,
-      "change_pct": -3
+      "weekly_installs": 6481,
+      "change_pct": -11
     },
     "cloudflare/skills/wrangler": {
       "id": "cloudflare/skills/wrangler",
@@ -4334,8 +4339,8 @@
       "license": "Apache-2.0",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/cloudflare/skills/wrangler/",
-      "weekly_installs": 6913,
-      "change_pct": -5
+      "weekly_installs": 6370,
+      "change_pct": -8
     },
     "conorbronsdon/avoid-ai-writing/avoid-ai-writing": {
       "id": "conorbronsdon/avoid-ai-writing/avoid-ai-writing",
@@ -4398,8 +4403,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/coreyhaines31/marketingskills/ab-testing/",
-      "weekly_installs": 3997,
-      "change_pct": 17
+      "weekly_installs": 3590,
+      "change_pct": -10
     },
     "coreyhaines31/marketingskills/ad-creative": {
       "id": "coreyhaines31/marketingskills/ad-creative",
@@ -4416,8 +4421,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/coreyhaines31/marketingskills/ad-creative/",
-      "weekly_installs": 4886,
-      "change_pct": 15
+      "weekly_installs": 4328,
+      "change_pct": -11
     },
     "coreyhaines31/marketingskills/ads": {
       "id": "coreyhaines31/marketingskills/ads",
@@ -4433,8 +4438,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/coreyhaines31/marketingskills/ads/",
-      "weekly_installs": 4409,
-      "change_pct": 13
+      "weekly_installs": 3884,
+      "change_pct": -12
     },
     "coreyhaines31/marketingskills/ai-seo": {
       "id": "coreyhaines31/marketingskills/ai-seo",
@@ -4451,8 +4456,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/coreyhaines31/marketingskills/ai-seo/",
-      "weekly_installs": 5441,
-      "change_pct": 9
+      "weekly_installs": 4797,
+      "change_pct": -12
     },
     "coreyhaines31/marketingskills/analytics": {
       "id": "coreyhaines31/marketingskills/analytics",
@@ -4468,8 +4473,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/coreyhaines31/marketingskills/analytics/",
-      "weekly_installs": 4289,
-      "change_pct": 10
+      "weekly_installs": 3851,
+      "change_pct": -10
     },
     "coreyhaines31/marketingskills/aso": {
       "id": "coreyhaines31/marketingskills/aso",
@@ -4485,8 +4490,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/coreyhaines31/marketingskills/aso/",
-      "weekly_installs": 3858,
-      "change_pct": 19
+      "weekly_installs": 3513,
+      "change_pct": -9
     },
     "coreyhaines31/marketingskills/churn-prevention": {
       "id": "coreyhaines31/marketingskills/churn-prevention",
@@ -4502,8 +4507,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/coreyhaines31/marketingskills/churn-prevention/",
-      "weekly_installs": 3688,
-      "change_pct": 12
+      "weekly_installs": 3386,
+      "change_pct": -8
     },
     "coreyhaines31/marketingskills/co-marketing": {
       "id": "coreyhaines31/marketingskills/co-marketing",
@@ -4519,8 +4524,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/coreyhaines31/marketingskills/co-marketing/",
-      "weekly_installs": 3571,
-      "change_pct": 12
+      "weekly_installs": 3338,
+      "change_pct": -7
     },
     "coreyhaines31/marketingskills/cold-email": {
       "id": "coreyhaines31/marketingskills/cold-email",
@@ -4537,8 +4542,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/coreyhaines31/marketingskills/cold-email/",
-      "weekly_installs": 4191,
-      "change_pct": 18
+      "weekly_installs": 3776,
+      "change_pct": -10
     },
     "coreyhaines31/marketingskills/community-marketing": {
       "id": "coreyhaines31/marketingskills/community-marketing",
@@ -4552,8 +4557,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/coreyhaines31/marketingskills/community-marketing/",
-      "weekly_installs": 3813,
-      "change_pct": 20
+      "weekly_installs": 3483,
+      "change_pct": -9
     },
     "coreyhaines31/marketingskills/competitor-profiling": {
       "id": "coreyhaines31/marketingskills/competitor-profiling",
@@ -4569,8 +4574,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/coreyhaines31/marketingskills/competitor-profiling/",
-      "weekly_installs": 4199,
-      "change_pct": 11
+      "weekly_installs": 3836,
+      "change_pct": -9
     },
     "coreyhaines31/marketingskills/competitors": {
       "id": "coreyhaines31/marketingskills/competitors",
@@ -4586,8 +4591,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/coreyhaines31/marketingskills/competitors/",
-      "weekly_installs": 3738,
-      "change_pct": 13
+      "weekly_installs": 3507,
+      "change_pct": -6
     },
     "coreyhaines31/marketingskills/content-strategy": {
       "id": "coreyhaines31/marketingskills/content-strategy",
@@ -4603,8 +4608,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/coreyhaines31/marketingskills/content-strategy/",
-      "weekly_installs": 5239,
-      "change_pct": 12
+      "weekly_installs": 4689,
+      "change_pct": -10
     },
     "coreyhaines31/marketingskills/copy-editing": {
       "id": "coreyhaines31/marketingskills/copy-editing",
@@ -4621,8 +4626,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/coreyhaines31/marketingskills/copy-editing/",
-      "weekly_installs": 5072,
-      "change_pct": 14
+      "weekly_installs": 4346,
+      "change_pct": -14
     },
     "coreyhaines31/marketingskills/copywriting": {
       "id": "coreyhaines31/marketingskills/copywriting",
@@ -4639,8 +4644,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/coreyhaines31/marketingskills/copywriting/",
-      "weekly_installs": 7459,
-      "change_pct": 8
+      "weekly_installs": 6753,
+      "change_pct": -9
     },
     "coreyhaines31/marketingskills/cro": {
       "id": "coreyhaines31/marketingskills/cro",
@@ -4656,8 +4661,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/coreyhaines31/marketingskills/cro/",
-      "weekly_installs": 4955,
-      "change_pct": 11
+      "weekly_installs": 4628,
+      "change_pct": -7
     },
     "coreyhaines31/marketingskills/customer-research": {
       "id": "coreyhaines31/marketingskills/customer-research",
@@ -4671,8 +4676,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/coreyhaines31/marketingskills/customer-research/",
-      "weekly_installs": 4504,
-      "change_pct": 17
+      "weekly_installs": 4004,
+      "change_pct": -11
     },
     "coreyhaines31/marketingskills/directory-submissions": {
       "id": "coreyhaines31/marketingskills/directory-submissions",
@@ -4689,8 +4694,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/coreyhaines31/marketingskills/directory-submissions/",
-      "weekly_installs": 3822,
-      "change_pct": 16
+      "weekly_installs": 3385,
+      "change_pct": -11
     },
     "coreyhaines31/marketingskills/emails": {
       "id": "coreyhaines31/marketingskills/emails",
@@ -4707,8 +4712,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/coreyhaines31/marketingskills/emails/",
-      "weekly_installs": 3903,
-      "change_pct": 11
+      "weekly_installs": 3619,
+      "change_pct": -7
     },
     "coreyhaines31/marketingskills/events": {
       "id": "coreyhaines31/marketingskills/events",
@@ -4740,8 +4745,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/coreyhaines31/marketingskills/free-tools/",
-      "weekly_installs": 3619,
-      "change_pct": 9
+      "weekly_installs": 3366,
+      "change_pct": -7
     },
     "coreyhaines31/marketingskills/image": {
       "id": "coreyhaines31/marketingskills/image",
@@ -4757,8 +4762,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/coreyhaines31/marketingskills/image/",
-      "weekly_installs": 3934,
-      "change_pct": 19
+      "weekly_installs": 3621,
+      "change_pct": -8
     },
     "coreyhaines31/marketingskills/launch": {
       "id": "coreyhaines31/marketingskills/launch",
@@ -4774,8 +4779,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/coreyhaines31/marketingskills/launch/",
-      "weekly_installs": 3983,
-      "change_pct": 12
+      "weekly_installs": 3729,
+      "change_pct": -6
     },
     "coreyhaines31/marketingskills/lead-magnets": {
       "id": "coreyhaines31/marketingskills/lead-magnets",
@@ -4791,8 +4796,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/coreyhaines31/marketingskills/lead-magnets/",
-      "weekly_installs": 3944,
-      "change_pct": 17
+      "weekly_installs": 3589,
+      "change_pct": -9
     },
     "coreyhaines31/marketingskills/marketing-ideas": {
       "id": "coreyhaines31/marketingskills/marketing-ideas",
@@ -4808,8 +4813,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/coreyhaines31/marketingskills/marketing-ideas/",
-      "weekly_installs": 4124,
-      "change_pct": 17
+      "weekly_installs": 3773,
+      "change_pct": -9
     },
     "coreyhaines31/marketingskills/marketing-loops": {
       "id": "coreyhaines31/marketingskills/marketing-loops",
@@ -4840,8 +4845,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/coreyhaines31/marketingskills/marketing-plan/",
-      "weekly_installs": 3952,
-      "change_pct": 13
+      "weekly_installs": 3734,
+      "change_pct": -6
     },
     "coreyhaines31/marketingskills/marketing-psychology": {
       "id": "coreyhaines31/marketingskills/marketing-psychology",
@@ -4857,8 +4862,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/coreyhaines31/marketingskills/marketing-psychology/",
-      "weekly_installs": 4755,
-      "change_pct": 10
+      "weekly_installs": 4555,
+      "change_pct": -4
     },
     "coreyhaines31/marketingskills/onboarding": {
       "id": "coreyhaines31/marketingskills/onboarding",
@@ -4872,8 +4877,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/coreyhaines31/marketingskills/onboarding/",
-      "weekly_installs": 3713,
-      "change_pct": 13
+      "weekly_installs": 3488,
+      "change_pct": -6
     },
     "coreyhaines31/marketingskills/paywalls": {
       "id": "coreyhaines31/marketingskills/paywalls",
@@ -4889,8 +4894,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/coreyhaines31/marketingskills/paywalls/",
-      "weekly_installs": 3762,
-      "change_pct": 23
+      "weekly_installs": 3403,
+      "change_pct": -10
     },
     "coreyhaines31/marketingskills/popups": {
       "id": "coreyhaines31/marketingskills/popups",
@@ -4906,8 +4911,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/coreyhaines31/marketingskills/popups/",
-      "weekly_installs": 3642,
-      "change_pct": 20
+      "weekly_installs": 3355,
+      "change_pct": -8
     },
     "coreyhaines31/marketingskills/pricing": {
       "id": "coreyhaines31/marketingskills/pricing",
@@ -4921,8 +4926,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/coreyhaines31/marketingskills/pricing/",
-      "weekly_installs": 4202,
-      "change_pct": 12
+      "weekly_installs": 3996,
+      "change_pct": -5
     },
     "coreyhaines31/marketingskills/product-marketing": {
       "id": "coreyhaines31/marketingskills/product-marketing",
@@ -4938,8 +4943,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/coreyhaines31/marketingskills/product-marketing/",
-      "weekly_installs": 4485,
-      "change_pct": 9
+      "weekly_installs": 4262,
+      "change_pct": -5
     },
     "coreyhaines31/marketingskills/programmatic-seo": {
       "id": "coreyhaines31/marketingskills/programmatic-seo",
@@ -4955,8 +4960,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/coreyhaines31/marketingskills/programmatic-seo/",
-      "weekly_installs": 4393,
-      "change_pct": 18
+      "weekly_installs": 3848,
+      "change_pct": -12
     },
     "coreyhaines31/marketingskills/prospecting": {
       "id": "coreyhaines31/marketingskills/prospecting",
@@ -4972,8 +4977,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/coreyhaines31/marketingskills/prospecting/",
-      "weekly_installs": 3937,
-      "change_pct": 20
+      "weekly_installs": 3568,
+      "change_pct": -9
     },
     "coreyhaines31/marketingskills/public-relations": {
       "id": "coreyhaines31/marketingskills/public-relations",
@@ -5004,8 +5009,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/coreyhaines31/marketingskills/referrals/",
-      "weekly_installs": 3664,
-      "change_pct": 13
+      "weekly_installs": 3446,
+      "change_pct": -6
     },
     "coreyhaines31/marketingskills/revops": {
       "id": "coreyhaines31/marketingskills/revops",
@@ -5022,8 +5027,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/coreyhaines31/marketingskills/revops/",
-      "weekly_installs": 3704,
-      "change_pct": 17
+      "weekly_installs": 3377,
+      "change_pct": -9
     },
     "coreyhaines31/marketingskills/sales-enablement": {
       "id": "coreyhaines31/marketingskills/sales-enablement",
@@ -5039,8 +5044,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/coreyhaines31/marketingskills/sales-enablement/",
-      "weekly_installs": 3822,
-      "change_pct": 14
+      "weekly_installs": 3582,
+      "change_pct": -6
     },
     "coreyhaines31/marketingskills/schema": {
       "id": "coreyhaines31/marketingskills/schema",
@@ -5056,8 +5061,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/coreyhaines31/marketingskills/schema/",
-      "weekly_installs": 4224,
-      "change_pct": 8
+      "weekly_installs": 4063,
+      "change_pct": -4
     },
     "coreyhaines31/marketingskills/seo-audit": {
       "id": "coreyhaines31/marketingskills/seo-audit",
@@ -5073,8 +5078,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/coreyhaines31/marketingskills/seo-audit/",
-      "weekly_installs": 6276,
-      "change_pct": 1
+      "weekly_installs": 5905,
+      "change_pct": -6
     },
     "coreyhaines31/marketingskills/signup": {
       "id": "coreyhaines31/marketingskills/signup",
@@ -5090,8 +5095,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/coreyhaines31/marketingskills/signup/",
-      "weekly_installs": 3580,
-      "change_pct": 13
+      "weekly_installs": 3374,
+      "change_pct": -6
     },
     "coreyhaines31/marketingskills/site-architecture": {
       "id": "coreyhaines31/marketingskills/site-architecture",
@@ -5105,8 +5110,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/coreyhaines31/marketingskills/site-architecture/",
-      "weekly_installs": 4180,
-      "change_pct": 12
+      "weekly_installs": 3840,
+      "change_pct": -8
     },
     "coreyhaines31/marketingskills/sms": {
       "id": "coreyhaines31/marketingskills/sms",
@@ -5122,8 +5127,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/coreyhaines31/marketingskills/sms/",
-      "weekly_installs": 3490,
-      "change_pct": 15
+      "weekly_installs": 3319,
+      "change_pct": -5
     },
     "coreyhaines31/marketingskills/social": {
       "id": "coreyhaines31/marketingskills/social",
@@ -5139,8 +5144,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/coreyhaines31/marketingskills/social/",
-      "weekly_installs": 5223,
-      "change_pct": 14
+      "weekly_installs": 4745,
+      "change_pct": -9
     },
     "coreyhaines31/marketingskills/video": {
       "id": "coreyhaines31/marketingskills/video",
@@ -5154,8 +5159,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/coreyhaines31/marketingskills/video/",
-      "weekly_installs": 4205,
-      "change_pct": 21
+      "weekly_installs": 3777,
+      "change_pct": -10
     },
     "danjdewhurst/story-skills/adaptation": {
       "id": "danjdewhurst/story-skills/adaptation",
@@ -5202,6 +5207,22 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/danjdewhurst/story-skills/character-management/"
+    },
+    "danjdewhurst/story-skills/editorial-review": {
+      "id": "danjdewhurst/story-skills/editorial-review",
+      "name": "editorial-review",
+      "repo": "danjdewhurst/story-skills",
+      "description": "This skill should be used when the user asks for a \"sensitivity reader\", \"authenticity reader\", \"cultural review\", \"is this portrayal okay\", \"real people in my novel\", \"defamation\", \"can I use song lyrics\", \"epigraph per",
+      "score": 88,
+      "grade": "B",
+      "category": "writing-content",
+      "topics": [
+        "storytelling",
+        "books-publishing"
+      ],
+      "license": "MIT",
+      "cost_lane": "free-open-source",
+      "listing": "https://suedeai.directory/danjdewhurst/story-skills/editorial-review/"
     },
     "danjdewhurst/story-skills/feedback-triage": {
       "id": "danjdewhurst/story-skills/feedback-triage",
@@ -5264,22 +5285,6 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/danjdewhurst/story-skills/series-continuity/"
-    },
-    "danjdewhurst/story-skills/submission": {
-      "id": "danjdewhurst/story-skills/submission",
-      "name": "submission",
-      "repo": "danjdewhurst/story-skills",
-      "description": "This skill should be used when the user asks to \"write a query letter\", \"query\", \"querying\", \"pitch\", \"blurb\", \"back cover copy\", \"jacket copy\", \"comp titles\", \"comparable titles\", \"synopsis for agents\", \"submit to agent",
-      "score": 88,
-      "grade": "B",
-      "category": "writing-content",
-      "topics": [
-        "storytelling",
-        "books-publishing"
-      ],
-      "license": "MIT",
-      "cost_lane": "free-open-source",
-      "listing": "https://suedeai.directory/danjdewhurst/story-skills/submission/"
     },
     "danjdewhurst/story-skills/verse-craft": {
       "id": "danjdewhurst/story-skills/verse-craft",
@@ -5846,8 +5851,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/expo/skills/expo-dev-client/",
-      "weekly_installs": 2333,
-      "change_pct": 9
+      "weekly_installs": 1803,
+      "change_pct": -23
     },
     "expo/skills/expo-migrate-module": {
       "id": "expo/skills/expo-migrate-module",
@@ -6293,24 +6298,6 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/github/awesome-copilot/#unit-test-vue-pinia"
-    },
-    "google-labs-code/stitch-skills/design-md": {
-      "id": "google-labs-code/stitch-skills/design-md",
-      "name": "design-md",
-      "repo": "google-labs-code/stitch-skills",
-      "description": "Analyze Stitch projects and synthesize a semantic design system into DESIGN.md files",
-      "score": 65,
-      "grade": "D",
-      "category": "frontend-design",
-      "topics": [
-        "design-systems",
-        "figma"
-      ],
-      "license": "Apache-2.0",
-      "cost_lane": "free-open-source",
-      "listing": "https://suedeai.directory/google-labs-code/stitch-skills/design-md/",
-      "weekly_installs": 641,
-      "change_pct": -4
     },
     "google-labs-code/stitch-skills/stitch-loop": {
       "id": "google-labs-code/stitch-skills/stitch-loop",
@@ -6950,22 +6937,7 @@
       "license": "Apache-2.0",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/googleworkspace/cli/gws-drive/",
-      "weekly_installs": 926,
-      "change_pct": 1
-    },
-    "googleworkspace/cli/gws-shared": {
-      "id": "googleworkspace/cli/gws-shared",
-      "name": "gws-shared",
-      "repo": "googleworkspace/cli",
-      "description": "gws CLI: Shared patterns for authentication, global flags, and output formatting.",
-      "score": 57,
-      "grade": "D",
-      "category": "developer-tools",
-      "topics": [],
-      "license": "Apache-2.0",
-      "cost_lane": "free-open-source",
-      "listing": "https://suedeai.directory/googleworkspace/cli/gws-shared/",
-      "weekly_installs": 877,
+      "weekly_installs": 895,
       "change_pct": -3
     },
     "googleworkspace/cli/persona-event-coordinator": {
@@ -7635,8 +7607,8 @@
       "license": "Apache-2.0",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/heygen-com/hyperframes/embedded-captions/",
-      "weekly_installs": 323,
-      "change_pct": -99
+      "weekly_installs": 239,
+      "change_pct": -26
     },
     "heygen-com/hyperframes/faceless-explainer": {
       "id": "heygen-com/hyperframes/faceless-explainer",
@@ -7650,8 +7622,8 @@
       "license": "Apache-2.0",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/heygen-com/hyperframes/faceless-explainer/",
-      "weekly_installs": 332,
-      "change_pct": -99
+      "weekly_installs": 246,
+      "change_pct": -26
     },
     "heygen-com/hyperframes/figma": {
       "id": "heygen-com/hyperframes/figma",
@@ -7667,8 +7639,8 @@
       "license": "Apache-2.0",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/heygen-com/hyperframes/figma/",
-      "weekly_installs": 40421,
-      "change_pct": 16
+      "weekly_installs": 29786,
+      "change_pct": -26
     },
     "heygen-com/hyperframes/general-video": {
       "id": "heygen-com/hyperframes/general-video",
@@ -7684,8 +7656,8 @@
       "license": "Apache-2.0",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/heygen-com/hyperframes/general-video/",
-      "weekly_installs": 327,
-      "change_pct": -99
+      "weekly_installs": 240,
+      "change_pct": -27
     },
     "heygen-com/hyperframes/hyperframes": {
       "id": "heygen-com/hyperframes/hyperframes",
@@ -7701,8 +7673,8 @@
       "license": "Apache-2.0",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/heygen-com/hyperframes/hyperframes/",
-      "weekly_installs": 121306,
-      "change_pct": -22
+      "weekly_installs": 103215,
+      "change_pct": -15
     },
     "heygen-com/hyperframes/hyperframes-animation": {
       "id": "heygen-com/hyperframes/hyperframes-animation",
@@ -7718,8 +7690,8 @@
       "license": "Apache-2.0",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/heygen-com/hyperframes/hyperframes-animation/",
-      "weekly_installs": 335,
-      "change_pct": -99
+      "weekly_installs": 243,
+      "change_pct": -27
     },
     "heygen-com/hyperframes/hyperframes-audio": {
       "id": "heygen-com/hyperframes/hyperframes-audio",
@@ -7736,8 +7708,8 @@
       "license": "Apache-2.0",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/heygen-com/hyperframes/hyperframes-audio/",
-      "weekly_installs": 325,
-      "change_pct": -99
+      "weekly_installs": 236,
+      "change_pct": -27
     },
     "heygen-com/hyperframes/hyperframes-cli": {
       "id": "heygen-com/hyperframes/hyperframes-cli",
@@ -7751,8 +7723,8 @@
       "license": "Apache-2.0",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/heygen-com/hyperframes/hyperframes-cli/",
-      "weekly_installs": 125767,
-      "change_pct": -13
+      "weekly_installs": 103285,
+      "change_pct": -18
     },
     "heygen-com/hyperframes/hyperframes-core": {
       "id": "heygen-com/hyperframes/hyperframes-core",
@@ -7768,8 +7740,8 @@
       "license": "Apache-2.0",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/heygen-com/hyperframes/hyperframes-core/",
-      "weekly_installs": 330,
-      "change_pct": -99
+      "weekly_installs": 238,
+      "change_pct": -28
     },
     "heygen-com/hyperframes/hyperframes-creative": {
       "id": "heygen-com/hyperframes/hyperframes-creative",
@@ -7785,8 +7757,8 @@
       "license": "Apache-2.0",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/heygen-com/hyperframes/hyperframes-creative/",
-      "weekly_installs": 332,
-      "change_pct": -99
+      "weekly_installs": 237,
+      "change_pct": -29
     },
     "heygen-com/hyperframes/hyperframes-keyframes": {
       "id": "heygen-com/hyperframes/hyperframes-keyframes",
@@ -7802,8 +7774,8 @@
       "license": "Apache-2.0",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/heygen-com/hyperframes/hyperframes-keyframes/",
-      "weekly_installs": 327,
-      "change_pct": -99
+      "weekly_installs": 236,
+      "change_pct": -28
     },
     "heygen-com/hyperframes/hyperframes-registry": {
       "id": "heygen-com/hyperframes/hyperframes-registry",
@@ -7817,8 +7789,8 @@
       "license": "Apache-2.0",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/heygen-com/hyperframes/hyperframes-registry/",
-      "weekly_installs": 117525,
-      "change_pct": 5
+      "weekly_installs": 98018,
+      "change_pct": -17
     },
     "heygen-com/hyperframes/hyperframes-studio": {
       "id": "heygen-com/hyperframes/hyperframes-studio",
@@ -7832,8 +7804,8 @@
       "license": "Apache-2.0",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/heygen-com/hyperframes/hyperframes-studio/",
-      "weekly_installs": 313,
-      "change_pct": -99
+      "weekly_installs": 235,
+      "change_pct": -25
     },
     "heygen-com/hyperframes/media-use": {
       "id": "heygen-com/hyperframes/media-use",
@@ -7849,7 +7821,7 @@
       "license": "Apache-2.0",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/heygen-com/hyperframes/media-use/",
-      "weekly_installs": 125622,
+      "weekly_installs": 104156,
       "change_pct": -17
     },
     "heygen-com/hyperframes/motion-graphics": {
@@ -7866,8 +7838,8 @@
       "license": "Apache-2.0",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/heygen-com/hyperframes/motion-graphics/",
-      "weekly_installs": 324,
-      "change_pct": -99
+      "weekly_installs": 240,
+      "change_pct": -26
     },
     "heygen-com/hyperframes/music-to-video": {
       "id": "heygen-com/hyperframes/music-to-video",
@@ -7883,8 +7855,8 @@
       "license": "Apache-2.0",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/heygen-com/hyperframes/music-to-video/",
-      "weekly_installs": 321,
-      "change_pct": -98
+      "weekly_installs": 235,
+      "change_pct": -27
     },
     "heygen-com/hyperframes/pr-to-video": {
       "id": "heygen-com/hyperframes/pr-to-video",
@@ -7900,8 +7872,8 @@
       "license": "Apache-2.0",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/heygen-com/hyperframes/pr-to-video/",
-      "weekly_installs": 321,
-      "change_pct": -99
+      "weekly_installs": 235,
+      "change_pct": -27
     },
     "heygen-com/hyperframes/product-launch-video": {
       "id": "heygen-com/hyperframes/product-launch-video",
@@ -7918,8 +7890,8 @@
       "license": "Apache-2.0",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/heygen-com/hyperframes/product-launch-video/",
-      "weekly_installs": 324,
-      "change_pct": -99
+      "weekly_installs": 242,
+      "change_pct": -25
     },
     "heygen-com/hyperframes/remotion-to-hyperframes": {
       "id": "heygen-com/hyperframes/remotion-to-hyperframes",
@@ -7935,8 +7907,8 @@
       "license": "Apache-2.0",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/heygen-com/hyperframes/remotion-to-hyperframes/",
-      "weekly_installs": 44877,
-      "change_pct": 18
+      "weekly_installs": 32023,
+      "change_pct": -29
     },
     "heygen-com/hyperframes/talking-head-recut": {
       "id": "heygen-com/hyperframes/talking-head-recut",
@@ -7953,8 +7925,8 @@
       "license": "Apache-2.0",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/heygen-com/hyperframes/talking-head-recut/",
-      "weekly_installs": 321,
-      "change_pct": -98
+      "weekly_installs": 236,
+      "change_pct": -26
     },
     "huggingface/skills/huggingface-community-evals": {
       "id": "huggingface/skills/huggingface-community-evals",
@@ -9507,8 +9479,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/leonxlnx/taste-skill/brandkit/",
-      "weekly_installs": 26,
-      "change_pct": -99
+      "weekly_installs": 36,
+      "change_pct": 38
     },
     "leonxlnx/taste-skill/imagegen-frontend-mobile": {
       "id": "leonxlnx/taste-skill/imagegen-frontend-mobile",
@@ -9522,8 +9494,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/leonxlnx/taste-skill/imagegen-frontend-mobile/",
-      "weekly_installs": 14,
-      "change_pct": -99
+      "weekly_installs": 19,
+      "change_pct": 36
     },
     "leonxlnx/taste-skill/imagegen-frontend-web": {
       "id": "leonxlnx/taste-skill/imagegen-frontend-web",
@@ -9537,8 +9509,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/leonxlnx/taste-skill/imagegen-frontend-web/",
-      "weekly_installs": 13,
-      "change_pct": -100
+      "weekly_installs": 18,
+      "change_pct": 38
     },
     "mailtrap/mailtrap-skills/converting-email-templates": {
       "id": "mailtrap/mailtrap-skills/converting-email-templates",
@@ -9583,8 +9555,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/mattpocock/skills/ask-matt/",
-      "weekly_installs": 30020,
-      "change_pct": -9
+      "weekly_installs": 27810,
+      "change_pct": -7
     },
     "mattpocock/skills/code-review": {
       "id": "mattpocock/skills/code-review",
@@ -9600,8 +9572,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/mattpocock/skills/code-review/",
-      "weekly_installs": 38125,
-      "change_pct": -1
+      "weekly_installs": 33766,
+      "change_pct": -11
     },
     "mattpocock/skills/codebase-design": {
       "id": "mattpocock/skills/codebase-design",
@@ -9615,8 +9587,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/mattpocock/skills/codebase-design/",
-      "weekly_installs": 38595,
-      "change_pct": 2
+      "weekly_installs": 33857,
+      "change_pct": -12
     },
     "mattpocock/skills/diagnosing-bugs": {
       "id": "mattpocock/skills/diagnosing-bugs",
@@ -9630,8 +9602,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/mattpocock/skills/diagnosing-bugs/",
-      "weekly_installs": 34921,
-      "change_pct": -7
+      "weekly_installs": 31964,
+      "change_pct": -8
     },
     "mattpocock/skills/domain-modeling": {
       "id": "mattpocock/skills/domain-modeling",
@@ -9645,7 +9617,7 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/mattpocock/skills/domain-modeling/",
-      "weekly_installs": 36477,
+      "weekly_installs": 33611,
       "change_pct": -8
     },
     "mattpocock/skills/git-guardrails-claude-code": {
@@ -9664,8 +9636,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/mattpocock/skills/git-guardrails-claude-code/",
-      "weekly_installs": 21442,
-      "change_pct": -8
+      "weekly_installs": 20567,
+      "change_pct": -4
     },
     "mattpocock/skills/grill-me": {
       "id": "mattpocock/skills/grill-me",
@@ -9679,8 +9651,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/mattpocock/skills/grill-me/",
-      "weekly_installs": 43368,
-      "change_pct": -11
+      "weekly_installs": 41260,
+      "change_pct": -5
     },
     "mattpocock/skills/grill-with-docs": {
       "id": "mattpocock/skills/grill-with-docs",
@@ -9694,8 +9666,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/mattpocock/skills/grill-with-docs/",
-      "weekly_installs": 37516,
-      "change_pct": -9
+      "weekly_installs": 35476,
+      "change_pct": -5
     },
     "mattpocock/skills/grilling": {
       "id": "mattpocock/skills/grilling",
@@ -9709,8 +9681,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/mattpocock/skills/grilling/",
-      "weekly_installs": 46289,
-      "change_pct": -2
+      "weekly_installs": 40707,
+      "change_pct": -12
     },
     "mattpocock/skills/handoff": {
       "id": "mattpocock/skills/handoff",
@@ -9726,8 +9698,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/mattpocock/skills/handoff/",
-      "weekly_installs": 35344,
-      "change_pct": -10
+      "weekly_installs": 32356,
+      "change_pct": -8
     },
     "mattpocock/skills/improve-codebase-architecture": {
       "id": "mattpocock/skills/improve-codebase-architecture",
@@ -9743,8 +9715,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/mattpocock/skills/improve-codebase-architecture/",
-      "weekly_installs": 38379,
-      "change_pct": -1
+      "weekly_installs": 33691,
+      "change_pct": -12
     },
     "mattpocock/skills/migrate-to-shoehorn": {
       "id": "mattpocock/skills/migrate-to-shoehorn",
@@ -9760,8 +9732,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/mattpocock/skills/migrate-to-shoehorn/",
-      "weekly_installs": 20924,
-      "change_pct": -8
+      "weekly_installs": 20179,
+      "change_pct": -4
     },
     "mattpocock/skills/pr": {
       "id": "mattpocock/skills/pr",
@@ -9777,8 +9749,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/mattpocock/skills/pr/",
-      "weekly_installs": 28973,
-      "change_pct": -7
+      "weekly_installs": 27790,
+      "change_pct": -4
     },
     "mattpocock/skills/prototype": {
       "id": "mattpocock/skills/prototype",
@@ -9792,7 +9764,7 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/mattpocock/skills/prototype/",
-      "weekly_installs": 32445,
+      "weekly_installs": 30624,
       "change_pct": -6
     },
     "mattpocock/skills/research": {
@@ -9809,8 +9781,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/mattpocock/skills/research/",
-      "weekly_installs": 34879,
-      "change_pct": 3
+      "weekly_installs": 30995,
+      "change_pct": -11
     },
     "mattpocock/skills/scaffold-exercises": {
       "id": "mattpocock/skills/scaffold-exercises",
@@ -9824,8 +9796,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/mattpocock/skills/scaffold-exercises/",
-      "weekly_installs": 20977,
-      "change_pct": -8
+      "weekly_installs": 20233,
+      "change_pct": -4
     },
     "mattpocock/skills/setup-matt-pocock-skills": {
       "id": "mattpocock/skills/setup-matt-pocock-skills",
@@ -9839,8 +9811,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/mattpocock/skills/setup-matt-pocock-skills/",
-      "weekly_installs": 36026,
-      "change_pct": 1
+      "weekly_installs": 30479,
+      "change_pct": -15
     },
     "mattpocock/skills/setup-pre-commit": {
       "id": "mattpocock/skills/setup-pre-commit",
@@ -9859,8 +9831,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/mattpocock/skills/setup-pre-commit/",
-      "weekly_installs": 21314,
-      "change_pct": -8
+      "weekly_installs": 20478,
+      "change_pct": -4
     },
     "mattpocock/skills/tdd": {
       "id": "mattpocock/skills/tdd",
@@ -9877,8 +9849,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/mattpocock/skills/tdd/",
-      "weekly_installs": 35932,
-      "change_pct": -8
+      "weekly_installs": 32876,
+      "change_pct": -9
     },
     "mattpocock/skills/teach": {
       "id": "mattpocock/skills/teach",
@@ -9892,8 +9864,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/mattpocock/skills/teach/",
-      "weekly_installs": 31831,
-      "change_pct": -9
+      "weekly_installs": 29536,
+      "change_pct": -7
     },
     "mattpocock/skills/to-questionnaire": {
       "id": "mattpocock/skills/to-questionnaire",
@@ -9907,8 +9879,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/mattpocock/skills/to-questionnaire/",
-      "weekly_installs": 28664,
-      "change_pct": -7
+      "weekly_installs": 27431,
+      "change_pct": -4
     },
     "mattpocock/skills/to-spec": {
       "id": "mattpocock/skills/to-spec",
@@ -9922,8 +9894,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/mattpocock/skills/to-spec/",
-      "weekly_installs": 32683,
-      "change_pct": -6
+      "weekly_installs": 31231,
+      "change_pct": -4
     },
     "mattpocock/skills/to-tickets": {
       "id": "mattpocock/skills/to-tickets",
@@ -9937,7 +9909,7 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/mattpocock/skills/to-tickets/",
-      "weekly_installs": 33358,
+      "weekly_installs": 30992,
       "change_pct": -7
     },
     "mattpocock/skills/triage": {
@@ -9952,8 +9924,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/mattpocock/skills/triage/",
-      "weekly_installs": 30497,
-      "change_pct": -9
+      "weekly_installs": 28197,
+      "change_pct": -8
     },
     "mattpocock/skills/wait-what": {
       "id": "mattpocock/skills/wait-what",
@@ -9967,8 +9939,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/mattpocock/skills/wait-what/",
-      "weekly_installs": 28926,
-      "change_pct": -9
+      "weekly_installs": 27457,
+      "change_pct": -5
     },
     "mattpocock/skills/wayfinder": {
       "id": "mattpocock/skills/wayfinder",
@@ -9982,8 +9954,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/mattpocock/skills/wayfinder/",
-      "weekly_installs": 34461,
-      "change_pct": -1
+      "weekly_installs": 30090,
+      "change_pct": -13
     },
     "mattpocock/skills/wizard": {
       "id": "mattpocock/skills/wizard",
@@ -9997,8 +9969,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/mattpocock/skills/wizard/",
-      "weekly_installs": 28988,
-      "change_pct": -10
+      "weekly_installs": 26973,
+      "change_pct": -7
     },
     "mattpocock/skills/writing-for-agents": {
       "id": "mattpocock/skills/writing-for-agents",
@@ -10014,8 +9986,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/mattpocock/skills/writing-for-agents/",
-      "weekly_installs": 31691,
-      "change_pct": -8
+      "weekly_installs": 30494,
+      "change_pct": -4
     },
     "mblode/agent-skills/agent-skills-creator": {
       "id": "mblode/agent-skills/agent-skills-creator",
@@ -10297,8 +10269,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/mcollina/skills/fastify-best-practices/",
-      "weekly_installs": 6291,
-      "change_pct": -3
+      "weekly_installs": 5998,
+      "change_pct": -5
     },
     "mcollina/skills/snipgrapher": {
       "id": "mcollina/skills/snipgrapher",
@@ -10437,8 +10409,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/microsoft/azure-skills/airunway-aks-setup/",
-      "weekly_installs": 7739,
-      "change_pct": 10
+      "weekly_installs": 75406,
+      "change_pct": 874
     },
     "microsoft/azure-skills/aks-troubleshooting": {
       "id": "microsoft/azure-skills/aks-troubleshooting",
@@ -10472,8 +10444,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/microsoft/azure-skills/appinsights-instrumentation/",
-      "weekly_installs": 7745,
-      "change_pct": 10
+      "weekly_installs": 75414,
+      "change_pct": 874
     },
     "microsoft/azure-skills/azure-ai": {
       "id": "microsoft/azure-skills/azure-ai",
@@ -10489,8 +10461,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/microsoft/azure-skills/azure-ai/",
-      "weekly_installs": 7791,
-      "change_pct": 10
+      "weekly_installs": 75470,
+      "change_pct": 869
     },
     "microsoft/azure-skills/azure-aigateway": {
       "id": "microsoft/azure-skills/azure-aigateway",
@@ -10508,8 +10480,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/microsoft/azure-skills/azure-aigateway/",
-      "weekly_installs": 7715,
-      "change_pct": 11
+      "weekly_installs": 75407,
+      "change_pct": 877
     },
     "microsoft/azure-skills/azure-app-onboard": {
       "id": "microsoft/azure-skills/azure-app-onboard",
@@ -10527,8 +10499,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/microsoft/azure-skills/azure-app-onboard/",
-      "weekly_installs": 7719,
-      "change_pct": 10
+      "weekly_installs": 75429,
+      "change_pct": 877
     },
     "microsoft/azure-skills/azure-app-onboard-prereq": {
       "id": "microsoft/azure-skills/azure-app-onboard-prereq",
@@ -10545,8 +10517,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/microsoft/azure-skills/azure-app-onboard-prereq/",
-      "weekly_installs": 7713,
-      "change_pct": 10
+      "weekly_installs": 75420,
+      "change_pct": 878
     },
     "microsoft/azure-skills/azure-cloud-migrate": {
       "id": "microsoft/azure-skills/azure-cloud-migrate",
@@ -10562,8 +10534,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/microsoft/azure-skills/azure-cloud-migrate/",
-      "weekly_installs": 7711,
-      "change_pct": 10
+      "weekly_installs": 75407,
+      "change_pct": 878
     },
     "microsoft/azure-skills/azure-compliance": {
       "id": "microsoft/azure-skills/azure-compliance",
@@ -10580,8 +10552,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/microsoft/azure-skills/azure-compliance/",
-      "weekly_installs": 7772,
-      "change_pct": 10
+      "weekly_installs": 75423,
+      "change_pct": 870
     },
     "microsoft/azure-skills/azure-compute": {
       "id": "microsoft/azure-skills/azure-compute",
@@ -10597,8 +10569,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/microsoft/azure-skills/azure-compute/",
-      "weekly_installs": 7726,
-      "change_pct": 10
+      "weekly_installs": 75412,
+      "change_pct": 876
     },
     "microsoft/azure-skills/azure-deploy": {
       "id": "microsoft/azure-skills/azure-deploy",
@@ -10615,8 +10587,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/microsoft/azure-skills/azure-deploy/",
-      "weekly_installs": 7774,
-      "change_pct": 10
+      "weekly_installs": 75426,
+      "change_pct": 870
     },
     "microsoft/azure-skills/azure-diagnostics": {
       "id": "microsoft/azure-skills/azure-diagnostics",
@@ -10632,8 +10604,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/microsoft/azure-skills/azure-diagnostics/",
-      "weekly_installs": 8314,
-      "change_pct": 16
+      "weekly_installs": 75552,
+      "change_pct": 809
     },
     "microsoft/azure-skills/azure-enterprise-infra-planner": {
       "id": "microsoft/azure-skills/azure-enterprise-infra-planner",
@@ -10649,8 +10621,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/microsoft/azure-skills/azure-enterprise-infra-planner/",
-      "weekly_installs": 7758,
-      "change_pct": 10
+      "weekly_installs": 75423,
+      "change_pct": 872
     },
     "microsoft/azure-skills/azure-kubernetes": {
       "id": "microsoft/azure-skills/azure-kubernetes",
@@ -10667,8 +10639,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/microsoft/azure-skills/azure-kubernetes/",
-      "weekly_installs": 8159,
-      "change_pct": 11
+      "weekly_installs": 75475,
+      "change_pct": 825
     },
     "microsoft/azure-skills/azure-kusto": {
       "id": "microsoft/azure-skills/azure-kusto",
@@ -10684,8 +10656,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/microsoft/azure-skills/azure-kusto/",
-      "weekly_installs": 7748,
-      "change_pct": 10
+      "weekly_installs": 75409,
+      "change_pct": 873
     },
     "microsoft/azure-skills/azure-messaging": {
       "id": "microsoft/azure-skills/azure-messaging",
@@ -10701,8 +10673,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/microsoft/azure-skills/azure-messaging/",
-      "weekly_installs": 7706,
-      "change_pct": 10
+      "weekly_installs": 75406,
+      "change_pct": 879
     },
     "microsoft/azure-skills/azure-prepare": {
       "id": "microsoft/azure-skills/azure-prepare",
@@ -10720,8 +10692,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/microsoft/azure-skills/azure-prepare/",
-      "weekly_installs": 8327,
-      "change_pct": 18
+      "weekly_installs": 75487,
+      "change_pct": 807
     },
     "microsoft/azure-skills/azure-quotas": {
       "id": "microsoft/azure-skills/azure-quotas",
@@ -10737,8 +10709,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/microsoft/azure-skills/azure-quotas/",
-      "weekly_installs": 7755,
-      "change_pct": 9
+      "weekly_installs": 75413,
+      "change_pct": 872
     },
     "microsoft/azure-skills/azure-reliability": {
       "id": "microsoft/azure-skills/azure-reliability",
@@ -10755,8 +10727,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/microsoft/azure-skills/azure-reliability/",
-      "weekly_installs": 7726,
-      "change_pct": 10
+      "weekly_installs": 75411,
+      "change_pct": 876
     },
     "microsoft/azure-skills/azure-resource-lookup": {
       "id": "microsoft/azure-skills/azure-resource-lookup",
@@ -10772,8 +10744,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/microsoft/azure-skills/azure-resource-lookup/",
-      "weekly_installs": 7742,
-      "change_pct": 10
+      "weekly_installs": 75417,
+      "change_pct": 874
     },
     "microsoft/azure-skills/azure-resource-visualizer": {
       "id": "microsoft/azure-skills/azure-resource-visualizer",
@@ -10789,8 +10761,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/microsoft/azure-skills/azure-resource-visualizer/",
-      "weekly_installs": 7751,
-      "change_pct": 10
+      "weekly_installs": 75415,
+      "change_pct": 873
     },
     "microsoft/azure-skills/azure-storage": {
       "id": "microsoft/azure-skills/azure-storage",
@@ -10806,8 +10778,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/microsoft/azure-skills/azure-storage/",
-      "weekly_installs": 7763,
-      "change_pct": 10
+      "weekly_installs": 75425,
+      "change_pct": 872
     },
     "microsoft/azure-skills/azure-upgrade": {
       "id": "microsoft/azure-skills/azure-upgrade",
@@ -10823,8 +10795,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/microsoft/azure-skills/azure-upgrade/",
-      "weekly_installs": 7809,
-      "change_pct": 5
+      "weekly_installs": 75417,
+      "change_pct": 866
     },
     "microsoft/azure-skills/azure-validate": {
       "id": "microsoft/azure-skills/azure-validate",
@@ -10840,8 +10812,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/microsoft/azure-skills/azure-validate/",
-      "weekly_installs": 7992,
-      "change_pct": 13
+      "weekly_installs": 75535,
+      "change_pct": 845
     },
     "microsoft/azure-skills/discover-azure-skills": {
       "id": "microsoft/azure-skills/discover-azure-skills",
@@ -10857,8 +10829,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/microsoft/azure-skills/discover-azure-skills/",
-      "weekly_installs": 7690,
-      "change_pct": 11
+      "weekly_installs": 75411,
+      "change_pct": 881
     },
     "microsoft/azure-skills/entra-agent-id": {
       "id": "microsoft/azure-skills/entra-agent-id",
@@ -10875,8 +10847,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/microsoft/azure-skills/entra-agent-id/",
-      "weekly_installs": 7699,
-      "change_pct": 11
+      "weekly_installs": 75403,
+      "change_pct": 879
     },
     "microsoft/azure-skills/entra-app-registration": {
       "id": "microsoft/azure-skills/entra-app-registration",
@@ -10893,8 +10865,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/microsoft/azure-skills/entra-app-registration/",
-      "weekly_installs": 7721,
-      "change_pct": 11
+      "weekly_installs": 75423,
+      "change_pct": 877
     },
     "microsoft/azure-skills/microsoft-foundry": {
       "id": "microsoft/azure-skills/microsoft-foundry",
@@ -10910,8 +10882,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/microsoft/azure-skills/microsoft-foundry/",
-      "weekly_installs": 8608,
-      "change_pct": 13
+      "weekly_installs": 75545,
+      "change_pct": 778
     },
     "microsoft/azure-skills/python-appservice-deploy": {
       "id": "microsoft/azure-skills/python-appservice-deploy",
@@ -10929,8 +10901,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/microsoft/azure-skills/python-appservice-deploy/",
-      "weekly_installs": 7703,
-      "change_pct": 11
+      "weekly_installs": 75414,
+      "change_pct": 879
     },
     "minimax-ai/skills/gif-sticker-maker": {
       "id": "minimax-ai/skills/gif-sticker-maker",
@@ -11071,8 +11043,8 @@
       "license": "Apache-2.0",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/neondatabase/agent-skills/neon/",
-      "weekly_installs": 18317,
-      "change_pct": -19
+      "weekly_installs": 7868,
+      "change_pct": -57
     },
     "neondatabase/agent-skills/neon-postgres": {
       "id": "neondatabase/agent-skills/neon-postgres",
@@ -11089,8 +11061,8 @@
       "license": "Apache-2.0",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/neondatabase/agent-skills/neon-postgres/",
-      "weekly_installs": 18319,
-      "change_pct": -20
+      "weekly_installs": 7902,
+      "change_pct": -57
     },
     "nextlevelbuilder/ui-ux-pro-max-skill/design": {
       "id": "nextlevelbuilder/ui-ux-pro-max-skill/design",
@@ -11138,8 +11110,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/nextlevelbuilder/ui-ux-pro-max-skill/ui-ux-pro-max/",
-      "weekly_installs": 14025,
-      "change_pct": 17
+      "weekly_installs": 12691,
+      "change_pct": -10
     },
     "nvidia/skills/digital-health-clinical-asr-build": {
       "id": "nvidia/skills/digital-health-clinical-asr-build",
@@ -11465,8 +11437,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/obra/superpowers/brainstorming/",
-      "weekly_installs": 8117,
-      "change_pct": -9
+      "weekly_installs": 8169,
+      "change_pct": 1
     },
     "obra/superpowers/dispatching-parallel-agents": {
       "id": "obra/superpowers/dispatching-parallel-agents",
@@ -11482,8 +11454,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/obra/superpowers/dispatching-parallel-agents/",
-      "weekly_installs": 5258,
-      "change_pct": -8
+      "weekly_installs": 5865,
+      "change_pct": 12
     },
     "obra/superpowers/executing-plans": {
       "id": "obra/superpowers/executing-plans",
@@ -11499,8 +11471,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/obra/superpowers/executing-plans/",
-      "weekly_installs": 6016,
-      "change_pct": -10
+      "weekly_installs": 6292,
+      "change_pct": 5
     },
     "obra/superpowers/finishing-a-development-branch": {
       "id": "obra/superpowers/finishing-a-development-branch",
@@ -11516,8 +11488,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/obra/superpowers/finishing-a-development-branch/",
-      "weekly_installs": 5296,
-      "change_pct": -7
+      "weekly_installs": 5899,
+      "change_pct": 11
     },
     "obra/superpowers/receiving-code-review": {
       "id": "obra/superpowers/receiving-code-review",
@@ -11533,8 +11505,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/obra/superpowers/receiving-code-review/",
-      "weekly_installs": 5544,
-      "change_pct": -6
+      "weekly_installs": 6118,
+      "change_pct": 10
     },
     "obra/superpowers/requesting-code-review": {
       "id": "obra/superpowers/requesting-code-review",
@@ -11550,8 +11522,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/obra/superpowers/requesting-code-review/",
-      "weekly_installs": 5994,
-      "change_pct": -7
+      "weekly_installs": 6472,
+      "change_pct": 8
     },
     "obra/superpowers/subagent-driven-development": {
       "id": "obra/superpowers/subagent-driven-development",
@@ -11567,8 +11539,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/obra/superpowers/subagent-driven-development/",
-      "weekly_installs": 5982,
-      "change_pct": -10
+      "weekly_installs": 6232,
+      "change_pct": 4
     },
     "obra/superpowers/systematic-debugging": {
       "id": "obra/superpowers/systematic-debugging",
@@ -11582,8 +11554,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/obra/superpowers/systematic-debugging/",
-      "weekly_installs": 8558,
-      "change_pct": -8
+      "weekly_installs": 8867,
+      "change_pct": 4
     },
     "obra/superpowers/test-driven-development": {
       "id": "obra/superpowers/test-driven-development",
@@ -11600,8 +11572,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/obra/superpowers/test-driven-development/",
-      "weekly_installs": 6482,
-      "change_pct": -4
+      "weekly_installs": 6928,
+      "change_pct": 7
     },
     "obra/superpowers/using-git-worktrees": {
       "id": "obra/superpowers/using-git-worktrees",
@@ -11617,8 +11589,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/obra/superpowers/using-git-worktrees/",
-      "weekly_installs": 5316,
-      "change_pct": -7
+      "weekly_installs": 5928,
+      "change_pct": 12
     },
     "obra/superpowers/using-superpowers": {
       "id": "obra/superpowers/using-superpowers",
@@ -11634,8 +11606,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/obra/superpowers/using-superpowers/",
-      "weekly_installs": 5396,
-      "change_pct": -2
+      "weekly_installs": 5954,
+      "change_pct": 10
     },
     "obra/superpowers/verification-before-completion": {
       "id": "obra/superpowers/verification-before-completion",
@@ -11649,8 +11621,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/obra/superpowers/verification-before-completion/",
-      "weekly_installs": 7960,
-      "change_pct": -7
+      "weekly_installs": 8085,
+      "change_pct": 2
     },
     "obra/superpowers/writing-plans": {
       "id": "obra/superpowers/writing-plans",
@@ -11664,8 +11636,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/obra/superpowers/writing-plans/",
-      "weekly_installs": 6521,
-      "change_pct": -7
+      "weekly_installs": 6981,
+      "change_pct": 7
     },
     "obra/superpowers/writing-skills": {
       "id": "obra/superpowers/writing-skills",
@@ -11681,8 +11653,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/obra/superpowers/writing-skills/",
-      "weekly_installs": 5560,
-      "change_pct": -9
+      "weekly_installs": 5827,
+      "change_pct": 5
     },
     "openai/skills/figma-code-connect-components": {
       "id": "openai/skills/figma-code-connect-components",
@@ -11776,8 +11748,8 @@
       "license": "Apache-2.0",
       "cost_lane": "free-with-service",
       "listing": "https://suedeai.directory/pbakaus/impeccable/impeccable/",
-      "weekly_installs": 18109,
-      "change_pct": 1
+      "weekly_installs": 15779,
+      "change_pct": -13
     },
     "phuryn/pm-skills/draft-nda": {
       "id": "phuryn/pm-skills/draft-nda",
@@ -12174,8 +12146,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/stripe/ai/stripe-best-practices/",
-      "weekly_installs": 2130,
-      "change_pct": -11
+      "weekly_installs": 1187,
+      "change_pct": -44
     },
     "stripe/ai/stripe-pay": {
       "id": "stripe/ai/stripe-pay",
@@ -12207,8 +12179,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/stripe/ai/#stripe-projects",
-      "weekly_installs": 876,
-      "change_pct": -11
+      "weekly_installs": 734,
+      "change_pct": -16
     },
     "stripe/ai/upgrade-stripe": {
       "id": "stripe/ai/upgrade-stripe",
@@ -12226,8 +12198,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/stripe/ai/#upgrade-stripe",
-      "weekly_installs": 1269,
-      "change_pct": 1
+      "weekly_installs": 870,
+      "change_pct": -31
     },
     "supabase/agent-skills/supabase": {
       "id": "supabase/agent-skills/supabase",
@@ -12244,8 +12216,8 @@
       "license": "MIT",
       "cost_lane": "free-with-service",
       "listing": "https://suedeai.directory/supabase/agent-skills/supabase/",
-      "weekly_installs": 9462,
-      "change_pct": -17
+      "weekly_installs": 6938,
+      "change_pct": -27
     },
     "supabase/agent-skills/supabase-postgres-best-practices": {
       "id": "supabase/agent-skills/supabase-postgres-best-practices",
@@ -12262,8 +12234,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/supabase/agent-skills/supabase-postgres-best-practices/",
-      "weekly_installs": 9359,
-      "change_pct": -8
+      "weekly_installs": 8672,
+      "change_pct": -7
     },
     "tjboudreaux/cc-thinking-skills/thinking-thought-experiment": {
       "id": "tjboudreaux/cc-thinking-skills/thinking-thought-experiment",
@@ -12877,8 +12849,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/tt-a1i/archify/archify/",
-      "weekly_installs": 11897,
-      "change_pct": -13
+      "weekly_installs": 3645,
+      "change_pct": -69
     },
     "veniceai/skills/venice-audio-music": {
       "id": "veniceai/skills/venice-audio-music",
@@ -12958,8 +12930,8 @@
       "license": "Apache-2.0",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/vercel-labs/agent-browser/agent-browser/",
-      "weekly_installs": 86942,
-      "change_pct": 10
+      "weekly_installs": 103297,
+      "change_pct": 19
     },
     "vercel-labs/agent-skills/vercel-cli-with-tokens": {
       "id": "vercel-labs/agent-skills/vercel-cli-with-tokens",
@@ -12976,8 +12948,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/vercel-labs/agent-skills/vercel-cli-with-tokens/",
-      "weekly_installs": 7332,
-      "change_pct": -9
+      "weekly_installs": 6460,
+      "change_pct": -12
     },
     "vercel-labs/agent-skills/vercel-composition-patterns": {
       "id": "vercel-labs/agent-skills/vercel-composition-patterns",
@@ -12993,8 +12965,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/vercel-labs/agent-skills/vercel-composition-patterns/",
-      "weekly_installs": 14209,
-      "change_pct": -8
+      "weekly_installs": 12446,
+      "change_pct": -12
     },
     "vercel-labs/agent-skills/vercel-optimize": {
       "id": "vercel-labs/agent-skills/vercel-optimize",
@@ -13010,8 +12982,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/vercel-labs/agent-skills/vercel-optimize/",
-      "weekly_installs": 7746,
-      "change_pct": -9
+      "weekly_installs": 6811,
+      "change_pct": -12
     },
     "vercel-labs/agent-skills/vercel-react-best-practices": {
       "id": "vercel-labs/agent-skills/vercel-react-best-practices",
@@ -13027,8 +12999,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/vercel-labs/agent-skills/vercel-react-best-practices/",
-      "weekly_installs": 22802,
-      "change_pct": -3
+      "weekly_installs": 20702,
+      "change_pct": -9
     },
     "vercel-labs/agent-skills/vercel-react-native-skills": {
       "id": "vercel-labs/agent-skills/vercel-react-native-skills",
@@ -13044,8 +13016,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/vercel-labs/agent-skills/vercel-react-native-skills/",
-      "weekly_installs": 8654,
-      "change_pct": -8
+      "weekly_installs": 7700,
+      "change_pct": -11
     },
     "vercel-labs/agent-skills/vercel-react-view-transitions": {
       "id": "vercel-labs/agent-skills/vercel-react-view-transitions",
@@ -13061,8 +13033,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/vercel-labs/agent-skills/vercel-react-view-transitions/",
-      "weekly_installs": 9466,
-      "change_pct": -3
+      "weekly_installs": 7676,
+      "change_pct": -19
     },
     "vercel-labs/agent-skills/writing-guidelines": {
       "id": "vercel-labs/agent-skills/writing-guidelines",
@@ -13079,8 +13051,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/vercel-labs/agent-skills/writing-guidelines/",
-      "weekly_installs": 7940,
-      "change_pct": -9
+      "weekly_installs": 7063,
+      "change_pct": -11
     },
     "vercel-labs/skills/find-skills": {
       "id": "vercel-labs/skills/find-skills",
@@ -13096,23 +13068,8 @@
       "license": "MIT",
       "cost_lane": "free-open-source",
       "listing": "https://suedeai.directory/vercel-labs/skills/find-skills/",
-      "weekly_installs": 115285,
+      "weekly_installs": 110096,
       "change_pct": -5
-    },
-    "vercel/ai/ai-sdk": {
-      "id": "vercel/ai/ai-sdk",
-      "name": "ai-sdk",
-      "repo": "vercel/ai",
-      "description": "Answer questions about the AI SDK and help build AI-powered features. Use when developers: (1) Ask about AI SDK functions like generateText, streamText, ToolLoopAgent, embed, or tools, (2) Want to build AI agents, chatbo",
-      "score": 70,
-      "grade": "C",
-      "category": "developer-tools",
-      "topics": [],
-      "license": "Apache-2.0",
-      "cost_lane": "free-open-source",
-      "listing": "https://suedeai.directory/vercel/ai/ai-sdk/",
-      "weekly_installs": 1709,
-      "change_pct": 27
     },
     "wondelai/skills/contagious": {
       "id": "wondelai/skills/contagious",

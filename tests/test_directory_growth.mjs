@@ -227,6 +227,26 @@ test('breakout picks drop forks, old repos, duplicates and malware-style lures',
   assert.deepEqual(picked.map((r) => r.repo), ['f/top', 'a/real']);
   assert.equal(isLikelyLure({ full_name: 'x/cheat-loader', description: 'Undetected aimbot' }), true);
   assert.equal(isLikelyLure({ full_name: 'x/seo-skill', description: 'Agent skill for SEO audits' }), false);
+  assert.equal(isLikelyLure({ full_name: 'x/adobe-acrobat-pdf-desktop', description: 'Adobe Acrobat PDF 2026 desktop setup with text and image editing' }), true);
+  assert.equal(isLikelyLure({ full_name: 'x/photoshop-mcp', description: 'MCP server that drives Photoshop layers from Claude' }), false);
+});
+
+test('breakout picks drop clone campaigns: one repo name under several owners', () => {
+  const repo = (full_name, stars) => ({ full_name, stargazers_count: stars, html_url: `https://github.com/${full_name}`, created_at: '2026-11-10T00:00:00Z', description: 'Agent-native desktop app', fork: false, archived: false });
+  const picked = pickBreakouts([
+    repo('real/lot-map', 800), repo('spamA/GitHub-Copilot-app', 672), repo('spamB/GitHub-Copilot-app', 670),
+    repo('spamC/ai--manus2.0', 678), repo('spamD/AI--Manus2.0', 666),
+  ], { since: '2026-11-08' });
+  assert.deepEqual(picked.map((r) => r.repo), ['real/lot-map']);
+});
+
+test('breakout picks drop star-farmed families: same first word, near-identical stars, three or more owners', () => {
+  const repo = (full_name, stars) => ({ full_name, stargazers_count: stars, html_url: `https://github.com/${full_name}`, created_at: '2026-11-10T00:00:00Z', description: 'AI copilot for Blender', fork: false, archived: false });
+  const picked = pickBreakouts([
+    repo('a1987/blender-ai-copilot-flow', 387), repo('b1974/blender-ai-copilot-assets', 383), repo('c1988/Blender-AI-MCP-Studio', 382),
+    repo('d/claude-code-map', 900), repo('e/claude-code-voice', 300), repo('f/claude-code-tests', 120), repo('g/real-blender-tool', 50),
+  ], { since: '2026-11-08' });
+  assert.deepEqual(picked.map((r) => r.repo), ['d/claude-code-map', 'e/claude-code-voice', 'f/claude-code-tests', 'g/real-blender-tool']);
 });
 
 test('demand and tools scores follow the published thresholds', () => {
