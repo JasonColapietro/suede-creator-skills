@@ -1,0 +1,225 @@
+{
+  "schema_version": 1,
+  "repository": "Tencent/AI-Infra-Guard",
+  "listing_url": "https://skills.suedeai.ai/directory/tencent/ai-infra-guard/",
+  "snapshot": {
+    "date": "2026-10-22",
+    "id": "740bfd7230f74b149870dffa9c645b2b",
+    "dataset_sha256": "7af631c54b44d36718ed15f6a3fdbf0445b6a09f638bc05ce3093bca01ef0d02"
+  },
+  "listed_skill_count": 2,
+  "scope": "Skills listed by the directory; this is not a complete inventory of every file in the repository.",
+  "security_scan_status": "not_scanned",
+  "skills": [
+    {
+      "id": "tencent/ai-infra-guard/aig-scanner",
+      "name": "aig-scanner",
+      "description": "A.I.G Scanner — AI security scanning for infrastructure, AI tools / skills, AI Agents, and LLM jailbreak evaluation via Tencent Zhuque Lab AI-Infra-Guard. Uses built-in exec + Python script, no plugin required. Requires AIG_BASE_URL to be configured. Triggers on: scan AI service, AI vulnerability scan, scan AI infra, check CVE, audit AI service, scan MCP, scan skills, audit AI tools, scan agent, red-team LLM, jailbreak test, 扫描AI服务, 检查AI漏洞, 扫描AI工具, 检查MCP安全, 审计Agent, 越狱测试.",
+      "category": "security",
+      "license": "MIT",
+      "license_url": "https://github.com/Tencent/AI-Infra-Guard/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "8e715c3826878c9ae251b60e2fd4967a56048a71",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-16",
+        "skill_md_url": "https://github.com/Tencent/AI-Infra-Guard/blob/8e715c3826878c9ae251b60e2fd4967a56048a71/skills/aig-scanner/SKILL.md"
+      },
+      "quality": {
+        "score": 82,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/tencent/ai-infra-guard/aig-scanner/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/tencent/ai-infra-guard/aig-scanner/",
+      "source_folder_url": "https://github.com/Tencent/AI-Infra-Guard/tree/main/skills/aig-scanner",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/Tencent/AI-Infra-Guard/tree/main/skills/aig-scanner",
+        "publisher_setup_url": "https://github.com/Tencent/AI-Infra-Guard/blob/main/skills/aig-scanner/SKILL.md"
+      }
+    },
+    {
+      "id": "tencent/ai-infra-guard/edgeone-clawscan",
+      "name": "edgeone-clawscan",
+      "description": "The first security skill to install after setting up OpenClaw — powered by Tencent Zhuque Lab. Works like an antivirus for your AI environment: audits installed skills, scans skills before installation, and performs a full OpenClaw security health check to prevent data leaks and privacy risks. Backed by Tencent Zhuque Lab A.I.G (AI-Infra-Guard). Use when the user asks to start a security health check or security scan for the current OpenClaw environment, such as `开始安全体检`, `做一次安全体检`, `开始安全扫描`, `全面安全检查`, or `检查 OpenClaw 安全`; also use when the user asks to audit a specific skill before installation, review installed skills for supply chain risk, or investigate whether a skill is safe. Do not trigger for general OpenClaw usage, project debugging, environment setup, or normal development requests. Optional cloud mode: set AIG_CLOUD_LOOKUP=off for zero outbound HTTPS; when enabled, only skill_name, source label, and OpenClaw version are sent to A.I.G (never skill bodies, chats, or workspace files).",
+      "category": "security",
+      "license": "MIT",
+      "license_url": "https://github.com/Tencent/AI-Infra-Guard/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "8e715c3826878c9ae251b60e2fd4967a56048a71",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-16",
+        "skill_md_url": "https://github.com/Tencent/AI-Infra-Guard/blob/8e715c3826878c9ae251b60e2fd4967a56048a71/skills/edgeone-clawscan/SKILL.md"
+      },
+      "quality": {
+        "score": 62,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": false,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/tencent/ai-infra-guard/edgeone-clawscan/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/Tencent/AI-Infra-Guard/tree/main/skills/edgeone-clawscan",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/Tencent/AI-Infra-Guard/tree/main/skills/edgeone-clawscan",
+        "publisher_setup_url": "https://github.com/Tencent/AI-Infra-Guard/blob/main/skills/edgeone-clawscan/SKILL.md"
+      }
+    }
+  ]
+}

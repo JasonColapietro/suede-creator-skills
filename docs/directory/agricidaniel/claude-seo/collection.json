@@ -1,0 +1,3480 @@
+{
+  "schema_version": 1,
+  "repository": "AgriciDaniel/claude-seo",
+  "listing_url": "https://skills.suedeai.ai/directory/agricidaniel/claude-seo/",
+  "snapshot": {
+    "date": "2026-10-22",
+    "id": "740bfd7230f74b149870dffa9c645b2b",
+    "dataset_sha256": "7af631c54b44d36718ed15f6a3fdbf0445b6a09f638bc05ce3093bca01ef0d02"
+  },
+  "listed_skill_count": 33,
+  "scope": "Skills listed by the directory; this is not a complete inventory of every file in the repository.",
+  "security_scan_status": "not_scanned",
+  "skills": [
+    {
+      "id": "agricidaniel/claude-seo/seo",
+      "name": "seo",
+      "description": "Comprehensive SEO analysis for any website or business type. Full site audits, single-page analysis, technical SEO (crawlability, indexability, Core Web Vitals with INP), schema markup, content quality (E-E-A-T), image optimization, sitemap analysis, and GEO for AI Overviews/ChatGPT/Perplexity. Industry detection for SaaS, e-commerce, local, publishers, agencies. Triggers on: SEO, audit, schema, Core Web Vitals, sitemap, E-E-A-T, AI Overviews, GEO, technical SEO, content quality, page speed. Use this hub only when the SEO domain is clear and the requested workflow is not; otherwise use the exact retained leaf or command.",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/AgriciDaniel/claude-seo/blob/main/skills/seo/LICENSE.txt",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "4b99de2f7de7e7d5247042e5fb5b4ea9368ef734",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-05",
+        "skill_md_url": "https://github.com/AgriciDaniel/claude-seo/blob/4b99de2f7de7e7d5247042e5fb5b4ea9368ef734/skills/seo/SKILL.md"
+      },
+      "quality": {
+        "score": 81,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/agricidaniel/claude-seo/seo/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/agricidaniel/claude-seo/seo/",
+      "source_folder_url": "https://github.com/AgriciDaniel/claude-seo/tree/main/skills/seo",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/AgriciDaniel/claude-seo/tree/main/skills/seo",
+        "publisher_setup_url": "https://github.com/AgriciDaniel/claude-seo/blob/main/skills/seo/SKILL.md"
+      }
+    },
+    {
+      "id": "agricidaniel/claude-seo/seo-cluster",
+      "name": "seo-cluster",
+      "description": "Cluster keywords by SERP overlap and design hub-and-spoke content architecture with internal links. Use for planning only; use the blog-cluster command to execute article production.",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/AgriciDaniel/claude-seo/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "4b99de2f7de7e7d5247042e5fb5b4ea9368ef734",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-05",
+        "skill_md_url": "https://github.com/AgriciDaniel/claude-seo/blob/4b99de2f7de7e7d5247042e5fb5b4ea9368ef734/skills/seo-cluster/SKILL.md"
+      },
+      "quality": {
+        "score": 83,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/agricidaniel/claude-seo/seo-cluster/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/agricidaniel/claude-seo/seo-cluster/",
+      "source_folder_url": "https://github.com/AgriciDaniel/claude-seo/tree/main/skills/seo-cluster",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/AgriciDaniel/claude-seo/tree/main/skills/seo-cluster",
+        "publisher_setup_url": "https://github.com/AgriciDaniel/claude-seo/blob/main/skills/seo-cluster/SKILL.md"
+      }
+    },
+    {
+      "id": "agricidaniel/claude-seo/seo-content-brief",
+      "name": "seo-content-brief",
+      "description": "Generate competitive SEO content briefs with per-section word counts, competitor scoring, keyword density guidance, and page-type templates. Supports both new page briefs and improve-existing-page briefs. Use when user says \"content brief\", \"write a brief\", \"content outline\", \"blog brief\", \"service page brief\", \"brief for\", \"writing brief\", \"content plan\", or \"outline for\".",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/AgriciDaniel/claude-seo/blob/main/skills/seo-content-brief/LICENSE.txt",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "4b99de2f7de7e7d5247042e5fb5b4ea9368ef734",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-05",
+        "skill_md_url": "https://github.com/AgriciDaniel/claude-seo/blob/4b99de2f7de7e7d5247042e5fb5b4ea9368ef734/skills/seo-content-brief/SKILL.md"
+      },
+      "quality": {
+        "score": 86,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/agricidaniel/claude-seo/seo-content-brief/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/agricidaniel/claude-seo/seo-content-brief/",
+      "source_folder_url": "https://github.com/AgriciDaniel/claude-seo/tree/main/skills/seo-content-brief",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/AgriciDaniel/claude-seo/tree/main/skills/seo-content-brief",
+        "publisher_setup_url": "https://github.com/AgriciDaniel/claude-seo/blob/main/skills/seo-content-brief/SKILL.md"
+      }
+    },
+    {
+      "id": "agricidaniel/claude-seo/seo-dataforseo",
+      "name": "seo-dataforseo",
+      "description": "Live SEO data via DataForSEO MCP server: SERP analysis, keyword research (volume, difficulty, intent, trends), backlink profiles, on-page analysis, competitor and content analysis, business listings, AI visibility (LLM mention tracking), and domain analytics. Requires DataForSEO extension installed. Use when user says \"dataforseo\", \"live SERP\", \"keyword volume\", \"backlink data\", \"AI visibility check\", or \"real search data\".",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/AgriciDaniel/claude-seo/blob/main/skills/seo-dataforseo/LICENSE.txt",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "4b99de2f7de7e7d5247042e5fb5b4ea9368ef734",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-05",
+        "skill_md_url": "https://github.com/AgriciDaniel/claude-seo/blob/4b99de2f7de7e7d5247042e5fb5b4ea9368ef734/skills/seo-dataforseo/SKILL.md"
+      },
+      "quality": {
+        "score": 88,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/agricidaniel/claude-seo/seo-dataforseo/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/agricidaniel/claude-seo/seo-dataforseo/",
+      "source_folder_url": "https://github.com/AgriciDaniel/claude-seo/tree/main/skills/seo-dataforseo",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/AgriciDaniel/claude-seo/tree/main/skills/seo-dataforseo",
+        "publisher_setup_url": "https://github.com/AgriciDaniel/claude-seo/blob/main/skills/seo-dataforseo/SKILL.md"
+      }
+    },
+    {
+      "id": "agricidaniel/claude-seo/seo-drift",
+      "name": "seo-drift",
+      "description": "SEO drift monitoring: capture baselines of SEO-critical elements, detect changes, and track regressions over time. Git for SEO: baseline, diff, and track changes to your on-page SEO. Use when user says \"SEO drift\", \"baseline\", \"track changes\", \"did anything break\", \"SEO regression\", \"compare SEO\", \"before and after\", \"monitor SEO changes\", or \"deployment check\".",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/AgriciDaniel/claude-seo/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "4b99de2f7de7e7d5247042e5fb5b4ea9368ef734",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-05",
+        "skill_md_url": "https://github.com/AgriciDaniel/claude-seo/blob/4b99de2f7de7e7d5247042e5fb5b4ea9368ef734/skills/seo-drift/SKILL.md"
+      },
+      "quality": {
+        "score": 86,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/agricidaniel/claude-seo/seo-drift/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/agricidaniel/claude-seo/seo-drift/",
+      "source_folder_url": "https://github.com/AgriciDaniel/claude-seo/tree/main/skills/seo-drift",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/AgriciDaniel/claude-seo/tree/main/skills/seo-drift",
+        "publisher_setup_url": "https://github.com/AgriciDaniel/claude-seo/blob/main/skills/seo-drift/SKILL.md"
+      }
+    },
+    {
+      "id": "agricidaniel/claude-seo/seo-flow",
+      "name": "seo-flow",
+      "description": "FLOW framework integration: evidence-led SEO using the Find → Leverage → Optimize → Win loop. Surfaces stage-specific AI prompts from the FLOW knowledge base (41 prompts, CC BY 4.0). Use when user says \"FLOW\", \"FLOW framework\", \"seo flow\", \"evidence-led SEO\", \"find leverage optimize win\", or wants stage-specific SEO prompts.",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/AgriciDaniel/claude-seo/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "4b99de2f7de7e7d5247042e5fb5b4ea9368ef734",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-05",
+        "skill_md_url": "https://github.com/AgriciDaniel/claude-seo/blob/4b99de2f7de7e7d5247042e5fb5b4ea9368ef734/skills/seo-flow/SKILL.md"
+      },
+      "quality": {
+        "score": 86,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/agricidaniel/claude-seo/seo-flow/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/agricidaniel/claude-seo/seo-flow/",
+      "source_folder_url": "https://github.com/AgriciDaniel/claude-seo/tree/main/skills/seo-flow",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/AgriciDaniel/claude-seo/tree/main/skills/seo-flow",
+        "publisher_setup_url": "https://github.com/AgriciDaniel/claude-seo/blob/main/skills/seo-flow/SKILL.md"
+      }
+    },
+    {
+      "id": "agricidaniel/claude-seo/seo-google",
+      "name": "seo-google",
+      "description": "Google SEO APIs: Search Console (Search Analytics, URL Inspection, Sitemaps), PageSpeed Insights v5, CrUX field data with 25-week history, Indexing API v3, and GA4 organic traffic. Provides real Google field data for Core Web Vitals, indexation status, search performance, and organic traffic trends. Use when user says \"search console\", \"GSC\", \"PageSpeed\", \"CrUX\", \"field data\", \"indexing API\", \"GA4 organic\", \"URL inspection\", or \"real CWV data\".",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/AgriciDaniel/claude-seo/blob/main/skills/seo-google/LICENSE.txt",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "4b99de2f7de7e7d5247042e5fb5b4ea9368ef734",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-05",
+        "skill_md_url": "https://github.com/AgriciDaniel/claude-seo/blob/4b99de2f7de7e7d5247042e5fb5b4ea9368ef734/skills/seo-google/SKILL.md"
+      },
+      "quality": {
+        "score": 86,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/agricidaniel/claude-seo/seo-google/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/agricidaniel/claude-seo/seo-google/",
+      "source_folder_url": "https://github.com/AgriciDaniel/claude-seo/tree/main/skills/seo-google",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/AgriciDaniel/claude-seo/tree/main/skills/seo-google",
+        "publisher_setup_url": "https://github.com/AgriciDaniel/claude-seo/blob/main/skills/seo-google/SKILL.md"
+      }
+    },
+    {
+      "id": "agricidaniel/claude-seo/seo-hreflang",
+      "name": "seo-hreflang",
+      "description": "Hreflang and international SEO audit, validation, and generation. Detects common mistakes, validates language/region codes, and generates correct hreflang implementations. Use when user says \"hreflang\", \"i18n SEO\", \"international SEO\", \"multi-language\", \"multi-region\", or \"language tags\".",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/AgriciDaniel/claude-seo/blob/main/skills/seo-hreflang/LICENSE.txt",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "4b99de2f7de7e7d5247042e5fb5b4ea9368ef734",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-05",
+        "skill_md_url": "https://github.com/AgriciDaniel/claude-seo/blob/4b99de2f7de7e7d5247042e5fb5b4ea9368ef734/skills/seo-hreflang/SKILL.md"
+      },
+      "quality": {
+        "score": 86,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/agricidaniel/claude-seo/seo-hreflang/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/agricidaniel/claude-seo/seo-hreflang/",
+      "source_folder_url": "https://github.com/AgriciDaniel/claude-seo/tree/main/skills/seo-hreflang",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/AgriciDaniel/claude-seo/tree/main/skills/seo-hreflang",
+        "publisher_setup_url": "https://github.com/AgriciDaniel/claude-seo/blob/main/skills/seo-hreflang/SKILL.md"
+      }
+    },
+    {
+      "id": "agricidaniel/claude-seo/seo-image-gen",
+      "name": "seo-image-gen",
+      "description": "AI image generation for SEO assets: OG/social preview images, blog hero images, schema images, product photography, infographics. Powered by Gemini via nanobanana-mcp. Requires banana extension installed. Use when user says \"generate image\", \"OG image\", \"social preview\", \"hero image\", \"blog image\", \"product photo\", \"infographic\", \"seo image\", \"create visual\", \"image-gen\", \"favicon\", \"schema image\", \"pinterest pin\", \"generate visual\", \"banner\", or \"thumbnail\".",
+      "category": "media-creative",
+      "license": "MIT",
+      "license_url": "https://github.com/AgriciDaniel/claude-seo/blob/main/skills/seo-image-gen/LICENSE.txt",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "4b99de2f7de7e7d5247042e5fb5b4ea9368ef734",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-05",
+        "skill_md_url": "https://github.com/AgriciDaniel/claude-seo/blob/4b99de2f7de7e7d5247042e5fb5b4ea9368ef734/skills/seo-image-gen/SKILL.md"
+      },
+      "quality": {
+        "score": 88,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/agricidaniel/claude-seo/seo-image-gen/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/agricidaniel/claude-seo/seo-image-gen/",
+      "source_folder_url": "https://github.com/AgriciDaniel/claude-seo/tree/main/skills/seo-image-gen",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/AgriciDaniel/claude-seo/tree/main/skills/seo-image-gen",
+        "publisher_setup_url": "https://github.com/AgriciDaniel/claude-seo/blob/main/skills/seo-image-gen/SKILL.md"
+      }
+    },
+    {
+      "id": "agricidaniel/claude-seo/seo-plan",
+      "name": "seo-plan",
+      "description": "Strategic SEO planning for new or existing websites. Industry-specific templates, competitive analysis, content strategy, and implementation roadmap. Use when user says \"SEO plan\", \"SEO strategy\", \"SEO planning\", \"content strategy\", \"keyword strategy\", \"content calendar\", \"site architecture\", or \"SEO roadmap\".",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/AgriciDaniel/claude-seo/blob/main/skills/seo-plan/LICENSE.txt",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "4b99de2f7de7e7d5247042e5fb5b4ea9368ef734",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-05",
+        "skill_md_url": "https://github.com/AgriciDaniel/claude-seo/blob/4b99de2f7de7e7d5247042e5fb5b4ea9368ef734/skills/seo-plan/SKILL.md"
+      },
+      "quality": {
+        "score": 83,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/agricidaniel/claude-seo/seo-plan/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/agricidaniel/claude-seo/seo-plan/",
+      "source_folder_url": "https://github.com/AgriciDaniel/claude-seo/tree/main/skills/seo-plan",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/AgriciDaniel/claude-seo/tree/main/skills/seo-plan",
+        "publisher_setup_url": "https://github.com/AgriciDaniel/claude-seo/blob/main/skills/seo-plan/SKILL.md"
+      }
+    },
+    {
+      "id": "agricidaniel/claude-seo/seo-schema",
+      "name": "seo-schema",
+      "description": "Detect, validate, or generate Schema.org JSON-LD for a supplied page or entity. Use only when structured data or rich-result markup is requested.",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/AgriciDaniel/claude-seo/blob/main/skills/seo-schema/LICENSE.txt",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "4b99de2f7de7e7d5247042e5fb5b4ea9368ef734",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-05",
+        "skill_md_url": "https://github.com/AgriciDaniel/claude-seo/blob/4b99de2f7de7e7d5247042e5fb5b4ea9368ef734/skills/seo-schema/SKILL.md"
+      },
+      "quality": {
+        "score": 81,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/agricidaniel/claude-seo/seo-schema/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/agricidaniel/claude-seo/seo-schema/",
+      "source_folder_url": "https://github.com/AgriciDaniel/claude-seo/tree/main/skills/seo-schema",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/AgriciDaniel/claude-seo/tree/main/skills/seo-schema",
+        "publisher_setup_url": "https://github.com/AgriciDaniel/claude-seo/blob/main/skills/seo-schema/SKILL.md"
+      }
+    },
+    {
+      "id": "agricidaniel/claude-seo/seo-sxo",
+      "name": "seo-sxo",
+      "description": "Diagnose search-experience and intent mismatches using SERP page types, user stories, and persona scoring. Use when ranking problems appear intent- or layout-driven.",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/AgriciDaniel/claude-seo/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "4b99de2f7de7e7d5247042e5fb5b4ea9368ef734",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-05",
+        "skill_md_url": "https://github.com/AgriciDaniel/claude-seo/blob/4b99de2f7de7e7d5247042e5fb5b4ea9368ef734/skills/seo-sxo/SKILL.md"
+      },
+      "quality": {
+        "score": 83,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/agricidaniel/claude-seo/seo-sxo/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/agricidaniel/claude-seo/seo-sxo/",
+      "source_folder_url": "https://github.com/AgriciDaniel/claude-seo/tree/main/skills/seo-sxo",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/AgriciDaniel/claude-seo/tree/main/skills/seo-sxo",
+        "publisher_setup_url": "https://github.com/AgriciDaniel/claude-seo/blob/main/skills/seo-sxo/SKILL.md"
+      }
+    },
+    {
+      "id": "agricidaniel/claude-seo/seo-agentic",
+      "name": "seo-agentic",
+      "description": "Audit and fix agent readiness: the Lighthouse Agentic Browsing fraction, accessibility tree for agents, robots.txt and Content-Signal for AI agents, WAF treatment of agent traffic, llms.txt, Markdown delivery, ai-catalog.json, /.well-known discovery files, and WebMCP tools. Exclude AI citability and brand signals (seo-geo) and commerce protocol depth (seo-ecommerce).",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/AgriciDaniel/claude-seo/blob/main/skills/seo-agentic/LICENSE.txt",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "4b99de2f7de7e7d5247042e5fb5b4ea9368ef734",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-05",
+        "skill_md_url": "https://github.com/AgriciDaniel/claude-seo/blob/4b99de2f7de7e7d5247042e5fb5b4ea9368ef734/skills/seo-agentic/SKILL.md"
+      },
+      "quality": {
+        "score": 75,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/agricidaniel/claude-seo/seo-agentic/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/AgriciDaniel/claude-seo/tree/main/skills/seo-agentic",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/AgriciDaniel/claude-seo/tree/main/skills/seo-agentic",
+        "publisher_setup_url": "https://github.com/AgriciDaniel/claude-seo/blob/main/skills/seo-agentic/SKILL.md"
+      }
+    },
+    {
+      "id": "agricidaniel/claude-seo/seo-ahrefs",
+      "name": "seo-ahrefs",
+      "description": "Ahrefs API analyst (extension). Reads referring domains, backlinks, organic keywords, and content explorer data via the tested @ahrefs/mcp@0.0.11 server. Pairs with seo-backlinks for multi-source confidence weighting.",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/AgriciDaniel/claude-seo/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "4b99de2f7de7e7d5247042e5fb5b4ea9368ef734",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-05",
+        "skill_md_url": "https://github.com/AgriciDaniel/claude-seo/blob/4b99de2f7de7e7d5247042e5fb5b4ea9368ef734/extensions/ahrefs/skills/seo-ahrefs/SKILL.md"
+      },
+      "quality": {
+        "score": 71,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/agricidaniel/claude-seo/seo-ahrefs/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/AgriciDaniel/claude-seo/tree/main/extensions/ahrefs/skills/seo-ahrefs",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/AgriciDaniel/claude-seo/tree/main/extensions/ahrefs/skills/seo-ahrefs",
+        "publisher_setup_url": "https://github.com/AgriciDaniel/claude-seo/blob/main/extensions/ahrefs/skills/seo-ahrefs/SKILL.md"
+      }
+    },
+    {
+      "id": "agricidaniel/claude-seo/seo-audit",
+      "name": "seo-audit",
+      "description": "Run a full-site SEO audit and return a scored, prioritized report. Use only for site-wide checks; use seo-page for one URL or seo-technical for a technical-only review.",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/AgriciDaniel/claude-seo/blob/main/skills/seo-audit/LICENSE.txt",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "4b99de2f7de7e7d5247042e5fb5b4ea9368ef734",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-05",
+        "skill_md_url": "https://github.com/AgriciDaniel/claude-seo/blob/4b99de2f7de7e7d5247042e5fb5b4ea9368ef734/skills/seo-audit/SKILL.md"
+      },
+      "quality": {
+        "score": 72,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/agricidaniel/claude-seo/seo-audit/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/AgriciDaniel/claude-seo/tree/main/skills/seo-audit",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/AgriciDaniel/claude-seo/tree/main/skills/seo-audit",
+        "publisher_setup_url": "https://github.com/AgriciDaniel/claude-seo/blob/main/skills/seo-audit/SKILL.md"
+      }
+    },
+    {
+      "id": "agricidaniel/claude-seo/seo-backlinks",
+      "name": "seo-backlinks",
+      "description": "Analyze a site's backlink profile, anchors, toxic signals, competitors, gaps, and disavow candidates. Use only when links or referring domains are the requested focus.",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/AgriciDaniel/claude-seo/blob/main/skills/seo-backlinks/LICENSE.txt",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "4b99de2f7de7e7d5247042e5fb5b4ea9368ef734",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-05",
+        "skill_md_url": "https://github.com/AgriciDaniel/claude-seo/blob/4b99de2f7de7e7d5247042e5fb5b4ea9368ef734/skills/seo-backlinks/SKILL.md"
+      },
+      "quality": {
+        "score": 82,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/agricidaniel/claude-seo/seo-backlinks/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/AgriciDaniel/claude-seo/tree/main/skills/seo-backlinks",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/AgriciDaniel/claude-seo/tree/main/skills/seo-backlinks",
+        "publisher_setup_url": "https://github.com/AgriciDaniel/claude-seo/blob/main/skills/seo-backlinks/SKILL.md"
+      }
+    },
+    {
+      "id": "agricidaniel/claude-seo/seo-bing",
+      "name": "seo-bing",
+      "description": "Bing Webmaster Tools + IndexNow extension. Microsoft Copilot citations are fed by the Bing index; this skill makes Bing visibility, link data, and IndexNow URL submission first-class.",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/AgriciDaniel/claude-seo/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "4b99de2f7de7e7d5247042e5fb5b4ea9368ef734",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-05",
+        "skill_md_url": "https://github.com/AgriciDaniel/claude-seo/blob/4b99de2f7de7e7d5247042e5fb5b4ea9368ef734/extensions/bing-webmaster/skills/seo-bing/SKILL.md"
+      },
+      "quality": {
+        "score": 68,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/agricidaniel/claude-seo/seo-bing/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/AgriciDaniel/claude-seo/tree/main/extensions/bing-webmaster/skills/seo-bing",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/AgriciDaniel/claude-seo/tree/main/extensions/bing-webmaster/skills/seo-bing",
+        "publisher_setup_url": "https://github.com/AgriciDaniel/claude-seo/blob/main/extensions/bing-webmaster/skills/seo-bing/SKILL.md"
+      }
+    },
+    {
+      "id": "agricidaniel/claude-seo/seo-competitor-pages",
+      "name": "seo-competitor-pages",
+      "description": "Generate SEO-optimized competitor comparison and alternatives pages. Covers \"X vs Y\" layouts, \"alternatives to X\" pages, feature matrices, schema markup, and conversion optimization. Use when user says \"comparison page\", \"vs page\", \"alternatives page\", \"competitor comparison\", \"X vs Y\", \"versus\", \"compare competitors\", or \"alternative to\".",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/AgriciDaniel/claude-seo/blob/main/skills/seo-competitor-pages/LICENSE.txt",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "4b99de2f7de7e7d5247042e5fb5b4ea9368ef734",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-05",
+        "skill_md_url": "https://github.com/AgriciDaniel/claude-seo/blob/4b99de2f7de7e7d5247042e5fb5b4ea9368ef734/skills/seo-competitor-pages/SKILL.md"
+      },
+      "quality": {
+        "score": 83,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/agricidaniel/claude-seo/seo-competitor-pages/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/AgriciDaniel/claude-seo/tree/main/skills/seo-competitor-pages",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/AgriciDaniel/claude-seo/tree/main/skills/seo-competitor-pages",
+        "publisher_setup_url": "https://github.com/AgriciDaniel/claude-seo/blob/main/skills/seo-competitor-pages/SKILL.md"
+      }
+    },
+    {
+      "id": "agricidaniel/claude-seo/seo-content",
+      "name": "seo-content",
+      "description": "Evaluate page content for usefulness, E-E-A-T, readability, thinness, and AI citation readiness, plus last-mile draft cleanup (AI-typical phrasing and invisible Unicode watermark characters). Use for content-only analysis, not full-page technical checks.",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/AgriciDaniel/claude-seo/blob/main/skills/seo-content/LICENSE.txt",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "4b99de2f7de7e7d5247042e5fb5b4ea9368ef734",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-05",
+        "skill_md_url": "https://github.com/AgriciDaniel/claude-seo/blob/4b99de2f7de7e7d5247042e5fb5b4ea9368ef734/skills/seo-content/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/agricidaniel/claude-seo/seo-content/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/AgriciDaniel/claude-seo/tree/main/skills/seo-content",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/AgriciDaniel/claude-seo/tree/main/skills/seo-content",
+        "publisher_setup_url": "https://github.com/AgriciDaniel/claude-seo/blob/main/skills/seo-content/SKILL.md"
+      }
+    },
+    {
+      "id": "agricidaniel/claude-seo/seo-ecommerce",
+      "name": "seo-ecommerce",
+      "description": "Analyze ecommerce SEO across product pages, product schema, Shopping visibility, marketplace signals, and keyword gaps. Use only for stores, catalogs, or product listings.",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/AgriciDaniel/claude-seo/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "4b99de2f7de7e7d5247042e5fb5b4ea9368ef734",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-05",
+        "skill_md_url": "https://github.com/AgriciDaniel/claude-seo/blob/4b99de2f7de7e7d5247042e5fb5b4ea9368ef734/skills/seo-ecommerce/SKILL.md"
+      },
+      "quality": {
+        "score": 77,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/agricidaniel/claude-seo/seo-ecommerce/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/AgriciDaniel/claude-seo/tree/main/skills/seo-ecommerce",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/AgriciDaniel/claude-seo/tree/main/skills/seo-ecommerce",
+        "publisher_setup_url": "https://github.com/AgriciDaniel/claude-seo/blob/main/skills/seo-ecommerce/SKILL.md"
+      }
+    },
+    {
+      "id": "agricidaniel/claude-seo/seo-firecrawl",
+      "name": "seo-firecrawl",
+      "description": "Full-site crawling, scraping, and site mapping via Firecrawl MCP. Use when user says \"crawl site\", \"map site\", \"full crawl\", \"find all pages\", \"broken links\", \"site structure\", \"discover pages\", \"JS rendering\", or needs site-wide analysis.",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/AgriciDaniel/claude-seo/blob/main/extensions/firecrawl/skills/seo-firecrawl/LICENSE.txt",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "4b99de2f7de7e7d5247042e5fb5b4ea9368ef734",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-05",
+        "skill_md_url": "https://github.com/AgriciDaniel/claude-seo/blob/4b99de2f7de7e7d5247042e5fb5b4ea9368ef734/extensions/firecrawl/skills/seo-firecrawl/SKILL.md"
+      },
+      "quality": {
+        "score": 85,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/agricidaniel/claude-seo/seo-firecrawl/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/AgriciDaniel/claude-seo/tree/main/extensions/firecrawl/skills/seo-firecrawl",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/AgriciDaniel/claude-seo/tree/main/extensions/firecrawl/skills/seo-firecrawl",
+        "publisher_setup_url": "https://github.com/AgriciDaniel/claude-seo/blob/main/extensions/firecrawl/skills/seo-firecrawl/SKILL.md"
+      }
+    },
+    {
+      "id": "agricidaniel/claude-seo/seo-geo",
+      "name": "seo-geo",
+      "description": "Audit and improve content for AI Overviews and answer engines, including citability, entity clarity, crawler access, brand signals, and passage structure.",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/AgriciDaniel/claude-seo/blob/main/skills/seo-geo/LICENSE.txt",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "4b99de2f7de7e7d5247042e5fb5b4ea9368ef734",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-05",
+        "skill_md_url": "https://github.com/AgriciDaniel/claude-seo/blob/4b99de2f7de7e7d5247042e5fb5b4ea9368ef734/skills/seo-geo/SKILL.md"
+      },
+      "quality": {
+        "score": 72,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/agricidaniel/claude-seo/seo-geo/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/AgriciDaniel/claude-seo/tree/main/skills/seo-geo",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/AgriciDaniel/claude-seo/tree/main/skills/seo-geo",
+        "publisher_setup_url": "https://github.com/AgriciDaniel/claude-seo/blob/main/skills/seo-geo/SKILL.md"
+      }
+    },
+    {
+      "id": "agricidaniel/claude-seo/seo-images",
+      "name": "seo-images",
+      "description": "Image optimization analysis for SEO and performance. Checks alt text, file sizes, formats, responsive images, lazy loading, CLS prevention, image SERP rankings (via DataForSEO), and image file optimization (WebP/AVIF conversion, IPTC/XMP metadata injection). Use when user says \"image optimization\", \"alt text\", \"image SEO\", \"image size\", \"image audit\", \"optimize images\", \"image metadata\", \"image SERP\", \"convert to webp\", or \"image file optimize\".",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/AgriciDaniel/claude-seo/blob/main/skills/seo-images/LICENSE.txt",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "4b99de2f7de7e7d5247042e5fb5b4ea9368ef734",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-05",
+        "skill_md_url": "https://github.com/AgriciDaniel/claude-seo/blob/4b99de2f7de7e7d5247042e5fb5b4ea9368ef734/skills/seo-images/SKILL.md"
+      },
+      "quality": {
+        "score": 83,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/agricidaniel/claude-seo/seo-images/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/AgriciDaniel/claude-seo/tree/main/skills/seo-images",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/AgriciDaniel/claude-seo/tree/main/skills/seo-images",
+        "publisher_setup_url": "https://github.com/AgriciDaniel/claude-seo/blob/main/skills/seo-images/SKILL.md"
+      }
+    },
+    {
+      "id": "agricidaniel/claude-seo/seo-local",
+      "name": "seo-local",
+      "description": "Audit local SEO, including Google Business Profile, NAP consistency, citations, reviews, local schema, location pages, and multi-location structure.",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/AgriciDaniel/claude-seo/blob/main/skills/seo-local/LICENSE.txt",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "4b99de2f7de7e7d5247042e5fb5b4ea9368ef734",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-05",
+        "skill_md_url": "https://github.com/AgriciDaniel/claude-seo/blob/4b99de2f7de7e7d5247042e5fb5b4ea9368ef734/skills/seo-local/SKILL.md"
+      },
+      "quality": {
+        "score": 70,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/agricidaniel/claude-seo/seo-local/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/AgriciDaniel/claude-seo/tree/main/skills/seo-local",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/AgriciDaniel/claude-seo/tree/main/skills/seo-local",
+        "publisher_setup_url": "https://github.com/AgriciDaniel/claude-seo/blob/main/skills/seo-local/SKILL.md"
+      }
+    },
+    {
+      "id": "agricidaniel/claude-seo/seo-maps",
+      "name": "seo-maps",
+      "description": "Maps intelligence for local SEO: geo-grid rank tracking, GBP profile auditing via API, review intelligence across Google/Tripadvisor/Trustpilot, cross-platform NAP verification, competitor radius mapping, and LocalBusiness schema generation. Three tiers: free (Overpass + Geoapify), DataForSEO, and DataForSEO + Google. Use when user says \"maps\", \"geo-grid\", \"rank tracking\", \"GBP audit\", \"review velocity\", \"competitor radius\", or \"SoLV\".",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/AgriciDaniel/claude-seo/blob/main/skills/seo-maps/LICENSE.txt",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "4b99de2f7de7e7d5247042e5fb5b4ea9368ef734",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-05",
+        "skill_md_url": "https://github.com/AgriciDaniel/claude-seo/blob/4b99de2f7de7e7d5247042e5fb5b4ea9368ef734/skills/seo-maps/SKILL.md"
+      },
+      "quality": {
+        "score": 85,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/agricidaniel/claude-seo/seo-maps/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/AgriciDaniel/claude-seo/tree/main/skills/seo-maps",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/AgriciDaniel/claude-seo/tree/main/skills/seo-maps",
+        "publisher_setup_url": "https://github.com/AgriciDaniel/claude-seo/blob/main/skills/seo-maps/SKILL.md"
+      }
+    },
+    {
+      "id": "agricidaniel/claude-seo/seo-matomo",
+      "name": "seo-matomo",
+      "description": "Matomo Reporting API extension. Self-hosted or Matomo Cloud analytics as a GA4 alternative or complement. Organic traffic, landing pages, device / country breakdowns, referrers, search keywords. Triggers on \"Matomo\", \"self-hosted analytics\", \"analytics ohne Google\", \"GA4 alternative\", \"Matomo Reporting\", \"Piwik\".",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/AgriciDaniel/claude-seo/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "4b99de2f7de7e7d5247042e5fb5b4ea9368ef734",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-05",
+        "skill_md_url": "https://github.com/AgriciDaniel/claude-seo/blob/4b99de2f7de7e7d5247042e5fb5b4ea9368ef734/extensions/matomo/skills/seo-matomo/SKILL.md"
+      },
+      "quality": {
+        "score": 85,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/agricidaniel/claude-seo/seo-matomo/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/AgriciDaniel/claude-seo/tree/main/extensions/matomo/skills/seo-matomo",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/AgriciDaniel/claude-seo/tree/main/extensions/matomo/skills/seo-matomo",
+        "publisher_setup_url": "https://github.com/AgriciDaniel/claude-seo/blob/main/extensions/matomo/skills/seo-matomo/SKILL.md"
+      }
+    },
+    {
+      "id": "agricidaniel/claude-seo/seo-page",
+      "name": "seo-page",
+      "description": "Analyze one supplied URL across on-page, content, technical metadata, schema, images, and performance. Use only for a single-page review.",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/AgriciDaniel/claude-seo/blob/main/skills/seo-page/LICENSE.txt",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "4b99de2f7de7e7d5247042e5fb5b4ea9368ef734",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-05",
+        "skill_md_url": "https://github.com/AgriciDaniel/claude-seo/blob/4b99de2f7de7e7d5247042e5fb5b4ea9368ef734/skills/seo-page/SKILL.md"
+      },
+      "quality": {
+        "score": 70,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/agricidaniel/claude-seo/seo-page/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/AgriciDaniel/claude-seo/tree/main/skills/seo-page",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/AgriciDaniel/claude-seo/tree/main/skills/seo-page",
+        "publisher_setup_url": "https://github.com/AgriciDaniel/claude-seo/blob/main/skills/seo-page/SKILL.md"
+      }
+    },
+    {
+      "id": "agricidaniel/claude-seo/seo-profound",
+      "name": "seo-profound",
+      "description": "Profound LLM citation tracker (extension). Time-series brand citation rates across ChatGPT, Perplexity, and other LLMs. Pairs with seo-seranking for triangulated AI visibility coverage.",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/AgriciDaniel/claude-seo/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "4b99de2f7de7e7d5247042e5fb5b4ea9368ef734",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-05",
+        "skill_md_url": "https://github.com/AgriciDaniel/claude-seo/blob/4b99de2f7de7e7d5247042e5fb5b4ea9368ef734/extensions/profound/skills/seo-profound/SKILL.md"
+      },
+      "quality": {
+        "score": 68,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/agricidaniel/claude-seo/seo-profound/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/AgriciDaniel/claude-seo/tree/main/extensions/profound/skills/seo-profound",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/AgriciDaniel/claude-seo/tree/main/extensions/profound/skills/seo-profound",
+        "publisher_setup_url": "https://github.com/AgriciDaniel/claude-seo/blob/main/extensions/profound/skills/seo-profound/SKILL.md"
+      }
+    },
+    {
+      "id": "agricidaniel/claude-seo/seo-programmatic",
+      "name": "seo-programmatic",
+      "description": "Programmatic SEO planning and analysis for pages generated at scale from data sources. Covers template engines, URL patterns, internal linking automation, thin content safeguards, and index bloat prevention. Use when user says \"programmatic SEO\", \"pages at scale\", \"dynamic pages\", \"template pages\", \"generated pages\", or \"data-driven SEO\".",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/AgriciDaniel/claude-seo/blob/main/skills/seo-programmatic/LICENSE.txt",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "4b99de2f7de7e7d5247042e5fb5b4ea9368ef734",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-05",
+        "skill_md_url": "https://github.com/AgriciDaniel/claude-seo/blob/4b99de2f7de7e7d5247042e5fb5b4ea9368ef734/skills/seo-programmatic/SKILL.md"
+      },
+      "quality": {
+        "score": 83,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/agricidaniel/claude-seo/seo-programmatic/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/AgriciDaniel/claude-seo/tree/main/skills/seo-programmatic",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/AgriciDaniel/claude-seo/tree/main/skills/seo-programmatic",
+        "publisher_setup_url": "https://github.com/AgriciDaniel/claude-seo/blob/main/skills/seo-programmatic/SKILL.md"
+      }
+    },
+    {
+      "id": "agricidaniel/claude-seo/seo-seranking",
+      "name": "seo-seranking",
+      "description": "SE Ranking AI visibility analyst (extension). Tracks AI Share-of-Voice across ChatGPT, Gemini, Perplexity, AI Overviews, and AI Mode in a single query.",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/AgriciDaniel/claude-seo/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "4b99de2f7de7e7d5247042e5fb5b4ea9368ef734",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-05",
+        "skill_md_url": "https://github.com/AgriciDaniel/claude-seo/blob/4b99de2f7de7e7d5247042e5fb5b4ea9368ef734/extensions/seranking/skills/seo-seranking/SKILL.md"
+      },
+      "quality": {
+        "score": 71,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/agricidaniel/claude-seo/seo-seranking/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/AgriciDaniel/claude-seo/tree/main/extensions/seranking/skills/seo-seranking",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/AgriciDaniel/claude-seo/tree/main/extensions/seranking/skills/seo-seranking",
+        "publisher_setup_url": "https://github.com/AgriciDaniel/claude-seo/blob/main/extensions/seranking/skills/seo-seranking/SKILL.md"
+      }
+    },
+    {
+      "id": "agricidaniel/claude-seo/seo-sitemap",
+      "name": "seo-sitemap",
+      "description": "Analyze existing XML sitemaps or generate new ones with industry templates. Validates format, URLs, and structure. Use when user says \"sitemap\", \"generate sitemap\", \"sitemap issues\", or \"XML sitemap\".",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/AgriciDaniel/claude-seo/blob/main/skills/seo-sitemap/LICENSE.txt",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "4b99de2f7de7e7d5247042e5fb5b4ea9368ef734",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-05",
+        "skill_md_url": "https://github.com/AgriciDaniel/claude-seo/blob/4b99de2f7de7e7d5247042e5fb5b4ea9368ef734/skills/seo-sitemap/SKILL.md"
+      },
+      "quality": {
+        "score": 83,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/agricidaniel/claude-seo/seo-sitemap/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/AgriciDaniel/claude-seo/tree/main/skills/seo-sitemap",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/AgriciDaniel/claude-seo/tree/main/skills/seo-sitemap",
+        "publisher_setup_url": "https://github.com/AgriciDaniel/claude-seo/blob/main/skills/seo-sitemap/SKILL.md"
+      }
+    },
+    {
+      "id": "agricidaniel/claude-seo/seo-technical",
+      "name": "seo-technical",
+      "description": "Audit technical SEO across crawlability, indexability, security, URLs, mobile, Core Web Vitals, rendering, structured data, and IndexNow. Exclude content strategy and backlinks.",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/AgriciDaniel/claude-seo/blob/main/skills/seo-technical/LICENSE.txt",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "4b99de2f7de7e7d5247042e5fb5b4ea9368ef734",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-05",
+        "skill_md_url": "https://github.com/AgriciDaniel/claude-seo/blob/4b99de2f7de7e7d5247042e5fb5b4ea9368ef734/skills/seo-technical/SKILL.md"
+      },
+      "quality": {
+        "score": 72,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/agricidaniel/claude-seo/seo-technical/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/AgriciDaniel/claude-seo/tree/main/skills/seo-technical",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/AgriciDaniel/claude-seo/tree/main/skills/seo-technical",
+        "publisher_setup_url": "https://github.com/AgriciDaniel/claude-seo/blob/main/skills/seo-technical/SKILL.md"
+      }
+    },
+    {
+      "id": "agricidaniel/claude-seo/seo-unlighthouse",
+      "name": "seo-unlighthouse",
+      "description": "Multi-page Lighthouse audit via the MIT-licensed Unlighthouse CLI. Free-tier alternative to running PageSpeed against every URL on a site, no API quota burn, runs locally.",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/AgriciDaniel/claude-seo/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "4b99de2f7de7e7d5247042e5fb5b4ea9368ef734",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-05",
+        "skill_md_url": "https://github.com/AgriciDaniel/claude-seo/blob/4b99de2f7de7e7d5247042e5fb5b4ea9368ef734/extensions/unlighthouse/skills/seo-unlighthouse/SKILL.md"
+      },
+      "quality": {
+        "score": 71,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/agricidaniel/claude-seo/seo-unlighthouse/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/AgriciDaniel/claude-seo/tree/main/extensions/unlighthouse/skills/seo-unlighthouse",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/AgriciDaniel/claude-seo/tree/main/extensions/unlighthouse/skills/seo-unlighthouse",
+        "publisher_setup_url": "https://github.com/AgriciDaniel/claude-seo/blob/main/extensions/unlighthouse/skills/seo-unlighthouse/SKILL.md"
+      }
+    }
+  ]
+}

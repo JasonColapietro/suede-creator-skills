@@ -1,0 +1,330 @@
+{
+  "schema_version": 1,
+  "repository": "Qiuner/birdview",
+  "listing_url": "https://skills.suedeai.ai/directory/qiuner/birdview/",
+  "snapshot": {
+    "date": "2026-10-22",
+    "id": "740bfd7230f74b149870dffa9c645b2b",
+    "dataset_sha256": "7af631c54b44d36718ed15f6a3fdbf0445b6a09f638bc05ce3093bca01ef0d02"
+  },
+  "listed_skill_count": 3,
+  "scope": "Skills listed by the directory; this is not a complete inventory of every file in the repository.",
+  "security_scan_status": "not_scanned",
+  "skills": [
+    {
+      "id": "qiuner/birdview/birdview",
+      "name": "birdview",
+      "description": "Show evidence-linked architecture, constraints and change scope, or review architecture improvement opportunities. Use for Birdview/map requests or requests to optimize architecture, review module boundaries or 优化架构. Also activate before coding when the project explicitly configures Birdview auto mode. Ordinary coding does not activate Birdview without that opt-in.",
+      "category": "code-review-quality",
+      "license": "MIT",
+      "license_url": "https://github.com/Qiuner/birdview/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "cdea5340f9710d71c9375e1ca99910c6f59c9704",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-08",
+        "skill_md_url": "https://github.com/Qiuner/birdview/blob/cdea5340f9710d71c9375e1ca99910c6f59c9704/SKILL.md"
+      },
+      "quality": {
+        "score": 86,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/qiuner/birdview/birdview/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/qiuner/birdview/birdview/",
+      "source_folder_url": "https://github.com/Qiuner/birdview",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/Qiuner/birdview",
+        "publisher_setup_url": "https://github.com/Qiuner/birdview/blob/main/SKILL.md"
+      }
+    },
+    {
+      "id": "qiuner/birdview/birdview-compatibility",
+      "name": "birdview-compatibility",
+      "description": "Audit the installed AI skill environment for duplicate installations, broad triggers and possible instruction conflicts. Use only when the user invokes birdview-compatibility; it does not activate architecture mapping or modify skills.",
+      "category": "ai-agents-llm",
+      "license": "MIT",
+      "license_url": "https://github.com/Qiuner/birdview/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "cdea5340f9710d71c9375e1ca99910c6f59c9704",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-08",
+        "skill_md_url": "https://github.com/Qiuner/birdview/blob/cdea5340f9710d71c9375e1ca99910c6f59c9704/compatibility-audit/SKILL.md"
+      },
+      "quality": {
+        "score": 73,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": false,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/qiuner/birdview/birdview-compatibility/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/Qiuner/birdview/tree/main/compatibility-audit",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/Qiuner/birdview/tree/main/compatibility-audit",
+        "publisher_setup_url": "https://github.com/Qiuner/birdview/blob/main/compatibility-audit/SKILL.md"
+      }
+    },
+    {
+      "id": "qiuner/birdview/birdview-review",
+      "name": "birdview-review",
+      "description": "Review and improve codebase architecture with source-backed current/proposed diagrams, tradeoffs and verification. Use for birdview-review or requests to optimize architecture, review module boundaries or find architectural refactoring opportunities, including 优化架构、架构评审、梳理模块边界. Ordinary bug fixes, local refactors and discussion of the skill itself do not request a review.",
+      "category": "code-review-quality",
+      "license": "MIT",
+      "license_url": "https://github.com/Qiuner/birdview/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "cdea5340f9710d71c9375e1ca99910c6f59c9704",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-08",
+        "skill_md_url": "https://github.com/Qiuner/birdview/blob/cdea5340f9710d71c9375e1ca99910c6f59c9704/review-skill/SKILL.md"
+      },
+      "quality": {
+        "score": 70,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": false,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/qiuner/birdview/birdview-review/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/Qiuner/birdview/tree/main/review-skill",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/Qiuner/birdview/tree/main/review-skill",
+        "publisher_setup_url": "https://github.com/Qiuner/birdview/blob/main/review-skill/SKILL.md"
+      }
+    }
+  ]
+}

@@ -1,0 +1,2010 @@
+{
+  "schema_version": 1,
+  "repository": "hashicorp/agent-skills",
+  "listing_url": "https://skills.suedeai.ai/directory/hashicorp/agent-skills/",
+  "snapshot": {
+    "date": "2026-10-22",
+    "id": "740bfd7230f74b149870dffa9c645b2b",
+    "dataset_sha256": "7af631c54b44d36718ed15f6a3fdbf0445b6a09f638bc05ce3093bca01ef0d02"
+  },
+  "listed_skill_count": 19,
+  "scope": "Skills listed by the directory; this is not a complete inventory of every file in the repository.",
+  "security_scan_status": "not_scanned",
+  "skills": [
+    {
+      "id": "hashicorp/agent-skills/new-terraform-provider",
+      "name": "new-terraform-provider",
+      "description": "Use this when scaffolding a new Terraform provider with the Plugin Framework: workspace layout, go module setup, provider server main.go, and a provider.go with schema and Configure. Also use when a user wants to start building a provider for a new API or asks how to begin a terraform-provider-* project.",
+      "category": "developer-tools",
+      "license": "MPL-2.0",
+      "license_url": "https://github.com/hashicorp/agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "f706481af9b8fedb66de909f6243ad29601afa0c",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-28",
+        "skill_md_url": "https://github.com/hashicorp/agent-skills/blob/f706481af9b8fedb66de909f6243ad29601afa0c/plugins/terraform/skills/new-terraform-provider/SKILL.md"
+      },
+      "quality": {
+        "score": 74,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/hashicorp/agent-skills/new-terraform-provider/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/hashicorp/agent-skills/new-terraform-provider/",
+      "source_folder_url": "https://github.com/hashicorp/agent-skills/tree/main/plugins/terraform/skills/new-terraform-provider",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/hashicorp/agent-skills/tree/main/plugins/terraform/skills/new-terraform-provider",
+        "publisher_setup_url": "https://github.com/hashicorp/agent-skills/blob/main/plugins/terraform/skills/new-terraform-provider/SKILL.md"
+      }
+    },
+    {
+      "id": "hashicorp/agent-skills/provider-configuration",
+      "name": "provider-configuration",
+      "description": "Implement Terraform provider configuration and authentication with the Plugin Framework: provider schema for credentials (Optional + Sensitive attributes), environment variable fallbacks, credential provider chains (static config, then environment variables, shared credentials file, and platform identity), unknown-value guards in Configure(), secret redaction, configure-time credential validation, and diagnostics that name every source tried. Use when implementing or reviewing a provider's Configure method or provider schema, adding authentication options (API keys, tokens, profiles, credentials files, assume-role), deciding how a provider should resolve credentials, debugging \"no valid credential sources\" or missing-credentials errors, or unit testing credential resolution.",
+      "category": "developer-tools",
+      "license": "MPL-2.0",
+      "license_url": "https://github.com/hashicorp/agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "f706481af9b8fedb66de909f6243ad29601afa0c",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-28",
+        "skill_md_url": "https://github.com/hashicorp/agent-skills/blob/f706481af9b8fedb66de909f6243ad29601afa0c/plugins/terraform/skills/provider-configuration/SKILL.md"
+      },
+      "quality": {
+        "score": 84,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/hashicorp/agent-skills/provider-configuration/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/hashicorp/agent-skills/provider-configuration/",
+      "source_folder_url": "https://github.com/hashicorp/agent-skills/tree/main/plugins/terraform/skills/provider-configuration",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/hashicorp/agent-skills/tree/main/plugins/terraform/skills/provider-configuration",
+        "publisher_setup_url": "https://github.com/hashicorp/agent-skills/blob/main/plugins/terraform/skills/provider-configuration/SKILL.md"
+      }
+    },
+    {
+      "id": "hashicorp/agent-skills/provider-docs",
+      "name": "provider-docs",
+      "description": "Create, update, and review Terraform provider documentation for Terraform Registry using HashiCorp-recommended patterns, tfplugindocs templates, and schema descriptions. Use when adding or changing provider configuration, resources, data sources, ephemeral resources, list resources, functions, actions, or guides; when validating generated docs; and when troubleshooting missing or incorrect Registry documentation.",
+      "category": "writing-content",
+      "license": "MPL-2.0",
+      "license_url": "https://github.com/hashicorp/agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "f706481af9b8fedb66de909f6243ad29601afa0c",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-28",
+        "skill_md_url": "https://github.com/hashicorp/agent-skills/blob/f706481af9b8fedb66de909f6243ad29601afa0c/plugins/terraform/skills/provider-docs/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/hashicorp/agent-skills/provider-docs/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/hashicorp/agent-skills/provider-docs/",
+      "source_folder_url": "https://github.com/hashicorp/agent-skills/tree/main/plugins/terraform/skills/provider-docs",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/hashicorp/agent-skills/tree/main/plugins/terraform/skills/provider-docs",
+        "publisher_setup_url": "https://github.com/hashicorp/agent-skills/blob/main/plugins/terraform/skills/provider-docs/SKILL.md"
+      }
+    },
+    {
+      "id": "hashicorp/agent-skills/provider-ephemeral-resources",
+      "name": "provider-ephemeral-resources",
+      "description": "Implement Terraform provider ephemeral resources with the Plugin Framework: the Open/Renew/Close lifecycle, ephemeral schema design, registration via EphemeralResources, renewal for expiring credentials, and how ephemeral values flow into write-only attributes and provider configuration. Use when adding an ephemeral resource, exposing secrets/tokens/certificates that must never persist in state or plan, deciding between an ephemeral resource and a data source, or wiring short-lived credentials from one provider into another.",
+      "category": "developer-tools",
+      "license": "MPL-2.0",
+      "license_url": "https://github.com/hashicorp/agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "f706481af9b8fedb66de909f6243ad29601afa0c",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-28",
+        "skill_md_url": "https://github.com/hashicorp/agent-skills/blob/f706481af9b8fedb66de909f6243ad29601afa0c/plugins/terraform/skills/provider-ephemeral-resources/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/hashicorp/agent-skills/provider-ephemeral-resources/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/hashicorp/agent-skills/provider-ephemeral-resources/",
+      "source_folder_url": "https://github.com/hashicorp/agent-skills/tree/main/plugins/terraform/skills/provider-ephemeral-resources",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/hashicorp/agent-skills/tree/main/plugins/terraform/skills/provider-ephemeral-resources",
+        "publisher_setup_url": "https://github.com/hashicorp/agent-skills/blob/main/plugins/terraform/skills/provider-ephemeral-resources/SKILL.md"
+      }
+    },
+    {
+      "id": "hashicorp/agent-skills/provider-framework-migration",
+      "name": "provider-framework-migration",
+      "description": "Migrate Terraform provider resources and data sources from Plugin SDKv2 to the Plugin Framework: muxing both plugins in one provider (terraform-plugin-mux, tf5to6server), per-resource migration workflow, SDKv2-to-Framework schema mapping (ForceNew, ValidateFunc, DiffSuppressFunc, Default, Timeouts, blocks), null-vs-zero-value behavioral traps, and state-compatibility verification. Use when converting or translating SDKv2 resources to the Framework, setting up a muxed provider server, deciding whether a resource should be migrated at all, or debugging plan diffs and state errors that appeared after a migration.",
+      "category": "developer-tools",
+      "license": "MPL-2.0",
+      "license_url": "https://github.com/hashicorp/agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "f706481af9b8fedb66de909f6243ad29601afa0c",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-28",
+        "skill_md_url": "https://github.com/hashicorp/agent-skills/blob/f706481af9b8fedb66de909f6243ad29601afa0c/plugins/terraform/skills/provider-framework-migration/SKILL.md"
+      },
+      "quality": {
+        "score": 81,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/hashicorp/agent-skills/provider-framework-migration/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/hashicorp/agent-skills/provider-framework-migration/",
+      "source_folder_url": "https://github.com/hashicorp/agent-skills/tree/main/plugins/terraform/skills/provider-framework-migration",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/hashicorp/agent-skills/tree/main/plugins/terraform/skills/provider-framework-migration",
+        "publisher_setup_url": "https://github.com/hashicorp/agent-skills/blob/main/plugins/terraform/skills/provider-framework-migration/SKILL.md"
+      }
+    },
+    {
+      "id": "hashicorp/agent-skills/provider-test-patterns",
+      "name": "provider-test-patterns",
+      "description": "Terraform provider acceptance test patterns using terraform-plugin-testing with the Plugin Framework. Covers test structure, TestCase/TestStep fields, ConfigStateChecks with custom statecheck.StateCheck implementations, plan checks, CompareValue for cross-step assertions, config helpers, import testing with ImportStateKind, sweepers, and scenario patterns (basic, update, disappears, validation, regression), and ephemeral resource testing with the echoprovider package. Use when writing, reviewing, or debugging provider acceptance tests, including questions about statecheck, plancheck, TestCheckFunc, CheckDestroy, ExpectError, import state verification, ephemeral resources, or how to structure test files.",
+      "category": "testing-qa",
+      "license": "MPL-2.0",
+      "license_url": "https://github.com/hashicorp/agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "f706481af9b8fedb66de909f6243ad29601afa0c",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-28",
+        "skill_md_url": "https://github.com/hashicorp/agent-skills/blob/f706481af9b8fedb66de909f6243ad29601afa0c/plugins/terraform/skills/provider-test-patterns/SKILL.md"
+      },
+      "quality": {
+        "score": 81,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/hashicorp/agent-skills/provider-test-patterns/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/hashicorp/agent-skills/provider-test-patterns/",
+      "source_folder_url": "https://github.com/hashicorp/agent-skills/tree/main/plugins/terraform/skills/provider-test-patterns",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/hashicorp/agent-skills/tree/main/plugins/terraform/skills/provider-test-patterns",
+        "publisher_setup_url": "https://github.com/hashicorp/agent-skills/blob/main/plugins/terraform/skills/provider-test-patterns/SKILL.md"
+      }
+    },
+    {
+      "id": "hashicorp/agent-skills/push-to-registry",
+      "name": "push-to-registry",
+      "description": "Push Packer build metadata to HCP Packer registry for tracking and managing image lifecycle. Use when integrating Packer builds with HCP Packer for version control and governance.",
+      "category": "devops-cloud",
+      "license": "MPL-2.0",
+      "license_url": "https://github.com/hashicorp/agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "f706481af9b8fedb66de909f6243ad29601afa0c",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-28",
+        "skill_md_url": "https://github.com/hashicorp/agent-skills/blob/f706481af9b8fedb66de909f6243ad29601afa0c/plugins/packer/skills/push-to-registry/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/hashicorp/agent-skills/push-to-registry/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/hashicorp/agent-skills/push-to-registry/",
+      "source_folder_url": "https://github.com/hashicorp/agent-skills/tree/main/plugins/packer/skills/push-to-registry",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/hashicorp/agent-skills/tree/main/plugins/packer/skills/push-to-registry",
+        "publisher_setup_url": "https://github.com/hashicorp/agent-skills/blob/main/plugins/packer/skills/push-to-registry/SKILL.md"
+      }
+    },
+    {
+      "id": "hashicorp/agent-skills/terraform-search-import",
+      "name": "terraform-search-import",
+      "description": "Discover existing cloud resources using Terraform Search queries and bulk import them into Terraform management. Use when bringing unmanaged infrastructure under Terraform control, auditing cloud resources, or migrating to IaC.",
+      "category": "devops-cloud",
+      "license": "MPL-2.0",
+      "license_url": "https://github.com/hashicorp/agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "f706481af9b8fedb66de909f6243ad29601afa0c",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-28",
+        "skill_md_url": "https://github.com/hashicorp/agent-skills/blob/f706481af9b8fedb66de909f6243ad29601afa0c/plugins/terraform/skills/terraform-search-import/SKILL.md"
+      },
+      "quality": {
+        "score": 85,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/hashicorp/agent-skills/terraform-search-import/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/hashicorp/agent-skills/terraform-search-import/",
+      "source_folder_url": "https://github.com/hashicorp/agent-skills/tree/main/plugins/terraform/skills/terraform-search-import",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/hashicorp/agent-skills/tree/main/plugins/terraform/skills/terraform-search-import",
+        "publisher_setup_url": "https://github.com/hashicorp/agent-skills/blob/main/plugins/terraform/skills/terraform-search-import/SKILL.md"
+      }
+    },
+    {
+      "id": "hashicorp/agent-skills/terraform-stacks",
+      "name": "terraform-stacks",
+      "description": "Comprehensive guide for working with HashiCorp Terraform Stacks. Use when creating, modifying, or validating Terraform Stack configurations (.tfcomponent.hcl, .tfdeploy.hcl files), working with stack components and deployments from local modules, public registry, or private registry sources, managing multi-region or multi-environment infrastructure, or troubleshooting Terraform Stacks syntax and structure.",
+      "category": "devops-cloud",
+      "license": "MPL-2.0",
+      "license_url": "https://github.com/hashicorp/agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "f706481af9b8fedb66de909f6243ad29601afa0c",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-28",
+        "skill_md_url": "https://github.com/hashicorp/agent-skills/blob/f706481af9b8fedb66de909f6243ad29601afa0c/plugins/terraform/skills/terraform-stacks/SKILL.md"
+      },
+      "quality": {
+        "score": 83,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/hashicorp/agent-skills/terraform-stacks/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/hashicorp/agent-skills/terraform-stacks/",
+      "source_folder_url": "https://github.com/hashicorp/agent-skills/tree/main/plugins/terraform/skills/terraform-stacks",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/hashicorp/agent-skills/tree/main/plugins/terraform/skills/terraform-stacks",
+        "publisher_setup_url": "https://github.com/hashicorp/agent-skills/blob/main/plugins/terraform/skills/terraform-stacks/SKILL.md"
+      }
+    },
+    {
+      "id": "hashicorp/agent-skills/terraform-style-guide",
+      "name": "terraform-style-guide",
+      "description": "Generate Terraform HCL code following HashiCorp's official style conventions and best practices. Use when writing, reviewing, or generating Terraform configurations.",
+      "category": "code-review-quality",
+      "license": "MPL-2.0",
+      "license_url": "https://github.com/hashicorp/agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "f706481af9b8fedb66de909f6243ad29601afa0c",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-28",
+        "skill_md_url": "https://github.com/hashicorp/agent-skills/blob/f706481af9b8fedb66de909f6243ad29601afa0c/plugins/terraform/skills/terraform-style-guide/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/hashicorp/agent-skills/terraform-style-guide/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/hashicorp/agent-skills/terraform-style-guide/",
+      "source_folder_url": "https://github.com/hashicorp/agent-skills/tree/main/plugins/terraform/skills/terraform-style-guide",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/hashicorp/agent-skills/tree/main/plugins/terraform/skills/terraform-style-guide",
+        "publisher_setup_url": "https://github.com/hashicorp/agent-skills/blob/main/plugins/terraform/skills/terraform-style-guide/SKILL.md"
+      }
+    },
+    {
+      "id": "hashicorp/agent-skills/terraform-test",
+      "name": "terraform-test",
+      "description": "Comprehensive guide for writing and running Terraform tests. Use when creating test files (.tftest.hcl), writing test scenarios with run blocks, validating infrastructure behavior with assertions, mocking providers and data sources, testing module outputs and resource configurations, or troubleshooting Terraform test syntax and execution.",
+      "category": "testing-qa",
+      "license": "MPL-2.0",
+      "license_url": "https://github.com/hashicorp/agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "f706481af9b8fedb66de909f6243ad29601afa0c",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-28",
+        "skill_md_url": "https://github.com/hashicorp/agent-skills/blob/f706481af9b8fedb66de909f6243ad29601afa0c/plugins/terraform/skills/terraform-test/SKILL.md"
+      },
+      "quality": {
+        "score": 83,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/hashicorp/agent-skills/terraform-test/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/hashicorp/agent-skills/terraform-test/",
+      "source_folder_url": "https://github.com/hashicorp/agent-skills/tree/main/plugins/terraform/skills/terraform-test",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/hashicorp/agent-skills/tree/main/plugins/terraform/skills/terraform-test",
+        "publisher_setup_url": "https://github.com/hashicorp/agent-skills/blob/main/plugins/terraform/skills/terraform-test/SKILL.md"
+      }
+    },
+    {
+      "id": "hashicorp/agent-skills/windows-builder",
+      "name": "windows-builder",
+      "description": "Build Windows images with Packer using WinRM communicator and PowerShell provisioners. Use when creating Windows AMIs, Azure images, or VMware templates.",
+      "category": "devops-cloud",
+      "license": "MPL-2.0",
+      "license_url": "https://github.com/hashicorp/agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "f706481af9b8fedb66de909f6243ad29601afa0c",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-28",
+        "skill_md_url": "https://github.com/hashicorp/agent-skills/blob/f706481af9b8fedb66de909f6243ad29601afa0c/plugins/packer/skills/windows-builder/SKILL.md"
+      },
+      "quality": {
+        "score": 77,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/hashicorp/agent-skills/windows-builder/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/hashicorp/agent-skills/windows-builder/",
+      "source_folder_url": "https://github.com/hashicorp/agent-skills/tree/main/plugins/packer/skills/windows-builder",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/hashicorp/agent-skills/tree/main/plugins/packer/skills/windows-builder",
+        "publisher_setup_url": "https://github.com/hashicorp/agent-skills/blob/main/plugins/packer/skills/windows-builder/SKILL.md"
+      }
+    },
+    {
+      "id": "hashicorp/agent-skills/aws-ami-builder",
+      "name": "aws-ami-builder",
+      "description": "Build Amazon Machine Images (AMIs) with Packer using the amazon-ebs builder. Use when creating custom AMIs for EC2 instances.",
+      "category": "devops-cloud",
+      "license": "MPL-2.0",
+      "license_url": "https://github.com/hashicorp/agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "f706481af9b8fedb66de909f6243ad29601afa0c",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-28",
+        "skill_md_url": "https://github.com/hashicorp/agent-skills/blob/f706481af9b8fedb66de909f6243ad29601afa0c/plugins/packer/skills/aws-ami-builder/SKILL.md"
+      },
+      "quality": {
+        "score": 75,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/hashicorp/agent-skills/aws-ami-builder/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/hashicorp/agent-skills/tree/main/plugins/packer/skills/aws-ami-builder",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/hashicorp/agent-skills/tree/main/plugins/packer/skills/aws-ami-builder",
+        "publisher_setup_url": "https://github.com/hashicorp/agent-skills/blob/main/plugins/packer/skills/aws-ami-builder/SKILL.md"
+      }
+    },
+    {
+      "id": "hashicorp/agent-skills/azure-image-builder",
+      "name": "azure-image-builder",
+      "description": "Build Azure managed images and Azure Compute Gallery images with Packer. Use when creating custom images for Azure VMs.",
+      "category": "devops-cloud",
+      "license": "MPL-2.0",
+      "license_url": "https://github.com/hashicorp/agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "f706481af9b8fedb66de909f6243ad29601afa0c",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-28",
+        "skill_md_url": "https://github.com/hashicorp/agent-skills/blob/f706481af9b8fedb66de909f6243ad29601afa0c/plugins/packer/skills/azure-image-builder/SKILL.md"
+      },
+      "quality": {
+        "score": 75,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/hashicorp/agent-skills/azure-image-builder/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/hashicorp/agent-skills/tree/main/plugins/packer/skills/azure-image-builder",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/hashicorp/agent-skills/tree/main/plugins/packer/skills/azure-image-builder",
+        "publisher_setup_url": "https://github.com/hashicorp/agent-skills/blob/main/plugins/packer/skills/azure-image-builder/SKILL.md"
+      }
+    },
+    {
+      "id": "hashicorp/agent-skills/azure-verified-modules",
+      "name": "azure-verified-modules",
+      "description": "Azure Verified Modules (AVM) requirements and best practices for developing certified Azure Terraform modules. Use when creating or reviewing Azure modules that need AVM certification.",
+      "category": "devops-cloud",
+      "license": "MPL-2.0",
+      "license_url": "https://github.com/hashicorp/agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "f706481af9b8fedb66de909f6243ad29601afa0c",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-28",
+        "skill_md_url": "https://github.com/hashicorp/agent-skills/blob/f706481af9b8fedb66de909f6243ad29601afa0c/plugins/terraform/skills/azure-verified-modules/SKILL.md"
+      },
+      "quality": {
+        "score": 72,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": false,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/hashicorp/agent-skills/azure-verified-modules/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/hashicorp/agent-skills/tree/main/plugins/terraform/skills/azure-verified-modules",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/hashicorp/agent-skills/tree/main/plugins/terraform/skills/azure-verified-modules",
+        "publisher_setup_url": "https://github.com/hashicorp/agent-skills/blob/main/plugins/terraform/skills/azure-verified-modules/SKILL.md"
+      }
+    },
+    {
+      "id": "hashicorp/agent-skills/provider-actions",
+      "name": "provider-actions",
+      "description": "Implement Terraform Provider actions using the Plugin Framework. Use when developing imperative operations that execute at lifecycle events (before/after create, update, destroy).",
+      "category": "developer-tools",
+      "license": "MPL-2.0",
+      "license_url": "https://github.com/hashicorp/agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "f706481af9b8fedb66de909f6243ad29601afa0c",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-28",
+        "skill_md_url": "https://github.com/hashicorp/agent-skills/blob/f706481af9b8fedb66de909f6243ad29601afa0c/plugins/terraform/skills/provider-actions/SKILL.md"
+      },
+      "quality": {
+        "score": 72,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": false,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/hashicorp/agent-skills/provider-actions/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/hashicorp/agent-skills/tree/main/plugins/terraform/skills/provider-actions",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/hashicorp/agent-skills/tree/main/plugins/terraform/skills/provider-actions",
+        "publisher_setup_url": "https://github.com/hashicorp/agent-skills/blob/main/plugins/terraform/skills/provider-actions/SKILL.md"
+      }
+    },
+    {
+      "id": "hashicorp/agent-skills/provider-resources",
+      "name": "provider-resources",
+      "description": "Implement Terraform Provider resources and data sources using the Plugin Framework: CRUD operations, schema design, plan modifiers and validators, not-found handling, waiters for eventually consistent APIs, import support, resource design principles, and required acceptance test coverage. Use when adding or changing a resource or data source, deciding whether an API concept should be a resource, wiring a resource to the provider's configured client, handling drift or resource-not-found, or reviewing a resource implementation before submission.",
+      "category": "developer-tools",
+      "license": "MPL-2.0",
+      "license_url": "https://github.com/hashicorp/agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "f706481af9b8fedb66de909f6243ad29601afa0c",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-28",
+        "skill_md_url": "https://github.com/hashicorp/agent-skills/blob/f706481af9b8fedb66de909f6243ad29601afa0c/plugins/terraform/skills/provider-resources/SKILL.md"
+      },
+      "quality": {
+        "score": 75,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": false,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/hashicorp/agent-skills/provider-resources/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/hashicorp/agent-skills/tree/main/plugins/terraform/skills/provider-resources",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/hashicorp/agent-skills/tree/main/plugins/terraform/skills/provider-resources",
+        "publisher_setup_url": "https://github.com/hashicorp/agent-skills/blob/main/plugins/terraform/skills/provider-resources/SKILL.md"
+      }
+    },
+    {
+      "id": "hashicorp/agent-skills/run-acceptance-tests",
+      "name": "run-acceptance-tests",
+      "description": "Guide for running acceptance tests for a Terraform provider. Use this when asked to run an acceptance test or to run a test with the prefix `TestAcc`, when a test fails with missing environment variables, or when diagnosing a failing or suspiciously passing acceptance test.",
+      "category": "testing-qa",
+      "license": "MPL-2.0",
+      "license_url": "https://github.com/hashicorp/agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "f706481af9b8fedb66de909f6243ad29601afa0c",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-28",
+        "skill_md_url": "https://github.com/hashicorp/agent-skills/blob/f706481af9b8fedb66de909f6243ad29601afa0c/plugins/terraform/skills/run-acceptance-tests/SKILL.md"
+      },
+      "quality": {
+        "score": 77,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/hashicorp/agent-skills/run-acceptance-tests/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/hashicorp/agent-skills/tree/main/plugins/terraform/skills/run-acceptance-tests",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/hashicorp/agent-skills/tree/main/plugins/terraform/skills/run-acceptance-tests",
+        "publisher_setup_url": "https://github.com/hashicorp/agent-skills/blob/main/plugins/terraform/skills/run-acceptance-tests/SKILL.md"
+      }
+    },
+    {
+      "id": "hashicorp/agent-skills/terraform-policy",
+      "name": "terraform-policy",
+      "description": "Write, test, or convert Terraform Policy files (.policy.hcl, .policytest.hcl, Sentinel→tfpolicy). Triggers: policy.hcl, policytest, convert sentinel, tfpolicy, write a policy.",
+      "category": "devops-cloud",
+      "license": "MPL-2.0",
+      "license_url": "https://github.com/hashicorp/agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "f706481af9b8fedb66de909f6243ad29601afa0c",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-28",
+        "skill_md_url": "https://github.com/hashicorp/agent-skills/blob/f706481af9b8fedb66de909f6243ad29601afa0c/plugins/terraform/skills/terraform-policy/SKILL.md"
+      },
+      "quality": {
+        "score": 72,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/hashicorp/agent-skills/terraform-policy/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/hashicorp/agent-skills/tree/main/plugins/terraform/skills/terraform-policy",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/hashicorp/agent-skills/tree/main/plugins/terraform/skills/terraform-policy",
+        "publisher_setup_url": "https://github.com/hashicorp/agent-skills/blob/main/plugins/terraform/skills/terraform-policy/SKILL.md"
+      }
+    }
+  ]
+}

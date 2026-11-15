@@ -1,0 +1,5475 @@
+{
+  "schema_version": 1,
+  "repository": "bitwize-music-studio/claude-ai-music-skills",
+  "listing_url": "https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/",
+  "snapshot": {
+    "date": "2026-10-22",
+    "id": "740bfd7230f74b149870dffa9c645b2b",
+    "dataset_sha256": "7af631c54b44d36718ed15f6a3fdbf0445b6a09f638bc05ce3093bca01ef0d02"
+  },
+  "listed_skill_count": 52,
+  "scope": "Skills listed by the directory; this is not a complete inventory of every file in the repository.",
+  "security_scan_status": "not_scanned",
+  "skills": [
+    {
+      "id": "bitwize-music-studio/claude-ai-music-skills/album-conceptualizer",
+      "name": "album-conceptualizer",
+      "description": "Designs album concepts, tracklist architecture, and thematic planning through 7 structured phases. Use when planning a new album or reworking an existing album concept.",
+      "category": "media-creative",
+      "license": "CC0-1.0",
+      "license_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "597d928fb2c8316ee13159771405813174aa01de",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/597d928fb2c8316ee13159771405813174aa01de/skills/album-conceptualizer/SKILL.md"
+      },
+      "quality": {
+        "score": 82,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/album-conceptualizer/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/album-conceptualizer/",
+      "source_folder_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/album-conceptualizer",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/album-conceptualizer",
+        "publisher_setup_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/skills/album-conceptualizer/SKILL.md"
+      }
+    },
+    {
+      "id": "bitwize-music-studio/claude-ai-music-skills/album-dashboard",
+      "name": "album-dashboard",
+      "description": "Shows a structured progress dashboard for an album with percentage complete per phase, blocking items, and status breakdown. Use for a quick visual overview of album progress.",
+      "category": "media-creative",
+      "license": "CC0-1.0",
+      "license_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "597d928fb2c8316ee13159771405813174aa01de",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/597d928fb2c8316ee13159771405813174aa01de/skills/album-dashboard/SKILL.md"
+      },
+      "quality": {
+        "score": 82,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/album-dashboard/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/album-dashboard/",
+      "source_folder_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/album-dashboard",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/album-dashboard",
+        "publisher_setup_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/skills/album-dashboard/SKILL.md"
+      }
+    },
+    {
+      "id": "bitwize-music-studio/claude-ai-music-skills/clipboard",
+      "name": "clipboard",
+      "description": "Copies track content (lyrics, style prompts, streaming lyrics) to the system clipboard. Use when the user needs to paste lyrics or style prompts into Suno or other external tools.",
+      "category": "media-creative",
+      "license": "CC0-1.0",
+      "license_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "597d928fb2c8316ee13159771405813174aa01de",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/597d928fb2c8316ee13159771405813174aa01de/skills/clipboard/SKILL.md"
+      },
+      "quality": {
+        "score": 82,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/clipboard/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/clipboard/",
+      "source_folder_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/clipboard",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/clipboard",
+        "publisher_setup_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/skills/clipboard/SKILL.md"
+      }
+    },
+    {
+      "id": "bitwize-music-studio/claude-ai-music-skills/document-hunter",
+      "name": "document-hunter",
+      "description": "Searches and retrieves documents from free public sources using automated browser navigation. Use when research needs primary source documents like court filings, government reports, or public records.",
+      "category": "productivity-knowledge",
+      "license": "CC0-1.0",
+      "license_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "597d928fb2c8316ee13159771405813174aa01de",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/597d928fb2c8316ee13159771405813174aa01de/skills/document-hunter/SKILL.md"
+      },
+      "quality": {
+        "score": 82,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/document-hunter/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/document-hunter/",
+      "source_folder_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/document-hunter",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/document-hunter",
+        "publisher_setup_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/skills/document-hunter/SKILL.md"
+      }
+    },
+    {
+      "id": "bitwize-music-studio/claude-ai-music-skills/import-audio",
+      "name": "import-audio",
+      "description": "Moves audio files to the correct album location with proper path structure. Use when the user has downloaded WAV files from Suno or other sources that need to be organized.",
+      "category": "media-creative",
+      "license": "CC0-1.0",
+      "license_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "597d928fb2c8316ee13159771405813174aa01de",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/597d928fb2c8316ee13159771405813174aa01de/skills/import-audio/SKILL.md"
+      },
+      "quality": {
+        "score": 82,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/import-audio/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/import-audio/",
+      "source_folder_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/import-audio",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/import-audio",
+        "publisher_setup_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/skills/import-audio/SKILL.md"
+      }
+    },
+    {
+      "id": "bitwize-music-studio/claude-ai-music-skills/pre-generation-check",
+      "name": "pre-generation-check",
+      "description": "Validates all pre-generation gates before sending tracks to Suno. Checks sources verified, lyrics reviewed, pronunciation resolved, explicit flag set, style prompt complete, and artist names cleared. Use before generating tracks on Suno or when the user says \"pre-gen check\" or \"ready to generate\".",
+      "category": "media-creative",
+      "license": "CC0-1.0",
+      "license_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "597d928fb2c8316ee13159771405813174aa01de",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/597d928fb2c8316ee13159771405813174aa01de/skills/pre-generation-check/SKILL.md"
+      },
+      "quality": {
+        "score": 85,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/pre-generation-check/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/pre-generation-check/",
+      "source_folder_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/pre-generation-check",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/pre-generation-check",
+        "publisher_setup_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/skills/pre-generation-check/SKILL.md"
+      }
+    },
+    {
+      "id": "bitwize-music-studio/claude-ai-music-skills/promote-idea",
+      "name": "promote-idea",
+      "description": "Converts an album idea from IDEAS.md into an actual album project in one step. Use when the user says \"promote [idea title]\", \"turn idea into album\", or \"start working on [idea]\".",
+      "category": "media-creative",
+      "license": "CC0-1.0",
+      "license_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "597d928fb2c8316ee13159771405813174aa01de",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/597d928fb2c8316ee13159771405813174aa01de/skills/promote-idea/SKILL.md"
+      },
+      "quality": {
+        "score": 85,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/promote-idea/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/promote-idea/",
+      "source_folder_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/promote-idea",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/promote-idea",
+        "publisher_setup_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/skills/promote-idea/SKILL.md"
+      }
+    },
+    {
+      "id": "bitwize-music-studio/claude-ai-music-skills/researcher",
+      "name": "researcher",
+      "description": "Conducts investigative-grade research with primary source analysis, cross-verification, and trial-level depth. Use when an album needs factual research, source material, or verification of claims.",
+      "category": "productivity-knowledge",
+      "license": "CC0-1.0",
+      "license_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "597d928fb2c8316ee13159771405813174aa01de",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/597d928fb2c8316ee13159771405813174aa01de/skills/researcher/SKILL.md"
+      },
+      "quality": {
+        "score": 82,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/researcher/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/researcher/",
+      "source_folder_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/researcher",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/researcher",
+        "publisher_setup_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/skills/researcher/SKILL.md"
+      }
+    },
+    {
+      "id": "bitwize-music-studio/claude-ai-music-skills/researchers-biographical",
+      "name": "researchers-biographical",
+      "description": "Researches personal backgrounds, interviews, motivations, and humanizing details. Use when research needs biographical context about people involved in the album's subject.",
+      "category": "productivity-knowledge",
+      "license": "CC0-1.0",
+      "license_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "597d928fb2c8316ee13159771405813174aa01de",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/597d928fb2c8316ee13159771405813174aa01de/skills/researchers-biographical/SKILL.md"
+      },
+      "quality": {
+        "score": 82,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/researchers-biographical/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/researchers-biographical/",
+      "source_folder_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/researchers-biographical",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/researchers-biographical",
+        "publisher_setup_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/skills/researchers-biographical/SKILL.md"
+      }
+    },
+    {
+      "id": "bitwize-music-studio/claude-ai-music-skills/researchers-tech",
+      "name": "researchers-tech",
+      "description": "Researches project histories, changelogs, developer interviews, and open source documentation. Use when the album subject involves technology projects or developer stories.",
+      "category": "productivity-knowledge",
+      "license": "CC0-1.0",
+      "license_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "597d928fb2c8316ee13159771405813174aa01de",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/597d928fb2c8316ee13159771405813174aa01de/skills/researchers-tech/SKILL.md"
+      },
+      "quality": {
+        "score": 82,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/researchers-tech/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/researchers-tech/",
+      "source_folder_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/researchers-tech",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/researchers-tech",
+        "publisher_setup_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/skills/researchers-tech/SKILL.md"
+      }
+    },
+    {
+      "id": "bitwize-music-studio/claude-ai-music-skills/suno-engineer",
+      "name": "suno-engineer",
+      "description": "Constructs technical Suno style prompts for the current model family (v6, v6-wild, v6-mini), selects models and generation settings, and optimizes prompts. Use when creating or refining Suno prompts for track generation.",
+      "category": "media-creative",
+      "license": "CC0-1.0",
+      "license_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "597d928fb2c8316ee13159771405813174aa01de",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/597d928fb2c8316ee13159771405813174aa01de/skills/suno-engineer/SKILL.md"
+      },
+      "quality": {
+        "score": 79,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/suno-engineer/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/suno-engineer/",
+      "source_folder_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/suno-engineer",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/suno-engineer",
+        "publisher_setup_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/skills/suno-engineer/SKILL.md"
+      }
+    },
+    {
+      "id": "bitwize-music-studio/claude-ai-music-skills/voice-checker",
+      "name": "voice-checker",
+      "description": "Reviews lyrics and prose for AI-written patterns (abstract noun stacking, over-explained metaphors, cliche escalation, missing idiosyncrasy, prose AI tells). Advisory Warning/Info severity — flags issues, does not block or rewrite. Use when reviewing lyrics for authenticity or before generation to catch AI-sounding language.",
+      "category": "writing-content",
+      "license": "CC0-1.0",
+      "license_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "597d928fb2c8316ee13159771405813174aa01de",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/597d928fb2c8316ee13159771405813174aa01de/skills/voice-checker/SKILL.md"
+      },
+      "quality": {
+        "score": 82,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/voice-checker/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/voice-checker/",
+      "source_folder_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/voice-checker",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/voice-checker",
+        "publisher_setup_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/skills/voice-checker/SKILL.md"
+      }
+    },
+    {
+      "id": "bitwize-music-studio/claude-ai-music-skills/about",
+      "name": "about",
+      "description": "Provides information about the bitwize-music plugin, its version, and its creator. Use when the user asks about the plugin, its purpose, version, or capabilities.",
+      "category": "media-creative",
+      "license": "CC0-1.0",
+      "license_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "597d928fb2c8316ee13159771405813174aa01de",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/597d928fb2c8316ee13159771405813174aa01de/skills/about/SKILL.md"
+      },
+      "quality": {
+        "score": 75,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/about/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/about",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/about",
+        "publisher_setup_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/skills/about/SKILL.md"
+      }
+    },
+    {
+      "id": "bitwize-music-studio/claude-ai-music-skills/album-art-director",
+      "name": "album-art-director",
+      "description": "Creates visual concepts for album artwork and generates AI art prompts. Use during planning for concept discussion, or after all tracks are Final for actual artwork generation.",
+      "category": "media-creative",
+      "license": "CC0-1.0",
+      "license_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "597d928fb2c8316ee13159771405813174aa01de",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/597d928fb2c8316ee13159771405813174aa01de/skills/album-art-director/SKILL.md"
+      },
+      "quality": {
+        "score": 74,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/album-art-director/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/album-art-director",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/album-art-director",
+        "publisher_setup_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/skills/album-art-director/SKILL.md"
+      }
+    },
+    {
+      "id": "bitwize-music-studio/claude-ai-music-skills/album-ideas",
+      "name": "album-ideas",
+      "description": "Tracks and manages album ideas including brainstorming, planning, and status updates. Use when the user wants to add, review, or organize their album idea backlog.",
+      "category": "media-creative",
+      "license": "CC0-1.0",
+      "license_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "597d928fb2c8316ee13159771405813174aa01de",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/597d928fb2c8316ee13159771405813174aa01de/skills/album-ideas/SKILL.md"
+      },
+      "quality": {
+        "score": 82,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/album-ideas/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/album-ideas",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/album-ideas",
+        "publisher_setup_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/skills/album-ideas/SKILL.md"
+      }
+    },
+    {
+      "id": "bitwize-music-studio/claude-ai-music-skills/cloud-uploader",
+      "name": "cloud-uploader",
+      "description": "Uploads promo videos and content to Cloudflare R2 or AWS S3. Use when the user wants to host promo content for social media or distribution.",
+      "category": "media-creative",
+      "license": "CC0-1.0",
+      "license_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "597d928fb2c8316ee13159771405813174aa01de",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/597d928fb2c8316ee13159771405813174aa01de/skills/cloud-uploader/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/cloud-uploader/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/cloud-uploader",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/cloud-uploader",
+        "publisher_setup_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/skills/cloud-uploader/SKILL.md"
+      }
+    },
+    {
+      "id": "bitwize-music-studio/claude-ai-music-skills/configure",
+      "name": "configure",
+      "description": "Sets up or edits the plugin configuration file interactively. Use on first-time setup, when config is missing, or when the user wants to change settings.",
+      "category": "developer-tools",
+      "license": "CC0-1.0",
+      "license_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "597d928fb2c8316ee13159771405813174aa01de",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/597d928fb2c8316ee13159771405813174aa01de/skills/configure/SKILL.md"
+      },
+      "quality": {
+        "score": 82,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/configure/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/configure",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/configure",
+        "publisher_setup_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/skills/configure/SKILL.md"
+      }
+    },
+    {
+      "id": "bitwize-music-studio/claude-ai-music-skills/explicit-checker",
+      "name": "explicit-checker",
+      "description": "Scans lyrics for explicit content and verifies that explicit flags match actual content. Use before Suno generation or release to ensure accurate content ratings.",
+      "category": "media-creative",
+      "license": "CC0-1.0",
+      "license_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "597d928fb2c8316ee13159771405813174aa01de",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/597d928fb2c8316ee13159771405813174aa01de/skills/explicit-checker/SKILL.md"
+      },
+      "quality": {
+        "score": 74,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/explicit-checker/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/explicit-checker",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/explicit-checker",
+        "publisher_setup_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/skills/explicit-checker/SKILL.md"
+      }
+    },
+    {
+      "id": "bitwize-music-studio/claude-ai-music-skills/genre-creator",
+      "name": "genre-creator",
+      "description": "Create new genre documentation files for the bitwize-music genre library. Use when the user wants to add a genre, says \"/genre-creator\", \"neues Genre erstellen\", \"Genre hinzufuegen\", \"add genre\", or asks to create genre documentation. Takes a genre name as argument.",
+      "category": "media-creative",
+      "license": "CC0-1.0",
+      "license_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "597d928fb2c8316ee13159771405813174aa01de",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/597d928fb2c8316ee13159771405813174aa01de/skills/genre-creator/SKILL.md"
+      },
+      "quality": {
+        "score": 85,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/genre-creator/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/genre-creator",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/genre-creator",
+        "publisher_setup_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/skills/genre-creator/SKILL.md"
+      }
+    },
+    {
+      "id": "bitwize-music-studio/claude-ai-music-skills/health-check",
+      "name": "health-check",
+      "description": "Runs plugin health checks (venv packages, skill registration, and album slug collisions). Use when the user asks to check plugin health, verify setup, or troubleshoot missing skills.",
+      "category": "developer-tools",
+      "license": "CC0-1.0",
+      "license_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "597d928fb2c8316ee13159771405813174aa01de",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/597d928fb2c8316ee13159771405813174aa01de/skills/health-check/SKILL.md"
+      },
+      "quality": {
+        "score": 76,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/health-check/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/health-check",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/health-check",
+        "publisher_setup_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/skills/health-check/SKILL.md"
+      }
+    },
+    {
+      "id": "bitwize-music-studio/claude-ai-music-skills/help",
+      "name": "help",
+      "description": "Shows available skills, common workflows, and quick reference for the plugin. Use when the user asks for help, what skills are available, or how to do something.",
+      "category": "media-creative",
+      "license": "CC0-1.0",
+      "license_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "597d928fb2c8316ee13159771405813174aa01de",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/597d928fb2c8316ee13159771405813174aa01de/skills/help/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/help/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/help",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/help",
+        "publisher_setup_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/skills/help/SKILL.md"
+      }
+    },
+    {
+      "id": "bitwize-music-studio/claude-ai-music-skills/import-art",
+      "name": "import-art",
+      "description": "Places album art files in the correct audio and content directory locations. Use when the user has generated or downloaded album artwork that needs to be saved.",
+      "category": "media-creative",
+      "license": "CC0-1.0",
+      "license_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "597d928fb2c8316ee13159771405813174aa01de",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/597d928fb2c8316ee13159771405813174aa01de/skills/import-art/SKILL.md"
+      },
+      "quality": {
+        "score": 82,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/import-art/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/import-art",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/import-art",
+        "publisher_setup_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/skills/import-art/SKILL.md"
+      }
+    },
+    {
+      "id": "bitwize-music-studio/claude-ai-music-skills/import-track",
+      "name": "import-track",
+      "description": "Moves track markdown files to the correct album location. Use when the user has track files in Downloads or other locations that need to be placed in an album.",
+      "category": "media-creative",
+      "license": "CC0-1.0",
+      "license_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "597d928fb2c8316ee13159771405813174aa01de",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/597d928fb2c8316ee13159771405813174aa01de/skills/import-track/SKILL.md"
+      },
+      "quality": {
+        "score": 82,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/import-track/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/import-track",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/import-track",
+        "publisher_setup_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/skills/import-track/SKILL.md"
+      }
+    },
+    {
+      "id": "bitwize-music-studio/claude-ai-music-skills/lyric-refiner",
+      "name": "lyric-refiner",
+      "description": "Autonomous multi-pass lyric refinement for tightening, cohesion, and album unity. Use after lyrics are written to polish a track or entire album through iterative passes.",
+      "category": "media-creative",
+      "license": "CC0-1.0",
+      "license_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "597d928fb2c8316ee13159771405813174aa01de",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/597d928fb2c8316ee13159771405813174aa01de/skills/lyric-refiner/SKILL.md"
+      },
+      "quality": {
+        "score": 74,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/lyric-refiner/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/lyric-refiner",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/lyric-refiner",
+        "publisher_setup_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/skills/lyric-refiner/SKILL.md"
+      }
+    },
+    {
+      "id": "bitwize-music-studio/claude-ai-music-skills/lyric-reviewer",
+      "name": "lyric-reviewer",
+      "description": "Reviews lyrics against a quality checklist before Suno generation. Use before generating tracks to catch rhyme, prosody, pronunciation, and structural issues.",
+      "category": "media-creative",
+      "license": "CC0-1.0",
+      "license_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "597d928fb2c8316ee13159771405813174aa01de",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/597d928fb2c8316ee13159771405813174aa01de/skills/lyric-reviewer/SKILL.md"
+      },
+      "quality": {
+        "score": 74,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/lyric-reviewer/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/lyric-reviewer",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/lyric-reviewer",
+        "publisher_setup_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/skills/lyric-reviewer/SKILL.md"
+      }
+    },
+    {
+      "id": "bitwize-music-studio/claude-ai-music-skills/lyric-writer",
+      "name": "lyric-writer",
+      "description": "Writes or reviews lyrics with professional prosody, rhyme craft, and quality checks. Use when writing new lyrics, revising existing lyrics, or when the user says 'let's work on a track.'",
+      "category": "media-creative",
+      "license": "CC0-1.0",
+      "license_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "597d928fb2c8316ee13159771405813174aa01de",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/597d928fb2c8316ee13159771405813174aa01de/skills/lyric-writer/SKILL.md"
+      },
+      "quality": {
+        "score": 74,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": false,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/lyric-writer/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/lyric-writer",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/lyric-writer",
+        "publisher_setup_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/skills/lyric-writer/SKILL.md"
+      }
+    },
+    {
+      "id": "bitwize-music-studio/claude-ai-music-skills/mastering-engineer",
+      "name": "mastering-engineer",
+      "description": "Guides audio mastering for streaming platforms including loudness optimization and tonal balance. Use when the user has approved tracks and wants to master audio files.",
+      "category": "media-creative",
+      "license": "CC0-1.0",
+      "license_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "597d928fb2c8316ee13159771405813174aa01de",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/597d928fb2c8316ee13159771405813174aa01de/skills/mastering-engineer/SKILL.md"
+      },
+      "quality": {
+        "score": 82,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/mastering-engineer/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/mastering-engineer",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/mastering-engineer",
+        "publisher_setup_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/skills/mastering-engineer/SKILL.md"
+      }
+    },
+    {
+      "id": "bitwize-music-studio/claude-ai-music-skills/mix-engineer",
+      "name": "mix-engineer",
+      "description": "Polishes raw Suno audio by processing per-stem WAVs (vocals, backing_vocals, drums, bass, guitar, keyboard, strings, brass, woodwinds, percussion, synth, other) with targeted cleanup, EQ, and compression, then remixing into a polished stereo WAV ready for mastering. Use after audio import and before mastering.",
+      "category": "media-creative",
+      "license": "CC0-1.0",
+      "license_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "597d928fb2c8316ee13159771405813174aa01de",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/597d928fb2c8316ee13159771405813174aa01de/skills/mix-engineer/SKILL.md"
+      },
+      "quality": {
+        "score": 74,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/mix-engineer/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/mix-engineer",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/mix-engineer",
+        "publisher_setup_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/skills/mix-engineer/SKILL.md"
+      }
+    },
+    {
+      "id": "bitwize-music-studio/claude-ai-music-skills/new-album",
+      "name": "new-album",
+      "description": "Creates a new album with the correct directory structure and templates. Use IMMEDIATELY when the user says 'make a new album' or similar, before any discussion.",
+      "category": "media-creative",
+      "license": "CC0-1.0",
+      "license_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "597d928fb2c8316ee13159771405813174aa01de",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/597d928fb2c8316ee13159771405813174aa01de/skills/new-album/SKILL.md"
+      },
+      "quality": {
+        "score": 85,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/new-album/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/new-album",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/new-album",
+        "publisher_setup_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/skills/new-album/SKILL.md"
+      }
+    },
+    {
+      "id": "bitwize-music-studio/claude-ai-music-skills/next-step",
+      "name": "next-step",
+      "description": "Analyzes album state and recommends the optimal next action. Use when the user asks \"what should I do next?\" or \"what's left to do?\"",
+      "category": "media-creative",
+      "license": "CC0-1.0",
+      "license_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "597d928fb2c8316ee13159771405813174aa01de",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/597d928fb2c8316ee13159771405813174aa01de/skills/next-step/SKILL.md"
+      },
+      "quality": {
+        "score": 83,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/next-step/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/next-step",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/next-step",
+        "publisher_setup_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/skills/next-step/SKILL.md"
+      }
+    },
+    {
+      "id": "bitwize-music-studio/claude-ai-music-skills/plagiarism-checker",
+      "name": "plagiarism-checker",
+      "description": "Scans lyrics for phrases that may match existing songs using web search and LLM knowledge. Use before release to check for unintentional borrowing.",
+      "category": "media-creative",
+      "license": "CC0-1.0",
+      "license_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "597d928fb2c8316ee13159771405813174aa01de",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/597d928fb2c8316ee13159771405813174aa01de/skills/plagiarism-checker/SKILL.md"
+      },
+      "quality": {
+        "score": 72,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/plagiarism-checker/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/plagiarism-checker",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/plagiarism-checker",
+        "publisher_setup_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/skills/plagiarism-checker/SKILL.md"
+      }
+    },
+    {
+      "id": "bitwize-music-studio/claude-ai-music-skills/promo-director",
+      "name": "promo-director",
+      "description": "Generates 15-second vertical promo videos for social media from mastered audio. Use after mastering is complete and before release, when the user wants social media content.",
+      "category": "media-creative",
+      "license": "CC0-1.0",
+      "license_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "597d928fb2c8316ee13159771405813174aa01de",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/597d928fb2c8316ee13159771405813174aa01de/skills/promo-director/SKILL.md"
+      },
+      "quality": {
+        "score": 82,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/promo-director/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/promo-director",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/promo-director",
+        "publisher_setup_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/skills/promo-director/SKILL.md"
+      }
+    },
+    {
+      "id": "bitwize-music-studio/claude-ai-music-skills/promo-reviewer",
+      "name": "promo-reviewer",
+      "description": "Reviews and iterates on social media copy in album promo/ files. Use after populating promo templates and before release to polish platform-specific posts.",
+      "category": "marketing-seo",
+      "license": "CC0-1.0",
+      "license_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "597d928fb2c8316ee13159771405813174aa01de",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/597d928fb2c8316ee13159771405813174aa01de/skills/promo-reviewer/SKILL.md"
+      },
+      "quality": {
+        "score": 74,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/promo-reviewer/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/promo-reviewer",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/promo-reviewer",
+        "publisher_setup_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/skills/promo-reviewer/SKILL.md"
+      }
+    },
+    {
+      "id": "bitwize-music-studio/claude-ai-music-skills/promo-writer",
+      "name": "promo-writer",
+      "description": "Generates platform-specific social media copy from album themes, track concepts, and lyrics. Use when promo/ templates need to be populated before release.",
+      "category": "marketing-seo",
+      "license": "CC0-1.0",
+      "license_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "597d928fb2c8316ee13159771405813174aa01de",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/597d928fb2c8316ee13159771405813174aa01de/skills/promo-writer/SKILL.md"
+      },
+      "quality": {
+        "score": 82,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/promo-writer/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/promo-writer",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/promo-writer",
+        "publisher_setup_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/skills/promo-writer/SKILL.md"
+      }
+    },
+    {
+      "id": "bitwize-music-studio/claude-ai-music-skills/pronunciation-specialist",
+      "name": "pronunciation-specialist",
+      "description": "Scans lyrics for pronunciation risks and prevents Suno mispronunciations. Use when writing lyrics with proper nouns, technical terms, homographs, or non-English words.",
+      "category": "media-creative",
+      "license": "CC0-1.0",
+      "license_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "597d928fb2c8316ee13159771405813174aa01de",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/597d928fb2c8316ee13159771405813174aa01de/skills/pronunciation-specialist/SKILL.md"
+      },
+      "quality": {
+        "score": 82,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/pronunciation-specialist/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/pronunciation-specialist",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/pronunciation-specialist",
+        "publisher_setup_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/skills/pronunciation-specialist/SKILL.md"
+      }
+    },
+    {
+      "id": "bitwize-music-studio/claude-ai-music-skills/release-director",
+      "name": "release-director",
+      "description": "Coordinates album release including QA, distribution prep, and platform uploads. Use when mastering and album art are complete and the user is ready to release.",
+      "category": "media-creative",
+      "license": "CC0-1.0",
+      "license_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "597d928fb2c8316ee13159771405813174aa01de",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/597d928fb2c8316ee13159771405813174aa01de/skills/release-director/SKILL.md"
+      },
+      "quality": {
+        "score": 82,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/release-director/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/release-director",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/release-director",
+        "publisher_setup_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/skills/release-director/SKILL.md"
+      }
+    },
+    {
+      "id": "bitwize-music-studio/claude-ai-music-skills/rename",
+      "name": "rename",
+      "description": "Renames an album or track, updating slugs, titles, and all mirrored paths. Use when the user wants to rename an album or track.",
+      "category": "media-creative",
+      "license": "CC0-1.0",
+      "license_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "597d928fb2c8316ee13159771405813174aa01de",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/597d928fb2c8316ee13159771405813174aa01de/skills/rename/SKILL.md"
+      },
+      "quality": {
+        "score": 77,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/rename/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/rename",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/rename",
+        "publisher_setup_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/skills/rename/SKILL.md"
+      }
+    },
+    {
+      "id": "bitwize-music-studio/claude-ai-music-skills/researchers-financial",
+      "name": "researchers-financial",
+      "description": "Researches SEC filings, earnings calls, analyst reports, and market data. Use when the album subject involves financial crimes, corporate stories, or market events.",
+      "category": "productivity-knowledge",
+      "license": "CC0-1.0",
+      "license_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "597d928fb2c8316ee13159771405813174aa01de",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/597d928fb2c8316ee13159771405813174aa01de/skills/researchers-financial/SKILL.md"
+      },
+      "quality": {
+        "score": 82,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/researchers-financial/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/researchers-financial",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/researchers-financial",
+        "publisher_setup_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/skills/researchers-financial/SKILL.md"
+      }
+    },
+    {
+      "id": "bitwize-music-studio/claude-ai-music-skills/researchers-gov",
+      "name": "researchers-gov",
+      "description": "Researches DOJ/FBI/SEC press releases, agency statements, and government sources. Use when research needs official government records or agency documentation.",
+      "category": "productivity-knowledge",
+      "license": "CC0-1.0",
+      "license_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "597d928fb2c8316ee13159771405813174aa01de",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/597d928fb2c8316ee13159771405813174aa01de/skills/researchers-gov/SKILL.md"
+      },
+      "quality": {
+        "score": 82,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/researchers-gov/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/researchers-gov",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/researchers-gov",
+        "publisher_setup_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/skills/researchers-gov/SKILL.md"
+      }
+    },
+    {
+      "id": "bitwize-music-studio/claude-ai-music-skills/researchers-historical",
+      "name": "researchers-historical",
+      "description": "Researches archives, contemporary accounts, and timeline reconstruction. Use when the album subject involves historical events that need primary source verification.",
+      "category": "productivity-knowledge",
+      "license": "CC0-1.0",
+      "license_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "597d928fb2c8316ee13159771405813174aa01de",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/597d928fb2c8316ee13159771405813174aa01de/skills/researchers-historical/SKILL.md"
+      },
+      "quality": {
+        "score": 82,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/researchers-historical/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/researchers-historical",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/researchers-historical",
+        "publisher_setup_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/skills/researchers-historical/SKILL.md"
+      }
+    },
+    {
+      "id": "bitwize-music-studio/claude-ai-music-skills/researchers-journalism",
+      "name": "researchers-journalism",
+      "description": "Researches investigative articles, interviews, and news coverage. Use when research needs journalistic sources for cross-referencing or additional context.",
+      "category": "productivity-knowledge",
+      "license": "CC0-1.0",
+      "license_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "597d928fb2c8316ee13159771405813174aa01de",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/597d928fb2c8316ee13159771405813174aa01de/skills/researchers-journalism/SKILL.md"
+      },
+      "quality": {
+        "score": 82,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/researchers-journalism/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/researchers-journalism",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/researchers-journalism",
+        "publisher_setup_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/skills/researchers-journalism/SKILL.md"
+      }
+    },
+    {
+      "id": "bitwize-music-studio/claude-ai-music-skills/researchers-legal",
+      "name": "researchers-legal",
+      "description": "Researches court documents, indictments, plea agreements, and sentencing records. Use when the album subject involves legal proceedings or criminal cases.",
+      "category": "productivity-knowledge",
+      "license": "CC0-1.0",
+      "license_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "597d928fb2c8316ee13159771405813174aa01de",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/597d928fb2c8316ee13159771405813174aa01de/skills/researchers-legal/SKILL.md"
+      },
+      "quality": {
+        "score": 82,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/researchers-legal/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/researchers-legal",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/researchers-legal",
+        "publisher_setup_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/skills/researchers-legal/SKILL.md"
+      }
+    },
+    {
+      "id": "bitwize-music-studio/claude-ai-music-skills/researchers-primary-source",
+      "name": "researchers-primary-source",
+      "description": "Researches the subject's own words from tweets, blogs, forums, and chat logs. Use when research needs direct quotes or first-person accounts.",
+      "category": "productivity-knowledge",
+      "license": "CC0-1.0",
+      "license_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "597d928fb2c8316ee13159771405813174aa01de",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/597d928fb2c8316ee13159771405813174aa01de/skills/researchers-primary-source/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/researchers-primary-source/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/researchers-primary-source",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/researchers-primary-source",
+        "publisher_setup_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/skills/researchers-primary-source/SKILL.md"
+      }
+    },
+    {
+      "id": "bitwize-music-studio/claude-ai-music-skills/researchers-security",
+      "name": "researchers-security",
+      "description": "Researches malware analysis, CVEs, attribution reports, and hacker community sources. Use when the album subject involves cybersecurity incidents or threat actors.",
+      "category": "productivity-knowledge",
+      "license": "CC0-1.0",
+      "license_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "597d928fb2c8316ee13159771405813174aa01de",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/597d928fb2c8316ee13159771405813174aa01de/skills/researchers-security/SKILL.md"
+      },
+      "quality": {
+        "score": 82,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/researchers-security/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/researchers-security",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/researchers-security",
+        "publisher_setup_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/skills/researchers-security/SKILL.md"
+      }
+    },
+    {
+      "id": "bitwize-music-studio/claude-ai-music-skills/researchers-verifier",
+      "name": "researchers-verifier",
+      "description": "Performs quality control, citation validation, and fact-checking before human review. Use after research is complete to verify all sources and claims before production.",
+      "category": "productivity-knowledge",
+      "license": "CC0-1.0",
+      "license_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "597d928fb2c8316ee13159771405813174aa01de",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/597d928fb2c8316ee13159771405813174aa01de/skills/researchers-verifier/SKILL.md"
+      },
+      "quality": {
+        "score": 74,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/researchers-verifier/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/researchers-verifier",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/researchers-verifier",
+        "publisher_setup_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/skills/researchers-verifier/SKILL.md"
+      }
+    },
+    {
+      "id": "bitwize-music-studio/claude-ai-music-skills/resume",
+      "name": "resume",
+      "description": "Finds an album by name and shows detailed status with next steps. Use when the user mentions an album name or wants to continue previous work.",
+      "category": "media-creative",
+      "license": "CC0-1.0",
+      "license_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "597d928fb2c8316ee13159771405813174aa01de",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/597d928fb2c8316ee13159771405813174aa01de/skills/resume/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/resume/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/resume",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/resume",
+        "publisher_setup_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/skills/resume/SKILL.md"
+      }
+    },
+    {
+      "id": "bitwize-music-studio/claude-ai-music-skills/session-start",
+      "name": "session-start",
+      "description": "Runs the session startup procedure - verifies setup, loads config and state, checks skill models, and reports project status. Use at the beginning of a fresh session.",
+      "category": "media-creative",
+      "license": "CC0-1.0",
+      "license_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "597d928fb2c8316ee13159771405813174aa01de",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/597d928fb2c8316ee13159771405813174aa01de/skills/session-start/SKILL.md"
+      },
+      "quality": {
+        "score": 74,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/session-start/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/session-start",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/session-start",
+        "publisher_setup_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/skills/session-start/SKILL.md"
+      }
+    },
+    {
+      "id": "bitwize-music-studio/claude-ai-music-skills/setup",
+      "name": "setup",
+      "description": "Detects your Python environment and guides you through installing plugin dependencies. Use on first-time setup or when MCP server fails to start.",
+      "category": "developer-tools",
+      "license": "CC0-1.0",
+      "license_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "597d928fb2c8316ee13159771405813174aa01de",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/597d928fb2c8316ee13159771405813174aa01de/skills/setup/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/setup/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/setup",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/setup",
+        "publisher_setup_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/skills/setup/SKILL.md"
+      }
+    },
+    {
+      "id": "bitwize-music-studio/claude-ai-music-skills/sheet-music-publisher",
+      "name": "sheet-music-publisher",
+      "description": "Converts mastered audio to sheet music and creates printable songbooks. Use after mastering when the user wants sheet music or a songbook for their album.",
+      "category": "media-creative",
+      "license": "CC0-1.0",
+      "license_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "597d928fb2c8316ee13159771405813174aa01de",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/597d928fb2c8316ee13159771405813174aa01de/skills/sheet-music-publisher/SKILL.md"
+      },
+      "quality": {
+        "score": 82,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/sheet-music-publisher/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/sheet-music-publisher",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/sheet-music-publisher",
+        "publisher_setup_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/skills/sheet-music-publisher/SKILL.md"
+      }
+    },
+    {
+      "id": "bitwize-music-studio/claude-ai-music-skills/tutorial",
+      "name": "tutorial",
+      "description": "Provides interactive guided album creation for new users. Use when the user is new to the plugin or asks for a walkthrough of the album creation process.",
+      "category": "media-creative",
+      "license": "CC0-1.0",
+      "license_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "597d928fb2c8316ee13159771405813174aa01de",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/597d928fb2c8316ee13159771405813174aa01de/skills/tutorial/SKILL.md"
+      },
+      "quality": {
+        "score": 82,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/tutorial/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/tutorial",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/tutorial",
+        "publisher_setup_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/skills/tutorial/SKILL.md"
+      }
+    },
+    {
+      "id": "bitwize-music-studio/claude-ai-music-skills/validate-album",
+      "name": "validate-album",
+      "description": "Validates album directory structure, file locations, and content integrity. Use before release or whenever the user wants to check an album's structural health.",
+      "category": "media-creative",
+      "license": "CC0-1.0",
+      "license_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "597d928fb2c8316ee13159771405813174aa01de",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/597d928fb2c8316ee13159771405813174aa01de/skills/validate-album/SKILL.md"
+      },
+      "quality": {
+        "score": 82,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/validate-album/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/validate-album",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/validate-album",
+        "publisher_setup_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/skills/validate-album/SKILL.md"
+      }
+    },
+    {
+      "id": "bitwize-music-studio/claude-ai-music-skills/verify-sources",
+      "name": "verify-sources",
+      "description": "Captures human source verification for tracks, timestamps it, and updates track files. Use when sources need human review before generation.",
+      "category": "media-creative",
+      "license": "CC0-1.0",
+      "license_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "597d928fb2c8316ee13159771405813174aa01de",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/597d928fb2c8316ee13159771405813174aa01de/skills/verify-sources/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/bitwize-music-studio/claude-ai-music-skills/verify-sources/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/verify-sources",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/bitwize-music-studio/claude-ai-music-skills/tree/main/skills/verify-sources",
+        "publisher_setup_url": "https://github.com/bitwize-music-studio/claude-ai-music-skills/blob/main/skills/verify-sources/SKILL.md"
+      }
+    }
+  ]
+}

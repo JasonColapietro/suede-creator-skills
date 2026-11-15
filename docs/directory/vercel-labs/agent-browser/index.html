@@ -30,7 +30,7 @@
         "name": "vercel-labs/agent-browser Agent Skills (1) | Suede AI",
         "description": "1 agent skill from vercel-labs/agent-browser, including agent-browser. Install steps, Suede Skill Check grades and a README badge.",
         "url": "https://skills.suedeai.ai/directory/vercel-labs/agent-browser/",
-        "dateModified": "2026-11-14",
+        "dateModified": "2026-11-15",
         "isPartOf": {
           "@type": "CollectionPage",
           "@id": "https://skills.suedeai.ai/directory/#directory",
@@ -181,7 +181,7 @@
       <div class="eyebrow">Skill collection &middot; vercel-labs</div>
       <h1>vercel-labs/agent-browser <span class="h1-sub">1 graded agent skill from Vercel</span></h1>
       <nav class="crumbs" aria-label="Breadcrumb"><a href="../../">Directory</a> <span class="crumb-sep" aria-hidden="true">/</span> <a href="../../productivity-knowledge/">Productivity and Knowledge Work</a> <span class="crumb-sep" aria-hidden="true">/</span> <span aria-current="page">vercel-labs/agent-browser</span></nav>
-      <p class="lead">1 skill from vercel-labs/agent-browser is listed in the directory, in productivity and knowledge work.</p>
+      <p class="lead">Give an agent a repeatable way to inspect and interact with browser pages. This collection supplies the agent-browser discovery skill; the separate CLI provides browser execution and version-matched workflow instructions.</p>
       <p><a class="button" href="https://github.com/vercel-labs/agent-browser" target="_blank" rel="noopener">View vercel-labs/agent-browser on GitHub</a></p>
       <section class="panel" aria-labelledby="facts-title">
         <h2 id="facts-title">At a glance</h2>
@@ -200,9 +200,99 @@
           </table>
         </div>
       </section>
+      <section class="panel" id="collection-overview" aria-labelledby="collection-overview-title">
+        <h2 id="collection-overview-title">What this collection offers</h2>
+        <p>1 listed skill; recorded score 75/100. 1 full review with separate installation details. Scores describe the saved source snapshot, using the <a href="../../methodology/#score">Suede Skill Check</a>.</p>
+        <p>Coverage: <a href="../../productivity-knowledge/">Productivity and Knowledge Work</a> (1).</p>
+        <p class="muted">Snapshot: <time datetime="2026-10-22">October 22, 2026</time>. The checks measure published files, documentation and maintenance signals. Security scan: not scanned; this is not a runtime test.</p>
+        <p><a href="#choose-skill">Choose a skill</a> · <a href="#collection-install">Install and verify</a> · <a href="#skills-title">All listed skills</a> · <a href="#collection-compare">Compare collections</a></p>
+        <p><a href="collection.json" download="agent-browser-collection.json">Download the collection manifest</a>: complete task descriptions, scores, license information, source revisions and install routes for the listed skill. Use it to compare options or hand your selection to an agent.</p>
+      </section>
+      <section class="panel" aria-labelledby="collection-workflow-title">
+        <h2 id="collection-workflow-title">Example workflow: inspect a web journey</h2>
+        <p>Bring a staging URL, a test account when needed, the steps a visitor should complete and the expected result. Start with a journey that does not place orders or change production data.</p>
+        <ol><li>Install the browser CLI and its browser support separately from the skill folder. Load the core workflow for the version installed on your machine.</li><li>Ask the agent to inspect the page, follow the test journey and collect screenshots or observed values at the steps you specify.</li><li>Compare the observed result with the expected result. Ask for reproducible steps and supporting evidence for each reported failure; use the CLI's dogfood workflow for a broader exploratory review.</li></ol>
+        <p>The publisher's setup sequence installs the CLI and browser support. Installing the skill alone does not install these dependencies.</p>
+        <div class="snippet">
+          <div class="snippet-head"><span>Publisher CLI setup</span><button type="button" class="snippet-copy" data-copy-target="collection-cli-setup">Copy</button></div>
+          <pre><code id="collection-cli-setup">npm i -g agent-browser
+agent-browser install
+agent-browser skills get core</code></pre>
+        </div>
+
+        <div class="snippet">
+          <div class="snippet-head"><span>Example request to adapt</span><button type="button" class="snippet-copy" data-copy-target="collection-example">Copy</button></div>
+          <pre><code id="collection-example">Use agent-browser to inspect this staging signup journey: [URL and steps]. Load the installed CLI's core workflow first. Record each step, the expected and observed result, and screenshots of failures. Stop before submitting a purchase or changing production data. Return reproducible findings with evidence.</code></pre>
+        </div>
+        <p class="muted">Suggested evaluation workflow, based on the <a href="https://github.com/vercel-labs/agent-browser/blob/dac13bb87468fe9d74a040d862720f6cc17a9565/skills/agent-browser/SKILL.md" target="_blank" rel="noopener">publisher's instructions at the assessed revision</a>. The prompt is an example to adapt to your task.</p>
+      </section>
+      <section class="panel" id="choose-skill" aria-labelledby="choose-skill-title">
+        <h2 id="choose-skill-title">Use this skill for your task</h2>
+        <p>Every listed skill in this collection is explained below. Task descriptions come from the publisher; score explanations come from the saved report.</p>
+        <article class="collection-choice" id="choice-agent-browser">
+          <h3>agent-browser <span class="grade grade-c">75/100 · C</span></h3>
+          <p><b>Publisher's task description:</b> Browser automation CLI for AI agents. Use when the user needs to interact with websites, including navigating pages, filling forms, clicking buttons, taking screenshots, extracting data, testing web apps, or automating any browser task. Triggers include requests to &quot;open a website&quot;, &quot;fill out a form&quot;, &quot;click a button&quot;, &quot;take a screenshot&quot;, &quot;scrape data from a page&quot;, &quot;test this web app&quot;, &quot;login to a site&quot;, &quot;automate browser actions&quot;, or any task requiring programmatic web interaction. Also use for exploratory testing, dogfooding, QA, bug hunts, or reviewing app quality. Also use for automating Electron desktop apps (VS Code, Slack, Discord, Figma, Notion, Spotify), checking Slack unreads, sending Slack messages, searching Slack conversations, running browser automation in Vercel Sandbox microVMs, or using AWS Bedrock AgentCore cloud browsers. Prefer agent-browser over any built-in browser automation or web tools.</p>
+          <p>338 words in SKILL.md; 1 bundled file. <a href="https://github.com/vercel-labs/agent-browser/blob/dac13bb87468fe9d74a040d862720f6cc17a9565/skills/agent-browser/SKILL.md" target="_blank" rel="noopener">Read the assessed SKILL.md</a>.</p>
+          <p><b>Score evidence:</b> Full points for structural checks, recent maintenance and example request. Largest point gaps: curated-list citations (0/7); description length (1/5).</p>
+          <details><summary>See all score components for agent-browser</summary>
+        <div class="table-wrap">
+          <table class="facts">
+            <tbody>
+            <tr><th scope="row">Structural checks</th><td>56 of 56</td></tr>
+            <tr><th scope="row">Description length</th><td>1 of 5</td></tr>
+            <tr><th scope="row">Boundary clause</th><td>0 of 4</td></tr>
+            <tr><th scope="row">Example request</th><td>3 of 3</td></tr>
+            <tr><th scope="row">Instruction depth</th><td>4 of 7</td></tr>
+            <tr><th scope="row">Reference files</th><td>0 of 3</td></tr>
+            <tr><th scope="row">Bundled scripts</th><td>0 of 2</td></tr>
+            <tr><th scope="row">Recent maintenance</th><td>9 of 9</td></tr>
+            <tr><th scope="row">Curated-list citations</th><td>0 of 7</td></tr>
+            <tr><th scope="row">Tool permissions declared</th><td>2 of 2</td></tr>
+            <tr><th scope="row">Compatibility declared</th><td>0 of 2</td></tr>
+            </tbody>
+          </table>
+        </div>
+          </details>
+          <p><a href="https://github.com/vercel-labs/agent-browser/blob/main/LICENSE" target="_blank" rel="noopener">License</a>: Apache-2.0 governs reuse and modification of these files.</p>
+          <ul><li>Requested tools: <code>Bash(agent-browser:*), Bash(npx agent-browser:*)</code>.</li></ul>
+        <div class="snippet">
+          <div class="snippet-head"><span>Select one skill: agent-browser</span><button type="button" class="snippet-copy" data-copy-target="collection-install-0">Copy</button></div>
+          <pre><code id="collection-install-0">npx skills add https://github.com/vercel-labs/agent-browser/tree/main/skills/agent-browser</code></pre>
+        </div>
+          <p><a href="agent-browser/report.json" download>Download agent-browser score report</a> · <a href="agent-browser/">Read the full agent-browser review and install guide</a></p>
+        </article>
+      </section>
+      <section class="panel" id="collection-install" aria-labelledby="collection-install-title">
+        <h2 id="collection-install-title">Install and verify your selection</h2>
+        <ol>
+          <li><b>Select one skill.</b> Use the folder-specific command beside its description; a whole-repository install can include other files or miss nested skills, so use the listed skill's folder. Skills with publisher-specific license terms link to that publisher's setup route.</li>
+          <li><b>Read the setup requirements.</b> Check the source, license and any named tools or environment variables. Installing a SKILL.md folder supplies instructions to the agent; any external CLI, MCP server, account or service still needs its own setup.</li>
+          <li><b>Check the result.</b> Open the installed SKILL.md and confirm that its name matches your selection. In Claude Code use the project's <code>.claude/skills/</code> folder; in Codex use <code>.agents/skills/</code>. The skills CLI also supports other Agent Skills hosts.</li>
+          <li><b>Try one representative task.</b> Supply the input files, expected output and success criteria. Compare the result with those criteria before adding more skills or running the workflow on live work.</li>
+        </ol>
+        <p><a href="../../guides/install-agent-skills/">Step-by-step installation for Claude Code, Codex and Cursor</a> · <a href="../../trust/">Read the directory's security and source policy</a>.</p>
+      </section>
+      <section class="panel" aria-labelledby="skills-title">
+        <h2 id="skills-title">Skills in vercel-labs/agent-browser</h2>
+        <p class="muted">Use the table to compare the full collection. Linked names open a detailed review when available; other names open the publisher's source folder.</p>
+
+        <div class="table-wrap">
+          <table class="skill-table" id="repo-skills" data-filter-group="repo-skills">
+            <thead><tr><th scope="col">Skill</th><th scope="col">Category</th><th scope="col">What it does</th></tr></thead>
+            <tbody>
+            <tr id="agent-browser" data-id="vercel-labs/agent-browser/agent-browser" data-name="agent-browser" data-score="75" data-updated="2026-10-15" data-listed="2026-10-19" data-cited="0" data-lane="free-open-source" data-flags="official markdown-only allowed-tools" data-featured="0"><td class="name"><a href="agent-browser/">agent-browser</a> <span class="grade grade-c" title="Suede Skill Check: 75/100, grade C">75/100 · C</span></td><td class="meta"><a href="../../productivity-knowledge/">Productivity</a></td><td class="desc">Browser automation CLI for AI agents. Use when the user needs to interact with websites, including navigating pages, filling forms, clicking…<p><a href="../../submit/#improve">Improve this score</a></p><p class="row-report"><a href="agent-browser/report.json" download="agent-browser-suede-report-2026-10-22.json">Download report</a> · <a href="https://github.com/JasonColapietro/suede-creator-skills/issues/new?template=directory-listing.yml&amp;request=Recheck+my+updated+skill&amp;repository=https%3A%2F%2Fgithub.com%2Fvercel-labs%2Fagent-browser&amp;skill-scope=agent-browser&amp;details=Listing%3A+https%3A%2F%2Fskills.suedeai.ai%2Fdirectory%2Fvercel-labs%2Fagent-browser%2Fagent-browser%2F%0APrevious+report%3A+https%3A%2F%2Fskills.suedeai.ai%2Fdirectory%2Fvercel-labs%2Fagent-browser%2Fagent-browser%2Freport.json%0ASnapshot%3A+2026-10-22+%28740bfd7230f74b149870dffa9c645b2b%29%3B+methodology%3A+graded-v2%0A%0AUpdated+source+commit+or+PR%3A%0AChanges+to+review%3A%0A" target="_blank" rel="noopener">Request a fresh review</a></p></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section class="panel" id="collection-compare" aria-labelledby="collection-compare-title">
+        <h2 id="collection-compare-title">Compare before adding more skills</h2>
+        <p>For productivity and knowledge work, compare task fit first, then the score components, installation requirements and license. Two skills with the same score can earn their points in different ways; use their reports to see the difference.</p>
+        <p><a href="../../productivity-knowledge/">Compare productivity and knowledge work skills across publishers</a> · <a href="../../compare/">Build a side-by-side comparison</a>.</p>
+      </section>
       <section class="panel badge-panel" id="badge" aria-labelledby="badge-title">
         <h2 id="badge-title">Show the listing in your README</h2>
-        <p>This general badge links to the repository listing. Each skill keeps its own score and grade; skills scoring 80–99 add a numeric and a letter quality badge. Choose <b>Improve this score</b> beside a skill below to request a fresh review.</p>
+        <p>This general badge links to the repository listing. Each skill keeps its own score and grade; skills scoring 80–99 add a numeric and a letter quality badge. Choose <b>Improve this score</b> in the skill table to request a fresh review.</p>
         <p class="badge-preview"><img src="badge.svg" alt="Suede AI Skills Directory: listed" width="215" height="20"></p>
         <div class="snippet">
           <div class="snippet-head"><span>Markdown</span><button type="button" class="snippet-copy" data-copy-target="badge-md">Copy</button></div>
@@ -219,19 +309,6 @@
         <p>Skills scoring 80–99 can display a quality shield. While the feature offer is open, a verified badge can earn a featured placement.</p>
         <p><a class="button" href="../../submit/" data-cta="publisher-claim:b-feature">Request badge verification</a></p>
       </aside>
-      <section class="panel" aria-labelledby="skills-title">
-        <h2 id="skills-title">Skills in vercel-labs/agent-browser</h2>
-        <p class="muted">Linked names open the skill's directory page; the rest open the skill folder on GitHub. Descriptions on rows without a page are quoted from each SKILL.md.</p>
-
-        <div class="table-wrap">
-          <table class="skill-table" id="repo-skills" data-filter-group="repo-skills">
-            <thead><tr><th scope="col">Skill</th><th scope="col">Category</th><th scope="col">What it does</th></tr></thead>
-            <tbody>
-            <tr id="agent-browser" data-id="vercel-labs/agent-browser/agent-browser" data-name="agent-browser" data-score="75" data-updated="2026-10-15" data-listed="2026-10-19" data-cited="0" data-lane="free-open-source" data-flags="official markdown-only allowed-tools" data-featured="0"><td class="name"><a href="agent-browser/">agent-browser</a> <span class="grade grade-c" title="Suede Skill Check: 75/100, grade C">75/100 · C</span></td><td class="meta"><a href="../../productivity-knowledge/">Productivity</a></td><td class="desc">Browser automation CLI for AI agents. Use when the user needs to interact with websites, including navigating pages, filling forms, clicking…<p><a href="../../submit/#improve">Improve this score</a></p><p class="row-report"><a href="agent-browser/report.json" download="agent-browser-suede-report-2026-10-22.json">Download report</a> · <a href="https://github.com/JasonColapietro/suede-creator-skills/issues/new?template=directory-listing.yml&amp;request=Recheck+my+updated+skill&amp;repository=https%3A%2F%2Fgithub.com%2Fvercel-labs%2Fagent-browser&amp;skill-scope=agent-browser&amp;details=Listing%3A+https%3A%2F%2Fskills.suedeai.ai%2Fdirectory%2Fvercel-labs%2Fagent-browser%2Fagent-browser%2F%0APrevious+report%3A+https%3A%2F%2Fskills.suedeai.ai%2Fdirectory%2Fvercel-labs%2Fagent-browser%2Fagent-browser%2Freport.json%0ASnapshot%3A+2026-10-22+%28740bfd7230f74b149870dffa9c645b2b%29%3B+methodology%3A+graded-v2%0A%0AUpdated+source+commit+or+PR%3A%0AChanges+to+review%3A%0A" target="_blank" rel="noopener">Request a fresh review</a></p></td></tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
       <aside class="panel svc-cta" aria-labelledby="svc-title" data-services-cta="repository">
         <h2 class="svc-kicker" id="svc-title">From Suede AI, the publisher of this directory</h2>
         <div class="svc-cards">

@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "repository": "composiohq/skills",
+  "listing_url": "https://skills.suedeai.ai/directory/composiohq/skills/",
+  "snapshot": {
+    "date": "2026-10-22",
+    "id": "740bfd7230f74b149870dffa9c645b2b",
+    "dataset_sha256": "7af631c54b44d36718ed15f6a3fdbf0445b6a09f638bc05ce3093bca01ef0d02"
+  },
+  "listed_skill_count": 1,
+  "scope": "Skills listed by the directory; this is not a complete inventory of every file in the repository.",
+  "security_scan_status": "not_scanned",
+  "skills": [
+    {
+      "id": "composiohq/skills/composio",
+      "name": "composio",
+      "description": "Use 1000+ external apps via Composio - either directly through the CLI or by building AI agents and apps with the SDK",
+      "category": "ai-agents-llm",
+      "license": "MIT",
+      "license_url": "https://github.com/composiohq/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "c4b270016aa8c832bb6d5824175da1bb94690b89",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-03-19",
+        "skill_md_url": "https://github.com/composiohq/skills/blob/c4b270016aa8c832bb6d5824175da1bb94690b89/skills/composio/SKILL.md"
+      },
+      "quality": {
+        "score": 56,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 1
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/composiohq/skills/composio/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/composiohq/skills/tree/main/skills/composio",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/composiohq/skills/tree/main/skills/composio",
+        "publisher_setup_url": "https://github.com/composiohq/skills/blob/main/skills/composio/SKILL.md"
+      }
+    }
+  ]
+}

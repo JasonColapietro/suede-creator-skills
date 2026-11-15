@@ -1,0 +1,960 @@
+{
+  "schema_version": 1,
+  "repository": "EmblemCompany/Agent-skills",
+  "listing_url": "https://skills.suedeai.ai/directory/emblemcompany/agent-skills/",
+  "snapshot": {
+    "date": "2026-10-22",
+    "id": "740bfd7230f74b149870dffa9c645b2b",
+    "dataset_sha256": "7af631c54b44d36718ed15f6a3fdbf0445b6a09f638bc05ce3093bca01ef0d02"
+  },
+  "listed_skill_count": 9,
+  "scope": "Skills listed by the directory; this is not a complete inventory of every file in the repository.",
+  "security_scan_status": "not_scanned",
+  "skills": [
+    {
+      "id": "emblemcompany/agent-skills/emblem-ai",
+      "name": "emblem-ai",
+      "description": "One-shot user management for apps, multi-chain wallet authentication, an AI-powered assistant, and AI app introspection. Use when the user wants to let website users sign in with wallets, email/password, or social login and give each user a wallet-enabled account, then embed EmblemAI chat surfaces, connect plugins, or add Reflexive observability. Provides React components, TypeScript SDKs, session-based authentication, and pointers to the React and agent-wallet skills for specialized workflows.",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/EmblemCompany/Agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "9a68a35c4d61a8b6fe673fa98c39e4b9dd9d2cd3",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-05-15",
+        "skill_md_url": "https://github.com/EmblemCompany/Agent-skills/blob/9a68a35c4d61a8b6fe673fa98c39e4b9dd9d2cd3/skills/emblem-ai/SKILL.md"
+      },
+      "quality": {
+        "score": 81,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/emblemcompany/agent-skills/emblem-ai/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/emblemcompany/agent-skills/emblem-ai/",
+      "source_folder_url": "https://github.com/EmblemCompany/Agent-skills/tree/main/skills/emblem-ai",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/EmblemCompany/Agent-skills/tree/main/skills/emblem-ai",
+        "publisher_setup_url": "https://github.com/EmblemCompany/Agent-skills/blob/main/skills/emblem-ai/SKILL.md"
+      }
+    },
+    {
+      "id": "emblemcompany/agent-skills/emblem-ai-agent-wallet",
+      "name": "emblem-ai-agent-wallet",
+      "description": "Connect to EmblemVault and manage wallet-aware workflows via EmblemAI with review-first, operator-controlled actions. Supports Solana, Ethereum, Base, BSC, Polygon, Hedera, and Bitcoin. Also use when the user needs Emblem's auth model explained: one browser auth flow can log a user in with wallets, email/password, or social sign-in, while agent mode can auto-provision a profile-scoped wallet with no manual setup.",
+      "category": "business-finance",
+      "license": "MIT",
+      "license_url": "https://github.com/EmblemCompany/Agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "9a68a35c4d61a8b6fe673fa98c39e4b9dd9d2cd3",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-05-15",
+        "skill_md_url": "https://github.com/EmblemCompany/Agent-skills/blob/9a68a35c4d61a8b6fe673fa98c39e4b9dd9d2cd3/skills/emblem-ai-agent-wallet/SKILL.md"
+      },
+      "quality": {
+        "score": 83,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/emblemcompany/agent-skills/emblem-ai-agent-wallet/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/emblemcompany/agent-skills/emblem-ai-agent-wallet/",
+      "source_folder_url": "https://github.com/EmblemCompany/Agent-skills/tree/main/skills/emblem-ai-agent-wallet",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/EmblemCompany/Agent-skills/tree/main/skills/emblem-ai-agent-wallet",
+        "publisher_setup_url": "https://github.com/EmblemCompany/Agent-skills/blob/main/skills/emblem-ai-agent-wallet/SKILL.md"
+      }
+    },
+    {
+      "id": "emblemcompany/agent-skills/emblem-ai-prompt-examples",
+      "name": "emblem-ai-prompt-examples",
+      "description": "Curated prompt and usage examples for research, portfolio review, quote requests, approval-gated drafts, NFT discovery, prediction-market analysis, and assistant workflows. Emphasis is review-first, trust-boundary-aware use of external data, and explicit confirmation before any value-moving action. Use when the user wants example prompts, phrasing guidance, or sample requests for end-user EmblemAI tasks.",
+      "category": "business-finance",
+      "license": "MIT",
+      "license_url": "https://github.com/EmblemCompany/Agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "9a68a35c4d61a8b6fe673fa98c39e4b9dd9d2cd3",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-05-15",
+        "skill_md_url": "https://github.com/EmblemCompany/Agent-skills/blob/9a68a35c4d61a8b6fe673fa98c39e4b9dd9d2cd3/skills/emblem-ai-prompt-examples/SKILL.md"
+      },
+      "quality": {
+        "score": 81,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/emblemcompany/agent-skills/emblem-ai-prompt-examples/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/emblemcompany/agent-skills/emblem-ai-prompt-examples/",
+      "source_folder_url": "https://github.com/EmblemCompany/Agent-skills/tree/main/skills/emblem-ai-prompt-examples",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/EmblemCompany/Agent-skills/tree/main/skills/emblem-ai-prompt-examples",
+        "publisher_setup_url": "https://github.com/EmblemCompany/Agent-skills/blob/main/skills/emblem-ai-prompt-examples/SKILL.md"
+      }
+    },
+    {
+      "id": "emblemcompany/agent-skills/emblem-ai-react",
+      "name": "emblem-ai-react",
+      "description": "React integration skill for EmblemAI's one-shot user management. Use when the user wants to add website authentication plus wallet-enabled users to a React app with EmblemAuthProvider, ConnectButton, social/email/wallet login, chat components, React auth hooks, React composition patterns, or Migrate.fun React hooks.",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/EmblemCompany/Agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "9a68a35c4d61a8b6fe673fa98c39e4b9dd9d2cd3",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-05-15",
+        "skill_md_url": "https://github.com/EmblemCompany/Agent-skills/blob/9a68a35c4d61a8b6fe673fa98c39e4b9dd9d2cd3/skills/emblem-ai-react/SKILL.md"
+      },
+      "quality": {
+        "score": 78,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/emblemcompany/agent-skills/emblem-ai-react/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/emblemcompany/agent-skills/emblem-ai-react/",
+      "source_folder_url": "https://github.com/EmblemCompany/Agent-skills/tree/main/skills/emblem-ai-react",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/EmblemCompany/Agent-skills/tree/main/skills/emblem-ai-react",
+        "publisher_setup_url": "https://github.com/EmblemCompany/Agent-skills/blob/main/skills/emblem-ai-react/SKILL.md"
+      }
+    },
+    {
+      "id": "emblemcompany/agent-skills/emblem-defi-yield",
+      "name": "emblem-defi-yield",
+      "description": "DeFi yield research and liquid staking via EmblemAI. Discover yield opportunities, compare protocols, check DeFi positions with Nansen, and enter liquid staking via token swaps. Use when the user wants to research yields, find staking options, or review DeFi positions.",
+      "category": "business-finance",
+      "license": "MIT",
+      "license_url": "https://github.com/EmblemCompany/Agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "9a68a35c4d61a8b6fe673fa98c39e4b9dd9d2cd3",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-05-15",
+        "skill_md_url": "https://github.com/EmblemCompany/Agent-skills/blob/9a68a35c4d61a8b6fe673fa98c39e4b9dd9d2cd3/skills/emblem-defi-yield/SKILL.md"
+      },
+      "quality": {
+        "score": 78,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/emblemcompany/agent-skills/emblem-defi-yield/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/emblemcompany/agent-skills/emblem-defi-yield/",
+      "source_folder_url": "https://github.com/EmblemCompany/Agent-skills/tree/main/skills/emblem-defi-yield",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/EmblemCompany/Agent-skills/tree/main/skills/emblem-defi-yield",
+        "publisher_setup_url": "https://github.com/EmblemCompany/Agent-skills/blob/main/skills/emblem-defi-yield/SKILL.md"
+      }
+    },
+    {
+      "id": "emblemcompany/agent-skills/emblem-market-research",
+      "name": "emblem-market-research",
+      "description": "Crypto market intelligence via EmblemAI. Trending tokens, on-chain analytics, derivatives data, and smart money tracking from CoinGecko, CoinGlass, Birdeye, and Nansen. Use when the user wants market data, trending tokens, derivatives analytics, or on-chain intelligence.",
+      "category": "business-finance",
+      "license": "MIT",
+      "license_url": "https://github.com/EmblemCompany/Agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "9a68a35c4d61a8b6fe673fa98c39e4b9dd9d2cd3",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-05-15",
+        "skill_md_url": "https://github.com/EmblemCompany/Agent-skills/blob/9a68a35c4d61a8b6fe673fa98c39e4b9dd9d2cd3/skills/emblem-market-research/SKILL.md"
+      },
+      "quality": {
+        "score": 78,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/emblemcompany/agent-skills/emblem-market-research/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/emblemcompany/agent-skills/emblem-market-research/",
+      "source_folder_url": "https://github.com/EmblemCompany/Agent-skills/tree/main/skills/emblem-market-research",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/EmblemCompany/Agent-skills/tree/main/skills/emblem-market-research",
+        "publisher_setup_url": "https://github.com/EmblemCompany/Agent-skills/blob/main/skills/emblem-market-research/SKILL.md"
+      }
+    },
+    {
+      "id": "emblemcompany/agent-skills/emblem-memecoin-scout",
+      "name": "emblem-memecoin-scout",
+      "description": "Memecoin discovery and risk assessment via EmblemAI. Trending memecoins on Solana, Base, and Hedera. Pump.fun and LaunchLab new token alerts, Clanker discovery, rug-pull detection, holder analysis, and smart money tracking. Use when the user wants to find new memecoins, check if a token is a rug pull, or scout trending low-cap tokens.",
+      "category": "business-finance",
+      "license": "MIT",
+      "license_url": "https://github.com/EmblemCompany/Agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "9a68a35c4d61a8b6fe673fa98c39e4b9dd9d2cd3",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-05-15",
+        "skill_md_url": "https://github.com/EmblemCompany/Agent-skills/blob/9a68a35c4d61a8b6fe673fa98c39e4b9dd9d2cd3/skills/emblem-memecoin-scout/SKILL.md"
+      },
+      "quality": {
+        "score": 78,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/emblemcompany/agent-skills/emblem-memecoin-scout/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/emblemcompany/agent-skills/emblem-memecoin-scout/",
+      "source_folder_url": "https://github.com/EmblemCompany/Agent-skills/tree/main/skills/emblem-memecoin-scout",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/EmblemCompany/Agent-skills/tree/main/skills/emblem-memecoin-scout",
+        "publisher_setup_url": "https://github.com/EmblemCompany/Agent-skills/blob/main/skills/emblem-memecoin-scout/SKILL.md"
+      }
+    },
+    {
+      "id": "emblemcompany/agent-skills/emblem-portfolio-tracker",
+      "name": "emblem-portfolio-tracker",
+      "description": "Track crypto portfolio across 7 blockchains via EmblemAI. Aggregated balances with USD values, conditional trade P&L, and DeFi position tracking via Nansen. Use when the user wants to check their portfolio, see balances across chains, or review trade positions.",
+      "category": "business-finance",
+      "license": "MIT",
+      "license_url": "https://github.com/EmblemCompany/Agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "9a68a35c4d61a8b6fe673fa98c39e4b9dd9d2cd3",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-05-15",
+        "skill_md_url": "https://github.com/EmblemCompany/Agent-skills/blob/9a68a35c4d61a8b6fe673fa98c39e4b9dd9d2cd3/skills/emblem-portfolio-tracker/SKILL.md"
+      },
+      "quality": {
+        "score": 78,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/emblemcompany/agent-skills/emblem-portfolio-tracker/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/emblemcompany/agent-skills/emblem-portfolio-tracker/",
+      "source_folder_url": "https://github.com/EmblemCompany/Agent-skills/tree/main/skills/emblem-portfolio-tracker",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/EmblemCompany/Agent-skills/tree/main/skills/emblem-portfolio-tracker",
+        "publisher_setup_url": "https://github.com/EmblemCompany/Agent-skills/blob/main/skills/emblem-portfolio-tracker/SKILL.md"
+      }
+    },
+    {
+      "id": "emblemcompany/agent-skills/emblem-token-swap",
+      "name": "emblem-token-swap",
+      "description": "Execute token swaps across 6 blockchains via EmblemAI. Automatic route optimization and cross-chain bridging via ChangeNow. Use when the user wants to swap tokens, exchange crypto, convert between currencies, or bridge assets cross-chain.",
+      "category": "business-finance",
+      "license": "MIT",
+      "license_url": "https://github.com/EmblemCompany/Agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "9a68a35c4d61a8b6fe673fa98c39e4b9dd9d2cd3",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-05-15",
+        "skill_md_url": "https://github.com/EmblemCompany/Agent-skills/blob/9a68a35c4d61a8b6fe673fa98c39e4b9dd9d2cd3/skills/emblem-token-swap/SKILL.md"
+      },
+      "quality": {
+        "score": 78,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/emblemcompany/agent-skills/emblem-token-swap/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/emblemcompany/agent-skills/emblem-token-swap/",
+      "source_folder_url": "https://github.com/EmblemCompany/Agent-skills/tree/main/skills/emblem-token-swap",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/EmblemCompany/Agent-skills/tree/main/skills/emblem-token-swap",
+        "publisher_setup_url": "https://github.com/EmblemCompany/Agent-skills/blob/main/skills/emblem-token-swap/SKILL.md"
+      }
+    }
+  ]
+}

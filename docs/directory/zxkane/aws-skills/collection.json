@@ -1,0 +1,645 @@
+{
+  "schema_version": 1,
+  "repository": "zxkane/aws-skills",
+  "listing_url": "https://skills.suedeai.ai/directory/zxkane/aws-skills/",
+  "snapshot": {
+    "date": "2026-10-22",
+    "id": "740bfd7230f74b149870dffa9c645b2b",
+    "dataset_sha256": "7af631c54b44d36718ed15f6a3fdbf0445b6a09f638bc05ce3093bca01ef0d02"
+  },
+  "listed_skill_count": 6,
+  "scope": "Skills listed by the directory; this is not a complete inventory of every file in the repository.",
+  "security_scan_status": "not_scanned",
+  "skills": [
+    {
+      "id": "zxkane/aws-skills/aws-agentic-ai",
+      "name": "aws-agentic-ai",
+      "description": "AWS Bedrock AgentCore comprehensive expert for deploying and managing AI agents at scale. Use when working with any AgentCore service including Gateway, Runtime, Memory, Identity, Code Interpreter, Browser, Observability, Agent Registry, or Evaluations. Covers agent deployment, MCP tool integration, credential management, agent discovery, governance workflows, and automated quality assessment. Essential when user mentions AgentCore, agent runtime, agent registry, agent evaluation, MCP gateway, deploy agent, register MCP server, discover agents, evaluate agent quality, agent credentials, or wants to build, deploy, catalog, or monitor AI agents on AWS.",
+      "category": "ai-agents-llm",
+      "license": "MIT",
+      "license_url": "https://github.com/zxkane/aws-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "68530c6f296ccd2f5e99c79782f3e0fbf962c51a",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-06-15",
+        "skill_md_url": "https://github.com/zxkane/aws-skills/blob/68530c6f296ccd2f5e99c79782f3e0fbf962c51a/plugins/aws-agentic-ai/skills/aws-agentic-ai/SKILL.md"
+      },
+      "quality": {
+        "score": 83,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/zxkane/aws-skills/aws-agentic-ai/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/zxkane/aws-skills/aws-agentic-ai/",
+      "source_folder_url": "https://github.com/zxkane/aws-skills/tree/main/plugins/aws-agentic-ai/skills/aws-agentic-ai",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/zxkane/aws-skills/tree/main/plugins/aws-agentic-ai/skills/aws-agentic-ai",
+        "publisher_setup_url": "https://github.com/zxkane/aws-skills/blob/main/plugins/aws-agentic-ai/skills/aws-agentic-ai/SKILL.md"
+      }
+    },
+    {
+      "id": "zxkane/aws-skills/aws-cdk-development",
+      "name": "aws-cdk-development",
+      "description": "AWS Cloud Development Kit (CDK) expert for building cloud infrastructure with TypeScript/Python. Use when creating CDK stacks, defining CDK constructs, implementing infrastructure as code, or when the user mentions CDK, CloudFormation, IaC, cdk synth, cdk deploy, or wants to define AWS infrastructure programmatically. Covers CDK app structure, construct patterns, stack composition, and deployment workflows.",
+      "category": "devops-cloud",
+      "license": "MIT",
+      "license_url": "https://github.com/zxkane/aws-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "68530c6f296ccd2f5e99c79782f3e0fbf962c51a",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-06-15",
+        "skill_md_url": "https://github.com/zxkane/aws-skills/blob/68530c6f296ccd2f5e99c79782f3e0fbf962c51a/plugins/aws-iac/skills/aws-cdk-development/SKILL.md"
+      },
+      "quality": {
+        "score": 85,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/zxkane/aws-skills/aws-cdk-development/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/zxkane/aws-skills/aws-cdk-development/",
+      "source_folder_url": "https://github.com/zxkane/aws-skills/tree/main/plugins/aws-iac/skills/aws-cdk-development",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/zxkane/aws-skills/tree/main/plugins/aws-iac/skills/aws-cdk-development",
+        "publisher_setup_url": "https://github.com/zxkane/aws-skills/blob/main/plugins/aws-iac/skills/aws-cdk-development/SKILL.md"
+      }
+    },
+    {
+      "id": "zxkane/aws-skills/aws-cost-operations",
+      "name": "aws-cost-operations",
+      "description": "AWS cost optimization, monitoring, and operational excellence expert. Use when analyzing AWS bills, estimating costs, setting up CloudWatch alarms, querying logs, auditing CloudTrail activity, or assessing security posture. Essential when user mentions AWS costs, spending, billing, budget, pricing, CloudWatch, observability, monitoring, alerting, CloudTrail, audit, or wants to optimize AWS infrastructure costs and operational efficiency.",
+      "category": "devops-cloud",
+      "license": "MIT",
+      "license_url": "https://github.com/zxkane/aws-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "68530c6f296ccd2f5e99c79782f3e0fbf962c51a",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-06-15",
+        "skill_md_url": "https://github.com/zxkane/aws-skills/blob/68530c6f296ccd2f5e99c79782f3e0fbf962c51a/plugins/aws-cost-ops/skills/aws-cost-operations/SKILL.md"
+      },
+      "quality": {
+        "score": 83,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/zxkane/aws-skills/aws-cost-operations/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/zxkane/aws-skills/aws-cost-operations/",
+      "source_folder_url": "https://github.com/zxkane/aws-skills/tree/main/plugins/aws-cost-ops/skills/aws-cost-operations",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/zxkane/aws-skills/tree/main/plugins/aws-cost-ops/skills/aws-cost-operations",
+        "publisher_setup_url": "https://github.com/zxkane/aws-skills/blob/main/plugins/aws-cost-ops/skills/aws-cost-operations/SKILL.md"
+      }
+    },
+    {
+      "id": "zxkane/aws-skills/aws-mcp-setup",
+      "name": "aws-mcp-setup",
+      "description": "Configure AWS MCP servers for documentation search and API access. Use when setting up AWS MCP, configuring AWS documentation tools, troubleshooting MCP connectivity, or when user mentions aws-mcp, awsdocs, uvx setup, or MCP server configuration. Covers both Full AWS MCP Server (with uvx + credentials) and lightweight Documentation MCP (no auth required).",
+      "category": "ai-agents-llm",
+      "license": "MIT",
+      "license_url": "https://github.com/zxkane/aws-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "68530c6f296ccd2f5e99c79782f3e0fbf962c51a",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-06-15",
+        "skill_md_url": "https://github.com/zxkane/aws-skills/blob/68530c6f296ccd2f5e99c79782f3e0fbf962c51a/plugins/aws-common/skills/aws-mcp-setup/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/zxkane/aws-skills/aws-mcp-setup/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/zxkane/aws-skills/aws-mcp-setup/",
+      "source_folder_url": "https://github.com/zxkane/aws-skills/tree/main/plugins/aws-common/skills/aws-mcp-setup",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/zxkane/aws-skills/tree/main/plugins/aws-common/skills/aws-mcp-setup",
+        "publisher_setup_url": "https://github.com/zxkane/aws-skills/blob/main/plugins/aws-common/skills/aws-mcp-setup/SKILL.md"
+      }
+    },
+    {
+      "id": "zxkane/aws-skills/aws-serverless-eda",
+      "name": "aws-serverless-eda",
+      "description": "AWS serverless and event-driven architecture expert based on Well-Architected Framework. Use when building serverless APIs, Lambda functions, REST APIs, microservices, or async workflows. Covers Lambda with TypeScript/Python, API Gateway (REST/HTTP), DynamoDB, Step Functions, EventBridge, SQS, SNS, and serverless patterns. Essential when user mentions serverless, Lambda, API Gateway, event-driven, async processing, queues, pub/sub, or wants to build scalable serverless applications with AWS best practices.",
+      "category": "devops-cloud",
+      "license": "MIT",
+      "license_url": "https://github.com/zxkane/aws-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "68530c6f296ccd2f5e99c79782f3e0fbf962c51a",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-06-15",
+        "skill_md_url": "https://github.com/zxkane/aws-skills/blob/68530c6f296ccd2f5e99c79782f3e0fbf962c51a/plugins/serverless-eda/skills/aws-serverless-eda/SKILL.md"
+      },
+      "quality": {
+        "score": 83,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/zxkane/aws-skills/aws-serverless-eda/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/zxkane/aws-skills/aws-serverless-eda/",
+      "source_folder_url": "https://github.com/zxkane/aws-skills/tree/main/plugins/serverless-eda/skills/aws-serverless-eda",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/zxkane/aws-skills/tree/main/plugins/serverless-eda/skills/aws-serverless-eda",
+        "publisher_setup_url": "https://github.com/zxkane/aws-skills/blob/main/plugins/serverless-eda/skills/aws-serverless-eda/SKILL.md"
+      }
+    },
+    {
+      "id": "zxkane/aws-skills/aws-sst-development",
+      "name": "aws-sst-development",
+      "description": "SST v4 (Ion) expert for managing AWS resources as code with the Pulumi-backed framework. Use when writing or editing sst.config.ts, building infra/ modules (sst.aws.Function/Bucket/Dynamo/Cron/Service/Router, sst.Secret, sst.Linkable, raw aws.* Pulumi resources), wiring resource links, scoping IAM, or running sst deploy/dev/diff/remove. Essential when the user mentions SST, sst.config.ts, $config, $transform, $interpolate, sst.aws.*, sst.Secret, Pulumi/Ion, \"sst deploy\", a failed SST deploy (ConflictException on a resource-type change, \"Identifier '__filename' has already been declared\", MalformedPolicyDocument on an Output<T>), or wants to scaffold/troubleshoot AWS infrastructure with SST. Also use when a request to \"deploy my AWS stack\" or \"add a Lambda/bucket/table\" is made in a repo that already contains an sst.config.ts (using $config) or an sst dependency. Do NOT use when the task is primarily AWS CDK, Terraform, raw CloudFormation, or SAM with no SST present — those have their own tooling.",
+      "category": "devops-cloud",
+      "license": "MIT",
+      "license_url": "https://github.com/zxkane/aws-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "68530c6f296ccd2f5e99c79782f3e0fbf962c51a",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-06-15",
+        "skill_md_url": "https://github.com/zxkane/aws-skills/blob/68530c6f296ccd2f5e99c79782f3e0fbf962c51a/plugins/aws-iac/skills/aws-sst-development/SKILL.md"
+      },
+      "quality": {
+        "score": 86,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/zxkane/aws-skills/aws-sst-development/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/zxkane/aws-skills/aws-sst-development/",
+      "source_folder_url": "https://github.com/zxkane/aws-skills/tree/main/plugins/aws-iac/skills/aws-sst-development",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/zxkane/aws-skills/tree/main/plugins/aws-iac/skills/aws-sst-development",
+        "publisher_setup_url": "https://github.com/zxkane/aws-skills/blob/main/plugins/aws-iac/skills/aws-sst-development/SKILL.md"
+      }
+    }
+  ]
+}

@@ -1,0 +1,750 @@
+{
+  "schema_version": 1,
+  "repository": "replicate/skills",
+  "listing_url": "https://skills.suedeai.ai/directory/replicate/skills/",
+  "snapshot": {
+    "date": "2026-10-22",
+    "id": "740bfd7230f74b149870dffa9c645b2b",
+    "dataset_sha256": "7af631c54b44d36718ed15f6a3fdbf0445b6a09f638bc05ce3093bca01ef0d02"
+  },
+  "listed_skill_count": 7,
+  "scope": "Skills listed by the directory; this is not a complete inventory of every file in the repository.",
+  "security_scan_status": "not_scanned",
+  "skills": [
+    {
+      "id": "replicate/skills/build-models",
+      "name": "build-models",
+      "description": "Package and build custom AI models with Cog for deployment on Replicate. Use when creating a cog.yaml or predict.py, defining model inputs and outputs, loading model weights at setup time, building Docker images for ML models, serving locally with cog serve or cog predict, or porting a HuggingFace, GitHub, or ComfyUI model to run on Replicate. Trigger on phrases like \"build a model\", \"package a model\", \"create a Cog model\", \"wrap a model\", \"containerize an AI model\", \"predict.py\", \"cog.yaml\", \"BasePredictor\", or \"Cog container\", and when referencing cog.run, github.com/replicate/cog, or github.com/replicate/cog-examples. Covers GPU and CUDA setup, pget for fast weight downloads, async predictors with continuous batching, streaming outputs, and cold-boot optimization for image, video, audio, and LLM models. For pushing built models to Replicate, see publish-models. For running existing models, see run-models.",
+      "category": "ai-agents-llm",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/replicate/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "2f36e415965ae63baa1c9f6635888092bcd771d3",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-06-04",
+        "skill_md_url": "https://github.com/replicate/skills/blob/2f36e415965ae63baa1c9f6635888092bcd771d3/skills/build-models/SKILL.md"
+      },
+      "quality": {
+        "score": 71,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/replicate/skills/build-models/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/replicate/skills/build-models/",
+      "source_folder_url": "https://github.com/replicate/skills/tree/main/skills/build-models",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/replicate/skills/tree/main/skills/build-models",
+        "publisher_setup_url": "https://github.com/replicate/skills/blob/main/skills/build-models/SKILL.md"
+      }
+    },
+    {
+      "id": "replicate/skills/prompt-images",
+      "name": "prompt-images",
+      "description": "Prompting techniques for AI image generation and editing models on Replicate. Use when writing prompts for image models or building image generation features.",
+      "category": "media-creative",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/replicate/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "2f36e415965ae63baa1c9f6635888092bcd771d3",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-06-04",
+        "skill_md_url": "https://github.com/replicate/skills/blob/2f36e415965ae63baa1c9f6635888092bcd771d3/skills/prompt-images/SKILL.md"
+      },
+      "quality": {
+        "score": 72,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/replicate/skills/prompt-images/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/replicate/skills/prompt-images/",
+      "source_folder_url": "https://github.com/replicate/skills/tree/main/skills/prompt-images",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/replicate/skills/tree/main/skills/prompt-images",
+        "publisher_setup_url": "https://github.com/replicate/skills/blob/main/skills/prompt-images/SKILL.md"
+      }
+    },
+    {
+      "id": "replicate/skills/prompt-videos",
+      "name": "prompt-videos",
+      "description": "Prompting techniques for AI video generation models on Replicate. Use when writing prompts for video models or building video generation features.",
+      "category": "media-creative",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/replicate/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "2f36e415965ae63baa1c9f6635888092bcd771d3",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-06-04",
+        "skill_md_url": "https://github.com/replicate/skills/blob/2f36e415965ae63baa1c9f6635888092bcd771d3/skills/prompt-videos/SKILL.md"
+      },
+      "quality": {
+        "score": 70,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/replicate/skills/prompt-videos/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/replicate/skills/prompt-videos/",
+      "source_folder_url": "https://github.com/replicate/skills/tree/main/skills/prompt-videos",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/replicate/skills/tree/main/skills/prompt-videos",
+        "publisher_setup_url": "https://github.com/replicate/skills/blob/main/skills/prompt-videos/SKILL.md"
+      }
+    },
+    {
+      "id": "replicate/skills/publish-models",
+      "name": "publish-models",
+      "description": "Push and publish custom AI models to Replicate, and set up CI/CD for releasing new model versions safely. Use when running cog push, deploying a model to Replicate, releasing a new version, validating a model with cog-safe-push before publishing, configuring a Replicate deployment, setting up GitHub Actions for model releases, or porting a community model to an official one. Trigger on phrases like \"push a model to Replicate\", \"publish a model\", \"deploy a model\", \"release a new version\", \"cog push\", \"cog-safe-push\", \"model CI\", \"r8.im\", or \"schema compatibility\", and when referencing github.com/replicate/cog-safe-push or github.com/replicate/model-ci-template. Covers cog push, the full cog-safe-push config (test cases, fuzz, deployment, official_model), GitHub Actions patterns, multi-model matrix pushes, and post-publish monitoring. Assumes you already have a working Cog project; see build-models if you need to package one first.",
+      "category": "devops-cloud",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/replicate/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "2f36e415965ae63baa1c9f6635888092bcd771d3",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-06-04",
+        "skill_md_url": "https://github.com/replicate/skills/blob/2f36e415965ae63baa1c9f6635888092bcd771d3/skills/publish-models/SKILL.md"
+      },
+      "quality": {
+        "score": 71,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/replicate/skills/publish-models/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/replicate/skills/publish-models/",
+      "source_folder_url": "https://github.com/replicate/skills/tree/main/skills/publish-models",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/replicate/skills/tree/main/skills/publish-models",
+        "publisher_setup_url": "https://github.com/replicate/skills/blob/main/skills/publish-models/SKILL.md"
+      }
+    },
+    {
+      "id": "replicate/skills/compare-models",
+      "name": "compare-models",
+      "description": "Compare Replicate models by cost, speed, quality, and capabilities.",
+      "category": "ai-agents-llm",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/replicate/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "2f36e415965ae63baa1c9f6635888092bcd771d3",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-06-04",
+        "skill_md_url": "https://github.com/replicate/skills/blob/2f36e415965ae63baa1c9f6635888092bcd771d3/skills/compare-models/SKILL.md"
+      },
+      "quality": {
+        "score": 57,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/replicate/skills/compare-models/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/replicate/skills/tree/main/skills/compare-models",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/replicate/skills/tree/main/skills/compare-models",
+        "publisher_setup_url": "https://github.com/replicate/skills/blob/main/skills/compare-models/SKILL.md"
+      }
+    },
+    {
+      "id": "replicate/skills/find-models",
+      "name": "find-models",
+      "description": "Find AI models on Replicate using search and curated collections.",
+      "category": "ai-agents-llm",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/replicate/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "2f36e415965ae63baa1c9f6635888092bcd771d3",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-06-04",
+        "skill_md_url": "https://github.com/replicate/skills/blob/2f36e415965ae63baa1c9f6635888092bcd771d3/skills/find-models/SKILL.md"
+      },
+      "quality": {
+        "score": 57,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/replicate/skills/find-models/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/replicate/skills/tree/main/skills/find-models",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/replicate/skills/tree/main/skills/find-models",
+        "publisher_setup_url": "https://github.com/replicate/skills/blob/main/skills/find-models/SKILL.md"
+      }
+    },
+    {
+      "id": "replicate/skills/run-models",
+      "name": "run-models",
+      "description": "Run AI models on Replicate via predictions, webhooks, and streaming.",
+      "category": "ai-agents-llm",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/replicate/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "2f36e415965ae63baa1c9f6635888092bcd771d3",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-06-04",
+        "skill_md_url": "https://github.com/replicate/skills/blob/2f36e415965ae63baa1c9f6635888092bcd771d3/skills/run-models/SKILL.md"
+      },
+      "quality": {
+        "score": 60,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/replicate/skills/run-models/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/replicate/skills/tree/main/skills/run-models",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/replicate/skills/tree/main/skills/run-models",
+        "publisher_setup_url": "https://github.com/replicate/skills/blob/main/skills/run-models/SKILL.md"
+      }
+    }
+  ]
+}

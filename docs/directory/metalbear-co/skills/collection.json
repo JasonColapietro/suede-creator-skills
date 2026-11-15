@@ -1,0 +1,1275 @@
+{
+  "schema_version": 1,
+  "repository": "metalbear-co/skills",
+  "listing_url": "https://skills.suedeai.ai/directory/metalbear-co/skills/",
+  "snapshot": {
+    "date": "2026-10-22",
+    "id": "740bfd7230f74b149870dffa9c645b2b",
+    "dataset_sha256": "7af631c54b44d36718ed15f6a3fdbf0445b6a09f638bc05ce3093bca01ef0d02"
+  },
+  "listed_skill_count": 12,
+  "scope": "Skills listed by the directory; this is not a complete inventory of every file in the repository.",
+  "security_scan_status": "not_scanned",
+  "skills": [
+    {
+      "id": "metalbear-co/skills/mirrord-chaos",
+      "name": "mirrord-chaos",
+      "description": "Help users chaos test their app with mirrord: inject artificial latency or connection errors into a mirrord session's outgoing traffic via per-session chaos rules managed with the `mirrord chaos` CLI. Use when a user wants to add latency or delay to outgoing connections or a dependency (e.g. a slow database), simulate connection failures (reset, timed out, refused), test app behavior under degraded network conditions, or wire chaos rules into CI test runs. Always use this skill instead of the deprecated _experimental_.latency mirrord config option.",
+      "category": "testing-qa",
+      "license": "MIT",
+      "license_url": "https://github.com/metalbear-co/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "f185885e36e37aeada796a4b7d2506a93b1f5a76",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-14",
+        "skill_md_url": "https://github.com/metalbear-co/skills/blob/f185885e36e37aeada796a4b7d2506a93b1f5a76/skills/mirrord-chaos/SKILL.md"
+      },
+      "quality": {
+        "score": 84,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/metalbear-co/skills/mirrord-chaos/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/metalbear-co/skills/mirrord-chaos/",
+      "source_folder_url": "https://github.com/metalbear-co/skills/tree/main/skills/mirrord-chaos",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/metalbear-co/skills/tree/main/skills/mirrord-chaos",
+        "publisher_setup_url": "https://github.com/metalbear-co/skills/blob/main/skills/mirrord-chaos/SKILL.md"
+      }
+    },
+    {
+      "id": "metalbear-co/skills/mirrord-ci",
+      "name": "mirrord-ci",
+      "description": "Help users set up mirrord in CI pipelines for testing against real Kubernetes environments. Use when users want to run end-to-end tests, integration tests, or automated tests in CI using mirrord to connect to staging/shared clusters.",
+      "category": "devops-cloud",
+      "license": "MIT",
+      "license_url": "https://github.com/metalbear-co/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "f185885e36e37aeada796a4b7d2506a93b1f5a76",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-14",
+        "skill_md_url": "https://github.com/metalbear-co/skills/blob/f185885e36e37aeada796a4b7d2506a93b1f5a76/skills/mirrord-ci/SKILL.md"
+      },
+      "quality": {
+        "score": 83,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/metalbear-co/skills/mirrord-ci/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/metalbear-co/skills/mirrord-ci/",
+      "source_folder_url": "https://github.com/metalbear-co/skills/tree/main/skills/mirrord-ci",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/metalbear-co/skills/tree/main/skills/mirrord-ci",
+        "publisher_setup_url": "https://github.com/metalbear-co/skills/blob/main/skills/mirrord-ci/SKILL.md"
+      }
+    },
+    {
+      "id": "metalbear-co/skills/mirrord-config",
+      "name": "mirrord-config",
+      "description": "Helps users generate, edit, and validate mirrord.json configuration files for mirrord (MetalBear). Use when the user wants to connect their local process to a Kubernetes environment, configure features (env/fs/network), or needs feedback on an existing mirrord.json. Always ensures output JSON is valid and schema-conformant.",
+      "category": "devops-cloud",
+      "license": "MIT",
+      "license_url": "https://github.com/metalbear-co/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "f185885e36e37aeada796a4b7d2506a93b1f5a76",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-14",
+        "skill_md_url": "https://github.com/metalbear-co/skills/blob/f185885e36e37aeada796a4b7d2506a93b1f5a76/skills/mirrord-config/SKILL.md"
+      },
+      "quality": {
+        "score": 83,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/metalbear-co/skills/mirrord-config/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/metalbear-co/skills/mirrord-config/",
+      "source_folder_url": "https://github.com/metalbear-co/skills/tree/main/skills/mirrord-config",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/metalbear-co/skills/tree/main/skills/mirrord-config",
+        "publisher_setup_url": "https://github.com/metalbear-co/skills/blob/main/skills/mirrord-config/SKILL.md"
+      }
+    },
+    {
+      "id": "metalbear-co/skills/mirrord-kafka",
+      "name": "mirrord-kafka",
+      "description": "Helps DevOps engineers configure mirrord Operator's Kafka queue splitting feature end-to-end. Generates the MirrordSplitConfig and MirrordPropertyList Kubernetes CRD YAMLs (the current resources; MirrordKafkaTopicsConsumer + MirrordKafkaClientConfig are deprecated but still supported), the matching mirrord.json split_queues section with message_filter and jq_filter, and Helm value guidance. Use this skill whenever the user mentions Kafka splitting with mirrord, MirrordSplitConfig, MirrordPropertyList, MirrordKafkaClientConfig, MirrordKafkaTopicsConsumer, Kafka queue/topic splitting, configuring mirrord with Kafka, Kafka Streams splitting, MSK IAM auth, or troubleshooting Kafka splitting sessions. Also trigger on split_queues with queue_type Kafka, or connecting mirrord to a Kafka cluster. This is a Team/Enterprise feature of mirrord.",
+      "category": "devops-cloud",
+      "license": "MIT",
+      "license_url": "https://github.com/metalbear-co/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "f185885e36e37aeada796a4b7d2506a93b1f5a76",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-14",
+        "skill_md_url": "https://github.com/metalbear-co/skills/blob/f185885e36e37aeada796a4b7d2506a93b1f5a76/skills/mirrord-kafka/SKILL.md"
+      },
+      "quality": {
+        "score": 78,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/metalbear-co/skills/mirrord-kafka/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/metalbear-co/skills/mirrord-kafka/",
+      "source_folder_url": "https://github.com/metalbear-co/skills/tree/main/skills/mirrord-kafka",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/metalbear-co/skills/tree/main/skills/mirrord-kafka",
+        "publisher_setup_url": "https://github.com/metalbear-co/skills/blob/main/skills/mirrord-kafka/SKILL.md"
+      }
+    },
+    {
+      "id": "metalbear-co/skills/mirrord-operator",
+      "name": "mirrord-operator",
+      "description": "Help users install and configure the mirrord Operator for team/enterprise environments. Use when users ask about operator setup, Helm installation, cloud API key or license configuration, air-gapped/offline licensing, enabling features (queue splitting, DB branching, preview environments, multi-cluster), internal registries, OpenShift/GKE Autopilot, RBAC, or multi-user mirrord deployments. Also use when an AI agent hits a Team or Enterprise feature on a cluster with no license and needs to offer the user a trial (agent-started trial; the trial is Enterprise tier).",
+      "category": "devops-cloud",
+      "license": "MIT",
+      "license_url": "https://github.com/metalbear-co/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "f185885e36e37aeada796a4b7d2506a93b1f5a76",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-14",
+        "skill_md_url": "https://github.com/metalbear-co/skills/blob/f185885e36e37aeada796a4b7d2506a93b1f5a76/skills/mirrord-operator/SKILL.md"
+      },
+      "quality": {
+        "score": 83,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/metalbear-co/skills/mirrord-operator/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/metalbear-co/skills/mirrord-operator/",
+      "source_folder_url": "https://github.com/metalbear-co/skills/tree/main/skills/mirrord-operator",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/metalbear-co/skills/tree/main/skills/mirrord-operator",
+        "publisher_setup_url": "https://github.com/metalbear-co/skills/blob/main/skills/mirrord-operator/SKILL.md"
+      }
+    },
+    {
+      "id": "metalbear-co/skills/mirrord-quickstart",
+      "name": "mirrord-quickstart",
+      "description": "Guide users from zero to their first working mirrord session — check system requirements, install mirrord via CLI, VS Code, or IntelliJ, run a first session against a Kubernetes target, and verify the connection. Use when a user is new to mirrord, wants to install it, needs help running their first session, or wants to debug or test a local process against their Kubernetes cluster.",
+      "category": "devops-cloud",
+      "license": "MIT",
+      "license_url": "https://github.com/metalbear-co/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "f185885e36e37aeada796a4b7d2506a93b1f5a76",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-14",
+        "skill_md_url": "https://github.com/metalbear-co/skills/blob/f185885e36e37aeada796a4b7d2506a93b1f5a76/skills/mirrord-quickstart/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/metalbear-co/skills/mirrord-quickstart/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/metalbear-co/skills/mirrord-quickstart/",
+      "source_folder_url": "https://github.com/metalbear-co/skills/tree/main/skills/mirrord-quickstart",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/metalbear-co/skills/tree/main/skills/mirrord-quickstart",
+        "publisher_setup_url": "https://github.com/metalbear-co/skills/blob/main/skills/mirrord-quickstart/SKILL.md"
+      }
+    },
+    {
+      "id": "metalbear-co/skills/mirrord-temporal",
+      "name": "mirrord-temporal",
+      "description": "Helps DevOps engineers configure mirrord Operator's Temporal task queue splitting feature end-to-end. Generates the MirrordSplitConfig and MirrordPropertyList Kubernetes CRD YAMLs, the matching mirrord.json split_queues section with message_filter and jq_filter, and Helm value guidance. Use this skill whenever the user mentions Temporal splitting with mirrord, Temporal task queue splitting, splitting a Temporal worker, configuring mirrord with Temporal or Temporal Cloud, routing Temporal workflow or activity tasks to a local worker, or troubleshooting Temporal splitting sessions. Also trigger on split_queues with queue_type Temporal, or connecting mirrord to a Temporal frontend. This is an alpha Team/Enterprise feature of mirrord.",
+      "category": "devops-cloud",
+      "license": "MIT",
+      "license_url": "https://github.com/metalbear-co/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "f185885e36e37aeada796a4b7d2506a93b1f5a76",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-14",
+        "skill_md_url": "https://github.com/metalbear-co/skills/blob/f185885e36e37aeada796a4b7d2506a93b1f5a76/skills/mirrord-temporal/SKILL.md"
+      },
+      "quality": {
+        "score": 81,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/metalbear-co/skills/mirrord-temporal/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/metalbear-co/skills/mirrord-temporal/",
+      "source_folder_url": "https://github.com/metalbear-co/skills/tree/main/skills/mirrord-temporal",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/metalbear-co/skills/tree/main/skills/mirrord-temporal",
+        "publisher_setup_url": "https://github.com/metalbear-co/skills/blob/main/skills/mirrord-temporal/SKILL.md"
+      }
+    },
+    {
+      "id": "metalbear-co/skills/mirrord-up",
+      "name": "mirrord-up",
+      "description": "Helps users run multiple concurrent mirrord sessions from a single mirrord-up.yaml (compose-style multi-service local debugging). Use when the user mentions mirrord up, mirrord-up.yaml, mirrord up init, debugging several related microservices together, or managing multiple mirrord sessions' lifecycle in one command.",
+      "category": "devops-cloud",
+      "license": "MIT",
+      "license_url": "https://github.com/metalbear-co/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "f185885e36e37aeada796a4b7d2506a93b1f5a76",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-14",
+        "skill_md_url": "https://github.com/metalbear-co/skills/blob/f185885e36e37aeada796a4b7d2506a93b1f5a76/skills/mirrord-up/SKILL.md"
+      },
+      "quality": {
+        "score": 83,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/metalbear-co/skills/mirrord-up/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/metalbear-co/skills/mirrord-up/",
+      "source_folder_url": "https://github.com/metalbear-co/skills/tree/main/skills/mirrord-up",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/metalbear-co/skills/tree/main/skills/mirrord-up",
+        "publisher_setup_url": "https://github.com/metalbear-co/skills/blob/main/skills/mirrord-up/SKILL.md"
+      }
+    },
+    {
+      "id": "metalbear-co/skills/mirrord-db-branching",
+      "name": "mirrord-db-branching",
+      "description": "Helps users configure mirrord.json for database branching, enabling isolated database copies for safe development and testing. Use when the user wants to set up MySQL, MariaDB, PostgreSQL, MSSQL, MongoDB, Redis, DynamoDB, ClickHouse, Google Spanner, Amazon S3, turbopuffer, or generic branches, configure copy modes, connection sources, schema migrations, IAM authentication, or manage database branches.",
+      "category": "devops-cloud",
+      "license": "MIT",
+      "license_url": "https://github.com/metalbear-co/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "f185885e36e37aeada796a4b7d2506a93b1f5a76",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-14",
+        "skill_md_url": "https://github.com/metalbear-co/skills/blob/f185885e36e37aeada796a4b7d2506a93b1f5a76/skills/mirrord-db-branching/SKILL.md"
+      },
+      "quality": {
+        "score": 69,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": false,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/metalbear-co/skills/mirrord-db-branching/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/metalbear-co/skills/tree/main/skills/mirrord-db-branching",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/metalbear-co/skills/tree/main/skills/mirrord-db-branching",
+        "publisher_setup_url": "https://github.com/metalbear-co/skills/blob/main/skills/mirrord-db-branching/SKILL.md"
+      }
+    },
+    {
+      "id": "metalbear-co/skills/mirrord-header-propagation",
+      "name": "mirrord-header-propagation",
+      "description": "Makes a codebase propagate W3C baggage (the `baggage` header carrying `mirrord-session=<key>`) end to end, so mirrord HTTP filters, preview environments, and queue splitting can route a whole request chain to one developer's session. Detects existing OpenTelemetry, Datadog, or other tracing that can already propagate baggage and enables it; otherwise adds a small propagation layer. Covers inbound/outbound HTTP and gRPC, publishing to and consuming from Kafka, RabbitMQ, SQS/SNS, GCP Pub/Sub, Azure Service Bus, NATS, Redis Pub/Sub, BullMQ and Temporal, per-message context restore in consumers, and storage hand-offs such as a GCS signed URL upload that triggers Pub/Sub or an S3 presigned upload that triggers SQS. Ends with a report of every flow found and which ones still drop the header. Use when the user asks to propagate headers, baggage, tracestate, the mirrord session key, or trace context across services or queues, or when a mirrord filter matches the first service but not downstream services or queue consumers.",
+      "category": "devops-cloud",
+      "license": "MIT",
+      "license_url": "https://github.com/metalbear-co/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "f185885e36e37aeada796a4b7d2506a93b1f5a76",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-14",
+        "skill_md_url": "https://github.com/metalbear-co/skills/blob/f185885e36e37aeada796a4b7d2506a93b1f5a76/skills/mirrord-header-propagation/SKILL.md"
+      },
+      "quality": {
+        "score": 70,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 0
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": false,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/metalbear-co/skills/mirrord-header-propagation/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/metalbear-co/skills/tree/main/skills/mirrord-header-propagation",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/metalbear-co/skills/tree/main/skills/mirrord-header-propagation",
+        "publisher_setup_url": "https://github.com/metalbear-co/skills/blob/main/skills/mirrord-header-propagation/SKILL.md"
+      }
+    },
+    {
+      "id": "metalbear-co/skills/mirrord-prev-env",
+      "name": "mirrord-prev-env",
+      "description": "Help users create and manage mirrord preview environments — running a modified service as an isolated pod in a shared Kubernetes cluster, scoped by an environment key and HTTP/queue traffic filtering, so teams can validate and review changes against real traffic without affecting live services. Use when a developer wants to run \"mirrord preview\" ad hoc, share a preview via a link (mirrord-share-ingress), or wire preview environments into CI with the metalbear-co/mirrord-preview GitHub Action (e.g. per-PR previews, least-privilege cluster access).",
+      "category": "devops-cloud",
+      "license": "MIT",
+      "license_url": "https://github.com/metalbear-co/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "f185885e36e37aeada796a4b7d2506a93b1f5a76",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-14",
+        "skill_md_url": "https://github.com/metalbear-co/skills/blob/f185885e36e37aeada796a4b7d2506a93b1f5a76/skills/mirrord-prev-env/SKILL.md"
+      },
+      "quality": {
+        "score": 69,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": false,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/metalbear-co/skills/mirrord-prev-env/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/metalbear-co/skills/tree/main/skills/mirrord-prev-env",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/metalbear-co/skills/tree/main/skills/mirrord-prev-env",
+        "publisher_setup_url": "https://github.com/metalbear-co/skills/blob/main/skills/mirrord-prev-env/SKILL.md"
+      }
+    },
+    {
+      "id": "metalbear-co/skills/mirrord-propagation-discovery",
+      "name": "mirrord-propagation-discovery",
+      "description": "Scans a live Kubernetes environment with `mirrord dump` to find an identifier mirrord can filter traffic on: a header, a `baggage` or `tracestate` member, a tenant or user id, a trace id (W3C, B3, X-Ray, Google, Jaeger), a JWT claim, a cookie, a path segment, or a JSON body field that is present on every hop of a request chain, unique to one developer's traffic, and settable by that developer. Runs mirror-only dumps on each service, sends a tagged probe request at the edge or observes real traffic, scores the candidates, and produces the matching `http_filter` (regex, jq on headers, path, method, body, or combinations) plus a per-hop report of where each identifier is dropped. Installs the mirrord CLI through a package manager when it is missing. Use when the user asks what to filter on, whether the cluster already propagates a request id or trace context, how to isolate their own requests on a shared staging cluster, how to filter on a JWT or cookie with mirrord, or wants to inspect live traffic with mirrord dump. Changes no application code: propagation gaps go to the mirrord-header-propagation skill.",
+      "category": "devops-cloud",
+      "license": "MIT",
+      "license_url": "https://github.com/metalbear-co/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "f185885e36e37aeada796a4b7d2506a93b1f5a76",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-14",
+        "skill_md_url": "https://github.com/metalbear-co/skills/blob/f185885e36e37aeada796a4b7d2506a93b1f5a76/skills/mirrord-propagation-discovery/SKILL.md"
+      },
+      "quality": {
+        "score": 72,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 0
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": false,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/metalbear-co/skills/mirrord-propagation-discovery/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/metalbear-co/skills/tree/main/skills/mirrord-propagation-discovery",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/metalbear-co/skills/tree/main/skills/mirrord-propagation-discovery",
+        "publisher_setup_url": "https://github.com/metalbear-co/skills/blob/main/skills/mirrord-propagation-discovery/SKILL.md"
+      }
+    }
+  ]
+}

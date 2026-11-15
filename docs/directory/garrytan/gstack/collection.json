@@ -1,0 +1,2220 @@
+{
+  "schema_version": 1,
+  "repository": "garrytan/gstack",
+  "listing_url": "https://skills.suedeai.ai/directory/garrytan/gstack/",
+  "snapshot": {
+    "date": "2026-10-22",
+    "id": "740bfd7230f74b149870dffa9c645b2b",
+    "dataset_sha256": "7af631c54b44d36718ed15f6a3fdbf0445b6a09f638bc05ce3093bca01ef0d02"
+  },
+  "listed_skill_count": 21,
+  "scope": "Skills listed by the directory; this is not a complete inventory of every file in the repository.",
+  "security_scan_status": "not_scanned",
+  "skills": [
+    {
+      "id": "garrytan/gstack/gstack-openclaw-ceo-review",
+      "name": "gstack-openclaw-ceo-review",
+      "description": "Use when asked to review a plan, challenge a proposal, run a CEO review, poke holes in an approach, think bigger about scope, or decide whether to expand or reduce the plan.",
+      "category": "product-management",
+      "license": "MIT",
+      "license_url": "https://github.com/garrytan/gstack/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "8640ab4ff43accda6676105868935903232d8c93",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-19",
+        "skill_md_url": "https://github.com/garrytan/gstack/blob/8640ab4ff43accda6676105868935903232d8c93/openclaw/skills/gstack-openclaw-ceo-review/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/garrytan/gstack/gstack-openclaw-ceo-review/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/garrytan/gstack/gstack-openclaw-ceo-review/",
+      "source_folder_url": "https://github.com/garrytan/gstack/tree/main/openclaw/skills/gstack-openclaw-ceo-review",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/garrytan/gstack/tree/main/openclaw/skills/gstack-openclaw-ceo-review",
+        "publisher_setup_url": "https://github.com/garrytan/gstack/blob/main/openclaw/skills/gstack-openclaw-ceo-review/SKILL.md"
+      }
+    },
+    {
+      "id": "garrytan/gstack/gstack-openclaw-investigate",
+      "name": "gstack-openclaw-investigate",
+      "description": "Use when asked to debug, fix a bug, investigate an error, or do root cause analysis, and when users report errors, stack traces, unexpected behavior, or say something stopped working.",
+      "category": "testing-qa",
+      "license": "MIT",
+      "license_url": "https://github.com/garrytan/gstack/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "8640ab4ff43accda6676105868935903232d8c93",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-19",
+        "skill_md_url": "https://github.com/garrytan/gstack/blob/8640ab4ff43accda6676105868935903232d8c93/openclaw/skills/gstack-openclaw-investigate/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/garrytan/gstack/gstack-openclaw-investigate/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/garrytan/gstack/gstack-openclaw-investigate/",
+      "source_folder_url": "https://github.com/garrytan/gstack/tree/main/openclaw/skills/gstack-openclaw-investigate",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/garrytan/gstack/tree/main/openclaw/skills/gstack-openclaw-investigate",
+        "publisher_setup_url": "https://github.com/garrytan/gstack/blob/main/openclaw/skills/gstack-openclaw-investigate/SKILL.md"
+      }
+    },
+    {
+      "id": "garrytan/gstack/gstack-openclaw-office-hours",
+      "name": "gstack-openclaw-office-hours",
+      "description": "Use when asked to brainstorm, evaluate whether an idea is worth building, run office hours, or think through a new product idea or design direction before any code is written.",
+      "category": "product-management",
+      "license": "MIT",
+      "license_url": "https://github.com/garrytan/gstack/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "8640ab4ff43accda6676105868935903232d8c93",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-19",
+        "skill_md_url": "https://github.com/garrytan/gstack/blob/8640ab4ff43accda6676105868935903232d8c93/openclaw/skills/gstack-openclaw-office-hours/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/garrytan/gstack/gstack-openclaw-office-hours/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/garrytan/gstack/gstack-openclaw-office-hours/",
+      "source_folder_url": "https://github.com/garrytan/gstack/tree/main/openclaw/skills/gstack-openclaw-office-hours",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/garrytan/gstack/tree/main/openclaw/skills/gstack-openclaw-office-hours",
+        "publisher_setup_url": "https://github.com/garrytan/gstack/blob/main/openclaw/skills/gstack-openclaw-office-hours/SKILL.md"
+      }
+    },
+    {
+      "id": "garrytan/gstack/gstack-openclaw-retro",
+      "name": "gstack-openclaw-retro",
+      "description": "Weekly engineering retrospective. Analyzes commit history, work patterns, and code quality metrics with persistent history and trend tracking. Team-aware with per-person contributions, praise, and growth areas. Use when asked for weekly retro, what shipped this week, or engineering retrospective.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/garrytan/gstack/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "8640ab4ff43accda6676105868935903232d8c93",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-19",
+        "skill_md_url": "https://github.com/garrytan/gstack/blob/8640ab4ff43accda6676105868935903232d8c93/openclaw/skills/gstack-openclaw-retro/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/garrytan/gstack/gstack-openclaw-retro/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/garrytan/gstack/gstack-openclaw-retro/",
+      "source_folder_url": "https://github.com/garrytan/gstack/tree/main/openclaw/skills/gstack-openclaw-retro",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/garrytan/gstack/tree/main/openclaw/skills/gstack-openclaw-retro",
+        "publisher_setup_url": "https://github.com/garrytan/gstack/blob/main/openclaw/skills/gstack-openclaw-retro/SKILL.md"
+      }
+    },
+    {
+      "id": "garrytan/gstack/browse",
+      "name": "browse",
+      "description": "Drive a real browser through Aside: open a page, read it, click through a flow, take screenshots, check console errors. (gstack)",
+      "category": "testing-qa",
+      "license": "MIT",
+      "license_url": "https://github.com/garrytan/gstack/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "8640ab4ff43accda6676105868935903232d8c93",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-19",
+        "skill_md_url": "https://github.com/garrytan/gstack/blob/8640ab4ff43accda6676105868935903232d8c93/browse/SKILL.md"
+      },
+      "quality": {
+        "score": 68,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/garrytan/gstack/browse/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/garrytan/gstack/tree/main/browse",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/garrytan/gstack/tree/main/browse",
+        "publisher_setup_url": "https://github.com/garrytan/gstack/blob/main/browse/SKILL.md"
+      }
+    },
+    {
+      "id": "garrytan/gstack/careful",
+      "name": "careful",
+      "description": "Safety guardrails for destructive commands. (gstack)",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/garrytan/gstack/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "8640ab4ff43accda6676105868935903232d8c93",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-19",
+        "skill_md_url": "https://github.com/garrytan/gstack/blob/8640ab4ff43accda6676105868935903232d8c93/careful/SKILL.md"
+      },
+      "quality": {
+        "score": 70,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/garrytan/gstack/careful/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/garrytan/gstack/tree/main/careful",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/garrytan/gstack/tree/main/careful",
+        "publisher_setup_url": "https://github.com/garrytan/gstack/blob/main/careful/SKILL.md"
+      }
+    },
+    {
+      "id": "garrytan/gstack/cso",
+      "name": "cso",
+      "description": "Security audit: supported static findings; qualified profiles add reproduction and repair candidates. (gstack)",
+      "category": "security",
+      "license": "MIT",
+      "license_url": "https://github.com/garrytan/gstack/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "8640ab4ff43accda6676105868935903232d8c93",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-19",
+        "skill_md_url": "https://github.com/garrytan/gstack/blob/8640ab4ff43accda6676105868935903232d8c93/cso/SKILL.md"
+      },
+      "quality": {
+        "score": 72,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/garrytan/gstack/cso/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/garrytan/gstack/tree/main/cso",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/garrytan/gstack/tree/main/cso",
+        "publisher_setup_url": "https://github.com/garrytan/gstack/blob/main/cso/SKILL.md"
+      }
+    },
+    {
+      "id": "garrytan/gstack/deslop-shared-libs",
+      "name": "deslop-shared-libs",
+      "description": "Find worthwhile shared-code extractions in recent work. (gstack)",
+      "category": "code-review-quality",
+      "license": "MIT",
+      "license_url": "https://github.com/garrytan/gstack/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "8640ab4ff43accda6676105868935903232d8c93",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-19",
+        "skill_md_url": "https://github.com/garrytan/gstack/blob/8640ab4ff43accda6676105868935903232d8c93/deslop-shared-libs/SKILL.md"
+      },
+      "quality": {
+        "score": 70,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/garrytan/gstack/deslop-shared-libs/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/garrytan/gstack/tree/main/deslop-shared-libs",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/garrytan/gstack/tree/main/deslop-shared-libs",
+        "publisher_setup_url": "https://github.com/garrytan/gstack/blob/main/deslop-shared-libs/SKILL.md"
+      }
+    },
+    {
+      "id": "garrytan/gstack/diagram",
+      "name": "diagram",
+      "description": "Turn an English description (or mermaid source) into a diagram triplet: the source, an editable .excalidraw file you can open on excalidraw.com, and rendered SVG + PNG. (gstack)",
+      "category": "media-creative",
+      "license": "MIT",
+      "license_url": "https://github.com/garrytan/gstack/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "8640ab4ff43accda6676105868935903232d8c93",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-19",
+        "skill_md_url": "https://github.com/garrytan/gstack/blob/8640ab4ff43accda6676105868935903232d8c93/diagram/SKILL.md"
+      },
+      "quality": {
+        "score": 74,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/garrytan/gstack/diagram/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/garrytan/gstack/tree/main/diagram",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/garrytan/gstack/tree/main/diagram",
+        "publisher_setup_url": "https://github.com/garrytan/gstack/blob/main/diagram/SKILL.md"
+      }
+    },
+    {
+      "id": "garrytan/gstack/freeze",
+      "name": "freeze",
+      "description": "Restrict file edits to a specific directory for the session. (gstack)",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/garrytan/gstack/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "8640ab4ff43accda6676105868935903232d8c93",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-19",
+        "skill_md_url": "https://github.com/garrytan/gstack/blob/8640ab4ff43accda6676105868935903232d8c93/freeze/SKILL.md"
+      },
+      "quality": {
+        "score": 70,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/garrytan/gstack/freeze/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/garrytan/gstack/tree/main/freeze",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/garrytan/gstack/tree/main/freeze",
+        "publisher_setup_url": "https://github.com/garrytan/gstack/blob/main/freeze/SKILL.md"
+      }
+    },
+    {
+      "id": "garrytan/gstack/gstack",
+      "name": "gstack",
+      "description": "Install and use gstack in Capy and Claude Code. Load at session start to check this machine, and for gstack planning, code review, debugging, QA, design, security, documentation, and shipping workflows.",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/garrytan/gstack/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "8640ab4ff43accda6676105868935903232d8c93",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-19",
+        "skill_md_url": "https://github.com/garrytan/gstack/blob/8640ab4ff43accda6676105868935903232d8c93/capy/skill/gstack/SKILL.md"
+      },
+      "quality": {
+        "score": 74,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/garrytan/gstack/gstack/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/garrytan/gstack/gstack/",
+      "source_folder_url": "https://github.com/garrytan/gstack/tree/main/capy/skill/gstack",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/garrytan/gstack/tree/main/capy/skill/gstack",
+        "publisher_setup_url": "https://github.com/garrytan/gstack/blob/main/capy/skill/gstack/SKILL.md"
+      }
+    },
+    {
+      "id": "garrytan/gstack/guard",
+      "name": "guard",
+      "description": "Full safety mode: destructive command warnings + directory-scoped edits. (gstack)",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/garrytan/gstack/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "8640ab4ff43accda6676105868935903232d8c93",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-19",
+        "skill_md_url": "https://github.com/garrytan/gstack/blob/8640ab4ff43accda6676105868935903232d8c93/guard/SKILL.md"
+      },
+      "quality": {
+        "score": 67,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/garrytan/gstack/guard/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/garrytan/gstack/tree/main/guard",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/garrytan/gstack/tree/main/guard",
+        "publisher_setup_url": "https://github.com/garrytan/gstack/blob/main/guard/SKILL.md"
+      }
+    },
+    {
+      "id": "garrytan/gstack/ios-clean",
+      "name": "ios-clean",
+      "description": "Remove the DebugBridge SPM package and all #if DEBUG wiring from an iOS app. (gstack)",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/garrytan/gstack/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "8640ab4ff43accda6676105868935903232d8c93",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-19",
+        "skill_md_url": "https://github.com/garrytan/gstack/blob/8640ab4ff43accda6676105868935903232d8c93/ios-clean/SKILL.md"
+      },
+      "quality": {
+        "score": 67,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/garrytan/gstack/ios-clean/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/garrytan/gstack/tree/main/ios-clean",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/garrytan/gstack/tree/main/ios-clean",
+        "publisher_setup_url": "https://github.com/garrytan/gstack/blob/main/ios-clean/SKILL.md"
+      }
+    },
+    {
+      "id": "garrytan/gstack/ios-design-review",
+      "name": "ios-design-review",
+      "description": "Visual design audit for iOS apps on real hardware. (gstack)",
+      "category": "frontend-design",
+      "license": "MIT",
+      "license_url": "https://github.com/garrytan/gstack/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "8640ab4ff43accda6676105868935903232d8c93",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-19",
+        "skill_md_url": "https://github.com/garrytan/gstack/blob/8640ab4ff43accda6676105868935903232d8c93/ios-design-review/SKILL.md"
+      },
+      "quality": {
+        "score": 64,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/garrytan/gstack/ios-design-review/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/garrytan/gstack/tree/main/ios-design-review",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/garrytan/gstack/tree/main/ios-design-review",
+        "publisher_setup_url": "https://github.com/garrytan/gstack/blob/main/ios-design-review/SKILL.md"
+      }
+    },
+    {
+      "id": "garrytan/gstack/ios-sync",
+      "name": "ios-sync",
+      "description": "Regenerate the iOS debug bridge against the latest upstream gstack templates. (gstack)",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/garrytan/gstack/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "8640ab4ff43accda6676105868935903232d8c93",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-19",
+        "skill_md_url": "https://github.com/garrytan/gstack/blob/8640ab4ff43accda6676105868935903232d8c93/ios-sync/SKILL.md"
+      },
+      "quality": {
+        "score": 67,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/garrytan/gstack/ios-sync/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/garrytan/gstack/tree/main/ios-sync",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/garrytan/gstack/tree/main/ios-sync",
+        "publisher_setup_url": "https://github.com/garrytan/gstack/blob/main/ios-sync/SKILL.md"
+      }
+    },
+    {
+      "id": "garrytan/gstack/landing-report",
+      "name": "landing-report",
+      "description": "Read-only queue dashboard for workspace-aware ship. (gstack)",
+      "category": "devops-cloud",
+      "license": "MIT",
+      "license_url": "https://github.com/garrytan/gstack/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "8640ab4ff43accda6676105868935903232d8c93",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-19",
+        "skill_md_url": "https://github.com/garrytan/gstack/blob/8640ab4ff43accda6676105868935903232d8c93/landing-report/SKILL.md"
+      },
+      "quality": {
+        "score": 64,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/garrytan/gstack/landing-report/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/garrytan/gstack/tree/main/landing-report",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/garrytan/gstack/tree/main/landing-report",
+        "publisher_setup_url": "https://github.com/garrytan/gstack/blob/main/landing-report/SKILL.md"
+      }
+    },
+    {
+      "id": "garrytan/gstack/make-pdf",
+      "name": "make-pdf",
+      "description": "Turn any markdown file into a publication-quality PDF. (gstack)",
+      "category": "documents-office",
+      "license": "MIT",
+      "license_url": "https://github.com/garrytan/gstack/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "8640ab4ff43accda6676105868935903232d8c93",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-19",
+        "skill_md_url": "https://github.com/garrytan/gstack/blob/8640ab4ff43accda6676105868935903232d8c93/make-pdf/SKILL.md"
+      },
+      "quality": {
+        "score": 70,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/garrytan/gstack/make-pdf/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/garrytan/gstack/tree/main/make-pdf",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/garrytan/gstack/tree/main/make-pdf",
+        "publisher_setup_url": "https://github.com/garrytan/gstack/blob/main/make-pdf/SKILL.md"
+      }
+    },
+    {
+      "id": "garrytan/gstack/open-gstack-browser",
+      "name": "open-gstack-browser",
+      "description": "Launch GStack Browser — AI-controlled Chromium with the sidebar extension baked in.",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/garrytan/gstack/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "8640ab4ff43accda6676105868935903232d8c93",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-19",
+        "skill_md_url": "https://github.com/garrytan/gstack/blob/8640ab4ff43accda6676105868935903232d8c93/open-gstack-browser/SKILL.md"
+      },
+      "quality": {
+        "score": 70,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/garrytan/gstack/open-gstack-browser/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/garrytan/gstack/tree/main/open-gstack-browser",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/garrytan/gstack/tree/main/open-gstack-browser",
+        "publisher_setup_url": "https://github.com/garrytan/gstack/blob/main/open-gstack-browser/SKILL.md"
+      }
+    },
+    {
+      "id": "garrytan/gstack/setup-browser-cookies",
+      "name": "setup-browser-cookies",
+      "description": "Import cookies from your real Chromium browser into the headless browse session. (gstack)",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/garrytan/gstack/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "8640ab4ff43accda6676105868935903232d8c93",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-19",
+        "skill_md_url": "https://github.com/garrytan/gstack/blob/8640ab4ff43accda6676105868935903232d8c93/setup-browser-cookies/SKILL.md"
+      },
+      "quality": {
+        "score": 70,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/garrytan/gstack/setup-browser-cookies/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/garrytan/gstack/tree/main/setup-browser-cookies",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/garrytan/gstack/tree/main/setup-browser-cookies",
+        "publisher_setup_url": "https://github.com/garrytan/gstack/blob/main/setup-browser-cookies/SKILL.md"
+      }
+    },
+    {
+      "id": "garrytan/gstack/test-audit",
+      "name": "test-audit",
+      "description": "Find low-value or duplicate tests and the test-only code they keep alive. (gstack)",
+      "category": "testing-qa",
+      "license": "MIT",
+      "license_url": "https://github.com/garrytan/gstack/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "8640ab4ff43accda6676105868935903232d8c93",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-19",
+        "skill_md_url": "https://github.com/garrytan/gstack/blob/8640ab4ff43accda6676105868935903232d8c93/test-audit/SKILL.md"
+      },
+      "quality": {
+        "score": 64,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/garrytan/gstack/test-audit/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/garrytan/gstack/tree/main/test-audit",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/garrytan/gstack/tree/main/test-audit",
+        "publisher_setup_url": "https://github.com/garrytan/gstack/blob/main/test-audit/SKILL.md"
+      }
+    },
+    {
+      "id": "garrytan/gstack/unfreeze",
+      "name": "unfreeze",
+      "description": "Clear the freeze boundary set by /freeze, allowing edits to all directories again. (gstack)",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/garrytan/gstack/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "8640ab4ff43accda6676105868935903232d8c93",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-19",
+        "skill_md_url": "https://github.com/garrytan/gstack/blob/8640ab4ff43accda6676105868935903232d8c93/unfreeze/SKILL.md"
+      },
+      "quality": {
+        "score": 64,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/garrytan/gstack/unfreeze/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/garrytan/gstack/tree/main/unfreeze",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/garrytan/gstack/tree/main/unfreeze",
+        "publisher_setup_url": "https://github.com/garrytan/gstack/blob/main/unfreeze/SKILL.md"
+      }
+    }
+  ]
+}

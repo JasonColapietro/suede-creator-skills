@@ -1,0 +1,750 @@
+{
+  "schema_version": 1,
+  "repository": "vercel-labs/agent-skills",
+  "listing_url": "https://skills.suedeai.ai/directory/vercel-labs/agent-skills/",
+  "snapshot": {
+    "date": "2026-10-22",
+    "id": "740bfd7230f74b149870dffa9c645b2b",
+    "dataset_sha256": "7af631c54b44d36718ed15f6a3fdbf0445b6a09f638bc05ce3093bca01ef0d02"
+  },
+  "listed_skill_count": 7,
+  "scope": "Skills listed by the directory; this is not a complete inventory of every file in the repository.",
+  "security_scan_status": "not_scanned",
+  "skills": [
+    {
+      "id": "vercel-labs/agent-skills/vercel-cli-with-tokens",
+      "name": "vercel-cli-with-tokens",
+      "description": "Deploy and manage projects on Vercel using token-based authentication. Use when working with Vercel CLI using access tokens rather than interactive login — e.g. \"deploy to vercel\", \"set up vercel\", \"add environment variables to vercel\".",
+      "category": "devops-cloud",
+      "license": "MIT",
+      "license_url": "https://github.com/vercel-labs/agent-skills/blob/main/README.md",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "063bee94c3f4df8453406c830b0a7df0f2860278",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-28",
+        "skill_md_url": "https://github.com/vercel-labs/agent-skills/blob/063bee94c3f4df8453406c830b0a7df0f2860278/skills/vercel-cli-with-tokens/SKILL.md"
+      },
+      "quality": {
+        "score": 78,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/vercel-labs/agent-skills/vercel-cli-with-tokens/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/vercel-labs/agent-skills/vercel-cli-with-tokens/",
+      "source_folder_url": "https://github.com/vercel-labs/agent-skills/tree/main/skills/vercel-cli-with-tokens",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/vercel-labs/agent-skills/tree/main/skills/vercel-cli-with-tokens",
+        "publisher_setup_url": "https://github.com/vercel-labs/agent-skills/blob/main/skills/vercel-cli-with-tokens/SKILL.md"
+      }
+    },
+    {
+      "id": "vercel-labs/agent-skills/vercel-composition-patterns",
+      "name": "vercel-composition-patterns",
+      "description": "React composition patterns that scale. Use when refactoring components with boolean prop proliferation, building flexible component libraries, or designing reusable APIs. Triggers on tasks involving compound components, render props, context providers, or component architecture. Includes React 19 API changes.",
+      "category": "frontend-design",
+      "license": "MIT",
+      "license_url": "https://github.com/vercel-labs/agent-skills/blob/main/README.md",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "063bee94c3f4df8453406c830b0a7df0f2860278",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-28",
+        "skill_md_url": "https://github.com/vercel-labs/agent-skills/blob/063bee94c3f4df8453406c830b0a7df0f2860278/skills/composition-patterns/SKILL.md"
+      },
+      "quality": {
+        "score": 64,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": false,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/vercel-labs/agent-skills/vercel-composition-patterns/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/vercel-labs/agent-skills/vercel-composition-patterns/",
+      "source_folder_url": "https://github.com/vercel-labs/agent-skills/tree/main/skills/composition-patterns",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/vercel-labs/agent-skills/tree/main/skills/composition-patterns",
+        "publisher_setup_url": "https://github.com/vercel-labs/agent-skills/blob/main/skills/composition-patterns/SKILL.md"
+      }
+    },
+    {
+      "id": "vercel-labs/agent-skills/vercel-optimize",
+      "name": "vercel-optimize",
+      "description": "Use for Vercel cost and performance optimization on deployed projects, especially Next.js, SvelteKit, Nuxt, and limited Astro apps. Collect Vercel metrics, usage, project config, and code scan results first; investigate only metric-backed candidates; produce ranked recommendations grounded in verified files and version-aware Vercel/framework docs. Trigger for Vercel bill reduction, slow or expensive routes, caching opportunities, Function Invocations, Build Minutes, Fast Data Transfer, Core Web Vitals, Bot Management, Fluid compute, or cost breakdown requests.",
+      "category": "devops-cloud",
+      "license": "MIT",
+      "license_url": "https://github.com/vercel-labs/agent-skills/blob/main/README.md",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "063bee94c3f4df8453406c830b0a7df0f2860278",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-28",
+        "skill_md_url": "https://github.com/vercel-labs/agent-skills/blob/063bee94c3f4df8453406c830b0a7df0f2860278/skills/vercel-optimize/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/vercel-labs/agent-skills/vercel-optimize/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/vercel-labs/agent-skills/vercel-optimize/",
+      "source_folder_url": "https://github.com/vercel-labs/agent-skills/tree/main/skills/vercel-optimize",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/vercel-labs/agent-skills/tree/main/skills/vercel-optimize",
+        "publisher_setup_url": "https://github.com/vercel-labs/agent-skills/blob/main/skills/vercel-optimize/SKILL.md"
+      }
+    },
+    {
+      "id": "vercel-labs/agent-skills/vercel-react-best-practices",
+      "name": "vercel-react-best-practices",
+      "description": "React and Next.js performance optimization guidelines from Vercel Engineering. This skill should be used when writing, reviewing, or refactoring React/Next.js code to ensure optimal performance patterns. Triggers on tasks involving React components, Next.js pages, data fetching, bundle optimization, or performance improvements.",
+      "category": "code-review-quality",
+      "license": "MIT",
+      "license_url": "https://github.com/vercel-labs/agent-skills/blob/main/README.md",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "063bee94c3f4df8453406c830b0a7df0f2860278",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-28",
+        "skill_md_url": "https://github.com/vercel-labs/agent-skills/blob/063bee94c3f4df8453406c830b0a7df0f2860278/skills/react-best-practices/SKILL.md"
+      },
+      "quality": {
+        "score": 67,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": false,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/vercel-labs/agent-skills/vercel-react-best-practices/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/vercel-labs/agent-skills/vercel-react-best-practices/",
+      "source_folder_url": "https://github.com/vercel-labs/agent-skills/tree/main/skills/react-best-practices",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/vercel-labs/agent-skills/tree/main/skills/react-best-practices",
+        "publisher_setup_url": "https://github.com/vercel-labs/agent-skills/blob/main/skills/react-best-practices/SKILL.md"
+      }
+    },
+    {
+      "id": "vercel-labs/agent-skills/vercel-react-native-skills",
+      "name": "vercel-react-native-skills",
+      "description": "React Native and Expo best practices for building performant mobile apps. Use when building React Native components, optimizing list performance, implementing animations, or working with native modules. Triggers on tasks involving React Native, Expo, mobile performance, or native platform APIs.",
+      "category": "frontend-design",
+      "license": "MIT",
+      "license_url": "https://github.com/vercel-labs/agent-skills/blob/main/README.md",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "063bee94c3f4df8453406c830b0a7df0f2860278",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-28",
+        "skill_md_url": "https://github.com/vercel-labs/agent-skills/blob/063bee94c3f4df8453406c830b0a7df0f2860278/skills/react-native-skills/SKILL.md"
+      },
+      "quality": {
+        "score": 67,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": false,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/vercel-labs/agent-skills/vercel-react-native-skills/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/vercel-labs/agent-skills/vercel-react-native-skills/",
+      "source_folder_url": "https://github.com/vercel-labs/agent-skills/tree/main/skills/react-native-skills",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/vercel-labs/agent-skills/tree/main/skills/react-native-skills",
+        "publisher_setup_url": "https://github.com/vercel-labs/agent-skills/blob/main/skills/react-native-skills/SKILL.md"
+      }
+    },
+    {
+      "id": "vercel-labs/agent-skills/vercel-react-view-transitions",
+      "name": "vercel-react-view-transitions",
+      "description": "Guide for implementing smooth, native-feeling animations using React's View Transition API (`<ViewTransition>` component, `addTransitionType`, and CSS view transition pseudo-elements). Use this skill whenever the user wants to add page transitions, animate route changes, create shared element animations, animate enter/exit of components, animate list reorder, implement directional (forward/back) navigation animations, or integrate view transitions in Next.js. Also use when the user mentions view transitions, `startViewTransition`, `ViewTransition`, transition types, or asks about animating between UI states in React without third-party animation libraries.",
+      "category": "frontend-design",
+      "license": "MIT",
+      "license_url": "https://github.com/vercel-labs/agent-skills/blob/main/README.md",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "063bee94c3f4df8453406c830b0a7df0f2860278",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-28",
+        "skill_md_url": "https://github.com/vercel-labs/agent-skills/blob/063bee94c3f4df8453406c830b0a7df0f2860278/skills/react-view-transitions/SKILL.md"
+      },
+      "quality": {
+        "score": 68,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": false,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/vercel-labs/agent-skills/vercel-react-view-transitions/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/vercel-labs/agent-skills/vercel-react-view-transitions/",
+      "source_folder_url": "https://github.com/vercel-labs/agent-skills/tree/main/skills/react-view-transitions",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/vercel-labs/agent-skills/tree/main/skills/react-view-transitions",
+        "publisher_setup_url": "https://github.com/vercel-labs/agent-skills/blob/main/skills/react-view-transitions/SKILL.md"
+      }
+    },
+    {
+      "id": "vercel-labs/agent-skills/writing-guidelines",
+      "name": "writing-guidelines",
+      "description": "Review docs/prose for Writing Guidelines compliance. Use when asked to \"review my docs\", \"check writing style\", \"audit prose\", \"review docs voice and tone\", or \"check this page against the writing handbook\".",
+      "category": "writing-content",
+      "license": "MIT",
+      "license_url": "https://github.com/vercel-labs/agent-skills/blob/main/README.md",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "063bee94c3f4df8453406c830b0a7df0f2860278",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-28",
+        "skill_md_url": "https://github.com/vercel-labs/agent-skills/blob/063bee94c3f4df8453406c830b0a7df0f2860278/skills/writing-guidelines/SKILL.md"
+      },
+      "quality": {
+        "score": 72,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/vercel-labs/agent-skills/writing-guidelines/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/vercel-labs/agent-skills/writing-guidelines/",
+      "source_folder_url": "https://github.com/vercel-labs/agent-skills/tree/main/skills/writing-guidelines",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/vercel-labs/agent-skills/tree/main/skills/writing-guidelines",
+        "publisher_setup_url": "https://github.com/vercel-labs/agent-skills/blob/main/skills/writing-guidelines/SKILL.md"
+      }
+    }
+  ]
+}

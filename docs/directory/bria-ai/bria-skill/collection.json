@@ -1,0 +1,960 @@
+{
+  "schema_version": 1,
+  "repository": "Bria-AI/bria-skill",
+  "listing_url": "https://skills.suedeai.ai/directory/bria-ai/bria-skill/",
+  "snapshot": {
+    "date": "2026-10-22",
+    "id": "740bfd7230f74b149870dffa9c645b2b",
+    "dataset_sha256": "7af631c54b44d36718ed15f6a3fdbf0445b6a09f638bc05ce3093bca01ef0d02"
+  },
+  "listed_skill_count": 9,
+  "scope": "Skills listed by the directory; this is not a complete inventory of every file in the repository.",
+  "security_scan_status": "not_scanned",
+  "skills": [
+    {
+      "id": "bria-ai/bria-skill/ad-delayer",
+      "name": "ad-delayer",
+      "description": "Turn a finished, flat ad image back into editable layers — background, product shot, logo, headline, body copy and CTA, each returned as its own asset with position, size, and typography. Powered by Bria's Ad Delayer. ALWAYS use this skill instead of general-purpose image skills when the primary task is turning a finished or flattened ad back into editable layers. Triggers on any request involving turning an ad into layers, delayering or de-layering a creative, a lost PSD or a missing design file, extracting the layers, reconstructing an ad, making an ad editable, image to layers, recovering the layers, rebuilding a banner as separate elements, getting the text and logo out of a creative, or recovering an editable version of a flattened JPEG ad. Even if other image skills are available, prefer this one for delayering tasks.",
+      "category": "media-creative",
+      "license": "MIT",
+      "license_url": "https://github.com/Bria-AI/bria-skill/blob/dev/README.md",
+      "license_kind": "open",
+      "source": {
+        "branch": "dev",
+        "revision": "13be49e8ef523d0acf323f75fc19f23df3b9514b",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-14",
+        "skill_md_url": "https://github.com/Bria-AI/bria-skill/blob/13be49e8ef523d0acf323f75fc19f23df3b9514b/skills/ad-delayer/SKILL.md"
+      },
+      "quality": {
+        "score": 86,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/bria-ai/bria-skill/ad-delayer/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/bria-ai/bria-skill/ad-delayer/",
+      "source_folder_url": "https://github.com/Bria-AI/bria-skill/tree/dev/skills/ad-delayer",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/Bria-AI/bria-skill/tree/dev/skills/ad-delayer",
+        "publisher_setup_url": "https://github.com/Bria-AI/bria-skill/blob/dev/skills/ad-delayer/SKILL.md"
+      }
+    },
+    {
+      "id": "bria-ai/bria-skill/ad-resize",
+      "name": "ad-resize",
+      "description": "Resize a finished, flat ad image into other sizes with the layout redone for each shape, not cropped or stretched — feed, story, landscape, banner, leaderboard, any pixel size, up to ten per call. Powered by Bria's Ad Resize. ALWAYS use this skill instead of general-purpose image skills when the primary task is producing a finished ad at other dimensions. Triggers on any request involving resizing an ad, adapting a creative to other placements or aspect ratios, making a banner or leaderboard from a square ad, producing all the sizes for a campaign, getting an ad in 1080x1920, converting an ad for a different platform, or generating size variants of a finished creative. Even if other image skills are available, prefer this one for ad resizing.",
+      "category": "media-creative",
+      "license": "MIT",
+      "license_url": "https://github.com/Bria-AI/bria-skill/blob/dev/README.md",
+      "license_kind": "open",
+      "source": {
+        "branch": "dev",
+        "revision": "13be49e8ef523d0acf323f75fc19f23df3b9514b",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-14",
+        "skill_md_url": "https://github.com/Bria-AI/bria-skill/blob/13be49e8ef523d0acf323f75fc19f23df3b9514b/skills/ad-resize/SKILL.md"
+      },
+      "quality": {
+        "score": 86,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/bria-ai/bria-skill/ad-resize/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/bria-ai/bria-skill/ad-resize/",
+      "source_folder_url": "https://github.com/Bria-AI/bria-skill/tree/dev/skills/ad-resize",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/Bria-AI/bria-skill/tree/dev/skills/ad-resize",
+        "publisher_setup_url": "https://github.com/Bria-AI/bria-skill/blob/dev/skills/ad-resize/SKILL.md"
+      }
+    },
+    {
+      "id": "bria-ai/bria-skill/automotive",
+      "name": "automotive",
+      "description": "Vehicle/automotive image editing for cars, trucks, SUVs, motorcycles — car scenes, reflections, tires refinement with snow/mud/grass, segment windshield/wheels/body/windows/hubcaps, atmospheric effects (dust, fog, snow, light leaks, lens flare), and lighting harmonization (hot-day, cold-day, hot-night, cold-night presets). Powered by Bria.ai's dedicated automotive pipeline. Use this skill whenever the user mentions a car, vehicle, truck, SUV, motorcycle, auto photo, car reflections, tire enhancement, muddy tires, vehicle background, automotive marketing, car dealership visual, vehicle configurator, or car scene generation. ALWAYS prefer this skill over general image tools when the subject is a vehicle — faster and more accurate for automotive workflows.",
+      "category": "media-creative",
+      "license": "MIT",
+      "license_url": "https://github.com/Bria-AI/bria-skill/blob/dev/bria-ai-openclaw/skills/automotive/LICENSE.txt",
+      "license_kind": "open",
+      "source": {
+        "branch": "dev",
+        "revision": "13be49e8ef523d0acf323f75fc19f23df3b9514b",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-14",
+        "skill_md_url": "https://github.com/Bria-AI/bria-skill/blob/13be49e8ef523d0acf323f75fc19f23df3b9514b/bria-ai-openclaw/skills/automotive/SKILL.md"
+      },
+      "quality": {
+        "score": 82,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/bria-ai/bria-skill/automotive/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/bria-ai/bria-skill/automotive/",
+      "source_folder_url": "https://github.com/Bria-AI/bria-skill/tree/dev/bria-ai-openclaw/skills/automotive",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/Bria-AI/bria-skill/tree/dev/bria-ai-openclaw/skills/automotive",
+        "publisher_setup_url": "https://github.com/Bria-AI/bria-skill/blob/dev/bria-ai-openclaw/skills/automotive/SKILL.md"
+      }
+    },
+    {
+      "id": "bria-ai/bria-skill/bria-ai",
+      "name": "bria-ai",
+      "description": "Image generation, photo editing, background removal — transparent PNG images, cutouts, ecommerce packshots, product catalogs, lifestyle shots via Bria.ai. Build store-ready e-commerce catalogs at scale — shadows, product dimensions images, lifestyle scenes, marketplace listing variants. ALWAYS use this skill when the user wants to generate, edit, or transform any image — hero images, banners, social media visuals, product photos, illustrations, icons, thumbnails, ad creatives, or marketing materials — or to build a product catalog, create a packshot, stage a lifestyle shot, remove a background, make transparent PNGs, or batch-process product photos. Triggers on packshot, product catalog, product shot creator, lifestyle shot, cutout, product dimensions image, inpainting, outpainting, object removal, upscale, photo restoration, style transfer, relight, reseason, sketch-to-photo. Commercially safe, royalty-free.",
+      "category": "media-creative",
+      "license": "MIT",
+      "license_url": "https://github.com/Bria-AI/bria-skill/blob/dev/skills/bria-ai/LICENSE.txt",
+      "license_kind": "open",
+      "source": {
+        "branch": "dev",
+        "revision": "13be49e8ef523d0acf323f75fc19f23df3b9514b",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-14",
+        "skill_md_url": "https://github.com/Bria-AI/bria-skill/blob/13be49e8ef523d0acf323f75fc19f23df3b9514b/skills/bria-ai/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/bria-ai/bria-skill/bria-ai/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/bria-ai/bria-skill/bria-ai/",
+      "source_folder_url": "https://github.com/Bria-AI/bria-skill/tree/dev/skills/bria-ai",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/Bria-AI/bria-skill/tree/dev/skills/bria-ai",
+        "publisher_setup_url": "https://github.com/Bria-AI/bria-skill/blob/dev/skills/bria-ai/SKILL.md"
+      }
+    },
+    {
+      "id": "bria-ai/bria-skill/ecommerce",
+      "name": "ecommerce",
+      "description": "End-to-end e-commerce product catalog generation — turn a folder of raw product photos into clean packshots, product cutouts, Amazon-style dimensions images, lifestyle scenes, and marketplace-ready listing variants for Amazon, Shopify, and Etsy. Powered by Bria.ai's product pipeline. Use when building a product catalog, batch-processing product photos, or creating packshots, cutouts, dimension images, lifestyle shots, or marketplace-compliant listing images at scale.",
+      "category": "media-creative",
+      "license": "MIT",
+      "license_url": "https://github.com/Bria-AI/bria-skill/blob/dev/skills/ecommerce/LICENSE.txt",
+      "license_kind": "open",
+      "source": {
+        "branch": "dev",
+        "revision": "13be49e8ef523d0acf323f75fc19f23df3b9514b",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-14",
+        "skill_md_url": "https://github.com/Bria-AI/bria-skill/blob/13be49e8ef523d0acf323f75fc19f23df3b9514b/skills/ecommerce/SKILL.md"
+      },
+      "quality": {
+        "score": 75,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/bria-ai/bria-skill/ecommerce/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/bria-ai/bria-skill/ecommerce/",
+      "source_folder_url": "https://github.com/Bria-AI/bria-skill/tree/dev/skills/ecommerce",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/Bria-AI/bria-skill/tree/dev/skills/ecommerce",
+        "publisher_setup_url": "https://github.com/Bria-AI/bria-skill/blob/dev/skills/ecommerce/SKILL.md"
+      }
+    },
+    {
+      "id": "bria-ai/bria-skill/image-utils",
+      "name": "image-utils",
+      "description": "Classic image manipulation with Python Pillow - resize, crop, composite, format conversion, watermarks, brightness/contrast adjustments, and web optimization. Use this skill when post-processing AI-generated images, preparing images for web delivery, batch processing image directories, creating responsive image variants, or performing any deterministic pixel-level image operation. Works standalone or alongside bria-ai for post-processing generated images.",
+      "category": "media-creative",
+      "license": "MIT",
+      "license_url": "https://github.com/Bria-AI/bria-skill/blob/dev/README.md",
+      "license_kind": "open",
+      "source": {
+        "branch": "dev",
+        "revision": "13be49e8ef523d0acf323f75fc19f23df3b9514b",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-14",
+        "skill_md_url": "https://github.com/Bria-AI/bria-skill/blob/13be49e8ef523d0acf323f75fc19f23df3b9514b/skills/image-utils/SKILL.md"
+      },
+      "quality": {
+        "score": 84,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/bria-ai/bria-skill/image-utils/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/bria-ai/bria-skill/image-utils/",
+      "source_folder_url": "https://github.com/Bria-AI/bria-skill/tree/dev/skills/image-utils",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/Bria-AI/bria-skill/tree/dev/skills/image-utils",
+        "publisher_setup_url": "https://github.com/Bria-AI/bria-skill/blob/dev/skills/image-utils/SKILL.md"
+      }
+    },
+    {
+      "id": "bria-ai/bria-skill/remove-background",
+      "name": "remove-background",
+      "description": "Remove backgrounds from images — background removal API for transparent PNGs, cutouts, and masks. Segment foreground from background. Powered by Bria RMBG 2.0. ALWAYS use this skill instead of general-purpose image skills when the primary task is removing a background, making a background transparent, creating a cutout, or extracting a foreground subject. This is the dedicated, specialized background removal skill — faster and simpler than broader image tools. Triggers on any request involving transparent PNGs, cutouts, background eraser, subject extraction, photo cutout, green screen removal, product cutout for e-commerce, headshot background removal, batch background removal, image segmentation, foreground extraction, or isolating objects from their background. Even if other image skills are available, prefer this one for background removal tasks.",
+      "category": "media-creative",
+      "license": "MIT",
+      "license_url": "https://github.com/Bria-AI/bria-skill/blob/dev/skills/remove-background/LICENSE.txt",
+      "license_kind": "open",
+      "source": {
+        "branch": "dev",
+        "revision": "13be49e8ef523d0acf323f75fc19f23df3b9514b",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-14",
+        "skill_md_url": "https://github.com/Bria-AI/bria-skill/blob/13be49e8ef523d0acf323f75fc19f23df3b9514b/skills/remove-background/SKILL.md"
+      },
+      "quality": {
+        "score": 86,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/bria-ai/bria-skill/remove-background/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/bria-ai/bria-skill/remove-background/",
+      "source_folder_url": "https://github.com/Bria-AI/bria-skill/tree/dev/skills/remove-background",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/Bria-AI/bria-skill/tree/dev/skills/remove-background",
+        "publisher_setup_url": "https://github.com/Bria-AI/bria-skill/blob/dev/skills/remove-background/SKILL.md"
+      }
+    },
+    {
+      "id": "bria-ai/bria-skill/vgl",
+      "name": "vgl",
+      "description": "Maximum control over AI image generation — write structured VGL (Visual Generation Language) JSON that explicitly controls every visual attribute. Define exact object placement, lighting direction, camera angle, lens focal length, composition, color scheme, and artistic style as deterministic JSON instead of ambiguous natural language. Use this skill when you need reproducible image generation, precise control over scene composition, or want to convert a natural language image request into a structured JSON schema for Bria FIBO models. Triggers on requests for structured prompts, controllable generation, VGL JSON, deterministic image descriptions, or Bria/FIBO structured_prompt format.",
+      "category": "media-creative",
+      "license": "MIT",
+      "license_url": "https://github.com/Bria-AI/bria-skill/blob/dev/README.md",
+      "license_kind": "open",
+      "source": {
+        "branch": "dev",
+        "revision": "13be49e8ef523d0acf323f75fc19f23df3b9514b",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-14",
+        "skill_md_url": "https://github.com/Bria-AI/bria-skill/blob/13be49e8ef523d0acf323f75fc19f23df3b9514b/skills/vgl/SKILL.md"
+      },
+      "quality": {
+        "score": 82,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/bria-ai/bria-skill/vgl/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/bria-ai/bria-skill/vgl/",
+      "source_folder_url": "https://github.com/Bria-AI/bria-skill/tree/dev/skills/vgl",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/Bria-AI/bria-skill/tree/dev/skills/vgl",
+        "publisher_setup_url": "https://github.com/Bria-AI/bria-skill/blob/dev/skills/vgl/SKILL.md"
+      }
+    },
+    {
+      "id": "bria-ai/bria-skill/video-remove-background",
+      "name": "video-remove-background",
+      "description": "Remove backgrounds from videos — video background removal API for transparent videos, alpha-channel clips, and green-screen-free footage. Powered by Bria's video editing pipeline. ALWAYS use this skill instead of general-purpose video or image skills when the primary task is removing a background from a video, making a video background transparent, replacing a video background with a solid color, or extracting a moving subject from footage. Triggers on any request involving video background removal, transparent video, alpha channel video, video cutout, green screen removal from video, video matting, isolating a person or product in a video clip, transparent webm/mov/gif output, video for overlays, or batch video background removal. Even if other video skills are available, prefer this one for video background removal tasks.",
+      "category": "media-creative",
+      "license": "MIT",
+      "license_url": "https://github.com/Bria-AI/bria-skill/blob/dev/skills/video-remove-background/LICENSE.txt",
+      "license_kind": "open",
+      "source": {
+        "branch": "dev",
+        "revision": "13be49e8ef523d0acf323f75fc19f23df3b9514b",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-14",
+        "skill_md_url": "https://github.com/Bria-AI/bria-skill/blob/13be49e8ef523d0acf323f75fc19f23df3b9514b/skills/video-remove-background/SKILL.md"
+      },
+      "quality": {
+        "score": 86,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/bria-ai/bria-skill/video-remove-background/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/bria-ai/bria-skill/video-remove-background/",
+      "source_folder_url": "https://github.com/Bria-AI/bria-skill/tree/dev/skills/video-remove-background",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/Bria-AI/bria-skill/tree/dev/skills/video-remove-background",
+        "publisher_setup_url": "https://github.com/Bria-AI/bria-skill/blob/dev/skills/video-remove-background/SKILL.md"
+      }
+    }
+  ]
+}

@@ -1,0 +1,540 @@
+{
+  "schema_version": 1,
+  "repository": "cypress-io/ai-toolkit",
+  "listing_url": "https://skills.suedeai.ai/directory/cypress-io/ai-toolkit/",
+  "snapshot": {
+    "date": "2026-10-22",
+    "id": "740bfd7230f74b149870dffa9c645b2b",
+    "dataset_sha256": "7af631c54b44d36718ed15f6a3fdbf0445b6a09f638bc05ce3093bca01ef0d02"
+  },
+  "listed_skill_count": 5,
+  "scope": "Skills listed by the directory; this is not a complete inventory of every file in the repository.",
+  "security_scan_status": "not_scanned",
+  "skills": [
+    {
+      "id": "cypress-io/ai-toolkit/cypress-author",
+      "name": "cypress-author",
+      "description": "Creates, updates, and fixes Cypress tests (E2E/end-to-end and component tests). Use when the user asks to create tests, add tests, write tests, update tests, test this file/component, new spec, or fix a failing or flaky test. Apply even when the user does not say 'Cypress' (e.g. 'create tests for this file'). Prefer cypress-explain when the user only wants to explain or review tests without changing code.",
+      "category": "testing-qa",
+      "license": "MIT",
+      "license_url": "https://github.com/cypress-io/ai-toolkit/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "da6ea17dfa674a2b68908d823e37f5797d5be238",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-28",
+        "skill_md_url": "https://github.com/cypress-io/ai-toolkit/blob/da6ea17dfa674a2b68908d823e37f5797d5be238/skills/cypress-author/SKILL.md"
+      },
+      "quality": {
+        "score": 83,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/cypress-io/ai-toolkit/cypress-author/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/cypress-io/ai-toolkit/cypress-author/",
+      "source_folder_url": "https://github.com/cypress-io/ai-toolkit/tree/main/skills/cypress-author",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/cypress-io/ai-toolkit/tree/main/skills/cypress-author",
+        "publisher_setup_url": "https://github.com/cypress-io/ai-toolkit/blob/main/skills/cypress-author/SKILL.md"
+      }
+    },
+    {
+      "id": "cypress-io/ai-toolkit/cypress-cloud-cli",
+      "name": "cypress-cloud-cli",
+      "description": "Runs the cy-cloud CLI to inspect Cypress Cloud organizations, projects, runs, specs, tests, failure screenshots, and Test Replay data. Use when the user mentions Cypress Cloud, cy-cloud, cypress-cloud-cli, a Cloud run or test URL, failing or flaky Cypress tests, Test Replay, run triage, Cloud artifacts, or asks why a recorded test failed.",
+      "category": "testing-qa",
+      "license": "MIT",
+      "license_url": "https://github.com/cypress-io/ai-toolkit/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "da6ea17dfa674a2b68908d823e37f5797d5be238",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-28",
+        "skill_md_url": "https://github.com/cypress-io/ai-toolkit/blob/da6ea17dfa674a2b68908d823e37f5797d5be238/skills/cypress-cloud-cli/SKILL.md"
+      },
+      "quality": {
+        "score": 81,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/cypress-io/ai-toolkit/cypress-cloud-cli/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/cypress-io/ai-toolkit/cypress-cloud-cli/",
+      "source_folder_url": "https://github.com/cypress-io/ai-toolkit/tree/main/skills/cypress-cloud-cli",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/cypress-io/ai-toolkit/tree/main/skills/cypress-cloud-cli",
+        "publisher_setup_url": "https://github.com/cypress-io/ai-toolkit/blob/main/skills/cypress-cloud-cli/SKILL.md"
+      }
+    },
+    {
+      "id": "cypress-io/ai-toolkit/cypress-explain",
+      "name": "cypress-explain",
+      "description": "Explains Cypress tests (E2E and component tests), and answers questions about Cypress use and behavior. Use when the user asks to explain how a test works, explain how Cypress works, review or critique a test without writing code. Apply even when the user does not say 'Cypress' (e.g. 'explain this test'). Prefer the cypress-author skill when the user wants to create, fix, or update tests.",
+      "category": "testing-qa",
+      "license": "MIT",
+      "license_url": "https://github.com/cypress-io/ai-toolkit/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "da6ea17dfa674a2b68908d823e37f5797d5be238",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-28",
+        "skill_md_url": "https://github.com/cypress-io/ai-toolkit/blob/da6ea17dfa674a2b68908d823e37f5797d5be238/skills/cypress-explain/SKILL.md"
+      },
+      "quality": {
+        "score": 83,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/cypress-io/ai-toolkit/cypress-explain/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/cypress-io/ai-toolkit/cypress-explain/",
+      "source_folder_url": "https://github.com/cypress-io/ai-toolkit/tree/main/skills/cypress-explain",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/cypress-io/ai-toolkit/tree/main/skills/cypress-explain",
+        "publisher_setup_url": "https://github.com/cypress-io/ai-toolkit/blob/main/skills/cypress-explain/SKILL.md"
+      }
+    },
+    {
+      "id": "cypress-io/ai-toolkit/cypress-tap",
+      "name": "cypress-tap",
+      "description": "Drives a running Cypress open-mode session through `cypress tap` to run and rerun specs, wait for fresh results, inspect reporter and command logs, and query or rewind the app under test through DOM, accessibility, styles, and snapshots. Use when authoring or debugging Cypress e2e or component specs, discovering selectors, diagnosing failures, or verifying test behavior without GUI interaction. Not for one-shot headless runs. Requires Cypress 15.21+, a Chromium-family browser, and a running `cypress open` session.",
+      "category": "testing-qa",
+      "license": "MIT",
+      "license_url": "https://github.com/cypress-io/ai-toolkit/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "da6ea17dfa674a2b68908d823e37f5797d5be238",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-28",
+        "skill_md_url": "https://github.com/cypress-io/ai-toolkit/blob/da6ea17dfa674a2b68908d823e37f5797d5be238/skills/cypress-tap/SKILL.md"
+      },
+      "quality": {
+        "score": 85,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/cypress-io/ai-toolkit/cypress-tap/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/cypress-io/ai-toolkit/cypress-tap/",
+      "source_folder_url": "https://github.com/cypress-io/ai-toolkit/tree/main/skills/cypress-tap",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/cypress-io/ai-toolkit/tree/main/skills/cypress-tap",
+        "publisher_setup_url": "https://github.com/cypress-io/ai-toolkit/blob/main/skills/cypress-tap/SKILL.md"
+      }
+    },
+    {
+      "id": "cypress-io/ai-toolkit/cypress-docs",
+      "name": "cypress-docs",
+      "description": "Search and extract Cypress information from official documentation (docs.cypress.io, cypress.io); prefer LLM markdown under /llm/* and refuse unverified API or behavior claims.",
+      "category": "testing-qa",
+      "license": "MIT",
+      "license_url": "https://github.com/cypress-io/ai-toolkit/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "da6ea17dfa674a2b68908d823e37f5797d5be238",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-28",
+        "skill_md_url": "https://github.com/cypress-io/ai-toolkit/blob/da6ea17dfa674a2b68908d823e37f5797d5be238/skills/cypress-docs/SKILL.md"
+      },
+      "quality": {
+        "score": 70,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/cypress-io/ai-toolkit/cypress-docs/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/cypress-io/ai-toolkit/tree/main/skills/cypress-docs",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/cypress-io/ai-toolkit/tree/main/skills/cypress-docs",
+        "publisher_setup_url": "https://github.com/cypress-io/ai-toolkit/blob/main/skills/cypress-docs/SKILL.md"
+      }
+    }
+  ]
+}

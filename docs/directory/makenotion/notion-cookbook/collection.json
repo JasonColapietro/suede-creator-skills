@@ -1,0 +1,1800 @@
+{
+  "schema_version": 1,
+  "repository": "makenotion/notion-cookbook",
+  "listing_url": "https://skills.suedeai.ai/directory/makenotion/notion-cookbook/",
+  "snapshot": {
+    "date": "2026-10-22",
+    "id": "740bfd7230f74b149870dffa9c645b2b",
+    "dataset_sha256": "7af631c54b44d36718ed15f6a3fdbf0445b6a09f638bc05ce3093bca01ef0d02"
+  },
+  "listed_skill_count": 17,
+  "scope": "Skills listed by the directory; this is not a complete inventory of every file in the repository.",
+  "security_scan_status": "not_scanned",
+  "skills": [
+    {
+      "id": "makenotion/notion-cookbook/auth-guide",
+      "name": "auth-guide",
+      "description": "Guide to setting up third-party authentication for a Notion Worker. Covers brokered credentials for external-service API keys / personal access tokens, OAuth, and plaintext environment secrets only when worker code needs the value. Use when the worker needs credentials for a non-Notion API, not for Notion API tokens or `ntn login`.",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/makenotion/notion-cookbook/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "27cbe63573738b19b3afb91a476a363678552f12",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-16",
+        "skill_md_url": "https://github.com/makenotion/notion-cookbook/blob/27cbe63573738b19b3afb91a476a363678552f12/workers/agents/skills/auth-guide/SKILL.md"
+      },
+      "quality": {
+        "score": 82,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/makenotion/notion-cookbook/auth-guide/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/makenotion/notion-cookbook/auth-guide/",
+      "source_folder_url": "https://github.com/makenotion/notion-cookbook/tree/main/workers/agents/skills/auth-guide",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/makenotion/notion-cookbook/tree/main/workers/agents/skills/auth-guide",
+        "publisher_setup_url": "https://github.com/makenotion/notion-cookbook/blob/main/workers/agents/skills/auth-guide/SKILL.md"
+      }
+    },
+    {
+      "id": "makenotion/notion-cookbook/connections",
+      "name": "connections",
+      "description": "Configure and use typed provider connections and connection-bound triggers in Notion App workflows.",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/makenotion/notion-cookbook/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "27cbe63573738b19b3afb91a476a363678552f12",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-16",
+        "skill_md_url": "https://github.com/makenotion/notion-cookbook/blob/27cbe63573738b19b3afb91a476a363678552f12/apps/agents/skills/connections/SKILL.md"
+      },
+      "quality": {
+        "score": 59,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/makenotion/notion-cookbook/connections/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/makenotion/notion-cookbook/tree/main/apps/agents/skills/connections",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/makenotion/notion-cookbook/tree/main/apps/agents/skills/connections",
+        "publisher_setup_url": "https://github.com/makenotion/notion-cookbook/blob/main/apps/agents/skills/connections/SKILL.md"
+      }
+    },
+    {
+      "id": "makenotion/notion-cookbook/custom-blocks",
+      "name": "custom-blocks",
+      "description": "Build interactive browser custom blocks declared by a Notion App.",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/makenotion/notion-cookbook/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "27cbe63573738b19b3afb91a476a363678552f12",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-16",
+        "skill_md_url": "https://github.com/makenotion/notion-cookbook/blob/27cbe63573738b19b3afb91a476a363678552f12/apps/agents/skills/custom-blocks/SKILL.md"
+      },
+      "quality": {
+        "score": 59,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/makenotion/notion-cookbook/custom-blocks/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/makenotion/notion-cookbook/tree/main/apps/agents/skills/custom-blocks",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/makenotion/notion-cookbook/tree/main/apps/agents/skills/custom-blocks",
+        "publisher_setup_url": "https://github.com/makenotion/notion-cookbook/blob/main/apps/agents/skills/custom-blocks/SKILL.md"
+      }
+    },
+    {
+      "id": "makenotion/notion-cookbook/notion-as-code",
+      "name": "notion-as-code",
+      "description": "Declare Notion pages, databases, teamspaces, and custom agents in an App, including data sources used by syncs.",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/makenotion/notion-cookbook/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "27cbe63573738b19b3afb91a476a363678552f12",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-16",
+        "skill_md_url": "https://github.com/makenotion/notion-cookbook/blob/27cbe63573738b19b3afb91a476a363678552f12/apps/agents/skills/notion-as-code/SKILL.md"
+      },
+      "quality": {
+        "score": 61,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/makenotion/notion-cookbook/notion-as-code/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/makenotion/notion-cookbook/tree/main/apps/agents/skills/notion-as-code",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/makenotion/notion-cookbook/tree/main/apps/agents/skills/notion-as-code",
+        "publisher_setup_url": "https://github.com/makenotion/notion-cookbook/blob/main/apps/agents/skills/notion-as-code/SKILL.md"
+      }
+    },
+    {
+      "id": "makenotion/notion-cookbook/notion-database-designer",
+      "name": "notion-database-designer",
+      "description": "Turns scattered notes and recurring work into useful Notion trackers for requests, content plans, or team work. Use to set up or improve a tracker, choosing its fields and views from the user's needs; ordinary record updates belong to the task's workflow.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/makenotion/notion-cookbook/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "27cbe63573738b19b3afb91a476a363678552f12",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-16",
+        "skill_md_url": "https://github.com/makenotion/notion-cookbook/blob/27cbe63573738b19b3afb91a476a363678552f12/skills/mcp-clients/database-designer/SKILL.md"
+      },
+      "quality": {
+        "score": 73,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": false,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/makenotion/notion-cookbook/notion-database-designer/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/makenotion/notion-cookbook/tree/main/skills/mcp-clients/database-designer",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/makenotion/notion-cookbook/tree/main/skills/mcp-clients/database-designer",
+        "publisher_setup_url": "https://github.com/makenotion/notion-cookbook/blob/main/skills/mcp-clients/database-designer/SKILL.md"
+      }
+    },
+    {
+      "id": "makenotion/notion-cookbook/notion-knowledge-capture",
+      "name": "notion-knowledge-capture",
+      "description": "Captures conversations and supplied notes as Notion wiki pages, how-to guides, FAQs, decision records, or retrospectives. Use when saving or updating durable knowledge from existing context; use research-documentation when new source discovery and synthesis is the main task.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/makenotion/notion-cookbook/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "27cbe63573738b19b3afb91a476a363678552f12",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-16",
+        "skill_md_url": "https://github.com/makenotion/notion-cookbook/blob/27cbe63573738b19b3afb91a476a363678552f12/skills/mcp-clients/knowledge-capture/SKILL.md"
+      },
+      "quality": {
+        "score": 73,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": false,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/makenotion/notion-cookbook/notion-knowledge-capture/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/makenotion/notion-cookbook/tree/main/skills/mcp-clients/knowledge-capture",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/makenotion/notion-cookbook/tree/main/skills/mcp-clients/knowledge-capture",
+        "publisher_setup_url": "https://github.com/makenotion/notion-cookbook/blob/main/skills/mcp-clients/knowledge-capture/SKILL.md"
+      }
+    },
+    {
+      "id": "makenotion/notion-cookbook/notion-meeting-intelligence",
+      "name": "notion-meeting-intelligence",
+      "description": "Prepares meeting agendas, internal pre-reads, and decision briefs using Notion context and relevant research. Use for meeting preparation, recurring meeting context, or updating meeting outcomes; use knowledge-capture for a standalone record of an existing discussion.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/makenotion/notion-cookbook/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "27cbe63573738b19b3afb91a476a363678552f12",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-16",
+        "skill_md_url": "https://github.com/makenotion/notion-cookbook/blob/27cbe63573738b19b3afb91a476a363678552f12/skills/mcp-clients/meeting-intelligence/SKILL.md"
+      },
+      "quality": {
+        "score": 73,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": false,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/makenotion/notion-cookbook/notion-meeting-intelligence/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/makenotion/notion-cookbook/tree/main/skills/mcp-clients/meeting-intelligence",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/makenotion/notion-cookbook/tree/main/skills/mcp-clients/meeting-intelligence",
+        "publisher_setup_url": "https://github.com/makenotion/notion-cookbook/blob/main/skills/mcp-clients/meeting-intelligence/SKILL.md"
+      }
+    },
+    {
+      "id": "makenotion/notion-cookbook/notion-research-documentation",
+      "name": "notion-research-documentation",
+      "description": "Researches questions across Notion sources and synthesizes cited briefs, comparisons, or reports. Use when answering requires discovering and reconciling workspace information, optionally with external research, and returning or saving the findings.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/makenotion/notion-cookbook/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "27cbe63573738b19b3afb91a476a363678552f12",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-16",
+        "skill_md_url": "https://github.com/makenotion/notion-cookbook/blob/27cbe63573738b19b3afb91a476a363678552f12/skills/mcp-clients/research-documentation/SKILL.md"
+      },
+      "quality": {
+        "score": 73,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": false,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/makenotion/notion-cookbook/notion-research-documentation/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/makenotion/notion-cookbook/tree/main/skills/mcp-clients/research-documentation",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/makenotion/notion-cookbook/tree/main/skills/mcp-clients/research-documentation",
+        "publisher_setup_url": "https://github.com/makenotion/notion-cookbook/blob/main/skills/mcp-clients/research-documentation/SKILL.md"
+      }
+    },
+    {
+      "id": "makenotion/notion-cookbook/notion-spec-to-implementation",
+      "name": "notion-spec-to-implementation",
+      "description": "Converts Notion product or technical specs into implementation plans, linked tasks, and evidence-based progress updates. Use for planning or implementing a spec, creating tasks from requirements, or reconciling implementation with spec changes.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/makenotion/notion-cookbook/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "27cbe63573738b19b3afb91a476a363678552f12",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-16",
+        "skill_md_url": "https://github.com/makenotion/notion-cookbook/blob/27cbe63573738b19b3afb91a476a363678552f12/skills/mcp-clients/spec-to-implementation/SKILL.md"
+      },
+      "quality": {
+        "score": 73,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": false,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/makenotion/notion-cookbook/notion-spec-to-implementation/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/makenotion/notion-cookbook/tree/main/skills/mcp-clients/spec-to-implementation",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/makenotion/notion-cookbook/tree/main/skills/mcp-clients/spec-to-implementation",
+        "publisher_setup_url": "https://github.com/makenotion/notion-cookbook/blob/main/skills/mcp-clients/spec-to-implementation/SKILL.md"
+      }
+    },
+    {
+      "id": "makenotion/notion-cookbook/notion-weekly-project-digest",
+      "name": "notion-weekly-project-digest",
+      "description": "Produces evidence-based weekly project or team updates by comparing reporting periods, tasks, decisions, and blockers in Notion. Use for recurring status digests; use spec-to-implementation for requirement-level implementation tracking.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/makenotion/notion-cookbook/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "27cbe63573738b19b3afb91a476a363678552f12",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-16",
+        "skill_md_url": "https://github.com/makenotion/notion-cookbook/blob/27cbe63573738b19b3afb91a476a363678552f12/skills/mcp-clients/weekly-project-digest/SKILL.md"
+      },
+      "quality": {
+        "score": 70,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": false,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/makenotion/notion-cookbook/notion-weekly-project-digest/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/makenotion/notion-cookbook/tree/main/skills/mcp-clients/weekly-project-digest",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/makenotion/notion-cookbook/tree/main/skills/mcp-clients/weekly-project-digest",
+        "publisher_setup_url": "https://github.com/makenotion/notion-cookbook/blob/main/skills/mcp-clients/weekly-project-digest/SKILL.md"
+      }
+    },
+    {
+      "id": "makenotion/notion-cookbook/sync",
+      "name": "sync",
+      "description": "Build, debug, or review Notion App database syncs with stable keys and resumable pagination.",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/makenotion/notion-cookbook/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "27cbe63573738b19b3afb91a476a363678552f12",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-16",
+        "skill_md_url": "https://github.com/makenotion/notion-cookbook/blob/27cbe63573738b19b3afb91a476a363678552f12/apps/agents/skills/sync/SKILL.md"
+      },
+      "quality": {
+        "score": 59,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/makenotion/notion-cookbook/sync/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/makenotion/notion-cookbook/tree/main/apps/agents/skills/sync",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/makenotion/notion-cookbook/tree/main/apps/agents/skills/sync",
+        "publisher_setup_url": "https://github.com/makenotion/notion-cookbook/blob/main/apps/agents/skills/sync/SKILL.md"
+      }
+    },
+    {
+      "id": "makenotion/notion-cookbook/sync-debug",
+      "name": "sync-debug",
+      "description": "Diagnose a failing or misbehaving sync — fetch run logs, identify errors, cross-reference with code, and suggest fixes",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/makenotion/notion-cookbook/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "27cbe63573738b19b3afb91a476a363678552f12",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-16",
+        "skill_md_url": "https://github.com/makenotion/notion-cookbook/blob/27cbe63573738b19b3afb91a476a363678552f12/workers/agents/skills/sync-debug/SKILL.md"
+      },
+      "quality": {
+        "score": 70,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/makenotion/notion-cookbook/sync-debug/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/makenotion/notion-cookbook/tree/main/workers/agents/skills/sync-debug",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/makenotion/notion-cookbook/tree/main/workers/agents/skills/sync-debug",
+        "publisher_setup_url": "https://github.com/makenotion/notion-cookbook/blob/main/workers/agents/skills/sync-debug/SKILL.md"
+      }
+    },
+    {
+      "id": "makenotion/notion-cookbook/sync-guide",
+      "name": "sync-guide",
+      "description": "Comprehensive guide to building Notion Workers syncs — covers the two-sync architecture (backfill+delta), replace mode, pagination, consistency buffers, pacers, deletion strategies, and common pitfalls. Auto-loads when sync-related work is detected.",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/makenotion/notion-cookbook/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "27cbe63573738b19b3afb91a476a363678552f12",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-16",
+        "skill_md_url": "https://github.com/makenotion/notion-cookbook/blob/27cbe63573738b19b3afb91a476a363678552f12/workers/agents/skills/sync-guide/SKILL.md"
+      },
+      "quality": {
+        "score": 70,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/makenotion/notion-cookbook/sync-guide/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/makenotion/notion-cookbook/tree/main/workers/agents/skills/sync-guide",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/makenotion/notion-cookbook/tree/main/workers/agents/skills/sync-guide",
+        "publisher_setup_url": "https://github.com/makenotion/notion-cookbook/blob/main/workers/agents/skills/sync-guide/SKILL.md"
+      }
+    },
+    {
+      "id": "makenotion/notion-cookbook/sync-validate",
+      "name": "sync-validate",
+      "description": "Review a sync capability for common bugs — cursor advancement, pagination termination, state persistence, bi-modal correctness, consistency buffers, and deletion handling",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/makenotion/notion-cookbook/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "27cbe63573738b19b3afb91a476a363678552f12",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-16",
+        "skill_md_url": "https://github.com/makenotion/notion-cookbook/blob/27cbe63573738b19b3afb91a476a363678552f12/workers/agents/skills/sync-validate/SKILL.md"
+      },
+      "quality": {
+        "score": 72,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/makenotion/notion-cookbook/sync-validate/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/makenotion/notion-cookbook/tree/main/workers/agents/skills/sync-validate",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/makenotion/notion-cookbook/tree/main/workers/agents/skills/sync-validate",
+        "publisher_setup_url": "https://github.com/makenotion/notion-cookbook/blob/main/workers/agents/skills/sync-validate/SKILL.md"
+      }
+    },
+    {
+      "id": "makenotion/notion-cookbook/workflow",
+      "name": "workflow",
+      "description": "Build or review Notion App workflows for typed triggers, durable replay-safe steps, and idempotent effects.",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/makenotion/notion-cookbook/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "27cbe63573738b19b3afb91a476a363678552f12",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-16",
+        "skill_md_url": "https://github.com/makenotion/notion-cookbook/blob/27cbe63573738b19b3afb91a476a363678552f12/apps/agents/skills/workflow/SKILL.md"
+      },
+      "quality": {
+        "score": 61,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/makenotion/notion-cookbook/workflow/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/makenotion/notion-cookbook/tree/main/apps/agents/skills/workflow",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/makenotion/notion-cookbook/tree/main/apps/agents/skills/workflow",
+        "publisher_setup_url": "https://github.com/makenotion/notion-cookbook/blob/main/apps/agents/skills/workflow/SKILL.md"
+      }
+    },
+    {
+      "id": "makenotion/notion-cookbook/workflow-guide",
+      "name": "workflow-guide",
+      "description": "Reference for typed triggers, durable steps, replay-safe data flow, and idempotent Workflow effects.",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/makenotion/notion-cookbook/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "27cbe63573738b19b3afb91a476a363678552f12",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-16",
+        "skill_md_url": "https://github.com/makenotion/notion-cookbook/blob/27cbe63573738b19b3afb91a476a363678552f12/workers/agents/skills/workflow-guide/SKILL.md"
+      },
+      "quality": {
+        "score": 62,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/makenotion/notion-cookbook/workflow-guide/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/makenotion/notion-cookbook/tree/main/workers/agents/skills/workflow-guide",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/makenotion/notion-cookbook/tree/main/workers/agents/skills/workflow-guide",
+        "publisher_setup_url": "https://github.com/makenotion/notion-cookbook/blob/main/workers/agents/skills/workflow-guide/SKILL.md"
+      }
+    },
+    {
+      "id": "makenotion/notion-cookbook/workflow-validate",
+      "name": "workflow-validate",
+      "description": "Review Notion Worker Workflows for trigger typing and retry safety.",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/makenotion/notion-cookbook/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "27cbe63573738b19b3afb91a476a363678552f12",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-16",
+        "skill_md_url": "https://github.com/makenotion/notion-cookbook/blob/27cbe63573738b19b3afb91a476a363678552f12/workers/agents/skills/workflow-validate/SKILL.md"
+      },
+      "quality": {
+        "score": 60,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/makenotion/notion-cookbook/workflow-validate/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/makenotion/notion-cookbook/tree/main/workers/agents/skills/workflow-validate",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/makenotion/notion-cookbook/tree/main/workers/agents/skills/workflow-validate",
+        "publisher_setup_url": "https://github.com/makenotion/notion-cookbook/blob/main/workers/agents/skills/workflow-validate/SKILL.md"
+      }
+    }
+  ]
+}

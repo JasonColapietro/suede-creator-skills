@@ -1,0 +1,1170 @@
+{
+  "schema_version": 1,
+  "repository": "swarmclawai/swarmclaw",
+  "listing_url": "https://skills.suedeai.ai/directory/swarmclawai/swarmclaw/",
+  "snapshot": {
+    "date": "2026-10-22",
+    "id": "740bfd7230f74b149870dffa9c645b2b",
+    "dataset_sha256": "7af631c54b44d36718ed15f6a3fdbf0445b6a09f638bc05ce3093bca01ef0d02"
+  },
+  "listed_skill_count": 11,
+  "scope": "Skills listed by the directory; this is not a complete inventory of every file in the repository.",
+  "security_scan_status": "not_scanned",
+  "skills": [
+    {
+      "id": "swarmclawai/swarmclaw/coding-agent",
+      "name": "coding-agent",
+      "description": "Delegate coding tasks to external coding agents (Claude Code, Codex, Pi, OpenCode) via shell. Use when: (1) building new features or apps in a separate project, (2) reviewing PRs, (3) refactoring large codebases, (4) iterative coding that needs file exploration. NOT for: simple one-liner fixes (just edit directly), reading code (use read/file tools), or work inside the SwarmClaw workspace itself.",
+      "category": "ai-agents-llm",
+      "license": "MIT",
+      "license_url": "https://github.com/swarmclawai/swarmclaw/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "ed38ba5329c20e48c03b4a4028f4a76a1a75e2d1",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-06-30",
+        "skill_md_url": "https://github.com/swarmclawai/swarmclaw/blob/ed38ba5329c20e48c03b4a4028f4a76a1a75e2d1/skills/coding-agent/SKILL.md"
+      },
+      "quality": {
+        "score": 75,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/swarmclawai/swarmclaw/coding-agent/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/swarmclawai/swarmclaw/coding-agent/",
+      "source_folder_url": "https://github.com/swarmclawai/swarmclaw/tree/main/skills/coding-agent",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/swarmclawai/swarmclaw/tree/main/skills/coding-agent",
+        "publisher_setup_url": "https://github.com/swarmclawai/swarmclaw/blob/main/skills/coding-agent/SKILL.md"
+      }
+    },
+    {
+      "id": "swarmclawai/swarmclaw/github",
+      "name": "github",
+      "description": "GitHub operations via `gh` CLI: issues, PRs, CI runs, code review, API queries. Use when: (1) checking PR status or CI, (2) creating/commenting on issues, (3) listing/filtering PRs or issues, (4) viewing run logs. NOT for: local git operations (use git directly), non-GitHub repos, or cloning (use git clone).",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/swarmclawai/swarmclaw/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "ed38ba5329c20e48c03b4a4028f4a76a1a75e2d1",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-06-30",
+        "skill_md_url": "https://github.com/swarmclawai/swarmclaw/blob/ed38ba5329c20e48c03b4a4028f4a76a1a75e2d1/skills/github/SKILL.md"
+      },
+      "quality": {
+        "score": 75,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/swarmclawai/swarmclaw/github/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/swarmclawai/swarmclaw/github/",
+      "source_folder_url": "https://github.com/swarmclawai/swarmclaw/tree/main/skills/github",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/swarmclawai/swarmclaw/tree/main/skills/github",
+        "publisher_setup_url": "https://github.com/swarmclawai/swarmclaw/blob/main/skills/github/SKILL.md"
+      }
+    },
+    {
+      "id": "swarmclawai/swarmclaw/nano-banana-pro",
+      "name": "nano-banana-pro",
+      "description": "Generate or edit images via Gemini 3 Pro Image (Nano Banana Pro). Use when asked to create, generate, or edit images and a Gemini API key is available. Supports text-to-image generation, single-image editing, and multi-image composition (up to 14 images).",
+      "category": "media-creative",
+      "license": "MIT",
+      "license_url": "https://github.com/swarmclawai/swarmclaw/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "ed38ba5329c20e48c03b4a4028f4a76a1a75e2d1",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-06-30",
+        "skill_md_url": "https://github.com/swarmclawai/swarmclaw/blob/ed38ba5329c20e48c03b4a4028f4a76a1a75e2d1/skills/nano-banana-pro/SKILL.md"
+      },
+      "quality": {
+        "score": 70,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/swarmclawai/swarmclaw/nano-banana-pro/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/swarmclawai/swarmclaw/nano-banana-pro/",
+      "source_folder_url": "https://github.com/swarmclawai/swarmclaw/tree/main/skills/nano-banana-pro",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/swarmclawai/swarmclaw/tree/main/skills/nano-banana-pro",
+        "publisher_setup_url": "https://github.com/swarmclawai/swarmclaw/blob/main/skills/nano-banana-pro/SKILL.md"
+      }
+    },
+    {
+      "id": "swarmclawai/swarmclaw/nano-pdf",
+      "name": "nano-pdf",
+      "description": "Edit or create PDFs with natural-language instructions using the nano-pdf CLI. Use when asked to make a PDF, edit a PDF, add pages, change text in a PDF, or convert content to PDF format.",
+      "category": "documents-office",
+      "license": "MIT",
+      "license_url": "https://github.com/swarmclawai/swarmclaw/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "ed38ba5329c20e48c03b4a4028f4a76a1a75e2d1",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-06-30",
+        "skill_md_url": "https://github.com/swarmclawai/swarmclaw/blob/ed38ba5329c20e48c03b4a4028f4a76a1a75e2d1/skills/nano-pdf/SKILL.md"
+      },
+      "quality": {
+        "score": 68,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/swarmclawai/swarmclaw/nano-pdf/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/swarmclawai/swarmclaw/nano-pdf/",
+      "source_folder_url": "https://github.com/swarmclawai/swarmclaw/tree/main/skills/nano-pdf",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/swarmclawai/swarmclaw/tree/main/skills/nano-pdf",
+        "publisher_setup_url": "https://github.com/swarmclawai/swarmclaw/blob/main/skills/nano-pdf/SKILL.md"
+      }
+    },
+    {
+      "id": "swarmclawai/swarmclaw/openai-image-gen",
+      "name": "openai-image-gen",
+      "description": "Generate images via OpenAI Images API (GPT Image, DALL-E 3, DALL-E 2). Supports batch generation with random prompt sampler and HTML gallery output. Use when asked to generate images with OpenAI and an OPENAI_API_KEY is available.",
+      "category": "media-creative",
+      "license": "MIT",
+      "license_url": "https://github.com/swarmclawai/swarmclaw/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "ed38ba5329c20e48c03b4a4028f4a76a1a75e2d1",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-06-30",
+        "skill_md_url": "https://github.com/swarmclawai/swarmclaw/blob/ed38ba5329c20e48c03b4a4028f4a76a1a75e2d1/skills/openai-image-gen/SKILL.md"
+      },
+      "quality": {
+        "score": 73,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/swarmclawai/swarmclaw/openai-image-gen/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/swarmclawai/swarmclaw/openai-image-gen/",
+      "source_folder_url": "https://github.com/swarmclawai/swarmclaw/tree/main/skills/openai-image-gen",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/swarmclawai/swarmclaw/tree/main/skills/openai-image-gen",
+        "publisher_setup_url": "https://github.com/swarmclawai/swarmclaw/blob/main/skills/openai-image-gen/SKILL.md"
+      }
+    },
+    {
+      "id": "swarmclawai/swarmclaw/skill-creator",
+      "name": "skill-creator",
+      "description": "Create, edit, improve, or audit skills for SwarmClaw agents. Use when creating a new skill from scratch or when asked to improve, review, audit, tidy up, or clean up an existing skill or SKILL.md file. Also use when editing or restructuring a skill directory. Triggers on phrases like \"create a skill\", \"author a skill\", \"tidy up a skill\", \"improve this skill\", \"review the skill\", \"clean up the skill\", \"audit the skill\".",
+      "category": "ai-agents-llm",
+      "license": "MIT",
+      "license_url": "https://github.com/swarmclawai/swarmclaw/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "ed38ba5329c20e48c03b4a4028f4a76a1a75e2d1",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-06-30",
+        "skill_md_url": "https://github.com/swarmclawai/swarmclaw/blob/ed38ba5329c20e48c03b4a4028f4a76a1a75e2d1/skills/skill-creator/SKILL.md"
+      },
+      "quality": {
+        "score": 79,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/swarmclawai/swarmclaw/skill-creator/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/swarmclawai/swarmclaw/skill-creator/",
+      "source_folder_url": "https://github.com/swarmclawai/swarmclaw/tree/main/skills/skill-creator",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/swarmclawai/swarmclaw/tree/main/skills/skill-creator",
+        "publisher_setup_url": "https://github.com/swarmclawai/swarmclaw/blob/main/skills/skill-creator/SKILL.md"
+      }
+    },
+    {
+      "id": "swarmclawai/swarmclaw/summarize",
+      "name": "summarize",
+      "description": "Summarize or extract text/transcripts from URLs, podcasts, YouTube videos, and local files using the summarize CLI. Use when asked to summarize a link, article, video, or file, or to transcribe a YouTube video.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/swarmclawai/swarmclaw/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "ed38ba5329c20e48c03b4a4028f4a76a1a75e2d1",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-06-30",
+        "skill_md_url": "https://github.com/swarmclawai/swarmclaw/blob/ed38ba5329c20e48c03b4a4028f4a76a1a75e2d1/skills/summarize/SKILL.md"
+      },
+      "quality": {
+        "score": 68,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/swarmclawai/swarmclaw/summarize/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/swarmclawai/swarmclaw/summarize/",
+      "source_folder_url": "https://github.com/swarmclawai/swarmclaw/tree/main/skills/summarize",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/swarmclawai/swarmclaw/tree/main/skills/summarize",
+        "publisher_setup_url": "https://github.com/swarmclawai/swarmclaw/blob/main/skills/summarize/SKILL.md"
+      }
+    },
+    {
+      "id": "swarmclawai/swarmclaw/swarmclaw",
+      "name": "swarmclaw",
+      "description": "Manage your SwarmClaw agent fleet — agents, tasks, chats, chatrooms, goals, schedules, memory, wallets, connectors, autonomy, and 40+ more command groups. Use when asked to dispatch work, check agent status, coordinate multi-agent work, run diagnostics, manage schedules, set goals, or orchestrate across a SwarmClaw dashboard instance.",
+      "category": "ai-agents-llm",
+      "license": "MIT",
+      "license_url": "https://github.com/swarmclawai/swarmclaw/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "ed38ba5329c20e48c03b4a4028f4a76a1a75e2d1",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-06-30",
+        "skill_md_url": "https://github.com/swarmclawai/swarmclaw/blob/ed38ba5329c20e48c03b4a4028f4a76a1a75e2d1/swarmclaw/SKILL.md"
+      },
+      "quality": {
+        "score": 74,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/swarmclawai/swarmclaw/swarmclaw/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/swarmclawai/swarmclaw/swarmclaw/",
+      "source_folder_url": "https://github.com/swarmclawai/swarmclaw/tree/main/swarmclaw",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/swarmclawai/swarmclaw/tree/main/swarmclaw",
+        "publisher_setup_url": "https://github.com/swarmclawai/swarmclaw/blob/main/swarmclaw/SKILL.md"
+      }
+    },
+    {
+      "id": "swarmclawai/swarmclaw/swarmvault",
+      "name": "swarmvault",
+      "description": "Use when working with a SwarmVault knowledge vault (raw/, wiki/, swarmvault.schema.md). Establishes schema-first conventions and prefers graph queries over broad search.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/swarmclawai/swarmclaw/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "ed38ba5329c20e48c03b4a4028f4a76a1a75e2d1",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-06-30",
+        "skill_md_url": "https://github.com/swarmclawai/swarmclaw/blob/ed38ba5329c20e48c03b4a4028f4a76a1a75e2d1/skills/swarmvault/SKILL.md"
+      },
+      "quality": {
+        "score": 74,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/swarmclawai/swarmclaw/swarmvault/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/swarmclawai/swarmclaw/swarmvault/",
+      "source_folder_url": "https://github.com/swarmclawai/swarmclaw/tree/main/skills/swarmvault",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/swarmclawai/swarmclaw/tree/main/skills/swarmvault",
+        "publisher_setup_url": "https://github.com/swarmclawai/swarmclaw/blob/main/skills/swarmvault/SKILL.md"
+      }
+    },
+    {
+      "id": "swarmclawai/swarmclaw/google-workspace",
+      "name": "google-workspace",
+      "description": "Use Google Workspace CLI (`gws`) for Drive, Docs, Sheets, Gmail, Calendar, Chat, and related Workspace API tasks.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/swarmclawai/swarmclaw/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "ed38ba5329c20e48c03b4a4028f4a76a1a75e2d1",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-06-30",
+        "skill_md_url": "https://github.com/swarmclawai/swarmclaw/blob/ed38ba5329c20e48c03b4a4028f4a76a1a75e2d1/skills/google-workspace/SKILL.md"
+      },
+      "quality": {
+        "score": 61,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/swarmclawai/swarmclaw/google-workspace/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/swarmclawai/swarmclaw/tree/main/skills/google-workspace",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/swarmclawai/swarmclaw/tree/main/skills/google-workspace",
+        "publisher_setup_url": "https://github.com/swarmclawai/swarmclaw/blob/main/skills/google-workspace/SKILL.md"
+      }
+    },
+    {
+      "id": "swarmclawai/swarmclaw/resourceful-problem-solving",
+      "name": "resourceful-problem-solving",
+      "description": "Always-on guidance for solving tasks resourcefully. Teaches agents to escalate through skills, CLI tools, and custom scripts instead of refusing. Applies to any request where the agent lacks a dedicated tool.",
+      "category": "ai-agents-llm",
+      "license": "MIT",
+      "license_url": "https://github.com/swarmclawai/swarmclaw/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "ed38ba5329c20e48c03b4a4028f4a76a1a75e2d1",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-06-30",
+        "skill_md_url": "https://github.com/swarmclawai/swarmclaw/blob/ed38ba5329c20e48c03b4a4028f4a76a1a75e2d1/skills/resourceful-problem-solving/SKILL.md"
+      },
+      "quality": {
+        "score": 60,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/swarmclawai/swarmclaw/resourceful-problem-solving/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/swarmclawai/swarmclaw/tree/main/skills/resourceful-problem-solving",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/swarmclawai/swarmclaw/tree/main/skills/resourceful-problem-solving",
+        "publisher_setup_url": "https://github.com/swarmclawai/swarmclaw/blob/main/skills/resourceful-problem-solving/SKILL.md"
+      }
+    }
+  ]
+}

@@ -1,0 +1,645 @@
+{
+  "schema_version": 1,
+  "repository": "MohamedAbdallah-14/unslop",
+  "listing_url": "https://skills.suedeai.ai/directory/mohamedabdallah-14/unslop/",
+  "snapshot": {
+    "date": "2026-10-22",
+    "id": "740bfd7230f74b149870dffa9c645b2b",
+    "dataset_sha256": "7af631c54b44d36718ed15f6a3fdbf0445b6a09f638bc05ce3093bca01ef0d02"
+  },
+  "listed_skill_count": 6,
+  "scope": "Skills listed by the directory; this is not a complete inventory of every file in the repository.",
+  "security_scan_status": "not_scanned",
+  "skills": [
+    {
+      "id": "mohamedabdallah-14/unslop/unslop",
+      "name": "unslop",
+      "description": "Humanize LLM output so it reads like a careful human wrote it. Subtracts AI-isms (sycophancy, tricolons, em-dash overuse, \"delve\"/\"tapestry\"/\"testament\", hedging stacks, tidy five-paragraph shapes), engineers burstiness and calibrated uncertainty, and preserves technical accuracy. Supports intensity levels: subtle, balanced (default), full, voice-match, anti-detector. Use when user says \"humanize this\", \"make this sound human\", \"de-slop this\", \"rewrite without AI tone\", \"match my voice\", \"less robotic\", or invokes /unslop. Also auto-triggers when text-quality is requested.",
+      "category": "writing-content",
+      "license": "MIT",
+      "license_url": "https://github.com/MohamedAbdallah-14/unslop/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "29d43608c0095e54550f35ed49dacee818aea23b",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-05",
+        "skill_md_url": "https://github.com/MohamedAbdallah-14/unslop/blob/29d43608c0095e54550f35ed49dacee818aea23b/skills/unslop/SKILL.md"
+      },
+      "quality": {
+        "score": 84,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/mohamedabdallah-14/unslop/unslop/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/mohamedabdallah-14/unslop/unslop/",
+      "source_folder_url": "https://github.com/MohamedAbdallah-14/unslop/tree/main/skills/unslop",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/MohamedAbdallah-14/unslop/tree/main/skills/unslop",
+        "publisher_setup_url": "https://github.com/MohamedAbdallah-14/unslop/blob/main/skills/unslop/SKILL.md"
+      }
+    },
+    {
+      "id": "mohamedabdallah-14/unslop/unslop-commit",
+      "name": "unslop-commit",
+      "description": "Rewrites commit messages so they sound like a careful human engineer wrote them. Strips AI/marketing slop (\"comprehensive solution\", \"robust implementation\", \"leverage\", \"enhance\", \"seamlessly\", \"This commit...\"). Keeps Conventional Commits format. Subject ≤72 chars (aim ≤50), imperative mood. Body only when \"why\" isn't obvious from the subject. Use when user says \"humanize commit\", \"de-slop commit message\", \"make this commit sound human\", \"/unslop-commit\", \"/commit\", \"write a commit\", or pastes a draft commit to clean up. Auto-triggers when staging changes.",
+      "category": "writing-content",
+      "license": "MIT",
+      "license_url": "https://github.com/MohamedAbdallah-14/unslop/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "29d43608c0095e54550f35ed49dacee818aea23b",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-05",
+        "skill_md_url": "https://github.com/MohamedAbdallah-14/unslop/blob/29d43608c0095e54550f35ed49dacee818aea23b/skills/unslop-commit/SKILL.md"
+      },
+      "quality": {
+        "score": 81,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/mohamedabdallah-14/unslop/unslop-commit/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/mohamedabdallah-14/unslop/unslop-commit/",
+      "source_folder_url": "https://github.com/MohamedAbdallah-14/unslop/tree/main/skills/unslop-commit",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/MohamedAbdallah-14/unslop/tree/main/skills/unslop-commit",
+        "publisher_setup_url": "https://github.com/MohamedAbdallah-14/unslop/blob/main/skills/unslop-commit/SKILL.md"
+      }
+    },
+    {
+      "id": "mohamedabdallah-14/unslop/unslop-review",
+      "name": "unslop-review",
+      "description": "Rewrites code review comments so they read like a human teammate wrote them. Cuts corporate-AI throat-clearing (\"I noticed...\", \"I was wondering if perhaps...\", \"It might be worth considering...\"). Each comment is direct: location, the issue, a concrete fix. Use when user says \"humanize review\", \"de-slop PR comment\", \"make this feedback sound human\", \"review this PR\", \"code review\", \"/review\", \"/unslop-review\". Auto-triggers when reviewing PRs.",
+      "category": "writing-content",
+      "license": "MIT",
+      "license_url": "https://github.com/MohamedAbdallah-14/unslop/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "29d43608c0095e54550f35ed49dacee818aea23b",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-05",
+        "skill_md_url": "https://github.com/MohamedAbdallah-14/unslop/blob/29d43608c0095e54550f35ed49dacee818aea23b/skills/unslop-review/SKILL.md"
+      },
+      "quality": {
+        "score": 84,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/mohamedabdallah-14/unslop/unslop-review/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/mohamedabdallah-14/unslop/unslop-review/",
+      "source_folder_url": "https://github.com/MohamedAbdallah-14/unslop/tree/main/skills/unslop-review",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/MohamedAbdallah-14/unslop/tree/main/skills/unslop-review",
+        "publisher_setup_url": "https://github.com/MohamedAbdallah-14/unslop/blob/main/skills/unslop-review/SKILL.md"
+      }
+    },
+    {
+      "id": "mohamedabdallah-14/unslop/unslop-file",
+      "name": "unslop-file",
+      "description": "Humanize natural-language memory files (CLAUDE.md, todos, preferences, docs) by removing AI-isms and adding burstiness while preserving every code block, URL, path, command, and heading exactly. Two modes: --deterministic (fast, regex-based, no API) and LLM (default, calls Claude for rewrite). Humanized version overwrites the original file. Plain backup saved as FILE.original.md. Trigger: /unslop-file <filepath> or \"humanize memory file\"",
+      "category": "writing-content",
+      "license": "MIT",
+      "license_url": "https://github.com/MohamedAbdallah-14/unslop/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "29d43608c0095e54550f35ed49dacee818aea23b",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-05",
+        "skill_md_url": "https://github.com/MohamedAbdallah-14/unslop/blob/29d43608c0095e54550f35ed49dacee818aea23b/skills/unslop-file/SKILL.md"
+      },
+      "quality": {
+        "score": 78,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/mohamedabdallah-14/unslop/unslop-file/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/MohamedAbdallah-14/unslop/tree/main/skills/unslop-file",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/MohamedAbdallah-14/unslop/tree/main/skills/unslop-file",
+        "publisher_setup_url": "https://github.com/MohamedAbdallah-14/unslop/blob/main/skills/unslop-file/SKILL.md"
+      }
+    },
+    {
+      "id": "mohamedabdallah-14/unslop/unslop-help",
+      "name": "unslop-help",
+      "description": "Quick-reference card for unslop modes, sub-skills, and slash commands. One-shot display, not a persistent mode. Trigger: /unslop-help, \"unslop help\", \"what unslop commands\", \"how do I use unslop\".",
+      "category": "writing-content",
+      "license": "MIT",
+      "license_url": "https://github.com/MohamedAbdallah-14/unslop/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "29d43608c0095e54550f35ed49dacee818aea23b",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-05",
+        "skill_md_url": "https://github.com/MohamedAbdallah-14/unslop/blob/29d43608c0095e54550f35ed49dacee818aea23b/skills/unslop-help/SKILL.md"
+      },
+      "quality": {
+        "score": 73,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/mohamedabdallah-14/unslop/unslop-help/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/MohamedAbdallah-14/unslop/tree/main/skills/unslop-help",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/MohamedAbdallah-14/unslop/tree/main/skills/unslop-help",
+        "publisher_setup_url": "https://github.com/MohamedAbdallah-14/unslop/blob/main/skills/unslop-help/SKILL.md"
+      }
+    },
+    {
+      "id": "mohamedabdallah-14/unslop/unslop-reasoning",
+      "name": "unslop-reasoning",
+      "description": "Strip AI-slop patterns from reasoning traces (chain-of-thought, extended thinking, agent decomposition) — not final prose. Reasoning text has its own slop catalog that regular unslop doesn't target: over-explaining the question, over-hedging, over-decomposing trivial problems into 6-bullet substeps, infinite-loop rationalization. Trigger: /unslop-reasoning, \"clean up my reasoning\", \"fix this chain of thought\", \"this CoT sounds robotic\". Applies to reasoning output; does not override regular /unslop mode.",
+      "category": "writing-content",
+      "license": "MIT",
+      "license_url": "https://github.com/MohamedAbdallah-14/unslop/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "29d43608c0095e54550f35ed49dacee818aea23b",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-05",
+        "skill_md_url": "https://github.com/MohamedAbdallah-14/unslop/blob/29d43608c0095e54550f35ed49dacee818aea23b/skills/unslop-reasoning/SKILL.md"
+      },
+      "quality": {
+        "score": 76,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/mohamedabdallah-14/unslop/unslop-reasoning/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/MohamedAbdallah-14/unslop/tree/main/skills/unslop-reasoning",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/MohamedAbdallah-14/unslop/tree/main/skills/unslop-reasoning",
+        "publisher_setup_url": "https://github.com/MohamedAbdallah-14/unslop/blob/main/skills/unslop-reasoning/SKILL.md"
+      }
+    }
+  ]
+}

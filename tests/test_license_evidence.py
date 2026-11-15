@@ -71,6 +71,7 @@ class LicenseEvidenceTests(unittest.TestCase):
             shutil.copytree(ROOT / 'scripts/directory', work / 'scripts/directory')
             (work / 'scripts/lib').mkdir()
             (work / 'directory/skills.json').write_text(json.dumps(data))
+            (work / "directory/repository-guides.json").write_text("{}")
             result = subprocess.run(['node', str(work / 'scripts/build-directory.mjs')],
                                     capture_output=True, text=True)
             self.assertEqual(result.returncode, 0, result.stderr)

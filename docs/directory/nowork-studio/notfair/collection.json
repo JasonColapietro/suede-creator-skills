@@ -1,0 +1,5055 @@
+{
+  "schema_version": 1,
+  "repository": "nowork-studio/NotFair",
+  "listing_url": "https://skills.suedeai.ai/directory/nowork-studio/notfair/",
+  "snapshot": {
+    "date": "2026-10-22",
+    "id": "740bfd7230f74b149870dffa9c645b2b",
+    "dataset_sha256": "7af631c54b44d36718ed15f6a3fdbf0445b6a09f638bc05ce3093bca01ef0d02"
+  },
+  "listed_skill_count": 48,
+  "scope": "Skills listed by the directory; this is not a complete inventory of every file in the repository.",
+  "security_scan_status": "not_scanned",
+  "skills": [
+    {
+      "id": "nowork-studio/notfair/backlink-audit",
+      "name": "backlink-audit",
+      "description": "Backlink / off-page SEO audit. Works WITHOUT a paid tool by default — it uses the Google Search Console Links report (your top linking sites, most-linked pages, and anchor text) plus any backlink export the user provides (Ahrefs / Semrush / Majestic / DataForSEO CSV). Analyzes referring-domain profile, anchor-text distribution (over-optimized / spammy patterns), most-linked pages vs. money pages (internal-linking opportunity), toxic/spam link signals, and link-building priorities. Use this skill when the user asks about backlinks, link building, off-page SEO, referring domains, anchor text, toxic/spam links, disavow, or their link profile. Trigger on: \"backlinks\", \"backlink audit\", \"link building\", \"off- page SEO\", \"referring domains\", \"anchor text\", \"toxic links\", \"spam links\", \"disavow file\", \"who links to me\", \"link profile\", \"domain authority\". NOTE: rich third-party metrics (DR/DA, full link index) require a paid data source; this skill is explicit about what it can and can't see without one.",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/nowork-studio/NotFair/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/nowork-studio/NotFair/blob/c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d/skills/backlink-audit/SKILL.md"
+      },
+      "quality": {
+        "score": 72,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/nowork-studio/notfair/backlink-audit/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/nowork-studio/notfair/backlink-audit/",
+      "source_folder_url": "https://github.com/nowork-studio/NotFair/tree/main/skills/backlink-audit",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/nowork-studio/NotFair/tree/main/skills/backlink-audit",
+        "publisher_setup_url": "https://github.com/nowork-studio/NotFair/blob/main/skills/backlink-audit/SKILL.md"
+      }
+    },
+    {
+      "id": "nowork-studio/notfair/competitor-pages",
+      "name": "competitor-pages",
+      "description": "Competitor page gap analysis — take a query you want to win and the pages currently outranking you, and produce a concrete brief on what to add or change to compete. Compares content depth and coverage (subtopics they cover that you don't), structure (headings, format, tables, media), search-intent match, E-E-A-T signals, schema/rich-result eligibility, internal linking, and on-page optimization — across your page vs. the top-ranking competitors. Use this skill whenever the user wants to know why a competitor outranks them on a specific query, what a top-ranking page does better, a content-gap analysis against specific competitor URLs, or a brief to beat a specific SERP. Trigger on: \"why does competitor X outrank me\", \"content gap analysis\", \"competitor page analysis\", \"what does the top result have that I don't\", \"how do I beat this page\", \"analyze competitor pages\", \"SERP gap\", \"compete for [keyword]\". For seed keyword discovery use /keyword-research; for a content calendar use /content-planner.",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/nowork-studio/NotFair/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/nowork-studio/NotFair/blob/c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d/skills/competitor-pages/SKILL.md"
+      },
+      "quality": {
+        "score": 72,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/nowork-studio/notfair/competitor-pages/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/nowork-studio/notfair/competitor-pages/",
+      "source_folder_url": "https://github.com/nowork-studio/NotFair/tree/main/skills/competitor-pages",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/nowork-studio/NotFair/tree/main/skills/competitor-pages",
+        "publisher_setup_url": "https://github.com/nowork-studio/NotFair/blob/main/skills/competitor-pages/SKILL.md"
+      }
+    },
+    {
+      "id": "nowork-studio/notfair/content-planner",
+      "name": "content-planner",
+      "description": "GSC-driven content calendar. Pulls real Search Console data, finds the highest click-potential opportunities (striking-distance queries at positions 5-20, unanswered query intent, related-keyword expansions), and produces a dated, prioritized content calendar — ready to hand to /content-writer. Use when the user asks \"plan my content\", \"what should I write next\", \"content calendar\", \"content plan\", \"content roadmap\", \"editorial calendar\", \"what topics will rank\", \"find quick-win SEO topics\", \"click-potential analysis\", or \"schedule my SEO content\".",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/nowork-studio/NotFair/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/nowork-studio/NotFair/blob/c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d/skills/content-planner/SKILL.md"
+      },
+      "quality": {
+        "score": 76,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/nowork-studio/notfair/content-planner/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/nowork-studio/notfair/content-planner/",
+      "source_folder_url": "https://github.com/nowork-studio/NotFair/tree/main/skills/content-planner",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/nowork-studio/NotFair/tree/main/skills/content-planner",
+        "publisher_setup_url": "https://github.com/nowork-studio/NotFair/blob/main/skills/content-planner/SKILL.md"
+      }
+    },
+    {
+      "id": "nowork-studio/notfair/content-writer",
+      "name": "content-writer",
+      "description": "Write SEO-optimized blog posts, landing pages, and content improvements following Google's E-E-A-T and Helpful Content guidelines. Handles new content creation from a keyword or topic, and improving existing pages. Use when asked to \"write a blog post\", \"create a landing page\", \"improve this page\", \"write content about X\", \"content for keyword X\", \"draft an article\", \"blog post about\", \"landing page for\", \"service page\", \"product page copy\", \"rewrite this page\", \"make this page rank better\", \"content brief\", \"how-to guide\", \"listicle\", or any content creation or improvement task for a website.",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/nowork-studio/NotFair/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/nowork-studio/NotFair/blob/c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d/skills/content-writer/SKILL.md"
+      },
+      "quality": {
+        "score": 76,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/nowork-studio/notfair/content-writer/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/nowork-studio/notfair/content-writer/",
+      "source_folder_url": "https://github.com/nowork-studio/NotFair/tree/main/skills/content-writer",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/nowork-studio/NotFair/tree/main/skills/content-writer",
+        "publisher_setup_url": "https://github.com/nowork-studio/NotFair/blob/main/skills/content-writer/SKILL.md"
+      }
+    },
+    {
+      "id": "nowork-studio/notfair/ecommerce-seo",
+      "name": "ecommerce-seo",
+      "description": "E-commerce SEO audit for online stores (WooCommerce, Shopify, Magento, custom). Covers category / product listing pages (PLP), product detail pages (PDP), faceted navigation and its crawl-budget and duplicate-content traps, pagination, canonicals for variants and filters, out-of-stock / discontinued products, internal linking and breadcrumbs, and Product / Offer / Review / AggregateRating / BreadcrumbList structured data. Use whenever the user runs an online store and asks about product or category page SEO, filter URLs being indexed, product rich results, or thin/duplicate product pages. Trigger on: \"e-commerce SEO\", \"ecommerce SEO\", \"product page SEO\", \"category page SEO\", \"WooCommerce SEO\", \"Shopify SEO\", \"faceted navigation\", \"filter URLs in Google\", \"product schema\", \"rich snippets for products\", \"out of stock SEO\", \"duplicate product pages\". For a single URL use /seo-page; for full-site use /seo-analysis.",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/nowork-studio/NotFair/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/nowork-studio/NotFair/blob/c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d/skills/ecommerce-seo/SKILL.md"
+      },
+      "quality": {
+        "score": 72,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/nowork-studio/notfair/ecommerce-seo/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/nowork-studio/notfair/ecommerce-seo/",
+      "source_folder_url": "https://github.com/nowork-studio/NotFair/tree/main/skills/ecommerce-seo",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/nowork-studio/NotFair/tree/main/skills/ecommerce-seo",
+        "publisher_setup_url": "https://github.com/nowork-studio/NotFair/blob/main/skills/ecommerce-seo/SKILL.md"
+      }
+    },
+    {
+      "id": "nowork-studio/notfair/gemini",
+      "name": "gemini",
+      "description": "Cross-model second opinion from Google Gemini — a different AI reviewing the same changes, with deep Google ecosystem knowledge. Three modes: review (pass/fail gate for Google Ads campaigns, SEO metadata, or code), challenge (adversarial stress-test that tries to break your changes), and consult (open Q&A with Gemini on Google Ads strategy, SEO best practices, or implementation questions). Use when the user says \"gemini review\", \"ask gemini\", \"gemini challenge\", \"second opinion from gemini\", \"consult gemini\", \"stress test with gemini\", \"what would gemini say\", \"cross-model review\", or \"get another opinion\". Voice aliases: \"gem\", \"gemini check\". Especially useful for Google Ads changes, SEO metadata updates, campaign structure decisions, keyword strategies, and bid/budget changes — Gemini has native Google ecosystem knowledge that complements Claude's analysis.",
+      "category": "ai-agents-llm",
+      "license": "MIT",
+      "license_url": "https://github.com/nowork-studio/NotFair/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/nowork-studio/NotFair/blob/c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d/skills/gemini/SKILL.md"
+      },
+      "quality": {
+        "score": 74,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/nowork-studio/notfair/gemini/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/nowork-studio/notfair/gemini/",
+      "source_folder_url": "https://github.com/nowork-studio/NotFair/tree/main/skills/gemini",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/nowork-studio/NotFair/tree/main/skills/gemini",
+        "publisher_setup_url": "https://github.com/nowork-studio/NotFair/blob/main/skills/gemini/SKILL.md"
+      }
+    },
+    {
+      "id": "nowork-studio/notfair/geo-optimizer",
+      "name": "geo-optimizer",
+      "description": "Generative Engine Optimization (GEO) — make content rank in AI search answers from ChatGPT, Claude, Perplexity, Gemini, and Google AI Overviews. Audits existing content, rewrites for AI citation, and produces per-engine strategy. Use when asked to \"optimize for AI search\", \"rank in ChatGPT\", \"GEO audit\", \"improve AI citations\", \"rank in Perplexity\", \"AI Overview optimization\", \"AI Overview ranking\", \"LLM SEO\", \"answer engine optimization\", \"AEO\", \"get cited by AI\", \"GEO\", \"generative engine optimization\", \"show up in ChatGPT\", \"appear in AI answers\", \"be cited by Perplexity\", \"SGE optimization\", \"Search Generative Experience\", or \"make my content show up in AI answers\". Distinct from regular SEO — this targets generative engines, not traditional Google rankings.",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/nowork-studio/NotFair/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/nowork-studio/NotFair/blob/c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d/skills/geo-optimizer/SKILL.md"
+      },
+      "quality": {
+        "score": 74,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/nowork-studio/notfair/geo-optimizer/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/nowork-studio/notfair/geo-optimizer/",
+      "source_folder_url": "https://github.com/nowork-studio/NotFair/tree/main/skills/geo-optimizer",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/nowork-studio/NotFair/tree/main/skills/geo-optimizer",
+        "publisher_setup_url": "https://github.com/nowork-studio/NotFair/blob/main/skills/geo-optimizer/SKILL.md"
+      }
+    },
+    {
+      "id": "nowork-studio/notfair/google-ads-copy",
+      "name": "google-ads-copy",
+      "description": "Generate and A/B test Google Ads copy. Use when asked to write ad copy, headlines, descriptions, create ad variants, test ad messaging, improve CTR, or generate RSA (Responsive Search Ad) components. Trigger on \"ad copy\", \"write ads\", \"headlines\", \"descriptions\", \"RSA\", \"responsive search ad\", \"ad text\", \"ad creative\", \"improve CTR\", \"ad A/B test\", \"ad variants\", \"write me an ad\", \"ad variation experiment\", or when the user wants to improve click-through rate on existing ads.",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/nowork-studio/NotFair/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/nowork-studio/NotFair/blob/c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d/skills/google-ads-copy/SKILL.md"
+      },
+      "quality": {
+        "score": 76,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/nowork-studio/notfair/google-ads-copy/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/nowork-studio/notfair/google-ads-copy/",
+      "source_folder_url": "https://github.com/nowork-studio/NotFair/tree/main/skills/google-ads-copy",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/nowork-studio/NotFair/tree/main/skills/google-ads-copy",
+        "publisher_setup_url": "https://github.com/nowork-studio/NotFair/blob/main/skills/google-ads-copy/SKILL.md"
+      }
+    },
+    {
+      "id": "nowork-studio/notfair/google-ads-landing",
+      "name": "google-ads-landing",
+      "description": "Score and diagnose Google Ads landing pages. Use when asked to audit a landing page, check landing page quality, diagnose high-CTR but low-conversion-rate ad groups, improve Quality Score's Landing Page Experience component, or compare an ad group's messaging against its landing page. Trigger on \"landing page audit\", \"landing page score\", \"landing page quality\", \"why is my conversion rate low\", \"LPX\", \"landing page experience\", \"ad to page match\", or when `/google-ads-audit` surfaces a high-CTR / low-CVR ad group.",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/nowork-studio/NotFair/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/nowork-studio/NotFair/blob/c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d/skills/google-ads-landing/SKILL.md"
+      },
+      "quality": {
+        "score": 76,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/nowork-studio/notfair/google-ads-landing/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/nowork-studio/notfair/google-ads-landing/",
+      "source_folder_url": "https://github.com/nowork-studio/NotFair/tree/main/skills/google-ads-landing",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/nowork-studio/NotFair/tree/main/skills/google-ads-landing",
+        "publisher_setup_url": "https://github.com/nowork-studio/NotFair/blob/main/skills/google-ads-landing/SKILL.md"
+      }
+    },
+    {
+      "id": "nowork-studio/notfair/hreflang-international",
+      "name": "hreflang-international",
+      "description": "International / multilingual SEO audit focused on hreflang correctness: missing or broken return tags, wrong language/region codes, missing x-default, self-referencing errors, hreflang vs canonical conflicts, and inconsistent signals across HTML head, HTTP headers and XML sitemap. Also reviews URL structure (ccTLD vs subdirectory vs subdomain), language targeting and geo signals. Use whenever the user runs a multi-language or multi-region site and asks about hreflang, international or multilingual SEO, the wrong-language page showing in search, or duplicate content across country versions. Trigger on: \"hreflang\", \"international SEO\", \"multilingual SEO\", \"multi-region\", \"wrong language in Google\", \"x-default\", \"ccTLD vs subdirectory\", \"geo targeting\", \"language targeting\", \"my English page shows for Thai users\", \"th/en page ranking in the wrong country\", or any cross-language/cross-country ranking question. For full-site audits use /seo-analysis; for a single URL use /seo-page.",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/nowork-studio/NotFair/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/nowork-studio/NotFair/blob/c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d/skills/hreflang-international/SKILL.md"
+      },
+      "quality": {
+        "score": 72,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/nowork-studio/notfair/hreflang-international/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/nowork-studio/notfair/hreflang-international/",
+      "source_folder_url": "https://github.com/nowork-studio/NotFair/tree/main/skills/hreflang-international",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/nowork-studio/NotFair/tree/main/skills/hreflang-international",
+        "publisher_setup_url": "https://github.com/nowork-studio/NotFair/blob/main/skills/hreflang-international/SKILL.md"
+      }
+    },
+    {
+      "id": "nowork-studio/notfair/image-seo",
+      "name": "image-seo",
+      "description": "Image SEO audit — make a site's images discoverable in Google Images and stop them from dragging down Core Web Vitals. Audits alt text quality and coverage, descriptive file names, modern formats (WebP/AVIF), dimensions and compression, responsive srcset, lazy-loading, explicit width/height (CLS), image sitemaps, and ImageObject structured data. Use this skill whenever the user asks about image SEO, alt text, Google Images ranking, image optimization for search, image file size hurting page speed, WebP/AVIF, or image structured data. Trigger on: \"image SEO\", \"alt text\", \"rank in Google Images\", \"optimize my images for search\", \"image alt tags\", \"WebP\", \"image compression SEO\", \"image sitemap\", \"ImageObject schema\", or any image-discoverability / image-performance question. For overall page speed use /seo-analysis; for generating new images use the brand image skills.",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/nowork-studio/NotFair/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/nowork-studio/NotFair/blob/c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d/skills/image-seo/SKILL.md"
+      },
+      "quality": {
+        "score": 74,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/nowork-studio/notfair/image-seo/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/nowork-studio/notfair/image-seo/",
+      "source_folder_url": "https://github.com/nowork-studio/NotFair/tree/main/skills/image-seo",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/nowork-studio/NotFair/tree/main/skills/image-seo",
+        "publisher_setup_url": "https://github.com/nowork-studio/NotFair/blob/main/skills/image-seo/SKILL.md"
+      }
+    },
+    {
+      "id": "nowork-studio/notfair/keyword-research",
+      "name": "keyword-research",
+      "description": "Discover, analyze, and prioritize keywords for SEO and GEO content strategies from a seed keyword or niche. Identifies high-value opportunities based on search volume, competition, intent, and business relevance. Generates topic clusters. For building a dated editorial calendar from your own Search Console data, use `content-planner` instead — this skill is seed-driven keyword discovery, not calendar scheduling. Use when asked to \"find keywords\", \"keyword research\", \"keyword analysis\", \"search volume\", \"keyword difficulty\", \"content ideas from a seed\", or any keyword discovery task.",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/nowork-studio/NotFair/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/nowork-studio/NotFair/blob/c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d/skills/keyword-research/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/nowork-studio/notfair/keyword-research/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/nowork-studio/notfair/keyword-research/",
+      "source_folder_url": "https://github.com/nowork-studio/NotFair/tree/main/skills/keyword-research",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/nowork-studio/NotFair/tree/main/skills/keyword-research",
+        "publisher_setup_url": "https://github.com/nowork-studio/NotFair/blob/main/skills/keyword-research/SKILL.md"
+      }
+    },
+    {
+      "id": "nowork-studio/notfair/broken-link-checker",
+      "name": "broken-link-checker",
+      "description": "Scans a website to find broken links (404s, 500s). Crawls internal pages, identifies broken outbound links, and reports source pages for easy fixing. Use this when the user asks to \"check for broken links\", \"find 404s\", \"audit my links\", or \"is my site healthy\".",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/nowork-studio/NotFair/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/nowork-studio/NotFair/blob/c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d/skills/broken-link-checker/SKILL.md"
+      },
+      "quality": {
+        "score": 76,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/nowork-studio/notfair/broken-link-checker/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/nowork-studio/NotFair/tree/main/skills/broken-link-checker",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/nowork-studio/NotFair/tree/main/skills/broken-link-checker",
+        "publisher_setup_url": "https://github.com/nowork-studio/NotFair/blob/main/skills/broken-link-checker/SKILL.md"
+      }
+    },
+    {
+      "id": "nowork-studio/notfair/gohighlevel",
+      "name": "gohighlevel",
+      "description": "Operate connected GoHighLevel CRM accounts through the NotFair MCP. Use for GoHighLevel, HighLevel, GHL contacts, conversations, opportunities, calendars, pipelines, tags, tasks, forms, invoices, products, or approved CRM changes.",
+      "category": "business-finance",
+      "license": "MIT",
+      "license_url": "https://github.com/nowork-studio/NotFair/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/nowork-studio/NotFair/blob/c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d/skills/gohighlevel/SKILL.md"
+      },
+      "quality": {
+        "score": 73,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/nowork-studio/notfair/gohighlevel/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/nowork-studio/NotFair/tree/main/skills/gohighlevel",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/nowork-studio/NotFair/tree/main/skills/gohighlevel",
+        "publisher_setup_url": "https://github.com/nowork-studio/NotFair/blob/main/skills/gohighlevel/SKILL.md"
+      }
+    },
+    {
+      "id": "nowork-studio/notfair/google-ads",
+      "name": "google-ads",
+      "description": "Manage Google Ads — performance, keywords, bids, budgets, negatives, campaigns, ads, search terms, QS, location targeting, bulk operations, experiments, asset management, portfolio bidding, offline conversions. Use for any mention of Google Ads, CPA, ROAS, ad spend, or campaign settings.",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/nowork-studio/NotFair/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/nowork-studio/NotFair/blob/c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d/skills/google-ads/SKILL.md"
+      },
+      "quality": {
+        "score": 73,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/nowork-studio/notfair/google-ads/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/nowork-studio/NotFair/tree/main/skills/google-ads",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/nowork-studio/NotFair/tree/main/skills/google-ads",
+        "publisher_setup_url": "https://github.com/nowork-studio/NotFair/blob/main/skills/google-ads/SKILL.md"
+      }
+    },
+    {
+      "id": "nowork-studio/notfair/google-ads-assets",
+      "name": "google-ads-assets",
+      "description": "Plan, validate, and safely publish Google Ads assets, including sitelinks, callouts, structured snippets, image assets, and Performance Max asset briefs. Use when asked for Google Ads assets, ad extensions, sitelinks, callouts, snippets, image assets, Performance Max assets, PMax creative, or an asset audit.",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/nowork-studio/NotFair/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/nowork-studio/NotFair/blob/c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d/skills/google-ads-assets/SKILL.md"
+      },
+      "quality": {
+        "score": 73,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/nowork-studio/notfair/google-ads-assets/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/nowork-studio/NotFair/tree/main/skills/google-ads-assets",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/nowork-studio/NotFair/tree/main/skills/google-ads-assets",
+        "publisher_setup_url": "https://github.com/nowork-studio/NotFair/blob/main/skills/google-ads-assets/SKILL.md"
+      }
+    },
+    {
+      "id": "nowork-studio/notfair/google-ads-audit",
+      "name": "google-ads-audit",
+      "description": "Google Ads account audit and business context setup. Use for account-health audits and business-context setup. Trigger on \"audit my ads\", \"ads audit\", \"set up my ads\", \"onboard\", \"account overview\", \"how's my account\", \"ads health check\", \"what should I fix in my ads\", or when the user is new to NotFair and hasn't run an audit before.",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/nowork-studio/NotFair/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/nowork-studio/NotFair/blob/c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d/skills/google-ads-audit/SKILL.md"
+      },
+      "quality": {
+        "score": 76,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/nowork-studio/notfair/google-ads-audit/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/nowork-studio/NotFair/tree/main/skills/google-ads-audit",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/nowork-studio/NotFair/tree/main/skills/google-ads-audit",
+        "publisher_setup_url": "https://github.com/nowork-studio/NotFair/blob/main/skills/google-ads-audit/SKILL.md"
+      }
+    },
+    {
+      "id": "nowork-studio/notfair/google-analytics",
+      "name": "google-analytics",
+      "description": "Analyze connected Google Analytics 4 traffic, acquisition, engagement, landing pages, ecommerce, events, and conversions, and safely manage supported GA4 key events or custom dimensions through NotFair MCP. Use for GA4, Google Analytics, traffic or conversion drops, channel attribution, realtime activity, report requests, measurement configuration, or Analytics MCP setup.",
+      "category": "data-databases",
+      "license": "MIT",
+      "license_url": "https://github.com/nowork-studio/NotFair/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/nowork-studio/NotFair/blob/c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d/skills/google-analytics/SKILL.md"
+      },
+      "quality": {
+        "score": 73,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/nowork-studio/notfair/google-analytics/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/nowork-studio/NotFair/tree/main/skills/google-analytics",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/nowork-studio/NotFair/tree/main/skills/google-analytics",
+        "publisher_setup_url": "https://github.com/nowork-studio/NotFair/blob/main/skills/google-analytics/SKILL.md"
+      }
+    },
+    {
+      "id": "nowork-studio/notfair/local-seo",
+      "name": "local-seo",
+      "description": "Local SEO and Google Business Profile audit: diagnose why a business isn't ranking in the local pack / map results and produce a fix plan. Covers GBP completeness, NAP (name/address/phone) consistency across the site and citations, local pack and \"near me\" ranking factors, review velocity and responses, local landing pages, service-area pages, and LocalBusiness JSON-LD. Use whenever the user asks about local rankings, map results, Google Maps ranking, NAP consistency, store/branch pages, or multi-location SEO. Trigger on: \"local SEO\", \"Google Business Profile\", \"GBP audit\", \"rank on Google Maps\", \"local pack\", \"map pack\", \"near me ranking\", \"NAP\", \"local citations\", \"my business isn't on the map\", \"why don't I show up on Google Maps\", \"store locator SEO\", \"multi-location SEO\", \"service area pages\", or any location-based ranking question. For full-site (non-local) audits use /seo-analysis; for a single URL use /seo-page.",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/nowork-studio/NotFair/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/nowork-studio/NotFair/blob/c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d/skills/local-seo/SKILL.md"
+      },
+      "quality": {
+        "score": 72,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/nowork-studio/notfair/local-seo/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/nowork-studio/NotFair/tree/main/skills/local-seo",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/nowork-studio/NotFair/tree/main/skills/local-seo",
+        "publisher_setup_url": "https://github.com/nowork-studio/NotFair/blob/main/skills/local-seo/SKILL.md"
+      }
+    },
+    {
+      "id": "nowork-studio/notfair/meta-ads",
+      "name": "meta-ads",
+      "description": "Manage Meta Ads (Facebook + Instagram) — performance, ROAS, CPM, frequency, audience overlap, learning phase, creative fatigue, budgets, ad sets, campaigns, ads. Use for any mention of Meta Ads, Facebook Ads, Instagram Ads, ROAS, CPM, ad spend, or campaign settings on Meta.",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/nowork-studio/NotFair/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/nowork-studio/NotFair/blob/c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d/skills/meta-ads/SKILL.md"
+      },
+      "quality": {
+        "score": 73,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/nowork-studio/notfair/meta-ads/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/nowork-studio/NotFair/tree/main/skills/meta-ads",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/nowork-studio/NotFair/tree/main/skills/meta-ads",
+        "publisher_setup_url": "https://github.com/nowork-studio/NotFair/blob/main/skills/meta-ads/SKILL.md"
+      }
+    },
+    {
+      "id": "nowork-studio/notfair/meta-ads-audit",
+      "name": "meta-ads-audit",
+      "description": "Meta Ads (Facebook + Instagram) account audit and business context setup. Use for account-health audits and business-context setup. Trigger on \"audit my Meta ads\", \"audit my Facebook ads\", \"Meta ads audit\", \"set up my Meta ads\", \"onboard Meta\", \"Meta account overview\", \"how's my Meta account\", \"Meta health check\", \"what should I fix in my Facebook ads\", or when the user is new to NotFair Meta and hasn't run an audit before.",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/nowork-studio/NotFair/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/nowork-studio/NotFair/blob/c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d/skills/meta-ads-audit/SKILL.md"
+      },
+      "quality": {
+        "score": 76,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/nowork-studio/notfair/meta-ads-audit/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/nowork-studio/NotFair/tree/main/skills/meta-ads-audit",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/nowork-studio/NotFair/tree/main/skills/meta-ads-audit",
+        "publisher_setup_url": "https://github.com/nowork-studio/NotFair/blob/main/skills/meta-ads-audit/SKILL.md"
+      }
+    },
+    {
+      "id": "nowork-studio/notfair/meta-ads-creative",
+      "name": "meta-ads-creative",
+      "description": "Create evidence-based Meta ad creative briefs, copy angles, and testable asset concepts for Facebook and Instagram. Use when asked for Meta ad creative, Facebook ads copy, Instagram ad assets, UGC concepts, creative briefs, new ad concepts, or creative refreshes.",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/nowork-studio/NotFair/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/nowork-studio/NotFair/blob/c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d/skills/meta-ads-creative/SKILL.md"
+      },
+      "quality": {
+        "score": 73,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/nowork-studio/notfair/meta-ads-creative/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/nowork-studio/NotFair/tree/main/skills/meta-ads-creative",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/nowork-studio/NotFair/tree/main/skills/meta-ads-creative",
+        "publisher_setup_url": "https://github.com/nowork-studio/NotFair/blob/main/skills/meta-ads-creative/SKILL.md"
+      }
+    },
+    {
+      "id": "nowork-studio/notfair/meta-tags-optimizer",
+      "name": "meta-tags-optimizer",
+      "description": "Optimize title tags, meta descriptions, Open Graph, and Twitter cards for maximum click-through rate. Generates multiple A/B test variations with character counting and SERP preview. Use when asked to \"optimize title tag\", \"write meta description\", \"improve CTR\", \"Open Graph tags\", \"fix my meta tags\", \"social media preview\", \"my click rate is low\", \"title optimization\", or any meta tag task.",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/nowork-studio/NotFair/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/nowork-studio/NotFair/blob/c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d/skills/meta-tags-optimizer/SKILL.md"
+      },
+      "quality": {
+        "score": 76,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/nowork-studio/notfair/meta-tags-optimizer/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/nowork-studio/NotFair/tree/main/skills/meta-tags-optimizer",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/nowork-studio/NotFair/tree/main/skills/meta-tags-optimizer",
+        "publisher_setup_url": "https://github.com/nowork-studio/NotFair/blob/main/skills/meta-tags-optimizer/SKILL.md"
+      }
+    },
+    {
+      "id": "nowork-studio/notfair/paid-ads",
+      "name": "paid-ads",
+      "description": "Coordinate safe, evidence-based paid-media work across Google Ads, Meta Ads, X Ads, LinkedIn Ads, Reddit Ads, TikTok Ads, Amazon, and ChatGPT Ads. Use for broad ads questions, multi-channel strategy, budgets, CPA or ROAS, campaign requests, spend, ad performance, or when routing to the right NotFair paid-ads skill.",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/nowork-studio/NotFair/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/nowork-studio/NotFair/blob/c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d/skills/paid-ads/SKILL.md"
+      },
+      "quality": {
+        "score": 73,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/nowork-studio/notfair/paid-ads/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/nowork-studio/NotFair/tree/main/skills/paid-ads",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/nowork-studio/NotFair/tree/main/skills/paid-ads",
+        "publisher_setup_url": "https://github.com/nowork-studio/NotFair/blob/main/skills/paid-ads/SKILL.md"
+      }
+    },
+    {
+      "id": "nowork-studio/notfair/paid-ads-amazon",
+      "name": "paid-ads-amazon",
+      "description": "Plan and review Amazon Ads with margin-aware ACoS, product, and search-term guardrails. Use for Amazon advertising, Sponsored Products, Sponsored Brands, Sponsored Display, ASIN targeting, Amazon ACoS, or Amazon Ads performance exports.",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/nowork-studio/NotFair/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/nowork-studio/NotFair/blob/c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d/skills/paid-ads-amazon/SKILL.md"
+      },
+      "quality": {
+        "score": 73,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/nowork-studio/notfair/paid-ads-amazon/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/nowork-studio/NotFair/tree/main/skills/paid-ads-amazon",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/nowork-studio/NotFair/tree/main/skills/paid-ads-amazon",
+        "publisher_setup_url": "https://github.com/nowork-studio/NotFair/blob/main/skills/paid-ads-amazon/SKILL.md"
+      }
+    },
+    {
+      "id": "nowork-studio/notfair/paid-ads-chatgpt",
+      "name": "paid-ads-chatgpt",
+      "description": "Plan and review ChatGPT Ads experiments without assuming ad inventory, account access, or platform capabilities. Use for ChatGPT advertising, OpenAI ads, conversational ad concepts, ChatGPT campaign plans, or performance reviews from a verified export.",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/nowork-studio/NotFair/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/nowork-studio/NotFair/blob/c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d/skills/paid-ads-chatgpt/SKILL.md"
+      },
+      "quality": {
+        "score": 73,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/nowork-studio/notfair/paid-ads-chatgpt/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/nowork-studio/NotFair/tree/main/skills/paid-ads-chatgpt",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/nowork-studio/NotFair/tree/main/skills/paid-ads-chatgpt",
+        "publisher_setup_url": "https://github.com/nowork-studio/NotFair/blob/main/skills/paid-ads-chatgpt/SKILL.md"
+      }
+    },
+    {
+      "id": "nowork-studio/notfair/paid-ads-creative",
+      "name": "paid-ads-creative",
+      "description": "Create grounded paid-media creative concepts, copy angles, refresh hypotheses, and measurable test briefs across advertising platforms. Use for ad copy, creative briefs, UGC concepts, headlines, creative fatigue, asset ideas, or a creative refresh.",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/nowork-studio/NotFair/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/nowork-studio/NotFair/blob/c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d/skills/paid-ads-creative/SKILL.md"
+      },
+      "quality": {
+        "score": 73,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/nowork-studio/notfair/paid-ads-creative/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/nowork-studio/NotFair/tree/main/skills/paid-ads-creative",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/nowork-studio/NotFair/tree/main/skills/paid-ads-creative",
+        "publisher_setup_url": "https://github.com/nowork-studio/NotFair/blob/main/skills/paid-ads-creative/SKILL.md"
+      }
+    },
+    {
+      "id": "nowork-studio/notfair/paid-ads-guide",
+      "name": "paid-ads-guide",
+      "description": "Explain NotFair's paid-ads skills, installation, platform boundaries, account connections, and current product capabilities. Use for questions about how NotFair works, what it supports, how to install or connect it, plans or limits, or paid-media troubleshooting that is not an account-performance request.",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/nowork-studio/NotFair/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/nowork-studio/NotFair/blob/c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d/skills/paid-ads-guide/SKILL.md"
+      },
+      "quality": {
+        "score": 73,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/nowork-studio/notfair/paid-ads-guide/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/nowork-studio/NotFair/tree/main/skills/paid-ads-guide",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/nowork-studio/NotFair/tree/main/skills/paid-ads-guide",
+        "publisher_setup_url": "https://github.com/nowork-studio/NotFair/blob/main/skills/paid-ads-guide/SKILL.md"
+      }
+    },
+    {
+      "id": "nowork-studio/notfair/paid-ads-integrations",
+      "name": "paid-ads-integrations",
+      "description": "Discover, connect, and verify NotFair paid-ad integrations and their actual capabilities. Use when asked to connect an ad account, configure an ads MCP, check available tools, troubleshoot access, or determine whether NotFair can read or change a platform.",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/nowork-studio/NotFair/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/nowork-studio/NotFair/blob/c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d/skills/paid-ads-integrations/SKILL.md"
+      },
+      "quality": {
+        "score": 73,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/nowork-studio/notfair/paid-ads-integrations/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/nowork-studio/NotFair/tree/main/skills/paid-ads-integrations",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/nowork-studio/NotFair/tree/main/skills/paid-ads-integrations",
+        "publisher_setup_url": "https://github.com/nowork-studio/NotFair/blob/main/skills/paid-ads-integrations/SKILL.md"
+      }
+    },
+    {
+      "id": "nowork-studio/notfair/paid-ads-launch",
+      "name": "paid-ads-launch",
+      "description": "Plan and prepare a new paid-media campaign or cross-channel test before it can spend. Use when asked to create, launch, start, set up, or allocate budget to an advertising campaign on any supported platform.",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/nowork-studio/NotFair/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/nowork-studio/NotFair/blob/c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d/skills/paid-ads-launch/SKILL.md"
+      },
+      "quality": {
+        "score": 73,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/nowork-studio/notfair/paid-ads-launch/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/nowork-studio/NotFair/tree/main/skills/paid-ads-launch",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/nowork-studio/NotFair/tree/main/skills/paid-ads-launch",
+        "publisher_setup_url": "https://github.com/nowork-studio/NotFair/blob/main/skills/paid-ads-launch/SKILL.md"
+      }
+    },
+    {
+      "id": "nowork-studio/notfair/paid-ads-linkedin",
+      "name": "paid-ads-linkedin",
+      "description": "Audit, diagnose, plan, and safely operate connected LinkedIn Ads accounts through the NotFair MCP, with an export-based fallback. Use for LinkedIn advertising, sponsored content, lead-generation forms, job-title or company targeting, campaign groups, creatives, conversions, lead quality, budgets, bids, or approved LinkedIn campaign changes.",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/nowork-studio/NotFair/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/nowork-studio/NotFair/blob/c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d/skills/paid-ads-linkedin/SKILL.md"
+      },
+      "quality": {
+        "score": 73,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/nowork-studio/notfair/paid-ads-linkedin/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/nowork-studio/NotFair/tree/main/skills/paid-ads-linkedin",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/nowork-studio/NotFair/tree/main/skills/paid-ads-linkedin",
+        "publisher_setup_url": "https://github.com/nowork-studio/NotFair/blob/main/skills/paid-ads-linkedin/SKILL.md"
+      }
+    },
+    {
+      "id": "nowork-studio/notfair/paid-ads-optimize",
+      "name": "paid-ads-optimize",
+      "description": "Diagnose wasted paid-ad spend, pacing, and allocation, then propose safe evidence-backed optimizations. Use for waste, negatives, budgets, bid changes, poor CPA or ROAS, underpacing, overspend, or scaling decisions.",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/nowork-studio/NotFair/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/nowork-studio/NotFair/blob/c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d/skills/paid-ads-optimize/SKILL.md"
+      },
+      "quality": {
+        "score": 73,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/nowork-studio/notfair/paid-ads-optimize/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/nowork-studio/NotFair/tree/main/skills/paid-ads-optimize",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/nowork-studio/NotFair/tree/main/skills/paid-ads-optimize",
+        "publisher_setup_url": "https://github.com/nowork-studio/NotFair/blob/main/skills/paid-ads-optimize/SKILL.md"
+      }
+    },
+    {
+      "id": "nowork-studio/notfair/paid-ads-reddit",
+      "name": "paid-ads-reddit",
+      "description": "Audit, diagnose, and safely operate connected Reddit Ads accounts through the NotFair MCP. Use for Reddit advertising, Reddit Ads performance, campaign or ad-group analysis, spend, conversions, targeting, audiences, pixels, budgets, bids, creative, campaign setup, or approved Reddit Ads changes.",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/nowork-studio/NotFair/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/nowork-studio/NotFair/blob/c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d/skills/paid-ads-reddit/SKILL.md"
+      },
+      "quality": {
+        "score": 73,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/nowork-studio/notfair/paid-ads-reddit/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/nowork-studio/NotFair/tree/main/skills/paid-ads-reddit",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/nowork-studio/NotFair/tree/main/skills/paid-ads-reddit",
+        "publisher_setup_url": "https://github.com/nowork-studio/NotFair/blob/main/skills/paid-ads-reddit/SKILL.md"
+      }
+    },
+    {
+      "id": "nowork-studio/notfair/paid-ads-review",
+      "name": "paid-ads-review",
+      "description": "Produce a read-only, evidence-based paid-media performance review across connected platforms or supplied exports. Use for weekly or monthly reports, scorecards, performance, CPA, ROAS, CTR, spend trends, pacing, or conversion-tracking health.",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/nowork-studio/NotFair/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/nowork-studio/NotFair/blob/c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d/skills/paid-ads-review/SKILL.md"
+      },
+      "quality": {
+        "score": 73,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/nowork-studio/notfair/paid-ads-review/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/nowork-studio/NotFair/tree/main/skills/paid-ads-review",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/nowork-studio/NotFair/tree/main/skills/paid-ads-review",
+        "publisher_setup_url": "https://github.com/nowork-studio/NotFair/blob/main/skills/paid-ads-review/SKILL.md"
+      }
+    },
+    {
+      "id": "nowork-studio/notfair/paid-ads-setup",
+      "name": "paid-ads-setup",
+      "description": "Connect NotFair paid-ad accounts and establish reusable campaign context. Use when setting up paid media in a new workspace, connecting Google, Meta, X, LinkedIn, Reddit, or TikTok Ads, refreshing brand context, or preparing an agent to work on ads safely.",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/nowork-studio/NotFair/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/nowork-studio/NotFair/blob/c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d/skills/paid-ads-setup/SKILL.md"
+      },
+      "quality": {
+        "score": 73,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/nowork-studio/notfair/paid-ads-setup/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/nowork-studio/NotFair/tree/main/skills/paid-ads-setup",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/nowork-studio/NotFair/tree/main/skills/paid-ads-setup",
+        "publisher_setup_url": "https://github.com/nowork-studio/NotFair/blob/main/skills/paid-ads-setup/SKILL.md"
+      }
+    },
+    {
+      "id": "nowork-studio/notfair/paid-ads-tiktok",
+      "name": "paid-ads-tiktok",
+      "description": "Audit, diagnose, and safely operate connected TikTok Ads accounts through the NotFair MCP. Use for TikTok advertising, Spark Ads, short-form video ads, campaign or ad-group analysis, spend, conversions, targeting, creative, budgets, bids, creator briefs, campaign setup, or approved TikTok Ads changes.",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/nowork-studio/NotFair/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/nowork-studio/NotFair/blob/c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d/skills/paid-ads-tiktok/SKILL.md"
+      },
+      "quality": {
+        "score": 73,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/nowork-studio/notfair/paid-ads-tiktok/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/nowork-studio/NotFair/tree/main/skills/paid-ads-tiktok",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/nowork-studio/NotFair/tree/main/skills/paid-ads-tiktok",
+        "publisher_setup_url": "https://github.com/nowork-studio/NotFair/blob/main/skills/paid-ads-tiktok/SKILL.md"
+      }
+    },
+    {
+      "id": "nowork-studio/notfair/paid-ads-x",
+      "name": "paid-ads-x",
+      "description": "Audit, diagnose, and safely operate connected X Ads (Twitter Ads) accounts through the NotFair MCP. Use for X Ads performance, campaign or line-item analysis, spend, conversions, targeting, promoted posts, audiences, budgets, bids, creative, campaign setup, or approved X Ads changes.",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/nowork-studio/NotFair/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/nowork-studio/NotFair/blob/c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d/skills/paid-ads-x/SKILL.md"
+      },
+      "quality": {
+        "score": 73,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/nowork-studio/notfair/paid-ads-x/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/nowork-studio/NotFair/tree/main/skills/paid-ads-x",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/nowork-studio/NotFair/tree/main/skills/paid-ads-x",
+        "publisher_setup_url": "https://github.com/nowork-studio/NotFair/blob/main/skills/paid-ads-x/SKILL.md"
+      }
+    },
+    {
+      "id": "nowork-studio/notfair/programmatic-seo",
+      "name": "programmatic-seo",
+      "description": "Programmatic SEO planning and audit: building or evaluating large sets of template-generated pages that target long-tail query patterns (e.g. \"[service] in [city]\", \"[product] vs [product]\", \"[tool] for [use-case]\"). Covers data-source and template design, thin/duplicate-content and doorway-page risks, per-page uniqueness and value thresholds, internal linking and hubs, indexation management (publish vs. noindex), and scaling without a manual action. Use whenever the user wants to generate many pages from a template/dataset, build location/comparison/use-case pages at scale, or asks why generated pages aren't indexing. Trigger on: \"programmatic SEO\", \"pSEO\", \"generate pages at scale\", \"templated pages\", \"location pages at scale\", \"comparison pages\", \"[city] pages\", \"my generated pages aren't indexed\", \"doorway pages\", \"scale content\". For one-off content use /content-writer; for keyword discovery use /keyword-research.",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/nowork-studio/NotFair/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/nowork-studio/NotFair/blob/c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d/skills/programmatic-seo/SKILL.md"
+      },
+      "quality": {
+        "score": 72,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/nowork-studio/notfair/programmatic-seo/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/nowork-studio/NotFair/tree/main/skills/programmatic-seo",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/nowork-studio/NotFair/tree/main/skills/programmatic-seo",
+        "publisher_setup_url": "https://github.com/nowork-studio/NotFair/blob/main/skills/programmatic-seo/SKILL.md"
+      }
+    },
+    {
+      "id": "nowork-studio/notfair/schema-markup-generator",
+      "name": "schema-markup-generator",
+      "description": "Generate JSON-LD structured data markup for rich results in Google Search. Supports FAQ, HowTo, Article, Product, LocalBusiness, and multi-type schemas. Validates against Google requirements and provides implementation guidance. Use when asked to \"add schema markup\", \"generate structured data\", \"JSON-LD\", \"rich snippets\", \"FAQ schema\", \"product markup\", \"add structured data to my page\", \"how to get rich snippets\", or any structured data task.",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/nowork-studio/NotFair/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/nowork-studio/NotFair/blob/c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d/skills/schema-markup-generator/SKILL.md"
+      },
+      "quality": {
+        "score": 76,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/nowork-studio/notfair/schema-markup-generator/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/nowork-studio/NotFair/tree/main/skills/schema-markup-generator",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/nowork-studio/NotFair/tree/main/skills/schema-markup-generator",
+        "publisher_setup_url": "https://github.com/nowork-studio/NotFair/blob/main/skills/schema-markup-generator/SKILL.md"
+      }
+    },
+    {
+      "id": "nowork-studio/notfair/search-console",
+      "name": "search-console",
+      "description": "Query and operate connected Google Search Console properties through NotFair MCP. Use for live GSC query or page performance, clicks, impressions, CTR, position, traffic changes, indexing status, URL inspection, sitemap reads or approved sitemap submission/removal, and Search Console MCP setup. Route full-site SEO audits to seo-analysis.",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/nowork-studio/NotFair/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/nowork-studio/NotFair/blob/c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d/skills/search-console/SKILL.md"
+      },
+      "quality": {
+        "score": 73,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/nowork-studio/notfair/search-console/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/nowork-studio/NotFair/tree/main/skills/search-console",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/nowork-studio/NotFair/tree/main/skills/search-console",
+        "publisher_setup_url": "https://github.com/nowork-studio/NotFair/blob/main/skills/search-console/SKILL.md"
+      }
+    },
+    {
+      "id": "nowork-studio/notfair/seo-analysis",
+      "name": "seo-analysis",
+      "description": "Full SEO audit combining Google Search Console, URL Inspection API, PageSpeed Insights, a technical crawl, keyword research, and metadata, schema, search intent and Core Web Vitals checks. Surfaces quick wins, diagnoses traffic drops and content gaps, and produces an actionable 30-day plan. Use whenever the user asks about SEO, search rankings, organic traffic, Google Search Console, keyword performance, search visibility, technical SEO, URL indexing, or LCP, INP, CLS or Lighthouse scores. Also trigger on: \"why is my traffic down\", \"what keywords am I ranking for\", \"improve my rankings\", \"check my search console\", \"SEO audit\", \"analyze my SEO\", \"technical SEO\", \"meta tags\", \"indexing issues\", \"crawl errors\", \"content strategy\", \"keyword cannibalization\", \"search intent\", \"schema markup\", \"structured data\", \"URL inspection\", \"page speed\", \"performance score\", \"core web vitals\", \"lighthouse\", or any organic search question. If in doubt, trigger.",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/nowork-studio/NotFair/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/nowork-studio/NotFair/blob/c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d/skills/seo-analysis/SKILL.md"
+      },
+      "quality": {
+        "score": 72,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/nowork-studio/notfair/seo-analysis/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/nowork-studio/NotFair/tree/main/skills/seo-analysis",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/nowork-studio/NotFair/tree/main/skills/seo-analysis",
+        "publisher_setup_url": "https://github.com/nowork-studio/NotFair/blob/main/skills/seo-analysis/SKILL.md"
+      }
+    },
+    {
+      "id": "nowork-studio/notfair/seo-drift",
+      "name": "seo-drift",
+      "description": "SEO drift monitoring — snapshot a site's SEO state and detect regressions over time. Captures a baseline (rankings/positions, indexed page count, titles & meta descriptions, canonical/robots directives, schema presence, key on-page elements) and on later runs diffs against it to surface what changed: ranking drops, pages that fell out of the index, titles/metas that were accidentally overwritten (a CMS/redeploy classic), canonicals or noindex flipped, schema that disappeared. Use this skill when the user wants to monitor SEO over time, catch regressions after a site change / migration / redeploy, set a baseline, diff against a previous state, or asks \"what changed on my site's SEO\" or \"did my redesign break SEO\". Trigger on: \"SEO drift\", \"SEO monitoring\", \"track SEO over time\", \"did my site change break SEO\", \"after migration SEO\", \"SEO regression\", \"baseline my SEO\", \"compare SEO to last month\", \"my titles changed\", \"pages fell out of the index\". For a one-time full audit use /seo-analysis.",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/nowork-studio/NotFair/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/nowork-studio/NotFair/blob/c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d/skills/seo-drift/SKILL.md"
+      },
+      "quality": {
+        "score": 72,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/nowork-studio/notfair/seo-drift/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/nowork-studio/NotFair/tree/main/skills/seo-drift",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/nowork-studio/NotFair/tree/main/skills/seo-drift",
+        "publisher_setup_url": "https://github.com/nowork-studio/NotFair/blob/main/skills/seo-drift/SKILL.md"
+      }
+    },
+    {
+      "id": "nowork-studio/notfair/seo-page",
+      "name": "seo-page",
+      "description": "Single-page SEO audit: content quality under Google's E-E-A-T framework and Helpful Content guidelines, on-page factors, search intent, technical signals and readability. Pulls GSC data for the page, crawls the live HTML, checks metadata, schema, internal linking and depth, and produces a scored report with fixes. Use whenever the user wants to analyze a specific page or URL, not the whole site. Trigger on: \"analyze this page\", \"audit this URL\", \"how is this page doing\", \"evaluate my blog post\", \"check this landing page\", \"page SEO\", \"content quality check\", \"is this page good enough\", \"review this page's SEO\", \"what's wrong with this page\", \"how can I improve this page\", \"page analysis\", \"single page audit\", \"content audit for [URL]\", or any request naming a specific URL/page for SEO evaluation. If the user provides a specific URL (not just a domain), this is likely the right skill; use /seo-analysis for full-site audits instead.",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/nowork-studio/NotFair/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/nowork-studio/NotFair/blob/c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d/skills/seo-page/SKILL.md"
+      },
+      "quality": {
+        "score": 76,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/nowork-studio/notfair/seo-page/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/nowork-studio/NotFair/tree/main/skills/seo-page",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/nowork-studio/NotFair/tree/main/skills/seo-page",
+        "publisher_setup_url": "https://github.com/nowork-studio/NotFair/blob/main/skills/seo-page/SKILL.md"
+      }
+    },
+    {
+      "id": "nowork-studio/notfair/setup-cms",
+      "name": "setup-cms",
+      "description": "Connect a CMS to notfair SEO tools. Guides users through configuring WordPress, Strapi, Contentful, or Ghost — tests the connection, and writes credentials to .env.local. Once set up, seo-analysis automatically cross- references CMS content against Google Search Console data. Use whenever the user says \"connect my CMS\", \"set up WordPress\", \"configure Strapi\", \"add Contentful\", \"connect Ghost\", or \"CMS setup\". Also trigger if the user asks why no CMS data appears in a seo-analysis report.",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/nowork-studio/NotFair/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/nowork-studio/NotFair/blob/c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d/skills/setup-cms/SKILL.md"
+      },
+      "quality": {
+        "score": 76,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/nowork-studio/notfair/setup-cms/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/nowork-studio/NotFair/tree/main/skills/setup-cms",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/nowork-studio/NotFair/tree/main/skills/setup-cms",
+        "publisher_setup_url": "https://github.com/nowork-studio/NotFair/blob/main/skills/setup-cms/SKILL.md"
+      }
+    },
+    {
+      "id": "nowork-studio/notfair/sitemap-audit",
+      "name": "sitemap-audit",
+      "description": "XML sitemap audit — find and fix the sitemap problems that quietly waste crawl budget and slow indexing. Discovers the sitemap (robots.txt, /sitemap.xml, sitemap index), validates structure and size limits, and cross-checks the URLs it lists against reality: non-200 / redirected / noindex / canonicalized-away URLs that shouldn't be in a sitemap, plus indexable pages that are missing from it. Reviews lastmod accuracy, sitemap-index organization, and robots.txt reference. Use this skill whenever the user asks about sitemaps, sitemap errors in Search Console, \"sitemap couldn't fetch / has errors\", crawl budget, pages not getting indexed, or whether their sitemap is clean. Trigger on: \"sitemap\", \"sitemap.xml\", \"XML sitemap\", \"sitemap errors\", \"sitemap audit\", \"couldn't fetch sitemap\", \"crawl budget\", \"pages not indexed sitemap\", \"sitemap index\", \"lastmod\", \"robots.txt sitemap\", or any sitemap/crawl-coverage question. For a full-site SEO audit use /seo-analysis; for broken links use /broken-link-checker.",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/nowork-studio/NotFair/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/nowork-studio/NotFair/blob/c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d/skills/sitemap-audit/SKILL.md"
+      },
+      "quality": {
+        "score": 72,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/nowork-studio/notfair/sitemap-audit/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/nowork-studio/NotFair/tree/main/skills/sitemap-audit",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/nowork-studio/NotFair/tree/main/skills/sitemap-audit",
+        "publisher_setup_url": "https://github.com/nowork-studio/NotFair/blob/main/skills/sitemap-audit/SKILL.md"
+      }
+    },
+    {
+      "id": "nowork-studio/notfair/sxo",
+      "name": "sxo",
+      "description": "Search Experience Optimization (SXO), the bridge between SEO and UX/CRO. Audits the journey from the SERP click to the on-page goal: click-through factors (title, meta, rich results), then post-click signals that keep users and drive conversions: above-the-fold relevance and intent match, page speed / Core Web Vitals, readability, clear CTAs, mobile usability, and what causes pogo-sticking back to Google. Use when the user has decent rankings but poor CTR or poor on-page conversion, wants better dwell time / engagement, less bounce, or a page experience aligned with search intent. Trigger on: \"SXO\", \"search experience optimization\", \"good rankings but low CTR\", \"high bounce rate from search\", \"pogo-sticking\", \"improve dwell time\", \"SEO and conversion\", \"ranking but not converting\", \"engagement signals\", \"make this page convert search traffic\". For pure landing-page conversion in ads use /google-ads-landing; for content quality use /seo-page.",
+      "category": "marketing-seo",
+      "license": "MIT",
+      "license_url": "https://github.com/nowork-studio/NotFair/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/nowork-studio/NotFair/blob/c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d/skills/sxo/SKILL.md"
+      },
+      "quality": {
+        "score": 72,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/nowork-studio/notfair/sxo/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/nowork-studio/NotFair/tree/main/skills/sxo",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/nowork-studio/NotFair/tree/main/skills/sxo",
+        "publisher_setup_url": "https://github.com/nowork-studio/NotFair/blob/main/skills/sxo/SKILL.md"
+      }
+    },
+    {
+      "id": "nowork-studio/notfair/upgrade",
+      "name": "upgrade",
+      "description": "Upgrade the NotFair plugin to the latest version. Updates the marketplace repo, installs the new version to the plugin cache, and updates installed_plugins.json. Use when asked to \"upgrade notfair\", \"update notfair\", or \"get latest version\". Also handles inline upgrade prompts when a skill detects UPGRADE_AVAILABLE at startup.",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/nowork-studio/NotFair/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/nowork-studio/NotFair/blob/c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d/skills/upgrade/SKILL.md"
+      },
+      "quality": {
+        "score": 76,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/nowork-studio/notfair/upgrade/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/nowork-studio/NotFair/tree/main/skills/upgrade",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/nowork-studio/NotFair/tree/main/skills/upgrade",
+        "publisher_setup_url": "https://github.com/nowork-studio/NotFair/blob/main/skills/upgrade/SKILL.md"
+      }
+    },
+    {
+      "id": "nowork-studio/notfair/wordpress",
+      "name": "wordpress",
+      "description": "Operate connected WordPress sites through the NotFair MCP. Use for WordPress content, posts, pages, media, comments, terms, design, settings, plugins, themes, HTML files, or approved WordPress changes on a NotFair-connected site. Not the local Application-Password CMS setup used by SEO scripts.",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/nowork-studio/NotFair/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/nowork-studio/NotFair/blob/c839f30bfea788b822d1ab1b6f1a8cc4c0d3020d/skills/wordpress/SKILL.md"
+      },
+      "quality": {
+        "score": 73,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/nowork-studio/notfair/wordpress/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/nowork-studio/NotFair/tree/main/skills/wordpress",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/nowork-studio/NotFair/tree/main/skills/wordpress",
+        "publisher_setup_url": "https://github.com/nowork-studio/NotFair/blob/main/skills/wordpress/SKILL.md"
+      }
+    }
+  ]
+}

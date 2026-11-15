@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "repository": "Digidai/product-manager-skills",
+  "listing_url": "https://skills.suedeai.ai/directory/digidai/product-manager-skills/",
+  "snapshot": {
+    "date": "2026-10-22",
+    "id": "740bfd7230f74b149870dffa9c645b2b",
+    "dataset_sha256": "7af631c54b44d36718ed15f6a3fdbf0445b6a09f638bc05ce3093bca01ef0d02"
+  },
+  "listed_skill_count": 1,
+  "scope": "Skills listed by the directory; this is not a complete inventory of every file in the repository.",
+  "security_scan_status": "not_scanned",
+  "skills": [
+    {
+      "id": "digidai/product-manager-skills/product-manager-skills",
+      "name": "product-manager-skills",
+      "description": "PM skill for Claude Code, Codex, Cursor, and Windsurf. Diagnoses SaaS metrics, critiques PRDs, plans roadmaps, runs discovery, coaches PM career transitions, pressure-tests AI product decisions, and designs PLG growth strategies. Seven knowledge domains, 12 templates, 40+ frameworks, and an opinionated interaction style that labels assumptions and names tradeoffs.",
+      "category": "product-management",
+      "license": "CC-BY-NC-SA-4.0",
+      "license_url": "https://github.com/Digidai/product-manager-skills/blob/main/LICENSE",
+      "license_kind": "noncommercial",
+      "source": {
+        "branch": "main",
+        "revision": "ab7a40662c8455ece631834dee9670b3322f465b",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-04-12",
+        "skill_md_url": "https://github.com/Digidai/product-manager-skills/blob/ab7a40662c8455ece631834dee9670b3322f465b/SKILL.md"
+      },
+      "quality": {
+        "score": 68,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 1
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/digidai/product-manager-skills/product-manager-skills/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/Digidai/product-manager-skills",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/Digidai/product-manager-skills",
+        "publisher_setup_url": "https://github.com/Digidai/product-manager-skills/blob/main/SKILL.md"
+      }
+    }
+  ]
+}

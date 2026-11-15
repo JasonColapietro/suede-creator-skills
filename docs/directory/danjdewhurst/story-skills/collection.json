@@ -1,0 +1,2535 @@
+{
+  "schema_version": 1,
+  "repository": "danjdewhurst/story-skills",
+  "listing_url": "https://skills.suedeai.ai/directory/danjdewhurst/story-skills/",
+  "snapshot": {
+    "date": "2026-10-22",
+    "id": "740bfd7230f74b149870dffa9c645b2b",
+    "dataset_sha256": "7af631c54b44d36718ed15f6a3fdbf0445b6a09f638bc05ce3093bca01ef0d02"
+  },
+  "listed_skill_count": 24,
+  "scope": "Skills listed by the directory; this is not a complete inventory of every file in the repository.",
+  "security_scan_status": "not_scanned",
+  "skills": [
+    {
+      "id": "danjdewhurst/story-skills/adaptation",
+      "name": "adaptation",
+      "description": "This skill should be used when the user asks to \"make an audiobook\", \"narration script\", \"narrator\", \"ACX\", \"Findaway\", \"pronunciation guide\", \"how long is the audiobook\", \"adapt to a screenplay\", \"Fountain\", \"screenplay\", \"picture book\", \"spreads\", \"illustration notes\", \"art notes\", \"comic script\", \"comics script\", \"graphic novel\", \"panels\", \"interactive edition\", \"turn the book into Ink or Twine\", \"translate the book\", \"translation\", \"foreign edition\", \"glossary for translators\", or wants to turn a story project into another form or language, or to plan a picture book. NOT for writing a new branching or choose-your-own-adventure story (use interactive-fiction), or writing rhyming picture-book text (use verse-craft).",
+      "category": "writing-content",
+      "license": "MIT",
+      "license_url": "https://github.com/danjdewhurst/story-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "4b8019d7fa08e1e1866be360fadab2a2f7cbcf11",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-14",
+        "skill_md_url": "https://github.com/danjdewhurst/story-skills/blob/4b8019d7fa08e1e1866be360fadab2a2f7cbcf11/skills/adaptation/SKILL.md"
+      },
+      "quality": {
+        "score": 88,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/danjdewhurst/story-skills/adaptation/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/danjdewhurst/story-skills/adaptation/",
+      "source_folder_url": "https://github.com/danjdewhurst/story-skills/tree/main/skills/adaptation",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/danjdewhurst/story-skills/tree/main/skills/adaptation",
+        "publisher_setup_url": "https://github.com/danjdewhurst/story-skills/blob/main/skills/adaptation/SKILL.md"
+      }
+    },
+    {
+      "id": "danjdewhurst/story-skills/chapter-writing",
+      "name": "chapter-writing",
+      "description": "This skill should be used when the user asks to \"write a chapter\", \"next chapter\", \"chapter outline\", \"draft chapter\", \"continue the story\", \"write a scene\", \"outline a chapter\", or wants to write prose for a story project. NOT for planning a scene's structure, subtext, or outcome (use scene-craft), drafting without an outline (use discovery-drafting), or revising existing chapters (use revision-continuity).",
+      "category": "writing-content",
+      "license": "MIT",
+      "license_url": "https://github.com/danjdewhurst/story-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "4b8019d7fa08e1e1866be360fadab2a2f7cbcf11",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-14",
+        "skill_md_url": "https://github.com/danjdewhurst/story-skills/blob/4b8019d7fa08e1e1866be360fadab2a2f7cbcf11/skills/chapter-writing/SKILL.md"
+      },
+      "quality": {
+        "score": 90,
+        "grade": "A",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/danjdewhurst/story-skills/chapter-writing/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/danjdewhurst/story-skills/chapter-writing/",
+      "source_folder_url": "https://github.com/danjdewhurst/story-skills/tree/main/skills/chapter-writing",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/danjdewhurst/story-skills/tree/main/skills/chapter-writing",
+        "publisher_setup_url": "https://github.com/danjdewhurst/story-skills/blob/main/skills/chapter-writing/SKILL.md"
+      }
+    },
+    {
+      "id": "danjdewhurst/story-skills/character-management",
+      "name": "character-management",
+      "description": "This skill should be used when the user asks to \"create a character\", \"update a character\", \"add a character\", \"build a family tree\", \"character relationships\", \"character timeline\", \"character arc\", \"character profile\", \"relationship graph\", \"name a character\", or needs to manage characters in a story project. NOT for recording or checking character voices (use voice-style), rewriting dialogue so the voices differ (use line-editing), or a thematic arc's lie, truth, and arc type (use theme-craft).",
+      "category": "writing-content",
+      "license": "MIT",
+      "license_url": "https://github.com/danjdewhurst/story-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "4b8019d7fa08e1e1866be360fadab2a2f7cbcf11",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-14",
+        "skill_md_url": "https://github.com/danjdewhurst/story-skills/blob/4b8019d7fa08e1e1866be360fadab2a2f7cbcf11/skills/character-management/SKILL.md"
+      },
+      "quality": {
+        "score": 90,
+        "grade": "A",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/danjdewhurst/story-skills/character-management/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/danjdewhurst/story-skills/character-management/",
+      "source_folder_url": "https://github.com/danjdewhurst/story-skills/tree/main/skills/character-management",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/danjdewhurst/story-skills/tree/main/skills/character-management",
+        "publisher_setup_url": "https://github.com/danjdewhurst/story-skills/blob/main/skills/character-management/SKILL.md"
+      }
+    },
+    {
+      "id": "danjdewhurst/story-skills/editorial-review",
+      "name": "editorial-review",
+      "description": "This skill should be used when the user asks for a \"sensitivity reader\", \"authenticity reader\", \"cultural review\", \"is this portrayal okay\", \"real people in my novel\", \"defamation\", \"can I use song lyrics\", \"epigraph permission\", \"permissions\", \"quote permission\", \"fair use\", \"AI disclosure\", \"do I need to disclose AI\", \"send to my editor\", \"editorial round\", \"Word file for my editor\", \"editor review copy\", \"co-author\", \"collaborate on a book\", \"shared world\", \"back up my book\", \"does this echo my source\", \"similarity check\", \"check overlap with my earlier books\", or wants to run human editorial, ethics, permissions, or collaboration workflows around a story project. NOT for contracts or selling rights (use publishing), or reader feedback rounds and review copies for readers, including the GitHub review-copy setup (use feedback-triage).",
+      "category": "writing-content",
+      "license": "MIT",
+      "license_url": "https://github.com/danjdewhurst/story-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "4b8019d7fa08e1e1866be360fadab2a2f7cbcf11",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-14",
+        "skill_md_url": "https://github.com/danjdewhurst/story-skills/blob/4b8019d7fa08e1e1866be360fadab2a2f7cbcf11/skills/editorial-review/SKILL.md"
+      },
+      "quality": {
+        "score": 88,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/danjdewhurst/story-skills/editorial-review/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/danjdewhurst/story-skills/editorial-review/",
+      "source_folder_url": "https://github.com/danjdewhurst/story-skills/tree/main/skills/editorial-review",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/danjdewhurst/story-skills/tree/main/skills/editorial-review",
+        "publisher_setup_url": "https://github.com/danjdewhurst/story-skills/blob/main/skills/editorial-review/SKILL.md"
+      }
+    },
+    {
+      "id": "danjdewhurst/story-skills/feedback-triage",
+      "name": "feedback-triage",
+      "description": "This skill should be used when the user asks to \"process beta reader feedback\", \"alpha reader feedback\", \"feedback round\", \"synthesize reader feedback\", \"reader notes\", \"beta feedback\", \"reader readiness check\", \"review copy\", \"send the draft to readers\", \"share with readers who don't use GitHub\", \"triage the reader panel\", or wants to collect, reconcile, and act on external reader feedback for a story project. NOT for running the simulated reader panel itself (use reader-panel), rounds with a professional editor (use editorial-review), or for checking a manuscript is ready to query or publish (use submission or publishing).",
+      "category": "writing-content",
+      "license": "MIT",
+      "license_url": "https://github.com/danjdewhurst/story-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "4b8019d7fa08e1e1866be360fadab2a2f7cbcf11",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-14",
+        "skill_md_url": "https://github.com/danjdewhurst/story-skills/blob/4b8019d7fa08e1e1866be360fadab2a2f7cbcf11/skills/feedback-triage/SKILL.md"
+      },
+      "quality": {
+        "score": 88,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/danjdewhurst/story-skills/feedback-triage/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/danjdewhurst/story-skills/feedback-triage/",
+      "source_folder_url": "https://github.com/danjdewhurst/story-skills/tree/main/skills/feedback-triage",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/danjdewhurst/story-skills/tree/main/skills/feedback-triage",
+        "publisher_setup_url": "https://github.com/danjdewhurst/story-skills/blob/main/skills/feedback-triage/SKILL.md"
+      }
+    },
+    {
+      "id": "danjdewhurst/story-skills/interactive-fiction",
+      "name": "interactive-fiction",
+      "description": "This skill should be used when the user asks to \"write a branching story\", \"interactive fiction\", \"choose your own adventure\", \"plan the branches\", \"choice graph\", \"add a choice\", \"gamebook\", \"Twine\", \"Ink\", \"draft a branch\", \"where the branches rejoin\", \"add an ending\", \"unreachable chapter\", \"path continuity\", \"state-differs-by-path\", or wants to plan, draft, or revise a story project whose chapters carry `choices`. NOT for turning a finished linear book into an interactive edition in Ink or Twine (use adaptation).",
+      "category": "writing-content",
+      "license": "MIT",
+      "license_url": "https://github.com/danjdewhurst/story-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "4b8019d7fa08e1e1866be360fadab2a2f7cbcf11",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-14",
+        "skill_md_url": "https://github.com/danjdewhurst/story-skills/blob/4b8019d7fa08e1e1866be360fadab2a2f7cbcf11/skills/interactive-fiction/SKILL.md"
+      },
+      "quality": {
+        "score": 90,
+        "grade": "A",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/danjdewhurst/story-skills/interactive-fiction/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/danjdewhurst/story-skills/interactive-fiction/",
+      "source_folder_url": "https://github.com/danjdewhurst/story-skills/tree/main/skills/interactive-fiction",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/danjdewhurst/story-skills/tree/main/skills/interactive-fiction",
+        "publisher_setup_url": "https://github.com/danjdewhurst/story-skills/blob/main/skills/interactive-fiction/SKILL.md"
+      }
+    },
+    {
+      "id": "danjdewhurst/story-skills/line-editing",
+      "name": "line-editing",
+      "description": "This skill should be used when the user asks to \"line edit\", \"edit my prose\", \"polish this chapter\", \"tighten the prose\", \"improve the sentences\", \"copyedit\", \"proofread\", \"proof pass\", \"check grammar and punctuation\", \"dialogue punctuation\", \"make the voices distinct\", \"everyone sounds the same\", \"read it aloud\", \"read-aloud pass\", \"text to speech\", or wants a sentence-level quality pass on drafted chapters that preserves the author's voice. NOT for creating the style sheet, recording character voices, or checking voice consistency (use voice-style).",
+      "category": "writing-content",
+      "license": "MIT",
+      "license_url": "https://github.com/danjdewhurst/story-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "4b8019d7fa08e1e1866be360fadab2a2f7cbcf11",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-14",
+        "skill_md_url": "https://github.com/danjdewhurst/story-skills/blob/4b8019d7fa08e1e1866be360fadab2a2f7cbcf11/skills/line-editing/SKILL.md"
+      },
+      "quality": {
+        "score": 90,
+        "grade": "A",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/danjdewhurst/story-skills/line-editing/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/danjdewhurst/story-skills/line-editing/",
+      "source_folder_url": "https://github.com/danjdewhurst/story-skills/tree/main/skills/line-editing",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/danjdewhurst/story-skills/tree/main/skills/line-editing",
+        "publisher_setup_url": "https://github.com/danjdewhurst/story-skills/blob/main/skills/line-editing/SKILL.md"
+      }
+    },
+    {
+      "id": "danjdewhurst/story-skills/plot-structure",
+      "name": "plot-structure",
+      "description": "This skill should be used when the user asks to \"create a plot arc\", \"story structure\", \"add a plot point\", \"story timeline\", \"track foreshadowing\", \"pacing\", \"sagging middle\", \"act structure\", \"story arc\", \"plot outline\", \"snowflake method\", or wants to plan and manage the narrative structure of a story. It owns book-level pacing; NOT for the craft of scene outcomes or chapter hooks, which this skill only plans in the outline (use scene-craft), or a pacing check as a revision pass (use revision-continuity).",
+      "category": "writing-content",
+      "license": "MIT",
+      "license_url": "https://github.com/danjdewhurst/story-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "4b8019d7fa08e1e1866be360fadab2a2f7cbcf11",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-14",
+        "skill_md_url": "https://github.com/danjdewhurst/story-skills/blob/4b8019d7fa08e1e1866be360fadab2a2f7cbcf11/skills/plot-structure/SKILL.md"
+      },
+      "quality": {
+        "score": 90,
+        "grade": "A",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/danjdewhurst/story-skills/plot-structure/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/danjdewhurst/story-skills/plot-structure/",
+      "source_folder_url": "https://github.com/danjdewhurst/story-skills/tree/main/skills/plot-structure",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/danjdewhurst/story-skills/tree/main/skills/plot-structure",
+        "publisher_setup_url": "https://github.com/danjdewhurst/story-skills/blob/main/skills/plot-structure/SKILL.md"
+      }
+    },
+    {
+      "id": "danjdewhurst/story-skills/premise-workshop",
+      "name": "premise-workshop",
+      "description": "This skill should be used when the user asks to \"brainstorm a story idea\", \"I have an idea for a story\", \"what if\", \"develop a premise\", \"is this idea strong enough\", \"workshop my logline\", \"premise\", \"story concept\", \"what should I write\", \"short story or novel\", \"novella or novel\", \"name my book\", \"title ideas\", or has a spark (an image, a character, a setting, a question) and wants to turn it into a tested premise before starting a story project. NOT for the controlling idea or theme of an existing story (use theme-craft).",
+      "category": "writing-content",
+      "license": "MIT",
+      "license_url": "https://github.com/danjdewhurst/story-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "4b8019d7fa08e1e1866be360fadab2a2f7cbcf11",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-14",
+        "skill_md_url": "https://github.com/danjdewhurst/story-skills/blob/4b8019d7fa08e1e1866be360fadab2a2f7cbcf11/skills/premise-workshop/SKILL.md"
+      },
+      "quality": {
+        "score": 90,
+        "grade": "A",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/danjdewhurst/story-skills/premise-workshop/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/danjdewhurst/story-skills/premise-workshop/",
+      "source_folder_url": "https://github.com/danjdewhurst/story-skills/tree/main/skills/premise-workshop",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/danjdewhurst/story-skills/tree/main/skills/premise-workshop",
+        "publisher_setup_url": "https://github.com/danjdewhurst/story-skills/blob/main/skills/premise-workshop/SKILL.md"
+      }
+    },
+    {
+      "id": "danjdewhurst/story-skills/publishing",
+      "name": "publishing",
+      "description": "This skill should be used when the user asks to \"self-publish\", \"publish my book\", \"ISBN\", \"copyright page\", \"book metadata\", \"BISAC\", \"keywords\", \"KDP\", \"IngramSpark\", \"Draft2Digital\", \"go wide\", \"Kindle Unlimited\", \"print interior\", \"trim size\", \"paperback\", \"ebook\", \"EPUB\", \"cover wrap\", \"spine width\", \"pricing\", \"launch plan\", \"ARC team\", \"advance readers\", \"newsletter\", \"reader magnet\", \"Amazon ads\", \"BookBub\", \"rights\", \"foreign rights\", \"audio rights\", \"film rights\", \"publishing contract\", or wants to take a finished manuscript through production, distribution, launch, and rights management. It owns contracts and rights sales; NOT for permission to quote lyrics, epigraphs, or other material in the book (use editorial-review), or for drafting the blurb or retailer description (use submission).",
+      "category": "writing-content",
+      "license": "MIT",
+      "license_url": "https://github.com/danjdewhurst/story-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "4b8019d7fa08e1e1866be360fadab2a2f7cbcf11",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-14",
+        "skill_md_url": "https://github.com/danjdewhurst/story-skills/blob/4b8019d7fa08e1e1866be360fadab2a2f7cbcf11/skills/publishing/SKILL.md"
+      },
+      "quality": {
+        "score": 88,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/danjdewhurst/story-skills/publishing/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/danjdewhurst/story-skills/publishing/",
+      "source_folder_url": "https://github.com/danjdewhurst/story-skills/tree/main/skills/publishing",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/danjdewhurst/story-skills/tree/main/skills/publishing",
+        "publisher_setup_url": "https://github.com/danjdewhurst/story-skills/blob/main/skills/publishing/SKILL.md"
+      }
+    },
+    {
+      "id": "danjdewhurst/story-skills/reader-panel",
+      "name": "reader-panel",
+      "description": "This skill should be used when the user asks for a \"simulated beta read\", \"reader panel\", \"persona read\", \"first read before my beta readers\", \"how would a genre reader react\", \"would a reader keep going\", \"pre-beta read\", \"mock beta readers\", or wants structured persona reads of a chapter range before human readers see it. NOT for real reader feedback (use feedback-triage), a paid sensitivity or authenticity read (use editorial-review), or the agent's own line edit (use line-editing).",
+      "category": "writing-content",
+      "license": "MIT",
+      "license_url": "https://github.com/danjdewhurst/story-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "4b8019d7fa08e1e1866be360fadab2a2f7cbcf11",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-14",
+        "skill_md_url": "https://github.com/danjdewhurst/story-skills/blob/4b8019d7fa08e1e1866be360fadab2a2f7cbcf11/skills/reader-panel/SKILL.md"
+      },
+      "quality": {
+        "score": 90,
+        "grade": "A",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/danjdewhurst/story-skills/reader-panel/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/danjdewhurst/story-skills/reader-panel/",
+      "source_folder_url": "https://github.com/danjdewhurst/story-skills/tree/main/skills/reader-panel",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/danjdewhurst/story-skills/tree/main/skills/reader-panel",
+        "publisher_setup_url": "https://github.com/danjdewhurst/story-skills/blob/main/skills/reader-panel/SKILL.md"
+      }
+    },
+    {
+      "id": "danjdewhurst/story-skills/story-maintenance",
+      "name": "story-maintenance",
+      "description": "This skill should be used when the user asks to \"validate\", \"reindex\", \"repair registries\", \"check links\", \"run the continuity, pacing, clue, voice, or name checks\", \"count words\", \"summarize a story project\", \"import an existing manuscript\", \"export a manuscript\", \"run a build\", \"generate a diagram\", \"record revision-pass status with `story passes`\", \"run the story CLI\", or wants deterministic maintenance on a Story Skills markdown project. It runs the CLI and reads its output; NOT for judging a finding or revising the story to fix it (use revision-continuity for continuity errors and revision passes, plot-structure for pacing, voice-style for voices and prose, genre-craft for clues and fair play), or for sharing a review copy with readers (use feedback-triage).",
+      "category": "writing-content",
+      "license": "MIT",
+      "license_url": "https://github.com/danjdewhurst/story-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "4b8019d7fa08e1e1866be360fadab2a2f7cbcf11",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-14",
+        "skill_md_url": "https://github.com/danjdewhurst/story-skills/blob/4b8019d7fa08e1e1866be360fadab2a2f7cbcf11/skills/story-maintenance/SKILL.md"
+      },
+      "quality": {
+        "score": 87,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/danjdewhurst/story-skills/story-maintenance/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/danjdewhurst/story-skills/story-maintenance/",
+      "source_folder_url": "https://github.com/danjdewhurst/story-skills/tree/main/skills/story-maintenance",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/danjdewhurst/story-skills/tree/main/skills/story-maintenance",
+        "publisher_setup_url": "https://github.com/danjdewhurst/story-skills/blob/main/skills/story-maintenance/SKILL.md"
+      }
+    },
+    {
+      "id": "danjdewhurst/story-skills/discovery-drafting",
+      "name": "discovery-drafting",
+      "description": "This skill should be used when the user asks about \"pantsing\", \"discovery write\", \"write without an outline\", \"discovery draft\", \"write into the dark\", \"story kernel\", \"reconcile a chapter\", \"dead end\", \"drafting sprint\", \"writing cadence\", or wants to draft a story by discovery with retrospective bible reconciliation. NOT for outline-first drafting, or mysteries and other clue-dependent genres where setup must come before payoff (use chapter-writing), or a reverse outline of an existing linear draft, a subplot cut, or another revision pass on existing chapters (use revision-continuity).",
+      "category": "writing-content",
+      "license": "MIT",
+      "license_url": "https://github.com/danjdewhurst/story-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "4b8019d7fa08e1e1866be360fadab2a2f7cbcf11",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-14",
+        "skill_md_url": "https://github.com/danjdewhurst/story-skills/blob/4b8019d7fa08e1e1866be360fadab2a2f7cbcf11/skills/discovery-drafting/SKILL.md"
+      },
+      "quality": {
+        "score": 90,
+        "grade": "A",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/danjdewhurst/story-skills/discovery-drafting/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/danjdewhurst/story-skills/discovery-drafting/",
+      "source_folder_url": "https://github.com/danjdewhurst/story-skills/tree/main/skills/discovery-drafting",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/danjdewhurst/story-skills/tree/main/skills/discovery-drafting",
+        "publisher_setup_url": "https://github.com/danjdewhurst/story-skills/blob/main/skills/discovery-drafting/SKILL.md"
+      }
+    },
+    {
+      "id": "danjdewhurst/story-skills/genre-craft",
+      "name": "genre-craft",
+      "description": "This skill should be used when the user asks about \"mystery\", \"fair play\", \"clue\", \"red herring\", \"romance beats\", \"HEA\", \"thriller\", \"ticking clock\", \"horror\", \"dread\", \"MG\", \"YA\", \"middle grade\", \"young adult\", \"science fiction\", \"sci-fi\", \"fantasy\", \"quest\", \"chosen one\", \"historical fiction\", \"period voice\", \"anachronism\", \"comedy\", \"humour\", \"humor\", \"romcom\", \"farce\", \"satire\", \"running gag\", \"serial\", \"episodic\", \"web serial\", \"genre conventions\", or wants genre-specific structural craft for a story project. NOT for a clue check as a revision pass (use revision-continuity).",
+      "category": "writing-content",
+      "license": "MIT",
+      "license_url": "https://github.com/danjdewhurst/story-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "4b8019d7fa08e1e1866be360fadab2a2f7cbcf11",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-14",
+        "skill_md_url": "https://github.com/danjdewhurst/story-skills/blob/4b8019d7fa08e1e1866be360fadab2a2f7cbcf11/skills/genre-craft/SKILL.md"
+      },
+      "quality": {
+        "score": 90,
+        "grade": "A",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/danjdewhurst/story-skills/genre-craft/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/danjdewhurst/story-skills/genre-craft/",
+      "source_folder_url": "https://github.com/danjdewhurst/story-skills/tree/main/skills/genre-craft",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/danjdewhurst/story-skills/tree/main/skills/genre-craft",
+        "publisher_setup_url": "https://github.com/danjdewhurst/story-skills/blob/main/skills/genre-craft/SKILL.md"
+      }
+    },
+    {
+      "id": "danjdewhurst/story-skills/research",
+      "name": "research",
+      "description": "This skill should be used when the user asks to \"research\", \"fact-check\", \"check the history\", \"is this accurate\", \"research notes\", \"sources\", \"historical accuracy\", \"technical accuracy\", \"how would this really work\", \"verify a detail\", \"interview an expert\", \"plan a site visit\", \"expert review\", or needs to investigate and record the real-world facts a story relies on and the chapters that use them.",
+      "category": "writing-content",
+      "license": "MIT",
+      "license_url": "https://github.com/danjdewhurst/story-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "4b8019d7fa08e1e1866be360fadab2a2f7cbcf11",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-14",
+        "skill_md_url": "https://github.com/danjdewhurst/story-skills/blob/4b8019d7fa08e1e1866be360fadab2a2f7cbcf11/skills/research/SKILL.md"
+      },
+      "quality": {
+        "score": 86,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/danjdewhurst/story-skills/research/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/danjdewhurst/story-skills/tree/main/skills/research",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/danjdewhurst/story-skills/tree/main/skills/research",
+        "publisher_setup_url": "https://github.com/danjdewhurst/story-skills/blob/main/skills/research/SKILL.md"
+      }
+    },
+    {
+      "id": "danjdewhurst/story-skills/revision-continuity",
+      "name": "revision-continuity",
+      "description": "This skill should be used when the user asks to \"revise a chapter\", \"continuity check\", \"find inconsistencies\", \"audit character state\", \"check timeline consistency\", \"developmental edit\", \"structural revision\", \"reverse outline\", \"cut a subplot\", \"revision passes\", \"what pass next\", \"pacing check\" as a revision pass, \"clue check\", \"cut to a word count\", or \"length pass\", or to prepare existing story material for the next revision pass. NOT for planning book structure (use plot-structure), scene-level craft (use scene-craft), voice consistency (use voice-style), or reconciling a chapter drafted by discovery (use discovery-drafting).",
+      "category": "writing-content",
+      "license": "MIT",
+      "license_url": "https://github.com/danjdewhurst/story-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "4b8019d7fa08e1e1866be360fadab2a2f7cbcf11",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-14",
+        "skill_md_url": "https://github.com/danjdewhurst/story-skills/blob/4b8019d7fa08e1e1866be360fadab2a2f7cbcf11/skills/revision-continuity/SKILL.md"
+      },
+      "quality": {
+        "score": 85,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/danjdewhurst/story-skills/revision-continuity/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/danjdewhurst/story-skills/tree/main/skills/revision-continuity",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/danjdewhurst/story-skills/tree/main/skills/revision-continuity",
+        "publisher_setup_url": "https://github.com/danjdewhurst/story-skills/blob/main/skills/revision-continuity/SKILL.md"
+      }
+    },
+    {
+      "id": "danjdewhurst/story-skills/scene-craft",
+      "name": "scene-craft",
+      "description": "This skill should be used when the user asks to \"plan a scene\", \"scene structure\", \"sequel scene\", \"dialogue subtext\", \"deep POV\", \"psychic distance\", \"try fail\", \"scene cards\", \"exposition\", \"info dump\", \"flashback\", \"time skip\", \"story opening\", \"first page hook\", \"introduce a character\", \"scene outcome\", \"yes-but no-and\", \"chapter hook\", or wants scene-level craft for drafting or revision. NOT for book-level pacing or act structure (use plot-structure), or drafting the prose of a scene or chapter (use chapter-writing).",
+      "category": "writing-content",
+      "license": "MIT",
+      "license_url": "https://github.com/danjdewhurst/story-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "4b8019d7fa08e1e1866be360fadab2a2f7cbcf11",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-14",
+        "skill_md_url": "https://github.com/danjdewhurst/story-skills/blob/4b8019d7fa08e1e1866be360fadab2a2f7cbcf11/skills/scene-craft/SKILL.md"
+      },
+      "quality": {
+        "score": 90,
+        "grade": "A",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/danjdewhurst/story-skills/scene-craft/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/danjdewhurst/story-skills/scene-craft/",
+      "source_folder_url": "https://github.com/danjdewhurst/story-skills/tree/main/skills/scene-craft",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/danjdewhurst/story-skills/tree/main/skills/scene-craft",
+        "publisher_setup_url": "https://github.com/danjdewhurst/story-skills/blob/main/skills/scene-craft/SKILL.md"
+      }
+    },
+    {
+      "id": "danjdewhurst/story-skills/series-continuity",
+      "name": "series-continuity",
+      "description": "This skill should be used when the user asks to \"write a sequel\", \"write a prequel\", \"start book two\", \"continue the series\", \"companion novel\", \"spin-off\", \"link books in a series\", \"carry characters into the next book\", \"series continuity\", \"series bible\", \"pitch my series\", \"series pitch\", \"multi-book pitch\", or needs to plan, pitch, or keep canon consistent across multiple Story Skills projects. NOT for a standalone book (use story-init), continuity within one book (use revision-continuity), or a query, pitch, or synopsis for a single book (use submission).",
+      "category": "writing-content",
+      "license": "MIT",
+      "license_url": "https://github.com/danjdewhurst/story-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "4b8019d7fa08e1e1866be360fadab2a2f7cbcf11",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-14",
+        "skill_md_url": "https://github.com/danjdewhurst/story-skills/blob/4b8019d7fa08e1e1866be360fadab2a2f7cbcf11/skills/series-continuity/SKILL.md"
+      },
+      "quality": {
+        "score": 90,
+        "grade": "A",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/danjdewhurst/story-skills/series-continuity/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/danjdewhurst/story-skills/series-continuity/",
+      "source_folder_url": "https://github.com/danjdewhurst/story-skills/tree/main/skills/series-continuity",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/danjdewhurst/story-skills/tree/main/skills/series-continuity",
+        "publisher_setup_url": "https://github.com/danjdewhurst/story-skills/blob/main/skills/series-continuity/SKILL.md"
+      }
+    },
+    {
+      "id": "danjdewhurst/story-skills/story-init",
+      "name": "story-init",
+      "description": "This skill should be used when the user asks to \"start a new story\", \"initialize a story project\", \"create a story\", \"new book\", \"set up a story\", or wants to begin a new fiction writing project from scratch. NOT for a sequel or prequel (use series-continuity), or for finding the idea before a project exists (use premise-workshop).",
+      "category": "writing-content",
+      "license": "MIT",
+      "license_url": "https://github.com/danjdewhurst/story-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "4b8019d7fa08e1e1866be360fadab2a2f7cbcf11",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-14",
+        "skill_md_url": "https://github.com/danjdewhurst/story-skills/blob/4b8019d7fa08e1e1866be360fadab2a2f7cbcf11/skills/story-init/SKILL.md"
+      },
+      "quality": {
+        "score": 90,
+        "grade": "A",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/danjdewhurst/story-skills/story-init/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/danjdewhurst/story-skills/story-init/",
+      "source_folder_url": "https://github.com/danjdewhurst/story-skills/tree/main/skills/story-init",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/danjdewhurst/story-skills/tree/main/skills/story-init",
+        "publisher_setup_url": "https://github.com/danjdewhurst/story-skills/blob/main/skills/story-init/SKILL.md"
+      }
+    },
+    {
+      "id": "danjdewhurst/story-skills/submission",
+      "name": "submission",
+      "description": "This skill should be used when the user asks to \"write a query letter\", \"query\", \"querying\", \"pitch\", \"blurb\", \"back cover copy\", \"jacket copy\", \"comp titles\", \"comparable titles\", \"synopsis for agents\", \"submit to agents\", \"submission tracker\", \"self-publishing description\", \"retailer description\", \"ready to query\", \"submission readiness check\", \"submit a short story\", \"magazine submission\", \"short-fiction markets\", \"simultaneous submission\", \"reprint rights\", \"order a short story collection\", or wants to prepare and track a finished manuscript's submission to agents, publishers, magazines, anthologies, or retailers. NOT for pitching a series of several books (use series-continuity), or self-publishing production, metadata, or book rights deals (use publishing). The blurb, retailer description, and the rights a short-fiction market buys, such as reprint rights, stay here.",
+      "category": "writing-content",
+      "license": "MIT",
+      "license_url": "https://github.com/danjdewhurst/story-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "4b8019d7fa08e1e1866be360fadab2a2f7cbcf11",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-14",
+        "skill_md_url": "https://github.com/danjdewhurst/story-skills/blob/4b8019d7fa08e1e1866be360fadab2a2f7cbcf11/skills/submission/SKILL.md"
+      },
+      "quality": {
+        "score": 88,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/danjdewhurst/story-skills/submission/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/danjdewhurst/story-skills/submission/",
+      "source_folder_url": "https://github.com/danjdewhurst/story-skills/tree/main/skills/submission",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/danjdewhurst/story-skills/tree/main/skills/submission",
+        "publisher_setup_url": "https://github.com/danjdewhurst/story-skills/blob/main/skills/submission/SKILL.md"
+      }
+    },
+    {
+      "id": "danjdewhurst/story-skills/theme-craft",
+      "name": "theme-craft",
+      "description": "This skill should be used when the user asks about \"theme\", \"controlling idea\", \"thematic argument\", \"moral argument\", \"thematic arc\", \"flat arc\", \"negative arc\", \"the lie\", \"antagonist design\", \"motif\", \"symbolism\", \"theme audit\", or wants to plan, track, or revise the thematic layer of a story, including the lie, truth, ghost-wound, and arc-type fields of a character file. NOT for finding or testing a story premise (use premise-workshop), or a character's profile, relationships, or \"character arc\" record (use character-management).",
+      "category": "writing-content",
+      "license": "MIT",
+      "license_url": "https://github.com/danjdewhurst/story-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "4b8019d7fa08e1e1866be360fadab2a2f7cbcf11",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-14",
+        "skill_md_url": "https://github.com/danjdewhurst/story-skills/blob/4b8019d7fa08e1e1866be360fadab2a2f7cbcf11/skills/theme-craft/SKILL.md"
+      },
+      "quality": {
+        "score": 90,
+        "grade": "A",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/danjdewhurst/story-skills/theme-craft/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/danjdewhurst/story-skills/theme-craft/",
+      "source_folder_url": "https://github.com/danjdewhurst/story-skills/tree/main/skills/theme-craft",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/danjdewhurst/story-skills/tree/main/skills/theme-craft",
+        "publisher_setup_url": "https://github.com/danjdewhurst/story-skills/blob/main/skills/theme-craft/SKILL.md"
+      }
+    },
+    {
+      "id": "danjdewhurst/story-skills/verse-craft",
+      "name": "verse-craft",
+      "description": "This skill should be used when the user asks to \"write a poem\", \"write a limerick\", \"write a sonnet\", \"haiku\", \"villanelle\", \"ballad\", \"song lyrics\", \"a song for my character\", \"a rhyme\", \"rhyming couplets\", \"does this scan\", \"check the meter\", \"fix the rhythm of this poem\", \"rhyme scheme\", \"iambic pentameter\", \"a prophecy in verse\", \"a nursery rhyme\", \"rhyming picture book\", or wants verse written, scanned, or revised, whether inside a story project or as a standalone poem. NOT for accidental rhymes in prose (use line-editing) or permissions for quoting someone else's poem or song lyrics (use editorial-review).",
+      "category": "writing-content",
+      "license": "MIT",
+      "license_url": "https://github.com/danjdewhurst/story-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "4b8019d7fa08e1e1866be360fadab2a2f7cbcf11",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-14",
+        "skill_md_url": "https://github.com/danjdewhurst/story-skills/blob/4b8019d7fa08e1e1866be360fadab2a2f7cbcf11/skills/verse-craft/SKILL.md"
+      },
+      "quality": {
+        "score": 88,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/danjdewhurst/story-skills/verse-craft/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/danjdewhurst/story-skills/verse-craft/",
+      "source_folder_url": "https://github.com/danjdewhurst/story-skills/tree/main/skills/verse-craft",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/danjdewhurst/story-skills/tree/main/skills/verse-craft",
+        "publisher_setup_url": "https://github.com/danjdewhurst/story-skills/blob/main/skills/verse-craft/SKILL.md"
+      }
+    },
+    {
+      "id": "danjdewhurst/story-skills/voice-style",
+      "name": "voice-style",
+      "description": "This skill should be used when the user asks to \"create a style sheet\", \"style guide\", \"house style\", \"keep the voice consistent\", \"voice drift\", \"British or American spelling\", \"character voices\", \"lint the prose\", \"prose check\", \"filter words\", \"said-bookisms\", \"overused words\", \"repeated phrases\", \"similar character names\", \"voice fingerprints\", or wants to record and enforce the voice and surface conventions of a story project. NOT for rewriting dialogue to make the voices distinct when everyone sounds the same (use line-editing), or a character's profile or arc (use character-management).",
+      "category": "writing-content",
+      "license": "MIT",
+      "license_url": "https://github.com/danjdewhurst/story-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "4b8019d7fa08e1e1866be360fadab2a2f7cbcf11",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-14",
+        "skill_md_url": "https://github.com/danjdewhurst/story-skills/blob/4b8019d7fa08e1e1866be360fadab2a2f7cbcf11/skills/voice-style/SKILL.md"
+      },
+      "quality": {
+        "score": 90,
+        "grade": "A",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/danjdewhurst/story-skills/voice-style/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/danjdewhurst/story-skills/voice-style/",
+      "source_folder_url": "https://github.com/danjdewhurst/story-skills/tree/main/skills/voice-style",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/danjdewhurst/story-skills/tree/main/skills/voice-style",
+        "publisher_setup_url": "https://github.com/danjdewhurst/story-skills/blob/main/skills/voice-style/SKILL.md"
+      }
+    },
+    {
+      "id": "danjdewhurst/story-skills/worldbuilding",
+      "name": "worldbuilding",
+      "description": "This skill should be used when the user asks to \"create a location\", \"add a location\", \"magic system\", \"political system\", \"build the world\", \"add culture\", \"world history\", \"technology system\", \"religion\", \"economy\", \"map\", \"travel times\", \"routes\", \"calendar\", \"moons\", \"seasons\", \"naming language\", \"conlang names\", \"trade routes\", \"supply lines\", \"magic cost\", \"add a glossary term\", \"glossary\", \"invented word\", or wants to develop any aspect of a story's world and setting. NOT for a glossary for translators (use adaptation).",
+      "category": "writing-content",
+      "license": "MIT",
+      "license_url": "https://github.com/danjdewhurst/story-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "4b8019d7fa08e1e1866be360fadab2a2f7cbcf11",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-14",
+        "skill_md_url": "https://github.com/danjdewhurst/story-skills/blob/4b8019d7fa08e1e1866be360fadab2a2f7cbcf11/skills/worldbuilding/SKILL.md"
+      },
+      "quality": {
+        "score": 90,
+        "grade": "A",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/danjdewhurst/story-skills/worldbuilding/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/danjdewhurst/story-skills/worldbuilding/",
+      "source_folder_url": "https://github.com/danjdewhurst/story-skills/tree/main/skills/worldbuilding",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/danjdewhurst/story-skills/tree/main/skills/worldbuilding",
+        "publisher_setup_url": "https://github.com/danjdewhurst/story-skills/blob/main/skills/worldbuilding/SKILL.md"
+      }
+    }
+  ]
+}

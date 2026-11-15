@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "repository": "takechanman1228/claude-persona",
+  "listing_url": "https://skills.suedeai.ai/directory/takechanman1228/claude-persona/",
+  "snapshot": {
+    "date": "2026-10-22",
+    "id": "740bfd7230f74b149870dffa9c645b2b",
+    "dataset_sha256": "7af631c54b44d36718ed15f6a3fdbf0445b6a09f638bc05ce3093bca01ef0d02"
+  },
+  "listed_skill_count": 1,
+  "scope": "Skills listed by the directory; this is not a complete inventory of every file in the repository.",
+  "security_scan_status": "not_scanned",
+  "skills": [
+    {
+      "id": "takechanman1228/claude-persona/persona",
+      "name": "persona",
+      "description": "Build a persona panel, explore customer motivations through open-ended questions, and pressure-test product concepts before spending on fieldwork. Generates diverse AI persona panels, runs agent-separated interviews (qualitative ask or structured concept test), analyzes results with theme synthesis, cross-tabs, and charts, and delivers executive research reports. Use when the user wants to ask a panel about motivations or barriers, which concept to launch, who to target first, which message resonates, whether a value proposition works, or needs a reusable persona panel.",
+      "category": "product-management",
+      "license": "MIT",
+      "license_url": "https://github.com/takechanman1228/claude-persona/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "b4be6e641421968943003b84da16327c5c6a14c4",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-07-03",
+        "skill_md_url": "https://github.com/takechanman1228/claude-persona/blob/b4be6e641421968943003b84da16327c5c6a14c4/skills/persona/SKILL.md"
+      },
+      "quality": {
+        "score": 65,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": false,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/takechanman1228/claude-persona/persona/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/takechanman1228/claude-persona/tree/main/skills/persona",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/takechanman1228/claude-persona/tree/main/skills/persona",
+        "publisher_setup_url": "https://github.com/takechanman1228/claude-persona/blob/main/skills/persona/SKILL.md"
+      }
+    }
+  ]
+}

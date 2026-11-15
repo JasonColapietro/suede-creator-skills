@@ -1,0 +1,4005 @@
+{
+  "schema_version": 1,
+  "repository": "openai/skills",
+  "listing_url": "https://skills.suedeai.ai/directory/openai/skills/",
+  "snapshot": {
+    "date": "2026-10-22",
+    "id": "740bfd7230f74b149870dffa9c645b2b",
+    "dataset_sha256": "7af631c54b44d36718ed15f6a3fdbf0445b6a09f638bc05ce3093bca01ef0d02"
+  },
+  "listed_skill_count": 38,
+  "scope": "Skills listed by the directory; this is not a complete inventory of every file in the repository.",
+  "security_scan_status": "not_scanned",
+  "skills": [
+    {
+      "id": "openai/skills/aspnet-core",
+      "name": "aspnet-core",
+      "description": "Build, review, refactor, or architect ASP.NET Core web applications using current official guidance for .NET web development. Use when working on Blazor Web Apps, Razor Pages, MVC, Minimal APIs, controller-based Web APIs, SignalR, gRPC, middleware, dependency injection, configuration, authentication, authorization, testing, performance, deployment, or ASP.NET Core upgrades.",
+      "category": "testing-qa",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/openai/skills/blob/main/skills/.curated/aspnet-core/LICENSE.txt",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "49f948faa9258a0c61caceaf225e179651397431",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-06-23",
+        "skill_md_url": "https://github.com/openai/skills/blob/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/aspnet-core/SKILL.md"
+      },
+      "quality": {
+        "score": 77,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/openai/skills/aspnet-core/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/openai/skills/tree/main/skills/.curated/aspnet-core",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/openai/skills/tree/main/skills/.curated/aspnet-core",
+        "publisher_setup_url": "https://github.com/openai/skills/blob/main/skills/.curated/aspnet-core/SKILL.md"
+      }
+    },
+    {
+      "id": "openai/skills/chatgpt-apps",
+      "name": "chatgpt-apps",
+      "description": "Build, scaffold, refactor, and troubleshoot ChatGPT Apps SDK applications that combine an MCP server and widget UI. Use when Codex needs to design tools, register UI resources, wire the MCP Apps bridge or ChatGPT compatibility APIs, apply Apps SDK metadata or CSP or domain settings, or produce a docs-aligned project scaffold. Prefer a docs-first workflow by invoking the openai-docs skill or OpenAI developer docs MCP tools before generating code.",
+      "category": "frontend-design",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/openai/skills/blob/main/skills/.curated/chatgpt-apps/LICENSE.txt",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "49f948faa9258a0c61caceaf225e179651397431",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-06-23",
+        "skill_md_url": "https://github.com/openai/skills/blob/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/chatgpt-apps/SKILL.md"
+      },
+      "quality": {
+        "score": 79,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/openai/skills/chatgpt-apps/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/openai/skills/tree/main/skills/.curated/chatgpt-apps",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/openai/skills/tree/main/skills/.curated/chatgpt-apps",
+        "publisher_setup_url": "https://github.com/openai/skills/blob/main/skills/.curated/chatgpt-apps/SKILL.md"
+      }
+    },
+    {
+      "id": "openai/skills/cli-creator",
+      "name": "cli-creator",
+      "description": "Build a composable CLI for Codex from API docs, an OpenAPI spec, existing curl examples, an SDK, a web app, an admin tool, or a local script. Use when the user wants Codex to create a command-line tool that can run from any repo, expose composable read/write commands, return stable JSON, manage auth, and pair with a companion skill.",
+      "category": "developer-tools",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/openai/skills/blob/main/skills/.curated/cli-creator/LICENSE.txt",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "49f948faa9258a0c61caceaf225e179651397431",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-06-23",
+        "skill_md_url": "https://github.com/openai/skills/blob/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/cli-creator/SKILL.md"
+      },
+      "quality": {
+        "score": 77,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/openai/skills/cli-creator/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/openai/skills/tree/main/skills/.curated/cli-creator",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/openai/skills/tree/main/skills/.curated/cli-creator",
+        "publisher_setup_url": "https://github.com/openai/skills/blob/main/skills/.curated/cli-creator/SKILL.md"
+      }
+    },
+    {
+      "id": "openai/skills/cloudflare-deploy",
+      "name": "cloudflare-deploy",
+      "description": "Deploy applications and infrastructure to Cloudflare using Workers, Pages, and related platform services. Use when the user asks to deploy, host, publish, or set up a project on Cloudflare.",
+      "category": "devops-cloud",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/openai/skills/blob/main/skills/.curated/cloudflare-deploy/LICENSE.txt",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "49f948faa9258a0c61caceaf225e179651397431",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-06-23",
+        "skill_md_url": "https://github.com/openai/skills/blob/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/cloudflare-deploy/SKILL.md"
+      },
+      "quality": {
+        "score": 77,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/openai/skills/cloudflare-deploy/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/openai/skills/tree/main/skills/.curated/cloudflare-deploy",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/openai/skills/tree/main/skills/.curated/cloudflare-deploy",
+        "publisher_setup_url": "https://github.com/openai/skills/blob/main/skills/.curated/cloudflare-deploy/SKILL.md"
+      }
+    },
+    {
+      "id": "openai/skills/define-goal",
+      "name": "define-goal",
+      "description": "Help the user define a concrete, measurable goal before starting work, especially when they ask to use the goal tool, create a goal, set an objective, clarify success criteria, or turn a fuzzy intention into a quantitative outcome. Use this skill for goal creation and goal refinement only; it does not manage durable snapshots, decision logs, or long-running execution artifacts.",
+      "category": "security",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/openai/skills/blob/main/skills/.curated/define-goal/LICENSE.txt",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "49f948faa9258a0c61caceaf225e179651397431",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-06-23",
+        "skill_md_url": "https://github.com/openai/skills/blob/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/define-goal/SKILL.md"
+      },
+      "quality": {
+        "score": 74,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/openai/skills/define-goal/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/openai/skills/tree/main/skills/.curated/define-goal",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/openai/skills/tree/main/skills/.curated/define-goal",
+        "publisher_setup_url": "https://github.com/openai/skills/blob/main/skills/.curated/define-goal/SKILL.md"
+      }
+    },
+    {
+      "id": "openai/skills/figma",
+      "name": "figma",
+      "description": "Use the Figma MCP server to fetch design context, screenshots, variables, and assets from Figma, and to translate Figma nodes into production code. Trigger when a task involves Figma URLs, node IDs, design-to-code implementation, or Figma MCP setup and troubleshooting.",
+      "category": "frontend-design",
+      "license": "See LICENSE file",
+      "license_url": "https://github.com/openai/skills/blob/main/skills/.curated/figma/LICENSE.txt",
+      "license_kind": "unknown",
+      "source": {
+        "branch": "main",
+        "revision": "49f948faa9258a0c61caceaf225e179651397431",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-06-23",
+        "skill_md_url": "https://github.com/openai/skills/blob/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/figma/SKILL.md"
+      },
+      "quality": {
+        "score": 74,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/openai/skills/figma/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/openai/skills/tree/main/skills/.curated/figma",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/openai/skills/tree/main/skills/.curated/figma",
+        "publisher_setup_url": "https://github.com/openai/skills/blob/main/skills/.curated/figma/SKILL.md"
+      }
+    },
+    {
+      "id": "openai/skills/figma-code-connect-components",
+      "name": "figma-code-connect-components",
+      "description": "Connects Figma design components to code components using Code Connect mapping tools. Use when user says \"code connect\", \"connect this component to code\", \"map this component\", \"link component to code\", \"create code connect mapping\", or wants to establish mappings between Figma designs and code implementations. For canvas writes via `use_figma`, use `figma-use`.",
+      "category": "frontend-design",
+      "license": "See LICENSE file",
+      "license_url": "https://github.com/openai/skills/blob/main/skills/.curated/figma-code-connect-components/LICENSE.TXT",
+      "license_kind": "unknown",
+      "source": {
+        "branch": "main",
+        "revision": "49f948faa9258a0c61caceaf225e179651397431",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-06-23",
+        "skill_md_url": "https://github.com/openai/skills/blob/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/figma-code-connect-components/SKILL.md"
+      },
+      "quality": {
+        "score": 82,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/openai/skills/figma-code-connect-components/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/openai/skills/tree/main/skills/.curated/figma-code-connect-components",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/openai/skills/tree/main/skills/.curated/figma-code-connect-components",
+        "publisher_setup_url": "https://github.com/openai/skills/blob/main/skills/.curated/figma-code-connect-components/SKILL.md"
+      }
+    },
+    {
+      "id": "openai/skills/figma-create-design-system-rules",
+      "name": "figma-create-design-system-rules",
+      "description": "Generates custom design system rules for the user's codebase. Use when user says \"create design system rules\", \"generate rules for my project\", \"set up design rules\", \"customize design system guidelines\", or wants to establish project-specific conventions for Figma-to-code workflows. Requires Figma MCP server connection.",
+      "category": "frontend-design",
+      "license": "See LICENSE file",
+      "license_url": "https://github.com/openai/skills/blob/main/skills/.curated/figma-create-design-system-rules/LICENSE.TXT",
+      "license_kind": "unknown",
+      "source": {
+        "branch": "main",
+        "revision": "49f948faa9258a0c61caceaf225e179651397431",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-06-23",
+        "skill_md_url": "https://github.com/openai/skills/blob/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/figma-create-design-system-rules/SKILL.md"
+      },
+      "quality": {
+        "score": 74,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": false,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/openai/skills/figma-create-design-system-rules/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/openai/skills/tree/main/skills/.curated/figma-create-design-system-rules",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/openai/skills/tree/main/skills/.curated/figma-create-design-system-rules",
+        "publisher_setup_url": "https://github.com/openai/skills/blob/main/skills/.curated/figma-create-design-system-rules/SKILL.md"
+      }
+    },
+    {
+      "id": "openai/skills/figma-create-new-file",
+      "name": "figma-create-new-file",
+      "description": "Create a new blank Figma file. Use when the user wants to create a new Figma design or FigJam file, or when you need a new file before calling use_figma. Handles plan resolution via whoami if needed. Usage — /figma-create-new-file [editorType] [fileName] (e.g. /figma-create-new-file figjam My Whiteboard)",
+      "category": "frontend-design",
+      "license": "See LICENSE file",
+      "license_url": "https://github.com/openai/skills/blob/main/skills/.curated/figma-create-new-file/LICENSE.TXT",
+      "license_kind": "unknown",
+      "source": {
+        "branch": "main",
+        "revision": "49f948faa9258a0c61caceaf225e179651397431",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-06-23",
+        "skill_md_url": "https://github.com/openai/skills/blob/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/figma-create-new-file/SKILL.md"
+      },
+      "quality": {
+        "score": 71,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/openai/skills/figma-create-new-file/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/openai/skills/tree/main/skills/.curated/figma-create-new-file",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/openai/skills/tree/main/skills/.curated/figma-create-new-file",
+        "publisher_setup_url": "https://github.com/openai/skills/blob/main/skills/.curated/figma-create-new-file/SKILL.md"
+      }
+    },
+    {
+      "id": "openai/skills/figma-generate-design",
+      "name": "figma-generate-design",
+      "description": "Use this skill alongside figma-use when the task involves translating an application page, view, or multi-section layout into Figma. Triggers: 'write to Figma', 'create in Figma from code', 'push page to Figma', 'take this app/page and build it in Figma', 'create a screen', 'build a landing page in Figma', 'update the Figma screen to match code'. This is the preferred workflow skill whenever the user wants to build or update a full page, screen, or view in Figma from code or a description. Discovers design system components, variables, and styles via search_design_system, imports them, and assembles screens incrementally section-by-section using design system tokens instead of hardcoded values.",
+      "category": "frontend-design",
+      "license": "See LICENSE file",
+      "license_url": "https://github.com/openai/skills/blob/main/skills/.curated/figma-generate-design/LICENSE.TXT",
+      "license_kind": "unknown",
+      "source": {
+        "branch": "main",
+        "revision": "49f948faa9258a0c61caceaf225e179651397431",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-06-23",
+        "skill_md_url": "https://github.com/openai/skills/blob/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/figma-generate-design/SKILL.md"
+      },
+      "quality": {
+        "score": 75,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/openai/skills/figma-generate-design/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/openai/skills/tree/main/skills/.curated/figma-generate-design",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/openai/skills/tree/main/skills/.curated/figma-generate-design",
+        "publisher_setup_url": "https://github.com/openai/skills/blob/main/skills/.curated/figma-generate-design/SKILL.md"
+      }
+    },
+    {
+      "id": "openai/skills/figma-generate-library",
+      "name": "figma-generate-library",
+      "description": "Build or update a professional-grade design system in Figma from a codebase. Use when the user wants to create variables/tokens, build component libraries, set up theming (light/dark modes), document foundations, or reconcile gaps between code and Figma. This skill teaches WHAT to build and in WHAT ORDER — it complements the `figma-use` skill which teaches HOW to call the Plugin API. Both skills should be loaded together.",
+      "category": "frontend-design",
+      "license": "See LICENSE file",
+      "license_url": "https://github.com/openai/skills/blob/main/skills/.curated/figma-generate-library/LICENSE.TXT",
+      "license_kind": "unknown",
+      "source": {
+        "branch": "main",
+        "revision": "49f948faa9258a0c61caceaf225e179651397431",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-06-23",
+        "skill_md_url": "https://github.com/openai/skills/blob/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/figma-generate-library/SKILL.md"
+      },
+      "quality": {
+        "score": 79,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/openai/skills/figma-generate-library/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/openai/skills/tree/main/skills/.curated/figma-generate-library",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/openai/skills/tree/main/skills/.curated/figma-generate-library",
+        "publisher_setup_url": "https://github.com/openai/skills/blob/main/skills/.curated/figma-generate-library/SKILL.md"
+      }
+    },
+    {
+      "id": "openai/skills/figma-implement-design",
+      "name": "figma-implement-design",
+      "description": "Translates Figma designs into production-ready application code with 1:1 visual fidelity. Use when implementing UI code from Figma files, when user mentions \"implement design\", \"generate code\", \"implement component\", provides Figma URLs, or asks to build components matching Figma specs. For Figma canvas writes via `use_figma`, use `figma-use`.",
+      "category": "frontend-design",
+      "license": "See LICENSE file",
+      "license_url": "https://github.com/openai/skills/blob/main/skills/.curated/figma-implement-design/LICENSE.txt",
+      "license_kind": "unknown",
+      "source": {
+        "branch": "main",
+        "revision": "49f948faa9258a0c61caceaf225e179651397431",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-06-23",
+        "skill_md_url": "https://github.com/openai/skills/blob/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/figma-implement-design/SKILL.md"
+      },
+      "quality": {
+        "score": 77,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/openai/skills/figma-implement-design/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/openai/skills/tree/main/skills/.curated/figma-implement-design",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/openai/skills/tree/main/skills/.curated/figma-implement-design",
+        "publisher_setup_url": "https://github.com/openai/skills/blob/main/skills/.curated/figma-implement-design/SKILL.md"
+      }
+    },
+    {
+      "id": "openai/skills/figma-use",
+      "name": "figma-use",
+      "description": "**MANDATORY prerequisite** — you MUST invoke this skill BEFORE every `use_figma` tool call. NEVER call `use_figma` directly without loading this skill first. Skipping it causes common, hard-to-debug failures. Trigger whenever the user wants to perform a write action or a unique read action that requires JavaScript execution in the Figma file context — e.g. create/edit/delete nodes, set up variables or tokens, build components and variants, modify auto-layout or fills, bind variables to properties, or inspect file structure programmatically.",
+      "category": "frontend-design",
+      "license": "See LICENSE file",
+      "license_url": "https://github.com/openai/skills/blob/main/skills/.curated/figma-use/LICENSE.TXT",
+      "license_kind": "unknown",
+      "source": {
+        "branch": "main",
+        "revision": "49f948faa9258a0c61caceaf225e179651397431",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-06-23",
+        "skill_md_url": "https://github.com/openai/skills/blob/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/figma-use/SKILL.md"
+      },
+      "quality": {
+        "score": 77,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/openai/skills/figma-use/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/openai/skills/tree/main/skills/.curated/figma-use",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/openai/skills/tree/main/skills/.curated/figma-use",
+        "publisher_setup_url": "https://github.com/openai/skills/blob/main/skills/.curated/figma-use/SKILL.md"
+      }
+    },
+    {
+      "id": "openai/skills/gh-address-comments",
+      "name": "gh-address-comments",
+      "description": "Help address review/issue comments on the open GitHub PR for the current branch using gh CLI; verify gh auth first and prompt the user to authenticate if not logged in.",
+      "category": "ai-agents-llm",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/openai/skills/blob/main/skills/.curated/gh-address-comments/LICENSE.txt",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "49f948faa9258a0c61caceaf225e179651397431",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-06-23",
+        "skill_md_url": "https://github.com/openai/skills/blob/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/gh-address-comments/SKILL.md"
+      },
+      "quality": {
+        "score": 62,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/openai/skills/gh-address-comments/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/openai/skills/tree/main/skills/.curated/gh-address-comments",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/openai/skills/tree/main/skills/.curated/gh-address-comments",
+        "publisher_setup_url": "https://github.com/openai/skills/blob/main/skills/.curated/gh-address-comments/SKILL.md"
+      }
+    },
+    {
+      "id": "openai/skills/gh-fix-ci",
+      "name": "gh-fix-ci",
+      "description": "Use when a user asks to debug or fix failing GitHub PR checks that run in GitHub Actions; use `gh` to inspect checks and logs, summarize failure context, draft a fix plan, and implement only after explicit approval. Treat external providers (for example Buildkite) as out of scope and report only the details URL.",
+      "category": "testing-qa",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/openai/skills/blob/main/skills/.curated/gh-fix-ci/LICENSE.txt",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "49f948faa9258a0c61caceaf225e179651397431",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-06-23",
+        "skill_md_url": "https://github.com/openai/skills/blob/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/gh-fix-ci/SKILL.md"
+      },
+      "quality": {
+        "score": 73,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/openai/skills/gh-fix-ci/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/openai/skills/tree/main/skills/.curated/gh-fix-ci",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/openai/skills/tree/main/skills/.curated/gh-fix-ci",
+        "publisher_setup_url": "https://github.com/openai/skills/blob/main/skills/.curated/gh-fix-ci/SKILL.md"
+      }
+    },
+    {
+      "id": "openai/skills/hatch-pet",
+      "name": "hatch-pet",
+      "description": "Create, repair, validate, visually QA, and package Codex-compatible animated pets and pet spritesheets from character art, generated images, company or prospect brand cues, or visual references. Use when a user wants a lightweight-worker Codex pet workflow, a non-pixel custom pet style, a prospect or company mascot pet, or a full 8x9 animated pet atlas with transparent unused cells, QA contact sheets, and pet.json packaging. This skill composes the installed $imagegen system skill for visual generation and uses bundled scripts for deterministic spritesheet assembly.",
+      "category": "testing-qa",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/openai/skills/blob/main/skills/.curated/hatch-pet/LICENSE.txt",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "49f948faa9258a0c61caceaf225e179651397431",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-06-23",
+        "skill_md_url": "https://github.com/openai/skills/blob/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/hatch-pet/SKILL.md"
+      },
+      "quality": {
+        "score": 65,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": false,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/openai/skills/hatch-pet/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/openai/skills/tree/main/skills/.curated/hatch-pet",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/openai/skills/tree/main/skills/.curated/hatch-pet",
+        "publisher_setup_url": "https://github.com/openai/skills/blob/main/skills/.curated/hatch-pet/SKILL.md"
+      }
+    },
+    {
+      "id": "openai/skills/jupyter-notebook",
+      "name": "jupyter-notebook",
+      "description": "Use when the user asks to create, scaffold, or edit Jupyter notebooks (`.ipynb`) for experiments, explorations, or tutorials; prefer the bundled templates and run the helper script `new_notebook.py` to generate a clean starting notebook.",
+      "category": "developer-tools",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/openai/skills/blob/main/skills/.curated/jupyter-notebook/LICENSE.txt",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "49f948faa9258a0c61caceaf225e179651397431",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-06-23",
+        "skill_md_url": "https://github.com/openai/skills/blob/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/jupyter-notebook/SKILL.md"
+      },
+      "quality": {
+        "score": 76,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/openai/skills/jupyter-notebook/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/openai/skills/tree/main/skills/.curated/jupyter-notebook",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/openai/skills/tree/main/skills/.curated/jupyter-notebook",
+        "publisher_setup_url": "https://github.com/openai/skills/blob/main/skills/.curated/jupyter-notebook/SKILL.md"
+      }
+    },
+    {
+      "id": "openai/skills/linear",
+      "name": "linear",
+      "description": "Manage issues, projects & team workflows in Linear. Use when the user wants to read, create or updates tickets in Linear.",
+      "category": "developer-tools",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/openai/skills/blob/main/skills/.curated/linear/LICENSE.txt",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "49f948faa9258a0c61caceaf225e179651397431",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-06-23",
+        "skill_md_url": "https://github.com/openai/skills/blob/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/linear/SKILL.md"
+      },
+      "quality": {
+        "score": 72,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/openai/skills/linear/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/openai/skills/tree/main/skills/.curated/linear",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/openai/skills/tree/main/skills/.curated/linear",
+        "publisher_setup_url": "https://github.com/openai/skills/blob/main/skills/.curated/linear/SKILL.md"
+      }
+    },
+    {
+      "id": "openai/skills/migrate-to-codex",
+      "name": "migrate-to-codex",
+      "description": "Migrate supported instruction files, skills, agents, and MCP config into Codex project and global files.",
+      "category": "ai-agents-llm",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/openai/skills/blob/main/skills/.curated/migrate-to-codex/LICENSE.txt",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "49f948faa9258a0c61caceaf225e179651397431",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-06-23",
+        "skill_md_url": "https://github.com/openai/skills/blob/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/migrate-to-codex/SKILL.md"
+      },
+      "quality": {
+        "score": 69,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/openai/skills/migrate-to-codex/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/openai/skills/tree/main/skills/.curated/migrate-to-codex",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/openai/skills/tree/main/skills/.curated/migrate-to-codex",
+        "publisher_setup_url": "https://github.com/openai/skills/blob/main/skills/.curated/migrate-to-codex/SKILL.md"
+      }
+    },
+    {
+      "id": "openai/skills/netlify-deploy",
+      "name": "netlify-deploy",
+      "description": "Deploy web projects to Netlify using the Netlify CLI (`npx netlify`). Use when the user asks to deploy, host, publish, or link a site/repo on Netlify, including preview and production deploys.",
+      "category": "devops-cloud",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/openai/skills/blob/main/skills/.curated/netlify-deploy/LICENSE.txt",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "49f948faa9258a0c61caceaf225e179651397431",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-06-23",
+        "skill_md_url": "https://github.com/openai/skills/blob/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/netlify-deploy/SKILL.md"
+      },
+      "quality": {
+        "score": 77,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/openai/skills/netlify-deploy/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/openai/skills/tree/main/skills/.curated/netlify-deploy",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/openai/skills/tree/main/skills/.curated/netlify-deploy",
+        "publisher_setup_url": "https://github.com/openai/skills/blob/main/skills/.curated/netlify-deploy/SKILL.md"
+      }
+    },
+    {
+      "id": "openai/skills/notion-knowledge-capture",
+      "name": "notion-knowledge-capture",
+      "description": "Capture conversations and decisions into structured Notion pages; use when turning chats/notes into wiki entries, how-tos, decisions, or FAQs with proper linking.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/openai/skills/blob/main/skills/.curated/notion-knowledge-capture/LICENSE.txt",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "49f948faa9258a0c61caceaf225e179651397431",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-06-23",
+        "skill_md_url": "https://github.com/openai/skills/blob/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/notion-knowledge-capture/SKILL.md"
+      },
+      "quality": {
+        "score": 74,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/openai/skills/notion-knowledge-capture/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/openai/skills/tree/main/skills/.curated/notion-knowledge-capture",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/openai/skills/tree/main/skills/.curated/notion-knowledge-capture",
+        "publisher_setup_url": "https://github.com/openai/skills/blob/main/skills/.curated/notion-knowledge-capture/SKILL.md"
+      }
+    },
+    {
+      "id": "openai/skills/notion-meeting-intelligence",
+      "name": "notion-meeting-intelligence",
+      "description": "Prepare meeting materials with Notion context and Codex research; use when gathering context, drafting agendas/pre-reads, and tailoring materials to attendees.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/openai/skills/blob/main/skills/.curated/notion-meeting-intelligence/LICENSE.txt",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "49f948faa9258a0c61caceaf225e179651397431",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-06-23",
+        "skill_md_url": "https://github.com/openai/skills/blob/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/notion-meeting-intelligence/SKILL.md"
+      },
+      "quality": {
+        "score": 74,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/openai/skills/notion-meeting-intelligence/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/openai/skills/tree/main/skills/.curated/notion-meeting-intelligence",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/openai/skills/tree/main/skills/.curated/notion-meeting-intelligence",
+        "publisher_setup_url": "https://github.com/openai/skills/blob/main/skills/.curated/notion-meeting-intelligence/SKILL.md"
+      }
+    },
+    {
+      "id": "openai/skills/notion-research-documentation",
+      "name": "notion-research-documentation",
+      "description": "Research across Notion and synthesize into structured documentation; use when gathering info from multiple Notion sources to produce briefs, comparisons, or reports with citations.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/openai/skills/blob/main/skills/.curated/notion-research-documentation/LICENSE.txt",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "49f948faa9258a0c61caceaf225e179651397431",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-06-23",
+        "skill_md_url": "https://github.com/openai/skills/blob/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/notion-research-documentation/SKILL.md"
+      },
+      "quality": {
+        "score": 74,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/openai/skills/notion-research-documentation/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/openai/skills/tree/main/skills/.curated/notion-research-documentation",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/openai/skills/tree/main/skills/.curated/notion-research-documentation",
+        "publisher_setup_url": "https://github.com/openai/skills/blob/main/skills/.curated/notion-research-documentation/SKILL.md"
+      }
+    },
+    {
+      "id": "openai/skills/notion-spec-to-implementation",
+      "name": "notion-spec-to-implementation",
+      "description": "Turn Notion specs into implementation plans, tasks, and progress tracking; use when implementing PRDs/feature specs and creating Notion plans + tasks from them.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/openai/skills/blob/main/skills/.curated/notion-spec-to-implementation/LICENSE.txt",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "49f948faa9258a0c61caceaf225e179651397431",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-06-23",
+        "skill_md_url": "https://github.com/openai/skills/blob/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/notion-spec-to-implementation/SKILL.md"
+      },
+      "quality": {
+        "score": 74,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/openai/skills/notion-spec-to-implementation/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/openai/skills/tree/main/skills/.curated/notion-spec-to-implementation",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/openai/skills/tree/main/skills/.curated/notion-spec-to-implementation",
+        "publisher_setup_url": "https://github.com/openai/skills/blob/main/skills/.curated/notion-spec-to-implementation/SKILL.md"
+      }
+    },
+    {
+      "id": "openai/skills/openai-docs",
+      "name": "openai-docs",
+      "description": "Use when the user asks how to build with OpenAI products or APIs, asks about Codex itself or choosing Codex surfaces, needs up-to-date official documentation with citations, help choosing the latest model for a use case, or model upgrade and prompt-upgrade guidance; use OpenAI docs MCP tools for non-Codex docs questions, use the Codex manual helper first for broad Codex self-knowledge, and restrict fallback browsing to official OpenAI domains.",
+      "category": "ai-agents-llm",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/openai/skills/blob/main/skills/.curated/openai-docs/LICENSE.txt",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "49f948faa9258a0c61caceaf225e179651397431",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-06-23",
+        "skill_md_url": "https://github.com/openai/skills/blob/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/openai-docs/SKILL.md"
+      },
+      "quality": {
+        "score": 79,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/openai/skills/openai-docs/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/openai/skills/tree/main/skills/.curated/openai-docs",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/openai/skills/tree/main/skills/.curated/openai-docs",
+        "publisher_setup_url": "https://github.com/openai/skills/blob/main/skills/.curated/openai-docs/SKILL.md"
+      }
+    },
+    {
+      "id": "openai/skills/pdf",
+      "name": "pdf",
+      "description": "Use when tasks involve reading, creating, or reviewing PDF files where rendering and layout matter; prefer visual checks by rendering pages (Poppler) and use Python tools such as `reportlab`, `pdfplumber`, and `pypdf` for generation and extraction.",
+      "category": "documents-office",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/openai/skills/blob/main/skills/.curated/pdf/LICENSE.txt",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "49f948faa9258a0c61caceaf225e179651397431",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-06-23",
+        "skill_md_url": "https://github.com/openai/skills/blob/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/pdf/SKILL.md"
+      },
+      "quality": {
+        "score": 71,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/openai/skills/pdf/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/openai/skills/tree/main/skills/.curated/pdf",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/openai/skills/tree/main/skills/.curated/pdf",
+        "publisher_setup_url": "https://github.com/openai/skills/blob/main/skills/.curated/pdf/SKILL.md"
+      }
+    },
+    {
+      "id": "openai/skills/playwright",
+      "name": "playwright",
+      "description": "Use when the task requires automating a real browser from the terminal (navigation, form filling, snapshots, screenshots, data extraction, UI-flow debugging) via `playwright-cli` or the bundled wrapper script.",
+      "category": "testing-qa",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/openai/skills/blob/main/skills/.curated/playwright/LICENSE.txt",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "49f948faa9258a0c61caceaf225e179651397431",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-06-23",
+        "skill_md_url": "https://github.com/openai/skills/blob/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/playwright/SKILL.md"
+      },
+      "quality": {
+        "score": 76,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/openai/skills/playwright/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/openai/skills/tree/main/skills/.curated/playwright",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/openai/skills/tree/main/skills/.curated/playwright",
+        "publisher_setup_url": "https://github.com/openai/skills/blob/main/skills/.curated/playwright/SKILL.md"
+      }
+    },
+    {
+      "id": "openai/skills/render-deploy",
+      "name": "render-deploy",
+      "description": "Deploy applications to Render by analyzing codebases, generating render.yaml Blueprints, and providing Dashboard deeplinks. Use when the user wants to deploy, host, publish, or set up their application on Render's cloud platform.",
+      "category": "devops-cloud",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/openai/skills/blob/main/skills/.curated/render-deploy/LICENSE.txt",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "49f948faa9258a0c61caceaf225e179651397431",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-06-23",
+        "skill_md_url": "https://github.com/openai/skills/blob/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/render-deploy/SKILL.md"
+      },
+      "quality": {
+        "score": 77,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/openai/skills/render-deploy/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/openai/skills/tree/main/skills/.curated/render-deploy",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/openai/skills/tree/main/skills/.curated/render-deploy",
+        "publisher_setup_url": "https://github.com/openai/skills/blob/main/skills/.curated/render-deploy/SKILL.md"
+      }
+    },
+    {
+      "id": "openai/skills/screenshot",
+      "name": "screenshot",
+      "description": "Use when the user explicitly asks for a desktop or system screenshot (full screen, specific app or window, or a pixel region), or when tool-specific capture capabilities are unavailable and an OS-level capture is needed.",
+      "category": "developer-tools",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/openai/skills/blob/main/skills/.curated/screenshot/LICENSE.txt",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "49f948faa9258a0c61caceaf225e179651397431",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-06-23",
+        "skill_md_url": "https://github.com/openai/skills/blob/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/screenshot/SKILL.md"
+      },
+      "quality": {
+        "score": 76,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/openai/skills/screenshot/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/openai/skills/tree/main/skills/.curated/screenshot",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/openai/skills/tree/main/skills/.curated/screenshot",
+        "publisher_setup_url": "https://github.com/openai/skills/blob/main/skills/.curated/screenshot/SKILL.md"
+      }
+    },
+    {
+      "id": "openai/skills/security-best-practices",
+      "name": "security-best-practices",
+      "description": "Perform language and framework specific security best-practice reviews and suggest improvements. Trigger only when the user explicitly requests security best practices guidance, a security review/report, or secure-by-default coding help. Trigger only for supported languages (python, javascript/typescript, go). Do not trigger for general code review, debugging, or non-security tasks.",
+      "category": "security",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/openai/skills/blob/main/skills/.curated/security-best-practices/LICENSE.txt",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "49f948faa9258a0c61caceaf225e179651397431",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-06-23",
+        "skill_md_url": "https://github.com/openai/skills/blob/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/security-best-practices/SKILL.md"
+      },
+      "quality": {
+        "score": 77,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/openai/skills/security-best-practices/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/openai/skills/tree/main/skills/.curated/security-best-practices",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/openai/skills/tree/main/skills/.curated/security-best-practices",
+        "publisher_setup_url": "https://github.com/openai/skills/blob/main/skills/.curated/security-best-practices/SKILL.md"
+      }
+    },
+    {
+      "id": "openai/skills/security-ownership-map",
+      "name": "security-ownership-map",
+      "description": "Analyze git repositories to build a security ownership topology (people-to-file), compute bus factor and sensitive-code ownership, and export CSV/JSON for graph databases and visualization. Trigger only when the user explicitly wants a security-oriented ownership or bus-factor analysis grounded in git history (for example: orphaned sensitive code, security maintainers, CODEOWNERS reality checks for risk, sensitive hotspots, or ownership clusters). Do not trigger for general maintainer lists or non-security ownership questions.",
+      "category": "security",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/openai/skills/blob/main/skills/.curated/security-ownership-map/LICENSE.txt",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "49f948faa9258a0c61caceaf225e179651397431",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-06-23",
+        "skill_md_url": "https://github.com/openai/skills/blob/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/security-ownership-map/SKILL.md"
+      },
+      "quality": {
+        "score": 79,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/openai/skills/security-ownership-map/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/openai/skills/tree/main/skills/.curated/security-ownership-map",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/openai/skills/tree/main/skills/.curated/security-ownership-map",
+        "publisher_setup_url": "https://github.com/openai/skills/blob/main/skills/.curated/security-ownership-map/SKILL.md"
+      }
+    },
+    {
+      "id": "openai/skills/security-threat-model",
+      "name": "security-threat-model",
+      "description": "Repository-grounded threat modeling that enumerates trust boundaries, assets, attacker capabilities, abuse paths, and mitigations, and writes a concise Markdown threat model. Trigger only when the user explicitly asks to threat model a codebase or path, enumerate threats/abuse paths, or perform AppSec threat modeling. Do not trigger for general architecture summaries, code review, or non-security design work.",
+      "category": "security",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/openai/skills/blob/main/skills/.curated/security-threat-model/LICENSE.txt",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "49f948faa9258a0c61caceaf225e179651397431",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-06-23",
+        "skill_md_url": "https://github.com/openai/skills/blob/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/security-threat-model/SKILL.md"
+      },
+      "quality": {
+        "score": 77,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/openai/skills/security-threat-model/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/openai/skills/tree/main/skills/.curated/security-threat-model",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/openai/skills/tree/main/skills/.curated/security-threat-model",
+        "publisher_setup_url": "https://github.com/openai/skills/blob/main/skills/.curated/security-threat-model/SKILL.md"
+      }
+    },
+    {
+      "id": "openai/skills/sentry",
+      "name": "sentry",
+      "description": "Use when the user asks to inspect Sentry issues or events, summarize recent production errors, or pull basic Sentry health data via the Sentry CLI; perform read-only queries using the `sentry` command.",
+      "category": "developer-tools",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/openai/skills/blob/main/skills/.curated/sentry/LICENSE.txt",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "49f948faa9258a0c61caceaf225e179651397431",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-06-23",
+        "skill_md_url": "https://github.com/openai/skills/blob/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/sentry/SKILL.md"
+      },
+      "quality": {
+        "score": 74,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/openai/skills/sentry/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/openai/skills/tree/main/skills/.curated/sentry",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/openai/skills/tree/main/skills/.curated/sentry",
+        "publisher_setup_url": "https://github.com/openai/skills/blob/main/skills/.curated/sentry/SKILL.md"
+      }
+    },
+    {
+      "id": "openai/skills/speech",
+      "name": "speech",
+      "description": "Use when the user asks for text-to-speech narration or voiceover, accessibility reads, audio prompts, or batch speech generation via the OpenAI Audio API; run the bundled CLI (`scripts/text_to_speech.py`) with built-in voices and require `OPENAI_API_KEY` for live calls. Custom voice creation is out of scope.",
+      "category": "media-creative",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/openai/skills/blob/main/skills/.curated/speech/LICENSE.txt",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "49f948faa9258a0c61caceaf225e179651397431",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-06-23",
+        "skill_md_url": "https://github.com/openai/skills/blob/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/speech/SKILL.md"
+      },
+      "quality": {
+        "score": 79,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/openai/skills/speech/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/openai/skills/tree/main/skills/.curated/speech",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/openai/skills/tree/main/skills/.curated/speech",
+        "publisher_setup_url": "https://github.com/openai/skills/blob/main/skills/.curated/speech/SKILL.md"
+      }
+    },
+    {
+      "id": "openai/skills/transcribe",
+      "name": "transcribe",
+      "description": "Transcribe audio files to text with optional diarization and known-speaker hints. Use when a user asks to transcribe speech from audio/video, extract text from recordings, or label speakers in interviews or meetings.",
+      "category": "media-creative",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/openai/skills/blob/main/skills/.curated/transcribe/LICENSE.txt",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "49f948faa9258a0c61caceaf225e179651397431",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-06-23",
+        "skill_md_url": "https://github.com/openai/skills/blob/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/transcribe/SKILL.md"
+      },
+      "quality": {
+        "score": 76,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/openai/skills/transcribe/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/openai/skills/tree/main/skills/.curated/transcribe",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/openai/skills/tree/main/skills/.curated/transcribe",
+        "publisher_setup_url": "https://github.com/openai/skills/blob/main/skills/.curated/transcribe/SKILL.md"
+      }
+    },
+    {
+      "id": "openai/skills/vercel-deploy",
+      "name": "vercel-deploy",
+      "description": "Deploy applications and websites to Vercel. Use when the user requests deployment actions like \"deploy my app\", \"deploy and give me the link\", \"push this live\", or \"create a preview deployment\".",
+      "category": "devops-cloud",
+      "license": "MIT",
+      "license_url": "https://github.com/openai/skills/blob/main/skills/.curated/vercel-deploy/LICENSE.txt",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "49f948faa9258a0c61caceaf225e179651397431",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-06-23",
+        "skill_md_url": "https://github.com/openai/skills/blob/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/vercel-deploy/SKILL.md"
+      },
+      "quality": {
+        "score": 76,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/openai/skills/vercel-deploy/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/openai/skills/tree/main/skills/.curated/vercel-deploy",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/openai/skills/tree/main/skills/.curated/vercel-deploy",
+        "publisher_setup_url": "https://github.com/openai/skills/blob/main/skills/.curated/vercel-deploy/SKILL.md"
+      }
+    },
+    {
+      "id": "openai/skills/winui-app",
+      "name": "winui-app",
+      "description": "Bootstrap, develop, and design modern WinUI 3 desktop applications with C# and the Windows App SDK using official Microsoft guidance, WinUI Gallery patterns, Windows App SDK samples, and CommunityToolkit components. Use when creating a brand new app, preparing a machine for WinUI, reviewing, refactoring, planning, troubleshooting, environment-checking, or setting up WinUI 3 XAML, controls, navigation, windowing, theming, accessibility, responsiveness, performance, deployment, or related Windows app design and development work.",
+      "category": "frontend-design",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/openai/skills/blob/main/skills/.curated/winui-app/LICENSE.txt",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "49f948faa9258a0c61caceaf225e179651397431",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-06-23",
+        "skill_md_url": "https://github.com/openai/skills/blob/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/winui-app/SKILL.md"
+      },
+      "quality": {
+        "score": 77,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/openai/skills/winui-app/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/openai/skills/tree/main/skills/.curated/winui-app",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/openai/skills/tree/main/skills/.curated/winui-app",
+        "publisher_setup_url": "https://github.com/openai/skills/blob/main/skills/.curated/winui-app/SKILL.md"
+      }
+    },
+    {
+      "id": "openai/skills/yeet",
+      "name": "yeet",
+      "description": "Use only when the user explicitly asks to stage, commit, push, and open a GitHub pull request in one flow using the GitHub CLI (`gh`).",
+      "category": "code-review-quality",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/openai/skills/blob/main/skills/.curated/yeet/LICENSE.txt",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "49f948faa9258a0c61caceaf225e179651397431",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-06-23",
+        "skill_md_url": "https://github.com/openai/skills/blob/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/yeet/SKILL.md"
+      },
+      "quality": {
+        "score": 72,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 3
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/openai/skills/yeet/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/openai/skills/tree/main/skills/.curated/yeet",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/openai/skills/tree/main/skills/.curated/yeet",
+        "publisher_setup_url": "https://github.com/openai/skills/blob/main/skills/.curated/yeet/SKILL.md"
+      }
+    }
+  ]
+}

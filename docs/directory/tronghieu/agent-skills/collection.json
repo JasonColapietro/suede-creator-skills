@@ -1,0 +1,2010 @@
+{
+  "schema_version": 1,
+  "repository": "tronghieu/agent-skills",
+  "listing_url": "https://skills.suedeai.ai/directory/tronghieu/agent-skills/",
+  "snapshot": {
+    "date": "2026-10-22",
+    "id": "740bfd7230f74b149870dffa9c645b2b",
+    "dataset_sha256": "7af631c54b44d36718ed15f6a3fdbf0445b6a09f638bc05ce3093bca01ef0d02"
+  },
+  "listed_skill_count": 19,
+  "scope": "Skills listed by the directory; this is not a complete inventory of every file in the repository.",
+  "security_scan_status": "not_scanned",
+  "skills": [
+    {
+      "id": "tronghieu/agent-skills/bmad-run-inspector",
+      "name": "bmad-run-inspector",
+      "description": "Inspect and explain bmad-loop run artifacts under `.bmad-loop/runs/`. Use for live health checks (\"is it stuck?\", \"is the loop alive?\", \"what is the agent doing?\") and post-run forensics (\"what happened?\", \"why did story X fail?\", \"where did the tokens go?\"). Also triggers on \"monitor/check/summarize the loop\", \"why did the run pause?\", Vietnamese \"theo dõi bmad loop\", \"phân tích run\", \"đọc log của run\", and equivalent requests in other languages. Use only for bmad-loop's own run artifacts, not application runtime logs or CI-provider build logs.",
+      "category": "ai-agents-llm",
+      "license": "MIT",
+      "license_url": "https://github.com/tronghieu/agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "f923333754b1fcf45c443cae1ebe8c9886162207",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-18",
+        "skill_md_url": "https://github.com/tronghieu/agent-skills/blob/f923333754b1fcf45c443cae1ebe8c9886162207/skills/bmad-run-inspector/SKILL.md"
+      },
+      "quality": {
+        "score": 90,
+        "grade": "A",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/tronghieu/agent-skills/bmad-run-inspector/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/tronghieu/agent-skills/bmad-run-inspector/",
+      "source_folder_url": "https://github.com/tronghieu/agent-skills/tree/main/skills/bmad-run-inspector",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/tronghieu/agent-skills/tree/main/skills/bmad-run-inspector",
+        "publisher_setup_url": "https://github.com/tronghieu/agent-skills/blob/main/skills/bmad-run-inspector/SKILL.md"
+      }
+    },
+    {
+      "id": "tronghieu/agent-skills/critical-thinking",
+      "name": "critical-thinking",
+      "description": "Audit the reasoning of a document or argument (memo, proposal, investment analysis, board paper, article, the user's own draft): claims, evidence, unstated assumptions, logical gaps, fallacies, and what would falsify it, each anchored to quoted text. Use whenever the user wants reasoning examined, in any language (\"audit this argument\", \"is this analysis sound\", \"poke holes in this proposal\", \"review the logic of my draft\"; Vietnamese \"phản biện giúp tôi\", \"soi lập luận này\", \"tài liệu này có lỗ hổng gì\", \"góp ý bản nháp của tôi\"), even when they never say \"critical thinking\". Also use when the user drops a document and asks whether to trust or act on it, or asks to see their reasoning profile. Not for company-level strategic bets (strategy-board) or learning a topic through dialogue (socratic-questor).",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/tronghieu/agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "f923333754b1fcf45c443cae1ebe8c9886162207",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-18",
+        "skill_md_url": "https://github.com/tronghieu/agent-skills/blob/f923333754b1fcf45c443cae1ebe8c9886162207/skills/critical-thinking/SKILL.md"
+      },
+      "quality": {
+        "score": 90,
+        "grade": "A",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/tronghieu/agent-skills/critical-thinking/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/tronghieu/agent-skills/critical-thinking/",
+      "source_folder_url": "https://github.com/tronghieu/agent-skills/tree/main/skills/critical-thinking",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/tronghieu/agent-skills/tree/main/skills/critical-thinking",
+        "publisher_setup_url": "https://github.com/tronghieu/agent-skills/blob/main/skills/critical-thinking/SKILL.md"
+      }
+    },
+    {
+      "id": "tronghieu/agent-skills/data-scientist",
+      "name": "data-scientist",
+      "description": "Act as an end-to-end data scientist: turn business questions into defensible analysis, validated models, and decision-ready reports. Use whenever the user asks to analyze, explore, or profile a dataset or CSV/Parquet/Excel file; asks what drives a metric or why a number changed (\"why did churn go up?\"); wants to test whether a difference is real (A/B tests, experiments, \"is this significant?\", \"how many samples do I need?\"); wants a predictive model (churn, forecast, scoring, segmentation, classification, regression); asks to review an existing analysis, notebook, or model for flaws; or needs results written up for decision-makers. Triggers in any language (\"phân tích dữ liệu\", \"xây model dự đoán\", \"kiểm định A/B\"), even when they never say \"data science\" or \"statistics\".",
+      "category": "data-databases",
+      "license": "MIT",
+      "license_url": "https://github.com/tronghieu/agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "f923333754b1fcf45c443cae1ebe8c9886162207",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-18",
+        "skill_md_url": "https://github.com/tronghieu/agent-skills/blob/f923333754b1fcf45c443cae1ebe8c9886162207/skills/data-scientist/SKILL.md"
+      },
+      "quality": {
+        "score": 86,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/tronghieu/agent-skills/data-scientist/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/tronghieu/agent-skills/data-scientist/",
+      "source_folder_url": "https://github.com/tronghieu/agent-skills/tree/main/skills/data-scientist",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/tronghieu/agent-skills/tree/main/skills/data-scientist",
+        "publisher_setup_url": "https://github.com/tronghieu/agent-skills/blob/main/skills/data-scientist/SKILL.md"
+      }
+    },
+    {
+      "id": "tronghieu/agent-skills/deep-reader",
+      "name": "deep-reader",
+      "description": "Read, study, and answer questions about long books and papers without loading the whole text into one context window, keeping page-anchored notes as a reusable workspace. Use whenever the user asks to read, study, summarize, analyze, review, or answer questions about a long book, textbook, PDF, EPUB, thesis, dissertation, survey paper, or any document of roughly 50+ pages, in any language (Vietnamese \"đọc sách\", \"tóm tắt sách\", \"phân tích luận án\"). Also use when a `{slug}-notes/` workspace from a previous session sits next to a source file and the user asks a follow-up question about that book. Not for short documents (under ~30 pages) that fit in context; read those directly.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/tronghieu/agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "f923333754b1fcf45c443cae1ebe8c9886162207",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-18",
+        "skill_md_url": "https://github.com/tronghieu/agent-skills/blob/f923333754b1fcf45c443cae1ebe8c9886162207/skills/deep-reader/SKILL.md"
+      },
+      "quality": {
+        "score": 90,
+        "grade": "A",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/tronghieu/agent-skills/deep-reader/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/tronghieu/agent-skills/deep-reader/",
+      "source_folder_url": "https://github.com/tronghieu/agent-skills/tree/main/skills/deep-reader",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/tronghieu/agent-skills/tree/main/skills/deep-reader",
+        "publisher_setup_url": "https://github.com/tronghieu/agent-skills/blob/main/skills/deep-reader/SKILL.md"
+      }
+    },
+    {
+      "id": "tronghieu/agent-skills/diataxis-writer",
+      "name": "diataxis-writer",
+      "description": "Write, restructure, classify, and review documentation with the Diataxis framework. Use when the user asks to create, improve, audit, or reorganize documentation of any kind: knowledge bases, help centers, onboarding guides, process docs, manuals, runbooks, product or API docs, tutorials, how-to guides, references, explanations. Also use when the user mentions Diataxis, docs taxonomy, or documentation architecture, or asks why a document feels confusing. Also use for Simplified Technical English (ASD-STE100) or controlled-language rewrites of English technical docs. Not for marketing, legal, sales, press, or fiction writing unless the user wants a Diataxis-style analysis.",
+      "category": "writing-content",
+      "license": "MIT",
+      "license_url": "https://github.com/tronghieu/agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "f923333754b1fcf45c443cae1ebe8c9886162207",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-18",
+        "skill_md_url": "https://github.com/tronghieu/agent-skills/blob/f923333754b1fcf45c443cae1ebe8c9886162207/skills/diataxis-writer/SKILL.md"
+      },
+      "quality": {
+        "score": 87,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/tronghieu/agent-skills/diataxis-writer/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/tronghieu/agent-skills/diataxis-writer/",
+      "source_folder_url": "https://github.com/tronghieu/agent-skills/tree/main/skills/diataxis-writer",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/tronghieu/agent-skills/tree/main/skills/diataxis-writer",
+        "publisher_setup_url": "https://github.com/tronghieu/agent-skills/blob/main/skills/diataxis-writer/SKILL.md"
+      }
+    },
+    {
+      "id": "tronghieu/agent-skills/fiction-studio",
+      "name": "fiction-studio",
+      "description": "A complete fiction-writing studio, run as a team of named specialist agents, that guides an author from a bare idea to a polished prose manuscript. Use this skill whenever the user wants to write, plan, or revise fiction — a novel, novella, short story, or series. Trigger on requests like \"help me write a novel\", \"I have an idea for a story\", \"develop my characters\", \"build a world for my fantasy\", \"outline my plot\", \"fix this scene\", \"my dialogue feels flat\", \"give me beta-reader feedback\", or any time the user is doing creative storytelling and would benefit from structured, craft-aware guidance. Also trigger when the user names a studio member (Homer, Aristotle, Fyodor, Tolkien, Scheherazade, Oscar, Max, Virginia, Borges, Bloom) or asks to switch creative roles / bring in a specialist.",
+      "category": "writing-content",
+      "license": "MIT",
+      "license_url": "https://github.com/tronghieu/agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "f923333754b1fcf45c443cae1ebe8c9886162207",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-18",
+        "skill_md_url": "https://github.com/tronghieu/agent-skills/blob/f923333754b1fcf45c443cae1ebe8c9886162207/skills/fiction-studio/SKILL.md"
+      },
+      "quality": {
+        "score": 86,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/tronghieu/agent-skills/fiction-studio/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/tronghieu/agent-skills/fiction-studio/",
+      "source_folder_url": "https://github.com/tronghieu/agent-skills/tree/main/skills/fiction-studio",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/tronghieu/agent-skills/tree/main/skills/fiction-studio",
+        "publisher_setup_url": "https://github.com/tronghieu/agent-skills/blob/main/skills/fiction-studio/SKILL.md"
+      }
+    },
+    {
+      "id": "tronghieu/agent-skills/manual-tester",
+      "name": "manual-tester",
+      "description": "Plan and run manual tests of the project's running app. Runs a session in one of five modes: exploratory, verification, smoke, assessment (UX, localization, accessibility, improvement review), or AI probe. Also writes a manual test plan that holds only what automated tests cannot judge. Use whenever the user asks, in any language, for something to be tested by hand or for a manual test plan — \"manual test\", \"exploratory test\", \"bug hunt\", \"verify the bug fix\", \"smoke test\", \"QA this screen\", \"review this screen's UX\", \"what would you improve\", \"check the localized copy\", \"test the AI agent's answers\", \"write manual test cases\", \"kịch bản test manual\" — or assigns a test design, test plan or test-case IDs to execute by hand. Not for writing automated tests.",
+      "category": "testing-qa",
+      "license": "MIT",
+      "license_url": "https://github.com/tronghieu/agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "f923333754b1fcf45c443cae1ebe8c9886162207",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-18",
+        "skill_md_url": "https://github.com/tronghieu/agent-skills/blob/f923333754b1fcf45c443cae1ebe8c9886162207/skills/manual-tester/SKILL.md"
+      },
+      "quality": {
+        "score": 92,
+        "grade": "A",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/tronghieu/agent-skills/manual-tester/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/tronghieu/agent-skills/manual-tester/",
+      "source_folder_url": "https://github.com/tronghieu/agent-skills/tree/main/skills/manual-tester",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/tronghieu/agent-skills/tree/main/skills/manual-tester",
+        "publisher_setup_url": "https://github.com/tronghieu/agent-skills/blob/main/skills/manual-tester/SKILL.md"
+      }
+    },
+    {
+      "id": "tronghieu/agent-skills/market-researcher",
+      "name": "market-researcher",
+      "description": "Conduct rigorous, citation-backed desk market research: quick go/no-go market scans, market sizing (TAM/SAM/SOM), competitor analysis, customer demand signals, and trend/macro (PESTEL) analysis. Use this skill whenever the user wants to research, size, validate, or enter a market — \"is there a market for…\", \"how big is the market for…\", \"who are the competitors of…\", \"should I build/launch/sell…\", \"validate this business idea\", \"market research for…\", \"market entry\" — in any language and for any country's market (e.g. \"nghiên cứu thị trường\", \"étude de marché\", \"市場調査\", \"análisis de mercado\"), even when the user never says the words \"market research\". Also use it when another skill or workflow (strategy-board, design-thinking, a product brief) needs external market facts delivered into its fact base or research folder.",
+      "category": "business-finance",
+      "license": "MIT",
+      "license_url": "https://github.com/tronghieu/agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "f923333754b1fcf45c443cae1ebe8c9886162207",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-18",
+        "skill_md_url": "https://github.com/tronghieu/agent-skills/blob/f923333754b1fcf45c443cae1ebe8c9886162207/skills/market-researcher/SKILL.md"
+      },
+      "quality": {
+        "score": 86,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/tronghieu/agent-skills/market-researcher/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/tronghieu/agent-skills/market-researcher/",
+      "source_folder_url": "https://github.com/tronghieu/agent-skills/tree/main/skills/market-researcher",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/tronghieu/agent-skills/tree/main/skills/market-researcher",
+        "publisher_setup_url": "https://github.com/tronghieu/agent-skills/blob/main/skills/market-researcher/SKILL.md"
+      }
+    },
+    {
+      "id": "tronghieu/agent-skills/project-manager",
+      "name": "project-manager",
+      "description": "Act as a project-management copilot (PM/PMO) for the delivery loop: charters, plans and schedules, estimates, risk registers, status reports, scope changes, stakeholder communication, meeting actions, lessons learned, and portfolio roll-ups, in a per-project `_project/` workspace. Use whenever the user wants to start, plan, track, rescue, or report on a project: \"kick off this project\", \"make a project plan / timeline / WBS\", \"what date can I commit to\", \"build a risk register\", \"run a pre-mortem\", \"write the weekly status report\", \"the deadline slipped, what now\", \"turn this meeting into action items\", \"review my project portfolio\", in any language (\"quản lý dự án\", \"gestion de projet\", \"プロジェクト管理\", \"项目管理\"), even when they never say \"project management\". Also use whenever a `_project/` directory exists and the user asks about schedule, deadline, risk, status, scope, budget, or stakeholders. Not for what to build (product-manager) or company-level bets (strategy-board).",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/tronghieu/agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "f923333754b1fcf45c443cae1ebe8c9886162207",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-18",
+        "skill_md_url": "https://github.com/tronghieu/agent-skills/blob/f923333754b1fcf45c443cae1ebe8c9886162207/skills/project-manager/SKILL.md"
+      },
+      "quality": {
+        "score": 88,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/tronghieu/agent-skills/project-manager/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/tronghieu/agent-skills/project-manager/",
+      "source_folder_url": "https://github.com/tronghieu/agent-skills/tree/main/skills/project-manager",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/tronghieu/agent-skills/tree/main/skills/project-manager",
+        "publisher_setup_url": "https://github.com/tronghieu/agent-skills/blob/main/skills/project-manager/SKILL.md"
+      }
+    },
+    {
+      "id": "tronghieu/agent-skills/scrum-master",
+      "name": "scrum-master",
+      "description": "Act as the team's Scrum Master of record, or copilot to a human one: plan sprints, run daily pulses, close sprints, prepare and follow up retrospectives, track and escalate impediments, and detect process anti-patterns across sprint history. Use whenever the user asks for Scrum or agile process help, in any language — \"plan the sprint\", \"chuẩn bị retro\", \"how is the sprint going\", \"our velocity dropped\", \"track this blocker\", \"the same problem keeps coming back\" — even without the word \"Scrum\", and whenever `_project/scrum-master/` exists and the question touches sprints, ceremonies, impediments, or team process health. Not for delivery dates and budget (project-manager) or deciding what to build (product-manager).",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/tronghieu/agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "f923333754b1fcf45c443cae1ebe8c9886162207",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-18",
+        "skill_md_url": "https://github.com/tronghieu/agent-skills/blob/f923333754b1fcf45c443cae1ebe8c9886162207/skills/scrum-master/SKILL.md"
+      },
+      "quality": {
+        "score": 90,
+        "grade": "A",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/tronghieu/agent-skills/scrum-master/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/tronghieu/agent-skills/scrum-master/",
+      "source_folder_url": "https://github.com/tronghieu/agent-skills/tree/main/skills/scrum-master",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/tronghieu/agent-skills/tree/main/skills/scrum-master",
+        "publisher_setup_url": "https://github.com/tronghieu/agent-skills/blob/main/skills/scrum-master/SKILL.md"
+      }
+    },
+    {
+      "id": "tronghieu/agent-skills/slidewright",
+      "name": "slidewright",
+      "description": "Build interactive presentation websites — slide decks projected to a room, controlled by one presenter. Use this skill WHENEVER the user wants to create, build, or design a presentation, slide deck, talk, or \"bài thuyết trình / slide / trình chiếu\", and also when they ask to add/edit slides, restyle a deck, scaffold a new presentation project, reuse their presentation setup in another repo, control slides from a phone (remote, QR code, \"điều khiển slide bằng điện thoại\"), or export slides to PDF — even if they don't say the word \"slide\" but clearly need projected talk visuals (e.g. \"I'm giving a talk next week and need visuals\", \"dựng deck cho buổi chia sẻ\", \"làm mấy trang chiếu cho hội thảo\"). Supports two tracks: a zero-build single HTML file, or a Vite + React project. Do NOT use it for printable documents, normal web apps, or dashboards meant for individual users to interact with.",
+      "category": "documents-office",
+      "license": "MIT",
+      "license_url": "https://github.com/tronghieu/agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "f923333754b1fcf45c443cae1ebe8c9886162207",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-18",
+        "skill_md_url": "https://github.com/tronghieu/agent-skills/blob/f923333754b1fcf45c443cae1ebe8c9886162207/skills/slidewright/SKILL.md"
+      },
+      "quality": {
+        "score": 90,
+        "grade": "A",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/tronghieu/agent-skills/slidewright/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/tronghieu/agent-skills/slidewright/",
+      "source_folder_url": "https://github.com/tronghieu/agent-skills/tree/main/skills/slidewright",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/tronghieu/agent-skills/tree/main/skills/slidewright",
+        "publisher_setup_url": "https://github.com/tronghieu/agent-skills/blob/main/skills/slidewright/SKILL.md"
+      }
+    },
+    {
+      "id": "tronghieu/agent-skills/strategy-board",
+      "name": "strategy-board",
+      "description": "A C-level strategy advisory board, run as a team of named specialist agents, that takes an executive from a raw strategic question to a defended, board-ready recommendation. Use this skill whenever the user faces a significant business decision or wants strategic analysis — market entry, build-vs-buy, M&A, digital transformation, annual planning, portfolio prioritization, pricing, a big investment, a competitive threat, a turnaround. Trigger on requests like \"should we invest in / build / buy / enter…\", \"develop a strategy for…\", \"evaluate this opportunity\", \"make the business case\", \"stress-test this plan\", \"run a pre-mortem\", or \"prepare a board presentation\" — in any language, even when the user doesn't say the word \"strategy\". Also trigger when the user names a board member (Drucker, Porter, Christensen, Graham, Grove, Wack, Taleb, Minto) or asks to convene the board / open a boardroom session.",
+      "category": "business-finance",
+      "license": "MIT",
+      "license_url": "https://github.com/tronghieu/agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "f923333754b1fcf45c443cae1ebe8c9886162207",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-18",
+        "skill_md_url": "https://github.com/tronghieu/agent-skills/blob/f923333754b1fcf45c443cae1ebe8c9886162207/skills/strategy-board/SKILL.md"
+      },
+      "quality": {
+        "score": 84,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/tronghieu/agent-skills/strategy-board/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/tronghieu/agent-skills/strategy-board/",
+      "source_folder_url": "https://github.com/tronghieu/agent-skills/tree/main/skills/strategy-board",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/tronghieu/agent-skills/tree/main/skills/strategy-board",
+        "publisher_setup_url": "https://github.com/tronghieu/agent-skills/blob/main/skills/strategy-board/SKILL.md"
+      }
+    },
+    {
+      "id": "tronghieu/agent-skills/brainstorm-coach",
+      "name": "brainstorm-coach",
+      "description": "Coach structured brainstorming sessions on any topic: diverge on ideas together, then converge on priorities and next steps in a session document. Use whenever the user wants ideas or wants to think out loud, in any language (\"brainstorm with me\", \"give me ideas for…\", \"help me come up with…\", \"let's explore options for…\", \"I'm stuck on the name / the features\"; Vietnamese \"brainstorm cùng tôi\", \"cho tôi ý tưởng\", \"nghĩ cùng tôi xem\"), even when they never say \"brainstorm\". Also use when the user wants multiple perspectives or a devil's-advocate pass on their ideas (\"give me different angles\", \"phản biện mấy ý tưởng này\", \"party mode\"). Not for diagnosing why something is failing (problem-solver), user research (design-thinking), or company-level strategic bets (strategy-board).",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/tronghieu/agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "f923333754b1fcf45c443cae1ebe8c9886162207",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-18",
+        "skill_md_url": "https://github.com/tronghieu/agent-skills/blob/f923333754b1fcf45c443cae1ebe8c9886162207/skills/brainstorm-coach/SKILL.md"
+      },
+      "quality": {
+        "score": 88,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/tronghieu/agent-skills/brainstorm-coach/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/tronghieu/agent-skills/brainstorm-coach/",
+      "source_folder_url": "https://github.com/tronghieu/agent-skills/tree/main/skills/brainstorm-coach",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/tronghieu/agent-skills/tree/main/skills/brainstorm-coach",
+        "publisher_setup_url": "https://github.com/tronghieu/agent-skills/blob/main/skills/brainstorm-coach/SKILL.md"
+      }
+    },
+    {
+      "id": "tronghieu/agent-skills/cv-scorer",
+      "name": "cv-scorer",
+      "description": "Score candidate CVs on a 100-point scale against a Job Description. Use this skill when the user wants to evaluate, score, rank, or screen candidate CVs/resumes against a JD. Also trigger when the user mentions 'review CV', 'screen resume', 'rate candidates', 'shortlist', or any context involving matching resumes to job requirements.",
+      "category": "business-finance",
+      "license": "MIT",
+      "license_url": "https://github.com/tronghieu/agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "f923333754b1fcf45c443cae1ebe8c9886162207",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-18",
+        "skill_md_url": "https://github.com/tronghieu/agent-skills/blob/f923333754b1fcf45c443cae1ebe8c9886162207/skills/cv-scorer/SKILL.md"
+      },
+      "quality": {
+        "score": 83,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/tronghieu/agent-skills/cv-scorer/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/tronghieu/agent-skills/tree/main/skills/cv-scorer",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/tronghieu/agent-skills/tree/main/skills/cv-scorer",
+        "publisher_setup_url": "https://github.com/tronghieu/agent-skills/blob/main/skills/cv-scorer/SKILL.md"
+      }
+    },
+    {
+      "id": "tronghieu/agent-skills/design-thinking",
+      "name": "design-thinking",
+      "description": "Facilitate a full design-thinking engagement (Empathize, Define, Ideate, Prototype, Test) grounded in real user evidence. Use whenever the user wants to understand users deeply and design a solution for them: \"run design thinking\", \"understand our users\", \"design user interviews\", \"synthesize these interview notes\", \"build personas\", \"write How-Might-We questions\", \"prototype this concept\", \"design a usability test\", \"our users are churning and we don't know why\", in any language (\"tư duy thiết kế\", \"nghiên cứu người dùng\", \"phỏng vấn khách hàng\", \"デザイン思考\", \"设计思维\"), even when they never say \"design thinking\". Also use when the user drops raw interview notes, transcripts, or survey exports and wants insights, personas, or product decisions. Not for \"is there a market for X\" desk questions (market-researcher).",
+      "category": "product-management",
+      "license": "MIT",
+      "license_url": "https://github.com/tronghieu/agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "f923333754b1fcf45c443cae1ebe8c9886162207",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-18",
+        "skill_md_url": "https://github.com/tronghieu/agent-skills/blob/f923333754b1fcf45c443cae1ebe8c9886162207/skills/design-thinking/SKILL.md"
+      },
+      "quality": {
+        "score": 90,
+        "grade": "A",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/tronghieu/agent-skills/design-thinking/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/tronghieu/agent-skills/design-thinking/",
+      "source_folder_url": "https://github.com/tronghieu/agent-skills/tree/main/skills/design-thinking",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/tronghieu/agent-skills/tree/main/skills/design-thinking",
+        "publisher_setup_url": "https://github.com/tronghieu/agent-skills/blob/main/skills/design-thinking/SKILL.md"
+      }
+    },
+    {
+      "id": "tronghieu/agent-skills/problem-solver",
+      "name": "problem-solver",
+      "description": "Diagnose problems before solving them: turn \"X is broken and we don't know why\" into a precise problem statement, verified root causes, solutions traced to those causes, and a rollout plan. Use whenever the user reports something failing, breaking, slowing, or recurring without a known cause: \"sales dropped and we don't know why\", \"this keeps happening\", \"why does X keep failing\", \"find the root cause\", \"run a post-mortem\", \"5 whys\"; Vietnamese \"sao cứ bị vậy hoài\", \"tìm nguyên nhân gốc\", \"X đang hỏng mà không rõ vì sao\". Trigger even when the user asks for solutions directly: \"give me ideas to fix falling sales\" is a diagnosis request. Not for open-ended ideation when nothing is broken (brainstorm-coach), understanding user needs (design-thinking), or company-level strategic bets (strategy-board).",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/tronghieu/agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "f923333754b1fcf45c443cae1ebe8c9886162207",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-18",
+        "skill_md_url": "https://github.com/tronghieu/agent-skills/blob/f923333754b1fcf45c443cae1ebe8c9886162207/skills/problem-solver/SKILL.md"
+      },
+      "quality": {
+        "score": 88,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/tronghieu/agent-skills/problem-solver/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/tronghieu/agent-skills/problem-solver/",
+      "source_folder_url": "https://github.com/tronghieu/agent-skills/tree/main/skills/problem-solver",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/tronghieu/agent-skills/tree/main/skills/problem-solver",
+        "publisher_setup_url": "https://github.com/tronghieu/agent-skills/blob/main/skills/problem-solver/SKILL.md"
+      }
+    },
+    {
+      "id": "tronghieu/agent-skills/product-manager",
+      "name": "product-manager",
+      "description": "Act as a product-manager copilot that turns evidence into product decisions and artifacts: backlogs and prioritization, PRDs and user stories, metrics and OKRs, experiments, launch plans, feedback triage, and pricing/packaging, kept in a per-product workspace. Use whenever the user wants to decide what to build, spec it, or ship it: \"write a PRD for…\", \"prioritize our backlog\", \"what should we build next\", \"plan OKRs\", \"define our north star metric\", \"design an A/B test\", \"plan the launch\", \"triage this customer feedback\", \"platform or feature?\", in any language (\"viết PRD\", \"ưu tiên tính năng nào\", \"quản lý sản phẩm\", \"プロダクト管理\", \"产品经理\"), even when they never say \"product manager\". Also use when the user returns to a product workspace this skill created (a directory holding `product.md`, `state.md`, and `decisions.md`). Not for deep user discovery (design-thinking), desk market facts (market-researcher), or company-level bets (strategy-board).",
+      "category": "product-management",
+      "license": "MIT",
+      "license_url": "https://github.com/tronghieu/agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "f923333754b1fcf45c443cae1ebe8c9886162207",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-18",
+        "skill_md_url": "https://github.com/tronghieu/agent-skills/blob/f923333754b1fcf45c443cae1ebe8c9886162207/skills/product-manager/SKILL.md"
+      },
+      "quality": {
+        "score": 88,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/tronghieu/agent-skills/product-manager/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/tronghieu/agent-skills/product-manager/",
+      "source_folder_url": "https://github.com/tronghieu/agent-skills/tree/main/skills/product-manager",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/tronghieu/agent-skills/tree/main/skills/product-manager",
+        "publisher_setup_url": "https://github.com/tronghieu/agent-skills/blob/main/skills/product-manager/SKILL.md"
+      }
+    },
+    {
+      "id": "tronghieu/agent-skills/socratic-questor",
+      "name": "socratic-questor",
+      "description": "Socratic questioning partner named Gadfly for deep learning through dialogue. Use this skill when the user wants to learn, understand, or explore a topic through questions rather than explanations. Trigger when the user says \"teach me about...\", \"help me understand...\", \"I want to learn...\", \"ask me questions about...\", \"quiz me\", \"Socratic method\", \"Gadfly\", or wants to deeply understand something through dialogue rather than passive reading. Also trigger when the user provides a text or document and wants to be questioned about it, or wants to check their own understanding of a concept.",
+      "category": "productivity-knowledge",
+      "license": "MIT",
+      "license_url": "https://github.com/tronghieu/agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "f923333754b1fcf45c443cae1ebe8c9886162207",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-18",
+        "skill_md_url": "https://github.com/tronghieu/agent-skills/blob/f923333754b1fcf45c443cae1ebe8c9886162207/skills/socratic-questor/SKILL.md"
+      },
+      "quality": {
+        "score": 86,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/tronghieu/agent-skills/socratic-questor/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/tronghieu/agent-skills/tree/main/skills/socratic-questor",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/tronghieu/agent-skills/tree/main/skills/socratic-questor",
+        "publisher_setup_url": "https://github.com/tronghieu/agent-skills/blob/main/skills/socratic-questor/SKILL.md"
+      }
+    },
+    {
+      "id": "tronghieu/agent-skills/system-prompt-creator",
+      "name": "system-prompt-creator",
+      "description": "Create high-quality, model-aware system prompts for any LLM (Claude, GPT, Gemini, open-source, etc.). Use this skill whenever the user wants to create, write, build, design, draft, or improve a system prompt, system instructions, or custom instructions for any AI model. Also trigger when the user asks about prompt engineering, prompt design, prompt optimization, or wants to define behavior for an AI assistant, chatbot, agent, or any LLM-powered application — even if they don't explicitly say \"system prompt\". Covers all use cases including chatbots, agentic systems, tool-use workflows, content generation, data extraction, code assistants, and multi-turn conversations.",
+      "category": "ai-agents-llm",
+      "license": "MIT",
+      "license_url": "https://github.com/tronghieu/agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "f923333754b1fcf45c443cae1ebe8c9886162207",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-18",
+        "skill_md_url": "https://github.com/tronghieu/agent-skills/blob/f923333754b1fcf45c443cae1ebe8c9886162207/skills/system-prompt-creator/SKILL.md"
+      },
+      "quality": {
+        "score": 84,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/tronghieu/agent-skills/system-prompt-creator/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/tronghieu/agent-skills/tree/main/skills/system-prompt-creator",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/tronghieu/agent-skills/tree/main/skills/system-prompt-creator",
+        "publisher_setup_url": "https://github.com/tronghieu/agent-skills/blob/main/skills/system-prompt-creator/SKILL.md"
+      }
+    }
+  ]
+}

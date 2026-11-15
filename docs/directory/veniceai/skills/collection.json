@@ -1,0 +1,2325 @@
+{
+  "schema_version": 1,
+  "repository": "veniceai/skills",
+  "listing_url": "https://skills.suedeai.ai/directory/veniceai/skills/",
+  "snapshot": {
+    "date": "2026-10-22",
+    "id": "740bfd7230f74b149870dffa9c645b2b",
+    "dataset_sha256": "7af631c54b44d36718ed15f6a3fdbf0445b6a09f638bc05ce3093bca01ef0d02"
+  },
+  "listed_skill_count": 22,
+  "scope": "Skills listed by the directory; this is not a complete inventory of every file in the repository.",
+  "security_scan_status": "not_scanned",
+  "skills": [
+    {
+      "id": "veniceai/skills/venice-models",
+      "name": "venice-models",
+      "description": "Discover Venice models, their capabilities, constraints, and pricing. Covers GET /models (with the ?type filter - text, image, video, music, tts, asr, embedding, upscale, inpaint, decision, all, code), /models/traits, /models/compatibility_mapping, every ModelResponse field (capabilities, constraints, per-type pricing with promotional rates, uncensored, deprecation, voice-changer and voice-cloning specs), and how to use this to pick the right model programmatically.",
+      "category": "ai-agents-llm",
+      "license": "MIT",
+      "license_url": "https://github.com/veniceai/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "5eaeac576c099fcad61b494a07799e5e66d1d334",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-05",
+        "skill_md_url": "https://github.com/veniceai/skills/blob/5eaeac576c099fcad61b494a07799e5e66d1d334/skills/venice-models/SKILL.md"
+      },
+      "quality": {
+        "score": 78,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/veniceai/skills/venice-models/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/veniceai/skills/venice-models/",
+      "source_folder_url": "https://github.com/veniceai/skills/tree/main/skills/venice-models",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/veniceai/skills/tree/main/skills/venice-models",
+        "publisher_setup_url": "https://github.com/veniceai/skills/blob/main/skills/venice-models/SKILL.md"
+      }
+    },
+    {
+      "id": "veniceai/skills/venice-text-routing",
+      "name": "venice-text-routing",
+      "description": "Route a prompt to the right Venice text model based on privacy tier (anonymized / private / TEE / E2EE), modality (vision / audio / video input), capability (reasoning, reasoning effort, code, function calling, X search, large context, structured output), uncensored needs, and cost. Use when a local agent (Claude Code, Hermes, NanoClaw, Codex CLI, etc.) needs to decide whether to handle a prompt locally or escalate to Venice, and if escalating, which Venice text model to call. Sits one level above venice-models (model discovery) and before venice-chat (the call surface).",
+      "category": "ai-agents-llm",
+      "license": "MIT",
+      "license_url": "https://github.com/veniceai/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "5eaeac576c099fcad61b494a07799e5e66d1d334",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-05",
+        "skill_md_url": "https://github.com/veniceai/skills/blob/5eaeac576c099fcad61b494a07799e5e66d1d334/skills/venice-text-routing/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/veniceai/skills/venice-text-routing/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/veniceai/skills/venice-text-routing/",
+      "source_folder_url": "https://github.com/veniceai/skills/tree/main/skills/venice-text-routing",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/veniceai/skills/tree/main/skills/venice-text-routing",
+        "publisher_setup_url": "https://github.com/veniceai/skills/blob/main/skills/venice-text-routing/SKILL.md"
+      }
+    },
+    {
+      "id": "veniceai/skills/venice-api-keys",
+      "name": "venice-api-keys",
+      "description": "Manage Venice API keys. Covers GET/POST/PATCH/DELETE /api_keys, GET /api_keys/{id}, GET /api_keys/rate_limits, GET /api_keys/rate_limits/log, the two-step /api_keys/generate_web3_key wallet flow, INFERENCE vs ADMIN key types, per-key consumption limits (USD / DIEM) with EPOCH / MONTH / LIFETIME reset windows, and per-key modelPrivacy (ALL / PRIVATE_TEXT / PRIVATE_ONLY).",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/veniceai/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "5eaeac576c099fcad61b494a07799e5e66d1d334",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-05",
+        "skill_md_url": "https://github.com/veniceai/skills/blob/5eaeac576c099fcad61b494a07799e5e66d1d334/skills/venice-api-keys/SKILL.md"
+      },
+      "quality": {
+        "score": 70,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/veniceai/skills/venice-api-keys/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/veniceai/skills/tree/main/skills/venice-api-keys",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/veniceai/skills/tree/main/skills/venice-api-keys",
+        "publisher_setup_url": "https://github.com/veniceai/skills/blob/main/skills/venice-api-keys/SKILL.md"
+      }
+    },
+    {
+      "id": "veniceai/skills/venice-api-overview",
+      "name": "venice-api-overview",
+      "description": "High-level map of the Venice.ai API - base URL, which auth mode each endpoint accepts (API key, x402 wallet, or none), endpoint categories (including decisions, voice changer, and retired routes), response headers (rate limit, balance, deprecation, x402), pricing model, error shape, and versioning. Load this first when starting any Venice integration.",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/veniceai/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "5eaeac576c099fcad61b494a07799e5e66d1d334",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-05",
+        "skill_md_url": "https://github.com/veniceai/skills/blob/5eaeac576c099fcad61b494a07799e5e66d1d334/skills/venice-api-overview/SKILL.md"
+      },
+      "quality": {
+        "score": 70,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/veniceai/skills/venice-api-overview/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/veniceai/skills/tree/main/skills/venice-api-overview",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/veniceai/skills/tree/main/skills/venice-api-overview",
+        "publisher_setup_url": "https://github.com/veniceai/skills/blob/main/skills/venice-api-overview/SKILL.md"
+      }
+    },
+    {
+      "id": "veniceai/skills/venice-audio-music",
+      "name": "venice-audio-music",
+      "description": "Async music, sound-effect and long-form voice generation via Venice. Covers the /audio/quote + /audio/queue + /audio/retrieve + /audio/complete lifecycle, lyrics vs instrumental and the lyrics optimizer, duration options, seamless loop (ElevenLabs sound effects), voice selection incl. custom ElevenLabs Voice IDs, language, speed, model capability probing via /models?type=music, pricing shapes, refunds, and polling.",
+      "category": "media-creative",
+      "license": "MIT",
+      "license_url": "https://github.com/veniceai/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "5eaeac576c099fcad61b494a07799e5e66d1d334",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-05",
+        "skill_md_url": "https://github.com/veniceai/skills/blob/5eaeac576c099fcad61b494a07799e5e66d1d334/skills/venice-audio-music/SKILL.md"
+      },
+      "quality": {
+        "score": 70,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/veniceai/skills/venice-audio-music/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/veniceai/skills/tree/main/skills/venice-audio-music",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/veniceai/skills/tree/main/skills/venice-audio-music",
+        "publisher_setup_url": "https://github.com/veniceai/skills/blob/main/skills/venice-audio-music/SKILL.md"
+      }
+    },
+    {
+      "id": "veniceai/skills/venice-audio-speech",
+      "name": "venice-audio-speech",
+      "description": "Generate speech from text via POST /audio/speech, and clone a voice via POST /audio/voices. Covers TTS models (Kokoro, Qwen 3, xAI, Inworld, Chatterbox, Orpheus, ElevenLabs Turbo, MiniMax, Gemini Flash, Gradium), voices per model, cloned-voice handles and raw ElevenLabs Voice IDs, per-model output formats (model_spec.supported_formats / default_format), streaming, prompt/style control, temperature/top_p, speed clamping, and language hints.",
+      "category": "media-creative",
+      "license": "MIT",
+      "license_url": "https://github.com/veniceai/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "5eaeac576c099fcad61b494a07799e5e66d1d334",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-05",
+        "skill_md_url": "https://github.com/veniceai/skills/blob/5eaeac576c099fcad61b494a07799e5e66d1d334/skills/venice-audio-speech/SKILL.md"
+      },
+      "quality": {
+        "score": 70,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/veniceai/skills/venice-audio-speech/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/veniceai/skills/tree/main/skills/venice-audio-speech",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/veniceai/skills/tree/main/skills/venice-audio-speech",
+        "publisher_setup_url": "https://github.com/veniceai/skills/blob/main/skills/venice-audio-speech/SKILL.md"
+      }
+    },
+    {
+      "id": "veniceai/skills/venice-audio-transcription",
+      "name": "venice-audio-transcription",
+      "description": "Transcribe audio files to text via POST /audio/transcriptions. Covers supported models (Parakeet, Whisper, Wizper, Scribe, xAI STT), accepted containers (wav/flac/m4a/aac/mp4/mp3/ogg/webm), response formats (json/text only), per-model timestamps (word/segment/char), language hints, the 25 MB cap, and per-audio-second pricing. OpenAI-compatible multipart.",
+      "category": "media-creative",
+      "license": "MIT",
+      "license_url": "https://github.com/veniceai/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "5eaeac576c099fcad61b494a07799e5e66d1d334",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-05",
+        "skill_md_url": "https://github.com/veniceai/skills/blob/5eaeac576c099fcad61b494a07799e5e66d1d334/skills/venice-audio-transcription/SKILL.md"
+      },
+      "quality": {
+        "score": 70,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/veniceai/skills/venice-audio-transcription/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/veniceai/skills/tree/main/skills/venice-audio-transcription",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/veniceai/skills/tree/main/skills/venice-audio-transcription",
+        "publisher_setup_url": "https://github.com/veniceai/skills/blob/main/skills/venice-audio-transcription/SKILL.md"
+      }
+    },
+    {
+      "id": "veniceai/skills/venice-audio-voice-changer",
+      "name": "venice-audio-voice-changer",
+      "description": "Async speech-to-speech voice conversion via Venice — re-record a source recording in a different voice while keeping delivery and timing. Covers POST /audio/voice-changer/quote (unauthenticated), /queue (multipart file or JSON audio_url), /retrieve and /complete, how to discover voice-changer models (model_spec.voice_changer on /models?type=music), accepted formats, the source-length cap, whole-minute billing, refunds, and what each endpoint refuses. Note that no voice-changer model is currently open to regular API keys.",
+      "category": "media-creative",
+      "license": "MIT",
+      "license_url": "https://github.com/veniceai/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "5eaeac576c099fcad61b494a07799e5e66d1d334",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-05",
+        "skill_md_url": "https://github.com/veniceai/skills/blob/5eaeac576c099fcad61b494a07799e5e66d1d334/skills/venice-audio-voice-changer/SKILL.md"
+      },
+      "quality": {
+        "score": 70,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/veniceai/skills/venice-audio-voice-changer/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/veniceai/skills/tree/main/skills/venice-audio-voice-changer",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/veniceai/skills/tree/main/skills/venice-audio-voice-changer",
+        "publisher_setup_url": "https://github.com/veniceai/skills/blob/main/skills/venice-audio-voice-changer/SKILL.md"
+      }
+    },
+    {
+      "id": "veniceai/skills/venice-augment",
+      "name": "venice-augment",
+      "description": "Venice augmentation endpoints for agent pipelines. Covers POST /augment/text-parser (extract text from PDF/EPUB/DOCX/PPTX/XLSX/XLS, plain text and source code; multipart, up to 25MB; JSON or plain-text response), POST /augment/scrape (fetch a URL and return markdown; blocks X/Reddit and private/internal URLs), and POST /augment/search (Brave ZDR or anonymized Google; structured title/url/content/date results, limit up to 20 but effectively capped at 10 Brave / 5 Google). $0.01 per successful call, 20 req/min on scrape and search, privacy, and error shapes.",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/veniceai/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "5eaeac576c099fcad61b494a07799e5e66d1d334",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-05",
+        "skill_md_url": "https://github.com/veniceai/skills/blob/5eaeac576c099fcad61b494a07799e5e66d1d334/skills/venice-augment/SKILL.md"
+      },
+      "quality": {
+        "score": 70,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/veniceai/skills/venice-augment/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/veniceai/skills/tree/main/skills/venice-augment",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/veniceai/skills/tree/main/skills/venice-augment",
+        "publisher_setup_url": "https://github.com/veniceai/skills/blob/main/skills/venice-augment/SKILL.md"
+      }
+    },
+    {
+      "id": "veniceai/skills/venice-auth",
+      "name": "venice-auth",
+      "description": "Authenticate to the Venice API with a Bearer API key or with an x402 / SIWX wallet (EVM on Base, including EIP-1271 smart wallets, or Ed25519 on Solana). Covers which endpoints accept which scheme, the SIGN-IN-WITH-X header format, the SIWE and Solana message fields, the enforced TTL / clock-skew / nonce rules, every X402_SIGN_IN_* error code, the venice-x402-client SDK, and how to choose between the two modes.",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/veniceai/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "5eaeac576c099fcad61b494a07799e5e66d1d334",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-05",
+        "skill_md_url": "https://github.com/veniceai/skills/blob/5eaeac576c099fcad61b494a07799e5e66d1d334/skills/venice-auth/SKILL.md"
+      },
+      "quality": {
+        "score": 70,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/veniceai/skills/venice-auth/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/veniceai/skills/tree/main/skills/venice-auth",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/veniceai/skills/tree/main/skills/venice-auth",
+        "publisher_setup_url": "https://github.com/veniceai/skills/blob/main/skills/venice-auth/SKILL.md"
+      }
+    },
+    {
+      "id": "veniceai/skills/venice-billing",
+      "name": "venice-billing",
+      "description": "Venice billing and usage analytics - GET /billing/balance, GET /billing/usage-history (keyset-paginated per-request ledger, JSON or CSV), and GET /billing/usage-analytics (aggregated by date/model/key). All require an ADMIN key. GET /billing/usage was sunset on 2026-09-16 and now always returns 410. Covers the DIEM/EARNED_CREDITS/BUNDLED_CREDITS/USD consumption priority and building dashboards. (Beta)",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/veniceai/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "5eaeac576c099fcad61b494a07799e5e66d1d334",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-05",
+        "skill_md_url": "https://github.com/veniceai/skills/blob/5eaeac576c099fcad61b494a07799e5e66d1d334/skills/venice-billing/SKILL.md"
+      },
+      "quality": {
+        "score": 70,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/veniceai/skills/venice-billing/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/veniceai/skills/tree/main/skills/venice-billing",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/veniceai/skills/tree/main/skills/venice-billing",
+        "publisher_setup_url": "https://github.com/veniceai/skills/blob/main/skills/venice-billing/SKILL.md"
+      }
+    },
+    {
+      "id": "veniceai/skills/venice-characters",
+      "name": "venice-characters",
+      "description": "Discover and use Venice public characters (persona-driven system prompts with a suggested model). Covers GET /characters (search/filter/sort/paginate), /characters/{slug}, /characters/{slug}/reviews, the Character and Review schemas, Bearer-API-key-only auth, filter semantics (adult, pro, modelId), and how to apply a character via venice_parameters.character_slug in chat completions.",
+      "category": "ai-agents-llm",
+      "license": "MIT",
+      "license_url": "https://github.com/veniceai/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "5eaeac576c099fcad61b494a07799e5e66d1d334",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-05",
+        "skill_md_url": "https://github.com/veniceai/skills/blob/5eaeac576c099fcad61b494a07799e5e66d1d334/skills/venice-characters/SKILL.md"
+      },
+      "quality": {
+        "score": 70,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/veniceai/skills/venice-characters/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/veniceai/skills/tree/main/skills/venice-characters",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/veniceai/skills/tree/main/skills/venice-characters",
+        "publisher_setup_url": "https://github.com/veniceai/skills/blob/main/skills/venice-characters/SKILL.md"
+      }
+    },
+    {
+      "id": "veniceai/skills/venice-chat",
+      "name": "venice-chat",
+      "description": "Call POST /chat/completions on Venice. Covers the OpenAI-compatible request shape, Venice-only venice_parameters (web search, scraping, citations, E2EE, characters, thinking control, X search), anon_user_id, multimodal inputs (images/audio/video/files), tool calls, reasoning controls (reasoning_effort, reasoning.enabled), streaming, prompt caching, structured output, per-model caps, and model feature suffixes.",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/veniceai/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "5eaeac576c099fcad61b494a07799e5e66d1d334",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-05",
+        "skill_md_url": "https://github.com/veniceai/skills/blob/5eaeac576c099fcad61b494a07799e5e66d1d334/skills/venice-chat/SKILL.md"
+      },
+      "quality": {
+        "score": 67,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/veniceai/skills/venice-chat/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/veniceai/skills/tree/main/skills/venice-chat",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/veniceai/skills/tree/main/skills/venice-chat",
+        "publisher_setup_url": "https://github.com/veniceai/skills/blob/main/skills/venice-chat/SKILL.md"
+      }
+    },
+    {
+      "id": "veniceai/skills/venice-crypto-rpc",
+      "name": "venice-crypto-rpc",
+      "description": "Use Venice as a pay-per-call JSON-RPC proxy to 27 EVM, Starknet, and Solana networks. Covers the public GET /crypto/rpc/networks, POST /crypto/rpc/{network}, chain families and their explicit per-family method allowlists, the 1×/2×/4× method-tier pricing model (~$7e-7 per credit), the per-minute rate limit and per-user request serialization, idempotency keys for safe retries, single vs batch (≤100) requests, and the unsupported stateful/WebSocket methods (eth_subscribe, eth_newFilter, *Subscribe, etc.).",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/veniceai/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "5eaeac576c099fcad61b494a07799e5e66d1d334",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-05",
+        "skill_md_url": "https://github.com/veniceai/skills/blob/5eaeac576c099fcad61b494a07799e5e66d1d334/skills/venice-crypto-rpc/SKILL.md"
+      },
+      "quality": {
+        "score": 70,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/veniceai/skills/venice-crypto-rpc/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/veniceai/skills/tree/main/skills/venice-crypto-rpc",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/veniceai/skills/tree/main/skills/venice-crypto-rpc",
+        "publisher_setup_url": "https://github.com/veniceai/skills/blob/main/skills/venice-crypto-rpc/SKILL.md"
+      }
+    },
+    {
+      "id": "veniceai/skills/venice-decisions",
+      "name": "venice-decisions",
+      "description": "Call Venice's Beta POST /decisions (and its TypeSafe-compatible alias POST /systemone) to get typed judgments instead of generated text. Covers the Jev \"System One\" decision model (jev-latest, aliases jev-1-13-0 / typesafe-jev), the state + questions request shape, the three question/answer types (noul yes/no probability, choice with probability distribution + confidence, score on an ordered rubric), token limits (maxStateTokens / maxTotalTokens), input-token pricing, rate limits, and how upstream 422 validation errors surface as 400.",
+      "category": "ai-agents-llm",
+      "license": "MIT",
+      "license_url": "https://github.com/veniceai/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "5eaeac576c099fcad61b494a07799e5e66d1d334",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-05",
+        "skill_md_url": "https://github.com/veniceai/skills/blob/5eaeac576c099fcad61b494a07799e5e66d1d334/skills/venice-decisions/SKILL.md"
+      },
+      "quality": {
+        "score": 73,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/veniceai/skills/venice-decisions/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/veniceai/skills/tree/main/skills/venice-decisions",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/veniceai/skills/tree/main/skills/venice-decisions",
+        "publisher_setup_url": "https://github.com/veniceai/skills/blob/main/skills/venice-decisions/SKILL.md"
+      }
+    },
+    {
+      "id": "veniceai/skills/venice-embeddings",
+      "name": "venice-embeddings",
+      "description": "Call POST /embeddings on Venice. Covers request shape (input, model, encoding_format, dimensions, user), text-only input (token arrays rejected), per-input and batch limits, per-model dimensions/privacy, the text-embedding-ada-002 alias, API-key privacy gating, OpenAI/LangChain compatibility, response compression (gzip/br), and practical usage for retrieval, clustering, and RAG.",
+      "category": "ai-agents-llm",
+      "license": "MIT",
+      "license_url": "https://github.com/veniceai/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "5eaeac576c099fcad61b494a07799e5e66d1d334",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-05",
+        "skill_md_url": "https://github.com/veniceai/skills/blob/5eaeac576c099fcad61b494a07799e5e66d1d334/skills/venice-embeddings/SKILL.md"
+      },
+      "quality": {
+        "score": 70,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/veniceai/skills/venice-embeddings/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/veniceai/skills/tree/main/skills/venice-embeddings",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/veniceai/skills/tree/main/skills/venice-embeddings",
+        "publisher_setup_url": "https://github.com/veniceai/skills/blob/main/skills/venice-embeddings/SKILL.md"
+      }
+    },
+    {
+      "id": "veniceai/skills/venice-errors",
+      "name": "venice-errors",
+      "description": "Handle Venice API errors correctly. Covers the error body shapes (StandardError, DetailedError with validation details/issues, OpenAI-style context_length_exceeded, upstream provider rejections with request_id including TypeSafe/FastAPI validation errors, ContentViolationError, ProviderContentPolicyError, PayloadTooLargeError, the two x402 402 bodies), every meaningful status code (400-504, including 410 for retired endpoints), the three families of rate-limit headers, the per-key error budget (FAILED_REQUESTS / UNSUPPORTED_FEATURE_REQUESTS), Retry-After on overloaded models, SSE stream errors, and a backoff strategy that won't trip the error budget.",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/veniceai/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "5eaeac576c099fcad61b494a07799e5e66d1d334",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-05",
+        "skill_md_url": "https://github.com/veniceai/skills/blob/5eaeac576c099fcad61b494a07799e5e66d1d334/skills/venice-errors/SKILL.md"
+      },
+      "quality": {
+        "score": 68,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/veniceai/skills/venice-errors/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/veniceai/skills/tree/main/skills/venice-errors",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/veniceai/skills/tree/main/skills/venice-errors",
+        "publisher_setup_url": "https://github.com/veniceai/skills/blob/main/skills/venice-errors/SKILL.md"
+      }
+    },
+    {
+      "id": "veniceai/skills/venice-image-edit",
+      "name": "venice-image-edit",
+      "description": "Transform existing images with Venice. Covers POST /image/edit (prompt-driven single-image edit), /image/multi-edit (compose several images, per-model input cap, quality tiers), /image/upscale (2x–4x upscale with creativity), and /image/background-remove (transparent PNG cutout). Input formats (base64, data URI, URL, multipart), per-model constraints from GET /models?type=inpaint, response headers, and errors.",
+      "category": "media-creative",
+      "license": "MIT",
+      "license_url": "https://github.com/veniceai/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "5eaeac576c099fcad61b494a07799e5e66d1d334",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-05",
+        "skill_md_url": "https://github.com/veniceai/skills/blob/5eaeac576c099fcad61b494a07799e5e66d1d334/skills/venice-image-edit/SKILL.md"
+      },
+      "quality": {
+        "score": 70,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/veniceai/skills/venice-image-edit/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/veniceai/skills/tree/main/skills/venice-image-edit",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/veniceai/skills/tree/main/skills/venice-image-edit",
+        "publisher_setup_url": "https://github.com/veniceai/skills/blob/main/skills/venice-image-edit/SKILL.md"
+      }
+    },
+    {
+      "id": "veniceai/skills/venice-image-generate",
+      "name": "venice-image-generate",
+      "description": "Generate images with Venice. Covers POST /image/generate (Venice-native), POST /images/generations (OpenAI-compatible), GET /image/styles (style presets), request fields (prompt, width/height, aspect_ratio, resolution, quality, cfg_scale, steps, seed, variants, style_preset, style_references, enhance_prompt, safe_mode, hide_watermark, format, return_binary), per-model constraints from GET /models, response formats and headers.",
+      "category": "media-creative",
+      "license": "MIT",
+      "license_url": "https://github.com/veniceai/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "5eaeac576c099fcad61b494a07799e5e66d1d334",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-05",
+        "skill_md_url": "https://github.com/veniceai/skills/blob/5eaeac576c099fcad61b494a07799e5e66d1d334/skills/venice-image-generate/SKILL.md"
+      },
+      "quality": {
+        "score": 70,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/veniceai/skills/venice-image-generate/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/veniceai/skills/tree/main/skills/venice-image-generate",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/veniceai/skills/tree/main/skills/venice-image-generate",
+        "publisher_setup_url": "https://github.com/veniceai/skills/blob/main/skills/venice-image-generate/SKILL.md"
+      }
+    },
+    {
+      "id": "veniceai/skills/venice-responses",
+      "name": "venice-responses",
+      "description": "Use Venice's Alpha POST /responses endpoint - an OpenAI-compatible, stateless Responses API with typed output blocks (reasoning, message, function_call, web_search_call). Covers request shape, input items, tools (function, web_search, x_search), reasoning controls, incomplete responses, streaming events, differences from /chat/completions, the supported venice_parameters subset, and E2EE behavior.",
+      "category": "ai-agents-llm",
+      "license": "MIT",
+      "license_url": "https://github.com/veniceai/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "5eaeac576c099fcad61b494a07799e5e66d1d334",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-05",
+        "skill_md_url": "https://github.com/veniceai/skills/blob/5eaeac576c099fcad61b494a07799e5e66d1d334/skills/venice-responses/SKILL.md"
+      },
+      "quality": {
+        "score": 70,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/veniceai/skills/venice-responses/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/veniceai/skills/tree/main/skills/venice-responses",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/veniceai/skills/tree/main/skills/venice-responses",
+        "publisher_setup_url": "https://github.com/veniceai/skills/blob/main/skills/venice-responses/SKILL.md"
+      }
+    },
+    {
+      "id": "veniceai/skills/venice-video",
+      "name": "venice-video",
+      "description": "Generate videos via Venice. Covers the async /video/quote + /video/queue + /video/retrieve + /video/complete loop, text-to-video, image-to-video, first/last-frame transitions, video-to-video and upscale, audio input, reference images / videos / audio (R2V) and their per-model caps, Kling elements and scene images, Seedance source-matched edit/extend and omni_reference_task_type, H3 Max Multi-Angle camera_trajectory, and replayed async failures. POST /video/transcriptions is retired (410) — use chat completions with video_url.",
+      "category": "media-creative",
+      "license": "MIT",
+      "license_url": "https://github.com/veniceai/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "5eaeac576c099fcad61b494a07799e5e66d1d334",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-05",
+        "skill_md_url": "https://github.com/veniceai/skills/blob/5eaeac576c099fcad61b494a07799e5e66d1d334/skills/venice-video/SKILL.md"
+      },
+      "quality": {
+        "score": 67,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/veniceai/skills/venice-video/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/veniceai/skills/tree/main/skills/venice-video",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/veniceai/skills/tree/main/skills/venice-video",
+        "publisher_setup_url": "https://github.com/veniceai/skills/blob/main/skills/venice-video/SKILL.md"
+      }
+    },
+    {
+      "id": "veniceai/skills/venice-x402",
+      "name": "venice-x402",
+      "description": "Manage Venice x402 wallet credits. Covers POST /x402/top-up (payment discovery + signed USDC settlement, $5 min / $10,000 max), GET /x402/balance/{walletAddress}, GET /x402/transactions/{walletAddress}, USDC on Base (eip155:8453) and Solana mainnet, the PAYMENT-SIGNATURE / SIGN-IN-WITH-X header names, transaction types TOP_UP/CHARGE/REFUND (multi-component charges, request-level refunds, clamped charges), and the 402 PAYMENT-REQUIRED responses returned by x402-enabled endpoints.",
+      "category": "business-finance",
+      "license": "MIT",
+      "license_url": "https://github.com/veniceai/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "5eaeac576c099fcad61b494a07799e5e66d1d334",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-05",
+        "skill_md_url": "https://github.com/veniceai/skills/blob/5eaeac576c099fcad61b494a07799e5e66d1d334/skills/venice-x402/SKILL.md"
+      },
+      "quality": {
+        "score": 70,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/veniceai/skills/venice-x402/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/veniceai/skills/tree/main/skills/venice-x402",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/veniceai/skills/tree/main/skills/venice-x402",
+        "publisher_setup_url": "https://github.com/veniceai/skills/blob/main/skills/venice-x402/SKILL.md"
+      }
+    }
+  ]
+}

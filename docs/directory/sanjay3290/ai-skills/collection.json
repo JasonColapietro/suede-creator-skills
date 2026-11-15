@@ -1,0 +1,2325 @@
+{
+  "schema_version": 1,
+  "repository": "sanjay3290/ai-skills",
+  "listing_url": "https://skills.suedeai.ai/directory/sanjay3290/ai-skills/",
+  "snapshot": {
+    "date": "2026-10-22",
+    "id": "740bfd7230f74b149870dffa9c645b2b",
+    "dataset_sha256": "7af631c54b44d36718ed15f6a3fdbf0445b6a09f638bc05ce3093bca01ef0d02"
+  },
+  "listed_skill_count": 22,
+  "scope": "Skills listed by the directory; this is not a complete inventory of every file in the repository.",
+  "security_scan_status": "not_scanned",
+  "skills": [
+    {
+      "id": "sanjay3290/ai-skills/apple-container",
+      "name": "apple-container",
+      "description": "Apple's open-source `container` CLI to build, run, and manage OCI/Linux containers as lightweight per-container VMs on Apple-silicon macOS — no Docker daemon required. Use when the user mentions the `container` CLI, \"apple container\", running or building containers on macOS without Docker/Podman, `container run`, `container build`, `container images`, `container system start`, pushing/pulling images to a registry, or container networking on macOS. This is Apple's `container` tool specifically (repo `apple/container`), NOT Docker, Podman, containerd, nerdctl, or Kubernetes — the CLI is Docker-like but is a different tool.",
+      "category": "devops-cloud",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/sanjay3290/ai-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "281d88df199357e3091a3be5c743a0fca9a9ae1b",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-10",
+        "skill_md_url": "https://github.com/sanjay3290/ai-skills/blob/281d88df199357e3091a3be5c743a0fca9a9ae1b/skills/apple-container/SKILL.md"
+      },
+      "quality": {
+        "score": 85,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/sanjay3290/ai-skills/apple-container/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/sanjay3290/ai-skills/apple-container/",
+      "source_folder_url": "https://github.com/sanjay3290/ai-skills/tree/main/skills/apple-container",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/sanjay3290/ai-skills/tree/main/skills/apple-container",
+        "publisher_setup_url": "https://github.com/sanjay3290/ai-skills/blob/main/skills/apple-container/SKILL.md"
+      }
+    },
+    {
+      "id": "sanjay3290/ai-skills/atlassian",
+      "name": "atlassian",
+      "description": "Manage Jira issues and Confluence wiki pages in Atlassian Cloud. Use when: (1) searching/creating/updating Jira issues with JQL, (2) searching/reading/creating Confluence pages with CQL, (3) managing Jira workflows, transitions, and comments, (4) browsing Confluence spaces and page hierarchies. Supports OAuth 2.1 via MCP server (recommended) or API token authentication (fallback).",
+      "category": "productivity-knowledge",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/sanjay3290/ai-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "281d88df199357e3091a3be5c743a0fca9a9ae1b",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-10",
+        "skill_md_url": "https://github.com/sanjay3290/ai-skills/blob/281d88df199357e3091a3be5c743a0fca9a9ae1b/skills/atlassian/SKILL.md"
+      },
+      "quality": {
+        "score": 83,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/sanjay3290/ai-skills/atlassian/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/sanjay3290/ai-skills/atlassian/",
+      "source_folder_url": "https://github.com/sanjay3290/ai-skills/tree/main/skills/atlassian",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/sanjay3290/ai-skills/tree/main/skills/atlassian",
+        "publisher_setup_url": "https://github.com/sanjay3290/ai-skills/blob/main/skills/atlassian/SKILL.md"
+      }
+    },
+    {
+      "id": "sanjay3290/ai-skills/azure-devops",
+      "name": "azure-devops",
+      "description": "Manage Azure DevOps projects, work items, repos, PRs, pipelines, wikis, test plans, security alerts, variable groups, environments/approvals, branch policies, and attachments. Use when user asks to: manage sprints, create/update work items, list repos, create PRs, run pipelines, search code, manage wiki pages, check security alerts, manage variable groups, approve deployments, or configure branch policies. Covers 13 domains with 99 tools via REST API.",
+      "category": "devops-cloud",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/sanjay3290/ai-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "281d88df199357e3091a3be5c743a0fca9a9ae1b",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-10",
+        "skill_md_url": "https://github.com/sanjay3290/ai-skills/blob/281d88df199357e3091a3be5c743a0fca9a9ae1b/skills/azure-devops/SKILL.md"
+      },
+      "quality": {
+        "score": 83,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/sanjay3290/ai-skills/azure-devops/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/sanjay3290/ai-skills/azure-devops/",
+      "source_folder_url": "https://github.com/sanjay3290/ai-skills/tree/main/skills/azure-devops",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/sanjay3290/ai-skills/tree/main/skills/azure-devops",
+        "publisher_setup_url": "https://github.com/sanjay3290/ai-skills/blob/main/skills/azure-devops/SKILL.md"
+      }
+    },
+    {
+      "id": "sanjay3290/ai-skills/google-calendar",
+      "name": "google-calendar",
+      "description": "Interact with Google Calendar - list calendars, view events, create/update/delete events, and find free time. Use when user asks to: check calendar, schedule a meeting, create an event, find available time, list upcoming events, delete or update a calendar event, or respond to meeting invitations. Lightweight alternative to full Google Workspace MCP server with standalone OAuth authentication.",
+      "category": "productivity-knowledge",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/sanjay3290/ai-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "281d88df199357e3091a3be5c743a0fca9a9ae1b",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-10",
+        "skill_md_url": "https://github.com/sanjay3290/ai-skills/blob/281d88df199357e3091a3be5c743a0fca9a9ae1b/skills/google-calendar/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/sanjay3290/ai-skills/google-calendar/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/sanjay3290/ai-skills/google-calendar/",
+      "source_folder_url": "https://github.com/sanjay3290/ai-skills/tree/main/skills/google-calendar",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/sanjay3290/ai-skills/tree/main/skills/google-calendar",
+        "publisher_setup_url": "https://github.com/sanjay3290/ai-skills/blob/main/skills/google-calendar/SKILL.md"
+      }
+    },
+    {
+      "id": "sanjay3290/ai-skills/google-sheets",
+      "name": "google-sheets",
+      "description": "Read and write Google Sheets spreadsheets - get content, update cells, append rows, fetch specific ranges, search for spreadsheets, and view metadata. Use when user asks to: read a spreadsheet, update cells, add data to Google Sheets, find a spreadsheet, check sheet contents, export spreadsheet data, or get cell values. Lightweight integration with standalone OAuth authentication supporting full read/write access.",
+      "category": "documents-office",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/sanjay3290/ai-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "281d88df199357e3091a3be5c743a0fca9a9ae1b",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-10",
+        "skill_md_url": "https://github.com/sanjay3290/ai-skills/blob/281d88df199357e3091a3be5c743a0fca9a9ae1b/skills/google-sheets/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/sanjay3290/ai-skills/google-sheets/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/sanjay3290/ai-skills/google-sheets/",
+      "source_folder_url": "https://github.com/sanjay3290/ai-skills/tree/main/skills/google-sheets",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/sanjay3290/ai-skills/tree/main/skills/google-sheets",
+        "publisher_setup_url": "https://github.com/sanjay3290/ai-skills/blob/main/skills/google-sheets/SKILL.md"
+      }
+    },
+    {
+      "id": "sanjay3290/ai-skills/google-slides",
+      "name": "google-slides",
+      "description": "Read and write Google Slides presentations - get text, find presentations, create presentations, add slides, replace text, and manage slide content. Use when user asks to: read a presentation, create slides, find slides, add a slide, replace text in a presentation, or manage presentation content. Lightweight integration with standalone OAuth authentication supporting full read/write access.",
+      "category": "documents-office",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/sanjay3290/ai-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "281d88df199357e3091a3be5c743a0fca9a9ae1b",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-10",
+        "skill_md_url": "https://github.com/sanjay3290/ai-skills/blob/281d88df199357e3091a3be5c743a0fca9a9ae1b/skills/google-slides/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/sanjay3290/ai-skills/google-slides/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/sanjay3290/ai-skills/google-slides/",
+      "source_folder_url": "https://github.com/sanjay3290/ai-skills/tree/main/skills/google-slides",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/sanjay3290/ai-skills/tree/main/skills/google-slides",
+        "publisher_setup_url": "https://github.com/sanjay3290/ai-skills/blob/main/skills/google-slides/SKILL.md"
+      }
+    },
+    {
+      "id": "sanjay3290/ai-skills/grok-build",
+      "name": "grok-build",
+      "description": "Orchestrate coding work by delegating well-specified implementation tasks to xAI's Grok Build CLI (grok) running headlessly, while the coding assistant plans, writes the task specs, reviews every diff, and owns the result. Use when user says: 'use grok', 'grok build', 'delegate to grok', 'have grok implement', 'have grok execute', 'have grok build', 'send to grok', 'execute this plan with grok'. Executes a Markdown implementation plan task-by-task, or ad-hoc tasks with an inline spec.",
+      "category": "ai-agents-llm",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/sanjay3290/ai-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "281d88df199357e3091a3be5c743a0fca9a9ae1b",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-10",
+        "skill_md_url": "https://github.com/sanjay3290/ai-skills/blob/281d88df199357e3091a3be5c743a0fca9a9ae1b/skills/grok-build/SKILL.md"
+      },
+      "quality": {
+        "score": 87,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/sanjay3290/ai-skills/grok-build/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/sanjay3290/ai-skills/grok-build/",
+      "source_folder_url": "https://github.com/sanjay3290/ai-skills/tree/main/skills/grok-build",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/sanjay3290/ai-skills/tree/main/skills/grok-build",
+        "publisher_setup_url": "https://github.com/sanjay3290/ai-skills/blob/main/skills/grok-build/SKILL.md"
+      }
+    },
+    {
+      "id": "sanjay3290/ai-skills/manus",
+      "name": "manus",
+      "description": "Delegate complex, long-running tasks to Manus AI agent for autonomous execution. Use when user says 'use manus', 'delegate to manus', 'send to manus', 'have manus do', 'ask manus', 'check manus sessions', or when tasks require deep web research, market analysis, product comparisons, stock analysis, competitive research, document generation, data analysis, or multi-step workflows that benefit from autonomous agent execution with parallel processing.",
+      "category": "ai-agents-llm",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/sanjay3290/ai-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "281d88df199357e3091a3be5c743a0fca9a9ae1b",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-10",
+        "skill_md_url": "https://github.com/sanjay3290/ai-skills/blob/281d88df199357e3091a3be5c743a0fca9a9ae1b/skills/manus/SKILL.md"
+      },
+      "quality": {
+        "score": 87,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/sanjay3290/ai-skills/manus/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/sanjay3290/ai-skills/manus/",
+      "source_folder_url": "https://github.com/sanjay3290/ai-skills/tree/main/skills/manus",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/sanjay3290/ai-skills/tree/main/skills/manus",
+        "publisher_setup_url": "https://github.com/sanjay3290/ai-skills/blob/main/skills/manus/SKILL.md"
+      }
+    },
+    {
+      "id": "sanjay3290/ai-skills/mssql",
+      "name": "mssql",
+      "description": "Execute read-only SQL queries against multiple Microsoft SQL Server databases. Use when: (1) querying MSSQL/SQL Server databases, (2) exploring database schemas/tables, (3) running SELECT queries for data analysis, (4) checking database contents. Supports multiple database connections with descriptions for intelligent auto-selection. Blocks all write operations (INSERT, UPDATE, DELETE, DROP, etc.) for safety.",
+      "category": "data-databases",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/sanjay3290/ai-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "281d88df199357e3091a3be5c743a0fca9a9ae1b",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-10",
+        "skill_md_url": "https://github.com/sanjay3290/ai-skills/blob/281d88df199357e3091a3be5c743a0fca9a9ae1b/skills/mssql/SKILL.md"
+      },
+      "quality": {
+        "score": 83,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/sanjay3290/ai-skills/mssql/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/sanjay3290/ai-skills/mssql/",
+      "source_folder_url": "https://github.com/sanjay3290/ai-skills/tree/main/skills/mssql",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/sanjay3290/ai-skills/tree/main/skills/mssql",
+        "publisher_setup_url": "https://github.com/sanjay3290/ai-skills/blob/main/skills/mssql/SKILL.md"
+      }
+    },
+    {
+      "id": "sanjay3290/ai-skills/mysql",
+      "name": "mysql",
+      "description": "Execute read-only SQL queries against multiple MySQL databases. Use when: (1) querying MySQL databases, (2) exploring database schemas/tables, (3) running SELECT queries for data analysis, (4) checking database contents. Supports multiple database connections with descriptions for intelligent auto-selection. Blocks all write operations (INSERT, UPDATE, DELETE, DROP, etc.) for safety.",
+      "category": "data-databases",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/sanjay3290/ai-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "281d88df199357e3091a3be5c743a0fca9a9ae1b",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-10",
+        "skill_md_url": "https://github.com/sanjay3290/ai-skills/blob/281d88df199357e3091a3be5c743a0fca9a9ae1b/skills/mysql/SKILL.md"
+      },
+      "quality": {
+        "score": 83,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/sanjay3290/ai-skills/mysql/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/sanjay3290/ai-skills/mysql/",
+      "source_folder_url": "https://github.com/sanjay3290/ai-skills/tree/main/skills/mysql",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/sanjay3290/ai-skills/tree/main/skills/mysql",
+        "publisher_setup_url": "https://github.com/sanjay3290/ai-skills/blob/main/skills/mysql/SKILL.md"
+      }
+    },
+    {
+      "id": "sanjay3290/ai-skills/notebooklm",
+      "name": "notebooklm",
+      "description": "Query and manage Google NotebookLM notebooks with persistent profile auth, source sync, batch/multi queries, and structured exports. Use when user asks to query NotebookLM, 'ask my notebook', shares NotebookLM notebook URLs, wants to list/create notebooks, manage sources, do bulk folder sync, dedupe, or audit exports.",
+      "category": "productivity-knowledge",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/sanjay3290/ai-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "281d88df199357e3091a3be5c743a0fca9a9ae1b",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-10",
+        "skill_md_url": "https://github.com/sanjay3290/ai-skills/blob/281d88df199357e3091a3be5c743a0fca9a9ae1b/skills/notebooklm/SKILL.md"
+      },
+      "quality": {
+        "score": 83,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/sanjay3290/ai-skills/notebooklm/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/sanjay3290/ai-skills/notebooklm/",
+      "source_folder_url": "https://github.com/sanjay3290/ai-skills/tree/main/skills/notebooklm",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/sanjay3290/ai-skills/tree/main/skills/notebooklm",
+        "publisher_setup_url": "https://github.com/sanjay3290/ai-skills/blob/main/skills/notebooklm/SKILL.md"
+      }
+    },
+    {
+      "id": "sanjay3290/ai-skills/postgres",
+      "name": "postgres",
+      "description": "Execute read-only SQL queries against multiple PostgreSQL databases. Use when: (1) querying PostgreSQL databases, (2) exploring database schemas/tables, (3) running SELECT queries for data analysis, (4) checking database contents. Supports multiple database connections with descriptions for intelligent auto-selection. Blocks all write operations (INSERT, UPDATE, DELETE, DROP, etc.) for safety.",
+      "category": "data-databases",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/sanjay3290/ai-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "281d88df199357e3091a3be5c743a0fca9a9ae1b",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-10",
+        "skill_md_url": "https://github.com/sanjay3290/ai-skills/blob/281d88df199357e3091a3be5c743a0fca9a9ae1b/skills/postgres/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/sanjay3290/ai-skills/postgres/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/sanjay3290/ai-skills/postgres/",
+      "source_folder_url": "https://github.com/sanjay3290/ai-skills/tree/main/skills/postgres",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/sanjay3290/ai-skills/tree/main/skills/postgres",
+        "publisher_setup_url": "https://github.com/sanjay3290/ai-skills/blob/main/skills/postgres/SKILL.md"
+      }
+    },
+    {
+      "id": "sanjay3290/ai-skills/deep-research",
+      "name": "deep-research",
+      "description": "Execute autonomous multi-step research using Google Gemini Deep Research Agent. Use for: market analysis, competitive landscaping, literature reviews, technical research, due diligence. Takes 2-10 minutes but produces detailed, cited reports. Costs $2-5 per task.",
+      "category": "productivity-knowledge",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/sanjay3290/ai-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "281d88df199357e3091a3be5c743a0fca9a9ae1b",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-10",
+        "skill_md_url": "https://github.com/sanjay3290/ai-skills/blob/281d88df199357e3091a3be5c743a0fca9a9ae1b/skills/deep-research/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/sanjay3290/ai-skills/deep-research/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/sanjay3290/ai-skills/tree/main/skills/deep-research",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/sanjay3290/ai-skills/tree/main/skills/deep-research",
+        "publisher_setup_url": "https://github.com/sanjay3290/ai-skills/blob/main/skills/deep-research/SKILL.md"
+      }
+    },
+    {
+      "id": "sanjay3290/ai-skills/elevenlabs",
+      "name": "elevenlabs",
+      "description": "Convert documents and text to audio using ElevenLabs text-to-speech. Use this skill when the user wants to create a podcast, narrate a document, read aloud text, generate audio from a file, or convert text to speech.",
+      "category": "media-creative",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/sanjay3290/ai-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "281d88df199357e3091a3be5c743a0fca9a9ae1b",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-10",
+        "skill_md_url": "https://github.com/sanjay3290/ai-skills/blob/281d88df199357e3091a3be5c743a0fca9a9ae1b/skills/elevenlabs/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/sanjay3290/ai-skills/elevenlabs/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/sanjay3290/ai-skills/tree/main/skills/elevenlabs",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/sanjay3290/ai-skills/tree/main/skills/elevenlabs",
+        "publisher_setup_url": "https://github.com/sanjay3290/ai-skills/blob/main/skills/elevenlabs/SKILL.md"
+      }
+    },
+    {
+      "id": "sanjay3290/ai-skills/gmail",
+      "name": "gmail",
+      "description": "Interact with Gmail - search emails, read messages, send emails, create drafts, and manage labels. Use when user asks to: search email, read email, send email, create email draft, mark as read, archive email, star email, or manage Gmail labels. Lightweight alternative to full Google Workspace MCP server with standalone OAuth authentication.",
+      "category": "productivity-knowledge",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/sanjay3290/ai-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "281d88df199357e3091a3be5c743a0fca9a9ae1b",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-10",
+        "skill_md_url": "https://github.com/sanjay3290/ai-skills/blob/281d88df199357e3091a3be5c743a0fca9a9ae1b/skills/gmail/SKILL.md"
+      },
+      "quality": {
+        "score": 83,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/sanjay3290/ai-skills/gmail/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/sanjay3290/ai-skills/tree/main/skills/gmail",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/sanjay3290/ai-skills/tree/main/skills/gmail",
+        "publisher_setup_url": "https://github.com/sanjay3290/ai-skills/blob/main/skills/gmail/SKILL.md"
+      }
+    },
+    {
+      "id": "sanjay3290/ai-skills/google-chat",
+      "name": "google-chat",
+      "description": "Interact with Google Chat - send, read, edit, delete and react to messages, share images and files, reply in threads, and manage spaces and DMs. Use when user asks to: send a message on Google Chat, read chat messages, list chat spaces, find a chat room, send a DM, share a screenshot or file, edit or delete something already sent, or create a new space. Lightweight alternative to full Google Workspace MCP server with standalone OAuth authentication.",
+      "category": "productivity-knowledge",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/sanjay3290/ai-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "281d88df199357e3091a3be5c743a0fca9a9ae1b",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-10",
+        "skill_md_url": "https://github.com/sanjay3290/ai-skills/blob/281d88df199357e3091a3be5c743a0fca9a9ae1b/skills/google-chat/SKILL.md"
+      },
+      "quality": {
+        "score": 83,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/sanjay3290/ai-skills/google-chat/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/sanjay3290/ai-skills/tree/main/skills/google-chat",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/sanjay3290/ai-skills/tree/main/skills/google-chat",
+        "publisher_setup_url": "https://github.com/sanjay3290/ai-skills/blob/main/skills/google-chat/SKILL.md"
+      }
+    },
+    {
+      "id": "sanjay3290/ai-skills/google-docs",
+      "name": "google-docs",
+      "description": "Interact with Google Docs - create documents, search by title, read content, and edit text. Use when user asks to: create a Google Doc, find a document, read doc content, add text to a doc, or replace text in a document. Lightweight alternative to full Google Workspace MCP server with standalone OAuth authentication.",
+      "category": "documents-office",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/sanjay3290/ai-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "281d88df199357e3091a3be5c743a0fca9a9ae1b",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-10",
+        "skill_md_url": "https://github.com/sanjay3290/ai-skills/blob/281d88df199357e3091a3be5c743a0fca9a9ae1b/skills/google-docs/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/sanjay3290/ai-skills/google-docs/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/sanjay3290/ai-skills/tree/main/skills/google-docs",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/sanjay3290/ai-skills/tree/main/skills/google-docs",
+        "publisher_setup_url": "https://github.com/sanjay3290/ai-skills/blob/main/skills/google-docs/SKILL.md"
+      }
+    },
+    {
+      "id": "sanjay3290/ai-skills/google-drive",
+      "name": "google-drive",
+      "description": "Interact with Google Drive - search files, find folders, list contents, download files, upload files, create folders, move, copy, rename, and trash files. Use when user asks to: search Google Drive, find a file/folder, list Drive contents, download or upload files, create folders, move files, or organize Drive content. Lightweight integration with standalone OAuth authentication supporting full read/write access.",
+      "category": "productivity-knowledge",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/sanjay3290/ai-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "281d88df199357e3091a3be5c743a0fca9a9ae1b",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-10",
+        "skill_md_url": "https://github.com/sanjay3290/ai-skills/blob/281d88df199357e3091a3be5c743a0fca9a9ae1b/skills/google-drive/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/sanjay3290/ai-skills/google-drive/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/sanjay3290/ai-skills/tree/main/skills/google-drive",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/sanjay3290/ai-skills/tree/main/skills/google-drive",
+        "publisher_setup_url": "https://github.com/sanjay3290/ai-skills/blob/main/skills/google-drive/SKILL.md"
+      }
+    },
+    {
+      "id": "sanjay3290/ai-skills/google-tts",
+      "name": "google-tts",
+      "description": "Convert documents and text to audio using Google Cloud Text-to-Speech. Use this skill when the user wants to: narrate a document, read aloud text, generate audio from a file, convert text to speech, create a recording of documentation or analysis, create a podcast from a document, or use Google TTS/text-to-speech. Trigger phrases: \"read this aloud\", \"narrate this\", \"create a recording\", \"text to speech\", \"TTS\", \"convert to audio\", \"audio from document\", \"listen to this\", \"generate audio\", \"google tts\", \"create a podcast\".",
+      "category": "media-creative",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/sanjay3290/ai-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "281d88df199357e3091a3be5c743a0fca9a9ae1b",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-10",
+        "skill_md_url": "https://github.com/sanjay3290/ai-skills/blob/281d88df199357e3091a3be5c743a0fca9a9ae1b/skills/google-tts/SKILL.md"
+      },
+      "quality": {
+        "score": 83,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/sanjay3290/ai-skills/google-tts/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/sanjay3290/ai-skills/tree/main/skills/google-tts",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/sanjay3290/ai-skills/tree/main/skills/google-tts",
+        "publisher_setup_url": "https://github.com/sanjay3290/ai-skills/blob/main/skills/google-tts/SKILL.md"
+      }
+    },
+    {
+      "id": "sanjay3290/ai-skills/imagen",
+      "name": "imagen",
+      "description": "Generate images using Google Gemini's image generation capabilities. Use this skill when the user needs to create, generate, or produce images for any purpose including UI mockups, icons, illustrations, diagrams, concept art, placeholder images, or visual representations.",
+      "category": "media-creative",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/sanjay3290/ai-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "281d88df199357e3091a3be5c743a0fca9a9ae1b",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-10",
+        "skill_md_url": "https://github.com/sanjay3290/ai-skills/blob/281d88df199357e3091a3be5c743a0fca9a9ae1b/skills/imagen/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/sanjay3290/ai-skills/imagen/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/sanjay3290/ai-skills/tree/main/skills/imagen",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/sanjay3290/ai-skills/tree/main/skills/imagen",
+        "publisher_setup_url": "https://github.com/sanjay3290/ai-skills/blob/main/skills/imagen/SKILL.md"
+      }
+    },
+    {
+      "id": "sanjay3290/ai-skills/jules",
+      "name": "jules",
+      "description": "Delegate coding tasks to Google Jules AI agent for asynchronous execution. Use when user says: 'have Jules fix', 'delegate to Jules', 'send to Jules', 'ask Jules to', 'check Jules sessions', 'pull Jules results', 'jules add tests', 'jules add docs', 'jules review pr'. Handles: bug fixes, documentation, features, tests, refactoring, code reviews. Works with GitHub repos, creates PRs.",
+      "category": "ai-agents-llm",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/sanjay3290/ai-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "281d88df199357e3091a3be5c743a0fca9a9ae1b",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-10",
+        "skill_md_url": "https://github.com/sanjay3290/ai-skills/blob/281d88df199357e3091a3be5c743a0fca9a9ae1b/skills/jules/SKILL.md"
+      },
+      "quality": {
+        "score": 84,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/sanjay3290/ai-skills/jules/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/sanjay3290/ai-skills/tree/main/skills/jules",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/sanjay3290/ai-skills/tree/main/skills/jules",
+        "publisher_setup_url": "https://github.com/sanjay3290/ai-skills/blob/main/skills/jules/SKILL.md"
+      }
+    },
+    {
+      "id": "sanjay3290/ai-skills/outline",
+      "name": "outline",
+      "description": "Search, read, and manage Outline wiki documents. Use when: (1) searching wiki for documentation, (2) reading wiki pages or articles, (3) listing wiki collections or documents, (4) creating or updating wiki content, (5) exporting documents as markdown. Works with any Outline wiki instance (self-hosted or cloud).",
+      "category": "productivity-knowledge",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/sanjay3290/ai-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "281d88df199357e3091a3be5c743a0fca9a9ae1b",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-10",
+        "skill_md_url": "https://github.com/sanjay3290/ai-skills/blob/281d88df199357e3091a3be5c743a0fca9a9ae1b/skills/outline/SKILL.md"
+      },
+      "quality": {
+        "score": 83,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/sanjay3290/ai-skills/outline/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/sanjay3290/ai-skills/tree/main/skills/outline",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/sanjay3290/ai-skills/tree/main/skills/outline",
+        "publisher_setup_url": "https://github.com/sanjay3290/ai-skills/blob/main/skills/outline/SKILL.md"
+      }
+    }
+  ]
+}

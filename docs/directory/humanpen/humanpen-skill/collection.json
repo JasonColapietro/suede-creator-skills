@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "repository": "humanpen/humanpen-skill",
+  "listing_url": "https://skills.suedeai.ai/directory/humanpen/humanpen-skill/",
+  "snapshot": {
+    "date": "2026-10-22",
+    "id": "740bfd7230f74b149870dffa9c645b2b",
+    "dataset_sha256": "7af631c54b44d36718ed15f6a3fdbf0445b6a09f638bc05ce3093bca01ef0d02"
+  },
+  "listed_skill_count": 1,
+  "scope": "Skills listed by the directory; this is not a complete inventory of every file in the repository.",
+  "security_scan_status": "not_scanned",
+  "skills": [
+    {
+      "id": "humanpen/humanpen-skill/humanpen",
+      "name": "humanpen",
+      "description": "Humanize document files with HumanPen to lower their AI-detection score. Rewrite a whole .docx/.pptx, or only the passages a Turnitin/iThenticate AI report flagged, while keeping every fact, number, citation, table and formula intact. Also converts citations to one style (APA, MLA, IEEE, GB/T 7714), condenses a document to a word budget, and translates while preserving layout. Use when the user points at a document FILE (.docx/.pptx; translate also takes .pdf/.xlsx/.epub/.html/.txt) or such an AI report and wants any of these; not for text pasted into chat.",
+      "category": "writing-content",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/humanpen/humanpen-skill/blob/master/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "master",
+        "revision": "fde2e3af5fbffc5aefa3204202e93b0e5cc26ecf",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-08-12",
+        "skill_md_url": "https://github.com/humanpen/humanpen-skill/blob/fde2e3af5fbffc5aefa3204202e93b0e5cc26ecf/SKILL.md"
+      },
+      "quality": {
+        "score": 75,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 6
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": false,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/humanpen/humanpen-skill/humanpen/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/humanpen/humanpen-skill",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/humanpen/humanpen-skill/tree/master",
+        "publisher_setup_url": "https://github.com/humanpen/humanpen-skill/blob/master/SKILL.md"
+      }
+    }
+  ]
+}

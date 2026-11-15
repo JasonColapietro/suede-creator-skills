@@ -1,0 +1,1170 @@
+{
+  "schema_version": 1,
+  "repository": "firebase/skills",
+  "listing_url": "https://skills.suedeai.ai/directory/firebase/skills/",
+  "snapshot": {
+    "date": "2026-10-22",
+    "id": "740bfd7230f74b149870dffa9c645b2b",
+    "dataset_sha256": "7af631c54b44d36718ed15f6a3fdbf0445b6a09f638bc05ce3093bca01ef0d02"
+  },
+  "listed_skill_count": 11,
+  "scope": "Skills listed by the directory; this is not a complete inventory of every file in the repository.",
+  "security_scan_status": "not_scanned",
+  "skills": [
+    {
+      "id": "firebase/skills/firebase-ai-logic-basics",
+      "name": "firebase-ai-logic-basics",
+      "description": "Integrates Firebase AI Logic (formerly Vertex AI for Firebase) into mobile and web apps (Android, iOS, Web, and Flutter) to call Gemini models from client code. Use when provisioning or initializing Firebase AI Logic, or adding Gemini features to an app: text generation, multimodal input, chat, streaming, structured output, hybrid on-device inference, App Check protection, or switching models with Remote Config.",
+      "category": "ai-agents-llm",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/firebase/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "306cc1844c47839bd4f2c7dba7cc3c394e4f3e0b",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/firebase/skills/blob/306cc1844c47839bd4f2c7dba7cc3c394e4f3e0b/skills/firebase-ai-logic-basics/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/firebase/skills/firebase-ai-logic-basics/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/firebase/skills/firebase-ai-logic-basics/",
+      "source_folder_url": "https://github.com/firebase/skills/tree/main/skills/firebase-ai-logic-basics",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/firebase/skills/tree/main/skills/firebase-ai-logic-basics",
+        "publisher_setup_url": "https://github.com/firebase/skills/blob/main/skills/firebase-ai-logic-basics/SKILL.md"
+      }
+    },
+    {
+      "id": "firebase/skills/firebase-app-hosting-basics",
+      "name": "firebase-app-hosting-basics",
+      "description": "Deploys and manages full-stack web applications (Next.js, Angular) with Server-Side Rendering (SSR) using Firebase App Hosting. Use when deploying Next.js/Angular apps, configuring apphosting.yaml or firebase.json apphosting blocks, managing secrets, setting up GitHub CI/CD, or configuring Blaze billing requirements. Don't use for classic static web hosting, Auth, Firestore, Crashlytics, or Xcode.",
+      "category": "devops-cloud",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/firebase/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "306cc1844c47839bd4f2c7dba7cc3c394e4f3e0b",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/firebase/skills/blob/306cc1844c47839bd4f2c7dba7cc3c394e4f3e0b/skills/firebase-app-hosting-basics/SKILL.md"
+      },
+      "quality": {
+        "score": 81,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/firebase/skills/firebase-app-hosting-basics/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/firebase/skills/firebase-app-hosting-basics/",
+      "source_folder_url": "https://github.com/firebase/skills/tree/main/skills/firebase-app-hosting-basics",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/firebase/skills/tree/main/skills/firebase-app-hosting-basics",
+        "publisher_setup_url": "https://github.com/firebase/skills/blob/main/skills/firebase-app-hosting-basics/SKILL.md"
+      }
+    },
+    {
+      "id": "firebase/skills/firebase-auth-basics",
+      "name": "firebase-auth-basics",
+      "description": "Guide for setting up and using Firebase Authentication. Use this skill when the user's app requires user sign-in, user management, or secure data access using auth rules.",
+      "category": "developer-tools",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/firebase/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "306cc1844c47839bd4f2c7dba7cc3c394e4f3e0b",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/firebase/skills/blob/306cc1844c47839bd4f2c7dba7cc3c394e4f3e0b/skills/firebase-auth-basics/SKILL.md"
+      },
+      "quality": {
+        "score": 82,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/firebase/skills/firebase-auth-basics/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/firebase/skills/firebase-auth-basics/",
+      "source_folder_url": "https://github.com/firebase/skills/tree/main/skills/firebase-auth-basics",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/firebase/skills/tree/main/skills/firebase-auth-basics",
+        "publisher_setup_url": "https://github.com/firebase/skills/blob/main/skills/firebase-auth-basics/SKILL.md"
+      }
+    },
+    {
+      "id": "firebase/skills/firebase-crashlytics",
+      "name": "firebase-crashlytics",
+      "description": "Comprehensive guide for Firebase Crashlytics, including provisioning and SDK usage. Use this skill when the user needs help setting up Crashlytics, adding crash reporting, or using the Crashlytics SDK in their application.",
+      "category": "devops-cloud",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/firebase/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "306cc1844c47839bd4f2c7dba7cc3c394e4f3e0b",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/firebase/skills/blob/306cc1844c47839bd4f2c7dba7cc3c394e4f3e0b/skills/firebase-crashlytics/SKILL.md"
+      },
+      "quality": {
+        "score": 76,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/firebase/skills/firebase-crashlytics/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/firebase/skills/firebase-crashlytics/",
+      "source_folder_url": "https://github.com/firebase/skills/tree/main/skills/firebase-crashlytics",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/firebase/skills/tree/main/skills/firebase-crashlytics",
+        "publisher_setup_url": "https://github.com/firebase/skills/blob/main/skills/firebase-crashlytics/SKILL.md"
+      }
+    },
+    {
+      "id": "firebase/skills/firebase-firestore",
+      "name": "firebase-firestore",
+      "description": "Sets up, manages, queries, and configures Cloud Firestore databases (Standard/Enterprise edition), including data modeling, security rules, indexes, and SDK integrations (Web, Python, iOS, Android, Flutter). Use when creating/listing Firestore databases, defining data models/indexes, writing SDK queries, or integrating Firestore SDKs. For authoring or modifying Firestore Security Rules (firestore.rules), delegate to the firestore-rules-author subagent if subagent delegation is available, or use firestore-rules-creation otherwise. Don't use for Firebase Hosting, Data Connect, Auth, Storage/GCS, Crashlytics, Functions, or BigQuery.",
+      "category": "data-databases",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/firebase/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "306cc1844c47839bd4f2c7dba7cc3c394e4f3e0b",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/firebase/skills/blob/306cc1844c47839bd4f2c7dba7cc3c394e4f3e0b/skills/firebase-firestore/SKILL.md"
+      },
+      "quality": {
+        "score": 81,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/firebase/skills/firebase-firestore/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/firebase/skills/firebase-firestore/",
+      "source_folder_url": "https://github.com/firebase/skills/tree/main/skills/firebase-firestore",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/firebase/skills/tree/main/skills/firebase-firestore",
+        "publisher_setup_url": "https://github.com/firebase/skills/blob/main/skills/firebase-firestore/SKILL.md"
+      }
+    },
+    {
+      "id": "firebase/skills/firebase-hosting-basics",
+      "name": "firebase-hosting-basics",
+      "description": "Deploys and configures classic Firebase Hosting for static websites, single-page apps (SPAs), and microservices. Use when deploying static sites/SPAs, setting up custom domains, configuring firebase.json hosting settings (redirects, rewrites, headers, multi-site), or managing preview channels. Don't use for Firebase App Hosting (Next.js/SSR), Auth, Firestore queries/rules, Data Connect, or Crashlytics.",
+      "category": "devops-cloud",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/firebase/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "306cc1844c47839bd4f2c7dba7cc3c394e4f3e0b",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/firebase/skills/blob/306cc1844c47839bd4f2c7dba7cc3c394e4f3e0b/skills/firebase-hosting-basics/SKILL.md"
+      },
+      "quality": {
+        "score": 81,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/firebase/skills/firebase-hosting-basics/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/firebase/skills/firebase-hosting-basics/",
+      "source_folder_url": "https://github.com/firebase/skills/tree/main/skills/firebase-hosting-basics",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/firebase/skills/tree/main/skills/firebase-hosting-basics",
+        "publisher_setup_url": "https://github.com/firebase/skills/blob/main/skills/firebase-hosting-basics/SKILL.md"
+      }
+    },
+    {
+      "id": "firebase/skills/firebase-remote-config-basics",
+      "name": "firebase-remote-config-basics",
+      "description": "Manages Firebase Remote Config templates, feature flags, loading strategies, and SDKs (Android, iOS). Use when downloading/deploying remoteconfig JSON templates, managing version history/feature flags, setting in-app defaults, fetchAndActivate(), real-time listeners, or SDK setup. Don't use for Firebase Hosting, Auth, Firestore, Data Connect, Crashlytics, or App Hosting.",
+      "category": "developer-tools",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/firebase/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "306cc1844c47839bd4f2c7dba7cc3c394e4f3e0b",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/firebase/skills/blob/306cc1844c47839bd4f2c7dba7cc3c394e4f3e0b/skills/firebase-remote-config-basics/SKILL.md"
+      },
+      "quality": {
+        "score": 86,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/firebase/skills/firebase-remote-config-basics/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/firebase/skills/firebase-remote-config-basics/",
+      "source_folder_url": "https://github.com/firebase/skills/tree/main/skills/firebase-remote-config-basics",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/firebase/skills/tree/main/skills/firebase-remote-config-basics",
+        "publisher_setup_url": "https://github.com/firebase/skills/blob/main/skills/firebase-remote-config-basics/SKILL.md"
+      }
+    },
+    {
+      "id": "firebase/skills/firebase-security-rules-auditor",
+      "name": "firebase-security-rules-auditor",
+      "description": "Audits Firebase (Firestore, Cloud Storage) security rules for vulnerabilities, privilege escalation, role bypasses, create vs update inconsistencies, resource exhaustion, type safety, size limits, and hasOnly ownership checks. Use when auditing/reviewing rules, running red-team rule assessments, or scoring against auditor checklists. Don't use for Firebase CLI (login, deploy), Auth, Crashlytics, Remote Config, or database queries.",
+      "category": "security",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/firebase/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "306cc1844c47839bd4f2c7dba7cc3c394e4f3e0b",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/firebase/skills/blob/306cc1844c47839bd4f2c7dba7cc3c394e4f3e0b/skills/firebase-security-rules-auditor/SKILL.md"
+      },
+      "quality": {
+        "score": 78,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/firebase/skills/firebase-security-rules-auditor/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/firebase/skills/firebase-security-rules-auditor/",
+      "source_folder_url": "https://github.com/firebase/skills/tree/main/skills/firebase-security-rules-auditor",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/firebase/skills/tree/main/skills/firebase-security-rules-auditor",
+        "publisher_setup_url": "https://github.com/firebase/skills/blob/main/skills/firebase-security-rules-auditor/SKILL.md"
+      }
+    },
+    {
+      "id": "firebase/skills/xcode-project-setup",
+      "name": "xcode-project-setup",
+      "description": "Safely modifies Xcode projects (.pbxproj) to add Swift Packages and link files. Use this skill whenever an iOS project needs dependencies installed (e.g. Firebase, Alamofire).",
+      "category": "developer-tools",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/firebase/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "306cc1844c47839bd4f2c7dba7cc3c394e4f3e0b",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/firebase/skills/blob/306cc1844c47839bd4f2c7dba7cc3c394e4f3e0b/skills/xcode-project-setup/SKILL.md"
+      },
+      "quality": {
+        "score": 81,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/firebase/skills/xcode-project-setup/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/firebase/skills/xcode-project-setup/",
+      "source_folder_url": "https://github.com/firebase/skills/tree/main/skills/xcode-project-setup",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/firebase/skills/tree/main/skills/xcode-project-setup",
+        "publisher_setup_url": "https://github.com/firebase/skills/blob/main/skills/xcode-project-setup/SKILL.md"
+      }
+    },
+    {
+      "id": "firebase/skills/extension-to-functions-codebase",
+      "name": "extension-to-functions-codebase",
+      "description": "Skill for converting an installed Firebase Extension (or extension source) into a standalone Cloud Functions for Firebase codebase or publishable npm package, including V1 to V2 trigger upgrades, lifecycle hooks, and declarative security",
+      "category": "developer-tools",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/firebase/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "306cc1844c47839bd4f2c7dba7cc3c394e4f3e0b",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/firebase/skills/blob/306cc1844c47839bd4f2c7dba7cc3c394e4f3e0b/skills/extension-to-functions-codebase/SKILL.md"
+      },
+      "quality": {
+        "score": 69,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/firebase/skills/extension-to-functions-codebase/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/firebase/skills/tree/main/skills/extension-to-functions-codebase",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/firebase/skills/tree/main/skills/extension-to-functions-codebase",
+        "publisher_setup_url": "https://github.com/firebase/skills/blob/main/skills/extension-to-functions-codebase/SKILL.md"
+      }
+    },
+    {
+      "id": "firebase/skills/firebase-data-connect",
+      "name": "firebase-data-connect",
+      "description": "Builds and deploys Firebase SQL Connect (aka Firebase Data Connect) backends with PostgreSQL securely. Use when designing schemas with tables and relations, writing authorized queries and mutations, configuring real-time data updates, or generating type-safe SDKs. Use when you need a relational database with Firebase, or when the user mentions SQL Connect or Data Connect.",
+      "category": "data-databases",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/firebase/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "306cc1844c47839bd4f2c7dba7cc3c394e4f3e0b",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-13",
+        "skill_md_url": "https://github.com/firebase/skills/blob/306cc1844c47839bd4f2c7dba7cc3c394e4f3e0b/skills/firebase-data-connect-basics/SKILL.md"
+      },
+      "quality": {
+        "score": 72,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": false,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/firebase/skills/firebase-data-connect/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/firebase/skills/tree/main/skills/firebase-data-connect-basics",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/firebase/skills/tree/main/skills/firebase-data-connect-basics",
+        "publisher_setup_url": "https://github.com/firebase/skills/blob/main/skills/firebase-data-connect-basics/SKILL.md"
+      }
+    }
+  ]
+}

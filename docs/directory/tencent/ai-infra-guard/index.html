@@ -30,7 +30,7 @@
         "name": "Tencent/AI-Infra-Guard Agent Skills (2) | Suede AI",
         "description": "2 agent skills from Tencent/AI-Infra-Guard, including aig-scanner, edgeone-clawscan. Install steps, Suede Skill Check grades and a README badge.",
         "url": "https://skills.suedeai.ai/directory/tencent/ai-infra-guard/",
-        "dateModified": "2026-11-14",
+        "dateModified": "2026-11-15",
         "isPartOf": {
           "@type": "CollectionPage",
           "@id": "https://skills.suedeai.ai/directory/#directory",
@@ -182,7 +182,7 @@
       <div class="eyebrow">Skill collection &middot; Tencent</div>
       <h1>Tencent/AI-Infra-Guard <span class="h1-sub">2 graded agent skills from Tencent</span></h1>
       <nav class="crumbs" aria-label="Breadcrumb"><a href="../../">Directory</a> <span class="crumb-sep" aria-hidden="true">/</span> <a href="../../security/">Security</a> <span class="crumb-sep" aria-hidden="true">/</span> <span aria-current="page">Tencent/AI-Infra-Guard</span></nav>
-      <p class="lead">2 skills from Tencent/AI-Infra-Guard are listed in the directory, in security. 1 skill has a full page with install steps and a pre-install summary.</p>
+      <p class="lead">Tencent/AI-Infra-Guard brings together 2 skills for security. Start with the task descriptions below, then compare the individual skill's score, source files and license.</p>
       <p><a class="button" href="https://github.com/Tencent/AI-Infra-Guard" target="_blank" rel="noopener">View Tencent/AI-Infra-Guard on GitHub</a></p>
       <section class="panel" aria-labelledby="facts-title">
         <h2 id="facts-title">At a glance</h2>
@@ -201,6 +201,111 @@
             </tbody>
           </table>
         </div>
+      </section>
+      <section class="panel" id="collection-overview" aria-labelledby="collection-overview-title">
+        <h2 id="collection-overview-title">What this collection offers</h2>
+        <p>2 listed skills; recorded scores 62–82/100. 1 full review with separate installation details. Scores describe the saved source snapshot, using the <a href="../../methodology/#score">Suede Skill Check</a>.</p>
+        <p>Coverage: <a href="../../security/">Security</a> (2).</p>
+        <p class="muted">Snapshot: <time datetime="2026-10-22">October 22, 2026</time>. The checks measure published files, documentation and maintenance signals. Security scan: not scanned; this is not a runtime test.</p>
+        <p><a href="#choose-skill">Choose a skill</a> · <a href="#collection-install">Install and verify</a> · <a href="#skills-title">All listed skills</a> · <a href="#collection-compare">Compare collections</a></p>
+        <p><a href="collection.json" download="AI-Infra-Guard-collection.json">Download the collection manifest</a>: complete task descriptions, scores, license information, source revisions and install routes for all 2 listed skills. Use it to compare options or hand your selection to an agent.</p>
+      </section>
+
+      <section class="panel" id="choose-skill" aria-labelledby="choose-skill-title">
+        <h2 id="choose-skill-title">Choose a skill for your task</h2>
+        <p>Every listed skill in this collection is explained below. Task descriptions come from the publisher; score explanations come from the saved report.</p>
+        <article class="collection-choice" id="choice-aig-scanner">
+          <h3>aig-scanner <span class="grade grade-b">82/100 · B</span></h3>
+          <p><b>Publisher's task description:</b> A.I.G Scanner — AI security scanning for infrastructure, AI tools / skills, AI Agents, and LLM jailbreak evaluation via Tencent Zhuque Lab AI-Infra-Guard. Uses built-in exec + Python script, no plugin required. Requires AIG_BASE_URL to be configured. Triggers on: scan AI service, AI vulnerability scan, scan AI infra, check CVE, audit AI service, scan MCP, scan skills, audit AI tools, scan agent, red-team LLM, jailbreak test, 扫描AI服务, 检查AI漏洞, 扫描AI工具, 检查MCP安全, 审计Agent, 越狱测试.</p>
+          <p>2,003 words in SKILL.md; 4 bundled files; includes a scripts folder. <a href="https://github.com/Tencent/AI-Infra-Guard/blob/8e715c3826878c9ae251b60e2fd4967a56048a71/skills/aig-scanner/SKILL.md" target="_blank" rel="noopener">Read the assessed SKILL.md</a>.</p>
+          <p><b>Score evidence:</b> Full points for structural checks, recent maintenance and instruction depth. Largest point gaps: boundary clause (0/4); curated-list citations (3/7).</p>
+          <details><summary>See all score components for aig-scanner</summary>
+        <div class="table-wrap">
+          <table class="facts">
+            <tbody>
+            <tr><th scope="row">Structural checks</th><td>56 of 56</td></tr>
+            <tr><th scope="row">Description length</th><td>5 of 5</td></tr>
+            <tr><th scope="row">Boundary clause</th><td>0 of 4</td></tr>
+            <tr><th scope="row">Example request</th><td>0 of 3</td></tr>
+            <tr><th scope="row">Instruction depth</th><td>7 of 7</td></tr>
+            <tr><th scope="row">Reference files</th><td>0 of 3</td></tr>
+            <tr><th scope="row">Bundled scripts</th><td>2 of 2</td></tr>
+            <tr><th scope="row">Recent maintenance</th><td>9 of 9</td></tr>
+            <tr><th scope="row">Curated-list citations</th><td>3 of 7</td></tr>
+            <tr><th scope="row">Tool permissions declared</th><td>0 of 2</td></tr>
+            <tr><th scope="row">Compatibility declared</th><td>0 of 2</td></tr>
+            </tbody>
+          </table>
+        </div>
+          </details>
+          <p><a href="https://github.com/Tencent/AI-Infra-Guard/blob/main/LICENSE" target="_blank" rel="noopener">License</a>: MIT governs reuse and modification of these files.</p>
+          <ul><li>Named environment variables: <code>AIG_API_KEY</code>.</li><li>Named external hosts: <code>api.openai.com</code>.</li></ul>
+        <div class="snippet">
+          <div class="snippet-head"><span>Select one skill: aig-scanner</span><button type="button" class="snippet-copy" data-copy-target="collection-install-0">Copy</button></div>
+          <pre><code id="collection-install-0">npx skills add https://github.com/Tencent/AI-Infra-Guard/tree/main/skills/aig-scanner</code></pre>
+        </div>
+          <p><a href="aig-scanner/report.json" download>Download aig-scanner score report</a> · <a href="aig-scanner/">Read the full aig-scanner review and install guide</a></p>
+        </article>
+        <article class="collection-choice" id="choice-edgeone-clawscan">
+          <h3>edgeone-clawscan <span class="grade grade-d">62/100 · D</span></h3>
+          <p><b>Publisher's task description:</b> The first security skill to install after setting up OpenClaw — powered by Tencent Zhuque Lab. Works like an antivirus for your AI environment: audits installed skills, scans skills before installation, and performs a full OpenClaw security health check to prevent data leaks and privacy risks. Backed by Tencent Zhuque Lab A.I.G (AI-Infra-Guard). Use when the user asks to start a security health check or security scan for the current OpenClaw environment, such as `开始安全体检`, `做一次安全体检`, `开始安全扫描`, `全面安全检查`, or `检查 OpenClaw 安全`; also use when the user asks to audit a specific skill before installation, review installed skills for supply chain risk, or investigate whether a skill is safe. Do not trigger for general OpenClaw usage, project debugging, environment setup, or normal development requests. Optional cloud mode: set AIG_CLOUD_LOOKUP=off for zero outbound HTTPS; when enabled, only skill_name, source label, and OpenClaw version are sent to A.I.G (never skill bodies, chats, or workspace files).</p>
+          <p>4,628 words in SKILL.md; 1 bundled file. <a href="https://github.com/Tencent/AI-Infra-Guard/blob/8e715c3826878c9ae251b60e2fd4967a56048a71/skills/edgeone-clawscan/SKILL.md" target="_blank" rel="noopener">Read the assessed SKILL.md</a>.</p>
+          <p><b>Score evidence:</b> Full points for recent maintenance. Largest point gaps: structural checks (48/56); instruction depth (1/7).</p>
+          <details><summary>See all score components for edgeone-clawscan</summary>
+        <div class="table-wrap">
+          <table class="facts">
+            <tbody>
+            <tr><th scope="row">Structural checks</th><td>48 of 56</td></tr>
+            <tr><th scope="row">Description length</th><td>1 of 5</td></tr>
+            <tr><th scope="row">Boundary clause</th><td>0 of 4</td></tr>
+            <tr><th scope="row">Example request</th><td>0 of 3</td></tr>
+            <tr><th scope="row">Instruction depth</th><td>1 of 7</td></tr>
+            <tr><th scope="row">Reference files</th><td>0 of 3</td></tr>
+            <tr><th scope="row">Bundled scripts</th><td>0 of 2</td></tr>
+            <tr><th scope="row">Recent maintenance</th><td>9 of 9</td></tr>
+            <tr><th scope="row">Curated-list citations</th><td>3 of 7</td></tr>
+            <tr><th scope="row">Tool permissions declared</th><td>0 of 2</td></tr>
+            <tr><th scope="row">Compatibility declared</th><td>0 of 2</td></tr>
+            </tbody>
+          </table>
+        </div>
+          </details>
+          <p><a href="https://github.com/Tencent/AI-Infra-Guard/blob/main/LICENSE" target="_blank" rel="noopener">License</a>: MIT governs reuse and modification of these files.</p>
+        <div class="snippet">
+          <div class="snippet-head"><span>Select one skill: edgeone-clawscan</span><button type="button" class="snippet-copy" data-copy-target="collection-install-1">Copy</button></div>
+          <pre><code id="collection-install-1">npx skills add https://github.com/Tencent/AI-Infra-Guard/tree/main/skills/edgeone-clawscan</code></pre>
+        </div>
+          <p><a href="edgeone-clawscan/report.json" download>Download edgeone-clawscan score report</a> · <a href="https://github.com/Tencent/AI-Infra-Guard/tree/main/skills/edgeone-clawscan" target="_blank" rel="noopener">Browse the skill's source folder</a></p>
+        </article>
+      </section>
+      <section class="panel" id="collection-install" aria-labelledby="collection-install-title">
+        <h2 id="collection-install-title">Install and verify your selection</h2>
+        <ol>
+          <li><b>Select one skill.</b> Use the folder-specific command beside its description to start with the workflow you need. Skills with publisher-specific license terms link to that publisher's setup route.</li>
+          <li><b>Read the setup requirements.</b> Check the source, license and any named tools or environment variables. Installing a SKILL.md folder supplies instructions to the agent; any external CLI, MCP server, account or service still needs its own setup.</li>
+          <li><b>Check the result.</b> Open the installed SKILL.md and confirm that its name matches your selection. In Claude Code use the project's <code>.claude/skills/</code> folder; in Codex use <code>.agents/skills/</code>. The skills CLI also supports other Agent Skills hosts.</li>
+          <li><b>Try one representative task.</b> Supply the input files, expected output and success criteria. Compare the result with those criteria before adding more skills or running the workflow on live work.</li>
+        </ol>
+        <p><a href="../../guides/install-agent-skills/">Step-by-step installation for Claude Code, Codex and Cursor</a> · <a href="../../trust/">Read the directory's security and source policy</a>.</p>
+      </section>
+      <section class="panel" aria-labelledby="skills-title">
+        <h2 id="skills-title">Skills in Tencent/AI-Infra-Guard</h2>
+        <p class="muted">Use the table to compare the full collection. Linked names open a detailed review when available; other names open the publisher's source folder.</p>
+
+        <div class="table-wrap">
+          <table class="skill-table" id="repo-skills" data-filter-group="repo-skills">
+            <thead><tr><th scope="col">Skill</th><th scope="col">Category</th><th scope="col">What it does</th></tr></thead>
+            <tbody>
+            <tr id="aig-scanner" data-id="tencent/ai-infra-guard/aig-scanner" data-name="aig-scanner" data-score="82" data-updated="2026-10-16" data-listed="2026-10-19" data-cited="2" data-lane="free-with-service" data-flags="full-page badge-eligible scripts api-key network" data-featured="1"><td class="name"><a href="aig-scanner/">aig-scanner</a> <span class="grade grade-b" title="Suede Skill Check: 82/100, grade B">82/100 · B</span></td><td class="meta"><a href="../../security/">Security</a></td><td class="desc">Runs AI security scans of infrastructure, AI tools and skills, and AI agents, and evaluates LLM jailbreak resistance with Tencent's AI-Infra-Guard.<p><a href="aig-scanner/#badge">Get badges</a></p><p class="row-report"><a href="aig-scanner/report.json" download="aig-scanner-suede-report-2026-10-22.json">Download report</a> · <a href="https://github.com/JasonColapietro/suede-creator-skills/issues/new?template=directory-listing.yml&amp;request=Recheck+my+updated+skill&amp;repository=https%3A%2F%2Fgithub.com%2FTencent%2FAI-Infra-Guard&amp;skill-scope=aig-scanner&amp;details=Listing%3A+https%3A%2F%2Fskills.suedeai.ai%2Fdirectory%2Ftencent%2Fai-infra-guard%2Faig-scanner%2F%0APrevious+report%3A+https%3A%2F%2Fskills.suedeai.ai%2Fdirectory%2Ftencent%2Fai-infra-guard%2Faig-scanner%2Freport.json%0ASnapshot%3A+2026-10-22+%28740bfd7230f74b149870dffa9c645b2b%29%3B+methodology%3A+graded-v2%0A%0AUpdated+source+commit+or+PR%3A%0AChanges+to+review%3A%0A" target="_blank" rel="noopener">Request a fresh review</a></p></td></tr>
+            <tr id="edgeone-clawscan" data-id="tencent/ai-infra-guard/edgeone-clawscan" data-name="edgeone-clawscan" data-score="62" data-updated="2026-10-16" data-listed="2026-10-19" data-cited="2" data-lane="free-open-source" data-flags="markdown-only" data-featured="0"><td class="name"><a href="https://github.com/Tencent/AI-Infra-Guard/tree/main/skills/edgeone-clawscan" target="_blank" rel="noopener">edgeone-clawscan</a> <span class="grade grade-d" title="Suede Skill Check: 62/100, grade D">62/100 · D</span></td><td class="meta"><a href="../../security/">Security</a></td><td class="desc">The first security skill to install after setting up OpenClaw — powered by Tencent Zhuque Lab. Works like an antivirus for your AI environment…<p><a href="../../submit/#improve">Improve this score</a></p><p class="row-report"><a href="edgeone-clawscan/report.json" download="edgeone-clawscan-suede-report-2026-10-22.json">Download report</a> · <a href="https://github.com/JasonColapietro/suede-creator-skills/issues/new?template=directory-listing.yml&amp;request=Recheck+my+updated+skill&amp;repository=https%3A%2F%2Fgithub.com%2FTencent%2FAI-Infra-Guard&amp;skill-scope=edgeone-clawscan&amp;details=Listing%3A+https%3A%2F%2Fskills.suedeai.ai%2Fdirectory%2Ftencent%2Fai-infra-guard%2F%23edgeone-clawscan%0APrevious+report%3A+https%3A%2F%2Fskills.suedeai.ai%2Fdirectory%2Ftencent%2Fai-infra-guard%2Fedgeone-clawscan%2Freport.json%0ASnapshot%3A+2026-10-22+%28740bfd7230f74b149870dffa9c645b2b%29%3B+methodology%3A+graded-v2%0A%0AUpdated+source+commit+or+PR%3A%0AChanges+to+review%3A%0A" target="_blank" rel="noopener">Request a fresh review</a></p></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section class="panel" id="collection-compare" aria-labelledby="collection-compare-title">
+        <h2 id="collection-compare-title">Compare before adding more skills</h2>
+        <p>For security, compare task fit first, then the score components, installation requirements and license. Two skills with the same score can earn their points in different ways; use their reports to see the difference.</p>
+        <p><a href="../../security/">Compare security skills across publishers</a> · <a href="../../compare/">Build a side-by-side comparison</a>.</p>
       </section>
       <section class="panel badge-panel" id="badge" aria-labelledby="badge-title">
         <h2 id="badge-title">Show the listing in your README</h2>
@@ -221,20 +326,6 @@
         <p>Skills scoring 80–99 can display a quality shield. While the feature offer is open, a verified badge can earn a featured placement.</p>
         <p><a class="button" href="../../submit/" data-cta="publisher-claim:b-feature">Request badge verification</a></p>
       </aside>
-      <section class="panel" aria-labelledby="skills-title">
-        <h2 id="skills-title">Skills in Tencent/AI-Infra-Guard</h2>
-        <p class="muted">Linked names open the skill's directory page; the rest open the skill folder on GitHub. Descriptions on rows without a page are quoted from each SKILL.md.</p>
-
-        <div class="table-wrap">
-          <table class="skill-table" id="repo-skills" data-filter-group="repo-skills">
-            <thead><tr><th scope="col">Skill</th><th scope="col">Category</th><th scope="col">What it does</th></tr></thead>
-            <tbody>
-            <tr id="aig-scanner" data-id="tencent/ai-infra-guard/aig-scanner" data-name="aig-scanner" data-score="82" data-updated="2026-10-16" data-listed="2026-10-19" data-cited="2" data-lane="free-with-service" data-flags="full-page badge-eligible scripts api-key network" data-featured="1"><td class="name"><a href="aig-scanner/">aig-scanner</a> <span class="grade grade-b" title="Suede Skill Check: 82/100, grade B">82/100 · B</span></td><td class="meta"><a href="../../security/">Security</a></td><td class="desc">Runs AI security scans of infrastructure, AI tools and skills, and AI agents, and evaluates LLM jailbreak resistance with Tencent's AI-Infra-Guard.<p><a href="aig-scanner/#badge">Get badges</a></p><p class="row-report"><a href="aig-scanner/report.json" download="aig-scanner-suede-report-2026-10-22.json">Download report</a> · <a href="https://github.com/JasonColapietro/suede-creator-skills/issues/new?template=directory-listing.yml&amp;request=Recheck+my+updated+skill&amp;repository=https%3A%2F%2Fgithub.com%2FTencent%2FAI-Infra-Guard&amp;skill-scope=aig-scanner&amp;details=Listing%3A+https%3A%2F%2Fskills.suedeai.ai%2Fdirectory%2Ftencent%2Fai-infra-guard%2Faig-scanner%2F%0APrevious+report%3A+https%3A%2F%2Fskills.suedeai.ai%2Fdirectory%2Ftencent%2Fai-infra-guard%2Faig-scanner%2Freport.json%0ASnapshot%3A+2026-10-22+%28740bfd7230f74b149870dffa9c645b2b%29%3B+methodology%3A+graded-v2%0A%0AUpdated+source+commit+or+PR%3A%0AChanges+to+review%3A%0A" target="_blank" rel="noopener">Request a fresh review</a></p></td></tr>
-            <tr id="edgeone-clawscan" data-id="tencent/ai-infra-guard/edgeone-clawscan" data-name="edgeone-clawscan" data-score="62" data-updated="2026-10-16" data-listed="2026-10-19" data-cited="2" data-lane="free-open-source" data-flags="markdown-only" data-featured="0"><td class="name"><a href="https://github.com/Tencent/AI-Infra-Guard/tree/main/skills/edgeone-clawscan" target="_blank" rel="noopener">edgeone-clawscan</a> <span class="grade grade-d" title="Suede Skill Check: 62/100, grade D">62/100 · D</span></td><td class="meta"><a href="../../security/">Security</a></td><td class="desc">The first security skill to install after setting up OpenClaw — powered by Tencent Zhuque Lab. Works like an antivirus for your AI environment…<p><a href="../../submit/#improve">Improve this score</a></p><p class="row-report"><a href="edgeone-clawscan/report.json" download="edgeone-clawscan-suede-report-2026-10-22.json">Download report</a> · <a href="https://github.com/JasonColapietro/suede-creator-skills/issues/new?template=directory-listing.yml&amp;request=Recheck+my+updated+skill&amp;repository=https%3A%2F%2Fgithub.com%2FTencent%2FAI-Infra-Guard&amp;skill-scope=edgeone-clawscan&amp;details=Listing%3A+https%3A%2F%2Fskills.suedeai.ai%2Fdirectory%2Ftencent%2Fai-infra-guard%2F%23edgeone-clawscan%0APrevious+report%3A+https%3A%2F%2Fskills.suedeai.ai%2Fdirectory%2Ftencent%2Fai-infra-guard%2Fedgeone-clawscan%2Freport.json%0ASnapshot%3A+2026-10-22+%28740bfd7230f74b149870dffa9c645b2b%29%3B+methodology%3A+graded-v2%0A%0AUpdated+source+commit+or+PR%3A%0AChanges+to+review%3A%0A" target="_blank" rel="noopener">Request a fresh review</a></p></td></tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
       <aside class="panel svc-cta" aria-labelledby="svc-title" data-services-cta="repository">
         <h2 class="svc-kicker" id="svc-title">From Suede AI, the publisher of this directory</h2>
         <div class="svc-cards">

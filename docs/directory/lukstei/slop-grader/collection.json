@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "repository": "lukstei/slop-grader",
+  "listing_url": "https://skills.suedeai.ai/directory/lukstei/slop-grader/",
+  "snapshot": {
+    "date": "2026-10-22",
+    "id": "740bfd7230f74b149870dffa9c645b2b",
+    "dataset_sha256": "7af631c54b44d36718ed15f6a3fdbf0445b6a09f638bc05ce3093bca01ef0d02"
+  },
+  "listed_skill_count": 1,
+  "scope": "Skills listed by the directory; this is not a complete inventory of every file in the repository.",
+  "security_scan_status": "not_scanned",
+  "skills": [
+    {
+      "id": "lukstei/slop-grader/create-slop-grader-rules",
+      "name": "create-slop-grader-rules",
+      "description": "Create custom slop-grader rulesets in Markdown based on user guidelines and SYNTAX.md specification. Validates rules using slop-grader --check.",
+      "category": "writing-content",
+      "license": "MIT",
+      "license_url": "https://github.com/lukstei/slop-grader/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "f20e1ae3ba30d31e5ccf7613ff8387d789a98640",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-18",
+        "skill_md_url": "https://github.com/lukstei/slop-grader/blob/f20e1ae3ba30d31e5ccf7613ff8387d789a98640/skills/create-slop-grader-rules/SKILL.md"
+      },
+      "quality": {
+        "score": 67,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/lukstei/slop-grader/create-slop-grader-rules/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/lukstei/slop-grader/tree/main/skills/create-slop-grader-rules",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/lukstei/slop-grader/tree/main/skills/create-slop-grader-rules",
+        "publisher_setup_url": "https://github.com/lukstei/slop-grader/blob/main/skills/create-slop-grader-rules/SKILL.md"
+      }
+    }
+  ]
+}

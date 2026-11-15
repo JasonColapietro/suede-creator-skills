@@ -1,0 +1,3375 @@
+{
+  "schema_version": 1,
+  "repository": "firecrawl/skills",
+  "listing_url": "https://skills.suedeai.ai/directory/firecrawl/skills/",
+  "snapshot": {
+    "date": "2026-10-22",
+    "id": "740bfd7230f74b149870dffa9c645b2b",
+    "dataset_sha256": "7af631c54b44d36718ed15f6a3fdbf0445b6a09f638bc05ce3093bca01ef0d02"
+  },
+  "listed_skill_count": 32,
+  "scope": "Skills listed by the directory; this is not a complete inventory of every file in the repository.",
+  "security_scan_status": "not_scanned",
+  "skills": [
+    {
+      "id": "firecrawl/skills/firecrawl-company-directories",
+      "name": "firecrawl-company-directories",
+      "description": "Extract structured company lists with Firecrawl from any page or site that lists companies: accelerator batches, VC portfolios, member and sponsor lists, marketplaces and app directories, YC, Crunchbase, Product Hunt or G2. Use when the user wants those companies as a CSV, JSON, CRM-ready list or research table, even without an explicit request to scrape.",
+      "category": "data-databases",
+      "license": "ISC",
+      "license_url": "https://github.com/firecrawl/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "2b8f29eae6c6faa30f357b184dc1603419e16228",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-18",
+        "skill_md_url": "https://github.com/firecrawl/skills/blob/2b8f29eae6c6faa30f357b184dc1603419e16228/skills/workflows/firecrawl-company-directories/SKILL.md"
+      },
+      "quality": {
+        "score": 71,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/firecrawl/skills/firecrawl-company-directories/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/firecrawl/skills/firecrawl-company-directories/",
+      "source_folder_url": "https://github.com/firecrawl/skills/tree/main/skills/workflows/firecrawl-company-directories",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/firecrawl/skills/tree/main/skills/workflows/firecrawl-company-directories",
+        "publisher_setup_url": "https://github.com/firecrawl/skills/blob/main/skills/workflows/firecrawl-company-directories/SKILL.md"
+      }
+    },
+    {
+      "id": "firecrawl/skills/firecrawl-competitive-intel",
+      "name": "firecrawl-competitive-intel",
+      "description": "Monitor competitor pricing, features, changelogs, dashboards, and product changes with Firecrawl. Use for recurring competitive intelligence, pricing tier extraction, feature change tracking, or structured competitor alerts.",
+      "category": "product-management",
+      "license": "ISC",
+      "license_url": "https://github.com/firecrawl/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "2b8f29eae6c6faa30f357b184dc1603419e16228",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-18",
+        "skill_md_url": "https://github.com/firecrawl/skills/blob/2b8f29eae6c6faa30f357b184dc1603419e16228/skills/workflows/firecrawl-competitive-intel/SKILL.md"
+      },
+      "quality": {
+        "score": 71,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/firecrawl/skills/firecrawl-competitive-intel/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/firecrawl/skills/firecrawl-competitive-intel/",
+      "source_folder_url": "https://github.com/firecrawl/skills/tree/main/skills/workflows/firecrawl-competitive-intel",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/firecrawl/skills/tree/main/skills/workflows/firecrawl-competitive-intel",
+        "publisher_setup_url": "https://github.com/firecrawl/skills/blob/main/skills/workflows/firecrawl-competitive-intel/SKILL.md"
+      }
+    },
+    {
+      "id": "firecrawl/skills/firecrawl-dashboard-reporting",
+      "name": "firecrawl-dashboard-reporting",
+      "description": "Read metrics off web dashboards with Firecrawl browser: public stats, status and transparency pages as well as analytics tools the user is signed in to. Use when the user wants numbers, KPIs or charts from a dashboard turned into a report, summary or date-range table, even without an explicit request to scrape.",
+      "category": "data-databases",
+      "license": "ISC",
+      "license_url": "https://github.com/firecrawl/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "2b8f29eae6c6faa30f357b184dc1603419e16228",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-18",
+        "skill_md_url": "https://github.com/firecrawl/skills/blob/2b8f29eae6c6faa30f357b184dc1603419e16228/skills/workflows/firecrawl-dashboard-reporting/SKILL.md"
+      },
+      "quality": {
+        "score": 71,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/firecrawl/skills/firecrawl-dashboard-reporting/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/firecrawl/skills/firecrawl-dashboard-reporting/",
+      "source_folder_url": "https://github.com/firecrawl/skills/tree/main/skills/workflows/firecrawl-dashboard-reporting",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/firecrawl/skills/tree/main/skills/workflows/firecrawl-dashboard-reporting",
+        "publisher_setup_url": "https://github.com/firecrawl/skills/blob/main/skills/workflows/firecrawl-dashboard-reporting/SKILL.md"
+      }
+    },
+    {
+      "id": "firecrawl/skills/firecrawl-deep-research",
+      "name": "firecrawl-deep-research",
+      "description": "Produce an intensive, cited analytical report: executive summary, multi-angle findings, contrarian views, open questions, and full sources. Use only when the user needs rigorous synthesis of a complex topic (scientific, technical, policy, or market-analytical) that cannot be answered with a short search, and wants a formal written report, not a recommendation list. Do not use for product picks, top-N lists, quick lookups, or routine \"find out about X\" tasks. If the request does not clearly need this kind of report, do not use this skill. Do not use for a literature review over published papers. This skill collects evidence from the open web. A request for the literature on a biomedical, clinical, life-science, or other scientific topic — papers, studies, trials, preprints — belongs to firecrawl-research-papers, which queries Firecrawl's paper index (PubMed, bioRxiv, medRxiv, arXiv) instead of searching websites.",
+      "category": "productivity-knowledge",
+      "license": "ISC",
+      "license_url": "https://github.com/firecrawl/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "2b8f29eae6c6faa30f357b184dc1603419e16228",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-18",
+        "skill_md_url": "https://github.com/firecrawl/skills/blob/2b8f29eae6c6faa30f357b184dc1603419e16228/skills/workflows/firecrawl-deep-research/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/firecrawl/skills/firecrawl-deep-research/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/firecrawl/skills/firecrawl-deep-research/",
+      "source_folder_url": "https://github.com/firecrawl/skills/tree/main/skills/workflows/firecrawl-deep-research",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/firecrawl/skills/tree/main/skills/workflows/firecrawl-deep-research",
+        "publisher_setup_url": "https://github.com/firecrawl/skills/blob/main/skills/workflows/firecrawl-deep-research/SKILL.md"
+      }
+    },
+    {
+      "id": "firecrawl/skills/firecrawl-lead-research",
+      "name": "firecrawl-lead-research",
+      "description": "Enrich and research the people and companies the user names or supplies with Firecrawl Alexandria data: background on a person, a professional profile URL to look up, whether someone still holds a role, missing columns in a table or CSV of people or companies, firmographics for company domains (industry, headcount, funding, location), and pre-call or meeting briefs. Use whenever the request is about specific named people or companies, even without the word enrich, since roles, headcount and funding change faster than training data. Not for finding new prospects (use firecrawl-lead-gen) or a company's published press, sales or support contacts (use firecrawl-business-contacts).",
+      "category": "business-finance",
+      "license": "ISC",
+      "license_url": "https://github.com/firecrawl/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "2b8f29eae6c6faa30f357b184dc1603419e16228",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-18",
+        "skill_md_url": "https://github.com/firecrawl/skills/blob/2b8f29eae6c6faa30f357b184dc1603419e16228/skills/workflows/firecrawl-lead-research/SKILL.md"
+      },
+      "quality": {
+        "score": 82,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/firecrawl/skills/firecrawl-lead-research/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/firecrawl/skills/firecrawl-lead-research/",
+      "source_folder_url": "https://github.com/firecrawl/skills/tree/main/skills/workflows/firecrawl-lead-research",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/firecrawl/skills/tree/main/skills/workflows/firecrawl-lead-research",
+        "publisher_setup_url": "https://github.com/firecrawl/skills/blob/main/skills/workflows/firecrawl-lead-research/SKILL.md"
+      }
+    },
+    {
+      "id": "firecrawl/skills/firecrawl-research-index",
+      "name": "firecrawl-research-index",
+      "description": "Find the papers that answer a research query in Firecrawl's research paper index — a corpus of paper abstracts whose largest share is biomedical and life-science literature (PubMed, bioRxiv, medRxiv), alongside arXiv preprints in CS, physics, and math — using semantic search, semantic and structural expansion, and in-body verification. Use this skill for literature-finding and paper-retrieval tasks of any kind, including clinical, biomedical, drug, gene, disease, and other life-science questions, whether the answer is a single paper or a full multi-paper set. The index is reached only through the `firecrawl_research_*` MCP tools or the `firecrawl research` CLI subcommands. Calling `firecrawl_search` with its `categories` option set to `[\"research\"]` is a different feature — it filters ordinary web search to research-affiliated websites (the list includes PubMed, bioRxiv, medRxiv, arXiv, and publisher sites) and returns page results from them, without querying the paper records in this index.",
+      "category": "science-research",
+      "license": "ISC",
+      "license_url": "https://github.com/firecrawl/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "2b8f29eae6c6faa30f357b184dc1603419e16228",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-18",
+        "skill_md_url": "https://github.com/firecrawl/skills/blob/2b8f29eae6c6faa30f357b184dc1603419e16228/skills/core/firecrawl-research-index/SKILL.md"
+      },
+      "quality": {
+        "score": 76,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/firecrawl/skills/firecrawl-research-index/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/firecrawl/skills/firecrawl-research-index/",
+      "source_folder_url": "https://github.com/firecrawl/skills/tree/main/skills/core/firecrawl-research-index",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/firecrawl/skills/tree/main/skills/core/firecrawl-research-index",
+        "publisher_setup_url": "https://github.com/firecrawl/skills/blob/main/skills/core/firecrawl-research-index/SKILL.md"
+      }
+    },
+    {
+      "id": "firecrawl/skills/firecrawl-research-papers",
+      "name": "firecrawl-research-papers",
+      "description": "Find and synthesize research papers, whitepapers, PDFs, technical reports, and academic sources with Firecrawl Research, using semantic paper search, related-paper expansion, and in-body verification over Firecrawl's paper index — largely biomedical and life-science literature from PubMed, bioRxiv, and medRxiv, plus arXiv preprints in CS, physics, and math. Use when the user wants a literature review, systematic review, survey of studies, paper summary, research landscape, or sourced synthesis from scholarly and industry publications, including clinical, drug, gene, disease, epidemiology, and public-health topics. Prefer this over a general web-research workflow whenever the evidence base is published papers rather than web pages.",
+      "category": "science-research",
+      "license": "ISC",
+      "license_url": "https://github.com/firecrawl/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "2b8f29eae6c6faa30f357b184dc1603419e16228",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-18",
+        "skill_md_url": "https://github.com/firecrawl/skills/blob/2b8f29eae6c6faa30f357b184dc1603419e16228/skills/workflows/firecrawl-research-papers/SKILL.md"
+      },
+      "quality": {
+        "score": 75,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/firecrawl/skills/firecrawl-research-papers/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/firecrawl/skills/firecrawl-research-papers/",
+      "source_folder_url": "https://github.com/firecrawl/skills/tree/main/skills/workflows/firecrawl-research-papers",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/firecrawl/skills/tree/main/skills/workflows/firecrawl-research-papers",
+        "publisher_setup_url": "https://github.com/firecrawl/skills/blob/main/skills/workflows/firecrawl-research-papers/SKILL.md"
+      }
+    },
+    {
+      "id": "firecrawl/skills/firecrawl-scrape",
+      "name": "firecrawl-scrape",
+      "description": "Read a known webpage or execute a discovered workflow or data-provider capability. Use for page content or structured results once the URL or tool is selected.",
+      "category": "data-databases",
+      "license": "ISC",
+      "license_url": "https://github.com/firecrawl/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "2b8f29eae6c6faa30f357b184dc1603419e16228",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-18",
+        "skill_md_url": "https://github.com/firecrawl/skills/blob/2b8f29eae6c6faa30f357b184dc1603419e16228/skills/core/firecrawl-scrape/SKILL.md"
+      },
+      "quality": {
+        "score": 82,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/firecrawl/skills/firecrawl-scrape/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/firecrawl/skills/firecrawl-scrape/",
+      "source_folder_url": "https://github.com/firecrawl/skills/tree/main/skills/core/firecrawl-scrape",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/firecrawl/skills/tree/main/skills/core/firecrawl-scrape",
+        "publisher_setup_url": "https://github.com/firecrawl/skills/blob/main/skills/core/firecrawl-scrape/SKILL.md"
+      }
+    },
+    {
+      "id": "firecrawl/skills/firecrawl-search",
+      "name": "firecrawl-search",
+      "description": "Find web sources with query-relevant page excerpts and optional full-page content, and discover workflows, data APIs, and indexes. Use for web research or finding structured records, listings, transcripts, and datasets. Supports semantic tool discovery, domain matching, and progressive catalogue browsing.",
+      "category": "productivity-knowledge",
+      "license": "ISC",
+      "license_url": "https://github.com/firecrawl/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "2b8f29eae6c6faa30f357b184dc1603419e16228",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-18",
+        "skill_md_url": "https://github.com/firecrawl/skills/blob/2b8f29eae6c6faa30f357b184dc1603419e16228/skills/core/firecrawl-search/SKILL.md"
+      },
+      "quality": {
+        "score": 79,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/firecrawl/skills/firecrawl-search/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/firecrawl/skills/firecrawl-search/",
+      "source_folder_url": "https://github.com/firecrawl/skills/tree/main/skills/core/firecrawl-search",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/firecrawl/skills/tree/main/skills/core/firecrawl-search",
+        "publisher_setup_url": "https://github.com/firecrawl/skills/blob/main/skills/core/firecrawl-search/SKILL.md"
+      }
+    },
+    {
+      "id": "firecrawl/skills/firecrawl-shop",
+      "name": "firecrawl-shop",
+      "description": "Researches products across retailers and review sites with Firecrawl and recommends what to buy within the user's budget and preferences, with current prices and sources. Use when the user wants to compare products, find the best option or check reviews before buying, since prices and models change faster than training data. Adds to a cart only when asked and a signed-in browser profile exists.",
+      "category": "productivity-knowledge",
+      "license": "ISC",
+      "license_url": "https://github.com/firecrawl/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "2b8f29eae6c6faa30f357b184dc1603419e16228",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-18",
+        "skill_md_url": "https://github.com/firecrawl/skills/blob/2b8f29eae6c6faa30f357b184dc1603419e16228/skills/workflows/firecrawl-shop/SKILL.md"
+      },
+      "quality": {
+        "score": 74,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/firecrawl/skills/firecrawl-shop/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/firecrawl/skills/firecrawl-shop/",
+      "source_folder_url": "https://github.com/firecrawl/skills/tree/main/skills/workflows/firecrawl-shop",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/firecrawl/skills/tree/main/skills/workflows/firecrawl-shop",
+        "publisher_setup_url": "https://github.com/firecrawl/skills/blob/main/skills/workflows/firecrawl-shop/SKILL.md"
+      }
+    },
+    {
+      "id": "firecrawl/skills/firecrawl-website-design-clone",
+      "name": "firecrawl-website-design-clone",
+      "description": "Extract an existing website's visual system into DESIGN.md, or collect its existing logo, colors, fonts and homepage messaging for a document. Use for reference-based UI implementation, documenting design patterns, or matching a presentation to a company's website. Excludes inventing a new brand or brand positioning.",
+      "category": "frontend-design",
+      "license": "ISC",
+      "license_url": "https://github.com/firecrawl/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "2b8f29eae6c6faa30f357b184dc1603419e16228",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-18",
+        "skill_md_url": "https://github.com/firecrawl/skills/blob/2b8f29eae6c6faa30f357b184dc1603419e16228/skills/workflows/firecrawl-website-design-clone/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/firecrawl/skills/firecrawl-website-design-clone/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/firecrawl/skills/firecrawl-website-design-clone/",
+      "source_folder_url": "https://github.com/firecrawl/skills/tree/main/skills/workflows/firecrawl-website-design-clone",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/firecrawl/skills/tree/main/skills/workflows/firecrawl-website-design-clone",
+        "publisher_setup_url": "https://github.com/firecrawl/skills/blob/main/skills/workflows/firecrawl-website-design-clone/SKILL.md"
+      }
+    },
+    {
+      "id": "firecrawl/skills/firecrawl-workflows",
+      "name": "firecrawl-workflows",
+      "description": "Run focused Firecrawl workflows for research, documentation lookup, SEO audits, QA, lead discovery and enrichment, business contacts, current jobs, fantasy decisions, brand assets, knowledge bases and website design systems. Use when the user wants a sourced answer or deliverable from a workflow rather than raw extraction or product-code integration.",
+      "category": "productivity-knowledge",
+      "license": "ISC",
+      "license_url": "https://github.com/firecrawl/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "2b8f29eae6c6faa30f357b184dc1603419e16228",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-18",
+        "skill_md_url": "https://github.com/firecrawl/skills/blob/2b8f29eae6c6faa30f357b184dc1603419e16228/skills/workflows/firecrawl-workflows/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/firecrawl/skills/firecrawl-workflows/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/firecrawl/skills/firecrawl-workflows/",
+      "source_folder_url": "https://github.com/firecrawl/skills/tree/main/skills/workflows/firecrawl-workflows",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/firecrawl/skills/tree/main/skills/workflows/firecrawl-workflows",
+        "publisher_setup_url": "https://github.com/firecrawl/skills/blob/main/skills/workflows/firecrawl-workflows/SKILL.md"
+      }
+    },
+    {
+      "id": "firecrawl/skills/firecrawl",
+      "name": "firecrawl",
+      "description": "Any live-web task via the Firecrawl CLI — including ordinary web research: searching the web, reading or extracting pages, gathering sources, discovering site URLs, bulk extraction, downloading a site, change alerts, or pages needing clicks/login — web only; local files route to firecrawl-parse. For US legal or regulatory questions use gov; for papers use firecrawl-research-index; for library, API, error, or bug questions use firecrawl-developer-index.",
+      "category": "productivity-knowledge",
+      "license": "ISC",
+      "license_url": "https://github.com/firecrawl/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "2b8f29eae6c6faa30f357b184dc1603419e16228",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-18",
+        "skill_md_url": "https://github.com/firecrawl/skills/blob/2b8f29eae6c6faa30f357b184dc1603419e16228/skills/core/firecrawl/SKILL.md"
+      },
+      "quality": {
+        "score": 71,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/firecrawl/skills/firecrawl/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/firecrawl/skills/tree/main/skills/core/firecrawl",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/firecrawl/skills/tree/main/skills/core/firecrawl",
+        "publisher_setup_url": "https://github.com/firecrawl/skills/blob/main/skills/core/firecrawl/SKILL.md"
+      }
+    },
+    {
+      "id": "firecrawl/skills/firecrawl-agent",
+      "name": "firecrawl-agent",
+      "description": "Autonomously navigate websites and extract structured data across pages. Use when the task requires navigation or no suitable ready-made workflow or data provider covers it.",
+      "category": "data-databases",
+      "license": "ISC",
+      "license_url": "https://github.com/firecrawl/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "2b8f29eae6c6faa30f357b184dc1603419e16228",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-18",
+        "skill_md_url": "https://github.com/firecrawl/skills/blob/2b8f29eae6c6faa30f357b184dc1603419e16228/skills/core/firecrawl-agent/SKILL.md"
+      },
+      "quality": {
+        "score": 79,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/firecrawl/skills/firecrawl-agent/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/firecrawl/skills/tree/main/skills/core/firecrawl-agent",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/firecrawl/skills/tree/main/skills/core/firecrawl-agent",
+        "publisher_setup_url": "https://github.com/firecrawl/skills/blob/main/skills/core/firecrawl-agent/SKILL.md"
+      }
+    },
+    {
+      "id": "firecrawl/skills/firecrawl-alexandria",
+      "name": "firecrawl-alexandria",
+      "description": "Find a direct path to structured data through ready-made workflows, data APIs, and indexes. Follow the search skill to discover and inspect tools, then the scrape skill to execute them.",
+      "category": "data-databases",
+      "license": "ISC",
+      "license_url": "https://github.com/firecrawl/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "2b8f29eae6c6faa30f357b184dc1603419e16228",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-18",
+        "skill_md_url": "https://github.com/firecrawl/skills/blob/2b8f29eae6c6faa30f357b184dc1603419e16228/skills/core/firecrawl-alexandria/SKILL.md"
+      },
+      "quality": {
+        "score": 69,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/firecrawl/skills/firecrawl-alexandria/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/firecrawl/skills/tree/main/skills/core/firecrawl-alexandria",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/firecrawl/skills/tree/main/skills/core/firecrawl-alexandria",
+        "publisher_setup_url": "https://github.com/firecrawl/skills/blob/main/skills/core/firecrawl-alexandria/SKILL.md"
+      }
+    },
+    {
+      "id": "firecrawl/skills/firecrawl-business-contacts",
+      "name": "firecrawl-business-contacts",
+      "description": "Find the published business contacts of companies with Firecrawl, whether the user names them or describes them by type and place: press and media, sales, partnerships and support inboxes, shared business phone numbers and official contact forms, taken from the companies' own websites. Use when the user asks how to contact a company or wants published business emails, phone numbers or press, sales, support or partnership contacts, since contact pages change and an address must come from the page, not memory. Not for named people's details (use firecrawl-lead-research) or finding people to reach out to (use firecrawl-lead-gen).",
+      "category": "business-finance",
+      "license": "ISC",
+      "license_url": "https://github.com/firecrawl/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "2b8f29eae6c6faa30f357b184dc1603419e16228",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-18",
+        "skill_md_url": "https://github.com/firecrawl/skills/blob/2b8f29eae6c6faa30f357b184dc1603419e16228/skills/workflows/firecrawl-business-contacts/SKILL.md"
+      },
+      "quality": {
+        "score": 76,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/firecrawl/skills/firecrawl-business-contacts/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/firecrawl/skills/tree/main/skills/workflows/firecrawl-business-contacts",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/firecrawl/skills/tree/main/skills/workflows/firecrawl-business-contacts",
+        "publisher_setup_url": "https://github.com/firecrawl/skills/blob/main/skills/workflows/firecrawl-business-contacts/SKILL.md"
+      }
+    },
+    {
+      "id": "firecrawl/skills/firecrawl-crawl",
+      "name": "firecrawl-crawl",
+      "description": "Bulk-extract many pages from one site or section. Use for \"crawl\", \"everything under /docs\", or content spanning linked pages.",
+      "category": "data-databases",
+      "license": "ISC",
+      "license_url": "https://github.com/firecrawl/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "2b8f29eae6c6faa30f357b184dc1603419e16228",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-18",
+        "skill_md_url": "https://github.com/firecrawl/skills/blob/2b8f29eae6c6faa30f357b184dc1603419e16228/skills/core/firecrawl-crawl/SKILL.md"
+      },
+      "quality": {
+        "score": 74,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/firecrawl/skills/firecrawl-crawl/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/firecrawl/skills/tree/main/skills/core/firecrawl-crawl",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/firecrawl/skills/tree/main/skills/core/firecrawl-crawl",
+        "publisher_setup_url": "https://github.com/firecrawl/skills/blob/main/skills/core/firecrawl-crawl/SKILL.md"
+      }
+    },
+    {
+      "id": "firecrawl/skills/firecrawl-demo-walkthrough",
+      "name": "firecrawl-demo-walkthrough",
+      "description": "Walk through a product's key flows with Firecrawl browser and produce a structured UX/product walkthrough. Use for signup, onboarding, pricing, docs, dashboard, product demo prep, UX teardown, and first-run experience analysis.",
+      "category": "product-management",
+      "license": "ISC",
+      "license_url": "https://github.com/firecrawl/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "2b8f29eae6c6faa30f357b184dc1603419e16228",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-18",
+        "skill_md_url": "https://github.com/firecrawl/skills/blob/2b8f29eae6c6faa30f357b184dc1603419e16228/skills/workflows/firecrawl-demo-walkthrough/SKILL.md"
+      },
+      "quality": {
+        "score": 71,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/firecrawl/skills/firecrawl-demo-walkthrough/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/firecrawl/skills/tree/main/skills/workflows/firecrawl-demo-walkthrough",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/firecrawl/skills/tree/main/skills/workflows/firecrawl-demo-walkthrough",
+        "publisher_setup_url": "https://github.com/firecrawl/skills/blob/main/skills/workflows/firecrawl-demo-walkthrough/SKILL.md"
+      }
+    },
+    {
+      "id": "firecrawl/skills/firecrawl-developer-index",
+      "name": "firecrawl-developer-index",
+      "description": "Searches current documentation, release notes, API references and public repository issues for libraries, frameworks, SDKs, APIs and CLI tools with `firecrawl developer`. Use before answering when the user names a version, is upgrading, pastes an error from a library or tool, or asks how to use, configure or migrate a specific library or API. Model knowledge stops at a training cutoff and misses new releases, renamed APIs, changed defaults and recent fixes, so when a version, option, error or API is unfamiliar or may have changed, look it up instead of guessing. Also checks whether a bug was fixed and in which release. Not for general programming concepts, code that uses no specific library, or refactoring code the user supplied.",
+      "category": "developer-tools",
+      "license": "ISC",
+      "license_url": "https://github.com/firecrawl/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "2b8f29eae6c6faa30f357b184dc1603419e16228",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-18",
+        "skill_md_url": "https://github.com/firecrawl/skills/blob/2b8f29eae6c6faa30f357b184dc1603419e16228/skills/core/firecrawl-developer-index/SKILL.md"
+      },
+      "quality": {
+        "score": 82,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/firecrawl/skills/firecrawl-developer-index/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/firecrawl/skills/tree/main/skills/core/firecrawl-developer-index",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/firecrawl/skills/tree/main/skills/core/firecrawl-developer-index",
+        "publisher_setup_url": "https://github.com/firecrawl/skills/blob/main/skills/core/firecrawl-developer-index/SKILL.md"
+      }
+    },
+    {
+      "id": "firecrawl/skills/firecrawl-download",
+      "name": "firecrawl-download",
+      "description": "Save a site or section as local files (markdown, screenshots). Use for \"download the site\", offline docs, or a local copy for reference.",
+      "category": "data-databases",
+      "license": "ISC",
+      "license_url": "https://github.com/firecrawl/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "2b8f29eae6c6faa30f357b184dc1603419e16228",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-18",
+        "skill_md_url": "https://github.com/firecrawl/skills/blob/2b8f29eae6c6faa30f357b184dc1603419e16228/skills/core/firecrawl-download/SKILL.md"
+      },
+      "quality": {
+        "score": 74,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/firecrawl/skills/firecrawl-download/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/firecrawl/skills/tree/main/skills/core/firecrawl-download",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/firecrawl/skills/tree/main/skills/core/firecrawl-download",
+        "publisher_setup_url": "https://github.com/firecrawl/skills/blob/main/skills/core/firecrawl-download/SKILL.md"
+      }
+    },
+    {
+      "id": "firecrawl/skills/firecrawl-fantasy-sports",
+      "name": "firecrawl-fantasy-sports",
+      "description": "Help fantasy players make start/sit, waiver, streaming, trade, draft and keeper decisions using current player news, usage, matchups and their league's scoring. Use for choosing between players, finding pickups, evaluating a deal or filling a roster need, even without an explicit research request. Excludes generic sports scores, betting and changing league rosters.",
+      "category": "developer-tools",
+      "license": "ISC",
+      "license_url": "https://github.com/firecrawl/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "2b8f29eae6c6faa30f357b184dc1603419e16228",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-18",
+        "skill_md_url": "https://github.com/firecrawl/skills/blob/2b8f29eae6c6faa30f357b184dc1603419e16228/skills/workflows/firecrawl-fantasy-sports/SKILL.md"
+      },
+      "quality": {
+        "score": 74,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/firecrawl/skills/firecrawl-fantasy-sports/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/firecrawl/skills/tree/main/skills/workflows/firecrawl-fantasy-sports",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/firecrawl/skills/tree/main/skills/workflows/firecrawl-fantasy-sports",
+        "publisher_setup_url": "https://github.com/firecrawl/skills/blob/main/skills/workflows/firecrawl-fantasy-sports/SKILL.md"
+      }
+    },
+    {
+      "id": "firecrawl/skills/firecrawl-interact",
+      "name": "firecrawl-interact",
+      "description": "Drive a live browser on a scraped page: click, fill forms, log in, paginate, infinite-scroll. Use when content requires interaction or a scrape failed or returned incomplete content.",
+      "category": "developer-tools",
+      "license": "ISC",
+      "license_url": "https://github.com/firecrawl/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "2b8f29eae6c6faa30f357b184dc1603419e16228",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-18",
+        "skill_md_url": "https://github.com/firecrawl/skills/blob/2b8f29eae6c6faa30f357b184dc1603419e16228/skills/core/firecrawl-interact/SKILL.md"
+      },
+      "quality": {
+        "score": 76,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/firecrawl/skills/firecrawl-interact/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/firecrawl/skills/tree/main/skills/core/firecrawl-interact",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/firecrawl/skills/tree/main/skills/core/firecrawl-interact",
+        "publisher_setup_url": "https://github.com/firecrawl/skills/blob/main/skills/core/firecrawl-interact/SKILL.md"
+      }
+    },
+    {
+      "id": "firecrawl/skills/firecrawl-job-postings",
+      "name": "firecrawl-job-postings",
+      "description": "Find current job postings on employer career pages and job boards. Use when the user asks who's hiring, seeks remote or local jobs, or wants openings matched to their role, skills, experience, or salary preferences.",
+      "category": "business-finance",
+      "license": "ISC",
+      "license_url": "https://github.com/firecrawl/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "2b8f29eae6c6faa30f357b184dc1603419e16228",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-18",
+        "skill_md_url": "https://github.com/firecrawl/skills/blob/2b8f29eae6c6faa30f357b184dc1603419e16228/skills/workflows/firecrawl-job-postings/SKILL.md"
+      },
+      "quality": {
+        "score": 74,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/firecrawl/skills/firecrawl-job-postings/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/firecrawl/skills/tree/main/skills/workflows/firecrawl-job-postings",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/firecrawl/skills/tree/main/skills/workflows/firecrawl-job-postings",
+        "publisher_setup_url": "https://github.com/firecrawl/skills/blob/main/skills/workflows/firecrawl-job-postings/SKILL.md"
+      }
+    },
+    {
+      "id": "firecrawl/skills/firecrawl-knowledge-base",
+      "name": "firecrawl-knowledge-base",
+      "description": "Build a knowledge base from web content with Firecrawl. Use for local reference docs, RAG-ready chunks, fine-tuning datasets, documentation mirrors, topic corpora, or LLM-ready markdown organized from web sources.",
+      "category": "ai-agents-llm",
+      "license": "ISC",
+      "license_url": "https://github.com/firecrawl/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "2b8f29eae6c6faa30f357b184dc1603419e16228",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-18",
+        "skill_md_url": "https://github.com/firecrawl/skills/blob/2b8f29eae6c6faa30f357b184dc1603419e16228/skills/workflows/firecrawl-knowledge-base/SKILL.md"
+      },
+      "quality": {
+        "score": 74,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/firecrawl/skills/firecrawl-knowledge-base/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/firecrawl/skills/tree/main/skills/workflows/firecrawl-knowledge-base",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/firecrawl/skills/tree/main/skills/workflows/firecrawl-knowledge-base",
+        "publisher_setup_url": "https://github.com/firecrawl/skills/blob/main/skills/workflows/firecrawl-knowledge-base/SKILL.md"
+      }
+    },
+    {
+      "id": "firecrawl/skills/firecrawl-knowledge-ingest",
+      "name": "firecrawl-knowledge-ingest",
+      "description": "Export documentation portals, help centers and API reference sites into local markdown or JSON with Firecrawl browser, including pages that render with JavaScript, hide content behind collapsible navigation or paginate. Use when the user wants a docs site, help center or support knowledge base saved as files, even without an explicit request to scrape.",
+      "category": "data-databases",
+      "license": "ISC",
+      "license_url": "https://github.com/firecrawl/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "2b8f29eae6c6faa30f357b184dc1603419e16228",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-18",
+        "skill_md_url": "https://github.com/firecrawl/skills/blob/2b8f29eae6c6faa30f357b184dc1603419e16228/skills/workflows/firecrawl-knowledge-ingest/SKILL.md"
+      },
+      "quality": {
+        "score": 71,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/firecrawl/skills/firecrawl-knowledge-ingest/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/firecrawl/skills/tree/main/skills/workflows/firecrawl-knowledge-ingest",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/firecrawl/skills/tree/main/skills/workflows/firecrawl-knowledge-ingest",
+        "publisher_setup_url": "https://github.com/firecrawl/skills/blob/main/skills/workflows/firecrawl-knowledge-ingest/SKILL.md"
+      }
+    },
+    {
+      "id": "firecrawl/skills/firecrawl-lead-gen",
+      "name": "firecrawl-lead-gen",
+      "description": "Find and qualify new prospects with Firecrawl Alexandria people and company data: people by role, seniority, company, industry, size, location or technology, target accounts that match criteria, or the right contacts at companies, returned as a ranked, sourced table or CSV. Also extracts lead lists from a database or directory the user names, and refreshes a prospect list with only new matches. Use when the user wants a lead list, prospects, target accounts or the people to reach out to at companies that fit criteria. Not for enriching people or companies the user already supplied (use firecrawl-lead-research).",
+      "category": "business-finance",
+      "license": "ISC",
+      "license_url": "https://github.com/firecrawl/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "2b8f29eae6c6faa30f357b184dc1603419e16228",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-18",
+        "skill_md_url": "https://github.com/firecrawl/skills/blob/2b8f29eae6c6faa30f357b184dc1603419e16228/skills/workflows/firecrawl-lead-gen/SKILL.md"
+      },
+      "quality": {
+        "score": 79,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/firecrawl/skills/firecrawl-lead-gen/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/firecrawl/skills/tree/main/skills/workflows/firecrawl-lead-gen",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/firecrawl/skills/tree/main/skills/workflows/firecrawl-lead-gen",
+        "publisher_setup_url": "https://github.com/firecrawl/skills/blob/main/skills/workflows/firecrawl-lead-gen/SKILL.md"
+      }
+    },
+    {
+      "id": "firecrawl/skills/firecrawl-map",
+      "name": "firecrawl-map",
+      "description": "Discover and list a site's URLs, with search filtering. Use for \"map the site\" or \"find the URL for\" requests — when the user knows the site but not the exact page, or wants site structure.",
+      "category": "data-databases",
+      "license": "ISC",
+      "license_url": "https://github.com/firecrawl/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "2b8f29eae6c6faa30f357b184dc1603419e16228",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-18",
+        "skill_md_url": "https://github.com/firecrawl/skills/blob/2b8f29eae6c6faa30f357b184dc1603419e16228/skills/core/firecrawl-map/SKILL.md"
+      },
+      "quality": {
+        "score": 76,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/firecrawl/skills/firecrawl-map/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/firecrawl/skills/tree/main/skills/core/firecrawl-map",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/firecrawl/skills/tree/main/skills/core/firecrawl-map",
+        "publisher_setup_url": "https://github.com/firecrawl/skills/blob/main/skills/core/firecrawl-map/SKILL.md"
+      }
+    },
+    {
+      "id": "firecrawl/skills/firecrawl-market-research",
+      "name": "firecrawl-market-research",
+      "description": "Research markets and companies with Firecrawl using current, cited figures: market size, growth, trends, financials and earnings. Use when the user asks for market research, an industry overview or a comparison of companies by the numbers, since these figures change faster than training data.",
+      "category": "business-finance",
+      "license": "ISC",
+      "license_url": "https://github.com/firecrawl/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "2b8f29eae6c6faa30f357b184dc1603419e16228",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-18",
+        "skill_md_url": "https://github.com/firecrawl/skills/blob/2b8f29eae6c6faa30f357b184dc1603419e16228/skills/workflows/firecrawl-market-research/SKILL.md"
+      },
+      "quality": {
+        "score": 71,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/firecrawl/skills/firecrawl-market-research/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/firecrawl/skills/tree/main/skills/workflows/firecrawl-market-research",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/firecrawl/skills/tree/main/skills/workflows/firecrawl-market-research",
+        "publisher_setup_url": "https://github.com/firecrawl/skills/blob/main/skills/workflows/firecrawl-market-research/SKILL.md"
+      }
+    },
+    {
+      "id": "firecrawl/skills/firecrawl-monitor",
+      "name": "firecrawl-monitor",
+      "description": "Alert by webhook/email on web changes — use for \"monitor/watch/track/alert me when\": recurring checks on known URLs (prefer over repeated one-off scrapes) or web-wide watches for new results (queries + goal).",
+      "category": "productivity-knowledge",
+      "license": "ISC",
+      "license_url": "https://github.com/firecrawl/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "2b8f29eae6c6faa30f357b184dc1603419e16228",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-18",
+        "skill_md_url": "https://github.com/firecrawl/skills/blob/2b8f29eae6c6faa30f357b184dc1603419e16228/skills/core/firecrawl-monitor/SKILL.md"
+      },
+      "quality": {
+        "score": 82,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/firecrawl/skills/firecrawl-monitor/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/firecrawl/skills/tree/main/skills/core/firecrawl-monitor",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/firecrawl/skills/tree/main/skills/core/firecrawl-monitor",
+        "publisher_setup_url": "https://github.com/firecrawl/skills/blob/main/skills/core/firecrawl-monitor/SKILL.md"
+      }
+    },
+    {
+      "id": "firecrawl/skills/firecrawl-parse",
+      "name": "firecrawl-parse",
+      "description": "Convert a local file (PDF, DOCX, XLSX, HTML, …) to markdown, or answer questions about its content. Use whenever the input is a file path, not a URL.",
+      "category": "documents-office",
+      "license": "ISC",
+      "license_url": "https://github.com/firecrawl/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "2b8f29eae6c6faa30f357b184dc1603419e16228",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-18",
+        "skill_md_url": "https://github.com/firecrawl/skills/blob/2b8f29eae6c6faa30f357b184dc1603419e16228/skills/core/firecrawl-parse/SKILL.md"
+      },
+      "quality": {
+        "score": 71,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/firecrawl/skills/firecrawl-parse/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/firecrawl/skills/tree/main/skills/core/firecrawl-parse",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/firecrawl/skills/tree/main/skills/core/firecrawl-parse",
+        "publisher_setup_url": "https://github.com/firecrawl/skills/blob/main/skills/core/firecrawl-parse/SKILL.md"
+      }
+    },
+    {
+      "id": "firecrawl/skills/firecrawl-qa",
+      "name": "firecrawl-qa",
+      "description": "Test a live website with Firecrawl browser and write up what's broken: links, forms, mobile layout, performance and console errors. Use for pre-launch checks, bug hunts or confirming a deployed site works.",
+      "category": "testing-qa",
+      "license": "ISC",
+      "license_url": "https://github.com/firecrawl/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "2b8f29eae6c6faa30f357b184dc1603419e16228",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-18",
+        "skill_md_url": "https://github.com/firecrawl/skills/blob/2b8f29eae6c6faa30f357b184dc1603419e16228/skills/workflows/firecrawl-qa/SKILL.md"
+      },
+      "quality": {
+        "score": 74,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/firecrawl/skills/firecrawl-qa/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/firecrawl/skills/tree/main/skills/workflows/firecrawl-qa",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/firecrawl/skills/tree/main/skills/workflows/firecrawl-qa",
+        "publisher_setup_url": "https://github.com/firecrawl/skills/blob/main/skills/workflows/firecrawl-qa/SKILL.md"
+      }
+    },
+    {
+      "id": "firecrawl/skills/firecrawl-seo-audit",
+      "name": "firecrawl-seo-audit",
+      "description": "Inspect a website's titles, meta descriptions, headings, canonicals, structured data and internal links for on-page and technical SEO issues. Use for SEO audits, page-source checks, broken-link reviews or comparing pages for target keywords, even without an explicit request to scrape. Return source-backed findings and prioritized fixes. Excludes generic SEO explanations, standalone copywriting and functional website testing.",
+      "category": "marketing-seo",
+      "license": "ISC",
+      "license_url": "https://github.com/firecrawl/skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "2b8f29eae6c6faa30f357b184dc1603419e16228",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-18",
+        "skill_md_url": "https://github.com/firecrawl/skills/blob/2b8f29eae6c6faa30f357b184dc1603419e16228/skills/workflows/firecrawl-seo-audit/SKILL.md"
+      },
+      "quality": {
+        "score": 77,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/firecrawl/skills/firecrawl-seo-audit/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/firecrawl/skills/tree/main/skills/workflows/firecrawl-seo-audit",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/firecrawl/skills/tree/main/skills/workflows/firecrawl-seo-audit",
+        "publisher_setup_url": "https://github.com/firecrawl/skills/blob/main/skills/workflows/firecrawl-seo-audit/SKILL.md"
+      }
+    }
+  ]
+}

@@ -1,0 +1,855 @@
+{
+  "schema_version": 1,
+  "repository": "ykdojo/claude-code-tips",
+  "listing_url": "https://skills.suedeai.ai/directory/ykdojo/claude-code-tips/",
+  "snapshot": {
+    "date": "2026-10-22",
+    "id": "740bfd7230f74b149870dffa9c645b2b",
+    "dataset_sha256": "7af631c54b44d36718ed15f6a3fdbf0445b6a09f638bc05ce3093bca01ef0d02"
+  },
+  "listed_skill_count": 8,
+  "scope": "Skills listed by the directory; this is not a complete inventory of every file in the repository.",
+  "security_scan_status": "not_scanned",
+  "skills": [
+    {
+      "id": "ykdojo/claude-code-tips/hn-summarize",
+      "name": "hn-summarize",
+      "description": "Fetch and summarize Hacker News / hckrnews.com top stories, articles, and their comment threads. Use when asked to summarize HN front-page stories, a specific HN story plus its discussion, or \"the top N from hckrnews\".",
+      "category": "productivity-knowledge",
+      "license": "All rights reserved",
+      "license_url": "https://github.com/ykdojo/claude-code-tips/blob/main/LICENSE",
+      "license_kind": "restricted",
+      "source": {
+        "branch": "main",
+        "revision": "577ac89252195d61283b334c4b9d292b52c82203",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-24",
+        "skill_md_url": "https://github.com/ykdojo/claude-code-tips/blob/577ac89252195d61283b334c4b9d292b52c82203/skills/hn-summarize/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/ykdojo/claude-code-tips/hn-summarize/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/ykdojo/claude-code-tips/hn-summarize/",
+      "source_folder_url": "https://github.com/ykdojo/claude-code-tips/tree/main/skills/hn-summarize",
+      "install": {
+        "skills_cli": null,
+        "publisher_setup_url": "https://github.com/ykdojo/claude-code-tips/blob/main/skills/hn-summarize/SKILL.md"
+      }
+    },
+    {
+      "id": "ykdojo/claude-code-tips/private-github-search",
+      "name": "private-github-search",
+      "description": "Full-text search across all of the user's GitHub repos (including private ones) using a local mirror and ripgrep. Use for \"where did I put X\", \"which repo has X\", or any search spanning the user's repos - gh search code / the REST API cannot reliably search private repos.",
+      "category": "developer-tools",
+      "license": "All rights reserved",
+      "license_url": "https://github.com/ykdojo/claude-code-tips/blob/main/LICENSE",
+      "license_kind": "restricted",
+      "source": {
+        "branch": "main",
+        "revision": "577ac89252195d61283b334c4b9d292b52c82203",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-24",
+        "skill_md_url": "https://github.com/ykdojo/claude-code-tips/blob/577ac89252195d61283b334c4b9d292b52c82203/skills/private-github-search/SKILL.md"
+      },
+      "quality": {
+        "score": 77,
+        "grade": "C",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/ykdojo/claude-code-tips/private-github-search/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/ykdojo/claude-code-tips/private-github-search/",
+      "source_folder_url": "https://github.com/ykdojo/claude-code-tips/tree/main/skills/private-github-search",
+      "install": {
+        "skills_cli": null,
+        "publisher_setup_url": "https://github.com/ykdojo/claude-code-tips/blob/main/skills/private-github-search/SKILL.md"
+      }
+    },
+    {
+      "id": "ykdojo/claude-code-tips/version-check",
+      "name": "version-check",
+      "description": "Recommend which Claude Code version to run, or whether to update. Use when asked which Claude Code version is best/safe, whether to update now, whether a recent release is buggy, or what changed since the installed version.",
+      "category": "developer-tools",
+      "license": "All rights reserved",
+      "license_url": "https://github.com/ykdojo/claude-code-tips/blob/main/LICENSE",
+      "license_kind": "restricted",
+      "source": {
+        "branch": "main",
+        "revision": "577ac89252195d61283b334c4b9d292b52c82203",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-24",
+        "skill_md_url": "https://github.com/ykdojo/claude-code-tips/blob/577ac89252195d61283b334c4b9d292b52c82203/skills/version-check/SKILL.md"
+      },
+      "quality": {
+        "score": 80,
+        "grade": "B",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/ykdojo/claude-code-tips/version-check/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/ykdojo/claude-code-tips/version-check/",
+      "source_folder_url": "https://github.com/ykdojo/claude-code-tips/tree/main/skills/version-check",
+      "install": {
+        "skills_cli": null,
+        "publisher_setup_url": "https://github.com/ykdojo/claude-code-tips/blob/main/skills/version-check/SKILL.md"
+      }
+    },
+    {
+      "id": "ykdojo/claude-code-tips/gha",
+      "name": "gha",
+      "description": "Analyze GitHub Actions failures and identify root causes",
+      "category": "devops-cloud",
+      "license": "All rights reserved",
+      "license_url": "https://github.com/ykdojo/claude-code-tips/blob/main/LICENSE",
+      "license_kind": "restricted",
+      "source": {
+        "branch": "main",
+        "revision": "577ac89252195d61283b334c4b9d292b52c82203",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-24",
+        "skill_md_url": "https://github.com/ykdojo/claude-code-tips/blob/577ac89252195d61283b334c4b9d292b52c82203/skills/gha/SKILL.md"
+      },
+      "quality": {
+        "score": 65,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/ykdojo/claude-code-tips/gha/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/ykdojo/claude-code-tips/tree/main/skills/gha",
+      "install": {
+        "skills_cli": null,
+        "publisher_setup_url": "https://github.com/ykdojo/claude-code-tips/blob/main/skills/gha/SKILL.md"
+      }
+    },
+    {
+      "id": "ykdojo/claude-code-tips/half-clone",
+      "name": "half-clone",
+      "description": "Clone the later half of the current conversation, discarding earlier context to reduce token usage while preserving recent work.",
+      "category": "ai-agents-llm",
+      "license": "All rights reserved",
+      "license_url": "https://github.com/ykdojo/claude-code-tips/blob/main/LICENSE",
+      "license_kind": "restricted",
+      "source": {
+        "branch": "main",
+        "revision": "577ac89252195d61283b334c4b9d292b52c82203",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-24",
+        "skill_md_url": "https://github.com/ykdojo/claude-code-tips/blob/577ac89252195d61283b334c4b9d292b52c82203/skills/half-clone/SKILL.md"
+      },
+      "quality": {
+        "score": 64,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/ykdojo/claude-code-tips/half-clone/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/ykdojo/claude-code-tips/tree/main/skills/half-clone",
+      "install": {
+        "skills_cli": null,
+        "publisher_setup_url": "https://github.com/ykdojo/claude-code-tips/blob/main/skills/half-clone/SKILL.md"
+      }
+    },
+    {
+      "id": "ykdojo/claude-code-tips/handoff",
+      "name": "handoff",
+      "description": "Write or update a handoff document so the next agent with fresh context can continue this work.",
+      "category": "ai-agents-llm",
+      "license": "All rights reserved",
+      "license_url": "https://github.com/ykdojo/claude-code-tips/blob/main/LICENSE",
+      "license_kind": "restricted",
+      "source": {
+        "branch": "main",
+        "revision": "577ac89252195d61283b334c4b9d292b52c82203",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-24",
+        "skill_md_url": "https://github.com/ykdojo/claude-code-tips/blob/577ac89252195d61283b334c4b9d292b52c82203/skills/handoff/SKILL.md"
+      },
+      "quality": {
+        "score": 62,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/ykdojo/claude-code-tips/handoff/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/ykdojo/claude-code-tips/tree/main/skills/handoff",
+      "install": {
+        "skills_cli": null,
+        "publisher_setup_url": "https://github.com/ykdojo/claude-code-tips/blob/main/skills/handoff/SKILL.md"
+      }
+    },
+    {
+      "id": "ykdojo/claude-code-tips/quarter-clone",
+      "name": "quarter-clone",
+      "description": "Clone the last quarter of the current conversation, discarding earlier context to reduce token usage while preserving recent work.",
+      "category": "ai-agents-llm",
+      "license": "All rights reserved",
+      "license_url": "https://github.com/ykdojo/claude-code-tips/blob/main/LICENSE",
+      "license_kind": "restricted",
+      "source": {
+        "branch": "main",
+        "revision": "577ac89252195d61283b334c4b9d292b52c82203",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-24",
+        "skill_md_url": "https://github.com/ykdojo/claude-code-tips/blob/577ac89252195d61283b334c4b9d292b52c82203/skills/quarter-clone/SKILL.md"
+      },
+      "quality": {
+        "score": 64,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 1
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/ykdojo/claude-code-tips/quarter-clone/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/ykdojo/claude-code-tips/tree/main/skills/quarter-clone",
+      "install": {
+        "skills_cli": null,
+        "publisher_setup_url": "https://github.com/ykdojo/claude-code-tips/blob/main/skills/quarter-clone/SKILL.md"
+      }
+    },
+    {
+      "id": "ykdojo/claude-code-tips/review-claudemd",
+      "name": "review-claudemd",
+      "description": "Review recent conversations to find improvements for CLAUDE.md files.",
+      "category": "ai-agents-llm",
+      "license": "All rights reserved",
+      "license_url": "https://github.com/ykdojo/claude-code-tips/blob/main/LICENSE",
+      "license_kind": "restricted",
+      "source": {
+        "branch": "main",
+        "revision": "577ac89252195d61283b334c4b9d292b52c82203",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-09-24",
+        "skill_md_url": "https://github.com/ykdojo/claude-code-tips/blob/577ac89252195d61283b334c4b9d292b52c82203/skills/review-claudemd/SKILL.md"
+      },
+      "quality": {
+        "score": 65,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 1
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/ykdojo/claude-code-tips/review-claudemd/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/ykdojo/claude-code-tips/tree/main/skills/review-claudemd",
+      "install": {
+        "skills_cli": null,
+        "publisher_setup_url": "https://github.com/ykdojo/claude-code-tips/blob/main/skills/review-claudemd/SKILL.md"
+      }
+    }
+  ]
+}

@@ -1,0 +1,3270 @@
+{
+  "schema_version": 1,
+  "repository": "eduardo-sl/go-agent-skills",
+  "listing_url": "https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/",
+  "snapshot": {
+    "date": "2026-10-22",
+    "id": "740bfd7230f74b149870dffa9c645b2b",
+    "dataset_sha256": "7af631c54b44d36718ed15f6a3fdbf0445b6a09f638bc05ce3093bca01ef0d02"
+  },
+  "listed_skill_count": 31,
+  "scope": "Skills listed by the directory; this is not a complete inventory of every file in the repository.",
+  "security_scan_status": "not_scanned",
+  "skills": [
+    {
+      "id": "eduardo-sl/go-agent-skills/go-ci",
+      "name": "go-ci",
+      "description": "Continuous integration for Go projects: GitHub Actions pipelines, caching, golangci-lint setup, test/coverage gates, vulnerability scanning, SAST (CodeQL, gosec), Dependabot, action pinning, build matrices, Makefile targets. Use when: \"set up CI\", \"GitHub Actions for Go\", \"add lint to the pipeline\", \"CI is slow\", \"coverage gate\", \"build matrix\", \"write a Makefile\", \"run govulncheck in CI\". Not for: commit conventions (git-commit), choosing or auditing dependencies (go-dependency-audit), writing the tests themselves (go-test-quality), releases and signing (go-build-release).",
+      "category": "devops-cloud",
+      "license": "MIT",
+      "license_url": "https://github.com/eduardo-sl/go-agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "e25b517bbd0c11db35f75a83a14f18848c1abdb0",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/eduardo-sl/go-agent-skills/blob/e25b517bbd0c11db35f75a83a14f18848c1abdb0/skills/(workflow)/go-ci/SKILL.md"
+      },
+      "quality": {
+        "score": 95,
+        "grade": "A",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-ci/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-ci/",
+      "source_folder_url": "https://github.com/eduardo-sl/go-agent-skills/tree/main/skills/(workflow)/go-ci",
+      "install": {
+        "skills_cli": "npx skills add 'https://github.com/eduardo-sl/go-agent-skills/tree/main/skills/(workflow)/go-ci'",
+        "publisher_setup_url": "https://github.com/eduardo-sl/go-agent-skills/blob/main/skills/(workflow)/go-ci/SKILL.md"
+      }
+    },
+    {
+      "id": "eduardo-sl/go-agent-skills/go-coding-standards",
+      "name": "go-coding-standards",
+      "description": "Go coding standards and style conventions grounded in Effective Go, Go Code Review Comments, and production-proven idioms. Use when writing or reviewing Go code for import ordering, variable declarations, struct initialization, nesting, receivers, struct tags, or formatting rules. Trigger examples: \"check Go style\", \"fix formatting\", \"Go conventions\", \"struct initialization\". Not for: naming (go-naming), architecture (go-architecture-review), concurrency (go-concurrency-review), performance tuning (go-performance-review).",
+      "category": "code-review-quality",
+      "license": "MIT",
+      "license_url": "https://github.com/eduardo-sl/go-agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "e25b517bbd0c11db35f75a83a14f18848c1abdb0",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/eduardo-sl/go-agent-skills/blob/e25b517bbd0c11db35f75a83a14f18848c1abdb0/skills/(code-quality)/go-coding-standards/SKILL.md"
+      },
+      "quality": {
+        "score": 95,
+        "grade": "A",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-coding-standards/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-coding-standards/",
+      "source_folder_url": "https://github.com/eduardo-sl/go-agent-skills/tree/main/skills/(code-quality)/go-coding-standards",
+      "install": {
+        "skills_cli": "npx skills add 'https://github.com/eduardo-sl/go-agent-skills/tree/main/skills/(code-quality)/go-coding-standards'",
+        "publisher_setup_url": "https://github.com/eduardo-sl/go-agent-skills/blob/main/skills/(code-quality)/go-coding-standards/SKILL.md"
+      }
+    },
+    {
+      "id": "eduardo-sl/go-agent-skills/go-concurrency-review",
+      "name": "go-concurrency-review",
+      "description": "Review and implement safe concurrency patterns in Go: goroutines, channels, sync primitives, context propagation, and goroutine lifecycle management. Use when writing concurrent code, reviewing async patterns, checking thread safety, debugging race conditions, or designing producer/consumer pipelines. Trigger examples: \"check thread safety\", \"review goroutines\", \"race condition\", \"channel patterns\", \"sync.Mutex\", \"context cancellation\", \"goroutine leak\". Not for: general style (go-coding-standards), HTTP handler patterns (go-api-design).",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/eduardo-sl/go-agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "e25b517bbd0c11db35f75a83a14f18848c1abdb0",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/eduardo-sl/go-agent-skills/blob/e25b517bbd0c11db35f75a83a14f18848c1abdb0/skills/(safety)/go-concurrency-review/SKILL.md"
+      },
+      "quality": {
+        "score": 95,
+        "grade": "A",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-concurrency-review/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-concurrency-review/",
+      "source_folder_url": "https://github.com/eduardo-sl/go-agent-skills/tree/main/skills/(safety)/go-concurrency-review",
+      "install": {
+        "skills_cli": "npx skills add 'https://github.com/eduardo-sl/go-agent-skills/tree/main/skills/(safety)/go-concurrency-review'",
+        "publisher_setup_url": "https://github.com/eduardo-sl/go-agent-skills/blob/main/skills/(safety)/go-concurrency-review/SKILL.md"
+      }
+    },
+    {
+      "id": "eduardo-sl/go-agent-skills/go-context",
+      "name": "go-context",
+      "description": "Correct usage of context.Context in Go: propagation, cancellation, timeouts, deadlines, values, and common anti-patterns. Use when: \"context usage\", \"context.Context\", \"context cancellation\", \"timeout\", \"context.WithTimeout\", \"context.WithCancel\", \"context values\", \"context propagation\". Not for: concurrency beyond context (go-concurrency-review), HTTP middleware (go-api-design), error handling (go-error-handling).",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/eduardo-sl/go-agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "e25b517bbd0c11db35f75a83a14f18848c1abdb0",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/eduardo-sl/go-agent-skills/blob/e25b517bbd0c11db35f75a83a14f18848c1abdb0/skills/(code-quality)/go-context/SKILL.md"
+      },
+      "quality": {
+        "score": 95,
+        "grade": "A",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-context/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-context/",
+      "source_folder_url": "https://github.com/eduardo-sl/go-agent-skills/tree/main/skills/(code-quality)/go-context",
+      "install": {
+        "skills_cli": "npx skills add 'https://github.com/eduardo-sl/go-agent-skills/tree/main/skills/(code-quality)/go-context'",
+        "publisher_setup_url": "https://github.com/eduardo-sl/go-agent-skills/blob/main/skills/(code-quality)/go-context/SKILL.md"
+      }
+    },
+    {
+      "id": "eduardo-sl/go-agent-skills/go-defensive-coding",
+      "name": "go-defensive-coding",
+      "description": "Prevent panics, silent corruption, and subtle runtime bugs in Go: typed-nil interfaces, slice aliasing, integer overflow on conversion, float comparison, defer in loops, defensive copying at API boundaries, and zero-value design. Use when hardening code against crashes, reviewing for nil-safety, converting between numeric types, or deciding what to copy at a package boundary. Trigger examples: \"nil pointer panic\", \"why is my error not nil\", \"slice aliasing\", \"integer overflow\", \"compare floats\", \"defer in a loop\", \"defensive copy\", \"make this crash-proof\". Not for: data races and goroutine lifecycle (go-concurrency-review), injection and auth (go-security-audit), a panic that already happened (go-troubleshooting).",
+      "category": "code-review-quality",
+      "license": "MIT",
+      "license_url": "https://github.com/eduardo-sl/go-agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "e25b517bbd0c11db35f75a83a14f18848c1abdb0",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/eduardo-sl/go-agent-skills/blob/e25b517bbd0c11db35f75a83a14f18848c1abdb0/skills/(safety)/go-defensive-coding/SKILL.md"
+      },
+      "quality": {
+        "score": 93,
+        "grade": "A",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-defensive-coding/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-defensive-coding/",
+      "source_folder_url": "https://github.com/eduardo-sl/go-agent-skills/tree/main/skills/(safety)/go-defensive-coding",
+      "install": {
+        "skills_cli": "npx skills add 'https://github.com/eduardo-sl/go-agent-skills/tree/main/skills/(safety)/go-defensive-coding'",
+        "publisher_setup_url": "https://github.com/eduardo-sl/go-agent-skills/blob/main/skills/(safety)/go-defensive-coding/SKILL.md"
+      }
+    },
+    {
+      "id": "eduardo-sl/go-agent-skills/go-error-handling",
+      "name": "go-error-handling",
+      "description": "Go error handling patterns, wrapping, sentinel errors, custom error types, and the errors package. Grounded in Effective Go, Go Code Review Comments, and production-proven idioms. Use when implementing error handling, designing error types, debugging error chains, or reviewing error handling patterns. Trigger examples: \"handle errors\", \"error wrapping\", \"custom error type\", \"sentinel errors\", \"errors.Is\", \"errors.As\". Not for: panic/recover in middleware (go-api-design), test assertions (go-test-quality).",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/eduardo-sl/go-agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "e25b517bbd0c11db35f75a83a14f18848c1abdb0",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/eduardo-sl/go-agent-skills/blob/e25b517bbd0c11db35f75a83a14f18848c1abdb0/skills/(code-quality)/go-error-handling/SKILL.md"
+      },
+      "quality": {
+        "score": 95,
+        "grade": "A",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-error-handling/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-error-handling/",
+      "source_folder_url": "https://github.com/eduardo-sl/go-agent-skills/tree/main/skills/(code-quality)/go-error-handling",
+      "install": {
+        "skills_cli": "npx skills add 'https://github.com/eduardo-sl/go-agent-skills/tree/main/skills/(code-quality)/go-error-handling'",
+        "publisher_setup_url": "https://github.com/eduardo-sl/go-agent-skills/blob/main/skills/(code-quality)/go-error-handling/SKILL.md"
+      }
+    },
+    {
+      "id": "eduardo-sl/go-agent-skills/go-interface-design",
+      "name": "go-interface-design",
+      "description": "Go interface design patterns: implicit interfaces, consumer-side definition, interface compliance verification, composition, the accept-interfaces-return-structs principle, and common pitfalls. Use when designing interfaces, decoupling packages, defining contracts, reviewing interface usage, or refactoring for testability. Trigger examples: \"design interface\", \"accept interfaces return structs\", \"interface compliance\", \"consumer-side interface\", \"interface composition\". Not for: HTTP handler patterns (go-api-design), general review (go-code-review).",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/eduardo-sl/go-agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "e25b517bbd0c11db35f75a83a14f18848c1abdb0",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/eduardo-sl/go-agent-skills/blob/e25b517bbd0c11db35f75a83a14f18848c1abdb0/skills/(architecture)/go-interface-design/SKILL.md"
+      },
+      "quality": {
+        "score": 95,
+        "grade": "A",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-interface-design/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-interface-design/",
+      "source_folder_url": "https://github.com/eduardo-sl/go-agent-skills/tree/main/skills/(architecture)/go-interface-design",
+      "install": {
+        "skills_cli": "npx skills add 'https://github.com/eduardo-sl/go-agent-skills/tree/main/skills/(architecture)/go-interface-design'",
+        "publisher_setup_url": "https://github.com/eduardo-sl/go-agent-skills/blob/main/skills/(architecture)/go-interface-design/SKILL.md"
+      }
+    },
+    {
+      "id": "eduardo-sl/go-agent-skills/go-naming",
+      "name": "go-naming",
+      "description": "Go naming conventions for packages, files, types, functions, methods, receivers, variables, constants, errors, acronyms and tests, grounded in Effective Go and Go Code Review Comments. Use when: \"what should I name this\", \"name this package\", \"naming review\", \"is this name idiomatic\", \"stuttering names\", \"Get prefix\", \"acronym casing\", \"error variable name\", \"receiver name\". Not for: formatting, imports and declarations (go-coding-standards), carrying out a rename across the codebase (go-semantic-tools, go-refactoring).",
+      "category": "code-review-quality",
+      "license": "MIT",
+      "license_url": "https://github.com/eduardo-sl/go-agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "e25b517bbd0c11db35f75a83a14f18848c1abdb0",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/eduardo-sl/go-agent-skills/blob/e25b517bbd0c11db35f75a83a14f18848c1abdb0/skills/(code-quality)/go-naming/SKILL.md"
+      },
+      "quality": {
+        "score": 95,
+        "grade": "A",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-naming/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-naming/",
+      "source_folder_url": "https://github.com/eduardo-sl/go-agent-skills/tree/main/skills/(code-quality)/go-naming",
+      "install": {
+        "skills_cli": "npx skills add 'https://github.com/eduardo-sl/go-agent-skills/tree/main/skills/(code-quality)/go-naming'",
+        "publisher_setup_url": "https://github.com/eduardo-sl/go-agent-skills/blob/main/skills/(code-quality)/go-naming/SKILL.md"
+      }
+    },
+    {
+      "id": "eduardo-sl/go-agent-skills/go-performance-review",
+      "name": "go-performance-review",
+      "description": "Detect performance anti-patterns and apply optimization techniques in Go. Covers allocations, benchmarks and benchstat, pprof and traces, GC and GOMEMLIMIT tuning, PGO, and HTTP client reuse. Use when checking performance, finding slow code, reducing allocations, profiling, or reviewing hot paths. Trigger examples: \"check performance\", \"find slow code\", \"reduce allocations\", \"benchmark this\", \"profile\", \"optimize Go code\". Not for: concurrency correctness (go-concurrency-review), general style (go-coding-standards).",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/eduardo-sl/go-agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "e25b517bbd0c11db35f75a83a14f18848c1abdb0",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/eduardo-sl/go-agent-skills/blob/e25b517bbd0c11db35f75a83a14f18848c1abdb0/skills/(safety)/go-performance-review/SKILL.md"
+      },
+      "quality": {
+        "score": 95,
+        "grade": "A",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-performance-review/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-performance-review/",
+      "source_folder_url": "https://github.com/eduardo-sl/go-agent-skills/tree/main/skills/(safety)/go-performance-review",
+      "install": {
+        "skills_cli": "npx skills add 'https://github.com/eduardo-sl/go-agent-skills/tree/main/skills/(safety)/go-performance-review'",
+        "publisher_setup_url": "https://github.com/eduardo-sl/go-agent-skills/blob/main/skills/(safety)/go-performance-review/SKILL.md"
+      }
+    },
+    {
+      "id": "eduardo-sl/go-agent-skills/go-semantic-tools",
+      "name": "go-semantic-tools",
+      "description": "Navigate and analyze Go codebases semantically with the toolchain instead of text search: gopls via its MCP server or CLI (references, implementations, call hierarchy, rename, extract/inline code actions, diagnostics), go list for the dependency graph, go doc for APIs. Use when: \"find all callers\", \"who implements this interface\", \"where is this used\", \"trace the dependency graph\", \"explore this codebase\", \"find usages before changing\", \"map the module\". Not for: performing the refactor (go-refactoring), judging the architecture (go-architecture-review), writing documentation (go-documentation).",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/eduardo-sl/go-agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "e25b517bbd0c11db35f75a83a14f18848c1abdb0",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/eduardo-sl/go-agent-skills/blob/e25b517bbd0c11db35f75a83a14f18848c1abdb0/skills/(workflow)/go-semantic-tools/SKILL.md"
+      },
+      "quality": {
+        "score": 93,
+        "grade": "A",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-semantic-tools/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-semantic-tools/",
+      "source_folder_url": "https://github.com/eduardo-sl/go-agent-skills/tree/main/skills/(workflow)/go-semantic-tools",
+      "install": {
+        "skills_cli": "npx skills add 'https://github.com/eduardo-sl/go-agent-skills/tree/main/skills/(workflow)/go-semantic-tools'",
+        "publisher_setup_url": "https://github.com/eduardo-sl/go-agent-skills/blob/main/skills/(workflow)/go-semantic-tools/SKILL.md"
+      }
+    },
+    {
+      "id": "eduardo-sl/go-agent-skills/go-test-quality",
+      "name": "go-test-quality",
+      "description": "Go testing patterns for production-grade code: subtests, test helpers, fixtures, golden files, httptest, testcontainers, fuzz testing, and testing/synctest. Covers mocking strategies, test isolation, coverage analysis, and test design philosophy. Use when writing tests, improving coverage, reviewing test quality, setting up test infrastructure, or choosing a testing approach. Trigger examples: \"add tests\", \"improve coverage\", \"write tests for this\", \"test helpers\", \"mock this dependency\", \"integration test\", \"fuzz test\", \"flaky test\", \"synctest\", \"goroutine leak in tests\". Not for: benchmarking methodology (go-performance-review), security testing (go-security-audit), table-driven patterns (go-test-table-driven).",
+      "category": "testing-qa",
+      "license": "MIT",
+      "license_url": "https://github.com/eduardo-sl/go-agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "e25b517bbd0c11db35f75a83a14f18848c1abdb0",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/eduardo-sl/go-agent-skills/blob/e25b517bbd0c11db35f75a83a14f18848c1abdb0/skills/(testing)/go-test-quality/SKILL.md"
+      },
+      "quality": {
+        "score": 93,
+        "grade": "A",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-test-quality/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-test-quality/",
+      "source_folder_url": "https://github.com/eduardo-sl/go-agent-skills/tree/main/skills/(testing)/go-test-quality",
+      "install": {
+        "skills_cli": "npx skills add 'https://github.com/eduardo-sl/go-agent-skills/tree/main/skills/(testing)/go-test-quality'",
+        "publisher_setup_url": "https://github.com/eduardo-sl/go-agent-skills/blob/main/skills/(testing)/go-test-quality/SKILL.md"
+      }
+    },
+    {
+      "id": "eduardo-sl/go-agent-skills/go-troubleshooting",
+      "name": "go-troubleshooting",
+      "description": "Diagnose runtime problems in Go programs: panics and stack traces, deadlocks, goroutine leaks, memory leaks, OOM kills, race reports, and debugging with delve and pprof. Use when: \"debug this panic\", \"read this stack trace\", \"deadlock\", \"memory leak\", \"goroutine count growing\", \"OOM\", \"program hangs\", \"race detector output\", \"use delve\". Not for: optimizing code that works (go-performance-review), writing new concurrent code (go-concurrency-review), failing test design (go-test-quality).",
+      "category": "testing-qa",
+      "license": "MIT",
+      "license_url": "https://github.com/eduardo-sl/go-agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "e25b517bbd0c11db35f75a83a14f18848c1abdb0",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/eduardo-sl/go-agent-skills/blob/e25b517bbd0c11db35f75a83a14f18848c1abdb0/skills/(safety)/go-troubleshooting/SKILL.md"
+      },
+      "quality": {
+        "score": 95,
+        "grade": "A",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-troubleshooting/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-troubleshooting/",
+      "source_folder_url": "https://github.com/eduardo-sl/go-agent-skills/tree/main/skills/(safety)/go-troubleshooting",
+      "install": {
+        "skills_cli": "npx skills add 'https://github.com/eduardo-sl/go-agent-skills/tree/main/skills/(safety)/go-troubleshooting'",
+        "publisher_setup_url": "https://github.com/eduardo-sl/go-agent-skills/blob/main/skills/(safety)/go-troubleshooting/SKILL.md"
+      }
+    },
+    {
+      "id": "eduardo-sl/go-agent-skills/git-commit",
+      "name": "git-commit",
+      "description": "Structured git commit messages following Conventional Commits format for Go projects. Generates well-scoped, atomic commits with clear descriptions. Use when committing changes, writing commit messages, preparing PRs, or reviewing commit history quality. Trigger examples: \"commit these changes\", \"create commit\", \"commit message\", \"prepare PR\", \"squash commits\". Not for: code review (go-code-review), changelog generation.",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/eduardo-sl/go-agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "e25b517bbd0c11db35f75a83a14f18848c1abdb0",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/eduardo-sl/go-agent-skills/blob/e25b517bbd0c11db35f75a83a14f18848c1abdb0/skills/(workflow)/git-commit/SKILL.md"
+      },
+      "quality": {
+        "score": 92,
+        "grade": "A",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/git-commit/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/git-commit/",
+      "source_folder_url": "https://github.com/eduardo-sl/go-agent-skills/tree/main/skills/(workflow)/git-commit",
+      "install": {
+        "skills_cli": "npx skills add 'https://github.com/eduardo-sl/go-agent-skills/tree/main/skills/(workflow)/git-commit'",
+        "publisher_setup_url": "https://github.com/eduardo-sl/go-agent-skills/blob/main/skills/(workflow)/git-commit/SKILL.md"
+      }
+    },
+    {
+      "id": "eduardo-sl/go-agent-skills/go-api-design",
+      "name": "go-api-design",
+      "description": "HTTP/REST API design for Go services: handlers, ServeMux routing, middleware, request validation, pagination, idempotency, health checks, error responses, and graceful shutdown. Use when designing APIs, writing HTTP handlers, implementing middleware, or structuring REST endpoints. Trigger examples: \"design API\", \"REST endpoints\", \"HTTP handler\", \"middleware pattern\", \"graceful shutdown\", \"API versioning\". Not for: gRPC services (go-grpc), spec-first OpenAPI work (go-openapi), general architecture (go-architecture-review), concurrency in handlers (go-concurrency-review).",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/eduardo-sl/go-agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "e25b517bbd0c11db35f75a83a14f18848c1abdb0",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/eduardo-sl/go-agent-skills/blob/e25b517bbd0c11db35f75a83a14f18848c1abdb0/skills/(architecture)/go-api-design/SKILL.md"
+      },
+      "quality": {
+        "score": 95,
+        "grade": "A",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-api-design/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-api-design/",
+      "source_folder_url": "https://github.com/eduardo-sl/go-agent-skills/tree/main/skills/(architecture)/go-api-design",
+      "install": {
+        "skills_cli": "npx skills add 'https://github.com/eduardo-sl/go-agent-skills/tree/main/skills/(architecture)/go-api-design'",
+        "publisher_setup_url": "https://github.com/eduardo-sl/go-agent-skills/blob/main/skills/(architecture)/go-api-design/SKILL.md"
+      }
+    },
+    {
+      "id": "eduardo-sl/go-agent-skills/go-binary-size",
+      "name": "go-binary-size",
+      "description": "Reduce the size of compiled Go binaries and container images: linker flags, inlining budget, CGO and build tags, embedded assets, dependency weight, and measuring what actually costs bytes. Use when a binary or image is too large, when shrinking a CLI for distribution, or when auditing what a dependency adds to the build. Trigger examples: \"binary is too big\", \"shrink the binary\", \"reduce image size\", \"strip symbols\", \"what is making my binary large\", \"ldflags -s -w\". Not for: runtime speed and allocations (go-performance-review), CI setup (go-ci), release pipelines and signing (go-build-release), dependency CVEs (go-dependency-audit).",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/eduardo-sl/go-agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "e25b517bbd0c11db35f75a83a14f18848c1abdb0",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/eduardo-sl/go-agent-skills/blob/e25b517bbd0c11db35f75a83a14f18848c1abdb0/skills/(workflow)/go-binary-size/SKILL.md"
+      },
+      "quality": {
+        "score": 90,
+        "grade": "A",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-binary-size/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-binary-size/",
+      "source_folder_url": "https://github.com/eduardo-sl/go-agent-skills/tree/main/skills/(workflow)/go-binary-size",
+      "install": {
+        "skills_cli": "npx skills add 'https://github.com/eduardo-sl/go-agent-skills/tree/main/skills/(workflow)/go-binary-size'",
+        "publisher_setup_url": "https://github.com/eduardo-sl/go-agent-skills/blob/main/skills/(workflow)/go-binary-size/SKILL.md"
+      }
+    },
+    {
+      "id": "eduardo-sl/go-agent-skills/go-build-release",
+      "name": "go-build-release",
+      "description": "Build and release Go binaries that are reproducible and verifiable: version stamping, -trimpath builds, cross-compilation, GoReleaser, checksums, SBOMs, cosign signing, build provenance attestations, and container images with ko or a multi-stage Dockerfile. Use when: \"release a Go binary\", \"set up GoReleaser\", \"cross-compile\", \"reproducible build\", \"sign the release\", \"generate an SBOM\", \"build provenance\", \"publish a container image\", \"version command shows (devel)\". Not for: test and lint pipelines (go-ci), shrinking the binary or image (go-binary-size), auditing dependencies (go-dependency-audit).",
+      "category": "devops-cloud",
+      "license": "MIT",
+      "license_url": "https://github.com/eduardo-sl/go-agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "e25b517bbd0c11db35f75a83a14f18848c1abdb0",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/eduardo-sl/go-agent-skills/blob/e25b517bbd0c11db35f75a83a14f18848c1abdb0/skills/(workflow)/go-build-release/SKILL.md"
+      },
+      "quality": {
+        "score": 93,
+        "grade": "A",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-build-release/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-build-release/",
+      "source_folder_url": "https://github.com/eduardo-sl/go-agent-skills/tree/main/skills/(workflow)/go-build-release",
+      "install": {
+        "skills_cli": "npx skills add 'https://github.com/eduardo-sl/go-agent-skills/tree/main/skills/(workflow)/go-build-release'",
+        "publisher_setup_url": "https://github.com/eduardo-sl/go-agent-skills/blob/main/skills/(workflow)/go-build-release/SKILL.md"
+      }
+    },
+    {
+      "id": "eduardo-sl/go-agent-skills/go-cli",
+      "name": "go-cli",
+      "description": "Build command-line tools in Go: flag handling, subcommands, stdin/stdout discipline, exit codes, signal handling, and when Cobra/Viper earn their weight over the standard library. Use when: \"build a CLI\", \"add a subcommand\", \"parse flags\", \"exit codes\", \"handle Ctrl+C\", \"cobra command\", \"read from stdin\", \"CLI UX\". Not for: HTTP APIs (go-api-design), scaffolding (go-project-layout), service configuration (go-architecture-review).",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/eduardo-sl/go-agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "e25b517bbd0c11db35f75a83a14f18848c1abdb0",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/eduardo-sl/go-agent-skills/blob/e25b517bbd0c11db35f75a83a14f18848c1abdb0/skills/(architecture)/go-cli/SKILL.md"
+      },
+      "quality": {
+        "score": 95,
+        "grade": "A",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-cli/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-cli/",
+      "source_folder_url": "https://github.com/eduardo-sl/go-agent-skills/tree/main/skills/(architecture)/go-cli",
+      "install": {
+        "skills_cli": "npx skills add 'https://github.com/eduardo-sl/go-agent-skills/tree/main/skills/(architecture)/go-cli'",
+        "publisher_setup_url": "https://github.com/eduardo-sl/go-agent-skills/blob/main/skills/(architecture)/go-cli/SKILL.md"
+      }
+    },
+    {
+      "id": "eduardo-sl/go-agent-skills/go-data-structures",
+      "name": "go-data-structures",
+      "description": "Correct use of Go's built-in data structures: slices (nil vs empty, append semantics, aliasing, preallocation), maps (comma-ok, sets, iteration order), arrays, and choosing between them. Use when: \"slice vs array\", \"nil slice\", \"empty slice\", \"preallocate\", \"map iteration\", \"use a set in Go\", \"slice aliasing\", \"append gotcha\", \"copy a slice\", \"sync.Map or mutex\". Not for: structures shared across goroutines (go-concurrency-review), allocation profiling (go-performance-review), generic containers (go-design-patterns).",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/eduardo-sl/go-agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "e25b517bbd0c11db35f75a83a14f18848c1abdb0",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/eduardo-sl/go-agent-skills/blob/e25b517bbd0c11db35f75a83a14f18848c1abdb0/skills/(code-quality)/go-data-structures/SKILL.md"
+      },
+      "quality": {
+        "score": 95,
+        "grade": "A",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-data-structures/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-data-structures/",
+      "source_folder_url": "https://github.com/eduardo-sl/go-agent-skills/tree/main/skills/(code-quality)/go-data-structures",
+      "install": {
+        "skills_cli": "npx skills add 'https://github.com/eduardo-sl/go-agent-skills/tree/main/skills/(code-quality)/go-data-structures'",
+        "publisher_setup_url": "https://github.com/eduardo-sl/go-agent-skills/blob/main/skills/(code-quality)/go-data-structures/SKILL.md"
+      }
+    },
+    {
+      "id": "eduardo-sl/go-agent-skills/go-database",
+      "name": "go-database",
+      "description": "Database patterns for Go services: database/sql, connection management, transactions, migrations, query builders, and ORM usage (sqlc, GORM, ent). Use when: \"database access\", \"SQL query\", \"connection pool\", \"transactions\", \"database migration\", \"sqlc\", \"GORM\", \"ent\", \"prepared statement\", \"repository pattern\". Not for: in-memory structures (go-data-structures), SQL security (go-security-audit), query profiling (go-performance-review).",
+      "category": "data-databases",
+      "license": "MIT",
+      "license_url": "https://github.com/eduardo-sl/go-agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "e25b517bbd0c11db35f75a83a14f18848c1abdb0",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/eduardo-sl/go-agent-skills/blob/e25b517bbd0c11db35f75a83a14f18848c1abdb0/skills/(data)/go-database/SKILL.md"
+      },
+      "quality": {
+        "score": 95,
+        "grade": "A",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-database/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-database/",
+      "source_folder_url": "https://github.com/eduardo-sl/go-agent-skills/tree/main/skills/(data)/go-database",
+      "install": {
+        "skills_cli": "npx skills add 'https://github.com/eduardo-sl/go-agent-skills/tree/main/skills/(data)/go-database'",
+        "publisher_setup_url": "https://github.com/eduardo-sl/go-agent-skills/blob/main/skills/(data)/go-database/SKILL.md"
+      }
+    },
+    {
+      "id": "eduardo-sl/go-agent-skills/go-dependency-injection",
+      "name": "go-dependency-injection",
+      "description": "Dependency injection in Go: constructor injection, wiring in main, avoiding global state, and when frameworks (wire, fx, dig) earn their complexity. Use when: \"dependency injection\", \"wire up dependencies\", \"inject this\", \"remove global state\", \"singleton in Go\", \"use google/wire\", \"uber fx\", \"make this testable\". Not for: interface design (go-interface-design), directory structure (go-project-layout), test doubles and mocks (go-test-quality).",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/eduardo-sl/go-agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "e25b517bbd0c11db35f75a83a14f18848c1abdb0",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/eduardo-sl/go-agent-skills/blob/e25b517bbd0c11db35f75a83a14f18848c1abdb0/skills/(architecture)/go-dependency-injection/SKILL.md"
+      },
+      "quality": {
+        "score": 92,
+        "grade": "A",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-dependency-injection/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-dependency-injection/",
+      "source_folder_url": "https://github.com/eduardo-sl/go-agent-skills/tree/main/skills/(architecture)/go-dependency-injection",
+      "install": {
+        "skills_cli": "npx skills add 'https://github.com/eduardo-sl/go-agent-skills/tree/main/skills/(architecture)/go-dependency-injection'",
+        "publisher_setup_url": "https://github.com/eduardo-sl/go-agent-skills/blob/main/skills/(architecture)/go-dependency-injection/SKILL.md"
+      }
+    },
+    {
+      "id": "eduardo-sl/go-agent-skills/go-design-patterns",
+      "name": "go-design-patterns",
+      "description": "Idiomatic Go design patterns: functional options, builder, factory, strategy, middleware chain, pub/sub, and other patterns adapted for Go's type system. Use when: \"design pattern\", \"functional options\", \"builder pattern\", \"factory pattern\", \"strategy pattern\", \"middleware chain\", \"option pattern\", \"how to structure this\". Not for: interface design (go-interface-design), package layout (go-architecture-review), concurrency patterns (go-concurrency-review).",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/eduardo-sl/go-agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "e25b517bbd0c11db35f75a83a14f18848c1abdb0",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/eduardo-sl/go-agent-skills/blob/e25b517bbd0c11db35f75a83a14f18848c1abdb0/skills/(architecture)/go-design-patterns/SKILL.md"
+      },
+      "quality": {
+        "score": 95,
+        "grade": "A",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-design-patterns/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-design-patterns/",
+      "source_folder_url": "https://github.com/eduardo-sl/go-agent-skills/tree/main/skills/(architecture)/go-design-patterns",
+      "install": {
+        "skills_cli": "npx skills add 'https://github.com/eduardo-sl/go-agent-skills/tree/main/skills/(architecture)/go-design-patterns'",
+        "publisher_setup_url": "https://github.com/eduardo-sl/go-agent-skills/blob/main/skills/(architecture)/go-design-patterns/SKILL.md"
+      }
+    },
+    {
+      "id": "eduardo-sl/go-agent-skills/go-documentation",
+      "name": "go-documentation",
+      "description": "Go documentation conventions: godoc comments, package docs, testable Example functions, deprecation notices, doc links, and project docs (README, CHANGELOG, llms.txt). Use when: \"add godoc\", \"document this package\", \"write doc comments\", \"add examples to docs\", \"deprecate a function\", \"write a README\", \"update the changelog\", \"improve the docs\". Not for: commit messages (git-commit), code style (go-coding-standards).",
+      "category": "writing-content",
+      "license": "MIT",
+      "license_url": "https://github.com/eduardo-sl/go-agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "e25b517bbd0c11db35f75a83a14f18848c1abdb0",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/eduardo-sl/go-agent-skills/blob/e25b517bbd0c11db35f75a83a14f18848c1abdb0/skills/(code-quality)/go-documentation/SKILL.md"
+      },
+      "quality": {
+        "score": 95,
+        "grade": "A",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-documentation/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-documentation/",
+      "source_folder_url": "https://github.com/eduardo-sl/go-agent-skills/tree/main/skills/(code-quality)/go-documentation",
+      "install": {
+        "skills_cli": "npx skills add 'https://github.com/eduardo-sl/go-agent-skills/tree/main/skills/(code-quality)/go-documentation'",
+        "publisher_setup_url": "https://github.com/eduardo-sl/go-agent-skills/blob/main/skills/(code-quality)/go-documentation/SKILL.md"
+      }
+    },
+    {
+      "id": "eduardo-sl/go-agent-skills/go-graphql",
+      "name": "go-graphql",
+      "description": "Build GraphQL servers in Go with gqlgen: schema-first generation, resolver structure, the N+1 problem and dataloaders, complexity and depth limits, error presentation, field-level authorization, and testing resolvers. Use when implementing or reviewing a GraphQL API, when a query fans out into hundreds of database calls, or when deciding what a resolver may expose. Trigger examples: \"GraphQL\", \"gqlgen\", \"resolver\", \"N+1 queries\", \"dataloader\", \"query complexity limit\", \"GraphQL schema\". Not for: REST and OpenAPI (go-openapi), gRPC (go-grpc), general HTTP middleware and shutdown (go-api-design).",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/eduardo-sl/go-agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "e25b517bbd0c11db35f75a83a14f18848c1abdb0",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/eduardo-sl/go-agent-skills/blob/e25b517bbd0c11db35f75a83a14f18848c1abdb0/skills/(architecture)/go-graphql/SKILL.md"
+      },
+      "quality": {
+        "score": 93,
+        "grade": "A",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-graphql/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-graphql/",
+      "source_folder_url": "https://github.com/eduardo-sl/go-agent-skills/tree/main/skills/(architecture)/go-graphql",
+      "install": {
+        "skills_cli": "npx skills add 'https://github.com/eduardo-sl/go-agent-skills/tree/main/skills/(architecture)/go-graphql'",
+        "publisher_setup_url": "https://github.com/eduardo-sl/go-agent-skills/blob/main/skills/(architecture)/go-graphql/SKILL.md"
+      }
+    },
+    {
+      "id": "eduardo-sl/go-agent-skills/go-grpc",
+      "name": "go-grpc",
+      "description": "gRPC services in Go beyond the basics: proto design, status codes and error details, interceptors, deadlines, streaming, health checks, and graceful shutdown. Use when: \"gRPC service\", \"proto design\", \"gRPC error handling\", \"interceptor\", \"gRPC streaming\", \"gRPC deadline\", \"grpc health check\", \"gRPC status codes\". Not for: REST handlers (go-api-design), protobuf-agnostic layering (go-architecture-review), TLS hardening (go-security-audit).",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/eduardo-sl/go-agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "e25b517bbd0c11db35f75a83a14f18848c1abdb0",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/eduardo-sl/go-agent-skills/blob/e25b517bbd0c11db35f75a83a14f18848c1abdb0/skills/(architecture)/go-grpc/SKILL.md"
+      },
+      "quality": {
+        "score": 95,
+        "grade": "A",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-grpc/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-grpc/",
+      "source_folder_url": "https://github.com/eduardo-sl/go-agent-skills/tree/main/skills/(architecture)/go-grpc",
+      "install": {
+        "skills_cli": "npx skills add 'https://github.com/eduardo-sl/go-agent-skills/tree/main/skills/(architecture)/go-grpc'",
+        "publisher_setup_url": "https://github.com/eduardo-sl/go-agent-skills/blob/main/skills/(architecture)/go-grpc/SKILL.md"
+      }
+    },
+    {
+      "id": "eduardo-sl/go-agent-skills/go-modernize",
+      "name": "go-modernize",
+      "description": "Modernize Go code to use current language features and standard library additions, Go 1.21 through 1.27: generics and generic methods, log/slog, errors.Join, slices/maps, iterators, encoding/json/v2, stdlib uuid. Use when: \"modernize\", \"update to modern Go\", \"use generics\", \"replace interface{}\", \"upgrade Go version\", \"slog\", \"errors.Join\", \"range over func\", \"iterators\". Not for: general style (go-coding-standards), error philosophy (go-error-handling), logging architecture (go-observability).",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/eduardo-sl/go-agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "e25b517bbd0c11db35f75a83a14f18848c1abdb0",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/eduardo-sl/go-agent-skills/blob/e25b517bbd0c11db35f75a83a14f18848c1abdb0/skills/(code-quality)/go-modernize/SKILL.md"
+      },
+      "quality": {
+        "score": 95,
+        "grade": "A",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-modernize/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-modernize/",
+      "source_folder_url": "https://github.com/eduardo-sl/go-agent-skills/tree/main/skills/(code-quality)/go-modernize",
+      "install": {
+        "skills_cli": "npx skills add 'https://github.com/eduardo-sl/go-agent-skills/tree/main/skills/(code-quality)/go-modernize'",
+        "publisher_setup_url": "https://github.com/eduardo-sl/go-agent-skills/blob/main/skills/(code-quality)/go-modernize/SKILL.md"
+      }
+    },
+    {
+      "id": "eduardo-sl/go-agent-skills/go-observability",
+      "name": "go-observability",
+      "description": "Structured logging, distributed tracing, metrics, and health checks for Go services. Covers slog, OpenTelemetry, Prometheus, and observability best practices. Use when: \"add logging\", \"structured logs\", \"add tracing\", \"OpenTelemetry\", \"add metrics\", \"Prometheus\", \"observability\", \"instrument this code\". Not for: pprof profiling (go-performance-review), error handling (go-error-handling), health endpoints (go-api-design).",
+      "category": "devops-cloud",
+      "license": "MIT",
+      "license_url": "https://github.com/eduardo-sl/go-agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "e25b517bbd0c11db35f75a83a14f18848c1abdb0",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/eduardo-sl/go-agent-skills/blob/e25b517bbd0c11db35f75a83a14f18848c1abdb0/skills/(safety)/go-observability/SKILL.md"
+      },
+      "quality": {
+        "score": 95,
+        "grade": "A",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-observability/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-observability/",
+      "source_folder_url": "https://github.com/eduardo-sl/go-agent-skills/tree/main/skills/(safety)/go-observability",
+      "install": {
+        "skills_cli": "npx skills add 'https://github.com/eduardo-sl/go-agent-skills/tree/main/skills/(safety)/go-observability'",
+        "publisher_setup_url": "https://github.com/eduardo-sl/go-agent-skills/blob/main/skills/(safety)/go-observability/SKILL.md"
+      }
+    },
+    {
+      "id": "eduardo-sl/go-agent-skills/go-openapi",
+      "name": "go-openapi",
+      "description": "Spec-first REST development in Go with OpenAPI: generating server interfaces and clients with oapi-codegen, request validation middleware, RFC 9457 error bodies, contract testing, and detecting breaking API changes. Use when the API has or should have an OpenAPI document, when wiring code generation into the build, or when a hand-written handler has drifted from its published contract. Trigger examples: \"OpenAPI\", \"swagger spec\", \"oapi-codegen\", \"generate a client from the spec\", \"validate requests against the schema\", \"breaking API change\". Not for: handler structure and shutdown (go-api-design), gRPC and protobuf (go-grpc), GraphQL schemas and resolvers (go-graphql).",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/eduardo-sl/go-agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "e25b517bbd0c11db35f75a83a14f18848c1abdb0",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/eduardo-sl/go-agent-skills/blob/e25b517bbd0c11db35f75a83a14f18848c1abdb0/skills/(architecture)/go-openapi/SKILL.md"
+      },
+      "quality": {
+        "score": 90,
+        "grade": "A",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-openapi/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-openapi/",
+      "source_folder_url": "https://github.com/eduardo-sl/go-agent-skills/tree/main/skills/(architecture)/go-openapi",
+      "install": {
+        "skills_cli": "npx skills add 'https://github.com/eduardo-sl/go-agent-skills/tree/main/skills/(architecture)/go-openapi'",
+        "publisher_setup_url": "https://github.com/eduardo-sl/go-agent-skills/blob/main/skills/(architecture)/go-openapi/SKILL.md"
+      }
+    },
+    {
+      "id": "eduardo-sl/go-agent-skills/go-project-layout",
+      "name": "go-project-layout",
+      "description": "Scaffold new Go projects and services: directory structure, cmd/ and internal/ conventions, when to use a flat layout, module naming, and main package wiring. Use when: \"new Go project\", \"scaffold a service\", \"create project structure\", \"start a Go module\", \"how do I organize a new service\", \"set up folder structure\". Not for: reviewing an existing architecture (go-architecture-review), DI wiring (go-dependency-injection), CI setup (go-ci).",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/eduardo-sl/go-agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "e25b517bbd0c11db35f75a83a14f18848c1abdb0",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/eduardo-sl/go-agent-skills/blob/e25b517bbd0c11db35f75a83a14f18848c1abdb0/skills/(architecture)/go-project-layout/SKILL.md"
+      },
+      "quality": {
+        "score": 92,
+        "grade": "A",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-project-layout/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-project-layout/",
+      "source_folder_url": "https://github.com/eduardo-sl/go-agent-skills/tree/main/skills/(architecture)/go-project-layout",
+      "install": {
+        "skills_cli": "npx skills add 'https://github.com/eduardo-sl/go-agent-skills/tree/main/skills/(architecture)/go-project-layout'",
+        "publisher_setup_url": "https://github.com/eduardo-sl/go-agent-skills/blob/main/skills/(architecture)/go-project-layout/SKILL.md"
+      }
+    },
+    {
+      "id": "eduardo-sl/go-agent-skills/go-refactoring",
+      "name": "go-refactoring",
+      "description": "Safe refactoring workflow for Go: behavior-preserving steps, compiler-checked renames, extracting packages, breaking circular dependencies, and strangler migrations — always behind green tests. Use when: \"refactor this\", \"rename across the codebase\", \"extract a package\", \"break this circular dependency\", \"split this god package\", \"migrate callers\", \"clean up without changing behavior\". Not for: choosing the target architecture (go-architecture-review), adopting new language features (go-modernize), performance rewrites (go-performance-review).",
+      "category": "code-review-quality",
+      "license": "MIT",
+      "license_url": "https://github.com/eduardo-sl/go-agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "e25b517bbd0c11db35f75a83a14f18848c1abdb0",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/eduardo-sl/go-agent-skills/blob/e25b517bbd0c11db35f75a83a14f18848c1abdb0/skills/(workflow)/go-refactoring/SKILL.md"
+      },
+      "quality": {
+        "score": 95,
+        "grade": "A",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-refactoring/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-refactoring/",
+      "source_folder_url": "https://github.com/eduardo-sl/go-agent-skills/tree/main/skills/(workflow)/go-refactoring",
+      "install": {
+        "skills_cli": "npx skills add 'https://github.com/eduardo-sl/go-agent-skills/tree/main/skills/(workflow)/go-refactoring'",
+        "publisher_setup_url": "https://github.com/eduardo-sl/go-agent-skills/blob/main/skills/(workflow)/go-refactoring/SKILL.md"
+      }
+    },
+    {
+      "id": "eduardo-sl/go-agent-skills/go-skills-router",
+      "name": "go-skills-router",
+      "description": "Index and routing table for this repository's Go skills: maps a task to the skill that owns it, names the secondary skills worth loading alongside, and draws the boundary between skills whose triggers overlap. Use when it is unclear which Go skill applies, when a task spans several concerns at once, when two skills seem to cover the same ground, or when the user asks what Go skills are available or wants a project configured to load them. Trigger examples: \"which skill should I use\", \"what Go skills do you have\", \"is this concurrency or performance\", \"set up the Go skills for this repo\". Not for: a task that already maps cleanly to one skill — load that skill directly.",
+      "category": "developer-tools",
+      "license": "MIT",
+      "license_url": "https://github.com/eduardo-sl/go-agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "e25b517bbd0c11db35f75a83a14f18848c1abdb0",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/eduardo-sl/go-agent-skills/blob/e25b517bbd0c11db35f75a83a14f18848c1abdb0/skills/(workflow)/go-skills-router/SKILL.md"
+      },
+      "quality": {
+        "score": 90,
+        "grade": "A",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-skills-router/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-skills-router/",
+      "source_folder_url": "https://github.com/eduardo-sl/go-agent-skills/tree/main/skills/(workflow)/go-skills-router",
+      "install": {
+        "skills_cli": "npx skills add 'https://github.com/eduardo-sl/go-agent-skills/tree/main/skills/(workflow)/go-skills-router'",
+        "publisher_setup_url": "https://github.com/eduardo-sl/go-agent-skills/blob/main/skills/(workflow)/go-skills-router/SKILL.md"
+      }
+    },
+    {
+      "id": "eduardo-sl/go-agent-skills/go-test-table-driven",
+      "name": "go-test-table-driven",
+      "description": "Deep dive on table-driven tests in Go: when to use them, when to avoid them, struct design, subtest naming, advanced patterns like test matrices and shared setup, and refactoring bloated tables into clean ones. Use when writing table-driven tests, refactoring test tables, reviewing table test structure, or deciding whether table-driven is the right approach. Trigger examples: \"table-driven test\", \"table test\", \"test cases struct\", \"test matrix\", \"parametrize tests\", \"data-driven test\", \"refactor test table\". Not for: general test strategy, mocks, golden files, fuzzing (go-test-quality), benchmarks (go-performance-review).",
+      "category": "testing-qa",
+      "license": "MIT",
+      "license_url": "https://github.com/eduardo-sl/go-agent-skills/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "e25b517bbd0c11db35f75a83a14f18848c1abdb0",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-10-15",
+        "skill_md_url": "https://github.com/eduardo-sl/go-agent-skills/blob/e25b517bbd0c11db35f75a83a14f18848c1abdb0/skills/(testing)/go-test-table-driven/SKILL.md"
+      },
+      "quality": {
+        "score": 93,
+        "grade": "A",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 56
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 3
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 4
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 3
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 2
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 2
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": true,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-test-table-driven/report.json",
+      "review_url": "https://skills.suedeai.ai/directory/eduardo-sl/go-agent-skills/go-test-table-driven/",
+      "source_folder_url": "https://github.com/eduardo-sl/go-agent-skills/tree/main/skills/(testing)/go-test-table-driven",
+      "install": {
+        "skills_cli": "npx skills add 'https://github.com/eduardo-sl/go-agent-skills/tree/main/skills/(testing)/go-test-table-driven'",
+        "publisher_setup_url": "https://github.com/eduardo-sl/go-agent-skills/blob/main/skills/(testing)/go-test-table-driven/SKILL.md"
+      }
+    }
+  ]
+}

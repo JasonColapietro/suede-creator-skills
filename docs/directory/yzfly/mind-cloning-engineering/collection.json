@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "repository": "yzfly/Mind-Cloning-Engineering",
+  "listing_url": "https://skills.suedeai.ai/directory/yzfly/mind-cloning-engineering/",
+  "snapshot": {
+    "date": "2026-10-22",
+    "id": "740bfd7230f74b149870dffa9c645b2b",
+    "dataset_sha256": "7af631c54b44d36718ed15f6a3fdbf0445b6a09f638bc05ce3093bca01ef0d02"
+  },
+  "listed_skill_count": 1,
+  "scope": "Skills listed by the directory; this is not a complete inventory of every file in the repository.",
+  "security_scan_status": "not_scanned",
+  "skills": [
+    {
+      "id": "yzfly/mind-cloning-engineering/mind-clone",
+      "name": "mind-clone",
+      "description": "Activate a Cognitive Digital Twin. Can simulate a custom subject (via core/ directory) OR load pre-installed celebrity/expert personas (from personas/ directory).",
+      "category": "ai-agents-llm",
+      "license": "Apache-2.0",
+      "license_url": "https://github.com/yzfly/Mind-Cloning-Engineering/blob/main/LICENSE",
+      "license_kind": "open",
+      "source": {
+        "branch": "main",
+        "revision": "301f0a2e44df4608dfb84b48567275510976ded8",
+        "revision_status": "recorded",
+        "repository_commit_date": "2025-12-21",
+        "skill_md_url": "https://github.com/yzfly/Mind-Cloning-Engineering/blob/301f0a2e44df4608dfb84b48567275510976ded8/skills/mind-clone/SKILL.md"
+      },
+      "quality": {
+        "score": 61,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 4
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 1
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 3
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/yzfly/mind-cloning-engineering/mind-clone/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/yzfly/Mind-Cloning-Engineering/tree/main/skills/mind-clone",
+      "install": {
+        "skills_cli": "npx skills add https://github.com/yzfly/Mind-Cloning-Engineering/tree/main/skills/mind-clone",
+        "publisher_setup_url": "https://github.com/yzfly/Mind-Cloning-Engineering/blob/main/skills/mind-clone/SKILL.md"
+      }
+    }
+  ]
+}
