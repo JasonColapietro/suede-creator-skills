@@ -1,6 +1,6 @@
 {
   "updated": "2026-11-03",
-  "about": "Source data for the brand comparison pages under directory/compare/: one \"Suede AI Skills Directory vs <name>\" page and one \"<name> alternatives\" page per entry, both listed on the compare hub. scripts/build-directory.mjs renders them; scripts/directory/versus.mjs validates this file. Every competitor fact names a source in that entry's sources list, fetched on the entry's checked date; re-check each source before changing a fact. Suede AI's own figures are never written here: {skills}, {repos}, {categories}, {full}, {shielded}, {tasks}, {alternatives}, {snapshot}, {installs_matched} and {installs_date} are filled from the live directory data at build time. A null fact renders as not stated by the cited sources. Competitor pricing is never written here (owner direction, 2026-11-05): every competitor's price row renders as \"Pricing varies\" linked to the competitor's site, and scripts/directory/versus.mjs rejects a price fact or any price wording in competitor copy.",
+  "about": "Source data for the brand comparison pages under directory/compare/: one \"Suede Skills Directory vs <name>\" page and one \"<name> alternatives\" page per entry, both listed on the compare hub. scripts/build-directory.mjs renders them; scripts/directory/versus.mjs validates this file. Every competitor fact names a source in that entry's sources list, fetched on the entry's checked date; re-check each source before changing a fact. Suede AI's own figures are never written here: {skills}, {repos}, {categories}, {full}, {shielded}, {tasks}, {alternatives}, {snapshot}, {installs_matched} and {installs_date} are filled from the live directory data at build time. A null fact renders as not stated by the cited sources. Competitor pricing is never written here (owner direction, 2026-11-05): every competitor's price row renders as \"Pricing varies\" linked to the competitor's site, and scripts/directory/versus.mjs rejects a price fact or any price wording in competitor copy.",
   "competitors": [
     {
       "id": "skills-sh",
@@ -15,18 +15,18 @@
         "signals": "Routine security audits that check skills for malicious content",
         "install": "npx skills add <owner/repo>"
       },
-      "vs_answer": "skills.sh ranks agent skills by how often people install them with Vercel's skills CLI. The Suede AI Skills Directory grades {skills} skills from {repos} repositories on a published 0 to 99 rubric and shows skills.sh install counts beside each score where they exist, so you see quality and adoption on one page.",
-      "angle": "An install count tells you what other people picked. The Suede AI Skills Directory tells you what is inside the skill before you pick it: a score built from the skill's own files, the points behind that score, its license, and on {full} full pages, the scripts, credentials and network calls found in its folder.",
-      "together": "Yes. Every listing on the Suede AI Skills Directory gives the npx skills add command that the skills CLI runs, and {installs_matched} listings show the install count skills.sh published on {installs_date}, credited to skills.sh. Choose by score here and install with the same CLI.",
-      "vs_meta": "Suede AI Skills Directory vs skills.sh: graded skills with licenses and file summaries next to Vercel's install leaderboard. Facts and sources inside.",
-      "alt_answer": "The best skills.sh alternative is the Suede AI Skills Directory. It lists {skills} agent skills from {repos} GitHub repositories, grades each one from 0 to 99 on a published rubric, and gives the same npx skills add install command. Other skills.sh alternatives are {others}.",
+      "vs_answer": "skills.sh ranks agent skills by how often people install them with Vercel's skills CLI. The Suede Skills Directory grades {skills} skills from {repos} repositories on a published 0 to 99 rubric and shows skills.sh install counts beside each score where they exist, so you see quality and adoption on one page.",
+      "angle": "An install count tells you what other people picked. The Suede Skills Directory tells you what is inside the skill before you pick it: a score built from the skill's own files, the points behind that score, its license, and on {full} full pages, the scripts, credentials and network calls found in its folder.",
+      "together": "Yes. Every listing on the Suede Skills Directory gives the npx skills add command that the skills CLI runs, and {installs_matched} listings show the install count skills.sh published on {installs_date}, credited to skills.sh. Choose by score here and install with the same CLI.",
+      "vs_meta": "Suede Skills Directory vs skills.sh: graded skills with licenses and file summaries next to Vercel's install leaderboard. Facts and sources inside.",
+      "alt_answer": "The best skills.sh alternative is the Suede Skills Directory. It lists {skills} agent skills from {repos} GitHub repositories, grades each one from 0 to 99 on a published rubric, and gives the same npx skills add install command. Other skills.sh alternatives are {others}.",
       "alt_meta": "The best skills.sh alternatives for finding agent skills, compared: who runs each directory, what it lists and how it ranks. Suede AI grades each listing.",
       "faq": [
         ["Who runs skills.sh?", "Vercel. The skills CLI that feeds its leaderboard is open source at github.com/vercel-labs/skills, and the site footer reads Made with care by Vercel."],
-        ["Does the Suede AI Skills Directory show install counts?", "Yes. {installs_matched} listings show the install count skills.sh published for installs made with the skills CLI, read on {installs_date} and credited to skills.sh, next to the Suede Skill Check score."]
+        ["Does the Suede Skills Directory show install counts?", "Yes. {installs_matched} listings show the install count skills.sh published for installs made with the skills CLI, read on {installs_date} and credited to skills.sh, next to the Suede Skill Check score."]
       ],
       "alt_faq": [
-        ["Is there a skills.sh alternative that uses the same install command?", "Yes. Every listing on the Suede AI Skills Directory gives the npx skills add command for the skills CLI, plus a project-level copy into .claude/skills for Claude Code and .agents/skills for Codex on each full skill page."]
+        ["Is there a skills.sh alternative that uses the same install command?", "Yes. Every listing on the Suede Skills Directory gives the npx skills add command for the skills CLI, plus a project-level copy into .claude/skills for Claude Code and .agents/skills for Codex on each full skill page."]
       ],
       "sources": [
         { "title": "skills.sh home page and leaderboard", "url": "https://skills.sh/" },
@@ -47,18 +47,18 @@
         "signals": "A discovery index; each skill points to its GitHub source",
         "install": "Download as a ZIP; no official CLI, per KDnuggets in April 2026"
       },
-      "vs_answer": "SkillsMP indexes SKILL.md files from public GitHub repositories at very large scale and lets you search them by keyword, occupation and creator. The Suede AI Skills Directory lists {skills} skills that pass its structural listing gate, grades each one from 0 to 99 on a published rubric and links every score to a verifiable report.",
-      "angle": "SkillsMP is built for reach. The Suede AI Skills Directory is built for the choice you make next: a skill is listed only after it passes the Suede Skill Check's structural listing gate, every listing shows its score, license and install command, and {full} full pages summarize the scripts, credentials and network calls found in the skill's files.",
+      "vs_answer": "SkillsMP indexes SKILL.md files from public GitHub repositories at very large scale and lets you search them by keyword, occupation and creator. The Suede Skills Directory lists {skills} skills that pass its structural listing gate, grades each one from 0 to 99 on a published rubric and links every score to a verifiable report.",
+      "angle": "SkillsMP is built for reach. The Suede Skills Directory is built for the choice you make next: a skill is listed only after it passes the Suede Skill Check's structural listing gate, every listing shows its score, license and install command, and {full} full pages summarize the scripts, credentials and network calls found in the skill's files.",
       "together": null,
-      "vs_meta": "Suede AI Skills Directory vs SkillsMP: every listed skill graded 0 to 99 with its license and install command, next to SkillsMP's GitHub-wide index.",
-      "alt_answer": "The best SkillsMP alternative is the Suede AI Skills Directory. It lists {skills} agent skills that pass a structural listing gate, grades each one from 0 to 99 on a published rubric, and gives the install command for Claude Code, Codex and Cursor. Other SkillsMP alternatives are {others}.",
+      "vs_meta": "Suede Skills Directory vs SkillsMP: every listed skill graded 0 to 99 with its license and install command, next to SkillsMP's GitHub-wide index.",
+      "alt_answer": "The best SkillsMP alternative is the Suede Skills Directory. It lists {skills} agent skills that pass a structural listing gate, grades each one from 0 to 99 on a published rubric, and gives the install command for Claude Code, Codex and Cursor. Other SkillsMP alternatives are {others}.",
       "alt_meta": "The best SkillsMP alternatives for agent skills, compared side by side: who runs each directory, what it lists, how it ranks skills and the install route.",
       "faq": [
         ["Who runs SkillsMP?", "SkillsMP is an independent project. SmartScope's review, updated in June 2026, describes it as not affiliated with Anthropic or OpenAI."],
-        ["How many skills does SkillsMP index?", "Published figures depend on the date: KDnuggets reported 425,000+ skills on the SkillsMP home page in April 2026, and SmartScope reported 1.6M+ collected SKILL.md files in June 2026. The Suede AI Skills Directory lists {skills} skills that pass its listing gate, each with a score."]
+        ["How many skills does SkillsMP index?", "Published figures depend on the date: KDnuggets reported 425,000+ skills on the SkillsMP home page in April 2026, and SmartScope reported 1.6M+ collected SKILL.md files in June 2026. The Suede Skills Directory lists {skills} skills that pass its listing gate, each with a score."]
       ],
       "alt_faq": [
-        ["Is there a SkillsMP alternative with an install command for each skill?", "Yes. Every listing on the Suede AI Skills Directory gives the install command: npx skills add with the skill folder's GitHub URL, or a copy into .claude/skills for Claude Code and .agents/skills for Codex."]
+        ["Is there a SkillsMP alternative with an install command for each skill?", "Yes. Every listing on the Suede Skills Directory gives the install command: npx skills add with the skill folder's GitHub URL, or a copy into .claude/skills for Claude Code and .agents/skills for Codex."]
       ],
       "sources": [
         { "title": "SmartScope: SkillsMP Review 2026 (updated June 9, 2026)", "url": "https://smartscope.blog/en/blog/skillsmp-marketplace-guide/" },
@@ -79,18 +79,18 @@
         "signals": "A manual editor reviews and delists spam and off-topic entries",
         "install": "Install command on each skill, plugin and marketplace detail page"
       },
-      "vs_answer": "Claude Marketplaces ranks Claude Code skills, plugins and MCP servers by installs and GitHub stars, refreshed daily. The Suede AI Skills Directory grades {skills} agent skills from {repos} repositories on a published 0 to 99 rubric, and its full pages show the scripts, credentials and network calls inside each skill before you install it.",
-      "angle": "Popularity tells you what other people chose. The Suede AI Skills Directory tells you what is in the skill: the score by component, the license, and on {full} full pages, the scripts, credentials and network calls found in its files. Skills scoring 80 to 99 ({shielded} of them) carry a README badge that links back to the listing.",
+      "vs_answer": "Claude Marketplaces ranks Claude Code skills, plugins and MCP servers by installs and GitHub stars, refreshed daily. The Suede Skills Directory grades {skills} agent skills from {repos} repositories on a published 0 to 99 rubric, and its full pages show the scripts, credentials and network calls inside each skill before you install it.",
+      "angle": "Popularity tells you what other people chose. The Suede Skills Directory tells you what is in the skill: the score by component, the license, and on {full} full pages, the scripts, credentials and network calls found in its files. Skills scoring 80 to 99 ({shielded} of them) carry a README badge that links back to the listing.",
       "together": null,
-      "vs_meta": "Suede AI Skills Directory vs Claude Marketplaces: skills graded 0 to 99 from their own files, next to a Claude Code directory ranked by installs.",
-      "alt_answer": "The best Claude Marketplaces alternative is the Suede AI Skills Directory. It grades {skills} agent skills from {repos} GitHub repositories on a published 0 to 99 rubric, states every license and summarizes what each full skill page's files touch. Other Claude Marketplaces alternatives are {others}.",
+      "vs_meta": "Suede Skills Directory vs Claude Marketplaces: skills graded 0 to 99 from their own files, next to a Claude Code directory ranked by installs.",
+      "alt_answer": "The best Claude Marketplaces alternative is the Suede Skills Directory. It grades {skills} agent skills from {repos} GitHub repositories on a published 0 to 99 rubric, states every license and summarizes what each full skill page's files touch. Other Claude Marketplaces alternatives are {others}.",
       "alt_meta": "The best Claude Marketplaces alternatives for Claude Code skills: who runs each directory, how it ranks, and which one grades each listing 0 to 99.",
       "faq": [
         ["Is Claude Marketplaces run by Anthropic?", "No. The site describes itself as an independent directory of skills, plugins and MCP servers for Claude Code, not affiliated with Anthropic. Its footer credits Vinena Studio."],
-        ["How does Claude Marketplaces rank skills?", "By real installs and GitHub stars, refreshed from GitHub every day, with a manual editor removing spam. The Suede AI Skills Directory ranks by the Suede Skill Check score and shows the points behind it."]
+        ["How does Claude Marketplaces rank skills?", "By real installs and GitHub stars, refreshed from GitHub every day, with a manual editor removing spam. The Suede Skills Directory ranks by the Suede Skill Check score and shows the points behind it."]
       ],
       "alt_faq": [
-        ["Which Claude Marketplaces alternative shows what a skill touches?", "The Suede AI Skills Directory. Its {full} full skill pages list the scripts, credentials and network calls found in each skill's files, next to the score, the license and the install command."]
+        ["Which Claude Marketplaces alternative shows what a skill touches?", "The Suede Skills Directory. Its {full} full skill pages list the scripts, credentials and network calls found in each skill's files, next to the score, the license and the install command."]
       ],
       "sources": [
         { "title": "Claude Marketplaces home page and FAQ", "url": "https://claudemarketplaces.com/" }
@@ -109,18 +109,18 @@
         "signals": "Open-source registry and CLI code under the MIT license",
         "install": "npx claude-plugins install for plugins; npx skills-installer install for skills"
       },
-      "vs_answer": "claude-plugins.dev is a community registry and CLI that installs Claude Code plugins and agent skills it discovers on GitHub. The Suede AI Skills Directory grades {skills} agent skills from {repos} repositories on a published 0 to 99 rubric and gives the install command for Claude Code, Codex and Cursor on every listing.",
-      "angle": "A registry tells you where a skill lives. The Suede AI Skills Directory tells you whether it earns a place in your setup: each listing carries a score built from the skill's own files, sits in one of {categories} categories, and the strongest skills are ranked in {tasks} task shortlists and {alternatives} alternatives pages that compare skills doing the same job.",
+      "vs_answer": "claude-plugins.dev is a community registry and CLI that installs Claude Code plugins and agent skills it discovers on GitHub. The Suede Skills Directory grades {skills} agent skills from {repos} repositories on a published 0 to 99 rubric and gives the install command for Claude Code, Codex and Cursor on every listing.",
+      "angle": "A registry tells you where a skill lives. The Suede Skills Directory tells you whether it earns a place in your setup: each listing carries a score built from the skill's own files, sits in one of {categories} categories, and the strongest skills are ranked in {tasks} task shortlists and {alternatives} alternatives pages that compare skills doing the same job.",
       "together": null,
-      "vs_meta": "Suede AI Skills Directory vs claude-plugins.dev: graded agent skills with licenses and task shortlists, next to a community plugin registry and CLI.",
-      "alt_answer": "The best claude-plugins.dev alternative for choosing skills is the Suede AI Skills Directory. It grades {skills} agent skills from {repos} GitHub repositories on a published 0 to 99 rubric and ranks the strongest in {tasks} task shortlists. Other claude-plugins.dev alternatives are {others}.",
+      "vs_meta": "Suede Skills Directory vs claude-plugins.dev: graded agent skills with licenses and task shortlists, next to a community plugin registry and CLI.",
+      "alt_answer": "The best claude-plugins.dev alternative for choosing skills is the Suede Skills Directory. It grades {skills} agent skills from {repos} GitHub repositories on a published 0 to 99 rubric and ranks the strongest in {tasks} task shortlists. Other claude-plugins.dev alternatives are {others}.",
       "alt_meta": "The best claude-plugins.dev alternatives for Claude Code skills, compared: who runs each directory, how it ranks, and graded shortlists by task.",
       "faq": [
         ["Who runs claude-plugins.dev?", "It is community-maintained and open source. The code lives at github.com/Kamalnrf/claude-plugins under the MIT license."],
-        ["What does claude-plugins.dev install?", "Claude Code plugins with npx claude-plugins install, and agent skills with npx skills-installer install. The Suede AI Skills Directory gives npx skills add and a manual copy route on every listing."]
+        ["What does claude-plugins.dev install?", "Claude Code plugins with npx claude-plugins install, and agent skills with npx skills-installer install. The Suede Skills Directory gives npx skills add and a manual copy route on every listing."]
       ],
       "alt_faq": [
-        ["Which claude-plugins.dev alternative ranks skills by task?", "The Suede AI Skills Directory. Its {tasks} task shortlists rank the highest-scoring skills for jobs such as code review and SEO, and its {alternatives} alternatives pages compare skills from different publishers that do the same work."]
+        ["Which claude-plugins.dev alternative ranks skills by task?", "The Suede Skills Directory. Its {tasks} task shortlists rank the highest-scoring skills for jobs such as code review and SEO, and its {alternatives} alternatives pages compare skills from different publishers that do the same work."]
       ],
       "sources": [
         { "title": "claude-plugins.dev", "url": "https://claude-plugins.dev/" },
@@ -140,18 +140,18 @@
         "signals": "ComposioHQ's list is Apache-2.0 and notes that each skill may carry its own license; travisvn's list adds security guidance",
         "install": "Follow each linked repository"
       },
-      "vs_answer": "awesome-claude-skills lists on GitHub, led by ComposioHQ's with 78.6k stars, link to skills with one-line descriptions. The Suede AI Skills Directory turns that kind of list into data you can sort: {skills} skills from {repos} repositories, each graded from 0 to 99, with its license, install command and a report you can verify.",
-      "angle": "Curated lists are a strong starting point, and the Suede AI Skills Directory reads them: citations in curated lists are one component of the Suede Skill Check score. On top of that, every listing gets the full score with the points behind it, its license, and an install command, and {full} full pages summarize the scripts, credentials and network calls in the skill's files.",
+      "vs_answer": "awesome-claude-skills lists on GitHub, led by ComposioHQ's with 78.6k stars, link to skills with one-line descriptions. The Suede Skills Directory turns that kind of list into data you can sort: {skills} skills from {repos} repositories, each graded from 0 to 99, with its license, install command and a report you can verify.",
+      "angle": "Curated lists are a strong starting point, and the Suede Skills Directory reads them: citations in curated lists are one component of the Suede Skill Check score. On top of that, every listing gets the full score with the points behind it, its license, and an install command, and {full} full pages summarize the scripts, credentials and network calls in the skill's files.",
       "together": null,
-      "vs_meta": "Suede AI Skills Directory vs awesome-claude-skills lists: each listed skill graded 0 to 99 with license, install command and a verifiable report.",
-      "alt_answer": "The best awesome-claude-skills alternative is the Suede AI Skills Directory. It lists {skills} agent skills from {repos} GitHub repositories, grades each one from 0 to 99 on a published rubric, and counts curated-list citations as part of the score. Other awesome-claude-skills alternatives are {others}.",
+      "vs_meta": "Suede Skills Directory vs awesome-claude-skills lists: each listed skill graded 0 to 99 with license, install command and a verifiable report.",
+      "alt_answer": "The best awesome-claude-skills alternative is the Suede Skills Directory. It lists {skills} agent skills from {repos} GitHub repositories, grades each one from 0 to 99 on a published rubric, and counts curated-list citations as part of the score. Other awesome-claude-skills alternatives are {others}.",
       "alt_meta": "The best awesome-claude-skills alternatives: graded, searchable agent skill directories compared by owner, what they list and how they rank skills.",
       "faq": [
         ["Who maintains awesome-claude-skills?", "Several GitHub accounts publish lists under that name. The largest is ComposioHQ/awesome-claude-skills, with 78.6k stars on November 3, 2026; travisvn/awesome-claude-skills had 15.7k."],
-        ["Do awesome-claude-skills lists score skills?", "No. They give one-line descriptions grouped by category. The Suede AI Skills Directory scores every listed skill from 0 to 99 and counts curated-list citations as one component of that score."]
+        ["Do awesome-claude-skills lists score skills?", "No. They give one-line descriptions grouped by category. The Suede Skills Directory scores every listed skill from 0 to 99 and counts curated-list citations as one component of that score."]
       ],
       "alt_faq": [
-        ["Is there a searchable alternative to awesome-claude-skills?", "Yes. The Suede AI Skills Directory searches {skills} skills by name, repository and description, and sorts them into {categories} categories, topic pages and {tasks} task shortlists."]
+        ["Is there a searchable alternative to awesome-claude-skills?", "Yes. The Suede Skills Directory searches {skills} skills by name, repository and description, and sorts them into {categories} categories, topic pages and {tasks} task shortlists."]
       ],
       "sources": [
         { "title": "ComposioHQ/awesome-claude-skills on GitHub", "url": "https://github.com/ComposioHQ/awesome-claude-skills" },

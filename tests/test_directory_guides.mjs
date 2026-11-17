@@ -222,10 +222,10 @@ test("the directory brand is Suede AI", () => {
     const brandCopy = rel === "directory/featured/"
       ? visibleCopy.replaceAll('<p class="featured-kind">Suede Directory Member</p>', '')
       : visibleCopy;
-    assert.match(html, /Suede AI Skills Directory/, rel);
+    assert.match(html, /Suede Skills Directory/, rel);
     assert.doesNotMatch(brandCopy, /Suede Skills Directory|Suede Directory\b|Suede Labs/, rel);
   }
-  assert.match(fs.readFileSync(path.join(docs, "directory/badge.svg"), "utf8"), /Suede AI Skills Directory: listed/);
+  assert.match(fs.readFileSync(path.join(docs, "directory/badge.svg"), "utf8"), /Suede Skills Directory: listed/);
 });
 
 

@@ -382,7 +382,7 @@ test("repository H1s read owner/repo with a graded skill count", () => {
 });
 
 // Brand comparison pages (directory/editorial/competitors.json): a
-// "Suede AI Skills Directory vs <name>" page and a "<name> alternatives" page
+// "Suede Skills Directory vs <name>" page and a "<name> alternatives" page
 // per competing directory, both linked from the compare hub and llms.txt.
 test("every competitor in competitors.json has a vs page and an alternatives page on the compare hub", () => {
   const competitors = JSON.parse(fs.readFileSync(path.join(repoRoot, "directory", "editorial", "competitors.json"), "utf8")).competitors;

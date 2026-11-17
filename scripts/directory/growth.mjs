@@ -56,7 +56,7 @@ export function weeklyFeed({ skills, topics, installsFor, installsDate, generate
   const ids = new Set([...moving.map(s => s.id), ...newest.map(s => s.id), ...topicRows.flatMap(t => t.best)]);
   return {
     star: 'https://github.com/JasonColapietro/suede-creator-skills',
-    about: 'Weekly feed of the Suede AI Skills Directory for agents and newsletters. Suede AI is excluded from every list. Quality scores measure published files, not runtime or security.',
+    about: 'Weekly feed of the Suede Skills Directory for agents and newsletters. Suede AI is excluded from every list. Quality scores measure published files, not runtime or security.',
     quality_snapshot: generated, install_snapshot: installsDate || null, install_source: 'https://skills.sh/',
     stars_snapshot: g?.date || null, stars_since: g?.since || null,
     rising: [...moving].sort((a, b) => week(b).last - week(a).last || a.id.localeCompare(b.id)).slice(0, 25).map(s => s.id),
@@ -78,8 +78,8 @@ export function renderGrowth(c) {
   const table = (heads, rows) => `<div class="table-wrap"><table class="checks"><thead><tr>${heads.map(h => `<th scope="col">${esc(h)}</th>`).join('')}</tr></thead><tbody>${rows.map(row => `<tr>${row.map(v => `<td>${v}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
   function emit({ here, title, description, heading = title, body, trail = [], mainEntity, type = 'WebPage', keywords, h1Html }) {
     const bc = crumbs(here, [['directory/', 'Directory'], ...trail, [null, heading]]);
-    files.set(`${here}index.html`, page({ here, title, description, keywords: setKeywords(here, keywords || [heading.toLowerCase(), 'graded agent skills', 'Suede AI Skills Directory']),
-      h1Html: h1Html || `<div class="eyebrow">Suede AI Skills Directory</div><h1>${esc(heading)}</h1>`, body: `${bc.html}\n${body}`,
+    files.set(`${here}index.html`, page({ here, title, description, keywords: setKeywords(here, keywords || [heading.toLowerCase(), 'graded agent skills', 'Suede Skills Directory']),
+      h1Html: h1Html || `<div class="eyebrow">Suede Skills Directory</div><h1>${esc(heading)}</h1>`, body: `${bc.html}\n${body}`,
       jsonld: [{ '@context': 'https://schema.org', '@type': type, '@id': `${url(here)}#page`, name: title, description, url: url(here), dateModified: pageDate, publisher, isPartOf: directoryRef,
         breadcrumb: { '@id': `${url(here)}#breadcrumb` }, ...(mainEntity ? { mainEntity } : {}) }, bc.ld],
       footerNote: `Published by Suede AI from the ${esc(data.generated)} directory snapshot. Source repositories belong to their publishers.`,

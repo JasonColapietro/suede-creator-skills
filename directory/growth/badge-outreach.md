@@ -12,7 +12,7 @@ Subject: hyperframes scored 80/100 on Suede Skill Check
 
 Hi heygen-com maintainers,
 
-Your hyperframes skill scored 80/100 (grade B) in the Suede AI Skills Directory’s 2026-10-22 assessment. The report shows every component and the source snapshot: https://suedeai.directory/heygen-com/hyperframes/hyperframes/report.json
+Your hyperframes skill scored 80/100 (grade B) in the Suede Skills Directory’s 2026-10-22 assessment. The report shows every component and the source snapshot: https://suedeai.directory/heygen-com/hyperframes/hyperframes/report.json
 
 If that assessment is useful to your users, here is an optional README badge linking to the evidence:
 
@@ -36,7 +36,7 @@ Subject: seo-audit scored 88/100 on Suede Skill Check
 
 Hi coreyhaines31 maintainers,
 
-Your seo-audit skill scored 88/100 (grade B) in the Suede AI Skills Directory’s 2026-10-22 assessment. The report shows every component and the source snapshot: https://suedeai.directory/coreyhaines31/marketingskills/seo-audit/report.json
+Your seo-audit skill scored 88/100 (grade B) in the Suede Skills Directory’s 2026-10-22 assessment. The report shows every component and the source snapshot: https://suedeai.directory/coreyhaines31/marketingskills/seo-audit/report.json
 
 If that assessment is useful to your users, here is an optional README badge linking to the evidence:
 
@@ -60,7 +60,7 @@ Subject: find-skills scored 81/100 on Suede Skill Check
 
 Hi vercel-labs maintainers,
 
-Your find-skills skill scored 81/100 (grade B) in the Suede AI Skills Directory’s 2026-10-22 assessment. The report shows every component and the source snapshot: https://suedeai.directory/vercel-labs/skills/find-skills/report.json
+Your find-skills skill scored 81/100 (grade B) in the Suede Skills Directory’s 2026-10-22 assessment. The report shows every component and the source snapshot: https://suedeai.directory/vercel-labs/skills/find-skills/report.json
 
 If that assessment is useful to your users, here is an optional README badge linking to the evidence:
 
@@ -84,7 +84,7 @@ Subject: azure-prepare scored 82/100 on Suede Skill Check
 
 Hi microsoft maintainers,
 
-Your azure-prepare skill scored 82/100 (grade B) in the Suede AI Skills Directory’s 2026-10-22 assessment. The report shows every component and the source snapshot: https://suedeai.directory/microsoft/azure-skills/azure-prepare/report.json
+Your azure-prepare skill scored 82/100 (grade B) in the Suede Skills Directory’s 2026-10-22 assessment. The report shows every component and the source snapshot: https://suedeai.directory/microsoft/azure-skills/azure-prepare/report.json
 
 If that assessment is useful to your users, here is an optional README badge linking to the evidence:
 
@@ -108,7 +108,7 @@ Subject: frontend-design scored 84/100 on Suede Skill Check
 
 Hi anthropics maintainers,
 
-Your frontend-design skill scored 84/100 (grade B) in the Suede AI Skills Directory’s 2026-10-22 assessment. The report shows every component and the source snapshot: https://suedeai.directory/anthropics/skills/frontend-design/report.json
+Your frontend-design skill scored 84/100 (grade B) in the Suede Skills Directory’s 2026-10-22 assessment. The report shows every component and the source snapshot: https://suedeai.directory/anthropics/skills/frontend-design/report.json
 
 If that assessment is useful to your users, here is an optional README badge linking to the evidence:
 
@@ -132,7 +132,7 @@ Subject: systematic-debugging scored 80/100 on Suede Skill Check
 
 Hi obra maintainers,
 
-Your systematic-debugging skill scored 80/100 (grade B) in the Suede AI Skills Directory’s 2026-10-22 assessment. The report shows every component and the source snapshot: https://suedeai.directory/obra/superpowers/systematic-debugging/report.json
+Your systematic-debugging skill scored 80/100 (grade B) in the Suede Skills Directory’s 2026-10-22 assessment. The report shows every component and the source snapshot: https://suedeai.directory/obra/superpowers/systematic-debugging/report.json
 
 If that assessment is useful to your users, here is an optional README badge linking to the evidence:
 
@@ -156,7 +156,7 @@ Subject: diagnosing-bugs scored 83/100 on Suede Skill Check
 
 Hi mattpocock maintainers,
 
-Your diagnosing-bugs skill scored 83/100 (grade B) in the Suede AI Skills Directory’s 2026-10-22 assessment. The report shows every component and the source snapshot: https://suedeai.directory/mattpocock/skills/diagnosing-bugs/report.json
+Your diagnosing-bugs skill scored 83/100 (grade B) in the Suede Skills Directory’s 2026-10-22 assessment. The report shows every component and the source snapshot: https://suedeai.directory/mattpocock/skills/diagnosing-bugs/report.json
 
 If that assessment is useful to your users, here is an optional README badge linking to the evidence:
 
@@ -180,7 +180,7 @@ Subject: bigquery-basics scored 80/100 on Suede Skill Check
 
 Hi google maintainers,
 
-Your bigquery-basics skill scored 80/100 (grade B) in the Suede AI Skills Directory’s 2026-10-22 assessment. The report shows every component and the source snapshot: https://suedeai.directory/google/skills/bigquery-basics/report.json
+Your bigquery-basics skill scored 80/100 (grade B) in the Suede Skills Directory’s 2026-10-22 assessment. The report shows every component and the source snapshot: https://suedeai.directory/google/skills/bigquery-basics/report.json
 
 If that assessment is useful to your users, here is an optional README badge linking to the evidence:
 
@@ -204,7 +204,7 @@ Subject: ui-ux-pro-max scored 83/100 on Suede Skill Check
 
 Hi nextlevelbuilder maintainers,
 
-Your ui-ux-pro-max skill scored 83/100 (grade B) in the Suede AI Skills Directory’s 2026-10-22 assessment. The report shows every component and the source snapshot: https://suedeai.directory/nextlevelbuilder/ui-ux-pro-max-skill/ui-ux-pro-max/report.json
+Your ui-ux-pro-max skill scored 83/100 (grade B) in the Suede Skills Directory’s 2026-10-22 assessment. The report shows every component and the source snapshot: https://suedeai.directory/nextlevelbuilder/ui-ux-pro-max-skill/ui-ux-pro-max/report.json
 
 If that assessment is useful to your users, here is an optional README badge linking to the evidence:
 
@@ -228,7 +228,7 @@ Subject: laravel-specialist scored 84/100 on Suede Skill Check
 
 Hi jeffallan maintainers,
 
-Your laravel-specialist skill scored 84/100 (grade B) in the Suede AI Skills Directory’s 2026-10-22 assessment. The report shows every component and the source snapshot: https://suedeai.directory/jeffallan/claude-skills/laravel-specialist/report.json
+Your laravel-specialist skill scored 84/100 (grade B) in the Suede Skills Directory’s 2026-10-22 assessment. The report shows every component and the source snapshot: https://suedeai.directory/jeffallan/claude-skills/laravel-specialist/report.json
 
 If that assessment is useful to your users, here is an optional README badge linking to the evidence:
 
@@ -252,7 +252,7 @@ Subject: expo-module scored 87/100 on Suede Skill Check
 
 Hi expo maintainers,
 
-Your expo-module skill scored 87/100 (grade B) in the Suede AI Skills Directory’s 2026-10-22 assessment. The report shows every component and the source snapshot: https://suedeai.directory/expo/skills/expo-module/report.json
+Your expo-module skill scored 87/100 (grade B) in the Suede Skills Directory’s 2026-10-22 assessment. The report shows every component and the source snapshot: https://suedeai.directory/expo/skills/expo-module/report.json
 
 If that assessment is useful to your users, here is an optional README badge linking to the evidence:
 
@@ -276,7 +276,7 @@ Subject: neon-postgres scored 82/100 on Suede Skill Check
 
 Hi neondatabase maintainers,
 
-Your neon-postgres skill scored 82/100 (grade B) in the Suede AI Skills Directory’s 2026-10-22 assessment. The report shows every component and the source snapshot: https://suedeai.directory/neondatabase/agent-skills/neon-postgres/report.json
+Your neon-postgres skill scored 82/100 (grade B) in the Suede Skills Directory’s 2026-10-22 assessment. The report shows every component and the source snapshot: https://suedeai.directory/neondatabase/agent-skills/neon-postgres/report.json
 
 If that assessment is useful to your users, here is an optional README badge linking to the evidence:
 
@@ -300,7 +300,7 @@ Subject: impeccable scored 86/100 on Suede Skill Check
 
 Hi pbakaus maintainers,
 
-Your impeccable skill scored 86/100 (grade B) in the Suede AI Skills Directory’s 2026-10-22 assessment. The report shows every component and the source snapshot: https://suedeai.directory/pbakaus/impeccable/impeccable/report.json
+Your impeccable skill scored 86/100 (grade B) in the Suede Skills Directory’s 2026-10-22 assessment. The report shows every component and the source snapshot: https://suedeai.directory/pbakaus/impeccable/impeccable/report.json
 
 If that assessment is useful to your users, here is an optional README badge linking to the evidence:
 
@@ -324,7 +324,7 @@ Subject: semgrep scored 92/100 on Suede Skill Check
 
 Hi trailofbits maintainers,
 
-Your semgrep skill scored 92/100 (grade A) in the Suede AI Skills Directory’s 2026-10-22 assessment. The report shows every component and the source snapshot: https://suedeai.directory/trailofbits/skills/semgrep/report.json
+Your semgrep skill scored 92/100 (grade A) in the Suede Skills Directory’s 2026-10-22 assessment. The report shows every component and the source snapshot: https://suedeai.directory/trailofbits/skills/semgrep/report.json
 
 If that assessment is useful to your users, here is an optional README badge linking to the evidence:
 
@@ -348,7 +348,7 @@ Subject: supabase scored 81/100 on Suede Skill Check
 
 Hi supabase maintainers,
 
-Your supabase skill scored 81/100 (grade B) in the Suede AI Skills Directory’s 2026-10-22 assessment. The report shows every component and the source snapshot: https://suedeai.directory/supabase/agent-skills/supabase/report.json
+Your supabase skill scored 81/100 (grade B) in the Suede Skills Directory’s 2026-10-22 assessment. The report shows every component and the source snapshot: https://suedeai.directory/supabase/agent-skills/supabase/report.json
 
 If that assessment is useful to your users, here is an optional README badge linking to the evidence:
 
@@ -372,7 +372,7 @@ Subject: ux-heuristics scored 83/100 on Suede Skill Check
 
 Hi wondelai maintainers,
 
-Your ux-heuristics skill scored 83/100 (grade B) in the Suede AI Skills Directory’s 2026-10-22 assessment. The report shows every component and the source snapshot: https://suedeai.directory/wondelai/skills/ux-heuristics/report.json
+Your ux-heuristics skill scored 83/100 (grade B) in the Suede Skills Directory’s 2026-10-22 assessment. The report shows every component and the source snapshot: https://suedeai.directory/wondelai/skills/ux-heuristics/report.json
 
 If that assessment is useful to your users, here is an optional README badge linking to the evidence:
 
@@ -396,7 +396,7 @@ Subject: archify scored 87/100 on Suede Skill Check
 
 Hi tt-a1i maintainers,
 
-Your archify skill scored 87/100 (grade B) in the Suede AI Skills Directory’s 2026-10-22 assessment. The report shows every component and the source snapshot: https://suedeai.directory/tt-a1i/archify/archify/report.json
+Your archify skill scored 87/100 (grade B) in the Suede Skills Directory’s 2026-10-22 assessment. The report shows every component and the source snapshot: https://suedeai.directory/tt-a1i/archify/archify/report.json
 
 If that assessment is useful to your users, here is an optional README badge linking to the evidence:
 
@@ -420,7 +420,7 @@ Subject: rag-eval scored 81/100 on Suede Skill Check
 
 Hi NVIDIA maintainers,
 
-Your rag-eval skill scored 81/100 (grade B) in the Suede AI Skills Directory’s 2026-10-22 assessment. The report shows every component and the source snapshot: https://suedeai.directory/nvidia/skills/rag-eval/report.json
+Your rag-eval skill scored 81/100 (grade B) in the Suede Skills Directory’s 2026-10-22 assessment. The report shows every component and the source snapshot: https://suedeai.directory/nvidia/skills/rag-eval/report.json
 
 If that assessment is useful to your users, here is an optional README badge linking to the evidence:
 
@@ -444,7 +444,7 @@ Subject: github-issues scored 81/100 on Suede Skill Check
 
 Hi github maintainers,
 
-Your github-issues skill scored 81/100 (grade B) in the Suede AI Skills Directory’s 2026-10-22 assessment. The report shows every component and the source snapshot: https://suedeai.directory/github/awesome-copilot/github-issues/report.json
+Your github-issues skill scored 81/100 (grade B) in the Suede Skills Directory’s 2026-10-22 assessment. The report shows every component and the source snapshot: https://suedeai.directory/github/awesome-copilot/github-issues/report.json
 
 If that assessment is useful to your users, here is an optional README badge linking to the evidence:
 
@@ -468,7 +468,7 @@ Subject: aws-cdk scored 80/100 on Suede Skill Check
 
 Hi aws maintainers,
 
-Your aws-cdk skill scored 80/100 (grade B) in the Suede AI Skills Directory’s 2026-10-22 assessment. The report shows every component and the source snapshot: https://suedeai.directory/aws/agent-toolkit-for-aws/aws-cdk/report.json
+Your aws-cdk skill scored 80/100 (grade B) in the Suede Skills Directory’s 2026-10-22 assessment. The report shows every component and the source snapshot: https://suedeai.directory/aws/agent-toolkit-for-aws/aws-cdk/report.json
 
 If that assessment is useful to your users, here is an optional README badge linking to the evidence:
 
@@ -492,7 +492,7 @@ Subject: seo scored 81/100 on Suede Skill Check
 
 Hi AgriciDaniel maintainers,
 
-Your seo skill scored 81/100 (grade B) in the Suede AI Skills Directory’s 2026-10-22 assessment. The report shows every component and the source snapshot: https://suedeai.directory/agricidaniel/claude-seo/seo/report.json
+Your seo skill scored 81/100 (grade B) in the Suede Skills Directory’s 2026-10-22 assessment. The report shows every component and the source snapshot: https://suedeai.directory/agricidaniel/claude-seo/seo/report.json
 
 If that assessment is useful to your users, here is an optional README badge linking to the evidence:
 
@@ -516,7 +516,7 @@ Subject: create-prd scored 81/100 on Suede Skill Check
 
 Hi phuryn maintainers,
 
-Your create-prd skill scored 81/100 (grade B) in the Suede AI Skills Directory’s 2026-10-22 assessment. The report shows every component and the source snapshot: https://suedeai.directory/phuryn/pm-skills/create-prd/report.json
+Your create-prd skill scored 81/100 (grade B) in the Suede Skills Directory’s 2026-10-22 assessment. The report shows every component and the source snapshot: https://suedeai.directory/phuryn/pm-skills/create-prd/report.json
 
 If that assessment is useful to your users, here is an optional README badge linking to the evidence:
 
@@ -540,7 +540,7 @@ Subject: vercel-optimize scored 80/100 on Suede Skill Check
 
 Hi vercel-labs maintainers,
 
-Your vercel-optimize skill scored 80/100 (grade B) in the Suede AI Skills Directory’s 2026-10-22 assessment. The report shows every component and the source snapshot: https://suedeai.directory/vercel-labs/agent-skills/vercel-optimize/report.json
+Your vercel-optimize skill scored 80/100 (grade B) in the Suede Skills Directory’s 2026-10-22 assessment. The report shows every component and the source snapshot: https://suedeai.directory/vercel-labs/agent-skills/vercel-optimize/report.json
 
 If that assessment is useful to your users, here is an optional README badge linking to the evidence:
 
@@ -564,7 +564,7 @@ Subject: user-story scored 83/100 on Suede Skill Check
 
 Hi deanpeters maintainers,
 
-Your user-story skill scored 83/100 (grade B) in the Suede AI Skills Directory’s 2026-10-22 assessment. The report shows every component and the source snapshot: https://suedeai.directory/deanpeters/product-manager-skills/user-story/report.json
+Your user-story skill scored 83/100 (grade B) in the Suede Skills Directory’s 2026-10-22 assessment. The report shows every component and the source snapshot: https://suedeai.directory/deanpeters/product-manager-skills/user-story/report.json
 
 If that assessment is useful to your users, here is an optional README badge linking to the evidence:
 
@@ -588,7 +588,7 @@ Subject: resend scored 84/100 on Suede Skill Check
 
 Hi resend maintainers,
 
-Your resend skill scored 84/100 (grade B) in the Suede AI Skills Directory’s 2026-10-22 assessment. The report shows every component and the source snapshot: https://suedeai.directory/resend/resend-skills/resend/report.json
+Your resend skill scored 84/100 (grade B) in the Suede Skills Directory’s 2026-10-22 assessment. The report shows every component and the source snapshot: https://suedeai.directory/resend/resend-skills/resend/report.json
 
 If that assessment is useful to your users, here is an optional README badge linking to the evidence:
 

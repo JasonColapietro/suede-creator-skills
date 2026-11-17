@@ -120,7 +120,7 @@ class DirectoryInstallTests(unittest.TestCase):
 
     def test_skills_below_80_keep_badge_urls_without_quality_shields(self):
         listing = (self.root / 'docs/directory/badge.svg').read_text()
-        self.assertIn('Suede AI Skills Directory: listed', listing)
+        self.assertIn('Suede Skills Directory: listed', listing)
         for name in ('low-page', 'low-row'):
             for svg in ('badge.svg', 'score.svg'):
                 with self.subTest(skill=name, svg=svg):

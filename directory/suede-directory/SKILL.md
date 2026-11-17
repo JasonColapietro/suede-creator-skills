@@ -1,6 +1,6 @@
 ---
 name: suede-directory
-description: Find and compare graded agent skills for Claude Code, Codex and Cursor using the Suede AI Skills Directory, and brief the user weekly on the skills, topics and repositories that match their interests. Use when someone asks to find a skill for a task, compare skill quality, inspect a skill's score, license and install route, or asks "what's new in agent skills for me". Not for executing or installing a discovered skill without the user's instruction.
+description: Find and compare graded agent skills for Claude Code, Codex and Cursor using the Suede Skills Directory, and brief the user weekly on the skills, topics and repositories that match their interests. Use when someone asks to find a skill for a task, compare skill quality, inspect a skill's score, license and install route, or asks "what's new in agent skills for me". Not for executing or installing a discovered skill without the user's instruction.
 license: MIT
 compatibility: Requires Node.js 22 or later and HTTPS access to suedeai.directory.
 ---

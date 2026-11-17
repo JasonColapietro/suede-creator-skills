@@ -3100,15 +3100,15 @@
  ],
  "directory/featured/index.html": [
   "featured agent projects",
+  "AIHOT agent workflows",
+  "ASOScan agent workflows",
+  "go-public agent workflows",
+  "Kling AI Global agent workflows",
+  "Nexscope Amazon Skills agent workflows",
+  "Nexscope eCommerce Skills agent workflows",
   "deed.page agent workflows",
   "Resume Tribunal agent workflows",
-  "Siebly Crypto Exchange API agent workflows",
-  "TecAdRise Bot agent workflows",
-  "GoVisit Agent Skills agent workflows",
-  "Datacircle agent workflows",
-  "Resume Claim Guard agent workflows",
-  "Socratic Story Cartographer agent workflows",
-  "agentswarm-work agent workflows"
+  "Siebly Crypto Exchange API agent workflows"
  ],
  "directory/features/allowed-tools/index.html": [
   "declares tool permissions agent skills",
@@ -3189,7 +3189,7 @@
  "directory/finder/index.html": [
   "find graded skills inside your agent",
   "graded agent skills",
-  "Suede AI Skills Directory"
+  "Suede Skills Directory"
  ],
  "directory/firebase/skills/firebase-ai-logic-basics/index.html": [
   "firebase-ai-logic-basics skill by firebase",
@@ -5582,7 +5582,7 @@
   "SKILL.md directory",
   "ai agent skills list",
   "most installed agent skills",
-  "Suede AI Skills Directory"
+  "Suede Skills Directory"
  ],
  "directory/infrasity-labs/dev-gtm-claude-skills/agile-product-owner/index.html": [
   "agile-product-owner skill by infrasity-labs",
@@ -10212,7 +10212,7 @@
  "directory/rising/index.html": [
   "rising skills",
   "graded agent skills",
-  "Suede AI Skills Directory"
+  "Suede Skills Directory"
  ],
  "directory/rules/index.html": [
   "rules instruction files and prompts",
@@ -10623,7 +10623,7 @@
  "directory/state-of-agent-skills/index.html": [
   "state of agent skills",
   "graded agent skills",
-  "Suede AI Skills Directory"
+  "Suede Skills Directory"
  ],
  "directory/stripe/ai/index.html": [
   "stripe/ai skills",
@@ -10643,7 +10643,7 @@
   "list claude skill",
   "agent skill badge",
   "skill directory submission",
-  "Suede AI Skills Directory badge"
+  "Suede Skills Directory badge"
  ],
  "directory/supabase/agent-skills/index.html": [
   "supabase/agent-skills skills",
