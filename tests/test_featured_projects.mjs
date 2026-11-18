@@ -14,7 +14,7 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const read = (file) => fs.readFileSync(path.join(root, file), 'utf8');
 const data = JSON.parse(read('directory/featured-projects.json'));
 const published = () => read('docs/directory/featured/index.html');
-const recentIds = ['aihot', 'asoscan', 'go-public', 'kling-global', 'nexscope-amazon', 'nexscope-ecommerce', 'deed-page', 'resume-tribunal', 'siebly-crypto-exchange-api', 'tecadrise-bot', 'govisit', 'datacircle', 'resume-claim-guard', 'socratic-story-cartographer', 'agentswarm-work', 'cloudgpu', 'poptin-email-marketing', 'shiptopaid-lite', 'video-director', 'agent-qa', 'berlin-job-search', 'bulkpublish', 'empacer', 'frametell', 'inkroom', 'lfr', 'trong-hieu', 'geekflare', 'cisco-skill-scanner', 'opsibyte', 'extra-caffeine', 'costory', 'appie', 'coalwash', 'lava', 'arcmira'];
+const recentIds = ['kling-global', 'aihot', 'asoscan', 'go-public', 'nexscope-amazon', 'nexscope-ecommerce', 'deed-page', 'resume-tribunal', 'siebly-crypto-exchange-api', 'tecadrise-bot', 'govisit', 'datacircle', 'resume-claim-guard', 'socratic-story-cartographer', 'agentswarm-work', 'cloudgpu', 'poptin-email-marketing', 'shiptopaid-lite', 'video-director', 'agent-qa', 'berlin-job-search', 'bulkpublish', 'empacer', 'frametell', 'inkroom', 'lfr', 'trong-hieu', 'geekflare', 'cisco-skill-scanner', 'opsibyte', 'extra-caffeine', 'costory', 'appie', 'coalwash', 'lava', 'arcmira'];
 const pendingIds = ['berlin-job-search', 'bulkpublish', 'empacer', 'inkroom', 'lfr'];
 const reviewedIds = recentIds.filter((id) => !pendingIds.includes(id) && data.projects.some((p) => p.id === id));
 const cardOf = (html, id) => html.split(`id="${id}"`)[1]?.split('</article>')[0];
@@ -50,6 +50,33 @@ test('missing and invalid publication dates sort last without inferred chronolog
   const expected = ['dated', 'unknown-0', 'unknown-1', 'unknown-2', 'unknown-3', 'unknown-4', 'unknown-5', 'unknown-6', 'unknown-7'];
   assert.deepEqual(featured.newestPublishedFirst(entries.reverse()).map((p) => p.id), expected);
   assert.deepEqual(featured.newestPublishedFirst([]), []);
+});
+
+test('an editor tie order puts a same-moment entry first without passing a newer one', () => {
+  const entries = [
+    { id: 'aihot', published_at: '2026-11-17T23:39:08Z' },
+    { id: 'asoscan', published_at: '2026-11-17T23:39:08Z' },
+    { id: 'kling-global', published_at: '2026-11-17T23:39:08Z', tie_order: 1 },
+    { id: 'go-public', published_at: '2026-11-17T23:39:08Z' },
+    { id: 'newer', published_at: '2026-11-18T00:00:00Z' },
+    { id: 'older', published_at: '2026-11-17T23:37:50Z', tie_order: 1 },
+  ];
+  assert.deepEqual(featured.newestPublishedFirst(entries).map((p) => p.id), ['newer', 'kling-global', 'aihot', 'asoscan', 'go-public', 'older']);
+});
+
+test('the directory homepage shows Kling AI Global among the three newest featured projects', () => {
+  const editorial = JSON.parse(fs.readFileSync(path.join(root, 'directory', 'featured-projects.json'), 'utf8'));
+  const home = featured.newestPublishedFirst(editorial.projects.filter((p) => !featured.isPending(p))).slice(0, 3).map((p) => p.id);
+  assert.ok(home.includes('kling-global'), home.join(', '));
+});
+
+test('a featured project tie order must be a positive whole number', () => {
+  const editorial = JSON.parse(fs.readFileSync(path.join(root, 'directory', 'featured-projects.json'), 'utf8'));
+  for (const bad of [0, -1, 1.5, '1']) {
+    const copy = structuredClone(editorial);
+    copy.projects.find((p) => p.id === 'kling-global').tie_order = bad;
+    assert.throws(() => featured.featuredProjects(copy), /Invalid featured project: kling-global/);
+  }
 });
 
 test('featured cards, navigation, numbering, badge snippets and structured data share publication order', () => {
@@ -333,10 +360,10 @@ test('featured page has a discoverable route, truthful structured data and selec
   const blocks = [...page.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map((m) => JSON.parse(m[1]));
   const collection = blocks.find((x) => x['@type'] === 'CollectionPage');
   assert.equal(collection.mainEntity.numberOfItems, 36);
-  assert.deepEqual(collection.mainEntity.itemListElement.map((p) => p.name), ['AIHOT', 'ASOScan', 'go-public', 'Kling AI Global', 'Nexscope Amazon Skills', 'Nexscope eCommerce Skills', 'deed.page', 'Resume Tribunal', 'Siebly Crypto Exchange API', 'TecAdRise Bot', 'GoVisit Agent Skills', 'Datacircle', 'Resume Claim Guard', 'Socratic Story Cartographer', 'agentswarm-work', 'CloudGPU', 'Email Marketing Skills by Poptin', 'ShipToPaid Lite', 'Video Director', 'agent-qa CLI by Vostride', 'Berlin Job Search', 'BulkPublish', 'Empacer', 'Frametell', 'InkRoom', 'lfr', 'Trong Hieu agent skills', 'Geekflare', 'Cisco AI Defense Skill Scanner', 'Opsibyte', 'Extra Caffeine', 'Costory', 'Appie', 'CoalWash', 'Lava', 'Arcmira']);
+  assert.deepEqual(collection.mainEntity.itemListElement.map((p) => p.name), ['Kling AI Global', 'AIHOT', 'ASOScan', 'go-public', 'Nexscope Amazon Skills', 'Nexscope eCommerce Skills', 'deed.page', 'Resume Tribunal', 'Siebly Crypto Exchange API', 'TecAdRise Bot', 'GoVisit Agent Skills', 'Datacircle', 'Resume Claim Guard', 'Socratic Story Cartographer', 'agentswarm-work', 'CloudGPU', 'Email Marketing Skills by Poptin', 'ShipToPaid Lite', 'Video Director', 'agent-qa CLI by Vostride', 'Berlin Job Search', 'BulkPublish', 'Empacer', 'Frametell', 'InkRoom', 'lfr', 'Trong Hieu agent skills', 'Geekflare', 'Cisco AI Defense Skill Scanner', 'Opsibyte', 'Extra Caffeine', 'Costory', 'Appie', 'CoalWash', 'Lava', 'Arcmira']);
   const description = page.match(/<meta name="description" content="([^"]*)"/)[1];
   assert.ok(description.length >= 70 && description.length <= 155, description);
-  assert.match(description, /^Meet AIHOT, .* and \d+ more: featured agent projects with source and setup\.$/);
+  assert.match(description, /^Meet Kling AI Global, .* and \d+ more: featured agent projects with source and setup\.$/);
   assert.match(page, /README-badge verification is tracked separately/);
   assert.match(page, /href="\.\.\/submit\/"/);
   assert.match(page, /href="\.\.\/methodology\/"/);

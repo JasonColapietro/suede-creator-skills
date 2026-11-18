@@ -8,8 +8,13 @@ export function newestPublishedFirst(entries) {
     const time = Date.parse(published_at);
     return Number.isFinite(time) && new Date(time).toISOString() === published_at.replace('Z', '.000Z') ? time : -Infinity;
   };
-  return [...entries].sort((a, b) => timestamp(b) - timestamp(a) || (a.id < b.id ? -1 : a.id > b.id ? 1 : 0));
+  return [...entries].sort((a, b) => timestamp(b) - timestamp(a) || tieOrder(a) - tieOrder(b) || (a.id < b.id ? -1 : a.id > b.id ? 1 : 0));
 }
+
+// An editor's order for entries published at the same moment: tie_order 1 comes
+// first, then 2, and so on; entries without one follow, alphabetically by id.
+// It never moves an entry ahead of a newer one.
+const tieOrder = ({ tie_order }) => (Number.isInteger(tie_order) && tie_order > 0 ? tie_order : Infinity);
 
 const MEMBER_LINKS = new Map([
   ['arcmira/mcp', new Map([
@@ -54,6 +59,7 @@ export function featuredProjects(editorial) {
     if (!project || typeof project !== 'object' || Array.isArray(project) || !slug.test(project.id) || ids.has(project.id)) fail();
     if (COPY_FIELDS.some((k) => typeof project[k] !== 'string' || !project[k].trim())) fail();
     if (project.status !== undefined && project.status !== PENDING_STATUS) fail();
+    if (project.tie_order !== undefined && (!Number.isInteger(project.tie_order) || project.tie_order < 1)) fail();
     if (project.license !== undefined && (typeof project.license !== 'string' || !project.license.trim())) fail();
     if (project.site !== undefined && !httpsSite(project.site)) fail();
     if (project.repo !== undefined && (typeof project.repo !== 'string' || !repoName.test(project.repo) || ['.', '..'].includes(project.repo.split('/')[1]))) fail();
