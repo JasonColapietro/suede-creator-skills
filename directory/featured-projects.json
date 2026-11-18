@@ -23,10 +23,10 @@
   "featured_badge": {
     "status": "live",
     "about": "A README badge for featured publishers, so each feature earns a link back to its section. scripts/build-directory.mjs generates the SVG at the image URL while status is \"live\" and prints one snippet per project on the featured page.",
-    "alt": "Featured in the Agent Skills Directory by Suede AI",
+    "alt": "Featured in Suede Skills Directory",
     "image": "https://skills.suedeai.ai/directory/badges/featured.svg",
     "href_pattern": "https://skills.suedeai.ai/directory/featured/#{id}",
-    "markdown_pattern": "[![Featured in the Agent Skills Directory by Suede AI](https://skills.suedeai.ai/directory/badges/featured.svg)](https://skills.suedeai.ai/directory/featured/#{id})"
+    "markdown_pattern": "[![Featured in Suede Skills Directory](https://skills.suedeai.ai/directory/badges/featured.svg)](https://skills.suedeai.ai/directory/featured/#{id})"
   },
   "projects": [
     {
