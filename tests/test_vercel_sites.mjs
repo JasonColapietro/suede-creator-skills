@@ -82,3 +82,17 @@ test("both builds add the agent-view switch once, only to full pages", async () 
   assert.equal(skillsText(page, ".html", `${OLD}/index.html`).split("agent-view.js").length, 2);
   assert.equal(rewriteText(page, ".html", `${OLD}/directory/index.html`).split("agent-view.js").length, 2);
 });
+
+test("directory index.html aliases permanently consolidate without changing pack-site routes", () => {
+  const root = vercel.redirects.find((r) => r.source === "/index.html");
+  const nested = vercel.redirects.find((r) => r.source === "/:path+/index.html");
+  assert.deepEqual(root, { source: "/index.html", destination: "/", permanent: true, has: [{ type: "host", value: "suedeai.directory" }] });
+  assert.deepEqual(nested, { source: "/:path+/index.html", destination: "/:path*/", permanent: true, has: [{ type: "host", value: "suedeai.directory" }] });
+  // Only literal index.html URLs match: assets, verification files, canonical
+  // directory paths and the separate skills host retain their current routing.
+  const matches = (host, pathname) => host === root.has[0].value &&
+    (pathname === root.source || /^\/.+\/index\.html$/.test(pathname));
+  for (const p of ["/index.html", "/featured/index.html", "/topics/seo/index.html"]) assert.ok(matches("suedeai.directory", p));
+  for (const p of ["/", "/featured/", "/robots.txt", "/sitemap.xml", "/badges/featured.svg", "/google4b0bcf0a4950299c.html"]) assert.ok(!matches("suedeai.directory", p));
+  assert.ok(!matches("skills.suedeai.ai", "/index.html"));
+});
