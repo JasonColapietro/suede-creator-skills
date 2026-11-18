@@ -5,9 +5,6 @@
   "buildCommand": "node scripts/build-vercel.mjs",
   "outputDirectory": "dist/out",
   "trailingSlash": true,
-  "rewrites": [
-    { "source": "/scope-insights/:path*", "destination": "https://seo.suedeai.ai/_vercel/insights/:path*" }
-  ],
   "redirects": [
     { "source": "/directory", "destination": "https://suedeai.directory/", "permanent": true },
     { "source": "/directory/:path*", "destination": "https://suedeai.directory/:path*", "permanent": true }
