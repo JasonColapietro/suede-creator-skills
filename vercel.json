@@ -6,7 +6,7 @@
   "outputDirectory": "dist/out",
   "trailingSlash": true,
   "rewrites": [
-    { "source": "/scope-insights/:path*", "destination": "https://seo.suedeai.ai/seo/_vercel/insights/:path*" }
+    { "source": "/scope-insights/:path*", "destination": "https://seo.suedeai.ai/_vercel/insights/:path*" }
   ],
   "redirects": [
     { "source": "/directory", "destination": "https://suedeai.directory/", "permanent": true },

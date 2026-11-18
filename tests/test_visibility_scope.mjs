@@ -32,5 +32,5 @@ test('click emits its own event without collecting page query values; QA emits n
 
 test('skills events use the existing SEO analytics collector through a first-party proxy', () => {
   const config = JSON.parse(readFileSync('vercel.json', 'utf8'));
-  assert.ok(config.rewrites.some(rule => rule.source === '/scope-insights/:path*' && rule.destination === 'https://seo.suedeai.ai/seo/_vercel/insights/:path*'));
+  assert.ok(config.rewrites.some(rule => rule.source === '/scope-insights/:path*' && rule.destination === 'https://seo.suedeai.ai/_vercel/insights/:path*'));
 });
