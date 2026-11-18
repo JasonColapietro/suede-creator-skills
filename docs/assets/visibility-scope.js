@@ -12,7 +12,8 @@
   });
   var loader = d.createElement('script');
   loader.defer = true;
-  loader.src = '/_vercel/insights/script.js';
+  loader.src = '/scope-insights/script.js';
+  loader.setAttribute('data-endpoint', '/scope-insights');
   d.head.appendChild(loader);
   var link = d.getElementById('hero-cta-scope');
   if (link) link.addEventListener('click', function () {

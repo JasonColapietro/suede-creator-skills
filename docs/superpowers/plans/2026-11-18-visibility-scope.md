@@ -5,7 +5,7 @@ Keep install and how-it-works first; append the requested commercial action usin
 1. Add the hero link and click tracker; test action order, destination, QA suppression and event payload.
 2. Add attributed form-start measurement in suede-seo; test once-only behavior.
 3. Owner ruling (2026-11-18): either a confirmed booking with Jason or a successful email request for visibility information qualifies the inquiry. Track qualified email submissions separately from booked calls. Booked calls need verified confirmation, deduplicated by booking ID; never infer a booking from a booking-link click. The remaining dependency is a verified calendar confirmation source.
-4. Run repository tests and report actual results. Live analytics also requires Web Analytics enabled on the skills Vercel project.
+4. Run repository tests and report actual results. Use a first-party /scope-insights proxy to the existing SEO analytics collector; verify the proxy and custom event collection on preview before release.
 
 ## Implemented events
 
@@ -15,4 +15,4 @@ Keep install and how-it-works first; append the requested commercial action usin
 - Existing `Lead` remains the general accepted-inquiry event across forms.
 - Existing `Booking click` remains calendar navigation, not a confirmed booking.
 
-Before production: enable/verify Vercel Web Analytics custom events for the skills project. Publish both repositories together. Qualification is settled: either booking with Jason or requesting visibility information by email qualifies. Booking completion still requires an actual confirmation source; no fabricated conversions are emitted.
+Before production: verify /scope-insights/script.js and event collection via the existing SEO analytics project. Publish both repositories together. Qualification is settled: either booking with Jason or requesting visibility information by email qualifies. Booking completion still requires an actual confirmation source; no fabricated conversions are emitted.
