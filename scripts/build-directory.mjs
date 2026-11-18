@@ -902,6 +902,7 @@ const badgeTextWidth = (t) =>
 const BADGE_LABEL = "Suede Skills Directory";
 
 function badgeSvg(value) {
+  if (value === "featured") return { width: 360, height: 125, svg: fs.readFileSync(path.join(repoRoot, "directory/assets/featured.svg"), "utf8") };
   // Widths approximate Verdana 11px, the shields.io convention. The label half
   // is lifted off pure black and outlined so it reads on GitHub's dark theme.
   const lw = badgeTextWidth(BADGE_LABEL);
@@ -2880,7 +2881,7 @@ ${copy.nominate.steps.map((step) => `          <li>${esc(step)}</li>`).join("\n"
     ? `      <section class="panel badge-panel" id="featured-badge" aria-labelledby="featured-badge-title">
         <h2 id="featured-badge-title">Badge for featured projects</h2>
         <p>Featured publishers can link their README to their section on this page.</p>
-        <p class="badge-preview"><img src="${rel(here, "directory/badges/featured.svg")}" alt="${esc(badge.alt)}" width="${badgeSvg("featured").width}" height="20"></p>
+        <p class="badge-preview"><img src="${rel(here, "directory/badges/featured.svg")}" alt="${esc(badge.alt)}" width="${badgeSvg("featured").width}" height="${badgeSvg("featured").height}"></p>
 ${projects.map((p) => isPending(p)
     ? `        <p class="featured-badge-pending" data-featured-badge-pending="${p.id}"><strong>${esc(p.name)}</strong> ${pendingStatusHtml(esc)}</p>`
     : codeBlock({ label: `${esc(p.name)}, Markdown`, key: `featured-badge-${p.id}` }, badge.markdown_pattern.split("{id}").join(p.id))).join("\n")}

@@ -751,6 +751,7 @@ main a.shortlist-jump { display: inline-flex; align-items: center; gap: 8px; min
 .install-tabs button[aria-selected="true"] { border-color: var(--accent); background: var(--accent); color: var(--on-accent); }
 .install-pane[hidden] { display: none; }
 .badge-preview img { display: inline-block; height: 20px; width: auto; }
+#featured-badge .badge-preview img { width: 360px; max-width: 100%; height: auto; }
 .shield-pair { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin: 16px 0; }
 .shield-pair img { width: 150px; height: 164px; max-width: 100%; }
 .badge-offer { margin: 20px 0; line-height: 1.65; }

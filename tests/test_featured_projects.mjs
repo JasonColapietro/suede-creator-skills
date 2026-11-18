@@ -683,3 +683,14 @@ test('November 10 editorial exceptions use neutral badges and preserve source as
   assert.match(read(resume.review), /Translation is not a condition/i);
   assert.doesNotMatch(read(resume.review), /does not waive|mainly English.*requirement/i);
 });
+
+test('editorial feature badge is a portable award image with no AI branding', () => {
+  const svg = read('docs/directory/badges/featured.svg');
+  assert.match(svg, /id="award-medallion"/);
+  assert.match(svg, /Featured in Suede Skills Directory/);
+  assert.doesNotMatch(svg, /Suede AI|aria-label="S"|<text\b|<script\b|<image\b/);
+  assert.match(svg, /viewBox="0 0 720 250"/);
+  assert.equal(data.featured_badge.alt, 'Featured in Suede Skills Directory');
+  assert.match(read('docs/assets/directory.css'), /#featured-badge \.badge-preview img \{[^}]*height: auto/);
+  assert.match(published(), /badges\/featured\.svg[^>]*width="360" height="125"/);
+});
