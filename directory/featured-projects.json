@@ -923,6 +923,7 @@
     {
       "id": "kling-global",
       "published_at": "2026-11-17T23:39:08Z",
+      "tie_order": 1,
       "name": "Kling AI Global",
       "kind": "Featured project",
       "repo": "klingai-tech/claude-plugin",
