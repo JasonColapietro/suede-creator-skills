@@ -213,17 +213,17 @@ test("the featured page uses its editorial copy, nomination block and badge", ()
   }
 });
 
-test("the directory brand is Suede AI", () => {
+test("the directory display brand is Suede Skills Directory", () => {
   for (const rel of ["directory/", "directory/featured/", "directory/methodology/", "directory/submit/"]) {
     const html = pageHtml(rel);
-    // This named membership category is distinct from the site's Suede AI brand.
+    // This named membership category is distinct from the Directory display brand.
     // Allow its exact kicker only; titles, metadata and all other copy keep the brand guard.
     const visibleCopy = html.replace(/<script\b[^>]*type=["']application\/ld\+json["'][^>]*>[\s\S]*?<\/script>/gi, "");
     const brandCopy = rel === "directory/featured/"
       ? visibleCopy.replaceAll('<p class="featured-kind">Suede Directory Member</p>', '')
       : visibleCopy;
-    assert.match(html, /Suede Skills Directory/, rel);
-    assert.doesNotMatch(brandCopy, /Suede Skills Directory|Suede Directory\b|Suede Labs/, rel);
+    assert.match(html, /<meta property="og:site_name" content="Suede Skills Directory">/, rel);
+    assert.doesNotMatch(brandCopy, /Suede AI Skills Directory|Suede Directory\b|Suede Labs/, rel);
   }
   assert.match(fs.readFileSync(path.join(docs, "directory/badge.svg"), "utf8"), /Suede Skills Directory: listed/);
 });
