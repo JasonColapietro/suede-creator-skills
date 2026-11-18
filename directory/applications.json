@@ -1,7 +1,47 @@
 {
   "schema_version": 1,
-  "updated": "2026-11-15",
+  "updated": "2026-11-17",
   "applications": [
+    {
+      "issue": 406,
+      "applicant": "nexscope",
+      "repo": "nexscope-ai/Amazon-Skills",
+      "scope_version": "b772d0dcd0c90494de8d09afab0ab69eacff383801ee2ace4395c583b7b0af43",
+      "kind": "skill",
+      "scope": "all",
+      "applied_at": "2026-11-17T06:39:36Z",
+      "issue_state": "open"
+    },
+    {
+      "issue": 405,
+      "applicant": "nexscope",
+      "repo": "nexscope-ai/eCommerce-Skills",
+      "scope_version": "6ba2ae4d751e2f3121cf8484443ca13c0b82e63f10d0684e53a687f599608bbc",
+      "kind": "skill",
+      "scope": "all",
+      "applied_at": "2026-11-17T06:39:34Z",
+      "issue_state": "open"
+    },
+    {
+      "issue": 404,
+      "applicant": "KKitar",
+      "repo": "ASOScan/aso-skills",
+      "scope_version": "b18471de47e64c4c2a9f8bc20ebcc238f4eb596278417757e6d59551cb2380cb",
+      "kind": "skill",
+      "scope": [
+        "aso-fundamentals",
+        "asoscan-router",
+        "asoscan-setup",
+        "competitor-analysis",
+        "keyword-intelligence",
+        "keyword-opportunities",
+        "keyword-spy",
+        "metadata-audit",
+        "review-insights"
+      ],
+      "applied_at": "2026-11-17T04:05:11Z",
+      "issue_state": "open"
+    },
     {
       "issue": 396,
       "applicant": "KKKKhazix",

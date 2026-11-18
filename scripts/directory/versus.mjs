@@ -1,5 +1,5 @@
 // Brand comparison pages for the Agent Skills Directory: one
-// "Suede AI Skills Directory vs <name>" page and one "<name> alternatives"
+// "Suede Skills Directory vs <name>" page and one "<name> alternatives"
 // page per competing directory in directory/editorial/competitors.json.
 // This module loads and validates that file and fills its live-count tokens;
 // scripts/build-directory.mjs renders the pages under directory/compare/.

@@ -6,7 +6,7 @@
 
 Editorial selection highlights a project’s workflow and accepted scope. It is separate from structural quality grades, security certification and README-badge verification. A plugin feature does not add its contents to the scored skill catalog.
 
-Selections updated **2026-11-15**. [View on Suede AI](https://skills.suedeai.ai/directory/featured/).
+Selections updated **2026-11-17**. [View on Suede AI](https://skills.suedeai.ai/directory/featured/).
 
 - [Appie](#appie)
 - [CoalWash](#coalwash)
@@ -36,6 +36,12 @@ Selections updated **2026-11-15**. [View on Suede AI](https://skills.suedeai.ai/
 - [Siebly Crypto Exchange API](#siebly-crypto-exchange-api)
 - [deed.page](#deed-page)
 - [TecAdRise Bot](#tecadrise-bot)
+- [ASOScan](#asoscan)
+- [AIHOT](#aihot)
+- [Kling AI Global](#kling-global)
+- [go-public](#go-public)
+- [Nexscope Amazon Skills](#nexscope-amazon)
+- [Nexscope eCommerce Skills](#nexscope-ecommerce)
 
 <a id="appie"></a>
 
@@ -626,6 +632,116 @@ Run a local Windows multi-agent workspace with shared memory, MCP connections an
 Requires 64-bit Windows 10 or 11 and a Cursor API key or supported BYOK provider. Provider usage is billed separately by the chosen provider. Scheduled routines run while the app is open. Configure each connector’s permissions before use.
 
 [Website](https://tecadrise.ai/products/tecadrisebot) · [Repository](https://github.com/tecadrise-ai/TecAdRiseBot) · [Intake review](../directory/reviews/2026-11-13-tecadrise-bot.md) · [Reviewed source 7f67f02](https://github.com/tecadrise-ai/TecAdRiseBot/tree/7f67f0212ae6a5ef623cee30dda6dc0d0ceaa36c) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#tecadrise-bot)
+
+---
+
+<a id="asoscan"></a>
+
+## ASOScan
+
+**Featured project** · License: MIT · source files · Publisher: [ASOScan](https://github.com/ASOScan)
+
+A nine-skill App Store and Google Play optimization collection covering setup, keywords, competitors, metadata and reviews.
+
+- **ASO workflows.** Setup, keyword research, competitor analysis, metadata and review insights.
+
+### Setup
+
+Connected research requires ASOScan access and may consume credits. Owners can resolve conflicting credit guidance, use Apple’s 100-byte keyword limit and align metadata score scales.
+
+[Repository](https://github.com/ASOScan/aso-skills) · [Intake review](../directory/reviews/2026-11-17-asoscan.md) · [Reviewed source 026a04d](https://github.com/ASOScan/aso-skills/tree/026a04de63174b90ec1c14432dd845e86c1d9d6e) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#asoscan)
+
+---
+
+<a id="aihot"></a>
+
+## AIHOT
+
+**Featured project** · License: MIT · source files · Publisher: [KKKKhazix](https://github.com/KKKKhazix)
+
+AIHOT connects assistants to Chinese-language AI news, searches, current topics and daily briefs. This feature covers the AIHOT skill only.
+
+- **News research.** Latest updates, topic searches and daily briefs through aihot.news.
+
+### Setup
+
+The hosted service has separate commercial-use terms. Owners can constrain redirects to AIHOT and clarify pseudonymous analytics; --no-actor disables its installation identifier.
+
+[Repository](https://github.com/KKKKhazix/khazix-skills) · [Intake review](../directory/reviews/2026-11-17-aihot.md) · [Reviewed source 725ac94](https://github.com/KKKKhazix/khazix-skills/tree/725ac9421901ef7fac6761136969d032737abcf3) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#aihot)
+
+---
+
+<a id="kling-global"></a>
+
+## Kling AI Global
+
+**Featured project** · License: MIT · source files · Publisher: [klingai-tech](https://github.com/klingai-tech)
+
+Three connected skills route creative requests and prepare image and video generation through Kling’s Global service.
+
+- **Creative generation.** Request routing, image creation and video workflows with live model discovery.
+
+### Setup
+
+Requires the full plugin, Global OAuth and paid generation credits. Owners can sharpen routing triggers; users should confirm final settings before billable generation. Regional accounts and credits remain separate.
+
+[Repository](https://github.com/klingai-tech/claude-plugin) · [Intake review](../directory/reviews/2026-11-17-kling-global.md) · [Reviewed source d4e0b6a](https://github.com/klingai-tech/claude-plugin/tree/d4e0b6a20e85b8b50468b515ef2421fd25d8ceb1) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#kling-global)
+
+---
+
+<a id="go-public"></a>
+
+## go-public
+
+**Featured project** · License: MIT · source files · Publisher: [fengyiqicoder](https://github.com/fengyiqicoder)
+
+Build a shareable OneTag-hosted AI workflow page with inputs, chained steps and streamed results. Visitors need no account or API key.
+
+- **Shareable workflow pages.** Package tested prompts as interactive forms and publish a reusable link.
+
+### Setup
+
+Pages use OneTag’s hosted allowance. Owners can strengthen private edit-token protection in nested folders and worktrees and reject duplicate input IDs. Keep .go-public.json private.
+
+[Repository](https://github.com/fengyiqicoder/go-public) · [Intake review](../directory/reviews/2026-11-17-go-public.md) · [Reviewed source f16f7b2](https://github.com/fengyiqicoder/go-public/tree/f16f7b25472b7c4829373bb35038ff365fd6c09f) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#go-public)
+
+---
+
+<a id="nexscope-amazon"></a>
+
+## Nexscope Amazon Skills
+
+**Amazon seller skill collection** · License: MIT · Publisher: [nexscope-ai](https://github.com/nexscope-ai)
+
+A collection of Amazon seller workflows for product research, listings, advertising and operations.
+
+- **Research and listings.** Explore product, keyword and listing workflows.
+- **Seller operations.** Plan advertising, inventory and marketplace operations.
+
+### Setup
+
+Owner-fix note: the keyword helper needs safer input handling before use. Live marketplace data tools may require Nexscope access or credits. Featured at collection level; individual skills are not security-verified.
+
+[Repository](https://github.com/nexscope-ai/Amazon-Skills) · [Intake review](../directory/reviews/2026-11-17-nexscope-amazon.md) · [Reviewed source 2bcb8cb](https://github.com/nexscope-ai/Amazon-Skills/tree/2bcb8cb019cfac6a1e420b11f86209df5ea47686) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#nexscope-amazon)
+
+---
+
+<a id="nexscope-ecommerce"></a>
+
+## Nexscope eCommerce Skills
+
+**Multi-marketplace skill collection** · License: MIT · Publisher: [nexscope-ai](https://github.com/nexscope-ai)
+
+Product research, marketing and operations workflows spanning Amazon, Shopify, eBay, Etsy, TikTok Shop and Walmart.
+
+- **Research and marketing.** Explore product positioning, listings and growth workflows.
+- **Store operations.** Plan inventory, fulfillment and multi-marketplace operations.
+
+### Setup
+
+Owner-fix note: some skill metadata needs repair, and bundled brand-monitoring scrapers are unfinished. Live-data services may require accounts or credits. Featured at collection level; individual skills are not security-verified.
+
+[Repository](https://github.com/nexscope-ai/eCommerce-Skills) · [Intake review](../directory/reviews/2026-11-17-nexscope-ecommerce.md) · [Reviewed source c5ba892](https://github.com/nexscope-ai/eCommerce-Skills/tree/c5ba892a1cc3178626577aed1dbde5e62a82f1ac) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#nexscope-ecommerce)
 
 ---
 

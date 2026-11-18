@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Personal weekly briefing from the Suede AI Skills Directory feed.
+// Personal weekly briefing from the Suede Skills Directory feed.
 //   node brief.mjs --interests "marketing, sales, video" [--save] [--limit 5]
 //   node brief.mjs                       # uses saved interests
 // Reads only https://suedeai.directory/weekly.json. Interests stay on this

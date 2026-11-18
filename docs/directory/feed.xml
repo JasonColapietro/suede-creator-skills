@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Suede AI Skills Directory</title>
+    <title>Suede Skills Directory</title>
     <link>https://suedeai.directory/</link>
     <atom:link href="https://suedeai.directory/feed.xml" rel="self" type="application/rss+xml"/>
-    <description>New agent skill listings and guides from the Suede AI Skills Directory, a graded index of public Agent Skills for Claude Code, Codex and Cursor.</description>
+    <description>New agent skill listings and guides from the Suede Skills Directory, a graded index of public Agent Skills for Claude Code, Codex and Cursor.</description>
     <language>en-us</language>
     <lastBuildDate>Wed, 11 Nov 2026 00:00:00 GMT</lastBuildDate>
     <item>

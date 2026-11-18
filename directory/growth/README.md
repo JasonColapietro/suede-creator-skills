@@ -49,7 +49,7 @@ Launch draft:
 
 > Show HN: A graded agent-skills directory with open reports and in-agent search
 >
-> We built Suede AI Skills Directory to help developers inspect an agent skill
+> We built Suede Skills Directory to help developers inspect an agent skill
 > before installing it. Each listing links to its publisher and license, with a
 > 0–99 score computed from the published files. The score breakdown and dated
 > evidence are available as JSON.
@@ -68,7 +68,7 @@ Launch draft:
 Awesome-list entry, to adapt only after checking each list’s rules and existing
 submissions:
 
-> [Suede AI Skills Directory](https://suedeai.directory/) — A graded index of
+> [Suede Skills Directory](https://suedeai.directory/) — A graded index of
 > agent skills for Claude Code, Codex and Cursor, with source links, license
 > details, per-skill score reports and an open JSON API.
 

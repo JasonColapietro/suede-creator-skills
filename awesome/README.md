@@ -86,8 +86,14 @@ Each skill appears in one category. A repository can contribute to several categ
 - **[Siebly Crypto Exchange API](featured.md#siebly-crypto-exchange-api)** by [sieblyio](https://github.com/sieblyio). Guide Node.js and TypeScript integrations across exchange REST and WebSocket APIs, with exchange-specific SDKs, explicit execution modes and connection-state handling.
 - **[deed.page](featured.md#deed-page)** by [f-o-x11](https://github.com/f-o-x11). Publish a clean HTML file or static build to deed.page, then retain the owner token for updates. The workflow separates creating a draft from authorizing a public upload.
 - **[TecAdRise Bot](featured.md#tecadrise-bot)** by [tecadrise-ai](https://github.com/tecadrise-ai). Run a local Windows multi-agent workspace with shared memory, MCP connections and scheduled routines, using Cursor SDK agents or a configured model-provider key.
+- **[ASOScan](featured.md#asoscan)** by [ASOScan](https://github.com/ASOScan). A nine-skill App Store and Google Play optimization collection covering setup, keywords, competitors, metadata and reviews.
+- **[AIHOT](featured.md#aihot)** by [KKKKhazix](https://github.com/KKKKhazix). AIHOT connects assistants to Chinese-language AI news, searches, current topics and daily briefs. This feature covers the AIHOT skill only.
+- **[Kling AI Global](featured.md#kling-global)** by [klingai-tech](https://github.com/klingai-tech). Three connected skills route creative requests and prepare image and video generation through Kling’s Global service.
+- **[go-public](featured.md#go-public)** by [fengyiqicoder](https://github.com/fengyiqicoder). Build a shareable OneTag-hosted AI workflow page with inputs, chained steps and streamed results. Visitors need no account or API key.
+- **[Nexscope Amazon Skills](featured.md#nexscope-amazon)** by [nexscope-ai](https://github.com/nexscope-ai). A collection of Amazon seller workflows for product research, listings, advertising and operations.
+- **[Nexscope eCommerce Skills](featured.md#nexscope-ecommerce)** by [nexscope-ai](https://github.com/nexscope-ai). Product research, marketing and operations workflows spanning Amazon, Shopify, eBay, Etsy, TikTok Shop and Walmart.
 
-These 23 editorial selections have [reviewed scope and setup guidance](featured.md); 5 more are featured with scan &amp; review pending. Editorial selection is separate from quality scores, security certification and README-badge verification. Featured plugins outside the scored skill snapshot are not included in the skill or repository counts above.
+These 29 editorial selections have [reviewed scope and setup guidance](featured.md); 5 more are featured with scan &amp; review pending. Editorial selection is separate from quality scores, security certification and README-badge verification. Featured plugins outside the scored skill snapshot are not included in the skill or repository counts above.
 
 ## Guides
 

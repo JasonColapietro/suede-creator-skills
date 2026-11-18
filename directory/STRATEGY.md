@@ -163,7 +163,7 @@ No baselines are stated here because none were measurable from this session. Rec
 
 ## 8. Template status (October 23, 2026)
 
-- The brand in titles, footers, badges and `og:site_name` is "Suede AI Skills Directory". The hub keeps its keyword-led title.
+- The brand in titles, footers, badges and `og:site_name` is "Suede Skills Directory". The hub keeps its keyword-led title.
 - The four guides are published at `/directory/guides/` with Article, BreadcrumbList and (on the best-SEO guide) ItemList markup. FAQs stay visible but carry no FAQPage markup: Google limits FAQ rich results to well-known government and health sites, and the rest of skills.suedeai.ai does not use FAQPage consistently.
 - Codex documents skills at `.agents/skills` (repository) and `$HOME/.agents/skills` (user), with `$skill-installer` as the in-app installer ([OpenAI docs](https://developers.openai.com/codex/skills), checked October 23, 2026). Skill pages now print a project-level copy into `.agents/skills/` instead of the undocumented `~/.codex/skills/.system/...` installer script.
 - The Skill AI-visibility check (section 5, version 1) is live at `/directory/check/`.

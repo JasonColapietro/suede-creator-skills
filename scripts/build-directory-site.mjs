@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Builds the standalone Suede AI Skills Directory site for https://suedeai.directory
+// Builds the standalone Suede Skills Directory site for https://suedeai.directory
 // from the pages scripts/build-directory.mjs already wrote to docs/directory/.
 //
 //   node scripts/build-directory-site.mjs [--out dist/suedeai-directory]
@@ -58,7 +58,7 @@ export function rewriteUrl(value, pageUrl) {
 export const SITE_NODE = {
   "@type": "WebSite",
   "@id": `${NEW}/#website`,
-  name: "Suede AI Skills Directory",
+  name: "Suede Skills Directory",
   url: `${NEW}/`,
   inLanguage: "en",
   publisher: { "@id": "https://suedeai.ai/#organization" },
@@ -196,7 +196,7 @@ export function build(out) {
 
   const llmsLines = fs.readFileSync(path.join(docs, "llms.txt"), "utf8").split("\n").filter((l) => l.includes(`${OLD}/directory`));
   fs.writeFileSync(path.join(out, "llms.txt"), [
-    "# Suede AI Skills Directory",
+    "# Suede Skills Directory",
     "",
     "> A curated, graded index of public Agent Skills for Claude Code, Codex and Cursor. Skill listings link to the author's GitHub repository, state licenses and show 0–99 Suede Skill Check scores. A separate Agents catalog covers runnable local and hosted editions with evidence-specific /10 ratings, alongside a searchable ungraded catalog with official sources. Published by Suede AI; edited by Jason Colapietro.",
     "",
