@@ -119,5 +119,9 @@
   "406": {
     "feature_id": "nexscope-amazon",
     "scope_version": "b772d0dcd0c90494de8d09afab0ab69eacff383801ee2ace4395c583b7b0af43"
+  },
+  "408": {
+    "review": "directory/reviews/2026-11-19-redya-xiaohongshu.md",
+    "scope_version": "2b037acd228b6b2ebba1970e5051fe72beb30c101d3b87149a84dca3c41612ab"
   }
 }

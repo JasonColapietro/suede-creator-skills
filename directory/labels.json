@@ -10040,5 +10040,9 @@
  "inhotel-io/govisit-toolkit/govisit-search-places": {
   "category": "productivity-knowledge",
   "summary": "Indexed place search by name/intent, with explicit country, destination or proximity constraints."
+ },
+ "rnthking/redya-skills/redya-xiaohongshu": {
+  "category": "marketing-seo",
+  "summary": "Drafts Xiaohongshu (RedNote) posts with titles, body copy and page images, builds product posts, turns photos into Live Photos and checks copy for sensitive words, through the RedYA API."
  }
 }

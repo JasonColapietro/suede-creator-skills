@@ -239,5 +239,9 @@
   "text": "Published by GoVisit.ai / inHotel Sàrl (inhotel-io). Requires HTTPS access to GoVisit’s hosted public read API; the publisher documents reads without a GoVisit API key. Skill files and bundled resources are MIT-licensed. Hosted service access and returned data follow the separate GoVisit Data Use License and source-specific terms, including attribution, retention and reuse limits. Affiliate/referral, OTA and marketplace uses require a separate agreement. These tools provide published discovery facts, not live prices, booking availability or editing authority. Network and tool permission depend on the assistant. Security scan: not scanned; runtime not independently tested by this directory. Destination-scoped place-name queries have a reported timeout in upstream issue #3; preserve the requested scope rather than silently broadening it.",
   "source": "https://govisit.ai/en/docs/general/data-use-license",
   "source_label": "Service and data terms"
+ },
+ "rnthking/redya-skills/redya-xiaohongshu": {
+  "text": "Requires your own RedYA account and REDYA_API_KEY. Outlines, images, link parsing and AI Live Photos spend RedYA credits; the skill shows the price before paid Live Photos. Prompts and images go to RedYA's servers, which keep generation records. Drafts only; it does not post to Xiaohongshu. Skill files are MIT; the RedYA service has its own terms. Static review only; no runtime or security scan.",
+  "source": "https://github.com/rnthking/redya-skills/blob/a833171c4b126a226a31f8680118fa8df29796cc/skill/redya-xiaohongshu/SKILL.md"
  }
 }

@@ -1,7 +1,46 @@
 {
   "schema_version": 1,
-  "updated": "2026-11-17",
+  "updated": "2026-11-19",
   "applications": [
+    {
+      "issue": 414,
+      "applicant": "jangtrinh",
+      "repo": "jangtrinh/design-os",
+      "scope_version": "ba6a5004ff31065ad6015ddeb9c4f11ae3ef107e93ec8f1a0662c349aab2adb1",
+      "kind": "skill",
+      "scope": [
+        "design-os",
+        "design-os-designer"
+      ],
+      "applied_at": "2026-11-19T02:12:32Z",
+      "issue_state": "open"
+    },
+    {
+      "issue": 413,
+      "applicant": "antoinersx",
+      "repo": "StalkC/stalkchain-plugin",
+      "scope_version": "f2985f3b0bf5ed7a1b8b0f8b19594bb236f39515e76856aacc2721a777a06b1f",
+      "kind": "skill",
+      "scope": [
+        "trader-check",
+        "token-check",
+        "smart-money-radar"
+      ],
+      "applied_at": "2026-11-19T01:39:13Z",
+      "issue_state": "open"
+    },
+    {
+      "issue": 408,
+      "applicant": "xiaoxuux",
+      "repo": "rnthking/redya-skills",
+      "scope_version": "2b037acd228b6b2ebba1970e5051fe72beb30c101d3b87149a84dca3c41612ab",
+      "kind": "skill",
+      "scope": [
+        "redya-xiaohongshu"
+      ],
+      "applied_at": "2026-11-18T04:15:12Z",
+      "issue_state": "open"
+    },
     {
       "issue": 406,
       "applicant": "nexscope",
