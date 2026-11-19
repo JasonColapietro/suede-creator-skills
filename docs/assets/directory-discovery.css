@@ -12,11 +12,11 @@
   overflow: clip;
   border: 1px solid var(--line);
   border-radius: 1.25rem;
-  margin: clamp(1rem, 4vw, 2.5rem) 0;
-  padding: clamp(2rem, 6vw, 4.75rem) clamp(.875rem, 5vw, 3rem) clamp(8rem, 21vw, 13rem);
+  margin: clamp(.75rem, 2vw, 1.5rem) 0;
+  padding: clamp(1.5rem, 4vw, 3rem) clamp(.875rem, 5vw, 3rem) clamp(6.5rem, 12vw, 10rem);
   background: radial-gradient(ellipse at 50% 0, #2e3528, transparent 70%), #151b16;
 }
-.directory-discovery #audit-glyphs { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.directory-discovery #audit-glyphs { position: absolute; inset: 0; width: 100%; height: min(100%, 100svh); pointer-events: none; }
 .directory-discovery > .directory-discovery-title,
 .directory-discovery > .workflow-builder { position: relative; z-index: 2; }
 
@@ -30,7 +30,7 @@
 }
 .directory-discovery-title .eyebrow { display: inline-block; color: #f0e3ae; margin: 0 0 .9rem; }
 .directory-discovery .directory-discovery-title h1 {
-  font: 400 clamp(1.9rem, 5vw, 3.6rem)/1.12 "Directory Discovery Pixel", var(--mono);
+  font: 400 clamp(1.9rem, 4.6vw, 3.15rem)/1.12 "Directory Discovery Pixel", var(--mono);
   letter-spacing: -.035em;
   color: #fbf3d6;
   margin: 0 auto .9rem;
@@ -41,9 +41,13 @@
 .directory-discovery-title .lead { color: #e2e7d8; margin: 0 auto .85rem; max-width: 66ch; }
 .directory-discovery-title .directory-snapshot { justify-content: center; color: #cdd7c6; margin-inline: auto; }
 
-.directory-discovery .workflow-builder { background: transparent; border: 0; padding: 0; margin: 1.8rem auto 0; max-width: 70rem; }
+.directory-discovery .workflow-builder { background: transparent; border: 0; padding: 0; margin: 1.3rem auto 0; max-width: 70rem; }
 .directory-discovery .workflow-intro { display: block; text-align: center; margin: 0 0 .95rem; }
-.directory-discovery .workflow-intro h2 { font-size: 1.35rem; }
+.directory-discovery .workflow-intro h2 { font-size: 1.35rem; color: #fbf3d6; }
+.directory-discovery .workflow-intro .eyebrow,
+.directory-discovery .workflow-options label,
+.directory-discovery .workflow-options > span,
+.directory-discovery .workflow-examples > span { color: #d3dccb; }
 .directory-discovery .workflow-intro p:not(.eyebrow) { margin: .35rem auto 0; color: #d3dccb; }
 .directory-discovery .workflow-builder form { max-width: 44rem; margin-inline: auto; }
 .directory-discovery .workflow-composer {
