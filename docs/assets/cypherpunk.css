@@ -1,0 +1,12 @@
+/* Homepage palette accents; catalog pages retain their existing palette. */
+.skills-home { color-scheme: dark; }
+.skills-home #hero {
+  background-image: linear-gradient(rgba(97,230,237,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(97,230,237,.035) 1px, transparent 1px) !important;
+  background-size: 48px 48px !important;
+}
+.skills-home #hero-example { border-color: #29494f; border-top: 2px solid #61e6ed; background: #0c1519; }
+.skills-home #hero-example a, .skills-home #hero-term-note a { color: #61e6ed; }
+.skills-home #hero-cta-scope { color: #61e6ed; border-color: #2c7279; }
+.skills-home #hero-cta-scope:hover { color: #b6ff4d; border-color: #b6ff4d; }
+.skills-home #hero-cta-star:hover { background: #d3ff91; border-color: #d3ff91; }
+.skills-home #hero-eyebrow { color: #b6ff4d; border-color: #37552d; background: #101d16; }
