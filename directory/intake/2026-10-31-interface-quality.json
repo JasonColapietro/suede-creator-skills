@@ -797,7 +797,7 @@
     "skills/suede-workflow-skills/references/next-action-prompts.md": "a99fbe85c37ac03b57cdbce941aef95e75c42134ed6747cda2636097c2fadd9f",
     "skills/suede-workflow-skills/references/no-missed-quality-gates.md": "45adf1bc2580614fdecf5a13a515ca04ec5c4b6aaf1c25d9003eb13118b6f448",
     "skills/suede-workflow-skills/references/worked-handoff.md": "35136c89f81da1dd55d9c9d9253198871a21949aed81b30ec5f2facab458edc4",
-    "vercel.json": "adb12bc5679de250dd4b6b300a277ad274b4f09e776dc4bd07b4d6812c3d800b",
+    "vercel.json": "f841e9c2a0b8ef1950320c39b89dc1cd84603d436cb48564d0be1f1e6ee762c3",
     "visual-qa-report.md": "a1a148c3487a0c75774ed1ad0a2a9f1b9ed26e4084ca6dce2152fa5902c922ab"
   },
   "tools": {
@@ -844,5 +844,14 @@
   "external_after_sha256": "5f4c72f699fa21372d07fb74940825fa7dc4a66222325cd19d94404782100977",
   "security_scan_status": "not_scanned",
   "dataset_before_sha256": "b73996d45961aa527b4cea74a41a2e44497200dba9b2f85411e3602ab5f56641",
-  "dataset_after_sha256": "7af631c54b44d36718ed15f6a3fdbf0445b6a09f638bc05ce3093bca01ef0d02"
+  "dataset_after_sha256": "7af631c54b44d36718ed15f6a3fdbf0445b6a09f638bc05ce3093bca01ef0d02",
+  "source_file_refreshes": {
+    "vercel.json": {
+      "source_revision": "1ae09bcbe7aac4825e80f0376356adb1e0eb1100",
+      "previous_sha256": "adb12bc5679de250dd4b6b300a277ad274b4f09e776dc4bd07b4d6812c3d800b",
+      "sha256": "f841e9c2a0b8ef1950320c39b89dc1cd84603d436cb48564d0be1f1e6ee762c3",
+      "method": "scripts/directory/first_party.py:file_hash",
+      "reason": "PR #412 host-scoped index.html redirects; skill sources and assessment unchanged"
+    }
+  }
 }
