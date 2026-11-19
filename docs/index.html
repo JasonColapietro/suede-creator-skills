@@ -12,7 +12,7 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Claude Code Skills &amp; Codex Skills: Suede AI Skills">
   <meta property="og:description" content="Install 67 free open-source Claude Code and Codex skills for code review, UI builds, SEO audits and launch checks. See a worked example and inspect each skill.">
-  <meta property="og:image" content="https://skills.suedeai.ai/assets/og-image-cypherpunk.png">
+  <meta property="og:image" content="https://skills.suedeai.ai/assets/og-image-cypherpunk.png?v=2">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Suede AI Skills: open-source agent skills for Claude Code and OpenAI Codex">
@@ -23,7 +23,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Claude Code Skills &amp; Codex Skills: Suede AI Skills">
   <meta name="twitter:description" content="Install 67 free open-source Claude Code and Codex skills for code review, UI builds, SEO audits and launch checks. See a worked example and inspect each skill.">
-  <meta name="twitter:image" content="https://skills.suedeai.ai/assets/og-image-cypherpunk.png">
+  <meta name="twitter:image" content="https://skills.suedeai.ai/assets/og-image-cypherpunk.png?v=2">
   <meta name="twitter:image:alt" content="Suede AI Skills: open-source agent skills for Claude Code and OpenAI Codex">
 
   <!-- Canonical -->
@@ -4076,7 +4076,7 @@
       <a href="skills/" class="nav-link">Skills</a>
       <a href="directory/" class="nav-link">Directory</a>
       <a href="guide.html" class="nav-link">Guide</a>
-      <a href="cracked.html" class="nav-link nav-cracked">Cracked Devs</a>
+      <a href="cracked.html" class="nav-link nav-cracked" aria-describedby="cracked-disclaimer">Cracked Devs</a>
       <a class="nav-star" href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener" aria-label="Star JasonColapietro/suede-creator-skills on GitHub"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" class="nav-star-icon"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.75.75 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"/></svg><span class="nav-star-label">Star</span><span class="nav-star-count" data-star-count hidden></span></a>
       <a href="plugins.html" class="nav-cta">Install</a>
       <details class="nav-disclosure" id="nav-disclosure" open>
@@ -4093,7 +4093,10 @@
         <a href="guide.html" class="nav-mobile-link" role="menuitem">Guide</a>
         <a href="book/" class="nav-mobile-link" role="menuitem">Book</a>
         <a href="blog/" class="nav-mobile-link" role="menuitem">Blog</a>
-        <a href="cracked.html" class="nav-mobile-link nav-cracked" role="menuitem">Cracked Devs</a>
+        <a href="cracked.html" class="nav-mobile-link nav-cracked" role="menuitem" aria-labelledby="cracked-mobile-label" aria-describedby="cracked-mobile-disclaimer">
+          <span id="cracked-mobile-label">Cracked Devs</span>
+          <span class="cracked-disclaimer" id="cracked-mobile-disclaimer"><strong>Disclaimer:</strong> Don’t click on the cracked dev tab.</span>
+        </a>
         <a href="https://github.com/JasonColapietro/suede-creator-skills" target="_blank" rel="noopener" class="nav-mobile-link" role="menuitem">Star on GitHub</a>
         <a href="plugins.html" class="nav-mobile-link nav-mobile-cta" role="menuitem">Install</a>
         </div>
@@ -4105,6 +4108,7 @@
 
 <main id="main" tabindex="-1">
 
+<div class="hero-status">
 <!-- PROOF TAPE — every number on this strip appears, sourced, further down the page -->
 <div id="proof-tape" aria-label="Pack proof at a glance">
   <div class="tape-inner">
@@ -4129,6 +4133,9 @@
   </div>
 </div>
 
+  <p class="cracked-disclaimer" id="cracked-disclaimer"><strong>Disclaimer:</strong> Don’t click on the cracked dev tab.</p>
+</div>
+
 <!-- HERO -->
 <section id="hero" style="position:relative;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;overflow:hidden;background:#060b0d;padding:38px 0 56px;">
 
@@ -4145,12 +4152,12 @@
 
         <h1 id="hero-headline" class="hero-anim">Skills for code review, UI builds and <em class="hh-risk">launch checks.</em></h1>
 
-        <p id="hero-subline" class="hero-anim"><strong>Give Claude Code or Codex a repo, a page, or a brief.</strong> Suede AI Skills supplies the workflow: review a diff, build and verify an interface, or audit a page before launch. Every skill ships as readable Markdown instructions and supporting files.</p>
+        <p id="hero-subline" class="hero-anim"><strong>Give Claude Code or Codex a repo, a page, or a brief.</strong> Review a diff, verify an interface, or audit a launch with workflows you can read in Markdown.</p>
 
         <div id="hero-ctas" class="hero-anim">
           <a id="hero-cta-star" href="#install">Install the skills <span aria-hidden="true">→</span></a>
           <a id="hero-cta-secondary" href="#how-it-works">How it works <span aria-hidden="true">↓</span></a>
-          <a id="hero-cta-scope" href="https://suedeai.ai/seo?utm_source=skills.suedeai.ai&amp;utm_medium=referral&amp;utm_campaign=visibility-scope&amp;utm_content=hero#contact">Request a visibility scope <span aria-hidden="true">↗</span></a>
+          <a id="hero-cta-scope" href="https://suedeai.ai/seo?utm_source=skills.suedeai.ai&amp;utm_medium=referral&amp;utm_campaign=visibility-scope&amp;utm_content=hero#contact">Request a visibility scope <span aria-hidden="true">→</span></a>
         </div>
 
 
@@ -4194,6 +4201,7 @@
 
       <div id="hero-term" class="hero-anim">
         <div id="hero-example" class="install-terminal" aria-labelledby="example-title">
+          <div class="example-art" aria-hidden="true"></div>
           <div class="install-terminal-bar">
             <span class="tdot" aria-hidden="true"></span>
             <span class="tdot" aria-hidden="true"></span>
@@ -4215,7 +4223,7 @@ https://example.com/pricing</pre>
             <a class="example-link" href="guide.html#example">Read the full worked run <span aria-hidden="true">→</span></a>
           </div>
         </div>
-        <p id="hero-term-note">Example request from the usage Guide. Open the skill to read its inspection rules and evidence requirements.</p>
+        <p id="hero-term-note">Open the skill to read its inspection rules and evidence requirements.</p>
       </div>
     </div>
 
