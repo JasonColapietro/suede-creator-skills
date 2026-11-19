@@ -336,6 +336,9 @@
     <script src="../assets/directory.js" defer></script>
     <link rel="stylesheet" href="../assets/workflow-builder.css">
     <script type="module" src="../assets/workflow-builder.js"></script>
+    <link rel="stylesheet" href="../assets/directory-discovery.css">
+    <script src="../assets/discovery-ambient.js" defer></script>
+    <script src="../assets/pile/pile.js" defer></script>
     <link rel="alternate" type="application/rss+xml" title="Suede Skills Directory: new listings and guides" href="feed.xml">
 </head>
   <body>
@@ -382,24 +385,22 @@
       </div>
     </nav>
     <main id="main" tabindex="-1" class="shell directory">
-      <header class="directory-hero">
+      <div class="directory-start">
+        <div class="directory-discovery" id="audit-stage">
+        <canvas id="audit-glyphs" aria-hidden="true"></canvas>
+        <header class="directory-hero directory-discovery-title">
         <div>
           <p class="eyebrow">SuedeAI.directory, by Suede AI</p>
-          <h1>Claude Code skills, graded and ready to install</h1>
+          <h1>Claude Code skills,<br> <span>graded and ready to install</span></h1>
           <p class="lead">3,894 skills for Claude Code, Codex, Cursor and other agents, scored 0 to 99 from their published files and linked to source, with the install command for each.</p>
           <p class="directory-snapshot"><span><b>163</b> repositories</span><span><b>16</b> categories</span><span><b>97%</b> openly licensed</span><span>Snapshot <b>October 22, 2026</b></span></p>
         </div>
-        <figure class="hero-figure">
-          <img class="matrix" src="skill-matrix.svg" width="960" height="410" alt="3,894 listed skills as a grid of dots, one per skill, sorted by score and colored by grade" loading="eager" decoding="async">
-          <p class="matrix-caption"><span>Every dot is a listed skill, sorted by score.</span><span><i style="background:#00ca52"></i>A</span><span><i style="background:#50a8ff"></i>B</span><span><i style="background:#ffb200"></i>C</span><span><i style="background:#454545"></i>D</span></p>
-        </figure>
-      </header>
-      <div class="directory-start">
+        </header>
       <section class="workflow-builder" id="workflow-builder" aria-labelledby="workflow-title" data-workflow-builder>
-        <div class="workflow-intro"><div><p class="eyebrow">Ask the directory</p><h2 id="workflow-title">What are you working on?</h2><p>Tell us what you’re doing or trying to achieve. We’ll recommend the skills that fit, a step-by-step workflow and articles to read next.</p></div><span class="workflow-mark" aria-hidden="true">01 → 02 → 03</span></div>
+        <div class="workflow-intro"><div><p class="eyebrow">Ask the directory</p><h2 id="workflow-title">What are you working on?</h2><p>Tell us what you’re doing or trying to achieve. We’ll recommend the skills that fit, a step-by-step workflow and articles to read next.</p></div></div>
         <form data-workflow-form hidden novalidate>
           <label class="visually-hidden" for="workflow-brief">What are you doing, or trying to achieve?</label>
-          <div class="workflow-composer"><textarea id="workflow-brief" rows="3" maxlength="2000" placeholder="I run a small bakery and want more customers to find us on Google…" aria-describedby="workflow-help workflow-status"></textarea><div class="workflow-submit-row"><span id="workflow-help">Matched against 3,894 graded skills right in your browser. What you type stays on this page. No AI API call.</span><button type="submit" class="button workflow-submit">Get recommendations <span aria-hidden="true">↗</span></button></div></div>
+          <div class="workflow-composer"><textarea id="workflow-brief" rows="2" maxlength="2000" placeholder="I run a small bakery and want more customers to find us on Google…" aria-describedby="workflow-help workflow-status"></textarea><div class="workflow-submit-row"><span id="workflow-help">Matched against 3,894 graded skills right in your browser. What you type stays on this page. No AI API call.</span><button type="submit" class="button workflow-submit">Get recommendations <span aria-hidden="true">↗</span></button></div></div>
           <div class="workflow-options"><label for="workflow-mode">Plan depth <select id="workflow-mode" data-workflow-mode><option value="full">Complete workflow</option><option value="simple">Essential steps</option></select></label><label class="workflow-check"><input type="checkbox" data-workflow-free> Open-source licenses only</label><span>Keep setup and service costs visible.</span></div>
           <div class="workflow-examples"><span>Or try</span><div data-workflow-examples></div></div>
           <p class="workflow-explore"><a href="#best-of-title">Explore the best skills by topic <span aria-hidden="true">↓</span></a></p>
@@ -426,6 +427,14 @@
         </section>
         <noscript><p><a href="stacks/">Explore recommended stacks</a> for step-by-step skill combinations. Turn on JavaScript to get recommendations for your goal here.</p></noscript>
       </section>
+        <div id="engine-pile" aria-hidden="true"></div>
+      </div>
+      <div class="directory-grade-matrix">
+        <figure class="hero-figure">
+          <img class="matrix" src="skill-matrix.svg" width="960" height="410" alt="3,894 listed skills as a grid of dots, one per skill, sorted by score and colored by grade" loading="lazy" decoding="async">
+          <p class="matrix-caption"><span>Every dot is a listed skill, sorted by score.</span><span><i style="background:#00ca52"></i>A</span><span><i style="background:#50a8ff"></i>B</span><span><i style="background:#ffb200"></i>C</span><span><i style="background:#454545"></i>D</span></p>
+        </figure>
+      </div>
       <section class="panel best-of" aria-labelledby="best-of-title">
         <div class="board-head"><h2 id="best-of-title">Best of</h2><a href="topics/">All 192 topics</a></div>
         <p class="muted">Each tile charts its topic: one dot per listed skill, best score first, colored by grade, with the top pick named. Suede AI's own skills are not ranked.</p>

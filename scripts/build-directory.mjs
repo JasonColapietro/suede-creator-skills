@@ -847,7 +847,7 @@ function page({ here, title, description, keywords, h1Html, body, jsonld, ogType
     `    <link rel="preload" href="${a}fonts/pixelify-sans-var-latin.woff2" as="font" type="font/woff2" crossorigin>`,
     `    <link rel="stylesheet" href="${a}directory.css">`,
     `    <script src="${a}directory.js" defer></script>`,
-    here === "directory/" ? `    <link rel="stylesheet" href="${a}workflow-builder.css">\n    <script type="module" src="${a}workflow-builder.js"></script>` : null,
+    here === "directory/" ? `    <link rel="stylesheet" href="${a}workflow-builder.css">\n    <script type="module" src="${a}workflow-builder.js"></script>\n    <link rel="stylesheet" href="${a}directory-discovery.css">\n    <script src="${a}discovery-ambient.js" defer></script>\n    <script src="${a}pile/pile.js" defer></script>` : null,
     `    <link rel="alternate" type="application/rss+xml" title="Suede Skills Directory: new listings and guides" href="${absolute ? "/directory/feed.xml" : rel(here, "directory/feed.xml")}">`,
     here.startsWith("directory/agents/") ? `    <link rel="stylesheet" href="${a}agents.css">\n    <script src="${a}agents.js" defer></script>` : null,
     extraStyle ? `    <style>${extraStyle}</style>` : null,
@@ -2678,10 +2678,10 @@ ${kindCards.map(([p, name, text, count, icon]) => `          <a class="kind-card
       </section>`;
 
   const workflowHtml = `      <section class="workflow-builder" id="workflow-builder" aria-labelledby="workflow-title" data-workflow-builder>
-        <div class="workflow-intro"><div><p class="eyebrow">Ask the directory</p><h2 id="workflow-title">What are you working on?</h2><p>Tell us what you’re doing or trying to achieve. We’ll recommend the skills that fit, a step-by-step workflow and articles to read next.</p></div><span class="workflow-mark" aria-hidden="true">01 → 02 → 03</span></div>
+        <div class="workflow-intro"><div><p class="eyebrow">Ask the directory</p><h2 id="workflow-title">What are you working on?</h2><p>Tell us what you’re doing or trying to achieve. We’ll recommend the skills that fit, a step-by-step workflow and articles to read next.</p></div></div>
         <form data-workflow-form hidden novalidate>
           <label class="visually-hidden" for="workflow-brief">What are you doing, or trying to achieve?</label>
-          <div class="workflow-composer"><textarea id="workflow-brief" rows="3" maxlength="2000" placeholder="I run a small bakery and want more customers to find us on Google…" aria-describedby="workflow-help workflow-status"></textarea><div class="workflow-submit-row"><span id="workflow-help">Matched against ${fmt(data.skills.length)} graded skills right in your browser. What you type stays on this page. No AI API call.</span><button type="submit" class="button workflow-submit">Get recommendations <span aria-hidden="true">↗</span></button></div></div>
+          <div class="workflow-composer"><textarea id="workflow-brief" rows="2" maxlength="2000" placeholder="I run a small bakery and want more customers to find us on Google…" aria-describedby="workflow-help workflow-status"></textarea><div class="workflow-submit-row"><span id="workflow-help">Matched against ${fmt(data.skills.length)} graded skills right in your browser. What you type stays on this page. No AI API call.</span><button type="submit" class="button workflow-submit">Get recommendations <span aria-hidden="true">↗</span></button></div></div>
           <div class="workflow-options"><label for="workflow-mode">Plan depth <select id="workflow-mode" data-workflow-mode><option value="full">Complete workflow</option><option value="simple">Essential steps</option></select></label><label class="workflow-check"><input type="checkbox" data-workflow-free> Open-source licenses only</label><span>Keep setup and service costs visible.</span></div>
           <div class="workflow-examples"><span>Or try</span><div data-workflow-examples></div></div>
           <p class="workflow-explore"><a href="#best-of-title">Explore the best skills by topic <span aria-hidden="true">↓</span></a></p>
@@ -2708,13 +2708,7 @@ ${kindCards.map(([p, name, text, count, icon]) => `          <a class="kind-card
         </section>
         <noscript><p><a href="stacks/">Explore recommended stacks</a> for step-by-step skill combinations. Turn on JavaScript to get recommendations for your goal here.</p></noscript>
       </section>`;
-  // The finder and the Best of topic tiles share the first screen: side by
-  // side on wide screens, stacked on narrow ones.
-  const body = `      <div class="directory-start">
-${workflowHtml}
-${bestOfSection(here)}
-      </div>
-${boardHtml}
+  const body = `${boardHtml}
       <section class="directory-browser" id="browse" aria-labelledby="browse-title" data-directory-browser>
         <div class="browse-heading"><h2 id="browse-title">Find your next skill</h2><a class="shortlist-jump" href="#task-shortlist" hidden>Your shortlist <span aria-hidden="true">↓</span></a></div>
         <form class="discovery-controls" role="search" hidden>
@@ -2803,18 +2797,28 @@ ${FAQ.map(([q, a]) => `        <h3>${esc(q)}</h3>\n        <p>${esc(a)}${q === "
     title,
     description,
     keywords,
-    h1Html: `      <header class="directory-hero">
+    h1Html: `      <div class="directory-start">
+        <div class="directory-discovery" id="audit-stage">
+        <canvas id="audit-glyphs" aria-hidden="true"></canvas>
+        <header class="directory-hero directory-discovery-title">
         <div>
           <p class="eyebrow">SuedeAI.directory, by Suede AI</p>
-          <h1>Claude Code skills, graded and ready to install</h1>
+          <h1>Claude Code skills,<br> <span>graded and ready to install</span></h1>
           <p class="lead">${fmt(data.skills.length)} skills for Claude Code, Codex, Cursor and other agents, scored 0 to 99 from their published files and linked to source, with the install command for each.</p>
           <p class="directory-snapshot"><span><b>${fmt(repos.size)}</b> repositories</span><span><b>${categories.length}</b> categories</span><span><b>${openPct}%</b> openly licensed</span><span>Snapshot <b>${longDate(data.generated)}</b></span></p>
         </div>
+        </header>
+${workflowHtml}
+        <div id="engine-pile" aria-hidden="true"></div>
+      </div>
+      <div class="directory-grade-matrix">
         <figure class="hero-figure">
-          <img class="matrix" src="skill-matrix.svg" width="960" height="${Math.ceil(data.skills.length / 96) * 10}" alt="${fmt(data.skills.length)} listed skills as a grid of dots, one per skill, sorted by score and colored by grade" loading="eager" decoding="async">
+          <img class="matrix" src="skill-matrix.svg" width="960" height="${Math.ceil(data.skills.length / 96) * 10}" alt="${fmt(data.skills.length)} listed skills as a grid of dots, one per skill, sorted by score and colored by grade" loading="lazy" decoding="async">
           ${matrixCaption(`Every dot is a listed skill, sorted by score.`)}
         </figure>
-      </header>`,
+      </div>
+${bestOfSection(here)}
+      </div>`,
     body,
     jsonld: [
       {

@@ -1,0 +1,28 @@
+#engine-pile {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.discovery-tile {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  width: var(--tile-size);
+  height: var(--tile-size);
+  border: 1px solid #b5baa85c;
+  border-radius: .55rem;
+  background: #fafbf4;
+  box-shadow: 0 1px 4px #1115;
+  pointer-events: auto;
+  cursor: grab;
+  user-select: none;
+  touch-action: pan-y;
+}
+.discovery-tile[hidden] { display: none; }
+.discovery-tile:active { cursor: grabbing; }
+.discovery-tile svg { width: 56%; height: 56%; pointer-events: none; }

@@ -1,0 +1,111 @@
+@import url("./pile/pile.css");
+
+@font-face {
+  font-family: "Directory Discovery Pixel";
+  src: url("./geist-pixel-latin-400-normal.woff2") format("woff2");
+  font-display: swap;
+}
+
+.directory-discovery {
+  position: relative;
+  isolation: isolate;
+  overflow: clip;
+  border: 1px solid var(--line);
+  border-radius: 1.25rem;
+  margin: clamp(1rem, 4vw, 2.5rem) 0;
+  padding: clamp(2rem, 6vw, 4.75rem) clamp(.875rem, 5vw, 3rem) clamp(8rem, 21vw, 13rem);
+  background: radial-gradient(ellipse at 50% 0, #2e3528, transparent 70%), #151b16;
+}
+.directory-discovery #audit-glyphs { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.directory-discovery > .directory-discovery-title,
+.directory-discovery > .workflow-builder { position: relative; z-index: 2; }
+
+.directory-discovery .directory-discovery-title {
+  display: block;
+  margin: 0 auto;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  text-align: center;
+}
+.directory-discovery-title .eyebrow { display: inline-block; color: #f0e3ae; margin: 0 0 .9rem; }
+.directory-discovery .directory-discovery-title h1 {
+  font: 400 clamp(1.9rem, 5vw, 3.6rem)/1.12 "Directory Discovery Pixel", var(--mono);
+  letter-spacing: -.035em;
+  color: #fbf3d6;
+  margin: 0 auto .9rem;
+  max-width: 23ch;
+  text-wrap: balance;
+}
+.directory-discovery-title h1 span { color: #d4b966; }
+.directory-discovery-title .lead { color: #e2e7d8; margin: 0 auto .85rem; max-width: 66ch; }
+.directory-discovery-title .directory-snapshot { justify-content: center; color: #cdd7c6; margin-inline: auto; }
+
+.directory-discovery .workflow-builder { background: transparent; border: 0; padding: 0; margin: 1.8rem auto 0; max-width: 70rem; }
+.directory-discovery .workflow-intro { display: block; text-align: center; margin: 0 0 .95rem; }
+.directory-discovery .workflow-intro h2 { font-size: 1.35rem; }
+.directory-discovery .workflow-intro p:not(.eyebrow) { margin: .35rem auto 0; color: #d3dccb; }
+.directory-discovery .workflow-builder form { max-width: 44rem; margin-inline: auto; }
+.directory-discovery .workflow-composer {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  border-radius: 1.4rem;
+  padding: .3rem;
+  background: #f9f8ee;
+  border-color: #e7dcaa;
+  color: #22261d;
+}
+.directory-discovery .workflow-composer textarea {
+  min-height: 3.15rem;
+  padding: .65rem .9rem;
+  resize: none;
+  background: transparent;
+  color: #22261d;
+}
+.directory-discovery .workflow-composer textarea::placeholder { color: #5b6356; }
+.directory-discovery .workflow-submit-row { display: contents; }
+.directory-discovery #workflow-help {
+  grid-row: 2;
+  grid-column: 1 / -1;
+  max-width: none;
+  padding: .25rem .9rem .45rem;
+  color: #515b4a;
+}
+.directory-discovery .workflow-submit { grid-column: 2; grid-row: 1; border-radius: 999px; background: #dcca80; color: #1e2116; border-color: #dcca80; }
+.directory-discovery .workflow-options,
+.directory-discovery .workflow-examples,
+.directory-discovery .workflow-examples > div { justify-content: center; }
+.directory-discovery .workflow-examples { flex-wrap: wrap; }
+.directory-discovery .workflow-examples button { border-radius: 999px; padding-inline: .95rem; }
+.directory-discovery .workflow-examples button:hover { background: #343e2d; }
+.directory-discovery .workflow-explore { text-align: center; }
+.directory-discovery .workflow-results,
+.directory-discovery .workflow-suggestions {
+  background: var(--paper);
+  border: 1px solid var(--line-strong);
+  padding: clamp(.9rem, 3vw, 1.6rem);
+  border-radius: 1rem;
+  animation: directory-result-reveal .24s ease-out both;
+}
+.directory-grade-matrix { margin: 0 auto 2rem; width: min(100%, 60rem); }
+.directory-grade-matrix figure { margin: 0; }
+.directory-grade-matrix img { display: block; width: 100%; height: auto; }
+
+@keyframes directory-result-reveal {
+  from { opacity: 0; transform: translateY(.6rem); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (max-width: 560px) {
+  .directory-discovery { padding-bottom: 5rem; }
+  .directory-discovery .workflow-composer { grid-template-columns: 1fr; }
+  .directory-discovery .workflow-submit { grid-column: 1; grid-row: 2; justify-self: end; }
+  .directory-discovery #workflow-help { grid-row: 3; }
+  .directory-discovery .workflow-examples button { font-size: .875rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .directory-discovery *, .directory-discovery *::before, .directory-discovery *::after { animation: none !important; transition: none !important; }
+}
+
+/* The discovery band spans the catalog width. */
+.directory-start:has(> .directory-discovery) { display: block; }
