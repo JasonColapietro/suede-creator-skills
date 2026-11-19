@@ -46,7 +46,7 @@ class HomepageQualityTests(unittest.TestCase):
         )
 
     def test_social_card_describes_the_current_product(self):
-        self.assertIn("assets/og-image-v2.png", HOME)
+        self.assertIn("assets/og-image-cypherpunk.png", HOME)
         self.assertNotIn('content="https://skills.suedeai.ai/assets/og-image.png"', HOME)
         self.assertIn('property="og:image:width" content="1200"', HOME)
         self.assertIn('property="og:image:height" content="630"', HOME)
