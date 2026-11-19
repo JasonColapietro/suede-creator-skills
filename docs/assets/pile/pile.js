@@ -77,7 +77,11 @@
   function tick(now) {
     frame = 0;
     if (!visible || document.hidden || !engine) return;
-    const elapsed = last ? Math.min(1000 / 60, now - last) : 1000 / 60;
+    const step = 1000 / 60;
+    if (last && now - last < step - 1) {
+      frame = requestAnimationFrame(tick);
+      return;
+    }
     last = now;
     const { Engine, Composite, Body } = window.Matter;
     entries.forEach((entry) => {
@@ -94,7 +98,7 @@
         y: Math.max(-22, Math.min(22, (drag.y - body.position.y) * .24)),
       });
     }
-    Engine.update(engine, elapsed);
+    Engine.update(engine, step);
     for (const entry of entries) {
       if (entry.added && !entry.body.isSleeping) {
         const { position, angle } = entry.body;
@@ -146,7 +150,7 @@
       const angle = Math.sin(index * 1.9) * .31;
       render(entry, x, y, angle);
       if (animate) {
-        entry.body = window.Matter.Bodies.rectangle(x, y - 155 - (index % 12) * 7, size - 2, size - 2, {
+        entry.body = window.Matter.Bodies.rectangle(x, y - 52 - (index % 12) * 3, size - 2, size - 2, {
           angle, chamfer: { radius: 4 }, restitution: .45, friction: .62, frictionAir: .024,
         });
         entry.tile.hidden = true;
