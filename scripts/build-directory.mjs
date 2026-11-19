@@ -2806,7 +2806,7 @@ ${FAQ.map(([q, a]) => `        <h3>${esc(q)}</h3>\n        <p>${esc(a)}${q === "
     h1Html: `      <header class="directory-hero">
         <div>
           <p class="eyebrow">SuedeAI.directory, by Suede AI</p>
-          <h1>Agent skills, graded and ready to install</h1>
+          <h1>Claude Code skills, graded and ready to install</h1>
           <p class="lead">${fmt(data.skills.length)} skills for Claude Code, Codex, Cursor and other agents, scored 0 to 99 from their published files and linked to source, with the install command for each.</p>
           <p class="directory-snapshot"><span><b>${fmt(repos.size)}</b> repositories</span><span><b>${categories.length}</b> categories</span><span><b>${openPct}%</b> openly licensed</span><span>Snapshot <b>${longDate(data.generated)}</b></span></p>
         </div>
