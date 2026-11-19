@@ -119,5 +119,9 @@
   "406": {
     "feature_id": "nexscope-amazon",
     "scope_version": "b772d0dcd0c90494de8d09afab0ab69eacff383801ee2ace4395c583b7b0af43"
+  },
+  "414": {
+    "feature_id": "design-os",
+    "scope_version": "ba6a5004ff31065ad6015ddeb9c4f11ae3ef107e93ec8f1a0662c349aab2adb1"
   }
 }
