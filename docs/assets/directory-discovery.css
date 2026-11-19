@@ -109,3 +109,12 @@
 
 /* The discovery band spans the catalog width. */
 .directory-start:has(> .directory-discovery) { display: block; }
+
+.directory-grade-matrix .directory-snapshot { justify-content: center; margin-bottom: 1rem; }
+@media (max-width: 560px) {
+  .directory-discovery { margin-top: 1rem; padding-top: 1.35rem; }
+  .directory-discovery .directory-discovery-title h1 { font-size: clamp(1.6rem, 6vw, 2rem); }
+  .directory-discovery-title .lead { font-size: .875rem; line-height: 1.55; }
+  .directory-discovery .workflow-builder { margin-top: 1.15rem; }
+  .directory-discovery .workflow-intro p:not(.eyebrow) { font-size: .875rem; line-height: 1.5; }
+}

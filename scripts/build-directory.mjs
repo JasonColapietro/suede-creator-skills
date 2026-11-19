@@ -2805,13 +2805,13 @@ ${FAQ.map(([q, a]) => `        <h3>${esc(q)}</h3>\n        <p>${esc(a)}${q === "
           <p class="eyebrow">SuedeAI.directory, by Suede AI</p>
           <h1>Claude Code skills,<br> <span>graded and ready to install</span></h1>
           <p class="lead">${fmt(data.skills.length)} skills for Claude Code, Codex, Cursor and other agents, scored 0 to 99 from their published files and linked to source, with the install command for each.</p>
-          <p class="directory-snapshot"><span><b>${fmt(repos.size)}</b> repositories</span><span><b>${categories.length}</b> categories</span><span><b>${openPct}%</b> openly licensed</span><span>Snapshot <b>${longDate(data.generated)}</b></span></p>
         </div>
         </header>
 ${workflowHtml}
         <div id="engine-pile" aria-hidden="true"></div>
       </div>
       <div class="directory-grade-matrix">
+        <p class="directory-snapshot"><span><b>${fmt(repos.size)}</b> repositories</span><span><b>${categories.length}</b> categories</span><span><b>${openPct}%</b> openly licensed</span><span>Snapshot <b>${longDate(data.generated)}</b></span></p>
         <figure class="hero-figure">
           <img class="matrix" src="skill-matrix.svg" width="960" height="${Math.ceil(data.skills.length / 96) * 10}" alt="${fmt(data.skills.length)} listed skills as a grid of dots, one per skill, sorted by score and colored by grade" loading="lazy" decoding="async">
           ${matrixCaption(`Every dot is a listed skill, sorted by score.`)}
