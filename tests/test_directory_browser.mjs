@@ -1,5 +1,6 @@
 // CI installs the pinned browser tool outside the project's production dependencies.
 import assert from 'node:assert/strict';
+import test from 'node:test';
 import fs from 'node:fs';
 import path from 'node:path';
 import http from 'node:http';
@@ -10,6 +11,7 @@ import './test_directory_browse_client.mjs';
 import { verifyWorkflowBuilder, verifyStandaloneWorkflow } from './test_workflow_builder_browser.mjs';
 
 const { chromium } = await import(process.env.DIRECTORY_PLAYWRIGHT_MODULE || 'playwright');
+await test('directory publisher, navigation and shortlist browser flows', async () => {
 const root = fileURLToPath(new URL('../docs/', import.meta.url));
 const output = process.env.DIRECTORY_SCREENSHOTS || '/tmp/suede-directory-browser';
 fs.mkdirSync(output, { recursive: true });
@@ -193,6 +195,8 @@ try {
   await browser.close();
   await new Promise((resolve) => server.close(resolve));
 }
+
+});
 
 // Agent discovery has its own model and progressive enhancement contract.
 await import('./test_agents_browser.mjs');
