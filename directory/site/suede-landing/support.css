@@ -1,0 +1,98 @@
+.suede-support {
+  position: fixed;
+  z-index: 60;
+  right: max(20px, env(safe-area-inset-right));
+  bottom: max(20px, env(safe-area-inset-bottom));
+  color: #141414;
+  font: 14px/1.4 Inter, system-ui, sans-serif;
+}
+.suede-support *, .suede-support *::before { box-sizing: border-box; }
+.suede-support button, .suede-support textarea { font: inherit; }
+.suede-support button { border: 0; cursor: pointer; }
+.suede-support-launch {
+  display: grid;
+  place-items: center;
+  padding: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #080808;
+  color: white;
+  box-shadow: 0 3px 18px #0002;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.suede-support-launch:hover { transform: scale(1.05); box-shadow: 0 4px 22px #0003; }
+.suede-support-launch:active { transform: scale(.96); }
+.suede-support-launch[aria-expanded=true] svg { display: none; }
+.suede-support-launch[aria-expanded=true]::before {
+  content: ''; width: 11px; height: 11px; border: solid white; border-width: 0 2px 2px 0;
+  transform: translateY(-3px) rotate(45deg);
+}
+.suede-support-panel {
+  position: absolute;
+  margin: 0; padding: 0; border: 0; inset: auto; max-width: none; max-height: none;
+  right: 0;
+  bottom: 64px;
+  display: flex;
+  flex-direction: column;
+  width: min(400px, calc(100vw - 40px));
+  height: min(704px, calc(100vh - 104px));
+  height: min(704px, calc(100dvh - 104px));
+  border-radius: 24px;
+  background: #fff;
+  box-shadow: 0 10px 48px #0002, 0 2px 12px #0001;
+  overflow: hidden;
+  animation: suede-support-open .22s cubic-bezier(.2,.7,.25,1) both;
+  transform-origin: bottom right;
+  text-align: left;
+}
+.suede-support-panel:not([open]) { display: none; }
+.suede-support-panel header {
+  position: static; display: flex; align-items: center; gap: 10px;
+  background: #fff; padding: 10px 16px; min-height: 55px; border-bottom: 1px solid #ededed;
+}
+.suede-support-avatar {
+  width: 32px; height: 32px; display: grid; place-items: center; border-radius: 50%;
+  background: #171717; color: #fff; overflow: hidden;
+}
+.suede-support-avatar img { width: 100%; height: 100%; object-fit: contain; }
+.suede-support-panel header strong, .suede-support-panel header small { display: block; }
+.suede-support-panel header small, .suede-support-panel p { font-size: 13px; color: #646464; }
+.suede-support-dismiss {
+  margin-left: auto; width: 34px; height: 34px; padding: 0;
+  background: transparent; color: #494949; font-size: 22px !important;
+}
+.suede-support-panel p { margin: 16px; text-align: center; }
+.suede-support-compose {
+  margin: auto 15px 15px; padding: 10px; border: 1px solid #777;
+  border-radius: 18px; background: white;
+}
+.suede-support-compose:focus-within { outline: 1px solid #111; }
+.suede-support-compose textarea {
+  width: 100%; display: block; min-height: 36px; height: 36px; padding: 3px 5px;
+  resize: none; outline: 0; border: 0; color: inherit; background: transparent;
+}
+.suede-support-actions { display: flex; align-items: center; gap: 12px; }
+.suede-support-actions a { color: #555; font-size: 12px; text-decoration: underline; }
+.suede-support-actions button {
+  margin-left: auto; padding: 6px 10px; background: #131313;
+  color: white; border-radius: 40px; font-size: 12px;
+}
+.suede-support-actions button:disabled { background: #eee; color: #747474; cursor: default; }
+.suede-support :focus-visible { outline: 2px solid #356296; outline-offset: 2px; }
+.suede-support textarea:focus-visible { outline: none; }
+@keyframes suede-support-open {
+  from { opacity: 0; transform: translateY(10px) scale(.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .suede-support-panel, .suede-support-launch { animation: none; transition: none; }
+}
+
+@media (max-width: 600px) {
+  .suede-support-panel[open] {
+    position: fixed; inset: 0; width: 100%; height: 100%; height: 100dvh;
+    border-radius: 0; padding-top: env(safe-area-inset-top); padding-bottom: env(safe-area-inset-bottom);
+  }
+  .suede-support-compose textarea { font-size: 16px; }
+}

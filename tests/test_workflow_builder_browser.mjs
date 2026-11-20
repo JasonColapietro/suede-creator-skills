@@ -58,7 +58,7 @@ export async function verifyWorkflowBuilder(page, base, output, route = '/direct
     await page.evaluate(() => window.scrollTo({ top: 0, behavior: 'instant' }));
     const clip = await page.locator('#workflow-builder').boundingBox();
     assert.ok(clip, 'workflow module has a capture area');
-    await page.screenshot({ fullPage: true, clip, path: path.join(output, 'workflow-' + (route === '/' ? 'standalone-' : '') + width + '.png') });
+    await page.screenshot({ fullPage: true, clip, path: path.join(output, 'workflow-' + (route === '/browse/' ? 'standalone-' : '') + width + '.png') });
   }
   await page.setViewportSize({ width: 1440, height: 1000 });
   await brief.fill('Build a landing page and create a social campaign'); await submit.click();
@@ -145,6 +145,18 @@ export async function verifyStandaloneWorkflow(page, output) {
     fs.createReadStream(target).pipe(res);
   });
   await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
-  try { await verifyWorkflowBuilder(page, 'http://127.0.0.1:' + server.address().port, output, '/'); }
+  const base = 'http://127.0.0.1:' + server.address().port;
+  try {
+    await page.goto(base + '/');
+    await page.getByRole('navigation', { name: 'Primary' }).getByRole('link', { name: 'Tools', exact: true }).click();
+    await page.getByLabel('Describe the job').fill('Playwright');
+    await page.getByRole('button', { name: 'Find matching skills' }).click();
+    await page.locator('.match-grid article a').first().waitFor();
+    assert.equal(new URL(page.url()).searchParams.get('q'), 'Playwright');
+    await page.getByRole('link', { name: 'Catalog', exact: true }).click();
+    await page.getByRole('link', { name: 'Advanced filters' }).click();
+    assert.equal(new URL(page.url()).pathname, '/browse/');
+    await verifyWorkflowBuilder(page, base, output, '/browse/');
+  }
   finally { await new Promise(resolve => server.close(resolve)); fs.rmSync(root, { recursive: true, force: true }); }
 }
