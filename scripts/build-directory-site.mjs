@@ -21,7 +21,6 @@
 // It also writes robots.txt, sitemap.xml, llms.txt and 404.html for the new host.
 // Nothing under docs/ is modified. vercel.json runs this as the build command.
 import fs from "node:fs";
-import { discoveryRoutes, publishDiscovery } from "./directory/discovery-site.mjs";
 import { createHash } from "node:crypto";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -147,12 +146,7 @@ export function build(out) {
   copyTree(dirSrc, out, (text, ext, file) => {
     const rel = path.relative(dirSrc, file).split(path.sep).join("/");
     const rewritten = rewriteText(text, ext, `${OLD}/directory/${rel}`);
-    if (path.basename(file) !== "report.json") {
-      if (ext === ".html" && rewritten.includes('/assets/directory.css')) {
-        return rewritten.replace('</head>', '<link rel="stylesheet" href="/assets/suede-landing/fonts/fonts.css"><link rel="stylesheet" href="/assets/discovery/records.css"></head>');
-      }
-      return rewritten;
-    }
+    if (path.basename(file) !== "report.json") return rewritten;
     const { report_version: previousVersion, ...evidence } = JSON.parse(rewritten);
     // Match the original directory report verifier: hash compact evidence in
     // its existing property order, excluding the report identity itself.
@@ -172,8 +166,6 @@ export function build(out) {
   fs.mkdirSync(path.join(out, "assets"), { recursive: true });
   copyTree(path.join(docs, "assets"), path.join(out, "assets"), null);
 
-  publishDiscovery(ROOT, out);
-
   const notFound = path.join(docs, "404.html");
   // The shared 404 says which host the visitor missed; on this host, say this one.
   if (fs.existsSync(notFound)) fs.writeFileSync(path.join(out, "404.html"), rewriteText(fs.readFileSync(notFound, "utf8"), ".html", `${OLD}/404.html`)
@@ -182,7 +174,7 @@ export function build(out) {
   const sitemap = fs.readFileSync(path.join(docs, "directory-sitemap.xml"), "utf8");
   const urls = [...sitemap.matchAll(/  <url>[\s\S]*?<\/url>\n/g)].map((m) => m[0]).filter((u) => u.includes(`<loc>${OLD}/directory/`));
   fs.writeFileSync(path.join(out, "sitemap.xml"),
-    `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((u) => u.replace(OLD_DIR_RE, NEW)).join("") + discoveryRoutes.map(route => `  <url><loc>${NEW}/${route}/</loc></url>\n`).join("")}</urlset>\n`);
+    `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((u) => u.replace(OLD_DIR_RE, NEW)).join("")}</urlset>\n`);
 
   const robots = fs.readFileSync(path.join(docs, "robots.txt"), "utf8")
     .replace(/^# skills\.suedeai\.ai:/m, "# suedeai.directory:")
@@ -216,7 +208,7 @@ export function build(out) {
     `Suede AI's own skill pack, Suede AI Skills: ${OLD}/`,
     "",
   ].join("\n"));
-  return { urls: urls.length + discoveryRoutes.length, llms: llmsLines.length };
+  return { urls: urls.length, llms: llmsLines.length };
 }
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
