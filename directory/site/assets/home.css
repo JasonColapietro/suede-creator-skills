@@ -1,0 +1,115 @@
+/* Compact landing for the standalone directory. Native browse tools retain their styles. */
+.discovery-home { background: #f6f6f2; }
+.discovery-home [hidden] { display: none !important; }
+.discovery-home .nav { --nav-h: 54px; }
+.discovery-home .shell.directory { padding-top: 0; }
+.discovery-home .home-hero { display: grid; grid-template-columns: minmax(0,1.9fr) minmax(260px,.87fr); align-items: center; gap: clamp(24px,4vw,70px); padding: 22px 0 18px; }
+.home-hero .home-kicker { margin: 0 0 6px; font: 600 11px/1.3 var(--mono); letter-spacing: .095em; color: #565e52; }
+.home-kicker span { margin: 0 4px; color: #9a9e95; }
+.home-hero h1 { max-width: none; margin: 0 0 5px; font: 540 clamp(34px,3.6vw,55px)/1.08 var(--sans); letter-spacing: -.065em; }
+.home-hero h1 em { color: #5f674d; font-family: Georgia,serif; font-weight: 400; letter-spacing: -.066em; }
+.home-hero .home-subtitle { margin: 0 0 14px; color: var(--muted); font-size: 15px; }
+.home-ask label { display: block; margin: 0 0 5px; font-size: 13px; font-weight: 650; }
+.ask-input { display: flex; gap: 8px; align-items: center; min-height: 49px; padding: 4px 4px 4px 13px; border: 1px solid #acb1a4; border-radius: 12px; background: #fff; box-shadow: 0 2px 6px #20261a0a; }
+.ask-input:focus-within { outline: 2px solid var(--focus); outline-offset: 2px; }
+.ask-symbol { color: #5e694f; font-size: 22px; }
+.home-ask input[type=search] { flex: 1; min-width: 0; height: 40px; background: none; border: none; box-shadow: none; outline: 0; padding: 0; margin: 0; font: 500 15px/1.3 var(--sans); color: var(--ink); }
+.directory .home-ask button[type=submit] { min-height: 39px; border: 0; border-radius: 8px; padding: 0 17px; color: #fff; background: #242923; text-transform: none; font: 600 14px/1 var(--sans); white-space: nowrap; }
+.directory .home-ask button[type=submit]:hover { background: #404b39; }
+.home-examples { display: flex; align-items: center; flex-wrap: wrap; gap: 4px 8px; margin-top: 8px; }
+.home-examples span,.home-examples a { color: #4e554a; font-size: 11.5px; text-decoration: none; }
+.home-examples a { padding: 2px 7px; border: 1px solid #d9ddd2; border-radius: 15px; }
+.home-examples a:hover { color: #172619; background: #e8ece3; }
+.index-overview { min-width: 0; padding: 15px 18px 12px; background: #e9ece1; border: 1px solid #d2d7c8; border-radius: 14px; }
+.index-overview-top,.index-facts,.index-links,.catalog-title,.match-title { display: flex; justify-content: space-between; align-items: baseline; gap: 8px 15px; }
+.index-overview-top strong { font-size: 16px; }
+.index-overview a,.index-links summary,.catalog-title a,.full-search { font: 500 12px/1.4 var(--sans); color: #424b3d; text-decoration: none; }
+.index-overview a:hover,.index-links summary:hover,.catalog-title a:hover,.full-search:hover { text-decoration: underline; }
+.index-flow { display: flex; align-items: center; margin: 17px 0 15px; }
+.flow-agent { display: inline-flex; align-items: center; }
+.flow-agent img { width: 29px; height: 29px; padding: 5px; background: #fff; border: 1px solid #c7cdbe; border-radius: 8px; }
+.flow-agent img + img { margin-left: -4px; }
+.flow-brand { width: 39px; height: 39px; display: grid; place-items: center; background: #252b23; border-radius: 10px; }
+.flow-brand img { width: 28px; height: 28px; object-fit: contain; }
+.flow-terminal { font: 600 11px var(--mono); color: #3c4835; padding: 4px 7px; border: 1px solid #adb6a1; border-radius: 4px; background: #f6f7ef; }
+.index-flow i { flex: 1; position: relative; height: 1px; background: #a3af98; }
+.index-flow i::after { content: ''; position: absolute; left: 0; top: -2px; width: 5px; height: 5px; background: #657b54; border-radius: 50%; animation: index-relay 3.8s ease-in-out infinite; }
+.index-flow i:last-of-type::after { animation-delay: 1.7s; }
+@keyframes index-relay { 0%,8% { left: 0; opacity: 0; } 15%,68% { opacity: 1; } 78%,100% { left: calc(100% - 5px); opacity: 0; } }
+.index-facts { justify-content: flex-start; padding-bottom: 8px; border-bottom: 1px solid #cfd6c7; }
+.index-facts span { color: #4d5846; font-size: 12px; }
+.index-facts b { color: #242d1d; font: 600 17px var(--mono); }
+.index-links { margin-top: 8px; position: relative; }
+.index-links summary { cursor: pointer; }
+.score-distribution figure { position: absolute; top: 100%; right: 0; z-index: 5; width: min(310px,80vw); margin: 4px 0 0; padding: 10px; border: 1px solid var(--line); border-radius: 10px; background: white; box-shadow: 0 4px 18px #0002; }
+.catalog-switcher { margin: 0; }
+.catalog-title { margin: 0 0 7px; }
+.catalog-title h2,.match-title h2,.discovery-home .browse-heading h2 { margin: 0; font: 600 21px/1.25 var(--sans); letter-spacing: -.035em; }
+.catalog-switcher .kind-bar { border: 0; background: transparent; z-index: auto; }
+.catalog-switcher .kind-bar-inner { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); overflow: visible; gap: 5px; width: 100%; max-width: none; margin: 0; padding: 0; }
+.catalog-switcher .kind-bar a { display: flex; justify-content: flex-start; min-width: 0; min-height: 35px; margin: 0; padding: 6px 9px; gap: 8px; color: #292e28; background: white; border: 1px solid #d8dcd3; border-radius: 7px; text-transform: none; font: 550 13px/1.15 var(--sans); letter-spacing: -.005em; }
+.catalog-switcher .kind-bar a:hover,.catalog-switcher .kind-bar a[aria-current=page] { background: #e9ede2; border-color: #bac4ad; }
+.catalog-switcher .kind-bar a::after,.catalog-switcher .kind-label::before { content: none; }
+.catalog-switcher .kind-label { font: inherit; letter-spacing: inherit; }
+.catalog-switcher .kind-bar a .count-chip { display: inline; margin-left: auto; font: 11px var(--mono); white-space: nowrap; }
+.home-tools { display: flex; justify-content: space-between; gap: 9px 18px; flex-wrap: wrap; padding: 14px 0 8px; border-bottom: 1px solid var(--line); }
+.home-tools div { display: flex; flex-wrap: wrap; align-items: baseline; gap: 5px 13px; }
+.home-tools a { color: #52594f; text-decoration: none; font: 550 13px/1.4 var(--sans); }
+.home-tools div:first-child a { padding: 5px 8px; border-radius: 5px; }
+.home-tools a[aria-current=true] { background: #282f27; color: #fff; }
+.home-tools a:hover { text-decoration: underline; }
+.discovery-home .directory-browser { margin: 0; padding: 15px 0 0; border: 0; }
+.discovery-home .discovery-controls { margin-bottom: 12px; }
+.discovery-home .discovery-controls #search-help { margin: 4px 0 8px; }
+.discovery-home .discovery-layout { gap: 20px; }
+.discovery-home .directory-start,.discovery-home .board-section { margin-top: 16px; }
+.home-matches { padding: 14px; margin: 0 0 16px; border: 1px solid var(--line); border-radius: 12px; background: #fff; }
+.match-title p { font-size: 12px; color: var(--muted); margin: 1px 0 8px; }
+.home-matches ol { padding: 0; margin: 0 0 8px; list-style: none; display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 8px; }
+.home-matches li { display: grid; align-content: space-between; margin: 0; padding: 8px; min-width: 0; border: 1px solid var(--line); border-radius: 7px; }
+.home-matches li small { color: var(--muted); font: 10px var(--mono); }
+.home-matches .match-name { display: block; color: var(--ink); text-decoration: none; font: 600 15px/1.3 var(--sans); overflow-wrap: anywhere; }
+.home-matches .match-name:hover { text-decoration: underline; }
+.home-matches li p { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; font-size: 12px; margin: 4px 0; }
+.match-actions { display: flex; gap: 8px; align-items: center; justify-content: space-between; font: 11px var(--mono); }
+.directory .match-actions button,.directory [data-clear-ask] { min-height: 28px; padding: 3px 8px; text-transform: none; font: 12px var(--sans); }
+@media (max-width: 760px) {
+  .discovery-home .home-hero { grid-template-columns: 1fr; gap: 0; padding: 14px 0; }
+  .home-hero .home-subtitle { margin-bottom: 8px; font-size: 13px; }
+  .home-hero h1 { font-size: clamp(31px,7.5vw,40px); }
+  .home-examples { gap: 3px 5px; }
+  .index-overview { margin-top: 10px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; padding: 5px 8px; border-radius: 7px; }
+  .index-overview-top strong,.index-facts { display: none; }
+  .index-overview-top { order: 3; margin-left: auto; }
+  .index-links { flex: 1; flex-wrap: wrap; gap: 3px 10px; }
+  .index-links summary { font-size: 11px; }
+  .index-overview-top a,.index-links a { font-size: 11px; }
+  .index-flow { margin: 0; width: 68px; }
+  .flow-agent img { width: 13px; height: 13px; padding: 1px; border-radius: 3px; }
+  .flow-brand { width: 17px; height: 17px; border-radius: 4px; }
+  .flow-brand img { width: 13px; height: 13px; }
+  .flow-terminal { width: 8px; height: 9px; padding: 0; font-size: 0; border-radius: 1px; }
+  .index-links { margin: 0; }
+  .catalog-switcher .kind-bar-inner { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .catalog-switcher .kind-bar a { min-height: 34px; gap: 6px; padding: 4px 7px; }
+  .home-tools { gap: 6px; padding-top: 10px; }
+  .home-tools div { gap: 3px 9px; }
+  .home-tools div:last-child { width: 100%; padding: 2px 0; }
+  .home-matches ol { grid-template-columns: repeat(2,minmax(0,1fr)); }
+}
+@media (max-width: 440px) {
+  .home-matches ol { grid-template-columns: 1fr; }
+  .home-ask input[type=search] { font-size: 14px; }
+  .directory .home-ask button[type=submit] { padding: 0 11px; }
+}
+@media (prefers-reduced-motion: reduce) { .index-flow i::after { animation: none; } }
+/* Native prose links use a high-specificity selector for underlining. These
+   navigation controls and catalog tiles have their own visible affordances. */
+.discovery-home :is(.home-tools,.catalog-switcher .kind-bar,.home-examples) a { text-decoration: none !important; }
+.discovery-home .home-tools a[aria-current=true] { color: #fff !important; }
+.discovery-home .home-tools a:hover,.discovery-home .home-examples a:hover { text-decoration: underline !important; }
+/* Desktop has a persistent navigation bar even before scripts initialize.
+   On a phone the native disclosure starts closed and works without script. */
+@media (min-width: 769px) {
+  .discovery-home .nav-disclosure::details-content { display: contents; content-visibility: visible; }
+}

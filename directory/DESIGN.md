@@ -1,15 +1,20 @@
 # SuedeAI.directory design system
 
-The standalone site builds its landing, interactive icon field, search and catalog
-from `directory/site/` and `scripts/directory/discovery-site.mjs`. The renderer
-uses the current search index for catalog records, publisher counts, featured
-category links and search results. Regenerate the landing HTML after changing
-its template or configuration with
+The standalone homepage recomposes the native directory from
+`scripts/directory/discovery-home.mjs`. It shows AI task search, the eight
+directories, advanced filters, the workflow builder and rankings. Root query
+and fragment bookmarks retain their state. The full animated skill map is
+at `/tour/`, with source in `directory/site/template/`. Regenerate the tour
+after editing its template or configuration with
 `python3 directory/site/template/render.py directory/site/landing.config.json directory/site/index.html`.
-Run `npm run build:vercel` to build the site in `dist/out/`. The advanced
-filters and workflow builder live at `/browse/`, and existing query and
-fragment bookmarks retain their state. The standalone build applies
-`directory/site/assets/records.css` to the generated detail pages.
+
+Run `npm run build:vercel` to build the site in `dist/out/`. The build embeds
+the current skill index with the MIT-licensed Potion 2M model. User-initiated
+AI searches fetch the model and index from the same origin and run inference
+in the browser. The keyword recommender also works if model loading fails.
+See `directory/site/semantic/NOTICE.txt` for the model source and license.
+Both the landing and `/search/` use these rankings. The original unmodified
+browse view remains available at `/browse/`.
 
 The source directory pages (`docs/directory/`) have their own
 design system, separate from the skills site described in the root

@@ -50,6 +50,7 @@ if (root) {
     return facts.join(' · ');
   };
   async function loadJson(file) {
+    if (file === 'search-index.json' && globalThis.loadSuedeSkillIndex) return globalThis.loadSuedeSkillIndex();
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 10000);
     try {

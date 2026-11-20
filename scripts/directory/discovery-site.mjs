@@ -1,5 +1,7 @@
 import fs from "node:fs";
+import { execFileSync } from "node:child_process";
 import path from "node:path";
+import { directoryHome } from "./discovery-home.mjs";
 import { pixelIcon } from "./pixel-icons.mjs";
 
 const ORIGIN = "https://suedeai.directory";
@@ -141,8 +143,8 @@ function archiveBrowse(home) {
     .replace("<body>", '<body data-directory-data-root="/">');
 }
 
-export const discoveryRoutes = ["catalog", "search", "browse"];
-export function publishDiscovery(source, out, siteNode) {
+export const discoveryRoutes = ["catalog", "search", "browse", "tour"];
+export function publishDiscovery(source, out) {
   const assets = path.join(source, "directory/site/assets");
   fs.cpSync(assets, path.join(out, ASSETS), { recursive: true });
   const icons = Object.fromEntries(
@@ -156,6 +158,14 @@ export function publishDiscovery(source, out, siteNode) {
   const skills = JSON.parse(
     fs.readFileSync(path.join(out, "search-index.json"), "utf8"),
   );
+  const semantic = path.join(out, "assets/suede-semantic");
+  fs.cpSync(path.join(source, "directory/site/semantic"), semantic, { recursive: true });
+  execFileSync(process.execPath, [
+    path.join(source, "scripts/directory/build-semantic-index.mjs"),
+    path.join(out, "search-index.json"),
+    path.join(semantic, "model-v1.bin"),
+    path.join(semantic, "documents.bin"),
+  ]);
   const colors = [
     "#4d82bc",
     "#8458bc",
@@ -176,38 +186,20 @@ export function publishDiscovery(source, out, siteNode) {
         .replace("currentColor", colors[index % colors.length]),
     ),
   );
+  const original = fs.readFileSync(path.join(out, "index.html"), "utf8");
   for (const [route, html] of [
-    [
-      "browse",
-      archiveBrowse(fs.readFileSync(path.join(out, "index.html"), "utf8")),
-    ],
+    ["browse", archiveBrowse(original)],
+    ["tour", fs.readFileSync(path.join(source, "directory/site/index.html"), "utf8")
+      .replaceAll("__SUEDE_SKILL_TOTAL__", fmt(skills.length))
+      .replaceAll("__SUEDE_REPO_TOTAL__", fmt(new Set(skills.map(s => s.repo)).size))],
     ["search", searchPage(categories, skills, icons)],
     ["catalog", catalogPage(categories, skills, icons)],
   ]) {
     fs.mkdirSync(path.join(out, route), { recursive: true });
     fs.writeFileSync(path.join(out, route, "index.html"), html);
   }
-  const oldHome = fs.readFileSync(path.join(out, "browse/index.html"), "utf8");
-  const anchors = [...oldHome.matchAll(/ id="([a-z0-9_-]+)"/gi)]
-    .map((match) => match[1])
-    .filter((id) => id !== "main")
-    .join(" ");
-  const landing = fs
-    .readFileSync(path.join(source, "directory/site/index.html"), "utf8")
-    .replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/, () =>
-      '<script type="application/ld+json">' + JSON.stringify({ "@context": "https://schema.org", ...siteNode }, null, 2) + '</script>')
-    .replaceAll("__SUEDE_SKILL_TOTAL__", fmt(skills.length))
-    .replaceAll(
-      "__SUEDE_REPO_TOTAL__",
-      fmt(new Set(skills.map((s) => s.repo)).size),
-    );
-  fs.writeFileSync(
-    path.join(out, "index.html"),
-    landing.replace(
-      "</head>",
-      `<script src="${ASSETS}/bookmarks.js" data-anchors="${anchors}"></script></head>`,
-    ),
-  );
+  const publishers = new Set(skills.map(skill => skill.repo));
+  fs.writeFileSync(path.join(out, "index.html"), directoryHome(original, fmt(skills.length), fmt(publishers.size)));
   fs.cpSync(
     path.join(source, "directory/site/suede-landing"),
     path.join(out, "assets/suede-landing"),

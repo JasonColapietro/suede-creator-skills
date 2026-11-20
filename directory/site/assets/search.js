@@ -1,4 +1,4 @@
-import { recommendSkills } from "/assets/workflow-recommender.js";
+import { findSkills } from "./skill-matches.js";
 import { startField } from "./field.js";
 
 const input = document.querySelector("#prompt"),
@@ -11,8 +11,7 @@ const share = document.querySelector("[data-share]"),
   copy = document.querySelector("[data-copy]");
 const tiles = JSON.parse(document.querySelector("#tile-data").textContent);
 const icons = new Map(tiles.map((t) => [t.name.toLowerCase(), t.icon]));
-let catalog,
-  results = [],
+let results = [],
   active = "",
   revision = 0;
 const make = (tag, cls, label) => {
@@ -72,28 +71,10 @@ async function run(query, historyMode = "") {
   heading.textContent = "Finding skills for " + query + "…";
   copy.disabled = true;
   try {
-    catalog ||= fetch("/search-index.json").then((r) => {
-      if (!r.ok) throw new Error();
-      return r.json();
-    });
-    const index = await catalog;
+    const { items } = await findSkills(query);
     if (token !== revision) return;
-    const ranked = recommendSkills(query, index, { limit: 12 });
-    const publisher = query.toLowerCase();
-    const direct = index
-      .filter((s) =>
-        [
-          s.name.toLowerCase(),
-          s.repo.toLowerCase(),
-          s.repo.split("/")[0].toLowerCase(),
-        ].includes(publisher),
-      )
-      .sort((a, b) => b.score - a.score)
-      .slice(0, 12);
     const groups = new Map();
-    for (const row of new Map(
-      [...direct, ...ranked].map((skill) => [skill.id, skill]),
-    ).values()) {
+    for (const row of items) {
       const owner = row.repo.split("/")[0];
       if (!groups.has(owner)) {
         if (groups.size === 3) continue;
@@ -116,7 +97,6 @@ async function run(query, historyMode = "") {
       grid.append(card);
     }
   } catch {
-    catalog = undefined;
     if (token !== revision) return;
     heading.textContent = "Could not load the skills index.";
     const retry = make("button", "load-more", "Try again");
