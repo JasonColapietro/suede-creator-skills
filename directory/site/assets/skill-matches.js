@@ -34,13 +34,13 @@ const taskTopics = [
   },
   {
     context: /\b(websites?|web|pages?|interfaces?|screens?|apps?|forms?|buttons?|controls?|navigation|keyboard|design|site|audit)\b/,
-    outcome: /\b(accessib\w*|assistive|screen readers?|wcag|a11y|disabilit\w*|low[ -]vision|poor eyesight|visually impaired|blind|keyboard[ -]only|visual impairments?|(?:people|users|visitors) (?:who )?(?:cannot|can.t) see)\b/,
+    outcome: /\b(accessib\w*|assistive|screen readers?|wcag|a11y|disabilit\w*|low[ -]vision|poor eyesight|visually impaired|blind|keyboard[ -]only|mouse[ -]free|without (?:using )?(?:a |the |my )?(?:mouse|trackpad)|(?:can(?:not|['’]t)|unable to) use (?:a |the |my )?(?:mouse|trackpad)|visual impairments?|(?:people|users|visitors) (?:who )?(?:cannot|can.t) see)\b/,
     topics: ['accessibility-testing'],
     description: 'accessibility audit test website interface barriers screen readers keyboard navigation and contrast'
   },
   {
     context: /\b(audio|recordings?|panels?|interviews?|conversations?|voices?|videos?|footage|webinars?|lectures?|episodes?|podcasts?|speech|spoken|speakers?|talks?)\b/,
-    outcome: /\b(transcri\w*|captions?|subtitles?|hard of hearing|deaf|read along|readable text|written text|read (?:it|what)|speech to text|in writing|written record)\b/,
+    outcome: /\b(transcri\w*|captions?|subtitles?|hard[ -]of[ -]hearing|hearing (?:loss|impairment)|(?:can(?:not|['’]t)|unable to) hear|deaf|read along|readable text|written text|read (?:it|what)|speech to text|in writing|written record)\b/,
     topics: ['speech-to-text','subtitles-captions'],
     description: 'transcribe a recording into readable text with timestamps speaker identification and accessible captions'
   }
