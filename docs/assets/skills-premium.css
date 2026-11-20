@@ -158,8 +158,8 @@
 .skills-home .landing-section code { color: var(--color-text-primary); }
 .skills-home .start-steps { list-style: none; padding: 0; margin: 32px 0 24px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; counter-reset: steps; }
 .skills-home .start-steps li { border-top: 1px solid var(--cp-border, #64543b); padding-top: 20px; counter-increment: steps; }
-.skills-home .start-steps li::before { content: '0' counter(steps); display: block; color: var(--color-accent-gold); font: 12px monospace; margin-bottom: 12px; }
-.skills-home .start-steps h3, .skills-home .task-row h3 { font-family: system-ui, sans-serif; font-size: 18px; line-height: 1.4; color: var(--color-text-primary); margin: 0 0 10px; }
+.skills-home .start-steps li::before { content: '0' counter(steps); display: block; color: var(--color-accent-gold); font: 12px var(--font-mono); margin-bottom: 12px; }
+.skills-home .start-steps h3, .skills-home .task-row h3 { font-family: var(--font-body); font-size: 18px; line-height: 1.4; color: var(--color-text-primary); margin: 0 0 10px; }
 .skills-home .start-steps p, .skills-home .task-row p, .skills-home .landing-detail { color: var(--muted); font-size: 14px; line-height: 1.75; }
 .skills-home .landing-detail a, .skills-home .landing-links a { color: var(--color-accent-gold); text-decoration: underline; text-underline-offset: 4px; }
 .skills-home .landing-links { display: flex; flex-wrap: wrap; gap: 8px 28px; margin-top: 20px; }
@@ -167,12 +167,12 @@
 .skills-home .task-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr) minmax(0, .9fr); gap: 32px; align-items: center; padding: 24px 0; border-bottom: 1px solid var(--cp-border, #343129); }
 .skills-home .task-row h3, .skills-home .task-row p { margin: 0; }
 .skills-home .task-row:hover h3, .skills-home .task-row:focus-visible h3 { color: var(--color-accent-gold); }
-.skills-home .task-target { color: var(--color-accent-gold); font: 12px/1.6 monospace; overflow-wrap: anywhere; }
+.skills-home .task-target { color: var(--color-accent-gold); font: 12px/1.6 var(--font-mono); overflow-wrap: anywhere; }
 .skills-home .task-cracked { border-left: 3px solid var(--color-accent-red); padding-left: 20px; }
 .skills-home .example-request, .skills-home .example-result { padding: 24px; }
 .skills-home .example-request { border-bottom: 1px solid var(--cp-border, #343129); background: var(--cp-panel, #11110f); }
-.skills-home .example-label { font: 11px/1.6 monospace; text-transform: uppercase; letter-spacing: .1em; color: var(--color-accent-gold); margin: 0 0 12px; }
-.skills-home .example-request pre { font: 13px/1.8 monospace; color: var(--color-text-primary); white-space: pre-wrap; overflow-wrap: anywhere; margin: 0; }
+.skills-home .example-label { font: 11px/1.6 var(--font-mono); text-transform: uppercase; letter-spacing: .1em; color: var(--color-accent-gold); margin: 0 0 12px; }
+.skills-home .example-request pre { font: 13px/1.8 var(--font-mono); color: var(--color-text-primary); white-space: pre-wrap; overflow-wrap: anywhere; margin: 0; }
 .skills-home .example-result { color: var(--muted); font-size: 14px; line-height: 1.7; }
 .skills-home .example-result a { color: var(--color-accent-gold); text-decoration: underline; text-underline-offset: 4px; }
 .skills-home .example-result dl { margin: 16px 0 8px; }
