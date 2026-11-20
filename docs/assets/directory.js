@@ -454,7 +454,7 @@ if (browser) {
     // Quality shields exist only for listed skills scoring 80-99.
     if (skill.score >= 80) {
       const shield = node('img', 'result-shield');
-      shield.src = (document.body?.dataset?.directoryDataRoot || '') + 'badges/score-' + skill.score + '.svg';
+      shield.src = 'badges/score-' + skill.score + '.svg';
       shield.alt = 'Suede S shield';
       shield.width = 80; shield.height = 88; shield.loading = 'lazy';
       quality.append(shield);
@@ -523,12 +523,9 @@ if (browser) {
     status.textContent = 'Loading skill search…';
     results.setAttribute('aria-busy', 'true');
     try {
-      const data = globalThis.loadSuedeSkillIndex
-        ? await globalThis.loadSuedeSkillIndex()
-        : await fetch((document.body?.dataset?.directoryDataRoot || '') + 'search-index.json').then(response => {
-          if (!response.ok) throw new Error('Search unavailable');
-          return response.json();
-        });
+      const response = await fetch('search-index.json');
+      if (!response.ok) throw new Error('Search unavailable');
+      const data = await response.json();
       if (!Array.isArray(data) || !data.length) throw new Error('Invalid search index');
       skills = data.map((skill) => ({ ...skill, search: [skill.name, skill.slug, skill.repo, skill.description, skill.label].join(' ').toLowerCase() }));
       render(false);
