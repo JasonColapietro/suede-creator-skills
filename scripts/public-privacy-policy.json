@@ -2,11 +2,6 @@
   "description": "Review numerical recovery claims on public recovery surfaces; retain private case details only in private sessions. No private amounts or amount fingerprints are stored here. Contact exceptions are value- and path-scoped. Binary media require separate review.",
   "intentional_public_contacts": [
     {
-      "sha256": "d144b5037a9fd5aae8f8dcf5aa7013b68e3aa6a2bf31147fc4f80b1f1f4749ed",
-      "path_pattern": "directory/site/suede-landing/support\\.js",
-      "reason": "Suede's public support inbox, documented at https://suedeai.ai/support, receives support email drafts."
-    },
-    {
       "sha256": "93d3e368ab589016d5cb2d0582f583ea48aa9b9b1c2fac8586dff7adbb484e7a",
       "path_pattern": "SECURITY\\.md|scripts/build-skill-cards\\.mjs|skills/[^/]+/CARD\\.md",
       "reason": "Documented public security contact and generated skill cards."

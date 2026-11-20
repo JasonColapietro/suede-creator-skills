@@ -50,11 +50,10 @@ if (root) {
     return facts.join(' · ');
   };
   async function loadJson(file) {
-    if (file === 'search-index.json' && globalThis.loadSuedeSkillIndex) return globalThis.loadSuedeSkillIndex();
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 10000);
     try {
-      const response = await fetch((document.body?.dataset?.directoryDataRoot || '') + file, { signal: controller.signal });
+      const response = await fetch(file, { signal: controller.signal });
       if (!response.ok) throw new Error('Catalog request failed');
       return await response.json();
     } finally { clearTimeout(timeout); }
