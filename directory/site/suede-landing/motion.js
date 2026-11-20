@@ -96,8 +96,10 @@
         const end = tile.getBoundingClientRect();
         const ex = end.left - rect.left + (vertical ? end.width / 2 : 0);
         const ey = end.top - rect.top + (vertical ? 0 : end.height / 2);
+        const inboundY = (sy + cy) / 2;
+        const outboundY = (cy + ey) / 2;
         const path = vertical
-          ? `M${sx} ${sy} C${sx} ${cy},${cx} ${sy - 50},${cx} ${cy} S${ex} ${cy + 40},${ex} ${ey}`
+          ? `M${sx} ${sy} C${sx} ${inboundY},${cx} ${inboundY},${cx} ${cy} C${cx} ${outboundY},${ex} ${outboundY},${ex} ${ey}`
           : `M${sx} ${sy} C${sx + 90} ${sy},${cx - 100} ${cy},${cx} ${cy} C${cx + 110} ${cy},${ex - 75} ${ey},${ex} ${ey}`;
         const group = svgElement('g');
         group.append(svgElement('path', { d: path }), svgElement('path', { d: path, pathLength: 100, class: 'route-pulse' }));
