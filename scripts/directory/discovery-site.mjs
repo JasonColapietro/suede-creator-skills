@@ -56,7 +56,7 @@ function searchPage(categories, skills, icons) {
       publishers.set(owner, {
         name: skill.repo.split("/")[0],
         icon: icons[owner],
-        href: skill.href.split("#")[0],
+        href: "/catalog/?q=" + encodeURIComponent(skill.repo.split("/")[0]),
         topic: skill.name,
       });
   }

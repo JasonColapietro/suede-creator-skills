@@ -404,7 +404,7 @@ small {
   font-size: 21px;
 }
 .sample-prompts {
-  margin: 57px auto 0;
+  margin: 58px auto 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -590,7 +590,7 @@ small {
     scrollbar-width: none;
     justify-content: flex-start;
     width: 100%;
-    margin-top: 44px;
+    margin-top: 46px;
   }
   .search-page .topbar nav {
     font-size: 12px;
@@ -630,5 +630,34 @@ small {
     scroll-behavior: auto !important;
     transition: none !important;
     animation: none !important;
+  }
+}
+
+/* Reserve the lower viewport for the tile pile. The introduction sits halfway
+   between the navigation and the search field as the available height changes. */
+@media (min-width: 581px) {
+  .search-page:not(.has-results) .search-main {
+    --prompt-top: max(196px, calc(65svh - 225.5px + max(0px, 18svh - 154.8px)));
+    padding-top: 6px;
+  }
+  .search-page:not(.has-results) .search-intro {
+    height: calc(var(--prompt-top) - 106px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+  }
+  .search-intro h1 {
+    margin: 26px 0 0;
+    font-size: clamp(32px, 4.55vw, 58px);
+  }
+}
+@media (min-width: 581px) and (max-width: 820px) {
+  .search-page .topbar { height: 82px; }
+}
+@media (max-width: 580px) {
+  .search-main:not(:has(.matches:not([hidden]))) .prompt-form {
+    margin-top: clamp(44px, calc(22svh + 3px), 198px);
   }
 }

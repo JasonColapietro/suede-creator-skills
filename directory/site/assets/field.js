@@ -90,7 +90,7 @@ export function startField(items) {
     width = nextWidth;
     height = nextHeight;
     const mobile = width < 640;
-    size = mobile ? 15 : 28;
+    size = mobile ? 15 : Math.min(28, Math.round(height * 0.033));
     const count = Math.min(
       253,
       Math.max(95, Math.round(width * (mobile ? 0.45 : 0.2))),
