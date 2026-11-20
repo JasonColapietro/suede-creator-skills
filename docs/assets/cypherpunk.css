@@ -56,7 +56,7 @@
 .skills-home .cracked-disclaimer {
   display: block;
   color: #d9c6b5;
-  font: 12px/1.55 var(--font-body);
+  font: 12px/1.55 system-ui, sans-serif;
   letter-spacing: normal;
   text-transform: none;
   white-space: normal;
@@ -83,7 +83,7 @@
   border-radius: 0;
   background: transparent;
   color: var(--cp-accent);
-  font: 600 11px/1.55 var(--font-mono);
+  font: 600 11px/1.55 ui-monospace, monospace;
   letter-spacing: .1em;
 }
 
@@ -95,14 +95,14 @@
 }
 
 .skills-home #hero-headline {
-  font-size: clamp(48px, 6vw, 86px);
-  line-height: .98;
-  letter-spacing: -.008em;
-  max-width: 18ch;
+  font-size: clamp(44px, 5.4vw, 80px);
+  line-height: .99;
+  letter-spacing: -.045em;
+  max-width: 15ch;
   margin: 22px 0;
 }
 
-.skills-home #hero-headline .hh-risk { color: var(--cp-accent); font-style: normal; }
+.skills-home #hero-headline .hh-risk { color: var(--cp-accent); }
 
 .skills-home #hero-subline {
   max-width: 48ch;
@@ -117,7 +117,7 @@
   border-radius: 4px;
   padding: 10px 14px;
   gap: 7px;
-  font: 600 14px/1.35 var(--font-body);
+  font: 600 14px/1.35 system-ui, sans-serif;
   text-transform: none;
   letter-spacing: normal;
 }
@@ -191,7 +191,7 @@
   .skills-home #nav-mobile-menu { max-height: calc(100dvh - var(--nav-height)); overflow-y: auto; }
   .skills-home #hero { padding: 36px 0 40px !important; }
   .skills-home #hero-grid { grid-template-columns: minmax(0, 1fr); gap: 28px; }
-  .skills-home #hero-headline { font-size: clamp(45px, 10.8vw, 70px); margin: 17px 0; }
+  .skills-home #hero-headline { font-size: clamp(42px, 8.8vw, 64px); margin: 17px 0; }
   .skills-home #hero-ctas { margin-bottom: 10px; }
   .skills-home .example-art { height: clamp(134px, 31vw, 190px); }
   .skills-home .nav-mobile-link .cracked-disclaimer { margin-top: 4px; }
