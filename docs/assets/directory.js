@@ -523,9 +523,12 @@ if (browser) {
     status.textContent = 'Loading skill search…';
     results.setAttribute('aria-busy', 'true');
     try {
-      const response = await fetch((document.body?.dataset?.directoryDataRoot || '') + 'search-index.json');
-      if (!response.ok) throw new Error('Search unavailable');
-      const data = await response.json();
+      const data = globalThis.loadSuedeSkillIndex
+        ? await globalThis.loadSuedeSkillIndex()
+        : await fetch((document.body?.dataset?.directoryDataRoot || '') + 'search-index.json').then(response => {
+          if (!response.ok) throw new Error('Search unavailable');
+          return response.json();
+        });
       if (!Array.isArray(data) || !data.length) throw new Error('Invalid search index');
       skills = data.map((skill) => ({ ...skill, search: [skill.name, skill.slug, skill.repo, skill.description, skill.label].join(' ').toLowerCase() }));
       render(false);

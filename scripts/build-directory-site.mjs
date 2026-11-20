@@ -172,7 +172,7 @@ export function build(out) {
   fs.mkdirSync(path.join(out, "assets"), { recursive: true });
   copyTree(path.join(docs, "assets"), path.join(out, "assets"), null);
 
-  publishDiscovery(ROOT, out, SITE_NODE);
+  publishDiscovery(ROOT, out);
 
   const notFound = path.join(docs, "404.html");
   // The shared 404 says which host the visitor missed; on this host, say this one.

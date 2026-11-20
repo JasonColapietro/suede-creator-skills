@@ -136,7 +136,7 @@ export async function verifyStandaloneWorkflow(page, output) {
   // that the concurrently running browser tests depend on, and their Node-side
   // waits (such as a 5 s label reset) would expire mid-build.
   await promisify(execFile)(process.execPath, [fileURLToPath(new URL('../scripts/build-directory-site.mjs', import.meta.url)), '--out', root], { maxBuffer: 1 << 20 });
-  const types = { '.html': 'text/html', '.css': 'text/css', '.js': 'text/javascript', '.json': 'application/json', '.svg': 'image/svg+xml', '.woff2': 'font/woff2', '.png': 'image/png' };
+  const types = { '.html': 'text/html', '.css': 'text/css', '.js': 'text/javascript', '.mjs': 'text/javascript', '.json': 'application/json', '.svg': 'image/svg+xml', '.woff2': 'font/woff2', '.png': 'image/png' };
   const server = http.createServer((req, res) => {
     const pathname = decodeURIComponent(new URL(req.url, 'http://localhost').pathname);
     const target = path.resolve(root, '.' + pathname, pathname.endsWith('/') ? 'index.html' : '');
@@ -148,7 +148,16 @@ export async function verifyStandaloneWorkflow(page, output) {
   const base = 'http://127.0.0.1:' + server.address().port;
   try {
     await page.goto(base + '/');
-    await page.getByRole('navigation', { name: 'Primary' }).getByRole('link', { name: 'Tools', exact: true }).click();
+    assert.equal(await page.getByRole('navigation', { name: 'Directory catalogs' }).getByRole('link').count(), 8);
+    const query = 'speed up slow database queries';
+    await page.getByLabel('AI skill search').fill(query);
+    await page.getByRole('button', { name: 'Search for matching skills' }).click();
+    await page.locator('[data-match-list] .match-name').first().waitFor();
+    assert.equal(new URL(page.url()).pathname, '/');
+    assert.equal(new URL(page.url()).searchParams.get('ask'), query);
+    assert.match(await page.locator('[data-match-note]').textContent(), /semantic similarity/);
+    assert.match(await page.locator('[data-match-list]').textContent(), /database|query optimiz/i);
+    await page.getByRole('link', { name: 'Open full search' }).click();
     await page.getByLabel('Describe the job').fill('Playwright');
     await page.getByRole('button', { name: 'Find matching skills' }).click();
     await page.locator('.match-grid article a').first().waitFor();
