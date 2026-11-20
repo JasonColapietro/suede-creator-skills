@@ -7,7 +7,7 @@ const id = 'extra-caffeine-workflow';
 
 test('Extra Caffeine features one proprietary workflow without claiming catalog or security qualification', () => {
   const data = JSON.parse(read('directory/skills.json'));
-  assert.equal(data.skills.filter((s) => s.repo === repo).length, 0, 'catalog intake is pending');
+  assert.equal(data.skills.filter((s) => s.repo === repo).length, 1, 'listed by the 2026-11-20 scoped ingestion');
   const project = JSON.parse(read('directory/featured-projects.json')).projects.find((p) => p.id === 'extra-caffeine');
   assert.ok(project);
   assert.equal(project.skills, undefined);
@@ -21,7 +21,7 @@ test('Extra Caffeine features one proprietary workflow without claiming catalog 
   const feature = page.split('id="extra-caffeine"')[1]?.split('</article>')[0];
   assert.ok(feature);
   assert.ok(feature.includes(`href="${project.workflow_url}"`));
-  for (const fact of ['macOS 14+', 'Extra Caffeine 1.2+', 'free, separately installed', 'permanently free', 'no payment, subscription or expiry', 'All rights reserved', 'not scanned', 'runtime-unverified', 'catalog listing is pending']) assert.ok(feature.includes(fact), fact);
+  for (const fact of ['macOS 14+', 'Extra Caffeine 1.2+', 'free, separately installed', 'permanently free', 'no payment, subscription or expiry', 'All rights reserved', 'not scanned', 'runtime-unverified', 'in the scored catalog']) assert.ok(feature.includes(fact), fact);
   const note = JSON.parse(read('directory/notes.json'))[`${repo}/${id}`].text;
   const summary = JSON.parse(read('directory/labels.json'))[`${repo}/${id}`].summary;
   const catalogFeature = read('awesome/featured.md').split('<a id="extra-caffeine"></a>')[1]?.split('\n---')[0];

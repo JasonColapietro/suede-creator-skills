@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "repository": "cwong5/extra-caffeine-mcp",
+  "listing_url": "https://skills.suedeai.ai/directory/cwong5/extra-caffeine-mcp/",
+  "snapshot": {
+    "date": "2026-10-22",
+    "id": "176044f4b49e4c4f8168396e3fa66419",
+    "dataset_sha256": "1364e097365ea4ed0d7e60e6b5ed3df82f1d00dac7ce8de89354113c4f0fad85"
+  },
+  "listed_skill_count": 1,
+  "scope": "Skills listed by the directory; this is not a complete inventory of every file in the repository.",
+  "security_scan_status": "not_scanned",
+  "skills": [
+    {
+      "id": "cwong5/extra-caffeine-mcp/extra-caffeine-workflow",
+      "name": "extra-caffeine-workflow",
+      "description": "Use Extra Caffeine to keep a local Mac awake for long AI or file-processing work, check awake state, or manage requested one-time schedules. Applies to Mac-dependent tasks and explicit Extra Caffeine requests; cloud-only jobs usually do not need it.",
+      "category": "productivity-knowledge",
+      "license": "All rights reserved",
+      "license_url": "https://github.com/cwong5/extra-caffeine-mcp/blob/main/LICENSE",
+      "license_kind": "restricted",
+      "source": {
+        "branch": "main",
+        "revision": "0aa949f4a2dc3cad9b431f6eec790bf729c1b52d",
+        "revision_status": "recorded",
+        "repository_commit_date": "2026-11-17",
+        "assessment_date": "2026-11-19",
+        "skill_md_url": "https://github.com/cwong5/extra-caffeine-mcp/blob/0aa949f4a2dc3cad9b431f6eec790bf729c1b52d/skills/extra-caffeine-workflow/SKILL.md"
+      },
+      "quality": {
+        "score": 69,
+        "grade": "D",
+        "components": [
+          {
+            "id": "structure",
+            "label": "Structural checks",
+            "max": 56,
+            "points": 48
+          },
+          {
+            "id": "description_length",
+            "label": "Description length",
+            "max": 5,
+            "points": 5
+          },
+          {
+            "id": "boundary",
+            "label": "Boundary clause",
+            "max": 4,
+            "points": 0
+          },
+          {
+            "id": "example",
+            "label": "Example request",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "depth",
+            "label": "Instruction depth",
+            "max": 7,
+            "points": 7
+          },
+          {
+            "id": "references",
+            "label": "Reference files",
+            "max": 3,
+            "points": 0
+          },
+          {
+            "id": "scripts",
+            "label": "Bundled scripts",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "recency",
+            "label": "Recent maintenance",
+            "max": 9,
+            "points": 9
+          },
+          {
+            "id": "adoption",
+            "label": "Curated-list citations",
+            "max": 7,
+            "points": 0
+          },
+          {
+            "id": "allowed_tools",
+            "label": "Tool permissions declared",
+            "max": 2,
+            "points": 0
+          },
+          {
+            "id": "compatibility",
+            "label": "Compatibility declared",
+            "max": 2,
+            "points": 0
+          }
+        ],
+        "checks": {
+          "frontmatter": true,
+          "name_format": true,
+          "name_matches_folder": true,
+          "description_length": true,
+          "description_trigger": false,
+          "concise_body": true,
+          "license": true,
+          "maintained": true
+        }
+      },
+      "report_url": "https://skills.suedeai.ai/directory/cwong5/extra-caffeine-mcp/extra-caffeine-workflow/report.json",
+      "review_url": null,
+      "source_folder_url": "https://github.com/cwong5/extra-caffeine-mcp/tree/main/skills/extra-caffeine-workflow",
+      "install": {
+        "skills_cli": null,
+        "publisher_setup_url": "https://extracaffeine.chesterwong.com/agent-setup.md"
+      }
+    }
+  ]
+}

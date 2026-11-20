@@ -6,7 +6,7 @@
 
 Skills for deploying, operating and observing software: cloud platforms, infrastructure as code, CI/CD, monitoring and incident response. Many come from the platform vendors themselves, so the agent works from the provider's own guidance.
 
-**360 accepted skills · 38 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
+**361 accepted skills · 39 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
 **Compare on the 0–99 quality scale:** this category’s verified scores span **53–95 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede AI](https://skills.suedeai.ai/directory/?category=devops-cloud&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
 
@@ -40,6 +40,7 @@ Skills for deploying, operating and observing software: cloud platforms, infrast
 - [mblode/agent-skills](#mblode--agent-skills)
 - [metalbear-co/skills](#metalbear-co--skills)
 - [microsoft/azure-skills](#microsoft--azure-skills)
+- [mrhy7176/cloudgpu-agent-skills](#mrhy7176--cloudgpu-agent-skills)
 - [NVIDIA/skills](#nvidia--skills)
 - [obra/superpowers-lab](#obra--superpowers-lab)
 - [openai/skills](#openai--skills)
@@ -534,6 +535,14 @@ Skills for deploying, operating and observing software: cloud platforms, infrast
 - **66/100 · D** · [discover-azure-skills](https://github.com/microsoft/azure-skills/blob/main/skills/discover-azure-skills/SKILL.md): Searches the Azure skills catalog and recommends installable agent skills by matching an Azure task to skill metadata and plugin installation guidance. [Suede](https://skills.suedeai.ai/directory/microsoft/azure-skills/#discover-azure-skills)
 - **64/100 · D** · [azure-compute](https://github.com/microsoft/azure-skills/blob/main/skills/azure-compute/SKILL.md): Azure VM/VMSS router. [Suede](https://skills.suedeai.ai/directory/microsoft/azure-skills/#azure-compute)
 - **62/100 · D** · [azure-advisor-actionability](https://github.com/microsoft/azure-skills/blob/main/.github/plugins/azure-advisor/skills/azure-advisor-actionability/SKILL.md): Remediate Azure Advisor recommendations. [Suede](https://skills.suedeai.ai/directory/microsoft/azure-skills/#azure-advisor-actionability)
+
+<a id="mrhy7176--cloudgpu-agent-skills"></a>
+
+## mrhy7176/cloudgpu-agent-skills
+
+[Repository](https://github.com/mrhy7176/cloudgpu-agent-skills) · Publisher: [mrhy7176](https://github.com/mrhy7176) · [Suede AI listing](https://skills.suedeai.ai/directory/mrhy7176/cloudgpu-agent-skills/)
+
+- **77/100 · C** · [cloudgpu-discover-compute](https://github.com/mrhy7176/cloudgpu-agent-skills/blob/main/cloudgpu-discover-compute/SKILL.md): Compare GPU capacity and task costs without creating a paid instance, then prepare a proposal for user approval. [Suede](https://skills.suedeai.ai/directory/mrhy7176/cloudgpu-agent-skills/cloudgpu-discover-compute/)
 
 <a id="nvidia--skills"></a>
 

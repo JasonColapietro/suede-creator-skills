@@ -6,7 +6,7 @@
 
 Skills for drafting and editing prose: fiction, line editing, technical documentation and removing machine-sounding patterns. They give an agent a defined editorial standard to write to and check against.
 
-**116 accepted skills · 40 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
+**118 accepted skills · 42 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
 **Compare on the 0–99 quality scale:** this category’s verified scores span **59–95 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede AI](https://skills.suedeai.ai/directory/?category=writing-content&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
 
@@ -37,6 +37,7 @@ Skills for drafting and editing prose: fiction, line editing, technical document
 - [JasonColapietro/suede-creator-skills](#jasoncolapietro--suede-creator-skills)
 - [jeffallan/claude-skills](#jeffallan--claude-skills)
 - [K-Dense-AI/claude-scientific-skills](#k-dense-ai--claude-scientific-skills)
+- [korey2028-prog/resume-claim-guard](#korey2028-prog--resume-claim-guard)
 - [LambdaTest/agent-skills](#lambdatest--agent-skills)
 - [langchain-ai/langchain-skills](#langchain-ai--langchain-skills)
 - [lukstei/slop-grader](#lukstei--slop-grader)
@@ -47,6 +48,7 @@ Skills for drafting and editing prose: fiction, line editing, technical document
 - [MohamedAbdallah-14/unslop](#mohamedabdallah-14--unslop)
 - [Necmttn/ax](#necmttn--ax)
 - [NVIDIA/skills](#nvidia--skills)
+- [OakcoderX/awesome-agent-skills](#oakcoderx--awesome-agent-skills)
 - [phuryn/pm-skills](#phuryn--pm-skills)
 - [product-on-purpose/pm-skills](#product-on-purpose--pm-skills)
 - [realkimbarrett/advertising-skills](#realkimbarrett--advertising-skills)
@@ -298,6 +300,14 @@ Skills for drafting and editing prose: fiction, line editing, technical document
 - **87/100 · B** · [scientific-writing](https://github.com/K-Dense-AI/claude-scientific-skills/blob/main/skills/scientific-writing/SKILL.md): Drafts, revises, and audits scientific manuscripts or reports with evidence provenance, reporting-guideline coverage, authorship accountability, confidentiality controls, and local consistency checks. [Suede](https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/scientific-writing/)
 - **77/100 · C** · [dhdna-profiler](https://github.com/K-Dense-AI/claude-scientific-skills/blob/main/skills/dhdna-profiler/SKILL.md): Applies the DHDNA framework as an exploratory rubric for reasoning and writing patterns in supplied text. [Suede](https://skills.suedeai.ai/directory/k-dense-ai/claude-scientific-skills/#dhdna-profiler)
 
+<a id="korey2028-prog--resume-claim-guard"></a>
+
+## korey2028-prog/resume-claim-guard
+
+[Repository](https://github.com/korey2028-prog/resume-claim-guard) · Publisher: [korey2028-prog](https://github.com/korey2028-prog) · [Suede AI listing](https://skills.suedeai.ai/directory/korey2028-prog/resume-claim-guard/)
+
+- **72/100 · C** · [resume-claim-guard](https://github.com/korey2028-prog/resume-claim-guard/blob/main/SKILL.md): 从岗位 JD 出发写一份经得起面试追问的简历：拆解 JD 要求，把要求翻译成生活里的线索反问候选人，挖出简历上没写的相关真实经历，只用候选人确认过的事实贴着 JD 写定向简历，最后逐句做事实体检并预演面试官会怎么追问、该怎么答。也可单独体检已有简历，识别 AI 改写造成的动词升级、无依据数字和把计划或团队成果写成个人成果。用户要求按 JD 写或改简历、定向简历、岗位匹配、简历事实核查、反注水审查、准备面试时讲清每段经历时使用。 [Suede](https://skills.suedeai.ai/directory/korey2028-prog/resume-claim-guard/#resume-claim-guard)
+
 <a id="lambdatest--agent-skills"></a>
 
 ## LambdaTest/agent-skills
@@ -386,6 +396,14 @@ Skills for drafting and editing prose: fiction, line editing, technical document
 [Repository](https://github.com/NVIDIA/skills) · Publisher: [NVIDIA](https://github.com/NVIDIA) · [Suede AI listing](https://skills.suedeai.ai/directory/nvidia/skills/)
 
 - **76/100 · C** · [nemo-rl-docs](https://github.com/NVIDIA/skills/blob/main/skills/nemo-rl-docs/SKILL.md): Documentation conventions for NeMo-RL. [Suede](https://skills.suedeai.ai/directory/nvidia/skills/#nemo-rl-docs)
+
+<a id="oakcoderx--awesome-agent-skills"></a>
+
+## OakcoderX/awesome-agent-skills
+
+[Repository](https://github.com/OakcoderX/awesome-agent-skills) · Publisher: [OakcoderX](https://github.com/OakcoderX) · [Suede AI listing](https://skills.suedeai.ai/directory/oakcoderx/awesome-agent-skills/)
+
+- **72/100 · C** · [socratic-story-cartographer](https://github.com/OakcoderX/awesome-agent-skills/blob/main/socratic-story-cartographer/SKILL.md): Diagnose and iteratively improve novels, screenplays, scenes, characters, and story outlines using competing hypotheses, falsification, counterfactual tests, evidence anchors, minimum-sufficient intervention, blind re-check, and… [Suede](https://skills.suedeai.ai/directory/oakcoderx/awesome-agent-skills/#socratic-story-cartographer)
 
 <a id="phuryn--pm-skills"></a>
 

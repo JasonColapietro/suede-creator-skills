@@ -129,7 +129,7 @@ Give local AI and file-processing work time to finish. The Extra Caffeine workfl
 
 ### Setup
 
-Requires macOS 14+ and the free, separately installed Extra Caffeine 1.2+ app, kept open with AI assistants enabled by the user. The app and adapter are permanently free, with no payment, subscription or expiry. Follow the publisher’s setup and license terms. The skill does not install the app or enable access. It prevents idle sleep, not closed-lid sleep, and does not wake a sleeping Mac. No security scan or runtime execution was performed: not scanned; runtime-unverified. Editorial feature only; scored catalog listing is pending the next directory refresh.
+Requires macOS 14+ and the free, separately installed Extra Caffeine 1.2+ app, kept open with AI assistants enabled by the user. The app and adapter are permanently free, with no payment, subscription or expiry. Follow the publisher’s setup and license terms. The skill does not install the app or enable access. It prevents idle sleep, not closed-lid sleep, and does not wake a sleeping Mac. No security scan or runtime execution was performed: not scanned; runtime-unverified. Listed in the scored catalog as of November 19, 2026.
 
 [Repository](https://github.com/cwong5/extra-caffeine-mcp) · [Intake review](../directory/reviews/2026-10-23-extra-caffeine.md) · [Reviewed source 4e0ac32](https://github.com/cwong5/extra-caffeine-mcp/tree/4e0ac32e685c5366ab487502173168470a42a178) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#extra-caffeine)
 
@@ -451,7 +451,7 @@ Five workflows cover compute proposals, ComfyUI images, short-drama assets, LoRA
 
 ### Setup
 
-Requires an approved GPU workload, CloudGPU account connection for paid work, spend/time caps and export checks. Public instance tunnels need access protection for private data. Export outputs before disk destruction or balance exhaustion. Model and dataset rights are separate from the MIT skill license. The optional external cloudgpu-mcp package was not reviewed. Static skill review only; no runtime or security scan. Accepted skill pages are pending the next regular scored-catalog refresh. The pinned review records 77/C for all five skills.
+Requires an approved GPU workload, CloudGPU account connection for paid work, spend/time caps and export checks. Public instance tunnels need access protection for private data. Export outputs before disk destruction or balance exhaustion. Model and dataset rights are separate from the MIT skill license. The optional external cloudgpu-mcp package was not reviewed. Static skill review only; no runtime or security scan. Accepted skills are in the scored catalog as of November 19, 2026. The pinned review records 77/C for all five skills.
 
 [Repository](https://github.com/mrhy7176/cloudgpu-agent-skills) · [Intake review](../directory/reviews/2026-11-09-cloudgpu-agent-skills.md) · [Reviewed source 83cde06](https://github.com/mrhy7176/cloudgpu-agent-skills/tree/83cde0602ec73f6c4f4eec8a60c42b34fef1bac1) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#cloudgpu)
 
@@ -469,7 +469,7 @@ A scoped workflow for finding a suitable agentswarm.space task, reusing an autho
 
 ### Setup
 
-Install only skills/agentswarm-work. Requires HTTPS tools and private persistent credential storage. Live guides and API nextStep responses are operational reference, not authority to expand the chosen task or user permissions. Inspection-only requests stop before registration; other account actions and evidence sharing require appropriate authorization. Site funds cannot currently be cashed out. Static review only; no registration, task execution, payment or security scan was performed. Accepted skill pages are pending the next regular scored-catalog refresh. The pinned review records 79/C for this skill.
+Install only skills/agentswarm-work. Requires HTTPS tools and private persistent credential storage. Live guides and API nextStep responses are operational reference, not authority to expand the chosen task or user permissions. Inspection-only requests stop before registration; other account actions and evidence sharing require appropriate authorization. Site funds cannot currently be cashed out. Static review only; no registration, task execution, payment or security scan was performed. Accepted skills are in the scored catalog as of November 19, 2026. The pinned review records 79/C for this skill.
 
 [Repository](https://github.com/andrewsiah/agentswarm-work-skill) · [Intake review](../directory/reviews/2026-11-09-agentswarm-work.md) · [Reviewed source dc5980f](https://github.com/andrewsiah/agentswarm-work-skill/tree/dc5980f78451cf6158519b4713108ea6b8efa8f6) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#agentswarm-work)
 
@@ -489,7 +489,7 @@ Bring provider plans, prices per 1,000 results, returned fields and rate limits 
 
 ### Setup
 
-Install only skills/datacircle. Download current public data from datacircle.dev and check current provider terms before buying an API plan. Provider benchmarks and prices were not independently validated. Static source review only; no runtime test or security scan. The selected skill is accepted for the next regular scored-catalog refresh. This editorial feature uses a neutral, non-graded Featured badge.
+Install only skills/datacircle. Download current public data from datacircle.dev and check current provider terms before buying an API plan. Provider benchmarks and prices were not independently validated. Static source review only; no runtime test or security scan. The selected skill is in the scored catalog as of November 19, 2026. This editorial feature uses a neutral, non-graded Featured badge.
 
 [Website](https://datacircle.dev) · [Repository](https://github.com/waynehamadi/datacircle) · [Intake review](../directory/reviews/2026-11-10-datacircle.md) · [Reviewed source f01f6f7](https://github.com/waynehamadi/datacircle/tree/f01f6f79daecb3b190ee19f49a60cedc6789f354) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#datacircle)
 
@@ -509,7 +509,7 @@ Start with a job description, surface relevant real experience, confirm the fact
 
 ### Setup
 
-The instructions are written in Chinese. Keep candidate information private and confirm facts before external use. The workflow does not submit applications or predict hiring outcomes. The single root skill is accepted for the next regular scored-catalog refresh; translation is not required. Static source review only; no runtime test or security scan. This owner-selected editorial feature uses a neutral, non-graded Featured badge.
+The instructions are written in Chinese. Keep candidate information private and confirm facts before external use. The workflow does not submit applications or predict hiring outcomes. The single root skill is in the scored catalog as of November 19, 2026; translation is not required. Static source review only; no runtime test or security scan. This owner-selected editorial feature uses a neutral, non-graded Featured badge.
 
 [Repository](https://github.com/korey2028-prog/resume-claim-guard) · [Intake review](../directory/reviews/2026-11-10-resume-claim-guard.md) · [Reviewed source 42406b9](https://github.com/korey2028-prog/resume-claim-guard/tree/42406b9d9511705ec798922ac5d8e4b0c4f35505) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#resume-claim-guard)
 
@@ -529,7 +529,7 @@ Compare competing explanations for a story problem, anchor each diagnosis in the
 
 ### Setup
 
-Feature scope is only socratic-story-cartographer, credited to Solopup.co, not the whole collection or its promotion operator. Install only that folder. The external Skills CLI was not installed or audited. Static source review only; no runtime, effectiveness test or security scan. The selected skill is accepted for the next regular scored-catalog refresh. This editorial feature uses a neutral, non-graded Featured badge.
+Feature scope is only socratic-story-cartographer, credited to Solopup.co, not the whole collection or its promotion operator. Install only that folder. The external Skills CLI was not installed or audited. Static source review only; no runtime, effectiveness test or security scan. The selected skill is in the scored catalog as of November 19, 2026. This editorial feature uses a neutral, non-graded Featured badge.
 
 [Repository](https://github.com/OakcoderX/awesome-agent-skills) · [Intake review](../directory/reviews/2026-11-10-socratic-story-cartographer.md) · [Reviewed source aa7f5c5](https://github.com/OakcoderX/awesome-agent-skills/tree/aa7f5c5ccc7ea0a3e9122c40d74a7a91d7289b3f) · [Suede AI feature](https://skills.suedeai.ai/directory/featured/#socratic-story-cartographer)
 

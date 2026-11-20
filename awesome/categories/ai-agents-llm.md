@@ -6,7 +6,7 @@
 
 Skills that help an agent build, steer and evaluate other AI systems: prompt and context engineering, MCP servers, evals, subagent workflows, and model training and inference. Each one ships as a SKILL.md folder your agent loads only when the task calls for it.
 
-**604 accepted skills · 69 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
+**607 accepted skills · 71 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
 **Compare on the 0–99 quality scale:** this category’s verified scores span **56–94 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede AI](https://skills.suedeai.ai/directory/?category=ai-agents-llm&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
 
@@ -18,6 +18,7 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 <summary>Browse publishers in this category</summary>
 
 - [activeloopai/hivemind](#activeloopai--hivemind)
+- [andrewsiah/agentswarm-work-skill](#andrewsiah--agentswarm-work-skill)
 - [anthropics/claude-plugins-official](#anthropics--claude-plugins-official)
 - [anthropics/skills](#anthropics--skills)
 - [apify/agent-skills](#apify--agent-skills)
@@ -56,6 +57,7 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 - [mcollina/skills](#mcollina--skills)
 - [mhattingpete/claude-skills-marketplace](#mhattingpete--claude-skills-marketplace)
 - [microsoft/azure-skills](#microsoft--azure-skills)
+- [mrhy7176/cloudgpu-agent-skills](#mrhy7176--cloudgpu-agent-skills)
 - [muratcankoylan/Agent-Skills-for-Context-Engineering](#muratcankoylan--agent-skills-for-context-engineering)
 - [Necmttn/ax](#necmttn--ax)
 - [NeoLabHQ/context-engineering-kit](#neolabhq--context-engineering-kit)
@@ -96,6 +98,14 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 [Repository](https://github.com/activeloopai/hivemind) · Publisher: [activeloopai](https://github.com/activeloopai) · [Suede AI listing](https://skills.suedeai.ai/directory/activeloopai/hivemind/)
 
 - **72/100 · C** · [hivemind-memory](https://github.com/activeloopai/hivemind/blob/main/harnesses/claude-code/skills/hivemind-memory/SKILL.md): Global team and org memory powered by Activeloop. [Suede](https://skills.suedeai.ai/directory/activeloopai/hivemind/#hivemind-memory)
+
+<a id="andrewsiah--agentswarm-work-skill"></a>
+
+## andrewsiah/agentswarm-work-skill
+
+[Repository](https://github.com/andrewsiah/agentswarm-work-skill) · Publisher: [andrewsiah](https://github.com/andrewsiah) · [Suede AI listing](https://skills.suedeai.ai/directory/andrewsiah/agentswarm-work-skill/agentswarm-work/)
+
+- **79/100 · C** · [agentswarm-work](https://github.com/andrewsiah/agentswarm-work-skill/blob/main/skills/agentswarm-work/SKILL.md): Inspect one agentswarm.space task, reuse an authorized identity when needed, and submit real work evidence within the user’s chosen scope. [Suede](https://skills.suedeai.ai/directory/andrewsiah/agentswarm-work-skill/agentswarm-work/)
 
 <a id="anthropics--claude-plugins-official"></a>
 
@@ -606,6 +616,15 @@ Skills that help an agent build, steer and evaluate other AI systems: prompt and
 - **79/100 · C** · [microsoft-foundry](https://github.com/microsoft/azure-skills/blob/main/skills/microsoft-foundry/SKILL.md): Build, deploy, evaluate, optimize, fine-tune, and manage Microsoft Foundry agents, models, and resources end to end. [Suede](https://skills.suedeai.ai/directory/microsoft/azure-skills/#microsoft-foundry)
 - **71/100 · C** · [azure-aigateway](https://github.com/microsoft/azure-skills/blob/main/skills/azure-aigateway/SKILL.md): Configure Azure API Management as an AI Gateway for AI models, MCP tools, and agents. [Suede](https://skills.suedeai.ai/directory/microsoft/azure-skills/#azure-aigateway)
 - **71/100 · C** · [foundry-iq](https://github.com/microsoft/azure-skills/blob/main/.github/plugins/foundry-iq-skills/skills/foundry-iq/SKILL.md): Foundry IQ knowledge bases. [Suede](https://skills.suedeai.ai/directory/microsoft/azure-skills/#foundry-iq)
+
+<a id="mrhy7176--cloudgpu-agent-skills"></a>
+
+## mrhy7176/cloudgpu-agent-skills
+
+[Repository](https://github.com/mrhy7176/cloudgpu-agent-skills) · Publisher: [mrhy7176](https://github.com/mrhy7176) · [Suede AI listing](https://skills.suedeai.ai/directory/mrhy7176/cloudgpu-agent-skills/)
+
+- **77/100 · C** · [cloudgpu-lora-finetune](https://github.com/mrhy7176/cloudgpu-agent-skills/blob/main/cloudgpu-lora-finetune/SKILL.md): Plan a bounded LoRA or QLoRA training run on rented GPUs and export adapters, checkpoints and metrics. [Suede](https://skills.suedeai.ai/directory/mrhy7176/cloudgpu-agent-skills/cloudgpu-lora-finetune/)
+- **77/100 · C** · [cloudgpu-open-model-inference](https://github.com/mrhy7176/cloudgpu-agent-skills/blob/main/cloudgpu-open-model-inference/SKILL.md): Run an approved open-model inference or evaluation workload with protected serving and explicit output retrieval. [Suede](https://skills.suedeai.ai/directory/mrhy7176/cloudgpu-agent-skills/cloudgpu-open-model-inference/)
 
 <a id="muratcankoylan--agent-skills-for-context-engineering"></a>
 
