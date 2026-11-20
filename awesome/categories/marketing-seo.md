@@ -6,7 +6,7 @@
 
 Skills for search, ads, launches and growth: SEO audits, keyword and content briefs, ad creative, social posts and conversion work. They turn a marketing request into a repeatable procedure your agent runs the same way every time.
 
-**340 accepted skills · 25 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
+**341 accepted skills · 26 repositories.** Snapshot: **2026-10-22** · Scores: **graded-v2** · [How scores work](https://skills.suedeai.ai/directory/methodology/).
 
 **Compare on the 0–99 quality scale:** this category’s verified scores span **62–94 / 100**. Higher scores appear first within each publisher. [Sort the entire category by score on Suede AI](https://skills.suedeai.ai/directory/?category=marketing-seo&sort=score) · [Rubric and the 99-point cap](../README.md#compare-099-quality-scores).
 
@@ -39,6 +39,7 @@ Skills for search, ads, launches and growth: SEO audits, keyword and content bri
 - [ohad6k/emulo](#ohad6k--emulo)
 - [phuryn/pm-skills](#phuryn--pm-skills)
 - [realkimbarrett/advertising-skills](#realkimbarrett--advertising-skills)
+- [rnthking/redya-skills](#rnthking--redya-skills)
 - [sanity-io/agent-toolkit](#sanity-io--agent-toolkit)
 - [sergebulaev/linkedin-skills](#sergebulaev--linkedin-skills)
 - [wondelai/skills](#wondelai--skills)
@@ -514,6 +515,14 @@ Skills for search, ads, launches and growth: SEO audits, keyword and content bri
 - **64/100 · D** · [objection-crusher](https://github.com/realkimbarrett/advertising-skills/blob/main/skills/copy-chief/objection-crusher/SKILL.md): Identifies and neutralizes buyer objections, covering reasons someone would not buy, hesitation, and conversion issues. [Suede](https://skills.suedeai.ai/directory/realkimbarrett/advertising-skills/objection-crusher/)
 - **64/100 · D** · [scroll-stopping-creative](https://github.com/realkimbarrett/advertising-skills/blob/main/skills/operator-os/scroll-stopping-creative/SKILL.md): Creates ad concepts that stop attention in the first 3 seconds, for ad creative, thumbstoppers, and video ideas. [Suede](https://skills.suedeai.ai/directory/realkimbarrett/advertising-skills/scroll-stopping-creative/)
 - **62/100 · D** · [performance-diagnosis](https://github.com/realkimbarrett/advertising-skills/blob/main/skills/operator-os/performance-diagnosis/SKILL.md): Diagnoses why campaigns are underperforming, such as low performance, high CPL, or bad ads. [Suede](https://skills.suedeai.ai/directory/realkimbarrett/advertising-skills/performance-diagnosis/)
+
+<a id="rnthking--redya-skills"></a>
+
+## rnthking/redya-skills
+
+[Repository](https://github.com/rnthking/redya-skills) · Publisher: [rnthking](https://github.com/rnthking) · [Suede AI listing](https://skills.suedeai.ai/directory/rnthking/redya-skills/)
+
+- **65/100 · D** · [redya-xiaohongshu](https://github.com/rnthking/redya-skills/blob/main/skill/redya-xiaohongshu/SKILL.md): 使用红鸦 API 创作小红书图文、制作 Live 实况图片，或检测和修改文案敏感词；支持商品档案及个人词库。 [Suede](https://skills.suedeai.ai/directory/rnthking/redya-skills/#redya-xiaohongshu)
 
 <a id="sanity-io--agent-toolkit"></a>
 

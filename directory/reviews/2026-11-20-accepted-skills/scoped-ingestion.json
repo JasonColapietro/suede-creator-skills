@@ -1,0 +1,42 @@
+{
+  "assessment_date": "2026-11-19",
+  "ingested": "2026-11-20",
+  "previous_snapshot_id": "740bfd7230f74b149870dffa9c645b2b",
+  "new_snapshot_id": "176044f4b49e4c4f8168396e3fa66419",
+  "unchanged_existing_skills": 3894,
+  "unchanged_existing_repositories": 163,
+  "existing_before_sha256": "74353915968c4465a30890397fd31db47b0f854c4dece0675aed869f6e674eb9",
+  "existing_after_sha256": "74353915968c4465a30890397fd31db47b0f854c4dece0675aed869f6e674eb9",
+  "added_repositories": [
+    "MetcalfSolutions/Satori",
+    "OakcoderX/awesome-agent-skills",
+    "andrewsiah/agentswarm-work-skill",
+    "cwong5/extra-caffeine-mcp",
+    "korey2028-prog/resume-claim-guard",
+    "mrhy7176/cloudgpu-agent-skills",
+    "rnthking/redya-skills",
+    "waynehamadi/datacircle"
+  ],
+  "added_skills": [
+    "MetcalfSolutions/Satori/satori",
+    "cwong5/extra-caffeine-mcp/extra-caffeine-workflow",
+    "mrhy7176/cloudgpu-agent-skills/cloudgpu-ai-short-drama",
+    "mrhy7176/cloudgpu-agent-skills/cloudgpu-comfyui-images",
+    "mrhy7176/cloudgpu-agent-skills/cloudgpu-discover-compute",
+    "mrhy7176/cloudgpu-agent-skills/cloudgpu-lora-finetune",
+    "mrhy7176/cloudgpu-agent-skills/cloudgpu-open-model-inference",
+    "andrewsiah/agentswarm-work-skill/agentswarm-work",
+    "waynehamadi/datacircle/datacircle",
+    "OakcoderX/awesome-agent-skills/socratic-story-cartographer",
+    "korey2028-prog/resume-claim-guard/resume-claim-guard",
+    "rnthking/redya-skills/redya-xiaohongshu"
+  ],
+  "not_listed_by_policy": [
+    "github/awesome-copilot/latchshot-page-capture",
+    "github/awesome-copilot/x-twitter-scraper",
+    "apify/agent-skills/apify-actorization"
+  ],
+  "security_scan_status": "not_scanned",
+  "runtime_tested": false,
+  "numeric_scores": "computed by existing parser, curator and graded-v2 rubric"
+}
