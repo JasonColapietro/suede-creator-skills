@@ -32,7 +32,7 @@ export const SEO_KEYWORDS = {
     "open source agent skills",
     "ai seo skills",
     "conversion copy skills",
-    "Suede AI Skills",
+    "Suede Skills",
   ],
   "guide.html": [
     "claude code skills guide",
