@@ -311,10 +311,11 @@ test('GitHub star buttons appear on every directory page and in every outgoing m
   assert.match(read('directory/suede-directory/SKILL.md'), /star Suede AI Skills on\nGitHub/);
 });
 
-test('every star call to action names Suede AI Skills and points at its repository', () => {
+test('each star call to action names the project and points at its repository', () => {
   const repo = 'https://github.com/JasonColapietro/suede-creator-skills';
   assert.equal((issue.match(/Suede AI Skills.{0,40}on GitHub|star it on GitHub/g) || []).length, 3, 'newsletter: three star lines');
-  for (const page of ['docs/index.html', 'docs/guide.html', 'docs/skills/android-app-factory.html', 'docs/listings.html'])
+  assert.ok(read('docs/index.html').includes(`href="${repo}" target="_blank" rel="noopener">★ Star Suede Skills on GitHub</a>`));
+  for (const page of ['docs/guide.html', 'docs/skills/android-app-factory.html', 'docs/listings.html'])
     assert.ok(read(page).includes(`href="${repo}" target="_blank" rel="noopener">★ Star Suede AI Skills on GitHub</a>`), page);
   assert.doesNotMatch(read('docs/directory/finder/index.html'), /Star the directory/);
   assert.ok(read('docs/directory/finder/index.html').includes('Star Suede AI Skills on GitHub'));
