@@ -1,0 +1,169 @@
+/* Suede landing motion. The underlying document remains usable before initialization. */
+.motion-progress {
+  position: fixed;
+  z-index: 80;
+  inset: 0 0 auto;
+  height: 2px;
+  background: #131514;
+  pointer-events: none;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+.opening-pending :where(.navwrap,.hero .kicker,.hero-h1,.hero .hcell:not(.mid),.hero .givebox,.hero .hcli,.gateway-routes,.hero-particles) {
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+.opening-stage .hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background: #f8f8f8;
+  opacity: var(--opening-background,1);
+  pointer-events: none;
+}
+.hero, .bens { position: relative; isolation: isolate; }
+.hero-particles, .benefit-particles, .ending-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+  contain: strict;
+}
+.hero-particles, .benefit-particles { z-index: -1; }
+.ending-particles { z-index: 0; }
+
+.mid > .gateway-sculpture {
+  grid-area: auto;
+  align-self: stretch;
+  justify-self: stretch;
+  width: auto;
+  height: auto;
+  inset: 0;
+}
+.gateway-model, .gateway-webgl { width: 100%; height: 100%; }
+.gateway-sculpture:not(.model-ready) { visibility: hidden; }
+.gateway-sculpture.model-ready { z-index: 1; pointer-events: auto; }
+.gateway-webgl {
+  position: absolute;
+  inset: 0;
+  display: block;
+  cursor: grab;
+  touch-action: pan-y;
+}
+.gateway-webgl:active { cursor: grabbing; }
+.gateway-webgl:focus-visible { outline: 1px solid #799e8c; outline-offset: -8px; border-radius: 24px; }
+.mid:has(.gateway-sculpture.model-ready) .hcore, .opening-pending .hcore { visibility: hidden; }
+.gateway-routes {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: visible;
+  pointer-events: none;
+}
+.gateway-routes path {
+  fill: none;
+  stroke: #bdd1c6;
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+  transition: stroke .4s ease,opacity .4s ease;
+}
+.gateway-routes .route-pulse { opacity: 0; stroke-dasharray: 5 95; stroke-linecap: round; }
+.gateway-routes .route-active path { stroke: #369b80; stroke-width: 1.4; }
+.gateway-routes .route-active .route-pulse {
+  stroke: #70eac4;
+  stroke-width: 2.5;
+  opacity: 1;
+  filter: drop-shadow(0 0 3px #66dcb4);
+  animation: suede-route 3.5s linear infinite;
+}
+@keyframes suede-route { from { stroke-dashoffset: 100; } to { stroke-dashoffset: 0; } }
+
+.gb-cmd { position: relative; isolation: isolate; }
+.command-beam {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  overflow: hidden;
+  border-radius: inherit;
+  transition: opacity .45s ease;
+}
+.gb-cmd > :not(.command-beam) { position: relative; z-index: 1; }
+.gb-cmd:is(:hover,:focus-within) .command-beam { opacity: 1; }
+.command-beam rect {
+  fill: none;
+  stroke-dasharray: 1.68 98.32;
+  animation: suede-beam var(--beam-period) linear infinite paused;
+}
+.command-beam .beam-wash { stroke-width: 30; filter: blur(10px); opacity: .29; }
+.command-beam .beam-line { stroke-width: 1.2; opacity: .20; }
+.gb-cmd:is(:hover,:focus-within) rect { animation-play-state: running; }
+.gb-cmd:is(:hover,:focus-within) .command-beam { animation: suede-spectrum 6s linear infinite; }
+@keyframes suede-beam { from { stroke-dashoffset: var(--offset); } to { stroke-dashoffset: calc(var(--offset) - 100); } }
+@keyframes suede-spectrum { to { filter: hue-rotate(360deg); } }
+
+.catalog-window { min-width: 0; }
+#catalog.catalog-drum { padding-block: 0; overflow: visible; }
+.catalog-drum > .wrap {
+  position: sticky;
+  top: 0;
+  box-sizing: border-box;
+  height: 100svh;
+  padding-block: 84px 12px;
+}
+.catalog-drum .seclab { margin: 0 0 42px; font-size: 11px; line-height: 1.48; }
+.catalog-drum .catalog-window {
+  height: calc(100svh - 126px);
+  overflow: clip;
+  mask-image: linear-gradient(to bottom, transparent, black 5%, black 95%, transparent);
+}
+.catalog-drum .catwrap { position: relative; will-change: transform; }
+.catalog-drum .pcat { margin-block: 42px 20px; font-size: 17px; line-height: 1.55; }
+.catalog-drum .ctabs + .pcat { margin-top: 0; }
+.catalog-drum .pgrid { gap: 16px; }
+.catalog-drum :is(.pcard,.pcat,.moreline) { backface-visibility: hidden; transform-origin: center; }
+.catalog-drum .pcard { min-height: 82px; padding: 18px 16px; transition: background .25s, border-color .25s, box-shadow .25s; }
+.catalog-drum .moreline { margin-top: 48px; padding-bottom: 24px; }
+
+.suede-entering > :where(.bentext,.keywall,.win), .zeroband.suede-entering { opacity: 0; }
+.kw-track { animation: suede-conveyor 36s linear infinite paused; }
+.kw-track.rev { animation-direction: reverse; }
+.keywall.motion-visible .kw-track { animation-play-state: running; }
+@keyframes suede-conveyor { to { transform: translateX(-50%); } }
+
+.ending-reveal { position: relative; overflow: clip; isolation: isolate; background: #000; }
+.ending-layer { position: relative; transform: translateY(var(--reveal-offset,0px)); }
+.ending-layer.has-particles :is(.close,footer) { position: relative; z-index: 1; background: transparent; }
+.ending-reveal::after {
+  content: '';
+  position: absolute;
+  z-index: 2;
+  inset: 0 0 auto;
+  height: clamp(120px,18svh,220px);
+  pointer-events: none;
+  background: #f8f8f8;
+  transform: translateY(calc(-100% * var(--curtain-open,1)));
+}
+.ending-layer .close > .wrap { translate: 0 var(--closing-rise,0px); }
+.ending-layer footer .foot { translate: 0 var(--footer-rise,0px); }
+.ending-layer .foot-mark { translate: 0 var(--mark-drift,0px); }
+
+@media (max-width:640px) { .gateway-routes { opacity: .5; } }
+@media (max-width:640px), (pointer:coarse), (prefers-reduced-motion:reduce) {
+  .ending-layer { transform: none; }
+  .ending-layer .close > .wrap, .ending-layer footer .foot, .ending-layer .foot-mark { translate: none; }
+  .ending-reveal::after { display: none; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .gateway-routes .route-pulse,.command-beam,.command-beam rect,.kw-track { animation: none !important; }
+  .gateway-routes path,.command-beam { transition: none; }
+  .suede-entering > *, .zeroband.suede-entering { opacity: 1; }
+}

@@ -1,0 +1,92 @@
+:root {
+  color-scheme: light;
+  --canvas: #f4f4f1;
+  --paper: #fff;
+  --paper-2: #eeefeb;
+  --hairline: #e7e7e3;
+  --line: #dcded9;
+  --line-strong: #9ca29b;
+  --ink: #191b19;
+  --text: #373936;
+  --muted: #595e57;
+  --faint: #62675f;
+  --accent: #191b19;
+  --accent-soft: #ebede8;
+  --on-accent: #fff;
+  --focus: #386366;
+  --gold-text: #755713;
+  --gold-soft: #faf4e6;
+  --danger: #ae3545;
+  --danger-soft: #fff1f2;
+  --grade-a: #197248;
+  --grade-a-bg: #e9f7eb;
+  --grade-b: #245d9a;
+  --grade-b-bg: #e7effa;
+  --grade-c: #845d11;
+  --grade-c-bg: #fff3d9;
+  --grade-d: #555b54;
+  --grade-d-bg: #ebede9;
+  --radius: 14px;
+  --radius-sm: 8px;
+  --shadow: 0 1px 3px #0001;
+  --display: "Geist Pixel", "Pixelify Sans", ui-monospace, monospace;
+}
+.nav,
+.nav-links,
+.kind-bar {
+  background: var(--canvas);
+}
+.nav-cta,
+.button,
+.gh-star {
+  border-radius: 24px;
+}
+.nav-logo img,
+.foot-logo img {
+  background: #191919;
+  padding: 3px;
+  border-radius: 6px;
+}
+.directory h1,
+.directory-hero h1,
+.directory-hero.page-hero h1 {
+  font-weight: 400;
+}
+.directory h1::after,
+.directory-hero h1::after,
+.directory h1 > .h1-sub::after,
+.panel > h2::before,
+.eyebrow::before,
+.kicker::before {
+  content: none;
+}
+.directory .button:hover,
+.nav-links a.nav-cta:hover {
+  background: #353a35;
+  color: white;
+}
+.nav-inner .nav-links a {
+  font-family: var(--sans);
+}
+.panel,
+.dir-card,
+.kind-card,
+.stack-card,
+.discovery-row,
+.topic-tile {
+  background-color: var(--paper);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.directory code {
+  overflow-wrap: anywhere;
+}
+.snippet pre,
+.terminal pre {
+  background: #1b211c;
+  color: #f4f6f1;
+}
+.snippet pre code,
+.terminal pre code {
+  color: inherit;
+}

@@ -1,6 +1,17 @@
 # SuedeAI.directory design system
 
-The directory (`docs/directory/`, served at suedeai.directory) has its own
+The standalone site builds its landing, interactive icon field, search and catalog
+from `directory/site/` and `scripts/directory/discovery-site.mjs`. The renderer
+uses the current search index for catalog records, publisher counts, featured
+category links and search results. Regenerate the landing HTML after changing
+its template or configuration with
+`python3 directory/site/template/render.py directory/site/landing.config.json directory/site/index.html`.
+Run `npm run build:vercel` to build the site in `dist/out/`. The advanced
+filters and workflow builder live at `/browse/`, and existing query and
+fragment bookmarks retain their state. The standalone build applies
+`directory/site/assets/records.css` to the generated detail pages.
+
+The source directory pages (`docs/directory/`) have their own
 design system, separate from the skills site described in the root
 `DESIGN.md`. Its one stylesheet is `docs/assets/directory.css`; agent pages add
 `docs/assets/agents.css`, which reads the same tokens. The pages load nothing
