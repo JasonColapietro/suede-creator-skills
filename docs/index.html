@@ -12,7 +12,7 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Claude Code Skills &amp; Codex Skills: Suede AI Skills">
   <meta property="og:description" content="Install 67 free open-source Claude Code and Codex skills for code review, UI builds, SEO audits and launch checks. See a worked example and inspect each skill.">
-  <meta property="og:image" content="https://skills.suedeai.ai/assets/og-image-cypherpunk.png?v=2">
+  <meta property="og:image" content="https://skills.suedeai.ai/assets/og-image-cypherpunk.png?v=3">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Suede AI Skills: open-source agent skills for Claude Code and OpenAI Codex">
@@ -23,7 +23,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Claude Code Skills &amp; Codex Skills: Suede AI Skills">
   <meta name="twitter:description" content="Install 67 free open-source Claude Code and Codex skills for code review, UI builds, SEO audits and launch checks. See a worked example and inspect each skill.">
-  <meta name="twitter:image" content="https://skills.suedeai.ai/assets/og-image-cypherpunk.png?v=2">
+  <meta name="twitter:image" content="https://skills.suedeai.ai/assets/og-image-cypherpunk.png?v=3">
   <meta name="twitter:image:alt" content="Suede AI Skills: open-source agent skills for Claude Code and OpenAI Codex">
 
   <!-- Canonical -->
@@ -34,8 +34,8 @@
 
   <!-- Preload -->
   <link rel="preload" href="./assets/suede-ai-logo-transparent.webp" as="image">
-  <link rel="preload" href="./assets/fonts/fraunces-var.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="./assets/fonts/fraunces-var-italic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./assets/fonts/barlow-condensed-semibold-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./assets/fonts/geist-var-latin.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Schema.org JSON-LD -->
   <script type="application/ld+json">
@@ -623,26 +623,36 @@
 </script>
 
   <style>
-    /* ============================================================
-       DISPLAY FACE — Fraunces variable (self-hosted, OFL)
-       Display roles only; body stays on the system stack.
-    ============================================================ */
     @font-face {
-      font-family: "Fraunces";
-      src: url("assets/fonts/fraunces-var.woff2") format("woff2");
-      font-weight: 300 900;
+      font-family: "Barlow Condensed";
+      src: url("assets/fonts/barlow-condensed-semibold-latin.woff2") format("woff2");
+      font-weight: 600;
       font-style: normal;
       font-display: swap;
-      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
     }
 
     @font-face {
-      font-family: "Fraunces";
-      src: url("assets/fonts/fraunces-var-italic.woff2") format("woff2");
-      font-weight: 300 900;
+      font-family: "Geist";
+      src: url("assets/fonts/geist-var-latin.woff2") format("woff2");
+      font-weight: 100 900;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "Geist";
+      src: url("assets/fonts/geist-var-italic-latin.woff2") format("woff2");
+      font-weight: 100 900;
       font-style: italic;
       font-display: swap;
-      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+
+    @font-face {
+      font-family: "Geist Mono";
+      src: url("assets/fonts/geist-mono-var-latin.woff2") format("woff2");
+      font-weight: 100 900;
+      font-style: normal;
+      font-display: swap;
     }
 
     /* ============================================================
@@ -668,8 +678,9 @@
       --color-text-secondary:#9aafb2;
       --color-text-accent:   #b6ff4d;
 
-      --font-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+      --font-body: "Geist", system-ui, sans-serif;
+      --font-mono: "Geist Mono", ui-monospace, monospace;
+      --font-display: "Barlow Condensed", "Arial Narrow", sans-serif;
 
       --size-xs:   0.75rem;
       --size-sm:   0.875rem;
@@ -988,7 +999,7 @@
        CODE / MONO
     ============================================================ */
     code, .mono {
-      font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+      font-family: var(--font-mono);
       font-size: 0.9em;
     }
 
@@ -997,7 +1008,7 @@
       border: 1px solid var(--color-border);
       border-radius: var(--radius);
       padding: var(--space-4) var(--space-6);
-      font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+      font-family: var(--font-mono);
       font-size: var(--size-sm);
       color: var(--color-accent-gold);
       overflow-x: auto;
@@ -1240,7 +1251,7 @@
     }
 
     #hero-headline {
-      font-family: system-ui, -apple-system, sans-serif;
+      font-family: var(--font-body);
       font-size: clamp(2.4rem, 5.5vw, 4rem);
       font-weight: 800;
       letter-spacing: -0.03em;
@@ -1250,7 +1261,7 @@
     }
 
     #hero-subline {
-      font-family: system-ui, -apple-system, sans-serif;
+      font-family: var(--font-body);
       font-size: clamp(1.1rem, 2.4vw, 1.45rem);
       font-weight: 400;
       letter-spacing: 0.01em;
@@ -1267,7 +1278,7 @@
     }
 
     .hero-proof-line {
-      font-family: system-ui, -apple-system, sans-serif;
+      font-family: var(--font-body);
       font-size: clamp(.82rem, 1.5vw, .97rem);
       font-weight: 500;
       letter-spacing: 0.04em;
@@ -1295,7 +1306,7 @@
     }
 
     #hero-cta-primary {
-      font-family: system-ui, -apple-system, sans-serif;
+      font-family: var(--font-body);
       font-size: .93rem;
       font-weight: 700;
       letter-spacing: 0.06em;
@@ -1315,7 +1326,7 @@
     #hero-cta-primary:active { transform: translateY(0); }
 
     #hero-cta-scope, #hero-cta-secondary {
-      font-family: system-ui, -apple-system, sans-serif;
+      font-family: var(--font-body);
       font-size: .88rem;
       font-weight: 500;
       letter-spacing: 0.05em;
@@ -1333,7 +1344,7 @@
     #hero-cta-secondary:hover, #hero-cta-scope:hover { color: #b6ff4d; border-color: #b6ff4d; }
 
     #hero-cta-star {
-      font-family: system-ui, -apple-system, sans-serif;
+      font-family: var(--font-body);
       font-size: .88rem;
       font-weight: 700;
       letter-spacing: 0.05em;
@@ -1374,7 +1385,7 @@
     }
 
     #hero-scroll-label {
-      font-family: system-ui, -apple-system, sans-serif;
+      font-family: var(--font-body);
       font-size: .7rem;
       letter-spacing: .12em;
       text-transform: uppercase;
@@ -1406,7 +1417,7 @@
       pointer-events: none;
       z-index: 1;
       white-space: nowrap;
-      font-family: system-ui, -apple-system, sans-serif;
+      font-family: var(--font-body);
       line-height: 1;
     }
 
@@ -1417,7 +1428,7 @@
       text-transform: uppercase;
       color: #b6ff4d;
       margin-bottom: 56px;
-      font-family: system-ui, -apple-system, sans-serif;
+      font-family: var(--font-body);
     }
 
     #philosophy .phil-gold-line {
@@ -1434,7 +1445,7 @@
       color: #e6f3ee;
       margin: 0 0 72px 0;
       max-width: 820px;
-      font-family: system-ui, -apple-system, sans-serif;
+      font-family: var(--font-body);
     }
 
     #philosophy .phil-pull-quote em {
@@ -1462,7 +1473,7 @@
       line-height: 1.8;
       color: #9aafb2;
       margin: 0;
-      font-family: system-ui, -apple-system, sans-serif;
+      font-family: var(--font-body);
       font-weight: 400;
     }
 
@@ -1497,7 +1508,7 @@
       letter-spacing: 0.2em;
       text-transform: uppercase;
       color: #9aafb2;
-      font-family: system-ui, -apple-system, sans-serif;
+      font-family: var(--font-body);
     }
 
     /* ============================================================
@@ -1662,7 +1673,7 @@
       text-transform: uppercase; color: #9aafb2;
     }
     .catalog-lane-count {
-      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-family: var(--font-mono);
       font-size: 12px;
       color: #b6ff4d;
     }
@@ -1680,7 +1691,7 @@
     a.catalog-row:hover { background: #0c1519; }
 
     .catalog-skill {
-      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-family: var(--font-mono);
       font-size: 14px;
       font-weight: 500;
       color: #b6ff4d;
@@ -1694,7 +1705,7 @@
     }
 
     .catalog-arrow {
-      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-family: var(--font-mono);
       font-size: 13px;
       color: #9aafb2;
       transition: color 0.15s, transform 0.15s;
@@ -1781,14 +1792,14 @@
     }
 
     .terminal-prompt {
-      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-family: var(--font-mono);
       font-size: 13px;
       color: #9aafb2;
       margin-bottom: 6px;
     }
 
     .terminal-question {
-      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-family: var(--font-mono);
       font-size: 15px;
       color: #b6ff4d;
       display: flex;
@@ -2052,7 +2063,7 @@
       border-radius: 3px;
       background: #101d22;
       border: 1px solid #263c43;
-      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-family: var(--font-mono);
       font-size: 13px;
       font-weight: 600;
       color: #e6f3ee;
@@ -2154,7 +2165,7 @@
     }
 
     .install-code-block code {
-      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-family: var(--font-mono);
       font-size: clamp(12px, 1.8vw, 15px);
       color: #b6ff4d;
       word-break: break-all;
@@ -2189,7 +2200,7 @@
     }
 
     .install-alt code {
-      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-family: var(--font-mono);
       font-size: 13px;
       color: #b6ff4d;
       line-height: 1.6;
@@ -2206,7 +2217,7 @@
       background: transparent;
       border: 1px solid #263c43;
       color: #9aafb2;
-      font-family: system-ui, -apple-system, sans-serif;
+      font-family: var(--font-body);
       font-size: 13px;
       padding: 8px 18px;
       border-radius: 4px;
@@ -2863,7 +2874,7 @@
     .install-terminal-bar .tdot:nth-child(3) { background: #223a26; }
     .install-terminal-title {
       margin-left: 10px;
-      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-family: var(--font-mono);
       font-size: 12px;
       letter-spacing: 0.08em;
       color: #9aafb2;
@@ -3138,7 +3149,7 @@
     .term-session {
       border-top: 1px solid #1c1c1c;
       padding: 18px 24px 20px;
-      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-family: var(--font-mono);
       font-size: 13.5px;
       line-height: 1.9;
       color: #9aafb2;
@@ -3256,7 +3267,7 @@
       display: inline-block;
       margin-top: 34px;
       padding: 10px 16px;
-      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-family: var(--font-mono);
       font-size: 14px;
       color: #07130e;
       background: rgba(7,19,14, 0.08);
@@ -3270,7 +3281,7 @@
 
     /* ---- MARQUEE: slash commands ---- */
     .marquee-item {
-      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-family: var(--font-mono);
       text-transform: none;
       letter-spacing: 0.04em;
       font-size: 13.5px;
@@ -3323,7 +3334,7 @@
     .lane-row:hover .lane-name { color: #b6ff4d; }
     .lane-desc { font-size: 15px; line-height: 1.55; color: #9aafb2; }
     .lane-count {
-      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-family: var(--font-mono);
       font-size: 13px; color: #b6ff4d; white-space: nowrap;
     }
     @media (max-width: 780px) {
@@ -3356,7 +3367,7 @@
     .hero-spark span:last-child { opacity: 1; }
     .hero-shiplog-text { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
     .hero-shiplog-top {
-      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-family: var(--font-mono);
       font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase; color: #b6ff4d;
     }
     .hero-shiplog-top b { font-weight: 400; color: #9aafb2; text-transform: none; letter-spacing: 0; }
@@ -3396,13 +3407,13 @@
       text-wrap: balance;
     }
     .clog-sub { margin: 0 0 36px; max-width: 52ch; font-size: 16.5px; line-height: 1.7; color: var(--color-text-secondary); }
-    .clog-sub code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.92em; color: var(--color-accent-gold); }
+    .clog-sub code { font-family: var(--font-mono); font-size: 0.92em; color: var(--color-accent-gold); }
     .clog-fresh {
       display: inline-flex; align-items: center; gap: 9px;
       margin: 0 0 30px; padding: 8px 14px;
       border: 1px solid rgba(182,255,77, 0.28); border-radius: var(--radius-sm);
       background: rgba(182,255,77, 0.05);
-      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-family: var(--font-mono);
       font-size: 12px; letter-spacing: 0.06em;
       color: var(--color-accent-gold);
     }
@@ -3417,7 +3428,7 @@
     .clog-spark span:last-child { background: var(--color-accent-gold); }
     .clog-spark-caption {
       margin: 0 0 34px;
-      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-family: var(--font-mono);
       font-size: 11.5px; letter-spacing: 0.04em;
       color: var(--color-text-secondary);
     }
@@ -3428,7 +3439,7 @@
       border: 1px solid #30474e; border-radius: var(--radius-sm);
       background: #101d22;
       box-shadow: 0 1px 0 rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(240, 236, 228, 0.05);
-      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-family: var(--font-mono);
       font-size: 12.5px; font-weight: 600; letter-spacing: 0.05em;
       color: var(--color-text-primary);
       transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease, transform 0.1s ease;
@@ -3471,7 +3482,7 @@
     .clog-meta {
       display: flex; align-items: baseline; gap: 14px;
       margin: 0 0 7px;
-      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-family: var(--font-mono);
       font-size: 12px;
     }
     .clog-date { color: var(--color-text-secondary); font-variant-numeric: tabular-nums; letter-spacing: 0.04em; white-space: nowrap; }
@@ -3496,10 +3507,10 @@
     .clog-hash:focus-visible { outline: 2px solid var(--color-accent-gold); outline-offset: 2px; }
     .clog-title { margin: 0 0 6px; font-size: 17.5px; font-weight: 700; letter-spacing: -0.01em; color: var(--color-text-primary); }
     .clog-detail { margin: 0; max-width: 58ch; font-size: 14.5px; line-height: 1.65; color: var(--color-text-secondary); }
-    .clog-detail code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.92em; color: var(--color-accent-gold); }
+    .clog-detail code { font-family: var(--font-mono); font-size: 0.92em; color: var(--color-accent-gold); }
     .clog-more {
       display: inline-block; margin-top: 24px; padding-bottom: 2px;
-      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-family: var(--font-mono);
       font-size: 13px;
       color: var(--color-accent-gold);
       border-bottom: 1px solid rgba(182,255,77, 0.3);
@@ -3546,7 +3557,7 @@
       color: #9aafb2;
     }
     .router-sub code {
-      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-family: var(--font-mono);
       font-size: 0.88em;
       color: #b6ff4d;
     }
@@ -3573,14 +3584,14 @@
       font-style: italic;
     }
     .router-arrow {
-      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-family: var(--font-mono);
       font-size: 13px;
       color: var(--color-text-dim);
       transition: color 0.15s ease, transform 0.15s ease;
     }
     a.router-row:hover .router-arrow { color: #b6ff4d; transform: translateX(3px); }
     .router-skill {
-      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-family: var(--font-mono);
       font-size: 13.5px;
       font-weight: 600;
       color: #b6ff4d;
@@ -3593,7 +3604,7 @@
       color: var(--color-text-dim);
     }
     .router-note code {
-      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-family: var(--font-mono);
       font-size: 0.9em;
       color: #9aafb2;
     }
@@ -3635,7 +3646,7 @@
       color: #9aafb2;
     }
     .flow-sub a, .flow-note a {
-      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-family: var(--font-mono);
       font-size: 0.92em;
       color: #b6ff4d;
       text-decoration: none;
@@ -3710,7 +3721,7 @@
     .essay-row:last-child { border-bottom: 0; }
     .essay-row:hover { background: #101b20; }
     .essay-date {
-      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-family: var(--font-mono);
       font-size: 12.5px;
       color: #9aafb2;
       white-space: nowrap;
@@ -3729,7 +3740,7 @@
       line-height: 1.5;
     }
     .essay-arrow {
-      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-family: var(--font-mono);
       font-size: 13px;
       color: #9aafb2;
       transition: color 0.15s ease, transform 0.15s ease;
@@ -3772,7 +3783,7 @@
       border: 1px solid #263c43;
       border-radius: 999px;
       background: #091115;
-      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-family: var(--font-mono);
       font-size: 13px;
       color: #e6f3ee;
       text-decoration: none;
@@ -3824,7 +3835,7 @@
     a.nav-star:hover { color: var(--color-accent-gold); border-color: var(--color-accent-gold); background: rgba(182,255,77, 0.08); }
     .nav-star-icon { width: 14px; height: 14px; flex-shrink: 0; }
     .nav-star-count {
-      font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; color: var(--color-text-primary);
+      font-family: var(--font-mono); font-size: 12px; color: var(--color-text-primary);
       padding-left: 7px; border-left: 1px solid var(--color-border);
     }
     a.nav-star:hover .nav-star-count { border-left-color: rgba(182,255,77, 0.4); }
@@ -3834,7 +3845,7 @@
       .nav-star-count { padding-left: 6px; }
     }
     /* ============================================================
-       DISPLAY ROLE OVERRIDES — editorial serif for headlines only.
+       DISPLAY ROLE OVERRIDES — condensed headings.
        Grouped last so the face, weight, and tracking retune wins the
        cascade over each section's own display rule above.
     ============================================================ */
@@ -3854,8 +3865,8 @@
     .scorecard-headline {
       font-family: var(--font-display);
       font-optical-sizing: auto;
-      font-weight: 620;
-      letter-spacing: -0.015em;
+      font-weight: 600;
+      letter-spacing: 0;
     }
 
     #philosophy .phil-watermark,
@@ -3962,7 +3973,7 @@
       align-items: baseline;
       gap: 7px;
       padding: 10px 0 10px 30px;
-      font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+      font-family: var(--font-mono);
       font-size: 11px;
       font-weight: 500;
       letter-spacing: 0.14em;
@@ -3992,7 +4003,7 @@
     }
 
     /* Cracked Devs tab: the one hot door in the nav */
-    .nav-cracked { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; color: #61e6ed; border: 1px solid rgba(198, 98, 90, 0.45); border-radius: 3px; padding: 4px 9px; background: rgba(23,106,115, 0.1); white-space: nowrap; animation: cracked-breathe 2.8s ease-in-out infinite; }
+    .nav-cracked { font-family: var(--font-mono); color: #61e6ed; border: 1px solid rgba(198, 98, 90, 0.45); border-radius: 3px; padding: 4px 9px; background: rgba(23,106,115, 0.1); white-space: nowrap; animation: cracked-breathe 2.8s ease-in-out infinite; }
     .nav-cracked:hover { color: #ffb3ab; border-color: #61e6ed; }
     @keyframes cracked-breathe { 0%, 100% { box-shadow: 0 0 0 rgba(198, 98, 90, 0); } 50% { box-shadow: 0 0 14px rgba(198, 98, 90, 0.35); } }
     @media (prefers-reduced-motion: reduce) { .nav-cracked { animation: none; } }
@@ -4307,7 +4318,7 @@ https://example.com/pricing</pre>
   </div>
 </section>
 
-<section id="install" aria-labelledby="install-heading" style="background:#060b0d;padding:84px 0 0;font-family:system-ui,-apple-system,sans-serif;color:#e6f3ee;">
+<section id="install" aria-labelledby="install-heading" style="background:#060b0d;padding:84px 0 0;font-family:var(--font-body);color:#e6f3ee;">
 
   <div class="install-inner">
     <h2 id="install-heading" class="install-headline reveal">Install for Claude Code or Codex.</h2>
@@ -4523,7 +4534,7 @@ codex plugin add suede-skills@suede-codex</code>
 </section>
 
 <!-- SCORECARD -->
-<section id="scorecard" style="background:#060b0d;padding:84px 0;font-family:system-ui,-apple-system,sans-serif;">
+<section id="scorecard" style="background:#060b0d;padding:84px 0;font-family:var(--font-body);">
 <details class="premium-disclosure"><summary>Read the benchmark methodology and scorecard</summary>
     <div id="hero-bench" class="hero-anim">
       <p class="bench-label">Scored on the Suede ship-gate rubric: Suede takes <span class="bench-highlight">4 of 14 categories</span> outright. <a href="#scorecard">Every row is published</a>.</p>
@@ -4715,7 +4726,7 @@ codex plugin add suede-skills@suede-codex</code>
 </section>
 
 <!-- FEATURES GRID -->
-<section id="skills" style="background:#060b0d;padding:84px 0;font-family:system-ui,-apple-system,sans-serif;">
+<section id="skills" style="background:#060b0d;padding:84px 0;font-family:var(--font-body);">
   <div class="features-inner">
     <h2 class="features-headline reveal">Work on search visibility, conversion, and delivery.</h2>
     <div class="features-grid reveal-group">
@@ -4877,13 +4888,13 @@ codex plugin add suede-skills@suede-codex</code>
 </section>
 
 <!-- CATALOG -->
-<section id="catalog" style="background:#060b0d;padding:84px 0;font-family:system-ui,-apple-system,sans-serif;">
+<section id="catalog" style="background:#060b0d;padding:84px 0;font-family:var(--font-body);">
 <details class="premium-disclosure"><summary>Browse the full source catalog</summary>
 
   <div class="catalog-inner">
     <p class="catalog-eyebrow reveal">The full pack</p>
     <h2 class="catalog-headline reveal reveal-d1">Read the source of every skill.</h2>
-    <p class="catalog-sub reveal reveal-d2">Every skill is a plain-Markdown <code style="font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:15px;color:#b6ff4d;">SKILL.md</code> folder, with its references, scripts, and templates beside it. Click any row for its docs, or browse the <a href="skills/">full catalog with install paths</a>.</p>
+    <p class="catalog-sub reveal reveal-d2">Every skill is a plain-Markdown <code style="font-family:var(--font-mono);font-size:15px;color:#b6ff4d;">SKILL.md</code> folder, with its references, scripts, and templates beside it. Click any row for its docs, or browse the <a href="skills/">full catalog with install paths</a>.</p>
 
     <div class="catalog-lane reveal" id="lane-ship">
       <div class="catalog-lane-head">
@@ -5657,7 +5668,7 @@ codex plugin add suede-skills@suede-codex</code>
 
 <!-- FOUNDER RECORD -->
 <style>#founder-record .faq-q { padding:18px 22px 10px; font-size:16px; font-weight:600; color:#e6f3ee; }</style>
-<section id="founder-record" aria-labelledby="founder-record-title" style="background:#060b0d;padding:64px 0;font-family:system-ui,-apple-system,sans-serif;">
+<section id="founder-record" aria-labelledby="founder-record-title" style="background:#060b0d;padding:64px 0;font-family:var(--font-body);">
   <div class="faq-inner">
     <h2 class="faq-headline" id="founder-record-title">The work behind the skills.</h2>
     <p style="color:#b6c9c9;line-height:1.7;margin:0 0 24px;">Built by <a href="https://jasoncolapietro.com/">Jason Colapietro</a>, founder of Suede AI. Explore the shipped apps, client reviews and independent coverage behind the practice.</p>
@@ -5677,7 +5688,7 @@ codex plugin add suede-skills@suede-codex</code>
 </section>
 
 <!-- FAQ -->
-<section id="faq" style="background:#060b0d;padding:84px 0;font-family:system-ui,-apple-system,sans-serif;">
+<section id="faq" style="background:#060b0d;padding:84px 0;font-family:var(--font-body);">
   <div class="faq-inner">
     <h2 class="faq-headline reveal">What it costs you, and what it will not do.</h2>
     <div class="reveal reveal-d1">
