@@ -145,6 +145,61 @@ export async function verifyStandaloneWorkflow(page, output) {
     fs.createReadStream(target).pipe(res);
   });
   await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
-  try { await verifyWorkflowBuilder(page, 'http://127.0.0.1:' + server.address().port, output, '/'); }
-  finally { await new Promise(resolve => server.close(resolve)); fs.rmSync(root, { recursive: true, force: true }); }
+  try {
+    const base = 'http://127.0.0.1:' + server.address().port;
+    await verifyWorkflowBuilder(page, base, output, '/');
+    await verifyCrackedDevs(page, base, output);
+  } finally { await new Promise(resolve => server.close(resolve)); fs.rmSync(root, { recursive: true, force: true }); }
+}
+
+
+async function verifyCrackedDevs(page, base, output) {
+  const target = 'https://skills.suedeai.ai/cracked.html';
+  const link = page.getByRole('link', { name: 'Cracked Devs', exact: true });
+  const menu = page.locator('.nav-hamburger');
+  const submit = page.getByRole('link', { name: 'List your skill', exact: true }).first();
+  const quip = 'Don’t push this. They’re already insufferable.';
+  for (const width of [1440, 1024, 769, 768, 390, 320]) {
+    await page.setViewportSize({ width, height: 844 });
+    await page.goto(base + '/', { waitUntil: 'domcontentloaded' });
+    await page.evaluate(() => document.fonts.ready);
+    assert.equal(await link.count(), 1, `${width}: exactly one CTA in the accessibility tree`);
+    assert.equal(await link.getAttribute('href'), target);
+    const descriptionId = await link.getAttribute('aria-describedby');
+    assert.equal(await page.locator('#' + descriptionId).textContent(), quip);
+    assert.ok(await page.locator('#' + descriptionId).isVisible());
+    const box = await link.boundingBox();
+    const upright = box.height >= 44 && box.x >= 0 && box.x + box.width <= width;
+    assert.ok(upright, `${width}: a 44 px target stays inside the viewport`);
+    assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth), `${width}: no page overflow`);
+    if (width > 768) {
+      const other = await submit.boundingBox();
+      assert.ok(other && box.x + box.width <= other.x && Math.abs(box.y - other.y) <= 2, `${width}: desktop actions remain side by side`);
+    } else {
+      const catalog = await page.getByRole('navigation', { name: 'Directory catalogs' }).boundingBox();
+      assert.ok(box.y >= catalog.y + catalog.height, `${width}: the CTA sits below the catalogs`);
+      await menu.click();
+      assert.ok(await submit.isVisible(), 'List your skill remains in the mobile menu');
+      await menu.click();
+      assert.ok(await link.isVisible(), 'the CTA does not rely on opening the menu');
+    }
+    if ([1440, 390].includes(width)) {
+      await page.screenshot({ path: path.join(output, `cracked-devs-${width}.png`) });
+    }
+  }
+
+  // Follow the existing cross-host route without depending on production for CI.
+  await page.route(target, route => route.fulfill({ contentType: 'text/html', body: '<h1>Cracked Devs destination</h1>' }));
+  try {
+    await link.focus();
+    await page.keyboard.press('Shift+Tab');
+    await page.keyboard.press('Tab');
+    assert.ok(await link.evaluate(el => el.matches(':focus-visible') && getComputedStyle(el).outlineStyle === 'solid'));
+    await page.keyboard.press('Enter');
+    await page.waitForURL(target);
+    await page.goBack({ waitUntil: 'domcontentloaded' });
+    assert.ok(await link.isVisible(), 'Back returns to the directory CTA');
+  } finally {
+    await page.unroute(target);
+  }
 }
